@@ -1,9 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface ca1 {
-    void l(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP);
+public final /* synthetic */ class ca1 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
+
+    public /* synthetic */ ca1(TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
+        this.a = i7;
+        this.b = twoStepVerificationActivity;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new da1(twoStepVerificationActivity, 2));
+                break;
+            case 2:
+                this.b.p0();
+                break;
+            case 3:
+                this.b.z0();
+                break;
+            default:
+                this.b.z0();
+                break;
+        }
+    }
 }

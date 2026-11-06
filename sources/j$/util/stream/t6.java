@@ -23,23 +23,23 @@ public class t6 extends c implements Consumer, Iterable {
         return Spliterator.Wrapper.convert(spliterator());
     }
 
-    public final void i(long j10) {
+    public final void i(long j3) {
         long length;
-        int i3 = this.c;
-        if (i3 == 0) {
+        int i7 = this.c;
+        if (i7 == 0) {
             length = this.e.length;
         } else {
-            length = this.d[i3] + this.f[i3].length;
+            length = this.d[i7] + this.f[i7].length;
         }
-        if (j10 > length) {
+        if (j3 > length) {
             if (this.f == null) {
                 Object[][] objArr = new Object[8][];
                 this.f = objArr;
                 this.d = new long[8];
                 objArr[0] = this.e;
             }
-            int i10 = i3 + 1;
-            while (j10 > length) {
+            int i10 = i7 + 1;
+            while (j3 > length) {
                 Object[][] objArr2 = this.f;
                 if (i10 >= objArr2.length) {
                     int length2 = objArr2.length * 2;
@@ -65,14 +65,14 @@ public class t6 extends c implements Consumer, Iterable {
         Object[][] objArr = this.f;
         if (objArr != null) {
             this.e = objArr[0];
-            int i3 = 0;
+            int i7 = 0;
             while (true) {
                 Object[] objArr2 = this.e;
-                if (i3 >= objArr2.length) {
+                if (i7 >= objArr2.length) {
                     break;
                 }
-                objArr2[i3] = null;
-                i3++;
+                objArr2[i7] = null;
+                i7++;
             }
             this.f = null;
             this.d = null;
@@ -94,8 +94,8 @@ public class t6 extends c implements Consumer, Iterable {
 
     @Override // java.lang.Iterable
     public void forEach(Consumer consumer) {
-        for (int i3 = 0; i3 < this.c; i3++) {
-            for (Object obj : this.f[i3]) {
+        for (int i7 = 0; i7 < this.c; i7++) {
+            for (Object obj : this.f[i7]) {
                 consumer.x(obj);
             }
         }
@@ -108,9 +108,9 @@ public class t6 extends c implements Consumer, Iterable {
     /* renamed from: accept */
     public void x(Object obj) {
         long length;
-        int i3 = this.b;
+        int i7 = this.b;
         Object[] objArr = this.e;
-        if (i3 == objArr.length) {
+        if (i7 == objArr.length) {
             if (this.f == null) {
                 Object[][] objArr2 = new Object[8][];
                 this.f = objArr2;

@@ -1,52 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.io.Serializable;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o20 implements org.telegram.messenger.s10, org.telegram.messenger.t10 {
-    public final /* synthetic */ p20 a;
+public final class o20 extends xs0 {
+    public final /* synthetic */ r20 w2;
 
-    public /* synthetic */ o20(p20 p20Var) {
-        this.a = p20Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o20(r20 r20Var, Context context, ps0 ps0Var, r20 r20Var2, n20 n20Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 0L, ps0Var, 0, null, null, null, 8, 0, r20Var2, n20Var, 0, f6Var, null);
+        this.w2 = r20Var;
     }
 
-    @Override // org.telegram.messenger.t10
-    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
-        int i3 = r31Var.d;
-        boolean z10 = false;
-        if (i3 != 0) {
-            p20 p20Var = this.a;
-            String str = (String) p20Var.c.get(i3 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, p20Var.getContext(), p20Var.b);
-            String M0 = org.telegram.messenger.bd.M0(2131752054, null);
-            org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-            s1Var.S = M0;
-            s1Var.U = org.telegram.messenger.bd.a0(null, null, 2131752052, str);
-            alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131752055, null), new org.telegram.ui.jo(25, p20Var, str));
-            alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), null);
-            s1Var.show();
-            z10 = true;
-        }
-        return Boolean.valueOf(z10);
+    @Override // org.telegram.ui.Components.xs0
+    public final boolean F0() {
+        return true;
     }
 
-    @Override // org.telegram.messenger.s10
-    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        int i3 = ((r31) obj).d;
-        p20 p20Var = this.a;
-        if (i3 == 0) {
-            org.telegram.messenger.ha a10 = org.telegram.messenger.ha.a(p20Var.a);
-            a10.f.clear();
-            a10.d();
-            p20Var.f.O(true);
-            return;
-        }
-        org.telegram.messenger.u10 u10Var = p20Var.h;
-        if (u10Var != null) {
-            u10Var.a((String) p20Var.c.get(i3 - 1));
-        }
+    @Override // org.telegram.ui.Components.xs0
+    public final int getInitialTab() {
+        return 8;
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final String getStoriesHashtag() {
+        return this.w2.b;
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final String getStoriesHashtagUsername() {
+        return this.w2.c;
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final void O0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final void V0(boolean z9) {
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final void X0(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.xs0
+    public final void o1(boolean z9) {
     }
 }

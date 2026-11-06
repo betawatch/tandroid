@@ -1,51 +1,47 @@
 package p4;
 
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class v implements Parcelable {
-    public static final Parcelable.Creator<v> CREATOR = new n8.g(14);
-    public final String a;
-    public final CharSequence b;
+public final class v {
+    public final q4.r a;
+    public final int b;
     public final int c;
-    public final Bundle d;
+    public final u d;
+    public final Bundle e;
 
-    public v(String str, int i3, Bundle bundle) {
-        this.a = str;
-        this.b = "";
-        this.c = i3;
-        this.d = bundle;
+    public v(q4.r rVar, int i7, int i10, boolean z9, u uVar, Bundle bundle) {
+        this.a = rVar;
+        this.b = i7;
+        this.c = i10;
+        this.d = uVar;
+        this.e = bundle;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof v)) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        v vVar = (v) obj;
+        u uVar = vVar.d;
+        u uVar2 = this.d;
+        return (uVar2 == null && uVar == null) ? this.a.equals(vVar.a) : Objects.equals(uVar2, uVar);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.d, this.a);
     }
 
     public final String toString() {
-        return "Action:mName='" + ((Object) this.b) + ", mIcon=" + this.c + ", mExtras=" + this.d;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        parcel.writeString(this.a);
-        TextUtils.writeToParcel(this.b, parcel, i3);
-        parcel.writeInt(this.c);
-        parcel.writeBundle(this.d);
-    }
-
-    public v(Parcel parcel) {
-        String readString = parcel.readString();
-        readString.getClass();
-        this.a = readString;
-        CharSequence charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        charSequence.getClass();
-        this.b = charSequence;
-        this.c = parcel.readInt();
-        this.d = parcel.readBundle(q.class.getClassLoader());
+        StringBuilder sb2 = new StringBuilder("ControllerInfo {pkg=");
+        q4.r rVar = this.a;
+        sb2.append(rVar.a.a);
+        sb2.append(", uid=");
+        return a8.p0.n(rVar.a.c, "}", sb2);
     }
 }

@@ -1,48 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ya0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ya0 implements org.telegram.ui.Components.qt0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xd0 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
 
-    public /* synthetic */ ya0(xd0 xd0Var, int i3) {
-        this.a = i3;
-        this.b = xd0Var;
+    public /* synthetic */ ya0(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = i7;
+        this.b = f2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.Components.qt0
+    public final void K(int i7, boolean z9) {
+        qd0 qd0Var;
+        ei0 ei0Var;
         switch (this.a) {
             case 0:
-                xd0 xd0Var = this.b;
-                if (xd0Var.d == animator) {
-                    xd0Var.d = null;
+                ce0 ce0Var = (ce0) this.b;
+                if (i7 > org.telegram.messenger.g0.L(20.0f) && ce0Var.z1()) {
+                    org.telegram.messenger.g0.v1(ce0Var.fragmentView);
+                }
+                if (i7 <= org.telegram.messenger.g0.L(20.0f) && (qd0Var = ce0Var.T) != null) {
+                    qd0Var.run();
+                    ce0Var.T = null;
                     break;
                 }
                 break;
             default:
-                xd0 xd0Var2 = this.b;
-                xd0Var2.c.setVisibility(8);
-                if (xd0Var2.d == animator) {
-                    xd0Var2.d = null;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                if (i7 >= org.telegram.messenger.g0.L(20.0f) && (ei0Var = passcodeActivity.T) != null) {
+                    ei0Var.run();
+                    passcodeActivity.T = null;
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.c.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
                 break;
         }
     }

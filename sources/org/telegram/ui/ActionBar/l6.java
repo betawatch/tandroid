@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.graphics.PorterDuff;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class l6 {
     public int a;
@@ -11,7 +11,7 @@ public final class l6 {
     public int c;
     public float d;
     public WeakReference e;
-    public e6 f;
+    public f6 f;
     public int g;
     public PorterDuff.Mode h;
     public Object i;
@@ -28,34 +28,34 @@ public final class l6 {
     }
 
     public final int b() {
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.b;
         int i11 = this.c;
         float f10 = this.d;
-        e6 e6Var = this.f;
-        if (e6Var == null) {
+        f6 f6Var = this.f;
+        if (f6Var == null) {
             WeakReference weakReference = this.e;
-            e6Var = weakReference != null ? (e6) weakReference.get() : null;
+            f6Var = weakReference != null ? (f6) weakReference.get() : null;
         }
-        return r6.Q(i3, i10, i11, f10, e6Var);
+        return r6.Q(i7, i10, i11, f10, f6Var);
     }
 
-    public final void c(int i3, int i10, int i11, float f10, e6 e6Var) {
-        this.a = i3;
+    public final void c(int i7, int i10, int i11, float f10, f6 f6Var) {
+        this.a = i7;
         this.b = i10;
         this.c = i11;
         this.d = f10;
-        if (e6Var == null) {
+        if (f6Var == null) {
             this.e = null;
             this.f = null;
             return;
         }
-        Class<?> cls = e6Var.getClass();
+        Class<?> cls = f6Var.getClass();
         if (cls.isSynthetic() || cls.getName().contains("$$Lambda") || cls.getName().contains("$$ExternalSynthetic")) {
             this.e = null;
-            this.f = e6Var;
+            this.f = f6Var;
         } else {
-            this.e = new WeakReference(e6Var);
+            this.e = new WeakReference(f6Var);
             this.f = null;
         }
     }

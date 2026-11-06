@@ -20,34 +20,34 @@ public final class s1 {
         this.c = "";
     }
 
-    public static int c(String str, char[] cArr, int i3) {
+    public static int c(String str, char[] cArr, int i7) {
         int length = str.length();
-        str.getChars(0, length, cArr, i3);
+        str.getChars(0, length, cArr, i7);
         return length;
     }
 
     public final String toString() {
         String[] strArr = this.d;
-        int i3 = this.e;
+        int i7 = this.e;
         String str = this.a;
         int length = str.length();
         String str2 = this.c;
         int length2 = str2.length() + length;
         if (length2 == 0) {
             b();
-            return i3 == 0 ? "" : strArr[0];
+            return i7 == 0 ? "" : strArr[0];
         }
         char[] cArr = new char[this.f + length2];
-        int c2 = c(str, cArr, 0);
-        if (i3 > 0) {
-            int c10 = c(strArr[0], cArr, c2) + c2;
-            for (int i10 = 1; i10 < i3; i10++) {
-                int c11 = c(this.b, cArr, c10) + c10;
-                c10 = c(strArr[i10], cArr, c11) + c11;
+        int c10 = c(str, cArr, 0);
+        if (i7 > 0) {
+            int c11 = c(strArr[0], cArr, c10) + c10;
+            for (int i10 = 1; i10 < i7; i10++) {
+                int c12 = c(this.b, cArr, c11) + c11;
+                c11 = c(strArr[i10], cArr, c12) + c12;
             }
-            c2 = c10;
+            c10 = c11;
         }
-        c(str2, cArr, c2);
+        c(str2, cArr, c10);
         return new String(cArr);
     }
 
@@ -57,9 +57,9 @@ public final class s1 {
         if (strArr == null) {
             this.d = new String[8];
         } else {
-            int i3 = this.e;
-            if (i3 == strArr.length) {
-                this.d = (String[]) Arrays.copyOf(strArr, i3 * 2);
+            int i7 = this.e;
+            if (i7 == strArr.length) {
+                this.d = (String[]) Arrays.copyOf(strArr, i7 * 2);
             }
             this.f = this.b.length() + this.f;
         }
@@ -74,15 +74,15 @@ public final class s1 {
         String[] strArr;
         if (this.e > 1) {
             char[] cArr = new char[this.f];
-            int c2 = c(this.d[0], cArr, 0);
-            int i3 = 1;
+            int c10 = c(this.d[0], cArr, 0);
+            int i7 = 1;
             do {
-                int c10 = c(this.b, cArr, c2) + c2;
-                c2 = c(this.d[i3], cArr, c10) + c10;
+                int c11 = c(this.b, cArr, c10) + c10;
+                c10 = c(this.d[i7], cArr, c11) + c11;
                 strArr = this.d;
-                strArr[i3] = null;
-                i3++;
-            } while (i3 < this.e);
+                strArr[i7] = null;
+                i7++;
+            } while (i7 < this.e);
             this.e = 1;
             strArr[0] = new String(cArr);
         }

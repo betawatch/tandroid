@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,30 +11,30 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
         public final int width;
 
-        public AspectRatio(int i3, int i10) {
-            this.width = i3;
+        public AspectRatio(int i7, int i10) {
+            this.width = i7;
             this.height = i10;
         }
     }
 
-    public VideoSource(long j10) {
-        super(j10);
+    public VideoSource(long j3) {
+        super(j3);
         this.videoProcessorLock = new Object();
         this.capturerObserver = new CapturerObserver() { // from class: org.webrtc.VideoSource.1
             @Override // org.webrtc.CapturerObserver
-            public void onCapturerStarted(boolean z10) {
-                VideoSource.this.nativeAndroidVideoTrackSource.setState(z10);
+            public void onCapturerStarted(boolean z9) {
+                VideoSource.this.nativeAndroidVideoTrackSource.setState(z9);
                 synchronized (VideoSource.this.videoProcessorLock) {
                     try {
-                        VideoSource.this.isCapturerRunning = z10;
+                        VideoSource.this.isCapturerRunning = z9;
                         if (VideoSource.this.videoProcessor != null) {
-                            VideoSource.this.videoProcessor.onCapturerStarted(z10);
+                            VideoSource.this.videoProcessor.onCapturerStarted(z9);
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -77,7 +77,7 @@ public class VideoSource extends MediaSource {
                 }
             }
         };
-        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j10);
+        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -90,9 +90,9 @@ public class VideoSource extends MediaSource {
         runWithReference(new s(6, this, videoFrame));
     }
 
-    public void adaptOutputFormat(int i3, int i10, int i11) {
-        int max = Math.max(i3, i10);
-        int min = Math.min(i3, i10);
+    public void adaptOutputFormat(int i7, int i10, int i11) {
+        int max = Math.max(i7, i10);
+        int min = Math.min(i7, i10);
         adaptOutputFormat(max, min, min, max, i11);
     }
 
@@ -110,8 +110,8 @@ public class VideoSource extends MediaSource {
         return getNativeMediaSource();
     }
 
-    public void setIsScreencast(boolean z10) {
-        this.nativeAndroidVideoTrackSource.setIsScreencast(z10);
+    public void setIsScreencast(boolean z9) {
+        this.nativeAndroidVideoTrackSource.setIsScreencast(z9);
     }
 
     public void setVideoProcessor(VideoProcessor videoProcessor) {
@@ -137,8 +137,8 @@ public class VideoSource extends MediaSource {
         }
     }
 
-    public void adaptOutputFormat(int i3, int i10, int i11, int i12, int i13) {
-        adaptOutputFormat(new AspectRatio(i3, i10), Integer.valueOf(i3 * i10), new AspectRatio(i11, i12), Integer.valueOf(i11 * i12), Integer.valueOf(i13));
+    public void adaptOutputFormat(int i7, int i10, int i11, int i12, int i13) {
+        adaptOutputFormat(new AspectRatio(i7, i10), Integer.valueOf(i7 * i10), new AspectRatio(i11, i12), Integer.valueOf(i11 * i12), Integer.valueOf(i13));
     }
 
     public void adaptOutputFormat(AspectRatio aspectRatio, Integer num, AspectRatio aspectRatio2, Integer num2, Integer num3) {

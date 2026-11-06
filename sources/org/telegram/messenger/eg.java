@@ -1,134 +1,114 @@
 package org.telegram.messenger;
 
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class eg implements Runnable {
+public final /* synthetic */ class eg implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ SharedPreferences c;
 
-    public /* synthetic */ eg(c1 c1Var, long j10, long j11, int i3, int i10, int i11) {
-        this.a = i11;
-        this.b = c1Var;
-        this.c = j10;
-        this.d = j11;
-        this.e = i3;
-        this.f = i10;
+    public /* synthetic */ eg(ui uiVar, SharedPreferences sharedPreferences, int i7) {
+        this.a = i7;
+        this.b = uiVar;
+        this.c = sharedPreferences;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        SQLiteCursor queryFinalized;
-        boolean z10;
-        int i3;
-        int i10;
-        long j10;
-        long j11;
-        int i11;
-        int i12;
-        int i13;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                li liVar = (li) this.b;
-                int i14 = this.f;
-                long j12 = this.c;
-                long j13 = this.d;
-                int i15 = this.e;
-                if (j12 != 0) {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = liVar.getMessagesStorage().b;
-                        Locale locale = Locale.US;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT count, old FROM media_counts_topics WHERE uid = " + j13 + " AND topic_id = " + j12 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
-                    } catch (Exception e10) {
-                        e = e10;
-                        z10 = true;
-                        a8.g(e, z10);
-                        return;
-                    }
-                } else {
-                    try {
-                        SQLiteDatabase sQLiteDatabase2 = liVar.getMessagesStorage().b;
-                        Locale locale2 = Locale.US;
-                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT count, old FROM media_counts_v2 WHERE uid = " + j13 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
-                    } catch (Exception e11) {
-                        e = e11;
-                        z10 = true;
-                        a8.g(e, z10);
-                        return;
-                    }
-                }
-                if (queryFinalized.next()) {
-                    i3 = queryFinalized.intValue(0);
-                    i10 = queryFinalized.intValue(1);
-                } else {
-                    i3 = -1;
-                    i10 = 0;
-                }
-                queryFinalized.dispose();
-                if (i3 == -1 && m5.C(j13)) {
-                    SQLiteDatabase sQLiteDatabase3 = liVar.getMessagesStorage().b;
-                    Locale locale3 = Locale.US;
-                    SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT COUNT(mid) FROM media_v4 WHERE uid = " + j13 + " AND type = " + i15 + " LIMIT 1", new Object[0]);
-                    if (queryFinalized2.next()) {
-                        i3 = queryFinalized2.intValue(0);
-                    }
-                    queryFinalized2.dispose();
-                    if (i3 != -1) {
-                        i12 = i3;
-                        i11 = i15;
-                        j11 = j12;
-                        liVar.H1(j13, j11, i11, i12);
-                        j10 = j13;
-                    } else {
-                        j10 = j13;
-                        j11 = j12;
-                        i11 = i15;
-                        i12 = i3;
-                    }
-                    i3 = i12;
-                } else {
-                    j10 = j13;
-                    j11 = j12;
-                    i11 = i15;
-                }
-                g0.h3(new ei(liVar, j10, true, i3, i11, i10, j11, i14));
+                g0.h3(new em(this.b, tL_error, tLObject, this.c, 13));
                 break;
             case 1:
-                li liVar2 = (li) this.b;
-                long j14 = this.d;
-                int i16 = this.e;
-                int i17 = this.f;
-                long j15 = this.c;
-                try {
-                    SQLitePreparedStatement executeFast = j15 != 0 ? liVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_topics VALUES(?, ?, ?, ?, ?)") : liVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_counts_v2 VALUES(?, ?, ?, ?)");
-                    executeFast.requery();
-                    executeFast.bindLong(1, j14);
-                    if (j15 != 0) {
-                        executeFast.bindLong(2, j15);
-                        i13 = 3;
-                    } else {
-                        i13 = 2;
+                final int i7 = 0;
+                final ui uiVar = this.b;
+                final SharedPreferences sharedPreferences = this.c;
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.gg
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                ui uiVar2 = uiVar;
+                                uiVar2.getClass();
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_emojiList) {
+                                    SerializedData serializedData = new SerializedData(tLObject2.getObjectSize());
+                                    tLObject2.serializeToStream(serializedData);
+                                    SharedPreferences.Editor edit = sharedPreferences.edit();
+                                    uiVar2.M1 = (TLRPC.TL_emojiList) tLObject2;
+                                    edit.putString("restrictedstatuses", Utilities.f(serializedData.toByteArray()));
+                                    edit.putLong("restrictedstatuses_last_check", System.currentTimeMillis());
+                                    edit.apply();
+                                    break;
+                                }
+                                break;
+                            default:
+                                ui uiVar3 = uiVar;
+                                uiVar3.getClass();
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.TL_emojiList) {
+                                    SerializedData serializedData2 = new SerializedData(tLObject3.getObjectSize());
+                                    tLObject3.serializeToStream(serializedData2);
+                                    SharedPreferences.Editor edit2 = sharedPreferences.edit();
+                                    uiVar3.L1 = (TLRPC.TL_emojiList) tLObject3;
+                                    edit2.putString("replyicons", Utilities.f(serializedData2.toByteArray()));
+                                    edit2.putLong("replyicons_last_check", System.currentTimeMillis());
+                                    edit2.apply();
+                                    break;
+                                }
+                                break;
+                        }
                     }
-                    executeFast.bindInteger(i13, i16);
-                    executeFast.bindInteger(i13 + 1, i17);
-                    executeFast.bindInteger(i13 + 2, 0);
-                    executeFast.step();
-                    executeFast.dispose();
-                    break;
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                    return;
-                }
+                });
+                break;
             default:
-                ((qr) this.b).e2(-this.c, this.d, this.e, this.f);
+                final ui uiVar2 = this.b;
+                uiVar2.getClass();
+                final int i10 = 1;
+                final SharedPreferences sharedPreferences2 = this.c;
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.gg
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                ui uiVar22 = uiVar2;
+                                uiVar22.getClass();
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_emojiList) {
+                                    SerializedData serializedData = new SerializedData(tLObject2.getObjectSize());
+                                    tLObject2.serializeToStream(serializedData);
+                                    SharedPreferences.Editor edit = sharedPreferences2.edit();
+                                    uiVar22.M1 = (TLRPC.TL_emojiList) tLObject2;
+                                    edit.putString("restrictedstatuses", Utilities.f(serializedData.toByteArray()));
+                                    edit.putLong("restrictedstatuses_last_check", System.currentTimeMillis());
+                                    edit.apply();
+                                    break;
+                                }
+                                break;
+                            default:
+                                ui uiVar3 = uiVar2;
+                                uiVar3.getClass();
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.TL_emojiList) {
+                                    SerializedData serializedData2 = new SerializedData(tLObject3.getObjectSize());
+                                    tLObject3.serializeToStream(serializedData2);
+                                    SharedPreferences.Editor edit2 = sharedPreferences2.edit();
+                                    uiVar3.L1 = (TLRPC.TL_emojiList) tLObject3;
+                                    edit2.putString("replyicons", Utilities.f(serializedData2.toByteArray()));
+                                    edit2.putLong("replyicons_last_check", System.currentTimeMillis());
+                                    edit2.apply();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

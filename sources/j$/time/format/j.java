@@ -17,10 +17,10 @@ public final class j implements f {
     public j(String str, String str2) {
         Objects.requireNonNull(str, "pattern");
         Objects.requireNonNull(str2, "noOffsetText");
-        for (int i3 = 0; i3 < 22; i3++) {
-            if (d[i3].equals(str)) {
-                this.b = i3;
-                this.c = i3 % 11;
+        for (int i7 = 0; i7 < 22; i7++) {
+            if (d[i7].equals(str)) {
+                this.b = i7;
+                this.c = i7 % 11;
                 this.a = str2;
                 return;
             }
@@ -31,25 +31,25 @@ public final class j implements f {
     @Override // j$.time.format.f
     public final boolean j(r rVar, StringBuilder sb2) {
         Long a10 = rVar.a(j$.time.temporal.a.OFFSET_SECONDS);
-        boolean z10 = false;
+        boolean z9 = false;
         if (a10 == null) {
             return false;
         }
         long longValue = a10.longValue();
-        int i3 = (int) longValue;
-        if (longValue != i3) {
+        int i7 = (int) longValue;
+        if (longValue != i7) {
             throw new ArithmeticException();
         }
         String str = this.a;
-        if (i3 == 0) {
+        if (i7 == 0) {
             sb2.append(str);
             return true;
         }
-        int abs = Math.abs((i3 / 3600) % 100);
-        int abs2 = Math.abs((i3 / 60) % 60);
-        int abs3 = Math.abs(i3 % 60);
+        int abs = Math.abs((i7 / 3600) % 100);
+        int abs2 = Math.abs((i7 / 60) % 60);
+        int abs3 = Math.abs(i7 % 60);
         int length = sb2.length();
-        sb2.append(i3 < 0 ? "-" : "+");
+        sb2.append(i7 < 0 ? "-" : "+");
         if (this.b >= 11 && abs < 10) {
             sb2.append((char) (abs + 48));
         } else {
@@ -61,9 +61,9 @@ public final class j implements f {
             abs += abs2;
             if (i10 == 7 || i10 == 8 || (i10 >= 5 && abs3 > 0)) {
                 if (i10 > 0 && i10 % 2 == 0) {
-                    z10 = true;
+                    z9 = true;
                 }
-                a(z10, abs3, sb2);
+                a(z9, abs3, sb2);
                 abs += abs3;
             }
         }
@@ -74,10 +74,10 @@ public final class j implements f {
         return true;
     }
 
-    public static void a(boolean z10, int i3, StringBuilder sb2) {
-        sb2.append(z10 ? ":" : "");
-        sb2.append((char) ((i3 / 10) + 48));
-        sb2.append((char) ((i3 % 10) + 48));
+    public static void a(boolean z9, int i7, StringBuilder sb2) {
+        sb2.append(z9 ? ":" : "");
+        sb2.append((char) ((i7 / 10) + 48));
+        sb2.append((char) ((i7 % 10) + 48));
     }
 
     public final String toString() {

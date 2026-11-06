@@ -19,13 +19,13 @@ public enum h implements q {
     }
 
     @Override // j$.time.temporal.q
-    public final Temporal j(Temporal temporal, long j10) {
-        int i3 = b.a[ordinal()];
-        if (i3 == 1) {
-            return temporal.c(j$.com.android.tools.r8.a.N(temporal.j(r0), j10), i.c);
+    public final Temporal j(Temporal temporal, long j3) {
+        int i7 = b.a[ordinal()];
+        if (i7 == 1) {
+            return temporal.c(j$.com.android.tools.r8.a.N(temporal.j(r0), j3), i.c);
         }
-        if (i3 == 2) {
-            return temporal.d(j10 / 4, ChronoUnit.YEARS).d((j10 % 4) * 3, ChronoUnit.MONTHS);
+        if (i7 == 2) {
+            return temporal.d(j3 / 4, ChronoUnit.YEARS).d((j3 % 4) * 3, ChronoUnit.MONTHS);
         }
         throw new IllegalStateException("Unreachable");
     }
@@ -35,12 +35,12 @@ public enum h implements q {
         if (temporal.getClass() != temporal2.getClass()) {
             return temporal.g(temporal2, this);
         }
-        int i3 = b.a[ordinal()];
-        if (i3 == 1) {
+        int i7 = b.a[ordinal()];
+        if (i7 == 1) {
             g gVar = i.c;
             return j$.com.android.tools.r8.a.T(temporal2.y(gVar), temporal.y(gVar));
         }
-        if (i3 == 2) {
+        if (i7 == 2) {
             return temporal.g(temporal2, ChronoUnit.MONTHS) / 3;
         }
         throw new IllegalStateException("Unreachable");

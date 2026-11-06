@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g3 extends v1 {
     private static final g3 zzb;
@@ -73,8 +73,8 @@ public final class g3 extends v1 {
         g3Var.zze = 6;
     }
 
-    public static /* synthetic */ void t(g3 g3Var, int i3) {
-        g3Var.zzg = i3 - 1;
+    public static /* synthetic */ void t(g3 g3Var, int i7) {
+        g3Var.zzg = i7 - 1;
         g3Var.zzd |= 1;
     }
 
@@ -83,8 +83,8 @@ public final class g3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i3) {
-        int i10 = i3 - 1;
+    public final Object d(int i7) {
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

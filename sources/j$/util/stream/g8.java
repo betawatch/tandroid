@@ -12,15 +12,15 @@ public final class g8 extends d5 {
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a.o(-1L);
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
+    public final void accept(int i7) {
         if (this.b) {
             IntPredicate intPredicate = null;
-            intPredicate.test(i3);
+            intPredicate.test(i7);
             throw null;
         }
     }

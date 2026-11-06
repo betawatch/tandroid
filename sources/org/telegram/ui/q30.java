@@ -1,58 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class q30 extends org.telegram.ui.Components.voip.k {
-    public final /* synthetic */ int h = 1;
-    public final /* synthetic */ org.telegram.ui.Components.sj0 n;
+public final class q30 extends v4.k {
+    public float F;
+    public ValueAnimator G;
+    public final HashSet H = new HashSet();
+    public final HashSet I = new HashSet();
+    public float J;
+    public float K;
+    public final /* synthetic */ c40 L;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q30(a40 a40Var, Context context) {
-        super(context, true);
-        this.n = a40Var;
+    public q30(c40 c40Var) {
+        this.L = c40Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.k, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.h) {
-            case 0:
-                super.onAttachedToWindow();
-                x30 x30Var = ((r30) this.n).N;
-                if (x30Var.I1.getVisibility() == 0 && x30Var.H4) {
-                    x30.J0(x30Var, this, true);
-                    break;
-                }
-                break;
-            default:
-                super.onAttachedToWindow();
-                a40 a40Var = (a40) this.n;
-                if (a40Var.r && getParticipant() != null) {
-                    a40Var.E(this, true);
-                    break;
-                }
-                break;
+    @Override // v4.k, v4.l0
+    public final void g() {
+        super.g();
+        this.I.clear();
+        this.H.clear();
+        this.K = Float.MAX_VALUE;
+        this.L.H1.invalidate();
+    }
+
+    @Override // v4.k, v4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.q.isEmpty();
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
         }
-    }
-
-    @Override // org.telegram.ui.Components.voip.k, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.h) {
-            case 0:
-                super.onDetachedFromWindow();
-                x30.J0(((r30) this.n).N, this, false);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                ((a40) this.n).E(this, false);
-                break;
+        if (!isEmpty || !isEmpty2 || !isEmpty3) {
+            this.F = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new a3(this, 14));
+            this.G.addListener(new d30(this, 1));
+            this.G.setDuration(350L);
+            this.G.setInterpolator(org.telegram.ui.Components.xq.f);
+            this.G.start();
+            c40 c40Var = this.L;
+            c40Var.H1.invalidate();
+            c40Var.R3.invalidate();
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q30(r30 r30Var, Context context) {
-        super(context, false);
-        this.n = r30Var;
+        super.m();
     }
 }

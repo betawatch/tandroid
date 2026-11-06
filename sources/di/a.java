@@ -1,70 +1,131 @@
 package di;
 
-import b8.zb;
-import c4.f;
-import h2.p;
-import h2.q;
-import h2.r;
-import java.nio.ByteBuffer;
-import org.telegram.messenger.hs;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import c8.ha;
+import c8.ka;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qs;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a {
-    public boolean a;
+public final class a extends FrameLayout {
+    public final ImageView a;
+    public final org.telegram.ui.Components.i6 b;
+    public final Paint c;
+    public final Paint d;
+    public boolean e;
+    public int f;
+    public float h;
+    public ValueAnimator n;
 
-    public a(r rVar, q qVar) {
-        int i3 = qVar.a;
-        ByteBuffer byteBuffer = qVar.b;
-        zb.f(i3 == 6 || i3 == 3);
-        int min = Math.min(4, byteBuffer.remaining());
-        byte[] bArr = new byte[min];
-        byteBuffer.asReadOnlyBuffer().get(bArr);
-        f fVar = new f(bArr, min);
-        if (rVar.a) {
-            throw new p();
-        }
-        if (fVar.i()) {
-            this.a = false;
-            return;
-        }
-        int j10 = fVar.j(2);
-        boolean i10 = fVar.i();
-        if (rVar.b) {
-            throw new p();
-        }
-        if (!i10) {
-            this.a = true;
-            return;
-        }
-        boolean i11 = (j10 == 3 || j10 == 0) ? true : fVar.i();
-        fVar.K();
-        if (!rVar.d) {
-            throw new p();
-        }
-        if (fVar.i()) {
-            if (!rVar.e) {
-                throw new p();
-            }
-            fVar.K();
-        }
-        if (rVar.c) {
-            throw new p();
-        }
-        if (j10 != 3) {
-            fVar.K();
-        }
-        fVar.L(rVar.f);
-        if (j10 != 2 && j10 != 0 && !i11) {
-            fVar.L(3);
-        }
-        this.a = ((j10 == 3 || j10 == 0) ? hs.e4 : fVar.j(8)) != 0;
+    public a(Context context, gh.b bVar) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.h = 1.0f;
+        ka.a(this);
+        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true);
+        this.b = i6Var;
+        i6Var.u(-9866632);
+        i6Var.w(org.telegram.messenger.g0.L(9.0f));
+        i6Var.setCallback(this);
+        i6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        i6Var.J = true;
+        paint.setColor(-14670806);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        FrameLayout frameLayout = new FrameLayout(context);
+        dh.j jVar = new dh.j();
+        jVar.a = bVar;
+        jVar.a();
+        jVar.g.setColor(-14670806);
+        jVar.invalidateSelf();
+        jVar.f = org.telegram.messenger.g0.L(1.0f);
+        frameLayout.setBackground(jVar);
+        addView(frameLayout, ha.e(40, 40, 17));
+        ImageView e10 = org.telegram.messenger.camera.q.e(context, R.drawable.menu_comments);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        e10.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(e10, ha.e(20, 20, 17));
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setImageResource(R.drawable.menu_comments_arrow);
+        imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
+        frameLayout.addView(imageView, ha.e(20, 20, 17));
+        imageView.setPivotX(org.telegram.messenger.g0.L(10.27f));
+        imageView.setPivotY(org.telegram.messenger.g0.L(9.58f));
     }
 
-    public void a(boolean z10) {
-        if (this.a == z10) {
+    public final void a(boolean z9, boolean z10) {
+        if (z10 && this.e == z9) {
             return;
         }
-        this.a = z10;
+        this.e = z9;
+        ImageView imageView = this.a;
+        if (z10) {
+            org.telegram.messenger.camera.q.l(imageView.animate().rotation(z9 ? 0.0f : 180.0f), xq.h, 420L);
+        } else {
+            imageView.setRotation(z9 ? 0.0f : 180.0f);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), qs.e4, 31);
+        super.dispatchDraw(canvas);
+        float f10 = this.h;
+        org.telegram.ui.Components.i6 i6Var = this.b;
+        float i7 = i6Var.i() * f10;
+        float max = Math.max(org.telegram.messenger.g0.L(12.0f), i6Var.c() + org.telegram.messenger.g0.L(6.0f));
+        canvas.save();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
+        canvas.scale(i7, i7, rectF.centerX(), rectF.centerY());
+        rectF.inset(-org.telegram.messenger.g0.L(2.0f), -org.telegram.messenger.g0.L(2.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
+        rectF.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
+        canvas.translate(((max - i6Var.c()) / 2.0f) + rectF.left, org.telegram.messenger.g0.L(7.0f));
+        i6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    public void setCount(int i7) {
+        this.b.t(i7 <= 0 ? "" : hd.E(i7, ','), true, true);
+        if (this.f != i7) {
+            ValueAnimator valueAnimator = this.n;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.n = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.n = ofFloat;
+            ofFloat.addUpdateListener(new ah.h(this, 11));
+            this.n.addListener(new bi.t5(this, 6));
+            org.telegram.messenger.camera.q.i(2.5f, this.n);
+            this.n.setDuration(200L);
+            this.n.start();
+            this.f = i7;
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.b || super.verifyDrawable(drawable);
     }
 }

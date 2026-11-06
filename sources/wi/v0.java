@@ -14,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class v0 {
     public static final float[] n = {-1.0f, -1.0f, 0.0f, 0.0f, 1.0f, -1.0f, 1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
@@ -32,11 +32,11 @@ public final class v0 {
     public EGLContext g = EGL14.EGL_NO_CONTEXT;
     public EGLSurface h = EGL14.EGL_NO_SURFACE;
 
-    public v0(Surface surface, int i3) {
-        this.a = i3;
-        FloatBuffer g7 = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(64));
-        this.d = g7;
-        g7.put(n).position(0);
+    public v0(Surface surface, int i7) {
+        this.a = i7;
+        FloatBuffer g10 = org.telegram.messenger.camera.q.g(ByteBuffer.allocateDirect(64));
+        this.d = g10;
+        g10.put(n).position(0);
         HandlerThread handlerThread = new HandlerThread("RoundVideoTranscoderFrames");
         this.e = handlerThread;
         handlerThread.start();
@@ -54,7 +54,7 @@ public final class v0 {
             GLES20.glTexParameteri(36197, 10243, 33071);
             SurfaceTexture surfaceTexture = new SurfaceTexture(this.j);
             this.k = surfaceTexture;
-            surfaceTexture.setOnFrameAvailableListener(new q(this, 2), new Handler(handlerThread.getLooper()));
+            surfaceTexture.setOnFrameAvailableListener(new r(this, 2), new Handler(handlerThread.getLooper()));
             this.l = new Surface(this.k);
         } catch (RuntimeException e10) {
             d();
@@ -62,8 +62,8 @@ public final class v0 {
         }
     }
 
-    public static int a(int i3, String str) {
-        int glCreateShader = GLES20.glCreateShader(i3);
+    public static int a(int i7, String str) {
+        int glCreateShader = GLES20.glCreateShader(i7);
         GLES20.glShaderSource(glCreateShader, str);
         GLES20.glCompileShader(glCreateShader);
         int[] iArr = new int[1];
@@ -73,7 +73,7 @@ public final class v0 {
         }
         String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
         GLES20.glDeleteShader(glCreateShader);
-        throw new IllegalStateException(t4.c.f("Unable to compile shader: ", glGetShaderInfoLog));
+        throw new IllegalStateException(rf.b.i("Unable to compile shader: ", glGetShaderInfoLog));
     }
 
     public static int b() {
@@ -92,7 +92,7 @@ public final class v0 {
         }
         String glGetProgramInfoLog = GLES20.glGetProgramInfoLog(glCreateProgram);
         GLES20.glDeleteProgram(glCreateProgram);
-        throw new IllegalStateException(t4.c.f("Unable to link program: ", glGetProgramInfoLog));
+        throw new IllegalStateException(rf.b.i("Unable to link program: ", glGetProgramInfoLog));
     }
 
     public final void c(Surface surface) {
@@ -127,9 +127,9 @@ public final class v0 {
         if (eGLDisplay != EGL14.EGL_NO_DISPLAY) {
             EGLSurface eGLSurface = this.h;
             EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.g);
-            int i3 = this.i;
-            if (i3 != 0) {
-                GLES20.glDeleteProgram(i3);
+            int i7 = this.i;
+            if (i7 != 0) {
+                GLES20.glDeleteProgram(i7);
             }
             int i10 = this.j;
             if (i10 != 0) {

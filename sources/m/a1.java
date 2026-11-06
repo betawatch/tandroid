@@ -1,18 +1,563 @@
 package m;
 
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.R;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.text.InputFilter;
+import android.text.TextDirectionHeuristic;
+import android.text.TextDirectionHeuristics;
+import android.util.AttributeSet;
+import android.view.ActionMode;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
+import c8.fc;
+import c8.h9;
+import c8.lc;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a1 {
-    public static StaticLayout a(CharSequence charSequence, Layout.Alignment alignment, int i3, TextView textView, TextPaint textPaint) {
-        return new StaticLayout(charSequence, textPaint, i3, alignment, textView.getLineSpacingMultiplier(), textView.getLineSpacingExtra(), textView.getIncludeFontPadding());
+public class a1 extends TextView implements u0.k {
+    public final h2.c a;
+    public final x0 b;
+    public final z c;
+    public u d;
+    public boolean e;
+    public g6.d0 f;
+    public Future h;
+
+    public a1(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, R.attr.textViewStyle);
     }
 
-    public static int b(TextView textView) {
-        return textView.getMaxLines();
+    private u getEmojiTextViewHelper() {
+        if (this.d == null) {
+            this.d = new u(this);
+        }
+        return this.d;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.b();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMaxTextSize() {
+        if (t3.b) {
+            return super.getAutoSizeMaxTextSize();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.e);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMinTextSize() {
+        if (t3.b) {
+            return super.getAutoSizeMinTextSize();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.d);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeStepGranularity() {
+        if (t3.b) {
+            return super.getAutoSizeStepGranularity();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.c);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int[] getAutoSizeTextAvailableSizes() {
+        if (t3.b) {
+            return super.getAutoSizeTextAvailableSizes();
+        }
+        x0 x0Var = this.b;
+        return x0Var != null ? x0Var.i.f : new int[0];
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeTextType() {
+        if (t3.b) {
+            return super.getAutoSizeTextType() == 1 ? 1 : 0;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return x0Var.i.a;
+        }
+        return 0;
+    }
+
+    @Override // android.widget.TextView
+    public ActionMode.Callback getCustomSelectionActionModeCallback() {
+        return lc.d(super.getCustomSelectionActionModeCallback());
+    }
+
+    @Override // android.widget.TextView
+    public int getFirstBaselineToTopHeight() {
+        return getPaddingTop() - getPaint().getFontMetricsInt().top;
+    }
+
+    @Override // android.widget.TextView
+    public int getLastBaselineToBottomHeight() {
+        return getPaddingBottom() + getPaint().getFontMetricsInt().bottom;
+    }
+
+    public y0 getSuperCaller() {
+        if (this.f == null) {
+            int i7 = Build.VERSION.SDK_INT;
+            if (i7 >= 28) {
+                this.f = new z0(this);
+            } else if (i7 >= 26) {
+                this.f = new g6.d0(this, 16);
+            }
+        }
+        return this.f;
+    }
+
+    public ColorStateList getSupportBackgroundTintList() {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.v();
+        }
+        return null;
+    }
+
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.w();
+        }
+        return null;
+    }
+
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        return this.b.d();
+    }
+
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        return this.b.e();
+    }
+
+    @Override // android.widget.TextView
+    public CharSequence getText() {
+        Future future = this.h;
+        if (future != null) {
+            try {
+                this.h = null;
+                if (future.get() != null) {
+                    throw new ClassCastException();
+                }
+                if (Build.VERSION.SDK_INT >= 29) {
+                    throw null;
+                }
+                lc.a(this);
+                throw null;
+            } catch (InterruptedException | ExecutionException unused) {
+            }
+        }
+        return super.getText();
+    }
+
+    @Override // android.widget.TextView
+    public TextClassifier getTextClassifier() {
+        z zVar;
+        if (Build.VERSION.SDK_INT >= 28 || (zVar = this.c) == null) {
+            return super.getTextClassifier();
+        }
+        TextClassifier textClassifier = (TextClassifier) zVar.c;
+        return textClassifier == null ? r0.a((TextView) zVar.b) : textClassifier;
+    }
+
+    public p0.c getTextMetricsParamsCompat() {
+        return lc.a(this);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        this.b.getClass();
+        x0.h(editorInfo, onCreateInputConnection, this);
+        h9.a(editorInfo, onCreateInputConnection, this);
+        return onCreateInputConnection;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        x0 x0Var = this.b;
+        if (x0Var == null || t3.b) {
+            return;
+        }
+        x0Var.i.a();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        Future future = this.h;
+        if (future != null) {
+            try {
+                this.h = null;
+                if (future.get() != null) {
+                    throw new ClassCastException();
+                }
+                if (Build.VERSION.SDK_INT >= 29) {
+                    throw null;
+                }
+                lc.a(this);
+                throw null;
+            } catch (InterruptedException | ExecutionException unused) {
+            }
+        }
+        super.onMeasure(i7, i10);
+    }
+
+    @Override // android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        super.onTextChanged(charSequence, i7, i10, i11);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            h1 h1Var = x0Var.i;
+            if (t3.b || !h1Var.f()) {
+                return;
+            }
+            h1Var.a();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setAllCaps(boolean z9) {
+        super.setAllCaps(z9);
+        getEmojiTextViewHelper().b(z9);
+    }
+
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithConfiguration(int i7, int i10, int i11, int i12) {
+        if (t3.b) {
+            super.setAutoSizeTextTypeUniformWithConfiguration(i7, i10, i11, i12);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.i(i7, i10, i11, i12);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i7) {
+        if (t3.b) {
+            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i7);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.j(iArr, i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setAutoSizeTextTypeWithDefaults(int i7) {
+        if (t3.b) {
+            super.setAutoSizeTextTypeWithDefaults(i7);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.k(i7);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.y();
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundResource(int i7) {
+        super.setBackgroundResource(i7);
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.z(i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesWithIntrinsicBounds(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
+        super.setCustomSelectionActionModeCallback(lc.e(callback, this));
+    }
+
+    public void setEmojiCompatEnabled(boolean z9) {
+        getEmojiTextViewHelper().c(z9);
+    }
+
+    @Override // android.widget.TextView
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(((fc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    }
+
+    @Override // android.widget.TextView
+    public void setFirstBaselineToTopHeight(int i7) {
+        if (Build.VERSION.SDK_INT >= 28) {
+            getSuperCaller().P(i7);
+        } else {
+            lc.b(this, i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setLastBaselineToBottomHeight(int i7) {
+        if (Build.VERSION.SDK_INT >= 28) {
+            getSuperCaller().B(i7);
+        } else {
+            lc.c(this, i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setLineHeight(int i7) {
+        if (i7 < 0) {
+            throw new IllegalArgumentException();
+        }
+        if (i7 != getPaint().getFontMetricsInt(null)) {
+            setLineSpacing(i7 - r0, 1.0f);
+        }
+    }
+
+    public void setPrecomputedText(p0.d dVar) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            throw null;
+        }
+        lc.a(this);
+        throw null;
+    }
+
+    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.D(colorStateList);
+        }
+    }
+
+    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.E(mode);
+        }
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
+        x0 x0Var = this.b;
+        x0Var.l(colorStateList);
+        x0Var.b();
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
+        x0 x0Var = this.b;
+        x0Var.m(mode);
+        x0Var.b();
+    }
+
+    @Override // android.widget.TextView
+    public final void setTextAppearance(Context context, int i7) {
+        super.setTextAppearance(context, i7);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.g(context, i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setTextClassifier(TextClassifier textClassifier) {
+        z zVar;
+        if (Build.VERSION.SDK_INT >= 28 || (zVar = this.c) == null) {
+            super.setTextClassifier(textClassifier);
+        } else {
+            zVar.c = textClassifier;
+        }
+    }
+
+    public void setTextFuture(Future<p0.d> future) {
+        this.h = future;
+        if (future != null) {
+            requestLayout();
+        }
+    }
+
+    public void setTextMetricsParamsCompat(p0.c cVar) {
+        TextDirectionHeuristic textDirectionHeuristic;
+        TextDirectionHeuristic textDirectionHeuristic2 = cVar.b;
+        TextDirectionHeuristic textDirectionHeuristic3 = TextDirectionHeuristics.FIRSTSTRONG_RTL;
+        int i7 = 1;
+        if (textDirectionHeuristic2 != textDirectionHeuristic3 && textDirectionHeuristic2 != (textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR)) {
+            if (textDirectionHeuristic2 == TextDirectionHeuristics.ANYRTL_LTR) {
+                i7 = 2;
+            } else if (textDirectionHeuristic2 == TextDirectionHeuristics.LTR) {
+                i7 = 3;
+            } else if (textDirectionHeuristic2 == TextDirectionHeuristics.RTL) {
+                i7 = 4;
+            } else if (textDirectionHeuristic2 == TextDirectionHeuristics.LOCALE) {
+                i7 = 5;
+            } else if (textDirectionHeuristic2 == textDirectionHeuristic) {
+                i7 = 6;
+            } else if (textDirectionHeuristic2 == textDirectionHeuristic3) {
+                i7 = 7;
+            }
+        }
+        setTextDirection(i7);
+        getPaint().set(cVar.a);
+        setBreakStrategy(cVar.c);
+        setHyphenationFrequency(cVar.d);
+    }
+
+    @Override // android.widget.TextView
+    public final void setTextSize(int i7, float f10) {
+        boolean z9 = t3.b;
+        if (z9) {
+            super.setTextSize(i7, f10);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            h1 h1Var = x0Var.i;
+            if (z9 || h1Var.f()) {
+                return;
+            }
+            h1Var.g(f10, i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setTypeface(Typeface typeface, int i7) {
+        Typeface typeface2;
+        if (this.e) {
+            return;
+        }
+        if (typeface == null || i7 <= 0) {
+            typeface2 = null;
+        } else {
+            Context context = getContext();
+            c8.j0 j0Var = i0.e.a;
+            if (context == null) {
+                throw new IllegalArgumentException("Context cannot be null");
+            }
+            typeface2 = Typeface.create(typeface, i7);
+        }
+        this.e = true;
+        if (typeface2 != null) {
+            typeface = typeface2;
+        }
+        try {
+            super.setTypeface(typeface, i7);
+        } finally {
+            this.e = false;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(Context context, AttributeSet attributeSet, int i7) {
+        super(context, attributeSet, i7);
+        b3.a(context);
+        this.e = false;
+        this.f = null;
+        a3.a(this, getContext());
+        h2.c cVar = new h2.c(this);
+        this.a = cVar;
+        cVar.x(attributeSet, i7);
+        x0 x0Var = new x0(this);
+        this.b = x0Var;
+        x0Var.f(attributeSet, i7);
+        x0Var.b();
+        z zVar = new z();
+        zVar.b = this;
+        this.c = zVar;
+        getEmojiTextViewHelper().a(attributeSet, i7);
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i7, int i10, int i11, int i12) {
+        Context context = getContext();
+        setCompoundDrawablesRelativeWithIntrinsicBounds(i7 != 0 ? b5.a.b(context, i7) : null, i10 != 0 ? b5.a.b(context, i10) : null, i11 != 0 ? b5.a.b(context, i11) : null, i12 != 0 ? b5.a.b(context, i12) : null);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesWithIntrinsicBounds(int i7, int i10, int i11, int i12) {
+        Context context = getContext();
+        setCompoundDrawablesWithIntrinsicBounds(i7 != 0 ? b5.a.b(context, i7) : null, i10 != 0 ? b5.a.b(context, i10) : null, i11 != 0 ? b5.a.b(context, i11) : null, i12 != 0 ? b5.a.b(context, i12) : null);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
     }
 }

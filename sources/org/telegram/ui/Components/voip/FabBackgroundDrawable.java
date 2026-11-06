@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class FabBackgroundDrawable extends Drawable {
     public final Paint a = new Paint(1);
@@ -58,13 +58,13 @@ public class FabBackgroundDrawable extends Drawable {
         new Canvas(this.c).drawCircle(f10, f10, r5 - org.telegram.messenger.g0.L(4.0f), new Paint(1));
     }
 
-    public void setColor(int i3) {
-        this.a.setColor(i3);
+    public void setColor(int i7) {
+        this.a.setColor(i7);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

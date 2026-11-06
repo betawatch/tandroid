@@ -1,44 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ja extends u4.j0 {
-    public final /* synthetic */ u4.j0 a;
-    public final /* synthetic */ ka b;
+public final class ja extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ rt0 F1;
+    public final /* synthetic */ na G1;
 
-    public ja(ka kaVar, u4.j0 j0Var) {
-        this.b = kaVar;
-        this.a = j0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja(na naVar, Context context, rt0 rt0Var) {
+        super(context, null);
+        this.G1 = naVar;
+        this.F1 = rt0Var;
     }
 
-    @Override // u4.j0
-    public final void a() {
-        this.a.a();
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        na naVar = this.G1;
+        if (naVar.C1 && naVar.D1) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // u4.j0
-    public final void b(int i3, int i10) {
-        this.a.b(i3 + (!((ma) this.b.f).H1 ? 1 : 0), i10);
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.F1.invalidate();
+        }
     }
 
-    @Override // u4.j0
-    public final void c(int i3, int i10, Object obj) {
-        this.a.c(i3 + (!((ma) this.b.f).H1 ? 1 : 0), i10, obj);
-    }
-
-    @Override // u4.j0
-    public final void d(int i3, int i10) {
-        this.a.d(i3 + (!((ma) this.b.f).H1 ? 1 : 0), i10);
-    }
-
-    @Override // u4.j0
-    public final void e(int i3, int i10) {
-        int i11 = !((ma) this.b.f).H1 ? 1 : 0;
-        this.a.e(i3 + i11, i10 + i11);
-    }
-
-    @Override // u4.j0
-    public final void f(int i3, int i10) {
-        this.a.f(i3 + (!((ma) this.b.f).H1 ? 1 : 0), i10);
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.G1.a1();
     }
 }

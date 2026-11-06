@@ -1,7 +1,63 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.zg0;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface jc {
-    void a(String str);
+public final class jc {
+    public String a;
+    public final boolean b;
+    public Bitmap c;
+    public Drawable d;
+    public int e;
+
+    public jc(Bitmap bitmap, String str, int i7) {
+        this.c = bitmap;
+        this.a = str;
+        this.e = i7;
+        if (str != null) {
+            gc.D().H(this.a);
+        }
+    }
+
+    public final void a() {
+        Bitmap bitmap;
+        if (this.a == null) {
+            if (this.b && (bitmap = this.c) != null) {
+                bitmap.recycle();
+            }
+            this.c = null;
+            this.d = null;
+            return;
+        }
+        boolean p10 = gc.D().p(this.a);
+        if (!gc.D().J(this.a, false) && p10) {
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            } else {
+                Drawable drawable = this.d;
+                if (drawable != null) {
+                    if (drawable instanceof zg0) {
+                        ((zg0) drawable).C(false);
+                    } else if (drawable instanceof org.telegram.ui.Components.v5) {
+                        ((org.telegram.ui.Components.v5) drawable).u();
+                    } else if (drawable instanceof BitmapDrawable) {
+                        ((BitmapDrawable) drawable).getBitmap().recycle();
+                    }
+                }
+            }
+        }
+        this.a = null;
+        this.c = null;
+        this.d = null;
+    }
+
+    public jc(Bitmap bitmap) {
+        this.c = bitmap;
+        this.b = true;
+    }
 }

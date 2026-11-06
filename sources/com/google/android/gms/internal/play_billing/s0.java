@@ -1,17 +1,16 @@
 package com.google.android.gms.internal.play_billing;
 
-import gi.w5;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final Object a;
     public volatile Object b;
     public final Object c;
 
-    public s0(Class cls, int i3) {
-        switch (i3) {
+    public s0(Class cls, int i7) {
+        switch (i7) {
             case 1:
                 this.c = new Object();
                 this.a = cls.getName();
@@ -46,7 +45,7 @@ public final class s0 {
     public synchronized int[] b() {
         try {
             if (((int[]) this.b) == null) {
-                this.b = ((oi.r) this.a).b(this);
+                this.b = ((ni.t) this.a).b(this);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -74,14 +73,14 @@ public final class s0 {
         }
     }
 
-    public s0(String name, w5 w5Var, od.l lVar, wd.z zVar) {
+    public s0(String name, h9.f1 f1Var, rd.l lVar, zd.z zVar) {
         kotlin.jvm.internal.j.e(name, "name");
         this.a = name;
         this.c = new Object();
     }
 
-    public s0(int[] iArr, oi.r rVar) {
+    public s0(int[] iArr, ni.t tVar) {
         this.c = iArr;
-        this.a = rVar;
+        this.a = tVar;
     }
 }

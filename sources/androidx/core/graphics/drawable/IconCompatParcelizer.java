@@ -1,14 +1,14 @@
 package androidx.core.graphics.drawable;
 
-import a5.b;
-import a5.c;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Parcel;
 import android.os.Parcelable;
+import b5.b;
+import b5.c;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class IconCompatParcelizer {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -104,9 +104,9 @@ public class IconCompatParcelizer {
                 iconCompat.c = iconCompat.b.toString().getBytes(Charset.forName("UTF-16"));
                 break;
         }
-        int i3 = iconCompat.a;
-        if (-1 != i3) {
-            bVar.j(i3, 1);
+        int i7 = iconCompat.a;
+        if (-1 != i7) {
+            bVar.j(i7, 1);
         }
         byte[] bArr = iconCompat.c;
         if (bArr != null) {

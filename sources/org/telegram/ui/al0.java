@@ -1,27 +1,73 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class al0 extends ClickableSpan {
-    public final /* synthetic */ dl0 a;
+public final class al0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ hl0 c;
 
-    public al0(dl0 dl0Var) {
-        this.a = dl0Var;
+    public /* synthetic */ al0(hl0 hl0Var, boolean z9, int i7) {
+        this.a = i7;
+        this.c = hl0Var;
+        this.b = z9;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        dl0 dl0Var = this.a;
-        dl0Var.presentFragment(new ra1(6, dl0Var.b0));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                hl0 hl0Var = this.c;
+                AnimatorSet animatorSet = hl0Var.w;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    hl0Var.w = null;
+                    break;
+                }
+                break;
+            default:
+                hl0 hl0Var2 = this.c;
+                AnimatorSet animatorSet2 = hl0Var2.w;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    hl0Var2.w = null;
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                hl0 hl0Var = this.c;
+                AnimatorSet animatorSet = hl0Var.w;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        hl0Var.r.setVisibility(4);
+                        break;
+                    } else {
+                        hl0Var.n.getContentView().setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                hl0 hl0Var2 = this.c;
+                AnimatorSet animatorSet2 = hl0Var2.w;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        hl0Var2.s.setVisibility(4);
+                        break;
+                    } else {
+                        hl0Var2.U.setVisibility(4);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

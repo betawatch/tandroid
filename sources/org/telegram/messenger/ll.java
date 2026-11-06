@@ -1,45 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ll implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hp b;
-    public final /* synthetic */ cg.t c;
+    public final /* synthetic */ qp b;
+    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
 
-    public /* synthetic */ ll(hp hpVar, cg.t tVar, int i3) {
-        this.a = i3;
-        this.b = hpVar;
-        this.c = tVar;
+    public /* synthetic */ ll(qp qpVar, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i7) {
+        this.a = i7;
+        this.b = qpVar;
+        this.c = tL_webBrowserSettings;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
-        cg.t tVar = this.c;
-        hp hpVar = this.b;
-        switch (i3) {
+        switch (this.a) {
             case 0:
-                a0.h hVar = tVar.c;
-                int m10 = hVar.m();
-                for (int i10 = 0; i10 < m10; i10++) {
-                    hpVar.getNotificationCenter().k(49, Long.valueOf(hVar.j(i10)), hVar.n(i10), Boolean.FALSE);
+                qp qpVar = this.b;
+                wj wjVar = qpVar.x8;
+                TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.c;
+                if (tL_webBrowserSettings != null) {
+                    qpVar.y8 = tL_webBrowserSettings;
+                    qpVar.getNotificationCenter().k(qs.R5, new Object[0]);
                 }
-                break;
-            case 1:
-                a0.h hVar2 = tVar.c;
-                int m11 = hVar2.m();
-                for (int i11 = 0; i11 < m11; i11++) {
-                    hpVar.getNotificationCenter().k(49, Long.valueOf(hVar2.j(i11)), hVar2.n(i11), Boolean.FALSE);
-                }
+                g0.r(wjVar);
+                g0.i3(wjVar, 3600010L);
                 break;
             default:
-                a0.h hVar3 = tVar.c;
-                if (!hVar3.i()) {
-                    int m12 = hVar3.m();
-                    for (int i12 = 0; i12 < m12; i12++) {
-                        hpVar.getNotificationCenter().k(1, Long.valueOf(hVar3.j(i12)), hVar3.n(i12), Boolean.FALSE, 0);
-                    }
+                TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = this.c;
+                if (tL_webBrowserSettings2 != null) {
+                    qp qpVar2 = this.b;
+                    qpVar2.y8 = tL_webBrowserSettings2;
+                    qpVar2.getNotificationCenter().k(qs.R5, new Object[0]);
                     break;
                 }
                 break;

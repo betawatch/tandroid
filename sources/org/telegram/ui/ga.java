@@ -1,39 +1,91 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ga implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ha b;
+public final class ga extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
+    public final EditTextBoldCursor a;
+    public final TextView b;
+    public final /* synthetic */ la c;
 
-    public /* synthetic */ ga(ha haVar, int i3) {
-        this.a = i3;
-        this.b = haVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ga(la laVar, Activity activity) {
+        super(activity);
+        this.c = laVar;
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        int i7 = 0;
+        linearLayout.setOrientation(0);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        this.a = editTextBoldCursor;
+        int i10 = 1;
+        editTextBoldCursor.setTextSize(1, 17.0f);
+        org.telegram.ui.ActionBar.r6.E(editTextBoldCursor, org.telegram.ui.ActionBar.k6.H6, null);
+        int i11 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.r6.V(editTextBoldCursor, i11, null);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+        editTextBoldCursor.setInputType(180224);
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHint(org.telegram.messenger.hd.M0(2131743649, null));
+        org.telegram.ui.ActionBar.r6.m(editTextBoldCursor, 30, i11, null);
+        editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setOnEditorActionListener(new fa(this, i7));
+        String str = laVar.r;
+        long j3 = laVar.y;
+        editTextBoldCursor.setText(str);
+        editTextBoldCursor.addTextChangedListener(new m0(this, i10));
+        if (j3 != 0) {
+            editTextBoldCursor.setEnabled(false);
+        }
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setMaxLines(1);
+        textView.setLines(1);
+        textView.setPadding(0, 0, 0, 0);
+        textView.setSingleLine(true);
+        textView.setText(laVar.getMessagesController().U2 + "/");
+        textView.setTextSize(1, 17.0f);
+        org.telegram.ui.ActionBar.r6.V(textView, i11, null);
+        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+        textView.setTranslationY(-org.telegram.messenger.g0.L(3.0f));
+        linearLayout.addView(textView, c8.ha.q(-2, -2, 0.0f, 16, 21, 15, 0, 15));
+        linearLayout.addView(editTextBoldCursor, c8.ha.q(-2, -2, 1.0f, 16, 0, 15, 21, 15));
+        addView(linearLayout, c8.ha.e(-1, -1, 48));
+        if (j3 != 0) {
+            editTextBoldCursor.setAlpha(0.6f);
+            textView.setAlpha(0.6f);
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ha haVar = this.b;
-                haVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                haVar.n = floatValue;
-                haVar.f.setTranslationX(floatValue * org.telegram.messenger.g0.L(16.0f));
-                haVar.d.setAlpha(haVar.n);
-                break;
-            default:
-                ha haVar2 = this.b;
-                haVar2.getClass();
-                haVar2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i3 = org.telegram.ui.ActionBar.k6.z6;
-                org.telegram.ui.ActionBar.e6 e6Var = haVar2.b;
-                int f10 = i0.a.f(haVar2.F, org.telegram.ui.ActionBar.k6.w0(i3, e6Var), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.n6, e6Var));
-                haVar2.e.b(f10);
-                haVar2.f.setTextColor(f10);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        try {
+            this.a.setCursorColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

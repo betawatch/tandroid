@@ -1,12 +1,13 @@
 package g;
 
+import a8.p0;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.view.View;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class v implements View.OnClickListener {
     public final View a;
@@ -35,7 +36,7 @@ public final class v implements View.OnClickListener {
                     } else {
                         str = " with id '" + view2.getContext().getResources().getResourceEntryName(id2) + "'";
                     }
-                    StringBuilder u10 = a1.g.u("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+                    StringBuilder u10 = p0.u("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
                     u10.append(view2.getClass());
                     u10.append(str);
                     throw new IllegalStateException(u10.toString());

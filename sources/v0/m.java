@@ -1,28 +1,38 @@
 package v0;
 
-import java.util.Collection;
-import java.util.List;
+import android.os.Bundle;
+import bi.b1;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m {
-    public final List a;
-    public final boolean b;
-
-    public m(List list, boolean z10) {
-        this.a = list;
-        this.b = z10;
-        if (list.isEmpty()) {
-            throw new IllegalArgumentException("credentialOptions should not be empty");
-        }
-        if (list.size() > 1) {
-            List<o> list2 = list;
-            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
-                for (o oVar : list2) {
+public class m extends b1 {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m(String str, int i7, Bundle data) {
+        super(str, data);
+        switch (i7) {
+            case 2:
+                super("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+                if (str.length() <= 0) {
+                    throw new IllegalArgumentException("password should not be empty");
                 }
-            }
-            for (o oVar2 : this.a) {
-            }
+                return;
+            case 3:
+                super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data);
+                if (str.length() != 0) {
+                    try {
+                        new JSONObject(str);
+                        return;
+                    } catch (Exception unused) {
+                    }
+                }
+                throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
+            default:
+                kotlin.jvm.internal.j.e(data, "data");
+                if (str.length() <= 0) {
+                    throw new IllegalArgumentException("type should not be empty");
+                }
+                return;
         }
     }
 }

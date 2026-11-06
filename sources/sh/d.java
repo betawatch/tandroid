@@ -1,106 +1,205 @@
 package sh;
 
-import android.graphics.PointF;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.PathInterpolator;
-import android.widget.FrameLayout;
-import ci.u0;
-import java.util.Iterator;
-import java.util.List;
-import java.util.WeakHashMap;
-import kh.k;
-import org.telegram.messenger.beta.R;
-import r0.i0;
-import r0.k1;
-import r0.p0;
-import r0.q0;
-import r0.t0;
-import r0.v0;
-import x7.u;
+import android.net.Uri;
+import android.util.Base64;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d extends u0 {
-    public static final RectF e;
-    public static final Rect f;
-    public final ViewGroup b;
-    public int c;
-    public final ue.b d = new ue.b();
+public final class d {
+    public final SparseArray a = new SparseArray();
 
-    static {
-        new PointF();
-        e = new RectF();
-        f = new Rect();
+    public static int a(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, TLRPC.InputMedia inputMedia) {
+        if (tL_inputMediaPoll.attached_media == inputMedia) {
+            return -2;
+        }
+        if (tL_inputMediaPoll.solution_media == inputMedia) {
+            return -3;
+        }
+        int size = tL_inputMediaPoll.poll.answers.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            if (tL_inputMediaPoll.poll.answers.get(i7).input_media == inputMedia) {
+                return i7;
+            }
+        }
+        return -1;
     }
 
-    public d(FrameLayout frameLayout) {
-        this.b = frameLayout;
-        WeakHashMap weakHashMap = i0.a;
-        if (Build.VERSION.SDK_INT >= 30) {
-            t0.g(frameLayout, this);
+    public static String c(int i7, TLRPC.Message message) {
+        SparseArray<String> sparseArray;
+        if (message == null || (sparseArray = message.pollMediaAttachPaths) == null) {
+            return null;
+        }
+        return sparseArray.get(i7);
+    }
+
+    public static TLRPC.InputMedia d(TLRPC.TL_inputMediaPoll tL_inputMediaPoll) {
+        TLRPC.InputMedia inputMedia = tL_inputMediaPoll.attached_media;
+        if (inputMedia != null) {
+            return inputMedia;
+        }
+        TLRPC.InputMedia inputMedia2 = tL_inputMediaPoll.solution_media;
+        if (inputMedia2 != null) {
+            return inputMedia2;
+        }
+        int size = tL_inputMediaPoll.poll.answers.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            TLRPC.InputMedia inputMedia3 = tL_inputMediaPoll.poll.answers.get(i7).input_media;
+            if (inputMedia3 != null) {
+                return inputMedia3;
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.InputMedia e(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i7) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i7 == -2) {
+            return tL_inputMediaPoll.attached_media;
+        }
+        if (i7 == -3) {
+            return tL_inputMediaPoll.solution_media;
+        }
+        if (i7 < 0 || i7 >= tL_inputMediaPoll.poll.answers.size() || (pollAnswer = tL_inputMediaPoll.poll.answers.get(i7)) == null) {
+            return null;
+        }
+        return pollAnswer.input_media;
+    }
+
+    public static TLRPC.MessageMedia f(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, int i7) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i7 == -2) {
+            return tL_messageMediaPoll.attached_media;
+        }
+        if (i7 == -3) {
+            return tL_messageMediaPoll.results.solution_media;
+        }
+        if (i7 < 0 || i7 >= tL_messageMediaPoll.poll.answers.size() || (pollAnswer = tL_messageMediaPoll.poll.answers.get(i7)) == null) {
+            return null;
+        }
+        return pollAnswer.media;
+    }
+
+    public static byte[] g(Uri uri) {
+        try {
+            String queryParameter = uri.getQueryParameter("option");
+            if (queryParameter != null) {
+                return Base64.decode(queryParameter, 9);
+            }
+            return null;
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public static void i(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i7) {
+        TLRPC.PollAnswer pollAnswer;
+        if (i7 == -2) {
+            tL_inputMediaPoll.attached_media = null;
             return;
         }
-        PathInterpolator pathInterpolator = q0.e;
-        View.OnApplyWindowInsetsListener p0Var = new p0(frameLayout, this);
-        frameLayout.setTag(R.id.tag_window_insets_animation_callback, p0Var);
-        if (frameLayout.getTag(R.id.tag_compat_insets_dispatch) == null && frameLayout.getTag(R.id.tag_on_apply_window_listener) == null) {
-            frameLayout.setOnApplyWindowInsetsListener(p0Var);
-        }
-    }
-
-    public static k1 e1(k1 k1Var, View view, View view2) {
-        if (view == null || view2 == null || k1Var == null) {
-            return null;
-        }
-        RectF rectF = e;
-        if (!k.c(view, view2, rectF)) {
-            return null;
-        }
-        Rect rect = f;
-        rectF.round(rect);
-        int i3 = rect.left;
-        int i10 = rect.top;
-        int width = view2.getWidth() - rect.right;
-        int height = view2.getHeight() - rect.bottom;
-        if (i3 == 0 && i10 == 0 && width == 0 && height == 0) {
-            return k1Var;
-        }
-        return k1Var.a.m(Math.max(0, i3), Math.max(0, i10), Math.max(0, width), Math.max(0, height));
-    }
-
-    @Override // ci.u0
-    public final void V0() {
-        int i3 = this.c - 1;
-        this.c = i3;
-        if (i3 == 0) {
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                ((c) it.next()).P();
+        if (i7 == -3) {
+            tL_inputMediaPoll.solution_media = null;
+        } else {
+            if (i7 < 0 || i7 >= tL_inputMediaPoll.poll.answers.size() || (pollAnswer = tL_inputMediaPoll.poll.answers.get(i7)) == null) {
+                return;
             }
+            pollAnswer.input_media = null;
         }
     }
 
-    @Override // ci.u0
-    public final k1 W0(k1 k1Var, List list) {
-        Iterator it = list.iterator();
-        int i3 = 0;
-        while (it.hasNext()) {
-            i3 |= ((v0) it.next()).a.c();
+    public static void j(TLRPC.Message message, String str, int i7) {
+        if (message == null) {
+            return;
         }
-        if (u.a(i3, 8)) {
-            Iterator it2 = this.d.iterator();
-            while (it2.hasNext()) {
-                c cVar = (c) it2.next();
-                k1 e12 = e1(k1Var, cVar.R(), this.b);
-                if (e12 != null) {
-                    cVar.m(e12);
+        if (message.pollMediaAttachPaths == null) {
+            message.pollMediaAttachPaths = new SparseArray<>();
+        }
+        message.pollMediaAttachPaths.put(i7, str);
+    }
+
+    public static void k(TLRPC.TL_inputMediaPoll tL_inputMediaPoll, int i7, TLRPC.InputMedia inputMedia) {
+        if (i7 == -2) {
+            tL_inputMediaPoll.attached_media = inputMedia;
+            return;
+        }
+        if (i7 == -3) {
+            tL_inputMediaPoll.solution_media = inputMedia;
+            return;
+        }
+        if (i7 < 0 || i7 >= tL_inputMediaPoll.poll.answers.size()) {
+            return;
+        }
+        TLRPC.PollAnswer pollAnswer = tL_inputMediaPoll.poll.answers.get(i7);
+        if (pollAnswer instanceof TLRPC.TL_inputPollAnswer) {
+            pollAnswer.input_media = inputMedia;
+            return;
+        }
+        TLRPC.TL_inputPollAnswer tL_inputPollAnswer = new TLRPC.TL_inputPollAnswer();
+        tL_inputPollAnswer.input_media = inputMedia;
+        tL_inputPollAnswer.text = pollAnswer.text;
+        tL_inputPollAnswer.media = pollAnswer.media;
+        tL_inputPollAnswer.option = pollAnswer.option;
+        tL_inputMediaPoll.poll.answers.set(i7, tL_inputPollAnswer);
+    }
+
+    public static void l(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, int i7, TLRPC.MessageMedia messageMedia) {
+        if (i7 == -2) {
+            tL_messageMediaPoll.attached_media = messageMedia;
+            return;
+        }
+        if (i7 == -3) {
+            tL_messageMediaPoll.results.solution_media = messageMedia;
+            return;
+        }
+        if (i7 < 0 || i7 >= tL_messageMediaPoll.poll.answers.size()) {
+            return;
+        }
+        TLRPC.PollAnswer pollAnswer = tL_messageMediaPoll.poll.answers.get(i7);
+        if (pollAnswer instanceof TLRPC.TL_inputPollAnswer) {
+            TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+            tL_pollAnswer.text = pollAnswer.text;
+            tL_pollAnswer.option = new byte[]{(byte) (i7 + 48)};
+            tL_pollAnswer.media = messageMedia;
+            tL_messageMediaPoll.poll.answers.set(i7, tL_pollAnswer);
+            return;
+        }
+        pollAnswer.media = messageMedia;
+        TLRPC.TL_inputPollAnswer tL_inputPollAnswer = new TLRPC.TL_inputPollAnswer();
+        tL_inputPollAnswer.text = pollAnswer.text;
+        tL_inputPollAnswer.media = pollAnswer.media;
+        tL_inputPollAnswer.option = pollAnswer.option;
+    }
+
+    public final c b(int i7) {
+        return (c) this.a.get(i7);
+    }
+
+    public final void h(int i7) {
+        SparseArray sparseArray = this.a;
+        int size = sparseArray.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (sparseArray.keyAt(i10) > i7) {
+                if (i7 < 0) {
+                    return;
                 }
+                SparseArray clone = sparseArray.clone();
+                sparseArray.clear();
+                int size2 = clone.size();
+                for (int i11 = 0; i11 < size2; i11++) {
+                    int keyAt = clone.keyAt(i11);
+                    c cVar = (c) clone.valueAt(i11);
+                    if (keyAt < i7) {
+                        sparseArray.put(keyAt, cVar);
+                    }
+                    if (keyAt > i7) {
+                        sparseArray.put(keyAt - 1, cVar);
+                    }
+                }
+                return;
             }
         }
-        return k1Var;
+        sparseArray.remove(i7);
     }
 }

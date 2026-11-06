@@ -1,0 +1,72 @@
+package l2;
+
+import a8.ia;
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class y0 {
+    public final x2.g0 a;
+    public final long b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final boolean g;
+    public final boolean h;
+    public final boolean i;
+    public final boolean j;
+    public final boolean k;
+
+    public y0(x2.g0 g0Var, long j3, long j10, long j11, long j12, long j13, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13) {
+        boolean z14 = true;
+        ia.f(!z13 || z11);
+        ia.f(!z12 || z11);
+        if (z10 && (z11 || z12 || z13)) {
+            z14 = false;
+        }
+        ia.f(z14);
+        this.a = g0Var;
+        this.b = j3;
+        this.c = j10;
+        this.d = j11;
+        this.e = j12;
+        this.f = j13;
+        this.g = z9;
+        this.h = z10;
+        this.i = z11;
+        this.j = z12;
+        this.k = z13;
+    }
+
+    public final y0 a(long j3) {
+        if (j3 == this.d) {
+            return this;
+        }
+        return new y0(this.a, this.b, this.c, j3, this.e, this.f, this.g, this.h, this.i, this.j, this.k);
+    }
+
+    public final y0 b(long j3, long j10) {
+        if (j3 == this.b && j10 == this.c) {
+            return this;
+        }
+        return new y0(this.a, j3, j10, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && y0.class == obj.getClass()) {
+            y0 y0Var = (y0) obj;
+            if (this.b == y0Var.b && this.d == y0Var.d && this.e == y0Var.e && this.f == y0Var.f && this.g == y0Var.g && this.h == y0Var.h && this.i == y0Var.i && this.j == y0Var.j && this.k == y0Var.k && Objects.equals(this.a, y0Var.a)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((((((((((((((((((this.a.hashCode() + 527) * 31) + ((int) this.b)) * 31) + ((int) this.d)) * 31) + ((int) this.e)) * 31) + ((int) this.f)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0)) * 31) + (this.i ? 1 : 0)) * 31) + (this.j ? 1 : 0)) * 31) + (this.k ? 1 : 0);
+    }
+}

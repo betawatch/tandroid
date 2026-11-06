@@ -39,13 +39,13 @@ public final class n0 extends p0 implements i5 {
         return null;
     }
 
-    public n0(LongConsumer longConsumer, boolean z10) {
-        super(z10);
+    public n0(LongConsumer longConsumer, boolean z9) {
+        super(z9);
         this.b = longConsumer;
     }
 
     @Override // j$.util.stream.p0, j$.util.stream.j5
-    public final void accept(long j10) {
-        this.b.accept(j10);
+    public final void accept(long j3) {
+        this.b.accept(j3);
     }
 }

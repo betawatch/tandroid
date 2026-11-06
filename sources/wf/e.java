@@ -1,156 +1,154 @@
 package wf;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.util.Log;
-import android.view.View;
-import b8.cg;
-import b8.ke;
-import j$.util.Objects;
-import k2.i0;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.t0;
-import org.telegram.messenger.u10;
-import org.telegram.ui.LaunchActivity;
+import android.net.Uri;
+import android.os.Bundle;
+import f6.l;
+import v4.v0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e implements vf.b {
-    public f d;
-    public f e;
-    public org.telegram.ui.e f;
-    public View g;
-    public ke h;
-    public View i;
-    public final uf.d j;
-    public float k;
-    public boolean n;
-    public float o;
-    public int a = 0;
-    public final Rect b = new Rect();
-    public final Rect c = new Rect();
-    public final RectF l = new RectF();
-    public final Path m = new Path();
+public final class e {
+    public final String a;
+    public final l b;
+    public final Uri c;
+    public final String d;
+    public final int e;
+    public final int f;
 
-    public e(uf.d dVar) {
-        this.j = dVar;
-    }
-
-    @Override // vf.b
-    public final void a() {
-        i0 i0Var;
-        uf.d dVar = this.j;
-        if (dVar == null || (i0Var = dVar.l) == null) {
-            return;
-        }
-        i0Var.e();
-    }
-
-    @Override // vf.b
-    public final void b() {
-        this.n = false;
-        h();
-    }
-
-    @Override // vf.b
-    public final void c() {
-        i0 i0Var;
-        uf.d dVar = this.j;
-        if (dVar == null || (i0Var = dVar.l) == null) {
-            return;
-        }
-        i0Var.j();
-    }
-
-    @Override // vf.b
-    public final void e() {
-        this.n = true;
-        g();
-    }
-
-    public final void g() {
-        Rect rect = this.b;
-        uf.d dVar = this.j;
-        if (this.a != 0) {
-            a8.d("[PIP_DEBUG] wrong pip state STATE_DETACHED: " + this.a);
-            return;
-        }
-        rect.set((Rect) dVar.h.a);
-        Log.i("PIP_DEBUG", "[HANDLER] pre attach start " + rect);
-        int measuredWidth = ((LaunchActivity) dVar.a.d).getWindow().getDecorView().getMeasuredWidth();
-        int measuredHeight = ((LaunchActivity) dVar.a.d).getWindow().getDecorView().getMeasuredHeight();
-        Bitmap l10 = dVar.g.l();
-        final a aVar = dVar.g;
-        Objects.requireNonNull(aVar);
-        final int i3 = 0;
-        this.d = new f(measuredWidth, measuredHeight, new u10() { // from class: wf.d
-            @Override // org.telegram.messenger.u10
-            public final void a(Object obj) {
-                switch (i3) {
-                    case 0:
-                        aVar.i((Canvas) obj);
-                        break;
-                    default:
-                        aVar.m((Canvas) obj);
-                        break;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00cc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public e(v0 v0Var) {
+        String str;
+        int i7;
+        l lVar;
+        Bundle bundle;
+        StringBuilder sb2;
+        StringBuilder sb3;
+        String str2;
+        String str3;
+        int i10;
+        str = (String) v0Var.c;
+        this.a = str;
+        str.getClass();
+        i7 = 3;
+        switch (str) {
+            case "image/jpeg":
+            case "image/png":
+                i7 = 4;
+                lVar = (l) v0Var.f;
+                lVar = lVar == null ? new l(i7) : lVar;
+                bundle = lVar.b;
+                sb2 = new StringBuilder();
+                sb3 = new StringBuilder();
+                str2 = (String) v0Var.g;
+                if (str2 != null) {
+                    sb2.append(str2);
                 }
-            }
-        });
-        final a aVar2 = dVar.g;
-        Objects.requireNonNull(aVar2);
-        final int i10 = 1;
-        this.e = new f(measuredWidth, measuredHeight, new u10() { // from class: wf.d
-            @Override // org.telegram.messenger.u10
-            public final void a(Object obj) {
-                switch (i10) {
-                    case 0:
-                        aVar2.i((Canvas) obj);
-                        break;
-                    default:
-                        aVar2.m((Canvas) obj);
-                        break;
+                str3 = (String) v0Var.h;
+                if (str3 != null) {
+                    sb3.append(str3);
                 }
-            }
-        });
-        this.i = dVar.g.q();
-        this.g = new View((LaunchActivity) dVar.a.d);
-        org.telegram.ui.e eVar = new org.telegram.ui.e((LaunchActivity) dVar.a.d, this);
-        this.f = eVar;
-        eVar.addView(this.g);
-        this.f.addView(this.i);
-        ke keVar = new ke(this.g, dVar.k);
-        this.h = keVar;
-        keVar.K(l10);
-        dVar.a.h().addView(this.f);
-        this.a = 1;
-        this.f.invalidate();
-        g0.K(this.i, new cg(t0.d, new b(this, 1), 300L));
-        Log.i("PIP_DEBUG", "[HANDLER] pre attach end");
-    }
-
-    public final void h() {
-        if (this.a != 2) {
-            a8.d("[PIP_DEBUG] wrong pip state STATE_ATTACHED: " + this.a);
-            return;
+                i10 = v0Var.a;
+                if (i10 != 0 && v0Var.b != 0) {
+                    l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
+                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
+                    int i11 = v0Var.b;
+                    l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
+                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i11);
+                    if (sb3.length() > 0) {
+                        sb3.append(' ');
+                    }
+                    sb3.append("(");
+                    sb3.append(v0Var.a);
+                    sb3.append("x");
+                    sb3.append(v0Var.b);
+                    sb3.append(")");
+                }
+                if (sb2.length() > 0) {
+                    lVar.b("com.google.android.gms.cast.metadata.TITLE", sb2.toString());
+                } else {
+                    lVar.b("com.google.android.gms.cast.metadata.TITLE", "No Title");
+                }
+                if (sb3.length() > 0) {
+                    lVar.b("com.google.android.gms.cast.metadata.SUBTITLE", sb3.toString());
+                    break;
+                }
+                break;
+            case "application/x-mpegURL":
+            case "video/mp4":
+                i7 = 1;
+                lVar = (l) v0Var.f;
+                if (lVar == null) {
+                }
+                bundle = lVar.b;
+                sb2 = new StringBuilder();
+                sb3 = new StringBuilder();
+                str2 = (String) v0Var.g;
+                if (str2 != null) {
+                }
+                str3 = (String) v0Var.h;
+                if (str3 != null) {
+                }
+                i10 = v0Var.a;
+                if (i10 != 0) {
+                    l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
+                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
+                    int i112 = v0Var.b;
+                    l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
+                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i112);
+                    if (sb3.length() > 0) {
+                    }
+                    sb3.append("(");
+                    sb3.append(v0Var.a);
+                    sb3.append("x");
+                    sb3.append(v0Var.b);
+                    sb3.append(")");
+                    break;
+                }
+                if (sb2.length() > 0) {
+                }
+                if (sb3.length() > 0) {
+                }
+                break;
+            default:
+                if (!str.startsWith("audio/")) {
+                    lVar = null;
+                    break;
+                }
+                lVar = (l) v0Var.f;
+                if (lVar == null) {
+                }
+                bundle = lVar.b;
+                sb2 = new StringBuilder();
+                sb3 = new StringBuilder();
+                str2 = (String) v0Var.g;
+                if (str2 != null) {
+                }
+                str3 = (String) v0Var.h;
+                if (str3 != null) {
+                }
+                i10 = v0Var.a;
+                if (i10 != 0) {
+                }
+                if (sb2.length() > 0) {
+                }
+                if (sb3.length() > 0) {
+                }
+                break;
         }
-        this.h.K(this.j.g.g());
-        this.a = 3;
-        this.f.removeView(this.i);
-        this.f.invalidate();
-        this.i = null;
-        g0.K(this.f, new cg(t0.d, new b(this, 0), 300L));
-        Log.i("PIP_DEBUG", "[HANDLER] pre detach 1");
-    }
-
-    @Override // vf.b
-    public final /* synthetic */ void d() {
-    }
-
-    @Override // vf.b
-    public final /* synthetic */ void f() {
+        this.b = lVar;
+        this.c = (Uri) v0Var.d;
+        this.d = (String) v0Var.e;
+        this.e = v0Var.a;
+        this.f = v0Var.b;
     }
 }

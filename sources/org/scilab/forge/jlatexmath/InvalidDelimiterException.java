@@ -1,17 +1,17 @@
 package org.scilab.forge.jlatexmath;
 
-import a1.g;
+import a8.p0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class InvalidDelimiterException extends JMathTeXException {
     private static final long serialVersionUID = 212553180078002724L;
 
     public InvalidDelimiterException(String str) {
-        super(g.q("The symbol with the name '", str, "' is not defined as a delimiter (del='true') in 'TeXSymbols.xml'!"));
+        super(p0.p("The symbol with the name '", str, "' is not defined as a delimiter (del='true') in 'TeXSymbols.xml'!"));
     }
 
-    public InvalidDelimiterException(char c2, String str) {
-        super("The character '" + c2 + "' is mapped to a symbol with the name '" + str + "', but that symbol is not defined as a delimiter (del='true') in 'TeXSymbols.xml'!");
+    public InvalidDelimiterException(char c10, String str) {
+        super("The character '" + c10 + "' is mapped to a symbol with the name '" + str + "', but that symbol is not defined as a delimiter (del='true') in 'TeXSymbols.xml'!");
     }
 }

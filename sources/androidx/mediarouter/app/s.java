@@ -1,5 +1,6 @@
 package androidx.mediarouter.app;
 
+import a8.b7;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -10,13 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import b8.d1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class s extends ArrayAdapter {
     public final float a;
@@ -26,7 +26,7 @@ public final class s extends ArrayAdapter {
     public s(t tVar, Context context, ArrayList arrayList) {
         super(context, 0, arrayList);
         this.b = tVar;
-        this.a = d1.c(context);
+        this.a = b7.c(context);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ac  */
@@ -35,67 +35,67 @@ public final class s extends ArrayAdapter {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final View getView(int i3, View view, ViewGroup viewGroup) {
-        boolean z10;
+    public final View getView(int i7, View view, ViewGroup viewGroup) {
+        boolean z9;
         t tVar = this.b;
         if (view == null) {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.mr_controller_volume_item, viewGroup, false);
         } else {
-            t.o(tVar.f0, (LinearLayout) view.findViewById(R.id.volume_item_container));
+            t.o(tVar.e0, (LinearLayout) view.findViewById(R.id.volume_item_container));
             View findViewById = view.findViewById(R.id.mr_volume_item_icon);
             ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
-            int i10 = tVar.e0;
+            int i10 = tVar.d0;
             layoutParams.width = i10;
             layoutParams.height = i10;
             findViewById.setLayoutParams(layoutParams);
         }
-        r4.w wVar = (r4.w) getItem(i3);
-        if (wVar != null) {
-            boolean z11 = wVar.g;
+        s4.v vVar = (s4.v) getItem(i7);
+        if (vVar != null) {
+            boolean z10 = vVar.g;
             TextView textView = (TextView) view.findViewById(R.id.mr_name);
-            textView.setEnabled(z11);
-            textView.setText(wVar.d);
+            textView.setEnabled(z10);
+            textView.setText(vVar.d);
             MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) view.findViewById(R.id.mr_volume_slider);
             Context context = viewGroup.getContext();
-            OverlayListView overlayListView = tVar.V;
-            int b10 = d1.b(context, 0);
+            OverlayListView overlayListView = tVar.U;
+            int b10 = b7.b(context, 0);
             int alpha = Color.alpha(b10);
-            int i11 = hs.e4;
+            int i11 = qs.e4;
             if (alpha != 255) {
                 b10 = i0.a.k(b10, ((Integer) overlayListView.getTag()).intValue());
             }
             mediaRouteVolumeSlider.a(b10, b10);
-            mediaRouteVolumeSlider.setTag(wVar);
-            tVar.i0.put(wVar, mediaRouteVolumeSlider);
-            mediaRouteVolumeSlider.b(!z11);
-            mediaRouteVolumeSlider.setEnabled(z11);
-            if (z11) {
-                if (tVar.P) {
-                    if (((!wVar.e() || r4.y.g()) ? wVar.o : 0) == 1) {
-                        z10 = true;
-                        if (z10) {
+            mediaRouteVolumeSlider.setTag(vVar);
+            tVar.h0.put(vVar, mediaRouteVolumeSlider);
+            mediaRouteVolumeSlider.b(!z10);
+            mediaRouteVolumeSlider.setEnabled(z10);
+            if (z10) {
+                if (tVar.O) {
+                    if (((!vVar.e() || s4.x.g()) ? vVar.o : 0) == 1) {
+                        z9 = true;
+                        if (z9) {
                             mediaRouteVolumeSlider.setMax(100);
                             mediaRouteVolumeSlider.setProgress(100);
                             mediaRouteVolumeSlider.setEnabled(false);
                         } else {
-                            mediaRouteVolumeSlider.setMax(wVar.q);
-                            mediaRouteVolumeSlider.setProgress(wVar.p);
-                            mediaRouteVolumeSlider.setOnSeekBarChangeListener(tVar.c0);
+                            mediaRouteVolumeSlider.setMax(vVar.q);
+                            mediaRouteVolumeSlider.setProgress(vVar.p);
+                            mediaRouteVolumeSlider.setOnSeekBarChangeListener(tVar.b0);
                         }
                     }
                 }
-                z10 = false;
-                if (z10) {
+                z9 = false;
+                if (z9) {
                 }
             }
             ImageView imageView = (ImageView) view.findViewById(R.id.mr_volume_item_icon);
-            if (!z11) {
+            if (!z10) {
                 i11 = (int) (this.a * 255.0f);
             }
             imageView.setAlpha(i11);
-            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(tVar.a0.contains(wVar) ? 4 : 0);
-            HashSet hashSet = tVar.Y;
-            if (hashSet != null && hashSet.contains(wVar)) {
+            ((LinearLayout) view.findViewById(R.id.volume_item_container)).setVisibility(tVar.Z.contains(vVar) ? 4 : 0);
+            HashSet hashSet = tVar.X;
+            if (hashSet != null && hashSet.contains(vVar)) {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
                 alphaAnimation.setDuration(0L);
                 alphaAnimation.setFillEnabled(true);
@@ -108,7 +108,7 @@ public final class s extends ArrayAdapter {
     }
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
-    public final boolean isEnabled(int i3) {
+    public final boolean isEnabled(int i7) {
         return false;
     }
 }

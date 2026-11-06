@@ -1,33 +1,38 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class aj extends zi {
-    public final /* synthetic */ int s3;
-    public final /* synthetic */ dj t3;
+public final class aj {
+    public byte a;
+    public byte b;
+    public byte c;
+    public byte d;
+    public int e;
+    public float f;
+    public float g;
+    public boolean h;
+    public int i;
+    public int j;
+    public boolean k;
+    public int l;
+    public float[] m;
+    public int n;
+    public int o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aj(dj djVar, int i3, TLRPC.TL_message tL_message, int i10) {
-        super(i3, tL_message, true, false);
-        this.t3 = djVar;
-        this.s3 = i10;
-    }
-
-    @Override // org.telegram.messenger.zi
-    public final void n0(TLRPC.User user) {
-        super.n0(user);
-        if (this.s3 == 2) {
-            this.t3.b(this);
-        }
-    }
-
-    @Override // org.telegram.messenger.zi
-    public final boolean o5() {
-        if (this.t3.k) {
-            return false;
-        }
-        return super.o5();
+    public final void a(float f10, int i7, int i10, int i11, int i12, int i13, int i14) {
+        this.a = (byte) i7;
+        this.b = (byte) i10;
+        this.c = (byte) i11;
+        this.d = (byte) i12;
+        this.e = i13;
+        this.i = i13;
+        this.f = f10;
+        this.l = (byte) i14;
     }
 }

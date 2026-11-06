@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzyw extends zzsn implements zztt {
     private static final zzyw zzb;
@@ -22,19 +22,19 @@ public final class zzyw extends zzsn implements zztt {
         zzywVar.zzf = Float.valueOf(f10);
     }
 
-    public static /* synthetic */ void zzN(zzyw zzywVar, int i3) {
+    public static /* synthetic */ void zzN(zzyw zzywVar, int i7) {
         zzywVar.zze = 4;
-        zzywVar.zzf = Integer.valueOf(i3);
+        zzywVar.zzf = Integer.valueOf(i7);
     }
 
-    public static /* synthetic */ void zzO(zzyw zzywVar, int i3) {
+    public static /* synthetic */ void zzO(zzyw zzywVar, int i7) {
         zzywVar.zze = 5;
-        zzywVar.zzf = Integer.valueOf(i3);
+        zzywVar.zzf = Integer.valueOf(i7);
     }
 
-    public static /* synthetic */ void zzP(zzyw zzywVar, long j10) {
+    public static /* synthetic */ void zzP(zzyw zzywVar, long j3) {
         zzywVar.zze = 7;
-        zzywVar.zzf = Long.valueOf(j10);
+        zzywVar.zzf = Long.valueOf(j3);
     }
 
     public static /* synthetic */ void zzQ(zzyw zzywVar, String str) {
@@ -47,9 +47,9 @@ public final class zzyw extends zzsn implements zztt {
         return (zzyv) zzb.zzq();
     }
 
-    public static /* synthetic */ void zzi(zzyw zzywVar, boolean z10) {
+    public static /* synthetic */ void zzi(zzyw zzywVar, boolean z9) {
         zzywVar.zze = 1;
-        zzywVar.zzf = Boolean.valueOf(z10);
+        zzywVar.zzf = Boolean.valueOf(z9);
     }
 
     public static /* synthetic */ void zzj(zzyw zzywVar, zzqm zzqmVar) {
@@ -69,9 +69,9 @@ public final class zzyw extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i3, Object obj, Object obj2) {
+    public final Object zzh(int i7, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i3 - 1;
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

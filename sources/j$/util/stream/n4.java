@@ -18,7 +18,7 @@ public final class n4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
@@ -65,18 +65,18 @@ public final class n4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a = true;
         this.b = 0L;
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         if (this.a) {
             this.a = false;
-            this.b = j10;
+            this.b = j3;
         } else {
-            this.b = this.c.applyAsLong(this.b, j10);
+            this.b = this.c.applyAsLong(this.b, j3);
         }
     }
 

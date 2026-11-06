@@ -1,20 +1,93 @@
 package ri;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes4.dex */
-public final class b {
-    public static final b c = new b(Float.POSITIVE_INFINITY);
-    public final float a;
-    public final float b;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 
-    public b(float f10) {
-        if (Float.isNaN(Float.POSITIVE_INFINITY)) {
-            throw new IllegalArgumentException("epsX must be >= 0");
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class b implements a {
+    public final Paint a;
+    public final Matrix b;
+    public BitmapShader c;
+    public Bitmap d;
+    public final Matrix e;
+    public Bitmap f;
+    public int h;
+    public int n;
+
+    public b() {
+        Paint paint = new Paint(3);
+        this.a = paint;
+        this.b = new Matrix();
+        this.e = new Matrix();
+        paint.setFilterBitmap(true);
+    }
+
+    public final void a(Bitmap bitmap) {
+        if (this.d == bitmap) {
+            return;
         }
-        if (Float.isNaN(f10) || f10 < 0.0f) {
-            throw new IllegalArgumentException("epsY must be >= 0");
+        this.d = bitmap;
+        Paint paint = this.a;
+        paint.setShader(null);
+        this.c = null;
+        if (bitmap != null) {
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.c = bitmapShader;
+            paint.setShader(bitmapShader);
+            c();
         }
-        this.a = Float.POSITIVE_INFINITY;
-        this.b = f10;
+    }
+
+    public final void b(int i7, int i10) {
+        if (this.h == i7 && this.n == i10) {
+            return;
+        }
+        this.h = i7;
+        this.n = i10;
+        c();
+    }
+
+    public final void c() {
+        Bitmap bitmap = this.d;
+        Matrix matrix = this.b;
+        if (bitmap == null) {
+            matrix.reset();
+            return;
+        }
+        int width = bitmap.getWidth();
+        int height = this.d.getHeight();
+        int i7 = this.h;
+        int i10 = this.n;
+        matrix.reset();
+        if (width <= 0 || height <= 0 || i7 <= 0 || i10 <= 0) {
+            return;
+        }
+        float f10 = i7;
+        float f11 = width;
+        float f12 = i10;
+        float f13 = height;
+        float max = Math.max(f10 / f11, f12 / f13);
+        matrix.setScale(max, max);
+        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
+    }
+
+    @Override // ri.a
+    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f10, f11);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f10, f11, f12, f13, this.a);
     }
 }

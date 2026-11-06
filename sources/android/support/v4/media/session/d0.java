@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.support.v4.media.session.PlaybackStateCompat;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d0 {
     public int b;
@@ -23,10 +23,10 @@ public final class d0 {
         return new PlaybackStateCompat(this.b, this.c, 0L, this.d, this.e, 0, null, this.f, this.a, this.g, null);
     }
 
-    public final void c(int i3, long j10, float f10) {
+    public final void c(int i7, long j3, float f10) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        this.b = i3;
-        this.c = j10;
+        this.b = i7;
+        this.c = j3;
         this.f = elapsedRealtime;
         this.d = f10;
     }

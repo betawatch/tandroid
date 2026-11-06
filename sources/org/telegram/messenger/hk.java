@@ -1,103 +1,67 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hk implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ hp b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ qp b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
     public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
 
-    public /* synthetic */ hk(hp hpVar, ArrayList arrayList, long j10, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i3, long j11) {
-        this.b = hpVar;
-        this.f = arrayList;
-        this.c = j10;
-        this.h = updates_channeldifference;
-        this.n = chat;
-        this.r = hVar;
-        this.d = i3;
-        this.e = j11;
+    public /* synthetic */ hk(qp qpVar, long j3, long j10, ArrayList arrayList) {
+        this.b = qpVar;
+        this.d = j3;
+        this.e = j10;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.Chat chat;
-        a0.h hVar;
-        switch (this.a) {
+        int i7 = this.a;
+        qp qpVar = this.b;
+        switch (i7) {
             case 0:
-                hp hpVar = this.b;
-                boolean[] zArr = (boolean[]) this.f;
-                qr qrVar = (qr) this.h;
-                long j10 = this.c;
-                Runnable[] runnableArr = (Runnable[]) this.n;
+                yr messagesStorage = qpVar.getMessagesStorage();
+                int i10 = (int) this.e;
+                long j3 = this.d;
+                ArrayList arrayList = this.c;
+                qpVar.getMessagesStorage().R1(j3, -j3, arrayList, messagesStorage.P0(j3, arrayList, false, true, 5, i10));
+                break;
+            case 1:
+                qp qpVar2 = this.b;
+                ArrayList arrayList2 = this.c;
+                long j10 = this.d;
+                g0.h3(new gk(qpVar2, arrayList2, j10, 1));
+                yr messagesStorage2 = qpVar2.getMessagesStorage();
                 long j11 = this.e;
-                int i3 = this.d;
-                vo voVar = (vo) this.r;
-                if (!zArr[0]) {
-                    g0.h3(new ib(hpVar, zArr, qrVar.O(j10), runnableArr, j11, i3, voVar));
-                    break;
-                }
+                messagesStorage2.E(arrayList2, j11);
+                qpVar2.getMessagesStorage().R1(j11, j10, arrayList2, qpVar2.getMessagesStorage().P0(j11, arrayList2, false, true, 0, 0));
                 break;
             default:
-                hp hpVar2 = this.b;
-                ArrayList arrayList = (ArrayList) this.f;
-                long j12 = this.c;
-                TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) this.h;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.n;
-                a0.h hVar2 = (a0.h) this.r;
-                int i10 = this.d;
+                k00 k00Var = qpVar.getMessagesController().q7;
+                long j12 = this.d;
                 long j13 = this.e;
-                if (arrayList.isEmpty()) {
-                    chat = chat2;
-                    hVar = hVar2;
-                } else {
-                    SparseArray sparseArray = new SparseArray();
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj = arrayList.get(i11);
-                        i11++;
-                        TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) obj;
-                        TLRPC.Chat chat3 = chat2;
-                        a0.h hVar3 = hVar2;
-                        ArrayList arrayList2 = arrayList;
-                        long[] a22 = hpVar2.getMessagesStorage().a2(tL_updateMessageID.random_id, -j12, null, tL_updateMessageID.id, 0, -1, 0);
-                        if (a22 != null) {
-                            sparseArray.put(tL_updateMessageID.id, a22);
-                        }
-                        chat2 = chat3;
-                        hVar2 = hVar3;
-                        arrayList = arrayList2;
-                    }
-                    chat = chat2;
-                    hVar = hVar2;
-                    if (sparseArray.size() != 0) {
-                        g0.h3(new tl(hpVar2, sparseArray, 1));
-                    }
-                }
-                Utilities.d.c(new vl(hpVar2, updates_channeldifference, j12, chat, hVar, i10, j13));
+                k00Var.B(0, j12, j13, false);
+                qpVar.getMessagesStorage().h2(0, j12, j13, false);
+                qpVar.getNotificationCenter().k(qs.Z4, Long.valueOf(j12), Long.valueOf(j13), 0, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ hk(hp hpVar, boolean[] zArr, qr qrVar, long j10, Runnable[] runnableArr, long j11, int i3, vo voVar) {
-        this.b = hpVar;
-        this.f = zArr;
-        this.h = qrVar;
-        this.c = j10;
-        this.n = runnableArr;
-        this.e = j11;
-        this.d = i3;
-        this.r = voVar;
+    public /* synthetic */ hk(qp qpVar, long j3, ArrayList arrayList, long j10) {
+        this.b = qpVar;
+        this.d = j3;
+        this.c = arrayList;
+        this.e = j10;
+    }
+
+    public /* synthetic */ hk(qp qpVar, ArrayList arrayList, long j3, long j10) {
+        this.b = qpVar;
+        this.c = arrayList;
+        this.d = j3;
+        this.e = j10;
     }
 }

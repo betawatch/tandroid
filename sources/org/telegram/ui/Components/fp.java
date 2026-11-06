@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class fp extends b5.l {
-    public ep x0;
+public abstract class fp extends c5.k {
+    public ep w0;
 
     public fp(Context context) {
         super(context);
-        b(new dp((vf0) this));
+        b(new dp((sf0) this));
     }
 
-    @Override // b5.l
+    @Override // c5.k
     @Deprecated
-    public void setAdapter(b5.a aVar) {
+    public void setAdapter(c5.a aVar) {
         if (!(aVar instanceof ep)) {
             throw new IllegalArgumentException();
         }
@@ -22,8 +22,8 @@ public abstract class fp extends b5.l {
     }
 
     public void setAdapter(ep epVar) {
-        this.x0 = epVar;
-        super.setAdapter((b5.a) epVar);
+        this.w0 = epVar;
+        super.setAdapter((c5.a) epVar);
         if (epVar != null) {
             x(epVar.j(), false);
         }

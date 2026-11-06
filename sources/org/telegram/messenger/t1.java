@@ -5,7 +5,7 @@ import java.util.Calendar;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class t1 {
     public final String a;
@@ -19,7 +19,7 @@ public final class t1 {
 
     public static t1 b(TL_account.contactBirthdays contactbirthdays) {
         t1 t1Var;
-        int i3;
+        int i7;
         Calendar calendar = Calendar.getInstance();
         int i10 = calendar.get(5);
         int i11 = calendar.get(2) + 1;
@@ -50,40 +50,40 @@ public final class t1 {
                 while (true) {
                     if (i19 >= contactbirthdays.users.size()) {
                         t1Var = t1Var2;
-                        i3 = i15;
+                        i7 = i15;
                         break;
                     }
                     t1Var = t1Var2;
-                    i3 = i15;
+                    i7 = i15;
                     if (contactbirthdays.users.get(i19).id == tL_contactBirthday2.contact_id) {
                         user = contactbirthdays.users.get(i19);
                         break;
                     }
                     i19++;
-                    i15 = i3;
+                    i15 = i7;
                     t1Var2 = t1Var;
                 }
-                if (user != null && !l10.B(user)) {
+                if (user != null && !t10.B(user)) {
                     arrayList2.add(user);
                 }
             } else {
                 t1Var = t1Var2;
-                i3 = i15;
+                i7 = i15;
             }
-            i15 = i3;
+            i15 = i7;
             t1Var2 = t1Var;
         }
         return t1Var2;
     }
 
-    public final boolean a(long j10) {
+    public final boolean a(long j3) {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            if (((TLRPC.User) obj).id == j10) {
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            if (((TLRPC.User) obj).id == j3) {
                 return true;
             }
         }
@@ -93,7 +93,7 @@ public final class t1 {
         while (i10 < size2) {
             Object obj2 = arrayList2.get(i10);
             i10++;
-            if (((TLRPC.User) obj2).id == j10) {
+            if (((TLRPC.User) obj2).id == j3) {
                 return true;
             }
         }
@@ -103,7 +103,7 @@ public final class t1 {
         while (i11 < size3) {
             Object obj3 = arrayList3.get(i11);
             i11++;
-            if (((TLRPC.User) obj3).id == j10) {
+            if (((TLRPC.User) obj3).id == j3) {
                 return true;
             }
         }

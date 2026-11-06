@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 
-import b8.ue;
+import c8.sb;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -9,29 +9,29 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import od.v;
-import od.w;
+import rd.v;
+import rd.w;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e implements sd.c, d {
+public final class e implements vd.c, d {
     public static final Map b;
     public static final LinkedHashMap c;
     public final Class a;
 
     static {
-        int i3 = 0;
-        List c2 = ed.h.c(od.a.class, od.l.class, od.p.class, od.q.class, od.r.class, od.s.class, od.t.class, od.u.class, v.class, w.class, od.b.class, od.c.class, od.d.class, od.e.class, od.f.class, od.g.class, od.h.class, od.i.class, od.j.class, od.k.class, od.m.class, od.n.class, od.o.class);
-        ArrayList arrayList = new ArrayList(ed.i.d(c2, 10));
-        for (Object obj : c2) {
-            int i10 = i3 + 1;
-            if (i3 < 0) {
+        int i7 = 0;
+        List c10 = hd.g.c(rd.a.class, rd.l.class, rd.p.class, rd.q.class, rd.r.class, rd.s.class, rd.t.class, rd.u.class, v.class, w.class, rd.b.class, rd.c.class, rd.d.class, rd.e.class, rd.f.class, rd.g.class, rd.h.class, rd.i.class, rd.j.class, rd.k.class, rd.m.class, rd.n.class, rd.o.class);
+        ArrayList arrayList = new ArrayList(hd.h.d(c10, 10));
+        for (Object obj : c10) {
+            int i10 = i7 + 1;
+            if (i7 < 0) {
                 throw new ArithmeticException("Index overflow has happened.");
             }
-            arrayList.add(new dd.e((Class) obj, Integer.valueOf(i3)));
-            i3 = i10;
+            arrayList.add(new gd.e((Class) obj, Integer.valueOf(i7)));
+            i7 = i10;
         }
-        b = ed.s.f(arrayList);
+        b = hd.r.f(arrayList);
         HashMap hashMap = new HashMap();
         hashMap.put("boolean", "kotlin.Boolean");
         hashMap.put("char", "kotlin.Char");
@@ -77,7 +77,7 @@ public final class e implements sd.c, d {
         for (String str : values) {
             StringBuilder sb2 = new StringBuilder("kotlin.jvm.internal.");
             j.b(str);
-            sb2.append(ud.d.m(str, str));
+            sb2.append(xd.d.m(str, str));
             sb2.append("CompanionObject");
             hashMap3.put(sb2.toString(), str.concat(".Companion"));
         }
@@ -86,12 +86,12 @@ public final class e implements sd.c, d {
             int intValue = ((Number) entry.getValue()).intValue();
             hashMap3.put(cls.getName(), "kotlin.Function" + intValue);
         }
-        LinkedHashMap linkedHashMap = new LinkedHashMap(ed.s.b(hashMap3.size()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(hd.r.b(hashMap3.size()));
         for (Map.Entry entry2 : hashMap3.entrySet()) {
             Object key = entry2.getKey();
             String str2 = (String) entry2.getValue();
             j.b(str2);
-            linkedHashMap.put(key, ud.d.m(str2, str2));
+            linkedHashMap.put(key, xd.d.m(str2, str2));
         }
         c = linkedHashMap;
     }
@@ -130,13 +130,13 @@ public final class e implements sd.c, d {
         String simpleName = jClass.getSimpleName();
         Method enclosingMethod = jClass.getEnclosingMethod();
         if (enclosingMethod != null) {
-            return ud.d.l(simpleName, enclosingMethod.getName() + '$', simpleName);
+            return xd.d.l(simpleName, enclosingMethod.getName() + '$', simpleName);
         }
         Constructor<?> enclosingConstructor = jClass.getEnclosingConstructor();
         if (enclosingConstructor != null) {
-            return ud.d.l(simpleName, enclosingConstructor.getName() + '$', simpleName);
+            return xd.d.l(simpleName, enclosingConstructor.getName() + '$', simpleName);
         }
-        int h = ud.d.h('$', 0, 6, simpleName);
+        int h = xd.d.h('$', 0, 6, simpleName);
         if (h == -1) {
             return simpleName;
         }
@@ -146,11 +146,11 @@ public final class e implements sd.c, d {
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof e) && ue.a(this).equals(ue.a((sd.c) obj));
+        return (obj instanceof e) && sb.a(this).equals(sb.a((vd.c) obj));
     }
 
     public final int hashCode() {
-        return ue.a(this).hashCode();
+        return sb.a(this).hashCode();
     }
 
     public final String toString() {

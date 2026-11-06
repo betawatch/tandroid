@@ -1,42 +1,43 @@
 package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.m71;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class po implements org.telegram.ui.d71 {
+public final class po implements m71 {
     public final /* synthetic */ vo a;
 
     public po(vo voVar) {
         this.a = voVar;
     }
 
-    @Override // org.telegram.ui.d71
-    public final boolean Y0() {
+    @Override // org.telegram.ui.m71
+    public final boolean a() {
+        return this.a.D1;
+    }
+
+    @Override // org.telegram.ui.m71
+    public final boolean a1() {
         return true;
     }
 
-    @Override // org.telegram.ui.d71
-    public final boolean a() {
-        return this.a.E1;
-    }
-
-    @Override // org.telegram.ui.d71
-    public final void l1(boolean z10) {
+    @Override // org.telegram.ui.m71
+    public final void t1(boolean z9) {
         vo voVar = this.a;
-        org.telegram.ui.wm wmVar = voVar.s1;
-        voVar.E1 = !voVar.E1;
-        if (voVar.D1 != null) {
-            voVar.G1 = true;
-            wmVar.v7 = true;
-            TLRPC.WallPaper wallPaper = voVar.P0() ? null : voVar.p1.g;
-            org.telegram.ui.ActionBar.p3 p3Var = voVar.D1.a;
-            if (p3Var.a) {
-                voVar.p1.r(null, wallPaper, z10, Boolean.valueOf(voVar.E1), false);
+        org.telegram.ui.an anVar = voVar.r1;
+        voVar.D1 = !voVar.D1;
+        if (voVar.C1 != null) {
+            voVar.F1 = true;
+            anVar.u7 = true;
+            TLRPC.WallPaper wallPaper = voVar.P0() ? null : voVar.o1.g;
+            org.telegram.ui.ActionBar.r3 r3Var = voVar.C1.a;
+            if (r3Var.a) {
+                voVar.o1.r(null, wallPaper, z9, Boolean.valueOf(voVar.D1), false);
             } else {
-                voVar.p1.r(p3Var, wallPaper, z10, Boolean.valueOf(voVar.E1), false);
+                voVar.o1.r(r3Var, wallPaper, z9, Boolean.valueOf(voVar.D1), false);
             }
-            wmVar.v7 = false;
+            anVar.u7 = false;
         }
     }
 }

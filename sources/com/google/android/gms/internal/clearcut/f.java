@@ -7,19 +7,19 @@ public final class f extends d {
     public final /* synthetic */ int i;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(i iVar, String str, Object obj, int i3) {
+    public /* synthetic */ f(i iVar, String str, Object obj, int i7) {
         super(iVar, str, obj);
-        this.i = i3;
+        this.i = i7;
     }
 
     @Override // com.google.android.gms.internal.clearcut.d
     public final /* synthetic */ Object d(String str) {
         switch (this.i) {
             case 0:
-                if (d2.c.matcher(str).matches()) {
+                if (e2.c.matcher(str).matches()) {
                     return Boolean.TRUE;
                 }
-                if (d2.d.matcher(str).matches()) {
+                if (e2.d.matcher(str).matches()) {
                     return Boolean.FALSE;
                 }
                 String str2 = this.b;

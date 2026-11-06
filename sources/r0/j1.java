@@ -2,14 +2,14 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class j1 {
-    public static int a(int i3) {
+    public static int a(int i7) {
         int statusBars;
         int i10 = 0;
         for (int i11 = 1; i11 <= 512; i11 <<= 1) {
-            if ((i3 & i11) != 0) {
+            if ((i7 & i11) != 0) {
                 if (i11 == 1) {
                     statusBars = WindowInsets.Type.statusBars();
                 } else if (i11 == 2) {

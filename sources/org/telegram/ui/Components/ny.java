@@ -1,59 +1,78 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Point;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ny implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ ry b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ ny(Object obj, boolean z10, boolean z11, boolean z12, int i3) {
-        this.a = i3;
-        this.e = obj;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
+    public /* synthetic */ ny(ry ryVar, int i7, int i10, int i11) {
+        this.a = i11;
+        this.b = ryVar;
+        this.c = i7;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.utils.twidget.u uVar;
-        h71 h71Var;
+        int i7;
         switch (this.a) {
             case 0:
-                py pyVar = (py) this.e;
-                boolean z10 = this.b;
-                boolean z11 = this.c;
-                boolean z12 = this.d;
-                if (z10) {
-                    sy syVar = pyVar.K;
-                    syVar.a = true;
-                    syVar.b = true;
-                }
-                if (z11) {
-                    pyVar.y = true;
-                }
-                long currentTimeMillis = System.currentTimeMillis();
-                if (z12 || Math.abs(pyVar.b0 - currentTimeMillis) > 30) {
-                    pyVar.b0 = currentTimeMillis;
-                    pyVar.e0.run();
+                ry ryVar = this.b;
+                int i10 = this.c;
+                int i11 = this.d;
+                if (ryVar.W != i10 || ryVar.X != i11) {
+                    ryVar.W = i10;
+                    ryVar.X = i11;
+                    int o4 = org.telegram.messenger.iz.o();
+                    int i12 = 1920;
+                    if (o4 != 1) {
+                        if (o4 != 2) {
+                            i12 = 720;
+                        } else {
+                            Point point = org.telegram.messenger.g0.q;
+                            i12 = Math.min(1920, Math.max(point.x, point.y));
+                        }
+                    }
+                    if (org.telegram.messenger.iz.o() == 0 && ((i7 = ryVar.W) > 1280 || ryVar.X > 1280)) {
+                        ryVar.W = i7 / 2;
+                        ryVar.X /= 2;
+                    }
+                    int i13 = ryVar.W;
+                    if (i13 > i12 || ryVar.X > i12) {
+                        int i14 = ryVar.X;
+                        if (i13 > i14) {
+                            ryVar.X = (int) (i14 / (i12 / i13));
+                            ryVar.W = i12;
+                        } else {
+                            ryVar.W = (int) (i13 / (i12 / i14));
+                            ryVar.X = i12;
+                        }
+                    }
+                    ryVar.Z = false;
+                    ryVar.f();
+                    ryVar.d0.run();
                     break;
                 }
                 break;
             case 1:
-                ((org.telegram.ui.xd0) this.e).F1(this.b, this.c, this.d);
+                ry ryVar2 = this.b;
+                int i15 = this.c;
+                int i16 = this.d;
+                ryVar2.n = i15;
+                ryVar2.r = i16;
                 break;
             default:
-                org.telegram.utils.twidget.h0 h0Var = (org.telegram.utils.twidget.h0) this.e;
-                boolean z13 = this.b;
-                boolean z14 = this.c;
-                boolean z15 = this.d;
-                if (!h0Var.u && (uVar = h0Var.J) != null && (h71Var = uVar.h) != null && h71Var.w && !h71Var.x) {
-                    h71Var.k(z13, z14, z15);
-                    break;
-                }
+                ry ryVar3 = this.b;
+                int i17 = this.c;
+                int i18 = this.d;
+                da daVar = ryVar3.I;
+                daVar.l = i17;
+                daVar.m = i18;
                 break;
         }
     }

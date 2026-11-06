@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import android.os.Looper;
-import f8.a;
+import g8.a;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import p6.m;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -90,9 +90,9 @@ public final class Tasks {
         return whenAllSuccess(TaskExecutors.MAIN_THREAD, collection);
     }
 
-    public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
+    public static <T> Task<T> withTimeout(Task<T> task, long j3, TimeUnit timeUnit) {
         m.h(task, "Task must not be null");
-        m.a("Timeout must be positive", j10 > 0);
+        m.a("Timeout must be positive", j3 > 0);
         m.h(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
@@ -102,7 +102,7 @@ public final class Tasks {
             public final /* synthetic */ void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
-        }, timeUnit.toMillis(j10));
+        }, timeUnit.toMillis(j3));
         task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzac
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final /* synthetic */ void onComplete(Task task2) {
@@ -193,7 +193,7 @@ public final class Tasks {
         return forResult(null);
     }
 
-    public static <TResult> TResult await(Task<TResult> task, long j10, TimeUnit timeUnit) {
+    public static <TResult> TResult await(Task<TResult> task, long j3, TimeUnit timeUnit) {
         if (Looper.getMainLooper() != Looper.myLooper()) {
             Looper myLooper = Looper.myLooper();
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
@@ -206,7 +206,7 @@ public final class Tasks {
             }
             zzaa zzaaVar = new zzaa(null);
             zzb(task, zzaaVar);
-            if (zzaaVar.zzb(j10, timeUnit)) {
+            if (zzaaVar.zzb(j3, timeUnit)) {
                 return (TResult) zza(task);
             }
             throw new TimeoutException("Timed out waiting for Task");

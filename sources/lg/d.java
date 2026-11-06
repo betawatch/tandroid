@@ -1,40 +1,41 @@
 package lg;
 
-import org.telegram.messenger.hp;
-import org.telegram.messenger.hs;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
+public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ d(e eVar, int i3) {
-        this.a = i3;
-        this.b = eVar;
+    public /* synthetic */ d(g gVar, int i7) {
+        this.a = i7;
+        this.b = gVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        e eVar = this.b;
-        switch (i3) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                eVar.a();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar = this.b;
+                gVar.j0 = floatValue;
+                gVar.H = true;
+                gVar.invalidate();
                 break;
             case 1:
-                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
-                int i10 = eVar.a;
-                disablepeerconnectedbot.peer = hp.s1(i10).j1(eVar.s);
-                ConnectionsManager.getInstance(i10).sendRequest(disablepeerconnectedbot, null);
-                hp.s1(i10).d7.edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
-                hs.f(i10).k(79, Long.valueOf(eVar.s));
-                f.a(i10).f = false;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar2 = this.b;
+                gVar2.k0 = floatValue2;
+                gVar2.H = true;
+                gVar2.invalidate();
                 break;
             default:
-                sf.c.t(eVar.getContext(), eVar.y);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g gVar3 = this.b;
+                gVar3.v0 = floatValue3;
+                gVar3.t0.setAlpha(gVar3.v0);
+                gVar3.invalidate();
                 break;
         }
     }

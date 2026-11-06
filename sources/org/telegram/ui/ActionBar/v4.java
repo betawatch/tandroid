@@ -3,14 +3,14 @@ package org.telegram.ui.ActionBar;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v4 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ y4 b;
 
-    public /* synthetic */ v4(y4 y4Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ v4(y4 y4Var, int i7) {
+        this.a = i7;
         this.b = y4Var;
     }
 
@@ -19,11 +19,11 @@ public final /* synthetic */ class v4 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 y4 y4Var = this.b;
-                if (!y4Var.H && y4Var.G) {
+                if (!y4Var.G && y4Var.F) {
                     y4Var.j(true);
                     break;
                 } else {
-                    j jVar = y4Var.W;
+                    j jVar = y4Var.V;
                     if (jVar != null) {
                         jVar.b(-1);
                         break;

@@ -1,87 +1,160 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e61 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l71 b;
+public final class e61 extends org.telegram.ui.Components.pj0 {
+    public final /* synthetic */ int e3;
 
-    public /* synthetic */ e61(l71 l71Var, int i3) {
-        this.a = i3;
-        this.b = l71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e61(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.e3 = i7;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i3 = 1;
-                final l71 l71Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.d61
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i3) {
-                            case 0:
-                                l71.b0(l71Var, tLObject);
-                                break;
-                            default:
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
-                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
-                                    if (tL_wallPaper.pattern) {
-                                        l71 l71Var2 = l71Var;
-                                        l71Var2.Y0 = tL_wallPaper;
-                                        l71Var2.g1(false);
-                                        l71Var2.o1();
-                                        l71Var2.W0.add(0, l71Var2.Y0);
-                                        j71 j71Var = l71Var2.S0;
-                                        if (j71Var != null) {
-                                            j71Var.f();
-                                            break;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.Components.pj0
+    public Integer V0(int i7) {
+        switch (this.e3) {
+            case 1:
+                return 0;
+            case 3:
+                return 0;
+            case 4:
+                return 0;
+            case 8:
+                return 0;
             default:
-                final int i10 = 0;
-                final l71 l71Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.d61
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                l71.b0(l71Var2, tLObject);
-                                break;
-                            default:
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
-                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
-                                    if (tL_wallPaper.pattern) {
-                                        l71 l71Var22 = l71Var2;
-                                        l71Var22.Y0 = tL_wallPaper;
-                                        l71Var22.g1(false);
-                                        l71Var22.o1();
-                                        l71Var22.W0.add(0, l71Var22.Y0);
-                                        j71 j71Var = l71Var22.S0;
-                                        if (j71Var != null) {
-                                            j71Var.f();
-                                            break;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
+                return super.V0(i7);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.e3) {
+            case 0:
+                if (getParent() != null && getParent().getParent() != null) {
+                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+                }
+                break;
+            case 2:
+                if (getParent() != null && getParent().getParent() != null) {
+                    ViewParent parent = getParent().getParent();
+                    boolean z9 = true;
+                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                        z9 = false;
                     }
-                });
+                    parent.requestDisallowInterceptTouchEvent(z9);
+                }
+                break;
+            case 6:
+                if (getParent() != null && getParent().getParent() != null) {
+                    ViewParent parent2 = getParent().getParent();
+                    boolean z10 = true;
+                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                        z10 = false;
+                    }
+                    parent2.requestDisallowInterceptTouchEvent(z10);
+                }
+                break;
+            case 13:
+                if (getParent() != null && getParent().getParent() != null) {
+                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+                }
                 break;
         }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.e3) {
+            case 7:
+                int size = View.MeasureSpec.getSize(i10);
+                int b10 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
+                if (b10 <= size) {
+                    size = b10;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                break;
+            case 10:
+                int size2 = View.MeasureSpec.getSize(i10);
+                int b11 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
+                if (b11 <= size2) {
+                    size2 = b11;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.e3) {
+            case 12:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public void r0(View view, View view2) {
+        switch (this.e3) {
+            case 5:
+                if (view instanceof org.telegram.ui.Cells.a6) {
+                    super.r0(view, view2);
+                    break;
+                }
+                break;
+            case 11:
+                if (view instanceof org.telegram.ui.Cells.a6) {
+                    super.r0(view, view2);
+                    break;
+                }
+                break;
+            default:
+                super.r0(view, view2);
+                break;
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z9) {
+        switch (this.e3) {
+            case 5:
+                rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+                break;
+            case 11:
+                rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z9);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean requestFocus(int i7, Rect rect) {
+        switch (this.e3) {
+            case 9:
+                return false;
+            default:
+                return super.requestFocus(i7, rect);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e61(Context context) {
+        super(context, null);
+        this.e3 = 12;
     }
 }

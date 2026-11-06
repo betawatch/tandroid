@@ -83,7 +83,7 @@ public final class v6 {
         SIZED = v6Var4;
         j$.time.t q14 = q(u6Var3);
         q14.D(u6Var4);
-        int i3 = 0;
+        int i7 = 0;
         v6 v6Var5 = new v6("SHORT_CIRCUIT", 4, 12, q14);
         SHORT_CIRCUIT = v6Var5;
         v = new v6[]{v6Var, v6Var2, v6Var3, v6Var4, v6Var5};
@@ -93,9 +93,9 @@ public final class v6 {
         k(u6Var4);
         k(u6Var5);
         for (v6 v6Var6 : values()) {
-            i3 |= v6Var6.e;
+            i7 |= v6Var6.e;
         }
-        i = i3;
+        i = i7;
         int i10 = g;
         j = i10;
         int i11 = i10 << 1;
@@ -122,7 +122,7 @@ public final class v6 {
         return tVar;
     }
 
-    public v6(String str, int i3, int i10, j$.time.t tVar) {
+    public v6(String str, int i7, int i10, j$.time.t tVar) {
         for (u6 u6Var : u6.values()) {
             Map.-EL.putIfAbsent((java.util.Map) tVar.b, u6Var, 0);
         }
@@ -134,32 +134,32 @@ public final class v6 {
         this.e = 3 << i11;
     }
 
-    public final boolean m(int i3) {
-        return (i3 & this.e) == this.c;
+    public final boolean m(int i7) {
+        return (i7 & this.e) == this.c;
     }
 
     public static int k(u6 u6Var) {
-        int i3 = 0;
+        int i7 = 0;
         for (v6 v6Var : values()) {
-            i3 |= ((Integer) v6Var.a.get(u6Var)).intValue() << v6Var.b;
+            i7 |= ((Integer) v6Var.a.get(u6Var)).intValue() << v6Var.b;
         }
-        return i3;
+        return i7;
     }
 
-    public static int j(int i3, int i10) {
+    public static int j(int i7, int i10) {
         int i11;
-        if (i3 == 0) {
+        if (i7 == 0) {
             i11 = i;
         } else {
-            i11 = ~(((j & i3) << 1) | i3 | ((k & i3) >> 1));
+            i11 = ~(((j & i7) << 1) | i7 | ((k & i7) >> 1));
         }
-        return i3 | (i10 & i11);
+        return i7 | (i10 & i11);
     }
 
     public static int l(Spliterator spliterator) {
         int characteristics = spliterator.characteristics();
-        int i3 = characteristics & 4;
+        int i7 = characteristics & 4;
         int i10 = f;
-        return (i3 == 0 || spliterator.getComparator() == null) ? characteristics & i10 : characteristics & i10 & (-5);
+        return (i7 == 0 || spliterator.getComparator() == null) ? characteristics & i10 : characteristics & i10 & (-5);
     }
 }

@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface IntConsumer {
-    void accept(int i3);
+    void accept(int i7);
 }

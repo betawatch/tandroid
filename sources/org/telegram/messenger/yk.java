@@ -1,113 +1,125 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import java.util.HashMap;
+import org.telegram.ui.Components.f41;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cs b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ yk(hp hpVar, long j10, int i3, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.b = hpVar;
+    public /* synthetic */ yk(Object obj, long j3, long j10, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = j3;
         this.c = j10;
-        this.d = i3;
-        this.e = i10;
-        this.f = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        long j10;
-        int i3;
-        int i10 = this.a;
-        cs csVar = this.b;
-        switch (i10) {
+        f41 f41Var;
+        switch (this.a) {
             case 0:
-                hp hpVar = (hp) csVar;
-                a0.h hVar = hpVar.R;
-                long j11 = this.c;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j11);
-                int i11 = this.e;
-                if (dialog != null) {
-                    int i12 = dialog.unread_count;
-                    int i13 = this.d;
-                    if (i13 == 0 || i11 >= dialog.top_message) {
-                        dialog.unread_count = 0;
-                    } else {
-                        int max = Math.max(i12 - i13, 0);
-                        dialog.unread_count = max;
-                        if (i11 != Integer.MIN_VALUE && max > (i3 = dialog.top_message - i11)) {
-                            dialog.unread_count = i3;
-                        }
+                qp qpVar = (qp) this.d;
+                long j3 = this.b;
+                long j10 = this.c;
+                a0.h hVar = qpVar.Q1;
+                HashMap hashMap = qpVar.S1;
+                if (j3 == 0) {
+                    ip ipVar = (ip) hVar.f(j10);
+                    if (ipVar != null) {
+                        qpVar.R(ipVar);
+                        qpVar.P1.remove(ipVar);
+                        hVar.l(j10);
+                        break;
                     }
-                    boolean z10 = dialog.unread_mark;
-                    if (z10) {
-                        dialog.unread_mark = false;
-                        hpVar.getMessagesStorage().F1(dialog.id, false);
-                    }
-                    if ((i12 != 0 || z10) && dialog.unread_count == 0) {
-                        j10 = j11;
-                        hpVar.r2(j10, 0L, null);
-                        int i14 = 0;
-                        while (true) {
-                            mo[] moVarArr = hpVar.N;
-                            if (i14 < moVarArr.length) {
-                                mo moVar = moVarArr[i14];
-                                if (moVar == null || (moVar.g & 64) == 0) {
-                                    i14++;
-                                } else {
-                                    hpVar.T4(null);
-                                    hpVar.getNotificationCenter().k(3, new Object[0]);
-                                }
-                            }
-                        }
-                    } else {
-                        j10 = j11;
-                    }
-                    hpVar.getNotificationCenter().k(2, 256);
                 } else {
-                    j10 = j11;
-                }
-                if (!this.f) {
-                    long j12 = j10;
-                    hpVar.getNotificationsController().L(null, j12, 0, i11, false);
-                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
-                    longSparseIntArray.put(j12, 0);
-                    hpVar.getNotificationsController().J(longSparseIntArray);
-                    break;
-                } else {
-                    long j13 = j10;
-                    hpVar.getNotificationsController().L(null, j13, 0, i11, true);
-                    LongSparseIntArray longSparseIntArray2 = new LongSparseIntArray(1);
-                    longSparseIntArray2.put(j13, -1);
-                    hpVar.getNotificationsController().J(longSparseIntArray2);
-                    break;
+                    String str = j10 + "_" + j3;
+                    ip ipVar2 = (ip) hashMap.get(str);
+                    if (ipVar2 != null) {
+                        qpVar.R(ipVar2);
+                        qpVar.R1.remove(ipVar2);
+                        hashMap.remove(str);
+                        break;
+                    }
                 }
                 break;
             case 1:
-                g0.h3(new yk((hp) csVar, this.c, this.d, this.e, this.f, 0));
+                org.telegram.ui.pn.b0((org.telegram.ui.pn) this.d, this.b, this.c);
+                break;
+            case 2:
+                org.telegram.ui.web.o1 o1Var = (org.telegram.ui.web.o1) this.d;
+                long j11 = this.b;
+                long j12 = this.c;
+                o1Var.h = j11;
+                o1Var.n = j12;
+                fi.w3 w3Var = o1Var.a;
+                if (w3Var != null && (f41Var = w3Var.f3) != null && w3Var.G) {
+                    f41Var.O(true);
+                    break;
+                }
+                break;
+            case 3:
+                vi.h hVar2 = (vi.h) this.d;
+                long j13 = this.b;
+                long j14 = this.c;
+                if (hVar2.G == 7) {
+                    long j15 = ((j13 - j14) * 48000) / 1000;
+                    hVar2.p = j15;
+                    hVar2.r = 0L;
+                    hVar2.s = vi.h.r(j15);
+                    hVar2.i();
+                    break;
+                }
                 break;
             default:
-                int i15 = ChatActivityEnterView.t5;
-                ((ChatActivityEnterView) csVar).S0(this.f, this.d, this.e, this.c, false);
+                ac.e eVar = (ac.e) this.d;
+                long j16 = this.b;
+                long j17 = this.c;
+                vi.h hVar3 = (vi.h) eVar.c;
+                if (j16 == hVar3.o) {
+                    hVar3.n = null;
+                    hVar3.p += j17;
+                    hVar3.q = 0L;
+                    hVar3.i.removeCallbacks(hVar3.D);
+                    int i7 = hVar3.G;
+                    if (i7 != 10) {
+                        if (i7 != 9) {
+                            if (!hVar3.v) {
+                                if (i7 == 4) {
+                                    vi.g gVar = hVar3.z;
+                                    if (gVar != null) {
+                                        long j18 = hVar3.j();
+                                        hVar3.r = 0L;
+                                        hVar3.s = j18;
+                                        hVar3.j.execute(new org.telegram.utils.recorder.audio.c(1, hVar3, gVar));
+                                        break;
+                                    } else {
+                                        hVar3.g(new IllegalStateException("Output generation is missing"));
+                                        break;
+                                    }
+                                }
+                            } else {
+                                hVar3.v = false;
+                                hVar3.i();
+                                break;
+                            }
+                        } else {
+                            hVar3.c();
+                            hVar3.t();
+                            break;
+                        }
+                    } else {
+                        hVar3.c();
+                        hVar3.t();
+                        hVar3.l("cancelled");
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ yk(ChatActivityEnterView chatActivityEnterView, boolean z10, int i3, int i10, long j10) {
-        this.a = 2;
-        this.b = chatActivityEnterView;
-        this.f = z10;
-        this.d = i3;
-        this.e = i10;
-        this.c = j10;
     }
 }

@@ -141,8 +141,8 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ java.util.stream.LongStream limit(long j10) {
-        return f(this.a.limit(j10));
+    public final /* synthetic */ java.util.stream.LongStream limit(long j3) {
+        return f(this.a.limit(j3));
     }
 
     @Override // java.util.stream.LongStream
@@ -203,8 +203,8 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ long reduce(long j10, LongBinaryOperator longBinaryOperator) {
-        return this.a.reduce(j10, longBinaryOperator);
+    public final /* synthetic */ long reduce(long j3, LongBinaryOperator longBinaryOperator) {
+        return this.a.reduce(j3, longBinaryOperator);
     }
 
     @Override // java.util.stream.LongStream
@@ -224,8 +224,8 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ java.util.stream.LongStream skip(long j10) {
-        return f(this.a.skip(j10));
+    public final /* synthetic */ java.util.stream.LongStream skip(long j3) {
+        return f(this.a.skip(j3));
     }
 
     @Override // java.util.stream.LongStream

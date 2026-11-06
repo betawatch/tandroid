@@ -1,43 +1,31 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d20 implements TextWatcher {
-    public final /* synthetic */ x30 a;
+public final class d20 implements c5.g {
+    public final /* synthetic */ c40 a;
 
-    public d20(x30 x30Var) {
-        this.a = x30Var;
+    public d20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        x30 x30Var = this.a;
-        x30Var.s5.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i3 = x30Var.V1;
-        if (codePointCount + 25 > i3) {
-            str = "" + (i3 - codePointCount);
-        } else {
-            str = null;
-        }
-        x30Var.E1.a();
-        x30Var.E1.setText(str);
-        x30Var.E1.setTextColor(codePointCount >= i3 ? -1280137 : -1);
-        if (codePointCount > i3) {
-            org.telegram.messenger.p2.E.a();
-        }
+    @Override // c5.g
+    public final void a(int i7) {
+        c40 c40Var = this.a;
+        c40Var.i1.D0.k(i7);
+        a20 a20Var = c40Var.u4;
+        a20Var.J = a20Var.L;
+        a20Var.K = a20Var.M;
+        a20Var.N = 0.0f;
+        a20Var.O = 1;
+        a20Var.invalidate();
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    @Override // c5.g
+    public final void c(int i7) {
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    @Override // c5.g
+    public final void b(float f10, int i7, int i10) {
     }
 }

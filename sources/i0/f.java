@@ -8,8 +8,8 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
-import b8.sc;
-import b8.tc;
+import c8.j0;
+import c8.k0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,20 +18,20 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class f extends sc {
+public class f extends j0 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
     public static Method d = null;
     public static boolean e = false;
 
-    public static boolean g(Object obj, String str, int i3, boolean z10) {
+    public static boolean g(Object obj, String str, int i7, boolean z9) {
         h();
         try {
             try {
-                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i3), Boolean.valueOf(z10))).booleanValue();
+                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i7), Boolean.valueOf(z9))).booleanValue();
             } catch (InvocationTargetException e10) {
                 e = e10;
                 throw new RuntimeException(e);
@@ -68,28 +68,28 @@ public class f extends sc {
         d = method;
     }
 
-    @Override // b8.sc
-    public Typeface a(Context context, h0.e eVar, Resources resources, int i3) {
+    @Override // c8.j0
+    public Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = tc.d(context);
-                if (d10 == null) {
+                File d2 = k0.d(context);
+                if (d2 == null) {
                     return null;
                 }
                 try {
-                    if (!tc.b(d10, resources, fVar.f)) {
+                    if (!k0.b(d2, resources, fVar.f)) {
                         return null;
                     }
-                    if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
+                    if (!g(newInstance, d2.getPath(), fVar.b, fVar.c)) {
                         return null;
                     }
-                    d10.delete();
+                    d2.delete();
                 } catch (RuntimeException unused) {
                     return null;
                 } finally {
-                    d10.delete();
+                    d2.delete();
                 }
             }
             h();
@@ -105,13 +105,13 @@ public class f extends sc {
         }
     }
 
-    @Override // b8.sc
-    public Typeface b(Context context, o0.i[] iVarArr, int i3) {
+    @Override // c8.j0
+    public Typeface b(Context context, o0.h[] hVarArr, int i7) {
         File file;
         String readlink;
-        if (iVarArr.length >= 1) {
+        if (hVarArr.length >= 1) {
             try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(iVarArr, i3).a, "r", null);
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(hVarArr, i7).a, "r", null);
                 if (openFileDescriptor != null) {
                     try {
                         try {
@@ -129,15 +129,15 @@ public class f extends sc {
                                 return createFromFile;
                             }
                             FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-                            Typeface d10 = d(context, fileInputStream);
+                            Typeface d2 = d(context, fileInputStream);
                             fileInputStream.close();
                             openFileDescriptor.close();
-                            return d10;
+                            return d2;
                         }
-                        Typeface d102 = d(context, fileInputStream);
+                        Typeface d22 = d(context, fileInputStream);
                         fileInputStream.close();
                         openFileDescriptor.close();
-                        return d102;
+                        return d22;
                     } finally {
                     }
                     file = null;

@@ -1,25 +1,27 @@
 package com.google.firebase;
 
+import a3.l;
+import a8.h8;
+import ab.r;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
-import b8.r1;
-import bb.b;
+import cb.b;
 import com.google.firebase.components.ComponentRegistrar;
-import d2.l0;
+import e2.j0;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import n9.h;
-import ra.d;
-import ra.e;
-import ra.f;
-import ra.g;
-import t9.a;
-import t9.j;
-import t9.r;
+import o9.g;
+import sa.c;
+import sa.d;
+import sa.e;
+import sa.f;
+import u9.a;
+import u9.i;
+import u9.q;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -35,37 +37,36 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public final List getComponents() {
         String str;
         ArrayList arrayList = new ArrayList();
-        l0 a10 = a.a(b.class);
-        int i3 = 0;
-        a10.a(new j(2, 0, bb.a.class));
-        a10.f = new a3.j(10);
+        j0 a10 = a.a(b.class);
+        a10.a(new i(2, 0, cb.a.class));
+        a10.f = new l(29);
         arrayList.add(a10.b());
-        r rVar = new r(p9.a.class, Executor.class);
-        l0 l0Var = new l0(d.class, new Class[]{f.class, g.class});
-        l0Var.a(j.a(Context.class));
-        l0Var.a(j.a(h.class));
-        l0Var.a(new j(2, 0, e.class));
-        l0Var.a(new j(1, 1, b.class));
-        l0Var.a(new j(rVar, 1, 0));
-        l0Var.f = new ra.b(rVar, i3);
-        arrayList.add(l0Var.b());
-        arrayList.add(r1.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(r1.a("fire-core", "22.2.1"));
-        arrayList.add(r1.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(r1.a("device-model", b(Build.DEVICE)));
-        arrayList.add(r1.a("device-brand", b(Build.BRAND)));
-        arrayList.add(r1.b("android-target-sdk", new l2.d(28)));
-        arrayList.add(r1.b("android-min-sdk", new l2.d(29)));
-        arrayList.add(r1.b("android-platform", new n9.j(i3)));
-        arrayList.add(r1.b("android-installer", new n9.j(1)));
+        q qVar = new q(q9.a.class, Executor.class);
+        j0 j0Var = new j0(c.class, new Class[]{e.class, f.class});
+        j0Var.a(i.a(Context.class));
+        j0Var.a(i.a(g.class));
+        j0Var.a(new i(2, 0, d.class));
+        j0Var.a(new i(1, 1, b.class));
+        j0Var.a(new i(qVar, 1, 0));
+        j0Var.f = new r(qVar, 1);
+        arrayList.add(j0Var.b());
+        arrayList.add(h8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(h8.a("fire-core", "22.2.1"));
+        arrayList.add(h8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(h8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(h8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(h8.b("android-target-sdk", new ni.a(4)));
+        arrayList.add(h8.b("android-min-sdk", new ni.a(5)));
+        arrayList.add(h8.b("android-platform", new ni.a(6)));
+        arrayList.add(h8.b("android-installer", new ni.a(7)));
         try {
-            dd.b.b.getClass();
+            gd.b.b.getClass();
             str = "2.1.20";
         } catch (NoClassDefFoundError unused) {
             str = null;
         }
         if (str != null) {
-            arrayList.add(r1.a("kotlin", str));
+            arrayList.add(h8.a("kotlin", str));
         }
         return arrayList;
     }

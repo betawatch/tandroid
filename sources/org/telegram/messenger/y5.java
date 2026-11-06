@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class y5 {
     public final int[] a;
@@ -14,28 +14,28 @@ public final class y5 {
     public boolean g;
     public int h;
 
-    public y5(int[] iArr, long j10, long j11, long j12, boolean z10, boolean z11, boolean z12, boolean z13, int i3, boolean z14) {
+    public y5(int[] iArr, long j3, long j10, long j11, boolean z9, boolean z10, boolean z11, boolean z12, int i7, boolean z13) {
         int[] iArr2 = new int[4];
         this.a = iArr2;
-        this.b = new long[]{j10, j11, j12, 524288};
+        this.b = new long[]{j3, j10, j11, 524288};
         System.arraycopy(iArr, 0, iArr2, 0, Math.max(iArr.length, 4));
-        this.c = z10;
-        this.d = z11;
-        this.f = z13;
-        this.h = i3;
-        this.g = z12;
-        this.e = z14;
+        this.c = z9;
+        this.d = z10;
+        this.f = z12;
+        this.h = i7;
+        this.g = z11;
+        this.e = z13;
     }
 
     public final boolean a(y5 y5Var) {
         int[] iArr = this.a;
-        int i3 = iArr[0];
+        int i7 = iArr[0];
         int[] iArr2 = y5Var.a;
-        if (i3 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) {
+        if (i7 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) {
             long[] jArr = this.b;
-            long j10 = jArr[0];
+            long j3 = jArr[0];
             long[] jArr2 = y5Var.b;
-            if (j10 == jArr2[0] && jArr[1] == jArr2[1] && jArr[2] == jArr2[2] && jArr[3] == jArr2[3] && this.c == y5Var.c && this.d == y5Var.d && this.h == y5Var.h && this.e == y5Var.e) {
+            if (j3 == jArr2[0] && jArr[1] == jArr2[1] && jArr[2] == jArr2[2] && jArr[3] == jArr2[3] && this.c == y5Var.c && this.d == y5Var.d && this.h == y5Var.h && this.e == y5Var.e) {
                 return true;
             }
         }
@@ -43,16 +43,16 @@ public final class y5 {
     }
 
     public final boolean b() {
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             int[] iArr = this.a;
-            if (i3 >= iArr.length) {
+            if (i7 >= iArr.length) {
                 return false;
             }
-            if (iArr[i3] != 0) {
+            if (iArr[i7] != 0) {
                 return true;
             }
-            i3++;
+            i7++;
         }
     }
 
@@ -77,32 +77,32 @@ public final class y5 {
         this.h = tL_autoDownloadSettings.video_upload_maxbitrate;
         long max = Math.max(512000, tL_autoDownloadSettings.photo_size_max);
         long[] jArr = this.b;
-        int i3 = 0;
+        int i7 = 0;
         jArr[0] = max;
         jArr[1] = Math.max(512000L, tL_autoDownloadSettings.video_size_max);
         jArr[2] = Math.max(512000L, tL_autoDownloadSettings.file_size_max);
         while (true) {
             int[] iArr = this.a;
-            if (i3 >= iArr.length) {
+            if (i7 >= iArr.length) {
                 this.e = true;
                 return;
             }
             if (tL_autoDownloadSettings.photo_size_max == 0 || tL_autoDownloadSettings.disabled) {
-                iArr[i3] = iArr[i3] & (-2);
+                iArr[i7] = iArr[i7] & (-2);
             } else {
-                iArr[i3] = iArr[i3] | 1;
+                iArr[i7] = iArr[i7] | 1;
             }
             if (tL_autoDownloadSettings.video_size_max == 0 || tL_autoDownloadSettings.disabled) {
-                iArr[i3] = iArr[i3] & (-5);
+                iArr[i7] = iArr[i7] & (-5);
             } else {
-                iArr[i3] = iArr[i3] | 4;
+                iArr[i7] = iArr[i7] | 4;
             }
             if (tL_autoDownloadSettings.file_size_max == 0 || tL_autoDownloadSettings.disabled) {
-                iArr[i3] = iArr[i3] & (-9);
+                iArr[i7] = iArr[i7] & (-9);
             } else {
-                iArr[i3] = iArr[i3] | 8;
+                iArr[i7] = iArr[i7] | 8;
             }
-            i3++;
+            i7++;
         }
     }
 

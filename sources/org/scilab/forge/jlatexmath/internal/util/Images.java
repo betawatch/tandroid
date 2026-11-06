@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath.internal.util;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.image.BufferedImage;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class Images {
     public static double DISTANCE_THRESHOLD = 40.0d;
@@ -18,10 +18,10 @@ public final class Images {
         int width = bufferedImage.getWidth();
         int height = bufferedImage.getHeight();
         double d = 0.0d;
-        for (int i3 = 0; i3 < height; i3++) {
+        for (int i7 = 0; i7 < height; i7++) {
             for (int i10 = 0; i10 < width; i10++) {
-                Color color = new Color(bufferedImage.getRGB(i10, i3));
-                Color color2 = new Color(bufferedImage2.getRGB(i10, i3));
+                Color color = new Color(bufferedImage.getRGB(i10, i7));
+                Color color2 = new Color(bufferedImage2.getRGB(i10, i7));
                 d += sqr(color.getRed() - color2.getRed()) + sqr(color.getBlue() - color2.getBlue()) + sqr(color.getGreen() - color2.getGreen()) + sqr(color.getAlpha() - color2.getAlpha());
             }
         }

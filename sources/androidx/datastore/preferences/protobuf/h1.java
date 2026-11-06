@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class h1 {
     public static final h1 f = new h1(0, new int[0], new Object[0], false);
@@ -12,31 +12,31 @@ public final class h1 {
     public int d = -1;
     public boolean e;
 
-    public h1(int i3, int[] iArr, Object[] objArr, boolean z10) {
-        this.a = i3;
+    public h1(int i7, int[] iArr, Object[] objArr, boolean z9) {
+        this.a = i7;
         this.b = iArr;
         this.c = objArr;
-        this.e = z10;
+        this.e = z9;
     }
 
-    public final void a(int i3) {
+    public final void a(int i7) {
         int[] iArr = this.b;
-        if (i3 > iArr.length) {
+        if (i7 > iArr.length) {
             int i10 = this.a;
             int i11 = (i10 / 2) + i10;
-            if (i11 >= i3) {
-                i3 = i11;
+            if (i11 >= i7) {
+                i7 = i11;
             }
-            if (i3 < 8) {
-                i3 = 8;
+            if (i7 < 8) {
+                i7 = 8;
             }
-            this.b = Arrays.copyOf(iArr, i3);
-            this.c = Arrays.copyOf(this.c, i3);
+            this.b = Arrays.copyOf(iArr, i7);
+            this.c = Arrays.copyOf(this.c, i7);
         }
     }
 
     public final int b() {
-        int i3;
+        int i7;
         int k10;
         int i10;
         int i11 = this.d;
@@ -55,7 +55,7 @@ public final class h1 {
                 } else if (i16 == 2) {
                     i10 = m.g(i15, (h) this.c[i13]);
                 } else if (i16 == 3) {
-                    i3 = m.i(i15) * 2;
+                    i7 = m.i(i15) * 2;
                     k10 = ((h1) this.c[i13]).b();
                 } else {
                     if (i16 != 5) {
@@ -67,23 +67,23 @@ public final class h1 {
                 i12 = i10 + i12;
             } else {
                 long longValue = ((Long) this.c[i13]).longValue();
-                i3 = m.i(i15);
+                i7 = m.i(i15);
                 k10 = m.k(longValue);
             }
-            i12 = k10 + i3 + i12;
+            i12 = k10 + i7 + i12;
         }
         this.d = i12;
         return i12;
     }
 
-    public final void c(int i3, Object obj) {
+    public final void c(int i7, Object obj) {
         if (!this.e) {
             throw new UnsupportedOperationException();
         }
         a(this.a + 1);
         int[] iArr = this.b;
         int i10 = this.a;
-        iArr[i10] = i3;
+        iArr[i10] = i7;
         this.c[i10] = obj;
         this.a = i10 + 1;
     }
@@ -94,9 +94,9 @@ public final class h1 {
         }
         l0Var.getClass();
         m mVar = (m) l0Var.a;
-        for (int i3 = 0; i3 < this.a; i3++) {
-            int i10 = this.b[i3];
-            Object obj = this.c[i3];
+        for (int i7 = 0; i7 < this.a; i7++) {
+            int i10 = this.b[i7];
+            Object obj = this.c[i7];
             int i11 = i10 >>> 3;
             int i12 = i10 & 7;
             if (i12 == 0) {
@@ -126,13 +126,13 @@ public final class h1 {
             return false;
         }
         h1 h1Var = (h1) obj;
-        int i3 = this.a;
-        if (i3 == h1Var.a) {
+        int i7 = this.a;
+        if (i7 == h1Var.a) {
             int[] iArr = this.b;
             int[] iArr2 = h1Var.b;
             int i10 = 0;
             while (true) {
-                if (i10 >= i3) {
+                if (i10 >= i7) {
                     Object[] objArr = this.c;
                     Object[] objArr2 = h1Var.c;
                     int i11 = this.a;
@@ -152,12 +152,12 @@ public final class h1 {
     }
 
     public final int hashCode() {
-        int i3 = this.a;
-        int i10 = (527 + i3) * 31;
+        int i7 = this.a;
+        int i10 = (527 + i7) * 31;
         int[] iArr = this.b;
         int i11 = 17;
         int i12 = 17;
-        for (int i13 = 0; i13 < i3; i13++) {
+        for (int i13 = 0; i13 < i7; i13++) {
             i12 = (i12 * 31) + iArr[i13];
         }
         int i14 = (i10 + i12) * 31;

@@ -1,41 +1,48 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rf implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class rf implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ rf(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public /* synthetic */ rf(an anVar, String str, int i7) {
+        this.a = i7;
+        this.b = anVar;
+        this.c = str;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                wm wmVar = (wm) this.b;
-                wmVar.q9 = true;
-                wmVar.o9 = 0;
-                wmVar.Rb = 0;
-                wmVar.a5 = 0;
-                wmVar.M9();
-                wmVar.qc(false);
-                break;
-            case 1:
-                ln lnVar = (ln) this.b;
-                lnVar.N0 = false;
-                lnVar.b = null;
-                lnVar.O0 = false;
-                break;
-            case 2:
-                ((qo) this.b).n = null;
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    an anVar = this.b;
+                    String str = this.c;
+                    if (booleanValue) {
+                        anVar.getMessagesController().p(str, false);
+                    }
+                    anVar.getParentActivity();
+                    vf.c.o(str);
+                    break;
+                }
                 break;
             default:
-                ((m90) this.b).b();
+                an anVar2 = this.b;
+                anVar2.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        anVar2.getMessagesController().p(str2, true);
+                    }
+                    vf.c.n(anVar2.getParentActivity(), str2, false, null);
+                    break;
+                }
                 break;
         }
     }

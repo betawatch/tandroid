@@ -9,14 +9,14 @@ import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static DateTimeWithZone a(ZonedDateTime zonedDateTime) {
         Objects.requireNonNull(zonedDateTime);
-        LocalDateTime r5 = zonedDateTime.r();
+        LocalDateTime r10 = zonedDateTime.r();
         ZoneId zone = zonedDateTime.getZone();
-        ZoneOffset offset = zone.getRules().getOffset(r5);
-        return DateTimeWithZone.create(TimeUnit.SECONDS.toMillis(r5.toEpochSecond(offset)), offset.getTotalSeconds(), zone.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
+        ZoneOffset offset = zone.getRules().getOffset(r10);
+        return DateTimeWithZone.create(TimeUnit.SECONDS.toMillis(r10.toEpochSecond(offset)), offset.getTotalSeconds(), zone.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
     }
 }

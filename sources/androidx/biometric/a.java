@@ -9,7 +9,7 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a extends BiometricPrompt$AuthenticationCallback {
     public final /* synthetic */ d a;
@@ -18,8 +18,8 @@ public final class a extends BiometricPrompt$AuthenticationCallback {
         this.a = dVar;
     }
 
-    public void onAuthenticationError(int i3, CharSequence charSequence) {
-        this.a.a(i3, charSequence);
+    public void onAuthenticationError(int i7, CharSequence charSequence) {
+        this.a.a(i7, charSequence);
     }
 
     public void onAuthenticationFailed() {
@@ -56,18 +56,18 @@ public final class a extends BiometricPrompt$AuthenticationCallback {
                 }
             }
         }
-        int i3 = Build.VERSION.SDK_INT;
+        int i7 = Build.VERSION.SDK_INT;
         int i10 = -1;
-        if (i3 >= 30) {
+        if (i7 >= 30) {
             if (authenticationResult != null) {
                 i10 = c.a(authenticationResult);
             }
-        } else if (i3 != 29) {
+        } else if (i7 != 29) {
             i10 = 2;
         }
         this.a.b(new u(vVar, i10));
     }
 
-    public void onAuthenticationHelp(int i3, CharSequence charSequence) {
+    public void onAuthenticationHelp(int i7, CharSequence charSequence) {
     }
 }

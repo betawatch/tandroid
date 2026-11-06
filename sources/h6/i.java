@@ -1,41 +1,104 @@
 package h6;
 
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import g6.o;
-import java.util.ArrayList;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final i6.b a = new i6.b("MediaSessionUtils", null);
+public final class i extends o {
+    public final /* synthetic */ int r;
+    public final /* synthetic */ h s;
 
-    public static ArrayList a(o oVar) {
-        try {
-            Parcel R0 = oVar.R0(oVar.P0(), 3);
-            ArrayList createTypedArrayList = R0.createTypedArrayList(g6.d.CREATOR);
-            R0.recycle();
-            return createTypedArrayList;
-        } catch (RemoteException e10) {
-            Object[] objArr = {"getNotificationActions", o.class.getSimpleName()};
-            i6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e10);
-            return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(h hVar, int i7) {
+        super(hVar, false);
+        this.r = i7;
+        this.s = hVar;
+    }
+
+    @Override // h6.o
+    public final void n() {
+        switch (this.r) {
+            case 0:
+                j6.m mVar = this.s.c;
+                j6.n o4 = o();
+                mVar.getClass();
+                JSONObject jSONObject = new JSONObject();
+                long b10 = mVar.b();
+                try {
+                    jSONObject.put("requestId", b10);
+                    jSONObject.put(TeXSymbolParser.TYPE_ATTR, "GET_STATUS");
+                    f6.q qVar = mVar.f;
+                    if (qVar != null) {
+                        jSONObject.put("mediaSessionId", qVar.b);
+                    }
+                } catch (JSONException unused) {
+                }
+                mVar.c(b10, jSONObject.toString());
+                mVar.p.a(b10, o4);
+                break;
+            case 1:
+                this.s.c.d(o(), -1, null);
+                break;
+            case 2:
+                this.s.c.d(o(), 1, null);
+                break;
+            case 3:
+                this.s.c.d(o(), 0, 2);
+                break;
+            case 4:
+                j6.m mVar2 = this.s.c;
+                j6.n o10 = o();
+                mVar2.getClass();
+                JSONObject jSONObject2 = new JSONObject();
+                long b11 = mVar2.b();
+                try {
+                    jSONObject2.put("requestId", b11);
+                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEM_IDS");
+                    jSONObject2.put("mediaSessionId", mVar2.p());
+                } catch (JSONException unused2) {
+                }
+                mVar2.c(b11, jSONObject2.toString());
+                mVar2.r.a(b11, o10);
+                break;
+            case 5:
+                j6.m mVar3 = this.s.c;
+                j6.n o11 = o();
+                mVar3.getClass();
+                JSONObject jSONObject3 = new JSONObject();
+                long b12 = mVar3.b();
+                try {
+                    jSONObject3.put("requestId", b12);
+                    jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "PAUSE");
+                    jSONObject3.put("mediaSessionId", mVar3.p());
+                } catch (JSONException unused3) {
+                }
+                mVar3.c(b12, jSONObject3.toString());
+                mVar3.k.a(b12, o11);
+                break;
+            default:
+                j6.m mVar4 = this.s.c;
+                j6.n o12 = o();
+                mVar4.getClass();
+                JSONObject jSONObject4 = new JSONObject();
+                long b13 = mVar4.b();
+                try {
+                    jSONObject4.put("requestId", b13);
+                    jSONObject4.put(TeXSymbolParser.TYPE_ATTR, "PLAY");
+                    jSONObject4.put("mediaSessionId", mVar4.p());
+                } catch (JSONException unused4) {
+                }
+                mVar4.c(b13, jSONObject4.toString());
+                mVar4.l.a(b13, o12);
+                break;
         }
     }
 
-    public static int[] b(o oVar) {
-        try {
-            Parcel R0 = oVar.R0(oVar.P0(), 4);
-            int[] createIntArray = R0.createIntArray();
-            R0.recycle();
-            return createIntArray;
-        } catch (RemoteException e10) {
-            Object[] objArr = {"getCompactViewActionIndices", o.class.getSimpleName()};
-            i6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e10);
-            return null;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(h hVar) {
+        super(hVar, true);
+        this.r = 4;
+        this.s = hVar;
     }
 }

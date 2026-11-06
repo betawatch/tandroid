@@ -1,37 +1,90 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Dialog;
-import android.view.View;
-import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.ab;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface z1 {
-    void a(boolean z10);
+public final class z1 implements ab {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f2 b;
 
-    void b(boolean z10);
+    public /* synthetic */ z1(int i7, f2 f2Var) {
+        this.a = i7;
+        this.b = f2Var;
+    }
 
-    View d();
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ boolean a() {
+        switch (this.a) {
+        }
+        return true;
+    }
 
-    void dismiss();
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ void b(cc ccVar) {
+        int i7 = this.a;
+    }
 
-    int e(int i3);
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ void c(float f10) {
+        int i7 = this.a;
+    }
 
-    boolean f();
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ void d(cc ccVar) {
+        int i7 = this.a;
+    }
 
-    void h(int i3);
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ boolean e() {
+        switch (this.a) {
+        }
+        return true;
+    }
 
-    boolean j();
+    @Override // org.telegram.ui.Components.ab
+    public final int f(int i7) {
+        switch (this.a) {
+            case 0:
+                if (this.b.isSupportEdgeToEdge()) {
+                    return org.telegram.messenger.g0.n;
+                }
+                return 0;
+            default:
+                return this.b.getBottomInset();
+        }
+    }
 
-    fc k();
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ boolean g(int i7) {
+        switch (this.a) {
+        }
+        return false;
+    }
 
-    void n(Runnable runnable);
+    @Override // org.telegram.ui.Components.ab
+    public final /* synthetic */ int h(int i7) {
+        switch (this.a) {
+        }
+        return 0;
+    }
 
-    void p();
+    private final /* synthetic */ void i(float f10) {
+    }
 
-    boolean s();
+    private final /* synthetic */ void j(float f10) {
+    }
 
-    boolean t(Dialog dialog);
+    private final /* synthetic */ void k(cc ccVar) {
+    }
 
-    boolean y();
+    private final /* synthetic */ void l(cc ccVar) {
+    }
+
+    private final /* synthetic */ void m(cc ccVar) {
+    }
+
+    private final /* synthetic */ void n(cc ccVar) {
+    }
 }

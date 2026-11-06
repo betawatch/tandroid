@@ -1,17 +1,27 @@
 package eg;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.nio.ShortBuffer;
+import pb.b;
+import sa.d;
+import w7.s;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public float a = 1.0f;
+public interface a {
+    public static final b l;
+    public static final s m;
+    public static final qb.a o;
+    public static final d p;
 
-    public abstract short a();
+    static {
+        int i7 = 7;
+        l = new b(i7);
+        m = new s(i7, false);
+        o = new qb.a(i7);
+        p = new d(i7);
+    }
 
-    public abstract int b();
+    void H0(ShortBuffer shortBuffer, int i7, ShortBuffer shortBuffer2, int i10);
 
-    public abstract boolean c();
-
-    public abstract void d();
-
-    public abstract void e(int i3, int i10);
+    int z1(int i7, int i10, int i11);
 }

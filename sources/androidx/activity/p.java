@@ -1,58 +1,58 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
+import androidx.fragment.app.z;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class p extends kotlin.jvm.internal.k implements od.a {
+public final class p extends kotlin.jvm.internal.k implements rd.a {
     public final /* synthetic */ int b;
-    public final /* synthetic */ v c;
+    public final /* synthetic */ w c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(v vVar, int i3) {
+    public /* synthetic */ p(w wVar, int i7) {
         super(0);
-        this.b = i3;
-        this.c = vVar;
+        this.b = i7;
+        this.c = wVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v2 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
-    @Override // od.a
+    @Override // rd.a
     public final Object invoke() {
-        a0 a0Var;
+        z zVar;
         switch (this.b) {
             case 0:
                 this.c.b();
                 break;
             case 1:
-                v vVar = this.c;
-                a0 a0Var2 = vVar.c;
-                if (a0Var2 == null) {
-                    ed.e eVar = vVar.b;
-                    ListIterator listIterator = eVar.listIterator(eVar.size());
+                w wVar = this.c;
+                z zVar2 = wVar.c;
+                if (zVar2 == null) {
+                    hd.d dVar = wVar.b;
+                    ListIterator listIterator = dVar.listIterator(dVar.size());
                     while (true) {
                         if (listIterator.hasPrevious()) {
-                            a0Var = listIterator.previous();
-                            if (((a0) a0Var).a) {
+                            zVar = listIterator.previous();
+                            if (((z) zVar).a) {
                             }
                         } else {
-                            a0Var = 0;
+                            zVar = 0;
                         }
                     }
-                    a0Var2 = a0Var;
+                    zVar2 = zVar;
                 }
-                vVar.c = null;
-                if (a0Var2 != null) {
-                    a0Var2.a();
+                wVar.c = null;
+                if (zVar2 != null) {
+                    zVar2.a();
                 }
                 break;
             default:
                 this.c.b();
                 break;
         }
-        return dd.k.a;
+        return gd.k.a;
     }
 }

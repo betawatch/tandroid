@@ -1,36 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final /* synthetic */ class jd implements hi.h0, org.telegram.ui.ActionBar.r1, ws, org.telegram.ui.ActionBar.e1 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ jd(ChatActivityEnterView chatActivityEnterView, int i3) {
-        this.a = i3;
-        this.b = chatActivityEnterView;
+    public /* synthetic */ jd(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        int i3 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i3) {
-            case 0:
-                chatActivityEnterView.P0((TL_iv.RichMessage) obj);
-                break;
-            case 1:
-                CharSequence charSequence = (CharSequence) obj;
-                chatActivityEnterView.F0.setText(charSequence);
-                chatActivityEnterView.F0.setSelection(charSequence.length(), charSequence.length());
-                break;
-            default:
-                int i10 = ChatActivityEnterView.t5;
-                chatActivityEnterView.b0((Canvas) obj, false);
-                break;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        int i10 = ChatActivityEnterView.s5;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.J();
+        xe xeVar = chatActivityEnterView.E0;
+        if (xeVar != null) {
+            xeVar.setText("");
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e1
+    public void j(KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView;
+        te teVar;
+        int i7 = ChatActivityEnterView.s5;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (teVar = (chatActivityEnterView = this.a).N0) != null && teVar.isShowing()) {
+            chatActivityEnterView.N0.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ws
+    public void m() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.E0.f();
+        wf wfVar = chatActivityEnterView.Z2;
+        if (wfVar != null) {
+            wfVar.k1(chatActivityEnterView.E0.getTextToUse());
         }
     }
 }

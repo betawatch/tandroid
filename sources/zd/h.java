@@ -1,26 +1,26 @@
 package zd;
 
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.locks.LockSupport;
 
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h extends hd.c {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ w9.b c;
-    public w9.b d;
-    public c e;
-    public ae.k f;
+public final class h extends a {
+    public final Thread d;
+    public final t0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(w9.b bVar, hd.c cVar) {
-        super(cVar);
-        this.c = bVar;
+    public h(id.h hVar, Thread thread, t0 t0Var) {
+        super(hVar, true);
+        this.d = thread;
+        this.e = t0Var;
     }
 
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.U(null, this);
+    @Override // zd.n1
+    public final void g(Object obj) {
+        Thread currentThread = Thread.currentThread();
+        Thread thread = this.d;
+        if (kotlin.jvm.internal.j.a(currentThread, thread)) {
+            return;
+        }
+        LockSupport.unpark(thread);
     }
 }

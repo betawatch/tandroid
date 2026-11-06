@@ -1,37 +1,46 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import java.util.Calendar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t00 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class t00 implements org.telegram.ui.Components.db0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x30 b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Calendar c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ t00(x30 x30Var, int i3) {
-        this.a = i3;
-        this.b = x30Var;
+    public /* synthetic */ t00(long j3, Calendar calendar, int i7, int i10) {
+        this.a = i10;
+        this.b = j3;
+        this.c = calendar;
+        this.d = i7;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.db0
+    public final String h(int i7) {
+        int i10 = this.a;
+        int i11 = this.d;
+        Calendar calendar = this.c;
+        long j3 = this.b;
+        switch (i10) {
             case 0:
-                org.telegram.ui.ActionBar.d2 T = LaunchActivity.T();
-                if (this.b.p2 && (T instanceof wm)) {
-                    ((wm) T).ta(true, true);
-                    break;
+                if (i7 == 0) {
+                    return org.telegram.messenger.hd.M0(2131748530, null);
                 }
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.w3 = null;
-                break;
+                long j10 = (i7 * 86400000) + j3;
+                calendar.setTimeInMillis(j10);
+                if (calendar.get(1) != i11) {
+                    return org.telegram.messenger.hd.E0().y0().format(j10);
+                }
+                return org.telegram.messenger.hd.E0().A0().format(j10) + " " + org.telegram.messenger.hd.E0().w0().format(j10);
             default:
-                this.b.j2 = null;
-                break;
+                if (i7 == 0) {
+                    return org.telegram.messenger.hd.M0(2131748530, "MessageScheduleToday");
+                }
+                long j11 = (i7 * 86400000) + j3;
+                calendar.setTimeInMillis(j11);
+                return calendar.get(1) == i11 ? org.telegram.messenger.hd.E0().w0().format(j11) : org.telegram.messenger.hd.E0().y0().format(j11);
         }
     }
 }

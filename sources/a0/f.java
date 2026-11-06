@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f extends l implements Map, j$.util.Map {
     public a d;
@@ -60,12 +60,12 @@ public final class f extends l implements Map, j$.util.Map {
     }
 
     public final boolean k(Collection collection) {
-        int i3 = this.c;
+        int i7 = this.c;
         Iterator it = collection.iterator();
         while (it.hasNext()) {
             super.remove(it.next());
         }
-        return i3 != this.c;
+        return i7 != this.c;
     }
 
     @Override // java.util.Map
@@ -87,7 +87,7 @@ public final class f extends l implements Map, j$.util.Map {
     @Override // java.util.Map
     public final void putAll(java.util.Map map) {
         int size = map.size() + this.c;
-        int i3 = this.c;
+        int i7 = this.c;
         int[] iArr = this.a;
         if (iArr.length < size) {
             int[] copyOf = Arrays.copyOf(iArr, size);
@@ -97,7 +97,7 @@ public final class f extends l implements Map, j$.util.Map {
             kotlin.jvm.internal.j.d(copyOf2, "copyOf(this, newSize)");
             this.b = copyOf2;
         }
-        if (this.c != i3) {
+        if (this.c != i7) {
             throw new ConcurrentModificationException();
         }
         for (Map.Entry entry : map.entrySet()) {

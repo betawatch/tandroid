@@ -10,10 +10,10 @@ import java.net.IDN;
 import java.net.URLEncoder;
 import java.util.Locale;
 import java.util.regex.Pattern;
-import m2.p0;
+import n2.n0;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class a {
     public static final Pattern g = Pattern.compile("[A-Za-z0-9][A-Za-z0-9_-]*(/[A-Za-z0-9][A-Za-z0-9_-]*)*");
@@ -26,41 +26,41 @@ public final class a {
     public final String e;
     public final String f;
 
-    public a(p0 p0Var) {
-        int i3 = p0Var.a;
-        this.a = i3;
-        this.b = (String) p0Var.c;
-        if (i3 == 3) {
-            this.f = (String) p0Var.f;
+    public a(n0 n0Var) {
+        int i7 = n0Var.a;
+        this.a = i7;
+        this.b = (String) n0Var.c;
+        if (i7 == 3) {
+            this.f = (String) n0Var.f;
             this.c = 0;
             this.d = "";
             this.e = "";
             return;
         }
-        if (i3 == 2) {
-            this.f = (String) p0Var.f;
-            this.c = p0Var.b;
+        if (i7 == 2) {
+            this.f = (String) n0Var.f;
+            this.c = n0Var.b;
             this.d = "";
             this.e = "";
             return;
         }
-        if (i3 != 1) {
+        if (i7 != 1) {
             throw new IllegalArgumentException();
         }
         this.f = "";
-        this.c = p0Var.b;
-        this.d = (String) p0Var.d;
-        this.e = (String) p0Var.e;
+        this.c = n0Var.b;
+        this.d = (String) n0Var.d;
+        this.e = (String) n0Var.e;
     }
 
-    public static p0 a() {
-        p0 p0Var = new p0();
-        p0Var.a = 1;
-        p0Var.c = "";
-        p0Var.d = "";
-        p0Var.e = "";
-        p0Var.f = "";
-        return p0Var;
+    public static n0 a() {
+        n0 n0Var = new n0();
+        n0Var.a = 1;
+        n0Var.c = "";
+        n0Var.d = "";
+        n0Var.e = "";
+        n0Var.f = "";
+        return n0Var;
     }
 
     public static String b(String str) {
@@ -70,9 +70,9 @@ public final class a {
                 if (decode.length >= 17 && (decode[0] & 255) == 112) {
                     char[] cArr = new char[(decode.length - 1) * 2];
                     char[] charArray = "0123456789abcdef".toCharArray();
-                    for (int i3 = 1; i3 < decode.length; i3++) {
-                        byte b10 = decode[i3];
-                        int i10 = (i3 - 1) * 2;
+                    for (int i7 = 1; i7 < decode.length; i7++) {
+                        byte b10 = decode[i7];
+                        int i10 = (i7 - 1) * 2;
                         cArr[i10] = charArray[(b10 & 255) >>> 4];
                         cArr[i10 + 1] = charArray[b10 & 15];
                     }
@@ -95,16 +95,16 @@ public final class a {
         String string2 = sharedPreferences.getString("proxy_user", "");
         String string3 = sharedPreferences.getString("proxy_pass", "");
         String string4 = sharedPreferences.getString("proxy_secret", "");
-        int i3 = sharedPreferences.getInt("proxy_port", 1080);
+        int i7 = sharedPreferences.getInt("proxy_port", 1080);
         int i10 = 2;
-        int c2 = o1.g.c(TextUtils.isEmpty(string4) ? 1 : 2);
-        if (c2 == 1) {
+        int c10 = p1.g.c(TextUtils.isEmpty(string4) ? 1 : 2);
+        if (c10 == 1) {
             i10 = 1;
-        } else if (c2 != 2) {
+        } else if (c10 != 2) {
             i10 = 0;
         }
         int f10 = f(sharedPreferences.getInt("proxy_type", i10));
-        p0 a10 = a();
+        n0 a10 = a();
         if (string == null) {
             string = "";
         }
@@ -118,7 +118,7 @@ public final class a {
         }
         a10.e = string3;
         a10.f = string4 != null ? string4 : "";
-        a10.b = i3;
+        a10.b = i7;
         a10.p(f10);
         return a10.d();
     }
@@ -156,8 +156,8 @@ public final class a {
             if (scheme == null) {
                 return null;
             }
-            boolean z10 = true;
-            int i3 = 2;
+            boolean z9 = true;
+            int i7 = 2;
             if (!scheme.equalsIgnoreCase("http") && !scheme.equalsIgnoreCase("https")) {
                 if (!scheme.equalsIgnoreCase("tg")) {
                     return null;
@@ -168,7 +168,7 @@ public final class a {
                         if (!uri2.startsWith("tg://webproxy") && !uri2.startsWith("tg:webproxy")) {
                             return null;
                         }
-                        i3 = 3;
+                        i7 = 3;
                     }
                     indexOf = uri2.indexOf(63);
                     if (indexOf >= 0) {
@@ -179,7 +179,7 @@ public final class a {
                     if (queryParameter == null) {
                         queryParameter = uri.getQueryParameter("host");
                     }
-                    if (i3 != 3 && g0.w(queryParameter)) {
+                    if (i7 != 3 && g0.w(queryParameter)) {
                         queryParameter = IDN.toASCII(queryParameter, 1);
                     }
                     queryParameter2 = uri.getQueryParameter("port");
@@ -189,11 +189,11 @@ public final class a {
                         } catch (NumberFormatException unused) {
                         }
                         queryParameter3 = uri.getQueryParameter("secret");
-                        if (i3 == 3) {
+                        if (i7 == 3) {
                             if (queryParameter == null || queryParameter.indexOf(47) < 0) {
-                                z10 = false;
+                                z9 = false;
                             }
-                            if (z10) {
+                            if (z9) {
                                 queryParameter3 = b(queryParameter3);
                                 if (queryParameter3 == null) {
                                     return null;
@@ -202,8 +202,8 @@ public final class a {
                                 return null;
                             }
                         }
-                        p0 a10 = a();
-                        a10.p(i3);
+                        n0 a10 = a();
+                        a10.p(i7);
                         if (queryParameter == null) {
                             queryParameter = "";
                         }
@@ -224,7 +224,7 @@ public final class a {
                         }
                         a10.f = queryParameter3;
                         a d = a10.d();
-                        if (i3 == 3) {
+                        if (i7 == 3) {
                             if (!d.g()) {
                                 return null;
                             }
@@ -233,10 +233,10 @@ public final class a {
                     }
                     parseInt = 0;
                     queryParameter3 = uri.getQueryParameter("secret");
-                    if (i3 == 3) {
+                    if (i7 == 3) {
                     }
-                    p0 a102 = a();
-                    a102.p(i3);
+                    n0 a102 = a();
+                    a102.p(i7);
                     if (queryParameter == null) {
                     }
                     a102.c = queryParameter;
@@ -252,12 +252,12 @@ public final class a {
                     if (queryParameter3 == null) {
                     }
                     a102.f = queryParameter3;
-                    a d10 = a102.d();
-                    if (i3 == 3) {
+                    a d2 = a102.d();
+                    if (i7 == 3) {
                     }
-                    return d10;
+                    return d2;
                 }
-                i3 = 1;
+                i7 = 1;
                 indexOf = uri2.indexOf(63);
                 if (indexOf >= 0) {
                 }
@@ -269,17 +269,17 @@ public final class a {
             String lowerCase = host.toLowerCase();
             if ((lowerCase.equals("telegram.me") || lowerCase.equals("t.me") || lowerCase.equals("telegram.dog")) && (path = uri.getPath()) != null) {
                 if (path.startsWith("/socks")) {
-                    i3 = 1;
+                    i7 = 1;
                 } else if (!path.startsWith("/proxy")) {
                     if (!path.startsWith("/webproxy")) {
                         return null;
                     }
-                    i3 = 3;
+                    i7 = 3;
                 }
                 queryParameter = uri.getQueryParameter("server");
                 if (queryParameter == null) {
                 }
-                if (i3 != 3) {
+                if (i7 != 3) {
                     queryParameter = IDN.toASCII(queryParameter, 1);
                 }
                 queryParameter2 = uri.getQueryParameter("port");
@@ -287,10 +287,10 @@ public final class a {
                 }
                 parseInt = 0;
                 queryParameter3 = uri.getQueryParameter("secret");
-                if (i3 == 3) {
+                if (i7 == 3) {
                 }
-                p0 a1022 = a();
-                a1022.p(i3);
+                n0 a1022 = a();
+                a1022.p(i7);
                 if (queryParameter == null) {
                 }
                 a1022.c = queryParameter;
@@ -306,10 +306,10 @@ public final class a {
                 if (queryParameter3 == null) {
                 }
                 a1022.f = queryParameter3;
-                a d102 = a1022.d();
-                if (i3 == 3) {
+                a d22 = a1022.d();
+                if (i7 == 3) {
                 }
-                return d102;
+                return d22;
             }
             return null;
         } catch (Exception unused2) {
@@ -317,12 +317,12 @@ public final class a {
         }
     }
 
-    public static int f(int i3) {
-        if (i3 != 0) {
-            if (i3 == 1) {
+    public static int f(int i7) {
+        if (i7 != 0) {
+            if (i7 == 1) {
                 return 2;
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 return 3;
             }
         }
@@ -332,8 +332,8 @@ public final class a {
     public static boolean h(String str) {
         if (str != null) {
             if (str.length() == 32) {
-                for (int i3 = 0; i3 < str.length(); i3++) {
-                    if (Character.digit(str.charAt(i3), 16) < 0) {
+                for (int i7 = 0; i7 < str.length(); i7++) {
+                    if (Character.digit(str.charAt(i7), 16) < 0) {
                         return false;
                     }
                 }
@@ -356,13 +356,13 @@ public final class a {
         String str2 = this.d;
         String str3 = this.b;
         String str4 = this.f;
-        int i3 = this.a;
-        int c2 = o1.g.c(i3);
-        StringBuilder sb2 = c2 != 1 ? c2 != 2 ? new StringBuilder("https://t.me/socks?") : new StringBuilder("https://t.me/webproxy?") : new StringBuilder("https://t.me/proxy?");
+        int i7 = this.a;
+        int c10 = p1.g.c(i7);
+        StringBuilder sb2 = c10 != 1 ? c10 != 2 ? new StringBuilder("https://t.me/socks?") : new StringBuilder("https://t.me/webproxy?") : new StringBuilder("https://t.me/proxy?");
         try {
             sb2.append("server=");
             sb2.append(URLEncoder.encode(str3, "UTF-8"));
-            if (i3 != 3) {
+            if (i7 != 3) {
                 sb2.append("&port=");
                 sb2.append(this.c);
             }
@@ -375,7 +375,7 @@ public final class a {
                 sb2.append(URLEncoder.encode(str, "UTF-8"));
             }
             if (!TextUtils.isEmpty(str4)) {
-                if (i3 == 3) {
+                if (i7 == 3) {
                     if ((str3 != null && str3.indexOf(47) >= 0) && h(str4)) {
                         int length = str4.length() / 2;
                         byte[] bArr = new byte[length];
@@ -438,17 +438,17 @@ public final class a {
     }
 
     public final int hashCode() {
-        return Objects.hash(o1.g.a(this.a), this.b, Integer.valueOf(this.c), this.d, this.e, this.f);
+        return Objects.hash(p1.g.a(this.a), this.b, Integer.valueOf(this.c), this.d, this.e, this.f);
     }
 
     public final void i(SharedPreferences.Editor editor) {
-        int i3 = this.a;
-        int c2 = o1.g.c(i3);
-        editor.putInt("proxy_type", c2 != 1 ? c2 != 2 ? 0 : 2 : 1);
+        int i7 = this.a;
+        int c10 = p1.g.c(i7);
+        editor.putInt("proxy_type", c10 != 1 ? c10 != 2 ? 0 : 2 : 1);
         editor.putString("proxy_ip", this.b);
-        int c10 = o1.g.c(i3);
+        int c11 = p1.g.c(i7);
         int i10 = this.c;
-        if (c10 == 0) {
+        if (c11 == 0) {
             editor.putInt("proxy_port", i10);
             editor.remove("proxy_secret");
             String str = this.e;
@@ -467,14 +467,14 @@ public final class a {
             }
         }
         String str3 = this.f;
-        if (c10 == 1) {
+        if (c11 == 1) {
             editor.putString("proxy_secret", str3);
             editor.putInt("proxy_port", i10);
             editor.remove("proxy_pass");
             editor.remove("proxy_user");
             return;
         }
-        if (c10 != 2) {
+        if (c11 != 2) {
             return;
         }
         editor.putString("proxy_secret", str3);

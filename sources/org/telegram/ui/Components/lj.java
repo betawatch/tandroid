@@ -1,15 +1,26 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface lj {
-    void A();
+public final class lj extends v4.c0 {
+    public final /* synthetic */ kg.c0 r;
 
-    void S();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lj(kg.c0 c0Var, Context context) {
+        super(context);
+        this.r = c0Var;
+    }
 
-    void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i3, long j10, boolean z11, long j11);
+    @Override // v4.c0
+    public final int k(int i7, View view) {
+        return org.telegram.messenger.k5.B(56.0f, ((vj) this.r.V).r.getPaddingTop() - org.telegram.messenger.g0.m, super.k(i7, view));
+    }
 
-    void p(ArrayList arrayList, boolean z10, int i3, long j10);
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
+    }
 }

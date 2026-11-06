@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
 /* loaded from: classes2.dex */
 public class m6 extends s6 implements DoubleConsumer {
@@ -14,12 +14,12 @@ public class m6 extends s6 implements DoubleConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i3, int i10, Object obj2) {
+    public final void i(Object obj, int i7, int i10, Object obj2) {
         double[] dArr = (double[]) obj;
         DoubleConsumer doubleConsumer = (DoubleConsumer) obj2;
-        while (i3 < i10) {
-            doubleConsumer.accept(dArr[i3]);
-            i3++;
+        while (i7 < i10) {
+            doubleConsumer.accept(dArr[i7]);
+            i7++;
         }
     }
 
@@ -47,17 +47,17 @@ public class m6 extends s6 implements DoubleConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i3) {
-        return new double[i3];
+    public final Object newArray(int i7) {
+        return new double[i7];
     }
 
     @Override // java.util.function.DoubleConsumer
     public void accept(double d) {
         n();
         double[] dArr = (double[]) this.e;
-        int i3 = this.b;
-        this.b = i3 + 1;
-        dArr[i3] = d;
+        int i7 = this.b;
+        this.b = i7 + 1;
+        dArr[i7] = d;
     }
 
     @Override // java.lang.Iterable
@@ -78,6 +78,6 @@ public class m6 extends s6 implements DoubleConsumer {
         if (dArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(dArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, hs.e3)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(dArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(dArr, qs.e3)));
     }
 }

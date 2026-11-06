@@ -5,16 +5,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class is implements org.telegram.messenger.cs {
-    public static km M;
-    public final org.telegram.messenger.q5 E;
-    public boolean F;
-    public boolean H;
-    public boolean J;
-    public int K;
-    public final int L;
+public abstract class is implements org.telegram.messenger.ls {
+    public static lm L;
+    public final org.telegram.messenger.q5 D;
+    public boolean E;
+    public boolean G;
+    public boolean I;
+    public int J;
+    public final int K;
     public boolean a;
     public Bitmap b;
     public Canvas c;
@@ -28,41 +28,41 @@ public abstract class is implements org.telegram.messenger.cs {
     public int y;
     public int h = 1;
     public final Paint s = new Paint(1);
-    public final hs G = new hs(this, 0);
-    public final hs I = new hs(this, 1);
+    public final hs F = new hs(this, 0);
+    public final hs H = new hs(this, 1);
 
     public is() {
-        if (M == null) {
-            km kmVar = new km();
-            kmVar.b = new org.telegram.messenger.q5[2];
-            M = kmVar;
+        if (L == null) {
+            lm lmVar = new lm();
+            lmVar.b = new org.telegram.messenger.q5[2];
+            L = lmVar;
         }
-        km kmVar2 = M;
-        int i3 = kmVar2.a + 1;
-        kmVar2.a = i3;
-        if (i3 > 1) {
-            kmVar2.a = 0;
+        lm lmVar2 = L;
+        int i7 = lmVar2.a + 1;
+        lmVar2.a = i7;
+        if (i7 > 1) {
+            lmVar2.a = 0;
         }
-        org.telegram.messenger.q5[] q5VarArr = (org.telegram.messenger.q5[]) kmVar2.b;
-        int i10 = kmVar2.a;
+        org.telegram.messenger.q5[] q5VarArr = (org.telegram.messenger.q5[]) lmVar2.b;
+        int i10 = lmVar2.a;
         org.telegram.messenger.q5 q5Var = q5VarArr[i10];
         if (q5Var == null) {
-            q5Var = new org.telegram.messenger.q5("draw_background_queue_" + kmVar2.a, true);
+            q5Var = new org.telegram.messenger.q5("draw_background_queue_" + lmVar2.a, true);
             q5VarArr[i10] = q5Var;
         }
-        this.E = q5Var;
-        this.L = M.a;
+        this.D = q5Var;
+        this.K = L.a;
     }
 
-    public void a(Canvas canvas, long j10, int i3, int i10, float f10) {
-        if (this.F) {
-            boolean z10 = org.telegram.messenger.r2.a;
+    public void a(Canvas canvas, long j3, int i7, int i10, float f10) {
+        if (this.E) {
+            boolean z9 = org.telegram.messenger.r2.a;
             return;
         }
         this.x = i10;
-        this.y = i3;
-        if (this.H) {
-            this.H = false;
+        this.y = i7;
+        if (this.G) {
+            this.G = false;
             Bitmap bitmap = this.d;
             Canvas canvas2 = this.e;
             this.d = this.b;
@@ -71,8 +71,8 @@ public abstract class is implements org.telegram.messenger.cs {
             this.c = canvas2;
         }
         Bitmap bitmap2 = this.d;
-        if (bitmap2 == null || this.J) {
-            this.J = false;
+        if (bitmap2 == null || this.I) {
+            this.I = false;
             if (bitmap2 != null) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(this.d);
@@ -94,9 +94,9 @@ public abstract class is implements org.telegram.messenger.cs {
         }
         if (!this.f && !this.r) {
             this.f = true;
-            i(j10);
-            this.K = this.w;
-            this.E.postRunnable(this.G);
+            i(j3);
+            this.J = this.w;
+            this.D.postRunnable(this.F);
         }
         Bitmap bitmap4 = this.d;
         if (bitmap4 != null) {
@@ -117,13 +117,13 @@ public abstract class is implements org.telegram.messenger.cs {
 
     public abstract void d(Canvas canvas, float f10);
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11;
-        if (i3 == org.telegram.messenger.hs.j1) {
+        if (i7 == org.telegram.messenger.qs.j1) {
             Integer num = (Integer) objArr[0];
             if (this.h < num.intValue()) {
-                if (num.intValue() != 512 || org.telegram.messenger.az.o() < 2) {
+                if (num.intValue() != 512 || org.telegram.messenger.iz.o() < 2) {
                     int intValue = num.intValue() | this.n;
                     this.n = intValue;
                     if (intValue == 0 || this.r) {
@@ -136,7 +136,7 @@ public abstract class is implements org.telegram.messenger.cs {
             }
             return;
         }
-        if (i3 == org.telegram.messenger.hs.k1) {
+        if (i7 == org.telegram.messenger.qs.k1) {
             Integer num2 = (Integer) objArr[0];
             if (this.h >= num2.intValue() || (i11 = this.n) == 0) {
                 return;
@@ -154,14 +154,14 @@ public abstract class is implements org.telegram.messenger.cs {
             return;
         }
         this.a = true;
-        this.F = false;
-        int i3 = org.telegram.messenger.hs.e().p & (~this.h);
-        this.n = i3;
-        if (i3 == 0 && this.r) {
+        this.E = false;
+        int i7 = org.telegram.messenger.qs.e().p & (~this.h);
+        this.n = i7;
+        if (i7 == 0 && this.r) {
             this.r = false;
         }
-        org.telegram.messenger.hs.e().c(this, org.telegram.messenger.hs.j1);
-        org.telegram.messenger.hs.e().c(this, org.telegram.messenger.hs.k1);
+        org.telegram.messenger.qs.e().c(this, org.telegram.messenger.qs.j1);
+        org.telegram.messenger.qs.e().c(this, org.telegram.messenger.qs.k1);
     }
 
     public final void f() {
@@ -170,14 +170,14 @@ public abstract class is implements org.telegram.messenger.cs {
                 j();
             }
             this.a = false;
-            org.telegram.messenger.hs.e().n(this, org.telegram.messenger.hs.j1);
-            org.telegram.messenger.hs.e().n(this, org.telegram.messenger.hs.k1);
+            org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.j1);
+            org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.k1);
         }
     }
 
     public abstract void g();
 
-    public abstract void i(long j10);
+    public abstract void i(long j3);
 
     public final void j() {
         ArrayList arrayList = new ArrayList();
@@ -197,7 +197,7 @@ public abstract class is implements org.telegram.messenger.cs {
     }
 
     public final void k() {
-        this.J = true;
+        this.I = true;
         this.w++;
         if (this.d != null) {
             ArrayList arrayList = new ArrayList();
@@ -207,10 +207,10 @@ public abstract class is implements org.telegram.messenger.cs {
         }
     }
 
-    public final void l(int i3) {
+    public final void l(int i7) {
         this.h = 7;
         if (this.a) {
-            this.n = org.telegram.messenger.hs.e().p & (~this.h);
+            this.n = org.telegram.messenger.qs.e().p & (~this.h);
         }
     }
 

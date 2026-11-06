@@ -1,31 +1,29 @@
 package f2;
 
-import android.graphics.Bitmap;
-import android.text.Layout;
-import org.telegram.tgnet.TLObject;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import di.s7;
+import h2.i0;
+import l2.c0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public CharSequence a = null;
-    public Bitmap b = null;
-    public Layout.Alignment c = null;
-    public Layout.Alignment d = null;
-    public float e = -3.4028235E38f;
-    public int f = TLObject.FLAG_31;
-    public int g = TLObject.FLAG_31;
-    public float h = -3.4028235E38f;
-    public int i = TLObject.FLAG_31;
-    public int j = TLObject.FLAG_31;
-    public float k = -3.4028235E38f;
-    public float l = -3.4028235E38f;
-    public final float m = -3.4028235E38f;
-    public final boolean n = false;
-    public final int o = -16777216;
-    public int p = TLObject.FLAG_31;
-    public float q;
+public final class a extends BroadcastReceiver {
+    public final c0 a;
+    public final i0 b;
+    public final /* synthetic */ ab.q c;
 
-    public final b a() {
-        return new b(this.a, this.c, this.d, this.b, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, 0);
+    public a(ab.q qVar, i0 i0Var, c0 c0Var) {
+        this.c = qVar;
+        this.b = i0Var;
+        this.a = c0Var;
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
+            this.b.d(new s7(this, 11));
+        }
     }
 }

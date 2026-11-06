@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public /* synthetic */ q0(org.telegram.ui.Cells.c2[] c2VarArr, int i3) {
-        this.a = i3;
+    public /* synthetic */ q0(org.telegram.ui.Cells.c2[] c2VarArr, int i7) {
+        this.a = i7;
         this.b = c2VarArr;
     }
 

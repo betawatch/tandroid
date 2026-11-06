@@ -1,25 +1,113 @@
 package u4;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class i {
-    public d1 a;
-    public d1 b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import c0.m;
+import java.io.File;
+import java.io.IOException;
 
-    public i(d1 d1Var, d1 d1Var2, int i3, int i10, int i11, int i12) {
-        this.a = d1Var;
-        this.b = d1Var2;
-        this.c = i3;
-        this.d = i10;
-        this.e = i11;
-        this.f = i12;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class i {
+    public static final m a = new m();
+    public static final Object b = new Object();
+    public static nb.a c = null;
+
+    public static long a(Context context) {
+        PackageManager packageManager = context.getApplicationContext().getPackageManager();
+        return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public final String toString() {
-        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+    public static nb.a b() {
+        nb.a aVar = new nb.a(26);
+        c = aVar;
+        a.k(aVar);
+        return c;
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(21:14|(1:80)(1:18)|19|(1:79)(1:23)|24|25|26|(2:64|65)(1:28)|29|(9:36|(1:40)|(1:47)|48|(2:56|57)|52|53|54|55)|(1:63)|(1:40)|(3:42|45|47)|48|(1:50)|56|57|52|53|54|55) */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x009e, code lost:
+    
+        r6 = 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void c(Context context, boolean z9) {
+        h a10;
+        h hVar;
+        int i7;
+        if (z9 || c == null) {
+            synchronized (b) {
+                if (!z9) {
+                    try {
+                        if (c != null) {
+                            return;
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                int i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 28 && i10 != 30) {
+                    File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
+                    long length = file.length();
+                    int i11 = 0;
+                    boolean z10 = file.exists() && length > 0;
+                    File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
+                    long length2 = file2.length();
+                    boolean z11 = file2.exists() && length2 > 0;
+                    try {
+                        long a11 = a(context);
+                        File file3 = new File(context.getFilesDir(), "profileInstalled");
+                        if (file3.exists()) {
+                            try {
+                                a10 = h.a(file3);
+                            } catch (IOException unused) {
+                                b();
+                                return;
+                            }
+                        } else {
+                            a10 = null;
+                        }
+                        if (a10 != null && a10.c == a11 && (i7 = a10.b) != 2) {
+                            i11 = i7;
+                            if (z9 && z11 && i11 != 1) {
+                                i11 = 2;
+                            }
+                            if (a10 != null && a10.b == 2 && i11 == 1 && length < a10.d) {
+                                i11 = 3;
+                            }
+                            hVar = new h(a11, length2, 1, i11);
+                            if (a10 != null || !a10.equals(hVar)) {
+                                hVar.b(file3);
+                            }
+                            b();
+                            return;
+                        }
+                        if (z11) {
+                            i11 = 2;
+                        }
+                        if (z9) {
+                            i11 = 2;
+                        }
+                        if (a10 != null) {
+                            i11 = 3;
+                        }
+                        hVar = new h(a11, length2, 1, i11);
+                        if (a10 != null) {
+                        }
+                        hVar.b(file3);
+                        b();
+                        return;
+                    } catch (PackageManager.NameNotFoundException unused2) {
+                        b();
+                        return;
+                    }
+                }
+                b();
+            }
+        }
     }
 }

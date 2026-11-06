@@ -1,25 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ko implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mo b;
+public final class ko implements c50 {
+    public final /* synthetic */ so a;
 
-    public /* synthetic */ ko(mo moVar, int i3) {
-        this.a = i3;
-        this.b = moVar;
+    public ko(so soVar) {
+        this.a = soVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.y.d.Q = false;
-                break;
-            default:
-                this.b.y.d.Q = false;
-                break;
-        }
+    @Override // org.telegram.ui.c50
+    public final void e(d50 d50Var, long j3) {
+        so soVar = this.a;
+        soVar.d0(soVar.getMessagesController().M0(Long.valueOf(j3)), d50Var);
     }
 }

@@ -1,55 +1,35 @@
 package org.telegram.ui.web;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.r2;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class z1 {
-    public static z1 e;
-    public HashMap a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class z1 extends TLObject {
+    public final ArrayList a = new ArrayList();
 
-    public static z1 b() {
-        if (e == null) {
-            e = new z1();
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        int readInt32 = inputSerializedData.readInt32(z9);
+        for (int i7 = 0; i7 < readInt32; i7++) {
+            a2 a2Var = new a2();
+            a2Var.readParams(inputSerializedData, z9);
+            if (TextUtils.isEmpty(a2Var.b)) {
+                return;
+            }
+            this.a.add(a2Var);
         }
-        return e;
     }
 
-    public final y1 a(String str) {
-        c();
-        y1 y1Var = (y1) this.a.get(str);
-        if (y1Var == null) {
-            return null;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        ArrayList arrayList = this.a;
+        outputSerializedData.writeInt32(arrayList.size());
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            ((a2) arrayList.get(i7)).serializeToStream(outputSerializedData);
         }
-        y1Var.a = Math.max(y1Var.a, System.currentTimeMillis());
-        d();
-        return y1Var;
-    }
-
-    public final void c() {
-        if (this.b || this.c) {
-            return;
-        }
-        this.c = true;
-        if (this.a == null) {
-            this.a = new HashMap();
-        }
-        Utilities.e.c(new v1(this, 1));
-    }
-
-    public final void d() {
-        int i3 = 0;
-        org.telegram.messenger.g0.r(new v1(this, i3));
-        if (this.d) {
-            return;
-        }
-        v1 v1Var = new v1(this, i3);
-        boolean z10 = r2.a;
-        org.telegram.messenger.g0.i3(v1Var, 1000L);
     }
 }

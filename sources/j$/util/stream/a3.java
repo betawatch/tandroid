@@ -15,7 +15,7 @@ public final class a3 extends z2 implements u1 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -52,30 +52,30 @@ public final class a3 extends z2 implements u1 {
 
     @Override // j$.util.stream.u1, j$.util.stream.w1
     public final a2 build() {
-        int i3 = this.b;
+        int i7 = this.b;
         int[] iArr = this.a;
-        if (i3 >= iArr.length) {
+        if (i7 >= iArr.length) {
             return this;
         }
         throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         int[] iArr = this.a;
-        if (j10 != iArr.length) {
-            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j10), Integer.valueOf(iArr.length)));
+        if (j3 != iArr.length) {
+            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j3), Integer.valueOf(iArr.length)));
         }
         this.b = 0;
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
+    public final void accept(int i7) {
         int i10 = this.b;
         int[] iArr = this.a;
         if (i10 < iArr.length) {
             this.b = i10 + 1;
-            iArr[i10] = i3;
+            iArr[i10] = i7;
             return;
         }
         throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(iArr.length)));
@@ -83,9 +83,9 @@ public final class a3 extends z2 implements u1 {
 
     @Override // j$.util.stream.j5
     public final void end() {
-        int i3 = this.b;
+        int i7 = this.b;
         int[] iArr = this.a;
-        if (i3 < iArr.length) {
+        if (i7 < iArr.length) {
             throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
         }
     }

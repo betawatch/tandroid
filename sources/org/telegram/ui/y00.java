@@ -1,38 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y00 implements org.telegram.messenger.n10 {
+public final /* synthetic */ class y00 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x30 b;
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public /* synthetic */ y00(x30 x30Var, int i3) {
-        this.a = i3;
-        this.b = x30Var;
+    public /* synthetic */ y00(org.telegram.ui.Cells.c2[] c2VarArr, int i7) {
+        this.a = i7;
+        this.b = c2VarArr;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        org.telegram.ui.Cells.c2[] c2VarArr = this.b;
+        switch (i7) {
             case 0:
-                x30 x30Var = this.b;
-                if (updates != null) {
-                    org.telegram.messenger.hp.s1(x30Var.l1.a).O3(updates, false);
-                }
-                org.telegram.messenger.g0.h3(new p00(x30Var, 10));
+                c2VarArr[((Integer) view.getTag()).intValue()].c(!c2VarArr[r5.intValue()].b(), true);
+                break;
+            case 1:
+                c2VarArr[0].c(!r5.b(), true);
                 break;
             default:
-                x30 x30Var2 = this.b;
-                if (updates == null) {
-                    x30Var2.getClass();
-                    break;
-                } else {
-                    org.telegram.messenger.hp.s1(x30Var2.l1.a).O3(updates, false);
-                    break;
-                }
+                RectF rectF = ProfileActivity.S6;
+                c2VarArr[0].c(!r5.b(), true);
+                break;
         }
     }
 }

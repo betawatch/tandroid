@@ -4,7 +4,7 @@ import j$.util.Objects;
 import org.telegram.ui.Cells.f1;
 import r.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -52,9 +52,9 @@ public final class CarZone {
     }
 
     public String toString() {
-        int i3 = this.mRow;
+        int i7 = this.mRow;
         String str = "UNKNOWN";
-        String str2 = i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
+        String str2 = i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
         int i10 = this.mColumn;
         if (i10 == 16) {
             str = "CAR_ZONE_COLUMN_ALL";
@@ -69,7 +69,7 @@ public final class CarZone {
         } else if (i10 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return f1.q("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return f1.m("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

@@ -1,82 +1,51 @@
 package ic;
 
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Logger;
+import ab.q;
+import cc.f;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d extends b {
-    public static final Logger m = Logger.getLogger(d.class.getName());
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public long h;
-    public long i;
-    public a j;
-    public ArrayList k;
-    public byte[] l;
+public final class d {
+    public final gc.d a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final d e;
+    public final int f;
 
-    @Override // ic.b
-    public final void b(ByteBuffer byteBuffer) {
-        this.d = g5.b.a(byteBuffer.get());
-        int a10 = g5.b.a(byteBuffer.get());
-        this.e = a10 >>> 2;
-        this.f = (a10 >> 1) & 1;
-        this.g = g5.b.a(byteBuffer.get()) + (g5.b.h(byteBuffer) << 8);
-        this.h = g5.b.i(byteBuffer);
-        this.i = g5.b.i(byteBuffer);
-        int remaining = byteBuffer.remaining();
-        Logger logger = m;
-        if (remaining > 2) {
-            int position = byteBuffer.position();
-            b a11 = k.a(this.d, byteBuffer);
-            int position2 = byteBuffer.position() - position;
-            logger.finer(a11 + " - DecoderConfigDescr1 read: " + position2 + ", size: " + Integer.valueOf(a11.a()));
-            int a12 = a11.a();
-            if (position2 < a12) {
-                byte[] bArr = new byte[a12 - position2];
-                this.l = bArr;
-                byteBuffer.get(bArr);
+    public d(q qVar, gc.d dVar, int i7, int i10, int i11, d dVar2, gc.e eVar) {
+        this.a = dVar;
+        this.b = i7;
+        gc.d dVar3 = gc.d.h;
+        int i12 = (dVar == dVar3 || dVar2 == null) ? i10 : dVar2.c;
+        this.c = i12;
+        this.d = i11;
+        this.e = dVar2;
+        boolean z9 = false;
+        int i13 = dVar2 != null ? dVar2.f : 0;
+        if ((dVar == dVar3 && dVar2 == null && i12 != 0) || (dVar2 != null && i12 != dVar2.c)) {
+            z9 = true;
+        }
+        int i14 = 4;
+        i13 = (dVar2 == null || dVar != dVar2.a || z9) ? i13 + dVar.a(eVar) + 4 : i13;
+        int ordinal = dVar.ordinal();
+        if (ordinal != 1) {
+            if (ordinal != 2) {
+                if (ordinal == 4) {
+                    i13 += ((String) qVar.b).substring(i7, i11 + i7).getBytes(((f) qVar.c).a[i10].charset()).length * 8;
+                    if (z9) {
+                        i13 += 12;
+                    }
+                } else if (ordinal == 6) {
+                    i13 += 13;
+                }
+                this.f = i13;
             }
-            if (a11 instanceof a) {
-                this.j = (a) a11;
-            }
+            i14 = i11 == 1 ? 6 : 11;
+        } else if (i11 != 1) {
+            i14 = i11 == 2 ? 7 : 10;
         }
-        while (byteBuffer.remaining() > 2) {
-            long position3 = byteBuffer.position();
-            b a13 = k.a(this.d, byteBuffer);
-            logger.finer(a13 + " - DecoderConfigDescr2 read: " + (byteBuffer.position() - position3) + ", size: " + Integer.valueOf(a13.a()));
-        }
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("DecoderConfigDescriptor{objectTypeIndication=");
-        sb2.append(this.d);
-        sb2.append(", streamType=");
-        sb2.append(this.e);
-        sb2.append(", upStream=");
-        sb2.append(this.f);
-        sb2.append(", bufferSizeDB=");
-        sb2.append(this.g);
-        sb2.append(", maxBitRate=");
-        sb2.append(this.h);
-        sb2.append(", avgBitRate=");
-        sb2.append(this.i);
-        sb2.append(", decoderSpecificInfo=null, audioSpecificInfo=");
-        sb2.append(this.j);
-        sb2.append(", configDescriptorDeadBytes=");
-        byte[] bArr = this.l;
-        if (bArr == null) {
-            bArr = new byte[0];
-        }
-        sb2.append(g5.b.c(0, bArr));
-        sb2.append(", profileLevelIndicationDescriptors=");
-        ArrayList arrayList = this.k;
-        sb2.append(arrayList == null ? "null" : Arrays.asList(arrayList).toString());
-        sb2.append('}');
-        return sb2.toString();
+        i13 += i14;
+        this.f = i13;
     }
 }

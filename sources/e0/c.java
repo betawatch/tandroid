@@ -5,7 +5,7 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c implements Application.ActivityLifecycleCallbacks {
     public Object a;
@@ -37,7 +37,7 @@ public final class c implements Application.ActivityLifecycleCallbacks {
         try {
             Object obj2 = d.c.get(activity);
             if (obj2 == obj && activity.hashCode() == this.c) {
-                d.g.postAtFrontOfQueue(new l9.u(6, d.b.get(activity), obj2));
+                d.g.postAtFrontOfQueue(new m9.u(11, d.b.get(activity), obj2));
                 this.f = true;
                 this.a = null;
             }

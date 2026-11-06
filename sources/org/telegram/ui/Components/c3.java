@@ -1,0 +1,108 @@
+package org.telegram.ui.Components;
+
+import android.text.Editable;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c3 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ KeyEvent.Callback e;
+    public final /* synthetic */ ViewGroup f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+
+    public /* synthetic */ c3(FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.v2 v2Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.m6 m6Var) {
+        this.c = frameLayout;
+        this.d = f6Var;
+        this.e = v2Var;
+        this.f = frameLayout2;
+        this.b = iArr;
+        this.h = strArr;
+        this.n = iArr2;
+        this.r = m6Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        Object obj = this.r;
+        Object obj2 = this.n;
+        Object obj3 = this.h;
+        int[] iArr = this.b;
+        ViewGroup viewGroup = this.f;
+        KeyEvent.Callback callback = this.e;
+        Object obj4 = this.d;
+        Object obj5 = this.c;
+        switch (i7) {
+            case 0:
+                bi.r0 r0Var = (bi.r0) obj2;
+                h9.f1 f1Var = (h9.f1) obj;
+                ((boolean[]) obj5)[0] = false;
+                int c10 = (int) (v4.c(null, (hb0) obj4, (hb0) callback, (hb0) viewGroup, (hb0) obj3) / 1000);
+                int i10 = iArr[0];
+                ys ysVar = (ys) r0Var.c;
+                int i11 = r0Var.a;
+                int i12 = r0Var.b;
+                Editable text = ysVar.getText();
+                ty0 ty0Var = new ty0();
+                ty0Var.a |= 128;
+                ty0Var.b = i11;
+                ty0Var.c = i12;
+                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
+                tL_messageEntityFormattedDate.date = c10;
+                tL_messageEntityFormattedDate.flags = i10;
+                tL_messageEntityFormattedDate.applyFlags();
+                try {
+                    text.setSpan(new zz(text.subSequence(i11, i12).toString(), ty0Var, tL_messageEntityFormattedDate), i11, i12, 33);
+                } catch (Exception unused) {
+                }
+                ws wsVar = ysVar.N1;
+                if (wsVar != null) {
+                    wsVar.m();
+                }
+                ((org.telegram.ui.ActionBar.v2) f1Var.b).x0.run();
+                break;
+            default:
+                FrameLayout frameLayout = (FrameLayout) obj5;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) callback;
+                FrameLayout frameLayout2 = (FrameLayout) viewGroup;
+                String[] strArr = (String[]) obj3;
+                int[] iArr2 = (int[]) obj2;
+                Runnable runnable = (Runnable) obj;
+                if (org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q()) {
+                    k60 F = k60.F(v2Var.c, f6Var, frameLayout2);
+                    for (int i13 = 0; i13 < iArr.length; i13++) {
+                        F.c(0, strArr[i13], new w2(iArr2, iArr[i13], runnable), false);
+                    }
+                    F.i = 1;
+                    F.Z();
+                    break;
+                } else {
+                    new hc(frameLayout, f6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(2131748496, null), new org.telegram.messenger.pd(15))).j();
+                    break;
+                }
+        }
+    }
+
+    public /* synthetic */ c3(boolean[] zArr, hb0 hb0Var, hb0 hb0Var2, hb0 hb0Var3, hb0 hb0Var4, bi.r0 r0Var, int[] iArr, h9.f1 f1Var) {
+        this.c = zArr;
+        this.d = hb0Var;
+        this.e = hb0Var2;
+        this.f = hb0Var3;
+        this.h = hb0Var4;
+        this.n = r0Var;
+        this.b = iArr;
+        this.r = f1Var;
+    }
+}

@@ -2,204 +2,129 @@ package ai;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import gi.la;
-import gi.qa;
-import gi.va;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.cs;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.pr;
-import org.telegram.messenger.u10;
-import org.telegram.messenger.ye;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ln;
-import org.telegram.ui.nw;
-import org.telegram.ui.uv;
-import org.telegram.ui.uw;
-import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements u10 {
+public final class m1 extends Drawable {
+    public static Path d;
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public Bitmap b;
+    public final Paint c;
 
-    public /* synthetic */ m1(ei.z6 z6Var, u10 u10Var, long j10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        this.a = 4;
-        this.c = z6Var;
-        this.e = u10Var;
-        this.b = j10;
-        this.d = tL_premium_boostsStatus;
+    public /* synthetic */ m1(Bitmap bitmap, Paint paint, int i7) {
+        this.a = i7;
+        this.b = bitmap;
+        this.c = paint;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        int i3 = this.a;
-        long j10 = this.b;
-        int i10 = 1;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i3) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                j2 j2Var = (j2) obj3;
-                sf.b bVar = (sf.b) obj;
-                bVar.d();
-                j2Var.s1(j10, new v1((b3) obj4, bVar, (u10) obj2, j2Var, 0));
+                Rect bounds = getBounds();
+                if (!bounds.isEmpty()) {
+                    Bitmap bitmap = this.b;
+                    if (bitmap == null || bitmap.getWidth() != bounds.width() || this.b.getHeight() != bounds.height()) {
+                        this.b = Bitmap.createBitmap(bounds.width(), bounds.height(), Bitmap.Config.ARGB_8888);
+                        Path path = new Path();
+                        Matrix matrix = new Matrix();
+                        matrix.setScale(bounds.width() / 52.0f, bounds.height() / 52.0f);
+                        if (d == null) {
+                            d = c8.i0.d("M25.0339 38.8535L16.4947 44.2223C15.6075 44.7802 14.4361 44.5131 13.8782 43.6258C13.6038 43.1893 13.5188 42.6601 13.6426 42.1598L15.0264 36.5704C15.4811 34.7334 16.7041 33.1809 18.3835 32.3088L26.359 28.1671C26.7894 27.9436 26.9572 27.4137 26.7337 26.9833C26.5595 26.6481 26.1903 26.4617 25.8172 26.5208L16.9312 27.9261C14.8088 28.2617 12.6463 27.6475 11.0173 26.2465L7.5978 23.3054C6.8032 22.622 6.71306 21.4239 7.39646 20.6293C7.7225 20.2503 8.18486 20.0153 8.68322 19.9753L18.8056 19.1622C19.5221 19.1046 20.1443 18.6473 20.4134 17.9809L24.2843 8.39097C24.6766 7.41912 25.7823 6.94929 26.7542 7.34157C27.232 7.53443 27.6108 7.91321 27.8037 8.39097L31.6745 17.9809C31.9435 18.6473 32.5659 19.1046 33.2822 19.1622L43.4582 19.9795C44.5029 20.0634 45.2817 20.9784 45.1978 22.023C45.1582 22.5159 44.9279 22.9737 44.5559 23.2992L36.7229 30.1527C36.1947 30.6149 35.9647 31.3308 36.125 32.0141L38.5201 42.2261C38.7594 43.2465 38.1263 44.2677 37.106 44.507C36.6119 44.6228 36.0921 44.536 35.6626 44.2659L27.054 38.8535C26.4366 38.4654 25.6513 38.4654 25.0339 38.8535Z");
+                        }
+                        d.transform(matrix, path);
+                        Paint paint = new Paint(1);
+                        paint.setColor(-1);
+                        new Canvas(this.b).drawPath(path, paint);
+                    }
+                    canvas.drawBitmap(this.b, bounds.left, bounds.top, this.c);
+                    break;
+                }
                 break;
             case 1:
-                ci.l6 l6Var = (ci.l6) obj4;
-                l6Var.d2.setLoading(false);
-                vg.i0 i0Var = new vg.i0(26, l6Var.a, l6Var.getContext(), new c7(l6Var, i10), l6Var.J0);
-                i0Var.A1((org.telegram.messenger.e3) obj);
-                i0Var.z1((TL_stories.TL_premium_boostsStatus) obj3, true);
-                i0Var.B1(j10);
-                TLRPC.Chat M0 = ((hp) obj2).M0(Long.valueOf(-j10));
-                if (M0 != null) {
-                    i0Var.J2 = new ci.w2(l6Var, M0);
-                }
-                i0Var.show();
-                break;
-            case 2:
-                ei.r rVar = (ei.r) obj4;
-                ei.q qVar = (ei.q) obj2;
-                ((org.telegram.ui.ActionBar.s1) obj3).dismiss();
-                if (((Boolean) obj).booleanValue()) {
-                    va D = va.D(rVar.f0.getParentActivity(), rVar.f);
-                    D.O = j10;
-                    la laVar = D.d1;
-                    if (laVar != null) {
-                        laVar.setDialogId(j10);
-                    }
-                    D.N = false;
-                    D.Q(qa.c(qVar));
-                    break;
-                }
-                break;
-            case 3:
-                ei.z6 z6Var = (ei.z6) obj4;
-                u10 u10Var = (u10) obj2;
-                hp hpVar = (hp) obj3;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null) {
-                    org.telegram.messenger.f3 G0 = hpVar.G0();
-                    long j11 = this.b;
-                    G0.b(j11, tL_premium_boostsStatus, new m1(z6Var, u10Var, j11, tL_premium_boostsStatus));
-                    u10Var.a(Boolean.FALSE);
-                    break;
-                } else {
-                    u10Var.a(Boolean.FALSE);
-                    break;
-                }
-            case 4:
-                ei.z6 z6Var2 = (ei.z6) obj4;
-                u10 u10Var2 = (u10) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj3;
-                org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
-                if (e3Var != null) {
-                    org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
-                    ci.e3 e3Var2 = z6Var2.j(j10) ? new ci.e3(z6Var2, j10, 5) : null;
-                    int i11 = vg.i0.P2;
-                    if (Q != null && tL_premium_boostsStatus2 != null && Q.getContext() != null) {
-                        vg.i0 i0Var2 = new vg.i0(18, Q.getCurrentAccount(), Q.getContext(), Q, Q.getResourceProvider());
-                        i0Var2.A1(e3Var);
-                        i0Var2.z1(tL_premium_boostsStatus2, true);
-                        i0Var2.B1(j10);
-                        i0Var2.J2 = e3Var2;
-                        i0Var2.show();
-                    }
-                    u10Var2.a(Boolean.FALSE);
-                    break;
-                } else {
-                    u10Var2.a(Boolean.FALSE);
-                    break;
-                }
-            case 5:
-                ln.d0((ln) obj4, (org.telegram.ui.ActionBar.s1) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (org.telegram.messenger.e3) obj);
-                break;
-            case 6:
-                org.telegram.ui.ActionBar.d2[] d2VarArr = (org.telegram.ui.ActionBar.d2[]) obj2;
-                ((org.telegram.ui.ActionBar.s1) obj3).dismiss();
-                uw uwVar = ((uv) obj4).b;
-                uwVar.getMessagesController().T2(Long.valueOf(j10), null, 32);
-                nw nwVar = uwVar.D2;
-                uwVar.removeSelfFromStack();
-                if (d2VarArr[1] != null) {
-                    d2VarArr[0].removeSelfFromStack();
-                    d2VarArr[1].finishFragment();
-                } else {
-                    d2VarArr[0].finishFragment();
-                }
-                if (nwVar != null) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(pr.a(-j10, 0L));
-                    nwVar.y(uwVar, arrayList, null, false, uwVar.K2, uwVar.L2, uwVar.M2, null);
+                Bitmap bitmap2 = this.b;
+                if (bitmap2 != null) {
+                    canvas.save();
+                    canvas.translate(getBounds().left, getBounds().top);
+                    canvas.scale(getBounds().width() / bitmap2.getWidth(), getBounds().height() / bitmap2.getHeight());
+                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, this.c);
+                    canvas.restore();
                     break;
                 }
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) obj4;
-                String str = (String) obj3;
-                ye yeVar = (ye) obj2;
-                Bitmap bitmap = (Bitmap) obj;
-                Drawable[] drawableArr = PhotoViewer.V8;
-                if (bitmap == null) {
-                    org.telegram.messenger.g0.h3(new xm0(photoViewer, 16));
+                Bitmap bitmap3 = this.b;
+                if (bitmap3 != null) {
+                    canvas.save();
+                    canvas.translate(getBounds().left, getBounds().top);
+                    canvas.scale(getBounds().width() / bitmap3.getWidth(), getBounds().height() / bitmap3.getHeight());
+                    canvas.drawBitmap(bitmap3, 0.0f, 0.0f, this.c);
+                    canvas.restore();
                     break;
-                } else {
-                    try {
-                        FileOutputStream fileOutputStream = new FileOutputStream(new File(str));
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
-                        fileOutputStream.close();
-                        Bitmap createBitmap = Bitmap.createBitmap(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(26.0f), Bitmap.Config.ARGB_8888);
-                        Canvas canvas = new Canvas(createBitmap);
-                        Paint paint = new Paint(3);
-                        canvas.translate(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f);
-                        float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
-                        canvas.scale(max, max);
-                        canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
-                        org.telegram.messenger.g0.h3(new z1(photoViewer, yeVar, this.b, str, createBitmap, 15));
-                        break;
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
-                        org.telegram.messenger.g0.h3(new xm0(photoViewer, 17));
-                    }
                 }
+                break;
         }
     }
 
-    public /* synthetic */ m1(ei.z6 z6Var, u10 u10Var, hp hpVar, long j10) {
-        this.a = 3;
-        this.c = z6Var;
-        this.e = u10Var;
-        this.d = hpVar;
-        this.b = j10;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+        }
+        return org.telegram.messenger.g0.L(24.0f);
     }
 
-    public /* synthetic */ m1(Object obj, Object obj2, long j10, Object obj3, int i3) {
-        this.a = i3;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
-        this.e = obj3;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+        }
+        return org.telegram.messenger.g0.L(24.0f);
     }
 
-    public /* synthetic */ m1(cs csVar, Object obj, Object obj2, long j10, int i3) {
-        this.a = i3;
-        this.c = csVar;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j10;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        switch (this.a) {
+            case 0:
+                this.c.setAlpha(i7);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                this.c.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public m1() {
+        this.a = 0;
+        this.c = new Paint(3);
+    }
+
+    private final void a(int i7) {
+    }
+
+    private final void b(int i7) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
+    }
+
+    private final void d(ColorFilter colorFilter) {
     }
 }

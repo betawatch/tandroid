@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import b8.hb;
-import b8.ib;
+import a8.ab;
+import af.b;
 import com.google.android.recaptcha.RecaptchaAction;
-import dd.c;
+import gd.c;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.j;
-import od.l;
 import org.telegram.tgnet.TLObject;
-import wd.b0;
-import wd.s;
+import rd.l;
+import zd.b0;
+import zd.s;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -24,8 +24,8 @@ public final class zzgb implements zzdw {
     public zzgb(zzfp zzfpVar, zzct zzctVar) {
         zzdu zzduVar;
         this.zza = zzfpVar;
-        int i3 = zzby.zza;
-        this.zzc = hb.b(zzfv.zza);
+        int i7 = zzby.zza;
+        this.zzc = ab.b(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -48,9 +48,9 @@ public final class zzgb implements zzdw {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzp(l lVar, fd.c cVar) {
+    public final Object zzp(l lVar, id.c cVar) {
         zzfr zzfrVar;
-        int i3;
+        int i7;
         zzcs zzcsVar;
         if (cVar instanceof zzfr) {
             zzfrVar = (zzfr) cVar;
@@ -58,10 +58,10 @@ public final class zzgb implements zzdw {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzfrVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzfrVar.zza;
-                Object obj2 = gd.a.a;
-                i3 = zzfrVar.zzc;
-                if (i3 != 0) {
-                    ib.b(obj);
+                Object obj2 = jd.a.a;
+                i7 = zzfrVar.zzc;
+                if (i7 != 0) {
+                    b.c(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
@@ -70,11 +70,11 @@ public final class zzgb implements zzdw {
                     }
                     zzcsVar = zzcsVar2;
                 } else {
-                    if (i3 != 1) {
+                    if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzcsVar = zzfrVar.zzd;
-                    ib.b(obj);
+                    b.c(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
@@ -82,27 +82,27 @@ public final class zzgb implements zzdw {
         }
         zzfrVar = new zzfr(this, cVar);
         Object obj3 = zzfrVar.zza;
-        Object obj22 = gd.a.a;
-        i3 = zzfrVar.zzc;
-        if (i3 != 0) {
+        Object obj22 = jd.a.a;
+        i7 = zzfrVar.zzc;
+        if (i7 != 0) {
         }
         zzcsVar.zzc();
         return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzq(long j10, fd.c cVar) {
-        return new zzhg(new zzga(this, j10, null));
+    public final Object zzq(long j3, id.c cVar) {
+        return new zzhg(new zzga(this, j3, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zza(String str, RecaptchaAction recaptchaAction, long j10, fd.c cVar) {
-        return new zzhg(new zzfq(this, j10, str, recaptchaAction, null));
+    public final Object zza(String str, RecaptchaAction recaptchaAction, long j3, id.c cVar) {
+        return new zzhg(new zzfq(this, j3, str, recaptchaAction, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzdw
-    public final Object zzb(long j10, fd.c cVar) {
-        return zzq(j10, cVar);
+    public final Object zzb(long j3, id.c cVar) {
+        return zzq(j3, cVar);
     }
 
     public final zzdv zze() {

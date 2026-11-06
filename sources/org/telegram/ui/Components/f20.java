@@ -1,53 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class f20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h20 b;
+public final class f20 implements jg.y1 {
+    public final /* synthetic */ g20 a;
 
-    public /* synthetic */ f20(h20 h20Var, int i3) {
-        this.a = i3;
-        this.b = h20Var;
+    public f20(g20 g20Var) {
+        this.a = g20Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                h20 h20Var = this.b;
-                if (h20Var.c0 == animator) {
-                    h20Var.c0 = null;
-                    h20Var.b();
-                    break;
-                }
-                break;
-            default:
-                h20 h20Var2 = this.b;
-                if (h20Var2.b0 == animator) {
-                    h20Var2.b0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // jg.y1
+    public final /* synthetic */ a0.h X0() {
+        return null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                g20 g20Var = this.b.a0;
-                if (g20Var != null) {
-                    ((org.telegram.ui.ko0) g20Var).a.f0.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    @Override // jg.y1
+    public final /* synthetic */ boolean k1(int i7) {
+        return true;
+    }
+
+    @Override // jg.y1
+    public final void q(int i7) {
+        g20 g20Var = this.a;
+        h20 h20Var = g20Var.x;
+        if (i7 < 0 || i7 != g20Var.n || g20Var.h) {
+            return;
         }
+        int i10 = g20Var.f - 1;
+        boolean z9 = h20Var.q1.getVisibility() == 0;
+        g20Var.f();
+        if (g20Var.f > i10) {
+            h20Var.O0(i10);
+        }
+        if (g20Var.d.e() || !h20Var.k1.R0()) {
+            return;
+        }
+        h20Var.q1.e(false, z9);
+    }
+
+    @Override // jg.y1
+    public final a0.h v0() {
+        return this.a.x.V1;
+    }
+
+    @Override // jg.y1
+    public final /* synthetic */ void m1(ArrayList arrayList) {
     }
 }

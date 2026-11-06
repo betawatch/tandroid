@@ -5,17 +5,17 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
-import org.telegram.messenger.li;
-import org.telegram.ui.i81;
+import org.telegram.messenger.ui;
+import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class x9 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ View b;
 
-    public /* synthetic */ x9(int i3, View view) {
-        this.a = i3;
+    public /* synthetic */ x9(int i7, View view) {
+        this.a = i7;
         this.b = view;
     }
 
@@ -24,22 +24,22 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
         switch (this.a) {
             case 0:
                 y9 y9Var = (y9) this.b;
-                int i3 = y9Var.Z5;
-                boolean z10 = false;
-                if (y9Var.nd == 2 && li.b0(i3).Q() != null) {
-                    boolean I5 = y9Var.getMessageObject().I5(dh.n0.b(li.b0(i3).Q()), false);
-                    y9Var.u3(y9Var.getMessageObject(), null, false, false, false, false);
+                int i7 = y9Var.Z5;
+                boolean z9 = false;
+                if (y9Var.nd == 2 && ui.b0(i7).Q() != null) {
+                    boolean I5 = y9Var.getMessageObject().I5(ch.o0.b(ui.b0(i7).Q()), false);
+                    y9Var.v3(y9Var.getMessageObject(), null, false, false, false, false);
                     y9Var.requestLayout();
-                    dh.j0.b(false);
-                    z10 = true;
+                    ch.k0.b(false);
+                    z9 = true;
                     if (I5) {
                         z9 z9Var = y9Var.od;
-                        dh.j0.d(z9Var.x, null, z9Var.n[1], null, motionEvent.getX(), motionEvent.getY(), dh.n0.b(li.b0(i3).Q()), y9Var.Z5, 0);
-                        dh.j0.f();
+                        ch.k0.d(z9Var.x, null, z9Var.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.o0.b(ui.b0(i7).Q()), y9Var.Z5, 0);
+                        ch.k0.f();
                     }
-                    y9Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.g1(this, 1));
+                    y9Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.h1(this, 1));
                 }
-                return z10;
+                return z9;
             default:
                 return super.onDoubleTap(motionEvent);
         }
@@ -49,7 +49,7 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
     public boolean onDown(MotionEvent motionEvent) {
         switch (this.a) {
             case 1:
-                wg.e eVar = (wg.e) this.b;
+                vg.e eVar = (vg.e) this.b;
                 eVar.n = true;
                 eVar.b();
                 return true;
@@ -64,7 +64,7 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
     public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         switch (this.a) {
             case 1:
-                wg.f fVar = ((wg.e) this.b).a;
+                vg.f fVar = ((vg.e) this.b).a;
                 fVar.d -= f10 * 0.5f;
                 fVar.i -= f11 * 0.05f;
                 return true;
@@ -75,16 +75,16 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onSingleTapUp(MotionEvent motionEvent) {
-        int i3 = this.a;
+        int i7 = this.a;
         View view = this.b;
-        switch (i3) {
+        switch (i7) {
             case 1:
-                wg.e eVar = (wg.e) view;
-                wg.f fVar = eVar.a;
+                vg.e eVar = (vg.e) view;
+                vg.f fVar = eVar.a;
                 if (Math.abs(fVar.d) <= 10.0f) {
                     float max = Math.max(1.0f, eVar.getWidth() / 2.0f);
                     float x10 = ((max - motionEvent.getX()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
-                    float y9 = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
+                    float y10 = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
                     eVar.b();
                     float f10 = fVar.d;
                     float f11 = fVar.i;
@@ -92,16 +92,16 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
                     eVar.d = ofFloat;
                     ofFloat.setDuration(220L);
                     eVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
-                    eVar.d.addUpdateListener(new gi.k6(this, f10, x10, f11, y9, 2));
-                    eVar.d.addListener(new i81(this, 20));
+                    eVar.d.addUpdateListener(new fi.j6(this, f10, x10, f11, y10, 2));
+                    eVar.d.addListener(new r81(this, 20));
                     eVar.d.start();
                     break;
                 }
                 break;
             case 2:
-                zh.i iVar = (zh.i) view;
-                if (!iVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (iVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= iVar.e.f.getRight() || iVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= iVar.e.f.getBottom())) {
-                    iVar.e.e(false);
+                yh.k kVar = (yh.k) view;
+                if (!kVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (kVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= kVar.e.f.getRight() || kVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= kVar.e.f.getBottom())) {
+                    kVar.e.e(false);
                 }
                 break;
         }

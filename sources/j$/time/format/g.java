@@ -8,9 +8,9 @@ import java.math.RoundingMode;
 public final class g extends i {
     public final boolean g;
 
-    public g(j$.time.temporal.o oVar, int i3, int i10, boolean z10, int i11) {
-        super(oVar, i3, i10, x.NOT_NEGATIVE, i11);
-        this.g = z10;
+    public g(j$.time.temporal.o oVar, int i7, int i10, boolean z9, int i11) {
+        super(oVar, i7, i10, x.NOT_NEGATIVE, i11);
+        this.g = z9;
     }
 
     @Override // j$.time.format.i
@@ -22,8 +22,8 @@ public final class g extends i {
     }
 
     @Override // j$.time.format.i
-    public final i b(int i3) {
-        return new g(this.a, this.b, this.c, this.g, this.e + i3);
+    public final i b(int i7) {
+        return new g(this.a, this.b, this.c, this.g, this.e + i7);
     }
 
     @Override // j$.time.format.i, j$.time.format.f
@@ -47,23 +47,23 @@ public final class g extends i {
             bigDecimal = divide.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : divide.stripTrailingZeros();
         }
         int scale = bigDecimal.scale();
-        boolean z10 = this.g;
-        int i3 = this.b;
+        boolean z9 = this.g;
+        int i7 = this.b;
         if (scale != 0) {
-            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i3), this.c), roundingMode).toPlainString().substring(2);
+            String substring = bigDecimal.setScale(Math.min(Math.max(bigDecimal.scale(), i7), this.c), roundingMode).toPlainString().substring(2);
             vVar.getClass();
-            if (z10) {
+            if (z9) {
                 sb2.append('.');
             }
             sb2.append(substring);
             return true;
         }
-        if (i3 > 0) {
-            if (z10) {
+        if (i7 > 0) {
+            if (z9) {
                 vVar.getClass();
                 sb2.append('.');
             }
-            for (int i10 = 0; i10 < i3; i10++) {
+            for (int i10 = 0; i10 < i7; i10++) {
                 vVar.getClass();
                 sb2.append('0');
             }

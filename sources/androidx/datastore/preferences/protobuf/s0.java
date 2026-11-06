@@ -1,5 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
+import a8.q6;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final char[] a;
@@ -22,34 +23,34 @@ public abstract class s0 {
         Arrays.fill(cArr, ' ');
     }
 
-    public static void a(int i3, StringBuilder sb2) {
-        while (i3 > 0) {
+    public static void a(int i7, StringBuilder sb2) {
+        while (i7 > 0) {
             int i10 = 80;
-            if (i3 <= 80) {
-                i10 = i3;
+            if (i7 <= 80) {
+                i10 = i7;
             }
             sb2.append(a, 0, i10);
-            i3 -= i10;
+            i7 -= i10;
         }
     }
 
-    public static void b(StringBuilder sb2, int i3, String str, Object obj) {
+    public static void b(StringBuilder sb2, int i7, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                b(sb2, i3, str, it.next());
+                b(sb2, i7, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                b(sb2, i3, str, (Map.Entry) it2.next());
+                b(sb2, i7, str, (Map.Entry) it2.next());
             }
             return;
         }
         sb2.append('\n');
-        a(i3, sb2);
+        a(i7, sb2);
         if (!str.isEmpty()) {
             StringBuilder sb3 = new StringBuilder();
             sb3.append(Character.toLowerCase(str.charAt(0)));
@@ -66,21 +67,21 @@ public abstract class s0 {
         if (obj instanceof String) {
             sb2.append(": \"");
             h hVar = h.c;
-            sb2.append(b8.t0.a(new h(((String) obj).getBytes(c0.a))));
+            sb2.append(q6.a(new h(((String) obj).getBytes(c0.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof h) {
             sb2.append(": \"");
-            sb2.append(b8.t0.a((h) obj));
+            sb2.append(q6.a((h) obj));
             sb2.append('\"');
             return;
         }
         if (obj instanceof z) {
             sb2.append(" {");
-            c((z) obj, sb2, i3 + 2);
+            c((z) obj, sb2, i7 + 2);
             sb2.append("\n");
-            a(i3, sb2);
+            a(i7, sb2);
             sb2.append("}");
             return;
         }
@@ -91,11 +92,11 @@ public abstract class s0 {
         }
         sb2.append(" {");
         Map.Entry entry = (Map.Entry) obj;
-        int i11 = i3 + 2;
+        int i11 = i7 + 2;
         b(sb2, i11, "key", entry.getKey());
         b(sb2, i11, "value", entry.getValue());
         sb2.append("\n");
-        a(i3, sb2);
+        a(i7, sb2);
         sb2.append("}");
     }
 
@@ -118,7 +119,7 @@ public abstract class s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void c(z zVar, StringBuilder sb2, int i3) {
+    public static void c(z zVar, StringBuilder sb2, int i7) {
         int i10;
         boolean booleanValue;
         boolean equals;
@@ -152,9 +153,9 @@ public abstract class s0 {
         for (Map.Entry entry : treeMap.entrySet()) {
             String substring = ((String) entry.getKey()).substring(i10);
             if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null && method2.getReturnType().equals(List.class)) {
-                b(sb2, i3, com.google.android.recaptcha.internal.a.j(substring, 4, 0), z.e(method2, zVar, new Object[0]));
+                b(sb2, i7, com.google.android.recaptcha.internal.a.k(substring, 4, 0), z.e(method2, zVar, new Object[0]));
             } else if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                b(sb2, i3, com.google.android.recaptcha.internal.a.j(substring, 3, 0), z.e(method, zVar, new Object[0]));
+                b(sb2, i7, com.google.android.recaptcha.internal.a.k(substring, 3, 0), z.e(method, zVar, new Object[0]));
             } else if (hashSet.contains("set".concat(substring))) {
                 if (substring.endsWith("Bytes")) {
                     if (treeMap.containsKey("get" + substring.substring(0, substring.length() - 5))) {
@@ -182,7 +183,7 @@ public abstract class s0 {
                         booleanValue = ((Boolean) z.e(method5, zVar, new Object[0])).booleanValue();
                     }
                     if (booleanValue) {
-                        b(sb2, i3, substring, e10);
+                        b(sb2, i7, substring, e10);
                     }
                 }
             }
@@ -191,7 +192,7 @@ public abstract class s0 {
         h1 h1Var = zVar.unknownFields;
         if (h1Var != null) {
             for (int i12 = 0; i12 < h1Var.a; i12++) {
-                b(sb2, i3, String.valueOf(h1Var.b[i12] >>> 3), h1Var.c[i12]);
+                b(sb2, i7, String.valueOf(h1Var.b[i12] >>> 3), h1Var.c[i12]);
             }
         }
     }

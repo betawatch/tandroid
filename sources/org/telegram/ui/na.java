@@ -1,71 +1,59 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na implements fh.a {
+public final /* synthetic */ class na implements org.telegram.messenger.sr {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ na(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ na(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // fh.a
-    public final void b(eh.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // fh.a
-    public final void d(Canvas canvas, RectF rectF) {
-        int i3 = this.a;
+    @Override // org.telegram.messenger.sr
+    public final void a(int i7) {
+        oq0 oq0Var;
+        int i10 = this.a;
         Object obj = this.b;
-        switch (i3) {
+        switch (i10) {
             case 0:
-                ((ib) obj).X(canvas, rectF);
+                ((mb) obj).Z0(true);
                 break;
             case 1:
-                la0.Z((la0) obj, canvas, rectF);
+                ((NotificationsCustomSettingsActivity) obj).q0(true);
                 break;
             case 2:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
-                org.telegram.ui.Components.tj0 tj0Var = premiumPreviewFragment.a;
-                jh.d.a(tj0Var, canvas, rectF, tj0Var, premiumPreviewFragment.e0);
-                break;
-            case 3:
-                RectF rectF2 = ProfileActivity.T6;
-                canvas.save();
-                canvas.translate(-r1.getScrollX(), -r1.getScrollY());
-                ((View) obj).draw(canvas);
-                canvas.restore();
-                break;
-            case 4:
-                ow0 ow0Var = ((ProfileActivity) obj).d1;
-                ow0Var.P = true;
-                ow0Var.draw(canvas);
-                ow0Var.P = false;
-                break;
-            default:
-                org.telegram.ui.Components.tj0 tj0Var2 = (org.telegram.ui.Components.tj0) obj;
-                org.telegram.ui.Components.p9 p9Var = tj0Var2.S2;
-                if (p9Var == null) {
-                    org.telegram.ui.Components.dj0 dj0Var = tj0Var2.H2;
-                    if (dj0Var != null) {
-                        dj0Var.d(canvas, rectF);
-                        break;
-                    }
-                } else {
-                    p9Var.d(canvas, rectF);
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                if (photoViewer.D != null && (oq0Var = photoViewer.e0) != null && i7 > 0) {
+                    org.telegram.ui.Components.hc.F(oq0Var, true).j();
                     break;
                 }
                 break;
+            case 3:
+                ProfileActivity profileActivity = (ProfileActivity) obj;
+                RectF rectF = ProfileActivity.S6;
+                if (i7 != 1) {
+                    profileActivity.getNotificationCenter().k(79, Long.valueOf(profileActivity.d1));
+                    break;
+                } else {
+                    profileActivity.getNotificationCenter().n(profileActivity, 4);
+                    profileActivity.getNotificationCenter().k(4, new Object[0]);
+                    profileActivity.I1 = 0;
+                    profileActivity.finishFragment();
+                    break;
+                }
+            default:
+                v91 v91Var = ((c91) obj).a;
+                if (i7 != 0) {
+                    v91Var.finishFragment();
+                    break;
+                } else {
+                    v91Var.S0(false);
+                    break;
+                }
         }
     }
 }

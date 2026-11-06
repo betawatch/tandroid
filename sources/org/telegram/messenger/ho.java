@@ -1,37 +1,107 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class ho extends x2 {
-    public final /* synthetic */ hp e;
+public final /* synthetic */ class ho implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qp b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ho(hp hpVar) {
-        super(3600000);
-        this.e = hpVar;
+    public /* synthetic */ ho(qp qpVar, long j3, int i7, boolean z9, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = qpVar;
+        this.c = j3;
+        this.d = i7;
+        this.e = z9;
+        this.f = i10;
+        this.h = i11;
     }
 
-    @Override // org.telegram.messenger.x2
-    public final void e(int i3, Object obj, n10 n10Var) {
-        qr.a0(i3).a.c(new x0(i3, n10Var, 7));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void f(int i3, Object obj, long j10, w2 w2Var) {
-        TL_account.getWebBrowserSettings getwebbrowsersettings = new TL_account.getWebBrowserSettings();
-        getwebbrowsersettings.hash = j10;
-        this.e.getConnectionsManager().sendRequestTyped(getwebbrowsersettings, new c3.b(1), new d(w2Var, 6));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final void g(int i3, Object obj, Object obj2) {
-        qr.a0(i3).a.c(new x0(i3, (TL_account.TL_webBrowserSettings) obj2, 8));
-    }
-
-    @Override // org.telegram.messenger.x2
-    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
-        return false;
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0085 A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        boolean z9;
+        int i7;
+        vo[] voVarArr;
+        int i10;
+        switch (this.a) {
+            case 0:
+                g0.h3(new ho(this.b, this.c, this.d, this.e, this.f, this.h, 1));
+                break;
+            default:
+                qp qpVar = this.b;
+                dt notificationsController = qpVar.getNotificationsController();
+                long j3 = this.c;
+                notificationsController.L(null, j3, this.d, 0, this.e);
+                TLRPC.Dialog dialog = (TLRPC.Dialog) qpVar.Q.f(j3);
+                if (dialog != null) {
+                    int i11 = dialog.unread_count;
+                    int i12 = this.f;
+                    if (i12 != 0) {
+                        int i13 = dialog.top_message;
+                        int i14 = this.h;
+                        if (i14 > i13) {
+                            int max = Math.max(i11 - i12, 0);
+                            dialog.unread_count = max;
+                            if (i14 != Integer.MAX_VALUE && max > (i10 = i14 - dialog.top_message)) {
+                                dialog.unread_count = i10;
+                            }
+                            z9 = dialog.unread_mark;
+                            if (z9) {
+                                dialog.unread_mark = false;
+                                qpVar.getMessagesStorage().F1(dialog.id, false);
+                            }
+                            if ((i11 == 0 || z9) && dialog.unread_count == 0) {
+                                qpVar.r2(j3, 0L, null);
+                                i7 = 0;
+                                while (true) {
+                                    voVarArr = qpVar.M;
+                                    if (i7 < voVarArr.length) {
+                                        vo voVar = voVarArr[i7];
+                                        if (voVar == null || (voVar.g & 64) == 0) {
+                                            i7++;
+                                        } else {
+                                            qpVar.T4(null);
+                                            qpVar.getNotificationCenter().k(3, new Object[0]);
+                                        }
+                                    }
+                                }
+                            }
+                            qpVar.getNotificationCenter().k(2, 256);
+                        }
+                    }
+                    dialog.unread_count = 0;
+                    z9 = dialog.unread_mark;
+                    if (z9) {
+                    }
+                    if (i11 == 0) {
+                    }
+                    qpVar.r2(j3, 0L, null);
+                    i7 = 0;
+                    while (true) {
+                        voVarArr = qpVar.M;
+                        if (i7 < voVarArr.length) {
+                        }
+                        i7++;
+                    }
+                    qpVar.getNotificationCenter().k(2, 256);
+                }
+                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                longSparseIntArray.put(j3, 0);
+                qpVar.getNotificationsController().J(longSparseIntArray);
+                break;
+        }
     }
 }

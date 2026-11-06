@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class i1 {
     public static h1 a(Object obj) {
@@ -14,7 +14,7 @@ public final class i1 {
         return h1Var2;
     }
 
-    public static boolean b(int i3, c4.f fVar, Object obj) {
+    public static boolean b(int i7, d4.f fVar, Object obj) {
         k kVar = (k) fVar.b;
         int i10 = fVar.c;
         int i11 = i10 >>> 3;
@@ -47,7 +47,7 @@ public final class i1 {
         h1 h1Var = new h1(0, new int[8], new Object[8], true);
         int i13 = i11 << 3;
         int i14 = i13 | 4;
-        int i15 = i3 + 1;
+        int i15 = i7 + 1;
         if (i15 >= 100) {
             throw new e0("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
         }

@@ -1,36 +1,61 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gi extends FrameLayout {
-    public final /* synthetic */ wm a;
+public final class gi extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
+    public final /* synthetic */ an g;
+    public final /* synthetic */ Object h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gi(wm wmVar, Activity activity) {
-        super(activity);
-        this.a = wmVar;
+    public /* synthetic */ gi(an anVar, int i7, Object obj, org.telegram.ui.Cells.q1 q1Var, int i10) {
+        this.d = i10;
+        this.g = anVar;
+        this.e = i7;
+        this.h = obj;
+        this.f = q1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.O7(true);
+    @Override // vf.b
+    public final void c(boolean z9) {
+        switch (this.d) {
+            case 0:
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 21), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 24), 240L);
+                    break;
+                }
+                break;
         }
-        return super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        int min = Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(300.0f));
-        if (min == 0) {
-            min = org.telegram.messenger.g0.L(300.0f);
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i7 = this.e;
+                an anVar = this.g;
+                anVar.Wb = i7;
+                anVar.Xb = 1;
+                anVar.Yb = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i10 = this.e;
+                an anVar2 = this.g;
+                anVar2.Wb = i10;
+                anVar2.Xb = 3;
+                anVar2.Zb = (String) this.h;
+                this.f.invalidate();
+                break;
         }
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

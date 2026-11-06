@@ -2,57 +2,57 @@ package g;
 
 import android.view.ViewGroup;
 import java.util.WeakHashMap;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class h implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ s b;
 
-    public /* synthetic */ h(s sVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ h(s sVar, int i7) {
+        this.a = i7;
         this.b = sVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         ViewGroup viewGroup;
-        int i3 = this.a;
+        int i7 = this.a;
         s sVar = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                if ((sVar.j0 & 1) != 0) {
-                    sVar.k(0);
+                if ((sVar.i0 & 1) != 0) {
+                    sVar.j(0);
                 }
-                if ((sVar.j0 & TLObject.FLAG_12) != 0) {
-                    sVar.k(hs.t1);
+                if ((sVar.i0 & TLObject.FLAG_12) != 0) {
+                    sVar.j(qs.t1);
                 }
-                sVar.i0 = false;
-                sVar.j0 = 0;
+                sVar.h0 = false;
+                sVar.i0 = 0;
                 break;
             default:
-                sVar.F.showAtLocation(sVar.E, 55, 0, 0);
-                l0 l0Var = sVar.H;
+                sVar.E.showAtLocation(sVar.D, 55, 0, 0);
+                l0 l0Var = sVar.G;
                 if (l0Var != null) {
                     l0Var.b();
                 }
-                if (sVar.J && (viewGroup = sVar.K) != null) {
+                if (sVar.I && (viewGroup = sVar.J) != null) {
                     WeakHashMap weakHashMap = i0.a;
                     if (viewGroup.isLaidOut()) {
-                        sVar.E.setAlpha(0.0f);
-                        l0 a10 = i0.a(sVar.E);
+                        sVar.D.setAlpha(0.0f);
+                        l0 a10 = i0.a(sVar.D);
                         a10.a(1.0f);
-                        sVar.H = a10;
+                        sVar.G = a10;
                         a10.d(new j(this, 0));
                         break;
                     }
                 }
-                sVar.E.setAlpha(1.0f);
-                sVar.E.setVisibility(0);
+                sVar.D.setAlpha(1.0f);
+                sVar.D.setVisibility(0);
                 break;
         }
     }

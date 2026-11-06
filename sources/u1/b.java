@@ -1,0 +1,253 @@
+package u1;
+
+import android.util.Log;
+import java.io.ByteArrayInputStream;
+import java.io.DataInput;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteOrder;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public class b extends InputStream implements DataInput {
+    public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
+    public static final ByteOrder f = ByteOrder.BIG_ENDIAN;
+    public final DataInputStream a;
+    public ByteOrder b;
+    public int c;
+    public byte[] d;
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b(byte[] bArr) {
+        this(0, r0);
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr);
+        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+    }
+
+    public final void a(int i7) {
+        int i10 = 0;
+        while (i10 < i7) {
+            int i11 = i7 - i10;
+            DataInputStream dataInputStream = this.a;
+            int skip = (int) dataInputStream.skip(i11);
+            if (skip <= 0) {
+                if (this.d == null) {
+                    this.d = new byte[TLObject.FLAG_13];
+                }
+                skip = dataInputStream.read(this.d, 0, Math.min(TLObject.FLAG_13, i11));
+                if (skip == -1) {
+                    throw new EOFException(jg.g.k(i7, "Reached EOF while skipping ", " bytes."));
+                }
+            }
+            i10 += skip;
+        }
+        this.c += i10;
+    }
+
+    @Override // java.io.InputStream
+    public final int available() {
+        return this.a.available();
+    }
+
+    @Override // java.io.InputStream
+    public final void mark(int i7) {
+        throw new UnsupportedOperationException("Mark is currently unsupported");
+    }
+
+    @Override // java.io.InputStream
+    public final int read() {
+        this.c++;
+        return this.a.read();
+    }
+
+    @Override // java.io.DataInput
+    public final boolean readBoolean() {
+        this.c++;
+        return this.a.readBoolean();
+    }
+
+    @Override // java.io.DataInput
+    public final byte readByte() {
+        this.c++;
+        int read = this.a.read();
+        if (read >= 0) {
+            return (byte) read;
+        }
+        throw new EOFException();
+    }
+
+    @Override // java.io.DataInput
+    public final char readChar() {
+        this.c += 2;
+        return this.a.readChar();
+    }
+
+    @Override // java.io.DataInput
+    public final double readDouble() {
+        return Double.longBitsToDouble(readLong());
+    }
+
+    @Override // java.io.DataInput
+    public final float readFloat() {
+        return Float.intBitsToFloat(readInt());
+    }
+
+    @Override // java.io.DataInput
+    public final void readFully(byte[] bArr, int i7, int i10) {
+        this.c += i10;
+        this.a.readFully(bArr, i7, i10);
+    }
+
+    @Override // java.io.DataInput
+    public final int readInt() {
+        this.c += 4;
+        DataInputStream dataInputStream = this.a;
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        int read3 = dataInputStream.read();
+        int read4 = dataInputStream.read();
+        if ((read | read2 | read3 | read4) < 0) {
+            throw new EOFException();
+        }
+        ByteOrder byteOrder = this.b;
+        if (byteOrder == e) {
+            return (read4 << 24) + (read3 << 16) + (read2 << 8) + read;
+        }
+        if (byteOrder == f) {
+            return (read << 24) + (read2 << 16) + (read3 << 8) + read4;
+        }
+        throw new IOException("Invalid byte order: " + this.b);
+    }
+
+    @Override // java.io.DataInput
+    public final String readLine() {
+        Log.d("ExifInterface", "Currently unsupported");
+        return null;
+    }
+
+    @Override // java.io.DataInput
+    public final long readLong() {
+        long j3;
+        long j10;
+        this.c += 8;
+        DataInputStream dataInputStream = this.a;
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        int read3 = dataInputStream.read();
+        int read4 = dataInputStream.read();
+        int read5 = dataInputStream.read();
+        int read6 = dataInputStream.read();
+        int read7 = dataInputStream.read();
+        int read8 = dataInputStream.read();
+        if ((read | read2 | read3 | read4 | read5 | read6 | read7 | read8) < 0) {
+            throw new EOFException();
+        }
+        ByteOrder byteOrder = this.b;
+        if (byteOrder == e) {
+            j3 = (read8 << 56) + (read7 << 48) + (read6 << 40) + (read5 << 32) + (read4 << 24) + (read3 << 16) + (read2 << 8);
+            j10 = read;
+        } else {
+            if (byteOrder != f) {
+                throw new IOException("Invalid byte order: " + this.b);
+            }
+            j3 = (read << 56) + (read2 << 48) + (read3 << 40) + (read4 << 32) + (read5 << 24) + (read6 << 16) + (read7 << 8);
+            j10 = read8;
+        }
+        return j3 + j10;
+    }
+
+    @Override // java.io.DataInput
+    public final short readShort() {
+        this.c += 2;
+        DataInputStream dataInputStream = this.a;
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        if ((read | read2) < 0) {
+            throw new EOFException();
+        }
+        ByteOrder byteOrder = this.b;
+        if (byteOrder == e) {
+            return (short) ((read2 << 8) + read);
+        }
+        if (byteOrder == f) {
+            return (short) ((read << 8) + read2);
+        }
+        throw new IOException("Invalid byte order: " + this.b);
+    }
+
+    @Override // java.io.DataInput
+    public final String readUTF() {
+        this.c += 2;
+        return this.a.readUTF();
+    }
+
+    @Override // java.io.DataInput
+    public final int readUnsignedByte() {
+        this.c++;
+        return this.a.readUnsignedByte();
+    }
+
+    @Override // java.io.DataInput
+    public final int readUnsignedShort() {
+        this.c += 2;
+        DataInputStream dataInputStream = this.a;
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        if ((read | read2) < 0) {
+            throw new EOFException();
+        }
+        ByteOrder byteOrder = this.b;
+        if (byteOrder == e) {
+            return (read2 << 8) + read;
+        }
+        if (byteOrder == f) {
+            return (read << 8) + read2;
+        }
+        throw new IOException("Invalid byte order: " + this.b);
+    }
+
+    @Override // java.io.InputStream
+    public final void reset() {
+        throw new UnsupportedOperationException("Reset is currently unsupported");
+    }
+
+    @Override // java.io.DataInput
+    public final int skipBytes(int i7) {
+        throw new UnsupportedOperationException("skipBytes is currently unsupported");
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public b(InputStream inputStream) {
+        this(0, inputStream);
+        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+    }
+
+    public b(int i7, InputStream inputStream) {
+        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+        this.b = byteOrder;
+        DataInputStream dataInputStream = new DataInputStream(inputStream);
+        this.a = dataInputStream;
+        dataInputStream.mark(0);
+        this.c = 0;
+        this.b = byteOrder;
+    }
+
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i7, int i10) {
+        int read = this.a.read(bArr, i7, i10);
+        this.c += read;
+        return read;
+    }
+
+    @Override // java.io.DataInput
+    public final void readFully(byte[] bArr) {
+        this.c += bArr.length;
+        this.a.readFully(bArr);
+    }
+}

@@ -1,7 +1,8 @@
 package androidx.car.app.utils;
 
-import ai.k3;
-import ai.z3;
+import a8.p0;
+import aa.s;
+import ai.d0;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -34,11 +35,11 @@ public abstract class g {
     }
 
     public static void b(IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new k3(iOnDoneCallback, str, aVar, 5));
+        h.a(new s(iOnDoneCallback, str, aVar, 5));
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new z3(oVar, iOnDoneCallback, str, aVar, 1));
+        h.a(new d0(oVar, iOnDoneCallback, str, aVar, 2));
     }
 
     public static void d(String str, b bVar) {
@@ -58,12 +59,12 @@ public abstract class g {
         } catch (SecurityException e10) {
             throw e10;
         } catch (RuntimeException e11) {
-            throw new j(a1.g.q("Remote ", str, " call failed"), e11);
+            throw new j(p0.p("Remote ", str, " call failed"), e11);
         }
     }
 
     public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
-        d(str.concat(" onFailure"), new aa.a(iOnDoneCallback, exc, str, 2));
+        d(str.concat(" onFailure"), new a3.h((Object) iOnDoneCallback, (Object) exc, str, 3));
     }
 
     public static List g(List list) {

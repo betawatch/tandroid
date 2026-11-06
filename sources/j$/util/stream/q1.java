@@ -15,13 +15,13 @@ public abstract class q1 implements j5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public /* synthetic */ void accept(int i3) {
+    public /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
 
     @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(long j10) {
+    public /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -35,7 +35,7 @@ public abstract class q1 implements j5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
+    public final /* synthetic */ void o(long j3) {
     }
 
     public q1(r1 r1Var) {

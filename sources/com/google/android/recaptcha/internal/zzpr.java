@@ -2,20 +2,20 @@ package com.google.android.recaptcha.internal;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzpr {
-    public static int zza(int i3, int i10, RoundingMode roundingMode) {
+    public static int zza(int i7, int i10, RoundingMode roundingMode) {
         roundingMode.getClass();
         if (i10 == 0) {
             throw new ArithmeticException("/ by zero");
         }
-        int i11 = i3 / i10;
-        int i12 = i3 - (i10 * i11);
+        int i11 = i7 / i10;
+        int i12 = i7 - (i10 * i11);
         if (i12 == 0) {
             return i11;
         }
-        int i13 = ((i3 ^ i10) >> 31) | 1;
+        int i13 = ((i7 ^ i10) >> 31) | 1;
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
                 zzpt.zzb(false);
@@ -55,28 +55,28 @@ public final class zzpr {
         return i11 + i13;
     }
 
-    public static int zzb(int i3, RoundingMode roundingMode) {
-        if (i3 <= 0) {
+    public static int zzb(int i7, RoundingMode roundingMode) {
+        if (i7 <= 0) {
             throw new IllegalArgumentException("x (0) must be > 0");
         }
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
-                zzpt.zzb(((i3 + (-1)) & i3) == 0);
+                zzpt.zzb(((i7 + (-1)) & i7) == 0);
                 break;
             case 2:
             case 3:
                 break;
             case 4:
             case 5:
-                return 32 - Integer.numberOfLeadingZeros(i3 - 1);
+                return 32 - Integer.numberOfLeadingZeros(i7 - 1);
             case 6:
             case 7:
             case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i3);
-                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i3) >>> 31);
+                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i7);
+                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i7) >>> 31);
             default:
                 throw new AssertionError();
         }
-        return 31 - Integer.numberOfLeadingZeros(i3);
+        return 31 - Integer.numberOfLeadingZeros(i7);
     }
 }

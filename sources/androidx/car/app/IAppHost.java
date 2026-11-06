@@ -1,5 +1,6 @@
 package androidx.car.app;
 
+import a8.o1;
 import android.location.Location;
 import android.os.Binder;
 import android.os.IBinder;
@@ -7,14 +8,13 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.car.app.ISurfaceCallback;
-import b8.o0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface IAppHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppHost".replace('$', '.');
 
-    void dismissAlert(int i3);
+    void dismissAlert(int i7);
 
     void invalidate();
 
@@ -26,9 +26,9 @@ public interface IAppHost extends IInterface {
 
     void showAlert(w.b bVar);
 
-    void showToast(CharSequence charSequence, int i3);
+    void showToast(CharSequence charSequence, int i7);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Default implements IAppHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -45,7 +45,7 @@ public interface IAppHost extends IInterface {
         }
 
         @Override // androidx.car.app.IAppHost
-        public void dismissAlert(int i3) {
+        public void dismissAlert(int i7) {
         }
 
         @Override // androidx.car.app.IAppHost
@@ -61,11 +61,11 @@ public interface IAppHost extends IInterface {
         }
 
         @Override // androidx.car.app.IAppHost
-        public void showToast(CharSequence charSequence, int i3) {
+        public void showToast(CharSequence charSequence, int i7) {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Stub extends Binder implements IAppHost {
         static final int TRANSACTION_dismissAlert = 7;
         static final int TRANSACTION_invalidate = 2;
@@ -75,7 +75,7 @@ public interface IAppHost extends IInterface {
         static final int TRANSACTION_showAlert = 6;
         static final int TRANSACTION_showToast = 3;
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public static class Proxy implements IAppHost {
             private IBinder mRemote;
 
@@ -89,12 +89,12 @@ public interface IAppHost extends IInterface {
             }
 
             @Override // androidx.car.app.IAppHost
-            public void dismissAlert(int i3) {
+            public void dismissAlert(int i7) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    obtain.writeInt(i3);
+                    obtain.writeInt(i7);
                     this.mRemote.transact(7, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -127,10 +127,10 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    o0.b(obtain, bVar, 0);
+                    o1.b(obtain, bVar, 0);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    return (w.b) o0.a(obtain2, w.b.CREATOR);
+                    return (w.b) o1.a(obtain2, w.b.CREATOR);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -143,7 +143,7 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    o0.b(obtain, location, 0);
+                    o1.b(obtain, location, 0);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -173,7 +173,7 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    o0.b(obtain, bVar, 0);
+                    o1.b(obtain, bVar, 0);
                     this.mRemote.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -183,7 +183,7 @@ public interface IAppHost extends IInterface {
             }
 
             @Override // androidx.car.app.IAppHost
-            public void showToast(CharSequence charSequence, int i3) {
+            public void showToast(CharSequence charSequence, int i7) {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
@@ -194,7 +194,7 @@ public interface IAppHost extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    obtain.writeInt(i3);
+                    obtain.writeInt(i7);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     obtain2.recycle();
@@ -220,22 +220,22 @@ public interface IAppHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
             String str = IAppHost.DESCRIPTOR;
-            if (i3 >= 1 && i3 <= 16777215) {
+            if (i7 >= 1 && i7 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i3 == 1598968902) {
+            if (i7 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            switch (i3) {
+            switch (i7) {
                 case 2:
                     invalidate();
                     parcel2.writeNoException();
                     return true;
                 case 3:
-                    showToast((CharSequence) o0.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
+                    showToast((CharSequence) o1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 4:
@@ -243,11 +243,11 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 5:
-                    sendLocation((Location) o0.a(parcel, Location.CREATOR));
+                    sendLocation((Location) o1.a(parcel, Location.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 6:
-                    showAlert((w.b) o0.a(parcel, w.b.CREATOR));
+                    showAlert((w.b) o1.a(parcel, w.b.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 7:
@@ -255,12 +255,12 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 8:
-                    w.b openMicrophone = openMicrophone((w.b) o0.a(parcel, w.b.CREATOR));
+                    w.b openMicrophone = openMicrophone((w.b) o1.a(parcel, w.b.CREATOR));
                     parcel2.writeNoException();
-                    o0.b(parcel2, openMicrophone, 1);
+                    o1.b(parcel2, openMicrophone, 1);
                     return true;
                 default:
-                    return super.onTransact(i3, parcel, parcel2, i10);
+                    return super.onTransact(i7, parcel, parcel2, i10);
             }
         }
 

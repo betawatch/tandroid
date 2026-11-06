@@ -8,178 +8,179 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
-import b8.mf;
+import bi.x5;
+import c8.ha;
+import h9.f1;
 import j$.util.DesugarCollections;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import m.f3;
-import org.telegram.messenger.bd;
+import m.h3;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.i4;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.t2;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.eo;
-import org.telegram.ui.Components.ex;
-import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.m70;
+import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.cx;
+import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.fo;
+import org.telegram.ui.Components.gx;
+import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.t50;
+import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.vo;
-import org.telegram.ui.Components.y00;
-import org.telegram.ui.Components.y10;
-import org.telegram.ui.wm;
-import u4.d1;
+import org.telegram.ui.Components.x50;
+import org.telegram.ui.an;
+import v4.d1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ w(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ w(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        r4.o oVar;
-        r4.o oVar2;
-        r4.o oVar3;
+        s4.o oVar;
+        s4.o oVar2;
+        s4.o oVar3;
         Message message;
         MenuItem.OnMenuItemClickListener onMenuItemClickListener;
-        int i3 = this.a;
+        int i7 = this.a;
         Message message2 = null;
         message2 = null;
         Object obj = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                ((c0) obj).dismiss();
+                ((b0) obj).dismiss();
                 return;
             case 1:
-                f0 f0Var = (f0) obj;
-                o0 o0Var = f0Var.y;
-                if (o0Var.N != null) {
-                    o0Var.I.removeMessages(2);
+                e0 e0Var = (e0) obj;
+                n0 n0Var = e0Var.y;
+                if (n0Var.M != null) {
+                    n0Var.H.removeMessages(2);
                 }
-                o0Var.N = f0Var.v;
+                n0Var.M = e0Var.v;
                 boolean isActivated = view.isActivated();
-                boolean z10 = !isActivated;
+                boolean z9 = !isActivated;
                 if (isActivated) {
-                    Integer num = (Integer) o0Var.O.get(f0Var.v.c);
+                    Integer num = (Integer) n0Var.N.get(e0Var.v.c);
                     r9 = num == null ? 1 : Math.max(1, num.intValue());
                 }
-                f0Var.u(z10);
-                f0Var.x.setProgress(r9);
-                f0Var.v.j(r9);
-                o0Var.I.sendEmptyMessageDelayed(2, 500L);
+                e0Var.u(z9);
+                e0Var.x.setProgress(r9);
+                e0Var.v.j(r9);
+                n0Var.H.sendEmptyMessageDelayed(2, 500L);
                 return;
             case 2:
-                h0 h0Var = (h0) obj;
-                r4.y yVar = h0Var.B.x.f;
-                r4.w wVar = h0Var.A;
-                yVar.getClass();
-                if (wVar == null) {
+                g0 g0Var = (g0) obj;
+                s4.x xVar = g0Var.B.x.f;
+                s4.v vVar = g0Var.A;
+                xVar.getClass();
+                if (vVar == null) {
                     throw new NullPointerException("route must not be null");
                 }
-                r4.y.b();
-                r4.e c2 = r4.y.c();
-                if (!(c2.e instanceof r4.p)) {
+                s4.x.b();
+                s4.e c10 = s4.x.c();
+                if (!(c10.e instanceof s4.p)) {
                     throw new IllegalStateException("There is no currently selected dynamic group route.");
                 }
-                y00 b10 = c2.d.b(wVar);
-                if (b10 == null || (oVar = (r4.o) b10.a) == null || !oVar.e) {
+                org.telegram.ui.Components.n b10 = c10.d.b(vVar);
+                if (b10 == null || (oVar = (s4.o) b10.a) == null || !oVar.e) {
                     Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
                 } else {
-                    ((r4.p) c2.e).o(Collections.singletonList(wVar.b));
+                    ((s4.p) c10.e).o(Collections.singletonList(vVar.b));
                 }
-                h0Var.w.setVisibility(4);
-                h0Var.x.setVisibility(0);
+                g0Var.w.setVisibility(4);
+                g0Var.x.setVisibility(0);
                 return;
             case 3:
-                l0 l0Var = (l0) obj;
-                m0 m0Var = l0Var.I;
-                boolean v = l0Var.v(l0Var.v);
-                boolean z11 = !v;
-                boolean e10 = l0Var.v.e();
+                k0 k0Var = (k0) obj;
+                l0 l0Var = k0Var.I;
+                boolean v = k0Var.v(k0Var.v);
+                boolean z10 = !v;
+                boolean e10 = k0Var.v.e();
                 if (v) {
-                    r4.y yVar2 = m0Var.x.f;
-                    r4.w wVar2 = l0Var.v;
-                    yVar2.getClass();
-                    if (wVar2 == null) {
+                    s4.x xVar2 = l0Var.x.f;
+                    s4.v vVar2 = k0Var.v;
+                    xVar2.getClass();
+                    if (vVar2 == null) {
                         throw new NullPointerException("route must not be null");
                     }
-                    r4.y.b();
-                    r4.e c10 = r4.y.c();
-                    if (!(c10.e instanceof r4.p)) {
+                    s4.x.b();
+                    s4.e c11 = s4.x.c();
+                    if (!(c11.e instanceof s4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    y00 b11 = c10.d.b(wVar2);
-                    if (!DesugarCollections.unmodifiableList(c10.d.v).contains(wVar2) || b11 == null || ((oVar2 = (r4.o) b11.a) != null && !oVar2.c)) {
-                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + wVar2);
-                    } else if (DesugarCollections.unmodifiableList(c10.d.v).size() <= 1) {
+                    org.telegram.ui.Components.n b11 = c11.d.b(vVar2);
+                    if (!DesugarCollections.unmodifiableList(c11.d.v).contains(vVar2) || b11 == null || ((oVar2 = (s4.o) b11.a) != null && !oVar2.c)) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + vVar2);
+                    } else if (DesugarCollections.unmodifiableList(c11.d.v).size() <= 1) {
                         Log.w("GlobalMediaRouter", "Ignoring attempt to remove the last member route.");
                     } else {
-                        ((r4.p) c10.e).n(wVar2.b);
+                        ((s4.p) c11.e).n(vVar2.b);
                     }
                 } else {
-                    r4.y yVar3 = m0Var.x.f;
-                    r4.w wVar3 = l0Var.v;
-                    yVar3.getClass();
-                    if (wVar3 == null) {
+                    s4.x xVar3 = l0Var.x.f;
+                    s4.v vVar3 = k0Var.v;
+                    xVar3.getClass();
+                    if (vVar3 == null) {
                         throw new NullPointerException("route must not be null");
                     }
-                    r4.y.b();
-                    r4.e c11 = r4.y.c();
-                    if (!(c11.e instanceof r4.p)) {
+                    s4.x.b();
+                    s4.e c12 = s4.x.c();
+                    if (!(c12.e instanceof s4.p)) {
                         throw new IllegalStateException("There is no currently selected dynamic group route.");
                     }
-                    y00 b12 = c11.d.b(wVar3);
-                    if (DesugarCollections.unmodifiableList(c11.d.v).contains(wVar3) || b12 == null || (oVar3 = (r4.o) b12.a) == null || !oVar3.d) {
-                        Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + wVar3);
+                    org.telegram.ui.Components.n b12 = c12.d.b(vVar3);
+                    if (DesugarCollections.unmodifiableList(c12.d.v).contains(vVar3) || b12 == null || (oVar3 = (s4.o) b12.a) == null || !oVar3.d) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + vVar3);
                     } else {
-                        ((r4.p) c11.e).m(wVar3.b);
+                        ((s4.p) c12.e).m(vVar3.b);
                     }
                 }
-                l0Var.w(z11, !e10);
+                k0Var.w(z10, !e10);
                 if (e10) {
-                    List unmodifiableList = DesugarCollections.unmodifiableList(m0Var.x.r.v);
-                    for (r4.w wVar4 : DesugarCollections.unmodifiableList(l0Var.v.v)) {
-                        if (unmodifiableList.contains(wVar4) != z11) {
-                            f0 f0Var2 = (f0) m0Var.x.M.get(wVar4.c);
-                            if (f0Var2 instanceof l0) {
-                                ((l0) f0Var2).w(z11, true);
+                    List unmodifiableList = DesugarCollections.unmodifiableList(l0Var.x.r.v);
+                    for (s4.v vVar4 : DesugarCollections.unmodifiableList(k0Var.v.v)) {
+                        if (unmodifiableList.contains(vVar4) != z10) {
+                            e0 e0Var2 = (e0) l0Var.x.L.get(vVar4.c);
+                            if (e0Var2 instanceof k0) {
+                                ((k0) e0Var2).w(z10, true);
                             }
                         }
                     }
                 }
-                o0 o0Var2 = m0Var.x;
-                r4.w wVar5 = l0Var.v;
-                List unmodifiableList2 = DesugarCollections.unmodifiableList(o0Var2.r.v);
+                n0 n0Var2 = l0Var.x;
+                s4.v vVar5 = k0Var.v;
+                List unmodifiableList2 = DesugarCollections.unmodifiableList(n0Var2.r.v);
                 int max = Math.max(1, unmodifiableList2.size());
-                if (wVar5.e()) {
-                    Iterator it = DesugarCollections.unmodifiableList(wVar5.v).iterator();
+                if (vVar5.e()) {
+                    Iterator it = DesugarCollections.unmodifiableList(vVar5.v).iterator();
                     while (it.hasNext()) {
-                        if (unmodifiableList2.contains((r4.w) it.next()) != z11) {
+                        if (unmodifiableList2.contains((s4.v) it.next()) != z10) {
                             max += !v ? 1 : -1;
                         }
                     }
                 } else {
                     max += v ? -1 : 1;
                 }
-                boolean z12 = o0Var2.j0 && DesugarCollections.unmodifiableList(o0Var2.r.v).size() > 1;
-                boolean z13 = o0Var2.j0 && max >= 2;
-                if (z12 != z13) {
-                    d1 K = o0Var2.J.K(0);
-                    if (K instanceof i0) {
-                        i0 i0Var = (i0) K;
-                        m0Var.D(z13 ? i0Var.A : 0, i0Var.a);
+                boolean z11 = n0Var2.i0 && DesugarCollections.unmodifiableList(n0Var2.r.v).size() > 1;
+                boolean z12 = n0Var2.i0 && max >= 2;
+                if (z11 != z12) {
+                    d1 K = n0Var2.I.K(0);
+                    if (K instanceof h0) {
+                        h0 h0Var = (h0) K;
+                        l0Var.D(z12 ? h0Var.A : 0, h0Var.a);
                         return;
                     }
                     return;
@@ -187,9 +188,9 @@ public final class w implements View.OnClickListener {
                 return;
             case 4:
                 MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = (MediaRouteExpandCollapseButton) obj;
-                boolean z14 = mediaRouteExpandCollapseButton.n;
-                mediaRouteExpandCollapseButton.n = !z14;
-                if (z14) {
+                boolean z13 = mediaRouteExpandCollapseButton.n;
+                mediaRouteExpandCollapseButton.n = !z13;
+                if (z13) {
                     mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.e);
                     mediaRouteExpandCollapseButton.e.start();
                     mediaRouteExpandCollapseButton.setContentDescription(mediaRouteExpandCollapseButton.f);
@@ -215,11 +216,11 @@ public final class w implements View.OnClickListener {
                 eVar.z.obtainMessage(1, eVar.b).sendToTarget();
                 return;
             case 6:
-                ((k.a) obj).c();
+                ((k.a) obj).b();
                 return;
             case 7:
-                f3 f3Var = ((Toolbar) obj).f0;
-                l.m mVar = f3Var != null ? f3Var.b : null;
+                h3 h3Var = ((Toolbar) obj).e0;
+                l.m mVar = h3Var != null ? h3Var.b : null;
                 if (mVar != null) {
                     mVar.collapseActionView();
                     return;
@@ -233,95 +234,95 @@ public final class w implements View.OnClickListener {
                 return;
             case 9:
                 vo voVar = (vo) obj;
-                wm wmVar = voVar.s1;
-                bi biVar = new bi(wmVar.getParentActivity(), wmVar, false, false, false, wmVar.getResourceProvider());
-                voVar.P1 = biVar;
-                biVar.n = true;
-                biVar.A1(bd.M0(2131752139, null));
-                bi biVar2 = voVar.P1;
-                biVar2.U3 = new oo(voVar);
-                biVar2.y1(1, false);
-                voVar.P1.e1();
-                voVar.P1.b2.i0();
-                voVar.P1.show();
-                voVar.Q1 = new ai.c0(voVar, voVar.getContext());
-                h6 h6Var = new h6(voVar.getContext(), true, true, true);
-                voVar.R1 = h6Var;
-                h6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-                voVar.R1.setText(bd.M0(2131745547, null));
-                voVar.R1.setGravity(17);
-                h6 h6Var2 = voVar.R1;
+                an anVar = voVar.r1;
+                di diVar = new di(anVar.getParentActivity(), anVar, false, false, false, anVar.getResourceProvider());
+                voVar.O1 = diVar;
+                diVar.n = true;
+                diVar.A1(hd.M0(2131752139, null));
+                di diVar2 = voVar.O1;
+                diVar2.T3 = new oo(voVar);
+                diVar2.y1(1, false);
+                voVar.O1.e1();
+                voVar.O1.a2.i0();
+                voVar.O1.show();
+                voVar.P1 = new x5(voVar, voVar.getContext());
+                j6 j6Var = new j6(voVar.getContext(), true, true, true);
+                voVar.Q1 = j6Var;
+                j6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+                voVar.Q1.setText(hd.M0(2131745538, null));
+                voVar.Q1.setGravity(17);
+                j6 j6Var2 = voVar.Q1;
                 int i10 = k6.Ci;
-                r6.Z(h6Var2, i10, voVar.J0);
-                voVar.Q1.addView(voVar.R1, mf.e(-1, -2, 17));
-                ai.c0 c0Var = voVar.Q1;
+                r6.Z(j6Var2, i10, voVar.I0);
+                voVar.P1.addView(voVar.Q1, ha.e(-1, -2, 17));
+                x5 x5Var = voVar.P1;
                 int L = org.telegram.messenger.g0.L(0.0f);
                 int i11 = k6.d6;
-                int w02 = k6.w0(i11, voVar.J0);
-                int o10 = i0.a.o(k6.w0(i10, voVar.J0), 76);
-                r6.R(c0Var, k6.k0(L, L, L, L, w02, o10, o10), r6.N(i11), r6.h(i10, 76), voVar.J0);
-                voVar.Q1.setOnClickListener(new eo(voVar, r9));
-                voVar.P1.m3.addView(voVar.Q1, mf.e(-1, -2, 80));
+                int w02 = k6.w0(i11, voVar.I0);
+                int o4 = i0.a.o(k6.w0(i10, voVar.I0), 76);
+                r6.R(x5Var, k6.k0(L, L, L, L, w02, o4, o4), r6.N(i11), r6.h(i10, 76), voVar.I0);
+                voVar.P1.setOnClickListener(new fo(voVar, r9));
+                voVar.O1.l3.addView(voVar.P1, ha.e(-1, -2, 80));
                 return;
             case 10:
                 boolean[] zArr = new boolean[1];
-                ex exVar = (ex) obj;
-                ey eyVar = exVar.G;
-                hi.d dVar = new hi.d(eyVar.getContext(), (e6) null);
-                LinearLayout linearLayout = new LinearLayout(eyVar.getContext());
+                gx gxVar = (gx) obj;
+                gy gyVar = gxVar.F;
+                f1 f1Var = new f1(gyVar.getContext(), (f6) null);
+                LinearLayout linearLayout = new LinearLayout(gyVar.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(org.telegram.messenger.g0.L(21.0f), 0, org.telegram.messenger.g0.L(21.0f), 0);
-                ImageView imageView = new ImageView(eyVar.getContext());
+                ImageView imageView = new ImageView(gyVar.getContext());
                 imageView.setImageResource(R.drawable.smiles_info);
-                linearLayout.addView(imageView, mf.t(-2, -2, 49, 0, 15, 0, 0));
-                TextView textView = new TextView(eyVar.getContext());
-                textView.setText(bd.M0(2131751165, null));
+                linearLayout.addView(imageView, ha.t(-2, -2, 49, 0, 15, 0, 0));
+                TextView textView = new TextView(gyVar.getContext());
+                textView.setText(hd.M0(2131751165, null));
                 textView.setTextSize(1, 15.0f);
-                r6.V(textView, k6.n5, eyVar.a2);
-                textView.setGravity(bd.a0 ? 5 : 3);
+                r6.V(textView, k6.n5, gyVar.Z1);
+                textView.setGravity(hd.a0 ? 5 : 3);
                 textView.setTypeface(org.telegram.messenger.g0.o());
-                linearLayout.addView(textView, mf.t(-2, -2, 51, 0, 24, 0, 0));
-                TextView textView2 = new TextView(eyVar.getContext());
-                textView2.setText(org.telegram.messenger.g0.X2(bd.M0(2131751164, null)));
+                linearLayout.addView(textView, ha.t(-2, -2, 51, 0, 24, 0, 0));
+                TextView textView2 = new TextView(gyVar.getContext());
+                textView2.setText(org.telegram.messenger.g0.X2(hd.M0(2131751164, null)));
                 textView2.setTextSize(1, 15.0f);
-                r6.V(textView2, k6.j5, eyVar.a2);
-                textView2.setGravity(bd.a0 ? 5 : 3);
-                linearLayout.addView(textView2, mf.t(-2, -2, 51, 0, 11, 0, 0));
-                TextView textView3 = new TextView(eyVar.getContext());
-                Object obj2 = exVar.x;
+                r6.V(textView2, k6.j5, gyVar.Z1);
+                textView2.setGravity(hd.a0 ? 5 : 3);
+                linearLayout.addView(textView2, ha.t(-2, -2, 51, 0, 11, 0, 0));
+                TextView textView3 = new TextView(gyVar.getContext());
+                Object obj2 = gxVar.x;
                 if (obj2 == null) {
-                    obj2 = eyVar.X0;
+                    obj2 = gyVar.W0;
                 }
-                textView3.setText(bd.a0("EmojiSuggestionsUrl", null, 2131751163, obj2));
+                textView3.setText(hd.a0("EmojiSuggestionsUrl", null, 2131751163, obj2));
                 textView3.setTextSize(1, 15.0f);
-                r6.V(textView3, k6.k5, eyVar.a2);
-                textView3.setGravity(bd.a0 ? 5 : 3);
-                linearLayout.addView(textView3, mf.t(-2, -2, 51, 0, 18, 0, 16));
-                textView3.setOnClickListener(new bx(this, zArr, dVar));
-                t2 t2Var = (t2) dVar.b;
-                t2Var.O = linearLayout;
-                t2Var.show();
+                r6.V(textView3, k6.k5, gyVar.Z1);
+                textView3.setGravity(hd.a0 ? 5 : 3);
+                linearLayout.addView(textView3, ha.t(-2, -2, 51, 0, 18, 0, 16));
+                textView3.setOnClickListener(new cx(this, zArr, f1Var));
+                v2 v2Var = (v2) f1Var.b;
+                v2Var.N = linearLayout;
+                v2Var.show();
                 return;
             case 11:
-                t50 t50Var = (t50) obj;
-                y10 y10Var = (y10) view;
-                if (y10Var.E) {
-                    t50Var.b2 = null;
-                    t50Var.X1.l(y10Var.getUid());
-                    t50Var.M1.b(y10Var);
-                    t50Var.S0(true);
-                    org.telegram.messenger.g0.b4(t50Var.l1);
+                x50 x50Var = (x50) obj;
+                c20 c20Var = (c20) view;
+                if (c20Var.D) {
+                    x50Var.a2 = null;
+                    x50Var.W1.l(c20Var.getUid());
+                    x50Var.L1.b(c20Var);
+                    x50Var.S0(true);
+                    org.telegram.messenger.g0.b4(x50Var.k1);
                     return;
                 }
-                y10 y10Var2 = t50Var.b2;
-                if (y10Var2 != null) {
-                    y10Var2.a();
+                c20 c20Var2 = x50Var.a2;
+                if (c20Var2 != null) {
+                    c20Var2.a();
                 }
-                t50Var.b2 = y10Var;
-                y10Var.b();
+                x50Var.a2 = c20Var;
+                c20Var.b();
                 return;
             default:
-                ((m70) obj).e.callOnClick();
+                ((q70) obj).e.callOnClick();
                 return;
         }
     }

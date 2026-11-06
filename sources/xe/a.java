@@ -1,28 +1,83 @@
 package xe;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
+import java.lang.ref.Reference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements InvocationHandler {
-    public final FeatureFlagHolderBoundaryInterface a;
+public final class a implements Iterator {
+    public int a;
+    public Object b;
+    public final /* synthetic */ b c;
 
-    public a(FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface) {
-        this.a = featureFlagHolderBoundaryInterface;
+    public a(b bVar) {
+        this.c = bVar;
+        this.a = bVar.b.size();
     }
 
-    @Override // java.lang.reflect.InvocationHandler
-    public final Object invoke(Object obj, Method method, Object[] objArr) {
-        FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
-        try {
-            return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
-        } catch (InvocationTargetException e10) {
-            throw e10.getTargetException();
-        } catch (ReflectiveOperationException e11) {
-            throw new RuntimeException("Reflection failed for method " + method, e11);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i7;
+        synchronized (this.c.b) {
+            try {
+                this.b = null;
+                while (true) {
+                    if (this.b != null || (i7 = this.a) <= 0) {
+                        break;
+                    }
+                    ArrayList arrayList = this.c.b;
+                    int i10 = i7 - 1;
+                    this.a = i10;
+                    Reference reference = (Reference) arrayList.get(i10);
+                    Object obj = reference.get();
+                    if (obj != null && !this.c.c.contains(reference)) {
+                        this.b = obj;
+                        break;
+                    }
+                }
+                if (this.b == null) {
+                    b bVar = this.c;
+                    if (bVar.a) {
+                        ArrayList arrayList2 = bVar.b;
+                        ArrayList arrayList3 = bVar.d;
+                        ArrayList arrayList4 = bVar.c;
+                        if (!bVar.e) {
+                            throw new IllegalStateException();
+                        }
+                        bVar.e = false;
+                        if (!arrayList4.isEmpty()) {
+                            arrayList2.removeAll(arrayList4);
+                            arrayList4.clear();
+                        }
+                        if (!arrayList3.isEmpty()) {
+                            arrayList2.addAll(arrayList3);
+                            arrayList3.clear();
+                        }
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
+        if (this.b != null) {
+            return true;
+        }
+        Semaphore semaphore = this.c.f;
+        if (semaphore != null) {
+            semaphore.release();
+        }
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        Object obj = this.b;
+        if (obj != null) {
+            return obj;
+        }
+        throw new NoSuchElementException();
     }
 }

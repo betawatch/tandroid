@@ -1,23 +1,36 @@
 package z7;
 
-import b8.sa;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class z6 {
-    public final Long a;
-    public final Long b;
-    public final Long c;
-    public final Long d;
-    public final Long e;
-    public final Long f;
+public enum z6 implements b {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    b(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF69(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF78(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF91(9);
 
-    public /* synthetic */ z6(sa saVar) {
-        this.a = saVar.a;
-        this.b = saVar.b;
-        this.c = saVar.c;
-        this.d = saVar.d;
-        this.e = saVar.e;
-        this.f = saVar.f;
+    public final int a;
+
+    z6(int i7) {
+        this.a = i7;
+    }
+
+    @Override // z7.b
+    public final int zza() {
+        return this.a;
     }
 }

@@ -1,63 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ TLRPC.TL_error e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ org.telegram.messenger.zi h;
-    public final /* synthetic */ TLRPC.TL_messages_getDiscussionMessage n;
-    public final /* synthetic */ TLRPC.Chat r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ org.telegram.messenger.zi w;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ tg(wm wmVar, int i3, TLObject tLObject, TLRPC.TL_error tL_error, int i10, org.telegram.messenger.zi ziVar, TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, TLRPC.Chat chat, int i11, org.telegram.messenger.zi ziVar2, int i12) {
-        this.a = i12;
-        this.b = wmVar;
-        this.c = i3;
-        this.d = tLObject;
-        this.e = tL_error;
-        this.f = i10;
-        this.h = ziVar;
-        this.n = tL_messages_getDiscussionMessage;
-        this.r = chat;
-        this.s = i11;
-        this.w = ziVar2;
+    public /* synthetic */ tg(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        View view = this.b;
+        switch (i7) {
             case 0:
-                wm wmVar = this.b;
-                wmVar.w8(new tg(wmVar, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w, 1));
+                try {
+                    view.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 1:
+                view.setBackgroundDrawable(null);
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                org.telegram.messenger.g0.E2(view);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.Y8;
+                view.setVisibility(8);
+                break;
+            case 4:
+                org.telegram.messenger.iz.I(0);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744402, null), true, true);
+                break;
+            case 5:
+                org.telegram.messenger.iz.I(1);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744401, null), true, true);
                 break;
             default:
-                wm wmVar2 = this.b;
-                if (this.c == wmVar2.Jc) {
-                    wmVar2.Lc = -1;
-                    TLObject tLObject = this.d;
-                    if (tLObject == null) {
-                        if ("CHANNEL_PRIVATE".equals(this.e.text)) {
-                            org.telegram.messenger.hp.R4(org.telegram.messenger.bd.M0(2131752445, null), wmVar2);
-                            wmVar2.Mc = 0;
-                            wmVar2.Nc = false;
-                            wmVar2.A0.g1();
-                            break;
-                        }
-                    } else {
-                        wmVar2.Qc = (TLRPC.messages_Messages) tLObject;
-                    }
-                    wmVar2.Xa(wmVar2.Pc, wmVar2.Qc, this.f, this.h, this.n, this.r, this.s, this.w);
-                    break;
-                }
+                org.telegram.messenger.iz.I(2);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744400, null), true, true);
                 break;
         }
     }

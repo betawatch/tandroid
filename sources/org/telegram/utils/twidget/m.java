@@ -1,13 +1,13 @@
 package org.telegram.utils.twidget;
 
 import java.util.ArrayList;
-import org.telegram.messenger.hp;
 import org.telegram.messenger.m5;
+import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class m {
     public boolean A;
@@ -36,39 +36,39 @@ public final class m {
     public TLRPC.TL_messageMediaWidget r;
     public String s;
     public u t;
-    public gk0 u;
-    public gk0 w;
+    public ck0 u;
+    public ck0 w;
     public int x;
     public long y;
     public boolean z;
     public final ArrayList v = new ArrayList();
     public final l G = new l(this, 0);
 
-    public m(String str, int i3, long j10, int i10, long j11, TLRPC.TL_messageMediaWidget tL_messageMediaWidget, boolean z10) {
+    public m(String str, int i7, long j3, int i10, long j10, TLRPC.TL_messageMediaWidget tL_messageMediaWidget, boolean z9) {
         this.a = str;
-        this.b = i3;
-        this.c = j10;
+        this.b = i7;
+        this.c = j3;
         this.d = i10;
-        this.n = j11;
-        boolean z11 = false;
+        this.n = j10;
+        boolean z10 = false;
         this.e = Math.max(0, tL_messageMediaWidget.width);
         this.f = Math.max(0, tL_messageMediaWidget.height);
         this.g = tL_messageMediaWidget.payload;
-        this.k = z10;
-        boolean z12 = !z10 && tL_messageMediaWidget.is_copy;
-        this.h = z12;
-        this.i = !z10 && tL_messageMediaWidget.can_query && i10 > 0;
-        if (!z10 && tL_messageMediaWidget.background_query && i10 > 0) {
-            z11 = true;
+        this.k = z9;
+        boolean z11 = !z9 && tL_messageMediaWidget.is_copy;
+        this.h = z11;
+        this.i = !z9 && tL_messageMediaWidget.can_query && i10 > 0;
+        if (!z9 && tL_messageMediaWidget.background_query && i10 > 0) {
+            z10 = true;
         }
-        this.j = z11;
+        this.j = z10;
         this.l = tL_messageMediaWidget.widget_id;
         String str2 = null;
-        if (!z10 && !z12) {
-            if (m5.E(j10)) {
+        if (!z9 && !z11) {
+            if (m5.E(j3)) {
                 str2 = "private";
             } else {
-                TLRPC.Chat M0 = hp.s1(i3).M0(Long.valueOf(-j10));
+                TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
                 if (M0 != null) {
                     str2 = !t3.T(M0) ? "group" : M0.megagroup ? "supergroup" : "channel";
                 }
@@ -82,7 +82,7 @@ public final class m {
     }
 
     public final String a() {
-        long j10 = this.c;
-        return p.z(this.b, this.d, j10);
+        long j3 = this.c;
+        return p.z(this.b, this.d, j3);
     }
 }

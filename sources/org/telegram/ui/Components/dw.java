@@ -1,16 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class dw extends org.telegram.ui.wm {
-    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.mj mjVar;
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || (mjVar = this.a0) == null) {
-            return;
-        }
-        mjVar.r1();
-        this.a0.postDelayed(new gp(this, 12), 100L);
+public final class dw extends v4.c0 {
+    public final /* synthetic */ int r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw(Context context, int i7) {
+        super(context);
+        this.r = i7;
+    }
+
+    @Override // v4.c0
+    public final int i(int i7, int i10, int i11, int i12, int i13) {
+        return super.i(i7, i10, i11, i12, i13) + this.r;
+    }
+
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 16;
+    }
+
+    @Override // v4.c0
+    public final int p() {
+        return -1;
     }
 }

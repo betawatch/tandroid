@@ -1,67 +1,82 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.Window;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class z31 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b41 b;
+public final class z31 extends org.telegram.ui.Components.p61 {
+    public boolean V;
+    public final /* synthetic */ c51 W;
 
-    public /* synthetic */ z31(b41 b41Var, int i3) {
-        this.a = i3;
-        this.b = b41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z31(c51 c51Var, Activity activity) {
+        super(activity, null);
+        this.W = c51Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                b41 b41Var = this.b;
-                b41Var.b.setVisibility(4);
-                mg.g gVar = b41Var.b;
-                gVar.K = false;
-                mg.g gVar2 = b41Var.c;
-                gVar2.K = true;
-                gVar.z0 = 0;
-                gVar2.z0 = 0;
-                Window window = b41Var.a;
-                if (window != null) {
-                    window.clearFlags(16);
-                    break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z9;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            c51 c51Var = this.W;
+            if (c51Var.j0 != null) {
+                View currentView = getCurrentView();
+                zd zdVar = c51Var.j0;
+                if (currentView == zdVar) {
+                    boolean G = zdVar.G(motionEvent.getX() - c51Var.j0.getX(), motionEvent.getY() - c51Var.j0.getY());
+                    zdVar.Q0 = G;
+                    if (G && zdVar.a1.b.canScrollHorizontally(-1)) {
+                        z9 = true;
+                        this.V = z9;
+                    }
                 }
-                break;
-            case 1:
-                b41 b41Var2 = this.b;
-                mg.g gVar3 = b41Var2.c;
-                gVar3.setVisibility(4);
-                mg.g gVar4 = b41Var2.b;
-                gVar4.z0 = 0;
-                gVar3.z0 = 0;
-                gVar4.K = true;
-                gVar3.K = false;
-                if (gVar4 instanceof mg.q) {
-                    gVar4.v0 = false;
-                    gVar4.d();
-                } else {
-                    gVar4.v0 = true;
-                    gVar4.x((gVar4.H0 * gVar4.h0.k) - mg.g.l1);
-                    gVar4.c(true);
-                    gVar4.invalidate();
-                }
-                Window window2 = b41Var2.a;
-                if (window2 != null) {
-                    window2.clearFlags(16);
-                    break;
-                }
-                break;
-            default:
-                b41 b41Var3 = this.b;
-                b41Var3.b.z0 = 0;
-                b41Var3.e.setVisibility(8);
-                break;
+            }
+            z9 = false;
+            this.V = z9;
         }
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.V = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.V = false;
+            }
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p61, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.V && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.p61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.V && B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.p61
+    public final void u() {
+        c51 c51Var = this.W;
+        c51Var.p0(c51Var.h0.getCurrentPosition(), true);
+        c51Var.q0(false, 0.0f);
+    }
+
+    @Override // org.telegram.ui.Components.p61
+    public final void w(boolean z9) {
+        c51 c51Var = this.W;
+        float positionAnimated = c51Var.h0.getPositionAnimated();
+        c51Var.q0(!z9, positionAnimated);
+        if (z9) {
+            return;
+        }
+        c51Var.p0(Math.round(positionAnimated), true);
     }
 }

@@ -2,85 +2,84 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.n10;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ma1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i implements n10 {
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class i implements v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ n0 b;
 
-    public /* synthetic */ i(k0 k0Var, int i3) {
-        this.a = i3;
-        this.b = k0Var;
+    public /* synthetic */ i(n0 n0Var, int i7) {
+        this.a = i7;
+        this.b = n0Var;
     }
 
-    @Override // org.telegram.messenger.n10
+    @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                k0 k0Var = this.b;
+                n0 n0Var = this.b;
                 TL_wallet.existingBalance existingbalance = (TL_wallet.existingBalance) obj;
-                k0Var.C = -1;
+                n0Var.C = -1;
                 if (existingbalance != null) {
-                    k0Var.i = Boolean.valueOf(existingbalance.has_balance);
-                    k0Var.j = existingbalance.url;
+                    n0Var.i = Boolean.valueOf(existingbalance.has_balance);
+                    n0Var.j = existingbalance.url;
                 }
-                Boolean bool = k0Var.i;
-                if (bool != null && bool.booleanValue() && !TextUtils.isEmpty(k0Var.j)) {
-                    k0Var.L();
+                Boolean bool = n0Var.i;
+                if (bool != null && bool.booleanValue() && !TextUtils.isEmpty(n0Var.j)) {
+                    n0Var.L();
                     break;
                 }
                 break;
             case 1:
-                k0 k0Var2 = this.b;
+                n0 n0Var2 = this.b;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                k0Var2.A = -1;
+                n0Var2.A = -1;
                 if (walletState == null) {
                     StringBuilder sb2 = new StringBuilder("requesting gasless info: ");
                     sb2.append(tL_error != null ? tL_error.text : "NULL_ERROR");
-                    k0.j(sb2.toString());
+                    n0.j(sb2.toString());
                     break;
                 } else {
                     long currentTimeMillis = System.currentTimeMillis();
                     if (walletState instanceof TL_wallet.TL_walletState) {
-                        TL_wallet.WalletState walletState2 = k0Var2.e;
-                        if ((walletState2 instanceof TL_wallet.TL_walletState) && k0Var2.l) {
+                        TL_wallet.WalletState walletState2 = n0Var2.e;
+                        if ((walletState2 instanceof TL_wallet.TL_walletState) && n0Var2.l) {
                             TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) walletState2;
                             TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) walletState;
-                            if (currentTimeMillis - k0Var2.k < 30000) {
+                            if (currentTimeMillis - n0Var2.k < 30000) {
                                 tL_walletState2.balance = tL_walletState.balance;
                             } else {
-                                k0Var2.l = false;
+                                n0Var2.l = false;
                             }
-                            k0Var2.e = walletState;
-                            k0Var2.N();
-                            k0Var2.L();
+                            n0Var2.e = walletState;
+                            n0Var2.N();
+                            n0Var2.L();
                             break;
                         }
                     }
-                    k0Var2.l = false;
-                    k0Var2.e = walletState;
-                    k0Var2.N();
-                    k0Var2.L();
+                    n0Var2.l = false;
+                    n0Var2.e = walletState;
+                    n0Var2.N();
+                    n0Var2.L();
                 }
                 break;
             default:
-                k0 k0Var3 = this.b;
+                n0 n0Var3 = this.b;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                k0Var3.B = -1;
+                n0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.d.c(new ma1(5, k0Var3, updates));
+                    Utilities.d.c(new n(0, n0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");
                     sb3.append(tL_error2 != null ? tL_error2.text : "NULL_ERROR");
-                    k0.j(sb3.toString());
+                    n0.j(sb3.toString());
                     break;
                 }
         }

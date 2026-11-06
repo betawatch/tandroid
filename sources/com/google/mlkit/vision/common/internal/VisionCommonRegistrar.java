@@ -1,30 +1,30 @@
 package com.google.mlkit.vision.common.internal;
 
 import com.google.firebase.components.ComponentRegistrar;
-import d2.l0;
+import e2.j0;
 import java.util.List;
-import k2.p1;
-import sb.b;
-import sb.c;
-import t9.a;
-import t9.j;
-import y7.ra;
-import y7.ta;
-import y7.va;
+import jg.g;
+import u9.a;
+import u9.i;
+import vb.b;
+import vb.c;
+import z7.ra;
+import z7.ta;
+import z7.va;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class VisionCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        l0 a10 = a.a(c.class);
-        a10.a(new j(2, 0, b.class));
-        a10.f = sb.a.c;
+        j0 a10 = a.a(c.class);
+        a10.a(new i(2, 0, b.class));
+        a10.f = vb.a.c;
         Object[] objArr = {a10.b()};
-        for (int i3 = 0; i3 < 1; i3++) {
+        for (int i7 = 0; i7 < 1; i7++) {
             ra raVar = ta.b;
-            if (objArr[i3] == null) {
-                throw new NullPointerException(p1.i(i3, "at index "));
+            if (objArr[i7] == null) {
+                throw new NullPointerException(g.j(i7, "at index "));
             }
         }
         ra raVar2 = ta.b;

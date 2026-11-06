@@ -1,13 +1,12 @@
 package h2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class m {
-    public final int a;
-    public final boolean b;
+import h9.t1;
 
-    public m(int i3, int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class m extends Exception {
+    public m(String str, t1 t1Var) {
+        super(str);
+        h9.i0.q(t1Var);
     }
 }

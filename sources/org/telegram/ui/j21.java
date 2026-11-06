@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j21 extends UndoView {
-    public final /* synthetic */ SessionsActivity k0;
+public final class j21 implements View.OnClickListener {
+    public final /* synthetic */ org.telegram.ui.Components.eg a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ l21 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j21(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.k0 = sessionsActivity;
+    public j21(l21 l21Var, org.telegram.ui.Components.eg egVar, TLRPC.TL_authorization tL_authorization) {
+        this.c = l21Var;
+        this.a = egVar;
+        this.b = tL_authorization;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void d(int i3, boolean z10) {
-        int i10;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i10 = ((org.telegram.ui.ActionBar.d2) this.k0).currentAccount;
-            ConnectionsManager.getInstance(i10).sendRequest(resetauthorization, new xy(28, this, tL_authorization));
-        }
-        super.d(i3, z10);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ((Switch) this.a.f).c(!r0.h, true);
+        this.b.call_requests_disabled = !((Switch) r4.f).h;
+        l21.J0(this.c);
     }
 }

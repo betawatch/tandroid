@@ -1,156 +1,183 @@
 package org.telegram.messenger;
 
+import android.os.Bundle;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c00 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ long f;
+public final class vz extends android.support.v4.media.session.s {
+    public final /* synthetic */ wz g;
 
-    public /* synthetic */ vz(c00 c00Var, long j10, ArrayList arrayList, boolean z10, long j11, int i3) {
-        this.a = i3;
-        this.b = c00Var;
-        this.c = j10;
-        this.d = arrayList;
-        this.e = z10;
-        this.f = j11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vz(wz wzVar) {
+        super(0);
+        this.g = wzVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:49:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r6v4 */
-    /* JADX WARN: Type inference failed for: r6v9 */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        long j10;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        SQLiteCursor sQLiteCursor;
-        NativeByteBuffer byteBufferValue;
-        switch (this.a) {
-            case 0:
-                c00 c00Var = this.b;
-                c00Var.getMessagesStorage().a.c(new vz(c00Var, this.c, this.d, this.e, this.f, 1));
-                break;
-            default:
-                long j11 = this.c;
-                ArrayList arrayList3 = this.d;
-                long j12 = this.f;
-                c00 c00Var2 = this.b;
-                a0.h hVar = c00Var2.e;
-                try {
-                    SQLiteDatabase sQLiteDatabase = c00Var2.getMessagesStorage().b;
-                    Locale locale = Locale.US;
-                    int i3 = 0;
-                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT topic_id, top_message FROM topics WHERE did = " + j11 + " AND top_message IN (" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
-                    arrayList = null;
-                    while (queryFinalized.next()) {
-                        try {
-                            if (arrayList == null) {
-                                arrayList = new ArrayList();
-                            }
-                            TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
-                            tL_forumTopic.id = queryFinalized.intValue(0);
-                            tL_forumTopic.top_message = queryFinalized.intValue(1);
-                            if (this.e) {
-                                tL_forumTopic.from_id = c00Var2.getMessagesController().z1(tL_forumTopic.id);
-                            } else {
-                                tL_forumTopic.from_id = c00Var2.getMessagesController().z1(c00Var2.getUserConfig().e());
-                            }
-                            tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
-                            arrayList.add(tL_forumTopic);
-                        } catch (Exception e10) {
-                            e = e10;
-                            j10 = j12;
-                        }
-                    }
-                    queryFinalized.dispose();
-                    if (arrayList != null) {
-                        int i10 = 0;
-                        while (i10 < arrayList.size()) {
-                            TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) arrayList.get(i10);
-                            SQLiteDatabase sQLiteDatabase2 = c00Var2.getMessagesStorage().b;
-                            Locale locale2 = Locale.US;
-                            SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j11 + " AND topic_id = " + tL_forumTopic2.id + " ORDER BY mid DESC LIMIT 1", new Object[i3]);
-                            if (!queryFinalized2.next() || (byteBufferValue = queryFinalized2.byteBufferValue(1)) == null) {
-                                long j13 = j12;
-                                sQLiteCursor = queryFinalized2;
-                                j10 = j13;
-                            } else {
-                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(i3), i3);
-                                long j14 = j12;
-                                try {
-                                    TLdeserialize.readAttachPath(byteBufferValue, c00Var2.getUserConfig().n);
-                                    byteBufferValue.reuse();
-                                    sQLiteCursor = queryFinalized2;
-                                    j10 = j14;
-                                } catch (Exception e11) {
-                                    e = e11;
-                                    j10 = j14;
-                                    e.printStackTrace();
-                                    arrayList2 = arrayList;
-                                    c00Var2.getMessagesStorage().J0(arrayList2, j11);
-                                    if (arrayList2 != null) {
-                                        return;
-                                    }
-                                }
-                                try {
-                                    hVar.l(c00.p(tL_forumTopic2.top_message, j10));
-                                    int i11 = TLdeserialize.id;
-                                    tL_forumTopic2.top_message = i11;
-                                    tL_forumTopic2.topMessage = TLdeserialize;
-                                    tL_forumTopic2.groupedMessages = null;
-                                    hVar.k(tL_forumTopic2, c00.p(i11, j10));
-                                } catch (Exception e12) {
-                                    e = e12;
-                                    e.printStackTrace();
-                                    arrayList2 = arrayList;
-                                    c00Var2.getMessagesStorage().J0(arrayList2, j11);
-                                    if (arrayList2 != null) {
-                                    }
-                                }
-                            }
-                            sQLiteCursor.dispose();
-                            i10++;
-                            j12 = j10;
-                            i3 = 0;
-                        }
-                        j10 = j12;
-                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                            SQLiteDatabase sQLiteDatabase3 = c00Var2.getMessagesStorage().b;
-                            Locale locale3 = Locale.US;
-                            sQLiteDatabase3.executeFast("UPDATE topics SET top_message = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).top_message + " WHERE did = " + j11 + " AND topic_id = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).id).stepThis().dispose();
-                        }
-                    } else {
-                        j10 = j12;
-                    }
-                } catch (Exception e13) {
-                    e = e13;
-                    j10 = j12;
-                    arrayList = null;
-                }
-                arrayList2 = arrayList;
-                c00Var2.getMessagesStorage().J0(arrayList2, j11);
-                if (arrayList2 != null) {
-                    g0.h3(new zq(c00Var2, arrayList2, j10, 6));
-                    break;
-                }
-                break;
+    @Override // android.support.v4.media.session.s
+    public final void A(String str, Bundle bundle) {
+        t(str);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void G(long j3) {
+        ij ijVar = MediaController.B().u0;
+        if (ijVar != null) {
+            MediaController.B().i0(ijVar, (float) ((j3 / 1000.0d) / ijVar.L0()));
         }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void M(int i7) {
+        iz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
+        this.g.f();
+        g0.h3(new ds(this, 16));
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void P(int i7) {
+        boolean z9 = true;
+        if (i7 != 1 && i7 != 2) {
+            z9 = false;
+        }
+        if (z9 != iz.N0) {
+            MediaController.B().l0(z9 ? 2 : 0);
+        }
+        this.g.b.x(iz.N0 ? 1 : 0);
+        g0.h3(new ds(this, 16));
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void S() {
+        ij ijVar = MediaController.B().u0;
+        if (ijVar == null || !ijVar.J3()) {
+            return;
+        }
+        MediaController.B().U(false);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void V() {
+        ij ijVar = MediaController.B().u0;
+        if (ijVar == null || !ijVar.J3()) {
+            return;
+        }
+        MediaController.B().V();
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void Y(long j3) {
+        MediaController.B().T((int) j3);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void f(String str) {
+        boolean equals = "org.telegram.android.musicplayer.repeat".equals(str);
+        wz wzVar = this.g;
+        if (equals) {
+            iz.E((iz.S0 + 1) % 3);
+            wzVar.f();
+        } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
+            MediaController.B().l0(iz.N0 ? 0 : 2);
+            wzVar.b.x(iz.N0 ? 1 : 0);
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void k() {
+        MediaController.B().R(MediaController.B().u0, true);
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void n() {
+        ij ijVar = MediaController.B().u0;
+        if (ijVar != null) {
+            MediaController.B().S(ijVar);
+            return;
+        }
+        wz wzVar = this.g;
+        if (wzVar.d != 0) {
+            q(a8.p0.r(new StringBuilder(), wzVar.d, "_0"), null);
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void q(String str, Bundle bundle) {
+        wz wzVar = this.g;
+        android.support.v4.media.session.a0 a0Var = wzVar.b;
+        if (TextUtils.isEmpty(str)) {
+            return;
+        }
+        String[] split = str.split("_");
+        if (split.length != 2) {
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(split[0]);
+            int parseInt = Integer.parseInt(split[1]);
+            ArrayList arrayList = (ArrayList) wzVar.j.f(parseLong);
+            if (arrayList == null) {
+                wzVar.e(new uz(this, str, bundle, 0), parseLong);
+                return;
+            }
+            ArrayList arrayList2 = (ArrayList) wzVar.k.f(parseLong);
+            if (parseInt >= 0 && parseInt < arrayList.size()) {
+                wzVar.d = parseLong;
+                qp.s1(wzVar.c).d7.edit().putLong("auto_lastSelectedDialog", parseLong).apply();
+                MediaController.B().o0(arrayList, (ij) arrayList.get(parseInt), 0L, false, null, 0L);
+                a0Var.v(arrayList2);
+                if (m5.E(parseLong)) {
+                    TLRPC.User user = (TLRPC.User) wzVar.h.f(parseLong);
+                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(user != null ? g5.m(0, user.first_name, user.last_name) : "DELETED USER");
+                } else {
+                    TLRPC.Chat chat = (TLRPC.Chat) wzVar.i.f(-parseLong);
+                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(chat != null ? chat.title : "DELETED CHAT");
+                }
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void t(String str) {
+        String str2;
+        wz wzVar = this.g;
+        ArrayList arrayList = wzVar.g;
+        if (str == null || str.length() == 0) {
+            return;
+        }
+        String lowerCase = str.toLowerCase();
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            long longValue = ((Long) arrayList.get(i7)).longValue();
+            if (m5.E(longValue)) {
+                TLRPC.User user = (TLRPC.User) wzVar.h.f(longValue);
+                if (user != null) {
+                    String str3 = user.first_name;
+                    String lowerCase2 = str3 != null ? str3.toLowerCase() : null;
+                    String str4 = user.last_name;
+                    String lowerCase3 = str4 != null ? str4.toLowerCase() : null;
+                    if ((lowerCase2 != null && lowerCase2.contains(lowerCase)) || (lowerCase3 != null && lowerCase3.contains(lowerCase))) {
+                        q(longValue + "_0", null);
+                        return;
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                TLRPC.Chat chat = (TLRPC.Chat) wzVar.i.f(-longValue);
+                if (chat != null && (str2 = chat.title) != null && str2.toLowerCase().contains(lowerCase)) {
+                    q(longValue + "_0", null);
+                    return;
+                }
+            }
+        }
+    }
+
+    @Override // android.support.v4.media.session.s
+    public final void x(String str, Bundle bundle) {
+        q(str, bundle);
     }
 }

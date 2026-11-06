@@ -1,33 +1,23 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pt implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Activity d;
-    public final /* synthetic */ org.telegram.ui.Components.vd e;
+public final class pt extends org.telegram.ui.Components.mo0 {
+    public final /* synthetic */ qt R2;
 
-    public pt(org.telegram.ui.Components.vd vdVar, float f10, int i3, int i10, Activity activity) {
-        this.e = vdVar;
-        this.a = f10;
-        this.b = i3;
-        this.c = i10;
-        this.d = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pt(qt qtVar, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.R2 = qtVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float max = Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 350.0f) - this.a) / 150.0f));
-        rt rtVar = (rt) this.e.d;
-        rtVar.n = i0.a.f(max, this.b, this.c);
-        int i3 = rtVar.n;
-        Activity activity = this.d;
-        org.telegram.messenger.g0.t3(activity, i3, false);
-        org.telegram.messenger.g0.m3(activity, org.telegram.messenger.g0.B(rtVar.n) >= 0.721f);
+    @Override // org.telegram.ui.Components.mo0
+    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
+        if (z9) {
+            org.telegram.messenger.g0.i3(new org.telegram.ui.Components.g51(this, hVar, i7), 250L);
+        }
     }
 }

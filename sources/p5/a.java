@@ -1,46 +1,44 @@
 package p5;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class a implements cd.a {
-    public static final Object c = new Object();
-    public volatile b a;
-    public volatile Object b;
+import a8.p0;
+import p1.g;
 
-    public static cd.a a(b bVar) {
-        if (bVar instanceof a) {
-            return bVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class a {
+    public final int a;
+    public final long b;
+
+    public a(int i7, long j3) {
+        if (i7 == 0) {
+            throw new NullPointerException("Null status");
         }
-        a aVar = new a();
-        aVar.b = c;
-        aVar.a = bVar;
-        return aVar;
+        this.a = i7;
+        this.b = j3;
     }
 
-    @Override // cd.a
-    public final Object get() {
-        Object obj;
-        Object obj2 = this.b;
-        Object obj3 = c;
-        if (obj2 != obj3) {
-            return obj2;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        synchronized (this) {
-            try {
-                obj = this.b;
-                if (obj == obj3) {
-                    obj = this.a.get();
-                    Object obj4 = this.b;
-                    if (obj4 != obj3 && obj4 != obj) {
-                        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
-                    }
-                    this.b = obj;
-                    this.a = null;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        if (!(obj instanceof a)) {
+            return false;
         }
-        return obj;
+        a aVar = (a) obj;
+        return g.b(this.a, aVar.a) && this.b == aVar.b;
+    }
+
+    public final int hashCode() {
+        int c10 = (g.c(this.a) ^ 1000003) * 1000003;
+        long j3 = this.b;
+        return c10 ^ ((int) (j3 ^ (j3 >>> 32)));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("BackendResponse{status=");
+        int i7 = this.a;
+        sb2.append(i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
+        sb2.append(", nextRequestWaitMillis=");
+        return p0.r(sb2, this.b, "}");
     }
 }

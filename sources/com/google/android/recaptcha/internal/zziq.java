@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import b8.tb;
-import ed.g;
+import c8.d0;
+import hd.f;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import kotlin.jvm.internal.j;
-import ud.d;
+import xd.d;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -21,19 +21,19 @@ public final class zziq {
         List list;
         j.e(str, "<this>");
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int g7 = d.g(0, str, valueOf, false);
-        if (g7 != -1) {
+        int g10 = d.g(0, str, valueOf, false);
+        if (g10 != -1) {
             ArrayList arrayList = new ArrayList(10);
-            int i3 = 0;
+            int i7 = 0;
             do {
-                arrayList.add(str.subSequence(i3, g7).toString());
-                i3 = valueOf.length() + g7;
-                g7 = d.g(i3, str, valueOf, false);
-            } while (g7 != -1);
-            arrayList.add(str.subSequence(i3, str.length()).toString());
+                arrayList.add(str.subSequence(i7, g10).toString());
+                i7 = valueOf.length() + g10;
+                g10 = d.g(i7, str, valueOf, false);
+            } while (g10 != -1);
+            arrayList.add(str.subSequence(i7, str.length()).toString());
             list = arrayList;
         } else {
-            list = tb.a(str.toString());
+            list = d0.a(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";
@@ -48,8 +48,8 @@ public final class zziq {
     }
 
     public final void zza(zzxg zzxgVar) {
-        this.zza = g.o(zzxgVar.zzf().zzi());
-        this.zzb = g.o(zzxgVar.zzg().zzi());
+        this.zza = f.o(zzxgVar.zzf().zzi());
+        this.zzb = f.o(zzxgVar.zzg().zzi());
     }
 
     public final boolean zzb(String str) {

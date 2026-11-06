@@ -1,59 +1,52 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.TimeInterpolator;
-import android.app.Activity;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
-import android.view.View;
+import android.os.SystemClock;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import b8.mf;
-import org.telegram.messenger.hs;
-import org.telegram.ui.Components.p11;
-import org.telegram.ui.Components.xq;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j extends FrameLayout {
-    public final i a;
-    public final TransitionSet b;
-    public boolean c;
+public final class j implements VideoSink {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    public j(Activity activity) {
-        super(activity);
-        this.c = false;
-        setWillNotDraw(false);
-        i iVar = new i(activity);
-        this.a = iVar;
-        addView(iVar, mf.e(52, 52, 5));
-        TransitionSet transitionSet = new TransitionSet();
-        this.b = transitionSet;
-        transitionSet.setOrdering(0);
-        transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
-        transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) xq.f);
+    public /* synthetic */ j(ViewGroup viewGroup, int i7) {
+        this.a = i7;
+        this.b = viewGroup;
     }
 
-    public final void a(View.OnClickListener onClickListener, boolean z10) {
-        if (this.c) {
-            return;
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        switch (this.a) {
+            case 0:
+                boolean z9 = SystemClock.elapsedRealtime() - ((k) this.b).r > 1000;
+                ((k) this.b).r = SystemClock.elapsedRealtime();
+                ((k) this.b).s = videoFrame.getRotatedWidth();
+                ((k) this.b).w = videoFrame.getRotatedHeight();
+                ((k) this.b).b.d.onFrame(videoFrame);
+                if (z9 && !((k) this.b).x) {
+                    ((k) this.b).x = true;
+                    org.telegram.messenger.g0.h3(((k) this.b).y);
+                    break;
+                }
+                break;
+            default:
+                ((d0) this.b).s = SystemClock.elapsedRealtime();
+                ((d0) this.b).w = videoFrame.getRotatedWidth();
+                ((d0) this.b).x = videoFrame.getRotatedHeight();
+                k2 k2Var = ((d0) this.b).c;
+                if (k2Var != null) {
+                    k2Var.d.onFrame(videoFrame);
+                    break;
+                }
+                break;
         }
-        this.c = true;
-        if (z10) {
-            TransitionManager.beginDelayedTransition(this, this.b);
-        }
-        i iVar = this.a;
-        iVar.w = hs.e4;
-        iVar.n = -1;
-        iVar.s = 0;
-        iVar.r = org.telegram.messenger.g0.L(8.0f);
-        ViewGroup.LayoutParams layoutParams = iVar.getLayoutParams();
-        layoutParams.width = -1;
-        iVar.setLayoutParams(layoutParams);
-        org.telegram.messenger.g0.i3(new p11(9, this, onClickListener), 500L);
     }
 
-    public i getEndCloseView() {
-        return this.a;
+    @Override // org.webrtc.VideoSink
+    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
+        int i7 = this.a;
+        org.webrtc.e0.a(this, videoSink);
     }
 }

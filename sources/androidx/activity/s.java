@@ -3,15 +3,15 @@ package androidx.activity;
 import android.window.BackEvent;
 import android.window.OnBackAnimationCallback;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class s implements OnBackAnimationCallback {
-    public final /* synthetic */ od.l a;
-    public final /* synthetic */ od.l b;
-    public final /* synthetic */ od.a c;
-    public final /* synthetic */ od.a d;
+    public final /* synthetic */ rd.l a;
+    public final /* synthetic */ rd.l b;
+    public final /* synthetic */ rd.a c;
+    public final /* synthetic */ rd.a d;
 
-    public s(od.l lVar, od.l lVar2, od.a aVar, od.a aVar2) {
+    public s(rd.l lVar, rd.l lVar2, rd.a aVar, rd.a aVar2) {
         this.a = lVar;
         this.b = lVar2;
         this.c = aVar;

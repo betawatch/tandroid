@@ -1,32 +1,19 @@
 package z7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class r0 {
-    public final m7 a;
-    public final Boolean b;
-    public final g8 c;
+public final class r0 implements na.d {
+    public static final r0 a = new r0();
 
-    public /* synthetic */ r0(q0 q0Var) {
-        this.a = (m7) q0Var.b;
-        this.b = (Boolean) q0Var.c;
-        this.c = (g8) q0Var.a;
+    static {
+        rf.b.p(rf.b.l(d.class, rf.b.n(rf.b.l(d.class, rf.b.n(rf.b.l(d.class, new a(1)), 2)), 3)));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // na.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof r0)) {
-            return false;
-        }
-        r0 r0Var = (r0) obj;
-        return p6.m.k(this.a, r0Var.a) && p6.m.k(this.b, r0Var.b) && p6.m.k(null, null) && p6.m.k(this.c, r0Var.c);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
+        throw null;
     }
 }

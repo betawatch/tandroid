@@ -1,41 +1,87 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fo implements org.telegram.messenger.u10 {
+public final /* synthetic */ class fo implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ vo b;
 
-    public /* synthetic */ fo(vo voVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ fo(vo voVar, int i7) {
+        this.a = i7;
         this.b = voVar;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        vo voVar = this.b;
+        switch (i7) {
             case 0:
-                vo voVar = this.b;
-                voVar.W1 = (TL_stories.TL_premium_boostsStatus) obj;
-                voVar.V1 = true;
-                voVar.Z0(true);
-                voVar.U1 = false;
-                break;
-            default:
-                org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
-                vo voVar2 = this.b;
-                if (voVar2.getContext() != null) {
-                    org.telegram.ui.wm wmVar = voVar2.s1;
-                    vg.i0 i0Var = new vg.i0(22, voVar2.a, voVar2.getContext(), wmVar, voVar2.J0);
-                    i0Var.A1(e3Var);
-                    i0Var.z1(voVar2.W1, true);
-                    i0Var.B1(voVar2.s1.a());
-                    i0Var.J2 = new co(voVar2, 2);
-                    i0Var.show();
+                di diVar = voVar.O1;
+                if (diVar.s2 != diVar.a2) {
+                    voVar.Q1.setText(org.telegram.messenger.hd.M0(2131745538, null));
+                    di diVar2 = voVar.O1;
+                    diVar2.F1(diVar2.a2);
+                    break;
+                } else {
+                    voVar.Q1.setText(org.telegram.messenger.hd.M0(2131752138, null));
+                    di diVar3 = voVar.O1;
+                    if (diVar3.i2 == null) {
+                        Context context = diVar3.getContext();
+                        org.telegram.ui.ActionBar.f6 f6Var = diVar3.I0;
+                        qi qiVar = new qi(context, f6Var, diVar3);
+                        qiVar.r = org.telegram.messenger.g0.L(80.0f);
+                        qiVar.x = 3;
+                        bi.q1 q1Var = new bi.q1(qiVar, context, f6Var, 14);
+                        qiVar.n = q1Var;
+                        la laVar = new la(qiVar, context);
+                        qiVar.w = laVar;
+                        q1Var.setAdapter(laVar);
+                        q1Var.setClipToPadding(false);
+                        q1Var.setItemAnimator(null);
+                        q1Var.setLayoutAnimation(null);
+                        q1Var.setVerticalScrollBarEnabled(false);
+                        org.telegram.ui.ActionBar.r6.m(q1Var, 21, org.telegram.ui.ActionBar.k6.A5, f6Var);
+                        qiVar.addView(q1Var, c8.ha.c(-1.0f, -1));
+                        q1Var.setOnScrollListener(new ai.b(qiVar, 29));
+                        ei.h hVar = new ei.h(qiVar, qiVar.r, 2);
+                        qiVar.s = hVar;
+                        hVar.O = new ai.l(qiVar, 6);
+                        q1Var.setLayoutManager(hVar);
+                        diVar3.i2 = qiVar;
+                        qiVar.setDelegate(new sa(diVar3, 1));
+                    }
+                    diVar3.F1(diVar3.i2);
+                    qi qiVar2 = voVar.O1.i2;
+                    boolean z9 = voVar.D1;
+                    la laVar2 = qiVar2.w;
+                    ((ArrayList) laVar2.e).clear();
+                    WallpapersListActivity.E0((ArrayList) laVar2.e, z9);
+                    laVar2.f();
                     break;
                 }
+            case 1:
+                if (!voVar.P0()) {
+                    voVar.dismiss();
+                    break;
+                } else {
+                    voVar.T0(true);
+                    voVar.Z0(true);
+                    break;
+                }
+            case 2:
+                if (voVar.J1 == null) {
+                    voVar.V0(!voVar.D1);
+                    break;
+                }
+                break;
+            default:
+                voVar.K0(false);
                 break;
         }
     }

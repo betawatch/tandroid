@@ -2,10 +2,10 @@ package com.google.android.recaptcha.internal;
 
 import kotlin.jvm.internal.f;
 import kotlin.jvm.internal.j;
-import ud.d;
-import ud.l;
+import xd.d;
+import xd.l;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzgn {
     private zzgn() {
@@ -14,13 +14,13 @@ public final class zzgn {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final int zzc(String str) {
-        String c2 = l.c("18.7.1", ".", "");
-        int i3 = d.i(0, 6, c2, "-");
-        if (i3 != -1) {
-            c2 = c2.substring(0, i3);
-            j.d(c2, "substring(...)");
+        String c10 = l.c("18.7.1", ".", "");
+        int i7 = d.i(0, 6, c10, "-");
+        if (i7 != -1) {
+            c10 = c10.substring(0, i7);
+            j.d(c10, "substring(...)");
         }
-        return Integer.parseInt(c2);
+        return Integer.parseInt(c10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

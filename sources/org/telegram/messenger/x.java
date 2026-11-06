@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class x implements Interpolator {
     public final /* synthetic */ double a;
@@ -10,25 +10,25 @@ public final class x implements Interpolator {
     public final /* synthetic */ double c;
     public final /* synthetic */ double d;
 
-    public x(double d, double d10, double d11, double d12) {
+    public x(double d, double d2, double d10, double d11) {
         this.a = d;
-        this.b = d10;
-        this.c = d11;
-        this.d = d12;
+        this.b = d2;
+        this.c = d10;
+        this.d = d11;
     }
 
     @Override // android.animation.TimeInterpolator
     public final float getInterpolation(float f10) {
         double exp;
         double d = this.a;
-        double d10 = this.d;
-        double d11 = this.b;
+        double d2 = this.d;
+        double d10 = this.b;
         if (d < 1.0d) {
-            double exp2 = Math.exp((-f10) * d * d11);
-            double d12 = this.c * f10;
-            exp = 1.0d - (((Math.sin(d12) * d10) + (Math.cos(d12) * 1.0d)) * exp2);
+            double exp2 = Math.exp((-f10) * d * d10);
+            double d11 = this.c * f10;
+            exp = 1.0d - (((Math.sin(d11) * d2) + (Math.cos(d11) * 1.0d)) * exp2);
         } else {
-            exp = 1.0d - (Math.exp((-f10) * d11) * ((d10 * f10) + 1.0d));
+            exp = 1.0d - (Math.exp((-f10) * d10) * ((d2 * f10) + 1.0d));
         }
         return (float) exp;
     }

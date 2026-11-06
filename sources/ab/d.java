@@ -1,31 +1,157 @@
 package ab;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class d {
-    public final long a;
-    public final String b;
-    public final String c;
-    public final b d;
-    public final String e;
-    public final String f;
-    public final int g;
-    public final int h;
-    public final String i;
-    public final String j;
-    public final String k;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-    public d(long j10, String str, String str2, b bVar, String str3, String str4, int i3, int i10, String str5, String str6, String str7) {
-        this.a = j10;
-        this.b = str;
-        this.c = str2;
-        this.d = bVar;
-        this.e = str3;
-        this.f = str4;
-        this.g = i3;
-        this.h = i10;
-        this.i = str5;
-        this.j = str6;
-        this.k = str7;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public class d extends FilterInputStream {
+    public final /* synthetic */ int a = 1;
+    public long b;
+    public long c;
+
+    public d(FilterInputStream filterInputStream) {
+        this(filterInputStream, 0L);
+    }
+
+    private final synchronized void a(int i7) {
+        ((FilterInputStream) this).in.mark(i7);
+        this.c = this.b;
+    }
+
+    private final synchronized void b(int i7) {
+        this.c = this.b;
+        super.mark(i7);
+    }
+
+    private final synchronized void c() {
+        if (!((FilterInputStream) this).in.markSupported()) {
+            throw new IOException("Mark not supported");
+        }
+        if (this.c == -1) {
+            throw new IOException("Mark not set");
+        }
+        ((FilterInputStream) this).in.reset();
+        this.b = this.c;
+    }
+
+    private final synchronized void d() {
+        super.reset();
+        this.b = this.c;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public int available() {
+        switch (this.a) {
+            case 0:
+                return (int) Math.min(((FilterInputStream) this).in.available(), this.b);
+            default:
+                return super.available();
+        }
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final synchronized void mark(int i7) {
+        switch (this.a) {
+            case 0:
+                a(i7);
+                break;
+            default:
+                b(i7);
+                break;
+        }
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public int read() {
+        switch (this.a) {
+            case 0:
+                if (this.b == 0) {
+                    return -1;
+                }
+                int read = ((FilterInputStream) this).in.read();
+                if (read != -1) {
+                    this.b--;
+                }
+                return read;
+            default:
+                int read2 = super.read();
+                if (read2 >= 0) {
+                    this.b++;
+                }
+                return read2;
+        }
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final synchronized void reset() {
+        switch (this.a) {
+            case 0:
+                c();
+                break;
+            default:
+                d();
+                break;
+        }
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public long skip(long j3) {
+        switch (this.a) {
+            case 0:
+                long skip = ((FilterInputStream) this).in.skip(Math.min(j3, this.b));
+                this.b -= skip;
+                return skip;
+            default:
+                long j10 = this.b;
+                long skip2 = super.skip(j3);
+                this.b = j10 + skip2;
+                return skip2;
+        }
+    }
+
+    public d(InputStream inputStream, long j3) {
+        super(inputStream);
+        this.b = j3;
+    }
+
+    public d(InputStream inputStream) {
+        super(inputStream);
+        this.c = -1L;
+        this.b = 1048577L;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public int read(byte[] bArr, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                long j3 = this.b;
+                if (j3 == 0) {
+                    return -1;
+                }
+                int read = ((FilterInputStream) this).in.read(bArr, i7, (int) Math.min(i10, j3));
+                if (read != -1) {
+                    this.b -= read;
+                }
+                return read;
+            default:
+                long j10 = this.b;
+                int read2 = super.read(bArr, i7, i10);
+                if (read2 > 0) {
+                    this.b = j10 + read2;
+                }
+                return read2;
+        }
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public int read(byte[] bArr) {
+        switch (this.a) {
+            case 1:
+                return read(bArr, 0, bArr.length);
+            default:
+                return super.read(bArr);
+        }
     }
 }

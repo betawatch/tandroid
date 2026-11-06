@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.io.File;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class h1 {
     public static h1 m;
@@ -64,23 +64,23 @@ public final class h1 {
         return m;
     }
 
-    public final void a(Runnable runnable, boolean z10) {
-        long j10;
+    public final void a(Runnable runnable, boolean z9) {
+        long j3;
         if (this.h) {
             return;
         }
         if (this.g) {
-            z10 = true;
+            z9 = true;
         }
-        if (!z10) {
+        if (!z9) {
             long currentTimeMillis = System.currentTimeMillis() - this.e;
             if (t0.x) {
-                j10 = 86400000;
+                j3 = 86400000;
             } else {
-                boolean z11 = r2.a;
-                j10 = 1200000;
+                boolean z10 = r2.a;
+                j3 = 1200000;
             }
-            if (currentTimeMillis < j10) {
+            if (currentTimeMillis < j3) {
                 if (runnable != null) {
                     runnable.run();
                     return;
@@ -90,18 +90,18 @@ public final class h1 {
         }
         this.h = true;
         this.g = false;
-        new org.telegram.ui.web.z0(new g1(0, this, runnable)).execute("https://telegram.org/dl/android/apk-public-beta.json");
+        new org.telegram.ui.web.a1(new g1(0, this, runnable)).execute("null");
     }
 
-    public final void b(boolean z10) {
+    public final void b(boolean z9) {
         if (this.j || !TextUtils.isEmpty(this.d)) {
             return;
         }
         this.j = true;
         this.k = 0.0f;
-        hs.e().k(hs.R4, new Object[0]);
+        qs.e().k(qs.R4, new Object[0]);
         if (TextUtils.isEmpty(this.f)) {
-            if (z10) {
+            if (z9) {
                 this.j = false;
                 return;
             } else {
@@ -109,35 +109,35 @@ public final class h1 {
                 return;
             }
         }
-        final int i3 = 0;
+        final int i7 = 0;
         final int i10 = 1;
-        HttpGetFileTask overrideExtension = new HttpGetFileTask(new u10(this) { // from class: org.telegram.messenger.f1
+        HttpGetFileTask overrideExtension = new HttpGetFileTask(new c20(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.u10
+            @Override // org.telegram.messenger.c20
             public final void a(Object obj) {
-                switch (i3) {
+                switch (i7) {
                     case 0:
                         g0.h3(new b4(15, this.b, (File) obj));
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        hs.e().k(hs.R4, new Object[0]);
+                        qs.e().k(qs.R4, new Object[0]);
                         break;
                 }
             }
-        }, new u10(this) { // from class: org.telegram.messenger.f1
+        }, new c20(this) { // from class: org.telegram.messenger.f1
             public final /* synthetic */ h1 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.messenger.u10
+            @Override // org.telegram.messenger.c20
             public final void a(Object obj) {
                 switch (i10) {
                     case 0:
@@ -145,7 +145,7 @@ public final class h1 {
                         break;
                     default:
                         this.b.k = ((Float) obj).floatValue();
-                        hs.e().k(hs.R4, new Object[0]);
+                        qs.e().k(qs.R4, new Object[0]);
                         break;
                 }
             }
@@ -166,22 +166,22 @@ public final class h1 {
         } else {
             edit.putString("changelog", this.c);
         }
-        int i3 = this.b;
-        if (i3 == 0) {
+        int i7 = this.b;
+        if (i7 == 0) {
             edit.remove("versionCode");
         } else {
-            edit.putInt("versionCode", i3);
+            edit.putInt("versionCode", i7);
         }
         if (TextUtils.isEmpty(this.d)) {
             edit.remove("path");
         } else {
             edit.putString("path", this.d);
         }
-        long j10 = this.e;
-        if (j10 == 0) {
+        long j3 = this.e;
+        if (j3 == 0) {
             edit.remove("lastCheck");
         } else {
-            edit.putLong("lastCheck", j10);
+            edit.putLong("lastCheck", j3);
         }
         edit.apply();
     }

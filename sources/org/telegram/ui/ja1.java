@@ -1,34 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ja1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ra1 b;
-    public final /* synthetic */ byte[] c;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ ja1(ra1 ra1Var, byte[] bArr, int i3) {
-        this.a = i3;
-        this.b = ra1Var;
-        this.c = bArr;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class ja1 extends ya1 {
+    public final /* synthetic */ TwoStepVerificationActivity k0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ja1(TwoStepVerificationActivity twoStepVerificationActivity, int i7, TL_account.Password password) {
+        super(i7, 4, password);
+        this.k0 = twoStepVerificationActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ra1.d0(this.b, this.c);
-                break;
-            default:
-                ra1 ra1Var = this.b;
-                ra1Var.B0();
-                ra1Var.W = this.c;
-                ra1Var.getMessagesController().k4(0L, "VALIDATE_PASSWORD");
-                ra1 ra1Var2 = new ra1(9, ra1Var.V);
-                ra1Var2.I = ra1Var.I;
-                ra1Var2.H = ra1Var.H;
-                ra1Var.presentFragment(ra1Var2, true);
-                break;
-        }
+    @Override // org.telegram.ui.ya1
+    public final void G0() {
+        this.k0.N = true;
     }
 }

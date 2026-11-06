@@ -1,19 +1,27 @@
 package z7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b3 implements ma.d {
+public final class b3 implements na.d {
     public static final b3 a = new b3();
+    public static final na.c b = new na.c("durationMs", jg.g.q(rf.b.l(d.class, new a(1))));
+    public static final na.c c = new na.c("imageSource", jg.g.q(rf.b.l(d.class, new a(2))));
+    public static final na.c d = new na.c("imageFormat", jg.g.q(rf.b.l(d.class, new a(3))));
+    public static final na.c e = new na.c("imageByteSize", jg.g.q(rf.b.l(d.class, new a(4))));
+    public static final na.c f = new na.c("imageWidth", jg.g.q(rf.b.l(d.class, new a(5))));
+    public static final na.c g = new na.c("imageHeight", jg.g.q(rf.b.l(d.class, new a(6))));
+    public static final na.c h = new na.c("rotationDegrees", jg.g.q(rf.b.l(d.class, new a(7))));
 
-    static {
-        t4.c.o(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, new y(1)), 2)), 3)), 4)), 5)));
-    }
-
-    @Override // ma.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // na.a
+    public final void a(Object obj, Object obj2) {
+        f7 f7Var = (f7) obj;
+        na.e eVar = (na.e) obj2;
+        eVar.a(b, f7Var.a);
+        eVar.a(c, f7Var.b);
+        eVar.a(d, f7Var.c);
+        eVar.a(e, f7Var.d);
+        eVar.a(f, f7Var.e);
+        eVar.a(g, f7Var.f);
+        eVar.a(h, f7Var.g);
     }
 }

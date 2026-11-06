@@ -5,22 +5,22 @@ import android.view.View;
 import androidx.core.widget.NestedScrollView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class q41 extends NestedScrollView {
-    public boolean a0;
-    public final /* synthetic */ r41 b0;
+    public boolean W;
+    public final /* synthetic */ r41 a0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q41(r41 r41Var, Context context) {
         super(context);
-        this.b0 = r41Var;
+        this.a0 = r41Var;
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        r41.I0(this.b0);
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        r41.I0(this.a0);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
@@ -31,11 +31,11 @@ public final class q41 extends NestedScrollView {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i10);
-        r41 r41Var = this.b0;
-        measureChildWithMargins(r41Var.n1, i3, 0, i10, 0);
-        int measuredHeight = r41Var.n1.getMeasuredHeight();
+        r41 r41Var = this.a0;
+        measureChildWithMargins(r41Var.m1, i7, 0, i10, 0);
+        int measuredHeight = r41Var.m1.getMeasuredHeight();
         int i11 = (size / 5) * 2;
         if (measuredHeight - (size - i11) >= org.telegram.messenger.g0.L(90.0f)) {
         }
@@ -44,22 +44,22 @@ public final class q41 extends NestedScrollView {
             i11 = 0;
         }
         if (getPaddingTop() != i11) {
-            this.a0 = true;
+            this.W = true;
             setPadding(0, i11, 0, 0);
-            this.a0 = false;
+            this.W = false;
         }
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i3, int i10, int i11, int i12) {
-        super.onScrollChanged(i3, i10, i11, i12);
-        r41.I0(this.b0);
+    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
+        super.onScrollChanged(i7, i10, i11, i12);
+        r41.I0(this.a0);
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
-        if (this.a0) {
+        if (this.W) {
             return;
         }
         super.requestLayout();

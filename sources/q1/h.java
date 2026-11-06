@@ -1,111 +1,187 @@
 package q1;
 
-import org.telegram.ui.Cells.i;
+import androidx.datastore.preferences.protobuf.b0;
+import androidx.datastore.preferences.protobuf.c0;
+import androidx.datastore.preferences.protobuf.e0;
+import androidx.datastore.preferences.protobuf.m;
+import androidx.datastore.preferences.protobuf.z;
+import c8.pb;
+import java.io.FileInputStream;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Logger;
+import kotlin.jvm.internal.j;
+import m1.g1;
+import m1.y0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h {
-    public double a;
-    public double b;
-    public boolean c;
-    public double d;
-    public double e;
-    public double f;
-    public double g;
-    public double h;
-    public double i;
-    public final i j;
+public final class h implements y0 {
+    public static final h a = new h();
 
-    public h() {
-        this.a = Math.sqrt(1500.0d);
-        this.b = 0.5d;
-        this.c = false;
-        this.i = Double.MAX_VALUE;
-        this.j = new i();
+    @Override // m1.y0
+    public final Object a() {
+        return new b(true);
     }
 
-    public final void a(float f10) {
-        if (f10 < 0.0f) {
-            throw new IllegalArgumentException("Damping ratio must be non-negative");
-        }
-        this.b = f10;
-        this.c = false;
-    }
-
-    public final void b(float f10) {
-        if (f10 <= 0.0f) {
-            throw new IllegalArgumentException("Spring stiffness constant must be positive.");
-        }
-        this.a = Math.sqrt(f10);
-        this.c = false;
-    }
-
-    public final i c(double d, double d10, long j10) {
-        double sin;
-        double cos;
-        if (!this.c) {
-            if (this.i == Double.MAX_VALUE) {
-                throw new IllegalStateException("Error: Final position of the spring must be set before the animation starts");
+    @Override // m1.y0
+    public final Object b(FileInputStream fileInputStream) {
+        byte[] bArr;
+        try {
+            p1.c o4 = p1.c.o(fileInputStream);
+            b bVar = new b(false);
+            f[] pairs = (f[]) Arrays.copyOf(new f[0], 0);
+            j.e(pairs, "pairs");
+            bVar.b();
+            if (pairs.length > 0) {
+                f fVar = pairs[0];
+                throw null;
             }
-            double d11 = this.b;
-            if (d11 > 1.0d) {
-                double d12 = this.a;
-                this.f = (Math.sqrt((d11 * d11) - 1.0d) * d12) + ((-d11) * d12);
-                double d13 = this.b;
-                double d14 = this.a;
-                this.g = ((-d13) * d14) - (Math.sqrt((d13 * d13) - 1.0d) * d14);
-            } else if (d11 >= 0.0d && d11 < 1.0d) {
-                this.h = Math.sqrt(1.0d - (d11 * d11)) * this.a;
+            Map m10 = o4.m();
+            j.d(m10, "preferencesProto.preferencesMap");
+            for (Map.Entry entry : m10.entrySet()) {
+                String name = (String) entry.getKey();
+                p1.h value = (p1.h) entry.getValue();
+                j.d(name, "name");
+                j.d(value, "value");
+                int C = value.C();
+                switch (C == 0 ? -1 : g.a[p1.g.c(C)]) {
+                    case -1:
+                        throw new m1.b("Value case is null.", null);
+                    case 0:
+                    default:
+                        throw new androidx.car.app.j();
+                    case 1:
+                        bVar.e(new e(name), Boolean.valueOf(value.t()));
+                        break;
+                    case 2:
+                        bVar.e(new e(name), Float.valueOf(value.x()));
+                        break;
+                    case 3:
+                        bVar.e(new e(name), Double.valueOf(value.w()));
+                        break;
+                    case 4:
+                        bVar.e(new e(name), Integer.valueOf(value.y()));
+                        break;
+                    case 5:
+                        bVar.e(new e(name), Long.valueOf(value.z()));
+                        break;
+                    case 6:
+                        e a10 = pb.a(name);
+                        String A = value.A();
+                        j.d(A, "value.string");
+                        bVar.e(a10, A);
+                        break;
+                    case 7:
+                        e b10 = pb.b(name);
+                        b0 n10 = value.B().n();
+                        j.d(n10, "value.stringSet.stringsList");
+                        bVar.e(b10, hd.f.o(n10));
+                        break;
+                    case 8:
+                        e eVar = new e(name);
+                        androidx.datastore.preferences.protobuf.h u10 = value.u();
+                        int size = u10.size();
+                        if (size == 0) {
+                            bArr = c0.b;
+                        } else {
+                            byte[] bArr2 = new byte[size];
+                            u10.k(size, bArr2);
+                            bArr = bArr2;
+                        }
+                        j.d(bArr, "value.bytes.toByteArray()");
+                        bVar.e(eVar, bArr);
+                        break;
+                    case 9:
+                        throw new m1.b("Value not set.", null);
+                }
             }
-            this.c = true;
+            return new b(new LinkedHashMap(bVar.a()), true);
+        } catch (e0 e10) {
+            throw new m1.b("Unable to parse preferences proto.", e10);
         }
-        double d15 = j10 / 1000.0d;
-        double d16 = d - this.i;
-        double d17 = this.b;
-        if (d17 > 1.0d) {
-            double d18 = this.g;
-            double d19 = ((d18 * d16) - d10) / (d18 - this.f);
-            double d20 = d16 - d19;
-            sin = (Math.pow(2.718281828459045d, this.f * d15) * d19) + (Math.pow(2.718281828459045d, d18 * d15) * d20);
-            double d21 = this.g;
-            double pow = Math.pow(2.718281828459045d, d21 * d15) * d20 * d21;
-            double d22 = this.f;
-            cos = (Math.pow(2.718281828459045d, d22 * d15) * d19 * d22) + pow;
-        } else if (d17 == 1.0d) {
-            double d23 = this.a;
-            double d24 = (d23 * d16) + d10;
-            double d25 = (d24 * d15) + d16;
-            double pow2 = Math.pow(2.718281828459045d, (-d23) * d15) * d25;
-            double pow3 = Math.pow(2.718281828459045d, (-this.a) * d15) * d25;
-            double d26 = -this.a;
-            cos = (Math.pow(2.718281828459045d, d26 * d15) * d24) + (pow3 * d26);
-            sin = pow2;
-        } else {
-            double d27 = 1.0d / this.h;
-            double d28 = this.a;
-            double d29 = ((d17 * d28 * d16) + d10) * d27;
-            sin = ((Math.sin(this.h * d15) * d29) + (Math.cos(this.h * d15) * d16)) * Math.pow(2.718281828459045d, (-d17) * d28 * d15);
-            double d30 = this.a;
-            double d31 = this.b;
-            double d32 = (-d30) * sin * d31;
-            double pow4 = Math.pow(2.718281828459045d, (-d31) * d30 * d15);
-            double d33 = this.h;
-            double sin2 = Math.sin(d33 * d15) * (-d33) * d16;
-            double d34 = this.h;
-            cos = (((Math.cos(d34 * d15) * d29 * d34) + sin2) * pow4) + d32;
-        }
-        float f10 = (float) (sin + this.i);
-        i iVar = this.j;
-        iVar.a = f10;
-        iVar.b = (float) cos;
-        return iVar;
     }
 
-    public h(float f10) {
-        this.a = Math.sqrt(1500.0d);
-        this.b = 0.5d;
-        this.c = false;
-        this.j = new i();
-        this.i = f10;
+    @Override // m1.y0
+    public final void c(Object obj, g1 g1Var) {
+        z a10;
+        Map a11 = ((b) obj).a();
+        p1.a n10 = p1.c.n();
+        for (Map.Entry entry : a11.entrySet()) {
+            e eVar = (e) entry.getKey();
+            Object value = entry.getValue();
+            String str = eVar.a;
+            if (value instanceof Boolean) {
+                p1.f D = p1.h.D();
+                boolean booleanValue = ((Boolean) value).booleanValue();
+                D.c();
+                p1.h.q((p1.h) D.b, booleanValue);
+                a10 = D.a();
+            } else if (value instanceof Float) {
+                p1.f D2 = p1.h.D();
+                float floatValue = ((Number) value).floatValue();
+                D2.c();
+                p1.h.r((p1.h) D2.b, floatValue);
+                a10 = D2.a();
+            } else if (value instanceof Double) {
+                p1.f D3 = p1.h.D();
+                double doubleValue = ((Number) value).doubleValue();
+                D3.c();
+                p1.h.o((p1.h) D3.b, doubleValue);
+                a10 = D3.a();
+            } else if (value instanceof Integer) {
+                p1.f D4 = p1.h.D();
+                int intValue = ((Number) value).intValue();
+                D4.c();
+                p1.h.s((p1.h) D4.b, intValue);
+                a10 = D4.a();
+            } else if (value instanceof Long) {
+                p1.f D5 = p1.h.D();
+                long longValue = ((Number) value).longValue();
+                D5.c();
+                p1.h.l((p1.h) D5.b, longValue);
+                a10 = D5.a();
+            } else if (value instanceof String) {
+                p1.f D6 = p1.h.D();
+                D6.c();
+                p1.h.m((p1.h) D6.b, (String) value);
+                a10 = D6.a();
+            } else if (value instanceof Set) {
+                p1.f D7 = p1.h.D();
+                p1.d o4 = p1.e.o();
+                o4.c();
+                p1.e.l((p1.e) o4.b, (Set) value);
+                D7.c();
+                p1.h.n((p1.h) D7.b, (p1.e) o4.a());
+                a10 = D7.a();
+            } else {
+                if (!(value instanceof byte[])) {
+                    throw new IllegalStateException("PreferencesSerializer does not support type: ".concat(value.getClass().getName()));
+                }
+                p1.f D8 = p1.h.D();
+                byte[] bArr = (byte[]) value;
+                androidx.datastore.preferences.protobuf.h j3 = androidx.datastore.preferences.protobuf.h.j(0, bArr.length, bArr);
+                D8.c();
+                p1.h.p((p1.h) D8.b, j3);
+                a10 = D8.a();
+            }
+            n10.getClass();
+            str.getClass();
+            n10.c();
+            p1.c.l((p1.c) n10.b).put(str, (p1.h) a10);
+        }
+        p1.c cVar = (p1.c) n10.a();
+        int a12 = cVar.a(null);
+        Logger logger = m.f;
+        if (a12 > 4096) {
+            a12 = 4096;
+        }
+        m mVar = new m(g1Var, a12);
+        cVar.b(mVar);
+        if (mVar.d > 0) {
+            mVar.l();
+        }
     }
 }

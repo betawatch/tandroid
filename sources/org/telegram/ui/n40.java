@@ -1,9 +1,13 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface n40 {
-    void a(ArrayList arrayList, boolean z10, boolean z11);
+public final /* synthetic */ class n40 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ n40(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
 }

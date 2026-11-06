@@ -1,20 +1,21 @@
 package e0;
 
+import a8.p0;
 import android.app.Activity;
 import android.os.Build;
 import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b extends f0.d {
     /* JADX WARN: Multi-variable type inference failed */
-    public static void f(Activity activity, String[] strArr, int i3) {
+    public static void f(Activity activity, String[] strArr, int i7) {
         HashSet hashSet = new HashSet();
         for (int i10 = 0; i10 < strArr.length; i10++) {
             if (TextUtils.isEmpty(strArr[i10])) {
-                throw new IllegalArgumentException(a1.g.s(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
+                throw new IllegalArgumentException(p0.s(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
             }
             if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i10], "android.permission.POST_NOTIFICATIONS")) {
                 hashSet.add(Integer.valueOf(i10));
@@ -36,6 +37,6 @@ public abstract class b extends f0.d {
         }
         if (activity instanceof a) {
         }
-        activity.requestPermissions(strArr, i3);
+        activity.requestPermissions(strArr, i7);
     }
 }

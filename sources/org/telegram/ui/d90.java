@@ -1,14 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface d90 {
-    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
+public final class d90 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h90 b;
 
-    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
+    public /* synthetic */ d90(h90 h90Var, int i7) {
+        this.a = i7;
+        this.b = h90Var;
+    }
 
-    void c(TLObject tLObject);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                h90 h90Var = this.b;
+                if (!h90Var.N) {
+                    if (editable.toString().equals("0")) {
+                        h90Var.F.setText("");
+                        break;
+                    } else {
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                h90Var.b0(parseInt);
+                                break;
+                            } else {
+                                h90Var.c0();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            h90Var.c0();
+                            return;
+                        }
+                    }
+                }
+                break;
+            default:
+                org.telegram.messenger.i6.l(editable, this.b.K.getPaint().getFontMetricsInt(), false);
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    }
 }

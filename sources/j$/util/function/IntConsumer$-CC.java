@@ -13,9 +13,9 @@ public final /* synthetic */ class IntConsumer$-CC {
             }
 
             @Override // java.util.function.IntConsumer
-            public final void accept(int i3) {
-                IntConsumer.this.accept(i3);
-                intConsumer2.accept(i3);
+            public final void accept(int i7) {
+                IntConsumer.this.accept(i7);
+                intConsumer2.accept(i7);
             }
         };
     }

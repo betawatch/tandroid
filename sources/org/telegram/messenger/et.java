@@ -1,91 +1,164 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.util.Base64;
-import org.json.JSONObject;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.media.RingtoneManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.qd0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class et implements v0.h {
-    public final /* synthetic */ qd0 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
+public final class et {
+    public final int a;
 
-    public et(qd0 qd0Var, Context context, int i3) {
-        this.a = qd0Var;
-        this.b = context;
-        this.c = i3;
+    public et(int i7) {
+        this.a = i7;
     }
 
-    @Override // v0.h
-    public final void a(Object obj) {
-        w0.i iVar = (w0.i) obj;
-        boolean z10 = iVar instanceof w0.k;
-        qd0 qd0Var = this.a;
-        if (z10) {
-            qd0Var.a(0L, null, "EMPTY");
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00e6  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j3, long j10, int i7) {
+        String str;
+        String str2;
+        String str3;
+        TLRPC.NotificationSound notificationSound2;
+        String str4;
+        if (notificationSound == null) {
             return;
         }
-        if (iVar instanceof w0.g) {
-            qd0Var.a(0L, null, "CANCELLED");
-        } else if (iVar instanceof w0.j) {
-            qd0Var.a(0L, null, "CANCELLED");
-        } else if (iVar != null) {
-            qd0Var.a(0L, null, iVar.getMessage());
+        if (j3 != 0) {
+            String v = dt.v(j3, j10, true);
+            str = rf.b.i("sound_", v);
+            str3 = rf.b.i("sound_path_", v);
+            str2 = rf.b.i("sound_document_id_", v);
+        } else if (i7 == 0) {
+            str = "GroupSound";
+            str2 = "GroupSoundDocId";
+            str3 = "GroupSoundPath";
+        } else if (i7 == 3) {
+            str = "StoriesSound";
+            str2 = "StoriesSoundDocId";
+            str3 = "StoriesSoundPath";
+        } else if (i7 == 1) {
+            str = "GlobalSound";
+            str2 = "GlobalSoundDocId";
+            str3 = "GlobalSoundPath";
+        } else if (i7 == 4 || i7 == 5) {
+            str = "ReactionSound";
+            str2 = "ReactionSoundDocId";
+            str3 = "ReactionSoundPath";
+        } else {
+            str = "ChannelSound";
+            str2 = "ChannelSoundDocId";
+            str3 = "ChannelSoundPath";
+        }
+        String str5 = str3;
+        String str6 = str;
+        String str7 = str2;
+        if (notificationSound instanceof TLRPC.TL_notificationSoundLocal) {
+            TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal = (TLRPC.TL_notificationSoundLocal) notificationSound;
+            if ("Default".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
+                notificationSound2 = new TLRPC.TL_notificationSoundDefault();
+            } else if ("NoSound".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
+                notificationSound2 = new TLRPC.TL_notificationSoundNone();
+            } else {
+                String str8 = tL_notificationSoundLocal.title;
+                if (str8 != null) {
+                    try {
+                        RingtoneManager ringtoneManager = new RingtoneManager(t0.b);
+                        ringtoneManager.setType(2);
+                        Cursor cursor = ringtoneManager.getCursor();
+                        while (cursor.moveToNext()) {
+                            String string = cursor.getString(1);
+                            str4 = cursor.getString(2) + "/" + cursor.getString(0);
+                            if (str8.equalsIgnoreCase(string)) {
+                                break;
+                            }
+                        }
+                    } catch (Throwable th2) {
+                        a8.g(th2, true);
+                    }
+                }
+                str4 = null;
+                if (str4 == null) {
+                    return;
+                } else {
+                    tL_notificationSoundLocal.data = str4;
+                }
+            }
+            if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
+                editor.putString(str6, "Default");
+                editor.putString(str5, "Default");
+                editor.remove(str7);
+                return;
+            }
+            if (notificationSound2 instanceof TLRPC.TL_notificationSoundNone) {
+                editor.putString(str6, "NoSound");
+                editor.putString(str5, "NoSound");
+                editor.remove(str7);
+                return;
+            } else {
+                if (notificationSound2 instanceof TLRPC.TL_notificationSoundLocal) {
+                    TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal2 = (TLRPC.TL_notificationSoundLocal) notificationSound2;
+                    editor.putString(str6, tL_notificationSoundLocal2.title);
+                    editor.putString(str5, tL_notificationSoundLocal2.data);
+                    editor.remove(str7);
+                    return;
+                }
+                if (notificationSound2 instanceof TLRPC.TL_notificationSoundRingtone) {
+                    TLRPC.TL_notificationSoundRingtone tL_notificationSoundRingtone = (TLRPC.TL_notificationSoundRingtone) notificationSound2;
+                    editor.putLong(str7, tL_notificationSoundRingtone.id);
+                    ui.b0(this.a).z0.g(true);
+                    ui.b0(this.a).z0.c(tL_notificationSoundRingtone.id);
+                    return;
+                }
+                return;
+            }
+        }
+        notificationSound2 = notificationSound;
+        if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
         }
     }
 
-    @Override // v0.h
-    public final void onResult(Object obj) {
-        final qd0 qd0Var = this.a;
-        ci.u0 u0Var = ((v0.n) obj).a;
-        TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
-        finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
-        try {
-            JSONObject jSONObject = new JSONObject(((Bundle) u0Var.a).getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON"));
-            finishpasskeylogin.credential.id = jSONObject.getString("id");
-            finishpasskeylogin.credential.raw_id = jSONObject.getString("rawId");
-            JSONObject jSONObject2 = jSONObject.getJSONObject("response");
-            TL_account.inputPasskeyResponseLogin inputpasskeyresponselogin = new TL_account.inputPasskeyResponseLogin();
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            inputpasskeyresponselogin.client_data = tL_dataJSON;
-            tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
-            inputpasskeyresponselogin.authenticator_data = Base64.decode(jSONObject2.getString("authenticatorData"), 8);
-            inputpasskeyresponselogin.signature = Base64.decode(jSONObject2.getString("signature"), 8);
-            String str = new String(Base64.decode(jSONObject2.getString("userHandle"), 8));
-            inputpasskeyresponselogin.user_handle = str;
-            int parseInt = Integer.parseInt(str.split(":")[0]);
-            final long parseLong = Long.parseLong(inputpasskeyresponselogin.user_handle.split(":")[1]);
-            finishpasskeylogin.credential.response = inputpasskeyresponselogin;
-            org.telegram.ui.ActionBar.s1 s1Var = new org.telegram.ui.ActionBar.s1(3, this.b, null);
-            s1Var.r(500L);
-            int i3 = this.c;
-            if (parseInt != ConnectionsManager.getInstance(i3).getCurrentDatacenterId()) {
-                int currentDatacenterId = ConnectionsManager.getInstance(i3).getCurrentDatacenterId();
-                long currentAuthKeyId = ConnectionsManager.getInstance(i3).getCurrentAuthKeyId();
-                ConnectionsManager.getInstance(i3).setDefaultDatacenterId(parseInt);
-                finishpasskeylogin.flags = 1 | finishpasskeylogin.flags;
-                finishpasskeylogin.from_dc_id = currentDatacenterId;
-                finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
-            }
-            final int sendRequestTyped = ConnectionsManager.getInstance(i3).sendRequestTyped(finishpasskeylogin, new c3.b(1), new k9(s1Var, qd0Var, parseLong, 3), parseInt, 72);
-            final int i10 = this.c;
-            s1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.dt
-                @Override // android.content.DialogInterface.OnCancelListener
-                public final void onCancel(DialogInterface dialogInterface) {
-                    ConnectionsManager.getInstance(i10).cancelRequest(sendRequestTyped, true);
-                    qd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
-                }
-            });
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            qd0Var.a(0L, null, e10.getMessage());
+    public final SharedPreferences b() {
+        return qp.s1(this.a).d7;
+    }
+
+    public final int c(int i7, long j3, long j10, String str) {
+        String v = dt.v(j3, j10, true);
+        if (b().contains(str + v)) {
+            return b().getInt(str + v, i7);
         }
+        String v10 = dt.v(j3, 0L, true);
+        return b().getInt(str + v10, i7);
+    }
+
+    public final long d(long j3, long j10) {
+        String v = dt.v(j3, j10, true);
+        if (b().contains("sound_document_id_" + v)) {
+            return b().getLong("sound_document_id_" + v, 0L);
+        }
+        String v10 = dt.v(j3, 0L, true);
+        return b().getLong("sound_document_id_" + v10, 0L);
+    }
+
+    public final boolean e(long j3, long j10) {
+        String v = dt.v(j3, j10, false);
+        if (b().contains("custom_" + v)) {
+            return b().getBoolean("custom_" + v, false);
+        }
+        String v10 = dt.v(j3, 0L, false);
+        return b().getBoolean("custom_" + v10, false);
+    }
+
+    public final String f(long j3, long j10) {
+        String v = dt.v(j3, j10, false);
+        if (b().contains("sound_path_" + v)) {
+            return b().getString("sound_path_" + v, null);
+        }
+        String v10 = dt.v(j3, 0L, false);
+        return b().getString("sound_path_" + v10, null);
     }
 }

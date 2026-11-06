@@ -1,36 +1,49 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ po b;
-    public final /* synthetic */ String c;
+public final class oo extends org.telegram.ui.Components.f70 {
+    public final /* synthetic */ TLRPC.Chat x;
+    public final /* synthetic */ po y;
 
-    public /* synthetic */ oo(po poVar, String str, int i3) {
-        this.a = i3;
-        this.b = poVar;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oo(po poVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
+        super(context, chat);
+        this.y = poVar;
+        this.x = chat2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                po poVar = this.b;
-                String str = this.c;
-                poVar.getClass();
-                org.telegram.messenger.g0.h3(new oo(poVar, str, 1));
-                break;
-            default:
-                po poVar2 = this.b;
-                String str2 = this.c;
-                poVar2.f = null;
-                Utilities.g.c(new p1(poVar2, str2, new ArrayList(poVar2.h.w), 28));
-                break;
+    @Override // org.telegram.ui.Components.f70
+    public final boolean a(boolean z9, org.telegram.ui.Components.d70 d70Var) {
+        so soVar = this.y.d;
+        if (soVar.P) {
+            return false;
+        }
+        soVar.P = true;
+        e(new qf(26, this, d70Var), new vn(this, this.x, z9, d70Var, 2));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.f70
+    public final boolean b(boolean z9, org.telegram.ui.Components.e70 e70Var) {
+        so soVar = this.y.d;
+        if (soVar.O) {
+            return false;
+        }
+        soVar.O = true;
+        e(new qf(26, this, e70Var), new vn(this, this.x, z9, e70Var, 1));
+        return true;
+    }
+
+    public final void e(qf qfVar, Runnable runnable) {
+        so soVar = this.y.d;
+        if (org.telegram.messenger.t3.T(soVar.f)) {
+            runnable.run();
+        } else {
+            soVar.getMessagesController().T(soVar.getParentActivity(), this.x.id, soVar, new ni.c(20, this, runnable), qfVar);
         }
     }
 }

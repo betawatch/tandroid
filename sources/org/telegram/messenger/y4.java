@@ -20,39 +20,39 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ y4(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public /* synthetic */ y4(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
 
     private final void a() {
-        li liVar = (li) this.b;
+        ui uiVar = (ui) this.b;
         TLRPC.TL_contacts_topPeers tL_contacts_topPeers = (TLRPC.TL_contacts_topPeers) this.c;
         try {
-            liVar.getMessagesStorage().b.executeFast("DELETE FROM chat_hints WHERE 1").stepThis().dispose();
-            liVar.getMessagesStorage().b.beginTransaction();
-            liVar.getMessagesStorage().m1(tL_contacts_topPeers.users, tL_contacts_topPeers.chats, false, false);
-            SQLitePreparedStatement executeFast = liVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
-            for (int i3 = 0; i3 < tL_contacts_topPeers.categories.size(); i3++) {
-                TLRPC.TL_topPeerCategoryPeers tL_topPeerCategoryPeers = tL_contacts_topPeers.categories.get(i3);
+            uiVar.getMessagesStorage().b.executeFast("DELETE FROM chat_hints WHERE 1").stepThis().dispose();
+            uiVar.getMessagesStorage().b.beginTransaction();
+            uiVar.getMessagesStorage().m1(tL_contacts_topPeers.users, tL_contacts_topPeers.chats, false, false);
+            SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
+            for (int i7 = 0; i7 < tL_contacts_topPeers.categories.size(); i7++) {
+                TLRPC.TL_topPeerCategoryPeers tL_topPeerCategoryPeers = tL_contacts_topPeers.categories.get(i7);
                 TLRPC.TopPeerCategory topPeerCategory = tL_topPeerCategoryPeers.category;
                 int i10 = topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsInline ? 1 : topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsApp ? 2 : topPeerCategory instanceof TLRPC.TL_topPeerCategoryBotsGuestChat ? 3 : 0;
                 for (int i11 = 0; i11 < tL_topPeerCategoryPeers.peers.size(); i11++) {
                     TLRPC.TL_topPeer tL_topPeer = tL_topPeerCategoryPeers.peers.get(i11);
                     executeFast.requery();
-                    executeFast.bindLong(1, zi.C1(tL_topPeer.peer));
+                    executeFast.bindLong(1, ij.C1(tL_topPeer.peer));
                     executeFast.bindInteger(2, i10);
                     executeFast.bindDouble(3, tL_topPeer.rating);
                     executeFast.bindInteger(4, 0);
@@ -60,8 +60,8 @@ public final /* synthetic */ class y4 implements Runnable {
                 }
             }
             executeFast.dispose();
-            liVar.getMessagesStorage().b.commitTransaction();
-            g0.h3(new xf(liVar, 6));
+            uiVar.getMessagesStorage().b.commitTransaction();
+            g0.h3(new fg(uiVar, 6));
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -85,11 +85,11 @@ public final /* synthetic */ class y4 implements Runnable {
         String str2 = null;
         Drawable drawable = null;
         sQLitePreparedStatement = null;
-        boolean z10 = true;
-        z10 = true;
-        z10 = true;
-        z10 = true;
-        int i3 = 0;
+        boolean z9 = true;
+        z9 = true;
+        z9 = true;
+        z9 = true;
+        int i7 = 0;
         switch (this.a) {
             case 0:
                 g5 g5Var = (g5) this.b;
@@ -144,17 +144,17 @@ public final /* synthetic */ class y4 implements Runnable {
                 r5Var.a.add(q5Var);
                 return;
             case 2:
-                ((o00) this.b).a((ArrayList) this.c);
+                ((w00) this.b).a((ArrayList) this.c);
                 return;
             case 3:
-                hp.s1(((x6) this.b).a).O3((TLRPC.Updates) ((TLObject) this.c), false);
+                qp.s1(((x6) this.b).a).O3((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 4:
-                qr qrVar = (qr) this.b;
+                yr yrVar = (yr) this.b;
                 TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) this.c;
                 try {
                     try {
-                        sQLitePreparedStatement = qrVar.b.executeFast("REPLACE INTO fact_checks VALUES(?, ?, ?)");
+                        sQLitePreparedStatement = yrVar.b.executeFast("REPLACE INTO fact_checks VALUES(?, ?, ?)");
                         sQLitePreparedStatement.requery();
                         sQLitePreparedStatement.bindLong(1, tL_factCheck.hash);
                         NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_factCheck.getObjectSize());
@@ -180,11 +180,11 @@ public final /* synthetic */ class y4 implements Runnable {
                 }
             case 5:
                 i7 i7Var = (i7) this.b;
-                boolean z11 = i7Var.y && ((boolean[]) this.c)[0];
+                boolean z10 = i7Var.y && ((boolean[]) this.c)[0];
                 int i14 = i7Var.J;
-                boolean z12 = i14 > 0 && i7Var.a0 >= ((long) i14) && i7Var.j && i7Var.W0 < 3;
-                long j10 = i7Var.b0;
-                if (j10 == 0 || !(z11 || i7Var.a0 == j10 || z12)) {
+                boolean z11 = i14 > 0 && i7Var.a0 >= ((long) i14) && i7Var.j && i7Var.W0 < 3;
+                long j3 = i7Var.b0;
+                if (j3 == 0 || !(z10 || i7Var.a0 == j3 || z11)) {
                     i7Var.s(-1);
                     return;
                 }
@@ -205,7 +205,7 @@ public final /* synthetic */ class y4 implements Runnable {
                     if (g0.F1(e11)) {
                         LaunchActivity.D(1);
                     } else if (g0.G1(e11)) {
-                        az.h(i7Var2.L0);
+                        iz.h(i7Var2.L0);
                     }
                 }
                 if (i7Var2.S0 == null) {
@@ -213,11 +213,11 @@ public final /* synthetic */ class y4 implements Runnable {
                 }
                 int size = arrayList.size();
                 int i15 = (size * 16) + 4;
-                cg.c0 c0Var = i7.l1;
-                if (c0Var == null) {
-                    i7.l1 = new cg.c0(i15);
+                bg.d0 d0Var = i7.l1;
+                if (d0Var == null) {
+                    i7.l1 = new bg.d0(i15);
                 } else {
-                    c0Var.b();
+                    d0Var.b();
                 }
                 i7.l1.c(size);
                 for (int i16 = 0; i16 < size; i16++) {
@@ -250,14 +250,14 @@ public final /* synthetic */ class y4 implements Runnable {
                 }
             case 7:
                 w7 w7Var = (w7) this.b;
-                cs[] csVarArr = (cs[]) this.c;
-                w7Var.getNotificationCenter().n(csVarArr[0], hs.U1);
-                w7Var.getNotificationCenter().n(csVarArr[0], hs.V1);
+                ls[] lsVarArr = (ls[]) this.c;
+                w7Var.getNotificationCenter().n(lsVarArr[0], qs.U1);
+                w7Var.getNotificationCenter().n(lsVarArr[0], qs.V1);
                 return;
             case 8:
                 w7 w7Var2 = (w7) this.b;
-                w7Var2.getDownloadController().I.removeAll((ArrayList) this.c);
-                w7Var2.getNotificationCenter().k(hs.b5, new Object[0]);
+                w7Var2.getDownloadController().H.removeAll((ArrayList) this.c);
+                w7Var2.getNotificationCenter().k(qs.b5, new Object[0]);
                 return;
             case 9:
                 i7 i7Var3 = (i7) ((w7) this.b).w.get(w7.r("mp4", (TLRPC.FileLocation) this.c));
@@ -275,7 +275,7 @@ public final /* synthetic */ class y4 implements Runnable {
                 return;
             case 10:
                 i7 i7Var4 = (i7) this.b;
-                mg.f fVar = (mg.f) this.c;
+                lg.f fVar = (lg.f) this.c;
                 i7Var4.a = true;
                 fVar.b(false);
                 return;
@@ -286,9 +286,9 @@ public final /* synthetic */ class y4 implements Runnable {
                     a8.j().a.write(a8.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + str4 + "\n");
                     a8.j().a.write(th3.toString());
                     StackTraceElement[] stackTrace = th3.getStackTrace();
-                    while (i3 < stackTrace.length) {
-                        a8.j().a.write(a8.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i3] + "\n");
-                        i3++;
+                    while (i7 < stackTrace.length) {
+                        a8.j().a.write(a8.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i7] + "\n");
+                        i7++;
                     }
                     a8.j().a.flush();
                     return;
@@ -303,9 +303,9 @@ public final /* synthetic */ class y4 implements Runnable {
                 try {
                     f8Var.c();
                     f8Var.c.beginTransaction();
-                    while (i3 < list.size()) {
-                        f8Var.c.executeFast("DELETE FROM paths_by_dialog_id WHERE path = '" + ((di.b) list.get(i3)).a.getPath().replace("'", "").replace("\"", "") + "'").stepThis().dispose();
-                        i3++;
+                    while (i7 < list.size()) {
+                        f8Var.c.executeFast("DELETE FROM paths_by_dialog_id WHERE path = '" + ((ci.b) list.get(i7)).a.getPath().replace("'", "").replace("\"", "") + "'").stepThis().dispose();
+                        i7++;
                     }
                 } finally {
                     try {
@@ -321,65 +321,65 @@ public final /* synthetic */ class y4 implements Runnable {
                 ((r8) this.b).getMediaDataController().P1((TLRPC.TL_messages_stickerSet) this.c);
                 return;
             case 15:
-                g0.h3(new y4(((zb) this.b).l(), (Runnable) this.c));
+                g0.h3(new y4(((gc) this.b).l(), (Runnable) this.c));
                 return;
             case 16:
-                zb zbVar = (zb) this.b;
-                zbVar.B.add((qb) this.c);
-                zbVar.U(null, 0);
+                gc gcVar = (gc) this.b;
+                gcVar.B.add((xb) this.c);
+                gcVar.U(null, 0);
                 return;
             case 17:
                 SparseArray sparseArray2 = (SparseArray) this.c;
                 Runnable runnable = (Runnable) this.b;
-                w7.L = sparseArray2;
+                w7.K = sparseArray2;
                 if (runnable != null) {
                     runnable.run();
                     return;
                 }
                 return;
             case 18:
-                mb mbVar = (mb) this.b;
+                tb tbVar = (tb) this.b;
                 String str5 = (String) this.c;
-                nb nbVar = mbVar.a;
-                zb zbVar2 = mbVar.e;
-                ub ubVar = new ub(zbVar2, nbVar, str5);
-                nbVar.t = ubVar;
-                zbVar2.n.add(ubVar);
-                zbVar2.V(false);
+                ub ubVar = tbVar.a;
+                gc gcVar2 = tbVar.e;
+                bc bcVar = new bc(gcVar2, ubVar, str5);
+                ubVar.t = bcVar;
+                gcVar2.n.add(bcVar);
+                gcVar2.V(false);
                 return;
             case 19:
-                ob obVar = (ob) this.b;
+                vb vbVar = (vb) this.b;
                 Drawable drawable2 = (Drawable) this.c;
-                zb zbVar3 = obVar.e;
-                db dbVar = zbVar3.e;
-                nb nbVar2 = obVar.c;
-                if (drawable2 instanceof ch0) {
-                    ch0 ch0Var = (ch0) drawable2;
-                    Drawable drawable3 = (Drawable) dbVar.f(nbVar2.d);
+                gc gcVar3 = vbVar.e;
+                kb kbVar = gcVar3.e;
+                ub ubVar2 = vbVar.c;
+                if (drawable2 instanceof zg0) {
+                    zg0 zg0Var = (zg0) drawable2;
+                    Drawable drawable3 = (Drawable) kbVar.f(ubVar2.d);
                     if (drawable3 == null) {
-                        dbVar.l(nbVar2.d, ch0Var);
-                        drawable = ch0Var;
+                        kbVar.l(ubVar2.d, zg0Var);
+                        drawable = zg0Var;
                     } else {
-                        ch0Var.C(false);
+                        zg0Var.C(false);
                         drawable = drawable3;
                     }
-                    zbVar3.H(nbVar2.d);
-                    str = nbVar2.d;
-                } else if (drawable2 instanceof org.telegram.ui.Components.t5) {
-                    org.telegram.ui.Components.t5 t5Var = (org.telegram.ui.Components.t5) drawable2;
-                    if (t5Var.o0) {
-                        String str6 = nbVar2.d;
-                        ThreadLocal threadLocal = zb.I;
-                        BitmapDrawable y9 = zbVar3.y(str6);
-                        if (y9 == null) {
-                            dbVar.l(nbVar2.d, t5Var);
-                            bitmapDrawable = t5Var;
+                    gcVar3.H(ubVar2.d);
+                    str = ubVar2.d;
+                } else if (drawable2 instanceof org.telegram.ui.Components.v5) {
+                    org.telegram.ui.Components.v5 v5Var = (org.telegram.ui.Components.v5) drawable2;
+                    if (v5Var.n0) {
+                        String str6 = ubVar2.d;
+                        ThreadLocal threadLocal = gc.I;
+                        BitmapDrawable y10 = gcVar3.y(str6);
+                        if (y10 == null) {
+                            kbVar.l(ubVar2.d, v5Var);
+                            bitmapDrawable = v5Var;
                         } else {
-                            t5Var.u();
-                            bitmapDrawable = y9;
+                            v5Var.u();
+                            bitmapDrawable = y10;
                         }
-                        zbVar3.H(nbVar2.d);
-                        str = nbVar2.d;
+                        gcVar3.H(ubVar2.d);
+                        str = ubVar2.d;
                         drawable = bitmapDrawable;
                     }
                     String str7 = str2;
@@ -387,27 +387,27 @@ public final /* synthetic */ class y4 implements Runnable {
                     str = str7;
                 } else if (drawable2 instanceof BitmapDrawable) {
                     BitmapDrawable bitmapDrawable2 = (BitmapDrawable) drawable2;
-                    BitmapDrawable z13 = zbVar3.z(nbVar2.d);
-                    if (z13 != null) {
+                    BitmapDrawable z12 = gcVar3.z(ubVar2.d);
+                    if (z12 != null) {
                         g0.z2(bitmapDrawable2.getBitmap());
-                        drawable2 = z13;
-                    } else if (nbVar2.d.endsWith("_f")) {
-                        zbVar3.d.l(nbVar2.d, bitmapDrawable2);
-                        z10 = false;
+                        drawable2 = z12;
+                    } else if (ubVar2.d.endsWith("_f")) {
+                        gcVar3.d.l(ubVar2.d, bitmapDrawable2);
+                        z9 = false;
                         drawable2 = bitmapDrawable2;
-                    } else if (nbVar2.d.endsWith("_isc") || nbVar2.d.endsWith("_nocache") || bitmapDrawable2.getBitmap().getWidth() > g0.p * 80.0f || bitmapDrawable2.getBitmap().getHeight() > g0.p * 80.0f) {
+                    } else if (ubVar2.d.endsWith("_isc") || ubVar2.d.endsWith("_nocache") || bitmapDrawable2.getBitmap().getWidth() > g0.p * 80.0f || bitmapDrawable2.getBitmap().getHeight() > g0.p * 80.0f) {
                         drawable2 = bitmapDrawable2;
-                        if (!nbVar2.d.endsWith("_nocache")) {
-                            zbVar3.c.l(nbVar2.d, bitmapDrawable2);
+                        if (!ubVar2.d.endsWith("_nocache")) {
+                            gcVar3.c.l(ubVar2.d, bitmapDrawable2);
                             drawable2 = bitmapDrawable2;
                         }
                     } else {
-                        zbVar3.b.l(nbVar2.d, bitmapDrawable2);
+                        gcVar3.b.l(ubVar2.d, bitmapDrawable2);
                         drawable2 = bitmapDrawable2;
                     }
-                    if (z10) {
-                        zbVar3.H(nbVar2.d);
-                        str2 = nbVar2.d;
+                    if (z9) {
+                        gcVar3.H(ubVar2.d);
+                        str2 = ubVar2.d;
                     }
                     String str72 = str2;
                     drawable = drawable2;
@@ -415,41 +415,41 @@ public final /* synthetic */ class y4 implements Runnable {
                 } else {
                     str = null;
                 }
-                zbVar3.s.e(new fg(obVar, drawable, str, 26), nbVar2.a);
+                gcVar3.s.d(new ng(vbVar, drawable, str, 26), ubVar2.a);
                 return;
             case 20:
-                ((yb) this.b).d.v.remove((String) this.c);
+                ((fc) this.b).d.v.remove((String) this.c);
                 return;
             case 21:
                 MediaController mediaController = (MediaController) this.b;
-                zi ziVar = (zi) this.c;
-                String[] strArr = MediaController.W1;
-                mediaController.R(ziVar, true);
+                ij ijVar = (ij) this.c;
+                String[] strArr = MediaController.V1;
+                mediaController.R(ijVar, true);
                 return;
             case 22:
                 MediaController mediaController2 = (MediaController) this.b;
                 File file = (File) this.c;
-                String[] strArr2 = MediaController.W1;
+                String[] strArr2 = MediaController.V1;
                 try {
-                    int i17 = mediaController2.l0 + 1;
-                    mediaController2.l0 = i17;
-                    m51 m51Var = mediaController2.k0;
-                    if (m51Var != null) {
-                        m51Var.m0();
+                    int i17 = mediaController2.k0 + 1;
+                    mediaController2.k0 = i17;
+                    n51 n51Var = mediaController2.j0;
+                    if (n51Var != null) {
+                        n51Var.m0();
                     }
-                    m51 m51Var2 = new m51(false, false);
-                    mediaController2.k0 = m51Var2;
-                    m51Var2.K = new e5.u(mediaController2, i17, 14);
-                    m51Var2.j0(Uri.fromFile(file), "other");
-                    mediaController2.k0.x0(3);
-                    mediaController2.k0.h0();
+                    n51 n51Var2 = new n51(false, false);
+                    mediaController2.j0 = n51Var2;
+                    n51Var2.J = new f5.u(mediaController2, i17, 10);
+                    n51Var2.j0(Uri.fromFile(file), "other");
+                    mediaController2.j0.x0(3);
+                    mediaController2.j0.h0();
                     return;
                 } catch (Exception e14) {
                     a8.g(e14, true);
-                    m51 m51Var3 = mediaController2.k0;
-                    if (m51Var3 != null) {
-                        m51Var3.m0();
-                        mediaController2.k0 = null;
+                    n51 n51Var3 = mediaController2.j0;
+                    if (n51Var3 != null) {
+                        n51Var3.m0();
+                        mediaController2.j0 = null;
                         return;
                     }
                     return;
@@ -457,28 +457,28 @@ public final /* synthetic */ class y4 implements Runnable {
             case 23:
                 c cVar = (c) this.b;
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) this.c;
-                String[] strArr3 = MediaController.W1;
+                String[] strArr3 = MediaController.V1;
                 w7.G(cVar.a).X(tL_document, null, 1, 1);
                 return;
             case 24:
-                ((MediaController) ((mi.b0) this.b).b).y1.add((ByteBuffer) this.c);
+                ((MediaController) ((m.f3) this.b).b).x1.add((ByteBuffer) this.c);
                 return;
             case 25:
-                kg.m1 m1Var = (kg.m1) this.b;
-                zi ziVar2 = (zi) this.c;
-                MediaController mediaController3 = (MediaController) m1Var.c;
-                m51 m51Var4 = mediaController3.j0;
-                if ((m51Var4 == null && mediaController3.F0 == null) || mediaController3.h0) {
+                jg.q1 q1Var = (jg.q1) this.b;
+                ij ijVar2 = (ij) this.c;
+                MediaController mediaController3 = (MediaController) q1Var.c;
+                n51 n51Var4 = mediaController3.i0;
+                if ((n51Var4 == null && mediaController3.E0 == null) || mediaController3.g0) {
                     return;
                 }
                 try {
-                    m51 m51Var5 = mediaController3.F0;
-                    if (m51Var5 != null) {
-                        U = m51Var5.U();
-                        S = ((MediaController) m1Var.c).F0.S();
+                    n51 n51Var5 = mediaController3.E0;
+                    if (n51Var5 != null) {
+                        U = n51Var5.U();
+                        S = ((MediaController) q1Var.c).E0.S();
                         if (S >= 0 && U > 0) {
                             float f11 = U;
-                            K = ((MediaController) m1Var.c).F0.K() / f11;
+                            K = ((MediaController) q1Var.c).E0.K() / f11;
                             f10 = S / f11;
                             if (f10 >= 1.0f) {
                                 return;
@@ -486,82 +486,82 @@ public final /* synthetic */ class y4 implements Runnable {
                         }
                         return;
                     }
-                    U = m51Var4.U();
-                    S = ((MediaController) m1Var.c).j0.S();
+                    U = n51Var4.U();
+                    S = ((MediaController) q1Var.c).i0.S();
                     f10 = U >= 0 ? S / U : 0.0f;
-                    K = ((MediaController) m1Var.c).j0.K() / U;
+                    K = ((MediaController) q1Var.c).i0.K() / U;
                     if (U == -9223372036854775807L) {
                         return;
                     }
                     if (S < 0) {
                         return;
                     }
-                    if (((MediaController) m1Var.c).u0 != 0.0f) {
+                    if (((MediaController) q1Var.c).t0 != 0.0f) {
                         return;
                     }
-                    MediaController mediaController4 = (MediaController) m1Var.c;
-                    ziVar2.h0 = (int) (U / 1000);
-                    ziVar2.b0 = f10;
-                    ziVar2.g0 = (int) (S / 1000);
-                    ziVar2.e0 = K;
-                    if (f10 >= 0.0f && mediaController4.o0 != null) {
+                    MediaController mediaController4 = (MediaController) q1Var.c;
+                    ijVar2.h0 = (int) (U / 1000);
+                    ijVar2.b0 = f10;
+                    ijVar2.g0 = (int) (S / 1000);
+                    ijVar2.e0 = K;
+                    if (f10 >= 0.0f && mediaController4.n0 != null) {
                         long elapsedRealtime = SystemClock.elapsedRealtime();
-                        MediaController mediaController5 = (MediaController) m1Var.c;
-                        if (elapsedRealtime - mediaController5.p0 >= 1000) {
-                            String str8 = mediaController5.o0;
-                            mediaController5.p0 = SystemClock.elapsedRealtime();
-                            Utilities.e.c(new oe(str8, i3, f10));
+                        MediaController mediaController5 = (MediaController) q1Var.c;
+                        if (elapsedRealtime - mediaController5.o0 >= 1000) {
+                            String str8 = mediaController5.n0;
+                            mediaController5.o0 = SystemClock.elapsedRealtime();
+                            Utilities.e.c(new ve(str8, i7, f10));
                         }
                     }
-                    hs.f(ziVar2.I1).k(hs.e2, Integer.valueOf(ziVar2.f1()), Float.valueOf(f10));
+                    qs.f(ijVar2.I1).k(qs.e2, Integer.valueOf(ijVar2.f1()), Float.valueOf(f10));
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
                     return;
                 }
             case 26:
-                ve veVar = (ve) this.b;
-                zi ziVar3 = (zi) this.c;
-                TLRPC.Document F0 = ziVar3.F0();
-                TLRPC.Document document = ziVar3.d3;
+                cf cfVar = (cf) this.b;
+                ij ijVar3 = (ij) this.c;
+                TLRPC.Document F0 = ijVar3.F0();
+                TLRPC.Document document = ijVar3.d3;
                 if (document != null) {
                     F0 = document;
                 }
                 if (F0 == null) {
                     return;
                 }
-                veVar.d.put(w7.r(null, F0), ziVar3);
-                w7.G(veVar.a.a).X(F0, ziVar3, 3, zi.S5(ziVar3.k) ? 2 : 0);
+                cfVar.d.put(w7.r(null, F0), ijVar3);
+                w7.G(cfVar.a.a).X(F0, ijVar3, 3, ij.S5(ijVar3.k) ? 2 : 0);
                 return;
             case 27:
                 a();
                 return;
             case 28:
                 boolean[] zArr = (boolean[]) this.b;
-                dh dhVar = (dh) this.c;
+                mh mhVar = (mh) this.c;
                 if (zArr[0]) {
                     return;
                 }
-                dhVar.run();
+                mhVar.run();
                 zArr[0] = true;
                 return;
             default:
-                li liVar = (li) this.b;
+                ui uiVar = (ui) this.b;
                 TLRPC.StickerSet stickerSet2 = (TLRPC.StickerSet) this.c;
                 try {
-                    SQLiteCursor queryFinalized = liVar.getMessagesStorage().b.queryFinalized("SELECT document FROM web_recent_v3 WHERE id = 's_" + stickerSet2.id + "'", new Object[0]);
+                    SQLiteCursor queryFinalized = uiVar.getMessagesStorage().b.queryFinalized("SELECT document FROM web_recent_v3 WHERE id = 's_" + stickerSet2.id + "'", new Object[0]);
                     if (queryFinalized.next() && !queryFinalized.isNull(0) && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
                         tL_messages_stickerSet = TLRPC.messages_StickerSet.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                         byteBufferValue.reuse();
                     }
                     queryFinalized.dispose();
                     if (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.hash != stickerSet2.hash) {
-                        liVar.L0(stickerSet2, false);
+                        uiVar.L0(stickerSet2, false);
                     }
                     if (tL_messages_stickerSet == null || tL_messages_stickerSet.set == null) {
                         return;
                     }
-                    g0.h3(new uf(liVar, tL_messages_stickerSet, z10 ? 1 : 0));
+                    g0.h3(new cg(uiVar, tL_messages_stickerSet, z9 ? 1 : 0));
                     return;
                 } catch (Throwable th4) {
                     a8.g(th4, true);

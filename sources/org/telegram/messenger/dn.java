@@ -1,52 +1,35 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class dn implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ c1 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class dn implements sr {
+    public final /* synthetic */ qp a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ TLRPC.InputPeer e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ dn(hp hpVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.d2 d2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
-        this.d = hpVar;
-        this.e = tL_error;
-        this.f = d2Var;
-        this.h = tL_channels_editAdmin;
-        this.b = z10;
-        this.c = z11;
+    public /* synthetic */ dn(qp qpVar, long j3, int i7, boolean z9, TLRPC.InputPeer inputPeer, long j10) {
+        this.a = qpVar;
+        this.b = j3;
+        this.c = i7;
+        this.d = z9;
+        this.e = inputPeer;
+        this.f = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        Object obj = this.h;
-        Object obj2 = this.f;
-        Object obj3 = this.e;
-        c1 c1Var = this.d;
-        switch (i3) {
-            case 0:
-                org.telegram.ui.Components.t4.e0(((hp) c1Var).currentAccount, (TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.d2) obj2, (TLRPC.TL_channels_editAdmin) obj, Boolean.valueOf(this.b), Boolean.valueOf(this.c));
-                break;
-            default:
-                us.e((us) c1Var, (ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
-                break;
+    @Override // org.telegram.messenger.sr
+    public final void a(int i7) {
+        qp qpVar = this.a;
+        long e10 = qpVar.getUserConfig().e();
+        long j3 = this.b;
+        if (j3 == e10) {
+            qpVar.G1().b();
         }
-    }
-
-    public /* synthetic */ dn(us usVar, ArrayList arrayList, ArrayList arrayList2, boolean z10, boolean z11, CountDownLatch countDownLatch) {
-        this.d = usVar;
-        this.e = arrayList;
-        this.f = arrayList2;
-        this.b = z10;
-        this.c = z11;
-        this.h = countDownLatch;
+        qpVar.Y(j3, 2, this.c, Math.max(0, i7), this.d, this.e, this.f);
+        qpVar.J(1);
     }
 }

@@ -14,7 +14,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class o extends AbstractCollection implements Serializable, Collection {
     public static final Object[] a = new Object[0];
@@ -34,12 +34,12 @@ public abstract class o extends AbstractCollection implements Serializable, Coll
         throw new UnsupportedOperationException();
     }
 
+    public abstract int f(Object[] objArr);
+
     @Override // java.lang.Iterable, j$.util.Collection
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$-CC.$default$forEach(this, consumer);
     }
-
-    public abstract int h(Object[] objArr);
 
     public int i() {
         throw new UnsupportedOperationException();
@@ -137,7 +137,7 @@ public abstract class o extends AbstractCollection implements Serializable, Coll
         } else if (length > size) {
             objArr[size] = null;
         }
-        h(objArr);
+        f(objArr);
         return objArr;
     }
 }

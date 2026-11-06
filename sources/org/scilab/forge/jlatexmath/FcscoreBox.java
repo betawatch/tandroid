@@ -6,7 +6,7 @@ import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 import ru.noties.jlatexmath.awt.geom.Line2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class FcscoreBox extends Box {
     private int N;
@@ -14,17 +14,17 @@ public class FcscoreBox extends Box {
     private boolean strike;
     private float thickness;
 
-    public FcscoreBox(int i3, float f10, float f11, float f12, boolean z10) {
-        if (i3 < 0) {
-            i3 = 0;
-        } else if (i3 > 4096) {
-            i3 = 4096;
+    public FcscoreBox(int i7, float f10, float f11, float f12, boolean z9) {
+        if (i7 < 0) {
+            i7 = 0;
+        } else if (i7 > 4096) {
+            i7 = 4096;
         }
-        this.N = i3;
-        this.width = (2.0f * f12) + ((f11 + f12) * i3);
+        this.N = i7;
+        this.width = (2.0f * f12) + ((f11 + f12) * i7);
         this.height = f10;
         this.depth = 0.0f;
-        this.strike = z10;
+        this.strike = z9;
         this.space = f12;
         this.thickness = f11;
     }
@@ -42,7 +42,7 @@ public class FcscoreBox extends Box {
         } else {
             scaleX = 1.0d;
         }
-        int i3 = 0;
+        int i7 = 0;
         graphics2D.setStroke(new BasicStroke((float) (this.thickness * scaleX), 0, 0));
         float f12 = 2.0f;
         float f13 = this.thickness / 2.0f;
@@ -50,26 +50,26 @@ public class FcscoreBox extends Box {
         float f14 = this.space;
         float f15 = (float) (((f14 / 2.0f) * scaleX) + ((f10 + f14) * scaleX));
         int round = (int) Math.round((f14 + this.thickness) * scaleX);
-        while (i3 < this.N) {
+        while (i7 < this.N) {
             float f16 = f12;
             double d = (f13 * scaleX) + f15;
-            double d10 = scaleX;
+            double d2 = scaleX;
             int i10 = round;
-            r10.setLine(d, (f11 - this.height) * scaleX, d, f11 * d10);
+            r10.setLine(d, (f11 - this.height) * scaleX, d, f11 * d2);
             graphics2D.draw(r10);
             f15 += i10;
-            i3++;
+            i7++;
             round = i10;
             f12 = f16;
-            scaleX = d10;
+            scaleX = d2;
         }
-        double d11 = scaleX;
+        double d10 = scaleX;
         float f17 = f12;
         float f18 = f15;
         if (this.strike) {
             float f19 = this.space;
             float f20 = this.height;
-            r10.setLine((f10 + f19) * d11, (f11 - (f20 / f17)) * d11, f18 - ((f19 * d11) / 2.0d), (f11 - (f20 / f17)) * d11);
+            r10.setLine((f10 + f19) * d10, (f11 - (f20 / f17)) * d10, f18 - ((f19 * d10) / 2.0d), (f11 - (f20 / f17)) * d10);
             graphics2D.draw(r10);
         }
         graphics2D.setTransform(transform);

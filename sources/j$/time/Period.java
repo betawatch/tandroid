@@ -21,8 +21,8 @@ public final class Period implements Serializable {
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)Y)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)W)?(?:([-+]?[0-9]+)D)?", 2);
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i3 = 0; i3 < 3; i3++) {
-            arrayList.add(Objects.requireNonNull(objArr[i3]));
+        for (int i7 = 0; i7 < 3; i7++) {
+            arrayList.add(Objects.requireNonNull(objArr[i7]));
         }
         Collections.unmodifiableList(arrayList);
     }
@@ -31,25 +31,25 @@ public final class Period implements Serializable {
         localDate.getClass();
         LocalDate I = LocalDate.I(localDate2);
         long M = I.M() - localDate.M();
-        int i3 = I.c - localDate.c;
-        if (M > 0 && i3 < 0) {
+        int i7 = I.c - localDate.c;
+        if (M > 0 && i7 < 0) {
             M--;
-            i3 = (int) (I.z() - localDate.T(M).z());
-        } else if (M < 0 && i3 > 0) {
+            i7 = (int) (I.z() - localDate.T(M).z());
+        } else if (M < 0 && i7 > 0) {
             M++;
-            i3 -= I.P();
+            i7 -= I.P();
         }
-        long j10 = M / 12;
+        long j3 = M / 12;
         int i10 = (int) (M % 12);
-        int i11 = (int) j10;
-        if (j10 == i11) {
-            return ((i11 | i10) | i3) == 0 ? d : new Period(i11, i10, i3);
+        int i11 = (int) j3;
+        if (j3 == i11) {
+            return ((i11 | i10) | i7) == 0 ? d : new Period(i11, i10, i7);
         }
         throw new ArithmeticException();
     }
 
-    public Period(int i3, int i10, int i11) {
-        this.a = i3;
+    public Period(int i7, int i10, int i11) {
+        this.a = i7;
         this.b = i10;
         this.c = i11;
     }
@@ -80,9 +80,9 @@ public final class Period implements Serializable {
             return "P0D";
         }
         StringBuilder sb2 = new StringBuilder("P");
-        int i3 = this.a;
-        if (i3 != 0) {
-            sb2.append(i3);
+        int i7 = this.a;
+        if (i7 != 0) {
+            sb2.append(i7);
             sb2.append('Y');
         }
         int i10 = this.b;

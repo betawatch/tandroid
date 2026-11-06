@@ -1,44 +1,88 @@
 package mi;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import android.view.ViewPropertyAnimator;
+import java.util.ArrayList;
+import org.telegram.ui.Cells.q1;
+import v4.d1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
+public final class i extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ v4.i b;
+    public final /* synthetic */ ViewPropertyAnimator c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ l e;
 
-    public /* synthetic */ i(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public /* synthetic */ i(l lVar, v4.i iVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i7) {
+        this.a = i7;
+        this.e = lVar;
+        this.b = iVar;
+        this.c = viewPropertyAnimator;
+        this.d = view;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ((p) this.b).e0();
-                break;
-            case 1:
-                ((c2) this.b).B0();
-                break;
-            case 2:
-                t3 t3Var = (t3) this.b;
-                t3Var.i3 = (view2 == null || t3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof h1) {
-                    t3Var.T3 = (h1) view2;
+                this.c.setListener(null);
+                View view = this.d;
+                view.setAlpha(1.0f);
+                view.setScaleX(1.0f);
+                view.setScaleX(1.0f);
+                if (view instanceof q1) {
+                    ((q1) view).setAnimationOffsetX(0.0f);
+                } else {
+                    view.setTranslationX(0.0f);
+                }
+                view.setTranslationY(0.0f);
+                l lVar = this.e;
+                ArrayList arrayList = lVar.B;
+                v4.i iVar = this.b;
+                if (arrayList.remove(iVar.a)) {
+                    lVar.d(iVar.a);
+                    lVar.G();
                     break;
                 }
                 break;
             default:
-                n5 n5Var = (n5) this.b;
-                n5Var.z();
-                p5 p5Var = n5Var.w;
-                if (p5Var != null) {
-                    p5Var.invalidate();
+                this.c.setListener(null);
+                View view2 = this.d;
+                view2.setAlpha(1.0f);
+                view2.setScaleX(1.0f);
+                view2.setScaleX(1.0f);
+                if (view2 instanceof q1) {
+                    ((q1) view2).setAnimationOffsetX(0.0f);
+                } else {
+                    view2.setTranslationX(0.0f);
+                }
+                view2.setTranslationY(0.0f);
+                l lVar2 = this.e;
+                ArrayList arrayList2 = lVar2.B;
+                v4.i iVar2 = this.b;
+                if (arrayList2.remove(iVar2.b)) {
+                    lVar2.d(iVar2.b);
+                    lVar2.G();
                     break;
                 }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                d1 d1Var = this.b.a;
+                this.e.getClass();
+                break;
+            default:
+                d1 d1Var2 = this.b.b;
+                this.e.getClass();
                 break;
         }
     }

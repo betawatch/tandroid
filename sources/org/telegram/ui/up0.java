@@ -1,99 +1,103 @@
 package org.telegram.ui;
 
-import android.media.MediaExtractor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class up0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+public final class up0 extends hq0 {
+    public final /* synthetic */ int p0;
+    public final /* synthetic */ org.telegram.messenger.ls q0;
 
-    public up0(PhotoViewer photoViewer, String str, long j10, int i3) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j10;
-        this.c = i3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ up0(org.telegram.messenger.ls lsVar, Context context, kq0 kq0Var, FrameLayout frameLayout, int i7) {
+        super(context, kq0Var, frameLayout);
+        this.p0 = i7;
+        this.q0 = lsVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.y8 != this) {
-            return;
+    @Override // org.telegram.ui.hq0
+    public boolean D() {
+        switch (this.p0) {
+            case 0:
+                return !((PhotoViewer) this.q0).s;
+            default:
+                return super.D();
         }
-        int E = MediaController.E(this.a);
-        int[] iArr = new int[11];
-        AnimatedFileNative.d(this.a, iArr, this.b);
-        boolean z10 = false;
-        this.d.l8 = (iArr[0] == 0 || ((iArr[10] != 0) && iArr[9] == 0)) ? false : true;
-        PhotoViewer photoViewer = this.d;
-        if (E == -1) {
-            E = iArr[3];
-        }
-        photoViewer.h8 = E;
-        photoViewer.i8 = E;
-        if (this.d.l8) {
-            PhotoViewer photoViewer2 = this.d;
-            int i3 = iArr[1];
-            photoViewer2.d8 = i3;
-            photoViewer2.f8 = i3;
-            PhotoViewer photoViewer3 = this.d;
-            int i10 = iArr[2];
-            photoViewer3.e8 = i10;
-            photoViewer3.g8 = i10;
-            PhotoViewer photoViewer4 = this.d;
-            int max = Math.max(photoViewer4.d8, this.d.e8);
-            if (max > 1280) {
-                photoViewer4.a8 = 4;
-            } else if (max > 854) {
-                photoViewer4.a8 = 3;
-            } else if (max > 640) {
-                photoViewer4.a8 = 2;
-            } else {
-                photoViewer4.a8 = 1;
-            }
-            PhotoViewer photoViewer5 = this.d;
-            int i11 = this.c;
-            if (i11 == -1) {
-                i11 = photoViewer5.y2();
-            }
-            photoViewer5.Z7 = i11;
-            PhotoViewer photoViewer6 = this.d;
-            if (photoViewer6.h8 != 0 && photoViewer6.d2 != 1) {
-                Size q02 = photoViewer6.q0();
-                if (q02.getWidth() == photoViewer6.d8 && q02.getHeight() == photoViewer6.e8) {
-                    MediaController.v(q02.getWidth(), q02.getHeight(), photoViewer6.i8, false);
-                } else {
-                    MediaController.v(q02.getWidth(), q02.getHeight(), MediaController.Q(photoViewer6.e8, photoViewer6.d8, photoViewer6.i8, q02.getHeight(), q02.getWidth()), false);
+    }
+
+    @Override // org.telegram.ui.hq0
+    public void E() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.J && getScrollY() <= 0) {
+                    org.telegram.messenger.g0.i3(secretMediaViewer.p1, 3000L);
+                    break;
                 }
-            }
-            PhotoViewer photoViewer7 = this.d;
-            String str = this.a;
-            MediaExtractor mediaExtractor = new MediaExtractor();
-            try {
-                try {
-                    mediaExtractor.setDataSource(str);
-                    int w10 = MediaController.w(mediaExtractor, false);
-                    if (w10 >= 0) {
-                        if (mediaExtractor.getTrackFormat(w10).getString("mime").equals("video/avc")) {
-                            z10 = true;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.hq0
+    public void F() {
+        switch (this.p0) {
+            case 1:
+                org.telegram.messenger.g0.r(((SecretMediaViewer) this.q0).p1);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.hq0
+    public void G() {
+        switch (this.p0) {
+            case 1:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
+                if (secretMediaViewer.I0 == null) {
+                    secretMediaViewer.l(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.i0, true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.p0) {
+            case 0:
+                super.invalidate();
+                PhotoViewer photoViewer = (PhotoViewer) this.q0;
+                uo0[] uo0VarArr = photoViewer.W0;
+                ImageView[] imageViewArr = photoViewer.x3;
+                if (photoViewer.J) {
+                    int scrollY = getScrollY();
+                    float translationY = photoViewer.Q1.getTranslationY();
+                    boolean z9 = scrollY == 0 && translationY == 0.0f;
+                    boolean z10 = scrollY == 0 && translationY == 0.0f;
+                    if (!z9) {
+                        int b10 = uo0VarArr[0].b() + uo0VarArr[0].j;
+                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (D() ? org.telegram.messenger.g0.m : 0))) - org.telegram.messenger.g0.L(12.0f);
+                        boolean z11 = top > org.telegram.messenger.g0.L(32.0f) + ((int) imageViewArr[0].getY());
+                        z9 = top > b10;
+                        z10 = z11;
+                    }
+                    if (photoViewer.y3) {
+                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z10) {
+                            imageViewArr[0].setTag(2);
+                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new d30(this, 13)).start();
+                        } else if (imageViewArr[0].getTag() == null && !z10) {
+                            imageViewArr[0].setTag(3);
+                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
                         }
                     }
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
+                    uo0VarArr[0].e(2, z9 ? 1.0f : 0.0f, true);
+                    break;
                 }
-                photoViewer7.m8 = z10;
-            } finally {
-                mediaExtractor.release();
-            }
+                break;
+            default:
+                super.invalidate();
+                break;
         }
-        if (this.d.y8 != this) {
-            return;
-        }
-        org.telegram.messenger.g0.h3(new hc0(this, this, iArr, 23));
     }
 }

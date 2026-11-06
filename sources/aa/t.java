@@ -1,0 +1,76 @@
+package aa;
+
+import android.util.Log;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.concurrent.Callable;
+import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class t implements Callable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ t(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        switch (this.a) {
+            case 0:
+                q qVar = ((u) this.b).f;
+                qVar.getClass();
+                ba.e.a();
+                wf.b bVar = qVar.c;
+                ga.d dVar = (ga.d) bVar.c;
+                String str = (String) bVar.b;
+                dVar.getClass();
+                boolean z9 = true;
+                if (new File((File) dVar.d, str).exists()) {
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", "Found previous crash marker.", null);
+                    }
+                    ga.d dVar2 = (ga.d) bVar.c;
+                    dVar2.getClass();
+                    new File((File) dVar2.d, str).delete();
+                } else {
+                    String g10 = qVar.g();
+                    if (g10 == null || !qVar.j.c(g10)) {
+                        z9 = false;
+                    }
+                }
+                return Boolean.valueOf(z9);
+            case 1:
+                return new e5.f((JsReplyProxyBoundaryInterface) this.b);
+            default:
+                ia.c cVar = (ia.c) ((q4.q) this.b).c;
+                g9.l lVar = (g9.l) cVar.f;
+                ia.e eVar = (ia.e) cVar.b;
+                String str2 = lVar.a;
+                ba.e.b();
+                try {
+                    HashMap c10 = g9.l.c(eVar);
+                    android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(str2, c10);
+                    a0Var.l("User-Agent", "Crashlytics Android SDK/20.1.1");
+                    a0Var.l("X-CRASHLYTICS-DEVELOPER-TOKEN", "470fa2b4ae81cd56ecbcda9735803434cec591fa");
+                    g9.l.b(a0Var, eVar);
+                    String str3 = "Requesting settings from " + str2;
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", str3, null);
+                    }
+                    String str4 = "Settings query params were: " + c10;
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", str4, null);
+                    }
+                    return lVar.d(a0Var.h());
+                } catch (IOException e10) {
+                    Log.e("FirebaseCrashlytics", "Settings request failed.", e10);
+                    return null;
+                }
+        }
+    }
+}

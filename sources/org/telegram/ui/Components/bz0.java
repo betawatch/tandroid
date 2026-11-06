@@ -5,7 +5,7 @@ import android.graphics.Matrix;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class bz0 {
     public final View a;
@@ -26,12 +26,12 @@ public final class bz0 {
         this.f = null;
     }
 
-    public bz0(ArrayList arrayList, lg.y yVar) {
+    public bz0(ArrayList arrayList, l2.z0 z0Var) {
         this.g = 1.0f;
         this.a = null;
         this.b = arrayList;
         this.c = null;
-        this.d = yVar;
+        this.d = z0Var;
         this.e = null;
         this.f = null;
     }

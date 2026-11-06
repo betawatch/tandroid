@@ -28,8 +28,8 @@ import java.util.function.Supplier;
 public final /* synthetic */ class a implements IntFunction, Supplier, BiConsumer, BinaryOperator, Function, DoubleBinaryOperator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ a(int i3) {
-        this.a = i3;
+    public /* synthetic */ a(int i7) {
+        this.a = i7;
     }
 
     public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
@@ -80,8 +80,8 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
     }
 
     @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d10) {
-        return Math.min(d, d10);
+    public double applyAsDouble(double d, double d2) {
+        return Math.min(d, d2);
     }
 
     public /* synthetic */ Function compose(Function function) {
@@ -237,7 +237,7 @@ public final /* synthetic */ class a implements IntFunction, Supplier, BiConsume
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i3) {
-        return new Object[i3];
+    public Object apply(int i7) {
+        return new Object[i7];
     }
 }

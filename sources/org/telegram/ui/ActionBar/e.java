@@ -5,14 +5,14 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ k b;
 
-    public /* synthetic */ e(k kVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ e(k kVar, int i7) {
+        this.a = i7;
         this.b = kVar;
     }
 
@@ -21,9 +21,9 @@ public final class e extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 k kVar = this.b;
-                AnimatorSet animatorSet = kVar.Q;
+                AnimatorSet animatorSet = kVar.P;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    kVar.Q = null;
+                    kVar.P = null;
                     break;
                 }
                 break;
@@ -38,10 +38,10 @@ public final class e extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 k kVar = this.b;
-                AnimatorSet animatorSet = kVar.Q;
+                AnimatorSet animatorSet = kVar.P;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    kVar.Q = null;
-                    kVar.G.setVisibility(4);
+                    kVar.P = null;
+                    kVar.F.setVisibility(4);
                     break;
                 }
                 break;
@@ -51,11 +51,11 @@ public final class e extends AnimatorListenerAdapter {
                 if (k5Var != null && k5Var.getParent() != null) {
                     ((ViewGroup) kVar2.n[1].getParent()).removeView(kVar2.n[1]);
                 }
-                kVar2.P0.z(kVar2.n[1]);
+                kVar2.O0.x(kVar2.n[1]);
                 kVar2.n[1] = null;
-                kVar2.j1 = false;
-                Object[] objArr = kVar2.h0;
-                kVar2.L((String) objArr[0], ((Integer) objArr[1]).intValue(), (Runnable) kVar2.h0[2]);
+                kVar2.i1 = false;
+                Object[] objArr = kVar2.g0;
+                kVar2.L((String) objArr[0], ((Integer) objArr[1]).intValue(), (Runnable) kVar2.g0[2]);
                 break;
         }
     }

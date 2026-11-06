@@ -1,31 +1,31 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class MediaSource {
     private long nativeSource;
     private final RefCountDelegate refCountDelegate;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public enum State {
         INITIALIZING,
         LIVE,
         ENDED,
         MUTED;
 
-        public static State fromNativeIndex(int i3) {
-            return values()[i3];
+        public static State fromNativeIndex(int i7) {
+            return values()[i7];
         }
     }
 
-    public MediaSource(final long j10) {
+    public MediaSource(final long j3) {
         this.refCountDelegate = new RefCountDelegate(new Runnable() { // from class: org.webrtc.k
             @Override // java.lang.Runnable
             public final void run() {
-                JniCommon.nativeReleaseRef(j10);
+                JniCommon.nativeReleaseRef(j3);
             }
         });
-        this.nativeSource = j10;
+        this.nativeSource = j3;
     }
 
     private void checkMediaSourceExists() {
@@ -34,7 +34,7 @@ public class MediaSource {
         }
     }
 
-    private static native State nativeGetState(long j10);
+    private static native State nativeGetState(long j3);
 
     public void dispose() {
         checkMediaSourceExists();

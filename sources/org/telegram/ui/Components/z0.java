@@ -1,26 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements View.OnClickListener {
+public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.c2 b;
+    public final /* synthetic */ u4 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 d;
 
-    public /* synthetic */ z0(org.telegram.ui.Cells.c2 c2Var, int i3) {
-        this.a = i3;
-        this.b = c2Var;
+    public /* synthetic */ z0(u4 u4Var, org.telegram.ui.ActionBar.u1 u1Var, org.telegram.ui.ActionBar.f2 f2Var, int i7) {
+        this.a = i7;
+        this.b = u4Var;
+        this.c = u1Var;
+        this.d = f2Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.c(!r3.b(), true);
+                org.telegram.messenger.g0.h3(new z0(this.b, this.c, this.d, 1));
                 break;
             default:
-                this.b.c(!r3.b(), true);
+                v4.b0(this.b, this.c, this.d);
                 break;
         }
     }

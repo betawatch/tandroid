@@ -1,49 +1,120 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class et extends ey {
-    public int W2;
-    public boolean X2;
-    public boolean Y2;
-    public final /* synthetic */ jt Z2;
+public final class et extends ys {
+    public Drawable Y1;
+    public final /* synthetic */ int Z1;
+    public final /* synthetic */ kt a2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public et(jt jtVar, org.telegram.ui.ActionBar.d2 d2Var, boolean z10, Context context, boolean z11, boolean z12, org.telegram.ui.ActionBar.e6 e6Var, boolean z13) {
-        super(d2Var, z10, false, false, context, z11, null, null, z12, e6Var, false, z13);
-        this.Z2 = jtVar;
+    public et(kt ktVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
+        super(context, f6Var);
+        this.a2 = ktVar;
+        this.Z1 = i7;
+        this.Y1 = null;
     }
 
-    @Override // org.telegram.ui.Components.ey, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        jt jtVar = this.Z2;
-        int i3 = jtVar.M;
-        if (i3 == 2 || i3 == 3) {
-            jtVar.g(canvas, this);
+    @Override // org.telegram.ui.Components.ys
+    public final void F(int i7, int i10) {
+        this.a2.q(i7, i10);
+    }
+
+    @Override // org.telegram.ui.Components.ct
+    public final int e() {
+        return this.a2.h();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i7 = this.Z1;
+        if (i7 == 2 || i7 == 3) {
+            return 2;
         }
-        super.dispatchDraw(canvas);
+        return super.getActionModeStyle();
     }
 
-    @Override // org.telegram.ui.Components.ey, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        int i13;
-        super.onLayout(z10, i3, i10, i11, i12);
-        jt jtVar = this.Z2;
-        if (jtVar.b()) {
-            int i14 = i12 - i10;
-            if (!this.X2 && jtVar.y) {
-                this.Y2 = true;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void o(ActionMode actionMode, Menu menu) {
+        kt ktVar = this.a2;
+        if (ktVar.a()) {
+            org.telegram.ui.an.A8(menu, null, ktVar.L == 3, true, true, true);
+        } else {
+            ktVar.i(actionMode, menu);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    public final void onSelectionChanged(int i7, int i10) {
+        super.onSelectionChanged(i7, i10);
+        kt ktVar = this.a2;
+        xj0 xj0Var = ktVar.c;
+        if (xj0Var != null) {
+            boolean z9 = false;
+            boolean z10 = i10 != i7;
+            if (ktVar.a() && z10) {
+                org.telegram.messenger.as.i();
+                z9 = true;
             }
-            if (this.Y2 && (i13 = this.W2) > 0 && i14 > 0 && i14 != i13) {
-                setTranslationY(i14 - i13);
-                org.telegram.messenger.camera.q.l(animate().translationY(0.0f), org.telegram.ui.ActionBar.h1.w, 250L);
-                this.Y2 = false;
+            if (ktVar.n != z9) {
+                ktVar.n = z9;
+                if (z9) {
+                    this.Y1 = xj0Var.d;
+                    xj0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    xj0Var.b(this.Y1, true);
+                    this.Y1 = null;
+                }
             }
-            this.X2 = jtVar.y;
-            this.W2 = i14;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ft ftVar;
+        kt ktVar = this.a2;
+        if (ktVar.e && motionEvent.getAction() == 0) {
+            ktVar.u();
+            if (!ktVar.y || (ftVar = ktVar.d) == null) {
+                ktVar.x(org.telegram.messenger.g0.D ? 0 : 2);
+            } else {
+                ftVar.t(false);
+                ktVar.y = false;
+                ktVar.k(true);
+                org.telegram.messenger.g0.K3(this);
+            }
+            ktVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!org.telegram.messenger.g0.K3(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            return false;
+        }
+    }
+
+    @Override // android.view.View
+    public final void scrollTo(int i7, int i10) {
+        if (this.a2.t(i10)) {
+            super.scrollTo(i7, i10);
         }
     }
 }

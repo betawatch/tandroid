@@ -1,28 +1,11 @@
 package org.telegram.messenger;
 
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ca {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.c0 b;
+public final class ca implements ua {
+    public final k8.a a;
 
-    public /* synthetic */ ca(ai.c0 c0Var, int i3) {
-        this.a = i3;
-        this.b = c0Var;
-    }
-
-    public final Boolean a(Object obj) {
-        Boolean valueOf;
-        Boolean valueOf2;
-        switch (this.a) {
-            case 0:
-                valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.dispatchTouchEvent((MotionEvent) obj));
-                return valueOf;
-            default:
-                valueOf2 = Boolean.valueOf(super/*android.widget.FrameLayout*/.onInterceptTouchEvent((MotionEvent) obj));
-                return valueOf2;
-        }
+    public ca(k8.a aVar) {
+        this.a = aVar;
     }
 }

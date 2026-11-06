@@ -1,47 +1,141 @@
 package k6;
 
-import a9.j0;
-import android.content.Context;
-import android.content.pm.PackageManager;
+import a8.p0;
+import android.text.TextUtils;
 import android.util.Log;
-import com.google.android.gms.common.api.d;
-import com.google.android.gms.common.api.e;
-import com.google.android.gms.internal.clearcut.a2;
-import com.google.android.gms.internal.clearcut.o1;
+import j6.b;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final e j = new e("ClearcutLogger.API", new a6.b(6), new d());
-    public final Context a;
-    public final String b;
-    public final int c;
-    public final String d;
-    public final int e;
-    public final o1 f;
-    public final j0 g;
-    public final w6.a h;
-    public final a2 i;
+public abstract class a {
+    public static final b a = new b("MetadataUtils", null);
+    public static final String[] b;
+    public static final String c;
 
-    public a(Context context) {
-        j0 j0Var = new j0(context, j, null, new mb.b(5));
-        a2 a2Var = new a2(context);
-        this.e = -1;
-        o1 o1Var = o1.b;
-        this.f = o1Var;
-        this.a = context;
-        this.b = context.getPackageName();
-        int i3 = 0;
-        try {
-            i3 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e10) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e10);
+    static {
+        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
+        b = strArr;
+        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fa  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Calendar a(String str) {
+        String substring;
+        String substring2;
+        String str2;
+        boolean isEmpty = TextUtils.isEmpty(str);
+        b bVar = a;
+        if (isEmpty) {
+            bVar.b("Input string is empty or null", new Object[0]);
+            return null;
         }
-        this.c = i3;
-        this.e = -1;
-        this.d = "VISION";
-        this.g = j0Var;
-        this.h = w6.a.a;
-        this.f = o1Var;
-        this.i = a2Var;
+        if (TextUtils.isEmpty(str)) {
+            bVar.b("Input string is empty or null", new Object[0]);
+        } else {
+            try {
+                substring = str.substring(0, 8);
+            } catch (IndexOutOfBoundsException e10) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e10);
+            }
+            if (!TextUtils.isEmpty(substring)) {
+                bVar.b("Invalid date format", new Object[0]);
+                return null;
+            }
+            try {
+                if (TextUtils.isEmpty(str)) {
+                    bVar.b("string is empty or null", new Object[0]);
+                } else {
+                    int indexOf = str.indexOf(84);
+                    int i7 = indexOf + 1;
+                    if (indexOf == 8) {
+                        try {
+                            substring2 = str.substring(i7);
+                            if (substring2.length() != 6) {
+                                char charAt = substring2.charAt(6);
+                                String[] strArr = b;
+                                if (charAt == '+' || charAt == '-') {
+                                    int length = substring2.length();
+                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
+                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
+                                    }
+                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
+                                    substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
+                                }
+                            }
+                        } catch (IndexOutOfBoundsException e11) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e11);
+                        }
+                        if (TextUtils.isEmpty(substring2)) {
+                            substring = p0.D(substring, "T", substring2);
+                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
+                        } else {
+                            str2 = "yyyyMMdd";
+                        }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                        return calendar;
+                    }
+                    bVar.b("T delimeter is not found", new Object[0]);
+                }
+                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                return calendar;
+            } catch (ParseException e12) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e12);
+                return null;
+            }
+            substring2 = null;
+            if (TextUtils.isEmpty(substring2)) {
+            }
+            Calendar calendar2 = Calendar.getInstance();
+        }
+        substring = null;
+        if (!TextUtils.isEmpty(substring)) {
+        }
+    }
+
+    public static JSONArray b(List list) {
+        list.getClass();
+        JSONArray jSONArray = new JSONArray();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            p6.a aVar = (p6.a) it.next();
+            aVar.getClass();
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("url", aVar.b.toString());
+                jSONObject.put("width", aVar.c);
+                jSONObject.put("height", aVar.d);
+            } catch (JSONException unused) {
+            }
+            jSONArray.put(jSONObject);
+        }
+        return jSONArray;
+    }
+
+    public static void c(List list, JSONArray jSONArray) {
+        try {
+            list.clear();
+            for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+                try {
+                    list.add(new p6.a(jSONArray.getJSONObject(i7)));
+                } catch (IllegalArgumentException unused) {
+                }
+            }
+        } catch (JSONException unused2) {
+        }
     }
 }

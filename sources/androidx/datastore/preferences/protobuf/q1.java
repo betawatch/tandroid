@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class q1 {
     public static final o1 a;
@@ -11,7 +11,7 @@ public abstract class q1 {
 
     public static int a(String str) {
         int length = str.length();
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         while (i10 < length && str.charAt(i10) < 128) {
             i10++;
@@ -30,9 +30,9 @@ public abstract class q1 {
                 while (i10 < length2) {
                     char charAt2 = str.charAt(i10);
                     if (charAt2 < 2048) {
-                        i3 += (127 - charAt2) >>> 31;
+                        i7 += (127 - charAt2) >>> 31;
                     } else {
-                        i3 += 2;
+                        i7 += 2;
                         if (55296 <= charAt2 && charAt2 <= 57343) {
                             if (Character.codePointAt(str, i10) < 65536) {
                                 throw new p1(i10, length2);
@@ -42,7 +42,7 @@ public abstract class q1 {
                     }
                     i10++;
                 }
-                i11 += i3;
+                i11 += i7;
             }
         }
         if (i11 >= length) {

@@ -1,12 +1,27 @@
 package o0;
 
-import android.database.Cursor;
-import android.net.Uri;
+import j$.util.Objects;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface b {
-    Cursor T0(Uri uri, String[] strArr, String[] strArr2);
+public final class b {
+    public String a;
+    public String b;
+    public List c;
 
-    void close();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        return Objects.equals(this.a, bVar.a) && Objects.equals(this.b, bVar.b) && Objects.equals(this.c, bVar.c);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c);
+    }
 }

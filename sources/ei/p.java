@@ -1,35 +1,52 @@
 package ei;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.mv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ha;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hd;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+public final class p extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public boolean c;
 
-    public /* synthetic */ p(q qVar, int i3) {
-        this.a = i3;
-        this.b = qVar;
+    public p(Context context) {
+        super(context);
+        setPadding(g0.L(22.0f), 0, g0.L(22.0f), 0);
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 16.0f);
+        r6.V(textView, k6.j5, null);
+        textView.setGravity(hd.a0 ? 5 : 3);
+        addView(textView, ha.t(-1, -2, 51, 0, 7, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 13.0f);
+        r6.V(textView2, k6.q5, null);
+        textView2.setGravity(hd.a0 ? 5 : 3);
+        addView(textView2, ha.t(-1, -2, 51, 0, 4, 0, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                mv mvVar = this.b.c0;
-                ValueAnimator valueAnimator = mvVar.k0;
-                if (valueAnimator != null) {
-                    valueAnimator.start();
-                }
-                mvVar.l0 = null;
-                break;
-            default:
-                q qVar = this.b;
-                qVar.x = false;
-                qVar.invalidate();
-                break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.c) {
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), k6.k0);
         }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(56.0f), TLObject.FLAG_30));
     }
 }

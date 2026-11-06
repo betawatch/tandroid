@@ -1,17 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j61 {
-    public int a;
-    public CharSequence b;
-    public int c;
+public final class j61 extends v4.c0 {
+    public final /* synthetic */ jg.i0 r;
 
-    public final int a(TextPaint textPaint) {
-        int ceil = (int) Math.ceil(gi.l3.h(this.b, textPaint));
-        this.c = ceil;
-        return Math.max(0, ceil);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j61(jg.i0 i0Var, Context context) {
+        super(context);
+        this.r = i0Var;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.g0.L(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.o61) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // v4.c0, v4.z0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, v4.y0 y0Var) {
+        int j3 = j(o(), view);
+        if (j3 > 0 || (j3 == 0 && view.getLeft() - org.telegram.messenger.g0.L(21.0f) < 0)) {
+            j3 += org.telegram.messenger.g0.L(60.0f);
+        } else {
+            if (j3 >= 0) {
+                if (j3 == 0) {
+                }
+            }
+            j3 -= org.telegram.messenger.g0.L(60.0f);
+        }
+        int k10 = k(p(), view);
+        int max = Math.max(org.telegram.messenger.qs.K2, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
+        if (max > 0) {
+            y0Var.b(-j3, -k10, max, this.j);
+        }
     }
 }

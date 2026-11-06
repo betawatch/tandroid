@@ -1,60 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.text.style.ClickableSpan;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kn0 implements Runnable {
+public final /* synthetic */ class kn0 implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ Bitmap c;
 
-    public /* synthetic */ kn0(PhotoViewer photoViewer, Bitmap bitmap, int i3) {
-        this.a = i3;
+    public /* synthetic */ kn0(PhotoViewer photoViewer, int i7) {
+        this.a = i7;
         this.b = photoViewer;
-        this.c = bitmap;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        Bitmap bitmap = this.c;
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
         PhotoViewer photoViewer = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                Drawable[] drawableArr = PhotoViewer.V8;
-                photoViewer.o0(bitmap);
-                org.telegram.messenger.g0.h3(new kn0(photoViewer, bitmap, 6));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.V8;
-                photoViewer.o0(bitmap);
-                org.telegram.messenger.g0.h3(new kn0(photoViewer, bitmap, 5));
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.V8;
-                photoViewer.o0(bitmap);
-                org.telegram.messenger.g0.h3(new kn0(photoViewer, bitmap, 4));
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.V8;
-                photoViewer.o0(bitmap);
-                break;
-            case 4:
-                photoViewer.D4.v0(bitmap);
-                photoViewer.u5.setUndoCutState(true);
-                photoViewer.d3(true, true);
-                break;
-            case 5:
-                photoViewer.D4.v0(bitmap);
-                photoViewer.u5.setUndoCutState(true);
-                photoViewer.d3(true, true);
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                photoViewer.V1((ClickableSpan) obj, (TextView) obj2);
                 break;
             default:
-                photoViewer.D4.v0(bitmap);
-                photoViewer.u5.setUndoCutState(true);
-                photoViewer.d3(true, true);
+                Drawable[] drawableArr2 = PhotoViewer.Y8;
+                photoViewer.getClass();
+                photoViewer.w0(((Boolean) obj2).booleanValue(), false, (((Float) obj).floatValue() * 2.8f) + 0.2f);
                 break;
         }
     }

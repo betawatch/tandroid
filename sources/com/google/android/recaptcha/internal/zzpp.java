@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzpp {
     private static final zzpp zza = new zzpm("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", '=');
@@ -12,7 +12,7 @@ public abstract class zzpp {
         char[] cArr;
         new zzpo("base32()", "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567", '=');
         new zzpo("base32Hex()", "0123456789ABCDEFGHIJKLMNOPQRSTUV", '=');
-        int i3 = zzpl.zza;
+        int i7 = zzpl.zza;
         zzpk zzpkVar = new zzpk("base16()", "0123456789ABCDEF".toCharArray());
         new zzpo(zzpkVar, null);
         char[] cArr2 = new char[512];
@@ -34,17 +34,17 @@ public abstract class zzpp {
 
     public abstract int zza(byte[] bArr, CharSequence charSequence);
 
-    public abstract void zzb(Appendable appendable, byte[] bArr, int i3, int i10);
+    public abstract void zzb(Appendable appendable, byte[] bArr, int i7, int i10);
 
-    public abstract int zzc(int i3);
+    public abstract int zzc(int i7);
 
-    public abstract int zzd(int i3);
+    public abstract int zzd(int i7);
 
     public CharSequence zze(CharSequence charSequence) {
         throw null;
     }
 
-    public final String zzi(byte[] bArr, int i3, int i10) {
+    public final String zzi(byte[] bArr, int i7, int i10) {
         zzmd.zzd(0, i10, bArr.length);
         StringBuilder sb2 = new StringBuilder(zzd(i10));
         try {

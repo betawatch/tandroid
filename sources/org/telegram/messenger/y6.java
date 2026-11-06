@@ -3,14 +3,14 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ i7 b;
 
-    public /* synthetic */ y6(i7 i7Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ y6(i7 i7Var, int i7) {
+        this.a = i7;
         this.b = i7Var;
     }
 
@@ -42,8 +42,8 @@ public final /* synthetic */ class y6 implements Runnable {
                     i7Var2.e(null, false, true);
                     break;
                 } else {
-                    for (int i3 = 0; i3 < i7Var2.G0.size(); i3++) {
-                        ConnectionsManager.getInstance(i7Var2.R).failNotRunningRequest(((h7) i7Var2.G0.get(i3)).a);
+                    for (int i7 = 0; i7 < i7Var2.G0.size(); i7++) {
+                        ConnectionsManager.getInstance(i7Var2.R).failNotRunningRequest(((h7) i7Var2.G0.get(i7)).a);
                     }
                     break;
                 }
@@ -66,7 +66,7 @@ public final /* synthetic */ class y6 implements Runnable {
                             h7 h7Var = (h7) i7Var3.G0.get(i10);
                             if (h7Var.a != 0) {
                                 h7Var.j = true;
-                                h7Var.l = new fg(h7Var, iArr, y6Var, 20);
+                                h7Var.l = new ng(h7Var, iArr, y6Var, 20);
                                 iArr[0] = iArr[0] + 1;
                                 a8.b("cancelRequests cancel " + h7Var.a + " with callback");
                                 ConnectionsManager.getInstance(i7Var3.R).cancelRequest(h7Var.a, true, new b7(h7Var, 1));

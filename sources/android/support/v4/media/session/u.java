@@ -7,7 +7,7 @@ import android.os.RemoteCallbackList;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class u {
     public final MediaSession a;
@@ -21,7 +21,7 @@ public class u {
     public int i;
     public int j;
     public s k;
-    public a2.a l;
+    public b2.a l;
 
     public u(Context context, String str) {
         MediaSession a10 = a(context, str);
@@ -44,8 +44,8 @@ public class u {
         return sVar;
     }
 
-    public a2.a c() {
-        a2.a aVar;
+    public b2.a c() {
+        b2.a aVar;
         synchronized (this.d) {
             aVar = this.l;
         }
@@ -70,7 +70,7 @@ public class u {
         }
     }
 
-    public void f(a2.a aVar) {
+    public void f(b2.a aVar) {
         synchronized (this.d) {
             this.l = aVar;
         }

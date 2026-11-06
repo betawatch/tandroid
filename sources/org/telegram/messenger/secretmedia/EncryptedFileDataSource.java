@@ -1,10 +1,10 @@
 package org.telegram.messenger.secretmedia;
 
 import android.net.Uri;
-import i2.c;
-import i2.d0;
-import i2.k;
-import i2.n;
+import j2.c;
+import j2.d0;
+import j2.j;
+import j2.m;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
@@ -12,8 +12,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
+import rf.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -21,7 +22,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -32,7 +33,7 @@ public final class EncryptedFileDataSource extends c {
         super(false);
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public void close() {
         try {
             this.fileInputStream.close();
@@ -47,46 +48,46 @@ public final class EncryptedFileDataSource extends c {
         this.uri = null;
     }
 
-    @Override // i2.c, i2.h
+    @Override // j2.c, j2.h
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public Uri getUri() {
         return this.uri;
     }
 
-    @Override // i2.h
-    public long open(n nVar) {
-        this.uri = nVar.a;
-        File file = new File(nVar.a.getPath());
+    @Override // j2.h
+    public long open(m mVar) {
+        this.uri = mVar.a;
+        File file = new File(mVar.a.getPath());
         String name = file.getName();
-        Pattern pattern = w7.J;
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), t4.c.q(name, ".key")));
+        Pattern pattern = w7.I;
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), b.q(name, ".key")));
         this.fileInputStream = encryptedFileInputStream;
-        encryptedFileInputStream.skip(nVar.e);
+        encryptedFileInputStream.skip(mVar.e);
         int length = (int) file.length();
-        transferInitializing(nVar);
-        long j10 = nVar.e;
-        long j11 = length;
-        if (j10 > j11) {
-            throw new k(2008);
+        transferInitializing(mVar);
+        long j3 = mVar.e;
+        long j10 = length;
+        if (j3 > j10) {
+            throw new j(2008);
         }
-        int i3 = (int) (j11 - j10);
-        this.bytesRemaining = i3;
-        long j12 = nVar.f;
-        if (j12 != -1) {
-            this.bytesRemaining = (int) Math.min(i3, j12);
+        int i7 = (int) (j10 - j3);
+        this.bytesRemaining = i7;
+        long j11 = mVar.f;
+        if (j11 != -1) {
+            this.bytesRemaining = (int) Math.min(i7, j11);
         }
         this.opened = true;
-        transferStarted(nVar);
-        long j13 = nVar.f;
-        return j13 != -1 ? j13 : this.bytesRemaining;
+        transferStarted(mVar);
+        long j12 = mVar.f;
+        return j12 != -1 ? j12 : this.bytesRemaining;
     }
 
-    @Override // d2.o
-    public int read(byte[] bArr, int i3, int i10) {
+    @Override // e2.n
+    public int read(byte[] bArr, int i7, int i10) {
         if (i10 == 0) {
             return 0;
         }
@@ -96,7 +97,7 @@ public final class EncryptedFileDataSource extends c {
         }
         int min = Math.min(i10, i11);
         try {
-            this.fileInputStream.read(bArr, i3, min);
+            this.fileInputStream.read(bArr, i7, min);
         } catch (IOException e10) {
             e10.printStackTrace();
         }

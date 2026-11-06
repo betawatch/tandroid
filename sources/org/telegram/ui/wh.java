@@ -1,26 +1,81 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class wh extends org.telegram.ui.Components.on {
-    public final /* synthetic */ wm N;
+public final class wh implements org.telegram.ui.Components.ej0 {
+    public final /* synthetic */ an a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wh(wm wmVar, Activity activity, int i3, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, i3, document, e6Var);
-        this.N = wmVar;
+    public wh(an anVar) {
+        this.a = anVar;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        float y9 = getY();
-        wm wmVar = this.N;
-        float y10 = wmVar.g1.getY() + y9;
-        this.K = wmVar.m1.getBackgroundSizeY();
-        this.J = y10;
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
+    @Override // org.telegram.ui.Components.ej0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean f(float f10, float f11, int i7, View view) {
+        boolean z9;
+        boolean z10;
+        org.telegram.ui.ActionBar.k kVar;
+        View view2;
+        boolean z11;
+        an anVar = this.a;
+        pl plVar = anVar.q9;
+        if ((plVar == null || !plVar.z) && !anVar.y9()) {
+            z9 = ((org.telegram.ui.ActionBar.f2) anVar).inPreviewMode;
+            if (!z9 && !anVar.ib) {
+                anVar.P4 = true;
+                if (view instanceof org.telegram.ui.Cells.t0) {
+                    org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) view;
+                    org.telegram.messenger.ij messageObject = t0Var.getMessageObject();
+                    if (messageObject != null) {
+                        if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && t0Var.getMessageObject().D != 21 && !t0Var.getMessageObject().Y4() && t0Var.getMessageObject().D != 30) {
+                            z10 = false;
+                            kVar = ((org.telegram.ui.ActionBar.f2) anVar).actionBar;
+                            if (!kVar.v() || (anVar.W9() && !z10)) {
+                                view2 = view;
+                                an.j2(anVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
+                                z11 = true;
+                            } else {
+                                view2 = view;
+                                z11 = anVar.X7(view2, false, true, f10, f11, true, true, false);
+                            }
+                            if (view2 instanceof org.telegram.ui.Cells.q1) {
+                                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view2;
+                                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().D != 27) {
+                                    an.k2(anVar, i7);
+                                    return true;
+                                }
+                            }
+                            return z11;
+                        }
+                    }
+                }
+                z10 = true;
+                kVar = ((org.telegram.ui.ActionBar.f2) anVar).actionBar;
+                if (kVar.v()) {
+                }
+                view2 = view;
+                an.j2(anVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
+                z11 = true;
+                if (view2 instanceof org.telegram.ui.Cells.q1) {
+                }
+                return z11;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ej0
+    public final /* synthetic */ void q(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.ej0
+    public final /* synthetic */ void i() {
     }
 }

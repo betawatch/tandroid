@@ -5,32 +5,32 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class cy0 extends ReplacementSpan {
     public final /* synthetic */ int a;
     public int b;
     public final Object c;
 
-    public cy0(int i3) {
+    public cy0(int i7) {
         this.a = 0;
         Paint paint = new Paint(1);
         this.c = paint;
-        this.b = i3;
+        this.b = i7;
         paint.setColor(org.telegram.ui.ActionBar.k6.r1(0.3f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.be, false)));
     }
 
-    public void a(int i3) {
-        org.telegram.ui.xl0 xl0Var = (org.telegram.ui.xl0) this.c;
-        if (xl0Var != null) {
-            xl0Var.a = i3 / 2.0f;
-            xl0Var.d();
-            this.b = i3;
+    public void a(int i7) {
+        org.telegram.ui.cm0 cm0Var = (org.telegram.ui.cm0) this.c;
+        if (cm0Var != null) {
+            cm0Var.a = i7 / 2.0f;
+            cm0Var.d();
+            this.b = i7;
         }
     }
 
     @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         switch (this.a) {
             case 0:
                 float L = ((i11 + i13) / 2.0f) + org.telegram.messenger.g0.L(1.33f);
@@ -43,12 +43,12 @@ public final class cy0 extends ReplacementSpan {
                 canvas.drawRoundRect(rectF, f11, f11, paint2);
                 break;
             default:
-                org.telegram.ui.xl0 xl0Var = (org.telegram.ui.xl0) this.c;
-                if (xl0Var != null) {
+                org.telegram.ui.cm0 cm0Var = (org.telegram.ui.cm0) this.c;
+                if (cm0Var != null) {
                     int i14 = (i11 + i13) / 2;
                     int i15 = this.b;
-                    xl0Var.setBounds((int) (org.telegram.messenger.g0.L(3.0f) + f10), i14 - this.b, (int) (f10 + org.telegram.messenger.g0.L(5.0f) + i15), i14 + i15);
-                    xl0Var.draw(canvas);
+                    cm0Var.setBounds((int) (org.telegram.messenger.g0.L(3.0f) + f10), i14 - this.b, (int) (f10 + org.telegram.messenger.g0.L(5.0f) + i15), i14 + i15);
+                    cm0Var.draw(canvas);
                     break;
                 }
                 break;
@@ -56,7 +56,7 @@ public final class cy0 extends ReplacementSpan {
     }
 
     @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
                 return this.b;
@@ -65,9 +65,9 @@ public final class cy0 extends ReplacementSpan {
         }
     }
 
-    public cy0(boolean z10, int i3, int i10) {
+    public cy0(boolean z9, int i7, int i10) {
         this.a = 1;
         this.b = org.telegram.messenger.g0.L(21.0f);
-        this.c = z10 ? org.telegram.ui.xl0.c(i3, i10) : org.telegram.ui.xl0.a(i3, i10);
+        this.c = z9 ? org.telegram.ui.cm0.c(i7, i10) : org.telegram.ui.cm0.a(i7, i10);
     }
 }

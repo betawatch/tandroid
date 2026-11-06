@@ -1,5 +1,6 @@
 package w;
 
+import a8.p0;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -7,7 +8,7 @@ import android.os.Parcelable;
 import android.util.ArrayMap;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.k0;
+import e0.j0;
 import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -25,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -64,10 +65,10 @@ public abstract class g {
             throw new f("Bundle is missing the collection", eVar);
         }
         int size = parcelableArrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = parcelableArrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = parcelableArrayList.get(i7);
+            i7++;
             abstractCollection.add(f((Bundle) ((Parcelable) obj), eVar));
         }
     }
@@ -75,20 +76,20 @@ public abstract class g {
     public static Object b(Bundle bundle, e eVar) {
         String string = bundle.getString("tag_value");
         if (string == null) {
-            throw new f(a1.g.q("Missing enum name [", string, "]"), eVar);
+            throw new f(p0.p("Missing enum name [", string, "]"), eVar);
         }
         String string2 = bundle.getString("tag_class_name");
         if (string2 == null) {
-            throw new f(a1.g.q("Missing enum className [", string2, "]"), eVar);
+            throw new f(p0.p("Missing enum className [", string2, "]"), eVar);
         }
         try {
             return g(Class.forName(string2), "valueOf", eVar).invoke(null, string);
         } catch (ClassNotFoundException e10) {
-            throw new f(a1.g.q("Enum class [", string2, "] not found"), eVar, e10);
+            throw new f(p0.p("Enum class [", string2, "] not found"), eVar, e10);
         } catch (IllegalArgumentException e11) {
-            throw new f(f1.q("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e11);
+            throw new f(f1.m("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e11);
         } catch (ReflectiveOperationException e12) {
-            throw new f(a1.g.q("Enum of class [", string2, "] missing valueOf method"), eVar, e12);
+            throw new f(p0.p("Enum of class [", string2, "] missing valueOf method"), eVar, e12);
         }
     }
 
@@ -121,10 +122,10 @@ public abstract class g {
         }
         HashMap hashMap = new HashMap();
         int size = parcelableArrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = parcelableArrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = parcelableArrayList.get(i7);
+            i7++;
             Bundle bundle2 = (Bundle) ((Parcelable) obj);
             Bundle bundle3 = bundle2.getBundle("tag_1");
             Bundle bundle4 = bundle2.getBundle("tag_2");
@@ -148,16 +149,16 @@ public abstract class g {
             Object newInstance = declaredConstructor.newInstance(null);
             ArrayList h = h(cls);
             int size = h.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = h.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = h.get(i7);
+                i7++;
                 Field field = (Field) obj;
                 field.setAccessible(true);
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));
@@ -193,14 +194,14 @@ public abstract class g {
         ClassLoader classLoader = g.class.getClassLoader();
         Objects.requireNonNull(classLoader);
         bundle.setClassLoader(classLoader);
-        int i3 = bundle.getInt("tag_class_type");
+        int i7 = bundle.getInt("tag_class_type");
         String str = (String) b.get(Integer.valueOf(bundle.getInt("tag_class_type")));
         if (str == null) {
             str = "unknown";
         }
         e eVar2 = new e(bundle, str, eVar.b);
         try {
-            switch (i3) {
+            switch (i7) {
                 case 0:
                     Object obj = bundle.get("tag_value");
                     if (obj == null) {
@@ -209,9 +210,9 @@ public abstract class g {
                     eVar2.close();
                     return obj;
                 case 1:
-                    Object c2 = c(bundle, eVar2);
+                    Object c10 = c(bundle, eVar2);
                     eVar2.close();
-                    return c2;
+                    return c10;
                 case 2:
                     HashMap d = d(bundle, eVar2);
                     eVar2.close();
@@ -265,11 +266,11 @@ public abstract class g {
                     eVar2.close();
                     return binder;
                 case 10:
-                    k0 a11 = k0.a(bundle);
+                    j0 a11 = j0.a(bundle);
                     eVar2.close();
                     return a11;
                 default:
-                    throw new f("Unsupported class type in bundle: " + i3, eVar2);
+                    throw new f("Unsupported class type in bundle: " + i7, eVar2);
             }
         } catch (Throwable th2) {
             eVar2.close();
@@ -325,10 +326,10 @@ public abstract class g {
         Bundle bundle = new Bundle(2);
         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
         Iterator it = collection.iterator();
-        int i3 = 0;
+        int i7 = 0;
         while (it.hasNext()) {
-            arrayList.add(o(it.next(), "<item " + i3 + ">", eVar));
-            i3++;
+            arrayList.add(o(it.next(), "<item " + i7 + ">", eVar));
+            i7++;
         }
         bundle.putParcelableArrayList("tag_value", arrayList);
         return bundle;
@@ -349,14 +350,14 @@ public abstract class g {
     public static Bundle l(Map map, e eVar) {
         Bundle bundle = new Bundle(2);
         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-        int i3 = 0;
+        int i7 = 0;
         for (Map.Entry entry : map.entrySet()) {
             Bundle bundle2 = new Bundle(2);
-            bundle2.putBundle("tag_1", o(entry.getKey(), "<key " + i3 + ">", eVar));
+            bundle2.putBundle("tag_1", o(entry.getKey(), "<key " + i7 + ">", eVar));
             if (entry.getValue() != null) {
-                bundle2.putBundle("tag_2", o(entry.getValue(), "<value " + i3 + ">", eVar));
+                bundle2.putBundle("tag_2", o(entry.getValue(), "<value " + i7 + ">", eVar));
             }
-            i3++;
+            i7++;
             arrayList.add(bundle2);
         }
         bundle.putInt("tag_class_type", 2);
@@ -373,20 +374,20 @@ public abstract class g {
             bundle.putInt("tag_class_type", 5);
             bundle.putString("tag_class_name", name);
             int size = h.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj2 = h.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj2 = h.get(i7);
+                i7++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String q10 = t4.c.q(field.getDeclaringClass().getName(), field.getName());
+                String q10 = rf.b.q(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
                         bundle.putParcelable(q10, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e10) {
-                    throw new f(t4.c.f("Field is not accessible: ", q10), eVar, e10);
+                    throw new f(rf.b.i("Field is not accessible: ", q10), eVar, e10);
                 }
             }
             return bundle;
@@ -487,16 +488,16 @@ public abstract class g {
                     return l10;
                 }
                 if (obj instanceof List) {
-                    Bundle j10 = j((List) obj, eVar2);
-                    j10.putInt("tag_class_type", 4);
+                    Bundle j3 = j((List) obj, eVar2);
+                    j3.putInt("tag_class_type", 4);
                     eVar2.close();
-                    return j10;
+                    return j3;
                 }
                 if (obj instanceof Set) {
-                    Bundle j11 = j((Set) obj, eVar2);
-                    j11.putInt("tag_class_type", 3);
+                    Bundle j10 = j((Set) obj, eVar2);
+                    j10.putInt("tag_class_type", 3);
                     eVar2.close();
-                    return j11;
+                    return j10;
                 }
                 if (obj.getClass().isEnum()) {
                     Bundle k10 = k(obj, eVar2);
@@ -513,19 +514,19 @@ public abstract class g {
                 if (obj.getClass().isArray()) {
                     throw new f("Object serializing contains an array, use a list or a set instead", eVar2);
                 }
-                if (!(obj instanceof k0)) {
+                if (!(obj instanceof j0)) {
                     Bundle m10 = m(obj, eVar2);
                     eVar2.close();
                     return m10;
                 }
-                Bundle c2 = ((k0) obj).c();
-                c2.putInt("tag_class_type", 10);
+                Bundle c10 = ((j0) obj).c();
+                c10.putInt("tag_class_type", 10);
                 eVar2.close();
-                return c2;
+                return c10;
             }
-            Bundle n4 = n(obj, eVar2);
+            Bundle n10 = n(obj, eVar2);
             eVar2.close();
-            return n4;
+            return n10;
         } catch (Throwable th2) {
             try {
                 eVar2.close();

@@ -1,42 +1,35 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rr extends u4.t0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final class rr extends jg.s1 {
+    public final /* synthetic */ ContactsActivity K;
 
-    public rr(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public rr(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z9, boolean z10, boolean z11) {
+        this.K = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.H = new ArrayList();
+        this.c = context;
+        this.h = hVar;
+        this.r = z9;
+        this.s = z10;
+        this.y = 0;
+        this.w = z11;
+        this.x = true;
+        jg.z1 z1Var = new jg.z1(true);
+        this.f = z1Var;
+        z1Var.a = new jg.p1(this);
     }
 
-    @Override // u4.t0
-    public final void a(RecyclerView recyclerView, int i3) {
-        if (i3 != 1) {
-            this.b = false;
+    @Override // jg.s1
+    public final void F() {
+        if (this.D || this.f.e() || b() != 0) {
             return;
         }
-        ContactsActivity contactsActivity = this.c;
-        if (contactsActivity.E && contactsActivity.y) {
-            org.telegram.messenger.g0.v1(contactsActivity.getParentActivity().getCurrentFocus());
-        }
-        this.b = true;
-    }
-
-    @Override // u4.t0
-    public final void b(RecyclerView recyclerView, int i3, int i10) {
-        ContactsActivity contactsActivity = this.c;
-        if (contactsActivity.s == null || contactsActivity.E) {
-            return;
-        }
-        boolean z10 = i10 > 0;
-        if (i10 != 0 && this.a && (z10 || this.b)) {
-            contactsActivity.w = !z10;
-            ContactsActivity.g0(contactsActivity);
-        }
-        this.a = true;
+        this.K.c.e(false, true);
     }
 }

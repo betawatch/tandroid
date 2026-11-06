@@ -3,15 +3,15 @@ package org.telegram.messenger;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class t extends CharacterStyle {
     public final /* synthetic */ int a;
     public int b;
 
-    public /* synthetic */ t(int i3, int i10) {
+    public /* synthetic */ t(int i7, int i10) {
         this.a = i10;
-        this.b = i3;
+        this.b = i7;
     }
 
     @Override // android.text.style.CharacterStyle
@@ -35,9 +35,9 @@ public final class t extends CharacterStyle {
         }
     }
 
-    public /* synthetic */ t(int i3, int i10, boolean z10) {
+    public /* synthetic */ t(int i7, int i10, boolean z9) {
         this.a = i10;
-        this.b = i3;
+        this.b = i7;
     }
 
     public t() {

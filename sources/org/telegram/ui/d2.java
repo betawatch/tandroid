@@ -1,53 +1,100 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d2 extends HorizontalScrollView {
-    public final /* synthetic */ i50 a;
-    public final /* synthetic */ f2 b;
+public final class d2 extends View {
+    public final /* synthetic */ o50 a;
+    public final /* synthetic */ e4 b;
+    public final /* synthetic */ e2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(f2 f2Var, Context context, i50 i50Var) {
+    public d2(e2 e2Var, Context context, o50 o50Var, e4 e4Var) {
         super(context);
-        this.b = f2Var;
-        this.a = i50Var;
+        this.c = e2Var;
+        this.a = o50Var;
+        this.b = e4Var;
     }
 
     @Override // android.view.View
-    public final void onScrollChanged(int i3, int i10, int i11, int i12) {
-        f2 f2Var;
-        TL_iv.pageBlockPreformatted pageblockpreformatted;
-        super.onScrollChanged(i3, i10, i11, i12);
-        i50 i50Var = this.a;
-        if (i50Var.d != null) {
-            i50Var.d = null;
-            i50Var.f = null;
+    public final void onDraw(Canvas canvas) {
+        e2 e2Var = this.c;
+        if (e2Var.c != null) {
+            canvas.save();
+            g4.t(this.a, canvas, e2Var, 0);
+            e2Var.c.d(canvas, this);
+            canvas.restore();
+            e2Var.c.s = (int) getX();
+            e2Var.c.w = (int) getY();
         }
-        f2 f2Var2 = this.b;
-        TL_iv.pageBlockPreformatted pageblockpreformatted2 = f2Var2.f;
-        if (pageblockpreformatted2 == null || !pageblockpreformatted2.diff || f2Var2.n) {
-            return;
-        }
-        g4 g4Var = f2Var2.b;
-        if (g4Var != null) {
-            g4Var.I = i3;
-        }
-        if (f2Var2.getParent() instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) f2Var2.getParent();
-            for (int i13 = 0; i13 < viewGroup.getChildCount(); i13++) {
-                View childAt = viewGroup.getChildAt(i13);
-                if (childAt != f2Var2 && (childAt instanceof f2) && (pageblockpreformatted = (f2Var = (f2) childAt).f) != null && pageblockpreformatted.diff) {
-                    f2Var.n = true;
-                    f2Var.d.scrollTo(i3, 0);
-                    f2Var.n = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        StaticLayout staticLayout;
+        StaticLayout staticLayout2;
+        e2 e2Var = this.c;
+        TL_iv.pageBlockPreformatted pageblockpreformatted = e2Var.f;
+        int i12 = 1;
+        if (pageblockpreformatted != null) {
+            CharSequence charSequence = e2Var.h;
+            e4 e4Var = this.b;
+            o50 o50Var = this.a;
+            if (charSequence == null) {
+                TL_iv.RichText richText = pageblockpreformatted.text;
+                int L = org.telegram.messenger.g0.L(5000.0f);
+                HashSet hashSet = g4.c1;
+                CharSequence A = g4.A(o50Var, e4Var.E, this, richText, richText, pageblockpreformatted, L);
+                e2Var.h = A;
+                TL_iv.pageBlockPreformatted pageblockpreformatted2 = e2Var.f;
+                if (pageblockpreformatted2.diff) {
+                    e2Var.h = e2.b(e2Var, A, pageblockpreformatted2.language);
+                } else if (!TextUtils.isEmpty(pageblockpreformatted2.language)) {
+                    e2Var.h = ni.m.b(e2Var.h, e2Var.f.language);
                 }
             }
+            z2 o4 = g4.o(o50Var, this, e2Var.h, null, org.telegram.messenger.g0.L(5000.0f), 0, e2Var.f, e4Var);
+            e2Var.c = o4;
+            if (o4 != null) {
+                i11 = o4.d.getHeight();
+                int lineCount = e2Var.c.d.getLineCount();
+                int i13 = 1;
+                for (int i14 = 0; i14 < lineCount; i14++) {
+                    i13 = Math.max((int) Math.ceil(e2Var.c.d.getLineWidth(i14)), i13);
+                }
+                if (e2Var.f.diff && (staticLayout2 = e2Var.c.d) != null) {
+                    i13 = Math.max((int) Math.ceil(staticLayout2.getPaint().measureText("m") * e2Var.f.diffColumns), i13);
+                }
+                e2Var.r = 0;
+                if (e2Var.f.continuesNext && (staticLayout = e2Var.c.d) != null && staticLayout.getLineCount() > 1) {
+                    StaticLayout staticLayout3 = e2Var.c.d;
+                    int lineCount2 = staticLayout3.getLineCount() - 1;
+                    int max = Math.max(0, (staticLayout3.getLineBottom(0) - staticLayout3.getLineTop(0)) - (staticLayout3.getLineBottom(lineCount2) - staticLayout3.getLineTop(lineCount2)));
+                    e2Var.r = max;
+                    i11 += max;
+                }
+                i12 = i13;
+            } else {
+                i11 = 0;
+            }
+        } else {
+            i11 = 1;
         }
+        setMeasuredDimension(org.telegram.messenger.g0.L(32.0f) + i12, i11);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        e2 e2Var = this.c;
+        return g4.j(this.a, this.b, motionEvent, e2Var, e2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
     }
 }

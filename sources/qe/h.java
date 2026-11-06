@@ -1,452 +1,489 @@
 package qe;
 
-import android.view.animation.Interpolator;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.content.pm.ServiceInfo;
+import android.content.res.AssetManager;
+import android.os.Build;
+import android.os.Handler;
+import c8.v9;
+import h2.p0;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
-import org.telegram.ui.Components.y00;
+import java.util.concurrent.Executor;
+import org.telegram.messenger.qs;
+import org.telegram.ui.ActionBar.m3;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.d10;
+import s4.n;
+import s4.r0;
+import s4.u;
+import s4.x;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h implements Iterable {
-    public final d a;
-    public final c c;
-    public final g d;
-    public boolean f;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList e = new ArrayList();
+public final class h {
+    public boolean a;
+    public final Object b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
+    public Object f;
+    public Object g;
+    public Object h;
 
-    public h(d dVar, Interpolator interpolator, long j10) {
-        this.a = dVar;
-        this.d = new g(this, dVar);
-        if (interpolator == null || j10 <= 0) {
-            this.c = null;
-        } else {
-            this.c = new c(0, new y00(this), interpolator, j10);
-        }
-    }
-
-    public final void h(float f10) {
-        g gVar = this.d;
-        boolean z10 = gVar.a.x(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            e eVar = (e) obj;
-            boolean z11 = eVar.f.a(f10) || (eVar.e.a(f10) || (eVar.d.a(f10) || eVar.c.a(f10)));
-            Object obj2 = eVar.a;
-            if (obj2 instanceof l) {
-                z11 = ((l) obj2).a(f10) || z11;
-            }
-            z10 = z11 || z10;
-        }
-        if (z10) {
-            this.a.s1();
-            if (f10 == 1.0f) {
-                l(true);
-            }
-        }
-    }
-
-    public final e i(int i3) {
-        return (e) this.b.get(i3);
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.b.iterator();
-    }
-
-    public final void j(boolean z10) {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.e;
-        int size = arrayList2.size();
-        int i3 = 0;
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (i13 < size) {
-            Object obj = arrayList2.get(i13);
-            i13++;
-            e eVar = (e) obj;
-            Object obj2 = eVar.a;
-            k kVar = eVar.f;
-            l lVar = eVar.e;
-            if (obj2 instanceof f) {
-                f fVar = (f) obj2;
-                boolean z11 = eVar.b == 0;
-                arrayList2.size();
-                int b10 = fVar.b(z11);
-                int width = fVar.getWidth();
-                int height = fVar.getHeight();
-                int i14 = b10 + width + i3;
-                int i15 = i10 + b10 + height;
-                if (!z10 || eVar.c() <= 0.0f) {
-                    arrayList = arrayList2;
-                    lVar.d(i3, i10, i14, i15);
-                    kVar.d(b10);
-                } else {
-                    float f10 = i3;
-                    float f11 = i10;
-                    float f12 = i14;
-                    arrayList = arrayList2;
-                    float f13 = i15;
-                    if (lVar.b(f10, f11, f12, f13)) {
-                        k();
-                        lVar.e(f10, f11, f12, f13);
-                    }
-                    float f14 = b10;
-                    if (kVar.b(f14)) {
-                        k();
-                        kVar.c = f14;
-                    }
-                }
-                i11 = Math.max(i11, width);
-                i12 = Math.max(i12, height);
-                i10 = i15;
-                i3 = i14;
-            } else {
-                arrayList = arrayList2;
-            }
-            arrayList2 = arrayList;
-        }
-        ArrayList arrayList3 = this.b;
-        if (z10) {
-            int size2 = arrayList3.size();
-            int i16 = 0;
-            while (i16 < size2) {
-                Object obj3 = arrayList3.get(i16);
-                i16++;
-                Object obj4 = ((e) obj3).a;
-            }
-        }
-        int size3 = arrayList3.size();
-        int i17 = 0;
-        while (i17 < size3) {
-            Object obj5 = arrayList3.get(i17);
-            i17++;
-            Object obj6 = ((e) obj5).a;
-        }
-        g gVar = this.d;
-        if (!z10) {
-            gVar.f.d(i3);
-            gVar.g.d(i10);
-            gVar.d.d(i11);
-            gVar.e.d(i12);
-            gVar.a.a();
-            return;
-        }
-        k kVar2 = gVar.f;
-        d dVar = gVar.a;
-        k kVar3 = gVar.e;
-        k kVar4 = gVar.d;
-        k kVar5 = gVar.g;
-        float f15 = i3;
-        if (kVar2.b(f15)) {
-            k();
-            gVar.f.c = f15;
-        }
-        float f16 = i10;
-        if (kVar5.b(f16)) {
-            k();
-            kVar5.c = f16;
-        }
-        float f17 = i11;
-        if (kVar4.b(f17)) {
-            k();
-            kVar4.c = f17;
-        }
-        float f18 = i12;
-        if (kVar3.b(f18)) {
-            k();
-            kVar3.c = f18;
-        }
-        if (dVar.t()) {
-            k();
-            dVar.G();
-        }
-    }
-
-    public final void k() {
-        if (this.f) {
-            return;
-        }
-        this.f = true;
-        c cVar = this.c;
-        if (cVar == null) {
-            l(false);
-            return;
-        }
-        cVar.b();
-        l(false);
-        cVar.c(0.0f);
-    }
-
-    public final void l(boolean z10) {
-        ArrayList arrayList = this.b;
-        boolean z11 = false;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            e eVar = (e) arrayList.get(size);
-            eVar.a(z10);
-            if (eVar.c() == 0.0f && eVar.h) {
-                arrayList.remove(size);
-                Object obj = eVar.a;
-                if (obj instanceof te.a) {
-                    ((te.a) obj).a();
-                }
-                z11 = true;
-            }
-        }
-        if (z11) {
-            arrayList.trimToSize();
-        }
-        g gVar = this.d;
-        gVar.b.c(z10);
-        gVar.d.c(z10);
-        gVar.e.c(z10);
-        gVar.f.c(z10);
-        gVar.g.c(z10);
-        gVar.c.c(z10);
-        gVar.a.o(z10);
-    }
-
-    public final void m(List list, boolean z10) {
-        boolean isEmpty;
-        boolean z11;
-        boolean z12;
-        int i3;
-        boolean z13;
-        c cVar = this.c;
-        g gVar = this.d;
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.b;
-        if (!z10) {
-            if (cVar != null) {
-                cVar.b();
-                l(false);
-                cVar.c(0.0f);
-            } else {
-                l(false);
-            }
-            for (int size = arrayList2.size() - 1; size >= 0; size--) {
-                Object obj = ((e) arrayList2.get(size)).a;
-                if (obj instanceof te.a) {
-                    ((te.a) obj).a();
-                }
-            }
-            arrayList2.clear();
-            arrayList.clear();
-            int size2 = list != null ? list.size() : 0;
-            if (size2 > 0) {
-                arrayList2.ensureCapacity(size2);
-                arrayList.ensureCapacity(size2);
-                Iterator it = list.iterator();
-                while (it.hasNext()) {
-                    e eVar = new e(arrayList.size(), it.next(), true);
-                    arrayList2.add(eVar);
-                    arrayList.add(eVar);
-                }
-                arrayList2.trimToSize();
-                arrayList.trimToSize();
-            }
-            g.a(gVar, size2, false);
-            j(false);
-            this.a.s1();
-            return;
-        }
-        if (list != null && !list.isEmpty()) {
-            if (arrayList.size() == list.size()) {
-                for (int i10 = 0; i10 < list.size(); i10++) {
-                    if (((e) arrayList.get(i10)).equals(list.get(i10))) {
-                    }
-                }
-                isEmpty = true;
-            }
-            isEmpty = false;
-            break;
-        }
-        isEmpty = arrayList.isEmpty();
-        if (isEmpty) {
-            return;
-        }
-        k();
-        if (list == null || list.isEmpty()) {
-            if (!this.f) {
-                int size3 = arrayList2.size();
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= size3) {
-                        break;
-                    }
-                    Object obj2 = arrayList2.get(i11);
-                    i11++;
-                    if (((e) obj2).d.b(0.0f)) {
-                        k();
-                        break;
-                    }
-                }
-            }
-            if (this.f) {
-                int size4 = arrayList2.size();
-                int i12 = 0;
-                while (i12 < size4) {
-                    Object obj3 = arrayList2.get(i12);
-                    i12++;
-                    e eVar2 = (e) obj3;
-                    if (eVar2.d.b(0.0f)) {
-                        k();
-                        eVar2.d.c = 0.0f;
-                        eVar2.h = true;
-                        int binarySearch = Collections.binarySearch(arrayList, eVar2);
-                        if (binarySearch >= 0) {
-                            arrayList.remove(binarySearch);
-                        }
-                        g.a(gVar, arrayList.size(), true);
-                    }
-                }
-            }
-            z11 = true;
-            z12 = false;
-        } else {
-            boolean z14 = false;
-            int i13 = 0;
-            boolean z15 = false;
-            for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                e eVar3 = (e) arrayList2.get(i14);
-                Object obj4 = eVar3.a;
-                k kVar = eVar3.d;
-                k kVar2 = eVar3.c;
-                int indexOf = list.indexOf(obj4);
-                if (indexOf != -1) {
-                    i13++;
-                    float f10 = indexOf;
-                    if (kVar2.b(f10)) {
-                        k();
-                        kVar2.c = f10;
-                    }
-                    if (eVar3.b != indexOf) {
-                        eVar3.b = indexOf;
-                        z14 = z14 || !eVar3.h;
-                        z15 = true;
-                    }
-                    if (kVar.b(1.0f)) {
-                        k();
-                        kVar.c = 1.0f;
-                        eVar3.h = false;
-                        arrayList.add(eVar3);
-                        g.a(gVar, arrayList.size(), true);
-                        z14 = true;
-                    }
-                } else if (kVar.b(0.0f)) {
-                    k();
-                    kVar.c = 0.0f;
-                    eVar3.h = true;
-                    if (z14) {
-                        z13 = arrayList.remove(eVar3);
-                    } else {
-                        int binarySearch2 = Collections.binarySearch(arrayList, eVar3);
-                        if (binarySearch2 >= 0) {
-                            arrayList.remove(binarySearch2);
-                            z13 = true;
-                        } else {
-                            z13 = false;
-                        }
-                    }
-                    if (!z13) {
-                        throw new IllegalArgumentException();
-                    }
-                    g.a(gVar, arrayList.size(), true);
-                } else {
-                    continue;
-                }
-            }
-            if (z14) {
-                Collections.sort(arrayList);
-            }
-            if (i13 < list.size()) {
-                arrayList2.ensureCapacity((list.size() - i13) + arrayList2.size());
-                int i15 = 0;
-                for (Object obj5 : list) {
-                    if (obj5 == null) {
-                        int size5 = arrayList2.size();
-                        i3 = 0;
-                        int i16 = 0;
-                        while (i16 < size5) {
-                            Object obj6 = arrayList2.get(i16);
-                            i16++;
-                            if (((e) obj6).a == null) {
-                                break;
-                            } else {
-                                i3++;
-                            }
-                        }
-                        i3 = -1;
-                    } else {
-                        int size6 = arrayList2.size();
-                        i3 = 0;
-                        int i17 = 0;
-                        while (i17 < size6) {
-                            Object obj7 = arrayList2.get(i17);
-                            i17++;
-                            if (obj5.equals(((e) obj7).a)) {
-                                break;
-                            } else {
-                                i3++;
-                            }
-                        }
-                        i3 = -1;
-                    }
-                    if (i3 == -1) {
-                        if (i15 != arrayList2.size()) {
-                            z15 = true;
-                        }
-                        k();
-                        e eVar4 = new e(i15, obj5, false);
-                        eVar4.d.c = 1.0f;
-                        eVar4.h = false;
-                        arrayList2.add(eVar4);
-                        int binarySearch3 = Collections.binarySearch(arrayList, eVar4);
-                        if (binarySearch3 >= 0) {
-                            throw new IllegalArgumentException("Element already exists in list");
-                        }
-                        arrayList.add((-binarySearch3) - 1, eVar4);
-                        g.a(gVar, arrayList.size(), true);
-                    }
-                    i15++;
-                }
-            }
-            z12 = z15;
-            z11 = true;
-        }
-        if (z12) {
-            Collections.sort(arrayList2);
-        }
-        j(z11);
-        if (this.f) {
-            this.f = false;
-            if (cVar != null) {
-                cVar.a(1.0f);
+    public h(ca.i composer, pe.b bVar, j jVar, h[] hVarArr) {
+        kotlin.jvm.internal.j.e(composer, "composer");
+        this.b = composer;
+        this.c = bVar;
+        this.d = jVar;
+        this.e = hVarArr;
+        this.f = bVar.a;
+        int ordinal = jVar.ordinal();
+        if (hVarArr != null) {
+            h hVar = hVarArr[ordinal];
+            if (hVar == null && hVar == this) {
                 return;
             }
+            hVarArr[ordinal] = this;
+        }
+    }
+
+    public h a(me.d descriptor) {
+        h hVar;
+        h[] hVarArr = (h[]) this.e;
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        pe.b bVar = (pe.b) this.c;
+        j f10 = f.f(descriptor, bVar);
+        char c10 = f10.a;
+        ca.i iVar = (ca.i) this.b;
+        iVar.j(c10);
+        iVar.b = true;
+        String str = (String) this.g;
+        if (str != null) {
+            String str2 = (String) this.h;
+            if (str2 == null) {
+                str2 = descriptor.a();
+            }
+            iVar.i();
+            j(str);
+            iVar.j(':');
+            j(str2);
+            this.g = null;
+            this.h = null;
+        }
+        return ((j) this.d) == f10 ? this : (hVarArr == null || (hVar = hVarArr[f10.ordinal()]) == null) ? new h(iVar, bVar, f10, hVarArr) : hVar;
+    }
+
+    public void b(me.d descriptor, int i7) {
+        ca.i iVar = (ca.i) this.b;
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        int ordinal = ((j) this.d).ordinal();
+        boolean z9 = true;
+        if (ordinal == 1) {
+            if (!iVar.b) {
+                iVar.j(',');
+            }
+            iVar.i();
             return;
         }
-        if (cVar == null) {
-            int size7 = arrayList2.size();
-            int i18 = 0;
-            while (i18 < size7) {
-                Object obj8 = arrayList2.get(i18);
-                i18++;
-                e eVar5 = (e) obj8;
-                k kVar3 = eVar5.d;
-                kVar3.b = kVar3.a;
-                k kVar4 = eVar5.c;
-                kVar4.b = kVar4.a;
+        if (ordinal == 2) {
+            if (iVar.b) {
+                this.a = true;
+                iVar.i();
+                return;
+            }
+            if (i7 % 2 == 0) {
+                iVar.j(',');
+                iVar.i();
+            } else {
+                iVar.j(':');
+                iVar.k();
+                z9 = false;
+            }
+            this.a = z9;
+            return;
+        }
+        if (ordinal != 3) {
+            if (!iVar.b) {
+                iVar.j(',');
+            }
+            iVar.i();
+            f.e(descriptor, (pe.b) this.c);
+            j(descriptor.g(i7));
+            iVar.j(':');
+            iVar.k();
+            return;
+        }
+        if (i7 == 0) {
+            this.a = true;
+        }
+        if (i7 == 1) {
+            iVar.j(',');
+            iVar.k();
+            this.a = false;
+        }
+    }
+
+    public void c(int i7) {
+        if (this.a) {
+            j(String.valueOf(i7));
+        } else {
+            ((mc.a) ((ca.i) this.b).c).c(String.valueOf(i7));
+        }
+    }
+
+    public void d(long j3) {
+        if (this.a) {
+            j(String.valueOf(j3));
+        } else {
+            ((mc.a) ((ca.i) this.b).c).c(String.valueOf(j3));
+        }
+    }
+
+    public void e(me.d descriptor, int i7, long j3) {
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        b(descriptor, i7);
+        d(j3);
+    }
+
+    public void f() {
+        ca.i iVar = (ca.i) this.b;
+        iVar.getClass();
+        kotlin.jvm.internal.j.e("null", "v");
+        ((mc.a) iVar.c).c("null");
+    }
+
+    public void g(me.d descriptor, int i7, ke.a serializer, Object obj) {
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        kotlin.jvm.internal.j.e(serializer, "serializer");
+        if (obj != null || ((p0) this.f).b) {
+            kotlin.jvm.internal.j.e(descriptor, "descriptor");
+            kotlin.jvm.internal.j.e(serializer, "serializer");
+            b(descriptor, i7);
+            if (serializer.d().c()) {
+                i(serializer, obj);
+            } else if (obj == null) {
+                f();
+            } else {
+                i(serializer, obj);
             }
         }
+    }
+
+    public void h(me.d descriptor, int i7, ke.a serializer, Object obj) {
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        kotlin.jvm.internal.j.e(serializer, "serializer");
+        b(descriptor, i7);
+        i(serializer, obj);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void i(ke.a serializer, Object obj) {
+        String str;
+        kotlin.jvm.internal.j.e(serializer, "serializer");
+        p0 p0Var = ((pe.b) this.c).a;
+        p0Var.getClass();
+        int ordinal = ((pe.a) p0Var.f).ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
+                v9 e10 = serializer.d().e();
+                if (kotlin.jvm.internal.j.a(e10, me.f.b) || kotlin.jvm.internal.j.a(e10, me.f.e)) {
+                    me.d d = serializer.d();
+                    kotlin.jvm.internal.j.e(d, "<this>");
+                    Iterator it = d.getAnnotations().iterator();
+                    while (true) {
+                        if (!it.hasNext()) {
+                            str = (String) p0Var.e;
+                            break;
+                        }
+                        Annotation annotation = (Annotation) it.next();
+                        if (annotation instanceof pe.c) {
+                            str = ((pe.c) annotation).discriminator();
+                            break;
+                        }
+                    }
+                    if (str != null) {
+                        String a10 = serializer.d().a();
+                        this.g = str;
+                        this.h = a10;
+                    }
+                    serializer.a(this, obj);
+                }
+            } else if (ordinal != 2) {
+                throw new androidx.car.app.j();
+            }
+        }
+        str = null;
+        if (str != null) {
+        }
+        serializer.a(this, obj);
+    }
+
+    public void j(String value) {
+        int i7;
+        kotlin.jvm.internal.j.e(value, "value");
+        ca.i iVar = (ca.i) this.b;
+        iVar.getClass();
+        kotlin.jvm.internal.j.e(value, "value");
+        mc.a aVar = (mc.a) iVar.c;
+        aVar.a(aVar.c, value.length() + 2);
+        char[] cArr = aVar.b;
+        int i10 = aVar.c;
+        int i11 = i10 + 1;
+        cArr[i10] = '\"';
+        int length = value.length();
+        value.getChars(0, length, cArr, i11);
+        int i12 = length + i11;
+        int i13 = i11;
+        while (i13 < i12) {
+            char c10 = cArr[i13];
+            byte[] bArr = i.b;
+            if (c10 < bArr.length && bArr[c10] != 0) {
+                int length2 = value.length();
+                for (int i14 = i13 - i11; i14 < length2; i14++) {
+                    aVar.a(i13, 2);
+                    char charAt = value.charAt(i14);
+                    byte[] bArr2 = i.b;
+                    if (charAt < bArr2.length) {
+                        byte b10 = bArr2[charAt];
+                        if (b10 == 0) {
+                            i7 = i13 + 1;
+                            aVar.b[i13] = charAt;
+                        } else {
+                            if (b10 == 1) {
+                                String str = i.a[charAt];
+                                kotlin.jvm.internal.j.b(str);
+                                aVar.a(i13, str.length());
+                                str.getChars(0, str.length(), aVar.b, i13);
+                                int length3 = str.length() + i13;
+                                aVar.c = length3;
+                                i13 = length3;
+                            } else {
+                                char[] cArr2 = aVar.b;
+                                cArr2[i13] = '\\';
+                                cArr2[i13 + 1] = (char) b10;
+                                i13 += 2;
+                                aVar.c = i13;
+                            }
+                        }
+                    } else {
+                        i7 = i13 + 1;
+                        aVar.b[i13] = charAt;
+                    }
+                    i13 = i7;
+                }
+                aVar.a(i13, 1);
+                aVar.b[i13] = '\"';
+                aVar.c = i13 + 1;
+                return;
+            }
+            i13++;
+        }
+        cArr[i12] = '\"';
+        aVar.c = i12 + 1;
+    }
+
+    public void k(me.d descriptor, int i7, String value) {
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        kotlin.jvm.internal.j.e(value, "value");
+        b(descriptor, i7);
+        j(value);
+    }
+
+    public void l(me.d descriptor) {
+        kotlin.jvm.internal.j.e(descriptor, "descriptor");
+        j jVar = (j) this.d;
+        ca.i iVar = (ca.i) this.b;
+        iVar.getClass();
+        iVar.b = false;
+        iVar.j(jVar.b);
+    }
+
+    public FileInputStream m(AssetManager assetManager, String str) {
+        try {
+            return assetManager.openFd(str).createInputStream();
+        } catch (FileNotFoundException e10) {
+            String message = e10.getMessage();
+            if (message == null || !message.contains("compressed")) {
+                return null;
+            }
+            ((u4.c) this.c).L();
+            return null;
+        }
+    }
+
+    public void n(int i7, Serializable serializable) {
+        ((Executor) this.b).execute(new d10(this, i7, serializable, 25));
+    }
+
+    public void o() {
+        int i7;
+        s4.e eVar = (s4.e) this.c;
+        PackageManager packageManager = (PackageManager) this.e;
+        ArrayList arrayList = (ArrayList) this.f;
+        if (this.a) {
+            ArrayList arrayList2 = new ArrayList();
+            if (Build.VERSION.SDK_INT >= 30) {
+                Intent intent = new Intent("android.media.MediaRoute2ProviderService");
+                ArrayList arrayList3 = new ArrayList();
+                Iterator<ResolveInfo> it = packageManager.queryIntentServices(intent, 0).iterator();
+                while (it.hasNext()) {
+                    arrayList3.add(it.next().serviceInfo);
+                }
+                arrayList2 = arrayList3;
+            }
+            Iterator<ResolveInfo> it2 = packageManager.queryIntentServices(new Intent("android.media.MediaRouteProviderService"), 0).iterator();
+            int i10 = 0;
+            while (true) {
+                boolean z9 = true;
+                if (!it2.hasNext()) {
+                    break;
+                }
+                ServiceInfo serviceInfo = it2.next().serviceInfo;
+                if (serviceInfo != null) {
+                    if ((x.c == null ? false : x.c().f()) && !arrayList2.isEmpty()) {
+                        int size = arrayList2.size();
+                        int i11 = 0;
+                        while (i11 < size) {
+                            Object obj = arrayList2.get(i11);
+                            i11++;
+                            ServiceInfo serviceInfo2 = (ServiceInfo) obj;
+                            if (!serviceInfo.packageName.equals(serviceInfo2.packageName) || !serviceInfo.name.equals(serviceInfo2.name)) {
+                            }
+                        }
+                    }
+                    String str = serviceInfo.packageName;
+                    String str2 = serviceInfo.name;
+                    int size2 = arrayList.size();
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= size2) {
+                            i12 = -1;
+                            break;
+                        }
+                        ComponentName componentName = ((r0) arrayList.get(i12)).r;
+                        if (componentName.getPackageName().equals(str) && componentName.getClassName().equals(str2)) {
+                            break;
+                        } else {
+                            i12++;
+                        }
+                    }
+                    if (i12 < 0) {
+                        r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
+                        r0Var.F = new m3(this, r0Var);
+                        if (!r0Var.x) {
+                            r0Var.x = true;
+                            r0Var.r();
+                        }
+                        i7 = i10 + 1;
+                        arrayList.add(i10, r0Var);
+                        eVar.a(r0Var, false);
+                    } else if (i12 >= i10) {
+                        r0 r0Var2 = (r0) arrayList.get(i12);
+                        if (!r0Var2.x) {
+                            r0Var2.x = true;
+                            r0Var2.r();
+                        }
+                        if (r0Var2.D == null) {
+                            if (!r0Var2.x || (((n) r0Var2.h) == null && r0Var2.w.isEmpty())) {
+                                z9 = false;
+                            }
+                            if (z9) {
+                                r0Var2.q();
+                                r0Var2.n();
+                            }
+                        }
+                        i7 = i10 + 1;
+                        Collections.swap(arrayList, i12, i10);
+                    }
+                    i10 = i7;
+                }
+            }
+            if (i10 < arrayList.size()) {
+                for (int size3 = arrayList.size() - 1; size3 >= i10; size3--) {
+                    r0 r0Var3 = (r0) arrayList.get(size3);
+                    u d = eVar.d(r0Var3);
+                    if (d != null) {
+                        r0Var3.getClass();
+                        x.b();
+                        r0Var3.f = null;
+                        r0Var3.h(null);
+                        eVar.m(d, null);
+                        eVar.a.b(514, d);
+                        eVar.l.remove(d);
+                    }
+                    arrayList.remove(r0Var3);
+                    r0Var3.F = null;
+                    if (r0Var3.x) {
+                        r0Var3.x = false;
+                        r0Var3.r();
+                    }
+                }
+            }
+        }
+    }
+
+    public boolean p(me.d dVar) {
+        ((p0) this.f).getClass();
+        return false;
+    }
+
+    public h(Context context, s4.e eVar) {
+        this.f = new ArrayList();
+        this.g = new androidx.mediarouter.app.f(this, 12);
+        this.h = new dt(this, 27);
+        this.b = context;
+        this.c = eVar;
+        this.d = new Handler();
+        this.e = context.getPackageManager();
+    }
+
+    public h(AssetManager assetManager, Executor executor, u4.c cVar, String str, File file) {
+        this.a = false;
+        this.b = executor;
+        this.c = cVar;
+        this.g = str;
+        this.e = file;
+        int i7 = Build.VERSION.SDK_INT;
+        byte[] bArr = null;
+        if (i7 >= 24 && i7 <= 34) {
+            switch (i7) {
+                case 24:
+                case 25:
+                    bArr = u4.d.h;
+                    break;
+                case 26:
+                    bArr = u4.d.g;
+                    break;
+                case 27:
+                    bArr = u4.d.f;
+                    break;
+                case 28:
+                case 29:
+                case qs.T /* 30 */:
+                    bArr = u4.d.e;
+                    break;
+                case qs.U /* 31 */:
+                case 32:
+                case 33:
+                case 34:
+                    bArr = u4.d.d;
+                    break;
+            }
+        }
+        this.d = bArr;
     }
 }

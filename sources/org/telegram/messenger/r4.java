@@ -4,14 +4,14 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r4 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ g5 b;
 
-    public /* synthetic */ r4(g5 g5Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ r4(g5 g5Var, int i7) {
+        this.a = i7;
         this.b = g5Var;
     }
 
@@ -28,29 +28,29 @@ public final /* synthetic */ class r4 implements RequestDelegate {
                 }
                 break;
             case 1:
-                final int i3 = 0;
+                final int i7 = 0;
                 final g5 g5Var = this.b;
                 g0.h3(new Runnable() { // from class: org.telegram.messenger.k4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i3) {
+                        switch (i7) {
                             case 0:
                                 g5 g5Var2 = g5Var;
                                 if (tL_error == null) {
-                                    g5Var2.Y = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    g5Var2.G = 2;
+                                    g5Var2.X = (TLRPC.GlobalPrivacySettings) tLObject;
+                                    g5Var2.F = 2;
                                 } else {
-                                    g5Var2.G = 0;
+                                    g5Var2.F = 0;
                                 }
                                 g5Var2.getNotificationCenter().k(47, new Object[0]);
                                 break;
                             default:
                                 g5 g5Var3 = g5Var;
                                 if (tL_error == null) {
-                                    g5Var3.I = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    g5Var3.H = 2;
+                                    g5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
+                                    g5Var3.G = 2;
                                 } else {
-                                    g5Var3.H = 0;
+                                    g5Var3.G = 0;
                                 }
                                 g5Var3.getNotificationCenter().k(47, new Object[0]);
                                 break;
@@ -68,20 +68,20 @@ public final /* synthetic */ class r4 implements RequestDelegate {
                             case 0:
                                 g5 g5Var22 = g5Var2;
                                 if (tL_error == null) {
-                                    g5Var22.Y = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    g5Var22.G = 2;
+                                    g5Var22.X = (TLRPC.GlobalPrivacySettings) tLObject;
+                                    g5Var22.F = 2;
                                 } else {
-                                    g5Var22.G = 0;
+                                    g5Var22.F = 0;
                                 }
                                 g5Var22.getNotificationCenter().k(47, new Object[0]);
                                 break;
                             default:
                                 g5 g5Var3 = g5Var2;
                                 if (tL_error == null) {
-                                    g5Var3.I = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    g5Var3.H = 2;
+                                    g5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
+                                    g5Var3.G = 2;
                                 } else {
-                                    g5Var3.H = 0;
+                                    g5Var3.G = 0;
                                 }
                                 g5Var3.getNotificationCenter().k(47, new Object[0]);
                                 break;

@@ -1,37 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jc implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nc b;
+public final class jc extends fm0 {
+    public final /* synthetic */ kc G;
 
-    public /* synthetic */ jc(nc ncVar, int i3) {
-        this.a = i3;
-        this.b = ncVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jc(kc kcVar, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(i7, j3, context, f6Var);
+        this.G = kcVar;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                nc ncVar = this.b;
-                ncVar.getClass();
-                if (view instanceof org.telegram.ui.Components.yz0) {
-                    view.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, ncVar.b));
-                    break;
-                }
-                break;
-            default:
-                if (view instanceof org.telegram.ui.Components.yz0) {
-                    org.telegram.ui.Components.yz0 yz0Var = (org.telegram.ui.Components.yz0) view;
-                    yz0Var.setFallbackWallpaper(yz0Var.H.a.b ? null : this.b.w);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.fm0
+    public final void b(int i7, boolean z9) {
+        super.b(i7, z9);
+        kc kcVar = this.G;
+        TextView textView = kcVar.d;
+        if (textView != null) {
+            textView.setTextColor(kcVar.b.h.getTextColor());
         }
     }
 }

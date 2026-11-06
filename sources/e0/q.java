@@ -14,7 +14,7 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class q {
     public f0.g A;
@@ -75,43 +75,43 @@ public final class q {
         return charSequence == null ? charSequence : charSequence.length() > 5120 ? charSequence.subSequence(0, 5120) : charSequence;
     }
 
-    public final void a(int i3, PendingIntent pendingIntent, String str) {
-        this.b.add(new h(i3 != 0 ? IconCompat.e(null, "", i3) : null, str, pendingIntent, new Bundle(), null, null, true, 0, true));
+    public final void a(int i7, PendingIntent pendingIntent, String str) {
+        this.b.add(new h(i7 != 0 ? IconCompat.e(null, "", i7) : null, str, pendingIntent, new Bundle(), null, null, true, 0, true));
     }
 
     public final Notification b() {
         Notification build;
         Bundle bundle;
-        e0 e0Var = new e0(this);
-        q qVar = (q) e0Var.e;
+        a4.k kVar = new a4.k(this);
+        q qVar = (q) kVar.e;
         y yVar = qVar.l;
         if (yVar != null) {
-            yVar.b(e0Var);
+            yVar.b(kVar);
         }
-        Notification.Builder builder = (Notification.Builder) e0Var.d;
-        int i3 = e0Var.b;
+        Notification.Builder builder = (Notification.Builder) kVar.d;
+        int i7 = kVar.b;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 26) {
             build = builder.build();
         } else if (i10 >= 24) {
             build = builder.build();
-            if (i3 != 0) {
-                if (build.getGroup() != null && (build.flags & 512) != 0 && i3 == 2) {
-                    e0.s(build);
+            if (i7 != 0) {
+                if (build.getGroup() != null && (build.flags & 512) != 0 && i7 == 2) {
+                    a4.k.s(build);
                 }
-                if (build.getGroup() != null && (build.flags & 512) == 0 && i3 == 1) {
-                    e0.s(build);
+                if (build.getGroup() != null && (build.flags & 512) == 0 && i7 == 1) {
+                    a4.k.s(build);
                 }
             }
         } else {
-            builder.setExtras((Bundle) e0Var.f);
+            builder.setExtras((Bundle) kVar.f);
             build = builder.build();
-            if (i3 != 0) {
-                if (build.getGroup() != null && (build.flags & 512) != 0 && i3 == 2) {
-                    e0.s(build);
+            if (i7 != 0) {
+                if (build.getGroup() != null && (build.flags & 512) != 0 && i7 == 2) {
+                    a4.k.s(build);
                 }
-                if (build.getGroup() != null && (build.flags & 512) == 0 && i3 == 1) {
-                    e0.s(build);
+                if (build.getGroup() != null && (build.flags & 512) == 0 && i7 == 1) {
+                    a4.k.s(build);
                 }
             }
         }
@@ -130,28 +130,28 @@ public final class q {
             ArrayList<? extends Parcelable> arrayList = new ArrayList<>(d0Var.a.size());
             ArrayList arrayList2 = d0Var.a;
             int size = arrayList2.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList2.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList2.get(i7);
+                i7++;
                 h hVar = (h) obj;
                 int i10 = Build.VERSION.SDK_INT;
                 IconCompat a10 = hVar.a();
                 Bundle bundle2 = hVar.a;
                 Notification.Action.Builder a11 = a0.a(a10 != null ? a10.m(null) : null, hVar.h, hVar.i);
-                boolean z10 = hVar.d;
+                boolean z9 = hVar.d;
                 Bundle bundle3 = bundle2 != null ? new Bundle(bundle2) : new Bundle();
-                bundle3.putBoolean("android.support.allowGeneratedReplies", z10);
+                bundle3.putBoolean("android.support.allowGeneratedReplies", z9);
                 if (i10 >= 24) {
-                    b0.a(a11, z10);
+                    b0.a(a11, z9);
                 }
                 if (i10 >= 31) {
                     c0.a(a11, false);
                 }
                 z.a(a11, bundle3);
-                m0[] m0VarArr = hVar.c;
-                if (m0VarArr != null) {
-                    for (RemoteInput remoteInput : m0.a(m0VarArr)) {
+                l0[] l0VarArr = hVar.c;
+                if (l0VarArr != null) {
+                    for (RemoteInput remoteInput : l0.a(l0VarArr)) {
                         z.b(a11, remoteInput);
                     }
                 }
@@ -205,12 +205,12 @@ public final class q {
         this.e = d(charSequence);
     }
 
-    public final void h(int i3, boolean z10) {
+    public final void h(int i7, boolean z9) {
         Notification notification = this.F;
-        if (z10) {
-            notification.flags = i3 | notification.flags;
+        if (z9) {
+            notification.flags = i7 | notification.flags;
         } else {
-            notification.flags = (~i3) & notification.flags;
+            notification.flags = (~i7) & notification.flags;
         }
     }
 
@@ -219,9 +219,9 @@ public final class q {
     }
 
     public final void j(Bitmap bitmap) {
-        IconCompat c2;
+        IconCompat c10;
         if (bitmap == null) {
-            c2 = null;
+            c10 = null;
         } else {
             if (Build.VERSION.SDK_INT < 27) {
                 Resources resources = this.a.getResources();
@@ -232,9 +232,9 @@ public final class q {
                     bitmap = Bitmap.createScaledBitmap(bitmap, (int) Math.ceil(bitmap.getWidth() * min), (int) Math.ceil(bitmap.getHeight() * min), true);
                 }
             }
-            c2 = IconCompat.c(bitmap);
+            c10 = IconCompat.c(bitmap);
         }
-        this.h = c2;
+        this.h = c10;
     }
 
     public final void k() {

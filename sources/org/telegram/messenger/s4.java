@@ -7,17 +7,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ct0;
+import org.telegram.ui.kt0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s4 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ s4(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public /* synthetic */ s4(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
@@ -25,25 +25,25 @@ public final /* synthetic */ class s4 implements RequestDelegate {
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int indexOf;
-        int i3 = 1;
+        int i7 = 1;
         switch (this.a) {
             case 0:
                 g5 g5Var = (g5) this.b;
-                ct0 ct0Var = (ct0) this.c;
+                kt0 kt0Var = (kt0) this.c;
                 if (tL_error == null) {
-                    g5Var.a0.clear();
                     g5Var.Z.clear();
-                    g5Var.n0 = 0;
+                    g5Var.Y.clear();
+                    g5Var.m0 = 0;
                     g5Var.s = false;
                     g5Var.e = false;
                     g5Var.h = false;
                     g5Var.b = false;
                     g5Var.r = false;
                     g5Var.w = "";
-                    g0.h3(new b4(28, g5Var, ct0Var));
+                    g0.h3(new b4(28, g5Var, kt0Var));
                     break;
                 } else {
-                    g0.h3(ct0Var);
+                    g0.h3(kt0Var);
                     break;
                 }
             case 1:
@@ -72,14 +72,14 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                             if (!TextUtils.isEmpty(user2.phone)) {
                                 g5.m(0, user2.first_name, user2.last_name);
                                 g5Var2.getMessagesStorage().f(user2.phone, "");
-                                d5 d5Var = (d5) g5Var2.a0.get(user2.phone);
+                                d5 d5Var = (d5) g5Var2.Z.get(user2.phone);
                                 if (d5Var != null && (indexOf = d5Var.g.indexOf(user2.phone)) != -1) {
                                     d5Var.h.set(indexOf, 0);
                                 }
                             }
                         }
                     }
-                    g0.h3(new fg(g5Var2, updates, user, 16));
+                    g0.h3(new ng(g5Var2, updates, user, 16));
                     break;
                 }
                 break;
@@ -87,32 +87,32 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                 g5 g5Var3 = (g5) this.b;
                 SharedPreferences.Editor editor = (SharedPreferences.Editor) this.c;
                 if (tLObject instanceof Vector) {
-                    g0.h3(new fg(g5Var3, editor, (Vector) tLObject, 14));
+                    g0.h3(new ng(g5Var3, editor, (Vector) tLObject, 14));
                     break;
                 }
                 break;
             case 3:
-                li liVar = (li) this.b;
+                ui uiVar = (ui) this.b;
                 TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) this.c;
-                liVar.getClass();
+                uiVar.getClass();
                 if (tL_error != null && r8.r(tL_error.text)) {
-                    liVar.getFileRefController().u(new Object[]{tL_messages_saveGif}, "gif");
+                    uiVar.getFileRefController().u(new Object[]{tL_messages_saveGif}, "gif");
                     break;
                 }
                 break;
             case 4:
-                g0.h3(new dg((li) this.b, tLObject, (TLRPC.Document) this.c, i3));
+                g0.h3(new lg((ui) this.b, tLObject, (TLRPC.Document) this.c, i7));
                 break;
             case 5:
-                li liVar2 = (li) this.b;
+                ui uiVar2 = (ui) this.b;
                 Runnable runnable = (Runnable) this.c;
-                liVar2.getClass();
+                uiVar2.getClass();
                 int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                 if (tLObject instanceof TLRPC.TL_attachMenuBotsNotModified) {
-                    liVar2.v1(null, 0L, currentTimeMillis, false);
+                    uiVar2.v1(null, 0L, currentTimeMillis, false);
                 } else if (tLObject instanceof TLRPC.TL_attachMenuBots) {
                     TLRPC.TL_attachMenuBots tL_attachMenuBots = (TLRPC.TL_attachMenuBots) tLObject;
-                    liVar2.v1(tL_attachMenuBots, tL_attachMenuBots.hash, currentTimeMillis, false);
+                    uiVar2.v1(tL_attachMenuBots, tL_attachMenuBots.hash, currentTimeMillis, false);
                 }
                 if (runnable != null) {
                     g0.h3(runnable);
@@ -120,14 +120,14 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                 }
                 break;
             case 6:
-                g0.h3(new dg((hp) this.b, tLObject, (ArrayList) this.c, 7));
+                g0.h3(new lg((qp) this.b, tLObject, (ArrayList) this.c, 7));
                 break;
             case 7:
-                hp hpVar = (hp) this.b;
+                qp qpVar = (qp) this.b;
                 Runnable runnable2 = (Runnable) this.c;
-                hpVar.getClass();
+                qpVar.getClass();
                 if (tL_error == null) {
-                    hpVar.O3((TLRPC.Updates) tLObject, false);
+                    qpVar.O3((TLRPC.Updates) tLObject, false);
                     if (runnable2 != null) {
                         g0.h3(runnable2);
                         break;
@@ -135,24 +135,24 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                 }
                 break;
             case 8:
-                g0.h3(new ul((nv) this.b, tLObject, (ArrayList) this.c, tL_error, 22));
+                g0.h3(new em((vv) this.b, tLObject, (ArrayList) this.c, tL_error, 22));
                 break;
             case 9:
-                yy yyVar = (yy) this.b;
+                gz gzVar = (gz) this.b;
                 Runnable runnable3 = (Runnable) this.c;
                 if (tLObject != null) {
-                    yyVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
                     if (runnable3 != null) {
                         g0.h3(runnable3);
                         break;
                     }
                 } else {
-                    yyVar.getClass();
+                    gzVar.getClass();
                     break;
                 }
                 break;
             default:
-                g0.i3(new i10((k10) this.b, (String) this.c, tL_error, tLObject, 0), 2L);
+                g0.i3(new q10((s10) this.b, (String) this.c, tL_error, tLObject, 0), 2L);
                 break;
         }
     }

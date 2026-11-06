@@ -13,8 +13,8 @@ public class z2 implements a2 {
     public int b;
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.T(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.T(this, j3, j10);
     }
 
     @Override // j$.util.stream.e2
@@ -33,40 +33,40 @@ public class z2 implements a2 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i3) {
-        a(i3);
+    public final /* bridge */ /* synthetic */ e2 a(int i7) {
+        a(i7);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i3) {
+    public final d2 a(int i7) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i3) {
-        t3.N(this, (Integer[]) objArr, i3);
+    public final /* synthetic */ void f(Object[] objArr, int i7) {
+        t3.N(this, (Integer[]) objArr, i7);
     }
 
     @Override // j$.util.stream.d2
-    public final void c(int i3, Object obj) {
+    public final void c(int i7, Object obj) {
         int i10 = this.b;
-        System.arraycopy(this.a, 0, (int[]) obj, i3, i10);
+        System.arraycopy(this.a, 0, (int[]) obj, i7, i10);
     }
 
     @Override // j$.util.stream.d2
     public final void d(Object obj) {
         IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i3 = 0; i3 < this.b; i3++) {
-            intConsumer.accept(this.a[i3]);
+        for (int i7 = 0; i7 < this.b; i7++) {
+            intConsumer.accept(this.a[i7]);
         }
     }
 
-    public z2(long j10) {
-        if (j10 >= 2147483639) {
+    public z2(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = new int[(int) j10];
+        this.a = new int[(int) j3];
         this.b = 0;
     }
 
@@ -89,8 +89,8 @@ public class z2 implements a2 {
     public final Object b() {
         int[] iArr = this.a;
         int length = iArr.length;
-        int i3 = this.b;
-        return length == i3 ? iArr : Arrays.copyOf(iArr, i3);
+        int i7 = this.b;
+        return length == i7 ? iArr : Arrays.copyOf(iArr, i7);
     }
 
     @Override // j$.util.stream.e2

@@ -13,23 +13,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b6 {
     public static double a;
     public static long b;
     public static final String[] c = {"bluestacks", "memuhyperv", "virtualbox"};
-    public static kv d;
-    public static kv e;
-    public static kv f;
+    public static sv d;
+    public static sv e;
+    public static sv f;
     public static SharedPreferences g;
 
-    public static void a(int i3) {
+    public static void a(int i7) {
         SharedPreferences sharedPreferences = g;
         if (sharedPreferences != null) {
             SharedPreferences.Editor edit = sharedPreferences.edit();
             for (String str : g.getAll().keySet()) {
-                if (str.startsWith("confirm_shown_" + i3 + "_")) {
+                if (str.startsWith("confirm_shown_" + i7 + "_")) {
                     edit.remove(str);
                 }
             }
@@ -64,10 +64,10 @@ public abstract class b6 {
         }
         if (arrayList != null) {
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
                 String str = (String) obj;
                 for (int i10 = 0; i10 < 3; i10++) {
                     if (str.toLowerCase().contains(c[i10])) {
@@ -79,56 +79,56 @@ public abstract class b6 {
         return false;
     }
 
-    public static void c(String str, jc jcVar, ic icVar) {
-        d(str, jcVar, icVar, false);
+    public static void c(String str, pc pcVar, oc ocVar) {
+        d(str, pcVar, ocVar, false);
     }
 
-    public static void d(String str, jc jcVar, ic icVar, boolean z10) {
-        if (z10) {
+    public static void d(String str, pc pcVar, oc ocVar, boolean z9) {
+        if (z9) {
             try {
                 Context context = t0.b;
-                synchronized (mb.g.b) {
-                    mb.g.d(context, TaskExecutors.MAIN_THREAD);
+                synchronized (pb.g.b) {
+                    pb.g.d(context, TaskExecutors.MAIN_THREAD);
                 }
             } catch (IllegalStateException e10) {
-                if (!z10) {
-                    d(str, jcVar, icVar, true);
+                if (!z9) {
+                    d(str, pcVar, ocVar, true);
                     return;
                 } else {
-                    icVar.s(e10);
+                    ocVar.r(e10);
                     a8.g(e10, false);
                     return;
                 }
             } catch (Exception e11) {
-                icVar.s(e11);
+                ocVar.r(e11);
                 a8.g(e11, true);
                 return;
             } catch (Throwable th2) {
-                icVar.s(null);
+                ocVar.r(null);
                 a8.g(th2, false);
                 return;
             }
         }
-        b8.gf.a().g(str).addOnSuccessListener(new p1(jcVar, 8)).addOnFailureListener(new p1(icVar, 9));
+        c8.zb.a().g(str).addOnSuccessListener(new p1(pcVar, 9)).addOnFailureListener(new p1(ocVar, 10));
     }
 
     public static synchronized long e() {
         synchronized (b6.class) {
             if (b == 0 || SystemClock.elapsedRealtime() - b > 60000) {
-                return a3.g.c(t0.b).a();
+                return b3.g.c(t0.b).a();
             }
             return (long) a;
         }
     }
 
-    public static kv f(int i3) {
-        if (i3 == 1) {
+    public static sv f(int i7) {
+        if (i7 == 1) {
             return d;
         }
-        if (i3 == 2) {
+        if (i7 == 2) {
             return e;
         }
-        if (i3 == 4) {
+        if (i7 == 4) {
             return f;
         }
         return null;
@@ -138,40 +138,40 @@ public abstract class b6 {
         return e() >= 3000000;
     }
 
-    public static boolean h(int i3, long j10) {
-        return g.getBoolean(String.format("confirm_shown_%d_%d", Integer.valueOf(i3), Long.valueOf(j10)), false);
+    public static boolean h(int i7, long j3) {
+        return g.getBoolean(String.format("confirm_shown_%d_%d", Integer.valueOf(i7), Long.valueOf(j3)), false);
     }
 
     public static void i(SharedPreferences sharedPreferences) {
-        int i3 = (sharedPreferences.getBoolean("save_gallery", false) && r2.b) ? 7 : sharedPreferences.getInt("save_gallery_flags", -1);
-        if (i3 != -1) {
+        int i7 = (sharedPreferences.getBoolean("save_gallery", false) && r2.b) ? 7 : sharedPreferences.getInt("save_gallery_flags", -1);
+        if (i7 != -1) {
             sharedPreferences.edit().remove("save_gallery").remove("save_gallery_flags").apply();
-            kv kvVar = new kv();
-            d = kvVar;
-            boolean z10 = (i3 & 1) != 0;
-            kvVar.b = z10;
-            kvVar.a = z10;
-            kvVar.c = 104857600L;
-            kv.c(kvVar, "user", sharedPreferences);
-            kv kvVar2 = new kv();
-            e = kvVar2;
-            kv kvVar3 = d;
-            boolean z11 = (i3 & 2) != 0;
-            kvVar3.b = z11;
-            kvVar2.a = z11;
-            kvVar2.c = 104857600L;
-            kv.c(kvVar2, "groups", sharedPreferences);
-            kv kvVar4 = new kv();
-            f = kvVar4;
-            boolean z12 = (i3 & 4) != 0;
-            kvVar4.b = z12;
-            kvVar4.a = z12;
-            kvVar4.c = 104857600L;
-            kv.c(kvVar4, "channels", sharedPreferences);
+            sv svVar = new sv();
+            d = svVar;
+            boolean z9 = (i7 & 1) != 0;
+            svVar.b = z9;
+            svVar.a = z9;
+            svVar.c = 104857600L;
+            sv.c(svVar, "user", sharedPreferences);
+            sv svVar2 = new sv();
+            e = svVar2;
+            sv svVar3 = d;
+            boolean z10 = (i7 & 2) != 0;
+            svVar3.b = z10;
+            svVar2.a = z10;
+            svVar2.c = 104857600L;
+            sv.c(svVar2, "groups", sharedPreferences);
+            sv svVar4 = new sv();
+            f = svVar4;
+            boolean z11 = (i7 & 4) != 0;
+            svVar4.b = z11;
+            svVar4.a = z11;
+            svVar4.c = 104857600L;
+            sv.c(svVar4, "channels", sharedPreferences);
         } else {
-            d = kv.d("user", sharedPreferences);
-            e = kv.d("groups", sharedPreferences);
-            f = kv.d("channels", sharedPreferences);
+            d = sv.d("user", sharedPreferences);
+            e = sv.d("groups", sharedPreferences);
+            f = sv.d("channels", sharedPreferences);
         }
         d.d = 1;
         e.d = 2;
@@ -180,48 +180,48 @@ public abstract class b6 {
 
     public static LongSparseArray j(SharedPreferences sharedPreferences) {
         LongSparseArray longSparseArray = new LongSparseArray();
-        int i3 = sharedPreferences.getInt("count", 0);
-        for (int i10 = 0; i10 < i3; i10++) {
-            iv ivVar = new iv();
-            ivVar.d = sharedPreferences.getLong(i10 + "_dialog_id", 0L);
-            ivVar.a = sharedPreferences.getBoolean(i10 + "_photo", false);
-            ivVar.b = sharedPreferences.getBoolean(i10 + "_video", false);
-            ivVar.c = sharedPreferences.getLong(i10 + "_limitVideo", 104857600L);
-            long j10 = ivVar.d;
-            if (j10 != 0) {
-                longSparseArray.put(j10, ivVar);
+        int i7 = sharedPreferences.getInt("count", 0);
+        for (int i10 = 0; i10 < i7; i10++) {
+            qv qvVar = new qv();
+            qvVar.d = sharedPreferences.getLong(i10 + "_dialog_id", 0L);
+            qvVar.a = sharedPreferences.getBoolean(i10 + "_photo", false);
+            qvVar.b = sharedPreferences.getBoolean(i10 + "_video", false);
+            qvVar.c = sharedPreferences.getLong(i10 + "_limitVideo", 104857600L);
+            long j3 = qvVar.d;
+            if (j3 != 0) {
+                longSparseArray.put(j3, qvVar);
             }
         }
         return longSparseArray;
     }
 
-    public static boolean k(int i3, e8 e8Var, zi ziVar, int i10) {
-        kv kvVar;
-        if (i3 == 1) {
-            kvVar = d;
+    public static boolean k(int i7, e8 e8Var, ij ijVar, int i10) {
+        sv svVar;
+        if (i7 == 1) {
+            svVar = d;
         } else {
-            if (i3 != 4) {
-                if (i3 == 2) {
-                    kvVar = e;
+            if (i7 != 4) {
+                if (i7 == 2) {
+                    svVar = e;
                 }
                 return false;
             }
-            kvVar = f;
+            svVar = f;
         }
-        kvVar.getClass();
-        iv ivVar = (iv) h10.i(i10).m(kvVar.d).get(e8Var.a);
-        if (ziVar == null || (!ziVar.Q3() && !ziVar.m4())) {
-            boolean z10 = (ziVar != null && zi.M4(ziVar.k)) || e8Var.c == 3;
-            long T1 = ziVar != null ? ziVar.T1() : e8Var.d;
-            boolean z11 = kvVar.b;
-            boolean z12 = kvVar.a;
-            long j10 = kvVar.c;
-            if (ivVar != null) {
-                z11 = ivVar.b;
-                z12 = ivVar.a;
-                j10 = ivVar.c;
+        svVar.getClass();
+        qv qvVar = (qv) p10.i(i10).m(svVar.d).get(e8Var.a);
+        if (ijVar == null || (!ijVar.Q3() && !ijVar.m4())) {
+            boolean z9 = (ijVar != null && ij.M4(ijVar.k)) || e8Var.c == 3;
+            long T1 = ijVar != null ? ijVar.T1() : e8Var.d;
+            boolean z10 = svVar.b;
+            boolean z11 = svVar.a;
+            long j3 = svVar.c;
+            if (qvVar != null) {
+                z10 = qvVar.b;
+                z11 = qvVar.a;
+                j3 = qvVar.c;
             }
-            if (!z10 ? z12 : !(!z11 || (j10 != -1 && T1 >= j10))) {
+            if (!z9 ? z11 : !(!z10 || (j3 != -1 && T1 >= j3))) {
                 return true;
             }
         }
@@ -232,28 +232,28 @@ public abstract class b6 {
         sharedPreferences.edit().clear().apply();
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putInt("count", longSparseArray.size());
-        for (int i3 = 0; i3 < longSparseArray.size(); i3++) {
-            iv ivVar = (iv) longSparseArray.valueAt(i3);
-            edit.putLong(com.google.android.recaptcha.internal.a.h(i3, "_dialog_id"), ivVar.d);
-            edit.putBoolean(i3 + "_photo", ivVar.a);
-            edit.putBoolean(i3 + "_video", ivVar.b);
-            edit.putLong(i3 + "_limitVideo", ivVar.c);
+        for (int i7 = 0; i7 < longSparseArray.size(); i7++) {
+            qv qvVar = (qv) longSparseArray.valueAt(i7);
+            edit.putLong(com.google.android.recaptcha.internal.a.i(i7, "_dialog_id"), qvVar.d);
+            edit.putBoolean(i7 + "_photo", qvVar.a);
+            edit.putBoolean(i7 + "_video", qvVar.b);
+            edit.putLong(i7 + "_limitVideo", qvVar.c);
         }
         edit.apply();
     }
 
-    public static void m(int i3) {
+    public static void m(int i7) {
         SharedPreferences sharedPreferences = t0.b.getSharedPreferences("mainconfig", 0);
-        if (i3 == 1) {
-            kv.c(d, "user", sharedPreferences);
-        } else if (i3 == 2) {
-            kv.c(e, "groups", sharedPreferences);
-        } else if (i3 == 4) {
-            kv.c(f, "channels", sharedPreferences);
+        if (i7 == 1) {
+            sv.c(d, "user", sharedPreferences);
+        } else if (i7 == 2) {
+            sv.c(e, "groups", sharedPreferences);
+        } else if (i7 == 4) {
+            sv.c(f, "channels", sharedPreferences);
         }
     }
 
-    public static void n(int i3, long j10) {
-        g.edit().putBoolean(String.format("confirm_shown_%d_%d", Integer.valueOf(i3), Long.valueOf(j10)), true).apply();
+    public static void n(int i7, long j3) {
+        g.edit().putBoolean(String.format("confirm_shown_%d_%d", Integer.valueOf(i7), Long.valueOf(j3)), true).apply();
     }
 }

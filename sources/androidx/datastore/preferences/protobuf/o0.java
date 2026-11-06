@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class o0 extends LinkedHashMap {
     public static final o0 b;
@@ -51,7 +51,7 @@ public final class o0 extends LinkedHashMap {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean equals(Object obj) {
-        boolean z10;
+        boolean z9;
         if (obj instanceof Map) {
             Map map = (Map) obj;
             if (this != map) {
@@ -65,13 +65,13 @@ public final class o0 extends LinkedHashMap {
                         }
                     }
                 }
-                z10 = false;
-                if (!z10) {
+                z9 = false;
+                if (!z9) {
                     return true;
                 }
             }
-            z10 = true;
-            if (!z10) {
+            z9 = true;
+            if (!z9) {
             }
         }
         return false;
@@ -80,7 +80,7 @@ public final class o0 extends LinkedHashMap {
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         int hashCode;
-        int i3 = 0;
+        int i7 = 0;
         for (Map.Entry entry : entrySet()) {
             Object key = entry.getKey();
             int i10 = 1;
@@ -113,9 +113,9 @@ public final class o0 extends LinkedHashMap {
             } else {
                 i10 = value.hashCode();
             }
-            i3 += hashCode ^ i10;
+            i7 += hashCode ^ i10;
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

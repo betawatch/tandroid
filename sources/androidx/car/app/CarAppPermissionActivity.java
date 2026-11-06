@@ -6,22 +6,22 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.car.app.IOnRequestPermissionsListener;
-import androidx.fragment.app.e0;
+import androidx.fragment.app.d0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class CarAppPermissionActivity extends androidx.activity.l {
-    public static final /* synthetic */ int K = 0;
+    public static final /* synthetic */ int J = 0;
 
     @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
             Bundle bundle2 = getPackageManager().getApplicationInfo(getPackageName(), 128).metaData;
-            int i3 = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
+            int i7 = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
             Context createConfigurationContext = createConfigurationContext(getResources().getConfiguration());
-            if (i3 != 0) {
-                createConfigurationContext.setTheme(i3);
+            if (i7 != 0) {
+                createConfigurationContext.setTheme(i7);
             }
             int identifier = createConfigurationContext.getResources().getIdentifier("carPermissionActivityLayout", "attr", getPackageName());
             if (identifier != 0) {
@@ -44,7 +44,7 @@ public class CarAppPermissionActivity extends androidx.activity.l {
         IOnRequestPermissionsListener asInterface = IOnRequestPermissionsListener.Stub.asInterface(extras.getBinder("androidx.car.app.action.EXTRA_ON_REQUEST_PERMISSIONS_RESULT_LISTENER_KEY"));
         String[] stringArray = extras.getStringArray("androidx.car.app.action.EXTRA_PERMISSIONS_KEY");
         if (asInterface != null && stringArray != null) {
-            r(new b(2, this, asInterface), new e0(1)).a(stringArray);
+            r(new b(2, this, asInterface), new d0(1)).a(stringArray);
         } else {
             Log.e("CarApp", "Intent to request permissions is missing the callback binder");
             finish();

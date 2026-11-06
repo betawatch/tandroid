@@ -1,52 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.x30;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vc implements RequestDelegate {
+public final /* synthetic */ class vc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ hd b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ vc(bd bdVar, boolean z10, int i3) {
-        this.a = 0;
-        this.d = bdVar;
-        this.c = z10;
-        this.b = i3;
+    public /* synthetic */ vc(hd hdVar, int i7, int i10) {
+        this.a = i10;
+        this.b = hdVar;
+        this.c = i7;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                bd bdVar = (bd) this.d;
-                if (tLObject instanceof Vector) {
-                    int i3 = this.b;
-                    g0.h3(new gb(i3, 1, bdVar, (Vector) tLObject, this.c));
-                    break;
-                }
+                hd hdVar = this.b;
+                hdVar.P = false;
+                hdVar.j(this.c);
                 break;
             case 1:
-                ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
+                hd hdVar2 = this.b;
+                hdVar2.P = false;
+                hdVar2.j(this.c);
+                break;
+            case 2:
+                this.b.Z0(this.c, null, true, null);
                 break;
             default:
-                x30 x30Var = (x30) this.d;
-                g0.h3(new org.telegram.messenger.voip.j0(this.b, 6, x30Var, tLObject, this.c));
+                this.b.Z0(this.c, null, true, null);
                 break;
         }
-    }
-
-    public /* synthetic */ vc(cs csVar, int i3, boolean z10, int i10) {
-        this.a = i10;
-        this.d = csVar;
-        this.b = i3;
-        this.c = z10;
     }
 }

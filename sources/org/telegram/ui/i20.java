@@ -1,14 +1,43 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i20 extends org.telegram.ui.Components.cb0 {
-    public i20(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class i20 implements TextWatcher {
+    public final /* synthetic */ c40 a;
+
+    public i20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // org.telegram.ui.Components.cb0
-    public final CharSequence d(int i3) {
-        return org.telegram.messenger.bd.G(i3, "Minutes", new Object[0]);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        c40 c40Var = this.a;
+        c40Var.r5.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i7 = c40Var.U1;
+        if (codePointCount + 25 > i7) {
+            str = "" + (i7 - codePointCount);
+        } else {
+            str = null;
+        }
+        c40Var.D1.a();
+        c40Var.D1.setText(str);
+        c40Var.D1.setTextColor(codePointCount >= i7 ? -1280137 : -1);
+        if (codePointCount > i7) {
+            org.telegram.messenger.p2.D.a();
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

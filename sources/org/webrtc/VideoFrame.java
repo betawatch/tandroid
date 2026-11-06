@@ -2,18 +2,18 @@ package org.webrtc;
 
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface Buffer extends RefCounted {
-        Buffer cropAndScale(int i3, int i10, int i11, int i12, int i13, int i14);
+        Buffer cropAndScale(int i7, int i10, int i11, int i12, int i13, int i14);
 
         int getBufferType();
 
@@ -30,7 +30,7 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface I420Buffer extends Buffer {
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
@@ -48,18 +48,18 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface TextureBuffer extends Buffer {
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public enum Type {
             OES(36197),
             RGB(3553);
 
             private final int glTarget;
 
-            Type(int i3) {
-                this.glTarget = i3;
+            Type(int i7) {
+                this.glTarget = i7;
             }
 
             public int getGlTarget() {
@@ -67,7 +67,7 @@ public class VideoFrame implements RefCounted {
             }
         }
 
-        TextureBuffer applyTransformMatrix(Matrix matrix, int i3, int i10);
+        TextureBuffer applyTransformMatrix(Matrix matrix, int i7, int i10);
 
         int getTextureId();
 
@@ -80,16 +80,16 @@ public class VideoFrame implements RefCounted {
         int getUnscaledWidth();
     }
 
-    public VideoFrame(Buffer buffer, int i3, long j10) {
+    public VideoFrame(Buffer buffer, int i7, long j3) {
         if (buffer == null) {
             throw new IllegalArgumentException("buffer not allowed to be null");
         }
-        if (i3 % 90 != 0) {
+        if (i7 % 90 != 0) {
             throw new IllegalArgumentException("rotation must be a multiple of 90");
         }
         this.buffer = buffer;
-        this.rotation = i3;
-        this.timestampNs = j10;
+        this.rotation = i7;
+        this.timestampNs = j3;
     }
 
     public Buffer getBuffer() {
@@ -97,11 +97,11 @@ public class VideoFrame implements RefCounted {
     }
 
     public int getRotatedHeight() {
-        return this.rotation % hs.K2 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
+        return this.rotation % qs.K2 == 0 ? this.buffer.getHeight() : this.buffer.getWidth();
     }
 
     public int getRotatedWidth() {
-        return this.rotation % hs.K2 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
+        return this.rotation % qs.K2 == 0 ? this.buffer.getWidth() : this.buffer.getHeight();
     }
 
     public int getRotation() {

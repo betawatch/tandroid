@@ -2,20 +2,20 @@ package androidx.datastore.preferences.protobuf;
 
 import java.io.IOException;
 import java.util.Locale;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l extends IOException {
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l(int i3, int i10) {
+    public l(int i7, int i10) {
         super(r0.toString());
-        StringBuilder sb2 = new StringBuilder(hs.t1);
+        StringBuilder sb2 = new StringBuilder(qs.t1);
         sb2.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
-        sb2.append(i3);
+        sb2.append(i7);
         sb2.append(" limit ");
         sb2.append(i10);
         sb2.append(").");
@@ -29,13 +29,13 @@ public final class l extends IOException {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l(long j10, long j11, int i3, IndexOutOfBoundsException indexOutOfBoundsException) {
+    public l(long j3, long j10, int i7, IndexOutOfBoundsException indexOutOfBoundsException) {
         super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
         Locale locale = Locale.US;
-        StringBuilder t10 = a1.g.t(j10, "Pos: ", ", limit: ");
-        t10.append(j11);
-        t10.append(", len: ");
-        t10.append(i3);
+        StringBuilder t6 = a8.p0.t(j3, "Pos: ", ", limit: ");
+        t6.append(j10);
+        t6.append(", len: ");
+        t6.append(i7);
     }
 
     public l(String str, IndexOutOfBoundsException indexOutOfBoundsException) {

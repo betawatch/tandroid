@@ -3,35 +3,35 @@ package org.telegram.ui;
 import android.view.View;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u8 implements org.telegram.messenger.s10, org.telegram.messenger.t10, r0.m {
-    public final /* synthetic */ h9 a;
+public final /* synthetic */ class u8 implements org.telegram.messenger.a20, org.telegram.messenger.b20, r0.m {
+    public final /* synthetic */ i9 a;
 
-    public /* synthetic */ u8(h9 h9Var) {
-        this.a = h9Var;
+    public /* synthetic */ u8(i9 i9Var) {
+        this.a = i9Var;
     }
 
     @Override // r0.m
-    public r0.k1 R0(View view, r0.k1 k1Var) {
+    public r0.k1 S0(View view, r0.k1 k1Var) {
         return this.a.onInsetsInternal(view, k1Var);
     }
 
-    @Override // org.telegram.messenger.t10
+    @Override // org.telegram.messenger.b20
     public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
-        boolean z10;
+        boolean z9;
         Object obj = r31Var.G;
-        if (obj instanceof e9) {
-            this.a.f0(((e9) obj).c, (d9) view);
-            z10 = true;
+        if (obj instanceof f9) {
+            this.a.f0(((f9) obj).c, (e9) view);
+            z9 = true;
         } else {
-            z10 = false;
+            z9 = false;
         }
-        return Boolean.valueOf(z10);
+        return Boolean.valueOf(z9);
     }
 
-    @Override // org.telegram.messenger.s10
-    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        h9.a0(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        i9.a0(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
     }
 }

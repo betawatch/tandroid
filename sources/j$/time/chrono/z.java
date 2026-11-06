@@ -18,14 +18,14 @@ public final class z extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.k
-    public final l u(int i3) {
-        if (i3 == 0) {
+    public final l u(int i7) {
+        if (i7 == 0) {
             return c0.BEFORE_ROC;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             return c0.ROC;
         }
-        throw new j$.time.b("Invalid era: " + i3);
+        throw new j$.time.b("Invalid era: " + i7);
     }
 
     @Override // j$.time.chrono.k
@@ -43,16 +43,16 @@ public final class z extends a implements Serializable {
 
     @Override // j$.time.chrono.k
     public final j$.time.temporal.s s(j$.time.temporal.a aVar) {
-        int i3 = y.a[aVar.ordinal()];
-        if (i3 == 1) {
+        int i7 = y.a[aVar.ordinal()];
+        if (i7 == 1) {
             j$.time.temporal.s sVar = j$.time.temporal.a.PROLEPTIC_MONTH.b;
             return j$.time.temporal.s.e(sVar.a - 22932, sVar.d - 22932);
         }
-        if (i3 == 2) {
+        if (i7 == 2) {
             j$.time.temporal.s sVar2 = j$.time.temporal.a.YEAR.b;
             return j$.time.temporal.s.f(sVar2.d - 1911, (-sVar2.a) + 1912);
         }
-        if (i3 != 3) {
+        if (i7 != 3) {
             return aVar.b;
         }
         j$.time.temporal.s sVar3 = j$.time.temporal.a.YEAR.b;

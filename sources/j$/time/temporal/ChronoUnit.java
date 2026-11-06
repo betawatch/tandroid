@@ -47,8 +47,8 @@ public enum ChronoUnit implements q {
     }
 
     @Override // j$.time.temporal.q
-    public final Temporal j(Temporal temporal, long j10) {
-        return temporal.d(j10, this);
+    public final Temporal j(Temporal temporal, long j3) {
+        return temporal.d(j3, this);
     }
 
     @Override // j$.time.temporal.q

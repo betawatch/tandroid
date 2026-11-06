@@ -4,41 +4,41 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gy0 implements wi.q0, org.telegram.messenger.cs {
+public final class gy0 implements wi.q0, org.telegram.messenger.ls {
     public final int a;
     public final boolean b;
     public final HashMap c = new HashMap();
     public boolean d;
 
-    public gy0(int i3, boolean z10) {
-        this.a = i3;
-        this.b = z10;
-        org.telegram.messenger.hs.f(i3).b(this, org.telegram.messenger.hs.U1);
+    public gy0(int i7, boolean z9) {
+        this.a = i7;
+        this.b = z9;
+        org.telegram.messenger.qs.f(i7).b(this, org.telegram.messenger.qs.U1);
     }
 
-    public final synchronized void a(long j10, File file, long j11, long j12) {
-        ey0 ey0Var = (ey0) this.c.get(Long.valueOf(j10));
+    public final synchronized void a(long j3, File file, long j10, long j11) {
+        ey0 ey0Var = (ey0) this.c.get(Long.valueOf(j3));
         if (!this.d && ey0Var != null && !ey0Var.e) {
             e(ey0Var);
-            ey0Var.b = Math.max(ey0Var.b, j11 + j12);
+            ey0Var.b = Math.max(ey0Var.b, j10 + j11);
             org.telegram.messenger.w7.G(this.a).n(file.getAbsolutePath(), this.b, ey0Var.b, 0L, null);
         }
     }
 
-    public final synchronized void b(long j10, long j11, File file) {
-        ey0 ey0Var = (ey0) this.c.get(Long.valueOf(j10));
+    public final synchronized void b(long j3, long j10, File file) {
+        ey0 ey0Var = (ey0) this.c.get(Long.valueOf(j3));
         if (!this.d && ey0Var != null && !ey0Var.e) {
             e(ey0Var);
-            ey0Var.b = Math.max(ey0Var.b, j11);
-            ey0Var.c = j11;
-            org.telegram.messenger.w7.G(this.a).n(file.getAbsolutePath(), this.b, ey0Var.b, j11, null);
+            ey0Var.b = Math.max(ey0Var.b, j10);
+            ey0Var.c = j10;
+            org.telegram.messenger.w7.G(this.a).n(file.getAbsolutePath(), this.b, ey0Var.b, j10, null);
         }
     }
 
-    public final synchronized void c(long j10) {
-        ey0 ey0Var = (ey0) this.c.remove(Long.valueOf(j10));
+    public final synchronized void c(long j3) {
+        ey0 ey0Var = (ey0) this.c.remove(Long.valueOf(j3));
         if (ey0Var == null) {
             return;
         }
@@ -48,14 +48,14 @@ public final class gy0 implements wi.q0, org.telegram.messenger.cs {
         }
     }
 
-    public final synchronized void d(boolean z10) {
+    public final synchronized void d(boolean z9) {
         try {
             if (this.d) {
                 return;
             }
             this.d = true;
-            org.telegram.messenger.hs.f(this.a).n(this, org.telegram.messenger.hs.U1);
-            if (z10) {
+            org.telegram.messenger.qs.f(this.a).n(this, org.telegram.messenger.qs.U1);
+            if (z9) {
                 Iterator it = this.c.values().iterator();
                 while (it.hasNext()) {
                     ey0 ey0Var = (ey0) it.next();
@@ -78,12 +78,12 @@ public final class gy0 implements wi.q0, org.telegram.messenger.cs {
         r0.i = (byte[]) r6[4];
         r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
      */
-    @Override // org.telegram.messenger.cs
+    @Override // org.telegram.messenger.ls
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void didReceivedNotification(int i3, int i10, Object... objArr) {
-        if (!this.d && i3 == org.telegram.messenger.hs.U1 && objArr.length >= 6) {
+    public final synchronized void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (!this.d && i7 == org.telegram.messenger.qs.U1 && objArr.length >= 6) {
             String str = (String) objArr[0];
             Iterator it = this.c.values().iterator();
             while (true) {

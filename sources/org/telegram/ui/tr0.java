@@ -1,44 +1,70 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class tr0 extends RelativeLayout {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final class tr0 implements View.OnClickListener {
+    public final /* synthetic */ jf0 a;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ org.telegram.ui.Components.pj0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.k60 e;
+    public final /* synthetic */ org.telegram.ui.Components.k60 f;
+    public final /* synthetic */ yr0 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tr0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
-        super(popupNotificationActivity2);
-        this.a = popupNotificationActivity;
+    public tr0(yr0 yr0Var, jf0 jf0Var, an anVar, org.telegram.ui.Components.pj0 pj0Var, LinearLayout linearLayout, org.telegram.ui.Components.k60 k60Var, org.telegram.ui.Components.k60 k60Var2) {
+        this.h = yr0Var;
+        this.a = jf0Var;
+        this.b = anVar;
+        this.c = pj0Var;
+        this.d = linearLayout;
+        this.e = k60Var;
+        this.f = k60Var2;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getTag() instanceof String) {
-                int left = childAt.getLeft();
-                PopupNotificationActivity popupNotificationActivity = this.a;
-                childAt.layout(left, org.telegram.messenger.g0.L(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        jf0 jf0Var = this.a;
+        ArrayList arrayList = jf0Var.b;
+        ArrayList arrayList2 = jf0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-    }
-
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, i10);
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
-        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt.getTag() instanceof String) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - org.telegram.messenger.g0.L(3.0f), TLObject.FLAG_30));
+        int size = arrayList2.size();
+        yr0 yr0Var = this.h;
+        an anVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
             }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            anVar.presentFragment(new ProfileActivity(bundle, null));
+            yr0Var.c(false);
+            return;
         }
+        if (org.telegram.messenger.iz.c1 > 0 && anVar.l1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.cc t6 = new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(yr0Var.getContext()), yr0Var.b).t(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131748487, null)), null);
+            anVar.B1 = t6;
+            t6.j = 4000;
+            t6.j();
+            org.telegram.messenger.iz.S(org.telegram.messenger.iz.c1 - 1);
+        }
+        org.telegram.ui.Components.pj0 pj0Var = this.c;
+        pj0Var.requestLayout();
+        this.d.requestLayout();
+        pj0Var.getAdapter().f();
+        this.e.K(this.f);
     }
 }

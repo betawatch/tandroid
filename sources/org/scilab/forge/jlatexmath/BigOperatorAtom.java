@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class BigOperatorAtom extends Atom {
     protected Atom base;
@@ -43,9 +43,9 @@ public class BigOperatorAtom extends Atom {
     */
     public Box createBox(TeXEnvironment teXEnvironment) {
         RowAtom rowAtom;
-        boolean z10;
+        boolean z9;
         Atom atom;
-        int i3;
+        int i7;
         Box horizontalBox;
         float f10;
         Box changeWidth;
@@ -59,8 +59,8 @@ public class BigOperatorAtom extends Atom {
                 rowAtom = (RowAtom) base;
                 if (rowAtom.lookAtLastAtom && this.base.type_limits != 2) {
                     this.base = rowAtom.getLastAtom();
-                    z10 = this.limitsSet;
-                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i3 = (atom = this.base).type_limits) == 1 || (i3 == 0 && style >= 2))) {
+                    z9 = this.limitsSet;
+                    if ((!z9 && !this.limits) || ((!z9 && style >= 2) || (i7 = (atom = this.base).type_limits) == 1 || (i7 == 0 && style >= 2))) {
                         if (rowAtom == null) {
                             return new ScriptsAtom(this.base, this.under, this.over).createBox(teXEnvironment);
                         }
@@ -75,9 +75,9 @@ public class BigOperatorAtom extends Atom {
                         horizontalBox = new HorizontalBox(atom != null ? new StrutBox(0.0f, 0.0f, 0.0f, 0.0f) : atom.createBox(teXEnvironment));
                         f10 = 0.0f;
                     } else {
-                        Char r5 = teXFont.getChar(((SymbolAtom) atom).getName(), style);
+                        Char r52 = teXFont.getChar(((SymbolAtom) atom).getName(), style);
                         horizontalBox = this.base.createBox(teXEnvironment);
-                        f10 = r5.getItalic();
+                        f10 = r52.getItalic();
                     }
                     Atom atom3 = this.over;
                     Box createBox2 = atom3 == null ? atom3.createBox(teXEnvironment.supStyle()) : null;
@@ -127,8 +127,8 @@ public class BigOperatorAtom extends Atom {
             this.base = base;
         }
         rowAtom = null;
-        z10 = this.limitsSet;
-        if (!z10) {
+        z9 = this.limitsSet;
+        if (!z9) {
         }
         if (atom instanceof SymbolAtom) {
         }
@@ -161,9 +161,9 @@ public class BigOperatorAtom extends Atom {
         }
     }
 
-    public BigOperatorAtom(Atom atom, Atom atom2, Atom atom3, boolean z10) {
+    public BigOperatorAtom(Atom atom, Atom atom2, Atom atom3, boolean z9) {
         this(atom, atom2, atom3);
-        this.limits = z10;
+        this.limits = z9;
         this.limitsSet = true;
     }
 }

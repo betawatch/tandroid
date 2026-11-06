@@ -1,76 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pi0 implements org.telegram.ui.ActionBar.p1, ns, nj0 {
+public final /* synthetic */ class pi0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yj0 b;
+    public final /* synthetic */ bk0 b;
 
-    public /* synthetic */ pi0(yj0 yj0Var, int i3) {
-        this.a = i3;
-        this.b = yj0Var;
+    public /* synthetic */ pi0(bk0 bk0Var, int i7) {
+        this.a = i7;
+        this.b = bk0Var;
     }
 
-    @Override // org.telegram.ui.ns
-    public void c(ks ksVar) {
-        switch (this.a) {
-            case 2:
-                yj0 yj0Var = this.b;
-                yj0Var.Z[5].setText(ksVar.a);
-                yj0Var.s = ksVar.d;
-                break;
-            default:
-                yj0 yj0Var2 = this.b;
-                yj0Var2.Z[0].setText(ksVar.a);
-                if (yj0Var2.V0.indexOf(ksVar.a) != -1) {
-                    yj0Var2.a1 = true;
-                    String str = (String) yj0Var2.W0.get(ksVar.a);
-                    yj0Var2.Z[1].setText(str);
-                    String str2 = (String) yj0Var2.Y0.get(str);
-                    yj0Var2.Z[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    yj0Var2.a1 = false;
-                }
-                org.telegram.messenger.g0.i3(new mi0(yj0Var2, 3), 300L);
-                yj0Var2.Z[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = yj0Var2.Z[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.nj0
-    public void f(String str, String str2) {
-        this.b.B1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                yj0 yj0Var = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    yj0Var.getParentActivity().startActivity(intent);
+                bk0 bk0Var = this.b;
+                ViewGroup[] viewGroupArr = bk0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    bk0Var.Y[0].requestFocus();
+                    org.telegram.messenger.g0.K3(bk0Var.Y[0]);
                     break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
                 }
+                break;
             case 1:
-                this.b.finishFragment();
+                bk0 bk0Var2 = this.b;
+                bk0Var2.presentFragment(bk0Var2.h1, true);
+                bk0Var2.h1 = null;
                 break;
             case 2:
+                bk0 bk0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = bk0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    bk0Var3.M1(editTextBoldCursorArr[0]);
+                    break;
+                }
+                break;
             case 3:
-            default:
-                yj0.f0(this.b);
+                org.telegram.messenger.g0.K3(this.b.Y[2]);
                 break;
             case 4:
-                sf.c.t(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.h10.i(this.b.currentAccount).d());
+                this.b.B1();
+                break;
+            case 5:
+                int i7 = 0;
+                while (true) {
+                    bk0 bk0Var4 = this.b;
+                    if (i7 >= bk0Var4.c0.getChildCount()) {
+                        bk0Var4.B1();
+                        bk0Var4.q1.clear();
+                        bk0Var4.p1.clear();
+                        bk0Var4.D.values.clear();
+                        bk0Var4.V1();
+                        break;
+                    } else {
+                        View childAt = bk0Var4.c0.getChildAt(i7);
+                        if (childAt instanceof ak0) {
+                            bk0Var4.c0.removeView(childAt);
+                            i7--;
+                        }
+                        i7++;
+                    }
+                }
+            default:
+                this.b.finishFragment();
                 break;
         }
     }

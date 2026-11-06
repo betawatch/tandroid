@@ -1,19 +1,41 @@
 package z7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m5 implements ma.d {
+public final class m5 implements na.d {
     public static final m5 a = new m5();
+    public static final na.c b = new na.c("appId", jg.g.q(rf.b.l(d.class, new a(1))));
+    public static final na.c c = new na.c("appVersion", jg.g.q(rf.b.l(d.class, new a(2))));
+    public static final na.c d = new na.c("firebaseProjectId", jg.g.q(rf.b.l(d.class, new a(3))));
+    public static final na.c e = new na.c("mlSdkVersion", jg.g.q(rf.b.l(d.class, new a(4))));
+    public static final na.c f = new na.c("tfliteSchemaVersion", jg.g.q(rf.b.l(d.class, new a(5))));
+    public static final na.c g = new na.c("gcmSenderId", jg.g.q(rf.b.l(d.class, new a(6))));
+    public static final na.c h = new na.c("apiKey", jg.g.q(rf.b.l(d.class, new a(7))));
+    public static final na.c i = new na.c("languages", jg.g.q(rf.b.l(d.class, new a(8))));
+    public static final na.c j = new na.c("mlSdkInstanceId", jg.g.q(rf.b.l(d.class, new a(9))));
+    public static final na.c k = new na.c("isClearcutClient", jg.g.q(rf.b.l(d.class, new a(10))));
+    public static final na.c l = new na.c("isStandaloneMlkit", jg.g.q(rf.b.l(d.class, new a(11))));
+    public static final na.c m = new na.c("isJsonLogging", jg.g.q(rf.b.l(d.class, new a(12))));
+    public static final na.c n = new na.c("buildLevel", jg.g.q(rf.b.l(d.class, new a(13))));
+    public static final na.c o = new na.c("optionalModuleVersion", jg.g.q(rf.b.l(d.class, new a(14))));
 
-    static {
-        t4.c.o(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, new y(1)), 2)));
-    }
-
-    @Override // ma.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // na.a
+    public final void a(Object obj, Object obj2) {
+        m9 m9Var = (m9) obj;
+        na.e eVar = (na.e) obj2;
+        eVar.a(b, m9Var.a);
+        eVar.a(c, m9Var.b);
+        eVar.a(d, null);
+        eVar.a(e, m9Var.c);
+        eVar.a(f, m9Var.d);
+        eVar.a(g, null);
+        eVar.a(h, null);
+        eVar.a(i, m9Var.e);
+        eVar.a(j, m9Var.f);
+        eVar.a(k, m9Var.g);
+        eVar.a(l, m9Var.h);
+        eVar.a(m, m9Var.i);
+        eVar.a(n, m9Var.j);
+        eVar.a(o, m9Var.k);
     }
 }

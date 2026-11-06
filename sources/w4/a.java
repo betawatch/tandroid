@@ -1,20 +1,23 @@
 package w4;
 
-import android.content.ComponentName;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import m.q;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements Comparable {
-    public final g0.c a;
-    public final ComponentName b;
+public final class a implements d {
+    public final LinkedHashSet a = new LinkedHashSet();
 
-    public a(g0.c cVar, ComponentName componentName) {
-        this.a = cVar;
-        this.b = componentName;
+    public a(q qVar) {
+        qVar.f("androidx.savedstate.Restarter", this);
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return this.a.m - ((a) obj).a.m;
+    @Override // w4.d
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.a));
+        return bundle;
     }
 }

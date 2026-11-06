@@ -10,8 +10,8 @@ public final /* synthetic */ class d implements Comparator, Serializable {
     public final /* synthetic */ Comparator b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ d(Comparator comparator, Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ d(Comparator comparator, Object obj, int i7) {
+        this.a = i7;
         this.b = comparator;
         this.c = obj;
     }

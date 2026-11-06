@@ -13,28 +13,28 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class lx0 extends View {
-    public static final xw0 S = new xw0(0);
-    public static final xw0 T = new xw0(1);
-    public static final xw0 U = new xw0(3);
-    public static final xw0 V = new xw0(4);
+    public static final xw0 R = new xw0(0);
+    public static final xw0 S = new xw0(1);
+    public static final xw0 T = new xw0(3);
+    public static final xw0 U = new xw0(4);
+    public int D;
     public int E;
-    public int F;
-    public int[] G;
+    public int[] F;
+    public boolean G;
     public boolean H;
     public boolean I;
-    public boolean J;
+    public final ArrayList J;
     public final ArrayList K;
-    public final ArrayList L;
-    public final Path M;
-    public final RectF N;
-    public final float[] O;
-    public final kx0 P;
-    public final ArrayList Q;
-    public final jx0 R;
-    public final org.telegram.ui.Cells.h9 a;
+    public final Path L;
+    public final RectF M;
+    public final float[] N;
+    public final kx0 O;
+    public final ArrayList P;
+    public final jx0 Q;
+    public final org.telegram.ui.Cells.i9 a;
     public int b;
     public final bx0 c;
     public final bx0 d;
@@ -48,7 +48,7 @@ public final class lx0 extends View {
     public int x;
     public boolean y;
 
-    public lx0(Context context, kx0 kx0Var, org.telegram.ui.Cells.h9 h9Var) {
+    public lx0(Context context, kx0 kx0Var, org.telegram.ui.Cells.i9 i9Var) {
         super(context);
         this.c = new bx0(this, true);
         this.d = new bx0(this, false);
@@ -60,15 +60,15 @@ public final class lx0 extends View {
         this.s = org.telegram.messenger.g0.L(9.0f);
         this.w = org.telegram.messenger.g0.L(12.0f);
         this.y = true;
-        this.G = new int[0];
+        this.F = new int[0];
+        this.J = new ArrayList();
         this.K = new ArrayList();
-        this.L = new ArrayList();
         new Path();
-        this.M = new Path();
-        this.N = new RectF();
-        this.O = new float[8];
-        this.Q = new ArrayList();
-        this.a = h9Var;
+        this.L = new Path();
+        this.M = new RectF();
+        this.N = new float[8];
+        this.P = new ArrayList();
+        this.a = i9Var;
         setRowCount(TLObject.FLAG_31);
         setColumnCount(TLObject.FLAG_31);
         setOrientation(0);
@@ -76,18 +76,18 @@ public final class lx0 extends View {
         setAlignmentMode(1);
         setRowOrderPreserved(true);
         setColumnOrderPreserved(true);
-        this.P = kx0Var;
+        this.O = kx0Var;
         jx0 jx0Var = new jx0(this, this);
-        this.R = jx0Var;
+        this.Q = jx0Var;
         r0.i0.j(this, jx0Var);
     }
 
     public static void g(String str) {
-        throw new IllegalArgumentException(t4.c.q(str, ". "));
+        throw new IllegalArgumentException(rf.b.q(str, ". "));
     }
 
-    public static void j(gx0 gx0Var, int i3, int i10, int i11, int i12) {
-        fx0 fx0Var = new fx0(i3, i10 + i3);
+    public static void j(gx0 gx0Var, int i7, int i10, int i11, int i12) {
+        fx0 fx0Var = new fx0(i7, i10 + i7);
         ix0 ix0Var = gx0Var.a;
         gx0Var.a = new ix0(ix0Var.a, fx0Var, ix0Var.c, ix0Var.d);
         fx0 fx0Var2 = new fx0(i11, i12 + i11);
@@ -95,25 +95,25 @@ public final class lx0 extends View {
         gx0Var.b = new ix0(ix0Var2.a, fx0Var2, ix0Var2.c, ix0Var2.d);
     }
 
-    public final void a(int i3, int i10, int i11, int i12) {
-        ArrayList arrayList = this.Q;
+    public final void a(int i7, int i10, int i11, int i12) {
+        ArrayList arrayList = this.P;
         ex0 ex0Var = new ex0(this, arrayList.size());
         gx0 gx0Var = new gx0();
         fx0 fx0Var = new fx0(i10, i12 + i10);
-        xw0 xw0Var = V;
+        xw0 xw0Var = U;
         gx0Var.a = new ix0(false, fx0Var, xw0Var, 0.0f);
-        gx0Var.b = new ix0(false, new fx0(i3, i11 + i3), xw0Var, 0.0f);
+        gx0Var.b = new ix0(false, new fx0(i7, i11 + i7), xw0Var, 0.0f);
         ex0Var.a = gx0Var;
         ex0Var.j = i10;
         arrayList.add(ex0Var);
         h();
     }
 
-    public final void b(TL_iv.pageTableCell pagetablecell, int i3, int i10, int i11) {
+    public final void b(TL_iv.pageTableCell pagetablecell, int i7, int i10, int i11) {
         if (i11 == 0) {
             i11 = 1;
         }
-        ArrayList arrayList = this.Q;
+        ArrayList arrayList = this.P;
         ex0 ex0Var = new ex0(this, arrayList.size());
         ex0Var.c = pagetablecell;
         gx0 gx0Var = new gx0();
@@ -122,36 +122,36 @@ public final class lx0 extends View {
             i12 = 1;
         }
         fx0 fx0Var = new fx0(i10, i12 + i10);
-        xw0 xw0Var = V;
+        xw0 xw0Var = U;
         gx0Var.a = new ix0(false, fx0Var, xw0Var, 0.0f);
-        gx0Var.b = new ix0(false, new fx0(i3, i11 + i3), xw0Var, 1.0f);
+        gx0Var.b = new ix0(false, new fx0(i7, i11 + i7), xw0Var, 1.0f);
         ex0Var.a = gx0Var;
         ex0Var.j = i10;
         arrayList.add(ex0Var);
         if (pagetablecell.rowspan > 1) {
-            this.L.add(new PointF(i10, i10 + r10));
+            this.K.add(new PointF(i10, i10 + r10));
         }
         h();
     }
 
     public final void c() {
         Throwable th2;
-        int i3 = this.n;
-        if (i3 != 0) {
+        int i7 = this.n;
+        if (i7 != 0) {
             int childCount = getChildCount();
             int i10 = 1;
             for (int i11 = 0; i11 < childCount; i11++) {
                 i10 = (i10 * 31) + d(i11).a.hashCode();
             }
-            if (i3 != i10) {
+            if (i7 != i10) {
                 h();
                 c();
                 return;
             }
             return;
         }
-        boolean z10 = this.e == 0;
-        int i12 = (z10 ? this.c : this.d).b;
+        boolean z9 = this.e == 0;
+        int i12 = (z9 ? this.c : this.d).b;
         if (i12 == Integer.MIN_VALUE) {
             i12 = 0;
         }
@@ -165,34 +165,34 @@ public final class lx0 extends View {
         int i14 = 0;
         for (int i15 = 0; i15 < childCount2; i15++) {
             gx0 gx0Var = d(i15).a;
-            ix0 ix0Var = z10 ? gx0Var.a : gx0Var.b;
+            ix0 ix0Var = z9 ? gx0Var.a : gx0Var.b;
             fx0 fx0Var = ix0Var.b;
-            boolean z11 = ix0Var.a;
+            boolean z10 = ix0Var.a;
             int a10 = fx0Var.a();
             if (a10 <= 0 || a10 > 1024) {
                 g("Table row or column span out of bounds");
                 throw null;
             }
-            if (z11) {
+            if (z10) {
                 i13 = fx0Var.a;
             }
-            ix0 ix0Var2 = z10 ? gx0Var.b : gx0Var.a;
+            ix0 ix0Var2 = z9 ? gx0Var.b : gx0Var.a;
             fx0 fx0Var2 = ix0Var2.b;
             int a11 = fx0Var2.a();
             int i16 = fx0Var2.a;
             if (a11 > 0) {
                 th2 = null;
                 if (fx0Var2.a() <= 1024) {
-                    boolean z12 = ix0Var2.a;
+                    boolean z11 = ix0Var2.a;
                     int a12 = fx0Var2.a();
                     if (i12 != 0) {
-                        a12 = Math.min(a12, i12 - (z12 ? Math.min(i16, i12) : 0));
+                        a12 = Math.min(a12, i12 - (z11 ? Math.min(i16, i12) : 0));
                     }
-                    if (z12) {
+                    if (z11) {
                         i14 = i16;
                     }
                     if (i12 != 0) {
-                        if (!z11 || !z12) {
+                        if (!z10 || !z11) {
                             while (true) {
                                 int i17 = i14 + a12;
                                 if (i17 <= i12) {
@@ -202,7 +202,7 @@ public final class lx0 extends View {
                                     }
                                     break;
                                 }
-                                if (z12) {
+                                if (z11) {
                                     i13++;
                                 } else if (i17 <= i12) {
                                     i14++;
@@ -214,7 +214,7 @@ public final class lx0 extends View {
                         }
                         Arrays.fill(iArr, Math.min(i14, i12), Math.min(i14 + a12, i12), i13 + a10);
                     }
-                    if (z10) {
+                    if (z9) {
                         j(gx0Var, i13, a10, i14, a12);
                     } else {
                         j(gx0Var, i14, a12, i13, a10);
@@ -235,33 +235,33 @@ public final class lx0 extends View {
         this.n = i19;
     }
 
-    public final ex0 d(int i3) {
-        if (i3 < 0) {
+    public final ex0 d(int i7) {
+        if (i7 < 0) {
             return null;
         }
-        ArrayList arrayList = this.Q;
-        if (i3 >= arrayList.size()) {
+        ArrayList arrayList = this.P;
+        if (i7 >= arrayList.size()) {
             return null;
         }
-        return (ex0) arrayList.get(i3);
+        return (ex0) arrayList.get(i7);
     }
 
     @Override // android.view.View
     public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
-        jx0 jx0Var = this.R;
+        jx0 jx0Var = this.Q;
         if (jx0Var == null || !jx0Var.f(motionEvent)) {
             return super.dispatchHoverEvent(motionEvent);
         }
         return true;
     }
 
-    public final int e(ex0 ex0Var, boolean z10, boolean z11) {
+    public final int e(ex0 ex0Var, boolean z9, boolean z10) {
         int[] iArr;
         if (this.h == 1) {
-            return f(ex0Var, z10, z11);
+            return f(ex0Var, z9, z10);
         }
-        bx0 bx0Var = z10 ? this.c : this.d;
-        if (z11) {
+        bx0 bx0Var = z9 ? this.c : this.d;
+        if (z10) {
             if (bx0Var.j == null) {
                 bx0Var.j = new int[bx0Var.e() + 1];
             }
@@ -281,23 +281,23 @@ public final class lx0 extends View {
             iArr = bx0Var.l;
         }
         gx0 gx0Var = ex0Var.a;
-        fx0 fx0Var = (z10 ? gx0Var.b : gx0Var.a).b;
-        return iArr[z11 ? fx0Var.a : fx0Var.b];
+        fx0 fx0Var = (z9 ? gx0Var.b : gx0Var.a).b;
+        return iArr[z10 ? fx0Var.a : fx0Var.b];
     }
 
-    public final int f(ex0 ex0Var, boolean z10, boolean z11) {
+    public final int f(ex0 ex0Var, boolean z9, boolean z10) {
         gx0 gx0Var = ex0Var.a;
-        int i3 = z10 ? z11 ? ((ViewGroup.MarginLayoutParams) gx0Var).leftMargin : ((ViewGroup.MarginLayoutParams) gx0Var).rightMargin : z11 ? ((ViewGroup.MarginLayoutParams) gx0Var).topMargin : ((ViewGroup.MarginLayoutParams) gx0Var).bottomMargin;
-        if (i3 != Integer.MIN_VALUE) {
-            return i3;
+        int i7 = z9 ? z10 ? ((ViewGroup.MarginLayoutParams) gx0Var).leftMargin : ((ViewGroup.MarginLayoutParams) gx0Var).rightMargin : z10 ? ((ViewGroup.MarginLayoutParams) gx0Var).topMargin : ((ViewGroup.MarginLayoutParams) gx0Var).bottomMargin;
+        if (i7 != Integer.MIN_VALUE) {
+            return i7;
         }
         if (!this.f) {
             return 0;
         }
-        ix0 ix0Var = z10 ? gx0Var.b : gx0Var.a;
-        bx0 bx0Var = z10 ? this.c : this.d;
+        ix0 ix0Var = z9 ? gx0Var.b : gx0Var.a;
+        bx0 bx0Var = z9 ? this.c : this.d;
         fx0 fx0Var = ix0Var.b;
-        if ((z10 && this.J) != z11) {
+        if ((z9 && this.I) != z10) {
             int i10 = fx0Var.a;
             return 0;
         }
@@ -311,7 +311,7 @@ public final class lx0 extends View {
     }
 
     public int getChildCount() {
-        return this.Q.size();
+        return this.P.size();
     }
 
     public int getColumnCount() {
@@ -323,7 +323,7 @@ public final class lx0 extends View {
     }
 
     public int getRenderHeight() {
-        return this.F;
+        return this.E;
     }
 
     public int getRowCount() {
@@ -347,14 +347,14 @@ public final class lx0 extends View {
         bx0Var2.l();
     }
 
-    public final void i(int i3, boolean z10) {
+    public final void i(int i7, boolean z9) {
         int childCount = getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             ex0 d = d(i10);
             gx0 gx0Var = d.a;
-            if (z10) {
-                int size = View.MeasureSpec.getSize(i3);
-                d.e(this.P.c(d.c, this.b == 2 ? ((int) (size / 2.0f)) - (this.w * 4) : (int) (size / 1.5f)));
+            if (z9) {
+                int size = View.MeasureSpec.getSize(i7);
+                d.e(this.O.c(d.c, this.b == 2 ? ((int) (size / 2.0f)) - (this.w * 4) : (int) (size / 1.5f)));
                 if (d.b != null) {
                     ((ViewGroup.MarginLayoutParams) gx0Var).height = Math.max(this.x, d.f + this.r + this.s);
                     int b10 = d.b.b();
@@ -365,13 +365,13 @@ public final class lx0 extends View {
                 }
                 d.d(e(d, true, false) + e(d, true, true) + ((ViewGroup.MarginLayoutParams) gx0Var).width, e(d, false, false) + e(d, false, true) + ((ViewGroup.MarginLayoutParams) gx0Var).height, true);
             } else {
-                boolean z11 = this.e == 0;
-                ix0 ix0Var = z11 ? gx0Var.b : gx0Var.a;
-                if (ix0.a(ix0Var, z11) == V) {
+                boolean z10 = this.e == 0;
+                ix0 ix0Var = z10 ? gx0Var.b : gx0Var.a;
+                if (ix0.a(ix0Var, z10) == U) {
                     fx0 fx0Var = ix0Var.b;
-                    int[] g7 = (z11 ? this.c : this.d).g();
-                    int e10 = (g7[fx0Var.b] - g7[fx0Var.a]) - (e(d, z11, false) + e(d, z11, true));
-                    if (z11) {
+                    int[] g10 = (z10 ? this.c : this.d).g();
+                    int e10 = (g10[fx0Var.b] - g10[fx0Var.a]) - (e(d, z10, false) + e(d, z10, true));
+                    if (z10) {
                         dx0 dx0Var = d.b;
                         int b11 = dx0Var != null ? dx0Var.b() : 0;
                         if (b11 > 0) {
@@ -391,21 +391,21 @@ public final class lx0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int childCount = getChildCount();
-        for (int i3 = 0; i3 < childCount; i3++) {
-            d(i3).a(canvas, this, true);
+        for (int i7 = 0; i7 < childCount; i7++) {
+            d(i7).a(canvas, this, true);
         }
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         c();
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         int i11;
         int i12;
-        boolean z10;
+        boolean z9;
         int i13;
         int i14;
         lx0 lx0Var = this;
@@ -421,22 +421,22 @@ public final class lx0 extends View {
         for (int i15 = 0; i15 < childCount; i15++) {
             lx0Var.b = Math.max(lx0Var.b, lx0Var.d(i15).a.b.b.b);
         }
-        lx0Var.i(i3, true);
+        lx0Var.i(i7, true);
         if (lx0Var.e == 0) {
-            i11 = bx0Var2.i(i3);
+            i11 = bx0Var2.i(i7);
             if (lx0Var.y) {
-                i11 = Math.max(i11, View.MeasureSpec.getSize(i3));
+                i11 = Math.max(i11, View.MeasureSpec.getSize(i7));
                 bx0Var2.v.a = i11;
                 bx0Var2.w.a = -i11;
                 bx0Var2.q = false;
                 bx0Var2.g();
             }
-            lx0Var.i(i3, false);
+            lx0Var.i(i7, false);
             i12 = bx0Var.i(i10);
         } else {
             int i16 = bx0Var.i(i10);
-            lx0Var.i(i3, false);
-            i11 = bx0Var2.i(i3);
+            lx0Var.i(i7, false);
+            i11 = bx0Var2.i(i7);
             i12 = i16;
         }
         int max = Math.max(i12, lx0Var.getSuggestedMinimumHeight());
@@ -449,12 +449,12 @@ public final class lx0 extends View {
         bx0Var.w.a = -max;
         bx0Var.q = false;
         bx0Var.g();
-        int[] g7 = bx0Var2.g();
-        int[] g10 = bx0Var.g();
-        int[] copyOf = Arrays.copyOf(g10, g10.length);
-        ArrayList arrayList = lx0Var.K;
+        int[] g10 = bx0Var2.g();
+        int[] g11 = bx0Var.g();
+        int[] copyOf = Arrays.copyOf(g11, g11.length);
+        ArrayList arrayList = lx0Var.J;
         arrayList.clear();
-        int i17 = g7[g7.length - 1];
+        int i17 = g10[g10.length - 1];
         int childCount2 = lx0Var.getChildCount();
         int i18 = 0;
         while (i18 < childCount2) {
@@ -466,10 +466,10 @@ public final class lx0 extends View {
             fx0 fx0Var = ix0Var.b;
             fx0 fx0Var2 = ix0Var2.b;
             int i20 = childCount2;
-            int i21 = g7[fx0Var.a];
-            int i22 = g10[fx0Var2.a];
-            int i23 = g7[fx0Var.b];
-            int i24 = g10[fx0Var2.b];
+            int i21 = g10[fx0Var.a];
+            int i22 = g11[fx0Var2.a];
+            int i23 = g10[fx0Var.b];
+            int i24 = g11[fx0Var2.b];
             int i25 = i23 - i21;
             int i26 = i24 - i22;
             int i27 = d.k;
@@ -477,11 +477,11 @@ public final class lx0 extends View {
             int i28 = d.l;
             xw0 a10 = ix0.a(ix0Var, true);
             xw0 a11 = ix0.a(ix0Var2, false);
-            k4.j f10 = bx0Var2.f();
-            cx0 cx0Var = (cx0) ((Object[]) f10.c)[((int[]) f10.a)[i19]];
-            k4.j f11 = bx0Var3.f();
+            h6.m f10 = bx0Var2.f();
+            cx0 cx0Var = (cx0) ((Object[]) f10.d)[((int[]) f10.b)[i19]];
+            h6.m f11 = bx0Var3.f();
             bx0 bx0Var4 = bx0Var2;
-            cx0 cx0Var2 = (cx0) ((Object[]) f11.c)[((int[]) f11.a)[i19]];
+            cx0 cx0Var2 = (cx0) ((Object[]) f11.d)[((int[]) f11.b)[i19]];
             int b10 = a10.b(d, i25 - cx0Var.d(true));
             int b11 = a11.b(d, i26 - cx0Var2.d(true));
             int e10 = lx0Var.e(d, true, true);
@@ -492,23 +492,23 @@ public final class lx0 extends View {
             int a12 = cx0Var.a(lx0Var, d, a10, i27 + i29, true);
             lx0Var = this;
             int a13 = cx0Var2.a(lx0Var, d, a11, i28 + e13, false);
-            int c2 = a10.c(i27, i25 - i29);
-            int c10 = a11.c(i28, i26 - e13);
+            int c10 = a10.c(i27, i25 - i29);
+            int c11 = a11.c(i28, i26 - e13);
             int i30 = i21 + b10 + a12;
-            int i31 = !lx0Var.J ? e10 + i30 : ((i17 - c2) - e12) - i30;
+            int i31 = !lx0Var.I ? e10 + i30 : ((i17 - c10) - e12) - i30;
             int i32 = i22 + b11 + a13 + e11;
             if (d.c != null) {
-                if (c2 == d.k && c10 == d.l) {
+                if (c10 == d.k && c11 == d.l) {
                     i14 = 0;
                 } else {
                     i14 = 0;
-                    d.d(c2, c10, false);
+                    d.d(c10, c11, false);
                 }
                 int i33 = d.m;
-                if (i33 != 0 && i33 != c10) {
+                if (i33 != 0 && i33 != c11) {
                     fx0 fx0Var3 = d.a.a.b;
                     if (fx0Var3.b - fx0Var3.a <= 1) {
-                        ArrayList arrayList2 = lx0Var.L;
+                        ArrayList arrayList2 = lx0Var.K;
                         int size = arrayList2.size();
                         int i34 = i14;
                         while (true) {
@@ -540,7 +540,7 @@ public final class lx0 extends View {
             int i36 = ex0Var.l;
             int i37 = ex0Var.d;
             int i38 = i36 - ex0Var.m;
-            ArrayList arrayList3 = lx0Var.Q;
+            ArrayList arrayList3 = lx0Var.P;
             int size3 = arrayList3.size();
             for (int i39 = i37 + 1; i39 < size3; i39++) {
                 ex0 ex0Var2 = (ex0) arrayList3.get(i39);
@@ -550,7 +550,7 @@ public final class lx0 extends View {
                 int i40 = ex0Var.m;
                 int i41 = ex0Var2.m;
                 if (i40 < i41) {
-                    z10 = true;
+                    z9 = true;
                     break;
                 }
                 int i42 = ex0Var2.l - i41;
@@ -558,8 +558,8 @@ public final class lx0 extends View {
                     i38 = Math.min(i38, i42);
                 }
             }
-            z10 = false;
-            if (!z10) {
+            z9 = false;
+            if (!z9) {
                 int i43 = i37 - 1;
                 while (true) {
                     if (i43 < 0) {
@@ -572,7 +572,7 @@ public final class lx0 extends View {
                     int i44 = ex0Var.m;
                     int i45 = ex0Var3.m;
                     if (i44 < i45) {
-                        z10 = true;
+                        z9 = true;
                         break;
                     }
                     int i46 = ex0Var3.l - i45;
@@ -582,7 +582,7 @@ public final class lx0 extends View {
                     i43--;
                 }
             }
-            if (!z10) {
+            if (!z9) {
                 ex0Var.l = ex0Var.m;
                 ex0Var.g();
                 max -= i38;
@@ -634,14 +634,14 @@ public final class lx0 extends View {
         }
         int childCount3 = lx0Var.getChildCount();
         for (int i54 = 0; i54 < childCount3; i54++) {
-            ex0 d10 = lx0Var.d(i54);
-            lx0Var.P.g(d10.b, d10.c());
-            d10.n = d10.p;
-            d10.o = d10.k;
+            ex0 d2 = lx0Var.d(i54);
+            lx0Var.O.g(d2.b, d2.c());
+            d2.n = d2.p;
+            d2.o = d2.k;
         }
-        lx0Var.E = i17;
-        lx0Var.F = max;
-        lx0Var.G = copyOf;
+        lx0Var.D = i17;
+        lx0Var.E = max;
+        lx0Var.F = copyOf;
         lx0Var.setMeasuredDimension(i17, max);
     }
 
@@ -657,57 +657,57 @@ public final class lx0 extends View {
         bx0Var.l();
     }
 
-    public void setAlignmentMode(int i3) {
-        this.h = i3;
+    public void setAlignmentMode(int i7) {
+        this.h = i7;
         requestLayout();
     }
 
-    public void setColumnCount(int i3) {
-        this.c.n(i3);
+    public void setColumnCount(int i7) {
+        this.c.n(i7);
         h();
         requestLayout();
     }
 
-    public void setColumnOrderPreserved(boolean z10) {
+    public void setColumnOrderPreserved(boolean z9) {
         bx0 bx0Var = this.c;
-        bx0Var.u = z10;
+        bx0Var.u = z9;
         bx0Var.k();
         h();
         requestLayout();
     }
 
-    public void setDrawLines(boolean z10) {
-        this.H = z10;
+    public void setDrawLines(boolean z9) {
+        this.G = z9;
     }
 
-    public void setFillWidth(boolean z10) {
-        if (this.y == z10) {
+    public void setFillWidth(boolean z9) {
+        if (this.y == z9) {
             return;
         }
-        this.y = z10;
+        this.y = z9;
         requestLayout();
     }
 
-    public void setMinimumCellHeight(int i3) {
-        this.x = i3;
+    public void setMinimumCellHeight(int i7) {
+        this.x = i7;
         requestLayout();
     }
 
-    public void setOrientation(int i3) {
-        if (this.e != i3) {
-            this.e = i3;
+    public void setOrientation(int i7) {
+        if (this.e != i7) {
+            this.e = i7;
             h();
             requestLayout();
         }
     }
 
-    public void setRenderWidth(int i3) {
+    public void setRenderWidth(int i7) {
         int i10;
         int measuredWidth = getMeasuredWidth();
-        this.E = Math.max(measuredWidth, i3);
+        this.D = Math.max(measuredWidth, i7);
         for (int i11 = 0; i11 < getChildCount(); i11++) {
             ex0 d = d(i11);
-            if (measuredWidth <= 0 || (i10 = this.E) == measuredWidth) {
+            if (measuredWidth <= 0 || (i10 = this.D) == measuredWidth) {
                 int i12 = d.n;
                 int i13 = d.o + i12;
                 d.p = i12;
@@ -718,7 +718,7 @@ public final class lx0 extends View {
             } else {
                 float f10 = measuredWidth;
                 int round = Math.round((d.n * i10) / f10);
-                int round2 = Math.round(((d.n + d.o) * this.E) / f10);
+                int round2 = Math.round(((d.n + d.o) * this.D) / f10);
                 d.p = round;
                 d.k = Math.max(0, round2 - round);
                 if (d.c != null && d.b != null) {
@@ -726,26 +726,26 @@ public final class lx0 extends View {
                 }
             }
         }
-        int[] iArr = this.G;
+        int[] iArr = this.F;
         if (iArr.length < 2) {
-            this.F = getMeasuredHeight();
+            this.E = getMeasuredHeight();
         } else {
             int length = iArr.length;
             int i14 = length - 1;
             int[] iArr2 = new int[i14];
             int i15 = 0;
             while (i15 < i14) {
-                int[] iArr3 = this.G;
+                int[] iArr3 = this.F;
                 int i16 = i15 + 1;
                 iArr2[i15] = iArr3[i16] - iArr3[i15];
                 i15 = i16;
             }
             for (int i17 = 0; i17 < getChildCount(); i17++) {
-                ex0 d10 = d(i17);
-                dx0 dx0Var = d10.b;
+                ex0 d2 = d(i17);
+                dx0 dx0Var = d2.b;
                 int b10 = dx0Var != null ? dx0Var.b() : 0;
                 if (b10 > 0) {
-                    fx0 fx0Var = d10.a.a.b;
+                    fx0 fx0Var = d2.a.a.b;
                     int max = Math.max(0, fx0Var.a);
                     int min = Math.min(i14, fx0Var.b);
                     if (max < min) {
@@ -753,7 +753,7 @@ public final class lx0 extends View {
                         for (int i19 = max; i19 < min; i19++) {
                             i18 += iArr2[i19];
                         }
-                        int max2 = Math.max(1, Math.round(d10.k / b10)) - i18;
+                        int max2 = Math.max(1, Math.round(d2.k / b10)) - i18;
                         while (max < min && max2 > 0) {
                             int i20 = min - max;
                             int i21 = ((max2 + i20) - 1) / i20;
@@ -771,49 +771,49 @@ public final class lx0 extends View {
                 iArr4[i23] = iArr4[i22] + iArr2[i22];
                 i22 = i23;
             }
-            this.F = iArr4[i14];
+            this.E = iArr4[i14];
             for (int i24 = 0; i24 < getChildCount(); i24++) {
-                ex0 d11 = d(i24);
-                fx0 fx0Var2 = d11.a.a.b;
+                ex0 d10 = d(i24);
+                fx0 fx0Var2 = d10.a.a.b;
                 int max3 = Math.max(0, Math.min(i14, fx0Var2.a));
                 int max4 = Math.max(max3, Math.min(i14, fx0Var2.b));
                 int i25 = iArr4[max3];
                 int i26 = iArr4[max4];
-                d11.q = i25;
-                d11.l = Math.max(0, i26 - i25);
-                if (d11.c != null) {
-                    d11.g();
+                d10.q = i25;
+                d10.l = Math.max(0, i26 - i25);
+                if (d10.c != null) {
+                    d10.g();
                 }
-                this.P.g(d11.b, d11.c());
+                this.O.g(d10.b, d10.c());
             }
         }
         invalidate();
     }
 
-    public void setRowCount(int i3) {
-        this.d.n(i3);
+    public void setRowCount(int i7) {
+        this.d.n(i7);
         h();
         requestLayout();
     }
 
-    public void setRowOrderPreserved(boolean z10) {
+    public void setRowOrderPreserved(boolean z9) {
         bx0 bx0Var = this.d;
-        bx0Var.u = z10;
+        bx0Var.u = z9;
         bx0Var.k();
         h();
         requestLayout();
     }
 
-    public void setRtl(boolean z10) {
-        this.J = z10;
+    public void setRtl(boolean z9) {
+        this.I = z9;
     }
 
-    public void setStriped(boolean z10) {
-        this.I = z10;
+    public void setStriped(boolean z9) {
+        this.H = z9;
     }
 
-    public void setUseDefaultMargins(boolean z10) {
-        this.f = z10;
+    public void setUseDefaultMargins(boolean z9) {
+        this.f = z9;
         requestLayout();
     }
 }

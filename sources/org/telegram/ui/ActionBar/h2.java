@@ -1,37 +1,65 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h2 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ v2 b;
 
-    public /* synthetic */ h2(int i3, Runnable runnable) {
-        this.a = i3;
-        this.b = runnable;
+    public /* synthetic */ h2(v2 v2Var, int i7) {
+        this.a = i7;
+        this.b = v2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.run();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v2 v2Var = this.b;
+                v2Var.C0 = floatValue;
+                l2 l2Var = v2Var.c;
+                if (l2Var != null) {
+                    l2Var.invalidate();
+                    break;
+                }
                 break;
             case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
+                this.b.h0();
+                break;
+            case 2:
+                this.b.h0();
+                break;
+            case 3:
+                v2 v2Var2 = this.b;
+                v2Var2.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                v2Var2.C0(v2Var2.X.intValue(), intValue, intValue);
+                break;
+            case 4:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v2 v2Var3 = this.b;
+                v2Var3.S0 = floatValue2;
+                v2Var3.c.requestLayout();
+                v2Var3.b.requestLayout();
+                break;
+            case 5:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v2 v2Var4 = this.b;
+                v2Var4.C0 = floatValue3;
+                l2 l2Var2 = v2Var4.c;
+                if (l2Var2 != null) {
+                    l2Var2.invalidate();
                     break;
                 }
                 break;
+            case 6:
+                this.b.h0();
+                break;
             default:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                this.b.h0();
                 break;
         }
     }

@@ -1,19 +1,25 @@
 package y2;
 
-import g9.i0;
+import e2.u;
+import sg.i0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
-    long a(long j10);
+public abstract class a extends l {
+    public int[] D;
+    public final long w;
+    public final long x;
+    public i0 y;
 
-    boolean b(b4.a aVar, long j10);
+    public a(j2.h hVar, j2.m mVar, u uVar, int i7, Object obj, long j3, long j10, long j11, long j12, long j13) {
+        super(hVar, mVar, uVar, i7, obj, j3, j10, j13);
+        this.w = j11;
+        this.x = j12;
+    }
 
-    i0 c(long j10);
-
-    void clear();
-
-    long d(long j10);
-
-    void e(long j10);
+    public final int d(int i7) {
+        int[] iArr = this.D;
+        iArr.getClass();
+        return iArr[i7];
+    }
 }

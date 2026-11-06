@@ -1,141 +1,79 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class fb1 extends org.telegram.ui.Components.n61 {
-    public boolean W;
-    public final Path a0;
-    public final /* synthetic */ gb1 b0;
+public final class fb1 extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
+    public int r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb1(gb1 gb1Var, Context context) {
-        super(context, null);
-        this.b0 = gb1Var;
-        this.a0 = new Path();
+    public fb1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = f6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, c8.ha.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f));
+        addView(linearLayout, c8.ha.q(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, c8.ha.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = f10;
+        f10.setTextSize(1, 13.0f);
+        linearLayout.addView(f10, c8.ha.s(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, c8.ha.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.W) {
-            Path path = this.a0;
-            path.rewind();
-            float N = org.telegram.messenger.g0.N(24.0f);
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(0.0f, org.telegram.messenger.g0.m, getWidth(), getHeight());
-            path.addRoundRect(rectF, N, N, Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        int i7 = this.n ? org.telegram.ui.ActionBar.k6.q7 : this.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        int w02 = org.telegram.ui.ActionBar.k6.w0(i7, f6Var);
+        int i10 = this.r;
+        ImageView imageView = this.f;
+        ImageView imageView2 = this.b;
+        if (w02 != i10 || imageView2.getColorFilter() == null || imageView.getColorFilter() == null) {
+            this.r = w02;
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            imageView2.setColorFilter(new PorterDuffColorFilter(w02, mode));
+            imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
         }
-        super.dispatchDraw(canvas);
-        if (this.W) {
-            canvas.restore();
-        }
+        this.d.setTextColor(org.telegram.ui.ActionBar.k6.w0(this.n ? org.telegram.ui.ActionBar.k6.p7 : this.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.G6, f6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.k6.w0(this.n ? org.telegram.ui.ActionBar.k6.p7 : this.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, f6Var));
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final boolean e(MotionEvent motionEvent) {
-        Object c02 = ((ee0) this.b0).c0();
-        if (c02 instanceof de0) {
-            return ((de0) c02).W(motionEvent, false);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final boolean f(MotionEvent motionEvent) {
-        Object c02 = ((ee0) this.b0).c0();
-        if (c02 instanceof de0) {
-            return ((de0) c02).W(motionEvent, true);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public float getAvailableTranslationX() {
-        return getMeasuredWidth();
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public long getManualScrollDuration() {
-        return 320L;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void r(View view, View view2, int i3, int i10) {
-        this.b0.Z();
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void s() {
-        uw uwVar;
-        gb1 gb1Var = this.b0;
-        ee0 ee0Var = (ee0) gb1Var;
-        if (ee0Var.G != null) {
-            ee0Var.s0(ee0Var.c.getCurrentPosition(), true);
-            ee0Var.t0(false, 0.0f);
-        }
-        ee0Var.i0();
-        fb1 fb1Var = ee0Var.c;
-        if (fb1Var != null) {
-            int currentPosition = fb1Var.getCurrentPosition();
-            if (currentPosition != 2 && ee0Var.y) {
-                ee0Var.b0(2);
-                ee0Var.y = false;
-            }
-            if (currentPosition != 3) {
-                ee0Var.b0(3);
-            }
-            Integer num = ee0Var.J;
-            if (num != null && currentPosition == 0 && (uwVar = ee0Var.K) != null) {
-                uwVar.I4(num.intValue());
-                ee0Var.J = null;
-            }
-        }
-        gb1Var.Z();
-    }
-
-    @Override // android.view.View
-    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        super.setLayoutParams(layoutParams);
-    }
-
-    public void setTabletLayout(boolean z10) {
-        if (this.W == z10) {
-            return;
-        }
-        this.W = z10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void u(boolean z10) {
-        gb1 gb1Var = this.b0;
-        ee0 ee0Var = (ee0) gb1Var;
-        boolean z11 = !z10;
-        if (ee0Var.G != null) {
-            float positionAnimated = ee0Var.c.getPositionAnimated();
-            ee0Var.t0(z11, positionAnimated);
-            if (!z10) {
-                ee0Var.s0(Math.round(positionAnimated), true);
-            }
-        }
-        ee0Var.n0();
-        ee0Var.i0();
-        ee0Var.b.invalidate();
-        gb1Var.Z();
-        gb1Var.checkSystemBarColors();
+    @Override // org.telegram.ui.ActionBar.a6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

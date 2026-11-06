@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d5 implements qe.f, te.a {
+public final class d5 implements te.f, we.a {
     public final View a;
     public boolean b;
     public float c = 1.0f;
@@ -15,7 +15,7 @@ public final class d5 implements qe.f, te.a {
         this.a = view;
     }
 
-    @Override // te.a
+    @Override // we.a
     public final void a() {
         View view = this.a;
         if (e5.h(view)) {
@@ -29,8 +29,8 @@ public final class d5 implements qe.f, te.a {
         c(1.0f, 1.0f);
     }
 
-    @Override // qe.f
-    public final /* synthetic */ int b(boolean z10) {
+    @Override // te.f
+    public final /* synthetic */ int b(boolean z9) {
         return 0;
     }
 
@@ -55,12 +55,12 @@ public final class d5 implements qe.f, te.a {
         return (obj instanceof d5) && ((d5) obj).a == this.a;
     }
 
-    @Override // qe.f
+    @Override // te.f
     public final int getHeight() {
         return this.a.getMeasuredHeight();
     }
 
-    @Override // qe.f
+    @Override // te.f
     public final int getWidth() {
         return e5.f(this.a);
     }

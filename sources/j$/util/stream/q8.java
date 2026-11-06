@@ -39,9 +39,9 @@ public final class q8 extends b {
                     }
                 }
                 q8 q8Var2 = (q8) this.d;
-                long j10 = q8Var2.m;
+                long j3 = q8Var2.m;
                 q8 q8Var3 = (q8) this.e;
-                this.m = j10 + q8Var3.m;
+                this.m = j3 + q8Var3.m;
                 if (q8Var2.m == 0) {
                     e02 = (e2) q8Var3.i();
                 } else if (q8Var3.m == 0) {

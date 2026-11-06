@@ -1,30 +1,16 @@
 package tb;
 
-import java.util.Arrays;
-import p6.m;
-import q1.f;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public final float a;
+public final /* synthetic */ class c implements Comparator {
+    public static final /* synthetic */ c a = new c();
 
-    public c(f fVar) {
-        this.a = fVar.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return getClass().equals(cVar.getClass()) && Float.compare(this.a, cVar.a) == 0 && m.k(null, null);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{getClass(), Float.valueOf(this.a), null});
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        ((sb.a) obj2).getClass();
+        ((sb.a) obj).getClass();
+        return 0;
     }
 }

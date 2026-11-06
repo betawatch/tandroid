@@ -5,20 +5,20 @@ import android.content.Context;
 import android.os.Handler;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class ProcessLifecycleInitializer implements x4.b {
-    @Override // x4.b
+public final class ProcessLifecycleInitializer implements y4.b {
+    @Override // y4.b
     public final List a() {
-        return ed.o.a;
+        return hd.n.a;
     }
 
-    @Override // x4.b
+    @Override // y4.b
     public final Object b(Context context) {
         kotlin.jvm.internal.j.e(context, "context");
-        x4.a c2 = x4.a.c(context);
-        kotlin.jvm.internal.j.d(c2, "getInstance(context)");
-        if (!c2.b.contains(ProcessLifecycleInitializer.class)) {
+        y4.a c10 = y4.a.c(context);
+        kotlin.jvm.internal.j.d(c10, "getInstance(context)");
+        if (!c10.b.contains(ProcessLifecycleInitializer.class)) {
             throw new IllegalStateException("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
         }
         if (!q.a.getAndSet(true)) {

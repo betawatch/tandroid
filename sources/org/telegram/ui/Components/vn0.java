@@ -1,79 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class vn0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oo0 b;
+public final class vn0 implements org.telegram.messenger.ls {
+    public final /* synthetic */ TLRPC.Dialog a;
+    public final /* synthetic */ AtomicReference b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ mo0 d;
 
-    public /* synthetic */ vn0(oo0 oo0Var, int i3) {
-        this.a = i3;
-        this.b = oo0Var;
+    public vn0(mo0 mo0Var, TLRPC.Dialog dialog, AtomicReference atomicReference, View view) {
+        this.d = mo0Var;
+        this.a = dialog;
+        this.b = atomicReference;
+        this.c = view;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new jb0(this, 27));
-                break;
-            default:
-                oo0 oo0Var = this.b;
-                ho0 ho0Var = oo0Var.D1;
-                zu0 zu0Var = oo0Var.J1;
-                n00 n00Var = oo0Var.r2;
-                if (!TextUtils.isEmpty(n00Var.r.getText())) {
-                    oo0Var.K0(false);
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        mo0 mo0Var = this.d;
+        pj0 pj0Var = mo0Var.w1;
+        ko0 ko0Var = mo0Var.D1;
+        org.telegram.ui.ActionBar.k kVar = mo0Var.r2;
+        long longValue = ((Long) objArr[0]).longValue();
+        TLRPC.Dialog dialog = this.a;
+        if (longValue == (-dialog.id)) {
+            ArrayList arrayList = ko0Var.f;
+            AtomicReference atomicReference = this.b;
+            boolean z9 = (arrayList == null && org.telegram.messenger.qp.s1(mo0Var.a).q7.l(-dialog.id) != null) || atomicReference.get() == null;
+            ko0Var.f = org.telegram.messenger.qp.s1(mo0Var.a).q7.l(-dialog.id);
+            ko0Var.d = org.telegram.messenger.t10.u(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id)));
+            ko0Var.e = org.telegram.messenger.t10.v(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id)));
+            if (z9) {
+                ko0Var.f();
+            }
+            if (ko0Var.f != null) {
+                org.telegram.messenger.qs.f(mo0Var.a).n(this, org.telegram.messenger.qs.q5);
+            }
+            if (z9) {
+                pj0Var.setVisibility(0);
+                pj0Var.setAlpha(0.0f);
+                kVar.setVisibility(0);
+                kVar.setAlpha(0.0f);
+                if (org.telegram.messenger.t10.u(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id)))) {
+                    kVar.setTitle(org.telegram.messenger.m5.u(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id))));
+                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745670, null));
+                } else if (org.telegram.messenger.t3.o0(mo0Var.a, dialog.id)) {
+                    int i11 = mo0Var.a;
+                    kVar.setTitle(qg.d.i(i11, org.telegram.messenger.qp.s1(i11).M0(Long.valueOf(-dialog.id)), false));
+                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745670, null));
+                } else {
+                    kVar.setTitle(org.telegram.messenger.qp.s1(mo0Var.a).M0(Long.valueOf(-dialog.id)).title);
+                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745650, null));
                 }
-                if (oo0Var.t2) {
-                    String obj = n00Var.r.getText().toString();
-                    if (obj.length() != 0) {
-                        if (zu0Var != null) {
-                            zu0Var.d.setText(org.telegram.messenger.bd.M0(2131748175, null));
-                        }
-                    } else if (oo0Var.y1.getAdapter() != ho0Var) {
-                        int J0 = oo0.J0(oo0Var);
-                        zu0Var.d.setText(org.telegram.messenger.bd.M0(2131748175, null));
-                        zu0Var.e(false, true);
-                        oo0Var.K0(false);
-                        ho0Var.f();
-                        if (J0 > 0) {
-                            oo0Var.A1.h1(0, -J0);
-                        }
-                    }
-                    lo0 lo0Var = oo0Var.F1;
-                    if (lo0Var != null) {
-                        lo0Var.E(obj);
-                        break;
-                    }
+                mo0Var.E2 = mo0Var.D2;
+                r1.g gVar = mo0Var.t2;
+                if (gVar != null) {
+                    gVar.d();
                 }
-                break;
+                int[] iArr = new int[2];
+                r1.g gVar2 = new r1.g(new r1.f(0.0f));
+                r1.h hVar = new r1.h(1000.0f);
+                org.telegram.ui.an anVar = mo0Var.X1;
+                hVar.b((anVar == null || !anVar.b) ? 800.0f : 10.0f);
+                hVar.a(1.0f);
+                gVar2.m = hVar;
+                mo0Var.t2 = gVar2;
+                gVar2.b(new fn0(this, this.c, iArr, 1));
+                mo0Var.t2.a(new ta(this, 6));
+                mo0Var.t2.h();
+                if (atomicReference.get() != null) {
+                    org.telegram.messenger.g0.r((Runnable) atomicReference.get());
+                    atomicReference.set(null);
+                }
+            }
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i3, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i3, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i3, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i3, int i10, int i11, CharSequence charSequence) {
     }
 }

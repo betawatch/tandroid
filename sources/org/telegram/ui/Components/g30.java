@@ -1,35 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g30 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public fh0 c;
-    public LinearLayout d;
+public final class g30 extends org.telegram.ui.mq0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ j30 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+    public g30(j30 j30Var, ArrayList arrayList) {
+        this.b = j30Var;
+        this.a = arrayList;
     }
 
-    public void setGravity(int i3) {
-        this.b.setGravity(i3);
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final org.telegram.ui.vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        i30 i30Var = this.b.b;
+        if (i30Var == null) {
+            return null;
+        }
+        return i30Var.getCloseIntoObject();
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final boolean T() {
+        return false;
     }
 
-    public void setTextColor(int i3) {
-        TextView textView = this.b;
-        org.telegram.ui.ActionBar.r6.r(textView);
-        textView.setTextColor(i3);
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
+        this.b.s((org.telegram.messenger.gf) this.a.get(0));
+    }
+
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final boolean z() {
+        return false;
     }
 }

@@ -5,7 +5,7 @@ import android.os.Build;
 import android.widget.EdgeEffect;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ns extends EdgeEffect {
     public final int a;
@@ -14,11 +14,11 @@ public final class ns extends EdgeEffect {
     public final gp d;
     public boolean e;
 
-    public ns(RecyclerView recyclerView, int i3, ls lsVar) {
+    public ns(RecyclerView recyclerView, int i7, ls lsVar) {
         super(recyclerView.getContext());
         this.d = new gp(this, 7);
         this.c = recyclerView;
-        this.a = i3;
+        this.a = i7;
         this.b = lsVar;
     }
 
@@ -54,8 +54,8 @@ public final class ns extends EdgeEffect {
     }
 
     @Override // android.widget.EdgeEffect
-    public final void onAbsorb(int i3) {
-        super.onAbsorb(i3);
+    public final void onAbsorb(int i7) {
+        super.onAbsorb(i7);
         a();
     }
 
@@ -79,8 +79,8 @@ public final class ns extends EdgeEffect {
     }
 
     @Override // android.widget.EdgeEffect
-    public final void setSize(int i3, int i10) {
-        super.setSize(i3, i10);
+    public final void setSize(int i7, int i10) {
+        super.setSize(i7, i10);
         a();
     }
 

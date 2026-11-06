@@ -1,6 +1,6 @@
 package h0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class k {
     public static final k k;
@@ -16,7 +16,7 @@ public final class k {
     public final float j;
 
     static {
-        float j10 = (float) ((b.j() * 63.66197723675813d) / 100.0d);
+        float j3 = (float) ((b.j() * 63.66197723675813d) / 100.0d);
         float[] fArr = b.c;
         float f10 = fArr[0];
         float[][] fArr2 = b.a;
@@ -31,21 +31,21 @@ public final class k {
         float[] fArr5 = fArr2[2];
         float f17 = (f14 * fArr5[2]) + (f12 * fArr5[1]) + (f10 * fArr5[0]);
         float f18 = ((double) 1.0f) >= 0.9d ? 0.69f : 0.655f;
-        float B = com.google.android.recaptcha.internal.a.B((float) Math.exp(((-j10) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
-        double d = B;
+        float C = com.google.android.recaptcha.internal.a.C((float) Math.exp(((-j3) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
+        double d = C;
         if (d > 1.0d) {
-            B = 1.0f;
+            C = 1.0f;
         } else if (d < 0.0d) {
-            B = 0.0f;
+            C = 0.0f;
         }
-        float f19 = 1.0f / ((5.0f * j10) + 1.0f);
-        float C = com.google.android.recaptcha.internal.a.C(f19, f19, f19, f19);
-        float f20 = 1.0f - C;
-        float cbrt = (0.1f * f20 * f20 * ((float) Math.cbrt(j10 * 5.0d))) + (C * j10);
-        float j11 = b.j() / fArr[1];
-        double d10 = j11;
-        float sqrt = ((float) Math.sqrt(d10)) + 1.48f;
-        float pow = 0.725f / ((float) Math.pow(d10, 0.2d));
+        float f19 = 1.0f / ((5.0f * j3) + 1.0f);
+        float D = com.google.android.recaptcha.internal.a.D(f19, f19, f19, f19);
+        float f20 = 1.0f - D;
+        float cbrt = (0.1f * f20 * f20 * ((float) Math.cbrt(j3 * 5.0d))) + (D * j3);
+        float j10 = b.j() / fArr[1];
+        double d2 = j10;
+        float sqrt = ((float) Math.sqrt(d2)) + 1.48f;
+        float pow = 0.725f / ((float) Math.pow(d2, 0.2d));
         float[] fArr6 = {(float) Math.pow(((r2[0] * cbrt) * f15) / 100.0d, 0.42d), (float) Math.pow(((r2[1] * cbrt) * f16) / 100.0d, 0.42d), (float) Math.pow(((r2[2] * cbrt) * f17) / 100.0d, 0.42d)};
         float f21 = fArr6[0];
         float f22 = (f21 * 400.0f) / (f21 + 27.13f);
@@ -53,7 +53,7 @@ public final class k {
         float f24 = (f23 * 400.0f) / (f23 + 27.13f);
         float f25 = fArr6[2];
         float[] fArr7 = {f22, f24, (400.0f * f25) / (f25 + 27.13f)};
-        k = new k(j11, com.google.android.recaptcha.internal.a.A(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f18, 1.0f, new float[]{(((100.0f / f15) * B) + 1.0f) - B, (((100.0f / f16) * B) + 1.0f) - B, (((100.0f / f17) * B) + 1.0f) - B}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
+        k = new k(j10, com.google.android.recaptcha.internal.a.B(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f18, 1.0f, new float[]{(((100.0f / f15) * C) + 1.0f) - C, (((100.0f / f16) * C) + 1.0f) - C, (((100.0f / f17) * C) + 1.0f) - C}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
     }
 
     public k(float f10, float f11, float f12, float f13, float f14, float f15, float[] fArr, float f16, float f17, float f18) {

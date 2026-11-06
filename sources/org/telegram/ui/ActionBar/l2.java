@@ -1,84 +1,56 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.view.WindowManager;
-import org.telegram.messenger.hs;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.view.View;
+import fi.r7;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t2 b;
+public final class l2 extends s2 {
+    public final /* synthetic */ v2 H;
 
-    public /* synthetic */ l2(t2 t2Var, int i3) {
-        this.a = i3;
-        this.b = t2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l2(v2 v2Var, Context context) {
+        super(v2Var, context);
+        this.H = v2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                t2 t2Var = this.b;
-                AnimatorSet animatorSet = t2Var.A0;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    t2Var.A0 = null;
-                    t2Var.B0 = 0;
-                    break;
-                }
-                break;
-            default:
-                t2 t2Var2 = this.b;
-                AnimatorSet animatorSet2 = t2Var2.A0;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    t2Var2.A0 = null;
-                    t2Var2.B0 = 0;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.s2, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.H.Z(canvas);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s2, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        try {
+            return super.drawChild(canvas, view, j3);
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return true;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i3 = this.a;
-        t2 t2Var = this.b;
-        switch (i3) {
-            case 0:
-                AnimatorSet animatorSet = t2Var.A0;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    t2Var.A0 = null;
-                    t2Var.B0 = 0;
-                    t2Var.v();
-                    n2 n2Var = t2Var.z0;
-                    if (n2Var != null) {
-                        n2Var.v();
-                    }
-                    if (t2Var.K) {
-                        t2Var.c.setLayerType(0, null);
-                    }
-                    if (t2Var.W) {
-                        WindowManager.LayoutParams attributes = t2Var.getWindow().getAttributes();
-                        attributes.flags &= -1025;
-                        t2Var.getWindow().setAttributes(attributes);
-                    }
-                }
-                if (t2Var.L0) {
-                    hs.e().k(99, 512);
-                }
-                t2Var.M0.e();
-                break;
-            default:
-                AnimatorSet animatorSet2 = t2Var.A0;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    t2Var.A0 = null;
-                    t2Var.B0 = 0;
-                    org.telegram.messenger.g0.h3(new lg.n(this, 26));
-                }
-                hs.e().k(99, 512);
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new r7(6));
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        v2 v2Var = this.H;
+        v2Var.h = null;
+        v2Var.c.requestApplyInsets();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
     }
 }

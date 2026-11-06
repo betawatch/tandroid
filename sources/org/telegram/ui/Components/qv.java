@@ -1,34 +1,43 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class qv extends g.p {
-    public final /* synthetic */ ey c;
+public final class qv extends v4.s {
+    public final /* synthetic */ gy Q;
 
-    public qv(ey eyVar) {
-        this.c = eyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qv(gy gyVar) {
+        super(5);
+        this.Q = gyVar;
     }
 
-    @Override // g.p
-    public final int i(int i3) {
-        ey eyVar = this.c;
-        yx yxVar = eyVar.A0;
-        u4.h0 adapter = eyVar.E0.getAdapter();
-        vx vxVar = eyVar.z0;
-        if (adapter != vxVar) {
-            if (i3 == yxVar.y || !(yxVar.r.get(i3) == null || (yxVar.r.get(i3) instanceof TLRPC.Document))) {
-                return vxVar.d;
-            }
-            return 1;
+    @Override // v4.s, v4.b0, v4.n0
+    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
+        int o02 = super.o0(i7, v0Var, a1Var);
+        gy gyVar = this.Q;
+        if (o02 != 0 && gyVar.D0.getScrollState() == 1) {
+            gyVar.X1 = false;
+            gyVar.Z();
         }
-        if (i3 == 0) {
-            return vxVar.d;
+        if (gyVar.T0 == null) {
+            jg.e1 e1Var = new jg.e1(gyVar, gyVar.c1, gyVar.t1.a(), gyVar.t1.f(), 1);
+            gyVar.T0 = e1Var;
+            e1Var.a();
         }
-        if (i3 == vxVar.s || !(vxVar.h.get(i3) == null || (vxVar.h.get(i3) instanceof TLRPC.Document))) {
-            return vxVar.d;
+        gyVar.T0.b();
+        return o02;
+    }
+
+    @Override // v4.b0, v4.n0
+    public final void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
+        try {
+            mi.m mVar = new mi.m(recyclerView.getContext(), 2);
+            mVar.a = i7;
+            w0(mVar);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        return 1;
     }
 }

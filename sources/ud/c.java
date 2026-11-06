@@ -1,22 +1,40 @@
 package ud;
 
-import java.io.Serializable;
-import java.util.regex.Pattern;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c implements Serializable {
-    public final Pattern a;
+public final class c extends a {
+    static {
+        new c((char) 1, (char) 0);
+    }
 
-    public c(String str) {
-        Pattern compile = Pattern.compile(str);
-        kotlin.jvm.internal.j.d(compile, "compile(...)");
-        this.a = compile;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        char c10 = this.a;
+        char c11 = this.b;
+        if (j.f(c10, c11) > 0) {
+            c cVar = (c) obj;
+            if (j.f(cVar.a, cVar.b) > 0) {
+                return true;
+            }
+        }
+        c cVar2 = (c) obj;
+        return c10 == cVar2.a && c11 == cVar2.b;
+    }
+
+    public final int hashCode() {
+        char c10 = this.a;
+        char c11 = this.b;
+        if (j.f(c10, c11) > 0) {
+            return -1;
+        }
+        return (c10 * 31) + c11;
     }
 
     public final String toString() {
-        String pattern = this.a.toString();
-        kotlin.jvm.internal.j.d(pattern, "toString(...)");
-        return pattern;
+        return this.a + ".." + this.b;
     }
 }

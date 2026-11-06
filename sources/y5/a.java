@@ -1,10 +1,40 @@
 package y5;
 
-import com.google.android.gms.common.api.d;
-import com.google.android.gms.common.api.e;
+import android.util.SparseArray;
+import java.util.HashMap;
+import jg.g;
+import l5.d;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final e a = new e("Auth.GOOGLE_SIGN_IN_API", new a6.b(20), new d());
+    public static final SparseArray a = new SparseArray();
+    public static final HashMap b;
+
+    static {
+        HashMap hashMap = new HashMap();
+        b = hashMap;
+        hashMap.put(d.a, 0);
+        hashMap.put(d.b, 1);
+        hashMap.put(d.c, 2);
+        for (d dVar : hashMap.keySet()) {
+            a.append(((Integer) b.get(dVar)).intValue(), dVar);
+        }
+    }
+
+    public static int a(d dVar) {
+        Integer num = (Integer) b.get(dVar);
+        if (num != null) {
+            return num.intValue();
+        }
+        throw new IllegalStateException("PriorityMapping is missing known Priority value " + dVar);
+    }
+
+    public static d b(int i7) {
+        d dVar = (d) a.get(i7);
+        if (dVar != null) {
+            return dVar;
+        }
+        throw new IllegalArgumentException(g.j(i7, "Unknown Priority for value "));
+    }
 }

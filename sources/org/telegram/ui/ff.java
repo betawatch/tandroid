@@ -1,78 +1,70 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import java.io.Serializable;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ff implements org.telegram.ui.Components.th0, org.telegram.ui.ActionBar.p1 {
+public final /* synthetic */ class ff implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm b;
-    public final /* synthetic */ org.telegram.messenger.zi c;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ TLRPC.InputPeer n;
+    public final /* synthetic */ int[] r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ ef w;
+    public final /* synthetic */ Object x;
 
-    public /* synthetic */ ff(wm wmVar, org.telegram.messenger.zi ziVar, int i3) {
-        this.a = i3;
-        this.b = wmVar;
-        this.c = ziVar;
+    public /* synthetic */ ff(an anVar, int i7, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z9, ef efVar, int i10) {
+        this.a = i10;
+        this.b = anVar;
+        this.c = i7;
+        this.d = arrayList;
+        this.e = str;
+        this.f = str2;
+        this.h = str3;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.x = obj;
+        this.s = z9;
+        this.w = efVar;
     }
 
-    @Override // org.telegram.ui.Components.th0
-    public void f(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                if (j10 > 0) {
-                    bundle.putLong("user_id", j10);
-                } else {
-                    bundle.putLong("chat_id", -j10);
-                }
-                wm wmVar = this.b;
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle.putInt("report_reaction_message_id", this.c.f1());
-                    bundle.putLong("report_reaction_from_dialog_id", wmVar.k6);
-                }
-                wmVar.presentFragment(new ProfileActivity(bundle, null));
-                wmVar.O7(true);
+                an.P0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.x, this.s, this.w);
+                break;
+            case 1:
+                an.B0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.x, this.s, this.w);
                 break;
             default:
-                wm wmVar2 = this.b;
-                wmVar2.getClass();
-                Bundle bundle2 = new Bundle();
-                if (j10 > 0) {
-                    bundle2.putLong("user_id", j10);
-                } else {
-                    bundle2.putLong("chat_id", -j10);
-                }
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle2.putInt("report_reaction_message_id", this.c.f1());
-                    bundle2.putLong("report_reaction_from_dialog_id", wmVar2.k6);
-                }
-                wmVar2.presentFragment(new ProfileActivity(bundle2, null));
-                wmVar2.O7(true);
+                an.G1(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.x, this.s, this.w);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        wm wmVar = this.b;
-        org.telegram.ui.ActionBar.s1[] s1VarArr = {new org.telegram.ui.ActionBar.s1(3, wmVar.getParentActivity(), wmVar.ya)};
-        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        org.telegram.messenger.zi ziVar = this.c;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) ziVar.k.media;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.question = poll.question;
-        tL_poll.answers = poll.answers;
-        tL_poll.closed = true;
-        tL_messages_editMessage.media = tL_inputMediaPoll;
-        tL_messages_editMessage.peer = wmVar.getMessagesController().j1(wmVar.k6);
-        tL_messages_editMessage.id = ziVar.f1();
-        tL_messages_editMessage.flags |= TLObject.FLAG_14;
-        org.telegram.messenger.g0.i3(new xf(wmVar, s1VarArr, wmVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new y9(wmVar, s1VarArr, tL_messages_editMessage, 5)), 2), 500L);
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ ff(an anVar, int i7, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z9, ef efVar) {
+        this.a = 2;
+        this.b = anVar;
+        this.c = i7;
+        this.d = arrayList;
+        this.h = strArr;
+        this.e = str;
+        this.f = str2;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.x = charSequence;
+        this.s = z9;
+        this.w = efVar;
     }
 }

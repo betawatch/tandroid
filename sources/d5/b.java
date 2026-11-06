@@ -1,35 +1,51 @@
 package d5;
 
-import android.os.Build;
+import aa.n;
+import android.content.pm.PackageInfo;
+import android.net.Uri;
+import android.webkit.WebView;
+import e5.k;
+import e5.l;
+import e5.m;
+import java.util.Set;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class b extends c {
-    public final /* synthetic */ int d;
+public abstract class b {
+    public static final boolean a;
+    public static final WeakHashMap b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(int i3, String str, String str2) {
-        super(str, str2);
-        this.d = i3;
+    static {
+        Uri.parse("*");
+        Uri.parse("");
+        a = true;
+        b = new WeakHashMap();
     }
 
-    @Override // d5.c
-    public final boolean a() {
-        switch (this.d) {
-            case 0:
-                return true;
-            case 1:
-                return Build.VERSION.SDK_INT >= 24;
-            case 2:
-                return false;
-            case 3:
-                return Build.VERSION.SDK_INT >= 26;
-            case 4:
-                return Build.VERSION.SDK_INT >= 27;
-            case 5:
-                return Build.VERSION.SDK_INT >= 28;
-            default:
-                return Build.VERSION.SDK_INT >= 29;
+    public static void a(WebView webView, String str, Set set, a aVar) {
+        if (!k.c.b()) {
+            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
         }
+        m c10 = c(webView);
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new af.a(new n(aVar, 15)));
+    }
+
+    public static PackageInfo b() {
+        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    }
+
+    public static m c(WebView webView) {
+        if (!k.e.b() || !a) {
+            return new m(l.a.createWebView(webView));
+        }
+        WeakHashMap weakHashMap = b;
+        m mVar = (m) weakHashMap.get(webView);
+        if (mVar != null) {
+            return mVar;
+        }
+        m mVar2 = new m(l.a.createWebView(webView));
+        weakHashMap.put(webView, mVar2);
+        return mVar2;
     }
 }

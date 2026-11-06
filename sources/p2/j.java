@@ -1,64 +1,76 @@
 package p2;
 
-import g2.n0;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Components.iv0;
-import org.telegram.ui.rw;
-import w2.g0;
+import a8.p0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class j {
-    public final int a;
-    public final g0 b;
-    public final CopyOnWriteArrayList c;
+    public final long a;
+    public final long b;
+    public final String c;
+    public int d;
 
-    public j(CopyOnWriteArrayList copyOnWriteArrayList, int i3, g0 g0Var) {
-        this.c = copyOnWriteArrayList;
-        this.a = i3;
-        this.b = g0Var;
+    public j(long j3, String str, long j10) {
+        this.c = str == null ? "" : str;
+        this.a = j3;
+        this.b = j10;
     }
 
-    public final void a(v7.s sVar) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            n0.W(iVar.a, new iv0(this, iVar.b, sVar, 18));
+    public final j a(j jVar, String str) {
+        j jVar2;
+        String f10 = h2.e.f(str, this.c);
+        if (jVar != null) {
+            long j3 = jVar.b;
+            if (f10.equals(h2.e.f(str, jVar.c))) {
+                long j10 = this.b;
+                if (j10 != -1) {
+                    long j11 = this.a;
+                    jVar2 = null;
+                    if (j11 + j10 == jVar.a) {
+                        return new j(j11, f10, j3 != -1 ? j10 + j3 : -1L);
+                    }
+                } else {
+                    jVar2 = null;
+                }
+                if (j3 == -1) {
+                    return jVar2;
+                }
+                long j12 = jVar.a;
+                if (j12 + j3 == this.a) {
+                    return new j(j12, f10, j10 != -1 ? j3 + j10 : -1L);
+                }
+                return jVar2;
+            }
         }
+        return null;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, p2.k] */
-    public final void b() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            n0.W(iVar.a, new h(this, iVar.b, 1));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && j.class == obj.getClass()) {
+            j jVar = (j) obj;
+            if (this.a == jVar.a && this.b == jVar.b && this.c.equals(jVar.c)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public final void c(int i3) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            n0.W(iVar.a, new rw(this, iVar.b, i3, 22));
+    public final int hashCode() {
+        if (this.d == 0) {
+            this.d = this.c.hashCode() + ((((527 + ((int) this.a)) * 31) + ((int) this.b)) * 31);
         }
+        return this.d;
     }
 
-    public final void d(Exception exc) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            n0.W(iVar.a, new iv0(this, iVar.b, exc, 17));
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, p2.k] */
-    public final void e() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            n0.W(iVar.a, new h(this, iVar.b, 0));
-        }
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("RangedUri(referenceUri=");
+        sb2.append(this.c);
+        sb2.append(", start=");
+        sb2.append(this.a);
+        sb2.append(", length=");
+        return p0.r(sb2, this.b, ")");
     }
 }

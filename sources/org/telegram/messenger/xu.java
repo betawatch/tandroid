@@ -1,48 +1,31 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
+import android.text.Layout;
 import android.view.View;
+import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class xu {
-    public float a;
-    public boolean b;
-    public float c;
-    public float d;
-    public float e;
-    public ValueAnimator f;
-    public final Path g = new Path();
+public final class xu implements rg0 {
+    public final ex0 a;
 
-    public final void a(Canvas canvas) {
-        if (this.a > 0.0f) {
-            Path path = this.g;
-            path.rewind();
-            path.addCircle(this.c, this.d, this.e * this.a, Path.Direction.CW);
-            canvas.clipPath(path, Region.Op.DIFFERENCE);
-        }
+    public xu(ex0 ex0Var) {
+        this.a = ex0Var;
     }
 
-    public final boolean b() {
-        return this.b && this.a >= 1.0f;
+    @Override // org.telegram.ui.rg0
+    public final Layout a() {
+        dx0 dx0Var = this.a.b;
+        if (dx0Var == null) {
+            return null;
+        }
+        return dx0Var.a();
     }
 
-    public final void c(View view, float f10, float f11, float f12, float f13) {
-        if (this.b || this.f != null) {
-            return;
-        }
-        this.c = f10;
-        this.d = f11;
-        this.e = (float) Math.sqrt((f13 * f13) + (f12 * f12));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.f = ofFloat;
-        ofFloat.setDuration((long) Utilities.i(this.e * 0.3f, 550.0f, 250.0f));
-        this.f.setInterpolator(org.telegram.ui.Components.xq.j);
-        this.f.addUpdateListener(new q(2, this, view));
-        this.f.addListener(new bh.j(11, this, view));
-        this.f.start();
+    @Override // org.telegram.ui.rg0
+    public final View e() {
+        return null;
     }
 }

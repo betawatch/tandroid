@@ -1,74 +1,58 @@
 package ji;
 
-import java.util.ArrayList;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.fc;
-import org.telegram.ui.Components.r31;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a implements n10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class a extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final RectF d;
+    public final /* synthetic */ f6 e;
 
-    public /* synthetic */ a(e eVar, int i3) {
-        this.a = i3;
-        this.b = eVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(Context context, f6 f6Var) {
+        super(context);
+        this.e = f6Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        Paint paint3 = new Paint(1);
+        this.c = paint3;
+        this.d = new RectF();
+        paint2.setColor(-1);
+        paint.setColor(k6.w0(k6.d6, f6Var));
+        paint3.setColor(k6.w0(k6.kk, f6Var));
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        String M0;
-        int i3 = this.a;
-        e eVar = this.b;
-        switch (i3) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                arrayList.add(r31.l(0, eVar.h));
-                r31 c2 = r31.c(1, R.drawable.msg_groups_create, bd.M0(2131751939, null));
-                c2.q = true;
-                arrayList.add(c2);
-                arrayList.add(r31.E(2, org.telegram.messenger.g0.L(14.0f)));
-                ArrayList arrayList2 = eVar.n;
-                if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(r31.t(3, bd.M0(2131751969, null)));
-                    ArrayList arrayList3 = eVar.n;
-                    int size = arrayList3.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj3 = arrayList3.get(i10);
-                        i10++;
-                        TLRPC.Chat chat = (TLRPC.Chat) obj3;
-                        TLRPC.ChatFull N0 = eVar.getMessagesController().N0(chat.id);
-                        r31 w10 = r31.w(chat);
-                        long j10 = chat.id;
-                        w10.d = (int) (j10 ^ (j10 >>> 32));
-                        if (N0 != null) {
-                            ArrayList<TL_communities.CommunityPeer> arrayList4 = N0.linked_peers;
-                            M0 = bd.G(arrayList4 != null ? arrayList4.size() : 0, "Chats", new Object[0]);
-                        } else {
-                            M0 = bd.M0(2131748787, null);
-                        }
-                        w10.m = M0;
-                        arrayList.add(w10);
-                    }
-                    break;
-                }
-                break;
-            default:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (tL_error == null) {
-                    j0.d(eVar, eVar.b, 0);
-                    break;
-                } else {
-                    eVar.getClass();
-                    fc.a0(eVar).f0(tL_error, false);
-                    break;
-                }
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i7 = k6.d6;
+        f6 f6Var = this.e;
+        int w02 = k6.w0(i7, f6Var);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        int w03 = k6.w0(k6.kk, f6Var);
+        Paint paint2 = this.c;
+        paint2.setColor(w03);
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.d;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
+        rectF.inset(g0.L(1.33f), g0.L(1.33f));
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
+        rectF.inset(g0.N(4.67f), g0.N(9.066f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
     }
 }

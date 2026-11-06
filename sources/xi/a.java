@@ -2,7 +2,7 @@ package xi;
 
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class a {
     public final String a;
@@ -28,10 +28,10 @@ public final class a {
         }
     }
 
-    public final synchronized void b(boolean z10) {
-        this.d = z10;
+    public final synchronized void b(boolean z9) {
+        this.d = z9;
         this.c = true;
         this.b = true;
-        d.a.edit().putBoolean(this.a, z10).apply();
+        d.a.edit().putBoolean(this.a, z9).apply();
     }
 }

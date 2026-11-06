@@ -34,12 +34,12 @@ public final class s7 extends u7 implements j$.util.x0, IntConsumer {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i3) {
-        this.f = i3;
+    public final void accept(int i7) {
+        this.f = i7;
     }
 
     @Override // j$.util.stream.u7
-    public final b7 e(int i3) {
-        return new z6(i3);
+    public final b7 e(int i7) {
+        return new z6(i7);
     }
 }

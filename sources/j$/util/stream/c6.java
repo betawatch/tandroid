@@ -10,8 +10,8 @@ public final class c6 extends x0 implements n8 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c6(a aVar, int i3, int i10) {
-        super(aVar, i3);
+    public /* synthetic */ c6(a aVar, int i7, int i10) {
+        super(aVar, i7);
         this.s = i10;
     }
 
@@ -45,14 +45,14 @@ public final class c6 extends x0 implements n8 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i3, j5 j5Var) {
+    public final j5 Q0(int i7, j5 j5Var) {
         switch (this.s) {
             case 0:
                 Objects.requireNonNull(j5Var);
-                if (v6.SORTED.m(i3)) {
+                if (v6.SORTED.m(i7)) {
                     return j5Var;
                 }
-                return v6.SIZED.m(i3) ? new h6(j5Var) : new z5(j5Var);
+                return v6.SIZED.m(i7) ? new h6(j5Var) : new z5(j5Var);
             case 1:
                 return new g8(this, j5Var);
             default:
@@ -61,7 +61,7 @@ public final class c6 extends x0 implements n8 {
     }
 
     @Override // j$.util.stream.n8
-    public o8 h(w1 w1Var, boolean z10) {
-        return new h8(this, w1Var, z10);
+    public o8 h(w1 w1Var, boolean z9) {
+        return new h8(this, w1Var, z9);
     }
 }

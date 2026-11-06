@@ -3,21 +3,21 @@ package org.webrtc;
 import java.util.IdentityHashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class VideoTrack extends MediaStreamTrack {
     private final IdentityHashMap<VideoSink, Long> sinks;
 
-    public VideoTrack(long j10) {
-        super(j10);
+    public VideoTrack(long j3) {
+        super(j3);
         this.sinks = new IdentityHashMap<>();
     }
 
-    private static native void nativeAddSink(long j10, long j11);
+    private static native void nativeAddSink(long j3, long j10);
 
-    private static native void nativeFreeSink(long j10);
+    private static native void nativeFreeSink(long j3);
 
-    private static native void nativeRemoveSink(long j10, long j11);
+    private static native void nativeRemoveSink(long j3, long j10);
 
     private static native long nativeWrapSink(VideoSink videoSink);
 

@@ -5,15 +5,15 @@ import android.util.LongSparseArray;
 import android.view.View;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public abstract class q31 {
     public final int a;
 
     public q31() {
-        int i3 = r31.J;
-        r31.J = i3 + 1;
-        this.a = i3;
+        int i7 = r31.J;
+        r31.J = i7 + 1;
+        this.a = i7;
     }
 
     public static void h(q31 q31Var) {
@@ -35,23 +35,23 @@ public abstract class q31 {
         return r31Var.I(r31Var2);
     }
 
-    public abstract View d(Context context, tj0 tj0Var, int i3, org.telegram.ui.ActionBar.e6 e6Var);
+    public abstract View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var);
 
     public boolean e(r31 r31Var, r31 r31Var2) {
         return r31Var.J(r31Var2);
     }
 
     public boolean f() {
-        return !(this instanceof org.telegram.messenger.rt);
+        return !(this instanceof org.telegram.messenger.zt);
     }
 
     public boolean g() {
         return this instanceof li;
     }
 
-    public void a(tj0 tj0Var, View view, r31 r31Var) {
+    public void a(pj0 pj0Var, View view, r31 r31Var) {
     }
 
-    public void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
+    public void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
     }
 }

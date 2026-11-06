@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class v1 extends e1 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -20,7 +20,7 @@ public abstract class v1 extends e1 {
         this.zzc = x2.f;
     }
 
-    public static final boolean c(v1 v1Var, boolean z10) {
+    public static final boolean c(v1 v1Var, boolean z9) {
         byte byteValue = ((Byte) v1Var.d(1)).byteValue();
         if (byteValue == 1) {
             return true;
@@ -29,7 +29,7 @@ public abstract class v1 extends e1 {
             return false;
         }
         boolean b10 = q2.c.a(v1Var.getClass()).b(v1Var);
-        if (z10) {
+        if (z9) {
             v1Var.d(2);
         }
         return b10;
@@ -86,21 +86,21 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(k2.p1.i(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(jg.g.j(d, "serialized size must be non-negative, was "));
         }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
+        int i7 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i7 != Integer.MAX_VALUE) {
+            return i7;
         }
-        int d10 = t2Var.d(this);
-        if (d10 < 0) {
-            throw new IllegalStateException(k2.p1.i(d10, "serialized size must be non-negative, was "));
+        int d2 = t2Var.d(this);
+        if (d2 < 0) {
+            throw new IllegalStateException(jg.g.j(d2, "serialized size must be non-negative, was "));
         }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
-        return d10;
+        this.zzd = (this.zzd & TLObject.FLAG_31) | d2;
+        return d2;
     }
 
-    public abstract Object d(int i3);
+    public abstract Object d(int i7);
 
     public final int e() {
         if (m()) {
@@ -108,18 +108,18 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(k2.p1.i(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(jg.g.j(d, "serialized size must be non-negative, was "));
         }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
+        int i7 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i7 != Integer.MAX_VALUE) {
+            return i7;
         }
-        int d10 = q2.c.a(getClass()).d(this);
-        if (d10 < 0) {
-            throw new IllegalStateException(k2.p1.i(d10, "serialized size must be non-negative, was "));
+        int d2 = q2.c.a(getClass()).d(this);
+        if (d2 < 0) {
+            throw new IllegalStateException(jg.g.j(d2, "serialized size must be non-negative, was "));
         }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
-        return d10;
+        this.zzd = (this.zzd & TLObject.FLAG_31) | d2;
+        return d2;
     }
 
     public final boolean equals(Object obj) {
@@ -154,9 +154,9 @@ public abstract class v1 extends e1 {
         if (m()) {
             return q2.c.a(getClass()).a(this);
         }
-        int i3 = this.zza;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.zza;
+        if (i7 != 0) {
+            return i7;
         }
         int a10 = q2.c.a(getClass()).a(this);
         this.zza = a10;

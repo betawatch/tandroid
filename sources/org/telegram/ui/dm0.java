@@ -1,41 +1,70 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dm0 implements org.telegram.ui.Components.r4, org.telegram.ui.ActionBar.d1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hm0 b;
+public final class dm0 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final org.telegram.ui.Components.ic l;
+    public boolean m;
+    public final org.telegram.ui.Components.w5 n;
+    public int o;
+    public final /* synthetic */ em0 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    public /* synthetic */ dm0(hm0 hm0Var, int i3) {
-        this.a = i3;
-        this.b = hm0Var;
+    public dm0(em0 em0Var) {
+        this.r = em0Var;
+        this.l = new org.telegram.ui.Components.ic(em0Var);
+        this.n = new org.telegram.ui.Components.w5(em0Var, 0L, 320L, org.telegram.ui.Components.xq.h);
     }
 
-    @Override // org.telegram.ui.Components.r4
-    public void L(int i3, int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                hm0 hm0Var = this.b;
-                hm0Var.a0(hm0Var.b, hm0Var.c, z10, i3);
-                hm0Var.finishFragment();
-                break;
-            default:
-                hm0 hm0Var2 = this.b;
-                hm0Var2.a0(hm0Var2.b, hm0Var2.c, z10, i3);
-                hm0Var2.finishFragment();
-                break;
+    public final void a(org.telegram.messenger.fp fpVar) {
+        em0 em0Var = this.r;
+        org.telegram.ui.ActionBar.f6 f6Var = em0Var.a;
+        if (fpVar == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d1
-    public void k(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.f1 f1Var;
-        hm0 hm0Var = this.b;
-        hm0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (f1Var = hm0Var.J) != null && f1Var.isShowing()) {
-            hm0Var.J.d(true);
+        int[] iArr = fpVar.g;
+        int[] iArr2 = fpVar.h;
+        boolean q10 = f6Var == null ? org.telegram.ui.ActionBar.k6.I.q() : f6Var.a();
+        int i7 = em0Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (i7 != 1) {
+            paint2.setColor(fpVar.e(0, f6Var));
+            paint.setColor(fpVar.o(q10) ? fpVar.e(1, f6Var) : fpVar.e(0, f6Var));
+            this.f = fpVar.o(q10);
+            this.g = false;
+            return;
         }
+        if (q10 && fpVar.g() != fpVar.f() && fpVar.i() == fpVar.f()) {
+            paint2.setColor(fpVar.e(1, f6Var));
+            paint.setColor(fpVar.e(0, f6Var));
+        } else {
+            paint2.setColor(fpVar.e(0, f6Var));
+            paint.setColor(fpVar.e(1, f6Var));
+        }
+        this.c.setColor(fpVar.e(2, f6Var));
+        this.f = fpVar.h(q10) != (q10 ? iArr2 : iArr)[0];
+        int j3 = fpVar.j(q10);
+        if (q10) {
+            iArr = iArr2;
+        }
+        this.g = j3 != iArr[0];
     }
 }

@@ -1,38 +1,67 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.Window;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j41 implements fp {
-    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean[] c;
+public final class j41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l41 b;
 
-    public j41(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
-        this.a = tL_chatChannelParticipant;
-        this.b = z10;
-        this.c = zArr;
+    public /* synthetic */ j41(l41 l41Var, int i7) {
+        this.a = i7;
+        this.b = l41Var;
     }
 
-    @Override // org.telegram.ui.fp
-    public final void b(int i3, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
-        if (i3 == 0) {
-            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant.admin_rights = null;
-            channelParticipant.rank = "";
-        } else {
-            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant2.admin_rights = tL_chatAdminRights;
-            channelParticipant2.rank = str;
-            if (this.b) {
-                this.c[0] = true;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                l41 l41Var = this.b;
+                l41Var.b.setVisibility(4);
+                lg.g gVar = l41Var.b;
+                gVar.J = false;
+                lg.g gVar2 = l41Var.c;
+                gVar2.J = true;
+                gVar.y0 = 0;
+                gVar2.y0 = 0;
+                Window window = l41Var.a;
+                if (window != null) {
+                    window.clearFlags(16);
+                    break;
+                }
+                break;
+            case 1:
+                l41 l41Var2 = this.b;
+                lg.g gVar3 = l41Var2.c;
+                gVar3.setVisibility(4);
+                lg.g gVar4 = l41Var2.b;
+                gVar4.y0 = 0;
+                gVar3.y0 = 0;
+                gVar4.J = true;
+                gVar3.J = false;
+                if (gVar4 instanceof lg.q) {
+                    gVar4.u0 = false;
+                    gVar4.d();
+                } else {
+                    gVar4.u0 = true;
+                    gVar4.x((gVar4.G0 * gVar4.g0.k) - lg.g.k1);
+                    gVar4.c(true);
+                    gVar4.invalidate();
+                }
+                Window window2 = l41Var2.a;
+                if (window2 != null) {
+                    window2.clearFlags(16);
+                    break;
+                }
+                break;
+            default:
+                l41 l41Var3 = this.b;
+                l41Var3.b.y0 = 0;
+                l41Var3.e.setVisibility(8);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.fp
-    public final void a(TLRPC.User user) {
     }
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -22,37 +22,37 @@ public class q0 implements Serializable, Iterable {
         this.b = bArr;
     }
 
-    public static q0 j(int i3, int i10, byte[] bArr) {
+    public static q0 j(int i7, int i10, byte[] bArr) {
         byte[] copyOfRange;
-        l(i3, i3 + i10, bArr.length);
+        l(i7, i7 + i10, bArr.length);
         switch (d.a) {
             case 1:
-                copyOfRange = Arrays.copyOfRange(bArr, i3, i10 + i3);
+                copyOfRange = Arrays.copyOfRange(bArr, i7, i10 + i7);
                 break;
             default:
                 copyOfRange = new byte[i10];
-                System.arraycopy(bArr, i3, copyOfRange, 0, i10);
+                System.arraycopy(bArr, i7, copyOfRange, 0, i10);
                 break;
         }
         return new q0(copyOfRange);
     }
 
-    public static int l(int i3, int i10, int i11) {
-        int i12 = i10 - i3;
-        if ((i3 | i10 | i12 | (i11 - i10)) >= 0) {
+    public static int l(int i7, int i10, int i11) {
+        int i12 = i10 - i7;
+        if ((i7 | i10 | i12 | (i11 - i10)) >= 0) {
             return i12;
         }
-        if (i3 < 0) {
+        if (i7 < 0) {
             StringBuilder sb2 = new StringBuilder(32);
             sb2.append("Beginning index: ");
-            sb2.append(i3);
+            sb2.append(i7);
             sb2.append(" < 0");
             throw new IndexOutOfBoundsException(sb2.toString());
         }
-        if (i10 < i3) {
+        if (i10 < i7) {
             StringBuilder sb3 = new StringBuilder(66);
             sb3.append("Beginning index larger than ending index: ");
-            sb3.append(i3);
+            sb3.append(i7);
             sb3.append(", ");
             sb3.append(i10);
             throw new IndexOutOfBoundsException(sb3.toString());
@@ -79,9 +79,9 @@ public class q0 implements Serializable, Iterable {
             return obj.equals(this);
         }
         q0 q0Var = (q0) obj;
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = q0Var.a;
-        if (i3 != 0 && i10 != 0 && i3 != i10) {
+        if (i7 != 0 && i10 != 0 && i7 != i10) {
             return false;
         }
         int i11 = i();
@@ -116,14 +116,14 @@ public class q0 implements Serializable, Iterable {
         return true;
     }
 
-    public byte h(int i3) {
-        return this.b[i3];
+    public byte f(int i7) {
+        return this.b[i7];
     }
 
     public final int hashCode() {
-        int i3 = this.a;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.a;
+        if (i7 != 0) {
+            return i7;
         }
         int i10 = i();
         int m10 = m();
@@ -147,8 +147,8 @@ public class q0 implements Serializable, Iterable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte k(int i3) {
-        return this.b[i3];
+    public byte k(int i7) {
+        return this.b[i7];
     }
 
     public int m() {
@@ -159,7 +159,7 @@ public class q0 implements Serializable, Iterable {
         String concat;
         Locale locale = Locale.ROOT;
         String hexString = Integer.toHexString(System.identityHashCode(this));
-        int i3 = i();
+        int i7 = i();
         if (i() <= 50) {
             concat = e1.k(this);
         } else {
@@ -169,8 +169,8 @@ public class q0 implements Serializable, Iterable {
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
-        sb2.append(i3);
+        sb2.append(i7);
         sb2.append(" contents=\"");
-        return a1.g.s(sb2, concat, "\">");
+        return a8.p0.s(sb2, concat, "\">");
     }
 }

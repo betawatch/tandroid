@@ -1,46 +1,29 @@
 package n5;
 
-import g2.f0;
-import java.util.HashMap;
-import org.telegram.ui.ih0;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class r {
-    public final i a;
-    public final String b;
-    public final k5.c c;
-    public final k5.e d;
-    public final s e;
+public final class r extends d0 {
+    public final q a;
 
-    public r(i iVar, String str, k5.c cVar, k5.e eVar, s sVar) {
-        this.a = iVar;
-        this.b = str;
-        this.c = cVar;
-        this.d = eVar;
-        this.e = sVar;
+    public r(q qVar) {
+        this.a = qVar;
     }
 
-    public final void a(k5.a aVar, k5.g gVar) {
-        k5.e eVar = this.d;
-        if (eVar == null) {
-            throw new NullPointerException("Null transformer");
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        s sVar = this.e;
-        s5.b bVar = sVar.c;
-        i b10 = this.a.b(aVar.c);
-        f0 f0Var = new f0();
-        f0Var.f = new HashMap();
-        f0Var.d = Long.valueOf(sVar.a.o());
-        f0Var.e = Long.valueOf(sVar.b.o());
-        f0Var.a = this.b;
-        f0Var.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
-        f0Var.b = aVar.a;
-        k5.b bVar2 = aVar.d;
-        if (bVar2 != null) {
-            f0Var.g = bVar2.a;
+        if (!(obj instanceof d0)) {
+            return false;
         }
-        s5.a aVar2 = (s5.a) bVar;
-        aVar2.b.execute(new ih0(aVar2, b10, gVar, f0Var.b(), 27));
+        return this.a.equals(((r) ((d0) obj)).a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() ^ 1000003;
+    }
+
+    public final String toString() {
+        return "ExternalPrivacyContext{prequest=" + this.a + "}";
     }
 }

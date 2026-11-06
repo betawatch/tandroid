@@ -3,34 +3,34 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class hs implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ is b;
 
-    public /* synthetic */ hs(is isVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ hs(is isVar, int i7) {
+        this.a = i7;
         this.b = isVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3;
+        int i7;
         Bitmap bitmap;
         switch (this.a) {
             case 0:
                 is isVar = this.b;
                 try {
-                    i3 = isVar.x + 0;
+                    i7 = isVar.x + 0;
                     bitmap = isVar.b;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
-                    isVar.F = true;
+                    isVar.E = true;
                 }
                 if (bitmap != null) {
                     if (bitmap.getWidth() == isVar.y) {
-                        if (isVar.b.getHeight() != i3) {
+                        if (isVar.b.getHeight() != i7) {
                         }
                         isVar.b.eraseColor(0);
                         isVar.c.save();
@@ -38,7 +38,7 @@ public final class hs implements Runnable {
                         isVar.c(isVar.c);
                         isVar.c.restore();
                         isVar.b.prepareToDraw();
-                        org.telegram.messenger.g0.h3(isVar.I);
+                        org.telegram.messenger.g0.h3(isVar.H);
                         break;
                     }
                 }
@@ -46,7 +46,7 @@ public final class hs implements Runnable {
                 if (bitmap2 != null) {
                     bitmap2.recycle();
                 }
-                isVar.b = Bitmap.createBitmap(isVar.y, i3, Bitmap.Config.ARGB_8888);
+                isVar.b = Bitmap.createBitmap(isVar.y, i7, Bitmap.Config.ARGB_8888);
                 isVar.c = new Canvas(isVar.b);
                 isVar.b.eraseColor(0);
                 isVar.c.save();
@@ -54,7 +54,7 @@ public final class hs implements Runnable {
                 isVar.c(isVar.c);
                 isVar.c.restore();
                 isVar.b.prepareToDraw();
-                org.telegram.messenger.g0.h3(isVar.I);
+                org.telegram.messenger.g0.h3(isVar.H);
             default:
                 is isVar2 = this.b;
                 isVar2.f = false;
@@ -62,8 +62,8 @@ public final class hs implements Runnable {
                 if (!isVar2.a) {
                     isVar2.j();
                     break;
-                } else if (isVar2.w == isVar2.K) {
-                    isVar2.H = true;
+                } else if (isVar2.w == isVar2.J) {
+                    isVar2.G = true;
                     break;
                 }
                 break;

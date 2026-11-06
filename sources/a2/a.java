@@ -1,40 +1,63 @@
 package a2;
 
-import android.os.Build;
-import android.text.TextUtils;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import com.google.android.gms.common.api.m;
+import d6.d;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import m9.u;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public d a;
+public final class a implements Runnable {
+    public static Handler f;
+    public final /* synthetic */ d e;
+    public volatile int b = 1;
+    public final AtomicBoolean c = new AtomicBoolean();
+    public final AtomicBoolean d = new AtomicBoolean();
+    public final c a = new c(this, new b(this, 0));
 
-    public a(String str, int i3, int i10) {
-        if (str == null) {
-            throw new NullPointerException("package shouldn't be null");
-        }
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        if (Build.VERSION.SDK_INT < 28) {
-            this.a = new d(str, i3, i10);
-            return;
-        }
-        c cVar = new c(str, i3, i10);
-        b.a(i3, i10, str);
-        this.a = cVar;
+    public a(d dVar) {
+        this.e = dVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        d dVar = this.e;
+        Iterator it = dVar.j.iterator();
+        int i7 = 0;
+        while (it.hasNext()) {
+            if (((m) it.next()).b(dVar)) {
+                i7++;
+            }
         }
-        if (obj instanceof a) {
-            return this.a.equals(((a) obj).a);
+        try {
+            dVar.i.tryAcquire(i7, 5L, TimeUnit.SECONDS);
+        } catch (InterruptedException e10) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e10);
+            Thread.currentThread().interrupt();
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final void b(Object obj) {
+        Handler handler;
+        synchronized (a.class) {
+            try {
+                if (f == null) {
+                    f = new Handler(Looper.getMainLooper());
+                }
+                handler = f;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        handler.post(new u(this, obj, false, 1));
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.e.b();
     }
 }

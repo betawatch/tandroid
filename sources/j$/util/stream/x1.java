@@ -6,8 +6,8 @@ import java.util.function.DoubleConsumer;
 public final /* synthetic */ class x1 implements DoubleConsumer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ x1(int i3) {
-        this.a = i3;
+    public /* synthetic */ x1(int i7) {
+        this.a = i7;
     }
 
     private final void accept$j$$util$stream$Node$OfDouble$$ExternalSyntheticLambda0(double d) {
@@ -18,7 +18,7 @@ public final /* synthetic */ class x1 implements DoubleConsumer {
 
     @Override // java.util.function.DoubleConsumer
     public final void accept(double d) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {

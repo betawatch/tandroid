@@ -1,14 +1,14 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class HdotsforAtom extends MulticolumnAtom {
     private static final Atom ldotp = SymbolAtom.get("ldotp");
     private static final Atom thin = new SpaceAtom(1);
     private float coeff;
 
-    public HdotsforAtom(int i3, float f10) {
-        super(i3, "c", ldotp);
+    public HdotsforAtom(int i7, float f10) {
+        super(i7, "c", ldotp);
         this.coeff = f10;
     }
 
@@ -25,14 +25,14 @@ public class HdotsforAtom extends MulticolumnAtom {
                 f10 = 0.0f;
             }
             HorizontalBox horizontalBox2 = new HorizontalBox(horizontalBox);
-            int i3 = 0;
+            int i7 = 0;
             while (horizontalBox2.getWidth() < f10) {
-                int i10 = i3 + 1;
-                if (i3 >= 65536) {
+                int i10 = i7 + 1;
+                if (i7 >= 65536) {
                     break;
                 }
                 horizontalBox2.add(horizontalBox);
-                i3 = i10;
+                i7 = i10;
             }
             horizontalBox = f10 != 0.0f ? new HorizontalBox(horizontalBox2, f10, 2) : horizontalBox2;
         }

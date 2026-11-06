@@ -1,122 +1,45 @@
 package qe;
 
-import android.animation.ValueAnimator;
-import android.os.Build;
-import android.os.Looper;
-import android.util.Log;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
-import gi.l9;
-import org.telegram.ui.Components.voip.z0;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c {
-    public final int a;
-    public final b b;
-    public final Interpolator c;
-    public final long d;
-    public long e;
-    public float f;
-    public float g;
-    public boolean h;
-    public ValueAnimator i;
+    public static final char[] a = new char[qs.C1];
+    public static final byte[] b = new byte[qs.K1];
 
-    public c(int i3, b bVar, Interpolator interpolator, long j10) {
-        this.a = i3;
-        this.b = bVar;
-        this.c = interpolator;
-        this.d = j10;
+    static {
+        for (int i7 = 0; i7 < 32; i7++) {
+        }
+        a('b', 8);
+        a('t', 9);
+        a('n', 10);
+        a('f', 12);
+        a('r', 13);
+        a('/', 47);
+        a('\"', 34);
+        a('\\', 92);
+        byte[] bArr = b;
+        for (int i10 = 0; i10 < 33; i10++) {
+            bArr[i10] = Byte.MAX_VALUE;
+        }
+        bArr[9] = 3;
+        bArr[10] = 3;
+        bArr[13] = 3;
+        bArr[32] = 3;
+        bArr[44] = 4;
+        bArr[58] = 5;
+        bArr[123] = 6;
+        bArr[125] = 7;
+        bArr[91] = 8;
+        bArr[93] = 9;
+        bArr[34] = 1;
+        bArr[92] = 2;
     }
 
-    public final void a(float f10) {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AssertionError();
+    public static void a(char c10, int i7) {
+        if (c10 != 'u') {
+            a[c10] = (char) i7;
         }
-        if (this.h) {
-            b();
-        }
-        float f11 = this.f;
-        int i3 = this.a;
-        b bVar = this.b;
-        if (f11 == f10) {
-            bVar.F(f11, i3);
-            return;
-        }
-        int i10 = 1;
-        if (!this.h) {
-            this.h = true;
-        }
-        float f12 = f10 - f11;
-        long j10 = (Build.VERSION.SDK_INT < 26 || ValueAnimator.areAnimatorsEnabled()) ? this.d : 0L;
-        if (j10 <= 0) {
-            d(f10, 1.0f);
-            if (this.h) {
-                this.h = false;
-            }
-            bVar.F(f10, i3);
-            return;
-        }
-        this.g = f10;
-        DecelerateInterpolator decelerateInterpolator = pe.a.a;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.i = ofFloat;
-        ofFloat.setDuration(j10);
-        this.i.setInterpolator(this.c);
-        this.i.addUpdateListener(new l9(this, f11, f12, 6));
-        this.i.addListener(new z0(this, f11, f12, i10));
-        long j11 = this.e;
-        if (j11 != 0) {
-            this.i.setStartDelay(j11);
-        }
-        try {
-            this.i.start();
-        } catch (Throwable th2) {
-            Log.e("tgx", "Cannot start animation", th2);
-            c(f10);
-        }
-    }
-
-    public final boolean b() {
-        if (!this.h) {
-            return false;
-        }
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AssertionError();
-        }
-        if (this.h) {
-            this.h = false;
-        }
-        ValueAnimator valueAnimator = this.i;
-        if (valueAnimator == null) {
-            return true;
-        }
-        valueAnimator.cancel();
-        this.i = null;
-        return true;
-    }
-
-    public final void c(float f10) {
-        boolean b10 = b();
-        if (d(f10, 1.0f) || b10) {
-            this.b.F(f10, this.a);
-        }
-    }
-
-    public final boolean d(float f10, float f11) {
-        if (this.f == f10) {
-            return false;
-        }
-        this.f = f10;
-        this.b.Y(this.a, f10, f11, this);
-        return true;
-    }
-
-    public c(int i3, b bVar, Interpolator interpolator, long j10, float f10) {
-        this.a = i3;
-        this.b = bVar;
-        this.c = interpolator;
-        this.d = j10;
-        this.f = f10;
     }
 }

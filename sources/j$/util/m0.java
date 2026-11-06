@@ -9,19 +9,19 @@ public final /* synthetic */ class m0 implements LongConsumer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
-    public /* synthetic */ m0(Consumer consumer, int i3) {
-        this.a = i3;
+    public /* synthetic */ m0(Consumer consumer, int i7) {
+        this.a = i7;
         this.b = consumer;
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         switch (this.a) {
             case 0:
-                this.b.accept(Long.valueOf(j10));
+                this.b.accept(Long.valueOf(j3));
                 break;
             default:
-                ((j5) this.b).accept(j10);
+                ((j5) this.b).accept(j3);
                 break;
         }
     }

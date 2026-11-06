@@ -1,15 +1,57 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class r51 {
-    public final double a;
-    public final int b;
-    public final int c;
+import org.telegram.ui.PhotoViewer;
 
-    public r51(int i3, int i10, double d) {
-        this.a = d;
-        this.b = i3;
-        this.c = i10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class r51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u51 b;
+
+    public /* synthetic */ r51(u51 u51Var, int i7) {
+        this.a = i7;
+        this.b = u51Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u51 u51Var = this.b;
+                u51Var.h = 0.0f;
+                v5 v5Var = u51Var.b;
+                if (v5Var != null) {
+                    v5Var.u();
+                    u51Var.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                u51 u51Var2 = this.b;
+                u51Var2.a = true;
+                u51Var2.e = null;
+                if (u51Var2.b != null) {
+                    u51Var2.s = true;
+                    PhotoViewer photoViewer = u51Var2.M.a;
+                    if (photoViewer.t3) {
+                        photoViewer.Y2(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                u51 u51Var3 = this.b;
+                u51Var3.a = true;
+                u51Var3.e = null;
+                if (u51Var3.b != null) {
+                    u51Var3.s = true;
+                    PhotoViewer photoViewer2 = u51Var3.M.a;
+                    if (photoViewer2.t3) {
+                        photoViewer2.Y2(true);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

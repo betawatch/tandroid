@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzqw implements zzvi {
     private final zzqv zza;
@@ -19,18 +19,18 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzA(int i3, List list, boolean z10) {
+    public final void zzA(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzth)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzh(i3, ((Long) list.get(i10)).longValue());
+                    this.zza.zzh(i7, ((Long) list.get(i10)).longValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Long) list.get(i12)).getClass();
@@ -44,15 +44,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzth zzthVar = (zzth) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzthVar.size()) {
-                this.zza.zzh(i3, zzthVar.zze(i10));
+                this.zza.zzh(i7, zzthVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzthVar.size(); i14++) {
             zzthVar.zze(i14);
@@ -66,25 +66,25 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzB(int i3, int i10) {
-        this.zza.zzs(i3, (i10 >> 31) ^ (i10 + i10));
+    public final void zzB(int i7, int i10) {
+        this.zza.zzs(i7, (i10 >> 31) ^ (i10 + i10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzC(int i3, List list, boolean z10) {
+    public final void zzC(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
                     zzqv zzqvVar = this.zza;
                     int intValue = ((Integer) list.get(i10)).intValue();
-                    zzqvVar.zzs(i3, (intValue >> 31) ^ (intValue + intValue));
+                    zzqvVar.zzs(i7, (intValue >> 31) ^ (intValue + intValue));
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar2 = this.zza;
-            zzqvVar2.zzr(i3, 2);
+            zzqvVar2.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 int intValue2 = ((Integer) list.get(i12)).intValue();
@@ -99,17 +99,17 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
                 zzqv zzqvVar3 = this.zza;
                 int zze = zzsoVar.zze(i10);
-                zzqvVar3.zzs(i3, (zze >> 31) ^ (zze + zze));
+                zzqvVar3.zzs(i7, (zze >> 31) ^ (zze + zze));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar4 = this.zza;
-        zzqvVar4.zzr(i3, 2);
+        zzqvVar4.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             int zze2 = zzsoVar.zze(i14);
@@ -124,25 +124,25 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzD(int i3, long j10) {
-        this.zza.zzu(i3, (j10 >> 63) ^ (j10 + j10));
+    public final void zzD(int i7, long j3) {
+        this.zza.zzu(i7, (j3 >> 63) ^ (j3 + j3));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzE(int i3, List list, boolean z10) {
+    public final void zzE(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzth)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
                     zzqv zzqvVar = this.zza;
                     long longValue = ((Long) list.get(i10)).longValue();
-                    zzqvVar.zzu(i3, (longValue >> 63) ^ (longValue + longValue));
+                    zzqvVar.zzu(i7, (longValue >> 63) ^ (longValue + longValue));
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar2 = this.zza;
-            zzqvVar2.zzr(i3, 2);
+            zzqvVar2.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 long longValue2 = ((Long) list.get(i12)).longValue();
@@ -157,17 +157,17 @@ final class zzqw implements zzvi {
             return;
         }
         zzth zzthVar = (zzth) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzthVar.size()) {
                 zzqv zzqvVar3 = this.zza;
                 long zze = zzthVar.zze(i10);
-                zzqvVar3.zzu(i3, (zze >> 63) ^ (zze + zze));
+                zzqvVar3.zzu(i7, (zze >> 63) ^ (zze + zze));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar4 = this.zza;
-        zzqvVar4.zzr(i3, 2);
+        zzqvVar4.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzthVar.size(); i14++) {
             long zze2 = zzthVar.zze(i14);
@@ -183,21 +183,21 @@ final class zzqw implements zzvi {
 
     @Override // com.google.android.recaptcha.internal.zzvi
     @Deprecated
-    public final void zzF(int i3) {
-        this.zza.zzr(i3, 3);
+    public final void zzF(int i7) {
+        this.zza.zzr(i7, 3);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzG(int i3, String str) {
-        this.zza.zzp(i3, str);
+    public final void zzG(int i7, String str) {
+        this.zza.zzp(i7, str);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzH(int i3, List list) {
+    public final void zzH(int i7, List list) {
         int i10 = 0;
         if (!(list instanceof zzte)) {
             while (i10 < list.size()) {
-                this.zza.zzp(i3, (String) list.get(i10));
+                this.zza.zzp(i7, (String) list.get(i10));
                 i10++;
             }
             return;
@@ -206,32 +206,32 @@ final class zzqw implements zzvi {
         while (i10 < list.size()) {
             Object zzc = zzteVar.zzc();
             if (zzc instanceof String) {
-                this.zza.zzp(i3, (String) zzc);
+                this.zza.zzp(i7, (String) zzc);
             } else {
-                this.zza.zze(i3, (zzqm) zzc);
+                this.zza.zze(i7, (zzqm) zzc);
             }
             i10++;
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzI(int i3, int i10) {
-        this.zza.zzs(i3, i10);
+    public final void zzI(int i7, int i10) {
+        this.zza.zzs(i7, i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzJ(int i3, List list, boolean z10) {
+    public final void zzJ(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzs(i3, ((Integer) list.get(i10)).intValue());
+                    this.zza.zzs(i7, ((Integer) list.get(i10)).intValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 i11 += zzqv.zzA(((Integer) list.get(i12)).intValue());
@@ -244,15 +244,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
-                this.zza.zzs(i3, zzsoVar.zze(i10));
+                this.zza.zzs(i7, zzsoVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             i13 += zzqv.zzA(zzsoVar.zze(i14));
@@ -265,23 +265,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzK(int i3, long j10) {
-        this.zza.zzu(i3, j10);
+    public final void zzK(int i7, long j3) {
+        this.zza.zzu(i7, j3);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzL(int i3, List list, boolean z10) {
+    public final void zzL(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzth)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzu(i3, ((Long) list.get(i10)).longValue());
+                    this.zza.zzu(i7, ((Long) list.get(i10)).longValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 i11 += zzqv.zzB(((Long) list.get(i12)).longValue());
@@ -294,15 +294,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzth zzthVar = (zzth) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzthVar.size()) {
-                this.zza.zzu(i3, zzthVar.zze(i10));
+                this.zza.zzu(i7, zzthVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzthVar.size(); i14++) {
             i13 += zzqv.zzB(zzthVar.zze(i14));
@@ -315,23 +315,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzb(int i3, boolean z10) {
-        this.zza.zzd(i3, z10);
+    public final void zzb(int i7, boolean z9) {
+        this.zza.zzd(i7, z9);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzc(int i3, List list, boolean z10) {
+    public final void zzc(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzqd)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzd(i3, ((Boolean) list.get(i10)).booleanValue());
+                    this.zza.zzd(i7, ((Boolean) list.get(i10)).booleanValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Boolean) list.get(i12)).getClass();
@@ -345,15 +345,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzqd zzqdVar = (zzqd) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzqdVar.size()) {
-                this.zza.zzd(i3, zzqdVar.zzf(i10));
+                this.zza.zzd(i7, zzqdVar.zzf(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzqdVar.size(); i14++) {
             zzqdVar.zzf(i14);
@@ -367,35 +367,35 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzd(int i3, zzqm zzqmVar) {
-        this.zza.zze(i3, zzqmVar);
+    public final void zzd(int i7, zzqm zzqmVar) {
+        this.zza.zze(i7, zzqmVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zze(int i3, List list) {
+    public final void zze(int i7, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            this.zza.zze(i3, (zzqm) list.get(i10));
+            this.zza.zze(i7, (zzqm) list.get(i10));
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzf(int i3, double d) {
-        this.zza.zzh(i3, Double.doubleToRawLongBits(d));
+    public final void zzf(int i7, double d) {
+        this.zza.zzh(i7, Double.doubleToRawLongBits(d));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzg(int i3, List list, boolean z10) {
+    public final void zzg(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzrs)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzh(i3, Double.doubleToRawLongBits(((Double) list.get(i10)).doubleValue()));
+                    this.zza.zzh(i7, Double.doubleToRawLongBits(((Double) list.get(i10)).doubleValue()));
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Double) list.get(i12)).getClass();
@@ -409,15 +409,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzrs zzrsVar = (zzrs) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzrsVar.size()) {
-                this.zza.zzh(i3, Double.doubleToRawLongBits(zzrsVar.zze(i10)));
+                this.zza.zzh(i7, Double.doubleToRawLongBits(zzrsVar.zze(i10)));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzrsVar.size(); i14++) {
             zzrsVar.zze(i14);
@@ -432,28 +432,28 @@ final class zzqw implements zzvi {
 
     @Override // com.google.android.recaptcha.internal.zzvi
     @Deprecated
-    public final void zzh(int i3) {
-        this.zza.zzr(i3, 4);
+    public final void zzh(int i7) {
+        this.zza.zzr(i7, 4);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzi(int i3, int i10) {
-        this.zza.zzj(i3, i10);
+    public final void zzi(int i7, int i10) {
+        this.zza.zzj(i7, i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzj(int i3, List list, boolean z10) {
+    public final void zzj(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzj(i3, ((Integer) list.get(i10)).intValue());
+                    this.zza.zzj(i7, ((Integer) list.get(i10)).intValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 i11 += zzqv.zzB(((Integer) list.get(i12)).intValue());
@@ -466,15 +466,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
-                this.zza.zzj(i3, zzsoVar.zze(i10));
+                this.zza.zzj(i7, zzsoVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             i13 += zzqv.zzB(zzsoVar.zze(i14));
@@ -487,23 +487,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzk(int i3, int i10) {
-        this.zza.zzf(i3, i10);
+    public final void zzk(int i7, int i10) {
+        this.zza.zzf(i7, i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzl(int i3, List list, boolean z10) {
+    public final void zzl(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzf(i3, ((Integer) list.get(i10)).intValue());
+                    this.zza.zzf(i7, ((Integer) list.get(i10)).intValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Integer) list.get(i12)).getClass();
@@ -517,15 +517,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
-                this.zza.zzf(i3, zzsoVar.zze(i10));
+                this.zza.zzf(i7, zzsoVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             zzsoVar.zze(i14);
@@ -539,23 +539,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzm(int i3, long j10) {
-        this.zza.zzh(i3, j10);
+    public final void zzm(int i7, long j3) {
+        this.zza.zzh(i7, j3);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzn(int i3, List list, boolean z10) {
+    public final void zzn(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzth)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzh(i3, ((Long) list.get(i10)).longValue());
+                    this.zza.zzh(i7, ((Long) list.get(i10)).longValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Long) list.get(i12)).getClass();
@@ -569,15 +569,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzth zzthVar = (zzth) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzthVar.size()) {
-                this.zza.zzh(i3, zzthVar.zze(i10));
+                this.zza.zzh(i7, zzthVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzthVar.size(); i14++) {
             zzthVar.zze(i14);
@@ -591,23 +591,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzo(int i3, float f10) {
-        this.zza.zzf(i3, Float.floatToRawIntBits(f10));
+    public final void zzo(int i7, float f10) {
+        this.zza.zzf(i7, Float.floatToRawIntBits(f10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzp(int i3, List list, boolean z10) {
+    public final void zzp(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzsf)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzf(i3, Float.floatToRawIntBits(((Float) list.get(i10)).floatValue()));
+                    this.zza.zzf(i7, Float.floatToRawIntBits(((Float) list.get(i10)).floatValue()));
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Float) list.get(i12)).getClass();
@@ -621,15 +621,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzsf zzsfVar = (zzsf) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsfVar.size()) {
-                this.zza.zzf(i3, Float.floatToRawIntBits(zzsfVar.zze(i10)));
+                this.zza.zzf(i7, Float.floatToRawIntBits(zzsfVar.zze(i10)));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsfVar.size(); i14++) {
             zzsfVar.zze(i14);
@@ -643,31 +643,31 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzq(int i3, Object obj, zzug zzugVar) {
+    public final void zzq(int i7, Object obj, zzug zzugVar) {
         zzqv zzqvVar = this.zza;
-        zzqvVar.zzr(i3, 3);
+        zzqvVar.zzr(i7, 3);
         zzugVar.zzj((zzts) obj, zzqvVar.zza);
-        zzqvVar.zzr(i3, 4);
+        zzqvVar.zzr(i7, 4);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzr(int i3, int i10) {
-        this.zza.zzj(i3, i10);
+    public final void zzr(int i7, int i10) {
+        this.zza.zzj(i7, i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzs(int i3, List list, boolean z10) {
+    public final void zzs(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzj(i3, ((Integer) list.get(i10)).intValue());
+                    this.zza.zzj(i7, ((Integer) list.get(i10)).intValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 i11 += zzqv.zzB(((Integer) list.get(i12)).intValue());
@@ -680,15 +680,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
-                this.zza.zzj(i3, zzsoVar.zze(i10));
+                this.zza.zzj(i7, zzsoVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             i13 += zzqv.zzB(zzsoVar.zze(i14));
@@ -701,23 +701,23 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzt(int i3, long j10) {
-        this.zza.zzu(i3, j10);
+    public final void zzt(int i7, long j3) {
+        this.zza.zzu(i7, j3);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzu(int i3, List list, boolean z10) {
+    public final void zzu(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzth)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzu(i3, ((Long) list.get(i10)).longValue());
+                    this.zza.zzu(i7, ((Long) list.get(i10)).longValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 i11 += zzqv.zzB(((Long) list.get(i12)).longValue());
@@ -730,15 +730,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzth zzthVar = (zzth) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzthVar.size()) {
-                this.zza.zzu(i3, zzthVar.zze(i10));
+                this.zza.zzu(i7, zzthVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzthVar.size(); i14++) {
             i13 += zzqv.zzB(zzthVar.zze(i14));
@@ -751,37 +751,37 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzv(int i3, Object obj, zzug zzugVar) {
-        this.zza.zzm(i3, (zzts) obj, zzugVar);
+    public final void zzv(int i7, Object obj, zzug zzugVar) {
+        this.zza.zzm(i7, (zzts) obj, zzugVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzw(int i3, Object obj) {
+    public final void zzw(int i7, Object obj) {
         if (obj instanceof zzqm) {
-            this.zza.zzo(i3, (zzqm) obj);
+            this.zza.zzo(i7, (zzqm) obj);
         } else {
-            this.zza.zzn(i3, (zzts) obj);
+            this.zza.zzn(i7, (zzts) obj);
         }
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzx(int i3, int i10) {
-        this.zza.zzf(i3, i10);
+    public final void zzx(int i7, int i10) {
+        this.zza.zzf(i7, i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzy(int i3, List list, boolean z10) {
+    public final void zzy(int i7, List list, boolean z9) {
         int i10 = 0;
         if (!(list instanceof zzso)) {
-            if (!z10) {
+            if (!z9) {
                 while (i10 < list.size()) {
-                    this.zza.zzf(i3, ((Integer) list.get(i10)).intValue());
+                    this.zza.zzf(i7, ((Integer) list.get(i10)).intValue());
                     i10++;
                 }
                 return;
             }
             zzqv zzqvVar = this.zza;
-            zzqvVar.zzr(i3, 2);
+            zzqvVar.zzr(i7, 2);
             int i11 = 0;
             for (int i12 = 0; i12 < list.size(); i12++) {
                 ((Integer) list.get(i12)).getClass();
@@ -795,15 +795,15 @@ final class zzqw implements zzvi {
             return;
         }
         zzso zzsoVar = (zzso) list;
-        if (!z10) {
+        if (!z9) {
             while (i10 < zzsoVar.size()) {
-                this.zza.zzf(i3, zzsoVar.zze(i10));
+                this.zza.zzf(i7, zzsoVar.zze(i10));
                 i10++;
             }
             return;
         }
         zzqv zzqvVar2 = this.zza;
-        zzqvVar2.zzr(i3, 2);
+        zzqvVar2.zzr(i7, 2);
         int i13 = 0;
         for (int i14 = 0; i14 < zzsoVar.size(); i14++) {
             zzsoVar.zze(i14);
@@ -817,7 +817,7 @@ final class zzqw implements zzvi {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvi
-    public final void zzz(int i3, long j10) {
-        this.zza.zzh(i3, j10);
+    public final void zzz(int i7, long j3) {
+        this.zza.zzh(i7, j3);
     }
 }

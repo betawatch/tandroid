@@ -1,37 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h21 implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class h21 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ l21 b;
 
-    public /* synthetic */ h21(SessionsActivity sessionsActivity, int i3) {
-        this.a = i3;
-        this.b = sessionsActivity;
+    public h21(l21 l21Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = l21Var;
+        this.a = tL_authorization;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.f = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.r0();
-                        sessionsActivity.a.f();
-                        break;
-                    }
-                }
-                break;
-            default:
-                SessionsActivity.a0(this.b, (Boolean) obj);
-                break;
-        }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        l21.I0(this.b, this.a.country);
+        return true;
     }
 }

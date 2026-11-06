@@ -8,15 +8,15 @@ import android.provider.ContactsContract;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ g5 b;
     public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ w4(g5 g5Var, ArrayList arrayList, int i3) {
-        this.a = i3;
+    public /* synthetic */ w4(g5 g5Var, ArrayList arrayList, int i7) {
+        this.a = i7;
         this.b = g5Var;
         this.c = arrayList;
     }
@@ -47,14 +47,14 @@ public final /* synthetic */ class w4 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        boolean z10;
+        boolean z9;
         Cursor cursor;
         switch (this.a) {
             case 0:
                 g5 g5Var = this.b;
                 ArrayList arrayList = this.c;
                 long currentTimeMillis = System.currentTimeMillis();
-                int i3 = 1;
+                int i7 = 1;
                 try {
                     try {
                         Account account = g5Var.a;
@@ -65,18 +65,18 @@ public final /* synthetic */ class w4 implements Runnable {
                         if (!(t0.b.checkSelfPermission("android.permission.WRITE_CONTACTS") == 0)) {
                             return;
                         }
-                        SharedPreferences sharedPreferences = hp.s1(g5Var.currentAccount).e7;
-                        boolean z11 = sharedPreferences.getBoolean("contacts_updated_v7", false);
-                        boolean z12 = !z11;
-                        if (!z11) {
+                        SharedPreferences sharedPreferences = qp.s1(g5Var.currentAccount).e7;
+                        boolean z10 = sharedPreferences.getBoolean("contacts_updated_v7", false);
+                        boolean z11 = !z10;
+                        if (!z10) {
                             try {
                                 sharedPreferences.edit().putBoolean("contacts_updated_v7", true).commit();
                             } catch (Exception e10) {
                                 e = e10;
-                                z10 = true;
+                                z9 = true;
                                 cursor = null;
                                 try {
-                                    a8.g(e, z10);
+                                    a8.g(e, z9);
                                     break;
                                 } catch (Throwable th2) {
                                     th = th2;
@@ -95,30 +95,30 @@ public final /* synthetic */ class w4 implements Runnable {
                                 a0.h hVar2 = new a0.h();
                                 ArrayList arrayList2 = new ArrayList();
                                 while (query.moveToNext()) {
-                                    long j10 = query.getLong(i10);
-                                    long j11 = query.getLong(i3);
-                                    if (j11 != 0) {
+                                    long j3 = query.getLong(i10);
+                                    long j10 = query.getLong(i7);
+                                    if (j10 != 0) {
                                         if (account.name.equals(query.getString(2))) {
-                                            if (z11 && hVar2.h(j11) < 0) {
-                                                hVar2.k(Long.valueOf(j10), j11);
+                                            if (z10 && hVar2.h(j10) < 0) {
+                                                hVar2.k(Long.valueOf(j3), j10);
                                             }
-                                            arrayList2.add(Long.valueOf(j10));
-                                            i3 = 1;
+                                            arrayList2.add(Long.valueOf(j3));
+                                            i7 = 1;
                                         }
-                                        hVar.k(Long.valueOf(j10), j11);
-                                        i3 = 1;
+                                        hVar.k(Long.valueOf(j3), j10);
+                                        i7 = 1;
                                     }
                                     i10 = 0;
                                 }
                                 query.close();
-                                a8.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z12 + " bookContactsSize=" + hVar.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + g5Var.currentAccount);
+                                a8.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z11 + " bookContactsSize=" + hVar.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + g5Var.currentAccount);
                                 if (!arrayList2.isEmpty()) {
                                     g5Var.k(contentResolver, account, arrayList2, hVar2, hVar);
                                 }
                                 ArrayList arrayList3 = null;
                                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                                     TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList.get(i11);
-                                    if (!z11 || hVar.h(tL_contact.user_id) < 0) {
+                                    if (!z10 || hVar.h(tL_contact.user_id) < 0) {
                                         if (arrayList3 == null) {
                                             arrayList3 = new ArrayList();
                                         }
@@ -142,8 +142,8 @@ public final /* synthetic */ class w4 implements Runnable {
                         } catch (Exception e11) {
                             e = e11;
                             cursor = query;
-                            z10 = true;
-                            a8.g(e, z10);
+                            z9 = true;
+                            a8.g(e, z9);
                         } catch (Throwable th3) {
                             th = th3;
                             cursor = query;
@@ -157,7 +157,7 @@ public final /* synthetic */ class w4 implements Runnable {
                     }
                 } catch (Exception e12) {
                     e = e12;
-                    z10 = true;
+                    z9 = true;
                 }
                 break;
             case 1:

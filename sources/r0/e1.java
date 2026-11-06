@@ -2,7 +2,7 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class e1 extends d1 {
     public i0.b o;
@@ -41,8 +41,8 @@ public class e1 extends d1 {
     }
 
     @Override // r0.b1, r0.h1
-    public k1 m(int i3, int i10, int i11, int i12) {
-        return k1.h(null, this.c.inset(i3, i10, i11, i12));
+    public k1 m(int i7, int i10, int i11, int i12) {
+        return k1.h(null, this.c.inset(i7, i10, i11, i12));
     }
 
     @Override // r0.c1, r0.h1

@@ -5,28 +5,28 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class sp implements TextWatcher {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ View c;
 
-    public sp(vp vpVar, int i3) {
+    public sp(vp vpVar, int i7) {
         this.c = vpVar;
-        this.b = i3;
+        this.b = i7;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        int i3;
+        int i7;
         int i10 = this.a;
         int i11 = this.b;
         View view = this.c;
         switch (i10) {
             case 0:
                 vp vpVar = (vp) view;
-                EditTextBoldCursor[] editTextBoldCursorArr = vpVar.F;
+                EditTextBoldCursor[] editTextBoldCursorArr = vpVar.E;
                 if (!vpVar.r) {
                     vpVar.r = true;
                     int i12 = 0;
@@ -40,18 +40,18 @@ public final class sp implements TextWatcher {
                     }
                     if (editable.length() != 0) {
                         try {
-                            i3 = Integer.parseInt(editTextBoldCursorArr[i11].getText().toString(), 16) | (-16777216);
+                            i7 = Integer.parseInt(editTextBoldCursorArr[i11].getText().toString(), 16) | (-16777216);
                         } catch (Exception unused) {
-                            i3 = -1;
+                            i7 = -1;
                         }
-                        vpVar.setColorInner(i3);
+                        vpVar.setColorInner(i7);
                         int color = vpVar.getColor();
                         if (editable.length() == 6) {
                             editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
                             editTextBoldCursorArr[i11].setSelection(editable.length());
                         }
-                        vpVar.w[vpVar.T].a(color);
-                        vpVar.a.c(color, vpVar.T, true);
+                        vpVar.w[vpVar.S].a(color);
+                        vpVar.a.c(color, vpVar.S, true);
                         vpVar.r = false;
                         break;
                     } else {
@@ -75,29 +75,29 @@ public final class sp implements TextWatcher {
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         int i12 = this.a;
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         int i12 = this.a;
     }
 
-    public sp(int i3, NumberTextView numberTextView) {
-        this.b = i3;
+    public sp(int i7, NumberTextView numberTextView) {
+        this.b = i7;
         this.c = numberTextView;
     }
 
-    private final void a(int i3, int i10, int i11, CharSequence charSequence) {
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
     }
 
-    private final void b(int i3, int i10, int i11, CharSequence charSequence) {
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
     }
 
-    private final void c(int i3, int i10, int i11, CharSequence charSequence) {
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
     }
 
-    private final void d(int i3, int i10, int i11, CharSequence charSequence) {
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

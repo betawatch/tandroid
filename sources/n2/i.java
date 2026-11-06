@@ -1,25 +1,35 @@
 package n2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.media.AudioDeviceInfo;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface i {
-    boolean A();
+public final class i {
+    public final e2.u a;
+    public e2.e b;
+    public AudioDeviceInfo c;
+    public boolean d;
+    public int e;
+    public int f;
+    public boolean g;
+    public int h;
 
-    long C();
+    public i(i iVar) {
+        this.a = iVar.a;
+        this.b = iVar.b;
+        this.c = iVar.c;
+        this.d = iVar.d;
+        this.e = iVar.e;
+        this.f = iVar.f;
+        this.g = iVar.g;
+        this.h = iVar.h;
+    }
 
-    long H(long j10);
-
-    long K(long j10, long j11);
-
-    long b(long j10);
-
-    long i(long j10, long j11);
-
-    long j(long j10, long j11);
-
-    long l(long j10, long j11);
-
-    o2.j m(long j10);
-
-    long s(long j10, long j11);
+    public i(e2.u uVar) {
+        this.a = uVar;
+        this.b = e2.e.i;
+        this.e = 0;
+        this.f = -1;
+        this.h = -1;
+    }
 }

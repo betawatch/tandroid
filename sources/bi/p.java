@@ -1,92 +1,81 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.xq;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class p extends View {
-    public final g5 a;
-    public final Drawable b;
-    public float c;
-    public boolean d;
+public final /* synthetic */ class p implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public p(h0 h0Var, Context context, int i3, TLRPC.Document document) {
-        super(context);
-        if (document != null) {
-            this.a = g5.l(h0Var.a, 5, document);
-            this.b = null;
-        } else {
-            this.a = null;
-            Drawable mutate = context.getDrawable(i3 == 0 ? R.drawable.emoji_tabs_faves : R.drawable.msg_emoji_recent).mutate();
-            this.b = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
-        }
+    public /* synthetic */ p(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        g5 g5Var = this.a;
-        if (g5Var != null) {
-            g5Var.a(this);
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+        li.f1 f1Var;
+        switch (this.a) {
+            case 0:
+                z zVar = (z) this.b;
+                if (i7 != 5) {
+                    zVar.getClass();
+                    break;
+                } else {
+                    zVar.y0();
+                    break;
+                }
+            case 1:
+                kg.q0 q0Var = (kg.q0) this.b;
+                kg.k0 k0Var = q0Var.F;
+                boolean z9 = false;
+                if (i7 == 6) {
+                    q0Var.y = false;
+                    org.telegram.messenger.g0.r(k0Var);
+                    z9 = true;
+                    if (TextUtils.isEmpty(q0Var.f.getText())) {
+                        q0Var.D = null;
+                        q0Var.d.b();
+                        q0Var.c.f3.O(true);
+                    } else {
+                        org.telegram.messenger.g0.h3(k0Var);
+                    }
+                    q0Var.g0();
+                    break;
+                }
+                break;
+            case 2:
+                li.g1 g1Var = (li.g1) this.b;
+                if (i7 == 5 && (f1Var = g1Var.Y1) != null && !g1Var.h2) {
+                    if (!g1Var.e2) {
+                        f1Var.F(g1Var);
+                        break;
+                    } else {
+                        g1Var.L();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        org.telegram.messenger.g0.v1(r0Var.e);
+                        org.telegram.ui.ActionBar.n0 n0Var = r0Var.H;
+                        if (n0Var != null) {
+                            n0Var.k(r0Var.e);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.y4.e((org.telegram.ui.ActionBar.y4) this.b, i7, keyEvent);
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        g5 g5Var = this.a;
-        if (g5Var != null) {
-            g5Var.n(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10 = this.d ? 1.0f : 0.0f;
-        float f11 = this.c;
-        if (f11 != f10) {
-            if (Math.abs(f11 - f10) >= 0.02f) {
-                float f12 = this.c;
-                f10 = com.google.android.recaptcha.internal.a.y(f10, f12, 0.35f, f12);
-            }
-            this.c = f10;
-            invalidate();
-        }
-        float interpolation = (1.0f - (xq.g.getInterpolation(this.c) * 0.15f)) * org.telegram.messenger.g0.L(26.0f);
-        float f13 = interpolation / 2.0f;
-        int width = (int) ((getWidth() / 2.0f) - f13);
-        int height = (int) ((getHeight() / 2.0f) - f13);
-        Drawable drawable = this.a;
-        if (drawable == null) {
-            drawable = this.b;
-        }
-        if (drawable != null) {
-            drawable.setBounds(width, height, (int) (width + interpolation), (int) (height + interpolation));
-            s.b(canvas, drawable);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            this.d = true;
-            invalidate();
-        } else if (actionMasked == 1 || actionMasked == 3) {
-            this.d = false;
-            invalidate();
-        }
-        return super.onTouchEvent(motionEvent);
+        return false;
     }
 }

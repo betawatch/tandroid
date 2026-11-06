@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.la;
-import b8.oa;
+import a8.a9;
+import a8.d9;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -11,13 +11,13 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
 
-    public static v o(int i3, Object[] objArr) {
-        return i3 == 0 ? v.e : new v(i3, objArr);
+    public static v o(int i7, Object[] objArr) {
+        return i7 == 0 ? v.e : new v(i7, objArr);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -25,7 +25,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            oa.a(length, array);
+            d9.a(length, array);
             return o(length, array);
         }
         r k10 = ((o) list).k();
@@ -37,12 +37,12 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
-    public final void add(int i3, Object obj) {
+    public final void add(int i7, Object obj) {
         throw new UnsupportedOperationException();
     }
 
     @Override // java.util.List
-    public final boolean addAll(int i3, Collection collection) {
+    public final boolean addAll(int i7, Collection collection) {
         throw new UnsupportedOperationException();
     }
 
@@ -55,7 +55,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public final boolean equals(Object obj) {
         Object next;
         Object next2;
-        int i3;
+        int i7;
         if (obj == this) {
             return true;
         }
@@ -64,10 +64,10 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
             int size = size();
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
-                    for (0; i3 < size; i3 + 1) {
-                        Object obj2 = get(i3);
-                        Object obj3 = list.get(i3);
-                        i3 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i3 + 1 : 0;
+                    for (0; i7 < size; i7 + 1) {
+                        Object obj2 = get(i7);
+                        Object obj3 = list.get(i7);
+                        i7 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i7 + 1 : 0;
                     }
                     return true;
                 }
@@ -88,10 +88,10 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public int h(Object[] objArr) {
+    public int f(Object[] objArr) {
         int size = size();
-        for (int i3 = 0; i3 < size; i3++) {
-            objArr[i3] = get(i3);
+        for (int i7 = 0; i7 < size; i7++) {
+            objArr[i7] = get(i7);
         }
         return size;
     }
@@ -99,11 +99,11 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
-        int i3 = 1;
+        int i7 = 1;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 = (i3 * 31) + get(i10).hashCode();
+            i7 = (i7 * 31) + get(i10).hashCode();
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.List
@@ -112,9 +112,9 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
             return -1;
         }
         int size = size();
-        for (int i3 = 0; i3 < size; i3++) {
-            if (obj.equals(get(i3))) {
-                return i3;
+        for (int i7 = 0; i7 < size; i7++) {
+            if (obj.equals(get(i7))) {
+                return i7;
             }
         }
         return -1;
@@ -145,21 +145,21 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
 
     @Override // java.util.List
     /* renamed from: n */
-    public r subList(int i3, int i10) {
-        la.c(i3, i10, size());
-        int i11 = i10 - i3;
-        return i11 == size() ? this : i11 == 0 ? v.e : new q(this, i3, i11);
+    public r subList(int i7, int i10) {
+        a9.c(i7, i10, size());
+        int i11 = i10 - i7;
+        return i11 == size() ? this : i11 == 0 ? v.e : new q(this, i7, i11);
     }
 
     @Override // java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final p listIterator(int i3) {
-        la.b(i3, size());
-        return isEmpty() ? b : new p(this, i3);
+    public final p listIterator(int i7) {
+        a9.b(i7, size());
+        return isEmpty() ? b : new p(this, i7);
     }
 
     @Override // java.util.List
-    public final Object remove(int i3) {
+    public final Object remove(int i7) {
         throw new UnsupportedOperationException();
     }
 
@@ -169,7 +169,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
-    public final Object set(int i3, Object obj) {
+    public final Object set(int i7, Object obj) {
         throw new UnsupportedOperationException();
     }
 

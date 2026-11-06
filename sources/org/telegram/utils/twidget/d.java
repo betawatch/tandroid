@@ -17,9 +17,9 @@ import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.os.Build;
 import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class d {
     public static final PorterDuff.Mode[] W = {null, PorterDuff.Mode.SRC_IN, PorterDuff.Mode.SRC_OUT, PorterDuff.Mode.SRC_ATOP, PorterDuff.Mode.DST_OVER, PorterDuff.Mode.DST_IN, PorterDuff.Mode.DST_OUT, PorterDuff.Mode.DST_ATOP, PorterDuff.Mode.ADD, PorterDuff.Mode.SRC, PorterDuff.Mode.XOR, PorterDuff.Mode.MULTIPLY, PorterDuff.Mode.SCREEN, PorterDuff.Mode.OVERLAY, PorterDuff.Mode.DARKEN, PorterDuff.Mode.LIGHTEN};
@@ -72,7 +72,7 @@ public final class d {
     public int y;
     public int z;
 
-    public d(int i3) {
+    public d(int i7) {
         Paint paint = new Paint();
         this.d = paint;
         this.e = new Path();
@@ -85,7 +85,7 @@ public final class d {
         this.l = new RectF();
         this.m = new Rect();
         this.s = -1;
-        this.n = i3;
+        this.n = i7;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
@@ -93,16 +93,16 @@ public final class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(int i3, Paint paint) {
+    public static void b(int i7, Paint paint) {
         PorterDuff.Mode mode;
         if (Build.VERSION.SDK_INT >= 29) {
-            b.a(i3, paint);
+            b.a(i7, paint);
             return;
         }
-        if (i3 > 0) {
+        if (i7 > 0) {
             PorterDuff.Mode[] modeArr = W;
-            if (i3 < modeArr.length) {
-                mode = modeArr[i3];
+            if (i7 < modeArr.length) {
+                mode = modeArr[i7];
                 paint.setXfermode(mode != null ? new PorterDuffXfermode(mode) : null);
             }
         }
@@ -119,13 +119,13 @@ public final class d {
         }
         float[] fArr = this.F;
         paint.setColor(-16777216);
-        int i3 = this.x;
+        int i7 = this.x;
         float[] fArr2 = this.j;
-        if (i3 == 1) {
+        if (i7 == 1) {
             paint.setShader(new LinearGradient(fArr2[0], fArr2[1], fArr2[2], fArr2[3], iArr, fArr, Shader.TileMode.CLAMP));
             return;
         }
-        if (i3 != 2) {
+        if (i7 != 2) {
             SweepGradient sweepGradient = new SweepGradient(fArr2[1], fArr2[2], iArr, fArr);
             Matrix matrix = new Matrix();
             matrix.setRotate((float) Math.toDegrees(fArr2[0]), fArr2[1], fArr2[2]);
@@ -139,7 +139,7 @@ public final class d {
             float[] fArr3 = new float[fArr.length];
             for (int i10 = 0; i10 < fArr.length; i10++) {
                 float f11 = f10 / max;
-                fArr3[i10] = com.google.android.recaptcha.internal.a.y(1.0f, f11, fArr[i10], f11);
+                fArr3[i10] = com.google.android.recaptcha.internal.a.z(1.0f, f11, fArr[i10], f11);
             }
             fArr = fArr3;
         }
@@ -151,9 +151,9 @@ public final class d {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void c(Canvas canvas, c cVar) {
-        char c2;
+        char c10;
         Bitmap image;
-        boolean z10;
+        boolean z9;
         float[] fArr = this.i;
         fArr[6] = 0.0f;
         fArr[7] = 0.0f;
@@ -164,8 +164,8 @@ public final class d {
         paint.reset();
         paint.setFlags(3);
         canvas.save();
-        int i3 = this.v;
-        if (i3 == 1 || i3 == 2) {
+        int i7 = this.v;
+        if (i7 == 1 || i7 == 2) {
             Matrix matrix2 = this.h;
             if (matrix.invert(matrix2)) {
                 Path path = this.e;
@@ -178,7 +178,7 @@ public final class d {
                 }
                 canvas.drawPath(path, paint);
             }
-        } else if (i3 == 4) {
+        } else if (i7 == 4) {
             Paint font = cVar.font(this.M);
             if (font != null) {
                 Paint paint2 = new Paint(font);
@@ -193,16 +193,16 @@ public final class d {
                 }
                 canvas.drawText(this.P, this.T, 0.0f, paint2);
             }
-        } else if (i3 == 5) {
+        } else if (i7 == 5) {
             int i10 = this.N;
             if (i10 != 0) {
-                c2 = 6;
+                c10 = 6;
                 int i11 = this.n;
                 image = i10 == i11 ? this.o : cVar.canvasBitmap(i10);
                 if (this.N == i11) {
-                    z10 = true;
+                    z9 = true;
                     if (image != null) {
-                        Bitmap copy = z10 ? image.copy(Bitmap.Config.ARGB_8888, false) : null;
+                        Bitmap copy = z9 ? image.copy(Bitmap.Config.ARGB_8888, false) : null;
                         if (copy != null) {
                             image = copy;
                         }
@@ -211,7 +211,7 @@ public final class d {
                         float[] fArr2 = this.k;
                         float f10 = fArr2[4];
                         float f11 = fArr2[5];
-                        float f12 = fArr2[c2] + f10;
+                        float f12 = fArr2[c10] + f10;
                         float f13 = fArr2[7] + f11;
                         RectF rectF = this.l;
                         rectF.set(f10, f11, f12, f13);
@@ -233,10 +233,10 @@ public final class d {
                     }
                 }
             } else {
-                c2 = 6;
+                c10 = 6;
                 image = cVar.image(this.O);
             }
-            z10 = false;
+            z9 = false;
             if (image != null) {
             }
         }
@@ -245,8 +245,8 @@ public final class d {
 
     public final void d(Paint paint) {
         paint.setStrokeWidth(this.I);
-        int i3 = this.G;
-        paint.setStrokeCap(i3 == 1 ? Paint.Cap.ROUND : i3 == 2 ? Paint.Cap.SQUARE : Paint.Cap.BUTT);
+        int i7 = this.G;
+        paint.setStrokeCap(i7 == 1 ? Paint.Cap.ROUND : i7 == 2 ? Paint.Cap.SQUARE : Paint.Cap.BUTT);
         int i10 = this.H;
         paint.setStrokeJoin(i10 == 1 ? Paint.Join.ROUND : i10 == 2 ? Paint.Join.BEVEL : Paint.Join.MITER);
         paint.setStrokeMiter(this.J);
@@ -271,19 +271,19 @@ public final class d {
 
     public final float e() {
         int[] iArr = this.t;
-        int i3 = this.u;
-        this.u = i3 + 1;
-        return Float.intBitsToFloat(iArr[i3]);
+        int i7 = this.u;
+        this.u = i7 + 1;
+        return Float.intBitsToFloat(iArr[i7]);
     }
 
-    public final void f(Path path, boolean z10) {
+    public final void f(Path path, boolean z9) {
         path.rewind();
         int[] iArr = this.t;
-        int i3 = this.u;
-        int i10 = i3 + 1;
+        int i7 = this.u;
+        int i10 = i7 + 1;
         this.u = i10;
-        int i11 = iArr[i3];
-        int i12 = i3 + 2;
+        int i11 = iArr[i7];
+        int i12 = i7 + 2;
         this.u = i12;
         int i13 = iArr[i10];
         int i14 = i12 + i11;
@@ -308,7 +308,7 @@ public final class d {
             i15 += 2;
         }
         this.u = i11 + i13 + this.u;
-        if (z10) {
+        if (z9) {
             path.setFillType(Path.FillType.WINDING);
         }
     }
@@ -323,9 +323,9 @@ public final class d {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void g(c cVar) {
+        boolean z9;
+        int i7;
         boolean z10;
-        int i3;
-        boolean z11;
         int i10;
         int i11;
         int[] iArr = this.t;
@@ -334,7 +334,7 @@ public final class d {
         this.u = i13;
         int i14 = iArr[i12];
         this.v = i14;
-        boolean z12 = false;
+        boolean z11 = false;
         if (i14 == 0) {
             this.o.eraseColor(0);
             return;
@@ -372,7 +372,7 @@ public final class d {
                 int i26 = max;
                 while (i26 < min) {
                     int i27 = this.t[(i26 - e10) + com.google.android.recaptcha.internal.a.e(i25, e11, i18, i21)];
-                    iArr3[(i26 - max) + ((i25 - max2) * i23)] = ((i27 & hs.e4) << 16) | ((-16711936) & i27) | ((i27 >>> 16) & hs.e4);
+                    iArr3[(i26 - max) + ((i25 - max2) * i23)] = ((i27 & qs.e4) << 16) | ((-16711936) & i27) | ((i27 >>> 16) & qs.e4);
                     i26++;
                     e10 = e10;
                 }
@@ -454,8 +454,8 @@ public final class d {
                     this.u = i41 + 1;
                     int i42 = iArr6[i41];
                     if (i42 == 0) {
-                        z10 = false;
-                        i3 = 2;
+                        z9 = false;
+                        i7 = 2;
                     } else {
                         int[] iArr7 = new int[Math.max(2, i42)];
                         float[] fArr2 = new float[i42 == 1 ? 2 : i42];
@@ -470,20 +470,20 @@ public final class d {
                             fArr2[i43] = Math.max(0.0f, Math.min(1.0f, e13));
                             i43++;
                             i15 = i44;
-                            z12 = z12;
+                            z11 = z11;
                         }
-                        z10 = z12;
-                        i3 = i15;
+                        z9 = z11;
+                        i7 = i15;
                         if (i42 == 1) {
-                            iArr7[1] = iArr7[z10 ? 1 : 0];
-                            fArr2[z10 ? 1 : 0] = 0.0f;
+                            iArr7[1] = iArr7[z9 ? 1 : 0];
+                            fArr2[z9 ? 1 : 0] = 0.0f;
                             fArr2[1] = 1.0f;
                         }
                         this.E = iArr7;
                         this.F = fArr2;
                     }
-                    z11 = z10;
-                    this.U = z11;
+                    z10 = z9;
+                    this.U = z10;
                     if (this.v == 4) {
                         int[] iArr9 = this.t;
                         int i46 = this.u;
@@ -507,7 +507,7 @@ public final class d {
                         this.u = i50 + 1;
                         this.U = iArr10[i50] != 0;
                     }
-                    if (this.v != i3 || this.U) {
+                    if (this.v != i7 || this.U) {
                         this.I = e();
                         int[] iArr11 = this.t;
                         int i51 = this.u;
@@ -585,12 +585,12 @@ public final class d {
                     }
                 }
             }
-            z11 = false;
-            i3 = 2;
-            this.U = z11;
+            z10 = false;
+            i7 = 2;
+            this.U = z10;
             if (this.v == 4) {
             }
-            if (this.v != i3) {
+            if (this.v != i7) {
             }
             this.I = e();
             int[] iArr112 = this.t;

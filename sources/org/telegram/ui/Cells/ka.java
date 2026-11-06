@@ -5,83 +5,82 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import b8.mf;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
-import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.uw;
-import org.telegram.ui.wm;
+import org.telegram.ui.an;
+import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 d;
     public final /* synthetic */ Serializable e;
 
-    public /* synthetic */ ka(wm wmVar, TLRPC.User user, String str, boolean z10, int i3) {
-        this.d = wmVar;
+    public /* synthetic */ ka(an anVar, TLRPC.User user, String str, boolean z9, int i7) {
+        this.d = anVar;
         this.e = str;
-        this.b = z10;
-        this.c = i3;
+        this.b = z9;
+        this.c = i7;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.c;
-        boolean z10 = this.b;
+        boolean z9 = this.b;
         Serializable serializable = this.e;
-        org.telegram.ui.ActionBar.d2 d2Var = this.d;
+        org.telegram.ui.ActionBar.f2 f2Var = this.d;
         int i11 = 0;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                uw uwVar = (uw) d2Var;
+                ww wwVar = (ww) f2Var;
                 ArrayList arrayList = (ArrayList) serializable;
-                String M0 = bd.M0(2131743917, null);
+                String M0 = hd.M0(2131743908, null);
                 int i12 = org.telegram.ui.ActionBar.k6.uj;
-                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(M0, i12, 0, new f(uwVar, 11), null);
+                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(M0, i12, 0, new f(wwVar, 11), null);
                 SpannableString spannableString = new SpannableString(">");
                 wp wpVar = new wp(R.drawable.attach_arrow_right, 0);
                 wpVar.y = org.telegram.ui.ActionBar.k6.x0(null, i12, false);
+                wpVar.H = 0.7f;
                 wpVar.I = 0.7f;
-                wpVar.J = 0.7f;
-                wpVar.F = org.telegram.messenger.g0.L(12.0f);
+                wpVar.E = org.telegram.messenger.g0.L(12.0f);
                 spannableString.setSpan(wpVar, 0, spannableString.length(), 33);
                 org.telegram.messenger.g0.K2(S2, spannableString, ">");
-                fc.a0(uwVar).I(R.raw.contact_check, bd.M0(z10 ? 2131743918 : 2131743919, null), S2).j();
-                hp.s1(i10).U1().f(true, arrayList, new ei.e(8));
-                hp.s1(i10).U1().a();
+                hc.a0(wwVar).I(R.raw.contact_check, hd.M0(z9 ? 2131743909 : 2131743910, null), S2).j();
+                qp.s1(i10).U1().f(true, arrayList, new di.e(8));
+                qp.s1(i10).U1().a();
                 break;
             default:
-                wm wmVar = (wm) d2Var;
+                an anVar = (an) f2Var;
                 String str = (String) serializable;
-                Pattern pattern = org.telegram.ui.Components.t4.a;
-                if (wmVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.t2 h = org.telegram.messenger.camera.q.h(wmVar.getParentActivity(), false, 1, null);
-                    h.P = bd.M0(z10 ? 2131752194 : 2131752193, null);
-                    h.Q = true;
-                    LinearLayout linearLayout = new LinearLayout(wmVar.getParentActivity());
+                Pattern pattern = org.telegram.ui.Components.v4.a;
+                if (anVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(anVar.getParentActivity(), false, 1, null);
+                    h.O = hd.M0(z9 ? 2131752194 : 2131752193, null);
+                    h.P = true;
+                    LinearLayout linearLayout = new LinearLayout(anVar.getParentActivity());
                     linearLayout.setOrientation(1);
-                    TextView textView = new TextView(wmVar.getParentActivity());
-                    linearLayout.addView(textView, mf.t(-1, -1, 0, 21, 0, 21, 8));
+                    TextView textView = new TextView(anVar.getParentActivity());
+                    linearLayout.addView(textView, c8.ha.t(-1, -1, 0, 21, 0, 21, 8));
                     org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
                     textView.setTextSize(1, 16.0f);
-                    textView.setText(org.telegram.messenger.g0.X2(bd.a0("ChatWithAdminMessage", null, 2131752192, str, bd.s(i10, false))));
-                    TextView textView2 = new TextView(wmVar.getParentActivity());
+                    textView.setText(org.telegram.messenger.g0.X2(hd.a0("ChatWithAdminMessage", null, 2131752192, str, hd.s(i10, false))));
+                    TextView textView2 = new TextView(anVar.getParentActivity());
                     textView2.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
                     textView2.setGravity(17);
                     textView2.setTextSize(1, 14.0f);
                     textView2.setTypeface(org.telegram.messenger.g0.o());
-                    textView2.setText(bd.M0(2131749282, null));
+                    textView2.setText(hd.M0(2131749273, null));
                     org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.Gi, null);
                     int L = org.telegram.messenger.g0.L(8.0f);
                     int i13 = org.telegram.ui.ActionBar.k6.Ci;
@@ -93,20 +92,20 @@ public final /* synthetic */ class ka implements View.OnClickListener {
                     org.telegram.ui.ActionBar.n6 N2 = org.telegram.ui.ActionBar.r6.N(i14);
                     textView2.setBackground(k02);
                     org.telegram.ui.ActionBar.r6.k(textView2, k02, N, N2, null);
-                    linearLayout.addView(textView2, mf.t(-1, 48, 0, 16, 12, 16, 8));
-                    h.O = linearLayout;
+                    linearLayout.addView(textView2, c8.ha.t(-1, 48, 0, 16, 12, 16, 8));
+                    h.N = linearLayout;
                     h.show();
-                    textView2.setOnClickListener(new org.telegram.ui.Components.w2(h, i11));
+                    textView2.setOnClickListener(new org.telegram.ui.Components.y2(h, i11));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ ka(uw uwVar, boolean z10, int i3, ArrayList arrayList) {
-        this.d = uwVar;
-        this.b = z10;
-        this.c = i3;
+    public /* synthetic */ ka(ww wwVar, boolean z9, int i7, ArrayList arrayList) {
+        this.d = wwVar;
+        this.b = z9;
+        this.c = i7;
         this.e = arrayList;
     }
 }

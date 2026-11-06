@@ -10,17 +10,17 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
-import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ly0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class b0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
-    public final org.telegram.ui.ActionBar.e6 c;
+    public final org.telegram.ui.ActionBar.f6 c;
     public final ly0 d;
     public final ly0 e;
     public final Drawable f;
@@ -29,12 +29,12 @@ public final class b0 extends Drawable {
     public int i;
     public final Paint j;
 
-    public b0(int i3, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public b0(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         Paint paint = new Paint(1);
         this.j = paint;
-        this.b = i3;
-        this.c = e6Var;
-        ly0 ly0Var = new ly0(bd.M0(2131753068, null), 14.0f, org.telegram.messenger.g0.o());
+        this.b = i7;
+        this.c = f6Var;
+        ly0 ly0Var = new ly0(hd.M0(2131753068, null), 14.0f, org.telegram.messenger.g0.o());
         this.d = ly0Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         ly0Var.a();
@@ -49,21 +49,21 @@ public final class b0 extends Drawable {
         Drawable mutate2 = context.getResources().getDrawable(R.drawable.arrow_more).mutate();
         this.g = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        mutate2.setAlpha(hs.j2);
+        mutate2.setAlpha(qs.j2);
         paint.setColor(-16777216);
         paint.setAlpha(30);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.c;
-        Paint W0 = org.telegram.ui.ActionBar.k6.W0("paintChatActionBackground", e6Var);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        Paint W0 = org.telegram.ui.ActionBar.k6.W0("paintChatActionBackground", f6Var);
         float L = org.telegram.messenger.g0.L(16.0f);
         float L2 = org.telegram.messenger.g0.L(16.0f);
         RectF rectF = this.a;
         canvas.drawRoundRect(rectF, L, L2, W0);
-        if (e6Var != null ? e6Var.g() : org.telegram.ui.ActionBar.k6.d1()) {
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.ui.ActionBar.k6.W0("paintChatActionBackgroundDarken", e6Var));
+        if (f6Var != null ? f6Var.g() : org.telegram.ui.ActionBar.k6.d1()) {
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.ui.ActionBar.k6.W0("paintChatActionBackgroundDarken", f6Var));
         }
         canvas.save();
         canvas.translate(0.0f, rectF.top + org.telegram.messenger.g0.L(17.0f));
@@ -108,7 +108,7 @@ public final class b0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -1,328 +1,300 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import android.util.SparseIntArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ly0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fj implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ c1 c;
-    public final /* synthetic */ Object d;
+public final class fj implements rg0 {
+    public float D;
+    public ij E;
+    public int F;
+    public org.telegram.ui.Components.ic G;
+    public boolean H;
+    public boolean I;
+    public boolean J;
+    public String K;
+    public ly0 L;
+    public int M;
+    public boolean N;
+    public int O;
+    public Drawable P;
+    public ly0 Q;
+    public int R;
+    public org.telegram.ui.Cells.y S;
+    public Paint T;
+    public boolean U;
+    public Paint V;
+    public boolean a;
+    public boolean b;
+    public int c;
+    public StaticLayout e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public byte x;
+    public final AtomicReference d = new AtomicReference();
+    public final ArrayList y = new ArrayList();
 
-    public /* synthetic */ fj(c1 c1Var, long j10, Object obj, int i3) {
-        this.a = i3;
-        this.c = c1Var;
-        this.b = j10;
-        this.d = obj;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        Integer num;
-        Integer num2;
-        switch (this.a) {
-            case 0:
-                hp hpVar = (hp) this.c;
-                long j10 = this.b;
-                dp dpVar = (dp) this.d;
-                hpVar.getClass();
-                Integer num3 = null;
-                if (tLObject instanceof TLRPC.messages_SponsoredMessages) {
-                    TLRPC.messages_SponsoredMessages messages_sponsoredmessages = (TLRPC.messages_SponsoredMessages) tLObject;
-                    if (messages_sponsoredmessages.messages.isEmpty()) {
-                        num2 = null;
-                    } else {
-                        if ((messages_sponsoredmessages instanceof TLRPC.TL_messages_sponsoredMessages) && (messages_sponsoredmessages.flags & 1) > 0) {
-                            num3 = Integer.valueOf(messages_sponsoredmessages.posts_between);
-                        }
-                        ArrayList arrayList = new ArrayList();
-                        g0.h3(new yh(11, hpVar, messages_sponsoredmessages));
-                        a0.h hVar = new a0.h();
-                        a0.h hVar2 = new a0.h();
-                        int i3 = 0;
-                        for (int i10 = 0; i10 < messages_sponsoredmessages.users.size(); i10++) {
-                            TLRPC.User user = messages_sponsoredmessages.users.get(i10);
-                            hVar.k(user, user.id);
-                        }
-                        for (int i11 = 0; i11 < messages_sponsoredmessages.chats.size(); i11++) {
-                            TLRPC.Chat chat = messages_sponsoredmessages.chats.get(i11);
-                            hVar2.k(chat, chat.id);
-                        }
-                        int size = messages_sponsoredmessages.messages.size();
-                        int i12 = -10000000;
-                        while (i3 < size) {
-                            TLRPC.TL_sponsoredMessage tL_sponsoredMessage = messages_sponsoredmessages.messages.get(i3);
-                            TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                            if (!tL_sponsoredMessage.entities.isEmpty()) {
-                                tL_message.entities = tL_sponsoredMessage.entities;
-                                tL_message.flags |= 128;
-                            }
-                            tL_message.peer_id = hpVar.z1(j10);
-                            tL_message.flags |= 256;
-                            tL_message.date = hpVar.getConnectionsManager().getCurrentTime();
-                            int i13 = i12 - 1;
-                            tL_message.id = i12;
-                            tL_message.message = tL_sponsoredMessage.message;
-                            TLRPC.MessageMedia messageMedia = tL_sponsoredMessage.media;
-                            if (messageMedia != null) {
-                                tL_message.flags |= 512;
-                            }
-                            tL_message.media = messageMedia;
-                            zi ziVar = new zi(hpVar.currentAccount, (TLRPC.Message) tL_message, hVar, hVar2, true, true);
-                            ziVar.P0 = tL_sponsoredMessage.random_id;
-                            ziVar.Q0 = tL_sponsoredMessage.title;
-                            ziVar.R0 = tL_sponsoredMessage.url;
-                            ziVar.S0 = tL_sponsoredMessage.recommended;
-                            ziVar.T0 = tL_sponsoredMessage.photo;
-                            ziVar.U0 = tL_sponsoredMessage.sponsor_info;
-                            ziVar.V0 = tL_sponsoredMessage.additional_info;
-                            ziVar.W0 = tL_sponsoredMessage.button_text;
-                            ziVar.Z0 = tL_sponsoredMessage.can_report;
-                            ziVar.X0 = tL_sponsoredMessage.color;
-                            ziVar.Y0 = tL_sponsoredMessage.media;
-                            ziVar.M5();
-                            ziVar.z2 = new ArrayList();
-                            ziVar.r0(true);
-                            arrayList.add(ziVar);
-                            i3++;
-                            i12 = i13;
-                        }
-                        num2 = num3;
-                        num3 = arrayList;
-                    }
-                    num = num2;
-                } else {
-                    num = null;
-                }
-                g0.h3(new bm(hpVar, num3, j10, dpVar, num, 1));
-                break;
-            case 1:
-                li liVar = (li) this.c;
-                long j11 = this.b;
-                TLRPC.TL_messages_getMessages tL_messages_getMessages = (TLRPC.TL_messages_getMessages) this.d;
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    li.K1(messages_messages.messages);
-                    if (!messages_messages.messages.isEmpty()) {
-                        zb.X(messages_messages.messages);
-                        liVar.k(messages_messages.messages, messages_messages.users, messages_messages.chats, false, false);
-                        liVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                        ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
-                        if (!arrayList2.isEmpty()) {
-                            liVar.getMessagesStorage().a.c(new a4(liVar, arrayList2, j11, 14));
-                            break;
-                        }
-                    }
-                }
-                liVar.getMessagesStorage().c2(j11, tL_messages_getMessages.id, false, -1, 0, false, null);
-                break;
-            case 2:
-                hp hpVar2 = (hp) this.c;
-                long j12 = this.b;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
-                    if (!tL_messages_peerDialogs.dialogs.isEmpty() && !tL_messages_peerDialogs.chats.isEmpty()) {
-                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
-                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
-                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
-                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
-                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
-                        hpVar2.J3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, hpVar2.O7, false, false, false);
-                    }
-                }
-                if (j12 != 0) {
-                    hpVar2.getMessagesStorage().q1(j12);
-                }
-                hpVar2.c1.e(chat2.id);
-                break;
-            case 3:
-                hp hpVar3 = (hp) this.c;
-                long j13 = this.b;
-                TLRPC.TL_messages_getMessagesViews tL_messages_getMessagesViews = (TLRPC.TL_messages_getMessagesViews) this.d;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_messageViews tL_messages_messageViews = (TLRPC.TL_messages_messageViews) tLObject;
-                    a0.h hVar3 = new a0.h();
-                    a0.h hVar4 = new a0.h();
-                    a0.h hVar5 = new a0.h();
-                    SparseIntArray sparseIntArray = (SparseIntArray) hVar3.f(j13);
-                    SparseIntArray sparseIntArray2 = (SparseIntArray) hVar4.f(j13);
-                    SparseArray sparseArray = (SparseArray) hVar5.f(j13);
-                    for (int i14 = 0; i14 < tL_messages_getMessagesViews.id.size() && i14 < tL_messages_messageViews.views.size(); i14++) {
-                        TLRPC.TL_messageViews tL_messageViews = tL_messages_messageViews.views.get(i14);
-                        if ((tL_messageViews.flags & 1) != 0) {
-                            if (sparseIntArray == null) {
-                                sparseIntArray = new SparseIntArray();
-                                hVar3.k(sparseIntArray, j13);
-                            }
-                            sparseIntArray.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.views);
-                        }
-                        if ((tL_messageViews.flags & 2) != 0) {
-                            if (sparseIntArray2 == null) {
-                                sparseIntArray2 = new SparseIntArray();
-                                hVar4.k(sparseIntArray2, j13);
-                            }
-                            sparseIntArray2.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.forwards);
-                        }
-                        if ((tL_messageViews.flags & 4) != 0) {
-                            if (sparseArray == null) {
-                                sparseArray = new SparseArray();
-                                hVar5.k(sparseArray, j13);
-                            }
-                            sparseArray.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.replies);
-                        }
-                    }
-                    hpVar3.getMessagesStorage().m1(tL_messages_messageViews.users, tL_messages_messageViews.chats, true, true);
-                    hpVar3.getMessagesStorage().a1(hVar3, hVar4, hVar5, false);
-                    g0.h3(new cn(hpVar3, tL_messages_messageViews, hVar3, hVar4, hVar5, 8));
-                    break;
-                }
-                break;
-            case 4:
-                hp hpVar4 = (hp) this.c;
-                long j14 = this.b;
-                TLRPC.TL_messages_setChatAvailableReactions tL_messages_setChatAvailableReactions = (TLRPC.TL_messages_setChatAvailableReactions) this.d;
-                if (tLObject != null) {
-                    hpVar4.O3((TLRPC.Updates) tLObject, false);
-                    TLRPC.ChatFull N0 = hpVar4.N0(j14);
-                    if (N0 != null) {
-                        if (N0 instanceof TLRPC.TL_chatFull) {
-                            N0.flags |= 262144;
-                        }
-                        if (N0 instanceof TLRPC.TL_channelFull) {
-                            N0.flags |= TLObject.FLAG_30;
-                        }
-                        N0.available_reactions = tL_messages_setChatAvailableReactions.available_reactions;
-                        hpVar4.getMessagesStorage().N1(N0, false);
-                    }
-                    g0.h3(new dk(hpVar4, j14, 16));
-                    break;
-                }
-                break;
-            case 5:
-                g0.h3(new zl((hp) this.c, tLObject, this.b, (Runnable) this.d, 4));
-                break;
-            case 6:
-                hp hpVar5 = (hp) this.c;
-                TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel = (TLRPC.TL_channels_inviteToChannel) this.d;
-                long j15 = this.b;
-                if (tL_error != null) {
-                    g0.h3(new fg(hpVar5, tL_error, tL_channels_inviteToChannel, 1));
-                    break;
-                } else if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
-                    TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
-                    hpVar5.O3(tL_messages_invitedUsers.updates, false);
-                    g0.h3(new a4(hpVar5, tL_messages_invitedUsers, j15, 4));
-                    break;
-                }
-                break;
-            case 7:
-                hp hpVar6 = (hp) this.c;
-                ai.v2 v2Var = (ai.v2) this.d;
-                long j16 = this.b;
-                if (tLObject instanceof TLRPC.TL_exportedContactToken) {
-                    hpVar6.X7 = (TLRPC.TL_exportedContactToken) tLObject;
-                    g0.i3(new yh(22, hpVar6, v2Var), Math.max(0L, 0 - (System.currentTimeMillis() - j16)));
-                    break;
-                } else {
-                    hpVar6.W7 = false;
-                    break;
-                }
-            case 8:
-                hp hpVar7 = (hp) this.c;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.d;
-                long j17 = this.b;
-                TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                if (messages_messages2 != null) {
-                    int i15 = messages_messages2.count;
-                    if (i15 == 0) {
-                        i15 = messages_messages2.messages.size();
-                    }
-                    int i16 = i15;
-                    qr messagesStorage = hpVar7.getMessagesStorage();
-                    messagesStorage.a.c(new qq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
-                }
-                if (j17 != 0) {
-                    hpVar7.getMessagesStorage().q1(j17);
-                    break;
-                }
-                break;
-            case 9:
-                hp hpVar8 = (hp) this.c;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.d;
-                long j18 = this.b;
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
-                    hpVar8.e4(messages_messages3.messages, dialog.id);
-                    if (messages_messages3.messages.isEmpty()) {
-                        g0.h3(new jn(hpVar8, dialog, 0));
-                    } else {
-                        if (r2.a) {
-                            a8.b("checkLastDialogMessage for " + dialog.id + " has message");
-                        }
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs2 = new TLRPC.TL_messages_dialogs();
-                        TLRPC.Message message = messages_messages3.messages.get(0);
-                        TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
-                        tL_dialog2.flags = dialog.flags;
-                        tL_dialog2.top_message = message.id;
-                        tL_dialog2.last_message_date = message.date;
-                        tL_dialog2.notify_settings = dialog.notify_settings;
-                        tL_dialog2.pts = dialog.pts;
-                        tL_dialog2.unread_count = dialog.unread_count;
-                        tL_dialog2.unread_mark = dialog.unread_mark;
-                        tL_dialog2.unread_mentions_count = dialog.unread_mentions_count;
-                        tL_dialog2.unread_reactions_count = dialog.unread_reactions_count;
-                        tL_dialog2.unread_poll_votes_count = dialog.unread_poll_votes_count;
-                        tL_dialog2.read_inbox_max_id = dialog.read_inbox_max_id;
-                        tL_dialog2.read_outbox_max_id = dialog.read_outbox_max_id;
-                        tL_dialog2.pinned = dialog.pinned;
-                        tL_dialog2.pinnedNum = dialog.pinnedNum;
-                        tL_dialog2.folder_id = dialog.folder_id;
-                        long j19 = dialog.id;
-                        tL_dialog2.id = j19;
-                        message.dialog_id = j19;
-                        tL_messages_dialogs2.users.addAll(messages_messages3.users);
-                        tL_messages_dialogs2.chats.addAll(messages_messages3.chats);
-                        tL_messages_dialogs2.dialogs.add(tL_dialog2);
-                        tL_messages_dialogs2.messages.addAll(messages_messages3.messages);
-                        tL_messages_dialogs2.count = 1;
-                        Utilities.d.c(new qf((Object) hpVar8, (Object) tL_messages_dialogs2, false, 1));
-                        hpVar8.getMessagesStorage().j1(messages_messages3.messages, true, true, false, hpVar8.getDownloadController().l(), true, 0, 0L);
-                    }
-                }
-                if (j18 != 0) {
-                    hpVar8.getMessagesStorage().q1(j18);
-                }
-                g0.h3(new jn(hpVar8, dialog, 1));
-                break;
-            case 10:
-                c00 c00Var = (c00) this.c;
-                long j20 = this.b;
-                org.telegram.ui.Components.ei eiVar = (org.telegram.ui.Components.ei) this.d;
-                c00Var.getClass();
-                g0.h3(new zl(c00Var, tLObject, j20, eiVar, 19));
-                break;
-            case 11:
-                g0.h3(new bm((x00) this.c, (r00) this.d, tLObject, tL_error, this.b, 6));
-                break;
+    public static String b(String str) {
+        if (str == null) {
+            return null;
+        }
+        String replaceAll = str.toLowerCase().replaceAll("\\W|lang$", "");
+        replaceAll.getClass();
+        switch (replaceAll) {
+            case "actionscript":
+                return "ActionScript";
+            case "aspnet":
+                return "ASP.NET";
+            case "bbcode":
+                return "BBCode";
+            case "csharp":
+            case "cs":
+                return "C#";
+            case "fsharp":
+                return "F#";
+            case "matlab":
+            case "r":
+            case "tl":
+            case "asm":
+            case "css":
+            case "csv":
+            case "ini":
+            case "jsx":
+            case "php":
+            case "qml":
+            case "sql":
+            case "tsx":
+            case "xml":
+            case "yml":
+            case "glsl":
+            case "hlsl":
+            case "html":
+            case "http":
+            case "json":
+            case "less":
+            case "nasm":
+            case "sass":
+            case "scss":
+            case "wasm":
+            case "yaml":
+            case "cobol":
+            case "json5":
+            case "jsonp":
+                return str.toUpperCase();
+            case "python":
+            case "py":
+                return "Python";
+            case "typescript":
+            case "ts":
+                return "TypeScript";
+            case "js":
+            case "javascript":
+                return "JavaScript";
+            case "md":
+            case "markdown":
+                return "Markdown";
+            case "rb":
+            case "ruby":
+                return "Ruby";
+            case "cpp":
+                return "C++";
+            case "tlb":
+            case "tl-b":
+                return "TL-B";
+            case "func":
+                return "FunC";
+            case "objc":
+            case "objectivec":
+                return "Objective-C";
+            case "vbnet":
+                return "VB.NET";
+            case "autohotkey":
+                return "AutoHotKey";
+            case "visual-basic":
+                return "Visual Basic";
+            case "gdscript":
+                return "GDScript";
             default:
-                g0.h3(new bm((x00) this.c, (s00) this.d, tLObject, tL_error, this.b, 5));
-                break;
+                return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
         }
     }
 
-    public /* synthetic */ fj(c1 c1Var, Object obj, long j10, int i3) {
-        this.a = i3;
-        this.c = c1Var;
-        this.d = obj;
-        this.b = j10;
+    @Override // org.telegram.ui.rg0
+    public final Layout a() {
+        return this.e;
+    }
+
+    public final int c() {
+        return g0.L(this.U ? 28.0f : 15.0f);
+    }
+
+    public final float d(org.telegram.ui.Cells.x1 x1Var) {
+        boolean f10;
+        if (x1Var.f3) {
+            HashSet hashSet = x1Var.e3;
+            f10 = true;
+            if (hashSet != null && hashSet.contains(Integer.valueOf(this.c))) {
+                f10 = false;
+            }
+        } else {
+            f10 = f();
+        }
+        return g0.T1(f10 ? 1.0f : 0.0f, f() ? 1.0f : 0.0f, x1Var.L1);
+    }
+
+    @Override // org.telegram.ui.rg0
+    public final View e() {
+        return null;
+    }
+
+    public final boolean f() {
+        HashSet hashSet;
+        ij ijVar = this.E;
+        return ijVar == null || (hashSet = ijVar.I0) == null || !hashSet.contains(Integer.valueOf(this.c));
+    }
+
+    public final int g() {
+        return g0.L(this.L != null ? 32.0f : 12.0f);
+    }
+
+    public final int h() {
+        StaticLayout staticLayout;
+        return (this.L != null || (staticLayout = this.e) == null || staticLayout.getLineCount() == 0) ? g0.L(8.0f) + (-g()) : Math.round(((this.e.getLineBottom(0) + this.e.getLineTop(0)) / 2.0f) - (g0.L(18.0f) / 2.0f));
+    }
+
+    public final void i(Canvas canvas, RectF rectF, int i7, int i10, float f10) {
+        if (this.N) {
+            int r12 = org.telegram.ui.ActionBar.k6.r1(0.1f, i7);
+            if (this.R != r12) {
+                org.telegram.ui.Cells.y yVar = this.S;
+                this.R = r12;
+                org.telegram.ui.ActionBar.k6.H1(yVar, r12, true);
+            }
+            this.S.setBounds(g0.L(3.0f) + ((int) rectF.left), (int) (rectF.bottom - g0.L(38.0f)), (int) rectF.right, (int) rectF.bottom);
+            int i11 = (int) (255.0f * f10);
+            this.S.setAlpha(i11);
+            if (this.S.getCallback() != null) {
+                this.S.draw(canvas);
+            }
+            this.T.setColor(i0.a.o(i10, 38));
+            canvas.drawRect(rectF.left + g0.L(10.0f), (rectF.bottom - g0.L(38.0f)) - g0.f1(), rectF.right - g0.L(6.66f), rectF.bottom - g0.L(38.0f), this.T);
+            float centerX = rectF.centerX() - (Math.min(rectF.width() - g0.L(12.0f), ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f)) + this.Q.c) / 2.0f);
+            float L = rectF.bottom - (g0.L(38.0f) / 2.0f);
+            if (this.O != i7) {
+                Drawable drawable = this.P;
+                this.O = i7;
+                drawable.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN));
+            }
+            this.P.setAlpha(i11);
+            this.P.setBounds((int) centerX, (int) (L - ((r2.getIntrinsicHeight() * 0.8f) / 2.0f)), (int) ((this.P.getIntrinsicWidth() * 0.8f) + centerX), (int) a8.p0.f(this.P.getIntrinsicHeight(), 0.8f, 2.0f, L));
+            this.P.draw(canvas);
+            ly0 ly0Var = this.Q;
+            ly0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
+            ly0Var.c((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
+        }
+    }
+
+    public final int j(org.telegram.ui.Cells.x1 x1Var) {
+        if (!this.J) {
+            return this.w;
+        }
+        return g0.W1(d(x1Var), this.w, this.F);
+    }
+
+    public final boolean k(float f10, float f11, float f12) {
+        if (!this.N || f10 < f12 - g0.L(38.0f) || f10 > f12 || f11 < (-g())) {
+            return false;
+        }
+        return f11 <= ((float) (g0.L(26.0f) + h()));
+    }
+
+    public final boolean l() {
+        byte b10 = this.x;
+        return (b10 & 1) != 0 && (b10 & 2) == 0;
+    }
+
+    public final void m(int i7, String str, boolean z9) {
+        boolean z10 = i7 >= 75 && !z9;
+        this.N = z10;
+        if (z10) {
+            this.Q = new ly0(hd.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
+            Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
+            this.P = h;
+            h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));
+            this.S = org.telegram.ui.ActionBar.k6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
+            this.T = new Paint(1);
+        }
+        if (TextUtils.isEmpty(str)) {
+            this.K = null;
+            this.L = null;
+            return;
+        }
+        this.K = str;
+        String b10 = b(str);
+        int i10 = iz.W0 - 1;
+        ni.s sVar = ni.m.a;
+        ly0 ly0Var = new ly0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
+        this.L = ly0Var;
+        this.M = g0.L(4.0f) + ((int) (ly0Var.a.getTextSize() * 1.714f));
+    }
+
+    public final void n(String str, boolean z9) {
+        this.U = true;
+        this.N = !z9;
+        if (!z9) {
+            Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
+            this.P = h;
+            h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));
+            this.S = org.telegram.ui.ActionBar.k6.c0(this.R, 0, 0, Math.min(5, iz.Y0), 0);
+        }
+        if (TextUtils.isEmpty(str)) {
+            str = null;
+        }
+        this.K = str;
+        this.L = str != null ? new ly0(str, Math.max(8, iz.W0 - 4), null) : null;
+        this.M = 0;
+    }
+
+    public final float o(ArrayList arrayList) {
+        fj fjVar;
+        if (arrayList == null) {
+            return 0.0f;
+        }
+        int i7 = 0;
+        for (int i10 = 0; i10 < arrayList.size() && (fjVar = (fj) arrayList.get(i10)) != this; i10++) {
+            i7 += ((fjVar.J && fjVar.f()) ? fjVar.F : fjVar.w) + fjVar.f + fjVar.h;
+        }
+        return i7;
+    }
+
+    public final float p(ArrayList arrayList, org.telegram.ui.Cells.x1 x1Var) {
+        fj fjVar;
+        if (arrayList == null) {
+            return 0.0f;
+        }
+        int i7 = 0;
+        for (int i10 = 0; i10 < arrayList.size() && (fjVar = (fj) arrayList.get(i10)) != this; i10++) {
+            i7 += fjVar.j(x1Var) + fjVar.f + fjVar.h;
+        }
+        return i7;
     }
 }

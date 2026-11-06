@@ -1,6 +1,5 @@
 package org.telegram.messenger.voip;
 
-import ai.f3;
 import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -25,27 +24,27 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import b8.nf;
-import ii.g2;
+import c8.ia;
+import hi.g2;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bd;
+import org.telegram.messenger.as;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.h10;
-import org.telegram.messenger.hp;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
 import org.telegram.messenger.r2;
-import org.telegram.messenger.sr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.zb1;
+import org.telegram.ui.ec1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -55,16 +54,16 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
         private boolean destroyed;
         private final long userId;
 
-        public State(int i3, long j10, TL_phone.PhoneCall phoneCall) {
-            this.currentAccount = i3;
-            this.userId = j10;
+        public State(int i7, long j3, TL_phone.PhoneCall phoneCall) {
+            this.currentAccount = i7;
+            this.userId = j3;
             this.call = phoneCall;
         }
 
@@ -83,9 +82,9 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            zb1 zb1Var = zb1.o1;
-            if (zb1Var != null) {
-                zb1Var.onStateChanged(getCallState());
+            ec1 ec1Var = ec1.l1;
+            if (ec1Var != null) {
+                ec1Var.onStateChanged(getCallState());
             }
         }
 
@@ -116,7 +115,7 @@ public class VoIPPreNotificationService {
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public TLRPC.User getUser() {
-            return hp.s1(this.currentAccount).a2(Long.valueOf(this.userId));
+            return qp.s1(this.currentAccount).a2(Long.valueOf(this.userId));
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -144,7 +143,7 @@ public class VoIPPreNotificationService {
         }
     }
 
-    private static void acknowledge(Context context, int i3, TL_phone.PhoneCall phoneCall, Runnable runnable) {
+    private static void acknowledge(Context context, int i7, TL_phone.PhoneCall phoneCall, Runnable runnable) {
         if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
             if (r2.a) {
                 a8.l("Call " + phoneCall.id + " was discarded before the voip pre notification started, stopping");
@@ -158,13 +157,13 @@ public class VoIPPreNotificationService {
             }
             return;
         }
-        if (!sr.i() || sr.g() || !((KeyguardManager) context.getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
+        if (!as.i() || as.g() || !((KeyguardManager) context.getSystemService("keyguard")).inKeyguardRestrictedInputMode()) {
             TL_phone.receivedCall receivedcall = new TL_phone.receivedCall();
             TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
             receivedcall.peer = tL_inputPhoneCall;
             tL_inputPhoneCall.id = phoneCall.id;
             tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-            ConnectionsManager.getInstance(i3).sendRequest(receivedcall, new f3(25, context, runnable), 2);
+            ConnectionsManager.getInstance(i7).sendRequest(receivedcall, new bi.j(context, runnable), 2);
             return;
         }
         if (r2.a) {
@@ -186,12 +185,12 @@ public class VoIPPreNotificationService {
             return;
         }
         currentState = null;
-        intent.getIntExtra("account", h10.t0);
+        intent.getIntExtra("account", p10.s0);
         if (VoIPService.getSharedInstance() != null) {
             VoIPService.getSharedInstance().acceptIncomingCall();
         } else {
             pendingVoIP.putExtra("openFragment", true);
-            if (!nf.d("android.permission.RECORD_AUDIO") || (isVideo() && !nf.d("android.permission.CAMERA"))) {
+            if (!ia.d("android.permission.RECORD_AUDIO") || (isVideo() && !ia.d("android.permission.CAMERA"))) {
                 try {
                     PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                     return;
@@ -213,14 +212,14 @@ public class VoIPPreNotificationService {
         dismiss(context, true);
     }
 
-    public static void decline(Context context, int i3) {
-        a8.b("VoIPPreNotification.decline(" + i3 + ")");
+    public static void decline(Context context, int i7) {
+        a8.b("VoIPPreNotification.decline(" + i7 + ")");
         Intent intent = pendingVoIP;
         if (intent == null || pendingCall == null) {
-            a8.b("VoIPPreNotification.decline(" + i3 + "): pending intent or call is not found");
+            a8.b("VoIPPreNotification.decline(" + i7 + "): pending intent or call is not found");
             return;
         }
-        int intExtra = intent.getIntExtra("account", h10.t0);
+        int intExtra = intent.getIntExtra("account", p10.s0);
         TL_phone.discardCall discardcall = new TL_phone.discardCall();
         TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
         discardcall.peer = tL_inputPhoneCall;
@@ -229,11 +228,11 @@ public class VoIPPreNotificationService {
         tL_inputPhoneCall.id = phoneCall.id;
         discardcall.duration = 0;
         discardcall.connection_id = 0L;
-        if (i3 == 2) {
+        if (i7 == 2) {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonDisconnect();
-        } else if (i3 == 3) {
+        } else if (i7 == 3) {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonMissed();
-        } else if (i3 != 4) {
+        } else if (i7 != 4) {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonHangup();
         } else {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
@@ -243,7 +242,7 @@ public class VoIPPreNotificationService {
         dismiss(context, false);
     }
 
-    public static void dismiss(Context context, boolean z10) {
+    public static void dismiss(Context context, boolean z9) {
         a8.b("VoIPPreNotification.dismiss()");
         pendingVoIP = null;
         pendingCall = null;
@@ -253,11 +252,11 @@ public class VoIPPreNotificationService {
         }
         ((NotificationManager) context.getSystemService("notification")).cancel(203);
         stopRinging();
-        if (z10) {
+        if (z9) {
             return;
         }
-        for (int i3 = 0; i3 < 4; i3++) {
-            hp.s1(i3).g7 = false;
+        for (int i7 = 0; i7 < 4; i7++) {
+            qp.s1(i7).g7 = false;
         }
         org.telegram.messenger.g0.h3(new i(2));
     }
@@ -297,11 +296,11 @@ public class VoIPPreNotificationService {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$acknowledge$3(Context context, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        org.telegram.messenger.g0.h3(new k(tLObject, tL_error, context, runnable, 2));
+        org.telegram.messenger.g0.h3(new l(tLObject, tL_error, context, runnable, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$decline$4(int i3, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$decline$4(int i7, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
             if (r2.a) {
                 a8.d("(VoIPPreNotification) error on phone.discardCall: " + tL_error);
@@ -310,7 +309,7 @@ public class VoIPPreNotificationService {
             return;
         }
         if (tLObject instanceof TLRPC.TL_updates) {
-            hp.s1(i3).O3((TLRPC.TL_updates) tLObject, false);
+            qp.s1(i7).O3((TLRPC.TL_updates) tLObject, false);
         }
         if (r2.a) {
             a8.b("(VoIPPreNotification) phone.discardCall " + tLObject);
@@ -319,23 +318,23 @@ public class VoIPPreNotificationService {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$dismiss$5() {
-        LaunchActivity launchActivity = LaunchActivity.K1;
-        if (launchActivity != null && launchActivity.j1 && VoIPService.getSharedInstance() == null) {
-            launchActivity.j1 = false;
-            zb1 zb1Var = zb1.o1;
-            if (zb1Var != null) {
-                zb1Var.f();
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity != null && launchActivity.g1 && VoIPService.getSharedInstance() == null) {
+            launchActivity.g1 = false;
+            ec1 ec1Var = ec1.l1;
+            if (ec1Var != null) {
+                ec1Var.e();
             }
             launchActivity.moveTaskToBack(true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$show$1(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i3, long j10, boolean z10) {
+    public static /* synthetic */ void lambda$show$1(Intent intent, TL_phone.PhoneCall phoneCall, Context context, int i7, long j3, boolean z9) {
         pendingVoIP = intent;
         pendingCall = phoneCall;
-        ((NotificationManager) context.getSystemService("notification")).notify(203, makeNotification(context, i3, j10, phoneCall.id, z10));
-        startRinging(context, i3, j10);
+        ((NotificationManager) context.getSystemService("notification")).notify(203, makeNotification(context, i7, j3, phoneCall.id, z9));
+        startRinging(context, i7, j3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -355,21 +354,21 @@ public class VoIPPreNotificationService {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static Notification makeNotification(Context context, int i3, long j10, long j11, boolean z10) {
-        boolean z11;
+    private static Notification makeNotification(Context context, int i7, long j3, long j10, boolean z9) {
+        boolean z10;
         int i10;
         int i11;
         int i12;
         String p10;
-        boolean z12;
+        boolean z11;
         if (Build.VERSION.SDK_INT < 33) {
             return null;
         }
-        TLRPC.User a22 = hp.s1(i3).a2(Long.valueOf(j10));
+        TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip");
-        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(bd.M0(z10 ? 2131743307 : 2131743310, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
-        SharedPreferences f12 = hp.f1();
+        Notification.Builder contentIntent = new Notification.Builder(context).setContentTitle(hd.M0(z9 ? 2131743298 : 2131743301, null)).setSmallIcon(R.drawable.call).setContentIntent(PendingIntent.getActivity(context, 0, action, 301989888));
+        SharedPreferences f12 = qp.f1();
         int i13 = f12.getInt("calls_notification_channel", 0);
         NotificationChannel notificationChannel = notificationManager.getNotificationChannel("incoming_calls2" + i13);
         if (notificationChannel != null) {
@@ -382,33 +381,33 @@ public class VoIPPreNotificationService {
         NotificationChannel notificationChannel3 = notificationManager.getNotificationChannel("incoming_calls4" + i13);
         if (notificationChannel3 != null) {
             if (notificationChannel3.getImportance() >= 4 && notificationChannel3.getSound() == null) {
-                z11 = false;
-                if (z11) {
+                z10 = false;
+                if (z10) {
                     AudioAttributes build = new AudioAttributes.Builder().setContentType(4).setLegacyStreamType(2).setUsage(2).build();
-                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, bd.M0(2131749211, null), 4);
+                    NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i13, hd.M0(2131749202, null), 4);
                     try {
                         notificationChannel4.setSound(null, build);
-                        z12 = true;
+                        z11 = true;
                     } catch (Exception e10) {
-                        z12 = true;
+                        z11 = true;
                         a8.g(e10, true);
                     }
-                    notificationChannel4.setDescription(bd.M0(2131749210, null));
+                    notificationChannel4.setDescription(hd.M0(2131749201, null));
                     notificationChannel4.enableVibration(false);
                     notificationChannel4.enableLights(false);
-                    notificationChannel4.setBypassDnd(z12);
+                    notificationChannel4.setBypassDnd(z11);
                     try {
                         notificationManager.createNotificationChannel(notificationChannel4);
                     } catch (Exception e11) {
-                        a8.g(e11, z12);
+                        a8.g(e11, z11);
                         return null;
                     }
                 }
                 contentIntent.setChannelId("incoming_calls4" + i13);
                 Intent intent = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent.setAction(context.getPackageName() + ".DECLINE_CALL");
-                intent.putExtra("call_id", j11);
-                String M0 = bd.M0(2131743428, null);
+                intent.putExtra("call_id", j10);
+                String M0 = hd.M0(2131743419, null);
                 i10 = Build.VERSION.SDK_INT;
                 if (i10 >= 24 || i10 >= 31) {
                     i11 = 0;
@@ -420,8 +419,8 @@ public class VoIPPreNotificationService {
                 PendingIntent broadcast = PendingIntent.getBroadcast(context, i11, intent, 301989888);
                 Intent intent2 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
                 intent2.setAction(context.getPackageName() + ".ANSWER_CALL");
-                intent2.putExtra("call_id", j11);
-                String M02 = bd.M0(2131743514, null);
+                intent2.putExtra("call_id", j10);
+                String M02 = hd.M0(2131743505, null);
                 if (i10 >= 24 || i10 >= 31) {
                     i12 = 0;
                 } else {
@@ -429,7 +428,7 @@ public class VoIPPreNotificationService {
                     i12 = 0;
                     spannableString2.setSpan(new ForegroundColorSpan(-16733696), 0, spannableString2.length(), 0);
                 }
-                PendingIntent activity = PendingIntent.getActivity(context, i12, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("voip_answer_token", LaunchActivity.E1), 301989888);
+                PendingIntent activity = PendingIntent.getActivity(context, i12, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("voip_answer_token", LaunchActivity.B1), 301989888);
                 contentIntent.setPriority(2);
                 contentIntent.setShowWhen(i12);
                 contentIntent.setColor(-13851168);
@@ -442,7 +441,7 @@ public class VoIPPreNotificationService {
                 Intent intent3 = new Intent(org.telegram.messenger.t0.b, (Class<?>) VoIPActionsReceiver.class);
                 intent3.setAction(context.getPackageName() + ".HIDE_CALL");
                 contentIntent.setDeleteIntent(PendingIntent.getBroadcast(org.telegram.messenger.t0.b, 0, intent3, 167772160));
-                Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i3, a22);
+                Bitmap roundAvatarBitmap = VoIPService.getRoundAvatarBitmap(context, i7, a22);
                 p10 = g5.p(a22);
                 if (TextUtils.isEmpty(p10)) {
                     p10 = "___";
@@ -457,14 +456,14 @@ public class VoIPPreNotificationService {
             i13++;
             f12.edit().putInt("calls_notification_channel", i13).commit();
         }
-        z11 = true;
-        if (z11) {
+        z10 = true;
+        if (z10) {
         }
         contentIntent.setChannelId("incoming_calls4" + i13);
         Intent intent4 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent4.setAction(context.getPackageName() + ".DECLINE_CALL");
-        intent4.putExtra("call_id", j11);
-        String M03 = bd.M0(2131743428, null);
+        intent4.putExtra("call_id", j10);
+        String M03 = hd.M0(2131743419, null);
         i10 = Build.VERSION.SDK_INT;
         if (i10 >= 24) {
         }
@@ -472,12 +471,12 @@ public class VoIPPreNotificationService {
         PendingIntent broadcast2 = PendingIntent.getBroadcast(context, i11, intent4, 301989888);
         Intent intent22 = new Intent(context, (Class<?>) VoIPActionsReceiver.class);
         intent22.setAction(context.getPackageName() + ".ANSWER_CALL");
-        intent22.putExtra("call_id", j11);
-        String M022 = bd.M0(2131743514, null);
+        intent22.putExtra("call_id", j10);
+        String M022 = hd.M0(2131743505, null);
         if (i10 >= 24) {
         }
         i12 = 0;
-        PendingIntent activity2 = PendingIntent.getActivity(context, i12, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("voip_answer_token", LaunchActivity.E1), 301989888);
+        PendingIntent activity2 = PendingIntent.getActivity(context, i12, new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_answer").putExtra("voip_answer_token", LaunchActivity.B1), 301989888);
         contentIntent.setPriority(2);
         contentIntent.setShowWhen(i12);
         contentIntent.setColor(-13851168);
@@ -490,7 +489,7 @@ public class VoIPPreNotificationService {
         Intent intent32 = new Intent(org.telegram.messenger.t0.b, (Class<?>) VoIPActionsReceiver.class);
         intent32.setAction(context.getPackageName() + ".HIDE_CALL");
         contentIntent.setDeleteIntent(PendingIntent.getBroadcast(org.telegram.messenger.t0.b, 0, intent32, 167772160));
-        Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i3, a22);
+        Bitmap roundAvatarBitmap2 = VoIPService.getRoundAvatarBitmap(context, i7, a22);
         p10 = g5.p(a22);
         if (TextUtils.isEmpty(p10)) {
         }
@@ -506,7 +505,7 @@ public class VoIPPreNotificationService {
         if (intent == null || pendingCall == null) {
             return false;
         }
-        intent.getIntExtra("account", h10.t0);
+        intent.getIntExtra("account", p10.s0);
         pendingVoIP.putExtra("openFragment", true);
         pendingVoIP.putExtra("accept", false);
         if (Build.VERSION.SDK_INT >= 26) {
@@ -531,11 +530,11 @@ public class VoIPPreNotificationService {
             dismiss(context, false);
             pendingVoIP = intent;
             pendingCall = phoneCall;
-            int intExtra = intent.getIntExtra("account", h10.t0);
+            int intExtra = intent.getIntExtra("account", p10.s0);
             long longExtra = intent.getLongExtra("user_id", 0L);
-            boolean z10 = phoneCall.video;
+            boolean z9 = phoneCall.video;
             currentState = new State(intExtra, longExtra, phoneCall);
-            acknowledge(context, intExtra, phoneCall, new oi.a(intent, phoneCall, context, intExtra, longExtra, z10));
+            acknowledge(context, intExtra, phoneCall, new ni.b(intent, phoneCall, context, intExtra, longExtra, z9));
         }
     }
 
@@ -548,16 +547,16 @@ public class VoIPPreNotificationService {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void startRinging(Context context, int i3, long j10) {
+    public static void startRinging(Context context, int i7, long j3) {
         int i10;
         String string;
         Uri parse;
-        boolean z10;
-        SharedPreferences sharedPreferences = hp.s1(i3).d7;
+        boolean z9;
+        SharedPreferences sharedPreferences = qp.s1(i7).d7;
         AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        boolean z11 = audioManager.getRingerMode() != 0;
+        boolean z10 = audioManager.getRingerMode() != 0;
         boolean isWiredHeadsetOn = audioManager.isWiredHeadsetOn();
-        if (z11 && ringtonePlayer == null) {
+        if (z10 && ringtonePlayer == null) {
             synchronized (sync) {
                 try {
                 } catch (Exception e10) {
@@ -574,15 +573,15 @@ public class VoIPPreNotificationService {
                 }
                 MediaPlayer mediaPlayer2 = new MediaPlayer();
                 ringtonePlayer = mediaPlayer2;
-                mediaPlayer2.setOnPreparedListener(new o());
+                mediaPlayer2.setOnPreparedListener(new p());
                 ringtonePlayer.setLooping(true);
                 if (isWiredHeadsetOn) {
                     ringtonePlayer.setAudioStreamType(0);
                 } else {
                     ringtonePlayer.setAudioStreamType(2);
                 }
-                if (sharedPreferences.getBoolean("custom_" + j10, false)) {
-                    string = sharedPreferences.getString("ringtone_path_" + j10, null);
+                if (sharedPreferences.getBoolean("custom_" + j3, false)) {
+                    string = sharedPreferences.getString("ringtone_path_" + j3, null);
                 } else {
                     string = sharedPreferences.getString("CallsRingtonePath", null);
                 }
@@ -592,14 +591,14 @@ public class VoIPPreNotificationService {
                     Uri uri = Settings.System.DEFAULT_RINGTONE_URI;
                     if (uri == null || !string.equalsIgnoreCase(uri.getPath())) {
                         parse = Uri.parse(string);
-                        z10 = false;
-                        a8.b("start ringtone with " + z10 + " " + parse);
+                        z9 = false;
+                        a8.b("start ringtone with " + z9 + " " + parse);
                         ringtonePlayer.setDataSource(context, parse);
                         ringtonePlayer.prepareAsync();
-                        if (sharedPreferences.getBoolean("custom_" + j10, false)) {
+                        if (sharedPreferences.getBoolean("custom_" + j3, false)) {
                             i10 = sharedPreferences.getInt("vibrate_calls", 0);
                         } else {
-                            i10 = sharedPreferences.getInt("calls_vibrate_" + j10, 0);
+                            i10 = sharedPreferences.getInt("calls_vibrate_" + j3, 0);
                         }
                         if ((i10 != 2 && i10 != 4 && (audioManager.getRingerMode() == 1 || audioManager.getRingerMode() == 2)) || (i10 == 4 && audioManager.getRingerMode() == 1)) {
                             vibrator = (Vibrator) context.getSystemService("vibrator");
@@ -613,11 +612,11 @@ public class VoIPPreNotificationService {
                     }
                     parse = RingtoneManager.getDefaultUri(1);
                 }
-                z10 = true;
-                a8.b("start ringtone with " + z10 + " " + parse);
+                z9 = true;
+                a8.b("start ringtone with " + z9 + " " + parse);
                 ringtonePlayer.setDataSource(context, parse);
                 ringtonePlayer.prepareAsync();
-                if (sharedPreferences.getBoolean("custom_" + j10, false)) {
+                if (sharedPreferences.getBoolean("custom_" + j3, false)) {
                 }
                 if (i10 != 2) {
                     vibrator = (Vibrator) context.getSystemService("vibrator");

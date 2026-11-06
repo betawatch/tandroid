@@ -6,14 +6,14 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class GlUtil {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class GlOutOfMemoryException extends GLException {
-        public GlOutOfMemoryException(int i3, String str) {
-            super(i3, str);
+        public GlOutOfMemoryException(int i7, String str) {
+            super(i7, str);
         }
     }
 
@@ -39,15 +39,15 @@ public class GlUtil {
         return asFloatBuffer;
     }
 
-    public static int generateTexture(int i3) {
+    public static int generateTexture(int i7) {
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i10 = iArr[0];
-        GLES20.glBindTexture(i3, i10);
-        GLES20.glTexParameterf(i3, 10241, 9729.0f);
-        GLES20.glTexParameterf(i3, 10240, 9729.0f);
-        GLES20.glTexParameterf(i3, 10242, 33071.0f);
-        GLES20.glTexParameterf(i3, 10243, 33071.0f);
+        GLES20.glBindTexture(i7, i10);
+        GLES20.glTexParameterf(i7, 10241, 9729.0f);
+        GLES20.glTexParameterf(i7, 10240, 9729.0f);
+        GLES20.glTexParameterf(i7, 10242, 33071.0f);
+        GLES20.glTexParameterf(i7, 10243, 33071.0f);
         checkNoGLES2Error("generateTexture");
         return i10;
     }

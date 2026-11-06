@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class or extends View {
     public final Paint a;
@@ -30,11 +30,11 @@ public final class or extends View {
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
     }
 
-    public void setColor(int i3) {
-        if (this.d != i3) {
-            this.d = i3;
-            int alpha = Color.alpha(i3);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i3, (alpha * org.telegram.messenger.hs.I3) / org.telegram.messenger.hs.e4), i0.a.o(i3, (alpha * org.telegram.messenger.hs.W2) / org.telegram.messenger.hs.e4), i0.a.o(i3, (alpha * org.telegram.messenger.hs.a2) / org.telegram.messenger.hs.e4), i0.a.o(i3, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+    public void setColor(int i7) {
+        if (this.d != i7) {
+            this.d = i7;
+            int alpha = Color.alpha(i7);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, (alpha * org.telegram.messenger.qs.I3) / org.telegram.messenger.qs.e4), i0.a.o(i7, (alpha * org.telegram.messenger.qs.W2) / org.telegram.messenger.qs.e4), i0.a.o(i7, (alpha * org.telegram.messenger.qs.a2) / org.telegram.messenger.qs.e4), i0.a.o(i7, 0)}, (float[]) null, Shader.TileMode.CLAMP);
             this.c = linearGradient;
             this.a.setShader(linearGradient);
             this.c.setLocalMatrix(this.b);

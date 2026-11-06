@@ -1,6 +1,58 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.util.ListIterator;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h6 {
+public final class h6 implements ListIterator {
+    public final ListIterator a;
+
+    public h6(j6 j6Var, int i7) {
+        this.a = j6Var.a.listIterator(i7);
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext();
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final /* bridge */ /* synthetic */ Object next() {
+        return (String) this.a.next();
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* bridge */ /* synthetic */ Object previous() {
+        return (String) this.a.previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void set(Object obj) {
+        throw new UnsupportedOperationException();
+    }
 }

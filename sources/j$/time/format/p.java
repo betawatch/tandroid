@@ -67,53 +67,53 @@ public final class p {
         this.d = true;
     }
 
-    public final void g(j$.time.temporal.o oVar, int i3) {
+    public final void g(j$.time.temporal.o oVar, int i7) {
         Objects.requireNonNull(oVar, "field");
-        if (i3 < 1 || i3 > 19) {
-            throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i3);
+        if (i7 < 1 || i7 > 19) {
+            throw new IllegalArgumentException("The width must be from 1 to 19 inclusive but was " + i7);
         }
-        f(new i(oVar, i3, i3, x.NOT_NEGATIVE));
+        f(new i(oVar, i7, i7, x.NOT_NEGATIVE));
     }
 
-    public final void h(j$.time.temporal.o oVar, int i3, int i10, x xVar) {
-        if (i3 == i10 && xVar == x.NOT_NEGATIVE) {
+    public final void h(j$.time.temporal.o oVar, int i7, int i10, x xVar) {
+        if (i7 == i10 && xVar == x.NOT_NEGATIVE) {
             g(oVar, i10);
             return;
         }
         Objects.requireNonNull(oVar, "field");
         Objects.requireNonNull(xVar, "signStyle");
-        if (i3 < 1 || i3 > 19) {
-            throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i3);
+        if (i7 < 1 || i7 > 19) {
+            throw new IllegalArgumentException("The minimum width must be from 1 to 19 inclusive but was " + i7);
         }
         if (i10 < 1 || i10 > 19) {
             throw new IllegalArgumentException("The maximum width must be from 1 to 19 inclusive but was " + i10);
         }
-        if (i10 < i3) {
-            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i10 + " < " + i3);
+        if (i10 < i7) {
+            throw new IllegalArgumentException("The maximum width must exceed or equal the minimum width but " + i10 + " < " + i7);
         }
-        f(new i(oVar, i3, i10, xVar));
+        f(new i(oVar, i7, i10, xVar));
     }
 
     public final void f(i iVar) {
         i a10;
         p pVar = this.a;
-        int i3 = pVar.e;
-        if (i3 < 0) {
+        int i7 = pVar.e;
+        if (i7 < 0) {
             pVar.e = b(iVar);
             return;
         }
-        i iVar2 = (i) ((ArrayList) pVar.c).get(i3);
+        i iVar2 = (i) ((ArrayList) pVar.c).get(i7);
         int i10 = iVar.b;
         int i11 = iVar.c;
         if (i10 == i11 && iVar.d == x.NOT_NEGATIVE) {
             a10 = iVar2.b(i11);
             b(iVar.a());
-            this.a.e = i3;
+            this.a.e = i7;
         } else {
             a10 = iVar2.a();
             this.a.e = b(iVar);
         }
-        ((ArrayList) this.a.c).set(i3, a10);
+        ((ArrayList) this.a.c).set(i7, a10);
     }
 
     public final void e(j$.time.temporal.a aVar, Map map) {
@@ -124,8 +124,8 @@ public final class p {
         b(new m(aVar, textStyle, new b(new t(Collections.singletonMap(textStyle, linkedHashMap)))));
     }
 
-    public final void c(char c2) {
-        b(new d(c2));
+    public final void c(char c10) {
+        b(new d(c10));
     }
 
     public final void d(String str) {

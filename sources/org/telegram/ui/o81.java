@@ -1,57 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o81 implements zh.c, org.telegram.messenger.so, r0.m, org.telegram.ui.Components.ij0 {
-    public final /* synthetic */ m91 a;
+public final /* synthetic */ class o81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u81 b;
 
-    public /* synthetic */ o81(m91 m91Var) {
-        this.a = m91Var;
+    public /* synthetic */ o81(u81 u81Var, int i7) {
+        this.a = i7;
+        this.b = u81Var;
     }
 
-    @Override // r0.m
-    public r0.k1 R0(View view, r0.k1 k1Var) {
-        int i3 = k1Var.a.f(519).d;
-        m91 m91Var = this.a;
-        m91Var.g1 = i3;
-        i91 i91Var = m91Var.s0;
-        if (i91Var != null) {
-            i91Var.setPadding(0, 0, 0, i3);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u81 u81Var = this.b;
+                u81Var.getClass();
+                new ug.w0((org.telegram.ui.ActionBar.f2) u81Var, 11, false).show();
+                break;
+            default:
+                u81 u81Var2 = this.b;
+                u81Var2.e.requestFocus();
+                org.telegram.messenger.g0.K3(u81Var2.e);
+                break;
         }
-        j81 j81Var = m91Var.n;
-        if (j81Var != null) {
-            ((TextView) j81Var.d).setTranslationY((-m91Var.g1) - m91Var.f1);
-        }
-        m91Var.h.setTranslationY(((-m91Var.Y0) - m91Var.g1) - m91Var.f1);
-        m91Var.F0();
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.messenger.so
-    public boolean a(TLRPC.TL_error tL_error) {
-        return m91.Z(this.a, tL_error);
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public boolean b(float f10, float f11, int i3, View view) {
-        return m91.b0(this.a, view, f10);
-    }
-
-    @Override // zh.c
-    public void c(boolean z10, boolean z11) {
-        m91 m91Var = this.a;
-        m91Var.V0.i(m91Var.S0.b(), z10, z11);
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public /* synthetic */ void r(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public /* synthetic */ void h() {
     }
 }

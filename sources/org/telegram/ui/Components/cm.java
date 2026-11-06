@@ -1,29 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cm implements Runnable {
+public final /* synthetic */ class cm implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+    public final /* synthetic */ bn b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ cm(an anVar, int i3, int i10) {
+    public /* synthetic */ cm(bn bnVar, int i7, int i10) {
         this.a = i10;
-        this.b = anVar;
-        this.c = i3;
+        this.b = bnVar;
+        this.c = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.j0(this.c, null);
-                break;
-            case 1:
-                this.b.g0(this.c);
+                this.b.j0(this.c, (sh.c) obj);
                 break;
             default:
-                this.b.j0(this.c, null);
+                bn bnVar = this.b;
+                bnVar.getClass();
+                bnVar.j0(this.c, new th.e((String) obj));
                 break;
         }
     }

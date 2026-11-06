@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
     public static final q0 b = new q0();
     public static final q0 c = new q0();
 
-    public static final void a(p0 p0Var, m.p registry, o lifecycle) {
+    public static final void a(p0 p0Var, m.q registry, o lifecycle) {
         Object obj;
         kotlin.jvm.internal.j.e(registry, "registry");
         kotlin.jvm.internal.j.e(lifecycle, "lifecycle");
@@ -58,17 +58,17 @@ public abstract class j0 {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         int size = parcelableArrayList.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            Object obj = parcelableArrayList.get(i3);
+        for (int i7 = 0; i7 < size; i7++) {
+            Object obj = parcelableArrayList.get(i7);
             kotlin.jvm.internal.j.c(obj, "null cannot be cast to non-null type kotlin.String");
-            linkedHashMap.put((String) obj, parcelableArrayList2.get(i3));
+            linkedHashMap.put((String) obj, parcelableArrayList2.get(i7));
         }
         return new i0(linkedHashMap);
     }
 
-    public static final i0 c(x1.b bVar) {
+    public static final i0 c(y1.b bVar) {
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
-        v4.e eVar = (v4.e) linkedHashMap.get(a);
+        w4.e eVar = (w4.e) linkedHashMap.get(a);
         if (eVar == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `SAVED_STATE_REGISTRY_OWNER_KEY`");
         }
@@ -81,7 +81,7 @@ public abstract class j0 {
         if (str == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `VIEW_MODEL_KEY`");
         }
-        v4.d d = eVar.g().d();
+        w4.d d = eVar.g().d();
         l0 l0Var = d instanceof l0 ? (l0) d : null;
         if (l0Var == null) {
             throw new IllegalStateException("enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call");
@@ -108,7 +108,7 @@ public abstract class j0 {
         return b10;
     }
 
-    public static final void d(v4.e eVar) {
+    public static final void d(w4.e eVar) {
         n nVar = ((v) eVar.m()).c;
         if (nVar != n.b && nVar != n.c) {
             throw new IllegalArgumentException("Failed requirement.");
@@ -124,8 +124,8 @@ public abstract class j0 {
         ArrayList arrayList = new ArrayList();
         Class a10 = kotlin.jvm.internal.s.a(m0.class).a();
         kotlin.jvm.internal.j.c(a10, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
-        arrayList.add(new x1.c(a10));
-        x1.c[] cVarArr = (x1.c[]) arrayList.toArray(new x1.c[0]);
-        return (m0) new android.support.v4.media.session.a0(u0Var.f(), new i9((x1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : x1.a.b).i(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        arrayList.add(new y1.c(a10));
+        y1.c[] cVarArr = (y1.c[]) arrayList.toArray(new y1.c[0]);
+        return (m0) new android.support.v4.media.session.a0(u0Var.f(), new qt((y1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : y1.a.b).j(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

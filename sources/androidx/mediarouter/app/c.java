@@ -2,38 +2,37 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
-import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c extends r4.s {
+public final class c extends s4.s {
     public final /* synthetic */ int a;
     public final /* synthetic */ g.u b;
 
-    public /* synthetic */ c(g.u uVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ c(g.u uVar, int i7) {
+        this.a = i7;
         this.b = uVar;
     }
 
-    @Override // r4.s
-    public void d(r4.w wVar) {
+    @Override // s4.s
+    public void d(s4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
                 break;
             case 2:
-                ((c0) this.b).e();
+                ((b0) this.b).e();
                 break;
             case 3:
-                ((o0) this.b).n();
+                ((n0) this.b).n();
                 break;
         }
     }
 
-    @Override // r4.s
-    public final void e(r4.w wVar) {
-        y00 b10;
-        r4.o oVar;
+    @Override // s4.s
+    public final void e(s4.v vVar) {
+        org.telegram.ui.Components.n b10;
+        s4.o oVar;
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -42,95 +41,95 @@ public final class c extends r4.s {
                 ((t) this.b).q(true);
                 break;
             case 2:
-                ((c0) this.b).e();
+                ((b0) this.b).e();
                 break;
             default:
-                o0 o0Var = (o0) this.b;
-                if (wVar == o0Var.r && r4.w.a() != null) {
-                    r4.v vVar = wVar.a;
-                    vVar.getClass();
-                    r4.y.b();
-                    for (r4.w wVar2 : DesugarCollections.unmodifiableList(vVar.b)) {
-                        if (!DesugarCollections.unmodifiableList(o0Var.r.v).contains(wVar2) && (b10 = o0Var.r.b(wVar2)) != null && (oVar = (r4.o) b10.a) != null && oVar.d && !o0Var.w.contains(wVar2)) {
-                            o0Var.o();
-                            o0Var.l();
+                n0 n0Var = (n0) this.b;
+                if (vVar == n0Var.r && s4.v.a() != null) {
+                    s4.u uVar = vVar.a;
+                    uVar.getClass();
+                    s4.x.b();
+                    for (s4.v vVar2 : DesugarCollections.unmodifiableList(uVar.b)) {
+                        if (!DesugarCollections.unmodifiableList(n0Var.r.v).contains(vVar2) && (b10 = n0Var.r.b(vVar2)) != null && (oVar = (s4.o) b10.a) != null && oVar.d && !n0Var.w.contains(vVar2)) {
+                            n0Var.o();
+                            n0Var.l();
                             break;
                         }
                     }
                 }
-                o0Var.n();
+                n0Var.n();
                 break;
         }
     }
 
-    @Override // r4.s
-    public void f(r4.w wVar) {
+    @Override // s4.s
+    public void f(s4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
                 break;
             case 2:
-                ((c0) this.b).e();
+                ((b0) this.b).e();
                 break;
             case 3:
-                ((o0) this.b).n();
+                ((n0) this.b).n();
                 break;
         }
     }
 
-    @Override // r4.s
-    public void g(r4.w wVar) {
+    @Override // s4.s
+    public void g(s4.v vVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).dismiss();
                 break;
             case 2:
-                ((c0) this.b).dismiss();
+                ((b0) this.b).dismiss();
                 break;
             case 3:
-                o0 o0Var = (o0) this.b;
-                o0Var.r = wVar;
-                o0Var.o();
-                o0Var.l();
+                n0 n0Var = (n0) this.b;
+                n0Var.r = vVar;
+                n0Var.o();
+                n0Var.l();
                 break;
         }
     }
 
-    @Override // r4.s
+    @Override // s4.s
     public void i() {
         switch (this.a) {
             case 1:
                 ((t) this.b).q(false);
                 break;
             case 3:
-                ((o0) this.b).n();
+                ((n0) this.b).n();
                 break;
         }
     }
 
-    @Override // r4.s
-    public void k(r4.w wVar) {
-        f0 f0Var;
-        int i3 = this.a;
+    @Override // s4.s
+    public void k(s4.v vVar) {
+        e0 e0Var;
+        int i7 = this.a;
         g.u uVar = this.b;
-        switch (i3) {
+        switch (i7) {
             case 1:
                 t tVar = (t) uVar;
-                SeekBar seekBar = (SeekBar) tVar.i0.get(wVar);
-                int i10 = wVar.p;
-                int i11 = t.G0;
-                if (seekBar != null && tVar.d0 != wVar) {
+                SeekBar seekBar = (SeekBar) tVar.h0.get(vVar);
+                int i10 = vVar.p;
+                int i11 = t.F0;
+                if (seekBar != null && tVar.c0 != vVar) {
                     seekBar.setProgress(i10);
                     break;
                 }
                 break;
             case 3:
-                int i12 = o0.k0;
-                o0 o0Var = (o0) uVar;
-                if (o0Var.N != wVar && (f0Var = (f0) o0Var.M.get(wVar.c)) != null) {
-                    int i13 = f0Var.v.p;
-                    f0Var.u(i13 == 0);
-                    f0Var.x.setProgress(i13);
+                int i12 = n0.j0;
+                n0 n0Var = (n0) uVar;
+                if (n0Var.M != vVar && (e0Var = (e0) n0Var.L.get(vVar.c)) != null) {
+                    int i13 = e0Var.v.p;
+                    e0Var.u(i13 == 0);
+                    e0Var.x.setProgress(i13);
                     break;
                 }
                 break;

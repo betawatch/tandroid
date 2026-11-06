@@ -1,5 +1,6 @@
 package com.google.android.play.core.integrity;
 
+import a8.q9;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -9,20 +10,19 @@ import android.os.IInterface;
 import android.os.Parcelable;
 import android.util.Base64;
 import android.util.Log;
-import b8.t9;
-import c9.a0;
-import c9.b0;
-import c9.g0;
-import c9.k0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
+import d9.a0;
+import d9.b0;
+import d9.g0;
+import d9.k0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class aj {
-    final c9.c a;
+    final d9.c a;
     private final g0 b;
     private final String c;
     private final Context d;
@@ -36,20 +36,20 @@ final class aj {
         this.e = atVar;
         this.f = kVar;
         this.d = context;
-        g0 g0Var3 = c9.e.a;
+        g0 g0Var3 = d9.e.a;
         try {
             if (context.getPackageManager().getApplicationInfo("com.android.vending", 0).enabled) {
                 try {
-                    if (c9.e.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
-                        this.a = new c9.c(context, g0Var, "IntegrityService", ak.a, new k0() { // from class: com.google.android.play.core.integrity.ae
-                            @Override // c9.k0
+                    if (d9.e.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
+                        this.a = new d9.c(context, g0Var, "IntegrityService", ak.a, new k0() { // from class: com.google.android.play.core.integrity.ae
+                            @Override // d9.k0
                             public final Object a(IBinder iBinder) {
-                                int i3 = a0.i;
+                                int i7 = a0.i;
                                 if (iBinder == null) {
                                     return null;
                                 }
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IIntegrityService");
-                                return queryLocalInterface instanceof b0 ? (b0) queryLocalInterface : new c9.z(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 1);
+                                return queryLocalInterface instanceof b0 ? (b0) queryLocalInterface : new d9.z(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 5);
                             }
                         });
                         return;
@@ -88,8 +88,8 @@ final class aj {
             bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new c9.t(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(t9.a(arrayList)));
+        arrayList.add(new d9.t(3, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(q9.a(arrayList)));
         return bundle;
     }
 
@@ -97,10 +97,10 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        int i3 = bundle.getInt("dialog.intent.type");
-        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i3));
+        int i7 = bundle.getInt("dialog.intent.type");
+        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i7));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i3), taskCompletionSource);
+        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i7), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
@@ -108,7 +108,7 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        if (c9.e.a(this.d) < 82380000) {
+        if (d9.e.a(this.d) < 82380000) {
             return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {

@@ -1,39 +1,61 @@
 package org.telegram.ui.Components.voip;
 
-import b8.cg;
-import org.telegram.ui.ActionBar.d4;
-import org.webrtc.RendererCommon;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.ui.Components.w30;
+import org.webrtc.EglBase;
+import org.webrtc.EglRenderer;
+import org.webrtc.GlRectDrawer;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class q0 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ s0 a;
+public final class q0 implements VideoSink {
+    public final EglRenderer a;
+    public SurfaceTexture b;
+    public boolean c;
 
-    public q0(s0 s0Var) {
-        this.a = s0Var;
+    public q0(ti.q qVar) {
+        EglRenderer eglRenderer = new EglRenderer("pip-egl");
+        this.a = eglRenderer;
+        eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
+        qVar.setSurfaceTextureListener(new w30(this, 3));
+        SurfaceTexture surfaceTexture = qVar.getSurfaceTexture();
+        if (surfaceTexture == null || qVar.a == null) {
+            return;
+        }
+        int width = qVar.getWidth();
+        int height = qVar.getHeight();
+        if (this.c || this.b == surfaceTexture) {
+            return;
+        }
+        this.b = surfaceTexture;
+        if (width > 0 && height > 0) {
+            eglRenderer.setLayoutAspectRatio(width / height);
+        }
+        eglRenderer.createEglSurface(surfaceTexture);
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        s0 s0Var = this.a;
-        s0Var.y = true;
-        cg cgVar = s0Var.Z;
-        if (cgVar != null) {
-            cgVar.run();
-            s0Var.Z = null;
+    public final void a() {
+        if (this.c) {
+            return;
         }
-        org.telegram.messenger.g0.h3(new d4(this, 10));
+        this.c = true;
+        this.a.release();
+        this.b = null;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i3, int i10, int i11) {
-        int i12 = (i11 / 90) % 2;
-        s0 s0Var = this.a;
-        if (i12 == 0) {
-            s0Var.V = Float.valueOf(i10 / i3);
-        } else {
-            s0Var.V = Float.valueOf(i3 / i10);
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        if (this.c) {
+            return;
         }
-        org.telegram.messenger.g0.h3(new k2.u(this, i3, i10, 14));
+        this.a.onFrame(videoFrame);
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
+        org.webrtc.e0.a(this, videoSink);
     }
 }

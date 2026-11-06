@@ -1,97 +1,155 @@
 package x2;
 
-import b8.uc;
-import b8.zb;
-import d2.u0;
-import d2.v;
-import e3.i0;
-import g2.y;
-import i2.c0;
-import w2.c1;
+import a8.wa;
+import j$.util.Objects;
+import java.io.IOException;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.ui.Components.hr;
+import org.telegram.ui.yl;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class j extends a {
-    public final int F;
-    public final long G;
-    public final e H;
-    public long I;
-    public volatile boolean J;
-    public boolean K;
+public final class j implements k0, q2.k {
+    public final Object a;
+    public wa b;
+    public q2.j c;
+    public final /* synthetic */ l d;
 
-    public j(i2.h hVar, i2.n nVar, v vVar, int i3, Object obj, long j10, long j11, long j12, long j13, long j14, int i10, long j15, e eVar) {
-        super(hVar, nVar, vVar, i3, obj, j10, j11, j12, j13, j14);
-        this.F = i10;
-        this.G = j15;
-        this.H = eVar;
+    public j(l lVar, Object obj) {
+        this.d = lVar;
+        this.b = lVar.b(null);
+        this.c = new q2.j(lVar.d.c, 0, null);
+        this.a = obj;
     }
 
-    @Override // a3.m
-    public final void X1() {
-        this.J = true;
-    }
-
-    @Override // a3.m
-    public final void a() {
-        ua.b bVar = this.y;
-        bVar.getClass();
-        if (this.I == 0) {
-            long j10 = this.G;
-            for (c1 c1Var : (c1[]) bVar.c) {
-                if (c1Var.H != j10) {
-                    c1Var.H = j10;
-                    c1Var.B = true;
-                }
-            }
-            e eVar = this.H;
-            long j11 = this.w;
-            long j12 = j11 == -9223372036854775807L ? -9223372036854775807L : j11 - this.G;
-            long j13 = this.x;
-            eVar.b(bVar, j12, j13 != -9223372036854775807L ? j13 - this.G : -9223372036854775807L);
-        }
-        try {
-            i2.n b10 = this.b.b(this.I);
-            c0 c0Var = this.r;
-            e3.l lVar = new e3.l(c0Var, b10.e, c0Var.open(b10));
-            while (!this.J) {
-                try {
-                    int f10 = this.H.a.f(lVar, e.w);
-                    zb.p(f10 != 1);
-                    if (!(f10 == 0)) {
-                        break;
-                    }
-                } finally {
-                    this.I = lVar.d - this.b.e;
-                }
-            }
-            v vVar = this.d;
-            String str = vVar.r;
-            int i3 = vVar.R;
-            int i10 = vVar.S;
-            if (u0.k(str) && ((i3 > 1 || i10 > 1) && i3 != -1 && i10 != -1)) {
-                i0 c2 = bVar.c(4);
-                int i11 = i3 * i10;
-                long j14 = (this.n - this.h) / i11;
-                for (int i12 = 1; i12 < i11; i12++) {
-                    c2.e(0, new y());
-                    c2.d(i12 * j14, 0, 0, 0, null);
-                }
-            }
-            uc.a(this.r);
-            this.K = !this.J;
-        } catch (Throwable th2) {
-            uc.a(this.r);
-            throw th2;
+    @Override // x2.k0
+    public final void A(int i7, g0 g0Var, u uVar, c0 c0Var) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            waVar.getClass();
+            waVar.i(new i0(waVar, uVar, c10, 1));
         }
     }
 
-    @Override // x2.l
-    public final long b() {
-        return this.s + this.F;
+    @Override // x2.k0
+    public final void E(int i7, g0 g0Var, c0 c0Var) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            g0 g0Var2 = (g0) waVar.c;
+            g0Var2.getClass();
+            waVar.i(new hr(waVar, g0Var2, c10, 16));
+        }
     }
 
-    @Override // x2.l
-    public final boolean c() {
-        return this.K;
+    @Override // x2.k0
+    public final void G(int i7, g0 g0Var, u uVar, c0 c0Var) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            waVar.getClass();
+            waVar.i(new i0(waVar, uVar, c10, 0));
+        }
+    }
+
+    @Override // x2.k0
+    public final void I(int i7, g0 g0Var, u uVar, c0 c0Var, int i10) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            waVar.getClass();
+            waVar.i(new bg.f0(waVar, uVar, c10, i10, 11));
+        }
+    }
+
+    @Override // q2.k
+    public final void K(int i7, g0 g0Var, Exception exc) {
+        if (a(i7, g0Var)) {
+            this.c.d(exc);
+        }
+    }
+
+    @Override // q2.k
+    public final void N(int i7, g0 g0Var, int i10) {
+        if (a(i7, g0Var)) {
+            this.c.c(i10);
+        }
+    }
+
+    public final boolean a(int i7, g0 g0Var) {
+        g0 g0Var2;
+        Object obj = this.a;
+        l lVar = this.d;
+        if (g0Var != null) {
+            g0Var2 = lVar.u(obj, g0Var);
+            if (g0Var2 == null) {
+                return false;
+            }
+        } else {
+            g0Var2 = null;
+        }
+        int w10 = lVar.w(i7, obj);
+        wa waVar = this.b;
+        if (waVar.b != w10 || !Objects.equals((g0) waVar.c, g0Var2)) {
+            this.b = new wa((CopyOnWriteArrayList) lVar.c.d, w10, g0Var2);
+        }
+        q2.j jVar = this.c;
+        if (jVar.a == w10 && Objects.equals(jVar.b, g0Var2)) {
+            return true;
+        }
+        this.c = new q2.j(lVar.d.c, w10, g0Var2);
+        return true;
+    }
+
+    @Override // q2.k
+    public final void b(int i7, g0 g0Var, qb.a aVar) {
+        if (a(i7, g0Var)) {
+            this.c.a(aVar);
+        }
+    }
+
+    public final c0 c(c0 c0Var, g0 g0Var) {
+        long j3 = c0Var.f;
+        l lVar = this.d;
+        Object obj = this.a;
+        long v = lVar.v(obj, j3);
+        long j10 = c0Var.g;
+        long v10 = lVar.v(obj, j10);
+        return (v == j3 && v10 == j10) ? c0Var : new c0(c0Var.a, c0Var.b, c0Var.c, c0Var.d, c0Var.e, v, v10);
+    }
+
+    @Override // x2.k0
+    public final void d(int i7, g0 g0Var, c0 c0Var) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            waVar.getClass();
+            waVar.i(new org.telegram.ui.web.a0(25, waVar, c10));
+        }
+    }
+
+    @Override // x2.k0
+    public final void r(int i7, g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z9) {
+        if (a(i7, g0Var)) {
+            wa waVar = this.b;
+            c0 c10 = c(c0Var, g0Var);
+            waVar.getClass();
+            waVar.i(new yl(waVar, uVar, c10, iOException, z9));
+        }
+    }
+
+    @Override // q2.k
+    public final void w(int i7, g0 g0Var) {
+        if (a(i7, g0Var)) {
+            this.c.b();
+        }
+    }
+
+    @Override // q2.k
+    public final void z(int i7, g0 g0Var) {
+        if (a(i7, g0Var)) {
+            this.c.e();
+        }
     }
 }

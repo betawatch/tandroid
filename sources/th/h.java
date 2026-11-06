@@ -1,91 +1,33 @@
 package th;
 
-import ai.v;
-import java.util.ArrayList;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.t5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.r31;
-import r4.u;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements n10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class h extends sh.c {
+    public final TLRPC.Document b;
+    public final Object c;
 
-    public /* synthetic */ h(m mVar, int i3) {
-        this.a = i3;
-        this.b = mVar;
+    public h(Object obj, TLRPC.Document document) {
+        this.b = document;
+        this.c = obj;
+        ij.I2(document);
+        ImageReceiver imageReceiver = this.a;
+        boolean z9 = ij.v4(document) || ij.O4(document);
+        ij.L2(document, true);
+        imageReceiver.p0(hc.b(document), "38_38", t5.f(document, k6.Zc, 1.0f, null), document.size, z9 ? "webp" : null, obj, 0);
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        int i3 = this.a;
-        int i10 = 0;
-        m mVar = this.b;
-        switch (i3) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                arrayList.clear();
-                ArrayList arrayList2 = mVar.j;
-                int size = arrayList2.size();
-                while (i10 < size) {
-                    Object obj3 = arrayList2.get(i10);
-                    i10++;
-                    TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) obj3;
-                    long o10 = m5.o(messagePeerVote.peer);
-                    TLObject e22 = hp.s1(mVar.a).e2(o10);
-                    int i11 = messagePeerVote.date;
-                    v vVar = new v(mVar, o10, 5);
-                    int i12 = j.b;
-                    r31 K = r31.K(j.class);
-                    K.G = e22;
-                    K.B = o10;
-                    K.z = i11;
-                    K.D = vVar;
-                    arrayList.add(K);
-                }
-                if (!mVar.h) {
-                    if (!arrayList2.isEmpty()) {
-                        int i13 = l.b;
-                        arrayList.add(r31.K(l.class));
-                        break;
-                    } else {
-                        int i14 = k.b;
-                        arrayList.add(r31.K(k.class));
-                        arrayList.add(r31.K(k.class));
-                        arrayList.add(r31.K(k.class));
-                        arrayList.add(r31.K(k.class));
-                        arrayList.add(r31.K(k.class));
-                        break;
-                    }
-                }
-                break;
-            default:
-                TLRPC.TL_messages_votesList tL_messages_votesList = (TLRPC.TL_messages_votesList) obj;
-                int i15 = mVar.a;
-                mVar.i = false;
-                if (tL_messages_votesList == null) {
-                    mVar.g = null;
-                    mVar.h = true;
-                    break;
-                } else {
-                    hp.s1(i15).Y3(tL_messages_votesList.users, false);
-                    hp.s1(i15).S3(tL_messages_votesList.chats, false);
-                    String str = tL_messages_votesList.next_offset;
-                    mVar.g = str;
-                    mVar.h = str == null;
-                    mVar.j.addAll(tL_messages_votesList.votes);
-                    u uVar = mVar.e;
-                    if (uVar != null) {
-                        uVar.run();
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // sh.c
+    public final void c(Canvas canvas, int i7, int i10) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.y0(0.0f, 0.0f, i7, i10);
+        imageReceiver.h(canvas, null);
     }
 }

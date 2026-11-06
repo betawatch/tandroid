@@ -3,185 +3,185 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class f5 extends q0 {
-    public final e5 A0;
-    public boolean B0;
-    public m0 C0;
+public final class f5 extends r0 {
+    public boolean A0;
+    public n0 B0;
+    public boolean C0;
     public boolean D0;
-    public boolean E0;
+    public final e5 z0;
 
-    public f5(Context context, e5 e5Var, int i3, int i10, boolean z10, e6 e6Var) {
-        super(context, null, i3, i10, z10, e6Var);
+    public f5(Context context, e5 e5Var, int i7, int i10, boolean z9, f6 f6Var) {
+        super(context, null, i7, i10, z9, f6Var);
+        this.C0 = true;
         this.D0 = true;
-        this.E0 = true;
-        this.A0 = e5Var;
+        this.z0 = e5Var;
         setDelegate(new c5(e5Var));
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final void E() {
-        m0 m0Var = this.C0;
-        if (m0Var != null) {
-            m0Var.k(getSearchField());
+        n0 n0Var = this.B0;
+        if (n0Var != null) {
+            n0Var.k(getSearchField());
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final void F(boolean z10) {
-        this.A0.a.v(z10, true);
+    @Override // org.telegram.ui.ActionBar.r0
+    public final void F(boolean z9) {
+        this.z0.a.v(z9, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final q0 J(m0 m0Var) {
-        this.C0 = m0Var;
+    @Override // org.telegram.ui.ActionBar.r0
+    public final r0 J(n0 n0Var) {
+        this.B0 = n0Var;
         return this;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final q0 M() {
+    @Override // org.telegram.ui.ActionBar.r0
+    public final r0 M() {
         N();
         return this;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final q0 N() {
-        this.B0 = true;
-        this.A0.a.setSearchItem(this);
+    @Override // org.telegram.ui.ActionBar.r0
+    public final r0 N() {
+        this.A0 = true;
+        this.z0.a.setSearchItem(this);
         return this;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final void P(CharSequence charSequence, boolean z10) {
-        this.A0.a.setSearchFieldText(charSequence);
+    @Override // org.telegram.ui.ActionBar.r0
+    public final void P(CharSequence charSequence, boolean z9) {
+        this.z0.a.setSearchFieldText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public final boolean T(boolean z10) {
-        y4 y4Var = this.A0.a;
-        if (!y4Var.G) {
-            return y4Var.v(z10, true);
+    @Override // org.telegram.ui.ActionBar.r0
+    public final boolean T(boolean z9) {
+        y4 y4Var = this.z0.a;
+        if (!y4Var.F) {
+            return y4Var.v(z9, true);
         }
-        y4Var.j(z10);
+        y4Var.j(z9);
         return false;
     }
 
     public final void X() {
-        if (this.D0) {
+        if (this.C0) {
             return;
         }
         super.setVisibility(8);
     }
 
-    public final void Y(boolean z10, boolean z11) {
-        boolean z12 = this.D0;
-        e5 e5Var = this.A0;
-        if (z12 == z10) {
-            if (!z10 && !z11 && getVisibility() != 8) {
+    public final void Y(boolean z9, boolean z10) {
+        boolean z11 = this.C0;
+        e5 e5Var = this.z0;
+        if (z11 == z9) {
+            if (!z9 && !z10 && getVisibility() != 8) {
                 super.setVisibility(8);
                 e5Var.f = true;
                 e5Var.requestLayout();
                 return;
             } else {
-                if (!z10 || getVisibility() == 0) {
+                if (!z9 || getVisibility() == 0) {
                     return;
                 }
                 super.setVisibility(0);
                 return;
             }
         }
-        this.D0 = z10;
-        if (z10) {
-            setEnabled(this.E0);
+        this.C0 = z9;
+        if (z9) {
+            setEnabled(this.D0);
         } else {
-            this.E0 = isEnabled();
+            this.D0 = isEnabled();
             setEnabled(false);
         }
-        if (z10) {
+        if (z9) {
             super.setVisibility(0);
-        } else if (!z11 || !isLaidOut() || !e5Var.isLaidOut()) {
+        } else if (!z10 || !isLaidOut() || !e5Var.isLaidOut()) {
             super.setVisibility(8);
         }
-        if (!z11 || !e5Var.a.t()) {
+        if (!z10 || !e5Var.a.t()) {
             e5Var.f = true;
         }
         e5Var.requestLayout();
     }
 
     public e5 getParentMenu() {
-        return this.A0;
+        return this.z0;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public EditTextBoldCursor getSearchField() {
-        return this.A0.a.getSearchField();
+        return this.z0.a.getSearchField();
     }
 
-    public m0 getSearchListener() {
-        return this.C0;
+    public n0 getSearchListener() {
+        return this.B0;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public i5 getSubMenuOverlay() {
-        return this.A0.a.getMenuOverlay();
+        return this.z0.a.getMenuOverlay();
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public s4 getSubMenuOverlayHost() {
-        return this.A0.a;
+        return this.z0.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final boolean i() {
-        e5 e5Var = this.A0;
+        e5 e5Var = this.z0;
         return !e5Var.b || e5Var.a.s();
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final void n() {
-        this.A0.a.setSearchFieldText("");
+        this.z0.a.setSearchFieldText("");
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public void setSearchFieldCaption(CharSequence charSequence) {
-        this.A0.a.setSearchFieldCaption(charSequence);
+        this.z0.a.setSearchFieldCaption(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public void setSearchFieldHint(CharSequence charSequence) {
-        this.A0.a.setSearchFieldHint(charSequence);
+        this.z0.a.setSearchFieldHint(charSequence);
         setContentDescription(charSequence);
     }
 
     @Override // android.view.View
-    public void setVisibility(int i3) {
-        e5 e5Var = this.A0;
-        if (e5Var == null || i3 == 4) {
-            super.setVisibility(i3);
+    public void setVisibility(int i7) {
+        e5 e5Var = this.z0;
+        if (e5Var == null || i7 == 4) {
+            super.setVisibility(i7);
             return;
         }
-        boolean z10 = false;
-        boolean z11 = i3 == 0;
+        boolean z9 = false;
+        boolean z10 = i7 == 0;
         y4 y4Var = e5Var.a;
         if (e5Var.isLaidOut() && y4Var.t() && (!e5Var.b || (y4Var.s() && y4Var.getActionModeFactor() > 0.0f))) {
-            z10 = true;
+            z9 = true;
         }
-        Y(z11, z10);
+        Y(z10, z9);
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final boolean u() {
-        return this.B0;
+        return this.A0;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final boolean v() {
-        return this.A0.a.G;
+        return this.z0.a.F;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public final boolean w() {
-        return this.A0.a.G;
+        return this.z0.a.F;
     }
 }

@@ -48,8 +48,8 @@ public final class r implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final boolean hasCharacteristics(int i3) {
-        return this.a.hasCharacteristics(i3);
+    public final boolean hasCharacteristics(int i7) {
+        return this.a.hasCharacteristics(i7);
     }
 
     @Override // j$.util.Spliterator

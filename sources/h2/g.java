@@ -1,13 +1,1615 @@
 package h2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class g {
-    public final int a;
-    public final int b;
+import android.util.Pair;
+import e2.s0;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.messenger.qs;
+import org.telegram.tgnet.TLObject;
 
-    public g(int i3, int i10) {
-        this.a = i3;
-        this.b = i10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class g {
+    public static final byte[] a = {0, 0, 0, 1};
+    public static final String[] b = {"", "A", "B", "C"};
+    public static final Pattern c = Pattern.compile("^\\D?(\\d+)$");
+
+    public static String a(int i7, int i10, int i11, int i12, boolean z9, int[] iArr) {
+        Object[] objArr = {b[i7], Integer.valueOf(i10), Integer.valueOf(i11), Character.valueOf(z9 ? 'H' : 'L'), Integer.valueOf(i12)};
+        String str = m0.a;
+        StringBuilder sb2 = new StringBuilder(String.format(Locale.US, "hvc1.%s%d.%X.%c%d", objArr));
+        int length = iArr.length;
+        while (length > 0 && iArr[length - 1] == 0) {
+            length--;
+        }
+        for (int i13 = 0; i13 < length; i13++) {
+            sb2.append(String.format(".%02X", Integer.valueOf(iArr[i13])));
+        }
+        return sb2.toString();
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04b8  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x056a  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0570  */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x0606 A[Catch: NumberFormatException -> 0x0610, TRY_LEAVE, TryCatch #7 {NumberFormatException -> 0x0610, blocks: (B:343:0x05b9, B:345:0x05cd, B:356:0x05eb, B:359:0x0606), top: B:342:0x05b9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:432:0x0723  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x0729  */
+    /* JADX WARN: Removed duplicated region for block: B:582:0x0933  */
+    /* JADX WARN: Removed duplicated region for block: B:584:0x0939  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Pair b(e2.u uVar) {
+        char c10;
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int parseInt;
+        int parseInt2;
+        int i14;
+        int i15;
+        int i16;
+        char c11;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        char c12;
+        char c13;
+        Integer num;
+        char c14;
+        Integer num2 = 1024;
+        Integer valueOf = Integer.valueOf(TLObject.FLAG_12);
+        String str = uVar.k;
+        e2.m mVar = uVar.I;
+        String str2 = uVar.k;
+        if (str == null) {
+            return null;
+        }
+        String[] split = str.split("\\.");
+        if (!"video/dolby-vision".equals(uVar.s)) {
+            String str3 = split[0];
+            str3.getClass();
+            switch (str3.hashCode()) {
+                case 2986313:
+                    if (str3.equals("ac-4")) {
+                        c10 = 0;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3001066:
+                    if (str3.equals("apv1")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3004662:
+                    if (str3.equals("av01")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3006243:
+                    if (str3.equals("avc1")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3006244:
+                    if (str3.equals("avc2")) {
+                        c10 = 4;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3199032:
+                    if (str3.equals("hev1")) {
+                        c10 = 5;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3214780:
+                    if (str3.equals("hvc1")) {
+                        c10 = 6;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3224753:
+                    if (str3.equals("iamf")) {
+                        c10 = 7;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3356560:
+                    if (str3.equals("mp4a")) {
+                        c10 = '\b';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3475740:
+                    if (str3.equals("s263")) {
+                        c10 = '\t';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3624515:
+                    if (str3.equals("vp09")) {
+                        c10 = '\n';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3631854:
+                    if (str3.equals("vvc1")) {
+                        c10 = 11;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3632040:
+                    if (str3.equals("vvi1")) {
+                        c10 = '\f';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
+            }
+            int i22 = TLObject.FLAG_13;
+            switch (c10) {
+                case 0:
+                    if (split.length != 4) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt3 = Integer.parseInt(split[1]);
+                            int parseInt4 = Integer.parseInt(split[2]);
+                            int parseInt5 = Integer.parseInt(split[3]);
+                            if (parseInt3 == 0) {
+                                if (parseInt4 == 0) {
+                                    i7 = qs.g4;
+                                }
+                                i7 = -1;
+                            } else if (parseInt3 != 1) {
+                                if (parseInt3 == 2) {
+                                    if (parseInt4 == 1) {
+                                        i7 = 1026;
+                                    } else if (parseInt4 == 2) {
+                                        i7 = 1028;
+                                    }
+                                }
+                                i7 = -1;
+                            } else if (parseInt4 == 0) {
+                                i7 = 513;
+                            } else {
+                                if (parseInt4 == 1) {
+                                    i7 = 514;
+                                }
+                                i7 = -1;
+                            }
+                            if (i7 == -1) {
+                                a.l("CodecSpecificDataUtil", "Unknown AC-4 profile: " + parseInt3 + "." + parseInt4);
+                                break;
+                            } else {
+                                if (parseInt5 == 0) {
+                                    i10 = 1;
+                                } else if (parseInt5 == 1) {
+                                    i10 = 2;
+                                } else if (parseInt5 == 2) {
+                                    i10 = 4;
+                                } else if (parseInt5 == 3) {
+                                    i10 = 8;
+                                } else if (parseInt5 != 4) {
+                                    i11 = -1;
+                                    i10 = -1;
+                                    if (i10 == i11) {
+                                        break;
+                                    } else {
+                                        com.google.android.recaptcha.internal.a.o(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
+                                        break;
+                                    }
+                                } else {
+                                    i10 = 16;
+                                }
+                                i11 = -1;
+                                if (i10 == i11) {
+                                }
+                            }
+                        } catch (NumberFormatException unused) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                case 1:
+                    if (split.length < 4) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt6 = Integer.parseInt(split[1].substring(4));
+                            int parseInt7 = Integer.parseInt(split[2].substring(4));
+                            int parseInt8 = Integer.parseInt(split[3].substring(4));
+                            if (parseInt6 != 33) {
+                                if (parseInt6 != 44) {
+                                    com.google.android.recaptcha.internal.a.o(parseInt6, "Ignoring invalid APV profile: ", "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            } else {
+                                i22 = 1;
+                            }
+                            int i23 = (parseInt7 / 30) * 2;
+                            if (parseInt7 % 30 == 0) {
+                                i23--;
+                            }
+                            break;
+                        } catch (NumberFormatException e10) {
+                            a.m("CodecSpecificDataUtil", "Ignoring malformed APV codec string: " + str2, e10);
+                            return null;
+                        }
+                    }
+                case 2:
+                    if (split.length < 4) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt9 = Integer.parseInt(split[1]);
+                            int parseInt10 = Integer.parseInt(split[2].substring(0, 2));
+                            int parseInt11 = Integer.parseInt(split[3]);
+                            if (parseInt9 == 0) {
+                                int i24 = 8;
+                                if (parseInt11 != 8 && parseInt11 != 10) {
+                                    com.google.android.recaptcha.internal.a.o(parseInt11, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
+                                    break;
+                                } else {
+                                    int i25 = parseInt11 == 8 ? 1 : (mVar == null || !(mVar.d != null || (i12 = mVar.c) == 7 || i12 == 6)) ? 2 : TLObject.FLAG_12;
+                                    switch (parseInt10) {
+                                        case 0:
+                                            i24 = 1;
+                                            break;
+                                        case 1:
+                                            i24 = 2;
+                                            break;
+                                        case 2:
+                                            i24 = 4;
+                                            break;
+                                        case 3:
+                                            break;
+                                        case 4:
+                                            i24 = 16;
+                                            break;
+                                        case 5:
+                                            i24 = 32;
+                                            break;
+                                        case 6:
+                                            i24 = 64;
+                                            break;
+                                        case 7:
+                                            i24 = 128;
+                                            break;
+                                        case 8:
+                                            i24 = 256;
+                                            break;
+                                        case 9:
+                                            i24 = 512;
+                                            break;
+                                        case 10:
+                                            i24 = 1024;
+                                            break;
+                                        case 11:
+                                            i24 = 2048;
+                                            break;
+                                        case 12:
+                                            i24 = TLObject.FLAG_12;
+                                            break;
+                                        case 13:
+                                            i24 = 8192;
+                                            break;
+                                        case 14:
+                                            i24 = 16384;
+                                            break;
+                                        case 15:
+                                            i24 = 32768;
+                                            break;
+                                        case 16:
+                                            i24 = 65536;
+                                            break;
+                                        case 17:
+                                            i24 = 131072;
+                                            break;
+                                        case 18:
+                                            i24 = 262144;
+                                            break;
+                                        case 19:
+                                            i24 = TLObject.FLAG_19;
+                                            break;
+                                        case 20:
+                                            i24 = TLObject.FLAG_20;
+                                            break;
+                                        case 21:
+                                            i24 = TLObject.FLAG_21;
+                                            break;
+                                        case 22:
+                                            i24 = TLObject.FLAG_22;
+                                            break;
+                                        case 23:
+                                            i24 = TLObject.FLAG_23;
+                                            break;
+                                        default:
+                                            i24 = -1;
+                                            break;
+                                    }
+                                    if (i24 != -1) {
+                                        break;
+                                    } else {
+                                        com.google.android.recaptcha.internal.a.o(parseInt10, "Unknown AV1 level: ", "CodecSpecificDataUtil");
+                                        break;
+                                    }
+                                }
+                            } else {
+                                com.google.android.recaptcha.internal.a.o(parseInt9, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
+                                break;
+                            }
+                        } catch (NumberFormatException unused2) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                    break;
+                case 3:
+                case 4:
+                    if (split.length < 2) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            if (split[1].length() != 6) {
+                                i13 = 16;
+                                if (split.length < 3) {
+                                    a.l("CodecSpecificDataUtil", "Ignoring malformed AVC codec string: " + str2);
+                                    break;
+                                } else {
+                                    parseInt = Integer.parseInt(split[1]);
+                                    parseInt2 = Integer.parseInt(split[2]);
+                                }
+                            } else {
+                                i13 = 16;
+                                parseInt = Integer.parseInt(split[1].substring(0, 2), 16);
+                                parseInt2 = Integer.parseInt(split[1].substring(4), 16);
+                            }
+                            if (parseInt != 66) {
+                                if (parseInt == 77) {
+                                    i15 = -1;
+                                    i14 = 2;
+                                } else if (parseInt == 88) {
+                                    i15 = -1;
+                                    i14 = 4;
+                                } else if (parseInt == 100) {
+                                    i15 = -1;
+                                    i14 = 8;
+                                } else if (parseInt == 110) {
+                                    i14 = i13;
+                                } else if (parseInt == 122) {
+                                    i15 = -1;
+                                    i14 = 32;
+                                } else if (parseInt != 244) {
+                                    i15 = -1;
+                                    i14 = -1;
+                                } else {
+                                    i15 = -1;
+                                    i14 = 64;
+                                }
+                                if (i14 == i15) {
+                                    switch (parseInt2) {
+                                        case 10:
+                                            i13 = 1;
+                                            i16 = -1;
+                                            break;
+                                        case 11:
+                                            i16 = -1;
+                                            i13 = 4;
+                                            break;
+                                        case 12:
+                                            i16 = -1;
+                                            i13 = 8;
+                                            break;
+                                        case 13:
+                                            i16 = -1;
+                                            break;
+                                        default:
+                                            switch (parseInt2) {
+                                                case 20:
+                                                    i16 = -1;
+                                                    i13 = 32;
+                                                    break;
+                                                case 21:
+                                                    i16 = -1;
+                                                    i13 = 64;
+                                                    break;
+                                                case 22:
+                                                    i16 = -1;
+                                                    i13 = 128;
+                                                    break;
+                                                default:
+                                                    switch (parseInt2) {
+                                                        case qs.T /* 30 */:
+                                                            i13 = 256;
+                                                            i16 = -1;
+                                                            break;
+                                                        case qs.U /* 31 */:
+                                                            i16 = -1;
+                                                            i13 = 512;
+                                                            break;
+                                                        case 32:
+                                                            i16 = -1;
+                                                            i13 = 1024;
+                                                            break;
+                                                        default:
+                                                            switch (parseInt2) {
+                                                                case 40:
+                                                                    i16 = -1;
+                                                                    i13 = 2048;
+                                                                    break;
+                                                                case 41:
+                                                                    i16 = -1;
+                                                                    i13 = TLObject.FLAG_12;
+                                                                    break;
+                                                                case 42:
+                                                                    i13 = 8192;
+                                                                    i16 = -1;
+                                                                    break;
+                                                                default:
+                                                                    switch (parseInt2) {
+                                                                        case 50:
+                                                                            i13 = 16384;
+                                                                            i16 = -1;
+                                                                            break;
+                                                                        case qs.o0 /* 51 */:
+                                                                            i13 = 32768;
+                                                                            i16 = -1;
+                                                                            break;
+                                                                        case qs.p0 /* 52 */:
+                                                                            i13 = 65536;
+                                                                            i16 = -1;
+                                                                            break;
+                                                                        default:
+                                                                            i16 = -1;
+                                                                            i13 = -1;
+                                                                            break;
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                    }
+                                    if (i13 != i16) {
+                                        break;
+                                    } else {
+                                        com.google.android.recaptcha.internal.a.o(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
+                                        break;
+                                    }
+                                } else {
+                                    com.google.android.recaptcha.internal.a.o(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            } else {
+                                i14 = 1;
+                            }
+                            i15 = -1;
+                            if (i14 == i15) {
+                            }
+                        } catch (NumberFormatException unused3) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                case 7:
+                    if (split.length < 4) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt12 = 1 << (Integer.parseInt(split[1]) + 16);
+                            String str4 = split[3];
+                            str4.getClass();
+                            switch (str4.hashCode()) {
+                                case 2464863:
+                                    if (str4.equals("Opus")) {
+                                        c11 = 0;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3114792:
+                                    if (str4.equals("fLaC")) {
+                                        c11 = 1;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3238865:
+                                    if (str4.equals("ipcm")) {
+                                        c11 = 2;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3356560:
+                                    if (str4.equals("mp4a")) {
+                                        c11 = 3;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                default:
+                                    c11 = 65535;
+                                    break;
+                            }
+                            switch (c11) {
+                                case 0:
+                                    i17 = 1;
+                                    break;
+                                case 1:
+                                    i17 = 4;
+                                    break;
+                                case 2:
+                                    i17 = 8;
+                                    break;
+                                case 3:
+                                    i17 = 2;
+                                    break;
+                                default:
+                                    a.l("CodecSpecificDataUtil", "Ignoring unknown codec identifier for IAMF auxiliary profile: " + split[3]);
+                                    break;
+                            }
+                            break;
+                        } catch (NumberFormatException e11) {
+                            a.m("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e11);
+                            return null;
+                        }
+                    }
+                case '\b':
+                    if (split.length == 3) {
+                        try {
+                            if ("audio/mp4a-latm".equals(s0.e(Integer.parseInt(split[1], 16)))) {
+                                int parseInt13 = Integer.parseInt(split[2]);
+                                int i26 = 17;
+                                if (parseInt13 != 17) {
+                                    if (parseInt13 != 20) {
+                                        i26 = 23;
+                                        if (parseInt13 != 23) {
+                                            i26 = 29;
+                                            if (parseInt13 != 29) {
+                                                i26 = 39;
+                                                if (parseInt13 != 39) {
+                                                    i26 = 42;
+                                                    if (parseInt13 != 42) {
+                                                        switch (parseInt13) {
+                                                            case 1:
+                                                                i26 = 1;
+                                                                break;
+                                                            case 2:
+                                                                i18 = -1;
+                                                                i26 = 2;
+                                                                break;
+                                                            case 3:
+                                                                i26 = 3;
+                                                                break;
+                                                            case 4:
+                                                                i18 = -1;
+                                                                i26 = 4;
+                                                                break;
+                                                            case 5:
+                                                                i26 = 5;
+                                                                break;
+                                                            case 6:
+                                                                i18 = -1;
+                                                                i26 = 6;
+                                                                break;
+                                                            default:
+                                                                i18 = -1;
+                                                                i26 = -1;
+                                                                break;
+                                                        }
+                                                        if (i26 != i18) {
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        i26 = 20;
+                                    }
+                                }
+                                i18 = -1;
+                                if (i26 != i18) {
+                                }
+                            }
+                        } catch (NumberFormatException unused4) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                            break;
+                        }
+                    } else {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    }
+                    break;
+                case '\t':
+                    Pair pair = new Pair(1, 1);
+                    if (split.length < 3) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            break;
+                        } catch (NumberFormatException unused5) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                            return pair;
+                        }
+                    }
+                case '\n':
+                    if (split.length < 3) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt14 = Integer.parseInt(split[1]);
+                            int parseInt15 = Integer.parseInt(split[2]);
+                            int i27 = parseInt14 != 0 ? parseInt14 != 1 ? parseInt14 != 2 ? parseInt14 != 3 ? -1 : 8 : 4 : 2 : 1;
+                            if (i27 == -1) {
+                                com.google.android.recaptcha.internal.a.o(parseInt14, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
+                                break;
+                            } else {
+                                if (parseInt15 != 10) {
+                                    if (parseInt15 == 11) {
+                                        i20 = -1;
+                                        i19 = 2;
+                                    } else if (parseInt15 == 20) {
+                                        i20 = -1;
+                                        i19 = 4;
+                                    } else if (parseInt15 == 21) {
+                                        i20 = -1;
+                                        i19 = 8;
+                                    } else if (parseInt15 == 30) {
+                                        i20 = -1;
+                                        i19 = 16;
+                                    } else if (parseInt15 == 31) {
+                                        i20 = -1;
+                                        i19 = 32;
+                                    } else if (parseInt15 == 40) {
+                                        i20 = -1;
+                                        i19 = 64;
+                                    } else if (parseInt15 == 41) {
+                                        i20 = -1;
+                                        i19 = 128;
+                                    } else if (parseInt15 == 50) {
+                                        i19 = 256;
+                                    } else if (parseInt15 != 51) {
+                                        switch (parseInt15) {
+                                            case qs.x0 /* 60 */:
+                                                i20 = -1;
+                                                i19 = 2048;
+                                                break;
+                                            case qs.y0 /* 61 */:
+                                                i20 = -1;
+                                                i19 = TLObject.FLAG_12;
+                                                break;
+                                            case qs.z0 /* 62 */:
+                                                i19 = 8192;
+                                                break;
+                                            default:
+                                                i20 = -1;
+                                                i19 = -1;
+                                                break;
+                                        }
+                                    } else {
+                                        i20 = -1;
+                                        i19 = 512;
+                                    }
+                                    if (i19 == i20) {
+                                        break;
+                                    } else {
+                                        com.google.android.recaptcha.internal.a.o(parseInt15, "Unknown VP9 level: ", "CodecSpecificDataUtil");
+                                        break;
+                                    }
+                                } else {
+                                    i19 = 1;
+                                }
+                                i20 = -1;
+                                if (i19 == i20) {
+                                }
+                            }
+                        } catch (NumberFormatException unused6) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                case 11:
+                case '\f':
+                    if (split.length < 3) {
+                        com.google.android.recaptcha.internal.a.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt16 = Integer.parseInt(split[1]);
+                            if (parseInt16 != 1) {
+                                if (parseInt16 != 65) {
+                                    a.l("CodecSpecificDataUtil", "Unknown VVC profile IDC: " + split[1]);
+                                    break;
+                                } else {
+                                    i21 = 4;
+                                }
+                            } else {
+                                i21 = (mVar == null || mVar.c != 6) ? (mVar == null || mVar.e != 8) ? 2 : 1 : TLObject.FLAG_12;
+                            }
+                            String str5 = split[2];
+                            if (str5 != null) {
+                                switch (str5.hashCode()) {
+                                    case 70918:
+                                        if (str5.equals("H64")) {
+                                            c12 = 0;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 70921:
+                                        if (str5.equals("H67")) {
+                                            c12 = 1;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 70976:
+                                        if (str5.equals("H80")) {
+                                            c12 = 2;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 70979:
+                                        if (str5.equals("H83")) {
+                                            c12 = 3;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 70982:
+                                        if (str5.equals("H86")) {
+                                            c12 = 4;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 71013:
+                                        if (str5.equals("H96")) {
+                                            c12 = 5;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74609:
+                                        if (str5.equals("L16")) {
+                                            c12 = 6;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74667:
+                                        if (str5.equals("L32")) {
+                                            c12 = 7;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74670:
+                                        if (str5.equals("L35")) {
+                                            c12 = '\b';
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74704:
+                                        if (str5.equals("L48")) {
+                                            c12 = '\t';
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74728:
+                                        if (str5.equals("L51")) {
+                                            c12 = '\n';
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74762:
+                                        if (str5.equals("L64")) {
+                                            c12 = 11;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74765:
+                                        if (str5.equals("L67")) {
+                                            c12 = '\f';
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74820:
+                                        if (str5.equals("L80")) {
+                                            c12 = '\r';
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74823:
+                                        if (str5.equals("L83")) {
+                                            c12 = 14;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74826:
+                                        if (str5.equals("L86")) {
+                                            c12 = 15;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 74857:
+                                        if (str5.equals("L96")) {
+                                            c12 = 16;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2193610:
+                                        if (str5.equals("H112")) {
+                                            c12 = 17;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2193647:
+                                        if (str5.equals("H128")) {
+                                            c12 = 18;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2193705:
+                                        if (str5.equals("H144")) {
+                                            c12 = 19;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2312774:
+                                        if (str5.equals("L112")) {
+                                            c12 = 20;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2312811:
+                                        if (str5.equals("L128")) {
+                                            c12 = 21;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    case 2312869:
+                                        if (str5.equals("L144")) {
+                                            c12 = 22;
+                                            break;
+                                        }
+                                        c12 = 65535;
+                                        break;
+                                    default:
+                                        c12 = 65535;
+                                        break;
+                                }
+                                switch (c12) {
+                                    case 0:
+                                        num2 = 64;
+                                        break;
+                                    case 1:
+                                        num2 = 256;
+                                        break;
+                                    case 3:
+                                        num2 = valueOf;
+                                        break;
+                                    case 4:
+                                        num2 = Integer.valueOf(TLObject.FLAG_14);
+                                        break;
+                                    case 5:
+                                        num2 = 65536;
+                                        break;
+                                    case 6:
+                                        num2 = 1;
+                                        break;
+                                    case 7:
+                                        num2 = 2;
+                                        break;
+                                    case '\b':
+                                        num2 = 4;
+                                        break;
+                                    case '\t':
+                                        num2 = 8;
+                                        break;
+                                    case '\n':
+                                        num2 = 16;
+                                        break;
+                                    case 11:
+                                        num2 = 32;
+                                        break;
+                                    case '\f':
+                                        num2 = 128;
+                                        break;
+                                    case '\r':
+                                        num2 = 512;
+                                        break;
+                                    case 14:
+                                        num2 = 2048;
+                                        break;
+                                    case 15:
+                                        num2 = Integer.valueOf(TLObject.FLAG_13);
+                                        break;
+                                    case 16:
+                                        num2 = 32768;
+                                        break;
+                                    case 17:
+                                        num2 = 262144;
+                                        break;
+                                    case 18:
+                                        num2 = Integer.valueOf(TLObject.FLAG_20);
+                                        break;
+                                    case 19:
+                                        num2 = Integer.valueOf(TLObject.FLAG_22);
+                                        break;
+                                    case 20:
+                                        num2 = 131072;
+                                        break;
+                                    case 21:
+                                        num2 = Integer.valueOf(TLObject.FLAG_19);
+                                        break;
+                                    case 22:
+                                        num2 = Integer.valueOf(TLObject.FLAG_21);
+                                        break;
+                                }
+                                if (num2 == null) {
+                                    break;
+                                } else {
+                                    com.google.android.recaptcha.internal.a.r("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            }
+                            num2 = null;
+                            if (num2 == null) {
+                            }
+                        } catch (NumberFormatException unused7) {
+                            com.google.android.recaptcha.internal.a.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                    break;
+            }
+            return null;
+        }
+        if (split.length < 3) {
+            com.google.android.recaptcha.internal.a.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        Matcher matcher = c.matcher(split[1]);
+        if (!matcher.matches()) {
+            com.google.android.recaptcha.internal.a.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        String group = matcher.group(1);
+        if (group != null) {
+            switch (group.hashCode()) {
+                case 1536:
+                    if (group.equals("00")) {
+                        c13 = 0;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1537:
+                    if (group.equals("01")) {
+                        c13 = 1;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1538:
+                    if (group.equals("02")) {
+                        c13 = 2;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1539:
+                    if (group.equals("03")) {
+                        c13 = 3;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1540:
+                    if (group.equals("04")) {
+                        c13 = 4;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1541:
+                    if (group.equals("05")) {
+                        c13 = 5;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1542:
+                    if (group.equals("06")) {
+                        c13 = 6;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1543:
+                    if (group.equals("07")) {
+                        c13 = 7;
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1544:
+                    if (group.equals("08")) {
+                        c13 = '\b';
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1545:
+                    if (group.equals("09")) {
+                        c13 = '\t';
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                case 1567:
+                    if (group.equals("10")) {
+                        c13 = '\n';
+                        break;
+                    }
+                    c13 = 65535;
+                    break;
+                default:
+                    c13 = 65535;
+                    break;
+            }
+            switch (c13) {
+                case 0:
+                    num = 1;
+                    break;
+                case 1:
+                    num = 2;
+                    break;
+                case 2:
+                    num = 4;
+                    break;
+                case 3:
+                    num = 8;
+                    break;
+                case 4:
+                    num = 16;
+                    break;
+                case 5:
+                    num = 32;
+                    break;
+                case 6:
+                    num = 64;
+                    break;
+                case 7:
+                    num = 128;
+                    break;
+                case '\b':
+                    num = 256;
+                    break;
+                case '\t':
+                    num = 512;
+                    break;
+                case '\n':
+                    num = num2;
+                    break;
+            }
+            if (num != null) {
+                com.google.android.recaptcha.internal.a.r("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
+                return null;
+            }
+            String str6 = split[2];
+            if (str6 != null) {
+                switch (str6.hashCode()) {
+                    case 1537:
+                        if (str6.equals("01")) {
+                            c14 = 0;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1538:
+                        if (str6.equals("02")) {
+                            c14 = 1;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1539:
+                        if (str6.equals("03")) {
+                            c14 = 2;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1540:
+                        if (str6.equals("04")) {
+                            c14 = 3;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1541:
+                        if (str6.equals("05")) {
+                            c14 = 4;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1542:
+                        if (str6.equals("06")) {
+                            c14 = 5;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1543:
+                        if (str6.equals("07")) {
+                            c14 = 6;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1544:
+                        if (str6.equals("08")) {
+                            c14 = 7;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1545:
+                        if (str6.equals("09")) {
+                            c14 = '\b';
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1567:
+                        if (str6.equals("10")) {
+                            c14 = '\t';
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1568:
+                        if (str6.equals("11")) {
+                            c14 = '\n';
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1569:
+                        if (str6.equals("12")) {
+                            c14 = 11;
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    case 1570:
+                        if (str6.equals("13")) {
+                            c14 = '\f';
+                            break;
+                        }
+                        c14 = 65535;
+                        break;
+                    default:
+                        c14 = 65535;
+                        break;
+                }
+                switch (c14) {
+                    case 0:
+                        num2 = 1;
+                        break;
+                    case 1:
+                        num2 = 2;
+                        break;
+                    case 2:
+                        num2 = 4;
+                        break;
+                    case 3:
+                        num2 = 8;
+                        break;
+                    case 4:
+                        num2 = 16;
+                        break;
+                    case 5:
+                        num2 = 32;
+                        break;
+                    case 6:
+                        num2 = 64;
+                        break;
+                    case 7:
+                        num2 = 128;
+                        break;
+                    case '\b':
+                        num2 = 256;
+                        break;
+                    case '\t':
+                        num2 = 512;
+                        break;
+                    case 11:
+                        num2 = 2048;
+                        break;
+                    case '\f':
+                        num2 = valueOf;
+                        break;
+                }
+                if (num2 == null) {
+                    return new Pair(num, num2);
+                }
+                com.google.android.recaptcha.internal.a.r("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
+                return null;
+            }
+            num2 = null;
+            if (num2 == null) {
+            }
+        }
+        num = null;
+        if (num != null) {
+        }
+        return null;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0167, code lost:
+    
+        if (r12.equals("L60") == false) goto L28;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x026d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0273  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Pair c(String str, String[] strArr, e2.m mVar) {
+        int i7;
+        Integer num;
+        if (strArr.length < 4) {
+            com.google.android.recaptcha.internal.a.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            return null;
+        }
+        Matcher matcher = c.matcher(strArr[1]);
+        if (!matcher.matches()) {
+            com.google.android.recaptcha.internal.a.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            return null;
+        }
+        String group = matcher.group(1);
+        char c10 = 6;
+        if ("1".equals(group)) {
+            i7 = 1;
+        } else if ("2".equals(group)) {
+            i7 = (mVar == null || mVar.c != 6) ? 2 : 4096;
+        } else {
+            if (!"6".equals(group)) {
+                com.google.android.recaptcha.internal.a.r("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
+                return null;
+            }
+            i7 = 6;
+        }
+        String str2 = strArr[3];
+        if (str2 != null) {
+            switch (str2.hashCode()) {
+                case 70821:
+                    if (str2.equals("H30")) {
+                        c10 = 0;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 70914:
+                    if (str2.equals("H60")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 70917:
+                    if (str2.equals("H63")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 71007:
+                    if (str2.equals("H90")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 71010:
+                    if (str2.equals("H93")) {
+                        c10 = 4;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74665:
+                    if (str2.equals("L30")) {
+                        c10 = 5;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74758:
+                    break;
+                case 74761:
+                    if (str2.equals("L63")) {
+                        c10 = 7;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74851:
+                    if (str2.equals("L90")) {
+                        c10 = '\b';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74854:
+                    if (str2.equals("L93")) {
+                        c10 = '\t';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193639:
+                    if (str2.equals("H120")) {
+                        c10 = '\n';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193642:
+                    if (str2.equals("H123")) {
+                        c10 = 11;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193732:
+                    if (str2.equals("H150")) {
+                        c10 = '\f';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193735:
+                    if (str2.equals("H153")) {
+                        c10 = '\r';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193738:
+                    if (str2.equals("H156")) {
+                        c10 = 14;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193825:
+                    if (str2.equals("H180")) {
+                        c10 = 15;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193828:
+                    if (str2.equals("H183")) {
+                        c10 = 16;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193831:
+                    if (str2.equals("H186")) {
+                        c10 = 17;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312803:
+                    if (str2.equals("L120")) {
+                        c10 = 18;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312806:
+                    if (str2.equals("L123")) {
+                        c10 = 19;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312896:
+                    if (str2.equals("L150")) {
+                        c10 = 20;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312899:
+                    if (str2.equals("L153")) {
+                        c10 = 21;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312902:
+                    if (str2.equals("L156")) {
+                        c10 = 22;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312989:
+                    if (str2.equals("L180")) {
+                        c10 = 23;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312992:
+                    if (str2.equals("L183")) {
+                        c10 = 24;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312995:
+                    if (str2.equals("L186")) {
+                        c10 = 25;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
+            }
+            switch (c10) {
+                case 0:
+                    num = 2;
+                    break;
+                case 1:
+                    num = 8;
+                    break;
+                case 2:
+                    num = 32;
+                    break;
+                case 3:
+                    num = 128;
+                    break;
+                case 4:
+                    num = 512;
+                    break;
+                case 5:
+                    num = 1;
+                    break;
+                case 6:
+                    num = 4;
+                    break;
+                case 7:
+                    num = 16;
+                    break;
+                case '\b':
+                    num = 64;
+                    break;
+                case '\t':
+                    num = 256;
+                    break;
+                case '\n':
+                    num = 2048;
+                    break;
+                case 11:
+                    num = Integer.valueOf(TLObject.FLAG_13);
+                    break;
+                case '\f':
+                    num = 32768;
+                    break;
+                case '\r':
+                    num = 131072;
+                    break;
+                case 14:
+                    num = Integer.valueOf(TLObject.FLAG_19);
+                    break;
+                case 15:
+                    num = Integer.valueOf(TLObject.FLAG_21);
+                    break;
+                case 16:
+                    num = Integer.valueOf(TLObject.FLAG_23);
+                    break;
+                case 17:
+                    num = 33554432;
+                    break;
+                case 18:
+                    num = 1024;
+                    break;
+                case 19:
+                    num = Integer.valueOf(TLObject.FLAG_12);
+                    break;
+                case 20:
+                    num = Integer.valueOf(TLObject.FLAG_14);
+                    break;
+                case 21:
+                    num = 65536;
+                    break;
+                case 22:
+                    num = 262144;
+                    break;
+                case 23:
+                    num = Integer.valueOf(TLObject.FLAG_20);
+                    break;
+                case 24:
+                    num = Integer.valueOf(TLObject.FLAG_22);
+                    break;
+                case 25:
+                    num = 16777216;
+                    break;
+            }
+            if (num == null) {
+                return new Pair(Integer.valueOf(i7), num);
+            }
+            com.google.android.recaptcha.internal.a.r("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        num = null;
+        if (num == null) {
+        }
     }
 }

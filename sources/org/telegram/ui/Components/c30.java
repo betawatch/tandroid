@@ -1,40 +1,26 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class c30 extends org.telegram.ui.eq0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ f30 b;
+public enum c30 {
+    c(-15431455, "BLUE"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(-15497247, "BLUE_ALT"),
+    d(-13276952, "BLUE_DEEP"),
+    e(-15431455, "BLUE_LIGHT"),
+    f(-1996271, "ORANGE"),
+    h(-1940716, "ORANGE_DEEP"),
+    n(-14175180, "GREEN"),
+    r(-2148011, "RED"),
+    s(-14836538, "CYAN"),
+    w(-6335009, "PURPLE"),
+    x(-9534569, "GRAY");
 
-    public c30(f30 f30Var, ArrayList arrayList) {
-        this.b = f30Var;
-        this.a = arrayList;
-    }
+    public final int a;
+    public final int b;
 
-    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
-    public final org.telegram.ui.mq0 E(org.telegram.messenger.zi ziVar, TLRPC.FileLocation fileLocation, int i3, boolean z10, boolean z11) {
-        e30 e30Var = this.b.b;
-        if (e30Var == null) {
-            return null;
-        }
-        return e30Var.getCloseIntoObject();
-    }
-
-    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
-    public final void o(int i3, org.telegram.messenger.b20 b20Var, boolean z10, int i10, int i11, boolean z11) {
-        this.b.s((org.telegram.messenger.ye) this.a.get(0));
-    }
-
-    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
-    public final boolean z() {
-        return false;
+    c30(int i7, String str) {
+        this.a = r2;
+        this.b = i7;
     }
 }

@@ -1,33 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o30 extends org.telegram.ui.Cells.f4 {
-    public final /* synthetic */ r30 h0;
+public final /* synthetic */ class o30 implements org.telegram.ui.Components.o5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o30(r30 r30Var, Context context) {
-        super(context);
-        this.h0 = r30Var;
+    public /* synthetic */ o30(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Cells.f4
-    public final void d(org.telegram.ui.Cells.f4 f4Var) {
-        x30 x30Var = this.h0.N;
-        x30 x30Var2 = x30.v5;
-        x30Var.I1(f4Var);
-    }
-
-    @Override // org.telegram.ui.Cells.f4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        if (org.telegram.messenger.g0.Q1()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(420.0f), View.MeasureSpec.getSize(i3)), TLObject.FLAG_30), i10);
-        } else {
-            super.onMeasure(i3, i10);
+    @Override // org.telegram.ui.Components.o5
+    public final void invalidate() {
+        switch (this.a) {
+            case 0:
+                Iterator it = ((p30) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
+                }
+                break;
+            default:
+                a11 a11Var = (a11) this.b;
+                a11Var.getClass();
+                if (!ch.e0.b && a11Var.getParent() != null) {
+                    ((View) a11Var.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

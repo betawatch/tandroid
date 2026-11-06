@@ -1,48 +1,92 @@
 package bi;
 
-import org.telegram.messenger.bd;
-import org.telegram.messenger.u10;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.fc;
+import android.content.Context;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.qp;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.k41;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ u10 c;
-    public final /* synthetic */ d2 d;
+public final class y extends FrameLayout {
+    public final int a;
+    public final ArrayList b;
+    public final k41 c;
+    public String d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public final a3.f n;
+    public final /* synthetic */ z r;
 
-    public /* synthetic */ y(String str, u10 u10Var, d2 d2Var) {
-        this.b = str;
-        this.c = u10Var;
-        this.d = d2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y(z zVar, Context context, int i7) {
+        super(context);
+        int i10;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        oi.q qVar;
+        this.r = zVar;
+        this.b = new ArrayList();
+        this.d = "";
+        this.n = new a3.f(this, 15);
+        this.a = i7;
+        setClipChildren(false);
+        setClipToPadding(false);
+        i10 = ((org.telegram.ui.ActionBar.f2) zVar).currentAccount;
+        int classGuid = zVar.getClassGuid();
+        ai.e eVar = new ai.e(this, 2);
+        a1.c cVar = new a1.c(this, 10);
+        f6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
+        k41 k41Var = new k41(context, i10, classGuid, true, eVar, cVar, null, f6Var);
+        this.c = k41Var;
+        k41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
+        k41Var.f3.r = false;
+        k41Var.setCaptureSectionsDecoratorAllowed(true);
+        k41Var.setClipToPadding(false);
+        k41Var.setOverScrollMode(0);
+        addView(k41Var, c8.ha.c(-1.0f, -1));
+        qVar = ((org.telegram.ui.ActionBar.f2) zVar).glassEngine;
+        qVar.b(k41Var);
+        k41Var.j(new ai.b(this, 2));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        d2 d2Var = this.d;
-        u10 u10Var = this.c;
-        String str = this.b;
-        switch (i3) {
-            case 0:
-                a0.p(d2Var, 0, new y(str, u10Var, d2Var));
-                break;
-            default:
-                if (str == null) {
-                    fc.a0(d2Var).N(bd.M0(2131745871, null), bd.M0(2131751106, null)).j();
-                    break;
-                } else {
-                    u10Var.a(str);
-                    break;
-                }
+    public final void a() {
+        int i7;
+        int i10;
+        int i11;
+        z zVar = this.r;
+        if (zVar.O || this.e || this.f || this.h) {
+            return;
         }
+        this.e = true;
+        TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
+        tL_payments_getStarsTransactions.ton = true;
+        int i12 = this.a;
+        tL_payments_getStarsTransactions.inbound = i12 == 1;
+        tL_payments_getStarsTransactions.outbound = i12 == 2;
+        i7 = ((org.telegram.ui.ActionBar.f2) zVar).currentAccount;
+        tL_payments_getStarsTransactions.peer = qp.s1(i7).j1(zVar.b);
+        String str = this.d;
+        tL_payments_getStarsTransactions.offset = str;
+        tL_payments_getStarsTransactions.limit = 20;
+        this.c.f3.O(false);
+        i10 = ((org.telegram.ui.ActionBar.f2) zVar).currentAccount;
+        int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsTransactions, new j(1, this, str));
+        i11 = ((org.telegram.ui.ActionBar.f2) zVar).currentAccount;
+        ConnectionsManager.getInstance(i11).bindRequestToGuid(sendRequest, zVar.getClassGuid());
     }
 
-    public /* synthetic */ y(d2 d2Var, String str, u10 u10Var) {
-        this.d = d2Var;
-        this.b = str;
-        this.c = u10Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        post(this.n);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        removeCallbacks(this.n);
+        super.onDetachedFromWindow();
     }
 }

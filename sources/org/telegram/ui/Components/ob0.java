@@ -1,39 +1,243 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.util.StateSet;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ob0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ob0(zb0 zb0Var, int i3) {
-        this.a = i3;
-        this.b = zb0Var;
+    public /* synthetic */ ob0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
-        zb0 zb0Var = this.b;
-        switch (i3) {
+        switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = zb0Var.r;
-                if (!zb0Var.Q && zb0Var.isAttachedToWindow() && zb0Var.y.getVisibility() != 0 && editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    org.telegram.messenger.g0.K3(editTextBoldCursor);
+                ((qb0) this.b).d();
+                break;
+            case 1:
+                yb0 yb0Var = (yb0) this.b;
+                yb0Var.getClass();
+                try {
+                    yb0Var.d.M.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 2:
+                ((mc0) this.b).k1.start();
+                break;
+            case 3:
+                ry ryVar = ((pd0) this.b).c.l0;
+                if (ryVar != null) {
+                    ryVar.c(false, true, false);
+                    break;
+                }
+                break;
+            case 4:
+                rd0 rd0Var = (rd0) this.b;
+                rd0Var.r = false;
+                rd0Var.invalidate();
+                break;
+            case 5:
+                ((ud0) this.b).h = null;
+                break;
+            case 6:
+                ud0 ud0Var = (ud0) ((j2.n) this.b).c;
+                ud0Var.d.q0(ud0Var.e, false);
+                break;
+            case 7:
+                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.b;
+                if (bq0Var.y) {
+                    bq0Var.h("pollPosition();");
+                }
+                if (bq0Var.G) {
+                    org.telegram.messenger.g0.i3(bq0Var.L, 500L);
+                    break;
+                }
+                break;
+            case 8:
+                ((ie0) this.b).f();
+                break;
+            case 9:
+                try {
+                    hg0 hg0Var = ((gg0) this.b).b;
+                    if (hg0Var.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) hg0Var.getParent()).removeView(hg0Var);
+                    }
+                    hg0Var.Q.run();
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 10:
+                ((RLottieNative) this.b).d();
+                break;
+            case 11:
+                ii0 ii0Var = (ii0) this.b;
+                ii0Var.x0 = null;
+                ii0Var.j();
+                hi0 hi0Var = ii0Var.g0;
+                if (hi0Var != null) {
+                    hi0Var.M();
+                    break;
+                }
+                break;
+            case 12:
+                ((fi0) this.b).H.a.setVisibility(4);
+                break;
+            case 13:
+                ji0 ji0Var = (ji0) this.b;
+                n51 n51Var = ji0Var.n;
+                if (n51Var != null) {
+                    boolean d02 = n51Var.d0();
+                    float S = ji0Var.n.S() / ji0Var.n.U();
+                    float f10 = ji0Var.s;
+                    if (S < f10) {
+                        ji0Var.n.q0((long) (f10 * r2.U()), false);
+                    } else if (S > ji0Var.w) {
+                        ji0Var.setPlaying(false);
+                        d02 = false;
+                    }
+                    if (d02) {
+                        org.telegram.messenger.g0.i3(ji0Var.y, 16L);
+                    }
+                }
+                ji0Var.invalidate();
+                break;
+            case 14:
+                pj0 pj0Var = (pj0) this.b;
+                pj0Var.T1 = null;
+                pj0Var.S1 = null;
+                org.telegram.ui.Cells.y yVar = pj0Var.B1;
+                if (yVar != null) {
+                    Drawable current = yVar.getCurrent();
+                    if (current instanceof TransitionDrawable) {
+                        ((TransitionDrawable) current).resetTransition();
+                    }
+                }
+                org.telegram.ui.Cells.y yVar2 = pj0Var.B1;
+                if (yVar2 != null && yVar2.isStateful()) {
+                    pj0Var.B1.setState(StateSet.NOTHING);
+                    break;
+                }
+                break;
+            case 15:
+                ck0 ck0Var = (ck0) this.b;
+                if (ck0Var.e0 && ck0Var.k0() != ck0Var.i0) {
+                    ck0Var.q0("on screen, settled after start", true);
+                    break;
+                }
+                break;
+            case 16:
+                dl0 dl0Var = (dl0) this.b;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                int i7 = dl0Var.d;
+                org.telegram.messenger.w7.G(i7).y(arrayList);
+                org.telegram.messenger.w7.G(i7).Q(arrayList2);
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    org.telegram.messenger.w7.G(i7);
+                    if (org.telegram.messenger.w7.N(((org.telegram.messenger.ij) arrayList.get(i10)).k, false, true).exists()) {
+                        arrayList3.add((org.telegram.messenger.ij) arrayList.get(i10));
+                    }
+                }
+                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                    org.telegram.messenger.w7.G(i7);
+                    if (!org.telegram.messenger.w7.N(((org.telegram.messenger.ij) arrayList2.get(i11)).k, false, true).exists()) {
+                        arrayList4.add((org.telegram.messenger.ij) arrayList2.get(i11));
+                    }
+                }
+                org.telegram.messenger.g0.h3(new ng(dl0Var, arrayList3, arrayList4, 17));
+                break;
+            case 17:
+                ((fl0) this.b).invalidateSelf();
+                break;
+            case 18:
+                ((ql0) this.b).f.setVisibility(8);
+                break;
+            case 19:
+                ((org.telegram.ui.fw) this.b).s();
+                break;
+            case 20:
+                ((k60) this.b).s();
+                break;
+            case 21:
+                ((hm0) this.b).setOverscrolling(false);
+                break;
+            case 22:
+                ((mm0) this.b).getClass();
+                break;
+            case 23:
+                org.telegram.ui.Cells.q1 q1Var = ((pm0) this.b).n;
+                if (q1Var != null) {
+                    q1Var.invalidate();
+                    break;
+                }
+                break;
+            case 24:
+                qm0 qm0Var = (qm0) this.b;
+                qm0Var.q = false;
+                qm0Var.b.run();
+                break;
+            case 25:
+                ((tn0) this.b).b.b1(1);
+                break;
+            case 26:
+                po0 po0Var = (po0) this.b;
+                fi.i1[] i1VarArr = po0Var.a;
+                if (po0Var.b != 1) {
+                    for (fi.i1 i1Var : i1VarArr) {
+                        org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) i1Var.e;
+                        k5Var.setAlpha(1.0f);
+                        k5Var.setScaleX(1.0f);
+                        k5Var.setScaleY(1.0f);
+                        ((org.telegram.ui.ActionBar.k5) i1Var.f).setAlpha(0.0f);
+                    }
+                    po0Var.E = false;
+                    org.telegram.messenger.g0.i3(po0Var.G, 4000L);
+                    break;
+                } else {
+                    po0Var.E = !po0Var.E;
+                    for (fi.i1 i1Var2 : i1VarArr) {
+                        org.telegram.ui.ActionBar.k5 k5Var2 = (org.telegram.ui.ActionBar.k5) i1Var2.e;
+                        org.telegram.ui.ActionBar.k5 k5Var3 = (org.telegram.ui.ActionBar.k5) i1Var2.f;
+                        k5Var2.setPivotX(0.0f);
+                        k5Var3.setPivotX(0.0f);
+                        if (po0Var.E) {
+                            k5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
+                            k5Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+                        } else {
+                            k5Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+                            k5Var3.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
+                        }
+                    }
+                    org.telegram.messenger.g0.i3(po0Var.G, 4000L);
+                    break;
+                }
+            case 27:
+                ((fi.i1) this.b).setVisibility(8);
+                break;
+            case 28:
+                xs0 xs0Var = ((sp0) this.b).G;
+                if (xs0Var.E1) {
+                    xs0Var.o1(false);
                     break;
                 }
                 break;
             default:
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(zb0Var.b0, 0.0f);
-                zb0Var.T = ofFloat;
-                ofFloat.addUpdateListener(new pb0(zb0Var, 1));
-                ofFloat.addListener(new a60(zb0Var, 6));
-                ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(xq.h);
-                ofFloat.start();
+                ((cr0) this.b).a.z1(false);
                 break;
         }
     }

@@ -1,75 +1,129 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.q4 b;
-    public final /* synthetic */ ei c;
+public final class kz extends View {
+    public int D;
+    public int E;
+    public RectF F;
+    public float G;
+    public ValueAnimator H;
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public TextPaint e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public int y;
 
-    public /* synthetic */ kz(org.telegram.ui.ActionBar.q4 q4Var, ei eiVar) {
-        this.b = q4Var;
-        this.c = eiVar;
+    public final void a(boolean z9, boolean z10) {
+        this.b = z9;
+        if (!this.a || !z10) {
+            this.G = z9 ? 1.0f : 0.0f;
+            return;
+        }
+        ValueAnimator valueAnimator = this.H;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.H.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z9 ? 1.0f : 0.0f);
+        this.H = ofFloat;
+        ofFloat.addUpdateListener(new e6(this, 24));
+        this.H.setDuration(300L);
+        this.H.start();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
-    @Override // org.telegram.messenger.u10
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj) {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                this.c.a(this.b.getLastFragment());
-                break;
-            default:
-                Integer num = (Integer) obj;
-                List fragmentStack = this.b.getFragmentStack();
-                boolean z11 = true;
-                org.telegram.ui.ActionBar.d2 d2Var = null;
-                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                    d2Var = (org.telegram.ui.ActionBar.d2) fragmentStack.get(size);
-                    if (!(d2Var instanceof org.telegram.ui.uw) && !(d2Var instanceof org.telegram.ui.ee0)) {
-                        if (z11) {
-                            d2Var.finishFragment();
-                            z11 = false;
-                        } else {
-                            d2Var.removeSelfFromStack();
-                        }
-                    }
-                    org.telegram.ui.ActionBar.d2 d2Var2 = d2Var;
-                    org.telegram.ui.ActionBar.d2 d2Var3 = !(d2Var2 instanceof org.telegram.ui.ee0) ? ((org.telegram.ui.ee0) d2Var2).K : d2Var2;
-                    z10 = d2Var3 instanceof org.telegram.ui.uw;
-                    ei eiVar = this.c;
-                    if (z10) {
-                        eiVar.a(d2Var2);
-                        break;
-                    } else {
-                        org.telegram.ui.uw uwVar = (org.telegram.ui.uw) d2Var3;
-                        uwVar.W3();
-                        org.telegram.messenger.g0.i3(new o4.b1(uwVar, num, eiVar, d2Var2, 28), 80L);
-                        break;
-                    }
-                }
-                org.telegram.ui.ActionBar.d2 d2Var22 = d2Var;
-                if (!(d2Var22 instanceof org.telegram.ui.ee0)) {
-                }
-                z10 = d2Var3 instanceof org.telegram.ui.uw;
-                ei eiVar2 = this.c;
-                if (z10) {
-                }
-                break;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        float f10;
+        Canvas canvas2;
+        int i7 = this.x;
+        RectF rectF = this.F;
+        Paint paint = this.h;
+        Paint paint2 = this.n;
+        Paint paint3 = this.f;
+        TextPaint textPaint = this.e;
+        super.draw(canvas);
+        float f11 = this.G;
+        if (f11 <= 0.5f) {
+            f10 = f11 / 0.5f;
+            paint3.setColor(Color.rgb(Color.red(this.r) + ((int) ((Color.red(this.s) - Color.red(this.r)) * f10)), Color.green(this.r) + ((int) ((Color.green(this.s) - Color.green(this.r)) * f10)), Color.blue(this.r) + ((int) ((Color.blue(this.s) - Color.blue(this.r)) * f10))));
+            textPaint.setColor(Color.rgb(Color.red(this.s) + ((int) ((Color.red(this.w) - Color.red(this.s)) * f10)), Color.green(this.s) + ((int) ((Color.green(this.w) - Color.green(this.s)) * f10)), Color.blue(this.s) + ((int) ((Color.blue(this.w) - Color.blue(this.s)) * f10))));
+        } else {
+            textPaint.setColor(this.w);
+            paint3.setColor(this.s);
+            f10 = 1.0f;
+        }
+        int measuredHeight = getMeasuredHeight() >> 1;
+        paint.setColor(this.s);
+        canvas.drawRoundRect(rectF, i7 / 2.0f, i7 / 2.0f, paint3);
+        canvas.drawRoundRect(rectF, i7 / 2.0f, i7 / 2.0f, paint);
+        String str = this.d;
+        if (str != null) {
+            canvas.drawText(str, (f10 * this.D) + (getMeasuredWidth() >> 1), (textPaint.getTextSize() * 0.35f) + measuredHeight, textPaint);
+        }
+        float f12 = 2.0f - (this.G / 0.5f);
+        canvas.save();
+        canvas.scale(0.9f, 0.9f, org.telegram.messenger.g0.N(7.0f), measuredHeight);
+        canvas.translate(org.telegram.messenger.g0.L(12.0f), measuredHeight - org.telegram.messenger.g0.L(9.0f));
+        if (this.G > 0.5f) {
+            paint2.setColor(this.w);
+            float f13 = 1.0f - f12;
+            canvas2 = canvas;
+            canvas2.drawLine(org.telegram.messenger.g0.N(7.0f), (int) org.telegram.messenger.g0.N(13.0f), (int) (org.telegram.messenger.g0.N(7.0f) - (org.telegram.messenger.g0.L(4.0f) * f13)), (int) (org.telegram.messenger.g0.N(13.0f) - (org.telegram.messenger.g0.L(4.0f) * f13)), paint2);
+            canvas2.drawLine((int) org.telegram.messenger.g0.N(7.0f), (int) org.telegram.messenger.g0.N(13.0f), (int) ((org.telegram.messenger.g0.L(8.0f) * f13) + org.telegram.messenger.g0.N(7.0f)), (int) (org.telegram.messenger.g0.N(13.0f) - (org.telegram.messenger.g0.L(8.0f) * f13)), paint2);
+        } else {
+            canvas2 = canvas;
+        }
+        canvas2.restore();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        Paint paint = this.h;
+        RectF rectF = this.F;
+        int i11 = this.E;
+        String str = this.d;
+        setMeasuredDimension((i11 * 2) + (str == null ? 0 : (int) this.e.measureText(str)) + (this.y << 1), org.telegram.messenger.g0.L(4.0f) + this.x);
+        if (getMeasuredWidth() != 0) {
+            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            rectF.inset((paint.getStrokeWidth() / 2.0f) + i11, (paint.getStrokeWidth() / 2.0f) + i11);
         }
     }
 
-    public /* synthetic */ kz(ei eiVar, org.telegram.ui.ActionBar.q4 q4Var) {
-        this.c = eiVar;
-        this.b = q4Var;
+    public void setChecked(boolean z9) {
+        a(z9, true);
+    }
+
+    public void setText(String str) {
+        this.d = str;
+        requestLayout();
     }
 }

@@ -3,17 +3,17 @@ package org.telegram.messenger;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.Window;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.n51;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ q(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public /* synthetic */ q(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
@@ -22,14 +22,14 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.kg kgVar = (org.telegram.ui.Components.kg) this.b;
+                org.telegram.ui.Components.mg mgVar = (org.telegram.ui.Components.mg) this.b;
                 Window window = (Window) this.c;
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                if (kgVar != null) {
-                    org.telegram.ui.Components.bi biVar = kgVar.b;
-                    biVar.G0 = -1;
-                    biVar.H0 = intValue;
-                    biVar.b.invalidate();
+                if (mgVar != null) {
+                    org.telegram.ui.Components.di diVar = mgVar.b;
+                    diVar.F0 = -1;
+                    diVar.G0 = intValue;
+                    diVar.b.invalidate();
                 }
                 try {
                     window.setNavigationBarColor(intValue);
@@ -38,13 +38,13 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                     return;
                 }
             case 1:
-                ((m51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).Y != 1 ? 1.0f : 0.2f));
+                ((n51) this.c).B0(((Float) valueAnimator.getAnimatedValue()).floatValue() * (((MediaController) this.b).X != 1 ? 1.0f : 0.2f));
                 break;
             default:
-                xu xuVar = (xu) this.b;
+                fv fvVar = (fv) this.b;
                 View view = (View) this.c;
-                xuVar.getClass();
-                xuVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fvVar.getClass();
+                fvVar.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (view != null) {
                     view.invalidate();
                     break;

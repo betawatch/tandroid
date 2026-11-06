@@ -9,7 +9,7 @@ import w0.h;
 import w0.i;
 import w0.k;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a {
     public static w0.d a(String str, String str2) {
@@ -44,11 +44,11 @@ public final class a {
         resultReceiver.send(ConnectionsManager.DEFAULT_DATACENTER_ID, bundle);
     }
 
-    public static void d(ResultReceiver resultReceiver, int i3, int i10, Intent intent) {
+    public static void d(ResultReceiver resultReceiver, int i7, int i10, Intent intent) {
         j.e(resultReceiver, "<this>");
         Bundle bundle = new Bundle();
         bundle.putBoolean("FAILURE_RESPONSE", false);
-        bundle.putInt("ACTIVITY_REQUEST_CODE", i3);
+        bundle.putInt("ACTIVITY_REQUEST_CODE", i7);
         bundle.putParcelable("RESULT_DATA", intent);
         resultReceiver.send(i10, bundle);
     }

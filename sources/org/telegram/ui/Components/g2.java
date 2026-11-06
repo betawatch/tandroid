@@ -1,32 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g2 implements View.OnClickListener {
+public final /* synthetic */ class g2 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t2[] b;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ g2(org.telegram.ui.ActionBar.t2[] t2VarArr, int i3) {
-        this.a = i3;
-        this.b = t2VarArr;
+    public /* synthetic */ g2(EditTextBoldCursor editTextBoldCursor, int i7) {
+        this.a = i7;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b[0].dismiss();
+                b4 b4Var = (b4) this.b;
+                b4Var.requestFocus();
+                org.telegram.messenger.g0.K3(b4Var);
                 break;
             case 1:
-                this.b[0].dismiss();
-                break;
-            case 2:
-                this.b[0].dismiss();
+                kg.x0 x0Var = (kg.x0) this.b;
+                x0Var.requestFocus();
+                org.telegram.messenger.g0.K3(x0Var);
                 break;
             default:
-                this.b[0].dismiss();
+                org.telegram.messenger.g0.h3(new at(this.b, 7));
                 break;
         }
     }

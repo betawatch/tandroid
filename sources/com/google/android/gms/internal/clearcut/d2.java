@@ -1,157 +1,64 @@
 package com.google.android.gms.internal.clearcut;
 
-import android.content.ContentResolver;
-import android.database.Cursor;
-import android.net.Uri;
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.regex.Pattern;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.vb;
 
 /* loaded from: classes.dex */
-public abstract class d2 {
-    public static HashMap f;
-    public static Object k;
-    public static boolean l;
-    public static final Uri a = Uri.parse("content://com.google.android.gsf.gservices");
-    public static final Uri b = Uri.parse("content://com.google.android.gsf.gservices/prefix");
-    public static final Pattern c = Pattern.compile("^(1|true|t|on|yes|y)$", 2);
-    public static final Pattern d = Pattern.compile("^(0|false|f|off|no|n)$", 2);
-    public static final AtomicBoolean e = new AtomicBoolean();
-    public static final HashMap g = new HashMap();
-    public static final HashMap h = new HashMap();
-    public static final HashMap i = new HashMap();
-    public static final HashMap j = new HashMap();
-    public static final String[] m = new String[0];
-
-    public static Object a(HashMap hashMap, String str, Object obj) {
-        synchronized (d2.class) {
-            try {
-                if (!hashMap.containsKey(str)) {
-                    return null;
-                }
-                Object obj2 = hashMap.get(str);
-                if (obj2 != null) {
-                    obj = obj2;
-                }
-                return obj;
-            } catch (Throwable th2) {
-                throw th2;
+public final class d2 implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        int z9 = vb.z(parcel);
+        String str = null;
+        String str2 = null;
+        String str3 = null;
+        String str4 = null;
+        int i7 = 0;
+        int i10 = 0;
+        boolean z10 = false;
+        int i11 = 0;
+        boolean z11 = true;
+        while (parcel.dataPosition() < z9) {
+            int readInt = parcel.readInt();
+            switch ((char) readInt) {
+                case 2:
+                    str = vb.h(parcel, readInt);
+                    break;
+                case 3:
+                    i7 = vb.u(parcel, readInt);
+                    break;
+                case 4:
+                    i10 = vb.u(parcel, readInt);
+                    break;
+                case 5:
+                    str2 = vb.h(parcel, readInt);
+                    break;
+                case 6:
+                    str3 = vb.h(parcel, readInt);
+                    break;
+                case 7:
+                    z11 = vb.n(parcel, readInt);
+                    break;
+                case '\b':
+                    str4 = vb.h(parcel, readInt);
+                    break;
+                case '\t':
+                    z10 = vb.n(parcel, readInt);
+                    break;
+                case '\n':
+                    i11 = vb.u(parcel, readInt);
+                    break;
+                default:
+                    vb.y(parcel, readInt);
+                    break;
             }
         }
+        vb.m(parcel, z9);
+        return new c2(str, i7, i10, str2, str3, z11, str4, z10, i11);
     }
 
-    /* JADX WARN: Finally extract failed */
-    public static String b(ContentResolver contentResolver, String str) {
-        String str2;
-        synchronized (d2.class) {
-            try {
-                c(contentResolver);
-                Object obj = k;
-                if (f.containsKey(str)) {
-                    String str3 = (String) f.get(str);
-                    return str3 != null ? str3 : null;
-                }
-                for (String str4 : m) {
-                    if (str.startsWith(str4)) {
-                        if (!l || f.isEmpty()) {
-                            String[] strArr = m;
-                            HashMap hashMap = f;
-                            Cursor query = contentResolver.query(b, null, null, strArr, null);
-                            TreeMap treeMap = new TreeMap();
-                            if (query != null) {
-                                while (query.moveToNext()) {
-                                    try {
-                                        treeMap.put(query.getString(0), query.getString(1));
-                                    } finally {
-                                        query.close();
-                                    }
-                                }
-                            }
-                            hashMap.putAll(treeMap);
-                            l = true;
-                            if (f.containsKey(str) && (str2 = (String) f.get(str)) != null) {
-                                r3 = str2;
-                            }
-                        }
-                        return r3;
-                    }
-                }
-                Cursor query2 = contentResolver.query(a, null, null, new String[]{str}, null);
-                if (query2 != null) {
-                    try {
-                        if (query2.moveToFirst()) {
-                            String string = query2.getString(1);
-                            if (string != null && string.equals(null)) {
-                                string = null;
-                            }
-                            d(obj, str, string);
-                            r3 = string != null ? string : null;
-                            query2.close();
-                            return r3;
-                        }
-                    } catch (Throwable th2) {
-                        if (query2 == null) {
-                            throw th2;
-                        }
-                        query2.close();
-                        throw th2;
-                    }
-                }
-                d(obj, str, null);
-                if (query2 != null) {
-                    query2.close();
-                }
-                return null;
-            } finally {
-            }
-        }
-    }
-
-    public static void c(ContentResolver contentResolver) {
-        HashMap hashMap = f;
-        AtomicBoolean atomicBoolean = e;
-        if (hashMap == null) {
-            atomicBoolean.set(false);
-            f = new HashMap();
-            k = new Object();
-            l = false;
-            contentResolver.registerContentObserver(a, true, new e2(null, 0));
-            return;
-        }
-        if (atomicBoolean.getAndSet(false)) {
-            f.clear();
-            g.clear();
-            h.clear();
-            i.clear();
-            j.clear();
-            k = new Object();
-            l = false;
-        }
-    }
-
-    public static void d(Object obj, String str, String str2) {
-        synchronized (d2.class) {
-            try {
-                if (obj == k) {
-                    f.put(str, str2);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public static void e(Object obj, HashMap hashMap, String str, Object obj2) {
-        synchronized (d2.class) {
-            try {
-                if (obj == k) {
-                    hashMap.put(str, obj2);
-                    f.remove(str);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i7) {
+        return new c2[i7];
     }
 }

@@ -13,21 +13,21 @@ public final class u extends ZoneId {
     public final String b;
     public final transient ZoneRules c;
 
-    public static u L(String str, boolean z10) {
+    public static u L(String str, boolean z9) {
         ZoneRules zoneRules;
         Objects.requireNonNull(str, "zoneId");
         int length = str.length();
         if (length >= 2) {
-            for (int i3 = 0; i3 < length; i3++) {
-                char charAt = str.charAt(i3);
-                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i3 == 0) && ((charAt < '0' || charAt > '9' || i3 == 0) && ((charAt != '~' || i3 == 0) && ((charAt != '.' || i3 == 0) && ((charAt != '_' || i3 == 0) && ((charAt != '+' || i3 == 0) && (charAt != '-' || i3 == 0))))))))) {
+            for (int i7 = 0; i7 < length; i7++) {
+                char charAt = str.charAt(i7);
+                if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && ((charAt != '/' || i7 == 0) && ((charAt < '0' || charAt > '9' || i7 == 0) && ((charAt != '~' || i7 == 0) && ((charAt != '.' || i7 == 0) && ((charAt != '_' || i7 == 0) && ((charAt != '+' || i7 == 0) && (charAt != '-' || i7 == 0))))))))) {
                     throw new b("Invalid ID for region-based ZoneId, invalid format: ".concat(str));
                 }
             }
             try {
                 zoneRules = j$.time.zone.h.a(str);
             } catch (j$.time.zone.f e10) {
-                if (z10) {
+                if (z9) {
                     throw e10;
                 }
                 zoneRules = null;

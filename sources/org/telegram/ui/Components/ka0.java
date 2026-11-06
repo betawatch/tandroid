@@ -1,25 +1,83 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ka0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ la0 b;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-    public /* synthetic */ ka0(la0 la0Var, int i3) {
-        this.a = i3;
-        this.b = la0Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ka0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ ka0(qt qtVar, boolean z9, Runnable runnable) {
+        this.d = qtVar;
+        this.b = z9;
+        this.c = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.y();
+                org.telegram.ui.p6 p6Var = (org.telegram.ui.p6) this.d;
+                Runnable runnable = (Runnable) this.c;
+                org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Q.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    p6Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                qt qtVar = (qt) this.d;
+                Runnable runnable2 = (Runnable) this.c;
+                if (this.b) {
+                    ((xs0) qtVar.b).I.o();
+                }
+                runnable2.run();
                 break;
             default:
-                this.b.m(true);
+                org.telegram.ui.gs gsVar = (org.telegram.ui.gs) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                org.telegram.ui.ks ksVar = gsVar.a;
+                if (ksVar.w != null && ksVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        ksVar.l.C(ksVar.W);
+                    } else if (intValue == 1) {
+                        ksVar.l.v(ksVar.W);
+                    } else if (intValue == 2) {
+                        ksVar.l.v(null);
+                    } else if (intValue == 3) {
+                        ksVar.l.H(ksVar.W);
+                    } else if (intValue == 4) {
+                        ksVar.l.q(ksVar.W);
+                    } else if (intValue == 5) {
+                        org.telegram.messenger.ui.b0(ksVar.r).d(2, ksVar.b0, ksVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    ksVar.o();
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ ka0(org.telegram.ui.gs gsVar, ArrayList arrayList, boolean z9) {
+        this.d = gsVar;
+        this.c = arrayList;
+        this.b = z9;
+    }
+
+    public /* synthetic */ ka0(boolean z9, org.telegram.ui.p6 p6Var, Runnable runnable) {
+        this.b = z9;
+        this.d = p6Var;
+        this.c = runnable;
     }
 }

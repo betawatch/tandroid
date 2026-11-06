@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -25,8 +25,8 @@ public class CheckBoxBase {
     public String C;
     public xo D;
     public org.telegram.ui.ActionBar.t4 E;
-    public org.telegram.ui.ActionBar.e6 F;
-    public org.telegram.messenger.e9 G;
+    public org.telegram.ui.ActionBar.f6 F;
+    public org.telegram.messenger.k9 G;
     public long H;
     public View a;
     public final Paint d;
@@ -55,7 +55,7 @@ public class CheckBoxBase {
     public float m = 1.0f;
     public int r = org.telegram.ui.ActionBar.k6.k7;
 
-    public CheckBoxBase(int i3, View view, org.telegram.ui.ActionBar.e6 e6Var) {
+    public CheckBoxBase(int i7, View view, org.telegram.ui.ActionBar.f6 f6Var) {
         int i10 = org.telegram.ui.ActionBar.k6.Zc;
         this.s = i10;
         this.t = i10;
@@ -63,11 +63,11 @@ public class CheckBoxBase {
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new a3(13);
+        this.G = new k2(16);
         this.H = 200L;
-        this.F = e6Var;
+        this.F = f6Var;
         this.a = view;
-        this.B = i3;
+        this.B = i7;
         if (I == null) {
             I = new Paint(1);
         }
@@ -104,9 +104,9 @@ public class CheckBoxBase {
         float f10;
         float f11;
         float f12;
-        boolean z10;
+        boolean z9;
         Rect rect;
-        int i3;
+        int i7;
         int i10;
         float f13;
         float f14;
@@ -121,7 +121,7 @@ public class CheckBoxBase {
         float f16;
         int i16;
         int i17;
-        boolean z11;
+        boolean z10;
         int i18;
         float f17;
         float f18;
@@ -144,10 +144,10 @@ public class CheckBoxBase {
             Rect rect2 = this.b;
             int centerX = rect2.centerX();
             int centerY = rect2.centerY();
-            z10 = !this.i && f12 > 0.0f && f19 >= 0.5f && !this.n && this.C == null;
-            if (z10) {
+            z9 = !this.i && f12 > 0.0f && f19 >= 0.5f && !this.n && this.C == null;
+            if (z9) {
                 rect = rect2;
-                i3 = centerX;
+                i7 = centerX;
                 i10 = centerY;
                 f13 = 0.0f;
                 f14 = f19;
@@ -157,11 +157,11 @@ public class CheckBoxBase {
                 float f21 = centerY;
                 f13 = 0.0f;
                 rect = rect2;
-                i3 = centerX;
+                i7 = centerX;
                 i10 = centerY;
                 f14 = f19;
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(f20 - f10, f21 - f10, f20 + f10, f21 + f10, org.telegram.messenger.hs.e4, 31);
+                canvas2.saveLayerAlpha(f20 - f10, f21 - f10, f20 + f10, f21 + f10, org.telegram.messenger.qs.e4, 31);
             }
             i11 = this.s;
             Paint paint2 = this.f;
@@ -199,7 +199,7 @@ public class CheckBoxBase {
                     if (this.v > f13) {
                         float L2 = f10 - org.telegram.messenger.g0.L(1.5f);
                         float T1 = org.telegram.messenger.g0.T1(L2, this.v, this.w);
-                        float f22 = i3;
+                        float f22 = i7;
                         float f23 = i14;
                         f15 = 1.0f;
                         i15 = 7;
@@ -211,12 +211,12 @@ public class CheckBoxBase {
                         f15 = 1.0f;
                         i15 = 7;
                         i13 = -1;
-                        canvas2.drawCircle(i3, i14, f10 - org.telegram.messenger.g0.L(1.5f), paint);
+                        canvas2.drawCircle(i7, i14, f10 - org.telegram.messenger.g0.L(1.5f), paint);
                     }
                 } else if (i24 == 6 || i24 == 7) {
                     i14 = i10;
                     f16 = 1.5f;
-                    float f24 = i3;
+                    float f24 = i7;
                     float f25 = i14;
                     canvas2.drawCircle(f24, f25, f10 - org.telegram.messenger.g0.L(1.0f), I);
                     canvas2.drawCircle(f24, f25, f10 - org.telegram.messenger.g0.L(1.5f), paint2);
@@ -227,7 +227,7 @@ public class CheckBoxBase {
                 } else {
                     i14 = i10;
                     f16 = 1.5f;
-                    canvas2.drawCircle(i3, i14, f10, I);
+                    canvas2.drawCircle(i7, i14, f10, I);
                     i13 = i12;
                     paint = paint2;
                     f15 = 1.0f;
@@ -241,9 +241,9 @@ public class CheckBoxBase {
                     if (i16 != 12 && i16 != 13) {
                         if (i16 == 0 || i16 == 11) {
                             i17 = 6;
-                            canvas2.drawCircle(i3, i14, f10, paint);
+                            canvas2.drawCircle(i7, i14, f10, paint);
                         } else {
-                            float f26 = i3;
+                            float f26 = i7;
                             float f27 = f26 - f11;
                             float f28 = i14;
                             float f29 = f28 - f11;
@@ -260,7 +260,7 @@ public class CheckBoxBase {
                                 i21 = -90;
                             } else {
                                 i20 = (int) (270.0f * f14);
-                                if (org.telegram.messenger.bd.a0) {
+                                if (org.telegram.messenger.hd.a0) {
                                     i20 = -i20;
                                 }
                                 i21 = 90;
@@ -310,9 +310,9 @@ public class CheckBoxBase {
                             } else if (this.h < f15) {
                                 I.setColor(i0.a.f(this.h, paint.getColor(), I.getColor()));
                             }
-                            boolean z12 = this.y;
+                            boolean z11 = this.y;
                             Paint paint3 = this.d;
-                            if (z12 || (i19 = this.r) < 0) {
+                            if (z11 || (i19 = this.r) < 0) {
                                 paint3.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.k7, this.F));
                             } else {
                                 paint3.setColor(org.telegram.ui.ActionBar.k6.w0(i19, this.F));
@@ -323,12 +323,12 @@ public class CheckBoxBase {
                             if (this.A != -1) {
                                 float L3 = org.telegram.messenger.g0.L(this.B) / 2.0f;
                                 int save = canvas2.save();
-                                canvas2.translate(i3 - L3, i14 - L3);
-                                boolean z13 = f12 < f15;
-                                if (z13) {
-                                    canvas2.saveLayerAlpha(0.0f, 0.0f, org.telegram.messenger.g0.L(this.B), org.telegram.messenger.g0.L(this.B), org.telegram.messenger.hs.e4, 31);
+                                canvas2.translate(i7 - L3, i14 - L3);
+                                boolean z12 = f12 < f15;
+                                if (z12) {
+                                    canvas2.saveLayerAlpha(0.0f, 0.0f, org.telegram.messenger.g0.L(this.B), org.telegram.messenger.g0.L(this.B), org.telegram.messenger.qs.e4, 31);
                                 }
-                                Paint paint4 = (Paint) this.G.k(null);
+                                Paint paint4 = (Paint) this.G.j(null);
                                 int i31 = this.A;
                                 if (i31 == 12 || i31 == 13) {
                                     canvas2 = canvas;
@@ -346,7 +346,7 @@ public class CheckBoxBase {
                                     canvas.drawRoundRect(f34, f34, f35, f35, T12, T12, paint4);
                                     float f36 = (f15 - f12) * L4;
                                     float T13 = org.telegram.messenger.g0.T1(f36, this.v, this.w);
-                                    if (!z13 || f36 <= 0.0f) {
+                                    if (!z12 || f36 <= 0.0f) {
                                         canvas2 = canvas;
                                     } else {
                                         float f37 = L3 - f36;
@@ -359,7 +359,7 @@ public class CheckBoxBase {
                                     float L5 = f10 - org.telegram.messenger.g0.L(0.5f);
                                     canvas2.drawCircle(L3, L3, L5, paint4);
                                     float f39 = (f15 - f12) * L5;
-                                    if (z13 && f39 > 0.0f) {
+                                    if (z12 && f39 > 0.0f) {
                                         canvas2.drawCircle(L3, L3, f39, org.telegram.ui.ActionBar.k6.Cm);
                                     }
                                 }
@@ -376,7 +376,7 @@ public class CheckBoxBase {
                                 }
                                 J.setStrokeWidth(org.telegram.messenger.g0.L(1.66f));
                                 J.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.M6, this.F));
-                                canvas2.drawCircle(i3, i14, org.telegram.messenger.g0.L(9.0f), J);
+                                canvas2.drawCircle(i7, i14, org.telegram.messenger.g0.L(9.0f), J);
                             } else if (f33 != 0.0f) {
                                 if (this.C != null) {
                                     if (this.g == null) {
@@ -401,7 +401,7 @@ public class CheckBoxBase {
                                     this.g.setTextSize(org.telegram.messenger.g0.L(f17));
                                     this.g.setColor(org.telegram.ui.ActionBar.k6.w0(this.r, this.F));
                                     canvas2.save();
-                                    float f40 = i3;
+                                    float f40 = i7;
                                     canvas2.scale(f33, f15, f40, i14);
                                     String str = this.C;
                                     canvas2.drawText(str, f40 - (this.g.measureText(str) / 2.0f), org.telegram.messenger.g0.L(f18), this.g);
@@ -414,7 +414,7 @@ public class CheckBoxBase {
                                     float f42 = i32 == -1 ? 1.4f : i32 == 5 ? 0.8f : f41;
                                     float L6 = org.telegram.messenger.g0.L(9.0f * f42) * f33;
                                     float L7 = org.telegram.messenger.g0.L(f42 * 4.0f) * f33;
-                                    int L8 = i3 - org.telegram.messenger.g0.L(f16);
+                                    int L8 = i7 - org.telegram.messenger.g0.L(f16);
                                     int L9 = org.telegram.messenger.g0.L(4.0f) + i14;
                                     float sqrt = (float) Math.sqrt((L7 * L7) / 2.0f);
                                     float f43 = L8;
@@ -423,22 +423,22 @@ public class CheckBoxBase {
                                     path.lineTo(f43, f44);
                                     float sqrt2 = (float) Math.sqrt((L6 * L6) / 2.0f);
                                     path.lineTo(f43 + sqrt2, f44 - sqrt2);
-                                    if (z10 || this.e != f41) {
+                                    if (z9 || this.e != f41) {
                                         canvas2.save();
                                         float f45 = this.e;
-                                        canvas2.scale(f45, f45, i3, i14);
-                                        z11 = true;
+                                        canvas2.scale(f45, f45, i7, i14);
+                                        z10 = true;
                                     } else {
-                                        z11 = false;
+                                        z10 = false;
                                     }
                                     canvas2.drawPath(path, paint3);
-                                    if (z11) {
+                                    if (z10) {
                                         canvas2.restore();
                                     }
                                 }
                             }
                         }
-                        if (z10) {
+                        if (z9) {
                             return;
                         }
                         canvas2.restore();
@@ -459,13 +459,13 @@ public class CheckBoxBase {
                         shader.setLocalMatrix(matrix);
                         paint.setShader(shader);
                     }
-                    canvas2.drawCircle(i3, i14, (f10 - org.telegram.messenger.g0.L(f15)) * this.m, paint);
+                    canvas2.drawCircle(i7, i14, (f10 - org.telegram.messenger.g0.L(f15)) * this.m, paint);
                     paint.setStyle(Paint.Style.STROKE);
                 }
                 f13 = 0.0f;
                 if (f12 > f13) {
                 }
-                if (z10) {
+                if (z9) {
                 }
             } else if (this.z) {
                 int i33 = this.A;
@@ -508,7 +508,7 @@ public class CheckBoxBase {
             f13 = 0.0f;
             if (f12 > f13) {
             }
-            if (z10) {
+            if (z9) {
             }
         }
         f10 = L;
@@ -522,7 +522,7 @@ public class CheckBoxBase {
         int centerY2 = rect22.centerY();
         if (this.i) {
         }
-        if (z10) {
+        if (z9) {
         }
         i11 = this.s;
         Paint paint22 = this.f;
@@ -545,7 +545,7 @@ public class CheckBoxBase {
         f13 = 0.0f;
         if (f12 > f13) {
         }
-        if (z10) {
+        if (z9) {
         }
     }
 
@@ -568,84 +568,84 @@ public class CheckBoxBase {
         b();
     }
 
-    public final void d(int i3) {
-        if (this.A == i3) {
+    public final void d(int i7) {
+        if (this.A == i7) {
             return;
         }
-        this.A = i3;
+        this.A = i7;
         Paint paint = this.f;
-        if (i3 == 12 || i3 == 13) {
+        if (i7 == 12 || i7 == 13) {
             paint.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
-        } else if (i3 == 4 || i3 == 5) {
+        } else if (i7 == 4 || i7 == 5) {
             paint.setStrokeWidth(org.telegram.messenger.g0.L(1.9f));
-            if (i3 == 5) {
+            if (i7 == 5) {
                 this.d.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
             }
-        } else if (i3 == 3) {
+        } else if (i7 == 3) {
             paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
-        } else if (i3 != 0) {
+        } else if (i7 != 0) {
             paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
         }
         b();
     }
 
-    public final void e(int i3, int i10, int i11, int i12) {
-        int i13 = i11 + i3;
+    public final void e(int i7, int i10, int i11, int i12) {
+        int i13 = i11 + i7;
         int i14 = i12 + i10;
         Rect rect = this.b;
-        if (rect.left == i3 && rect.top == i10 && rect.right == i13 && rect.bottom == i14) {
+        if (rect.left == i7 && rect.top == i10 && rect.right == i13 && rect.bottom == i14) {
             return;
         }
-        rect.left = i3;
+        rect.left = i7;
         rect.top = i10;
         rect.right = i13;
         rect.bottom = i14;
         b();
     }
 
-    public final void f(int i3, boolean z10, boolean z11) {
-        if (i3 >= 0) {
-            String str = "" + (i3 + 1);
+    public final void f(int i7, boolean z9, boolean z10) {
+        if (i7 >= 0) {
+            String str = "" + (i7 + 1);
             String str2 = this.C;
             if (str2 == null || !str2.equals(str)) {
                 this.C = str;
                 b();
             }
         }
-        if (z10 == this.q) {
+        if (z9 == this.q) {
             return;
         }
-        this.q = z10;
-        if (!this.l || !z11) {
+        this.q = z9;
+        if (!this.l || !z10) {
             ObjectAnimator objectAnimator = this.p;
             if (objectAnimator != null) {
                 objectAnimator.cancel();
                 this.p = null;
             }
-            setProgress(z10 ? 1.0f : 0.0f);
+            setProgress(z9 ? 1.0f : 0.0f);
             return;
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z9 ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new x5(this, 19));
+        ofFloat.addListener(new z5(this, 19));
         this.p.setInterpolator(xq.g);
         this.p.setDuration(this.H);
         this.p.start();
     }
 
-    public final void g(boolean z10, boolean z11) {
-        f(-1, z10, z11);
+    public final void g(boolean z9, boolean z10) {
+        f(-1, z9, z10);
     }
 
     public float getProgress() {
         return this.o;
     }
 
-    public final void h(int i3, int i10, int i11) {
-        if (this.s == i3 && this.t == i10 && this.r == i11) {
+    public final void h(int i7, int i10, int i11) {
+        if (this.s == i7 && this.t == i10 && this.r == i11) {
             return;
         }
-        this.s = i3;
+        this.s = i7;
         this.t = i10;
         this.r = i11;
         b();
@@ -659,20 +659,20 @@ public class CheckBoxBase {
         b();
     }
 
-    public final void j(boolean z10) {
-        if (this.i == z10) {
+    public final void j(boolean z9) {
+        if (this.i == z9) {
             return;
         }
-        this.i = z10;
-        this.d.setXfermode(z10 ? new PorterDuffXfermode(PorterDuff.Mode.CLEAR) : null);
+        this.i = z9;
+        this.d.setXfermode(z9 ? new PorterDuffXfermode(PorterDuff.Mode.CLEAR) : null);
         b();
     }
 
-    public final void k(boolean z10) {
-        if (this.z == z10) {
+    public final void k(boolean z9) {
+        if (this.z == z9) {
             return;
         }
-        this.z = z10;
+        this.z = z9;
         b();
     }
 

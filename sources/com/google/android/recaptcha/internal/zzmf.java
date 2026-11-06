@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a1.g;
+import a8.p0;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzmf {
     private boolean zza;
@@ -74,7 +74,7 @@ public final class zzmf {
             default:
                 throw new AssertionError();
         }
-        return g.C(format, " ", str);
+        return p0.D(format, " ", str);
     }
 
     public final long zza(TimeUnit timeUnit) {

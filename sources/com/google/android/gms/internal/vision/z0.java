@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class z0 {
     public static final Logger a = Logger.getLogger(r0.class.getName());
@@ -29,7 +29,7 @@ public abstract class z0 {
         try {
             try {
                 try {
-                    a1.g.z(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                    a8.p0.A(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
                 } catch (IllegalAccessException e10) {
                     throw new IllegalStateException(e10);

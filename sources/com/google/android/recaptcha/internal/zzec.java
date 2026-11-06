@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzec extends j implements p {
     int zza;
@@ -19,36 +19,36 @@ final class zzec extends j implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j10, zzhh zzhhVar, c cVar) {
+    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j3, zzhh zzhhVar, c cVar) {
         super(2, cVar);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j10;
+        this.zzf = j3;
         this.zzg = zzhhVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzecVar.zzh = obj;
         return zzecVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        gd.a aVar = gd.a.a;
+        jd.a aVar = jd.a.a;
         try {
             if (this.zza != 0) {
-                ib.b(obj);
+                b.c(obj);
             } else {
-                ib.b(obj);
+                b.c(obj);
                 zzhk zzhkVar = (zzhk) this.zzh;
                 zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, null);
                 this.zza = 1;

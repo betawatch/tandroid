@@ -11,7 +11,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -22,10 +22,10 @@ public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ d8(f8 f8Var, long j10, int i3, int i10, String str, int i11) {
+    public /* synthetic */ d8(f8 f8Var, long j3, int i7, int i10, String str, int i11) {
         this.f = f8Var;
-        this.c = j10;
-        this.b = i3;
+        this.c = j3;
+        this.b = i7;
         this.d = i10;
         this.h = str;
         this.e = i11;
@@ -51,24 +51,24 @@ public final /* synthetic */ class d8 implements Runnable {
         SQLitePreparedStatement sQLitePreparedStatement3;
         SQLiteCursor sQLiteCursor;
         SQLitePreparedStatement executeFast2;
-        long j10;
+        long j3;
         SQLiteCursor queryFinalized;
         TLRPC.MessageReplies messageReplies;
         NativeByteBuffer byteBufferValue;
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.e;
         Serializable serializable = this.h;
         int i11 = this.d;
-        long j11 = this.c;
+        long j10 = this.c;
         int i12 = this.b;
         Object obj = this.f;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 f8 f8Var = (f8) obj;
                 String str = (String) serializable;
                 ConcurrentHashMap concurrentHashMap = f8Var.f;
-                boolean z10 = r2.a;
-                a8.b("put file path id=" + j11 + " dc=" + i12 + " type=" + i11 + " path=" + str);
+                boolean z9 = r2.a;
+                a8.b("put file path id=" + j10 + " dc=" + i12 + " type=" + i11 + " path=" + str);
                 f8Var.c();
                 SQLiteDatabase sQLiteDatabase = f8Var.c;
                 if (sQLiteDatabase == null) {
@@ -115,14 +115,14 @@ public final /* synthetic */ class d8 implements Runnable {
                         }
                         try {
                             executeFast.requery();
-                            executeFast.bindLong(1, j11);
+                            executeFast.bindLong(1, j10);
                             executeFast.bindInteger(2, i12);
                             executeFast.bindInteger(3, i11);
                             executeFast.bindString(4, str);
                             executeFast.bindInteger(5, i10);
                             executeFast.step();
                             executeFast.dispose();
-                            concurrentHashMap.put(j11 + "_" + i12 + "_" + i11, str);
+                            concurrentHashMap.put(j10 + "_" + i12 + "_" + i11, str);
                             sQLitePreparedStatement2 = executeFast;
                         } catch (SQLiteException e11) {
                             e = e11;
@@ -144,8 +144,8 @@ public final /* synthetic */ class d8 implements Runnable {
                             throw th;
                         }
                     } else {
-                        sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j11 + " AND dc_id = " + i12 + " AND type = " + i11).stepThis().dispose();
-                        concurrentHashMap.put(j11 + "_" + i12 + "_" + i11, "~null~");
+                        sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j10 + " AND dc_id = " + i12 + " AND type = " + i11).stepThis().dispose();
+                        concurrentHashMap.put(j10 + "_" + i12 + "_" + i11, "~null~");
                         sQLitePreparedStatement = null;
                         sQLitePreparedStatement2 = null;
                     }
@@ -165,11 +165,11 @@ public final /* synthetic */ class d8 implements Runnable {
                 sQLitePreparedStatement2.dispose();
                 return;
             default:
-                qr qrVar = (qr) obj;
+                yr yrVar = (yr) obj;
                 ArrayList<TLRPC.Peer> arrayList = (ArrayList) serializable;
-                qrVar.getClass();
+                yrVar.getClass();
                 try {
-                    executeFast2 = qrVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
+                    executeFast2 = yrVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
                 } catch (Exception e13) {
                     e = e13;
                     sQLitePreparedStatement3 = null;
@@ -178,16 +178,16 @@ public final /* synthetic */ class d8 implements Runnable {
                     sQLitePreparedStatement3 = null;
                 }
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = qrVar.b;
+                    SQLiteDatabase sQLiteDatabase2 = yrVar.b;
                     Locale locale = Locale.ENGLISH;
-                    j10 = -j11;
-                    queryFinalized = sQLiteDatabase2.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + i12 + " AND uid = " + j10, new Object[0]);
+                    j3 = -j10;
+                    queryFinalized = sQLiteDatabase2.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + i12 + " AND uid = " + j3, new Object[0]);
                 } catch (Exception e14) {
                     e = e14;
                     sQLitePreparedStatement3 = executeFast2;
                     sQLiteCursor = null;
                     try {
-                        qrVar.o(e, true);
+                        yrVar.o(e, true);
                         if (sQLitePreparedStatement3 != null) {
                             sQLitePreparedStatement3.dispose();
                         }
@@ -242,7 +242,7 @@ public final /* synthetic */ class d8 implements Runnable {
                         messageReplies.serializeToStream(nativeByteBuffer);
                         executeFast2.bindByteBuffer(1, nativeByteBuffer);
                         executeFast2.bindInteger(2, i12);
-                        executeFast2.bindLong(3, j10);
+                        executeFast2.bindLong(3, j3);
                         executeFast2.step();
                         nativeByteBuffer.reuse();
                     }
@@ -252,7 +252,7 @@ public final /* synthetic */ class d8 implements Runnable {
                     e = e15;
                     sQLiteCursor = queryFinalized;
                     sQLitePreparedStatement3 = executeFast2;
-                    qrVar.o(e, true);
+                    yrVar.o(e, true);
                     if (sQLitePreparedStatement3 != null) {
                     }
                     if (sQLiteCursor == null) {
@@ -271,10 +271,10 @@ public final /* synthetic */ class d8 implements Runnable {
         }
     }
 
-    public /* synthetic */ d8(qr qrVar, int i3, long j10, int i10, ArrayList arrayList, int i11) {
-        this.f = qrVar;
-        this.b = i3;
-        this.c = j10;
+    public /* synthetic */ d8(yr yrVar, int i7, long j3, int i10, ArrayList arrayList, int i11) {
+        this.f = yrVar;
+        this.b = i7;
+        this.c = j3;
         this.d = i10;
         this.h = arrayList;
         this.e = i11;

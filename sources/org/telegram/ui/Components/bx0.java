@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class bx0 {
     public final boolean a;
-    public k4.j d;
-    public k4.j f;
-    public k4.j h;
+    public h6.m d;
+    public h6.m f;
+    public h6.m h;
     public int[] j;
     public int[] l;
     public zw0[] n;
@@ -35,21 +35,21 @@ public final class bx0 {
     public final hx0 v = new hx0(0);
     public final hx0 w = new hx0(-100000);
 
-    public bx0(lx0 lx0Var, boolean z10) {
+    public bx0(lx0 lx0Var, boolean z9) {
         this.x = lx0Var;
-        this.a = z10;
+        this.a = z9;
     }
 
-    public static void j(ArrayList arrayList, fx0 fx0Var, hx0 hx0Var, boolean z10) {
+    public static void j(ArrayList arrayList, fx0 fx0Var, hx0 hx0Var, boolean z9) {
         if (fx0Var.a() == 0) {
             return;
         }
-        if (z10) {
+        if (z9) {
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
                 if (((zw0) obj).a.equals(fx0Var)) {
                     return;
                 }
@@ -63,9 +63,9 @@ public final class bx0 {
             return false;
         }
         fx0 fx0Var = zw0Var.a;
-        int i3 = fx0Var.a;
+        int i7 = fx0Var.a;
         int i10 = fx0Var.b;
-        int i11 = iArr[i3] + zw0Var.b.a;
+        int i11 = iArr[i7] + zw0Var.b.a;
         if (i11 <= iArr[i10]) {
             return false;
         }
@@ -73,53 +73,53 @@ public final class bx0 {
         return true;
     }
 
-    public final void a(k4.j jVar, boolean z10) {
-        for (hx0 hx0Var : (hx0[]) ((Object[]) jVar.c)) {
+    public final void a(h6.m mVar, boolean z9) {
+        for (hx0 hx0Var : (hx0[]) ((Object[]) mVar.d)) {
             hx0Var.a = TLObject.FLAG_31;
         }
-        cx0[] cx0VarArr = (cx0[]) ((Object[]) f().c);
-        for (int i3 = 0; i3 < cx0VarArr.length; i3++) {
-            int d = cx0VarArr[i3].d(z10);
-            hx0 hx0Var2 = (hx0) ((Object[]) jVar.c)[((int[]) jVar.a)[i3]];
+        cx0[] cx0VarArr = (cx0[]) ((Object[]) f().d);
+        for (int i7 = 0; i7 < cx0VarArr.length; i7++) {
+            int d = cx0VarArr[i7].d(z9);
+            hx0 hx0Var2 = (hx0) ((Object[]) mVar.d)[((int[]) mVar.b)[i7]];
             int i10 = hx0Var2.a;
-            if (!z10) {
+            if (!z9) {
                 d = -d;
             }
             hx0Var2.a = Math.max(i10, d);
         }
     }
 
-    public final void b(boolean z10) {
-        int[] iArr = z10 ? this.j : this.l;
+    public final void b(boolean z9) {
+        int[] iArr = z9 ? this.j : this.l;
         lx0 lx0Var = this.x;
         int childCount = lx0Var.getChildCount();
-        for (int i3 = 0; i3 < childCount; i3++) {
-            ex0 d = lx0Var.d(i3);
+        for (int i7 = 0; i7 < childCount; i7++) {
+            ex0 d = lx0Var.d(i7);
             gx0 gx0Var = d.a;
-            boolean z11 = this.a;
-            fx0 fx0Var = (z11 ? gx0Var.b : gx0Var.a).b;
-            int i10 = z10 ? fx0Var.a : fx0Var.b;
-            iArr[i10] = Math.max(iArr[i10], lx0Var.f(d, z11, z10));
+            boolean z10 = this.a;
+            fx0 fx0Var = (z10 ? gx0Var.b : gx0Var.a).b;
+            int i10 = z9 ? fx0Var.a : fx0Var.b;
+            iArr[i10] = Math.max(iArr[i10], lx0Var.f(d, z10, z9));
         }
     }
 
-    public final k4.j c(boolean z10) {
+    public final h6.m c(boolean z9) {
         fx0 fx0Var;
         ax0 ax0Var = new ax0(fx0.class, hx0.class);
-        ix0[] ix0VarArr = (ix0[]) ((Object[]) f().b);
+        ix0[] ix0VarArr = (ix0[]) ((Object[]) f().c);
         int length = ix0VarArr.length;
-        for (int i3 = 0; i3 < length; i3++) {
-            if (z10) {
-                fx0Var = ix0VarArr[i3].b;
+        for (int i7 = 0; i7 < length; i7++) {
+            if (z9) {
+                fx0Var = ix0VarArr[i7].b;
             } else {
-                fx0 fx0Var2 = ix0VarArr[i3].b;
+                fx0 fx0Var2 = ix0VarArr[i7].b;
                 fx0Var = new fx0(fx0Var2.b, fx0Var2.a);
             }
             hx0 hx0Var = new hx0();
             hx0Var.a = TLObject.FLAG_31;
             ax0Var.add(Pair.create(fx0Var, hx0Var));
         }
-        return ax0Var.h();
+        return ax0Var.f();
     }
 
     public final zw0[] d() {
@@ -133,15 +133,15 @@ public final class bx0 {
                 a(this.f, true);
                 this.g = true;
             }
-            k4.j jVar = this.f;
-            int i3 = 0;
+            h6.m mVar = this.f;
+            int i7 = 0;
             while (true) {
-                fx0[] fx0VarArr = (fx0[]) ((Object[]) jVar.b);
-                if (i3 >= fx0VarArr.length) {
+                fx0[] fx0VarArr = (fx0[]) ((Object[]) mVar.c);
+                if (i7 >= fx0VarArr.length) {
                     break;
                 }
-                j(arrayList, fx0VarArr[i3], ((hx0[]) ((Object[]) jVar.c))[i3], false);
-                i3++;
+                j(arrayList, fx0VarArr[i7], ((hx0[]) ((Object[]) mVar.d))[i7], false);
+                i7++;
             }
             if (this.h == null) {
                 this.h = c(false);
@@ -150,14 +150,14 @@ public final class bx0 {
                 a(this.h, false);
                 this.i = true;
             }
-            k4.j jVar2 = this.h;
+            h6.m mVar2 = this.h;
             int i10 = 0;
             while (true) {
-                fx0[] fx0VarArr2 = (fx0[]) ((Object[]) jVar2.b);
+                fx0[] fx0VarArr2 = (fx0[]) ((Object[]) mVar2.c);
                 if (i10 >= fx0VarArr2.length) {
                     break;
                 }
-                j(arrayList2, fx0VarArr2[i10], ((hx0[]) ((Object[]) jVar2.c))[i10], false);
+                j(arrayList2, fx0VarArr2[i10], ((hx0[]) ((Object[]) mVar2.d))[i10], false);
                 i10++;
             }
             if (this.u) {
@@ -207,18 +207,18 @@ public final class bx0 {
         throw null;
     }
 
-    public final k4.j f() {
+    public final h6.m f() {
         Object yw0Var;
-        k4.j jVar = this.d;
-        boolean z10 = this.a;
+        h6.m mVar = this.d;
+        boolean z9 = this.a;
         lx0 lx0Var = this.x;
-        if (jVar == null) {
+        if (mVar == null) {
             ax0 ax0Var = new ax0(ix0.class, cx0.class);
             int childCount = lx0Var.getChildCount();
-            for (int i3 = 0; i3 < childCount; i3++) {
-                gx0 gx0Var = lx0Var.d(i3).a;
-                ix0 ix0Var = z10 ? gx0Var.b : gx0Var.a;
-                switch (ix0.a(ix0Var, z10).a) {
+            for (int i7 = 0; i7 < childCount; i7++) {
+                gx0 gx0Var = lx0Var.d(i7).a;
+                ix0 ix0Var = z9 ? gx0Var.b : gx0Var.a;
+                switch (ix0.a(ix0Var, z9).a) {
                     case 3:
                         yw0Var = new yw0();
                         break;
@@ -228,24 +228,24 @@ public final class bx0 {
                 }
                 ax0Var.add(Pair.create(ix0Var, yw0Var));
             }
-            this.d = ax0Var.h();
+            this.d = ax0Var.f();
         }
         if (!this.e) {
-            for (cx0 cx0Var : (cx0[]) ((Object[]) this.d.c)) {
+            for (cx0 cx0Var : (cx0[]) ((Object[]) this.d.d)) {
                 cx0Var.c();
             }
             int childCount2 = lx0Var.getChildCount();
             for (int i10 = 0; i10 < childCount2; i10++) {
                 ex0 d = lx0Var.d(i10);
                 gx0 gx0Var2 = d.a;
-                ix0 ix0Var2 = z10 ? gx0Var2.b : gx0Var2.a;
-                int e10 = lx0Var.e(d, z10, false) + lx0Var.e(d, z10, true) + (z10 ? d.k : d.l);
+                ix0 ix0Var2 = z9 ? gx0Var2.b : gx0Var2.a;
+                int e10 = lx0Var.e(d, z9, false) + lx0Var.e(d, z9, true) + (z9 ? d.k : d.l);
                 float f10 = ix0Var2.d;
                 int i11 = e10 + (f10 == 0.0f ? 0 : this.t[i10]);
-                k4.j jVar2 = this.d;
-                cx0 cx0Var2 = (cx0) ((Object[]) jVar2.c)[((int[]) jVar2.a)[i10]];
-                cx0Var2.c = ((ix0Var2.c == lx0.S && f10 == 0.0f) ? 0 : 2) & cx0Var2.c;
-                int a10 = ix0.a(ix0Var2, z10).a(d, i11);
+                h6.m mVar2 = this.d;
+                cx0 cx0Var2 = (cx0) ((Object[]) mVar2.d)[((int[]) mVar2.b)[i10]];
+                cx0Var2.c = ((ix0Var2.c == lx0.R && f10 == 0.0f) ? 0 : 2) & cx0Var2.c;
+                int a10 = ix0.a(ix0Var2, z9).a(d, i11);
                 cx0Var2.b(a10, i11 - a10);
             }
             this.e = true;
@@ -254,32 +254,32 @@ public final class bx0 {
     }
 
     public final int[] g() {
-        boolean z10;
+        boolean z9;
         if (this.p == null) {
             this.p = new int[e() + 1];
         }
         if (!this.q) {
             int[] iArr = this.p;
-            boolean z11 = this.s;
+            boolean z10 = this.s;
             float f10 = 0.0f;
-            boolean z12 = this.a;
+            boolean z11 = this.a;
             lx0 lx0Var = this.x;
-            if (!z11) {
+            if (!z10) {
                 int childCount = lx0Var.getChildCount();
-                int i3 = 0;
+                int i7 = 0;
                 while (true) {
-                    if (i3 >= childCount) {
-                        z10 = false;
+                    if (i7 >= childCount) {
+                        z9 = false;
                         break;
                     }
-                    gx0 gx0Var = lx0Var.d(i3).a;
-                    if ((z12 ? gx0Var.b : gx0Var.a).d != 0.0f) {
-                        z10 = true;
+                    gx0 gx0Var = lx0Var.d(i7).a;
+                    if ((z11 ? gx0Var.b : gx0Var.a).d != 0.0f) {
+                        z9 = true;
                         break;
                     }
-                    i3++;
+                    i7++;
                 }
-                this.r = z10;
+                this.r = z9;
                 this.s = true;
             }
             if (this.r) {
@@ -293,10 +293,10 @@ public final class bx0 {
                     int childCount3 = lx0Var.getChildCount();
                     for (int i10 = 0; i10 < childCount3; i10++) {
                         gx0 gx0Var2 = lx0Var.d(i10).a;
-                        f10 += (z12 ? gx0Var2.b : gx0Var2.a).d;
+                        f10 += (z11 ? gx0Var2.b : gx0Var2.a).d;
                     }
                     int i11 = -1;
-                    boolean z13 = true;
+                    boolean z12 = true;
                     int i12 = 0;
                     while (i12 < childCount2) {
                         int i13 = (int) ((i12 + childCount2) / 2);
@@ -309,9 +309,9 @@ public final class bx0 {
                         } else {
                             childCount2 = i13;
                         }
-                        z13 = p10;
+                        z12 = p10;
                     }
-                    if (i11 > 0 && !z13) {
+                    if (i11 > 0 && !z12) {
                         l();
                         o(f10, i11);
                         p(d(), iArr, true);
@@ -333,9 +333,9 @@ public final class bx0 {
     }
 
     public final int h() {
-        int i3 = this.c;
+        int i7 = this.c;
         int i10 = TLObject.FLAG_31;
-        if (i3 == Integer.MIN_VALUE) {
+        if (i7 == Integer.MIN_VALUE) {
             lx0 lx0Var = this.x;
             int childCount = lx0Var.getChildCount();
             int i11 = -1;
@@ -352,9 +352,9 @@ public final class bx0 {
         return this.c;
     }
 
-    public final int i(int i3) {
-        int mode = View.MeasureSpec.getMode(i3);
-        int size = View.MeasureSpec.getSize(i3);
+    public final int i(int i7) {
+        int mode = View.MeasureSpec.getMode(i7);
+        int size = View.MeasureSpec.getSize(i7);
         hx0 hx0Var = this.w;
         hx0 hx0Var2 = this.v;
         if (mode == Integer.MIN_VALUE) {
@@ -402,16 +402,16 @@ public final class bx0 {
         this.q = false;
     }
 
-    public final void n(int i3) {
-        if (i3 == Integer.MIN_VALUE || i3 >= h()) {
-            this.b = i3;
+    public final void n(int i7) {
+        if (i7 == Integer.MIN_VALUE || i7 >= h()) {
+            this.b = i7;
         } else {
             lx0.g((this.a ? "column" : "row").concat("Count must be greater than or equal to the maximum of all grid indices (and spans) defined in the LayoutParams of each child"));
             throw null;
         }
     }
 
-    public final void o(float f10, int i3) {
+    public final void o(float f10, int i7) {
         Arrays.fill(this.t, 0);
         lx0 lx0Var = this.x;
         int childCount = lx0Var.getChildCount();
@@ -419,28 +419,28 @@ public final class bx0 {
             gx0 gx0Var = lx0Var.d(i10).a;
             float f11 = (this.a ? gx0Var.b : gx0Var.a).d;
             if (f11 != 0.0f) {
-                int round = Math.round((i3 * f11) / f10);
+                int round = Math.round((i7 * f11) / f10);
                 this.t[i10] = round;
-                i3 -= round;
+                i7 -= round;
                 f10 -= f11;
             }
         }
     }
 
-    public final boolean p(zw0[] zw0VarArr, int[] iArr, boolean z10) {
+    public final boolean p(zw0[] zw0VarArr, int[] iArr, boolean z9) {
         int e10 = e() + 1;
-        loop0: for (int i3 = 0; i3 < zw0VarArr.length; i3++) {
+        loop0: for (int i7 = 0; i7 < zw0VarArr.length; i7++) {
             Arrays.fill(iArr, 0);
             for (int i10 = 0; i10 < e10; i10++) {
-                boolean z11 = false;
+                boolean z10 = false;
                 for (zw0 zw0Var : zw0VarArr) {
-                    z11 |= m(iArr, zw0Var);
+                    z10 |= m(iArr, zw0Var);
                 }
-                if (!z11) {
+                if (!z10) {
                     break loop0;
                 }
             }
-            if (!z10) {
+            if (!z9) {
                 return false;
             }
             boolean[] zArr = new boolean[zw0VarArr.length];
@@ -470,11 +470,11 @@ public final class bx0 {
     }
 
     public final zw0[] q(ArrayList arrayList) {
-        e0.e0 e0Var = new e0.e0(this, (zw0[]) arrayList.toArray(new zw0[0]));
-        int length = ((zw0[][]) e0Var.d).length;
-        for (int i3 = 0; i3 < length; i3++) {
-            e0Var.x(i3);
+        a4.k kVar = new a4.k(this, (zw0[]) arrayList.toArray(new zw0[0]));
+        int length = ((zw0[][]) kVar.d).length;
+        for (int i7 = 0; i7 < length; i7++) {
+            kVar.x(i7);
         }
-        return (zw0[]) e0Var.c;
+        return (zw0[]) kVar.c;
     }
 }

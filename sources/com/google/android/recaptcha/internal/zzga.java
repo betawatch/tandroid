@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
-import wd.b0;
-import wd.t;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
+import zd.b0;
+import zd.t;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzga extends j implements p {
     final /* synthetic */ zzgb zza;
@@ -16,20 +16,20 @@ final class zzga extends j implements p {
     private /* synthetic */ Object zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzga(zzgb zzgbVar, long j10, c cVar) {
+    public zzga(zzgb zzgbVar, long j3, c cVar) {
         super(2, cVar);
         this.zza = zzgbVar;
-        this.zzb = j10;
+        this.zzb = j3;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzga zzgaVar = new zzga(this.zza, this.zzb, cVar);
         zzgaVar.zzc = obj;
         return zzgaVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzga) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -38,7 +38,7 @@ final class zzga extends j implements p {
     
         if (com.google.android.recaptcha.internal.zzgb.zzo(r1, r9) == false) goto L13;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -48,8 +48,8 @@ final class zzga extends j implements p {
         zzdr zzdrVar;
         zzdt zzdtVar2;
         zzcg zzcgVar;
-        gd.a aVar = gd.a.a;
-        ib.b(obj);
+        jd.a aVar = jd.a.a;
+        b.c(obj);
         zzhk zzhkVar = (zzhk) this.zzc;
         zzgb zzgbVar = this.zza;
         zzdv zze = zzgbVar.zze();

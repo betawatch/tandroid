@@ -1,34 +1,21 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class v6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ n10 c;
-    public final /* synthetic */ TL_wallet.sendTransfer d;
-    public final /* synthetic */ String e;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class v6 extends vg.e {
+    public final /* synthetic */ w6 L;
 
-    public /* synthetic */ v6(WalletEngine2 walletEngine2, n10 n10Var, TL_wallet.sendTransfer sendtransfer, String str, int i3) {
-        this.a = i3;
-        this.b = walletEngine2;
-        this.c = n10Var;
-        this.d = sendtransfer;
-        this.e = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v6(w6 w6Var, Context context) {
+        super(context);
+        this.L = w6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$prepareTonConnectTransfer$4(this.c, this.d, this.e);
-                break;
-            default:
-                this.b.lambda$prepareSendNFT$25(this.c, this.d, this.e);
-                break;
-        }
+    @Override // vg.e, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.L.y && super.onTouchEvent(motionEvent);
     }
 }

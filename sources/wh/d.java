@@ -1,60 +1,135 @@
 package wh;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.g0;
-import u4.b0;
-import u4.t0;
-import xg.e1;
-import xg.w0;
-import zh.k;
+import org.telegram.messenger.g5;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.t10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d extends t0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class d implements ValueAnimator.AnimatorUpdateListener {
+    public final h a;
+    public final q1 b;
+    public final ImageReceiver c;
+    public final long d;
+    public b e;
+    public b f;
+    public Paint g;
+    public final StaticLayout h;
+    public float i;
+    public float j;
+    public ValueAnimator k;
+    public float l;
+    public boolean m;
+    public ValueAnimator n;
+    public float o;
+    public boolean p;
 
-    public /* synthetic */ d(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
-    }
-
-    @Override // u4.t0
-    public void a(RecyclerView recyclerView, int i3) {
-        switch (this.a) {
-            case 1:
-                if (i3 == 1) {
-                    g0.v1(((w0) this.b).R1.getEditText());
-                    break;
+    public d(h hVar, long j3) {
+        ImageReceiver imageReceiver;
+        String str;
+        String str2;
+        w8 w8Var = new w8((f6) null);
+        int i7 = p10.s0;
+        this.l = 1.0f;
+        this.m = true;
+        this.o = 0.0f;
+        this.p = false;
+        ImageReceiver imageReceiver2 = new ImageReceiver(hVar.a);
+        this.c = imageReceiver2;
+        this.a = hVar;
+        q1 q1Var = hVar.D;
+        this.b = q1Var;
+        this.d = j3;
+        w8Var.p = 1.0f;
+        if (m5.E(j3)) {
+            TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
+            w8Var.r(a22);
+            if (t10.B(a22)) {
+                str2 = hd.M0(2131745902, null);
+                w8Var.g(1);
+                w8Var.p = 0.75f;
+                imageReceiver = imageReceiver2;
+                imageReceiver.r0(null, null, null, null, w8Var, 0L, null, a22, 0);
+                imageReceiver.J0(g0.L(g.a / 2.0f));
+                imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
+                Paint Z1 = q1Var.Z1("paintChatActionText");
+                if (str2 != null || Z1 == null) {
                 }
-                break;
-            case 2:
-                if (i3 == 1) {
-                    g0.v1(((e1) this.b).S1.getEditText());
-                    break;
-                }
-                break;
+                int L = g0.q.x - g0.L(48);
+                TextPaint textPaint = new TextPaint(Z1);
+                this.h = new StaticLayout(TextUtils.ellipsize(str2, textPaint, L, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r5, 0, r5.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                return;
+            }
+            imageReceiver = imageReceiver2;
+            str = a22 != null ? g5.m(0, a22.first_name, a22.last_name) : "";
+            imageReceiver.i0(a22, w8Var, null);
+        } else {
+            imageReceiver = imageReceiver2;
+            TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
+            str = M0 != null ? M0.title : "";
+            w8Var.q(M0);
+            imageReceiver.i0(M0, w8Var, null);
+        }
+        str2 = str;
+        imageReceiver.J0(g0.L(g.a / 2.0f));
+        imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
+        Paint Z12 = q1Var.Z1("paintChatActionText");
+        if (str2 != null) {
         }
     }
 
-    @Override // u4.t0
-    public void b(RecyclerView recyclerView, int i3, int i10) {
-        switch (this.a) {
-            case 0:
-                ((h) this.b).f1();
-                break;
-            case 3:
-                b0 b0Var = (b0) recyclerView.getLayoutManager();
-                k kVar = (k) this.b;
-                zh.e eVar = kVar.C;
-                if (kVar.x && !kVar.w && b0Var != null) {
-                    if (kVar.f.b() - b0Var.N0() < 10) {
-                        g0.r(eVar);
-                        g0.h3(eVar);
-                        break;
-                    }
-                }
-                break;
+    public static float b(float f10, float f11, float f12, float f13) {
+        float f14 = f11 / 2.0f;
+        float f15 = f10 - f14;
+        float f16 = f10 + f14;
+        float f17 = f13 - f12;
+        if (f11 <= f17) {
+            return f15 < f12 ? f12 + f14 : f16 > f13 ? f13 - f14 : f10;
         }
+        float f18 = (f12 + f13) / 2.0f;
+        float f19 = f11 - f17;
+        float max = Math.max(0.0f, f12 - f15);
+        float max2 = Math.max(0.0f, f16 - f13);
+        float f20 = max + max2;
+        return f20 < 0.1f ? f18 : com.google.android.recaptcha.internal.a.c(f19, 2.0f, (max - max2) / f20, f18);
+    }
+
+    public final void a(Canvas canvas, float f10, float f11, float f12, float f13) {
+        canvas.save();
+        canvas.translate(f10 - f12, f11 - f12);
+        int i7 = g.a;
+        float f14 = 21;
+        canvas.scale(f12 / g0.L(f14), f12 / g0.L(f14));
+        float f15 = ((this.l * 0.25f) + 0.75f) * f13;
+        ImageReceiver imageReceiver = this.c;
+        imageReceiver.setAlpha(f15);
+        imageReceiver.h(canvas, null);
+        canvas.restore();
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        if (valueAnimator == this.n) {
+            this.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        } else if (valueAnimator == this.k) {
+            this.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        }
+        this.a.invalidateSelf();
     }
 }

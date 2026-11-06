@@ -1,31 +1,113 @@
 package m6;
 
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Looper;
+import android.os.Message;
+import android.os.Messenger;
+import android.os.Parcelable;
 import android.util.Log;
+import com.google.android.gms.internal.cast.y;
+import j$.util.Objects;
+import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class o {
-    public static final k a;
-    public static final k b;
-    public static Context c;
+public final class o extends y {
+    public final /* synthetic */ c a;
 
-    static {
-        new k(l.N0("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u007f¢fú§p\u0085xb±"), 0);
-        new k(l.N0("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014QÕÛ\u0004÷XçB\u0086<"), 1);
-        new k(l.N0("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u0010\u008ae\bsù/\u008eQí"), 2);
-        new k(l.N0("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014\u0003£²\u00ad×árÊkì"), 3);
-        a = new k(l.N0("0\u0082\u0004C0\u0082\u0003+ \u0003\u0002\u0001\u0002\u0002\t\u0000Âà\u0087FdJ0\u008d0"), 4);
-        b = new k(l.N0("0\u0082\u0004¨0\u0082\u0003\u0090 \u0003\u0002\u0001\u0002\u0002\t\u0000Õ\u0085¸l}ÓNõ0"), 5);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o(c cVar, Looper looper) {
+        super(looper);
+        this.a = cVar;
+        Looper.getMainLooper();
     }
 
-    public static synchronized void a(Context context) {
-        synchronized (o.class) {
-            if (c != null) {
-                Log.w("GoogleCertificates", "GoogleCertificates has been initialized already");
-            } else if (context != null) {
-                c = context.getApplicationContext();
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        c cVar = this.a;
+        cVar.getClass();
+        if (message != null) {
+            Object obj = message.obj;
+            if (obj instanceof Intent) {
+                Intent intent = (Intent) obj;
+                intent.setExtrasClassLoader(new f());
+                if (intent.hasExtra("google.messenger")) {
+                    Parcelable parcelableExtra = intent.getParcelableExtra("google.messenger");
+                    if (parcelableExtra instanceof g) {
+                        cVar.g = (g) parcelableExtra;
+                    }
+                    if (parcelableExtra instanceof Messenger) {
+                        cVar.f = (Messenger) parcelableExtra;
+                    }
+                }
+                Intent intent2 = (Intent) message.obj;
+                String action = intent2.getAction();
+                if (!Objects.equals(action, "com.google.android.c2dm.intent.REGISTRATION")) {
+                    if (Log.isLoggable("Rpc", 3)) {
+                        Log.d("Rpc", "Unexpected response action: ".concat(String.valueOf(action)));
+                        return;
+                    }
+                    return;
+                }
+                String stringExtra = intent2.getStringExtra("registration_id");
+                if (stringExtra == null) {
+                    stringExtra = intent2.getStringExtra("unregistered");
+                }
+                if (stringExtra != null) {
+                    Matcher matcher = c.j.matcher(stringExtra);
+                    if (!matcher.matches()) {
+                        if (Log.isLoggable("Rpc", 3)) {
+                            Log.d("Rpc", "Unexpected response string: ".concat(stringExtra));
+                            return;
+                        }
+                        return;
+                    }
+                    String group = matcher.group(1);
+                    String group2 = matcher.group(2);
+                    if (group != null) {
+                        Bundle extras = intent2.getExtras();
+                        extras.putString("registration_id", group2);
+                        cVar.b(group, extras);
+                        return;
+                    }
+                    return;
+                }
+                String stringExtra2 = intent2.getStringExtra("error");
+                if (stringExtra2 == null) {
+                    Log.w("Rpc", "Unexpected response, no error or registration id ".concat(String.valueOf(intent2.getExtras())));
+                    return;
+                }
+                if (Log.isLoggable("Rpc", 3)) {
+                    Log.d("Rpc", "Received InstanceID error ".concat(stringExtra2));
+                }
+                if (!stringExtra2.startsWith("|")) {
+                    a0.l lVar = cVar.a;
+                    synchronized (lVar) {
+                        for (int i7 = 0; i7 < lVar.c; i7++) {
+                            try {
+                                cVar.b((String) lVar.f(i7), intent2.getExtras());
+                            } catch (Throwable th2) {
+                                throw th2;
+                            }
+                        }
+                    }
+                    return;
+                }
+                String[] split = stringExtra2.split("\\|");
+                if (split.length <= 2 || !Objects.equals(split[1], "ID")) {
+                    Log.w("Rpc", "Unexpected structured response ".concat(stringExtra2));
+                    return;
+                }
+                String str = split[2];
+                String str2 = split[3];
+                if (str2.startsWith(":")) {
+                    str2 = str2.substring(1);
+                }
+                cVar.b(str, intent2.putExtra("error", str2).getExtras());
+                return;
             }
         }
+        Log.w("Rpc", "Dropping invalid message");
     }
 }

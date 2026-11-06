@@ -4,13 +4,13 @@ import android.content.Intent;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.support.JobIntentService;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class KeepAliveJob extends JobIntentService {
     public static volatile CountDownLatch a;
     public static volatile boolean b;
     public static final Object c = new Object();
-    public static final ai.y1 d = new ai.y1(29);
+    public static final ai.m0 d = new ai.m0(25);
 
     public static void a() {
         synchronized (c) {
@@ -42,7 +42,7 @@ public class KeepAliveJob extends JobIntentService {
                     if (r2.a) {
                         a8.b("started keep-alive job");
                     }
-                    Utilities.e.e(d, 60000L);
+                    Utilities.e.d(d, 60000L);
                     try {
                         a.await();
                     } catch (Throwable unused) {

@@ -3,7 +3,7 @@ package com.google.android.gms.tasks;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzaa<T> implements zzab<T> {
     private final CountDownLatch zza = new CountDownLatch(1);
@@ -22,7 +22,7 @@ final class zzaa<T> implements zzab<T> {
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(T t10) {
+    public final void onSuccess(T t6) {
         this.zza.countDown();
     }
 
@@ -30,8 +30,8 @@ final class zzaa<T> implements zzab<T> {
         this.zza.await();
     }
 
-    public final boolean zzb(long j10, TimeUnit timeUnit) {
-        return this.zza.await(j10, timeUnit);
+    public final boolean zzb(long j3, TimeUnit timeUnit) {
+        return this.zza.await(j3, timeUnit);
     }
 
     public /* synthetic */ zzaa(byte[] bArr) {

@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import c8.wb;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.internal.ReflectedParcelable;
@@ -14,16 +15,16 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import q6.a;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
+    public static final Scope D;
     public static final Scope E;
-    public static final Scope F;
-    public static final b5.b G;
+    public static final c5.b F;
     public static final GoogleSignInOptions w;
     public static final Scope x;
     public static final Scope y;
@@ -44,14 +45,14 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         Scope scope2 = new Scope(1, "openid");
         y = scope2;
         Scope scope3 = new Scope(1, "https://www.googleapis.com/auth/games_lite");
-        E = scope3;
-        F = new Scope(1, "https://www.googleapis.com/auth/games");
+        D = scope3;
+        E = new Scope(1, "https://www.googleapis.com/auth/games");
         HashSet hashSet = new HashSet();
         HashMap hashMap = new HashMap();
         hashSet.add(scope2);
         hashSet.add(scope);
-        if (hashSet.contains(F)) {
-            Scope scope4 = E;
+        if (hashSet.contains(E)) {
+            Scope scope4 = D;
             if (hashSet.contains(scope4)) {
                 hashSet.remove(scope4);
             }
@@ -61,24 +62,24 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashMap hashMap2 = new HashMap();
         hashSet2.add(scope3);
         hashSet2.addAll(Arrays.asList(new Scope[0]));
-        if (hashSet2.contains(F)) {
-            Scope scope5 = E;
+        if (hashSet2.contains(E)) {
+            Scope scope5 = D;
             if (hashSet2.contains(scope5)) {
                 hashSet2.remove(scope5);
             }
         }
         new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
-        CREATOR = new w.a(14);
-        G = new b5.b(3);
+        CREATOR = new w.a(24);
+        F = new c5.b(3);
     }
 
-    public GoogleSignInOptions(int i3, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
-        this.a = i3;
+    public GoogleSignInOptions(int i7, ArrayList arrayList, Account account, boolean z9, boolean z10, boolean z11, String str, String str2, HashMap hashMap, String str3) {
+        this.a = i7;
         this.b = arrayList;
         this.c = account;
-        this.d = z10;
-        this.e = z11;
-        this.f = z12;
+        this.d = z9;
+        this.e = z10;
+        this.f = z11;
         this.h = str;
         this.n = str2;
         this.r = new ArrayList(hashMap.values());
@@ -93,8 +94,8 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashSet hashSet = new HashSet();
         JSONArray jSONArray = jSONObject.getJSONArray("scopes");
         int length = jSONArray.length();
-        for (int i3 = 0; i3 < length; i3++) {
-            hashSet.add(new Scope(1, jSONArray.getString(i3)));
+        for (int i7 = 0; i7 < length; i7++) {
+            hashSet.add(new Scope(1, jSONArray.getString(i7)));
         }
         String optString = jSONObject.has("accountName") ? jSONObject.optString("accountName") : null;
         return new GoogleSignInOptions(3, new ArrayList(hashSet), !TextUtils.isEmpty(optString) ? new Account(optString, "com.google") : null, jSONObject.getBoolean("idTokenRequested"), jSONObject.getBoolean("serverAuthRequested"), jSONObject.getBoolean("forceCodeForRefreshToken"), jSONObject.has("serverClientId") ? jSONObject.optString("serverClientId") : null, jSONObject.has("hostedDomain") ? jSONObject.optString("hostedDomain") : null, new HashMap(), null);
@@ -104,11 +105,11 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashMap hashMap = new HashMap();
         if (arrayList != null) {
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
-                c6.a aVar = (c6.a) obj;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                d6.a aVar = (d6.a) obj;
                 hashMap.put(Integer.valueOf(aVar.b), aVar);
             }
         }
@@ -160,8 +161,8 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = this.b;
         int size = arrayList2.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            arrayList.add(((Scope) arrayList2.get(i3)).b);
+        for (int i7 = 0; i7 < size; i7++) {
+            arrayList.add(((Scope) arrayList2.get(i7)).b);
         }
         Collections.sort(arrayList);
         int hashCode = (arrayList.hashCode() + (1 * 31)) * 31;
@@ -174,22 +175,22 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.r(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        j8.a.q(parcel, 2, new ArrayList(this.b));
-        j8.a.l(parcel, 3, this.c, i3);
-        j8.a.r(parcel, 4, 4);
+        wb.p(parcel, 2, new ArrayList(this.b));
+        wb.k(parcel, 3, this.c, i7);
+        wb.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        j8.a.r(parcel, 5, 4);
+        wb.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        j8.a.r(parcel, 6, 4);
+        wb.q(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        j8.a.m(parcel, 7, this.h);
-        j8.a.m(parcel, 8, this.n);
-        j8.a.q(parcel, 9, this.r);
-        j8.a.m(parcel, 10, this.s);
-        j8.a.t(parcel, s6);
+        wb.l(parcel, 7, this.h);
+        wb.l(parcel, 8, this.n);
+        wb.p(parcel, 9, this.r);
+        wb.l(parcel, 10, this.s);
+        wb.s(parcel, r10);
     }
 }

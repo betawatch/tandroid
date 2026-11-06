@@ -6,11 +6,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class m5 {
     public static boolean A() {
-        TLRPC.User a22 = hp.s1(h10.t0).a2(0L);
+        TLRPC.User a22 = qp.s1(p10.s0).a2(0L);
         if (a22 == null) {
             return false;
         }
@@ -25,68 +25,68 @@ public abstract class m5 {
         return (tL_emojiStatusCollectible.flags & 1) == 0 || tL_emojiStatusCollectible.until > ((int) (System.currentTimeMillis() / 1000));
     }
 
-    public static boolean C(long j10) {
-        return (4611686018427387904L & j10) != 0 && (j10 & Long.MIN_VALUE) == 0;
+    public static boolean C(long j3) {
+        return (4611686018427387904L & j3) != 0 && (j3 & Long.MIN_VALUE) == 0;
     }
 
-    public static boolean D(long j10) {
-        return (2305843009213693952L & j10) != 0 && (j10 & Long.MIN_VALUE) == 0;
+    public static boolean D(long j3) {
+        return (2305843009213693952L & j3) != 0 && (j3 & Long.MIN_VALUE) == 0;
     }
 
-    public static boolean E(long j10) {
-        return (C(j10) || D(j10) || j10 <= 0) ? false : true;
+    public static boolean E(long j3) {
+        return (C(j3) || D(j3) || j3 <= 0) ? false : true;
     }
 
-    public static long F(long j10) {
-        return (j10 & 4294967295L) | 4611686018427387904L;
+    public static long F(long j3) {
+        return (j3 & 4294967295L) | 4611686018427387904L;
     }
 
-    public static long G(int i3) {
-        return 2305843009213693952L | i3;
+    public static long G(int i7) {
+        return 2305843009213693952L | i7;
     }
 
-    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.u8 u8Var, TLObject tLObject) {
+    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.w8 w8Var, TLObject tLObject) {
         if (!(tLObject instanceof TLRPC.User)) {
             if (!(tLObject instanceof TLRPC.Chat)) {
                 return "";
             }
             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
             String str = chat.title;
-            if (u8Var != null) {
-                u8Var.q(chat);
+            if (w8Var != null) {
+                w8Var.q(chat);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(tLObject, u8Var, null);
+                imageReceiver.i0(tLObject, w8Var, null);
             }
             return str;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
-        if (l10.z(user)) {
-            String M0 = bd.M0(2131746274, null);
-            if (u8Var != null) {
-                u8Var.g(12);
+        if (t10.z(user)) {
+            String M0 = hd.M0(2131746265, null);
+            if (w8Var != null) {
+                w8Var.g(12);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, u8Var, null);
+                imageReceiver.i0(null, w8Var, null);
             }
             return M0;
         }
-        if (l10.B(user)) {
-            String M02 = bd.M0(2131745911, null);
-            if (u8Var != null) {
-                u8Var.g(1);
+        if (t10.B(user)) {
+            String M02 = hd.M0(2131745902, null);
+            if (w8Var != null) {
+                w8Var.g(1);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, u8Var, null);
+                imageReceiver.i0(null, w8Var, null);
             }
             return M02;
         }
-        String p10 = l10.p(user);
-        if (u8Var != null) {
-            u8Var.r(user);
+        String p10 = t10.p(user);
+        if (w8Var != null) {
+            w8Var.r(user);
         }
         if (imageReceiver != null) {
-            imageReceiver.i0(tLObject, u8Var, null);
+            imageReceiver.i0(tLObject, w8Var, null);
         }
         return p10;
     }
@@ -103,22 +103,22 @@ public abstract class m5 {
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
         int[] iArr = new int[lowerCase2.length() + 1];
-        for (int i3 = 0; i3 <= lowerCase.length(); i3++) {
-            int i10 = i3;
+        for (int i7 = 0; i7 <= lowerCase.length(); i7++) {
+            int i10 = i7;
             for (int i11 = 0; i11 <= lowerCase2.length(); i11++) {
-                if (i3 == 0) {
+                if (i7 == 0) {
                     iArr[i11] = i11;
                 } else if (i11 > 0) {
                     int i12 = i11 - 1;
                     int i13 = iArr[i12];
-                    if (lowerCase.charAt(i3 - 1) != lowerCase2.charAt(i12)) {
+                    if (lowerCase.charAt(i7 - 1) != lowerCase2.charAt(i12)) {
                         i13 = Math.min(Math.min(i13, i10), iArr[i11]) + 1;
                     }
                     iArr[i12] = i10;
                     i10 = i13;
                 }
             }
-            if (i3 > 0) {
+            if (i7 > 0) {
                 iArr[lowerCase2.length()] = i10;
             }
         }
@@ -134,10 +134,10 @@ public abstract class m5 {
             return null;
         }
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
             TLRPC.TL_username tL_username = (TLRPC.TL_username) obj;
             if (tL_username != null && TextUtils.equals(tL_username.username, str)) {
                 return tL_username;
@@ -213,17 +213,17 @@ public abstract class m5 {
         return 0;
     }
 
-    public static int h(long j10) {
-        return (int) (j10 & 4294967295L);
+    public static int h(long j3) {
+        return (int) (j3 & 4294967295L);
     }
 
-    public static int i(long j10) {
-        return (int) j10;
+    public static int i(long j3) {
+        return (int) j3;
     }
 
     public static long j(TLRPC.Dialog dialog, TLRPC.DraftMessage draftMessage) {
-        int i3;
-        return (draftMessage == null || (i3 = draftMessage.date) < dialog.last_message_date) ? dialog.last_message_date : i3;
+        int i7;
+        return (draftMessage == null || (i7 = draftMessage.date) < dialog.last_message_date) ? dialog.last_message_date : i7;
     }
 
     public static long k(TL_account.RequirementToContact requirementToContact) {
@@ -233,36 +233,36 @@ public abstract class m5 {
         return 0L;
     }
 
-    public static String l(int i3, long j10) {
-        return m(hp.s1(i3).e2(j10));
+    public static String l(int i7, long j3) {
+        return m(qp.s1(i7).e2(j3));
     }
 
     public static String m(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(l10.p((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(t10.p((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
     }
 
     public static long n(TLRPC.InputPeer inputPeer) {
         if (inputPeer == null) {
             return 0L;
         }
-        long j10 = inputPeer.user_id;
-        if (j10 != 0) {
-            return j10;
+        long j3 = inputPeer.user_id;
+        if (j3 != 0) {
+            return j3;
         }
-        long j11 = inputPeer.chat_id;
-        return j11 != 0 ? -j11 : -inputPeer.channel_id;
+        long j10 = inputPeer.chat_id;
+        return j10 != 0 ? -j10 : -inputPeer.channel_id;
     }
 
     public static long o(TLRPC.Peer peer) {
         if (peer == null) {
             return 0L;
         }
-        long j10 = peer.user_id;
-        if (j10 != 0) {
-            return j10;
+        long j3 = peer.user_id;
+        if (j3 != 0) {
+            return j3;
         }
-        long j11 = peer.chat_id;
-        return j11 != 0 ? -j11 : -peer.channel_id;
+        long j10 = peer.chat_id;
+        return j10 != 0 ? -j10 : -peer.channel_id;
     }
 
     public static String p(String str, ArrayList arrayList) {
@@ -270,8 +270,8 @@ public abstract class m5 {
             return str;
         }
         if (arrayList != null) {
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i3);
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i7);
                 if (tL_username != null && ((tL_username.active || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
                     return tL_username.username;
                 }
@@ -305,24 +305,24 @@ public abstract class m5 {
         return p(user.username, user.usernames);
     }
 
-    public static String s(int i3, long j10) {
-        return u(hp.s1(i3).e2(j10));
+    public static String s(int i7, long j3) {
+        return u(qp.s1(i7).e2(j3));
     }
 
-    public static String t(long j10) {
-        return u(hp.s1(h10.t0).e2(j10));
+    public static String t(long j3) {
+        return u(qp.s1(p10.s0).e2(j3));
     }
 
     public static String u(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(l10.k((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
+        return tLObject instanceof TLRPC.User ? g0.F2(g0.D2(t10.k((TLRPC.User) tLObject))) : tLObject instanceof TLRPC.Chat ? g0.F2(g0.D2(((TLRPC.Chat) tLObject).title)) : "";
     }
 
     public static String v(String str, ArrayList arrayList, String str2) {
         double d = -1.0d;
         String str3 = null;
         if (arrayList != null) {
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i3);
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i7);
                 if (tL_username != null && tL_username.active && !TextUtils.isEmpty(tL_username.username)) {
                     double I = d < 0.0d ? 0.0d : I(tL_username.username, str2);
                     if (I > d) {
@@ -340,17 +340,17 @@ public abstract class m5 {
         return str3;
     }
 
-    public static String w(long j10) {
-        int i3 = h10.t0;
-        TLObject e22 = hp.s1(i3).e2(j10);
+    public static String w(long j3) {
+        int i7 = p10.s0;
+        TLObject e22 = qp.s1(i7).e2(j3);
         if (e22 instanceof TLRPC.User) {
-            return bd.d0(i3, (TLRPC.User) e22, null, null);
+            return hd.d0(i7, (TLRPC.User) e22, null, null);
         }
         if (!(e22 instanceof TLRPC.Chat)) {
             return "";
         }
         TLRPC.Chat chat = (TLRPC.Chat) e22;
-        return chat.participants_count > 1 ? t3.V(chat) ? bd.H(',', "Subscribers", chat.participants_count) : bd.H(',', "Members", chat.participants_count) : t3.V(chat) ? bd.M0(2131751391, null) : bd.M0(2131754876, null);
+        return chat.participants_count > 1 ? t3.V(chat) ? hd.H(',', "Subscribers", chat.participants_count) : hd.H(',', "Members", chat.participants_count) : t3.V(chat) ? hd.M0(2131751391, null) : hd.M0(2131754876, null);
     }
 
     public static void x(TLRPC.Dialog dialog) {
@@ -373,14 +373,14 @@ public abstract class m5 {
         if (peer == null) {
             return;
         }
-        long j10 = peer.user_id;
-        if (j10 != 0) {
-            dialog.id = j10;
+        long j3 = peer.user_id;
+        if (j3 != 0) {
+            dialog.id = j3;
             return;
         }
-        long j11 = peer.chat_id;
-        if (j11 != 0) {
-            dialog.id = -j11;
+        long j10 = peer.chat_id;
+        if (j10 != 0) {
+            dialog.id = -j10;
         } else {
             dialog.id = -peer.channel_id;
         }
@@ -390,7 +390,7 @@ public abstract class m5 {
         return (dialog == null || (dialog.flags & 1) == 0) ? false : true;
     }
 
-    public static boolean z(long j10) {
-        return (C(j10) || D(j10) || j10 >= 0) ? false : true;
+    public static boolean z(long j3) {
+        return (C(j3) || D(j3) || j3 >= 0) ? false : true;
     }
 }

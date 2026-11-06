@@ -1,52 +1,51 @@
 package c5;
 
-import android.content.pm.PackageInfo;
-import android.net.Uri;
-import android.support.v4.media.c;
-import android.webkit.WebView;
-import d5.l;
-import d5.m;
-import d5.n;
-import java.util.Set;
-import java.util.WeakHashMap;
-import org.telegram.ui.ActionBar.e3;
+import android.database.DataSetObservable;
+import android.database.DataSetObserver;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final boolean a;
-    public static final WeakHashMap b;
+    public final DataSetObservable a = new DataSetObservable();
+    public DataSetObserver b;
 
-    static {
-        Uri.parse("*");
-        Uri.parse("");
-        a = true;
-        b = new WeakHashMap();
+    public abstract void a(k kVar, Object obj);
+
+    public abstract int b();
+
+    public int c(Object obj) {
+        return -1;
     }
 
-    public static void a(WebView webView, String str, Set set, e3 e3Var) {
-        if (!l.c.b()) {
-            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-        }
-        n c2 = c(webView);
-        c2.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new xe.a(new c(e3Var, 12)));
+    public CharSequence d(int i7) {
+        return null;
     }
 
-    public static PackageInfo b() {
-        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    public abstract Object e(k kVar, int i7);
+
+    public abstract boolean f(View view, Object obj);
+
+    public void g() {
+        synchronized (this) {
+            try {
+                DataSetObserver dataSetObserver = this.b;
+                if (dataSetObserver != null) {
+                    dataSetObserver.onChanged();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        this.a.notifyChanged();
     }
 
-    public static n c(WebView webView) {
-        if (!l.e.b() || !a) {
-            return new n(m.a.createWebView(webView));
+    public final void i(DataSetObserver dataSetObserver) {
+        synchronized (this) {
+            this.b = dataSetObserver;
         }
-        WeakHashMap weakHashMap = b;
-        n nVar = (n) weakHashMap.get(webView);
-        if (nVar != null) {
-            return nVar;
-        }
-        n nVar2 = new n(m.a.createWebView(webView));
-        weakHashMap.put(webView, nVar2);
-        return nVar2;
+    }
+
+    public void h(int i7) {
     }
 }

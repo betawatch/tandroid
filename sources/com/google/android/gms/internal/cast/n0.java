@@ -1,31 +1,35 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n0 {
-    public static final i6.b i = new i6.b("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final f6.g a;
-    public final t b;
-    public final c c;
-    public Long e;
-    public n5.r g;
-    public int h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class n0 extends h0 {
+    public final transient p0 d;
+    public final transient o0 e;
 
-    public n0(Context context, i6.r rVar, f6.g gVar, t tVar, c cVar) {
-        this.a = gVar;
-        this.b = tVar;
-        this.c = cVar;
+    public n0(p0 p0Var, o0 o0Var) {
+        this.d = p0Var;
+        this.e = o0Var;
     }
 
-    public final void a(q1 q1Var, int i3) {
-        this.f.execute(new androidx.activity.g(this, q1Var, i3, 3));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.get(obj) != null;
+    }
+
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int f(Object[] objArr) {
+        return this.e.f(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.e.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.d.h;
     }
 }

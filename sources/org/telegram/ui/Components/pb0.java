@@ -1,43 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pb0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
+public final class pb0 extends TextView {
+    public final /* synthetic */ qb0 a;
 
-    public /* synthetic */ pb0(zb0 zb0Var, int i3) {
-        this.a = i3;
-        this.b = zb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb0(qb0 qb0Var, Context context, int i7) {
+        super(context);
+        this.a = qb0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zb0 zb0Var = this.b;
-                ai.d2 d2Var = zb0Var.e;
-                d2Var.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, floatValue));
-                d2Var.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, floatValue));
-                d2Var.setAlpha(org.telegram.messenger.g0.T1(0.0f, 1.0f, floatValue));
-                TextView textView = zb0Var.x;
-                textView.setScaleX(org.telegram.messenger.g0.T1(1.0f, 0.9f, floatValue));
-                textView.setScaleY(org.telegram.messenger.g0.T1(1.0f, 0.9f, floatValue));
-                textView.setAlpha(org.telegram.messenger.g0.T1(1.0f, 0.0f, floatValue));
-                zb0Var.s.setAlpha(org.telegram.messenger.g0.T1(0.0f, 1.0f, floatValue));
-                break;
-            default:
-                zb0 zb0Var2 = this.b;
-                zb0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zb0Var2.b0 = floatValue2;
-                zb0Var2.h(floatValue2);
-                zb0Var2.setAlpha(zb0Var2.b0);
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        qb0 qb0Var = this.a;
+        if (qb0Var.e.getAdapter() instanceof zw) {
+            ((zw) qb0Var.e.getAdapter()).getClass();
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void setSelected(boolean z9) {
+        super.setSelected(z9);
+        Drawable background = getBackground();
+        qb0 qb0Var = this.a;
+        if (background != null) {
+            org.telegram.ui.ActionBar.k6.H1(background, qb0Var.c(z9 ? 0.1f : 0.05f), true);
+        }
+        setTextColor(qb0Var.c(z9 ? 0.8f : 0.6f));
     }
 }

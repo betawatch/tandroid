@@ -1,66 +1,33 @@
 package tg;
 
-import java.util.Arrays;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class h {
-    public static final List a = Arrays.asList(new f(), new a(), new c(), new e(), new b(), new d());
+public interface h {
+    void B(boolean z9);
 
-    public float a() {
-        return 0.85f;
-    }
+    void C();
 
-    public float b() {
-        return 0.0f;
-    }
+    void d(boolean z9);
 
-    public int c() {
-        return -16777216;
-    }
+    void e(boolean z9);
 
-    public float d() {
-        return 0.25f;
-    }
+    void f(j jVar);
 
-    public abstract int e();
+    void g();
 
-    public float f() {
-        return 1.0f;
-    }
+    void h();
 
-    public float g() {
-        return 0.4f;
-    }
+    void j(boolean z9);
 
-    public float h() {
-        return 1.0f;
-    }
+    int[] n(j jVar);
 
-    public String i(int i3) {
-        if (i3 == 0) {
-            return "blitWithMask";
-        }
-        if (i3 == 1) {
-            return "compositeWithMask";
-        }
-        if (i3 != 2) {
-            return null;
-        }
-        return "brush";
-    }
+    boolean p();
 
-    public float j() {
-        return 1.0f;
-    }
+    boolean q();
 
-    public float k() {
-        return 0.15f;
-    }
+    boolean u(j jVar);
 
-    public int l() {
-        return R.drawable.paint_radial_brush;
-    }
+    void v(float f10, float f11, float[] fArr);
+
+    void y();
 }

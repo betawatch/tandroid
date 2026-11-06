@@ -13,11 +13,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.oo0 a;
+    public org.telegram.ui.Components.mo0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
@@ -56,13 +56,13 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        org.telegram.messenger.zi ziVar = new org.telegram.messenger.zi(org.telegram.messenger.h10.t0, TLdeserialize, false, true);
-        ziVar.k.with_my_score = true;
+        org.telegram.messenger.ij ijVar = new org.telegram.messenger.ij(org.telegram.messenger.p10.s0, TLdeserialize, false, true);
+        ijVar.k.with_my_score = true;
         try {
-            org.telegram.ui.Components.oo0 N0 = org.telegram.ui.Components.oo0.N0(this, ziVar, null, false, string2);
+            org.telegram.ui.Components.mo0 N0 = org.telegram.ui.Components.mo0.N0(this, ijVar, null, false, string2);
             this.a = N0;
             N0.setCanceledOnTouchOutside(true);
-            this.a.setOnDismissListener(new s5(this, 15));
+            this.a.setOnDismissListener(new q5(this, 15));
             this.a.show();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -74,8 +74,8 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.oo0 oo0Var = this.a;
-            if (oo0Var == null || !oo0Var.isShowing()) {
+            org.telegram.ui.Components.mo0 mo0Var = this.a;
+            if (mo0Var == null || !mo0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();

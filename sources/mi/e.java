@@ -1,48 +1,38 @@
 package mi;
 
-import java.util.ArrayList;
-import org.telegram.messenger.zi;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.tk;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Cells.q1;
+import org.telegram.ui.Components.pn;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements tk, ki {
-    public final /* synthetic */ p a;
-    public final /* synthetic */ bi b;
+public final class e extends AnimatorListenerAdapter {
+    public final /* synthetic */ q1 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ l f;
 
-    public /* synthetic */ e(p pVar, bi biVar) {
-        this.a = pVar;
-        this.b = biVar;
+    public e(l lVar, q1 q1Var, float f10, float f11, float f12, float f13) {
+        this.f = lVar;
+        this.a = q1Var;
+        this.b = f10;
+        this.c = f11;
+        this.d = f12;
+        this.e = f13;
     }
 
-    @Override // org.telegram.ui.Components.tk
-    public void d(TLRPC.MessageMedia messageMedia, int i3, boolean z10, int i10, long j10) {
-        p pVar = this.a;
-        pVar.getClass();
-        bi biVar = this.b;
-        if (messageMedia == null || messageMedia.geo == null) {
-            biVar.a(true);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        q1 q1Var = this.a;
+        q1Var.getTransitionParams().e();
+        q1Var.getPhotoImage().y0(this.b, this.c, this.d, this.e);
+        pn pnVar = this.f.P;
+        if (pnVar != null) {
+            pnVar.h.setAlpha(1.0f);
         }
-        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
-        pageblockmap.geo = messageMedia.geo;
-        pageblockmap.zoom = 15;
-        pageblockmap.w = 600;
-        pageblockmap.h = 400;
-        pVar.r.V1(pageblockmap);
-        pVar.a0(true);
-        biVar.a(true);
-    }
-
-    @Override // org.telegram.ui.Components.ki
-    public void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i3, int i10, long j10, boolean z11, long j11) {
-        if (!arrayList.isEmpty()) {
-            this.a.r.e2((zi) arrayList.get(0));
-        }
-        this.b.a(true);
+        q1Var.invalidate();
     }
 }

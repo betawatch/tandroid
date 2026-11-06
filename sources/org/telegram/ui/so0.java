@@ -1,113 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class so0 extends u4.z0 {
-    public final float k;
-    public final LinearInterpolator i = new LinearInterpolator();
-    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
-    public int l = 0;
-    public int m = 0;
+public final class so0 implements org.telegram.ui.Components.k20 {
+    public final /* synthetic */ PhotoViewer a;
 
-    public so0(Context context) {
-        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
+    public so0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // u4.z0
-    public final PointF a(int i3) {
-        u4.o0 o0Var = this.c;
-        if (o0Var instanceof u4.b0) {
-            return ((u4.b0) o0Var).E0(i3);
+    public final void a(int i7) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.O4 = -1;
+        org.telegram.messenger.jc jcVar = photoViewer.i5;
+        if (jcVar != null) {
+            jcVar.a();
+            photoViewer.i5 = null;
         }
-        return null;
-    }
-
-    @Override // u4.z0
-    public final void d(int i3, int i10, u4.y0 y0Var) {
-        if (this.b.y.r() == 0) {
-            h();
-            return;
-        }
-        int i11 = this.l;
-        int i12 = i11 - i3;
-        if (i11 * i12 <= 0) {
-            i12 = 0;
-        }
-        this.l = i12;
-        int i13 = this.m;
-        int i14 = i13 - i10;
-        int i15 = i13 * i14 > 0 ? i14 : 0;
-        this.m = i15;
-        if (i12 == 0 && i15 == 0) {
-            PointF a10 = a(this.a);
-            if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
-                y0Var.d = this.a;
-                h();
-            } else {
-                u4.z0.b(a10);
-                this.l = (int) (a10.x * 10000.0f);
-                this.m = (int) (a10.y * 10000.0f);
-                y0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
-            }
-        }
-    }
-
-    @Override // u4.z0
-    public final void f() {
-        this.m = 0;
-        this.l = 0;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
-    
-        if (r4 < 0) goto L16;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // u4.z0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, u4.y0 y0Var) {
-        int i3;
-        int max;
-        u4.o0 o0Var = this.c;
-        if (o0Var != null && o0Var.d()) {
-            u4.p0 p0Var = (u4.p0) view.getLayoutParams();
-            int x10 = u4.o0.x(view) - ((ViewGroup.MarginLayoutParams) p0Var).leftMargin;
-            int y9 = u4.o0.y(view) + ((ViewGroup.MarginLayoutParams) p0Var).rightMargin;
-            int D = o0Var.D();
-            int E = o0Var.m - o0Var.E();
-            if (x10 <= D || y9 >= E) {
-                int i10 = y9 - x10;
-                int i11 = (E - D) - i10;
-                int i12 = i10 + i11;
-                i3 = i11 - x10;
-                if (i3 <= 0) {
-                    i3 = i12 - y9;
-                }
-                max = Math.max(org.telegram.messenger.hs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i3) * this.k)) / 0.3356d));
-                if (max <= 0) {
-                    y0Var.b(-i3, 0, Math.max(400, max), this.j);
-                    return;
-                }
-                return;
-            }
-        }
-        i3 = 0;
-        max = Math.max(org.telegram.messenger.hs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i3) * this.k)) / 0.3356d));
-        if (max <= 0) {
-        }
-    }
-
-    @Override // u4.z0
-    public final void e() {
+        photoViewer.k5 = true;
+        photoViewer.y2(i7);
+        photoViewer.k5 = false;
     }
 }

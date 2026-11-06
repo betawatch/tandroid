@@ -1,9 +1,73 @@
 package oe;
 
-import v7.s;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final s a = new s(16);
+public final class a implements ke.a {
+    public static final a a = new a();
+    public static final n b = new n("kotlin.Boolean", me.b.b);
+
+    @Override // ke.a
+    public final void a(qe.h hVar, Object obj) {
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        if (hVar.a) {
+            hVar.j(String.valueOf(booleanValue));
+        } else {
+            ((mc.a) ((ca.i) hVar.b).c).c(String.valueOf(booleanValue));
+        }
+    }
+
+    @Override // ke.a
+    public final Object b(h2.c decoder) {
+        boolean z9;
+        boolean z10;
+        kotlin.jvm.internal.j.e(decoder, "decoder");
+        a4.k kVar = (a4.k) decoder.d;
+        int u10 = kVar.u();
+        String str = (String) kVar.f;
+        if (u10 == str.length()) {
+            a4.k.n(kVar, "EOF", 0, 6);
+            throw null;
+        }
+        if (str.charAt(u10) == '\"') {
+            u10++;
+            z9 = true;
+        } else {
+            z9 = false;
+        }
+        int r10 = kVar.r(u10);
+        if (r10 >= str.length() || r10 == -1) {
+            a4.k.n(kVar, "EOF", 0, 6);
+            throw null;
+        }
+        int i7 = r10 + 1;
+        int charAt = str.charAt(r10) | ' ';
+        if (charAt == 102) {
+            kVar.f(i7, "alse");
+            z10 = false;
+        } else {
+            if (charAt != 116) {
+                a4.k.n(kVar, "Expected valid boolean literal prefix, but had '" + kVar.k() + '\'', 0, 6);
+                throw null;
+            }
+            kVar.f(i7, "rue");
+            z10 = true;
+        }
+        if (z9) {
+            if (kVar.b == str.length()) {
+                a4.k.n(kVar, "EOF", 0, 6);
+                throw null;
+            }
+            if (str.charAt(kVar.b) != '\"') {
+                a4.k.n(kVar, "Expected closing quotation mark", 0, 6);
+                throw null;
+            }
+            kVar.b++;
+        }
+        return Boolean.valueOf(z10);
+    }
+
+    @Override // ke.a
+    public final me.d d() {
+        return b;
+    }
 }

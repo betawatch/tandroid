@@ -19,23 +19,23 @@ public final class p6 extends r6 implements j$.util.a1 {
     }
 
     @Override // j$.util.stream.r6
-    public final void a(int i3, Object obj, Object obj2) {
-        ((LongConsumer) obj2).accept(((long[]) obj)[i3]);
+    public final void a(int i7, Object obj, Object obj2) {
+        ((LongConsumer) obj2).accept(((long[]) obj)[i7]);
     }
 
     @Override // j$.util.stream.r6
-    public final j$.util.d1 b(Object obj, int i3, int i10) {
-        return DesugarArrays.c((long[]) obj, i3, i10 + i3);
+    public final j$.util.d1 b(Object obj, int i7, int i10) {
+        return DesugarArrays.c((long[]) obj, i7, i10 + i7);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p6(q6 q6Var, int i3, int i10, int i11, int i12) {
-        super(q6Var, i3, i10, i11, i12);
+    public p6(q6 q6Var, int i7, int i10, int i11, int i12) {
+        super(q6Var, i7, i10, i11, i12);
         this.g = q6Var;
     }
 
     @Override // j$.util.stream.r6
-    public final j$.util.d1 c(int i3, int i10, int i11, int i12) {
-        return new p6(this.g, i3, i10, i11, i12);
+    public final j$.util.d1 c(int i7, int i10, int i11, int i12) {
+        return new p6(this.g, i7, i10, i11, i12);
     }
 }

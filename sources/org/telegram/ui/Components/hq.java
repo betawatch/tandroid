@@ -6,43 +6,43 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ o2 F;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t2 G;
+    public final /* synthetic */ int D;
+    public final /* synthetic */ r2 E;
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2 F;
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ int[] b;
-    public final /* synthetic */ bi.q0 c;
+    public final /* synthetic */ ai.a1 c;
     public final /* synthetic */ String[] d;
-    public final /* synthetic */ gi.d e;
+    public final /* synthetic */ fi.d e;
     public final /* synthetic */ org.telegram.ui.Cells.k3 f;
     public final /* synthetic */ TreeSet h;
-    public final /* synthetic */ e7 n;
-    public final /* synthetic */ org.telegram.ui.Cells.y8 r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 s;
+    public final /* synthetic */ ng n;
+    public final /* synthetic */ org.telegram.ui.Cells.z8 r;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 s;
     public final /* synthetic */ int[] w;
     public final /* synthetic */ Runnable[] x;
     public final /* synthetic */ int[] y;
 
-    public /* synthetic */ hq(boolean[] zArr, int[] iArr, bi.q0 q0Var, String[] strArr, gi.d dVar, org.telegram.ui.Cells.k3 k3Var, TreeSet treeSet, e7 e7Var, org.telegram.ui.Cells.y8 y8Var, org.telegram.ui.ActionBar.e6 e6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i3, o2 o2Var, org.telegram.ui.ActionBar.t2 t2Var) {
+    public /* synthetic */ hq(boolean[] zArr, int[] iArr, ai.a1 a1Var, String[] strArr, fi.d dVar, org.telegram.ui.Cells.k3 k3Var, TreeSet treeSet, ng ngVar, org.telegram.ui.Cells.z8 z8Var, org.telegram.ui.ActionBar.f6 f6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i7, r2 r2Var, org.telegram.ui.ActionBar.v2 v2Var) {
         this.a = zArr;
         this.b = iArr;
-        this.c = q0Var;
+        this.c = a1Var;
         this.d = strArr;
         this.e = dVar;
         this.f = k3Var;
         this.h = treeSet;
-        this.n = e7Var;
-        this.r = y8Var;
-        this.s = e6Var;
+        this.n = ngVar;
+        this.r = z8Var;
+        this.s = f6Var;
         this.w = iArr2;
         this.x = runnableArr;
         this.y = iArr3;
-        this.E = i3;
-        this.F = o2Var;
-        this.G = t2Var;
+        this.D = i7;
+        this.E = r2Var;
+        this.F = v2Var;
     }
 
     @Override // java.lang.Runnable
@@ -54,39 +54,39 @@ public final /* synthetic */ class hq implements Runnable {
         this.c.run();
         final String[] strArr = this.d;
         strArr[0] = null;
-        final gi.d dVar = this.e;
+        final fi.d dVar = this.e;
         dVar.setLoading(false);
         dVar.setEnabled(false);
         String charSequence = this.f.getText().toString();
-        StringBuilder l10 = com.google.android.recaptcha.internal.a.l(charSequence);
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(charSequence);
         boolean a10 = lq.a(charSequence, "bot");
         final TreeSet treeSet = this.h;
-        l10.append((a10 || lq.c(charSequence, treeSet) != null) ? "" : "bot");
-        final String sb2 = l10.toString();
+        m10.append((a10 || lq.c(charSequence, treeSet) != null) ? "" : "bot");
+        final String sb2 = m10.toString();
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        final e7 e7Var = this.n;
+        final ng ngVar = this.n;
         if (isEmpty) {
-            e7Var.run();
+            ngVar.run();
             return;
         }
         int length = sb2.length();
-        final org.telegram.ui.Cells.y8 y8Var = this.r;
-        final org.telegram.ui.ActionBar.e6 e6Var = this.s;
+        final org.telegram.ui.Cells.z8 z8Var = this.r;
+        final org.telegram.ui.ActionBar.f6 f6Var = this.s;
         if (length < 4 || sb2.length() > 32) {
-            y8Var.setText(org.telegram.messenger.bd.M0(sb2.length() < 4 ? 2131743664 : 2131743665, null));
-            org.telegram.ui.ActionBar.r6.V(y8Var.getTextView(), org.telegram.ui.ActionBar.k6.q7, e6Var);
+            z8Var.setText(org.telegram.messenger.hd.M0(sb2.length() < 4 ? 2131743655 : 2131743656, null));
+            org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var);
             return;
         }
-        y8Var.setText(org.telegram.messenger.bd.M0(2131743676, null));
-        org.telegram.ui.ActionBar.r6.V(y8Var.getTextView(), org.telegram.ui.ActionBar.k6.B6, e6Var);
+        z8Var.setText(org.telegram.messenger.hd.M0(2131743667, null));
+        org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.B6, f6Var);
         final int[] iArr = this.w;
-        final int i3 = iArr[0];
+        final int i7 = iArr[0];
         final Runnable[] runnableArr = this.x;
         final int[] iArr2 = this.y;
-        final int i10 = this.E;
-        final o2 o2Var = this.F;
-        final org.telegram.ui.ActionBar.t2 t2Var = this.G;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.eq
+        final int i10 = this.D;
+        final r2 r2Var = this.E;
+        final org.telegram.ui.ActionBar.v2 v2Var = this.F;
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.dq
             @Override // java.lang.Runnable
             public final void run() {
                 runnableArr[0] = null;
@@ -96,7 +96,7 @@ public final /* synthetic */ class hq implements Runnable {
                 }
                 final int[] iArr3 = iArr;
                 int i11 = iArr3[0];
-                final int i12 = i3;
+                final int i12 = i7;
                 if (i12 != i11) {
                     return;
                 }
@@ -105,18 +105,18 @@ public final /* synthetic */ class hq implements Runnable {
                 checkusername.username = str;
                 final int i13 = i10;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i13);
-                c3.b bVar = new c3.b(1);
+                d3.b bVar = new d3.b(1);
                 final int[] iArr4 = iArr2;
                 final String[] strArr2 = strArr;
-                final gi.d dVar2 = dVar;
-                final e7 e7Var2 = e7Var;
+                final fi.d dVar2 = dVar;
+                final ng ngVar2 = ngVar;
                 final TreeSet treeSet2 = treeSet;
-                final o2 o2Var2 = o2Var;
-                final org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
-                final org.telegram.ui.Cells.y8 y8Var2 = y8Var;
-                final org.telegram.ui.ActionBar.t2 t2Var2 = t2Var;
-                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.n10() { // from class: org.telegram.ui.Components.gq
-                    @Override // org.telegram.messenger.n10
+                final r2 r2Var2 = r2Var;
+                final org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
+                final org.telegram.ui.Cells.z8 z8Var2 = z8Var;
+                final org.telegram.ui.ActionBar.v2 v2Var2 = v2Var;
+                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.v10() { // from class: org.telegram.ui.Components.gq
+                    @Override // org.telegram.messenger.v10
                     public final void a(Object obj, Object obj2) {
                         TLRPC.Bool bool = (TLRPC.Bool) obj;
                         TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -127,30 +127,30 @@ public final /* synthetic */ class hq implements Runnable {
                             return;
                         }
                         iArr4[0] = -1;
-                        boolean z10 = bool instanceof TLRPC.TL_boolTrue;
+                        boolean z9 = bool instanceof TLRPC.TL_boolTrue;
                         String str2 = str;
-                        gi.d dVar3 = dVar2;
-                        if (z10) {
+                        fi.d dVar3 = dVar2;
+                        if (z9) {
                             strArr2[0] = str2;
                             dVar3.setEnabled(true);
-                            e7Var2.run();
+                            ngVar2.run();
                             return;
                         }
                         String str3 = tL_error == null ? "USERNAME_OCCUPIED" : tL_error.text;
                         int i14 = i13;
                         TreeSet treeSet3 = treeSet2;
-                        o2 o2Var3 = o2Var2;
-                        org.telegram.ui.ActionBar.e6 e6Var3 = e6Var2;
-                        CharSequence d = lq.d(i14, str2, treeSet3, str3, o2Var3, e6Var3);
-                        CharSequence M0 = d != null ? d : org.telegram.messenger.bd.M0(2131751728, null);
-                        org.telegram.ui.Cells.y8 y8Var3 = y8Var2;
-                        y8Var3.setText(M0);
-                        org.telegram.ui.ActionBar.r6.V(y8Var3.getTextView(), org.telegram.ui.ActionBar.k6.q7, e6Var3);
+                        r2 r2Var3 = r2Var2;
+                        org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
+                        CharSequence d = lq.d(i14, str2, treeSet3, str3, r2Var3, f6Var3);
+                        CharSequence M0 = d != null ? d : org.telegram.messenger.hd.M0(2131751728, null);
+                        org.telegram.ui.Cells.z8 z8Var3 = z8Var2;
+                        z8Var3.setText(M0);
+                        org.telegram.ui.ActionBar.r6.V(z8Var3.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var3);
                         if (d != null || tL_error == null) {
                             return;
                         }
                         dVar3.setEnabled(true);
-                        org.telegram.ui.Cells.f1.v(t2Var2.F, e6Var3, tL_error, false);
+                        org.telegram.ui.Cells.f1.r(v2Var2.E, f6Var3, tL_error, false);
                     }
                 });
             }

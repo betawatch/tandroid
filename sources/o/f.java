@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -61,7 +61,7 @@ public class f implements Iterable {
         return false;
     }
 
-    public c h(Object obj) {
+    public c f(Object obj) {
         c cVar = this.a;
         while (cVar != null && !cVar.a.equals(obj)) {
             cVar = cVar.c;
@@ -71,19 +71,19 @@ public class f implements Iterable {
 
     public final int hashCode() {
         Iterator it = iterator();
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             b bVar = (b) it;
             if (!bVar.hasNext()) {
-                return i3;
+                return i7;
             }
-            i3 += ((Map.Entry) bVar.next()).hashCode();
+            i7 += ((Map.Entry) bVar.next()).hashCode();
         }
     }
 
     public Object i(Object obj) {
-        c h = h(obj);
-        if (h == null) {
+        c f10 = f(obj);
+        if (f10 == null) {
             return null;
         }
         this.d--;
@@ -91,24 +91,24 @@ public class f implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(h);
+                ((e) it.next()).a(f10);
             }
         }
-        c cVar = h.d;
+        c cVar = f10.d;
         if (cVar != null) {
-            cVar.c = h.c;
+            cVar.c = f10.c;
         } else {
-            this.a = h.c;
+            this.a = f10.c;
         }
-        c cVar2 = h.c;
+        c cVar2 = f10.c;
         if (cVar2 != null) {
             cVar2.d = cVar;
         } else {
             this.b = cVar;
         }
-        h.c = null;
-        h.d = null;
-        return h.b;
+        f10.c = null;
+        f10.d = null;
+        return f10.b;
     }
 
     @Override // java.lang.Iterable

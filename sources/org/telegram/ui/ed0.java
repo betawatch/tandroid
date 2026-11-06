@@ -1,45 +1,71 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ id0 b;
+public final class ed0 extends db0 {
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Components.wt0 f;
 
-    public /* synthetic */ ed0(id0 id0Var, int i3) {
-        this.a = i3;
-        this.b = id0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3;
-        int i10 = this.a;
-        id0 id0Var = this.b;
-        switch (i10) {
-            case 0:
-                id0Var.o();
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ed0(gd0 gd0Var, Context context, int i7) {
+        super(gd0Var.u0, context);
+        this.e = i7;
+        switch (i7) {
             case 1:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                xd0 xd0Var = id0Var.w;
-                i3 = ((org.telegram.ui.ActionBar.d2) xd0Var).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i3);
-                xd0Var.presentFragment(premiumPreviewFragment);
-                break;
-            case 2:
-                xd0 xd0Var2 = id0Var.w;
-                xd0Var2.D1(0, true, null, true);
-                xd0Var2.u1(org.telegram.messenger.bd.M0(2131746081, null), org.telegram.messenger.bd.M0(2131752021, null));
-                break;
-            case 3:
-                xd0 xd0Var3 = id0Var.w;
-                xd0Var3.D1(0, true, null, true);
-                xd0Var3.u1(org.telegram.messenger.bd.M0(2131746081, null), org.telegram.messenger.bd.M0(2131752021, null));
+                this.f = gd0Var;
+                super(gd0Var.u0, context);
                 break;
             default:
-                id0Var.b.setLoading(false);
+                this.f = gd0Var;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.db0
+    public final boolean a() {
+        switch (this.e) {
+            case 0:
+                return ((gd0) this.f).k0;
+            case 1:
+                return ((gd0) this.f).k0;
+            default:
+                return ((ec0) this.f).M;
+        }
+    }
+
+    @Override // org.telegram.ui.db0
+    public final boolean b() {
+        ed0 ed0Var;
+        switch (this.e) {
+            case 0:
+                if (getVisibility() == 0) {
+                    gd0 gd0Var = (gd0) this.f;
+                    if (gd0Var.a0 <= 0 || gd0Var.T == null) {
+                    }
+                }
+                break;
+            case 1:
+                gd0 gd0Var2 = (gd0) this.f;
+                if (!isClickable() || getVisibility() != 0 || gd0Var2.f0 || (((ed0Var = gd0Var2.w) != null && ed0Var.getVisibility() != 8) || gd0Var2.k0)) {
+                }
+                break;
+            default:
+                if (getVisibility() == 0) {
+                    ec0 ec0Var = (ec0) this.f;
+                    if (ec0Var.P <= 0 || ec0Var.N == null) {
+                    }
+                }
+                break;
+        }
+        return false;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ed0(ec0 ec0Var, Context context) {
+        super(ec0Var.a0, context);
+        this.e = 2;
+        this.f = ec0Var;
     }
 }

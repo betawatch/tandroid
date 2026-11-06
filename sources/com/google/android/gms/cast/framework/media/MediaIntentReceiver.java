@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import e6.p;
-import f6.a;
-import f6.c;
-import f6.f;
-import f6.g;
-import g6.h;
-import g6.i;
-import i6.b;
-import p6.m;
+import f6.p;
+import g6.a;
+import g6.c;
+import g6.f;
+import g6.g;
+import h6.h;
+import h6.i;
+import j6.b;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -37,12 +37,12 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         return cVar.j;
     }
 
-    private void seek(c cVar, long j10) {
+    private void seek(c cVar, long j3) {
         h remoteMediaClient;
-        if (j10 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
+        if (j3 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.q(new p(remoteMediaClient.a() + j10));
+        remoteMediaClient.q(new p(remoteMediaClient.a() + j3));
     }
 
     private void togglePlayback(c cVar) {
@@ -118,9 +118,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         onReceiveOtherAction(context, action, intent);
     }
 
-    public void onReceiveActionForward(f fVar, long j10) {
+    public void onReceiveActionForward(f fVar, long j3) {
         if (fVar instanceof c) {
-            seek((c) fVar, j10);
+            seek((c) fVar, j3);
         }
     }
 
@@ -135,9 +135,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         }
     }
 
-    public void onReceiveActionRewind(f fVar, long j10) {
+    public void onReceiveActionRewind(f fVar, long j3) {
         if (fVar instanceof c) {
-            seek((c) fVar, -j10);
+            seek((c) fVar, -j3);
         }
     }
 

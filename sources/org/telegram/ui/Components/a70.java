@@ -1,31 +1,50 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b70 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ a70(b70 b70Var, boolean z10, boolean z11, int i3) {
-        this.a = i3;
-        this.b = b70Var;
-        this.c = z10;
-        this.d = z11;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class a70 extends org.telegram.ui.an {
+    public boolean rd;
+    public final /* synthetic */ boolean sd;
+    public final /* synthetic */ long td;
+    public final /* synthetic */ b70 ud;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a70(b70 b70Var, Bundle bundle, boolean z9, long j3) {
+        super(bundle);
+        this.ud = b70Var;
+        this.sd = z9;
+        this.td = j3;
+        this.rd = false;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new a70(this.b, this.c, this.d, 1));
-                break;
-            default:
-                b70 b70Var = this.b;
-                b70Var.setJoinRequest(this.c);
-                b70Var.setJoinToSend(this.d);
-                break;
+    public static void Dd(a70 a70Var, long j3, TLRPC.Chat chat) {
+        if (org.telegram.messenger.g0.E1(a70Var.getParentActivity())) {
+            dy0.c(a70Var.getParentActivity(), a70Var.currentAccount, -j3, a70Var.getUserConfig().f(), null, chat.admin_rights != null, chat.creator, a70Var.ud.I0);
+        }
+    }
+
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.f2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.rd || !this.sd) {
+            return;
+        }
+        this.rd = true;
+        org.telegram.messenger.qp messagesController = getMessagesController();
+        long j3 = this.td;
+        TLRPC.Chat M0 = messagesController.M0(Long.valueOf(j3));
+        if (org.telegram.messenger.t3.h(M0)) {
+            cc K = hc.a0(this).K(R.raw.contact_check, org.telegram.messenger.hd.M0(2131749070, null), org.telegram.messenger.hd.M0(2131749069, null), new bi.d3(this, j3, M0, 23));
+            K.r = false;
+            K.k(true);
+        } else {
+            cc Q = hc.a0(this).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.M0(2131749070, null));
+            Q.r = false;
+            Q.k(true);
         }
     }
 }

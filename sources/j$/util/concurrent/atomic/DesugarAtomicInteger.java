@@ -6,10 +6,10 @@ import java.util.function.IntUnaryOperator;
 /* loaded from: classes2.dex */
 public class DesugarAtomicInteger {
     public static int getAndUpdate(AtomicInteger atomicInteger, IntUnaryOperator intUnaryOperator) {
-        int i3;
+        int i7;
         do {
-            i3 = atomicInteger.get();
-        } while (!atomicInteger.compareAndSet(i3, intUnaryOperator.applyAsInt(i3)));
-        return i3;
+            i7 = atomicInteger.get();
+        } while (!atomicInteger.compareAndSet(i7, intUnaryOperator.applyAsInt(i7)));
+        return i7;
     }
 }

@@ -1,17 +1,52 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i11 extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && !org.telegram.messenger.g0.K3(this)) {
-            clearFocus();
-            requestFocus();
+public final /* synthetic */ class i11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m11 b;
+    public final /* synthetic */ Integer c;
+
+    public /* synthetic */ i11(m11 m11Var, Integer num, int i7) {
+        this.a = i7;
+        this.b = m11Var;
+        this.c = num;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        m11 m11Var = this.b;
+        switch (i7) {
+            case 0:
+                m11.a(m11Var, this.c);
+                break;
+            default:
+                Integer num = this.c;
+                if (num != null) {
+                    try {
+                        m11Var.P.performHapticFeedback(0, 1);
+                    } catch (Exception unused) {
+                    }
+                    g01 g01Var = (g01) m11Var;
+                    q11 q11Var = g01Var.S.e;
+                    List list = q11.a2;
+                    q11Var.l();
+                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+                    View view = g01Var.Q;
+                    long j3 = ((a11) view).e.documentId;
+                    tL_emojiStatus.document_id = j3;
+                    q11Var.p(view, Long.valueOf(j3), ((a11) g01Var.Q).e.document, g01Var.R, num);
+                    if (g01Var.R == null) {
+                        org.telegram.messenger.ui.b0(q11Var.V).C1(tL_emojiStatus);
+                        break;
+                    }
+                }
+                break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

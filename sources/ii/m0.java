@@ -1,270 +1,194 @@
 package ii;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.GradientDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import b8.mf;
-import b8.pf;
+import android.text.SpannableStringBuilder;
+import bi.v0;
+import c8.yc;
 import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.k5;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.ml;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.t3;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.xq;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.an;
+import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public abstract class m0 extends LinearLayout implements sh.a, qe.i {
-    public final e6 a;
-    public final FrameLayout b;
-    public TLRPC.TL_replyKeyboardMarkup c;
-    public j0 d;
-    public int e;
-    public boolean f;
-    public int h;
-    public final ArrayList n;
-    public final ScrollView r;
-    public int s;
-    public final GradientDrawable w;
-    public int x;
-    public final qe.j y;
-
-    public m0(Context context, e6 e6Var) {
-        super(context);
-        this.n = new ArrayList();
-        this.w = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, null);
-        this.y = new qe.j(this, xq.h, 320L);
-        this.a = e6Var;
-        setOrientation(1);
-        ScrollView scrollView = new ScrollView(context);
-        this.r = scrollView;
-        scrollView.setClipToPadding(false);
-        addView(scrollView);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        scrollView.addView(frameLayout);
-        e();
-    }
-
-    @Override // qe.i
-    public final void b(qe.j jVar) {
-        Iterator it = this.y.iterator();
-        while (it.hasNext()) {
-            qe.e eVar = (qe.e) it.next();
-            float c2 = eVar.c();
-            Object obj = eVar.a;
-            float T1 = org.telegram.messenger.g0.T1(0.7f, 1.0f, c2);
-            ((l0) obj).setAlpha(c2);
-            ((l0) obj).setScaleX(T1);
-            ((l0) obj).setScaleY(T1);
-        }
-    }
-
-    @Override // sh.a
-    public final void c(int i3) {
-        if (this.s == i3) {
-            return;
-        }
-        this.s = i3;
-        ScrollView scrollView = this.r;
-        if (scrollView.getPaddingBottom() != i3) {
-            scrollView.setPadding(0, 0, 0, i3);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float R0 = org.telegram.messenger.g0.R0(this.s);
-        if (R0 > 0.0f) {
-            int r12 = k6.r1(R0, k6.w0(k6.wf, this.a));
-            int i3 = this.x;
-            GradientDrawable gradientDrawable = this.w;
-            if (i3 != r12) {
-                gradientDrawable.setColors(new int[]{r12, k6.r1(0.66f, r12), i0.a.o(r12, 0)});
-                this.x = r12;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public abstract class m0 {
+    public static SpannableStringBuilder a(ij ijVar, String str, String str2, boolean z9, boolean z10) {
+        TLRPC.Message message = ijVar.k;
+        TLRPC.TL_messageActionChangeCommunity tL_messageActionChangeCommunity = (TLRPC.TL_messageActionChangeCommunity) message.action;
+        boolean z11 = m5.o(message.peer_id) == m5.o(message.from_id);
+        boolean z12 = tL_messageActionChangeCommunity.community_id == 0;
+        if (z11) {
+            if (z12) {
+                return org.telegram.messenger.g0.X2(hd.M0(z10 ? 2131751868 : z9 ? 2131751862 : 2131751856, null));
             }
-            gradientDrawable.setBounds(0, getMeasuredHeight() - this.s, getMeasuredWidth(), getMeasuredHeight());
-            gradientDrawable.draw(canvas);
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751870 : z9 ? 2131751864 : 2131751858, str));
         }
+        if (ijVar.O3()) {
+            if (z12) {
+                return org.telegram.messenger.g0.X2(hd.M0(z10 ? 2131751866 : z9 ? 2131751860 : 2131751854, null));
+            }
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751867 : z9 ? 2131751861 : 2131751855, str));
+        }
+        if (z12) {
+            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751869 : z9 ? 2131751863 : 2131751857, str2));
+        }
+        return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751871 : z9 ? 2131751865 : 2131751859, str2, str));
     }
 
-    public final void e() {
-        org.telegram.messenger.g0.z3(this.r, k6.w0(k6.wf, this.a));
-        int i3 = 0;
-        while (true) {
-            ArrayList arrayList = this.n;
-            if (i3 >= arrayList.size()) {
-                invalidate();
-                return;
-            } else {
-                ((k0) arrayList.get(i3)).a();
-                i3++;
+    public static int b(int i7, long j3) {
+        TLRPC.Chat M0;
+        long j10;
+        TLRPC.User user;
+        TLRPC.ChatFull N0;
+        ArrayList<TL_communities.CommunityPeer> arrayList;
+        if (j3 > 0) {
+            TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
+            if (a22 == null) {
+                return 0;
+            }
+            j10 = a22.linked_community_id;
+            user = a22;
+            M0 = null;
+        } else {
+            M0 = qp.s1(i7).M0(Long.valueOf(-j3));
+            if (M0 == null) {
+                return 0;
+            }
+            j10 = M0.linked_community_id;
+            user = null;
+        }
+        if (j10 != 0 && (N0 = qp.s1(i7).N0(j10)) != null && (arrayList = N0.linked_peers) != null) {
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
+                i10++;
+                TL_communities.CommunityPeer communityPeer2 = communityPeer;
+                if (m5.o(communityPeer2.peer) == j3) {
+                    return c(M0, user != null ? qp.s1(i7).S0(user.id) : null, user, communityPeer2);
+                }
             }
         }
+        return 0;
     }
 
-    public int getKeyboardHeight() {
-        TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup = this.c;
-        if (tL_replyKeyboardMarkup == null) {
-            return 0;
+    public static int c(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
+        if (user != null) {
+            if (dialog == null) {
+                return 2;
+            }
+        } else {
+            if (chat == null) {
+                return 0;
+            }
+            if (!t3.j0(chat)) {
+                if (t3.t0(chat) || communityPeer.can_view_history) {
+                    return 2;
+                }
+                return (!yc.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
+            }
         }
-        if (this.f) {
-            return this.e;
-        }
-        return k5.D(4.0f, this.c.rows.size() - 1, org.telegram.messenger.g0.L(16.0f) + (org.telegram.messenger.g0.L(this.h) * tL_replyKeyboardMarkup.rows.size()));
+        return 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0046, code lost:
-    
-        if (r4 <= 0) goto L85;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0050, code lost:
-    
-        if (r6.readByte(true) == r7.readByte(true)) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0053, code lost:
-    
-        r4 = r4 - 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:?, code lost:
-    
-        return;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setButtons(TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup) {
-        int objectSize;
-        int objectSize2;
-        TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup2 = this.c;
-        if (tL_replyKeyboardMarkup == tL_replyKeyboardMarkup2) {
-            return;
-        }
-        if (tL_replyKeyboardMarkup != null && tL_replyKeyboardMarkup2 != null && (objectSize = tL_replyKeyboardMarkup.getObjectSize()) == (objectSize2 = tL_replyKeyboardMarkup2.getObjectSize())) {
-            try {
-                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(objectSize);
-                tL_replyKeyboardMarkup.serializeToStream(nativeByteBuffer);
-                nativeByteBuffer.rewind();
-                NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(objectSize2);
-                tL_replyKeyboardMarkup2.serializeToStream(nativeByteBuffer2);
-                nativeByteBuffer2.rewind();
+    public static void d(f2 f2Var, long j3, int i7) {
+        q4 q4Var;
+        an anVar;
+        int i10;
+        List list = null;
+        if (org.telegram.messenger.g0.Q1()) {
+            q4Var = null;
+            anVar = null;
+        } else {
+            q4Var = f2Var.getParentLayout();
+            if (q4Var != null) {
+                List fragmentStack = q4Var.getFragmentStack();
+                i10 = fragmentStack.size() - 2;
                 while (true) {
-                    if (objectSize < 8) {
+                    if (i10 < 0) {
+                        anVar = null;
+                        i10 = -1;
                         break;
-                    } else if (nativeByteBuffer.readInt64(true) != nativeByteBuffer2.readInt64(true)) {
-                        break;
-                    } else {
-                        objectSize -= 8;
                     }
+                    f2 f2Var2 = (f2) fragmentStack.get(i10);
+                    if (f2Var2 instanceof an) {
+                        anVar = (an) f2Var2;
+                        if (anVar.a() == j3) {
+                            break;
+                        }
+                    }
+                    i10--;
                 }
-            } catch (Throwable th2) {
-                throw new RuntimeException(th2);
+                list = fragmentStack;
+                boolean U = t3.U(f2Var.getCurrentAccount(), j3);
+                if (i10 != -1) {
+                    if (!(f2Var instanceof ww)) {
+                        f2Var.finishFragment();
+                    }
+                    f(hc.X(), i7, U);
+                    return;
+                }
+                for (int size = list.size() - 2; size > i10; size--) {
+                    ((ActionBarLayout) q4Var).d0((f2) list.get(size), false);
+                }
+                f2Var.finishFragment();
+                org.telegram.messenger.g0.i3(new h0(i7, anVar, U), 250L);
+                return;
             }
+            anVar = null;
         }
-        this.c = tL_replyKeyboardMarkup;
-        ArrayList arrayList = this.n;
-        arrayList.clear();
-        ScrollView scrollView = this.r;
-        float scrollY = scrollView.getScrollY();
-        qe.j jVar = this.y;
-        Iterator it = jVar.iterator();
-        while (it.hasNext()) {
-            l0 l0Var = (l0) ((qe.e) it.next()).a;
-            l0Var.setTranslationY(l0Var.getTranslationY() - scrollY);
+        i10 = -1;
+        boolean U2 = t3.U(f2Var.getCurrentAccount(), j3);
+        if (i10 != -1) {
         }
-        int i3 = 0;
-        scrollView.scrollTo(0, 0);
-        if (tL_replyKeyboardMarkup == null || this.c.rows.isEmpty()) {
-            jVar.a.m(null, true);
+    }
+
+    public static void e(u1[] u1VarArr, f2 f2Var, int i7, TLRPC.Chat chat) {
+        if (u1VarArr[0] != null) {
             return;
         }
-        l0 l0Var2 = new l0(getContext());
-        l0Var2.setOrientation(1);
-        float f10 = 0.0f;
-        l0Var2.setAlpha(0.0f);
-        this.b.addView(l0Var2);
-        boolean z10 = tL_replyKeyboardMarkup.resize;
-        this.f = !z10;
-        float f11 = 4.0f;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (org.telegram.messenger.camera.q.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
-        int i10 = 0;
-        while (i10 < tL_replyKeyboardMarkup.rows.size()) {
-            TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i10);
-            LinearLayout linearLayout = new LinearLayout(getContext());
-            linearLayout.setOrientation(i3);
-            l0Var2.addView(linearLayout, mf.k(8.0f, i10 == 0 ? 8.0f : f11, 8.0f, i10 == tL_replyKeyboardMarkup.rows.size() - 1 ? 8.0f : f10, -1, this.h));
-            float size = 1.0f / keyboardButtonRow.buttons.size();
-            int i11 = i3;
-            while (i11 < keyboardButtonRow.buttons.size()) {
-                k0 k0Var = new k0(this, getContext(), keyboardButtonRow.buttons.get(i11));
-                boolean z11 = i11 == 0;
-                boolean z12 = i10 == 0;
-                boolean z13 = i11 == keyboardButtonRow.buttons.size() - 1;
-                boolean z14 = i10 == tL_replyKeyboardMarkup.rows.size() - 1;
-                k0Var.d = z11;
-                k0Var.e = z12;
-                k0Var.f = z13;
-                k0Var.h = z14;
-                k0Var.a();
-                FrameLayout frameLayout = new FrameLayout(getContext());
-                frameLayout.addView(k0Var, mf.c(-1.0f, -1));
-                linearLayout.addView(frameLayout, mf.m(size, 0, -1, 0, i11 != keyboardButtonRow.buttons.size() - 1 ? 4 : 0, 0));
-                k0Var.setOnClickListener(new m(this, 1));
-                pf.b(k0Var, 0.02f, 1.5f);
-                arrayList.add(k0Var);
-                k0Var.a();
-                i11++;
-            }
-            i10++;
-            i3 = 0;
-            f10 = 0.0f;
-            f11 = 4.0f;
+        qp s12 = qp.s1(i7);
+        v0 v0Var = new v0(u1VarArr, f2Var, i7, chat);
+        TLRPC.TL_channels_getAdminedPublicChannels tL_channels_getAdminedPublicChannels = new TLRPC.TL_channels_getAdminedPublicChannels();
+        tL_channels_getAdminedPublicChannels.for_community_peer = true;
+        int sendRequestTyped = s12.getConnectionsManager().sendRequestTyped(tL_channels_getAdminedPublicChannels, new d3.b(1), new ml(s12, v0Var, 0));
+        ConnectionsManager.getInstance(i7).bindRequestToGuid(sendRequestTyped, f2Var.getClassGuid());
+        u1 u1Var = new u1(3, f2Var.getContext(), null);
+        u1VarArr[0] = u1Var;
+        u1Var.r(500L);
+        u1VarArr[0].setOnCancelListener(new e0(i7, sendRequestTyped, u1VarArr, 0));
+    }
+
+    public static void f(hc hcVar, int i7, boolean z9) {
+        String M0;
+        int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
+        int i11 = i7 == 2 ? 24 : 36;
+        if (i7 == 0) {
+            M0 = hd.M0(2131751943, null);
+        } else if (i7 == 1) {
+            M0 = hd.M0(z9 ? 2131751942 : 2131751941, null);
+        } else {
+            M0 = hd.M0(2131751940, null);
         }
-        jVar.h(l0Var2, true);
-    }
-
-    public void setDelegate(j0 j0Var) {
-        this.d = j0Var;
-    }
-
-    public void setPanelHeight(int i3) {
-        TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup;
-        this.e = i3;
-        if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
-            return;
-        }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (org.telegram.messenger.camera.q.A(4.0f, this.c.rows.size() - 1, this.e - org.telegram.messenger.g0.L(16.0f)) / this.c.rows.size()) / org.telegram.messenger.g0.p);
-        this.h = max;
-        int L = org.telegram.messenger.g0.L(max);
-        Iterator it = this.y.iterator();
-        while (it.hasNext()) {
-            qe.e eVar = (qe.e) it.next();
-            int childCount = ((l0) eVar.a).getChildCount();
-            for (int i10 = 0; i10 < childCount; i10++) {
-                View childAt = ((l0) eVar.a).getChildAt(i10);
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt.getLayoutParams();
-                if (layoutParams.height != L) {
-                    layoutParams.height = L;
-                    childAt.setLayoutParams(layoutParams);
-                }
-            }
-        }
-    }
-
-    @Override // sh.a
-    public final void d(float f10) {
-    }
-
-    @Override // qe.i
-    public final /* synthetic */ void a() {
+        hcVar.G(i10, i11, M0).j();
     }
 }

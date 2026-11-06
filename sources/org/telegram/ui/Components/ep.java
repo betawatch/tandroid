@@ -1,17 +1,17 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class ep extends b5.a {
+public abstract class ep extends c5.a {
     public abstract int j();
 
-    public final int k(int i3) {
-        int size = ((uf0) this).c.size();
-        int j10 = j();
-        if (i3 < j10) {
-            return ((size - (j10 * 2)) - ((j10 - i3) - 1)) - 1;
+    public final int k(int i7) {
+        int size = ((rf0) this).c.size();
+        int j3 = j();
+        if (i7 < j3) {
+            return ((size - (j3 * 2)) - ((j3 - i7) - 1)) - 1;
         }
-        int i10 = size - j10;
-        return i3 >= i10 ? i3 - i10 : i3 - j10;
+        int i10 = size - j3;
+        return i7 >= i10 ? i7 - i10 : i7 - j3;
     }
 }

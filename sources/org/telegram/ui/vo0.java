@@ -1,45 +1,49 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class vo0 extends org.telegram.ui.Components.oo0 {
-    public final /* synthetic */ FrameLayout S2;
-    public final /* synthetic */ boolean T2;
-    public final /* synthetic */ PhotoViewer U2;
+public final class vo0 extends org.telegram.ui.Components.y51 {
+    public final org.telegram.ui.Components.ca g0;
+    public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo0(PhotoViewer photoViewer, Context context, wm wmVar, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z10) {
-        super(context, wmVar, arrayList, null, null, false, str, null, false, true, false, num, null);
-        this.U2 = photoViewer;
-        this.S2 = frameLayout;
-        this.T2 = z10;
+    public vo0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h0 = photoViewer;
+        new Path();
+        this.g0 = new org.telegram.ui.Components.ca(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.oo0, org.telegram.ui.ActionBar.t2
-    public final void K() {
-        super.K();
-        if (this.T2) {
-            org.telegram.messenger.g0.i3(new sg0(this, 19), 50L);
-        }
-        PhotoViewer photoViewer = this.U2;
-        photoViewer.e0.softInputMode = org.telegram.messenger.hs.v4;
-        try {
-            ((WindowManager) photoViewer.E.getSystemService("window")).updateViewLayout(photoViewer.h0, photoViewer.e0);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // org.telegram.ui.Components.y51
+    public final void b(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        float f10 = -getX();
+        PhotoViewer photoViewer = this.h0;
+        canvas.translate(f10 - photoViewer.Q7.getX(), (-getY()) - photoViewer.Q7.getY());
+        photoViewer.N0(canvas, this.g0, -14803426, 855638016, false, true, false);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.oo0
-    public final void R0(a0.h hVar, int i3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            org.telegram.messenger.g0.i3(new org.telegram.ui.Components.zo0(this, this.S2, hVar, i3, 15), 250L);
+    @Override // android.view.View
+    public final void invalidate() {
+        int i7;
+        if (org.telegram.messenger.iz.c0 && ((i7 = this.h0.m4) == 1 || i7 == 2 || i7 == 3)) {
+            return;
+        }
+        super.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            super.setTranslationY(f10);
+            this.h0.e0.invalidate();
         }
     }
 }

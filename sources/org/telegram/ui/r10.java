@@ -1,20 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class r10 extends u4.k {
-    public final /* synthetic */ x30 F;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
 
-    public r10(x30 x30Var) {
-        this.F = x30Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class r10 extends org.telegram.ui.Components.w7 {
+    public final /* synthetic */ Activity D;
+    public final /* synthetic */ c40 E;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r10(c40 c40Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.E = c40Var;
+        this.D = activity;
     }
 
-    @Override // u4.k
-    public final void P(u4.d1 d1Var) {
-        x30 x30Var = this.F;
-        x30Var.I1.invalidate();
-        x30Var.S3.invalidate();
-        x30Var.b.invalidate();
-        x30.P0(x30Var);
+    @Override // org.telegram.ui.Components.w7
+    public final TextView a() {
+        TextView textView = new TextView(this.D);
+        org.telegram.messenger.k5.n(textView, org.telegram.ui.ActionBar.k6.Vg, null, 1, 20.0f);
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new org.telegram.ui.Components.n41(16, this, textView));
+        return textView;
     }
 }

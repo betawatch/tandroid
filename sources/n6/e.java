@@ -1,0 +1,89 @@
+package n6;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public class e {
+    public static final int a;
+    public static final e b;
+
+    static {
+        AtomicBoolean atomicBoolean = g.a;
+        a = 12451000;
+        b = new e();
+    }
+
+    public static int a(Context context) {
+        AtomicBoolean atomicBoolean = g.a;
+        try {
+            return context.getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode;
+        } catch (PackageManager.NameNotFoundException unused) {
+            Log.w("GooglePlayServicesUtil", "Google Play services is missing.");
+            return 0;
+        }
+    }
+
+    public Intent b(int i7, Context context, String str) {
+        if (i7 != 1 && i7 != 2) {
+            if (i7 != 3) {
+                return null;
+            }
+            Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(fromParts);
+            return intent;
+        }
+        if (context != null && x6.b.f(context)) {
+            Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
+            intent2.setPackage("com.google.android.wearable.app");
+            return intent2;
+        }
+        StringBuilder sb2 = new StringBuilder("gcore_");
+        sb2.append(a);
+        sb2.append("-");
+        if (!TextUtils.isEmpty(str)) {
+            sb2.append(str);
+        }
+        sb2.append("-");
+        if (context != null) {
+            sb2.append(context.getPackageName());
+        }
+        sb2.append("-");
+        if (context != null) {
+            try {
+                sb2.append(z6.b.a(context).c(0, context.getPackageName()).versionCode);
+            } catch (PackageManager.NameNotFoundException unused) {
+            }
+        }
+        String sb3 = sb2.toString();
+        Intent intent3 = new Intent("android.intent.action.VIEW");
+        Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
+        if (!TextUtils.isEmpty(sb3)) {
+            appendQueryParameter.appendQueryParameter("pcampaignid", sb3);
+        }
+        intent3.setData(appendQueryParameter.build());
+        intent3.setPackage("com.android.vending");
+        intent3.addFlags(TLObject.FLAG_19);
+        return intent3;
+    }
+
+    public int c(Context context) {
+        return d(context, a);
+    }
+
+    public int d(Context context, int i7) {
+        int b10 = g.b(context, i7);
+        if (b10 != 18 ? b10 == 1 ? g.c(context) : false : true) {
+            return 18;
+        }
+        return b10;
+    }
+}

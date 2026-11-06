@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class p3 extends v1 {
     private static final p3 zzb;
@@ -22,29 +22,29 @@ public final class p3 extends v1 {
         v1.k(p3.class, p3Var);
     }
 
-    public static /* synthetic */ void n(p3 p3Var, int i3) {
+    public static /* synthetic */ void n(p3 p3Var, int i7) {
         p3Var.zzd |= 128;
-        p3Var.zzl = i3;
+        p3Var.zzl = i7;
     }
 
-    public static /* synthetic */ void o(p3 p3Var, int i3) {
+    public static /* synthetic */ void o(p3 p3Var, int i7) {
         p3Var.zzd |= 256;
-        p3Var.zzm = i3;
+        p3Var.zzm = i7;
     }
 
-    public static /* synthetic */ void p(p3 p3Var, int i3) {
+    public static /* synthetic */ void p(p3 p3Var, int i7) {
         p3Var.zzd |= 8;
-        p3Var.zzh = i3;
+        p3Var.zzh = i7;
     }
 
-    public static /* synthetic */ void q(p3 p3Var, long j10) {
+    public static /* synthetic */ void q(p3 p3Var, long j3) {
         p3Var.zzd |= 16;
-        p3Var.zzi = j10;
+        p3Var.zzi = j3;
     }
 
-    public static /* synthetic */ void r(p3 p3Var, long j10) {
+    public static /* synthetic */ void r(p3 p3Var, long j3) {
         p3Var.zzd |= 32;
-        p3Var.zzj = j10;
+        p3Var.zzj = j3;
     }
 
     public static /* synthetic */ void s(p3 p3Var) {
@@ -78,8 +78,8 @@ public final class p3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i3) {
-        int i10 = i3 - 1;
+    public final Object d(int i7) {
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

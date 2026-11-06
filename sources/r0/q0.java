@@ -9,18 +9,18 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
-    public static final w1.a f = new w1.a(w1.a.c);
+    public static final x1.a f = new x1.a(x1.a.c);
     public static final DecelerateInterpolator g = new DecelerateInterpolator(1.5f);
     public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
 
     public static void e(View view, v0 v0Var) {
-        ci.u0 i3 = i(view);
-        if (i3 != null) {
-            i3.V0();
+        bi.b1 i7 = i(view);
+        if (i7 != null) {
+            i7.V0();
             return;
         }
         if (view instanceof ViewGroup) {
@@ -31,26 +31,26 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void f(View view, k1 k1Var, boolean z10) {
-        ci.u0 i3 = i(view);
-        if (i3 != null) {
-            i3.a = k1Var;
-            if (!z10) {
-                z10 = true;
+    public static void f(View view, k1 k1Var, boolean z9) {
+        bi.b1 i7 = i(view);
+        if (i7 != null) {
+            i7.a = k1Var;
+            if (!z9) {
+                z9 = true;
             }
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                f(viewGroup.getChildAt(i10), k1Var, z10);
+                f(viewGroup.getChildAt(i10), k1Var, z9);
             }
         }
     }
 
     public static void g(View view, k1 k1Var, List list) {
-        ci.u0 i3 = i(view);
-        if (i3 != null) {
-            i3.W0(k1Var, list);
+        bi.b1 i7 = i(view);
+        if (i7 != null) {
+            i7.W0(k1Var, list);
             return;
         }
         if (view instanceof ViewGroup) {
@@ -61,14 +61,14 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void h(View view, v0 v0Var, mi.h0 h0Var) {
-        ci.u0 i3 = i(view);
-        if (i3 != null) {
-            sh.d dVar = (sh.d) i3;
+    public static void h(View view, v0 v0Var, j2.n nVar) {
+        bi.b1 i7 = i(view);
+        if (i7 != null) {
+            rh.d dVar = (rh.d) i7;
             if (dVar.c == 0) {
                 Iterator it = dVar.d.iterator();
                 while (it.hasNext()) {
-                    ((sh.c) it.next()).w();
+                    ((rh.c) it.next()).w();
                 }
             }
             dVar.c++;
@@ -77,12 +77,12 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                h(viewGroup.getChildAt(i10), v0Var, h0Var);
+                h(viewGroup.getChildAt(i10), v0Var, nVar);
             }
         }
     }
 
-    public static ci.u0 i(View view) {
+    public static bi.b1 i(View view) {
         Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
         if (tag instanceof p0) {
             return ((p0) tag).a;

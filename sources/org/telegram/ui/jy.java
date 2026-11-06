@@ -1,28 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jy implements RequestDelegate {
+public final /* synthetic */ class jy implements org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ez b;
+    public final /* synthetic */ gz b;
 
-    public /* synthetic */ jy(ez ezVar, int i3) {
-        this.a = i3;
-        this.b = ezVar;
+    public /* synthetic */ jy(gz gzVar, int i7) {
+        this.a = i7;
+        this.b = gzVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.Components.dj0
+    public boolean c(int i7, View view) {
+        gz gzVar = this.b;
+        yy yyVar = (yy) gzVar.P.get(i7);
+        if (yyVar == null || !(view instanceof org.telegram.ui.Cells.pa)) {
+            return false;
+        }
+        org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
+        gzVar.B0(yyVar, paVar.getName(), paVar.getCurrentObject(), yyVar.g);
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.p11(28, this.b, tLObject));
+            case 1:
+                gz gzVar = this.b;
+                org.telegram.ui.ActionBar.u1 u1Var2 = null;
+                if (gzVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.u1 u1Var3 = new org.telegram.ui.ActionBar.u1(3, gzVar.getParentActivity(), null);
+                    u1Var3.i0 = false;
+                    u1Var3.show();
+                    u1Var2 = u1Var3;
+                }
+                TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
+                tL_messages_updateDialogFilter.id = gzVar.r.a;
+                gzVar.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new ld(26, gzVar, u1Var2));
+                break;
+            case 2:
+                this.b.w0();
+                break;
+            case 3:
+                this.b.w0();
                 break;
             default:
-                org.telegram.messenger.g0.h3(new pp(this.b, tL_error, tLObject, 6));
+                this.b.finishFragment();
                 break;
         }
     }

@@ -1,9 +1,9 @@
 package p0;
 
 import android.text.SpannableStringBuilder;
-import ba.i;
+import ca.i;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -20,9 +20,9 @@ public final class b {
         e = new b(true);
     }
 
-    public b(boolean z10) {
+    public b(boolean z9) {
         i iVar = f.a;
-        this.a = z10;
+        this.a = z9;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0085, code lost:
@@ -83,12 +83,12 @@ public final class b {
         byte directionality;
         a aVar = new a(charSequence);
         aVar.c = 0;
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         int i11 = 0;
         while (true) {
             int i12 = aVar.c;
-            if (i12 < aVar.b && i3 == 0) {
+            if (i12 < aVar.b && i7 == 0) {
                 CharSequence charSequence2 = aVar.a;
                 char charAt = charSequence2.charAt(i12);
                 aVar.d = charAt;
@@ -98,8 +98,8 @@ public final class b {
                     directionality = Character.getDirectionality(codePointAt);
                 } else {
                     aVar.c++;
-                    char c2 = aVar.d;
-                    directionality = c2 < 1792 ? a.e[c2] : Character.getDirectionality(c2);
+                    char c10 = aVar.d;
+                    directionality = c10 < 1792 ? a.e[c10] : Character.getDirectionality(c10);
                 }
                 if (directionality != 0) {
                     if (directionality == 1 || directionality == 2) {
@@ -125,7 +125,7 @@ public final class b {
                     }
                 } else if (i11 == 0) {
                 }
-                i3 = i11;
+                i7 = i11;
             }
         }
         return -1;
@@ -141,14 +141,14 @@ public final class b {
     public static int b(CharSequence charSequence) {
         a aVar = new a(charSequence);
         aVar.c = aVar.b;
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
-            int i10 = i3;
+            int i10 = i7;
             while (aVar.c > 0) {
                 byte a10 = aVar.a();
                 if (a10 != 0) {
                     if (a10 == 1 || a10 == 2) {
-                        if (i3 != 0) {
+                        if (i7 != 0) {
                             if (i10 == 0) {
                                 break;
                             }
@@ -157,20 +157,20 @@ public final class b {
                         switch (a10) {
                             case 14:
                             case 15:
-                                if (i10 == i3) {
+                                if (i10 == i7) {
                                     return -1;
                                 }
-                                i3--;
+                                i7--;
                                 break;
                             case 16:
                             case 17:
-                                if (i10 == i3) {
+                                if (i10 == i7) {
                                     break;
                                 }
-                                i3--;
+                                i7--;
                                 break;
                             case 18:
-                                i3++;
+                                i7++;
                                 break;
                             default:
                                 if (i10 != 0) {
@@ -184,7 +184,7 @@ public final class b {
                         continue;
                     }
                 } else {
-                    if (i3 == 0) {
+                    if (i7 == 0) {
                         return -1;
                     }
                     if (i10 == 0) {
@@ -207,9 +207,9 @@ public final class b {
         String str = "";
         String str2 = c;
         String str3 = b;
-        boolean z10 = this.a;
-        spannableStringBuilder.append((CharSequence) ((z10 || !(h7 || a(charSequence) == 1)) ? (!z10 || (h7 && a(charSequence) != -1)) ? "" : str2 : str3));
-        if (h != z10) {
+        boolean z9 = this.a;
+        spannableStringBuilder.append((CharSequence) ((z9 || !(h7 || a(charSequence) == 1)) ? (!z9 || (h7 && a(charSequence) != -1)) ? "" : str2 : str3));
+        if (h != z9) {
             spannableStringBuilder.append(h ? (char) 8235 : (char) 8234);
             spannableStringBuilder.append(charSequence);
             spannableStringBuilder.append((char) 8236);
@@ -217,9 +217,9 @@ public final class b {
             spannableStringBuilder.append(charSequence);
         }
         boolean h10 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
-        if (!z10 && (h10 || b(charSequence) == 1)) {
+        if (!z9 && (h10 || b(charSequence) == 1)) {
             str = str3;
-        } else if (z10 && (!h10 || b(charSequence) == -1)) {
+        } else if (z9 && (!h10 || b(charSequence) == -1)) {
             str = str2;
         }
         spannableStringBuilder.append((CharSequence) str);

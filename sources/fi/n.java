@@ -1,39 +1,47 @@
 package fi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.q00;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.tj0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class n extends q31 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class n implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ la b;
 
-    static {
-        q31.h(new n());
+    public /* synthetic */ n(la laVar, int i7) {
+        this.a = i7;
+        this.b = laVar;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
-        o oVar = (o) view;
-        q00 q00Var = (q00) r31Var.G;
-        oVar.a.setText(q00Var.b);
-        oVar.b.setText(q00Var.c);
-        if (oVar.c != z10) {
-            oVar.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.n();
+                break;
+            case 1:
+                la laVar = this.b;
+                laVar.J0 = false;
+                laVar.K0 = TLObject.FLAG_31;
+                laVar.invalidate();
+                laVar.R0.setVisibility(0);
+                laVar.S0.setVisibility(0);
+                break;
+            default:
+                va vaVar = this.b.R1;
+                ja jaVar = vaVar.X0;
+                if (jaVar != null) {
+                    jaVar.O = false;
+                    jaVar.c();
+                    ja jaVar2 = vaVar.X0;
+                    jaVar2.m(0L);
+                    fb fbVar = jaVar2.F;
+                    if (fbVar != null) {
+                        fbVar.setProgress(0L);
+                        break;
+                    }
+                }
+                break;
         }
-        oVar.c = z10;
-        oVar.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, tj0 tj0Var, int i3, e6 e6Var) {
-        return new o(context);
     }
 }

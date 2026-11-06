@@ -11,7 +11,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class s {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public abstract class s {
     public final MediaSession.Callback e;
     public Handler f;
 
-    public s(int i3) {
-        this.a = i3;
-        switch (i3) {
+    public s(int i7) {
+        this.a = i7;
+        switch (i7) {
             case 1:
                 this.b = new Object();
                 this.e = new r(this, 1);
@@ -47,7 +47,7 @@ public abstract class s {
                 qVar = (q) this.f;
             }
             if (uVar != null && qVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
-                a2.a c2 = uVar.c();
+                b2.a c10 = uVar.c();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
                     a(uVar, qVar);
@@ -59,7 +59,7 @@ public abstract class s {
                 }
                 if (!this.c) {
                     this.c = true;
-                    qVar.sendMessageDelayed(qVar.obtainMessage(1, c2), ViewConfiguration.getDoubleTapTimeout());
+                    qVar.sendMessageDelayed(qVar.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
                 qVar.removeMessages(1);
@@ -75,31 +75,31 @@ public abstract class s {
     }
 
     public void A(String str, Bundle bundle) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
-    public void G(long j10) {
-        int i3 = this.a;
+    public void G(long j3) {
+        int i7 = this.a;
     }
 
-    public void M(int i3) {
+    public void M(int i7) {
         int i10 = this.a;
     }
 
-    public void P(int i3) {
+    public void P(int i7) {
         int i10 = this.a;
     }
 
     public void S() {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public void V() {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
-    public void Y(long j10) {
-        int i3 = this.a;
+    public void Y(long j3) {
+        int i7 = this.a;
     }
 
     public void a(u uVar, Handler handler) {
@@ -107,14 +107,14 @@ public abstract class s {
             this.c = false;
             handler.removeMessages(1);
             PlaybackStateCompat d = uVar.d();
-            long j10 = d == null ? 0L : d.e;
-            boolean z10 = d != null && d.a == 3;
-            boolean z11 = (516 & j10) != 0;
-            boolean z12 = (j10 & 514) != 0;
-            if (z10 && z12) {
+            long j3 = d == null ? 0L : d.e;
+            boolean z9 = d != null && d.a == 3;
+            boolean z10 = (516 & j3) != 0;
+            boolean z11 = (j3 & 514) != 0;
+            if (z9 && z11) {
                 k();
             } else {
-                if (z10 || !z11) {
+                if (z9 || !z10) {
                     return;
                 }
                 n();
@@ -122,19 +122,19 @@ public abstract class s {
         }
     }
 
-    public void b(p4.l lVar, Handler handler) {
+    public void b(q4.l lVar, Handler handler) {
         if (this.c) {
             this.c = false;
             handler.removeMessages(1);
-            p4.w wVar = lVar.g;
-            long j10 = wVar == null ? 0L : wVar.e;
-            boolean z10 = wVar != null && wVar.a == 3;
-            boolean z11 = (516 & j10) != 0;
-            boolean z12 = (j10 & 514) != 0;
-            if (z10 && z12) {
+            q4.w wVar = lVar.g;
+            long j3 = wVar == null ? 0L : wVar.e;
+            boolean z9 = wVar != null && wVar.a == 3;
+            boolean z10 = (516 & j3) != 0;
+            boolean z11 = (j3 & 514) != 0;
+            if (z9 && z11) {
                 k();
             } else {
-                if (z10 || !z11) {
+                if (z9 || !z10) {
                     return;
                 }
                 n();
@@ -161,7 +161,7 @@ public abstract class s {
         }
     }
 
-    public void d0(p4.l lVar, Handler handler) {
+    public void d0(q4.l lVar, Handler handler) {
         synchronized (this.b) {
             try {
                 this.d = new WeakReference(lVar);
@@ -177,7 +177,7 @@ public abstract class s {
     }
 
     public boolean i(Intent intent) {
-        p4.l lVar;
+        q4.l lVar;
         q qVar;
         KeyEvent keyEvent;
         switch (this.a) {
@@ -188,13 +188,13 @@ public abstract class s {
                     return false;
                 }
                 synchronized (this.b) {
-                    lVar = (p4.l) this.d.get();
+                    lVar = (q4.l) this.d.get();
                     qVar = (q) this.f;
                 }
                 if (lVar == null || qVar == null || (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) == null || keyEvent.getAction() != 0) {
                     return false;
                 }
-                p4.r c2 = lVar.c();
+                q4.r c10 = lVar.c();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
                     b(lVar, qVar);
@@ -205,32 +205,32 @@ public abstract class s {
                 } else if (this.c) {
                     qVar.removeMessages(1);
                     this.c = false;
-                    p4.w wVar = lVar.g;
+                    q4.w wVar = lVar.g;
                     if (((wVar == null ? 0L : wVar.e) & 32) != 0) {
                         S();
                     }
                 } else {
                     this.c = true;
-                    qVar.sendMessageDelayed(qVar.obtainMessage(1, c2), ViewConfiguration.getDoubleTapTimeout());
+                    qVar.sendMessageDelayed(qVar.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
                 }
                 return true;
         }
     }
 
     public void k() {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public void n() {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public void q(String str, Bundle bundle) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public void x(String str, Bundle bundle) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     private void T() {
@@ -269,43 +269,43 @@ public abstract class s {
     public void w() {
     }
 
-    private void H(long j10) {
+    private void H(long j3) {
     }
 
-    private void I(long j10) {
+    private void I(long j3) {
     }
 
-    private void N(int i3) {
+    private void N(int i7) {
     }
 
-    private void O(int i3) {
+    private void O(int i7) {
     }
 
-    private void Q(int i3) {
+    private void Q(int i7) {
     }
 
-    private void R(int i3) {
+    private void R(int i7) {
     }
 
-    private void Z(long j10) {
+    private void Z(long j3) {
     }
 
-    private void a0(long j10) {
+    private void a0(long j3) {
     }
 
-    public void E(p4.h hVar) {
+    public void E(q4.h hVar) {
     }
 
     public void J(float f10) {
     }
 
-    public void K(p4.x xVar) {
+    public void K(q4.y yVar) {
     }
 
-    public void L(p4.x xVar) {
+    public void L(q4.y yVar) {
     }
 
-    public void c(p4.h hVar) {
+    public void c(q4.h hVar) {
     }
 
     public void f(String str) {
@@ -335,7 +335,7 @@ public abstract class s {
     public void D(Uri uri, Bundle bundle) {
     }
 
-    public void d(p4.h hVar, int i3) {
+    public void d(q4.h hVar, int i7) {
     }
 
     public void g(String str, Bundle bundle) {

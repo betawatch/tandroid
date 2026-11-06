@@ -1,11 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Point;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface d71 {
-    boolean Y0();
+public final class d71 extends c8.ea {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.ls b;
 
-    boolean a();
+    public /* synthetic */ d71(org.telegram.messenger.ls lsVar, int i7) {
+        this.a = i7;
+        this.b = lsVar;
+    }
 
-    void l1(boolean z10);
+    @Override // c8.ea
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((ec1) this.b).w.invalidate();
+                break;
+        }
+    }
+
+    @Override // c8.ea
+    public void b(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                Point point = org.telegram.messenger.g0.q;
+                if ((point.x <= point.y) == (i7 <= i10)) {
+                    ((u71) this.b).y0.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
 }

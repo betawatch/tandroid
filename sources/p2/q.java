@@ -1,38 +1,30 @@
 package p2;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.telegram.ui.Components.i9;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface q {
-    byte[] C0();
+public final class q {
+    public final long a;
+    public final long b;
 
-    void F1(byte[] bArr);
+    public q(long j3, long j10) {
+        this.a = j3;
+        this.b = j10;
+    }
 
-    o J1(byte[] bArr, List list, int i3, HashMap hashMap);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && q.class == obj.getClass()) {
+            q qVar = (q) obj;
+            if (this.a == qVar.a && this.b == qVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    int L1();
-
-    void U0(byte[] bArr, byte[] bArr2);
-
-    p W();
-
-    void W0(byte[] bArr);
-
-    boolean l2(String str, byte[] bArr);
-
-    void m(i9 i9Var);
-
-    byte[] o1(byte[] bArr, byte[] bArr2);
-
-    Map r(byte[] bArr);
-
-    j2.b r0(byte[] bArr);
-
-    void release();
-
-    void v0(byte[] bArr, l2.k kVar);
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
+    }
 }

@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzeb extends j implements p {
     int zza;
@@ -19,24 +19,24 @@ final class zzeb extends j implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j10, zzhh zzhhVar, c cVar) {
+    public zzeb(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j3, zzhh zzhhVar, c cVar) {
         super(2, cVar);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j10;
+        this.zzf = j3;
         this.zzg = zzhhVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzebVar.zzh = obj;
         return zzebVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -57,17 +57,17 @@ final class zzeb extends j implements p {
     
         if (r15 != r0) goto L28;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         zzeq zzeqVar;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
-        if (i3 == 0) {
-            ib.b(obj);
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
+        if (i7 == 0) {
+            b.c(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -86,31 +86,31 @@ final class zzeb extends j implements p {
                 }
                 zzdw zzdwVar2 = zzdwVar;
                 String str3 = this.zzc;
-                long j10 = this.zzf;
+                long j3 = this.zzf;
                 zzhh zzhhVar = this.zzg;
                 this.zzh = zzgrVar;
                 this.zza = 3;
-                obj = new zzhg(new zzee(zzehVar, j10, zzdwVar2, str3, zzhhVar, null));
+                obj = new zzhg(new zzee(zzehVar, j3, zzdwVar2, str3, zzhhVar, null));
             }
             return aVar;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             zzgrVar = (zzgr) this.zzh;
-            ib.b(obj);
+            b.c(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
-            if (i3 == 2) {
-                ib.b(obj);
+            if (i7 == 2) {
+                b.c(obj);
                 return (zzeq) obj;
             }
-            if (i3 != 3) {
-                ib.b(obj);
+            if (i7 != 3) {
+                b.c(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            ib.b(obj);
+            b.c(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

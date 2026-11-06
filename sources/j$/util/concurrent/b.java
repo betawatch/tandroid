@@ -42,44 +42,44 @@ public abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray() {
-        long j10 = this.a.j();
-        if (j10 < 0) {
-            j10 = 0;
+        long j3 = this.a.j();
+        if (j3 < 0) {
+            j3 = 0;
         }
-        if (j10 > 2147483639) {
+        if (j3 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i3 = (int) j10;
-        Object[] objArr = new Object[i3];
+        int i7 = (int) j3;
+        Object[] objArr = new Object[i7];
         Iterator it = iterator();
         int i10 = 0;
         while (it.hasNext()) {
             Object next = it.next();
-            if (i10 == i3) {
-                if (i3 >= 2147483639) {
+            if (i10 == i7) {
+                if (i7 >= 2147483639) {
                     throw new OutOfMemoryError("Required array size too large");
                 }
-                int i11 = i3 < 1073741819 ? (i3 >>> 1) + 1 + i3 : 2147483639;
+                int i11 = i7 < 1073741819 ? (i7 >>> 1) + 1 + i7 : 2147483639;
                 objArr = Arrays.copyOf(objArr, i11);
-                i3 = i11;
+                i7 = i11;
             }
             objArr[i10] = next;
             i10++;
         }
-        return i10 == i3 ? objArr : Arrays.copyOf(objArr, i10);
+        return i10 == i7 ? objArr : Arrays.copyOf(objArr, i10);
     }
 
     @Override // java.util.Collection
     public final Object[] toArray(Object[] objArr) {
-        long j10 = this.a.j();
-        if (j10 < 0) {
-            j10 = 0;
+        long j3 = this.a.j();
+        if (j3 < 0) {
+            j3 = 0;
         }
-        if (j10 > 2147483639) {
+        if (j3 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i3 = (int) j10;
-        Object[] objArr2 = objArr.length >= i3 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i3);
+        int i7 = (int) j3;
+        Object[] objArr2 = objArr.length >= i7 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i7);
         int length = objArr2.length;
         Iterator it = iterator();
         int i10 = 0;
@@ -140,7 +140,7 @@ public abstract class b implements Collection, Serializable {
     public boolean removeAll(Collection collection) {
         collection.getClass();
         l[] lVarArr = this.a.a;
-        boolean z10 = false;
+        boolean z9 = false;
         if (lVarArr == null) {
             return false;
         }
@@ -149,29 +149,29 @@ public abstract class b implements Collection, Serializable {
             while (it.hasNext()) {
                 if (collection.contains(it.next())) {
                     it.remove();
-                    z10 = true;
+                    z9 = true;
                 }
             }
-            return z10;
+            return z9;
         }
         Iterator it2 = collection.iterator();
         while (it2.hasNext()) {
-            z10 |= remove(it2.next());
+            z9 |= remove(it2.next());
         }
-        return z10;
+        return z9;
     }
 
     @Override // java.util.Collection
     public final boolean retainAll(Collection collection) {
         collection.getClass();
         Iterator it = iterator();
-        boolean z10 = false;
+        boolean z9 = false;
         while (it.hasNext()) {
             if (!collection.contains(it.next())) {
                 it.remove();
-                z10 = true;
+                z9 = true;
             }
         }
-        return z10;
+        return z9;
     }
 }

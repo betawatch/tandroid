@@ -1,16 +1,50 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class w extends u4.k {
-    public final /* synthetic */ z F;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-    public w(z zVar) {
-        this.F = zVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class w implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a0 b;
+
+    public /* synthetic */ w(a0 a0Var, int i7) {
+        this.a = i7;
+        this.b = a0Var;
     }
 
-    @Override // u4.k
-    public final void P(u4.d1 d1Var) {
-        this.F.b.invalidate();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                this.b.e1();
+                break;
+            default:
+                this.b.e1();
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

@@ -1,73 +1,65 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class x {
-    public static final i6.b j = new i6.b("ConnectivityMonitor", null);
-    public final j4 a;
-    public final ConnectivityManager c;
-    public boolean f;
-    public final Context g;
-    public final Object h = new Object();
-    public final Set i = DesugarCollections.synchronizedSet(new HashSet());
-    public final Map d = DesugarCollections.synchronizedMap(new HashMap());
-    public final List e = DesugarCollections.synchronizedList(new ArrayList());
-    public final w b = new w(this);
+public final /* synthetic */ class x implements l5.e, a0 {
+    public static final /* synthetic */ x a = new x();
+    public static final /* synthetic */ x b = new x();
+    public static final x c = new x();
+    public static final x d = new x();
+    public static final x e = new x();
+    public static final x f = new x();
+    public static final x h = new x();
+    public static final x n = new x();
+    public static final x r = new x();
+    public static final x s = new x();
+    public static final x w = new x();
+    public static final x x = new x();
+    public static final x y = new x();
+    public static final x D = new x();
+    public static final x E = new x();
+    public static final x F = new x();
+    public static final x G = new x();
+    public static final x H = new x();
+    public static final x I = new x();
+    public static final x J = new x();
+    public static final x K = new x();
+    public static final x L = new x();
+    public static final x M = new x();
+    public static final x N = new x();
+    public static final x O = new x();
+    public static final x P = new x();
+    public static final x Q = new x();
+    public static final x R = new x();
+    public static final x S = new x();
+    public static final x T = new x();
 
-    public x(Context context, j4 j4Var) {
-        this.a = j4Var;
-        this.g = context;
-        this.c = (ConnectivityManager) context.getSystemService("connectivity");
+    @Override // l5.e
+    public Object apply(Object obj) {
+        p1 p1Var = (p1) obj;
+        try {
+            int i7 = p1Var.i();
+            byte[] bArr = new byte[i7];
+            v4 v4Var = new v4(bArr, i7);
+            d6 a10 = a6.c.a(p1.class);
+            q5 q5Var = v4Var.a;
+            if (q5Var == null) {
+                q5Var = new q5(v4Var);
+            }
+            a10.e(p1Var, q5Var);
+            if (i7 - v4Var.d == 0) {
+                return bArr;
+            }
+            throw new IllegalStateException("Did not write as much data as expected.");
+        } catch (IOException e10) {
+            throw new RuntimeException(a8.p0.p("Serializing ", p1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
+        }
     }
 
-    public final void a(Network network, LinkProperties linkProperties) {
-        synchronized (this.h) {
-            try {
-                if (this.d != null && this.e != null) {
-                    j.b("a new network is available", new Object[0]);
-                    if (this.d.containsKey(network)) {
-                        this.e.remove(network);
-                    }
-                    this.d.put(network, linkProperties);
-                    this.e.add(network);
-                    b();
-                }
-            } finally {
-            }
-        }
-    }
-
-    public final void b() {
-        if (this.a == null) {
-            return;
-        }
-        synchronized (this.i) {
-            try {
-                Iterator it = this.i.iterator();
-                while (it.hasNext()) {
-                    if (it.next() != null) {
-                        throw new ClassCastException();
-                    }
-                    if (!((k4) this.a).a.isShutdown()) {
-                        ((k4) this.a).execute(new v(this, 0));
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // com.google.android.gms.internal.cast.a0
+    public Object zza() {
+        throw new IllegalStateException();
     }
 }

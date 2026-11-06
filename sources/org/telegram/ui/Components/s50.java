@@ -1,245 +1,192 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.util.Property;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class s50 extends ViewGroup {
-    public boolean a;
-    public final ArrayList b;
-    public y10 c;
-    public boolean d;
-    public final /* synthetic */ t50 e;
+public final class s50 extends oj0 {
+    public ArrayList c = new ArrayList();
+    public ArrayList d = new ArrayList();
+    public final jg.z1 e;
+    public int f;
+    public Runnable h;
+    public final /* synthetic */ x50 n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s50(t50 t50Var, Context context) {
-        super(context);
-        this.e = t50Var;
-        this.b = new ArrayList();
+    public s50(x50 x50Var) {
+        this.n = x50Var;
+        jg.z1 z1Var = new jg.z1(false);
+        this.e = z1Var;
+        z1Var.a = new ax(this, 7);
     }
 
-    public final void a(y10 y10Var, boolean z10) {
-        int i3 = 1;
-        this.d = true;
-        t50 t50Var = this.e;
-        t50Var.X1.k(y10Var, y10Var.getUid());
-        AnimatorSet animatorSet = t50Var.V1;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            t50Var.V1.cancel();
-        }
-        this.a = false;
-        if (z10) {
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            t50Var.V1 = animatorSet2;
-            animatorSet2.addListener(new r50(this, i3));
-            t50Var.V1.setDuration(150L);
-            t50Var.V1.setInterpolator(xq.f);
-            ArrayList arrayList = this.b;
-            arrayList.clear();
-            arrayList.add(ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) View.SCALE_X, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) View.SCALE_Y, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(y10Var, (Property<y10, Float>) View.ALPHA, 0.0f, 1.0f));
-        }
-        addView(y10Var);
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
+        return d1Var.f == 1;
     }
 
-    public final void b(y10 y10Var) {
-        this.d = false;
-        t50 t50Var = this.e;
-        t50Var.X1.l(y10Var.getUid());
-        y10Var.setOnClickListener(null);
-        AnimatorSet animatorSet = t50Var.V1;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            t50Var.V1.cancel();
+    @Override // v4.g0
+    public final int b() {
+        int size = this.c.size();
+        jg.z1 z1Var = this.e;
+        int size2 = z1Var.d.size();
+        int size3 = z1Var.e.size();
+        int i7 = size + size2;
+        if (size3 != 0) {
+            i7 += size3 + 1;
         }
-        this.a = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        t50Var.V1 = animatorSet2;
-        animatorSet2.addListener(new bh.j(29, this, y10Var));
-        t50Var.V1.setDuration(150L);
-        this.c = y10Var;
-        ArrayList arrayList = this.b;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.c, (Property<y10, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.c, (Property<y10, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.c, (Property<y10, Float>) View.ALPHA, 1.0f, 0.0f));
-        requestLayout();
+        int i10 = i7 + 2;
+        this.f = i10;
+        return i10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+    @Override // v4.g0
+    public final int d(int i7) {
+        if (i7 == 0) {
+            return 2;
         }
+        if (i7 == this.f - 1) {
+            return 4;
+        }
+        return i7 + (-1) == this.e.d.size() + this.c.size() ? 0 : 1;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        ArrayList arrayList;
-        u4.d1 K;
-        AnimatorSet animatorSet;
-        org.telegram.ui.ActionBar.k1 k1Var;
-        int i11;
-        t50 t50Var = this.e;
-        org.telegram.ui.ActionBar.k1 k1Var2 = t50Var.N1;
-        ci.j1 j1Var = t50Var.l1;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i3);
-        int L = size - org.telegram.messenger.g0.L(26.0f);
-        int L2 = org.telegram.messenger.g0.L(10.0f);
-        int L3 = org.telegram.messenger.g0.L(10.0f);
-        int i12 = 0;
-        int i13 = 0;
-        int i14 = 0;
-        while (true) {
-            arrayList = this.b;
-            if (i12 >= childCount) {
-                break;
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0099, code lost:
+    
+        if (r13.toString().startsWith("@" + r6) != false) goto L57;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00f1  */
+    @Override // v4.g0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t(v4.d1 d1Var, int i7) {
+        CharSequence charSequence;
+        long j3;
+        int i10 = d1Var.f;
+        View view = d1Var.a;
+        CharSequence charSequence2 = null;
+        if (i10 == 0) {
+            ((org.telegram.ui.Cells.g4) view).setText(org.telegram.messenger.hd.M0(2131749534, null));
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 != 2) {
+                return;
             }
-            View childAt = getChildAt(i12);
-            if (childAt instanceof y10) {
-                k1Var = k1Var2;
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30));
-                if (childAt != this.c && childAt.getMeasuredWidth() + i13 > L) {
-                    L2 = org.telegram.messenger.k5.C(8.0f, childAt.getMeasuredHeight(), L2);
-                    i13 = 0;
+            view.requestLayout();
+            return;
+        }
+        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        int size = this.c.size();
+        jg.z1 z1Var = this.e;
+        ArrayList arrayList = z1Var.e;
+        ArrayList arrayList2 = z1Var.d;
+        int size2 = arrayList.size();
+        int size3 = arrayList2.size();
+        int i11 = i7 - 1;
+        TLObject tLObject = (i11 < 0 || i11 >= size) ? (i11 < size || i11 >= size3 + size) ? (i11 <= size + size3 || i11 > (size2 + size) + size3) ? null : (TLObject) z1Var.e.get(((i11 - size) - size3) - 1) : (TLObject) arrayList2.get(i11 - size) : (TLObject) this.c.get(i11);
+        if (tLObject != null) {
+            String K = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).username : org.telegram.messenger.t3.K((TLRPC.Chat) tLObject, false);
+            if (i11 < size) {
+                charSequence = (CharSequence) this.d.get(i11);
+                if (charSequence != null && !TextUtils.isEmpty(K)) {
                 }
-                if (childAt.getMeasuredWidth() + i14 > L) {
-                    L3 = org.telegram.messenger.k5.C(8.0f, childAt.getMeasuredHeight(), L3);
-                    i14 = 0;
+                charSequence2 = charSequence;
+                charSequence = null;
+            } else if (i11 > size && !TextUtils.isEmpty(K)) {
+                String str = z1Var.c;
+                if (str.startsWith("@")) {
+                    str = str.substring(1);
                 }
-                int L4 = org.telegram.messenger.g0.L(13.0f) + i13;
-                if (!this.a) {
-                    y10 y10Var = this.c;
-                    if (childAt == y10Var) {
-                        childAt.setTranslationX(org.telegram.messenger.g0.L(13.0f) + i14);
-                        childAt.setTranslationY(L3);
-                    } else if (y10Var != null) {
-                        float f10 = L4;
-                        if (childAt.getTranslationX() != f10) {
-                            i11 = 1;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, f10));
+                try {
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) "@");
+                    spannableStringBuilder.append((CharSequence) K);
+                    int A1 = org.telegram.messenger.g0.A1(K, str);
+                    if (A1 != -1) {
+                        int length = str.length();
+                        if (A1 == 0) {
+                            length++;
                         } else {
-                            i11 = 1;
+                            A1++;
                         }
-                        float f11 = L2;
-                        if (childAt.getTranslationY() != f11) {
-                            float[] fArr = new float[i11];
-                            fArr[0] = f11;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr));
-                        }
-                    } else {
-                        childAt.setTranslationX(L4);
-                        childAt.setTranslationY(L2);
+                        spannableStringBuilder.setSpan(new xz(org.telegram.ui.ActionBar.k6.q6, null), A1, length + A1, 33);
                     }
-                }
-                if (childAt != this.c) {
-                    i13 = org.telegram.messenger.k5.C(9.0f, childAt.getMeasuredWidth(), i13);
-                }
-                i14 = org.telegram.messenger.k5.C(9.0f, childAt.getMeasuredWidth(), i14);
-            } else {
-                k1Var = k1Var2;
-            }
-            i12++;
-            k1Var2 = k1Var;
-        }
-        org.telegram.ui.ActionBar.k1 k1Var3 = k1Var2;
-        int L5 = org.telegram.messenger.g0.L(42.0f) + L3;
-        final int L6 = org.telegram.messenger.g0.L(42.0f) + L2;
-        int min = t50Var.e2 != null ? t50Var.Y1 ? Math.min(t50Var.k2, L6) : 0 : k2.p1.d(52.0f, Math.min(t50Var.k2, L6), 0);
-        int i15 = t50Var.m2;
-        int L7 = (t50Var.e2 != null || t50Var.X1.m() <= 0) ? 0 : org.telegram.messenger.g0.L(56.0f);
-        t50Var.m2 = L7;
-        if (min != t50Var.g2 || i15 != L7) {
-            t50Var.g2 = min;
-            if (j1Var.getAdapter() != null && j1Var.getAdapter().b() > 0 && (K = j1Var.K(0)) != null) {
-                j1Var.getAdapter().g(0);
-                t50Var.J1.h1(0, K.a.getTop() - j1Var.getPaddingTop());
-                if (j1Var.getItemAnimator() != null) {
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ofFloat.addUpdateListener(new ei.n4(this, 9));
-                    ofFloat.setDuration(j1Var.getItemAnimator().i()).start();
+                    charSequence = spannableStringBuilder;
+                } catch (Exception unused) {
+                    charSequence = K;
                 }
             }
-        }
-        int min2 = Math.min(t50Var.k2, L6);
-        int i16 = t50Var.c2;
-        if (i16 != min2) {
-            ValueAnimator ofInt = ValueAnimator.ofInt(i16, min2);
-            ofInt.addUpdateListener(new c6(this, 28));
-            arrayList.add(ofInt);
-        }
-        boolean z10 = this.d;
-        if (z10 && L6 > t50Var.k2) {
-            final int i17 = 0;
-            org.telegram.messenger.g0.h3(new Runnable(this) { // from class: org.telegram.ui.Components.q50
-                public final /* synthetic */ s50 b;
-
-                {
-                    this.b = this;
+            Object object = h4Var.getObject();
+            long j10 = !(object instanceof TLRPC.User) ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
+            h4Var.d(tLObject, charSequence2, charSequence);
+            j3 = !(tLObject instanceof TLRPC.User) ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.Chat ? -((TLRPC.Chat) tLObject).id : 0L;
+            if (j3 == 0) {
+                x50 x50Var = this.n;
+                a0.h hVar = x50Var.K1;
+                if (hVar == null || hVar.h(j3) < 0) {
+                    h4Var.c(x50Var.W1.h(j3) >= 0, j10 == j3);
+                    h4Var.setCheckBoxEnabled(true);
+                    return;
+                } else {
+                    h4Var.c(true, j10 == j3);
+                    h4Var.setCheckBoxEnabled(false);
+                    return;
                 }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i17) {
-                        case 0:
-                            t50 t50Var2 = this.b.e;
-                            t50Var2.N1.smoothScrollTo(0, L6 - t50Var2.k2);
-                            break;
-                        default:
-                            t50 t50Var3 = this.b.e;
-                            t50Var3.N1.smoothScrollTo(0, L6 - t50Var3.k2);
-                            break;
-                    }
-                }
-            });
-        } else if (!z10 && k1Var3.getMeasuredHeight() + k1Var3.getScrollY() > L6) {
-            final int i18 = 1;
-            org.telegram.messenger.g0.h3(new Runnable(this) { // from class: org.telegram.ui.Components.q50
-                public final /* synthetic */ s50 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i18) {
-                        case 0:
-                            t50 t50Var2 = this.b.e;
-                            t50Var2.N1.smoothScrollTo(0, L6 - t50Var2.k2);
-                            break;
-                        default:
-                            t50 t50Var3 = this.b.e;
-                            t50Var3.N1.smoothScrollTo(0, L6 - t50Var3.k2);
-                            break;
-                    }
-                }
-            });
+            }
+            return;
         }
-        if (!this.a && (animatorSet = t50Var.V1) != null) {
-            animatorSet.playTogether(arrayList);
-            t50Var.V1.addListener(new r50(this, 0));
-            t50Var.V1.start();
-            this.a = true;
+        charSequence = null;
+        Object object2 = h4Var.getObject();
+        if (!(object2 instanceof TLRPC.User)) {
         }
-        if (t50Var.V1 == null) {
-            t50Var.c2 = min2;
-            t50Var.b.invalidate();
+        h4Var.d(tLObject, charSequence2, charSequence);
+        if (!(tLObject instanceof TLRPC.User)) {
         }
-        setMeasuredDimension(size, Math.max(L6, L5));
-        j1Var.setTranslationY(0.0f);
+        if (j3 == 0) {
+        }
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        View view;
+        Context context = viewGroup.getContext();
+        if (i7 == 1) {
+            view = new org.telegram.ui.Cells.h4(context, 1, 0, false);
+        } else if (i7 == 2) {
+            view = new bi.ec(20, context, this);
+        } else if (i7 != 4) {
+            org.telegram.ui.Cells.g4 g4Var = new org.telegram.ui.Cells.g4(context);
+            org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.e7, g4Var, null);
+            Drawable drawable = g4Var.getResources().getDrawable(R.drawable.shadowdown);
+            g4Var.a = drawable;
+            org.telegram.ui.ActionBar.r6.y(g4Var, drawable, org.telegram.ui.ActionBar.k6.Ni, null, PorterDuff.Mode.MULTIPLY);
+            TextView textView = new TextView(g4Var.getContext());
+            g4Var.b = textView;
+            com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
+            org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Oi, null);
+            textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+            g4Var.addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+            view = g4Var;
+        } else {
+            view = new View(context);
+        }
+        return new xi0(view);
     }
 }

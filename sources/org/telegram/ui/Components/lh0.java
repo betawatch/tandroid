@@ -1,30 +1,29 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uh0 b;
-    public final /* synthetic */ TLObject c;
+public final class lh0 extends v4.s0 {
+    public final /* synthetic */ v4.b0 a;
+    public final /* synthetic */ rh0 b;
 
-    public /* synthetic */ lh0(uh0 uh0Var, TLObject tLObject, int i3) {
-        this.a = i3;
-        this.b = uh0Var;
-        this.c = tLObject;
+    public lh0(rh0 rh0Var, v4.b0 b0Var) {
+        this.b = rh0Var;
+        this.a = b0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                uh0 uh0Var = this.b;
-                org.telegram.messenger.hs.f(uh0Var.b).d(new lh0(uh0Var, this.c, 1));
-                break;
-            default:
-                uh0.a(this.b, this.c);
-                break;
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        int loadCount;
+        rh0 rh0Var = this.b;
+        if (rh0Var.x && rh0Var.y && !rh0Var.w) {
+            int N0 = this.a.N0();
+            int b10 = rh0Var.f.b() - 1;
+            loadCount = rh0Var.getLoadCount();
+            if (N0 >= b10 - loadCount) {
+                rh0Var.c();
+            }
         }
     }
 }

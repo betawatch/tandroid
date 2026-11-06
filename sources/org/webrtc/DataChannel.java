@@ -2,24 +2,24 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class DataChannel {
     private long nativeDataChannel;
     private long nativeObserver;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Buffer {
         public final boolean binary;
         public final ByteBuffer data;
 
-        public Buffer(ByteBuffer byteBuffer, boolean z10) {
+        public Buffer(ByteBuffer byteBuffer, boolean z9) {
             this.data = byteBuffer;
-            this.binary = z10;
+            this.binary = z9;
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Init {
         public boolean negotiated;
         public boolean ordered = true;
@@ -53,29 +53,29 @@ public class DataChannel {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface Observer {
-        void onBufferedAmountChange(long j10);
+        void onBufferedAmountChange(long j3);
 
         void onMessage(Buffer buffer);
 
         void onStateChange();
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public enum State {
         CONNECTING,
         OPEN,
         CLOSING,
         CLOSED;
 
-        public static State fromNativeIndex(int i3) {
-            return values()[i3];
+        public static State fromNativeIndex(int i7) {
+            return values()[i7];
         }
     }
 
-    public DataChannel(long j10) {
-        this.nativeDataChannel = j10;
+    public DataChannel(long j3) {
+        this.nativeDataChannel = j3;
     }
 
     private void checkDataChannelExists() {
@@ -94,11 +94,11 @@ public class DataChannel {
 
     private native long nativeRegisterObserver(Observer observer);
 
-    private native boolean nativeSend(byte[] bArr, boolean z10);
+    private native boolean nativeSend(byte[] bArr, boolean z9);
 
     private native State nativeState();
 
-    private native void nativeUnregisterObserver(long j10);
+    private native void nativeUnregisterObserver(long j3);
 
     public long bufferedAmount() {
         checkDataChannelExists();
@@ -132,9 +132,9 @@ public class DataChannel {
 
     public void registerObserver(Observer observer) {
         checkDataChannelExists();
-        long j10 = this.nativeObserver;
-        if (j10 != 0) {
-            nativeUnregisterObserver(j10);
+        long j3 = this.nativeObserver;
+        if (j3 != 0) {
+            nativeUnregisterObserver(j3);
         }
         this.nativeObserver = nativeRegisterObserver(observer);
     }

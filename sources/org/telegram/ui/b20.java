@@ -1,45 +1,19 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b20 implements oh.a {
-    public final /* synthetic */ x30 a;
+public final class b20 extends org.telegram.ui.Components.sf0 {
+    public final /* synthetic */ c40 s1;
 
-    public b20(x30 x30Var) {
-        this.a = x30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b20(c40 c40Var, LaunchActivity launchActivity, z20 z20Var, k30 k30Var, a20 a20Var) {
+        super(launchActivity, z20Var, k30Var, a20Var);
+        this.s1 = c40Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
-        }
-        boolean z10 = Q instanceof ProfileActivity;
-        x30 x30Var = this.a;
-        if (z10 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
-            x30Var.dismiss();
-            return;
-        }
-        int R0 = x30Var.R0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == org.telegram.messenger.h10.i(x30Var.l1.a).e()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (R0 > 0 && R0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        Q.presentFragment(profileActivity, false, z11);
-        x30Var.dismiss();
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.s1.b.invalidate();
     }
 }

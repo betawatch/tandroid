@@ -4,16 +4,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import b8.tb;
-import ed.g;
-import ed.o;
+import c8.d0;
+import hd.n;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.f;
 import kotlin.jvm.internal.j;
-import od.l;
+import rd.l;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -40,13 +39,13 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i3, int i10) {
+    public final void onDowngrade(SQLiteDatabase sQLiteDatabase, int i7, int i10) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
-    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i3, int i10) {
+    public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i7, int i10) {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS ce");
         sQLiteDatabase.execSQL("CREATE TABLE ce (id INTEGER PRIMARY KEY,ts BIGINT NOT NULL,ss TEXT NOT NULL)");
     }
@@ -55,8 +54,8 @@ public final class zzgo extends SQLiteOpenHelper {
         if (list.isEmpty()) {
             return 0;
         }
-        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.g(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // od.l
+        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(hd.f.g(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
+            @Override // rd.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
@@ -66,10 +65,10 @@ public final class zzgo extends SQLiteOpenHelper {
 
     public final int zzb() {
         Cursor rawQuery = getReadableDatabase().rawQuery("SELECT COUNT(*) FROM ce", null);
-        int i3 = -1;
+        int i7 = -1;
         try {
             if (rawQuery.moveToNext()) {
-                i3 = rawQuery.getInt(0);
+                i7 = rawQuery.getInt(0);
             }
         } catch (Exception unused) {
         } catch (Throwable th2) {
@@ -77,7 +76,7 @@ public final class zzgo extends SQLiteOpenHelper {
             throw th2;
         }
         rawQuery.close();
-        return i3;
+        return i7;
     }
 
     public final List zzd() {
@@ -86,13 +85,13 @@ public final class zzgo extends SQLiteOpenHelper {
         while (query.moveToNext()) {
             try {
                 try {
-                    int i3 = query.getInt(query.getColumnIndexOrThrow("id"));
+                    int i7 = query.getInt(query.getColumnIndexOrThrow("id"));
                     String string = query.getString(query.getColumnIndexOrThrow("ss"));
-                    long j10 = query.getLong(query.getColumnIndexOrThrow("ts"));
+                    long j3 = query.getLong(query.getColumnIndexOrThrow("ts"));
                     j.b(string);
-                    arrayList.add(new zzgp(string, j10, i3));
+                    arrayList.add(new zzgp(string, j3, i7));
                 } catch (Exception unused) {
-                    arrayList = o.a;
+                    arrayList = n.a;
                 }
             } finally {
                 query.close();
@@ -102,6 +101,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(tb.a(zzgpVar)) == 1;
+        return zza(d0.a(zzgpVar)) == 1;
     }
 }

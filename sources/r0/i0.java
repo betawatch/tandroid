@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -42,11 +42,11 @@ public abstract class i0 {
     }
 
     public static k1 b(View view, k1 k1Var) {
-        int i3 = Build.VERSION.SDK_INT;
-        WindowInsets g7 = k1Var.g();
-        if (g7 != null) {
-            WindowInsets a10 = i3 >= 30 ? f0.a(view, g7) : y.a(view, g7);
-            if (!a10.equals(g7)) {
+        int i7 = Build.VERSION.SDK_INT;
+        WindowInsets g10 = k1Var.g();
+        if (g10 != null) {
+            WindowInsets a10 = i7 >= 30 ? f0.a(view, g10) : y.a(view, g10);
+            if (!a10.equals(g10)) {
                 return k1.h(view, a10);
             }
         }
@@ -137,11 +137,11 @@ public abstract class i0 {
         }
     }
 
-    public static String[] e(m.s sVar) {
-        return Build.VERSION.SDK_INT >= 31 ? g0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
+    public static String[] e(m.t tVar) {
+        return Build.VERSION.SDK_INT >= 31 ? g0.a(tVar) : (String[]) tVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
-    public static void f(int i3, View view) {
+    public static void f(int i7, View view) {
         Object tag;
         AccessibilityManager accessibilityManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
@@ -155,12 +155,12 @@ public abstract class i0 {
                     tag = null;
                 }
             }
-            boolean z10 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
-            if (view.getAccessibilityLiveRegion() != 0 || z10) {
+            boolean z9 = ((CharSequence) tag) != null && view.isShown() && view.getWindowVisibility() == 0;
+            if (view.getAccessibilityLiveRegion() != 0 || z9) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
-                obtain.setEventType(z10 ? 32 : 2048);
-                obtain.setContentChangeTypes(i3);
-                if (z10) {
+                obtain.setEventType(z9 ? 32 : 2048);
+                obtain.setContentChangeTypes(i7);
+                if (z9) {
                     List<CharSequence> text = obtain.getText();
                     if (i10 >= 28) {
                         charSequence = d0.a(view);
@@ -178,10 +178,10 @@ public abstract class i0 {
                 view.sendAccessibilityEventUnchecked(obtain);
                 return;
             }
-            if (i3 != 32) {
+            if (i7 != 32) {
                 if (view.getParent() != null) {
                     try {
-                        view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i3);
+                        view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i7);
                         return;
                     } catch (AbstractMethodError e10) {
                         Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e10);
@@ -193,7 +193,7 @@ public abstract class i0 {
             AccessibilityEvent obtain2 = AccessibilityEvent.obtain();
             view.onInitializeAccessibilityEvent(obtain2);
             obtain2.setEventType(32);
-            obtain2.setContentChangeTypes(i3);
+            obtain2.setContentChangeTypes(i7);
             obtain2.setSource(view);
             view.onPopulateAccessibilityEvent(obtain2);
             List<CharSequence> text2 = obtain2.getText();
@@ -211,10 +211,10 @@ public abstract class i0 {
     }
 
     public static k1 g(View view, k1 k1Var) {
-        WindowInsets g7 = k1Var.g();
-        if (g7 != null) {
-            WindowInsets b10 = y.b(view, g7);
-            if (!b10.equals(g7)) {
+        WindowInsets g10 = k1Var.g();
+        if (g10 != null) {
+            WindowInsets b10 = y.b(view, g10);
+            if (!b10.equals(g10)) {
                 return k1.h(view, b10);
             }
         }
@@ -247,9 +247,9 @@ public abstract class i0 {
         return nVar.a(a10);
     }
 
-    public static void i(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i3) {
+    public static void i(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i7) {
         if (Build.VERSION.SDK_INT >= 29) {
-            e0.b(view, context, iArr, attributeSet, typedArray, i3, 0);
+            e0.b(view, context, iArr, attributeSet, typedArray, i7, 0);
         }
     }
 

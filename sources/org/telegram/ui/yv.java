@@ -1,75 +1,156 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class yv extends UndoView {
-    public final /* synthetic */ uw k0;
+public final class yv extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ww c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yv(uw uwVar, Activity activity) {
-        super(activity);
-        this.k0 = uwVar;
+    public /* synthetic */ yv(ww wwVar, boolean z9, int i7) {
+        this.a = i7;
+        this.c = wwVar;
+        this.b = z9;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
-        int i3 = 0;
-        while (true) {
-            tw[] twVarArr = this.k0.f0;
-            if (i3 >= twVarArr.length) {
-                return true;
-            }
-            if (twVarArr[i3].y.k()) {
-                return false;
-            }
-            i3++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ww wwVar = this.c;
+                wwVar.p3.e();
+                if (wwVar.w1 == animator) {
+                    if (this.b) {
+                        wwVar.e0[0].a.c1();
+                    } else {
+                        sw swVar = wwVar.e0[0].a;
+                        if (swVar.g1) {
+                            swVar.g1 = false;
+                            swVar.K0(false);
+                        }
+                    }
+                    wwVar.w1 = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void g(int i3, long j10) {
-        if (i3 == 1 || i3 == 27) {
-            uw uwVar = this.k0;
-            uwVar.M4(true, true);
-            if (uwVar.S1 != null) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        org.telegram.ui.ActionBar.r0 r0Var;
+        switch (this.a) {
+            case 0:
+                ww wwVar = this.c;
+                wwVar.p3.e();
+                if (wwVar.w1 == animator) {
+                    wwVar.M4(false, true);
+                    boolean z9 = this.b;
+                    if (z9) {
+                        wwVar.e0[0].a.c1();
+                        pv pvVar = wwVar.E0;
+                        if (pvVar != null) {
+                            pvVar.setVisibility(8);
+                        }
+                        wwVar.r3 = true;
+                        Activity parentActivity = wwVar.getParentActivity();
+                        i7 = ((org.telegram.ui.ActionBar.f2) wwVar).classGuid;
+                        org.telegram.messenger.g0.a3(parentActivity, i7);
+                        wwVar.j0.setVisibility(8);
+                        sv svVar = wwVar.F3;
+                        if (svVar != null) {
+                            svVar.setVisibility(8);
+                        }
+                    } else {
+                        wwVar.s3 = false;
+                        fw fwVar = wwVar.C0;
+                        if (fwVar != null) {
+                            fwVar.setVisibility(8);
+                        }
+                        lw lwVar = wwVar.X;
+                        if (lwVar != null) {
+                            lwVar.c();
+                        }
+                        fw fwVar2 = wwVar.C0;
+                        if (fwVar2 != null) {
+                            fwVar2.C0.clear();
+                            fwVar2.L();
+                        }
+                        sw swVar = wwVar.e0[0].a;
+                        if (swVar.g1) {
+                            swVar.g1 = false;
+                            swVar.K0(false);
+                        }
+                        wwVar.r3 = false;
+                        sv svVar2 = wwVar.F3;
+                        if (svVar2 != null) {
+                            svVar2.setVisibility(0);
+                        }
+                    }
+                    View view = wwVar.fragmentView;
+                    if (view != null) {
+                        view.requestLayout();
+                    }
+                    wwVar.P4(z9 ? 1.0f : 0.0f);
+                    wwVar.e0[0].a.setVerticalScrollBarEnabled(true);
+                    fw fwVar3 = wwVar.C0;
+                    if (fwVar3 != null) {
+                        fwVar3.setBackground(null);
+                    }
+                    wwVar.w1 = null;
+                    break;
+                }
+                break;
+            case 1:
+                ww wwVar2 = this.c;
+                wwVar2.O3 = null;
+                if (!this.b && (r0Var = wwVar2.m0) != null) {
+                    r0Var.setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                ww wwVar3 = this.c;
+                wwVar3.I = null;
+                boolean z10 = this.b;
+                wwVar3.K = z10;
+                if (!z10 && !wwVar3.L) {
+                    wwVar3.E0.setVisibility(8);
+                }
+                if (z10) {
+                    wwVar3.y3 = -org.telegram.messenger.g0.L(81.0f);
+                    wwVar3.O4(-wwVar3.g4());
+                } else {
+                    wwVar3.O4(0.0f);
+                    wwVar3.y3 = org.telegram.messenger.g0.L(81.0f);
+                }
                 int i10 = 0;
                 while (true) {
-                    if (i10 >= uwVar.S1.size()) {
-                        i10 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) uwVar.S1.get(i10)).id == j10) {
-                        break;
+                    vw[] vwVarArr = wwVar3.e0;
+                    if (i10 >= vwVarArr.length) {
+                        View view2 = wwVar3.fragmentView;
+                        if (view2 != null) {
+                            view2.requestLayout();
+                            break;
+                        }
                     } else {
+                        vw vwVar = vwVarArr[i10];
+                        if (vwVar != null) {
+                            vwVar.a.requestLayout();
+                        }
                         i10++;
                     }
                 }
-                if (i10 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) uwVar.S1.remove(i10);
-                    uwVar.f0[0].d.f();
-                    org.telegram.messenger.g0.h3(new f4(this, i10, dialog, 29));
-                } else {
-                    uwVar.M4(false, true);
-                }
-            }
-            uwVar.z3();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        uw uwVar = this.k0;
-        UndoView[] undoViewArr = uwVar.z0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                uwVar.v1 = Math.max(0.0f, (org.telegram.messenger.g0.L(8.0f) + getMeasuredHeight()) - f10);
-                uwVar.k5();
-            }
+                break;
         }
     }
 }

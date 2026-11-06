@@ -1,49 +1,44 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class kf0 extends fx {
-    public final int[] O;
-    public final /* synthetic */ vf0 P;
+public final /* synthetic */ class kf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kf0(vf0 vf0Var, jf0 jf0Var, int i3) {
-        super(i3, jf0Var);
-        this.P = vf0Var;
-        this.O = new int[2];
+    public /* synthetic */ kf0(bg0 bg0Var, int i7) {
+        this.a = i7;
+        this.b = bg0Var;
     }
 
-    @Override // org.telegram.ui.fx
-    public final void g(ex exVar) {
-        vf0 vf0Var = this.P;
-        rf0 rf0Var = vf0Var.K;
-        if (exVar == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 1:
+                bg0 bg0Var = this.b;
+                bg0Var.getClass();
+                xh.e.f(false);
+                xh.e eVar = bg0Var.h0;
+                if (eVar != null) {
+                    eVar.b(bg0Var.E);
+                }
+                org.telegram.messenger.g0.h3(new kf0(bg0Var, 0));
+                break;
+            case 2:
+                xh.e.f(false);
+                bg0 bg0Var2 = this.b;
+                xh.e eVar2 = bg0Var2.h0;
+                if (eVar2 != null) {
+                    eVar2.b(bg0Var2.E);
+                }
+                org.telegram.messenger.g0.h3(new kf0(bg0Var2, 3));
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
         }
-        if (vf0Var.l0 != null) {
-            exVar.c = true;
-            float f10 = (fx.f() * org.telegram.messenger.g0.p) / 1.3f;
-            float f11 = f10 / 3.0f;
-            exVar.d = f11;
-            exVar.e = f11;
-            exVar.a = Utilities.i(vf0Var.l0.right - (0.75f * f10), org.telegram.messenger.g0.q.x - f10, 0.0f);
-            exVar.b = vf0Var.l0.bottom - (f10 / 2.0f);
-            return;
-        }
-        org.telegram.ui.Cells.q1 q1Var = vf0Var.Q;
-        if (q1Var == null || !q1Var.isAttachedToWindow() || vf0Var.Q.getMessageObject() == null || vf0Var.Q.getMessageObject().f1() != vf0Var.R) {
-            return;
-        }
-        vf0Var.Q.getLocationOnScreen(this.O);
-        exVar.c = true;
-        float f12 = (fx.f() * org.telegram.messenger.g0.p) / 1.3f;
-        float f13 = f12 / 3.0f;
-        exVar.d = f13;
-        exVar.e = f13;
-        float f14 = f12 / 2.0f;
-        exVar.a = Utilities.i(((rf0Var.getScaleX() * vf0Var.Q.getTimeX()) + r8[0]) - f14, org.telegram.messenger.g0.q.x - f12, 0.0f);
-        exVar.b = ((rf0Var.getScaleY() * vf0Var.Q.getTimeY()) + r8[1]) - f14;
     }
 }

@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class bq0 extends g.p {
     public final /* synthetic */ zp0 c;
-    public final /* synthetic */ ws0 d;
+    public final /* synthetic */ xs0 d;
 
-    public bq0(ws0 ws0Var, zp0 zp0Var) {
-        this.d = ws0Var;
+    public bq0(xs0 xs0Var, zp0 zp0Var) {
+        this.d = xs0Var;
         this.c = zp0Var;
     }
 
@@ -27,24 +27,24 @@ public final class bq0 extends g.p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int i(int i3) {
-        ws0 ws0Var = this.d;
-        int[] iArr = ws0Var.p1;
-        mr0 mr0Var = ws0Var.R;
+    public final int i(int i7) {
+        xs0 xs0Var = this.d;
+        int[] iArr = xs0Var.o1;
+        nr0 nr0Var = xs0Var.Q;
         zp0 zp0Var = this.c;
-        int i10 = iArr[ws0.z0(zp0Var.F) ? 1 : 0];
-        u4.h0 adapter = zp0Var.h.getAdapter();
-        dr0 dr0Var = ws0Var.K;
+        int i10 = iArr[xs0.z0(zp0Var.E) ? 1 : 0];
+        v4.g0 adapter = zp0Var.h.getAdapter();
+        dr0 dr0Var = xs0Var.J;
         if (adapter != dr0Var) {
-            if (ws0.x(ws0Var, zp0Var.h.getAdapter()) == -1) {
-                if (zp0Var.h.getAdapter() != mr0Var) {
+            if (xs0.x(xs0Var, zp0Var.h.getAdapter()) == -1) {
+                if (zp0Var.h.getAdapter() != nr0Var) {
                     i10 = zp0Var.x.J;
-                } else if (zp0Var.h.getAdapter() == mr0Var && ws0Var.w1[5].a.isEmpty()) {
+                } else if (zp0Var.h.getAdapter() == nr0Var && xs0Var.v1[5].a.isEmpty()) {
                     i10 = zp0Var.x.J;
                 } else {
                     aq0 aq0Var = zp0Var.x;
                     aq0Var.B1();
-                    i10 = aq0Var.R.get(i3);
+                    i10 = aq0Var.R.get(i7);
                 }
             }
         }

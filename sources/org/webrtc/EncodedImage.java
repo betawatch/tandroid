@@ -2,9 +2,8 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
-import k2.p1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class EncodedImage implements RefCounted {
     public final ByteBuffer buffer;
@@ -17,7 +16,7 @@ public class EncodedImage implements RefCounted {
     private final RefCountDelegate refCountDelegate;
     public final int rotation;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Builder {
         private ByteBuffer buffer;
         private long captureTimeNs;
@@ -39,23 +38,23 @@ public class EncodedImage implements RefCounted {
         }
 
         @Deprecated
-        public Builder setCaptureTimeMs(long j10) {
-            this.captureTimeNs = TimeUnit.MILLISECONDS.toNanos(j10);
+        public Builder setCaptureTimeMs(long j3) {
+            this.captureTimeNs = TimeUnit.MILLISECONDS.toNanos(j3);
             return this;
         }
 
-        public Builder setCaptureTimeNs(long j10) {
-            this.captureTimeNs = j10;
+        public Builder setCaptureTimeNs(long j3) {
+            this.captureTimeNs = j3;
             return this;
         }
 
-        public Builder setEncodedHeight(int i3) {
-            this.encodedHeight = i3;
+        public Builder setEncodedHeight(int i7) {
+            this.encodedHeight = i7;
             return this;
         }
 
-        public Builder setEncodedWidth(int i3) {
-            this.encodedWidth = i3;
+        public Builder setEncodedWidth(int i7) {
+            this.encodedWidth = i7;
             return this;
         }
 
@@ -69,8 +68,8 @@ public class EncodedImage implements RefCounted {
             return this;
         }
 
-        public Builder setRotation(int i3) {
-            this.rotation = i3;
+        public Builder setRotation(int i7) {
+            this.rotation = i7;
             return this;
         }
 
@@ -78,7 +77,7 @@ public class EncodedImage implements RefCounted {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public enum FrameType {
         EmptyFrame(0),
         VideoFrameKey(3),
@@ -86,17 +85,17 @@ public class EncodedImage implements RefCounted {
 
         private final int nativeIndex;
 
-        FrameType(int i3) {
-            this.nativeIndex = i3;
+        FrameType(int i7) {
+            this.nativeIndex = i7;
         }
 
-        public static FrameType fromNativeIndex(int i3) {
+        public static FrameType fromNativeIndex(int i7) {
             for (FrameType frameType : values()) {
-                if (frameType.getNative() == i3) {
+                if (frameType.getNative() == i7) {
                     return frameType;
                 }
             }
-            throw new IllegalArgumentException(p1.i(i3, "Unknown native frame type: "));
+            throw new IllegalArgumentException(jg.g.j(i7, "Unknown native frame type: "));
         }
 
         public int getNative() {
@@ -146,12 +145,12 @@ public class EncodedImage implements RefCounted {
         this.refCountDelegate.retain();
     }
 
-    private EncodedImage(ByteBuffer byteBuffer, Runnable runnable, int i3, int i10, long j10, FrameType frameType, int i11, Integer num) {
+    private EncodedImage(ByteBuffer byteBuffer, Runnable runnable, int i7, int i10, long j3, FrameType frameType, int i11, Integer num) {
         this.buffer = byteBuffer;
-        this.encodedWidth = i3;
+        this.encodedWidth = i7;
         this.encodedHeight = i10;
-        this.captureTimeMs = TimeUnit.NANOSECONDS.toMillis(j10);
-        this.captureTimeNs = j10;
+        this.captureTimeMs = TimeUnit.NANOSECONDS.toMillis(j3);
+        this.captureTimeNs = j3;
         this.frameType = frameType;
         this.rotation = i11;
         this.qp = num;

@@ -1,35 +1,116 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import java.lang.reflect.Field;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
+import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class f9 extends ActionMode.Callback2 {
-    public final /* synthetic */ int a = 2;
-    public final ActionMode.Callback b;
+public final class f9 implements ActionMode.Callback {
+    public final /* synthetic */ int a;
+    public Object b;
     public final /* synthetic */ Object c;
 
-    public f9(EditTextBoldCursor editTextBoldCursor, ActionMode.Callback callback) {
-        this.c = editTextBoldCursor;
+    public f9(ys ysVar, ActionMode.Callback callback) {
+        this.a = 1;
+        this.c = ysVar;
         this.b = callback;
+    }
+
+    public void b(Menu menu) {
+        hd.E0().y.getLanguage();
+        MenuItem findItem = menu.findItem(3);
+        if (findItem == null) {
+            return;
+        }
+        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || qy0.d0().contains((String) this.b)) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        switch (this.a) {
+        CharSequence s5;
+        int i7 = this.a;
+        Object obj = this.c;
+        switch (i7) {
             case 0:
-                ((e9) this.b).onActionItemClicked(actionMode, menuItem);
+                v9 v9Var = (v9) obj;
+                f fVar = v9Var.m0;
+                if (v9Var.x()) {
+                    int itemId = menuItem.getItemId();
+                    if (itemId == 16908321) {
+                        if (v9Var.x() && v9Var.b()) {
+                            if (!v9Var.C()) {
+                                CharSequence r10 = v9Var.r();
+                                if (r10 != null) {
+                                    org.telegram.messenger.g0.g(r10);
+                                }
+                            }
+                            v9Var.u();
+                            v9Var.f(true);
+                            c8.da daVar = v9Var.D;
+                            if (daVar != null) {
+                                daVar.b();
+                            }
+                        }
+                    } else if (itemId == 16908319) {
+                        if (!v9Var.J() && (s5 = v9Var.s(v9Var.W, false)) != null) {
+                            v9Var.u = 0;
+                            v9Var.v = s5.length();
+                            v9Var.u();
+                            v9Var.w();
+                            org.telegram.messenger.g0.r(fVar);
+                            org.telegram.messenger.g0.h3(fVar);
+                        }
+                    } else if (itemId == 3) {
+                        if (v9Var.k0 != null) {
+                            String language = hd.E0().y.getLanguage();
+                            org.telegram.ui.s sVar = v9Var.k0;
+                            CharSequence r11 = v9Var.r();
+                            String str = (String) this.b;
+                            f fVar2 = new f(this, 9);
+                            org.telegram.ui.g4 g4Var = sVar.a;
+                            e21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
+                        }
+                        v9Var.u();
+                    } else if (itemId == R.id.menu_quote) {
+                        if (v9Var.x()) {
+                            q9 q9Var = v9Var.W;
+                            ij messageObject = q9Var instanceof q1 ? ((q1) q9Var).getMessageObject() : null;
+                            if (messageObject != null && v9Var.r() != null) {
+                                v9Var.I(v9Var.u, v9Var.v, messageObject);
+                                v9Var.f(true);
+                            }
+                        }
+                        v9Var.u();
+                    } else if (itemId == 16908320) {
+                        v9Var.D();
+                        v9Var.u();
+                    } else if (itemId == 16908322) {
+                        v9Var.H();
+                        v9Var.u();
+                    } else {
+                        v9Var.f(false);
+                    }
+                }
                 return true;
-            case 1:
-                return this.b.onActionItemClicked(actionMode, menuItem);
             default:
-                return ((e9) this.b).onActionItemClicked(actionMode, menuItem);
+                if (((ys) obj).G(menuItem.getItemId())) {
+                    actionMode.finish();
+                    return true;
+                }
+                try {
+                    return ((ActionMode.Callback) this.b).onActionItemClicked(actionMode, menuItem);
+                } catch (Exception unused) {
+                    return true;
+                }
         }
     }
 
@@ -37,107 +118,104 @@ public final class f9 extends ActionMode.Callback2 {
     public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
         switch (this.a) {
             case 0:
-                ((e9) this.b).onCreateActionMode(actionMode, menu);
+                menu.add(0, android.R.id.copy, 0, android.R.string.copy);
+                menu.add(0, R.id.menu_quote, 1, hd.M0(2131746439, null));
+                menu.add(0, 3, 2, hd.M0(2131743957, null));
+                menu.add(0, android.R.id.cut, 3, android.R.string.cut);
+                menu.add(0, android.R.id.paste, 4, android.R.string.paste);
+                menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
                 return true;
-            case 1:
-                return this.b.onCreateActionMode(actionMode, menu);
             default:
-                return ((e9) this.b).onCreateActionMode(actionMode, menu);
+                ((ys) this.c).E();
+                return ((ActionMode.Callback) this.b).onCreateActionMode(actionMode, menu);
         }
     }
 
     @Override // android.view.ActionMode.Callback
     public final void onDestroyActionMode(ActionMode actionMode) {
-        int i3 = this.a;
-        ActionMode.Callback callback = this.b;
-        switch (i3) {
-            case 0:
-                break;
-            case 1:
-                callback.onDestroyActionMode(actionMode);
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                Field field = EditTextBoldCursor.z1;
-                editTextBoldCursor.m();
-                editTextBoldCursor.Z0 = null;
-                break;
-            default:
-                ((e9) callback).onDestroyActionMode(actionMode);
-                break;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback2
-    public final void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
-        int i3;
         switch (this.a) {
             case 0:
-                u9 u9Var = (u9) this.c;
-                if (u9Var.x()) {
-                    u9Var.O();
-                    int[] l10 = u9Var.l();
-                    int i10 = 1;
-                    if (u9Var.W != null) {
-                        int i11 = -u9Var.m();
-                        int[] B = u9Var.B(u9Var.u);
-                        i3 = B[0] + u9Var.a;
-                        int L = ((i11 / 2) + ((B[1] + u9Var.b) + l10[1])) - org.telegram.messenger.g0.L(4.0f);
-                        if (L >= 1) {
-                            i10 = L;
-                        }
-                    } else {
-                        i3 = 0;
-                    }
-                    int width = u9Var.F.getWidth();
-                    u9Var.N();
-                    if (u9Var.W != null) {
-                        width = u9Var.B(u9Var.v)[0] + u9Var.a;
-                    }
-                    rect.set(Math.min(i3, width), i10, Math.max(i3, width), i10 + 1);
-                    break;
-                }
                 break;
-            case 1:
-                ActionMode.Callback callback = this.b;
-                if (!(callback instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback).onGetContentRect(actionMode, view, rect);
-                    break;
-                }
             default:
-                ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
-                if (!(callback2 instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback2).onGetContentRect(actionMode, view, rect);
-                    break;
-                }
+                ((ys) this.c).D();
+                ((ActionMode.Callback) this.b).onDestroyActionMode(actionMode);
+                break;
         }
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        Context context;
+        ClipboardManager clipboardManager;
+        boolean z9;
+        v9 v9Var;
+        q9 q9Var;
         switch (this.a) {
             case 0:
-                ((e9) this.b).onPrepareActionMode(actionMode, menu);
+                MenuItem findItem = menu.findItem(R.id.menu_quote);
+                if (findItem != null) {
+                    findItem.setVisible(((v9) this.c).e());
+                }
+                MenuItem findItem2 = menu.findItem(android.R.id.copy);
+                if (findItem2 != null) {
+                    findItem2.setVisible(((v9) this.c).b());
+                }
+                MenuItem findItem3 = menu.findItem(android.R.id.selectAll);
+                if (findItem3 != null && (q9Var = (v9Var = (v9) this.c).W) != null) {
+                    CharSequence s5 = v9Var.s(q9Var, false);
+                    if (!((v9) this.c).b()) {
+                        findItem3.setVisible(false);
+                    } else if (((v9) this.c).j()) {
+                        findItem3.setVisible(true);
+                    } else {
+                        v9 v9Var2 = (v9) this.c;
+                        if (v9Var2.Z || (v9Var2.u <= 0 && v9Var2.v >= s5.length() - 1)) {
+                            findItem3.setVisible(false);
+                        } else {
+                            findItem3.setVisible(true);
+                        }
+                    }
+                }
+                MenuItem findItem4 = menu.findItem(android.R.id.cut);
+                if (findItem4 != null) {
+                    findItem4.setVisible(((v9) this.c) instanceof li.g3);
+                }
+                MenuItem findItem5 = menu.findItem(android.R.id.paste);
+                if (findItem5 != null) {
+                    v9 v9Var3 = (v9) this.c;
+                    if (v9Var3 instanceof li.g3) {
+                        try {
+                            u9 u9Var = v9Var3.C;
+                            context = u9Var != null ? u9Var.getContext() : org.telegram.messenger.t0.b;
+                        } catch (Exception unused) {
+                        }
+                        if (context != null && (clipboardManager = (ClipboardManager) context.getSystemService("clipboard")) != null) {
+                            if (clipboardManager.hasPrimaryClip()) {
+                                z9 = true;
+                                findItem5.setVisible(z9);
+                            }
+                        }
+                    }
+                    z9 = false;
+                    findItem5.setVisible(z9);
+                }
+                v9 v9Var4 = (v9) this.c;
+                if (v9Var4.k0 == null || v9Var4.r() == null) {
+                    this.b = null;
+                    b(menu);
+                } else {
+                    org.telegram.messenger.b6.d(((v9) this.c).r().toString(), new e9(this, menu), new e9(this, menu), false);
+                }
                 return true;
-            case 1:
-                return this.b.onPrepareActionMode(actionMode, menu);
             default:
-                return ((ActionMode.Callback) ((e9) this.b).b).onPrepareActionMode(actionMode, menu);
+                return ((ActionMode.Callback) this.b).onPrepareActionMode(actionMode, menu);
         }
     }
 
-    public f9(e9 e9Var, ActionMode.Callback callback) {
-        this.b = e9Var;
-        this.c = callback;
-    }
-
-    public f9(u9 u9Var, e9 e9Var) {
-        this.c = u9Var;
-        this.b = e9Var;
+    public f9(v9 v9Var) {
+        this.a = 0;
+        this.c = v9Var;
+        this.b = null;
     }
 
     private final void a(ActionMode actionMode) {

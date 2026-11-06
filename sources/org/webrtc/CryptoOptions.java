@@ -1,12 +1,12 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class CryptoOptions {
     private final SFrame sframe;
     private final Srtp srtp;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Builder {
         private boolean enableAes128Sha1_32CryptoCipher;
         private boolean enableEncryptedRtpHeaderExtensions;
@@ -17,23 +17,23 @@ public final class CryptoOptions {
             return new CryptoOptions(this.enableGcmCryptoSuites, this.enableAes128Sha1_32CryptoCipher, this.enableEncryptedRtpHeaderExtensions, this.requireFrameEncryption);
         }
 
-        public Builder setEnableAes128Sha1_32CryptoCipher(boolean z10) {
-            this.enableAes128Sha1_32CryptoCipher = z10;
+        public Builder setEnableAes128Sha1_32CryptoCipher(boolean z9) {
+            this.enableAes128Sha1_32CryptoCipher = z9;
             return this;
         }
 
-        public Builder setEnableEncryptedRtpHeaderExtensions(boolean z10) {
-            this.enableEncryptedRtpHeaderExtensions = z10;
+        public Builder setEnableEncryptedRtpHeaderExtensions(boolean z9) {
+            this.enableEncryptedRtpHeaderExtensions = z9;
             return this;
         }
 
-        public Builder setEnableGcmCryptoSuites(boolean z10) {
-            this.enableGcmCryptoSuites = z10;
+        public Builder setEnableGcmCryptoSuites(boolean z9) {
+            this.enableGcmCryptoSuites = z9;
             return this;
         }
 
-        public Builder setRequireFrameEncryption(boolean z10) {
-            this.requireFrameEncryption = z10;
+        public Builder setRequireFrameEncryption(boolean z9) {
+            this.requireFrameEncryption = z9;
             return this;
         }
 
@@ -41,7 +41,7 @@ public final class CryptoOptions {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public final class SFrame {
         private final boolean requireFrameEncryption;
 
@@ -49,12 +49,12 @@ public final class CryptoOptions {
             return this.requireFrameEncryption;
         }
 
-        private SFrame(boolean z10) {
-            this.requireFrameEncryption = z10;
+        private SFrame(boolean z9) {
+            this.requireFrameEncryption = z9;
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public final class Srtp {
         private final boolean enableAes128Sha1_32CryptoCipher;
         private final boolean enableEncryptedRtpHeaderExtensions;
@@ -72,10 +72,10 @@ public final class CryptoOptions {
             return this.enableGcmCryptoSuites;
         }
 
-        private Srtp(boolean z10, boolean z11, boolean z12) {
-            this.enableGcmCryptoSuites = z10;
-            this.enableAes128Sha1_32CryptoCipher = z11;
-            this.enableEncryptedRtpHeaderExtensions = z12;
+        private Srtp(boolean z9, boolean z10, boolean z11) {
+            this.enableGcmCryptoSuites = z9;
+            this.enableAes128Sha1_32CryptoCipher = z10;
+            this.enableEncryptedRtpHeaderExtensions = z11;
         }
     }
 
@@ -91,8 +91,8 @@ public final class CryptoOptions {
         return this.srtp;
     }
 
-    private CryptoOptions(boolean z10, boolean z11, boolean z12, boolean z13) {
-        this.srtp = new Srtp(z10, z11, z12);
-        this.sframe = new SFrame(z13);
+    private CryptoOptions(boolean z9, boolean z10, boolean z11, boolean z12) {
+        this.srtp = new Srtp(z9, z10, z11);
+        this.sframe = new SFrame(z12);
     }
 }

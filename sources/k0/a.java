@@ -7,39 +7,40 @@ import androidx.biometric.u;
 import androidx.biometric.v;
 import androidx.biometric.x;
 import androidx.biometric.z;
-import bb.c;
+import d6.i;
+import h6.m;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import org.telegram.messenger.bd;
-import org.telegram.ui.Wallet.t0;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Wallet.w0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ a(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationError(int i3, CharSequence charSequence) {
+    public final void onAuthenticationError(int i7, CharSequence charSequence) {
         switch (this.a) {
             case 0:
-                ((x) ((a0) ((c) this.b).b).d).a(i3, charSequence);
+                ((x) ((a0) ((i) this.b).b).d).a(i7, charSequence);
                 break;
             default:
-                t0 t0Var = (t0) this.b;
-                if (t0Var.f() && !t0Var.f) {
-                    if (i3 != 5) {
-                        t0Var.a();
+                w0 w0Var = (w0) this.b;
+                if (w0Var.f() && !w0Var.f) {
+                    if (i7 != 5) {
+                        w0Var.a();
                         break;
                     } else {
-                        t0Var.c("AUTH_CANCELED");
+                        w0Var.c("AUTH_CANCELED");
                         break;
                     }
                 }
@@ -50,11 +51,11 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationFailed() {
         AlertDialog alertDialog;
-        int i3 = this.a;
+        int i7 = this.a;
         Object obj = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                WeakReference weakReference = ((x) ((a0) ((c) obj).b).d).a;
+                WeakReference weakReference = ((x) ((a0) ((i) obj).b).d).a;
                 if (weakReference.get() != null && ((z) weakReference.get()).n) {
                     z zVar = (z) weakReference.get();
                     if (zVar.u == null) {
@@ -65,9 +66,9 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
                 break;
             default:
-                t0 t0Var = (t0) obj;
-                if (t0Var.f() && (alertDialog = t0Var.i) != null) {
-                    alertDialog.setMessage(bd.M0(2131743127, null));
+                w0 w0Var = (w0) obj;
+                if (w0Var.f() && (alertDialog = w0Var.i) != null) {
+                    alertDialog.setMessage(hd.M0(2131743118, null));
                     break;
                 }
                 break;
@@ -75,11 +76,11 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationHelp(int i3, CharSequence charSequence) {
+    public final void onAuthenticationHelp(int i7, CharSequence charSequence) {
         AlertDialog alertDialog;
         switch (this.a) {
             case 0:
-                WeakReference weakReference = ((x) ((a0) ((c) this.b).b).d).a;
+                WeakReference weakReference = ((x) ((a0) ((i) this.b).b).d).a;
                 if (weakReference.get() != null) {
                     z zVar = (z) weakReference.get();
                     if (zVar.t == null) {
@@ -90,8 +91,8 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
                 break;
             default:
-                t0 t0Var = (t0) this.b;
-                if (t0Var.f() && (alertDialog = t0Var.i) != null) {
+                w0 w0Var = (w0) this.b;
+                if (w0Var.f() && (alertDialog = w0Var.i) != null) {
                     alertDialog.setMessage(charSequence);
                     break;
                 }
@@ -105,49 +106,49 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        a0 a0Var;
+        m mVar;
         switch (this.a) {
             case 0:
-                c cVar = (c) this.b;
+                i iVar = (i) this.b;
                 FingerprintManager.CryptoObject cryptoObject = authenticationResult.getCryptoObject();
                 v vVar = null;
                 if (cryptoObject != null) {
                     if (cryptoObject.getCipher() != null) {
-                        a0Var = new a0(cryptoObject.getCipher());
+                        mVar = new m(cryptoObject.getCipher());
                     } else if (cryptoObject.getSignature() != null) {
-                        a0Var = new a0(cryptoObject.getSignature());
+                        mVar = new m(cryptoObject.getSignature());
                     } else if (cryptoObject.getMac() != null) {
-                        a0Var = new a0(cryptoObject.getMac());
+                        mVar = new m(cryptoObject.getMac());
                     }
-                    cVar.getClass();
-                    if (a0Var != null) {
-                        Cipher cipher = (Cipher) a0Var.c;
+                    iVar.getClass();
+                    if (mVar != null) {
+                        Cipher cipher = (Cipher) mVar.c;
                         if (cipher != null) {
                             vVar = new v(cipher);
                         } else {
-                            Signature signature = (Signature) a0Var.b;
+                            Signature signature = (Signature) mVar.b;
                             if (signature != null) {
                                 vVar = new v(signature);
                             } else {
-                                Mac mac = (Mac) a0Var.d;
+                                Mac mac = (Mac) mVar.d;
                                 if (mac != null) {
                                     vVar = new v(mac);
                                 }
                             }
                         }
                     }
-                    ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
+                    ((x) ((a0) iVar.b).d).b(new u(vVar, 2));
                     break;
                 }
-                a0Var = null;
-                cVar.getClass();
-                if (a0Var != null) {
+                mVar = null;
+                iVar.getClass();
+                if (mVar != null) {
                 }
-                ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
+                ((x) ((a0) iVar.b).d).b(new u(vVar, 2));
             default:
-                t0 t0Var = (t0) this.b;
-                if (!t0Var.f) {
-                    t0Var.c(null);
+                w0 w0Var = (w0) this.b;
+                if (!w0Var.f) {
+                    w0Var.c(null);
                     break;
                 }
                 break;

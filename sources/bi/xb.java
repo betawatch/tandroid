@@ -1,0 +1,31 @@
+package bi;
+
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class xb extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ boolean c;
+
+    public xb(org.telegram.ui.ActionBar.v2[] v2VarArr, Context context, boolean z9) {
+        this.a = v2VarArr;
+        this.b = context;
+        this.c = z9;
+    }
+
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        vf.c.t(this.b, org.telegram.messenger.hd.M0(this.c ? 2131744928 : 2131744925, null));
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+    }
+}

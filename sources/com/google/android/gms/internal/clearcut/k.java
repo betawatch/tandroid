@@ -11,19 +11,19 @@ public abstract class k extends AbstractList implements c0 {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        h();
+        f();
         return super.add(obj);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i3, Collection collection) {
-        h();
-        return super.addAll(i3, collection);
+    public boolean addAll(int i7, Collection collection) {
+        f();
+        return super.addAll(i7, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
-        h();
+        f();
         super.clear();
     }
 
@@ -43,15 +43,15 @@ public abstract class k extends AbstractList implements c0 {
         if (size != list.size()) {
             return false;
         }
-        for (int i3 = 0; i3 < size; i3++) {
-            if (!get(i3).equals(list.get(i3))) {
+        for (int i7 = 0; i7 < size; i7++) {
+            if (!get(i7).equals(list.get(i7))) {
                 return false;
             }
         }
         return true;
     }
 
-    public final void h() {
+    public final void f() {
         if (!this.a) {
             throw new UnsupportedOperationException();
         }
@@ -60,34 +60,34 @@ public abstract class k extends AbstractList implements c0 {
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
-        int i3 = 1;
+        int i7 = 1;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 = (i3 * 31) + get(i10).hashCode();
+            i7 = (i7 * 31) + get(i10).hashCode();
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
-        h();
+        f();
         return super.remove(obj);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
-        h();
+        f();
         return super.removeAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean retainAll(Collection collection) {
-        h();
+        f();
         return super.retainAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection collection) {
-        h();
+        f();
         return super.addAll(collection);
     }
 }

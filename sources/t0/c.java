@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.view.inputmethod.InputContentInfo;
-import org.telegram.ui.Components.y00;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -19,14 +19,14 @@ public final class c extends InputConnectionWrapper {
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
-    public final boolean commitContent(InputContentInfo inputContentInfo, int i3, Bundle bundle) {
-        y00 y00Var = null;
+    public final boolean commitContent(InputContentInfo inputContentInfo, int i7, Bundle bundle) {
+        qt qtVar = null;
         if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
-            y00Var = new y00(new g(inputContentInfo));
+            qtVar = new qt(new g(inputContentInfo), 15);
         }
-        if (this.a.m(y00Var, i3, bundle)) {
+        if (this.a.k(qtVar, i7, bundle)) {
             return true;
         }
-        return super.commitContent(inputContentInfo, i3, bundle);
+        return super.commitContent(inputContentInfo, i7, bundle);
     }
 }

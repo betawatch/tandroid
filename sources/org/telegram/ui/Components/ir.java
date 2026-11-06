@@ -5,19 +5,19 @@ import java.util.function.Predicate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ir implements Predicate {
     public final /* synthetic */ int a;
     public final /* synthetic */ TLObject b;
 
-    public /* synthetic */ ir(int i3, TLObject tLObject) {
-        this.a = i3;
+    public /* synthetic */ ir(int i7, TLObject tLObject) {
+        this.a = i7;
         this.b = tLObject;
     }
 
     public /* synthetic */ Predicate and(Predicate predicate) {
-        int i3 = this.a;
+        int i7 = this.a;
         return Predicate$-CC.$default$and(this, predicate);
     }
 
@@ -28,7 +28,7 @@ public final /* synthetic */ class ir implements Predicate {
     }
 
     public /* synthetic */ Predicate or(Predicate predicate) {
-        int i3 = this.a;
+        int i7 = this.a;
         return Predicate$-CC.$default$or(this, predicate);
     }
 
@@ -37,13 +37,13 @@ public final /* synthetic */ class ir implements Predicate {
         switch (this.a) {
             case 0:
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
-                TLRPC.Peer peer = ((org.telegram.messenger.zi) obj).k.from_id;
+                TLRPC.Peer peer = ((org.telegram.messenger.ij) obj).k.from_id;
                 if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
                 }
             default:
-                org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) obj;
+                org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj;
                 TLObject tLObject = this.b;
-                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || ziVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : ziVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
+                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || ijVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : ijVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
                 }
                 break;
         }

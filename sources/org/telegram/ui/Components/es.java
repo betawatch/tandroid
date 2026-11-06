@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class es extends u4.f1 {
+public abstract class es extends v4.f1 {
     public static final DecelerateInterpolator D = new DecelerateInterpolator();
     public int A;
     public int B;
-    public final tj0 C;
+    public final pj0 C;
     public final ArrayList o = new ArrayList();
     public final ArrayList p = new ArrayList();
     public final ArrayList q = new ArrayList();
@@ -30,9 +30,9 @@ public abstract class es extends u4.f1 {
     public final ArrayList y = new ArrayList();
     public org.telegram.ui.Cells.t2 z;
 
-    public es(tj0 tj0Var) {
+    public es(pj0 pj0Var) {
         this.m = false;
-        this.C = tj0Var;
+        this.C = pj0Var;
     }
 
     public final void A() {
@@ -42,7 +42,7 @@ public abstract class es extends u4.f1 {
         e();
     }
 
-    public final void B(ArrayList arrayList, u4.d1 d1Var) {
+    public final void B(ArrayList arrayList, v4.d1 d1Var) {
         for (int size = arrayList.size() - 1; size >= 0; size--) {
             cs csVar = (cs) arrayList.get(size);
             if (C(csVar, d1Var) && csVar.a == null && csVar.b == null) {
@@ -51,7 +51,7 @@ public abstract class es extends u4.f1 {
         }
     }
 
-    public final boolean C(cs csVar, u4.d1 d1Var) {
+    public final boolean C(cs csVar, v4.d1 d1Var) {
         if (csVar.b == d1Var) {
             csVar.b = null;
         } else {
@@ -75,18 +75,18 @@ public abstract class es extends u4.f1 {
         this.z = null;
     }
 
-    public final void E(u4.d1 d1Var) {
+    public final void E(v4.d1 d1Var) {
         d1Var.a.animate().setInterpolator(D);
         f(d1Var);
     }
 
-    @Override // u4.m0
-    public final boolean c(u4.d1 d1Var, List list) {
+    @Override // v4.l0
+    public final boolean c(v4.d1 d1Var, List list) {
         return d1Var.a instanceof org.telegram.ui.Cells.z2;
     }
 
-    @Override // u4.m0
-    public final void f(u4.d1 d1Var) {
+    @Override // v4.l0
+    public final void f(v4.d1 d1Var) {
         View view = d1Var.a;
         view.animate().cancel();
         ArrayList arrayList = this.q;
@@ -171,7 +171,7 @@ public abstract class es extends u4.f1 {
         A();
     }
 
-    @Override // u4.m0
+    @Override // v4.l0
     public final void g() {
         ArrayList arrayList = this.q;
         int size = arrayList.size();
@@ -189,7 +189,7 @@ public abstract class es extends u4.f1 {
         }
         ArrayList arrayList2 = this.o;
         for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
-            u4.d1 d1Var = (u4.d1) arrayList2.get(size2);
+            v4.d1 d1Var = (v4.d1) arrayList2.get(size2);
             View view2 = d1Var.a;
             view2.setTranslationY(0.0f);
             view2.setTranslationX(0.0f);
@@ -203,7 +203,7 @@ public abstract class es extends u4.f1 {
             if (size3 < 0) {
                 break;
             }
-            u4.d1 d1Var2 = (u4.d1) arrayList3.get(size3);
+            v4.d1 d1Var2 = (v4.d1) arrayList3.get(size3);
             View view3 = d1Var2.a;
             if (view3 instanceof org.telegram.ui.Cells.t2) {
                 ((org.telegram.ui.Cells.t2) view3).setClipProgress(0.0f);
@@ -216,11 +216,11 @@ public abstract class es extends u4.f1 {
         ArrayList arrayList4 = this.r;
         for (int size4 = arrayList4.size() - 1; size4 >= 0; size4--) {
             cs csVar = (cs) arrayList4.get(size4);
-            u4.d1 d1Var3 = csVar.a;
+            v4.d1 d1Var3 = csVar.a;
             if (d1Var3 != null) {
                 C(csVar, d1Var3);
             }
-            u4.d1 d1Var4 = csVar.b;
+            v4.d1 d1Var4 = csVar.b;
             if (d1Var4 != null) {
                 C(csVar, d1Var4);
             }
@@ -246,7 +246,7 @@ public abstract class es extends u4.f1 {
             for (int size7 = arrayList7.size() - 1; size7 >= 0; size7--) {
                 ArrayList arrayList8 = (ArrayList) arrayList7.get(size7);
                 for (int size8 = arrayList8.size() - 1; size8 >= 0; size8--) {
-                    u4.d1 d1Var5 = (u4.d1) arrayList8.get(size8);
+                    v4.d1 d1Var5 = (v4.d1) arrayList8.get(size8);
                     View view5 = d1Var5.a;
                     if (view5 instanceof org.telegram.ui.Cells.t2) {
                         ((org.telegram.ui.Cells.t2) view5).setClipProgress(0.0f);
@@ -265,11 +265,11 @@ public abstract class es extends u4.f1 {
                 ArrayList arrayList10 = (ArrayList) arrayList9.get(size9);
                 for (int size10 = arrayList10.size() - 1; size10 >= 0; size10--) {
                     cs csVar2 = (cs) arrayList10.get(size10);
-                    u4.d1 d1Var6 = csVar2.a;
+                    v4.d1 d1Var6 = csVar2.a;
                     if (d1Var6 != null) {
                         C(csVar2, d1Var6);
                     }
-                    u4.d1 d1Var7 = csVar2.b;
+                    v4.d1 d1Var7 = csVar2.b;
                     if (d1Var7 != null) {
                         C(csVar2, d1Var7);
                     }
@@ -286,7 +286,7 @@ public abstract class es extends u4.f1 {
         }
     }
 
-    @Override // u4.m0
+    @Override // v4.l0
     public final boolean k() {
         if (!this.p.isEmpty()) {
             return true;
@@ -295,9 +295,9 @@ public abstract class es extends u4.f1 {
         return (arrayList.isEmpty() && this.q.isEmpty() && arrayList.isEmpty() && this.w.isEmpty() && this.x.isEmpty() && this.v.isEmpty() && this.y.isEmpty() && this.t.isEmpty() && this.s.isEmpty() && this.u.isEmpty()) ? false : true;
     }
 
-    @Override // u4.m0
+    @Override // v4.l0
     public final void m() {
-        final int i3;
+        final int i7;
         int i10;
         ArrayList arrayList;
         ArrayList arrayList2 = this.o;
@@ -316,7 +316,7 @@ public abstract class es extends u4.f1 {
         while (i11 < size) {
             Object obj = arrayList2.get(i11);
             i11++;
-            u4.d1 d1Var = (u4.d1) obj;
+            v4.d1 d1Var = (v4.d1) obj;
             View view = d1Var.a;
             int i12 = 0;
             this.x.add(d1Var);
@@ -339,7 +339,7 @@ public abstract class es extends u4.f1 {
                     }
                     t2Var.setElevation(-1.0f);
                     t2Var.setOutlineProvider(null);
-                    ObjectAnimator duration = ObjectAnimator.ofFloat(t2Var, k6.h, 1.0f).setDuration(180L);
+                    ObjectAnimator duration = ObjectAnimator.ofFloat(t2Var, m6.h, 1.0f).setDuration(180L);
                     duration.setInterpolator(decelerateInterpolator);
                     duration.addListener(new zr(this, d1Var, t2Var, i12));
                     duration.start();
@@ -364,12 +364,12 @@ public abstract class es extends u4.f1 {
         }
         arrayList2.clear();
         if (isEmpty2) {
-            i3 = 0;
+            i7 = 0;
         } else {
             final ArrayList arrayList6 = new ArrayList(arrayList3);
             this.t.add(arrayList6);
             arrayList3.clear();
-            i3 = 0;
+            i7 = 0;
             new Runnable(this) { // from class: org.telegram.ui.Components.yr
                 public final /* synthetic */ es b;
 
@@ -379,8 +379,8 @@ public abstract class es extends u4.f1 {
 
                 @Override // java.lang.Runnable
                 public final void run() {
-                    int i14 = i3;
-                    long j10 = 180;
+                    int i14 = i7;
+                    long j3 = 180;
                     ArrayList arrayList7 = arrayList6;
                     switch (i14) {
                         case 0:
@@ -396,7 +396,7 @@ public abstract class es extends u4.f1 {
                                     Object obj2 = arrayList7.get(i15);
                                     i15++;
                                     ds dsVar = (ds) obj2;
-                                    u4.d1 d1Var2 = dsVar.a;
+                                    v4.d1 d1Var2 = dsVar.a;
                                     int i16 = dsVar.b;
                                     int i17 = dsVar.c;
                                     int i18 = dsVar.d;
@@ -449,20 +449,20 @@ public abstract class es extends u4.f1 {
                                     i23++;
                                     cs csVar = (cs) obj3;
                                     ArrayList arrayList8 = esVar2.y;
-                                    u4.d1 d1Var3 = csVar.a;
-                                    u4.d1 d1Var4 = csVar.b;
+                                    v4.d1 d1Var3 = csVar.a;
+                                    v4.d1 d1Var4 = csVar.b;
                                     if (d1Var3 != null && d1Var4 != null) {
                                         AnimatorSet animatorSet = new AnimatorSet();
-                                        animatorSet.setDuration(j10);
+                                        animatorSet.setDuration(j3);
                                         View view3 = d1Var3.a;
                                         Property property = View.ALPHA;
                                         animatorSet.playTogether(ObjectAnimator.ofFloat(view3, (Property<View, Float>) property, 0.0f), ObjectAnimator.ofFloat(d1Var4.a, (Property<View, Float>) property, 1.0f));
                                         arrayList8.add(csVar.a);
                                         arrayList8.add(csVar.b);
-                                        animatorSet.addListener(new kg.g0(esVar2, csVar, d1Var3, animatorSet));
+                                        animatorSet.addListener(new jg.j0(esVar2, csVar, d1Var3, animatorSet));
                                         animatorSet.start();
                                     }
-                                    j10 = 180;
+                                    j3 = 180;
                                 }
                             }
                     }
@@ -484,7 +484,7 @@ public abstract class es extends u4.f1 {
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i142 = i14;
-                    long j10 = 180;
+                    long j3 = 180;
                     ArrayList arrayList72 = arrayList7;
                     switch (i142) {
                         case 0:
@@ -500,7 +500,7 @@ public abstract class es extends u4.f1 {
                                     Object obj2 = arrayList72.get(i15);
                                     i15++;
                                     ds dsVar = (ds) obj2;
-                                    u4.d1 d1Var2 = dsVar.a;
+                                    v4.d1 d1Var2 = dsVar.a;
                                     int i16 = dsVar.b;
                                     int i17 = dsVar.c;
                                     int i18 = dsVar.d;
@@ -553,20 +553,20 @@ public abstract class es extends u4.f1 {
                                     i23++;
                                     cs csVar = (cs) obj3;
                                     ArrayList arrayList8 = esVar2.y;
-                                    u4.d1 d1Var3 = csVar.a;
-                                    u4.d1 d1Var4 = csVar.b;
+                                    v4.d1 d1Var3 = csVar.a;
+                                    v4.d1 d1Var4 = csVar.b;
                                     if (d1Var3 != null && d1Var4 != null) {
                                         AnimatorSet animatorSet = new AnimatorSet();
-                                        animatorSet.setDuration(j10);
+                                        animatorSet.setDuration(j3);
                                         View view3 = d1Var3.a;
                                         Property property = View.ALPHA;
                                         animatorSet.playTogether(ObjectAnimator.ofFloat(view3, (Property<View, Float>) property, 0.0f), ObjectAnimator.ofFloat(d1Var4.a, (Property<View, Float>) property, 1.0f));
                                         arrayList8.add(csVar.a);
                                         arrayList8.add(csVar.b);
-                                        animatorSet.addListener(new kg.g0(esVar2, csVar, d1Var3, animatorSet));
+                                        animatorSet.addListener(new jg.j0(esVar2, csVar, d1Var3, animatorSet));
                                         animatorSet.start();
                                     }
-                                    j10 = 180;
+                                    j3 = 180;
                                 }
                             }
                     }
@@ -581,11 +581,11 @@ public abstract class es extends u4.f1 {
         arrayList9.add(arrayList8);
         arrayList5.clear();
         int size2 = arrayList8.size();
-        int i15 = i3;
+        int i15 = i7;
         while (i15 < size2) {
             Object obj2 = arrayList8.get(i15);
             i15++;
-            u4.d1 d1Var2 = (u4.d1) obj2;
+            v4.d1 d1Var2 = (v4.d1) obj2;
             View view2 = d1Var2.a;
             this.v.add(d1Var2);
             ViewPropertyAnimator animate2 = view2.animate();
@@ -595,8 +595,8 @@ public abstract class es extends u4.f1 {
         arrayList9.remove(arrayList8);
     }
 
-    @Override // u4.f1
-    public final void p(u4.d1 d1Var) {
+    @Override // v4.f1
+    public final void p(v4.d1 d1Var) {
         E(d1Var);
         View view = d1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.t2)) {
@@ -605,17 +605,17 @@ public abstract class es extends u4.f1 {
         ArrayList arrayList = this.p;
         arrayList.add(d1Var);
         if (arrayList.size() > 2) {
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                ((u4.d1) arrayList.get(i3)).a.setAlpha(0.0f);
-                if (((u4.d1) arrayList.get(i3)).a instanceof org.telegram.ui.Cells.t2) {
-                    ((org.telegram.ui.Cells.t2) ((u4.d1) arrayList.get(i3)).a).setMoving(true);
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                ((v4.d1) arrayList.get(i7)).a.setAlpha(0.0f);
+                if (((v4.d1) arrayList.get(i7)).a instanceof org.telegram.ui.Cells.t2) {
+                    ((org.telegram.ui.Cells.t2) ((v4.d1) arrayList.get(i7)).a).setMoving(true);
                 }
             }
         }
     }
 
-    @Override // u4.f1
-    public final boolean q(u4.d1 d1Var, u4.d1 d1Var2, d2.t0 t0Var, int i3, int i10, int i11, int i12) {
+    @Override // v4.f1
+    public final boolean q(v4.d1 d1Var, v4.d1 d1Var2, e2.r0 r0Var, int i7, int i10, int i11, int i12) {
         View view = d1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.t2)) {
             return false;
@@ -629,7 +629,7 @@ public abstract class es extends u4.f1 {
         cs csVar = new cs();
         csVar.a = d1Var;
         csVar.b = d1Var2;
-        csVar.c = i3;
+        csVar.c = i7;
         csVar.d = i10;
         csVar.e = i11;
         csVar.f = i12;
@@ -637,10 +637,10 @@ public abstract class es extends u4.f1 {
         return true;
     }
 
-    @Override // u4.f1
-    public final boolean r(u4.d1 d1Var, d2.t0 t0Var, int i3, int i10, int i11, int i12) {
+    @Override // v4.f1
+    public final boolean r(v4.d1 d1Var, e2.r0 r0Var, int i7, int i10, int i11, int i12) {
         View view = d1Var.a;
-        int translationX = i3 + ((int) view.getTranslationX());
+        int translationX = i7 + ((int) view.getTranslationX());
         View view2 = d1Var.a;
         int translationY = i10 + ((int) view2.getTranslationY());
         E(d1Var);
@@ -658,8 +658,8 @@ public abstract class es extends u4.f1 {
         }
         if (view2 instanceof org.telegram.ui.Cells.t2) {
             ((org.telegram.ui.Cells.t2) view2).setMoving(true);
-        } else if (view2 instanceof kg.l) {
-            ((kg.l) view2).a = true;
+        } else if (view2 instanceof jg.m) {
+            ((jg.m) view2).a = true;
         }
         ds dsVar = new ds();
         dsVar.a = d1Var;
@@ -671,22 +671,22 @@ public abstract class es extends u4.f1 {
         return true;
     }
 
-    @Override // u4.f1
-    public final void s(u4.d1 d1Var, d2.t0 t0Var) {
+    @Override // v4.f1
+    public final void s(v4.d1 d1Var, e2.r0 r0Var) {
         E(d1Var);
         this.o.add(d1Var);
         org.telegram.ui.Cells.t2 t2Var = null;
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
-            tj0 tj0Var = this.C;
-            if (i3 >= tj0Var.getChildCount()) {
+            pj0 pj0Var = this.C;
+            if (i7 >= pj0Var.getChildCount()) {
                 break;
             }
-            View childAt = tj0Var.getChildAt(i3);
+            View childAt = pj0Var.getChildAt(i7);
             if (childAt.getTop() > Integer.MIN_VALUE && (childAt instanceof org.telegram.ui.Cells.t2)) {
                 t2Var = (org.telegram.ui.Cells.t2) childAt;
             }
-            i3++;
+            i7++;
         }
         if (d1Var.a == t2Var) {
             this.z = t2Var;
@@ -695,7 +695,7 @@ public abstract class es extends u4.f1 {
 
     public final void z(ArrayList arrayList) {
         for (int size = arrayList.size() - 1; size >= 0; size--) {
-            ((u4.d1) arrayList.get(size)).a.animate().cancel();
+            ((v4.d1) arrayList.get(size)).a.animate().cancel();
         }
     }
 }

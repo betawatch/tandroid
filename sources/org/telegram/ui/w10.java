@@ -1,19 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w10 extends org.telegram.ui.Components.vf0 {
-    public final /* synthetic */ x30 t1;
+public final class w10 extends v4.k {
+    public final /* synthetic */ c40 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w10(x30 x30Var, LaunchActivity launchActivity, u20 u20Var, f30 f30Var, v10 v10Var) {
-        super(launchActivity, u20Var, f30Var, v10Var);
-        this.t1 = x30Var;
+    public w10(c40 c40Var) {
+        this.F = c40Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.t1.b.invalidate();
+    @Override // v4.k
+    public final void P(v4.d1 d1Var) {
+        c40 c40Var = this.F;
+        c40Var.H1.invalidate();
+        c40Var.R3.invalidate();
+        c40Var.b.invalidate();
+        c40.P0(c40Var);
     }
 }

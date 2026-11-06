@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ap extends nu0 {
+public final class ap extends ou0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -29,38 +29,38 @@ public final class ap extends nu0 {
         paint.setStrokeWidth(org.telegram.messenger.g0.N(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.nu0
-    public final void b(int i3) {
+    @Override // org.telegram.ui.Components.ou0
+    public final void b(int i7) {
         switch (this.a) {
             case 0:
-                if (this.f != i3) {
-                    ((Paint) this.h).setColor(i3);
-                    this.g.setColor(i3);
+                if (this.f != i7) {
+                    ((Paint) this.h).setColor(i7);
+                    this.g.setColor(i7);
                 }
-                this.f = i3;
+                this.f = i7;
                 break;
             default:
                 Paint paint = this.g;
                 if (paint != null) {
-                    paint.setColor(i3);
+                    paint.setColor(i7);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
-    public final void c(boolean z10) {
+    @Override // org.telegram.ui.Components.ou0
+    public final void c(boolean z9) {
         switch (this.a) {
             case 0:
                 break;
             default:
-                this.b = z10;
+                this.b = z9;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -87,7 +87,7 @@ public final class ap extends nu0 {
                 xq xqVar = xq.g;
                 float interpolation2 = xqVar.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
                 if (this.d) {
-                    L = com.google.android.recaptcha.internal.a.y(1.0f, interpolation, org.telegram.messenger.g0.L(7.0f) - org.telegram.messenger.g0.L(2.1f), org.telegram.messenger.g0.L(2.1f) * interpolation);
+                    L = com.google.android.recaptcha.internal.a.z(1.0f, interpolation, org.telegram.messenger.g0.L(7.0f) - org.telegram.messenger.g0.L(2.1f), org.telegram.messenger.g0.L(2.1f) * interpolation);
                     N = (1.0f - xqVar.getInterpolation(this.e / 2.0f)) * org.telegram.messenger.g0.N(1.5f);
                 } else {
                     L = ((org.telegram.messenger.g0.L(7.0f) - org.telegram.messenger.g0.L(2.1f)) * interpolation) + ((1.0f - interpolation) * org.telegram.messenger.g0.L(2.1f));
@@ -108,26 +108,26 @@ public final class ap extends nu0 {
                 if (paint.getStrokeWidth() != org.telegram.messenger.g0.L(0.8f)) {
                     paint.setStrokeWidth(org.telegram.messenger.g0.L(0.8f));
                 }
-                int i3 = 0;
-                while (i3 < 2) {
+                int i7 = 0;
+                while (i7 < 2) {
                     canvas.save();
-                    canvas.translate(org.telegram.messenger.g0.N(0.2f) + (paint.getStrokeWidth() / 2.0f) + N + (org.telegram.messenger.g0.L(9.0f) * i3) + getBounds().left, org.telegram.messenger.g0.N(2.0f) + (paint.getStrokeWidth() / 2.0f) + getBounds().top);
+                    canvas.translate(org.telegram.messenger.g0.N(0.2f) + (paint.getStrokeWidth() / 2.0f) + N + (org.telegram.messenger.g0.L(9.0f) * i7) + getBounds().left, org.telegram.messenger.g0.N(2.0f) + (paint.getStrokeWidth() / 2.0f) + getBounds().top);
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, N3, org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(r16) - N3);
                     canvas.drawOval(rectF, paint);
                     canvas.drawCircle(L, L2, N2, paint2);
                     canvas.restore();
-                    i3++;
+                    i7++;
                     f10 = f10;
                 }
                 if (this.b) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    long j10 = currentTimeMillis - this.c;
+                    long j3 = currentTimeMillis - this.c;
                     this.c = currentTimeMillis;
-                    if (j10 > 50) {
-                        j10 = 50;
+                    if (j3 > 50) {
+                        j3 = 50;
                     }
-                    float f11 = (j10 / 500.0f) + this.e;
+                    float f11 = (j3 / 500.0f) + this.e;
                     this.e = f11;
                     if (f11 >= 2.0f) {
                         this.e = 0.0f;
@@ -165,12 +165,12 @@ public final class ap extends nu0 {
                 canvas.restore();
                 if (this.d) {
                     long currentTimeMillis2 = System.currentTimeMillis();
-                    long j11 = currentTimeMillis2 - this.c;
+                    long j10 = currentTimeMillis2 - this.c;
                     this.c = currentTimeMillis2;
-                    if (j11 > 50) {
-                        j11 = 50;
+                    if (j10 > 50) {
+                        j10 = 50;
                     }
-                    this.e = (j11 / 800.0f) + this.e;
+                    this.e = (j10 / 800.0f) + this.e;
                     while (true) {
                         float f13 = this.e;
                         if (f13 <= 1.0f) {
@@ -185,7 +185,7 @@ public final class ap extends nu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public final void e() {
         switch (this.a) {
             case 0:
@@ -225,29 +225,29 @@ public final class ap extends nu0 {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
         switch (this.a) {
             case 0:
                 break;
             default:
-                this.f = i3;
+                this.f = i7;
                 break;
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
-    public ap(boolean z10) {
+    public ap(boolean z9) {
         this.a = 1;
         this.b = false;
         this.c = 0L;
         this.d = false;
         this.h = new RectF();
-        this.f = org.telegram.messenger.hs.e4;
-        if (z10) {
+        this.f = org.telegram.messenger.qs.e4;
+        if (z9) {
             Paint paint = new Paint(1);
             this.g = paint;
             paint.setStyle(Paint.Style.STROKE);
@@ -256,7 +256,7 @@ public final class ap extends nu0 {
         }
     }
 
-    private final void f(int i3) {
+    private final void f(int i7) {
     }
 
     private final void g(ColorFilter colorFilter) {
@@ -265,6 +265,6 @@ public final class ap extends nu0 {
     private final void h(ColorFilter colorFilter) {
     }
 
-    private final void i(boolean z10) {
+    private final void i(boolean z9) {
     }
 }

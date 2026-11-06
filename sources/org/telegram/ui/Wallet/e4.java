@@ -1,34 +1,26 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.hb1;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class e4 implements Runnable {
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class e4 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2 b;
 
-    public /* synthetic */ e4(Context context, int i3) {
-        this.a = i3;
-        this.b = context;
+    public /* synthetic */ e4(org.telegram.ui.ActionBar.v2 v2Var, int i7) {
+        this.a = i7;
+        this.b = v2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        Context context = this.b;
-        switch (i3) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                sf.c.v(context, bd.M0(2131744206, null), false);
-                break;
-            case 1:
-                sf.c.v(context, bd.M0(2131744206, null), false);
+                this.b.dismiss();
                 break;
             default:
-                new x5(context.getApplicationContext(), R.drawable.wallet_card_qr, 46, new hb1(4));
+                this.b.dismiss();
                 break;
         }
     }

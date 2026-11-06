@@ -12,14 +12,14 @@ public final class e implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(List list, boolean z10) {
-        this((f[]) r2.toArray(new f[r2.size()]), z10);
+    public e(List list, boolean z9) {
+        this((f[]) r2.toArray(new f[r2.size()]), z9);
         ArrayList arrayList = (ArrayList) list;
     }
 
-    public e(f[] fVarArr, boolean z10) {
+    public e(f[] fVarArr, boolean z9) {
         this.a = fVarArr;
-        this.b = z10;
+        this.b = z9;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0026, code lost:
@@ -40,8 +40,8 @@ public final class e implements f {
     */
     public final boolean j(r rVar, StringBuilder sb2) {
         int length = sb2.length();
-        boolean z10 = this.b;
-        if (z10) {
+        boolean z9 = this.b;
+        if (z9) {
             rVar.c++;
         }
         try {
@@ -51,7 +51,7 @@ public final class e implements f {
                 }
             }
         } finally {
-            if (z10) {
+            if (z9) {
                 rVar.c--;
             }
         }
@@ -61,12 +61,12 @@ public final class e implements f {
         StringBuilder sb2 = new StringBuilder();
         f[] fVarArr = this.a;
         if (fVarArr != null) {
-            boolean z10 = this.b;
-            sb2.append(z10 ? "[" : "(");
+            boolean z9 = this.b;
+            sb2.append(z9 ? "[" : "(");
             for (f fVar : fVarArr) {
                 sb2.append(fVar);
             }
-            sb2.append(z10 ? "]" : ")");
+            sb2.append(z9 ? "]" : ")");
         }
         return sb2.toString();
     }

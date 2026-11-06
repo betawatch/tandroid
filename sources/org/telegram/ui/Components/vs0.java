@@ -2,22 +2,32 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class vs0 {
-    public final int a;
-    public final int b;
-    public final us0 c;
-    public final ts0 d;
-    public final /* synthetic */ ws0 e;
+public final class vs0 extends us0 {
+    public final /* synthetic */ ws0 G;
 
-    public vs0(ws0 ws0Var, Context context, int i3) {
-        this.e = ws0Var;
-        this.b = i3;
-        int i10 = ws0Var.o2;
-        ws0Var.o2 = i10 + 1;
-        this.a = (i10 & 65535) | 65536;
-        this.c = new us0(this, context, i3);
-        this.d = new ts0(ws0Var, context, i3, false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vs0(ws0 ws0Var, Context context, int i7) {
+        super(ws0Var.e, context, i7, false);
+        this.G = ws0Var;
+    }
+
+    @Override // org.telegram.ui.Components.us0, v4.g0
+    public final void f() {
+        super.f();
+        ws0 ws0Var = this.G;
+        xs0 xs0Var = ws0Var.e;
+        int i7 = ws0Var.a;
+        int[] iArr = xs0.s2;
+        sr0 g02 = xs0Var.g0(i7);
+        if (g02 != null && g02.n.getVisibility() == 0) {
+            ws0Var.d.f();
+        }
+        if (g02 != null) {
+            nq0 nq0Var = g02.w;
+            di.q6 q6Var = this.s;
+            nq0Var.e(q6Var != null && (q6Var.k() || (xs0Var.t0() && this.s.g() > 0)), true);
+        }
     }
 }

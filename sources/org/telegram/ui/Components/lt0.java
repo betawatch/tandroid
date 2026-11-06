@@ -1,14 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class lt0 {
-    public float a;
-    public float b;
-    public boolean c;
+public final class lt0 extends r1.e {
+    public final jt0 a;
+    public final kt0 b;
+    public float c = 1.0f;
 
-    public lt0(float f10, float f11) {
-        this.a = f10;
-        this.b = f11;
+    public lt0(jt0 jt0Var, kt0 kt0Var) {
+        this.a = jt0Var;
+        this.b = kt0Var;
+    }
+
+    @Override // r1.e
+    public final float a(Object obj) {
+        return this.a.get(obj) * this.c;
+    }
+
+    @Override // r1.e
+    public final void b(Object obj, float f10) {
+        this.b.f(obj, f10 / this.c);
     }
 }

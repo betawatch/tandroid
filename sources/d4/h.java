@@ -1,22 +1,23 @@
 package d4;
 
-import android.util.SparseArray;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h {
-    public final int a;
-    public final int b;
-    public final SparseArray c = new SparseArray();
-    public final SparseArray d = new SparseArray();
-    public final SparseArray e = new SparseArray();
-    public final SparseArray f = new SparseArray();
-    public final SparseArray g = new SparseArray();
-    public b h;
-    public d i;
+public final class h extends c4.i implements Comparable {
+    public long s;
 
-    public h(int i3, int i10) {
-        this.a = i3;
-        this.b = i10;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        h hVar = (h) obj;
+        if (isEndOfStream() != hVar.isEndOfStream()) {
+            return isEndOfStream() ? 1 : -1;
+        }
+        long j3 = this.e - hVar.e;
+        if (j3 == 0) {
+            j3 = this.s - hVar.s;
+            if (j3 == 0) {
+                return 0;
+            }
+        }
+        return j3 > 0 ? 1 : -1;
     }
 }

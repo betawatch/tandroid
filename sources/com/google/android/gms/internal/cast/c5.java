@@ -1,163 +1,206 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Map;
+import java.nio.charset.Charset;
+import java.util.AbstractList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class c5 extends r4 {
-    private static final Map zzb = new ConcurrentHashMap();
-    protected g6 zzc;
-    private int zzd;
+public final class c5 extends r4 implements RandomAccess, d5, z5 {
+    public static final c5 d = new c5(new int[0], 0, false);
+    public int[] b;
+    public int c;
 
-    public c5() {
-        this.zza = 0;
-        this.zzd = -1;
-        this.zzc = g6.e;
+    public c5(int[] iArr, int i7, boolean z9) {
+        super(z9);
+        this.b = iArr;
+        this.c = i7;
     }
 
-    public static h5 b(h5 h5Var) {
-        int size = h5Var.size();
-        return h5Var.zzg(size == 0 ? 10 : size + size);
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i7, Object obj) {
+        int i10;
+        int intValue = ((Integer) obj).intValue();
+        f();
+        if (i7 < 0 || i7 > (i10 = this.c)) {
+            throw new IndexOutOfBoundsException(a8.p0.m(i7, this.c, "Index:", ", Size:"));
+        }
+        int i11 = i7 + 1;
+        int[] iArr = this.b;
+        if (i10 < iArr.length) {
+            System.arraycopy(iArr, i7, iArr, i11, i10 - i7);
+        } else {
+            int[] iArr2 = new int[((i10 * 3) / 2) + 1];
+            System.arraycopy(iArr, 0, iArr2, 0, i7);
+            System.arraycopy(this.b, i7, iArr2, i11, this.c - i7);
+            this.b = iArr2;
+        }
+        this.b[i7] = intValue;
+        this.c++;
+        ((AbstractList) this).modCount++;
     }
 
-    public static Object c(Method method, c5 c5Var, Object... objArr) {
-        try {
-            return method.invoke(c5Var, objArr);
-        } catch (IllegalAccessException e10) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
-        } catch (InvocationTargetException e11) {
-            Throwable cause = e11.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            if (cause instanceof Error) {
-                throw ((Error) cause);
-            }
-            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
+    @Override // com.google.android.gms.internal.cast.r4, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean addAll(Collection collection) {
+        f();
+        Charset charset = h5.a;
+        collection.getClass();
+        if (!(collection instanceof c5)) {
+            return super.addAll(collection);
         }
+        c5 c5Var = (c5) collection;
+        int i7 = c5Var.c;
+        if (i7 == 0) {
+            return false;
+        }
+        int i10 = this.c;
+        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i10 < i7) {
+            throw new OutOfMemoryError();
+        }
+        int i11 = i10 + i7;
+        int[] iArr = this.b;
+        if (i11 > iArr.length) {
+            this.b = Arrays.copyOf(iArr, i11);
+        }
+        System.arraycopy(c5Var.b, 0, this.b, this.c, c5Var.c);
+        this.c = i11;
+        ((AbstractList) this).modCount++;
+        return true;
     }
 
-    public static void e(Class cls, c5 c5Var) {
-        c5Var.d();
-        zzb.put(cls, c5Var);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean contains(Object obj) {
+        return indexOf(obj) != -1;
     }
 
-    public static c5 k(Class cls) {
-        Map map = zzb;
-        c5 c5Var = (c5) map.get(cls);
-        if (c5Var == null) {
-            try {
-                Class.forName(cls.getName(), true, cls.getClassLoader());
-                c5Var = (c5) map.get(cls);
-            } catch (ClassNotFoundException e10) {
-                throw new IllegalStateException("Class initialization cannot fail.", e10);
-            }
-        }
-        if (c5Var != null) {
-            return c5Var;
-        }
-        c5 c5Var2 = (c5) ((c5) p6.g(cls)).h(6, null);
-        if (c5Var2 == null) {
-            throw new IllegalStateException();
-        }
-        map.put(cls, c5Var2);
-        return c5Var2;
-    }
-
-    @Override // com.google.android.gms.internal.cast.r4
-    public final int a(e6 e6Var) {
-        if (g()) {
-            int g7 = e6Var.g(this);
-            if (g7 >= 0) {
-                return g7;
-            }
-            throw new IllegalStateException(k2.p1.i(g7, "serialized size must be non-negative, was "));
-        }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
-        }
-        int g10 = e6Var.g(this);
-        if (g10 < 0) {
-            throw new IllegalStateException(k2.p1.i(g10, "serialized size must be non-negative, was "));
-        }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | g10;
-        return g10;
-    }
-
-    public final void d() {
-        this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
+    @Override // com.google.android.gms.internal.cast.r4, java.util.AbstractList, java.util.Collection, java.util.List
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || getClass() != obj.getClass()) {
+        if (!(obj instanceof c5)) {
+            return super.equals(obj);
+        }
+        c5 c5Var = (c5) obj;
+        if (this.c != c5Var.c) {
             return false;
         }
-        return b6.c.a(getClass()).c(this, (c5) obj);
-    }
-
-    public final void f() {
-        this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    public final boolean g() {
-        return (this.zzd & TLObject.FLAG_31) != 0;
-    }
-
-    public abstract Object h(int i3, c5 c5Var);
-
-    public final int hashCode() {
-        if (g()) {
-            return b6.c.a(getClass()).b(this);
-        }
-        int i3 = this.zza;
-        if (i3 != 0) {
-            return i3;
-        }
-        int b10 = b6.c.a(getClass()).b(this);
-        this.zza = b10;
-        return b10;
-    }
-
-    public final int i() {
-        if (g()) {
-            int g7 = b6.c.a(getClass()).g(this);
-            if (g7 >= 0) {
-                return g7;
+        int[] iArr = c5Var.b;
+        for (int i7 = 0; i7 < this.c; i7++) {
+            if (this.b[i7] != iArr[i7]) {
+                return false;
             }
-            throw new IllegalStateException(k2.p1.i(g7, "serialized size must be non-negative, was "));
         }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
-        }
-        int g10 = b6.c.a(getClass()).g(this);
-        if (g10 < 0) {
-            throw new IllegalStateException(k2.p1.i(g10, "serialized size must be non-negative, was "));
-        }
-        this.zzd = (this.zzd & TLObject.FLAG_31) | g10;
-        return g10;
+        return true;
     }
 
-    public final b5 j() {
-        return (b5) h(5, null);
+    @Override // java.util.AbstractList, java.util.List
+    public final /* synthetic */ Object get(int i7) {
+        i(i7);
+        return Integer.valueOf(this.b[i7]);
     }
 
-    public final String toString() {
-        String obj = super.toString();
-        char[] cArr = v5.a;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("# ");
-        sb2.append(obj);
-        v5.c(this, sb2, 0);
-        return sb2.toString();
+    @Override // com.google.android.gms.internal.cast.r4, java.util.AbstractList, java.util.Collection, java.util.List
+    public final int hashCode() {
+        int i7 = 1;
+        for (int i10 = 0; i10 < this.c; i10++) {
+            i7 = (i7 * 31) + this.b[i10];
+        }
+        return i7;
+    }
+
+    public final void i(int i7) {
+        if (i7 < 0 || i7 >= this.c) {
+            throw new IndexOutOfBoundsException(a8.p0.m(i7, this.c, "Index:", ", Size:"));
+        }
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final int indexOf(Object obj) {
+        if (!(obj instanceof Integer)) {
+            return -1;
+        }
+        int intValue = ((Integer) obj).intValue();
+        int i7 = this.c;
+        for (int i10 = 0; i10 < i7; i10++) {
+            if (this.b[i10] == intValue) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    @Override // com.google.android.gms.internal.cast.r4, java.util.AbstractList, java.util.List
+    public final /* bridge */ /* synthetic */ Object remove(int i7) {
+        f();
+        i(i7);
+        int[] iArr = this.b;
+        int i10 = iArr[i7];
+        if (i7 < this.c - 1) {
+            System.arraycopy(iArr, i7 + 1, iArr, i7, (r2 - i7) - 1);
+        }
+        this.c--;
+        ((AbstractList) this).modCount++;
+        return Integer.valueOf(i10);
+    }
+
+    @Override // java.util.AbstractList
+    public final void removeRange(int i7, int i10) {
+        f();
+        if (i10 < i7) {
+            throw new IndexOutOfBoundsException("toIndex < fromIndex");
+        }
+        int[] iArr = this.b;
+        System.arraycopy(iArr, i10, iArr, i7, this.c - i10);
+        this.c -= i10 - i7;
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final /* bridge */ /* synthetic */ Object set(int i7, Object obj) {
+        int intValue = ((Integer) obj).intValue();
+        f();
+        i(i7);
+        int[] iArr = this.b;
+        int i10 = iArr[i7];
+        iArr[i7] = intValue;
+        return Integer.valueOf(i10);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c;
+    }
+
+    @Override // com.google.android.gms.internal.cast.g5
+    public final g5 zzg(int i7) {
+        if (i7 >= this.c) {
+            return new c5(Arrays.copyOf(this.b, i7), this.c, true);
+        }
+        throw new IllegalArgumentException();
+    }
+
+    public final void zzh(int i7) {
+        f();
+        int i10 = this.c;
+        int[] iArr = this.b;
+        if (i10 == iArr.length) {
+            int[] iArr2 = new int[((i10 * 3) / 2) + 1];
+            System.arraycopy(iArr, 0, iArr2, 0, i10);
+            this.b = iArr2;
+        }
+        int[] iArr3 = this.b;
+        int i11 = this.c;
+        this.c = i11 + 1;
+        iArr3[i11] = i7;
+    }
+
+    @Override // com.google.android.gms.internal.cast.r4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
+        zzh(((Integer) obj).intValue());
+        return true;
     }
 }

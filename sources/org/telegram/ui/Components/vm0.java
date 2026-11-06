@@ -1,31 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vm0 implements q1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ en0 b;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ vm0(en0 en0Var, int i3) {
-        this.a = i3;
-        this.b = en0Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class vm0 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vm0(Context context, int i7, int i10) {
+        super(context);
+        this.a = i7;
+        this.b = i10;
     }
 
-    @Override // q1.d
-    public final void a(q1.g gVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                this.b.o.setScaleX(1.0f / f10);
-                break;
-            case 1:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
-            case 2:
-                this.b.o.setScaleX(1.0f / f10);
-                break;
-            default:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
-        }
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return org.telegram.messenger.g0.L(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.b), View.MeasureSpec.getMode(i10)));
     }
 }

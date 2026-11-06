@@ -10,7 +10,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g2 extends Drawable {
     public final long a;
@@ -18,7 +18,7 @@ public final class g2 extends Drawable {
     public final Paint c;
     public final Path d;
     public boolean e;
-    public final org.telegram.ui.Components.u5 f;
+    public final org.telegram.ui.Components.w5 f;
 
     public g2(Context context) {
         Paint paint = new Paint(1);
@@ -26,9 +26,9 @@ public final class g2 extends Drawable {
         Path path = new Path();
         this.d = path;
         this.e = false;
-        this.f = new org.telegram.ui.Components.u5(new a(this, 3), 420L, org.telegram.ui.Components.xq.h, 0);
+        this.f = new org.telegram.ui.Components.w5(new a(this, 3), 420L, org.telegram.ui.Components.xq.h, 0);
         this.a = System.currentTimeMillis();
-        this.b = k2.p1.g(context, R.drawable.ic_ab_other);
+        this.b = jg.g.h(context, R.drawable.ic_ab_other);
         paint.setPathEffect(new CornerPathEffect(g0.L(1.0f)));
         path.rewind();
         path.moveTo(-g0.N(1.33f), g0.N(0.16f));
@@ -94,8 +94,8 @@ public final class g2 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        this.b.setAlpha(i3);
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
     }
 
     @Override // android.graphics.drawable.Drawable

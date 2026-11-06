@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class o2 implements t2 {
     public final e1 a;
@@ -32,9 +32,9 @@ public final class o2 implements t2 {
     @Override // com.google.android.gms.internal.play_billing.t2
     public final int d(e1 e1Var) {
         x2 x2Var = ((v1) e1Var).zzc;
-        int i3 = x2Var.d;
-        if (i3 != -1) {
-            return i3;
+        int i7 = x2Var.d;
+        if (i7 != -1) {
+            return i7;
         }
         int i10 = 0;
         for (int i11 = 0; i11 < x2Var.a; i11++) {
@@ -43,15 +43,15 @@ public final class o2 implements t2 {
             int b10 = m1.b(8);
             int b11 = m1.b(i12) + m1.b(16);
             int b12 = m1.b(24);
-            int j10 = l1Var.j();
-            i10 += b10 + b10 + b11 + m1.b(j10) + j10 + b12;
+            int j3 = l1Var.j();
+            i10 += b10 + b10 + b11 + m1.b(j3) + j3 + b12;
         }
         x2Var.d = i10;
         return i10;
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
-    public final void e(Object obj, byte[] bArr, int i3, int i10, h1 h1Var) {
+    public final void e(Object obj, byte[] bArr, int i7, int i10, h1 h1Var) {
         v1 v1Var = (v1) obj;
         if (v1Var.zzc == x2.f) {
             v1Var.zzc = x2.b();

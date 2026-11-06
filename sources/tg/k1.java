@@ -1,38 +1,63 @@
 package tg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import c8.j9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k1 {
-    public j1 a;
-    public final HashMap b = new HashMap();
-    public final ArrayList c = new ArrayList();
+public final class k1 extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public boolean b;
+    public float c;
+    public final /* synthetic */ m1 d;
 
-    public final boolean a() {
-        return !this.c.isEmpty();
+    public k1(m1 m1Var) {
+        this.d = m1Var;
     }
 
-    public final void b(UUID uuid, Runnable runnable) {
-        this.b.put(uuid, runnable);
-        this.c.add(uuid);
-        org.telegram.messenger.g0.h3(new r4.u(this, 8));
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.c;
-        if (arrayList.size() == 0) {
-            return;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        m1 m1Var = this.d;
+        boolean contains = m1Var.e.contains(motionEvent.getX(), motionEvent.getY());
+        if (m1Var.f != contains) {
+            m1Var.f = contains;
+            m1Var.invalidate();
+            if (contains) {
+                l1 l1Var = m1Var.K;
+                this.a = l1Var != null ? l1Var.get() : m1Var.H.c;
+                this.b = false;
+            }
         }
-        int size = arrayList.size() - 1;
-        UUID uuid = (UUID) arrayList.get(size);
-        HashMap hashMap = this.b;
-        Runnable runnable = (Runnable) hashMap.get(uuid);
-        hashMap.remove(uuid);
-        arrayList.remove(size);
-        runnable.run();
-        org.telegram.messenger.g0.h3(new r4.u(this, 8));
+        return m1Var.f;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        m1 m1Var = this.d;
+        if (m1Var.f) {
+            if (!this.b) {
+                this.c = motionEvent.getY() - motionEvent2.getY();
+                this.b = true;
+            }
+            float f12 = this.a;
+            float y10 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / m1Var.e.height();
+            float f13 = m1Var.G;
+            float f14 = m1Var.F;
+            float a10 = j9.a(com.google.android.recaptcha.internal.a.z(f13, f14, y10, f12), f14, f13);
+            l1 l1Var = m1Var.K;
+            if (l1Var != null) {
+                l1Var.X(a10);
+            } else {
+                m1Var.H.c = a10;
+            }
+            m1Var.x.e(true, a10);
+            Runnable runnable = m1Var.I;
+            if (runnable != null) {
+                runnable.run();
+            }
+            m1Var.invalidate();
+        }
+        return m1Var.f;
     }
 }

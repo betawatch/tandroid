@@ -40,13 +40,13 @@ public final class m0 extends p0 implements h5 {
         return null;
     }
 
-    public m0(IntConsumer intConsumer, boolean z10) {
-        super(z10);
+    public m0(IntConsumer intConsumer, boolean z9) {
+        super(z9);
         this.b = intConsumer;
     }
 
     @Override // j$.util.stream.p0, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
-        this.b.accept(i3);
+    public final void accept(int i7) {
+        this.b.accept(i7);
     }
 }

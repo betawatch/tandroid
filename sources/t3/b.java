@@ -1,67 +1,31 @@
 package t3;
 
-import b8.zb;
-import d2.p0;
-import d2.r0;
-import d2.v;
-import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements r0 {
-    public final ArrayList a;
+public final class b extends i {
+    public final byte[] b;
 
-    public b(ArrayList arrayList) {
-        this.a = arrayList;
-        boolean z10 = false;
-        if (!arrayList.isEmpty()) {
-            long j10 = ((a) arrayList.get(0)).b;
-            int i3 = 1;
-            while (true) {
-                if (i3 >= arrayList.size()) {
-                    break;
-                }
-                if (((a) arrayList.get(i3)).a < j10) {
-                    z10 = true;
-                    break;
-                } else {
-                    j10 = ((a) arrayList.get(i3)).b;
-                    i3++;
-                }
-            }
-        }
-        zb.f(!z10);
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ v b() {
-        return null;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ byte[] c() {
-        return null;
+    public b(String str, byte[] bArr) {
+        super(str);
+        this.b = bArr;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || b.class != obj.getClass()) {
-            return false;
+        if (obj != null && b.class == obj.getClass()) {
+            b bVar = (b) obj;
+            if (this.a.equals(bVar.a) && Arrays.equals(this.b, bVar.b)) {
+                return true;
+            }
         }
-        return this.a.equals(((b) obj).a);
+        return false;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "SlowMotion: segments=" + this.a;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ void a(p0 p0Var) {
+        return Arrays.hashCode(this.b) + com.google.android.recaptcha.internal.a.h(527, 31, this.a);
     }
 }

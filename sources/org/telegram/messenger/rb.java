@@ -1,39 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Bitmap;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ub b;
+public abstract /* synthetic */ class rb {
+    public static final /* synthetic */ int[] a;
 
-    public /* synthetic */ rb(ub ubVar, int i3) {
-        this.a = i3;
-        this.b = ubVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        ub ubVar = this.b;
-        switch (i3) {
-            case 0:
-                zb zbVar = ubVar.h;
-                ThreadLocal threadLocal = zb.I;
-                zbVar.V(true);
-                break;
-            case 1:
-                ubVar.h.u.remove(ubVar.a.e);
-                g0.h3(new rb(ubVar, 3));
-                break;
-            case 2:
-                zb zbVar2 = ubVar.h;
-                ThreadLocal threadLocal2 = zb.I;
-                zbVar2.V(true);
-                break;
-            default:
-                nb nbVar = ubVar.a;
-                hs.f(nbVar.o).k(hs.Z1, nbVar.e, 1);
-                break;
+    static {
+        Bitmap.CompressFormat compressFormat;
+        int[] iArr = new int[Bitmap.CompressFormat.values().length];
+        a = iArr;
+        try {
+            iArr[Bitmap.CompressFormat.WEBP.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            int[] iArr2 = a;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            iArr2[compressFormat.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            a[Bitmap.CompressFormat.WEBP_LOSSLESS.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
         }
     }
 }

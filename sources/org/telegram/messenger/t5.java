@@ -6,47 +6,47 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class t5 {
-    public static jz a(int i3) {
+    public static rz a(int i7) {
         try {
-            jz jzVar = new jz();
-            cz czVar = new cz(256.0f, 256.0f, 204.8f);
-            jzVar.a.add(czVar);
-            jzVar.b.put(czVar, new Paint(1));
-            jzVar.e = 512;
-            jzVar.f = 512;
-            jzVar.f(i3, null, 0.65f, false);
-            return jzVar;
+            rz rzVar = new rz();
+            kz kzVar = new kz(256.0f, 256.0f, 204.8f);
+            rzVar.a.add(kzVar);
+            rzVar.b.put(kzVar, new Paint(1));
+            rzVar.e = 512;
+            rzVar.f = 512;
+            rzVar.f(i7, null, 0.65f, false);
+            return rzVar;
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
         }
     }
 
-    public static jz b(int i3) {
+    public static rz b(int i7) {
         Path path = new Path();
         path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
         path.close();
-        jz jzVar = new jz();
-        jzVar.a.add(path);
-        jzVar.b.put(path, new Paint(1));
-        jzVar.e = 512;
-        jzVar.f = 512;
-        jzVar.f(i3, null, 1.0f, false);
-        return jzVar;
+        rz rzVar = new rz();
+        rzVar.a.add(path);
+        rzVar.b.put(path, new Paint(1));
+        rzVar.e = 512;
+        rzVar.f = 512;
+        rzVar.f(i7, null, 1.0f, false);
+        return rzVar;
     }
 
-    public static jz c(float f10, int i3) {
-        jz h = kz.h(R.raw.map_placeholder, -65536);
+    public static rz c(float f10, int i7) {
+        rz h = sz.h(R.raw.map_placeholder, -65536);
         if (h != null) {
-            h.f(i3, null, f10, false);
+            h.f(i7, null, f10, false);
         }
         return h;
     }
 
-    public static jz d(ArrayList arrayList, int i3, float f10, boolean z10) {
+    public static rz d(ArrayList arrayList, int i7, float f10, boolean z9) {
         int size = arrayList.size();
         int i10 = 512;
         int i11 = 512;
@@ -55,7 +55,7 @@ public abstract class t5 {
             TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) arrayList.get(i12);
             if (photoSize instanceof TLRPC.TL_photoPathSize) {
                 tL_photoPathSize = (TLRPC.TL_photoPathSize) photoSize;
-            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z10) {
+            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z9) {
                 i10 = photoSize.w;
                 i11 = photoSize.h;
             }
@@ -63,18 +63,18 @@ public abstract class t5 {
         if (tL_photoPathSize == null || i10 == 0 || i11 == 0) {
             return null;
         }
-        jz j10 = kz.j(i10, i11, tL_photoPathSize.svgPath);
-        if (j10 != null) {
-            j10.f(i3, null, f10, false);
+        rz j3 = sz.j(i10, i11, tL_photoPathSize.svgPath);
+        if (j3 != null) {
+            j3.f(i7, null, f10, false);
         }
-        return j10;
+        return j3;
     }
 
-    public static jz e(TLRPC.Document document, int i3, float f10) {
-        return f(document, i3, f10, null);
+    public static rz e(TLRPC.Document document, int i7, float f10) {
+        return f(document, i7, f10, null);
     }
 
-    public static jz f(TLRPC.Document document, int i3, float f10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public static rz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.f6 f6Var) {
         int i10;
         int i11;
         if (document == null) {
@@ -98,11 +98,11 @@ public abstract class t5 {
                 if (i10 == 0 || i11 == 0) {
                     return null;
                 }
-                jz j10 = kz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
-                if (j10 != null) {
-                    j10.f(i3, e6Var, f10, false);
+                rz j3 = sz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
+                if (j3 != null) {
+                    j3.f(i7, f6Var, f10, false);
                 }
-                return j10;
+                return j3;
             }
         }
         return null;

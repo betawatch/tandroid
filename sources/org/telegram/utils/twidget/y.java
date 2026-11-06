@@ -23,7 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class y {
     public final Paint a = new Paint(1);
@@ -63,9 +63,9 @@ public final class y {
         paint.setStyle(Paint.Style.STROKE);
     }
 
-    public static void d(JSONArray jSONArray, float[] fArr, int i3, float... fArr2) {
+    public static void d(JSONArray jSONArray, float[] fArr, int i7, float... fArr2) {
         int i10 = 0;
-        while (i10 < i3) {
+        while (i10 < i7) {
             float f10 = i10 < fArr2.length ? fArr2[i10] : 0.0f;
             if (jSONArray != null && i10 < jSONArray.length()) {
                 f10 = (float) jSONArray.optDouble(i10, f10);
@@ -83,27 +83,27 @@ public final class y {
             return;
         }
         int length = optJSONArray2 == null ? 0 : optJSONArray2.length();
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         while (i10 < optJSONArray.length()) {
             int optInt = optJSONArray.optInt(i10);
-            int i11 = i3 + (optInt == 3 ? 6 : optInt == 2 ? 4 : optInt == 4 ? 0 : 2);
+            int i11 = i7 + (optInt == 3 ? 6 : optInt == 2 ? 4 : optInt == 4 ? 0 : 2);
             if (i11 > length) {
                 break;
             }
             if (optInt == 0) {
-                path.moveTo((float) optJSONArray2.optDouble(i3), (float) optJSONArray2.optDouble(i3 + 1));
+                path.moveTo((float) optJSONArray2.optDouble(i7), (float) optJSONArray2.optDouble(i7 + 1));
             } else if (optInt == 1) {
-                path.lineTo((float) optJSONArray2.optDouble(i3), (float) optJSONArray2.optDouble(i3 + 1));
+                path.lineTo((float) optJSONArray2.optDouble(i7), (float) optJSONArray2.optDouble(i7 + 1));
             } else if (optInt == 2) {
-                path.quadTo((float) optJSONArray2.optDouble(i3), (float) optJSONArray2.optDouble(i3 + 1), (float) optJSONArray2.optDouble(i3 + 2), (float) optJSONArray2.optDouble(i3 + 3));
+                path.quadTo((float) optJSONArray2.optDouble(i7), (float) optJSONArray2.optDouble(i7 + 1), (float) optJSONArray2.optDouble(i7 + 2), (float) optJSONArray2.optDouble(i7 + 3));
             } else if (optInt == 3) {
-                path.cubicTo((float) optJSONArray2.optDouble(i3), (float) optJSONArray2.optDouble(i3 + 1), (float) optJSONArray2.optDouble(i3 + 2), (float) optJSONArray2.optDouble(i3 + 3), (float) optJSONArray2.optDouble(i3 + 4), (float) optJSONArray2.optDouble(i3 + 5));
+                path.cubicTo((float) optJSONArray2.optDouble(i7), (float) optJSONArray2.optDouble(i7 + 1), (float) optJSONArray2.optDouble(i7 + 2), (float) optJSONArray2.optDouble(i7 + 3), (float) optJSONArray2.optDouble(i7 + 4), (float) optJSONArray2.optDouble(i7 + 5));
             } else if (optInt == 4) {
                 path.close();
             }
             i10++;
-            i3 = i11;
+            i7 = i11;
         }
         path.setFillType(jSONObject.optInt("e") != 0 ? Path.FillType.EVEN_ODD : Path.FillType.WINDING);
     }
@@ -120,16 +120,16 @@ public final class y {
         return rectF;
     }
 
-    public static void l(int i3, Paint paint) {
+    public static void l(int i7, Paint paint) {
         paint.setShader(null);
-        paint.setColor(i3);
+        paint.setColor(i7);
     }
 
     public static int[] m(JSONArray jSONArray) {
         int length = jSONArray.length() / 2;
         int[] iArr = new int[Math.max(2, length)];
-        for (int i3 = 0; i3 < length; i3++) {
-            iArr[i3] = (int) jSONArray.optLong((i3 * 2) + 1);
+        for (int i7 = 0; i7 < length; i7++) {
+            iArr[i7] = (int) jSONArray.optLong((i7 * 2) + 1);
         }
         if (length == 1) {
             iArr[1] = iArr[0];
@@ -143,8 +143,8 @@ public final class y {
             return new float[]{0.0f, 1.0f};
         }
         float[] fArr = new float[length];
-        for (int i3 = 0; i3 < length; i3++) {
-            fArr[i3] = Math.max(0.0f, Math.min(1.0f, (float) jSONArray.optDouble(i3 * 2)));
+        for (int i7 = 0; i7 < length; i7++) {
+            fArr[i7] = Math.max(0.0f, Math.min(1.0f, (float) jSONArray.optDouble(i7 * 2)));
         }
         return fArr;
     }
@@ -154,8 +154,8 @@ public final class y {
             return -1.0f;
         }
         double optDouble = jSONArray.optDouble(0);
-        for (int i3 = 1; i3 < 8; i3++) {
-            if (jSONArray.optDouble(i3) != optDouble) {
+        for (int i7 = 1; i7 < 8; i7++) {
+            if (jSONArray.optDouble(i7) != optDouble) {
                 return -1.0f;
             }
         }
@@ -168,15 +168,15 @@ public final class y {
             path.addRect(rectF, Path.Direction.CW);
             return;
         }
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             float[] fArr = this.k;
-            if (i3 >= 8) {
+            if (i7 >= 8) {
                 path.addRoundRect(rectF, fArr, Path.Direction.CW);
                 return;
             } else {
-                fArr[i3] = Math.max(((float) optJSONArray.optDouble(i3)) + f10, 0.0f);
-                i3++;
+                fArr[i7] = Math.max(((float) optJSONArray.optDouble(i7)) + f10, 0.0f);
+                i7++;
             }
         }
     }
@@ -189,13 +189,13 @@ public final class y {
 
     public final void c(Canvas canvas, JSONObject jSONObject, Paint paint) {
         JSONArray optJSONArray = jSONObject.optJSONArray("q");
-        float o10 = optJSONArray == null ? 0.0f : o(optJSONArray);
+        float o4 = optJSONArray == null ? 0.0f : o(optJSONArray);
         RectF rectF = this.h;
-        if (o10 == 0.0f) {
+        if (o4 == 0.0f) {
             canvas.drawRect(j(jSONObject, "r", rectF), paint);
         } else {
-            if (o10 > 0.0f) {
-                canvas.drawRoundRect(j(jSONObject, "r", rectF), o10, o10, paint);
+            if (o4 > 0.0f) {
+                canvas.drawRoundRect(j(jSONObject, "r", rectF), o4, o4, paint);
                 return;
             }
             Path path = this.e;
@@ -204,45 +204,45 @@ public final class y {
         }
     }
 
-    public final void e(Canvas canvas, JSONArray jSONArray, int i3, x xVar, float f10, boolean z10) {
+    public final void e(Canvas canvas, JSONArray jSONArray, int i7, x xVar, float f10, boolean z9) {
         int i10;
-        e0.e0 e0Var;
+        a4.k kVar;
         Matrix matrix;
         ArrayList arrayList;
         y yVar;
         Paint paint;
-        e0.e0 e0Var2;
+        a4.k kVar2;
         String str;
         Matrix matrix2;
-        e0.e0 e0Var3;
+        a4.k kVar3;
         int i11;
         Paint.Cap cap;
-        e0.e0 e0Var4;
+        a4.k kVar4;
         int i12;
         float f11;
         float f12;
         BlurMaskFilter blurMaskFilter;
-        boolean z11;
+        boolean z10;
         int i13;
         float[] fArr;
         RectF rectF;
         y yVar2 = this;
-        e0.e0 e0Var5 = new e0.e0(canvas);
-        ArrayList arrayList2 = (ArrayList) e0Var5.e;
-        Matrix matrix3 = (Matrix) e0Var5.d;
-        ArrayList arrayList3 = (ArrayList) e0Var5.f;
+        a4.k kVar5 = new a4.k(canvas);
+        ArrayList arrayList2 = (ArrayList) kVar5.e;
+        Matrix matrix3 = (Matrix) kVar5.d;
+        ArrayList arrayList3 = (ArrayList) kVar5.f;
         int i14 = 0;
-        while (i14 < i3) {
+        while (i14 < i7) {
             JSONObject optJSONObject = jSONArray.optJSONObject(i14);
             if (optJSONObject == null) {
-                e0Var = e0Var5;
+                kVar = kVar5;
                 i10 = i14;
                 matrix = matrix3;
                 arrayList = arrayList3;
             } else {
-                Canvas canvas2 = (Canvas) e0Var5.c;
+                Canvas canvas2 = (Canvas) kVar5.c;
                 int optInt = optJSONObject.optInt("k");
-                e0.e0 e0Var6 = e0Var5;
+                a4.k kVar6 = kVar5;
                 float[] fArr2 = yVar2.p;
                 i10 = i14;
                 float[] fArr3 = yVar2.l;
@@ -253,7 +253,7 @@ public final class y {
                 RectF rectF3 = yVar2.h;
                 switch (optInt) {
                     case 0:
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -271,7 +271,7 @@ public final class y {
                             break;
                         }
                     case 1:
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -283,7 +283,7 @@ public final class y {
                         yVar.c(canvas2, optJSONObject, paint2);
                         break;
                     case 2:
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -291,7 +291,7 @@ public final class y {
                         canvas2.drawOval(j(optJSONObject, "r", rectF3), paint3);
                         break;
                     case 3:
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -306,7 +306,7 @@ public final class y {
                         canvas2.drawOval(rectF3, paint2);
                         break;
                     case 4:
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -337,7 +337,7 @@ public final class y {
                             break;
                         }
                     case 5:
-                        e0Var2 = e0Var6;
+                        kVar2 = kVar6;
                         matrix = matrix3;
                         arrayList = arrayList3;
                         yVar = yVar2;
@@ -353,7 +353,7 @@ public final class y {
                             canvas2.drawBitmap(canvas3, (Rect) null, j(optJSONObject, "r", rectF3), yVar.c);
                             canvas2.restore();
                         }
-                        e0Var = e0Var2;
+                        kVar = kVar2;
                         break;
                     case 6:
                     case 7:
@@ -363,12 +363,12 @@ public final class y {
                         arrayList = arrayList3;
                         JSONArray optJSONArray = optJSONObject.optJSONArray("s");
                         if (optJSONArray == null || optJSONArray.length() < 2) {
-                            e0Var2 = e0Var6;
+                            kVar2 = kVar6;
                             matrix = matrix4;
                         } else {
                             int[] m10 = m(optJSONArray);
-                            float[] n4 = n(optJSONArray);
-                            e0Var2 = e0Var6;
+                            float[] n10 = n(optJSONArray);
+                            kVar2 = kVar6;
                             matrix = matrix4;
                             d(optJSONObject.optJSONArray("a"), fArr3, 4, new float[0]);
                             float f15 = fArr3[0];
@@ -382,16 +382,16 @@ public final class y {
                             paint3.setColor(-16777216);
                             if (optInt != 6 || m10.length <= 16) {
                                 if (optInt == 6) {
-                                    paint3.setShader(new LinearGradient(f15, f16, f17, f18, m10, n4, Shader.TileMode.CLAMP));
+                                    paint3.setShader(new LinearGradient(f15, f16, f17, f18, m10, n10, Shader.TileMode.CLAMP));
                                 } else if (optInt == 7) {
                                     float max = Math.max(f17, 0.01f);
                                     float max2 = Math.max(f18, 0.01f);
-                                    paint3.setShader(new RadialGradient(f15, f16, max, m10, n4, Shader.TileMode.CLAMP));
+                                    paint3.setShader(new RadialGradient(f15, f16, max, m10, n10, Shader.TileMode.CLAMP));
                                     canvas2.translate(f15, f16);
                                     canvas2.scale(1.0f, max2 / max);
                                     canvas2.translate(-f15, -f16);
                                 } else {
-                                    paint3.setShader(new SweepGradient(f15, f16, m10, n4));
+                                    paint3.setShader(new SweepGradient(f15, f16, m10, n10));
                                     canvas2.rotate(f17 - 90.0f, f15, f16);
                                 }
                                 j(optJSONObject, "r", rectF3);
@@ -400,22 +400,22 @@ public final class y {
                                 canvas2.restore();
                             } else {
                                 double d = f17 - f15;
-                                double d10 = f18 - f16;
-                                float hypot = (float) Math.hypot(d, d10);
+                                double d2 = f18 - f16;
+                                float hypot = (float) Math.hypot(d, d2);
                                 if (hypot > 0.0f) {
                                     canvas2.translate(f15, f16);
-                                    canvas2.rotate((float) Math.toDegrees(Math.atan2(d10, d)));
-                                    int length = n4.length - 1;
+                                    canvas2.rotate((float) Math.toDegrees(Math.atan2(d2, d)));
+                                    int length = n10.length - 1;
                                     int i15 = m10[0];
                                     paint3.setShader(null);
                                     paint3.setColor(i15);
-                                    canvas2.drawRect(-8000.0f, -8000.0f, n4[0] * hypot, 8000.0f, paint3);
+                                    canvas2.drawRect(-8000.0f, -8000.0f, n10[0] * hypot, 8000.0f, paint3);
                                     Paint paint4 = paint3;
                                     int i16 = 0;
                                     while (i16 < length) {
-                                        float f19 = n4[i16] * hypot;
+                                        float f19 = n10[i16] * hypot;
                                         int i17 = i16 + 1;
-                                        float f20 = n4[i17] * hypot;
+                                        float f20 = n10[i17] * hypot;
                                         if (f20 > f19) {
                                             int i18 = m10[i16];
                                             if (i18 == m10[i17]) {
@@ -435,22 +435,22 @@ public final class y {
                                     paint4.setShader(null);
                                     paint4.setColor(i19);
                                     Paint paint6 = paint4;
-                                    canvas2.drawRect(n4[length] * hypot, -8000.0f, 8000.0f, 8000.0f, paint6);
+                                    canvas2.drawRect(n10[length] * hypot, -8000.0f, 8000.0f, 8000.0f, paint6);
                                     paint6.setShader(null);
                                 }
                                 canvas2.restore();
                             }
                         }
-                        e0Var = e0Var2;
+                        kVar = kVar2;
                         break;
                     case 9:
                         matrix2 = matrix3;
-                        e0Var3 = e0Var6;
+                        kVar3 = kVar6;
                         yVar = yVar2;
                         arrayList = arrayList3;
                         canvas2.save();
                         arrayList2.add(new Matrix(matrix2));
-                        e0Var3.b++;
+                        kVar3.b++;
                         JSONObject optJSONObject2 = optJSONObject.optJSONObject("p");
                         if (optJSONObject2 != null) {
                             i(optJSONObject2, path);
@@ -459,33 +459,33 @@ public final class y {
                         }
                         canvas2.clipPath(path);
                         matrix = matrix2;
-                        e0Var = e0Var3;
+                        kVar = kVar3;
                         break;
                     case 10:
                     case 13:
                         matrix2 = matrix3;
-                        e0Var3 = e0Var6;
+                        kVar3 = kVar6;
                         yVar = yVar2;
                         arrayList = arrayList3;
-                        if (e0Var3.b > 0) {
-                            e0Var3.q();
+                        if (kVar3.b > 0) {
+                            kVar3.q();
                         }
                         matrix = matrix2;
-                        e0Var = e0Var3;
+                        kVar = kVar3;
                         break;
                     case 11:
                         matrix2 = matrix3;
-                        e0Var3 = e0Var6;
+                        kVar3 = kVar6;
                         yVar = yVar2;
                         arrayList = arrayList3;
                         JSONObject optJSONObject3 = optJSONObject.optJSONObject("p");
                         if (optJSONObject3 != null) {
                             Path path2 = yVar.e;
                             i(optJSONObject3, path2);
-                            Shader g7 = yVar.g(optJSONObject3, "g", "ga", "s");
-                            if (g7 != null) {
+                            Shader g10 = yVar.g(optJSONObject3, "g", "ga", "s");
+                            if (g10 != null) {
                                 paint3.setColor(-16777216);
-                                paint3.setShader(g7);
+                                paint3.setShader(g10);
                                 canvas2.drawPath(path2, paint3);
                                 paint3.setShader(null);
                             } else if (optJSONObject3.has("f") && (((int) optJSONObject3.optLong("f")) >>> 24) != 0) {
@@ -493,10 +493,10 @@ public final class y {
                                 canvas2.drawPath(path2, paint3);
                             }
                             float optDouble2 = (float) optJSONObject3.optDouble("sw");
-                            Shader g10 = optDouble2 > 0.0f ? yVar.g(optJSONObject3, "sg", "sga", "ss") : null;
-                            if (optJSONObject3.has("sc") && (((((int) optJSONObject3.optLong("sc")) >>> 24) != 0 || g10 != null) && optDouble2 > 0.0f)) {
-                                paint2.setColor(g10 != null ? -16777216 : (int) optJSONObject3.optLong("sc"));
-                                paint2.setShader(g10);
+                            Shader g11 = optDouble2 > 0.0f ? yVar.g(optJSONObject3, "sg", "sga", "ss") : null;
+                            if (optJSONObject3.has("sc") && (((((int) optJSONObject3.optLong("sc")) >>> 24) != 0 || g11 != null) && optDouble2 > 0.0f)) {
+                                paint2.setColor(g11 != null ? -16777216 : (int) optJSONObject3.optLong("sc"));
+                                paint2.setShader(g11);
                                 paint2.setStrokeWidth(optDouble2);
                                 int optInt2 = optJSONObject3.optInt("lc");
                                 int optInt3 = optJSONObject3.optInt("lj");
@@ -537,7 +537,7 @@ public final class y {
                             }
                         }
                         matrix = matrix2;
-                        e0Var = e0Var3;
+                        kVar = kVar3;
                         break;
                     case 12:
                         Matrix matrix5 = matrix3;
@@ -545,7 +545,7 @@ public final class y {
                         ArrayList arrayList4 = arrayList2;
                         arrayList = arrayList3;
                         float optDouble3 = (float) optJSONObject.optDouble("o", 1.0d);
-                        boolean z12 = optJSONObject.optInt("h") != 0;
+                        boolean z11 = optJSONObject.optInt("h") != 0;
                         d(optJSONObject.optJSONArray("m"), fArr3, 6, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f);
                         fArr2[0] = fArr3[0];
                         fArr2[1] = fArr3[2];
@@ -558,7 +558,7 @@ public final class y {
                         fArr2[8] = 1.0f;
                         Matrix matrix6 = yVar.m;
                         matrix6.setValues(fArr2);
-                        if (optDouble3 >= 1.0f || z12) {
+                        if (optDouble3 >= 1.0f || z11) {
                             canvas2.save();
                         } else {
                             int round = Math.round(Math.max(0.0f, Math.min(1.0f, optDouble3)) * 255.0f);
@@ -573,17 +573,17 @@ public final class y {
                         }
                         arrayList2 = arrayList4;
                         arrayList2.add(new Matrix(matrix5));
-                        e0Var6.b++;
+                        kVar6.b++;
                         canvas2.concat(matrix6);
                         matrix5.preConcat(matrix6);
-                        if (!z12) {
+                        if (!z11) {
                             matrix = matrix5;
-                            e0Var = e0Var6;
+                            kVar = kVar6;
                             break;
                         } else {
                             canvas2.clipRect(0, 0, 0, 0);
                             matrix = matrix5;
-                            e0Var = e0Var6;
+                            kVar = kVar6;
                             break;
                         }
                     case 14:
@@ -599,9 +599,9 @@ public final class y {
                         j(optJSONObject, "r", rectF2);
                         if (rectF2.isEmpty() || (optLong >>> 24) == 0 || ((i12 = Build.VERSION.SDK_INT) < 28 && (max4 / 2.0f) * f10 > 0.5f)) {
                             yVar = this;
-                            e0Var4 = e0Var6;
+                            kVar4 = kVar6;
                         } else {
-                            boolean z13 = optJSONObject.optInt("n") != 0;
+                            boolean z12 = optJSONObject.optInt("n") != 0;
                             yVar = this;
                             Paint paint7 = yVar.d;
                             paint7.setColor(optLong);
@@ -610,7 +610,7 @@ public final class y {
                                 float f26 = ((f25 - 0.5f) / 0.57735f) / f10;
                                 f12 = max4;
                                 Float valueOf = Float.valueOf(f26);
-                                e0Var4 = e0Var6;
+                                kVar4 = kVar6;
                                 HashMap hashMap = yVar.n;
                                 blurMaskFilter = (BlurMaskFilter) hashMap.get(valueOf);
                                 if (blurMaskFilter == null) {
@@ -627,16 +627,16 @@ public final class y {
                             } else {
                                 f11 = f22;
                                 f12 = max4;
-                                e0Var4 = e0Var6;
+                                kVar4 = kVar6;
                                 blurMaskFilter = null;
                             }
                             paint7.setMaskFilter(blurMaskFilter);
                             JSONArray optJSONArray3 = optJSONObject.optJSONArray("q");
-                            float o10 = optJSONArray3 == null ? 0.0f : o(optJSONArray3);
-                            if (z13 || o10 < 0.0f) {
+                            float o4 = optJSONArray3 == null ? 0.0f : o(optJSONArray3);
+                            if (z12 || o4 < 0.0f) {
                                 Path path3 = yVar.g;
                                 path3.rewind();
-                                if (z13) {
+                                if (z12) {
                                     float abs = Math.abs(f23) + Math.abs(f11) + Math.abs(f24) + (f12 * 1.5f) + 2.0f;
                                     rectF3.set(rectF2.left - abs, rectF2.top - abs, rectF2.right + abs, rectF2.bottom + abs);
                                     path3.addRect(rectF3, Path.Direction.CW);
@@ -655,7 +655,7 @@ public final class y {
                                 path3.offset(f11, f23);
                                 canvas2.save();
                                 yVar.k(optJSONObject, "r", path);
-                                if (z13) {
+                                if (z12) {
                                     canvas2.clipPath(path);
                                 } else if (i12 >= 26) {
                                     canvas2.clipOutPath(path);
@@ -666,11 +666,11 @@ public final class y {
                                 canvas2.restore();
                                 paint7.setMaskFilter(null);
                             } else {
-                                float f27 = o10;
+                                float f27 = o4;
                                 rectF3.set((rectF2.left - f24) + f11, (rectF2.top - f24) + f23, rectF2.right + f24 + f11, rectF2.bottom + f24 + f23);
                                 float max5 = optJSONArray3 != null ? Math.max(f27 + f24, 0.0f) : 0.0f;
                                 canvas2.save();
-                                if (o10 != 0.0f) {
+                                if (o4 != 0.0f) {
                                     yVar.k(optJSONObject, "r", path);
                                     if (i12 >= 26) {
                                         canvas2.clipOutPath(path);
@@ -692,12 +692,12 @@ public final class y {
                             }
                         }
                         arrayList2 = arrayList5;
-                        e0Var = e0Var4;
+                        kVar = kVar4;
                         break;
                     case 15:
                         w wVar = new w();
-                        wVar.a = (Canvas) e0Var6.c;
-                        wVar.b = e0Var6.b;
+                        wVar.a = (Canvas) kVar6.c;
+                        wVar.b = kVar6.b;
                         arrayList3.add(wVar);
                         JSONArray optJSONArray4 = optJSONObject.optJSONArray("fl");
                         if (optJSONArray4 != null && optJSONArray4.length() != 0) {
@@ -746,7 +746,7 @@ public final class y {
                                 float[] fArr5 = fArr2;
                                 RectF rectF4 = rectF3;
                                 rectF2.set(rectF2.left - f28, rectF2.top - f29, rectF2.right + f30, rectF2.bottom + f31);
-                                if (Build.VERSION.SDK_INT < 31 || !((Canvas) e0Var6.c).isHardwareAccelerated()) {
+                                if (Build.VERSION.SDK_INT < 31 || !((Canvas) kVar6.c).isHardwareAccelerated()) {
                                     matrix3.getValues(fArr5);
                                     if (fArr5[1] == 0.0f && fArr5[3] == 0.0f) {
                                         Matrix matrix7 = wVar.g;
@@ -767,112 +767,112 @@ public final class y {
                                                 Canvas canvas4 = new Canvas(wVar.f);
                                                 canvas4.translate(-floor, -floor2);
                                                 canvas4.concat(matrix7);
-                                                e0Var6.c = canvas4;
-                                                z11 = false;
-                                                e0Var6.b = 0;
+                                                kVar6.c = canvas4;
+                                                z10 = false;
+                                                kVar6.b = 0;
                                                 matrix = matrix3;
-                                                e0Var = e0Var6;
+                                                kVar = kVar6;
                                                 yVar = this;
                                             }
                                         }
                                     }
-                                    z11 = false;
+                                    z10 = false;
                                     matrix = matrix3;
-                                    e0Var = e0Var6;
+                                    kVar = kVar6;
                                     yVar = this;
                                 } else {
                                     Canvas b10 = v.b(wVar, rectF2, optJSONArray4, f10);
                                     if (b10 != null) {
-                                        e0Var6.c = b10;
-                                        e0Var6.b = 0;
-                                        z11 = false;
+                                        kVar6.c = b10;
+                                        kVar6.b = 0;
+                                        z10 = false;
                                         matrix = matrix3;
-                                        e0Var = e0Var6;
+                                        kVar = kVar6;
                                         yVar = this;
                                     }
-                                    z11 = false;
+                                    z10 = false;
                                     matrix = matrix3;
-                                    e0Var = e0Var6;
+                                    kVar = kVar6;
                                     yVar = this;
                                 }
                                 break;
                             }
                         }
                         arrayList = arrayList3;
-                        z11 = false;
+                        z10 = false;
                         matrix = matrix3;
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         yVar = this;
                         break;
                     case 16:
                         if (!arrayList3.isEmpty()) {
-                            yVar2.h(e0Var6, f10);
+                            yVar2.h(kVar6, f10);
                         }
                         matrix = matrix3;
                         arrayList = arrayList3;
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         break;
                     case 17:
-                        if (z10 && Build.VERSION.SDK_INT >= 31 && canvas2.isHardwareAccelerated()) {
-                            v.a(yVar2, e0Var6, jSONArray, i10, optJSONObject, xVar, f10);
+                        if (z9 && Build.VERSION.SDK_INT >= 31 && canvas2.isHardwareAccelerated()) {
+                            v.a(yVar2, kVar6, jSONArray, i10, optJSONObject, xVar, f10);
                             matrix = matrix3;
                             arrayList = arrayList3;
                             yVar = yVar2;
-                            e0Var = e0Var6;
+                            kVar = kVar6;
                             break;
                         }
                         break;
                     default:
                         matrix = matrix3;
-                        e0Var = e0Var6;
+                        kVar = kVar6;
                         yVar = yVar2;
                         arrayList = arrayList3;
                         break;
                 }
                 i14 = i10 + 1;
-                e0Var5 = e0Var;
+                kVar5 = kVar;
                 yVar2 = yVar;
                 arrayList3 = arrayList;
                 matrix3 = matrix;
             }
             yVar = yVar2;
             i14 = i10 + 1;
-            e0Var5 = e0Var;
+            kVar5 = kVar;
             yVar2 = yVar;
             arrayList3 = arrayList;
             matrix3 = matrix;
         }
         y yVar3 = yVar2;
-        e0.e0 e0Var7 = e0Var5;
+        a4.k kVar7 = kVar5;
         ArrayList arrayList6 = arrayList3;
         while (!arrayList6.isEmpty()) {
-            yVar3.h(e0Var7, f10);
+            yVar3.h(kVar7, f10);
         }
-        while (e0Var7.b > 0) {
-            e0Var7.q();
+        while (kVar7.b > 0) {
+            kVar7.q();
         }
     }
 
     public final void f(Canvas canvas, JSONArray jSONArray, x xVar, float f10) {
-        boolean z10 = false;
+        boolean z9 = false;
         if (Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated()) {
-            int i3 = 0;
+            int i7 = 0;
             while (true) {
-                if (i3 < jSONArray.length()) {
-                    JSONObject optJSONObject = jSONArray.optJSONObject(i3);
+                if (i7 < jSONArray.length()) {
+                    JSONObject optJSONObject = jSONArray.optJSONObject(i7);
                     if (optJSONObject != null && optJSONObject.optInt("k") == 17) {
-                        z10 = true;
+                        z9 = true;
                         break;
                     }
-                    i3++;
+                    i7++;
                 } else {
                     break;
                 }
             }
         }
-        int saveLayer = z10 ? canvas.saveLayer(null, null) : -1;
+        int saveLayer = z9 ? canvas.saveLayer(null, null) : -1;
         e(canvas, jSONArray, jSONArray.length(), xVar, f10, true);
-        if (z10) {
+        if (z9) {
             canvas.restoreToCount(saveLayer);
         }
     }
@@ -883,42 +883,42 @@ public final class y {
             return null;
         }
         int[] m10 = m(optJSONArray);
-        float[] n4 = n(optJSONArray);
+        float[] n10 = n(optJSONArray);
         float[] fArr = this.l;
         d(jSONObject.optJSONArray(str2), fArr, 7, new float[0]);
-        return jSONObject.optInt(str) == 1 ? new LinearGradient(fArr[0], fArr[1], fArr[2], fArr[3], m10, n4, Shader.TileMode.CLAMP) : new RadialGradient(fArr[0], fArr[1], Math.max(fArr[4], 0.01f), m10, n4, Shader.TileMode.CLAMP);
+        return jSONObject.optInt(str) == 1 ? new LinearGradient(fArr[0], fArr[1], fArr[2], fArr[3], m10, n10, Shader.TileMode.CLAMP) : new RadialGradient(fArr[0], fArr[1], Math.max(fArr[4], 0.01f), m10, n10, Shader.TileMode.CLAMP);
     }
 
-    public final void h(e0.e0 e0Var, float f10) {
+    public final void h(a4.k kVar, float f10) {
         Object obj;
-        w wVar = (w) f1.o(1, (ArrayList) e0Var.f);
+        w wVar = (w) f1.k(1, (ArrayList) kVar.f);
         while (true) {
-            int i3 = e0Var.b;
+            int i7 = kVar.b;
             obj = wVar.c;
-            if (i3 <= ((obj == null && wVar.f == null) ? wVar.b : 0)) {
+            if (i7 <= ((obj == null && wVar.f == null) ? wVar.b : 0)) {
                 break;
             } else {
-                e0Var.q();
+                kVar.q();
             }
         }
         if (obj != null) {
             v.d(wVar, f10);
-            e0Var.c = wVar.a;
+            kVar.c = wVar.a;
         } else {
             Bitmap bitmap = wVar.f;
             if (bitmap != null) {
                 WidgetSandboxNative.filterPixels(bitmap, wVar.i.toString().getBytes(StandardCharsets.UTF_8), wVar.h);
-                e0Var.c = wVar.a;
+                kVar.c = wVar.a;
                 Matrix matrix = new Matrix();
                 if (wVar.g.invert(matrix)) {
-                    ((Canvas) e0Var.c).save();
-                    ((Canvas) e0Var.c).concat(matrix);
-                    ((Canvas) e0Var.c).drawBitmap(wVar.f, wVar.d, wVar.e, this.c);
-                    ((Canvas) e0Var.c).restore();
+                    ((Canvas) kVar.c).save();
+                    ((Canvas) kVar.c).concat(matrix);
+                    ((Canvas) kVar.c).drawBitmap(wVar.f, wVar.d, wVar.e, this.c);
+                    ((Canvas) kVar.c).restore();
                 }
             }
         }
-        e0Var.b = wVar.b;
+        kVar.b = wVar.b;
     }
 
     public final void k(JSONObject jSONObject, String str, Path path) {
@@ -930,15 +930,15 @@ public final class y {
             path.addRect(rectF, Path.Direction.CW);
             return;
         }
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             float[] fArr = this.k;
-            if (i3 >= 8) {
+            if (i7 >= 8) {
                 path.addRoundRect(rectF, fArr, Path.Direction.CW);
                 return;
             } else {
-                fArr[i3] = (float) optJSONArray.optDouble(i3);
-                i3++;
+                fArr[i7] = (float) optJSONArray.optDouble(i7);
+                i7++;
             }
         }
     }

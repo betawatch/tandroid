@@ -2,8 +2,8 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import h5.s;
-import h5.z;
+import i5.s;
+import i5.z;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -13,18 +13,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
     private String handler;
-    private h5.a headerBox;
+    private i5.a headerBox;
     private int height;
     private boolean isAudio;
     private int[] sampleCompositions;
-    private h5.n sampleDescriptionBox;
+    private i5.n sampleDescriptionBox;
     private long[] sampleDurations;
     private LinkedList<Integer> syncSamples;
     private int timeScale;
@@ -37,15 +37,15 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
         private long presentationTime;
 
-        public SamplePresentationTime(int i3, long j10) {
-            this.index = i3;
-            this.presentationTime = j10;
+        public SamplePresentationTime(int i7, long j3) {
+            this.index = i7;
+            this.presentationTime = j3;
         }
     }
 
@@ -66,39 +66,39 @@ public class Track {
         samplingFrequencyIndexMap.put(8000, 11);
     }
 
-    public Track(int i3, MediaFormat mediaFormat, boolean z10) {
+    public Track(int i7, MediaFormat mediaFormat, boolean z9) {
         int i10;
-        boolean z11;
+        boolean z10;
         int i11;
         this.syncSamples = null;
         this.volume = 0.0f;
-        this.trackId = i3;
-        this.isAudio = z10;
+        this.trackId = i7;
+        this.isAudio = z9;
         int i12 = 0;
-        if (z10) {
+        if (z9) {
             this.volume = 1.0f;
             this.timeScale = mediaFormat.getInteger("sample-rate");
             this.handler = "soun";
             this.headerBox = new s("smhd");
-            this.sampleDescriptionBox = new h5.n();
-            i5.b bVar = new i5.b("mp4a");
+            this.sampleDescriptionBox = new i5.n();
+            j5.b bVar = new j5.b("mp4a");
             bVar.h = mediaFormat.getInteger("channel-count");
             bVar.r = mediaFormat.getInteger("sample-rate");
             bVar.f = 1;
             bVar.n = 16;
-            hc.b bVar2 = new hc.b("esds");
-            ic.g gVar = new ic.g();
+            kc.b bVar2 = new kc.b("esds");
+            lc.g gVar = new lc.g();
             gVar.i = 0;
             gVar.o = new ArrayList();
             gVar.d = 0;
-            ic.m mVar = new ic.m();
+            lc.m mVar = new lc.m();
             mVar.d = 2;
             gVar.n = mVar;
             String string = mediaFormat.containsKey("mime") ? mediaFormat.getString("mime") : "audio/mp4-latm";
-            ic.d dVar = new ic.d();
+            lc.d dVar = new lc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
-                dVar.d = hs.q1;
+                dVar.d = qs.q1;
             } else {
                 dVar.d = 64;
             }
@@ -106,38 +106,38 @@ public class Track {
             dVar.g = 1536;
             if (mediaFormat.containsKey("max-bitrate")) {
                 i10 = 13;
-                z11 = 7;
+                z10 = 7;
                 dVar.h = mediaFormat.getInteger("max-bitrate");
             } else {
                 i10 = 13;
-                z11 = 7;
+                z10 = 7;
                 dVar.h = 96000L;
             }
             dVar.i = this.timeScale;
-            ic.a aVar = new ic.a();
+            lc.a aVar = new lc.a();
             aVar.e = 2;
             aVar.f = samplingFrequencyIndexMap.get(Integer.valueOf((int) bVar.r)).intValue();
             aVar.h = bVar.h;
             dVar.j = aVar;
             gVar.m = dVar;
             ByteBuffer allocate = ByteBuffer.allocate(gVar.c());
-            g5.b.r(3, allocate);
-            allocate.put((byte) ((gVar.c() - 2) & hs.e4));
-            g5.b.p(gVar.d, allocate);
-            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & hs.e4));
+            h5.b.r(3, allocate);
+            allocate.put((byte) ((gVar.c() - 2) & qs.e4));
+            h5.b.p(gVar.d, allocate);
+            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & qs.e4));
             if (gVar.e > 0) {
-                g5.b.p(gVar.k, allocate);
+                h5.b.p(gVar.k, allocate);
             }
             if (gVar.f > 0) {
-                allocate.put((byte) (gVar.i & hs.e4));
-                allocate.put(g5.b.b(gVar.j));
+                allocate.put((byte) (gVar.i & qs.e4));
+                allocate.put(h5.b.b(gVar.j));
                 allocate.put((byte) 0);
             }
             if (gVar.g > 0) {
-                g5.b.p(gVar.l, allocate);
+                h5.b.p(gVar.l, allocate);
             }
-            ic.d dVar2 = gVar.m;
-            ic.a aVar2 = dVar2.j;
+            lc.d dVar2 = gVar.m;
+            lc.a aVar2 = dVar2.j;
             if (aVar2 == null) {
                 i11 = 0;
             } else {
@@ -147,32 +147,32 @@ public class Track {
                 i11 = 4;
             }
             ByteBuffer allocate2 = ByteBuffer.allocate(i11 + 15);
-            g5.b.r(4, allocate2);
-            ic.a aVar3 = dVar2.j;
+            h5.b.r(4, allocate2);
+            lc.a aVar3 = dVar2.j;
             if (aVar3 != null) {
                 if (aVar3.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 i12 = 4;
             }
-            allocate2.put((byte) ((i12 + i10) & hs.e4));
-            allocate2.put((byte) (dVar2.d & hs.e4));
-            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & hs.e4));
-            g5.b.q(dVar2.g, allocate2);
+            allocate2.put((byte) ((i12 + i10) & qs.e4));
+            allocate2.put((byte) (dVar2.d & qs.e4));
+            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & qs.e4));
+            h5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
-            ic.a aVar4 = dVar2.j;
+            lc.a aVar4 = dVar2.j;
             if (aVar4 != null) {
                 if (aVar4.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 ByteBuffer allocate3 = ByteBuffer.allocate(4);
-                g5.b.r(5, allocate3);
+                h5.b.r(5, allocate3);
                 if (aVar4.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 allocate3.put((byte) 2);
-                ic.c cVar = new ic.c(1, allocate3);
+                lc.c cVar = new lc.c(1, allocate3);
                 cVar.c(aVar4.e, 5);
                 cVar.c(aVar4.f, 4);
                 if (aVar4.f == 15) {
@@ -181,15 +181,15 @@ public class Track {
                 cVar.c(aVar4.h, 4);
                 allocate2.put(allocate3.array());
             }
-            ic.m mVar2 = gVar.n;
+            lc.m mVar2 = gVar.n;
             mVar2.getClass();
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
-            g5.b.r(6, allocate4);
+            h5.b.r(6, allocate4);
             allocate4.put((byte) 1);
-            allocate4.put((byte) (mVar2.d & hs.e4));
+            allocate4.put((byte) (mVar2.d & qs.e4));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            com.google.android.recaptcha.internal.a.t(we.a.c(hc.a.h, bVar2, bVar2, allocate));
+            com.google.android.recaptcha.internal.a.t(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -205,11 +205,11 @@ public class Track {
         zVar.f = new int[3];
         zVar.g(1);
         this.headerBox = zVar;
-        this.sampleDescriptionBox = new h5.n();
+        this.sampleDescriptionBox = new i5.n();
         String string2 = mediaFormat.getString("mime");
         if (!string2.equals("video/avc")) {
             if (string2.equals("video/mp4v")) {
-                i5.c cVar2 = new i5.c("mp4v");
+                j5.c cVar2 = new j5.c("mp4v");
                 cVar2.f = 1;
                 cVar2.y = 24;
                 cVar2.w = 1;
@@ -262,7 +262,7 @@ public class Track {
                 }
             }
             try {
-                i5.c parseFromCsd = HevcDecoderConfigurationRecord.parseFromCsd(Arrays.asList(ByteBuffer.wrap(bArr), ByteBuffer.wrap(bArr3), ByteBuffer.wrap(bArr2)));
+                j5.c parseFromCsd = HevcDecoderConfigurationRecord.parseFromCsd(Arrays.asList(ByteBuffer.wrap(bArr), ByteBuffer.wrap(bArr3), ByteBuffer.wrap(bArr2)));
                 parseFromCsd.h = this.width;
                 parseFromCsd.n = this.height;
                 this.sampleDescriptionBox.a(parseFromCsd);
@@ -272,7 +272,7 @@ public class Track {
                 return;
             }
         }
-        i5.c cVar3 = new i5.c("avc1");
+        j5.c cVar3 = new j5.c("avc1");
         cVar3.f = 1;
         cVar3.y = 24;
         cVar3.w = 1;
@@ -280,8 +280,8 @@ public class Track {
         cVar3.s = 72.0d;
         cVar3.h = this.width;
         cVar3.n = this.height;
-        nc.a aVar5 = new nc.a("avcC");
-        nc.b bVar3 = new nc.b();
+        qc.a aVar5 = new qc.a("avcC");
+        qc.b bVar3 = new qc.b();
         bVar3.f = new ArrayList();
         bVar3.g = new ArrayList();
         bVar3.h = true;
@@ -308,9 +308,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.h, aVar5, aVar5, arrayList));
+            com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.n, aVar5, aVar5, arrayList2));
+            com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -364,26 +364,26 @@ public class Track {
             } else if (integer2 == 8) {
                 aVar5.e(100);
             } else if (integer2 == 16) {
-                aVar5.e(hs.v1);
+                aVar5.e(qs.v1);
             } else if (integer2 == 32) {
-                aVar5.e(hs.G1);
+                aVar5.e(qs.G1);
             } else if (integer2 == 64) {
-                aVar5.e(hs.T3);
+                aVar5.e(qs.T3);
             }
         } else {
             aVar5.e(100);
         }
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.s, aVar5, aVar5, new Integer(-1)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.w, aVar5, aVar5, new Integer(-1)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.w, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.r, aVar5, aVar5, new Integer(-1)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.b, aVar5, aVar5, new Integer(1)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.f, aVar5, aVar5, new Integer(3)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        com.google.android.recaptcha.internal.a.t(we.a.c(nc.a.d, aVar5, aVar5, new Integer(0)));
+        com.google.android.recaptcha.internal.a.t(ze.a.c(qc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);
@@ -404,11 +404,11 @@ public class Track {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void addSample(long j10, MediaCodec.BufferInfo bufferInfo) {
-        boolean z10 = this.isAudio ? false : true;
-        this.samples.add(new Sample(j10, bufferInfo.size));
+    public void addSample(long j3, MediaCodec.BufferInfo bufferInfo) {
+        boolean z9 = this.isAudio ? false : true;
+        this.samples.add(new Sample(j3, bufferInfo.size));
         LinkedList<Integer> linkedList = this.syncSamples;
-        if (linkedList != null && z10) {
+        if (linkedList != null && z9) {
             linkedList.add(Integer.valueOf(this.samples.size()));
         }
         ArrayList<SamplePresentationTime> arrayList = this.samplePresentationTimes;
@@ -435,7 +435,7 @@ public class Track {
         return (((this.duration - this.sampleDurations[r2.length - 1]) * 1000000) - 500000) / this.timeScale;
     }
 
-    public h5.a getMediaHeaderBox() {
+    public i5.a getMediaHeaderBox() {
         return this.headerBox;
     }
 
@@ -443,7 +443,7 @@ public class Track {
         return this.sampleCompositions;
     }
 
-    public h5.n getSampleDescriptionBox() {
+    public i5.n getSampleDescriptionBox() {
         return this.sampleDescriptionBox;
     }
 
@@ -461,8 +461,8 @@ public class Track {
             return null;
         }
         long[] jArr = new long[this.syncSamples.size()];
-        for (int i3 = 0; i3 < this.syncSamples.size(); i3++) {
-            jArr[i3] = this.syncSamples.get(i3).intValue();
+        for (int i7 = 0; i7 < this.syncSamples.size(); i7++) {
+            jArr[i7] = this.syncSamples.get(i7).intValue();
         }
         return jArr;
     }
@@ -488,50 +488,50 @@ public class Track {
     }
 
     public void prepare() {
-        int i3;
-        long j10;
-        long j11 = 0;
+        int i7;
+        long j3;
+        long j10 = 0;
         this.duration = 0L;
         ArrayList arrayList = new ArrayList(this.samplePresentationTimes);
         int i10 = 0;
         Collections.sort(this.samplePresentationTimes, new b(i10));
         this.sampleDurations = new long[this.samplePresentationTimes.size()];
-        long j12 = Long.MAX_VALUE;
-        long j13 = 0;
+        long j11 = Long.MAX_VALUE;
+        long j12 = 0;
         int i11 = 0;
-        boolean z10 = false;
+        boolean z9 = false;
         while (true) {
             if (i11 >= this.samplePresentationTimes.size()) {
                 break;
             }
             SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i11);
-            long j14 = samplePresentationTime.presentationTime - j13;
-            j13 = samplePresentationTime.presentationTime;
-            this.sampleDurations[samplePresentationTime.index] = j14;
+            long j13 = samplePresentationTime.presentationTime - j12;
+            j12 = samplePresentationTime.presentationTime;
+            this.sampleDurations[samplePresentationTime.index] = j13;
             if (samplePresentationTime.index != 0) {
-                j10 = j11;
-                this.duration += j14;
+                j3 = j10;
+                this.duration += j13;
             } else {
-                j10 = j11;
+                j3 = j10;
             }
-            if (j14 > j10 && j14 < 2147483647L) {
-                j12 = Math.min(j12, j14);
+            if (j13 > j3 && j13 < 2147483647L) {
+                j11 = Math.min(j11, j13);
             }
             if (samplePresentationTime.index != i11) {
-                z10 = true;
+                z9 = true;
             }
             i11++;
-            j11 = j10;
+            j10 = j3;
         }
         long[] jArr = this.sampleDurations;
         if (jArr.length > 0) {
-            jArr[0] = j12;
-            this.duration += j12;
+            jArr[0] = j11;
+            this.duration += j11;
         }
-        for (i3 = 1; i3 < arrayList.size(); i3++) {
-            ((SamplePresentationTime) arrayList.get(i3)).dt = this.sampleDurations[i3] + ((SamplePresentationTime) arrayList.get(i3 - 1)).dt;
+        for (i7 = 1; i7 < arrayList.size(); i7++) {
+            ((SamplePresentationTime) arrayList.get(i7)).dt = this.sampleDurations[i7] + ((SamplePresentationTime) arrayList.get(i7 - 1)).dt;
         }
-        if (z10) {
+        if (z9) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             while (i10 < this.samplePresentationTimes.size()) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i10);

@@ -1,37 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w8 extends FragmentContextView {
-    public final /* synthetic */ int Y0 = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 Z0;
+public final class w8 extends v4.s0 {
+    public boolean a;
+    public final /* synthetic */ i9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w8(h9 h9Var, Context context, h9 h9Var2, ai.h5 h5Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, h9Var2, h5Var, false, e6Var);
-        this.Z0 = h9Var;
+    public w8(i9 i9Var) {
+        this.b = i9Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i3) {
-        switch (this.Y0) {
-            case 0:
-                h9 h9Var = (h9) this.Z0;
-                h9Var.J.i(h9Var.K, i3 == 0, true);
-                break;
-            default:
-                m91 m91Var = (m91) this.Z0;
-                m91Var.V0.i(m91Var.G0, i3 == 0, true);
-                break;
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        i9 i9Var = this.b;
+        ArrayList arrayList = i9Var.y;
+        int L0 = i9Var.b.L0();
+        int abs = L0 == -1 ? 0 : Math.abs(i9Var.b.N0() - L0) + 1;
+        if (abs > 0) {
+            int size = i9Var.c.f3.D.size();
+            if (!i9Var.F && !i9Var.D && !arrayList.isEmpty() && L0 + abs >= size - 5) {
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.p(14, this, (f9) jg.g.i(1, arrayList)));
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w8(m91 m91Var, Context context, m91 m91Var2) {
-        super(context, m91Var2, null, false, null);
-        this.Z0 = m91Var;
+        if (i10 != 0 && this.a) {
+            i9Var.f.e(i10 < 0, true);
+        }
+        this.a = true;
     }
 }

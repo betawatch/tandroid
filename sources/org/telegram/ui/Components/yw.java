@@ -1,50 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class yw extends b5.a {
-    public final /* synthetic */ ey c;
+public final class yw {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
 
-    public yw(ey eyVar) {
-        this.c = eyVar;
-    }
-
-    @Override // b5.a
-    public final void a(b5.l lVar, Object obj) {
-        lVar.removeView((View) obj);
-    }
-
-    @Override // b5.a
-    public final int b() {
-        return this.c.e.size();
-    }
-
-    @Override // b5.a
-    public final CharSequence d(int i3) {
-        if (i3 == 0) {
-            return org.telegram.messenger.bd.M0(2131751197, null);
+    public yw(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
         }
-        if (i3 == 1) {
-            return org.telegram.messenger.bd.M0(2131754879, null);
-        }
-        if (i3 != 2) {
-            return null;
-        }
-        return org.telegram.messenger.bd.M0(2131754756, null);
+        this.e = document;
     }
 
-    @Override // b5.a
-    public final Object e(b5.l lVar, int i3) {
-        FrameLayout frameLayout = ((zx) this.c.e.get(i3)).b;
-        lVar.addView(frameLayout);
-        return frameLayout;
-    }
-
-    @Override // b5.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    public yw(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

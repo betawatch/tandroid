@@ -1,32 +1,17 @@
 package vg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class p extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
-    public final /* synthetic */ r c;
+public final class p {
+    public final float a;
+    public final float b;
+    public final boolean c;
+    public final boolean d;
 
-    public /* synthetic */ p(r rVar, q qVar, int i3) {
-        this.a = i3;
-        this.c = rVar;
-        this.b = qVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.f = null;
-                r.a(this.c);
-                break;
-            default:
-                this.b.f = null;
-                r.a(this.c);
-                break;
-        }
+    public p(float f10, float f11, boolean z9, boolean z10) {
+        this.a = f10;
+        this.b = f11;
+        this.c = z9;
+        this.d = z10;
     }
 }

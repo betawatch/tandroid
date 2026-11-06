@@ -1,9 +1,148 @@
 package n6;
 
-import java.io.Closeable;
+import android.app.PendingIntent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a implements Iterable, Closeable {
-    public abstract void h();
+public final class a extends r6.a {
+    public final int a;
+    public final int b;
+    public final PendingIntent c;
+    public final String d;
+    public final Integer e;
+    public static final a f = new a(0, null, null);
+    public static final Parcelable.Creator<a> CREATOR = new m6.e(9);
+
+    public a(int i7, int i10, PendingIntent pendingIntent, String str, Integer num) {
+        this.a = i7;
+        this.b = i10;
+        this.c = pendingIntent;
+        this.d = str;
+        this.e = num;
+    }
+
+    public static String d(int i7) {
+        if (i7 == 99) {
+            return "UNFINISHED";
+        }
+        if (i7 == 1500) {
+            return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
+        }
+        switch (i7) {
+            case -1:
+                return "UNKNOWN";
+            case 0:
+                return "SUCCESS";
+            case 1:
+                return "SERVICE_MISSING";
+            case 2:
+                return "SERVICE_VERSION_UPDATE_REQUIRED";
+            case 3:
+                return "SERVICE_DISABLED";
+            case 4:
+                return "SIGN_IN_REQUIRED";
+            case 5:
+                return "INVALID_ACCOUNT";
+            case 6:
+                return "RESOLUTION_REQUIRED";
+            case 7:
+                return "NETWORK_ERROR";
+            case 8:
+                return "INTERNAL_ERROR";
+            case 9:
+                return "SERVICE_INVALID";
+            case 10:
+                return "DEVELOPER_ERROR";
+            case 11:
+                return "LICENSE_CHECK_FAILED";
+            default:
+                switch (i7) {
+                    case 13:
+                        return "CANCELED";
+                    case 14:
+                        return "TIMEOUT";
+                    case 15:
+                        return "INTERRUPTED";
+                    case 16:
+                        return "API_UNAVAILABLE";
+                    case 17:
+                        return "SIGN_IN_FAILED";
+                    case 18:
+                        return "SERVICE_UPDATING";
+                    case 19:
+                        return "SERVICE_MISSING_PERMISSION";
+                    case 20:
+                        return "RESTRICTED_PROFILE";
+                    case 21:
+                        return "API_VERSION_UPDATE_REQUIRED";
+                    case 22:
+                        return "RESOLUTION_ACTIVITY_NOT_FOUND";
+                    case 23:
+                        return "API_DISABLED";
+                    case 24:
+                        return "API_DISABLED_FOR_CONNECTION";
+                    case 25:
+                        return "API_INSTALL_REQUIRED";
+                    default:
+                        StringBuilder sb2 = new StringBuilder(String.valueOf(i7).length() + 20);
+                        sb2.append("UNKNOWN_ERROR_CODE(");
+                        sb2.append(i7);
+                        sb2.append(")");
+                        return sb2.toString();
+                }
+        }
+    }
+
+    public final boolean b() {
+        return (this.b == 0 || this.c == null) ? false : true;
+    }
+
+    public final boolean c() {
+        return this.b == 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return this.b == aVar.b && q6.m.k(this.c, aVar.c) && q6.m.k(this.d, aVar.d) && q6.m.k(this.e, aVar.e);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d, this.e});
+    }
+
+    public final String toString() {
+        j2.n nVar = new j2.n(this);
+        nVar.X(d(this.b), "statusCode");
+        nVar.X(this.c, "resolution");
+        nVar.X(this.d, "message");
+        nVar.X(this.e, "clientMethodKey");
+        return nVar.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        wb.q(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        wb.k(parcel, 3, this.c, i7);
+        wb.l(parcel, 4, this.d);
+        wb.i(parcel, 5, this.e);
+        wb.s(parcel, r10);
+    }
+
+    public a(int i7, PendingIntent pendingIntent, String str) {
+        this(1, i7, pendingIntent, str, null);
+    }
 }

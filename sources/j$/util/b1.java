@@ -58,8 +58,8 @@ public final /* synthetic */ class b1 implements d1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return this.a.hasCharacteristics(i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return this.a.hasCharacteristics(i7);
     }
 
     public final /* synthetic */ int hashCode() {

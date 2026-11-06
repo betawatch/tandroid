@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class l5 {
     public static void a(SQLiteDatabase sQLiteDatabase, String str) {
@@ -20,7 +20,7 @@ public abstract class l5 {
     }
 
     public static boolean b(SQLiteDatabase sQLiteDatabase, String str, String str2) {
-        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized(a1.g.q("PRAGMA table_info(", str, ")"), new Object[0]);
+        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized(a8.p0.p("PRAGMA table_info(", str, ")"), new Object[0]);
         while (queryFinalized.next()) {
             try {
                 if (str2.equals(queryFinalized.stringValue(1))) {
@@ -33,8 +33,8 @@ public abstract class l5 {
         return false;
     }
 
-    public static int c(qr qrVar, SQLiteDatabase sQLiteDatabase, int i3) {
-        char c2;
+    public static int c(yr yrVar, SQLiteDatabase sQLiteDatabase, int i7) {
+        char c10;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         int i10;
@@ -48,16 +48,16 @@ public abstract class l5 {
         SQLiteCursor sQLiteCursor7;
         SQLiteCursor sQLiteCursor8;
         SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
-        p5 p5Var = qrVar.a;
+        p5 p5Var = yrVar.a;
         int i11 = 4;
-        int i12 = i3;
+        int i12 = i7;
         if (i12 < 4) {
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS user_photos(uid INTEGER, id INTEGER, data BLOB, PRIMARY KEY (uid, id))", "DROP INDEX IF EXISTS read_state_out_idx_messages;", "DROP INDEX IF EXISTS ttl_idx_messages;", "DROP INDEX IF EXISTS date_idx_messages;");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS mid_out_idx_messages ON messages(mid, out);", "CREATE INDEX IF NOT EXISTS task_idx_messages ON messages(uid, out, read_state, ttl, date, send_state);", "CREATE INDEX IF NOT EXISTS uid_date_mid_idx_messages ON messages(uid, date, mid);", "CREATE TABLE IF NOT EXISTS user_contacts_v6(uid INTEGER PRIMARY KEY, fname TEXT, sname TEXT)");
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS user_phones_v6(uid INTEGER, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (uid, phone))", "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v6(sphone, deleted);", "CREATE INDEX IF NOT EXISTS mid_idx_randoms ON randoms(mid);", "CREATE TABLE IF NOT EXISTS sent_files_v2(uid TEXT, type INTEGER, data BLOB, PRIMARY KEY (uid, type))");
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, PRIMARY KEY (uid, type));", "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);", "CREATE TABLE IF NOT EXISTS dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);", "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);");
             sQLiteDatabase2.executeFast("UPDATE messages SET send_state = 2 WHERE mid < 0 AND send_state = 1").stepThis().dispose();
-            p5Var.c(new hq(qrVar, 1));
+            p5Var.c(new qq(yrVar, 1));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 4").stepThis().dispose();
             i12 = 4;
         }
@@ -129,7 +129,7 @@ public abstract class l5 {
             i12 = 17;
         }
         if (i12 == 17) {
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 18");
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 18");
             i12 = 18;
         }
         if (i12 == 18) {
@@ -145,7 +145,7 @@ public abstract class l5 {
             i12 = 21;
         }
         if (i12 == 21) {
-            k2.p1.y(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS chat_settings_v2(uid INTEGER PRIMARY KEY, info BLOB)");
+            jg.g.z(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS chat_settings_v2(uid INTEGER PRIMARY KEY, info BLOB)");
             SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT uid, participants FROM chat_settings WHERE uid < 0", new Object[0]);
             SQLitePreparedStatement executeFast2 = sQLiteDatabase2.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?)");
             while (queryFinalized2.next()) {
@@ -177,7 +177,7 @@ public abstract class l5 {
             sQLiteDatabase2.executeFast("ALTER TABLE dialogs ADD COLUMN last_mid_i INTEGER default 0").stepThis().dispose();
             k5.v(sQLiteDatabase2, "ALTER TABLE dialogs ADD COLUMN unread_count_i INTEGER default 0", "ALTER TABLE dialogs ADD COLUMN pts INTEGER default 0", "ALTER TABLE dialogs ADD COLUMN date_i INTEGER default 0", "CREATE INDEX IF NOT EXISTS last_mid_i_idx_dialogs ON dialogs(last_mid_i);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS unread_count_i_idx_dialogs ON dialogs(unread_count_i);", "ALTER TABLE messages ADD COLUMN imp INTEGER default 0", "CREATE TABLE IF NOT EXISTS messages_holes(uid INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes(uid, end);");
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 22");
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 22");
             i12 = 22;
         }
         if (i12 == 22) {
@@ -204,7 +204,7 @@ public abstract class l5 {
             k5.v(sQLiteDatabase2, "ALTER TABLE chat_settings_v2 ADD COLUMN pinned INTEGER default 0", "CREATE INDEX IF NOT EXISTS chat_settings_pinned_idx ON chat_settings_v2(uid, pinned) WHERE pinned != 0;", "CREATE TABLE IF NOT EXISTS users_data(uid INTEGER PRIMARY KEY, about TEXT)", "PRAGMA user_version = 31");
             i12 = 31;
         }
-        char c10 = ' ';
+        char c11 = ' ';
         if (i12 == 31) {
             k5.v(sQLiteDatabase2, "DROP TABLE IF EXISTS bot_recent;", "CREATE TABLE IF NOT EXISTS chat_hints(did INTEGER, type INTEGER, rating REAL, date INTEGER, PRIMARY KEY(did, type))", "CREATE INDEX IF NOT EXISTS chat_hints_rating_idx ON chat_hints(rating);", "PRAGMA user_version = 32");
             i12 = 32;
@@ -242,7 +242,7 @@ public abstract class l5 {
             i12 = 40;
         }
         if (i12 == 40) {
-            p5Var.c(new hq(qrVar, 1));
+            p5Var.c(new qq(yrVar, 1));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 41").stepThis().dispose();
             i12 = 41;
         }
@@ -255,7 +255,7 @@ public abstract class l5 {
             i12 = 43;
         }
         if (i12 == 43) {
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 44");
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 44");
             i12 = 44;
         }
         if (i12 == 44) {
@@ -284,7 +284,7 @@ public abstract class l5 {
         }
         if (i12 == 50) {
             k5.v(sQLiteDatabase2, "DELETE FROM sent_files_v2 WHERE 1", "ALTER TABLE sent_files_v2 ADD COLUMN parent TEXT", "DELETE FROM download_queue WHERE 1", "ALTER TABLE download_queue ADD COLUMN parent TEXT");
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 51");
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 51");
             i12 = 51;
         }
         if (i12 == 51) {
@@ -424,7 +424,7 @@ public abstract class l5 {
             sQLiteDatabase2.commitTransaction();
             sQLiteDatabase2.executeFast("DROP INDEX IF EXISTS date_idx_enc_tasks_v2;").stepThis().dispose();
             sQLiteDatabase2.executeFast("DROP TABLE IF EXISTS enc_tasks_v2;").stepThis().dispose();
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 80");
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 80");
             i12 = 80;
         }
         int i18 = 5;
@@ -445,7 +445,7 @@ public abstract class l5 {
                     if (byteBufferValue3 != null) {
                         int intValue5 = sQLiteCursor8.intValue(i15);
                         long longValue2 = sQLiteCursor8.longValue(1);
-                        char c11 = c10;
+                        char c12 = c11;
                         int intValue6 = sQLiteCursor8.intValue(2);
                         int intValue7 = sQLiteCursor8.intValue(3);
                         int intValue8 = sQLiteCursor8.intValue(i18);
@@ -467,17 +467,17 @@ public abstract class l5 {
                             byteBufferValue4.reuse();
                         }
                         byteBufferValue3.reuse();
-                        c10 = c11;
+                        c11 = c12;
                         i11 = 4;
                         i15 = 0;
                         i18 = 5;
                     }
                 }
-                c2 = c10;
+                c10 = c11;
                 sQLiteCursor8.dispose();
                 executeFast4.dispose();
             } else {
-                c2 = ' ';
+                c10 = ' ';
             }
             sQLiteDatabase2.executeFast("DROP INDEX IF EXISTS send_state_idx_scheduled_messages;").stepThis().dispose();
             sQLiteDatabase2.executeFast("DROP INDEX IF EXISTS uid_date_idx_scheduled_messages;").stepThis().dispose();
@@ -486,7 +486,7 @@ public abstract class l5 {
             sQLiteDatabase2.executeFast("PRAGMA user_version = 81").stepThis().dispose();
             i12 = 81;
         } else {
-            c2 = ' ';
+            c10 = ' ';
         }
         if (i12 == 81) {
             sQLiteDatabase2.executeFast("CREATE TABLE IF NOT EXISTS media_v3(mid INTEGER, uid INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid))").stepThis().dispose();
@@ -506,7 +506,7 @@ public abstract class l5 {
                         int intValue9 = sQLiteCursor7.intValue(0);
                         long longValue3 = sQLiteCursor7.longValue(1);
                         if (((int) longValue3) == 0) {
-                            longValue3 = m5.F((int) (longValue3 >> c2));
+                            longValue3 = m5.F((int) (longValue3 >> c10));
                         }
                         int intValue10 = sQLiteCursor7.intValue(2);
                         int intValue11 = sQLiteCursor7.intValue(3);
@@ -548,7 +548,7 @@ public abstract class l5 {
                     int intValue12 = sQLiteCursor3.intValue(1);
                     long longValue5 = sQLiteCursor3.longValue(2);
                     if (((int) longValue5) == 0) {
-                        longValue5 = m5.F((int) (longValue5 >> c2));
+                        longValue5 = m5.F((int) (longValue5 >> c10));
                     }
                     executeFast6.requery();
                     executeFast6.bindLong(1, longValue4);
@@ -572,7 +572,7 @@ public abstract class l5 {
                     long longValue6 = sQLiteCursor4.longValue(1);
                     long longValue7 = sQLiteCursor4.longValue(2);
                     if (((int) longValue6) == 0) {
-                        longValue6 = m5.F((int) (longValue6 >> c2));
+                        longValue6 = m5.F((int) (longValue6 >> c10));
                     }
                     executeFast7.requery();
                     executeFast7.bindInteger(1, intValue13);
@@ -596,7 +596,7 @@ public abstract class l5 {
                     int intValue14 = sQLiteCursor5.intValue(1);
                     long longValue9 = sQLiteCursor5.longValue(2);
                     if (((int) longValue9) == 0) {
-                        longValue9 = m5.F((int) (longValue9 >> c2));
+                        longValue9 = m5.F((int) (longValue9 >> c10));
                     }
                     executeFast8.requery();
                     executeFast8.bindLong(1, longValue8);
@@ -621,7 +621,7 @@ public abstract class l5 {
                     int intValue16 = sQLiteCursor6.intValue(2);
                     int intValue17 = sQLiteCursor6.intValue(3);
                     if (((int) longValue10) == 0) {
-                        longValue10 = m5.F((int) (longValue10 >> c2));
+                        longValue10 = m5.F((int) (longValue10 >> c10));
                     }
                     executeFast9.requery();
                     executeFast9.bindInteger(1, intValue15);
@@ -662,7 +662,7 @@ public abstract class l5 {
                         long intValue18 = sQLiteCursor2.intValue(0);
                         long longValue11 = sQLiteCursor2.longValue(i14);
                         if (((int) longValue11) == 0) {
-                            longValue11 = m5.F((int) (longValue11 >> c2));
+                            longValue11 = m5.F((int) (longValue11 >> c10));
                         }
                         int intValue19 = sQLiteCursor2.intValue(i13);
                         int intValue20 = sQLiteCursor2.intValue(i17);
@@ -677,12 +677,12 @@ public abstract class l5 {
                         NativeByteBuffer byteBufferValue8 = sQLiteCursor2.byteBufferValue(13);
                         int intValue28 = sQLiteCursor2.intValue(14);
                         SQLiteCursor sQLiteCursor9 = sQLiteCursor2;
-                        int i19 = (int) (longValue11 >> c2);
+                        int i19 = (int) (longValue11 >> c10);
                         if (intValue23 < 0) {
                             TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue6, byteBufferValue6.readInt32(false), false);
                             if (TLdeserialize2 != null) {
                                 i10 = intValue28;
-                                TLdeserialize2.readAttachPath(byteBufferValue6, qrVar.getUserConfig().n);
+                                TLdeserialize2.readAttachPath(byteBufferValue6, yrVar.getUserConfig().n);
                                 if (TLdeserialize2.params == null) {
                                     HashMap<String, String> hashMap = new HashMap<>();
                                     TLdeserialize2.params = hashMap;
@@ -756,7 +756,7 @@ public abstract class l5 {
             while (queryFinalized4.next()) {
                 long longValue12 = queryFinalized4.longValue(i20);
                 int i21 = (int) longValue12;
-                int i22 = (int) (longValue12 >> c2);
+                int i22 = (int) (longValue12 >> c10);
                 if (i21 == 0) {
                     if (arrayList == null) {
                         arrayList = new ArrayList();
@@ -800,18 +800,18 @@ public abstract class l5 {
                 for (int i24 = 0; i24 < size; i24++) {
                     long intValue30 = ((Integer) arrayList.get(i24)).intValue();
                     long F = m5.F(intValue30);
-                    long j10 = intValue30 << c2;
+                    long j3 = intValue30 << c10;
                     executeFast13.requery();
                     executeFast13.bindLong(1, F);
-                    executeFast13.bindLong(2, j10);
+                    executeFast13.bindLong(2, j3);
                     executeFast13.step();
                     executeFast14.requery();
                     executeFast14.bindLong(1, F);
-                    executeFast14.bindLong(2, j10);
+                    executeFast14.bindLong(2, j3);
                     executeFast14.step();
                     executeFast15.requery();
                     executeFast15.bindLong(1, F);
-                    executeFast15.bindLong(2, j10);
+                    executeFast15.bindLong(2, j3);
                     executeFast15.step();
                 }
                 executeFast13.dispose();
@@ -856,7 +856,7 @@ public abstract class l5 {
                         int intValue32 = sQLiteCursor.intValue(0);
                         long longValue14 = sQLiteCursor.longValue(1);
                         if (((int) longValue14) == 0) {
-                            longValue14 = m5.F((int) (longValue14 >> c2));
+                            longValue14 = m5.F((int) (longValue14 >> c10));
                         }
                         int intValue33 = sQLiteCursor.intValue(2);
                         int intValue34 = sQLiteCursor.intValue(3);
@@ -938,7 +938,7 @@ public abstract class l5 {
         }
         if (i12 == 101) {
             k5.v(sQLiteDatabase2, "ALTER TABLE messages_v2 ADD COLUMN group_id INTEGER default NULL", "ALTER TABLE dialogs ADD COLUMN last_mid_group INTEGER default NULL", "CREATE INDEX IF NOT EXISTS uid_mid_groupid_messages_v2 ON messages_v2(uid, mid, group_id);", "PRAGMA user_version = 102");
-            i12 = hs.n1;
+            i12 = qs.n1;
         }
         if (i12 == 102) {
             k5.v(sQLiteDatabase2, "CREATE TABLE messages_holes_topics(uid INTEGER, topic_id INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, start));", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes ON messages_holes_topics(uid, topic_id, end);", "CREATE TABLE messages_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, read_state INTEGER, send_state INTEGER, date INTEGER, data BLOB, out INTEGER, ttl INTEGER, media INTEGER, replydata BLOB, imp INTEGER, mention INTEGER, forwards INTEGER, replies_data BLOB, thread_reply_id INTEGER, is_channel INTEGER, reply_to_message_id INTEGER, custom_params BLOB, PRIMARY KEY(mid, topic_id, uid))", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, mid, read_state, out);");
@@ -946,68 +946,68 @@ public abstract class l5 {
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, mention, read_state);", "CREATE INDEX IF NOT EXISTS is_channel_idx_messages_topics ON messages_topics(mid, is_channel);", "CREATE INDEX IF NOT EXISTS reply_to_idx_messages_topics ON messages_topics(mid, reply_to_message_id);", "CREATE INDEX IF NOT EXISTS mid_uid_messages_topics ON messages_topics(mid, uid);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS mid_uid_topic_id_messages_topics ON messages_topics(mid, topic_id, uid);", "CREATE TABLE media_topics(mid INTEGER, uid INTEGER, topic_id INTEGER, date INTEGER, type INTEGER, data BLOB, PRIMARY KEY(mid, uid, topic_id, type))", "CREATE INDEX IF NOT EXISTS uid_mid_type_date_idx_media_topics ON media_topics(uid, topic_id, mid, type, date);", "CREATE TABLE media_holes_topics(uid INTEGER, topic_id INTEGER, type INTEGER, start INTEGER, end INTEGER, PRIMARY KEY(uid, topic_id, type, start));");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_end_media_holes_topics ON media_holes_topics(uid, topic_id, type, end);", "CREATE TABLE topics(did INTEGER, topic_id INTEGER, data BLOB, top_message INTEGER, topic_message BLOB, unread_count INTEGER, max_read_id INTEGER, unread_mentions INTEGER, unread_reactions INTEGER, PRIMARY KEY(did, topic_id));", "CREATE INDEX IF NOT EXISTS did_top_message_topics ON topics(did, top_message);", "PRAGMA user_version = 103");
-            i12 = hs.o1;
+            i12 = qs.o1;
         }
         if (i12 == 103) {
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS media_counts_topics(uid INTEGER, topic_id INTEGER, type INTEGER, count INTEGER, old INTEGER, PRIMARY KEY(uid, topic_id, type))", "CREATE TABLE IF NOT EXISTS reaction_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS reaction_mentions_topics_did ON reaction_mentions_topics(dialog_id, topic_id);", "PRAGMA user_version = 104");
-            i12 = hs.p1;
+            i12 = qs.p1;
         }
         if (i12 == 104) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN read_outbox INTEGER default 0", "PRAGMA user_version = 105");
-            i12 = hs.q1;
+            i12 = qs.q1;
         }
         if (i12 == 105) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN pinned INTEGER default 0", "PRAGMA user_version = 106");
-            i12 = hs.r1;
+            i12 = qs.r1;
         }
         if (i12 == 106) {
             k5.v(sQLiteDatabase2, "DROP INDEX IF EXISTS uid_mid_read_out_idx_messages_topics", "DROP INDEX IF EXISTS uid_mention_idx_messages_topics", "CREATE INDEX IF NOT EXISTS uid_mid_read_out_idx_messages_topics ON messages_topics(uid, topic_id, mid, read_state, out);", "CREATE INDEX IF NOT EXISTS uid_mention_idx_messages_topics ON messages_topics(uid, topic_id, mention, read_state);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_topic_id_messages_topics ON messages_topics(uid, topic_id);", "CREATE INDEX IF NOT EXISTS uid_topic_id_date_mid_messages_topics ON messages_topics(uid, topic_id, date, mid);", "CREATE INDEX IF NOT EXISTS uid_topic_id_mid_messages_topics ON messages_topics(uid, topic_id, mid);", "CREATE INDEX IF NOT EXISTS did_topics ON topics(did);");
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 107");
-            i12 = hs.s1;
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 107");
+            i12 = qs.s1;
         }
         if (i12 == 107) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN total_messages_count INTEGER default 0", "PRAGMA user_version = 108");
-            i12 = hs.t1;
+            i12 = qs.t1;
         }
         if (i12 == 108) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN hidden INTEGER default 0", "PRAGMA user_version = 109");
-            i12 = hs.u1;
+            i12 = qs.u1;
         }
         if (i12 == 109) {
             k5.t(sQLiteDatabase2, "ALTER TABLE dialogs ADD COLUMN ttl_period INTEGER default 0", "PRAGMA user_version = 110");
-            i12 = hs.v1;
+            i12 = qs.v1;
         }
         if (i12 == 110) {
             k5.t(sQLiteDatabase2, "CREATE TABLE stickersets(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER);", "PRAGMA user_version = 111");
-            i12 = hs.w1;
+            i12 = qs.w1;
         }
         if (i12 == 111) {
             k5.t(sQLiteDatabase2, "CREATE TABLE emoji_groups(type INTEGER PRIMARY KEY, data BLOB)", "PRAGMA user_version = 112");
-            i12 = hs.x1;
+            i12 = qs.x1;
         }
         if (i12 == 112) {
             k5.t(sQLiteDatabase2, "CREATE TABLE app_config(data BLOB)", "PRAGMA user_version = 113");
-            i12 = hs.y1;
+            i12 = qs.y1;
         }
         if (i12 == 113) {
-            qrVar.s1();
+            yrVar.s1();
             sQLiteDatabase2.executeFast("PRAGMA user_version = 114").stepThis().dispose();
-            i12 = hs.z1;
+            i12 = qs.z1;
         }
         if (i12 == 114) {
             k5.u(sQLiteDatabase2, "CREATE TABLE bot_keyboard_topics(uid INTEGER, tid INTEGER, mid INTEGER, info BLOB, PRIMARY KEY(uid, tid))", "CREATE INDEX IF NOT EXISTS bot_keyboard_topics_idx_mid_v2 ON bot_keyboard_topics(mid, uid, tid);", "PRAGMA user_version = 115");
-            i12 = hs.A1;
+            i12 = qs.A1;
         }
         if (i12 == 115) {
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_v2 ON messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS idx_to_reply_scheduled_messages_v2 ON scheduled_messages_v2(reply_to_message_id, mid);", "CREATE INDEX IF NOT EXISTS idx_to_reply_messages_topics ON messages_topics(reply_to_message_id, mid);", "PRAGMA user_version = 117");
-            i12 = hs.C1;
+            i12 = qs.C1;
         }
         if (i12 == 116 || i12 == 117 || i12 == 118) {
             k5.v(sQLiteDatabase2, "DROP TABLE IF EXISTS stories", "DROP TABLE IF EXISTS stories_counter", "CREATE TABLE stories (dialog_id INTEGER, story_id INTEGER, data BLOB, local_path TEXT, local_thumb_path TEXT, PRIMARY KEY (dialog_id, story_id));", "CREATE TABLE stories_counter (dialog_id INTEGER PRIMARY KEY, count INTEGER, max_read INTEGER);");
             sQLiteDatabase2.executeFast("PRAGMA user_version = 119").stepThis().dispose();
-            qrVar.getMessagesController().P1().q();
-            i12 = hs.E1;
+            yrVar.getMessagesController().P1().q();
+            i12 = qs.E1;
         }
         if (i12 == 119) {
             k5.u(sQLiteDatabase2, "ALTER TABLE messages_v2 ADD COLUMN reply_to_story_id INTEGER default 0", "ALTER TABLE messages_topics ADD COLUMN reply_to_story_id INTEGER default 0", "PRAGMA user_version = 120");
@@ -1015,31 +1015,31 @@ public abstract class l5 {
         }
         if (i12 == 120) {
             k5.u(sQLiteDatabase2, "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, PRIMARY KEY(dialog_id, story_id));", "CREATE TABLE archived_stories (story_id INTEGER PRIMARY KEY, data BLOB);", "PRAGMA user_version = 121");
-            i12 = hs.F1;
+            i12 = qs.F1;
         }
         if (i12 == 121) {
             k5.t(sQLiteDatabase2, "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB);", "PRAGMA user_version = 122");
-            i12 = hs.G1;
+            i12 = qs.G1;
         }
         if (i12 == 122) {
             k5.t(sQLiteDatabase2, "ALTER TABLE chat_settings_v2 ADD COLUMN participants_count INTEGER default 0", "PRAGMA user_version = 123");
-            i12 = hs.H1;
+            i12 = qs.H1;
         }
         if (i12 == 123) {
             k5.t(sQLiteDatabase2, "CREATE TABLE story_pushes (uid INTEGER PRIMARY KEY, minId INTEGER, maxId INTEGER, date INTEGER, localName TEXT);", "PRAGMA user_version = 124");
-            i12 = hs.I1;
+            i12 = qs.I1;
         }
         if (i12 == 124) {
             k5.u(sQLiteDatabase2, "DROP TABLE IF EXISTS story_pushes;", "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, PRIMARY KEY(uid, sid));", "PRAGMA user_version = 125");
-            i12 = hs.J1;
+            i12 = qs.J1;
         }
         if (i12 == 125) {
             k5.t(sQLiteDatabase2, "ALTER TABLE story_pushes ADD COLUMN flags INTEGER default 0", "PRAGMA user_version = 126");
-            i12 = hs.K1;
+            i12 = qs.K1;
         }
         if (i12 == 126) {
             k5.t(sQLiteDatabase2, "ALTER TABLE story_pushes ADD COLUMN expire_date INTEGER default 0", "PRAGMA user_version = 127");
-            i12 = hs.L1;
+            i12 = qs.L1;
         }
         if (i12 == 127) {
             k5.t(sQLiteDatabase2, "ALTER TABLE stories ADD COLUMN custom_params BLOB default NULL", "PRAGMA user_version = 128");
@@ -1047,19 +1047,19 @@ public abstract class l5 {
         }
         if (i12 == 128) {
             k5.t(sQLiteDatabase2, "ALTER TABLE story_drafts ADD COLUMN type INTEGER default 0", "PRAGMA user_version = 129");
-            i12 = hs.N1;
+            i12 = qs.N1;
         }
         if (i12 == 129) {
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS stickers_featured_emoji_index ON stickers_featured(emoji);", "PRAGMA user_version = 130");
-            i12 = hs.O1;
+            i12 = qs.O1;
         }
         if (i12 == 130) {
             k5.u(sQLiteDatabase2, "DROP TABLE archived_stories", "ALTER TABLE profile_stories ADD COLUMN type INTEGER default 0", "PRAGMA user_version = 131");
-            i12 = hs.P1;
+            i12 = qs.P1;
         }
         if (i12 == 131) {
             k5.u(sQLiteDatabase2, "ALTER TABLE stories DROP COLUMN local_path", "ALTER TABLE stories DROP COLUMN local_thumb_path", "PRAGMA user_version = 132");
-            i12 = hs.Q1;
+            i12 = qs.Q1;
         }
         if (i12 == 132) {
             k5.t(sQLiteDatabase2, "CREATE TABLE unconfirmed_auth (data BLOB);", "PRAGMA user_version = 133");
@@ -1071,196 +1071,196 @@ public abstract class l5 {
         }
         if (i12 == 134) {
             k5.v(sQLiteDatabase2, "DROP TABLE user_photos", "CREATE TABLE dialog_photos(uid INTEGER, id INTEGER, num INTEGER, data BLOB, PRIMARY KEY (uid, id))", "CREATE TABLE dialog_photos_count(uid INTEGER PRIMARY KEY, count INTEGER)", "PRAGMA user_version = 135");
-            i12 = hs.R1;
+            i12 = qs.R1;
         }
         if (i12 == 135) {
             t0.m();
             sQLiteDatabase2.executeFast("CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER);").stepThis().dispose();
             sQLiteDatabase2.executeFast("CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);").stepThis().dispose();
             sQLiteDatabase2.executeFast("PRAGMA user_version = 136").stepThis().dispose();
-            i12 = hs.S1;
+            i12 = qs.S1;
         }
         if (i12 == 136) {
             k5.v(sQLiteDatabase2, "CREATE TABLE saved_dialogs(did INTEGER PRIMARY KEY, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER)", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);");
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "PRAGMA user_version = 137");
-            i12 = hs.T1;
+            i12 = qs.T1;
         }
         if (i12 == 137) {
             k5.t(sQLiteDatabase2, "ALTER TABLE unread_push_messages ADD COLUMN is_reaction INTEGER default 0", "PRAGMA user_version = 138");
-            i12 = hs.U1;
+            i12 = qs.U1;
         }
         if (i12 == 138 || i12 == 139 || i12 == 140 || i12 == 141) {
             k5.v(sQLiteDatabase2, "DROP TABLE IF EXISTS tag_message_id;", "CREATE TABLE tag_message_id(mid INTEGER, topic_id INTEGER, tag INTEGER, text TEXT);", "CREATE INDEX IF NOT EXISTS tag_idx_tag_message_id ON tag_message_id(tag);", "CREATE INDEX IF NOT EXISTS tag_text_idx_tag_message_id ON tag_message_id(tag, text COLLATE NOCASE);");
             k5.u(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS tag_topic_idx_tag_message_id ON tag_message_id(topic_id, tag);", "CREATE INDEX IF NOT EXISTS tag_topic_text_idx_tag_message_id ON tag_message_id(topic_id, tag, text COLLATE NOCASE);", "PRAGMA user_version = 142");
-            i12 = hs.Y1;
+            i12 = qs.Y1;
         }
         if (i12 == 142) {
             k5.u(sQLiteDatabase2, "DROP TABLE IF EXISTS saved_reaction_tags;", "CREATE TABLE saved_reaction_tags (topic_id INTEGER PRIMARY KEY, data BLOB);", "PRAGMA user_version = 143");
-            i12 = hs.Z1;
+            i12 = qs.Z1;
         }
         if (i12 == 143) {
             k5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN color INTEGER default -1", "PRAGMA user_version = 144");
-            i12 = hs.a2;
+            i12 = qs.a2;
         }
         if (i12 == 144) {
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 145");
-            i12 = hs.b2;
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 145");
+            i12 = qs.b2;
         }
         if (i12 == 145) {
             k5.t(sQLiteDatabase2, "CREATE TABLE business_replies(topic_id INTEGER PRIMARY KEY, name TEXT, order_value INTEGER);", "PRAGMA user_version = 146");
-            i12 = hs.c2;
+            i12 = qs.c2;
         }
         if (i12 == 146) {
             k5.v(sQLiteDatabase2, "CREATE TABLE quick_replies_messages(mid INTEGER, topic_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, topic_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_quick_replies_messages ON quick_replies_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS topic_date_idx_quick_replies_messages ON quick_replies_messages(topic_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_quick_replies_messages ON quick_replies_messages(mid, reply_to_message_id);");
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_quick_replies_messages ON quick_replies_messages(reply_to_message_id, mid);", "PRAGMA user_version = 147");
-            i12 = hs.d2;
+            i12 = qs.d2;
         }
         if (i12 == 147) {
             k5.t(sQLiteDatabase2, "ALTER TABLE business_replies ADD COLUMN count INTEGER default 0", "PRAGMA user_version = 148");
-            i12 = hs.e2;
+            i12 = qs.e2;
         }
         if (i12 == 148) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN edit_date INTEGER default 0", "PRAGMA user_version = 149");
-            i12 = hs.f2;
+            i12 = qs.f2;
         }
         if (i12 == 149) {
             k5.u(sQLiteDatabase2, "ALTER TABLE stickersets2 ADD COLUMN short_name TEXT;", "CREATE INDEX IF NOT EXISTS stickersets2_id_short_name ON stickersets2(id, short_name);", "PRAGMA user_version = 150");
-            i12 = hs.g2;
+            i12 = qs.g2;
         }
         if (i12 == 150) {
             k5.t(sQLiteDatabase2, "CREATE TABLE business_links(data BLOB, order_value INTEGER);", "PRAGMA user_version = 151");
-            i12 = hs.h2;
+            i12 = qs.h2;
         }
         if (i12 == 151) {
             k5.t(sQLiteDatabase2, "ALTER TABLE profile_stories ADD COLUMN seen INTEGER default 0;", "PRAGMA user_version = 152");
-            i12 = hs.i2;
+            i12 = qs.i2;
         }
         if (i12 == 152) {
             k5.t(sQLiteDatabase2, "ALTER TABLE profile_stories ADD COLUMN pin INTEGER default 0;", "PRAGMA user_version = 153");
-            i12 = hs.j2;
+            i12 = qs.j2;
         }
         if (i12 == 153) {
             k5.t(sQLiteDatabase2, "CREATE TABLE effects(data BLOB)", "PRAGMA user_version = 154");
-            i12 = hs.k2;
+            i12 = qs.k2;
         }
         if (i12 == 154) {
             k5.t(sQLiteDatabase2, "CREATE TABLE fact_checks(hash INTEGER PRIMARY KEY, data BLOB, expires INTEGER);", "PRAGMA user_version = 155");
-            i12 = hs.l2;
+            i12 = qs.l2;
         }
         if (i12 == 155) {
             k5.t(sQLiteDatabase2, "CREATE TABLE popular_bots(uid INTEGER PRIMARY KEY, time INTEGER, offset TEXT);", "PRAGMA user_version = 156");
-            i12 = hs.m2;
+            i12 = qs.m2;
         }
         if (i12 == 156 || i12 == 157) {
             k5.t(sQLiteDatabase2, "CREATE TABLE star_gifts2(id INTEGER PRIMARY KEY, data BLOB, hash INTEGER, time INTEGER);", "PRAGMA user_version = 158");
-            i12 = hs.o2;
+            i12 = qs.o2;
         }
         if (i12 == 158) {
             k5.u(sQLiteDatabase2, "DELETE FROM star_gifts2", "ALTER TABLE star_gifts2 ADD COLUMN pos INTEGER default 0;", "PRAGMA user_version = 159");
-            i12 = hs.p2;
+            i12 = qs.p2;
         }
         if (i12 == 159) {
             k5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN entities BLOB", "PRAGMA user_version = 160");
-            i12 = hs.q2;
+            i12 = qs.q2;
         }
         if (i12 == 160) {
             k5.t(sQLiteDatabase2, "ALTER TABLE dialog_filter ADD COLUMN noanimate INTEGER", "PRAGMA user_version = 161");
-            i12 = hs.r2;
+            i12 = qs.r2;
         }
         if (i12 == 161) {
             k5.u(sQLiteDatabase2, "DELETE FROM popular_bots", "ALTER TABLE popular_bots ADD COLUMN pos INTEGER", "PRAGMA user_version = 162");
-            i12 = hs.s2;
+            i12 = qs.s2;
         }
         if (i12 == 162) {
             k5.v(sQLiteDatabase2, "DROP TABLE saved_dialogs", "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "PRAGMA user_version = 163");
-            i12 = hs.t2;
+            i12 = qs.t2;
         }
         if (i12 == 163) {
             k5.v(sQLiteDatabase2, "DROP TABLE saved_dialogs", "CREATE TABLE saved_dialogs(did INTEGER, date INTEGER, last_mid INTEGER, pinned INTEGER, flags INTEGER, folder_id INTEGER, last_mid_group INTEGER, count INTEGER, forumChatId INTEGER, unread_count INTEGER, max_read_id INTEGER, read_outbox INTEGER, PRIMARY KEY (did, forumChatId))", "CREATE INDEX IF NOT EXISTS date_idx_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS last_mid_idx_dialogs ON saved_dialogs(last_mid);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS folder_id_idx_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS flags_idx_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS forum_idx_dialogs ON saved_dialogs(forumChatId);", "PRAGMA user_version = 164");
-            i12 = hs.u2;
+            i12 = qs.u2;
         }
         if (i12 == 164) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN nopaid_messages_exception INTEGER default 0;", "PRAGMA user_version = 165");
-            i12 = hs.v2;
+            i12 = qs.v2;
         }
         if (i12 == 165) {
             k5.u(sQLiteDatabase2, "CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));", "CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));", "PRAGMA user_version = 166");
-            i12 = hs.w2;
+            i12 = qs.w2;
         }
         if (i12 == 166) {
             k5.u(sQLiteDatabase2, "DROP TABLE profile_stories", "CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));", "PRAGMA user_version = 167");
-            i12 = hs.x2;
+            i12 = qs.x2;
         }
         if (i12 == 167) {
             k5.t(sQLiteDatabase2, "CREATE TABLE gift_themes (slug TEXT PRIMARY KEY, data BLOB);", "PRAGMA user_version = 168");
-            i12 = hs.y2;
+            i12 = qs.y2;
         }
         if (i12 == 168) {
             k5.t(sQLiteDatabase2, "ALTER TABLE dialogs ADD COLUMN unread_poll_votes INTEGER default 0", "PRAGMA user_version = 169");
-            i12 = hs.z2;
+            i12 = qs.z2;
         }
         if (i12 == 169) {
             k5.t(sQLiteDatabase2, "ALTER TABLE topics ADD COLUMN unread_poll_votes INTEGER default 0", "PRAGMA user_version = 170");
-            i12 = hs.A2;
+            i12 = qs.A2;
         }
         if (i12 == 170) {
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS poll_votes_mentions(message_id INTEGER, state INTEGER, dialog_id INTEGER, PRIMARY KEY(message_id, dialog_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_did ON poll_votes_mentions(dialog_id);", "CREATE TABLE IF NOT EXISTS poll_votes_mentions_topics(message_id INTEGER, state INTEGER, dialog_id INTEGER, topic_id INTEGER, PRIMARY KEY(message_id, dialog_id, topic_id))", "CREATE INDEX IF NOT EXISTS poll_votes_mentions_topics_did ON poll_votes_mentions_topics(dialog_id, topic_id);");
-            k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 171");
-            i12 = hs.B2;
+            jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 171");
+            i12 = qs.B2;
         }
         if (i12 == 171) {
             k5.u(sQLiteDatabase2, "DROP TABLE story_pushes", "CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, flags INTEGER, expire_date INTEGER, live INTEGER, PRIMARY KEY(uid, sid));", "PRAGMA user_version = 172");
-            i12 = hs.C2;
+            i12 = qs.C2;
         }
         if (i12 == 172) {
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_dialogs ON messages_holes(uid, end);", "CREATE INDEX IF NOT EXISTS uid_end_messages_holes_4_topics ON messages_holes_topics(uid, topic_id, end);", "CREATE INDEX IF NOT EXISTS date_idx_4_saved_dialogs ON saved_dialogs(date);", "CREATE INDEX IF NOT EXISTS date_idx_4_dialogs ON dialogs(date);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS last_mid_idx_4_saved_dialogs ON saved_dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS last_mid_idx_4_dialogs ON dialogs(last_mid);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_saved_dialogs ON saved_dialogs(folder_id);", "CREATE INDEX IF NOT EXISTS folder_id_idx_4_dialogs ON dialogs(folder_id);");
             k5.v(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS flags_idx_4_saved_dialogs ON saved_dialogs(flags);", "CREATE INDEX IF NOT EXISTS flags_idx_4_dialogs ON dialogs(flags);", "DROP INDEX IF EXISTS uid_end_messages_holes;", "DROP INDEX IF EXISTS date_idx_dialogs;");
             k5.v(sQLiteDatabase2, "DROP INDEX IF EXISTS last_mid_idx_dialogs;", "DROP INDEX IF EXISTS folder_id_idx_dialogs;", "DROP INDEX IF EXISTS flags_idx_dialogs;", "PRAGMA user_version = 173");
-            i12 = hs.D2;
+            i12 = qs.D2;
         }
         if (i12 == 173) {
             k5.t(sQLiteDatabase2, "CREATE TABLE web_browser_settings(data BLOB)", "PRAGMA user_version = 174");
-            i12 = hs.E2;
+            i12 = qs.E2;
         }
         if (i12 == 174) {
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS uid_type_date_mid_idx_media_v4 ON media_v4(uid, type, date DESC, mid DESC);", "PRAGMA user_version = 175");
-            i12 = hs.F2;
+            i12 = qs.F2;
         }
         if (i12 == 175) {
             k5.u(sQLiteDatabase2, "CREATE TABLE ephemeral_messages (id INTEGER, dialog_id INTEGER, topic_id INTEGER, date INTEGER, data BLOB, PRIMARY KEY(dialog_id, id));", "CREATE INDEX IF NOT EXISTS ephemeral_messages_date_idx ON ephemeral_messages(date);", "PRAGMA user_version = 176");
-            i12 = hs.G2;
+            i12 = qs.G2;
         }
         if (i12 == 176) {
             k5.v(sQLiteDatabase2, "CREATE TABLE welcome_messages(mid INTEGER, dialog_id INTEGER, send_state INTEGER, date INTEGER, data BLOB, ttl INTEGER, replydata BLOB, reply_to_message_id INTEGER, PRIMARY KEY(mid, dialog_id))", "CREATE INDEX IF NOT EXISTS send_state_idx_welcome_messages ON welcome_messages(mid, send_state, date);", "CREATE INDEX IF NOT EXISTS dialog_date_idx_welcome_messages ON welcome_messages(dialog_id, date);", "CREATE INDEX IF NOT EXISTS reply_to_idx_welcome_messages ON welcome_messages(mid, reply_to_message_id);");
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS idx_to_reply_welcome_messages ON welcome_messages(reply_to_message_id, mid);", "PRAGMA user_version = 177");
-            i12 = hs.H2;
+            i12 = qs.H2;
         }
         if (i12 == 177) {
             k5.t(sQLiteDatabase2, "CREATE INDEX IF NOT EXISTS media_v4_music_browse_idx ON media_v4(uid, date DESC, mid DESC) WHERE type = 4 AND mid > 0 AND uid != 0;", "PRAGMA user_version = 178");
-            i12 = hs.I2;
+            i12 = qs.I2;
         }
         if (i12 == 178) {
             k5.t(sQLiteDatabase2, "DELETE FROM downloading_documents", "PRAGMA user_version = 179");
-            i12 = hs.J2;
+            i12 = qs.J2;
         }
         if (i12 == 179) {
             k5.u(sQLiteDatabase2, "CREATE TABLE widget_state(uid INTEGER, mid INTEGER, local TEXT, PRIMARY KEY(uid, mid));", "CREATE TABLE widget_heights(uid INTEGER, mid INTEGER, width INTEGER, height INTEGER, date INTEGER, PRIMARY KEY(uid, mid, width));", "PRAGMA user_version = 180");
-            i12 = hs.K2;
+            i12 = qs.K2;
         }
         if (i12 != 180) {
             return i12;
         }
         if (b(sQLiteDatabase2, "widget_state", "height")) {
-            k2.p1.y(sQLiteDatabase2, "DROP TABLE widget_state");
+            jg.g.z(sQLiteDatabase2, "DROP TABLE widget_state");
         }
         k5.t(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS widget_state(uid INTEGER, mid INTEGER, local TEXT, PRIMARY KEY(uid, mid));", "CREATE TABLE IF NOT EXISTS widget_heights(uid INTEGER, mid INTEGER, width INTEGER, height INTEGER, date INTEGER, anchor INTEGER default 0, PRIMARY KEY(uid, mid, width));");
         if (!b(sQLiteDatabase2, "widget_heights", "anchor")) {
-            k2.p1.y(sQLiteDatabase2, "ALTER TABLE widget_heights ADD COLUMN anchor INTEGER default 0");
+            jg.g.z(sQLiteDatabase2, "ALTER TABLE widget_heights ADD COLUMN anchor INTEGER default 0");
         }
-        k2.p1.y(sQLiteDatabase2, "PRAGMA user_version = 181");
-        return hs.L2;
+        jg.g.z(sQLiteDatabase2, "PRAGMA user_version = 181");
+        return qs.L2;
     }
 }

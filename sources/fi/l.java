@@ -1,229 +1,184 @@
 package fi;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import ei.k6;
-import ei.r6;
-import ei.y6;
-import gi.f7;
-import java.util.ArrayList;
-import m.o3;
-import org.telegram.messenger.az;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.zi;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.n7;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.tj0;
-import org.telegram.ui.Components.tp0;
-import org.telegram.ui.Components.zi0;
-import u4.d1;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public class l extends zi0 {
-    public final Context c;
-    public r6 e;
-    public l f;
-    public o3 h;
-    public boolean r;
-    public final /* synthetic */ m s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList n = new ArrayList();
+public final class l extends Drawable {
+    public final Paint a;
+    public final Paint b;
+    public final k c;
+    public final k d;
+    public boolean e;
+    public final org.telegram.ui.Components.w5 f;
+    public final Path g;
+    public final int h;
+    public float i;
+    public float j;
+    public float k;
+    public int l;
+    public boolean m;
+    public float n;
+    public float o;
 
-    public l(m mVar, Context context) {
-        this.s = mVar;
-        this.c = context;
-        M();
+    public l(int i7) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        k kVar = new k(this, 0);
+        this.c = kVar;
+        k kVar2 = new k(this, 1);
+        this.d = kVar2;
+        this.e = false;
+        di.s7 s7Var = new di.s7(this, 13);
+        xq xqVar = xq.h;
+        this.f = new org.telegram.ui.Components.w5(s7Var, 350L, xqVar, 0);
+        this.g = new Path();
+        this.i = 21.0f;
+        this.h = i7;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.66f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        kVar.n(0.3f, 250L, xqVar);
+        kVar.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        kVar.w(org.telegram.messenger.g0.N(12.0f));
+        kVar.b = 17;
+        kVar2.n(0.3f, 250L, xqVar);
+        kVar2.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        kVar2.w(org.telegram.messenger.g0.N(12.0f));
+        kVar2.b = 17;
+        e(-1, -15033089, -1);
     }
 
-    @Override // org.telegram.ui.Components.sj0
-    public final boolean D(d1 d1Var) {
-        return false;
+    public final void a(Canvas canvas, float f10) {
+        float N = org.telegram.messenger.g0.N(this.i) / 2.0f;
+        float d = this.f.d(this.e);
+        if (d > 0.0f) {
+            Paint paint = this.b;
+            paint.setAlpha((int) (f10 * 255.0f * d));
+            canvas.drawCircle(this.n, this.o, org.telegram.messenger.g0.N(11.33f) * d, paint);
+        }
+        Paint paint2 = this.a;
+        paint2.setAlpha((int) ((1.0f - d) * Color.alpha(this.l) * f10));
+        RectF rectF = org.telegram.messenger.g0.P;
+        float f11 = this.n;
+        float f12 = this.o;
+        rectF.set(f11 - N, f12 - N, f11 + N, f12 + N);
+        canvas.drawArc(rectF, 90.0f, 180.0f, false, paint2);
+        int i7 = this.h;
+        float f13 = ((i7 + 1) * 1.5f) + (i7 * 1.0f);
+        float f14 = (1.0f / f13) * 180.0f;
+        float f15 = (1.5f / f13) * 180.0f;
+        int i10 = 0;
+        float f16 = f15;
+        while (i10 < i7) {
+            float f17 = f14;
+            canvas.drawArc(org.telegram.messenger.g0.P, f16 + 270.0f, f17, false, paint2);
+            f16 = f17 + f15 + f16;
+            i10++;
+            f14 = f17;
+        }
+        canvas.save();
+        canvas.translate(this.j + 0.0f, this.k);
+        Rect rect = org.telegram.messenger.g0.Q;
+        rect.set((int) (this.n - org.telegram.messenger.g0.L(20.0f)), (int) (this.o - org.telegram.messenger.g0.L(20.0f)), (int) (this.n + org.telegram.messenger.g0.L(20.0f)), (int) (this.o + org.telegram.messenger.g0.L(20.0f)));
+        k kVar = this.c;
+        kVar.setBounds(rect);
+        kVar.B = (int) (Color.alpha(this.l) * f10);
+        kVar.draw(canvas);
+        if (d > 0.0f) {
+            Path path = this.g;
+            path.rewind();
+            path.addCircle(this.n, this.o + org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.N(11.33f) * d, Path.Direction.CW);
+            canvas.clipPath(path);
+            k kVar2 = this.d;
+            kVar2.setBounds(rect);
+            kVar2.B = (int) (f10 * 255.0f);
+            kVar2.draw(canvas);
+        }
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.zi0
-    public final String F(int i3) {
-        zi ziVar;
-        TL_stories.StoryItem storyItem;
-        r6 r6Var = this.e;
-        if (r6Var == null || i3 < 0 || i3 >= r6Var.i.size() || (ziVar = (zi) this.e.i.get(i3)) == null || (storyItem = ziVar.l) == null) {
-            return null;
-        }
-        return bd.e0(storyItem.date, true);
-    }
-
-    @Override // org.telegram.ui.Components.zi0
-    public final void G(tj0 tj0Var, float f10, int[] iArr) {
-        int measuredHeight = tj0Var.getChildAt(0).getMeasuredHeight();
-        l lVar = this.f;
-        m mVar = this.s;
-        int i3 = this == lVar ? mVar.e : mVar.d;
-        int ceil = (int) (Math.ceil(b() / i3) * measuredHeight);
-        int measuredHeight2 = tj0Var.getMeasuredHeight() - tj0Var.getPaddingTop();
-        if (measuredHeight == 0) {
-            iArr[1] = 0;
-            iArr[0] = 0;
-        } else {
-            float f11 = f10 * (ceil - measuredHeight2);
-            iArr[0] = ((int) (f11 / measuredHeight)) * i3;
-            iArr[1] = ((int) f11) % measuredHeight;
-        }
-    }
-
-    public final boolean L(int i3) {
-        tp0 tp0Var = this.s.a0;
-        r6 r6Var = this.e;
-        if (r6Var == null) {
-            return false;
-        }
-        if (r6Var instanceof k6) {
-            TLRPC.User a22 = hp.s1(tp0Var.b).a2(Long.valueOf(tp0Var.d));
-            return a22 != null && a22.bot && a22.bot_has_main_app && a22.bot_can_edit;
-        }
-        if (i3 < 0 || i3 >= r6Var.i.size()) {
-            return false;
-        }
-        return this.e.m(((zi) this.e.i.get(i3)).f1());
-    }
-
-    public final void M() {
-        if (this.e == null) {
-            return;
-        }
-        m mVar = this.s;
-        if ((!mVar.J || (mVar.I && b() > 1)) && b() > 0) {
-            if (b() < 5) {
-                int max = Math.max(1, b());
-                mVar.d = max;
-                mVar.I = max == 1;
-            } else if (mVar.I || mVar.d == 1) {
-                mVar.I = false;
-                mVar.d = Math.max(2, az.u1);
-            }
-            mVar.h.y1(mVar.d);
-            mVar.J = true;
-        }
-    }
-
-    @Override // u4.h0
-    public final int b() {
-        if (this.e == null) {
-            return 0;
-        }
-        return this.e.g() + this.d.size();
-    }
-
-    @Override // u4.h0
-    public final int d(int i3) {
-        return 19;
-    }
-
-    @Override // u4.h0
-    public final int e() {
-        return b();
-    }
-
-    @Override // u4.h0
-    public void f() {
-        r6 r6Var = this.e;
-        boolean z10 = r6Var instanceof k6;
-        m mVar = this.s;
-        if (z10) {
-            k6 k6Var = (k6) r6Var;
-            ArrayList arrayList = this.d;
-            arrayList.clear();
-            ArrayList F = hp.s1(this.e.c).P1().F(mVar.a0.d);
-            if (F != null) {
-                for (int i3 = 0; i3 < F.size(); i3++) {
-                    y6 y6Var = (y6) F.get(i3);
-                    f7 f7Var = y6Var.c;
-                    if (f7Var != null && !f7Var.g && TextUtils.equals(f7Var.K0, k6Var.E)) {
-                        arrayList.add(y6Var);
-                    }
-                }
-            }
-        }
-        super.f();
-        l lVar = this.f;
-        if (lVar != null) {
-            lVar.f();
-        }
-        if (this != mVar.x) {
-            M();
-            mVar.c();
+    public final void b(boolean z9) {
+        if (this.m != z9) {
+            this.m = z9;
+            this.a.setXfermode(z9 ? new PorterDuffXfermode(PorterDuff.Mode.CLEAR) : null);
+            this.c.a.setXfermode(z9 ? new PorterDuffXfermode(PorterDuff.Mode.CLEAR) : null);
         }
     }
 
-    @Override // u4.h0
-    public final void t(d1 d1Var, int i3) {
-        if (this.e == null) {
-            return;
-        }
-        View view = d1Var.a;
-        if (view instanceof n7) {
-            n7 n7Var = (n7) view;
-            n7Var.e0 = true;
-            m mVar = this.s;
-            ArrayList arrayList = this.d;
-            if (i3 >= 0 && i3 < arrayList.size()) {
-                y6 y6Var = (y6) arrayList.get(i3);
-                n7Var.g0 = false;
-                if (y6Var.L == null) {
-                    TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
-                    long j10 = y6Var.a;
-                    int i10 = (int) (j10 ^ (j10 >>> 32));
-                    tL_storyItem.messageId = i10;
-                    tL_storyItem.id = i10;
-                    tL_storyItem.attachPath = y6Var.f;
-                    k kVar = new k(this.e.c, tL_storyItem);
-                    y6Var.L = kVar;
-                    kVar.m = y6Var;
-                }
-                n7Var.k(y6Var.L, this == this.f ? mVar.e : mVar.d, false);
-                n7Var.e0 = true;
-                n7Var.setReorder(false);
-                n7Var.i(false, false);
-                return;
-            }
-            int size = i3 - arrayList.size();
-            if (size < 0 || size >= this.e.i.size()) {
-                n7Var.g0 = false;
-                n7Var.k(null, this == this.f ? mVar.e : mVar.d, false);
-                n7Var.e0 = true;
-                return;
-            }
-            zi ziVar = (zi) this.e.i.get(size);
-            n7Var.g0 = ziVar != null && this.e.m(ziVar.f1());
-            n7Var.setReorder(true);
-            n7Var.k(ziVar, this == this.f ? mVar.e : mVar.d, false);
-            tp0 tp0Var = mVar.a0;
-            if (!tp0Var.H.F1 || ziVar == null) {
-                n7Var.i(false, false);
-            } else {
-                n7Var.i(tp0Var.c(ziVar), true);
-            }
-        }
+    public final void c(float f10) {
+        this.d.w(org.telegram.messenger.g0.N(f10));
+        this.c.w(org.telegram.messenger.g0.N(f10));
     }
 
-    @Override // u4.h0
-    public final d1 x(ViewGroup viewGroup, int i3) {
-        tp0 tp0Var = this.s.a0;
-        if (this.h == null) {
-            this.h = new o3(viewGroup.getContext(), tp0Var.c);
+    public final void d(int i7, boolean z9, boolean z10) {
+        this.c.t("" + i7, z10, true);
+        this.d.t("" + i7, z10, true);
+        this.e = z9;
+        if (!z10) {
+            this.f.f(z9, true);
         }
-        n7 n7Var = new n7(this.c, this.h, tp0Var.b);
-        n7Var.x0 = true;
-        n7Var.setGradientView(null);
-        n7Var.e0 = true;
-        return new bj0(n7Var);
+        invalidateSelf();
     }
 
-    @Override // org.telegram.ui.Components.zi0
-    public final void I() {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        a(canvas, 1.0f);
+    }
+
+    public final void e(int i7, int i10, int i11) {
+        this.l = i7;
+        this.a.setColor(i7);
+        this.c.u(i7);
+        this.d.u(i11);
+        this.b.setColor(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        this.n = getBounds().centerX();
+        this.o = getBounds().centerY();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i7, int i10, int i11, int i12) {
+        super.setBounds(i7, i10, i11, i12);
+        this.n = getBounds().centerX();
+        this.o = getBounds().centerY();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

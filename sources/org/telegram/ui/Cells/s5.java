@@ -5,19 +5,19 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.gd0;
+import org.telegram.ui.Components.hd0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public cd0 c;
+    public hd0 c;
     public AnimatorSet d;
-    public mi.b0 e;
+    public m.f3 e;
 
-    public final void a(String str, int i3, float f10) {
+    public final void a(String str, int i7, float f10) {
         TextView textView = this.a;
         TextView textView2 = this.b;
         AnimatorSet animatorSet = this.d;
@@ -35,19 +35,19 @@ public final class s5 extends FrameLayout {
         }
         textView2.setAlpha(0.0f);
         textView.setAlpha(1.0f);
-        cd0 cd0Var = this.c;
-        cd0Var.h = i3;
-        cd0Var.n = 100;
-        cd0Var.a((int) f10, false);
+        hd0 hd0Var = this.c;
+        hd0Var.h = i7;
+        hd0Var.n = 100;
+        hd0Var.a((int) f10, false);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(40.0f), TLObject.FLAG_30));
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(40.0f), TLObject.FLAG_30));
     }
 
-    public void setSeekBarDelegate(bd0 bd0Var) {
-        this.c.setDelegate(new d9(this, bd0Var));
+    public void setSeekBarDelegate(gd0 gd0Var) {
+        this.c.setDelegate(new e9(this, gd0Var));
     }
 
     @Override // android.view.View

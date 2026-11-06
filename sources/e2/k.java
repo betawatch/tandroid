@@ -1,15 +1,24 @@
 package e2;
 
-import b8.zb;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class k {
-    public static final k b = new k(0);
-    public final long a;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final byte[] a;
+    public final h b = new h(this);
+    public i c;
+    public j d;
 
-    public k(long j10) {
-        zb.f(j10 >= 0);
-        this.a = j10;
+    static {
+        String str = h2.m0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
+    }
+
+    public k(byte[] bArr) {
+        this.a = bArr;
     }
 }

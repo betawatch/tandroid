@@ -5,9 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import k2.p1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d0 extends k implements SubMenu {
     public final m A;
@@ -42,11 +41,11 @@ public final class d0 extends k implements SubMenu {
     @Override // l.k
     public final String j() {
         m mVar = this.A;
-        int i3 = mVar != null ? mVar.a : 0;
-        if (i3 == 0) {
+        int i7 = mVar != null ? mVar.a : 0;
+        if (i7 == 0) {
             return null;
         }
-        return p1.i(i3, "android:menu:actionviewstates:");
+        return jg.g.j(i7, "android:menu:actionviewstates:");
     }
 
     @Override // l.k
@@ -70,8 +69,8 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setGroupDividerEnabled(boolean z10) {
-        this.z.setGroupDividerEnabled(z10);
+    public final void setGroupDividerEnabled(boolean z9) {
+        this.z.setGroupDividerEnabled(z9);
     }
 
     @Override // android.view.SubMenu
@@ -99,25 +98,25 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // l.k, android.view.Menu
-    public final void setQwertyMode(boolean z10) {
-        this.z.setQwertyMode(z10);
+    public final void setQwertyMode(boolean z9) {
+        this.z.setQwertyMode(z9);
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setHeaderIcon(int i3) {
-        u(0, null, i3, null, null);
+    public final SubMenu setHeaderIcon(int i7) {
+        u(0, null, i7, null, null);
         return this;
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setHeaderTitle(int i3) {
-        u(i3, null, 0, null, null);
+    public final SubMenu setHeaderTitle(int i7) {
+        u(i7, null, 0, null, null);
         return this;
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setIcon(int i3) {
-        this.A.setIcon(i3);
+    public final SubMenu setIcon(int i7) {
+        this.A.setIcon(i7);
         return this;
     }
 }

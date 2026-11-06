@@ -11,7 +11,7 @@ public enum TextStyle {
 
     public final int a;
 
-    TextStyle(int i3) {
-        this.a = i3;
+    TextStyle(int i7) {
+        this.a = i7;
     }
 }

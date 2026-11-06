@@ -11,9 +11,9 @@ public final class c0 {
         this.b = 0;
     }
 
-    public c0(int i3) {
+    public c0(int i7) {
         this.a = true;
-        this.b = i3;
+        this.b = i7;
     }
 
     public final boolean equals(Object obj) {
@@ -24,9 +24,9 @@ public final class c0 {
             return false;
         }
         c0 c0Var = (c0) obj;
-        boolean z10 = c0Var.a;
-        boolean z11 = this.a;
-        return (z11 && z10) ? this.b == c0Var.b : z11 == z10;
+        boolean z9 = c0Var.a;
+        boolean z10 = this.a;
+        return (z10 && z9) ? this.b == c0Var.b : z10 == z9;
     }
 
     public final int hashCode() {

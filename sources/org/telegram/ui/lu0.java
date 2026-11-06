@@ -1,23 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import j$.util.function.Consumer$-CC;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class lu0 extends org.telegram.ui.Components.oo0 {
-    public final /* synthetic */ mu0 S2;
+public final /* synthetic */ class lu0 implements Consumer {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lu0(mu0 mu0Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.S2 = mu0Var;
+    public /* synthetic */ lu0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.oo0
-    public final void R0(a0.h hVar, int i3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            org.telegram.messenger.g0.i3(new hk0(this, hVar, i3, 28), 250L);
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        ProfileActivity profileActivity = this.a;
+        HashSet hashSet = profileActivity.h5;
+        ArrayList arrayList = new ArrayList((HashSet) obj);
+        int i7 = 0;
+        while (i7 < arrayList.size()) {
+            if (profileActivity.getMessagesController().q7.f(profileActivity.e1, ((Integer) arrayList.get(i7)).intValue()) == null) {
+                arrayList.remove(i7);
+                i7--;
+            }
+            i7++;
         }
+        hashSet.clear();
+        hashSet.addAll(arrayList);
+        profileActivity.F5(true);
+    }
+
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

@@ -1,222 +1,100 @@
 package org.telegram.messenger;
 
-import android.graphics.SurfaceTexture;
 import java.util.ArrayList;
-import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.xs0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class fe implements k51 {
+public final /* synthetic */ class fe implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ zi c;
-    public final /* synthetic */ MediaController d;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ls d;
 
-    public /* synthetic */ fe(MediaController mediaController, int i3, zi ziVar, int i10) {
-        this.a = i10;
-        this.d = mediaController;
-        this.b = i3;
-        this.c = ziVar;
+    public /* synthetic */ fe(ls lsVar, int i7, int i10, int i11) {
+        this.a = i11;
+        this.d = lsVar;
+        this.b = i7;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.k51
-    public final void onError(m51 m51Var, Exception exc) {
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = this.a;
+        ls lsVar = this.d;
+        switch (i7) {
             case 0:
+                String[] strArr = MediaController.V1;
+                g0.h3(new hi.j4(this.b, this.c, 7, (MediaController) lsVar, tLObject, tL_error));
                 break;
-            default:
-                a8.g(exc, true);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final /* synthetic */ void onRenderedFirstFrame(l2.a aVar) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final /* synthetic */ void onSeekFinished(l2.a aVar) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final /* synthetic */ void onSeekStarted(l2.a aVar) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final void onStateChanged(boolean z10, int i3) {
-        int i10 = this.a;
-        int i11 = this.b;
-        switch (i10) {
-            case 0:
-                MediaController mediaController = this.d;
-                ArrayList arrayList = mediaController.S0;
-                if (i11 == mediaController.n0) {
-                    zi ziVar = this.c;
-                    if (i3 == 4 || ((i3 == 1 || i3 == 2) && z10 && ziVar.b0 >= 0.999f)) {
-                        ziVar.b0 = 1.0f;
-                        hs.f(ziVar.I1).k(hs.e2, Integer.valueOf(ziVar.f1()), 0);
-                        if (!mediaController.a0()) {
-                            if (arrayList.isEmpty() || (arrayList.size() <= 1 && zi.S4(ziVar.k))) {
-                                mediaController.q(true, mediaController.F(), zi.S4(ziVar.k), false);
-                            } else {
-                                mediaController.U(true);
+            case 1:
+                qp qpVar = (qp) lsVar;
+                LongSparseIntArray longSparseIntArray = qpVar.Y0;
+                int i10 = 0;
+                if (tL_error == null) {
+                    TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) tLObject;
+                    if (updates_difference instanceof TLRPC.TL_updates_differenceTooLong) {
+                        g0.h3(new l2.a0(qpVar, updates_difference, this.b, this.c, 4));
+                        break;
+                    } else {
+                        if (updates_difference instanceof TLRPC.TL_updates_differenceSlice) {
+                            TLRPC.TL_updates_state tL_updates_state = updates_difference.intermediate_state;
+                            qpVar.Y0(tL_updates_state.pts, tL_updates_state.date, tL_updates_state.qts, true);
+                        }
+                        a0.h hVar = new a0.h();
+                        a0.h hVar2 = new a0.h();
+                        for (int i11 = 0; i11 < updates_difference.users.size(); i11++) {
+                            TLRPC.User user = updates_difference.users.get(i11);
+                            hVar.k(user, user.id);
+                        }
+                        for (int i12 = 0; i12 < updates_difference.chats.size(); i12++) {
+                            TLRPC.Chat chat = updates_difference.chats.get(i12);
+                            hVar2.k(chat, chat.id);
+                        }
+                        ArrayList arrayList = new ArrayList();
+                        if (!updates_difference.other_updates.isEmpty()) {
+                            while (i10 < updates_difference.other_updates.size()) {
+                                TLRPC.Update update = updates_difference.other_updates.get(i10);
+                                if (update instanceof TL_update.TL_updateMessageID) {
+                                    arrayList.add((TL_update.TL_updateMessageID) update);
+                                    updates_difference.other_updates.remove(i10);
+                                } else {
+                                    if (qp.Y1(update) == 2) {
+                                        long V1 = qp.V1(update);
+                                        int i13 = longSparseIntArray.get(V1);
+                                        if (i13 == 0 && (i13 = qpVar.getMessagesStorage().N(V1)) != 0) {
+                                            longSparseIntArray.put(V1, i13);
+                                        }
+                                        if (i13 != 0 && qp.W1(update) <= i13) {
+                                            updates_difference.other_updates.remove(i10);
+                                        }
+                                    }
+                                    i10++;
+                                }
+                                i10--;
+                                i10++;
                             }
                         }
-                    } else {
-                        if (mediaController.j0 != null && mediaController.u0 != 0.0f && (i3 == 3 || i3 == 1)) {
-                            mediaController.j0.q0((int) (r10.U() * mediaController.u0), false);
-                            mediaController.u0 = 0.0f;
-                        }
-                    }
-                    if (mediaController.j0 != null && d1.f.u()) {
-                        mediaController.j0.t0(true);
+                        g0.h3(new hi(26, qpVar, updates_difference));
+                        qpVar.getMessagesStorage().a.c(new mn(qpVar, updates_difference, arrayList, hVar, hVar2, 10));
                         break;
                     }
-                }
-                break;
-            default:
-                MediaController mediaController2 = this.d;
-                if (i11 == mediaController2.n0) {
-                    MediaController.f(mediaController2, this.c, null, true, z10, i3);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                return false;
-            default:
-                MediaController mediaController = this.d;
-                if (mediaController.F0 == null) {
-                    return false;
-                }
-                int i3 = mediaController.J0;
-                if (i3 == 2) {
-                    org.telegram.ui.l4 l4Var = mediaController.M0;
-                    if (l4Var != null) {
-                        if (mediaController.N0) {
-                            l4Var.setDrawingReady(true);
-                        }
-                        if (mediaController.M0.getParent() == null) {
-                            mediaController.O0.addView(mediaController.M0);
-                        }
-                        if (mediaController.H0.getSurfaceTexture() != surfaceTexture) {
-                            mediaController.H0.setSurfaceTexture(surfaceTexture);
-                        }
-                        mediaController.F0.A0(mediaController.H0);
-                    }
-                    mediaController.J0 = 0;
-                } else if (i3 == 1) {
-                    if (mediaController.K0 != null) {
-                        if (mediaController.I0 == null) {
-                            try {
-                                PipRoundVideoView pipRoundVideoView = new PipRoundVideoView();
-                                mediaController.I0 = pipRoundVideoView;
-                                pipRoundVideoView.d(mediaController.K0, new a(this, 15));
-                            } catch (Exception unused) {
-                                mediaController.I0 = null;
-                            }
-                        }
-                        PipRoundVideoView pipRoundVideoView2 = mediaController.I0;
-                        if (pipRoundVideoView2 != null) {
-                            if (pipRoundVideoView2.c.getSurfaceTexture() != surfaceTexture) {
-                                mediaController.I0.c.setSurfaceTexture(surfaceTexture);
-                            }
-                            mediaController.F0.A0(mediaController.I0.c);
-                        }
-                    }
-                    mediaController.J0 = 0;
                 } else {
-                    if (!PhotoViewer.F1() || PhotoViewer.v1().T2 == null) {
-                        return false;
-                    }
-                    PhotoViewer.v1().U2 = surfaceTexture;
-                }
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final void onVideoSizeChanged(int i3, int i10, int i11, float f10) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                float f11 = i10 == 0 ? 1.0f : (i3 * f10) / i10;
-                MediaController mediaController = this.d;
-                mediaController.P0 = f11;
-                org.telegram.ui.l4 l4Var = mediaController.M0;
-                if (l4Var != null) {
-                    l4Var.a(f11, 0);
+                    qpVar.f2 = false;
+                    qpVar.getConnectionsManager().setIsUpdating(false);
+                    a8.b("received: isUpdating = false");
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k51
-    public final void onRenderedFirstFrame() {
-        switch (this.a) {
-            case 0:
-                break;
             default:
-                MediaController mediaController = this.d;
-                org.telegram.ui.l4 l4Var = mediaController.M0;
-                if (l4Var != null && !l4Var.d) {
-                    mediaController.N0 = true;
-                    l4Var.setDrawingReady(true);
-                    mediaController.O0.setTag(1);
-                    break;
-                }
+                g0.h3(new xo0((xs0) lsVar, tL_error, this.b, this.c, tLObject, 0));
                 break;
         }
-    }
-
-    private final void b() {
-    }
-
-    private final /* synthetic */ void c(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void d(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void e(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void f(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void g(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void h(l2.a aVar) {
-    }
-
-    private final /* synthetic */ void i(SurfaceTexture surfaceTexture) {
-    }
-
-    private final /* synthetic */ void j(SurfaceTexture surfaceTexture) {
-    }
-
-    private final void a(m51 m51Var, Exception exc) {
-    }
-
-    private final void k(int i3, int i10, float f10, int i11) {
     }
 }

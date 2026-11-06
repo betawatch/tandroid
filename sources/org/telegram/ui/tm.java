@@ -1,20 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class tm extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.la0 a;
+public final /* synthetic */ class tm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ym b;
 
-    public tm(org.telegram.ui.Components.la0 la0Var) {
-        this.a = la0Var;
+    public /* synthetic */ tm(ym ymVar, int i7) {
+        this.a = i7;
+        this.b = ymVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.r(1.0f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.q4 q4Var;
+        org.telegram.ui.ActionBar.q4 q4Var2;
+        switch (this.a) {
+            case 0:
+                SparseIntArray sparseIntArray = new SparseIntArray();
+                ym ymVar = this.b;
+                ymVar.e = sparseIntArray;
+                an anVar = ymVar.G;
+                org.telegram.ui.ActionBar.t4 t4Var = (org.telegram.ui.ActionBar.t4) anVar.getThemedDrawable("drawableMsgOut");
+                ymVar.t = t4Var;
+                q4Var = ((org.telegram.ui.ActionBar.f2) anVar).parentLayout;
+                t4Var.J = q4Var.getMessageDrawableOutStart();
+                org.telegram.ui.ActionBar.t4 t4Var2 = (org.telegram.ui.ActionBar.t4) anVar.getThemedDrawable("drawableMsgOutMedia");
+                ymVar.u = t4Var2;
+                q4Var2 = ((org.telegram.ui.ActionBar.f2) anVar).parentLayout;
+                t4Var2.J = q4Var2.getMessageDrawableOutMediaStart();
+                ymVar.t.K = 0.0f;
+                ymVar.u.K = 0.0f;
+                anVar.Yc();
+                ymVar.u(0.0f);
+                break;
+            default:
+                ym ymVar2 = this.b;
+                ymVar2.t.J = null;
+                ymVar2.u.J = null;
+                ymVar2.e = null;
+                ymVar2.u(1.0f);
+                break;
+        }
     }
 }

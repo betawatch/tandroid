@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ju implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class ju implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uw b;
+    public final /* synthetic */ ww b;
 
-    public /* synthetic */ ju(uw uwVar, int i3) {
-        this.a = i3;
-        this.b = uwVar;
+    public /* synthetic */ ju(ww wwVar, int i7) {
+        this.a = i7;
+        this.b = wwVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                uw uwVar = this.b;
-                if (uwVar.S3 != null) {
-                    uwVar.getMessagesController().k4(0L, uwVar.S3);
-                    uwVar.S3 = null;
-                    uwVar.X4();
-                    break;
-                }
+                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                this.b.n4(true);
-                break;
-            case 2:
-                this.b.n4(true);
+                ww wwVar = this.b;
+                wwVar.getClass();
+                wwVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                uw.l0(this.b);
+                ww wwVar2 = this.b;
+                wwVar2.getClass();
+                wwVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

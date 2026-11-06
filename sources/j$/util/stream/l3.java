@@ -27,24 +27,24 @@ public final class l3 extends p3 implements g5 {
         this.h = dArr;
     }
 
-    public l3(l3 l3Var, Spliterator spliterator, long j10, long j11) {
-        super(l3Var, spliterator, j10, j11, l3Var.h.length);
+    public l3(l3 l3Var, Spliterator spliterator, long j3, long j10) {
+        super(l3Var, spliterator, j3, j10, l3Var.h.length);
         this.h = l3Var.h;
     }
 
     @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j10, long j11) {
-        return new l3(this, spliterator, j10, j11);
+    public final p3 a(Spliterator spliterator, long j3, long j10) {
+        return new l3(this, spliterator, j3, j10);
     }
 
     @Override // j$.util.stream.p3, j$.util.stream.j5
     public final void accept(double d) {
-        int i3 = this.f;
-        if (i3 >= this.g) {
+        int i7 = this.f;
+        if (i7 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         double[] dArr = this.h;
-        this.f = i3 + 1;
-        dArr[i3] = d;
+        this.f = i7 + 1;
+        dArr[i7] = d;
     }
 }

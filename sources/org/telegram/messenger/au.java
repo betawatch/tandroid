@@ -1,145 +1,256 @@
 package org.telegram.messenger;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ReplacementSpan;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class au extends ReplacementSpan {
-    public final yt a;
-    public final TL_iv.textButton b;
-    public final RectF c = new RectF();
-    public float d;
-    public boolean e;
+public final class au extends View implements org.telegram.ui.Cells.h9 {
+    public boolean D;
+    public ds E;
+    public final int a;
+    public org.telegram.ui.ActionBar.f6 b;
+    public ij c;
+    public TL_iv.RichMessage d;
+    public kv e;
     public int f;
-    public View h;
+    public int h;
+    public int n;
+    public int r;
+    public boolean s;
+    public org.telegram.ui.Cells.i9 w;
+    public int x;
+    public int y;
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x004d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public au(cv cvVar, int i3, TL_iv.textButton textbutton, Boolean bool) {
-        boolean z10;
-        boolean z11;
-        this.b = textbutton;
-        TL_iv.RichText richText = textbutton.text;
-        if (richText instanceof TL_iv.textConcat) {
-            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
-            if (!textconcat.texts.isEmpty()) {
-                boolean z12 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
-                z11 = k2.p1.h(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
-                z10 = z12;
-                TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
-                boolean z13 = richButtonStyle == null && richButtonStyle.link;
-                SpannableStringBuilder l10 = cvVar.l(textbutton.text, !z13 ? cv.R(512, 0) : cv.R(16, 13));
-                TL_keyboard.InlineButtonType inlineButtonType = textbutton.type;
-                yt ytVar = new yt(cvVar, i3, l10, null, inlineButtonType, textbutton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new vs(this, 6));
-                this.a = ytVar;
-                ytVar.e = ytVar.h();
-            }
-        }
-        z10 = false;
-        z11 = false;
-        TL_keyboard.RichButtonStyle richButtonStyle2 = textbutton.style;
-        if (richButtonStyle2 == null) {
-        }
-        SpannableStringBuilder l102 = cvVar.l(textbutton.text, !z13 ? cv.R(512, 0) : cv.R(16, 13));
-        TL_keyboard.InlineButtonType inlineButtonType2 = textbutton.type;
-        yt ytVar2 = new yt(cvVar, i3, l102, null, inlineButtonType2, textbutton.style, inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new vs(this, 6));
-        this.a = ytVar2;
-        ytVar2.e = ytVar2.h();
+    public au(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.x = -1;
+        this.y = -1;
+        this.D = true;
+        this.a = i7;
+        this.b = f6Var;
+        qs.i(this);
     }
 
-    public final void a(View view) {
-        this.h = view;
-        this.a.a.i(view);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float f11;
-        yt ytVar = this.a;
-        int i14 = ytVar.a.s;
-        int i15 = (i14 <= 0 || this.f <= 0) ? 0 : 1;
-        if (i15 == 0 && i14 > 0 && (charSequence instanceof Spanned)) {
-            yu[] yuVarArr = (yu[]) ((Spanned) charSequence).getSpans(i3, i10, yu.class);
-            int length = yuVarArr.length;
-            int i16 = 0;
-            while (true) {
-                if (i16 >= length) {
-                    break;
-                }
-                if ((yuVarArr[i16].b & 15) == 14) {
-                    i15 = 1;
-                    break;
-                }
-                i16++;
+    @Override // org.telegram.ui.Cells.h9
+    public final void k(ArrayList arrayList) {
+        if (this.e != null) {
+            int i7 = this.f;
+            int i10 = this.h;
+            for (int i11 = 0; i11 < this.e.n.size(); i11++) {
+                arrayList.add(new li.b5((org.telegram.ui.Cells.t9) this.e.n.get(i11), i7, i10, 3));
             }
         }
-        if (i15 != 0) {
-            f11 = (i11 + i13) / 2.0f;
-        } else {
-            Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
-            f11 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2.0f) + i12;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        kv kvVar = this.e;
+        if (kvVar != null) {
+            kvVar.b(this);
+            this.e.b0(0);
         }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        kv kvVar = this.e;
+        if (kvVar != null) {
+            kvVar.f(this);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.e == null) {
+            return;
+        }
+        float height = (getHeight() - this.h) - this.r;
+        boolean z9 = this.e.t() > (getHeight() - this.h) - this.r;
         canvas.save();
-        int round = Math.round(f10 + (ytVar.s ? 0 : g0.L(1.0f)));
-        int ceil = (int) Math.ceil((f11 - (ytVar.c() / 2.0f)) + (i15 ^ 1));
-        float f12 = round;
-        float f13 = ceil;
-        this.c.set(f12, f13, round + ytVar.e, ytVar.c() + ceil);
-        canvas.translate(f12, f13);
-        ytVar.a(canvas);
+        if (z9) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), qs.e4, 31);
+        }
+        canvas.translate(this.f, this.h);
+        kv kvVar = this.e;
+        kvVar.S(this.f, Math.max(0, (getWidth() - this.e.C) - this.f));
+        kvVar.w.linkColor = org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Vc : org.telegram.ui.ActionBar.k6.Uc, kvVar.D);
+        kvVar.h(canvas, null, height > 0.0f, 0.0f, height);
+        if (this.e.C()) {
+            this.e.i(canvas, null);
+        }
+        if (z9) {
+            canvas.translate(-this.f, -this.h);
+            canvas.save();
+            RectF rectF = g0.P;
+            rectF.set(0.0f, getHeight() - g0.L(24.0f), getWidth(), getHeight());
+            this.e.z.m(canvas, rectF, 3, 1.0f);
+            canvas.restore();
+            canvas.restore();
+        }
         canvas.restore();
+        org.telegram.ui.Cells.i9 i9Var = this.w;
+        if (i9Var == null || !i9Var.x()) {
+            return;
+        }
+        int i7 = this.f;
+        int i10 = this.h;
+        for (int i11 = 0; i11 < this.e.n.size(); i11++) {
+            org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) this.e.n.get(i11);
+            canvas.save();
+            canvas.translate(t9Var.getX() + i7, t9Var.getY() + i10);
+            this.w.Z(canvas, this, i11);
+            canvas.restore();
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        boolean z10 = this.e && fontMetricsInt != null;
-        int i11 = z10 ? fontMetricsInt.top : 0;
-        int i12 = z10 ? fontMetricsInt.ascent : 0;
-        int i13 = z10 ? fontMetricsInt.descent : 0;
-        int i14 = z10 ? fontMetricsInt.bottom : 0;
-        int i15 = z10 ? fontMetricsInt.leading : 0;
-        int L = g0.L(8.0f);
-        int L2 = g0.L(10.0f);
-        yt ytVar = this.a;
-        if (fontMetricsInt != null && ytVar.s) {
-            float f10 = this.d;
-            int i16 = (int) (((-L2) - L) * f10);
-            fontMetricsInt.top = i16;
-            int i17 = (int) ((L2 - L) * f10);
-            fontMetricsInt.bottom = i17;
-            fontMetricsInt.ascent = i16;
-            fontMetricsInt.descent = i17;
-            fontMetricsInt.leading = 0;
-        }
-        if (z10) {
-            fontMetricsInt.top = i11;
-            fontMetricsInt.ascent = i12;
-            fontMetricsInt.descent = i13;
-            fontMetricsInt.bottom = i14;
-            fontMetricsInt.leading = i15;
-            int i18 = this.f;
-            int i19 = i13 - i12;
-            if (i18 > i19) {
-                int i20 = i18 - i19;
-                int i21 = (i20 + 1) / 2;
-                int i22 = i12 - i21;
-                fontMetricsInt.ascent = i22;
-                fontMetricsInt.descent = i13 + (i20 - i21);
-                fontMetricsInt.top = Math.min(i11, i22);
-                fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        TL_iv.RichMessage richMessage;
+        int size = View.MeasureSpec.getSize(i7);
+        int i11 = (size - this.f) - this.n;
+        if (i11 <= 0 || (richMessage = this.d) == null) {
+            this.e = null;
+        } else {
+            kv kvVar = this.e;
+            if (kvVar == null || kvVar.L(richMessage, i11)) {
+                kv kvVar2 = this.e;
+                if (kvVar2 != null) {
+                    kvVar2.f(this);
+                }
+                kv kvVar3 = new kv(this.c, i11, (kv) null);
+                this.e = kvVar3;
+                kvVar3.O = this.s;
+                kvVar3.D = this.b;
+                kvVar3.v = true;
+                kvVar3.c(null, null);
+                if (isAttachedToWindow()) {
+                    this.e.b(this);
+                    this.e.b0(0);
+                }
             }
         }
-        return ytVar.e + (ytVar.s ? 0 : g0.L(1.0f) * 2);
+        kv kvVar4 = this.e;
+        int t6 = (kvVar4 != null ? kvVar4.t() : 0) + this.h + this.r;
+        int i12 = this.y;
+        if (i12 > 0 && t6 > i12) {
+            t6 = i12;
+        }
+        int i13 = this.x;
+        if (i13 > 0 && t6 < i13) {
+            t6 = i13;
+        }
+        int mode = View.MeasureSpec.getMode(i10);
+        if (mode == Integer.MIN_VALUE) {
+            t6 = Math.min(t6, View.MeasureSpec.getSize(i10));
+        } else if (mode == 1073741824) {
+            t6 = View.MeasureSpec.getSize(i10);
+        }
+        setMeasuredDimension(size, t6);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ds dsVar;
+        if (!this.D) {
+            return super.onTouchEvent(motionEvent);
+        }
+        if (this.w != null) {
+            int action = motionEvent.getAction();
+            if (action == 0) {
+                this.w.k0(this, (int) motionEvent.getX(), (int) motionEvent.getY());
+                if (this.E == null) {
+                    this.E = new ds(this, 4);
+                }
+                removeCallbacks(this.E);
+                postDelayed(this.E, ViewConfiguration.getLongPressTimeout());
+            } else if ((action == 1 || action == 2 || action == 3) && (dsVar = this.E) != null) {
+                removeCallbacks(dsVar);
+            }
+        }
+        if (this.e != null) {
+            motionEvent.offsetLocation(-this.f, -this.h);
+            boolean M = this.e.M(motionEvent);
+            motionEvent.offsetLocation(this.f, this.h);
+            if (M) {
+                return true;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    public void set(TL_iv.RichMessage richMessage) {
+        if (this.d == richMessage) {
+            return;
+        }
+        this.d = richMessage;
+        if (this.c == null) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.out = true;
+            this.c = new ij(this.a, tL_message, false, false);
+        }
+        this.c.k.rich_message = richMessage;
+        kv kvVar = this.e;
+        if (kvVar != null) {
+            kvVar.f(this);
+        }
+        this.e = null;
+        requestLayout();
+        invalidate();
+    }
+
+    public void setAllowActions(boolean z9) {
+        this.D = z9;
+    }
+
+    public void setMaxHeight(int i7) {
+        this.y = i7;
+    }
+
+    public void setMinHeight(int i7) {
+        this.x = i7;
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i7, int i10, int i11, int i12) {
+        if (this.f == i7 && this.h == i10 && this.n == i11 && this.r == i12) {
+            return;
+        }
+        this.f = i7;
+        this.h = i10;
+        this.n = i11;
+        this.r = i12;
+        requestLayout();
+        invalidate();
+    }
+
+    public void setResourcesProvider(org.telegram.ui.ActionBar.f6 f6Var) {
+        this.b = f6Var;
+        kv kvVar = this.e;
+        if (kvVar != null) {
+            kvVar.D = f6Var;
+        }
+    }
+
+    public void setTextSelectionHelper(org.telegram.ui.Cells.i9 i9Var) {
+        this.w = i9Var;
+    }
+
+    public void setTranslationLoading(boolean z9) {
+        this.s = z9;
+        kv kvVar = this.e;
+        if (kvVar != null) {
+            kvVar.O = z9;
+        }
+        invalidate();
     }
 }

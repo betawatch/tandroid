@@ -1,98 +1,280 @@
 package k2;
 
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.text.TextUtils;
-import b8.zb;
+import a8.ia;
+import java.util.ArrayDeque;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class l extends d2.x0 {
-    public final int E;
-    public final w2.g0 F;
-    public final boolean G;
-    public final int s;
-    public final String w;
-    public final int x;
-    public final d2.v y;
+public abstract class l implements e {
+    public final k a;
+    public final h[] e;
+    public final j[] f;
+    public int g;
+    public int h;
+    public h i;
+    public f j;
+    public boolean k;
+    public boolean l;
+    public int m;
+    public final Object b = new Object();
+    public long n = -9223372036854775807L;
+    public final ArrayDeque c = new ArrayDeque();
+    public final ArrayDeque d = new ArrayDeque();
 
-    public l(int i3, Exception exc, int i10) {
-        this(i3, exc, i10, null, -1, null, 4, null, false);
+    public l(h[] hVarArr, j[] jVarArr) {
+        this.e = hVarArr;
+        this.g = hVarArr.length;
+        for (int i7 = 0; i7 < this.g; i7++) {
+            this.e[i7] = f();
+        }
+        this.f = jVarArr;
+        this.h = jVarArr.length;
+        for (int i10 = 0; i10 < this.h; i10++) {
+            this.f[i10] = g();
+        }
+        k kVar = new k(this);
+        this.a = kVar;
+        kVar.start();
     }
 
-    public final l a(w2.g0 g0Var) {
-        String message = getMessage();
-        String str = g2.n0.a;
-        return new l(message, getCause(), this.a, this.s, this.w, this.x, this.y, this.E, g0Var, this.b, this.G);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(String str, Throwable th2, int i3, int i10, String str2, int i11, d2.v vVar, int i12, w2.g0 g0Var, long j10, boolean z10) {
-        super(str, th2, i3, j10);
-        Bundle bundle = Bundle.EMPTY;
-        zb.f(!z10 || i10 == 1);
-        zb.f(th2 != null || i10 == 3);
-        this.s = i10;
-        this.w = str2;
-        this.x = i11;
-        this.y = vVar;
-        this.E = i12;
-        this.F = g0Var;
-        this.G = z10;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l(int i3, Throwable th2, int i10, String str, int i11, d2.v vVar, int i12, w2.g0 g0Var, boolean z10) {
-        this(TextUtils.isEmpty(null) ? r0 : t4.c.q(r0, ": null"), th2, i10, i3, r5, r6, r7, i12, g0Var, SystemClock.elapsedRealtime(), z10);
-        String str2;
-        int i13;
-        d2.v vVar2;
-        String str3;
-        String str4;
-        if (i3 == 0) {
-            str2 = str;
-            i13 = i11;
-            vVar2 = vVar;
-            str3 = "Source error";
-        } else if (i3 != 1) {
-            if (i3 != 3) {
-                str3 = "Unexpected runtime error";
-            } else {
-                str3 = "Remote error";
+    @Override // k2.e
+    public final void a(long j3) {
+        boolean z9;
+        synchronized (this.b) {
+            try {
+                if (this.g != this.e.length && !this.k) {
+                    z9 = false;
+                    ia.p(z9);
+                    this.n = j3;
+                }
+                z9 = true;
+                ia.p(z9);
+                this.n = j3;
+            } catch (Throwable th2) {
+                throw th2;
             }
-            str2 = str;
-            i13 = i11;
-            vVar2 = vVar;
-        } else {
-            StringBuilder sb2 = new StringBuilder();
-            str2 = str;
-            sb2.append(str2);
-            sb2.append(" error, index=");
-            i13 = i11;
-            sb2.append(i13);
-            sb2.append(", format=");
-            vVar2 = vVar;
-            sb2.append(vVar2);
-            sb2.append(", format_supported=");
-            String str5 = g2.n0.a;
-            if (i12 == 0) {
-                str4 = "NO";
-            } else if (i12 == 1) {
-                str4 = "NO_UNSUPPORTED_SUBTYPE";
-            } else if (i12 == 2) {
-                str4 = "NO_UNSUPPORTED_DRM";
-            } else if (i12 == 3) {
-                str4 = "NO_EXCEEDS_CAPABILITIES";
-            } else if (i12 == 4) {
-                str4 = "YES";
-            } else {
-                throw new IllegalStateException();
+        }
+    }
+
+    @Override // k2.e
+    public final Object d() {
+        h hVar;
+        synchronized (this.b) {
+            try {
+                f fVar = this.j;
+                if (fVar != null) {
+                    throw fVar;
+                }
+                ia.p(this.i == null);
+                int i7 = this.g;
+                if (i7 == 0) {
+                    hVar = null;
+                } else {
+                    h[] hVarArr = this.e;
+                    int i10 = i7 - 1;
+                    this.g = i10;
+                    hVar = hVarArr[i10];
+                }
+                this.i = hVar;
+            } catch (Throwable th2) {
+                throw th2;
             }
-            sb2.append(str4);
-            str3 = sb2.toString();
+        }
+        return hVar;
+    }
+
+    public abstract h f();
+
+    @Override // k2.e
+    public final void flush() {
+        synchronized (this.b) {
+            try {
+                this.k = true;
+                this.m = 0;
+                h hVar = this.i;
+                if (hVar != null) {
+                    hVar.clear();
+                    h[] hVarArr = this.e;
+                    int i7 = this.g;
+                    this.g = i7 + 1;
+                    hVarArr[i7] = hVar;
+                    this.i = null;
+                }
+                while (!this.c.isEmpty()) {
+                    h hVar2 = (h) this.c.removeFirst();
+                    hVar2.clear();
+                    h[] hVarArr2 = this.e;
+                    int i10 = this.g;
+                    this.g = i10 + 1;
+                    hVarArr2[i10] = hVar2;
+                }
+                while (!this.d.isEmpty()) {
+                    ((j) this.d.removeFirst()).release();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public abstract j g();
+
+    public abstract f h(Throwable th2);
+
+    public abstract f i(h hVar, j jVar, boolean z9);
+
+    public final boolean j() {
+        f h;
+        synchronized (this.b) {
+            while (!this.l) {
+                try {
+                    if (!this.c.isEmpty() && this.h > 0) {
+                        break;
+                    }
+                    this.b.wait();
+                } finally {
+                }
+            }
+            if (this.l) {
+                return false;
+            }
+            h hVar = (h) this.c.removeFirst();
+            j[] jVarArr = this.f;
+            int i7 = this.h - 1;
+            this.h = i7;
+            j jVar = jVarArr[i7];
+            boolean z9 = this.k;
+            this.k = false;
+            if (hVar.isEndOfStream()) {
+                jVar.addFlag(4);
+            } else {
+                jVar.timeUs = hVar.e;
+                if (hVar.isFirstSample()) {
+                    jVar.addFlag(TLObject.FLAG_27);
+                }
+                if (!l(hVar.e)) {
+                    jVar.shouldBeSkipped = true;
+                }
+                try {
+                    h = i(hVar, jVar, z9);
+                } catch (OutOfMemoryError e10) {
+                    h = h(e10);
+                } catch (RuntimeException e11) {
+                    h = h(e11);
+                }
+                if (h != null) {
+                    synchronized (this.b) {
+                        this.j = h;
+                    }
+                    return false;
+                }
+            }
+            synchronized (this.b) {
+                try {
+                    if (this.k) {
+                        jVar.release();
+                    } else if (jVar.shouldBeSkipped) {
+                        this.m++;
+                        jVar.release();
+                    } else {
+                        jVar.skippedOutputBufferCount = this.m;
+                        this.m = 0;
+                        this.d.addLast(jVar);
+                    }
+                    hVar.clear();
+                    h[] hVarArr = this.e;
+                    int i10 = this.g;
+                    this.g = i10 + 1;
+                    hVarArr[i10] = hVar;
+                } finally {
+                }
+            }
+            return true;
+        }
+    }
+
+    @Override // k2.e
+    /* renamed from: k, reason: merged with bridge method [inline-methods] */
+    public final j c() {
+        synchronized (this.b) {
+            try {
+                f fVar = this.j;
+                if (fVar != null) {
+                    throw fVar;
+                }
+                if (this.d.isEmpty()) {
+                    return null;
+                }
+                return (j) this.d.removeFirst();
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final boolean l(long j3) {
+        boolean z9;
+        synchronized (this.b) {
+            long j10 = this.n;
+            z9 = j10 == -9223372036854775807L || j3 >= j10;
+        }
+        return z9;
+    }
+
+    @Override // k2.e
+    /* renamed from: m, reason: merged with bridge method [inline-methods] */
+    public final void e(h hVar) {
+        synchronized (this.b) {
+            try {
+                f fVar = this.j;
+                if (fVar != null) {
+                    throw fVar;
+                }
+                ia.f(hVar == this.i);
+                this.c.addLast(hVar);
+                if (!this.c.isEmpty() && this.h > 0) {
+                    this.b.notify();
+                }
+                this.i = null;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void n(j jVar) {
+        synchronized (this.b) {
+            jVar.clear();
+            j[] jVarArr = this.f;
+            int i7 = this.h;
+            this.h = i7 + 1;
+            jVarArr[i7] = jVar;
+            if (!this.c.isEmpty() && this.h > 0) {
+                this.b.notify();
+            }
+        }
+    }
+
+    public final void o(int i7) {
+        int i10 = this.g;
+        h[] hVarArr = this.e;
+        ia.p(i10 == hVarArr.length);
+        for (h hVar : hVarArr) {
+            hVar.b(i7);
+        }
+    }
+
+    @Override // k2.e
+    public void release() {
+        synchronized (this.b) {
+            this.l = true;
+            this.b.notify();
+        }
+        try {
+            this.a.join();
+        } catch (InterruptedException unused) {
+            Thread.currentThread().interrupt();
         }
     }
 }

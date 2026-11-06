@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.ua;
+import a8.g9;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,19 +13,19 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(g4.class.getName());
-    public static final ua f;
+    public static final g9 f;
     public static final Object h;
     public volatile Object a;
     public volatile v2 b;
     public volatile f4 c;
 
     static {
-        ua e4Var;
+        g9 e4Var;
         try {
             e4Var = new s3(AtomicReferenceFieldUpdater.newUpdater(f4.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(f4.class, f4.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, f4.class, "c"), AtomicReferenceFieldUpdater.newUpdater(g4.class, v2.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, Object.class, "a"));
             th = null;
@@ -43,14 +43,14 @@ public class g4 implements t0 {
 
     public static void d(g4 g4Var) {
         f4 f4Var;
-        ua uaVar;
+        g9 g9Var;
         v2 v2Var;
         v2 v2Var2;
         v2 v2Var3;
         do {
             f4Var = g4Var.c;
-            uaVar = f;
-        } while (!uaVar.e(g4Var, f4Var, f4.c));
+            g9Var = f;
+        } while (!g9Var.e(g4Var, f4Var, f4.c));
         while (true) {
             v2Var = null;
             if (f4Var == null) {
@@ -65,7 +65,7 @@ public class g4 implements t0 {
         }
         do {
             v2Var2 = g4Var.b;
-        } while (!uaVar.c(g4Var, v2Var2, v2.d));
+        } while (!g9Var.c(g4Var, v2Var2, v2.d));
         while (true) {
             v2Var3 = v2Var;
             v2Var = v2Var2;
@@ -87,7 +87,7 @@ public class g4 implements t0 {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e10) {
-            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", com.google.android.recaptcha.internal.a.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
+            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", com.google.android.recaptcha.internal.a.l("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -110,7 +110,7 @@ public class g4 implements t0 {
     /* JADX WARN: Multi-variable type inference failed */
     public String a() {
         if (this instanceof ScheduledFuture) {
-            return t4.c.e(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return rf.b.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -135,12 +135,12 @@ public class g4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
+    public final boolean cancel(boolean z9) {
         Object obj = this.a;
         if (obj != null) {
             return false;
         }
-        if (!f.d(this, obj, d ? new j1(new CancellationException("Future.cancel() was called.")) : z10 ? j1.b : j1.c)) {
+        if (!f.d(this, obj, d ? new j1(new CancellationException("Future.cancel() was called.")) : z9 ? j1.b : j1.c)) {
             return false;
         }
         d(this);
@@ -149,16 +149,16 @@ public class g4 implements t0 {
 
     public final void e(StringBuilder sb2) {
         Object obj;
-        boolean z10 = false;
+        boolean z9 = false;
         while (true) {
             try {
                 try {
                     obj = get();
                     break;
                 } catch (InterruptedException unused) {
-                    z10 = true;
+                    z9 = true;
                 } catch (Throwable th2) {
-                    if (z10) {
+                    if (z9) {
                         Thread.currentThread().interrupt();
                     }
                     throw th2;
@@ -178,7 +178,7 @@ public class g4 implements t0 {
                 return;
             }
         }
-        if (z10) {
+        if (z9) {
             Thread.currentThread().interrupt();
         }
         sb2.append("SUCCESS, result=[");
@@ -227,9 +227,9 @@ public class g4 implements t0 {
         if (f4Var != f4Var2) {
             f4 f4Var3 = new f4();
             do {
-                ua uaVar = f;
-                uaVar.a(f4Var3, f4Var);
-                if (uaVar.e(this, f4Var, f4Var3)) {
+                g9 g9Var = f;
+                g9Var.a(f4Var3, f4Var);
+                if (g9Var.e(this, f4Var, f4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -286,8 +286,8 @@ public class g4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        long nanos = timeUnit.toNanos(j10);
+    public final Object get(long j3, TimeUnit timeUnit) {
+        long nanos = timeUnit.toNanos(j3);
         if (!Thread.interrupted()) {
             Object obj = this.a;
             if (obj != null) {
@@ -300,9 +300,9 @@ public class g4 implements t0 {
                 if (f4Var != f4Var2) {
                     f4 f4Var3 = new f4();
                     do {
-                        ua uaVar = f;
-                        uaVar.a(f4Var3, f4Var);
-                        if (uaVar.e(this, f4Var, f4Var3)) {
+                        g9 g9Var = f;
+                        g9Var.a(f4Var3, f4Var);
+                        if (g9Var.e(this, f4Var, f4Var3)) {
                             do {
                                 LockSupport.parkNanos(this, nanos);
                                 if (!Thread.interrupted()) {
@@ -339,24 +339,24 @@ public class g4 implements t0 {
             String obj4 = timeUnit.toString();
             Locale locale = Locale.ROOT;
             String lowerCase = obj4.toLowerCase(locale);
-            String str = "Waited " + j10 + " " + timeUnit.toString().toLowerCase(locale);
+            String str = "Waited " + j3 + " " + timeUnit.toString().toLowerCase(locale);
             if (nanos + 1000 < 0) {
                 String concat = str.concat(" (plus ");
-                long j11 = -nanos;
-                long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
-                long nanos2 = j11 - timeUnit.toNanos(convert);
-                boolean z10 = true;
+                long j10 = -nanos;
+                long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
+                long nanos2 = j10 - timeUnit.toNanos(convert);
+                boolean z9 = true;
                 if (convert != 0 && nanos2 <= 1000) {
-                    z10 = false;
+                    z9 = false;
                 }
                 if (convert > 0) {
                     String str2 = concat + convert + " " + lowerCase;
-                    if (z10) {
+                    if (z9) {
                         str2 = str2.concat(",");
                     }
                     concat = str2.concat(" ");
                 }
-                if (z10) {
+                if (z9) {
                     concat = concat + nanos2 + " nanoseconds ";
                 }
                 str = concat.concat("delay)");
@@ -364,7 +364,7 @@ public class g4 implements t0 {
             if (isDone()) {
                 throw new TimeoutException(str.concat(" but future completed as timeout expired"));
             }
-            throw new TimeoutException(a1.g.C(str, " for ", g4Var));
+            throw new TimeoutException(a8.p0.D(str, " for ", g4Var));
         }
         throw new InterruptedException();
     }

@@ -1,18 +1,25 @@
 package j7;
 
-import android.os.IInterface;
-import com.google.android.gms.common.api.Status;
-import i7.l;
-import i7.r;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a extends IInterface {
-    void c0(Status status, r rVar);
+public final class a extends r6.a {
+    public static final Parcelable.Creator<a> CREATOR = new b(0);
+    public final boolean a;
 
-    void t(Status status, l lVar);
+    public a(boolean z9) {
+        this.a = z9;
+    }
 
-    void t0(Status status, i7.b bVar);
-
-    void y(Status status, i7.e eVar);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i7) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int r10 = wb.r(dest, 20293);
+        wb.q(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        wb.s(dest, r10);
+    }
 }

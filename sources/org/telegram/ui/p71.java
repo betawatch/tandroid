@@ -1,28 +1,10 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w71 b;
-
-    public /* synthetic */ p71(w71 w71Var, int i3) {
-        this.a = i3;
-        this.b = w71Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c(false);
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                this.b.c(false);
-                break;
-        }
+public final class p71 extends org.telegram.messenger.ij {
+    @Override // org.telegram.messenger.ij
+    public final boolean l5() {
+        return false;
     }
 }

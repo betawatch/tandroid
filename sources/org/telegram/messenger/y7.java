@@ -1,22 +1,22 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Throwable b;
 
-    public /* synthetic */ y7(int i3, Throwable th2) {
-        this.a = i3;
+    public /* synthetic */ y7(int i7, Throwable th2) {
+        this.a = i7;
         this.b = th2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = 0;
         Throwable th2 = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 try {
                     a8.j().a.write(a8.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + th2 + "\n");
@@ -58,7 +58,7 @@ public final /* synthetic */ class y7 implements Runnable {
                 } catch (Exception e11) {
                     e11.printStackTrace();
                 }
-                boolean z10 = r2.a;
+                boolean z9 = r2.a;
                 break;
         }
     }

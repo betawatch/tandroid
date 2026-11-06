@@ -2,18 +2,18 @@ package com.google.android.gms.wearable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import p6.m;
-import q6.a;
-import y8.i;
+import q6.m;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new i(8);
+    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new w.a(8);
     public final String a;
     public final String b;
     public final int c;
@@ -27,15 +27,15 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public final int w;
     public final List x;
 
-    public ConnectionConfiguration(String str, String str2, int i3, int i10, boolean z10, boolean z11, String str3, boolean z12, String str4, String str5, int i11, ArrayList arrayList) {
+    public ConnectionConfiguration(String str, String str2, int i7, int i10, boolean z9, boolean z10, String str3, boolean z11, String str4, String str5, int i11, ArrayList arrayList) {
         this.a = str;
         this.b = str2;
-        this.c = i3;
+        this.c = i7;
         this.d = i10;
-        this.e = z10;
-        this.f = z11;
+        this.e = z9;
+        this.f = z10;
         this.h = str3;
-        this.n = z12;
+        this.n = z11;
         this.r = str4;
         this.s = str5;
         this.w = i11;
@@ -59,32 +59,32 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.m(parcel, 2, this.a);
-        j8.a.m(parcel, 3, this.b);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 2, this.a);
+        wb.l(parcel, 3, this.b);
         int i10 = this.c;
-        j8.a.r(parcel, 4, 4);
+        wb.q(parcel, 4, 4);
         parcel.writeInt(i10);
         int i11 = this.d;
-        j8.a.r(parcel, 5, 4);
+        wb.q(parcel, 5, 4);
         parcel.writeInt(i11);
-        boolean z10 = this.e;
-        j8.a.r(parcel, 6, 4);
+        boolean z9 = this.e;
+        wb.q(parcel, 6, 4);
+        parcel.writeInt(z9 ? 1 : 0);
+        boolean z10 = this.f;
+        wb.q(parcel, 7, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        boolean z11 = this.f;
-        j8.a.r(parcel, 7, 4);
+        wb.l(parcel, 8, this.h);
+        boolean z11 = this.n;
+        wb.q(parcel, 9, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        j8.a.m(parcel, 8, this.h);
-        boolean z12 = this.n;
-        j8.a.r(parcel, 9, 4);
-        parcel.writeInt(z12 ? 1 : 0);
-        j8.a.m(parcel, 10, this.r);
-        j8.a.m(parcel, 11, this.s);
+        wb.l(parcel, 10, this.r);
+        wb.l(parcel, 11, this.s);
         int i12 = this.w;
-        j8.a.r(parcel, 12, 4);
+        wb.q(parcel, 12, 4);
         parcel.writeInt(i12);
-        j8.a.o(parcel, 13, this.x);
-        j8.a.t(parcel, s6);
+        wb.n(parcel, 13, this.x);
+        wb.s(parcel, r10);
     }
 }

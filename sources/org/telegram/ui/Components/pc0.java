@@ -1,21 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pc0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ vc0 G1;
+public final class pc0 implements org.telegram.messenger.ls {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.c20 b;
+    public final /* synthetic */ org.telegram.messenger.ls[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pc0(vc0 vc0Var, Activity activity) {
-        super(activity, null);
-        this.G1 = vc0Var;
+    public pc0(int i7, org.telegram.messenger.c20 c20Var, org.telegram.messenger.ls[] lsVarArr) {
+        this.a = i7;
+        this.b = c20Var;
+        this.c = lsVarArr;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        this.G1.b.invalidate();
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        int i11 = org.telegram.messenger.qs.p5;
+        if (i7 == i11) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                org.telegram.messenger.c20 c20Var = this.b;
+                if (c20Var != null) {
+                    c20Var.a(iArr);
+                }
+                org.telegram.messenger.qs.e().n(this.c[0], i11);
+            }
+        }
     }
 }

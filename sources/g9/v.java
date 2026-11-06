@@ -1,38 +1,47 @@
 package g9;
 
-import java.util.Comparator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class v extends w {
-    public final int d;
+public final class v implements u, Serializable {
+    public final transient Object a = new Object();
+    public final u b;
+    public volatile transient boolean c;
+    public transient Object d;
 
-    public v(int i3) {
-        this.d = i3;
+    public v(u uVar) {
+        this.b = uVar;
     }
 
-    @Override // g9.w
-    public final int e() {
+    @Override // g9.u
+    public final Object get() {
+        if (!this.c) {
+            synchronized (this.a) {
+                try {
+                    if (!this.c) {
+                        Object obj = this.b.get();
+                        this.d = obj;
+                        this.c = true;
+                        return obj;
+                    }
+                } finally {
+                }
+            }
+        }
         return this.d;
     }
 
-    @Override // g9.w
-    public final w a(int i3, int i10) {
-        return this;
-    }
-
-    @Override // g9.w
-    public final w c(boolean z10, boolean z11) {
-        return this;
-    }
-
-    @Override // g9.w
-    public final w d(boolean z10, boolean z11) {
-        return this;
-    }
-
-    @Override // g9.w
-    public final w b(Object obj, Object obj2, Comparator comparator) {
-        return this;
+    public final String toString() {
+        Object obj;
+        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
+        if (this.c) {
+            obj = "<supplier that returned " + this.d + ">";
+        } else {
+            obj = this.b;
+        }
+        sb2.append(obj);
+        sb2.append(")");
+        return sb2.toString();
     }
 }

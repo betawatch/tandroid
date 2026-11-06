@@ -1,36 +1,44 @@
 package u2;
 
-import b8.te;
-import d2.v;
-import s3.h;
-import u3.c;
+import android.media.MediaCodec;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final a a = new a();
+public final /* synthetic */ class a implements MediaCodec.OnFrameRenderedListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d3.k b;
 
-    public final te a(v vVar) {
-        String str = vVar.s;
-        if (str != null) {
-            switch (str) {
-                case "application/vnd.dvb.ait":
-                    return new o3.b(0);
-                case "application/x-icy":
-                    return new r3.a();
-                case "application/id3":
-                    return new h(null);
-                case "application/x-emsg":
-                    return new o3.b(1);
-                case "application/x-scte35":
-                    return new c();
-            }
-        }
-        throw new IllegalArgumentException(t4.c.f("Attempted to create decoder for unsupported MIME type: ", str));
+    public /* synthetic */ a(l lVar, d3.k kVar, int i7) {
+        this.a = i7;
+        this.b = kVar;
     }
 
-    public final boolean b(v vVar) {
-        String str = vVar.s;
-        return "application/id3".equals(str) || "application/x-emsg".equals(str) || "application/x-scte35".equals(str) || "application/x-icy".equals(str) || "application/vnd.dvb.ait".equals(str);
+    @Override // android.media.MediaCodec.OnFrameRenderedListener
+    public final void onFrameRendered(MediaCodec mediaCodec, long j3, long j10) {
+        switch (this.a) {
+            case 0:
+                d3.k kVar = this.b;
+                Handler handler = kVar.a;
+                if (Build.VERSION.SDK_INT >= 30) {
+                    kVar.a(j3);
+                    break;
+                } else {
+                    handler.sendMessageAtFrontOfQueue(Message.obtain(handler, 0, (int) (j3 >> 32), (int) j3));
+                    break;
+                }
+            default:
+                d3.k kVar2 = this.b;
+                Handler handler2 = kVar2.a;
+                if (Build.VERSION.SDK_INT >= 30) {
+                    kVar2.a(j3);
+                    break;
+                } else {
+                    handler2.sendMessageAtFrontOfQueue(Message.obtain(handler2, 0, (int) (j3 >> 32), (int) j3));
+                    break;
+                }
+        }
     }
 }

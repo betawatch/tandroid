@@ -1,59 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.tgnet.TLObject;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o51 extends View {
-    public static final /* synthetic */ int c = 0;
-    public final Paint a;
-    public int[] b;
+public final /* synthetic */ class o51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    public o51(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new int[7];
+    public /* synthetic */ o51(ThemeActivity themeActivity, int i7) {
+        this.a = i7;
+        this.b = themeActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth() * 0.5f;
-        float measuredHeight = getMeasuredHeight() * 0.5f;
-        float L = org.telegram.messenger.g0.L(5.0f);
-        float L2 = org.telegram.messenger.g0.L(20.0f) - L;
-        Paint.Style style = Paint.Style.FILL;
-        Paint paint = this.a;
-        paint.setStyle(style);
-        int i3 = 0;
-        paint.setColor(this.b[0]);
-        canvas.drawCircle(measuredWidth, measuredHeight, L, paint);
-        double d = 0.0d;
-        while (i3 < 6) {
-            float sin = (((float) Math.sin(d)) * L2) + measuredWidth;
-            float cos = measuredHeight - (((float) Math.cos(d)) * L2);
-            i3++;
-            paint.setColor(this.b[i3]);
-            canvas.drawCircle(sin, cos, L, paint);
-            d += 1.0471975511965976d;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemeActivity themeActivity = this.b;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.k6.x, org.telegram.ui.ActionBar.k6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
+                    }
+                } catch (Exception unused) {
+                }
+                org.telegram.messenger.g0.h3(new by0(13, themeActivity, str));
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                themeActivity2.b.e1(new n51(themeActivity2, 0), 700, true);
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(org.telegram.messenger.bd.M0(2131752015, "ColorPickerMainColor"));
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(62.0f), TLObject.FLAG_30));
     }
 }

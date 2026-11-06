@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.IntegrityTokenRequest;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class am extends IntegrityTokenRequest.Builder {
     private String a;
@@ -19,8 +19,8 @@ final class am extends IntegrityTokenRequest.Builder {
     }
 
     @Override // com.google.android.play.core.integrity.IntegrityTokenRequest.Builder
-    public final IntegrityTokenRequest.Builder setCloudProjectNumber(long j10) {
-        this.b = Long.valueOf(j10);
+    public final IntegrityTokenRequest.Builder setCloudProjectNumber(long j3) {
+        this.b = Long.valueOf(j3);
         return this;
     }
 

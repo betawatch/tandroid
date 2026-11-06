@@ -1,167 +1,62 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xk0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ dl0 f;
+public final class xk0 implements fl0 {
+    public final /* synthetic */ Runnable a;
+    public final /* synthetic */ hl0 b;
 
-    public xk0(dl0 dl0Var) {
-        this.f = dl0Var;
+    public xk0(hl0 hl0Var, Runnable runnable) {
+        this.b = hl0Var;
+        this.a = runnable;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i3;
-        boolean z10;
-        int i10;
-        int i11;
-        String[] strArr;
-        int i12;
-        String str;
-        dl0 dl0Var = this.f;
-        if (dl0Var.p0) {
-            return;
-        }
-        int i13 = 0;
-        EditTextBoldCursor editTextBoldCursor = dl0Var.f[0];
-        int selectionStart = editTextBoldCursor.getSelectionStart();
-        String obj = editTextBoldCursor.getText().toString();
-        int i14 = 3;
-        int i15 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
-            selectionStart--;
-        }
-        StringBuilder sb2 = new StringBuilder(obj.length());
-        int i16 = 0;
-        while (i16 < obj.length()) {
-            int i17 = i16 + 1;
-            String substring = obj.substring(i16, i17);
-            if ("0123456789".contains(substring)) {
-                sb2.append(substring);
+    @Override // org.telegram.ui.fl0
+    public final boolean c(String str, String str2, boolean z9, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
+        String str3;
+        hl0 hl0Var = this.b;
+        hl0Var.y0 = tL_paymentSavedCredentialsCard;
+        hl0Var.w0 = str;
+        hl0Var.U0 = z9;
+        hl0Var.x0 = str2;
+        hl0Var.J0 = tL_inputPaymentCredentialsGooglePay;
+        org.telegram.ui.Cells.y8[] y8VarArr = hl0Var.Y;
+        org.telegram.ui.Cells.y8 y8Var = y8VarArr[0];
+        if (y8Var != null) {
+            y8Var.setVisibility(0);
+            org.telegram.ui.Cells.y8 y8Var2 = y8VarArr[0];
+            String str4 = hl0Var.x0;
+            if (str4 == null || str4.length() <= 1) {
+                str3 = hl0Var.x0;
+            } else {
+                str3 = hl0Var.x0.substring(0, 1).toUpperCase() + hl0Var.x0.substring(1);
             }
-            i16 = i17;
-        }
-        dl0Var.p0 = true;
-        String str2 = null;
-        int i18 = 100;
-        if (sb2.length() > 0) {
-            String sb3 = sb2.toString();
-            int i19 = 0;
-            while (true) {
-                if (i19 >= i14) {
-                    i3 = i15;
-                    break;
-                }
-                if (i19 == 0) {
-                    strArr = this.c;
-                    i12 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i19 != i15) {
-                    strArr = this.b;
-                    i12 = 14;
-                    str = "xxxx xxxx xxxx xx";
-                } else {
-                    strArr = this.a;
-                    i12 = 15;
-                    str = "xxxx xxxx xxxx xxx";
-                }
-                i3 = i15;
-                for (int i20 = i13; i20 < strArr.length; i20++) {
-                    String str3 = strArr[i20];
-                    if (sb3.length() <= str3.length()) {
-                        if (str3.startsWith(sb3)) {
-                            i18 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb3.startsWith(str3)) {
-                            i18 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    }
-                }
-                if (str2 != null) {
-                    break;
-                }
-                i19++;
-                i15 = i3;
-                i13 = 0;
-                i14 = 3;
-            }
-            if (sb2.length() > i18) {
-                sb2.setLength(i18);
-            }
-        } else {
-            i3 = 1;
-        }
-        if (str2 != null) {
-            if (sb2.length() == i18) {
-                dl0Var.f[i3].requestFocus();
-            }
-            org.telegram.ui.ActionBar.r6.V(editTextBoldCursor, org.telegram.ui.ActionBar.k6.G6, dl0Var.Z0);
-            int i21 = 0;
-            while (true) {
-                if (i21 >= sb2.length()) {
-                    break;
-                }
-                if (i21 < str2.length()) {
-                    if (str2.charAt(i21) == ' ') {
-                        sb2.insert(i21, ' ');
-                        i21++;
-                        if (selectionStart == i21 && (i11 = this.d) != 2 && i11 != 3) {
-                            selectionStart++;
-                        }
-                    }
-                    i21++;
-                } else {
-                    sb2.insert(i21, ' ');
-                    if (selectionStart == i21 + 1 && (i10 = this.d) != 2 && i10 != 3) {
-                        selectionStart++;
-                    }
-                }
+            y8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.hd.M0(2131747413, null), true);
+            org.telegram.ui.Cells.y8 y8Var3 = y8VarArr[1];
+            if (y8Var3 != null) {
+                y8Var3.setVisibility(0);
             }
         }
-        if (sb2.toString().equals(editable.toString())) {
-            z10 = false;
-        } else {
-            z10 = false;
-            editable.replace(0, editable.length(), sb2);
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
         }
-        if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-        }
-        dl0Var.p0 = z10;
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
-        if (i10 == 0 && i11 == 1) {
-            this.d = 1;
-            return;
-        }
-        if (i10 != 1 || i11 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i3) != ' ' || i3 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i3 - 1;
-        }
+    @Override // org.telegram.ui.fl0
+    public final /* synthetic */ void a(TL_account.Password password) {
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    @Override // org.telegram.ui.fl0
+    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
+    }
+
+    @Override // org.telegram.ui.fl0
+    public final /* synthetic */ void b() {
     }
 }

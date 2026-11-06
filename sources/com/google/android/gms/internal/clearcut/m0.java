@@ -20,7 +20,7 @@ public final class m0 extends LinkedHashMap {
 
     public static int c(Object obj) {
         if (!(obj instanceof byte[])) {
-            if (obj instanceof o1) {
+            if (obj instanceof p1) {
                 throw new UnsupportedOperationException();
             }
             return obj.hashCode();
@@ -28,14 +28,14 @@ public final class m0 extends LinkedHashMap {
         byte[] bArr = (byte[]) obj;
         int length = bArr.length;
         Charset charset = a0.a;
-        int i3 = length;
+        int i7 = length;
         for (byte b10 : bArr) {
-            i3 = (i3 * 31) + b10;
+            i7 = (i7 * 31) + b10;
         }
-        if (i3 == 0) {
+        if (i7 == 0) {
             return 1;
         }
-        return i3;
+        return i7;
     }
 
     public final void b() {
@@ -61,7 +61,7 @@ public final class m0 extends LinkedHashMap {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean equals(Object obj) {
-        boolean z10;
+        boolean z9;
         if (obj instanceof Map) {
             Map map = (Map) obj;
             if (this != map) {
@@ -75,13 +75,13 @@ public final class m0 extends LinkedHashMap {
                         }
                     }
                 }
-                z10 = false;
-                if (!z10) {
+                z9 = false;
+                if (!z9) {
                     return true;
                 }
             }
-            z10 = true;
-            if (!z10) {
+            z9 = true;
+            if (!z9) {
             }
         }
         return false;
@@ -89,11 +89,11 @@ public final class m0 extends LinkedHashMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        int i3 = 0;
+        int i7 = 0;
         for (Map.Entry entry : entrySet()) {
-            i3 += c(entry.getValue()) ^ c(entry.getKey());
+            i7 += c(entry.getValue()) ^ c(entry.getKey());
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

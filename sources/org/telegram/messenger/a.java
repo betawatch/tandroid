@@ -3,8 +3,7 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
+import android.os.CancellationSignal;
 import android.util.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 import java.io.InputStream;
@@ -16,24 +15,24 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ a(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:141:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0289  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        int i3;
+        int i7;
         int i10;
         Bitmap bitmap;
         TLRPC.Document document;
@@ -49,14 +48,14 @@ public final /* synthetic */ class a implements Runnable {
                             } catch (InterruptedException unused) {
                             }
                         }
-                        i3 = bVar.f;
+                        i7 = bVar.f;
                         i10 = bVar.g + 1;
                         bVar.g = i10;
                     }
-                    bVar.b.obtainMessage(1, i10, i3).sendToTarget();
+                    bVar.b.obtainMessage(1, i10, i7).sendToTarget();
                     try {
                         Thread.sleep(5000L);
-                        if (bVar.e && bVar.f == i3 && bVar.h != i10 && !bVar.i) {
+                        if (bVar.e && bVar.f == i7 && bVar.h != i10 && !bVar.i) {
                             bVar.i = true;
                             try {
                                 bVar.d.run();
@@ -77,8 +76,8 @@ public final /* synthetic */ class a implements Runnable {
                 return;
             case 2:
                 h2 h2Var = (h2) this.b;
-                g0.r(h2Var.b0);
-                h2Var.N = false;
+                g0.r(h2Var.a0);
+                h2Var.M = false;
                 h2Var.invalidate();
                 return;
             case 3:
@@ -93,12 +92,12 @@ public final /* synthetic */ class a implements Runnable {
                 g4Var.getClass();
                 sb2.append(g4Var.a);
                 sb2.append("_");
-                String o10 = a1.g.o(g4Var.b, ".png", sb2);
+                String n10 = a8.p0.n(g4Var.b, ".png", sb2);
                 HashMap hashMap = i6.a;
                 try {
                     int i11 = g0.p > 1.0f ? 1 : 2;
                     try {
-                        InputStream open = t0.b.getAssets().open(o10);
+                        InputStream open = t0.b.getAssets().open(n10);
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inJustDecodeBounds = false;
                         options.inSampleSize = i11;
@@ -126,14 +125,14 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 if (bitmap2 != null) {
                     g4.e.put(g4Var.c, bitmap2);
-                    ai.y1 y1Var = i6.l;
-                    g0.r(y1Var);
-                    g0.h3(y1Var);
+                    ai.m0 m0Var = i6.l;
+                    g0.r(m0Var);
+                    g0.h3(m0Var);
                 }
                 g4.f.remove(Integer.valueOf(g4Var.c));
                 return;
             case 6:
-                ((ei.i4) this.b).d(true);
+                ((di.h4) this.b).d(true);
                 return;
             case 7:
                 x6 x6Var = (x6) this.b;
@@ -144,12 +143,12 @@ public final /* synthetic */ class a implements Runnable {
                     longSparseArray.removeAt(0);
                     ArrayList arrayList = new ArrayList(hashMap2.keySet());
                     x6Var.d.addAll(arrayList);
-                    o00 o00Var = new o00(x6Var, keyAt, arrayList, hashMap2, 1);
+                    w00 w00Var = new w00(x6Var, keyAt, arrayList, hashMap2, 1);
                     if (arrayList.isEmpty()) {
-                        o00Var.a(new ArrayList());
+                        w00Var.a(new ArrayList());
                     } else {
-                        qr a02 = qr.a0(x6Var.a);
-                        a02.a.c(new fg(a02, arrayList, o00Var, 19));
+                        yr a02 = yr.a0(x6Var.a);
+                        a02.a.c(new ng(a02, arrayList, w00Var, 19));
                     }
                 }
                 longSparseArray.clear();
@@ -170,7 +169,7 @@ public final /* synthetic */ class a implements Runnable {
                 ArrayList arrayList2 = org.telegram.ui.ActionBar.k6.F;
                 int size = arrayList2.size();
                 for (int i12 = 0; i12 < size; i12++) {
-                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.j6) arrayList2.get(i12)).G;
+                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.j6) arrayList2.get(i12)).F;
                     if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 == null || (document = tL_theme.document) == null) {
@@ -183,7 +182,7 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 return;
             case 10:
-                j2.k kVar = (j2.k) this.b;
+                k2.k kVar = (k2.k) this.b;
                 kVar.getClass();
                 FilesMigrationService.d = false;
                 FilesMigrationService filesMigrationService = (FilesMigrationService) kVar.b;
@@ -191,54 +190,57 @@ public final /* synthetic */ class a implements Runnable {
                 filesMigrationService.stopSelf();
                 return;
             case 11:
-                ((zb) ((androidx.mediarouter.app.f) this.b).b).i(null);
+                ((CancellationSignal) this.b).cancel();
                 return;
             case 12:
-                ((ImageReceiver) this.b).invalidate();
+                ((gc) ((androidx.mediarouter.app.f) this.b).b).i(null);
                 return;
             case 13:
-                if (((bd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
-                    return;
-                }
-                bd.E0().Y0();
+                ((ImageReceiver) this.b).invalidate();
                 return;
             case 14:
-                org.telegram.ui.ActionBar.s1 s1Var = (org.telegram.ui.ActionBar.s1) this.b;
-                String[] strArr = MediaController.W1;
+                if (((hd) ((androidx.mediarouter.app.f) this.b).b).q0().getTimeZone().equals(TimeZone.getDefault())) {
+                    return;
+                }
+                hd.E0().Y0();
+                return;
+            case 15:
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                String[] strArr = MediaController.V1;
                 try {
-                    s1Var.dismiss();
+                    u1Var.dismiss();
                     return;
                 } catch (Exception e11) {
                     a8.g(e11, true);
                     return;
                 }
-            case 15:
-                ((fe) this.b).d.q(true, true, false, false);
-                return;
             case 16:
-                ((MediaController) ((g2.x) this.b).e).q(true, true, false, false);
+                ((le) this.b).d.q(true, true, false, false);
                 return;
             case 17:
-                com.google.android.gms.internal.clearcut.e2 e2Var = (com.google.android.gms.internal.clearcut.e2) this.b;
-                if (!PhotoViewer.v1().U1()) {
-                    MediaController.Z1 = null;
+                ((MediaController) ((h2.w) this.b).e).q(true, true, false, false);
+                return;
+            case 18:
+                com.google.android.gms.internal.clearcut.f2 f2Var = (com.google.android.gms.internal.clearcut.f2) this.b;
+                if (!PhotoViewer.p1().P1()) {
+                    MediaController.Y1 = null;
                     MediaController.O(0);
                     return;
                 } else {
-                    a aVar = new a(e2Var, 17);
-                    MediaController.Z1 = aVar;
+                    a aVar = new a(f2Var, 18);
+                    MediaController.Y1 = aVar;
                     g0.i3(aVar, 2000L);
                     return;
                 }
-            case 18:
-                ((we) this.b).d();
-                return;
             case 19:
-                cf cfVar = (cf) this.b;
+                ((ef) this.b).d();
+                return;
+            case 20:
+                lf lfVar = (lf) this.b;
                 try {
-                    mi.b0 b0Var = new mi.b0();
-                    b0Var.b = cfVar;
-                    Thread thread = new Thread(b0Var, "VideoConvertRunnable");
+                    m.f3 f3Var = new m.f3();
+                    f3Var.b = lfVar;
+                    Thread thread = new Thread(f3Var, "VideoConvertRunnable");
                     thread.start();
                     thread.join();
                     return;
@@ -246,13 +248,13 @@ public final /* synthetic */ class a implements Runnable {
                     a8.g(e12, true);
                     return;
                 }
-            case 20:
-                hs.e().k(hs.P4, 0, (TLRPC.Document) this.b, 7);
-                return;
             case 21:
-                ((org.telegram.ui.Components.yb) this.b).f();
+                qs.e().k(qs.P4, 0, (TLRPC.Document) this.b, 7);
                 return;
             case 22:
+                ((org.telegram.ui.Components.ac) this.b).f();
+                return;
+            case 23:
                 TLObject tLObject = (TLObject) this.b;
                 if (tLObject instanceof TLRPC.TL_auth_loggedOut) {
                     TLRPC.TL_auth_loggedOut tL_auth_loggedOut = (TLRPC.TL_auth_loggedOut) tLObject;
@@ -261,51 +263,43 @@ public final /* synthetic */ class a implements Runnable {
                         int i13 = sharedPreferences.getInt("count", 0);
                         SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
                         tL_auth_loggedOut.serializeToStream(serializedData);
-                        sharedPreferences.edit().putString(k2.p1.i(i13, "log_out_token_"), Utilities.f(serializedData.toByteArray())).putInt("count", i13 + 1).apply();
+                        sharedPreferences.edit().putString(jg.g.j(i13, "log_out_token_"), Utilities.f(serializedData.toByteArray())).putInt("count", i13 + 1).apply();
                         BackupAgent.a();
                         return;
                     }
                     return;
                 }
                 return;
-            case 23:
+            case 24:
                 Runnable runnable = (Runnable) this.b;
                 if (runnable != null) {
                     runnable.run();
                     return;
                 }
                 return;
-            case 24:
+            case 25:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
                 if (tL_error != null) {
-                    org.telegram.ui.Components.fc.d0(tL_error);
+                    org.telegram.ui.Components.hc.d0(tL_error);
                     return;
                 }
-                return;
-            case 25:
-                ((org.telegram.ui.tf) this.b).run();
                 return;
             case 26:
-                ir irVar = (ir) this.b;
-                if (irVar != null) {
-                    irVar.o(true);
-                    return;
-                }
+                ((org.telegram.ui.xf) this.b).run();
                 return;
             case 27:
-                ((u3) this.b).a(null);
-                return;
-            case 28:
-                ((MusicPlayerService) this.b).stopSelf();
-                return;
-            default:
-                try {
-                    t0.b.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, (Bundle) this.b);
-                    return;
-                } catch (Exception e13) {
-                    a8.g(e13, true);
+                qr qrVar = (qr) this.b;
+                if (qrVar != null) {
+                    qrVar.k(true);
                     return;
                 }
+                return;
+            case 28:
+                ((u3) this.b).a(null);
+                return;
+            default:
+                ((MusicPlayerService) this.b).stopSelf();
+                return;
         }
     }
 }

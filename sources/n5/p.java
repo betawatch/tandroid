@@ -1,33 +1,41 @@
 package n5;
 
-import android.os.Looper;
-import com.google.android.gms.internal.cast.z;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class p implements Executor {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class p extends b0 {
+    public final byte[] a;
+    public final byte[] b;
 
-    public p(Looper looper) {
-        this.b = new z(looper, 4);
+    public p(byte[] bArr, byte[] bArr2) {
+        this.a = bArr;
+        this.b = bArr2;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((Executor) this.b).execute(new o(0, runnable));
-                break;
-            default:
-                ((z) this.b).post(runnable);
-                break;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (obj instanceof b0) {
+            b0 b0Var = (b0) obj;
+            boolean z9 = b0Var instanceof p;
+            p pVar = (p) b0Var;
+            if (Arrays.equals(this.a, z9 ? pVar.a : pVar.a)) {
+                p pVar2 = (p) b0Var;
+                if (Arrays.equals(this.b, z9 ? pVar2.b : pVar2.b)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
-    public p(ExecutorService executorService) {
-        this.b = executorService;
+    public final int hashCode() {
+        return ((Arrays.hashCode(this.a) ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
+    }
+
+    public final String toString() {
+        return "ExperimentIds{clearBlob=" + Arrays.toString(this.a) + ", encryptedBlob=" + Arrays.toString(this.b) + "}";
     }
 }

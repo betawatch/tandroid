@@ -1,17 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class e50 extends FrameLayout {
-    public TextView a;
+public final /* synthetic */ class e50 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g50 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(84.0f), TLObject.FLAG_30));
+    public /* synthetic */ e50(g50 g50Var, int i7) {
+        this.a = i7;
+        this.b = g50Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new ng(this.b, tL_error, tLObject, 9));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new fq(24, this.b, tL_error));
+                break;
+        }
     }
 }

@@ -1,85 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Matrix;
+import android.graphics.RadialGradient;
 import android.graphics.Shader;
-import android.widget.TextView;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class u10 extends TextView {
-    public final Paint[] a;
-    public final /* synthetic */ org.telegram.ui.x20 b;
+public final class u10 {
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public RadialGradient g;
+    public final int i;
+    public int j;
+    public int k;
+    public int l;
+    public float a = -1.0f;
+    public float b = -1.0f;
+    public final Matrix h = new Matrix();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u10(org.telegram.ui.x20 x20Var, Context context) {
-        super(context);
-        this.b = x20Var;
-        this.a = new Paint[x20Var.m1.length];
-        int i3 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i3 >= paintArr.length) {
-                return;
-            }
-            paintArr[i3] = new Paint(1);
-            i3++;
-        }
+    public u10(int i7) {
+        this.i = i7;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i3;
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        org.telegram.ui.x20 x20Var = this.b;
-        int i10 = x20Var.o1;
-        Paint[] paintArr = this.a;
-        paintArr[i10].setAlpha(org.telegram.messenger.hs.e4);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paintArr[x20Var.o1]);
-        float f10 = x20Var.n1;
-        if (f10 > 0.0f && (i3 = x20Var.o1 + 1) < paintArr.length) {
-            paintArr[i3].setAlpha((int) (f10 * 255.0f));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paintArr[x20Var.o1 + 1]);
-        }
-        super.onDraw(canvas);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSizeChanged(int i3, int i10, int i11, int i12) {
-        int i13;
-        int i14;
-        super.onSizeChanged(i3, i10, i11, i12);
-        int i15 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i15 >= paintArr.length) {
+    public final void a(float f10) {
+        int i7 = this.i;
+        if (i7 == 0) {
+            int i10 = this.j;
+            int i11 = org.telegram.ui.ActionBar.k6.Hh;
+            if (i10 != org.telegram.ui.ActionBar.k6.x0(null, i11, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ih, false)) {
+                int x02 = org.telegram.ui.ActionBar.k6.x0(null, i11, false);
+                this.j = x02;
+                int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ih, false);
+                this.k = x03;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else if (i7 == 1) {
+            int i12 = this.j;
+            int i13 = org.telegram.ui.ActionBar.k6.Jh;
+            if (i12 != org.telegram.ui.ActionBar.k6.x0(null, i13, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Kh, false)) {
+                int x04 = org.telegram.ui.ActionBar.k6.x0(null, i13, false);
+                this.j = x04;
+                int x05 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Kh, false);
+                this.k = x05;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else {
+            if (i7 != 3) {
                 return;
             }
-            int i16 = -9015575;
-            if (i15 == 0) {
-                i13 = -9015575;
-                i16 = -11033346;
-            } else if (i15 == 1) {
-                i16 = -8919716;
-                i13 = -11089922;
-            } else {
-                i13 = -1026983;
-                i14 = -1792170;
-                paintArr[i15].setShader(i14 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13, i14}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13}, (float[]) null, Shader.TileMode.CLAMP));
-                i15++;
+            int i14 = this.j;
+            int i15 = org.telegram.ui.ActionBar.k6.Wh;
+            if (i14 != org.telegram.ui.ActionBar.k6.x0(null, i15, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xh, false) || this.l != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yh, false)) {
+                int x06 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xh, false);
+                this.k = x06;
+                int x07 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yh, false);
+                this.l = x07;
+                int x08 = org.telegram.ui.ActionBar.k6.x0(null, i15, false);
+                this.j = x08;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, (float[]) null, Shader.TileMode.CLAMP);
             }
-            i14 = 0;
-            paintArr[i15].setShader(i14 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13, i14}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13}, (float[]) null, Shader.TileMode.CLAMP));
-            i15++;
+        }
+        int L = org.telegram.messenger.g0.L(130.0f);
+        float f11 = this.e;
+        if (f11 == 0.0f || this.f >= f11) {
+            this.e = Utilities.b.nextInt(700) + 500;
+            this.f = 0.0f;
+            if (this.a == -1.0f) {
+                b();
+            }
+            this.c = this.a;
+            this.d = this.b;
+            b();
+        }
+        float f12 = 16L;
+        float f13 = (f12 * 0.02f * f10) + (1.0f * f12) + this.f;
+        this.f = f13;
+        float f14 = this.e;
+        if (f13 > f14) {
+            this.f = f14;
+        }
+        float interpolation = xq.g.getInterpolation(this.f / f14);
+        float f15 = L;
+        float f16 = this.c;
+        float f17 = ((((this.a - f16) * interpolation) + f16) * f15) - 200.0f;
+        float f18 = this.d;
+        float f19 = ((((this.b - f18) * interpolation) + f18) * f15) - 200.0f;
+        float f20 = (f15 / 400.0f) * (i7 == 3 ? 2.0f : 1.5f);
+        Matrix matrix = this.h;
+        matrix.reset();
+        matrix.postTranslate(f17, f19);
+        matrix.postScale(f20, f20, f17 + 200.0f, f19 + 200.0f);
+        this.g.setLocalMatrix(matrix);
+    }
+
+    public final void b() {
+        int i7 = this.i;
+        if (i7 == 0) {
+            SecureRandom secureRandom = Utilities.b;
+            this.a = a8.p0.f(secureRandom.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a8.p0.f(secureRandom.nextInt(100), 0.1f, 100.0f, 0.7f);
+        } else if (i7 == 3) {
+            SecureRandom secureRandom2 = Utilities.b;
+            this.a = a8.p0.f(secureRandom2.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.b = (secureRandom2.nextInt(100) * 0.1f) / 100.0f;
+        } else {
+            SecureRandom secureRandom3 = Utilities.b;
+            this.a = com.google.android.recaptcha.internal.a.c(secureRandom3.nextInt(100), 100.0f, 0.2f, 0.8f);
+            this.b = secureRandom3.nextInt(100) / 100.0f;
         }
     }
 }

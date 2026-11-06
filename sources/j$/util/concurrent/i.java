@@ -82,11 +82,11 @@ public final class i extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         Object it = iterator();
-        int i3 = 0;
+        int i7 = 0;
         while (((a) it).hasNext()) {
-            i3 += ((h) it).next().hashCode();
+            i7 += ((h) it).next().hashCode();
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -104,10 +104,10 @@ public final class i extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j10 = concurrentHashMap.j();
+        long j3 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j10 < 0 ? 0L : j10, 0);
+        return new j(lVarArr, length, 0, length, j3 < 0 ? 0L : j3, 0);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection

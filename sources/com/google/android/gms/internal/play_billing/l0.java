@@ -1,31 +1,31 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.pa;
+import a8.e9;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final pa h;
+    public static final e9 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
-        boolean z10;
-        pa i0Var;
+        boolean z9;
+        e9 i0Var;
         Throwable th2;
         Throwable th3;
         try {
-            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z9 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z10 = false;
+            z9 = false;
         }
-        f = z10;
+        f = z9;
         String property = System.getProperty("java.runtime.name", "");
         Throwable th4 = null;
         if (property == null || property.contains("Android")) {
@@ -53,9 +53,9 @@ public abstract class l0 extends x0 implements t0 {
         h = i0Var;
         if (th2 != null) {
             s0 s0Var = e;
-            Logger c2 = s0Var.c();
+            Logger c10 = s0Var.c();
             Level level = Level.SEVERE;
-            c2.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
+            c10.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
             s0Var.c().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
         }
     }

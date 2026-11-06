@@ -1,18 +1,18 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
+import androidx.fragment.app.z;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements androidx.lifecycle.r, c {
     public final androidx.lifecycle.o a;
-    public final a0 b;
+    public final z b;
     public u c;
-    public final /* synthetic */ v d;
+    public final /* synthetic */ w d;
 
-    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(v vVar, androidx.lifecycle.o oVar, a0 onBackPressedCallback) {
+    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(w wVar, androidx.lifecycle.o oVar, z onBackPressedCallback) {
         kotlin.jvm.internal.j.e(onBackPressedCallback, "onBackPressedCallback");
-        this.d = vVar;
+        this.d = wVar;
         this.a = oVar;
         this.b = onBackPressedCallback;
         oVar.a(this);
@@ -47,15 +47,15 @@ final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements
                 return;
             }
         }
-        v vVar = this.d;
-        vVar.getClass();
-        a0 onBackPressedCallback = this.b;
+        w wVar = this.d;
+        wVar.getClass();
+        z onBackPressedCallback = this.b;
         kotlin.jvm.internal.j.e(onBackPressedCallback, "onBackPressedCallback");
-        vVar.b.addLast(onBackPressedCallback);
-        u uVar2 = new u(vVar, onBackPressedCallback);
+        wVar.b.addLast(onBackPressedCallback);
+        u uVar2 = new u(wVar, onBackPressedCallback);
         onBackPressedCallback.b.add(uVar2);
-        vVar.d();
-        onBackPressedCallback.c = new aa.e(0, vVar, v.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, 4);
+        wVar.d();
+        onBackPressedCallback.c = new v(0, wVar, w.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, 1);
         this.c = uVar2;
     }
 }

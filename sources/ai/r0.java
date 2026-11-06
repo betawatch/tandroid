@@ -1,40 +1,34 @@
 package ai;
 
-import android.content.Context;
-import org.telegram.messenger.h10;
-import org.telegram.messenger.hp;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.oo0;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class r0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ TL_stars.StarGift a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+public final class r0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s0 b;
 
-    public r0(Context context, TL_stars.StarGift starGift, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = starGift;
-        this.b = context;
-        this.c = e6Var;
+    public /* synthetic */ r0(s0 s0Var, int i7) {
+        this.a = i7;
+        this.b = s0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i3) {
-        Context context = this.b;
-        TL_stars.StarGift starGift = this.a;
-        if (i3 != 3 && i3 != 2) {
-            if (i3 == 4) {
-                s0.g1(context, starGift, this.c);
-                return;
-            }
-            return;
-        }
-        String str = hp.s1(h10.t0).V2 + "/auction/" + starGift.auction_slug;
-        if (i3 == 3) {
-            org.telegram.messenger.g0.g(str);
-        } else {
-            oo0.N0(context, null, str, false, str).show();
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                float translationY = view.getTranslationY() + view.getTop();
+                float translationX = view.getTranslationX() + view.getLeft();
+                s0 s0Var = this.b;
+                outline.setRoundRect(Math.round(s0Var.n - translationX), Math.round(s0Var.r - translationY), Math.round(s0Var.s - translationX), Math.round(s0Var.w - translationY), s0Var.x);
+                break;
+            default:
+                int height = view.getHeight();
+                s0 s0Var2 = this.b;
+                outline.setRoundRect(s0Var2.a0, s0Var2.b0, view.getWidth() - s0Var2.a0, view.getHeight() - s0Var2.c0, ((height - r4) - s0Var2.c0) / 2.0f);
+                break;
         }
     }
 }

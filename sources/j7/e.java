@@ -1,48 +1,25 @@
 package j7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import kotlin.jvm.internal.j;
-import p6.h;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e extends h {
-    @Override // p6.d, com.google.android.gms.common.api.c
-    public final int d() {
-        return 17895000;
+public final class e extends r6.a {
+    public static final Parcelable.Creator<e> CREATOR = new b(3);
+    public final boolean a;
+
+    public e(boolean z9) {
+        this.a = z9;
     }
 
-    @Override // p6.d
-    public final IInterface g(IBinder iBinder) {
-        j.e(iBinder, "iBinder");
-        int i3 = c.b;
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.identitycredentials.internal.IIdentityCredentialService");
-        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new b(iBinder);
-    }
-
-    @Override // p6.d
-    public final m6.c[] i() {
-        return s7.b.c;
-    }
-
-    @Override // p6.d
-    public final String n() {
-        return "com.google.android.gms.identitycredentials.internal.IIdentityCredentialService";
-    }
-
-    @Override // p6.d
-    public final String o() {
-        return "com.google.android.gms.identitycredentials.service.START";
-    }
-
-    @Override // p6.d
-    public final boolean q() {
-        return true;
-    }
-
-    @Override // p6.d
-    public final boolean w() {
-        return true;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i7) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int r10 = wb.r(dest, 20293);
+        wb.q(dest, 1, 4);
+        dest.writeInt(this.a ? 1 : 0);
+        wb.s(dest, r10);
     }
 }

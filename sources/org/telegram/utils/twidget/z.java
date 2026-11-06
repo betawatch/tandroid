@@ -13,16 +13,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public abstract class z {
-    public static final ExecutorService a = Executors.newFixedThreadPool(2, new g2.m0(6));
+    public static final ExecutorService a = Executors.newFixedThreadPool(2, new h2.l0(6));
     public static File b;
 
     public static synchronized File a(Context context) {
-        int i3;
+        int i7;
         int i10;
-        char c2;
+        char c10;
         AssetManager assetManager;
         int i11;
         synchronized (z.class) {
@@ -39,7 +39,7 @@ public abstract class z {
                     byte[] bArr = new byte[TLObject.FLAG_14];
                     while (true) {
                         int read = open.read(bArr);
-                        i3 = -1;
+                        i7 = -1;
                         i10 = 0;
                         if (read == -1) {
                             break;
@@ -54,7 +54,7 @@ public abstract class z {
                     StringBuilder sb2 = new StringBuilder();
                     int i13 = 0;
                     while (true) {
-                        c2 = 1;
+                        c10 = 1;
                         if (i13 >= 12) {
                             break;
                         }
@@ -74,7 +74,7 @@ public abstract class z {
                                 i11 = i10;
                             } else {
                                 String[] split2 = str2.split(" ", 2);
-                                String str3 = split2[c2];
+                                String str3 = split2[c10];
                                 if (str3.contains("..") || str3.startsWith("/")) {
                                     throw new IllegalArgumentException("Invalid bundle path");
                                 }
@@ -90,7 +90,7 @@ public abstract class z {
                                         byte[] bArr2 = new byte[i12];
                                         while (true) {
                                             int read2 = open.read(bArr2);
-                                            if (read2 == i3) {
+                                            if (read2 == i7) {
                                                 break;
                                             }
                                             messageDigest.update(bArr2, i10, read2);
@@ -133,8 +133,8 @@ public abstract class z {
                             i10 = i11;
                             assets = assetManager;
                             i12 = TLObject.FLAG_14;
-                            i3 = -1;
-                            c2 = 1;
+                            i7 = -1;
+                            c10 = 1;
                         }
                         FileOutputStream fileOutputStream2 = new FileOutputStream(file3);
                         try {

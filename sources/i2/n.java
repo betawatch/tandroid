@@ -1,90 +1,47 @@
 package i2;
 
-import android.net.Uri;
-import b8.zb;
-import d2.o0;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class n {
-    public static final /* synthetic */ int i = 0;
-    public final Uri a;
+    public final int a;
     public final int b;
-    public final byte[] c;
-    public final Map d;
-    public final long e;
-    public final long f;
-    public final String g;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final float g;
     public final int h;
+    public final int i;
+    public final boolean j;
+    public final boolean k;
+    public final int l;
+    public final int m;
+    public final int n;
+    public final boolean o;
+    public final int p;
+    public final int q;
+    public final int r;
+    public final int s;
 
-    static {
-        o0.a("media3.datasource");
-    }
-
-    public n(Uri uri, int i3, byte[] bArr, Map map, long j10, long j11, String str, int i10) {
-        zb.f(j10 >= 0);
-        zb.f(j10 >= 0);
-        zb.f(j11 > 0 || j11 == -1);
-        uri.getClass();
-        this.a = uri;
-        this.b = i3;
-        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
-        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
-        this.e = j10;
-        this.f = j11;
-        this.g = str;
-        this.h = i10;
-    }
-
-    public final m a() {
-        m mVar = new m();
-        mVar.e = this.a;
-        mVar.a = this.b;
-        mVar.f = this.c;
-        mVar.g = this.d;
-        mVar.b = this.e;
-        mVar.d = this.f;
-        mVar.h = this.g;
-        mVar.c = this.h;
-        return mVar;
-    }
-
-    public final n b(long j10) {
-        long j11 = this.f;
-        long j12 = j11 != -1 ? j11 - j10 : -1L;
-        if (j10 == 0 && j11 == j12) {
-            return this;
-        }
-        return new n(this.a, this.b, this.c, this.d, this.e + j10, j12, this.g, this.h);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("DataSpec[");
-        int i3 = this.b;
-        if (i3 == 1) {
-            str = "GET";
-        } else if (i3 == 2) {
-            str = "POST";
-        } else {
-            if (i3 != 3) {
-                throw new IllegalStateException();
-            }
-            str = "HEAD";
-        }
-        sb2.append(str);
-        sb2.append(" ");
-        sb2.append(this.a);
-        sb2.append(", ");
-        sb2.append(this.e);
-        sb2.append(", ");
-        sb2.append(this.f);
-        sb2.append(", ");
-        sb2.append(this.g);
-        sb2.append(", ");
-        return a1.g.o(this.h, "]", sb2);
+    public n(int i7, int i10, int i11, int i12, int i13, int i14, float f10, int i15, int i16, boolean z9, boolean z10, int i17, int i18, int i19, boolean z11, int i20, int i21, int i22, int i23) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = f10;
+        this.h = i15;
+        this.i = i16;
+        this.j = z9;
+        this.k = z10;
+        this.l = i17;
+        this.m = i18;
+        this.n = i19;
+        this.o = z11;
+        this.p = i20;
+        this.q = i21;
+        this.r = i22;
+        this.s = i23;
     }
 }

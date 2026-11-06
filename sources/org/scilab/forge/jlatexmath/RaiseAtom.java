@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class RaiseAtom extends Atom {
     private Atom base;
@@ -11,9 +11,9 @@ public class RaiseAtom extends Atom {
     private float r;
     private int runit;
 
-    public RaiseAtom(Atom atom, int i3, float f10, int i10, float f11, int i11, float f12) {
+    public RaiseAtom(Atom atom, int i7, float f10, int i10, float f11, int i11, float f12) {
         this.base = atom;
-        this.runit = i3;
+        this.runit = i7;
         this.r = f10;
         this.hunit = i10;
         this.h = f11;
@@ -24,11 +24,11 @@ public class RaiseAtom extends Atom {
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box createBox = this.base.createBox(teXEnvironment);
-        int i3 = this.runit;
-        if (i3 == -1) {
+        int i7 = this.runit;
+        if (i7 == -1) {
             createBox.setShift(0.0f);
         } else {
-            createBox.setShift(SpaceAtom.getFactor(i3, teXEnvironment) * (-this.r));
+            createBox.setShift(SpaceAtom.getFactor(i7, teXEnvironment) * (-this.r));
         }
         if (this.hunit == -1) {
             return createBox;

@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 class ColorPicker$RadioButton extends View {
     public final Paint a;
@@ -23,17 +23,17 @@ class ColorPicker$RadioButton extends View {
         this.a = new Paint(1);
     }
 
-    public final void a(int i3) {
-        this.e = i3;
+    public final void a(int i7) {
+        this.e = i7;
         invalidate();
     }
 
-    public final void b(boolean z10) {
+    public final void b(boolean z9) {
         ObjectAnimator objectAnimator = this.b;
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        if (!z10) {
+        if (!z9) {
             setCheckedState(this.d ? 1.0f : 0.0f);
             return;
         }
@@ -58,14 +58,14 @@ class ColorPicker$RadioButton extends View {
         float L = org.telegram.messenger.g0.L(15.0f);
         float measuredWidth = getMeasuredWidth() * 0.5f;
         float measuredHeight = getMeasuredHeight() * 0.5f;
-        int i3 = this.e;
+        int i7 = this.e;
         Paint paint = this.a;
-        paint.setColor(i3);
+        paint.setColor(i7);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
         paint.setAlpha(Math.round(this.c * 255.0f));
         canvas.drawCircle(measuredWidth, measuredHeight, L - (paint.getStrokeWidth() * 0.5f), paint);
-        paint.setAlpha(org.telegram.messenger.hs.e4);
+        paint.setAlpha(org.telegram.messenger.qs.e4);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(measuredWidth, measuredHeight, L - (org.telegram.messenger.g0.L(5.0f) * this.c), paint);
     }
@@ -73,7 +73,7 @@ class ColorPicker$RadioButton extends View {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(org.telegram.messenger.bd.M0(2131752015, null));
+        accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131752015, null));
         accessibilityNodeInfo.setClassName(Button.class.getName());
         accessibilityNodeInfo.setChecked(this.d);
         accessibilityNodeInfo.setCheckable(true);
@@ -81,7 +81,7 @@ class ColorPicker$RadioButton extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 

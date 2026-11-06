@@ -1,27 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class wz0 extends c11 {
-    public final /* synthetic */ View R;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique S;
-    public final /* synthetic */ xz0 T;
+public final /* synthetic */ class wz0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q11 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wz0(xz0 xz0Var, Context context, Runnable runnable, View view, q01 q01Var, org.telegram.ui.ActionBar.e6 e6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(xz0Var.e, context, runnable, view, q01Var, e6Var);
-        this.T = xz0Var;
-        this.R = view2;
-        this.S = tL_starGiftUnique;
+    public /* synthetic */ wz0(q11 q11Var, boolean z9, int i7) {
+        this.a = i7;
+        this.b = q11Var;
+        this.c = z9;
     }
 
-    @Override // org.telegram.ui.c11, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.T.e.Y0 = null;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                q11 q11Var = this.b;
+                o01 o01Var = q11Var.h0;
+                e01 e01Var = q11Var.i0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f10 = 1.0f - floatValue;
+                o01Var.setAlpha(f10);
+                o01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * floatValue);
+                e01Var.setAlpha(floatValue);
+                e01Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * f10);
+                q11Var.j0.setAlpha(e01Var.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                q11 q11Var2 = this.b;
+                q11Var2.j0.setAlpha(q11Var2.i0.getAlpha() * floatValue2);
+                break;
+        }
     }
 }

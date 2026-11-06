@@ -1,63 +1,71 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gh0 extends sg.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public lh0 g;
-    public int h;
-    public boolean i;
+public final /* synthetic */ class gh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsCustomSettingsActivity b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
 
-    public static gh0 b(int i3, String str, boolean z10) {
-        gh0 gh0Var = new gh0(1, true);
-        gh0Var.c = i3;
-        gh0Var.e = str;
-        gh0Var.i = z10;
-        return gh0Var;
+    public /* synthetic */ gh0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, View view, int i7, int i10) {
+        this.a = i10;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = view;
+        this.d = i7;
     }
 
-    public static gh0 c(int i3, String str, String str2) {
-        gh0 gh0Var = new gh0(5, true);
-        gh0Var.c = i3;
-        gh0Var.e = str;
-        gh0Var.f = str2;
-        return gh0Var;
-    }
-
-    public static gh0 d(int i3, String str) {
-        gh0 gh0Var = new gh0(4, true);
-        gh0Var.c = i3;
-        gh0Var.e = str;
-        return gh0Var;
-    }
-
-    @Override // sg.a
-    public final boolean a(sg.a aVar) {
-        if (this == aVar) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = this.d;
+        View view = this.c;
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.b;
+        switch (i7) {
+            case 0:
+                ArrayList arrayList = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.t8)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i10 >= 0 && i10 < arrayList.size()) {
+                        ((kh0) arrayList.get(i10)).h = notificationsCustomSettingsActivity.k0();
+                    }
+                    ((org.telegram.ui.Cells.t8) view).b(notificationsCustomSettingsActivity.k0(), org.telegram.messenger.hd.M0(2131748988, "LedColor"), true);
+                    break;
+                }
+                break;
+            case 1:
+                ArrayList arrayList2 = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.w9)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i10 >= 0 && i10 < arrayList2.size()) {
+                        ((kh0) arrayList2.get(i10)).f = notificationsCustomSettingsActivity.l0();
+                    }
+                    org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) view;
+                    w9Var.c(org.telegram.messenger.hd.M0(2131747097, "PopupNotification"), notificationsCustomSettingsActivity.l0(), true, w9Var.h);
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList3 = notificationsCustomSettingsActivity.I;
+                if (!(view instanceof org.telegram.ui.Cells.w9)) {
+                    notificationsCustomSettingsActivity.q0(true);
+                    break;
+                } else {
+                    if (i10 >= 0 && i10 < arrayList3.size()) {
+                        ((kh0) arrayList3.get(i10)).f = notificationsCustomSettingsActivity.m0();
+                    }
+                    org.telegram.ui.Cells.w9 w9Var2 = (org.telegram.ui.Cells.w9) view;
+                    w9Var2.c(org.telegram.messenger.hd.M0(2131747905, "NotificationsImportance"), notificationsCustomSettingsActivity.m0(), true, w9Var2.h);
+                    break;
+                }
+                break;
         }
-        if (gh0.class != aVar.getClass()) {
-            return false;
-        }
-        gh0 gh0Var = (gh0) aVar;
-        return this.c == gh0Var.c && this.d == gh0Var.d && this.h == gh0Var.h && this.i == gh0Var.i && Objects.equals(this.e, gh0Var.e) && Objects.equals(this.f, gh0Var.f) && this.g == gh0Var.g;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && gh0.class == obj.getClass()) {
-            gh0 gh0Var = (gh0) obj;
-            if (this.c == gh0Var.c && this.h == gh0Var.h && ((this.a == 8 || (this.d == gh0Var.d && Objects.equals(this.e, gh0Var.e) && (this.a == 6 || Objects.equals(this.f, gh0Var.f)))) && this.g == gh0Var.g)) {
-                return true;
-            }
-        }
-        return false;
     }
 }

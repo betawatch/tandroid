@@ -2,7 +2,7 @@ package a0;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class m implements Cloneable {
     public /* synthetic */ int[] a;
@@ -10,29 +10,29 @@ public final class m implements Cloneable {
     public /* synthetic */ int c;
 
     public m() {
-        int i3;
+        int i7;
         int i10 = 4;
         while (true) {
-            i3 = 40;
+            i7 = 40;
             if (i10 >= 32) {
                 break;
             }
             int i11 = (1 << i10) - 12;
             if (40 <= i11) {
-                i3 = i11;
+                i7 = i11;
                 break;
             }
             i10++;
         }
-        int i12 = i3 / 4;
+        int i12 = i7 / 4;
         this.a = new int[i12];
         this.b = new Object[i12];
     }
 
-    public final void a(int i3, Object obj) {
+    public final void a(int i7, Object obj) {
         int i10 = this.c;
-        if (i10 != 0 && i3 <= this.a[i10 - 1]) {
-            d(i3, obj);
+        if (i10 != 0 && i7 <= this.a[i10 - 1]) {
+            d(i7, obj);
             return;
         }
         if (i10 >= this.a.length) {
@@ -57,7 +57,7 @@ public final class m implements Cloneable {
             kotlin.jvm.internal.j.d(copyOf2, "copyOf(this, newSize)");
             this.b = copyOf2;
         }
-        this.a[i10] = i3;
+        this.a[i10] = i7;
         this.b[i10] = obj;
         this.c = i10 + 1;
     }
@@ -72,17 +72,17 @@ public final class m implements Cloneable {
         return mVar;
     }
 
-    public final Object c(int i3) {
+    public final Object c(int i7) {
         Object obj;
-        int a10 = b0.a.a(this.c, i3, this.a);
+        int a10 = b0.a.a(this.c, i7, this.a);
         if (a10 < 0 || (obj = this.b[a10]) == i.b) {
             return null;
         }
         return obj;
     }
 
-    public final void d(int i3, Object obj) {
-        int a10 = b0.a.a(this.c, i3, this.a);
+    public final void d(int i7, Object obj) {
+        int a10 = b0.a.a(this.c, i7, this.a);
         if (a10 >= 0) {
             this.b[a10] = obj;
             return;
@@ -92,7 +92,7 @@ public final class m implements Cloneable {
         if (i10 < i11) {
             Object[] objArr = this.b;
             if (objArr[i10] == i.b) {
-                this.a[i10] = i3;
+                this.a[i10] = i7;
                 objArr[i10] = obj;
                 return;
             }
@@ -123,21 +123,21 @@ public final class m implements Cloneable {
         if (i16 - i10 != 0) {
             int[] iArr = this.a;
             int i17 = i10 + 1;
-            ed.f.b(i17, i10, i16, iArr, iArr);
+            hd.e.b(i17, i10, i16, iArr, iArr);
             Object[] objArr2 = this.b;
-            ed.f.c(i17, i10, this.c, objArr2, objArr2);
+            hd.e.c(i17, i10, this.c, objArr2, objArr2);
         }
-        this.a[i10] = i3;
+        this.a[i10] = i7;
         this.b[i10] = obj;
         this.c++;
     }
 
     public final String toString() {
-        int i3 = this.c;
-        if (i3 <= 0) {
+        int i7 = this.c;
+        if (i7 <= 0) {
             return "{}";
         }
-        StringBuilder sb2 = new StringBuilder(i3 * 28);
+        StringBuilder sb2 = new StringBuilder(i7 * 28);
         sb2.append('{');
         int i10 = this.c;
         for (int i11 = 0; i11 < i10; i11++) {

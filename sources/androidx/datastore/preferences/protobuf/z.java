@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class z extends a {
     private static final int MEMOIZED_SERIALIZED_SIZE_MASK = Integer.MAX_VALUE;
@@ -61,7 +61,7 @@ public abstract class z extends a {
         }
     }
 
-    public static final boolean f(z zVar, boolean z10) {
+    public static final boolean f(z zVar, boolean z9) {
         byte byteValue = ((Byte) zVar.c(1)).byteValue();
         if (byteValue == 1) {
             return true;
@@ -72,7 +72,7 @@ public abstract class z extends a {
         y0 y0Var = y0.c;
         y0Var.getClass();
         boolean e10 = y0Var.a(zVar.getClass()).e(zVar);
-        if (z10) {
+        if (z9) {
             zVar.c(2);
         }
         return e10;
@@ -98,11 +98,11 @@ public abstract class z extends a {
             if (f11 >= 0) {
                 return f11;
             }
-            throw new IllegalStateException(k2.p1.i(f11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(jg.g.j(f11, "serialized size must be non-negative, was "));
         }
-        int i3 = this.memoizedSerializedSize;
-        if ((i3 & ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE) {
-            return i3 & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i7 = this.memoizedSerializedSize;
+        if ((i7 & ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE) {
+            return i7 & ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         if (b1Var == null) {
             y0 y0Var2 = y0.c;
@@ -127,7 +127,7 @@ public abstract class z extends a {
         a10.c(this, l0Var);
     }
 
-    public abstract Object c(int i3);
+    public abstract Object c(int i7);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -167,11 +167,11 @@ public abstract class z extends a {
         return (z) c(4);
     }
 
-    public final void k(int i3) {
-        if (i3 < 0) {
-            throw new IllegalStateException(k2.p1.i(i3, "serialized size must be non-negative, was "));
+    public final void k(int i7) {
+        if (i7 < 0) {
+            throw new IllegalStateException(jg.g.j(i7, "serialized size must be non-negative, was "));
         }
-        this.memoizedSerializedSize = (i3 & ConnectionsManager.DEFAULT_DATACENTER_ID) | (this.memoizedSerializedSize & Integer.MIN_VALUE);
+        this.memoizedSerializedSize = (i7 & ConnectionsManager.DEFAULT_DATACENTER_ID) | (this.memoizedSerializedSize & Integer.MIN_VALUE);
     }
 
     public final String toString() {

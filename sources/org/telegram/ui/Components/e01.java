@@ -6,28 +6,28 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public abstract class e01 extends View {
     public final f01 a;
-    public org.telegram.messenger.u10 b;
-    public final org.telegram.ui.ActionBar.e6 c;
+    public org.telegram.messenger.c20 b;
+    public final org.telegram.ui.ActionBar.f6 c;
     public int d;
 
-    public e01(int i3, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public e01(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.c = e6Var;
-        f01 f01Var = new f01(i3, this, e6Var, false);
+        this.c = f6Var;
+        f01 f01Var = new f01(i7, this, f6Var, false);
         this.a = f01Var;
-        f01Var.s = new sp0(this, 18);
+        f01Var.s = new ir0(this, 16);
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.e6 e6Var = this.c;
-        if (e6Var != null) {
-            e6Var.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        if (f6Var != null) {
+            f6Var.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
         } else {
             org.telegram.ui.ActionBar.k6.r(0.0f, 0.0f, getMeasuredWidth(), this.d);
         }
@@ -47,8 +47,8 @@ public abstract class e01 extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(33.0f), TLObject.FLAG_30));
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(33.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -56,19 +56,19 @@ public abstract class e01 extends View {
         return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
     }
 
-    public void set(org.telegram.messenger.zi ziVar) {
+    public void set(org.telegram.messenger.ij ijVar) {
         f01 f01Var = this.a;
-        f01Var.e(ziVar);
+        f01Var.e(ijVar);
         if (isAttachedToWindow()) {
             f01Var.a();
         }
     }
 
-    public void setBackgroundHeight(int i3) {
-        this.d = i3;
+    public void setBackgroundHeight(int i7) {
+        this.d = i7;
     }
 
-    public void setOnTopicClickListener(org.telegram.messenger.u10 u10Var) {
-        this.b = u10Var;
+    public void setOnTopicClickListener(org.telegram.messenger.c20 c20Var) {
+        this.b = c20Var;
     }
 }

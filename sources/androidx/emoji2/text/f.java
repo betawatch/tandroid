@@ -3,7 +3,7 @@ package androidx.emoji2.text;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f {
     public volatile Object a;
@@ -24,12 +24,12 @@ public final class f {
         }
     }
 
-    public f(t9.p pVar) {
-        nb.a aVar = new nb.a(28);
-        nb.a aVar2 = new nb.a(27);
+    public f(u9.o oVar) {
+        qb.a aVar = new qb.a(29);
+        qb.a aVar2 = new qb.a(28);
         this.c = aVar;
         this.b = new ArrayList();
         this.a = aVar2;
-        pVar.a(new u9.j(this));
+        oVar.a(new v0.j(this));
     }
 }

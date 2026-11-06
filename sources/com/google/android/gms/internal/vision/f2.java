@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f2 implements n2 {
     public final l0 a;
@@ -17,7 +17,7 @@ public final class f2 implements n2 {
     @Override // com.google.android.gms.internal.vision.n2
     public final boolean a(Object obj) {
         this.c.getClass();
-        a1.g.z(obj);
+        a8.p0.A(obj);
         throw null;
     }
 
@@ -26,14 +26,14 @@ public final class f2 implements n2 {
         this.b.getClass();
         ((f1) obj).zzb.e = false;
         this.c.getClass();
-        a1.g.z(obj);
+        a8.p0.A(obj);
         throw null;
     }
 
     @Override // com.google.android.gms.internal.vision.n2
     public final void c(Object obj, y1 y1Var) {
         this.c.getClass();
-        a1.g.z(obj);
+        a8.p0.A(obj);
         throw null;
     }
 
@@ -49,7 +49,7 @@ public final class f2 implements n2 {
     }
 
     @Override // com.google.android.gms.internal.vision.n2
-    public final void f(Object obj, byte[] bArr, int i3, int i10, com.google.android.gms.internal.clearcut.m mVar) {
+    public final void f(Object obj, byte[] bArr, int i7, int i10, com.google.android.gms.internal.clearcut.m mVar) {
         f1 f1Var = (f1) obj;
         if (f1Var.zzb == q2.f) {
             f1Var.zzb = q2.b();
@@ -73,9 +73,9 @@ public final class f2 implements n2 {
     public final int zzb(Object obj) {
         this.b.getClass();
         q2 q2Var = ((f1) obj).zzb;
-        int i3 = q2Var.d;
-        if (i3 != -1) {
-            return i3;
+        int i7 = q2Var.d;
+        if (i7 != -1) {
+            return i7;
         }
         int i10 = 0;
         for (int i11 = 0; i11 < q2Var.a; i11++) {

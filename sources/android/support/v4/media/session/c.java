@@ -1,23 +1,23 @@
 package android.support.v4.media.session;
 
+import a8.j1;
 import android.app.PendingIntent;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
-import b8.j0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public IBinder a;
 
     @Override // android.support.v4.media.session.d
-    public final MediaMetadataCompat I() {
+    public final MediaMetadataCompat H() {
         throw null;
     }
 
     @Override // android.support.v4.media.session.d
-    public final void L(b bVar) {
+    public final void K(b bVar) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -37,7 +37,7 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void e() {
+    public final void b() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -51,14 +51,13 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final PlaybackStateCompat h() {
+    public final void f() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-            this.a.transact(28, obtain, obtain2, 0);
+            this.a.transact(13, obtain, obtain2, 0);
             obtain2.readException();
-            return (PlaybackStateCompat) j0.a(obtain2, PlaybackStateCompat.CREATOR);
         } finally {
             obtain2.recycle();
             obtain.recycle();
@@ -66,13 +65,14 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void j() {
+    public final PlaybackStateCompat i() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-            this.a.transact(13, obtain, obtain2, 0);
+            this.a.transact(28, obtain, obtain2, 0);
             obtain2.readException();
+            return (PlaybackStateCompat) j1.a(obtain2, PlaybackStateCompat.CREATOR);
         } finally {
             obtain2.recycle();
             obtain.recycle();
@@ -109,7 +109,7 @@ public final class c implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final PendingIntent x() {
+    public final PendingIntent v() {
         throw null;
     }
 }

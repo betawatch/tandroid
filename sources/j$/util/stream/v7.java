@@ -20,8 +20,8 @@ public final class v7 extends x7 implements Spliterator, Consumer {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -53,30 +53,30 @@ public final class v7 extends x7 implements Spliterator, Consumer {
         Objects.requireNonNull(consumer);
         c7 c7Var = null;
         while (true) {
-            w7 c2 = c();
-            if (c2 == w7.NO_MORE) {
+            w7 c10 = c();
+            if (c10 == w7.NO_MORE) {
                 return;
             }
             w7 w7Var = w7.MAYBE_MORE;
             Spliterator spliterator = this.a;
-            if (c2 == w7Var) {
-                int i3 = this.c;
+            if (c10 == w7Var) {
+                int i7 = this.c;
                 if (c7Var == null) {
-                    c7Var = new c7(i3);
+                    c7Var = new c7(i7);
                 } else {
                     c7Var.a = 0;
                 }
-                long j10 = 0;
+                long j3 = 0;
                 while (spliterator.tryAdvance(c7Var)) {
-                    j10++;
-                    if (j10 >= i3) {
+                    j3++;
+                    if (j3 >= i7) {
                         break;
                     }
                 }
-                if (j10 == 0) {
+                if (j3 == 0) {
                     return;
                 }
-                long a10 = a(j10);
+                long a10 = a(j3);
                 for (int i10 = 0; i10 < a10; i10++) {
                     consumer.x(c7Var.b[i10]);
                 }

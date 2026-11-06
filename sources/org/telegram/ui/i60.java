@@ -1,52 +1,50 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
+import android.telephony.PhoneNumberUtils;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i60 implements org.telegram.ui.ActionBar.p1 {
+public final /* synthetic */ class i60 implements Predicate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i60(int i3, HashMap hashMap, boolean z10, boolean z11, int i10) {
-        this.a = i10;
-        this.b = i3;
-        this.c = hashMap;
-        this.d = z10;
-        this.e = z11;
+    public /* synthetic */ i60(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i7 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i7 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
         switch (this.a) {
             case 0:
-                int i10 = this.b;
-                HashMap hashMap = this.c;
-                boolean z10 = this.d;
-                boolean z11 = this.e;
-                String str = LaunchActivity.E1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i10), hashMap, z10, z11, true));
-                break;
+                String str = (String) obj;
+                return str != null && str.equals((String) this.b);
             case 1:
-                int i11 = this.b;
-                HashMap hashMap2 = this.c;
-                boolean z12 = this.d;
-                boolean z13 = this.e;
-                String str2 = LaunchActivity.E1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i11), hashMap2, z12, z13, false));
-                break;
+                return PhoneNumberUtils.compare((String) this.b, (String) obj);
+            case 2:
+                String str2 = (String) obj;
+                return str2 != null && str2.equals((String) this.b);
             default:
-                int i12 = this.b;
-                HashMap hashMap3 = this.c;
-                boolean z14 = this.d;
-                boolean z15 = this.e;
-                String str3 = LaunchActivity.E1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i12), hashMap3, z14, z15, true));
-                break;
+                return an.A1((an) this.b, (TLRPC.MessageEntity) obj);
         }
     }
 }

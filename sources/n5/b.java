@@ -1,15 +1,37 @@
 package n5;
 
-import k2.p1;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements ma.d {
+public final class b implements na.d {
     public static final b a = new b();
-    public static final ma.c b = new ma.c("storageMetrics", p1.o(p1.n(pa.d.class, new pa.a(1))));
+    public static final na.c b = na.c.c("sdkVersion");
+    public static final na.c c = na.c.c("model");
+    public static final na.c d = na.c.c("hardware");
+    public static final na.c e = na.c.c("device");
+    public static final na.c f = na.c.c("product");
+    public static final na.c g = na.c.c("osBuild");
+    public static final na.c h = na.c.c("manufacturer");
+    public static final na.c i = na.c.c("fingerprint");
+    public static final na.c j = na.c.c("locale");
+    public static final na.c k = na.c.c("country");
+    public static final na.c l = na.c.c("mccMnc");
+    public static final na.c m = na.c.c("applicationBuild");
 
-    @Override // ma.a
+    @Override // na.a
     public final void a(Object obj, Object obj2) {
-        ((ma.e) obj2).a(b, ((q5.b) obj).a);
+        na.e eVar = (na.e) obj2;
+        l lVar = (l) ((a) obj);
+        eVar.a(b, lVar.a);
+        eVar.a(c, lVar.b);
+        eVar.a(d, lVar.c);
+        eVar.a(e, lVar.d);
+        eVar.a(f, lVar.e);
+        eVar.a(g, lVar.f);
+        eVar.a(h, lVar.g);
+        eVar.a(i, lVar.h);
+        eVar.a(j, lVar.i);
+        eVar.a(k, lVar.j);
+        eVar.a(l, lVar.k);
+        eVar.a(m, lVar.l);
     }
 }

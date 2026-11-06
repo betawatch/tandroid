@@ -1,46 +1,134 @@
 package tg;
 
-import android.os.Looper;
-import org.telegram.ui.Components.lt;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.TextureView;
+import fi.e5;
+import fi.x5;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.qs;
+import org.telegram.ui.Components.ca;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
+public final class r0 extends org.telegram.ui.Cells.q1 {
+    public final ca kd;
+    public final float[] ld;
+    public final Path md;
+    public final Paint nd;
+    public final Rect od;
+    public final RectF pd;
+    public final /* synthetic */ s0 qd;
 
-    public /* synthetic */ r0(s0 s0Var, int i3) {
-        this.a = i3;
-        this.b = s0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r0(s0 s0Var, Context context, int i7, t0 t0Var) {
+        super(context, i7, false, null, t0Var);
+        this.qd = s0Var;
+        this.kd = new ca(s0Var.d, this, 10, false);
+        this.ld = new float[8];
+        this.md = new Path();
+        Paint paint = new Paint();
+        this.nd = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.od = new Rect();
+        this.pd = new RectF();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                s0 s0Var = this.b;
-                lt ltVar = s0Var.x;
-                r0 r0Var = s0Var.s;
-                if (r0Var != null) {
-                    s0Var.cancelRunnable(r0Var);
-                    s0Var.s = null;
-                }
-                s0Var.cancelRunnable(ltVar);
-                s0Var.postRunnable(ltVar);
-                break;
-            case 1:
-                s0 s0Var2 = this.b;
-                s0Var2.s = null;
-                s0Var2.x.run();
-                break;
-            default:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.q1
+    public final Paint Z1(String str) {
+        if ("paintChatActionBackground".equals(str)) {
+            this.qd.h.v0 = true;
+            Paint c10 = this.kd.c(1.0f);
+            if (c10 != null) {
+                return c10;
+            }
         }
+        return super.Z1(str);
+    }
+
+    @Override // org.telegram.ui.Cells.q1
+    public final boolean l1(Canvas canvas) {
+        x5 x5Var;
+        float[] fArr;
+        ImageReceiver photoImage = getPhotoImage();
+        s0 s0Var = this.qd;
+        e5 e5Var = s0Var.h;
+        if (!s0Var.f || photoImage == null || (((x5Var = s0Var.e) == null || !x5Var.g || !x5Var.d || !e5Var.x0) && !e5Var.u0 && (e5Var.w0 == null || !e5Var.M0.r0))) {
+            return super.l1(canvas);
+        }
+        int i7 = 0;
+        while (true) {
+            int[] iArr = photoImage.W0;
+            int length = iArr.length;
+            fArr = this.ld;
+            if (i7 >= length) {
+                break;
+            }
+            int i10 = i7 * 2;
+            float f10 = iArr[i7];
+            fArr[i10] = f10;
+            fArr[i10 + 1] = f10;
+            i7++;
+        }
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(photoImage.K0, photoImage.L0, photoImage.y(), photoImage.A());
+        Path path = this.md;
+        path.rewind();
+        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+        TextureView textureView = e5Var.w0;
+        if (textureView == null || !e5Var.M0.r0) {
+            canvas.drawPath(path, this.nd);
+            return true;
+        }
+        Bitmap bitmap = textureView.getBitmap();
+        if (bitmap == null) {
+            return super.l1(canvas);
+        }
+        canvas.save();
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        float max = Math.max(photoImage.M0 / e5Var.y0, photoImage.N0 / e5Var.z0);
+        canvas.translate(photoImage.r() - ((e5Var.y0 * max) / 2.0f), photoImage.s() - ((e5Var.z0 * max) / 2.0f));
+        canvas.scale((e5Var.y0 / e5Var.w0.getWidth()) * max, (e5Var.z0 / e5Var.w0.getHeight()) * max);
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        Rect rect = this.od;
+        rect.set(0, 0, width, height);
+        float width2 = e5Var.w0.getWidth();
+        float height2 = e5Var.w0.getHeight();
+        RectF rectF2 = this.pd;
+        rectF2.set(0.0f, 0.0f, width2, height2);
+        canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
+        canvas.restore();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        s0 s0Var = this.qd;
+        x5 x5Var = s0Var.e;
+        if ((x5Var != null && x5Var.g && x5Var.d) || s0Var.h.u0) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), qs.e4, 31);
+        } else {
+            canvas2 = canvas;
+            canvas2.save();
+        }
+        d1(canvas2);
+        canvas2.restore();
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

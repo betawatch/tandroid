@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzrj implements zzsr {
     static final zzsr zza = new zzrj();
@@ -9,7 +9,7 @@ final class zzrj implements zzsr {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsr
-    public final boolean zza(int i3) {
-        return i3 == 0 || i3 == 1 || i3 == 2 || i3 == 3 || i3 == 4;
+    public final boolean zza(int i7) {
+        return i7 == 0 || i7 == 1 || i7 == 2 || i7 == 3 || i7 == 4;
     }
 }

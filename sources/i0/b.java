@@ -1,8 +1,9 @@
 package i0;
 
+import ab.x;
 import android.graphics.Insets;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b e = new b(0, 0, 0, 0);
@@ -11,8 +12,8 @@ public final class b {
     public final int c;
     public final int d;
 
-    public b(int i3, int i10, int i11, int i12) {
-        this.a = i3;
+    public b(int i7, int i10, int i11, int i12) {
+        this.a = i7;
         this.b = i10;
         this.c = i11;
         this.d = i12;
@@ -22,24 +23,24 @@ public final class b {
         return b(Math.max(bVar.a, bVar2.a), Math.max(bVar.b, bVar2.b), Math.max(bVar.c, bVar2.c), Math.max(bVar.d, bVar2.d));
     }
 
-    public static b b(int i3, int i10, int i11, int i12) {
-        return (i3 == 0 && i10 == 0 && i11 == 0 && i12 == 0) ? e : new b(i3, i10, i11, i12);
+    public static b b(int i7, int i10, int i11, int i12) {
+        return (i7 == 0 && i10 == 0 && i11 == 0 && i12 == 0) ? e : new b(i7, i10, i11, i12);
     }
 
     public static b c(Insets insets) {
-        int i3;
+        int i7;
         int i10;
         int i11;
         int i12;
-        i3 = insets.left;
+        i7 = insets.left;
         i10 = insets.top;
         i11 = insets.right;
         i12 = insets.bottom;
-        return b(i3, i10, i11, i12);
+        return b(i7, i10, i11, i12);
     }
 
     public final Insets d() {
-        return d2.d.i(this.a, this.b, this.c, this.d);
+        return x.i(this.a, this.b, this.c, this.d);
     }
 
     public final boolean equals(Object obj) {

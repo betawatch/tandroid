@@ -1,14 +1,26 @@
 package vd;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public abstract class b {
-    public static final /* synthetic */ int a = 0;
+import java.util.List;
+import java.util.Map;
 
-    static {
-        ThreadLocal[] threadLocalArr = new ThreadLocal[4];
-        for (int i3 = 0; i3 < 4; i3++) {
-            threadLocalArr[i3] = new ThreadLocal();
-        }
-    }
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public interface b extends a {
+    Object call(Object... objArr);
+
+    Object callBy(Map map);
+
+    List getParameters();
+
+    h getReturnType();
+
+    List getTypeParameters();
+
+    i getVisibility();
+
+    boolean isAbstract();
+
+    boolean isFinal();
+
+    boolean isOpen();
 }

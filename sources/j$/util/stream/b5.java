@@ -98,13 +98,13 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        return t3.a0(aVar, spliterator, z10, intFunction);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z9, IntFunction intFunction) {
+        return t3.a0(aVar, spliterator, z9, intFunction);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
-        return new z7(aVar, supplier, z10);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z9) {
+        return new z7(aVar, supplier, z9);
     }
 
     @Override // j$.util.stream.a
@@ -120,8 +120,8 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j10, IntFunction intFunction) {
-        return t3.Y(j10, intFunction);
+    public final w1 A0(long j3, IntFunction intFunction) {
+        return t3.Y(j3, intFunction);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -221,31 +221,31 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream limit(long j10) {
-        if (j10 < 0) {
-            throw new IllegalArgumentException(Long.toString(j10));
+    public final Stream limit(long j3) {
+        if (j3 < 0) {
+            throw new IllegalArgumentException(Long.toString(j3));
         }
-        return t3.C0(this, 0L, j10);
+        return t3.C0(this, 0L, j3);
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream skip(long j10) {
-        if (j10 >= 0) {
-            return j10 == 0 ? this : t3.C0(this, j10, -1L);
+    public final Stream skip(long j3) {
+        if (j3 >= 0) {
+            return j3 == 0 ? this : t3.C0(this, j3, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j10));
+        throw new IllegalArgumentException(Long.toString(j3));
     }
 
     @Override // j$.util.stream.Stream
     public final Stream takeWhile(Predicate predicate) {
-        int i3 = w8.a;
+        int i7 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.a, predicate, 0);
     }
 
     @Override // j$.util.stream.Stream
     public final Stream dropWhile(Predicate predicate) {
-        int i3 = w8.a;
+        int i7 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.b, predicate, 1);
     }

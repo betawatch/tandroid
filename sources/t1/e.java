@@ -1,22 +1,53 @@
 package t1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class e {
-    public final long a;
-    public final long b;
+import android.text.Editable;
+import android.text.method.KeyListener;
+import android.text.method.MetaKeyKeyListener;
+import android.view.KeyEvent;
+import android.view.View;
 
-    public e(long j10, long j11) {
-        if (j11 == 0) {
-            this.a = 0L;
-            this.b = 1L;
-        } else {
-            this.a = j10;
-            this.b = j11;
-        }
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class e implements KeyListener {
+    public final KeyListener a;
+    public final qb.a b;
+
+    public e(KeyListener keyListener) {
+        qb.a aVar = new qb.a(24);
+        this.a = keyListener;
+        this.b = aVar;
     }
 
-    public final String toString() {
-        return this.a + "/" + this.b;
+    @Override // android.text.method.KeyListener
+    public final void clearMetaKeyState(View view, Editable editable, int i7) {
+        this.a.clearMetaKeyState(view, editable, i7);
+    }
+
+    @Override // android.text.method.KeyListener
+    public final int getInputType() {
+        return this.a.getInputType();
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyDown(View view, Editable editable, int i7, KeyEvent keyEvent) {
+        boolean z9;
+        this.b.getClass();
+        if (i7 != 67 ? i7 != 112 ? false : wf.b.E(editable, keyEvent, true) : wf.b.E(editable, keyEvent, false)) {
+            MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
+            z9 = true;
+        } else {
+            z9 = false;
+        }
+        return z9 || this.a.onKeyDown(view, editable, i7, keyEvent);
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
+        return this.a.onKeyOther(view, editable, keyEvent);
+    }
+
+    @Override // android.text.method.KeyListener
+    public final boolean onKeyUp(View view, Editable editable, int i7, KeyEvent keyEvent) {
+        return this.a.onKeyUp(view, editable, i7, keyEvent);
     }
 }

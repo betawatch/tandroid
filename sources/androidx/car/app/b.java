@@ -7,15 +7,15 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements androidx.car.app.utils.a, androidx.activity.result.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ b(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public /* synthetic */ b(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
@@ -35,10 +35,10 @@ public final /* synthetic */ class b implements androidx.car.app.utils.a, androi
     }
 
     @Override // androidx.activity.result.b
-    public void g(Object obj) {
+    public void f(Object obj) {
         CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
         IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
-        int i3 = CarAppPermissionActivity.K;
+        int i7 = CarAppPermissionActivity.J;
         carAppPermissionActivity.getClass();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();

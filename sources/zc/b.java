@@ -1,74 +1,60 @@
 package zc;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import c8.x0;
+import gf.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements Iterable, Cloneable {
-    public static final String[] d = new String[0];
-    public int a = 0;
-    public String[] b;
-    public String[] c;
+public final class b extends mf.a {
+    public final a a = new a();
+    public final StringBuilder b = new StringBuilder();
+    public final int c;
 
-    public b() {
-        String[] strArr = d;
-        this.b = strArr;
-        this.c = strArr;
+    public b(int i7) {
+        this.c = i7;
     }
 
-    public final Object clone() {
-        try {
-            b bVar = (b) super.clone();
-            bVar.a = this.a;
-            String[] strArr = this.b;
-            int i3 = this.a;
-            String[] strArr2 = new String[i3];
-            System.arraycopy(strArr, 0, strArr2, 0, Math.min(strArr.length, i3));
-            this.b = strArr2;
-            String[] strArr3 = this.c;
-            int i10 = this.a;
-            String[] strArr4 = new String[i10];
-            System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i10));
-            this.c = strArr4;
-            return bVar;
-        } catch (CloneNotSupportedException e10) {
-            throw new RuntimeException(e10);
-        }
+    @Override // mf.a
+    public final void a(CharSequence charSequence) {
+        StringBuilder sb2 = this.b;
+        sb2.append(charSequence);
+        sb2.append('\n');
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || b.class != obj.getClass()) {
-            return false;
-        }
-        b bVar = (b) obj;
-        if (this.a == bVar.a && Arrays.equals(this.b, bVar.b)) {
-            return Arrays.equals(this.c, bVar.c);
-        }
-        return false;
+    @Override // mf.a
+    public final void d() {
+        this.a.g = this.b.toString();
     }
 
-    public final int h(String str) {
-        if (str == null) {
-            throw new IllegalArgumentException("Object must not be null");
-        }
-        for (int i3 = 0; i3 < this.a; i3++) {
-            if (str.equals(this.b[i3])) {
-                return i3;
+    @Override // mf.a
+    public final kf.a e() {
+        return this.a;
+    }
+
+    @Override // mf.a
+    public final gf.a h(h hVar) {
+        int i7;
+        int i10 = hVar.e;
+        CharSequence charSequence = hVar.a;
+        int length = charSequence.length();
+        if (hVar.g < 4) {
+            int i11 = i10;
+            while (true) {
+                if (i11 >= length) {
+                    i7 = length - i10;
+                    break;
+                }
+                if ('$' != charSequence.charAt(i11)) {
+                    i7 = i11 - i10;
+                    break;
+                }
+                i11++;
+            }
+            int i12 = this.c;
+            if (i7 == i12 && x0.b(' ', i10 + i12, length, charSequence) == length) {
+                return new gf.a(-1, -1, true);
             }
         }
-        return -1;
-    }
-
-    public final int hashCode() {
-        return (((this.a * 31) + Arrays.hashCode(this.b)) * 31) + Arrays.hashCode(this.c);
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new ed.a(this);
+        return gf.a.a(hVar.b);
     }
 }

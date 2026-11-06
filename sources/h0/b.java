@@ -1,5 +1,6 @@
 package h0;
 
+import a8.wa;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -10,14 +11,13 @@ import android.util.Base64;
 import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
-import b8.kg;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -25,31 +25,31 @@ public abstract class b {
     public static final float[] c = {95.047f, 100.0f, 108.883f};
     public static final float[][] d = {new float[]{0.41233894f, 0.35762063f, 0.18051042f}, new float[]{0.2126f, 0.7152f, 0.0722f}, new float[]{0.01932141f, 0.11916382f, 0.9503448f}};
 
-    public static kg a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i3) {
-        kg kgVar;
+    public static wa a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i7) {
+        wa waVar;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null) {
             TypedValue typedValue = new TypedValue();
-            typedArray.getValue(i3, typedValue);
+            typedArray.getValue(i7, typedValue);
             int i10 = typedValue.type;
             if (i10 >= 28 && i10 <= 31) {
-                return new kg((Shader) null, (ColorStateList) null, typedValue.data);
+                return new wa((Shader) null, (ColorStateList) null, typedValue.data);
             }
             try {
-                kgVar = kg.i(typedArray.getResources(), typedArray.getResourceId(i3, 0), theme);
+                waVar = wa.g(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
             } catch (Exception e10) {
                 Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e10);
-                kgVar = null;
+                waVar = null;
             }
-            if (kgVar != null) {
-                return kgVar;
+            if (waVar != null) {
+                return waVar;
             }
         }
-        return new kg((Shader) null, (ColorStateList) null, 0);
+        return new wa((Shader) null, (ColorStateList) null, 0);
     }
 
-    public static String b(TypedArray typedArray, XmlPullParser xmlPullParser, String str, int i3) {
+    public static String b(TypedArray typedArray, XmlPullParser xmlPullParser, String str, int i7) {
         if (c(xmlPullParser, str)) {
-            return typedArray.getString(i3);
+            return typedArray.getString(i7);
         }
         return null;
     }
@@ -68,17 +68,17 @@ public abstract class b {
         float f11 = (f10 + 16.0f) / 116.0f;
         float f12 = f10 > 8.0f ? f11 * f11 * f11 : f10 / 903.2963f;
         float f13 = f11 * f11 * f11;
-        boolean z10 = f13 > 0.008856452f;
-        float f14 = z10 ? f13 : ((f11 * 116.0f) - 16.0f) / 903.2963f;
-        if (!z10) {
+        boolean z9 = f13 > 0.008856452f;
+        float f14 = z9 ? f13 : ((f11 * 116.0f) - 16.0f) / 903.2963f;
+        if (!z9) {
             f13 = ((f11 * 116.0f) - 16.0f) / 903.2963f;
         }
         float[] fArr = c;
         return i0.a.e(f14 * fArr[0], f12 * fArr[1], f13 * fArr[2]);
     }
 
-    public static float e(int i3) {
-        float f10 = i3 / 255.0f;
+    public static float e(int i7) {
+        float f10 = i7 / 255.0f;
         return (f10 <= 0.04045f ? f10 / 12.92f : (float) Math.pow((f10 + 0.055f) / 1.055f, 2.4000000953674316d)) * 100.0f;
     }
 
@@ -117,15 +117,15 @@ public abstract class b {
                 i(xmlResourceParser);
             }
             List h = h(resources, resourceId);
-            return new g(new o0.e(string, string2, string3, h), string4 != null ? new o0.e(string, string2, string4, h) : null, integer, integer2, string5);
+            return new g(new o0.d(string, string2, string3, h), string4 != null ? new o0.d(string, string2, string4, h) : null, integer, integer2, string5);
         }
         ArrayList arrayList = new ArrayList();
         while (xmlResourceParser.next() != 3) {
             if (xmlResourceParser.getEventType() == 2) {
                 if (xmlResourceParser.getName().equals("font")) {
                     TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), d0.a.c);
-                    int i3 = obtainAttributes2.getInt(obtainAttributes2.hasValue(8) ? 8 : 1, 400);
-                    boolean z10 = 1 == obtainAttributes2.getInt(obtainAttributes2.hasValue(6) ? 6 : 2, 0);
+                    int i7 = obtainAttributes2.getInt(obtainAttributes2.hasValue(8) ? 8 : 1, 400);
+                    boolean z9 = 1 == obtainAttributes2.getInt(obtainAttributes2.hasValue(6) ? 6 : 2, 0);
                     int i10 = obtainAttributes2.hasValue(9) ? 9 : 3;
                     String string6 = obtainAttributes2.getString(obtainAttributes2.hasValue(7) ? 7 : 4);
                     int i11 = obtainAttributes2.getInt(i10, 0);
@@ -136,7 +136,7 @@ public abstract class b {
                     while (xmlResourceParser.next() != 3) {
                         i(xmlResourceParser);
                     }
-                    arrayList.add(new f(string7, i3, z10, string6, i11, resourceId2));
+                    arrayList.add(new f(string7, i7, z9, string6, i11, resourceId2));
                 } else {
                     i(xmlResourceParser);
                 }
@@ -148,11 +148,11 @@ public abstract class b {
         return new e((f[]) arrayList.toArray(new f[0]));
     }
 
-    public static List h(Resources resources, int i3) {
-        if (i3 == 0) {
+    public static List h(Resources resources, int i7) {
+        if (i7 == 0) {
             return Collections.EMPTY_LIST;
         }
-        TypedArray obtainTypedArray = resources.obtainTypedArray(i3);
+        TypedArray obtainTypedArray = resources.obtainTypedArray(i7);
         try {
             if (obtainTypedArray.length() == 0) {
                 return Collections.EMPTY_LIST;
@@ -171,7 +171,7 @@ public abstract class b {
                     }
                 }
             } else {
-                String[] stringArray2 = resources.getStringArray(i3);
+                String[] stringArray2 = resources.getStringArray(i7);
                 ArrayList arrayList3 = new ArrayList();
                 for (String str2 : stringArray2) {
                     arrayList3.add(Base64.decode(str2, 0));
@@ -185,13 +185,13 @@ public abstract class b {
     }
 
     public static void i(XmlPullParser xmlPullParser) {
-        int i3 = 1;
-        while (i3 > 0) {
+        int i7 = 1;
+        while (i7 > 0) {
             int next = xmlPullParser.next();
             if (next == 2) {
-                i3++;
+                i7++;
             } else if (next == 3) {
-                i3--;
+                i7--;
             }
         }
     }

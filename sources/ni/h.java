@@ -1,44 +1,39 @@
 package ni;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.ui.Cells.f0;
-import org.telegram.ui.Cells.ra;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class h implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ l c;
-    public final /* synthetic */ View d;
+public final class h extends g {
+    public SpannableStringBuilder b;
 
-    public /* synthetic */ h(l lVar, View view, float f10, int i3) {
-        this.a = i3;
-        this.c = lVar;
-        this.d = view;
-        this.b = f10;
+    @Override // ni.g, android.text.SpannableString, android.text.Spanned
+    public final int getSpanEnd(Object obj) {
+        SpannableStringBuilder spannableStringBuilder;
+        return (this.a || (spannableStringBuilder = this.b) == null) ? super.getSpanEnd(obj) : spannableStringBuilder.getSpanEnd(obj);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l lVar = this.c;
-                float measuredHeight = ((lVar.G.getMeasuredHeight() - lVar.F.M9) - r2.Va) / 2.0f;
-                f0 f0Var = (f0) this.d;
-                float measuredHeight2 = (measuredHeight - (f0Var.getMeasuredHeight() / 2.0f)) + lVar.F.M9;
-                f0Var.setTranslationY(((((float) f0Var.getTop()) > measuredHeight2 ? measuredHeight2 - f0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l lVar2 = this.c;
-                float measuredHeight3 = ((lVar2.G.getMeasuredHeight() - lVar2.F.M9) - r2.Va) / 2.0f;
-                ra raVar = (ra) this.d;
-                float measuredHeight4 = (measuredHeight3 - (raVar.getMeasuredHeight() / 2.0f)) + lVar2.F.M9;
-                raVar.setTranslationY(((((float) raVar.getTop()) > measuredHeight4 ? measuredHeight4 - raVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
-                break;
-        }
+    @Override // ni.g, android.text.SpannableString, android.text.Spanned
+    public final int getSpanFlags(Object obj) {
+        SpannableStringBuilder spannableStringBuilder;
+        return (this.a || (spannableStringBuilder = this.b) == null) ? super.getSpanFlags(obj) : spannableStringBuilder.getSpanFlags(obj);
+    }
+
+    @Override // ni.g, android.text.SpannableString, android.text.Spanned
+    public final int getSpanStart(Object obj) {
+        SpannableStringBuilder spannableStringBuilder;
+        return (this.a || (spannableStringBuilder = this.b) == null) ? super.getSpanStart(obj) : spannableStringBuilder.getSpanStart(obj);
+    }
+
+    @Override // ni.g, android.text.SpannableString, android.text.Spanned
+    public final Object[] getSpans(int i7, int i10, Class cls) {
+        SpannableStringBuilder spannableStringBuilder;
+        return (this.a || (spannableStringBuilder = this.b) == null) ? super.getSpans(i7, i10, cls) : spannableStringBuilder.getSpans(i7, i10, cls);
+    }
+
+    @Override // ni.g, android.text.SpannableString, android.text.Spanned
+    public final int nextSpanTransition(int i7, int i10, Class cls) {
+        SpannableStringBuilder spannableStringBuilder;
+        return (this.a || (spannableStringBuilder = this.b) == null) ? super.nextSpanTransition(i7, i10, cls) : spannableStringBuilder.nextSpanTransition(i7, i10, cls);
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class l0 {
     protected int zza;
@@ -31,7 +31,7 @@ public abstract class l0 {
                     throw new NullPointerException(sb3);
                 }
                 if (obj instanceof q0) {
-                    t1Var.f((q0) obj);
+                    t1Var.e((q0) obj);
                 } else {
                     t1Var.add((String) obj);
                 }
@@ -63,7 +63,7 @@ public abstract class l0 {
         }
     }
 
-    public abstract void b(int i3);
+    public abstract void b(int i7);
 
     public abstract int c();
 }

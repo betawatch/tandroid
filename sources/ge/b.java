@@ -1,53 +1,40 @@
 package ge;
 
-import b8.ib;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import kotlin.jvm.internal.j;
-import v0.c;
-import v0.h;
-import w0.d;
-import wd.m;
+import c8.j1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, h {
-    public final /* synthetic */ m a;
+public final class b {
+    public static final b a;
+    public static final b b;
+    public static final b c;
+    public static final b d;
+    public static final b e;
+    public static final /* synthetic */ b[] f;
 
-    public /* synthetic */ b(m mVar) {
-        this.a = mVar;
+    static {
+        b bVar = new b("CPU_ACQUIRED", 0);
+        a = bVar;
+        b bVar2 = new b("BLOCKING", 1);
+        b = bVar2;
+        b bVar3 = new b("PARKING", 2);
+        c = bVar3;
+        b bVar4 = new b("DORMANT", 3);
+        d = bVar4;
+        b bVar5 = new b("TERMINATED", 4);
+        e = bVar5;
+        b[] bVarArr = {bVar, bVar2, bVar3, bVar4, bVar5};
+        f = bVarArr;
+        j1.a(bVarArr);
     }
 
-    @Override // v0.h
-    public void a(Object obj) {
-        d e10 = (d) obj;
-        j.e(e10, "e");
-        m mVar = this.a;
-        if (mVar.w()) {
-            mVar.resumeWith(ib.a(e10));
-        }
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        Exception exception = task.getException();
-        m mVar = this.a;
-        if (exception != null) {
-            mVar.resumeWith(ib.a(exception));
-        } else if (task.isCanceled()) {
-            mVar.n(null);
-        } else {
-            mVar.resumeWith(task.getResult());
-        }
-    }
-
-    @Override // v0.h
-    public void onResult(Object obj) {
-        c result = (c) obj;
-        j.e(result, "result");
-        m mVar = this.a;
-        if (mVar.w()) {
-            mVar.resumeWith(result);
-        }
+    public static b[] values() {
+        return (b[]) f.clone();
     }
 }

@@ -1,79 +1,137 @@
 package qh;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.os.Build;
-import cg.t0;
-import gi.d;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.xq;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a extends d implements qe.b {
-    public final qe.a l0;
-    public final e6 m0;
-    public boolean n0;
+public final class a {
+    public static final a D;
+    public static final a E;
+    public static final a F;
+    public static final a G;
+    public static final a H;
+    public static final a I;
+    public static final a J;
+    public static final a K;
+    public static final a L;
+    public static final a M;
+    public static final a N;
+    public static final a O;
+    public static final a P;
+    public static final a Q;
+    public static final a R;
+    public static final /* synthetic */ a[] S;
+    public static final a f;
+    public static final a h;
+    public static final a n;
+    public static final a r;
+    public static final a s;
+    public static final a w;
+    public static final a x;
+    public static final a y;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public a(Context context, e6 e6Var) {
-        super(context, e6Var, true);
-        this.l0 = new qe.a(0, this, xq.h, 320L, true);
-        this.m0 = e6Var;
-        f();
-        setOutlineProvider(t0.b);
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF7;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF0;
+
+    static {
+        a aVar = new a("CONTACTS", 0, R.raw.tab_contacts);
+        f = aVar;
+        a aVar2 = new a("CALLS", 1, R.raw.tab_calls);
+        h = aVar2;
+        a aVar3 = new a("CHATS", 2, R.raw.tab_chats);
+        n = aVar3;
+        a aVar4 = new a("SETTINGS", 3, R.raw.tab_settings);
+        r = aVar4;
+        a aVar5 = new a(4, R.raw.tab_checklist, R.raw.tab_checklist_reverse, "CHECKLIST");
+        s = aVar5;
+        a aVar6 = new a(5, R.raw.tab_colors, R.raw.tab_colors_reverse, "COLORS");
+        w = aVar6;
+        a aVar7 = new a(6, R.raw.tab_files, R.raw.tab_files_reverse, "FILES");
+        x = aVar7;
+        a aVar8 = new a(7, R.raw.tab_gallery, R.raw.tab_gallery_reverse, "GALLERY");
+        y = aVar8;
+        a aVar9 = new a(8, R.raw.tab_gift, R.raw.tab_gift_reverse, "GIFT");
+        a aVar10 = new a(9, R.raw.tab_location, R.raw.tab_location_reverse, "LOCATION");
+        D = aVar10;
+        a aVar11 = new a(10, R.raw.tab_sticker, R.raw.tab_sticker_reverse, "STICKER");
+        E = aVar11;
+        a aVar12 = new a(11, R.raw.tab_emoji, R.raw.tab_emoji_reverse, "EMOJI");
+        F = aVar12;
+        a aVar13 = new a(12, R.raw.tab_models, R.raw.tab_models_reverse, "MODELS");
+        G = aVar13;
+        a aVar14 = new a(13, R.raw.tab_music, R.raw.tab_music_reverse, "MUSIC");
+        H = aVar14;
+        a aVar15 = new a(14, R.raw.tab_poll, R.raw.tab_poll_reverse, "POLL");
+        I = aVar15;
+        a aVar16 = new a(15, R.raw.tab_symbols, R.raw.tab_symbols_reverse, "SYMBOLS");
+        J = aVar16;
+        a aVar17 = new a(16, R.raw.tab_reply, R.raw.tab_reply_reverse, "REPLIES");
+        K = aVar17;
+        a aVar18 = new a(17, R.raw.tab_wallet, R.raw.tab_wallet_reverse, "WALLET");
+        a aVar19 = new a();
+        L = aVar19;
+        a aVar20 = new a(19, R.raw.tab_article, R.raw.tab_article_reverse, "ARTICLE");
+        M = aVar20;
+        a aVar21 = new a(20, R.raw.gram, R.raw.gram_reverse, "GRAM");
+        N = aVar21;
+        a aVar22 = new a("BOOSTS", 21, R.raw.boosts, 25, 49);
+        O = aVar22;
+        a aVar23 = new a("MONETIZATION", 22, R.raw.monetize, 19, 45);
+        P = aVar23;
+        a aVar24 = new a("STORIES_SAVED", 23, R.raw.msg_stories_saved, 20, 40);
+        Q = aVar24;
+        a aVar25 = new a("STORIES_ARCHIVE", 24, R.raw.msg_stories_archive);
+        R = aVar25;
+        S = new a[]{aVar, aVar2, aVar3, aVar4, aVar5, aVar6, aVar7, aVar8, aVar9, aVar10, aVar11, aVar12, aVar13, aVar14, aVar15, aVar16, aVar17, aVar18, aVar19, aVar20, aVar21, aVar22, aVar23, aVar24, aVar25};
     }
 
-    @Override // qe.b
-    public final void Y(int i3, float f10, float f11, qe.c cVar) {
-        this.n0 = true;
-        e6 e6Var = this.m0;
-        boolean a10 = e6Var != null ? e6Var.a() : k6.I.q();
-        float f12 = this.l0.e;
-        setElevation((1.0f - f12) * g0.L(1.0f));
-        setColor(i0.a.f(f12, m(k6.d6), m(k6.Ci)));
-        setTextColor(i0.a.f(f12, m(k6.q7), m(k6.Gi)));
-        if (Build.VERSION.SDK_INT >= 28) {
-            if (a10) {
-                setOutlineAmbientShadowColor(553648127);
-                setOutlineSpotShadowColor(553648127);
-            } else {
-                setOutlineAmbientShadowColor(1610612736);
-                setOutlineSpotShadowColor(1610612736);
-            }
-        }
+    public a(String str, int i7, int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i10;
+        this.d = i11;
+        this.e = i12;
+        this.c = -1;
     }
 
-    public final int m(int i3) {
-        e6 e6Var = this.m0;
-        return e6Var != null ? e6Var.h(i3) : k6.x0(null, i3, false);
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
     }
 
-    @Override // gi.d, org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        super.updateColors();
-        qe.a aVar = this.l0;
-        if (aVar == null || !this.n0) {
-            return;
-        }
-        try {
-            float f10 = aVar.e;
-            int f11 = i0.a.f(f10, m(k6.d6), m(k6.Ci));
-            Drawable background = getBackground();
-            if ((background instanceof ShapeDrawable) && ((ShapeDrawable) background).getPaint().getColor() != f11) {
-                ((ShapeDrawable) background).getPaint().setColor(f11);
-                background.invalidateSelf();
-            }
-            setTextColor(i0.a.f(f10, m(k6.q7), m(k6.Gi)));
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
+    public static a[] values() {
+        return (a[]) S.clone();
     }
 
-    @Override // qe.b
-    public final /* synthetic */ void F(float f10, int i3) {
+    public a() {
+        this.c = R.drawable.tabs_link_24;
+        this.a = -1;
+        this.b = -1;
+        this.d = -1;
+        this.e = -1;
+    }
+
+    public a(String str, int i7, int i10) {
+        this.a = i10;
+        this.b = i10;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
+    }
+
+    public a(int i7, int i10, int i11, String str) {
+        this.a = i10;
+        this.b = i11;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
     }
 }

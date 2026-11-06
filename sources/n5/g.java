@@ -1,19 +1,13 @@
 package n5;
 
-import k2.p1;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g implements ma.d {
+public final class g implements na.d {
     public static final g a = new g();
-    public static final ma.c b = new ma.c("startMs", p1.o(p1.n(pa.d.class, new pa.a(1))));
-    public static final ma.c c = new ma.c("endMs", p1.o(p1.n(pa.d.class, new pa.a(2))));
+    public static final na.c b = na.c.c("originAssociatedProductId");
 
-    @Override // ma.a
+    @Override // na.a
     public final void a(Object obj, Object obj2) {
-        q5.g gVar = (q5.g) obj;
-        ma.e eVar = (ma.e) obj2;
-        eVar.f(b, gVar.a);
-        eVar.f(c, gVar.b);
+        ((na.e) obj2).a(b, ((q) ((c0) obj)).a);
     }
 }

@@ -1,24 +1,69 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class hi extends org.telegram.ui.Components.pu {
-    public final /* synthetic */ wm O1;
+public final class hi extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
+    public final /* synthetic */ an g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hi(wm wmVar, org.telegram.ui.ActionBar.d2 d2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
-        super(d2Var, activity, e6Var, arrayList);
-        this.O1 = wmVar;
+    public /* synthetic */ hi(an anVar, int i7, org.telegram.ui.Cells.q1 q1Var, int i10) {
+        this.d = i10;
+        this.g = anVar;
+        this.e = i7;
+        this.f = q1Var;
     }
 
-    @Override // org.telegram.ui.Components.pu, org.telegram.ui.ActionBar.t2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.z1
-    public final void dismiss() {
-        super.dismiss();
-        wm wmVar = this.O1;
-        wmVar.getClass();
-        wmVar.v8(false, true, 0.0f);
+    @Override // vf.b
+    public final void c(boolean z9) {
+        switch (this.d) {
+            case 0:
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 22), 240L);
+                    break;
+                }
+                break;
+            case 1:
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 25), 240L);
+                    break;
+                }
+                break;
+            default:
+                if (!z9) {
+                    org.telegram.messenger.g0.i3(new bg.m0(this, this.e, 26), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i7 = this.e;
+                an anVar = this.g;
+                anVar.Wb = i7;
+                anVar.Xb = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i10 = this.e;
+                an anVar2 = this.g;
+                anVar2.Wb = i10;
+                anVar2.Xb = 5;
+                anVar2.Zb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                an anVar3 = this.g;
+                anVar3.Wb = i11;
+                anVar3.Xb = 7;
+                this.f.invalidate();
+                break;
+        }
     }
 }

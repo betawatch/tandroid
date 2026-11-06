@@ -1,92 +1,81 @@
 package ni;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
-import u4.d1;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import java.util.HashMap;
+import org.telegram.messenger.qs;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class f extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ d1 c;
-    public final /* synthetic */ l d;
+public final class f extends CharacterStyle {
+    public final int a;
 
-    public f(l lVar, d1 d1Var, View view) {
-        this.d = lVar;
-        this.c = d1Var;
-        this.b = view;
+    public f(int i7) {
+        this.a = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(1.0f);
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i7;
+        HashMap hashMap = t.b;
+        int i10 = this.a & qs.e4;
+        switch (i10) {
+            case 8:
+            case 18:
+                i10 = 1;
                 break;
-            default:
-                super.onAnimationCancel(animator);
+            case 9:
+            case 10:
+            case 14:
+            case 15:
+                i10 = 3;
+                break;
+            case 11:
+            case 13:
+                i10 = 7;
+                break;
+            case 12:
+            case 16:
+            case 17:
+            case 19:
+                i10 = 4;
+                break;
+            case 20:
+                i10 = 6;
+                break;
+            case 21:
+                i10 = 2;
                 break;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                View view = this.b;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleY(1.0f);
-                view.setTranslationY(0.0f);
-                view.setTranslationY(0.0f);
-                l lVar = this.d;
-                ArrayList arrayList = lVar.y;
-                d1 d1Var = this.c;
-                if (arrayList.remove(d1Var)) {
-                    lVar.u(d1Var);
-                    lVar.G();
-                    break;
-                }
+        switch (i10) {
+            case 1:
+                i7 = k6.wl;
+                break;
+            case 2:
+                i7 = k6.xl;
+                break;
+            case 3:
+                i7 = k6.yl;
+                break;
+            case 4:
+                i7 = k6.zl;
+                break;
+            case 5:
+                i7 = k6.Al;
+                break;
+            case 6:
+                i7 = k6.Bl;
+                break;
+            case 7:
+                i7 = k6.Cl;
                 break;
             default:
-                animator.removeAllListeners();
-                View view2 = this.b;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleY(1.0f);
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
-                l lVar2 = this.d;
-                ArrayList arrayList2 = lVar2.A;
-                d1 d1Var2 = this.c;
-                if (arrayList2.remove(d1Var2)) {
-                    lVar2.d(d1Var2);
-                    lVar2.G();
-                    break;
-                }
+                i7 = -1;
                 break;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.getClass();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        if (i7 >= 0) {
+            textPaint.setColor(k6.x0(null, i7, false));
         }
-    }
-
-    public f(l lVar, View view, d1 d1Var) {
-        this.d = lVar;
-        this.b = view;
-        this.c = d1Var;
     }
 }

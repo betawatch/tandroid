@@ -1,35 +1,49 @@
 package uf;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.g0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import ab.d;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends FrameLayout {
-    public final Activity a;
-    public int b;
-    public int c;
-    public boolean d;
+public final class a extends d {
+    public final long d;
 
-    public a(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = launchActivity;
+    public a(InputStream inputStream, long j3, long j10) {
+        super(inputStream, j3);
+        this.d = j3 + j10;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        int size = View.MeasureSpec.getSize(i3);
-        int size2 = View.MeasureSpec.getSize(i10);
-        boolean H1 = g0.H1(this.a);
-        if (!H1) {
-            this.b = size;
-            this.c = size2;
+    public final long e() {
+        return this.d - this.b;
+    }
+
+    @Override // ab.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        if (this.b == this.d) {
+            return -1;
         }
-        this.d = H1 && size < this.b && size2 < this.c;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        return super.read();
+    }
+
+    @Override // ab.d, java.io.FilterInputStream, java.io.InputStream
+    public final long skip(long j3) {
+        long j10 = this.b;
+        long j11 = j10 + j3;
+        long j12 = this.d;
+        if (j11 > j12) {
+            j3 = (int) (j12 - j10);
+        }
+        return super.skip(j3);
+    }
+
+    @Override // ab.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i7, int i10) {
+        long j3 = this.b;
+        long j10 = i10 + j3;
+        long j11 = this.d;
+        if (j10 <= j11 || (i10 = (int) (j11 - j3)) != 0) {
+            return super.read(bArr, i7, i10);
+        }
+        return -1;
     }
 }

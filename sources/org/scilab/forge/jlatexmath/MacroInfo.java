@@ -3,12 +3,12 @@ package org.scilab.forge.jlatexmath;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class MacroInfo {
-    public static HashMap<String, MacroInfo> Commands = new HashMap<>(hs.X4);
+    public static HashMap<String, MacroInfo> Commands = new HashMap<>(qs.X4);
     public static HashMap<String, Object> Packages = new HashMap<>();
     public boolean hasOptions;
     public Method macro;
@@ -16,11 +16,11 @@ public class MacroInfo {
     public Object pack;
     public int posOpts;
 
-    public MacroInfo(Object obj, Method method, int i3) {
+    public MacroInfo(Object obj, Method method, int i7) {
         this.hasOptions = false;
         this.pack = obj;
         this.macro = method;
-        this.nbArgs = i3;
+        this.nbArgs = i7;
     }
 
     public Object invoke(TeXParser teXParser, String[] strArr) {
@@ -35,25 +35,25 @@ public class MacroInfo {
         }
     }
 
-    public MacroInfo(Object obj, Method method, int i3, int i10) {
-        this(obj, method, i3);
+    public MacroInfo(Object obj, Method method, int i7, int i10) {
+        this(obj, method, i7);
         this.hasOptions = true;
         this.posOpts = i10;
     }
 
-    public MacroInfo(int i3, int i10) {
-        this((Object) null, (Method) null, i3);
+    public MacroInfo(int i7, int i10) {
+        this((Object) null, (Method) null, i7);
         this.hasOptions = true;
         this.posOpts = i10;
     }
 
-    public MacroInfo(int i3) {
-        this((Object) null, (Method) null, i3);
+    public MacroInfo(int i7) {
+        this((Object) null, (Method) null, i7);
     }
 
     public MacroInfo(String str, String str2, float f10) {
         this.hasOptions = false;
-        int i3 = (int) f10;
+        int i7 = (int) f10;
         Class<?>[] clsArr = {TeXParser.class, String[].class};
         try {
             Object obj = Packages.get(str);
@@ -63,7 +63,7 @@ public class MacroInfo {
             }
             this.pack = obj;
             this.macro = obj.getClass().getDeclaredMethod(str2, clsArr);
-            this.nbArgs = i3;
+            this.nbArgs = i7;
         } catch (Exception e10) {
             System.err.println("Cannot load package " + str + ":");
             System.err.println(e10.toString());
@@ -72,7 +72,7 @@ public class MacroInfo {
 
     public MacroInfo(String str, String str2, float f10, float f11) {
         this.hasOptions = false;
-        int i3 = (int) f10;
+        int i7 = (int) f10;
         Class<?>[] clsArr = {TeXParser.class, String[].class};
         try {
             Object obj = Packages.get(str);
@@ -82,7 +82,7 @@ public class MacroInfo {
             }
             this.pack = obj;
             this.macro = obj.getClass().getDeclaredMethod(str2, clsArr);
-            this.nbArgs = i3;
+            this.nbArgs = i7;
             this.hasOptions = true;
             this.posOpts = (int) f11;
         } catch (Exception e10) {

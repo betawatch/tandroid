@@ -1,23 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class hv implements View.OnFocusChangeListener {
-    public final /* synthetic */ ey a;
+public final class hv extends tx {
+    public final /* synthetic */ gy H;
 
-    public hv(ey eyVar) {
-        this.a = eyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hv(gy gyVar, Context context) {
+        super(gyVar, context, 1);
+        this.H = gyVar;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
-        if (z10) {
-            String[] G0 = org.telegram.messenger.g0.G0();
-            ey eyVar = this.a;
-            eyVar.X0 = G0;
-            org.telegram.messenger.li.b0(eyVar.d1).M(eyVar.X0, false);
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (f10 != getTranslationY()) {
+            super.setTranslationY(f10);
+            this.H.J.invalidate();
         }
     }
 }

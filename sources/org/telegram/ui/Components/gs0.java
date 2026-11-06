@@ -1,38 +1,118 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.Calendar;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gs0 extends org.telegram.ui.Cells.t2 {
-    public final /* synthetic */ hs0 b5;
+public final class gs0 extends oj0 {
+    public final Context c;
+    public final int d;
+    public final org.telegram.ui.ActionBar.f6 e;
+    public final es0 f;
+    public final ArrayList h = new ArrayList(10);
+    public final ArrayList n = new ArrayList();
+    public rr0 r;
+    public final /* synthetic */ xs0 s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gs0(hs0 hs0Var, Context context) {
-        super(context, true);
-        this.b5 = hs0Var;
+    public gs0(xs0 xs0Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.s = xs0Var;
+        this.c = context;
+        this.d = i7;
+        this.e = f6Var;
+        this.f = new es0(this, i7, f6Var);
+        E();
     }
 
-    @Override // org.telegram.ui.Cells.t2
-    public final boolean W() {
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.t2
-    public final boolean getIsPinned() {
-        hs0 hs0Var = this.b5;
-        ArrayList arrayList = hs0Var.f;
-        qr0 qr0Var = hs0Var.s;
-        if (qr0Var == null || qr0Var.getAdapter() != hs0Var) {
-            return false;
+    public final void E() {
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        ArrayList c10 = this.s.v1[8].c();
+        int i7 = 0;
+        for (int i10 = 0; i10 < c10.size(); i10++) {
+            org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) c10.get(i10);
+            if (ijVar.X != i7) {
+                int i11 = ijVar.k.date;
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                long j3 = i11;
+                tL_message.message = org.telegram.messenger.hd.u(j3, false);
+                tL_message.id = 0;
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(j3 * 1000);
+                calendar.set(11, 0);
+                calendar.set(12, 0);
+                calendar.set(13, 0);
+                calendar.set(14, 0);
+                tL_message.date = (int) (calendar.getTimeInMillis() / 1000);
+                org.telegram.messenger.ij ijVar2 = new org.telegram.messenger.ij(this.d, tL_message, false, false);
+                ijVar2.D = 10;
+                ijVar2.U = 1;
+                ijVar2.j0 = true;
+                arrayList.add(ijVar2);
+                i7 = ijVar.X;
+            }
+            arrayList.add(ijVar);
         }
-        hs0Var.s.getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R >= arrayList.size()) {
-            return false;
+    }
+
+    @Override // v4.g0
+    public final int b() {
+        return this.n.size();
+    }
+
+    @Override // v4.g0
+    public final int d(int i7) {
+        if (i7 < 0) {
+            return 0;
         }
-        return ((org.telegram.messenger.mv) arrayList.get(R)).b;
+        ArrayList arrayList = this.n;
+        if (i7 >= arrayList.size()) {
+            return 0;
+        }
+        return ((org.telegram.messenger.ij) arrayList.get(i7)).U;
+    }
+
+    @Override // v4.g0
+    public final void f() {
+        E();
+        super.f();
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        if (i7 >= 0) {
+            ArrayList arrayList = this.n;
+            if (i7 >= arrayList.size()) {
+                return;
+            }
+            org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) arrayList.get(i7);
+            int i10 = d1Var.f;
+            View view = d1Var.a;
+            if (i10 == 0) {
+                ((org.telegram.ui.Cells.q1) view).v3(ijVar, null, false, false, false, false);
+            } else {
+                ((org.telegram.ui.Cells.t0) view).setMessageObject(ijVar);
+            }
+        }
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        if (i7 != 0) {
+            return new xi0(new org.telegram.ui.Cells.t0(this.c, this.e, false));
+        }
+        org.telegram.ui.ActionBar.f6 f6Var = this.e;
+        fs0 fs0Var = new fs0(this.c, this.d, false, null, f6Var);
+        fs0Var.setDelegate(this.f);
+        return new xi0(fs0Var);
     }
 }

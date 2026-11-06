@@ -1,209 +1,181 @@
 package ug;
 
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
 import android.view.View;
-import android.view.ViewGroup;
-import ei.v8;
-import j$.util.Objects;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.ni0;
-import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.xq;
+import java.util.HashSet;
+import org.telegram.messenger.iz;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.rc;
+import org.telegram.ui.ActionBar.a6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class q1 extends j {
-    public float A0;
-    public lt0 r0;
-    public v8 s0;
-    public v8 t0;
-    public dh.e0 u0;
-    public dh.e0 v0;
-    public dh.n0 w0;
-    public u5 x0;
-    public u5 y0;
-    public boolean z0;
+public class q1 extends View implements a6 {
+    public p1 a;
+    public final tg.y b;
+    public int c;
+    public ii.c d;
+    public boolean e;
+    public Paint f;
+    public LinearGradient h;
+    public Matrix n;
 
-    @Override // ug.j
-    public final i a() {
-        p1 p1Var = new p1(this, getContext(), 0);
-        p1Var.r = new RectF();
-        return p1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q1(Context context) {
+        super(context);
+        int i7 = iz.o() == 2 ? qs.e3 : iz.o() == 1 ? 100 : 50;
+        this.b = new tg.y(this, 3);
+        this.e = true;
+        this.a = new p1(i7);
+        a();
     }
 
-    @Override // ug.j, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        lt0 lt0Var = this.r0;
-        int padding = getPadding();
-        float e10 = this.y0.e(false, 1.0f);
-        if (e10 == 1.0f) {
-            this.t0 = null;
-        }
-        canvas.save();
-        float f10 = this.A0;
-        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        v8 v8Var = this.t0;
-        if (v8Var != null) {
-            v8Var.e = (int) ((1.0f - e10) * 255.0f);
-            v8Var.setBounds(padding, padding, ((int) lt0Var.a) - padding, ((int) lt0Var.b) - padding);
-            this.t0.draw(canvas);
-        }
-        v8 v8Var2 = this.s0;
-        v8Var2.e = (int) (e10 * 255.0f);
-        v8Var2.setBounds(padding, padding, ((int) lt0Var.a) - padding, ((int) lt0Var.b) - padding);
-        this.s0.draw(canvas);
-        Rect rect = org.telegram.messenger.g0.Q;
-        float width = (this.s0.getBounds().width() * 0.61f) / 2.0f;
-        rect.set((int) (this.s0.getBounds().centerX() - width), (int) (this.s0.getBounds().centerY() - width), (int) (this.s0.getBounds().centerX() + width), (int) (this.s0.getBounds().centerY() + width));
-        float e11 = this.x0.e(false, 1.0f);
-        this.u0.c(rect);
-        this.v0.c(rect);
-        this.u0.d(this.s0.a == 1 ? -1 : -16777216);
-        if (e11 == 1.0f) {
-            this.u0.a(canvas);
-        } else {
-            canvas.save();
-            float f11 = 1.0f - e11;
-            canvas.scale(f11, f11, rect.centerX(), rect.top);
-            dh.e0 e0Var = this.v0;
-            e0Var.h = f11;
-            e0Var.a(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(e11, e11, rect.centerX(), rect.bottom);
-            dh.e0 e0Var2 = this.u0;
-            e0Var2.h = e11;
-            e0Var2.a(canvas);
-            canvas.restore();
-        }
-        canvas.restore();
+    public void a() {
+        p1 p1Var = this.a;
+        p1Var.O = 100;
+        p1Var.M = true;
+        p1Var.G = true;
+        p1Var.K = true;
+        p1Var.H = true;
+        p1Var.r = 4;
+        p1Var.w = 0.98f;
+        p1Var.v = 0.98f;
+        p1Var.u = 0.98f;
+        p1Var.c();
     }
 
-    public dh.n0 getCurrentReaction() {
-        return this.w0;
+    public final void b(float f10) {
+        float f11 = f10 < 60.0f ? 5.0f : f10 < 180.0f ? 9.0f : 15.0f;
+        AnimatorSet animatorSet = new AnimatorSet();
+        ti.d dVar = new ti.d(this, 3);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, f11);
+        ofFloat.addUpdateListener(dVar);
+        ofFloat.setDuration(600L);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 1.0f);
+        ofFloat2.addUpdateListener(dVar);
+        ofFloat2.setDuration(2000L);
+        animatorSet.playTogether(ofFloat, ofFloat2);
+        animatorSet.start();
     }
 
-    @Override // ug.j
-    public float getMaxScale() {
-        return 1.8f;
+    public final void c() {
+        Paint paint = new Paint(1);
+        this.f = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(12.0f), new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.h = linearGradient;
+        this.f.setShader(linearGradient);
+        this.n = new Matrix();
     }
 
-    @Override // ug.j
-    public float getMinScale() {
-        return 0.5f;
-    }
-
-    public int getPadding() {
-        return (int) ((this.r0.b - org.telegram.messenger.g0.L(84.0f)) / 2.0f);
-    }
-
-    @Override // ug.j
-    public ni0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new ni0();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float scale = (getScale() + 0.4f) * getMeasuredWidth();
-        float f10 = scale / 2.0f;
-        float f11 = scale * scaleX;
-        return new ni0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
-    }
-
-    @Override // ug.j
-    public final void k() {
-        lt0 lt0Var = this.r0;
-        float f10 = lt0Var.a / 2.0f;
-        float f11 = lt0Var.b / 2.0f;
-        setX(getPositionX() - f10);
-        setY(getPositionY() - f11);
-        m();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.u0.b(true);
-        this.v0.b(true);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.u0.b(false);
-        this.v0.b(false);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        lt0 lt0Var = this.r0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) lt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) lt0Var.b, TLObject.FLAG_30));
-    }
-
-    public final void q(boolean z10) {
-        if (z10) {
-            this.t0 = this.s0;
-            v8 v8Var = new v8(this);
-            this.s0 = v8Var;
-            if (this.t0.a != 1) {
-                v8Var.a();
-            }
-            this.s0.b(this.z0, false);
-            this.s0.c(getScaleX());
-            this.y0.e(true, 0.0f);
-        } else {
-            this.s0.a();
-        }
-        invalidate();
-    }
-
-    public final void r(boolean z10) {
-        int i3 = 1;
-        boolean z11 = !this.z0;
-        this.z0 = z11;
-        if (!z10) {
-            this.s0.b(z11, z10);
-            return;
-        }
-        boolean[] zArr = {false};
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new vg.e1(i3, this, zArr));
-        ofFloat.addListener(new ri0(20, this, zArr));
-        ofFloat.setInterpolator(xq.g);
-        ofFloat.setDuration(350L);
-        ofFloat.start();
-    }
-
-    public final void s(dh.n0 n0Var, boolean z10) {
-        if (Objects.equals(this.w0, n0Var)) {
-            return;
-        }
-        if (!z10) {
-            this.w0 = n0Var;
-            this.u0.e(n0Var);
-            invalidate();
-            return;
-        }
-        this.w0 = n0Var;
-        this.v0.e(n0Var);
-        dh.e0 e0Var = this.u0;
-        this.u0 = this.v0;
-        this.v0 = e0Var;
-        this.x0.e(true, 0.0f);
-        invalidate();
+    public int getStarsRectWidth() {
+        return org.telegram.messenger.g0.L(140.0f);
     }
 
     @Override // android.view.View
-    public void setScaleX(float f10) {
-        if (getScaleX() != f10) {
-            super.setScaleX(f10);
-            this.s0.c(f10);
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ii.c cVar = new ii.c(this, 25);
+        this.d = cVar;
+        rc.a(cVar);
+        boolean e10 = rc.e(131072);
+        if (this.e != e10) {
+            this.e = e10;
             invalidate();
         }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        HashSet hashSet;
+        super.onDetachedFromWindow();
+        ii.c cVar = this.d;
+        if (cVar == null || (hashSet = rc.n) == null) {
+            return;
+        }
+        hashSet.remove(cVar);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        if (this.e) {
+            if (this.f != null) {
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), qs.e4, 31);
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+            }
+            this.a.d(canvas2);
+            if (this.f != null) {
+                canvas2.save();
+                this.n.reset();
+                this.n.postTranslate(0.0f, (getHeight() + 1) - org.telegram.messenger.g0.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, getHeight() - org.telegram.messenger.g0.L(12.0f), getWidth(), getHeight(), this.f);
+                this.n.reset();
+                this.n.postRotate(180.0f);
+                this.n.postTranslate(0.0f, org.telegram.messenger.g0.L(12.0f));
+                this.h.setLocalMatrix(this.n);
+                canvas2.drawRect(0.0f, 0.0f, getWidth(), org.telegram.messenger.g0.L(12.0f), this.f);
+                canvas2.restore();
+                canvas2.restore();
+            }
+            if (this.a.g) {
+                return;
+            }
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
+        this.a.a.set(0.0f, 0.0f, getStarsRectWidth(), org.telegram.messenger.g0.L(140.0f));
+        this.a.a.offset((getMeasuredWidth() - this.a.a.width()) / 2.0f, (getMeasuredHeight() - this.a.a.height()) / 2.0f);
+        this.a.b.set(-org.telegram.messenger.g0.L(15.0f), -org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(15.0f) + getMeasuredWidth(), org.telegram.messenger.g0.L(15.0f) + getMeasuredHeight());
+        if (this.c != measuredHeight) {
+            this.c = measuredHeight;
+            this.a.f();
+        }
+    }
+
+    public void setPaused(boolean z9) {
+        p1 p1Var = this.a;
+        if (z9 == p1Var.g) {
+            return;
+        }
+        p1Var.g = z9;
+        if (z9) {
+            p1Var.R = System.currentTimeMillis();
+            return;
+        }
+        for (int i7 = 0; i7 < this.a.n.size(); i7++) {
+            o1 o1Var = (o1) this.a.n.get(i7);
+            o1Var.a = (System.currentTimeMillis() - this.a.R) + o1Var.a;
+        }
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        tg.y yVar = this.b;
+        removeCallbacks(yVar);
+        postDelayed(yVar, 150L);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

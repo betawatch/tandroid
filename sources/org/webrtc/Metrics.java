@@ -3,27 +3,27 @@ package org.webrtc;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class Metrics {
     private static final String TAG = "Metrics";
     public final Map<String, HistogramInfo> map = new HashMap();
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class HistogramInfo {
         public final int bucketCount;
         public final int max;
         public final int min;
         public final Map<Integer, Integer> samples = new HashMap();
 
-        public HistogramInfo(int i3, int i10, int i11) {
-            this.min = i3;
+        public HistogramInfo(int i7, int i10, int i11) {
+            this.min = i7;
             this.max = i10;
             this.bucketCount = i11;
         }
 
-        public void addSample(int i3, int i10) {
-            this.samples.put(Integer.valueOf(i3), Integer.valueOf(i10));
+        public void addSample(int i7, int i10) {
+            this.samples.put(Integer.valueOf(i7), Integer.valueOf(i10));
         }
     }
 

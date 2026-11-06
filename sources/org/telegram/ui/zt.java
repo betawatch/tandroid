@@ -1,58 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zt implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public final class zt extends FrameLayout {
+    public org.telegram.ui.ActionBar.f2 a;
+    public FrameLayout b;
+    public org.telegram.ui.ActionBar.k c;
+    public org.telegram.ui.Components.pj0 d;
+    public bi.q1 e;
+    public int f;
+    public final /* synthetic */ au h;
 
-    public /* synthetic */ zt(Context context, int i3) {
-        this.a = i3;
-        this.b = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zt(au auVar, Context context) {
+        super(context);
+        this.h = auVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        Context context = this.b;
-        switch (i3) {
-            case 0:
-                org.telegram.ui.ActionBar.k6.K(context, false);
-                break;
-            case 1:
-                Activity W = org.telegram.messenger.g0.W(context);
-                if (W == null) {
-                    W = LaunchActivity.K1;
-                }
-                if (W != null && !W.isFinishing()) {
-                    W.moveTaskToBack(true);
-                    break;
-                }
-                break;
-            case 2:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            case 3:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            case 4:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            case 5:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            case 6:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            case 7:
-                sf.c.t(context, "https://promote.telegram.org/guidelines");
-                break;
-            default:
-                sf.c.t(context, org.telegram.messenger.bd.M0(2131742953, null));
-                break;
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        zt ztVar;
+        super.setTranslationX(f10);
+        au auVar = this.h;
+        zt[] ztVarArr = auVar.f;
+        if (auVar.n && (ztVar = ztVarArr[0]) == this) {
+            auVar.e.i(Math.abs(ztVar.getTranslationX()) / ztVarArr[0].getMeasuredWidth(), ztVarArr[1].f);
         }
     }
 }

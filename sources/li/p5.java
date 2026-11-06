@@ -1,0 +1,102 @@
+package li;
+
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import c8.ha;
+import org.telegram.messenger.i6;
+import org.telegram.messenger.iz;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.f6;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class p5 extends FrameLayout {
+    public final g1 a;
+    public TL_iv.pageTableCell b;
+
+    public p5(Context context, f6 f6Var) {
+        super(context);
+        g1 g1Var = new g1(context, f6Var);
+        this.a = g1Var;
+        g1Var.setTextSize(1, Math.max(8, iz.W0 - 2));
+        g1Var.setAllowNewlines(true);
+        setCompact(false);
+        addView(g1Var, ha.e(-1, -2, 51));
+    }
+
+    public final void a() {
+        g1 g1Var = this.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) g1Var.getLayoutParams();
+        TL_iv.pageTableCell pagetablecell = this.b;
+        int i7 = pagetablecell.align_right ? 5 : pagetablecell.align_center ? 1 : 3;
+        layoutParams.gravity = pagetablecell.valign_middle ? i7 | 16 : pagetablecell.valign_bottom ? i7 | 80 : i7 | 48;
+        g1Var.setLayoutParams(layoutParams);
+        TL_iv.pageTableCell pagetablecell2 = this.b;
+        g1Var.setGravity(pagetablecell2.align_right ? 53 : pagetablecell2.align_center ? 49 : 51);
+        g1Var.setTypeface(null);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x001e, code lost:
+    
+        if ((li.c6.q(0, r0.length(), r0) & 1) == 0) goto L9;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(TL_iv.pageTableCell pagetablecell) {
+        boolean z9;
+        this.b = pagetablecell;
+        a();
+        CharSequence h = e6.h(pagetablecell);
+        if (pagetablecell.header) {
+            z9 = true;
+            if (h.length() != 0) {
+            }
+            g1 g1Var = this.a;
+            g1Var.setAutoBold(z9);
+            g1Var.setTextSilently(i6.m(h, g1Var.getPaint().getFontMetricsInt(), false, null, 0));
+            g1Var.f();
+        }
+        z9 = false;
+        g1 g1Var2 = this.a;
+        g1Var2.setAutoBold(z9);
+        g1Var2.setTextSilently(i6.m(h, g1Var2.getPaint().getFontMetricsInt(), false, null, 0));
+        g1Var2.f();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        g1 g1Var = this.a;
+        if (g1Var.getVisibility() == 0 && motionEvent.getActionMasked() != 3) {
+            float x10 = motionEvent.getX();
+            float y10 = motionEvent.getY();
+            boolean z9 = x10 >= ((float) g1Var.getLeft()) && x10 < ((float) g1Var.getRight());
+            boolean z10 = y10 < ((float) g1Var.getTop()) || y10 >= ((float) g1Var.getBottom());
+            if (z9 && z10 && g1Var.getHeight() > 0) {
+                float max = Math.max(0.0f, Math.min(y10 - g1Var.getTop(), g1Var.getHeight() - 1));
+                MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                obtain.setLocation(x10 - g1Var.getLeft(), max);
+                boolean onTouchEvent = g1Var.onTouchEvent(obtain);
+                obtain.recycle();
+                return onTouchEvent;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public void setCompact(boolean z9) {
+        g1 g1Var = this.a;
+        if (z9) {
+            g1Var.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f));
+            g1Var.setMinHeight(org.telegram.messenger.g0.L(18.0f));
+        } else {
+            g1Var.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(9.0f));
+            g1Var.setMinHeight(org.telegram.messenger.g0.L(36.0f));
+        }
+    }
+
+    public void setLocked(boolean z9) {
+        this.a.setLocked(z9);
+    }
+}

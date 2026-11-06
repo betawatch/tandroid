@@ -1,27 +1,48 @@
 package db;
 
-import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c implements ma.d {
-    public static final c a = new c();
-    public static final ma.c b = ma.c.c("packageName");
-    public static final ma.c c = ma.c.c("versionName");
-    public static final ma.c d = ma.c.c("appBuildVersion");
-    public static final ma.c e = ma.c.c("deviceManufacturer");
-    public static final ma.c f = ma.c.c("currentProcessDetails");
-    public static final ma.c g = ma.c.c("appProcessDetails");
+public final class c extends r6.a {
+    public static final Parcelable.Creator<c> CREATOR = new k(1);
+    public final int a;
+    public final String b;
+    public final int c;
 
-    @Override // ma.a
-    public final void a(Object obj, Object obj2) {
-        a aVar = (a) obj;
-        ma.e eVar = (ma.e) obj2;
-        eVar.a(b, aVar.a);
-        eVar.a(c, aVar.b);
-        eVar.a(d, aVar.c);
-        eVar.a(e, Build.MANUFACTURER);
-        eVar.a(f, aVar.d);
-        eVar.a(g, aVar.e);
+    public c(int i7, int i10, String carrierId) {
+        kotlin.jvm.internal.j.e(carrierId, "carrierId");
+        this.a = i7;
+        this.b = carrierId;
+        this.c = i10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a == cVar.a && kotlin.jvm.internal.j.a(this.b, cVar.b) && this.c == cVar.c;
+    }
+
+    public final int hashCode() {
+        return com.google.android.recaptcha.internal.a.h(this.a * 31, 31, this.b) + this.c;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i7) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int r10 = wb.r(dest, 20293);
+        wb.q(dest, 1, 4);
+        dest.writeInt(this.a);
+        wb.l(dest, 2, this.b);
+        wb.q(dest, 3, 4);
+        dest.writeInt(this.c);
+        wb.s(dest, r10);
     }
 }

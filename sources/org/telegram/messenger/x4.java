@@ -6,20 +6,20 @@ import android.provider.ContactsContract;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ g5 b;
 
-    public /* synthetic */ x4(g5 g5Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ x4(g5 g5Var, int i7) {
+        this.a = i7;
         this.b = g5Var;
     }
 
     private final void a() {
         g5 g5Var = this.b;
-        if (g5Var.f0.isEmpty() && !g5Var.h) {
+        if (g5Var.e0.isEmpty() && !g5Var.h) {
             g5Var.A(0L, true);
             return;
         }
@@ -33,7 +33,7 @@ public final /* synthetic */ class x4 implements Runnable {
         synchronized (g5Var.c) {
             g5Var.b = false;
         }
-        g5Var.getNotificationCenter().k(hs.O, new Object[0]);
+        g5Var.getNotificationCenter().k(qs.O, new Object[0]);
     }
 
     @Override // java.lang.Runnable
@@ -44,12 +44,12 @@ public final /* synthetic */ class x4 implements Runnable {
                 AccountManager accountManager = AccountManager.get(t0.b);
                 try {
                     Account[] accountsByType = accountManager.getAccountsByType("org.telegram.messenger");
-                    for (int i3 = 0; i3 < accountsByType.length; i3++) {
-                        Account account = accountsByType[i3];
+                    for (int i7 = 0; i7 < accountsByType.length; i7++) {
+                        Account account = accountsByType[i7];
                         int i10 = 0;
                         while (true) {
                             if (i10 < 4) {
-                                TLRPC.User f10 = h10.i(i10).f();
+                                TLRPC.User f10 = p10.i(i10).f();
                                 if (f10 != null) {
                                     if (account.name.equals("" + f10.id)) {
                                         if (i10 == g5Var.currentAccount) {
@@ -60,7 +60,7 @@ public final /* synthetic */ class x4 implements Runnable {
                                 i10++;
                             } else {
                                 try {
-                                    accountManager.removeAccount(accountsByType[i3], null, null);
+                                    accountManager.removeAccount(accountsByType[i7], null, null);
                                 } catch (Exception unused) {
                                 }
                             }
@@ -110,21 +110,21 @@ public final /* synthetic */ class x4 implements Runnable {
                     if (r2.a) {
                         a8.b("detected contacts change");
                     }
-                    g5Var3.F(g5.q(g5Var3.Z), true, false, true, false, true, false);
+                    g5Var3.F(g5.q(g5Var3.Y), true, false, true, false, true, false);
                     return;
                 }
                 return;
             case 5:
                 g5 g5Var4 = this.b;
                 g5Var4.s = false;
-                g5Var4.n0 = 0;
+                g5Var4.m0 = 0;
                 return;
             case 6:
                 b();
                 return;
             case 7:
-                qr messagesStorage = this.b.getMessagesStorage();
-                messagesStorage.a.c(new vq(messagesStorage, true, 0));
+                yr messagesStorage = this.b.getMessagesStorage();
+                messagesStorage.a.c(new dr(messagesStorage, true, 0));
                 return;
             case 8:
                 g5 g5Var5 = this.b;

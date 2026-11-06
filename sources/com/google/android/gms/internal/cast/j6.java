@@ -1,28 +1,53 @@
 package com.google.android.gms.internal.cast;
 
+import j$.util.DesugarCollections;
+import java.util.AbstractList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class j6 implements Iterator {
-    public final Iterator a;
+public final class j6 extends AbstractList implements RandomAccess, k5 {
+    public final j5 a;
 
-    public j6(k6 k6Var) {
-        this.a = k6Var.a.iterator();
+    public j6(j5 j5Var) {
+        this.a = j5Var;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
+    @Override // com.google.android.gms.internal.cast.k5
+    public final Object g(int i7) {
+        return this.a.b.get(i7);
     }
 
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        return (String) this.a.next();
+    @Override // java.util.AbstractList, java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i7) {
+        return this.a.get(i7);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final Iterator iterator() {
+        return new i6(this);
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final ListIterator listIterator(int i7) {
+        return new h6(this, i7);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.a.b.size();
+    }
+
+    @Override // com.google.android.gms.internal.cast.k5
+    public final List zzh() {
+        return DesugarCollections.unmodifiableList(this.a.b);
+    }
+
+    @Override // com.google.android.gms.internal.cast.k5
+    public final k5 zzd() {
+        return this;
     }
 }

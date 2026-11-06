@@ -1,23 +1,16 @@
 package td;
 
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
+import j$.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public final AtomicReference a;
-
-    public a(e eVar) {
-        this.a = new AtomicReference(eVar);
-    }
-
-    @Override // td.b
-    public final Iterator iterator() {
-        b bVar = (b) this.a.getAndSet(null);
-        if (bVar != null) {
-            return bVar.iterator();
-        }
-        throw new IllegalStateException("This sequence can be consumed only once.");
+public final class a extends sd.a {
+    @Override // sd.a
+    public final Random a() {
+        ThreadLocalRandom current = ThreadLocalRandom.current();
+        j.d(current, "current(...)");
+        return current;
     }
 }

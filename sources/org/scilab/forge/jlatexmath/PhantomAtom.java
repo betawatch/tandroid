@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class PhantomAtom extends Atom implements Row {
     private boolean d;
@@ -40,10 +40,10 @@ public class PhantomAtom extends Atom implements Row {
         this.elements.setPreviousAtom(dummy);
     }
 
-    public PhantomAtom(Atom atom, boolean z10, boolean z11, boolean z12) {
+    public PhantomAtom(Atom atom, boolean z9, boolean z10, boolean z11) {
         this(atom);
-        this.w = z10;
-        this.h = z11;
-        this.d = z12;
+        this.w = z9;
+        this.h = z10;
+        this.d = z11;
     }
 }

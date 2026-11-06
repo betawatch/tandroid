@@ -1,16 +1,15 @@
 package org.telegram.utils.recorder.audio;
 
-import a1.g;
-import ci.l2;
+import a8.p0;
+import bi.w2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ok;
-import org.telegram.ui.z70;
-import vi.f;
-import vi.i;
-import vi.j;
+import org.telegram.messenger.yk;
+import org.telegram.ui.ea0;
+import vi.g;
+import vi.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -18,10 +17,10 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(long j10, i iVar, j jVar) {
-        this.c = jVar;
-        this.d = iVar;
-        this.b = j10;
+    public /* synthetic */ b(long j3, g gVar, h hVar) {
+        this.c = hVar;
+        this.d = gVar;
+        this.b = j3;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -32,7 +31,7 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 d dVar = (d) this.c;
                 Exception exc = (Exception) this.d;
-                f fVar = dVar.g;
+                ac.e eVar = dVar.g;
                 vi.b bVar = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
@@ -93,41 +92,41 @@ public final /* synthetic */ class b implements Runnable {
                     bVar.b("RNNoise summary: frames=" + dVar.z + ", averageMs=" + ((dVar.A / dVar.z) / 1000000.0d) + ", maxMs=" + (dVar.B / 1000000.0d));
                 }
                 Exception exc3 = exc2;
-                long j10 = this.b;
-                StringBuilder t10 = g.t(j10, "capture stopped: samples=", ", durationMs=");
-                t10.append((1000 * j10) / 48000);
-                t10.append(", bytes=");
-                t10.append(length);
-                t10.append(", maxQueuedChunks=");
-                t10.append(dVar.y);
-                bVar.b(t10.toString());
+                long j3 = this.b;
+                StringBuilder t6 = p0.t(j3, "capture stopped: samples=", ", durationMs=");
+                t6.append((1000 * j3) / 48000);
+                t6.append(", bytes=");
+                t6.append(length);
+                t6.append(", maxQueuedChunks=");
+                t6.append(dVar.y);
+                bVar.b(t6.toString());
                 if (exc3 == null) {
-                    j jVar = (j) fVar.c;
-                    jVar.a((i) fVar.b, length);
-                    jVar.i.post(new ok(fVar, fVar.a, j10, 4));
+                    h hVar = (h) eVar.c;
+                    hVar.a((g) eVar.b, length);
+                    hVar.i.post(new yk(eVar, eVar.a, j3, 4));
                 } else {
-                    ((j) fVar.c).i.post(new z70(fVar, fVar.a, exc3, 4));
+                    ((h) eVar.c).i.post(new ea0(eVar, eVar.a, exc3, 3));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
-                j jVar2 = (j) this.c;
-                i iVar = (i) this.d;
+                h hVar2 = (h) this.c;
+                g gVar = (g) this.d;
                 try {
-                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(gVar.b.getAbsolutePath());
                 } catch (Throwable th4) {
-                    jVar2.h.a("final waveform extraction failed", th4);
+                    hVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                jVar2.i.post(new l2(jVar2, iVar, this.b, bArr, 27));
+                hVar2.i.post(new w2(hVar2, gVar, this.b, bArr, 27));
                 return;
         }
     }
 
-    public /* synthetic */ b(d dVar, long j10, Exception exc) {
+    public /* synthetic */ b(d dVar, long j3, Exception exc) {
         this.c = dVar;
-        this.b = j10;
+        this.b = j3;
         this.d = exc;
     }
 }

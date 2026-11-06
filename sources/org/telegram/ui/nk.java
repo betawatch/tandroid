@@ -1,93 +1,84 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class nk implements gl {
-    public final /* synthetic */ wm a;
-    public final /* synthetic */ wm b;
+public final class nk extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ an c;
 
-    public nk(wm wmVar, wm wmVar2) {
-        this.b = wmVar;
-        this.a = wmVar2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nk(an anVar, Activity activity) {
+        super(activity);
+        this.c = anVar;
+        setOnLongClickListener(new t(this, 2));
     }
 
-    @Override // org.telegram.ui.gl
-    public final void T0(int i3) {
-        this.b.l(i3, 0, true, 0, true, 0);
-    }
-
-    @Override // org.telegram.ui.gl
-    public final void Y(boolean z10, boolean z11) {
-        org.telegram.ui.Components.ya yaVar;
-        int i3;
-        wm wmVar = this.b;
-        if (!z10) {
-            org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) wmVar.W4.get(Integer.valueOf(wmVar.Y4));
-            if (ziVar == null) {
-                ziVar = (org.telegram.messenger.zi) wmVar.F6[0].get(wmVar.Y4);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        an anVar = this.c;
+        if (view == anVar.N2) {
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), org.telegram.messenger.g0.L(48.0f));
+        }
+        org.telegram.ui.ActionBar.k5[] k5VarArr = anVar.R2;
+        if (view != k5VarArr[0] && view != k5VarArr[1]) {
+            boolean drawChild = super.drawChild(canvas, view, j3);
+            if (view == anVar.N2) {
+                canvas.restore();
             }
-            wmVar.Gc(ziVar);
+            return drawChild;
+        }
+        canvas.save();
+        canvas.clipRect(0, 0, getMeasuredWidth() - org.telegram.messenger.g0.L(38.0f), getMeasuredHeight());
+        boolean drawChild2 = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild2;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        an anVar = this.c;
+        if (!anVar.O2) {
             return;
         }
-        ArrayList arrayList = new ArrayList(wmVar.U4);
-        ArrayList arrayList2 = new ArrayList(wmVar.W4.values());
-        org.telegram.ui.Components.ac acVar = null;
-        if (z11) {
-            i3 = ((org.telegram.ui.ActionBar.d2) wmVar).currentAccount;
-            SharedPreferences sharedPreferences = org.telegram.messenger.hp.s1(i3).d7;
-            if (wmVar.U4.isEmpty()) {
-                sharedPreferences.edit().remove("pin_" + wmVar.k6).commit();
-            } else {
-                sharedPreferences.edit().putInt("pin_" + wmVar.k6, ((Integer) wmVar.U4.get(0)).intValue()).commit();
+        int i11 = 0;
+        while (true) {
+            AnimatorSet[] animatorSetArr = anVar.V2;
+            if (i11 >= animatorSetArr.length) {
+                anVar.O2 = false;
+                return;
             }
-            wmVar.cd(0, true);
-        } else {
-            wmVar.getNotificationCenter().k(org.telegram.messenger.hs.t0, Long.valueOf(wmVar.k6), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
-        }
-        org.telegram.ui.Components.ac acVar2 = wmVar.P3;
-        if (acVar2 != null) {
-            acVar2.b();
-        }
-        wmVar.Q3 = true;
-        int i10 = wmVar.R3 + 1;
-        wmVar.R3 = i10;
-        boolean z12 = wmVar.w4;
-        wm wmVar2 = this.a;
-        int a92 = z12 ? wmVar2.a9() : wmVar.a9();
-        ArrayList arrayList3 = new ArrayList(wmVar.w4 ? wmVar2.U4 : wmVar.U4);
-        mk mkVar = new mk(this, z11, arrayList, arrayList2, a92, i10);
-        org.telegram.messenger.voip.j0 j0Var = new org.telegram.messenger.voip.j0(this, z11, arrayList3, i10);
-        um umVar = wmVar.ya;
-        if (wmVar.getParentActivity() == null) {
-            j0Var.run();
-        } else {
-            if (z11) {
-                org.telegram.ui.Components.xb xbVar = new org.telegram.ui.Components.xb(wmVar.getParentActivity(), umVar);
-                xbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                xbVar.b.setText(org.telegram.messenger.bd.M0(2131747232, null));
-                xbVar.c.setText(org.telegram.messenger.bd.M0(2131747231, null));
-                yaVar = xbVar;
-            } else {
-                org.telegram.ui.Components.ib ibVar = new org.telegram.ui.Components.ib(wmVar.getParentActivity(), umVar);
-                ibVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                ibVar.b.setText(org.telegram.messenger.bd.G(a92, "MessagesUnpinned", new Object[0]));
-                yaVar = ibVar;
+            AnimatorSet animatorSet = animatorSetArr[i11];
+            if (animatorSet != null) {
+                animatorSet.start();
             }
-            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(wmVar.getParentActivity(), umVar, true);
-            ybVar.b = mkVar;
-            ybVar.c = j0Var;
-            yaVar.setButton(ybVar);
-            acVar = org.telegram.ui.Components.ac.g(wmVar, yaVar, 5000);
+            i11++;
         }
-        wmVar.P3 = acVar;
     }
 
-    @Override // org.telegram.ui.gl
-    public final void w0(String str) {
-        this.b.Da(str, false);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.a = motionEvent.getY();
+        int action = motionEvent.getAction();
+        an anVar = this.c;
+        if (action == 1) {
+            anVar.finishPreviewFragment();
+        } else if (motionEvent.getAction() == 2) {
+            float f10 = this.b - this.a;
+            anVar.movePreviewFragment(f10);
+            if (f10 < 0.0f) {
+                this.b = this.a;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

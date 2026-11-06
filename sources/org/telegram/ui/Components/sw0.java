@@ -1,24 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sw0 implements ya0, ab0 {
+public final /* synthetic */ class sw0 implements db0, fb0 {
     public final /* synthetic */ uw0 a;
 
-    @Override // org.telegram.ui.Components.ya0
-    public String e(int i3) {
-        return this.a.n[i3];
+    @Override // org.telegram.ui.Components.db0
+    public String h(int i7) {
+        return this.a.n[i7];
     }
 
-    @Override // org.telegram.ui.Components.ab0
-    public void l(cb0 cb0Var, int i3) {
+    @Override // org.telegram.ui.Components.fb0
+    public void n(hb0 hb0Var, int i7) {
         uw0 uw0Var = this.a;
         uw0Var.b();
-        org.telegram.messenger.az.r1 = i3;
-        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.az.r1).apply();
+        org.telegram.messenger.iz.r1 = i7;
+        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.iz.r1).apply();
         uw0Var.invalidate();
         try {
-            cb0Var.performHapticFeedback(3, 2);
+            hb0Var.performHapticFeedback(3, 2);
         } catch (Exception unused) {
         }
     }

@@ -19,7 +19,7 @@ public final class i4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -52,8 +52,8 @@ public final class i4 implements o4, h5 {
         return false;
     }
 
-    public i4(int i3, IntBinaryOperator intBinaryOperator) {
-        this.b = i3;
+    public i4(int i7, IntBinaryOperator intBinaryOperator) {
+        this.b = i7;
         this.c = intBinaryOperator;
     }
 
@@ -63,13 +63,13 @@ public final class i4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a = this.b;
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
-        this.a = this.c.applyAsInt(this.a, i3);
+    public final void accept(int i7) {
+        this.a = this.c.applyAsInt(this.a, i7);
     }
 
     @Override // java.util.function.Supplier

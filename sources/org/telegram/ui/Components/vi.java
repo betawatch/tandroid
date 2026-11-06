@@ -1,12 +1,41 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import j$.util.Objects;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface vi {
-    void a(TLRPC.User user, boolean z10, int i3, long j10);
+public final class vi {
+    public final int a;
+    public final long b;
 
-    void b(ArrayList arrayList, String str, boolean z10, int i3, long j10, boolean z11);
+    public vi(int i7, long j3) {
+        this.a = i7;
+        this.b = j3;
+    }
+
+    public static vi a(Object obj) {
+        if (obj instanceof org.telegram.messenger.d5) {
+            return new vi(2, ((org.telegram.messenger.d5) obj).a);
+        }
+        if (obj instanceof TLRPC.User) {
+            return new vi(1, ((TLRPC.User) obj).id);
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || vi.class != obj.getClass()) {
+            return false;
+        }
+        vi viVar = (vi) obj;
+        return this.b == viVar.b && this.a == viVar.a;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(p1.g.a(this.a), Long.valueOf(this.b));
+    }
 }

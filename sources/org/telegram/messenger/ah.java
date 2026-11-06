@@ -1,49 +1,39 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ah implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ui a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ double d;
 
-    public /* synthetic */ ah(li liVar, ArrayList arrayList, int i3) {
-        this.a = i3;
-        this.b = liVar;
-        this.c = arrayList;
+    public /* synthetic */ ah(ui uiVar, long j3, int i7, double d) {
+        this.a = uiVar;
+        this.b = j3;
+        this.c = i7;
+        this.d = d;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
-        ArrayList arrayList = this.c;
-        li liVar = this.b;
-        switch (i3) {
-            case 0:
-                liVar.getNotificationCenter().k(56, Long.valueOf(zi.B0(((zi) arrayList.get(0)).k)), null, Boolean.TRUE, arrayList, null, 0, -1, Boolean.FALSE);
-                break;
-            default:
-                try {
-                    ArrayList arrayList2 = new ArrayList();
-                    ArrayList arrayList3 = new ArrayList();
-                    a0.h hVar = new a0.h();
-                    a0.h hVar2 = new a0.h();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        try {
-                            qr.d((TLRPC.Message) arrayList.get(i10), hVar, hVar2);
-                        } catch (Exception e10) {
-                            liVar.getMessagesStorage().o(e10, true);
-                        }
-                    }
-                    liVar.getMessagesStorage().K0(hVar, hVar2, arrayList2, arrayList3, 0);
-                    break;
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                    return;
-                }
+        ui uiVar = this.a;
+        long j3 = this.b;
+        int i7 = this.c;
+        double d = this.d;
+        try {
+            SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
+            executeFast.requery();
+            executeFast.bindLong(1, j3);
+            executeFast.bindInteger(2, i7);
+            executeFast.bindDouble(3, d);
+            executeFast.bindInteger(4, ((int) System.currentTimeMillis()) / 1000);
+            executeFast.step();
+            executeFast.dispose();
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 }

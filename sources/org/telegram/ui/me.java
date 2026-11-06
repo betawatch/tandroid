@@ -1,50 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class me implements org.telegram.messenger.m10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 
-    public /* synthetic */ me(int i3, org.telegram.ui.ActionBar.d2 d2Var) {
-        this.a = i3;
-        this.b = d2Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class me implements org.telegram.messenger.v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ an b;
+
+    public /* synthetic */ me(an anVar, int i7) {
+        this.a = i7;
+        this.b = anVar;
     }
 
-    @Override // org.telegram.messenger.m10
-    public final Object run() {
-        org.telegram.ui.ActionBar.d2 d2Var;
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                d2Var = (wm) this.b;
+                an.g1(this.b, (Integer) obj, (Boolean) obj2);
                 break;
             case 1:
-                wm wmVar = (wm) this.b;
-                if (org.telegram.messenger.lc.e(65536) && org.telegram.ui.Components.cz0.c()) {
-                    org.telegram.ui.Components.cz0 cz0Var = wmVar.y0;
-                    if (cz0Var == null || cz0Var.e) {
-                        if (wmVar.getParentActivity() != null && org.telegram.ui.Components.cz0.c() && wmVar.A0 != null && wmVar.m1 != null) {
-                            org.telegram.ui.Components.cz0 cz0Var2 = wmVar.y0;
-                            if (cz0Var2 != null) {
-                                org.telegram.messenger.g0.E2(cz0Var2);
-                            }
-                            org.telegram.ui.Components.cz0 cz0Var3 = new org.telegram.ui.Components.cz0(wmVar.getParentActivity(), new sc(4, wmVar, r2));
-                            wmVar.y0 = cz0Var3;
-                            org.telegram.ui.Components.cz0[] cz0VarArr = {cz0Var3};
-                            kl klVar = wmVar.m1;
-                            klVar.addView(cz0Var3, klVar.indexOfChild(wmVar.A0) + 1, b8.mf.c(-1.0f, -1));
-                        }
-                    }
-                    return wmVar.y0;
-                }
-                return null;
+                an.t1(this.b, (Long) obj, (Boolean) obj2);
+                break;
             case 2:
-                ((wm) this.b).getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.cz0.c() && org.telegram.messenger.lc.e(65536));
+                an anVar = this.b;
+                ri.b bVar = anVar.N8;
+                bVar.a((Bitmap) obj2);
+                ih.d.c(bVar, anVar.fragmentView);
+                anVar.O8.d();
+                break;
             default:
-                d2Var = (ProfileActivity) this.b;
+                an anVar2 = this.b;
+                anVar2.P8 = (Bitmap) obj;
+                Paint paint = new Paint(1);
+                anVar2.R8 = paint;
+                Bitmap bitmap = anVar2.P8;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                anVar2.Q8 = bitmapShader;
+                paint.setShader(bitmapShader);
+                anVar2.S8 = new Matrix();
+                ri.b bVar2 = anVar2.N8;
+                bVar2.a((Bitmap) obj2);
+                ih.d.c(bVar2, anVar2.fragmentView);
+                anVar2.O8.d();
                 break;
         }
-        return d2Var.getSimpleMenuOverlay();
     }
 }

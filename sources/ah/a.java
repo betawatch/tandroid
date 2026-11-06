@@ -1,179 +1,159 @@
 package ah;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import ci.w5;
-import dh.l0;
-import mi.s0;
-import org.telegram.ui.Components.l11;
-import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.tm0;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import bi.gc;
+import bi.sc;
+import bi.w;
+import c8.ha;
+import c8.ka;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qs;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.w5;
+import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class a extends LinearLayout {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
+    public final View c;
+    public final Object d;
+    public final Object e;
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+    public a(Context context, f6 f6Var, pj0 pj0Var) {
+        super(context);
+        this.d = new Paint(1);
+        this.e = new w5(this);
+        this.b = f6Var;
+        this.c = pj0Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                ((w5) this.b).h.invalidate();
-                break;
-            case 3:
-                l0 l0Var = (l0) this.b;
-                View view = l0Var.V;
-                if (view != null) {
-                    view.invalidate();
-                    if (l0Var.Q && l0Var.V.getParent() != null && (l0Var.V.getParent().getParent() instanceof View)) {
-                        ((View) l0Var.V.getParent().getParent()).invalidate();
-                        break;
-                    }
+                w5 w5Var = (w5) this.e;
+                super.dispatchDraw(canvas);
+                Paint paint = (Paint) this.d;
+                paint.setColor(k6.w0(k6.a7, (f6) this.b));
+                pj0 pj0Var = (pj0) this.c;
+                if (pj0Var != null) {
+                    paint.setAlpha((int) (w5Var.e(false, pj0Var.canScrollVertically(1) ? 1.0f : 0.0f) * 255.0f));
+                } else {
+                    paint.setAlpha((int) (w5Var.e(false, 1.0f) * 255.0f));
                 }
-                break;
-            case 4:
-                ((eh.d) this.b).invalidateSelf();
-                break;
-            case 5:
-                break;
-            case 6:
-                ((s0) this.b).b.invalidate();
-                break;
-            case 7:
-                ((np) this.b).invalidateSelf();
-                break;
-            case 8:
-                ((tm0) this.b).b.run();
-                break;
-            case 9:
-                ((l11) this.b).invalidateSelf();
+                canvas.drawRect(0.0f, 0.0f, getWidth(), g0.f1(), paint);
                 break;
             default:
-                ((z4.d) this.b).invalidateSelf();
+                super.dispatchDraw(canvas);
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                break;
-            case 3:
-                View view = ((l0) this.b).V;
-                if (view != null) {
-                    view.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 4:
-                ((eh.d) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 5:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 6:
-                break;
-            case 7:
-                ((np) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 8:
-            case 9:
-                break;
-            default:
-                ((z4.d) this.b).scheduleSelf(runnable, j10);
-                break;
-        }
+    public a(Context context) {
+        super(context);
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.d = frameLayout;
+        addView(frameLayout, ha.r(-1, -2, 1));
+        frameLayout.setClipChildren(false);
+        setClipChildren(false);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 22.0f);
+        textView.setTypeface(g0.o());
+        textView.setGravity(1);
+        addView(textView, ha.q(-2, -2, 0.0f, 1, 16, 20, 16, 0));
+        w70 w70Var = new w70(context, null);
+        this.c = w70Var;
+        w70Var.setTextSize(1, 14.0f);
+        w70Var.setLineSpacing(g0.L(2.0f), 1.0f);
+        w70Var.setGravity(1);
+        addView(w70Var, ha.q(-1, -2, 0.0f, 1, 24, 7, 24, 0));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.e = frameLayout2;
+        addView(frameLayout2, ha.r(-1, -2, 1));
+        frameLayout2.setClipChildren(false);
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                break;
-            case 3:
-                View view = ((l0) this.b).V;
-                if (view != null) {
-                    view.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 4:
-                ((eh.d) this.b).unscheduleSelf(runnable);
-                break;
-            case 5:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 6:
-                break;
-            case 7:
-                ((np) this.b).unscheduleSelf(runnable);
-                break;
-            case 8:
-            case 9:
-                break;
-            default:
-                ((z4.d) this.b).unscheduleSelf(runnable);
-                break;
-        }
+    public a(Context context, f6 f6Var) {
+        super(context);
+        setPadding(g0.L(24.0f), g0.L(21.0f), g0.L(24.0f), g0.L(21.0f));
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        int i7 = k6.y6;
+        r6.V(textView, i7, f6Var);
+        textView.setTextSize(1, 14.0f);
+        textView.setGravity(17);
+        textView.setTextAlignment(4);
+        addView(textView, ha.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));
+        w wVar = new w(1, context, f6Var, true);
+        this.c = wVar;
+        wVar.setMinWidth(g0.L(200.0f));
+        wVar.i(hd.M0(2131746714, null), false, true);
+        addView(wVar, ha.r(-2, 44, 17));
+        ei.k kVar = new ei.k(context, f6Var);
+        this.d = kVar;
+        r6.V(kVar, i7, f6Var);
+        kVar.setText(hd.M0(2131746702, null));
+        kVar.setTextSize(1, 14.0f);
+        kVar.setTextAlignment(4);
+        kVar.setGravity(17);
+        kVar.setTypeface(g0.o());
+        addView(kVar, ha.t(qs.v2, -2, 17, 0, 17, 0, 12));
+        fi.d dVar = new fi.d(context, f6Var, false);
+        this.e = dVar;
+        dVar.setMinWidth(g0.L(200.0f));
+        addView(dVar, ha.r(-2, 44, 17));
     }
 
-    public /* synthetic */ a(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
-    }
-
-    private final void a(Drawable drawable) {
-    }
-
-    private final void f(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void g(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void h(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void i(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void b(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void c(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void d(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void e(Drawable drawable, Runnable runnable, long j10) {
+    public a(int i7, Context context, f6 f6Var) {
+        super(context);
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setClipChildren(false);
+        frameLayout.setClipToPadding(false);
+        gc gcVar = new gc(context, 70, 0, 0);
+        frameLayout.addView(gcVar, ha.c(-1.0f, -1));
+        vg.m mVar = new vg.m(context, 1, 2);
+        this.b = mVar;
+        vg.f fVar = mVar.b;
+        fVar.z = k6.Tk;
+        fVar.A = k6.Uk;
+        fVar.b();
+        mVar.setStarParticlesView(gcVar);
+        frameLayout.addView(mVar, ha.d(qs.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+        mVar.setPaused(false);
+        sc scVar = new sc(i7, context, f6Var);
+        this.c = scVar;
+        ka.a(scVar);
+        scVar.setOnClickListener(new d(this, 12));
+        frameLayout.addView(scVar, ha.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, ha.c(150.0f, -1));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        com.google.android.recaptcha.internal.a.q(textView, 1, 20.0f);
+        int i10 = k6.j5;
+        r6.V(textView, i10, f6Var);
+        textView.setGravity(17);
+        addView(textView, ha.t(-2, -2, 1, 0, 2, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.e = textView2;
+        textView2.setTextSize(1, 14.0f);
+        r6.V(textView2, i10, f6Var);
+        textView2.setGravity(17);
+        addView(textView2, ha.t(-2, -2, 1, 0, 9, 0, 18));
     }
 }

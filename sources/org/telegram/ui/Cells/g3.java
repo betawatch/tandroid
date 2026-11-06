@@ -2,35 +2,35 @@ package org.telegram.ui.Cells;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.ui.Components.xs;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class g3 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xs b;
+    public final /* synthetic */ ys b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ h3 d;
 
-    public g3(h3 h3Var, int i3, xs xsVar, boolean z10) {
+    public g3(h3 h3Var, int i7, ys ysVar, boolean z9) {
         this.d = h3Var;
-        this.a = i3;
-        this.b = xsVar;
-        this.c = z10;
+        this.a = i7;
+        this.b = ysVar;
+        this.c = z9;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         h3 h3Var = this.d;
-        boolean z10 = h3Var.a;
-        int i3 = this.a;
-        if (!z10) {
-            if (i3 > 0 && editable != null && editable.length() > i3) {
+        boolean z9 = h3Var.a;
+        int i7 = this.a;
+        if (!z9) {
+            if (i7 > 0 && editable != null && editable.length() > i7) {
                 h3Var.a = true;
-                CharSequence subSequence = editable.subSequence(0, i3);
-                xs xsVar = this.b;
-                xsVar.setText(subSequence);
-                xsVar.setSelection(xsVar.length());
+                CharSequence subSequence = editable.subSequence(0, i7);
+                ys ysVar = this.b;
+                ysVar.setText(subSequence);
+                ysVar.setSelection(ysVar.length());
                 h3Var.a = false;
             }
             h3Var.b(editable);
@@ -45,19 +45,19 @@ public final class g3 implements TextWatcher {
                 }
             }
         }
-        org.telegram.ui.Components.g6 g6Var = h3Var.y;
-        if (g6Var == null || i3 <= 0) {
+        org.telegram.ui.Components.i6 i6Var = h3Var.y;
+        if (i6Var == null || i7 <= 0) {
             return;
         }
-        g6Var.a();
+        i6Var.a();
         h3Var.c();
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

@@ -1,140 +1,50 @@
 package vg;
 
-import org.telegram.messenger.r2;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j {
-    public final TLRPC.TL_premiumGiftOption a;
-    public final TLRPC.TL_premiumGiftCodeOption b;
-    public final TLRPC.TL_premiumGiftOption c;
-    public final TLRPC.TL_premiumGiftCodeOption d;
-    public int e;
-    public long f;
-    public long g;
-    public e5.l h;
+public final class j extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    public j(TLRPC.TL_premiumGiftOption tL_premiumGiftOption) {
-        this.a = tL_premiumGiftOption;
-        this.b = null;
-        this.c = null;
-        this.d = null;
+    public /* synthetic */ j(m mVar, int i7) {
+        this.a = i7;
+        this.b = mVar;
     }
 
-    public final String a() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
-        if (tL_premiumGiftOption == null) {
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-            if (tL_premiumGiftCodeOption != null && (r2.b() || tL_premiumGiftCodeOption.store_product == null)) {
-                return tL_premiumGiftCodeOption.currency;
-            }
-        } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
-            return tL_premiumGiftOption.currency;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                m mVar = this.b;
+                mVar.b.d = 0.0f;
+                mVar.d0 = null;
+                mVar.j(mVar.L);
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                m mVar2 = this.b;
+                mVar2.b.d = 0.0f;
+                mVar2.d0 = null;
+                mVar2.j(mVar2.L);
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                m mVar3 = this.b;
+                mVar3.b.d = 0.0f;
+                mVar3.d0 = null;
+                mVar3.j(mVar3.L);
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                m mVar4 = this.b;
+                mVar4.b.d = 0.0f;
+                mVar4.d0 = null;
+                mVar4.j(mVar4.L);
+                break;
         }
-        e5.l lVar = this.h;
-        return lVar == null ? "" : lVar.a().c;
-    }
-
-    public final int b() {
-        if (this.e == 0) {
-            if (f() == 0) {
-                return 0;
-            }
-            if (this.g != 0) {
-                int f10 = (int) ((1.0d - (f() / this.g)) * 100.0d);
-                this.e = f10;
-                if (f10 == 0) {
-                    this.e = -1;
-                }
-            }
-        }
-        return this.e;
-    }
-
-    public final String c() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption;
-        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption;
-        if (r2.b() || (((tL_premiumGiftOption = this.a) != null && tL_premiumGiftOption.store_product == null) || ((tL_premiumGiftCodeOption = this.b) != null && tL_premiumGiftCodeOption.store_product == null))) {
-            return org.telegram.messenger.r1.i().f(e(), a());
-        }
-        if (this.h == null) {
-            return "";
-        }
-        org.telegram.messenger.r1 i3 = org.telegram.messenger.r1.i();
-        long e10 = e();
-        String a10 = a();
-        i3.getClass();
-        return org.telegram.messenger.r1.g(a10, 6, e10, false);
-    }
-
-    public final int d() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
-        if (tL_premiumGiftOption != null) {
-            return tL_premiumGiftOption.months;
-        }
-        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-        if (tL_premiumGiftCodeOption != null) {
-            return tL_premiumGiftCodeOption.months;
-        }
-        return 1;
-    }
-
-    public final long e() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
-        if (tL_premiumGiftOption == null) {
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-            if (tL_premiumGiftCodeOption != null && (r2.b() || tL_premiumGiftCodeOption.store_product == null)) {
-                return tL_premiumGiftCodeOption.amount;
-            }
-        } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
-            return tL_premiumGiftOption.amount;
-        }
-        e5.l lVar = this.h;
-        if (lVar == null) {
-            return 0L;
-        }
-        return lVar.a().b;
-    }
-
-    public final long f() {
-        if (this.f == 0) {
-            long e10 = e();
-            if (e10 != 0) {
-                this.f = e10 / d();
-            }
-        }
-        return this.f;
-    }
-
-    public final long g() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.c;
-        if (tL_premiumGiftOption != null) {
-            return tL_premiumGiftOption.amount;
-        }
-        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.d;
-        if (tL_premiumGiftCodeOption != null) {
-            return tL_premiumGiftCodeOption.amount;
-        }
-        return 0L;
-    }
-
-    public final String h() {
-        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
-        if (tL_premiumGiftOption != null) {
-            return tL_premiumGiftOption.store_product;
-        }
-        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-        if (tL_premiumGiftCodeOption != null) {
-            return tL_premiumGiftCodeOption.store_product;
-        }
-        return null;
-    }
-
-    public j(TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2) {
-        this.a = null;
-        this.b = tL_premiumGiftCodeOption;
-        this.c = null;
-        this.d = com.google.android.recaptcha.internal.a.u(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
     }
 }

@@ -1,9 +1,84 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public interface n2 {
-    void v();
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.WindowManager;
+import org.telegram.messenger.qs;
 
-    boolean x();
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class n2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v2 b;
+
+    public /* synthetic */ n2(v2 v2Var, int i7) {
+        this.a = i7;
+        this.b = v2Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                v2 v2Var = this.b;
+                AnimatorSet animatorSet = v2Var.z0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    v2Var.z0 = null;
+                    v2Var.A0 = 0;
+                    break;
+                }
+                break;
+            default:
+                v2 v2Var2 = this.b;
+                AnimatorSet animatorSet2 = v2Var2.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    v2Var2.z0 = null;
+                    v2Var2.A0 = 0;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7 = this.a;
+        v2 v2Var = this.b;
+        switch (i7) {
+            case 0:
+                AnimatorSet animatorSet = v2Var.z0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    v2Var.z0 = null;
+                    v2Var.A0 = 0;
+                    v2Var.v();
+                    p2 p2Var = v2Var.y0;
+                    if (p2Var != null) {
+                        p2Var.v();
+                    }
+                    if (v2Var.J) {
+                        v2Var.c.setLayerType(0, null);
+                    }
+                    if (v2Var.V) {
+                        WindowManager.LayoutParams attributes = v2Var.getWindow().getAttributes();
+                        attributes.flags &= -1025;
+                        v2Var.getWindow().setAttributes(attributes);
+                    }
+                }
+                if (v2Var.K0) {
+                    qs.e().k(99, 512);
+                }
+                v2Var.L0.e();
+                break;
+            default:
+                AnimatorSet animatorSet2 = v2Var.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    v2Var.z0 = null;
+                    v2Var.A0 = 0;
+                    org.telegram.messenger.g0.h3(new l2.w(this, 23));
+                }
+                qs.e().k(99, 512);
+                break;
+        }
+    }
 }

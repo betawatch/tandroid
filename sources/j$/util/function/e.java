@@ -8,8 +8,8 @@ public final /* synthetic */ class e implements IntUnaryOperator {
     public final /* synthetic */ IntUnaryOperator b;
     public final /* synthetic */ IntUnaryOperator c;
 
-    public /* synthetic */ e(IntUnaryOperator intUnaryOperator, IntUnaryOperator intUnaryOperator2, int i3) {
-        this.a = i3;
+    public /* synthetic */ e(IntUnaryOperator intUnaryOperator, IntUnaryOperator intUnaryOperator2, int i7) {
+        this.a = i7;
         this.b = intUnaryOperator;
         this.c = intUnaryOperator2;
     }
@@ -27,12 +27,12 @@ public final /* synthetic */ class e implements IntUnaryOperator {
     }
 
     @Override // java.util.function.IntUnaryOperator
-    public final int applyAsInt(int i3) {
+    public final int applyAsInt(int i7) {
         switch (this.a) {
             case 0:
-                return this.c.applyAsInt(this.b.applyAsInt(i3));
+                return this.c.applyAsInt(this.b.applyAsInt(i7));
             default:
-                return this.b.applyAsInt(this.c.applyAsInt(i3));
+                return this.b.applyAsInt(this.c.applyAsInt(i7));
         }
     }
 }

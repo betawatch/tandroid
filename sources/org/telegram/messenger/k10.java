@@ -1,78 +1,74 @@
 package org.telegram.messenger;
 
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.util.LruCache;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class k10 {
-    public final int a;
-    public final LruCache b = new LruCache(100);
-    public final HashMap c = new HashMap();
+public final /* synthetic */ class k10 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l10 b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ i10 d;
+    public final /* synthetic */ TLRPC.TL_error e;
 
-    public k10(int i3) {
-        this.a = i3;
+    public /* synthetic */ k10(l10 l10Var, i10 i10Var, TLObject tLObject, TLRPC.TL_error tL_error, int i7) {
+        this.a = i7;
+        this.b = l10Var;
+        this.d = i10Var;
+        this.c = tLObject;
+        this.e = tL_error;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final k7 a(String str, String str2, u10 u10Var) {
-        TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername;
-        if (TextUtils.isEmpty(str2)) {
-            LruCache lruCache = this.b;
-            j10 j10Var = (j10) lruCache.get(str);
-            if (j10Var != null) {
-                long j10 = j10Var.a;
-                if (System.currentTimeMillis() - j10Var.b < 3600000) {
-                    u10Var.a(Long.valueOf(j10));
-                    a8.b("resolve username from cache " + str + " " + j10);
-                    return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z9;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                m10 m10Var = this.b.i;
+                if ((this.c instanceof TLRPC.TL_boolTrue) && this.e == null) {
+                    z9 = true;
+                } else {
+                    m10Var.getClass();
+                    z9 = false;
                 }
-                lruCache.remove(str);
-            }
+                this.d.a(Boolean.valueOf(z9));
+                m10Var.getClass();
+                break;
+            case 1:
+                m10 m10Var2 = this.b.i;
+                TLObject tLObject = this.c;
+                boolean z11 = tLObject instanceof TLRPC.Updates;
+                boolean z12 = false;
+                if (z11) {
+                    qp.s1(m10Var2.a).O3((TLRPC.Updates) tLObject, false);
+                }
+                kg.f.a(m10Var2.a).b();
+                if (z11 && this.e == null) {
+                    z12 = true;
+                }
+                this.d.a(Boolean.valueOf(z12));
+                break;
+            default:
+                m10 m10Var3 = this.b.i;
+                if ((this.c instanceof TLRPC.TL_boolTrue) && this.e == null) {
+                    z10 = true;
+                } else {
+                    m10Var3.getClass();
+                    z10 = false;
+                }
+                this.d.a(Boolean.valueOf(z10));
+                m10Var3.getClass();
+                break;
         }
-        HashMap hashMap = this.c;
-        ArrayList arrayList = (ArrayList) hashMap.get(str);
-        if (arrayList != null) {
-            arrayList.add(u10Var);
-            return null;
-        }
-        ArrayList arrayList2 = new ArrayList();
-        arrayList2.add(u10Var);
-        hashMap.put(str, arrayList2);
-        Typeface typeface = g0.a;
-        try {
-            Double.parseDouble(str);
-            TLRPC.TL_contacts_resolvePhone tL_contacts_resolvePhone = new TLRPC.TL_contacts_resolvePhone();
-            tL_contacts_resolvePhone.phone = str;
-            tL_contacts_resolveUsername = tL_contacts_resolvePhone;
-        } catch (NumberFormatException unused) {
-            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername2 = new TLRPC.TL_contacts_resolveUsername();
-            tL_contacts_resolveUsername2.username = str;
-            if (!TextUtils.isEmpty(str2)) {
-                tL_contacts_resolveUsername2.flags |= 1;
-                tL_contacts_resolveUsername2.referer = str2;
-            }
-            tL_contacts_resolveUsername = tL_contacts_resolveUsername2;
-        }
-        return new k7(this, str, ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_resolveUsername, new s4(10, this, str)), 23);
     }
 
-    public final void b(TLRPC.User user, TLRPC.User user2) {
-        String str;
-        if (user == null || user2 == null || (str = user.username) == null || TextUtils.equals(str, user2.username)) {
-            return;
-        }
-        String str2 = user.username;
-        LruCache lruCache = this.b;
-        lruCache.remove(str2);
-        String str3 = user2.username;
-        if (str3 != null) {
-            lruCache.put(str3, new j10(user2.id));
-        }
+    public /* synthetic */ k10(l10 l10Var, TLObject tLObject, i10 i10Var, TLRPC.TL_error tL_error) {
+        this.a = 1;
+        this.b = l10Var;
+        this.c = tLObject;
+        this.d = i10Var;
+        this.e = tL_error;
     }
 }

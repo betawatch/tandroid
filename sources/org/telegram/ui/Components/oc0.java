@@ -1,35 +1,65 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class oc0 extends NestedScrollView {
-    public View a0;
-    public final /* synthetic */ vc0 b0;
+public final /* synthetic */ class oc0 implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.messenger.c20 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oc0(vc0 vc0Var, Activity activity) {
-        super(activity);
-        this.b0 = vc0Var;
+    public /* synthetic */ oc0(String[] strArr, Activity activity, org.telegram.messenger.c20 c20Var, int i7) {
+        this.a = i7;
+        this.b = strArr;
+        this.c = activity;
+        this.d = c20Var;
     }
 
-    @Override // androidx.core.widget.NestedScrollView
-    public final int c(Rect rect) {
-        if (this.a0 == null || this.b0.l1.getTop() != getPaddingTop()) {
-            return 0;
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                String[] strArr = this.b;
+                int length = strArr.length;
+                boolean z9 = false;
+                int i7 = 0;
+                while (true) {
+                    if (i7 < length) {
+                        if (this.c.checkSelfPermission(strArr[i7]) == 0) {
+                            z9 = true;
+                        } else {
+                            i7++;
+                        }
+                    }
+                }
+                org.telegram.messenger.c20 c20Var = this.d;
+                if (c20Var != null) {
+                    c20Var.a(Boolean.valueOf(z9));
+                    break;
+                }
+                break;
+            default:
+                String[] strArr2 = this.b;
+                int length2 = strArr2.length;
+                boolean z10 = false;
+                int i10 = 0;
+                while (true) {
+                    if (i10 < length2) {
+                        if (this.c.checkSelfPermission(strArr2[i10]) == 0) {
+                            i10++;
+                        }
+                    } else {
+                        z10 = true;
+                    }
+                }
+                org.telegram.messenger.c20 c20Var2 = this.d;
+                if (c20Var2 != null) {
+                    c20Var2.a(Boolean.valueOf(z10));
+                    break;
+                }
+                break;
         }
-        int c2 = super.c(rect);
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - (((this.a0.getTop() - getScrollY()) + rect.top) + c2);
-        return currentActionBarHeight > 0 ? org.telegram.messenger.camera.q.w(10.0f, currentActionBarHeight, c2) : c2;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
-        this.a0 = view2;
-        super.requestChildFocus(view, view2);
     }
 }

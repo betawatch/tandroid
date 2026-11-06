@@ -6,23 +6,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import c9.e0;
-import c9.g0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.common.PlayCoreDialogWrapperActivity;
+import d9.e0;
+import d9.g0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class as extends e0 {
     final TaskCompletionSource a;
-    final c9.c b;
+    final d9.c b;
     private final g0 c;
     private final String d;
     private final k e;
     private final Activity f;
 
-    public as(Context context, k kVar, Activity activity, TaskCompletionSource taskCompletionSource, c9.c cVar) {
+    public as(Context context, k kVar, Activity activity, TaskCompletionSource taskCompletionSource, d9.c cVar) {
         super("com.google.android.play.core.integrity.protocol.IRequestDialogCallback");
         this.c = new g0("RequestDialogCallbackImpl");
         this.d = context.getPackageName();
@@ -32,7 +32,7 @@ final class as extends e0 {
         this.b = cVar;
     }
 
-    @Override // c9.f0
+    @Override // d9.f0
     public final void b(Bundle bundle) {
         this.b.d(this.a);
         this.c.b("onRequestDialog(%s)", this.d);

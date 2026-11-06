@@ -2,26 +2,26 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class LongdivAtom extends VRowAtom {
-    public LongdivAtom(long j10, long j11) {
+    public LongdivAtom(long j3, long j10) {
         setHalign(1);
         setVtop(true);
-        String[] makeResults = makeResults(j10, j11);
+        String[] makeResults = makeResults(j3, j10);
         RuleAtom ruleAtom = new RuleAtom(1, 0.0f, 1, 2.6f, 1, 0.5f);
-        for (int i3 = 0; i3 < makeResults.length; i3++) {
-            Atom atom = new TeXFormula(makeResults[i3]).root;
-            if (i3 % 2 == 0) {
+        for (int i7 = 0; i7 < makeResults.length; i7++) {
+            Atom atom = new TeXFormula(makeResults[i7]).root;
+            if (i7 % 2 == 0) {
                 RowAtom rowAtom = new RowAtom(atom);
                 rowAtom.add(ruleAtom);
-                if (i3 == 0) {
+                if (i7 == 0) {
                     append(rowAtom);
                 } else {
                     append(new UnderlinedAtom(rowAtom));
                 }
-            } else if (i3 == 1) {
-                String l10 = Long.toString(j10);
+            } else if (i7 == 1) {
+                String l10 = Long.toString(j3);
                 BigDelimiterAtom bigDelimiterAtom = new BigDelimiterAtom(SymbolAtom.get(TeXFormula.symbolMappings[41]), 1);
                 RowAtom rowAtom2 = new RowAtom(new PhantomAtom(bigDelimiterAtom, false, true, true));
                 rowAtom2.add(new SmashedAtom(new RaiseAtom(bigDelimiterAtom, 13, 3.5f, 13, 0.0f, 13, 0.0f)));
@@ -39,17 +39,17 @@ public class LongdivAtom extends VRowAtom {
         }
     }
 
-    private String[] makeResults(long j10, long j11) {
+    private String[] makeResults(long j3, long j10) {
         ArrayList arrayList = new ArrayList();
-        long j12 = j11 / j10;
-        arrayList.add(Long.toString(j12));
+        long j11 = j10 / j3;
         arrayList.add(Long.toString(j11));
-        int length = Long.toString(j12).length();
-        for (int i3 = 0; i3 < length; i3++) {
-            long charAt = (r1.charAt(i3) - '0') * ((long) Math.pow(10.0d, (length - i3) - 1)) * j10;
-            j11 -= charAt;
+        arrayList.add(Long.toString(j10));
+        int length = Long.toString(j11).length();
+        for (int i7 = 0; i7 < length; i7++) {
+            long charAt = (r1.charAt(i7) - '0') * ((long) Math.pow(10.0d, (length - i7) - 1)) * j3;
+            j10 -= charAt;
             arrayList.add(Long.toString(charAt));
-            arrayList.add(Long.toString(j11));
+            arrayList.add(Long.toString(j10));
         }
         return (String[]) arrayList.toArray(new String[arrayList.size()]);
     }

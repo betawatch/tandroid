@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f1 implements Iterator {
     public int a = -1;
@@ -24,18 +24,18 @@ public final class f1 implements Iterator {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i3 = this.a + 1;
+        int i7 = this.a + 1;
         d1 d1Var = this.d;
-        return i3 < d1Var.a.size() || (!d1Var.b.isEmpty() && a().hasNext());
+        return i7 < d1Var.a.size() || (!d1Var.b.isEmpty() && a().hasNext());
     }
 
     @Override // java.util.Iterator
     public final Object next() {
         this.b = true;
-        int i3 = this.a + 1;
-        this.a = i3;
+        int i7 = this.a + 1;
+        this.a = i7;
         d1 d1Var = this.d;
-        return i3 < d1Var.a.size() ? (Map.Entry) d1Var.a.get(this.a) : (Map.Entry) a().next();
+        return i7 < d1Var.a.size() ? (Map.Entry) d1Var.a.get(this.a) : (Map.Entry) a().next();
     }
 
     @Override // java.util.Iterator
@@ -44,7 +44,7 @@ public final class f1 implements Iterator {
             throw new IllegalStateException("remove() was called before next()");
         }
         this.b = false;
-        int i3 = d1.f;
+        int i7 = d1.f;
         d1 d1Var = this.d;
         d1Var.c();
         if (this.a >= d1Var.a.size()) {

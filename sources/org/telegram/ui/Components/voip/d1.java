@@ -1,19 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.view.View;
-import org.telegram.ui.Components.n9;
+import android.os.SystemClock;
+import org.telegram.ui.ActionBar.m5;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d1 implements n9, qe.b {
-    public final /* synthetic */ View a;
+public final class d1 implements VideoSink {
+    public volatile q0 a;
+    public volatile j2 b;
+    public volatile int c;
+    public volatile int d;
+    public volatile long e;
+    public final m5 f = new m5(this, 5);
+    public final /* synthetic */ g1 h;
 
-    @Override // qe.b
-    public void Y(int i3, float f10, float f11, qe.c cVar) {
-        this.a.invalidate();
+    public d1(g1 g1Var) {
+        this.h = g1Var;
     }
 
-    @Override // qe.b
-    public /* synthetic */ void F(float f10, int i3) {
+    public final boolean a(long j3) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        return this.e < j3 ? elapsedRealtime - j3 < 700 : elapsedRealtime - this.e < 5000;
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z9 = elapsedRealtime - this.e > 5000;
+        this.e = elapsedRealtime;
+        int rotatedWidth = videoFrame.getRotatedWidth();
+        int rotatedHeight = videoFrame.getRotatedHeight();
+        if (rotatedWidth != this.c || rotatedHeight != this.d || z9) {
+            this.c = rotatedWidth;
+            this.d = rotatedHeight;
+            org.telegram.messenger.g0.h3(this.f);
+        }
+        q0 q0Var = this.a;
+        j2 j2Var = this.b;
+        if (q0Var != null) {
+            q0Var.onFrame(videoFrame);
+        }
+        if (j2Var != null) {
+            j2Var.onFrame(videoFrame);
+        }
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
+        org.webrtc.e0.a(this, videoSink);
     }
 }

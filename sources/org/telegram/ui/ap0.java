@@ -1,29 +1,113 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ap0 extends org.telegram.ui.Components.s51 {
-    public final /* synthetic */ PhotoViewer i0;
+public final class ap0 extends v4.z0 {
+    public final float k;
+    public final LinearInterpolator i = new LinearInterpolator();
+    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
+    public int l = 0;
+    public int m = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ap0(PhotoViewer photoViewer, Context context, gn0 gn0Var) {
-        super(context, gn0Var);
-        this.i0 = photoViewer;
+    public ap0(Context context) {
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        PhotoViewer.X(this.i0);
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i3) {
-        super.setVisibility(i3);
-        if (i3 == 0) {
-            PhotoViewer.X(this.i0);
+    @Override // v4.z0
+    public final PointF a(int i7) {
+        v4.n0 n0Var = this.c;
+        if (n0Var instanceof v4.b0) {
+            return ((v4.b0) n0Var).E0(i7);
         }
+        return null;
+    }
+
+    @Override // v4.z0
+    public final void d(int i7, int i10, v4.y0 y0Var) {
+        if (this.b.y.r() == 0) {
+            h();
+            return;
+        }
+        int i11 = this.l;
+        int i12 = i11 - i7;
+        if (i11 * i12 <= 0) {
+            i12 = 0;
+        }
+        this.l = i12;
+        int i13 = this.m;
+        int i14 = i13 - i10;
+        int i15 = i13 * i14 > 0 ? i14 : 0;
+        this.m = i15;
+        if (i12 == 0 && i15 == 0) {
+            PointF a10 = a(this.a);
+            if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
+                y0Var.d = this.a;
+                h();
+            } else {
+                v4.z0.b(a10);
+                this.l = (int) (a10.x * 10000.0f);
+                this.m = (int) (a10.y * 10000.0f);
+                y0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
+            }
+        }
+    }
+
+    @Override // v4.z0
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
+    
+        if (r4 < 0) goto L16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // v4.z0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, v4.y0 y0Var) {
+        int i7;
+        int max;
+        v4.n0 n0Var = this.c;
+        if (n0Var != null && n0Var.d()) {
+            v4.o0 o0Var = (v4.o0) view.getLayoutParams();
+            int x10 = v4.n0.x(view) - ((ViewGroup.MarginLayoutParams) o0Var).leftMargin;
+            int y10 = v4.n0.y(view) + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin;
+            int D = n0Var.D();
+            int E = n0Var.m - n0Var.E();
+            if (x10 <= D || y10 >= E) {
+                int i10 = y10 - x10;
+                int i11 = (E - D) - i10;
+                int i12 = i10 + i11;
+                i7 = i11 - x10;
+                if (i7 <= 0) {
+                    i7 = i12 - y10;
+                }
+                max = Math.max(org.telegram.messenger.qs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
+                if (max <= 0) {
+                    y0Var.b(-i7, 0, Math.max(400, max), this.j);
+                    return;
+                }
+                return;
+            }
+        }
+        i7 = 0;
+        max = Math.max(org.telegram.messenger.qs.K2, (int) Math.ceil(((int) Math.ceil(Math.abs(i7) * this.k)) / 0.3356d));
+        if (max <= 0) {
+        }
+    }
+
+    @Override // v4.z0
+    public final void e() {
     }
 }

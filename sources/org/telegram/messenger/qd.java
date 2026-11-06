@@ -1,49 +1,91 @@
 package org.telegram.messenger;
 
-import android.media.AudioRecord;
+import android.location.Location;
+import android.location.LocationListener;
+import android.os.Bundle;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qd implements Runnable {
+public final class qd implements LocationListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ qd(MediaController mediaController, boolean z10, int i3) {
-        this.a = i3;
-        this.b = mediaController;
-        this.c = z10;
+    public /* synthetic */ qd(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
         switch (this.a) {
             case 0:
-                MediaController mediaController = this.b;
-                p5 p5Var = mediaController.N1;
-                if (mediaController.g1 != null && mediaController.k1 != null) {
-                    boolean z10 = mediaController.e1;
-                    mediaController.e1 = !z10;
-                    if (!z10) {
-                        AudioRecord audioRecord = mediaController.f1;
-                        if (audioRecord != null) {
-                            mediaController.C1 = 4;
-                            audioRecord.stop();
-                            mediaController.f1.release();
-                            mediaController.f1 = null;
-                            p5Var.c(new qd(mediaController, this.c, 1));
+                sd sdVar = (sd) this.b;
+                if (location != null) {
+                    Location location2 = sdVar.s;
+                    if (location2 != null && (this == sdVar.h || this == sdVar.n)) {
+                        if (!sdVar.D && location.distanceTo(location2) > 20.0f) {
+                            sdVar.m(location);
+                            sdVar.w = SystemClock.elapsedRealtime() - 25000;
                             break;
                         }
                     } else {
-                        p5Var.a(mediaController.P1);
-                        p5Var.c(new od(mediaController, 6));
+                        sdVar.m(location);
                         break;
                     }
                 }
                 break;
             default:
-                MediaController.a(this.b, this.c);
+                a8.b8 b8Var = (a8.b8) this.b;
+                if (location != null && ((ds) b8Var.e) != null) {
+                    if (r2.a) {
+                        a8.b("found location " + location);
+                    }
+                    b8Var.f = location;
+                    if (location.getAccuracy() < 100.0f) {
+                        ((cz) b8Var.a).K(location);
+                        ds dsVar = (ds) b8Var.e;
+                        if (dsVar != null) {
+                            g0.r(dsVar);
+                        }
+                        b8Var.d();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderDisabled(String str) {
+        int i7 = this.a;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderEnabled(String str) {
+        int i7 = this.a;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onStatusChanged(String str, int i7, Bundle bundle) {
+        int i10 = this.a;
+    }
+
+    private final void a(String str) {
+    }
+
+    private final void b(String str) {
+    }
+
+    private final void c(String str) {
+    }
+
+    private final void d(String str) {
+    }
+
+    private final void e(String str, int i7, Bundle bundle) {
+    }
+
+    private final void f(String str, int i7, Bundle bundle) {
     }
 }

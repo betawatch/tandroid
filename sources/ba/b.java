@@ -1,63 +1,28 @@
 package ba;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.u1;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends p {
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final long f;
+public final /* synthetic */ class b implements Continuation, r1 {
+    public final /* synthetic */ Runnable a;
 
-    public b(String str, String str2, String str3, String str4, long j10) {
-        if (str == null) {
-            throw new NullPointerException("Null rolloutId");
-        }
-        this.b = str;
-        if (str2 == null) {
-            throw new NullPointerException("Null parameterKey");
-        }
-        this.c = str2;
-        if (str3 == null) {
-            throw new NullPointerException("Null parameterValue");
-        }
-        this.d = str3;
-        if (str4 == null) {
-            throw new NullPointerException("Null variantId");
-        }
-        this.e = str4;
-        this.f = j10;
+    public /* synthetic */ b(Runnable runnable) {
+        this.a = runnable;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof p) {
-            b bVar = (b) ((p) obj);
-            if (this.b.equals(bVar.b) && this.c.equals(bVar.c) && this.d.equals(bVar.d) && this.e.equals(bVar.e) && this.f == bVar.f) {
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(u1 u1Var, int i7) {
+        this.a.run();
     }
 
-    public final int hashCode() {
-        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
-        long j10 = this.f;
-        return hashCode ^ ((int) (j10 ^ (j10 >>> 32)));
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("RolloutAssignment{rolloutId=");
-        sb2.append(this.b);
-        sb2.append(", parameterKey=");
-        sb2.append(this.c);
-        sb2.append(", parameterValue=");
-        sb2.append(this.d);
-        sb2.append(", variantId=");
-        sb2.append(this.e);
-        sb2.append(", templateVersion=");
-        return a1.g.r(sb2, this.f, "}");
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        this.a.run();
+        return Tasks.forResult(null);
     }
 }

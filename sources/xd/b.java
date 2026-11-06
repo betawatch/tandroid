@@ -1,52 +1,69 @@
 package xd;
 
-import android.os.Build;
-import fd.f;
-import java.lang.Thread;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import wd.y;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends fd.a implements f {
-    private volatile Object _preHandler;
+public final class b implements Iterator {
+    public final CharSequence a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 
-    public b() {
-        super(y.a);
-        this._preHandler = this;
+    public b(CharSequence string) {
+        kotlin.jvm.internal.j.e(string, "string");
+        this.a = string;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x002c, code lost:
-    
-        if (java.lang.reflect.Modifier.isStatic(r0.getModifiers()) != false) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(Throwable th2) {
-        Method method;
-        int i3 = Build.VERSION.SDK_INT;
-        if (26 > i3 || i3 >= 28) {
-            return;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i7;
+        int i10;
+        int i11 = this.b;
+        if (i11 != 0) {
+            return i11 == 1;
         }
-        Object obj = this._preHandler;
-        if (obj != this) {
-            method = (Method) obj;
-        } else {
-            try {
-                method = Thread.class.getDeclaredMethod("getUncaughtExceptionPreHandler", null);
-                if (Modifier.isPublic(method.getModifiers())) {
-                }
-            } catch (Throwable unused) {
+        if (this.e < 0) {
+            this.b = 2;
+            return false;
+        }
+        CharSequence charSequence = this.a;
+        int length = charSequence.length();
+        int length2 = charSequence.length();
+        for (int i12 = this.c; i12 < length2; i12++) {
+            char charAt = charSequence.charAt(i12);
+            if (charAt == '\n' || charAt == '\r') {
+                i7 = (charAt == '\r' && (i10 = i12 + 1) < charSequence.length() && charSequence.charAt(i10) == '\n') ? 2 : 1;
+                length = i12;
+                this.b = 1;
+                this.e = i7;
+                this.d = length;
+                return true;
             }
-            method = null;
-            this._preHandler = method;
         }
-        Object invoke = method != null ? method.invoke(null, null) : null;
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = invoke instanceof Thread.UncaughtExceptionHandler ? (Thread.UncaughtExceptionHandler) invoke : null;
-        if (uncaughtExceptionHandler != null) {
-            uncaughtExceptionHandler.uncaughtException(Thread.currentThread(), th2);
+        i7 = -1;
+        this.b = 1;
+        this.e = i7;
+        this.d = length;
+        return true;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
         }
+        this.b = 0;
+        int i7 = this.d;
+        int i10 = this.c;
+        this.c = this.e + i7;
+        return this.a.subSequence(i10, i7).toString();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

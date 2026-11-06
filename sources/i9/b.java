@@ -1,46 +1,32 @@
 package i9;
 
-import java.math.RoundingMode;
+import a8.ia;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class b {
-    public static final /* synthetic */ int[] a;
+public final class b extends d {
+    public final char[] e;
 
-    static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public b(a aVar) {
+        super(aVar, (Character) null);
+        this.e = new char[512];
+        char[] cArr = aVar.b;
+        ia.f(cArr.length == 16);
+        for (int i7 = 0; i7 < 256; i7++) {
+            char[] cArr2 = this.e;
+            cArr2[i7] = cArr[i7 >>> 4];
+            cArr2[i7 | 256] = cArr[i7 & 15];
         }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[RoundingMode.UP.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
+    }
+
+    @Override // i9.d
+    public final void b(StringBuilder sb2, byte[] bArr, int i7) {
+        ia.n(0, i7, bArr.length);
+        for (int i10 = 0; i10 < i7; i10++) {
+            int i11 = bArr[i10] & 255;
+            char[] cArr = this.e;
+            sb2.append(cArr[i11]);
+            sb2.append(cArr[i11 | 256]);
         }
     }
 }

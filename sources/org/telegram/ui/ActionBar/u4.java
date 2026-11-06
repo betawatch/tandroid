@@ -4,9 +4,9 @@ import android.graphics.Color;
 import android.util.SparseArray;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class u4 implements n2 {
+public abstract class u4 implements p2 {
     public static final double[] a = {0.819022437996703d, 0.3619062600528904d, -0.1288737815209879d, 0.0329836539323885d, 0.9292868615863434d, 0.0361446663506424d, 0.0481771893596242d, 0.2642395317527308d, 0.6335478284694309d};
     public static final double[] b = {1.2268798758459243d, -0.5578149944602171d, 0.2813910456659647d, -0.0405757452148008d, 1.112286803280317d, -0.0717110580655164d, -0.0763729366746601d, -0.4214933324022432d, 1.5869240198367816d};
     public static final double[] c = {0.210454268309314d, 0.7936177747023054d, -0.0040720430116193d, 1.9779985324311684d, -2.42859224204858d, 0.450593709617411d, 0.0259040424655478d, 0.7827717124575296d, -0.8086757549230774d};
@@ -1736,50 +1736,50 @@ public abstract class u4 implements n2 {
         return iArr;
     }
 
-    public static String c(int i3) {
+    public static String c(int i7) {
         if (h == null) {
             h = a();
         }
-        return (String) h.get(i3);
+        return (String) h.get(i7);
     }
 
     public static double[] d(double[] dArr, double[] dArr2) {
-        double d10 = dArr[0];
-        double d11 = dArr2[0];
-        double d12 = dArr[1];
-        double d13 = dArr2[1];
-        double d14 = dArr[2];
-        double d15 = dArr2[2];
-        return new double[]{(d14 * d15) + (d12 * d13) + (d10 * d11), (dArr[5] * d15) + (dArr[4] * d13) + (dArr[3] * d11), (dArr[8] * d15) + (dArr[7] * d13) + (dArr[6] * d11)};
+        double d2 = dArr[0];
+        double d10 = dArr2[0];
+        double d11 = dArr[1];
+        double d12 = dArr2[1];
+        double d13 = dArr[2];
+        double d14 = dArr2[2];
+        return new double[]{(d13 * d14) + (d11 * d12) + (d2 * d10), (dArr[5] * d14) + (dArr[4] * d12) + (dArr[3] * d10), (dArr[8] * d14) + (dArr[7] * d12) + (dArr[6] * d10)};
     }
 
-    public static double[] e(int i3) {
-        return new double[]{Color.red(i3) / 255.0d, Color.green(i3) / 255.0d, Color.blue(i3) / 255.0d};
+    public static double[] e(int i7) {
+        return new double[]{Color.red(i7) / 255.0d, Color.green(i7) / 255.0d, Color.blue(i7) / 255.0d};
     }
 
     public static double[] f(double[] dArr) {
-        double[] d10 = d(a, d(e, dArr));
-        for (int i3 = 0; i3 < 3; i3++) {
-            d10[i3] = Math.cbrt(d10[i3]);
+        double[] d2 = d(a, d(e, dArr));
+        for (int i7 = 0; i7 < 3; i7++) {
+            d2[i7] = Math.cbrt(d2[i7]);
         }
-        double[] d11 = d(c, d10);
-        double d12 = d11[0];
-        double d13 = d11[1];
-        double d14 = d11[2];
-        return new double[]{d12, Math.sqrt(Math.pow(d14, 2.0d) + Math.pow(d13, 2.0d)), (Math.abs(d13) >= 2.0E-4d || Math.abs(d14) >= 2.0E-4d) ? ((((Math.atan2(d14, d13) * 180.0d) / 3.141592653589793d) % 360.0d) + 360.0d) % 360.0d : Double.NaN};
+        double[] d10 = d(c, d2);
+        double d11 = d10[0];
+        double d12 = d10[1];
+        double d13 = d10[2];
+        return new double[]{d11, Math.sqrt(Math.pow(d13, 2.0d) + Math.pow(d12, 2.0d)), (Math.abs(d12) >= 2.0E-4d || Math.abs(d13) >= 2.0E-4d) ? ((((Math.atan2(d13, d12) * 180.0d) / 3.141592653589793d) % 360.0d) + 360.0d) % 360.0d : Double.NaN};
     }
 
     public static double[] g(double[] dArr) {
         double pow;
         double[] dArr2 = new double[3];
-        for (int i3 = 0; i3 < dArr.length; i3++) {
-            if (Math.abs(dArr[i3]) <= 0.04045d) {
-                pow = dArr[i3] / 12.92d;
+        for (int i7 = 0; i7 < dArr.length; i7++) {
+            if (Math.abs(dArr[i7]) <= 0.04045d) {
+                pow = dArr[i7] / 12.92d;
             } else {
-                double d10 = dArr[i3];
-                pow = Math.pow((Math.abs(d10) + 0.055d) / 1.055d, 2.4d) * (d10 < 0.0d ? -1 : 1);
+                double d2 = dArr[i7];
+                pow = Math.pow((Math.abs(d2) + 0.055d) / 1.055d, 2.4d) * (d2 < 0.0d ? -1 : 1);
             }
-            dArr2[i3] = pow;
+            dArr2[i7] = pow;
         }
         return dArr2;
     }
@@ -1790,8 +1790,8 @@ public abstract class u4 implements n2 {
                 h = a();
             }
             HashMap hashMap = new HashMap();
-            for (int i3 = 0; i3 < h.size(); i3++) {
-                hashMap.put((String) h.valueAt(i3), Integer.valueOf(h.keyAt(i3)));
+            for (int i7 = 0; i7 < h.size(); i7++) {
+                hashMap.put((String) h.valueAt(i7), Integer.valueOf(h.keyAt(i7)));
             }
             n = hashMap;
         }
@@ -1801,12 +1801,12 @@ public abstract class u4 implements n2 {
         return ((Integer) n.get(str)).intValue();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public boolean x() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public void v() {
     }
 }

@@ -1,25 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.style.ImageSpan;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ny extends ImageSpan {
-    public int a;
+public final /* synthetic */ class ny implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gz b;
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        if (paint.getColor() != this.a && getDrawable() != null) {
-            Drawable drawable = getDrawable();
-            int color = paint.getColor();
-            this.a = color;
-            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+    public /* synthetic */ ny(gz gzVar, int i7) {
+        this.a = i7;
+        this.b = gzVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.g51(23, this.b, tLObject));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new rp(this.b, tL_error, tLObject, 6));
+                break;
         }
-        super.draw(canvas, charSequence, i3, i10, f10, i11, i12, i13, paint);
     }
 }

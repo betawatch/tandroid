@@ -47,11 +47,11 @@ public final class h0 extends d {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i3 = g0.a[aVar.ordinal()];
-        if (i3 == 1 || i3 == 2 || i3 == 3) {
+        int i7 = g0.a[aVar.ordinal()];
+        if (i7 == 1 || i7 == 2 || i7 == 3) {
             return this.a.l(oVar);
         }
-        if (i3 != 4) {
+        if (i7 != 4) {
             return f0.c.s(aVar);
         }
         j$.time.temporal.s sVar = j$.time.temporal.a.YEAR.b;
@@ -61,21 +61,21 @@ public final class h0 extends d {
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i3 = g0.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i3 == 4) {
+            int i7 = g0.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i7 == 4) {
                 int N = N();
                 if (N < 1) {
                     N = 1 - N;
                 }
                 return N;
             }
-            if (i3 == 5) {
+            if (i7 == 5) {
                 return ((N() * 12) + this.a.b) - 1;
             }
-            if (i3 == 6) {
+            if (i7 == 6) {
                 return N();
             }
-            if (i3 != 7) {
+            if (i7 != 7) {
                 return this.a.y(oVar);
             }
             return N() < 1 ? 0 : 1;
@@ -96,24 +96,24 @@ public final class h0 extends d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final h0 c(long j10, j$.time.temporal.o oVar) {
+    public final h0 c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            if (y(aVar) == j10) {
+            if (y(aVar) == j3) {
                 return this;
             }
             int[] iArr = g0.a;
-            int i3 = iArr[aVar.ordinal()];
-            if (i3 != 4) {
-                if (i3 == 5) {
-                    f0.c.s(aVar).b(j10, aVar);
+            int i7 = iArr[aVar.ordinal()];
+            if (i7 != 4) {
+                if (i7 == 5) {
+                    f0.c.s(aVar).b(j3, aVar);
                     long N = N() * 12;
-                    return P(this.a.T(j10 - ((N + r10.b) - 1)));
+                    return P(this.a.T(j3 - ((N + r10.b) - 1)));
                 }
-                if (i3 != 6) {
+                if (i7 != 6) {
                 }
             }
-            int a10 = f0.c.s(aVar).a(j10, aVar);
+            int a10 = f0.c.s(aVar).a(j3, aVar);
             int i10 = iArr[aVar.ordinal()];
             if (i10 == 4) {
                 LocalDate localDate = this.a;
@@ -128,9 +128,9 @@ public final class h0 extends d {
             if (i10 == 7) {
                 return P(this.a.Y((-542) - N()));
             }
-            return P(this.a.c(j10, oVar));
+            return P(this.a.c(j3, oVar));
         }
-        return (h0) super.c(j10, oVar);
+        return (h0) super.c(j3, oVar);
     }
 
     @Override // j$.time.chrono.d
@@ -145,39 +145,39 @@ public final class h0 extends d {
     }
 
     @Override // j$.time.chrono.d
-    public final b L(long j10) {
-        return P(this.a.U(j10));
+    public final b L(long j3) {
+        return P(this.a.U(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b K(long j10) {
-        return P(this.a.T(j10));
+    public final b K(long j3) {
+        return P(this.a.T(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b J(long j10) {
-        return P(this.a.plusDays(j10));
+    public final b J(long j3) {
+        return P(this.a.plusDays(j3));
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b, j$.time.temporal.Temporal
-    public final b d(long j10, j$.time.temporal.q qVar) {
-        return (h0) super.d(j10, qVar);
+    public final b d(long j3, j$.time.temporal.q qVar) {
+        return (h0) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal d(long j10, j$.time.temporal.q qVar) {
-        return (h0) super.d(j10, qVar);
+    public final Temporal d(long j3, j$.time.temporal.q qVar) {
+        return (h0) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b
     /* renamed from: t */
-    public final b w(long j10, j$.time.temporal.q qVar) {
-        return (h0) super.w(j10, qVar);
+    public final b w(long j3, j$.time.temporal.q qVar) {
+        return (h0) super.w(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return (h0) super.w(j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return (h0) super.w(j3, chronoUnit);
     }
 
     public final h0 P(LocalDate localDate) {

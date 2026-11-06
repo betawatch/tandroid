@@ -1,50 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class wc extends FrameLayout {
-    public ai.o2 a;
-    public uc b;
-    public boolean c;
+public final class wc extends LinearLayout {
+    public final xc[] a;
 
-    public final void a(uc ucVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = ucVar;
-            ucVar.setVisibility(8);
-            addView(ucVar, layoutParams);
+    public wc(Context context) {
+        super(context);
+        this.a = new xc[2];
+    }
+
+    public final void a(org.telegram.ui.sj sjVar, LinearLayout.LayoutParams layoutParams) {
+        int childCount = getChildCount();
+        if (childCount < 2) {
+            this.a[childCount] = sjVar;
+            addView(sjVar, layoutParams);
         }
     }
 
-    public final void b(ai.o2 o2Var, FrameLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = o2Var;
-            addView(o2Var, layoutParams);
-        }
-    }
-
-    public uc getEditView() {
-        return this.b;
-    }
-
-    public View getReplyView() {
+    public xc[] getButtons() {
         return this.a;
-    }
-
-    public void setEditMode(boolean z10) {
-        this.c = z10;
-        this.a.setVisibility(z10 ? 8 : 0);
-        this.b.setVisibility(z10 ? 0 : 8);
-    }
-
-    public void setEditSuggestionMode(boolean z10) {
-        setEditMode(z10);
-        if (z10) {
-            this.a.setVisibility(0);
-        }
-        this.b.a[0].setOnlyIconMode(z10);
-        this.b.a[1].setOnlyIconMode(z10);
     }
 }

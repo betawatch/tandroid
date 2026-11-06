@@ -1,45 +1,17 @@
 package n3;
 
-import b8.pd;
-import d2.p0;
-import d2.r0;
-import d2.v;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c implements r0 {
-    public final long a;
+public final class c {
+    public final String a;
+    public final String b;
+    public final long c;
+    public final long d;
 
-    public c(long j10) {
-        this.a = j10;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ v b() {
-        return null;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && c.class == obj.getClass() && this.a == ((c) obj).a;
-    }
-
-    public final int hashCode() {
-        return pd.b(this.a) + 527;
-    }
-
-    public final String toString() {
-        return "ThumbnailMetadata: presentationTimeUs=" + this.a;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ void a(p0 p0Var) {
+    public c(String str, String str2, long j3, long j10) {
+        this.a = str;
+        this.b = str2;
+        this.c = j3;
+        this.d = j10;
     }
 }

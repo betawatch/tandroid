@@ -1,32 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Vibrator;
-import android.text.Spanned;
+import android.app.Activity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k3 extends pp {
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ NumberTextView c;
+public final class k3 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k3(int i3, Context context, NumberTextView numberTextView) {
-        super(i3);
-        this.b = context;
-        this.c = numberTextView;
+    public k3(Activity activity, org.telegram.ui.Cells.c2[] c2VarArr) {
+        super(activity);
+        this.a = c2VarArr;
     }
 
-    @Override // org.telegram.ui.Components.pp, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i3, int i10, Spanned spanned, int i11, int i12) {
-        CharSequence filter = super.filter(charSequence, i3, i10, spanned, i11, i12);
-        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
-            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
-            if (vibrator != null) {
-                vibrator.vibrate(200L);
-            }
-            org.telegram.messenger.g0.F3(this.c);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        org.telegram.ui.Cells.c2[] c2VarArr = this.a;
+        if (c2VarArr[0] != null) {
+            setMeasuredDimension(getMeasuredWidth(), c2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
         }
-        return filter;
     }
 }

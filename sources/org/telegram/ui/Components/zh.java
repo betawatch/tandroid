@@ -1,26 +1,21 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface zh {
-    void I0(Object obj);
+public final class zh extends r00 {
+    public final di J;
 
-    boolean L1();
+    public zh(Context context, org.telegram.ui.ActionBar.f6 f6Var, di diVar) {
+        super(context, f6Var);
+        this.J = diVar;
+    }
 
-    void R1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i3, int i10, long j10, boolean z11, long j11);
-
-    void Y(ng ngVar);
-
-    void a1(TLRPC.User user);
-
-    boolean g0();
-
-    void o1(int i3, boolean z10, boolean z11, int i10, int i11, long j10, boolean z12, boolean z13, long j11);
-
-    void r0();
-
-    void v0();
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.J.h1(this.r, true);
+        return super.onInterceptTouchEvent(motionEvent);
+    }
 }

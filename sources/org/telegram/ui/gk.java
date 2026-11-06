@@ -1,37 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hk b;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
 
-    public /* synthetic */ gk(hk hkVar, int i3) {
-        this.a = i3;
-        this.b = hkVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class gk implements LayoutTransition.TransitionListener {
+    public fk a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
+    public final /* synthetic */ an d;
+
+    public gk(an anVar, org.telegram.ui.ActionBar.y yVar) {
+        this.d = anVar;
+        this.c = yVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                mj mjVar = this.b.I.a0;
-                if (mjVar != null) {
-                    mjVar.G0();
-                    break;
-                }
-                break;
-            default:
-                mj mjVar2 = this.b.I.a0;
-                if (mjVar2 != null) {
-                    mjVar2.U0 = false;
-                    org.telegram.ui.Components.kf kfVar = mjVar2.V0;
-                    if (kfVar != null) {
-                        kfVar.u(false);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i7) {
+        int i10 = this.b - 1;
+        this.b = i10;
+        if (i10 != 0 || this.a == null) {
+            return;
         }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i7) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new fk(this, 0);
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

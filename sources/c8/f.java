@@ -1,47 +1,31 @@
 package c8;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import kotlin.jvm.internal.j;
-import p6.h;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f extends h {
-    @Override // p6.d, com.google.android.gms.common.api.c
-    public final int d() {
-        return 17895000;
+public final class f extends a8.g implements Serializable {
+    public final Object b;
+    public final a8.f c;
+
+    public f(Object obj, a8.f fVar) {
+        super(1, false);
+        this.b = obj;
+        this.c = fVar;
     }
 
-    @Override // p6.d
-    public final /* bridge */ /* synthetic */ IInterface g(IBinder iBinder) {
-        j.e(iBinder, "iBinder");
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService");
-        return queryLocalInterface instanceof c ? (c) queryLocalInterface : new c(iBinder);
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
     }
 
-    @Override // p6.d
-    public final m6.c[] i() {
-        return n8.f.c;
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
     }
 
-    @Override // p6.d
-    public final String n() {
-        return "com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService";
-    }
-
-    @Override // p6.d
-    public final String o() {
-        return "com.google.android.gms.recaptchabase.service.START";
-    }
-
-    @Override // p6.d
-    public final boolean q() {
-        return true;
-    }
-
-    @Override // p6.d
-    public final boolean w() {
-        return false;
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

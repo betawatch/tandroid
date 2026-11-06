@@ -1,66 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j90 extends n61 {
-    public final /* synthetic */ da0 W;
+public final class j90 extends r5 {
+    public final /* synthetic */ l90 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j90(da0 da0Var, Context context, z90 z90Var) {
-        super(context, z90Var);
-        this.W = da0Var;
+    public j90(l90 l90Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = l90Var;
     }
 
-    @Override // org.telegram.ui.Components.n61, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        int i3 = 0;
-        while (true) {
-            View[] viewArr = this.W.f.e;
-            if (i3 >= viewArr.length) {
-                z10 = false;
-                break;
-            }
-            View view = viewArr[i3];
-            if (view != null) {
-                x90 x90Var = (x90) view;
-                if (x90Var.a == 0) {
-                    z10 = x90Var.e.i;
-                    break;
-                }
-            }
-            i3++;
-        }
-        if (z10) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void s() {
-        View view = this.e[0];
-        if (view instanceof x90) {
-            ((x90) view).e.V();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void u(boolean z10) {
-        da0 da0Var = this.W;
-        da0Var.e.setSelectedTab(da0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof x90) {
-            ((x90) view).e.G();
-        }
-        View view2 = viewArr[1];
-        if (view2 instanceof x90) {
-            ((x90) view2).e.G();
-        }
+    @Override // org.telegram.ui.Components.r5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int i14 = i13 + i11;
+        int i15 = this.measuredSize;
+        this.a.c.set((int) f10, (i14 - i15) / 2, (int) (f10 + i15), (i14 + i15) / 2);
     }
 }

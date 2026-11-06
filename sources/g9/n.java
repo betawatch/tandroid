@@ -1,44 +1,54 @@
 package g9;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n extends q1 implements Serializable {
-    public final f9.k a;
-    public final q1 b;
+public final class n implements m, Serializable {
+    public final List a;
 
-    public n(f9.k kVar, q1 q1Var) {
-        this.a = kVar;
-        this.b = q1Var;
+    public n(List list) {
+        this.a = list;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        f9.k kVar = this.a;
-        return this.b.compare(kVar.apply(obj), kVar.apply(obj2));
-    }
-
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof n) {
-            n nVar = (n) obj;
-            if (this.a.equals(nVar.a) && this.b.equals(nVar.b)) {
+    @Override // g9.m
+    public final boolean apply(Object obj) {
+        int i7 = 0;
+        while (true) {
+            List list = this.a;
+            if (i7 >= list.size()) {
                 return true;
             }
+            if (!((m) list.get(i7)).apply(obj)) {
+                return false;
+            }
+            i7++;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof n) {
+            return this.a.equals(((n) obj).a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
+        return this.a.hashCode() + 306654252;
     }
 
     public final String toString() {
-        return this.b + ".onResultOf(" + this.a + ")";
+        StringBuilder sb2 = new StringBuilder("Predicates.and(");
+        boolean z9 = true;
+        for (Object obj : this.a) {
+            if (!z9) {
+                sb2.append(',');
+            }
+            sb2.append(obj);
+            z9 = false;
+        }
+        sb2.append(')');
+        return sb2.toString();
     }
 }

@@ -1,50 +1,87 @@
 package be;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import wd.q1;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import zd.b0;
+import zd.b1;
+import zd.n1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class r extends b implements q1 {
-    public static final /* synthetic */ AtomicIntegerFieldUpdater d = AtomicIntegerFieldUpdater.newUpdater(r.class, "cleanedAndPointers$volatile");
-    public final long c;
-    private volatile /* synthetic */ int cleanedAndPointers$volatile;
+public final class r extends zd.a implements s, g {
+    public final c d;
 
-    public r(long j10, r rVar, int i3) {
-        super(rVar);
-        this.c = j10;
-        this.cleanedAndPointers$volatile = i3 << 16;
+    public r(id.h hVar, c cVar) {
+        super(hVar, true);
+        this.d = cVar;
     }
 
-    @Override // be.b
-    public final boolean d() {
-        return d.get(this) == g() && c() != null;
+    @Override // zd.a
+    public final void Q(Throwable th2, boolean z9) {
+        if (this.d.g(th2, false) || z9) {
+            return;
+        }
+        b0.m(this.c, th2);
     }
 
-    public final boolean f() {
-        return d.addAndGet(this, -65536) == g() && c() != null;
+    @Override // zd.a
+    public final void R(Object obj) {
+        this.d.g(null, false);
     }
 
-    public abstract int g();
-
-    public abstract void h(int i3, fd.h hVar);
-
-    public final void i() {
-        if (d.incrementAndGet(this) == g()) {
-            e();
+    public final void T(q qVar) {
+        c cVar = this.d;
+        cVar.getClass();
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = c.s;
+        while (!atomicReferenceFieldUpdater.compareAndSet(cVar, null, qVar)) {
+            if (atomicReferenceFieldUpdater.get(cVar) != null) {
+                while (true) {
+                    Object obj = atomicReferenceFieldUpdater.get(cVar);
+                    com.google.android.gms.internal.clearcut.e eVar = e.q;
+                    if (obj != eVar) {
+                        if (obj == e.r) {
+                            throw new IllegalStateException("Another handler was already registered and successfully invoked");
+                        }
+                        throw new IllegalStateException(("Another handler is already registered: " + obj).toString());
+                    }
+                    com.google.android.gms.internal.clearcut.e eVar2 = e.r;
+                    while (!atomicReferenceFieldUpdater.compareAndSet(cVar, eVar, eVar2)) {
+                        if (atomicReferenceFieldUpdater.get(cVar) != eVar) {
+                            break;
+                        }
+                    }
+                    qVar.invoke(cVar.m());
+                    return;
+                }
+            }
         }
     }
 
-    public final boolean j() {
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
-        int i3;
-        do {
-            atomicIntegerFieldUpdater = d;
-            i3 = atomicIntegerFieldUpdater.get(this);
-            if (i3 == g() && c() != null) {
-                return false;
-            }
-        } while (!atomicIntegerFieldUpdater.compareAndSet(this, i3, 65536 + i3));
-        return true;
+    @Override // be.u
+    public final Object a(id.c cVar, Object obj) {
+        return this.d.a(cVar, obj);
+    }
+
+    @Override // be.u
+    public final Object b(Object obj) {
+        return this.d.b(gd.k.a);
+    }
+
+    @Override // zd.n1, zd.a1, be.t
+    public final void cancel(CancellationException cancellationException) {
+        if (isCancelled()) {
+            return;
+        }
+        if (cancellationException == null) {
+            cancellationException = new b1(m(), null, this);
+        }
+        k(cancellationException);
+    }
+
+    @Override // zd.n1
+    public final void k(CancellationException cancellationException) {
+        CancellationException N = n1.N(this, cancellationException);
+        this.d.g(N, true);
+        j(N);
     }
 }

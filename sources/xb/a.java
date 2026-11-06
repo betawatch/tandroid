@@ -1,26 +1,23 @@
 package xb;
 
-import b8.ke;
-import mb.g;
+import q6.m;
+import r1.f;
+import wb.c;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements t9.d {
-    public static final /* synthetic */ a b = new a(0);
-    public static final /* synthetic */ a c = new a(1);
-    public final /* synthetic */ int a;
+public final class a extends c {
+    public static final a b;
 
-    public /* synthetic */ a(int i3) {
-        this.a = i3;
-    }
-
-    @Override // t9.d
-    public final Object q1(ke keVar) {
-        switch (this.a) {
-            case 0:
-                return new c((g) keVar.a(g.class));
-            default:
-                return new b((c) keVar.a(c.class), (mb.d) keVar.a(mb.d.class));
+    static {
+        f fVar = new f();
+        fVar.a = -1.0f;
+        boolean z9 = false;
+        if (Float.compare(0.5f, 0.0f) >= 0 && Float.compare(0.5f, 1.0f) <= 0) {
+            z9 = true;
         }
+        m.a("Confidence Threshold should be in range [0.0f, 1.0f].", z9);
+        fVar.a = 0.5f;
+        b = new a(fVar);
     }
 }

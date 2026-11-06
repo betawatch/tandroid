@@ -1,17 +1,17 @@
 package l;
 
-import m.j2;
+import m.k2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d {
-    public final j2 a;
+    public final k2 a;
     public final k b;
     public final int c;
 
-    public d(j2 j2Var, k kVar, int i3) {
-        this.a = j2Var;
+    public d(k2 k2Var, k kVar, int i7) {
+        this.a = k2Var;
         this.b = kVar;
-        this.c = i3;
+        this.c = i7;
     }
 }

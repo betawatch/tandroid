@@ -10,10 +10,10 @@ public final class j extends p implements Spliterator {
     public long j;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(l[] lVarArr, int i3, int i10, int i11, long j10, int i12) {
-        super(lVarArr, i3, i10, i11);
+    public /* synthetic */ j(l[] lVarArr, int i7, int i10, int i11, long j3, int i12) {
+        super(lVarArr, i7, i10, i11);
         this.i = i12;
-        this.j = j10;
+        this.j = j3;
     }
 
     @Override // j$.util.Spliterator
@@ -34,10 +34,10 @@ public final class j extends p implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
         switch (this.i) {
         }
-        return j$.com.android.tools.r8.a.o(this, i3);
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -54,17 +54,17 @@ public final class j extends p implements Spliterator {
     public final Spliterator trySplit() {
         switch (this.i) {
             case 0:
-                int i3 = this.f;
+                int i7 = this.f;
                 int i10 = this.g;
-                int i11 = (i3 + i10) >>> 1;
-                if (i11 <= i3) {
+                int i11 = (i7 + i10) >>> 1;
+                if (i11 <= i7) {
                     return null;
                 }
                 l[] lVarArr = this.a;
                 this.g = i11;
-                long j10 = this.j >>> 1;
-                this.j = j10;
-                return new j(lVarArr, this.h, i11, i10, j10, 0);
+                long j3 = this.j >>> 1;
+                this.j = j3;
+                return new j(lVarArr, this.h, i11, i10, j3, 0);
             default:
                 int i12 = this.f;
                 int i13 = this.g;
@@ -74,9 +74,9 @@ public final class j extends p implements Spliterator {
                 }
                 l[] lVarArr2 = this.a;
                 this.g = i14;
-                long j11 = this.j >>> 1;
-                this.j = j11;
-                return new j(lVarArr2, this.h, i14, i13, j11, 1);
+                long j10 = this.j >>> 1;
+                this.j = j10;
+                return new j(lVarArr2, this.h, i14, i13, j10, 1);
         }
     }
 

@@ -14,22 +14,22 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class LocationSharingService extends Service implements cs {
+public class LocationSharingService extends Service implements ls {
     public static final /* synthetic */ int d = 0;
     public e0.q a;
     public Handler b;
-    public md c;
+    public td c;
 
     public LocationSharingService() {
-        hs.e().b(this, hs.D4);
+        qs.e().b(this, qs.D4);
     }
 
     public static ArrayList a() {
         ArrayList arrayList = new ArrayList();
-        for (int i3 = 0; i3 < 4; i3++) {
-            ArrayList arrayList2 = ld.f(i3).J;
+        for (int i7 = 0; i7 < 4; i7++) {
+            ArrayList arrayList2 = sd.f(i7).I;
             if (!arrayList2.isEmpty()) {
                 arrayList.addAll(arrayList2);
             }
@@ -38,26 +38,26 @@ public class LocationSharingService extends Service implements cs {
     }
 
     public static void b() {
+        boolean z9 = false;
         boolean z10 = false;
         boolean z11 = false;
-        boolean z12 = false;
-        long j10 = 0;
-        for (int i3 = 0; i3 < 4; i3++) {
-            ArrayList arrayList = ld.f(i3).J;
+        long j3 = 0;
+        for (int i7 = 0; i7 < 4; i7++) {
+            ArrayList arrayList = sd.f(i7).I;
             int i10 = 0;
             while (i10 < arrayList.size()) {
-                int i11 = ((kd) arrayList.get(i10)).c;
+                int i11 = ((rd) arrayList.get(i10)).c;
                 if (i11 == Integer.MAX_VALUE) {
-                    z12 = true;
+                    z11 = true;
                 } else {
-                    j10 = Math.max(j10, (i11 - ConnectionsManager.getInstance(r4.e).getCurrentTime()) * 1000);
+                    j3 = Math.max(j3, (i11 - ConnectionsManager.getInstance(r4.e).getCurrentTime()) * 1000);
                 }
                 i10++;
-                z11 = true;
+                z10 = true;
             }
         }
-        if (z11) {
-            if (z12 || j10 > 0) {
+        if (z10) {
+            if (z11 || j3 > 0) {
                 try {
                     Context context = t0.b;
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
@@ -65,22 +65,22 @@ public class LocationSharingService extends Service implements cs {
                     intent.addCategory("android.intent.category.LAUNCHER");
                     PendingIntent activity = PendingIntent.getActivity(context, 0, intent, 167772160);
                     Intent intent2 = new Intent(context, (Class<?>) StopLiveLocationReceiver.class);
-                    String M0 = bd.M0(2131748847, null);
-                    us.i();
-                    e0.q qVar = new e0.q(context, us.k0);
+                    String M0 = hd.M0(2131748838, null);
+                    dt.i();
+                    e0.q qVar = new e0.q(context, dt.j0);
                     qVar.F.icon = R.drawable.live_loc;
-                    qVar.g(bd.M0(2131748846, null));
+                    qVar.g(hd.M0(2131748837, null));
                     qVar.f(M0);
-                    e0.l lVar = new e0.l(z10);
+                    e0.l lVar = new e0.l(z9);
                     lVar.f = e0.q.d(M0);
                     qVar.n(lVar);
                     qVar.g = activity;
                     qVar.h(16, true);
-                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), bd.M0(2131744848, null));
-                    if (!z12) {
-                        qVar.B = j10;
+                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), hd.M0(2131744839, null));
+                    if (!z11) {
+                        qVar.B = j3;
                     }
-                    new e0.j0(context).e("live_location_paused", 6, qVar.b());
+                    new e0.i0(context).e("live_location_paused", 6, qVar.b());
                 } catch (Throwable th2) {
                     a8.g(th2, true);
                 }
@@ -88,7 +88,7 @@ public class LocationSharingService extends Service implements cs {
         }
     }
 
-    public final void c(boolean z10) {
+    public final void c(boolean z9) {
         String G;
         String M0;
         if (this.a == null) {
@@ -96,36 +96,36 @@ public class LocationSharingService extends Service implements cs {
         }
         ArrayList a10 = a();
         if (a10.size() == 1) {
-            kd kdVar = (kd) a10.get(0);
-            long B0 = zi.B0(kdVar.h.k);
-            int i3 = kdVar.h.I1;
+            rd rdVar = (rd) a10.get(0);
+            long B0 = ij.B0(rdVar.h.k);
+            int i7 = rdVar.h.I1;
             if (m5.E(B0)) {
-                G = l10.j(hp.s1(i3).a2(Long.valueOf(B0)), true);
-                M0 = bd.M0(2131753965, null);
+                G = t10.j(qp.s1(i7).a2(Long.valueOf(B0)), true);
+                M0 = hd.M0(2131753965, null);
             } else {
-                TLRPC.Chat M02 = hp.s1(i3).M0(Long.valueOf(-B0));
+                TLRPC.Chat M02 = qp.s1(i7).M0(Long.valueOf(-B0));
                 G = M02 != null ? M02.title : "";
-                M0 = bd.M0(2131753964, null);
+                M0 = hd.M0(2131753964, null);
             }
         } else {
-            G = bd.G(a10.size(), "Chats", new Object[0]);
-            M0 = bd.M0(2131753963, null);
+            G = hd.G(a10.size(), "Chats", new Object[0]);
+            M0 = hd.M0(2131753963, null);
         }
-        String format = String.format(M0, bd.M0(2131753966, null), G);
+        String format = String.format(M0, hd.M0(2131753966, null), G);
         this.a.p(format);
         this.a.f(format);
-        if (z10) {
-            new e0.j0(t0.b).e(null, 6, this.a.b());
+        if (z9) {
+            new e0.i0(t0.b).e(null, 6, this.a.b());
         }
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Handler handler;
-        if (i3 != hs.D4 || (handler = this.b) == null) {
+        if (i7 != qs.D4 || (handler = this.b) == null) {
             return;
         }
-        handler.post(new md(this, 1));
+        handler.post(new td(this, 1));
     }
 
     @Override // android.app.Service
@@ -138,9 +138,9 @@ public class LocationSharingService extends Service implements cs {
         super.onCreate();
         Handler handler = new Handler();
         this.b = handler;
-        md mdVar = new md(this, 0);
-        this.c = mdVar;
-        handler.postDelayed(mdVar, 1000L);
+        td tdVar = new td(this, 0);
+        this.c = tdVar;
+        handler.postDelayed(tdVar, 1000L);
     }
 
     @Override // android.app.Service
@@ -151,12 +151,12 @@ public class LocationSharingService extends Service implements cs {
             handler.removeCallbacks(this.c);
         }
         stopForeground(true);
-        new e0.j0(t0.b).b(6, null);
-        hs.e().n(this, hs.D4);
+        new e0.i0(t0.b).b(6, null);
+        qs.e().n(this, qs.D4);
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i3, int i10) {
+    public final int onStartCommand(Intent intent, int i7, int i10) {
         if (a().isEmpty()) {
             stopSelf();
             return 2;
@@ -173,12 +173,12 @@ public class LocationSharingService extends Service implements cs {
                 e0.q qVar2 = this.a;
                 qVar2.F.icon = R.drawable.live_loc;
                 qVar2.g = activity;
-                us.i();
+                dt.i();
                 e0.q qVar3 = this.a;
-                qVar3.y = us.k0;
-                qVar3.g(bd.M0(R.string.AppName, null));
+                qVar3.y = dt.j0;
+                qVar3.g(hd.M0(R.string.AppName, null));
                 Intent intent3 = new Intent(t0.b, (Class<?>) StopLiveLocationReceiver.class);
-                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), bd.M0(2131744848, null));
+                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), hd.M0(2131744839, null));
             }
             c(false);
             Notification b10 = this.a.b();
@@ -194,7 +194,7 @@ public class LocationSharingService extends Service implements cs {
                     return 2;
                 }
             }
-            new e0.j0(t0.b).b(6, "live_location_paused");
+            new e0.i0(t0.b).b(6, "live_location_paused");
             return 2;
         } catch (Throwable th3) {
             a8.g(th3, true);

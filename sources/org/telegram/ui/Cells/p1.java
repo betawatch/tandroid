@@ -6,11 +6,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ly0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class p1 {
     public StaticLayout A;
-    public org.telegram.ui.Components.l5 B;
+    public org.telegram.ui.Components.n5 B;
     public int C;
     public int D;
     public final /* synthetic */ q1 E;
@@ -31,14 +31,14 @@ public final class p1 {
     public boolean o;
     public StaticLayout p;
     public ly0 q;
-    public org.telegram.ui.Components.l5 r;
+    public org.telegram.ui.Components.n5 r;
     public TLRPC.PollAnswer s;
     public TLRPC.TodoItem t;
     public boolean u;
     public int v;
     public Drawable w;
-    public vh.b x;
-    public org.telegram.ui.Components.u8 y;
+    public uh.b x;
+    public org.telegram.ui.Components.w8 y;
     public ImageReceiver z;
 
     public p1(q1 q1Var) {
@@ -50,11 +50,11 @@ public final class p1 {
         if (imageReceiver != null) {
             imageReceiver.P();
         }
-        vh.b bVar = this.x;
+        uh.b bVar = this.x;
         if (bVar != null) {
             bVar.b.a();
             bVar.c.P();
-            bVar.F.e();
+            bVar.E.e();
         }
     }
 
@@ -63,11 +63,11 @@ public final class p1 {
         if (imageReceiver != null) {
             imageReceiver.R();
         }
-        vh.b bVar = this.x;
+        uh.b bVar = this.x;
         if (bVar != null) {
             bVar.b.b();
             bVar.c.R();
-            bVar.F.f();
+            bVar.E.f();
         }
     }
 }

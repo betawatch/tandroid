@@ -1,88 +1,82 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.u10;
-import org.telegram.ui.Components.fc;
-import org.telegram.ui.n60;
+import android.text.TextUtils;
+import android.view.View;
+import org.json.JSONObject;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class k1 implements u10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ gi.d b;
-    public final /* synthetic */ gi.d c;
-    public final /* synthetic */ x2 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
-    public final /* synthetic */ y1 f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class k1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ k1(gi.d dVar, gi.d dVar2, c2 c2Var, y1 y1Var, x2 x2Var, org.telegram.ui.ActionBar.e6 e6Var, g gVar) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.g = c2Var;
-        this.f = y1Var;
-        this.d = x2Var;
-        this.e = e6Var;
-        this.h = gVar;
+    public /* synthetic */ k1(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = 0;
         switch (this.a) {
             case 0:
-                c2 c2Var = (c2) this.g;
-                g gVar = (g) this.h;
-                Boolean bool = (Boolean) obj;
-                gi.d dVar = this.b;
-                dVar.setEnabled(false);
-                gi.d dVar2 = this.c;
-                dVar2.setEnabled(false);
-                (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
-                boolean booleanValue = bool.booleanValue();
-                x2 x2Var = this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = this.e;
-                y1 y1Var = this.f;
-                c2Var.f(y1Var, booleanValue, new n60(dVar, dVar2, x2Var, e6Var, gVar, y1Var, 3));
-                break;
-            default:
-                boolean[] zArr = (boolean[]) this.g;
-                boolean[] zArr2 = (boolean[]) this.h;
-                String str = (String) obj;
-                gi.d dVar3 = this.b;
-                boolean z10 = false;
-                dVar3.setLoading(false);
-                gi.d dVar4 = this.c;
-                dVar4.setLoading(false);
-                x2 x2Var2 = this.d;
-                if (str != null) {
-                    if (!zArr[0]) {
-                        fc.c0(str, x2Var2.F, this.e);
-                        y1 y1Var2 = this.f;
-                        dVar3.setEnabled(!y1Var2.n && zArr2[0]);
-                        if (!y1Var2.n && !y1Var2.o) {
-                            z10 = true;
-                        }
-                        dVar4.setEnabled(z10);
-                        break;
-                    } else {
-                        fc.b0(str);
-                        break;
-                    }
-                } else {
-                    x2Var2.dismiss();
+                JSONObject jSONObject = (JSONObject) this.b;
+                z2 z2Var = (z2) this.c;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.d;
+                if (org.telegram.messenger.g0.g(jSONObject.optString("text"))) {
+                    org.telegram.messenger.camera.q.r(null, 2131743010, new hc(z2Var.E, f6Var));
                     break;
                 }
                 break;
+            case 1:
+                p3 p3Var = (p3) this.b;
+                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
+                TL_wallet.card cardVar = (TL_wallet.card) this.d;
+                if (!p3Var.R) {
+                    if (p3Var.e) {
+                        p3Var.U = new k3(1, f2Var);
+                    } else if (p3Var.d) {
+                        p3Var.U = new k3(i7, f2Var);
+                    } else if (p3Var.c && !TextUtils.isEmpty(cardVar.address)) {
+                        p3Var.U = new n(7, f2Var, cardVar);
+                    }
+                    p3Var.dismiss();
+                    break;
+                }
+                break;
+            case 2:
+                n0 n0Var = (n0) this.b;
+                TL_wallet.currencyRate currencyrate = (TL_wallet.currencyRate) this.c;
+                k60 k60Var = (k60) this.d;
+                f fVar = n0Var.h;
+                String str = currencyrate.currency;
+                if (!TextUtils.equals(fVar.f, str)) {
+                    fVar.f = str;
+                    try {
+                        org.telegram.messenger.t0.b.getSharedPreferences("gram_wallet", 0).edit().putString("currency", fVar.g()).apply();
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.e("[gram-wallet] failed to save currency prefs", e10);
+                    }
+                    fVar.b.L();
+                }
+                k60Var.u();
+                break;
+            default:
+                r8 r8Var = (r8) this.b;
+                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.c;
+                Runnable runnable = (Runnable) this.d;
+                r8Var.getClass();
+                u1VarArr[0].dismiss();
+                org.telegram.messenger.g0.g(r8Var.s);
+                runnable.run();
+                break;
         }
-    }
-
-    public /* synthetic */ k1(gi.d dVar, gi.d dVar2, x2 x2Var, boolean[] zArr, org.telegram.ui.ActionBar.e6 e6Var, y1 y1Var, boolean[] zArr2) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.d = x2Var;
-        this.g = zArr;
-        this.e = e6Var;
-        this.f = y1Var;
-        this.h = zArr2;
     }
 }

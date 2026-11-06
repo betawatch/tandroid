@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import b8.hb;
-import dd.c;
-import wd.b0;
+import a8.ab;
+import gd.c;
+import zd.b0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzht {
     private final c zza;
     private final c zzb;
 
     public zzht() {
-        int i3 = zzby.zza;
-        this.zza = hb.b(zzhr.zza);
-        this.zzb = hb.b(zzhs.zza);
+        int i7 = zzby.zza;
+        this.zza = ab.b(zzhr.zza);
+        this.zzb = ab.b(zzhs.zza);
     }
 
     public static final /* synthetic */ zzhn zza(zzht zzhtVar) {
@@ -24,7 +24,7 @@ public final class zzht {
         return (zzig) zzhtVar.zza.getValue();
     }
 
-    public final Object zzc(String str, zzzd zzzdVar, fd.c cVar) {
+    public final Object zzc(String str, zzzd zzzdVar, id.c cVar) {
         return b0.e(new zzhq(this, str, zzzdVar, null), cVar);
     }
 }

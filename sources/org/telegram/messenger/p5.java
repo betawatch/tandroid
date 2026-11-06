@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class p5 extends Thread {
     public volatile Handler a;
@@ -56,15 +56,15 @@ public final class p5 extends Thread {
 
     public final void c(Runnable runnable) {
         SystemClock.elapsedRealtime();
-        e(runnable, 0L);
+        d(runnable, 0L);
     }
 
-    public final boolean e(Runnable runnable, long j10) {
+    public final boolean d(Runnable runnable, long j3) {
         Handler handler = this.a;
         if (handler != null) {
-            return j10 <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j10);
+            return j3 <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j3);
         }
-        long max = Math.max(0L, j10) + SystemClock.uptimeMillis();
+        long max = Math.max(0L, j3) + SystemClock.uptimeMillis();
         synchronized (this.b) {
             try {
                 ArrayList arrayList = this.c;
@@ -84,9 +84,9 @@ public final class p5 extends Thread {
         Looper.prepare();
         Handler handler = new Handler(Looper.myLooper(), new n5(this, 1));
         synchronized (this.b) {
-            for (int i3 = 0; i3 < this.c.size(); i3++) {
+            for (int i7 = 0; i7 < this.c.size(); i7++) {
                 try {
-                    o5 o5Var = (o5) this.c.get(i3);
+                    o5 o5Var = (o5) this.c.get(i7);
                     int i10 = o5Var.a;
                     if (i10 == 0) {
                         handler.postAtTime(o5Var.b, o5Var.c);

@@ -5,10 +5,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import e6.v;
-import i6.x;
+import f6.v;
 import j$.util.DesugarCollections;
+import j6.x;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -16,18 +17,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.ui.Cells.f1;
-import q6.a;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
-    public final String E;
-    public final byte[] F;
-    public final String G;
-    public final boolean H;
-    public final x I;
-    public final Integer J;
+    public final String D;
+    public final byte[] E;
+    public final String F;
+    public final boolean G;
+    public final x H;
+    public final Integer I;
     public final String a;
     public final String b;
     public final InetAddress c;
@@ -42,7 +43,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     public final String x;
     public final int y;
 
-    public CastDevice(String str, String str2, String str3, String str4, String str5, int i3, ArrayList arrayList, int i10, int i11, String str6, String str7, int i12, String str8, byte[] bArr, String str9, boolean z10, x xVar, Integer num) {
+    public CastDevice(String str, String str2, String str3, String str4, String str5, int i7, ArrayList arrayList, int i10, int i11, String str6, String str7, int i12, String str8, byte[] bArr, String str9, boolean z9, x xVar, Integer num) {
         this.a = str == null ? "" : str;
         str2 = str2 == null ? "" : str2;
         this.b = str2;
@@ -56,19 +57,19 @@ public class CastDevice extends a implements ReflectedParcelable {
         this.d = str3 == null ? "" : str3;
         this.e = str4 == null ? "" : str4;
         this.f = str5 == null ? "" : str5;
-        this.h = i3;
+        this.h = i7;
         this.n = arrayList == null ? new ArrayList() : arrayList;
         this.r = i10;
         this.s = i11;
         this.w = str6 == null ? "" : str6;
         this.x = str7;
         this.y = i12;
-        this.E = str8;
-        this.F = bArr;
-        this.G = str9;
-        this.H = z10;
-        this.I = xVar;
-        this.J = num;
+        this.D = str8;
+        this.E = bArr;
+        this.F = str9;
+        this.G = z9;
+        this.H = xVar;
+        this.I = num;
     }
 
     public static CastDevice b(Bundle bundle) {
@@ -80,12 +81,12 @@ public class CastDevice extends a implements ReflectedParcelable {
         return (CastDevice) bundle.getParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE");
     }
 
-    public final boolean c(int i3) {
-        return (this.r & i3) == i3;
+    public final boolean c(int i7) {
+        return (this.r & i7) == i7;
     }
 
     public final x d() {
-        x xVar = this.I;
+        x xVar = this.H;
         if (xVar == null) {
             return (c(32) || c(64)) ? new x(1, false, false) : xVar;
         }
@@ -93,7 +94,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     }
 
     public final boolean equals(Object obj) {
-        int i3;
+        int i7;
         byte[] bArr;
         if (obj == this) {
             return true;
@@ -102,7 +103,7 @@ public class CastDevice extends a implements ReflectedParcelable {
             return false;
         }
         CastDevice castDevice = (CastDevice) obj;
-        byte[] bArr2 = castDevice.F;
+        byte[] bArr2 = castDevice.E;
         int i10 = castDevice.h;
         String str = castDevice.f;
         String str2 = castDevice.a;
@@ -110,9 +111,9 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (str3 == null) {
             return str2 == null;
         }
-        if (i6.a.d(str3, str2) && i6.a.d(this.c, castDevice.c) && i6.a.d(this.e, castDevice.e) && i6.a.d(this.d, castDevice.d)) {
+        if (j6.a.d(str3, str2) && j6.a.d(this.c, castDevice.c) && j6.a.d(this.e, castDevice.e) && j6.a.d(this.d, castDevice.d)) {
             String str4 = this.f;
-            if (i6.a.d(str4, str) && (i3 = this.h) == i10 && i6.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && i6.a.d(this.w, castDevice.w) && i6.a.d(Integer.valueOf(this.y), Integer.valueOf(castDevice.y)) && i6.a.d(this.E, castDevice.E) && i6.a.d(this.x, castDevice.x) && i6.a.d(str4, str) && i3 == i10 && ((((bArr = this.F) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && i6.a.d(this.G, castDevice.G) && this.H == castDevice.H && i6.a.d(d(), castDevice.d()))) {
+            if (j6.a.d(str4, str) && (i7 = this.h) == i10 && j6.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && j6.a.d(this.w, castDevice.w) && j6.a.d(Integer.valueOf(this.y), Integer.valueOf(castDevice.y)) && j6.a.d(this.D, castDevice.D) && j6.a.d(this.x, castDevice.x) && j6.a.d(str4, str) && i7 == i10 && ((((bArr = this.E) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && j6.a.d(this.F, castDevice.F) && this.G == castDevice.G && j6.a.d(d(), castDevice.d()))) {
                 return true;
             }
         }
@@ -134,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return f1.q("\"", str, "\" (", this.a, ")");
+        return f1.m("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.m(parcel, 2, this.a);
-        j8.a.m(parcel, 3, this.b);
-        j8.a.m(parcel, 4, this.d);
-        j8.a.m(parcel, 5, this.e);
-        j8.a.m(parcel, 6, this.f);
-        j8.a.r(parcel, 7, 4);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 2, this.a);
+        wb.l(parcel, 3, this.b);
+        wb.l(parcel, 4, this.d);
+        wb.l(parcel, 5, this.e);
+        wb.l(parcel, 6, this.f);
+        wb.q(parcel, 7, 4);
         parcel.writeInt(this.h);
-        j8.a.q(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        j8.a.r(parcel, 9, 4);
+        wb.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        wb.q(parcel, 9, 4);
         parcel.writeInt(this.r);
-        j8.a.r(parcel, 10, 4);
+        wb.q(parcel, 10, 4);
         parcel.writeInt(this.s);
-        j8.a.m(parcel, 11, this.w);
-        j8.a.m(parcel, 12, this.x);
-        j8.a.r(parcel, 13, 4);
+        wb.l(parcel, 11, this.w);
+        wb.l(parcel, 12, this.x);
+        wb.q(parcel, 13, 4);
         parcel.writeInt(this.y);
-        j8.a.m(parcel, 14, this.E);
-        j8.a.d(parcel, 15, this.F);
-        j8.a.m(parcel, 16, this.G);
-        j8.a.r(parcel, 17, 4);
-        parcel.writeInt(this.H ? 1 : 0);
-        j8.a.l(parcel, 18, d(), i3);
-        j8.a.j(parcel, 19, this.J);
-        j8.a.t(parcel, s6);
+        wb.l(parcel, 14, this.D);
+        wb.c(parcel, 15, this.E);
+        wb.l(parcel, 16, this.F);
+        wb.q(parcel, 17, 4);
+        parcel.writeInt(this.G ? 1 : 0);
+        wb.k(parcel, 18, d(), i7);
+        wb.i(parcel, 19, this.I);
+        wb.s(parcel, r10);
     }
 }

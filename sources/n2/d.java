@@ -1,34 +1,27 @@
 package n2;
 
-import a3.r;
-import java.io.IOException;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d implements r {
-    public final /* synthetic */ h a;
+public final class d extends ContentObserver {
+    public final ContentResolver a;
+    public final Uri b;
+    public final /* synthetic */ e c;
 
-    @Override // a3.r
-    public void a() {
-        h hVar = this.a;
-        hVar.A.a();
-        IOException iOException = hVar.C;
-        if (iOException != null) {
-            throw iOException;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(e eVar, Handler handler, ContentResolver contentResolver, Uri uri) {
+        super(handler);
+        this.c = eVar;
+        this.a = contentResolver;
+        this.b = uri;
     }
 
-    public void b() {
-        long j10;
-        h hVar = this.a;
-        synchronized (b3.b.b) {
-            try {
-                j10 = b3.b.c ? b3.b.d : -9223372036854775807L;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        hVar.K = j10;
-        hVar.z(true);
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z9) {
+        this.c.c();
     }
 }

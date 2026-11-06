@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class s2 extends AbstractList implements t1, RandomAccess {
     public final r1 a;
@@ -17,18 +17,18 @@ public final class s2 extends AbstractList implements t1, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final Object a(int i3) {
-        return this.a.b.get(i3);
+    public final Object a(int i7) {
+        return this.a.b.get(i7);
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final void f(q0 q0Var) {
+    public final void e(q0 q0Var) {
         throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i3) {
-        return (String) this.a.get(i3);
+    public final /* synthetic */ Object get(int i7) {
+        return (String) this.a.get(i7);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
@@ -39,9 +39,9 @@ public final class s2 extends AbstractList implements t1, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i3) {
+    public final ListIterator listIterator(int i7) {
         r2 r2Var = new r2();
-        r2Var.a = this.a.listIterator(i3);
+        r2Var.a = this.a.listIterator(i7);
         return r2Var;
     }
 

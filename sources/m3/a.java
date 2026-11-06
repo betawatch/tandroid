@@ -1,114 +1,173 @@
 package m3;
 
-import d2.u;
-import d2.u0;
-import d2.v;
-import e3.d0;
-import e3.i0;
-import e3.o;
-import e3.p;
-import e3.q;
-import e3.s;
-import e3.t;
-import g9.g0;
-import g9.s1;
+import a8.ua;
+import c4.k;
+import c8.m9;
+import e2.q0;
+import e2.s0;
+import f3.j0;
+import f3.o;
+import f3.p;
+import f3.q;
+import f3.s;
+import f3.t;
+import h2.x;
+import h9.g0;
+import h9.i0;
+import h9.t1;
 import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Cells.f1;
+import z3.l;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a implements o {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
+    public q b;
+    public p c;
+    public ua d;
+    public l e;
+    public int g;
+    public long h;
+    public int i;
+    public final x a = new x(16);
+    public long j = -1;
+    public int f = 0;
 
-    public a(int i3) {
-        if ((i3 & 1) != 0) {
-            this.b = new d0(65496, 2, "image/jpeg");
-        } else {
-            this.b = new b();
-        }
-    }
-
-    @Override // e3.o
-    public final o a() {
-        int i3 = this.a;
-        return this;
-    }
-
-    @Override // e3.o
+    @Override // f3.o
     public final boolean b(p pVar) {
-        switch (this.a) {
-            case 0:
-                return ((o) this.b).b(pVar);
-            default:
-                return true;
-        }
+        return m9.a((f3.l) pVar, true);
     }
 
-    @Override // e3.o
+    @Override // f3.o
     public final void c(q qVar) {
-        switch (this.a) {
-            case 0:
-                ((o) this.b).c(qVar);
-                break;
-            default:
-                i0 i02 = qVar.i0(0, 3);
-                qVar.f(new t(-9223372036854775807L));
-                qVar.L();
-                v vVar = (v) this.b;
-                u a10 = vVar.a();
-                a10.r = u0.n("text/x-unknown");
-                a10.j = vVar.s;
-                f1.w(a10, i02);
-                break;
+        this.b = qVar;
+    }
+
+    @Override // f3.o
+    public final void d(long j3, long j10) {
+        if (j3 != 0) {
+            if (this.f == 3) {
+                l lVar = this.e;
+                lVar.getClass();
+                lVar.d(j3, j10);
+                return;
+            }
+            return;
+        }
+        this.f = 0;
+        this.i = 0;
+        this.j = -1L;
+        if (this.e != null) {
+            this.e = null;
         }
     }
 
-    @Override // e3.o
-    public final void d(long j10, long j11) {
-        switch (this.a) {
-            case 0:
-                ((o) this.b).d(j10, j11);
-                break;
-        }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // e3.o
+    @Override // f3.o
     public final List e() {
-        switch (this.a) {
-        }
-        g0 g0Var = g9.i0.b;
-        return s1.e;
+        g0 g0Var = i0.b;
+        return t1.e;
     }
 
-    @Override // e3.o
+    @Override // f3.o
     public final int f(p pVar, s sVar) {
-        switch (this.a) {
-            case 0:
-                return ((o) this.b).f(pVar, sVar);
-            default:
-                return pVar.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
+        while (true) {
+            int i7 = this.f;
+            if (i7 == 0) {
+                int i10 = this.i;
+                x xVar = this.a;
+                if (i10 == 0) {
+                    if (!pVar.c(xVar.a, 0, 8, true)) {
+                        q qVar = this.b;
+                        qVar.getClass();
+                        qVar.U0();
+                        this.b.f(new t(-9223372036854775807L));
+                        this.f = 4;
+                        return -1;
+                    }
+                    this.i = 8;
+                    xVar.N(0);
+                    this.h = xVar.C();
+                    this.g = xVar.m();
+                }
+                if (this.h == 1) {
+                    pVar.readFully(xVar.a, 8, 8);
+                    this.i += 8;
+                    this.h = xVar.G();
+                }
+                if (this.g == 1836086884) {
+                    long position = pVar.getPosition();
+                    this.j = position;
+                    long j3 = this.i;
+                    o3.b bVar = new o3.b(0L, position - j3, -9223372036854775807L, position, this.h - j3);
+                    q qVar2 = this.b;
+                    qVar2.getClass();
+                    j0 O1 = qVar2.O1(1024, 4);
+                    e2.t tVar = new e2.t();
+                    tVar.q = s0.n("image/heic");
+                    tVar.k = new q0(bVar);
+                    f1.s(tVar, O1);
+                    this.f = 2;
+                } else {
+                    this.f = 1;
+                }
+            } else if (i7 == 1) {
+                pVar.s((int) (this.h - this.i));
+                this.i = 0;
+                this.f = 0;
+            } else {
+                if (i7 != 2) {
+                    if (i7 != 3) {
+                        if (i7 == 4) {
+                            return -1;
+                        }
+                        throw new IllegalStateException();
+                    }
+                    if (this.d == null || pVar != this.c) {
+                        this.c = pVar;
+                        this.d = new ua(pVar, this.j);
+                    }
+                    l lVar = this.e;
+                    lVar.getClass();
+                    int f10 = lVar.f(this.d, sVar);
+                    if (f10 == 1) {
+                        sVar.a += this.j;
+                    }
+                    return f10;
+                }
+                if (this.e == null) {
+                    this.e = new l(k.i, 8);
+                }
+                ua uaVar = new ua(pVar, this.j);
+                this.d = uaVar;
+                if (this.e.b(uaVar)) {
+                    l lVar2 = this.e;
+                    long j10 = this.j;
+                    q qVar3 = this.b;
+                    qVar3.getClass();
+                    lVar2.c(new ua(j10, qVar3, 3));
+                    this.f = 3;
+                } else {
+                    q qVar4 = this.b;
+                    qVar4.getClass();
+                    qVar4.U0();
+                    this.b.f(new t(-9223372036854775807L));
+                    this.f = 4;
+                }
+            }
         }
     }
 
-    @Override // e3.o
+    @Override // f3.o
     public final void release() {
-        switch (this.a) {
-            case 0:
-                ((o) this.b).release();
-                break;
+        l lVar = this.e;
+        if (lVar != null) {
+            lVar.getClass();
+            this.e = null;
         }
     }
 
-    public a(v vVar) {
-        this.b = vVar;
-    }
-
-    private final void g() {
-    }
-
-    private final void h(long j10, long j11) {
+    @Override // f3.o
+    public final o a() {
+        return this;
     }
 }

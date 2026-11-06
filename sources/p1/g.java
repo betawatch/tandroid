@@ -1,48 +1,36 @@
 package p1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.messenger.qs;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g {
-    public static final /* synthetic */ int[] a;
+    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, qs.n1, qs.o1, qs.p1, qs.q1, qs.r1, qs.s1, qs.t1, qs.u1, qs.v1, qs.w1, qs.x1, qs.y1, qs.z1, qs.A1, qs.B1, qs.C1, qs.D1, qs.E1, 120, qs.F1, qs.G1, qs.H1, qs.I1, qs.J1, qs.K1, qs.L1, 128, qs.N1, qs.O1, qs.P1, qs.Q1, 133, 134, qs.R1, qs.S1, qs.T1, qs.U1};
 
-    static {
-        int[] iArr = new int[o1.g.d(9).length];
-        try {
-            iArr[0] = 1;
-        } catch (NoSuchFieldError unused) {
+    public static /* synthetic */ Integer a(int i7) {
+        if (i7 == 0) {
+            return null;
         }
-        try {
-            iArr[1] = 2;
-        } catch (NoSuchFieldError unused2) {
+        return Integer.valueOf(i7 - 1);
+    }
+
+    public static /* synthetic */ boolean b(int i7, int i10) {
+        if (i7 != 0) {
+            return i7 == i10;
         }
-        try {
-            iArr[6] = 3;
-        } catch (NoSuchFieldError unused3) {
+        throw null;
+    }
+
+    public static /* synthetic */ int c(int i7) {
+        if (i7 != 0) {
+            return i7 - 1;
         }
-        try {
-            iArr[2] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            iArr[3] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            iArr[4] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            iArr[5] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            iArr[7] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
-        try {
-            iArr[8] = 9;
-        } catch (NoSuchFieldError unused9) {
-        }
-        a = iArr;
+        throw null;
+    }
+
+    public static /* synthetic */ int[] d(int i7) {
+        int[] iArr = new int[i7];
+        System.arraycopy(a, 0, iArr, 0, i7);
+        return iArr;
     }
 }

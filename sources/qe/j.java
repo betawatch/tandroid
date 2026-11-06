@@ -1,25 +1,45 @@
 package qe;
 
-import android.view.animation.Interpolator;
-import java.util.Collections;
-import java.util.Iterator;
-import m2.t;
+import c8.j1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class j implements Iterable {
-    public final h a;
+public final class j {
+    public static final j c;
+    public static final j d;
+    public static final j e;
+    public static final j f;
+    public static final /* synthetic */ j[] h;
+    public static final /* synthetic */ ld.b n;
+    public final char a;
+    public final char b;
 
-    public j(i iVar, Interpolator interpolator, long j10) {
-        this.a = new h(new t(22, this, iVar), interpolator, j10);
+    static {
+        j jVar = new j("OBJ", 0, '{', '}');
+        c = jVar;
+        j jVar2 = new j("LIST", 1, '[', ']');
+        d = jVar2;
+        j jVar3 = new j("MAP", 2, '{', '}');
+        e = jVar3;
+        j jVar4 = new j("POLY_OBJ", 3, '[', ']');
+        f = jVar4;
+        j[] jVarArr = {jVar, jVar2, jVar3, jVar4};
+        h = jVarArr;
+        n = j1.a(jVarArr);
     }
 
-    public final void h(Object obj, boolean z10) {
-        this.a.m(obj != null ? Collections.singletonList(obj) : null, z10);
+    public j(String str, int i7, char c10, char c11) {
+        this.a = c10;
+        this.b = c11;
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.b.iterator();
+    public static j valueOf(String str) {
+        return (j) Enum.valueOf(j.class, str);
+    }
+
+    public static j[] values() {
+        return (j[]) h.clone();
     }
 }

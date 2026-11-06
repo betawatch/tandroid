@@ -1,19 +1,38 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class wb extends TLRPC.PhotoSize {
-    public final TLRPC.Photo a;
-    public final TLRPC.TL_inputPhoto b;
+public final /* synthetic */ class wb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xb b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public wb(TLRPC.Photo photo) {
-        this.a = photo;
-        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-        tL_inputPhoto.id = photo.id;
-        tL_inputPhoto.file_reference = photo.file_reference;
-        tL_inputPhoto.access_hash = photo.access_hash;
-        this.b = tL_inputPhoto;
+    public /* synthetic */ wb(xb xbVar, long j3, long j10, int i7) {
+        this.a = i7;
+        this.b = xbVar;
+        this.c = j3;
+        this.d = j10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xb xbVar = this.b;
+                ConcurrentHashMap concurrentHashMap = xbVar.i.u;
+                String str = xbVar.a;
+                long j3 = this.c;
+                long j10 = this.d;
+                concurrentHashMap.put(str, new long[]{j3, j10});
+                g0.h3(new wb(xbVar, j3, j10, 1));
+                break;
+            default:
+                xb xbVar2 = this.b;
+                qs.f(xbVar2.h).k(qs.X1, xbVar2.a, Long.valueOf(this.c), Long.valueOf(this.d));
+                break;
+        }
     }
 }

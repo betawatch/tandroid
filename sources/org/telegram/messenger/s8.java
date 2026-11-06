@@ -17,15 +17,15 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class s8 implements i2.h, j7 {
+public final class s8 implements j2.h, j7 {
+    public static final ConcurrentHashMap H = new ConcurrentHashMap();
     public static final ConcurrentHashMap I = new ConcurrentHashMap();
-    public static final ConcurrentHashMap J = new ConcurrentHashMap();
-    public boolean E = true;
-    public final ArrayList F = new ArrayList(1);
-    public int G;
-    public i2.n H;
+    public boolean D = true;
+    public final ArrayList E = new ArrayList(1);
+    public int F;
+    public j2.m G;
     public i7 a;
     public Uri b;
     public long c;
@@ -40,16 +40,16 @@ public final class s8 implements i2.h, j7 {
     public int x;
     public File y;
 
-    public static Uri i(int i3, Object obj, TLRPC.Document document) {
-        String r5 = w7.r(null, document);
-        w7.G(i3);
+    public static Uri f(int i7, Object obj, TLRPC.Document document) {
+        String r10 = w7.r(null, document);
+        w7.G(i7);
         File I2 = w7.I(document);
         if (I2 != null && I2.exists()) {
             return Uri.fromFile(I2);
         }
         try {
             StringBuilder sb2 = new StringBuilder("?account=");
-            sb2.append(i3);
+            sb2.append(i7);
             sb2.append("&id=");
             sb2.append(document.id);
             sb2.append("&hash=");
@@ -61,7 +61,7 @@ public final class s8 implements i2.h, j7 {
             sb2.append("&mime=");
             sb2.append(URLEncoder.encode(document.mime_type, "UTF-8"));
             sb2.append("&rid=");
-            sb2.append(w7.G(i3).F(obj));
+            sb2.append(w7.G(i7).F(obj));
             sb2.append("&name=");
             sb2.append(URLEncoder.encode(w7.B(document), "UTF-8"));
             sb2.append("&reference=");
@@ -70,7 +70,7 @@ public final class s8 implements i2.h, j7 {
                 bArr = new byte[0];
             }
             sb2.append(Utilities.f(bArr));
-            return Uri.parse("tg://" + r5 + sb2.toString());
+            return Uri.parse("tg://" + r10 + sb2.toString());
         } catch (UnsupportedEncodingException e10) {
             a8.g(e10, true);
             return null;
@@ -86,46 +86,24 @@ public final class s8 implements i2.h, j7 {
         }
     }
 
-    @Override // i2.h
-    public final void addTransferListener(i2.d0 d0Var) {
+    @Override // j2.h
+    public final void addTransferListener(j2.d0 d0Var) {
         d0Var.getClass();
-        ArrayList arrayList = this.F;
+        ArrayList arrayList = this.E;
         if (arrayList.contains(d0Var)) {
             return;
         }
         arrayList.add(d0Var);
-        this.G++;
+        this.F++;
     }
 
-    public final void b(int i3) {
-        i2.n nVar = this.H;
-        String str = g2.n0.a;
-        for (int i10 = 0; i10 < this.G; i10++) {
-            i2.d0 d0Var = (i2.d0) this.F.get(i10);
-            boolean z10 = this.E;
-            a3.g gVar = (a3.g) d0Var;
-            synchronized (gVar) {
-                if (z10) {
-                    if (nVar != null) {
-                        try {
-                            if ((nVar.h & 8) == 8) {
-                            }
-                        } finally {
-                        }
-                    }
-                    gVar.i += i3;
-                }
-            }
-        }
-    }
-
-    @Override // i2.h
+    @Override // j2.h
     public final void close() {
         a8.d("FileStreamLoadOperation " + this.s.id + " close me=" + this);
         i7 i7Var = this.a;
-        int i3 = 0;
+        int i7 = 0;
         if (i7Var != null) {
-            Utilities.d.c(new e7(i7Var, this, i3));
+            Utilities.d.c(new e7(i7Var, this, i7));
         }
         RandomAccessFile randomAccessFile = this.r;
         if (randomAccessFile != null) {
@@ -137,16 +115,16 @@ public final class s8 implements i2.h, j7 {
             this.r = null;
         }
         this.b = null;
-        I.remove(Long.valueOf(this.s.id));
+        H.remove(Long.valueOf(this.s.id));
         if (this.f) {
             this.f = false;
-            i2.n nVar = this.H;
-            String str = g2.n0.a;
-            while (i3 < this.G) {
-                ((a3.g) ((i2.d0) this.F.get(i3))).f(nVar, this.E);
-                i3++;
+            j2.m mVar = this.G;
+            String str = h2.m0.a;
+            while (i7 < this.F) {
+                ((b3.g) ((j2.d0) this.E.get(i7))).f(mVar, this.D);
+                i7++;
             }
-            this.H = null;
+            this.G = null;
         }
         CountDownLatch countDownLatch = this.n;
         if (countDownLatch != null) {
@@ -155,42 +133,64 @@ public final class s8 implements i2.h, j7 {
         }
     }
 
-    public final int f() {
-        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(J, Long.valueOf(this.s.id), null);
+    public final void d(int i7) {
+        j2.m mVar = this.G;
+        String str = h2.m0.a;
+        for (int i10 = 0; i10 < this.F; i10++) {
+            j2.d0 d0Var = (j2.d0) this.E.get(i10);
+            boolean z9 = this.D;
+            b3.g gVar = (b3.g) d0Var;
+            synchronized (gVar) {
+                if (z9) {
+                    if (mVar != null) {
+                        try {
+                            if ((mVar.h & 8) == 8) {
+                            }
+                        } finally {
+                        }
+                    }
+                    gVar.i += i7;
+                }
+            }
+        }
+    }
+
+    public final int e() {
+        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(I, Long.valueOf(this.s.id), null);
         if (num != null) {
             return num.intValue();
         }
         return 3;
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public final Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public final Uri getUri() {
         return this.b;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x0251  */
-    @Override // i2.h
+    @Override // j2.h
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long open(i2.n nVar) {
-        int i3;
+    public final long open(j2.m mVar) {
+        int i7;
         TLRPC.TL_document tL_document;
-        ArrayList arrayList = this.F;
-        Uri uri = nVar.a;
-        long j10 = nVar.e;
+        ArrayList arrayList = this.E;
+        Uri uri = mVar.a;
+        long j3 = mVar.e;
         this.b = uri;
-        for (int i10 = 0; i10 < this.G; i10++) {
-            ((i2.d0) arrayList.get(i10)).getClass();
+        for (int i10 = 0; i10 < this.F; i10++) {
+            ((j2.d0) arrayList.get(i10)).getClass();
         }
         int intValue = Utilities.z(this.b.getQueryParameter("account")).intValue();
         this.x = intValue;
-        this.w = w7.G(intValue).H.get(Utilities.z(this.b.getQueryParameter("rid")));
+        this.w = w7.G(intValue).G.get(Utilities.z(this.b.getQueryParameter("rid")));
         TLRPC.TL_document tL_document2 = new TLRPC.TL_document();
         this.s = tL_document2;
         tL_document2.access_hash = Utilities.A(this.b.getQueryParameter("hash")).longValue();
@@ -207,37 +207,37 @@ public final class s8 implements i2.h, j7 {
         } else if (this.s.mime_type.startsWith(MediaStreamTrack.AUDIO_TRACK_KIND)) {
             this.s.attributes.add(new TLRPC.TL_documentAttributeAudio());
         }
-        I.put(Long.valueOf(this.s.id), this);
-        this.h = j10;
-        this.e = nVar.f;
+        H.put(Long.valueOf(this.s.id), this);
+        this.h = j3;
+        this.e = mVar.f;
         w7 G = w7.G(this.x);
         TLRPC.TL_document tL_document3 = this.s;
         Object obj = this.w;
-        long j11 = this.h;
-        int f10 = f();
+        long j10 = this.h;
+        int e10 = e();
         int i11 = tL_document3 == null ? 1 : 0;
         CountDownLatch countDownLatch = new CountDownLatch(1);
         i7[] i7VarArr = new i7[1];
-        w7.K.c(new o7(G, i7VarArr, tL_document3, null, obj, f10, this, j11, false, i11, countDownLatch));
+        w7.J.c(new o7(G, i7VarArr, tL_document3, null, obj, e10, this, j10, false, i11, countDownLatch));
         w7.a(countDownLatch, true);
         this.a = i7VarArr[0];
         this.d = 0L;
-        long j12 = this.s.size - j10;
-        this.c = j12;
-        long j13 = this.e;
-        if (j13 != -1) {
-            this.c = Math.min(j12, j13);
+        long j11 = this.s.size - j3;
+        this.c = j11;
+        long j12 = this.e;
+        if (j12 != -1) {
+            this.c = Math.min(j11, j12);
         }
         this.f = true;
-        this.H = nVar;
-        for (int i12 = 0; i12 < this.G; i12++) {
-            ((a3.g) ((i2.d0) arrayList.get(i12))).g(nVar, this.E);
+        this.G = mVar;
+        for (int i12 = 0; i12 < this.F; i12++) {
+            ((b3.g) ((j2.d0) arrayList.get(i12))).g(mVar, this.D);
         }
         i7 i7Var = this.a;
         if (i7Var != null) {
-            File g7 = i7Var.g();
-            this.y = g7;
-            if (g7 != null) {
+            File g10 = i7Var.g();
+            this.y = g10;
+            if (g10 != null) {
                 try {
                     RandomAccessFile randomAccessFile = new RandomAccessFile(this.y, "r");
                     this.r = randomAccessFile;
@@ -245,14 +245,14 @@ public final class s8 implements i2.h, j7 {
                 } catch (Throwable unused) {
                 }
                 if (this.a.Y == 3) {
-                    i3 = 0;
+                    i7 = 0;
                     try {
-                        this.E = false;
+                        this.D = false;
                         long length = this.y.length() - this.h;
                         this.c = length;
-                        long j14 = this.e;
-                        if (j14 != -1) {
-                            this.c = Math.min(length, j14 - this.d);
+                        long j13 = this.e;
+                        if (j13 != -1) {
+                            this.c = Math.min(length, j13 - this.d);
                         }
                     } catch (Throwable unused2) {
                     }
@@ -260,9 +260,9 @@ public final class s8 implements i2.h, j7 {
                     StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
                     sb2.append(this.s.id);
                     sb2.append(" ");
-                    sb2.append(zi.i2(this.s));
+                    sb2.append(ij.i2(this.s));
                     sb2.append("x");
-                    sb2.append(zi.i2(this.s));
+                    sb2.append(ij.i2(this.s));
                     sb2.append(" mime_type=");
                     sb2.append(this.s.mime_type);
                     sb2.append(" codec=");
@@ -270,7 +270,7 @@ public final class s8 implements i2.h, j7 {
                     String str = null;
                     if (tL_document != null) {
                         int size = tL_document.attributes.size();
-                        int i13 = i3;
+                        int i13 = i7;
                         while (true) {
                             if (i13 >= size) {
                                 break;
@@ -291,14 +291,14 @@ public final class s8 implements i2.h, j7 {
                 }
             }
         }
-        i3 = 0;
+        i7 = 0;
         a8.d("FileStreamLoadOperation " + this.s.id + " open operation=" + this.a + " currentFile=" + this.y + " file=" + this.r + " bytesRemaining=" + this.c + " me=" + this);
         StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
         sb22.append(this.s.id);
         sb22.append(" ");
-        sb22.append(zi.i2(this.s));
+        sb22.append(ij.i2(this.s));
         sb22.append("x");
-        sb22.append(zi.i2(this.s));
+        sb22.append(ij.i2(this.s));
         sb22.append(" mime_type=");
         sb22.append(this.s.mime_type);
         sb22.append(" codec=");
@@ -322,11 +322,11 @@ public final class s8 implements i2.h, j7 {
     /* JADX WARN: Removed duplicated region for block: B:91:0x00fd A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:97:0x00bd  */
     /* JADX WARN: Type inference failed for: r6v1, types: [java.io.Serializable, long[]] */
-    @Override // d2.o
+    @Override // e2.n
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int read(byte[] bArr, int i3, int i10) {
+    public final int read(byte[] bArr, int i7, int i10) {
         int i11;
         int i12;
         int i13;
@@ -338,12 +338,12 @@ public final class s8 implements i2.h, j7 {
         if (i14 == 0) {
             return 0;
         }
-        long j10 = this.c;
-        if (j10 == 0) {
+        long j3 = this.c;
+        if (j3 == 0) {
             return -1;
         }
-        if (j10 < i14) {
-            i14 = (int) j10;
+        if (j3 < i14) {
+            i14 = (int) j3;
         }
         int i16 = i14;
         int i17 = 0;
@@ -356,7 +356,7 @@ public final class s8 implements i2.h, j7 {
                     i7Var.getClass();
                     CountDownLatch countDownLatch = new CountDownLatch(1);
                     ?? r62 = new long[2];
-                    Utilities.d.c(new f9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
+                    Utilities.d.c(new l9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
                     countDownLatch.await();
                     i11 = (int) r62[i15];
                     if (i11 != 0) {
@@ -364,14 +364,14 @@ public final class s8 implements i2.h, j7 {
                         w7 G = w7.G(this.x);
                         TLRPC.TL_document tL_document = this.s;
                         Object obj = this.w;
-                        long j11 = this.h;
-                        int f10 = f();
+                        long j10 = this.h;
+                        int e10 = e();
                         int i18 = tL_document == null ? 1 : i15;
                         CountDownLatch countDownLatch2 = new CountDownLatch(1);
                         i7[] i7VarArr = new i7[1];
                         i12 = i11;
                         i13 = i15;
-                        w7.K.c(new o7(G, i7VarArr, tL_document, null, obj, f10, this, j11, false, i18, countDownLatch2));
+                        w7.J.c(new o7(G, i7VarArr, tL_document, null, obj, e10, this, j10, false, i18, countDownLatch2));
                         w7.a(countDownLatch2, true);
                         i7 i7Var2 = i7VarArr[i13 == true ? 1 : 0];
                         i7 i7Var3 = this.a;
@@ -409,12 +409,12 @@ public final class s8 implements i2.h, j7 {
                                 this.r = randomAccessFile3;
                                 randomAccessFile3.seek(this.h);
                                 if ((this.a.Y == 3 ? true : i13) != false) {
-                                    this.E = i13;
+                                    this.D = i13;
                                     long length = this.y.length() - this.h;
                                     this.c = length;
-                                    long j12 = this.e;
-                                    if (j12 != -1) {
-                                        this.c = Math.min(length, j12 - this.d);
+                                    long j11 = this.e;
+                                    if (j11 != -1) {
+                                        this.c = Math.min(length, j11 - this.d);
                                     }
                                 }
                             } catch (Throwable unused2) {
@@ -423,12 +423,12 @@ public final class s8 implements i2.h, j7 {
                                     w7 G2 = w7.G(this.x);
                                     TLRPC.TL_document tL_document2 = this.s;
                                     Object obj2 = this.w;
-                                    long j13 = this.h;
-                                    int f11 = f();
+                                    long j12 = this.h;
+                                    int e11 = e();
                                     int i19 = tL_document2 == null ? 1 : 0;
                                     CountDownLatch countDownLatch4 = new CountDownLatch(1);
                                     i7[] i7VarArr2 = new i7[1];
-                                    w7.K.c(new o7(G2, i7VarArr2, tL_document2, null, obj2, f11, this, j13, false, i19, countDownLatch4));
+                                    w7.J.c(new o7(G2, i7VarArr2, tL_document2, null, obj2, e11, this, j12, false, i19, countDownLatch4));
                                     w7.a(countDownLatch4, true);
                                     i7 i7Var5 = i7VarArr2[0];
                                     i7 i7Var6 = this.a;
@@ -443,11 +443,11 @@ public final class s8 implements i2.h, j7 {
                     }
                     i17 = i12;
                     i15 = 0;
-                } catch (InterruptedException e10) {
-                    a8.g(e10, true);
+                } catch (InterruptedException e12) {
+                    a8.g(e12, true);
                     return -3;
-                } catch (Exception e11) {
-                    throw new IOException(e11);
+                } catch (Exception e13) {
+                    throw new IOException(e13);
                 }
             }
             randomAccessFile2 = this.r;
@@ -458,7 +458,7 @@ public final class s8 implements i2.h, j7 {
             i7Var7.getClass();
             CountDownLatch countDownLatch5 = new CountDownLatch(1);
             ?? r622 = new long[2];
-            Utilities.d.c(new f9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
+            Utilities.d.c(new l9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
             countDownLatch5.await();
             i11 = (int) r622[i15];
             if (i11 != 0) {
@@ -482,13 +482,13 @@ public final class s8 implements i2.h, j7 {
         if (!this.f) {
             return 0;
         }
-        int read = randomAccessFile2.read(bArr, i3, i17);
+        int read = randomAccessFile2.read(bArr, i7, i17);
         if (read > 0) {
-            long j14 = read;
-            this.h += j14;
-            this.c -= j14;
-            this.d += j14;
-            b(read);
+            long j13 = read;
+            this.h += j13;
+            this.c -= j13;
+            this.d += j13;
+            d(read);
         }
         return read;
     }

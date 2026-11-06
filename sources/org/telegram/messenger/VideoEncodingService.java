@@ -5,53 +5,53 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class VideoEncodingService extends Service implements cs {
+public class VideoEncodingService extends Service implements ls {
     public static VideoEncodingService e;
     public e0.q a;
-    public cf b;
+    public lf b;
     public int c;
     public String d;
 
-    public final void a(cf cfVar) {
-        cf cfVar2 = this.b;
-        if (cfVar2 == cfVar) {
+    public final void a(lf lfVar) {
+        lf lfVar2 = this.b;
+        if (lfVar2 == lfVar) {
             return;
         }
-        int i3 = hs.U1;
-        int i10 = hs.V1;
-        int i11 = hs.W1;
-        if (cfVar2 != null) {
-            hs.f(this.c).n(this, i11);
-            hs.f(this.c).n(this, i10);
-            hs.f(this.c).n(this, i3);
+        int i7 = qs.U1;
+        int i10 = qs.V1;
+        int i11 = qs.W1;
+        if (lfVar2 != null) {
+            qs.f(this.c).n(this, i11);
+            qs.f(this.c).n(this, i10);
+            qs.f(this.c).n(this, i7);
         }
-        if (cfVar != null) {
-            zi ziVar = cfVar.a;
-            boolean z10 = ziVar != null && zi.u3(ziVar.k);
-            if (cfVar.d) {
-                this.a.p(bd.M0(2131751768, null));
-                this.a.f(bd.M0(2131751768, null));
-            } else if (z10) {
-                this.a.p(bd.M0(2131745589, null));
-                this.a.f(bd.M0(2131745589, null));
+        if (lfVar != null) {
+            ij ijVar = lfVar.a;
+            boolean z9 = ijVar != null && ij.u3(ijVar.k);
+            if (lfVar.d) {
+                this.a.p(hd.M0(2131751768, null));
+                this.a.f(hd.M0(2131751768, null));
+            } else if (z9) {
+                this.a.p(hd.M0(2131745580, null));
+                this.a.f(hd.M0(2131745580, null));
             } else {
-                this.a.p(bd.M0(2131745586, null));
-                this.a.f(bd.M0(2131745586, null));
+                this.a.p(hd.M0(2131745577, null));
+                this.a.f(hd.M0(2131745577, null));
             }
             e0.q qVar = this.a;
             qVar.n = 100;
             qVar.o = 0;
             qVar.p = true;
         }
-        this.b = cfVar;
-        int i12 = cfVar.c;
+        this.b = lfVar;
+        int i12 = lfVar.c;
         this.c = i12;
-        this.d = cfVar.a.k.attachPath;
-        hs.f(i12).b(this, i11);
-        hs.f(this.c).b(this, i10);
-        hs.f(this.c).b(this, i3);
+        this.d = lfVar.a.k.attachPath;
+        qs.f(i12).b(this, i11);
+        qs.f(this.c).b(this, i10);
+        qs.f(this.c).b(this, i7);
         if (e != null) {
             b();
         }
@@ -59,24 +59,24 @@ public class VideoEncodingService extends Service implements cs {
 
     public final void b() {
         try {
-            if (MediaController.B().b0 == null) {
+            if (MediaController.B().a0 == null) {
                 return;
             }
-            new e0.j0(t0.b).e(null, 4, this.a.b());
+            new e0.i0(t0.b).e(null, 4, this.a.b());
         } catch (Throwable th2) {
             a8.g(th2, true);
         }
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
         String str2;
-        if (i3 != hs.W1) {
-            if (i3 == hs.U1 || i3 == hs.V1) {
+        if (i7 != qs.W1) {
+            if (i7 == qs.U1 || i7 == qs.V1) {
                 String str3 = (String) objArr[0];
                 if (i10 == this.c && (str = this.d) != null && str.equals(str3)) {
-                    g0.h3(new c20(this, 0));
+                    g0.h3(new k20(this, 0));
                     return;
                 }
                 return;
@@ -88,10 +88,10 @@ public class VideoEncodingService extends Service implements cs {
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             int i11 = (int) (min * 100.0f);
             e0.q qVar = this.a;
-            boolean z10 = i11 == 0;
+            boolean z9 = i11 == 0;
             qVar.n = 100;
             qVar.o = i11;
-            qVar.p = z10;
+            qVar.p = z9;
             b();
         }
     }
@@ -109,10 +109,10 @@ public class VideoEncodingService extends Service implements cs {
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.j0(t0.b).b(4, null);
-        hs.f(this.c).n(this, hs.W1);
-        hs.f(this.c).n(this, hs.V1);
-        hs.f(this.c).n(this, hs.U1);
+        new e0.i0(t0.b).b(4, null);
+        qs.f(this.c).n(this, qs.W1);
+        qs.f(this.c).n(this, qs.V1);
+        qs.f(this.c).n(this, qs.U1);
         this.b = null;
         if (r2.a) {
             a8.b("VideoEncodingService: destroy video service");
@@ -120,34 +120,34 @@ public class VideoEncodingService extends Service implements cs {
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i3, int i10) {
-        cf cfVar;
-        if (e != null || (cfVar = MediaController.B().b0) == null) {
+    public final int onStartCommand(Intent intent, int i7, int i10) {
+        lf lfVar;
+        if (e != null || (lfVar = MediaController.B().a0) == null) {
             return 2;
         }
         e = this;
         if (this.a == null) {
-            us.i();
-            e0.q qVar = new e0.q(t0.b, us.k0);
+            dt.i();
+            e0.q qVar = new e0.q(t0.b, dt.j0);
             this.a = qVar;
             qVar.F.icon = R.drawable.stat_sys_upload;
             qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.a;
-            qVar2.y = us.k0;
-            qVar2.g(bd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            qVar2.y = dt.j0;
+            qVar2.g(hd.M0(org.telegram.messenger.beta.R.string.AppName, null));
         }
-        a(cfVar);
+        a(lfVar);
         int i11 = 1;
         try {
             startForeground(4, this.a.b());
         } catch (Throwable th2) {
             a8.g(th2, true);
         }
-        g0.h3(new c20(this, i11));
+        g0.h3(new k20(this, i11));
         return 2;
     }
 
-    public final void onTimeout(int i3, int i10) {
+    public final void onTimeout(int i7, int i10) {
         a8.b("VideoEncodingService timeout, type = " + i10);
         try {
             stopForeground(true);

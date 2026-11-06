@@ -1,22 +1,19 @@
 package ui;
 
-import org.telegram.messenger.g0;
+import l2.y;
 import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements RequestTimeDelegate {
-    public final /* synthetic */ f a;
-    public final /* synthetic */ e b;
+public final class d {
+    public final y a;
+    public final a b;
+    public final RequestTimeDelegate c;
+    public int d;
 
-    public /* synthetic */ d(f fVar, e eVar) {
-        this.a = fVar;
-        this.b = eVar;
-    }
-
-    @Override // org.telegram.tgnet.RequestTimeDelegate
-    public void run(long j10) {
-        g0.h3(new z70(this.a, this.b, j10, 3));
+    public d(y yVar, a aVar, RequestTimeDelegate requestTimeDelegate) {
+        this.a = yVar;
+        this.b = aVar;
+        this.c = requestTimeDelegate;
     }
 }

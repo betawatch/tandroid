@@ -1,6 +1,33 @@
 package oh;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.text.SpannableStringBuilder;
+import android.util.SparseArray;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.wp;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface a {
+public abstract class a {
+    public static final SparseArray a = new SparseArray(6);
+
+    public static SpannableStringBuilder a(int i7, CharSequence charSequence, boolean z9) {
+        SpannableStringBuilder spannableStringBuilder = charSequence instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence : new SpannableStringBuilder(charSequence);
+        if (z9) {
+            spannableStringBuilder.insert(0, (CharSequence) "* \u2068");
+        } else {
+            spannableStringBuilder.insert(0, (CharSequence) "* ");
+        }
+        SparseArray sparseArray = a;
+        wp wpVar = (wp) sparseArray.get(i7);
+        if (wpVar == null) {
+            wpVar = new wp(i7, 0);
+            wpVar.a(k6.Wl);
+            sparseArray.put(i7, wpVar);
+        }
+        spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
+        if (z9) {
+            spannableStringBuilder.append((char) 8297);
+        }
+        return spannableStringBuilder;
+    }
 }

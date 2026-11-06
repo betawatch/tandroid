@@ -1,54 +1,138 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hs0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+public class hs0 extends FrameLayout {
+    public final org.telegram.ui.ActionBar.k5 a;
+    public final TextView b;
+    public final ImageView c;
+    public final ImageView d;
+    public boolean e;
+    public us0 f;
+    public org.telegram.ui.Components.g5 h;
+    public Drawable n;
 
-    public /* synthetic */ hs0(int i3, ViewGroup viewGroup, Object obj, Object obj2) {
-        this.a = i3;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+    public hs0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        setClipChildren(false);
+        linearLayout.setClipChildren(false);
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.a = k5Var;
+        k5Var.setTypeface(org.telegram.messenger.g0.o());
+        k5Var.setTextSize(15);
+        org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        linearLayout.addView(k5Var, c8.ha.o(-1, -2));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.y6, f6Var);
+        textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        linearLayout.addView(textView, c8.ha.q(-1, -2, 0.0f, 0, 0, 1, 0, 0));
+        addView(linearLayout, c8.ha.d(-1, -2.0f, 0, 62.0f, 8.0f, 48.0f, 9.0f));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_INSIDE;
+        imageView.setScaleType(scaleType);
+        addView(imageView, c8.ha.d(28, 28.0f, 0, 18.0f, 12.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.d = imageView2;
+        imageView2.setScaleType(scaleType);
+        imageView2.setImageResource(R.drawable.msg_arrowright);
+        org.telegram.ui.ActionBar.r6.t(imageView2, org.telegram.ui.ActionBar.k6.M6, f6Var, PorterDuff.Mode.SRC_ATOP);
+        addView(imageView2, c8.ha.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ks0 ks0Var = (ks0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = ks0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i3 = 0; i3 < premiumPreviewFragment.V.getChildCount(); i3++) {
-                    View childAt = premiumPreviewFragment.V.getChildAt(i3);
-                    if (childAt != ks0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == ks0Var.c ? 0.0f - (org.telegram.messenger.g0.L(15.0f) * animatedFraction) : 0.0f + (org.telegram.messenger.g0.L(8.0f) * animatedFraction)));
-                    }
+    public final void a(us0 us0Var, boolean z9) {
+        boolean q10 = org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q();
+        ImageView imageView = this.d;
+        if (q10 && us0Var.a == 12 && us0Var.b == R.drawable.filled_premium_status2) {
+            imageView.setVisibility(8);
+            if (this.h == null) {
+                this.h = new org.telegram.ui.Components.g5(org.telegram.messenger.g0.L(24.0f), 13, this, false);
+                if (isAttachedToWindow()) {
+                    this.h.a();
                 }
-                break;
-            default:
-                a51 a51Var = (a51) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.ai aiVar = (org.telegram.ui.Components.ai) this.d;
-                a51Var.getClass();
-                a51Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(a51Var.a);
-                aiVar.invalidate();
-                break;
+            }
+            Long h = org.telegram.messenger.t10.h(org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).f());
+            b(h == null ? 0L : h.longValue(), false);
+        } else {
+            imageView.setVisibility(0);
+            org.telegram.ui.Components.g5 g5Var = this.h;
+            if (g5Var != null) {
+                g5Var.b();
+                this.h = null;
+            }
         }
+        this.f = us0Var;
+        this.a.l(us0Var.c, false);
+        this.b.setText(us0Var.d);
+        this.c.setImageResource(us0Var.b);
+        this.e = z9;
+    }
+
+    public final void b(long j3, boolean z9) {
+        if (this.h == null) {
+            this.h = new org.telegram.ui.Components.g5(org.telegram.messenger.g0.L(24.0f), 13, this, false);
+            if (isAttachedToWindow()) {
+                this.h.a();
+            }
+        }
+        if (j3 != 0) {
+            this.h.j(j3, z9);
+            return;
+        }
+        if (this.n == null) {
+            Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_premium_prolfilestar).mutate();
+            this.n = mutate;
+            org.telegram.ui.ActionBar.r6.y(this, mutate, org.telegram.ui.ActionBar.k6.v6, null, PorterDuff.Mode.SRC_IN);
+        }
+        this.h.g(this.n, z9);
+    }
+
+    public final void c() {
+        this.h.setBounds((getWidth() - this.h.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - this.h.s) / 2, getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + this.h.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.h != null) {
+            c();
+            this.h.k(Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.v6, false)));
+            this.h.draw(canvas);
+        }
+        if (this.e) {
+            canvas.drawRect(org.telegram.messenger.g0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        org.telegram.ui.Components.g5 g5Var = this.h;
+        if (g5Var != null) {
+            g5Var.a();
+        }
+        super.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        org.telegram.ui.Components.g5 g5Var = this.h;
+        if (g5Var != null) {
+            g5Var.b();
+        }
+        super.onDetachedFromWindow();
     }
 }

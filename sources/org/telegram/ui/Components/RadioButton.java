@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -44,13 +44,13 @@ public class RadioButton extends View {
         }
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (z10 == this.f) {
+    public final void a(boolean z9, boolean z10) {
+        if (z9 == this.f) {
             return;
         }
-        this.f = z10;
-        if (this.e && z11) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
+        this.f = z9;
+        if (this.e && z10) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z9 ? 1.0f : 0.0f);
             this.d = ofFloat;
             ofFloat.setDuration(200L);
             this.d.start();
@@ -60,11 +60,11 @@ public class RadioButton extends View {
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        setProgress(z10 ? 1.0f : 0.0f);
+        setProgress(z9 ? 1.0f : 0.0f);
     }
 
-    public final void b(int i3, int i10) {
-        this.b = i3;
+    public final void b(int i7, int i10) {
+        this.b = i7;
         this.a = i10;
         invalidate();
     }
@@ -108,7 +108,7 @@ public class RadioButton extends View {
             s.setColor(rgb);
             x.setColor(rgb);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.hs.e4, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
         float f13 = (this.h / 2) - ((f10 + 1.0f) * org.telegram.messenger.g0.p);
         canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13, s);
         if (this.r == null) {
@@ -116,7 +116,7 @@ public class RadioButton extends View {
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - org.telegram.messenger.g0.L(1.0f), x);
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - org.telegram.messenger.g0.L(1.0f)), w);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.y(f13 - org.telegram.messenger.g0.L(1.0f), this.h / 4, f10, this.h / 4), x);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f13 - org.telegram.messenger.g0.L(1.0f), this.h / 4, f10, this.h / 4), x);
             }
         }
         canvas.restore();
@@ -133,13 +133,13 @@ public class RadioButton extends View {
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i3) {
-        this.b = i3;
+    public void setBackgroundColor(int i7) {
+        this.b = i7;
         invalidate();
     }
 
-    public void setCheckedColor(int i3) {
-        this.a = i3;
+    public void setCheckedColor(int i7) {
+        this.a = i7;
         invalidate();
     }
 
@@ -157,10 +157,10 @@ public class RadioButton extends View {
         invalidate();
     }
 
-    public void setSize(int i3) {
-        if (this.h == i3) {
+    public void setSize(int i7) {
+        if (this.h == i7) {
             return;
         }
-        this.h = i3;
+        this.h = i7;
     }
 }

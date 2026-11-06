@@ -4,21 +4,21 @@ import android.content.Intent;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class NotificationBadge$ApexHomeBadger implements ur {
-    @Override // org.telegram.messenger.ur
-    public final void a(int i3) {
+public class NotificationBadge$ApexHomeBadger implements cs {
+    @Override // org.telegram.messenger.cs
+    public final void a(int i7) {
         Intent intent = new Intent("com.anddoes.launcher.COUNTER_CHANGED");
-        intent.putExtra("package", wr.d.getPackageName());
-        intent.putExtra("count", i3);
-        intent.putExtra("class", wr.d.getClassName());
-        if (wr.a(intent)) {
+        intent.putExtra("package", fs.d.getPackageName());
+        intent.putExtra("count", i7);
+        intent.putExtra("class", fs.d.getClassName());
+        if (fs.a(intent)) {
             g0.h3(new s(intent, 2));
         }
     }
 
-    @Override // org.telegram.messenger.ur
+    @Override // org.telegram.messenger.cs
     public final List b() {
         return Arrays.asList("com.anddoes.launcher");
     }

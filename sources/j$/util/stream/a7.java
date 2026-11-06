@@ -10,22 +10,22 @@ public final class a7 extends b7 implements LongConsumer {
         return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
-    public a7(int i3) {
-        this.c = new long[i3];
+    public a7(int i7) {
+        this.c = new long[i7];
     }
 
     @Override // j$.util.stream.b7
-    public final void a(Object obj, long j10) {
+    public final void a(Object obj, long j3) {
         LongConsumer longConsumer = (LongConsumer) obj;
-        for (int i3 = 0; i3 < j10; i3++) {
-            longConsumer.accept(this.c[i3]);
+        for (int i7 = 0; i7 < j3; i7++) {
+            longConsumer.accept(this.c[i7]);
         }
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
-        int i3 = this.b;
-        this.b = i3 + 1;
-        this.c[i3] = j10;
+    public final void accept(long j3) {
+        int i7 = this.b;
+        this.b = i7 + 1;
+        this.c[i7] = j3;
     }
 }

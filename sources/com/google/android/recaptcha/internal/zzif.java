@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import b8.hb;
-import b8.ib;
-import dd.c;
+import a8.ab;
+import af.b;
+import gd.c;
 import org.telegram.tgnet.TLObject;
-import wd.b0;
+import zd.b0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
-        int i3 = zzby.zza;
-        this.zza = hb.b(zzie.zza);
+        int i7 = zzby.zza;
+        this.zza = ab.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -25,25 +25,25 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fd.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
         zzic zzicVar;
-        int i3;
+        int i7;
         if (cVar instanceof zzic) {
             zzicVar = (zzic) cVar;
             int i10 = zzicVar.zzc;
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzicVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                gd.a aVar = gd.a.a;
-                i3 = zzicVar.zzc;
-                if (i3 == 0) {
-                    if (i3 != 1) {
+                jd.a aVar = jd.a.a;
+                i7 = zzicVar.zzc;
+                if (i7 == 0) {
+                    if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    ib.b(obj);
+                    b.c(obj);
                     return obj;
                 }
-                ib.b(obj);
+                b.c(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
                 Object e10 = b0.e(zzidVar, zzicVar);
@@ -52,13 +52,13 @@ public final class zzif {
         }
         zzicVar = new zzic(zzifVar, cVar);
         Object obj2 = zzicVar.zza;
-        gd.a aVar2 = gd.a.a;
-        i3 = zzicVar.zzc;
-        if (i3 == 0) {
+        jd.a aVar2 = jd.a.a;
+        i7 = zzicVar.zzc;
+        if (i7 == 0) {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, fd.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

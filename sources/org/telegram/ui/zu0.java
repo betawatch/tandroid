@@ -1,29 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zu0 extends ip {
-    public final /* synthetic */ boolean[] d1;
-    public final /* synthetic */ TLRPC.User e1;
-    public final /* synthetic */ ProfileActivity f1;
+public final class zu0 extends org.telegram.ui.Components.sf0 {
+    public final /* synthetic */ ProfileActivity s1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zu0(ProfileActivity profileActivity, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i3, boolean[] zArr, TLRPC.User user) {
-        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i3, true, false, null);
-        this.f1 = profileActivity;
-        this.d1 = zArr;
-        this.e1 = user;
+    public zu0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, pu0 pu0Var, yu0 yu0Var, org.telegram.ui.Components.of0 of0Var, org.telegram.ui.Components.kf0 kf0Var) {
+        super(context, j3, kVar, pu0Var, yu0Var, of0Var, kf0Var);
+        this.s1 = profileActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.d2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        if (!z10 && z11 && this.d1[0]) {
-            ProfileActivity profileActivity = this.f1;
-            if (org.telegram.ui.Components.fc.a(profileActivity)) {
-                org.telegram.ui.Components.fc.C(this.e1.first_name, profileActivity).j();
-            }
-        }
+    @Override // org.telegram.ui.Components.sf0
+    public final void setCustomAvatarProgress(float f10) {
+        ProfileActivity profileActivity = this.s1;
+        profileActivity.n5 = f10;
+        profileActivity.Q3();
     }
 }

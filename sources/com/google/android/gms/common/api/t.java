@@ -3,15 +3,16 @@ package com.google.android.gms.common.api;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
+import c8.vb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class t implements Parcelable.Creator {
     public static final t b = new t(0);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ t(int i3) {
-        this.a = i3;
+    public /* synthetic */ t(int i7) {
+        this.a = i7;
     }
 
     @Override // android.os.Parcelable.Creator
@@ -23,99 +24,99 @@ public final class t implements Parcelable.Creator {
                     parcel.setDataPosition(dataPosition - 4);
                     return g.d;
                 }
-                int z10 = g6.e.z(parcel);
-                boolean z11 = false;
+                int z9 = vb.z(parcel);
+                boolean z10 = false;
                 h hVar = null;
-                while (parcel.dataPosition() < z10) {
+                while (parcel.dataPosition() < z9) {
                     int readInt = parcel.readInt();
-                    char c2 = (char) readInt;
-                    if (c2 == 1) {
-                        hVar = (h) g6.e.g(parcel, readInt, h.CREATOR);
-                    } else if (c2 != 2) {
-                        g6.e.y(parcel, readInt);
+                    char c10 = (char) readInt;
+                    if (c10 == 1) {
+                        hVar = (h) vb.g(parcel, readInt, h.CREATOR);
+                    } else if (c10 != 2) {
+                        vb.y(parcel, readInt);
                     } else {
-                        z11 = g6.e.n(parcel, readInt);
+                        z10 = vb.n(parcel, readInt);
                     }
                 }
-                g6.e.m(parcel, z10);
-                return new g(hVar, z11);
+                vb.m(parcel, z9);
+                return new g(hVar, z10);
             case 1:
-                int z12 = g6.e.z(parcel);
-                int i3 = 0;
-                boolean z13 = true;
+                int z11 = vb.z(parcel);
+                int i7 = 0;
+                boolean z12 = true;
                 int i10 = 0;
                 int i11 = 0;
-                while (parcel.dataPosition() < z12) {
+                while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
-                    char c10 = (char) readInt2;
-                    if (c10 == 1) {
-                        i3 = g6.e.u(parcel, readInt2);
-                    } else if (c10 == 2) {
-                        i10 = g6.e.u(parcel, readInt2);
-                    } else if (c10 == 3) {
-                        i11 = g6.e.u(parcel, readInt2);
-                    } else if (c10 != 4) {
-                        g6.e.y(parcel, readInt2);
+                    char c11 = (char) readInt2;
+                    if (c11 == 1) {
+                        i7 = vb.u(parcel, readInt2);
+                    } else if (c11 == 2) {
+                        i10 = vb.u(parcel, readInt2);
+                    } else if (c11 == 3) {
+                        i11 = vb.u(parcel, readInt2);
+                    } else if (c11 != 4) {
+                        vb.y(parcel, readInt2);
                     } else {
-                        z13 = g6.e.n(parcel, readInt2);
+                        z12 = vb.n(parcel, readInt2);
                     }
                 }
-                g6.e.m(parcel, z12);
-                return new h(i3, i10, i11, z13);
+                vb.m(parcel, z11);
+                return new h(i7, i10, i11, z12);
             case 2:
-                int z14 = g6.e.z(parcel);
+                int z13 = vb.z(parcel);
                 String str = null;
                 int i12 = 0;
-                while (parcel.dataPosition() < z14) {
+                while (parcel.dataPosition() < z13) {
                     int readInt3 = parcel.readInt();
-                    char c11 = (char) readInt3;
-                    if (c11 == 1) {
-                        i12 = g6.e.u(parcel, readInt3);
-                    } else if (c11 != 2) {
-                        g6.e.y(parcel, readInt3);
+                    char c12 = (char) readInt3;
+                    if (c12 == 1) {
+                        i12 = vb.u(parcel, readInt3);
+                    } else if (c12 != 2) {
+                        vb.y(parcel, readInt3);
                     } else {
-                        str = g6.e.h(parcel, readInt3);
+                        str = vb.h(parcel, readInt3);
                     }
                 }
-                g6.e.m(parcel, z14);
+                vb.m(parcel, z13);
                 return new Scope(i12, str);
             default:
-                int z15 = g6.e.z(parcel);
+                int z14 = vb.z(parcel);
                 String str2 = null;
-                m6.a aVar = null;
+                n6.a aVar = null;
                 int i13 = 0;
                 PendingIntent pendingIntent = null;
-                while (parcel.dataPosition() < z15) {
+                while (parcel.dataPosition() < z14) {
                     int readInt4 = parcel.readInt();
-                    char c12 = (char) readInt4;
-                    if (c12 == 1) {
-                        i13 = g6.e.u(parcel, readInt4);
-                    } else if (c12 == 2) {
-                        str2 = g6.e.h(parcel, readInt4);
-                    } else if (c12 == 3) {
-                        pendingIntent = (PendingIntent) g6.e.g(parcel, readInt4, PendingIntent.CREATOR);
-                    } else if (c12 != 4) {
-                        g6.e.y(parcel, readInt4);
+                    char c13 = (char) readInt4;
+                    if (c13 == 1) {
+                        i13 = vb.u(parcel, readInt4);
+                    } else if (c13 == 2) {
+                        str2 = vb.h(parcel, readInt4);
+                    } else if (c13 == 3) {
+                        pendingIntent = (PendingIntent) vb.g(parcel, readInt4, PendingIntent.CREATOR);
+                    } else if (c13 != 4) {
+                        vb.y(parcel, readInt4);
                     } else {
-                        aVar = (m6.a) g6.e.g(parcel, readInt4, m6.a.CREATOR);
+                        aVar = (n6.a) vb.g(parcel, readInt4, n6.a.CREATOR);
                     }
                 }
-                g6.e.m(parcel, z15);
+                vb.m(parcel, z14);
                 return new Status(i13, str2, pendingIntent, aVar);
         }
     }
 
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i3) {
+    public final /* synthetic */ Object[] newArray(int i7) {
         switch (this.a) {
             case 0:
-                return new g[i3];
+                return new g[i7];
             case 1:
-                return new h[i3];
+                return new h[i7];
             case 2:
-                return new Scope[i3];
+                return new Scope[i7];
             default:
-                return new Status[i3];
+                return new Status[i7];
         }
     }
 }

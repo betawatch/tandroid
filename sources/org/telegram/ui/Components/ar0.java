@@ -2,41 +2,41 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ar0 implements org.telegram.ui.Cells.i7 {
-    public final /* synthetic */ ws0 a;
+public final class ar0 implements org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ xs0 a;
 
-    public ar0(ws0 ws0Var) {
-        this.a = ws0Var;
+    public ar0(xs0 xs0Var) {
+        this.a = xs0Var;
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final void a(String str, boolean z10) {
-        ws0 ws0Var = this.a;
-        org.telegram.ui.ActionBar.d2 d2Var = ws0Var.y1;
-        if (!z10) {
-            ws0Var.b1(str);
+    @Override // org.telegram.ui.Cells.j7
+    public final void a(String str, boolean z9) {
+        xs0 xs0Var = this.a;
+        org.telegram.ui.ActionBar.f2 f2Var = xs0Var.x1;
+        if (!z9) {
+            xs0Var.b1(str);
             return;
         }
-        org.telegram.ui.ActionBar.t2 h = org.telegram.messenger.camera.q.h(d2Var.getParentActivity(), false, 1, null);
-        h.P = str;
-        h.Q = false;
-        CharSequence[] charSequenceArr = {org.telegram.messenger.bd.M0(2131747825, "Open"), org.telegram.messenger.bd.M0(2131751767, "Copy")};
-        org.telegram.ui.u uVar = new org.telegram.ui.u(5, this, str);
-        h.M = charSequenceArr;
-        h.L = uVar;
-        d2Var.showDialog(h);
+        org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(f2Var.getParentActivity(), false, 1, null);
+        h.O = str;
+        h.P = false;
+        CharSequence[] charSequenceArr = {org.telegram.messenger.hd.M0(2131747816, "Open"), org.telegram.messenger.hd.M0(2131751767, "Copy")};
+        og.j jVar = new og.j(6, this, str);
+        h.L = charSequenceArr;
+        h.K = jVar;
+        f2Var.showDialog(h);
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.zi ziVar) {
-        ws0 ws0Var = this.a;
-        ut.K0(ws0Var.y1, ziVar, ws0Var.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    @Override // org.telegram.ui.Cells.j7
+    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.ij ijVar) {
+        xs0 xs0Var = this.a;
+        vt.N0(xs0Var.x1, ijVar, xs0Var.t1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final boolean c() {
-        return !this.a.F1;
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d() {
+        return !this.a.E1;
     }
 }

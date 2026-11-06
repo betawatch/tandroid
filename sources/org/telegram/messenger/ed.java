@@ -1,56 +1,114 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ed implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ld b;
-    public final /* synthetic */ kd c;
+public final class ed {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public boolean g;
+    public int h;
+    public int i;
+    public boolean j;
+    public int k;
 
-    public /* synthetic */ ed(ld ldVar, kd kdVar, int i3) {
-        this.a = i3;
-        this.b = ldVar;
-        this.c = kdVar;
+    public static ed a(String str) {
+        ed edVar = null;
+        if (str != null && str.length() != 0) {
+            String[] split = str.split("\\|");
+            if (split.length >= 4) {
+                edVar = new ed();
+                edVar.a = split[0];
+                edVar.b = split[1];
+                edVar.c = split[2].toLowerCase();
+                edVar.d = split[3];
+                if (split.length >= 5) {
+                    edVar.h = Utilities.z(split[4]).intValue();
+                }
+                edVar.e = split.length >= 6 ? split[5] : "";
+                edVar.f = split.length >= 7 ? split[6] : edVar.c;
+                if (split.length >= 8) {
+                    edVar.g = Utilities.z(split[7]).intValue() == 1;
+                }
+                if (split.length >= 9) {
+                    edVar.i = Utilities.z(split[8]).intValue();
+                }
+                if (split.length >= 10) {
+                    edVar.k = Utilities.z(split[9]).intValue();
+                } else {
+                    edVar.k = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                }
+                if (!TextUtils.isEmpty(edVar.e)) {
+                    edVar.e = edVar.e.replace("-", "_");
+                }
+            }
+        }
+        return edVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ld ldVar = this.b;
-                ArrayList arrayList = ldVar.J;
-                kd kdVar = this.c;
-                arrayList.remove(kdVar);
-                ldVar.K.l(kdVar.a);
-                if (arrayList.isEmpty()) {
-                    ld.s();
-                }
-                hs.e().k(hs.D4, new Object[0]);
-                break;
-            case 1:
-                ld ldVar2 = this.b;
-                ArrayList arrayList2 = ldVar2.J;
-                kd kdVar2 = this.c;
-                arrayList2.remove(kdVar2);
-                ldVar2.K.l(kdVar2.a);
-                if (arrayList2.isEmpty()) {
-                    ld.s();
-                }
-                hs.e().k(hs.D4, new Object[0]);
-                break;
-            default:
-                ld ldVar3 = this.b;
-                ArrayList arrayList3 = ldVar3.J;
-                kd kdVar3 = this.c;
-                arrayList3.remove(kdVar3);
-                ldVar3.K.l(kdVar3.a);
-                if (arrayList3.isEmpty()) {
-                    ld.s();
-                }
-                hs.e().k(hs.D4, new Object[0]);
-                break;
+    public final String b() {
+        if (this.d != null && !i() && !j()) {
+            return "local_" + this.c;
         }
+        if (!j()) {
+            return this.c;
+        }
+        return "unofficial_" + this.c;
+    }
+
+    public final String c() {
+        return this.c.replace("_", "-");
+    }
+
+    public final File d() {
+        if (j()) {
+            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_base_"), this.c, ".xml"));
+        }
+        return null;
+    }
+
+    public final File e() {
+        if (i()) {
+            return new File(t0.h(), a8.p0.s(new StringBuilder("remote_"), this.c, ".xml"));
+        }
+        if (j()) {
+            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_"), this.c, ".xml"));
+        }
+        if (TextUtils.isEmpty(this.d)) {
+            return null;
+        }
+        return new File(this.d);
+    }
+
+    public final String f() {
+        String str = this.e;
+        if (str == null) {
+            str = "";
+        }
+        TextUtils.isEmpty(this.f);
+        return this.a + "|" + this.b + "|" + this.c + "|" + this.d + "|" + this.h + "|" + str + "|" + this.f + "|" + (this.g ? 1 : 0) + "|" + this.i + "|" + this.k;
+    }
+
+    public final boolean g() {
+        return (!j() || TextUtils.isEmpty(this.e) || this.e.equals(this.c)) ? false : true;
+    }
+
+    public final boolean h() {
+        return (TextUtils.isEmpty(this.d) || i() || j()) ? false : true;
+    }
+
+    public final boolean i() {
+        return "remote".equals(this.d);
+    }
+
+    public final boolean j() {
+        return "unofficial".equals(this.d);
     }
 }

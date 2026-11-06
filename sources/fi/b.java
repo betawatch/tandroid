@@ -1,32 +1,50 @@
 package fi;
 
-import android.view.View;
-import ei.k6;
-import org.telegram.ui.Components.tp0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements View.OnClickListener {
+public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ d b;
 
-    public /* synthetic */ b(m mVar, int i3) {
-        this.a = i3;
-        this.b = mVar;
+    public /* synthetic */ b(d dVar, int i7) {
+        this.a = i7;
+        this.b = dVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                m mVar = this.b;
-                tp0 tp0Var = mVar.a0;
-                k6 k6Var = mVar.a;
-                tp0Var.a(k6Var == null ? "" : k6Var.E);
+                d dVar = this.b;
+                dVar.getClass();
+                dVar.S = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.invalidate();
+                break;
+            case 1:
+                d dVar2 = this.b;
+                dVar2.getClass();
+                dVar2.b0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.invalidate();
+                break;
+            case 2:
+                d dVar3 = this.b;
+                dVar3.getClass();
+                dVar3.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar3.invalidate();
+                break;
+            case 3:
+                d dVar4 = this.b;
+                dVar4.getClass();
+                dVar4.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar4.invalidate();
                 break;
             default:
-                m mVar2 = this.b;
-                mVar2.a0.b(mVar2.a.E);
+                d dVar5 = this.b;
+                dVar5.getClass();
+                dVar5.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar5.invalidate();
                 break;
         }
     }

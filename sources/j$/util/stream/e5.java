@@ -16,7 +16,7 @@ public abstract class e5 implements i5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
@@ -44,8 +44,8 @@ public abstract class e5 implements i5 {
     }
 
     @Override // j$.util.stream.j5
-    public void o(long j10) {
-        this.a.o(j10);
+    public void o(long j3) {
+        this.a.o(j3);
     }
 
     @Override // j$.util.stream.j5

@@ -3,13 +3,13 @@ package org.telegram.tgnet;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class TLClassStore {
     static TLClassStore store;
     private final SparseArray<TLObjectFactory> classStore;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface TLObjectFactory {
         TLObject create();
     }
@@ -17,11 +17,11 @@ public class TLClassStore {
     public TLClassStore() {
         SparseArray<TLObjectFactory> sparseArray = new SparseArray<>();
         this.classStore = sparseArray;
-        final int i3 = 0;
+        final int i7 = 0;
         sparseArray.put(TLRPC.TL_error.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
-                switch (i3) {
+                switch (i7) {
                     case 0:
                         return new TLRPC.TL_error();
                     case 1:
@@ -442,13 +442,13 @@ public class TLClassStore {
         return store;
     }
 
-    public TLObject TLdeserialize(NativeByteBuffer nativeByteBuffer, int i3, boolean z10) {
-        TLObjectFactory tLObjectFactory = this.classStore.get(i3);
+    public TLObject TLdeserialize(NativeByteBuffer nativeByteBuffer, int i7, boolean z9) {
+        TLObjectFactory tLObjectFactory = this.classStore.get(i7);
         if (tLObjectFactory == null) {
             return null;
         }
         TLObject create = tLObjectFactory.create();
-        create.readParams(nativeByteBuffer, z10);
+        create.readParams(nativeByteBuffer, z9);
         return create;
     }
 }

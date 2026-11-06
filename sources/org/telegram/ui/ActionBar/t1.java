@@ -1,40 +1,71 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class t1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v1 b;
+public final class t1 extends Drawable implements a6 {
+    public final View a;
+    public final GradientDrawable b;
+    public final int c;
+    public final int d;
+    public final f6 e;
 
-    public /* synthetic */ t1(v1 v1Var, int i3) {
-        this.a = i3;
-        this.b = v1Var;
+    public t1(ch0 ch0Var, int i7, int i10, int i11, f6 f6Var) {
+        this.a = ch0Var;
+        this.c = i10;
+        this.d = i11;
+        this.e = f6Var;
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        this.b = gradientDrawable;
+        gradientDrawable.setColor(i7);
+        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(128.0f));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                v1 v1Var = this.b;
-                DialogInterface.OnShowListener onShowListener = v1Var.s1;
-                if (onShowListener != null) {
-                    onShowListener.onShow(v1Var);
-                    break;
-                }
-                break;
-            default:
-                v1 v1Var2 = this.b;
-                v1Var2.u().removeView(v1Var2.p1);
-                DialogInterface.OnDismissListener onDismissListener = v1Var2.t1;
-                if (onDismissListener != null) {
-                    onDismissListener.onDismiss(v1Var2);
-                    break;
-                }
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int width = this.a.getWidth();
+        int i7 = this.c;
+        int i10 = (int) ((width - i7) / 2.0f);
+        int height = (int) ((r0.getHeight() - i7) / 2.0f);
+        int width2 = (int) ((r0.getWidth() + i7) / 2.0f);
+        int height2 = (int) ((r0.getHeight() + i7) / 2.0f);
+        GradientDrawable gradientDrawable = this.b;
+        gradientDrawable.setBounds(i10, height, width2, height2);
+        gradientDrawable.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.b.getOpacity();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        int i7 = this.d;
+        if (i7 >= 0) {
+            this.b.setColor(k6.w0(i7, this.e));
+            invalidateSelf();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

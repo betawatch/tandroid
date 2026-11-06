@@ -1,193 +1,166 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tg implements RequestDelegate {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class tg implements Runnable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ c1 e;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ c1 n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ tg(c1 c1Var, int i3, String str, String str2, int i10) {
-        this.a = i10;
-        this.e = c1Var;
-        this.b = i3;
-        this.c = str;
-        this.d = str2;
+    public /* synthetic */ tg(ui uiVar, int i7, ArrayList arrayList, boolean z9, long j3, int i10, int i11, long j10) {
+        this.n = uiVar;
+        this.b = i7;
+        this.r = arrayList;
+        this.h = z9;
+        this.c = j3;
+        this.e = i10;
+        this.f = i11;
+        this.d = j10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0079, code lost:
-    
-        r1 = false;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x011a  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0100  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00b8  */
-    @Override // org.telegram.tgnet.RequestDelegate
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0070 A[Catch: Exception -> 0x005d, TryCatch #0 {Exception -> 0x005d, blocks: (B:48:0x0038, B:52:0x0047, B:9:0x0061, B:11:0x0070, B:12:0x0089, B:14:0x0090, B:16:0x00a0, B:18:0x00c3, B:19:0x00c7, B:25:0x00e8, B:29:0x0137, B:40:0x010d, B:43:0x0125, B:44:0x012d, B:45:0x00fb, B:46:0x007d), top: B:47:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0090 A[Catch: Exception -> 0x005d, TryCatch #0 {Exception -> 0x005d, blocks: (B:48:0x0038, B:52:0x0047, B:9:0x0061, B:11:0x0070, B:12:0x0089, B:14:0x0090, B:16:0x00a0, B:18:0x00c3, B:19:0x00c7, B:25:0x00e8, B:29:0x0137, B:40:0x010d, B:43:0x0125, B:44:0x012d, B:45:0x00fb, B:46:0x007d), top: B:47:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x010d A[Catch: Exception -> 0x005d, TryCatch #0 {Exception -> 0x005d, blocks: (B:48:0x0038, B:52:0x0047, B:9:0x0061, B:11:0x0070, B:12:0x0089, B:14:0x0090, B:16:0x00a0, B:18:0x00c3, B:19:0x00c7, B:25:0x00e8, B:29:0x0137, B:40:0x010d, B:43:0x0125, B:44:0x012d, B:45:0x00fb, B:46:0x007d), top: B:47:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007d A[Catch: Exception -> 0x005d, TryCatch #0 {Exception -> 0x005d, blocks: (B:48:0x0038, B:52:0x0047, B:9:0x0061, B:11:0x0070, B:12:0x0089, B:14:0x0090, B:16:0x00a0, B:18:0x00c3, B:19:0x00c7, B:25:0x00e8, B:29:0x0137, B:40:0x010d, B:43:0x0125, B:44:0x012d, B:45:0x00fb, B:46:0x007d), top: B:47:0x0038 }] */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        boolean z10;
+    public final void run() {
+        long j3;
         long j10;
-        boolean z11;
-        hp hpVar;
-        String str;
-        String str2;
+        int size;
+        int i7;
+        int i10;
+        ui uiVar;
+        int i11;
         switch (this.a) {
             case 0:
-                li liVar = (li) this.e;
-                String str3 = this.d;
-                if (tLObject == null) {
-                    g0.h3(new ch(liVar, str3, 1));
-                    break;
-                } else {
-                    TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference = (TLRPC.TL_emojiKeywordsDifference) tLObject;
-                    if (this.b != -1 && !tL_emojiKeywordsDifference.lang_code.equals(this.c)) {
-                        liVar.getMessagesStorage().a.c(new ch(liVar, str3, 0));
-                        break;
-                    } else {
-                        liVar.getMessagesStorage().a.c(new dg((Object) liVar, (Object) tL_emojiKeywordsDifference, str3, 3));
-                        g0.h3(new xf(liVar, 9));
-                        break;
-                    }
-                }
-                break;
-            default:
-                hp hpVar2 = (hp) this.e;
-                int i3 = hpVar2.x2;
-                int i10 = this.b;
-                if (i10 == i3) {
-                    if (tLObject instanceof TLRPC.TL_help_promoDataEmpty) {
-                        hpVar2.u2 = ((TLRPC.TL_help_promoDataEmpty) tLObject).expires;
-                        z10 = true;
-                    } else if (tLObject instanceof TLRPC.TL_help_promoData) {
-                        TLRPC.TL_help_promoData tL_help_promoData = (TLRPC.TL_help_promoData) tLObject;
-                        TLRPC.Peer peer = tL_help_promoData.peer;
-                        if (peer == null) {
-                            j10 = 0;
-                        } else {
-                            j10 = peer.user_id;
-                            if (j10 == 0) {
-                                long j11 = peer.chat_id;
-                                if (j11 != 0) {
-                                    j10 = -j11;
-                                    int i11 = 0;
-                                    while (true) {
-                                        if (i11 >= tL_help_promoData.chats.size()) {
-                                            hpVar = hpVar2;
-                                            break;
-                                        } else {
-                                            TLRPC.Chat chat = tL_help_promoData.chats.get(i11);
-                                            hpVar = hpVar2;
-                                            if (chat.id != tL_help_promoData.peer.chat_id) {
-                                                i11++;
-                                                hpVar2 = hpVar;
-                                            } else if (chat.kicked || chat.restricted) {
-                                                z11 = true;
-                                            }
-                                        }
-                                    }
-                                    hpVar2 = hpVar;
-                                } else {
-                                    j10 = -peer.channel_id;
-                                    int i12 = 0;
-                                    while (true) {
-                                        if (i12 < tL_help_promoData.chats.size()) {
-                                            TLRPC.Chat chat2 = tL_help_promoData.chats.get(i12);
-                                            if (chat2.id != tL_help_promoData.peer.channel_id) {
-                                                i12++;
-                                            } else if (chat2.kicked || chat2.restricted) {
-                                                hpVar2 = hpVar2;
-                                                z11 = true;
-                                            }
-                                        }
-                                    }
-                                    hpVar2 = hpVar2;
-                                }
-                                hpVar2.A2 = j10;
-                                if (!tL_help_promoData.proxy) {
-                                    hpVar2.B2 = 0;
-                                } else if (TextUtils.isEmpty(tL_help_promoData.psa_type)) {
-                                    hpVar2.B2 = 2;
-                                } else {
-                                    hpVar2.B2 = 1;
-                                    hpVar2.D2 = tL_help_promoData.psa_type;
-                                }
-                                hpVar2.E2 = t4.c.q(this.c, this.d);
-                                hpVar2.C2 = tL_help_promoData.psa_message;
-                                hpVar2.u2 = tL_help_promoData.expires;
-                                SharedPreferences.Editor edit = hp.e1().edit();
-                                edit.putLong("proxy_dialog", hpVar2.A2);
-                                edit.putString("proxyDialogAddress", hpVar2.E2);
-                                edit.putInt("promo_dialog_type", hpVar2.B2);
-                                str = hpVar2.C2;
-                                if (str == null) {
-                                    edit.putString("promo_psa_message", str);
-                                } else {
-                                    edit.remove("promo_psa_message");
-                                }
-                                str2 = hpVar2.D2;
-                                if (str2 == null) {
-                                    edit.putString("promo_psa_type", str2);
-                                } else {
-                                    edit.remove("promo_psa_type");
-                                }
-                                edit.putInt("nextPromoInfoCheckTime", hpVar2.u2);
-                                edit.commit();
-                                if (!z11) {
-                                    g0.h3(new yj(hpVar2, j10, tL_help_promoData, i10, 4));
-                                }
-                                z10 = z11;
+                ui uiVar2 = (ui) this.n;
+                ArrayList arrayList = (ArrayList) this.r;
+                int i12 = this.b;
+                boolean z9 = this.h;
+                long j11 = this.c;
+                int i13 = this.e;
+                int i14 = this.f;
+                long j12 = this.d;
+                if (i12 == 0) {
+                    try {
+                        if (!arrayList.isEmpty()) {
+                            if (z9) {
                             }
                         }
-                        z11 = false;
-                        hpVar2.A2 = j10;
-                        if (!tL_help_promoData.proxy) {
+                        uiVar2.getMessagesStorage().F(j11, j12, i13, i14);
+                        j3 = j11;
+                        j10 = j12;
+                        i14 = i14;
+                        if (arrayList.isEmpty()) {
+                            break;
                         }
-                        hpVar2.E2 = t4.c.q(this.c, this.d);
-                        hpVar2.C2 = tL_help_promoData.psa_message;
-                        hpVar2.u2 = tL_help_promoData.expires;
-                        SharedPreferences.Editor edit2 = hp.e1().edit();
-                        edit2.putLong("proxy_dialog", hpVar2.A2);
-                        edit2.putString("proxyDialogAddress", hpVar2.E2);
-                        edit2.putInt("promo_dialog_type", hpVar2.B2);
-                        str = hpVar2.C2;
-                        if (str == null) {
+                        uiVar2.getMessagesStorage().b.beginTransaction();
+                        SQLitePreparedStatement executeFast = j10 == 0 ? uiVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_topics VALUES(?, ?, ?, ?, ?, ?)") : uiVar2.getMessagesStorage().b.executeFast("REPLACE INTO media_v4 VALUES(?, ?, ?, ?, ?)");
+                        size = arrayList.size();
+                        i7 = 0;
+                        while (i7 < size) {
+                            Object obj = arrayList.get(i7);
+                            i7++;
+                            TLRPC.Message message = (TLRPC.Message) obj;
+                            if (ui.r(message)) {
+                                executeFast.requery();
+                                ij.r5(message);
+                                uiVar = uiVar2;
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(message.getObjectSize());
+                                message.serializeToStream(nativeByteBuffer);
+                                i11 = i12;
+                                executeFast.bindInteger(1, message.id);
+                                executeFast.bindLong(2, j3);
+                                int i15 = 3;
+                                if (j10 != 0) {
+                                    executeFast.bindLong(3, j10);
+                                    i15 = 4;
+                                }
+                                executeFast.bindInteger(i15, message.date);
+                                executeFast.bindInteger(i15 + 1, i14);
+                                executeFast.bindByteBuffer(i15 + 2, nativeByteBuffer);
+                                executeFast.step();
+                                nativeByteBuffer.reuse();
+                            } else {
+                                uiVar = uiVar2;
+                                i11 = i12;
+                            }
+                            uiVar2 = uiVar;
+                            i12 = i11;
                         }
-                        str2 = hpVar2.D2;
-                        if (str2 == null) {
+                        ui uiVar3 = uiVar2;
+                        i10 = i12;
+                        executeFast.dispose();
+                        if (z9 || i13 != 0 || i10 != 0) {
+                            int i16 = (z9 || i10 != 0) ? ((TLRPC.Message) arrayList.get(arrayList.size() - 1)).id : 1;
+                            if (i10 == 0) {
+                                uiVar3.getMessagesStorage().t(i16, j3, j10, ((TLRPC.Message) arrayList.get(0)).id, i14);
+                            } else {
+                                long j13 = j10;
+                                int i17 = i16;
+                                if (i13 != 0) {
+                                    uiVar3.getMessagesStorage().t(i17, j3, j13, i13, i14);
+                                } else {
+                                    uiVar3.getMessagesStorage().t(i17, j3, j13, ConnectionsManager.DEFAULT_DATACENTER_ID, i14);
+                                }
+                            }
                         }
-                        edit2.putInt("nextPromoInfoCheckTime", hpVar2.u2);
-                        edit2.commit();
-                        if (!z11) {
-                        }
-                        z10 = z11;
-                    } else {
-                        hpVar2.u2 = hpVar2.getConnectionsManager().getCurrentTime() + 3600;
-                        z10 = true;
-                    }
-                    if (z10) {
-                        hpVar2.A2 = 0L;
-                        hp.e1().edit().putLong("proxy_dialog", hpVar2.A2).remove("proxyDialogAddress").putInt("nextPromoInfoCheckTime", hpVar2.u2).commit();
-                        hpVar2.w2 = 0;
-                        hpVar2.v2 = false;
-                        g0.h3(new in(hpVar2, 8));
+                        uiVar3.getMessagesStorage().b.commitTransaction();
                         break;
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                        return;
                     }
                 }
+                j3 = j11;
+                j10 = j12;
+                uiVar2.getMessagesStorage().b.beginTransaction();
+                if (j10 == 0) {
+                }
+                size = arrayList.size();
+                i7 = 0;
+                while (i7 < size) {
+                }
+                ui uiVar32 = uiVar2;
+                i10 = i12;
+                executeFast.dispose();
+                if (z9) {
+                }
+                if (z9) {
+                }
+                if (i10 == 0) {
+                }
+                uiVar32.getMessagesStorage().b.commitTransaction();
+            default:
+                ((yr) this.n).E0(this.b, this.e, this.f, this.c, this.d, (TLRPC.messages_Messages) this.r, this.h);
                 break;
         }
+    }
+
+    public /* synthetic */ tg(yr yrVar, int i7, TLRPC.messages_Messages messages_messages, long j3, long j10, int i10, int i11, boolean z9) {
+        this.n = yrVar;
+        this.b = i7;
+        this.r = messages_messages;
+        this.c = j3;
+        this.d = j10;
+        this.e = i10;
+        this.f = i11;
+        this.h = z9;
     }
 }

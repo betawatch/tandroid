@@ -1,143 +1,99 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class s50 extends ViewGroup {
-    public AnimatorSet a;
-    public boolean b;
-    public final ArrayList c;
-    public org.telegram.ui.Components.y10 d;
-    public int e;
-    public final /* synthetic */ t50 f;
+public final class s50 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.ls b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s50(t50 t50Var, Context context) {
-        super(context);
-        this.f = t50Var;
-        this.c = new ArrayList();
+    public /* synthetic */ s50(org.telegram.messenger.ls lsVar, int i7) {
+        this.a = i7;
+        this.b = lsVar;
     }
 
-    public final void a(org.telegram.ui.Components.y10 y10Var) {
-        t50 t50Var = this.f;
-        t50Var.E.remove(y10Var.getKey());
-        t50Var.F.remove(y10Var);
-        y10Var.setOnClickListener(null);
-        AnimatorSet animatorSet = this.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            this.a.setupEndValues();
-            this.a.cancel();
-        }
-        this.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.ri0(8, this, y10Var));
-        this.a.setInterpolator(org.telegram.ui.Components.xq.h);
-        this.a.setDuration(320L);
-        this.d = y10Var;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.y10, Float>) View.SCALE_X, 1.0f, 0.75f));
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.y10, Float>) View.SCALE_Y, 1.0f, 0.75f));
-        arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.y10, Float>) View.ALPHA, 1.0f, 0.0f));
-        requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        ArrayList arrayList;
-        int i11;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i3);
-        int L = org.telegram.messenger.g0.L(8.0f);
-        int i12 = size - (L * 2);
-        int i13 = L;
-        int i14 = i13;
-        int i15 = 0;
-        int i16 = 0;
-        int i17 = 0;
-        int i18 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i15 >= childCount) {
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                u50 u50Var = (u50) this.b;
+                if (u50Var.I == null && surfaceTexture != null) {
+                    u50Var.I = new t50(u50Var, surfaceTexture);
+                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
+                    u50Var.I.postRunnable(new hz(this, 12));
+                    t50 t50Var = u50Var.I;
+                    t50Var.postRunnable(t50Var.x);
+                    break;
+                }
                 break;
-            }
-            View childAt = getChildAt(i15);
-            if (childAt instanceof org.telegram.ui.Components.y10) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(28.0f), TLObject.FLAG_30));
-                if (childAt != this.d && childAt.getMeasuredWidth() + i17 > i12) {
-                    i14 += org.telegram.messenger.g0.L(34.0f);
-                    i17 = 0;
-                }
-                if (childAt.getMeasuredWidth() + i18 > i12) {
-                    i13 += org.telegram.messenger.g0.L(34.0f);
-                    i18 = 0;
-                }
-                int i19 = L + i17;
-                if (!this.b) {
-                    org.telegram.ui.Components.y10 y10Var = this.d;
-                    if (childAt == y10Var) {
-                        childAt.setTranslationX(L + i18);
-                        childAt.setTranslationY(i13);
-                    } else if (y10Var != null) {
-                        float f10 = i19;
-                        if (childAt.getTranslationX() != f10) {
-                            i11 = 1;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, f10));
-                        } else {
-                            i11 = 1;
-                        }
-                        float f11 = i14;
-                        if (childAt.getTranslationY() != f11) {
-                            float[] fArr = new float[i11];
-                            fArr[0] = f11;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr));
-                        }
-                    } else {
-                        childAt.setTranslationX(i19);
-                        childAt.setTranslationY(i14);
-                    }
-                }
-                if (childAt != this.d) {
-                    int C = org.telegram.messenger.k5.C(6.0f, childAt.getMeasuredWidth(), i17);
-                    i16 = Math.max(i16, i14);
-                    i17 = C;
-                }
-                i18 = org.telegram.messenger.k5.C(6.0f, childAt.getMeasuredWidth(), i18);
-            }
-            i15++;
         }
-        int C2 = org.telegram.messenger.k5.C(28.0f, i16, L);
-        if (!this.b) {
-            AnimatorSet animatorSet = this.a;
-            if (animatorSet != null) {
-                this.e = C2;
-                animatorSet.playTogether(arrayList);
-                this.a.start();
-                this.b = true;
-            } else {
-                this.e = Math.max(C2, org.telegram.messenger.g0.L(28.0f) + i13 + L);
-            }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                u50 u50Var = (u50) this.b;
+                t50 t50Var = u50Var.I;
+                if (t50Var == null) {
+                    return true;
+                }
+                t50Var.postRunnable(new hz(t50Var, 14));
+                u50Var.I = null;
+                return true;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                TextureView textureView = photoViewer.B2;
+                if (textureView == null || !photoViewer.E3) {
+                    return true;
+                }
+                if (photoViewer.K3) {
+                    photoViewer.F3 = 2;
+                }
+                textureView.setSurfaceTexture(surfaceTexture);
+                photoViewer.B2.setVisibility(0);
+                photoViewer.E3 = false;
+                photoViewer.e0.invalidate();
+                return false;
         }
-        t50 t50Var = this.f;
-        t50Var.a.a(t50Var.F.isEmpty() ? 0.0f : Math.min(C2, t50Var.x));
-        setMeasuredDimension(size, this.e);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                if (((u50) this.b).I != null) {
+                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.F3 == 1) {
+                    photoViewer.q0(true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void c(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void a(SurfaceTexture surfaceTexture, int i7, int i10) {
+    }
+
+    private final void b(SurfaceTexture surfaceTexture, int i7, int i10) {
     }
 }

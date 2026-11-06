@@ -1,74 +1,64 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class lh implements b5.h {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ HorizontalScrollView d;
-    public final /* synthetic */ SparseIntArray e;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final /* synthetic */ int[] g;
+public final class lh implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public lh(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i3, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.a = atomicBoolean;
-        this.b = linearLayout;
-        this.c = i3;
-        this.d = horizontalScrollView;
-        this.e = sparseIntArray;
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.g = iArr;
+    public lh(c40 c40Var, org.telegram.messenger.s3 s3Var, boolean z9) {
+        this.d = c40Var;
+        this.c = s3Var;
+        this.b = z9;
     }
 
-    @Override // b5.h
-    public final void a(int i3) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i3), true);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                an anVar = (an) this.d;
+                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) this.c;
+                if (viewTreeObserver.isAlive()) {
+                    viewTreeObserver.removeOnPreDrawListener(this);
+                }
+                ui uiVar = anVar.o1;
+                if (uiVar != null) {
+                    uiVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                if (this.b) {
+                    return true;
+                }
+                this.b = true;
+                return anVar.K8();
+            default:
+                c40 c40Var = (c40) this.d;
+                k30 k30Var = c40Var.H1;
+                k30Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                c40Var.h4 = null;
+                z10 z10Var = c40Var.R3;
+                org.telegram.messenger.s3 s3Var = (org.telegram.messenger.s3) this.c;
+                z10Var.j(s3Var);
+                if (c40Var.j2) {
+                    c40Var.j2 = false;
+                    c40Var.Q0(true);
+                    if (this.b && s3Var != null) {
+                        k30Var.v0(0);
+                    }
+                    c40Var.j2 = true;
+                } else {
+                    c40Var.Q0(true);
+                }
+                c40Var.b.requestLayout();
+                return false;
+        }
     }
 
-    @Override // b5.h
-    public final void b(float f10, int i3, int i10) {
-        HorizontalScrollView horizontalScrollView;
-        if (this.a.get()) {
-            return;
-        }
-        float f11 = -1.0f;
-        float f12 = -1.0f;
-        int i11 = 0;
-        while (true) {
-            LinearLayout linearLayout = this.b;
-            int childCount = linearLayout.getChildCount();
-            horizontalScrollView = this.d;
-            if (i11 >= childCount) {
-                break;
-            }
-            org.telegram.ui.Components.vh0 vh0Var = (org.telegram.ui.Components.vh0) linearLayout.getChildAt(i11);
-            vh0Var.setOutlineProgress(i11 == i3 ? 1.0f - f10 : i11 == (i3 + 1) % this.c ? f10 : 0.0f);
-            if (i11 == i3) {
-                f11 = vh0Var.getX() - ((horizontalScrollView.getWidth() - vh0Var.getWidth()) / 2.0f);
-            }
-            if (i11 == i3 + 1) {
-                f12 = vh0Var.getX() - ((horizontalScrollView.getWidth() - vh0Var.getWidth()) / 2.0f);
-            }
-            i11++;
-        }
-        if (f11 != -1.0f && f12 != -1.0f) {
-            horizontalScrollView.setScrollX((int) com.google.android.recaptcha.internal.a.y(f12, f11, f10, f11));
-        }
-        SparseIntArray sparseIntArray = this.e;
-        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i3 + 1, 0) * f10) + ((1.0f - f10) * sparseIntArray.get(i3, 0))), false);
-    }
-
-    @Override // b5.h
-    public final void c(int i3) {
-        if (i3 == 0) {
-            this.a.set(false);
-        }
+    public lh(an anVar, ViewTreeObserver viewTreeObserver) {
+        this.d = anVar;
+        this.c = viewTreeObserver;
     }
 }

@@ -1,85 +1,94 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.KeyEvent;
+import android.view.View;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoIPServiceState;
-import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rb1 extends org.telegram.ui.Components.voip.d2 {
-    public final Path s;
-    public final RectF w;
-    public final /* synthetic */ zb1 x;
+public final /* synthetic */ class rb1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ec1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rb1(Activity activity, boolean z10, zb1 zb1Var) {
-        super(activity);
-        this.x = zb1Var;
-        this.c = new g2.g((int[]) null);
-        this.a = activity;
-        setSystemUiVisibility(1792);
-        org.telegram.messenger.g0.g2(activity);
-        OrientationHelper.cameraRotationDisabled = true;
-        if (!z10) {
-            this.e = true;
-        }
-        this.s = new Path();
-        this.w = new RectF();
+    public /* synthetic */ rb1(ec1 ec1Var, int i7) {
+        this.a = i7;
+        this.b = ec1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        zb1 zb1Var = this.x;
-        if (!zb1Var.F0 || getAlpha() == 0.0f) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        VoIPService sharedInstance;
+        switch (this.a) {
+            case 0:
+                if (VoIPService.getSharedInstance() != null) {
+                    ec1 ec1Var = this.b;
+                    org.telegram.messenger.g0.r(ec1Var.R0);
+                    ec1Var.Q0 = false;
+                    VoIPService.getSharedInstance().hangUp();
+                    break;
+                }
+                break;
+            case 1:
+                ec1 ec1Var2 = this.b;
+                if (ec1Var2.m0 && ec1Var2.l0 && System.currentTimeMillis() - ec1Var2.J0 > 500) {
+                    org.telegram.messenger.g0.r(ec1Var2.R0);
+                    ec1Var2.Q0 = false;
+                    ec1Var2.J0 = System.currentTimeMillis();
+                    ec1Var2.Z.setRelativePosition(ec1Var2.Y);
+                    ec1Var2.a0 = true;
+                    ec1Var2.G0 = true;
+                    ec1Var2.p0 = ec1Var2.o0;
+                    ec1Var2.y();
+                    break;
+                }
+                break;
+            case 2:
+                ec1 ec1Var3 = this.b;
+                if (ec1Var3.G0 && System.currentTimeMillis() - ec1Var3.J0 > 500) {
+                    org.telegram.messenger.g0.r(ec1Var3.R0);
+                    ec1Var3.Q0 = false;
+                    ec1Var3.J0 = System.currentTimeMillis();
+                    ec1Var3.Y.setRelativePosition(ec1Var3.Z);
+                    ec1Var3.a0 = false;
+                    ec1Var3.G0 = false;
+                    ec1Var3.p0 = ec1Var3.o0;
+                    ec1Var3.y();
+                    break;
+                }
+                break;
+            case 3:
+                long currentTimeMillis = System.currentTimeMillis();
+                ec1 ec1Var4 = this.b;
+                if (currentTimeMillis - ec1Var4.J0 >= 500) {
+                    ec1Var4.J0 = System.currentTimeMillis();
+                    boolean z9 = ec1Var4.B0;
+                    if (!z9 && ec1Var4.A0) {
+                        ec1Var4.d(!z9);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                long currentTimeMillis2 = System.currentTimeMillis();
+                ec1 ec1Var5 = this.b;
+                if (currentTimeMillis2 - ec1Var5.J0 >= 500) {
+                    ec1Var5.J0 = System.currentTimeMillis();
+                    if (ec1Var5.A0) {
+                        ec1Var5.d(!ec1Var5.B0);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                ec1 ec1Var6 = this.b;
+                if (ec1Var6.K.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
+                    ec1Var6.s();
+                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(ec1Var6.b, false, Integer.valueOf(sharedInstance.isBluetoothOn() ? 2 : sharedInstance.isSpeakerphoneOn() ? 0 : 1));
+                    break;
+                }
+                break;
+            default:
+                this.b.g();
+                break;
         }
-        float scaleX = zb1Var.d0.getScaleX() * zb1Var.d0.getWidth();
-        float scaleY = zb1Var.d0.getScaleY() * zb1Var.d0.getHeight();
-        float x10 = zb1Var.d0.getX() + ((zb1Var.d0.getWidth() - scaleX) / 2.0f);
-        float y9 = zb1Var.d0.getY() + ((zb1Var.d0.getHeight() - scaleY) / 2.0f);
-        canvas.save();
-        Path path = this.s;
-        path.rewind();
-        RectF rectF = this.w;
-        rectF.set(x10, y9, scaleX + x10, scaleY + y9);
-        float L = org.telegram.messenger.g0.L(4.0f);
-        path.addRoundRect(rectF, L, L, Path.Direction.CW);
-        path.close();
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        VoIPServiceState sharedState;
-        zb1 zb1Var = this.x;
-        if (zb1Var.H0 || zb1Var.F0) {
-            return false;
-        }
-        int keyCode = keyEvent.getKeyCode();
-        if (keyCode == 4 && keyEvent.getAction() == 1) {
-            zb1Var.j();
-            return true;
-        }
-        if ((keyCode != 25 && keyCode != 24) || zb1Var.q0 != 15 || (sharedState = VoIPService.getSharedState()) == null) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        sharedState.stopRinging();
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.x.n1) {
-            return;
-        }
-        super.draw(canvas);
     }
 }

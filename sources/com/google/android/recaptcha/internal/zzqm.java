@@ -1,56 +1,56 @@
 package com.google.android.recaptcha.internal;
 
-import a1.g;
+import a8.p0;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
-import k2.p1;
+import jg.g;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzqm implements Iterable, Serializable {
     public static final zzqm zzb = new zzqk(zzsv.zzb);
     private int zza = 0;
 
     static {
-        int i3 = zzqa.zza;
+        int i7 = zzqa.zza;
     }
 
-    public static int zzj(int i3, int i10, int i11) {
-        int i12 = i10 - i3;
-        if ((i3 | i10 | i12 | (i11 - i10)) >= 0) {
+    public static int zzj(int i7, int i10, int i11) {
+        int i12 = i10 - i7;
+        if ((i7 | i10 | i12 | (i11 - i10)) >= 0) {
             return i12;
         }
-        if (i3 < 0) {
-            throw new IndexOutOfBoundsException(p1.j(i3, "Beginning index: ", " < 0"));
+        if (i7 < 0) {
+            throw new IndexOutOfBoundsException(g.k(i7, "Beginning index: ", " < 0"));
         }
-        if (i10 < i3) {
-            throw new IndexOutOfBoundsException(g.n(i3, i10, "Beginning index larger than ending index: ", ", "));
+        if (i10 < i7) {
+            throw new IndexOutOfBoundsException(p0.m(i7, i10, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(g.n(i10, i11, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(p0.m(i10, i11, "End index: ", " >= "));
     }
 
-    public static zzqm zzl(byte[] bArr, int i3, int i10) {
-        zzj(i3, i3 + i10, bArr.length);
+    public static zzqm zzl(byte[] bArr, int i7, int i10) {
+        zzj(i7, i7 + i10, bArr.length);
         byte[] bArr2 = new byte[i10];
-        System.arraycopy(bArr, i3, bArr2, 0, i10);
+        System.arraycopy(bArr, i7, bArr2, 0, i10);
         return new zzqk(bArr2);
     }
 
     public abstract boolean equals(Object obj);
 
     public final int hashCode() {
-        int i3 = this.zza;
-        if (i3 == 0) {
+        int i7 = this.zza;
+        if (i7 == 0) {
             int zzd = zzd();
-            i3 = zzf(zzd, 0, zzd);
-            if (i3 == 0) {
-                i3 = 1;
+            i7 = zzf(zzd, 0, zzd);
+            if (i7 == 0) {
+                i7 = 1;
             }
-            this.zza = i3;
+            this.zza = i7;
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.lang.Iterable
@@ -68,20 +68,20 @@ public abstract class zzqm implements Iterable, Serializable {
         sb2.append(" size=");
         sb2.append(zzd);
         sb2.append(" contents=\"");
-        return g.s(sb2, zza, "\">");
+        return p0.s(sb2, zza, "\">");
     }
 
-    public abstract byte zza(int i3);
+    public abstract byte zza(int i7);
 
-    public abstract byte zzb(int i3);
+    public abstract byte zzb(int i7);
 
     public abstract int zzd();
 
-    public abstract void zze(byte[] bArr, int i3, int i10, int i11);
+    public abstract void zze(byte[] bArr, int i7, int i10, int i11);
 
-    public abstract int zzf(int i3, int i10, int i11);
+    public abstract int zzf(int i7, int i10, int i11);
 
-    public abstract zzqm zzg(int i3, int i10);
+    public abstract zzqm zzg(int i7, int i10);
 
     public abstract String zzh(Charset charset);
 

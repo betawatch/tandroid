@@ -6,17 +6,17 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
-import org.telegram.ui.Components.nh;
-import org.telegram.ui.a60;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.g60;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ j b;
 
-    public /* synthetic */ f(j jVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ f(j jVar, int i7) {
+        this.a = i7;
         this.b = jVar;
     }
 
@@ -150,16 +150,16 @@ public final class f extends CameraCaptureSession.StateCallback {
                                 throw new IllegalStateException("Camera request surfaces are unavailable");
                             }
                             jVar5.C = jVar5.x(cameraDevice2, jVar5.u, jVar5.l(), true, true);
-                            s sVar = this.b.w;
-                            if (sVar != null) {
-                                Handler handler = sVar.u;
-                                if (sVar.r0 && handler != null) {
-                                    handler.post(new o(sVar, 0));
+                            t tVar = this.b.w;
+                            if (tVar != null) {
+                                Handler handler = tVar.u;
+                                if (tVar.r0 && handler != null) {
+                                    handler.post(new o(tVar, 0));
                                 }
                             }
                             j jVar6 = this.b;
-                            boolean z10 = jVar6.n0 && jVar6.y0 != null;
-                            boolean z11 = jVar6.Z && !z10;
+                            boolean z9 = jVar6.n0 && jVar6.y0 != null;
+                            boolean z10 = jVar6.Z && !z9;
                             CameraCaptureSession cameraCaptureSession2 = jVar6.A;
                             CaptureRequest.Builder builder = jVar6.C;
                             if (cameraCaptureSession2 != null && builder != null) {
@@ -169,13 +169,13 @@ public final class f extends CameraCaptureSession.StateCallback {
                             if (jVar7.n0) {
                                 jVar7.p0 = true;
                             }
-                            if (!z10) {
+                            if (!z9) {
                                 jVar7.Z = false;
                             }
-                            if (z11) {
+                            if (z10) {
                                 jVar7.X = false;
                             }
-                            jVar7.a0 = z11;
+                            jVar7.a0 = z10;
                             n nVar = this.b.j;
                             StringBuilder sb2 = new StringBuilder("capture session configured: facing=");
                             sb2.append(this.b.G);
@@ -185,7 +185,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                             sb2.append(j.z(this.b.H0));
                             sb2.append(", segmentElapsedMs=");
                             sb2.append(j.z(this.b.F0));
-                            if (z11) {
+                            if (z10) {
                                 StringBuilder sb3 = new StringBuilder(", switchPath=");
                                 sb3.append(this.b.E0 ? "WARM_DEVICE" : "SEQUENTIAL");
                                 sb3.append(", switchElapsedMs=");
@@ -199,15 +199,15 @@ public final class f extends CameraCaptureSession.StateCallback {
                             j jVar8 = this.b;
                             jVar8.c.post(new a(jVar8, 8));
                             j jVar9 = this.b;
-                            nh nhVar = jVar9.k;
+                            qt qtVar = jVar9.k;
                             m0 m0Var = jVar9.G;
                             n0 n0Var = jVar9.I;
                             o0 o0Var = jVar9.J;
                             Size size = jVar9.q;
                             Size size2 = jVar9.r;
                             j jVar10 = this.b;
-                            ((t0) nhVar.b).i.post(new a60(nhVar, new h(m0Var, n0Var, o0Var, size, size2, jVar10.O, jVar10.F()), z11, 18));
-                            if (z10) {
+                            ((t0) qtVar.b).i.post(new g60(qtVar, new h(m0Var, n0Var, o0Var, size, size2, jVar10.O, jVar10.F()), z10, 18));
+                            if (z9) {
                                 j.f(this.b);
                                 return;
                             }

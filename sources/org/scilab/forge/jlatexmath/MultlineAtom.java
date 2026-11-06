@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class MultlineAtom extends Atom {
     public static final int GATHER = 1;
@@ -11,16 +11,16 @@ public class MultlineAtom extends Atom {
     private boolean isPartial;
     private int type;
 
-    public MultlineAtom(boolean z10, ArrayOfAtoms arrayOfAtoms, int i3) {
-        this.isPartial = z10;
+    public MultlineAtom(boolean z9, ArrayOfAtoms arrayOfAtoms, int i7) {
+        this.isPartial = z9;
         this.column = arrayOfAtoms;
-        this.type = i3;
+        this.type = i7;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         ArrayOfAtoms arrayOfAtoms;
-        int i3;
+        int i7;
         float textwidth = teXEnvironment.getTextwidth();
         if (textwidth != Float.POSITIVE_INFINITY) {
             if (this.type != 2) {
@@ -36,8 +36,8 @@ public class MultlineAtom extends Atom {
                 int i12 = 1;
                 while (true) {
                     arrayOfAtoms = this.column;
-                    i3 = arrayOfAtoms.row;
-                    if (i12 >= i3 - 1) {
+                    i7 = arrayOfAtoms.row;
+                    if (i12 >= i7 - 1) {
                         break;
                     }
                     Atom atom2 = arrayOfAtoms.array.get(i12).get(0);
@@ -49,8 +49,8 @@ public class MultlineAtom extends Atom {
                     verticalBox.add(new HorizontalBox(atom2.createBox(teXEnvironment), textwidth, i13));
                     i12++;
                 }
-                if (i3 > 1) {
-                    Atom atom3 = arrayOfAtoms.array.get(i3 - 1).get(0);
+                if (i7 > 1) {
+                    Atom atom3 = arrayOfAtoms.array.get(i7 - 1).get(0);
                     int i14 = this.type != 1 ? 1 : 2;
                     int i15 = atom3.alignment;
                     if (i15 != -1) {
@@ -68,7 +68,7 @@ public class MultlineAtom extends Atom {
         return new MatrixAtom(this.isPartial, this.column, "").createBox(teXEnvironment);
     }
 
-    public MultlineAtom(ArrayOfAtoms arrayOfAtoms, int i3) {
-        this(false, arrayOfAtoms, i3);
+    public MultlineAtom(ArrayOfAtoms arrayOfAtoms, int i7) {
+        this(false, arrayOfAtoms, i7);
     }
 }

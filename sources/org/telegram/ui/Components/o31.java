@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class o31 extends MetricAffectingSpan {
     public Typeface a;
@@ -18,9 +18,9 @@ public final class o31 extends MetricAffectingSpan {
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        int i3 = this.c;
-        if (i3 >= 0) {
-            this.b = org.telegram.ui.ActionBar.k6.v0(i3);
+        int i7 = this.c;
+        if (i7 >= 0) {
+            this.b = org.telegram.ui.ActionBar.k6.v0(i7);
         }
         Typeface typeface = this.a;
         if (typeface != null) {
@@ -48,9 +48,9 @@ public final class o31 extends MetricAffectingSpan {
         this.a = typeface;
     }
 
-    public o31(Typeface typeface, int i3) {
+    public o31(Typeface typeface, int i7) {
         this.c = -1;
         this.a = typeface;
-        this.b = i3;
+        this.b = i7;
     }
 }

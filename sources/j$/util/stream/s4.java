@@ -30,7 +30,7 @@ public final class s4 extends u4 implements i5 {
     }
 
     @Override // j$.util.stream.u4, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         this.b++;
     }
 }

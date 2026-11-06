@@ -1,56 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class i2 implements View.OnClickListener {
     public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] b;
 
-    public /* synthetic */ i2(int i3) {
-        this.a = i3;
+    public /* synthetic */ i2(org.telegram.ui.ActionBar.v2[] v2VarArr, int i7) {
+        this.a = i7;
+        this.b = v2VarArr;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.v1(textView);
+                this.b[0].dismiss();
                 break;
             case 1:
-                if (i3 == 6) {
-                    org.telegram.messenger.g0.v1(textView);
-                    break;
-                }
+                this.b[0].dismiss();
                 break;
             case 2:
-                if (i3 == 6) {
-                    org.telegram.messenger.g0.v1(textView);
-                    break;
-                }
-                break;
-            case 3:
-                if (i3 == 6) {
-                    org.telegram.messenger.g0.v1(textView);
-                    break;
-                }
-                break;
-            case 4:
-                if (i3 == 6) {
-                    textView.clearFocus();
-                    org.telegram.messenger.g0.v1(textView);
-                    break;
-                }
+                this.b[0].dismiss();
                 break;
             default:
-                if (i3 == 6) {
-                    textView.clearFocus();
-                    org.telegram.messenger.g0.v1(textView);
-                    break;
-                }
+                this.b[0].dismiss();
                 break;
         }
-        return false;
     }
 }

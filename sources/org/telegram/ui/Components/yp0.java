@@ -3,18 +3,18 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Rect;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class yp0 extends org.telegram.ui.cx0 {
-    public final /* synthetic */ ws0 x;
+public final class yp0 extends org.telegram.ui.kx0 {
+    public final /* synthetic */ xs0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yp0(ws0 ws0Var, Context context, ei.n6 n6Var, xp0 xp0Var) {
-        super(context, n6Var, xp0Var);
-        this.x = ws0Var;
+    public yp0(xs0 xs0Var, Context context, di.m6 m6Var, xp0 xp0Var) {
+        super(context, m6Var, xp0Var);
+        this.x = xs0Var;
     }
 
-    @Override // org.telegram.ui.cx0
+    @Override // org.telegram.ui.kx0
     public final void b() {
         cq0 cq0Var;
         int measuredWidth = getMeasuredWidth();
@@ -23,30 +23,30 @@ public final class yp0 extends org.telegram.ui.cx0 {
         rect.set(0, 0, measuredWidth, visualHeight);
         setClipBounds(rect);
         invalidate();
-        ws0 ws0Var = this.x;
-        rr0[] rr0VarArr = ws0Var.n0;
-        if (rr0VarArr != null) {
-            for (rr0 rr0Var : rr0VarArr) {
-                if (rr0Var != null && (cq0Var = rr0Var.h) != null) {
+        xs0 xs0Var = this.x;
+        sr0[] sr0VarArr = xs0Var.m0;
+        if (sr0VarArr != null) {
+            for (sr0 sr0Var : sr0VarArr) {
+                if (sr0Var != null && (cq0Var = sr0Var.h) != null) {
                     int paddingTop = cq0Var.getPaddingTop();
-                    cq0 cq0Var2 = rr0Var.h;
+                    cq0 cq0Var2 = sr0Var.h;
                     int paddingLeft = cq0Var2.getPaddingLeft();
-                    int j02 = ws0Var.j0(rr0Var.F);
-                    int paddingRight = rr0Var.h.getPaddingRight();
-                    cq0 cq0Var3 = rr0Var.h;
-                    int i02 = ws0Var.i0(ws0Var.H0());
-                    cq0Var3.i3 = i02;
+                    int j02 = xs0Var.j0(sr0Var.E);
+                    int paddingRight = sr0Var.h.getPaddingRight();
+                    cq0 cq0Var3 = sr0Var.h;
+                    int i02 = xs0Var.i0(xs0Var.H0());
+                    cq0Var3.h3 = i02;
                     cq0Var2.setPadding(paddingLeft, j02, paddingRight, i02);
-                    int paddingTop2 = paddingTop - rr0Var.h.getPaddingTop();
+                    int paddingTop2 = paddingTop - sr0Var.h.getPaddingTop();
                     if (paddingTop2 != 0) {
-                        org.telegram.messenger.g0.J(rr0Var.h, new dp0(rr0Var, paddingTop2, 2));
+                        org.telegram.messenger.g0.J(sr0Var.h, new bp0(sr0Var, paddingTop2, 2));
                     }
                 }
-                if (rr0Var != null && rr0Var.s != null) {
-                    ws0Var.I1(rr0Var);
+                if (sr0Var != null && sr0Var.s != null) {
+                    xs0Var.I1(sr0Var);
                 }
             }
         }
-        ws0Var.U();
+        xs0Var.U();
     }
 }

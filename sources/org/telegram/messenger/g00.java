@@ -1,45 +1,36 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x00 b;
-    public final /* synthetic */ long c;
+public final class g00 implements RequestDelegate {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ k00 c;
 
-    public /* synthetic */ g00(x00 x00Var, long j10, int i3) {
-        this.a = i3;
-        this.b = x00Var;
-        this.c = j10;
+    public g00(k00 k00Var, long j3, int i7) {
+        this.c = k00Var;
+        this.a = j3;
+        this.b = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        long j10 = this.c;
-        x00 x00Var = this.b;
-        switch (i3) {
-            case 0:
-                hs.f(x00Var.currentAccount).k(hs.O1, Long.valueOf(j10));
-                break;
-            default:
-                ArrayList arrayList = (ArrayList) x00Var.n.S.f(j10);
-                if (arrayList != null) {
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        zi ziVar = (zi) arrayList.get(i10);
-                        if (ziVar == null || ziVar.k == null) {
-                            arrayList2.add(null);
-                        } else {
-                            arrayList2.add(x00Var.getMessagesStorage().e0(ziVar.f1(), zi.B0(ziVar.k)));
-                        }
-                    }
-                    g0.h3(new fg(x00Var, arrayList2, arrayList, 5));
-                    break;
-                }
-                break;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        if (tL_error == null) {
+            TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
+            k00 k00Var = this.c;
+            qp messagesController = k00Var.getMessagesController();
+            int i7 = tL_messages_affectedHistory.pts;
+            int i10 = tL_messages_affectedHistory.pts_count;
+            long j3 = this.a;
+            messagesController.L3(i7, i10, j3);
+            int i11 = tL_messages_affectedHistory.offset;
+            if (i11 > 0) {
+                k00Var.c(this.b, i11, j3);
+            }
         }
     }
 }

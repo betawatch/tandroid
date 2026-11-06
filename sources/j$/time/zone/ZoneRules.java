@@ -65,10 +65,10 @@ public final class ZoneRules implements Serializable {
             this.d = k;
         } else {
             ArrayList arrayList = new ArrayList();
-            int i3 = 0;
-            while (i3 < jArr2.length) {
-                int i10 = i3 + 1;
-                b bVar = new b(jArr2[i3], zoneOffsetArr2[i3], zoneOffsetArr2[i10]);
+            int i7 = 0;
+            while (i7 < jArr2.length) {
+                int i10 = i7 + 1;
+                b bVar = new b(jArr2[i7], zoneOffsetArr2[i7], zoneOffsetArr2[i10]);
                 if (bVar.j()) {
                     arrayList.add(bVar.b);
                     arrayList.add(bVar.b.M(bVar.d.getTotalSeconds() - bVar.c.getTotalSeconds()));
@@ -76,7 +76,7 @@ public final class ZoneRules implements Serializable {
                     arrayList.add(bVar.b.M(bVar.d.getTotalSeconds() - bVar.c.getTotalSeconds()));
                     arrayList.add(bVar.b);
                 }
-                i3 = i10;
+                i7 = i10;
             }
             this.d = (LocalDateTime[]) arrayList.toArray(new LocalDateTime[arrayList.size()]);
         }
@@ -107,8 +107,8 @@ public final class ZoneRules implements Serializable {
         this.g = timeZone;
     }
 
-    public static ZoneOffset h(int i3) {
-        return ZoneOffset.O(i3 / 1000);
+    public static ZoneOffset h(int i7) {
+        return ZoneOffset.O(i7 / 1000);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
@@ -128,19 +128,19 @@ public final class ZoneRules implements Serializable {
         if (jArr.length == 0) {
             return this.b[0];
         }
-        long j10 = instant.a;
-        if (this.f.length > 0 && j10 > jArr[jArr.length - 1]) {
-            b[] b10 = b(c(j10, this.e[r8.length - 1]));
+        long j3 = instant.a;
+        if (this.f.length > 0 && j3 > jArr[jArr.length - 1]) {
+            b[] b10 = b(c(j3, this.e[r8.length - 1]));
             b bVar = null;
-            for (int i3 = 0; i3 < b10.length; i3++) {
-                bVar = b10[i3];
-                if (j10 < bVar.a) {
+            for (int i7 = 0; i7 < b10.length; i7++) {
+                bVar = b10[i7];
+                if (j3 < bVar.a) {
                     return bVar.c;
                 }
             }
             return bVar.d;
         }
-        int binarySearch = Arrays.binarySearch(jArr, j10);
+        int binarySearch = Arrays.binarySearch(jArr, j3);
         if (binarySearch < 0) {
             binarySearch = (-binarySearch) - 2;
         }
@@ -166,8 +166,8 @@ public final class ZoneRules implements Serializable {
         }
         Object[] objArr = {bVar.c, bVar.d};
         ArrayList arrayList = new ArrayList(2);
-        for (int i3 = 0; i3 < 2; i3++) {
-            arrayList.add(Objects.requireNonNull(objArr[i3]));
+        for (int i7 = 0; i7 < 2; i7++) {
+            arrayList.add(Objects.requireNonNull(objArr[i7]));
         }
         return Collections.unmodifiableList(arrayList);
     }
@@ -193,20 +193,20 @@ public final class ZoneRules implements Serializable {
     */
     public final Object d(LocalDateTime localDateTime) {
         Object obj = null;
-        int i3 = 0;
+        int i7 = 0;
         if (this.g != null) {
             b[] b10 = b(localDateTime.a.getYear());
             if (b10.length == 0) {
                 return h(this.g.getOffset(j$.com.android.tools.r8.a.v(localDateTime, this.b[0]) * 1000));
             }
             int length = b10.length;
-            while (i3 < length) {
-                b bVar = b10[i3];
+            while (i7 < length) {
+                b bVar = b10[i7];
                 Object a10 = a(localDateTime, bVar);
                 if ((a10 instanceof b) || a10.equals(bVar.c)) {
                     return a10;
                 }
-                i3++;
+                i7++;
                 obj = a10;
             }
             return obj;
@@ -217,21 +217,21 @@ public final class ZoneRules implements Serializable {
         if (this.f.length > 0) {
             LocalDateTime localDateTime2 = this.d[r0.length - 1];
             if (localDateTime2 == null) {
-                long z10 = localDateTime.a.z();
-                long z11 = localDateTime2.a.z();
-                if (z10 <= z11) {
-                    if (z10 == z11) {
+                long z9 = localDateTime.a.z();
+                long z10 = localDateTime2.a.z();
+                if (z9 <= z10) {
+                    if (z9 == z10) {
                     }
                 }
                 b[] b11 = b(localDateTime.a.getYear());
                 int length2 = b11.length;
-                while (i3 < length2) {
-                    b bVar2 = b11[i3];
+                while (i7 < length2) {
+                    b bVar2 = b11[i7];
                     Object a11 = a(localDateTime, bVar2);
                     if ((a11 instanceof b) || a11.equals(bVar2.c)) {
                         return a11;
                     }
-                    i3++;
+                    i7++;
                     obj = a11;
                 }
                 return obj;
@@ -267,59 +267,59 @@ public final class ZoneRules implements Serializable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final b[] b(int i3) {
+    public final b[] b(int i7) {
         LocalDate H;
         b[] bVarArr = l;
-        Integer valueOf = Integer.valueOf(i3);
+        Integer valueOf = Integer.valueOf(i7);
         b[] bVarArr2 = (b[]) this.h.get(valueOf);
         if (bVarArr2 != null) {
             return bVarArr2;
         }
-        long j10 = 1;
+        long j3 = 1;
         final int i10 = 0;
         final int i11 = 1;
         if (this.g != null) {
-            if (i3 < 1800) {
+            if (i7 < 1800) {
                 return bVarArr;
             }
             LocalDateTime localDateTime = LocalDateTime.c;
-            LocalDate of2 = LocalDate.of(i3 - 1, 12, 31);
+            LocalDate of2 = LocalDate.of(i7 - 1, 12, 31);
             j$.time.temporal.a.HOUR_OF_DAY.w(0);
             long v = j$.com.android.tools.r8.a.v(new LocalDateTime(of2, j$.time.h.h[0]), this.b[0]);
-            long j11 = 1000;
+            long j10 = 1000;
             int offset = this.g.getOffset(v * 1000);
-            long j12 = 31968000 + v;
-            while (v < j12) {
-                long j13 = v + 7776000;
-                long j14 = j11;
-                if (offset != this.g.getOffset(j13 * j14)) {
-                    while (j13 - v > j10) {
-                        long R = j$.com.android.tools.r8.a.R(j13 + v, 2L);
-                        if (this.g.getOffset(R * j14) == offset) {
+            long j11 = 31968000 + v;
+            while (v < j11) {
+                long j12 = v + 7776000;
+                long j13 = j10;
+                if (offset != this.g.getOffset(j12 * j13)) {
+                    while (j12 - v > j3) {
+                        long R = j$.com.android.tools.r8.a.R(j12 + v, 2L);
+                        if (this.g.getOffset(R * j13) == offset) {
                             v = R;
                         } else {
-                            j13 = R;
+                            j12 = R;
                         }
-                        j10 = 1;
+                        j3 = 1;
                     }
-                    if (this.g.getOffset(v * j14) == offset) {
-                        v = j13;
+                    if (this.g.getOffset(v * j13) == offset) {
+                        v = j12;
                     }
                     ZoneOffset h = h(offset);
-                    int offset2 = this.g.getOffset(v * j14);
+                    int offset2 = this.g.getOffset(v * j13);
                     ZoneOffset h7 = h(offset2);
-                    if (c(v, h7) == i3) {
+                    if (c(v, h7) == i7) {
                         bVarArr = (b[]) Arrays.copyOf(bVarArr, bVarArr.length + 1);
                         bVarArr[bVarArr.length - 1] = new b(v, h, h7);
                     }
                     offset = offset2;
                 } else {
-                    v = j13;
+                    v = j12;
                 }
-                j11 = j14;
-                j10 = 1;
+                j10 = j13;
+                j3 = 1;
             }
-            if (1916 <= i3 && i3 < 2100) {
+            if (1916 <= i7 && i7 < 2100) {
                 this.h.putIfAbsent(valueOf, bVarArr);
             }
             return bVarArr;
@@ -332,14 +332,14 @@ public final class ZoneRules implements Serializable {
             byte b10 = eVar.b;
             if (b10 < 0) {
                 j jVar = eVar.a;
-                long j15 = i3;
+                long j14 = i7;
                 r.c.getClass();
-                int H2 = jVar.H(r.k(j15)) + 1 + eVar.b;
+                int H2 = jVar.H(r.k(j14)) + 1 + eVar.b;
                 LocalDate localDate = LocalDate.d;
-                j$.time.temporal.a.YEAR.w(j15);
+                j$.time.temporal.a.YEAR.w(j14);
                 Objects.requireNonNull(jVar, "month");
                 j$.time.temporal.a.DAY_OF_MONTH.w(H2);
-                H = LocalDate.H(i3, jVar.getValue(), H2);
+                H = LocalDate.H(i7, jVar.getValue(), H2);
                 DayOfWeek dayOfWeek = eVar.c;
                 if (dayOfWeek != null) {
                     final int value = dayOfWeek.getValue();
@@ -348,19 +348,19 @@ public final class ZoneRules implements Serializable {
                         public final Temporal q(Temporal temporal) {
                             switch (i11) {
                                 case 0:
-                                    int j16 = temporal.j(a.DAY_OF_WEEK);
+                                    int j15 = temporal.j(a.DAY_OF_WEEK);
                                     int i13 = value;
-                                    if (j16 == i13) {
+                                    if (j15 == i13) {
                                         return temporal;
                                     }
-                                    return temporal.d(j16 - i13 >= 0 ? 7 - r0 : -r0, ChronoUnit.DAYS);
+                                    return temporal.d(j15 - i13 >= 0 ? 7 - r0 : -r0, ChronoUnit.DAYS);
                                 default:
-                                    int j17 = temporal.j(a.DAY_OF_WEEK);
+                                    int j16 = temporal.j(a.DAY_OF_WEEK);
                                     int i14 = value;
-                                    if (j17 == i14) {
+                                    if (j16 == i14) {
                                         return temporal;
                                     }
-                                    return temporal.w(i14 - j17 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
+                                    return temporal.w(i14 - j16 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
                             }
                         }
                     }.q(H);
@@ -368,10 +368,10 @@ public final class ZoneRules implements Serializable {
             } else {
                 j jVar2 = eVar.a;
                 LocalDate localDate2 = LocalDate.d;
-                j$.time.temporal.a.YEAR.w(i3);
+                j$.time.temporal.a.YEAR.w(i7);
                 Objects.requireNonNull(jVar2, "month");
                 j$.time.temporal.a.DAY_OF_MONTH.w(b10);
-                H = LocalDate.H(i3, jVar2.getValue(), b10);
+                H = LocalDate.H(i7, jVar2.getValue(), b10);
                 DayOfWeek dayOfWeek2 = eVar.c;
                 if (dayOfWeek2 != null) {
                     final int value2 = dayOfWeek2.getValue();
@@ -380,19 +380,19 @@ public final class ZoneRules implements Serializable {
                         public final Temporal q(Temporal temporal) {
                             switch (i10) {
                                 case 0:
-                                    int j16 = temporal.j(a.DAY_OF_WEEK);
+                                    int j15 = temporal.j(a.DAY_OF_WEEK);
                                     int i13 = value2;
-                                    if (j16 == i13) {
+                                    if (j15 == i13) {
                                         return temporal;
                                     }
-                                    return temporal.d(j16 - i13 >= 0 ? 7 - r0 : -r0, ChronoUnit.DAYS);
+                                    return temporal.d(j15 - i13 >= 0 ? 7 - r0 : -r0, ChronoUnit.DAYS);
                                 default:
-                                    int j17 = temporal.j(a.DAY_OF_WEEK);
+                                    int j16 = temporal.j(a.DAY_OF_WEEK);
                                     int i14 = value2;
-                                    if (j17 == i14) {
+                                    if (j16 == i14) {
                                         return temporal;
                                     }
-                                    return temporal.w(i14 - j17 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
+                                    return temporal.w(i14 - j16 >= 0 ? 7 - r1 : -r1, ChronoUnit.DAYS);
                             }
                         }
                     }.q(H);
@@ -416,7 +416,7 @@ public final class ZoneRules implements Serializable {
             i12++;
             i10 = 0;
         }
-        if (i3 < 2100) {
+        if (i7 < 2100) {
             this.h.putIfAbsent(valueOf, bVarArr3);
         }
         return bVarArr3;
@@ -439,8 +439,8 @@ public final class ZoneRules implements Serializable {
         return !zoneOffset.equals(getOffset(instant));
     }
 
-    public static int c(long j10, ZoneOffset zoneOffset) {
-        return LocalDate.R(j$.com.android.tools.r8.a.R(j10 + zoneOffset.getTotalSeconds(), 86400)).getYear();
+    public static int c(long j3, ZoneOffset zoneOffset) {
+        return LocalDate.R(j$.com.android.tools.r8.a.R(j3 + zoneOffset.getTotalSeconds(), 86400)).getYear();
     }
 
     public final boolean equals(Object obj) {

@@ -4,42 +4,42 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ri implements hj0, vi {
-    public final /* synthetic */ ej a;
+public final /* synthetic */ class ri implements dj0, wi {
+    public final /* synthetic */ fj a;
 
-    public /* synthetic */ ri(ej ejVar) {
-        this.a = ejVar;
+    public /* synthetic */ ri(fj fjVar) {
+        this.a = fjVar;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public void a(TLRPC.User user, boolean z10, int i3, long j10) {
-        ej ejVar = this.a;
-        ejVar.b.a(true);
-        ejVar.K.a(user, z10, i3, j10);
+    @Override // org.telegram.ui.Components.wi
+    public void a(TLRPC.User user, boolean z9, int i7, long j3) {
+        fj fjVar = this.a;
+        fjVar.b.a(true);
+        fjVar.J.a(user, z9, i7, j3);
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public boolean f(int i3, View view) {
+    @Override // org.telegram.ui.Components.dj0
+    public boolean c(int i7, View view) {
         Object O;
-        ej ejVar = this.a;
-        u4.h0 adapter = ejVar.s.getAdapter();
-        aj ajVar = ejVar.G;
-        if (adapter == ajVar) {
-            O = ajVar.E(i3);
+        fj fjVar = this.a;
+        v4.g0 adapter = fjVar.s.getAdapter();
+        bj bjVar = fjVar.F;
+        if (adapter == bjVar) {
+            O = bjVar.E(i7);
         } else {
-            yi yiVar = ejVar.F;
-            O = yiVar.O(yiVar.S(i3), yiVar.Q(i3));
+            zi ziVar = fjVar.E;
+            O = ziVar.O(ziVar.S(i7), ziVar.Q(i7));
         }
         if (O == null) {
             return false;
         }
-        ejVar.P((dj) view, O);
+        fjVar.P((ej) view, O);
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z10, int i3, long j10, boolean z11) {
+    @Override // org.telegram.ui.Components.wi
+    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z9, int i7, long j3, boolean z10) {
     }
 }

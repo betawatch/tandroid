@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class v1 {
     public static volatile v1[] f = new v1[4];
@@ -22,17 +22,17 @@ public final class v1 {
     public boolean e;
 
     static {
-        for (int i3 = 0; i3 < 4; i3++) {
-            g[i3] = new Object();
+        for (int i7 = 0; i7 < 4; i7++) {
+            g[i7] = new Object();
         }
     }
 
-    public v1(int i3) {
+    public v1(int i7) {
         v1 v1Var;
         Exception exc;
         u1 u1Var;
-        this.a = i3;
-        SharedPreferences sharedPreferences = hp.s1(i3).e7;
+        this.a = i7;
+        SharedPreferences sharedPreferences = qp.s1(i7).e7;
         this.b = sharedPreferences.getLong("bday_check", 0L);
         u1 u1Var2 = null;
         String string = sharedPreferences.getString("bday_contacts", null);
@@ -64,7 +64,7 @@ public final class v1 {
                 }
                 v1Var = this;
                 try {
-                    qr.a0(i3).a.c(new vf(v1Var, i3, arrayList, u1Var, 2));
+                    yr.a0(i7).a.c(new dg(v1Var, i7, arrayList, u1Var, 2));
                 } catch (Exception e12) {
                     e = e12;
                     exc = e;
@@ -78,19 +78,19 @@ public final class v1 {
         v1Var.d = sharedPreferences.getStringSet("bday_hidden", new HashSet());
     }
 
-    public static v1 a(int i3) {
+    public static v1 a(int i7) {
         v1 v1Var;
-        v1 v1Var2 = f[i3];
+        v1 v1Var2 = f[i7];
         if (v1Var2 != null) {
             return v1Var2;
         }
-        synchronized (g[i3]) {
+        synchronized (g[i7]) {
             try {
-                v1Var = f[i3];
+                v1Var = f[i7];
                 if (v1Var == null) {
                     v1[] v1VarArr = f;
-                    v1 v1Var3 = new v1(i3);
-                    v1VarArr[i3] = v1Var3;
+                    v1 v1Var3 = new v1(i7);
+                    v1VarArr[i7] = v1Var3;
                     v1Var = v1Var3;
                 }
             } catch (Throwable th2) {
@@ -101,7 +101,7 @@ public final class v1 {
     }
 
     public static boolean d(TLRPC.UserFull userFull) {
-        return (userFull == null || !e(userFull.birthday) || l10.b(userFull)) ? false : true;
+        return (userFull == null || !e(userFull.birthday) || t10.b(userFull)) ? false : true;
     }
 
     public static boolean e(TL_account.TL_birthday tL_birthday) {
@@ -120,12 +120,12 @@ public final class v1 {
         return this.c;
     }
 
-    public final boolean c(long j10) {
+    public final boolean c(long j3) {
         t1 t1Var = this.c;
-        if (t1Var != null && t1Var.a(j10)) {
+        if (t1Var != null && t1Var.a(j3)) {
             return true;
         }
-        TLRPC.UserFull b22 = hp.s1(this.a).b2(j10);
-        return (b22 == null || !e(b22.birthday) || l10.b(b22)) ? false : true;
+        TLRPC.UserFull b22 = qp.s1(this.a).b2(j3);
+        return (b22 == null || !e(b22.birthday) || t10.b(b22)) ? false : true;
     }
 }

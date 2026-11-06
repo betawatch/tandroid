@@ -1,48 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c5 implements qe.d, l0 {
+public final /* synthetic */ class c5 implements te.d, m0 {
     public final /* synthetic */ e5 a;
 
     public /* synthetic */ c5(e5 e5Var) {
         this.a = e5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.l0
-    public void i(int i3) {
-        j jVar = this.a.a.W;
-        if (jVar != null) {
-            jVar.b(i3);
-        }
+    @Override // te.d
+    public /* synthetic */ boolean A() {
+        return false;
     }
 
-    @Override // qe.d
-    public void s1() {
+    @Override // te.d
+    public /* synthetic */ boolean B(float f10) {
+        return false;
+    }
+
+    @Override // te.d
+    public void Y0() {
         e5 e5Var = this.a;
         e5Var.e();
         e5Var.a.invalidate();
     }
 
-    @Override // qe.d
-    public /* synthetic */ boolean t() {
-        return false;
+    @Override // org.telegram.ui.ActionBar.m0
+    public void i(int i7) {
+        j jVar = this.a.a.V;
+        if (jVar != null) {
+            jVar.b(i7);
+        }
     }
 
-    @Override // qe.d
-    public /* synthetic */ boolean x(float f10) {
-        return false;
+    @Override // te.d
+    public /* synthetic */ void l(boolean z9) {
     }
 
-    @Override // qe.d
-    public /* synthetic */ void o(boolean z10) {
+    @Override // te.d
+    public /* synthetic */ void D() {
     }
 
-    @Override // qe.d
-    public /* synthetic */ void G() {
-    }
-
-    @Override // qe.d
+    @Override // te.d
     public /* synthetic */ void a() {
     }
 }

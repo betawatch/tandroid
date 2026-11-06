@@ -1,42 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a5 implements Runnable {
+public final /* synthetic */ class a5 implements f5 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ HashSet d;
+    public final /* synthetic */ i5 b;
 
-    public /* synthetic */ a5(c5 c5Var, ArrayList arrayList, HashSet hashSet, int i3) {
-        this.a = i3;
-        this.b = c5Var;
-        this.c = arrayList;
-        this.d = hashSet;
+    public /* synthetic */ a5(i5 i5Var, int i7) {
+        this.a = i7;
+        this.b = i5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.f5
+    public final void a(TLRPC.Document document) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new a5(this.b, this.c, this.d, 1));
+                i5 i5Var = this.b;
+                i5Var.e = document;
+                i5Var.i(false);
                 break;
             default:
-                c5 c5Var = this.b;
-                c5Var.d(this.c);
-                HashSet hashSet = this.d;
-                if (!hashSet.isEmpty()) {
-                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
-                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
-                    ConnectionsManager.getInstance(c5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.ActionBar.h6(12, c5Var, arrayList));
-                    break;
-                }
+                i5 i5Var2 = this.b;
+                i5Var2.e = document;
+                i5Var2.i(false);
                 break;
         }
     }

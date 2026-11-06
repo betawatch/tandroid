@@ -1,159 +1,139 @@
 package c4;
 
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
+import a8.ia;
+import h2.m0;
+import h9.g0;
+import h9.i0;
+import h9.o1;
+import h9.t1;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public final ArrayList a;
-    public final ArrayList b;
-    public final StringBuilder c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+public final class b implements d {
+    public static final h9.n c = new h9.n(new a3.l(28), o1.b);
+    public final i0 a;
+    public final long[] b;
 
-    public b(int i3, int i10) {
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        ArrayList arrayList2 = new ArrayList();
-        this.b = arrayList2;
-        StringBuilder sb2 = new StringBuilder();
-        this.c = sb2;
-        this.g = i3;
-        arrayList.clear();
-        arrayList2.clear();
-        sb2.setLength(0);
-        this.d = 15;
-        this.e = 0;
-        this.f = 0;
-        this.h = i10;
-    }
-
-    public final void a(char c2) {
-        StringBuilder sb2 = this.c;
-        if (sb2.length() < 32) {
-            sb2.append(c2);
-        }
-    }
-
-    public final void b() {
-        StringBuilder sb2 = this.c;
-        int length = sb2.length();
-        if (length > 0) {
-            sb2.delete(length - 1, length);
-            ArrayList arrayList = this.a;
-            for (int size = arrayList.size() - 1; size >= 0; size--) {
-                a aVar = (a) arrayList.get(size);
-                int i3 = aVar.c;
-                if (i3 != length) {
-                    return;
-                }
-                aVar.c = i3 - 1;
-            }
-        }
-    }
-
-    public final f2.b c(int i3) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0111 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b(t1 t1Var) {
+        long j3;
+        int i7 = t1Var.d;
+        long j10 = -9223372036854775807L;
         int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            spannableStringBuilder.append((CharSequence) arrayList.get(i10));
-            spannableStringBuilder.append('\n');
-            i10++;
-        }
-        spannableStringBuilder.append((CharSequence) d());
-        if (spannableStringBuilder.length() == 0) {
-            return null;
-        }
-        int i11 = this.e + this.f;
-        int length = (32 - i11) - spannableStringBuilder.length();
-        int i12 = i11 - length;
-        int i13 = i3 != Integer.MIN_VALUE ? i3 : (this.g != 2 || (Math.abs(i12) >= 3 && length >= 0)) ? (this.g != 2 || i12 <= 0) ? 0 : 2 : 1;
-        float A = i13 != 1 ? i13 != 2 ? a1.g.A(i11, 32.0f, 0.8f, 0.1f) : a1.g.A(32 - length, 32.0f, 0.8f, 0.1f) : 0.5f;
-        int i14 = this.d;
-        if (i14 > 7) {
-            i14 -= 17;
-        } else if (this.g == 1) {
-            i14 -= this.h - 1;
-        }
-        return new f2.b(spannableStringBuilder, Layout.Alignment.ALIGN_NORMAL, null, null, i14, 1, TLObject.FLAG_31, A, i13, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
-    }
-
-    public final SpannableString d() {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.c);
-        int length = spannableStringBuilder.length();
-        int i3 = -1;
-        int i10 = -1;
-        int i11 = -1;
-        int i12 = -1;
-        int i13 = 0;
-        int i14 = 0;
-        boolean z10 = false;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i13 >= arrayList.size()) {
-                break;
-            }
-            a aVar = (a) arrayList.get(i13);
-            boolean z11 = aVar.b;
-            int i15 = aVar.a;
-            if (i15 != 8) {
-                boolean z12 = i15 == 7;
-                if (i15 != 7) {
-                    i12 = c.B[i15];
+        if (i7 == 1) {
+            g0 listIterator = t1Var.listIterator(0);
+            Object next = listIterator.next();
+            if (listIterator.hasNext()) {
+                StringBuilder sb2 = new StringBuilder("expected one element but was: <");
+                sb2.append(next);
+                while (i10 < 4 && listIterator.hasNext()) {
+                    sb2.append(", ");
+                    sb2.append(listIterator.next());
+                    i10++;
                 }
-                z10 = z12;
+                if (listIterator.hasNext()) {
+                    sb2.append(", ...");
+                }
+                sb2.append('>');
+                throw new IllegalArgumentException(sb2.toString());
             }
-            int i16 = aVar.c;
-            i13++;
-            if (i16 != (i13 < arrayList.size() ? ((a) arrayList.get(i13)).c : length)) {
-                if (i3 != -1 && !z11) {
-                    spannableStringBuilder.setSpan(new UnderlineSpan(), i3, i16, 33);
-                    i3 = -1;
-                } else if (i3 == -1 && z11) {
-                    i3 = i16;
-                }
-                if (i10 != -1 && !z10) {
-                    spannableStringBuilder.setSpan(new StyleSpan(2), i10, i16, 33);
-                    i10 = -1;
-                } else if (i10 == -1 && z10) {
-                    i10 = i16;
-                }
-                if (i12 != i11) {
-                    if (i11 != -1) {
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(i11), i14, i16, 33);
+            a aVar = (a) next;
+            long j11 = aVar.b;
+            i0 i0Var = aVar.a;
+            long j12 = aVar.c;
+            long j13 = j11 == -9223372036854775807L ? 0L : j11;
+            if (j12 == -9223372036854775807L) {
+                this.a = i0.u(i0Var);
+                this.b = new long[]{j13};
+                return;
+            } else {
+                g0 g0Var = i0.b;
+                this.a = i0.v(i0Var, t1.e);
+                this.b = new long[]{j13, j12 + j13};
+                return;
+            }
+        }
+        long[] jArr = new long[i7 * 2];
+        this.b = jArr;
+        Arrays.fill(jArr, Long.MAX_VALUE);
+        ArrayList arrayList = new ArrayList();
+        t1 w10 = i0.w(c, t1Var);
+        int i11 = 0;
+        while (i10 < w10.d) {
+            a aVar2 = (a) w10.get(i10);
+            long j14 = aVar2.b;
+            long j15 = aVar2.c;
+            i0 i0Var2 = aVar2.a;
+            j14 = j14 == j10 ? 0L : j14;
+            long j16 = j14 + j15;
+            if (i11 != 0) {
+                int i12 = i11 - 1;
+                long j17 = this.b[i12];
+                if (j17 >= j14) {
+                    if (j17 == j14 && ((i0) arrayList.get(i12)).isEmpty()) {
+                        arrayList.set(i12, i0Var2);
+                        j3 = j10;
+                    } else {
+                        j3 = j10;
+                        h2.a.l("CuesWithTimingSubtitle", "Truncating unsupported overlapping cues.");
+                        this.b[i12] = j14;
+                        arrayList.set(i12, i0Var2);
                     }
-                    i11 = i12;
-                    i14 = i16;
+                    if (j15 == j3) {
+                        this.b[i11] = j16;
+                        arrayList.add(t1.e);
+                        i11++;
+                    }
+                    i10++;
+                    j10 = j3;
                 }
             }
+            j3 = j10;
+            this.b[i11] = j14;
+            arrayList.add(i0Var2);
+            i11++;
+            if (j15 == j3) {
+            }
+            i10++;
+            j10 = j3;
         }
-        if (i3 != -1 && i3 != length) {
-            spannableStringBuilder.setSpan(new UnderlineSpan(), i3, length, 33);
-        }
-        if (i10 != -1 && i10 != length) {
-            spannableStringBuilder.setSpan(new StyleSpan(2), i10, length, 33);
-        }
-        if (i14 != length && i11 != -1) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(i11), i14, length, 33);
-        }
-        return new SpannableString(spannableStringBuilder);
+        this.a = i0.q(arrayList);
     }
 
-    public final boolean e() {
-        return this.a.isEmpty() && this.b.isEmpty() && this.c.length() == 0;
+    @Override // c4.d
+    public final int d(long j3) {
+        int b10 = m0.b(this.b, j3, false);
+        if (b10 < this.a.size()) {
+            return b10;
+        }
+        return -1;
+    }
+
+    @Override // c4.d
+    public final long k(int i7) {
+        ia.f(i7 < this.a.size());
+        return this.b[i7];
+    }
+
+    @Override // c4.d
+    public final List s(long j3) {
+        int f10 = m0.f(this.b, j3, false);
+        if (f10 != -1) {
+            return (i0) this.a.get(f10);
+        }
+        g0 g0Var = i0.b;
+        return t1.e;
+    }
+
+    @Override // c4.d
+    public final int y() {
+        return this.a.size();
     }
 }

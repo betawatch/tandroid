@@ -1,58 +1,27 @@
 package cg;
 
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Iterator;
-import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static void a(HashMap hashMap) {
-        if (hashMap.isEmpty()) {
-            try {
-                InputStream open = org.telegram.messenger.t0.b.getAssets().open("currencies.json");
-                String str = g2.n0.a;
-                JSONObject jSONObject = new JSONObject(new String(h9.f.b(open), f9.j.a));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    hashMap.put(next, Integer.valueOf(jSONObject.optJSONObject(next).optInt("exp")));
-                }
-                open.close();
-            } catch (Exception e10) {
-                a8.g(e10, true);
-            }
-        }
+public final class b {
+    public static final b a;
+    public static final b b;
+    public static final /* synthetic */ b[] c;
+
+    static {
+        b bVar = new b("STARS", 0);
+        a = bVar;
+        b bVar2 = new b("TON", 1);
+        b = bVar2;
+        c = new b[]{bVar, bVar2};
     }
 
-    public static TLRPC.InputStorePaymentPurpose b(String str) {
-        a8.b("BillingUtilities.getPurpose " + str);
-        SerializedData serializedData = new SerializedData(Utilities.v(str));
-        a a10 = a.a(serializedData.readInt32(true), serializedData);
-        serializedData.cleanup();
-        if (a10.c != null) {
-            a8.b("BillingUtilities.getPurpose: got purpose from received obfuscated profile id");
-            return a10.c;
-        }
-        SerializedData serializedData2 = new SerializedData(8);
-        serializedData2.writeInt64(a10.b);
-        String f10 = Utilities.f(serializedData2.toByteArray());
-        serializedData2.cleanup();
-        a8.b("BillingUtilities.getPurpose: searching purpose under ".concat(f10));
-        String string = org.telegram.messenger.t0.b.getSharedPreferences("purchases", 0).getString(f10, null);
-        if (string == null) {
-            a8.b("BillingUtilities.getPurpose: purpose under " + f10 + " not found");
-            throw new RuntimeException(a1.g.q("no purpose under ", f10, " found :("));
-        }
-        a8.b("BillingUtilities.getPurpose: got {" + string + "} under " + f10);
-        SerializedData serializedData3 = new SerializedData(Utilities.v(string));
-        a a11 = a.a(serializedData3.readInt32(true), serializedData3);
-        serializedData3.cleanup();
-        return a11.c;
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
+    }
+
+    public static b[] values() {
+        return (b[]) c.clone();
     }
 }

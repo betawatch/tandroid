@@ -1,13 +1,19 @@
 package y7;
 
-import java.util.logging.Logger;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class r2 {
-    public static final /* synthetic */ int a = 0;
+public final class r2 implements na.d {
+    public static final r2 a = new r2();
 
     static {
-        Logger.getLogger(r2.class.getName());
+        rf.b.p(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, rf.b.m(rf.b.k(h.class, new e(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    }
+
+    @Override // na.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

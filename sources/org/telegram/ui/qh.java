@@ -1,88 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class qh implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class qh extends org.telegram.ui.Components.qu {
+    public final /* synthetic */ an N1;
 
-    public qh(x30 x30Var, Rect rect) {
-        this.a = 1;
-        this.d = x30Var;
-        this.c = rect;
-        this.b = new int[2];
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qh(an anVar, org.telegram.ui.ActionBar.f2 f2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(f2Var, activity, f6Var, arrayList);
+        this.N1 = anVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        z20 z20Var;
-        switch (this.a) {
-            case 0:
-                wm wmVar = (wm) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        wmVar.O7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.f1 f1Var = wmVar.f9;
-                    if (f1Var != null && f1Var.isShowing()) {
-                        View contentView = wmVar.f9.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i3 = iArr[0];
-                        int i10 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i3;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i3, i10, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            wmVar.O7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                x30 x30Var = (x30) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (z20Var = x30Var.X4) != null && z20Var.isShowing()) {
-                        x30Var.X4.dismiss();
-                        break;
-                    }
-                } else {
-                    z20 z20Var2 = x30Var.X4;
-                    if (z20Var2 != null && z20Var2.isShowing()) {
-                        View contentView2 = x30Var.X4.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i11 = iArr2[0];
-                        int i12 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i11;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i11, i12, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            x30Var.X4.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
-        return false;
-    }
-
-    public qh(wm wmVar, Rect rect) {
-        this.a = 0;
-        this.d = wmVar;
-        this.c = rect;
-        this.b = new int[2];
+    @Override // org.telegram.ui.Components.qu, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    public final void dismiss() {
+        super.dismiss();
+        an anVar = this.N1;
+        anVar.getClass();
+        anVar.v8(false, true, 0.0f);
     }
 }

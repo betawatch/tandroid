@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.ot0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class z extends ViewGroup implements nt0 {
+public abstract class z extends ViewGroup implements ot0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public mi.b0 d;
+    public m.f3 d;
     public Runnable e;
 
     public z(Context context) {
@@ -28,23 +28,23 @@ public abstract class z extends ViewGroup implements nt0 {
 
     public static float r(Drawable drawable, float f10, float f11, float f12) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f12) / drawable.getIntrinsicHeight();
-        int i3 = (int) f10;
+        int i7 = (int) f10;
         int i10 = (int) f11;
-        drawable.setBounds(i3, i10, ((int) intrinsicWidth) + i3, ((int) f12) + i10);
+        drawable.setBounds(i7, i10, ((int) intrinsicWidth) + i7, ((int) f12) + i10);
         return intrinsicWidth;
     }
 
-    public static void s(int i3, int i10, Drawable drawable) {
-        drawable.setBounds(i3, i10, drawable.getIntrinsicWidth() + i3, drawable.getIntrinsicHeight() + i10);
+    public static void s(int i7, int i10, Drawable drawable) {
+        drawable.setBounds(i7, i10, drawable.getIntrinsicWidth() + i7, drawable.getIntrinsicHeight() + i10);
     }
 
     public static void t(Drawable drawable, float f10, float f11) {
-        int i3 = (int) f10;
+        int i7 = (int) f10;
         int i10 = (int) f11;
-        drawable.setBounds(i3, i10, drawable.getIntrinsicWidth() + i3, drawable.getIntrinsicHeight() + i10);
+        drawable.setBounds(i7, i10, drawable.getIntrinsicWidth() + i7, drawable.getIntrinsicHeight() + i10);
     }
 
-    @Override // org.telegram.ui.Components.nt0
+    @Override // org.telegram.ui.Components.ot0
     public final void f(Runnable runnable) {
         this.e = runnable;
     }
@@ -62,7 +62,7 @@ public abstract class z extends ViewGroup implements nt0 {
         return false;
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.p9
+    @Override // android.view.View, org.telegram.ui.Cells.q9
     public void invalidate() {
         Runnable runnable = this.e;
         if (runnable != null) {
@@ -77,9 +77,9 @@ public abstract class z extends ViewGroup implements nt0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        mi.b0 b0Var = this.d;
-        if (b0Var != null) {
-            removeCallbacks(b0Var);
+        m.f3 f3Var = this.d;
+        if (f3Var != null) {
+            removeCallbacks(f3Var);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class z extends ViewGroup implements nt0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new mi.b0(this, 18);
+            this.d = new m.f3(this, 19);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

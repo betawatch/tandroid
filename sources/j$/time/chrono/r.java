@@ -16,14 +16,14 @@ public final class r extends a implements Serializable {
     private static final long serialVersionUID = -1440403870442975015L;
 
     @Override // j$.time.chrono.k
-    public final l u(int i3) {
-        if (i3 == 0) {
+    public final l u(int i7) {
+        if (i7 == 0) {
             return s.BCE;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             return s.CE;
         }
-        throw new j$.time.b("Invalid era: " + i3);
+        throw new j$.time.b("Invalid era: " + i7);
     }
 
     @Override // j$.time.chrono.k
@@ -61,9 +61,9 @@ public final class r extends a implements Serializable {
         return ZonedDateTime.q(instant.a, instant.b, zoneId);
     }
 
-    public static boolean k(long j10) {
-        if ((3 & j10) == 0) {
-            return j10 % 100 != 0 || j10 % 400 == 0;
+    public static boolean k(long j3) {
+        if ((3 & j3) == 0) {
+            return j3 % 100 != 0 || j3 % 400 == 0;
         }
         return false;
     }

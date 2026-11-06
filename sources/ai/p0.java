@@ -1,12 +1,11 @@
 package ai;
 
-import org.telegram.ui.Components.fc;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class p0 extends d7 {
-    @Override // ai.d7
-    public final fc e1() {
-        return new fc(this.c, this.J0);
+public final class p0 {
+    public final /* synthetic */ s0 a;
+
+    public p0(s0 s0Var) {
+        this.a = s0Var;
     }
 }

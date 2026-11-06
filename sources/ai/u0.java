@@ -1,78 +1,102 @@
 package ai;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.view.View;
+import android.os.SystemClock;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class u0 extends ci.f6 {
-    public final Path E0;
-    public final float[] F0;
-    public final /* synthetic */ int G0;
-    public final /* synthetic */ z0 H0;
+public final /* synthetic */ class u0 implements v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ls c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u0(z0 z0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, s sVar, t tVar, t tVar2, t tVar3, t tVar4, t tVar5, t tVar6, int i3) {
-        super(context, e6Var, sVar, tVar, null, tVar2, tVar3, tVar4, tVar5, tVar6);
-        this.H0 = z0Var;
-        this.G0 = i3;
-        this.E0 = new Path();
-        this.F0 = new float[8];
+    public /* synthetic */ u0(ls lsVar, Object obj, boolean z9, int i7) {
+        this.a = i7;
+        this.c = lsVar;
+        this.d = obj;
+        this.b = z9;
     }
 
-    @Override // ci.f6, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.E0);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view == this.b) {
-            return true;
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        boolean z9 = this.b;
+        Object obj3 = this.d;
+        ls lsVar = this.c;
+        switch (i7) {
+            case 0:
+                y0 y0Var = (y0) lsVar;
+                TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                l1 l1Var = y0Var.b;
+                if (y0Var.n == ((int[]) obj3)[0] && !y0Var.E) {
+                    y0Var.n = 0;
+                    if (tL_exportedNoPaidMessagesToken != null) {
+                        int i10 = y0Var.d;
+                        if (i10 != 0) {
+                            if (z9 == (i10 == 1)) {
+                                if (tL_exportedNoPaidMessagesToken.expires == 0) {
+                                    y0Var.f().edit().putString("qrNoPaidToken", tL_exportedNoPaidMessagesToken.token).putString("qrNoPaidUrl", tL_exportedNoPaidMessagesToken.url).apply();
+                                }
+                                y0Var.f = tL_exportedNoPaidMessagesToken;
+                                y0Var.h = SystemClock.elapsedRealtime();
+                                l1Var.setFreeLink(y0Var.d(tL_exportedNoPaidMessagesToken));
+                                break;
+                            }
+                        }
+                    } else {
+                        String str = tL_error != null ? tL_error.text : null;
+                        a8.d("QrShare: exportNoPaidMessagesToken " + str);
+                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = y0Var.f;
+                        if (tL_exportedNoPaidMessagesToken2 != null) {
+                            if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z9) {
+                                if (str != null) {
+                                    l1Var.getClass();
+                                    l1Var.d1(R.drawable.msg_warning, hd.M0(2131751106, null), null);
+                                    break;
+                                }
+                            }
+                        }
+                        y0Var.d = 0;
+                        y0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
+                        if (!l1Var.v0) {
+                            if (str != null) {
+                                l1Var.d1(R.drawable.msg_warning, hd.M0(2131751106, null), null);
+                                break;
+                            }
+                        } else {
+                            l1Var.U0(str != null ? hd.M0(2131751106, null) : null);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                oq oqVar = (oq) lsVar;
+                m8 m8Var = (m8) obj3;
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (updates == null) {
+                    oqVar.getClass();
+                    if (tL_error2 != null) {
+                        m8Var.setChecked(z9);
+                        hc.a0(oqVar).f0(tL_error2, false);
+                        break;
+                    }
+                } else {
+                    oqVar.getMessagesController().O3(updates, false);
+                    break;
+                }
+                break;
         }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // ci.f6
-    public final int getFinalHeight() {
-        return org.telegram.messenger.g0.L(this.G0);
-    }
-
-    @Override // ci.f6
-    public final float getRealHeight() {
-        return org.telegram.messenger.g0.L(this.G0);
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        w0 w0Var = this.H0.V1;
-        if (w0Var != null) {
-            w0Var.invalidate();
-        }
-    }
-
-    @Override // ci.f6
-    public final void k(int i3) {
-        this.H0.V1.setRibbonColor(i3);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i3, int i10, int i11, int i12) {
-        super.onSizeChanged(i3, i10, i11, i12);
-        float L = org.telegram.messenger.g0.L(12.0f);
-        float[] fArr = this.F0;
-        fArr[3] = L;
-        fArr[2] = L;
-        fArr[1] = L;
-        fArr[0] = L;
-        Path path = this.E0;
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, i3, i10, this.F0, Path.Direction.CW);
     }
 }

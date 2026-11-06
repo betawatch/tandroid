@@ -1,119 +1,85 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface kq0 {
-    boolean A();
+public final class kq0 extends org.telegram.ui.Components.vy0 {
+    public boolean a;
+    public float b;
+    public NestedScrollView c;
+    public FrameLayout d;
 
-    void B(int i3);
+    public kq0(Context context) {
+        super(context);
+        this.a = false;
+        this.b = 1.0f;
+    }
 
-    CharSequence C(int i3);
+    public final void b(int i7, boolean z9) {
+        super.setVisibility(i7);
+        if (this.a && z9) {
+            this.c.setVisibility(i7);
+        }
+    }
 
-    void D();
+    @Override // android.view.View
+    public float getAlpha() {
+        return this.a ? this.b : super.getAlpha();
+    }
 
-    mq0 E(org.telegram.messenger.zi ziVar, TLRPC.FileLocation fileLocation, int i3, boolean z10, boolean z11);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.d == null || getParent() != this.d) {
+            return;
+        }
+        this.a = true;
+        this.c.setVisibility(getVisibility());
+        this.c.setAlpha(this.b);
+        super.setAlpha(1.0f);
+    }
 
-    void F(boolean z10);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.a) {
+            this.a = false;
+            this.c.setVisibility(8);
+            super.setAlpha(this.b);
+        }
+    }
 
-    void G();
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        this.b = f10;
+        if (this.a) {
+            this.c.setAlpha(f10);
+        } else {
+            super.setAlpha(f10);
+        }
+    }
 
-    int H();
+    public void setContainer(FrameLayout frameLayout) {
+        this.d = frameLayout;
+    }
 
-    boolean I();
+    public void setScrollView(NestedScrollView nestedScrollView) {
+        this.c = nestedScrollView;
+    }
 
-    void J();
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        if (this.a) {
+            this.c.invalidate();
+        }
+    }
 
-    boolean K();
-
-    boolean L();
-
-    void M(org.telegram.messenger.b20 b20Var);
-
-    boolean N();
-
-    boolean O();
-
-    boolean P();
-
-    boolean Q();
-
-    int R(Object obj);
-
-    int S(int i3);
-
-    boolean T();
-
-    boolean U();
-
-    org.telegram.messenger.zi V();
-
-    void W();
-
-    void X(int i3);
-
-    void Y(int i3);
-
-    boolean Z();
-
-    long a();
-
-    void a0(int i3);
-
-    boolean b();
-
-    String b0();
-
-    ArrayList c();
-
-    CharSequence c0(int i3);
-
-    void d();
-
-    void e(CharSequence charSequence);
-
-    void f(String str, String str2, boolean z10);
-
-    boolean g();
-
-    boolean h();
-
-    void i();
-
-    org.telegram.messenger.cc j(int i3);
-
-    int k(int i3, org.telegram.messenger.b20 b20Var);
-
-    boolean l();
-
-    void m();
-
-    void n();
-
-    void o(int i3, org.telegram.messenger.b20 b20Var, boolean z10, int i10, int i11, boolean z11);
-
-    boolean p();
-
-    boolean q();
-
-    boolean r();
-
-    void s();
-
-    boolean t();
-
-    boolean u();
-
-    HashMap v();
-
-    boolean w();
-
-    boolean x(int i3);
-
-    int y();
-
-    boolean z();
+    @Override // android.view.View
+    public void setVisibility(int i7) {
+        b(i7, true);
+    }
 }

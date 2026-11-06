@@ -1,56 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.ui.Components.f40;
+import org.telegram.ui.Components.g40;
+import org.telegram.ui.Components.o40;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ve b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ te(ve veVar, int i3, int i10) {
-        this.a = i10;
-        this.b = veVar;
-        this.c = i3;
+    public /* synthetic */ te(Runnable runnable, double d, int i7) {
+        this.a = i7;
+        this.c = runnable;
+        this.b = d;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        double d = this.b;
+        Runnable runnable = this.c;
+        switch (i7) {
             case 0:
-                ve veVar = this.b;
-                try {
-                    veVar.b.o(this.c);
-                    break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
-                }
-            case 1:
-                ve veVar2 = this.b;
-                try {
-                    veVar2.b.o(this.c);
-                    break;
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                    return;
-                }
-            case 2:
-                ve veVar3 = this.b;
-                try {
-                    veVar3.b.o(this.c);
-                    break;
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                    return;
-                }
+                MediaController mediaController = (MediaController) ((m.f3) runnable).b;
+                qs.f(mediaController.h1).k(qs.k2, Integer.valueOf(mediaController.g1), Double.valueOf(d));
+                break;
             default:
-                ve veVar4 = this.b;
-                try {
-                    veVar4.b.o(this.c);
-                    break;
-                } catch (Exception e13) {
-                    a8.g(e13, true);
-                }
+                o40 o40Var = ((g40) ((f40) runnable).b).H0;
+                qs.f(o40Var.e).k(qs.k2, Integer.valueOf(o40Var.U), Double.valueOf(d));
+                break;
         }
     }
 }

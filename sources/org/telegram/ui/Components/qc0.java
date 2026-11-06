@@ -1,18 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class qc0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ vc0 a;
+public final /* synthetic */ class qc0 implements u0.g, t4 {
+    public final /* synthetic */ ad0 a;
 
-    public qc0(vc0 vc0Var) {
-        this.a = vc0Var;
+    public /* synthetic */ qc0(ad0 ad0Var) {
+        this.a = ad0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i3) {
-        if (i3 == -1) {
-            this.a.dismiss();
-        }
+    @Override // org.telegram.ui.Components.t4
+    public void L(int i7, int i10, boolean z9) {
+        ad0 ad0Var = this.a;
+        ad0Var.B1.a(ad0Var.E1, z9, i7, 0L);
+        ad0Var.dismiss();
     }
 }

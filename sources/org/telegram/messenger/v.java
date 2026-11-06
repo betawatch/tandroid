@@ -5,9 +5,9 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import org.telegram.ui.Components.py0;
-import org.telegram.ui.i50;
+import org.telegram.ui.o50;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class v extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -15,8 +15,8 @@ public final class v extends ClickableSpan {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ v(Object obj, Object obj2, Object obj3, int i3) {
-        this.a = i3;
+    public /* synthetic */ v(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
         this.d = obj3;
@@ -30,17 +30,17 @@ public final class v extends ClickableSpan {
                 if (runnable != null) {
                     runnable.run();
                 }
-                sf.c.t(t0.b, (String) this.c);
+                vf.c.t(t0.b, (String) this.c);
                 break;
             case 1:
-                ((i50) this.b).a((org.telegram.ui.g4) this.c, (py0) this.d);
+                ((o50) this.b).a((org.telegram.ui.e4) this.c, (py0) this.d);
                 break;
             default:
-                org.telegram.ui.ActionBar.s1 s1Var = ((org.telegram.ui.ActionBar.s1[]) this.b)[0];
-                if (s1Var != null) {
-                    s1Var.dismiss();
+                org.telegram.ui.ActionBar.u1 u1Var = ((org.telegram.ui.ActionBar.u1[]) this.b)[0];
+                if (u1Var != null) {
+                    u1Var.dismiss();
                 }
-                sf.c.t((Context) this.d, "https://t.me/" + ((String) this.c));
+                vf.c.t((Context) this.d, "https://t.me/" + ((String) this.c));
                 break;
         }
     }
@@ -49,7 +49,7 @@ public final class v extends ClickableSpan {
     public void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, (org.telegram.ui.ActionBar.e6) this.d));
+                textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, (org.telegram.ui.ActionBar.f6) this.d));
                 textPaint.setUnderlineText(false);
                 break;
             case 1:
@@ -63,9 +63,9 @@ public final class v extends ClickableSpan {
         }
     }
 
-    public v(org.telegram.ui.ActionBar.s1[] s1VarArr, Context context, String str) {
+    public v(org.telegram.ui.ActionBar.u1[] u1VarArr, Context context, String str) {
         this.a = 2;
-        this.b = s1VarArr;
+        this.b = u1VarArr;
         this.d = context;
         this.c = str;
     }

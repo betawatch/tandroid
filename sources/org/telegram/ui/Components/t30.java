@@ -1,22 +1,38 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.graphics.Paint;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class t30 {
-    public final ByteBuffer[] a = new ByteBuffer[10];
-    public final long[] b = new long[10];
-    public final int[] c = new int[10];
-    public int d;
-    public int e;
-    public boolean f;
+public final class t30 extends Paint {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public t30() {
-        for (int i3 = 0; i3 < 10; i3++) {
-            this.a[i3] = ByteBuffer.allocateDirect(2048);
-            this.a[i3].order(ByteOrder.nativeOrder());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t30(Object obj, int i7) {
+        super(1);
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i7) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(i7);
+                ((o40) this.b).invalidate();
+                break;
+            case 1:
+                super.setAlpha(i7);
+                fk0 fk0Var = (fk0) this.b;
+                fk0Var.a.setAlpha(Math.round(i7 * 0.2f));
+                fk0Var.invalidate();
+                break;
+            default:
+                super.setAlpha(i7);
+                ((ProfileActivity) this.b).fragmentView.invalidate();
+                break;
         }
     }
 }

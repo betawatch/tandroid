@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 abstract class FormatCache<F extends Format> {
     static final int NONE = -1;
     private static final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache = new ConcurrentHashMap(7);
     private final ConcurrentMap<MultipartKey, F> cInstanceCache = new ConcurrentHashMap(7);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class MultipartKey {
         private int hashCode;
         private final Object[] keys;
@@ -31,13 +31,13 @@ abstract class FormatCache<F extends Format> {
 
         public int hashCode() {
             if (this.hashCode == 0) {
-                int i3 = 0;
+                int i7 = 0;
                 for (Object obj : this.keys) {
                     if (obj != null) {
-                        i3 = obj.hashCode() + (i3 * 7);
+                        i7 = obj.hashCode() + (i7 * 7);
                     }
                 }
-                this.hashCode = i3;
+                this.hashCode = i7;
             }
             return this.hashCode;
         }
@@ -68,16 +68,16 @@ abstract class FormatCache<F extends Format> {
 
     public abstract F createInstance(String str, TimeZone timeZone, Locale locale);
 
-    public F getDateInstance(int i3, TimeZone timeZone, Locale locale) {
-        return getDateTimeInstance(Integer.valueOf(i3), (Integer) null, timeZone, locale);
+    public F getDateInstance(int i7, TimeZone timeZone, Locale locale) {
+        return getDateTimeInstance(Integer.valueOf(i7), (Integer) null, timeZone, locale);
     }
 
     public F getInstance() {
         return getDateTimeInstance(3, 3, TimeZone.getDefault(), Locale.getDefault());
     }
 
-    public F getTimeInstance(int i3, TimeZone timeZone, Locale locale) {
-        return getDateTimeInstance((Integer) null, Integer.valueOf(i3), timeZone, locale);
+    public F getTimeInstance(int i7, TimeZone timeZone, Locale locale) {
+        return getDateTimeInstance((Integer) null, Integer.valueOf(i7), timeZone, locale);
     }
 
     public F getInstance(String str, TimeZone timeZone, Locale locale) {
@@ -100,7 +100,7 @@ abstract class FormatCache<F extends Format> {
         return putIfAbsent != null ? putIfAbsent : createInstance;
     }
 
-    public F getDateTimeInstance(int i3, int i10, TimeZone timeZone, Locale locale) {
-        return getDateTimeInstance(Integer.valueOf(i3), Integer.valueOf(i10), timeZone, locale);
+    public F getDateTimeInstance(int i7, int i10, TimeZone timeZone, Locale locale) {
+        return getDateTimeInstance(Integer.valueOf(i7), Integer.valueOf(i10), timeZone, locale);
     }
 }

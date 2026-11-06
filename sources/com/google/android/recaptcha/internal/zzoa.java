@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzoa extends zzof {
     private static final zzoa zza = new zzoa(zzof.zze());
@@ -28,8 +28,8 @@ final class zzoa extends zzof {
     }
 
     @Override // com.google.android.recaptcha.internal.zzof
-    public final boolean zzd(String str, Level level, boolean z10) {
-        ((zzof) this.zzb.get()).zzd(str, level, z10);
+    public final boolean zzd(String str, Level level, boolean z9) {
+        ((zzof) this.zzb.get()).zzd(str, level, z9);
         return false;
     }
 }

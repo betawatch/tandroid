@@ -20,16 +20,16 @@ public final class g implements Serializable {
     static {
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i3 = 0; i3 < 3; i3++) {
-            arrayList.add(Objects.requireNonNull(objArr[i3]));
+        for (int i7 = 0; i7 < 3; i7++) {
+            arrayList.add(Objects.requireNonNull(objArr[i7]));
         }
         Collections.unmodifiableList(arrayList);
     }
 
-    public g(k kVar, int i3, int i10, int i11) {
+    public g(k kVar, int i7, int i10, int i11) {
         Objects.requireNonNull(kVar, "chrono");
         this.a = kVar;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
         this.d = i11;
     }
@@ -41,9 +41,9 @@ public final class g implements Serializable {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(this.a.toString());
         sb2.append(" P");
-        int i3 = this.b;
-        if (i3 != 0) {
-            sb2.append(i3);
+        int i7 = this.b;
+        if (i7 != 0) {
+            sb2.append(i7);
             sb2.append('Y');
         }
         int i10 = this.c;

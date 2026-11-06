@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -40,8 +40,8 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public final long getItemId(int i3) {
-        return i3;
+    public final long getItemId(int i7) {
+        return i7;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -73,16 +73,16 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final RemoteViews getViewAt(int i3) {
+    public final RemoteViews getViewAt(int i7) {
         TLRPC.Chat chat;
         TLRPC.User user;
         TLRPC.FileLocation fileLocation;
         String str;
         TLRPC.FileLocation fileLocation2;
         TLRPC.ChatPhoto chatPhoto;
-        boolean z10;
+        boolean z9;
         Bitmap decodeFile;
-        zi ziVar;
+        ij ijVar;
         TLRPC.Dialog dialog;
         int i10;
         int i11;
@@ -91,27 +91,27 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         TLRPC.User user2;
         CharSequence charSequence;
         SpannableStringBuilder valueOf;
-        char c2;
         char c10;
-        String charSequence2;
         char c11;
+        String charSequence2;
         char c12;
+        char c13;
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence3;
         CharSequence charSequence4;
-        org.telegram.ui.Components.u8 u8Var;
+        org.telegram.ui.Components.w8 w8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         ArrayList arrayList = this.a;
         Context context = this.b;
         c cVar = this.d;
         if (this.i) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, bd.M0(2131742884, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, hd.M0(2131742875, null));
             return remoteViews;
         }
-        if (i3 >= arrayList.size()) {
+        if (i7 >= arrayList.size()) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, bd.M0(2131744267, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, hd.M0(2131744258, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 0);
@@ -121,13 +121,13 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             remoteViews2.setOnClickFillInIntent(R.id.widget_edititem, intent);
             return remoteViews2;
         }
-        Long l10 = (Long) arrayList.get(i3);
+        Long l10 = (Long) arrayList.get(i7);
         CharSequence charSequence5 = "";
         if (m5.E(l10.longValue())) {
-            user = hp.s1(cVar.a).a2(l10);
+            user = qp.s1(cVar.a).a2(l10);
             if (user != null) {
-                str = l10.B(user) ? bd.M0(2131745911, null) : l10.z(user) ? bd.M0(2131746274, null) : l10.x(user) ? bd.M0(2131749336, null) : g5.m(0, user.first_name, user.last_name);
-                if (l10.z(user) || l10.B(user) || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
+                str = t10.B(user) ? hd.M0(2131745902, null) : t10.z(user) ? hd.M0(2131746265, null) : t10.x(user) ? hd.M0(2131749327, null) : g5.m(0, user.first_name, user.last_name);
+                if (t10.z(user) || t10.B(user) || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
                     chat = null;
                     fileLocation = null;
                 } else {
@@ -141,11 +141,11 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         } else {
             int i13 = cVar.a;
             int i14 = cVar.a;
-            TLRPC.Chat M02 = hp.s1(i13).M0(Long.valueOf(-l10.longValue()));
+            TLRPC.Chat M02 = qp.s1(i13).M0(Long.valueOf(-l10.longValue()));
             if (M02 != null) {
                 if (t3.p0(M02)) {
-                    String i15 = rg.c.i(i14, M02, false);
-                    TLRPC.Chat M03 = hp.s1(i14).M0(Long.valueOf(M02.linked_monoforum_id));
+                    String i15 = qg.d.i(i14, M02, false);
+                    TLRPC.Chat M03 = qp.s1(i14).M0(Long.valueOf(M02.linked_monoforum_id));
                     if (M03 == null || (chatPhoto = M03.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         fileLocation2 = null;
                     }
@@ -173,15 +173,15 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         remoteViews3.setTextViewText(R.id.shortcut_widget_item_text, str);
         if (fileLocation != null) {
             try {
-                w7.G(h10.t0);
+                w7.G(p10.s0);
                 decodeFile = BitmapFactory.decodeFile(w7.K(fileLocation, null, true, true).toString());
             } catch (Throwable th2) {
                 th = th2;
-                z10 = true;
-                a8.g(th, z10);
-                ziVar = (zi) this.h.f(l10.longValue());
+                z9 = true;
+                a8.g(th, z9);
+                ijVar = (ij) this.h.f(l10.longValue());
                 dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
-                if (ziVar != null) {
+                if (ijVar != null) {
                 }
                 if (dialog != null) {
                 }
@@ -194,7 +194,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                 Intent intent2 = new Intent();
                 intent2.putExtras(bundle2);
                 remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent2);
-                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i3 == getCount() ? 8 : i11);
+                remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i7 == getCount() ? 8 : i11);
                 return remoteViews3;
             }
         } else {
@@ -207,19 +207,19 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             Canvas canvas = new Canvas(createBitmap);
             if (decodeFile == null) {
                 if (user != null) {
-                    u8Var = new org.telegram.ui.Components.u8(0, user);
-                    if (l10.z(user)) {
-                        u8Var.g(12);
-                    } else if (l10.B(user)) {
-                        u8Var.g(1);
+                    w8Var = new org.telegram.ui.Components.w8(0, user);
+                    if (t10.z(user)) {
+                        w8Var.g(12);
+                    } else if (t10.B(user)) {
+                        w8Var.g(1);
                     }
                 } else {
-                    u8Var = new org.telegram.ui.Components.u8((org.telegram.ui.ActionBar.e6) null);
+                    w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
                     int i16 = cVar.a;
-                    u8Var.q(chat);
+                    w8Var.q(chat);
                 }
-                u8Var.setBounds(0, 0, L, L);
-                u8Var.draw(canvas);
+                w8Var.setBounds(0, 0, L, L);
+                w8Var.draw(canvas);
             } else {
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -239,11 +239,11 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             remoteViews3.setImageViewBitmap(R.id.shortcut_widget_item_avatar, createBitmap);
         } catch (Throwable th3) {
             th = th3;
-            z10 = true;
-            a8.g(th, z10);
-            ziVar = (zi) this.h.f(l10.longValue());
+            z9 = true;
+            a8.g(th, z9);
+            ijVar = (ij) this.h.f(l10.longValue());
             dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
-            if (ziVar != null) {
+            if (ijVar != null) {
             }
             if (dialog != null) {
             }
@@ -256,24 +256,24 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             Intent intent22 = new Intent();
             intent22.putExtras(bundle22);
             remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent22);
-            remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i3 == getCount() ? 8 : i11);
+            remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i7 == getCount() ? 8 : i11);
             return remoteViews3;
         }
-        ziVar = (zi) this.h.f(l10.longValue());
+        ijVar = (ij) this.h.f(l10.longValue());
         dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
-        if (ziVar != null) {
-            long Z0 = ziVar.Z0();
+        if (ijVar != null) {
+            long Z0 = ijVar.Z0();
             if (m5.E(Z0)) {
-                user2 = hp.s1(cVar.a).a2(Long.valueOf(Z0));
+                user2 = qp.s1(cVar.a).a2(Long.valueOf(Z0));
                 M0 = null;
             } else {
-                M0 = hp.s1(cVar.a).M0(Long.valueOf(-Z0));
+                M0 = qp.s1(cVar.a).M0(Long.valueOf(-Z0));
                 user2 = null;
             }
             int color = context.getResources().getColor(R.color.widget_text);
-            if (ziVar.k instanceof TLRPC.TL_messageService) {
+            if (ijVar.k instanceof TLRPC.TL_messageService) {
                 if (t3.T(chat)) {
-                    TLRPC.MessageAction messageAction = ziVar.k.action;
+                    TLRPC.MessageAction messageAction = ijVar.k.action;
                     charSequence4 = charSequence5;
                     if (!(messageAction instanceof TLRPC.TL_messageActionHistoryClear)) {
                         charSequence4 = charSequence5;
@@ -281,84 +281,84 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                     color = context.getResources().getColor(R.color.widget_action_text);
                     charSequence3 = charSequence4;
                 }
-                charSequence4 = ziVar.v;
+                charSequence4 = ijVar.v;
                 color = context.getResources().getColor(R.color.widget_action_text);
                 charSequence3 = charSequence4;
             } else {
                 String str2 = "📎 ";
                 if (chat == null || M0 != null || (t3.T(chat) && !t3.n0(chat))) {
-                    TLRPC.Message message = ziVar.k;
+                    TLRPC.Message message = ijVar.k;
                     TLRPC.MessageMedia messageMedia = message.media;
                     if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = bd.M0(2131753947, null);
+                        charSequence3 = hd.M0(2131753947, null);
                     } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = bd.M0(2131753932, null);
-                    } else if (ziVar.z != null) {
-                        if (zi.M4(message)) {
+                        charSequence3 = hd.M0(2131753932, null);
+                    } else if (ijVar.z != null) {
+                        if (ij.M4(message)) {
                             str2 = "📹 ";
-                        } else if (zi.S4(ziVar.k)) {
+                        } else if (ij.S4(ijVar.k)) {
                             str2 = "🎤 ";
-                        } else if (ziVar.J3()) {
+                        } else if (ijVar.J3()) {
                             str2 = "🎧 ";
-                        } else if (zi.T3(ziVar.k)) {
+                        } else if (ij.T3(ijVar.k)) {
                             str2 = "🖼 ";
                         }
-                        StringBuilder l11 = com.google.android.recaptcha.internal.a.l(str2);
-                        l11.append((Object) ziVar.z);
-                        charSequence3 = l11.toString();
+                        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str2);
+                        m10.append((Object) ijVar.z);
+                        charSequence3 = m10.toString();
                     } else {
                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                             charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
-                            charSequence = "🎮 " + ziVar.k.media.game.title;
-                        } else if (ziVar.D == 14) {
-                            charSequence = com.google.android.recaptcha.internal.a.k("🎧 ", ziVar.x1(true), " - ", ziVar.z1(true));
+                            charSequence = "🎮 " + ijVar.k.media.game.title;
+                        } else if (ijVar.D == 14) {
+                            charSequence = com.google.android.recaptcha.internal.a.l("🎧 ", ijVar.x1(true), " - ", ijVar.z1(true));
                         } else {
-                            charSequence = ziVar.v;
-                            g0.x1(charSequence, ziVar.Y1, null);
+                            charSequence = ijVar.v;
+                            g0.x1(charSequence, ijVar.Y1, null);
                         }
                         CharSequence charSequence6 = charSequence;
                         charSequence3 = charSequence6;
-                        if (ziVar.k.media != null) {
+                        if (ijVar.k.media != null) {
                             charSequence3 = charSequence6;
-                            if (!ziVar.G3()) {
+                            if (!ijVar.G3()) {
                                 color = context.getResources().getColor(R.color.widget_action_text);
                                 charSequence3 = charSequence6;
                             }
                         }
                     }
                 } else {
-                    String M04 = ziVar.Q3() ? bd.M0(2131750511, null) : user2 != null ? l10.j(user2, true).replace("\n", "") : "DELETED";
-                    CharSequence charSequence7 = ziVar.z;
+                    String M04 = ijVar.Q3() ? hd.M0(2131750502, null) : user2 != null ? t10.j(user2, true).replace("\n", "") : "DELETED";
+                    CharSequence charSequence7 = ijVar.z;
                     try {
                         if (charSequence7 != null) {
                             String charSequence8 = charSequence7.toString();
                             if (charSequence8.length() > 150) {
-                                charSequence8 = charSequence8.substring(0, hs.g2);
+                                charSequence8 = charSequence8.substring(0, qs.g2);
                             }
-                            if (zi.M4(ziVar.k)) {
+                            if (ij.M4(ijVar.k)) {
                                 str2 = "📹 ";
-                            } else if (zi.S4(ziVar.k)) {
+                            } else if (ij.S4(ijVar.k)) {
                                 str2 = "🎤 ";
-                            } else if (ziVar.J3()) {
+                            } else if (ijVar.J3()) {
                                 str2 = "🎧 ";
-                            } else if (zi.T3(ziVar.k)) {
+                            } else if (ij.T3(ijVar.k)) {
                                 str2 = "🖼 ";
                             }
-                            StringBuilder l12 = com.google.android.recaptcha.internal.a.l(str2);
-                            l12.append(charSequence8.replace('\n', ' '));
-                            valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", l12.toString(), M04));
-                        } else if (ziVar.k.media == null || ziVar.G3()) {
-                            String str3 = ziVar.k.message;
+                            StringBuilder m11 = com.google.android.recaptcha.internal.a.m(str2);
+                            m11.append(charSequence8.replace('\n', ' '));
+                            valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", m11.toString(), M04));
+                        } else if (ijVar.k.media == null || ijVar.G3()) {
+                            String str3 = ijVar.k.message;
                             if (str3 != null) {
                                 if (str3.length() > 150) {
-                                    c2 = 0;
-                                    str3 = str3.substring(0, hs.g2);
+                                    c10 = 0;
+                                    str3 = str3.substring(0, qs.g2);
                                 } else {
-                                    c2 = 0;
+                                    c10 = 0;
                                 }
                                 Object[] objArr = new Object[2];
-                                objArr[c2] = str3.replace('\n', ' ').trim();
+                                objArr[c10] = str3.replace('\n', ' ').trim();
                                 objArr[1] = M04;
                                 valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
                             } else {
@@ -366,45 +366,45 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                             }
                         } else {
                             color = context.getResources().getColor(R.color.widget_action_text);
-                            TLRPC.MessageMedia messageMedia2 = ziVar.k.media;
+                            TLRPC.MessageMedia messageMedia2 = ijVar.k.media;
                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                charSequence2 = a1.g.q("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
+                                charSequence2 = a8.p0.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                charSequence2 = a1.g.q("🎮 \u2068", messageMedia2.game.title, "\u2069");
+                                charSequence2 = a8.p0.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
                             } else {
-                                if (ziVar.D == 14) {
-                                    c10 = 1;
-                                    charSequence2 = org.telegram.ui.Cells.f1.q("🎧 \u2068", ziVar.x1(true), " - ", ziVar.z1(true), "\u2069");
+                                if (ijVar.D == 14) {
+                                    c11 = 1;
+                                    charSequence2 = org.telegram.ui.Cells.f1.m("🎧 \u2068", ijVar.x1(true), " - ", ijVar.z1(true), "\u2069");
                                 } else {
-                                    c10 = 1;
-                                    charSequence2 = ziVar.v.toString();
+                                    c11 = 1;
+                                    charSequence2 = ijVar.v.toString();
                                 }
-                                c11 = ' ';
-                                c12 = '\n';
-                                String replace = charSequence2.replace(c12, c11);
+                                c12 = ' ';
+                                c13 = '\n';
+                                String replace = charSequence2.replace(c13, c12);
                                 Object[] objArr2 = new Object[2];
                                 objArr2[0] = replace;
-                                objArr2[c10] = M04;
+                                objArr2[c11] = M04;
                                 SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                                valueOf2.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                                 charSequence3 = spannableStringBuilder;
                             }
-                            c11 = ' ';
-                            c12 = '\n';
-                            c10 = 1;
-                            String replace2 = charSequence2.replace(c12, c11);
+                            c12 = ' ';
+                            c13 = '\n';
+                            c11 = 1;
+                            String replace2 = charSequence2.replace(c13, c12);
                             Object[] objArr22 = new Object[2];
                             objArr22[0] = replace2;
-                            objArr22[c10] = M04;
+                            objArr22[c11] = M04;
                             SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
-                            valueOf22.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
+                            valueOf22.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
                             spannableStringBuilder = valueOf22;
-                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                             charSequence3 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                         charSequence3 = spannableStringBuilder;
                     } catch (Exception e10) {
                         a8.g(e10, true);
@@ -413,14 +413,14 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                     spannableStringBuilder = valueOf;
                 }
             }
-            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, bd.e1(ziVar.k.date));
+            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, hd.e1(ijVar.k.date));
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, charSequence3.toString());
             remoteViews3.setTextColor(R.id.shortcut_widget_item_message, color);
         } else {
             if (dialog == null || (i10 = dialog.last_message_date) == 0) {
                 remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
             } else {
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, bd.e1(i10));
+                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, hd.e1(i10));
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }
@@ -431,7 +431,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             i11 = 0;
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_badge, String.format("%d", Integer.valueOf(i12)));
             remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 0);
-            if (hp.s1(cVar.a).r2(dialog.id, 0L, null)) {
+            if (qp.s1(cVar.a).r2(dialog.id, 0L, null)) {
                 remoteViews3.setBoolean(R.id.shortcut_widget_item_badge, "setEnabled", false);
                 remoteViews3.setInt(R.id.shortcut_widget_item_badge, "setBackgroundResource", R.drawable.widget_badge_muted_background);
             } else {
@@ -449,7 +449,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         Intent intent222 = new Intent();
         intent222.putExtras(bundle222);
         remoteViews3.setOnClickFillInIntent(R.id.shortcut_widget_item, intent222);
-        remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i3 == getCount() ? 8 : i11);
+        remoteViews3.setViewVisibility(R.id.shortcut_widget_item_divider, i7 == getCount() ? 8 : i11);
         return remoteViews3;
     }
 
@@ -476,27 +476,27 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         hVar.b();
         c cVar = this.d;
         if (cVar != null) {
-            int i3 = cVar.a;
-            if (h10.i(i3).p()) {
+            int i7 = cVar.a;
+            if (p10.i(i7).p()) {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
                 a0.h hVar2 = new a0.h();
-                qr a02 = qr.a0(i3);
+                yr a02 = yr.a0(i7);
                 int i10 = this.c;
                 a0.h hVar3 = this.g;
                 CountDownLatch countDownLatch = new CountDownLatch(1);
-                a02.a.c(new cg.c(a02, i10, arrayList, 0, hVar3, hVar2, arrayList3, arrayList2, countDownLatch));
+                a02.a.c(new bg.c(a02, i10, arrayList, 0, hVar3, hVar2, arrayList3, arrayList2, countDownLatch));
                 try {
                     countDownLatch.await();
                 } catch (Exception e10) {
                     a02.o(e10, true);
                 }
-                hp.s1(i3).Y3(arrayList2, true);
-                hp.s1(i3).S3(arrayList3, true);
+                qp.s1(i7).Y3(arrayList2, true);
+                qp.s1(i7).S3(arrayList3, true);
                 hVar.b();
                 int m10 = hVar2.m();
                 for (int i11 = 0; i11 < m10; i11++) {
-                    hVar.k(new zi(cVar.a, (TLRPC.Message) hVar2.n(i11), (a0.h) null, (a0.h) null, false, true), hVar2.j(i11));
+                    hVar.k(new ij(cVar.a, (TLRPC.Message) hVar2.n(i11), (a0.h) null, (a0.h) null, false, true), hVar2.j(i11));
                 }
             }
         }

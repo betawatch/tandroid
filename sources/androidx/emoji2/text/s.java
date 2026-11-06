@@ -1,7 +1,29 @@
 package androidx.emoji2.text;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.util.SparseArray;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class s extends g {
-    public static final ra.e d = new ra.e(2);
+public final class s {
+    public final SparseArray a;
+    public o b;
+
+    public s(int i7) {
+        this.a = new SparseArray(i7);
+    }
+
+    public final void a(o oVar, int i7, int i10) {
+        int a10 = oVar.a(i7);
+        SparseArray sparseArray = this.a;
+        s sVar = sparseArray == null ? null : (s) sparseArray.get(a10);
+        if (sVar == null) {
+            sVar = new s(1);
+            sparseArray.put(oVar.a(i7), sVar);
+        }
+        if (i10 > i7) {
+            sVar.a(oVar, i7 + 1, i10);
+        } else {
+            sVar.b = oVar;
+        }
+    }
 }

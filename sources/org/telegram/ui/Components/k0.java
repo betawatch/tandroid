@@ -1,45 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k0 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ k0(int i3, Runnable runnable) {
-        this.a = i3;
-        this.b = runnable;
+    public /* synthetic */ k0(Context context, int i7) {
+        this.a = i7;
+        this.b = context;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
+                Context context = this.b;
+                try {
+                    context.startActivity(new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", Uri.parse("package:" + context.getPackageName())));
                     break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
                 }
-                break;
             case 1:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            case 2:
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
+                vf.c.t(this.b, org.telegram.messenger.r2.g);
                 break;
             default:
-                this.b.run();
-                break;
+                Context context2 = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    context2.startActivity(intent);
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
         }
     }
 }

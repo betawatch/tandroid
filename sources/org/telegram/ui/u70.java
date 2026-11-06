@@ -1,105 +1,98 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u70 implements org.telegram.messenger.e9, org.telegram.messenger.xa, org.telegram.ui.ActionBar.p1, org.telegram.ui.Components.ya0, org.telegram.messenger.o10, org.telegram.ui.Components.tt0, org.telegram.ui.ActionBar.o6, org.telegram.ui.ActionBar.p6 {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class u70 implements Runnable {
+    public final /* synthetic */ LaunchActivity a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ TLRPC.TL_messages_botApp e;
+    public final /* synthetic */ AtomicBoolean f;
+    public final /* synthetic */ String h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ boolean w;
 
-    public /* synthetic */ u70(int i3) {
-        this.a = i3;
+    public /* synthetic */ u70(LaunchActivity launchActivity, org.telegram.ui.ActionBar.f2 f2Var, int i7, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z9, boolean z10, boolean z11, boolean z12) {
+        this.a = launchActivity;
+        this.b = f2Var;
+        this.c = i7;
+        this.d = user;
+        this.e = tL_messages_botApp;
+        this.f = atomicBoolean;
+        this.h = str;
+        this.n = z9;
+        this.r = z10;
+        this.s = z11;
+        this.w = z12;
     }
 
-    @Override // org.telegram.messenger.o10
-    public Object d(Number number, Object obj) {
-        return ((Integer) number).intValue() == 0 ? ci.wb.a1(false, org.telegram.messenger.bd.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.bd.E(r4.intValue(), ',');
-    }
-
-    @Override // org.telegram.ui.Components.ya0
-    public String e(int i3) {
-        return i3 == 0 ? org.telegram.messenger.bd.M0(2131753799, null) : i3 == 1 ? org.telegram.messenger.bd.a0("AutoLockInTime", null, 2131753798, org.telegram.messenger.bd.G(1, "Minutes", new Object[0])) : i3 == 2 ? org.telegram.messenger.bd.a0("AutoLockInTime", null, 2131753798, org.telegram.messenger.bd.G(5, "Minutes", new Object[0])) : i3 == 3 ? org.telegram.messenger.bd.a0("AutoLockInTime", null, 2131753798, org.telegram.messenger.bd.G(1, "Hours", new Object[0])) : i3 == 4 ? org.telegram.messenger.bd.a0("AutoLockInTime", null, 2131753798, org.telegram.messenger.bd.G(5, "Hours", new Object[0])) : "";
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public void f(int i3, View view) {
-        org.telegram.ui.Wallet.u3 u3Var = (org.telegram.ui.Wallet.u3) view;
-        ShapeDrawable shapeDrawable = u3Var.f0;
-        if (shapeDrawable != null) {
-            shapeDrawable.getPaint().setColor(i3);
-            u3Var.f0.invalidateSelf();
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.TL_attachMenuBot tL_attachMenuBot;
+        String str = LaunchActivity.B1;
+        org.telegram.ui.ActionBar.f2 f2Var = this.b;
+        if (f2Var == null || !LaunchActivity.D1) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        switch (this.a) {
-            case 2:
-                s1Var.dismiss();
-                break;
-            case 4:
-                Drawable[] drawableArr = PhotoViewer.V8;
-                break;
-            case 5:
-                s1Var.dismiss();
-                break;
-            case 6:
-                s1Var.dismiss();
-                break;
-            case 8:
-                RectF rectF = ProfileActivity.T6;
-                s1Var.dismiss();
-                break;
-            case 9:
-                s1Var.dismiss();
-                break;
-            case 15:
-                s1Var.dismiss();
-                break;
-            case 19:
-                s1Var.dismiss();
-                break;
-            case 20:
-                s1Var.dismiss();
-                break;
-            case 21:
-                s1Var.dismiss();
-                break;
-            default:
-                s1Var.dismiss();
-                break;
+        LaunchActivity launchActivity = this.a;
+        if (launchActivity.isFinishing() || launchActivity.isDestroyed()) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.o6
-    public int h(View view) {
-        ShapeDrawable shapeDrawable = ((org.telegram.ui.Wallet.u3) view).f0;
-        if (shapeDrawable != null) {
-            return shapeDrawable.getPaint().getColor();
+        TLRPC.User user = this.d;
+        long j3 = user.id;
+        TLRPC.TL_messages_botApp tL_messages_botApp = this.e;
+        TLRPC.BotApp botApp = tL_messages_botApp.app;
+        boolean z9 = this.f.get();
+        int i7 = this.c;
+        String str2 = this.h;
+        boolean z10 = this.n;
+        boolean z11 = this.r;
+        hi.q4 b10 = hi.q4.b(i7, j3, j3, null, null, 3, 0, 0L, botApp, z9, str2, user, 0, z10, z11);
+        if (launchActivity.O() == null || launchActivity.O().k(b10) == null) {
+            org.telegram.messenger.b6.n(launchActivity.O, user.id);
+            hi.a3 a3Var = new hi.a3(launchActivity, f2Var.getResourceProvider());
+            hi.s2 s2Var = a3Var.D;
+            if (s2Var != null) {
+                s2Var.setWasOpenedByLinkIntent(this.s);
+            }
+            a3Var.B(!z10);
+            if (z11) {
+                a3Var.C(true, false, a3Var.f0);
+            }
+            a3Var.B0 = false;
+            a3Var.l0 = launchActivity;
+            a3Var.x(f2Var, b10);
+            a3Var.show();
+            if (tL_messages_botApp.inactive || this.w) {
+                TLRPC.User a22 = org.telegram.messenger.qp.s1(a3Var.H).a2(Long.valueOf(a3Var.I));
+                ArrayList<TLRPC.TL_attachMenuBot> arrayList = org.telegram.messenger.ui.b0(a3Var.H).b.bots;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size) {
+                        tL_attachMenuBot = null;
+                        break;
+                    }
+                    TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i10);
+                    i10++;
+                    tL_attachMenuBot = tL_attachMenuBot2;
+                    if (tL_attachMenuBot.bot_id == a3Var.I) {
+                        break;
+                    }
+                }
+                if (tL_attachMenuBot == null) {
+                    return;
+                }
+                boolean z12 = tL_attachMenuBot.show_in_side_menu;
+                org.telegram.messenger.g0.i3(new ha.b(4, a3Var, (z12 && tL_attachMenuBot.show_in_attach_menu) ? org.telegram.messenger.hd.a0(null, null, 2131753138, a22.first_name) : z12 ? org.telegram.messenger.hd.a0(null, null, 2131753137, a22.first_name) : org.telegram.messenger.hd.a0(null, null, 2131753139, a22.first_name)), 200L);
+            }
         }
-        return 0;
-    }
-
-    @Override // org.telegram.messenger.e9
-    public Object k(Object obj) {
-        String str = LaunchActivity.E1;
-        return new ee0();
-    }
-
-    @Override // org.telegram.ui.Components.tt0
-    public void l(int i3) {
-        org.telegram.messenger.az.b1 = i3;
-        org.telegram.messenger.az.y();
-    }
-
-    @Override // org.telegram.messenger.xa
-    public void onClick() {
-    }
-
-    @Override // org.telegram.ui.Components.tt0
-    public /* synthetic */ void p() {
     }
 }

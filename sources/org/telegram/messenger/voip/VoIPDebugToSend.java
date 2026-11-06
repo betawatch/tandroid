@@ -20,15 +20,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.n1;
+import org.telegram.ui.Components.voip.y1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public final class Data {
         long access_hash;
         long callId;
@@ -39,8 +39,8 @@ public class VoIPDebugToSend {
         }
     }
 
-    public VoIPDebugToSend(int i3) {
-        this.currentAccount = i3;
+    public VoIPDebugToSend(int i7) {
+        this.currentAccount = i7;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,7 +56,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        w7.G(this.currentAccount).g0(file.getAbsolutePath(), new mi.f(4, this, savecalldebug));
+        w7.G(this.currentAccount).g0(file.getAbsolutePath(), new k(0, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -71,11 +71,11 @@ public class VoIPDebugToSend {
                     byte[] bArr = new byte[TLObject.FLAG_13];
                     while (true) {
                         int read = bufferedInputStream.read(bArr);
-                        int i3 = 0;
+                        int i7 = 0;
                         if (read == -1) {
                             gZIPOutputStream.close();
                             bufferedInputStream.close();
-                            org.telegram.messenger.g0.h3(new l(this, file, savecalldebug, i3));
+                            org.telegram.messenger.g0.h3(new m(this, file, savecalldebug, i7));
                             return;
                         }
                         gZIPOutputStream.write(bArr, 0, read);
@@ -99,12 +99,12 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.g.c(new k(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.g.c(new l(this, data, new File(a8.p0.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
-    public void done(long j10, boolean z10) {
-        Data remove = this.pending.remove(Long.valueOf(j10));
-        if (remove == null || !z10) {
+    public void done(long j3, boolean z9) {
+        Data remove = this.pending.remove(Long.valueOf(j3));
+        if (remove == null || !z9) {
             return;
         }
         TL_phone.saveCallDebug savecalldebug = new TL_phone.saveCallDebug();
@@ -115,22 +115,22 @@ public class VoIPDebugToSend {
         savecalldebug.peer = tL_inputPhoneCall;
         tL_inputPhoneCall.access_hash = remove.access_hash;
         tL_inputPhoneCall.id = remove.callId;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new m(this, remove, savecalldebug, 0));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new n(this, remove, savecalldebug, 0));
     }
 
-    public void push(long j10, long j11, Instance.FinalState finalState, String str) {
+    public void push(long j3, long j10, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(n1.e("" + j10));
+                finalState.debugLog = VoIPService.getStringFromFile(y1.e("" + j3));
             } catch (Exception e10) {
                 e10.printStackTrace();
             }
         }
         Data data = new Data();
-        data.callId = j10;
-        data.access_hash = j11;
+        data.callId = j3;
+        data.access_hash = j10;
         data.state = finalState;
         data.logPath = str;
-        this.pending.put(Long.valueOf(j10), data);
+        this.pending.put(Long.valueOf(j3), data);
     }
 }

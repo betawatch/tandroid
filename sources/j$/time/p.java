@@ -150,7 +150,7 @@ public final class p implements Externalizable {
                 }
                 throw new IllegalArgumentException("ZoneId must match ZoneOffset");
             case 7:
-                int i3 = u.d;
+                int i7 = u.d;
                 return ZoneId.H(objectInput.readUTF(), false);
             case 8:
                 return ZoneOffset.Q(objectInput);

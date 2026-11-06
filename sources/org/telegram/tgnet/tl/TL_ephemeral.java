@@ -1,7 +1,7 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import org.telegram.messenger.go;
+import org.telegram.messenger.ch;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
@@ -10,11 +10,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class TL_ephemeral {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class EphemeralMessage extends TLObject {
         public int anchor_msg_id;
         public long chat_instance;
@@ -37,25 +37,25 @@ public class TL_ephemeral {
         public long via_bot_id;
         public boolean welcome;
 
-        public static EphemeralMessage TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (EphemeralMessage) TLObject.TLdeserialize(EphemeralMessage.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static EphemeralMessage TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (EphemeralMessage) TLObject.TLdeserialize(EphemeralMessage.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static EphemeralMessage fromConstructor(int i3) {
-            if (i3 == -1896618863) {
+        private static EphemeralMessage fromConstructor(int i7) {
+            if (i7 == -1896618863) {
                 return new TL_ephemeralMessage_layer229_old();
             }
-            if (i3 == -641278950) {
+            if (i7 == -641278950) {
                 return new TL_ephemeralMessage_layer228();
             }
-            if (i3 != -584597783) {
+            if (i7 != -584597783) {
                 return null;
             }
             return new TL_ephemeralMessage();
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_deleteAllWelcomeMessages extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1934595873;
         public TLRPC.InputPeer peer;
@@ -67,12 +67,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_deleteMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1829312617;
         public int flags;
@@ -94,12 +94,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_deleteWelcomeMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -394090015;
         public int id;
@@ -113,12 +113,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_editMessage extends TLRPC.TL_messages_editMessage {
         public static final int constructor = -811830693;
         public int flags;
@@ -169,49 +169,49 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_ephemeralMessage extends EphemeralMessage {
         public static final int constructor = -584597783;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.out = TLObject.hasFlag(readInt32, 1);
             this.welcome = TLObject.hasFlag(this.flags, 32);
             this.invert_media = TLObject.hasFlag(this.flags, 128);
             this.noforwards = TLObject.hasFlag(this.flags, TLObject.FLAG_12);
-            this.id = inputSerializedData.readInt32(z10);
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.id = inputSerializedData.readInt32(z9);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 512)) {
-                this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.receiver_id = inputSerializedData.readInt64(z10);
+            this.receiver_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.date = inputSerializedData.readInt32(z10);
-            this.message = inputSerializedData.readString(z10);
+            this.date = inputSerializedData.readInt32(z9);
+            this.message = inputSerializedData.readString(z9);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ch(4), z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.rich_message = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.rich_message = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
-                this.chat_instance = inputSerializedData.readInt64(z10);
+                this.chat_instance = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.anchor_msg_id = inputSerializedData.readInt32(z10);
+                this.anchor_msg_id = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -274,35 +274,35 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_ephemeralMessage_layer228 extends TL_ephemeralMessage {
         public static final int constructor = -641278950;
 
         @Override // org.telegram.tgnet.tl.TL_ephemeral.TL_ephemeralMessage, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.out = TLObject.hasFlag(readInt32, 1);
-            this.id = inputSerializedData.readInt32(z10);
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.receiver_id = inputSerializedData.readInt64(z10);
+            this.id = inputSerializedData.readInt32(z9);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.receiver_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.date = inputSerializedData.readInt32(z10);
-            this.message = inputSerializedData.readString(z10);
+            this.date = inputSerializedData.readInt32(z9);
+            this.message = inputSerializedData.readString(z9);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ch(4), z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -344,40 +344,40 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_ephemeralMessage_layer229_old extends TL_ephemeralMessage {
         public static final int constructor = -1896618863;
 
         @Override // org.telegram.tgnet.tl.TL_ephemeral.TL_ephemeralMessage, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.out = TLObject.hasFlag(readInt32, 1);
             this.welcome = TLObject.hasFlag(this.flags, 32);
             this.invert_media = TLObject.hasFlag(this.flags, 128);
-            this.id = inputSerializedData.readInt32(z10);
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.receiver_id = inputSerializedData.readInt64(z10);
+            this.id = inputSerializedData.readInt32(z9);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.receiver_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.date = inputSerializedData.readInt32(z10);
-            this.message = inputSerializedData.readString(z10);
+            this.date = inputSerializedData.readInt32(z9);
+            this.message = inputSerializedData.readString(z9);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ch(4), z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 64)) {
-                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.reply_to = TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 256)) {
-                this.rich_message = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.rich_message = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -428,7 +428,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_getCallbackAnswer extends TLMethod<TLRPC.TL_messages_botCallbackAnswer> {
         public static final int constructor = 1067738312;
         public byte[] data;
@@ -450,12 +450,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.TL_messages_botCallbackAnswer deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.TL_messages_botCallbackAnswer.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.TL_messages_botCallbackAnswer deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.TL_messages_botCallbackAnswer.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_getWelcomeMessages extends TLMethod<WelcomeMessages> {
         public static final int constructor = -610614899;
         public long hash;
@@ -469,12 +469,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WelcomeMessages deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return WelcomeMessages.TLdeserialize(inputSerializedData, i3, z10);
+        public WelcomeMessages deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return WelcomeMessages.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_reportMessage extends TLMethod<TLRPC.ReportResult> {
         public static final int constructor = -2029718849;
         public int id;
@@ -492,12 +492,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.ReportResult deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.ReportResult.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.ReportResult deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.ReportResult.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_sendMessage extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1165140171;
         public boolean anchor;
@@ -564,19 +564,19 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_welcomeMessages extends WelcomeMessages {
         public static final int constructor = 273664114;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.hash = inputSerializedData.readInt64(z10);
-            this.messages = Vector.deserialize(inputSerializedData, new go(2), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.hash = inputSerializedData.readInt64(z9);
+            this.messages = Vector.deserialize(inputSerializedData, new ch(5), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -587,27 +587,27 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class WelcomeMessages extends TLObject {
         public long hash;
         public ArrayList<EphemeralMessage> messages = new ArrayList<>();
 
-        public static WelcomeMessages TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (WelcomeMessages) TLObject.TLdeserialize(WelcomeMessages.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static WelcomeMessages TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (WelcomeMessages) TLObject.TLdeserialize(WelcomeMessages.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static WelcomeMessages fromConstructor(int i3) {
-            if (i3 == 273664114) {
+        private static WelcomeMessages fromConstructor(int i7) {
+            if (i7 == 273664114) {
                 return new TL_welcomeMessages();
             }
-            if (i3 != 1509940017) {
+            if (i7 != 1509940017) {
                 return null;
             }
             return new TL_welcomeMessagesNotModified();
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_welcomeMessagesNotModified extends WelcomeMessages {
         public static final int constructor = 1509940017;
 
@@ -617,7 +617,7 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
         }
     }
 }

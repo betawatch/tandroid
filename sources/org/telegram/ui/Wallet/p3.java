@@ -1,190 +1,357 @@
 package org.telegram.ui.Wallet;
 
 import android.animation.ValueAnimator;
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.view.View;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
+import android.widget.TextView;
+import java.math.BigDecimal;
+import java.util.Locale;
+import java.util.WeakHashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.t10;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bi;
+import org.telegram.ui.Components.ff0;
+import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.xq;
+import org.telegram.ui.fk0;
+import org.telegram.ui.rq0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class p3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class p3 extends Dialog {
+    public static final /* synthetic */ int W = 0;
+    public final RectF D;
+    public final ri.b E;
+    public final dh.c F;
+    public Bitmap G;
+    public i0.b H;
+    public float I;
+    public float J;
+    public boolean K;
+    public final h6.m L;
+    public final RectF M;
+    public final RectF N;
+    public ValueAnimator O;
+    public ValueAnimator P;
+    public float Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public Runnable U;
+    public final int[] V;
+    public final org.telegram.ui.ActionBar.f2 a;
+    public final ff0 b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+    public final RectF f;
+    public final n3 h;
+    public final o3 n;
+    public final h6 r;
+    public final c8 s;
+    public final rq0 w;
+    public final TextView x;
+    public final Paint y;
 
-    public /* synthetic */ p3(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public p3(org.telegram.ui.ActionBar.f2 f2Var, ff0 ff0Var, TLRPC.User user, TL_wallet.card cardVar) {
+        super(f2Var.getParentActivity(), R.style.TransparentDialog);
+        RectF rectF = new RectF();
+        this.f = rectF;
+        this.y = new Paint(3);
+        this.D = new RectF();
+        ri.b bVar = new ri.b();
+        this.E = bVar;
+        this.H = i0.b.e;
+        this.L = new h6.m(28);
+        this.M = new RectF();
+        this.N = new RectF();
+        this.V = new int[2];
+        this.a = f2Var;
+        this.b = ff0Var;
+        int i7 = 1;
+        boolean z9 = user != null && user.id == p10.i(f2Var.getCurrentAccount()).e();
+        this.e = z9;
+        boolean z10 = (user == null || z9 || !((org.telegram.messenger.h0) qp.s1(f2Var.getCurrentAccount()).x7.j0.b).c) ? false : true;
+        this.c = z10;
+        this.d = (user == null || z9 || z10) ? false : true;
+        ff0Var.getLocationOnScreen(new int[2]);
+        rectF.set(ff0Var.w);
+        rectF.offset(r12[0], r12[1]);
+        org.telegram.messenger.g0.S(getWindow());
+        n3 n3Var = new n3(this, getContext());
+        this.h = n3Var;
+        o3 o3Var = new o3(this, getContext());
+        this.n = o3Var;
+        o3Var.setAlpha(0.0f);
+        n3Var.addView(o3Var, c8.ha.c(-1.0f, -1));
+        n3Var.setClipChildren(false);
+        n3Var.setClipToPadding(false);
+        n3Var.setOnClickListener(new j3(this, r9));
+        e3 e3Var = new e3(this, 1);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(n3Var, e3Var);
+        h6 h6Var = new h6(getContext());
+        this.r = h6Var;
+        h6Var.setDiamondOnCard(true);
+        int currentAccount = f2Var.getCurrentAccount();
+        String p10 = t10.p(user);
+        Locale locale = Locale.ROOT;
+        h6Var.setCardHolder(p10.toUpperCase(locale));
+        if (!TextUtils.isEmpty(cardVar.address)) {
+            h6Var.setCardNumber(h6.d(cardVar.address.toUpperCase(locale)));
+        }
+        h6Var.j(currentAccount, cardVar.balance);
+        CharSequence m10 = n0.x(currentAccount).m(cardVar.balance, false);
+        if (!TextUtils.isEmpty(m10)) {
+            h6Var.O.c(m10, false, true);
+        }
+        h6Var.setCardOnClickListener(new fk0(18, this, f2Var));
+        h6Var.setOnClickListener(new bi.l1(21));
+        h6Var.setAlpha(0.0f);
+        n3Var.addView(h6Var, c8.ha.c(-2.0f, -2));
+        c8 c8Var = new c8(f2Var, h6Var, null, cardVar);
+        this.s = c8Var;
+        n3Var.addView(c8Var, c8.ha.c(-1.0f, -1));
+        dh.c cVar = new dh.c(bVar, bVar, bVar);
+        this.F = cVar;
+        cVar.h = new jh.k(n3Var);
+        cVar.i = n3Var;
+        rq0 rq0Var = new rq0(getContext());
+        this.w = rq0Var;
+        fh.g c10 = cVar.c(rq0Var, new gh.b(org.telegram.ui.ActionBar.k6.d6, f2Var.getResourceProvider()), false);
+        c10.q(org.telegram.messenger.g0.L(8.0f));
+        c10.r(org.telegram.messenger.g0.L(22.0f));
+        rq0Var.setBackground(c10);
+        c8.ka.b(rq0Var, 0.02f, 1.2f);
+        fi.d dVar = new fi.d(getContext(), f2Var.getResourceProvider(), true);
+        dVar.setUseWrapContent(true);
+        dVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        dVar.setRoundRadius(19);
+        CharSequence M0 = hd.M0(z9 ? 2131743062 : z10 ? 2131743018 : 2131749275, null);
+        if (z10) {
+            SpannableStringBuilder append = new SpannableStringBuilder("G  ").append(M0);
+            wp wpVar = new wp(R.drawable.mini_gram_24, 0);
+            wpVar.c(org.telegram.messenger.g0.L(20.0f));
+            wpVar.y = -1;
+            append.setSpan(wpVar, 0, 1, 33);
+            dVar.i(append, false, true);
+        } else {
+            dVar.i(M0, false, true);
+        }
+        dVar.setStateListAnimator(null);
+        rq0Var.addView(dVar, c8.ha.e(-2, -1, 17));
+        rq0Var.setContentDescription(M0);
+        rq0Var.setOnClickListener(new k1(this, f2Var, cardVar, i7));
+        rq0Var.setAlpha(0.0f);
+        rq0Var.setVisibility(c() ? 0 : 8);
+        n3Var.addView(rq0Var, c8.ha.e(-2, 60, 81));
+        TextView textView = new TextView(getContext());
+        this.x = textView;
+        textView.setTextSize(14.0f);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setGravity(17);
+        textView.setLineSpacing(org.telegram.messenger.g0.L(18.0f) - textView.getPaint().getFontMetricsInt(null), 1.0f);
+        d();
+        textView.setAlpha(0.0f);
+        if (z9) {
+            textView.setText(hd.M0(2131743044, null));
+        } else if (user != null) {
+            String j3 = t10.j(user, true);
+            textView.setText(fi.m3.b(new BigDecimal(n0.p(cardVar.balance, false)).signum() == 0 ? hd.a0(null, null, 2131743046, j3) : hd.a0(null, null, 2131743047, j3, n0.l("Grams", h6.e(cardVar.balance).toString(), 2131749506).toString().replace(' ', (char) 160)), textView.getPaint()));
+        }
+        textView.setVisibility(user == null ? 8 : 0);
+        n3Var.addView(textView, c8.ha.e(-2, -2, 49));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ((u3) this.b).setPendingProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                m5 m5Var = (m5) this.b;
-                m5Var.getClass();
-                m5Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m5Var.invalidate();
-                break;
-            case 2:
-                u5 u5Var = (u5) this.b;
-                u5Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u5Var.b.setRotationY(floatValue);
-                boolean z10 = floatValue > 90.0f;
-                u5Var.c.setVisibility(z10 ? 4 : 0);
-                u5Var.d.setVisibility(z10 ? 0 : 4);
-                break;
-            case 3:
-                m6 m6Var = (m6) this.b;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k6 k6Var = m6Var.q;
-                u6 u6Var = m6Var.i;
-                RectF rectF = m6Var.n;
-                RectF rectF2 = m6Var.o;
-                if (!m6Var.v) {
-                    m6Var.e();
-                    float interpolation = m6Var.k.getInterpolation(Math.min(1.0f, floatValue2 * 2.0f));
-                    bi biVar = m6Var.c;
-                    if (biVar != null) {
-                        biVar.x1(interpolation);
-                    } else {
-                        m6Var.b.setTranslationY(r7.getHeight() * interpolation);
-                    }
-                    if (m6Var.p != null && !rectF2.isEmpty()) {
-                        org.telegram.ui.Cells.t0 I8 = m6Var.e.I8(m6Var.f);
-                        org.telegram.ui.Cells.t0 t0Var = m6Var.p;
-                        if (I8 != t0Var) {
-                            t0Var.J0.i(false);
-                            m6Var.p = I8;
-                        }
-                        org.telegram.ui.Cells.t0 t0Var2 = m6Var.p;
-                        if (t0Var2 != null && !m6Var.s) {
-                            t0Var2.J0.i(true);
-                            a4 a4Var = m6Var.p.J0.m;
-                            if (a4Var != null && a4Var.isAttachedToWindow()) {
-                                rectF2.set(m6Var.c(a4Var));
-                                m6Var.r = floatValue2;
-                                float max = Math.max(0.0f, Math.min(1.0f, (floatValue2 - 0.25f) / 0.5f));
-                                float B = com.google.android.recaptcha.internal.a.B(max, 2.0f, 3.0f, max * max);
-                                u6Var.setAlpha((1.0f - B) * m6Var.l);
-                                k6Var.setAlpha(B);
-                                m6Var.d();
-                                float f10 = 1.0f - floatValue2;
-                                float centerX = ((rectF2.centerX() - rectF.centerX()) * 0.35f) + rectF.centerX();
-                                float min = Math.min(rectF.centerY(), rectF2.centerY()) - org.telegram.messenger.g0.L(150.0f);
-                                float f11 = f10 * f10;
-                                float f12 = f10 * 2.0f * floatValue2;
-                                float f13 = floatValue2 * floatValue2;
-                                float centerX2 = (rectF2.centerX() * f13) + (centerX * f12) + (rectF.centerX() * f11);
-                                float centerY = (rectF2.centerY() * f13) + (f12 * min) + (rectF.centerY() * f11);
-                                m6Var.b(centerX2, centerY, ((rectF2.width() - rectF.width()) * floatValue2) + rectF.width());
-                                if (floatValue2 < 0.92f) {
-                                    m6Var.j.g(centerX2, centerY);
-                                }
-                                m6Var.h.invalidate();
-                                break;
-                            } else {
-                                rectF2.setEmpty();
-                                u6Var.setAlpha(0.0f);
-                                k6Var.setAlpha(0.0f);
-                                break;
-                            }
-                        } else {
-                            rectF2.setEmpty();
-                            u6Var.setAlpha(0.0f);
-                            k6Var.setAlpha(0.0f);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 4:
-                u6 u6Var2 = (u6) this.b;
-                u6Var2.getClass();
-                u6Var2.j0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u6Var2.e();
-                break;
-            case 5:
-                o7 o7Var = (o7) this.b;
-                o7Var.getClass();
-                o7Var.n(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 6:
-                p8 p8Var = (p8) this.b;
-                p8Var.getClass();
-                p8Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p8Var.invalidate();
-                break;
-            case 7:
-                s8 s8Var = (s8) this.b;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                s8Var.w = f14.floatValue();
-                s8Var.f.a(f14);
-                View view = s8Var.a;
-                view.setAlpha(1.0f - s8.c(0.05f, 0.45f, s8Var.w));
-                view.setScaleX(1.0f - (s8Var.w * 0.06f));
-                EditTextBoldCursor editTextBoldCursor = s8Var.b;
-                editTextBoldCursor.setAlpha(s8.c(0.3f, 0.9f, s8Var.w));
-                editTextBoldCursor.setTranslationX((1.0f - s8Var.w) * k2.p1.d(80.0f, s8Var.getWidth(), 0));
-                s8Var.invalidate();
-                break;
-            case 8:
-                m9 m9Var = (m9) this.b;
-                m9Var.getClass();
-                m9Var.y0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 9:
-                l9 l9Var = (l9) this.b;
-                l9Var.getClass();
-                l9Var.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l9Var.c();
-                break;
-            default:
-                aa aaVar = (aa) this.b;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                RectF rectF3 = aaVar.n;
-                RectF rectF4 = aaVar.o;
-                if (!aaVar.s) {
-                    aaVar.e();
-                    float interpolation2 = aaVar.k.getInterpolation(Math.min(1.0f, floatValue3 * 2.0f));
-                    bi biVar2 = aaVar.a;
-                    if (biVar2 != null) {
-                        biVar2.x1(interpolation2);
-                    } else {
-                        aaVar.c.setTranslationY(r5.getHeight() * interpolation2);
-                    }
-                    if (aaVar.p != null && !rectF4.isEmpty()) {
-                        u6 pendingDiamond = aaVar.p.getPendingDiamond();
-                        if (pendingDiamond != null) {
-                            u3 u3Var = aaVar.p;
-                            TL_wallet.walletTransaction wallettransaction = aaVar.f;
-                            TL_wallet.walletTransaction wallettransaction2 = u3Var.S;
-                            if (wallettransaction2 != null && s3.i(wallettransaction2, wallettransaction) && pendingDiamond.isAttachedToWindow()) {
-                                rectF4.set(aaVar.d(pendingDiamond));
-                            }
-                        }
-                        float f15 = 1.0f - floatValue3;
-                        float centerX3 = ((rectF4.centerX() - rectF3.centerX()) * 0.35f) + rectF3.centerX();
-                        float min2 = Math.min(rectF3.centerY(), rectF4.centerY()) - org.telegram.messenger.g0.L(150.0f);
-                        float f16 = f15 * f15;
-                        float f17 = f15 * 2.0f * floatValue3;
-                        float f18 = floatValue3 * floatValue3;
-                        float centerX4 = (rectF4.centerX() * f18) + (centerX3 * f17) + (rectF3.centerX() * f16);
-                        float centerY2 = (rectF4.centerY() * f18) + (f17 * min2) + (rectF3.centerY() * f16);
-                        aaVar.c(centerX4, centerY2, ((rectF4.width() - rectF3.width()) * floatValue3) + rectF3.width());
-                        if (floatValue3 < 0.92f) {
-                            aaVar.j.g(centerX4, centerY2);
-                        }
-                        aaVar.h.invalidate();
-                        break;
-                    }
-                }
-                break;
+    public final void a(float f10) {
+        ValueAnimator valueAnimator = this.O;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (f10 == 1.0f && this.T) {
+            return;
+        }
+        if (f10 == 1.0f) {
+            this.T = true;
+        }
+        this.K = f10 == 1.0f;
+        h6 h6Var = this.r;
+        h6Var.getClass();
+        h6Var.setLayerType(2, null);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, f10);
+        this.O = ofFloat;
+        ofFloat.setDuration(f10 == 1.0f ? 650L : 380L);
+        this.O.setInterpolator(new LinearInterpolator());
+        this.O.addUpdateListener(new m3(this, 0));
+        this.O.addListener(new org.telegram.ui.ActionBar.t0(this, f10, 6));
+        this.O.start();
+    }
+
+    public final void b() {
+        if (this.S) {
+            return;
+        }
+        this.S = true;
+        this.r.setLayerType(0, null);
+        this.b.setEjectProgress(0.0f);
+        super.dismiss();
+        this.s.p();
+        this.E.a(null);
+        this.G = null;
+        if (this.U == null || this.a.getParentActivity() == null) {
+            return;
+        }
+        Runnable runnable = this.U;
+        this.U = null;
+        org.telegram.messenger.g0.h3(runnable);
+    }
+
+    public final boolean c() {
+        return this.c || this.d || this.e;
+    }
+
+    public final void d() {
+        boolean q10 = org.telegram.ui.ActionBar.k6.I.q();
+        Bitmap bitmap = this.G;
+        TextView textView = this.x;
+        if (bitmap != null && !bitmap.isRecycled()) {
+            n3 n3Var = this.h;
+            if (n3Var.getWidth() > 0 && n3Var.getHeight() > 0) {
+                q10 = org.telegram.messenger.g0.B(this.G.getPixel(Utilities.j((int) (((((float) (textView.getRight() + textView.getLeft())) / 2.0f) / ((float) n3Var.getWidth())) * ((float) this.G.getWidth())), this.G.getWidth() - 1, 0), Utilities.j((int) (((((float) (textView.getBottom() + textView.getTop())) / 2.0f) / ((float) n3Var.getHeight())) * ((float) this.G.getHeight())), this.G.getHeight() - 1, 0))) < 0.5f;
+            }
+        }
+        textView.setTextColor(org.telegram.ui.ActionBar.k6.r1(0.41f, q10 ? -1 : -16777216));
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.S || this.R) {
+            return;
+        }
+        this.R = true;
+        ValueAnimator valueAnimator = this.P;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.w.setEnabled(false);
+        if (!this.h.isAttachedToWindow() || this.I == 0.0f) {
+            b();
+        } else {
+            a(0.0f);
+        }
+    }
+
+    public final void e() {
+        float f10;
+        float interpolation = xq.g.getInterpolation(Math.max(0.0f, Math.min(1.0f, this.I / 0.4f)));
+        float max = Math.max(0.0f, Math.min(1.0f, (this.I - 0.3f) / 0.7f));
+        float interpolation2 = xq.h.getInterpolation(max);
+        if (this.K) {
+            float sqrt = ((float) Math.sqrt(0.4375d)) * 10.0f;
+            double d = max * sqrt;
+            f10 = 1.0f - ((((7.5f / sqrt) * ((float) Math.sin(d))) + ((float) Math.cos(d))) * ((float) Math.exp((-7.5f) * max)));
+        } else {
+            f10 = interpolation2;
+        }
+        h6 h6Var = this.r;
+        float width = h6Var.getWidth();
+        float height = h6Var.getHeight();
+        RectF rectF = this.f;
+        float max2 = Math.max(0.2f, Math.min(1.0f, rectF.width() / Math.max(1.0f, height)));
+        float T1 = org.telegram.messenger.g0.T1(max2, 1.0f, f10);
+        float centerY = rectF.centerY();
+        int[] iArr = this.V;
+        float f11 = centerY - iArr[1];
+        float f12 = max2 * width;
+        float centerX = rectF.centerX() - iArr[0];
+        float f13 = width / 2.0f;
+        float f14 = height / 2.0f;
+        float T12 = org.telegram.messenger.g0.T1(centerX, h6Var.getLeft() + f13, f10);
+        float T13 = org.telegram.messenger.g0.T1((f12 * interpolation) + (f11 - (f12 / 2.0f)), h6Var.getTop() + f14, f10);
+        float f15 = 1.0f - f10;
+        float f16 = (-90.0f) * f15;
+        double d2 = f16;
+        float cos = (float) Math.cos(Math.toRadians(d2));
+        float sin = (float) Math.sin(Math.toRadians(d2));
+        float f17 = centerX - T12;
+        float f18 = f11 - T13;
+        float f19 = (((sin * f18) + (cos * f17)) / T1) + f13;
+        float f20 = (((f18 * cos) + ((-sin) * f17)) / T1) + f14;
+        float T14 = org.telegram.messenger.g0.T1(f19, f13, interpolation2);
+        float T15 = org.telegram.messenger.g0.T1(f20, f14, interpolation2);
+        float f21 = T14 - f13;
+        float f22 = T15 - f14;
+        h6Var.setPivotX(T14);
+        h6Var.setPivotY(T15);
+        h6Var.setScaleX(T1);
+        h6Var.setScaleY(T1);
+        h6Var.setRotation(f16);
+        h6Var.setRotationX(35.0f * f15);
+        h6Var.setTranslationX((((cos * f21) - (sin * f22)) * T1) + ((T12 - h6Var.getLeft()) - T14));
+        h6Var.setTranslationY((((cos * f22) + (sin * f21)) * T1) + ((T13 - h6Var.getTop()) - T15));
+        h6Var.setAlpha(this.I > 0.0f ? 1.0f : 0.0f);
+        h6Var.setUseGyroscope(this.Q * interpolation2);
+        float f23 = 1.0f - interpolation2;
+        this.J = Math.max(0.0f, f11 * f23);
+        this.b.setEjectProgress(interpolation);
+        this.n.setAlpha(this.I);
+        this.s.setAlpha(interpolation2);
+        rq0 rq0Var = this.w;
+        rq0Var.setAlpha(interpolation2);
+        TextView textView = this.x;
+        textView.setAlpha(interpolation2);
+        textView.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * f23);
+        rq0Var.setTranslationY(org.telegram.messenger.g0.L(16.0f) * f23);
+        rq0Var.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
+        rq0Var.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, interpolation2));
+        this.h.invalidate();
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        n3 n3Var = this.h;
+        setContentView(n3Var, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.height = -1;
+        attributes.width = -1;
+        attributes.gravity = qs.E1;
+        attributes.dimAmount = 0.0f;
+        attributes.flags = (attributes.flags & (-3)) | (-2147286784);
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        window.setNavigationBarColor(0);
+        n3Var.setSystemUiVisibility(1792);
+        org.telegram.messenger.g0.o3(n3Var, !org.telegram.ui.ActionBar.k6.I.q());
+        org.telegram.messenger.g0.s3(window, !org.telegram.ui.ActionBar.k6.I.q());
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        if (org.telegram.messenger.g0.M1(getContext())) {
+            jk0.d(new d(this, 6));
+            super.show();
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(this.h);
         }
     }
 }

@@ -6,17 +6,17 @@ import android.widget.TextView;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public abstract class l5 extends TextView {
     public boolean a;
-    public final org.telegram.ui.Components.u5 b;
+    public final org.telegram.ui.Components.w5 b;
     public final cp c;
 
     public l5(Context context) {
         super(context);
         this.a = false;
-        this.b = new org.telegram.ui.Components.u5(this, 320L, xq.h);
+        this.b = new org.telegram.ui.Components.w5(this, 320L, xq.h);
         this.c = new cp(-1);
     }
 
@@ -51,8 +51,8 @@ public abstract class l5 extends TextView {
     }
 
     @Override // android.widget.TextView
-    public void setTextColor(int i3) {
-        super.setTextColor(i3);
-        this.c.b(i3);
+    public void setTextColor(int i7) {
+        super.setTextColor(i7);
+        this.c.b(i7);
     }
 }

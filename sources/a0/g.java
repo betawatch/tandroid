@@ -8,30 +8,30 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g implements Collection, Set {
     public int[] a = b0.a.a;
     public Object[] b = b0.a.c;
     public int c;
 
-    public g(int i3) {
-        if (i3 > 0) {
-            i.a(this, i3);
+    public g(int i7) {
+        if (i7 > 0) {
+            i.a(this, i7);
         }
     }
 
     @Override // java.util.Collection, java.util.Set
     public final boolean add(Object obj) {
-        int i3;
+        int i7;
         int b10;
         int i10 = this.c;
         if (obj == null) {
             b10 = i.b(this, null, 0);
-            i3 = 0;
+            i7 = 0;
         } else {
             int hashCode = obj.hashCode();
-            i3 = hashCode;
+            i7 = hashCode;
             b10 = i.b(this, obj, hashCode);
         }
         if (b10 >= 0) {
@@ -54,22 +54,22 @@ public final class g implements Collection, Set {
                 throw new ConcurrentModificationException();
             }
             if (iArr2.length != 0) {
-                ed.f.b(0, 0, iArr.length, iArr, iArr2);
-                ed.f.d(0, objArr.length, 6, objArr, this.b);
+                hd.e.b(0, 0, iArr.length, iArr, iArr2);
+                hd.e.d(0, objArr.length, 6, objArr, this.b);
             }
         }
         if (i11 < i10) {
             int[] iArr3 = this.a;
             int i13 = i11 + 1;
-            ed.f.b(i13, i11, i10, iArr3, iArr3);
+            hd.e.b(i13, i11, i10, iArr3, iArr3);
             Object[] objArr2 = this.b;
-            ed.f.c(i13, i11, i10, objArr2, objArr2);
+            hd.e.c(i13, i11, i10, objArr2, objArr2);
         }
         int i14 = this.c;
         if (i10 == i14) {
             int[] iArr4 = this.a;
             if (i11 < iArr4.length) {
-                iArr4[i11] = i3;
+                iArr4[i11] = i7;
                 this.b[i11] = obj;
                 this.c = i14 + 1;
                 return true;
@@ -82,27 +82,27 @@ public final class g implements Collection, Set {
     public final boolean addAll(Collection elements) {
         kotlin.jvm.internal.j.e(elements, "elements");
         int size = elements.size() + this.c;
-        int i3 = this.c;
+        int i7 = this.c;
         int[] iArr = this.a;
-        boolean z10 = false;
+        boolean z9 = false;
         if (iArr.length < size) {
             Object[] objArr = this.b;
             int[] iArr2 = new int[size];
             this.a = iArr2;
             this.b = new Object[size];
-            if (i3 > 0) {
-                ed.f.b(0, 0, i3, iArr, iArr2);
-                ed.f.d(0, this.c, 6, objArr, this.b);
+            if (i7 > 0) {
+                hd.e.b(0, 0, i7, iArr, iArr2);
+                hd.e.d(0, this.c, 6, objArr, this.b);
             }
         }
-        if (this.c != i3) {
+        if (this.c != i7) {
             throw new ConcurrentModificationException();
         }
         Iterator it = elements.iterator();
         while (it.hasNext()) {
-            z10 |= add(it.next());
+            z9 |= add(it.next());
         }
-        return z10;
+        return z9;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -143,8 +143,8 @@ public final class g implements Collection, Set {
             return false;
         }
         try {
-            int i3 = this.c;
-            for (int i10 = 0; i10 < i3; i10++) {
+            int i7 = this.c;
+            for (int i10 = 0; i10 < i7; i10++) {
                 if (!((Set) obj).contains(this.b[i10])) {
                     return false;
                 }
@@ -155,10 +155,10 @@ public final class g implements Collection, Set {
         }
     }
 
-    public final void h(int i3) {
+    public final void f(int i7) {
         int i10 = this.c;
         Object[] objArr = this.b;
-        Object obj = objArr[i3];
+        Object obj = objArr[i7];
         if (i10 <= 1) {
             clear();
             return;
@@ -166,11 +166,11 @@ public final class g implements Collection, Set {
         int i11 = i10 - 1;
         int[] iArr = this.a;
         if (iArr.length <= 8 || i10 >= iArr.length / 3) {
-            if (i3 < i11) {
-                int i12 = i3 + 1;
-                ed.f.b(i3, i12, i10, iArr, iArr);
+            if (i7 < i11) {
+                int i12 = i7 + 1;
+                hd.e.b(i7, i12, i10, iArr, iArr);
                 Object[] objArr2 = this.b;
-                ed.f.c(i3, i12, i10, objArr2, objArr2);
+                hd.e.c(i7, i12, i10, objArr2, objArr2);
             }
             this.b[i11] = null;
         } else {
@@ -178,14 +178,14 @@ public final class g implements Collection, Set {
             int[] iArr2 = new int[i13];
             this.a = iArr2;
             this.b = new Object[i13];
-            if (i3 > 0) {
-                ed.f.b(0, 0, i3, iArr, iArr2);
-                ed.f.d(0, i3, 6, objArr, this.b);
+            if (i7 > 0) {
+                hd.e.b(0, 0, i7, iArr, iArr2);
+                hd.e.d(0, i7, 6, objArr, this.b);
             }
-            if (i3 < i11) {
-                int i14 = i3 + 1;
-                ed.f.b(i3, i14, i10, iArr, this.a);
-                ed.f.c(i3, i14, i10, objArr, this.b);
+            if (i7 < i11) {
+                int i14 = i7 + 1;
+                hd.e.b(i7, i14, i10, iArr, this.a);
+                hd.e.c(i7, i14, i10, objArr, this.b);
             }
         }
         if (i10 != this.c) {
@@ -197,9 +197,9 @@ public final class g implements Collection, Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         int[] iArr = this.a;
-        int i3 = this.c;
+        int i7 = this.c;
         int i10 = 0;
-        for (int i11 = 0; i11 < i3; i11++) {
+        for (int i11 = 0; i11 < i7; i11++) {
             i10 += iArr[i11];
         }
         return i10;
@@ -221,7 +221,7 @@ public final class g implements Collection, Set {
         if (b10 < 0) {
             return false;
         }
-        h(b10);
+        f(b10);
         return true;
     }
 
@@ -229,28 +229,28 @@ public final class g implements Collection, Set {
     public final boolean removeAll(Collection elements) {
         kotlin.jvm.internal.j.e(elements, "elements");
         Iterator it = elements.iterator();
-        boolean z10 = false;
+        boolean z9 = false;
         while (it.hasNext()) {
-            z10 |= remove(it.next());
+            z9 |= remove(it.next());
         }
-        return z10;
+        return z9;
     }
 
     @Override // java.util.Collection, java.util.Set
     public final boolean retainAll(Collection elements) {
-        boolean z10;
+        boolean z9;
         kotlin.jvm.internal.j.e(elements, "elements");
-        int i3 = this.c - 1;
-        boolean z11 = false;
+        int i7 = this.c - 1;
+        boolean z10 = false;
         while (true) {
             int i10 = -1;
-            if (-1 >= i3) {
-                return z11;
+            if (-1 >= i7) {
+                return z10;
             }
-            Object obj = this.b[i3];
+            Object obj = this.b[i7];
             Collection collection = elements;
             if (collection instanceof Collection) {
-                z10 = collection.contains(obj);
+                z9 = collection.contains(obj);
             } else {
                 if (!(collection instanceof List)) {
                     Iterator it = collection.iterator();
@@ -272,13 +272,13 @@ public final class g implements Collection, Set {
                 } else {
                     i10 = ((List) collection).indexOf(obj);
                 }
-                z10 = i10 >= 0;
+                z9 = i10 >= 0;
             }
-            if (!z10) {
-                h(i3);
-                z11 = true;
+            if (!z9) {
+                f(i7);
+                z10 = true;
             }
-            i3--;
+            i7--;
         }
     }
 
@@ -290,15 +290,15 @@ public final class g implements Collection, Set {
     @Override // java.util.Collection, java.util.Set
     public final Object[] toArray() {
         Object[] objArr = this.b;
-        int i3 = this.c;
+        int i7 = this.c;
         kotlin.jvm.internal.j.e(objArr, "<this>");
         int length = objArr.length;
-        if (i3 <= length) {
-            Object[] copyOfRange = Arrays.copyOfRange(objArr, 0, i3);
+        if (i7 <= length) {
+            Object[] copyOfRange = Arrays.copyOfRange(objArr, 0, i7);
             kotlin.jvm.internal.j.d(copyOfRange, "copyOfRange(...)");
             return copyOfRange;
         }
-        throw new IndexOutOfBoundsException("toIndex (" + i3 + ") is greater than size (" + length + ").");
+        throw new IndexOutOfBoundsException("toIndex (" + i7 + ") is greater than size (" + length + ").");
     }
 
     public final String toString() {
@@ -307,8 +307,8 @@ public final class g implements Collection, Set {
         }
         StringBuilder sb2 = new StringBuilder(this.c * 14);
         sb2.append('{');
-        int i3 = this.c;
-        for (int i10 = 0; i10 < i3; i10++) {
+        int i7 = this.c;
+        for (int i10 = 0; i10 < i7; i10++) {
             if (i10 > 0) {
                 sb2.append(", ");
             }
@@ -328,13 +328,13 @@ public final class g implements Collection, Set {
     @Override // java.util.Collection, java.util.Set
     public final Object[] toArray(Object[] array) {
         kotlin.jvm.internal.j.e(array, "array");
-        int i3 = this.c;
-        if (array.length < i3) {
-            array = (Object[]) Array.newInstance(array.getClass().getComponentType(), i3);
-        } else if (array.length > i3) {
-            array[i3] = null;
+        int i7 = this.c;
+        if (array.length < i7) {
+            array = (Object[]) Array.newInstance(array.getClass().getComponentType(), i7);
+        } else if (array.length > i7) {
+            array[i7] = null;
         }
-        ed.f.c(0, 0, this.c, this.b, array);
+        hd.e.c(0, 0, this.c, this.b, array);
         return array;
     }
 }

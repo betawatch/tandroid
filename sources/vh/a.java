@@ -1,113 +1,70 @@
 package vh;
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import cg.r;
-import k2.p1;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.xq;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.bn;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a extends c implements qe.b {
-    public final qe.a d;
-    public final int[] e;
-    public final Drawable f;
-    public final TextPaint h;
-    public StaticLayout n;
-    public int r;
-    public int s;
+public final /* synthetic */ class a implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g b;
 
-    public a(Context context, e6 e6Var) {
-        super(e6Var);
-        this.d = new qe.a(0, this, xq.h, 320L, false);
-        this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
-        this.f = p1.g(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
-        this.h = new TextPaint(k6.P2);
-        int w02 = k6.w0(k6.i6, e6Var);
-        if (this.b != w02) {
-            k6.H1(this.a, w02, false);
-            this.b = w02;
+    public /* synthetic */ a(g gVar, int i7) {
+        this.a = i7;
+        this.b = gVar;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        g gVar = this.b;
+        switch (i7) {
+            case 0:
+                gf.g gVar2 = gVar.c2;
+                if (gVar2 != null) {
+                    ArrayList arrayList = new ArrayList(gVar.b2.keySet());
+                    bn bnVar = (bn) gVar2.b;
+                    ArrayList arrayList2 = bnVar.P0;
+                    arrayList2.clear();
+                    arrayList2.addAll(arrayList);
+                    int i10 = bnVar.L0;
+                    if (i10 >= 0) {
+                        bnVar.r.g(i10);
+                    }
+                }
+                gVar.dismiss();
+                break;
+            case 1:
+                gf.g gVar3 = gVar.c2;
+                if (gVar3 != null) {
+                    ArrayList arrayList3 = new ArrayList(gVar.b2.keySet());
+                    bn bnVar2 = (bn) gVar3.b;
+                    ArrayList arrayList4 = bnVar2.P0;
+                    arrayList4.clear();
+                    arrayList4.addAll(arrayList3);
+                    int i11 = bnVar2.L0;
+                    if (i11 >= 0) {
+                        bnVar2.r.g(i11);
+                    }
+                }
+                gVar.dismiss();
+                break;
+            case 2:
+                HashMap hashMap = gVar.b2;
+                hashMap.clear();
+                gVar.Z1.b();
+                gVar.V1.O(true);
+                gVar.W1.c(hashMap.size(), true);
+                break;
+            case 3:
+                gVar.g1(view);
+                break;
+            default:
+                int i12 = g.j2;
+                gVar.g1(view);
+                break;
         }
-        b();
-        c();
-    }
-
-    @Override // qe.b
-    public final void Y(int i3, float f10, float f11, qe.c cVar) {
-        b();
-        c();
-        invalidateSelf();
-    }
-
-    @Override // vh.c
-    public final void a(int i3) {
-        this.a.setAlpha(i3);
-        b();
-        c();
-    }
-
-    public final void b() {
-        this.f.setAlpha((int) ((1.0f - this.d.e) * this.c));
-    }
-
-    public final void c() {
-        this.h.setAlpha((int) ((1.0f - this.d.e) * this.c));
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        this.d.a(z10, z11);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        this.a.draw(canvas);
-        r.b(canvas, this.f, 1.0f - this.d.e);
-        if (this.n != null) {
-            canvas.save();
-            canvas.translate(g0.L(44.0f) + bounds.left, g0.L(13.66f) + bounds.top);
-            this.n.draw(canvas);
-            canvas.restore();
-        }
-    }
-
-    public final void e(int i3) {
-        if (this.s != i3) {
-            this.s = i3;
-            this.h.setColor(i3);
-            this.f.setColorFilter(new PorterDuffColorFilter(i3, PorterDuff.Mode.SRC_IN));
-            c();
-        }
-    }
-
-    @Override // vh.c, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float exactCenterY = rect.exactCenterY();
-        float L = g0.L(22.33f) + rect.left;
-        g0.L(27.0f);
-        g0.L(44.0f);
-        r.d(this.f, L, exactCenterY, 17);
-        int width = rect.width() - g0.L(56.0f);
-        if (this.n == null || this.r != width) {
-            this.r = width;
-            this.n = new StaticLayout(bd.M0(2131747192, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        }
-    }
-
-    @Override // qe.b
-    public final /* synthetic */ void F(float f10, int i3) {
     }
 }

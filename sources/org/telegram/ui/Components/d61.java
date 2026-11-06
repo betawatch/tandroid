@@ -1,46 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d61 extends m61 {
-    public final /* synthetic */ n61 u0;
+public final /* synthetic */ class d61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d61(n61 n61Var, Context context, boolean z10, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(i3, context, e6Var, z10);
-        this.u0 = n61Var;
+    public /* synthetic */ d61(p61 p61Var, int i7) {
+        this.a = i7;
+        this.b = p61Var;
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final void e(float f10, int i3, int i10) {
-        float f11 = f10 < 0.0f ? 0.0f : f10 > 1.0f ? 1.0f : f10;
-        this.G = i3;
-        SparseIntArray sparseIntArray = this.c0;
-        this.H = sparseIntArray.get(i3);
-        if (f11 > 0.0f) {
-            this.M = i10;
-            this.N = sparseIntArray.get(i10);
-        } else {
-            this.M = -1;
-            this.N = -1;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                p61 p61Var = this.b;
+                p61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = p61Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (p61Var.D) {
+                        p61Var.F(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        p61Var.F(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        p61Var.F(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        p61Var.F(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    p61Var.c = floatValue;
+                    p61Var.x(true);
+                    f61 f61Var = p61Var.M;
+                    if (f61Var != null) {
+                        f61Var.w.invalidate();
+                        p61Var.M.w.g1();
+                        p61Var.M.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                p61 p61Var2 = this.b;
+                p61Var2.getClass();
+                p61Var2.T = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                p61 p61Var3 = this.b;
+                p61Var3.N.onAnimationUpdate(valueAnimator);
+                p61Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p61Var3.M.w.g1();
+                p61Var3.M.invalidate();
+                break;
+            default:
+                p61 p61Var4 = this.b;
+                p61Var4.getClass();
+                p61Var4.T = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-        this.L = f11;
-        this.w.g1();
-        invalidate();
-        c(i3);
-        if (f11 >= 1.0f) {
-            this.M = -1;
-            this.N = -1;
-            this.G = i10;
-            this.H = sparseIntArray.get(i10);
-        }
-        l61 l61Var = this.E;
-        if (l61Var != null) {
-            ((n61) ((y00) l61Var).a).q();
-        }
-        this.u0.y(f10 <= 0.5f ? i3 : i10, i3 < i10);
     }
 }

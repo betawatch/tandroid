@@ -1,25 +1,20 @@
 package de;
 
-import wd.x;
+import be.s;
+import be.u;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class l extends x {
-    public static final l c = new l();
+public final class l implements ce.d {
+    public final u a;
 
-    @Override // wd.x
-    public final void c(fd.h hVar, Runnable runnable) {
-        e.d.c.b(runnable, true);
+    public l(s sVar) {
+        this.a = sVar;
     }
 
-    @Override // wd.x
-    public final x f(int i3) {
-        be.a.a(i3);
-        return i3 >= k.d ? this : super.f(i3);
-    }
-
-    @Override // wd.x
-    public final String toString() {
-        return "Dispatchers.IO";
+    @Override // ce.d
+    public final Object a(Object obj, id.c cVar) {
+        Object a10 = this.a.a(cVar, obj);
+        return a10 == jd.a.a ? a10 : gd.k.a;
     }
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d1 extends AbstractMap {
     public static final /* synthetic */ int f = 0;
@@ -31,14 +31,14 @@ public final class d1 extends AbstractMap {
     }
 
     public final int b(Comparable comparable) {
-        int i3;
+        int i7;
         int size = this.a.size();
         int i10 = size - 1;
         if (i10 >= 0) {
             int compareTo = comparable.compareTo(((e1) this.a.get(i10)).a);
             if (compareTo > 0) {
-                i3 = size + 1;
-                return -i3;
+                i7 = size + 1;
+                return -i7;
             }
             if (compareTo == 0) {
                 return i10;
@@ -57,8 +57,8 @@ public final class d1 extends AbstractMap {
                 i11 = i12 + 1;
             }
         }
-        i3 = i11 + 1;
-        return -i3;
+        i7 = i11 + 1;
+        return -i7;
     }
 
     public final void c() {
@@ -85,8 +85,8 @@ public final class d1 extends AbstractMap {
         return b(comparable) >= 0 || this.b.containsKey(comparable);
     }
 
-    public final Map.Entry d(int i3) {
-        return (Map.Entry) this.a.get(i3);
+    public final Map.Entry d(int i7) {
+        return (Map.Entry) this.a.get(i7);
     }
 
     public final Set e() {
@@ -116,8 +116,8 @@ public final class d1 extends AbstractMap {
             if (size2 != d1Var.a.size()) {
                 return ((AbstractSet) entrySet()).equals(d1Var.entrySet());
             }
-            for (int i3 = 0; i3 < size2; i3++) {
-                if (d(i3).equals(d1Var.d(i3))) {
+            for (int i7 = 0; i7 < size2; i7++) {
+                if (d(i7).equals(d1Var.d(i7))) {
                 }
             }
             if (size2 != size) {
@@ -157,31 +157,31 @@ public final class d1 extends AbstractMap {
         if (this.a.isEmpty() && !(this.a instanceof ArrayList)) {
             this.a = new ArrayList(16);
         }
-        int i3 = -(b10 + 1);
-        if (i3 >= 16) {
+        int i7 = -(b10 + 1);
+        if (i7 >= 16) {
             return f().put(comparable, obj);
         }
         if (this.a.size() == 16) {
             e1 e1Var = (e1) this.a.remove(15);
             f().put(e1Var.a, e1Var.b);
         }
-        this.a.add(i3, new e1(this, comparable, obj));
+        this.a.add(i7, new e1(this, comparable, obj));
         return null;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         int size = this.a.size();
-        int i3 = 0;
+        int i7 = 0;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 += ((e1) this.a.get(i10)).hashCode();
+            i7 += ((e1) this.a.get(i10)).hashCode();
         }
-        return this.b.size() > 0 ? this.b.hashCode() + i3 : i3;
+        return this.b.size() > 0 ? this.b.hashCode() + i7 : i7;
     }
 
-    public final Object i(int i3) {
+    public final Object i(int i7) {
         c();
-        Object obj = ((e1) this.a.remove(i3)).b;
+        Object obj = ((e1) this.a.remove(i7)).b;
         if (!this.b.isEmpty()) {
             Iterator it = f().entrySet().iterator();
             List list = this.a;

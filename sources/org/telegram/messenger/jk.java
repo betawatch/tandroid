@@ -1,36 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_update;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ qp b;
+    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
 
-    public /* synthetic */ jk(boolean[] zArr, Runnable[] runnableArr, int i3) {
-        this.a = i3;
-        this.b = zArr;
-        this.c = runnableArr;
+    public /* synthetic */ jk(qp qpVar, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i7) {
+        this.a = i7;
+        this.b = qpVar;
+        this.c = tL_updatePeerBlocked;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b[0] = true;
-                Runnable runnable = this.c[0];
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                g0.h3(new jk(this.b, this.c, 1));
                 break;
             default:
-                this.b[0] = true;
-                Runnable runnable2 = this.c[0];
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
+                qp qpVar = this.b;
+                LongSparseIntArray longSparseIntArray = qpVar.G0;
+                TL_update.TL_updatePeerBlocked tL_updatePeerBlocked = this.c;
+                long C1 = ij.C1(tL_updatePeerBlocked.peer_id);
+                if (!tL_updatePeerBlocked.blocked) {
+                    longSparseIntArray.delete(C1);
+                } else if (longSparseIntArray.indexOfKey(C1) < 0) {
+                    longSparseIntArray.put(C1, 1);
                 }
+                qpVar.getNotificationCenter().k(43, new Object[0]);
+                qpVar.P1().m0(C1, tL_updatePeerBlocked.blocked_my_stories_from, false);
                 break;
         }
     }

@@ -1,29 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class wd extends View.AccessibilityDelegate {
-    public final /* synthetic */ int a;
+public final class wd extends jg {
+    public final /* synthetic */ ChatActivityEnterView F;
 
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
-                accessibilityNodeInfo.setClickable(true);
-                accessibilityNodeInfo.setLongClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                if (view.isEnabled()) {
-                    accessibilityNodeInfo.addAction(16);
-                    break;
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wd(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.F = chatActivityEnterView;
+    }
+
+    @Override // org.telegram.ui.Components.jg, android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.F;
+        Paint paint = chatActivityEnterView.Q1;
+        super.onDraw(canvas);
+        if (getTag() == null || chatActivityEnterView.p1 == null || chatActivityEnterView.W0 || this.x || org.telegram.messenger.ui.b0(chatActivityEnterView.Q).u0[0].isEmpty() || paint == null) {
+            return;
         }
+        canvas.drawCircle(org.telegram.messenger.g0.L(9.0f) + (getWidth() / 2), (getHeight() / 2) - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f), paint);
     }
 }

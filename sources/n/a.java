@@ -1,13 +1,13 @@
 package n;
 
 import android.os.Looper;
-import b8.qe;
+import c8.w9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends qe {
+public final class a extends w9 {
     public static volatile a b;
-    public final c a = new c();
+    public final b a = new b();
 
     public static a a() {
         if (b != null) {
@@ -26,17 +26,17 @@ public final class a extends qe {
     }
 
     public final void b(Runnable runnable) {
-        c cVar = this.a;
-        if (cVar.c == null) {
-            synchronized (cVar.a) {
+        b bVar = this.a;
+        if (bVar.c == null) {
+            synchronized (bVar.a) {
                 try {
-                    if (cVar.c == null) {
-                        cVar.c = c.a(Looper.getMainLooper());
+                    if (bVar.c == null) {
+                        bVar.c = b.a(Looper.getMainLooper());
                     }
                 } finally {
                 }
             }
         }
-        cVar.c.post(runnable);
+        bVar.c.post(runnable);
     }
 }

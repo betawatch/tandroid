@@ -8,10 +8,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.session.a0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class MediaDescriptionCompat implements Parcelable {
-    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new w.a(3);
+    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new w.a(11);
     public final String a;
     public final CharSequence b;
     public final CharSequence c;
@@ -43,10 +43,10 @@ public final class MediaDescriptionCompat implements Parcelable {
             return null;
         }
         MediaDescription mediaDescription = (MediaDescription) obj;
-        String g7 = a.g(mediaDescription);
-        CharSequence i3 = a.i(mediaDescription);
+        String g10 = a.g(mediaDescription);
+        CharSequence i7 = a.i(mediaDescription);
         CharSequence h = a.h(mediaDescription);
-        CharSequence c2 = a.c(mediaDescription);
+        CharSequence c10 = a.c(mediaDescription);
         Bitmap e10 = a.e(mediaDescription);
         Uri f10 = a.f(mediaDescription);
         Bundle d = a.d(mediaDescription);
@@ -60,7 +60,7 @@ public final class MediaDescriptionCompat implements Parcelable {
                 if (uri == null) {
                     uri = b.a(mediaDescription);
                 }
-                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g7, i3, h, c2, e10, f10, bundle, uri);
+                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g10, i7, h, c10, e10, f10, bundle, uri);
                 mediaDescriptionCompat.r = mediaDescription;
                 return mediaDescriptionCompat;
             }
@@ -70,7 +70,7 @@ public final class MediaDescriptionCompat implements Parcelable {
         bundle = d;
         if (uri == null) {
         }
-        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g7, i3, h, c2, e10, f10, bundle, uri);
+        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g10, i7, h, c10, e10, f10, bundle, uri);
         mediaDescriptionCompat2.r = mediaDescription;
         return mediaDescriptionCompat2;
     }
@@ -104,7 +104,7 @@ public final class MediaDescriptionCompat implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        b().writeToParcel(parcel, i3);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        b().writeToParcel(parcel, i7);
     }
 }

@@ -1,130 +1,214 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import ei.c3;
+import android.app.Activity;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.b10;
+import org.telegram.messenger.f10;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.r00;
+import org.telegram.messenger.ui;
+import org.telegram.messenger.vi;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.e21;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l extends View {
-    public final int a;
-    public g5 b;
-    public final Paint c;
-    public long d;
-    public TLRPC.Document e;
-    public String f;
-    public float h;
-    public float n;
-    public float r;
+public final /* synthetic */ class l implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public l(Context context, int i3) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.n = 1.0f;
-        this.r = 1.0f;
-        this.a = i3;
-        paint.setColor(738197503);
+    public /* synthetic */ l(z zVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z9, long j3, TLObject tLObject) {
+        this.d = zVar;
+        this.e = tL_error;
+        this.f = twoStepVerificationActivity;
+        this.h = activity;
+        this.b = z9;
+        this.c = j3;
+        this.n = tLObject;
     }
 
-    public String getKey() {
-        return this.f;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        g5 g5Var = this.b;
-        if (g5Var != null) {
-            g5Var.a(this);
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0129  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        String str;
+        ArrayList arrayList5;
+        switch (this.a) {
+            case 0:
+                z.d0((z) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, (TLObject) this.n);
+                return;
+            case 1:
+                boolean z9 = true;
+                ui uiVar = (ui) this.d;
+                ArrayList arrayList6 = (ArrayList) this.e;
+                boolean z10 = this.b;
+                ArrayList arrayList7 = (ArrayList) this.f;
+                ArrayList arrayList8 = (ArrayList) this.h;
+                a0.h hVar = (a0.h) this.n;
+                long j3 = this.c;
+                uiVar.getMessagesController().Y3(arrayList6, z10);
+                uiVar.getMessagesController().S3(arrayList7, z10);
+                int size = arrayList8.size();
+                boolean z11 = false;
+                int i7 = 0;
+                while (i7 < size) {
+                    ij ijVar = (ij) arrayList8.get(i7);
+                    SparseArray sparseArray = (SparseArray) hVar.f(ij.B0(ijVar.k));
+                    if (sparseArray != null && (arrayList = (ArrayList) sparseArray.get(ijVar.f1())) != null) {
+                        int i10 = 0;
+                        while (i10 < arrayList.size()) {
+                            ij ijVar2 = (ij) arrayList.get(i10);
+                            ijVar2.C = ijVar;
+                            ijVar2.m();
+                            TLRPC.MessageAction messageAction = ijVar2.k.action;
+                            if (messageAction instanceof TLRPC.TL_messageActionPinMessage) {
+                                ijVar2.q0(null, null);
+                            } else if (messageAction instanceof TLRPC.TL_messageActionGameScore) {
+                                ijVar2.m0(null);
+                            } else if (messageAction instanceof TLRPC.TL_messageActionPaymentSent) {
+                                ijVar2.p0(null, false);
+                            } else if (messageAction instanceof TLRPC.TL_messageActionPaymentSentMe) {
+                                ijVar2.p0(null, z9);
+                            }
+                            i10++;
+                            z9 = true;
+                        }
+                        z11 = true;
+                    }
+                    i7++;
+                    z9 = true;
+                }
+                if (z11) {
+                    uiVar.getNotificationCenter().k(55, Long.valueOf(j3), arrayList8, hVar);
+                    return;
+                }
+                return;
+            case 2:
+                vi viVar = (vi) this.d;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
+                TLObject tLObject = (TLObject) this.n;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.f;
+                boolean z12 = this.b;
+                long j10 = this.c;
+                t4 t4Var = (t4) this.h;
+                viVar.getClass();
+                if (tL_error == null) {
+                    TLRPC.TL_messages_chatInviteImporters tL_messages_chatInviteImporters = (TLRPC.TL_messages_chatInviteImporters) tLObject;
+                    if (tL_chatInviteImporter == null && z12) {
+                        viVar.a.put(j10, tL_messages_chatInviteImporters);
+                    }
+                }
+                t4Var.run(tLObject, tL_error);
+                return;
+            default:
+                f10 f10Var = (f10) this.d;
+                b10 b10Var = (b10) this.f;
+                TLObject tLObject2 = (TLObject) this.n;
+                boolean z13 = this.b;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.e;
+                long j11 = this.c;
+                HashSet hashSet = (HashSet) this.h;
+                synchronized (f10Var) {
+                    arrayList2 = b10Var.b;
+                    arrayList3 = b10Var.d;
+                    arrayList4 = b10Var.c;
+                    str = b10Var.e;
+                }
+                if (tLObject2 instanceof TLRPC.TL_messages_translateResult) {
+                    ArrayList<TLRPC.TL_textWithEntities> arrayList9 = ((TLRPC.TL_messages_translateResult) tLObject2).result;
+                    int min = Math.min(arrayList3.size(), arrayList9.size());
+                    for (int i11 = 0; i11 < min; i11++) {
+                        ((z10) arrayList3.get(i11)).a(Boolean.valueOf(z13), (Integer) arrayList2.get(i11), e21.P0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
+                    }
+                } else {
+                    if (tL_error2 == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error2.text)) {
+                        arrayList5 = arrayList2;
+                        if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
+                            if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
+                                qs.e().k(qs.P4, 1, org.telegram.messenger.hd.M0(2131743948, null));
+                            }
+                            for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                                ((z10) arrayList3.get(i12)).a(Boolean.valueOf(z13), (Integer) arrayList5.get(i12), null, b10Var.e);
+                            }
+                        } else {
+                            f10Var.K(j11, false);
+                            qs.e().k(qs.P4, 1, org.telegram.messenger.hd.M0(2131743947, null));
+                        }
+                        synchronized (f10Var) {
+                            for (int i13 = 0; i13 < arrayList5.size(); i13++) {
+                                try {
+                                    hashSet.remove(arrayList5.get(i13));
+                                } catch (Throwable th2) {
+                                    throw th2;
+                                }
+                            }
+                        }
+                        return;
+                    }
+                    int i14 = 0;
+                    while (i14 < arrayList2.size()) {
+                        int intValue = ((Integer) arrayList2.get(i14)).intValue();
+                        ArrayList arrayList10 = arrayList2;
+                        String str2 = str;
+                        e21.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new r00(f10Var, (z10) arrayList3.get(i14), z13, intValue, str2, j11, 1));
+                        i14++;
+                        arrayList2 = arrayList10;
+                        str = str2;
+                        arrayList3 = arrayList3;
+                    }
+                }
+                arrayList5 = arrayList2;
+                synchronized (f10Var) {
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        g5 g5Var = this.b;
-        if (g5Var != null) {
-            g5Var.n(this);
-        }
+    public /* synthetic */ l(ui uiVar, ArrayList arrayList, boolean z9, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j3) {
+        this.d = uiVar;
+        this.e = arrayList;
+        this.b = z9;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.n = hVar;
+        this.c = j3;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        c3 c3Var;
-        float f10 = isPressed() ? 1.0f : 0.0f;
-        float f11 = this.h;
-        if (f11 != f10) {
-            if (Math.abs(f11 - f10) >= 0.02f) {
-                float f12 = this.h;
-                f10 = com.google.android.recaptcha.internal.a.y(f10, f12, 0.35f, f12);
-            }
-            this.h = f10;
-            invalidate();
-        }
-        float f13 = (1.0f - (this.h * 0.2f)) * this.n * this.r;
-        if (f13 <= 0.01f) {
-            return;
-        }
-        float width = getWidth() * 0.78f * f13;
-        float width2 = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        g5 g5Var = this.b;
-        if (g5Var == null || (c3Var = g5Var.k) == null || !c3Var.I()) {
-            canvas.drawCircle(width2, height, 0.42f * width, this.c);
-        }
-        g5 g5Var2 = this.b;
-        if (g5Var2 != null) {
-            float f14 = width / 2.0f;
-            g5Var2.setBounds((int) (width2 - f14), (int) (height - f14), (int) (width2 + f14), (int) (height + f14));
-            s.b(canvas, this.b);
-        }
+    public /* synthetic */ l(vi viVar, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z9, long j3, t4 t4Var) {
+        this.d = viVar;
+        this.e = tL_error;
+        this.n = tLObject;
+        this.f = tL_chatInviteImporter;
+        this.b = z9;
+        this.c = j3;
+        this.h = t4Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        int size = View.MeasureSpec.getSize(i3);
-        setMeasuredDimension(size, size);
-    }
-
-    public void set(TLRPC.Document document) {
-        long j10 = document.id;
-        if (j10 == 0) {
-            if (this.b != null && isAttachedToWindow()) {
-                this.b.n(this);
-            }
-            this.b = null;
-            this.d = 0L;
-            this.e = document;
-            this.f = null;
-            invalidate();
-            return;
-        }
-        if (j10 != this.d || this.b == null) {
-            if (this.b != null && isAttachedToWindow()) {
-                this.b.n(this);
-            }
-            this.d = document.id;
-            this.e = document;
-            this.f = "c:" + document.id;
-            this.b = g5.l(this.a, 2, document);
-            if (isAttachedToWindow()) {
-                this.b.a(this);
-            }
-            setContentDescription(document.id + "");
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        if (z10 != isPressed()) {
-            super.setPressed(z10);
-            invalidate();
-        }
+    public /* synthetic */ l(f10 f10Var, b10 b10Var, TLObject tLObject, boolean z9, TLRPC.TL_error tL_error, long j3, HashSet hashSet) {
+        this.d = f10Var;
+        this.f = b10Var;
+        this.n = tLObject;
+        this.b = z9;
+        this.e = tL_error;
+        this.c = j3;
+        this.h = hashSet;
     }
 }

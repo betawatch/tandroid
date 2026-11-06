@@ -1,251 +1,118 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u91 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class u91 extends v4.v {
+    public boolean d;
+    public final /* synthetic */ v91 e;
 
-    public /* synthetic */ u91(TwoStepVerificationActivity twoStepVerificationActivity, int i3) {
-        this.a = i3;
-        this.b = twoStepVerificationActivity;
+    public u91(v91 v91Var) {
+        this.e = v91Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i3 = 0;
-                final TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.w91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i10 = i3;
-                        TLObject tLObject2 = tLObject;
-                        TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
-                        switch (i10) {
-                            case 0:
-                                twoStepVerificationActivity2.t0();
-                                if (!(tLObject2 instanceof TL_account.resetPasswordOk)) {
-                                    if (!(tLObject2 instanceof TL_account.resetPasswordRequestedWait)) {
-                                        if (tLObject2 instanceof TL_account.resetPasswordFailedWait) {
-                                            int currentTime = ((TL_account.resetPasswordFailedWait) tLObject2).retry_date - twoStepVerificationActivity2.getConnectionsManager().getCurrentTime();
-                                            twoStepVerificationActivity2.B0(org.telegram.messenger.bd.M0(2131746103, null), org.telegram.messenger.bd.a0("ResetPasswordWait", null, 2131746102, currentTime > 86400 ? org.telegram.messenger.bd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.bd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.bd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.bd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
-                                            break;
-                                        }
-                                    } else {
-                                        twoStepVerificationActivity2.J.pending_reset_date = ((TL_account.resetPasswordRequestedWait) tLObject2).until_date;
-                                        twoStepVerificationActivity2.D0();
-                                        break;
-                                    }
-                                } else {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity2.getParentActivity());
-                                    alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131747839, null), null);
-                                    String M0 = org.telegram.messenger.bd.M0(2131746103, null);
-                                    org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-                                    s1Var.S = M0;
-                                    s1Var.U = org.telegram.messenger.bd.M0(2131746077, null);
-                                    twoStepVerificationActivity2.showDialog(s1Var, new s5(twoStepVerificationActivity2, 17));
-                                    break;
-                                }
-                                break;
-                            default:
-                                if (!(tLObject2 instanceof TLRPC.TL_boolTrue)) {
-                                    twoStepVerificationActivity2.getClass();
-                                    break;
-                                } else {
-                                    twoStepVerificationActivity2.J.pending_reset_date = 0;
-                                    twoStepVerificationActivity2.D0();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i10 = 0;
-                final TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.x91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                TwoStepVerificationActivity.k0(twoStepVerificationActivity2, tL_error, tLObject);
-                                break;
-                            case 1:
-                                TwoStepVerificationActivity.Z(twoStepVerificationActivity2, tL_error, tLObject);
-                                break;
-                            case 2:
-                                TwoStepVerificationActivity.e0(twoStepVerificationActivity2, tL_error, tLObject);
-                                break;
-                            case 3:
-                                TwoStepVerificationActivity.a0(twoStepVerificationActivity2, tL_error, tLObject);
-                                break;
-                            default:
-                                TwoStepVerificationActivity.g0(twoStepVerificationActivity2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i11 = 1;
-                final TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.w91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i102 = i11;
-                        TLObject tLObject2 = tLObject;
-                        TwoStepVerificationActivity twoStepVerificationActivity22 = twoStepVerificationActivity3;
-                        switch (i102) {
-                            case 0:
-                                twoStepVerificationActivity22.t0();
-                                if (!(tLObject2 instanceof TL_account.resetPasswordOk)) {
-                                    if (!(tLObject2 instanceof TL_account.resetPasswordRequestedWait)) {
-                                        if (tLObject2 instanceof TL_account.resetPasswordFailedWait) {
-                                            int currentTime = ((TL_account.resetPasswordFailedWait) tLObject2).retry_date - twoStepVerificationActivity22.getConnectionsManager().getCurrentTime();
-                                            twoStepVerificationActivity22.B0(org.telegram.messenger.bd.M0(2131746103, null), org.telegram.messenger.bd.a0("ResetPasswordWait", null, 2131746102, currentTime > 86400 ? org.telegram.messenger.bd.G(currentTime / 86400, "Days", new Object[0]) : currentTime > 3600 ? org.telegram.messenger.bd.G(currentTime / 86400, "Hours", new Object[0]) : currentTime > 60 ? org.telegram.messenger.bd.G(currentTime / 60, "Minutes", new Object[0]) : org.telegram.messenger.bd.G(Math.max(1, currentTime), "Seconds", new Object[0])));
-                                            break;
-                                        }
-                                    } else {
-                                        twoStepVerificationActivity22.J.pending_reset_date = ((TL_account.resetPasswordRequestedWait) tLObject2).until_date;
-                                        twoStepVerificationActivity22.D0();
-                                        break;
-                                    }
-                                } else {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity22.getParentActivity());
-                                    alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131747839, null), null);
-                                    String M0 = org.telegram.messenger.bd.M0(2131746103, null);
-                                    org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-                                    s1Var.S = M0;
-                                    s1Var.U = org.telegram.messenger.bd.M0(2131746077, null);
-                                    twoStepVerificationActivity22.showDialog(s1Var, new s5(twoStepVerificationActivity22, 17));
-                                    break;
-                                }
-                                break;
-                            default:
-                                if (!(tLObject2 instanceof TLRPC.TL_boolTrue)) {
-                                    twoStepVerificationActivity22.getClass();
-                                    break;
-                                } else {
-                                    twoStepVerificationActivity22.J.pending_reset_date = 0;
-                                    twoStepVerificationActivity22.D0();
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i12 = 1;
-                final TwoStepVerificationActivity twoStepVerificationActivity4 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.x91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                TwoStepVerificationActivity.k0(twoStepVerificationActivity4, tL_error, tLObject);
-                                break;
-                            case 1:
-                                TwoStepVerificationActivity.Z(twoStepVerificationActivity4, tL_error, tLObject);
-                                break;
-                            case 2:
-                                TwoStepVerificationActivity.e0(twoStepVerificationActivity4, tL_error, tLObject);
-                                break;
-                            case 3:
-                                TwoStepVerificationActivity.a0(twoStepVerificationActivity4, tL_error, tLObject);
-                                break;
-                            default:
-                                TwoStepVerificationActivity.g0(twoStepVerificationActivity4, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                final int i13 = 2;
-                final TwoStepVerificationActivity twoStepVerificationActivity5 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.x91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                TwoStepVerificationActivity.k0(twoStepVerificationActivity5, tL_error, tLObject);
-                                break;
-                            case 1:
-                                TwoStepVerificationActivity.Z(twoStepVerificationActivity5, tL_error, tLObject);
-                                break;
-                            case 2:
-                                TwoStepVerificationActivity.e0(twoStepVerificationActivity5, tL_error, tLObject);
-                                break;
-                            case 3:
-                                TwoStepVerificationActivity.a0(twoStepVerificationActivity5, tL_error, tLObject);
-                                break;
-                            default:
-                                TwoStepVerificationActivity.g0(twoStepVerificationActivity5, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 5:
-                final int i14 = 3;
-                final TwoStepVerificationActivity twoStepVerificationActivity6 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.x91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i14) {
-                            case 0:
-                                TwoStepVerificationActivity.k0(twoStepVerificationActivity6, tL_error, tLObject);
-                                break;
-                            case 1:
-                                TwoStepVerificationActivity.Z(twoStepVerificationActivity6, tL_error, tLObject);
-                                break;
-                            case 2:
-                                TwoStepVerificationActivity.e0(twoStepVerificationActivity6, tL_error, tLObject);
-                                break;
-                            case 3:
-                                TwoStepVerificationActivity.a0(twoStepVerificationActivity6, tL_error, tLObject);
-                                break;
-                            default:
-                                TwoStepVerificationActivity.g0(twoStepVerificationActivity6, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i15 = 4;
-                final TwoStepVerificationActivity twoStepVerificationActivity7 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.x91
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i15) {
-                            case 0:
-                                TwoStepVerificationActivity.k0(twoStepVerificationActivity7, tL_error, tLObject);
-                                break;
-                            case 1:
-                                TwoStepVerificationActivity.Z(twoStepVerificationActivity7, tL_error, tLObject);
-                                break;
-                            case 2:
-                                TwoStepVerificationActivity.e0(twoStepVerificationActivity7, tL_error, tLObject);
-                                break;
-                            case 3:
-                                TwoStepVerificationActivity.a0(twoStepVerificationActivity7, tL_error, tLObject);
-                                break;
-                            default:
-                                TwoStepVerificationActivity.g0(twoStepVerificationActivity7, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // v4.v
+    public final void a(RecyclerView recyclerView, v4.d1 d1Var) {
+        super.a(recyclerView, d1Var);
+        d1Var.a.setPressed(false);
+    }
+
+    @Override // v4.v
+    public final int e(RecyclerView recyclerView, v4.d1 d1Var) {
+        v91 v91Var = this.e;
+        ArrayList arrayList = v91Var.b;
+        int l10 = v4.v.l(0, 0);
+        int b10 = d1Var.b();
+        if (b10 >= 0 && b10 < arrayList.size() && ((n91) arrayList.get(b10)).c != null && org.telegram.messenger.t3.y(15, v91Var.g())) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((n91) arrayList.get(b10)).c;
+            if (v91Var.a0.isEmpty()) {
+                View view = d1Var.a;
+                if ((view instanceof s91) && tL_forumTopic.id == 1) {
+                    this.d = true;
+                    ((s91) view).setSliding(true);
+                    return v4.v.l(0, 4);
+                }
+            }
+            if (tL_forumTopic.pinned) {
+                return v4.v.l(3, 0);
+            }
+        }
+        return l10;
+    }
+
+    @Override // v4.v
+    public final boolean k() {
+        return !this.e.a0.isEmpty();
+    }
+
+    @Override // v4.v
+    public final boolean n(RecyclerView recyclerView, v4.d1 d1Var, v4.d1 d1Var2) {
+        int b10;
+        v91 v91Var = this.e;
+        ArrayList arrayList = v91Var.b;
+        if (d1Var.f != d1Var2.f || (b10 = d1Var2.b()) < 0 || b10 >= arrayList.size() || ((n91) arrayList.get(b10)).c == null || !((n91) arrayList.get(b10)).c.pinned) {
+            return false;
+        }
+        m91 m91Var = v91Var.r;
+        int b11 = d1Var.b();
+        int b12 = d1Var2.b();
+        v91 v91Var2 = m91Var.d;
+        ArrayList arrayList2 = v91Var2.b;
+        arrayList2.add(b12, (n91) arrayList2.remove(b11));
+        v4.l0 itemAnimator = v91Var2.N.getItemAnimator();
+        k91 k91Var = v91Var2.I0;
+        if (itemAnimator != k91Var) {
+            v91Var2.N.setItemAnimator(k91Var);
+        }
+        m91Var.j(b11, b12);
+        return true;
+    }
+
+    @Override // v4.v
+    public final void p(v4.d1 d1Var, int i7) {
+        v91 v91Var = this.e;
+        if (i7 != 0) {
+            v91Var.N.I0(false);
+            d1Var.a.setPressed(true);
+            return;
+        }
+        ArrayList arrayList = v91Var.b;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((n91) arrayList.get(i10)).c;
+            if (tL_forumTopic != null && tL_forumTopic.pinned) {
+                arrayList2.add(Integer.valueOf(tL_forumTopic.id));
+            }
+        }
+        v91Var.getMessagesController().q7.w(arrayList2, v91Var.a);
+    }
+
+    @Override // v4.v
+    public final void q(v4.d1 d1Var) {
+        if (d1Var != null) {
+            s91 s91Var = (s91) d1Var.a;
+            TLRPC.TL_forumTopic tL_forumTopic = s91Var.N;
+            v91 v91Var = this.e;
+            if (tL_forumTopic != null) {
+                org.telegram.messenger.k00 k00Var = v91Var.getMessagesController().q7;
+                long j3 = v91Var.a;
+                TLRPC.TL_forumTopic tL_forumTopic2 = s91Var.N;
+                k00Var.A(tL_forumTopic2.id, j3, tL_forumTopic2.hidden);
+            }
+            v91Var.c1 = s91Var;
+            i91 i91Var = v91Var.N;
+            boolean z9 = !s91Var.N.hidden;
+            int i7 = t91.n3;
+            i91Var.B1(z9, s91Var);
+            v91Var.Z0(true, true);
+            TLRPC.TL_forumTopic tL_forumTopic3 = s91Var.c5;
+            if (tL_forumTopic3 != null) {
+                s91Var.setTopicIcon(tL_forumTopic3);
+            }
         }
     }
 }

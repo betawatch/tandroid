@@ -1,90 +1,124 @@
 package g9;
 
-import java.util.Collection;
+import aa.b0;
+import android.support.v4.media.session.a0;
+import android.text.TextUtils;
+import android.util.Log;
+import com.google.android.gms.internal.clearcut.z0;
+import j$.util.Objects;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class l implements i1 {
-    public transient Collection a;
-    public transient Set b;
-    public transient Collection c;
-    public transient Map d;
+public class l {
+    public final String a;
 
-    @Override // g9.i1
-    public Collection a() {
-        Collection collection = this.a;
-        if (collection != null) {
-            return collection;
+    public l(String str, pb.b bVar) {
+        if (str == null) {
+            throw new IllegalArgumentException("url must not be null.");
         }
-        Collection e10 = e();
-        this.a = e10;
-        return e10;
+        this.a = str;
     }
 
-    @Override // g9.i1
-    public Map b() {
-        Map map = this.d;
-        if (map != null) {
-            return map;
+    public static void b(a0 a0Var, ia.e eVar) {
+        String str = (String) eVar.b;
+        if (str != null) {
+            a0Var.l("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
-        Map d = d();
-        this.d = d;
-        return d;
+        a0Var.l("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        a0Var.l("X-CRASHLYTICS-API-CLIENT-VERSION", "20.1.1");
+        a0Var.l("Accept", "application/json");
+        String str2 = (String) eVar.c;
+        if (str2 != null) {
+            a0Var.l("X-CRASHLYTICS-DEVICE-MODEL", str2);
+        }
+        String str3 = (String) eVar.d;
+        if (str3 != null) {
+            a0Var.l("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+        }
+        String str4 = (String) eVar.e;
+        if (str4 != null) {
+            a0Var.l("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+        }
+        String str5 = ((b0) eVar.i).c().a;
+        if (str5 != null) {
+            a0Var.l("X-CRASHLYTICS-INSTALLATION-ID", str5);
+        }
     }
 
-    public boolean c(Object obj) {
-        Iterator it = b().values().iterator();
-        while (it.hasNext()) {
-            if (((Collection) it.next()).contains(obj)) {
-                return true;
+    public static HashMap c(ia.e eVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("build_version", (String) eVar.h);
+        hashMap.put("display_version", (String) eVar.g);
+        hashMap.put("source", Integer.toString(eVar.a));
+        String str = (String) eVar.f;
+        if (!TextUtils.isEmpty(str)) {
+            hashMap.put("instance", str);
+        }
+        return hashMap;
+    }
+
+    public static CharSequence f(Object obj) {
+        Objects.requireNonNull(obj);
+        return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
+    }
+
+    public void a(StringBuilder sb2, Iterator it) {
+        try {
+            if (it.hasNext()) {
+                sb2.append(f(it.next()));
+                while (it.hasNext()) {
+                    sb2.append((CharSequence) this.a);
+                    sb2.append(f(it.next()));
+                }
             }
+        } catch (IOException e10) {
+            throw new AssertionError(e10);
         }
-        return false;
     }
 
-    public abstract Map d();
-
-    public abstract Collection e();
-
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public JSONObject d(z0 z0Var) {
+        int i7 = z0Var.b;
+        x9.b bVar = x9.b.a;
+        bVar.c("Settings response code was: " + i7);
+        String str = this.a;
+        if (i7 != 200 && i7 != 201 && i7 != 202 && i7 != 203) {
+            String str2 = "Settings request failed; (status: " + i7 + ") from " + str;
+            if (bVar.a(6)) {
+                Log.e("FirebaseCrashlytics", str2, null);
+            }
+            return null;
         }
-        if (obj instanceof i1) {
-            return b().equals(((i1) obj).b());
+        String str3 = z0Var.c;
+        try {
+            return new JSONObject(str3);
+        } catch (Exception e10) {
+            bVar.d("Failed to parse settings JSON from " + str, e10);
+            bVar.d("Settings response " + str3, null);
+            return null;
         }
-        return false;
     }
 
-    public abstract Set f();
-
-    public abstract Iterator g();
-
-    public final int hashCode() {
-        return b().hashCode();
+    public String e(List list) {
+        Iterator it = list.iterator();
+        StringBuilder sb2 = new StringBuilder();
+        a(sb2, it);
+        return sb2.toString();
     }
 
-    @Override // g9.i1
-    public Set keySet() {
-        Set set = this.b;
-        if (set != null) {
-            return set;
+    public l(String str, int i7) {
+        switch (i7) {
+            case 2:
+                this.a = str;
+                break;
+            default:
+                str.getClass();
+                this.a = str;
+                break;
         }
-        Set f10 = f();
-        this.b = f10;
-        return f10;
-    }
-
-    @Override // g9.i1
-    public boolean remove(Object obj, Object obj2) {
-        Collection collection = (Collection) b().get(obj);
-        return collection != null && collection.remove(obj2);
-    }
-
-    public final String toString() {
-        return b().toString();
     }
 }

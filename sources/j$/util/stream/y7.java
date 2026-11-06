@@ -8,15 +8,15 @@ public final /* synthetic */ class y7 implements j5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
-    public /* synthetic */ y7(Consumer consumer, int i3) {
-        this.a = i3;
+    public /* synthetic */ y7(Consumer consumer, int i7) {
+        this.a = i7;
         this.b = consumer;
     }
 
-    private final /* synthetic */ void a(long j10) {
+    private final /* synthetic */ void a(long j3) {
     }
 
-    private final /* synthetic */ void b(long j10) {
+    private final /* synthetic */ void b(long j3) {
     }
 
     private final /* synthetic */ void c() {
@@ -38,7 +38,7 @@ public final /* synthetic */ class y7 implements j5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         switch (this.a) {
             case 0:
                 t3.J();
@@ -50,7 +50,7 @@ public final /* synthetic */ class y7 implements j5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         switch (this.a) {
             case 0:
                 t3.K();
@@ -82,12 +82,12 @@ public final /* synthetic */ class y7 implements j5 {
 
     @Override // j$.util.stream.j5
     public final /* synthetic */ void end() {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
-        int i3 = this.a;
+    public final /* synthetic */ void o(long j3) {
+        int i7 = this.a;
     }
 
     @Override // j$.util.stream.j5

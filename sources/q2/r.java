@@ -1,48 +1,30 @@
 package q2;
 
-import android.text.TextUtils;
+import android.os.Build;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class r {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final String e;
-    public final String f;
+public final class r implements k2.b {
+    public static final boolean c;
+    public final UUID a;
+    public final byte[] b;
 
-    public r(int i3, String str, int i10, String str2, String str3, String str4) {
-        this.a = i3;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
-        this.e = str3;
-        this.f = str4;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && r.class == obj.getClass()) {
-            r rVar = (r) obj;
-            if (this.a == rVar.a && this.b == rVar.b && TextUtils.equals(this.c, rVar.c) && TextUtils.equals(this.d, rVar.d) && TextUtils.equals(this.e, rVar.e) && TextUtils.equals(this.f, rVar.f)) {
-                return true;
+    static {
+        boolean z9;
+        if ("Amazon".equals(Build.MANUFACTURER)) {
+            String str = Build.MODEL;
+            if ("AFTM".equals(str) || "AFTB".equals(str)) {
+                z9 = true;
+                c = z9;
             }
         }
-        return false;
+        z9 = false;
+        c = z9;
     }
 
-    public final int hashCode() {
-        int i3 = ((this.a * 31) + this.b) * 31;
-        String str = this.c;
-        int hashCode = (i3 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.d;
-        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-        String str3 = this.e;
-        int hashCode3 = (hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
-        String str4 = this.f;
-        return hashCode3 + (str4 != null ? str4.hashCode() : 0);
+    public r(UUID uuid, byte[] bArr) {
+        this.a = uuid;
+        this.b = bArr;
     }
 }

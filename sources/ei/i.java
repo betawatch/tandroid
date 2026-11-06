@@ -1,15 +1,31 @@
 package ei;
 
-import android.graphics.Canvas;
+import android.content.Context;
+import di.q6;
+import org.telegram.ui.Components.av0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i extends org.telegram.ui.Components.f5 {
-    @Override // org.telegram.ui.Components.f5, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(org.telegram.messenger.g0.L(-2.0f), org.telegram.messenger.g0.L(1.0f));
-        super.draw(canvas);
-        canvas.restore();
+public final class i extends m {
+    public final /* synthetic */ n w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(n nVar, Context context) {
+        super(nVar, context);
+        this.w = nVar;
+    }
+
+    @Override // ei.m, v4.g0
+    public final void f() {
+        super.f();
+        n nVar = this.w;
+        if (nVar.r.getVisibility() == 0) {
+            nVar.x.f();
+        }
+        av0 av0Var = nVar.D;
+        if (av0Var != null) {
+            q6 q6Var = this.e;
+            av0Var.e(q6Var != null && q6Var.k(), true);
+        }
     }
 }

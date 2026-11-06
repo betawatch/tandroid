@@ -1,43 +1,79 @@
 package f6;
 
 import android.os.Parcel;
-import android.os.RemoteException;
-import b8.ke;
-import b8.kg;
-import com.google.android.gms.internal.cast.m4;
-import com.google.android.gms.internal.cast.t6;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import c8.wb;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i {
-    public final /* synthetic */ c a;
+public final class i extends r6.a {
+    public static final Parcelable.Creator<i> CREATOR = new v(5);
+    public final boolean a;
+    public final String b;
+    public final boolean c;
+    public final h d;
 
-    public i(c cVar) {
-        this.a = cVar;
+    public i(boolean z9, String str, boolean z10, h hVar) {
+        this.a = z9;
+        this.b = str;
+        this.c = z10;
+        this.d = hVar;
     }
 
-    public final void a() {
-        c cVar = this.a;
-        q qVar = cVar.e;
-        if (qVar == null) {
-            return;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        try {
-            g6.h hVar = cVar.j;
-            if (hVar != null) {
-                hVar.u();
-            }
-            o oVar = (o) qVar;
-            Parcel P0 = oVar.P0();
-            int i3 = com.google.android.gms.internal.cast.u.a;
-            P0.writeInt(0);
-            oVar.T0(P0, 1);
-        } catch (RemoteException e10) {
-            c.m.a(e10, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
+        if (!(obj instanceof i)) {
+            return false;
         }
-        m4 m4Var = cVar.l;
-        if (m4Var != null) {
-            ke.P(m4Var.a, new t6(new kg(3, 4)));
+        i iVar = (i) obj;
+        return this.a == iVar.a && j6.a.d(this.b, iVar.b) && this.c == iVar.c && j6.a.d(this.d, iVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, Boolean.valueOf(this.c), this.d});
+    }
+
+    public final String toString() {
+        return "LaunchOptions(relaunchIfRunning=" + this.a + ", language=" + this.b + ", androidReceiverCompatible: " + this.c + ")";
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.q(parcel, 2, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        wb.l(parcel, 3, this.b);
+        wb.q(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        wb.k(parcel, 5, this.d, i7);
+        wb.s(parcel, r10);
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public i() {
+        this(false, r1.toString(), false, null);
+        Locale locale = Locale.getDefault();
+        Pattern pattern = j6.a.a;
+        StringBuilder sb2 = new StringBuilder(20);
+        sb2.append(locale.getLanguage());
+        String country = locale.getCountry();
+        if (!TextUtils.isEmpty(country)) {
+            sb2.append('-');
+            sb2.append(country);
+        }
+        String variant = locale.getVariant();
+        if (!TextUtils.isEmpty(variant)) {
+            sb2.append('-');
+            sb2.append(variant);
         }
     }
 }

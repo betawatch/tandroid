@@ -1,42 +1,31 @@
 package org.telegram.ui;
 
+import android.text.style.URLSpan;
 import android.view.View;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ef implements View.OnClickListener {
+public final /* synthetic */ class ef implements org.telegram.messenger.d20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ ef(wm wmVar, ArrayList arrayList, int i3) {
-        this.a = i3;
-        this.b = wmVar;
-        this.c = arrayList;
+    public /* synthetic */ ef(int i7, Object obj, Object obj2) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.d20
+    public final Object a(Object obj) {
         switch (this.a) {
             case 0:
-                wm wmVar = this.b;
-                th thVar = new th(wmVar, wmVar, wmVar.getParentActivity(), wmVar.ya, this.c);
-                boolean T9 = wmVar.T9();
-                thVar.i0 = T9;
-                thVar.n = T9;
-                thVar.p0 = false;
-                wmVar.O7(false);
-                wmVar.showDialog(thVar);
-                break;
+                an anVar = (an) this.b;
+                View view = (View) this.c;
+                anVar.j8((URLSpan) obj, false, anVar.t5, view instanceof org.telegram.ui.Cells.q1 ? (org.telegram.ui.Cells.q1) view : null);
+                return Boolean.TRUE;
             default:
-                wm wmVar2 = this.b;
-                if (wmVar2.getParentActivity() != null && wmVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.pu(wmVar2, wmVar2.getParentActivity(), wmVar2.ya, this.c).show();
-                    wmVar2.O7(true);
-                    break;
-                }
-                break;
+                return th.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
     }
 }

@@ -1,40 +1,66 @@
 package i1;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import b5.j;
+import android.database.Cursor;
+import android.util.Log;
+import android.widget.Filter;
+import androidx.appcompat.widget.SearchView;
+import m.z2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class b implements Parcelable {
-    public final Parcelable a;
-    public static final a b = new a();
-    public static final Parcelable.Creator<b> CREATOR = new j(1);
+public final class b extends Filter {
+    public a a;
 
-    public b() {
-        this.a = null;
+    @Override // android.widget.Filter
+    public final CharSequence convertResultToString(Object obj) {
+        return ((z2) this.a).c((Cursor) obj);
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    @Override // android.widget.Filter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Filter.FilterResults performFiltering(CharSequence charSequence) {
+        Cursor cursor;
+        z2 z2Var = (z2) this.a;
+        SearchView searchView = z2Var.w;
+        String charSequence2 = charSequence == null ? "" : charSequence.toString();
+        if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
+            try {
+                cursor = z2Var.f(z2Var.x, charSequence2);
+            } catch (RuntimeException e10) {
+                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e10);
+            }
+            if (cursor != null) {
+                cursor.getCount();
+                Filter.FilterResults filterResults = new Filter.FilterResults();
+                if (cursor == null) {
+                    filterResults.count = cursor.getCount();
+                    filterResults.values = cursor;
+                } else {
+                    filterResults.count = 0;
+                    filterResults.values = null;
+                }
+                return filterResults;
+            }
+        }
+        cursor = null;
+        Filter.FilterResults filterResults2 = new Filter.FilterResults();
+        if (cursor == null) {
+        }
+        return filterResults2;
     }
 
-    @Override // android.os.Parcelable
-    public void writeToParcel(Parcel parcel, int i3) {
-        parcel.writeParcelable(this.a, i3);
-    }
-
-    public b(Parcelable parcelable) {
-        if (parcelable != null) {
-            this.a = parcelable == b ? null : parcelable;
+    @Override // android.widget.Filter
+    public final void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
+        a aVar = this.a;
+        Cursor cursor = aVar.c;
+        Object obj = filterResults.values;
+        if (obj == null || obj == cursor) {
             return;
         }
-        throw new IllegalArgumentException("superState must not be null");
-    }
-
-    public b(Parcel parcel, ClassLoader classLoader) {
-        Parcelable readParcelable = parcel.readParcelable(classLoader);
-        this.a = readParcelable == null ? b : readParcelable;
+        ((z2) aVar).b((Cursor) obj);
     }
 }

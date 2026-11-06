@@ -1,31 +1,91 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d7 implements org.telegram.ui.Components.fj0 {
-    public final /* synthetic */ org.telegram.ui.Components.tj0 a;
-    public final /* synthetic */ e7 b;
+public final class d7 extends org.telegram.ui.Components.h61 {
+    public org.telegram.ui.ActionBar.g1 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ oi.q c;
+    public final /* synthetic */ y6 d;
+    public final /* synthetic */ org.telegram.ui.Components.ht0 e;
+    public final /* synthetic */ t7 f;
 
-    public d7(e7 e7Var, org.telegram.ui.Components.tj0 tj0Var) {
-        this.b = e7Var;
-        this.a = tj0Var;
+    public d7(t7 t7Var, Context context, oi.q qVar, y6 y6Var, org.telegram.ui.Components.ht0 ht0Var) {
+        this.f = t7Var;
+        this.b = context;
+        this.c = qVar;
+        this.d = y6Var;
+        this.e = ht0Var;
     }
 
-    @Override // org.telegram.ui.Components.fj0
-    public final void f(int i3, View view) {
-        u7 u7Var = this.b.f;
-        org.telegram.ui.Components.tj0 tj0Var = this.a;
-        g7 g7Var = (g7) tj0Var.getAdapter();
-        n7 n7Var = (n7) g7Var.e.get(i3);
-        if (view instanceof org.telegram.ui.Cells.n7) {
-            u7.a(u7Var, n7Var, (p7) g7Var, tj0Var);
-            return;
+    @Override // org.telegram.ui.Components.h61
+    public final void b(View view, int i7, int i10) {
+        t7 t7Var = this.f;
+        org.telegram.ui.Components.pj0 c10 = t7Var.c(view);
+        ArrayList arrayList = t7Var.f;
+        c10.setAdapter(((r7) arrayList.get(i7)).c);
+        if (((r7) arrayList.get(i7)).b == 1 || ((r7) arrayList.get(i7)).b == 4) {
+            view.getContext();
+            c10.setLayoutManager(new v4.s(3));
+        } else {
+            view.getContext();
+            c10.setLayoutManager(new v4.b0());
         }
-        j7 j7Var = u7Var.G;
-        if (j7Var != null) {
-            j7Var.a(n7Var.c, n7Var.d, false);
+        c10.setTag(Integer.valueOf(((r7) arrayList.get(i7)).b));
+        view.setTag(Integer.valueOf(((r7) arrayList.get(i7)).b));
+        if (this.e != null) {
+            ((org.telegram.ui.Components.rj0) t7Var.n).L(view);
         }
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final View d(int i7) {
+        Context context = this.b;
+        org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
+        oi.q qVar = this.c;
+        if (qVar != null) {
+            qVar.b(pj0Var);
+        }
+        v4.k kVar = (v4.k) pj0Var.getItemAnimator();
+        kVar.C = false;
+        kVar.m = false;
+        pj0Var.setClipToPadding(false);
+        if (i7 != 1 && i7 != 4 && qVar != null) {
+            pj0Var.setSections(false);
+        }
+        pj0Var.setCaptureSectionsDecoratorAllowed(true);
+        t7 t7Var = this.f;
+        if (i7 == 1) {
+            pj0Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, 0, t7Var.w);
+        } else {
+            pj0Var.setPadding(0, 0, 0, t7Var.w);
+        }
+        pj0Var.setOnItemClickListener(new c7(this, pj0Var));
+        pj0Var.setOnItemLongClickListener(new a7(this, pj0Var, this.d, 0));
+        return this.e == null ? pj0Var : new s7(context, pj0Var);
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int e() {
+        return this.f.f.size();
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int f(int i7) {
+        return ((r7) this.f.f.get(i7)).b;
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final CharSequence g(int i7) {
+        return ((r7) this.f.f.get(i7)).a;
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int h(int i7) {
+        return ((r7) this.f.f.get(i7)).b;
     }
 }

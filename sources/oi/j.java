@@ -1,16 +1,24 @@
 package oi;
 
-import android.text.Spannable;
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
+import android.view.View;
+import v4.p0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class j {
-    public final WeakReference a;
-    public final HashMap b = new HashMap();
+public final class j implements p0 {
+    public final /* synthetic */ q a;
 
-    public j(Spannable spannable) {
-        this.a = new WeakReference(spannable);
+    public j(q qVar) {
+        this.a = qVar;
+    }
+
+    @Override // v4.p0
+    public final void a(View view) {
+        this.a.i++;
+    }
+
+    @Override // v4.p0
+    public final void b() {
+        this.a.i++;
     }
 }

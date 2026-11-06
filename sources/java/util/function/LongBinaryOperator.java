@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface LongBinaryOperator {
-    long applyAsLong(long j10, long j11);
+    long applyAsLong(long j3, long j10);
 }

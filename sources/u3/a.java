@@ -1,50 +1,49 @@
 package u3;
 
-import a1.g;
-import g2.y;
+import a8.ia;
+import a8.p0;
+import h2.m0;
+import j$.util.Objects;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends b {
-    public final /* synthetic */ int a;
+public final class a {
+    public final long a;
     public final long b;
-    public final long c;
+    public final int c;
 
-    public a(long j10, int i3, long j11) {
-        this.a = i3;
-        switch (i3) {
-            case 1:
-                this.b = j10;
-                this.c = j11;
-                break;
-            default:
-                this.b = j11;
-                this.c = j10;
-                break;
-        }
+    public a(long j3, int i7, long j10) {
+        ia.f(j3 < j10);
+        this.a = j3;
+        this.b = j10;
+        this.c = i7;
     }
 
-    public static long d(long j10, y yVar) {
-        long A = yVar.A();
-        if ((128 & A) != 0) {
-            return 8589934591L & ((((A & 1) << 32) | yVar.C()) + j10);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return -9223372036854775807L;
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // u3.b
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
+    }
+
     public final String toString() {
-        switch (this.a) {
-            case 0:
-                StringBuilder sb2 = new StringBuilder("SCTE-35 PrivateCommand { ptsAdjustment=");
-                sb2.append(this.b);
-                sb2.append(", identifier= ");
-                return g.r(sb2, this.c, " }");
-            default:
-                StringBuilder sb3 = new StringBuilder("SCTE-35 TimeSignalCommand { ptsTime=");
-                sb3.append(this.b);
-                sb3.append(", playbackPositionUs= ");
-                return g.r(sb3, this.c, " }");
-        }
+        String str = m0.a;
+        Locale locale = Locale.US;
+        StringBuilder t6 = p0.t(this.a, "Segment: startTimeMs=", ", endTimeMs=");
+        t6.append(this.b);
+        t6.append(", speedDivisor=");
+        t6.append(this.c);
+        return t6.toString();
     }
 }

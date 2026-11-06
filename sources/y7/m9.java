@@ -1,33 +1,48 @@
 package y7;
 
-import b8.df;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m9 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final va e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+public abstract class m9 extends i9 implements Set {
+    public transient l9 b;
 
-    public /* synthetic */ m9(df dfVar) {
-        this.a = dfVar.a;
-        this.b = dfVar.b;
-        this.c = dfVar.c;
-        this.d = dfVar.d;
-        this.e = (va) dfVar.k;
-        this.f = dfVar.e;
-        this.g = dfVar.f;
-        this.h = dfVar.g;
-        this.i = dfVar.h;
-        this.j = dfVar.i;
-        this.k = dfVar.j;
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this || obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i7 = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i7 += next != null ? next.hashCode() : 0;
+        }
+        return i7;
+    }
+
+    public final l9 l() {
+        l9 l9Var = this.b;
+        if (l9Var != null) {
+            return l9Var;
+        }
+        o9 o9Var = new o9((a) this);
+        this.b = o9Var;
+        return o9Var;
     }
 }

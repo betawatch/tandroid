@@ -1,23 +1,33 @@
 package org.telegram.ui.Cells;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h8 extends CharacterStyle implements UpdateAppearance {
-    public final int a;
-    public final org.telegram.ui.ActionBar.e6 b;
+public final class h8 extends LinearLayout {
+    public TextView a;
+    public boolean b;
 
-    public h8(int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = i3;
-        this.b = e6Var;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        View view;
+        int measuredHeight;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+        if (!this.b || (view = (View) getParent()) == null || getMeasuredHeight() >= (measuredHeight = ((view.getMeasuredHeight() - view.getPaddingBottom()) - view.getPaddingTop()) - org.telegram.messenger.g0.L(24.0f))) {
+            return;
+        }
+        setMeasuredDimension(getMeasuredWidth(), measuredHeight);
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(this.a, this.b));
-        textPaint.setUnderlineText(true);
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.a.setOnClickListener(onClickListener);
+    }
+
+    public void setIsLast(boolean z9) {
+        this.b = z9;
+        requestLayout();
     }
 }

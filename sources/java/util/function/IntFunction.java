@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface IntFunction<R> {
-    R apply(int i3);
+    R apply(int i7);
 }

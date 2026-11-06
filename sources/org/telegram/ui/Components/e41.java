@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class e41 extends ColorDrawable {
     public final int a;
-    public final org.telegram.ui.ActionBar.e6 b;
+    public final org.telegram.ui.ActionBar.f6 b;
 
-    public e41(int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
-        this.a = i3;
-        this.b = e6Var;
+    public e41(int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
+        this.a = i7;
+        this.b = f6Var;
     }
 
     @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable

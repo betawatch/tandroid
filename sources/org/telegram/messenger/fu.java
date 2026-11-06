@@ -1,47 +1,655 @@
 package org.telegram.messenger;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.text.style.StyleSpan;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.rg0;
+import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class fu extends xt {
-    public final Paint X;
+public abstract class fu implements rg0 {
+    public boolean D;
+    public int E;
+    public int F;
+    public TLObject G;
+    public boolean I;
+    public org.telegram.ui.Components.ic J;
+    public tg0 K;
+    public lu L;
+    public float M;
+    public int N;
+    public float O;
+    public int P;
+    public int S;
+    public int T;
+    public int U;
+    public View V;
+    public final kv a;
+    public final Rect b;
+    public final int c;
+    public StaticLayout d;
+    public float e;
+    public int f;
+    public int h;
+    public int n;
+    public CheckBoxBase r;
+    public float s;
+    public int w;
+    public boolean x;
+    public boolean y;
+    public final RectF H = new RectF();
+    public boolean Q = true;
+    public boolean R = true;
 
-    public fu(cv cvVar, Rect rect, int i3) {
-        super(cvVar, rect, i3);
-        this.X = new Paint(1);
+    public fu(kv kvVar, Rect rect, int i7) {
+        this.a = kvVar;
+        this.b = new Rect(rect);
+        this.c = (i7 - rect.left) - rect.right;
     }
 
-    @Override // org.telegram.messenger.xt
-    public final int I() {
+    public static CharSequence h0(CharSequence charSequence) {
+        if (!(charSequence instanceof Spanned)) {
+            return charSequence;
+        }
+        Spanned spanned = (Spanned) charSequence;
+        org.telegram.ui.Cells.o9[] o9VarArr = (org.telegram.ui.Cells.o9[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Cells.o9.class);
+        if (o9VarArr == null || o9VarArr.length == 0) {
+            return charSequence;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+        Arrays.sort(o9VarArr, new eu(spanned, 0));
+        for (org.telegram.ui.Cells.o9 o9Var : o9VarArr) {
+            int spanStart = spanned.getSpanStart(o9Var);
+            int spanEnd = spanned.getSpanEnd(o9Var);
+            if (spanStart >= 0 && spanEnd >= 0 && spanStart <= spanEnd && spanEnd <= spannableStringBuilder.length()) {
+                CharSequence charSequence2 = o9Var.a;
+                if (charSequence2 == null) {
+                    charSequence2 = "";
+                }
+                spannableStringBuilder.replace(spanStart, spanEnd, charSequence2);
+            }
+        }
+        return spannableStringBuilder;
+    }
+
+    public static void l(SpannableStringBuilder spannableStringBuilder, jv jvVar, jv[] jvVarArr) {
+        StaticLayout staticLayout;
+        StaticLayout staticLayout2;
+        if (jvVar != null && (staticLayout2 = jvVar.b) != null && !TextUtils.isEmpty(staticLayout2.getText())) {
+            spannableStringBuilder.append(h0(staticLayout2.getText()));
+            return;
+        }
+        if (jvVarArr != null) {
+            for (jv jvVar2 : jvVarArr) {
+                if (jvVar2 != null && (staticLayout = jvVar2.b) != null && !TextUtils.isEmpty(staticLayout.getText())) {
+                    if (spannableStringBuilder.length() > 0 && spannableStringBuilder.charAt(spannableStringBuilder.length() - 1) != '\n') {
+                        spannableStringBuilder.append('\n');
+                    }
+                    spannableStringBuilder.append(h0(staticLayout.getText()));
+                }
+            }
+        }
+    }
+
+    public void A(int i7, Rect rect) {
+        int i10 = this.b.left;
+        float f10 = this.M;
+        rect.set(i10, (int) f10, this.c + i10, (int) (f10 + I()));
+    }
+
+    public int B() {
+        return 0;
+    }
+
+    public CharSequence D() {
+        return null;
+    }
+
+    public CharSequence E(int i7) {
+        return null;
+    }
+
+    public final RectF F() {
+        kv kvVar = this.a;
+        float textY = kvVar.E.getTextY() + this.M;
         Rect rect = this.b;
-        return g0.L(12.0f) + rect.top + rect.bottom;
+        float f10 = textY + rect.top;
+        return new RectF(g0.L(4.0f) + (kvVar.E.getTextX() - kvVar.S), f10, ((kvVar.E.getTextX() + kvVar.C) + kvVar.T) - g0.L(4.0f), ((I() + f10) - rect.top) - rect.bottom);
     }
 
-    @Override // org.telegram.messenger.xt
-    public final int K() {
-        return g0.L(32.0f);
+    public final boolean G() {
+        TLObject tLObject = this.G;
+        if (tLObject instanceof TL_iv.PageListItem) {
+            return ((TL_iv.PageListItem) tLObject).checked;
+        }
+        if (tLObject instanceof TL_iv.PageListOrderedItem) {
+            return ((TL_iv.PageListOrderedItem) tLObject).checked;
+        }
+        CheckBoxBase checkBoxBase = this.r;
+        return checkBoxBase != null && checkBoxBase.q;
     }
 
-    @Override // org.telegram.messenger.xt
-    public final void W(Canvas canvas) {
-        cv cvVar = this.a;
-        int i3 = cvVar.C;
-        int i10 = cvVar.S;
-        int i11 = i3 + i10 + cvVar.T;
+    public int H() {
+        return 0;
+    }
+
+    public abstract int I();
+
+    public int J() {
+        return K();
+    }
+
+    public int K() {
         Rect rect = this.b;
-        int i12 = rect.left;
-        int i13 = ((i11 - i12) - rect.right) / 2;
-        float f10 = (((r1 - i13) / 2.0f) - i10) + i12;
-        float L = (g0.L(12.0f) - g0.L(1.0f)) / 2.0f;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(cvVar.E() ? org.telegram.ui.ActionBar.k6.kl : org.telegram.ui.ActionBar.k6.jl, cvVar.D);
-        Paint paint = this.X;
-        paint.setColor(w02);
-        RectF rectF = g0.P;
-        rectF.set(f10, L, i13 + f10, g0.L(1.0f) + L);
-        canvas.drawRoundRect(rectF, g0.L(0.5f), g0.L(0.5f), paint);
+        return rect.left + this.c + rect.right;
+    }
+
+    public org.telegram.ui.Cells.t9[] L() {
+        return null;
+    }
+
+    public final boolean N(int i7) {
+        return this.r != null && i7 == 0 && G();
+    }
+
+    public final boolean O(int i7) {
+        return this.r == null || i7 != 0 || n();
+    }
+
+    public final boolean P(int i7) {
+        return (this.r == null || i7 != 0) && (this instanceof lu);
+    }
+
+    public boolean Q() {
+        return false;
+    }
+
+    public final boolean R() {
+        int indexOf;
+        kv kvVar = this.a;
+        if (kvVar.h.isEmpty() || (indexOf = kvVar.g.indexOf(this)) < 0) {
+            return false;
+        }
+        for (int i7 = 0; i7 < kvVar.h.size(); i7++) {
+            bu buVar = (bu) kvVar.h.get(i7);
+            if (indexOf >= buVar.a && indexOf <= buVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final boolean S() {
+        lu luVar = this.L;
+        if (luVar == null) {
+            return true;
+        }
+        if (luVar.W.open) {
+            return luVar.S();
+        }
+        return false;
+    }
+
+    public boolean U(int i7, View view) {
+        return false;
+    }
+
+    public void X(Canvas canvas, int i7, float f10) {
+        W(canvas);
+    }
+
+    public boolean Y(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public void Z(int i7, int i10, int i11) {
+        this.S = i7;
+        this.T = i10;
+        this.U = i11;
+        org.telegram.ui.Cells.t9[] L = L();
+        if (L == null) {
+            return;
+        }
+        for (org.telegram.ui.Cells.t9 t9Var : L) {
+            if (t9Var instanceof jv) {
+                jv jvVar = (jv) t9Var;
+                jvVar.c = i7 - jvVar.f;
+                jvVar.d = i10;
+                jvVar.e = i11;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.rg0
+    public Layout a() {
+        return null;
+    }
+
+    public final void a0(boolean z9) {
+        View view = this.V;
+        if (view == null) {
+            return;
+        }
+        for (ViewParent parent = view.getParent(); parent != null; parent = parent.getParent()) {
+            parent.requestDisallowInterceptTouchEvent(z9);
+        }
+    }
+
+    public void b(boolean z9) {
+        a0(z9);
+    }
+
+    public final void b0(TLObject tLObject, boolean z9) {
+        this.G = tLObject;
+        if (this.r == null) {
+            CheckBoxBase checkBoxBase = new CheckBoxBase(20, null, this.a.D);
+            this.r = checkBoxBase;
+            checkBoxBase.h(org.telegram.ui.ActionBar.k6.Vl, org.telegram.ui.ActionBar.k6.z5, org.telegram.ui.ActionBar.k6.k7);
+            this.r.d(10);
+            this.r.k(true);
+            this.r.i(g0.L(5.0f));
+        }
+        this.r.f(-1, z9, false);
+        g0();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void c0(String str) {
+        String str2;
+        kv kvVar = this.a;
+        kvVar.x.setTextSize(g0.L(iz.W0));
+        Layout a10 = a();
+        CharSequence text = a10 == null ? null : a10.getText();
+        if (!TextUtils.isEmpty(str) && (text instanceof Spanned) && text.length() > 0) {
+            for (gv gvVar : (gv[]) ((Spanned) text).getSpans(0, 1, gv.class)) {
+                if (TLObject.hasFlag(gvVar.b, 16)) {
+                    SpannableString spannableString = new SpannableString(str);
+                    spannableString.setSpan(new StyleSpan(1), 0, spannableString.length(), 33);
+                    str2 = spannableString;
+                    break;
+                }
+            }
+        }
+        str2 = str;
+        int i7 = this.n;
+        if (i7 <= 0) {
+            boolean I = kvVar.I();
+            Rect rect = this.b;
+            i7 = Math.max(I ? rect.right : rect.left, g0.L(kvVar.M + 4));
+        }
+        this.d = new StaticLayout(str2, kvVar.x, i7, kvVar.I() ? Layout.Alignment.ALIGN_NORMAL : Layout.Alignment.ALIGN_OPPOSITE, 1.0f, 0.0f, false);
+        this.f = g0.L(kvVar.M + 4);
+        this.h = 0;
+        for (int i10 = 0; i10 < this.d.getLineCount(); i10++) {
+            this.f = Math.min(this.f, (int) this.d.getLineLeft(i10));
+            this.h = Math.max(this.h, (int) this.d.getLineRight(i10));
+        }
+        g0();
+    }
+
+    public void d0() {
+        this.O = this.M;
+        this.P = this.N;
+        this.R = this.Q;
+    }
+
+    @Override // org.telegram.ui.rg0
+    public final View e() {
+        return null;
+    }
+
+    public final void e0() {
+        if (n()) {
+            kv kvVar = this.a;
+            if (!qp.s1(kvVar.a).s4()) {
+                new ug.w0(43, kvVar.E.getContext(), kvVar.D).show();
+                return;
+            }
+            boolean z9 = !G();
+            TLObject tLObject = this.G;
+            if (tLObject instanceof TL_iv.PageListItem) {
+                ((TL_iv.PageListItem) tLObject).checked = z9;
+            } else if (tLObject instanceof TL_iv.PageListOrderedItem) {
+                ((TL_iv.PageListOrderedItem) tLObject).checked = z9;
+            }
+            View view = kvVar.Q;
+            if (view != null) {
+                this.r.a = view;
+            }
+            this.r.f(-1, z9, true);
+            View view2 = kvVar.Q;
+            if (view2 != null) {
+                view2.invalidate();
+            }
+            View view3 = kvVar.Q;
+            if (view3 != null) {
+                view3.performHapticFeedback(3, 2);
+            }
+            kvVar.F.K1(kvVar.E, new o10(5, this, z9));
+        }
+    }
+
+    public final boolean f0(MotionEvent motionEvent) {
+        View view;
+        Rect rect = this.b;
+        motionEvent.offsetLocation(-rect.left, -rect.top);
+        try {
+            if (this.r != null) {
+                int actionMasked = motionEvent.getActionMasked();
+                boolean contains = this.H.contains(motionEvent.getX(), motionEvent.getY());
+                kv kvVar = this.a;
+                if (actionMasked == 0) {
+                    if (contains && n()) {
+                        this.I = true;
+                        if (this.J == null && (view = kvVar.Q) != null) {
+                            this.J = new org.telegram.ui.Components.ic(view);
+                        }
+                        org.telegram.ui.Components.ic icVar = this.J;
+                        if (icVar != null) {
+                            icVar.c(true);
+                        }
+                        View view2 = kvVar.Q;
+                        if (view2 != null) {
+                            view2.invalidate();
+                        }
+                        motionEvent.offsetLocation(rect.left, rect.top);
+                        return true;
+                    }
+                } else if (this.I) {
+                    if (actionMasked == 2) {
+                        if (!contains) {
+                            this.I = false;
+                            org.telegram.ui.Components.ic icVar2 = this.J;
+                            if (icVar2 != null) {
+                                icVar2.c(false);
+                            }
+                        }
+                    } else if (actionMasked == 1 || actionMasked == 3) {
+                        boolean z9 = actionMasked == 1 && contains;
+                        this.I = false;
+                        org.telegram.ui.Components.ic icVar3 = this.J;
+                        if (icVar3 != null) {
+                            icVar3.c(false);
+                        }
+                        if (z9) {
+                            e0();
+                        }
+                        View view3 = kvVar.Q;
+                        if (view3 != null) {
+                            view3.invalidate();
+                        }
+                    }
+                    motionEvent.offsetLocation(rect.left, rect.top);
+                    return true;
+                }
+            }
+            boolean Y = Y(motionEvent);
+            motionEvent.offsetLocation(rect.left, rect.top);
+            return Y;
+        } catch (Throwable th2) {
+            motionEvent.offsetLocation(rect.left, rect.top);
+            throw th2;
+        }
+    }
+
+    public final void g0() {
+        StaticLayout staticLayout = this.d;
+        Rect rect = this.b;
+        kv kvVar = this.a;
+        if (staticLayout != null) {
+            if (a() == null || a().getLineCount() <= 0 || this.d.getLineCount() <= 0) {
+                this.e = (Math.min(g0.L(kvVar.M + 14), (I() - rect.top) - rect.bottom) - this.d.getHeight()) / 2.0f;
+            } else {
+                this.e = (a().getLineBaseline(0) + H()) - this.d.getLineBaseline(0);
+            }
+        }
+        if (this.r != null) {
+            if (a() == null || a().getLineCount() <= 0) {
+                this.s = (Math.min(g0.L(kvVar.M + 14), (I() - rect.top) - rect.bottom) - g0.L(20.0f)) / 2.0f;
+            } else {
+                this.s = (a().getLineBaseline(0) + H()) - (g0.L(20.0f) * 0.7f);
+            }
+        }
+    }
+
+    public final void m(View view) {
+        View view2 = this.V;
+        if (view2 == view) {
+            return;
+        }
+        if (view2 != null) {
+            V();
+            CheckBoxBase checkBoxBase = this.r;
+            if (checkBoxBase != null) {
+                checkBoxBase.l = false;
+            }
+            this.V = null;
+        }
+        this.V = view;
+        CheckBoxBase checkBoxBase2 = this.r;
+        if (checkBoxBase2 != null) {
+            checkBoxBase2.a = view;
+            checkBoxBase2.l = true;
+        }
+        T();
+    }
+
+    public final boolean n() {
+        kv kvVar;
+        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.ui.Cells.l1 l1Var;
+        return (this.r == null || this.G == null || (q1Var = (kvVar = this.a).E) == null || (l1Var = kvVar.F) == null || !l1Var.S(q1Var)) ? false : true;
+    }
+
+    public void p(ArrayList arrayList) {
+        arrayList.add(this);
+    }
+
+    public void q(Canvas canvas) {
+        r(canvas, TLObject.FLAG_31, 0.0f);
+    }
+
+    public final void r(Canvas canvas, int i7, float f10) {
+        float N;
+        float f11;
+        canvas.save();
+        Rect rect = this.b;
+        canvas.translate(rect.left, rect.top);
+        kv kvVar = this.a;
+        boolean I = kvVar.I();
+        TextPaint textPaint = kvVar.x;
+        float L = (((kvVar.C + kvVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
+        if (this.d != null) {
+            textPaint.setTextSize(g0.L(iz.W0));
+            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, kvVar.D));
+            canvas.save();
+            if (!this.x && !this.y) {
+                float N2 = g0.N(5.0f);
+                if (I) {
+                    N = (this.n + L) - g0.N(0.5f);
+                    f11 = N2 / 2.0f;
+                } else {
+                    N = (N2 / 2.0f) + g0.N(0.5f);
+                    f11 = this.n;
+                }
+                canvas.drawCircle(N - f11, (this.e + this.d.getLineBaseline(0)) - (g0.L(iz.W0) * 0.35f), N2 / 2.0f, textPaint);
+            } else if (I) {
+                canvas.translate(((g0.L(0.0f) + L) - this.f) + (this.r != null ? g0.L(26.0f) : 0), this.e);
+                this.d.draw(canvas);
+            } else {
+                canvas.translate((g0.L(0.0f) - this.n) - this.f, this.e);
+                this.d.draw(canvas);
+            }
+            canvas.restore();
+        }
+        if (this.r != null) {
+            int L2 = I ? (int) (L + g0.L(6.0f)) : -g0.L(26.0f);
+            this.H.set(L2 - g0.L(6.0f), this.s - g0.L(6.0f), g0.L(6.0f) + g0.L(20.0f) + L2, this.s + g0.L(20.0f) + g0.L(6.0f));
+            View view = kvVar.Q;
+            if (view != null) {
+                CheckBoxBase checkBoxBase = this.r;
+                if (checkBoxBase.a == null) {
+                    checkBoxBase.a = view;
+                }
+            }
+            org.telegram.ui.Components.ic icVar = this.J;
+            float a10 = icVar != null ? icVar.a(0.1f) : 1.0f;
+            canvas.save();
+            canvas.scale(a10, a10, g0.L(10.0f) + L2, this.s + g0.L(10.0f));
+            this.r.e(L2, (int) this.s, g0.L(20.0f), g0.L(20.0f));
+            this.r.a(canvas);
+            canvas.restore();
+        }
+        if (i7 == Integer.MIN_VALUE) {
+            W(canvas);
+        } else {
+            X(canvas, i7, f10);
+        }
+        canvas.restore();
+    }
+
+    public boolean s(Canvas canvas, ColorFilter colorFilter) {
+        jv jvVar;
+        org.telegram.ui.Components.n5 n5Var;
+        org.telegram.ui.Cells.t9[] L = L();
+        if (L == null) {
+            return false;
+        }
+        boolean z9 = false;
+        for (org.telegram.ui.Cells.t9 t9Var : L) {
+            if ((t9Var instanceof jv) && (n5Var = (jvVar = (jv) t9Var).E) != null && !n5Var.a.isEmpty()) {
+                canvas.save();
+                canvas.translate(jvVar.c, jvVar.d - this.M);
+                org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, jvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
+                canvas.restore();
+                z9 = true;
+            }
+        }
+        return z9;
+    }
+
+    public void t(Canvas canvas) {
+        tg0 tg0Var = this.K;
+        if (tg0Var != null && tg0Var.h && tg0Var.d(this) >= 0) {
+            if (!tg0Var.i(this)) {
+                return;
+            }
+            if (tg0Var.g(this)) {
+                r(canvas, tg0Var.g(this) ? tg0Var.e : -1, tg0Var.g(this) ? tg0Var.f : 0.0f);
+                return;
+            }
+            float c10 = tg0Var.c(this);
+            if (c10 <= 0.0f) {
+                return;
+            }
+            if (c10 < 1.0f) {
+                Rect rect = this.b;
+                int saveLayerAlpha = canvas.saveLayerAlpha(0.0f, 0.0f, rect.left + this.c + rect.right, I(), (int) (c10 * 255.0f));
+                q(canvas);
+                canvas.restoreToCount(saveLayerAlpha);
+                return;
+            }
+        }
+        q(canvas);
+    }
+
+    public boolean u(CharacterStyle characterStyle, int i7, wt wtVar) {
+        org.telegram.ui.Cells.t9[] L = L();
+        if (L != null) {
+            for (org.telegram.ui.Cells.t9 t9Var : L) {
+                if (t9Var instanceof jv) {
+                    if (((jv) t9Var).o(characterStyle, wtVar)) {
+                        Rect rect = this.b;
+                        wtVar.e = rect.left - r4.f;
+                        wtVar.f = i7 + rect.top;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean v() {
+        return J() >= K();
+    }
+
+    public final void w(int i7, Rect rect) {
+        CheckBoxBase checkBoxBase = this.r;
+        if (checkBoxBase == null || i7 != 0) {
+            A(i7 - (checkBoxBase == null ? 0 : 1), rect);
+        } else {
+            int i10 = this.b.left;
+            float f10 = this.M;
+            rect.set(i10, (int) f10, this.c + i10, (int) (f10 + I()));
+        }
+        kv kvVar = this.a;
+        int i11 = -kvVar.S;
+        int i12 = kvVar.C + kvVar.T;
+        int min = Math.min(i12, Math.max(rect.left, i11));
+        rect.left = min;
+        rect.right = Math.max(min, Math.min(rect.right, i12));
+    }
+
+    public final CharSequence x(int i7) {
+        StaticLayout staticLayout;
+        CheckBoxBase checkBoxBase = this.r;
+        if (checkBoxBase == null || i7 != 0) {
+            return E(i7 - (checkBoxBase == null ? 0 : 1));
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        CharSequence text = (!this.x || (staticLayout = this.d) == null) ? null : staticLayout.getText();
+        CharSequence y10 = y();
+        if (!TextUtils.isEmpty(text)) {
+            spannableStringBuilder.append(text).append(' ');
+        }
+        if (!TextUtils.isEmpty(y10)) {
+            spannableStringBuilder.append(y10).append(", ");
+        }
+        k(spannableStringBuilder);
+        return spannableStringBuilder.length() > 0 ? spannableStringBuilder : hd.M0(2131754903, null);
+    }
+
+    public CharSequence y() {
+        int i7 = this.E;
+        String M0 = i7 == 0 ? null : hd.M0(i7, null);
+        int i10 = this.F;
+        String M02 = i10 != 0 ? hd.M0(i10, null) : null;
+        return TextUtils.isEmpty(M0) ? M02 : TextUtils.isEmpty(M02) ? M0 : TextUtils.concat(M0, ", ", M02);
+    }
+
+    public float z() {
+        return 1.0f;
+    }
+
+    public void T() {
+    }
+
+    public void V() {
+    }
+
+    public void W(Canvas canvas) {
+    }
+
+    public void k(SpannableStringBuilder spannableStringBuilder) {
     }
 }

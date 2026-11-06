@@ -2,24 +2,23 @@ package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.d51;
-import org.telegram.ui.Components.ge0;
-import org.telegram.ui.Components.ie0;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class j1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ j1(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ j1(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
     public final void onRewindCanceled() {
+        ti.i iVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
@@ -28,67 +27,91 @@ public final class j1 extends OldVideoPlayerRewinder {
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                PhotoViewer.d(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                photoViewer.A1.f(false);
-                ie0.q0.R.f(false);
+                PhotoViewer.c(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                photoViewer.z1.f(false);
+                ti.o oVar = photoViewer.O8;
+                if (oVar != null && (iVar = oVar.e) != null) {
+                    iVar.F.f(false);
+                    break;
+                }
                 break;
         }
     }
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindStart(boolean z10) {
+    public final void onRewindStart(boolean z9) {
+        ti.i iVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                d51 d51Var = q1Var.Nb;
-                d51Var.n = new hi.d(this, 27);
-                d51Var.e(false);
-                q1Var.Nb.d(!z10);
+                e51 e51Var = q1Var.Nb;
+                e51Var.n = new h9.f1(this, 26);
+                e51Var.e(false);
+                q1Var.Nb.d(!z9);
                 q1Var.Nb.f(true);
                 q1Var.invalidate();
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.A1.e(false);
-                photoViewer.A1.d(!z10);
-                photoViewer.A1.f(true);
-                photoViewer.f0.invalidate();
-                ie0.v(z10);
+                photoViewer.z1.e(false);
+                boolean z10 = !z9;
+                photoViewer.z1.d(z10);
+                photoViewer.z1.f(true);
+                photoViewer.e0.invalidate();
+                ti.o oVar = photoViewer.O8;
+                if (oVar != null && (iVar = oVar.e) != null) {
+                    e51 e51Var2 = iVar.F;
+                    e51Var2.e(false);
+                    e51Var2.d(z10);
+                    e51Var2.f(true);
+                    di.b3 b3Var = iVar.o;
+                    if (b3Var != null) {
+                        b3Var.invalidate();
+                    }
+                    ti.e eVar = iVar.m;
+                    if (eVar != null) {
+                        eVar.invalidate();
+                        break;
+                    }
+                }
                 break;
         }
     }
 
     @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void updateRewindProgressUi(long j10, float f10, boolean z10) {
+    public final void updateRewindProgressUi(long j3, float f10, boolean z9) {
+        ti.i iVar;
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                q1Var.Nb.g(Math.abs(j10));
-                if (z10) {
+                q1Var.Nb.g(Math.abs(j3));
+                if (z9) {
                     q1Var.P5.b0 = f10;
-                    q1Var.Q3();
+                    q1Var.R3();
                     break;
                 }
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.A1.g(Math.abs(j10));
-                if (z10) {
-                    photoViewer.r3.h(false, f10);
-                    photoViewer.s3.invalidate();
+                photoViewer.z1.g(Math.abs(j3));
+                if (z9) {
+                    photoViewer.p3.h(false, f10);
+                    photoViewer.q3.invalidate();
                 }
-                ie0 ie0Var = ie0.q0;
-                ie0Var.R.g(0L);
-                if (z10) {
-                    ie0Var.a0 = f10;
-                    ei.e3 e3Var = ie0Var.c0;
-                    if (e3Var != null) {
-                        e3Var.invalidate();
-                    }
-                    ge0 ge0Var = ie0Var.h;
-                    if (ge0Var != null) {
-                        ge0Var.invalidate();
-                        break;
+                ti.o oVar = photoViewer.O8;
+                if (oVar != null && (iVar = oVar.e) != null) {
+                    iVar.F.g(0L);
+                    if (z9) {
+                        iVar.I = f10;
+                        di.b3 b3Var = iVar.o;
+                        if (b3Var != null) {
+                            b3Var.invalidate();
+                        }
+                        ti.e eVar = iVar.m;
+                        if (eVar != null) {
+                            eVar.invalidate();
+                            break;
+                        }
                     }
                 }
                 break;

@@ -4,50 +4,50 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import org.telegram.messenger.cs;
-import org.telegram.messenger.h10;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.n1;
+import org.telegram.ui.Components.voip.y1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private org.telegram.messenger.c accountInstance;
     private final Activity activity;
     private Handler handler;
-    private hs notificationCenter;
-    private final cs observer;
+    private qs notificationCenter;
+    private final ls observer;
     private final Runnable releaseRunnable;
     private boolean released;
     private final long userId;
     private final boolean video;
 
-    private VoIPPendingCall(Activity activity, long j10, boolean z10, long j11, org.telegram.messenger.c cVar) {
-        cs csVar = new cs() { // from class: org.telegram.messenger.voip.n
-            @Override // org.telegram.messenger.cs
-            public final void didReceivedNotification(int i3, int i10, Object[] objArr) {
-                VoIPPendingCall.this.lambda$new$0(i3, i10, objArr);
+    private VoIPPendingCall(Activity activity, long j3, boolean z9, long j10, org.telegram.messenger.c cVar) {
+        ls lsVar = new ls() { // from class: org.telegram.messenger.voip.o
+            @Override // org.telegram.messenger.ls
+            public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
+                VoIPPendingCall.this.lambda$new$0(i7, i10, objArr);
             }
         };
-        this.observer = csVar;
+        this.observer = lsVar;
         p0 p0Var = new p0(this, 2);
         this.releaseRunnable = p0Var;
         this.activity = activity;
-        this.userId = j10;
-        this.video = z10;
+        this.userId = j3;
+        this.video = z9;
         this.accountInstance = cVar;
         if (onConnectionStateUpdated(false)) {
             return;
         }
-        hs f10 = hs.f(h10.t0);
+        qs f10 = qs.f(p10.s0);
         this.notificationCenter = f10;
-        f10.b(csVar, hs.T1);
+        f10.b(lsVar, qs.T1);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(p0Var, j11);
+        handler.postDelayed(p0Var, j10);
     }
 
     private boolean isAirplaneMode() {
@@ -59,8 +59,8 @@ public final class VoIPPendingCall {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(int i3, int i10, Object[] objArr) {
-        if (i3 == hs.T1) {
+    public /* synthetic */ void lambda$new$0(int i7, int i10, Object[] objArr) {
+        if (i7 == qs.T1) {
             onConnectionStateUpdated(false);
         }
     }
@@ -70,33 +70,33 @@ public final class VoIPPendingCall {
         onConnectionStateUpdated(true);
     }
 
-    private boolean onConnectionStateUpdated(boolean z10) {
-        if (this.released || !(z10 || isConnected(this.accountInstance) || isAirplaneMode())) {
+    private boolean onConnectionStateUpdated(boolean z9) {
+        if (this.released || !(z9 || isConnected(this.accountInstance) || isAirplaneMode())) {
             return false;
         }
-        hp s12 = hp.s1(this.accountInstance.a);
+        qp s12 = qp.s1(this.accountInstance.a);
         TLRPC.User a22 = s12.a2(Long.valueOf(this.userId));
         if (a22 != null) {
             TLRPC.UserFull b22 = s12.b2(a22.id);
-            n1.m(a22, this.video, b22 != null && b22.video_calls_available, this.activity, b22, this.accountInstance);
+            y1.m(a22, this.video, b22 != null && b22.video_calls_available, this.activity, b22, this.accountInstance);
         } else if (isAirplaneMode()) {
-            n1.m(null, this.video, false, this.activity, null, this.accountInstance);
+            y1.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;
     }
 
-    public static VoIPPendingCall startOrSchedule(Activity activity, long j10, boolean z10, org.telegram.messenger.c cVar) {
-        return new VoIPPendingCall(activity, j10, z10, 1000L, cVar);
+    public static VoIPPendingCall startOrSchedule(Activity activity, long j3, boolean z9, org.telegram.messenger.c cVar) {
+        return new VoIPPendingCall(activity, j3, z9, 1000L, cVar);
     }
 
     public void release() {
         if (this.released) {
             return;
         }
-        hs hsVar = this.notificationCenter;
-        if (hsVar != null) {
-            hsVar.n(this.observer, hs.T1);
+        qs qsVar = this.notificationCenter;
+        if (qsVar != null) {
+            qsVar.n(this.observer, qs.T1);
         }
         Handler handler = this.handler;
         if (handler != null) {

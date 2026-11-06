@@ -1,115 +1,214 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.NativeByteBuffer;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ld0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class ld0 extends View {
+    public int a;
+    public boolean b;
+    public boolean c;
+    public float d;
+    public ki0 e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public TextPaint r;
+    public Path s;
+    public kd0 w;
+    public h2.c x;
 
-    public final float[] a() {
-        float f10 = this.a;
-        float f11 = this.b / 100.0f;
-        float f12 = this.c / 100.0f;
-        float f13 = this.d / 100.0f;
-        float f14 = this.e;
-        int i3 = 2;
-        int i10 = 5;
-        char c2 = '\f';
-        char c10 = '\r';
-        float[] fArr = {-0.001f, f10 / 100.0f, 0.0f, f10 / 100.0f, 0.25f, f11, 0.5f, f12, 0.75f, f13, 1.0f, f14 / 100.0f, 1.001f, f14 / 100.0f};
-        int i11 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i12 = 1;
-        while (i12 < i10) {
-            int i13 = (i12 - 1) * i3;
-            float f15 = fArr[i13];
-            float f16 = fArr[i13 + 1];
-            int i14 = i12 * 2;
-            float f17 = fArr[i14];
-            float f18 = fArr[i14 + 1];
-            int i15 = i12 + 1;
-            int i16 = i15 * 2;
-            int i17 = i3;
-            float f19 = fArr[i16];
-            char c11 = c2;
-            float f20 = fArr[i16 + 1];
-            int i18 = (i12 + 2) * 2;
-            float f21 = fArr[i18];
-            float f22 = fArr[i18 + 1];
-            char c12 = c10;
-            int i19 = 1;
-            while (i19 < i11) {
-                float f23 = i19 * 0.01f;
-                float f24 = f23 * f23;
-                float f25 = f24 * f23;
-                float y9 = ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f25) + ((((f19 * 4.0f) + ((f15 * 2.0f) - (f17 * 5.0f))) - f21) * f24) + com.google.android.recaptcha.internal.a.y(f19, f15, f23, f17 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f18 * 3.0f) - f16) - (f20 * 3.0f)) + f22) * f25) + ((((4.0f * f20) + ((2.0f * f16) - (5.0f * f18))) - f22) * f24) + com.google.android.recaptcha.internal.a.y(f20, f16, f23, f18 * 2.0f)) * 0.5f));
-                if (y9 > f15) {
-                    arrayList2.add(Float.valueOf(y9));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i19 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i19++;
-                i11 = 100;
+    public final void a(int i7, MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        float y10 = motionEvent.getY();
+        if (i7 == 1) {
+            if (this.a != 0) {
+                return;
             }
-            arrayList2.add(Float.valueOf(f19));
-            arrayList2.add(Float.valueOf(f20));
-            i12 = i15;
-            i3 = i17;
-            c2 = c11;
-            c10 = c12;
-            i10 = 5;
-            i11 = 100;
+            ki0 ki0Var = this.e;
+            this.a = (int) Math.floor(com.google.android.recaptcha.internal.a.A(x10, ki0Var.a, ki0Var.c / 5.0f, 1.0f));
+            return;
         }
-        arrayList2.add(Float.valueOf(fArr[c2]));
-        arrayList2.add(Float.valueOf(fArr[c10]));
-        this.f = new float[arrayList.size()];
-        int i20 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i20 >= fArr2.length) {
-                break;
+        if (i7 != 2) {
+            if ((i7 == 3 || i7 == 4 || i7 == 5) && this.a != 0) {
+                this.a = 0;
+                return;
             }
-            fArr2[i20] = ((Float) arrayList.get(i20)).floatValue();
-            i20++;
+            return;
         }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i21 = 0; i21 < size; i21++) {
-            fArr3[i21] = ((Float) arrayList2.get(i21)).floatValue();
+        float min = Math.min(2.0f, (this.d - y10) / 8.0f);
+        h2.c cVar = this.x;
+        int i10 = cVar.a;
+        qd0 qd0Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : (qd0) cVar.e : (qd0) cVar.d : (qd0) cVar.c : (qd0) cVar.b;
+        int i11 = this.a;
+        if (i11 == 1) {
+            qd0Var.a = org.telegram.messenger.camera.q.z(qd0Var.a, min, 100.0f, 0.0f);
+        } else if (i11 == 2) {
+            qd0Var.b = org.telegram.messenger.camera.q.z(qd0Var.b, min, 100.0f, 0.0f);
+        } else if (i11 == 3) {
+            qd0Var.c = org.telegram.messenger.camera.q.z(qd0Var.c, min, 100.0f, 0.0f);
+        } else if (i11 == 4) {
+            qd0Var.d = org.telegram.messenger.camera.q.z(qd0Var.d, min, 100.0f, 0.0f);
+        } else if (i11 == 5) {
+            qd0Var.e = org.telegram.messenger.camera.q.z(qd0Var.e, min, 100.0f, 0.0f);
         }
-        return fArr3;
+        invalidate();
+        kd0 kd0Var = this.w;
+        if (kd0Var != null) {
+            sd0 sd0Var = ((md0) kd0Var).a;
+            sd0Var.d();
+            ry ryVar = sd0Var.l0;
+            if (ryVar != null) {
+                ryVar.c(false, false, false);
+            }
+        }
+        this.d = y10;
     }
 
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        qd0 qd0Var;
+        int i7;
+        String format;
+        TextPaint textPaint = this.r;
+        Path path = this.s;
+        Paint paint = this.n;
+        h2.c cVar = this.x;
+        ki0 ki0Var = this.e;
+        float f10 = ki0Var.c / 5.0f;
+        for (int i10 = 0; i10 < 4; i10++) {
+            float f11 = ki0Var.a;
+            float f12 = i10 * f10;
+            float f13 = f11 + f10 + f12;
+            float f14 = ki0Var.b;
+            canvas.drawLine(f13, f14, f12 + f11 + f10, f14 + ki0Var.d, this.f);
+        }
+        float f15 = ki0Var.a;
+        float f16 = ki0Var.b;
+        canvas.drawLine(f15, f16 + ki0Var.d, f15 + ki0Var.c, f16, this.h);
+        int i11 = cVar.a;
+        int i12 = 3;
+        int i13 = 2;
+        if (i11 == 0) {
+            paint.setColor(-1);
+            qd0Var = (qd0) cVar.b;
+        } else if (i11 == 1) {
+            paint.setColor(-1229492);
+            qd0Var = (qd0) cVar.c;
+        } else if (i11 == 2) {
+            paint.setColor(-15667555);
+            qd0Var = (qd0) cVar.d;
+        } else if (i11 != 3) {
+            qd0Var = null;
+        } else {
+            paint.setColor(-13404165);
+            qd0Var = (qd0) cVar.e;
+        }
+        int i14 = 0;
+        while (i14 < 5) {
+            if (i14 == 0) {
+                i7 = i13;
+                format = String.format(Locale.US, "%.2f", Float.valueOf(qd0Var.a / 100.0f));
+            } else if (i14 == 1) {
+                i7 = i13;
+                format = String.format(Locale.US, "%.2f", Float.valueOf(qd0Var.b / 100.0f));
+            } else if (i14 == i13) {
+                i7 = i13;
+                format = String.format(Locale.US, "%.2f", Float.valueOf(qd0Var.c / 100.0f));
+            } else if (i14 == i12) {
+                i7 = i13;
+                format = String.format(Locale.US, "%.2f", Float.valueOf(qd0Var.d / 100.0f));
+            } else if (i14 != 4) {
+                format = "";
+                i7 = i13;
+            } else {
+                i7 = i13;
+                format = String.format(Locale.US, "%.2f", Float.valueOf(qd0Var.e / 100.0f));
+            }
+            canvas.drawText(format, (i14 * f10) + com.google.android.recaptcha.internal.a.A(f10, textPaint.measureText(format), 2.0f, ki0Var.a), (ki0Var.b + ki0Var.d) - org.telegram.messenger.g0.L(4.0f), textPaint);
+            i14++;
+            i13 = i7;
+            i12 = 3;
+        }
+        float[] a10 = qd0Var.a();
+        invalidate();
+        path.reset();
+        for (int i15 = 0; i15 < a10.length / 2; i15++) {
+            if (i15 == 0) {
+                int i16 = i15 * 2;
+                path.moveTo((a10[i16] * ki0Var.c) + ki0Var.a, ((1.0f - a10[i16 + 1]) * ki0Var.d) + ki0Var.b);
+            } else {
+                int i17 = i15 * 2;
+                path.lineTo((a10[i17] * ki0Var.c) + ki0Var.a, ((1.0f - a10[i17 + 1]) * ki0Var.d) + ki0Var.b);
+            }
+        }
+        canvas.drawPath(path, paint);
     }
 
-    public final void c(NativeByteBuffer nativeByteBuffer) {
-        this.a = nativeByteBuffer.readFloat(true);
-        this.b = nativeByteBuffer.readFloat(true);
-        this.c = nativeByteBuffer.readFloat(true);
-        this.d = nativeByteBuffer.readFloat(true);
-        this.e = nativeByteBuffer.readFloat(true);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
+    
+        if (r0 != 6) goto L44;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked != 5) {
+                        }
+                    }
+                } else if (this.b) {
+                    a(2, motionEvent);
+                    return true;
+                }
+                return true;
+            }
+            if (this.b) {
+                a(3, motionEvent);
+                this.b = false;
+            }
+            this.c = true;
+            return true;
+        }
+        if (motionEvent.getPointerCount() == 1) {
+            if (this.c && !this.b) {
+                float x10 = motionEvent.getX();
+                float y10 = motionEvent.getY();
+                this.d = y10;
+                ki0 ki0Var = this.e;
+                float f10 = ki0Var.a;
+                if (x10 >= f10 && x10 <= f10 + ki0Var.c) {
+                    float f11 = ki0Var.b;
+                    if (y10 >= f11 && y10 <= f11 + ki0Var.d) {
+                        this.b = true;
+                    }
+                }
+                this.c = false;
+                if (this.b) {
+                    a(1, motionEvent);
+                    return true;
+                }
+            }
+        } else if (this.b) {
+            a(3, motionEvent);
+            this.c = true;
+            this.b = false;
+        }
+        return true;
     }
 
-    public final void d(NativeByteBuffer nativeByteBuffer) {
-        nativeByteBuffer.writeFloat(this.a);
-        nativeByteBuffer.writeFloat(this.b);
-        nativeByteBuffer.writeFloat(this.c);
-        nativeByteBuffer.writeFloat(this.d);
-        nativeByteBuffer.writeFloat(this.e);
+    public void setDelegate(kd0 kd0Var) {
+        this.w = kd0Var;
     }
 }

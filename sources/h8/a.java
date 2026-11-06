@@ -1,30 +1,140 @@
 package h8;
 
-import android.os.BadParcelableException;
+import a8.k8;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import k2.p1;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final /* synthetic */ int a = 0;
+public final class a extends Binder implements j, IInterface {
+    public final /* synthetic */ int a;
+    public final TaskCompletionSource b;
 
-    static {
-        a.class.getClassLoader();
+    public a(int i7, TaskCompletionSource taskCompletionSource) {
+        this.a = i7;
+        attachInterface(this, "com.google.android.gms.wallet.internal.IWalletServiceCallbacks");
+        this.b = taskCompletionSource;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
+    @Override // h8.j
+    public void G(int i7, boolean z9) {
+        switch (this.a) {
+            case 1:
+                k8.a(new Status(i7, null, null, null), Boolean.valueOf(z9), this.b);
+                break;
         }
-        return (Parcelable) creator.createFromParcel(parcel);
     }
 
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(p1.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+    @Override // h8.j
+    public void T(Status status, y8.i iVar) {
+        switch (this.a) {
+            case 0:
+                int i7 = y8.a.c;
+                boolean b10 = status.b();
+                TaskCompletionSource taskCompletionSource = this.b;
+                if (!b10) {
+                    taskCompletionSource.setException(m.l(status));
+                    break;
+                } else {
+                    taskCompletionSource.setResult(iVar);
+                    break;
+                }
         }
+    }
+
+    @Override // h8.j
+    public void g0(Status status, boolean z9) {
+        switch (this.a) {
+            case 1:
+                k8.a(status, Boolean.valueOf(z9), this.b);
+                break;
+        }
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        boolean z9;
+        if (i7 <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i7, parcel, parcel2, i10)) {
+            return true;
+        }
+        switch (i7) {
+            case 1:
+                parcel.readInt();
+                return true;
+            case 2:
+                parcel.readInt();
+                return true;
+            case 3:
+                int readInt = parcel.readInt();
+                int i11 = c.a;
+                z9 = parcel.readInt() != 0;
+                G(readInt, z9);
+                return true;
+            case 4:
+                parcel.readInt();
+                return true;
+            case 5:
+            default:
+                return false;
+            case 6:
+                parcel.readInt();
+                int i12 = c.a;
+                parcel.readInt();
+                return true;
+            case 7:
+                return true;
+            case 8:
+                return true;
+            case 9:
+                Status status = (Status) c.a(parcel, Status.CREATOR);
+                z9 = parcel.readInt() != 0;
+                g0(status, z9);
+                return true;
+            case 10:
+                return true;
+            case 11:
+                return true;
+            case 12:
+                return true;
+            case 13:
+                return true;
+            case 14:
+                Status status2 = (Status) c.a(parcel, Status.CREATOR);
+                y8.i iVar = (y8.i) c.a(parcel, y8.i.CREATOR);
+                T(status2, iVar);
+                return true;
+            case 15:
+                return true;
+            case 16:
+                return true;
+            case 17:
+                return true;
+            case 18:
+                parcel.readInt();
+                return true;
+            case 19:
+                return true;
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
+    }
+
+    public final void H0(Status status, boolean z9) {
+    }
+
+    public final void I0(Status status, y8.i iVar) {
+    }
+
+    public final void J0(int i7, boolean z9) {
     }
 }

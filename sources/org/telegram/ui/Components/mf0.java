@@ -1,129 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nf0 b;
+public final class mf0 implements c5.g {
+    public final /* synthetic */ org.telegram.ui.zu0 a;
 
-    public /* synthetic */ mf0(nf0 nf0Var, int i3) {
-        this.a = i3;
-        this.b = nf0Var;
+    public mf0(org.telegram.ui.zu0 zu0Var) {
+        this.a = zu0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i3;
-        ag0[] ag0VarArr;
-        switch (this.a) {
-            case 0:
-                nf0 nf0Var = this.b;
-                synchronized (nf0Var.b) {
-                    ag0[] ag0VarArr2 = nf0Var.c;
-                    ag0 ag0Var = ag0VarArr2[0];
-                    ag0[] ag0VarArr3 = nf0Var.d;
-                    i3 = 2;
-                    ag0VarArr = new ag0[]{ag0Var, ag0VarArr3[0], ag0VarArr2[1], ag0VarArr3[1], ag0VarArr2[2], ag0VarArr3[2]};
-                }
-                boolean z10 = false;
-                for (int i10 = 0; i10 < 6; i10 += 2) {
-                    ag0 ag0Var2 = ag0VarArr[i10];
-                    ag0 ag0Var3 = ag0VarArr[i10 + 1];
-                    if (ag0Var2 != null && !ag0Var2.c && ag0Var2.f) {
-                        ag0Var2.e = true;
-                        if (ag0Var3 != null) {
-                            Bitmap bitmap = ag0Var3.b;
-                            if (!ag0Var3.d) {
-                                if (bitmap.getWidth() == ag0Var2.b.getWidth()) {
-                                    break;
+    @Override // c5.g
+    public final void a(int i7) {
+        org.telegram.ui.zu0 zu0Var = this.a;
+        int i10 = zu0Var.o1;
+        boolean z9 = i7 >= i10;
+        if (i7 != i10) {
+            zu0Var.o1 = i7;
+        }
+        org.telegram.messenger.yo yoVar = zu0Var.S0;
+        if (yoVar != null) {
+            rf0 rf0Var = zu0Var.D0;
+            yoVar.b(i7 - (rf0Var != null ? rf0Var.j() : 0), z9);
+        }
+    }
+
+    @Override // c5.g
+    public final void b(float f10, int i7, int i10) {
+        org.telegram.messenger.hc hcVar;
+        org.telegram.ui.zu0 zu0Var = this.a;
+        zu0Var.B(f10, i7);
+        if (i10 == 0) {
+            int k10 = zu0Var.D0.k(i7);
+            zu0Var.getCurrentItemView();
+            int childCount = zu0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = zu0Var.getChildAt(i11);
+                if (childAt instanceof l9) {
+                    rf0 rf0Var = zu0Var.D0;
+                    int k11 = rf0Var.k(rf0Var.d.indexOf(childAt));
+                    ImageReceiver imageReceiver = ((l9) childAt).getImageReceiver();
+                    boolean z9 = imageReceiver.t0;
+                    if (k11 >= 0 && k11 < zu0Var.W0.size()) {
+                        if (k11 == k10) {
+                            if (!z9) {
+                                imageReceiver.t0 = true;
+                                imageReceiver.P0(false);
+                            }
+                            org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) zu0Var.W0.get(k11);
+                            if (hcVar2 != null) {
+                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(zu0Var.L0);
+                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = hcVar2.f;
+                                if (tL_fileLocationToBeDeprecated != null) {
+                                    org.telegram.messenger.w7.J.c(new org.telegram.messenger.y4(9, G, tL_fileLocationToBeDeprecated));
                                 }
                             }
-                        }
-                        if (ag0Var3 != null) {
-                            ag0Var3.a();
-                        }
-                        ag0Var3 = new ag0();
-                        Bitmap createBitmap = Bitmap.createBitmap(ag0Var2.b.getWidth(), ag0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        ag0Var3.b = createBitmap;
-                        ag0Var3.a = new Canvas(createBitmap);
-                        synchronized (nf0Var.b) {
-                            ag0[] ag0VarArr4 = nf0Var.d;
-                            int i11 = 0;
-                            while (true) {
-                                ag0[] ag0VarArr5 = nf0Var.c;
-                                if (i11 >= ag0VarArr5.length) {
-                                    i11 = 0;
-                                } else if (ag0VarArr5[i11] != ag0Var2) {
-                                    i11++;
-                                }
+                        } else if (z9) {
+                            v5 m10 = imageReceiver.m();
+                            if (m10 != null && (hcVar = (org.telegram.messenger.hc) zu0Var.W0.get(k11)) != null) {
+                                m10.y(hcVar.j, false, true);
                             }
-                            ag0VarArr4[i11] = ag0Var3;
+                            imageReceiver.t0 = false;
+                            imageReceiver.Q0();
                         }
-                        Bitmap bitmap2 = ag0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.hs.K2));
-                        synchronized (nf0Var.b) {
-                            if (!ag0Var3.d) {
-                                ag0Var3.f = false;
-                                ag0Var3.b.eraseColor(0);
-                            }
-                            ag0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            ag0Var3.f = true;
-                            Bitmap bitmap3 = ag0Var3.b;
-                            int i12 = 0;
-                            while (true) {
-                                ag0[] ag0VarArr6 = nf0Var.c;
-                                if (i12 >= ag0VarArr6.length) {
-                                    i12 = 0;
-                                } else if (ag0VarArr6[i12] != ag0Var2) {
-                                    i12++;
-                                }
-                            }
-                            nf0Var.b(bitmap3, i12);
-                        }
-                        if (!ag0Var2.d) {
-                            ag0Var2.f = false;
-                            ag0Var2.b.eraseColor(0);
-                        }
-                        ag0Var2.e = false;
-                        if (!ag0Var2.d && ag0Var2.c) {
-                            ag0Var2.d = true;
-                            ag0Var2.b.recycle();
-                        }
-                        z10 = true;
                     }
                 }
-                if (z10 && nf0Var.e && nf0Var.h != null) {
-                    nf0Var.postInvalidateOnAnimation();
-                }
-                if (nf0Var.e && (nf0Var.G || nf0Var.I)) {
-                    org.telegram.messenger.g0.h3(new mf0(nf0Var, i3));
-                    return;
-                } else {
-                    nf0Var.e = false;
-                    return;
-                }
-            case 1:
-                nf0 nf0Var2 = this.b;
-                nf0Var2.I = true;
-                nf0Var2.postInvalidateOnAnimation();
-                return;
-            default:
-                nf0 nf0Var3 = this.b;
-                nf0Var3.c();
-                bg0.a.postRunnable(nf0Var3.s);
-                return;
+            }
         }
+    }
+
+    @Override // c5.g
+    public final void c(int i7) {
     }
 }

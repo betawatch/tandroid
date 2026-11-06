@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ss extends ShapeDrawable {
     public final /* synthetic */ int a = 1;
@@ -21,15 +21,15 @@ public final class ss extends ShapeDrawable {
         switch (this.a) {
             case 0:
                 super.draw(canvas);
-                this.b.H0 = true;
+                this.b.G0 = true;
                 break;
             default:
                 EditTextBoldCursor editTextBoldCursor = this.b;
-                if (!editTextBoldCursor.e1) {
+                if (!editTextBoldCursor.d1) {
                     super.draw(canvas);
                     break;
                 } else {
-                    editTextBoldCursor.H0 = true;
+                    editTextBoldCursor.G0 = true;
                     break;
                 }
         }
@@ -39,7 +39,7 @@ public final class ss extends ShapeDrawable {
     public int getIntrinsicHeight() {
         switch (this.a) {
             case 1:
-                return org.telegram.messenger.g0.L(this.b.j0 + 20);
+                return org.telegram.messenger.g0.L(this.b.i0 + 20);
             default:
                 return super.getIntrinsicHeight();
         }
@@ -49,7 +49,7 @@ public final class ss extends ShapeDrawable {
     public int getIntrinsicWidth() {
         switch (this.a) {
             case 1:
-                return org.telegram.messenger.g0.L(this.b.F0);
+                return org.telegram.messenger.g0.L(this.b.E0);
             default:
                 return super.getIntrinsicWidth();
         }

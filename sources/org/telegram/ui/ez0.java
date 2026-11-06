@@ -1,31 +1,26 @@
 package org.telegram.ui;
 
 import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ez0 implements View.OnClickListener {
+public final /* synthetic */ class ez0 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ iz0 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ez0(iz0 iz0Var, int i3) {
-        this.a = i3;
-        this.b = iz0Var;
+    public /* synthetic */ ez0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
         switch (this.a) {
             case 0:
-                iz0 iz0Var = this.b;
-                if (iz0Var.Z == null) {
-                    iz0Var.dismiss();
-                    break;
-                }
-                break;
+                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
             default:
-                this.b.dismiss();
-                break;
+                return m11.b((g01) this.b, view, windowInsets);
         }
     }
 }

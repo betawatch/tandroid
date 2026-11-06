@@ -4,14 +4,14 @@ import android.content.ContentValues;
 import android.net.Uri;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
 
-    public /* synthetic */ l4(String str, int i3) {
-        this.a = i3;
+    public /* synthetic */ l4(String str, int i7) {
+        this.a = i7;
         this.b = str;
     }
 
@@ -60,7 +60,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 }
             case 4:
                 String str4 = this.b;
-                int i3 = GcmPushListenerService.n;
+                int i7 = GcmPushListenerService.n;
                 if (r2.a) {
                     a8.b("Refreshed FCM token: " + str4);
                 }
@@ -70,7 +70,7 @@ public final /* synthetic */ class l4 implements Runnable {
             default:
                 String str5 = this.b;
                 int i10 = SmsReceiver.a;
-                hs.e().k(hs.g4, str5);
+                qs.e().k(qs.g4, str5);
                 break;
         }
     }

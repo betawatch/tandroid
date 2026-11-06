@@ -1,21 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class tt {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+import android.text.TextUtils;
+import org.telegram.messenger.PushListenerController;
 
-    public tt(int i3, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i3;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class tt implements PushListenerController.IPushListenerServiceProvider {
+    public static final tt b = new tt();
+    public Boolean a;
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final String getLogTitle() {
+        return "Google Play Services";
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final int getPushType() {
+        return 2;
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final boolean hasServices() {
+        if (this.a == null) {
+            try {
+                this.a = Boolean.valueOf(n6.d.e.d(t0.b, n6.e.a) == 0);
+            } catch (Exception e10) {
+                a8.g(e10, true);
+                this.a = Boolean.FALSE;
+            }
+        }
+        return this.a.booleanValue();
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final void onRequestPushToken() {
+        if (!TextUtils.isEmpty(iz.g)) {
+            boolean z9 = r2.a;
+        } else if (r2.a) {
+            a8.b("FCM Registration not found.");
+        }
+        Utilities.e.c(new ds(this, 3));
     }
 }

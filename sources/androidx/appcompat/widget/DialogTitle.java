@@ -5,19 +5,19 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.Layout;
 import android.util.AttributeSet;
-import m.z0;
+import m.a1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class DialogTitle extends z0 {
-    public DialogTitle(Context context, AttributeSet attributeSet, int i3) {
-        super(context, attributeSet, i3);
+public class DialogTitle extends a1 {
+    public DialogTitle(Context context, AttributeSet attributeSet, int i7) {
+        super(context, attributeSet, i7);
     }
 
-    @Override // m.z0, android.widget.TextView, android.view.View
-    public final void onMeasure(int i3, int i10) {
+    @Override // m.a1, android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
         int lineCount;
-        super.onMeasure(i3, i10);
+        super.onMeasure(i7, i10);
         Layout layout = getLayout();
         if (layout == null || (lineCount = layout.getLineCount()) <= 0 || layout.getEllipsisCount(lineCount - 1) <= 0) {
             return;
@@ -30,7 +30,7 @@ public class DialogTitle extends z0 {
             setTextSize(0, dimensionPixelSize);
         }
         obtainStyledAttributes.recycle();
-        super.onMeasure(i3, i10);
+        super.onMeasure(i7, i10);
     }
 
     public DialogTitle(Context context, AttributeSet attributeSet) {

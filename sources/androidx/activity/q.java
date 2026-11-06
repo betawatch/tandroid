@@ -1,43 +1,43 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import ei.r9;
-import gi.va;
+import di.p9;
+import fi.va;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ q(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ q(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
     public final void onBackInvoked() {
         switch (this.a) {
             case 0:
-                od.a onBackInvoked = (od.a) this.b;
+                rd.a onBackInvoked = (rd.a) this.b;
                 kotlin.jvm.internal.j.e(onBackInvoked, "$onBackInvoked");
                 onBackInvoked.invoke();
                 break;
             case 1:
-                r9 r9Var = (r9) this.b;
-                LaunchActivity launchActivity = LaunchActivity.K1;
+                p9 p9Var = (p9) this.b;
+                LaunchActivity launchActivity = LaunchActivity.G1;
                 if (launchActivity == null) {
-                    r9Var.p();
+                    p9Var.p();
                     break;
                 } else {
                     launchActivity.onBackPressed();
                     break;
                 }
             case 2:
-                ((g.s) this.b).s();
+                ((va) this.b).L();
                 break;
             case 3:
-                ((va) this.b).L();
+                ((g.s) this.b).r();
                 break;
             default:
                 ((Runnable) this.b).run();

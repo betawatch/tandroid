@@ -41,8 +41,8 @@ public final class s extends v {
     @Override // j$.util.n, java.util.Collection
     public final Object[] toArray() {
         Object[] array = this.a.toArray();
-        for (int i3 = 0; i3 < array.length; i3++) {
-            array[i3] = new q((Map.Entry) array[i3]);
+        for (int i7 = 0; i7 < array.length; i7++) {
+            array[i7] = new q((Map.Entry) array[i7]);
         }
         return array;
     }
@@ -50,8 +50,8 @@ public final class s extends v {
     @Override // j$.util.n, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         Object[] array = this.a.toArray(objArr.length == 0 ? objArr : Arrays.copyOf(objArr, 0));
-        for (int i3 = 0; i3 < array.length; i3++) {
-            array[i3] = new q((Map.Entry) array[i3]);
+        for (int i7 = 0; i7 < array.length; i7++) {
+            array[i7] = new q((Map.Entry) array[i7]);
         }
         if (array.length > objArr.length) {
             return array;

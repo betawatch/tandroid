@@ -1,62 +1,31 @@
 package j7;
 
-import b8.y9;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.cast.o;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import i7.l;
-import i7.r;
-import kotlin.jvm.internal.j;
+import android.app.PendingIntent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f extends o implements a {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class f extends r6.a {
+    public static final Parcelable.Creator<f> CREATOR = new b(4);
+    public final PendingIntent a;
+    public final h b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(int i3, TaskCompletionSource taskCompletionSource) {
-        super(8);
-        this.b = i3;
-        this.c = taskCompletionSource;
-        attachInterface(this, "com.google.android.gms.identitycredentials.internal.IIdentityCredentialCallbacks");
-    }
-
-    @Override // j7.a
-    public void c0(Status status, r rVar) {
-        j.e(status, "status");
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j7.a
-    public void t(Status status, l lVar) {
-        switch (this.b) {
-            case 1:
-                j.e(status, "status");
-                y9.a(status, lVar, this.c);
-                return;
-            default:
-                j.e(status, "status");
-                throw new UnsupportedOperationException();
+    public f(PendingIntent pendingIntent, h hVar) {
+        this.a = pendingIntent;
+        this.b = hVar;
+        if (pendingIntent == null && hVar == null) {
+            throw new IllegalArgumentException("pendingIntent or createCredentialResponse must be specified.");
         }
     }
 
-    @Override // j7.a
-    public void t0(Status status, i7.b bVar) {
-        j.e(status, "status");
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // j7.a
-    public void y(Status status, i7.e eVar) {
-        switch (this.b) {
-            case 0:
-                j.e(status, "status");
-                y9.a(status, eVar, this.c);
-                return;
-            default:
-                j.e(status, "status");
-                throw new UnsupportedOperationException();
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i7) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int r10 = wb.r(dest, 20293);
+        wb.k(dest, 1, this.a, i7);
+        wb.k(dest, 2, this.b, i7);
+        wb.s(dest, r10);
     }
 }

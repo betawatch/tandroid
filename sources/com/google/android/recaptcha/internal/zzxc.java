@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzxc extends zzsn implements zztt {
     private static final zzxc zzb;
@@ -34,9 +34,9 @@ public final class zzxc extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i3, Object obj, Object obj2) {
+    public final Object zzh(int i7, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i3 - 1;
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

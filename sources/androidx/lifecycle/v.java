@@ -8,9 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
-import k2.p1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -44,13 +43,13 @@ public final class v extends o {
         }
         u uVar = new u();
         HashMap hashMap = w.a;
-        boolean z10 = sVar instanceof r;
-        boolean z11 = sVar instanceof e;
-        if (z10 && z11) {
+        boolean z9 = sVar instanceof r;
+        boolean z10 = sVar instanceof e;
+        if (z9 && z10) {
             reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, (r) sVar);
-        } else if (z11) {
-            reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, null);
         } else if (z10) {
+            reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, null);
+        } else if (z9) {
             reflectiveGenericLifecycleObserver = (r) sVar;
         } else {
             Class<?> cls = sVar.getClass();
@@ -76,9 +75,9 @@ public final class v extends o {
         uVar.b = reflectiveGenericLifecycleObserver;
         uVar.a = nVar2;
         o.a aVar = this.b;
-        o.c h = aVar.h(sVar);
-        if (h != null) {
-            obj = h.b;
+        o.c f10 = aVar.f(sVar);
+        if (f10 != null) {
+            obj = f10.b;
         } else {
             HashMap hashMap2 = aVar.e;
             o.c cVar = new o.c(sVar, uVar);
@@ -96,10 +95,10 @@ public final class v extends o {
             obj = null;
         }
         if (((u) obj) == null && (tVar = (t) this.d.get()) != null) {
-            boolean z12 = this.e != 0 || this.f;
-            n c2 = c(sVar);
+            boolean z11 = this.e != 0 || this.f;
+            n c10 = c(sVar);
             this.e++;
-            while (uVar.a.compareTo(c2) < 0 && this.b.e.containsKey(sVar)) {
+            while (uVar.a.compareTo(c10) < 0 && this.b.e.containsKey(sVar)) {
                 n nVar3 = uVar.a;
                 ArrayList arrayList = this.h;
                 arrayList.add(nVar3);
@@ -114,9 +113,9 @@ public final class v extends o {
                 }
                 uVar.a(tVar, mVar);
                 arrayList.remove(arrayList.size() - 1);
-                c2 = c(sVar);
+                c10 = c(sVar);
             }
-            if (!z12) {
+            if (!z11) {
                 h();
             }
             this.e--;
@@ -136,7 +135,7 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) p1.h(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) jg.g.i(1, arrayList);
         n state1 = this.c;
         kotlin.jvm.internal.j.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {
@@ -149,7 +148,7 @@ public final class v extends o {
         if (this.a) {
             n.a.a().a.getClass();
             if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-                throw new IllegalStateException(a1.g.q("Method ", str, " must be called on the main thread").toString());
+                throw new IllegalStateException(a8.p0.p("Method ", str, " must be called on the main thread").toString());
             }
         }
     }

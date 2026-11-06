@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public enum j0 implements i1 {
     b(0),
@@ -15,15 +15,15 @@ public enum j0 implements i1 {
     w(9),
     x(10),
     y(11),
-    E(12),
-    F(13),
-    G(14),
-    H(16);
+    D(12),
+    E(13),
+    F(14),
+    G(16);
 
     public final int a;
 
-    j0(int i3) {
-        this.a = i3;
+    j0(int i7) {
+        this.a = i7;
     }
 
     @Override // java.lang.Enum

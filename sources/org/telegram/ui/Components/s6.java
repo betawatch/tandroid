@@ -1,36 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s6 implements org.telegram.messenger.n10 {
+public final /* synthetic */ class s6 implements org.telegram.ui.ActionBar.s6 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z7 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ s6(z7 z7Var, int i3) {
-        this.a = i3;
-        this.b = z7Var;
+    public /* synthetic */ s6(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
+    @Override // org.telegram.ui.ActionBar.s6
+    public final /* synthetic */ void a(float f10) {
+        int i7 = this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s6
+    public final void b() {
         switch (this.a) {
             case 0:
-                boolean z10 = !((Boolean) obj2).booleanValue();
-                z7 z7Var = this.b;
-                z7Var.P1 = z10;
-                MediaController B = MediaController.B();
-                org.telegram.ui.ActionBar.u0 u0Var = z7Var.O1;
-                float floatValue = ((Float) obj).floatValue();
-                u0Var.getClass();
-                B.m0(true, (floatValue * 2.8f) + 0.2f);
+                ((b8) this.b).K0();
+                break;
+            case 1:
+                ((wk) this.b).b0();
+                break;
+            case 2:
+                vp vpVar = (vp) this.b;
+                org.telegram.ui.ActionBar.r0 r0Var = vpVar.I;
+                r0Var.setIconColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, vpVar.d0));
+                org.telegram.ui.ActionBar.k6.C1(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.I5, vpVar.d0), r0Var.getBackground());
+                r0Var.O(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.E8, vpVar.d0), false);
+                r0Var.O(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.F8, vpVar.d0), true);
+                r0Var.H(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G8, vpVar.d0));
+                break;
+            case 3:
+                ((qe0) this.b).M0();
+                break;
+            case 4:
+                cm0 cm0Var = ((fm0) this.b).z0;
+                if (cm0Var != null) {
+                    cm0Var.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y8, false));
+                    break;
+                }
+                break;
+            case 5:
+                ((Runnable) this.b).run();
+                break;
+            case 6:
+                ((yv0) this.b).X0(false);
                 break;
             default:
-                this.b.Z1.setBackground(new BitmapDrawable((Bitmap) obj));
+                ((n31) this.b).d();
                 break;
         }
+    }
+
+    private final /* synthetic */ void c(float f10) {
+    }
+
+    private final /* synthetic */ void d(float f10) {
+    }
+
+    private final /* synthetic */ void e(float f10) {
+    }
+
+    private final /* synthetic */ void f(float f10) {
+    }
+
+    private final /* synthetic */ void g(float f10) {
+    }
+
+    private final /* synthetic */ void h(float f10) {
+    }
+
+    private final /* synthetic */ void i(float f10) {
+    }
+
+    private final /* synthetic */ void j(float f10) {
     }
 }

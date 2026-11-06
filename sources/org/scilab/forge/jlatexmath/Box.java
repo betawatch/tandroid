@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class Box {
     public static boolean DEBUG = false;
@@ -31,9 +31,9 @@ public abstract class Box {
     }
 
     private static void countBoxAllocation() {
-        int i3 = boxBudgetUsed + 1;
-        boxBudgetUsed = i3;
-        if (i3 > MAX_BOX_BUDGET) {
+        int i7 = boxBudgetUsed + 1;
+        boxBudgetUsed = i7;
+        if (i7 > MAX_BOX_BUDGET) {
             throw new ParseException("Formula is too large to lay out!");
         }
     }
@@ -51,7 +51,7 @@ public abstract class Box {
 
     public abstract void draw(Graphics2D graphics2D, float f10, float f11);
 
-    public void drawDebug(Graphics2D graphics2D, float f10, float f11, boolean z10) {
+    public void drawDebug(Graphics2D graphics2D, float f10, float f11, boolean z9) {
         if (DEBUG) {
             Stroke stroke = graphics2D.getStroke();
             if (this.markForDEBUG != null) {
@@ -69,7 +69,7 @@ public abstract class Box {
             }
             float f14 = this.height;
             graphics2D.draw(new Rectangle2D.Float(f10, f11 - f14, this.width, f14 + this.depth));
-            if (z10) {
+            if (z9) {
                 Color color2 = graphics2D.getColor();
                 graphics2D.setColor(Color.RED);
                 float f15 = this.depth;
@@ -177,9 +177,9 @@ public abstract class Box {
         this.background = color2;
     }
 
-    public void add(int i3, Box box) {
+    public void add(int i7, Box box) {
         countBoxAllocation();
-        this.children.add(i3, box);
+        this.children.add(i7, box);
         box.parent = this;
         box.elderParent = this.elderParent;
     }

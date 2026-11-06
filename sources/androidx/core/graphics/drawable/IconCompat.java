@@ -20,7 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import d1.f;
-import e2.h;
+import f2.i;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -55,8 +55,8 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public static IconCompat a(Bundle bundle) {
-        int i3 = bundle.getInt(TeXSymbolParser.TYPE_ATTR);
-        IconCompat iconCompat = new IconCompat(i3);
+        int i7 = bundle.getInt(TeXSymbolParser.TYPE_ATTR);
+        IconCompat iconCompat = new IconCompat(i7);
         iconCompat.e = bundle.getInt("int1");
         iconCompat.f = bundle.getInt("int2");
         iconCompat.j = bundle.getString("string1");
@@ -66,7 +66,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (bundle.containsKey("tint_mode")) {
             iconCompat.h = PorterDuff.Mode.valueOf(bundle.getString("tint_mode"));
         }
-        switch (i3) {
+        switch (i7) {
             case -1:
             case 1:
             case 5:
@@ -74,7 +74,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 return iconCompat;
             case 0:
             default:
-                Log.w("IconCompat", "Unknown type " + i3);
+                Log.w("IconCompat", "Unknown type " + i7);
                 return null;
             case 2:
             case 4:
@@ -87,7 +87,7 @@ public class IconCompat extends CustomVersionedParcelable {
         }
     }
 
-    public static Bitmap b(Bitmap bitmap, boolean z10) {
+    public static Bitmap b(Bitmap bitmap, boolean z9) {
         int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
@@ -95,7 +95,7 @@ public class IconCompat extends CustomVersionedParcelable {
         float f10 = min;
         float f11 = 0.5f * f10;
         float f12 = 0.9166667f * f11;
-        if (z10) {
+        if (z9) {
             float f13 = 0.010416667f * f10;
             paint.setColor(0);
             paint.setShadowLayer(f13, 0.0f, f10 * 0.020833334f, 1023410176);
@@ -123,21 +123,21 @@ public class IconCompat extends CustomVersionedParcelable {
         return iconCompat;
     }
 
-    public static IconCompat d(Context context, int i3) {
+    public static IconCompat d(Context context, int i7) {
         context.getClass();
-        return e(context.getResources(), context.getPackageName(), i3);
+        return e(context.getResources(), context.getPackageName(), i7);
     }
 
-    public static IconCompat e(Resources resources, String str, int i3) {
+    public static IconCompat e(Resources resources, String str, int i7) {
         str.getClass();
-        if (i3 == 0) {
+        if (i7 == 0) {
             throw new IllegalArgumentException("Drawable resource ID must not be 0");
         }
         IconCompat iconCompat = new IconCompat(2);
-        iconCompat.e = i3;
+        iconCompat.e = i7;
         if (resources != null) {
             try {
-                iconCompat.b = resources.getResourceName(i3);
+                iconCompat.b = resources.getResourceName(i7);
             } catch (Resources.NotFoundException unused) {
                 throw new IllegalArgumentException("Icon resource cannot be found");
             }
@@ -149,27 +149,27 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Bitmap f() {
-        int i3 = this.a;
-        if (i3 == -1) {
+        int i7 = this.a;
+        if (i7 == -1) {
             Object obj = this.b;
             if (obj instanceof Bitmap) {
                 return (Bitmap) obj;
             }
             return null;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             return (Bitmap) this.b;
         }
-        if (i3 == 5) {
+        if (i7 == 5) {
             return b((Bitmap) this.b, true);
         }
         throw new IllegalStateException("called getBitmap() on " + this);
     }
 
     public final int g() {
-        int i3 = this.a;
-        if (i3 != -1) {
-            if (i3 == 2) {
+        int i7 = this.a;
+        if (i7 != -1) {
+            if (i7 == 2) {
                 return this.e;
             }
             throw new IllegalStateException("called getResId() on " + this);
@@ -194,9 +194,9 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final String h() {
-        int i3 = this.a;
-        if (i3 != -1) {
-            if (i3 == 2) {
+        int i7 = this.a;
+        if (i7 != -1) {
+            if (i7 == 2) {
                 String str = this.j;
                 return (str == null || TextUtils.isEmpty(str)) ? ((String) this.b).split(":", -1)[0] : this.j;
             }
@@ -222,9 +222,9 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final int i() {
-        int i3 = this.a;
-        if (i3 != -1) {
-            return i3;
+        int i7 = this.a;
+        if (i7 != -1) {
+            return i7;
         }
         int i10 = Build.VERSION.SDK_INT;
         Object obj = this.b;
@@ -246,9 +246,9 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Uri j() {
-        int i3 = this.a;
-        if (i3 != -1) {
-            if (i3 == 4 || i3 == 6) {
+        int i7 = this.a;
+        if (i7 != -1) {
+            if (i7 == 4 || i7 == 6) {
                 return Uri.parse((String) this.b);
             }
             throw new IllegalStateException("called getUri() on " + this);
@@ -273,20 +273,20 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final InputStream k(Context context) {
-        Uri j10 = j();
-        String scheme = j10.getScheme();
+        Uri j3 = j();
+        String scheme = j3.getScheme();
         if ("content".equals(scheme) || "file".equals(scheme)) {
             try {
-                return context.getContentResolver().openInputStream(j10);
+                return context.getContentResolver().openInputStream(j3);
             } catch (Exception e10) {
-                Log.w("IconCompat", "Unable to load image from URI: " + j10, e10);
+                Log.w("IconCompat", "Unable to load image from URI: " + j3, e10);
                 return null;
             }
         }
         try {
             return new FileInputStream(new File((String) this.b));
         } catch (FileNotFoundException e11) {
-            Log.w("IconCompat", "Unable to load image from path: " + j10, e11);
+            Log.w("IconCompat", "Unable to load image from path: " + j3, e11);
             return null;
         }
     }
@@ -330,7 +330,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public final Icon m(Context context) {
         Icon createWithBitmap;
-        int i3 = Build.VERSION.SDK_INT;
+        int i7 = Build.VERSION.SDK_INT;
         switch (this.a) {
             case -1:
                 return (Icon) this.b;
@@ -350,15 +350,15 @@ public class IconCompat extends CustomVersionedParcelable {
                 createWithBitmap = Icon.createWithContentUri((String) this.b);
                 break;
             case 5:
-                if (i3 < 26) {
+                if (i7 < 26) {
                     createWithBitmap = Icon.createWithBitmap(b((Bitmap) this.b, false));
                     break;
                 } else {
-                    createWithBitmap = h.c((Bitmap) this.b);
+                    createWithBitmap = i.b((Bitmap) this.b);
                     break;
                 }
             case 6:
-                if (i3 >= 30) {
+                if (i7 >= 30) {
                     createWithBitmap = g0.f.d(j());
                     break;
                 } else {
@@ -369,11 +369,11 @@ public class IconCompat extends CustomVersionedParcelable {
                     if (k10 == null) {
                         throw new IllegalStateException("Cannot load adaptive icon from uri: " + j());
                     }
-                    if (i3 < 26) {
+                    if (i7 < 26) {
                         createWithBitmap = Icon.createWithBitmap(b(BitmapFactory.decodeStream(k10), false));
                         break;
                     } else {
-                        createWithBitmap = h.c(BitmapFactory.decodeStream(k10));
+                        createWithBitmap = i.b(BitmapFactory.decodeStream(k10));
                         break;
                     }
                 }
@@ -460,7 +460,7 @@ public class IconCompat extends CustomVersionedParcelable {
         return sb2.toString();
     }
 
-    public IconCompat(int i3) {
+    public IconCompat(int i7) {
         this.c = null;
         this.d = null;
         this.e = 0;
@@ -468,6 +468,6 @@ public class IconCompat extends CustomVersionedParcelable {
         this.g = null;
         this.h = k;
         this.i = null;
-        this.a = i3;
+        this.a = i7;
     }
 }

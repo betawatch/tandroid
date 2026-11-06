@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.kg;
+import a8.wa;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -41,17 +41,17 @@ public enum j {
     public final int a;
 
     static {
-        char c2 = 0;
-        kg kgVar = new kg(c2, 5);
-        kgVar.c = new Object[8];
-        kgVar.b = 0;
+        char c10 = 0;
+        wa waVar = new wa(c10, 5);
+        waVar.c = new Object[8];
+        waVar.b = 0;
         j[] values = values();
         int length = values.length;
-        for (int i3 = c2; i3 < length; i3++) {
-            j jVar = values[i3];
+        for (int i7 = c10; i7 < length; i7++) {
+            j jVar = values[i7];
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i10 = kgVar.b + 1;
-            Object[] objArr = (Object[]) kgVar.c;
+            int i10 = waVar.b + 1;
+            Object[] objArr = (Object[]) waVar.c;
             int length2 = objArr.length;
             int i11 = i10 + i10;
             if (i11 > length2) {
@@ -65,28 +65,28 @@ public enum j {
                         length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                kgVar.c = Arrays.copyOf(objArr, length2);
+                waVar.c = Arrays.copyOf(objArr, length2);
             }
-            Object[] objArr2 = (Object[]) kgVar.c;
-            int i12 = kgVar.b;
+            Object[] objArr2 = (Object[]) waVar.c;
+            int i12 = waVar.b;
             int i13 = i12 + i12;
             objArr2[i13] = valueOf;
             objArr2[i13 + 1] = jVar;
-            kgVar.b = i12 + 1;
+            waVar.b = i12 + 1;
         }
-        s sVar = (s) kgVar.d;
+        s sVar = (s) waVar.d;
         if (sVar != null) {
             throw sVar.a();
         }
-        a0 c10 = a0.c(kgVar.b, (Object[]) kgVar.c, kgVar);
-        s sVar2 = (s) kgVar.d;
+        a0 c11 = a0.c(waVar.b, (Object[]) waVar.c, waVar);
+        s sVar2 = (s) waVar.d;
         if (sVar2 != null) {
             throw sVar2.a();
         }
-        c = c10;
+        c = c11;
     }
 
-    j(int i3) {
-        this.a = i3;
+    j(int i7) {
+        this.a = i7;
     }
 }

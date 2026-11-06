@@ -7,15 +7,15 @@ public final class a6 extends w5 {
     public q6 c;
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         q6 q6Var;
-        if (j10 >= 2147483639) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j10 <= 0) {
+        if (j3 <= 0) {
             q6Var = new q6();
         } else {
-            q6Var = new q6((int) j10);
+            q6Var = new q6((int) j3);
         }
         this.c = q6Var;
     }
@@ -27,29 +27,29 @@ public final class a6 extends w5 {
         long length = jArr.length;
         j5 j5Var = this.a;
         j5Var.o(length);
-        int i3 = 0;
+        int i7 = 0;
         if (!this.b) {
             int length2 = jArr.length;
-            while (i3 < length2) {
-                j5Var.accept(jArr[i3]);
-                i3++;
+            while (i7 < length2) {
+                j5Var.accept(jArr[i7]);
+                i7++;
             }
         } else {
             int length3 = jArr.length;
-            while (i3 < length3) {
-                long j10 = jArr[i3];
+            while (i7 < length3) {
+                long j3 = jArr[i7];
                 if (j5Var.q()) {
                     break;
                 }
-                j5Var.accept(j10);
-                i3++;
+                j5Var.accept(j3);
+                i7++;
             }
         }
         j5Var.end();
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j10) {
-        this.c.accept(j10);
+    public final void accept(long j3) {
+        this.c.accept(j3);
     }
 }

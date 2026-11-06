@@ -1,115 +1,91 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wf implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
-    public final /* synthetic */ SharedPreferences c;
+public final /* synthetic */ class wf implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ int e;
 
-    public /* synthetic */ wf(li liVar, SharedPreferences sharedPreferences, int i3) {
-        this.a = i3;
-        this.b = liVar;
-        this.c = sharedPreferences;
+    public /* synthetic */ wf(ui uiVar, boolean z9, int i7, ArrayList arrayList) {
+        this.b = uiVar;
+        this.c = z9;
+        this.e = i7;
+        this.d = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = this.e;
+        ArrayList arrayList = this.d;
+        boolean z9 = this.c;
+        ui uiVar = this.b;
+        switch (i7) {
             case 0:
-                g0.h3(new ul(this.b, tL_error, tLObject, this.c, 13));
-                break;
-            case 1:
-                final int i3 = 0;
-                final li liVar = this.b;
-                final SharedPreferences sharedPreferences = this.c;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.yf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i3) {
-                            case 0:
-                                li liVar2 = liVar;
-                                liVar2.getClass();
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_emojiList) {
-                                    SerializedData serializedData = new SerializedData(tLObject2.getObjectSize());
-                                    tLObject2.serializeToStream(serializedData);
-                                    SharedPreferences.Editor edit = sharedPreferences.edit();
-                                    liVar2.N1 = (TLRPC.TL_emojiList) tLObject2;
-                                    edit.putString("restrictedstatuses", Utilities.f(serializedData.toByteArray()));
-                                    edit.putLong("restrictedstatuses_last_check", System.currentTimeMillis());
-                                    edit.apply();
-                                    break;
-                                }
-                                break;
-                            default:
-                                li liVar3 = liVar;
-                                liVar3.getClass();
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_emojiList) {
-                                    SerializedData serializedData2 = new SerializedData(tLObject3.getObjectSize());
-                                    tLObject3.serializeToStream(serializedData2);
-                                    SharedPreferences.Editor edit2 = sharedPreferences.edit();
-                                    liVar3.M1 = (TLRPC.TL_emojiList) tLObject3;
-                                    edit2.putString("replyicons", Utilities.f(serializedData2.toByteArray()));
-                                    edit2.putLong("replyicons_last_check", System.currentTimeMillis());
-                                    edit2.apply();
-                                    break;
-                                }
-                                break;
-                        }
+                SharedPreferences.Editor edit = qp.s1(uiVar.currentAccount).f7.edit();
+                if (z9) {
+                    uiVar.j0 = false;
+                    uiVar.k0 = true;
+                    edit.putLong("lastGifLoadTime", System.currentTimeMillis()).apply();
+                } else {
+                    uiVar.g0[i10] = false;
+                    uiVar.h0[i10] = true;
+                    if (i10 == 0) {
+                        edit.putLong("lastStickersLoadTime", System.currentTimeMillis()).apply();
+                    } else if (i10 == 1) {
+                        edit.putLong("lastStickersLoadTimeMask", System.currentTimeMillis()).apply();
+                    } else if (i10 == 3) {
+                        edit.putLong("lastStickersLoadTimeGreet", System.currentTimeMillis()).apply();
+                    } else if (i10 == 5) {
+                        edit.putLong("lastStickersLoadTimeEmojiPacks", System.currentTimeMillis()).apply();
+                    } else if (i10 == 7) {
+                        edit.putLong("lastStickersLoadTimePremiumStickers", System.currentTimeMillis()).apply();
+                    } else {
+                        edit.putLong("lastStickersLoadTimeFavs", System.currentTimeMillis()).apply();
                     }
-                });
+                }
+                if (arrayList != null) {
+                    if (z9) {
+                        uiVar.i0 = arrayList;
+                    } else {
+                        uiVar.f0[i10] = arrayList;
+                    }
+                    if (i10 == 3) {
+                        uiVar.n1();
+                    }
+                    uiVar.getNotificationCenter().k(86, Boolean.valueOf(z9), Integer.valueOf(i10));
+                    break;
+                }
                 break;
             default:
-                final li liVar2 = this.b;
-                liVar2.getClass();
-                final int i10 = 1;
-                final SharedPreferences sharedPreferences2 = this.c;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.yf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                li liVar22 = liVar2;
-                                liVar22.getClass();
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_emojiList) {
-                                    SerializedData serializedData = new SerializedData(tLObject2.getObjectSize());
-                                    tLObject2.serializeToStream(serializedData);
-                                    SharedPreferences.Editor edit = sharedPreferences2.edit();
-                                    liVar22.N1 = (TLRPC.TL_emojiList) tLObject2;
-                                    edit.putString("restrictedstatuses", Utilities.f(serializedData.toByteArray()));
-                                    edit.putLong("restrictedstatuses_last_check", System.currentTimeMillis());
-                                    edit.apply();
-                                    break;
-                                }
-                                break;
-                            default:
-                                li liVar3 = liVar2;
-                                liVar3.getClass();
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_emojiList) {
-                                    SerializedData serializedData2 = new SerializedData(tLObject3.getObjectSize());
-                                    tLObject3.serializeToStream(serializedData2);
-                                    SharedPreferences.Editor edit2 = sharedPreferences2.edit();
-                                    liVar3.M1 = (TLRPC.TL_emojiList) tLObject3;
-                                    edit2.putString("replyicons", Utilities.f(serializedData2.toByteArray()));
-                                    edit2.putLong("replyicons_last_check", System.currentTimeMillis());
-                                    edit2.apply();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                if (z9) {
+                    uiVar.i0 = arrayList;
+                    uiVar.j0 = false;
+                    uiVar.k0 = true;
+                } else {
+                    uiVar.f0[i10] = arrayList;
+                    uiVar.g0[i10] = false;
+                    uiVar.h0[i10] = true;
+                }
+                if (i10 == 3) {
+                    uiVar.n1();
+                }
+                uiVar.getNotificationCenter().k(86, Boolean.valueOf(z9), Integer.valueOf(i10));
+                uiVar.V0(i10, z9, false, false);
                 break;
         }
+    }
+
+    public /* synthetic */ wf(ui uiVar, boolean z9, ArrayList arrayList, int i7) {
+        this.b = uiVar;
+        this.c = z9;
+        this.d = arrayList;
+        this.e = i7;
     }
 }

@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a implements View.OnClickListener {
     public final /* synthetic */ SearchView a;
@@ -20,44 +20,44 @@ public final class a implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         SearchView searchView = this.a;
-        SearchView.SearchAutoComplete searchAutoComplete = searchView.G;
-        if (view == searchView.K) {
+        SearchView.SearchAutoComplete searchAutoComplete = searchView.F;
+        if (view == searchView.J) {
             searchView.v(false);
             searchAutoComplete.requestFocus();
             searchAutoComplete.setImeVisibility(true);
-            View.OnClickListener onClickListener = searchView.f0;
+            View.OnClickListener onClickListener = searchView.e0;
             if (onClickListener != null) {
                 onClickListener.onClick(searchView);
                 return;
             }
             return;
         }
-        if (view == searchView.M) {
+        if (view == searchView.L) {
             searchView.l();
             return;
         }
-        if (view == searchView.L) {
+        if (view == searchView.K) {
             searchView.p();
             return;
         }
-        if (view != searchView.N) {
+        if (view != searchView.M) {
             if (view == searchAutoComplete) {
                 searchView.k();
                 return;
             }
             return;
         }
-        SearchableInfo searchableInfo = searchView.s0;
+        SearchableInfo searchableInfo = searchView.r0;
         if (searchableInfo == null) {
             return;
         }
         try {
             if (!searchableInfo.getVoiceSearchLaunchWebSearch()) {
                 if (searchableInfo.getVoiceSearchLaunchRecognizer()) {
-                    searchView.getContext().startActivity(searchView.j(searchView.c0, searchableInfo));
+                    searchView.getContext().startActivity(searchView.j(searchView.b0, searchableInfo));
                 }
             } else {
-                Intent intent = new Intent(searchView.b0);
+                Intent intent = new Intent(searchView.a0);
                 ComponentName searchActivity = searchableInfo.getSearchActivity();
                 intent.putExtra("calling_package", searchActivity == null ? null : searchActivity.flattenToShortString());
                 searchView.getContext().startActivity(intent);

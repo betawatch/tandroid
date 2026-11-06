@@ -8,13 +8,13 @@ import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class HorizontalBox extends Box {
     protected List<Integer> breakPositions;
     private float curPos;
 
-    public HorizontalBox(Box box, float f10, int i3) {
+    public HorizontalBox(Box box, float f10, int i7) {
         this.curPos = 0.0f;
         if (f10 == Float.POSITIVE_INFINITY) {
             add(box);
@@ -25,17 +25,17 @@ public class HorizontalBox extends Box {
             add(box);
             return;
         }
-        if (i3 == 2 || i3 == 5) {
+        if (i7 == 2 || i7 == 5) {
             StrutBox strutBox = new StrutBox(width / 2.0f, 0.0f, 0.0f, 0.0f);
             add(strutBox);
             add(box);
             add(strutBox);
             return;
         }
-        if (i3 == 0) {
+        if (i7 == 0) {
             add(box);
             add(new StrutBox(width, 0.0f, 0.0f, 0.0f));
-        } else if (i3 != 1) {
+        } else if (i7 != 1) {
             add(box);
         } else {
             add(new StrutBox(width, 0.0f, 0.0f, 0.0f));
@@ -55,11 +55,11 @@ public class HorizontalBox extends Box {
         super.add(box);
     }
 
-    public void addBreakPosition(int i3) {
+    public void addBreakPosition(int i7) {
         if (this.breakPositions == null) {
             this.breakPositions = new ArrayList();
         }
-        this.breakPositions.add(Integer.valueOf(i3));
+        this.breakPositions.add(Integer.valueOf(i7));
     }
 
     public HorizontalBox cloneBox() {
@@ -84,34 +84,34 @@ public class HorizontalBox extends Box {
     public int getLastFontId() {
         LinkedList<Box> linkedList = this.children;
         ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
-        int i3 = -1;
-        while (i3 == -1 && listIterator.hasPrevious()) {
-            i3 = listIterator.previous().getLastFontId();
+        int i7 = -1;
+        while (i7 == -1 && listIterator.hasPrevious()) {
+            i7 = listIterator.previous().getLastFontId();
         }
-        return i3;
+        return i7;
     }
 
-    public HorizontalBox[] split(int i3) {
-        return split(i3, 1);
+    public HorizontalBox[] split(int i7) {
+        return split(i7, 1);
     }
 
-    public HorizontalBox[] splitRemove(int i3) {
-        return split(i3, 2);
+    public HorizontalBox[] splitRemove(int i7) {
+        return split(i7, 2);
     }
 
-    private HorizontalBox[] split(int i3, int i10) {
+    private HorizontalBox[] split(int i7, int i10) {
         HorizontalBox cloneBox = cloneBox();
         HorizontalBox cloneBox2 = cloneBox();
-        for (int i11 = 0; i11 <= i3; i11++) {
+        for (int i11 = 0; i11 <= i7; i11++) {
             cloneBox.add(this.children.get(i11));
         }
-        for (int i12 = i10 + i3; i12 < this.children.size(); i12++) {
+        for (int i12 = i10 + i7; i12 < this.children.size(); i12++) {
             cloneBox2.add(this.children.get(i12));
         }
         if (this.breakPositions != null) {
             for (int i13 = 0; i13 < this.breakPositions.size(); i13++) {
-                if (this.breakPositions.get(i13).intValue() > i3 + 1) {
-                    cloneBox2.addBreakPosition((this.breakPositions.get(i13).intValue() - i3) - 1);
+                if (this.breakPositions.get(i13).intValue() > i7 + 1) {
+                    cloneBox2.addBreakPosition((this.breakPositions.get(i13).intValue() - i7) - 1);
                 }
             }
         }
@@ -119,9 +119,9 @@ public class HorizontalBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public final void add(int i3, Box box) {
+    public final void add(int i7, Box box) {
         recalculate(box);
-        super.add(i3, box);
+        super.add(i7, box);
     }
 
     public HorizontalBox(Box box) {

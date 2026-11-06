@@ -1,132 +1,209 @@
 package ii;
 
+import ai.f1;
 import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import c8.ha;
+import hi.x3;
+import java.util.ArrayList;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.t3;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.j00;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.y1;
+import org.telegram.ui.Cells.g6;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class f extends vg.t1 {
-    public final /* synthetic */ int r;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class f extends f2 implements ls {
+    public ri.c a;
+    public long b;
+    public TLRPC.Chat c;
+    public TLRPC.User d;
+    public FrameLayout e;
+    public k41 f;
+    public e h;
+    public ArrayList n;
+    public ab.b0 r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(Context context, int i3) {
-        super(context);
-        this.r = i3;
-    }
-
-    @Override // vg.t1
-    public final void a() {
-        switch (this.r) {
-            case 0:
-                super.a();
-                vg.s1 s1Var = this.a;
-                s1Var.q = true;
-                s1Var.K = false;
-                s1Var.L = true;
-                s1Var.H = true;
-                s1Var.c();
-                break;
-            case 1:
-                super.a();
-                vg.s1 s1Var2 = this.a;
-                s1Var2.q = true;
-                s1Var2.K = false;
-                s1Var2.L = true;
-                s1Var2.H = true;
-                s1Var2.c();
-                break;
-            case 2:
-                j00 j00Var = new j00(50);
-                this.a = j00Var;
-                j00Var.O = 100;
-                j00Var.M = false;
-                j00Var.G = false;
-                j00Var.K = true;
-                j00Var.H = true;
-                j00Var.J = false;
-                j00Var.r = 4;
-                j00Var.w = 0.98f;
-                j00Var.v = 0.98f;
-                j00Var.u = 0.98f;
-                j00Var.c();
-                break;
-            case 3:
-                vg.s1 s1Var3 = this.a;
-                s1Var3.q = true;
-                s1Var3.K = false;
-                s1Var3.H = true;
-                s1Var3.J = true;
-                s1Var3.k = org.telegram.messenger.g0.L(-14.0f);
-                vg.s1 s1Var4 = this.a;
-                s1Var4.x = 2000L;
-                s1Var4.y = 3000;
-                s1Var4.r = 16;
-                s1Var4.G = false;
-                s1Var4.O = 28;
-                s1Var4.Q = k6.Ak;
-                s1Var4.c();
-                break;
-            case 4:
-                vg.s1 s1Var5 = this.a;
-                s1Var5.q = true;
-                s1Var5.K = false;
-                s1Var5.H = true;
-                s1Var5.J = true;
-                s1Var5.k = org.telegram.messenger.g0.L(-14.0f);
-                vg.s1 s1Var6 = this.a;
-                s1Var6.x = 2000L;
-                s1Var6.y = 3000;
-                s1Var6.r = 16;
-                s1Var6.G = false;
-                s1Var6.O = 28;
-                s1Var6.Q = k6.Ak;
-                s1Var6.c();
-                break;
-            default:
-                super.a();
-                vg.s1 s1Var7 = this.a;
-                s1Var7.q = true;
-                s1Var7.K = false;
-                s1Var7.L = true;
-                s1Var7.H = true;
-                s1Var7.c();
-                break;
+    public static void Z(f fVar, r31 r31Var) {
+        f fVar2;
+        if (r31Var.d == 1) {
+            fVar2 = fVar;
+            v4.O(fVar.getParentActivity(), fVar2, hd.M0(2131751906, null), null, hd.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, hd.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
+        } else {
+            fVar2 = fVar;
+        }
+        Object obj = r31Var.G;
+        if (obj instanceof TLRPC.Chat) {
+            TLRPC.Chat chat = (TLRPC.Chat) obj;
+            fVar2.getMessagesController().M0(Long.valueOf(-fVar2.b));
+            fVar2.showDialog(new ki.a(fVar2.getParentActivity(), chat, fVar2.b, new f1(20, fVar2, chat)));
         }
     }
 
-    @Override // vg.t1
-    public int getStarsRectWidth() {
-        switch (this.r) {
-            case 0:
-                return getMeasuredWidth();
-            case 1:
-                return getMeasuredWidth();
-            case 2:
-                return getMeasuredWidth();
-            default:
-                return super.getStarsRectWidth();
+    public final void a0(String str, boolean z9) {
+        if (!t3.T(this.c) && this.d == null) {
+            u1 u1Var = new u1(3, getParentActivity(), null);
+            u1Var.r(250L);
+            getMessagesController().T(getParentActivity(), -this.b, this, new a3.g(this, u1Var, str, z9, 2), null);
+            return;
+        }
+        qp messagesController = getMessagesController();
+        long j3 = this.b;
+        a aVar = new a(this, 1);
+        messagesController.getClass();
+        TL_communities.TL_communities_create tL_communities_create = new TL_communities.TL_communities_create();
+        tL_communities_create.title = str;
+        tL_communities_create.peer = messagesController.j1(j3);
+        tL_communities_create.hidden = z9;
+        messagesController.getConnectionsManager().sendRequestTypedAndProcessUpdates(tL_communities_create, new d3.b(1), new org.telegram.messenger.d(aVar, 5));
+    }
+
+    public final void b0(long j3, boolean z9) {
+        if (t3.T(this.c) || this.d != null) {
+            int i7 = this.currentAccount;
+            long j10 = -this.b;
+            qp.s1(i7).Q2(-j10, j3, false, z9, new g0(this, j10, 0));
+        } else {
+            u1 u1Var = new u1(3, getParentActivity(), null);
+            u1Var.r(250L);
+            getMessagesController().T(getParentActivity(), -this.b, this, new d(this, u1Var, j3, z9, 0), null);
         }
     }
 
-    @Override // vg.t1, android.view.View
-    public void onMeasure(int i3, int i10) {
-        switch (this.r) {
-            case 3:
-                super.onMeasure(i3, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 4:
-                super.onMeasure(i3, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            case 5:
-                super.onMeasure(i3, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.g0.L(52.0f));
-                break;
-            default:
-                super.onMeasure(i3, i10);
-                break;
+    @Override // org.telegram.ui.ActionBar.f2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setAllowOverlayTitle(false);
+        this.actionBar.setBackButtonDrawable(new y1(false));
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 5));
+        ri.c cVar = new ri.c();
+        cVar.a(getThemedColor(k6.d6));
+        this.a = cVar;
+        dh.c cVar2 = new dh.c(cVar, cVar, cVar);
+        this.actionBar.setBackground(null);
+        this.actionBar.M(cVar2, c8.g0.p(this.resourceProvider), false);
+        this.actionBar.Q0 = true;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.e = frameLayout;
+        r6.i(k6.a7, frameLayout, null);
+        e eVar = new e(context, this.resourceProvider);
+        this.h = eVar;
+        eVar.setTitle(hd.M0(2131751847, null));
+        this.h.setSubtitle(hd.M0(this.d != null ? 2131751933 : t3.V(this.c) ? 2131751932 : 2131751931, null));
+        this.h.setTag(-33024);
+        TLRPC.User user = this.d;
+        if (user != null) {
+            this.h.a.e(user, new w8(0, this.d));
+        } else {
+            TLRPC.Chat chat = this.c;
+            if (chat != null) {
+                this.h.a.e(chat, new w8(this.c));
+            }
+        }
+        k41 k41Var = new k41(this, new a(this, 0), new b(this), new x3(this, 6));
+        this.f = k41Var;
+        k41Var.setClipToPadding(false);
+        k41 k41Var2 = this.f;
+        f41 f41Var = k41Var2.f3;
+        f41Var.r = false;
+        f41Var.s = true;
+        k41Var2.r1();
+        this.e.addView(this.f, ha.c(-1.0f, -1));
+        this.e.addView(this.actionBar, ha.e(-1, -2, 48));
+        FrameLayout frameLayout2 = this.e;
+        this.fragmentView = frameLayout2;
+        return frameLayout2;
+    }
+
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == qs.T) {
+            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
+            long j3 = chatFull.id;
+            View B1 = this.f.B1((int) (j3 ^ (j3 >>> 32)));
+            if (!(B1 instanceof g6)) {
+                this.f.f3.O(false);
+                return;
+            }
+            g6 g6Var = (g6) B1;
+            ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
+            g6Var.setSubLabel(hd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean onFragmentCreate() {
+        this.b = this.arguments.getLong("dialog_id", 0L);
+        this.c = getMessagesController().M0(Long.valueOf(-this.b));
+        this.d = getMessagesController().a2(Long.valueOf(this.b));
+        this.n = getMessagesController().Q7;
+        qp messagesController = getMessagesController();
+        c cVar = new c(this, 0);
+        int i7 = this.classGuid;
+        messagesController.getClass();
+        messagesController.getConnectionsManager().bindRequestToGuid(messagesController.getConnectionsManager().sendRequestTyped(new TL_communities.TL_communities_getJoinedCommunities(), new d3.b(1), new org.telegram.messenger.x3(4, messagesController, cVar)), i7);
+        qs notificationCenter = getNotificationCenter();
+        notificationCenter.getClass();
+        ab.b0 b0Var = new ab.b0(notificationCenter, this);
+        b0Var.c(qs.T);
+        this.r = b0Var;
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onFragmentDestroy() {
+        ab.b0 b0Var = this.r;
+        if (b0Var != null) {
+            b0Var.b();
+            this.r = null;
+        }
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onInsets(int i7, int i10, int i11, int i12) {
+        super.onInsets(i7, i10, i11, i12);
+        this.f.setPadding(0, i10, 0, i12);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onThemeColorsChanged() {
+        super.onThemeColorsChanged();
+        try {
+            ri.c cVar = this.a;
+            if (cVar != null) {
+                cVar.a(getThemedColor(k6.d6));
+            }
+            org.telegram.ui.ActionBar.k kVar = this.actionBar;
+            if (kVar != null) {
+                kVar.invalidate();
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 }

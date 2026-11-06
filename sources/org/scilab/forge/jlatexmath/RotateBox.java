@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Point2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class RotateBox extends Box {
     public static final int BBC = 8;
@@ -29,18 +29,18 @@ public class RotateBox extends Box {
 
     public RotateBox(Box box, double d, float f10, float f11) {
         this.box = box;
-        double d10 = (3.141592653589793d * d) / 180.0d;
-        this.angle = d10;
+        double d2 = (3.141592653589793d * d) / 180.0d;
+        this.angle = d2;
         this.height = box.height;
         this.depth = box.depth;
         this.width = box.width;
-        double sin = Math.sin(d10);
+        double sin = Math.sin(d2);
         double cos = Math.cos(this.angle);
-        double d11 = f10;
-        double d12 = 1.0d - cos;
-        double d13 = f11;
-        this.shiftX = (float) ((d13 * sin) + (d11 * d12));
-        this.shiftY = (float) ((d13 * d12) - (d11 * sin));
+        double d10 = f10;
+        double d11 = 1.0d - cos;
+        double d12 = f11;
+        this.shiftX = (float) ((d12 * sin) + (d10 * d11));
+        this.shiftY = (float) ((d12 * d11) - (d10 * sin));
         float f12 = this.height;
         float f13 = this.depth;
         float f14 = this.width;
@@ -65,9 +65,9 @@ public class RotateBox extends Box {
         this.depth = (-min) - f25;
     }
 
-    private static Point2D.Float calculateShift(Box box, int i3) {
+    private static Point2D.Float calculateShift(Box box, int i7) {
         Point2D.Float r02 = new Point2D.Float(0.0f, -box.depth);
-        switch (i3) {
+        switch (i7) {
             case 0:
                 r02.x = 0.0f;
                 r02.y = -box.depth;
@@ -170,11 +170,11 @@ public class RotateBox extends Box {
         float f12 = f11 - this.shiftY;
         float f13 = (this.shiftX - this.xmin) + f10;
         double d = f13;
-        double d10 = f12;
-        graphics2D.rotate(-this.angle, d, d10);
+        double d2 = f12;
+        graphics2D.rotate(-this.angle, d, d2);
         this.box.draw(graphics2D, f13, f12);
         this.box.drawDebug(graphics2D, f13, f12, true);
-        graphics2D.rotate(this.angle, d, d10);
+        graphics2D.rotate(this.angle, d, d2);
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
@@ -186,7 +186,7 @@ public class RotateBox extends Box {
         this(box, d, r10.x, r10.y);
     }
 
-    public RotateBox(Box box, double d, int i3) {
-        this(box, d, calculateShift(box, i3));
+    public RotateBox(Box box, double d, int i7) {
+        this(box, d, calculateShift(box, i7));
     }
 }

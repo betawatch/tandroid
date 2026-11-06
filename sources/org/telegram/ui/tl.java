@@ -1,33 +1,68 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 b;
-    public final /* synthetic */ RectF c;
+    public final /* synthetic */ lm b;
 
-    public /* synthetic */ tl(org.telegram.ui.Cells.q1 q1Var, RectF rectF, int i3) {
-        this.a = i3;
-        this.b = q1Var;
-        this.c = rectF;
+    public /* synthetic */ tl(lm lmVar, int i7) {
+        this.a = i7;
+        this.b = lmVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.i3(new tl(this.b, this.c, 1), 400L);
+                an anVar = this.b.a;
+                anVar.t5 = null;
+                anVar.u5 = null;
+                break;
+            case 1:
+                lm lmVar = this.b;
+                lmVar.getClass();
+                an anVar2 = lmVar.a;
+                new ug.w0((org.telegram.ui.ActionBar.f2) anVar2, 8, true).show();
+                anVar2.getMessagesController().E3();
+                break;
+            case 2:
+                lm lmVar2 = this.b;
+                lmVar2.getClass();
+                an anVar3 = lmVar2.a;
+                new ug.w0((org.telegram.ui.ActionBar.f2) anVar3, 8, true).show();
+                anVar3.getMessagesController().E3();
+                break;
+            case 3:
+                lm lmVar3 = this.b;
+                lmVar3.getClass();
+                an anVar4 = lmVar3.a;
+                new ug.w0((org.telegram.ui.ActionBar.f2) anVar4, 8, true).show();
+                anVar4.getMessagesController().E3();
+                break;
+            case 4:
+                this.b.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
+                break;
+            case 5:
+                an anVar5 = this.b.a;
+                anVar5.t5 = null;
+                anVar5.u5 = null;
+                break;
+            case 6:
+                this.b.a.Z.H0();
+                break;
+            case 7:
+                this.b.a.Z.H0();
+                break;
+            case 8:
+                an anVar6 = this.b.a;
+                ThemeActivity themeActivity = new ThemeActivity(0);
+                themeActivity.T0 = true;
+                anVar6.presentFragment(themeActivity);
                 break;
             default:
-                RectF rectF = this.c;
-                org.telegram.ui.Cells.q1 q1Var = this.b;
-                if (q1Var.getScrimBlockBounds() == rectF) {
-                    q1Var.setScrimBlockBounds(null);
-                    break;
-                }
+                an anVar7 = this.b.a;
+                anVar7.showDialog(new ug.w0((org.telegram.ui.ActionBar.f2) anVar7, 39, false));
                 break;
         }
     }

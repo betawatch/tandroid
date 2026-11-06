@@ -1,26 +1,66 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class zi0 extends sj0 {
-    public boolean E(tj0 tj0Var) {
-        return true;
+public final class zi0 extends v4.m0 implements eh.a {
+    public final org.telegram.messenger.d20 a;
+    public final pj0 b;
+    public final int c;
+    public final boolean d;
+
+    public zi0(pj0 pj0Var, org.telegram.messenger.d20 d20Var, int i7, boolean z9) {
+        this.b = pj0Var;
+        this.a = d20Var;
+        this.c = i7;
+        this.d = z9;
     }
 
-    public abstract String F(int i3);
-
-    public abstract void G(tj0 tj0Var, float f10, int[] iArr);
-
-    public float H(tj0 tj0Var) {
-        return tj0Var.computeVerticalScrollOffset() / ((e() * tj0Var.getChildAt(0).getMeasuredHeight()) - tj0Var.getMeasuredHeight());
+    @Override // eh.a
+    public final void c(dh.a aVar, RectF rectF) {
+        aVar.a = true;
     }
 
-    public void J(tj0 tj0Var) {
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        this.b.P0(canvas);
+        canvas.restore();
     }
 
-    public void I() {
+    @Override // v4.m0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.a1 a1Var) {
+        int b10;
+        if (((Boolean) this.a.a(view)).booleanValue()) {
+            int i7 = this.c;
+            rect.right = i7;
+            rect.left = i7;
+            v4.d1 T = recyclerView.T(view);
+            v4.g0 adapter = recyclerView.getAdapter();
+            if (T == null || adapter == null || (b10 = T.b()) == -1) {
+                return;
+            }
+            boolean z9 = b10 == 0;
+            boolean z10 = b10 == adapter.b() - 1;
+            if (z9) {
+                rect.top = this.d ? i7 : org.telegram.messenger.g0.L(4.0f);
+            }
+            if (z10) {
+                rect.bottom = i7;
+            }
+        }
     }
 
-    public void K() {
+    @Override // v4.m0
+    public final void f(Canvas canvas, RecyclerView recyclerView) {
+        if (recyclerView instanceof pj0) {
+            ((pj0) recyclerView).P0(canvas);
+        }
     }
 }

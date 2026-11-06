@@ -11,9 +11,9 @@ public class p {
     public int g;
     public final int h;
 
-    public p(l[] lVarArr, int i3, int i10, int i11) {
+    public p(l[] lVarArr, int i7, int i10, int i11) {
         this.a = lVarArr;
-        this.h = i3;
+        this.h = i7;
         this.e = i10;
         this.f = i10;
         this.g = i11;
@@ -22,18 +22,18 @@ public class p {
     public final l a() {
         l[] lVarArr;
         int length;
-        int i3;
+        int i7;
         o oVar;
         l lVar = this.b;
         if (lVar != null) {
             lVar = lVar.d;
         }
         while (lVar == null) {
-            if (this.f >= this.g || (lVarArr = this.a) == null || (length = lVarArr.length) <= (i3 = this.e) || i3 < 0) {
+            if (this.f >= this.g || (lVarArr = this.a) == null || (length = lVarArr.length) <= (i7 = this.e) || i7 < 0) {
                 this.b = null;
                 return null;
             }
-            l k10 = ConcurrentHashMap.k(lVarArr, i3);
+            l k10 = ConcurrentHashMap.k(lVarArr, i7);
             if (k10 == null || k10.a >= 0) {
                 lVar = k10;
             } else if (k10 instanceof g) {
@@ -46,7 +46,7 @@ public class p {
                 }
                 oVar2.c = lVarArr;
                 oVar2.a = length;
-                oVar2.b = i3;
+                oVar2.b = i7;
                 oVar2.d = this.c;
                 this.c = oVar2;
                 lVar = null;
@@ -85,7 +85,7 @@ public class p {
                     }
                 }
             } else {
-                int i15 = i3 + this.h;
+                int i15 = i7 + this.h;
                 this.e = i15;
                 if (i15 >= length) {
                     int i16 = this.f + 1;

@@ -1,52 +1,101 @@
 package dh;
 
-import ci.e1;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.h1;
-import org.telegram.ui.ActionBar.q4;
+import android.graphics.Canvas;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.n40;
+import org.telegram.ui.t91;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k extends h1 {
-    public final /* synthetic */ ai.c0 x;
+public final class k implements eh.a {
+    public final ViewGroup c;
+    public final n40 d;
+    public final ViewGroup e;
+    public boolean h;
+    public final RectF a = new RectF();
+    public final PointF b = new PointF();
+    public final RectF f = new RectF();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(ai.c0 c0Var, ai.c0 c0Var2) {
-        super(c0Var2);
-        this.x = c0Var;
+    public k(ViewGroup viewGroup, ViewGroup viewGroup2, n40 n40Var) {
+        this.c = viewGroup;
+        this.d = n40Var;
+        this.e = viewGroup2;
     }
 
-    @Override // org.telegram.ui.ActionBar.h1
-    public final boolean b() {
-        boolean z10;
-        boolean z11;
-        o oVar = (o) this.x.c;
-        q4 parentLayout = oVar.getParentLayout();
-        z10 = ((d2) oVar).inPreviewMode;
-        if (z10 || org.telegram.messenger.g0.Q1()) {
-            return false;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // eh.a
+    public final void c(a aVar, RectF rectF) {
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (!jh.k.b(viewGroup, viewGroup2, pointF)) {
+            aVar.a = true;
+            return;
         }
-        z11 = ((d2) oVar).inBubbleMode;
-        return (z11 || org.telegram.messenger.g0.E || parentLayout == null) ? false : true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h1
-    public final void e(float f10, float f11, boolean z10) {
-        o oVar = (o) this.x.c;
-        if (oVar.getParentLayout() != null) {
-            boolean z11 = ((ActionBarLayout) oVar.getParentLayout()).n;
+        if (!(viewGroup instanceof eh.a) || this.h) {
+            aVar.a = true;
+            return;
         }
+        aVar.c(pointF.x);
+        aVar.c(pointF.y);
+        RectF rectF2 = this.f;
+        rectF2.set(rectF);
+        rectF.offset(-pointF.x, -pointF.y);
+        ((eh.a) viewGroup).c(aVar, rectF);
+        rectF.set(rectF2);
     }
 
-    @Override // org.telegram.ui.ActionBar.h1
-    public final void g(int i3, boolean z10) {
-        o oVar = (o) this.x.c;
-        oVar.w.setVisibility(0);
-        oVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new e1(3, this, z10)).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h1
-    public final void f() {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (jh.k.b(viewGroup, viewGroup2, pointF)) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(pointF.x, pointF.y);
+            if (!(viewGroup instanceof eh.a) || this.h) {
+                for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
+                    View childAt = viewGroup.getChildAt(i7);
+                    RectF rectF2 = this.a;
+                    if (jh.k.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
+                        n40 n40Var = this.d;
+                        int i10 = n40Var.a;
+                        Object obj = n40Var.b;
+                        switch (i10) {
+                            case 0:
+                                ((pj0) obj).drawChild(canvas, childAt, uptimeMillis);
+                                break;
+                            case 1:
+                                ProfileActivity profileActivity = (ProfileActivity) obj;
+                                if (childAt == profileActivity.N) {
+                                    break;
+                                } else {
+                                    profileActivity.a.drawChild(canvas, childAt, uptimeMillis);
+                                    break;
+                                }
+                            default:
+                                ((t91) obj).drawChild(canvas, childAt, uptimeMillis);
+                                break;
+                        }
+                    }
+                }
+            } else {
+                RectF rectF3 = this.f;
+                rectF3.set(rectF);
+                rectF.offset(-pointF.x, -pointF.y);
+                ((eh.a) viewGroup).d(canvas, rectF);
+                rectF.set(rectF3);
+            }
+            canvas.restore();
+        }
     }
 }

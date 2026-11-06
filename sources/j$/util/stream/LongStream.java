@@ -48,7 +48,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     boolean l();
 
-    LongStream limit(long j10);
+    LongStream limit(long j3);
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
@@ -63,14 +63,14 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     LongStream peek(LongConsumer longConsumer);
 
-    long reduce(long j10, LongBinaryOperator longBinaryOperator);
+    long reduce(long j3, LongBinaryOperator longBinaryOperator);
 
     j$.util.d0 reduce(LongBinaryOperator longBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
 
-    LongStream skip(long j10);
+    LongStream skip(long j3);
 
     LongStream sorted();
 

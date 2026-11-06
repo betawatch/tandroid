@@ -1,217 +1,176 @@
 package oi;
 
-import g2.m0;
-import j$.util.DesugarCollections;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import c8.td;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import m2.s;
-import mi.h0;
-import o4.v0;
-import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.rc;
+import org.telegram.ui.Components.ms;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class q implements AutoCloseable {
-    public final v0 b;
-    public final v0 c;
+public final class q {
+    public static r F;
+    public static int G;
+    public int A;
+    public m a;
+    public boolean f;
+    public long g;
+    public long h;
+    public long i;
+    public int j;
+    public int k;
+    public int l;
+    public View m;
+    public long p;
+    public long q;
     public long r;
-    public boolean s;
-    public b w;
-    public Throwable x;
-    public volatile Set y;
-    public final Object a = new Object();
-    public final LinkedHashMap h = new LinkedHashMap(16, 0.75f, true);
-    public final HashMap n = new HashMap();
-    public final int e = 256;
-    public final long f = 8388608;
-    public final ExecutorService d = Executors.newSingleThreadExecutor(new m0(1));
+    public long s;
+    public long t;
+    public int u;
+    public boolean y;
+    public int z;
+    public final h b = new h(this);
+    public final ArrayList c = new ArrayList();
+    public qi.b d = qi.b.c;
+    public final RectF e = new RectF();
+    public final xe.b n = new xe.b();
+    public final ArrayList o = new ArrayList();
+    public final RectF v = new RectF();
+    public final Rect w = new Rect();
+    public final Rect x = new Rect();
+    public final qi.a B = new qi.a();
+    public final qi.a C = new qi.a();
+    public final qi.a D = new qi.a();
+    public final ArrayList E = new ArrayList();
 
-    public q(v0 v0Var, v0 v0Var2) {
-        this.b = v0Var;
-        this.c = v0Var2;
+    public static r f() {
+        boolean e10 = rc.e(256);
+        boolean e11 = rc.e(262144);
+        r rVar = F;
+        if (rVar == null || rVar.a != e10 || rVar.b != e11) {
+            F = new r(e10, e11);
+            G++;
+        }
+        return F;
     }
 
-    public static String b(String str) {
-        String lowerCase;
-        if (str == null) {
-            return "";
-        }
-        lowerCase = str.trim().toLowerCase(Locale.ROOT);
-        lowerCase.getClass();
-        switch (lowerCase) {
-            case "c#":
-                return "csharp";
-            case "fc":
-                return "func";
-            case "c++":
-                return "cpp";
-            case "fif":
-                return "fift";
-            case "tl-b":
-                return "tlb";
-            default:
-                return lowerCase;
-        }
+    public final void a(dh.g gVar) {
+        this.o.add(gVar);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0075 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a() {
-        synchronized (this.a) {
-            try {
-                if (this.s) {
-                    return false;
-                }
-                if (this.w != null) {
-                    return true;
-                }
-                if (this.x == null) {
-                    try {
-                        try {
-                            this.b.getClass();
-                            b a10 = v0.a();
-                            try {
-                                LinkedHashSet linkedHashSet = new LinkedHashSet();
-                                Collections.addAll(linkedHashSet, a10.a.a());
-                                if (linkedHashSet.contains("func")) {
-                                    linkedHashSet.add("fc");
-                                }
-                                if (linkedHashSet.contains("fift")) {
-                                    linkedHashSet.add("fif");
-                                }
-                                if (linkedHashSet.contains("tlb")) {
-                                    linkedHashSet.add("tl-b");
-                                }
-                                this.y = DesugarCollections.unmodifiableSet(linkedHashSet);
-                                this.w = a10;
-                                return true;
-                            } catch (Error e10) {
-                                e = e10;
-                                a10.close();
-                                throw e;
-                            } catch (RuntimeException e11) {
-                                e = e11;
-                                a10.close();
-                                throw e;
-                            }
-                        } catch (Exception e12) {
-                            e = e12;
-                            this.x = e;
-                            if (this.c != null) {
-                                try {
-                                    a8.g(e, true);
-                                } catch (LinkageError | RuntimeException unused) {
-                                }
-                            }
-                            return false;
-                        }
-                    } catch (LinkageError e13) {
-                        e = e13;
-                        this.x = e;
-                        if (this.c != null) {
-                        }
-                        return false;
-                    } catch (OutOfMemoryError e14) {
-                        e = e14;
-                        this.x = e;
-                        if (this.c != null) {
-                        }
-                        return false;
-                    }
-                }
-                return false;
-            } finally {
-            }
-        }
-    }
-
-    public final void c(o oVar, h0 h0Var) {
-        m mVar = new m(oVar, h0Var);
-        int i3 = this.e;
-        if (i3 == 0) {
+    public final void b(pj0 pj0Var) {
+        if (pj0Var == null) {
             return;
         }
-        long j10 = mVar.b;
-        long j11 = this.f;
-        if (j10 > j11) {
+        this.n.add(pj0Var);
+        pj0Var.D2.b.add(new ms() { // from class: oi.f
+            @Override // org.telegram.ui.Components.ms
+            public final void a(int i7, boolean z9) {
+                q qVar = q.this;
+                qVar.h++;
+                qVar.j += z9 ? 1 : -1;
+            }
+        });
+        j jVar = new j(this);
+        if (pj0Var.P == null) {
+            pj0Var.P = new ArrayList();
+        }
+        pj0Var.P.add(jVar);
+        pj0Var.j(new ai.b(this, 23));
+    }
+
+    public final void c(p61 p61Var) {
+        if (p61Var == null) {
             return;
         }
-        LinkedHashMap linkedHashMap = this.h;
-        linkedHashMap.put(oVar, mVar);
-        this.r += j10;
-        while (true) {
-            if (linkedHashMap.size() <= i3 && this.r <= j11) {
-                return;
-            }
-            Map.Entry entry = (Map.Entry) linkedHashMap.entrySet().iterator().next();
-            this.r -= ((m) entry.getValue()).b;
-            linkedHashMap.remove(entry.getKey());
+        g gVar = new g(this);
+        ArrayList arrayList = p61Var.R;
+        if (arrayList.contains(gVar)) {
+            return;
         }
+        arrayList.add(gVar);
     }
 
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        synchronized (this.a) {
-            try {
-                if (this.s) {
-                    return;
-                }
-                this.s = true;
-                for (ArrayList arrayList : this.n.values()) {
-                    int size = arrayList.size();
-                    int i3 = 0;
-                    while (i3 < size) {
-                        Object obj = arrayList.get(i3);
-                        i3++;
-                        ((p) obj).a = null;
+    public final ri.c d(n nVar) {
+        ri.c cVar = new ri.c();
+        this.E.add(new o(cVar, nVar));
+        cVar.a(nVar.h());
+        return cVar;
+    }
+
+    public final qi.a e() {
+        qi.a aVar = this.D;
+        qi.a aVar2 = this.C;
+        if (aVar == aVar2) {
+            aVar.getClass();
+            return aVar;
+        }
+        aVar.b = 0;
+        int i7 = aVar2.b;
+        for (int i10 = 0; i10 < i7; i10++) {
+            RectF rectF = (RectF) aVar2.a.get(i10);
+            aVar.a(rectF.left, rectF.top, rectF.right, rectF.bottom);
+        }
+        return aVar;
+    }
+
+    public final void g() {
+        this.i++;
+    }
+
+    public final void h(int i7, int i10) {
+        if (i7 == 0 && i10 == 0) {
+            return;
+        }
+        this.g++;
+        this.k += i7;
+        this.l += i10;
+    }
+
+    public final void i(View view) {
+        xf.a a10;
+        xf.c cVar;
+        View view2 = this.m;
+        if (view2 != view) {
+            h hVar = this.b;
+            if (view2 != null && (cVar = (xf.c) view2.getTag(R.id.tag_view_on_post_draw_state)) != null) {
+                ArrayList arrayList = cVar.a;
+                if (arrayList.remove(hVar)) {
+                    xf.a aVar = cVar.b;
+                    if (aVar != null) {
+                        ((xe.b) aVar.a.b).remove(hVar);
+                    }
+                    if (arrayList.isEmpty()) {
+                        cVar.b = null;
+                        view2.removeOnAttachStateChangeListener(cVar.c);
+                        view2.setTag(R.id.tag_view_on_post_draw_state, null);
                     }
                 }
-                this.n.clear();
-                this.h.clear();
-                this.r = 0L;
-                this.d.execute(new l(this, 0));
-                this.d.shutdown();
-            } catch (Throwable th2) {
-                throw th2;
             }
-        }
-    }
-
-    public final p d(String str, String str2, n nVar) {
-        if (str == null) {
-            throw null;
-        }
-        o oVar = new o(str, b(str2));
-        p pVar = new p();
-        pVar.a = nVar;
-        synchronized (this.a) {
-            try {
-                if (this.s) {
-                    throw new IllegalStateException("Service is closed");
+            if (view != null) {
+                if (view.isAttachedToWindow() && view == view.getRootView()) {
+                    throw new IllegalArgumentException("Cannot add OnPostDrawListener to root view");
                 }
-                ArrayList arrayList = (ArrayList) this.n.get(oVar);
-                if (arrayList != null) {
-                    arrayList.add(pVar);
-                    return pVar;
+                xf.c cVar2 = (xf.c) view.getTag(R.id.tag_view_on_post_draw_state);
+                if (cVar2 == null) {
+                    cVar2 = new xf.c();
+                    view.setTag(R.id.tag_view_on_post_draw_state, cVar2);
+                    view.addOnAttachStateChangeListener(cVar2.c);
                 }
-                ArrayList arrayList2 = new ArrayList();
-                arrayList2.add(pVar);
-                this.n.put(oVar, arrayList2);
-                this.d.execute(new s(19, this, oVar));
-                return pVar;
-            } catch (Throwable th2) {
-                throw th2;
+                ArrayList arrayList2 = cVar2.a;
+                if (!arrayList2.contains(hVar)) {
+                    arrayList2.add(hVar);
+                    if (view.isAttachedToWindow() && (a10 = td.a(view, cVar2)) != null) {
+                        ((xe.b) a10.a.b).add(hVar);
+                    }
+                }
             }
+            this.m = view;
         }
     }
 }

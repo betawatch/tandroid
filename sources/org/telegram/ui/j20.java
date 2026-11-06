@@ -3,47 +3,69 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.widget.TextView;
+import android.os.Build;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j20 extends TextView {
+public final class j20 extends FrameLayout {
     public final RectF a;
-    public final Paint b;
+    public final RectF b;
+    public final RectF c;
+    public final Paint d;
+    public final /* synthetic */ c40 e;
 
-    public j20(LaunchActivity launchActivity) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j20(c40 c40Var, LaunchActivity launchActivity) {
         super(launchActivity);
+        this.e = c40Var;
         this.a = new RectF();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(-16711936);
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new Paint(1);
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
+        c40 c40Var = this.e;
+        k20 k20Var = c40Var.w1;
+        float y10 = k20Var.getY() + k20Var.getMeasuredHeight();
+        te.c cVar = c40Var.s5;
+        float f10 = y10 - cVar.f;
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), this.b);
+        rectF.set(0.0f, f10, measuredWidth, measuredHeight);
+        float y11 = k20Var.getY() + k20Var.getMeasuredHeight();
+        float measuredWidth2 = getMeasuredWidth();
+        float measuredHeight2 = getMeasuredHeight();
+        RectF rectF2 = this.b;
+        rectF2.set(0.0f, y11, measuredWidth2, measuredHeight2);
+        float y12 = (k20Var.getY() + k20Var.getMeasuredHeight()) - cVar.f;
+        float measuredWidth3 = getMeasuredWidth();
+        float y13 = k20Var.getY() + k20Var.getMeasuredHeight();
+        RectF rectF3 = this.c;
+        rectF3.set(0.0f, y12, measuredWidth3, y13);
+        int i7 = Build.VERSION.SDK_INT;
+        Paint paint = this.d;
+        if (i7 < 29 || c40Var.H4 == null || !canvas.isHardwareAccelerated()) {
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF3, paint);
+            paint.setColor(i0.a.k(234881023, -14933463));
+            canvas.drawRect(rectF2, paint);
+        } else {
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF, paint);
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(-getX(), -getY());
+            float f11 = c40Var.I4;
+            canvas.scale(f11, f11);
+            canvas.drawRenderNode(c40Var.H4);
+            canvas.restore();
+            paint.setColor(234881023);
+            canvas.drawRect(rectF2, paint);
+        }
         super.dispatchDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        paint.setColor(-16711936);
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
-        super.onDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, i10);
     }
 }

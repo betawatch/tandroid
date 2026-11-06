@@ -1,64 +1,126 @@
 package com.google.android.gms.internal.cast;
 
-import b8.da;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import a8.r7;
+import a8.wa;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class l4 extends da implements ScheduledFuture, l9.y, Future {
-    public final d4 b;
-    public final ScheduledFuture c;
+public final class l4 implements g6.h {
+    public final /* synthetic */ r7 a;
 
-    public l4(d4 d4Var, ScheduledFuture scheduledFuture) {
-        this.b = d4Var;
-        this.c = scheduledFuture;
+    public /* synthetic */ l4(r7 r7Var) {
+        this.a = r7Var;
     }
 
-    @Override // l9.y
-    public final void b(Runnable runnable, Executor executor) {
-        this.b.b(runnable, executor);
+    @Override // g6.h
+    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z9) {
+        s6 s6Var = new s6(new wa(4, 4));
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r6 r6Var = (r6) r7Var.e;
+        q6.m.g(r6Var);
+        r6Var.a((g6.c) fVar);
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
-        boolean cancel = this.b.cancel(z10);
-        if (cancel) {
-            this.c.cancel(z10);
+    @Override // g6.h
+    public void c(g6.f fVar, int i7) {
+        wa waVar = new wa(6, 4);
+        waVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(waVar);
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r6 r6Var = (r6) r7Var.e;
+        q6.m.g(r6Var);
+        r6Var.a((g6.c) fVar);
+    }
+
+    @Override // g6.h
+    public void e(g6.f fVar, int i7) {
+        wa waVar = new wa(5, 4);
+        waVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(waVar);
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r7Var.O();
+    }
+
+    @Override // g6.h
+    public void f(g6.f fVar, int i7) {
+        wa waVar = new wa(8, 4);
+        waVar.c = Integer.valueOf(i7);
+        s6 s6Var = new s6(waVar);
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r7Var.O();
+    }
+
+    @Override // g6.h
+    public void i(g6.f fVar, String str) {
+        s6 s6Var = new s6(new wa(4, 4));
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r6 r6Var = (r6) r7Var.e;
+        q6.m.g(r6Var);
+        r6Var.a((g6.c) fVar);
+        r6 r6Var2 = (r6) r7Var.e;
+        q6.m.g(r6Var2);
+        String str2 = r6Var2.k;
+        if (str2 == null) {
+            r6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            r6Var2.b(4);
         }
-        return cancel;
     }
 
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
-        return this.c.compareTo(delayed);
+    @Override // g6.h
+    public void j(g6.f fVar, int i7) {
+        wa waVar = new wa(9, 4);
+        waVar.c = Integer.valueOf(i7);
+        r7 r7Var = this.a;
+        waVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
+        r7.K(r7Var, new s6(waVar));
+        r7Var.O();
     }
 
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
+    @Override // g6.h
+    public void p(g6.f fVar, String str) {
+        s6 s6Var = new s6(new wa(7, 4));
+        r7 r7Var = this.a;
+        r7.K(r7Var, s6Var);
+        r6 r6Var = (r6) r7Var.e;
+        q6.m.g(r6Var);
+        r6Var.a((g6.c) fVar);
+        r6 r6Var2 = (r6) r7Var.e;
+        q6.m.g(r6Var2);
+        String str2 = r6Var2.k;
+        if (str2 == null) {
+            r6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            r6Var2.b(4);
+        }
     }
 
-    @Override // java.util.concurrent.Delayed
-    public final long getDelay(TimeUnit timeUnit) {
-        return this.c.getDelay(timeUnit);
+    @Override // g6.h
+    public void s(g6.f fVar) {
+        g6.c cVar = (g6.c) fVar;
+        wa waVar = new wa(2, 4);
+        r7 r7Var = this.a;
+        waVar.d = Boolean.valueOf(((c) r7Var.c).d == 2);
+        r7.K(r7Var, new s6(waVar));
+        r6 r6Var = (r6) r7Var.e;
+        q6.m.g(r6Var);
+        r6Var.a(cVar);
+        cVar.l = (l4) r7Var.f;
     }
 
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof v3;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    @Override // g6.h
+    public /* bridge */ /* synthetic */ void t(g6.f fVar) {
     }
 }

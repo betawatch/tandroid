@@ -1,23 +1,13 @@
 package ab;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public enum b implements pa.b {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    c(3);
+public final class b implements na.d {
+    public static final b a = new b();
+    public static final na.c b = new na.c("messagingClientEvent", jg.g.q(jg.g.p(qa.d.class, new qa.a(1))));
 
-    public final int a;
-
-    b(int i3) {
-        this.a = i3;
-    }
-
-    @Override // pa.b
-    public final int a() {
-        return this.a;
+    @Override // na.a
+    public final void a(Object obj, Object obj2) {
+        ((na.e) obj2).a(b, ((bb.e) obj).a);
     }
 }

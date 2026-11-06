@@ -4,22 +4,22 @@ import android.app.Activity;
 import android.os.Bundle;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class bj extends y {
     final /* synthetic */ bk a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bj(bk bkVar, String str, long j10) {
-        super(str, j10);
+    public bj(bk bkVar, String str, long j3) {
+        super(str, j3);
         this.a = bkVar;
     }
 
     @Override // com.google.android.play.core.integrity.y
     public final Task b(Activity activity, Bundle bundle) {
-        long j10;
-        j10 = this.a.e;
-        bundle.putLong("cloud.prj", j10);
+        long j3;
+        j3 = this.a.e;
+        bundle.putLong("cloud.prj", j3);
         return this.a.c.c(activity, bundle);
     }
 }

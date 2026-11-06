@@ -1,69 +1,127 @@
 package org.telegram.ui.web;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.ly0;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ha;
+import c8.ka;
+import fi.a3;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.l9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class g extends Drawable {
-    public final /* synthetic */ int a;
-    public final ly0 b;
-    public final /* synthetic */ i c;
+public final class g extends FrameLayout implements a6 {
+    public final f6 a;
+    public final l9 b;
+    public final LinearLayout c;
+    public final FrameLayout.LayoutParams d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final ImageView n;
+    public final a3 r;
+    public int s;
+    public final Paint w;
+    public boolean x;
 
-    public g(i iVar, String str, int i3) {
-        this.a = i3;
-        switch (i3) {
-            case 1:
-                this.c = iVar;
-                this.b = new ly0(str, 14.0f, org.telegram.messenger.g0.o());
-                break;
-            default:
-                this.c = iVar;
-                this.b = new ly0(str, 14.0f, org.telegram.messenger.g0.o());
-                break;
+    public g(Context context, f6 f6Var) {
+        super(context);
+        this.w = new Paint(1);
+        this.a = f6Var;
+        ka.b(this, 0.03f, 1.25f);
+        l9 l9Var = new l9(context);
+        this.b = l9Var;
+        l9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+        addView(l9Var, ha.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setMaxLines(1);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, ha.r(-1, -2, 51));
+        TextView textView2 = new TextView(context);
+        this.f = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setMaxLines(1);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, ha.t(-1, -2, 51, 0, 3, 0, 0));
+        FrameLayout.LayoutParams d = ha.d(-1, -2.0f, 19, 64.0f, 0.0f, 70.0f, 0.0f);
+        this.d = d;
+        addView(linearLayout, d);
+        TextView textView3 = new TextView(context);
+        this.h = textView3;
+        textView3.setTextSize(1, 13.0f);
+        textView3.setMaxLines(1);
+        textView3.setEllipsize(truncateAt);
+        textView3.setGravity(5);
+        textView3.setTextAlignment(6);
+        addView(textView3, ha.d(-2, -2.0f, 21, 64.0f, -10.0f, 12.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.n = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.attach_arrow_right);
+        addView(imageView, ha.d(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
+        a3 a3Var = new a3(this, getContext(), f6Var, 2);
+        this.r = a3Var;
+        a3Var.b(-1, k6.d6, k6.k7);
+        a3Var.setDrawUnchecked(false);
+        a3Var.setDrawBackgroundAsArc(3);
+        addView(a3Var, ha.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(k6.d6));
+        hashSet.add(Integer.valueOf(k6.G6));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.x) {
+            canvas.drawRect(org.telegram.messenger.g0.L(59.0f), getHeight() - Math.max(org.telegram.messenger.g0.L(0.66f), 1), getWidth(), getHeight(), this.w);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                this.b.c(getBounds().centerX() - (this.b.c / 2.0f), getBounds().centerY(), 1.0f, this.c.s, canvas);
-                break;
-            default:
-                this.b.c(getBounds().centerX() - (this.b.c / 2.0f), getBounds().centerY(), 1.0f, this.c.s, canvas);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
+    public void setChecked(boolean z9) {
+        this.r.a(z9, true);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        int i10 = this.a;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i3 = this.a;
-    }
-
-    private final void a(int i3) {
-    }
-
-    private final void b(int i3) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        int i7 = k6.d6;
+        f6 f6Var = this.a;
+        int w02 = k6.w0(i7, f6Var);
+        int w03 = k6.w0(k6.G6, f6Var);
+        this.s = w03;
+        this.e.setTextColor(w03);
+        this.f.setTextColor(k6.w(w02, k6.r1(0.55f, w03)));
+        this.h.setTextColor(k6.r1(0.55f, w03));
+        this.n.setColorFilter(new PorterDuffColorFilter(k6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
+        this.w.setColor(k6.r1(0.1f, w03));
+        this.b.invalidate();
     }
 }

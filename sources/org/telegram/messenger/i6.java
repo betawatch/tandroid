@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class i6 {
     public static final HashMap a = new HashMap();
@@ -28,7 +28,7 @@ public abstract class i6 {
     public static final ArrayList i;
     public static final HashMap j;
     public static boolean k;
-    public static final ai.y1 l;
+    public static final ai.m0 l;
     public static float m;
     public static boolean n;
     public static final String[] o;
@@ -41,21 +41,21 @@ public abstract class i6 {
         h = new HashMap();
         i = new ArrayList();
         j = new HashMap();
-        l = new ai.y1(28);
+        l = new ai.m0(24);
         n = true;
         o = new String[]{"😂", "😘", "❤", "😍", "😊", "😁", "👍", "☺", "😔", "😄", "😭", "💋", "😒", "😳", "😜", "🙈", "😉", "😃", "😢", "😝", "😱", "😡", "😏", "😞", "😅", "😚", "🙊", "😌", "😀", "😋", "😆", "👌", "😐", "😕"};
         b = g0.L(20.0f);
         c = g0.L(g0.Q1() ? 40.0f : 34.0f);
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             Bitmap[][] bitmapArr = f;
-            if (i3 >= bitmapArr.length) {
+            if (i7 >= bitmapArr.length) {
                 break;
             }
-            int i10 = e[i3];
-            bitmapArr[i3] = new Bitmap[i10];
-            g[i3] = new boolean[i10];
-            i3++;
+            int i10 = e[i7];
+            bitmapArr[i7] = new Bitmap[i10];
+            g[i7] = new boolean[i10];
+            i7++;
         }
         int i11 = 0;
         while (true) {
@@ -91,7 +91,7 @@ public abstract class i6 {
         }
         if (num.intValue() == 0 && hashMap.size() >= 48) {
             ArrayList arrayList = i;
-            hashMap.remove((String) k2.p1.h(1, arrayList));
+            hashMap.remove((String) jg.g.i(1, arrayList));
             arrayList.set(arrayList.size() - 1, str);
         }
         hashMap.put(str, Integer.valueOf(num.intValue() + 1));
@@ -103,40 +103,40 @@ public abstract class i6 {
 
     public static String c(String str) {
         int length = str.length();
-        int i3 = 0;
-        while (i3 < length) {
-            char charAt = str.charAt(i3);
+        int i7 = 0;
+        while (i7 < length) {
+            char charAt = str.charAt(i7);
             if (charAt < 55356 || charAt > 55358) {
                 if (charAt == 8419) {
                     return str;
                 }
                 if (charAt >= 8252 && charAt <= 12953 && j6.j.containsKey(Character.valueOf(charAt))) {
                     StringBuilder sb2 = new StringBuilder();
-                    i3++;
-                    sb2.append(str.substring(0, i3));
+                    i7++;
+                    sb2.append(str.substring(0, i7));
                     sb2.append("️");
-                    sb2.append(str.substring(i3));
+                    sb2.append(str.substring(i7));
                     str = sb2.toString();
                     length++;
                 }
-            } else if (charAt != 55356 || i3 >= length - 1) {
-                i3++;
+            } else if (charAt != 55356 || i7 >= length - 1) {
+                i7++;
             } else {
-                int i10 = i3 + 1;
+                int i10 = i7 + 1;
                 char charAt2 = str.charAt(i10);
                 if (charAt2 == 56879 || charAt2 == 56324 || charAt2 == 56858 || charAt2 == 56703) {
                     StringBuilder sb3 = new StringBuilder();
-                    i3 += 2;
-                    sb3.append(str.substring(0, i3));
+                    i7 += 2;
+                    sb3.append(str.substring(0, i7));
                     sb3.append("️");
-                    sb3.append(str.substring(i3));
+                    sb3.append(str.substring(i7));
                     str = sb3.toString();
                     length++;
                 } else {
-                    i3 = i10;
+                    i7 = i10;
                 }
             }
-            i3++;
+            i7++;
         }
         return str;
     }
@@ -161,8 +161,8 @@ public abstract class i6 {
         CharSequence charSequence;
         e6 a10 = h4.a(str, null, null);
         if (a10 != null) {
-            int i3 = b;
-            a10.setBounds(0, 0, i3, i3);
+            int i7 = b;
+            a10.setBounds(0, 0, i7, i7);
         } else {
             a10 = null;
         }
@@ -184,19 +184,19 @@ public abstract class i6 {
     public static e6 g(CharSequence charSequence) {
         f4 a10;
         d6 e10 = e(charSequence);
-        int i3 = b;
+        int i7 = b;
         if (e10 == null) {
             if (charSequence == null || (a10 = h4.a(charSequence.toString(), null, null)) == null) {
                 return null;
             }
-            a10.setBounds(0, 0, i3, i3);
+            a10.setBounds(0, 0, i7, i7);
             return a10;
         }
         boolean b10 = b(charSequence);
         h6 h6Var = new h6();
         h6Var.c = e10;
         h6Var.d = b10;
-        h6Var.setBounds(0, 0, i3, i3);
+        h6Var.setBounds(0, 0, i7, i7);
         return h6Var;
     }
 
@@ -213,32 +213,32 @@ public abstract class i6 {
         return d6Var != null;
     }
 
-    public static void i(final byte b10, final short s6) {
-        if (f[b10][s6] == null) {
+    public static void i(final byte b10, final short s5) {
+        if (f[b10][s5] == null) {
             boolean[] zArr = g[b10];
-            if (zArr[s6]) {
+            if (zArr[s5]) {
                 return;
             }
-            zArr[s6] = true;
+            zArr[s5] = true;
             Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.c6
                 @Override // java.lang.Runnable
                 public final void run() {
                     Bitmap bitmap;
                     byte b11 = b10;
-                    short s10 = s6;
+                    short s9 = s5;
                     try {
-                        bitmap = k6.a.h(b11, s10);
+                        bitmap = k6.a.h(b11, s9);
                     } catch (Exception e10) {
                         a8.g(e10, true);
                         bitmap = null;
                     }
                     if (bitmap != null) {
-                        i6.f[b11][s10] = bitmap;
-                        ai.y1 y1Var = i6.l;
-                        g0.r(y1Var);
-                        g0.h3(y1Var);
+                        i6.f[b11][s9] = bitmap;
+                        ai.m0 m0Var = i6.l;
+                        g0.r(m0Var);
+                        g0.h3(m0Var);
                     }
-                    i6.g[b11][s10] = false;
+                    i6.g[b11][s9] = false;
                 }
             });
         }
@@ -253,11 +253,11 @@ public abstract class i6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static ArrayList j(CharSequence charSequence, int[] iArr) {
+        boolean z9;
         boolean z10;
-        boolean z11;
         char charAt;
-        boolean z12;
-        int i3;
+        boolean z11;
+        int i7;
         int i10;
         int i11;
         int i12;
@@ -275,132 +275,132 @@ public abstract class i6 {
             int i18 = -1;
             int i19 = 0;
             int i20 = 0;
-            long j10 = 0;
+            long j3 = 0;
             int i21 = 0;
+            boolean z12 = false;
             boolean z13 = false;
-            boolean z14 = false;
             while (i20 < length) {
                 try {
                     char charAt3 = charSequence.charAt(i20);
-                    if ((charAt3 >= 55356 && charAt3 <= 55358) || (j10 != 0 && (j10 & (-4294967296L)) == 0 && (j10 & 65535) == 55356 && charAt3 >= 56806 && charAt3 <= 56831)) {
+                    if ((charAt3 >= 55356 && charAt3 <= 55358) || (j3 != 0 && (j3 & (-4294967296L)) == 0 && (j3 & 65535) == 55356 && charAt3 >= 56806 && charAt3 <= 56831)) {
                         if (i18 == i17) {
                             i18 = i20;
-                        } else if (z13) {
+                        } else if (z12) {
                             i18 = i20;
                             i21 = 0;
-                            z13 = false;
+                            z12 = false;
                         }
                         try {
                             sb2.append(charAt3);
                             i21++;
-                            j10 = (j10 << 16) | charAt3;
+                            j3 = (j3 << 16) | charAt3;
                         } catch (Exception e10) {
                             e = e10;
-                            z10 = true;
-                            a8.g(e, z10);
+                            z9 = true;
+                            a8.g(e, z9);
                             if (iArr2 != null) {
                                 iArr2[0] = 0;
                             }
                             return arrayList;
                         }
-                    } else if ((sb2.length() > 0 && (charAt3 == 9792 || charAt3 == 9794 || charAt3 == 9877)) || (j10 > 0 && (61440 & charAt3) == 53248)) {
+                    } else if ((sb2.length() > 0 && (charAt3 == 9792 || charAt3 == 9794 || charAt3 == 9877)) || (j3 > 0 && (61440 & charAt3) == 53248)) {
                         sb2.append(charAt3);
                         i21++;
-                        z14 = true;
-                        j10 = 0;
+                        z13 = true;
+                        j3 = 0;
                     } else if (charAt3 == 8419) {
                         if (i20 > 0 && (((charAt = charSequence.charAt(i19)) >= '0' && charAt <= '9') || charAt == '#' || charAt == '*')) {
                             i21 = (i20 - i19) + 1;
                             sb2.append(charAt);
                             sb2.append(charAt3);
-                            z14 = true;
+                            z13 = true;
                             i18 = i19;
-                            z13 = false;
+                            z12 = false;
                         }
                     } else if ((charAt3 == 169 || charAt3 == 174 || (charAt3 >= 8252 && charAt3 <= 12953)) && j6.k.containsKey(Character.valueOf(charAt3))) {
                         if (i18 == -1) {
                             i18 = i20;
-                        } else if (z13) {
+                        } else if (z12) {
                             i18 = i20;
                             i21 = 0;
-                            z13 = false;
+                            z12 = false;
                         }
                         i21++;
                         sb2.append(charAt3);
-                        z14 = true;
+                        z13 = true;
                     } else {
                         if (i18 != -1) {
                             sb2.setLength(0);
-                            z11 = false;
+                            z10 = false;
                             i18 = -1;
                             i21 = 0;
+                            z12 = false;
                             z13 = false;
-                            z14 = false;
                         } else if (charAt3 != 65039 && charAt3 != '\n' && charAt3 != ' ' && charAt3 != '\t') {
-                            z11 = true;
+                            z10 = true;
                         }
-                        if (z14 || (i16 = i20 + 2) >= length) {
-                            z12 = z11;
+                        if (z13 || (i16 = i20 + 2) >= length) {
+                            z11 = z10;
                         } else {
                             int i22 = i20 + 1;
                             char charAt4 = charSequence.charAt(i22);
-                            z12 = z11;
+                            z11 = z10;
                             if (charAt4 == 55356) {
                                 char charAt5 = charSequence.charAt(i16);
                                 if (charAt5 >= 57339 && charAt5 <= 57343) {
                                     sb2.append(charSequence.subSequence(i22, i20 + 3));
                                     i21 += 2;
-                                    i3 = i16;
-                                    i10 = i3;
+                                    i7 = i16;
+                                    i10 = i7;
                                     i11 = 0;
                                     while (i11 < 3) {
                                         int i23 = i10 + 1;
                                         if (i23 < length) {
                                             char charAt6 = charSequence.charAt(i23);
-                                            i15 = i3;
+                                            i15 = i7;
                                             if (i11 == 1) {
                                                 if (charAt6 == 8205 && sb2.length() > 0) {
                                                     sb2.append(charAt6);
                                                     i21++;
                                                     i10 = i23;
-                                                    z14 = false;
-                                                    z12 = false;
+                                                    z13 = false;
+                                                    z11 = false;
                                                 }
                                             } else if (charAt3 == '*' || charAt3 == '#' || (charAt3 >= '0' && charAt3 <= '9')) {
                                                 if (charAt6 >= 65024) {
                                                     if (charAt6 <= 65039) {
                                                         i21++;
-                                                        if (!z14) {
-                                                            z14 = i10 + 2 >= length;
+                                                        if (!z13) {
+                                                            z13 = i10 + 2 >= length;
                                                         }
                                                         i10 = i23;
                                                         i18 = i15;
-                                                        z13 = true;
+                                                        z12 = true;
                                                     }
                                                 }
                                             } else if (i18 != -1 && charAt6 >= 65024) {
                                                 if (charAt6 <= 65039) {
                                                     i21++;
-                                                    if (!z14) {
-                                                        z14 = i10 + 2 >= length;
+                                                    if (!z13) {
+                                                        z13 = i10 + 2 >= length;
                                                     }
                                                     i10 = i23;
                                                 }
                                             }
                                             i11++;
-                                            i3 = i15;
+                                            i7 = i15;
                                         } else {
-                                            i15 = i3;
+                                            i15 = i7;
                                         }
                                         i11++;
-                                        i3 = i15;
+                                        i7 = i15;
                                     }
-                                    int i24 = i3;
-                                    if (z12 && iArr2 != null) {
+                                    int i24 = i7;
+                                    if (z11 && iArr2 != null) {
                                         iArr2[0] = 0;
                                         iArr2 = null;
                                     }
-                                    if (z14 && (i13 = i10 + 2) < length) {
+                                    if (z13 && (i13 = i10 + 2) < length) {
                                         i14 = i10 + 1;
                                         if (charSequence.charAt(i14) == 55356 && (charAt2 = charSequence.charAt(i13)) >= 57339 && charAt2 <= 57343) {
                                             sb2.append(charSequence.subSequence(i14, i10 + 3));
@@ -408,7 +408,7 @@ public abstract class i6 {
                                             i10 = i13;
                                         }
                                     }
-                                    if (z14) {
+                                    if (z13) {
                                         if (iArr2 != null) {
                                             iArr2[0] = iArr2[0] + 1;
                                         }
@@ -423,8 +423,8 @@ public abstract class i6 {
                                         sb2.setLength(0);
                                         i18 = -1;
                                         i21 = 0;
+                                        z12 = false;
                                         z13 = false;
-                                        z14 = false;
                                     }
                                     i20 = i10 + 1;
                                     i19 = i24;
@@ -447,17 +447,17 @@ public abstract class i6 {
                                 } while (charSequence.charAt(i22) == 56128);
                             }
                         }
-                        i3 = i20;
-                        i10 = i3;
+                        i7 = i20;
+                        i10 = i7;
                         i11 = 0;
                         while (i11 < 3) {
                         }
-                        int i242 = i3;
-                        if (z12) {
+                        int i242 = i7;
+                        if (z11) {
                             iArr2[0] = 0;
                             iArr2 = null;
                         }
-                        if (z14) {
+                        if (z13) {
                             i14 = i10 + 1;
                             if (charSequence.charAt(i14) == 55356) {
                                 sb2.append(charSequence.subSequence(i14, i10 + 3));
@@ -465,34 +465,34 @@ public abstract class i6 {
                                 i10 = i13;
                             }
                         }
-                        if (z14) {
+                        if (z13) {
                         }
                         i20 = i10 + 1;
                         i19 = i242;
                         i17 = -1;
                     }
-                    z11 = false;
-                    if (z14) {
+                    z10 = false;
+                    if (z13) {
                     }
-                    z12 = z11;
-                    i3 = i20;
-                    i10 = i3;
+                    z11 = z10;
+                    i7 = i20;
+                    i10 = i7;
                     i11 = 0;
                     while (i11 < 3) {
                     }
-                    int i2422 = i3;
-                    if (z12) {
+                    int i2422 = i7;
+                    if (z11) {
                     }
-                    if (z14) {
+                    if (z13) {
                     }
-                    if (z14) {
+                    if (z13) {
                     }
                     i20 = i10 + 1;
                     i19 = i2422;
                     i17 = -1;
                 } catch (Exception e11) {
                     e = e11;
-                    z10 = true;
+                    z9 = true;
                 }
             }
             if (iArr2 != null && sb2.length() != 0) {
@@ -509,34 +509,34 @@ public abstract class i6 {
         }
     }
 
-    public static CharSequence l(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z10) {
-        return m(charSequence, fontMetricsInt, z10, null, 0);
+    public static CharSequence l(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z9) {
+        return m(charSequence, fontMetricsInt, z9, null, 0);
     }
 
-    public static CharSequence m(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z10, int[] iArr, int i3) {
-        return n(charSequence, fontMetricsInt, z10, iArr, i3, 1.0f, 0);
+    public static CharSequence m(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z9, int[] iArr, int i7) {
+        return n(charSequence, fontMetricsInt, z9, iArr, i7, 1.0f, 0);
     }
 
-    public static CharSequence n(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z10, int[] iArr, int i3, float f10, int i10) {
+    public static CharSequence n(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, boolean z9, int[] iArr, int i7, float f10, int i10) {
         int i11;
         int i12;
-        if (az.U0 || charSequence == null || charSequence.length() == 0) {
+        if (iz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
         }
-        Spannable newSpannable = (z10 || !(charSequence instanceof Spannable)) ? Spannable.Factory.getInstance().newSpannable(charSequence) : (Spannable) charSequence;
-        ArrayList j10 = j(newSpannable, iArr);
-        if (j10.isEmpty()) {
+        Spannable newSpannable = (z9 || !(charSequence instanceof Spannable)) ? Spannable.Factory.getInstance().newSpannable(charSequence) : (Spannable) charSequence;
+        ArrayList j3 = j(newSpannable, iArr);
+        if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.p5[] p5VarArr = (org.telegram.ui.Components.p5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.p5.class);
+        org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.r5.class);
         org.telegram.ui.Components.wp[] wpVarArr = (org.telegram.ui.Components.wp[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.wp.class);
-        int i13 = (az.o() >= 2 ? 100 : 50) - i10;
-        for (int i14 = 0; i14 < j10.size(); i14++) {
+        int i13 = (iz.o() >= 2 ? 100 : 50) - i10;
+        for (int i14 = 0; i14 < j3.size(); i14++) {
             try {
-                g6 g6Var = (g6) j10.get(i14);
-                if (p5VarArr != null && p5VarArr.length > 0) {
-                    for (org.telegram.ui.Components.p5 p5Var : p5VarArr) {
-                        i12 = (p5Var != null && newSpannable.getSpanStart(p5Var) == g6Var.a && newSpannable.getSpanEnd(p5Var) == g6Var.b) ? 0 : i12 + 1;
+                g6 g6Var = (g6) j3.get(i14);
+                if (r5VarArr != null && r5VarArr.length > 0) {
+                    for (org.telegram.ui.Components.r5 r5Var : r5VarArr) {
+                        i12 = (r5Var != null && newSpannable.getSpanStart(r5Var) == g6Var.a && newSpannable.getSpanEnd(r5Var) == g6Var.b) ? 0 : i12 + 1;
                     }
                 }
                 if (wpVarArr != null && wpVarArr.length > 0) {
@@ -544,9 +544,9 @@ public abstract class i6 {
                         i11 = (wpVar != null && newSpannable.getSpanStart(wpVar) == g6Var.a && newSpannable.getSpanEnd(wpVar) == g6Var.b) ? 0 : i11 + 1;
                     }
                 }
-                e6 g7 = g(g6Var.c);
-                if (g7 != null) {
-                    f6 f6Var = new f6(g7, i3);
+                e6 g10 = g(g6Var.c);
+                if (g10 != null) {
+                    f6 f6Var = new f6(g10, i7);
                     f6Var.b = 1.0f;
                     f6Var.c = g0.L(20.0f);
                     f6Var.a = fontMetricsInt;
@@ -572,31 +572,31 @@ public abstract class i6 {
         return newSpannable;
     }
 
-    public static CharSequence o(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i3, Runnable runnable) {
+    public static CharSequence o(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i7, Runnable runnable) {
         g6 g6Var;
         TLRPC.Document document;
-        org.telegram.ui.Components.p5 p5Var;
+        org.telegram.ui.Components.r5 r5Var;
         int i10;
-        if (az.U0 || charSequence == null || charSequence.length() == 0) {
+        if (iz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
         }
-        int i11 = h10.t0;
+        int i11 = p10.s0;
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-        TLRPC.TL_messages_stickerSet l02 = li.b0(i11).l0(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new u3(runnable, 1));
+        TLRPC.TL_messages_stickerSet l02 = ui.b0(i11).l0(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new u3(runnable, 1));
         Spannable newSpannable = charSequence instanceof Spannable ? (Spannable) charSequence : Spannable.Factory.getInstance().newSpannable(charSequence.toString());
-        ArrayList j10 = j(newSpannable, null);
-        if (j10.isEmpty()) {
+        ArrayList j3 = j(newSpannable, null);
+        if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.p5[] p5VarArr = (org.telegram.ui.Components.p5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.p5.class);
-        int i12 = az.o() >= 2 ? 100 : 50;
-        for (int i13 = 0; i13 < j10.size(); i13++) {
+        org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.r5.class);
+        int i12 = iz.o() >= 2 ? 100 : 50;
+        for (int i13 = 0; i13 < j3.size(); i13++) {
             try {
-                g6Var = (g6) j10.get(i13);
-                if (p5VarArr != null) {
-                    for (org.telegram.ui.Components.p5 p5Var2 : p5VarArr) {
-                        i10 = (p5Var2 != null && newSpannable.getSpanStart(p5Var2) == g6Var.a && newSpannable.getSpanEnd(p5Var2) == g6Var.b) ? 0 : i10 + 1;
+                g6Var = (g6) j3.get(i13);
+                if (r5VarArr != null) {
+                    for (org.telegram.ui.Components.r5 r5Var2 : r5VarArr) {
+                        i10 = (r5Var2 != null && newSpannable.getSpanStart(r5Var2) == g6Var.a && newSpannable.getSpanEnd(r5Var2) == g6Var.b) ? 0 : i10 + 1;
                     }
                 }
                 if (l02 != null) {
@@ -607,20 +607,20 @@ public abstract class i6 {
                         TLRPC.Document document2 = arrayList.get(i14);
                         i14++;
                         document = document2;
-                        if (zi.V(document, null, null).contains(g6Var.c)) {
+                        if (ij.V(document, null, null).contains(g6Var.c)) {
                             break;
                         }
                     }
                 }
                 document = null;
-                p5Var = document != null ? new org.telegram.ui.Components.p5(document, fontMetricsInt) : new org.telegram.ui.Components.p5(0L, fontMetricsInt);
-                p5Var.emoji = g6Var.c.toString();
+                r5Var = document != null ? new org.telegram.ui.Components.r5(document, fontMetricsInt) : new org.telegram.ui.Components.r5(0L, fontMetricsInt);
+                r5Var.emoji = g6Var.c.toString();
             } catch (Exception e10) {
                 e = e10;
             }
             try {
-                p5Var.cacheType = i3;
-                newSpannable.setSpan(p5Var, g6Var.a, g6Var.b, 33);
+                r5Var.cacheType = i7;
+                newSpannable.setSpan(r5Var, g6Var.a, g6Var.b, 33);
             } catch (Exception e11) {
                 e = e11;
                 a8.g(e, true);
@@ -642,7 +642,7 @@ public abstract class i6 {
     }
 
     public static void q() {
-        SharedPreferences d12 = hp.d1();
+        SharedPreferences d12 = qp.d1();
         StringBuilder sb2 = new StringBuilder();
         for (Map.Entry entry : j.entrySet()) {
             if (sb2.length() != 0) {
@@ -656,7 +656,7 @@ public abstract class i6 {
     }
 
     public static void r() {
-        SharedPreferences d12 = hp.d1();
+        SharedPreferences d12 = qp.d1();
         StringBuilder sb2 = new StringBuilder();
         for (Map.Entry entry : h.entrySet()) {
             if (sb2.length() != 0) {
@@ -676,9 +676,9 @@ public abstract class i6 {
         while (it.hasNext()) {
             arrayList.add((String) ((Map.Entry) it.next()).getKey());
         }
-        Collections.sort(arrayList, new o0.a(5));
+        Collections.sort(arrayList, new jg.x(15));
         while (arrayList.size() > 48) {
-            a1.g.y(1, arrayList);
+            a8.p0.z(1, arrayList);
         }
     }
 }

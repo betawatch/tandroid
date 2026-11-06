@@ -1,61 +1,47 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bi b;
-    public final /* synthetic */ boolean c;
+import android.view.KeyEvent;
 
-    public /* synthetic */ wg(bi biVar, boolean z10, int i3) {
-        this.a = i3;
-        this.b = biVar;
-        this.c = z10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class wg implements org.telegram.messenger.z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+
+    public /* synthetic */ wg(KeyEvent.Callback callback, int i7) {
+        this.a = i7;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.z10
+    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                bi biVar = this.b;
-                if (!z10) {
-                    biVar.X2.setVisibility(8);
-                    break;
-                } else {
-                    biVar.getClass();
-                    break;
-                }
+                di diVar = (di) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                gh ghVar = diVar.y2;
+                ghVar.setText(charSequence);
+                ghVar.w(charSequence.length(), charSequence.length());
+                diVar.n1();
+                break;
             case 1:
-                boolean z11 = this.c;
-                bi biVar2 = this.b;
-                if (!z11) {
-                    biVar2.t1.setVisibility(8);
-                    break;
-                } else {
-                    biVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z12 = this.c;
-                bi biVar3 = this.b;
-                if (!z12) {
-                    biVar3.v1.setVisibility(8);
-                    break;
-                } else {
-                    biVar3.getClass();
-                    break;
-                }
+                di diVar2 = (di) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                ih ihVar = diVar2.J2;
+                ihVar.setText(charSequence2);
+                ihVar.w(charSequence2.length(), charSequence2.length());
+                diVar2.n1();
+                break;
             default:
-                boolean z13 = this.c;
-                bi biVar4 = this.b;
-                if (!z13) {
-                    biVar4.getClass();
-                    break;
-                } else {
-                    biVar4.s3.setVisibility(4);
-                    break;
-                }
+                uc ucVar = (uc) this.b;
+                fi.g gVar = ucVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                fi.e eVar = ucVar.c0;
+                org.telegram.messenger.g0.r(eVar);
+                eVar.run();
+                break;
         }
     }
 }

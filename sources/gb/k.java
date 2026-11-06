@@ -1,24 +1,36 @@
 package gb;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class k extends hd.c {
-    public /* synthetic */ Object a;
-    public final /* synthetic */ l b;
-    public int c;
+public final class k {
+    public final j a;
+    public final j b;
+    public final double c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(l lVar, hd.c cVar) {
-        super(cVar);
-        this.b = lVar;
+    public k(j jVar, j jVar2, double d) {
+        this.a = jVar;
+        this.b = jVar2;
+        this.c = d;
     }
 
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.c |= TLObject.FLAG_31;
-        return this.b.b(this);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof k)) {
+            return false;
+        }
+        k kVar = (k) obj;
+        return this.a == kVar.a && this.b == kVar.b && Double.compare(this.c, kVar.c) == 0;
+    }
+
+    public final int hashCode() {
+        int hashCode = (this.b.hashCode() + (this.a.hashCode() * 31)) * 31;
+        long doubleToLongBits = Double.doubleToLongBits(this.c);
+        return hashCode + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+    }
+
+    public final String toString() {
+        return "DataCollectionStatus(performance=" + this.a + ", crashlytics=" + this.b + ", sessionSamplingRate=" + this.c + ')';
     }
 }

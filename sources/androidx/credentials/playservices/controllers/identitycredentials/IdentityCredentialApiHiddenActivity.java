@@ -9,19 +9,19 @@ import b1.a;
 import b1.d;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
     public ResultReceiver a;
     public boolean b;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i3, int i10, Intent intent) {
-        super.onActivityResult(i3, i10, intent);
+    public final void onActivityResult(int i7, int i10, Intent intent) {
+        super.onActivityResult(i7, i10, intent);
         ResultReceiver resultReceiver = this.a;
         if (resultReceiver != null) {
             int i11 = d.d;
-            a.d(resultReceiver, i3, i10, intent);
+            a.d(resultReceiver, i7, i10, intent);
         }
         this.b = false;
         finish();
@@ -55,7 +55,7 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
         }
         ResultReceiver resultReceiver2 = this.a;
         if (resultReceiver2 != null) {
-            int i3 = d.d;
+            int i7 = d.d;
             a.c(resultReceiver2, stringExtra, "Internal error");
         }
         finish();

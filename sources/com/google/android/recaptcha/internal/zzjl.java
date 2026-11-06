@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import ed.f;
-import ed.g;
+import hd.e;
+import hd.f;
 import java.util.Collection;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzjl implements zzjt {
     public static final zzjl zza = new zzjl();
@@ -13,8 +13,8 @@ public final class zzjl implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i3, zziz zzizVar, zzzt... zzztVarArr) {
-        String g7;
+    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
+        String g10;
         String str;
         if (zzztVarArr.length != 1) {
             throw new zzdm(4, 3, null);
@@ -43,10 +43,10 @@ public final class zzjl implements zzjt {
                 i10++;
             }
             sb2.append((CharSequence) "]");
-            g7 = sb2.toString();
+            g10 = sb2.toString();
         } else {
             if (zza2 instanceof byte[]) {
-                str = new String((byte[]) zza2, ud.a.a);
+                str = new String((byte[]) zza2, xd.a.a);
             } else if (zza2 instanceof long[]) {
                 long[] jArr = (long[]) zza2;
                 StringBuilder sb3 = new StringBuilder();
@@ -54,16 +54,16 @@ public final class zzjl implements zzjt {
                 int length2 = jArr.length;
                 int i13 = 0;
                 while (i10 < length2) {
-                    long j10 = jArr[i10];
+                    long j3 = jArr[i10];
                     i13++;
                     if (i13 > 1) {
                         sb3.append((CharSequence) ",");
                     }
-                    sb3.append((CharSequence) String.valueOf(j10));
+                    sb3.append((CharSequence) String.valueOf(j3));
                     i10++;
                 }
                 sb3.append((CharSequence) "]");
-                g7 = sb3.toString();
+                g10 = sb3.toString();
             } else if (zza2 instanceof short[]) {
                 short[] sArr = (short[]) zza2;
                 StringBuilder sb4 = new StringBuilder();
@@ -71,16 +71,16 @@ public final class zzjl implements zzjt {
                 int length3 = sArr.length;
                 int i14 = 0;
                 while (i10 < length3) {
-                    short s6 = sArr[i10];
+                    short s5 = sArr[i10];
                     i14++;
                     if (i14 > 1) {
                         sb4.append((CharSequence) ",");
                     }
-                    sb4.append((CharSequence) String.valueOf((int) s6));
+                    sb4.append((CharSequence) String.valueOf((int) s5));
                     i10++;
                 }
                 sb4.append((CharSequence) "]");
-                g7 = sb4.toString();
+                g10 = sb4.toString();
             } else if (zza2 instanceof float[]) {
                 float[] fArr = (float[]) zza2;
                 StringBuilder sb5 = new StringBuilder();
@@ -97,7 +97,7 @@ public final class zzjl implements zzjt {
                     i10++;
                 }
                 sb5.append((CharSequence) "]");
-                g7 = sb5.toString();
+                g10 = sb5.toString();
             } else if (zza2 instanceof double[]) {
                 double[] dArr = (double[]) zza2;
                 StringBuilder sb6 = new StringBuilder();
@@ -114,19 +114,19 @@ public final class zzjl implements zzjt {
                     i10++;
                 }
                 sb6.append((CharSequence) "]");
-                g7 = sb6.toString();
+                g10 = sb6.toString();
             } else if (zza2 instanceof char[]) {
                 str = new String((char[]) zza2);
             } else if (zza2 instanceof Object[]) {
-                g7 = f.f((Object[]) zza2);
+                g10 = e.f((Object[]) zza2);
             } else {
                 if (!(zza2 instanceof Collection)) {
                     throw new zzdm(4, 5, null);
                 }
-                g7 = g.g((Iterable) zza2, ",", "[", "]", null, 56);
+                g10 = f.g((Iterable) zza2, ",", "[", "]", null, 56);
             }
-            g7 = str;
+            g10 = str;
         }
-        zzizVar.zzc().zze(i3, g7);
+        zzizVar.zzc().zze(i7, g10);
     }
 }

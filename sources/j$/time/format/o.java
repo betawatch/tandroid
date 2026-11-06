@@ -29,7 +29,7 @@ public final class o extends n {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j$.time.format.n, j$.time.format.f
     public final boolean j(r rVar, StringBuilder sb2) {
-        boolean z10;
+        boolean z9;
         String[] strArr;
         ZoneId zoneId = (ZoneId) rVar.b(j$.time.temporal.p.a);
         if (zoneId == null) {
@@ -41,7 +41,7 @@ public final class o extends n {
             String str = null;
             Map map = null;
             if (lVar.e(j$.time.temporal.a.INSTANT_SECONDS)) {
-                z10 = zoneId.getRules().g(Instant.H(lVar));
+                z9 = zoneId.getRules().g(Instant.H(lVar));
             } else {
                 j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
                 if (lVar.e(aVar)) {
@@ -49,11 +49,11 @@ public final class o extends n {
                     if (lVar.e(aVar2)) {
                         LocalDateTime J = LocalDateTime.J(LocalDate.R(lVar.y(aVar)), j$.time.h.K(lVar.y(aVar2)));
                         if (zoneId.getRules().e(J) == null) {
-                            z10 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).F(), r0.b().d));
+                            z9 = zoneId.getRules().g(Instant.I(ZonedDateTime.H(J, zoneId, null).F(), r0.b().d));
                         }
                     }
                 }
-                z10 = 2;
+                z9 = 2;
             }
             Locale locale = rVar.b.b;
             TextStyle textStyle = TextStyle.NARROW;
@@ -71,9 +71,9 @@ public final class o extends n {
                     concurrentHashMap.put(id2, new SoftReference(map));
                     strArr = strArr2;
                 }
-                if (!z10) {
+                if (!z9) {
                     str = strArr[textStyle2.a + 1];
-                } else if (z10) {
+                } else if (z9) {
                     str = strArr[textStyle2.a + 3];
                 } else {
                     str = strArr[textStyle2.a + 5];

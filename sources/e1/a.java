@@ -1,16 +1,16 @@
 package e1;
 
 import kotlin.jvm.internal.j;
-import v0.h;
+import v0.g;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ d b;
 
-    public /* synthetic */ a(d dVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(d dVar, int i7) {
+        this.a = i7;
         this.b = dVar;
     }
 
@@ -18,18 +18,18 @@ public final /* synthetic */ class a implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                h hVar = this.b.f;
-                if (hVar != null) {
-                    hVar.a(new w0.c(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
+                g gVar = this.b.f;
+                if (gVar != null) {
+                    gVar.a(new w0.c(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
                     return;
                 } else {
                     j.h("callback");
                     throw null;
                 }
             default:
-                h hVar2 = this.b.f;
-                if (hVar2 != null) {
-                    hVar2.a(new w0.c(2, "No provider data returned."));
+                g gVar2 = this.b.f;
+                if (gVar2 != null) {
+                    gVar2.a(new w0.c(2, "No provider data returned."));
                     return;
                 } else {
                     j.h("callback");

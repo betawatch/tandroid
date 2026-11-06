@@ -1,20 +1,18 @@
 package k7;
 
-import b8.y9;
+import android.os.IInterface;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import j7.m;
+import j7.r;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends com.google.android.gms.common.api.internal.h {
-    public final /* synthetic */ TaskCompletionSource b;
+public interface a extends IInterface {
+    void D0(Status status, j7.c cVar);
 
-    public a(TaskCompletionSource taskCompletionSource) {
-        this.b = taskCompletionSource;
-    }
+    void f0(Status status, j7.f fVar);
 
-    @Override // com.google.android.gms.common.api.internal.i
-    public final void G(Status status) {
-        y9.a(status, null, this.b);
-    }
+    void p0(Status status, m mVar);
+
+    void q0(Status status, r rVar);
 }

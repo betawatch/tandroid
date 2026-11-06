@@ -1,75 +1,88 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.cs;
-import org.telegram.messenger.hs;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import c8.ha;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tj0;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i1 extends tj0 implements cs {
-    public final Path f3;
-    public q0.a g3;
+public final class i1 extends FrameLayout {
+    public float a;
+    public final h1 b;
+    public final ImageReceiver c;
+    public final ImageReceiver d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public float n;
+    public TLRPC.Document r;
+    public boolean s;
+    public final /* synthetic */ s0 w;
 
-    public i1(Context context) {
-        super(context, null);
-        this.f3 = new Path();
-        setWillNotDraw(false);
-        setLayoutManager(new u4.b0());
-        setAdapter(new h1());
-        setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        setClipToPadding(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(s0 s0Var, Context context) {
+        super(context);
+        this.w = s0Var;
+        this.f = true;
+        h1 h1Var = new h1(this, context);
+        this.b = h1Var;
+        ImageReceiver imageReceiver = new ImageReceiver(h1Var);
+        this.c = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(h1Var);
+        this.d = imageReceiver2;
+        imageReceiver.t0 = false;
+        imageReceiver2.t0 = false;
+        setClipChildren(false);
+        addView(h1Var, ha.e(-1, -2, 21));
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final Integer V0(int i3) {
-        return 285212671;
-    }
-
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
-        if (i3 == hs.C5) {
-            getAdapter().f();
+    public final void a(boolean z9, boolean z10, boolean z11) {
+        boolean z12 = this.e;
+        h1 h1Var = this.b;
+        if (z12 != z10) {
+            this.e = z10;
+            if (!z11) {
+                this.h = z10 ? 1.0f : 0.0f;
+            }
+            h1Var.invalidate();
+        }
+        if (this.f != z9) {
+            this.f = z9;
+            if (!z11) {
+                this.n = z9 ? 1.0f : 0.0f;
+            }
+            h1Var.invalidate();
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        q0.a aVar = this.g3;
-        if (aVar != null) {
-            Path path = this.f3;
-            aVar.accept(path);
-            canvas.save();
-            canvas.clipPath(path);
-        }
-        super.draw(canvas);
-        if (this.g3 != null) {
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        hs.e().c(this, hs.C5);
+        this.c.P();
+        this.d.P();
     }
 
-    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        hs.e().n(this, hs.C5);
+        this.c.R();
+        this.d.R();
     }
 
-    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, org.telegram.messenger.camera.q.B(16.0f, org.telegram.messenger.g0.L(48.0f) * Math.min(tg.b0.c().size(), 6), TLObject.FLAG_30));
-    }
-
-    public void setMaskProvider(q0.a aVar) {
-        this.g3 = aVar;
-        invalidate();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = (int) (this.w.r3 * 0.6f);
+        h1 h1Var = this.b;
+        ViewGroup.LayoutParams layoutParams = h1Var.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = h1Var.getLayoutParams();
+        int L = i11 - org.telegram.messenger.g0.L(16.0f);
+        layoutParams2.height = L;
+        layoutParams.width = L;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i11 * 0.7f), TLObject.FLAG_30));
     }
 }

@@ -3,16 +3,16 @@ package org.telegram.utils.twidget;
 import android.graphics.Canvas;
 import android.graphics.RenderNode;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class e extends g {
     public final RenderNode e;
 
-    public e(String str, int i3, int i10, int i11, int i12) {
-        super(i3, i10, i11, i12);
+    public e(String str, int i7, int i10, int i11, int i12) {
+        super(i7, i10, i11, i12);
         RenderNode renderNode = new RenderNode(str);
         this.e = renderNode;
-        renderNode.setPosition(i3, i10, i11, i12);
+        renderNode.setPosition(i7, i10, i11, i12);
     }
 
     @Override // org.telegram.utils.twidget.g

@@ -1,48 +1,203 @@
 package org.telegram.ui.Components.voip;
 
-import java.util.Random;
-import org.telegram.messenger.lc;
-import org.telegram.ui.Components.q9;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.rc;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class r2 extends q9 {
-    public final void g(float f10, float f11) {
-        if (!lc.e(this.r)) {
-            return;
+public final class r2 extends View {
+    public boolean D;
+    public boolean E;
+    public int F;
+    public boolean G;
+    public final i1 H;
+    public final Paint I;
+    public final Rect J;
+    public final boolean K;
+    public final f3[] a;
+    public final f3[] b;
+    public ValueAnimator c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public int x;
+    public int y;
+
+    public r2(Activity activity, TLRPC.User user, i1 i1Var) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.I = paint;
+        this.J = new Rect();
+        boolean e10 = rc.e(512);
+        this.K = e10;
+        this.H = i1Var;
+        if (e10) {
+            this.a = new f3[]{new f3(user, this, org.telegram.messenger.g0.L(32.0f)), new f3(user, this, org.telegram.messenger.g0.L(28.0f)), new f3(user, this, org.telegram.messenger.g0.L(35.0f)), new f3(user, this, org.telegram.messenger.g0.L(28.0f)), new f3(user, this, org.telegram.messenger.g0.L(26.0f))};
+            this.b = new f3[]{new f3(user, this, org.telegram.messenger.g0.L(32.0f)), new f3(user, this, org.telegram.messenger.g0.L(28.0f)), new f3(user, this, org.telegram.messenger.g0.L(35.0f)), new f3(user, this, org.telegram.messenger.g0.L(28.0f)), new f3(user, this, org.telegram.messenger.g0.L(26.0f))};
+            i1Var.a(this);
+            setLayerType(2, null);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         }
-        int i3 = 0;
-        while (true) {
-            float f12 = i3;
-            float f13 = this.n;
-            if (f12 >= f13) {
-                return;
-            }
-            float[] fArr = this.i;
-            float f14 = fArr[i3];
-            float[] fArr2 = this.j;
-            float f15 = fArr2[i3];
-            float f16 = (f15 * f10 * 8.2f * 1.0f) + (0.8f * f15) + f14;
-            fArr[i3] = f16;
-            if (f16 >= 1.0f) {
-                fArr[i3] = 0.0f;
-                float[] fArr3 = this.g;
-                this.e[i3] = fArr3[i3];
-                float[] fArr4 = this.h;
-                this.f[i3] = fArr4[i3];
-                if (f11 < 1.0f) {
-                    float f17 = 360.0f / f13;
-                    float f18 = this.b;
-                    float f19 = this.a;
-                    Random random = this.m;
-                    fArr3[i3] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f18 - f19) * f11) + f19;
-                    fArr4[i3] = ((((random.nextInt() * f11) % 100.0f) / 100.0f) * 0.05f * f17) + (f17 * f12);
-                    fArr2[i3] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
-                } else {
-                    c(fArr3, fArr4, i3);
+    }
+
+    public final void a() {
+        if (this.K && !this.D) {
+            this.D = true;
+            int L = org.telegram.messenger.g0.L(12.0f);
+            this.F = L;
+            ValueAnimator ofInt = ValueAnimator.ofInt(0, L);
+            this.c = ofInt;
+            ofInt.addUpdateListener(new q2(this, 0));
+            this.c.setInterpolator(xq.g);
+            this.c.setDuration(200L);
+            this.c.start();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.K) {
+            for (f3 f3Var : this.a) {
+                g5 g5Var = f3Var.a;
+                if (g5Var != null) {
+                    g5Var.a();
+                    ValueAnimator valueAnimator = f3Var.b;
+                    if (valueAnimator != null) {
+                        valueAnimator.start();
+                    }
                 }
             }
-            i3++;
+            for (f3 f3Var2 : this.b) {
+                g5 g5Var2 = f3Var2.a;
+                if (g5Var2 != null) {
+                    g5Var2.a();
+                    ValueAnimator valueAnimator2 = f3Var2.b;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.start();
+                    }
+                }
+            }
         }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.K) {
+            for (f3 f3Var : this.a) {
+                g5 g5Var = f3Var.a;
+                if (g5Var != null) {
+                    ValueAnimator valueAnimator = f3Var.b;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        f3Var.b = null;
+                    }
+                    g5Var.b();
+                }
+            }
+            for (f3 f3Var2 : this.b) {
+                g5 g5Var2 = f3Var2.a;
+                if (g5Var2 != null) {
+                    ValueAnimator valueAnimator2 = f3Var2.b;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.cancel();
+                        f3Var2.b = null;
+                    }
+                    g5Var2.b();
+                }
+            }
+            ValueAnimator valueAnimator3 = this.c;
+            if (valueAnimator3 != null) {
+                valueAnimator3.cancel();
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.K && !this.G) {
+            int width = getWidth();
+            int height = getHeight();
+            Rect rect = this.J;
+            rect.set(0, 0, width, height);
+            float x10 = getX();
+            float y10 = getY();
+            i1 i1Var = this.H;
+            i1Var.d(x10, y10);
+            int measuredWidth = getMeasuredWidth() / 2;
+            f3[] f3VarArr = this.a;
+            f3VarArr[0].b((measuredWidth - org.telegram.messenger.g0.L(120.0f)) - this.d, org.telegram.messenger.g0.L(120.0f) - this.r);
+            f3VarArr[1].b((measuredWidth - org.telegram.messenger.g0.L(180.0f)) - this.e, org.telegram.messenger.g0.L(150.0f) - this.s);
+            f3VarArr[2].b((measuredWidth - org.telegram.messenger.g0.L(150.0f)) - this.f, org.telegram.messenger.g0.L(185.0f) - this.w);
+            f3VarArr[3].b((measuredWidth - org.telegram.messenger.g0.L(176.0f)) - this.h, org.telegram.messenger.g0.L(240.0f) - this.x);
+            f3VarArr[4].b((measuredWidth - org.telegram.messenger.g0.L(130.0f)) - this.n, org.telegram.messenger.g0.L(265.0f) - this.y);
+            for (f3 f3Var : f3VarArr) {
+                f3Var.a(canvas);
+            }
+            f3[] f3VarArr2 = this.b;
+            f3VarArr2[0].b(org.telegram.messenger.g0.L(50.0f) + measuredWidth + this.d, org.telegram.messenger.g0.L(120.0f) - this.r);
+            f3VarArr2[1].b(org.telegram.messenger.g0.L(110.0f) + measuredWidth + this.e, org.telegram.messenger.g0.L(150.0f) - this.s);
+            f3VarArr2[2].b(org.telegram.messenger.g0.L(80.0f) + measuredWidth + this.f, org.telegram.messenger.g0.L(185.0f) - this.w);
+            f3VarArr2[3].b(org.telegram.messenger.g0.L(106.0f) + measuredWidth + this.h, org.telegram.messenger.g0.L(240.0f) - this.x);
+            f3VarArr2[4].b(org.telegram.messenger.g0.L(60.0f) + measuredWidth + this.n, org.telegram.messenger.g0.L(265.0f) - this.y);
+            for (f3 f3Var2 : f3VarArr2) {
+                f3Var2.a(canvas);
+            }
+            int alpha = i1Var.b().getAlpha();
+            Paint paint = this.I;
+            paint.setAlpha(qs.e4);
+            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint, 31);
+            i1Var.b().setAlpha(qs.e4);
+            canvas.drawRect(rect, i1Var.b());
+            i1Var.b().setAlpha(alpha);
+            if (i1Var.e) {
+                int alpha2 = ((Paint) i1Var.d.a).getAlpha();
+                ((Paint) i1Var.d.a).setAlpha(qs.e4);
+                canvas.drawRect(rect, (Paint) i1Var.d.a);
+                ((Paint) i1Var.d.a).setAlpha(alpha2);
+            }
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        if (this.K) {
+            for (f3 f3Var : this.a) {
+                int measuredWidth = getMeasuredWidth();
+                getMeasuredHeight();
+                f3Var.o = measuredWidth;
+                f3Var.k.invalidate();
+            }
+            for (f3 f3Var2 : this.b) {
+                int measuredWidth2 = getMeasuredWidth();
+                getMeasuredHeight();
+                f3Var2.o = measuredWidth2;
+                f3Var2.k.invalidate();
+            }
+        }
+    }
+
+    public void setState(boolean z9) {
+        this.G = z9;
+        invalidate();
     }
 }

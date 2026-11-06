@@ -1,22 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public enum dc {
-    d(R.raw.ic_download, 2, "Box", "Arrow"),
-    e(R.raw.ic_save_to_gallery, 0, "Box", "Arrow", "Mask", "Arrow 2", "Splash"),
-    f(R.raw.ic_save_to_music, 2, "Box", "Arrow"),
-    h(R.raw.ic_save_to_gifs, 0, "gif");
+public final /* synthetic */ class dc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kb b;
 
-    public final int a;
-    public final String[] b;
-    public final int c;
+    public /* synthetic */ dc(kb kbVar, int i7) {
+        this.a = i7;
+        this.b = kbVar;
+    }
 
-    dc(int i3, int i10, String... strArr) {
-        this.a = i3;
-        this.c = i10;
-        this.b = strArr;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.performHapticFeedback(3, 2);
+                break;
+            default:
+                this.b.performHapticFeedback(3, 2);
+                break;
+        }
     }
 }

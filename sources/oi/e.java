@@ -1,61 +1,64 @@
 package oi;
 
-import android.text.SpannableString;
-import java.lang.reflect.Array;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public class e extends SpannableString {
-    public volatile boolean a;
+public abstract class e extends Drawable {
+    public final Rect a = new Rect();
+    public r b = q.f();
+    public int c = qs.e4;
+    public float d;
+    public float e;
 
-    public e(CharSequence charSequence) {
-        super(charSequence);
-        this.a = false;
+    public abstract void a();
+
+    public void b(Rect rect) {
+        rect.set(getBounds());
     }
 
-    public static Object[] a(e eVar, int i3, Class cls) {
-        return super.getSpans(0, i3, cls);
-    }
-
-    public static int b(e eVar, Object obj) {
-        return super.getSpanStart(obj);
-    }
-
-    public static int c(e eVar, Object obj) {
-        return super.getSpanEnd(obj);
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanEnd(Object obj) {
-        if (this.a) {
-            return super.getSpanEnd(obj);
-        }
-        return -1;
-    }
-
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanFlags(Object obj) {
-        if (this.a) {
-            return super.getSpanFlags(obj);
-        }
+    public int c() {
         return 0;
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int getSpanStart(Object obj) {
-        if (this.a) {
-            return super.getSpanStart(obj);
+    public int d() {
+        return 0;
+    }
+
+    public abstract boolean e();
+
+    public abstract void f(int i7);
+
+    public abstract void g(r rVar);
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.c;
+    }
+
+    public final void i(float f10, float f11) {
+        if (this.d == f10 && this.e == f11) {
+            return;
         }
-        return -1;
+        this.d = f10;
+        this.e = f11;
+        h();
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public Object[] getSpans(int i3, int i10, Class cls) {
-        return !this.a ? (Object[]) Array.newInstance((Class<?>) cls, 0) : super.getSpans(i3, i10, cls);
+    public abstract boolean j();
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        if (this.c != i7) {
+            this.c = i7;
+            f(i7);
+        }
     }
 
-    @Override // android.text.SpannableString, android.text.Spanned
-    public int nextSpanTransition(int i3, int i10, Class cls) {
-        return !this.a ? i10 : super.nextSpanTransition(i3, i10, cls);
+    public abstract void updateColors();
+
+    public void h() {
     }
 }

@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public interface r9 {
     void M(String str);
 
-    String M0();
+    String R0();
 
-    void V0(org.telegram.messenger.rr rrVar);
+    void V0(org.telegram.messenger.zr zrVar);
 
-    boolean e1(String str, i9 i9Var);
+    boolean h1(String str, j9 j9Var);
 
     void onDismiss();
 }

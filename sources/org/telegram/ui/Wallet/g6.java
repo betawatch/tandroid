@@ -1,115 +1,63 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.WindowManager;
-import java.util.Iterator;
-import java.util.WeakHashMap;
-import org.telegram.messenger.hs;
-import org.telegram.ui.Components.b40;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class g6 implements SensorEventListener {
-    public static g6 H;
-    public float E;
-    public float F;
-    public final SensorManager a;
-    public final Sensor b;
-    public final WindowManager c;
-    public boolean r;
-    public boolean s;
-    public float w;
-    public float x;
-    public final Handler d = new Handler(Looper.getMainLooper());
-    public final WeakHashMap e = new WeakHashMap();
-    public final float[] f = new float[9];
-    public final float[] h = new float[9];
-    public final float[] n = new float[3];
-    public int y = -1;
-    public final b40 G = new b40(this, 1);
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class g6 extends wp {
+    public final /* synthetic */ h6 L;
 
-    public g6(Context context) {
-        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-        this.a = sensorManager;
-        this.c = (WindowManager) context.getSystemService("window");
-        Sensor defaultSensor = sensorManager == null ? null : sensorManager.getDefaultSensor(15);
-        if (defaultSensor == null && sensorManager != null) {
-            defaultSensor = sensorManager.getDefaultSensor(11);
-        }
-        this.b = defaultSensor;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(h6 h6Var) {
+        super(R.drawable.wallet_gram_large, 0);
+        this.L = h6Var;
     }
 
-    public final void a() {
-        if (this.r) {
-            this.a.unregisterListener(this);
-        }
-        this.s = false;
-        this.r = false;
-        this.d.removeCallbacks(this.G);
-        this.F = 0.0f;
-        this.E = 0.0f;
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        int i3;
-        float[] fArr = sensorEvent.values;
-        float[] fArr2 = this.f;
-        SensorManager.getRotationMatrixFromVector(fArr2, fArr);
-        int rotation = this.c.getDefaultDisplay().getRotation();
-        if (this.y != rotation) {
-            this.s = false;
-            this.y = rotation;
-        }
-        int i10 = this.y;
-        int i11 = hs.N1;
-        if (i10 == 1) {
-            i3 = 129;
-            i11 = 2;
-        } else {
-            i3 = hs.O1;
-            if (i10 != 2) {
-                if (i10 == 3) {
-                    i11 = 130;
-                    i3 = 1;
-                } else {
-                    i3 = 2;
-                    i11 = 1;
-                }
-            }
-        }
-        float[] fArr3 = this.h;
-        SensorManager.remapCoordinateSystem(fArr2, i11, i3, fArr3);
-        float[] fArr4 = this.n;
-        SensorManager.getOrientation(fArr3, fArr4);
-        if (Float.isNaN(fArr4[1]) || Float.isNaN(fArr4[2])) {
+    @Override // org.telegram.ui.Components.wp, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        h6 h6Var = this.L;
+        FrameLayout.LayoutParams layoutParams = h6Var.P;
+        if (h6Var.i0) {
             return;
         }
-        if (!this.s) {
-            this.w = fArr4[1];
-            this.x = fArr4[2];
-            this.s = true;
+        this.x = 1.0f;
+        if (h6Var.a) {
+            float max = Math.max(0.0f, Math.min(1.0f, h6Var.T));
+            if (max == 0.0f) {
+                float intrinsicWidth = this.c.getIntrinsicWidth() * h6Var.b;
+                float intrinsicHeight = this.c.getIntrinsicHeight();
+                float f11 = h6Var.b;
+                float f12 = intrinsicHeight * f11;
+                float f13 = (f11 * f10) + layoutParams.leftMargin;
+                float height = ((h6Var.N.getHeight() / 2.0f) - (f12 / 2.0f)) + layoutParams.topMargin;
+                h6Var.f.set(f13, height, intrinsicWidth + f13, f12 + height);
+            }
+            if (max < 1.0f) {
+                if (h6Var.h0 == null) {
+                    h6Var.h0 = new p6(this.c.getIntrinsicWidth(), this.c.getIntrinsicHeight());
+                    h6Var.m();
+                }
+                Drawable drawable = this.c;
+                h6Var.h0.setBounds(drawable.getBounds());
+                p6 p6Var = h6Var.h0;
+                p6Var.i = h6Var.f0.c;
+                this.c = p6Var;
+                this.d = false;
+                this.x = 1.0f - max;
+                super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
+                this.c = drawable;
+                this.d = true;
+            }
+            this.x = max;
+            if (max == 0.0f) {
+                return;
+            }
         }
-        float max = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[2] - this.x, 6.283185307179586d)) / 0.45f));
-        float max2 = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[1] - this.w, 6.283185307179586d)) / 0.45f));
-        float f10 = this.E;
-        this.E = com.google.android.recaptcha.internal.a.y(max, f10, 0.12f, f10);
-        float f11 = this.F;
-        this.F = com.google.android.recaptcha.internal.a.y(max2, f11, 0.12f, f11);
-        Iterator it = this.e.keySet().iterator();
-        while (it.hasNext()) {
-            ((View) it.next()).invalidate();
-        }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i3) {
+        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
     }
 }

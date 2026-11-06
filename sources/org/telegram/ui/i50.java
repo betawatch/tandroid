@@ -1,35 +1,45 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class i50 {
-    public String G;
-    public int H;
-    public org.telegram.ui.ActionBar.f1 I;
-    public org.telegram.ui.ActionBar.t2 J;
-    public org.telegram.ui.Components.t70 b;
-    public a3 d;
-    public int e;
-    public View f;
-    public boolean h;
-    public TLRPC.Chat n;
-    public boolean r;
-    public View s;
-    public org.telegram.ui.Components.w70 w;
-    public VideoPlayerHolderBase x;
-    public w2 y;
-    public int a = 0;
-    public final m2.p0 c = new m2.p0();
-    public final a0.h E = new a0.h();
-    public ArrayList F = new ArrayList();
+public final class i50 implements TextWatcher {
+    public final /* synthetic */ j50 a;
 
-    public abstract void a(g4 g4Var, org.telegram.ui.Components.py0 py0Var);
+    public i50(j50 j50Var) {
+        this.a = j50Var;
+    }
 
-    public abstract boolean b(TL_iv.PageBlock pageBlock, g4 g4Var);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        j50 j50Var = this.a;
+        m50 m50Var = j50Var.h;
+        if (j50Var.c != 0) {
+            m50Var.getConnectionsManager().cancelRequest(j50Var.c, true);
+            j50Var.c = 0;
+        }
+        q10 q10Var = j50Var.d;
+        if (q10Var != null) {
+            org.telegram.messenger.g0.r(q10Var);
+        }
+        j50Var.e = null;
+        if (trim.isEmpty()) {
+            m50.f0(m50Var, null);
+            return;
+        }
+        q10 q10Var2 = new q10(3, this, trim);
+        j50Var.d = q10Var2;
+        org.telegram.messenger.g0.i3(q10Var2, 300L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
 }

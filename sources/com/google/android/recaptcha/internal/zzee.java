@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzee extends j implements p {
     int zza;
@@ -18,23 +18,23 @@ final class zzee extends j implements p {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzeh zzehVar, long j10, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
+    public zzee(zzeh zzehVar, long j3, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
         super(2, cVar);
         this.zzb = zzehVar;
-        this.zzc = j10;
+        this.zzc = j3;
         this.zzd = zzdwVar;
         this.zze = str;
         this.zzf = zzhhVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, cVar);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzee) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -43,34 +43,34 @@ final class zzee extends j implements p {
     
         if (r8 != r0) goto L17;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
         try {
-            if (i3 == 0) {
-                ib.b(obj);
+            if (i7 == 0) {
+                b.c(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
-                long j10 = this.zzc;
-                zzeh.zzf(zzehVar, j10);
+                long j3 = this.zzc;
+                zzeh.zzf(zzehVar, j3);
                 zzdw zzdwVar = this.zzd;
                 this.zzg = zzhkVar;
                 this.zza = 1;
-                obj = zzdwVar.zzb(j10, this);
+                obj = zzdwVar.zzb(j3, this);
             } else {
-                if (i3 != 1) {
-                    ib.b(obj);
+                if (i7 != 1) {
+                    b.c(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                ib.b(obj);
+                b.c(obj);
             }
             this.zzg = null;
             this.zza = 2;

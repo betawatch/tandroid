@@ -1,11 +1,10 @@
 package org.telegram.ui.ActionBar;
 
-import ci.u8;
-import org.telegram.ui.pm;
-import org.telegram.ui.rm;
-import org.telegram.ui.um;
+import org.telegram.ui.tm;
+import org.telegram.ui.vm;
+import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class p4 {
     public final j6 a;
@@ -13,19 +12,19 @@ public final class p4 {
     public final boolean c;
     public final boolean d;
     public boolean e;
-    public u8 h;
-    public pm i;
-    public pm j;
-    public rm k;
-    public um m;
+    public aa.d0 h;
+    public tm i;
+    public tm j;
+    public vm k;
+    public ym m;
     public boolean f = true;
     public boolean g = true;
     public long l = 200;
 
-    public p4(j6 j6Var, int i3, boolean z10, boolean z11) {
+    public p4(j6 j6Var, int i7, boolean z9, boolean z10) {
         this.a = j6Var;
-        this.b = i3;
-        this.c = z10;
-        this.d = z11;
+        this.b = i7;
+        this.c = z9;
+        this.d = z10;
     }
 }

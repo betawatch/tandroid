@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p7 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -21,24 +21,24 @@ public final /* synthetic */ class p7 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ p7(w7 w7Var, TLRPC.Document document, wv wvVar, e20 e20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, ac acVar, Object obj, String str, long j10, int i3, int i10) {
+    public /* synthetic */ p7(w7 w7Var, TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, int i10) {
         this.e = w7Var;
         this.f = document;
-        this.h = wvVar;
-        this.n = e20Var;
+        this.h = ewVar;
+        this.n = m20Var;
         this.r = tL_fileLocationToBeDeprecated;
-        this.s = acVar;
+        this.s = hcVar;
         this.w = obj;
         this.x = str;
-        this.c = j10;
-        this.b = i3;
+        this.c = j3;
+        this.b = i7;
         this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         a0.h hVar;
-        int i3 = this.a;
+        int i7 = this.a;
         Object obj = this.x;
         Object obj2 = this.s;
         Object obj3 = this.r;
@@ -46,12 +46,12 @@ public final /* synthetic */ class p7 implements Runnable {
         Object obj5 = this.h;
         Object obj6 = this.f;
         c1 c1Var = this.e;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                ((w7) c1Var).Z((TLRPC.Document) obj6, (wv) obj5, (e20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (ac) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
+                ((w7) c1Var).Z((TLRPC.Document) obj6, (ew) obj5, (m20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (hc) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
                 break;
             default:
-                li liVar = (li) c1Var;
+                ui uiVar = (ui) c1Var;
                 a0.h hVar2 = (a0.h) obj6;
                 HashMap hashMap = (HashMap) obj5;
                 ArrayList arrayList = (ArrayList) obj4;
@@ -59,10 +59,10 @@ public final /* synthetic */ class p7 implements Runnable {
                 HashMap hashMap2 = (HashMap) obj2;
                 a0.h hVar4 = (a0.h) this.w;
                 Runnable runnable = (Runnable) obj;
-                a0.h hVar5 = liVar.K;
-                ConcurrentHashMap concurrentHashMap = liVar.O;
-                a0.h hVar6 = liVar.J;
-                ArrayList[] arrayListArr = liVar.H;
+                a0.h hVar5 = uiVar.J;
+                ConcurrentHashMap concurrentHashMap = uiVar.N;
+                a0.h hVar6 = uiVar.I;
+                ArrayList[] arrayListArr = uiVar.G;
                 int i10 = 0;
                 while (true) {
                     int i11 = this.b;
@@ -83,16 +83,16 @@ public final /* synthetic */ class p7 implements Runnable {
                         }
                         concurrentHashMap.putAll(hashMap);
                         arrayListArr[i11] = arrayList;
-                        liVar.Y[i11] = this.c;
-                        liVar.Z[i11] = this.d;
-                        liVar.I[i11] = hVar3;
+                        uiVar.X[i11] = this.c;
+                        uiVar.Y[i11] = this.d;
+                        uiVar.H[i11] = hVar3;
                         if (i11 == 0) {
-                            liVar.e0 = hashMap3;
-                            liVar.d0 = hVar4;
+                            uiVar.d0 = hashMap3;
+                            uiVar.c0 = hVar4;
                         } else if (i11 == 3) {
-                            liVar.f0 = hashMap3;
+                            uiVar.e0 = hashMap3;
                         }
-                        liVar.getNotificationCenter().k(60, Integer.valueOf(i11), Boolean.TRUE);
+                        uiVar.getNotificationCenter().k(60, Integer.valueOf(i11), Boolean.TRUE);
                         if (runnable2 != null) {
                             runnable2.run();
                             break;
@@ -114,13 +114,13 @@ public final /* synthetic */ class p7 implements Runnable {
         }
     }
 
-    public /* synthetic */ p7(li liVar, int i3, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j10, int i10, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
-        this.e = liVar;
-        this.b = i3;
+    public /* synthetic */ p7(ui uiVar, int i7, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j3, int i10, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
+        this.e = uiVar;
+        this.b = i7;
         this.f = hVar;
         this.h = hashMap;
         this.n = arrayList;
-        this.c = j10;
+        this.c = j3;
         this.d = i10;
         this.r = hVar2;
         this.s = hashMap2;

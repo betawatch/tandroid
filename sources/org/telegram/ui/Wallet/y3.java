@@ -1,19 +1,11 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class y3 extends ai.t2 {
-    public final /* synthetic */ org.telegram.ui.Cells.t0 E;
+import org.telegram.messenger.ls;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(org.telegram.ui.Cells.t0 t0Var, org.telegram.ui.Cells.t0 t0Var2) {
-        super(t0Var);
-        this.E = t0Var2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.E.invalidate();
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class y3 implements ls {
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
     }
 }

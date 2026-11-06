@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzqq {
     public static final /* synthetic */ int zze = 0;
@@ -13,15 +13,15 @@ public abstract class zzqq {
     private zzqq() {
     }
 
-    public static int zzF(int i3) {
-        return (i3 >>> 1) ^ (-(i3 & 1));
+    public static int zzF(int i7) {
+        return (i7 >>> 1) ^ (-(i7 & 1));
     }
 
-    public static long zzG(long j10) {
-        return (j10 >>> 1) ^ (-(1 & j10));
+    public static long zzG(long j3) {
+        return (j3 >>> 1) ^ (-(1 & j3));
     }
 
-    public static zzqq zzH(byte[] bArr, int i3, int i10, boolean z10) {
+    public static zzqq zzH(byte[] bArr, int i7, int i10, boolean z9) {
         zzqn zzqnVar = new zzqn(bArr, 0, 0, false, null);
         try {
             zzqnVar.zze(0);
@@ -31,13 +31,13 @@ public abstract class zzqq {
         }
     }
 
-    public abstract void zzA(int i3);
+    public abstract void zzA(int i7);
 
     public abstract boolean zzC();
 
     public abstract boolean zzD();
 
-    public abstract boolean zzE(int i3);
+    public abstract boolean zzE(int i7);
 
     public final void zzI() {
         if (this.zza + this.zzb >= this.zzc) {
@@ -70,7 +70,7 @@ public abstract class zzqq {
 
     public abstract int zzd();
 
-    public abstract int zze(int i3);
+    public abstract int zze(int i7);
 
     public abstract int zzf();
 
@@ -102,7 +102,7 @@ public abstract class zzqq {
 
     public abstract String zzy();
 
-    public abstract void zzz(int i3);
+    public abstract void zzz(int i7);
 
     public /* synthetic */ zzqq(zzqp zzqpVar) {
     }

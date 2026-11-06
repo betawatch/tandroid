@@ -1,32 +1,42 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.qr;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements RequestDelegate {
+public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ qr c;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ a0(VoIPService voIPService, qr qrVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ a0(int i7, VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = i7;
         this.b = voIPService;
-        this.c = qrVar;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$acceptIncomingCall$103(this.c, tLObject, tL_error);
+                this.b.lambda$startGroupCheckShortpoll$61(this.d, this.c);
+                break;
+            case 1:
+                this.b.lambda$processAcceptedCall$19(this.c, this.d);
                 break;
             default:
-                this.b.lambda$startOutgoingCall$11(this.c, tLObject, tL_error);
+                this.b.lambda$acceptIncomingCall$101(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ a0(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 0;
+        this.b = voIPService;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 }

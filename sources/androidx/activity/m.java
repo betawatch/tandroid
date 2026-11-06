@@ -10,17 +10,17 @@ import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class m extends Dialog implements androidx.lifecycle.t, v4.e {
+public class m extends Dialog implements androidx.lifecycle.t, w4.e {
     public androidx.lifecycle.v a;
     public final n b;
-    public final v c;
+    public final w c;
 
-    public m(Context context, int i3) {
-        super(context, i3);
+    public m(Context context, int i7) {
+        super(context, i7);
         this.b = new n(this);
-        this.c = new v(new ai.s(this, 9));
+        this.c = new w(new a3.f(this, 7));
     }
 
     public static void a(m mVar) {
@@ -52,9 +52,9 @@ public class m extends Dialog implements androidx.lifecycle.t, v4.e {
         decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
     }
 
-    @Override // v4.e
-    public final m.p g() {
-        return (m.p) this.b.d;
+    @Override // w4.e
+    public final m.q g() {
+        return (m.q) this.b.d;
     }
 
     @Override // androidx.lifecycle.t
@@ -79,18 +79,18 @@ public class m extends Dialog implements androidx.lifecycle.t, v4.e {
         if (Build.VERSION.SDK_INT >= 33) {
             OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
             kotlin.jvm.internal.j.d(onBackInvokedDispatcher, "onBackInvokedDispatcher");
-            v vVar = this.c;
-            vVar.getClass();
-            vVar.e = onBackInvokedDispatcher;
-            vVar.c(vVar.g);
+            w wVar = this.c;
+            wVar.getClass();
+            wVar.e = onBackInvokedDispatcher;
+            wVar.c(wVar.g);
         }
         this.b.e(bundle);
-        androidx.lifecycle.v vVar2 = this.a;
-        if (vVar2 == null) {
-            vVar2 = new androidx.lifecycle.v(this);
-            this.a = vVar2;
+        androidx.lifecycle.v vVar = this.a;
+        if (vVar == null) {
+            vVar = new androidx.lifecycle.v(this);
+            this.a = vVar;
         }
-        vVar2.e(androidx.lifecycle.m.ON_CREATE);
+        vVar.e(androidx.lifecycle.m.ON_CREATE);
     }
 
     @Override // android.app.Dialog
@@ -125,9 +125,9 @@ public class m extends Dialog implements androidx.lifecycle.t, v4.e {
     }
 
     @Override // android.app.Dialog
-    public void setContentView(int i3) {
+    public void setContentView(int i7) {
         b();
-        super.setContentView(i3);
+        super.setContentView(i7);
     }
 
     @Override // android.app.Dialog

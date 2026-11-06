@@ -1,105 +1,109 @@
 package com.google.firebase.sessions;
 
+import a8.h8;
+import a8.r7;
+import aa.n;
+import ab.b0;
 import android.content.Context;
-import android.support.v4.media.c;
 import android.support.v4.media.session.a0;
-import b8.ke;
-import b8.r1;
 import com.google.firebase.components.ComponentRegistrar;
-import d2.l0;
-import d2.t1;
-import db.d0;
-import db.i;
-import db.n;
-import db.s;
-import db.u;
-import db.v0;
+import e2.j0;
+import g6.d0;
+import gb.e0;
+import gb.i;
+import gb.m;
+import gb.o;
+import gb.s;
+import gb.t;
+import gb.v;
+import gb.w0;
+import ib.c;
+import id.h;
 import java.util.List;
-import k5.f;
 import kotlin.jvm.internal.j;
-import n9.h;
-import p9.a;
-import p9.b;
-import t9.r;
-import ua.e;
-import wd.x;
-import za.p;
+import l5.f;
+import o9.g;
+import q9.a;
+import q9.b;
+import u9.q;
+import va.d;
+import zd.x;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
     @Deprecated
     public static final String LIBRARY_NAME = "fire-sessions";
-    private static final u Companion = new u();
-    private static final r appContext = r.a(Context.class);
-    private static final r firebaseApp = r.a(h.class);
-    private static final r firebaseInstallationsApi = r.a(e.class);
-    private static final r backgroundDispatcher = new r(a.class, x.class);
-    private static final r blockingDispatcher = new r(b.class, x.class);
-    private static final r transportFactory = r.a(f.class);
-    private static final r firebaseSessionsComponent = r.a(db.r.class);
+    private static final v Companion = new v();
+    private static final q appContext = q.a(Context.class);
+    private static final q firebaseApp = q.a(g.class);
+    private static final q firebaseInstallationsApi = q.a(d.class);
+    private static final q backgroundDispatcher = new q(a.class, x.class);
+    private static final q blockingDispatcher = new q(b.class, x.class);
+    private static final q transportFactory = q.a(f.class);
+    private static final q firebaseSessionsComponent = q.a(s.class);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final n getComponents$lambda$0(t9.b bVar) {
-        return (n) ((i) ((db.r) bVar.g(firebaseSessionsComponent))).p.get();
+    public static final o getComponents$lambda$0(u9.b bVar) {
+        return (o) ((i) ((s) bVar.e(firebaseSessionsComponent))).p.get();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final db.r getComponents$lambda$1(t9.b bVar) {
-        Object g7 = bVar.g(appContext);
-        j.d(g7, "get(...)");
-        Object g10 = bVar.g(backgroundDispatcher);
-        j.d(g10, "get(...)");
-        Object g11 = bVar.g(blockingDispatcher);
-        j.d(g11, "get(...)");
-        Object g12 = bVar.g(firebaseApp);
-        j.d(g12, "get(...)");
-        Object g13 = bVar.g(firebaseInstallationsApi);
-        j.d(g13, "get(...)");
-        ta.b c2 = bVar.c(transportFactory);
-        j.d(c2, "getProvider(...)");
+    public static final s getComponents$lambda$1(u9.b bVar) {
+        Object e10 = bVar.e(appContext);
+        j.d(e10, "get(...)");
+        Object e11 = bVar.e(backgroundDispatcher);
+        j.d(e11, "get(...)");
+        Object e12 = bVar.e(blockingDispatcher);
+        j.d(e12, "get(...)");
+        Object e13 = bVar.e(firebaseApp);
+        j.d(e13, "get(...)");
+        Object e14 = bVar.e(firebaseInstallationsApi);
+        j.d(e14, "get(...)");
+        ua.b f10 = bVar.f(transportFactory);
+        j.d(f10, "getProvider(...)");
         i iVar = new i();
-        iVar.a = e.a.a((h) g12);
-        e.a a10 = e.a.a((Context) g7);
-        iVar.b = a10;
-        iVar.c = fb.a.a(new c(a10, 25));
-        iVar.d = fb.a.a(s.a);
-        iVar.e = e.a.a((e) g13);
-        iVar.f = fb.a.a(new c6.i(iVar.a, 16));
-        e.a a11 = e.a.a((fd.h) g11);
-        iVar.g = a11;
-        iVar.h = fb.a.a(new d0(iVar.f, a11));
-        iVar.i = e.a.a((fd.h) g10);
-        iVar.j = fb.a.a(new v0(iVar.c, fb.a.a(new ke(iVar.d, iVar.e, iVar.f, iVar.h, fb.a.a(new a0(iVar.i, iVar.d, fb.a.a(new tf.b(iVar.b, iVar.g)), 24)), 4)), 1));
-        fb.c a12 = fb.a.a(s.b);
-        iVar.k = a12;
-        iVar.l = fb.a.a(new v0(iVar.d, a12, 0));
-        iVar.m = fb.a.a(new ke(iVar.a, iVar.e, iVar.j, fb.a.a(new bb.c(e.a.a(c2), 15)), iVar.i, 3));
-        iVar.n = fb.a.a(new a0(iVar.b, iVar.g, fb.a.a(new c(iVar.l, 14)), 14));
-        fb.c a13 = fb.a.a(new fa.f(iVar.j, iVar.l, iVar.m, iVar.d, iVar.n, fb.a.a(new d0(iVar.b, iVar.k)), iVar.i, 2));
-        iVar.o = a13;
-        iVar.p = fb.a.a(new p(iVar.a, iVar.j, iVar.i, fb.a.a(new bb.c(a13, 16))));
+        iVar.a = d9.o.b((g) e13);
+        d9.o b10 = d9.o.b((Context) e10);
+        iVar.b = b10;
+        iVar.c = ib.a.a(new m(b10, 1));
+        iVar.d = ib.a.a(t.a);
+        iVar.e = d9.o.b((d) e14);
+        iVar.f = ib.a.a(new d0(iVar.a, 1));
+        d9.o b11 = d9.o.b((h) e12);
+        iVar.g = b11;
+        iVar.h = ib.a.a(new e0(iVar.f, b11));
+        iVar.i = d9.o.b((h) e11);
+        iVar.j = ib.a.a(new w0(iVar.c, ib.a.a(new r7(iVar.d, iVar.e, iVar.f, iVar.h, ib.a.a(new h6.m(iVar.i, iVar.d, ib.a.a(new q4.q(iVar.b, iVar.g, false, 24)), 3)), 10)), 1));
+        c a10 = ib.a.a(t.b);
+        iVar.k = a10;
+        iVar.l = ib.a.a(new w0(iVar.d, a10, 0));
+        iVar.m = ib.a.a(new r7(iVar.a, iVar.e, iVar.j, ib.a.a(new m(d9.o.b(f10), 0)), iVar.i, 7));
+        iVar.n = ib.a.a(new a0(iVar.b, iVar.g, ib.a.a(new d6.i(iVar.l, 29)), false, 29));
+        c a11 = ib.a.a(new ga.d(iVar.j, iVar.l, iVar.m, iVar.d, iVar.n, ib.a.a(new e0(iVar.b, iVar.k)), iVar.i, 2));
+        iVar.o = a11;
+        iVar.p = ib.a.a(new b0(iVar.a, iVar.j, iVar.i, ib.a.a(new n(a11, 28)), 3));
         return iVar;
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<t9.a> getComponents() {
-        l0 a10 = t9.a.a(n.class);
+    public List<u9.a> getComponents() {
+        j0 a10 = u9.a.a(o.class);
         a10.d = LIBRARY_NAME;
-        a10.a(t9.j.b(firebaseSessionsComponent));
-        a10.f = new t1(9);
+        a10.a(u9.i.b(firebaseSessionsComponent));
+        a10.f = new g2.c(3);
         a10.c(2);
-        t9.a b10 = a10.b();
-        l0 a11 = t9.a.a(db.r.class);
+        u9.a b10 = a10.b();
+        j0 a11 = u9.a.a(s.class);
         a11.d = "fire-sessions-component";
-        a11.a(t9.j.b(appContext));
-        a11.a(t9.j.b(backgroundDispatcher));
-        a11.a(t9.j.b(blockingDispatcher));
-        a11.a(t9.j.b(firebaseApp));
-        a11.a(t9.j.b(firebaseInstallationsApi));
-        a11.a(new t9.j(transportFactory, 1, 1));
-        a11.f = new t1(10);
-        return ed.h.c(b10, a11.b(), r1.a(LIBRARY_NAME, "3.0.8"));
+        a11.a(u9.i.b(appContext));
+        a11.a(u9.i.b(backgroundDispatcher));
+        a11.a(u9.i.b(blockingDispatcher));
+        a11.a(u9.i.b(firebaseApp));
+        a11.a(u9.i.b(firebaseInstallationsApi));
+        a11.a(new u9.i(transportFactory, 1, 1));
+        a11.f = new g2.c(4);
+        return hd.g.c(b10, a11.b(), h8.a(LIBRARY_NAME, "3.0.8"));
     }
 }

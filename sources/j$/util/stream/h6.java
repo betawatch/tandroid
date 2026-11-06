@@ -8,29 +8,29 @@ public final class h6 extends v5 {
     public int d;
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j10) {
-        if (j10 >= 2147483639) {
+    public final void o(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.c = new int[(int) j10];
+        this.c = new int[(int) j3];
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
     public final void end() {
-        int i3 = 0;
+        int i7 = 0;
         Arrays.sort(this.c, 0, this.d);
-        long j10 = this.d;
+        long j3 = this.d;
         j5 j5Var = this.a;
-        j5Var.o(j10);
+        j5Var.o(j3);
         if (!this.b) {
-            while (i3 < this.d) {
-                j5Var.accept(this.c[i3]);
-                i3++;
+            while (i7 < this.d) {
+                j5Var.accept(this.c[i7]);
+                i7++;
             }
         } else {
-            while (i3 < this.d && !j5Var.q()) {
-                j5Var.accept(this.c[i3]);
-                i3++;
+            while (i7 < this.d && !j5Var.q()) {
+                j5Var.accept(this.c[i7]);
+                i7++;
             }
         }
         j5Var.end();
@@ -38,10 +38,10 @@ public final class h6 extends v5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
+    public final void accept(int i7) {
         int[] iArr = this.c;
         int i10 = this.d;
         this.d = i10 + 1;
-        iArr[i10] = i3;
+        iArr[i10] = i7;
     }
 }

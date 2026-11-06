@@ -11,30 +11,29 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import b8.ae;
+import c8.i9;
 import f.a;
 import l.b;
 import l.c;
-import l.j;
 import l.k;
 import l.m;
 import l.y;
-import m.i;
-import m.z0;
+import m.a1;
+import m.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i {
+public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j {
+    public boolean D;
     public boolean E;
-    public boolean F;
-    public final int G;
-    public int H;
-    public final int I;
+    public final int F;
+    public int G;
+    public final int H;
     public m n;
     public CharSequence r;
     public Drawable s;
-    public j w;
+    public l.j w;
     public b x;
     public c y;
 
@@ -42,7 +41,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         this(context, null);
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean a() {
         return !TextUtils.isEmpty(getText());
     }
@@ -60,40 +59,40 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         }
     }
 
-    @Override // m.i
+    @Override // m.j
     public final boolean c() {
         return !TextUtils.isEmpty(getText()) && this.n.getIcon() == null;
     }
 
     public final boolean f() {
         Configuration configuration = getContext().getResources().getConfiguration();
-        int i3 = configuration.screenWidthDp;
+        int i7 = configuration.screenWidthDp;
         int i10 = configuration.screenHeightDp;
-        if (i3 < 480) {
-            return (i3 >= 640 && i10 >= 480) || configuration.orientation == 2;
+        if (i7 < 480) {
+            return (i7 >= 640 && i10 >= 480) || configuration.orientation == 2;
         }
         return true;
     }
 
     public final void g() {
-        boolean z10 = true;
-        boolean z11 = !TextUtils.isEmpty(this.r);
-        if (this.s != null && ((this.n.y & 4) != 4 || (!this.E && !this.F))) {
-            z10 = false;
+        boolean z9 = true;
+        boolean z10 = !TextUtils.isEmpty(this.r);
+        if (this.s != null && ((this.n.y & 4) != 4 || (!this.D && !this.E))) {
+            z9 = false;
         }
-        boolean z12 = z11 & z10;
-        setText(z12 ? this.r : null);
+        boolean z11 = z10 & z9;
+        setText(z11 ? this.r : null);
         CharSequence charSequence = this.n.q;
         if (TextUtils.isEmpty(charSequence)) {
-            setContentDescription(z12 ? null : this.n.e);
+            setContentDescription(z11 ? null : this.n.e);
         } else {
             setContentDescription(charSequence);
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            ae.a(this, z12 ? null : this.n.e);
+            i9.a(this, z11 ? null : this.n.e);
         } else {
-            ae.a(this, charSequence2);
+            i9.a(this, charSequence2);
         }
     }
 
@@ -109,7 +108,7 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        j jVar = this.w;
+        l.j jVar = this.w;
         if (jVar != null) {
             jVar.a(this.n);
         }
@@ -118,22 +117,22 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
     @Override // android.widget.TextView, android.view.View
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        this.E = f();
+        this.D = f();
         g();
     }
 
-    @Override // m.z0, android.widget.TextView, android.view.View
-    public final void onMeasure(int i3, int i10) {
+    @Override // m.a1, android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
         int i11;
         boolean isEmpty = TextUtils.isEmpty(getText());
-        if (!isEmpty && (i11 = this.H) >= 0) {
+        if (!isEmpty && (i11 = this.G) >= 0) {
             super.setPadding(i11, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
-        super.onMeasure(i3, i10);
-        int mode = View.MeasureSpec.getMode(i3);
-        int size = View.MeasureSpec.getSize(i3);
+        super.onMeasure(i7, i10);
+        int mode = View.MeasureSpec.getMode(i7);
+        int size = View.MeasureSpec.getSize(i7);
         int measuredWidth = getMeasuredWidth();
-        int i12 = this.G;
+        int i12 = this.F;
         int min = mode == Integer.MIN_VALUE ? Math.min(size, i12) : i12;
         if (mode != 1073741824 && i12 > 0 && measuredWidth < min) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), i10);
@@ -158,9 +157,9 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         return super.onTouchEvent(motionEvent);
     }
 
-    public void setExpandedFormat(boolean z10) {
-        if (this.F != z10) {
-            this.F = z10;
+    public void setExpandedFormat(boolean z9) {
+        if (this.E != z9) {
+            this.E = z9;
             m mVar = this.n;
             if (mVar != null) {
                 k kVar = mVar.n;
@@ -175,30 +174,30 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         if (drawable != null) {
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int intrinsicHeight = drawable.getIntrinsicHeight();
-            int i3 = this.I;
-            if (intrinsicWidth > i3) {
-                intrinsicHeight = (int) (intrinsicHeight * (i3 / intrinsicWidth));
-                intrinsicWidth = i3;
+            int i7 = this.H;
+            if (intrinsicWidth > i7) {
+                intrinsicHeight = (int) (intrinsicHeight * (i7 / intrinsicWidth));
+                intrinsicWidth = i7;
             }
-            if (intrinsicHeight > i3) {
-                intrinsicWidth = (int) (intrinsicWidth * (i3 / intrinsicHeight));
+            if (intrinsicHeight > i7) {
+                intrinsicWidth = (int) (intrinsicWidth * (i7 / intrinsicHeight));
             } else {
-                i3 = intrinsicHeight;
+                i7 = intrinsicHeight;
             }
-            drawable.setBounds(0, 0, intrinsicWidth, i3);
+            drawable.setBounds(0, 0, intrinsicWidth, i7);
         }
         setCompoundDrawables(drawable, null, null, null);
         g();
     }
 
-    public void setItemInvoker(j jVar) {
+    public void setItemInvoker(l.j jVar) {
         this.w = jVar;
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void setPadding(int i3, int i10, int i11, int i12) {
-        this.H = i3;
-        super.setPadding(i3, i10, i11, i12);
+    public final void setPadding(int i7, int i10, int i11, int i12) {
+        this.G = i7;
+        super.setPadding(i7, i10, i11, i12);
     }
 
     public void setPopupCallback(c cVar) {
@@ -214,22 +213,22 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         this(context, attributeSet, 0);
     }
 
-    public ActionMenuItemView(Context context, AttributeSet attributeSet, int i3) {
-        super(context, attributeSet, i3);
+    public ActionMenuItemView(Context context, AttributeSet attributeSet, int i7) {
+        super(context, attributeSet, i7);
         Resources resources = context.getResources();
-        this.E = f();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.c, i3, 0);
-        this.G = obtainStyledAttributes.getDimensionPixelSize(0, 0);
+        this.D = f();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.c, i7, 0);
+        this.F = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         obtainStyledAttributes.recycle();
-        this.I = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
+        this.H = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
         setOnClickListener(this);
-        this.H = -1;
+        this.G = -1;
         setSaveEnabled(false);
     }
 
-    public void setCheckable(boolean z10) {
+    public void setCheckable(boolean z9) {
     }
 
-    public void setChecked(boolean z10) {
+    public void setChecked(boolean z9) {
     }
 }

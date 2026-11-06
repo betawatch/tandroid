@@ -1,31 +1,65 @@
 package db;
 
-import android.content.Context;
-import b8.md;
-import java.io.File;
+import android.os.IBinder;
+import android.os.IInterface;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p implements od.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-
-    public /* synthetic */ p(Context context, int i3) {
-        this.a = i3;
-        this.b = context;
+public final class p extends q6.h {
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final void b(String prefix, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        kotlin.jvm.internal.j.e(prefix, "prefix");
+        if (fileDescriptor == null || strArr == null) {
+            return;
+        }
+        super.b(prefix, fileDescriptor, printWriter, strArr);
     }
 
-    @Override // od.a
-    public final Object invoke() {
-        switch (this.a) {
-            case 0:
-                File a10 = md.a(this.b, "firebaseSessions/sessionConfigsDataStore.data");
-                q.b(a10);
-                return a10;
-            default:
-                File a11 = md.a(this.b, "firebaseSessions/sessionDataStore.data");
-                q.b(a11);
-                return a11;
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 17895000;
+    }
+
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final void g(q6.i iVar, Set set) {
+        if (set != null) {
+            super.g(iVar, set);
         }
+    }
+
+    @Override // q6.d
+    public final IInterface i(IBinder iBinder) {
+        kotlin.jvm.internal.j.e(iBinder, "iBinder");
+        int i7 = s.b;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.firebase.pnv.internal.IFpnvService");
+        return queryLocalInterface instanceof t ? (t) queryLocalInterface : new r(iBinder);
+    }
+
+    @Override // q6.d
+    public final n6.c[] k() {
+        return j.b;
+    }
+
+    @Override // q6.d
+    public final String o() {
+        return "com.google.firebase.pnv.internal.IFpnvService";
+    }
+
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.firebase.fpnv.service.START";
+    }
+
+    @Override // q6.d
+    public final boolean r() {
+        return true;
+    }
+
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

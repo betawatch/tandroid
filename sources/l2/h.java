@@ -1,252 +1,160 @@
 package l2;
 
-import c3.q;
-import d2.k1;
-import d2.m1;
-import d2.n1;
-import g2.n0;
-import java.util.HashMap;
+import a8.ia;
+import android.text.TextUtils;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Iterator;
-import java.util.Random;
-import w2.g0;
+import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final q h = new q(4);
-    public static final Random i = new Random();
-    public i d;
-    public String f;
-    public final m1 a = new m1();
-    public final k1 b = new k1();
-    public final HashMap c = new HashMap();
-    public n1 e = n1.a;
-    public long g = -1;
+public final class h implements t0 {
+    public static final h9.t1 r;
+    public final e2.k1 a;
+    public final e2.i1 b;
+    public final b3.e c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final long h;
+    public final long i;
+    public final long j;
+    public final long k;
+    public final int l;
+    public final boolean m;
+    public final long n;
+    public final h9.l0 o;
+    public final ConcurrentHashMap p;
+    public long q;
 
-    public final void a(g gVar) {
-        long j10 = gVar.c;
-        if (j10 != -1 && gVar.e) {
-            this.g = j10;
-        }
-        this.f = null;
+    static {
+        h9.g0 g0Var = h9.i0.b;
+        Object[] objArr = {"file", "content", "data", "android.resource", "rawresource", "asset"};
+        h9.o.e(6, objArr);
+        r = h9.i0.o(6, objArr);
     }
 
-    public final synchronized void b(a aVar) {
-        i iVar;
-        try {
-            String str = this.f;
-            if (str != null) {
-                g gVar = (g) this.c.get(str);
-                gVar.getClass();
-                a(gVar);
-            }
-            Iterator it = this.c.values().iterator();
-            while (it.hasNext()) {
-                g gVar2 = (g) it.next();
-                it.remove();
-                if (gVar2.e && (iVar = this.d) != null) {
-                    iVar.o(aVar, gVar2.a);
-                }
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
+    public h(b3.e eVar, int i7, int i10, int i11, int i12, int i13, boolean z9, Map map) {
+        a(i10, 0, "bufferForPlaybackMs", "0");
+        a(i11, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
+        a(i12, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        a(i13, 0, "bufferForPlaybackAfterRebufferForLocalPlaybackMs", "0");
+        a(50000, i10, "minBufferMs", "bufferForPlaybackMs");
+        a(i7, i11, "minBufferForLocalPlaybackMs", "bufferForPlaybackForLocalPlaybackMs");
+        a(50000, i12, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        a(i7, i13, "minBufferForLocalPlaybackMs", "bufferForPlaybackAfterRebufferForLocalPlaybackMs");
+        a(50000, 50000, "maxBufferMs", "minBufferMs");
+        a(50000, i7, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
+        a(0, 0, "backBufferDurationMs", "0");
+        this.a = new e2.k1();
+        this.b = new e2.i1();
+        this.c = eVar;
+        long j3 = 50000;
+        this.d = h2.m0.S(j3);
+        this.e = h2.m0.S(i7);
+        this.f = h2.m0.S(j3);
+        this.g = h2.m0.S(j3);
+        this.h = h2.m0.S(i10);
+        this.i = h2.m0.S(i11);
+        this.j = h2.m0.S(i12);
+        this.k = h2.m0.S(i13);
+        this.l = -1;
+        this.m = z9;
+        this.n = h2.m0.S(0);
+        this.p = new ConcurrentHashMap();
+        this.o = h9.l0.b(map);
+        this.q = -1L;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0048, code lost:
-    
-        if (r12 != (-1)) goto L16;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a0 A[ADDED_TO_REGION, SYNTHETIC] */
+    public static void a(int i7, int i10, String str, String str2) {
+        ia.i(i7 >= i10, "%s cannot be less than %s", str, str2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x007c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final g c(int i3, g0 g0Var) {
-        long j10;
-        long j11;
-        long j12;
-        HashMap hashMap = this.c;
-        g gVar = null;
-        long j13 = Long.MAX_VALUE;
-        for (g gVar2 : hashMap.values()) {
-            long j14 = gVar2.c;
-            g0 g0Var2 = gVar2.d;
-            if (j14 == -1 && i3 == gVar2.b && g0Var != null) {
-                long j15 = g0Var.d;
-                h hVar = gVar2.g;
-                j10 = -1;
-                g gVar3 = (g) hVar.c.get(hVar.f);
-                if (gVar3 != null) {
-                    j12 = gVar3.c;
-                }
-                j12 = hVar.g + 1;
-                if (j15 >= j12) {
-                    gVar2.c = j15;
-                }
-            } else {
-                j10 = -1;
-            }
-            if (g0Var != null) {
-                long j16 = g0Var.d;
-                if (j16 != j10) {
-                    if (g0Var2 == null) {
-                        if (!g0Var.b() && j16 == gVar2.c) {
-                            j11 = gVar2.c;
-                            if (j11 == j10 || j11 < j13) {
-                                gVar = gVar2;
-                                j13 = j11;
-                            } else if (j11 == j13) {
-                                String str = n0.a;
-                                if (gVar.d != null && g0Var2 != null) {
-                                    gVar = gVar2;
-                                }
-                            }
-                        }
-                    } else if (j16 == g0Var2.d && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
-                        j11 = gVar2.c;
-                        if (j11 == j10) {
-                        }
-                        gVar = gVar2;
-                        j13 = j11;
-                    }
-                }
-            }
-            if (i3 == gVar2.b) {
-                j11 = gVar2.c;
-                if (j11 == j10) {
-                }
-                gVar = gVar2;
-                j13 = j11;
-            }
+    public final boolean b(s0 s0Var) {
+        int i7;
+        boolean z9;
+        long j3;
+        float f10;
+        m2.j jVar = s0Var.a;
+        long j10 = s0Var.d;
+        g gVar = (g) this.p.get(jVar);
+        gVar.getClass();
+        g gVar2 = (g) this.p.get(jVar);
+        gVar2.getClass();
+        synchronized (gVar2) {
+            i7 = gVar2.d;
         }
-        if (gVar != null) {
-            return gVar;
+        int i10 = i7 * this.c.b;
+        g gVar3 = (g) this.p.get(jVar);
+        gVar3.getClass();
+        boolean z10 = i10 >= gVar3.c;
+        if (jVar.equals(m2.j.c)) {
+            return !z10;
         }
-        String str2 = (String) h.get();
-        g gVar4 = new g(this, str2, i3, g0Var);
-        hashMap.put(str2, gVar4);
-        return gVar4;
-    }
-
-    public final synchronized String d(n1 n1Var, g0 g0Var) {
-        return c(n1Var.g(g0Var.a, this.b).c, g0Var).a;
-    }
-
-    public final void e(a aVar) {
-        g0 g0Var;
-        n1 n1Var = aVar.b;
-        int i3 = aVar.c;
-        g0 g0Var2 = aVar.d;
-        boolean p10 = n1Var.p();
-        HashMap hashMap = this.c;
-        if (p10) {
-            String str = this.f;
-            if (str != null) {
-                g gVar = (g) hashMap.get(str);
-                gVar.getClass();
-                a(gVar);
-                return;
-            }
-            return;
-        }
-        g gVar2 = (g) hashMap.get(this.f);
-        this.f = c(i3, g0Var2).a;
-        f(aVar);
-        if (g0Var2 != null) {
-            long j10 = g0Var2.d;
-            if (g0Var2.b()) {
-                if (gVar2 != null && gVar2.c == j10 && (g0Var = gVar2.d) != null && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
-                    return;
-                }
-                c(i3, new g0(g0Var2.a, j10));
-                this.d.getClass();
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0038 A[DONT_GENERATE] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized void f(a aVar) {
-        long j10;
-        this.d.getClass();
-        if (aVar.b.p()) {
-            return;
-        }
-        g0 g0Var = aVar.d;
+        e2.l1 l1Var = s0Var.b;
+        e2.g0 g0Var = l1Var.m(l1Var.g(s0Var.c.a, this.b).c, this.a, 0L).c.b;
         if (g0Var != null) {
-            long j11 = g0Var.d;
-            if (j11 != -1) {
-                g gVar = (g) this.c.get(this.f);
-                if (gVar != null) {
-                    j10 = gVar.c;
-                    if (j10 != -1) {
-                        if (j11 < j10) {
-                            return;
-                        }
+            String scheme = g0Var.a.getScheme();
+            if (TextUtils.isEmpty(scheme) || r.contains(scheme)) {
+                z9 = true;
+                j3 = !z9 ? this.e : this.d;
+                long j11 = !z9 ? this.g : this.f;
+                f10 = s0Var.e;
+                if (f10 > 1.0f) {
+                    j3 = Math.min(h2.m0.B(j3, f10), j11);
+                }
+                if (j10 >= Math.max(j3, 500000L)) {
+                    boolean z11 = (z9 ? this.m : false) || !z10;
+                    gVar.b = z11;
+                    if (!z11 && j10 < 500000) {
+                        h2.a.l("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
                     }
+                } else if (j10 >= j11 || z10) {
+                    gVar.b = false;
                 }
-                j10 = this.g + 1;
-                if (j11 < j10) {
-                }
-            }
-            g gVar2 = (g) this.c.get(this.f);
-            if (gVar2 != null && gVar2.c == -1 && gVar2.b != aVar.c) {
-                return;
+                return gVar.b;
             }
         }
-        g c2 = c(aVar.c, aVar.d);
-        if (this.f == null) {
-            this.f = c2.a;
+        z9 = false;
+        if (!z9) {
         }
-        g0 g0Var2 = aVar.d;
-        if (g0Var2 != null && g0Var2.b()) {
-            g0 g0Var3 = aVar.d;
-            g c10 = c(aVar.c, new g0(g0Var3.a, g0Var3.d, g0Var3.b));
-            if (!c10.e) {
-                c10.e = true;
-                aVar.b.g(aVar.d.a, this.b);
-                this.b.d(aVar.d.b);
-                Math.max(0L, n0.h0(0L) + n0.h0(this.b.e));
-                this.d.getClass();
-            }
+        if (!z9) {
         }
-        if (!c2.e) {
-            c2.e = true;
-            this.d.getClass();
+        f10 = s0Var.e;
+        if (f10 > 1.0f) {
         }
-        if (c2.a.equals(this.f) && !c2.f) {
-            c2.f = true;
-            this.d.n(aVar, c2.a);
+        if (j10 >= Math.max(j3, 500000L)) {
         }
+        return gVar.b;
     }
 
-    public final synchronized void g(a aVar, int i3) {
-        try {
-            this.d.getClass();
-            boolean z10 = i3 == 0;
-            Iterator it = this.c.values().iterator();
-            while (it.hasNext()) {
-                g gVar = (g) it.next();
-                if (gVar.a(aVar)) {
-                    it.remove();
-                    boolean equals = gVar.a.equals(this.f);
-                    if (equals) {
-                        a(gVar);
-                    }
-                    if (gVar.e) {
-                        if (z10 && equals) {
-                            boolean z11 = gVar.f;
-                        }
-                        this.d.o(aVar, gVar.a);
-                    }
+    public final void c() {
+        int i7 = 0;
+        if (this.p.isEmpty()) {
+            b3.e eVar = this.c;
+            synchronized (eVar) {
+                if (eVar.a) {
+                    eVar.d(0);
                 }
             }
-            e(aVar);
-        } catch (Throwable th2) {
-            throw th2;
+            return;
         }
+        b3.e eVar2 = this.c;
+        Iterator it = this.p.values().iterator();
+        while (it.hasNext()) {
+            i7 += ((g) it.next()).c;
+        }
+        eVar2.d(i7);
     }
 }

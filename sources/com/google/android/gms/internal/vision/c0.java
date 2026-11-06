@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c0 extends f1 {
     private static final c0 zzf;
@@ -17,9 +17,9 @@ public final class c0 extends f1 {
 
     /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.vision.j2, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.f1
-    public final Object e(int i3) {
+    public final Object e(int i7) {
         j2 j2Var;
-        switch (g0.a[i3 - 1]) {
+        switch (g0.a[i7 - 1]) {
             case 1:
                 return new c0();
             case 2:

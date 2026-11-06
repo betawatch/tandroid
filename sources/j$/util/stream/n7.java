@@ -16,8 +16,8 @@ public final class n7 extends o7 implements j$.util.a1 {
     }
 
     @Override // j$.util.stream.q7
-    public final Spliterator a(Spliterator spliterator, long j10, long j11, long j12, long j13) {
-        return new n7((j$.util.a1) spliterator, j10, j11, j12, j13);
+    public final Spliterator a(Spliterator spliterator, long j3, long j10, long j11, long j12) {
+        return new n7((j$.util.a1) spliterator, j3, j10, j11, j12);
     }
 
     @Override // j$.util.stream.o7

@@ -7,28 +7,28 @@ import android.widget.TextView;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class la extends TextView {
     public boolean a;
-    public final org.telegram.ui.Components.u5 b;
+    public final org.telegram.ui.Components.w5 b;
     public cp c;
 
     public la(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.u5(this, 0L, 350L, xq.h);
+        this.b = new org.telegram.ui.Components.w5(this, 0L, 350L, xq.h);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        this.a = z10;
-        boolean z12 = true;
-        if (!z11) {
-            this.b.f(z10, true);
+    public final void a(boolean z9, boolean z10) {
+        this.a = z9;
+        boolean z11 = true;
+        if (!z10) {
+            this.b.f(z9, true);
         }
-        if (!isPressed() && !z10) {
-            z12 = false;
+        if (!isPressed() && !z9) {
+            z11 = false;
         }
-        super.setPressed(z12);
+        super.setPressed(z11);
         invalidate();
     }
 
@@ -65,8 +65,8 @@ public final class la extends TextView {
     }
 
     @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        super.setPressed(z10 || this.a);
+    public final void setPressed(boolean z9) {
+        super.setPressed(z9 || this.a);
     }
 
     @Override // android.widget.TextView, android.view.View

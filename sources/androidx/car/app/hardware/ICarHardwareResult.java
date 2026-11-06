@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import w.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface ICarHardwareResult extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareResult".replace('$', '.');
 
-    void onCarHardwareResult(int i3, boolean z10, b bVar, IBinder iBinder);
+    void onCarHardwareResult(int i7, boolean z9, b bVar, IBinder iBinder);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Stub extends Binder implements ICarHardwareResult {
         static final int TRANSACTION_onCarHardwareResult = 2;
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public static class Proxy implements ICarHardwareResult {
             private IBinder mRemote;
 
@@ -35,12 +35,12 @@ public interface ICarHardwareResult extends IInterface {
             }
 
             @Override // androidx.car.app.hardware.ICarHardwareResult
-            public void onCarHardwareResult(int i3, boolean z10, b bVar, IBinder iBinder) {
+            public void onCarHardwareResult(int i7, boolean z9, b bVar, IBinder iBinder) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarHardwareResult.DESCRIPTOR);
-                    obtain.writeInt(i3);
-                    obtain.writeInt(z10 ? 1 : 0);
+                    obtain.writeInt(i7);
+                    obtain.writeInt(z9 ? 1 : 0);
                     if (bVar != null) {
                         obtain.writeInt(1);
                         bVar.writeToParcel(obtain, 0);
@@ -68,17 +68,17 @@ public interface ICarHardwareResult extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
             String str = ICarHardwareResult.DESCRIPTOR;
-            if (i3 >= 1 && i3 <= 16777215) {
+            if (i7 >= 1 && i7 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i3 == 1598968902) {
+            if (i7 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i3 != 2) {
-                return super.onTransact(i3, parcel, parcel2, i10);
+            if (i7 != 2) {
+                return super.onTransact(i7, parcel, parcel2, i10);
             }
             onCarHardwareResult(parcel.readInt(), parcel.readInt() != 0, parcel.readInt() != 0 ? b.CREATOR.createFromParcel(parcel) : null, parcel.readStrongBinder());
             return true;
@@ -90,7 +90,7 @@ public interface ICarHardwareResult extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Default implements ICarHardwareResult {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -98,7 +98,7 @@ public interface ICarHardwareResult extends IInterface {
         }
 
         @Override // androidx.car.app.hardware.ICarHardwareResult
-        public void onCarHardwareResult(int i3, boolean z10, b bVar, IBinder iBinder) {
+        public void onCarHardwareResult(int i7, boolean z9, b bVar, IBinder iBinder) {
         }
     }
 }

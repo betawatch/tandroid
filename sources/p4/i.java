@@ -1,78 +1,54 @@
 package p4;
 
-import android.media.MediaMetadata;
+import a8.ia;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i implements Parcelable {
-    public static final Parcelable.Creator<i> CREATOR;
-    public static final a0.f c;
-    public static final String[] d;
-    public final Bundle a;
-    public MediaMetadata b;
+public final class i {
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public final int a;
+    public final int b;
+    public final String c;
+    public final int d;
+    public final Bundle e;
 
     static {
-        a0.f fVar = new a0.f(0);
-        c = fVar;
-        fVar.put("android.media.metadata.TITLE", 1);
-        fVar.put("android.media.metadata.ARTIST", 1);
-        fVar.put("android.media.metadata.DURATION", 0);
-        fVar.put("android.media.metadata.ALBUM", 1);
-        fVar.put("android.media.metadata.AUTHOR", 1);
-        fVar.put("android.media.metadata.WRITER", 1);
-        fVar.put("android.media.metadata.COMPOSER", 1);
-        fVar.put("android.media.metadata.COMPILATION", 1);
-        fVar.put("android.media.metadata.DATE", 1);
-        fVar.put("android.media.metadata.YEAR", 0);
-        fVar.put("android.media.metadata.GENRE", 1);
-        fVar.put("android.media.metadata.TRACK_NUMBER", 0);
-        fVar.put("android.media.metadata.NUM_TRACKS", 0);
-        fVar.put("android.media.metadata.DISC_NUMBER", 0);
-        fVar.put("android.media.metadata.ALBUM_ARTIST", 1);
-        fVar.put("android.media.metadata.ART", 2);
-        fVar.put("android.media.metadata.ART_URI", 1);
-        fVar.put("android.media.metadata.ALBUM_ART", 2);
-        fVar.put("android.media.metadata.ALBUM_ART_URI", 1);
-        fVar.put("android.media.metadata.USER_RATING", 3);
-        fVar.put("android.media.metadata.RATING", 3);
-        fVar.put("android.media.metadata.DISPLAY_TITLE", 1);
-        fVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
-        fVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
-        fVar.put("android.media.metadata.DISPLAY_ICON", 2);
-        fVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
-        fVar.put("android.media.metadata.MEDIA_ID", 1);
-        fVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
-        fVar.put("android.media.metadata.MEDIA_URI", 1);
-        fVar.put("android.media.metadata.ADVERTISEMENT", 0);
-        fVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
-        d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
-        CREATOR = new n8.g(10);
+        String str = h2.m0.a;
+        f = Integer.toString(0, 36);
+        g = Integer.toString(1, 36);
+        h = Integer.toString(2, 36);
+        i = Integer.toString(3, 36);
+        j = Integer.toString(4, 36);
+        k = Integer.toString(5, 36);
     }
 
-    public i(Bundle bundle) {
-        Bundle bundle2 = new Bundle(bundle);
-        this.a = bundle2;
-        ClassLoader classLoader = q.class.getClassLoader();
-        classLoader.getClass();
-        bundle2.setClassLoader(classLoader);
+    public i(int i7, int i10, String str, int i11, Bundle bundle, int i12) {
+        this.a = i7;
+        this.b = i10;
+        this.c = str;
+        this.d = i11;
+        this.e = bundle;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        parcel.writeBundle(this.a);
-    }
-
-    public i(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(q.class.getClassLoader());
-        readBundle.getClass();
-        this.a = readBundle;
+    public static i a(Bundle bundle) {
+        int i7 = bundle.getInt(f, 0);
+        int i10 = bundle.getInt(j, 0);
+        String string = bundle.getString(g);
+        string.getClass();
+        String str = h;
+        ia.f(bundle.containsKey(str));
+        int i11 = bundle.getInt(str);
+        Bundle bundle2 = bundle.getBundle(i);
+        int i12 = bundle.getInt(k, 0);
+        if (bundle2 == null) {
+            bundle2 = Bundle.EMPTY;
+        }
+        return new i(i7, i10, string, i11, bundle2, i12);
     }
 }

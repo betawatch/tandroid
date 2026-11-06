@@ -1,17 +1,17 @@
 package wi;
 
-import org.telegram.ui.Components.nh;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nh b;
+    public final /* synthetic */ qt b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ j0(nh nhVar, Exception exc, int i3) {
-        this.a = i3;
-        this.b = nhVar;
+    public /* synthetic */ j0(qt qtVar, Exception exc, int i7) {
+        this.a = i7;
+        this.b = qtVar;
         this.c = exc;
     }
 
@@ -20,10 +20,10 @@ public final /* synthetic */ class j0 implements Runnable {
         switch (this.a) {
             case 0:
                 t0 t0Var = (t0) this.b.b;
-                t0Var.m.a("recording segment interrupted in state=".concat(t4.c.t(t0Var.Z)), this.c);
-                int i3 = t0Var.Z;
-                if (i3 != 3) {
-                    if (i3 == 2) {
+                t0Var.m.a("recording segment interrupted in state=".concat(rf.b.t(t0Var.Z)), this.c);
+                int i7 = t0Var.Z;
+                if (i7 != 3) {
+                    if (i7 == 2) {
                         t0Var.D = true;
                         break;
                     }

@@ -1,10 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rm extends ow0 {
-    @Override // org.telegram.ui.Components.ow0
-    public final int d() {
-        return 3;
+public final class rm extends v4.c0 {
+    public final /* synthetic */ kg.c0 r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rm(kg.c0 c0Var, Context context) {
+        super(context);
+        this.r = c0Var;
+    }
+
+    @Override // v4.c0
+    public final int k(int i7, View view) {
+        int i10;
+        bn bnVar = (bn) this.r.V;
+        if (bnVar.V0) {
+            i7 = -1;
+        }
+        int k10 = super.k(i7, view);
+        if (bnVar.V0) {
+            k10 += org.telegram.messenger.g0.L(160.0f);
+        }
+        if (!bnVar.V0) {
+            k10 = org.telegram.messenger.k5.B(7.0f, bnVar.R0 - org.telegram.messenger.g0.m, k10);
+        }
+        if (bnVar.V0 && k10 == 0 && (i10 = bnVar.W0) >= 0) {
+            bn.O(bnVar, i10);
+            bnVar.W0 = -1;
+        }
+        bnVar.V0 = false;
+        return k10;
+    }
+
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

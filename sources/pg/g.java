@@ -1,63 +1,78 @@
 package pg;
 
-import android.animation.ValueAnimator;
+import android.util.DisplayMetrics;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float[] d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ float f;
+public final class g extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public float b;
+    public final /* synthetic */ j c;
 
-    public /* synthetic */ g(m mVar, float f10, float[] fArr, float f11, float f12, int i3) {
-        this.a = i3;
-        this.b = mVar;
-        this.c = f10;
-        this.d = fArr;
-        this.e = f11;
-        this.f = f12;
+    public g(j jVar) {
+        this.c = jVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m mVar = this.b;
-                mVar.getClass();
-                float y9 = com.google.android.recaptcha.internal.a.y(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
-                float[] fArr = this.d;
-                float f10 = fArr[0];
-                float f11 = y9 / f10;
-                fArr[0] = f10 * f11;
-                k.g(mVar.M, f11, this.e, this.f);
-                mVar.r(false);
-                break;
-            default:
-                m mVar2 = this.b;
-                mVar2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f12 = this.c * floatValue;
-                float[] fArr2 = this.d;
-                float f13 = fArr2[1];
-                float f14 = f12 - f13;
-                fArr2[1] = f13 + f14;
-                float f15 = this.e * floatValue;
-                float f16 = fArr2[2];
-                float f17 = f15 - f16;
-                fArr2[2] = f16 + f17;
-                k kVar = mVar2.M;
-                float f18 = fArr2[0];
-                k.f(kVar, f14 * f18, f17 * f18);
-                float f19 = ((this.f - 1.0f) * floatValue) + 1.0f;
-                float f20 = fArr2[0];
-                float f21 = f19 / f20;
-                fArr2[0] = f20 * f21;
-                k.g(mVar2.M, f21, 0.0f, 0.0f);
-                mVar2.r(false);
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        DisplayMetrics displayMetrics;
+        float f12;
+        j jVar = this.c;
+        if (!jVar.f || jVar.n) {
+            return false;
         }
+        r1.h hVar = jVar.c.m;
+        if ((f10 / 7.0f) + ((float) hVar.i) >= jVar.getWidth() / 2.0f) {
+            displayMetrics = jVar.getResources().getDisplayMetrics();
+            f12 = 2.14748365E9f;
+        } else {
+            displayMetrics = jVar.getResources().getDisplayMetrics();
+            f12 = -2.14748365E9f;
+        }
+        hVar.i = j.a(displayMetrics, f12);
+        jVar.d.m.i = j.b(jVar.getResources().getDisplayMetrics(), (f11 / 10.0f) + ((float) jVar.d.m.i));
+        jVar.c.h();
+        jVar.d.h();
+        jVar.h = true;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        j jVar = this.c;
+        int i7 = jVar.F;
+        if (!jVar.n) {
+            g0.r(jVar.r);
+        }
+        if (!jVar.f && (Math.abs(f10) >= i7 || Math.abs(f11) >= i7)) {
+            this.a = (float) jVar.c.m.i;
+            this.b = (float) jVar.d.m.i;
+            jVar.f = true;
+        }
+        if (jVar.f && !jVar.n) {
+            jVar.c.m.i = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            jVar.d.m.i = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            jVar.c.h();
+            jVar.d.h();
+        }
+        return jVar.f;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        j jVar = this.c;
+        if (jVar.n || jVar.s) {
+            return false;
+        }
+        jVar.c(true);
+        return true;
     }
 }

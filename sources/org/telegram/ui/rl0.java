@@ -1,48 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rl0 extends org.telegram.ui.Cells.z9 {
-    public final /* synthetic */ int I = 1;
+public final /* synthetic */ class rl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bm0 b;
 
-    public /* synthetic */ rl0(Context context, org.telegram.ui.ActionBar.q4 q4Var, int i3) {
-        super(context, q4Var, i3);
+    public /* synthetic */ rl0(bm0 bm0Var, int i7) {
+        this.a = i7;
+        this.b = bm0Var;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.I) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        bm0 bm0Var = this.b;
+        switch (i7) {
             case 0:
-                if (!canvas.isHardwareAccelerated()) {
-                    cg.t0.a(canvas, this, new s3(this, 16));
-                    break;
-                } else {
-                    super.draw(canvas);
+                if (bm0Var.G) {
+                    bm0Var.b.invalidate();
                     break;
                 }
-            default:
-                super.draw(canvas);
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.z9, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
             case 1:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
+                bm0Var.h();
+                break;
+            case 2:
+                int i10 = bm0.q0;
+                bm0Var.h();
+                break;
+            default:
+                int i11 = bm0.q0;
+                bm0Var.h();
                 break;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    public /* synthetic */ rl0(Context context, org.telegram.ui.ActionBar.q4 q4Var, int i3, long j10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, q4Var, i3, j10, e6Var);
     }
 }

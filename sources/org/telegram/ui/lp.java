@@ -1,59 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lp implements org.telegram.messenger.lr, org.telegram.ui.ActionBar.p1, org.telegram.ui.Components.gj0, org.telegram.ui.Components.hj0 {
+public final /* synthetic */ class lp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nq b;
+    public final /* synthetic */ oq b;
 
-    public /* synthetic */ lp(nq nqVar, int i3) {
-        this.a = i3;
-        this.b = nqVar;
+    public /* synthetic */ lp(oq oqVar, int i7) {
+        this.a = i7;
+        this.b = oqVar;
     }
 
-    @Override // org.telegram.ui.Components.gj0
-    public void b(float f10, float f11, int i3, View view) {
-        nq.a0(this.b, view, i3);
-    }
-
-    @Override // org.telegram.ui.Components.gj0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public boolean f(int i3, View view) {
-        nq nqVar = this.b;
-        if (nqVar.getParentActivity() != null) {
-            u4.h0 adapter = nqVar.c.getAdapter();
-            iq iqVar = nqVar.a;
-            if (adapter == iqVar) {
-                return nqVar.m0(iqVar.E(i3), false, view);
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 1:
-                this.b.z0();
+            case 0:
+                this.b.w0();
                 break;
             default:
-                this.b.finishFragment();
+                oq oqVar = this.b;
+                oqVar.getMessagesController().V2(0, oqVar.M, true);
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.lr
-    public void run(long j10) {
-        nq.Z(this.b, j10);
-    }
-
-    @Override // org.telegram.ui.Components.gj0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

@@ -3,11 +3,11 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d extends x {
+public final class d extends y {
     public final /* synthetic */ k h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,12 +20,12 @@ public final class d extends x {
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         k kVar = this.h;
-        Paint paint = kVar.N0;
-        if (kVar.M0 && this.a && kVar.x != 0) {
-            kVar.O0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        Paint paint = kVar.M0;
+        if (kVar.L0 && this.a && kVar.x != 0) {
+            kVar.N0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
             paint.setColor(kVar.x);
             canvas2 = canvas;
-            kVar.L0.H(canvas2, 0.0f, kVar.O0, paint, true);
+            kVar.K0.H(canvas2, 0.0f, kVar.N0, paint, true);
         } else {
             canvas2 = canvas;
         }
@@ -35,18 +35,18 @@ public final class d extends x {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        qt0 qt0Var = this.h.L0;
-        if (qt0Var != null) {
-            qt0Var.P.add(this);
+        rt0 rt0Var = this.h.K0;
+        if (rt0Var != null) {
+            rt0Var.O.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qt0 qt0Var = this.h.L0;
-        if (qt0Var != null) {
-            qt0Var.P.remove(this);
+        rt0 rt0Var = this.h.K0;
+        if (rt0Var != null) {
+            rt0Var.O.remove(this);
         }
     }
 
@@ -55,19 +55,19 @@ public final class d extends x {
         super.setAlpha(f10);
         k kVar = this.h;
         kVar.invalidate();
-        Runnable runnable = kVar.e1;
+        Runnable runnable = kVar.d1;
         if (runnable != null) {
             runnable.run();
         }
     }
 
     @Override // android.view.View
-    public final void setBackgroundColor(int i3) {
+    public final void setBackgroundColor(int i7) {
         k kVar = this.h;
-        kVar.x = i3;
-        if (kVar.M0) {
+        kVar.x = i7;
+        if (kVar.L0) {
             return;
         }
-        super.setBackgroundColor(i3);
+        super.setBackgroundColor(i7);
     }
 }

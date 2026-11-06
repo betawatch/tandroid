@@ -1,0 +1,53 @@
+package f7;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class y extends r6.a {
+    public static final Parcelable.Creator<y> CREATOR = new db.k(17);
+    public final String a;
+    public final String b;
+    public final String c;
+
+    public y(String str, String str2, String str3) {
+        q6.m.g(str);
+        this.a = str;
+        q6.m.g(str2);
+        this.b = str2;
+        this.c = str3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof y)) {
+            return false;
+        }
+        y yVar = (y) obj;
+        return q6.m.k(this.a, yVar.a) && q6.m.k(this.b, yVar.b) && q6.m.k(this.c, yVar.c);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c});
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("PublicKeyCredentialRpEntity{\n id='");
+        sb2.append(this.a);
+        sb2.append("', \n name='");
+        sb2.append(this.b);
+        sb2.append("', \n icon='");
+        return a8.p0.s(sb2, this.c, "'}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 2, this.a);
+        wb.l(parcel, 3, this.b);
+        wb.l(parcel, 4, this.c);
+        wb.s(parcel, r10);
+    }
+}

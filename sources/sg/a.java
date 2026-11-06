@@ -1,17 +1,27 @@
 package sg;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public abstract class a {
-    public int a;
-    public boolean b;
+import org.telegram.messenger.beta.R;
 
-    public a(int i3, boolean z10) {
-        this.a = i3;
-        this.b = z10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class a extends h {
+    @Override // sg.h
+    public final int c() {
+        return -30208;
     }
 
-    public boolean a(a aVar) {
-        return false;
+    @Override // sg.h
+    public final float d() {
+        return 0.25f;
+    }
+
+    @Override // sg.h
+    public final int e() {
+        return R.raw.photo_arrow;
+    }
+
+    @Override // sg.h
+    public final float j() {
+        return 0.25f;
     }
 }

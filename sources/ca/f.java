@@ -1,17 +1,30 @@
 package ca;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f implements ma.d {
-    public static final f a = new f();
-    public static final ma.c b = ma.c.c("filename");
-    public static final ma.c c = ma.c.c("contents");
+public final class f implements l {
+    public static final pb.b c = new pb.b(6);
+    public final Object a;
+    public Object b;
 
-    @Override // ma.a
-    public final void a(Object obj, Object obj2) {
-        ma.e eVar = (ma.e) obj2;
-        j0 j0Var = (j0) ((w1) obj);
-        eVar.a(b, j0Var.a);
-        eVar.a(c, j0Var.b);
+    public f(ga.d dVar) {
+        this.a = dVar;
+        this.b = c;
+    }
+
+    @Override // ca.l
+    public void a(k kVar, int i7) {
+        int[] iArr = (int[]) this.b;
+        try {
+            kVar.read((byte[]) this.a, iArr[0], i7);
+            iArr[0] = iArr[0] + i7;
+        } finally {
+            kVar.close();
+        }
+    }
+
+    public f(byte[] bArr, int[] iArr) {
+        this.a = bArr;
+        this.b = iArr;
     }
 }

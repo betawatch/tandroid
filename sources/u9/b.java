@@ -1,31 +1,19 @@
 package u9;
 
-import android.os.StrictMode;
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements ThreadFactory {
-    public static final ThreadFactory e = Executors.defaultThreadFactory();
-    public final AtomicLong a = new AtomicLong();
-    public final String b;
-    public final int c;
-    public final StrictMode.ThreadPolicy d;
+public interface b {
+    Object a(Class cls);
 
-    public b(String str, int i3, StrictMode.ThreadPolicy threadPolicy) {
-        this.b = str;
-        this.c = i3;
-        this.d = threadPolicy;
-    }
+    o b(q qVar);
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = e.newThread(new a(0, this, runnable));
-        Locale locale = Locale.ROOT;
-        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
-        return newThread;
-    }
+    ua.b c(Class cls);
+
+    Object e(q qVar);
+
+    ua.b f(q qVar);
+
+    Set g(q qVar);
 }

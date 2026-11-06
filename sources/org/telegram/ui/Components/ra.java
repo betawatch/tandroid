@@ -1,36 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ra implements q0.a {
+public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ gb b;
 
-    public /* synthetic */ ra(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public /* synthetic */ ra(gb gbVar, int i7) {
+        this.a = i7;
+        this.b = gbVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ac acVar = (ac) this.b;
-                Float f10 = (Float) obj;
-                za zaVar = acVar.p;
-                if (zaVar != null) {
-                    if (!acVar.e.top) {
-                        zaVar.c(r0.getHeight() - f10.floatValue());
-                        break;
-                    }
-                }
+                this.b.onExitTransitionStart();
                 break;
             default:
-                zh zhVar = ((bi) this.b).U3;
-                if (zhVar != null) {
-                    zhVar.I0(obj);
-                    break;
-                }
+                this.b.onEnterTransitionStart();
                 break;
         }
     }

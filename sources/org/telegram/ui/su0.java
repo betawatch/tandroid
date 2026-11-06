@@ -1,66 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class su0 extends org.telegram.ui.Components.w4 {
-    public final /* synthetic */ ProfileActivity V0;
+public final class su0 extends v4.b0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public su0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.V0 = profileActivity;
+    public su0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        RectF rectF = ProfileActivity.T6;
-        this.V0.Q3();
+    @Override // v4.b0, v4.n0
+    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
+        ProfileActivity profileActivity = this.I;
+        View m10 = profileActivity.c.m(0);
+        if (m10 != null && !profileActivity.F0) {
+            int top = m10.getTop() - profileActivity.j4();
+            boolean z9 = profileActivity.n2;
+            if (z9 || top <= i7) {
+                if (z9) {
+                    if (i7 >= top) {
+                        profileActivity.n2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.o2) {
+                        i7 /= 2;
+                    }
+                }
+            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().L() && !org.telegram.messenger.g0.C1() && ((!profileActivity.m2 && !org.telegram.messenger.g0.Q1()) || profileActivity.I0)) {
+                profileActivity.n2 = profileActivity.I2 == null;
+            }
+            i7 = top;
+        }
+        if (!profileActivity.N1 || profileActivity.a.P0) {
+            return super.o0(i7, v0Var, a1Var);
+        }
+        return 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.k5
-    public final void setTextColor(int i3) {
-        int r12;
-        ProfileActivity profileActivity = this.V0;
-        profileActivity.F5 = i3;
-        int f10 = i0.a.f(profileActivity.B5, i3, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, profileActivity.A0));
-        super.setTextColor(f10);
-        mw0 mw0Var = profileActivity.z6;
-        if (mw0Var == null || mw0Var.c == (r12 = org.telegram.ui.ActionBar.k6.r1(1.4f, org.telegram.ui.ActionBar.k6.b(-0.02f, 0.15f, f10)))) {
-            return;
-        }
-        mw0Var.c = r12;
-        mw0Var.invalidateSelf();
+    @Override // v4.b0, v4.n0
+    public final boolean y0() {
+        return this.I.q0 != null;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        super.setTranslationX(f10);
-        RectF rectF = ProfileActivity.T6;
-        ProfileActivity profileActivity = this.V0;
-        profileActivity.p4();
-        profileActivity.getClass();
-        org.telegram.ui.Components.ku0 ku0Var = profileActivity.T;
-        if (ku0Var != null) {
-            ku0Var.setTranslationX(f10 - profileActivity.p4());
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        RectF rectF = ProfileActivity.T6;
-        ProfileActivity profileActivity = this.V0;
-        if (profileActivity.T != null) {
-            org.telegram.messenger.g0.L(3.0f);
-            profileActivity.T.getVisibilityFactor();
-        }
-        org.telegram.ui.Components.ku0 ku0Var = profileActivity.T;
-        if (ku0Var != null) {
-            ku0Var.setTranslationY(f10 - org.telegram.messenger.g0.L(5.0f));
-        }
+    @Override // v4.b0
+    public final void z0(v4.a1 a1Var, int[] iArr) {
+        super.z0(a1Var, iArr);
+        iArr[0] = Math.max(iArr[0], ProfileActivity.J0(this.I));
     }
 }

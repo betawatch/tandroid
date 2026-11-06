@@ -20,8 +20,8 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
     @Override // java.lang.Comparable
     public final int compareTo(YearMonth yearMonth) {
         YearMonth yearMonth2 = yearMonth;
-        int i3 = this.a - yearMonth2.a;
-        return i3 == 0 ? this.b - yearMonth2.b : i3;
+        int i7 = this.a - yearMonth2.a;
+        return i7 == 0 ? this.b - yearMonth2.b : i7;
     }
 
     static {
@@ -32,10 +32,10 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public static YearMonth of(int i3, int i10) {
-        j$.time.temporal.a.YEAR.w(i3);
+    public static YearMonth of(int i7, int i10) {
+        j$.time.temporal.a.YEAR.w(i7);
         j$.time.temporal.a.MONTH_OF_YEAR.w(i10);
-        return new YearMonth(i3, i10);
+        return new YearMonth(i7, i10);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -77,13 +77,13 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         return qVar.between(this, of2);
     }
 
-    public YearMonth(int i3, int i10) {
-        this.a = i3;
+    public YearMonth(int i7, int i10) {
+        this.a = i7;
         this.b = i10;
     }
 
-    public final YearMonth K(int i3, int i10) {
-        return (this.a == i3 && this.b == i10) ? this : new YearMonth(i3, i10);
+    public final YearMonth K(int i7, int i10) {
+        return (this.a == i7 && this.b == i10) ? this : new YearMonth(i7, i10);
     }
 
     @Override // j$.time.temporal.l
@@ -106,13 +106,13 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i3;
+        int i7;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
         int i10 = s.a[((j$.time.temporal.a) oVar).ordinal()];
         if (i10 == 1) {
-            i3 = this.b;
+            i7 = this.b;
         } else {
             if (i10 == 2) {
                 return G();
@@ -130,9 +130,9 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i3 = this.a;
+            i7 = this.a;
         }
-        return i3;
+        return i7;
     }
 
     public final long G() {
@@ -142,9 +142,9 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
     public int lengthOfMonth() {
         j J = j.J(this.b);
         j$.time.chrono.r rVar = j$.time.chrono.r.c;
-        long j10 = this.a;
+        long j3 = this.a;
         rVar.getClass();
-        return J.H(j$.time.chrono.r.k(j10));
+        return J.H(j$.time.chrono.r.k(j3));
     }
 
     @Override // j$.time.temporal.Temporal
@@ -155,38 +155,38 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public final YearMonth c(long j10, j$.time.temporal.o oVar) {
+    public final YearMonth c(long j3, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (YearMonth) oVar.q(this, j10);
+            return (YearMonth) oVar.q(this, j3);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.w(j10);
-        int i3 = s.a[aVar.ordinal()];
-        if (i3 == 1) {
-            int i10 = (int) j10;
+        aVar.w(j3);
+        int i7 = s.a[aVar.ordinal()];
+        if (i7 == 1) {
+            int i10 = (int) j3;
             j$.time.temporal.a.MONTH_OF_YEAR.w(i10);
             return K(this.a, i10);
         }
-        if (i3 == 2) {
-            return I(j10 - G());
+        if (i7 == 2) {
+            return I(j3 - G());
         }
-        if (i3 == 3) {
+        if (i7 == 3) {
             if (this.a < 1) {
-                j10 = 1 - j10;
+                j3 = 1 - j3;
             }
-            int i11 = (int) j10;
+            int i11 = (int) j3;
             j$.time.temporal.a.YEAR.w(i11);
             return K(i11, this.b);
         }
-        if (i3 == 4) {
-            int i12 = (int) j10;
+        if (i7 == 4) {
+            int i12 = (int) j3;
             j$.time.temporal.a.YEAR.w(i12);
             return K(i12, this.b);
         }
-        if (i3 != 5) {
+        if (i7 != 5) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        if (y(j$.time.temporal.a.ERA) == j10) {
+        if (y(j$.time.temporal.a.ERA) == j3) {
             return this;
         }
         int i13 = 1 - this.a;
@@ -196,50 +196,50 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final YearMonth d(long j10, j$.time.temporal.q qVar) {
+    public final YearMonth d(long j3, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (YearMonth) qVar.j(this, j10);
+            return (YearMonth) qVar.j(this, j3);
         }
         switch (s.b[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return I(j10);
+                return I(j3);
             case 2:
-                return J(j10);
+                return J(j3);
             case 3:
-                return J(j$.com.android.tools.r8.a.S(j10, 10));
+                return J(j$.com.android.tools.r8.a.S(j3, 10));
             case 4:
-                return J(j$.com.android.tools.r8.a.S(j10, 100));
+                return J(j$.com.android.tools.r8.a.S(j3, 100));
             case 5:
-                return J(j$.com.android.tools.r8.a.S(j10, 1000));
+                return J(j$.com.android.tools.r8.a.S(j3, 1000));
             case 6:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return c(j$.com.android.tools.r8.a.N(y(aVar), j10), aVar);
+                return c(j$.com.android.tools.r8.a.N(y(aVar), j3), aVar);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
-    public final YearMonth J(long j10) {
-        if (j10 == 0) {
+    public final YearMonth J(long j3) {
+        if (j3 == 0) {
             return this;
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        return K(aVar.b.a(this.a + j10, aVar), this.b);
+        return K(aVar.b.a(this.a + j3, aVar), this.b);
     }
 
-    public final YearMonth I(long j10) {
-        if (j10 == 0) {
+    public final YearMonth I(long j3) {
+        if (j3 == 0) {
             return this;
         }
-        long j11 = (this.a * 12) + (this.b - 1) + j10;
+        long j10 = (this.a * 12) + (this.b - 1) + j3;
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        long j12 = 12;
-        return K(aVar.b.a(j$.com.android.tools.r8.a.R(j11, j12), aVar), ((int) j$.com.android.tools.r8.a.Q(j11, j12)) + 1);
+        long j11 = 12;
+        return K(aVar.b.a(j$.com.android.tools.r8.a.R(j10, j11), aVar), ((int) j$.com.android.tools.r8.a.Q(j10, j11)) + 1);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
@@ -282,12 +282,12 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         int abs = Math.abs(this.a);
         StringBuilder sb2 = new StringBuilder(9);
         if (abs < 1000) {
-            int i3 = this.a;
-            if (i3 < 0) {
-                sb2.append(i3 - 10000);
+            int i7 = this.a;
+            if (i7 < 0) {
+                sb2.append(i7 - 10000);
                 sb2.deleteCharAt(1);
             } else {
-                sb2.append(i3 + 10000);
+                sb2.append(i7 + 10000);
                 sb2.deleteCharAt(0);
             }
         } else {

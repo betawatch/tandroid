@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.view.MenuItem;
 import l.n;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface a extends MenuItem {
     a a(n nVar);
@@ -31,7 +31,7 @@ public interface a extends MenuItem {
     CharSequence getTooltipText();
 
     @Override // android.view.MenuItem
-    MenuItem setAlphabeticShortcut(char c2, int i3);
+    MenuItem setAlphabeticShortcut(char c10, int i7);
 
     @Override // android.view.MenuItem
     a setContentDescription(CharSequence charSequence);
@@ -43,10 +43,10 @@ public interface a extends MenuItem {
     MenuItem setIconTintMode(PorterDuff.Mode mode);
 
     @Override // android.view.MenuItem
-    MenuItem setNumericShortcut(char c2, int i3);
+    MenuItem setNumericShortcut(char c10, int i7);
 
     @Override // android.view.MenuItem
-    MenuItem setShortcut(char c2, char c10, int i3, int i10);
+    MenuItem setShortcut(char c10, char c11, int i7, int i10);
 
     @Override // android.view.MenuItem
     a setTooltipText(CharSequence charSequence);

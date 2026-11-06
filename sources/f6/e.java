@@ -1,12 +1,63 @@
 package f6;
 
-import android.content.Context;
-import java.util.List;
+import android.os.Bundle;
+import com.google.android.gms.cast.CastDevice;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface e {
-    List getAdditionalSessionProviders(Context context);
+public final class e implements com.google.android.gms.common.api.b {
+    public final CastDevice a;
+    public final g6.e0 b;
+    public final Bundle c;
+    public final String d = UUID.randomUUID().toString();
 
-    b getCastOptions(Context context);
+    public /* synthetic */ e(android.support.v4.media.session.a0 a0Var) {
+        this.a = (CastDevice) a0Var.b;
+        this.b = (g6.e0) a0Var.c;
+        this.c = (Bundle) a0Var.d;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0058, code lost:
+    
+        if (r3 == r1) goto L27;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        if (q6.m.k(this.a, eVar.a)) {
+            Bundle bundle = eVar.c;
+            Bundle bundle2 = this.c;
+            if (bundle2 != null && bundle != null) {
+                if (bundle2.size() == bundle.size()) {
+                    Set<String> keySet = bundle2.keySet();
+                    if (keySet.containsAll(bundle.keySet())) {
+                        for (String str : keySet) {
+                            if (!q6.m.k(bundle2.get(str), bundle.get(str))) {
+                                break;
+                            }
+                        }
+                        if (q6.m.k(this.d, eVar.d)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.c, 0, this.d});
+    }
 }

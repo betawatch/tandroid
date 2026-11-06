@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class Instance {
     public static final int AUDIO_STATE_ACTIVE = 1;
@@ -56,7 +56,7 @@ public final class Instance {
     private static ServerConfig globalServerConfig = new ServerConfig(new JSONObject());
     private static NativeInstance instance;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class Candidate {
         public final String component;
         public final String foundation;
@@ -93,7 +93,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class Config {
         public final String customParameters;
         public final int dataSaving;
@@ -109,19 +109,19 @@ public final class Instance {
         public final double receiveTimeout;
         public final String statsLogPath;
 
-        public Config(double d, double d10, int i3, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, String str, String str2, int i10, String str3) {
+        public Config(double d, double d2, int i7, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, String str, String str2, int i10, String str3) {
             this.initializationTimeout = d;
-            this.receiveTimeout = d10;
-            this.dataSaving = i3;
-            this.enableP2p = z10;
-            this.enableAec = z11;
-            this.enableNs = z12;
-            this.enableAgc = z13;
-            this.enableCallUpgrade = z14;
+            this.receiveTimeout = d2;
+            this.dataSaving = i7;
+            this.enableP2p = z9;
+            this.enableAec = z10;
+            this.enableNs = z11;
+            this.enableAgc = z12;
+            this.enableCallUpgrade = z13;
             this.logPath = str;
             this.statsLogPath = str2;
             this.maxApiLayer = i10;
-            this.enableSm = z15;
+            this.enableSm = z14;
             this.customParameters = str3;
         }
 
@@ -130,14 +130,14 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class EncryptionKey {
         public final boolean isOutgoing;
         public final byte[] value;
 
-        public EncryptionKey(byte[] bArr, boolean z10) {
+        public EncryptionKey(byte[] bArr, boolean z9) {
             this.value = bArr;
-            this.isOutgoing = z10;
+            this.isOutgoing = z9;
         }
 
         public String toString() {
@@ -145,7 +145,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class Endpoint {
         public final long id;
         public final String ipv4;
@@ -161,27 +161,27 @@ public final class Instance {
         public final int type;
         public final String username;
 
-        public Endpoint(boolean z10, long j10, String str, String str2, int i3, int i10, byte[] bArr, boolean z11, boolean z12, String str3, String str4, boolean z13) {
-            this.isRtc = z10;
-            this.id = j10;
+        public Endpoint(boolean z9, long j3, String str, String str2, int i7, int i10, byte[] bArr, boolean z10, boolean z11, String str3, String str4, boolean z12) {
+            this.isRtc = z9;
+            this.id = j3;
             this.ipv4 = str;
             this.ipv6 = str2;
-            this.port = i3;
+            this.port = i7;
             this.type = i10;
             this.peerTag = bArr;
-            this.turn = z11;
-            this.stun = z12;
-            if (z10) {
+            this.turn = z10;
+            this.stun = z11;
+            if (z9) {
                 this.username = str3;
                 this.password = str4;
             } else if (bArr != null) {
                 this.username = "reflector";
-                this.password = g2.n0.f0(bArr);
+                this.password = h2.m0.f0(bArr);
             } else {
                 this.username = null;
                 this.password = null;
             }
-            this.tcp = z13;
+            this.tcp = z12;
         }
 
         public String toString() {
@@ -189,18 +189,18 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class FinalState {
         public String debugLog;
         public final boolean isRatingSuggested;
         public final byte[] persistentState;
         public final TrafficStats trafficStats;
 
-        public FinalState(byte[] bArr, String str, TrafficStats trafficStats, boolean z10) {
+        public FinalState(byte[] bArr, String str, TrafficStats trafficStats, boolean z9) {
             this.persistentState = bArr;
             this.debugLog = str;
             this.trafficStats = trafficStats;
-            this.isRatingSuggested = z10;
+            this.isRatingSuggested = z9;
         }
 
         public String toString() {
@@ -208,7 +208,7 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class Fingerprint {
         public final String fingerprint;
         public final String hash;
@@ -225,36 +225,36 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface OnRemoteMediaStateUpdatedListener {
-        void onMediaStateUpdated(int i3, int i10);
+        void onMediaStateUpdated(int i7, int i10);
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface OnSignalBarsUpdatedListener {
-        void onSignalBarsUpdated(int i3);
+        void onSignalBarsUpdated(int i7);
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface OnSignalingDataListener {
         void onSignalingData(byte[] bArr);
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface OnStateUpdatedListener {
-        void onStateUpdated(int i3, boolean z10);
+        void onStateUpdated(int i7, boolean z9);
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class Proxy {
         public final String host;
         public final String login;
         public final String password;
         public final int port;
 
-        public Proxy(String str, int i3, String str2, String str3) {
+        public Proxy(String str, int i7, String str2, String str3) {
             this.host = str;
-            this.port = i3;
+            this.port = i7;
             this.login = str2;
             this.password = str3;
         }
@@ -267,11 +267,11 @@ public final class Instance {
             sb2.append(", login='");
             sb2.append(this.login);
             sb2.append("', password='");
-            return a1.g.s(sb2, this.password, "'}");
+            return a8.p0.s(sb2, this.password, "'}");
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class ServerConfig {
         public final boolean enableStunMarking;
         public final boolean enable_h264_decoder;
@@ -312,18 +312,18 @@ public final class Instance {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class TrafficStats {
         public final long bytesReceivedMobile;
         public final long bytesReceivedWifi;
         public final long bytesSentMobile;
         public final long bytesSentWifi;
 
-        public TrafficStats(long j10, long j11, long j12, long j13) {
-            this.bytesSentWifi = j10;
-            this.bytesReceivedWifi = j11;
-            this.bytesSentMobile = j12;
-            this.bytesReceivedMobile = j13;
+        public TrafficStats(long j3, long j10, long j11, long j12) {
+            this.bytesSentWifi = j3;
+            this.bytesReceivedWifi = j10;
+            this.bytesSentMobile = j11;
+            this.bytesReceivedMobile = j12;
         }
 
         public String toString() {
@@ -352,21 +352,21 @@ public final class Instance {
         return globalServerConfig;
     }
 
-    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i3, EncryptionKey encryptionKey, VideoSink videoSink, long j10, NativeInstance.AudioLevelsCallback audioLevelsCallback) {
+    public static NativeInstance makeInstance(String str, Config config, String str2, Endpoint[] endpointArr, Proxy proxy, int i7, EncryptionKey encryptionKey, VideoSink videoSink, long j3, NativeInstance.AudioLevelsCallback audioLevelsCallback) {
         if (!"2.4.4".equals(str)) {
             ContextUtils.initialize(org.telegram.messenger.t0.b);
         }
-        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i3, encryptionKey, videoSink, j10, audioLevelsCallback);
+        instance = NativeInstance.make(str, config, str2, endpointArr, proxy, i7, encryptionKey, videoSink, j3, audioLevelsCallback);
         setGlobalServerConfig(globalServerConfig.jsonObject.toString());
         setBufferSize(bufferSize);
         return instance;
     }
 
-    public static void setBufferSize(int i3) {
-        bufferSize = i3;
+    public static void setBufferSize(int i7) {
+        bufferSize = i7;
         NativeInstance nativeInstance = instance;
         if (nativeInstance != null) {
-            nativeInstance.setBufferSize(i3);
+            nativeInstance.setBufferSize(i7);
         }
     }
 

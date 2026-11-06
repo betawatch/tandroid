@@ -1,75 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zg extends AnimatorListenerAdapter {
+public final /* synthetic */ class zg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ gh c;
+    public final /* synthetic */ di b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ zg(gh ghVar, boolean z10, int i3) {
-        this.a = i3;
-        this.c = ghVar;
-        this.b = z10;
+    public /* synthetic */ zg(di diVar, boolean z9, int i7) {
+        this.a = i7;
+        this.b = diVar;
+        this.c = z9;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                gh ghVar = this.c;
-                bi biVar = ghVar.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    biVar.s3.setVisibility(8);
+                boolean z9 = this.c;
+                di diVar = this.b;
+                if (!z9) {
+                    diVar.W2.setVisibility(8);
+                    break;
                 } else {
-                    biVar.z3.setVisibility(8);
-                }
-                int L = z10 ? org.telegram.messenger.g0.L(36.0f) : 0;
-                for (int i3 = 0; i3 < biVar.s2.size(); i3++) {
-                    ((ii.d4) biVar.s2.valueAt(i3)).setMeasureOffsetY(L);
-                }
-                if (ghVar.a == animator) {
-                    ghVar.a = null;
+                    diVar.getClass();
                     break;
                 }
-                break;
-            default:
-                bi biVar2 = this.c.e;
-                boolean z11 = this.b;
-                biVar2.w3 = z11;
+            case 1:
+                boolean z10 = this.c;
+                di diVar2 = this.b;
+                if (!z10) {
+                    diVar2.s1.setVisibility(8);
+                    break;
+                } else {
+                    diVar2.getClass();
+                    break;
+                }
+            case 2:
+                boolean z11 = this.c;
+                di diVar3 = this.b;
                 if (!z11) {
-                    biVar2.x3.setVisibility(8);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                bi biVar = this.c.e;
-                if (this.b) {
-                    biVar.z3.setAlpha(0.0f);
-                    biVar.z3.setVisibility(0);
-                    int L = org.telegram.messenger.g0.L(36.0f);
-                    for (int i3 = 0; i3 < biVar.s2.size(); i3++) {
-                        ((ii.d4) biVar.s2.valueAt(i3)).setMeasureOffsetY(L);
-                    }
+                    diVar3.u1.setVisibility(8);
                     break;
                 } else {
-                    biVar.s3.setAlpha(0.0f);
-                    biVar.s3.setVisibility(0);
+                    diVar3.getClass();
                     break;
                 }
             default:
-                super.onAnimationStart(animator);
-                break;
+                boolean z12 = this.c;
+                di diVar4 = this.b;
+                if (!z12) {
+                    diVar4.getClass();
+                    break;
+                } else {
+                    diVar4.r3.setVisibility(4);
+                    break;
+                }
         }
     }
 }

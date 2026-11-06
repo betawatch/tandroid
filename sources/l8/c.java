@@ -1,33 +1,58 @@
 package l8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class c extends h {
-    public final /* synthetic */ int c;
-    public final float d;
+import android.os.Bundle;
+import android.os.Parcelable;
+import q6.m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(float f10, int i3) {
-        super(0, Float.valueOf(Math.max(f10, 0.0f)));
-        this.c = i3;
-        switch (i3) {
-            case 1:
-                super(2, Float.valueOf(Math.max(f10, 0.0f)));
-                this.d = Math.max(f10, 0.0f);
-                break;
-            default:
-                this.d = Math.max(f10, 0.0f);
-                break;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class c {
+    public static Parcelable a(String str, Bundle bundle) {
+        ClassLoader classLoader = c.class.getClassLoader();
+        m.g(classLoader);
+        bundle.setClassLoader(classLoader);
+        Bundle bundle2 = bundle.getBundle("map_state");
+        if (bundle2 == null) {
+            return null;
+        }
+        bundle2.setClassLoader(classLoader);
+        return bundle2.getParcelable(str);
+    }
+
+    public static void b(Bundle bundle, Bundle bundle2) {
+        if (bundle == null || bundle2 == null) {
+            return;
+        }
+        Parcelable a10 = a("MapOptions", bundle);
+        if (a10 != null) {
+            c(bundle2, "MapOptions", a10);
+        }
+        Parcelable a11 = a("StreetViewPanoramaOptions", bundle);
+        if (a11 != null) {
+            c(bundle2, "StreetViewPanoramaOptions", a11);
+        }
+        Parcelable a12 = a("camera", bundle);
+        if (a12 != null) {
+            c(bundle2, "camera", a12);
+        }
+        if (bundle.containsKey("position")) {
+            bundle2.putString("position", bundle.getString("position"));
+        }
+        if (bundle.containsKey("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT")) {
+            bundle2.putBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", bundle.getBoolean("com.google.android.wearable.compat.extra.LOWBIT_AMBIENT", false));
         }
     }
 
-    @Override // l8.h
-    public final String toString() {
-        switch (this.c) {
-            case 0:
-                return "[Dash: length=" + this.d + "]";
-            default:
-                return "[Gap: length=" + this.d + "]";
+    public static void c(Bundle bundle, String str, Parcelable parcelable) {
+        ClassLoader classLoader = c.class.getClassLoader();
+        m.g(classLoader);
+        bundle.setClassLoader(classLoader);
+        Bundle bundle2 = bundle.getBundle("map_state");
+        if (bundle2 == null) {
+            bundle2 = new Bundle();
         }
+        bundle2.setClassLoader(classLoader);
+        bundle2.putParcelable(str, parcelable);
+        bundle.putBundle("map_state", bundle2);
     }
 }

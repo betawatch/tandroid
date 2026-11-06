@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class f1 extends l0 {
     private static Map<Object, f1> zzd = new ConcurrentHashMap();
@@ -66,8 +66,8 @@ public abstract class f1 extends l0 {
     }
 
     @Override // com.google.android.gms.internal.vision.l0
-    public final void b(int i3) {
-        this.zzc = i3;
+    public final void b(int i7) {
+        this.zzc = i7;
     }
 
     @Override // com.google.android.gms.internal.vision.l0
@@ -75,7 +75,7 @@ public abstract class f1 extends l0 {
         return this.zzc;
     }
 
-    public abstract Object e(int i3);
+    public abstract Object e(int i7);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -99,9 +99,9 @@ public abstract class f1 extends l0 {
     }
 
     public final int hashCode() {
-        int i3 = this.zza;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.zza;
+        if (i7 != 0) {
+            return i7;
         }
         k2 k2Var = k2.c;
         k2Var.getClass();

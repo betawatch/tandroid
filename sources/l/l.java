@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l implements DialogInterface.OnKeyListener, DialogInterface.OnClickListener, DialogInterface.OnDismissListener, w {
     public d0 a;
@@ -13,42 +13,42 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
     public g c;
 
     @Override // l.w
-    public final boolean E(k kVar) {
+    public final boolean A(k kVar) {
         return false;
     }
 
     @Override // l.w
-    public final void b(k kVar, boolean z10) {
+    public final void c(k kVar, boolean z9) {
         g.f fVar;
-        if ((z10 || kVar == this.a) && (fVar = this.b) != null) {
+        if ((z9 || kVar == this.a) && (fVar = this.b) != null) {
             fVar.dismiss();
         }
     }
 
     @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i3) {
+    public final void onClick(DialogInterface dialogInterface, int i7) {
         d0 d0Var = this.a;
         g gVar = this.c;
         if (gVar.f == null) {
             gVar.f = new f(gVar);
         }
-        d0Var.q(gVar.f.getItem(i3), null, 0);
+        d0Var.q(gVar.f.getItem(i7), null, 0);
     }
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        this.c.b(this.a, true);
+        this.c.c(this.a, true);
     }
 
     @Override // android.content.DialogInterface.OnKeyListener
-    public final boolean onKey(DialogInterface dialogInterface, int i3, KeyEvent keyEvent) {
+    public final boolean onKey(DialogInterface dialogInterface, int i7, KeyEvent keyEvent) {
         Window window;
         View decorView;
         KeyEvent.DispatcherState keyDispatcherState;
         View decorView2;
         KeyEvent.DispatcherState keyDispatcherState2;
         d0 d0Var = this.a;
-        if (i3 == 82 || i3 == 4) {
+        if (i7 == 82 || i7 == 4) {
             if (keyEvent.getAction() == 0 && keyEvent.getRepeatCount() == 0) {
                 Window window2 = this.b.getWindow();
                 if (window2 != null && (decorView2 = window2.getDecorView()) != null && (keyDispatcherState2 = decorView2.getKeyDispatcherState()) != null) {
@@ -61,6 +61,6 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
                 return true;
             }
         }
-        return d0Var.performShortcut(i3, keyEvent, 0);
+        return d0Var.performShortcut(i7, keyEvent, 0);
     }
 }

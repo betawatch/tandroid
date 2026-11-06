@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class h01 extends Drawable {
     public final Paint a = new Paint(1);
@@ -15,9 +15,9 @@ public final class h01 extends Drawable {
     public final /* synthetic */ int c;
     public final /* synthetic */ n01 d;
 
-    public h01(n01 n01Var, int i3) {
+    public h01(n01 n01Var, int i7) {
         this.d = n01Var;
-        this.c = i3;
+        this.c = i7;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -25,8 +25,8 @@ public final class h01 extends Drawable {
         Rect bounds = getBounds();
         RectF rectF = this.b;
         rectF.set(bounds);
-        int i3 = this.c;
-        rectF.inset(i3, i3);
+        int i7 = this.c;
+        rectF.inset(i7, i7);
         float height = rectF.height() / 2.0f;
         int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.d.e);
         Paint paint = this.a;
@@ -43,7 +43,7 @@ public final class h01 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

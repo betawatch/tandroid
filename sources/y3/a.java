@@ -1,49 +1,43 @@
 package y3;
 
-import g2.y;
+import f3.k;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public int b;
-    public int c;
-    public long d;
-    public final boolean e;
-    public final y f;
-    public final y g;
-    public int h;
-    public int i;
+public final class a extends k implements h {
+    public final long i;
+    public final int j;
+    public final int k;
+    public final boolean l;
+    public final long m;
 
-    public a(y yVar, y yVar2, boolean z10) {
-        this.g = yVar;
-        this.f = yVar2;
-        this.e = z10;
-        yVar2.N(12);
-        this.a = yVar2.E();
-        yVar.N(12);
-        this.i = yVar.E();
-        e3.b.b("first_chunk must be 1", yVar.m() == 1);
-        this.b = -1;
+    public a(long j3, long j10, int i7, int i10, boolean z9, boolean z10) {
+        super(j3, j10, i7, i10, z9, z10);
+        long j11 = j3;
+        this.i = j10;
+        this.j = i7;
+        this.k = i10;
+        this.l = z9;
+        this.m = j11 == -1 ? -1L : j11;
     }
 
-    public final boolean a() {
-        int i3 = this.b + 1;
-        this.b = i3;
-        if (i3 == this.a) {
-            return false;
-        }
-        boolean z10 = this.e;
-        y yVar = this.f;
-        this.d = z10 ? yVar.G() : yVar.C();
-        if (this.b == this.h) {
-            y yVar2 = this.g;
-            this.c = yVar2.E();
-            yVar2.O(4);
-            int i10 = this.i - 1;
-            this.i = i10;
-            this.h = i10 > 0 ? yVar2.E() - 1 : -1;
-        }
-        return true;
+    @Override // y3.h
+    public final long a(long j3) {
+        return (Math.max(0L, j3 - this.b) * 8000000) / this.e;
+    }
+
+    @Override // y3.h
+    public final long b() {
+        return this.m;
+    }
+
+    @Override // y3.h
+    public final long c() {
+        return this.i;
+    }
+
+    @Override // y3.h
+    public final int g() {
+        return this.j;
     }
 }

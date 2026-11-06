@@ -15,9 +15,9 @@ public final class l extends f5 {
     public Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l(a aVar, j5 j5Var, int i3) {
+    public /* synthetic */ l(a aVar, j5 j5Var, int i7) {
         super(j5Var);
-        this.b = i3;
+        this.b = i7;
         this.c = aVar;
     }
 
@@ -41,7 +41,7 @@ public final class l extends f5 {
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public void o(long j10) {
+    public void o(long j3) {
         switch (this.b) {
             case 0:
                 this.c = new HashSet();
@@ -49,7 +49,7 @@ public final class l extends f5 {
                 break;
             case 1:
             default:
-                super.o(j10);
+                super.o(j3);
                 break;
             case 2:
                 this.a.o(-1L);

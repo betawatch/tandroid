@@ -1,25 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gf extends ii.m0 {
-    public final /* synthetic */ ChatActivityEnterView E;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.E = chatActivityEnterView;
+public final class gf extends org.telegram.messenger.ij {
+    @Override // org.telegram.messenger.ij
+    public final boolean Q3() {
+        return true;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        ChatActivityEnterView chatActivityEnterView = this.E;
-        if (chatActivityEnterView.W0 == null || chatActivityEnterView.p3 != 1) {
-            return;
-        }
-        chatActivityEnterView.a3.x(f10);
+    @Override // org.telegram.messenger.ij
+    public final boolean p5() {
+        return false;
     }
 }

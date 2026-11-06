@@ -1,16 +1,16 @@
 package wi;
 
 import android.hardware.camera2.CameraDevice;
-import org.telegram.ui.Components.nh;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class e extends CameraDevice.StateCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ j b;
 
-    public /* synthetic */ e(j jVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ e(j jVar, int i7) {
+        this.a = i7;
         this.b = jVar;
     }
 
@@ -58,11 +58,11 @@ public final class e extends CameraDevice.StateCallback {
 
     @Override // android.hardware.camera2.CameraDevice.StateCallback
     public final void onDisconnected(CameraDevice cameraDevice) {
-        boolean z10;
+        boolean z9;
         switch (this.a) {
             case 0:
                 j jVar = this.b;
-                boolean z11 = false;
+                boolean z10 = false;
                 jVar.W = false;
                 jVar.j.b("camera disconnected: id=" + cameraDevice.getId());
                 if (this.b.G(cameraDevice)) {
@@ -85,7 +85,7 @@ public final class e extends CameraDevice.StateCallback {
                 if (jVar2.V && !this.b.b0) {
                     j jVar3 = this.b;
                     if (!jVar3.X && !jVar3.Y) {
-                        z11 = true;
+                        z10 = true;
                     }
                 }
                 j jVar4 = this.b;
@@ -94,18 +94,18 @@ public final class e extends CameraDevice.StateCallback {
                     this.b.z = null;
                 }
                 cameraDevice.close();
-                if (z11) {
+                if (z10) {
                     j jVar5 = this.b;
                     IllegalStateException illegalStateException = new IllegalStateException("Camera device disconnected");
                     m mVar = jVar5.x;
                     if (mVar != null) {
                         synchronized (mVar) {
-                            z10 = mVar.E;
+                            z9 = mVar.E;
                         }
-                        if (z10) {
+                        if (z9) {
                             jVar5.j.a("camera lost while recording", illegalStateException);
-                            nh nhVar = jVar5.k;
-                            ((t0) nhVar.b).i.post(new j0(nhVar, illegalStateException, 0));
+                            qt qtVar = jVar5.k;
+                            ((t0) qtVar.b).i.post(new j0(qtVar, illegalStateException, 0));
                             return;
                         }
                     }
@@ -126,26 +126,26 @@ public final class e extends CameraDevice.StateCallback {
     }
 
     @Override // android.hardware.camera2.CameraDevice.StateCallback
-    public final void onError(CameraDevice cameraDevice, int i3) {
-        boolean z10;
+    public final void onError(CameraDevice cameraDevice, int i7) {
+        boolean z9;
         switch (this.a) {
             case 0:
                 j jVar = this.b;
                 jVar.W = false;
                 if (jVar.G(cameraDevice)) {
-                    jVar.j.b("camera error while warm-switch recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i3) + " (" + i3 + ")");
+                    jVar.j.b("camera error while warm-switch recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i7) + " (" + i7 + ")");
                     cameraDevice.close();
                     return;
                 }
                 if (cameraDevice == jVar.t0) {
                     if (jVar.n0) {
-                        j.b(jVar, cameraDevice, "error=" + j.c(i3) + " (" + i3 + ")", null);
+                        j.b(jVar, cameraDevice, "error=" + j.c(i7) + " (" + i7 + ")", null);
                         return;
                     }
                     jVar.t0 = null;
                     jVar.u0 = cameraDevice;
                     cameraDevice.close();
-                    jVar.y("standby device error=" + j.c(i3) + " (" + i3 + ")", null);
+                    jVar.y("standby device error=" + j.c(i7) + " (" + i7 + ")", null);
                     return;
                 }
                 if (jVar.z == cameraDevice) {
@@ -153,16 +153,16 @@ public final class e extends CameraDevice.StateCallback {
                     jVar.z = null;
                 }
                 cameraDevice.close();
-                IllegalStateException illegalStateException = new IllegalStateException("Camera device error: " + j.c(i3) + " (" + i3 + ")");
+                IllegalStateException illegalStateException = new IllegalStateException("Camera device error: " + j.c(i7) + " (" + i7 + ")");
                 m mVar = jVar.x;
                 if (mVar != null) {
                     synchronized (mVar) {
-                        z10 = mVar.E;
+                        z9 = mVar.E;
                     }
-                    if (z10) {
+                    if (z9) {
                         jVar.j.a("camera lost while recording", illegalStateException);
-                        nh nhVar = jVar.k;
-                        ((t0) nhVar.b).i.post(new j0(nhVar, illegalStateException, 0));
+                        qt qtVar = jVar.k;
+                        ((t0) qtVar.b).i.post(new j0(qtVar, illegalStateException, 0));
                         return;
                     }
                 }
@@ -171,11 +171,11 @@ public final class e extends CameraDevice.StateCallback {
             default:
                 j jVar2 = this.b;
                 if (jVar2.G(cameraDevice)) {
-                    jVar2.j.b("warm camera error while recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i3) + " (" + i3 + ")");
+                    jVar2.j.b("warm camera error while recovery is closing it: id=" + cameraDevice.getId() + ", error=" + j.c(i7) + " (" + i7 + ")");
                     cameraDevice.close();
                     return;
                 }
-                j.b(jVar2, cameraDevice, "error=" + j.c(i3) + " (" + i3 + ")", new IllegalStateException("Warm camera device error: " + j.c(i3) + " (" + i3 + ")"));
+                j.b(jVar2, cameraDevice, "error=" + j.c(i7) + " (" + i7 + ")", new IllegalStateException("Warm camera device error: " + j.c(i7) + " (" + i7 + ")"));
                 return;
         }
     }

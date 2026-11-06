@@ -22,22 +22,22 @@ public abstract class x6 implements Spliterator {
     public abstract x6 e(Spliterator spliterator);
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
-    public x6(a aVar, Supplier supplier, boolean z10) {
+    public x6(a aVar, Supplier supplier, boolean z9) {
         this.b = aVar;
         this.c = supplier;
         this.d = null;
-        this.a = z10;
+        this.a = z9;
     }
 
-    public x6(a aVar, Spliterator spliterator, boolean z10) {
+    public x6(a aVar, Spliterator spliterator, boolean z9) {
         this.b = aVar;
         this.c = null;
         this.d = spliterator;
-        this.a = z10;
+        this.a = z9;
     }
 
     public final void c() {
@@ -59,11 +59,11 @@ public abstract class x6 implements Spliterator {
             this.e.o(this.d.getExactSizeIfKnown());
             return b();
         }
-        long j10 = this.g + 1;
-        this.g = j10;
-        boolean z10 = j10 < cVar.count();
-        if (z10) {
-            return z10;
+        long j3 = this.g + 1;
+        this.g = j3;
+        boolean z9 = j3 < cVar.count();
+        if (z9) {
+            return z9;
         }
         this.g = 0L;
         this.h.clear();
@@ -114,8 +114,8 @@ public abstract class x6 implements Spliterator {
     @Override // j$.util.Spliterator
     public final int characteristics() {
         c();
-        int i3 = this.b.m;
-        int i10 = i3 & ((~i3) >> 1) & v6.j & v6.f;
+        int i7 = this.b.m;
+        int i10 = i7 & ((~i7) >> 1) & v6.j & v6.f;
         return (i10 & 64) != 0 ? (i10 & (-16449)) | (this.d.characteristics() & 16448) : i10;
     }
 

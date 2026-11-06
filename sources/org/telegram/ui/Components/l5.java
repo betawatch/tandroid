@@ -1,39 +1,42 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l5 {
-    public ArrayList a;
-    public HashMap b;
-    public ArrayList c;
+public final class l5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r5 b;
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            ((k5) arrayList.get(i3)).d.spanDrawn = false;
-        }
+    public /* synthetic */ l5(r5 r5Var, int i7) {
+        this.a = i7;
+        this.b = r5Var;
     }
 
-    public final void b(int i3) {
-        k5 k5Var = (k5) this.a.remove(i3);
-        HashMap hashMap = this.b;
-        n5 n5Var = (n5) hashMap.get(k5Var.c);
-        if (n5Var == null) {
-            throw new RuntimeException("!!!");
-        }
-        ArrayList arrayList = n5Var.b;
-        arrayList.remove(k5Var);
-        n5Var.a();
-        if (arrayList.isEmpty()) {
-            hashMap.remove(k5Var.c);
-            this.c.remove(n5Var);
-        }
-        g5 g5Var = k5Var.f;
-        if (g5Var != null) {
-            g5Var.o(k5Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        Runnable runnable2;
+        switch (this.a) {
+            case 0:
+                this.b.scaleAnimator = null;
+                boolean unused = r5.lockPositionChanging = false;
+                break;
+            case 1:
+                r5 r5Var = this.b;
+                r5Var.scaleAnimator = null;
+                runnable = r5Var.removedAction;
+                if (runnable != null) {
+                    runnable2 = r5Var.removedAction;
+                    runnable2.run();
+                    r5Var.removedAction = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.moveAnimator = null;
+                break;
         }
     }
 }

@@ -1,72 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg implements org.telegram.messenger.d9, uq0, r0.m, org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ wm a;
+public final /* synthetic */ class zg implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ TLRPC.TL_error d;
+    public final /* synthetic */ TLRPC.User e;
 
-    public /* synthetic */ zg(wm wmVar) {
-        this.a = wmVar;
+    public /* synthetic */ zg(an anVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.TL_error tL_error, TLRPC.User user) {
+        this.b = anVar;
+        this.c = tL_attachMenuBot;
+        this.d = tL_error;
+        this.e = user;
     }
 
-    @Override // r0.m
-    public r0.k1 R0(View view, r0.k1 k1Var) {
-        wm wmVar = this.a;
-        r0.k1 N8 = wmVar.N8(k1Var);
-        i0.b I0 = org.telegram.messenger.g0.I0(N8, false);
-        int i3 = I0.a;
-        int i10 = I0.c;
-        if (wmVar.ob != i3 || wmVar.pb != i10) {
-            wmVar.ob = i3;
-            wmVar.pb = i10;
-            wmVar.m1.requestLayout();
-        }
-        wmVar.w.j(N8);
-        ai.o2 o2Var = wmVar.Z3;
-        if (o2Var != null) {
-            o2Var.setPadding(i3, 0, i10, 0);
-        }
-        wmVar.B7();
-        wmVar.F7();
-        wmVar.L9();
-        boolean p10 = N8.a.p(8);
-        if (wmVar.nb != p10) {
-            wmVar.nb = p10;
-            wmVar.m1.R();
-        }
-        gi.g1 g1Var = wmVar.F1;
-        if (g1Var != null) {
-            r0.i0.b(g1Var, N8);
-        }
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.uq0
-    public void a(float[] fArr) {
-        wm wmVar = this.a;
-        fArr[1] = wmVar.A0.getBottom() - wmVar.Va;
-        fArr[0] = (wmVar.A0.getTop() + wmVar.M9) - org.telegram.messenger.g0.L(4.0f);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        wm wmVar = this.a;
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-            wmVar.getParentActivity().startActivity(intent);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                an.i0(this.b, this.c, this.d, this.e);
+                break;
+            default:
+                an.t0(this.b, this.c, this.d, this.e);
+                break;
         }
     }
 
-    @Override // org.telegram.messenger.d9
-    public boolean run() {
-        wm wmVar = this.a;
-        return wmVar.h != null || wmVar.U9();
+    public /* synthetic */ zg(an anVar, TLRPC.TL_error tL_error, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user) {
+        this.b = anVar;
+        this.d = tL_error;
+        this.c = tL_attachMenuBot;
+        this.e = user;
     }
 }

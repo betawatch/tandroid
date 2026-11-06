@@ -2,65 +2,131 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.DeadObjectException;
 import android.os.RemoteException;
-import android.util.Log;
 import com.google.android.gms.common.api.Status;
-import java.util.Map;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a1 extends d1 {
-    public final d b;
+public final class a1 extends s0 {
+    public final TaskCompletionSource b;
+    public final /* synthetic */ int c;
+    public final Object d;
 
-    public a1(int i3, d dVar) {
-        super(i3);
-        this.b = dVar;
+    public a1(int i7, TaskCompletionSource taskCompletionSource) {
+        super(i7);
+        this.b = taskCompletionSource;
     }
 
-    @Override // com.google.android.gms.common.api.internal.d1
+    @Override // com.google.android.gms.common.api.internal.c1
     public final void a(Status status) {
-        try {
-            this.b.o(status);
-        } catch (IllegalStateException e10) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e10);
-        }
+        this.b.trySetException(new com.google.android.gms.common.api.f(status));
     }
 
-    @Override // com.google.android.gms.common.api.internal.d1
+    @Override // com.google.android.gms.common.api.internal.c1
     public final void b(Exception exc) {
-        String simpleName = exc.getClass().getSimpleName();
-        String localizedMessage = exc.getLocalizedMessage();
-        try {
-            this.b.o(new Status(10, org.telegram.ui.Cells.f1.r(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
-        } catch (IllegalStateException e10) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e10);
-        }
+        this.b.trySetException(exc);
     }
 
-    @Override // com.google.android.gms.common.api.internal.d1
-    public final void c(z0 z0Var, boolean z10) {
-        Boolean valueOf = Boolean.valueOf(z10);
-        Map map = (Map) z0Var.a;
-        d dVar = this.b;
-        map.put(dVar, valueOf);
-        dVar.b(new h1(z0Var, dVar));
+    @Override // com.google.android.gms.common.api.internal.c1
+    public final /* bridge */ /* synthetic */ void c(y0 y0Var, boolean z9) {
+        int i7 = this.c;
     }
 
-    @Override // com.google.android.gms.common.api.internal.d1
+    @Override // com.google.android.gms.common.api.internal.c1
     public final void d(j0 j0Var) {
         try {
-            d dVar = this.b;
-            com.google.android.gms.common.api.c cVar = j0Var.b;
-            dVar.getClass();
-            try {
-                dVar.n(cVar);
-            } catch (DeadObjectException e10) {
-                dVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
-                throw e10;
-            } catch (RemoteException e11) {
-                dVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
-            }
+            k(j0Var);
+        } catch (DeadObjectException e10) {
+            a(c1.e(e10));
+            throw e10;
+        } catch (RemoteException e11) {
+            a(c1.e(e11));
         } catch (RuntimeException e12) {
-            b(e12);
+            this.b.trySetException(e12);
         }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.s0
+    public final n6.c[] f(j0 j0Var) {
+        switch (this.c) {
+            case 0:
+                return (n6.c[]) ((u0) this.d).a.d;
+            default:
+                u0 u0Var = (u0) j0Var.f.get((m) this.d);
+                if (u0Var == null) {
+                    return null;
+                }
+                return (n6.c[]) u0Var.a.d;
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.s0
+    public final boolean g(j0 j0Var) {
+        switch (this.c) {
+            case 0:
+                return ((u0) this.d).a.a;
+            default:
+                u0 u0Var = (u0) j0Var.f.get((m) this.d);
+                return u0Var != null && u0Var.a.a;
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.s0
+    public final int h(j0 j0Var) {
+        switch (this.c) {
+            case 0:
+                return ((u0) this.d).a.b;
+            default:
+                u0 u0Var = (u0) j0Var.f.get((m) this.d);
+                if (u0Var != null) {
+                    return u0Var.a.b;
+                }
+                return -1;
+        }
+    }
+
+    public final void k(j0 j0Var) {
+        switch (this.c) {
+            case 0:
+                u0 u0Var = (u0) this.d;
+                h2.w wVar = u0Var.a;
+                ((p) ((bi.a) wVar.e).c).accept(j0Var.b, this.b);
+                m mVar = ((o) wVar.c).b;
+                if (mVar != null) {
+                    j0Var.f.put(mVar, u0Var);
+                    break;
+                }
+                break;
+            default:
+                u0 u0Var2 = (u0) j0Var.f.remove((m) this.d);
+                if (u0Var2 == null) {
+                    this.b.trySetResult(Boolean.FALSE);
+                    break;
+                } else {
+                    ((p) ((bi.a) u0Var2.b.b).d).accept(j0Var.b, this.b);
+                    ((o) u0Var2.a.c).b = null;
+                    break;
+                }
+        }
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public a1(m mVar, TaskCompletionSource taskCompletionSource) {
+        this(4, taskCompletionSource);
+        this.c = 1;
+        this.d = mVar;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public a1(u0 u0Var, TaskCompletionSource taskCompletionSource) {
+        this(3, taskCompletionSource);
+        this.c = 0;
+        this.d = u0Var;
+    }
+
+    private final /* bridge */ /* synthetic */ void i(y0 y0Var, boolean z9) {
+    }
+
+    private final /* bridge */ /* synthetic */ void j(y0 y0Var, boolean z9) {
     }
 }

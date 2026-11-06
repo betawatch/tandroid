@@ -6,16 +6,16 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface DatePrinter {
-    String format(long j10);
+    String format(long j3);
 
     String format(Calendar calendar);
 
     String format(Date date);
 
-    StringBuffer format(long j10, StringBuffer stringBuffer);
+    StringBuffer format(long j3, StringBuffer stringBuffer);
 
     StringBuffer format(Object obj, StringBuffer stringBuffer, FieldPosition fieldPosition);
 

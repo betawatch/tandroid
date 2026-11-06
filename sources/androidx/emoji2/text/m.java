@@ -1,20 +1,21 @@
 package androidx.emoji2.text;
 
-import b8.w0;
+import a8.t6;
+import ab.b0;
 import java.util.concurrent.ThreadPoolExecutor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m extends w0 {
-    public final /* synthetic */ w0 a;
+public final class m extends t6 {
+    public final /* synthetic */ t6 a;
     public final /* synthetic */ ThreadPoolExecutor b;
 
-    public m(w0 w0Var, ThreadPoolExecutor threadPoolExecutor) {
-        this.a = w0Var;
+    public m(t6 t6Var, ThreadPoolExecutor threadPoolExecutor) {
+        this.a = t6Var;
         this.b = threadPoolExecutor;
     }
 
-    @Override // b8.w0
+    @Override // a8.t6
     public final void a(Throwable th2) {
         ThreadPoolExecutor threadPoolExecutor = this.b;
         try {
@@ -24,11 +25,11 @@ public final class m extends w0 {
         }
     }
 
-    @Override // b8.w0
-    public final void b(ui.f fVar) {
+    @Override // a8.t6
+    public final void b(b0 b0Var) {
         ThreadPoolExecutor threadPoolExecutor = this.b;
         try {
-            this.a.b(fVar);
+            this.a.b(b0Var);
         } finally {
             threadPoolExecutor.shutdown();
         }

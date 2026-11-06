@@ -19,50 +19,50 @@ public class q1 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
-    public q1(java.util.Collection collection, int i3) {
+    public q1(java.util.Collection collection, int i7) {
         this.a = collection;
-        this.c = (i3 & TLObject.FLAG_12) == 0 ? i3 | 16448 : i3;
+        this.c = (i7 & TLObject.FLAG_12) == 0 ? i7 | 16448 : i7;
     }
 
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
-        long j10;
+        long j3;
         Iterator it = this.b;
         if (it == null) {
             it = this.a.iterator();
             this.b = it;
-            j10 = this.a.size();
-            this.d = j10;
+            j3 = this.a.size();
+            this.d = j3;
         } else {
-            j10 = this.d;
+            j3 = this.d;
         }
-        if (j10 <= 1 || !it.hasNext()) {
+        if (j3 <= 1 || !it.hasNext()) {
             return null;
         }
-        int i3 = this.e + 1024;
-        if (i3 > j10) {
-            i3 = (int) j10;
+        int i7 = this.e + 1024;
+        if (i7 > j3) {
+            i7 = (int) j3;
         }
-        if (i3 > 33554432) {
-            i3 = 33554432;
+        if (i7 > 33554432) {
+            i7 = 33554432;
         }
-        Object[] objArr = new Object[i3];
+        Object[] objArr = new Object[i7];
         int i10 = 0;
         do {
             objArr[i10] = it.next();
             i10++;
-            if (i10 >= i3) {
+            if (i10 >= i7) {
                 break;
             }
         } while (it.hasNext());
         this.e = i10;
-        long j11 = this.d;
-        if (j11 != Long.MAX_VALUE) {
-            this.d = j11 - i10;
+        long j10 = this.d;
+        if (j10 != Long.MAX_VALUE) {
+            this.d = j10 - i10;
         }
         return new j1(objArr, 0, i10, this.c);
     }

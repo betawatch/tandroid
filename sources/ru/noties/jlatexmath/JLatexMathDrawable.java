@@ -14,7 +14,7 @@ import ru.noties.jlatexmath.awt.AndroidGraphics2D;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Insets;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class JLatexMathDrawable extends Drawable {
     public static final int ALIGN_CENTER = 1;
@@ -27,12 +27,12 @@ public class JLatexMathDrawable extends Drawable {
     private final int iconHeight;
     private final int iconWidth;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     @Retention(RetentionPolicy.CLASS)
     public @interface Align {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Builder {
         private int align;
         private Drawable background;
@@ -45,8 +45,8 @@ public class JLatexMathDrawable extends Drawable {
             this.latex = str;
         }
 
-        public Builder align(int i3) {
-            this.align = i3;
+        public Builder align(int i7) {
+            this.align = i7;
             return this;
         }
 
@@ -59,13 +59,13 @@ public class JLatexMathDrawable extends Drawable {
             return new JLatexMathDrawable(this);
         }
 
-        public Builder color(int i3) {
-            this.color = i3;
+        public Builder color(int i7) {
+            this.color = i7;
             return this;
         }
 
-        public Builder padding(int i3) {
-            this.insets = new Insets(i3, i3, i3, i3);
+        public Builder padding(int i7) {
+            this.insets = new Insets(i7, i7, i7, i7);
             return this;
         }
 
@@ -74,18 +74,18 @@ public class JLatexMathDrawable extends Drawable {
             return this;
         }
 
-        public Builder background(int i3) {
-            this.background = new ColorDrawable(i3);
+        public Builder background(int i7) {
+            this.background = new ColorDrawable(i7);
             return this;
         }
 
-        public Builder padding(int i3, int i10, int i11, int i12) {
-            this.insets = new Insets(i10, i3, i12, i11);
+        public Builder padding(int i7, int i10, int i11, int i12) {
+            this.insets = new Insets(i10, i7, i12, i11);
             return this;
         }
 
         @Deprecated
-        public Builder fitCanvas(boolean z10) {
+        public Builder fitCanvas(boolean z9) {
             return this;
         }
     }
@@ -119,7 +119,7 @@ public class JLatexMathDrawable extends Drawable {
     */
     public void draw(Canvas canvas) {
         float min;
-        int i3;
+        int i7;
         int i10;
         Rect bounds = getBounds();
         int save = canvas.save();
@@ -134,11 +134,11 @@ public class JLatexMathDrawable extends Drawable {
             if (i11 <= width && this.iconHeight <= height) {
                 min = 1.0f;
                 int i12 = (int) ((this.iconWidth * min) + 0.5f);
-                i3 = (height - ((int) ((this.iconHeight * min) + 0.5f))) / 2;
+                i7 = (height - ((int) ((this.iconHeight * min) + 0.5f))) / 2;
                 int i13 = this.align;
                 i10 = i13 != 1 ? (width - i12) / 2 : i13 == 2 ? width - i12 : 0;
-                if (i3 == 0 || i10 != 0) {
-                    canvas.translate(i10, i3);
+                if (i7 == 0 || i10 != 0) {
+                    canvas.translate(i10, i7);
                 }
                 if (Float.compare(min, 1.0f) != 0) {
                     canvas.scale(min, min);
@@ -149,13 +149,13 @@ public class JLatexMathDrawable extends Drawable {
             }
             min = Math.min(width / i11, height / this.iconHeight);
             int i122 = (int) ((this.iconWidth * min) + 0.5f);
-            i3 = (height - ((int) ((this.iconHeight * min) + 0.5f))) / 2;
+            i7 = (height - ((int) ((this.iconHeight * min) + 0.5f))) / 2;
             int i132 = this.align;
             if (i132 != 1) {
             }
-            if (i3 == 0) {
+            if (i7 == 0) {
             }
-            canvas.translate(i10, i3);
+            canvas.translate(i10, i7);
             if (Float.compare(min, 1.0f) != 0) {
             }
             this.graphics2D.setCanvas(canvas);
@@ -196,7 +196,7 @@ public class JLatexMathDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i3) {
+    public void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

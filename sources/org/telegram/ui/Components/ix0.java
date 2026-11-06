@@ -2,25 +2,25 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ix0 {
-    public static final ix0 e = new ix0(false, new fx0(TLObject.FLAG_31, -2147483647), lx0.S, 0.0f);
+    public static final ix0 e = new ix0(false, new fx0(TLObject.FLAG_31, -2147483647), lx0.R, 0.0f);
     public final boolean a;
     public final fx0 b;
     public final xw0 c;
     public final float d;
 
-    public ix0(boolean z10, fx0 fx0Var, xw0 xw0Var, float f10) {
-        this.a = z10;
+    public ix0(boolean z9, fx0 fx0Var, xw0 xw0Var, float f10) {
+        this.a = z9;
         this.b = fx0Var;
         this.c = xw0Var;
         this.d = f10;
     }
 
-    public static xw0 a(ix0 ix0Var, boolean z10) {
+    public static xw0 a(ix0 ix0Var, boolean z9) {
         xw0 xw0Var = ix0Var.c;
-        return xw0Var != lx0.S ? xw0Var : ix0Var.d == 0.0f ? z10 ? lx0.T : lx0.U : lx0.V;
+        return xw0Var != lx0.R ? xw0Var : ix0Var.d == 0.0f ? z9 ? lx0.S : lx0.T : lx0.U;
     }
 
     public final boolean equals(Object obj) {

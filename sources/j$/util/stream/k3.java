@@ -15,7 +15,7 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
@@ -41,8 +41,8 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.U(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.U(this, j3, j10);
     }
 
     @Override // j$.util.stream.j5
@@ -70,24 +70,24 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i3) {
-        a(i3);
+    public final /* bridge */ /* synthetic */ e2 a(int i7) {
+        a(i7);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i3) {
+    public final d2 a(int i7) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i3) {
-        t3.O(this, (Long[]) objArr, i3);
+    public final /* synthetic */ void f(Object[] objArr, int i7) {
+        t3.O(this, (Long[]) objArr, i7);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final void c(int i3, Object obj) {
-        super.c(i3, (long[]) obj);
+    public final void c(int i7, Object obj) {
+        super.c(i7, (long[]) obj);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2
@@ -106,9 +106,9 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         clear();
-        l(j10);
+        l(j3);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2

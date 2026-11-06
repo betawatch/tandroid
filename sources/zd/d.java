@@ -1,21 +1,31 @@
 package zd;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d extends hd.c {
-    public c a;
-    public yd.q b;
-    public yd.b c;
-    public boolean d;
-    public /* synthetic */ Object e;
-    public int f;
+public final class d implements k {
+    public final c[] a;
 
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
-        this.e = obj;
-        this.f |= TLObject.FLAG_31;
-        return v.c(null, null, false, this);
+    public d(c[] cVarArr) {
+        this.a = cVarArr;
+    }
+
+    @Override // zd.k
+    public final void a(Throwable th2) {
+        b();
+    }
+
+    public final void b() {
+        for (c cVar : this.a) {
+            l0 l0Var = cVar.f;
+            if (l0Var == null) {
+                kotlin.jvm.internal.j.h("handle");
+                throw null;
+            }
+            l0Var.dispose();
+        }
+    }
+
+    public final String toString() {
+        return "DisposeHandlersOnCancel[" + this.a + ']';
     }
 }

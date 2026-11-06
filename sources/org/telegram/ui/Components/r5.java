@@ -1,288 +1,910 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.text.style.CharacterStyle;
+import android.text.style.ReplacementSpan;
+import android.util.LongSparseArray;
 import android.view.View;
-import java.lang.ref.WeakReference;
-import java.util.Iterator;
-import org.telegram.messenger.AnimatedFileDrawableStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t5 b;
+public class r5 extends ReplacementSpan {
+    private static boolean lockPositionChanging;
+    private boolean animateChanges;
+    public int cacheType;
+    public TLRPC.Document document;
+    public String documentAbsolutePath;
+    public long documentId;
+    public String emoji;
+    public float extraScale;
+    private Paint.FontMetricsInt fontMetrics;
+    public boolean fromEmojiKeyboard;
+    public boolean full;
+    public boolean invert;
+    private boolean isAdded;
+    private boolean isRemoved;
+    float lastDrawnCx;
+    float lastDrawnCy;
+    protected int measuredSize;
+    private int minimumLineHeight;
+    private ValueAnimator moveAnimator;
+    boolean positionChanged;
+    private boolean preserveFontMetrics;
+    private boolean recordPositions;
+    private Runnable removedAction;
+    private float scale;
+    private ValueAnimator scaleAnimator;
+    public float size;
+    boolean spanDrawn;
+    public boolean standard;
+    public boolean top;
 
-    public /* synthetic */ r5(t5 t5Var, int i3) {
-        this.a = i3;
-        this.b = t5Var;
+    public r5(TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        this(document.id, 1.2f, fontMetricsInt);
+        this.document = document;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        boolean z11;
-        switch (this.a) {
-            case 0:
-                this.b.i();
-                return;
-            case 1:
-                t5 t5Var = this.b;
-                if (t5Var.E0 != null) {
-                    cg.h.c();
-                    t5Var.E0 = null;
+    public static /* synthetic */ void a(r5 r5Var, ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        r5Var.extraScale = floatValue;
+        r5Var.scale = org.telegram.messenger.g0.T1(0.0f, 1.0f, floatValue);
+    }
+
+    public static boolean access$400(r5 r5Var) {
+        return (r5Var.moveAnimator == null && r5Var.scaleAnimator == null) ? false : true;
+    }
+
+    public static void applyFontMetricsForString(CharSequence charSequence, Paint paint) {
+        if (charSequence instanceof Spannable) {
+            r5[] r5VarArr = (r5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), r5.class);
+            if (r5VarArr != null) {
+                for (r5 r5Var : r5VarArr) {
+                    r5Var.applyFontMetrics(paint.getFontMetricsInt());
                 }
-                t5Var.D0 = false;
-                t5Var.k();
-                t5Var.x(false);
-                return;
-            case 2:
-                this.b.t();
-                return;
-            case 3:
-                cg.h hVar = this.b.A0;
-                return;
-            case 4:
-                t5 t5Var2 = this.b;
-                t5Var2.k();
-                t5Var2.e = null;
-                if (t5Var2.N >= 0 && t5Var2.M == -1) {
-                    t5Var2.N = -1L;
-                }
-                t5Var2.x(false);
-                t5Var2.t();
-                return;
-            case 5:
-                t5 t5Var3 = this.b;
-                if (t5Var3.d0 || t5Var3.x || t5Var3.D0 || t5Var3.E0 != null) {
-                    return;
-                }
-                t5Var3.h0 = System.currentTimeMillis();
-                if (ch0.U0 == null) {
-                    ch0.U0 = new org.telegram.messenger.q5("cache generator queue", true);
-                }
-                t5Var3.D0 = true;
-                t5Var3.e = null;
-                cg.h.A++;
-                org.telegram.messenger.q5 q5Var = ch0.U0;
-                r5 r5Var = new r5(t5Var3, 9);
-                t5Var3.E0 = r5Var;
-                q5Var.postRunnable(r5Var);
-                return;
-            case 6:
-                t5 t5Var4 = this.b;
-                t5Var4.k();
-                if (t5Var4.v0 != null && t5Var4.O) {
-                    org.telegram.messenger.w7.G(t5Var4.K).a0(t5Var4.v0.c, false, false);
-                }
-                int i3 = t5Var4.P;
-                if (i3 <= 0) {
-                    t5Var4.O = true;
-                } else {
-                    t5Var4.P = i3 - 1;
-                }
-                if (t5Var4.G) {
-                    t5Var4.G = false;
-                } else {
-                    t5Var4.F = true;
-                }
-                t5Var4.e = null;
-                if (t5Var4.N >= 0) {
-                    t5Var4.r = t5Var4.w;
-                    t5Var4.s = null;
-                } else if (t5Var4.b) {
-                    q5 q5Var2 = t5Var4.r;
-                    if (q5Var2 == null && t5Var4.s == null) {
-                        t5Var4.r = t5Var4.w;
-                    } else if (q5Var2 == null) {
-                        t5Var4.r = t5Var4.s;
-                        t5Var4.s = t5Var4.w;
-                    } else {
-                        t5Var4.s = t5Var4.w;
-                    }
-                } else {
-                    t5Var4.r = t5Var4.w;
-                }
-                t5Var4.w = null;
-                if (t5Var4.Q) {
-                    t5Var4.Q = false;
-                    t5Var4.z0++;
-                    t5Var4.j();
-                }
-                if (t5Var4.d[3] < t5Var4.c) {
-                    float f10 = t5Var4.h0;
-                    t5Var4.c = f10 > 0.0f ? (int) (f10 * 1000.0f) : 0;
-                }
-                if (t5Var4.N >= 0 && t5Var4.M == -1) {
-                    t5Var4.N = -1L;
-                }
-                t5Var4.c = t5Var4.d[3];
-                Iterator it = t5Var4.t0.iterator();
-                while (it.hasNext()) {
-                    ((View) it.next()).invalidate();
-                }
-                if ((!t5Var4.c0 && t5Var4.E) || (t5Var4.n == null && t5Var4.r != null)) {
-                    t5Var4.t();
-                }
-                t5Var4.x(false);
-                return;
-            case 7:
-                t5 t5Var5 = this.b;
-                if (t5Var5.d0) {
-                    org.telegram.messenger.g0.h3(t5Var5.G0);
-                    return;
-                }
-                if (!t5Var5.y && t5Var5.e0 == null) {
-                    t5Var5.e0 = AnimatedFileNative.a(t5Var5.H.getAbsolutePath(), t5Var5.d, t5Var5.K, t5Var5.I, t5Var5.v0, false);
-                    t5Var5.f0 = t5Var5.e0 == null && (!t5Var5.o0 || t5Var5.H0 > 15);
-                    if (t5Var5.e0 != null) {
-                        int[] iArr = t5Var5.d;
-                        if (iArr[0] > 3840 || iArr[1] > 3840) {
-                            t5Var5.e0.f();
-                            t5Var5.e0 = null;
-                        }
-                    }
-                    t5Var5.d();
-                    t5Var5.E();
-                    if (t5Var5.o0 && t5Var5.e0 == null) {
-                        int i10 = t5Var5.H0;
-                        t5Var5.H0 = i10 + 1;
-                        if (i10 <= 15) {
-                            z11 = false;
-                            t5Var5.y = z11;
-                            org.telegram.messenger.g0.h3(new r5(t5Var5, 0));
-                        }
-                    }
-                    z11 = true;
-                    t5Var5.y = z11;
-                    org.telegram.messenger.g0.h3(new r5(t5Var5, 0));
-                }
-                try {
-                } catch (Throwable th2) {
-                    org.telegram.messenger.a8.g(th2, true);
-                }
-                if (t5Var5.A0 != null) {
-                    if (t5Var5.w == null) {
-                        if (t5Var5.h.isEmpty()) {
-                            t5Var5.w = new q5(Bitmap.createBitmap(t5Var5.k0, t5Var5.j0, Bitmap.Config.ARGB_8888));
-                        } else {
-                            t5Var5.w = (q5) t5Var5.h.remove(0);
-                        }
-                    }
-                    if (t5Var5.B0 == null) {
-                        t5Var5.B0 = new a7.l();
-                    }
-                    System.currentTimeMillis();
-                    a7.l lVar = t5Var5.B0;
-                    int i11 = lVar.a;
-                    cg.h hVar2 = t5Var5.A0;
-                    int f11 = hVar2.f(t5Var5.w.b, hVar2.i);
-                    lVar.a = hVar2.i;
-                    if (hVar2.q && !hVar2.e.isEmpty()) {
-                        int i12 = hVar2.i + 1;
-                        hVar2.i = i12;
-                        if (i12 >= hVar2.e.size()) {
-                            hVar2.i = 0;
-                        }
-                    }
-                    if (f11 != -1 && t5Var5.B0.a < i11) {
-                        t5Var5.Q = true;
-                    }
-                    int[] iArr2 = t5Var5.d;
-                    q5 q5Var3 = t5Var5.w;
-                    int max = t5Var5.B0.a * Math.max(16, iArr2[4] / Math.max(1, t5Var5.A0.e.size()));
-                    q5Var3.e = max;
-                    iArr2[3] = max;
-                    t5Var5.w.f = false;
-                    if (t5Var5.A0.g()) {
-                        org.telegram.messenger.g0.h3(t5Var5.F0);
-                    }
-                    if (f11 == -1) {
-                        org.telegram.messenger.g0.h3(t5Var5.C0);
-                        return;
-                    } else {
-                        org.telegram.messenger.g0.h3(t5Var5.G0);
-                        return;
-                    }
-                }
-                if (t5Var5.e0 == null) {
-                    int[] iArr3 = t5Var5.d;
-                    if (iArr3[0] != 0 && iArr3[1] != 0) {
-                        org.telegram.messenger.g0.h3(t5Var5.C0);
-                        return;
-                    }
-                }
-                if (t5Var5.w == null) {
-                    int[] iArr4 = t5Var5.d;
-                    if (iArr4[0] > 0 && iArr4[1] > 0) {
-                        try {
-                            if (t5Var5.h.isEmpty()) {
-                                float f12 = t5Var5.d[0];
-                                float f13 = t5Var5.n0;
-                                t5Var5.w = new q5(Bitmap.createBitmap((int) (f12 * f13), (int) (r0[1] * f13), Bitmap.Config.ARGB_8888));
-                            } else {
-                                t5Var5.w = (q5) t5Var5.h.remove(0);
-                            }
-                        } catch (Throwable th3) {
-                            org.telegram.messenger.a8.g(th3, true);
-                        }
-                    }
-                }
-                if (t5Var5.M >= 0) {
-                    t5Var5.d[3] = (int) t5Var5.M;
-                    long j10 = t5Var5.M;
-                    synchronized (t5Var5.R) {
-                        t5Var5.M = -1L;
-                    }
-                    AnimatedFileDrawableStream animatedFileDrawableStream = t5Var5.v0;
-                    if (animatedFileDrawableStream != null) {
-                        animatedFileDrawableStream.d();
-                    }
-                    t5Var5.e0.g(j10, true);
-                    z10 = true;
-                } else {
-                    z10 = false;
-                }
-                if (t5Var5.w != null) {
-                    System.currentTimeMillis();
-                    if (t5Var5.e0.c(t5Var5.w.b, false, t5Var5.h0, t5Var5.i0, t5Var5.l0) == 0) {
-                        org.telegram.messenger.g0.h3(t5Var5.C0);
-                        return;
-                    }
-                    if (!t5Var5.f) {
-                        t5Var5.f = t5Var5.e0.a[7] == 1;
-                    }
-                    int i13 = t5Var5.d[3];
-                    if (i13 < t5Var5.c) {
-                        t5Var5.Q = true;
-                    }
-                    if (z10) {
-                        t5Var5.c = i13;
-                    }
-                    q5 q5Var4 = t5Var5.w;
-                    q5Var4.e = i13;
-                    q5Var4.f = t5Var5.e0.a[6] == 1;
-                }
-                org.telegram.messenger.g0.h3(t5Var5.G0);
-                return;
-            case 8:
-                t5 t5Var6 = this.b;
-                ue.b bVar = t5Var6.t0;
-                Iterator it2 = bVar.iterator();
-                while (it2.hasNext()) {
-                    ((View) it2.next()).invalidate();
-                }
-                WeakReference weakReference = t5Var6.s0;
-                View view = weakReference != null ? (View) weakReference.get() : null;
-                if ((bVar.isEmpty() || t5Var6.S) && view != null) {
-                    view.invalidate();
-                    return;
-                }
-                return;
-            default:
-                t5 t5Var7 = this.b;
-                t5Var7.A0.b();
-                org.telegram.messenger.g0.h3(new r5(t5Var7, 1));
-                return;
+            }
         }
+    }
+
+    public static /* synthetic */ void b(r5 r5Var, ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        r5Var.extraScale = floatValue;
+        r5Var.scale = org.telegram.messenger.g0.T1(0.2f, 1.0f, floatValue);
+        lockPositionChanging = false;
+    }
+
+    public static boolean c(Layout layout, int i7, int i10) {
+        if (layout.getText() instanceof Spanned) {
+            uy0[] uy0VarArr = (uy0[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i7), Math.min(layout.getText().length() - 1, i10), uy0.class);
+            for (int i11 = 0; uy0VarArr != null && i11 < uy0VarArr.length; i11++) {
+                uy0 uy0Var = uy0VarArr[i11];
+                if (uy0Var != null && uy0Var.c()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static r5 cloneSpan(r5 r5Var, Paint.FontMetricsInt fontMetricsInt) {
+        r5 r5Var2;
+        TLRPC.Document document = r5Var.document;
+        if (document != null) {
+            r5Var2 = new r5(document, r5Var.scale, fontMetricsInt != null ? fontMetricsInt : r5Var.fontMetrics);
+        } else {
+            r5Var2 = new r5(r5Var.documentId, r5Var.scale, fontMetricsInt != null ? fontMetricsInt : r5Var.fontMetrics);
+        }
+        if (fontMetricsInt != null) {
+            r5Var2.size = r5Var.size;
+        }
+        r5Var2.fromEmojiKeyboard = r5Var.fromEmojiKeyboard;
+        r5Var2.isAdded = r5Var.isAdded;
+        r5Var2.isRemoved = r5Var.isRemoved;
+        return r5Var2;
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence) {
+        return cloneSpans(charSequence, -1, null);
+    }
+
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, n5 n5Var, float f10, List<xh.f> list, float f11, float f12, float f13, float f14) {
+        drawAnimatedEmojis(canvas, layout, n5Var, f10, list, f11, f12, f13, f14, null);
+    }
+
+    public static CharSequence onlyEmojiSpans(CharSequence charSequence) {
+        if (charSequence == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+        for (CharacterStyle characterStyle : (CharacterStyle[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), CharacterStyle.class)) {
+            if (!(characterStyle instanceof r5) && !(characterStyle instanceof org.telegram.messenger.f6)) {
+                spannableStringBuilder.removeSpan(characterStyle);
+            }
+        }
+        return spannableStringBuilder;
+    }
+
+    public static void release(View view, LongSparseArray<i5> longSparseArray) {
+        if (longSparseArray == null) {
+            return;
+        }
+        for (int i7 = 0; i7 < longSparseArray.size(); i7++) {
+            i5 valueAt = longSparseArray.valueAt(i7);
+            if (valueAt != null) {
+                valueAt.n(view);
+            }
+        }
+        longSparseArray.clear();
+    }
+
+    public static n5 update(int i7, View view, n5 n5Var, ArrayList<org.telegram.messenger.fj> arrayList) {
+        return update(i7, view, n5Var, arrayList, false);
+    }
+
+    public void applyFontMetrics(Paint.FontMetricsInt fontMetricsInt, int i7) {
+        this.fontMetrics = fontMetricsInt;
+        this.cacheType = i7;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0029, code lost:
+    
+        if (r11 != 0.0f) goto L12;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
+    @Override // android.text.style.ReplacementSpan
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        if (!this.recordPositions) {
+            return;
+        }
+        this.spanDrawn = true;
+        float f11 = (this.measuredSize / 2.0f) + f10;
+        float f12 = ((i13 - i11) / 2.0f) + i11;
+        float f13 = this.lastDrawnCy;
+        if (f12 == f13 || f13 == 0.0f) {
+            float f14 = this.lastDrawnCx;
+            if (f11 != f14) {
+            }
+            if (lockPositionChanging) {
+                if (f11 == this.lastDrawnCx && f12 == f13) {
+                    return;
+                }
+                this.lastDrawnCx = f11;
+                this.lastDrawnCy = f12;
+                this.positionChanged = true;
+                return;
+            }
+            return;
+        }
+        if (this.moveAnimator != null) {
+            return;
+        }
+        if (this.animateChanges) {
+            this.animateChanges = false;
+            float f15 = this.lastDrawnCx;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.moveAnimator = ofFloat;
+            ofFloat.addUpdateListener(new k5(this, f13, f12, f15, f11, 0));
+            this.moveAnimator.addListener(new l5(this, 2));
+            this.moveAnimator.setDuration(140L);
+            this.moveAnimator.setInterpolator(xq.f);
+            this.moveAnimator.start();
+            return;
+        }
+        if (lockPositionChanging) {
+        }
+    }
+
+    public long getDocumentId() {
+        TLRPC.Document document = this.document;
+        return document != null ? document.id : this.documentId;
+    }
+
+    public float getExtraScale() {
+        final int i7 = 1;
+        final int i10 = 0;
+        if (this.isAdded) {
+            lockPositionChanging = true;
+            this.isAdded = false;
+            this.extraScale = 0.0f;
+            ValueAnimator valueAnimator = this.scaleAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.scaleAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.extraScale, 1.0f);
+            this.scaleAnimator = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.j5
+                public final /* synthetic */ r5 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    switch (i10) {
+                        case 0:
+                            r5.b(this.b, valueAnimator2);
+                            break;
+                        default:
+                            r5.a(this.b, valueAnimator2);
+                            break;
+                    }
+                }
+            });
+            this.scaleAnimator.addListener(new l5(this, i10));
+            this.scaleAnimator.setDuration(130L);
+            this.scaleAnimator.setInterpolator(xq.f);
+            this.scaleAnimator.start();
+        } else if (this.isRemoved) {
+            this.isRemoved = false;
+            this.extraScale = 1.0f;
+            ValueAnimator valueAnimator2 = this.scaleAnimator;
+            if (valueAnimator2 != null) {
+                valueAnimator2.removeAllListeners();
+                this.scaleAnimator.cancel();
+            }
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.extraScale, 0.0f);
+            this.scaleAnimator = ofFloat2;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.j5
+                public final /* synthetic */ r5 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator22) {
+                    switch (i7) {
+                        case 0:
+                            r5.b(this.b, valueAnimator22);
+                            break;
+                        default:
+                            r5.a(this.b, valueAnimator22);
+                            break;
+                    }
+                }
+            });
+            this.scaleAnimator.addListener(new l5(this, i7));
+            this.scaleAnimator.setInterpolator(xq.f);
+            this.scaleAnimator.setDuration(130L);
+            this.scaleAnimator.start();
+        }
+        return this.extraScale;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        Paint.FontMetricsInt fontMetricsInt2 = fontMetricsInt;
+        boolean z9 = this.preserveFontMetrics && fontMetricsInt2 != null;
+        int i11 = z9 ? fontMetricsInt2.top : 0;
+        int i12 = z9 ? fontMetricsInt2.ascent : 0;
+        int i13 = z9 ? fontMetricsInt2.descent : 0;
+        int i14 = z9 ? fontMetricsInt2.bottom : 0;
+        int i15 = z9 ? fontMetricsInt2.leading : 0;
+        if (fontMetricsInt2 == null && this.top) {
+            fontMetricsInt2 = paint.getFontMetricsInt();
+        }
+        int i16 = fontMetricsInt2 == null ? 0 : fontMetricsInt2.ascent;
+        int i17 = fontMetricsInt2 == null ? 0 : fontMetricsInt2.descent;
+        Paint.FontMetricsInt fontMetricsInt3 = this.fontMetrics;
+        if (fontMetricsInt3 == null) {
+            int i18 = (int) this.size;
+            int L = org.telegram.messenger.g0.L(8.0f);
+            int L2 = org.telegram.messenger.g0.L(10.0f);
+            if (fontMetricsInt2 != null) {
+                float f10 = (-L2) - L;
+                float f11 = this.scale;
+                fontMetricsInt2.top = (int) (f10 * f11);
+                float f12 = L2 - L;
+                fontMetricsInt2.bottom = (int) (f12 * f11);
+                fontMetricsInt2.ascent = (int) (f10 * f11);
+                fontMetricsInt2.descent = (int) (f12 * f11);
+                fontMetricsInt2.leading = 0;
+            }
+            this.measuredSize = (int) (i18 * this.scale);
+        } else {
+            this.measuredSize = (int) (this.size * this.scale);
+            if (fontMetricsInt2 != null) {
+                if (this.full) {
+                    float abs = Math.abs(this.fontMetrics.top) + Math.abs(fontMetricsInt3.bottom);
+                    fontMetricsInt2.ascent = (int) Math.ceil((this.fontMetrics.top / abs) * this.measuredSize);
+                    fontMetricsInt2.descent = (int) Math.ceil((this.fontMetrics.bottom / abs) * this.measuredSize);
+                    fontMetricsInt2.top = (int) Math.ceil((this.fontMetrics.top / abs) * this.measuredSize);
+                    fontMetricsInt2.bottom = (int) Math.ceil((this.fontMetrics.bottom / abs) * this.measuredSize);
+                } else {
+                    fontMetricsInt2.ascent = fontMetricsInt3.ascent;
+                    fontMetricsInt2.descent = fontMetricsInt3.descent;
+                    fontMetricsInt2.top = fontMetricsInt3.top;
+                    fontMetricsInt2.bottom = fontMetricsInt3.bottom;
+                }
+            }
+        }
+        if (fontMetricsInt2 != null && this.top) {
+            int i19 = fontMetricsInt2.ascent;
+            int i20 = fontMetricsInt2.descent;
+            int i21 = ((i17 - i20) + (i16 - i19)) / 2;
+            fontMetricsInt2.ascent = i19 + i21;
+            fontMetricsInt2.descent = i20 - i21;
+        }
+        if (z9) {
+            fontMetricsInt2.top = i11;
+            fontMetricsInt2.ascent = i12;
+            fontMetricsInt2.descent = i13;
+            fontMetricsInt2.bottom = i14;
+            fontMetricsInt2.leading = i15;
+            int i22 = this.minimumLineHeight;
+            int i23 = i13 - i12;
+            if (i22 > i23) {
+                int i24 = i22 - i23;
+                int i25 = (i24 + 1) / 2;
+                int i26 = i12 - i25;
+                fontMetricsInt2.ascent = i26;
+                fontMetricsInt2.descent = i13 + (i24 - i25);
+                fontMetricsInt2.top = Math.min(i11, i26);
+                fontMetricsInt2.bottom = Math.max(fontMetricsInt2.bottom, fontMetricsInt2.descent);
+            }
+        }
+        return Math.max(0, this.measuredSize - 1);
+    }
+
+    public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
+        this.fontMetrics = fontMetricsInt;
+        if (fontMetricsInt != null) {
+            float abs = Math.abs(this.fontMetrics.ascent) + Math.abs(fontMetricsInt.descent);
+            this.size = abs;
+            if (abs == 0.0f) {
+                this.size = org.telegram.messenger.g0.L(20.0f);
+            }
+        }
+    }
+
+    public void setAdded() {
+        this.isAdded = true;
+        this.extraScale = 0.0f;
+    }
+
+    public void setAnimateChanges() {
+        this.animateChanges = true;
+    }
+
+    public r5 setMinimumLineHeight(int i7) {
+        this.minimumLineHeight = i7;
+        return this;
+    }
+
+    public r5 setPreserveFontMetrics(boolean z9) {
+        this.preserveFontMetrics = z9;
+        return this;
+    }
+
+    public void setRemoved(Runnable runnable) {
+        this.removedAction = runnable;
+        this.isRemoved = true;
+        this.extraScale = 1.0f;
+    }
+
+    public r5 setSize(int i7) {
+        this.size = i7;
+        return this;
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence, int i7) {
+        return cloneSpans(charSequence, i7, null);
+    }
+
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, n5 n5Var, float f10, List<xh.f> list, float f11, float f12, float f13, float f14, ColorFilter colorFilter) {
+        boolean z9;
+        if (canvas == null || layout == null || n5Var == null) {
+            return;
+        }
+        ArrayList arrayList = n5Var.c;
+        int i7 = 0;
+        if (org.telegram.messenger.i6.m == 0.0f && f10 == 0.0f) {
+            z9 = false;
+        } else {
+            canvas.save();
+            canvas.translate(0.0f, org.telegram.messenger.i6.m + org.telegram.messenger.g0.L(20.0f * f10));
+            z9 = true;
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            p5 p5Var = (p5) arrayList.get(i10);
+            if (p5Var.a == layout) {
+                ArrayList arrayList2 = p5Var.b;
+                int i11 = i7;
+                while (i11 < arrayList2.size()) {
+                    m5 m5Var = (m5) arrayList2.get(i11);
+                    if (m5Var != null) {
+                        i5 i5Var = m5Var.f;
+                        if (i5Var != null) {
+                            i5Var.setColorFilter(colorFilter);
+                        }
+                        r5 r5Var = m5Var.d;
+                        if (r5Var.spanDrawn) {
+                            float f15 = r5Var.measuredSize / 2.0f;
+                            float f16 = r5Var.lastDrawnCx;
+                            float f17 = r5Var.lastDrawnCy;
+                            m5Var.e.set((int) (f16 - f15), (int) (f17 - f15), (int) (f16 + f15), (int) (f17 + f15));
+                            float max = (list == null || list.isEmpty() || !m5Var.w) ? 1.0f : Math.max(0.0f, list.get(i7).n);
+                            m5Var.r = f13;
+                            m5Var.s = max;
+                            m5Var.getClass();
+                            if (f11 != 0.0f || f12 != 0.0f) {
+                                Rect rect = m5Var.e;
+                                if (rect.bottom < f11 || rect.top > f12) {
+                                    m5Var.n = true;
+                                    i11++;
+                                    i7 = 0;
+                                }
+                            }
+                            m5Var.n = false;
+                            i5 i5Var2 = m5Var.f;
+                            if (i5Var2 == null) {
+                                if (m5Var.h != null) {
+                                    float extraScale = m5Var.d.getExtraScale();
+                                    m5Var.h.setAlpha((int) (m5Var.s * 255.0f * f14));
+                                    m5Var.h.setBounds(m5Var.e);
+                                    if (extraScale != 1.0f || m5Var.d.invert) {
+                                        canvas.save();
+                                        canvas.scale((m5Var.d.invert ? -1 : 1) * extraScale, extraScale, m5Var.e.centerX(), m5Var.e.centerY());
+                                        m5Var.h.draw(canvas);
+                                        canvas.restore();
+                                    } else {
+                                        m5Var.h.draw(canvas);
+                                    }
+                                }
+                            } else if (i5Var2.k != null) {
+                                i5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.k6.v3 : colorFilter);
+                                m5Var.f.p(currentTimeMillis);
+                                float extraScale2 = m5Var.d.getExtraScale();
+                                if (extraScale2 != 1.0f || m5Var.d.invert) {
+                                    canvas.save();
+                                    canvas.scale((m5Var.d.invert ? -1 : 1) * extraScale2, extraScale2, m5Var.e.centerX(), m5Var.e.centerY());
+                                    i5 i5Var3 = m5Var.f;
+                                    Rect rect2 = m5Var.e;
+                                    float f18 = m5Var.s * f14;
+                                    di.z2 z2Var = i5Var3.k;
+                                    if (z2Var != null) {
+                                        z2Var.z0(rect2);
+                                        i5Var3.k.setAlpha(f18);
+                                        i5Var3.k.h(canvas, null);
+                                    }
+                                    canvas.restore();
+                                } else {
+                                    i5 i5Var4 = m5Var.f;
+                                    Rect rect3 = m5Var.e;
+                                    float f19 = m5Var.s * f14;
+                                    di.z2 z2Var2 = i5Var4.k;
+                                    if (z2Var2 != null) {
+                                        z2Var2.z0(rect3);
+                                        i5Var4.k.setAlpha(f19);
+                                        i5Var4.k.h(canvas, null);
+                                    }
+                                }
+                                if (access$400(m5Var.d)) {
+                                    m5Var.invalidate();
+                                }
+                            }
+                            i11++;
+                            i7 = 0;
+                        }
+                    }
+                    i11++;
+                    i7 = 0;
+                }
+            } else {
+                i10++;
+                i7 = 0;
+            }
+        }
+        if (z9) {
+            canvas.restore();
+        }
+    }
+
+    public static n5 update(int i7, View view, n5 n5Var, ArrayList<org.telegram.messenger.fj> arrayList, boolean z9) {
+        return update(i7, view, false, n5Var, arrayList, z9);
+    }
+
+    public r5(TLRPC.Document document, float f10, Paint.FontMetricsInt fontMetricsInt) {
+        this(document.id, f10, fontMetricsInt);
+        this.document = document;
+    }
+
+    public static CharSequence cloneSpans(CharSequence charSequence, int i7, Paint.FontMetricsInt fontMetricsInt) {
+        return cloneSpans(charSequence, i7, fontMetricsInt, 1.0f);
+    }
+
+    public static n5 update(int i7, View view, boolean z9, n5 n5Var, ArrayList<org.telegram.messenger.fj> arrayList) {
+        return update(i7, view, z9, n5Var, arrayList, false);
+    }
+
+    public void applyFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
+        this.fontMetrics = fontMetricsInt;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v2, types: [android.text.SpannableString] */
+    public static CharSequence cloneSpans(CharSequence charSequence, int i7, Paint.FontMetricsInt fontMetricsInt, float f10) {
+        r5[] r5VarArr;
+        if (!(charSequence instanceof Spanned)) {
+            return charSequence;
+        }
+        Spanned spanned = (Spanned) charSequence;
+        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spanned.getSpans(0, spanned.length(), CharacterStyle.class);
+        if (characterStyleArr != null && characterStyleArr.length > 0 && ((r5VarArr = (r5[]) spanned.getSpans(0, spanned.length(), r5.class)) == null || r5VarArr.length > 0)) {
+            charSequence = new SpannableString(spanned);
+            for (int i10 = 0; i10 < characterStyleArr.length; i10++) {
+                CharacterStyle characterStyle = characterStyleArr[i10];
+                if (characterStyle != null && (characterStyle instanceof r5)) {
+                    int spanStart = spanned.getSpanStart(characterStyle);
+                    int spanEnd = spanned.getSpanEnd(characterStyleArr[i10]);
+                    r5 r5Var = (r5) characterStyleArr[i10];
+                    charSequence.removeSpan(r5Var);
+                    r5 cloneSpan = cloneSpan(r5Var, fontMetricsInt);
+                    if (i7 != -1) {
+                        cloneSpan.cacheType = i7;
+                    }
+                    cloneSpan.scale = r5Var.scale * f10;
+                    charSequence.setSpan(cloneSpan, spanStart, spanEnd, 33);
+                }
+            }
+        }
+        return charSequence;
+    }
+
+    public static n5 update(int i7, View view, boolean z9, n5 n5Var, ArrayList<org.telegram.messenger.fj> arrayList, boolean z10) {
+        Layout[] layoutArr = new Layout[arrayList == null ? 0 : arrayList.size()];
+        if (arrayList != null) {
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                layoutArr[i10] = arrayList.get(i10).e;
+            }
+        }
+        return update(i7, view, z9, n5Var, z10, layoutArr);
+    }
+
+    public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt, int i7, int i10) {
+        this.fontMetrics = fontMetricsInt;
+        this.size = i7;
+        this.cacheType = i10;
+    }
+
+    public r5(long j3, Paint.FontMetricsInt fontMetricsInt) {
+        this(j3, 1.2f, fontMetricsInt);
+    }
+
+    public static void release(View view, n5 n5Var) {
+        if (n5Var == null) {
+            return;
+        }
+        while (n5Var.a.size() > 0) {
+            n5Var.b(0);
+        }
+    }
+
+    public r5(long j3, float f10, Paint.FontMetricsInt fontMetricsInt) {
+        this.extraScale = 1.0f;
+        this.full = false;
+        this.top = false;
+        this.invert = false;
+        this.size = org.telegram.messenger.g0.L(20.0f);
+        this.cacheType = -1;
+        this.recordPositions = true;
+        this.documentId = j3;
+        this.scale = f10;
+        this.fontMetrics = fontMetricsInt;
+        if (fontMetricsInt != null) {
+            float abs = Math.abs(fontMetricsInt.ascent) + Math.abs(fontMetricsInt.descent);
+            this.size = abs;
+            if (abs == 0.0f) {
+                this.size = org.telegram.messenger.g0.L(20.0f);
+            }
+        }
+    }
+
+    public static n5 update(int i7, View view, n5 n5Var, Layout... layoutArr) {
+        return update(i7, view, false, n5Var, layoutArr);
+    }
+
+    public static n5 update(int i7, View view, boolean z9, n5 n5Var, Layout... layoutArr) {
+        return update(i7, view, z9, n5Var, false, layoutArr);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static n5 update(int i7, View view, boolean z9, n5 n5Var, boolean z10, Layout... layoutArr) {
+        int i10;
+        r5[] r5VarArr;
+        m5 m5Var;
+        int i11;
+        int i12;
+        n5 n5Var2 = n5Var;
+        Paint.FontMetricsInt fontMetricsInt = null;
+        int i13 = 0;
+        if (layoutArr == null || layoutArr.length <= 0) {
+            if (n5Var2 == null) {
+                return null;
+            }
+            ArrayList arrayList = n5Var2.a;
+            arrayList.clear();
+            while (arrayList.size() > 0) {
+                n5Var2.b(0);
+            }
+            return null;
+        }
+        int i14 = 0;
+        while (i14 < layoutArr.length) {
+            Layout layout = layoutArr[i14];
+            if (layout == null || !(layout.getText() instanceof Spanned)) {
+                i10 = i14;
+                r5VarArr = null;
+            } else {
+                Spanned spanned = (Spanned) layout.getText();
+                r5VarArr = (r5[]) spanned.getSpans(i13, spanned.length(), r5.class);
+                int i15 = i13;
+                while (r5VarArr != null && i15 < r5VarArr.length) {
+                    r5 r5Var = r5VarArr[i15];
+                    if (r5Var == null) {
+                        i11 = i14;
+                    } else {
+                        if (z10 && (layout.getText() instanceof Spannable)) {
+                            int spanStart = spanned.getSpanStart(r5Var);
+                            int spanEnd = spanned.getSpanEnd(r5Var);
+                            Spannable spannable = (Spannable) spanned;
+                            spannable.removeSpan(r5Var);
+                            r5Var = cloneSpan(r5Var, fontMetricsInt);
+                            r5VarArr[i15] = r5Var;
+                            spannable.setSpan(r5Var, spanStart, spanEnd, 33);
+                        }
+                        if (n5Var2 == null) {
+                            n5Var2 = new n5();
+                            n5Var2.a = new ArrayList();
+                            n5Var2.b = new HashMap();
+                            n5Var2.c = new ArrayList();
+                        }
+                        ArrayList arrayList2 = n5Var2.a;
+                        int i16 = i13;
+                        while (true) {
+                            if (i16 >= arrayList2.size()) {
+                                m5Var = fontMetricsInt;
+                                break;
+                            }
+                            if (((m5) arrayList2.get(i16)).d == r5Var && ((m5) arrayList2.get(i16)).c == layout) {
+                                m5Var = (m5) arrayList2.get(i16);
+                                break;
+                            }
+                            i16++;
+                        }
+                        if (m5Var == 0) {
+                            m5 m5Var2 = new m5(view, z9);
+                            m5Var2.c = layout;
+                            if (r5Var.standard) {
+                                i12 = 8;
+                            } else {
+                                i12 = r5Var.cacheType;
+                                if (i12 < 0) {
+                                    i12 = i7;
+                                }
+                            }
+                            if (r5Var.documentAbsolutePath != null) {
+                                i11 = i14;
+                                m5Var2.f = i5.m(org.telegram.messenger.p10.s0, r5Var.getDocumentId(), r5Var.documentAbsolutePath, i12);
+                            } else {
+                                i11 = i14;
+                                TLRPC.Document document = r5Var.document;
+                                if (document != null) {
+                                    m5Var2.f = i5.l(org.telegram.messenger.p10.s0, i12, document);
+                                } else {
+                                    long j3 = r5Var.documentId;
+                                    if (j3 != 0) {
+                                        m5Var2.f = i5.m(org.telegram.messenger.p10.s0, j3, null, i12);
+                                    }
+                                }
+                            }
+                            int i17 = r5Var.cacheType;
+                            if ((i17 == 20 || i17 == 21) && !TextUtils.isEmpty(r5Var.emoji)) {
+                                i5 i5Var = m5Var2.f;
+                                if (i5Var != null) {
+                                    i5Var.q(r5Var.emoji);
+                                } else {
+                                    m5Var2.h = org.telegram.messenger.i6.g(r5Var.emoji);
+                                }
+                            }
+                            m5Var2.w = c(layout, spanned.getSpanStart(r5Var), spanned.getSpanEnd(r5Var));
+                            m5Var2.e = new Rect();
+                            m5Var2.d = r5Var;
+                            arrayList2.add(m5Var2);
+                            HashMap hashMap = n5Var2.b;
+                            p5 p5Var = (p5) hashMap.get(layout);
+                            if (p5Var == null) {
+                                p5Var = new p5(m5Var2.a, layout);
+                                hashMap.put(layout, p5Var);
+                                n5Var2.c.add(p5Var);
+                            }
+                            p5Var.b.add(m5Var2);
+                            p5Var.a();
+                            i5 i5Var2 = m5Var2.f;
+                            if (i5Var2 != null) {
+                                i5Var2.b(m5Var2);
+                            }
+                        } else {
+                            i11 = i14;
+                            m5Var.w = c(layout, spanned.getSpanStart(r5Var), spanned.getSpanEnd(r5Var));
+                        }
+                    }
+                    i15++;
+                    i14 = i11;
+                    fontMetricsInt = null;
+                    i13 = 0;
+                }
+                i10 = i14;
+            }
+            if (n5Var2 != null) {
+                ArrayList arrayList3 = n5Var2.a;
+                int i18 = 0;
+                while (i18 < arrayList3.size()) {
+                    if (((m5) arrayList3.get(i18)).c == layout) {
+                        r5 r5Var2 = ((m5) arrayList3.get(i18)).d;
+                        for (int i19 = 0; r5VarArr != null && i19 < r5VarArr.length; i19++) {
+                            if (r5VarArr[i19] == r5Var2) {
+                                break;
+                            }
+                        }
+                        n5Var2.b(i18);
+                        i18--;
+                    }
+                    i18++;
+                }
+            }
+            i14 = i10 + 1;
+            fontMetricsInt = null;
+            i13 = 0;
+        }
+        if (n5Var2 != null) {
+            ArrayList arrayList4 = n5Var2.a;
+            int i20 = 0;
+            while (i20 < arrayList4.size()) {
+                Layout layout2 = ((m5) arrayList4.get(i20)).c;
+                int i21 = 0;
+                while (true) {
+                    if (i21 < layoutArr.length) {
+                        if (layoutArr[i21] == layout2) {
+                            break;
+                        }
+                        i21++;
+                    } else {
+                        n5Var2.b(i20);
+                        i20--;
+                        break;
+                    }
+                }
+                i20++;
+            }
+        }
+        return n5Var2;
+    }
+
+    public static LongSparseArray<i5> update(View view, r5[] r5VarArr, LongSparseArray<i5> longSparseArray) {
+        return update(0, view, r5VarArr, longSparseArray);
+    }
+
+    public static LongSparseArray<i5> update(int i7, View view, r5[] r5VarArr, LongSparseArray<i5> longSparseArray) {
+        int i10;
+        i5 m10;
+        int i11;
+        if (r5VarArr == null) {
+            return longSparseArray;
+        }
+        if (longSparseArray == null) {
+            longSparseArray = new LongSparseArray<>();
+        }
+        int i12 = 0;
+        while (i12 < longSparseArray.size()) {
+            long keyAt = longSparseArray.keyAt(i12);
+            i5 i5Var = longSparseArray.get(keyAt);
+            if (i5Var == null) {
+                longSparseArray.remove(keyAt);
+            } else {
+                for (r5 r5Var : r5VarArr) {
+                    i11 = (r5Var == null || r5Var.getDocumentId() != keyAt) ? i11 + 1 : 0;
+                }
+                i5Var.n(view);
+                longSparseArray.remove(keyAt);
+            }
+            i12--;
+            i12++;
+        }
+        for (r5 r5Var2 : r5VarArr) {
+            if (r5Var2 != null && longSparseArray.get(r5Var2.getDocumentId()) == null) {
+                if (r5Var2.standard) {
+                    i10 = 8;
+                } else {
+                    i10 = r5Var2.cacheType;
+                    if (i10 < 0) {
+                        i10 = i7;
+                    }
+                }
+                TLRPC.Document document = r5Var2.document;
+                if (document != null) {
+                    m10 = i5.l(org.telegram.messenger.p10.s0, i10, document);
+                } else {
+                    m10 = i5.m(org.telegram.messenger.p10.s0, r5Var2.documentId, null, i10);
+                }
+                m10.a(view);
+                longSparseArray.put(r5Var2.getDocumentId(), m10);
+            }
+        }
+        return longSparseArray;
+    }
+
+    public static LongSparseArray<i5> update(View view, ArrayList<r5> arrayList, LongSparseArray<i5> longSparseArray) {
+        return update(0, view, arrayList, longSparseArray);
+    }
+
+    public static LongSparseArray<i5> update(int i7, View view, ArrayList<r5> arrayList, LongSparseArray<i5> longSparseArray) {
+        int i10;
+        int i11;
+        if (arrayList == null) {
+            return longSparseArray;
+        }
+        if (longSparseArray == null) {
+            longSparseArray = new LongSparseArray<>();
+        }
+        int i12 = 0;
+        while (i12 < longSparseArray.size()) {
+            long keyAt = longSparseArray.keyAt(i12);
+            i5 i5Var = longSparseArray.get(keyAt);
+            if (i5Var == null) {
+                longSparseArray.remove(keyAt);
+            } else {
+                for (0; i11 < arrayList.size(); i11 + 1) {
+                    i11 = (arrayList.get(i11) == null || arrayList.get(i11).getDocumentId() != keyAt) ? i11 + 1 : 0;
+                }
+                i5Var.a(view);
+                longSparseArray.remove(keyAt);
+            }
+            i12--;
+            i12++;
+        }
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            r5 r5Var = arrayList.get(i13);
+            if (r5Var != null && longSparseArray.get(r5Var.getDocumentId()) == null) {
+                if (r5Var.standard) {
+                    i10 = 8;
+                } else {
+                    i10 = r5Var.cacheType;
+                    if (i10 < 0) {
+                        i10 = i7;
+                    }
+                }
+                i5 m10 = i5.m(org.telegram.messenger.p10.s0, r5Var.documentId, null, i10);
+                m10.a(view);
+                longSparseArray.put(r5Var.getDocumentId(), m10);
+            }
+        }
+        return longSparseArray;
     }
 }

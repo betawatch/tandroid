@@ -1,40 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o3 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public boolean c;
-    public final boolean d;
+public final class o3 {
+    public TextPaint a;
+    public final SparseArray b = new SparseArray();
+    public final SparseArray c = new SparseArray();
+    public final SparseArray d = new SparseArray();
+    public final SparseArray e = new SparseArray();
+    public final SparseArray f = new SparseArray();
+    public final SparseArray g = new SparseArray();
+    public final SparseArray h = new SparseArray();
+    public final SparseArray i = new SparseArray();
+    public final SparseArray j = new SparseArray();
+    public final SparseArray k = new SparseArray();
+    public final SparseArray l = new SparseArray();
+    public final SparseArray m = new SparseArray();
+    public final SparseArray n = new SparseArray();
+    public final SparseArray o = new SparseArray();
+    public final SparseArray p = new SparseArray();
+    public final SparseArray q = new SparseArray();
+    public final SparseArray r = new SparseArray();
+    public final SparseArray s = new SparseArray();
+    public final SparseArray t = new SparseArray();
+    public final SparseArray u = new SparseArray();
+    public final SparseArray v = new SparseArray();
+    public final SparseArray w = new SparseArray();
+    public final SparseArray x = new SparseArray();
+    public final SparseArray y = new SparseArray();
+    public final SparseArray z = new SparseArray();
+    public final SparseArray A = new SparseArray();
 
-    public o3(i4 i4Var, Context context, boolean z10) {
-        super(context);
-        this.d = z10;
-        setTag(90);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setText(org.telegram.messenger.bd.M0(z10 ? 2131746924 : 2131746925, null));
-        textView.setTextSize(1, 12.0f);
-        textView.setGravity(17);
-        textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        addView(textView, b8.mf.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 12.0f);
-        textView2.setGravity(19);
-        textView2.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        addView(textView2, b8.mf.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+    public static void a(o50 o50Var, SparseArray sparseArray) {
+        for (int i7 = 0; i7 < sparseArray.size(); i7++) {
+            int keyAt = sparseArray.keyAt(i7);
+            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i7);
+            if (textPaint != null) {
+                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
+                    textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+                } else {
+                    textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.J6, false));
+                }
+            }
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
+    public static void b(int i7, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
+        int i10 = i7 & 1;
+        if (i10 != 0 && (i7 & 2) != 0) {
+            textPaint.setTypeface(typeface2);
+            return;
+        }
+        if (i10 != 0) {
+            textPaint.setTypeface(typeface3);
+        } else if ((i7 & 2) != 0) {
+            textPaint.setTypeface(typeface4);
+        } else {
+            if ((i7 & 4) != 0) {
+                return;
+            }
+            textPaint.setTypeface(typeface);
+        }
     }
 }

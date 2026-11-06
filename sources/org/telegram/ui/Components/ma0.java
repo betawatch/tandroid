@@ -1,18 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RuntimeShader;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class ma0 {
-    public static /* synthetic */ RuntimeShader a() {
-        return new RuntimeShader("uniform shader content;\nuniform shader alphaMask;\nuniform shader overlay;\nuniform float4 background_color_premultiplied;\nuniform float2 shader_offset;\nhalf4 main(float2 coord) {\n    half4 source = content.eval(coord);\n    half4 background = half4(background_color_premultiplied);\n    half4 base = source + background * (1.0 - source.a);\n    float2 shaderCoord = coord + shader_offset;\n    base *= alphaMask.eval(shaderCoord).a;\n    half4 top = overlay.eval(shaderCoord);\n    return top + base * (1.0 - top.a);\n}");
+public final class ma0 extends org.telegram.ui.ActionBar.k5 {
+    public final Paint M0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 N0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ma0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.N0 = f6Var;
+        this.M0 = new Paint(1);
     }
 
-    public static /* synthetic */ RuntimeShader b(String str) {
-        return new RuntimeShader(str);
-    }
-
-    public static /* synthetic */ void c() {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.K5, this.N0);
+        Paint paint = this.M0;
+        paint.setColor(w02);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - org.telegram.messenger.g0.L(8.0f), height, paint);
+        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + org.telegram.messenger.g0.L(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

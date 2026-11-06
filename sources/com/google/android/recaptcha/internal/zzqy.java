@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public enum zzqy implements zzsp {
     zza(0),
@@ -20,8 +20,8 @@ public enum zzqy implements zzsp {
 
     private final int zzn;
 
-    zzqy(int i3) {
-        this.zzn = i3;
+    zzqy(int i7) {
+        this.zzn = i7;
     }
 
     @Override // java.lang.Enum

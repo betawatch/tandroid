@@ -23,9 +23,9 @@ public final class w extends d {
         if (localDate.N(d)) {
             throw new j$.time.b("JapaneseDate before Meiji 6 is not supported");
         }
-        x o10 = x.o(localDate);
-        this.b = o10;
-        this.c = (localDate.getYear() - o10.b.getYear()) + 1;
+        x o4 = x.o(localDate);
+        this.b = o4;
+        this.c = (localDate.getYear() - o4.b.getYear()) + 1;
         this.a = localDate;
     }
 
@@ -65,12 +65,12 @@ public final class w extends d {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i3 = v.a[aVar.ordinal()];
-        if (i3 == 1) {
+        int i7 = v.a[aVar.ordinal()];
+        if (i7 == 1) {
             return j$.time.temporal.s.e(1L, this.a.P());
         }
-        if (i3 != 2) {
-            if (i3 != 3) {
+        if (i7 != 2) {
+            if (i7 != 3) {
                 return u.c.s(aVar);
             }
             int year = this.b.b.getYear();
@@ -108,16 +108,16 @@ public final class w extends d {
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
     /* renamed from: N, reason: merged with bridge method [inline-methods] */
-    public final w c(long j10, j$.time.temporal.o oVar) {
+    public final w c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            if (y(aVar) == j10) {
+            if (y(aVar) == j3) {
                 return this;
             }
             int[] iArr = v.a;
-            int i3 = iArr[aVar.ordinal()];
-            if (i3 == 3 || i3 == 8 || i3 == 9) {
-                int a10 = u.c.s(aVar).a(j10, aVar);
+            int i7 = iArr[aVar.ordinal()];
+            if (i7 == 3 || i7 == 8 || i7 == 9) {
+                int a10 = u.c.s(aVar).a(j3, aVar);
                 int i10 = iArr[aVar.ordinal()];
                 if (i10 == 3) {
                     return P(this.b, a10);
@@ -129,9 +129,9 @@ public final class w extends d {
                     return O(this.a.Y(a10));
                 }
             }
-            return O(this.a.c(j10, oVar));
+            return O(this.a.c(j3, oVar));
         }
-        return (w) super.c(j10, oVar);
+        return (w) super.c(j3, oVar);
     }
 
     @Override // j$.time.chrono.d
@@ -145,52 +145,52 @@ public final class w extends d {
         return (w) super.k(localDate);
     }
 
-    public final w P(x xVar, int i3) {
+    public final w P(x xVar, int i7) {
         u.c.getClass();
         if (xVar == null) {
             throw new ClassCastException("Era must be JapaneseEra");
         }
-        int year = (xVar.b.getYear() + i3) - 1;
-        if (i3 != 1 && (year < -999999999 || year > 999999999 || year < xVar.b.getYear() || xVar != x.o(LocalDate.of(year, 1, 1)))) {
+        int year = (xVar.b.getYear() + i7) - 1;
+        if (i7 != 1 && (year < -999999999 || year > 999999999 || year < xVar.b.getYear() || xVar != x.o(LocalDate.of(year, 1, 1)))) {
             throw new j$.time.b("Invalid yearOfEra value");
         }
         return O(this.a.Y(year));
     }
 
     @Override // j$.time.chrono.d
-    public final b L(long j10) {
-        return O(this.a.U(j10));
+    public final b L(long j3) {
+        return O(this.a.U(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b K(long j10) {
-        return O(this.a.T(j10));
+    public final b K(long j3) {
+        return O(this.a.T(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b J(long j10) {
-        return O(this.a.plusDays(j10));
+    public final b J(long j3) {
+        return O(this.a.plusDays(j3));
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b, j$.time.temporal.Temporal
-    public final b d(long j10, j$.time.temporal.q qVar) {
-        return (w) super.d(j10, qVar);
+    public final b d(long j3, j$.time.temporal.q qVar) {
+        return (w) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal d(long j10, j$.time.temporal.q qVar) {
-        return (w) super.d(j10, qVar);
+    public final Temporal d(long j3, j$.time.temporal.q qVar) {
+        return (w) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b
     /* renamed from: t */
-    public final b w(long j10, j$.time.temporal.q qVar) {
-        return (w) super.w(j10, qVar);
+    public final b w(long j3, j$.time.temporal.q qVar) {
+        return (w) super.w(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return (w) super.w(j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return (w) super.w(j3, chronoUnit);
     }
 
     public final w O(LocalDate localDate) {

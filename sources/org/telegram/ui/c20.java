@@ -1,68 +1,113 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class c20 extends org.telegram.ui.Components.jt {
-    public final /* synthetic */ x30 W;
+public final class c20 extends FrameLayout {
+    public final Rect a;
+    public final RectF b;
+    public final Path c;
+    public final /* synthetic */ c40 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c20(x30 x30Var, LaunchActivity launchActivity, d30 d30Var, org.telegram.ui.ActionBar.d2 d2Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(launchActivity, d30Var, d2Var, 5, true, e6Var);
-        this.W = x30Var;
+    public c20(c40 c40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.d = c40Var;
+        this.a = new Rect();
+        this.b = new RectF();
+        this.c = new Path();
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != getEditText()) {
-            return super.drawChild(canvas, view, j10);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        View childAt;
+        org.telegram.ui.Components.voip.y yVar;
+        c40 c40Var = this.d;
+        b20 b20Var = c40Var.i1;
+        if (c40Var.U3 != 1.0f) {
+            if (c40Var.O4 != null && c40Var.S4) {
+                canvas.save();
+                float measuredHeight = (c40Var.O4.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / c40Var.O4.getAvatarImageView().getMeasuredHeight());
+                float f10 = (1.0f - c40Var.U3) * measuredHeight;
+                float L = org.telegram.messenger.g0.L(13.0f);
+                float f11 = c40Var.U3;
+                int i7 = (int) ((L * f11) + f10);
+                int i10 = (int) ((1.0f - f11) * measuredHeight);
+                c40Var.O4.getAvatarWavesDrawable().a(canvas, c40Var.O4.getAvatarImageView().getMeasuredHeight() / 2, c40Var.O4.getAvatarImageView().getMeasuredHeight() / 2, this);
+                c40Var.O4.getAvatarImageView().getImageReceiver().y0(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                c40Var.O4.getAvatarImageView().t(i7, i7, i10, i10);
+                c40Var.O4.getAvatarImageView().getImageReceiver().h(canvas, null);
+                c40Var.O4.getAvatarImageView().setRoundRadius(c40Var.O4.getAvatarImageView().getMeasuredHeight() / 2);
+                canvas.restore();
+            } else if (c40Var.R4 != null && c40Var.Q4 == null && c40Var.F4) {
+                canvas.save();
+                float measuredHeight2 = (c40Var.R4.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / c40Var.R4.getAvatarImageView().getMeasuredHeight());
+                float f12 = (1.0f - c40Var.U3) * measuredHeight2;
+                float L2 = org.telegram.messenger.g0.L(13.0f);
+                float f13 = c40Var.U3;
+                int i11 = (int) ((L2 * f13) + f12);
+                int i12 = (int) ((1.0f - f13) * measuredHeight2);
+                c40Var.R4.getAvatarImageView().getImageReceiver().y0(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                c40Var.R4.getAvatarImageView().t(i11, i11, i12, i12);
+                c40Var.R4.getAvatarImageView().getImageReceiver().h(canvas, null);
+                c40Var.R4.getAvatarImageView().setRoundRadius(c40Var.R4.getAvatarImageView().getMeasuredHeight() / 2);
+                canvas.restore();
+            }
         }
+        b20Var.setAlpha(c40Var.U3);
+        Path path = this.c;
+        path.reset();
+        float measuredHeight3 = getMeasuredHeight();
+        float measuredWidth = getMeasuredWidth();
+        RectF rectF = this.b;
+        rectF.set(0.0f, 0.0f, measuredHeight3, measuredWidth);
+        path.addRoundRect(rectF, new float[]{org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CCW);
         canvas.save();
-        x30 x30Var = this.W;
-        x30Var.z1.getEditText().setTranslationY(view.getMeasuredHeight() - x30Var.t5.f);
-        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.clipPath(path);
+        if (b20Var.i1) {
+            for (int i13 = 0; i13 < b20Var.getChildCount(); i13++) {
+                childAt = b20Var.getChildAt(i13);
+                if (childAt instanceof org.telegram.ui.Components.qf0) {
+                    break;
+                }
+            }
+        }
+        childAt = null;
+        if (childAt != null && (yVar = c40Var.Q4) != null && yVar.w && !c40Var.w4) {
+            canvas.save();
+            Rect rect = this.a;
+            rect.setEmpty();
+            b20Var.getChildVisibleRect(childAt, rect, null);
+            int i14 = rect.left;
+            if (i14 < (-b20Var.getMeasuredWidth())) {
+                i14 += b20Var.getMeasuredWidth() * 2;
+            } else if (i14 > b20Var.getMeasuredWidth()) {
+                i14 -= b20Var.getMeasuredWidth() * 2;
+            }
+            canvas.translate(i14, 0.0f);
+            c40Var.Q4.draw(canvas);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
         canvas.restore();
-        return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.jt
-    public final void f() {
-        super.f();
-        org.telegram.ui.Components.ey emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.x0 = false;
-            emojiView.y2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(this.W.b.getPaddingBottom());
-        }
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.d.b.invalidate();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, i10);
-        qe.c cVar = this.W.t5;
-        if (cVar.f == 0.0f) {
-            cVar.c(getMeasuredHeight());
-        } else {
-            cVar.a(getMeasuredHeight());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void p() {
-        sh.h hVar = this.W.u3;
-        int max = this.e ? Math.max(0, getEmojiPadding()) : this.O ? Math.max(0, getKeyboardHeight()) : 0;
-        if (max > 0) {
-            hVar.g(max);
-        } else {
-            hVar.i(false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void y() {
-        this.W.b.requestApplyInsets();
+    public final void onMeasure(int i7, int i10) {
+        int min = Math.min(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + min, TLObject.FLAG_30));
     }
 }

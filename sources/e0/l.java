@@ -3,37 +3,37 @@ package e0;
 import android.app.Notification;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l extends y {
     public final /* synthetic */ int e;
     public Object f;
 
-    public /* synthetic */ l(boolean z10) {
+    public /* synthetic */ l(boolean z9) {
         this.e = 0;
     }
 
     @Override // e0.y
-    public final void b(e0 e0Var) {
+    public final void b(a4.k kVar) {
         switch (this.e) {
             case 0:
-                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) e0Var.d).setBigContentTitle(this.b).bigText((CharSequence) this.f);
+                Notification.BigTextStyle bigText = new Notification.BigTextStyle((Notification.Builder) kVar.d).setBigContentTitle(this.b).bigText((CharSequence) this.f);
                 if (this.d) {
                     bigText.setSummaryText(this.c);
                     break;
                 }
                 break;
             default:
-                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) e0Var.d).setBigContentTitle(this.b);
+                Notification.InboxStyle bigContentTitle = new Notification.InboxStyle((Notification.Builder) kVar.d).setBigContentTitle(this.b);
                 if (this.d) {
                     bigContentTitle.setSummaryText(this.c);
                 }
                 ArrayList arrayList = (ArrayList) this.f;
                 int size = arrayList.size();
-                int i3 = 0;
-                while (i3 < size) {
-                    Object obj = arrayList.get(i3);
-                    i3++;
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
                     bigContentTitle.addLine((CharSequence) obj);
                 }
                 break;
@@ -69,9 +69,9 @@ public final class l extends y {
         this.d = true;
     }
 
-    public l(int i3) {
-        this.e = i3;
-        switch (i3) {
+    public l(int i7) {
+        this.e = i7;
+        switch (i7) {
             case 1:
                 this.f = new ArrayList();
                 break;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class b1 extends v1 {
     private static final b1 zzb;
@@ -34,16 +34,16 @@ public final class b1 extends v1 {
             ((ArrayList) list).ensureCapacity(list.size() + size2);
         } else if (list instanceof r2) {
             r2 r2Var = (r2) list;
-            int i3 = r2Var.c + size2;
+            int i7 = r2Var.c + size2;
             int length = r2Var.b.length;
-            if (i3 > length) {
+            if (i7 > length) {
                 if (length != 0) {
-                    while (length < i3) {
+                    while (length < i7) {
                         length = Math.max(((length * 3) / 2) + 1, 10);
                     }
                     r2Var.b = Arrays.copyOf(r2Var.b, length);
                 } else {
-                    r2Var.b = new Object[Math.max(i3, 10)];
+                    r2Var.b = new Object[Math.max(i7, 10)];
                 }
             }
         }
@@ -52,12 +52,12 @@ public final class b1 extends v1 {
         for (int i10 = 0; i10 < size4; i10++) {
             Object obj = arrayList.get(i10);
             if (obj == null) {
-                String j10 = k2.p1.j(list.size() - size3, "Element at index ", " is null.");
+                String k10 = jg.g.k(list.size() - size3, "Element at index ", " is null.");
                 int size5 = list.size();
                 while (true) {
                     size5--;
                     if (size5 < size3) {
-                        throw new NullPointerException(j10);
+                        throw new NullPointerException(k10);
                     }
                     list.remove(size5);
                 }
@@ -68,8 +68,8 @@ public final class b1 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i3) {
-        int i10 = i3 - 1;
+    public final Object d(int i7) {
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

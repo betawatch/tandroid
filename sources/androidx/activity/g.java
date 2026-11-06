@@ -4,21 +4,21 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.graphics.Typeface;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.n0;
+import com.google.android.gms.internal.cast.m0;
+import com.google.android.gms.internal.cast.o1;
 import com.google.android.gms.internal.cast.p1;
-import com.google.android.gms.internal.cast.q1;
 import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.li;
+import org.telegram.messenger.hi;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.ui;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.yh;
-import org.telegram.messenger.zi;
 import org.telegram.ui.Components.uo;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final class g implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ g(Object obj, int i3, Object obj2, int i10) {
+    public /* synthetic */ g(Object obj, int i7, Object obj2, int i10) {
         this.a = i10;
         this.c = obj;
-        this.b = i3;
+        this.b = i7;
         this.d = obj2;
     }
 
@@ -40,16 +40,17 @@ public final class g implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        k5.a aVar;
-        n5.r rVar;
+        l5.a aVar;
+        o5.r rVar;
         VisionClearcutLogger visionClearcutLogger;
-        int i3 = 0;
+        int i7 = 3;
+        int i10 = 0;
         switch (this.a) {
             case 0:
                 h hVar = (h) this.c;
-                int i10 = this.b;
+                int i11 = this.b;
                 Object obj = ((e.a) this.d).a;
-                String str = (String) hVar.a.get(Integer.valueOf(i10));
+                String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
                 }
@@ -61,7 +62,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.g(obj);
+                        bVar.f(obj);
                         return;
                     }
                     return;
@@ -70,54 +71,54 @@ public final class g implements Runnable {
                 ((h) this.c).a(this.b, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", (IntentSender.SendIntentException) this.d));
                 return;
             case 2:
-                com.google.android.gms.internal.cast.q qVar = (com.google.android.gms.internal.cast.q) this.d;
-                r4.r rVar2 = (r4.r) this.c;
-                int i11 = this.b;
-                synchronized (qVar.e) {
-                    qVar.N0(rVar2, i11);
+                com.google.android.gms.internal.cast.p pVar = (com.google.android.gms.internal.cast.p) this.d;
+                s4.r rVar2 = (s4.r) this.c;
+                int i12 = this.b;
+                synchronized (pVar.e) {
+                    pVar.N0(rVar2, i12);
                 }
                 return;
             case 3:
-                n0 n0Var = (n0) this.d;
-                q1 q1Var = (q1) this.c;
-                int i12 = this.b;
-                p1 n4 = q1.n(q1Var);
-                String str2 = n0Var.d;
-                n4.c();
-                q1.v((q1) n4.b, str2);
-                n4.c();
-                q1.w((q1) n4.b, str2);
-                Long l10 = n0Var.e;
+                m0 m0Var = (m0) this.d;
+                p1 p1Var = (p1) this.c;
+                int i13 = this.b;
+                o1 n10 = p1.n(p1Var);
+                String str2 = m0Var.d;
+                n10.c();
+                p1.v((p1) n10.b, str2);
+                n10.c();
+                p1.w((p1) n10.b, str2);
+                Long l10 = m0Var.e;
                 if (l10 != null) {
                     int longValue = (int) l10.longValue();
-                    n4.c();
-                    q1.x((q1) n4.b, longValue);
+                    n10.c();
+                    p1.x((p1) n10.b, longValue);
                 }
-                q1 q1Var2 = (q1) n4.a();
-                int i13 = n0Var.h;
-                int i14 = i13 - 1;
-                k5.a aVar2 = null;
-                if (i13 == 0) {
+                p1 p1Var2 = (p1) n10.a();
+                int i14 = m0Var.h;
+                int i15 = i14 - 1;
+                l5.a aVar2 = null;
+                if (i14 == 0) {
                     throw null;
                 }
-                if (i14 != 0) {
-                    if (i14 == 1) {
-                        aVar = new k5.a(Integer.valueOf(i12 - 1), q1Var2, k5.d.a, null);
+                if (i15 != 0) {
+                    if (i15 == 1) {
+                        aVar = new l5.a(Integer.valueOf(i13 - 1), p1Var2, l5.d.a, null);
                     }
-                    n0.i.b("analytics event: %s", aVar2);
-                    p6.m.g(aVar2);
-                    rVar = n0Var.g;
+                    m0.i.b("analytics event: %s", aVar2);
+                    q6.m.g(aVar2);
+                    rVar = m0Var.g;
                     if (rVar == null) {
-                        rVar.a(aVar2, new l2.d(27));
+                        rVar.a(aVar2, new ni.a(i7));
                         return;
                     }
                     return;
                 }
-                aVar = new k5.a(Integer.valueOf(i12 - 1), q1Var2, k5.d.b, null);
+                aVar = new l5.a(Integer.valueOf(i13 - 1), p1Var2, l5.d.b, null);
                 aVar2 = aVar;
-                n0.i.b("analytics event: %s", aVar2);
-                p6.m.g(aVar2);
-                rVar = n0Var.g;
+                m0.i.b("analytics event: %s", aVar2);
+                q6.m.g(aVar2);
+                rVar = m0Var.g;
                 if (rVar == null) {
                 }
             case 4:
@@ -125,20 +126,20 @@ public final class g implements Runnable {
                 return;
             case 5:
                 ArrayList arrayList = (ArrayList) this.d;
-                while (i3 < arrayList.size()) {
-                    ((uo) arrayList.get(i3)).a.m(this.b);
-                    i3++;
+                while (i10 < arrayList.size()) {
+                    ((uo) arrayList.get(i10)).a.m(this.b);
+                    i10++;
                 }
-                g0.h3(new yh(3, this, arrayList));
+                g0.h3(new hi(i7, this, arrayList));
                 return;
             case 6:
                 ArrayList arrayList2 = (ArrayList) this.d;
-                while (i3 < arrayList2.size()) {
-                    if (!((String) this.c).equals(((zi) arrayList2.get(i3)).S0())) {
-                        arrayList2.remove(i3);
-                        i3--;
+                while (i10 < arrayList2.size()) {
+                    if (!((String) this.c).equals(((ij) arrayList2.get(i10)).S0())) {
+                        arrayList2.remove(i10);
+                        i10--;
                     }
-                    i3++;
+                    i10++;
                 }
                 if (arrayList2.size() > 0) {
                     w7.G(this.b).l(arrayList2);
@@ -152,17 +153,17 @@ public final class g implements Runnable {
         }
     }
 
-    public /* synthetic */ g(Object obj, Object obj2, int i3, int i10) {
+    public /* synthetic */ g(Object obj, Object obj2, int i7, int i10) {
         this.a = i10;
         this.d = obj;
         this.c = obj2;
-        this.b = i3;
+        this.b = i7;
     }
 
-    public g(li liVar, ArrayList arrayList, int i3) {
+    public g(ui uiVar, ArrayList arrayList, int i7) {
         this.a = 5;
-        this.c = liVar;
+        this.c = uiVar;
         this.d = arrayList;
-        this.b = i3;
+        this.b = i7;
     }
 }

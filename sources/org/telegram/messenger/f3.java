@@ -3,31 +3,31 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f3 {
-    public final hp a;
+    public final qp a;
     public final ConnectionsManager b;
 
-    public f3(int i3) {
-        this.a = hp.s1(i3);
-        this.b = ConnectionsManager.getInstance(i3);
+    public f3(int i7) {
+        this.a = qp.s1(i7);
+        this.b = ConnectionsManager.getInstance(i7);
     }
 
-    public final void a(long j10, u10 u10Var) {
+    public final void a(long j3, c20 c20Var) {
         TL_stories.TL_premium_getBoostsStatus tL_premium_getBoostsStatus = new TL_stories.TL_premium_getBoostsStatus();
-        tL_premium_getBoostsStatus.peer = this.a.j1(j10);
-        this.b.sendRequest(tL_premium_getBoostsStatus, new c3(u10Var, 0));
+        tL_premium_getBoostsStatus.peer = this.a.j1(j3);
+        this.b.sendRequest(tL_premium_getBoostsStatus, new c3(c20Var, 0));
     }
 
-    public final void b(long j10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, u10 u10Var) {
+    public final void b(long j3, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, c20 c20Var) {
         e3 e3Var = new e3();
-        hp hpVar = this.a;
-        hpVar.z1(j10);
-        e3Var.j = j10;
-        e3Var.k = hpVar.M0(Long.valueOf(-j10));
-        d3 d3Var = new d3(e3Var, tL_premium_boostsStatus, u10Var, 0);
-        g1 g1Var = new g1(1, e3Var, u10Var);
-        ConnectionsManager.getInstance(h10.t0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new ai.r6(g1Var, hp.s1(h10.t0), d3Var, 25));
+        qp qpVar = this.a;
+        qpVar.z1(j3);
+        e3Var.j = j3;
+        e3Var.k = qpVar.M0(Long.valueOf(-j3));
+        d3 d3Var = new d3(e3Var, tL_premium_boostsStatus, c20Var, 0);
+        g1 g1Var = new g1(1, e3Var, c20Var);
+        ConnectionsManager.getInstance(p10.s0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new bi.f2(g1Var, qp.s1(p10.s0), d3Var, 24));
     }
 }

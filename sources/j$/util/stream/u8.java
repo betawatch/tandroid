@@ -16,16 +16,16 @@ public final class u8 extends v8 implements Consumer {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, Predicate predicate, int i3) {
+    public u8(Spliterator spliterator, Predicate predicate, int i7) {
         super(spliterator);
-        this.g = i3;
+        this.g = i7;
         this.e = predicate;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u8(Spliterator spliterator, u8 u8Var, int i3) {
+    public u8(Spliterator spliterator, u8 u8Var, int i7) {
         super(spliterator, u8Var);
-        this.g = i3;
+        this.g = i7;
         this.e = u8Var.e;
     }
 
@@ -57,18 +57,18 @@ public final class u8 extends v8 implements Consumer {
     */
     public final boolean tryAdvance(Consumer consumer) {
         boolean tryAdvance;
-        boolean z10;
+        boolean z9;
         switch (this.g) {
             case 0:
-                boolean z11 = this.c;
+                boolean z10 = this.c;
                 Spliterator spliterator = this.a;
-                if (z11) {
-                    boolean z12 = false;
+                if (z10) {
+                    boolean z11 = false;
                     this.c = false;
                     while (true) {
                         tryAdvance = spliterator.tryAdvance(this);
                         if (tryAdvance && a() && this.e.test(this.f)) {
-                            z12 = true;
+                            z11 = true;
                         }
                     }
                     return tryAdvance;
@@ -76,16 +76,16 @@ public final class u8 extends v8 implements Consumer {
                 return spliterator.tryAdvance(consumer);
             default:
                 if (this.c && a() && this.a.tryAdvance(this)) {
-                    z10 = this.e.test(this.f);
-                    if (z10) {
+                    z9 = this.e.test(this.f);
+                    if (z9) {
                         consumer.accept(this.f);
                         return true;
                     }
                 } else {
-                    z10 = true;
+                    z9 = true;
                 }
                 this.c = false;
-                if (!z10) {
+                if (!z9) {
                     this.b.set(true);
                 }
                 return false;

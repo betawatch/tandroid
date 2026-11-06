@@ -1,23 +1,42 @@
 package f6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface h {
-    void a(f fVar, int i3);
+public final class h extends r6.a {
+    public static final Parcelable.Creator<h> CREATOR = new v(1);
+    public final String a;
+    public final String b;
 
-    void d(f fVar, int i3);
+    public h(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
 
-    void f(f fVar, String str);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof h)) {
+            return false;
+        }
+        h hVar = (h) obj;
+        return q6.m.k(this.a, hVar.a) && q6.m.k(this.b, hVar.b);
+    }
 
-    void g(f fVar);
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
+    }
 
-    void h(f fVar);
-
-    void j(f fVar, String str);
-
-    void l(f fVar, boolean z10);
-
-    void m(f fVar, int i3);
-
-    void n(f fVar, int i3);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 1, this.a);
+        wb.l(parcel, 2, this.b);
+        wb.s(parcel, r10);
+    }
 }

@@ -1,14 +1,56 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class kd {
-    public long a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public zi h;
+public final /* synthetic */ class kd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sd b;
+    public final /* synthetic */ rd c;
+
+    public /* synthetic */ kd(sd sdVar, rd rdVar, int i7) {
+        this.a = i7;
+        this.b = sdVar;
+        this.c = rdVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sd sdVar = this.b;
+                ArrayList arrayList = sdVar.I;
+                rd rdVar = this.c;
+                arrayList.remove(rdVar);
+                sdVar.J.l(rdVar.a);
+                if (arrayList.isEmpty()) {
+                    sd.s();
+                }
+                qs.e().k(qs.D4, new Object[0]);
+                break;
+            case 1:
+                sd sdVar2 = this.b;
+                ArrayList arrayList2 = sdVar2.I;
+                rd rdVar2 = this.c;
+                arrayList2.remove(rdVar2);
+                sdVar2.J.l(rdVar2.a);
+                if (arrayList2.isEmpty()) {
+                    sd.s();
+                }
+                qs.e().k(qs.D4, new Object[0]);
+                break;
+            default:
+                sd sdVar3 = this.b;
+                ArrayList arrayList3 = sdVar3.I;
+                rd rdVar3 = this.c;
+                arrayList3.remove(rdVar3);
+                sdVar3.J.l(rdVar3.a);
+                if (arrayList3.isEmpty()) {
+                    sd.s();
+                }
+                qs.e().k(qs.D4, new Object[0]);
+                break;
+        }
+    }
 }

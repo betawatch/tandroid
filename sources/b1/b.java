@@ -1,37 +1,36 @@
 package b1;
 
-import ci.e0;
 import com.google.android.gms.common.api.r;
-import dd.k;
+import di.z0;
+import gd.k;
 import java.util.concurrent.Executor;
-import v0.h;
-import v0.n;
+import v0.o;
 import w0.i;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements od.a {
+public final /* synthetic */ class b implements rd.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Executor b;
-    public final /* synthetic */ h c;
+    public final /* synthetic */ v0.g c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(e1.d dVar, Exception exc, Executor executor, h hVar) {
+    public /* synthetic */ b(e1.d dVar, Exception exc, Executor executor, v0.g gVar) {
         this.a = 3;
         this.d = exc;
         this.b = executor;
-        this.c = hVar;
+        this.c = gVar;
     }
 
-    @Override // od.a
+    @Override // rd.a
     public final Object invoke() {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new a1.f(8, this.c, this.d));
+                this.b.execute(new a1.e(21, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.f(9, this.c, (n) this.d));
+                this.b.execute(new a1.e(22, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new g(this.c, (i) this.d, 0));
@@ -56,16 +55,16 @@ public final /* synthetic */ class b implements od.a {
                 } else {
                     cVar = new w0.c(2, "Conditional create failed, failure: " + exc);
                 }
-                this.b.execute(new e0(26, this.c, cVar));
+                this.b.execute(new z0(26, this.c, cVar));
                 break;
         }
         return k.a;
     }
 
-    public /* synthetic */ b(Executor executor, h hVar, Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ b(Executor executor, v0.g gVar, Object obj, int i7) {
+        this.a = i7;
         this.b = executor;
-        this.c = hVar;
+        this.c = gVar;
         this.d = obj;
     }
 }

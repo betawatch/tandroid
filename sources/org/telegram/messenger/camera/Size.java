@@ -1,18 +1,20 @@
 package org.telegram.messenger.camera;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import a8.p0;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class Size {
     public final int mHeight;
     public final int mWidth;
 
-    public Size(int i3, int i10) {
-        this.mWidth = i3;
+    public Size(int i7, int i10) {
+        this.mWidth = i7;
         this.mHeight = i10;
     }
 
     private static NumberFormatException invalidSize(String str) {
-        throw new NumberFormatException(a1.g.q("Invalid Size: \"", str, "\""));
+        throw new NumberFormatException(p0.p("Invalid Size: \"", str, "\""));
     }
 
     public static Size parseSize(String str) {
@@ -55,9 +57,9 @@ public final class Size {
     }
 
     public int hashCode() {
-        int i3 = this.mHeight;
+        int i7 = this.mHeight;
         int i10 = this.mWidth;
-        return i3 ^ ((i10 >>> 16) | (i10 << 16));
+        return i7 ^ ((i10 >>> 16) | (i10 << 16));
     }
 
     public String toString() {

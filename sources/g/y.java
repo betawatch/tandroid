@@ -1,6 +1,6 @@
 package g;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class y {
     public static y d;
@@ -8,13 +8,13 @@ public final class y {
     public long b;
     public int c;
 
-    public final void a(double d10, double d11, long j10) {
-        double d12 = (0.01720197f * ((j10 - 946728000000L) / 8.64E7f)) + 6.24006f;
-        double sin = (Math.sin(r3 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * r3) * 3.4906598739326E-4d) + (Math.sin(d12) * 0.03341960161924362d) + d12 + 1.796593063d + 3.141592653589793d;
-        double sin2 = (Math.sin(2.0d * sin) * (-0.0069d)) + (Math.sin(d12) * 0.0053d) + Math.round((r2 - 9.0E-4f) - r6) + 9.0E-4f + ((-d11) / 360.0d);
+    public final void a(double d2, double d10, long j3) {
+        double d11 = (0.01720197f * ((j3 - 946728000000L) / 8.64E7f)) + 6.24006f;
+        double sin = (Math.sin(r3 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * r3) * 3.4906598739326E-4d) + (Math.sin(d11) * 0.03341960161924362d) + d11 + 1.796593063d + 3.141592653589793d;
+        double sin2 = (Math.sin(2.0d * sin) * (-0.0069d)) + (Math.sin(d11) * 0.0053d) + Math.round((r2 - 9.0E-4f) - r6) + 9.0E-4f + ((-d10) / 360.0d);
         double asin = Math.asin(Math.sin(0.4092797040939331d) * Math.sin(sin));
-        double d13 = 0.01745329238474369d * d10;
-        double sin3 = (Math.sin(-0.10471975803375244d) - (Math.sin(asin) * Math.sin(d13))) / (Math.cos(asin) * Math.cos(d13));
+        double d12 = 0.01745329238474369d * d2;
+        double sin3 = (Math.sin(-0.10471975803375244d) - (Math.sin(asin) * Math.sin(d12))) / (Math.cos(asin) * Math.cos(d12));
         if (sin3 >= 1.0d) {
             this.c = 1;
             this.a = -1L;
@@ -30,7 +30,7 @@ public final class y {
             this.a = Math.round((sin2 + acos) * 8.64E7d) + 946728000000L;
             long round = Math.round((sin2 - acos) * 8.64E7d) + 946728000000L;
             this.b = round;
-            if (round >= j10 || this.a <= j10) {
+            if (round >= j3 || this.a <= j3) {
                 this.c = 1;
             } else {
                 this.c = 0;

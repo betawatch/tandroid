@@ -1,67 +1,66 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rk extends u4.t0 {
+public final /* synthetic */ class rk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uk b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ rk(uk ukVar, int i3) {
-        this.a = i3;
-        this.b = ukVar;
+    public /* synthetic */ rk(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
-    @Override // u4.t0
-    public final void a(RecyclerView recyclerView, int i3) {
-        bj0 bj0Var;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        RecyclerView recyclerView;
         switch (this.a) {
             case 0:
-                uk ukVar = this.b;
-                ci.j1 j1Var = ukVar.M;
-                boolean z10 = i3 != 0;
-                ukVar.I = z10;
-                if (!z10 && ukVar.G != null) {
-                    ukVar.G = null;
+                wk wkVar = (wk) this.b;
+                r7 r7Var = wkVar.b.R2;
+                float alpha = r7Var != null ? r7Var.getAlpha() : 0.0f;
+                if (alpha != wkVar.z0) {
+                    wkVar.z0 = alpha;
+                    wkVar.i0();
+                    break;
                 }
-                if (i3 == 0) {
-                    int L = org.telegram.messenger.g0.L(13.0f);
-                    bi biVar = ukVar.b;
-                    int i10 = biVar.t0;
-                    if (((biVar.W3[0] - i10) - L) + i10 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (bj0Var = (bj0) j1Var.K(0)) != null) {
-                        View view = bj0Var.a;
-                        if (view.getTop() > 0) {
-                            j1Var.w0(0, view.getTop(), null);
-                            break;
-                        }
-                    }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.w3 w3Var = ((EditTextBoldCursor) this.b).Y0;
+                if (w3Var != null) {
+                    w3Var.c();
+                    break;
                 }
+                break;
+            case 2:
+                ((i60) this.b).invalidate();
                 break;
             default:
-                if (i3 == 1) {
-                    uk ukVar2 = this.b;
-                    if (ukVar2.d0 && ukVar2.e0) {
-                        org.telegram.messenger.g0.v1(ukVar2.b.getCurrentFocus());
-                        break;
+                ht0 ht0Var = (ht0) this.b;
+                if (ht0Var.a && ht0Var.b > 0) {
+                    ht0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
+                }
+                ht0Var.p();
+                if (ht0Var.g0 && (recyclerView = ht0Var.E) != null && !recyclerView.c0()) {
+                    float n10 = ht0Var.n();
+                    if (!Float.isInfinite(n10)) {
+                        ht0Var.g0 = false;
+                        ht0Var.t(ht0Var.E, Math.round(n10 - ht0Var.U));
+                        ht0Var.B();
                     }
                 }
-                break;
-        }
-    }
-
-    @Override // u4.t0
-    public void b(RecyclerView recyclerView, int i3, int i10) {
-        switch (this.a) {
-            case 0:
-                uk ukVar = this.b;
-                ukVar.i0();
-                if (ukVar.G != null) {
-                    ukVar.H += i10;
+                if (ht0Var.a && ht0Var.b > 0) {
+                    ht0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
+                    ht0Var.b--;
+                    ht0Var.c++;
+                    break;
                 }
-                ukVar.b.M1(ukVar, i10);
                 break;
         }
+        return true;
     }
 }

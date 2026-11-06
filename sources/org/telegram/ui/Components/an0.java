@@ -1,27 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class an0 extends u4.t0 {
-    public final /* synthetic */ le a;
+public final class an0 extends LinearLayout {
+    public final it0 a;
+    public final TextView b;
+    public final TextView c;
 
-    public an0(le leVar) {
-        this.a = leVar;
-    }
-
-    @Override // u4.t0
-    public final void b(RecyclerView recyclerView, int i3, int i10) {
-        le leVar = this.a;
-        View view = leVar.u;
-        boolean z10 = leVar.w.I0() != 0;
-        Boolean bool = leVar.x;
-        if (bool == null || z10 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
-            leVar.x = Boolean.valueOf(z10);
-        }
+    public an0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        setLayoutParams(new v4.o0(-1, -2));
+        setOrientation(0);
+        setGravity(16);
+        int L = org.telegram.messenger.g0.L(14.0f);
+        int i7 = L / 2;
+        setPadding(L, i7, L, i7);
+        it0 it0Var = new it0(context);
+        this.a = it0Var;
+        addView(it0Var, c8.ha.c(40.0f, 40));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ha.m(1.0f, 0, -1, 12, 0, 0));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        int i10 = org.telegram.ui.ActionBar.k6.E8;
+        org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
+        textView.setTextSize(1, 16.0f);
+        textView.setTag(textView);
+        textView.setMaxLines(1);
+        linearLayout.addView(textView);
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.r6.h(i10, org.telegram.messenger.qs.n1), f6Var);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTag(textView2);
+        textView2.setMaxLines(1);
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        linearLayout.addView(textView2);
     }
 }

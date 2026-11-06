@@ -1,141 +1,129 @@
 package org.telegram.ui.Components;
 
 import android.os.Bundle;
-import java.util.regex.Pattern;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.v91;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ws0 b;
+public final /* synthetic */ class uo0 implements m00, org.telegram.messenger.wr, org.telegram.ui.qw {
+    public final /* synthetic */ xs0 a;
 
-    public /* synthetic */ uo0(ws0 ws0Var, int i3) {
-        this.a = i3;
-        this.b = ws0Var;
+    public /* synthetic */ uo0(xs0 xs0Var) {
+        this.a = xs0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        ws0 ws0Var = this.b;
-        switch (i3) {
-            case 0:
-                ws0Var.w0();
-                break;
-            case 1:
-                ws0Var.p2 = (int) ws0Var.S0.c(ws0.v2);
-                ws0Var.G();
-                if (ws0Var.b0 != null) {
-                    ws0Var.F1();
-                }
-                rr0[] rr0VarArr = ws0Var.n0;
-                if (rr0VarArr != null) {
-                    for (rr0 rr0Var : rr0VarArr) {
-                        if (rr0Var != null) {
-                            int paddingTop = rr0Var.h.getPaddingTop();
-                            cq0 cq0Var = rr0Var.h;
-                            int paddingLeft = cq0Var.getPaddingLeft();
-                            int j02 = ws0Var.j0(rr0Var.F);
-                            int paddingRight = rr0Var.h.getPaddingRight();
-                            cq0 cq0Var2 = rr0Var.h;
-                            int i02 = ws0Var.i0(ws0Var.H0());
-                            cq0Var2.i3 = i02;
-                            cq0Var.setPadding(paddingLeft, j02, paddingRight, i02);
-                            org.telegram.messenger.g0.J(rr0Var.h, new dp0(rr0Var, paddingTop - rr0Var.h.getPaddingTop(), 0));
-                        }
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                t4.R(ws0Var.getContext(), ws0Var.y1, ws0Var.I1, new wo0(ws0Var));
-                break;
-            case 3:
-                ws0Var.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                bundle.putLong("dialog_id", -ws0Var.g1.id);
-                r80 r80Var = new r80(bundle, null);
-                r80Var.c = ws0Var.g1;
-                ws0Var.y1.presentFragment(r80Var);
-                break;
-            case 4:
-                org.telegram.ui.ActionBar.d2 d2Var = ws0Var.y1;
-                gi.va D = gi.va.D(d2Var.getParentActivity(), d2Var.getCurrentAccount());
-                long j10 = ws0Var.m1;
-                String currentLang = ws0Var.a0.getCurrentLang();
-                D.w0 = j10;
-                D.x0 = currentLang;
-                D.Q(null);
-                D.w0 = j10;
-                D.x0 = currentLang;
-                break;
-            case 5:
-                ws0Var.a0.f();
-                break;
-            case 6:
-                tp0 tp0Var = ws0Var.a0;
-                if (tp0Var.d()) {
-                    tp0Var.h();
-                    break;
-                } else {
-                    tp0Var.f();
-                    break;
-                }
-            case 7:
-                tp0 tp0Var2 = ws0Var.a0;
-                tp0Var2.b(tp0Var2.getCurrentLang());
-                break;
-            case 8:
-                org.telegram.ui.ActionBar.d2 d2Var2 = ws0Var.y1;
-                d2Var2.getMessagesController().N4(false);
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", d2Var2.getUserConfig().e());
-                d2Var2.presentFragment(new org.telegram.ui.wm(bundle2), true);
-                break;
-            case 9:
-                org.telegram.ui.ActionBar.d2 d2Var3 = ws0Var.y1;
-                try {
-                    org.telegram.messenger.li mediaDataController = d2Var3.getMediaDataController();
-                    long e10 = d2Var3.getUserConfig().e();
-                    Pattern pattern = org.telegram.messenger.li.S1;
-                    mediaDataController.y0(e10, 0, null);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
-                }
-            case 10:
-                org.telegram.ui.ActionBar.d2 d2Var4 = ws0Var.y1;
-                TLRPC.User f10 = d2Var4.getUserConfig().f();
-                t4.r(d2Var4, false, null, f10, false, true, false, true, new org.telegram.ui.jo(27, ws0Var, f10));
-                break;
-            case 11:
-                vp0 vp0Var = ws0Var.b0;
-                vp0Var.getClass();
-                vp0Var.h(null, new ai.l3(vp0Var, 1));
-                break;
-            case 12:
-                ws0Var.b0.setReordering(true);
-                break;
-            case 13:
-                if (!ws0Var.D0()) {
-                    ws0Var.C1();
-                    break;
-                }
-                break;
-            default:
-                ws0Var.o1(false);
-                org.telegram.ui.ActionBar.y4 y4Var = ws0Var.I;
-                if (y4Var != null) {
-                    y4Var.j(true);
-                } else {
-                    ws0Var.H.l(true);
-                }
-                ws0Var.d1 = 0;
-                break;
+    @Override // org.telegram.ui.qw
+    public /* synthetic */ boolean G() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qw
+    public /* synthetic */ boolean N(org.telegram.ui.ww wwVar) {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.wr
+    public void a(String str) {
+        r0.getStoriesController().r(r0.l1, str, new ro0(this.a, 0));
+    }
+
+    public void b(boolean z9) {
+        xs0 xs0Var = this.a;
+        if (!z9) {
+            xs0Var.requestLayout();
         }
+        xs0Var.setVisibleHeight(xs0Var.P1);
+    }
+
+    @Override // org.telegram.ui.qw
+    public boolean y(org.telegram.ui.ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+        int i11;
+        xs0 xs0Var = this.a;
+        SparseArray[] sparseArrayArr = xs0Var.b1;
+        org.telegram.ui.ActionBar.f2 f2Var = xs0Var.x1;
+        ArrayList arrayList2 = new ArrayList();
+        boolean z11 = true;
+        int i12 = 1;
+        while (true) {
+            i11 = 0;
+            if (i12 < 0) {
+                break;
+            }
+            ArrayList arrayList3 = new ArrayList();
+            for (int i13 = 0; i13 < sparseArrayArr[i12].size(); i13++) {
+                arrayList3.add(Integer.valueOf(sparseArrayArr[i12].keyAt(i13)));
+            }
+            Collections.sort(arrayList3);
+            int size = arrayList3.size();
+            while (i11 < size) {
+                Object obj = arrayList3.get(i11);
+                i11++;
+                Integer num = (Integer) obj;
+                if (num.intValue() > 0) {
+                    arrayList2.add((org.telegram.messenger.ij) sparseArrayArr[i12].get(num.intValue()));
+                }
+            }
+            sparseArrayArr[i12].clear();
+            i12--;
+        }
+        xs0Var.c1 = 0;
+        xs0Var.o1(false);
+        is0 is0Var = xs0Var.T;
+        if (is0Var != null) {
+            is0Var.x.clear();
+        }
+        UndoView undoView = null;
+        if (arrayList.size() <= 1 && ((org.telegram.messenger.xr) arrayList.get(0)).a != f2Var.getUserConfig().e() && charSequence == null) {
+            long j3 = ((org.telegram.messenger.xr) arrayList.get(0)).a;
+            Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
+            if (org.telegram.messenger.m5.C(j3)) {
+                k10.putInt("enc_id", (int) (j3 & 4294967295L));
+            } else {
+                if (org.telegram.messenger.m5.E(j3)) {
+                    k10.putLong("user_id", j3);
+                } else {
+                    k10.putLong("chat_id", -j3);
+                }
+                if (!f2Var.getMessagesController().E(k10, wwVar, null, null)) {
+                    return true;
+                }
+            }
+            f2Var.getNotificationCenter().k(org.telegram.messenger.qs.t, new Object[0]);
+            org.telegram.ui.an anVar = new org.telegram.ui.an(k10);
+            qg.d.a(anVar, (org.telegram.messenger.xr) arrayList.get(0));
+            wwVar.presentFragment(anVar, true);
+            anVar.dc(arrayList2);
+            return true;
+        }
+        xs0Var.J1(true);
+        int i14 = 0;
+        while (i14 < arrayList.size()) {
+            long j10 = ((org.telegram.messenger.xr) arrayList.get(i14)).a;
+            if (charSequence != null) {
+                f2Var.getSendMessagesHelper().r0(org.telegram.messenger.ez.b(charSequence.toString(), j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+            }
+            f2Var.getSendMessagesHelper().q0(arrayList2, j10, false, false, true, 0, 0, null, -1, 0L, 0L, null);
+            i14++;
+            z11 = z11;
+            undoView = undoView;
+            i11 = 0;
+        }
+        boolean z12 = z11;
+        UndoView undoView2 = undoView;
+        wwVar.finishFragment();
+        UndoView undoView3 = f2Var instanceof ProfileActivity ? ((ProfileActivity) f2Var).L : undoView2;
+        if (undoView3 == null) {
+            return z12;
+        }
+        if (arrayList.size() == z12) {
+            undoView3.m(((org.telegram.messenger.xr) arrayList.get(0)).a, Integer.valueOf(arrayList2.size()), 53);
+            return z12;
+        }
+        undoView3.k(0L, 53, Integer.valueOf(arrayList2.size()), Integer.valueOf(arrayList.size()), null, null);
+        return z12;
     }
 }

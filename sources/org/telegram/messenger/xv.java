@@ -1,13 +1,58 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class xv {
-    public final byte[] a;
-    public final byte[] b;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-    public xv(byte[] bArr, byte[] bArr2) {
-        this.a = bArr;
-        this.b = bArr2;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class xv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dw b;
+    public final /* synthetic */ long c;
+
+    public /* synthetic */ xv(dw dwVar, long j3, int i7) {
+        this.a = i7;
+        this.b = dwVar;
+        this.c = j3;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = 2;
+        long j3 = this.c;
+        int i11 = 1;
+        dw dwVar = this.b;
+        switch (i7) {
+            case 0:
+                a0.h hVar = dwVar.getMessagesController().Q;
+                long j10 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j10);
+                if (dialog != null) {
+                    dialog.unread_count = 0;
+                    dwVar.getMessagesController().R.l(dialog.id);
+                }
+                dwVar.getMessagesStorage().a.c(new xv(dwVar, j10, i11));
+                yr messagesStorage = dwVar.getMessagesStorage();
+                messagesStorage.a.c(new aq(messagesStorage, 1, j10, 1));
+                dwVar.getNotificationCenter().k(3, new Object[0]);
+                dwVar.getNotificationCenter().k(41, Long.valueOf(j10), Boolean.FALSE, null);
+                break;
+            case 1:
+                g0.h3(new xv(dwVar, j3, i10));
+                break;
+            case 2:
+                dt notificationsController = dwVar.getNotificationsController();
+                long j11 = this.c;
+                notificationsController.L(null, j11, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
+                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                longSparseIntArray.put(j11, 0);
+                dwVar.getNotificationsController().J(longSparseIntArray);
+                break;
+            default:
+                dwVar.getMessagesController().X(0, j3, false);
+                break;
+        }
     }
 }

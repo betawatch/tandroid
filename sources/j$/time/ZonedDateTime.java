@@ -52,9 +52,9 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         return new ZonedDateTime(localDateTime, zoneId, zoneOffset);
     }
 
-    public static ZonedDateTime q(long j10, int i3, ZoneId zoneId) {
-        ZoneOffset offset = zoneId.getRules().getOffset(Instant.I(j10, i3));
-        return new ZonedDateTime(LocalDateTime.K(j10, i3, offset), zoneId, offset);
+    public static ZonedDateTime q(long j3, int i7, ZoneId zoneId) {
+        ZoneOffset offset = zoneId.getRules().getOffset(Instant.I(j3, i7));
+        return new ZonedDateTime(LocalDateTime.K(j3, i7, offset), zoneId, offset);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -114,11 +114,11 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     @Override // j$.time.temporal.l
     public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i3 = v.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i3 == 1) {
+            int i7 = v.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i7 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 return this.b.getTotalSeconds();
             }
             return this.a.j(oVar);
@@ -131,8 +131,8 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i3 = v.a[((j$.time.temporal.a) oVar).ordinal()];
-        return i3 != 1 ? i3 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds() : j$.com.android.tools.r8.a.w(this);
+        int i7 = v.a[((j$.time.temporal.a) oVar).ordinal()];
+        return i7 != 1 ? i7 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds() : j$.com.android.tools.r8.a.w(this);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -190,32 +190,32 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal c(long j10, j$.time.temporal.o oVar) {
+    public final Temporal c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            int i3 = v.a[aVar.ordinal()];
-            if (i3 == 1) {
-                return q(j10, this.a.b.d, this.c);
+            int i7 = v.a[aVar.ordinal()];
+            if (i7 == 1) {
+                return q(j3, this.a.b.d, this.c);
             }
-            if (i3 == 2) {
-                return K(ZoneOffset.O(aVar.b.a(j10, aVar)));
+            if (i7 == 2) {
+                return K(ZoneOffset.O(aVar.b.a(j3, aVar)));
             }
-            return J(this.a.c(j10, oVar));
+            return J(this.a.c(j3, oVar));
         }
-        return (ZonedDateTime) oVar.q(this, j10);
+        return (ZonedDateTime) oVar.q(this, j3);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: I, reason: merged with bridge method [inline-methods] */
-    public final ZonedDateTime d(long j10, j$.time.temporal.q qVar) {
+    public final ZonedDateTime d(long j3, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (ZonedDateTime) qVar.j(this, j10);
+            return (ZonedDateTime) qVar.j(this, j3);
         }
         ChronoUnit chronoUnit = (ChronoUnit) qVar;
         if (chronoUnit.compareTo(ChronoUnit.DAYS) >= 0 && chronoUnit != ChronoUnit.FOREVER) {
-            return J(this.a.d(j10, qVar));
+            return J(this.a.d(j3, qVar));
         }
-        LocalDateTime d = this.a.d(j10, qVar);
+        LocalDateTime d = this.a.d(j3, qVar);
         ZoneOffset zoneOffset = this.b;
         ZoneId zoneId = this.c;
         Objects.requireNonNull(d, "localDateTime");
@@ -229,8 +229,8 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
@@ -245,12 +245,12 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         ZonedDateTime G = G(temporal);
         if (qVar instanceof ChronoUnit) {
-            ZonedDateTime i3 = G.i(this.c);
+            ZonedDateTime i7 = G.i(this.c);
             ChronoUnit chronoUnit = (ChronoUnit) qVar;
             if (chronoUnit.compareTo(ChronoUnit.DAYS) >= 0 && chronoUnit != ChronoUnit.FOREVER) {
-                return this.a.g(i3.a, qVar);
+                return this.a.g(i7.a, qVar);
             }
-            return new OffsetDateTime(this.a, this.b).g(new OffsetDateTime(i3.a, i3.b), qVar);
+            return new OffsetDateTime(this.a, this.b).g(new OffsetDateTime(i7.a, i7.b), qVar);
         }
         return qVar.between(this, G);
     }

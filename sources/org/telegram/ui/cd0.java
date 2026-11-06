@@ -1,29 +1,26 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class cd0 extends TimerTask {
+public final /* synthetic */ class cd0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dd0 b;
+    public final /* synthetic */ gd0 b;
 
-    public /* synthetic */ cd0(dd0 dd0Var, int i3) {
-        this.a = i3;
-        this.b = dd0Var;
+    public /* synthetic */ cd0(gd0 gd0Var, int i7) {
+        this.a = i7;
+        this.b = gd0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new fz(this, 25));
+                this.b.u0.finishFragment();
                 break;
             default:
-                if (this.b.U != null) {
-                    org.telegram.messenger.g0.h3(new fz(this, 26));
-                    break;
-                }
+                this.b.u0.finishFragment();
                 break;
         }
     }

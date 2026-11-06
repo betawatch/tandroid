@@ -1,85 +1,64 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.List;
-import java.util.concurrent.AbstractExecutorService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import a8.p8;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
-import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class k4 extends AbstractExecutorService implements j4, AutoCloseable {
-    public final ExecutorService a;
+public final class k4 extends p8 implements ScheduledFuture, m9.y, Future {
+    public final c4 b;
+    public final ScheduledFuture c;
 
-    public k4(ExecutorService executorService) {
-        executorService.getClass();
-        this.a = executorService;
+    public k4(c4 c4Var, ScheduledFuture scheduledFuture) {
+        this.b = c4Var;
+        this.c = scheduledFuture;
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
-        return this.a.awaitTermination(j10, timeUnit);
+    @Override // m9.y
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
     }
 
-    @Override // java.lang.AutoCloseable
-    public /* synthetic */ void close() {
-        g4.c(this);
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z9) {
+        boolean cancel = this.b.cancel(z9);
+        if (cancel) {
+            this.c.cancel(z9);
+        }
+        return cancel;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.execute(runnable);
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
+        return this.c.compareTo(delayed);
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isShutdown() {
-        return this.a.isShutdown();
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isTerminated() {
-        return this.a.isTerminated();
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.c.getDelay(timeUnit);
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
-        return new q4(Executors.callable(runnable, obj));
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof u3;
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final void shutdown() {
-        this.a.shutdown();
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final List shutdownNow() {
-        return this.a.shutdownNow();
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable) {
-        return (l9.y) super.submit(runnable);
-    }
-
-    public final String toString() {
-        return super.toString() + "[" + String.valueOf(this.a) + "]";
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Callable callable) {
-        return new q4(callable);
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
-        return (l9.y) super.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Callable callable) {
-        return (l9.y) super.submit(callable);
+    @Override // java.util.concurrent.Future
+    public final Object get(long j3, TimeUnit timeUnit) {
+        return this.b.get(j3, timeUnit);
     }
 }

@@ -1,51 +1,37 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y01 implements Runnable {
+public final class y01 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c11 b;
-    public final /* synthetic */ Integer c;
+    public final /* synthetic */ a11 b;
 
-    public /* synthetic */ y01(c11 c11Var, Integer num, int i3) {
-        this.a = i3;
-        this.b = c11Var;
-        this.c = num;
+    public /* synthetic */ y01(a11 a11Var, int i7) {
+        this.a = i7;
+        this.b = a11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        c11 c11Var = this.b;
-        switch (i3) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                c11.a(c11Var, this.c);
+                super.onAnimationEnd(animator);
+                this.b.I = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                this.b.I = null;
                 break;
             default:
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        c11Var.Q.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    wz0 wz0Var = (wz0) c11Var;
-                    g11 g11Var = wz0Var.T.e;
-                    List list = g11.b2;
-                    g11Var.l();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = wz0Var.R;
-                    long j10 = ((q01) view).e.documentId;
-                    tL_emojiStatus.document_id = j10;
-                    g11Var.p(view, Long.valueOf(j10), ((q01) wz0Var.R).e.document, wz0Var.S, num);
-                    if (wz0Var.S == null) {
-                        org.telegram.messenger.li.b0(g11Var.W).C1(tL_emojiStatus);
-                        break;
-                    }
-                }
+                super.onAnimationEnd(animator);
+                a11 a11Var = this.b;
+                a11Var.N = 0.0f;
+                a11Var.I = null;
+                a11Var.M = false;
+                a11Var.d(true, false);
                 break;
         }
     }

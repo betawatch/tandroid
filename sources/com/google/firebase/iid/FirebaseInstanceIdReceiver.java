@@ -1,20 +1,20 @@
 package com.google.firebase.iid;
 
+import a8.b1;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import e5.r;
+import f5.r;
 import j$.util.Objects;
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import l6.g;
-import x7.a7;
+import m6.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -40,10 +40,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!a7.d(putExtras)) {
+        if (!b1.d(putExtras)) {
             return -1;
         }
-        a7.c("_nd", putExtras.getExtras());
+        b1.c("_nd", putExtras.getExtras());
         return -1;
     }
 
@@ -68,6 +68,6 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 throw th2;
             }
         }
-        executorService.execute(new g(this, intent, context, isOrderedBroadcast, goAsync));
+        executorService.execute(new h(this, intent, context, isOrderedBroadcast, goAsync));
     }
 }

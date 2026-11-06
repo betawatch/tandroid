@@ -1,46 +1,37 @@
 package org.telegram.ui.Components;
 
+import android.content.DialogInterface;
 import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg implements org.telegram.messenger.r10 {
+public final /* synthetic */ class tg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ tg(KeyEvent.Callback callback, int i3) {
-        this.a = i3;
+    public /* synthetic */ tg(KeyEvent.Callback callback, int i7) {
+        this.a = i7;
         this.b = callback;
     }
 
-    @Override // org.telegram.messenger.r10
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                bi biVar = (bi) this.b;
-                CharSequence charSequence = (CharSequence) obj;
-                dh dhVar = biVar.z2;
-                dhVar.setText(charSequence);
-                dhVar.w(charSequence.length(), charSequence.length());
-                biVar.n1();
-                break;
-            case 1:
-                bi biVar2 = (bi) this.b;
-                CharSequence charSequence2 = (CharSequence) obj;
-                fh fhVar = biVar2.K2;
-                fhVar.setText(charSequence2);
-                fhVar.w(charSequence2.length(), charSequence2.length());
-                biVar2.n1();
+                di diVar = (di) this.b;
+                r1.g gVar = diVar.j4;
+                if (gVar != null) {
+                    gVar.d();
+                }
+                r1.g gVar2 = new r1.g((Object) diVar.b, (r1.e) r1.g.p, 0.0f);
+                diVar.j4 = gVar2;
+                gVar2.m.a(1.5f);
+                diVar.j4.m.b(1500.0f);
+                diVar.j4.h();
                 break;
             default:
-                sc scVar = (sc) this.b;
-                gi.g gVar = scVar.f;
-                gVar.setText((CharSequence) obj);
-                gVar.d();
-                gVar.k(true);
-                gi.e eVar = scVar.d0;
-                org.telegram.messenger.g0.r(eVar);
-                eVar.run();
+                ((View) this.b).setTag(null);
                 break;
         }
     }

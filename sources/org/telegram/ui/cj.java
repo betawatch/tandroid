@@ -1,38 +1,67 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class cj extends org.telegram.ui.Components.e01 {
-    public final /* synthetic */ wm e;
+public final class cj extends mi.l {
+    public Runnable W;
+    public final /* synthetic */ an X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj(wm wmVar, Context context, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(i3, context, e6Var);
-        this.e = wmVar;
+    public cj(an anVar, an anVar2, aj ajVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(anVar2, ajVar, f6Var);
+        this.X = anVar;
     }
 
-    @Override // org.telegram.ui.Components.e01, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // v4.k
+    public final void F() {
+        an anVar = this.X;
+        if (anVar.aa == -1) {
+            anVar.aa = anVar.getNotificationCenter().q(an.od, anVar.aa, false);
         }
-        wm wmVar = this.e;
-        kVar = ((org.telegram.ui.ActionBar.d2) wmVar).actionBar;
-        if (kVar.v() || wmVar.W9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            invalidate();
+    @Override // mi.l, v4.k
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.W = null;
         }
-        super.setTranslationY(f10);
+        bj bjVar = new bj(this, 1);
+        this.W = bjVar;
+        org.telegram.messenger.g0.h3(bjVar);
+    }
+
+    @Override // mi.l
+    public final void W() {
+        an anVar = this.X;
+        anVar.aa = anVar.getNotificationCenter().q(an.od, anVar.aa, false);
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.W = null;
+        }
+        if (org.telegram.messenger.r2.a) {
+            org.telegram.messenger.a8.b("chatItemAnimator disable notifications");
+        }
+        m.f3 f3Var = anVar.Z.getAdjustPanLayoutHelper().h;
+        org.telegram.messenger.g0.r(f3Var);
+        f3Var.run();
+        org.telegram.ui.Components.je jeVar = anVar.Z.Y3;
+        org.telegram.messenger.g0.r(jeVar);
+        jeVar.run();
+    }
+
+    @Override // mi.l, v4.k, v4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        bj bjVar = new bj(this, 0);
+        this.W = bjVar;
+        org.telegram.messenger.g0.h3(bjVar);
     }
 }

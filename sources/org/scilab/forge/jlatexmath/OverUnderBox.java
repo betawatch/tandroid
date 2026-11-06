@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class OverUnderBox extends Box {
     private final Box base;
@@ -12,17 +12,17 @@ public class OverUnderBox extends Box {
     private final boolean over;
     private final Box script;
 
-    public OverUnderBox(Box box, Box box2, Box box3, float f10, boolean z10) {
+    public OverUnderBox(Box box, Box box2, Box box3, float f10, boolean z9) {
         this.base = box;
         this.del = box2;
         this.script = box3;
         this.kern = f10;
-        this.over = z10;
+        this.over = z9;
         this.width = box.getWidth();
         float f11 = 0.0f;
-        this.height = box.height + (z10 ? box2.getWidth() : 0.0f) + ((!z10 || box3 == null) ? 0.0f : box3.height + box3.depth + f10);
-        float width = box.depth + (z10 ? 0.0f : box2.getWidth());
-        if (!z10 && box3 != null) {
+        this.height = box.height + (z9 ? box2.getWidth() : 0.0f) + ((!z9 || box3 == null) ? 0.0f : box3.height + box3.depth + f10);
+        float width = box.depth + (z9 ? 0.0f : box2.getWidth());
+        if (!z9 && box3 != null) {
             f11 = box3.height + box3.depth + f10;
         }
         this.depth = width + f11;

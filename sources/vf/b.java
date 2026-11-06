@@ -1,17 +1,47 @@
 package vf;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.messenger.k7;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface b {
-    void a();
+public class b {
+    public Runnable a;
+    public Runnable b;
+    public Runnable c;
 
-    void b();
+    public b(Runnable runnable, Runnable runnable2) {
+        this.a = runnable;
+        this.c = runnable2;
+    }
 
-    void c();
+    public final void a(boolean z9) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
+        }
+        c(z9);
+    }
 
-    void d();
+    public void b() {
+        c(false);
+    }
 
-    void e();
+    public void c(boolean z9) {
+        Runnable runnable = this.c;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
 
-    void f();
+    public void d() {
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
+            this.a = null;
+        }
+    }
+
+    public final void e(k7 k7Var) {
+        this.b = k7Var;
+    }
 }

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zznr {
     private static String zza = "com.google.android.recaptcha.internal.zznv";
@@ -53,8 +53,8 @@ public abstract class zznr {
         return zznrVar.zzm();
     }
 
-    public static boolean zzn(String str, Level level, boolean z10) {
-        zzi().zzd(str, level, z10);
+    public static boolean zzn(String str, Level level, boolean z9) {
+        zzi().zzd(str, level, z9);
         return false;
     }
 

@@ -1,9 +1,29 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class qj0 {
-    public static final ArrayList a = new ArrayList();
+public final class qj0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public boolean f;
+
+    public final void a(float f10, float f11, float f12, float f13) {
+        this.a = f10;
+        this.d = f12;
+        this.b = f10 - Math.max(0.0f, Math.min(f11, Math.max(0.0f, f12 - f13)));
+        this.c = Math.max(f10, f12);
+        this.f = this.b <= f13 + 0.5f;
+        this.e = 0.0f;
+    }
+
+    public final float b() {
+        if (this.f) {
+            return this.c;
+        }
+        float f10 = this.b;
+        return ((this.c - f10) * this.e) + f10;
+    }
 }

@@ -1,18 +1,49 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.ArrayList;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class e5 implements ci.k6 {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ TL_wallet.nftItem b;
-    public final /* synthetic */ w5 c;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class e5 implements ls {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ di.r c;
 
-    public e5(w5 w5Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
-        this.c = w5Var;
-        this.a = tL_starGiftUnique;
-        this.b = nftitem;
+    public e5(int i7, TL_wallet.walletTransaction[] wallettransactionArr, di.r rVar) {
+        this.a = i7;
+        this.b = wallettransactionArr;
+        this.c = rVar;
+    }
+
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        TL_wallet.walletTransaction[] wallettransactionArr;
+        TL_wallet.walletTransaction wallettransaction;
+        if (i7 == qs.a4 || i7 == qs.b4) {
+            ArrayList arrayList = n0.x(this.a).B().c;
+            int size = arrayList.size();
+            int i11 = 0;
+            while (true) {
+                wallettransactionArr = this.b;
+                if (i11 >= size) {
+                    wallettransaction = null;
+                    break;
+                }
+                Object obj = arrayList.get(i11);
+                i11++;
+                wallettransaction = (TL_wallet.walletTransaction) obj;
+                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
+                if (wallettransaction == wallettransaction2 || n0.i0(wallettransaction2, wallettransaction)) {
+                    break;
+                }
+            }
+            if (wallettransaction != null) {
+                wallettransactionArr[0] = wallettransaction;
+                this.c.a(wallettransaction);
+            }
+        }
     }
 }

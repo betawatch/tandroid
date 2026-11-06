@@ -1,42 +1,49 @@
 package z3;
 
-import e3.a0;
-import e3.b0;
-import e3.c0;
-import g2.n0;
-import java.math.BigInteger;
+import h2.x;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements b0 {
-    public final /* synthetic */ b a;
+public final class a {
+    public final int a;
+    public int b;
+    public int c;
+    public long d;
+    public final boolean e;
+    public final x f;
+    public final x g;
+    public int h;
+    public int i;
 
-    public a(b bVar) {
-        this.a = bVar;
+    public a(x xVar, x xVar2, boolean z9) {
+        this.g = xVar;
+        this.f = xVar2;
+        this.e = z9;
+        xVar2.N(12);
+        this.a = xVar2.E();
+        xVar.N(12);
+        this.i = xVar.E();
+        f3.b.b("first_chunk must be 1", xVar.m() == 1);
+        this.b = -1;
     }
 
-    @Override // e3.b0
-    public final boolean d() {
+    public final boolean a() {
+        int i7 = this.b + 1;
+        this.b = i7;
+        if (i7 == this.a) {
+            return false;
+        }
+        boolean z9 = this.e;
+        x xVar = this.f;
+        this.d = z9 ? xVar.G() : xVar.C();
+        if (this.b == this.h) {
+            x xVar2 = this.g;
+            this.c = xVar2.E();
+            xVar2.O(4);
+            int i10 = this.i - 1;
+            this.i = i10;
+            this.h = i10 > 0 ? xVar2.E() - 1 : -1;
+        }
         return true;
-    }
-
-    @Override // e3.b0
-    public final /* synthetic */ boolean e() {
-        return false;
-    }
-
-    @Override // e3.b0
-    public final a0 f(long j10) {
-        b bVar = this.a;
-        long j11 = bVar.b;
-        BigInteger valueOf = BigInteger.valueOf((bVar.d.i * j10) / 1000000);
-        long j12 = bVar.c;
-        c0 c0Var = new c0(j10, n0.j((valueOf.multiply(BigInteger.valueOf(j12 - j11)).divide(BigInteger.valueOf(bVar.f)).longValue() + j11) - 30000, bVar.b, j12 - 1));
-        return new a0(c0Var, c0Var);
-    }
-
-    @Override // e3.b0
-    public final long h() {
-        return (this.a.f * 1000000) / r0.d.i;
     }
 }

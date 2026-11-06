@@ -1,12 +1,12 @@
 package com.google.mlkit.nl.languageid.internal;
 
+import a8.pa;
+import a8.ua;
+import a8.va;
+import a8.wa;
 import android.os.SystemClock;
 import androidx.lifecycle.b0;
 import androidx.lifecycle.m;
-import b8.cg;
-import b8.ig;
-import b8.jg;
-import b8.kg;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
@@ -16,57 +16,57 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import m6.c;
-import mb.g;
-import mb.j;
-import ob.b;
-import org.telegram.messenger.hs;
-import org.telegram.ui.Components.i9;
-import p6.k;
-import p7.d;
-import qb.e;
-import x7.b6;
-import x7.b9;
-import x7.e7;
-import x7.f6;
-import x7.g6;
-import x7.g7;
-import x7.i6;
-import x7.i7;
-import x7.j6;
-import x7.k6;
-import za.p;
+import n6.c;
+import org.telegram.messenger.qs;
+import org.telegram.ui.Components.qt;
+import pb.g;
+import pb.j;
+import q6.k;
+import q6.p;
+import rb.b;
+import tb.e;
+import y7.d6;
+import y7.e6;
+import y7.e9;
+import y7.h7;
+import y7.i6;
+import y7.j6;
+import y7.j7;
+import y7.l6;
+import y7.l7;
+import y7.m6;
+import y7.n6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
-    public final b9 a;
-    public final jg b;
+    public final e9 a;
+    public final va b;
     public final Executor c;
     public final AtomicReference d;
     public final CancellationTokenSource e = new CancellationTokenSource();
-    public final i6 f;
+    public final l6 f;
 
-    public LanguageIdentifierImpl(e eVar, b9 b9Var, Executor executor) {
-        this.a = b9Var;
+    public LanguageIdentifierImpl(e eVar, e9 e9Var, Executor executor) {
+        this.a = e9Var;
         this.c = executor;
         this.d = new AtomicReference(eVar);
-        this.f = eVar.g ? i6.c : i6.b;
-        this.b = new jg(g.c().b(), 1);
+        this.f = eVar.g ? l6.c : l6.b;
+        this.b = new va(g.c().b(), 2);
     }
 
-    public static final g6 k() {
-        f6 f6Var = new f6();
-        f6Var.a = Float.valueOf(-1.0f);
-        return new g6(f6Var);
+    public static final j6 k() {
+        i6 i6Var = new i6(0);
+        i6Var.b = Float.valueOf(-1.0f);
+        return new j6(i6Var);
     }
 
     @Override // com.google.android.gms.common.api.n
     public final c[] c() {
-        return this.f == i6.c ? j.a : new c[]{j.b};
+        return this.f == l6.c ? j.a : new c[]{j.b};
     }
 
-    @Override // ob.b, java.io.Closeable, java.lang.AutoCloseable
+    @Override // rb.b, java.io.Closeable, java.lang.AutoCloseable
     @b0(m.ON_DESTROY)
     public void close() {
         e eVar = (e) this.d.getAndSet(null);
@@ -75,83 +75,83 @@ public class LanguageIdentifierImpl implements b {
         }
         this.e.cancel();
         eVar.d(this.c);
-        p pVar = new p();
-        pVar.c = this.f;
-        d dVar = new d(24, false);
-        dVar.d = k();
-        pVar.d = new i7(dVar);
-        kg kgVar = new kg(pVar, 1);
-        b9 b9Var = this.a;
-        Task task = b9Var.e;
-        mb.m.a.execute(new cg(b9Var, kgVar, k6.d, task.isSuccessful() ? (String) task.getResult() : p6.j.c.a(b9Var.g), 6));
+        ab.b0 b0Var = new ab.b0(15, false);
+        b0Var.d = this.f;
+        d6 d6Var = new d6();
+        d6Var.b = k();
+        b0Var.e = new l7(d6Var);
+        wa waVar = new wa(b0Var, 1);
+        e9 e9Var = this.a;
+        Task task = e9Var.e;
+        pb.m.a.execute(new pa(e9Var, waVar, n6.d, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(e9Var.g), 7));
     }
 
     public final Task g(final String str) {
-        p6.m.h(str, "Text can not be null");
+        q6.m.h(str, "Text can not be null");
         final e eVar = (e) this.d.get();
-        p6.m.i("LanguageIdentification has been closed", eVar != null);
-        final boolean z10 = true ^ eVar.c.get();
-        return eVar.a(this.c, new Callable() { // from class: qb.d
+        q6.m.i("LanguageIdentification has been closed", eVar != null);
+        final boolean z9 = true ^ eVar.c.get();
+        return eVar.a(this.c, new Callable() { // from class: tb.d
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 LanguageIdentifierImpl languageIdentifierImpl = LanguageIdentifierImpl.this;
                 e eVar2 = eVar;
                 String str2 = str;
-                boolean z11 = z10;
+                boolean z10 = z9;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), hs.e3)));
-                    i9 i9Var = new i9(28, false);
+                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), qs.e3)));
+                    qt qtVar = new qt(27);
                     com.google.android.gms.internal.clearcut.e eVar3 = new com.google.android.gms.internal.clearcut.e();
-                    eVar3.a = e10;
-                    i9Var.b = new e7(eVar3);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new g7(i9Var), j6.b);
+                    eVar3.b = e10;
+                    qtVar.b = new h7(eVar3);
+                    languageIdentifierImpl.j(elapsedRealtime, z10, new j7(qtVar), m6.b);
                     return e10;
                 } catch (RuntimeException e11) {
-                    languageIdentifierImpl.j(elapsedRealtime, z11, null, j6.c);
+                    languageIdentifierImpl.j(elapsedRealtime, z10, null, m6.c);
                     throw e11;
                 }
             }
         }, this.e.getToken());
     }
 
-    public final void j(long j10, boolean z10, g7 g7Var, j6 j6Var) {
-        long elapsedRealtime = SystemClock.elapsedRealtime() - j10;
-        b9 b9Var = this.a;
-        k6 k6Var = k6.b;
-        b9Var.getClass();
+    public final void j(long j3, boolean z9, j7 j7Var, m6 m6Var) {
+        long elapsedRealtime = SystemClock.elapsedRealtime() - j3;
+        e9 e9Var = this.a;
+        n6 n6Var = n6.b;
+        e9Var.getClass();
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
-        HashMap hashMap = b9Var.i;
-        if (hashMap.get(k6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(k6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
-            hashMap.put(k6Var, Long.valueOf(elapsedRealtime2));
-            d dVar = new d(24, false);
-            dVar.d = k();
-            d dVar2 = new d(23, false);
-            dVar2.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            dVar2.c = Boolean.valueOf(z10);
-            dVar2.d = j6Var;
-            dVar.b = new b6(dVar2);
-            if (g7Var != null) {
-                dVar.c = g7Var;
+        HashMap hashMap = e9Var.i;
+        if (hashMap.get(n6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(n6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
+            hashMap.put(n6Var, Long.valueOf(elapsedRealtime2));
+            d6 d6Var = new d6();
+            d6Var.b = k();
+            d6 d6Var2 = new d6();
+            d6Var2.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            d6Var2.c = Boolean.valueOf(z9);
+            d6Var2.b = m6Var;
+            d6Var.a = new e6(d6Var2);
+            if (j7Var != null) {
+                d6Var.c = j7Var;
             }
-            p pVar = new p();
-            pVar.c = this.f;
-            pVar.d = new i7(dVar);
-            kg kgVar = new kg(pVar, 0);
-            Task task = b9Var.e;
-            mb.m.a.execute(new cg(b9Var, kgVar, k6Var, task.isSuccessful() ? (String) task.getResult() : p6.j.c.a(b9Var.g), 6));
+            ab.b0 b0Var = new ab.b0(15, false);
+            b0Var.d = this.f;
+            b0Var.e = new l7(d6Var);
+            wa waVar = new wa(b0Var, 0);
+            Task task = e9Var.e;
+            pb.m.a.execute(new pa(e9Var, waVar, n6Var, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(e9Var.g), 7));
         }
         long currentTimeMillis = System.currentTimeMillis();
-        jg jgVar = this.b;
-        int i3 = this.f == i6.c ? 24603 : 24602;
-        int i10 = j6Var.a;
-        long j11 = currentTimeMillis - elapsedRealtime;
-        synchronized (jgVar) {
+        va vaVar = this.b;
+        int i7 = this.f == l6.c ? 24603 : 24602;
+        int i10 = m6Var.a;
+        long j10 = currentTimeMillis - elapsedRealtime;
+        synchronized (vaVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (jgVar.b.get() != -1 && elapsedRealtime3 - jgVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (vaVar.b.get() != -1 && elapsedRealtime3 - vaVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            jgVar.a.f(new p6.p(0, Arrays.asList(new k(i3, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ig(jgVar, elapsedRealtime3, 10));
+            vaVar.a.f(new p(0, Arrays.asList(new k(i7, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ua(vaVar, elapsedRealtime3, 10));
         }
     }
 }

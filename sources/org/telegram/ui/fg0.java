@@ -1,46 +1,49 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
+public final class fg0 extends org.telegram.ui.Components.kn {
+    public final /* synthetic */ jg0 A0;
 
-    public /* synthetic */ fg0(kg0 kg0Var, int i3) {
-        this.a = i3;
-        this.b = kg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fg0(jg0 jg0Var, Context context) {
+        super(context, null, false, null);
+        this.A0 = jg0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                kg0 kg0Var = this.b;
-                jg0 jg0Var = kg0Var.j2;
-                HashSet hashSet = kg0Var.W1;
-                if (hashSet.size() != 0 && jg0Var != null) {
-                    ArrayList arrayList = new ArrayList();
-                    for (TLRPC.User user : kg0Var.b2.values()) {
-                        if (hashSet.contains(Long.valueOf(user.id))) {
-                            arrayList.add(Long.valueOf(user.id));
-                        }
-                    }
-                    jg0Var.a(arrayList);
-                    kg0Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                kg0 kg0Var2 = this.b;
-                kg0Var2.W1.clear();
-                kg0Var2.R1.d.b(true);
-                kg0Var2.g1(true, false);
-                break;
+    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        jg0 jg0Var = this.A0;
+        jg0Var.W.y0(jg0Var.b0.getAvatarImageView().getX(), jg0Var.b0.getAvatarImageView().getY(), jg0Var.b0.getAvatarImageView().getWidth(), jg0Var.b0.getAvatarImageView().getHeight());
+        if (jg0Var.Y) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, jg0Var.W.r(), jg0Var.W.s());
+            jg0Var.W.h(canvas, null);
+            canvas.restore();
         }
+        if (jg0Var.X) {
+            int r10 = (int) (jg0Var.W.r() - (org.telegram.ui.ActionBar.k6.U0.getIntrinsicWidth() / 2));
+            int s5 = (int) (jg0Var.W.s() - (org.telegram.ui.ActionBar.k6.U0.getIntrinsicHeight() / 2));
+            Drawable drawable = org.telegram.ui.ActionBar.k6.U0;
+            drawable.setBounds(r10, s5, drawable.getIntrinsicWidth() + r10, org.telegram.ui.ActionBar.k6.U0.getIntrinsicHeight() + s5);
+            org.telegram.ui.ActionBar.k6.U0.draw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.A0.W.P();
+    }
+
+    @Override // org.telegram.ui.Components.kn, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.A0.W.R();
     }
 }

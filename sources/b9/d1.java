@@ -1,0 +1,32 @@
+package b9;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class d1 extends r6.a {
+    public static final Parcelable.Creator<d1> CREATOR = new n0(11);
+    public final int a;
+    public final List b;
+    public final a1 c;
+
+    public d1(int i7, ArrayList arrayList, a1 a1Var) {
+        this.a = i7;
+        this.b = arrayList;
+        this.c = a1Var;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.q(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        wb.p(parcel, 2, this.b);
+        wb.k(parcel, 3, this.c, i7);
+        wb.s(parcel, r10);
+    }
+}

@@ -7,40 +7,40 @@ import android.os.SystemClock;
 import android.text.TextPaint;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class l11 extends Drawable {
-    public final ch0 a;
+    public final zg0 a;
     public int b;
     public final TextPaint c;
 
     public l11(TextPaint textPaint) {
-        ah.a aVar = new ah.a(this, 9);
+        a5.b bVar = new a5.b(this, 8);
         this.c = textPaint;
         float textSize = textPaint.getTextSize() * 0.89f;
-        ch0 ch0Var = new ch0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = ch0Var;
-        ch0Var.setCallback(aVar);
-        ch0Var.K(1);
-        ch0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        ch0Var.J(true);
-        ch0Var.start();
+        zg0 zg0Var = new zg0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = zg0Var;
+        zg0Var.setCallback(bVar);
+        zg0Var.K(1);
+        zg0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        zg0Var.J(true);
+        zg0Var.start();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         int color = this.c.getColor();
-        int i3 = this.b;
-        ch0 ch0Var = this.a;
-        if (color != i3) {
-            ch0Var.a0 = true;
-            ch0Var.Q(color, "Comp 1");
-            ch0Var.o();
-            ch0Var.J(true);
-            ch0Var.V(0L);
+        int i7 = this.b;
+        zg0 zg0Var = this.a;
+        if (color != i7) {
+            zg0Var.Z = true;
+            zg0Var.Q(color, "Comp 1");
+            zg0Var.o();
+            zg0Var.J(true);
+            zg0Var.V(0L);
             this.b = color;
         }
-        ch0Var.draw(canvas);
+        zg0Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -49,7 +49,7 @@ public final class l11 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

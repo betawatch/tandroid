@@ -7,36 +7,36 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.bd;
-import org.telegram.ui.Components.o41;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.m41;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class y1 extends View implements org.telegram.ui.ActionBar.z5 {
-    public final o41 a;
-    public final org.telegram.ui.ActionBar.e6 b;
+public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
+    public final m41 a;
+    public final org.telegram.ui.ActionBar.f6 b;
     public int c;
     public int d;
     public l1 e;
     public float f;
     public int h;
 
-    public y1(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public y1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.b = e6Var;
-        o41 o41Var = new o41();
-        this.a = o41Var;
-        o41Var.setCallback(this);
-        o41Var.n = bd.M0(2131743837, null);
-        o41Var.o = bd.M0(2131743838, null);
-        o41Var.p = bd.M0(2131743836, null);
-        o41Var.j = new f(this, 1);
+        this.b = f6Var;
+        m41 m41Var = new m41();
+        this.a = m41Var;
+        m41Var.setCallback(this);
+        m41Var.n = hd.M0(2131743828, null);
+        m41Var.o = hd.M0(2131743829, null);
+        m41Var.p = hd.M0(2131743827, null);
+        m41Var.j = new f(this, 1);
     }
 
     public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.b;
-        if (e6Var != null) {
-            e6Var.b(0.0f, this.f, getMeasuredWidth(), this.h);
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        if (f6Var != null) {
+            f6Var.b(0.0f, this.f, getMeasuredWidth(), this.h);
         } else {
             org.telegram.ui.ActionBar.k6.r(0.0f, this.f, getMeasuredWidth(), this.h);
         }
@@ -46,19 +46,19 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.z5 {
         float L4 = org.telegram.messenger.g0.L(6.0f) + this.d;
         float L5 = org.telegram.messenger.g0.L(18.0f);
         float L6 = org.telegram.messenger.g0.L(18.0f);
-        Paint d = e6Var != null ? e6Var.d("paintChatActionBackground") : null;
+        Paint d = f6Var != null ? f6Var.d("paintChatActionBackground") : null;
         if (d == null) {
             d = org.telegram.ui.ActionBar.k6.V0("paintChatActionBackground");
         }
         canvas.drawRoundRect(L, L2, L3, L4, L5, L6, d);
-        if (e6Var != null ? e6Var.g() : org.telegram.ui.ActionBar.k6.d1()) {
+        if (f6Var != null ? f6Var.g() : org.telegram.ui.ActionBar.k6.d1()) {
             canvas.drawRoundRect(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(18.0f) + this.c, org.telegram.messenger.g0.L(6.0f) + this.d, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.k6.h2);
         }
     }
 
-    public final void b(float f10, int i3) {
+    public final void b(float f10, int i7) {
         this.f = f10;
-        this.h = i3;
+        this.h = i7;
     }
 
     @Override // android.view.View
@@ -67,14 +67,14 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.z5 {
         int L2 = org.telegram.messenger.g0.L(6.0f);
         int L3 = org.telegram.messenger.g0.L(18.0f) + this.c;
         int L4 = org.telegram.messenger.g0.L(6.0f) + this.d;
-        o41 o41Var = this.a;
-        o41Var.setBounds(L, L2, L3, L4);
-        o41Var.draw(canvas);
+        m41 m41Var = this.a;
+        m41Var.setBounds(L, L2, L3, L4);
+        m41Var.draw(canvas);
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        int size = View.MeasureSpec.getSize(i3);
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
         int L = size - org.telegram.messenger.g0.L(36.0f);
         this.c = L;
         int a10 = this.a.a(L);
@@ -91,7 +91,7 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.z5 {
         this.e = l1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final void updateColors() {
         this.a.b();
     }
@@ -101,11 +101,11 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.z5 {
         return super.verifyDrawable(drawable) || drawable == this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
     }
 }

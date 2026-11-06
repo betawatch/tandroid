@@ -1,28 +1,108 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.n10;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r implements n10 {
+public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
 
-    public /* synthetic */ r(VoIPService voIPService, int i3) {
-        this.a = i3;
+    public /* synthetic */ r(VoIPService voIPService, int i7) {
+        this.a = i7;
         this.b = voIPService;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$switchToSpeaker$91(bool, bool2);
+                this.b.lambda$updateConnectionState$83();
+                break;
+            case 1:
+                this.b.lambda$playConnectedSound$88();
+                break;
+            case 2:
+                this.b.lambda$playStartRecordSound$120();
+                break;
+            case 3:
+                this.b.lambda$playAllowTalkSound$121();
+                break;
+            case 4:
+                this.b.lambda$getConnectionAndStartCall$106();
+                break;
+            case 5:
+                this.b.lambda$callFailed$115();
+                break;
+            case 6:
+                this.b.lambda$callFailed$116();
+                break;
+            case 7:
+                this.b.lambda$callEnded$123();
+                break;
+            case 8:
+                this.b.lambda$callEnded$124();
+                break;
+            case 9:
+                this.b.lambda$callEnded$125();
+                break;
+            case 10:
+                this.b.lambda$callEnded$126();
+                break;
+            case 11:
+                this.b.lambda$onCallUpdated$16();
+                break;
+            case 12:
+                this.b.lambda$onCallUpdated$17();
+                break;
+            case 13:
+                this.b.lambda$onCallUpdated$18();
+                break;
+            case 14:
+                this.b.lambda$setMicMute$0();
+                break;
+            case 15:
+                this.b.lambda$endConnectionServiceCall$127();
+                break;
+            case 16:
+                this.b.lambda$switchToSpeaker$92();
+                break;
+            case 17:
+                this.b.lambda$convertToConferenceCall$30();
+                break;
+            case 18:
+                this.b.lambda$initiateActualEncryptedCall$84();
+                break;
+            case 19:
+                this.b.lambda$loadResources$109();
+                break;
+            case 20:
+                this.b.lambda$setupCaptureDevice$14();
+                break;
+            case 21:
+                this.b.lambda$startOutgoingCall$8();
+                break;
+            case 22:
+                this.b.lambda$onStartCommand$2();
+                break;
+            case 23:
+                this.b.lambda$onStartCommand$3();
+                break;
+            case 24:
+                this.b.lambda$declineIncomingCall$104();
+                break;
+            case 25:
+                this.b.callFailed();
+                break;
+            case 26:
+                this.b.lambda$startGroupCheckShortpoll$65();
+                break;
+            case 27:
+                this.b.lambda$onDestroy$99();
+                break;
+            case 28:
+                this.b.lambda$onConnectionStateChanged$117();
                 break;
             default:
-                this.b.lambda$toggleSpeakerphoneOrShowRouteSheet$95(bool, bool2);
+                this.b.lambda$startConnectingSound$89();
                 break;
         }
     }

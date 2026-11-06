@@ -1,81 +1,137 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
+import android.content.Context;
+import android.util.Base64;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.HashSet;
+import org.json.JSONObject;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class ht implements cs {
-    public static final ht c;
-    public static final List d;
-    public boolean a;
-    public vs b;
+public final /* synthetic */ class ht implements v10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    static {
-        ht htVar = new ht();
-        htVar.b = new vs(htVar, 2);
-        c = htVar;
-        d = Arrays.asList(5, 10, 15, 30, 60);
+    public /* synthetic */ ht(int i7, Context context, v10 v10Var) {
+        this.c = v10Var;
+        this.d = context;
+        this.b = i7;
     }
 
-    public final void a() {
-        this.a = false;
-        if (az.a1) {
-            ArrayList arrayList = new ArrayList(az.z1);
-            Collections.sort(arrayList, new tq(3));
-            int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
-                zy zyVar = (zy) obj;
-                if (zyVar != az.B1 && !zyVar.c && zyVar.d) {
-                    SharedPreferences.Editor edit = hp.e1().edit();
-                    edit.putBoolean("proxy_enabled", true);
-                    zyVar.a.i(edit);
-                    edit.apply();
-                    az.B1 = zyVar;
-                    hs.e().k(hs.A4, new Object[0]);
-                    hs.e().k(hs.C4, new Object[0]);
-                    ConnectionsManager.setProxySettings(true, az.B1.a);
-                    return;
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        org.telegram.ui.ActionBar.f2 T;
+        int i7 = this.a;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        final int i10 = 1;
+        switch (i7) {
+            case 0:
+                final v10 v10Var = (v10) obj4;
+                Context context = (Context) obj3;
+                v0.c cVar = (v0.c) obj;
+                Throwable th2 = (Throwable) obj2;
+                final int i11 = 0;
+                if ((th2 instanceof w0.b) || (th2 instanceof w0.e)) {
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.lt
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    v10Var.a(null, "CANCELLED");
+                                    break;
+                                default:
+                                    v10Var.a(null, "EMPTY");
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                } else if (th2 instanceof w0.f) {
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.lt
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    v10Var.a(null, "CANCELLED");
+                                    break;
+                                default:
+                                    v10Var.a(null, "EMPTY");
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                } else if (th2 != null) {
+                    a8.g(th2, true);
+                    g0.h3(new yq(15, v10Var, th2));
+                    break;
+                } else {
+                    TL_account.registerPasskey registerpasskey = new TL_account.registerPasskey();
+                    try {
+                        JSONObject jSONObject = new JSONObject(cVar.a.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON"));
+                        TL_account.inputPasskeyCredentialPublicKey inputpasskeycredentialpublickey = new TL_account.inputPasskeyCredentialPublicKey();
+                        registerpasskey.credential = inputpasskeycredentialpublickey;
+                        inputpasskeycredentialpublickey.id = jSONObject.getString("id");
+                        registerpasskey.credential.raw_id = jSONObject.getString("rawId");
+                        JSONObject jSONObject2 = jSONObject.getJSONObject("response");
+                        TL_account.inputPasskeyResponseRegister inputpasskeyresponseregister = new TL_account.inputPasskeyResponseRegister();
+                        TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+                        inputpasskeyresponseregister.client_data = tL_dataJSON;
+                        tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
+                        inputpasskeyresponseregister.attestation_object = Base64.decode(jSONObject2.getString("attestationObject"), 8);
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("AAGUID: ");
+                        byte[] copyOfRange = Arrays.copyOfRange(inputpasskeyresponseregister.attestation_object, 67, 83);
+                        StringBuilder sb3 = new StringBuilder(copyOfRange.length * 2);
+                        for (byte b10 : copyOfRange) {
+                            sb3.append(String.format("%02x", Byte.valueOf(b10)));
+                        }
+                        sb2.append(sb3.toString());
+                        a8.b(sb2.toString());
+                        registerpasskey.credential.response = inputpasskeyresponseregister;
+                        g0.h3(new dg(context, this.b, registerpasskey, v10Var, 16));
+                        break;
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                        g0.h3(new jt(v10Var, e10, 1));
+                        return;
+                    }
                 }
-            }
+                break;
+            default:
+                c20 c20Var = (c20) obj3;
+                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                HashSet hashSet = ((f10) obj4).F;
+                int i12 = this.b;
+                if (tL_textWithEntities != null) {
+                    hashSet.remove(Integer.valueOf(i12));
+                    c20Var.a(tL_textWithEntities);
+                    break;
+                } else if (tL_error != null) {
+                    if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (T = LaunchActivity.T()) != null) {
+                        org.telegram.ui.Components.cc K = org.telegram.ui.Components.hc.a0(T).K(R.raw.star_premium_2, hd.M0(2131744332, null), hd.M0(2131744331, null), new rn(3, T));
+                        K.j = 5000;
+                        K.k(true);
+                    }
+                    hashSet.remove(Integer.valueOf(i12));
+                    c20Var.a(null);
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
-        vs vsVar = this.b;
-        if (i3 == hs.B4) {
-            int i11 = az.a;
-            if (hp.e1().getBoolean("proxy_enabled", false) && az.B1 != null && az.a1 && az.z1.size() > 1 && this.a) {
-                a();
-                return;
-            }
-            return;
-        }
-        if (i3 == hs.A4) {
-            g0.r(vsVar);
-            return;
-        }
-        if (i3 == hs.T1 && i10 == h10.t0) {
-            int i12 = az.a;
-            if (((!hp.e1().getBoolean("proxy_enabled", false) || az.B1 == null) && !az.a1) || az.z1.size() <= 1) {
-                return;
-            }
-            if (ConnectionsManager.getInstance(i10).getConnectionState() != 4) {
-                g0.r(vsVar);
-            } else {
-                if (this.a) {
-                    return;
-                }
-                g0.i3(vsVar, ((Integer) d.get(az.b1)).intValue() * 1000);
-            }
-        }
+    public /* synthetic */ ht(f10 f10Var, int i7, c20 c20Var) {
+        this.c = f10Var;
+        this.b = i7;
+        this.d = c20Var;
     }
 }

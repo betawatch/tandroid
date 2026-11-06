@@ -1,51 +1,31 @@
 package n2;
 
-import a3.q;
-import a3.t;
-import b8.kg;
-import i2.c0;
-import java.io.IOException;
-import w2.u;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f implements a3.k {
-    public final /* synthetic */ h a;
+public final class f {
+    public static final f d = new ia.a().a();
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-    @Override // a3.k
-    public void h(a3.m mVar, long j10, long j11) {
-        t tVar = (t) mVar;
-        h hVar = this.a;
-        long j12 = tVar.a;
-        i2.n nVar = tVar.b;
-        c0 c0Var = tVar.d;
-        u uVar = new u(nVar, c0Var.c, c0Var.d, j10, j11, c0Var.b);
-        hVar.m.getClass();
-        hVar.q.q(uVar, tVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        hVar.K = ((Long) tVar.f).longValue() - j10;
-        hVar.z(true);
+    public f(ia.a aVar) {
+        this.a = aVar.a;
+        this.b = aVar.b;
+        this.c = aVar.c;
     }
 
-    @Override // a3.k
-    public a3.i k(a3.m mVar, long j10, long j11, IOException iOException, int i3) {
-        t tVar = (t) mVar;
-        h hVar = this.a;
-        kg kgVar = hVar.q;
-        long j12 = tVar.a;
-        i2.n nVar = tVar.b;
-        c0 c0Var = tVar.d;
-        kgVar.s(new u(nVar, c0Var.c, c0Var.d, j10, j11, c0Var.b), tVar.c, iOException, true);
-        hVar.m.getClass();
-        hVar.y(iOException);
-        return q.e;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || f.class != obj.getClass()) {
+            return false;
+        }
+        f fVar = (f) obj;
+        return this.a == fVar.a && this.b == fVar.b && this.c == fVar.c;
     }
 
-    @Override // a3.k
-    public void q0(a3.m mVar, long j10, long j11, boolean z10) {
-        this.a.x((t) mVar, j10, j11);
-    }
-
-    @Override // a3.k
-    public /* synthetic */ void M(a3.m mVar, long j10, long j11, int i3) {
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

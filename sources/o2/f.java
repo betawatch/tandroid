@@ -1,38 +1,50 @@
 package o2;
 
-import j$.util.Objects;
+import a8.wa;
+import b3.r;
+import j2.c0;
+import java.io.IOException;
+import x2.u;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
-    public final String a;
-    public final String b;
-    public final String c;
+public final class f implements b3.j {
+    public final /* synthetic */ h a;
 
-    public f(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+    @Override // b3.j
+    public b3.i o0(b3.l lVar, long j3, long j10, IOException iOException, int i7) {
+        r rVar = (r) lVar;
+        h hVar = this.a;
+        wa waVar = hVar.q;
+        long j11 = rVar.a;
+        j2.m mVar = rVar.b;
+        c0 c0Var = rVar.d;
+        waVar.r(new u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b), rVar.c, iOException, true);
+        hVar.m.getClass();
+        hVar.y(iOException);
+        return b3.o.e;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && f.class == obj.getClass()) {
-            f fVar = (f) obj;
-            if (Objects.equals(this.a, fVar.a) && Objects.equals(this.b, fVar.b) && Objects.equals(this.c, fVar.c)) {
-                return true;
-            }
-        }
-        return false;
+    @Override // b3.j
+    public void o1(b3.l lVar, long j3, long j10) {
+        r rVar = (r) lVar;
+        h hVar = this.a;
+        long j11 = rVar.a;
+        j2.m mVar = rVar.b;
+        c0 c0Var = rVar.d;
+        u uVar = new u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        hVar.m.getClass();
+        hVar.q.p(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        hVar.K = ((Long) rVar.f).longValue() - j3;
+        hVar.z(true);
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        String str = this.b;
-        int hashCode2 = (hashCode + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.c;
-        return hashCode2 + (str2 != null ? str2.hashCode() : 0);
+    @Override // b3.j
+    public void q0(b3.l lVar, long j3, long j10, boolean z9) {
+        this.a.x((r) lVar, j3, j10);
+    }
+
+    @Override // b3.j
+    public /* synthetic */ void M0(b3.l lVar, long j3, long j10, int i7) {
     }
 }

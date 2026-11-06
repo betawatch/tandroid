@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -25,16 +25,16 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void b(k kVar, boolean z10) {
-        w wVar = this.e;
-        if (wVar != null) {
-            wVar.b(kVar, z10);
-        }
+    public final boolean b(m mVar) {
+        return false;
     }
 
     @Override // l.x
-    public final boolean c(m mVar) {
-        return false;
+    public final void c(k kVar, boolean z9) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.c(kVar, z9);
+        }
     }
 
     @Override // l.x
@@ -79,7 +79,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         }
         l lVar = new l();
         lVar.a = d0Var;
-        e5.u uVar = new e5.u(context);
+        f5.u uVar = new f5.u(context);
         g.b bVar = (g.b) uVar.c;
         g gVar = new g((ContextThemeWrapper) bVar.c);
         lVar.c = gVar;
@@ -110,7 +110,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (wVar == null) {
             return true;
         }
-        wVar.E(d0Var);
+        wVar.A(d0Var);
         return true;
     }
 
@@ -120,7 +120,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i3, long j10) {
-        this.c.q(this.f.getItem(i3), this, 0);
+    public final void onItemClick(AdapterView adapterView, View view, int i7, long j3) {
+        this.c.q(this.f.getItem(i7), this, 0);
     }
 }

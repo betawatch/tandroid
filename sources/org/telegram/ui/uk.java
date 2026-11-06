@@ -1,34 +1,18 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class uk extends org.telegram.ui.Components.a10 {
-    public final /* synthetic */ wm k1;
+public final class uk extends mq0 {
+    public final /* synthetic */ an a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uk(wm wmVar, Activity activity, org.telegram.ui.ActionBar.d2 d2Var) {
-        super(activity, d2Var);
-        this.k1 = wmVar;
+    public uk(an anVar) {
+        this.a = anVar;
     }
 
-    @Override // org.telegram.ui.Components.a10
-    public final void I0() {
-        wm wmVar = this.k1;
-        wmVar.f8();
-        UndoView undoView = wmVar.N3;
-        if (undoView == null) {
-            return;
-        }
-        undoView.j(75, 0L, null);
-        wmVar.getMessagesController().k4(wmVar.k6, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // org.telegram.ui.Components.a10
-    public final void J0() {
-        wm wmVar = this.k1;
-        wmVar.getMessagesController().S(wmVar.getParentActivity(), wmVar.e, wmVar, new x0(this, 21));
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        return an.O1(this.a, ijVar, fileLocation, i7, z9, false);
     }
 }

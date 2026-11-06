@@ -1,69 +1,94 @@
 package uh;
 
 import android.graphics.Canvas;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ac;
+import android.graphics.Rect;
+import android.view.View;
+import bg.s;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.xy;
-import org.telegram.messenger.ye;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d extends th.c {
-    public final ye b;
-    public final xy c;
+public final class d extends c {
+    public final i6 d;
+    public final dh0 e;
+    public final te.a f;
+    public float h;
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x008a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public d(xy xyVar) {
-        ac acVar;
-        ac acVar2;
-        this.c = xyVar;
-        ye yeVar = xyVar.y;
-        this.b = yeVar;
-        this.a.J0(g0.L(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.G0(0, 0, true);
-        String str = yeVar.g;
-        int i3 = yeVar.C;
-        String str2 = yeVar.I;
-        if (str != null) {
-            acVar = ac.g(str);
-        } else {
-            String str3 = yeVar.c;
-            if (str3 != null) {
-                acVar = ac.g(str3);
-            } else if (str2 == null) {
-                imageReceiver.f();
-                acVar = null;
-            } else {
-                if (!yeVar.b || yeVar.d()) {
-                    ac g7 = ac.g("thumb://" + i3 + ":" + str2);
-                    imageReceiver.G0(yeVar.J, yeVar.K, true);
-                    acVar2 = g7;
-                    if (acVar2 == null) {
-                        imageReceiver.q0(acVar2, null, null, null, null, 0);
-                        return;
-                    } else {
-                        imageReceiver.f();
-                        return;
-                    }
-                }
-                acVar = ac.g("vthumb://" + i3 + ":" + str2);
-            }
-        }
-        acVar2 = acVar;
-        if (acVar2 == null) {
+    public d(View view, f6 f6Var) {
+        super(f6Var);
+        dh0 dh0Var = new dh0(view);
+        this.e = dh0Var;
+        dh0Var.d(null, true, false);
+        dh0Var.v = 650.0f;
+        dh0Var.e(false, 0.69f);
+        dh0Var.p.setStrokeWidth(g0.L(1.5f));
+        this.f = new te.a(view, xq.h, 260L);
+        i6 i6Var = new i6(true, false, false);
+        this.d = i6Var;
+        i6Var.x(g0.o());
+        i6Var.w(g0.L(13.0f));
+        i6Var.b = 17;
+        int w02 = k6.w0(k6.i6, f6Var);
+        if (this.b != w02) {
+            k6.H1(this.a, w02, false);
+            this.b = w02;
         }
     }
 
-    @Override // th.c
-    public final void c(Canvas canvas, int i3, int i10) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.y0(0.0f, 0.0f, i3, i10);
-        imageReceiver.h(canvas, null);
+    @Override // uh.c
+    public final void a(int i7) {
+        this.a.setAlpha(i7);
+        this.d.B = i7;
+    }
+
+    public final float b() {
+        return this.f.e;
+    }
+
+    public final void c(int i7) {
+        this.d.u(i7);
+        this.e.o = i7;
+    }
+
+    public final void d(float f10) {
+        if (this.h != f10) {
+            this.h = f10;
+            Rect bounds = getBounds();
+            int i7 = (int) this.h;
+            this.d.setBounds(bounds.left, bounds.top + i7, bounds.right, bounds.bottom + i7);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f10 = this.f.e;
+        if (f10 < 1.0f) {
+            s.b(canvas, this.d, 1.0f - f10);
+        }
+        if (f10 > 0.0f) {
+            float exactCenterX = getBounds().exactCenterX();
+            float exactCenterY = getBounds().exactCenterY();
+            canvas.save();
+            canvas.scale(f10, f10, exactCenterX, exactCenterY);
+            this.e.a(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // uh.c, android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        Rect bounds = getBounds();
+        int i7 = (int) this.h;
+        this.d.setBounds(bounds.left, bounds.top + i7, bounds.right, bounds.bottom + i7);
+        int L = g0.L(11.0f);
+        int centerX = rect.centerX();
+        int centerY = rect.centerY();
+        this.e.f(centerX - L, centerY - L, centerX + L, centerY + L);
     }
 }

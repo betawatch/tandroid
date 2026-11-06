@@ -1,33 +1,17 @@
 package androidx.mediarouter.app;
 
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
+import v4.d1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i0 extends f0 {
-    public final int A;
-    public final /* synthetic */ m0 B;
-    public final TextView z;
+public final class i0 extends d1 {
+    public final TextView v;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public i0(m0 m0Var, View view) {
-        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
-        this.B = m0Var;
-        o0 o0Var = m0Var.x;
-        this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
-        Resources resources = o0Var.E.getResources();
-        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        TypedValue typedValue = new TypedValue();
-        resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);
-        this.A = (int) typedValue.getDimension(displayMetrics);
+    public i0(View view) {
+        super(view);
+        this.v = (TextView) view.findViewById(R.id.mr_cast_header_name);
     }
 }

@@ -33,12 +33,12 @@ public final class t7 extends u7 implements j$.util.a1, LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
-        this.f = j10;
+    public final void accept(long j3) {
+        this.f = j3;
     }
 
     @Override // j$.util.stream.u7
-    public final b7 e(int i3) {
-        return new a7(i3);
+    public final b7 e(int i7) {
+        return new a7(i7);
     }
 }

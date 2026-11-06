@@ -1,7 +1,7 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import org.telegram.messenger.go;
+import org.telegram.messenger.ch;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
@@ -18,11 +18,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.tgnet.v;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class TL_update {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateAiComposeTones extends TLRPC.Update {
         public static final int constructor = -1945136645;
 
@@ -32,7 +32,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateAttachMenuBots extends TLRPC.Update {
         public static final int constructor = 397910539;
 
@@ -42,7 +42,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotCommands extends TLRPC.Update {
         public static final int constructor = 1299263278;
         public long bot_id;
@@ -50,10 +50,10 @@ public class TL_update {
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.bot_id = inputSerializedData.readInt64(z10);
-            this.commands = Vector.deserialize(inputSerializedData, new c(18), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.bot_id = inputSerializedData.readInt64(z9);
+            this.commands = Vector.deserialize(inputSerializedData, new c(18), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -65,7 +65,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotPurchasedPaidMedia extends TLRPC.Update {
         public static final int constructor = 675009298;
         public String payload;
@@ -73,10 +73,10 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.payload = inputSerializedData.readString(z10);
-            this.qts = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.payload = inputSerializedData.readString(z9);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -88,7 +88,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotSubscriptionExpire extends TLRPC.Update {
         public static final int constructor = -1464975695;
         public String payload;
@@ -97,11 +97,11 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.payload = inputSerializedData.readString(z10);
-            this.until_date = inputSerializedData.readInt32(z10);
-            this.qts = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.payload = inputSerializedData.readString(z9);
+            this.until_date = inputSerializedData.readInt32(z9);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -114,7 +114,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotWidgetCopyQuery extends TLRPC.Update {
         public static final int constructor = -91635977;
         public byte[] data;
@@ -126,15 +126,15 @@ public class TL_update {
         public long widget_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.data = inputSerializedData.readByteArray(z10);
-            this.widget_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.data = inputSerializedData.readByteArray(z9);
+            this.widget_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -153,17 +153,17 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotWidgetCopyQuery_layer233 extends TL_updateBotWidgetCopyQuery {
         public static final int constructor = -1288552616;
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateBotWidgetCopyQuery, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.data = inputSerializedData.readByteArray(z10);
-            this.widget_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.data = inputSerializedData.readByteArray(z9);
+            this.widget_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateBotWidgetCopyQuery, org.telegram.tgnet.TLObject
@@ -177,7 +177,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotWidgetQuery extends TLRPC.Update {
         public static final int constructor = -1284243864;
         public long chat_instance;
@@ -193,21 +193,21 @@ public class TL_update {
         public long widget_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
-            this.chat_instance = inputSerializedData.readInt64(z10);
-            this.chat_type = inputSerializedData.readString(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
+            this.chat_instance = inputSerializedData.readInt64(z9);
+            this.chat_type = inputSerializedData.readString(z9);
+            this.data = inputSerializedData.readByteArray(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.widget_id = inputSerializedData.readInt64(z10);
+                this.widget_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -232,22 +232,22 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateBotWidgetQuery_layer233 extends TL_updateBotWidgetQuery {
         public static final int constructor = 646015238;
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateBotWidgetQuery, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
-            this.chat_instance = inputSerializedData.readInt64(z10);
-            this.chat_type = inputSerializedData.readString(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
+            this.chat_instance = inputSerializedData.readInt64(z9);
+            this.chat_type = inputSerializedData.readString(z9);
+            this.data = inputSerializedData.readByteArray(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.widget_id = inputSerializedData.readInt64(z10);
+                this.widget_id = inputSerializedData.readInt64(z9);
             }
         }
 
@@ -268,14 +268,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannel extends TLRPC.Update {
         public static final int constructor = 1666927625;
         public long channel_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -285,16 +285,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelAvailableMessages extends TLRPC.Update {
         public static final int constructor = -1304443240;
         public int available_min_id;
         public long channel_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.available_min_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.available_min_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -305,7 +305,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelMessageForwards extends TLRPC.Update {
         public static final int constructor = -761649164;
         public long channel_id;
@@ -313,10 +313,10 @@ public class TL_update {
         public int id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.id = inputSerializedData.readInt32(z10);
-            this.forwards = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.id = inputSerializedData.readInt32(z9);
+            this.forwards = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -328,7 +328,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelMessageViews extends TLRPC.Update {
         public static final int constructor = -232346616;
         public long channel_id;
@@ -336,10 +336,10 @@ public class TL_update {
         public int views;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.id = inputSerializedData.readInt32(z10);
-            this.views = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.id = inputSerializedData.readInt32(z9);
+            this.views = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -351,7 +351,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelParticipant extends TLRPC.Update {
         public static final int constructor = -1738720581;
         public long actor_id;
@@ -366,23 +366,23 @@ public class TL_update {
         public boolean via_chatlist;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.actor_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.actor_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.prev_participant = TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.prev_participant = TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.new_participant = TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.new_participant = TLRPC.ChannelParticipant.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.invite = TLRPC.ExportedChatInvite.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.invite = TLRPC.ExportedChatInvite.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             this.via_chatlist = TLObject.hasFlag(this.flags, 8);
-            this.qts = inputSerializedData.readInt32(z10);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -408,7 +408,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelReadMessagesContents extends TLRPC.Update {
         public static final int constructor = 636691703;
         public long channel_id;
@@ -418,16 +418,16 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.channel_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.channel_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -445,7 +445,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelTooLong extends TLRPC.Update {
         public static final int constructor = 277713951;
         public long channel_id;
@@ -453,11 +453,11 @@ public class TL_update {
         public int pts;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.channel_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.channel_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.pts = inputSerializedData.readInt32(z10);
+                this.pts = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -472,7 +472,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelUserTyping extends TLRPC.Update {
         public static final int constructor = -1937192669;
         public TLRPC.SendMessageAction action;
@@ -482,14 +482,14 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.channel_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.channel_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -505,16 +505,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelViewForumAsMessages extends TLRPC.Update {
         public static final int constructor = 129403168;
         public long channel_id;
         public boolean enabled;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.enabled = inputSerializedData.readBool(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.enabled = inputSerializedData.readBool(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -525,7 +525,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChannelWebPage extends TLRPC.Update {
         public static final int constructor = 791390623;
         public long channel_id;
@@ -534,11 +534,11 @@ public class TL_update {
         public TLRPC.WebPage webpage;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.webpage = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.webpage = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -551,14 +551,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChat extends TLRPC.Update {
         public static final int constructor = -124097970;
         public long chat_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -568,7 +568,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatDefaultBannedRights extends TLRPC.Update {
         public static final int constructor = 1421875280;
         public TLRPC.TL_chatBannedRights default_banned_rights;
@@ -576,10 +576,10 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.default_banned_rights = TLRPC.TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.default_banned_rights = TLRPC.TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -591,7 +591,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatParticipantAdd extends TLRPC.Update {
         public static final int constructor = 1037718609;
         public long chat_id;
@@ -601,12 +601,12 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.inviter_id = inputSerializedData.readInt64(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.inviter_id = inputSerializedData.readInt64(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -620,7 +620,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatParticipantAdmin extends TLRPC.Update {
         public static final int constructor = -674602590;
         public long chat_id;
@@ -629,11 +629,11 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.is_admin = inputSerializedData.readBool(z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.is_admin = inputSerializedData.readBool(z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -646,7 +646,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatParticipantDelete extends TLRPC.Update {
         public static final int constructor = -483443337;
         public long chat_id;
@@ -654,10 +654,10 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -669,7 +669,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatParticipantRank extends TLRPC.Update {
         public static final int constructor = -1115461703;
         public long chat_id;
@@ -678,11 +678,11 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.rank = inputSerializedData.readString(z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.rank = inputSerializedData.readString(z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -695,14 +695,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatParticipants extends TLRPC.Update {
         public static final int constructor = 125178264;
         public TLRPC.ChatParticipants participants;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.participants = TLRPC.ChatParticipants.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.participants = TLRPC.ChatParticipants.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -712,7 +712,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateChatUserTyping extends TLRPC.Update {
         public static final int constructor = -2092401936;
         public TLRPC.SendMessageAction action;
@@ -720,10 +720,10 @@ public class TL_update {
         public TLRPC.Peer from_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt64(z10);
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt64(z9);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -735,7 +735,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateConfig extends TLRPC.Update {
         public static final int constructor = -1574314746;
 
@@ -745,7 +745,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateContactsReset extends TLRPC.Update {
         public static final int constructor = 1887741886;
 
@@ -755,14 +755,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDcOptions extends TLRPC.Update {
         public static final int constructor = -1906403213;
         public ArrayList<TLRPC.TL_dcOption> dc_options = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.dc_options = Vector.deserialize(inputSerializedData, new m(18), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.dc_options = Vector.deserialize(inputSerializedData, new m(18), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -772,7 +772,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteChannelMessages extends TLRPC.Update {
         public static final int constructor = -1020437742;
         public long channel_id;
@@ -781,11 +781,11 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -798,16 +798,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteEphemeralMessages extends TLRPC.Update {
         public static final int constructor = 1457257720;
         public ArrayList<Integer> ids = new ArrayList<>();
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.ids = Vector.deserializeInt(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.ids = Vector.deserializeInt(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -818,16 +818,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteGroupCallMessages extends TLRPC.Update {
         public static final int constructor = 1048963372;
         public TLRPC.InputGroupCall call;
         public ArrayList<Integer> messages = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -838,7 +838,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteMessages extends TLRPC.Update {
         public static final int constructor = -1576161051;
         public ArrayList<Integer> messages = new ArrayList<>();
@@ -846,10 +846,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -861,14 +861,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteQuickReply extends TLRPC.Update {
         public static final int constructor = 1407644140;
         public int shortcut_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.shortcut_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.shortcut_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -878,16 +878,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteQuickReplyMessages extends TLRPC.Update {
         public static final int constructor = 1450174413;
         public ArrayList<Integer> messages = new ArrayList<>();
         public int shortcut_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.shortcut_id = inputSerializedData.readInt32(z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.shortcut_id = inputSerializedData.readInt32(z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -898,7 +898,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDeleteScheduledMessages extends TLRPC.Update {
         public static final int constructor = -223929981;
         public int flags;
@@ -907,12 +907,12 @@ public class TL_update {
         public ArrayList<Integer> sent_messages = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.sent_messages = Vector.deserializeInt(inputSerializedData, z10);
+                this.sent_messages = Vector.deserializeInt(inputSerializedData, z9);
             }
         }
 
@@ -928,7 +928,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDialogFilter extends TLRPC.Update {
         public static final int constructor = 654302845;
         public TLRPC.DialogFilter filter;
@@ -936,11 +936,11 @@ public class TL_update {
         public int id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.id = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.filter = TLRPC.DialogFilter.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.filter = TLRPC.DialogFilter.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -955,14 +955,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDialogFilterOrder extends TLRPC.Update {
         public static final int constructor = -1512627963;
         public ArrayList<Integer> order = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.order = Vector.deserializeInt(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.order = Vector.deserializeInt(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -972,7 +972,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDialogFilters extends TLRPC.Update {
         public static final int constructor = 889491791;
 
@@ -982,7 +982,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDialogPinned extends TLRPC.Update {
         public static final int constructor = 1852826908;
         public int flags;
@@ -991,14 +991,14 @@ public class TL_update {
         public boolean pinned;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.pinned = TLObject.hasFlag(readInt32, 1);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.folder_id = inputSerializedData.readInt32(z10);
+                this.folder_id = inputSerializedData.readInt32(z9);
             }
-            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1014,7 +1014,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDialogUnreadMark extends TLRPC.Update {
         public static final int constructor = -1235684802;
         public int flags;
@@ -1023,13 +1023,13 @@ public class TL_update {
         public boolean unread;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.unread = TLObject.hasFlag(readInt32, 1);
-            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -1046,7 +1046,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateDraftMessage extends TLRPC.Update {
         public static final int constructor = -302247650;
         public TLRPC.DraftMessage draft;
@@ -1056,16 +1056,16 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.draft = TLRPC.DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.draft = TLRPC.DraftMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1083,7 +1083,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEditChannelMessage extends TLRPC.Update {
         public static final int constructor = 457133559;
         public TLRPC.Message message;
@@ -1091,10 +1091,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1106,14 +1106,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEditEphemeralMessage extends TLRPC.Update {
         public static final int constructor = 1270583041;
         public TL_ephemeral.EphemeralMessage message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1123,7 +1123,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEditForumTopic extends TLRPC.Update {
         public static final int constructor = 593913436;
         public boolean closed;
@@ -1135,21 +1135,21 @@ public class TL_update {
         public int topic_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.topic_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.topic_id = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.title = inputSerializedData.readString(z10);
+                this.title = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.icon_emoji_id = inputSerializedData.readInt64(z10);
+                this.icon_emoji_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.closed = inputSerializedData.readBool(z10);
+                this.closed = inputSerializedData.readBool(z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.hidden = inputSerializedData.readBool(z10);
+                this.hidden = inputSerializedData.readBool(z9);
             }
         }
 
@@ -1174,7 +1174,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEditMessage extends TLRPC.Update {
         public static final int constructor = -469536605;
         public TLRPC.Message message;
@@ -1182,10 +1182,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1197,14 +1197,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEmojiGameInfo extends TLRPC.Update {
         public static final int constructor = -73640838;
         public TLRPC.EmojiGameInfo info;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.info = TLRPC.EmojiGameInfo.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.info = TLRPC.EmojiGameInfo.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1214,14 +1214,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEncryptedChatTyping extends TLRPC.Update {
         public static final int constructor = 386986326;
         public int chat_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1231,7 +1231,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEncryptedMessagesRead extends TLRPC.Update {
         public static final int constructor = 956179895;
         public int chat_id;
@@ -1239,10 +1239,10 @@ public class TL_update {
         public int max_date;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat_id = inputSerializedData.readInt32(z10);
-            this.max_date = inputSerializedData.readInt32(z10);
-            this.date = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat_id = inputSerializedData.readInt32(z9);
+            this.max_date = inputSerializedData.readInt32(z9);
+            this.date = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1254,16 +1254,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEncryption extends TLRPC.Update {
         public static final int constructor = -1264392051;
         public TLRPC.EncryptedChat chat;
         public int date;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.chat = TLRPC.EncryptedChat.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.date = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.chat = TLRPC.EncryptedChat.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.date = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1274,7 +1274,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateEphemeralBotCallbackQuery extends TLRPC.Update {
         public static final int constructor = 2081454550;
         public long chat_instance;
@@ -1287,19 +1287,19 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.msg_id = inputSerializedData.readInt32(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+            this.msg_id = inputSerializedData.readInt32(z9);
+            this.data = inputSerializedData.readByteArray(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.chat_instance = inputSerializedData.readInt64(z10);
+                this.chat_instance = inputSerializedData.readInt64(z9);
             }
-            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1324,7 +1324,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateFavedStickers extends TLRPC.Update {
         public static final int constructor = -451831443;
 
@@ -1334,7 +1334,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateFolderPeers extends TLRPC.Update {
         public static final int constructor = 422972864;
         public ArrayList<TLRPC.TL_folderPeer> folder_peers = new ArrayList<>();
@@ -1342,10 +1342,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.folder_peers = Vector.deserialize(inputSerializedData, new d(16), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.folder_peers = Vector.deserialize(inputSerializedData, new d(16), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1357,16 +1357,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGeoLiveViewed extends TLRPC.Update {
         public static final int constructor = -2027964103;
         public int msg_id;
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1377,7 +1377,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCall extends TLRPC.Update {
         public static final int constructor = -1658710304;
         public TLRPC.GroupCall call;
@@ -1386,14 +1386,14 @@ public class TL_update {
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.live_story = TLObject.hasFlag(readInt32, 4);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.call = TLRPC.GroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.call = TLRPC.GroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1409,7 +1409,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCallChainBlocks extends TLRPC.Update {
         public static final int constructor = -1535694705;
         public ArrayList<byte[]> blocks = new ArrayList<>();
@@ -1418,11 +1418,11 @@ public class TL_update {
         public int sub_chain_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.sub_chain_id = inputSerializedData.readInt32(z10);
-            this.blocks = Vector.deserializeByteArray(inputSerializedData, z10);
-            this.next_offset = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.sub_chain_id = inputSerializedData.readInt32(z9);
+            this.blocks = Vector.deserializeByteArray(inputSerializedData, z9);
+            this.next_offset = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1435,7 +1435,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCallConnection extends TLRPC.Update {
         public static final int constructor = 192428418;
         public int flags;
@@ -1443,11 +1443,11 @@ public class TL_update {
         public boolean presentation;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.presentation = TLObject.hasFlag(readInt32, 1);
-            this.params = TLRPC.TL_dataJSON.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.params = TLRPC.TL_dataJSON.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1460,7 +1460,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCallEncryptedMessage extends TLRPC.Update {
         public static final int constructor = -917002394;
         public TLRPC.InputGroupCall call;
@@ -1468,10 +1468,10 @@ public class TL_update {
         public TLRPC.Peer from_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.encrypted_message = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.from_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.encrypted_message = inputSerializedData.readByteArray(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1483,16 +1483,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCallMessage extends TLRPC.Update {
         public static final int constructor = -667783411;
         public TLRPC.InputGroupCall call;
         public TLRPC.GroupCallMessage message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.message = TLRPC.GroupCallMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.message = TLRPC.GroupCallMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1503,7 +1503,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCallParticipants extends TLRPC.Update {
         public static final int constructor = -219423922;
         public TLRPC.InputGroupCall call;
@@ -1511,10 +1511,10 @@ public class TL_update {
         public int version;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.participants = Vector.deserialize(inputSerializedData, new b(7), z10);
-            this.version = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.call = TLRPC.InputGroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.participants = Vector.deserialize(inputSerializedData, new b(7), z9);
+            this.version = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1526,22 +1526,22 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateGroupCall_layer216 extends TL_updateGroupCall {
         public static final int constructor = -1747565759;
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateGroupCall, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.live_story = TLObject.hasFlag(readInt32, 4);
             if (TLObject.hasFlag(this.flags, 1)) {
-                long readInt64 = inputSerializedData.readInt64(z10);
+                long readInt64 = inputSerializedData.readInt64(z9);
                 TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
                 this.peer = tL_peerChannel;
                 tL_peerChannel.channel_id = -readInt64;
             }
-            this.call = TLRPC.GroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.call = TLRPC.GroupCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateGroupCall, org.telegram.tgnet.TLObject
@@ -1557,7 +1557,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateInlineBotWidgetQuery extends TLRPC.Update {
         public static final int constructor = -1510965752;
         public long chat_instance;
@@ -1572,20 +1572,20 @@ public class TL_update {
         public long widget_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.inline_message_id = TLRPC.TL_inputBotInlineMessageID.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.chat_instance = inputSerializedData.readInt64(z10);
-            this.chat_type = inputSerializedData.readString(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.query_type = TLRPC.WidgetQueryType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.inline_message_id = TLRPC.TL_inputBotInlineMessageID.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.chat_instance = inputSerializedData.readInt64(z9);
+            this.chat_type = inputSerializedData.readString(z9);
+            this.data = inputSerializedData.readByteArray(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.widget_id = inputSerializedData.readInt64(z10);
+                this.widget_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.wallet_card = TL_wallet.card.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -1609,21 +1609,21 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateInlineBotWidgetQuery_layer233 extends TL_updateInlineBotWidgetQuery {
         public static final int constructor = -1418742197;
 
         @Override // org.telegram.tgnet.tl.TL_update.TL_updateInlineBotWidgetQuery, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.inline_message_id = TLRPC.TL_inputBotInlineMessageID.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.chat_instance = inputSerializedData.readInt64(z10);
-            this.chat_type = inputSerializedData.readString(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.inline_message_id = TLRPC.TL_inputBotInlineMessageID.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.chat_instance = inputSerializedData.readInt64(z9);
+            this.chat_type = inputSerializedData.readString(z9);
+            this.data = inputSerializedData.readByteArray(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.widget_id = inputSerializedData.readInt64(z10);
+                this.widget_id = inputSerializedData.readInt64(z9);
             }
         }
 
@@ -1643,7 +1643,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateJoinChatWebViewDecision extends TLRPC.Update {
         public static final int constructor = -1112768912;
         public TLRPC.Peer peer;
@@ -1651,10 +1651,10 @@ public class TL_update {
         public TLRPC.JoinChatBotResult result;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.query_id = inputSerializedData.readInt64(z10);
-            this.result = TLRPC.JoinChatBotResult.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.query_id = inputSerializedData.readInt64(z9);
+            this.result = TLRPC.JoinChatBotResult.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1666,14 +1666,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateLangPack extends TLRPC.Update {
         public static final int constructor = 1442983757;
         public TLRPC.TL_langPackDifference difference;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.difference = TLRPC.TL_langPackDifference.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.difference = TLRPC.TL_langPackDifference.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1683,14 +1683,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateLangPackTooLong extends TLRPC.Update {
         public static final int constructor = 1180041828;
         public String lang_code;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.lang_code = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.lang_code = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1700,7 +1700,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateLoginToken extends TLRPC.Update {
         public static final int constructor = 1448076945;
 
@@ -1710,7 +1710,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateManagedBot extends TLRPC.Update {
         public static final int constructor = 1216408986;
         public long bot_id;
@@ -1718,10 +1718,10 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.bot_id = inputSerializedData.readInt64(z10);
-            this.qts = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.bot_id = inputSerializedData.readInt64(z9);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1733,7 +1733,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessageExtendedMedia extends TLRPC.Update {
         public static final int constructor = -710666460;
         public ArrayList<TLRPC.MessageExtendedMedia> extended_media = new ArrayList<>();
@@ -1741,10 +1741,10 @@ public class TL_update {
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
-            this.extended_media = Vector.deserialize(inputSerializedData, new p(20), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
+            this.extended_media = Vector.deserialize(inputSerializedData, new p(20), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1756,16 +1756,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessageID extends TLRPC.Update {
         public static final int constructor = 1318109142;
         public int id;
         public long random_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.id = inputSerializedData.readInt32(z10);
-            this.random_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.id = inputSerializedData.readInt32(z9);
+            this.random_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1776,7 +1776,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessagePoll extends TLRPC.Update {
         public static final int constructor = -699641301;
         public int flags;
@@ -1788,21 +1788,21 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 2)) {
-                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-                this.msg_id = inputSerializedData.readInt32(z10);
+                this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+                this.msg_id = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.poll_id = inputSerializedData.readInt64(z10);
+            this.poll_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.poll = TLRPC.Poll.TLdeserialize(inputSerializedData, z10);
+                this.poll = TLRPC.Poll.TLdeserialize(inputSerializedData, z9);
             }
-            this.results = TLRPC.PollResults.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.results = TLRPC.PollResults.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1828,7 +1828,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessagePollVote extends TLRPC.Update {
         public static final int constructor = 1989799956;
         public TLRPC.Peer peer;
@@ -1838,12 +1838,12 @@ public class TL_update {
         public ArrayList<Integer> positions = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.poll_id = inputSerializedData.readInt64(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.options = Vector.deserializeByteArray(inputSerializedData, z10);
-            this.positions = Vector.deserializeInt(inputSerializedData, z10);
-            this.qts = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.poll_id = inputSerializedData.readInt64(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.options = Vector.deserializeByteArray(inputSerializedData, z9);
+            this.positions = Vector.deserializeInt(inputSerializedData, z9);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1857,7 +1857,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessageReactions extends TLRPC.Update {
         public static final int constructor = 506035194;
         public int flags;
@@ -1869,17 +1869,17 @@ public class TL_update {
         public boolean updateUnreadState = true;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
-            this.reactions = TLRPC.MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.reactions = TLRPC.MessageReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1898,7 +1898,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMessageWidgetData extends TLRPC.Update {
         public static final int constructor = -1146062627;
         public String chat_data;
@@ -1911,19 +1911,19 @@ public class TL_update {
         public long public_data_hash;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.public_data = inputSerializedData.readString(z10);
-                this.public_data_hash = inputSerializedData.readInt64(z10);
+                this.public_data = inputSerializedData.readString(z9);
+                this.public_data_hash = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.chat_data = inputSerializedData.readString(z10);
+                this.chat_data = inputSerializedData.readString(z9);
             }
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1948,7 +1948,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMonoForumNoPaidException extends TLRPC.Update {
         public static final int constructor = -1618924792;
         public long channel_id;
@@ -1957,12 +1957,12 @@ public class TL_update {
         public TLRPC.Peer saved_peer_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.exception = TLObject.hasFlag(readInt32, 1);
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1976,7 +1976,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateMoveStickerSetToTop extends TLRPC.Update {
         public static final int constructor = -2030252155;
         public boolean emojis;
@@ -1985,12 +1985,12 @@ public class TL_update {
         public long stickerset;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.masks = TLObject.hasFlag(readInt32, 1);
             this.emojis = TLObject.hasFlag(this.flags, 2);
-            this.stickerset = inputSerializedData.readInt64(z10);
+            this.stickerset = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2005,7 +2005,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewAuthorization extends TLRPC.Update {
         public static final int constructor = -1991136273;
         public int date;
@@ -2016,15 +2016,15 @@ public class TL_update {
         public boolean unconfirmed;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.unconfirmed = TLObject.hasFlag(readInt32, 1);
-            this.hash = inputSerializedData.readInt64(z10);
+            this.hash = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.date = inputSerializedData.readInt32(z10);
-                this.device = inputSerializedData.readString(z10);
-                this.location = inputSerializedData.readString(z10);
+                this.date = inputSerializedData.readInt32(z9);
+                this.device = inputSerializedData.readString(z9);
+                this.location = inputSerializedData.readString(z9);
             }
         }
 
@@ -2041,7 +2041,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewBotConnection extends TLRPC.Update {
         public static final int constructor = -1306491994;
         public long bot_id;
@@ -2052,15 +2052,15 @@ public class TL_update {
         public String location;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.confirmed = TLObject.hasFlag(readInt32, 1);
-            this.bot_id = inputSerializedData.readInt64(z10);
+            this.bot_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.date = inputSerializedData.readInt32(z10);
-                this.device = inputSerializedData.readString(z10);
-                this.location = inputSerializedData.readString(z10);
+                this.date = inputSerializedData.readInt32(z9);
+                this.device = inputSerializedData.readString(z9);
+                this.location = inputSerializedData.readString(z9);
             }
         }
 
@@ -2079,7 +2079,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewChannelMessage extends TLRPC.Update {
         public static final int constructor = 1656358105;
         public TLRPC.Message message;
@@ -2087,10 +2087,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2102,16 +2102,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewEncryptedMessage extends TLRPC.Update {
         public static final int constructor = 314359194;
         public TLRPC.EncryptedMessage message;
         public int qts;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.EncryptedMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.qts = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.EncryptedMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.qts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2122,14 +2122,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewEphemeralMessage extends TLRPC.Update {
         public static final int constructor = 549239713;
         public TL_ephemeral.EphemeralMessage message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2139,7 +2139,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewMessage extends TLRPC.Update {
         public static final int constructor = 522914557;
         public TLRPC.Message message;
@@ -2147,10 +2147,10 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2162,14 +2162,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewQuickReply extends TLRPC.Update {
         public static final int constructor = -180508905;
         public TLRPC.TL_quickReply quick_reply;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.quick_reply = TLRPC.TL_quickReply.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.quick_reply = TLRPC.TL_quickReply.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2179,14 +2179,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewScheduledMessage extends TLRPC.Update {
         public static final int constructor = 967122427;
         public TLRPC.Message message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2196,14 +2196,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewStickerSet extends TLRPC.Update {
         public static final int constructor = 1753886890;
         public TLRPC.TL_messages_stickerSet stickerset;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.stickerset = TLRPC.messages_StickerSet.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.stickerset = TLRPC.messages_StickerSet.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2213,7 +2213,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNewStoryReaction extends TLRPC.Update {
         public static final int constructor = 405070859;
         public TLRPC.Peer peer;
@@ -2221,10 +2221,10 @@ public class TL_update {
         public int story_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.story_id = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.reaction = TLRPC.Reaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.story_id = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.reaction = TLRPC.Reaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2236,16 +2236,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateNotifySettings extends TLRPC.Update {
         public static final int constructor = -1094555409;
         public TLRPC.PeerNotifySettings notify_settings;
         public TLRPC.NotifyPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.NotifyPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.notify_settings = TLRPC.PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.NotifyPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.notify_settings = TLRPC.PeerNotifySettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2256,14 +2256,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePaidReactionPrivacy extends TLRPC.Update {
         public static final int constructor = -1955438642;
         public TL_stars.PaidReactionPrivacy privacy;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.privacy = TL_stars.PaidReactionPrivacy.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.privacy = TL_stars.PaidReactionPrivacy.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2273,7 +2273,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePeerBlocked extends TLRPC.Update {
         public static final int constructor = -337610926;
         public boolean blocked;
@@ -2282,12 +2282,12 @@ public class TL_update {
         public TLRPC.Peer peer_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.blocked = TLObject.hasFlag(readInt32, 1);
             this.blocked_my_stories_from = TLObject.hasFlag(this.flags, 2);
-            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2302,7 +2302,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePeerHistoryTTL extends TLRPC.Update {
         public static final int constructor = -1147422299;
         public int flags;
@@ -2310,11 +2310,11 @@ public class TL_update {
         public int ttl_period;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.ttl_period = inputSerializedData.readInt32(z10);
+                this.ttl_period = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -2329,14 +2329,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePeerLocated extends TLRPC.Update {
         public static final int constructor = -1263546448;
         public ArrayList<TLRPC.PeerLocated> peers = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peers = Vector.deserialize(inputSerializedData, new d(17), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peers = Vector.deserialize(inputSerializedData, new d(17), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2346,16 +2346,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePeerSettings extends TLRPC.Update {
         public static final int constructor = 1786671974;
         public TLRPC.Peer peer;
         public TLRPC.PeerSettings settings;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.settings = TLRPC.PeerSettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.settings = TLRPC.PeerSettings.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2366,7 +2366,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePeerWallpaper extends TLRPC.Update {
         public static final int constructor = -1371598819;
         public int flags;
@@ -2375,13 +2375,13 @@ public class TL_update {
         public boolean wallpaper_overridden;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.wallpaper_overridden = TLObject.hasFlag(readInt32, 2);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.wallpaper = TLRPC.WallPaper.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.wallpaper = TLRPC.WallPaper.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -2398,7 +2398,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePendingJoinRequests extends TLRPC.Update {
         public static final int constructor = 1885586395;
         public TLRPC.Peer peer;
@@ -2406,10 +2406,10 @@ public class TL_update {
         public int requests_pending;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.requests_pending = inputSerializedData.readInt32(z10);
-            this.recent_requesters = Vector.deserializeLong(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.requests_pending = inputSerializedData.readInt32(z9);
+            this.recent_requesters = Vector.deserializeLong(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2421,14 +2421,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePhoneCall extends TLRPC.Update {
         public static final int constructor = -1425052898;
         public TL_phone.PhoneCall phone_call;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.phone_call = TL_phone.PhoneCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.phone_call = TL_phone.PhoneCall.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2438,16 +2438,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePhoneCallSignalingData extends TLRPC.Update {
         public static final int constructor = 643940105;
         public byte[] data;
         public long phone_call_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.phone_call_id = inputSerializedData.readInt64(z10);
-            this.data = inputSerializedData.readByteArray(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.phone_call_id = inputSerializedData.readInt64(z9);
+            this.data = inputSerializedData.readByteArray(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2458,7 +2458,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedChannelMessages extends TLRPC.Update {
         public static final int constructor = 1538885128;
         public long channel_id;
@@ -2469,14 +2469,14 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.pinned = TLObject.hasFlag(readInt32, 1);
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2492,7 +2492,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedDialogs extends TLRPC.Update {
         public static final int constructor = -99664734;
         public int flags;
@@ -2500,14 +2500,14 @@ public class TL_update {
         public ArrayList<TLRPC.DialogPeer> order = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 2)) {
-                this.folder_id = inputSerializedData.readInt32(z10);
+                this.folder_id = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.order = Vector.deserialize(inputSerializedData, new r(9), z10);
+                this.order = Vector.deserialize(inputSerializedData, new r(9), z9);
             }
         }
 
@@ -2524,7 +2524,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedForumTopic extends TLRPC.Update {
         public static final int constructor = 1748708434;
         public TLRPC.Peer peer;
@@ -2532,10 +2532,10 @@ public class TL_update {
         public int topic_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.pinned = TLObject.hasFlag(inputSerializedData.readInt32(z10), 1);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.topic_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.pinned = TLObject.hasFlag(inputSerializedData.readInt32(z9), 1);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.topic_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2547,7 +2547,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedForumTopics extends TLRPC.Update {
         public static final int constructor = -554613808;
         public int flags;
@@ -2555,11 +2555,11 @@ public class TL_update {
         public TLRPC.Peer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.order = Vector.deserializeInt(inputSerializedData, z10);
+                this.order = Vector.deserializeInt(inputSerializedData, z9);
             }
         }
 
@@ -2574,7 +2574,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedMessages extends TLRPC.Update {
         public static final int constructor = -309990731;
         public int flags;
@@ -2585,14 +2585,14 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.pinned = TLObject.hasFlag(readInt32, 1);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2608,18 +2608,18 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePinnedSavedDialogs extends TLRPC.Update {
         public static final int constructor = 1751942566;
         public int flags;
         public ArrayList<TLRPC.DialogPeer> order = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.order = Vector.deserialize(inputSerializedData, new r(9), z10);
+                this.order = Vector.deserialize(inputSerializedData, new r(9), z9);
             }
         }
 
@@ -2633,16 +2633,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updatePrivacy extends TLRPC.Update {
         public static final int constructor = -298113238;
         public TLRPC.PrivacyKey key;
         public ArrayList<TLRPC.PrivacyRule> rules = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.key = TLRPC.PrivacyKey.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.rules = Vector.deserialize(inputSerializedData, new c(15), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.key = TLRPC.PrivacyKey.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.rules = Vector.deserialize(inputSerializedData, new c(15), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2653,14 +2653,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateQuickReplies extends TLRPC.Update {
         public static final int constructor = -112784718;
         public ArrayList<TLRPC.TL_quickReply> quick_replies = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.quick_replies = Vector.deserialize(inputSerializedData, new r(18), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.quick_replies = Vector.deserialize(inputSerializedData, new r(18), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2670,14 +2670,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateQuickReplyMessage extends TLRPC.Update {
         public static final int constructor = 1040518415;
         public TLRPC.Message message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.message = TLRPC.Message.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2687,7 +2687,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadChannelDiscussionInbox extends TLRPC.Update {
         public static final int constructor = -693004986;
         public long broadcast_id;
@@ -2698,16 +2698,16 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.top_msg_id = inputSerializedData.readInt32(z10);
-            this.read_max_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.top_msg_id = inputSerializedData.readInt32(z9);
+            this.read_max_id = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.broadcast_id = inputSerializedData.readInt64(z10);
+                this.broadcast_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.broadcast_post = inputSerializedData.readInt32(z10);
+                this.broadcast_post = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -2727,7 +2727,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadChannelDiscussionOutbox extends TLRPC.Update {
         public static final int constructor = 1767677564;
         public long channel_id;
@@ -2735,10 +2735,10 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.top_msg_id = inputSerializedData.readInt32(z10);
-            this.read_max_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.top_msg_id = inputSerializedData.readInt32(z9);
+            this.read_max_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2750,7 +2750,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadChannelInbox extends TLRPC.Update {
         public static final int constructor = -1842450928;
         public long channel_id;
@@ -2761,16 +2761,16 @@ public class TL_update {
         public int still_unread_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.folder_id = inputSerializedData.readInt32(z10);
+                this.folder_id = inputSerializedData.readInt32(z9);
             }
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.max_id = inputSerializedData.readInt32(z10);
-            this.still_unread_count = inputSerializedData.readInt32(z10);
-            this.pts = inputSerializedData.readInt32(z10);
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.max_id = inputSerializedData.readInt32(z9);
+            this.still_unread_count = inputSerializedData.readInt32(z9);
+            this.pts = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2787,16 +2787,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadChannelOutbox extends TLRPC.Update {
         public static final int constructor = -1218471511;
         public long channel_id;
         public int max_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.max_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.max_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2807,7 +2807,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadFeaturedEmojiStickers extends TLRPC.Update {
         public static final int constructor = -78886548;
 
@@ -2817,7 +2817,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadFeaturedStickers extends TLRPC.Update {
         public static final int constructor = 1461528386;
 
@@ -2827,7 +2827,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadHistoryInbox extends TLRPC.Update {
         public static final int constructor = -1635468135;
         public int flags;
@@ -2840,20 +2840,20 @@ public class TL_update {
         public int top_msg_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.folder_id = inputSerializedData.readInt32(z10);
+                this.folder_id = inputSerializedData.readInt32(z9);
             }
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.max_id = inputSerializedData.readInt32(z10);
-            this.still_unread_count = inputSerializedData.readInt32(z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+            this.max_id = inputSerializedData.readInt32(z9);
+            this.still_unread_count = inputSerializedData.readInt32(z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2874,7 +2874,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadHistoryOutbox extends TLRPC.Update {
         public static final int constructor = 791617983;
         public int max_id;
@@ -2883,11 +2883,11 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.max_id = inputSerializedData.readInt32(z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.max_id = inputSerializedData.readInt32(z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2900,7 +2900,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadMessagesContents extends TLRPC.Update {
         public static final int constructor = -131960447;
         public int date;
@@ -2910,13 +2910,13 @@ public class TL_update {
         public int pts_count;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.messages = Vector.deserializeInt(inputSerializedData, z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.messages = Vector.deserializeInt(inputSerializedData, z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.date = inputSerializedData.readInt32(z10);
+                this.date = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -2933,7 +2933,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadMonoForumInbox extends TLRPC.Update {
         public static final int constructor = 2008081266;
         public long channel_id;
@@ -2941,10 +2941,10 @@ public class TL_update {
         public TLRPC.Peer saved_peer_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.read_max_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.read_max_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2956,7 +2956,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateReadMonoForumOutbox extends TLRPC.Update {
         public static final int constructor = -1532521610;
         public long channel_id;
@@ -2964,10 +2964,10 @@ public class TL_update {
         public TLRPC.Peer saved_peer_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel_id = inputSerializedData.readInt64(z10);
-            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.read_max_id = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel_id = inputSerializedData.readInt64(z9);
+            this.saved_peer_id = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.read_max_id = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2979,7 +2979,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateRecentEmojiStatuses extends TLRPC.Update {
         public static final int constructor = 821314523;
 
@@ -2989,7 +2989,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateRecentReactions extends TLRPC.Update {
         public static final int constructor = 1870160884;
 
@@ -2999,7 +2999,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateRecentStickers extends TLRPC.Update {
         public static final int constructor = -1706939360;
 
@@ -3009,7 +3009,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSavedDialogPinned extends TLRPC.Update {
         public static final int constructor = -1364222348;
         public int flags;
@@ -3017,11 +3017,11 @@ public class TL_update {
         public boolean pinned;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.pinned = TLObject.hasFlag(readInt32, 1);
-            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.peer = TLRPC.DialogPeer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3034,7 +3034,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSavedGifs extends TLRPC.Update {
         public static final int constructor = -1821035490;
 
@@ -3044,7 +3044,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSavedReactionTags extends TLRPC.Update {
         public static final int constructor = 969307186;
 
@@ -3054,7 +3054,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSavedRingtones extends TLRPC.Update {
         public static final int constructor = 1960361625;
 
@@ -3064,14 +3064,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSentPhoneCode extends TLRPC.Update {
         public static final int constructor = 1347068303;
         public TLRPC.auth_SentCode sent_code;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.sent_code = TLRPC.auth_SentCode.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.sent_code = TLRPC.auth_SentCode.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3081,7 +3081,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSentStoryReaction extends TLRPC.Update {
         public static final int constructor = 2103604867;
         public TLRPC.Peer peer;
@@ -3089,10 +3089,10 @@ public class TL_update {
         public int story_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.story_id = inputSerializedData.readInt32(z10);
-            this.reaction = TLRPC.Reaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.story_id = inputSerializedData.readInt32(z9);
+            this.reaction = TLRPC.Reaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3104,7 +3104,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateSentWalletTransaction extends TLRPC.Update {
         public static final int constructor = -1320989366;
         public boolean gasless;
@@ -3112,12 +3112,12 @@ public class TL_update {
         public TL_wallet.walletTransaction transaction;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.gasless = (readInt32 & 1) != 0;
-            this.msg_hash = inputSerializedData.readString(z10);
+            this.msg_hash = inputSerializedData.readString(z9);
             if ((readInt32 & 2) != 0) {
-                this.transaction = TL_wallet.walletTransaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.transaction = TL_wallet.walletTransaction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -3133,7 +3133,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateServiceNotification extends TLRPC.Update {
         public static final int constructor = -337352679;
         public ArrayList<TLRPC.MessageEntity> entities = new ArrayList<>();
@@ -3146,18 +3146,18 @@ public class TL_update {
         public String type;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.popup = TLObject.hasFlag(readInt32, 1);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.inbox_date = inputSerializedData.readInt32(z10);
+                this.inbox_date = inputSerializedData.readInt32(z9);
             }
             this.invert_media = TLObject.hasFlag(this.flags, 4);
-            this.type = inputSerializedData.readString(z10);
-            this.message = inputSerializedData.readString(z10);
-            this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
+            this.type = inputSerializedData.readString(z9);
+            this.message = inputSerializedData.readString(z9);
+            this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.entities = Vector.deserialize(inputSerializedData, new ch(4), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3178,16 +3178,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStarGiftAuctionState extends TLRPC.Update {
         public static final int constructor = 1222788802;
         public long gift_id;
         public TL_stars.StarGiftAuctionState state;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.gift_id = inputSerializedData.readInt64(z10);
-            this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.gift_id = inputSerializedData.readInt64(z9);
+            this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3198,16 +3198,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStarGiftAuctionUserState extends TLRPC.Update {
         public static final int constructor = -598150370;
         public long gift_id;
         public TL_stars.TL_StarGiftAuctionUserState user_state;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.gift_id = inputSerializedData.readInt64(z10);
-            this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.gift_id = inputSerializedData.readInt64(z9);
+            this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3218,13 +3218,13 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStarGiftCraftFail extends TLRPC.Update {
         public static final int constructor = -1408818108;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            super.readParams(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            super.readParams(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3233,14 +3233,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStarsBalance extends TLRPC.Update {
         public static final int constructor = 1317053305;
         public TL_stars.StarsAmount balance;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.balance = TL_stars.StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.balance = TL_stars.StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3250,16 +3250,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStarsRevenueStatus extends TLRPC.Update {
         public static final int constructor = -1518030823;
         public TLRPC.Peer peer;
         public TLRPC.TL_starsRevenueStatus status;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.status = TLRPC.TL_starsRevenueStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.status = TLRPC.TL_starsRevenueStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3270,7 +3270,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStickerSets extends TLRPC.Update {
         public static final int constructor = 834816008;
         public boolean emojis;
@@ -3278,8 +3278,8 @@ public class TL_update {
         public boolean masks;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.masks = TLObject.hasFlag(readInt32, 1);
             this.emojis = TLObject.hasFlag(this.flags, 2);
@@ -3296,7 +3296,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStickerSetsOrder extends TLRPC.Update {
         public static final int constructor = 196268545;
         public boolean emojis;
@@ -3305,12 +3305,12 @@ public class TL_update {
         public ArrayList<Long> order = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.masks = TLObject.hasFlag(readInt32, 1);
             this.emojis = TLObject.hasFlag(this.flags, 2);
-            this.order = Vector.deserializeLong(inputSerializedData, z10);
+            this.order = Vector.deserializeLong(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3325,16 +3325,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateStoryID extends TLRPC.Update {
         public static final int constructor = 468923833;
         public int id;
         public long random_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.id = inputSerializedData.readInt32(z10);
-            this.random_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.id = inputSerializedData.readInt32(z9);
+            this.random_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3345,14 +3345,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateTheme extends TLRPC.Update {
         public static final int constructor = -2112423005;
         public TLRPC.Theme theme;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.theme = TLRPC.Theme.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.theme = TLRPC.Theme.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3362,7 +3362,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateTranscribeAudio extends TLRPC.Update {
         public static final int constructor = -2006880112;
         public int flags;
@@ -3371,12 +3371,12 @@ public class TL_update {
         public long transcription_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.isFinal = TLObject.hasFlag(readInt32, 1);
-            this.transcription_id = inputSerializedData.readInt64(z10);
-            this.text = inputSerializedData.readString(z10);
+            this.transcription_id = inputSerializedData.readInt64(z9);
+            this.text = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3390,7 +3390,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateTranscribedAudio extends TLRPC.Update {
         public static final int constructor = 8703322;
         public int flags;
@@ -3401,14 +3401,14 @@ public class TL_update {
         public long transcription_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.pending = TLObject.hasFlag(readInt32, 1);
-            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.msg_id = inputSerializedData.readInt32(z10);
-            this.transcription_id = inputSerializedData.readInt64(z10);
-            this.text = inputSerializedData.readString(z10);
+            this.peer = TLRPC.Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.msg_id = inputSerializedData.readInt32(z9);
+            this.transcription_id = inputSerializedData.readInt64(z9);
+            this.text = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3424,14 +3424,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUser extends TLRPC.Update {
         public static final int constructor = 542282808;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3441,16 +3441,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserEmojiStatus extends TLRPC.Update {
         public static final int constructor = 674706841;
         public TLRPC.EmojiStatus emoji_status;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.emoji_status = TLRPC.EmojiStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.emoji_status = TLRPC.EmojiStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3461,7 +3461,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserName extends TLRPC.Update {
         public static final int constructor = -1484486364;
         public String first_name;
@@ -3470,11 +3470,11 @@ public class TL_update {
         public ArrayList<TLRPC.TL_username> usernames = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.first_name = inputSerializedData.readString(z10);
-            this.last_name = inputSerializedData.readString(z10);
-            this.usernames = Vector.deserialize(inputSerializedData, new m(6), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.first_name = inputSerializedData.readString(z9);
+            this.last_name = inputSerializedData.readString(z9);
+            this.usernames = Vector.deserialize(inputSerializedData, new m(6), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3487,16 +3487,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserPhone extends TLRPC.Update {
         public static final int constructor = 88680979;
         public String phone;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.phone = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.phone = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3507,7 +3507,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserPhoto extends TLRPC.Update {
         public static final int constructor = -232290676;
         public int date;
@@ -3516,11 +3516,11 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.photo = TLRPC.UserProfilePhoto.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.previous = inputSerializedData.readBool(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.photo = TLRPC.UserProfilePhoto.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.previous = inputSerializedData.readBool(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3533,16 +3533,16 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserStatus extends TLRPC.Update {
         public static final int constructor = -440534818;
         public TLRPC.UserStatus status;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.user_id = inputSerializedData.readInt64(z10);
-            this.status = TLRPC.UserStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.user_id = inputSerializedData.readInt64(z9);
+            this.status = TLRPC.UserStatus.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3553,7 +3553,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateUserTyping extends TLRPC.Update {
         public static final int constructor = 706199388;
         public TLRPC.SendMessageAction action;
@@ -3562,13 +3562,13 @@ public class TL_update {
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.user_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.user_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.top_msg_id = inputSerializedData.readInt32(z10);
+                this.top_msg_id = inputSerializedData.readInt32(z9);
             }
-            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.action = TLRPC.SendMessageAction.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3583,7 +3583,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWalletGaslessInfo extends TLRPC.Update {
         public static final int constructor = -1464984404;
         public boolean available;
@@ -3593,12 +3593,12 @@ public class TL_update {
         public int reset_at;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.available = (inputSerializedData.readInt32(z10) & 1) != 0;
-            this.left = inputSerializedData.readInt32(z10);
-            this.reset_at = inputSerializedData.readInt32(z10);
-            this.min_amount = inputSerializedData.readInt64(z10);
-            this.relayer_address = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.available = (inputSerializedData.readInt32(z9) & 1) != 0;
+            this.left = inputSerializedData.readInt32(z9);
+            this.reset_at = inputSerializedData.readInt32(z9);
+            this.min_amount = inputSerializedData.readInt64(z9);
+            this.relayer_address = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3612,14 +3612,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWalletState extends TLRPC.Update {
         public static final int constructor = 1791226538;
         public TL_wallet.WalletState state;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.state = TL_wallet.WalletState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.state = TL_wallet.WalletState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3629,14 +3629,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWalletTonConnectPendingDisconnect extends TLRPC.Update {
         public static final int constructor = -772898407;
         public ArrayList<Long> session_ids = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.session_ids = Vector.deserializeLong(inputSerializedData, z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.session_ids = Vector.deserializeLong(inputSerializedData, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3646,14 +3646,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWalletTonConnectSession extends TLRPC.Update {
         public static final int constructor = 1352896014;
         public TL_wallet.tonConnectSession session;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.session = TL_wallet.tonConnectSession.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.session = TL_wallet.tonConnectSession.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3663,7 +3663,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWebBrowserException extends TLRPC.Update {
         public static final int constructor = 335872721;
         public boolean delete;
@@ -3672,14 +3672,14 @@ public class TL_update {
         public boolean open_external_browser;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.delete = TLObject.hasFlag(readInt32, 2);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.open_external_browser = inputSerializedData.readBool(z10);
+                this.open_external_browser = inputSerializedData.readBool(z9);
             }
-            this.exception = TL_account.WebDomainException.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.exception = TL_account.WebDomainException.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3695,7 +3695,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWebBrowserSettings extends TLRPC.Update {
         public static final int constructor = -1013306658;
         public boolean display_close_button;
@@ -3703,8 +3703,8 @@ public class TL_update {
         public boolean open_external_browser;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.open_external_browser = TLObject.hasFlag(readInt32, 1);
             this.display_close_button = TLObject.hasFlag(this.flags, 2);
@@ -3721,7 +3721,7 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWebPage extends TLRPC.Update {
         public static final int constructor = 2139689491;
         public int pts;
@@ -3729,10 +3729,10 @@ public class TL_update {
         public TLRPC.WebPage webpage;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.webpage = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.pts = inputSerializedData.readInt32(z10);
-            this.pts_count = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.webpage = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.pts = inputSerializedData.readInt32(z9);
+            this.pts_count = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -3744,14 +3744,14 @@ public class TL_update {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_updateWebViewResultSent extends TLRPC.Update {
         public static final int constructor = 361936797;
         public long query_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.query_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.query_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject

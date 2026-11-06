@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -32,27 +32,27 @@ public abstract class c3 {
     static {
         ?? r16;
         b3 b3Var;
-        boolean z10;
+        boolean z9;
         Field b10;
         b3 b3Var2;
-        Unsafe i3 = i();
-        a = i3;
+        Unsafe i7 = i();
+        a = i7;
         int i10 = g1.a;
         b = Memory.class;
         Class<?> cls = Long.TYPE;
-        boolean o10 = o(cls);
+        boolean o4 = o(cls);
         Class<?> cls2 = Integer.TYPE;
-        boolean o11 = o(cls2);
+        boolean o10 = o(cls2);
         b3 b3Var3 = null;
-        if (i3 != null) {
-            if (o10) {
-                b3Var3 = new a3(i3);
-            } else if (o11) {
-                b3Var3 = new z2(i3);
+        if (i7 != null) {
+            if (o4) {
+                b3Var3 = new a3(i7);
+            } else if (o10) {
+                b3Var3 = new z2(i7);
             }
         }
         c = b3Var3;
-        boolean z11 = false;
+        boolean z10 = false;
         if (b3Var3 != null) {
             try {
                 Class<?> cls3 = b3Var3.a.getClass();
@@ -61,12 +61,12 @@ public abstract class c3 {
             } catch (Throwable th2) {
                 r16 = 0;
                 Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
-                z11 = false;
+                z10 = false;
             }
             if (b() != null) {
                 r16 = 0;
-                z11 = true;
-                d = z11;
+                z10 = true;
+                d = z10;
                 b3Var = c;
                 if (b3Var != null) {
                     try {
@@ -107,11 +107,11 @@ public abstract class c3 {
                         clsArr9[1] = cls;
                         clsArr9[2] = Object.class;
                         cls4.getMethod("putObject", clsArr9);
-                        z10 = true;
+                        z9 = true;
                     } catch (Throwable th3) {
                         Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th3.toString()));
                     }
-                    e = z10;
+                    e = z9;
                     f = p(byte[].class);
                     p(boolean[].class);
                     a(boolean[].class);
@@ -131,8 +131,8 @@ public abstract class c3 {
                     }
                     g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? r16 : true;
                 }
-                z10 = r16;
-                e = z10;
+                z9 = r16;
+                e = z9;
                 f = p(byte[].class);
                 p(boolean[].class);
                 a(boolean[].class);
@@ -154,12 +154,12 @@ public abstract class c3 {
             }
         }
         r16 = 0;
-        d = z11;
+        d = z10;
         b3Var = c;
         if (b3Var != null) {
         }
-        z10 = r16;
-        e = z10;
+        z9 = r16;
+        e = z9;
         f = p(byte[].class);
         p(boolean[].class);
         a(boolean[].class);
@@ -188,7 +188,7 @@ public abstract class c3 {
     public static Field b() {
         Field field;
         Field field2;
-        int i3 = g1.a;
+        int i7 = g1.a;
         try {
             field = Buffer.class.getDeclaredField("effectiveDirectAddress");
         } catch (Throwable unused) {
@@ -208,27 +208,27 @@ public abstract class c3 {
         return field2;
     }
 
-    public static void c(Object obj, long j10, byte b10) {
+    public static void c(Object obj, long j3, byte b10) {
         Unsafe unsafe = c.a;
-        long j11 = (-4) & j10;
-        int i3 = unsafe.getInt(obj, j11);
-        int i10 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (i3 & (~(hs.e4 << i10))));
+        long j10 = (-4) & j3;
+        int i7 = unsafe.getInt(obj, j10);
+        int i10 = ((~((int) j3)) & 3) << 3;
+        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(qs.e4 << i10))));
     }
 
-    public static void d(Object obj, long j10, byte b10) {
+    public static void d(Object obj, long j3, byte b10) {
         Unsafe unsafe = c.a;
-        long j11 = (-4) & j10;
-        int i3 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i3) | (unsafe.getInt(obj, j11) & (~(hs.e4 << i3))));
+        long j10 = (-4) & j3;
+        int i7 = (((int) j3) & 3) << 3;
+        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(qs.e4 << i7))));
     }
 
-    public static int e(Object obj, long j10) {
-        return c.a.getInt(obj, j10);
+    public static int e(Object obj, long j3) {
+        return c.a.getInt(obj, j3);
     }
 
-    public static long f(Object obj, long j10) {
-        return c.a.getLong(obj, j10);
+    public static long f(Object obj, long j3) {
+        return c.a.getLong(obj, j3);
     }
 
     public static Object g(Class cls) {
@@ -239,8 +239,8 @@ public abstract class c3 {
         }
     }
 
-    public static Object h(Object obj, long j10) {
-        return c.a.getObject(obj, j10);
+    public static Object h(Object obj, long j3) {
+        return c.a.getObject(obj, j3);
     }
 
     public static Unsafe i() {
@@ -251,29 +251,29 @@ public abstract class c3 {
         }
     }
 
-    public static void j(Object obj, long j10, int i3) {
-        c.a.putInt(obj, j10, i3);
+    public static void j(Object obj, long j3, int i7) {
+        c.a.putInt(obj, j3, i7);
     }
 
-    public static void k(Object obj, long j10, long j11) {
-        c.a.putLong(obj, j10, j11);
+    public static void k(Object obj, long j3, long j10) {
+        c.a.putLong(obj, j3, j10);
     }
 
-    public static void l(Object obj, long j10, Object obj2) {
-        c.a.putObject(obj, j10, obj2);
+    public static void l(Object obj, long j3, Object obj2) {
+        c.a.putObject(obj, j3, obj2);
     }
 
-    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & hs.e4)) != 0;
+    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j3) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & qs.e4)) != 0;
     }
 
-    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & hs.e4)) != 0;
+    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j3) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & qs.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static boolean o(Class cls) {
-        int i3 = g1.a;
+        int i7 = g1.a;
         try {
             Class cls2 = b;
             Class cls3 = Boolean.TYPE;

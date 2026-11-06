@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class AnimatedArrowDrawable extends Drawable {
     public final Paint a;
@@ -20,15 +20,15 @@ public class AnimatedArrowDrawable extends Drawable {
     public final float h;
     public final float i;
 
-    public AnimatedArrowDrawable(int i3, boolean z10) {
+    public AnimatedArrowDrawable(int i7, boolean z9) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint.setColor(i3);
+        paint.setColor(i7);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.f = z10;
+        this.f = z9;
         b();
     }
 
@@ -75,18 +75,18 @@ public class AnimatedArrowDrawable extends Drawable {
         canvas.drawPath(this.b, this.a);
         if (this.d != this.c) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j10 = elapsedRealtime - this.e;
+            long j3 = elapsedRealtime - this.e;
             this.e = elapsedRealtime;
             float f10 = this.c;
             float f11 = this.d;
             if (f10 < f11) {
-                float f12 = (j10 / 180.0f) + f10;
+                float f12 = (j3 / 180.0f) + f10;
                 this.c = f12;
                 if (f12 > f11) {
                     this.c = f11;
                 }
             } else {
-                float f13 = f10 - (j10 / 180.0f);
+                float f13 = f10 - (j3 / 180.0f);
                 this.c = f13;
                 if (f13 < f11) {
                     this.c = f11;
@@ -130,12 +130,12 @@ public class AnimatedArrowDrawable extends Drawable {
         this.a.setColorFilter(colorFilter);
     }
 
-    public AnimatedArrowDrawable(int i3) {
+    public AnimatedArrowDrawable(int i7) {
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.N(1.66f));
-        paint.setColor(i3);
+        paint.setColor(i7);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         this.f = true;
@@ -146,6 +146,6 @@ public class AnimatedArrowDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 }

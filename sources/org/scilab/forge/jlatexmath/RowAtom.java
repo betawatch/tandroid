@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class RowAtom extends Atom implements Row {
     private static BitSet binSet;
@@ -67,7 +67,7 @@ public class RowAtom extends Atom implements Row {
         HorizontalBox horizontalBox = new HorizontalBox(teXEnvironment.getColor(), teXEnvironment.getBackground());
         teXEnvironment.reset();
         ListIterator<Atom> listIterator = this.elements.listIterator();
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             Atom atom = null;
             if (!listIterator.hasNext()) {
@@ -75,24 +75,24 @@ public class RowAtom extends Atom implements Row {
                 return horizontalBox;
             }
             Atom next = listIterator.next();
-            i3++;
-            boolean z10 = false;
+            i7++;
+            boolean z9 = false;
             while (next instanceof BreakMarkAtom) {
-                if (!z10) {
-                    z10 = true;
+                if (!z9) {
+                    z9 = true;
                 }
                 if (!listIterator.hasNext()) {
                     break;
                 }
                 next = listIterator.next();
-                i3++;
+                i7++;
             }
             if (next instanceof DynamicAtom) {
                 DynamicAtom dynamicAtom = (DynamicAtom) next;
                 if (dynamicAtom.getInsertMode()) {
                     next = dynamicAtom.getAtom();
                     if (next instanceof RowAtom) {
-                        int i10 = i3 - 1;
+                        int i10 = i7 - 1;
                         this.elements.remove(i10);
                         this.elements.addAll(i10, ((RowAtom) next).elements);
                         listIterator = this.elements.listIterator(i10);
@@ -108,7 +108,7 @@ public class RowAtom extends Atom implements Row {
             changeToOrd(dummy2, this.previousAtom, atom);
             while (listIterator.hasNext() && dummy2.getRightType() == 0 && dummy2.isCharSymbol()) {
                 Atom next2 = listIterator.next();
-                int i11 = i3 + 1;
+                int i11 = i7 + 1;
                 if (!(next2 instanceof CharSymbol) || !ligKernSet.get(next2.getLeftType())) {
                     listIterator.previous();
                     break;
@@ -123,7 +123,7 @@ public class RowAtom extends Atom implements Row {
                     break;
                 }
                 dummy2.changeAtom(new FixedCharAtom(ligature));
-                i3 = i11;
+                i7 = i11;
             }
             f10 = 0.0f;
             if (listIterator.previousIndex() != 0 && (dummy = this.previousAtom) != null && !dummy.isKern() && !dummy2.isKern()) {
@@ -134,7 +134,7 @@ public class RowAtom extends Atom implements Row {
             if (dummy2.isCharInMathMode() && (createBox instanceof CharBox)) {
                 ((CharBox) createBox).addItalicCorrectionToWidth();
             }
-            if (z10 || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
+            if (z9 || ((next instanceof CharAtom) && Character.isDigit(((CharAtom) next).getCharacter()))) {
                 horizontalBox.addBreakPosition(horizontalBox.children.size());
             }
             horizontalBox.add(createBox);

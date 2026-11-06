@@ -120,11 +120,11 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     @Override // j$.time.temporal.l
     public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i3 = m.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i3 == 1) {
+            int i7 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i7 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 return this.b.getTotalSeconds();
             }
             return this.a.j(oVar);
@@ -137,9 +137,9 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i3 = m.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i3 != 1) {
-            return i3 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds();
+        int i7 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i7 != 1) {
+            return i7 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds();
         }
         LocalDateTime localDateTime = this.a;
         ZoneOffset zoneOffset = this.b;
@@ -161,33 +161,33 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal c(long j10, j$.time.temporal.o oVar) {
+    public final Temporal c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            int i3 = m.a[aVar.ordinal()];
-            if (i3 == 1) {
-                return G(Instant.I(j10, this.a.b.d), this.b);
+            int i7 = m.a[aVar.ordinal()];
+            if (i7 == 1) {
+                return G(Instant.I(j3, this.a.b.d), this.b);
             }
-            if (i3 == 2) {
-                return I(this.a, ZoneOffset.O(aVar.b.a(j10, aVar)));
+            if (i7 == 2) {
+                return I(this.a, ZoneOffset.O(aVar.b.a(j3, aVar)));
             }
-            return I(this.a.c(j10, oVar), this.b);
+            return I(this.a.c(j3, oVar), this.b);
         }
-        return (OffsetDateTime) oVar.q(this, j10);
+        return (OffsetDateTime) oVar.q(this, j3);
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final OffsetDateTime d(long j10, j$.time.temporal.q qVar) {
+    public final OffsetDateTime d(long j3, j$.time.temporal.q qVar) {
         if (qVar instanceof ChronoUnit) {
-            return I(this.a.d(j10, qVar), this.b);
+            return I(this.a.d(j3, qVar), this.b);
         }
-        return (OffsetDateTime) qVar.j(this, j10);
+        return (OffsetDateTime) qVar.j(this, j3);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
     }
 
     @Override // j$.time.temporal.l

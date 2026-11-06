@@ -1,60 +1,152 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextPaint;
-import android.view.animation.OvershootInterpolator;
+import android.graphics.RectF;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pk extends org.telegram.ui.Components.sy0 {
-    public final /* synthetic */ wm L;
+public final class pk extends org.telegram.ui.Components.l9 {
+    public final /* synthetic */ int G = 0;
+    public Object H;
+    public Object I;
+    public Object J;
+
+    public /* synthetic */ pk(Context context) {
+        super(context);
+    }
+
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                xh.f fVar = (xh.f) this.I;
+                Path path = (Path) this.H;
+                super.draw(canvas);
+                if (((org.telegram.ui.Components.zn) this.J).h) {
+                    path.rewind();
+                    RectF rectF = org.telegram.messenger.g0.P;
+                    ImageReceiver imageReceiver = this.a;
+                    rectF.set(imageReceiver.K0, imageReceiver.L0, imageReceiver.y(), this.a.A());
+                    path.addRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(path);
+                    fVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    ImageReceiver imageReceiver2 = this.a;
+                    fVar.setBounds((int) imageReceiver2.K0, (int) imageReceiver2.L0, (int) imageReceiver2.y(), (int) this.a.A());
+                    fVar.draw(canvas);
+                    invalidate();
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                super.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.l9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                float[] fArr = (float[]) this.J;
+                xh.f fVar = (xh.f) this.I;
+                Path path = (Path) this.H;
+                super.onDraw(canvas);
+                if (this.r) {
+                    canvas.save();
+                    RectF rectF = org.telegram.messenger.g0.P;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    int[] iArr = this.a.W0;
+                    float f10 = iArr[0];
+                    fArr[1] = f10;
+                    fArr[0] = f10;
+                    float f11 = iArr[1];
+                    fArr[3] = f11;
+                    fArr[2] = f11;
+                    float f12 = iArr[2];
+                    fArr[5] = f12;
+                    fArr[4] = f12;
+                    float f13 = iArr[3];
+                    fArr[7] = f13;
+                    fArr[6] = f13;
+                    path.rewind();
+                    path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    fVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    fVar.setBounds(0, 0, getWidth(), getHeight());
+                    fVar.draw(canvas);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                org.telegram.ui.Components.voip.n nVar = (org.telegram.ui.Components.voip.n) this.I;
+                super.onDraw(canvas);
+                org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) this.J;
+                if (o40Var.w0) {
+                    int i7 = o40Var.W0;
+                    nVar.f = i7;
+                    RectF rectF2 = org.telegram.messenger.g0.P;
+                    float f14 = i7;
+                    rectF2.set(0.0f, 0.0f, f14, f14);
+                    float width = rectF2.width() / 2.0f;
+                    canvas.drawRoundRect(rectF2, width, width, (Paint) this.H);
+                    rectF2.inset(org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f));
+                    nVar.a(width, canvas, rectF2, null);
+                    invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.Components.voip.n nVar2 = (org.telegram.ui.Components.voip.n) this.I;
+                super.onDraw(canvas);
+                if (((org.telegram.ui.Components.n40) this.J).l0) {
+                    float min = Math.min(getWidth(), getHeight()) * 0.5f;
+                    RectF rectF3 = org.telegram.messenger.g0.P;
+                    rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
+                    canvas.drawRoundRect(rectF3, min, min, (Paint) this.H);
+                    rectF3.inset(org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f));
+                    nVar2.f = getWidth();
+                    nVar2.a(min, canvas, rectF3, null);
+                    invalidate();
+                    break;
+                }
+                break;
+        }
+    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pk(Activity activity, org.telegram.ui.ActionBar.e6 e6Var, wm wmVar) {
-        super(activity);
-        this.L = wmVar;
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = org.telegram.messenger.g0.L(24.0f);
-        this.e = new OvershootInterpolator();
-        this.I = new org.telegram.ui.Components.sp0(this, 14);
-        this.K = new Path();
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, e6Var);
-        int alpha = Color.alpha(w02);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        textPaint.setColor(w02);
-        paint.setColor(w02);
-        paint.setAlpha((int) (alpha * 0.14d));
-        int L = org.telegram.messenger.g0.L(6.0f);
-        int i3 = org.telegram.ui.ActionBar.k6.tj;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i3);
-        setBackground(d02);
-        org.telegram.ui.ActionBar.r6.k(this, d02, N, null, e6Var);
+    public pk(org.telegram.ui.Components.zn znVar, Context context, xh.f fVar) {
+        super(context);
+        this.J = znVar;
+        this.I = fVar;
+        this.H = new Path();
     }
 
-    public final void d() {
-        int i3 = -(org.telegram.messenger.g0.L(16.0f) + getMeasuredHeight());
-        wm wmVar = this.L;
-        setTranslationY((wmVar.a0.getTop() - wmVar.m1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i3)));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pk(org.telegram.ui.Components.n40 n40Var, Context context, Paint paint) {
+        super(context);
+        this.J = n40Var;
+        this.H = paint;
+        this.I = new org.telegram.ui.Components.voip.n();
     }
 
-    @Override // org.telegram.ui.Components.sy0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        d();
-    }
-
-    @Override // org.telegram.ui.Components.sy0, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, i10);
-        d();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pk(org.telegram.ui.Components.o40 o40Var, Context context, Paint paint) {
+        super(context);
+        this.J = o40Var;
+        this.H = paint;
+        this.I = new org.telegram.ui.Components.voip.n();
     }
 }

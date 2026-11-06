@@ -1,0 +1,99 @@
+package xa;
+
+import p1.g;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class a {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final b d;
+    public final int e;
+
+    public a(String str, String str2, String str3, b bVar, int i7) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = bVar;
+        this.e = i7;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i7 = aVar.e;
+        b bVar = aVar.d;
+        String str = aVar.c;
+        String str2 = aVar.b;
+        String str3 = aVar.a;
+        String str4 = this.a;
+        if (str4 == null) {
+            if (str3 != null) {
+                return false;
+            }
+        } else if (!str4.equals(str3)) {
+            return false;
+        }
+        String str5 = this.b;
+        if (str5 == null) {
+            if (str2 != null) {
+                return false;
+            }
+        } else if (!str5.equals(str2)) {
+            return false;
+        }
+        String str6 = this.c;
+        if (str6 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str6.equals(str)) {
+            return false;
+        }
+        b bVar2 = this.d;
+        if (bVar2 == null) {
+            if (bVar != null) {
+                return false;
+            }
+        } else if (!bVar2.equals(bVar)) {
+            return false;
+        }
+        int i10 = this.e;
+        return i10 == 0 ? i7 == 0 : g.b(i10, i7);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = ((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003;
+        String str2 = this.b;
+        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
+        String str3 = this.c;
+        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
+        b bVar = this.d;
+        int hashCode4 = (hashCode3 ^ (bVar == null ? 0 : bVar.hashCode())) * 1000003;
+        int i7 = this.e;
+        return (i7 != 0 ? g.c(i7) : 0) ^ hashCode4;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("InstallationResponse{uri=");
+        sb2.append(this.a);
+        sb2.append(", fid=");
+        sb2.append(this.b);
+        sb2.append(", refreshToken=");
+        sb2.append(this.c);
+        sb2.append(", authToken=");
+        sb2.append(this.d);
+        sb2.append(", responseCode=");
+        int i7 = this.e;
+        sb2.append(i7 != 1 ? i7 != 2 ? "null" : "BAD_CONFIG" : "OK");
+        sb2.append("}");
+        return sb2.toString();
+    }
+}

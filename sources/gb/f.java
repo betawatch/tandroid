@@ -1,27 +1,21 @@
 package gb;
 
-import android.net.Uri;
-import java.net.URL;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
-    public final db.b a;
-    public final fd.h b;
+public final class f implements na.d {
+    public static final f a = new f();
+    public static final na.c b = na.c.c("processName");
+    public static final na.c c = na.c.c("pid");
+    public static final na.c d = na.c.c("importance");
+    public static final na.c e = na.c.c("defaultProcess");
 
-    public f(db.b appInfo, fd.h blockingDispatcher) {
-        kotlin.jvm.internal.j.e(appInfo, "appInfo");
-        kotlin.jvm.internal.j.e(blockingDispatcher, "blockingDispatcher");
-        this.a = appInfo;
-        this.b = blockingDispatcher;
-    }
-
-    public static final URL a(f fVar) {
-        fVar.getClass();
-        Uri.Builder appendPath = new Uri.Builder().scheme("https").authority("firebase-settings.crashlytics.com").appendPath("spi").appendPath("v2").appendPath("platforms").appendPath("android").appendPath("gmp");
-        db.b bVar = fVar.a;
-        Uri.Builder appendPath2 = appendPath.appendPath(bVar.a).appendPath("settings");
-        db.a aVar = bVar.b;
-        return new URL(appendPath2.appendQueryParameter("build_version", aVar.c).appendQueryParameter("display_version", aVar.b).build().toString());
+    @Override // na.a
+    public final void a(Object obj, Object obj2) {
+        f0 f0Var = (f0) obj;
+        na.e eVar = (na.e) obj2;
+        eVar.a(b, f0Var.a);
+        eVar.d(c, f0Var.b);
+        eVar.d(d, f0Var.c);
+        eVar.c(e, f0Var.d);
     }
 }

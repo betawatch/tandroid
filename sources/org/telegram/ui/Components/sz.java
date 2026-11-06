@@ -1,217 +1,64 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class sz extends Drawable {
-    public final /* synthetic */ int a;
-    public final Drawable b;
-    public final Paint c;
-    public final Paint d;
-    public boolean e;
-    public final Object f;
+public final class sz extends FrameLayout {
+    public final j6 a;
+    public final j6 b;
 
     public sz(Context context) {
-        this.a = 1;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.f = new u5(new gp(this, 29), 200L, xq.g, 0);
-        this.b = k2.p1.g(context, R.drawable.filled_sound_on);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.566f));
-        paint.setColor(-1);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Join join = Paint.Join.ROUND;
-        paint.setStrokeJoin(join);
-        paint2.setStyle(style);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint2.setStrokeWidth(org.telegram.messenger.g0.N(4.5f));
-        paint2.setColor(-65536);
-        paint2.setStrokeCap(cap);
-        paint2.setStrokeJoin(join);
+        super(context);
+        j6 j6Var = new j6(context, true, true, false);
+        this.a = j6Var;
+        j6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        j6Var.setTypeface(org.telegram.messenger.g0.o());
+        int i7 = org.telegram.ui.ActionBar.k6.L6;
+        org.telegram.ui.ActionBar.r6.Z(j6Var, i7, null);
+        j6Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        addView(j6Var, c8.ha.d(-1, 20.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        j6 j6Var2 = new j6(context, true, true, true);
+        this.b = j6Var2;
+        j6Var2.b(0.45f, 250L, xq.h);
+        j6Var2.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        org.telegram.ui.ActionBar.r6.Z(j6Var2, i7, null);
+        j6Var2.setGravity(org.telegram.messenger.hd.a0 ? 3 : 5);
+        addView(j6Var2, c8.ha.d(-2, 20.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
-    public int b(float f10) {
-        return org.telegram.messenger.g0.W1(f10, getBounds().left, getBounds().right);
+    public final void a(String str, Runnable runnable) {
+        boolean z9 = !org.telegram.messenger.hd.a0;
+        j6 j6Var = this.b;
+        j6Var.c(str, z9, true);
+        j6Var.setOnClickListener(new o6(1, runnable));
     }
 
-    public int c(float f10) {
-        return org.telegram.messenger.g0.W1(f10, getBounds().top, getBounds().bottom);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                Path path = (Path) this.f;
-                Drawable drawable = this.b;
-                if (path == null) {
-                    drawable.setBounds(getBounds());
-                    drawable.draw(canvas);
-                    break;
-                } else {
-                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, org.telegram.messenger.hs.e4);
-                    drawable.setBounds(getBounds());
-                    drawable.draw(canvas);
-                    boolean z10 = this.e;
-                    Paint paint = this.c;
-                    if (z10) {
-                        path.rewind();
-                        path.moveTo(b(0.4871f), c(0.6025f));
-                        path.lineTo(b(0.8974f), c(0.6025f));
-                        path.lineTo(b(1.0f), c(0.7564f));
-                        path.lineTo(b(0.8974f), c(0.9102f));
-                        path.lineTo(b(0.4871f), c(0.9102f));
-                        path.close();
-                        this.e = false;
-                        paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
-                    }
-                    canvas.drawPath(path, paint);
-                    canvas.drawPath(path, this.d);
-                    canvas.restore();
-                    break;
-                }
-            default:
-                Rect bounds = getBounds();
-                canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.hs.e4, 31);
-                Drawable drawable2 = this.b;
-                drawable2.setBounds(bounds);
-                drawable2.draw(canvas);
-                float d = ((u5) this.f).d(this.e);
-                if (d > 0.0f) {
-                    float N = org.telegram.messenger.g0.N(0.783f);
-                    float centerX = (bounds.centerX() - org.telegram.messenger.g0.L(9.0f)) + N;
-                    float centerY = (bounds.centerY() - org.telegram.messenger.g0.L(9.0f)) + N;
-                    float L = (org.telegram.messenger.g0.L(9.0f) + bounds.centerX()) - N;
-                    float L2 = (org.telegram.messenger.g0.L(9.0f) + bounds.centerY()) - N;
-                    if (this.e) {
-                        centerX = org.telegram.messenger.g0.T1(L, centerX, d);
-                        centerY = org.telegram.messenger.g0.T1(L2, centerY, d);
-                    } else {
-                        L = org.telegram.messenger.g0.T1(centerX, L, d);
-                        L2 = org.telegram.messenger.g0.T1(centerY, L2, d);
-                    }
-                    float f10 = centerX;
-                    float f11 = centerY;
-                    float f12 = L2;
-                    float f13 = L;
-                    canvas.drawLine(f10, f11, f13, f12, this.d);
-                    int min = (int) (Math.min(1.0f, d * 10.0f) * 255.0f);
-                    Paint paint2 = this.c;
-                    paint2.setAlpha(min);
-                    canvas.drawLine(f10, f11, f13, f12, paint2);
-                }
-                canvas.restore();
-                break;
+    public final void b(String str, boolean z9) {
+        j6 j6Var = this.a;
+        if (z9) {
+            j6Var.a();
         }
+        j6Var.c(str, z9 && !org.telegram.messenger.hd.a0, true);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return this.b.getIntrinsicHeight();
-            default:
-                return org.telegram.messenger.g0.L(24.0f);
-        }
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(this.a.getText());
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return this.b.getIntrinsicWidth();
-            default:
-                return org.telegram.messenger.g0.L(24.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return this.b.getOpacity();
-            default:
-                return -2;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i3);
-                break;
-            default:
-                this.b.setAlpha(i3);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setBounds(int i3, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                super.setBounds(i3, i10, i11, i12);
-                this.e = true;
-                break;
-            default:
-                super.setBounds(i3, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                this.b.setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    public sz(Context context, int i3, int i10) {
-        this.a = 0;
-        this.e = true;
-        this.b = context.getResources().getDrawable(i3);
-        if (i10 >= 0) {
-            this.f = new Path();
-            Paint paint = new Paint(1);
-            this.c = paint;
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setColor(-16777216);
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-            paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(1.0f)));
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            paint.setStrokeJoin(Paint.Join.ROUND);
-            Paint paint2 = new Paint(1);
-            this.d = paint2;
-            paint2.setStyle(Paint.Style.FILL);
-            int[] iArr = org.telegram.ui.ActionBar.k6.r8;
-            paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, iArr[i10 % iArr.length], false));
-            paint2.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(1.0f)));
-            return;
-        }
-        this.f = null;
-        this.c = null;
-        this.d = null;
-    }
-
-    private final void a(ColorFilter colorFilter) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

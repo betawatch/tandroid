@@ -1,63 +1,74 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class x6 extends View {
-    public int a;
-    public final int b;
-    public boolean c;
-    public boolean d;
+public abstract class x6 extends LinearLayout {
+    public TextView a;
+    public w70 b;
+    public TextView c;
+    public TextView d;
+    public int e;
+    public int f;
 
-    public x6(Context context) {
-        this(context, (f1) null);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    private int getBackgroundResId() {
-        boolean z10 = this.c;
-        return (z10 && this.d) ? R.drawable.greydivider : z10 ? R.drawable.greydivider_bottom : this.d ? R.drawable.greydivider_top : R.drawable.transparent;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.a), TLObject.FLAG_30));
-    }
-
-    public void setSize(int i3) {
-        this.a = i3;
-    }
-
-    public x6(Context context, Object obj) {
-        this(context, (f1) null);
-    }
-
-    public x6(Context context, f1 f1Var) {
-        super(context);
-        this.c = true;
-        this.d = true;
-        this.a = 12;
-        int i3 = this.b;
-        if (i3 == 0) {
-            setBackground(null);
-        } else {
-            setBackgroundColor(i3);
+    public void setType(int i7) {
+        int i10 = this.f;
+        TextView textView = this.c;
+        w70 w70Var = this.b;
+        TextView textView2 = this.a;
+        TextView textView3 = this.d;
+        this.e = i7;
+        if (i7 != 0) {
+            if (i7 == 1) {
+                textView2.setText(hd.M0(2131742804, null));
+                w70Var.setText(hd.M0(2131742803, null));
+                textView.setText(hd.M0(2131742801, null));
+                textView3.setVisibility(0);
+                textView3.setText(hd.M0(2131742802, null));
+                return;
+            }
+            if (i7 == 2) {
+                textView2.setText(hd.M0(2131749525, null));
+                w70Var.setText(hd.M0(2131749526, null));
+                textView.setText(hd.M0(2131749527, null));
+                textView3.setVisibility(8);
+                return;
+            }
+            return;
         }
-    }
-
-    public x6(Context context, int i3, int i10) {
-        super(context);
-        this.c = true;
-        this.d = true;
-        this.b = i3;
-        this.a = 12;
-        if (i3 == 0) {
-            setBackground(null);
-        } else {
-            setBackgroundColor(i3);
+        textView2.setText(hd.a0(null, null, 2131752156, org.telegram.messenger.k5.i(new StringBuilder("+"), qp.s1(i10).a2(Long.valueOf(p10.i(i10).n)).phone, pf.b.c())));
+        String M0 = hd.M0(2131752155, null);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
+        int indexOf = M0.indexOf("**");
+        int lastIndexOf = M0.lastIndexOf("**");
+        if (indexOf >= 0 && lastIndexOf >= 0 && indexOf != lastIndexOf) {
+            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
+            spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
+            try {
+                spannableStringBuilder.setSpan(new v31(hd.M0(2131752154, null), (ty0) null), indexOf, lastIndexOf - 2, 33);
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
         }
+        w70Var.setText(spannableStringBuilder);
+        textView.setText(hd.M0(2131752152, null));
+        textView3.setVisibility(0);
+        textView3.setText(hd.M0(2131752153, null));
     }
 }

@@ -1,221 +1,115 @@
 package tg;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import k2.p1;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.ViewGroup;
+import c8.ha;
+import org.telegram.ui.Components.ki0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k0 {
-    public static final List m;
-    public static final List n;
-    public static final int o;
-    public static final int p;
-    public static final int q;
-    public static final k0[] r;
-    public final SharedPreferences a;
-    public final ArrayList b;
-    public final HashMap c;
-    public List d;
-    public boolean e;
-    public int f;
-    public int g;
-    public int h;
-    public float i;
-    public String j;
-    public boolean k;
-    public boolean l;
+public final class k0 extends j {
+    public final i0 q0;
+    public int r0;
+    public int s0;
+    public boolean t0;
+    public h0 u0;
 
-    static {
-        List asList = Arrays.asList(-2645892, -8409090, -5926949, -2386514, -4531041);
-        m = asList;
-        List asList2 = Arrays.asList(-47814, -30208, -10742, -13318311, -10230046, -16087809, -4236558, -16777216, -1);
-        n = asList2;
-        int size = asList.size();
-        o = size;
-        int size2 = asList2.size();
-        p = size2;
-        q = size + size2;
-        r = new k0[4];
+    public k0(Context context, PointF pointF, int i7, h0 h0Var, float f10, int i10) {
+        super(context, pointF);
+        i0 i0Var = new i0(context, f10);
+        this.q0 = i0Var;
+        i0Var.setMaxWidth(i10);
+        this.u0 = h0Var;
+        i0Var.b(i7, h0Var, false);
+        m();
+        this.s0 = 3;
+        i0Var.c(3, this.r0);
+        addView(i0Var, ha.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    public k0(int i3) {
-        int i10 = q;
-        this.b = new ArrayList(i10);
-        HashMap hashMap = new HashMap(h.a.size());
-        this.c = hashMap;
-        this.d = new ArrayList(i10);
-        int i11 = 0;
-        SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("photo_color_palette_" + i3, 0);
-        this.a = sharedPreferences;
-        this.f = sharedPreferences.getInt("brush", 0);
-        this.i = sharedPreferences.getFloat("weight", 0.5f);
-        this.j = sharedPreferences.getString("typeface", "roboto");
-        this.g = sharedPreferences.getInt("text_alignment", 0);
-        this.h = sharedPreferences.getInt("text_type", 0);
-        this.k = sharedPreferences.getBoolean("fill_shapes", false);
-        int i12 = 0;
-        while (i12 < o) {
-            i12 = com.google.android.recaptcha.internal.a.f((int) sharedPreferences.getLong(p1.i(i12, "color_"), ((Integer) m.get(i12)).intValue()), i12, 1, this.b);
-        }
-        while (true) {
-            if (i11 >= h.a.size()) {
-                hashMap.put(-1, Integer.valueOf((int) sharedPreferences.getLong("brush_color_-1", -1L)));
-                return;
-            } else {
-                hashMap.put(Integer.valueOf(i11), Integer.valueOf((int) sharedPreferences.getLong(p1.i(i11, "brush_color_"), ((h) r1.get(i11)).c())));
-                i11++;
-            }
-        }
+    @Override // tg.j
+    public final i a() {
+        return new j0(this, getContext());
     }
 
-    public static k0 e(int i3) {
-        k0[] k0VarArr = r;
-        if (k0VarArr[i3] == null) {
-            k0VarArr[i3] = new k0(i3);
-        }
-        return k0VarArr[i3];
+    public int getColor() {
+        return this.r0;
     }
 
-    public final void a() {
-        this.d.clear();
-        this.d.addAll(m);
-        SharedPreferences.Editor edit = this.a.edit();
-        for (int i3 = 0; i3 < h.a.size(); i3++) {
-            edit.remove("brush_color_" + i3);
-        }
-        edit.remove("brush_color_-1");
-        this.c.clear();
-        edit.apply();
-        g();
+    @Override // tg.j
+    public float getMaxScale() {
+        return 1.5f;
     }
 
-    public final int b(int i3) {
-        int i10 = q;
-        if (i3 < 0 || i3 >= i10) {
-            throw new IndexOutOfBoundsException(p1.i(i10, "Color palette index should be in range 0 ... "));
-        }
-        List list = n;
-        ArrayList arrayList = new ArrayList(list);
-        arrayList.addAll(this.b);
-        if (i3 < arrayList.size()) {
-            return ((Integer) arrayList.get(i3)).intValue();
-        }
-        int i11 = p;
-        return i3 < i11 ? ((Integer) list.get(i3)).intValue() : ((Integer) m.get(i3 - i11)).intValue();
+    public int getNextType() {
+        int i7 = this.s0 + 1;
+        return i7 == 4 ? !this.t0 ? 1 : 0 : i7;
     }
 
-    public final int c() {
-        Integer valueOf = Integer.valueOf(this.f);
-        HashMap hashMap = this.c;
-        Integer num = (Integer) hashMap.get(valueOf);
-        if (num == null) {
-            num = Integer.valueOf((int) this.a.getLong("brush_color_" + this.f, this.f == -1 ? -1L : ((h) h.a.get(r2)).c()));
-            hashMap.put(Integer.valueOf(this.f), num);
+    @Override // tg.j
+    public ki0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new ki0();
         }
-        return num.intValue();
+        float scaleX = viewGroup.getScaleX();
+        float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
+        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
-    public final int d() {
-        int c2 = c();
-        ArrayList arrayList = new ArrayList(n);
-        arrayList.addAll(this.b);
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            if (((Integer) arrayList.get(i3)).intValue() == c2) {
-                return i3;
-            }
-        }
-        return 0;
+    @Override // tg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.h;
     }
 
-    public final float f(String str, float f10) {
-        return this.a.getFloat("weight_" + str, f10);
+    @Override // tg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.f;
     }
 
-    public final void g() {
-        if (!this.d.isEmpty() || this.e) {
-            SharedPreferences.Editor edit = this.a.edit();
-            if (!this.d.isEmpty()) {
-                int i3 = 0;
-                while (i3 < o) {
-                    edit.putLong(p1.i(i3, "color_"), ((Integer) (i3 < this.d.size() ? this.d : m).get(i3)).intValue());
-                    i3++;
-                }
-                ArrayList arrayList = this.b;
-                arrayList.clear();
-                arrayList.addAll(this.d);
-                this.d.clear();
-            }
-            if (this.e) {
-                if (((Integer) this.c.get(Integer.valueOf(this.f))) != null) {
-                    edit.putLong("brush_color_" + this.f, r1.intValue());
-                }
-                this.e = false;
-            }
-            edit.apply();
-        }
+    @Override // tg.j
+    public float getStickyPaddingRight() {
+        return this.q0.f;
     }
 
-    public final void h(int i3, boolean z10) {
-        ArrayList arrayList = new ArrayList(n);
-        Collection collection = this.b;
-        arrayList.addAll(collection);
-        int indexOf = arrayList.indexOf(Integer.valueOf(i3));
-        HashMap hashMap = this.c;
-        if (indexOf != -1) {
-            if (z10) {
-                hashMap.put(Integer.valueOf(this.f), Integer.valueOf(b(indexOf)));
-                this.e = true;
-                return;
-            }
-            return;
-        }
-        if (!this.d.isEmpty()) {
-            collection = this.d;
-        }
-        ArrayList arrayList2 = new ArrayList(collection);
-        this.d.clear();
-        this.d.add(Integer.valueOf(i3));
-        for (int i10 = 0; i10 < arrayList2.size() - 1; i10++) {
-            this.d.add((Integer) arrayList2.get(i10));
-        }
-        int size = this.d.size();
-        List list = m;
-        if (size < list.size()) {
-            for (int size2 = this.d.size(); size2 < list.size(); size2++) {
-                this.d.add((Integer) list.get(size2));
-            }
-        } else if (this.d.size() > list.size()) {
-            this.d = this.d.subList(0, list.size());
-        }
-        if (z10) {
-            hashMap.put(Integer.valueOf(this.f), Integer.valueOf(i3));
-            this.e = true;
-        }
+    @Override // tg.j
+    public float getStickyPaddingTop() {
+        return this.q0.h;
     }
 
-    public final void i(int i3, boolean z10) {
-        this.f = i3;
-        if (z10) {
-            this.a.edit().putInt("brush", i3).apply();
-        }
-        Integer num = (Integer) this.c.get(Integer.valueOf(i3));
-        if (num != null) {
-            h(num.intValue(), false);
-            g();
-        }
+    public int getType() {
+        return this.s0;
     }
 
-    public final void j(float f10) {
-        this.i = f10;
-        this.a.edit().putFloat("weight", f10).apply();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        k();
     }
 
-    public final void k(String str, float f10) {
-        this.a.edit().putFloat("weight_" + str, f10).apply();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        k();
+    }
+
+    public void setColor(int i7) {
+        this.t0 = true;
+        this.r0 = i7;
+    }
+
+    public void setMaxWidth(int i7) {
+        this.q0.setMaxWidth(i7);
+    }
+
+    public void setType(int i7) {
+        this.s0 = i7;
+        this.q0.c(i7, this.r0);
     }
 }

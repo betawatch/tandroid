@@ -1,22 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import af.b;
 import android.app.Application;
-import b8.ib;
-import c8.e;
 import com.google.android.gms.common.api.i;
 import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.tasks.Task;
-import dd.g;
-import dd.k;
-import fd.c;
-import hd.j;
-import n8.b;
-import n8.f;
-import od.p;
-import wd.e0;
+import d8.e;
+import gd.g;
+import gd.k;
+import id.c;
+import kd.j;
+import o8.f;
+import rd.p;
+import zd.e0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzr extends j implements p {
     int zza;
@@ -30,19 +29,19 @@ final class zzr extends j implements p {
         this.zzc = str;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzr(this.zzb, this.zzc, cVar);
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00b3  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x008e  */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,12 +49,12 @@ final class zzr extends j implements p {
         e0 e0Var;
         String str;
         String str2;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
         try {
             try {
-                if (i3 == 0) {
-                    ib.b(obj);
+                if (i7 == 0) {
+                    b.c(obj);
                     e0Var = this.zzb.zzc;
                     if (e0Var == null) {
                         e0Var = null;
@@ -66,9 +65,9 @@ final class zzr extends j implements p {
                         return aVar;
                     }
                 } else {
-                    if (i3 != 1) {
-                        ib.b(obj);
-                        str2 = ((b) obj).a;
+                    if (i7 != 1) {
+                        b.c(obj);
+                        str2 = ((o8.b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
                         }
@@ -80,9 +79,9 @@ final class zzr extends j implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new g((zzxx) zzf.zzk());
                     }
-                    ib.b(obj);
+                    b.c(obj);
                 }
-                n8.a aVar2 = new n8.a();
+                o8.a aVar2 = new o8.a();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 aVar2.a = str != null ? str : null;
@@ -91,8 +90,8 @@ final class zzr extends j implements p {
                 kotlin.jvm.internal.j.e(context, "context");
                 e eVar = new e(context, e.l, com.google.android.gms.common.api.b.j, i.c);
                 s b10 = t.b();
-                b10.d = new m6.c[]{f.a};
-                b10.c = new c6.i(aVar2, 8);
+                b10.d = new n6.c[]{f.a};
+                b10.c = new cb.c(aVar2, 18);
                 b10.a = 34002;
                 Task e10 = eVar.e(0, b10.a());
                 kotlin.jvm.internal.j.d(e10, "doRead(...)");
@@ -102,14 +101,14 @@ final class zzr extends j implements p {
                 if (obj == aVar) {
                     return aVar;
                 }
-                str2 = ((b) obj).a;
+                str2 = ((o8.b) obj).a;
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new g(ib.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new g(b.b(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new g(ib.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new g(b.b(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

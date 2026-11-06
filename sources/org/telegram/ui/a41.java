@@ -1,48 +1,62 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a41 {
-    public final org.telegram.ui.Components.hz a;
-    public og.f b;
-    public final int c;
-    public final /* synthetic */ b41 d;
+public final class a41 extends org.telegram.ui.Components.h61 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ c51 e;
 
-    public a41(b41 b41Var, int i3) {
-        this.d = b41Var;
-        this.c = i3;
-        org.telegram.ui.Components.hz hzVar = new org.telegram.ui.Components.hz(b41Var.getContext());
-        hzVar.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        hzVar.e = textPaint;
-        hzVar.f = new Paint(1);
-        Paint paint = new Paint(1);
-        hzVar.h = paint;
-        Paint paint2 = new Paint(1);
-        hzVar.n = paint2;
-        hzVar.x = org.telegram.messenger.g0.L(35.0f);
-        hzVar.y = org.telegram.messenger.g0.L(22.0f);
-        hzVar.E = org.telegram.messenger.g0.L(8.0f);
-        hzVar.F = org.telegram.messenger.g0.L(3.5f);
-        hzVar.G = new RectF();
-        hzVar.H = 0.0f;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        this.a = hzVar;
-        hzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        b41Var.h.addView(hzVar);
-        b41Var.n.add(this);
+    public a41(c51 c51Var, boolean z9, boolean z10, boolean z11, FrameLayout frameLayout) {
+        this.e = c51Var;
+        this.a = z9;
+        this.b = z10;
+        this.c = z11;
+        this.d = frameLayout;
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final View d(int i7) {
+        c51 c51Var = this.e;
+        if (c51Var.n0) {
+            return c51Var.i0;
+        }
+        boolean z9 = this.a;
+        FrameLayout frameLayout = this.d;
+        if (z9) {
+            if (i7 == 0) {
+                return frameLayout;
+            }
+            i7--;
+        }
+        if (this.b) {
+            if (i7 == 0) {
+                return c51Var.i0;
+            }
+            i7--;
+        }
+        return (this.c && i7 == 0) ? c51Var.j0 : frameLayout;
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int e() {
+        if (this.e.n0) {
+            return 1;
+        }
+        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int h(int i7) {
+        return i7;
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final void b(View view, int i7, int i10) {
     }
 }

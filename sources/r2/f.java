@@ -1,34 +1,29 @@
 package r2;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
-    public final String a;
-    public Uri c;
-    public Uri d;
-    public boolean j;
-    public Boolean o;
-    public String p;
-    public String q;
-    public String t;
-    public final HashMap b = new HashMap();
-    public long e = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public ArrayList i = new ArrayList();
-    public long k = -9223372036854775807L;
-    public long l = -9223372036854775807L;
-    public ArrayList m = new ArrayList();
-    public ArrayList n = new ArrayList();
-    public long r = -9223372036854775807L;
-    public long s = -9223372036854775807L;
+public final class f extends y2.b {
+    public final List d;
+    public final long e;
 
-    public f(String str) {
-        this.a = str;
+    public f(long j3, List list) {
+        super(0L, list.size() - 1);
+        this.e = j3;
+        this.d = list;
+    }
+
+    @Override // y2.m
+    public final long E() {
+        a();
+        s2.k kVar = (s2.k) this.d.get((int) this.c);
+        return this.e + kVar.e + kVar.c;
+    }
+
+    @Override // y2.m
+    public final long w() {
+        a();
+        return this.e + ((s2.k) this.d.get((int) this.c)).e;
     }
 }

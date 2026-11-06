@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -53,14 +53,14 @@ public class NumberTextView extends View {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(int i3, boolean z10) {
+    public final void a(int i7, boolean z9) {
         String sb2;
         String sb3;
-        boolean z11;
+        boolean z10;
         float f10;
         int i10;
         String str;
-        if (this.f == i3 && z10) {
+        if (this.f == i7 && z9) {
             return;
         }
         ObjectAnimator objectAnimator = this.d;
@@ -75,8 +75,8 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = k2.p1.i(this.f, "#");
-            sb3 = k2.p1.i(i3, "#");
+            sb2 = jg.g.j(this.f, "#");
+            sb3 = jg.g.j(i7, "#");
         } else {
             Locale locale2 = Locale.US;
             int i11 = this.f;
@@ -84,15 +84,15 @@ public class NumberTextView extends View {
             sb4.append(i11);
             sb2 = sb4.toString();
             StringBuilder sb5 = new StringBuilder();
-            sb5.append(i3);
+            sb5.append(i7);
             sb3 = sb5.toString();
         }
         TextPaint textPaint = this.c;
         this.r = textPaint.measureText(sb3);
         float measureText = textPaint.measureText(sb2);
         this.s = measureText;
-        boolean z12 = this.n && this.r != measureText;
-        this.f = i3;
+        boolean z11 = this.n && this.r != measureText;
+        this.f = i7;
         float f11 = 0.0f;
         this.e = 0.0f;
         int i12 = 0;
@@ -100,8 +100,8 @@ public class NumberTextView extends View {
             int i13 = i12 + 1;
             String substring = sb3.substring(i12, i13);
             String substring2 = (arrayList.isEmpty() || i12 >= sb2.length()) ? null : sb2.substring(i12, i13);
-            if (z12 || substring2 == null || !substring2.equals(substring)) {
-                if (z12 && substring2 == null) {
+            if (z11 || substring2 == null || !substring2.equals(substring)) {
+                if (z11 && substring2 == null) {
                     i10 = i13;
                     f10 = f11;
                     str = substring;
@@ -122,11 +122,11 @@ public class NumberTextView extends View {
             i12 = i10;
         }
         float f12 = f11;
-        if (z10 && !arrayList.isEmpty()) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f12);
+        if (z9 && !arrayList.isEmpty()) {
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? -1.0f : 1.0f, f12);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new a60(this, 5));
+            this.d.addListener(new e60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -166,11 +166,11 @@ public class NumberTextView extends View {
         int size = arrayList.size();
         ArrayList arrayList2 = this.b;
         int max = Math.max(size, arrayList2.size());
-        int i3 = 0;
-        while (i3 < max) {
+        int i7 = 0;
+        while (i7 < max) {
             canvas.save();
-            StaticLayout staticLayout = i3 < arrayList2.size() ? (StaticLayout) arrayList2.get(i3) : null;
-            StaticLayout staticLayout2 = i3 < arrayList.size() ? (StaticLayout) arrayList.get(i3) : null;
+            StaticLayout staticLayout = i7 < arrayList2.size() ? (StaticLayout) arrayList2.get(i7) : null;
+            StaticLayout staticLayout2 = i7 < arrayList.size() ? (StaticLayout) arrayList.get(i7) : null;
             float f12 = this.e;
             TextPaint textPaint = this.c;
             if (f12 > 0.0f) {
@@ -185,7 +185,7 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(org.telegram.messenger.hs.e4);
+                    textPaint.setAlpha(org.telegram.messenger.qs.e4);
                 }
             } else if (f12 < 0.0f) {
                 if (staticLayout != null) {
@@ -196,15 +196,15 @@ public class NumberTextView extends View {
                     canvas.restore();
                 }
                 if (staticLayout2 != null) {
-                    if (i3 == max - 1 || staticLayout != null) {
+                    if (i7 == max - 1 || staticLayout != null) {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(org.telegram.messenger.hs.e4);
+                        textPaint.setAlpha(org.telegram.messenger.qs.e4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(org.telegram.messenger.hs.e4);
+                textPaint.setAlpha(org.telegram.messenger.qs.e4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
@@ -214,13 +214,13 @@ public class NumberTextView extends View {
             if (staticLayout2 != null && staticLayout != null) {
                 f11 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f11;
             }
-            i3++;
+            i7++;
         }
         canvas.restore();
     }
 
-    public void setCenterAlign(boolean z10) {
-        this.n = z10;
+    public void setCenterAlign(boolean z9) {
+        this.n = z9;
     }
 
     public void setProgress(float f10) {
@@ -231,13 +231,13 @@ public class NumberTextView extends View {
         invalidate();
     }
 
-    public void setTextColor(int i3) {
-        this.c.setColor(i3);
+    public void setTextColor(int i7) {
+        this.c.setColor(i7);
         invalidate();
     }
 
-    public void setTextSize(int i3) {
-        this.c.setTextSize(org.telegram.messenger.g0.L(i3));
+    public void setTextSize(int i7) {
+        this.c.setTextSize(org.telegram.messenger.g0.L(i7));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -250,6 +250,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(db0 db0Var) {
+    public void setOnTextWidthProgressChangedListener(ib0 ib0Var) {
     }
 }

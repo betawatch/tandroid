@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import ed.f;
+import hd.e;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzkc implements zzjt {
     public static final zzkc zza = new zzkc();
@@ -13,7 +13,7 @@ public final class zzkc implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i3, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length == 0) {
             throw new zzdm(4, 3, null);
@@ -26,9 +26,9 @@ public final class zzkc implements zzjt {
         if (method == null) {
             throw new zzdm(4, 5, null);
         }
-        Object[] zzg = zzizVar.zzc().zzg(f.h(zzztVarArr).subList(1, length));
+        Object[] zzg = zzizVar.zzc().zzg(e.h(zzztVarArr).subList(1, length));
         try {
-            zzizVar.zzc().zze(i3, method.invoke(null, Arrays.copyOf(zzg, zzg.length)));
+            zzizVar.zzc().zze(i7, method.invoke(null, Arrays.copyOf(zzg, zzg.length)));
         } catch (Exception e10) {
             throw new zzdm(6, 15, e10);
         }

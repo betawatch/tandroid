@@ -1,144 +1,137 @@
 package wg;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.SurfaceTexture;
-import android.view.Choreographer;
-import android.view.MotionEvent;
-import android.view.Surface;
-import android.view.TextureView;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k5;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.up0;
+import zh.a2;
+import zh.e2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class r extends TextureView implements TextureView.SurfaceTextureListener, Choreographer.FrameCallback {
-    public static final o[] y = new o[3];
-    public final o a;
-    public final Rect b;
-    public final Runnable c;
-    public final int d;
-    public q e;
-    public boolean f;
-    public boolean h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
-    public boolean x;
+public final /* synthetic */ class r implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public r(Context context, Runnable runnable, int i3) {
-        super(context);
-        this.b = new Rect();
-        this.h = true;
-        this.c = runnable;
-        o[] oVarArr = y;
-        if (oVarArr[i3] == null) {
-            oVarArr[i3] = new o(context.getApplicationContext(), i3);
-        }
-        o oVar = oVarArr[i3];
-        this.a = oVar;
-        this.d = oVar.d;
-        setOpaque(false);
-        setSurfaceTextureListener(this);
+    public /* synthetic */ r(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    public abstract void a();
-
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j10) {
-        if (!this.f || this.h) {
-            return;
-        }
-        this.c.run();
-        if (this.e != null) {
-            boolean z10 = isShown() && getWindowVisibility() == 0 && getGlobalVisibleRect(this.b);
-            this.e.e = z10 ? new p(this.r, this.s, this.w, this.x) : null;
-            this.a.c();
-        }
-        Choreographer.getInstance().postFrameCallback(this);
-    }
-
-    @Override // android.view.TextureView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.f = true;
-        setPaused(this.h);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        this.n = false;
-        this.f = false;
-        Choreographer.getInstance().removeFrameCallback(this);
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i3, int i10) {
-        this.n = false;
-        int i11 = this.d;
-        surfaceTexture.setDefaultBufferSize(i11, i11);
-        q qVar = new q(this, new Surface(surfaceTexture), this.d);
-        this.e = qVar;
-        o oVar = this.a;
-        oVar.f.add(qVar);
-        oVar.g = (q[]) oVar.f.toArray(new q[0]);
-        oVar.c();
-        setPaused(this.h);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        this.n = false;
-        q qVar = this.e;
-        this.e = null;
-        if (qVar == null) {
-            return true;
-        }
-        o oVar = this.a;
-        oVar.getClass();
-        qVar.c = false;
-        oVar.f.remove(qVar);
-        oVar.g = (q[]) oVar.f.toArray(new q[0]);
-        oVar.b.post(new u9.a(17, oVar, qVar));
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i3, int i10) {
-        int i11 = this.d;
-        surfaceTexture.setDefaultBufferSize(i11, i11);
-    }
-
-    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        q qVar;
-        int i3 = this.d;
-        surfaceTexture.setDefaultBufferSize(i3, i3);
-        if (this.n || (qVar = this.e) == null || !qVar.d) {
-            return;
-        }
-        this.n = true;
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int a10;
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
+                c20 c20Var = (c20) this.c;
+                TLObject tLObject = (TLObject) this.e;
+                c20 c20Var2 = (c20) this.d;
+                if (tL_error != null) {
+                    c20Var.a(tL_error);
+                    return;
+                } else {
+                    if (tLObject instanceof TLRPC.payments_GiveawayInfo) {
+                        c20Var2.a((TLRPC.payments_GiveawayInfo) tLObject);
+                        return;
+                    }
+                    return;
+                }
+            case 1:
+                wi.t tVar = (wi.t) this.b;
+                wi.m0 m0Var = (wi.m0) this.c;
+                wi.m0 m0Var2 = (wi.m0) this.d;
+                Handler handler = (Handler) this.e;
+                if (tVar.r0 && tVar.W == 0 && tVar.T) {
+                    tVar.N.g(tVar.L, tVar.D, false);
+                    tVar.U = false;
+                    tVar.V = false;
+                    tVar.c0 = 0.0f;
+                    tVar.W = 1;
+                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+                    tVar.X = elapsedRealtimeNanos;
+                    tVar.Y = elapsedRealtimeNanos;
+                    tVar.d0 = m0Var;
+                    tVar.e0 = m0Var2;
+                    String[] strArr = wi.u0.a;
+                    synchronized (wi.u0.class) {
+                        wi.u0.b();
+                        if (m0Var == m0Var2) {
+                            throw new IllegalArgumentException("Camera switch direction must change");
+                        }
+                        a10 = wi.u0.a(m0Var == wi.m0.b ? 0 : 1);
+                    }
+                    tVar.b0 = a10;
+                    tVar.Z = ((Math.max(qs.n3, Math.min(qs.X4, 300 - ((Math.max(0, a10 - 400) * 3) / 20))) * 45) / 100) * 1000000;
+                    tVar.a0 = (r1 - r2) * 1000000;
+                    tVar.i.b("synthetic camera switch started: from=" + m0Var + ", to=" + m0Var2 + ", expectedWaitMs=" + tVar.b0 + ", targetBlurRadiusPx=" + (((tVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((tVar.Z + tVar.a0) / 1000000));
+                    tVar.Q = -1L;
+                    handler.removeCallbacks(tVar.x0);
+                    handler.post(tVar.x0);
+                    return;
+                }
+                return;
+            default:
+                final a2 a2Var = (a2) this.b;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
+                zh.z0 z0Var = (zh.z0) this.d;
+                final View view = (View) this.e;
+                up0 up0Var = a2Var.a;
+                if (savedStarGift.unsaved) {
+                    savedStarGift.unsaved = false;
+                    z0Var.i(savedStarGift, true, false);
+                    TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
+                    savestargift.stargift = a2Var.e.h(savedStarGift);
+                    savestargift.unsave = savedStarGift.unsaved;
+                    ConnectionsManager.getInstance(a2Var.b).sendRequest(savestargift, null, 64);
+                }
+                boolean z9 = savedStarGift.pinned_to_top;
+                final boolean z10 = !z9;
+                if (a2Var.e.o(savedStarGift, z10, false)) {
+                    new e2(a2Var.getContext(), up0Var.c, savedStarGift, a2Var.c, new u10() { // from class: zh.u1
+                        @Override // org.telegram.messenger.u10
+                        public final Object run() {
+                            ((z0) view).d(z10, true);
+                            a2 a2Var2 = a2.this;
+                            a2Var2.f.v0(0);
+                            return hc.a0(a2Var2.a.a);
+                        }
+                    }).show();
+                    return;
+                }
+                if (z9) {
+                    k5.o(null, 2131749879, hc.a0(up0Var.a), R.raw.ic_unpin, 36);
+                } else {
+                    hc.a0(up0Var.a).I(R.raw.ic_pin, hd.M0(2131750075, null), hd.M0(2131750076, null)).j();
+                }
+                ((zh.z0) view).d(z10, true);
+                a2Var.f.v0(0);
+                return;
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public void setPaused(boolean z10) {
-        this.h = z10;
-        Choreographer.getInstance().removeFrameCallback(this);
-        if (this.f && !z10) {
-            Choreographer.getInstance().postFrameCallback(this);
-            return;
-        }
-        q qVar = this.e;
-        if (qVar != null) {
-            qVar.e = null;
-            this.a.c();
-        }
+    public /* synthetic */ r(TLRPC.TL_error tL_error, c20 c20Var, TLObject tLObject, c20 c20Var2) {
+        this.a = 0;
+        this.b = tL_error;
+        this.c = c20Var;
+        this.e = tLObject;
+        this.d = c20Var2;
     }
 }

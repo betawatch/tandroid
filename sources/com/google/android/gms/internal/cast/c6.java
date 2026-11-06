@@ -1,107 +1,44 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c6 extends s4 implements RandomAccess {
-    public static final c6 d = new c6(new Object[0], 0, false);
-    public Object[] b;
-    public int c;
+public final class c6 {
+    public final q4 a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    public c6(Object[] objArr, int i3, boolean z10) {
-        super(z10);
-        this.b = objArr;
-        this.c = i3;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i3, Object obj) {
-        int i10;
-        h();
-        if (i3 < 0 || i3 > (i10 = this.c)) {
-            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
+    public c6(q4 q4Var, String str, Object[] objArr) {
+        this.a = q4Var;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
+            return;
         }
-        int i11 = i3 + 1;
-        Object[] objArr = this.b;
-        if (i10 < objArr.length) {
-            System.arraycopy(objArr, i3, objArr, i11, i10 - i3);
-        } else {
-            Object[] objArr2 = new Object[((i10 * 3) / 2) + 1];
-            System.arraycopy(objArr, 0, objArr2, 0, i3);
-            System.arraycopy(this.b, i3, objArr2, i11, this.c - i3);
-            this.b = objArr2;
-        }
-        this.b[i3] = obj;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i3) {
-        i(i3);
-        return this.b[i3];
-    }
-
-    public final void i(int i3) {
-        if (i3 < 0 || i3 >= this.c) {
-            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
+        int i7 = charAt & 8191;
+        int i10 = 1;
+        int i11 = 13;
+        while (true) {
+            int i12 = i10 + 1;
+            char charAt2 = str.charAt(i10);
+            if (charAt2 < 55296) {
+                this.d = i7 | (charAt2 << i11);
+                return;
+            } else {
+                i7 |= (charAt2 & 8191) << i11;
+                i11 += 13;
+                i10 = i12;
+            }
         }
     }
 
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.List
-    public final Object remove(int i3) {
-        h();
-        i(i3);
-        Object[] objArr = this.b;
-        Object obj = objArr[i3];
-        if (i3 < this.c - 1) {
-            System.arraycopy(objArr, i3 + 1, objArr, i3, (r2 - i3) - 1);
+    public final int a() {
+        int i7 = this.d;
+        if ((i7 & 1) != 0) {
+            return 1;
         }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return obj;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i3, Object obj) {
-        h();
-        i(i3);
-        Object[] objArr = this.b;
-        Object obj2 = objArr[i3];
-        objArr[i3] = obj;
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.h5
-    public final /* bridge */ /* synthetic */ h5 zzg(int i3) {
-        if (i3 >= this.c) {
-            return new c6(Arrays.copyOf(this.b, i3), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        h();
-        int i3 = this.c;
-        Object[] objArr = this.b;
-        if (i3 == objArr.length) {
-            this.b = Arrays.copyOf(objArr, ((i3 * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.b;
-        int i10 = this.c;
-        this.c = i10 + 1;
-        objArr2[i10] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
+        return (i7 & 4) == 4 ? 3 : 2;
     }
 }

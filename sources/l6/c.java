@@ -1,141 +1,102 @@
 package l6;
 
-import android.app.BroadcastOptions;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e5.r;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
-import org.telegram.ui.Cells.f1;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import com.google.android.gms.internal.clearcut.c2;
+import com.google.android.gms.internal.clearcut.w1;
+import java.util.Arrays;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c {
-    public static int h;
-    public static PendingIntent i;
-    public static final Pattern j = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)");
-    public final Context b;
-    public final d4.d c;
-    public final ScheduledThreadPoolExecutor d;
-    public Messenger f;
-    public f g;
-    public final a0.l a = new a0.l(0);
-    public final Messenger e = new Messenger(new o(this, Looper.getMainLooper()));
+public final class c extends r6.a {
+    public static final Parcelable.Creator<c> CREATOR = new j7.b(27);
+    public final c2 a;
+    public byte[] b;
+    public final int[] c;
+    public final String[] d;
+    public final int[] e;
+    public final byte[][] f;
+    public final n8.a[] h;
+    public final boolean n;
+    public final w1 r;
 
-    public c(Context context) {
-        this.b = context;
-        this.c = new d4.d(context);
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new r("fcm-rpc-timeout-executor"));
-        scheduledThreadPoolExecutor.setKeepAliveTime(60L, TimeUnit.SECONDS);
-        scheduledThreadPoolExecutor.allowCoreThreadTimeOut(true);
-        this.d = scheduledThreadPoolExecutor;
+    public c(c2 c2Var, w1 w1Var) {
+        this.a = c2Var;
+        this.r = w1Var;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = null;
+        this.h = null;
+        this.n = true;
     }
 
-    public static synchronized void a(Context context, Intent intent) {
-        synchronized (c.class) {
-            try {
-                if (i == null) {
-                    Intent intent2 = new Intent();
-                    intent2.setPackage("com.google.example.invalidpackage");
-                    i = PendingIntent.getBroadcast(context, 0, intent2, n7.e.a);
-                }
-                intent.putExtra("app", i);
-            } catch (Throwable th2) {
-                throw th2;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof c) {
+            c cVar = (c) obj;
+            if (m.k(this.a, cVar.a) && Arrays.equals(this.b, cVar.b) && Arrays.equals(this.c, cVar.c) && Arrays.equals(this.d, cVar.d) && m.k(this.r, cVar.r) && m.k(null, null) && m.k(null, null) && Arrays.equals(this.e, cVar.e) && Arrays.deepEquals(this.f, cVar.f) && Arrays.equals(this.h, cVar.h) && this.n == cVar.n) {
+                return true;
             }
         }
+        return false;
     }
 
-    public static synchronized String c() {
-        String num;
-        synchronized (c.class) {
-            int i3 = h;
-            h = i3 + 1;
-            num = Integer.toString(i3);
-        }
-        return num;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.r, null, null, this.e, this.f, this.h, Boolean.valueOf(this.n)});
     }
 
-    public final void b(String str, Bundle bundle) {
-        a0.l lVar = this.a;
-        synchronized (lVar) {
-            try {
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) lVar.remove(str);
-                if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(bundle);
-                    return;
-                }
-                StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + 21);
-                sb2.append("Missing callback for ");
-                sb2.append(str);
-                Log.w("Rpc", sb2.toString());
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("LogEventParcelable[");
+        sb2.append(this.a);
+        sb2.append(", LogEventBytes: ");
+        byte[] bArr = this.b;
+        sb2.append(bArr == null ? null : new String(bArr));
+        sb2.append(", TestCodes: ");
+        sb2.append(Arrays.toString(this.c));
+        sb2.append(", MendelPackages: ");
+        sb2.append(Arrays.toString(this.d));
+        sb2.append(", LogEvent: ");
+        sb2.append(this.r);
+        sb2.append(", ExtensionProducer: null, VeProducer: null, ExperimentIDs: ");
+        sb2.append(Arrays.toString(this.e));
+        sb2.append(", ExperimentTokens: ");
+        sb2.append(Arrays.toString(this.f));
+        sb2.append(", ExperimentTokensParcelables: ");
+        sb2.append(Arrays.toString(this.h));
+        sb2.append(", AddPhenotypeExperimentTokens: ");
+        sb2.append(this.n);
+        sb2.append("]");
+        return sb2.toString();
     }
 
-    public final Task d(Bundle bundle) {
-        String c2 = c();
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        a0.l lVar = this.a;
-        synchronized (lVar) {
-            lVar.put(c2, taskCompletionSource);
-        }
-        Intent intent = new Intent();
-        intent.setPackage("com.google.android.gms");
-        if (this.c.h() == 2) {
-            intent.setAction("com.google.iid.TOKEN_REQUEST");
-        } else {
-            intent.setAction("com.google.android.c2dm.intent.REGISTER");
-        }
-        intent.putExtras(bundle);
-        a(this.b, intent);
-        intent.putExtra("kid", f1.r("|ID|", c2, "|", new StringBuilder(String.valueOf(c2).length() + 5)));
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Sending ".concat(String.valueOf(intent.getExtras())));
-        }
-        intent.putExtra("google.messenger", this.e);
-        if (this.f != null || this.g != null) {
-            Message obtain = Message.obtain();
-            obtain.obj = intent;
-            try {
-                Messenger messenger = this.f;
-                if (messenger != null) {
-                    messenger.send(obtain);
-                } else {
-                    this.g.a.send(obtain);
-                }
-            } catch (RemoteException unused) {
-                if (Log.isLoggable("Rpc", 3)) {
-                    Log.d("Rpc", "Messenger failed, fallback to startService");
-                }
-            }
-            taskCompletionSource.getTask().addOnCompleteListener(d.b, new k4.j(this, c2, this.d.schedule(new a3.o(taskCompletionSource, 27), 30L, TimeUnit.SECONDS)));
-            return taskCompletionSource.getTask();
-        }
-        if (this.c.h() == 2) {
-            Context context = this.b;
-            if (Build.VERSION.SDK_INT < 34) {
-                context.sendBroadcast(intent);
-            } else {
-                context.sendBroadcast(intent, null, BroadcastOptions.makeBasic().setShareIdentityEnabled(true).toBundle());
-            }
-        } else {
-            this.b.startService(intent);
-        }
-        taskCompletionSource.getTask().addOnCompleteListener(d.b, new k4.j(this, c2, this.d.schedule(new a3.o(taskCompletionSource, 27), 30L, TimeUnit.SECONDS)));
-        return taskCompletionSource.getTask();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.k(parcel, 2, this.a, i7);
+        wb.c(parcel, 3, this.b);
+        wb.g(parcel, 4, this.c);
+        wb.m(parcel, 5, this.d);
+        wb.g(parcel, 6, this.e);
+        wb.d(parcel, 7, this.f);
+        wb.q(parcel, 8, 4);
+        parcel.writeInt(this.n ? 1 : 0);
+        wb.o(parcel, 9, this.h, i7);
+        wb.s(parcel, r10);
+    }
+
+    public c(c2 c2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z9, n8.a[] aVarArr) {
+        this.a = c2Var;
+        this.b = bArr;
+        this.c = iArr;
+        this.d = strArr;
+        this.r = null;
+        this.e = iArr2;
+        this.f = bArr2;
+        this.h = aVarArr;
+        this.n = z9;
     }
 }

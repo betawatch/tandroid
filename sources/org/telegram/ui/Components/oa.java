@@ -1,51 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oa implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ac b;
+public final class oa implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
 
-    public /* synthetic */ oa(ac acVar, int i3) {
-        this.a = i3;
-        this.b = acVar;
+    public oa(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                break;
-            case 1:
-                ac acVar = this.b;
-                FrameLayout frameLayout = acVar.h;
-                fb fbVar = acVar.e;
-                za zaVar = acVar.p;
-                if (zaVar != null && !fbVar.top) {
-                    zaVar.c(0.0f);
-                    acVar.p.d(acVar);
-                }
-                fbVar.transitionRunningExit = false;
-                fbVar.onExitTransitionEnd();
-                fbVar.onHide();
-                frameLayout.removeView(acVar.f);
-                frameLayout.removeOnLayoutChangeListener(acVar.c);
-                fbVar.onDetach();
-                Runnable runnable = acVar.v;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                ac acVar2 = this.b;
-                FrameLayout frameLayout2 = acVar2.h;
-                frameLayout2.removeView(acVar2.f);
-                frameLayout2.removeOnLayoutChangeListener(acVar2.c);
-                break;
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i7, int i10, int i11, int i12, int i13, CharSequence charSequence, int i14, int i15, boolean z9, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i14) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i13 -= layout.getLineForOffset(i14) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
+            }
+            canvas.drawCircle((i10 * r7) + i7, (i11 + i13) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
         }
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z9) {
+        return (this.b * 2) + this.a;
     }
 }

@@ -1,52 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-import b8.ba;
+import a8.n8;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class k0 extends g0 {
-    public static final k0 e = new k0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class k0 extends f0 {
+    public final /* synthetic */ l0 c;
 
-    public k0(int i3, Object[] objArr) {
-        this.c = objArr;
-        this.d = i3;
+    public k0(l0 l0Var) {
+        this.c = l0Var;
     }
 
     @Override // java.util.List
-    public final Object get(int i3) {
-        ba.a(i3, this.d);
-        Object obj = this.c[i3];
+    public final /* bridge */ /* synthetic */ Object get(int i7) {
+        l0 l0Var = this.c;
+        n8.a(i7, l0Var.f);
+        Object[] objArr = l0Var.e;
+        int i10 = i7 + i7;
+        Object obj = objArr[i10];
         obj.getClass();
-        return obj;
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0, com.google.android.gms.internal.cast.d0
-    public final int h(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i3 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i3);
-        return i3;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int i() {
-        return this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int j() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final Object[] k() {
-        return this.c;
+        Object obj2 = objArr[i10 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d;
+        return this.c.f;
     }
 }

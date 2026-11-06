@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class j4 implements t0 {
     public final WeakReference a;
@@ -20,9 +20,9 @@ public final class j4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
+    public final boolean cancel(boolean z9) {
         h4 h4Var = (h4) this.a.get();
-        boolean cancel = this.b.cancel(z10);
+        boolean cancel = this.b.cancel(z9);
         if (!cancel || h4Var == null) {
             return cancel;
         }
@@ -52,7 +52,7 @@ public final class j4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    public final Object get(long j3, TimeUnit timeUnit) {
+        return this.b.get(j3, timeUnit);
     }
 }

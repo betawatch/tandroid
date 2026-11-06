@@ -4,33 +4,33 @@ import android.os.Build;
 import java.util.Locale;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final /* synthetic */ int a = 0;
 
     static {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 30) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 30) {
             g0.f.f(30);
         }
-        if (i3 >= 30) {
+        if (i7 >= 30) {
             g0.f.f(31);
         }
-        if (i3 >= 30) {
+        if (i7 >= 30) {
             g0.f.f(33);
         }
-        if (i3 >= 30) {
+        if (i7 >= 30) {
             g0.f.f(1000000);
         }
     }
 
     public static final boolean a() {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 33) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 33) {
             return true;
         }
-        if (i3 >= 32) {
+        if (i7 >= 32) {
             String CODENAME = Build.VERSION.CODENAME;
             j.d(CODENAME, "CODENAME");
             if (!"REL".equals(CODENAME)) {

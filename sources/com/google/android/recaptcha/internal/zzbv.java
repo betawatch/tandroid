@@ -4,23 +4,23 @@ import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import dd.k;
+import gd.k;
 import java.util.concurrent.CancellationException;
-import od.l;
-import wd.e0;
+import rd.l;
+import zd.e0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzbv {
     public static final Task zza(final e0 e0Var) {
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(new CancellationTokenSource().getToken());
         e0Var.invokeOnCompletion(new l() { // from class: com.google.android.recaptcha.internal.zzbu
-            @Override // od.l
+            @Override // rd.l
             public final Object invoke(Object obj) {
                 Throwable th2 = (Throwable) obj;
-                boolean z10 = th2 instanceof CancellationException;
+                boolean z9 = th2 instanceof CancellationException;
                 TaskCompletionSource taskCompletionSource2 = TaskCompletionSource.this;
-                if (z10) {
+                if (z9) {
                     taskCompletionSource2.setException((Exception) th2);
                 } else {
                     e0 e0Var2 = e0Var;

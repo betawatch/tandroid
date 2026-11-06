@@ -2,28 +2,28 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g1 implements u10 {
+public final /* synthetic */ class g1 implements c20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ g1(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public /* synthetic */ g1(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.u10
+    @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                g0.h3(new fg((h1) this.b, (String) obj, (Runnable) this.c, 7));
+                g0.h3(new ng((h1) this.b, (String) obj, (Runnable) this.c, 7));
                 break;
             case 1:
                 e3 e3Var = (e3) this.b;
-                u10 u10Var = (u10) this.c;
+                c20 c20Var = (c20) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error.text.startsWith("FLOOD_WAIT")) {
                     e3Var.f = Utilities.z(tL_error.text).intValue();
@@ -31,14 +31,14 @@ public final /* synthetic */ class g1 implements u10 {
                     e3Var.b = true;
                 }
                 e3Var.a = false;
-                u10Var.a(e3Var);
+                c20Var.a(e3Var);
                 break;
             default:
-                yy yyVar = (yy) this.b;
-                wy wyVar = (wy) this.c;
-                yyVar.getClass();
-                wyVar.Q = ((Long) obj).longValue();
-                yyVar.r0(wyVar);
+                gz gzVar = (gz) this.b;
+                ez ezVar = (ez) this.c;
+                gzVar.getClass();
+                ezVar.Q = ((Long) obj).longValue();
+                gzVar.r0(ezVar);
                 break;
         }
     }

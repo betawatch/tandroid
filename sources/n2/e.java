@@ -1,139 +1,83 @@
 package n2;
 
-import b8.zb;
-import d2.h0;
-import d2.k1;
-import d2.m1;
-import d2.n0;
-import d2.n1;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.media.AudioDeviceInfo;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e extends n1 {
-    public final long e;
-    public final long f;
-    public final long g;
-    public final int h;
-    public final long i;
-    public final long j;
-    public final long k;
-    public final o2.c l;
-    public final n0 m;
-    public final h0 n;
+public final class e {
+    public final Context a;
+    public final l2.y b;
+    public final Handler c;
+    public final c d;
+    public final androidx.mediarouter.app.f e;
+    public final d f;
+    public c3.d g;
+    public b h;
+    public AudioDeviceInfo i;
+    public e2.e j;
+    public boolean k;
 
-    public e(long j10, long j11, long j12, int i3, long j13, long j14, long j15, o2.c cVar, n0 n0Var, h0 h0Var) {
-        zb.p(cVar.d == (h0Var != null));
-        this.e = j10;
-        this.f = j11;
-        this.g = j12;
-        this.h = i3;
-        this.i = j13;
-        this.j = j14;
-        this.k = j15;
-        this.l = cVar;
-        this.m = n0Var;
-        this.n = h0Var;
+    public e(Context context, l2.y yVar, e2.e eVar, AudioDeviceInfo audioDeviceInfo) {
+        Context applicationContext = context.getApplicationContext();
+        this.a = applicationContext;
+        this.b = yVar;
+        this.j = eVar;
+        this.i = audioDeviceInfo;
+        String str = h2.m0.a;
+        Looper myLooper = Looper.myLooper();
+        Handler handler = new Handler(myLooper == null ? Looper.getMainLooper() : myLooper, null);
+        this.c = handler;
+        this.d = new c(this);
+        this.e = new androidx.mediarouter.app.f(this, 4);
+        t1 t1Var = b.e;
+        String str2 = Build.MANUFACTURER;
+        Uri uriFor = (str2.equals("Amazon") || str2.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
+        this.f = uriFor != null ? new d(this, handler, applicationContext.getContentResolver(), uriFor) : null;
     }
 
-    @Override // d2.n1
-    public final int b(Object obj) {
-        int intValue;
-        if ((obj instanceof Integer) && (intValue = ((Integer) obj).intValue() - this.h) >= 0 && intValue < h()) {
-            return intValue;
+    public final List a() {
+        c3.d dVar;
+        if (Build.VERSION.SDK_INT >= 32 && (dVar = this.g) != null) {
+            return dVar.b();
         }
-        return -1;
+        h9.g0 g0Var = h9.i0.b;
+        return t1.e;
     }
 
-    @Override // d2.n1
-    public final k1 f(int i3, k1 k1Var, boolean z10) {
-        zb.j(i3, h());
-        o2.c cVar = this.l;
-        String str = z10 ? cVar.b(i3).a : null;
-        Integer valueOf = z10 ? Integer.valueOf(this.h + i3) : null;
-        long d = cVar.d(i3);
-        long S = g2.n0.S(cVar.b(i3).b - cVar.b(0).b) - this.i;
-        k1Var.getClass();
-        k1Var.h(str, valueOf, 0, d, S, d2.c.c, false);
-        return k1Var;
-    }
-
-    @Override // d2.n1
-    public final int h() {
-        return this.l.m.size();
-    }
-
-    @Override // d2.n1
-    public final Object l(int i3) {
-        zb.j(i3, h());
-        return Integer.valueOf(this.h + i3);
-    }
-
-    @Override // d2.n1
-    public final m1 m(int i3, m1 m1Var, long j10) {
-        boolean z10;
-        long j11;
-        boolean z11;
-        long j12;
-        i c2;
-        zb.j(i3, 1);
-        o2.c cVar = this.l;
-        boolean z12 = cVar.d;
-        long j13 = this.k;
-        if (z12 && cVar.e != -9223372036854775807L && cVar.b == -9223372036854775807L) {
-            long j14 = 0;
-            if (j10 > 0) {
-                j13 += j10;
-                if (j13 > this.j) {
-                    z10 = true;
-                    z11 = false;
-                    j13 = -9223372036854775807L;
-                    j11 = -9223372036854775807L;
-                    m1Var.b(m1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j11 || cVar.b != j11) ? z11 : z10, this.n, j13, this.j, 0, h() - 1, this.i);
-                    return m1Var;
-                }
-            }
-            long j15 = this.i + j13;
-            long d = cVar.d(0);
-            int i10 = 0;
-            while (i10 < cVar.m.size() - 1 && j15 >= d) {
-                j15 -= d;
-                i10++;
-                d = cVar.d(i10);
-            }
-            o2.h b10 = cVar.b(i10);
-            List list = b10.c;
-            z10 = true;
-            int size = list.size();
-            j11 = -9223372036854775807L;
-            int i11 = 0;
-            while (true) {
-                if (i11 >= size) {
-                    j12 = j14;
-                    i11 = -1;
-                    break;
-                }
-                j12 = j14;
-                if (((o2.a) list.get(i11)).b == 2) {
-                    break;
-                }
-                i11++;
-                j14 = j12;
-            }
-            if (i11 != -1 && (c2 = ((o2.m) ((o2.a) b10.c.get(i11)).c.get(0)).c()) != null && c2.H(d) != j12) {
-                j13 = (c2.b(c2.s(j15, d)) + j13) - j15;
-            }
-        } else {
-            z10 = true;
-            j11 = -9223372036854775807L;
+    public final void b(b bVar) {
+        if (!this.k || bVar.equals(this.h)) {
+            return;
         }
-        z11 = false;
-        m1Var.b(m1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j11 || cVar.b != j11) ? z11 : z10, this.n, j13, this.j, 0, h() - 1, this.i);
-        return m1Var;
+        this.h = bVar;
+        h0 h0Var = (h0) this.b.b;
+        h0Var.f();
+        b bVar2 = h0Var.h;
+        if (bVar2 == null || bVar.equals(bVar2)) {
+            return;
+        }
+        h0Var.h = bVar;
+        h2.r rVar = h0Var.f;
+        if (rVar != null) {
+            rVar.e(-1, new m2.d(27));
+        }
     }
 
-    @Override // d2.n1
-    public final int o() {
-        return 1;
+    public final void c() {
+        List a10 = a();
+        e2.e eVar = this.j;
+        AudioDeviceInfo audioDeviceInfo = this.i;
+        t1 t1Var = b.e;
+        IntentFilter intentFilter = new IntentFilter("android.media.action.HDMI_AUDIO_PLUG");
+        Context context = this.a;
+        b(b.b(context, context.registerReceiver(null, intentFilter), eVar, audioDeviceInfo, a10));
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzko implements zzjt {
     public static final zzko zza = new zzko();
@@ -9,13 +9,13 @@ public final class zzko implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i3, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i7, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length != 2) {
             if (length != 0) {
                 throw new zzdm(4, 3, null);
             }
-            zzizVar.zzc().zze(i3, new zzcs());
+            zzizVar.zzc().zze(i7, new zzcs());
             return;
         }
         Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);

@@ -1,17 +1,16 @@
 package androidx.lifecycle;
 
 import android.app.Application;
-import b8.tb;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class o0 {
-    public static final List a = ed.h.c(Application.class, i0.class);
-    public static final List b = tb.a(i0.class);
+    public static final List a = hd.g.c(Application.class, i0.class);
+    public static final List b = c8.d0.a(i0.class);
 
     public static final Constructor a(Class cls, List signature) {
         kotlin.jvm.internal.j.e(signature, "signature");
@@ -20,7 +19,7 @@ public abstract class o0 {
         for (Constructor<?> constructor : constructors) {
             Class<?>[] parameterTypes = constructor.getParameterTypes();
             kotlin.jvm.internal.j.d(parameterTypes, "constructor.parameterTypes");
-            List h = ed.f.h(parameterTypes);
+            List h = hd.e.h(parameterTypes);
             if (signature.equals(h)) {
                 return constructor;
             }

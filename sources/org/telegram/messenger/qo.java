@@ -1,21 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class qo {
-    public final int a;
-    public final int b;
+import org.telegram.tgnet.tl.TL_account;
 
-    public qo(int i3, int i10) {
-        this.a = i3;
-        this.b = i10;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class qo extends x2 {
+    public final /* synthetic */ qp e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qo(qp qpVar) {
+        super(3600000);
+        this.e = qpVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof qo)) {
-            return false;
-        }
-        qo qoVar = (qo) obj;
-        return this.a == qoVar.a && this.b == qoVar.b;
+    @Override // org.telegram.messenger.x2
+    public final void e(int i7, Object obj, v10 v10Var) {
+        yr.a0(i7).a.c(new x0(i7, v10Var, 7));
+    }
+
+    @Override // org.telegram.messenger.x2
+    public final void f(int i7, Object obj, long j3, w2 w2Var) {
+        TL_account.getWebBrowserSettings getwebbrowsersettings = new TL_account.getWebBrowserSettings();
+        getwebbrowsersettings.hash = j3;
+        this.e.getConnectionsManager().sendRequestTyped(getwebbrowsersettings, new d3.b(1), new d(w2Var, 6));
+    }
+
+    @Override // org.telegram.messenger.x2
+    public final void g(int i7, Object obj, Object obj2) {
+        yr.a0(i7).a.c(new x0(i7, (TL_account.TL_webBrowserSettings) obj2, 8));
+    }
+
+    @Override // org.telegram.messenger.x2
+    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
+        return false;
     }
 }

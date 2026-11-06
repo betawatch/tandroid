@@ -2,9 +2,9 @@ package r0;
 
 import android.view.View;
 import java.lang.ref.WeakReference;
-import org.telegram.ui.Components.ri0;
+import org.telegram.ui.Components.v50;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l0 {
     public final WeakReference a;
@@ -27,10 +27,10 @@ public final class l0 {
         }
     }
 
-    public final void c(long j10) {
+    public final void c(long j3) {
         View view = (View) this.a.get();
         if (view != null) {
-            view.animate().setDuration(j10);
+            view.animate().setDuration(j3);
         }
     }
 
@@ -38,7 +38,7 @@ public final class l0 {
         View view = (View) this.a.get();
         if (view != null) {
             if (m0Var != null) {
-                view.animate().setListener(new ri0(m0Var, view, 18));
+                view.animate().setListener(new v50(m0Var, view, 18));
             } else {
                 view.animate().setListener(null);
             }

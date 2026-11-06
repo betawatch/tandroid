@@ -16,38 +16,38 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f2 extends c1 {
     public static volatile f2[] f = new f2[4];
-    public final gi.w5 a;
-    public final gi.w5 b;
+    public final g6.d0 a;
+    public final g6.d0 b;
     public final Set c;
     public final LongSparseArray d;
     public final SharedPreferences e;
 
-    public f2(int i3) {
-        super(i3);
-        this.a = new gi.w5(23);
-        this.b = new gi.w5(23);
+    public f2(int i7) {
+        super(i7);
+        this.a = new g6.d0(24);
+        this.b = new g6.d0(24);
         this.c = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
         this.d = new LongSparseArray();
-        this.e = t0.b.getSharedPreferences("bot_drafts" + i3, 0);
+        this.e = t0.b.getSharedPreferences("bot_drafts" + i7, 0);
     }
 
-    public static f2 b(int i3) {
+    public static f2 b(int i7) {
         f2 f2Var;
-        f2 f2Var2 = f[i3];
+        f2 f2Var2 = f[i7];
         if (f2Var2 != null) {
             return f2Var2;
         }
         synchronized (f2.class) {
             try {
-                f2Var = f[i3];
+                f2Var = f[i7];
                 if (f2Var == null) {
                     f2[] f2VarArr = f;
-                    f2 f2Var3 = new f2(i3);
-                    f2VarArr[i3] = f2Var3;
+                    f2 f2Var3 = new f2(i7);
+                    f2VarArr[i7] = f2Var3;
                     f2Var = f2Var3;
                 }
             } catch (Throwable th2) {
@@ -68,15 +68,15 @@ public final class f2 extends c1 {
         TLRPC.InputPeer inputPeer;
         TLRPC.InputPeer inputPeer2;
         TLRPC.InputPeer inputPeer3;
+        long j3;
         long j10;
-        long j11;
         String str;
         long E;
         if (list == null || list.isEmpty() || this.c.remove(tLObject)) {
             return true;
         }
-        boolean z10 = tLObject instanceof TLRPC.TL_messages_sendMessage;
-        if (z10) {
+        boolean z9 = tLObject instanceof TLRPC.TL_messages_sendMessage;
+        if (z9) {
             inputPeer2 = ((TLRPC.TL_messages_sendMessage) tLObject).peer;
         } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
             inputPeer2 = ((TLRPC.TL_messages_sendMedia) tLObject).peer;
@@ -90,60 +90,60 @@ public final class f2 extends c1 {
             inputPeer2 = ((TLRPC.TL_messages_sendMultiMedia) tLObject).peer;
         } else {
             inputPeer = null;
-            final long n4 = m5.n(inputPeer);
-            if (inputPeer != null || n4 <= 0 || !l10.v(getMessagesController().a2(Long.valueOf(n4)))) {
+            final long n10 = m5.n(inputPeer);
+            if (inputPeer != null || n10 <= 0 || !t10.v(getMessagesController().a2(Long.valueOf(n10)))) {
                 return true;
             }
             final long[] jArr = new long[list.size()];
-            for (int i3 = 0; i3 < list.size(); i3++) {
-                jArr[i3] = ((zi) list.get(i3)).f1();
+            for (int i7 = 0; i7 < list.size(); i7++) {
+                jArr[i7] = ((ij) list.get(i7)).f1();
             }
-            if (z10) {
-                j11 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
+            if (z9) {
+                j10 = ((TLRPC.TL_messages_sendMessage) tLObject).random_id;
             } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
-                j11 = ((TLRPC.TL_messages_sendMedia) tLObject).random_id;
+                j10 = ((TLRPC.TL_messages_sendMedia) tLObject).random_id;
             } else if (tLObject instanceof TL_ephemeral.TL_sendMessage) {
-                j11 = ((TL_ephemeral.TL_sendMessage) tLObject).random_id;
+                j10 = ((TL_ephemeral.TL_sendMessage) tLObject).random_id;
             } else {
                 if (!(tLObject instanceof TLRPC.TL_messages_sendInlineBotResult)) {
                     if (tLObject instanceof TLRPC.TL_messages_forwardMessages) {
                         ArrayList<Long> arrayList = ((TLRPC.TL_messages_forwardMessages) tLObject).random_id;
                         int size = arrayList.size();
-                        long j12 = 0;
-                        j10 = 0;
+                        long j11 = 0;
+                        j3 = 0;
                         int i10 = 0;
                         while (i10 < size) {
                             Long l10 = arrayList.get(i10);
                             i10++;
-                            j12 = li.p(j12, l10.longValue());
+                            j11 = ui.p(j11, l10.longValue());
                             inputPeer = inputPeer;
                         }
                         inputPeer3 = inputPeer;
-                        j11 = j12;
+                        j10 = j11;
                     } else {
                         inputPeer3 = inputPeer;
-                        j10 = 0;
+                        j3 = 0;
                         if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
                             ArrayList<TLRPC.TL_inputSingleMedia> arrayList2 = ((TLRPC.TL_messages_sendMultiMedia) tLObject).multi_media;
                             int size2 = arrayList2.size();
                             int i11 = 0;
-                            j11 = 0;
+                            j10 = 0;
                             while (i11 < size2) {
                                 TLRPC.TL_inputSingleMedia tL_inputSingleMedia = arrayList2.get(i11);
                                 i11++;
-                                j11 = li.p(j11, tL_inputSingleMedia.random_id);
+                                j10 = ui.p(j10, tL_inputSingleMedia.random_id);
                             }
                         } else {
-                            j11 = 0;
+                            j10 = 0;
                         }
                     }
-                    if (!((!z10 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
+                    if (!((!z9 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
                         return true;
                     }
                     if ((tLObject instanceof TLRPC.TL_messages_forwardMessages) && ((TLRPC.TL_messages_forwardMessages) tLObject).top_msg_id != 0) {
                         return true;
                     }
-                    if (z10) {
+                    if (z9) {
                         str = ((TLRPC.TL_messages_sendMessage) tLObject).message;
                     } else if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
                         str = ((TLRPC.TL_messages_sendMedia) tLObject).message;
@@ -166,20 +166,20 @@ public final class f2 extends c1 {
                         }
                         str = null;
                     }
-                    if (j11 != j10) {
-                        E = ~j11;
+                    if (j10 != j3) {
+                        E = ~j10;
                     } else {
                         getSendMessagesHelper().getClass();
-                        E = yy.E();
+                        E = gz.E();
                     }
                     if (TextUtils.isEmpty(str)) {
-                        str = bd.M0(2131743990, null);
+                        str = hd.M0(2131743981, null);
                     } else if (str.length() > 16) {
                         str = str.substring(0, 16) + "...";
                     }
                     final String str2 = str;
-                    kr krVar = new kr() { // from class: org.telegram.messenger.w1
-                        @Override // org.telegram.messenger.kr
+                    sr srVar = new sr() { // from class: org.telegram.messenger.w1
+                        @Override // org.telegram.messenger.sr
                         public final void a(int i13) {
                             f2 f2Var = f2.this;
                             TLObject tLObject2 = tLObject;
@@ -189,8 +189,8 @@ public final class f2 extends c1 {
                                 g0.h3(runnable2);
                                 return;
                             }
-                            boolean z11 = tLObject2 instanceof TLRPC.TL_messages_forwardMessages;
-                            if (z11) {
+                            boolean z10 = tLObject2 instanceof TLRPC.TL_messages_forwardMessages;
+                            if (z10) {
                                 TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) tLObject2;
                                 tL_messages_forwardMessages.top_msg_id = i13;
                                 tL_messages_forwardMessages.flags |= 512;
@@ -213,7 +213,7 @@ public final class f2 extends c1 {
                                     TLRPC.TL_messages_sendInlineBotResult tL_messages_sendInlineBotResult = (TLRPC.TL_messages_sendInlineBotResult) tLObject2;
                                     tL_messages_sendInlineBotResult.reply_to = tL_inputReplyToMessage;
                                     tL_messages_sendInlineBotResult.flags |= 1;
-                                } else if (z11) {
+                                } else if (z10) {
                                     TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages2 = (TLRPC.TL_messages_forwardMessages) tLObject2;
                                     tL_messages_forwardMessages2.reply_to = tL_inputReplyToMessage;
                                     tL_messages_forwardMessages2.flags |= 1;
@@ -223,35 +223,35 @@ public final class f2 extends c1 {
                                     tL_messages_sendMultiMedia.flags |= 1;
                                 }
                             }
-                            f2Var.getMessagesStorage().a.c(new z1(f2Var, jArr, n4, i13, runnable2));
+                            f2Var.getMessagesStorage().a.c(new z1(f2Var, jArr, n10, i13, runnable2));
                         }
                     };
-                    final long n10 = m5.n(inputPeer3);
+                    final long n11 = m5.n(inputPeer3);
                     LongSparseArray longSparseArray = this.d;
-                    List list2 = (List) longSparseArray.get(n10);
+                    List list2 = (List) longSparseArray.get(n11);
                     if (list2 != null) {
-                        list2.add(krVar);
+                        list2.add(srVar);
                         return false;
                     }
                     int i13 = 1;
                     ArrayList arrayList4 = new ArrayList(1);
-                    arrayList4.add(krVar);
-                    longSparseArray.put(n10, arrayList4);
+                    arrayList4.add(srVar);
+                    longSparseArray.put(n11, arrayList4);
                     TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
                     tL_messages_createForumTopic.title = TextUtils.isEmpty(str2) ? "#New Chat" : str2;
                     tL_messages_createForumTopic.title_missing = true;
                     tL_messages_createForumTopic.peer = inputPeer3;
                     tL_messages_createForumTopic.random_id = E;
-                    final long j13 = E;
-                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new c3.b(i13), new n10() { // from class: org.telegram.messenger.y1
-                        @Override // org.telegram.messenger.n10
+                    final long j12 = E;
+                    getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new d3.b(i13), new v10() { // from class: org.telegram.messenger.y1
+                        @Override // org.telegram.messenger.v10
                         public final void a(Object obj, Object obj2) {
                             ArrayList<TLRPC.Update> arrayList5;
                             TLRPC.Updates updates = (TLRPC.Updates) obj;
                             f2 f2Var = f2.this;
-                            long j14 = n10;
+                            long j13 = n11;
                             if (updates == null) {
-                                f2Var.f(-1, j14);
+                                f2Var.f(-1, j13);
                                 return;
                             }
                             ArrayList<TLRPC.Update> arrayList6 = updates.updates;
@@ -266,14 +266,14 @@ public final class f2 extends c1 {
                                 if (update2 instanceof TL_update.TL_updateMessageID) {
                                     TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) update2;
                                     arrayList5 = arrayList6;
-                                    if (tL_updateMessageID.random_id == j13) {
+                                    if (tL_updateMessageID.random_id == j12) {
                                         i14 = tL_updateMessageID.id;
                                     }
                                 } else {
                                     arrayList5 = arrayList6;
                                     if (update2 instanceof TL_update.TL_updateNewMessage) {
                                         TLRPC.Message message = ((TL_update.TL_updateNewMessage) update2).message;
-                                        if (i15 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && zi.B0(message) == j14) {
+                                        if (i15 == 0 && message != null && (message.action instanceof TLRPC.TL_messageActionTopicCreate) && ij.B0(message) == j13) {
                                             i15 = message.id;
                                         }
                                     }
@@ -285,7 +285,7 @@ public final class f2 extends c1 {
                             }
                             f2Var.getMessagesController().O3(updates, false);
                             if (i14 == 0) {
-                                f2Var.f(-1, j14);
+                                f2Var.f(-1, j13);
                                 return;
                             }
                             TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
@@ -294,8 +294,8 @@ public final class f2 extends c1 {
                             String str3 = str2;
                             tL_messageActionTopicCreate.title = str3;
                             tL_messageService.action = tL_messageActionTopicCreate;
-                            tL_messageService.peer_id = f2Var.getMessagesController().z1(j14);
-                            tL_messageService.dialog_id = j14;
+                            tL_messageService.peer_id = f2Var.getMessagesController().z1(j13);
+                            tL_messageService.dialog_id = j13;
                             tL_messageService.id = i14;
                             tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
                             tL_forumTopic.id = i14;
@@ -309,31 +309,31 @@ public final class f2 extends c1 {
                             tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
                             tL_forumTopic.icon_color = 0;
                             tL_forumTopic.title_missing = true;
-                            f2Var.getMessagesController().q7.q(j14, tL_forumTopic, true);
-                            f2Var.f(i14, j14);
-                            f2Var.getNotificationCenter().k(hs.J5, new d2(j14, i14));
+                            f2Var.getMessagesController().q7.q(j13, tL_forumTopic, true);
+                            f2Var.f(i14, j13);
+                            f2Var.getNotificationCenter().k(qs.J5, new d2(j13, i14));
                         }
                     });
                     return false;
                 }
-                j11 = ((TLRPC.TL_messages_sendInlineBotResult) tLObject).random_id;
+                j10 = ((TLRPC.TL_messages_sendInlineBotResult) tLObject).random_id;
             }
             inputPeer3 = inputPeer;
-            j10 = 0;
-            if (!((!z10 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
+            j3 = 0;
+            if (!((!z9 ? ((TLRPC.TL_messages_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMedia ? ((TLRPC.TL_messages_sendMedia) tLObject).reply_to : tLObject instanceof TL_ephemeral.TL_sendMessage ? ((TL_ephemeral.TL_sendMessage) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendInlineBotResult ? ((TLRPC.TL_messages_sendInlineBotResult) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_forwardMessages ? ((TLRPC.TL_messages_forwardMessages) tLObject).reply_to : tLObject instanceof TLRPC.TL_messages_sendMultiMedia ? ((TLRPC.TL_messages_sendMultiMedia) tLObject).reply_to : null) instanceof TLRPC.TL_inputReplyToMessage)) {
             }
         }
         inputPeer = inputPeer2;
-        final long n42 = m5.n(inputPeer);
+        final long n102 = m5.n(inputPeer);
         return inputPeer != null ? true : true;
     }
 
-    public final boolean c(int i3, long j10) {
-        LongSparseArray U = this.a.U(j10, i3);
-        if (U != null && U.size() > 0) {
-            int size = U.size();
+    public final boolean c(int i7, long j3) {
+        LongSparseArray V = this.a.V(j3, i7);
+        if (V != null && V.size() > 0) {
+            int size = V.size();
             for (int i10 = 0; i10 < size; i10++) {
-                if (!((a2) U.valueAt(i10)).e) {
+                if (!((a2) V.valueAt(i10)).e) {
                     return true;
                 }
             }
@@ -341,62 +341,62 @@ public final class f2 extends c1 {
         return false;
     }
 
-    public final boolean d(long j10, long j11) {
-        return this.e.getBoolean(j10 + "_" + j11, false);
+    public final boolean d(long j3, long j10) {
+        return this.e.getBoolean(j3 + "_" + j10, false);
     }
 
-    public final void e(long j10, int i3, long j11) {
-        long j12 = i3;
-        a2 a2Var = (a2) this.a.b0(j10, j12, j11);
+    public final void e(long j3, int i7, long j10) {
+        long j11 = i7;
+        a2 a2Var = (a2) this.a.a0(j3, j11, j10);
         if (a2Var == null) {
             return;
         }
-        getNotificationCenter().k(hs.L5, new b2(j10, a2Var.b, j12));
+        getNotificationCenter().k(qs.L5, new b2(j3, a2Var.b, j11));
     }
 
-    public final void f(int i3, long j10) {
+    public final void f(int i7, long j3) {
         LongSparseArray longSparseArray = this.d;
-        List list = (List) longSparseArray.get(j10);
+        List list = (List) longSparseArray.get(j3);
         if (list != null) {
-            longSparseArray.remove(j10);
+            longSparseArray.remove(j3);
             Iterator it = list.iterator();
             while (it.hasNext()) {
-                ((kr) it.next()).a(i3);
+                ((sr) it.next()).a(i7);
             }
         }
     }
 
-    public final void g(int i3, long j10) {
+    public final void g(int i7, long j3) {
+        long j10;
         long j11;
-        long j12;
-        long j13 = i3;
-        LongSparseArray U = this.a.U(j10, j13);
-        if (U == null) {
+        long j12 = i7;
+        LongSparseArray V = this.a.V(j3, j12);
+        if (V == null) {
             return;
         }
-        int size = U.size();
+        int size = V.size();
         int i10 = 0;
         while (i10 < size) {
-            a2 a2Var = (a2) U.valueAt(i10);
+            a2 a2Var = (a2) V.valueAt(i10);
             if (a2Var.e) {
-                long j14 = j13;
-                j11 = j10;
-                getNotificationCenter().k(hs.L5, new b2(j11, a2Var.b, j14));
-                this.a.b0(j11, j14, a2Var.a);
-                j12 = j14;
+                long j13 = j12;
+                j10 = j3;
+                getNotificationCenter().k(qs.L5, new b2(j10, a2Var.b, j13));
+                this.a.a0(j10, j13, a2Var.a);
+                j11 = j13;
                 i10--;
                 size--;
             } else {
-                j11 = j10;
-                j12 = j13;
+                j10 = j3;
+                j11 = j12;
             }
             i10++;
-            j10 = j11;
-            j13 = j12;
+            j3 = j10;
+            j12 = j11;
         }
     }
 
-    public final void h(long j10, long j11, boolean z10) {
-        this.e.edit().putBoolean(j10 + "_" + j11, z10).apply();
+    public final void h(long j3, long j10, boolean z9) {
+        this.e.edit().putBoolean(j3 + "_" + j10, z9).apply();
     }
 }

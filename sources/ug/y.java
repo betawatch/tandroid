@@ -1,31 +1,24 @@
 package ug;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class y extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+public final class y extends p0 {
+    public final /* synthetic */ i0 R;
 
-    public /* synthetic */ y(f0 f0Var, int i3) {
-        this.a = i3;
-        this.b = f0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y(i0 i0Var, Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.R = i0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.P1.setTranslationY(0.0f);
-                break;
-            default:
-                f0 f0Var = this.b;
-                f0Var.S1 = false;
-                f0Var.P1.setTranslationY(0.0f);
-                f0Var.l0();
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.R.X1) {
+            return;
         }
+        super.invalidate();
     }
 }

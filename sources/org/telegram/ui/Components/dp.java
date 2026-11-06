@@ -1,42 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class dp implements b5.h {
+public final class dp implements c5.g {
     public int a;
-    public final /* synthetic */ vf0 b;
+    public final /* synthetic */ sf0 b;
 
-    public dp(vf0 vf0Var) {
-        this.b = vf0Var;
+    public dp(sf0 sf0Var) {
+        this.b = sf0Var;
     }
 
-    @Override // b5.h
-    public final void b(float f10, int i3, int i10) {
-        if (i3 == this.b.getCurrentItem() && f10 == 0.0f && this.a == 1) {
+    @Override // c5.g
+    public final void b(float f10, int i7, int i10) {
+        if (i7 == this.b.getCurrentItem() && f10 == 0.0f && this.a == 1) {
             d();
         }
     }
 
-    @Override // b5.h
-    public final void c(int i3) {
-        if (i3 == 0) {
+    @Override // c5.g
+    public final void c(int i7) {
+        if (i7 == 0) {
             d();
         }
-        this.a = i3;
+        this.a = i7;
     }
 
     public final void d() {
-        vf0 vf0Var = this.b;
-        if (vf0Var.x0 != null) {
-            int currentItem = vf0Var.getCurrentItem();
-            int k10 = vf0Var.x0.k(currentItem) + vf0Var.x0.j();
+        sf0 sf0Var = this.b;
+        if (sf0Var.w0 != null) {
+            int currentItem = sf0Var.getCurrentItem();
+            int k10 = sf0Var.w0.k(currentItem) + sf0Var.w0.j();
             if (currentItem != k10) {
-                vf0Var.x(k10, false);
+                sf0Var.x(k10, false);
             }
         }
     }
 
-    @Override // b5.h
-    public final void a(int i3) {
+    @Override // c5.g
+    public final void a(int i7) {
     }
 }

@@ -1,149 +1,144 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class fi0 extends u4.t0 {
-    public boolean a;
-    public boolean b;
-    public ValueAnimator c;
-    public ValueAnimator d;
-    public final /* synthetic */ li0 e;
+public final class fi0 extends l9 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ gi0 H;
 
-    public fi0(li0 li0Var) {
-        this.e = li0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fi0(gi0 gi0Var, Context context, int i7) {
+        super(context);
+        this.G = i7;
+        this.H = gi0Var;
     }
 
-    public static ValueAnimator c(float f10, float f11, q0.a aVar, Runnable runnable) {
-        ValueAnimator duration = ValueAnimator.ofFloat(f10, f11).setDuration((long) (Math.abs(f11 - f10) * 150.0f));
-        duration.addUpdateListener(new y50(aVar, 8));
-        duration.addListener(new a60(runnable, 13));
-        duration.start();
-        return duration;
-    }
-
-    @Override // u4.t0
-    public final void b(RecyclerView recyclerView, int i3, int i10) {
-        li0 li0Var = this.e;
-        kg.f0 f0Var = li0Var.a0;
-        boolean z10 = f0Var.L0() != 0;
-        if (z10 != this.a) {
-            ValueAnimator valueAnimator = this.c;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            final int i11 = 0;
-            final int i12 = 0;
-            this.c = c(li0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.di0
-                public final /* synthetic */ fi0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f10 = (Float) obj;
-                    switch (i11) {
-                        case 0:
-                            li0 li0Var2 = this.b.e;
-                            Paint paint = li0Var2.h;
-                            float floatValue = f10.floatValue();
-                            li0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            li0Var2.invalidate();
-                            break;
-                        default:
-                            li0 li0Var3 = this.b.e;
-                            Paint paint2 = li0Var3.n;
-                            float floatValue2 = f10.floatValue();
-                            li0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            li0Var3.invalidate();
-                            break;
-                    }
-                }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.ei0
-                public final /* synthetic */ fi0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i12) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
-                }
-            });
-            this.a = z10;
+    @Override // org.telegram.ui.Components.l9
+    public ImageReceiver c() {
+        switch (this.G) {
+            case 0:
+                return new ei0(0, this);
+            case 1:
+                return new ei0(1, this);
+            default:
+                return super.c();
         }
-        boolean z11 = f0Var.N0() != li0Var.b0.b() - 1;
-        if (z11 != this.b) {
-            ValueAnimator valueAnimator2 = this.d;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-            }
-            final int i13 = 1;
-            final int i14 = 1;
-            this.d = c(li0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.di0
-                public final /* synthetic */ fi0 b;
+    }
 
-                {
-                    this.b = this;
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                gi0 gi0Var = this.H;
+                fi0 fi0Var = gi0Var.b;
+                super.dispatchDraw(canvas);
+                if (this.a.B() != null && !gi0Var.E) {
+                    this.a.B().start();
                 }
-
-                @Override // q0.a
-                public final void accept(Object obj) {
-                    Float f10 = (Float) obj;
-                    switch (i13) {
-                        case 0:
-                            li0 li0Var2 = this.b.e;
-                            Paint paint = li0Var2.h;
-                            float floatValue = f10.floatValue();
-                            li0Var2.r = floatValue;
-                            paint.setAlpha((int) (floatValue * 255.0f));
-                            li0Var2.invalidate();
-                            break;
-                        default:
-                            li0 li0Var3 = this.b.e;
-                            Paint paint2 = li0Var3.n;
-                            float floatValue2 = f10.floatValue();
-                            li0Var3.s = floatValue2;
-                            paint2.setAlpha((int) (floatValue2 * 255.0f));
-                            li0Var3.invalidate();
-                            break;
+                if (gi0Var.s && !gi0Var.w && this.a.B() != null && this.a.B().A() && fi0Var.a.B() != null && fi0Var.a.B().u()) {
+                    gi0Var.w = true;
+                    fi0Var.a.B().N(0, false, true);
+                    fi0Var.setVisibility(0);
+                    Runnable runnable = gi0Var.P.P0;
+                    if (runnable != null) {
+                        runnable.run();
                     }
+                    org.telegram.messenger.g0.h3(new ob0(this, 12));
                 }
-            }, new Runnable(this) { // from class: org.telegram.ui.Components.ei0
-                public final /* synthetic */ fi0 b;
+                invalidate();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
 
-                {
-                    this.b = this;
+    @Override // android.view.View
+    public void invalidate(Rect rect) {
+        switch (this.G) {
+            case 0:
+                gi0 gi0Var = this.H;
+                if (!ch.e0.c(this, gi0Var.P)) {
+                    super.invalidate(rect);
+                    gi0Var.P.invalidate();
+                    break;
                 }
+                break;
+            default:
+                super.invalidate(rect);
+                break;
+        }
+    }
 
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i14) {
-                        case 0:
-                            this.b.c = null;
-                            break;
-                        default:
-                            this.b.d = null;
-                            break;
-                    }
+    @Override // org.telegram.ui.Components.l9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                this.H.b();
+                super.onDraw(canvas);
+                break;
+            case 2:
+                i5 i5Var = this.e;
+                ImageReceiver imageReceiver = i5Var != null ? i5Var.k : this.a;
+                if (imageReceiver != null && imageReceiver.B() != null) {
+                    imageReceiver.B().start();
                 }
-            });
-            this.b = z11;
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i7, int i10, int i11, int i12) {
+        switch (this.G) {
+            case 0:
+                if (!ch.e0.c(this)) {
+                    super.invalidate(i7, i10, i11, i12);
+                    break;
+                }
+                break;
+            case 1:
+                if (!ch.e0.c(this)) {
+                    super.invalidate(i7, i10, i11, i12);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i7, i10, i11, i12);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        int i7 = this.G;
+        gi0 gi0Var = this.H;
+        switch (i7) {
+            case 0:
+                if (!ch.e0.c(this, gi0Var.P)) {
+                    super.invalidate();
+                    gi0Var.P.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                if (!ch.e0.c(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                gi0Var.P.invalidate();
+                break;
         }
     }
 }

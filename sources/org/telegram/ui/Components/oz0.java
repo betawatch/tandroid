@@ -26,15 +26,15 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class oz0 extends FrameLayout {
-    public LinearGradient E;
+    public LinearGradient D;
+    public boolean E;
     public boolean F;
     public boolean G;
-    public boolean H;
-    public final DecelerateInterpolator I;
-    public final /* synthetic */ ThemeEditorView.EditorAlert J;
+    public final DecelerateInterpolator H;
+    public final /* synthetic */ ThemeEditorView.EditorAlert I;
     public final LinearLayout a;
     public final int b;
     public final Paint c;
@@ -52,16 +52,16 @@ public final class oz0 extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public oz0(ThemeEditorView.EditorAlert editorAlert, Context context) {
         super(context);
-        this.J = editorAlert;
+        this.I = editorAlert;
         this.b = org.telegram.messenger.g0.L(20.0f);
         this.n = new EditTextBoldCursor[4];
         this.s = new float[]{0.0f, 0.0f, 1.0f};
         this.w = 1.0f;
         this.x = new float[3];
-        this.I = new DecelerateInterpolator();
+        this.H = new DecelerateInterpolator();
         setWillNotDraw(false);
         this.e = new Paint(1);
-        this.f = k2.p1.g(context, R.drawable.knob_shadow);
+        this.f = jg.g.h(context, R.drawable.knob_shadow);
         Paint paint = new Paint();
         this.c = paint;
         paint.setAntiAlias(true);
@@ -73,48 +73,48 @@ public final class oz0 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.a = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, b8.mf.e(-2, -2, 49));
-        int i3 = 0;
-        while (i3 < 4) {
-            this.n[i3] = new EditTextBoldCursor(context);
+        addView(linearLayout, c8.ha.e(-2, -2, 49));
+        int i7 = 0;
+        while (i7 < 4) {
+            this.n[i7] = new EditTextBoldCursor(context);
             int i10 = 2;
-            this.n[i3].setInputType(2);
-            this.n[i3].setTextColor(-14606047);
-            this.n[i3].setCursorColor(-14606047);
-            this.n[i3].setCursorSize(org.telegram.messenger.g0.L(20.0f));
-            this.n[i3].setCursorWidth(1.5f);
-            this.n[i3].setTextSize(1, 18.0f);
-            this.n[i3].setBackground(null);
-            org.telegram.ui.ActionBar.r6.G(this.n[i3], org.telegram.ui.ActionBar.k6.u5, org.telegram.ui.ActionBar.k6.v5, org.telegram.ui.ActionBar.k6.q7, null);
-            this.n[i3].setMaxLines(1);
-            this.n[i3].setTag(Integer.valueOf(i3));
-            this.n[i3].setGravity(17);
-            if (i3 == 0) {
-                this.n[i3].setHint("red");
-            } else if (i3 == 1) {
-                this.n[i3].setHint("green");
-            } else if (i3 == 2) {
-                this.n[i3].setHint("blue");
-            } else if (i3 == 3) {
-                this.n[i3].setHint("alpha");
+            this.n[i7].setInputType(2);
+            this.n[i7].setTextColor(-14606047);
+            this.n[i7].setCursorColor(-14606047);
+            this.n[i7].setCursorSize(org.telegram.messenger.g0.L(20.0f));
+            this.n[i7].setCursorWidth(1.5f);
+            this.n[i7].setTextSize(1, 18.0f);
+            this.n[i7].setBackground(null);
+            org.telegram.ui.ActionBar.r6.G(this.n[i7], org.telegram.ui.ActionBar.k6.u5, org.telegram.ui.ActionBar.k6.v5, org.telegram.ui.ActionBar.k6.q7, null);
+            this.n[i7].setMaxLines(1);
+            this.n[i7].setTag(Integer.valueOf(i7));
+            this.n[i7].setGravity(17);
+            if (i7 == 0) {
+                this.n[i7].setHint("red");
+            } else if (i7 == 1) {
+                this.n[i7].setHint("green");
+            } else if (i7 == 2) {
+                this.n[i7].setHint("blue");
+            } else if (i7 == 3) {
+                this.n[i7].setHint("alpha");
             }
-            this.n[i3].setImeOptions((i3 == 3 ? 6 : 5) | TLObject.FLAG_28);
-            this.n[i3].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
-            this.a.addView(this.n[i3], b8.mf.k(0.0f, 0.0f, i3 != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
-            this.n[i3].addTextChangedListener(new nz0(this, i3));
-            this.n[i3].setOnEditorActionListener(new i2(i10));
-            i3++;
+            this.n[i7].setImeOptions((i7 == 3 ? 6 : 5) | TLObject.FLAG_28);
+            this.n[i7].setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
+            this.a.addView(this.n[i7], c8.ha.k(0.0f, 0.0f, i7 != 3 ? 16.0f : 0.0f, 0.0f, 55, 36));
+            this.n[i7].addTextChangedListener(new nz0(this, i7));
+            this.n[i7].setOnEditorActionListener(new l2(i10));
+            i7++;
         }
     }
 
-    public final void a(Canvas canvas, int i3, int i10, int i11) {
+    public final void a(Canvas canvas, int i7, int i10, int i11) {
         int L = org.telegram.messenger.g0.L(13.0f);
         Drawable drawable = this.f;
-        drawable.setBounds(i3 - L, i10 - L, i3 + L, L + i10);
+        drawable.setBounds(i7 - L, i10 - L, i7 + L, L + i10);
         drawable.draw(canvas);
         Paint paint = this.e;
         paint.setColor(-1);
-        float f10 = i3;
+        float f10 = i7;
         float f11 = i10;
         canvas.drawCircle(f10, f11, org.telegram.messenger.g0.L(11.0f), paint);
         paint.setColor(i11);
@@ -125,14 +125,14 @@ public final class oz0 extends FrameLayout {
         return (Color.HSVToColor(this.s) & 16777215) | (((int) (this.w * 255.0f)) << 24);
     }
 
-    public final void c(int i3) {
-        int red = Color.red(i3);
-        int green = Color.green(i3);
-        int blue = Color.blue(i3);
-        int alpha = Color.alpha(i3);
-        ThemeEditorView.EditorAlert editorAlert = this.J;
-        if (!editorAlert.C1) {
-            editorAlert.C1 = true;
+    public final void c(int i7) {
+        int red = Color.red(i7);
+        int green = Color.green(i7);
+        int blue = Color.blue(i7);
+        int alpha = Color.alpha(i7);
+        ThemeEditorView.EditorAlert editorAlert = this.I;
+        if (!editorAlert.B1) {
+            editorAlert.B1 = true;
             EditTextBoldCursor[] editTextBoldCursorArr = this.n;
             editTextBoldCursorArr[0].setText("" + red);
             editTextBoldCursorArr[1].setText("" + green);
@@ -142,39 +142,39 @@ public final class oz0 extends FrameLayout {
                 EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i10];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
             }
-            editorAlert.C1 = false;
+            editorAlert.B1 = false;
         }
-        this.E = null;
+        this.D = null;
         this.y = null;
         this.w = alpha / 255.0f;
-        Color.colorToHSV(i3, this.s);
+        Color.colorToHSV(i7, this.s);
         invalidate();
     }
 
-    public final void d(boolean z10) {
-        ThemeEditorView.EditorAlert editorAlert = this.J;
-        if (editorAlert.B1 == z10) {
+    public final void d(boolean z9) {
+        ThemeEditorView.EditorAlert editorAlert = this.I;
+        if (editorAlert.A1 == z9) {
             return;
         }
-        AnimatorSet animatorSet = editorAlert.A1;
+        AnimatorSet animatorSet = editorAlert.z1;
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        editorAlert.B1 = z10;
+        editorAlert.A1 = z9;
         AnimatorSet animatorSet2 = new AnimatorSet();
-        editorAlert.A1 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofInt(editorAlert.Z, k6.d, z10 ? 0 : 51), ObjectAnimator.ofFloat(editorAlert.b, (Property<ViewGroup, Float>) View.ALPHA, z10 ? 0.2f : 1.0f));
-        editorAlert.A1.setDuration(150L);
-        editorAlert.A1.setInterpolator(this.I);
-        editorAlert.A1.start();
+        editorAlert.z1 = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofInt(editorAlert.Y, m6.d, z9 ? 0 : 51), ObjectAnimator.ofFloat(editorAlert.b, (Property<ViewGroup, Float>) View.ALPHA, z9 ? 0.2f : 1.0f));
+        editorAlert.z1.setDuration(150L);
+        editorAlert.z1.setInterpolator(this.H);
+        editorAlert.z1.start();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        char c2;
+        char c10;
         int width = getWidth() / 2;
-        int i3 = this.b;
-        int i10 = width - (i3 * 2);
+        int i7 = this.b;
+        int i10 = width - (i7 * 2);
         int height = (getHeight() / 2) - org.telegram.messenger.g0.L(8.0f);
         Bitmap bitmap = this.h;
         int i11 = this.r;
@@ -191,15 +191,15 @@ public final class oz0 extends FrameLayout {
         fArr2[2] = 1.0f;
         a(canvas, i12, ((int) (d * f10 * this.r)) + height, Color.HSVToColor(fArr2));
         int i13 = this.r;
-        int i14 = i10 + i13 + i3;
+        int i14 = i10 + i13 + i7;
         int i15 = height - i13;
         int L = org.telegram.messenger.g0.L(9.0f);
         int i16 = this.r * 2;
         if (this.y == null) {
-            c2 = 2;
+            c10 = 2;
             this.y = new LinearGradient(i14, i15, i14 + L, i15 + i16, new int[]{-16777216, Color.HSVToColor(fArr2)}, (float[]) null, Shader.TileMode.CLAMP);
         } else {
-            c2 = 2;
+            c10 = 2;
         }
         LinearGradient linearGradient = this.y;
         Paint paint = this.d;
@@ -209,35 +209,35 @@ public final class oz0 extends FrameLayout {
         canvas.drawRect(i14, f12, i14 + L, f13, paint);
         int i17 = L / 2;
         float f14 = i16;
-        a(canvas, i14 + i17, (int) ((fArr[c2] * f14) + f12), Color.HSVToColor(fArr));
-        int i18 = (i3 * 2) + i14;
-        if (this.E == null) {
+        a(canvas, i14 + i17, (int) ((fArr[c10] * f14) + f12), Color.HSVToColor(fArr));
+        int i18 = (i7 * 2) + i14;
+        if (this.D == null) {
             int HSVToColor = Color.HSVToColor(fArr2);
-            this.E = new LinearGradient(i18, f12, i18 + L, f13, new int[]{HSVToColor, HSVToColor & 16777215}, (float[]) null, Shader.TileMode.CLAMP);
+            this.D = new LinearGradient(i18, f12, i18 + L, f13, new int[]{HSVToColor, HSVToColor & 16777215}, (float[]) null, Shader.TileMode.CLAMP);
         }
-        paint.setShader(this.E);
+        paint.setShader(this.D);
         canvas.drawRect(i18, f12, L + i18, f13, paint);
-        a(canvas, i18 + i17, (int) com.google.android.recaptcha.internal.a.y(1.0f, this.w, f14, f12), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.w * 255.0f)) << 24));
+        a(canvas, i18 + i17, (int) com.google.android.recaptcha.internal.a.z(1.0f, this.w, f14, f12), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.w * 255.0f)) << 24));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        int min = Math.min(View.MeasureSpec.getSize(i3), View.MeasureSpec.getSize(i10));
-        measureChild(this.a, i3, i10);
+    public final void onMeasure(int i7, int i10) {
+        int min = Math.min(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
+        measureChild(this.a, i7, i10);
         setMeasuredDimension(min, min);
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i3, int i10, int i11, int i12) {
-        int d = k2.p1.d(20.0f, (i3 / 2) - (this.b * 2), 1);
-        this.r = d;
-        int i13 = d * 2;
-        int i14 = d * 2;
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        int e10 = jg.g.e(20.0f, (i7 / 2) - (this.b * 2), 1);
+        this.r = e10;
+        int i13 = e10 * 2;
+        int i14 = e10 * 2;
         Bitmap createBitmap = Bitmap.createBitmap(i13, i14, Bitmap.Config.ARGB_8888);
         int[] iArr = new int[13];
         float[] fArr = {0.0f, 1.0f, 1.0f};
         for (int i15 = 0; i15 < 13; i15++) {
-            fArr[0] = ((i15 * 30) + org.telegram.messenger.hs.K2) % 360;
+            fArr[0] = ((i15 * 30) + org.telegram.messenger.qs.K2) % 360;
             iArr[i15] = Color.HSVToColor(fArr);
         }
         iArr[12] = iArr[0];
@@ -249,7 +249,7 @@ public final class oz0 extends FrameLayout {
         new Canvas(createBitmap).drawCircle(f10, f11, this.r, paint);
         this.h = createBitmap;
         this.y = null;
-        this.E = null;
+        this.D = null;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0069, code lost:
@@ -283,53 +283,53 @@ public final class oz0 extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i3;
+        int i7;
         int i10;
         float f10;
-        boolean z10;
+        boolean z9;
         int i11;
         float f11;
-        ThemeEditorView.EditorAlert editorAlert = this.J;
+        ThemeEditorView.EditorAlert editorAlert = this.I;
         ThemeEditorView themeEditorView = ThemeEditorView.this;
         int action = motionEvent.getAction();
         if (action != 0) {
             if (action == 1) {
-                this.H = false;
                 this.G = false;
                 this.F = false;
+                this.E = false;
                 d(false);
             }
             return super.onTouchEvent(motionEvent);
         }
         int x10 = (int) motionEvent.getX();
-        int y9 = (int) motionEvent.getY();
+        int y10 = (int) motionEvent.getY();
         int width = getWidth() / 2;
         int i12 = this.b;
         int i13 = i12 * 2;
         int i14 = width - i13;
         int height = (getHeight() / 2) - org.telegram.messenger.g0.L(8.0f);
         int i15 = x10 - i14;
-        int i16 = y9 - height;
+        int i16 = y10 - height;
         double sqrt = Math.sqrt((i16 * i16) + (i15 * i15));
-        boolean z11 = this.F;
-        boolean z12 = false;
+        boolean z10 = this.E;
+        boolean z11 = false;
         float[] fArr = this.s;
-        if (!z11) {
-            if (this.H || this.G) {
-                i3 = y9;
+        if (!z10) {
+            if (this.G || this.F) {
+                i7 = y10;
             } else {
-                i3 = y9;
+                i7 = y10;
             }
-            if (this.G) {
-                if (!this.F && !this.H) {
+            if (this.F) {
+                if (!this.E && !this.G) {
                     int i17 = this.r;
                     int i18 = i14 + i17;
                     if (x10 >= i18 + i12 && x10 <= i13 + i18) {
-                        i10 = i3;
+                        i10 = i7;
                         if (i10 >= height - i17) {
                         }
-                        if (!this.H) {
-                            if (!this.F && !this.G) {
+                        if (!this.G) {
+                            if (!this.E && !this.F) {
                                 int i19 = this.r;
                                 int i20 = i14 + i19;
                                 if (x10 >= (i12 * 3) + i20) {
@@ -339,11 +339,11 @@ public final class oz0 extends FrameLayout {
                                     }
                                 }
                             }
-                            z10 = true;
-                            if (this.H && !this.G && !this.F) {
-                                return z10;
+                            z9 = true;
+                            if (this.G && !this.F && !this.E) {
+                                return z9;
                             }
-                            d(z10);
+                            d(z9);
                             int b10 = b();
                             i11 = 0;
                             while (i11 < themeEditorView.e.size()) {
@@ -351,17 +351,17 @@ public final class oz0 extends FrameLayout {
                                 if ((i11 == 0 && i21 == org.telegram.ui.ActionBar.k6.Be) || i21 == org.telegram.ui.ActionBar.k6.Ce || i21 == org.telegram.ui.ActionBar.k6.De || i21 == org.telegram.ui.ActionBar.k6.Ee || i21 == org.telegram.ui.ActionBar.k6.d6 || i21 == org.telegram.ui.ActionBar.k6.a7) {
                                     b10 |= -16777216;
                                 }
-                                ((org.telegram.ui.ActionBar.t6) themeEditorView.e.get(i11)).e(b10, z12, true);
+                                ((org.telegram.ui.ActionBar.t6) themeEditorView.e.get(i11)).e(b10, z11, true);
                                 i11++;
-                                z12 = false;
+                                z11 = false;
                             }
                             ThemeEditorView.a(themeEditorView);
                             int red = Color.red(b10);
                             int green = Color.green(b10);
                             int blue = Color.blue(b10);
                             int alpha = Color.alpha(b10);
-                            if (!editorAlert.C1) {
-                                editorAlert.C1 = true;
+                            if (!editorAlert.B1) {
+                                editorAlert.B1 = true;
                                 EditTextBoldCursor[] editTextBoldCursorArr = this.n;
                                 editTextBoldCursorArr[0].setText("" + red);
                                 editTextBoldCursorArr[1].setText("" + green);
@@ -371,7 +371,7 @@ public final class oz0 extends FrameLayout {
                                     EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i22];
                                     editTextBoldCursor.setSelection(editTextBoldCursor.length());
                                 }
-                                editorAlert.C1 = false;
+                                editorAlert.B1 = false;
                             }
                             invalidate();
                             return true;
@@ -383,11 +383,11 @@ public final class oz0 extends FrameLayout {
                         } else if (f10 > 1.0f) {
                             this.w = 1.0f;
                         }
-                        z10 = true;
-                        this.H = true;
-                        if (this.H) {
+                        z9 = true;
+                        this.G = true;
+                        if (this.G) {
                         }
-                        d(z10);
+                        d(z9);
                         int b102 = b();
                         i11 = 0;
                         while (i11 < themeEditorView.e.size()) {
@@ -397,24 +397,24 @@ public final class oz0 extends FrameLayout {
                         int green2 = Color.green(b102);
                         int blue2 = Color.blue(b102);
                         int alpha2 = Color.alpha(b102);
-                        if (!editorAlert.C1) {
+                        if (!editorAlert.B1) {
                         }
                         invalidate();
                         return true;
                     }
                 }
-                i10 = i3;
-                if (!this.H) {
+                i10 = i7;
+                if (!this.G) {
                 }
                 f10 = 1.0f - ((i10 - (height - r3)) / (this.r * 2.0f));
                 this.w = f10;
                 if (f10 >= 0.0f) {
                 }
-                z10 = true;
-                this.H = true;
-                if (this.H) {
+                z9 = true;
+                this.G = true;
+                if (this.G) {
                 }
-                d(z10);
+                d(z9);
                 int b1022 = b();
                 i11 = 0;
                 while (i11 < themeEditorView.e.size()) {
@@ -424,12 +424,12 @@ public final class oz0 extends FrameLayout {
                 int green22 = Color.green(b1022);
                 int blue22 = Color.blue(b1022);
                 int alpha22 = Color.alpha(b1022);
-                if (!editorAlert.C1) {
+                if (!editorAlert.B1) {
                 }
                 invalidate();
                 return true;
             }
-            i10 = i3;
+            i10 = i7;
             f11 = (i10 - (height - r4)) / (this.r * 2.0f);
             if (f11 >= 0.0f) {
                 f11 = 0.0f;
@@ -437,18 +437,18 @@ public final class oz0 extends FrameLayout {
                 f11 = 1.0f;
             }
             fArr[2] = f11;
-            this.G = true;
-            if (!this.H) {
+            this.F = true;
+            if (!this.G) {
             }
             f10 = 1.0f - ((i10 - (height - r3)) / (this.r * 2.0f));
             this.w = f10;
             if (f10 >= 0.0f) {
             }
-            z10 = true;
-            this.H = true;
-            if (this.H) {
+            z9 = true;
+            this.G = true;
+            if (this.G) {
             }
-            d(z10);
+            d(z9);
             int b10222 = b();
             i11 = 0;
             while (i11 < themeEditorView.e.size()) {
@@ -458,39 +458,39 @@ public final class oz0 extends FrameLayout {
             int green222 = Color.green(b10222);
             int blue222 = Color.blue(b10222);
             int alpha222 = Color.alpha(b10222);
-            if (!editorAlert.C1) {
+            if (!editorAlert.B1) {
             }
             invalidate();
             return true;
         }
-        i3 = y9;
+        i7 = y10;
         double d = this.r;
         if (sqrt > d) {
             sqrt = d;
         }
-        this.F = true;
+        this.E = true;
         fArr[0] = (float) (Math.toDegrees(Math.atan2(i16, i15)) + 180.0d);
         fArr[1] = Math.max(0.0f, Math.min(1.0f, (float) (sqrt / this.r)));
         this.y = null;
-        this.E = null;
-        if (this.G) {
+        this.D = null;
+        if (this.F) {
         }
         f11 = (i10 - (height - r4)) / (this.r * 2.0f);
         if (f11 >= 0.0f) {
         }
         fArr[2] = f11;
-        this.G = true;
-        if (!this.H) {
+        this.F = true;
+        if (!this.G) {
         }
         f10 = 1.0f - ((i10 - (height - r3)) / (this.r * 2.0f));
         this.w = f10;
         if (f10 >= 0.0f) {
         }
-        z10 = true;
-        this.H = true;
-        if (this.H) {
+        z9 = true;
+        this.G = true;
+        if (this.G) {
         }
-        d(z10);
+        d(z9);
         int b102222 = b();
         i11 = 0;
         while (i11 < themeEditorView.e.size()) {
@@ -500,7 +500,7 @@ public final class oz0 extends FrameLayout {
         int green2222 = Color.green(b102222);
         int blue2222 = Color.blue(b102222);
         int alpha2222 = Color.alpha(b102222);
-        if (!editorAlert.C1) {
+        if (!editorAlert.B1) {
         }
         invalidate();
         return true;

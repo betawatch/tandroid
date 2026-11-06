@@ -9,14 +9,14 @@ public class l implements Map.Entry {
     public volatile Object c;
     public volatile l d;
 
-    public l(int i3, Object obj, Object obj2) {
-        this.a = i3;
+    public l(int i7, Object obj, Object obj2) {
+        this.a = i7;
         this.b = obj;
         this.c = obj2;
     }
 
-    public l(int i3, Object obj, Object obj2, l lVar) {
-        this(i3, obj, obj2);
+    public l(int i7, Object obj, Object obj2, l lVar) {
+        this(i7, obj, obj2);
         this.d = lVar;
     }
 
@@ -60,11 +60,11 @@ public class l implements Map.Entry {
         return value == obj3 || value.equals(obj3);
     }
 
-    public l a(int i3, Object obj) {
+    public l a(int i7, Object obj) {
         Object obj2;
         l lVar = this;
         do {
-            if (lVar.a == i3 && ((obj2 = lVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
+            if (lVar.a == i7 && ((obj2 = lVar.b) == obj || (obj2 != null && obj.equals(obj2)))) {
                 return lVar;
             }
             lVar = lVar.d;

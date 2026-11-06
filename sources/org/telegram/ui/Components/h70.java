@@ -1,30 +1,131 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h70 extends oo0 {
-    public final /* synthetic */ m70 S2;
+public final class h70 extends View {
+    public static DecelerateInterpolator w;
+    public static Paint x;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.n s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h70(m70 m70Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.S2 = m70Var;
+    public h70(Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (w == null) {
+            w = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            x = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            x.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        }
     }
 
-    @Override // org.telegram.ui.Components.oo0
-    public final void R0(a0.h hVar, int i3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.bd.a0(null, null, 2131749195, org.telegram.messenger.bd.G(i3, "Chats", new Object[0]));
-            } else {
-                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j10 == 0 || j10 == org.telegram.messenger.h10.i(this.a).e()) ? org.telegram.messenger.bd.M0(2131749193, null) : org.telegram.messenger.bd.a0(null, null, 2131749192, org.telegram.messenger.hp.s1(this.a).B1(j10, true));
-            }
-            this.S2.e(org.telegram.messenger.g0.X2(a02));
+    public final void a(boolean z9, float f10) {
+        if (z9) {
+            this.c = this.e;
+        } else {
+            this.e = f10;
+            this.c = f10;
         }
+        if (f10 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f10;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
+    }
+
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = this.h;
+        RectF rectF = this.r;
+        if (i7 != 0 && this.e != 1.0f) {
+            x.setColor(i7);
+            x.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        }
+        x.setColor(this.n);
+        x.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.qs.q2, 0);
+                this.s = nVar;
+                nVar.k = false;
+                nVar.n = 0.8f;
+                nVar.m = 1.2f;
+            }
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f10 = this.e;
+        if (f10 != 1.0f) {
+            float f11 = this.b;
+            if (f10 != f11) {
+                float f12 = this.c;
+                float f13 = f11 - f12;
+                if (f13 > 0.0f) {
+                    long j10 = this.d + j3;
+                    this.d = j10;
+                    if (j10 >= 300) {
+                        this.e = f11;
+                        this.c = f11;
+                        this.d = 0L;
+                    } else {
+                        this.e = (w.getInterpolation(j10 / 300.0f) * f13) + f12;
+                    }
+                }
+                invalidate();
+            }
+        }
+        float f14 = this.e;
+        if (f14 < 1.0f || f14 != 1.0f) {
+            return;
+        }
+        float f15 = this.f;
+        if (f15 != 0.0f) {
+            float f16 = f15 - (j3 / 200.0f);
+            this.f = f16;
+            if (f16 <= 0.0f) {
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+    }
+
+    public void setBackColor(int i7) {
+        this.h = i7;
+    }
+
+    public void setProgressColor(int i7) {
+        this.n = i7;
     }
 }

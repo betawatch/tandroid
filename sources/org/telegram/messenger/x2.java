@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.Pair;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public final long a;
@@ -28,46 +28,46 @@ public abstract class x2 {
         return false;
     }
 
-    public final void c(int i3, Object obj, u10 u10Var) {
-        Pair pair = new Pair(Integer.valueOf(i3), obj);
+    public final void c(int i7, Object obj, c20 c20Var) {
+        Pair pair = new Pair(Integer.valueOf(i7), obj);
         HashMap hashMap = this.c;
         if (hashMap != null && hashMap.get(pair) != null) {
-            g0.h3(new fg(this, pair, u10Var, 11));
+            g0.h3(new ng(this, pair, c20Var, 11));
             return;
         }
         HashMap hashMap2 = this.b;
         Object obj2 = hashMap2 == null ? null : hashMap2.get(pair);
         if (obj2 != null && !i(pair)) {
-            u10Var.a(obj2);
+            c20Var.a(obj2);
         } else {
-            g0.h3(new fg(this, pair, u10Var, 11));
-            e(i3, obj, new v2(this, pair, obj, i3));
+            g0.h3(new ng(this, pair, c20Var, 11));
+            e(i7, obj, new v2(this, pair, obj, i7));
         }
     }
 
-    public final void d(int i3, Integer num) {
+    public final void d(int i7, Integer num) {
         if (this.d == null) {
             return;
         }
-        Pair pair = new Pair(Integer.valueOf(i3), num);
+        Pair pair = new Pair(Integer.valueOf(i7), num);
         this.d.remove(pair);
-        if (this instanceof fo) {
+        if (this instanceof po) {
             h(pair.hashCode(), 0L);
         }
     }
 
-    public void e(int i3, Object obj, n10 n10Var) {
-        ((v2) n10Var).a(0L, null);
+    public void e(int i7, Object obj, v10 v10Var) {
+        ((v2) v10Var).a(0L, null);
     }
 
-    public abstract void f(int i3, Object obj, long j10, w2 w2Var);
+    public abstract void f(int i7, Object obj, long j3, w2 w2Var);
 
     public final boolean i(Pair pair) {
         HashMap hashMap = this.d;
         Long l10 = hashMap != null ? (Long) hashMap.get(pair) : null;
-        if ((this instanceof fo) && l10 == null) {
+        if ((this instanceof po) && l10 == null) {
             int hashCode = pair.hashCode();
-            l10 = Long.valueOf(((fo) this).e.e7.getLong("effects_last_" + hashCode, 0L));
+            l10 = Long.valueOf(((po) this).e.e7.getLong("effects_last_" + hashCode, 0L));
         }
         return l10 == null || System.currentTimeMillis() - l10.longValue() >= this.a;
     }
@@ -76,13 +76,13 @@ public abstract class x2 {
         return true;
     }
 
-    public x2(int i3) {
-        this.a = i3;
+    public x2(int i7) {
+        this.a = i7;
     }
 
-    public void h(int i3, long j10) {
+    public void h(int i7, long j3) {
     }
 
-    public void g(int i3, Object obj, Object obj2) {
+    public void g(int i7, Object obj, Object obj2) {
     }
 }

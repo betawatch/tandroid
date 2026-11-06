@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class ps extends View {
     public final ly0 a;
@@ -23,7 +23,7 @@ public class ps extends View {
     public final ImageReceiver c;
     public final Rect d;
     public final RectF e;
-    public gh.g f;
+    public fh.g f;
 
     public ps(Context context, CharSequence charSequence) {
         super(context);
@@ -33,15 +33,15 @@ public class ps extends View {
         this.c = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.g0.L(22.66f));
         this.a = new ly0(charSequence, 14.0f, org.telegram.messenger.g0.o());
-        Drawable g7 = k2.p1.g(context, R.drawable.arrow_newchat);
-        this.b = g7;
-        g7.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
+        Drawable h = jg.g.h(context, R.drawable.arrow_newchat);
+        this.b = h;
+        h.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
     }
 
     public final void a(TLRPC.Photo photo, Object obj) {
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(48.0f), false, null, true);
         TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.L(24.0f), false, w10, false);
-        this.c.r0(org.telegram.messenger.ac.i(w10, photo), "24_24", org.telegram.messenger.ac.i(w11, photo), "24_24", null, 0L, null, obj, 0);
+        this.c.r0(org.telegram.messenger.hc.i(w10, photo), "24_24", org.telegram.messenger.hc.i(w11, photo), "24_24", null, 0L, null, obj, 0);
     }
 
     @Override // android.view.View
@@ -72,12 +72,12 @@ public class ps extends View {
         int L2 = org.telegram.messenger.g0.L(24.0f);
         int width = (getWidth() - L) / 2;
         int height = getHeight() / 2;
-        int i3 = height - (L2 / 2);
+        int i7 = height - (L2 / 2);
         int i10 = L + width;
         Rect rect = this.d;
-        rect.set(width, i3, i10, L2 + i3);
+        rect.set(width, i7, i10, L2 + i7);
         rect.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
-        gh.g gVar = this.f;
+        fh.g gVar = this.f;
         if (gVar != null) {
             gVar.setBounds(rect);
             this.f.draw(canvas);
@@ -103,7 +103,7 @@ public class ps extends View {
         drawable.draw(canvas);
     }
 
-    public void setBlurredBackgroundDrawable(gh.g gVar) {
+    public void setBlurredBackgroundDrawable(fh.g gVar) {
         gVar.q(org.telegram.messenger.g0.L(4.0f));
         gVar.r(org.telegram.messenger.g0.L(11.0f));
         this.f = gVar;
@@ -118,7 +118,7 @@ public class ps extends View {
         if (str == null) {
             setImage((Bitmap) null);
         } else {
-            Utilities.e.c(new cl(10, this, str));
+            Utilities.e.c(new fq(5, this, str));
         }
     }
 }

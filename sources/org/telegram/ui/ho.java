@@ -1,48 +1,36 @@
 package org.telegram.ui;
 
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ho extends LinearLayout implements org.telegram.messenger.cs {
-    public org.telegram.ui.Components.k9 a;
-    public org.telegram.ui.Components.y70 b;
-    public int c;
+public final /* synthetic */ class ho implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ so b;
 
-    public final void a() {
-        org.telegram.ui.Components.k9 k9Var = this.a;
-        int i3 = this.c;
-        TLRPC.TL_messages_stickerSet p02 = org.telegram.messenger.li.b0(i3).p0("tg_placeholders_android");
-        if (p02 == null) {
-            p02 = org.telegram.messenger.li.b0(i3).n0("tg_placeholders_android");
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
-        if (tL_messages_stickerSet != null && tL_messages_stickerSet.documents.size() >= 3) {
-            k9Var.k(org.telegram.messenger.ac.b(tL_messages_stickerSet.documents.get(2)), "104_104", "tgs", this.b, tL_messages_stickerSet);
-        } else {
-            org.telegram.messenger.li.b0(i3).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-            k9Var.setImageDrawable(this.b);
-        }
+    public /* synthetic */ ho(so soVar, int i7) {
+        this.a = i7;
+        this.b = soVar;
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
-        if (i3 == org.telegram.messenger.hs.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
-            a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                so soVar = this.b;
+                org.telegram.ui.ActionBar.u1 u1Var = soVar.r;
+                if (u1Var != null) {
+                    u1Var.setOnCancelListener(new vf(soVar, 2));
+                    soVar.showDialog(soVar.r);
+                    break;
+                }
+                break;
+            case 1:
+                so soVar2 = this.b;
+                soVar2.getMessagesController().V2(0, soVar2.E, true);
+                break;
+            default:
+                so soVar3 = this.b;
+                soVar3.getMessagesController().V2(0, soVar3.E, true);
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-        org.telegram.messenger.hs.f(this.c).c(this, org.telegram.messenger.hs.y0);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.hs.f(this.c).n(this, org.telegram.messenger.hs.y0);
     }
 }

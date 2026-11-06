@@ -6,10 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class n1 {
     public static final Unsafe a;
@@ -21,19 +21,19 @@ public abstract class n1 {
     public static final boolean g;
 
     static {
-        Unsafe i3 = i();
-        a = i3;
+        Unsafe i7 = i();
+        a = i7;
         b = c.a;
         boolean h = h(Long.TYPE);
         boolean h7 = h(Integer.TYPE);
         m1 m1Var = null;
-        if (i3 != null) {
+        if (i7 != null) {
             if (!c.a()) {
-                m1Var = new l1(i3);
+                m1Var = new l1(i7);
             } else if (h) {
-                m1Var = new k1(i3, 1);
+                m1Var = new k1(i7, 1);
             } else if (h7) {
-                m1Var = new k1(i3, 0);
+                m1Var = new k1(i7, 0);
             }
         }
         c = m1Var;
@@ -52,9 +52,9 @@ public abstract class n1 {
         f(double[].class);
         e(Object[].class);
         f(Object[].class);
-        Field g7 = g();
-        if (g7 != null && m1Var != null) {
-            m1Var.i(g7);
+        Field g10 = g();
+        if (g10 != null && m1Var != null) {
+            m1Var.i(g10);
         }
         g = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
     }
@@ -63,12 +63,12 @@ public abstract class n1 {
         Logger.getLogger(n1.class.getName()).log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th2);
     }
 
-    public static boolean b(Object obj, long j10) {
-        return ((byte) ((c.f(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & hs.e4)) != 0;
+    public static boolean b(Object obj, long j3) {
+        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & qs.e4)) != 0;
     }
 
-    public static boolean c(Object obj, long j10) {
-        return ((byte) ((c.f(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & hs.e4)) != 0;
+    public static boolean c(Object obj, long j3) {
+        return ((byte) ((c.f(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & qs.e4)) != 0;
     }
 
     public static Object d(Class cls) {
@@ -147,32 +147,32 @@ public abstract class n1 {
         }
     }
 
-    public static void j(byte[] bArr, long j10, byte b10) {
-        c.k(bArr, f + j10, b10);
+    public static void j(byte[] bArr, long j3, byte b10) {
+        c.k(bArr, f + j3, b10);
     }
 
-    public static void k(Object obj, long j10, byte b10) {
-        long j11 = (-4) & j10;
-        int f10 = c.f(obj, j11);
-        int i3 = ((~((int) j10)) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i3) | (f10 & (~(hs.e4 << i3))));
+    public static void k(Object obj, long j3, byte b10) {
+        long j10 = (-4) & j3;
+        int f10 = c.f(obj, j10);
+        int i7 = ((~((int) j3)) & 3) << 3;
+        m(j10, obj, ((255 & b10) << i7) | (f10 & (~(qs.e4 << i7))));
     }
 
-    public static void l(Object obj, long j10, byte b10) {
-        long j11 = (-4) & j10;
-        int i3 = (((int) j10) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i3) | (c.f(obj, j11) & (~(hs.e4 << i3))));
+    public static void l(Object obj, long j3, byte b10) {
+        long j10 = (-4) & j3;
+        int i7 = (((int) j3) & 3) << 3;
+        m(j10, obj, ((255 & b10) << i7) | (c.f(obj, j10) & (~(qs.e4 << i7))));
     }
 
-    public static void m(long j10, Object obj, int i3) {
-        c.n(j10, obj, i3);
+    public static void m(long j3, Object obj, int i7) {
+        c.n(j3, obj, i7);
     }
 
-    public static void n(Object obj, long j10, long j11) {
-        c.o(obj, j10, j11);
+    public static void n(Object obj, long j3, long j10) {
+        c.o(obj, j3, j10);
     }
 
-    public static void o(Object obj, long j10, Object obj2) {
-        c.p(obj, j10, obj2);
+    public static void o(Object obj, long j3, Object obj2) {
+        c.p(obj, j3, obj2);
     }
 }

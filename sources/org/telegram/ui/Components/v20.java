@@ -1,89 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.util.TypedValue;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class v20 {
-    public static final v20 d;
-    public static final v20 e;
-    public static final v20 f;
-    public static final v20 h;
-    public static final v20 n;
-    public static final v20 r;
-    public static final v20 s;
-    public static final v20 w;
-    public static final v20 x;
-    public static final /* synthetic */ v20[] y;
-    public final String a;
-    public final int b;
-    public final float c;
+public class v20 extends EditTextBoldCursor {
+    public final TextPaint G1;
+    public String H1;
+    public final Rect I1;
 
-    static {
-        v20 v20Var = new v20("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
-        d = v20Var;
-        v20 v20Var2 = new v20("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
-        e = v20Var2;
-        v20 v20Var3 = new v20("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
-        f = v20Var3;
-        v20 v20Var4 = new v20("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
-        h = v20Var4;
-        v20 v20Var5 = new v20("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
-        n = v20Var5;
-        v20 v20Var6 = new v20("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
-        r = v20Var6;
-        v20 v20Var7 = new v20("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
-        s = v20Var7;
-        v20 v20Var8 = new v20("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
-        w = v20Var8;
-        v20 v20Var9 = new v20();
-        x = v20Var9;
-        y = new v20[]{v20Var, v20Var2, v20Var3, v20Var4, v20Var5, v20Var6, v20Var7, v20Var8, v20Var9};
+    public v20(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.G1 = textPaint;
+        this.I1 = new Rect();
+        textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.H6, false));
     }
 
-    public v20() {
-        this.a = "hints_controller_" + this;
-        this.b = 3;
-        this.c = 1.0f;
+    public String getHintText() {
+        return this.H1;
     }
 
-    public static v20 valueOf(String str) {
-        return (v20) Enum.valueOf(v20.class, str);
-    }
-
-    public static v20[] values() {
-        return (v20[]) y.clone();
-    }
-
-    public final void a() {
-        org.telegram.messenger.hp.e1().edit().putInt(this.a, this.b).apply();
-    }
-
-    public final void b() {
-        SharedPreferences e12 = org.telegram.messenger.hp.e1();
-        String str = this.a;
-        org.telegram.messenger.hp.e1().edit().putInt(str, e12.getInt(str, 0) + 1).apply();
-    }
-
-    public final boolean c() {
-        if (org.telegram.messenger.hp.e1().getInt(this.a, 0) < this.b) {
-            float f10 = this.c;
-            if (f10 >= 1.0f) {
-                return true;
-            }
-            if (f10 > 0.0f && Utilities.c.nextFloat() < f10) {
-                return true;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.H1 != null && length() < this.H1.length()) {
+            int i7 = 0;
+            float f10 = 0.0f;
+            while (i7 < this.H1.length()) {
+                int length = length();
+                TextPaint textPaint = this.G1;
+                float measureText = i7 < length ? getPaint().measureText(getText(), i7, i7 + 1) : textPaint.measureText(this.H1, i7, i7 + 1);
+                if (i7 < length()) {
+                    f10 += measureText;
+                    canvas2 = canvas;
+                } else {
+                    int color = textPaint.getColor();
+                    canvas.save();
+                    String str = this.H1;
+                    textPaint.getTextBounds(str, 0, str.length(), this.I1);
+                    z(i7);
+                    canvas2 = canvas;
+                    canvas2.drawText(this.H1, i7, i7 + 1, f10, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
+                    f10 += measureText;
+                    canvas2.restore();
+                    textPaint.setColor(color);
+                }
+                i7++;
+                canvas = canvas2;
             }
         }
-        return false;
+        super.onDraw(canvas);
     }
 
-    public v20(String str, int i3, String str2, int i10, float f10) {
-        this.a = str2;
-        this.b = i10;
-        this.c = f10;
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        invalidate();
+    }
+
+    public void setHintText(String str) {
+        this.H1 = str;
+        invalidate();
+        setText(getText());
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i7, float f10) {
+        super.setTextSize(i7, f10);
+        this.G1.setTextSize(TypedValue.applyDimension(i7, f10, getResources().getDisplayMetrics()));
+    }
+
+    public void z(int i7) {
     }
 }

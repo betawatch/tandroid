@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
 /* loaded from: classes2.dex */
 public class q6 extends s6 implements LongConsumer {
@@ -14,12 +14,12 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i3, int i10, Object obj2) {
+    public final void i(Object obj, int i7, int i10, Object obj2) {
         long[] jArr = (long[]) obj;
         LongConsumer longConsumer = (LongConsumer) obj2;
-        while (i3 < i10) {
-            longConsumer.accept(jArr[i3]);
-            i3++;
+        while (i7 < i10) {
+            longConsumer.accept(jArr[i7]);
+            i7++;
         }
     }
 
@@ -47,17 +47,17 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i3) {
-        return new long[i3];
+    public final Object newArray(int i7) {
+        return new long[i7];
     }
 
     @Override // java.util.function.LongConsumer
-    public void accept(long j10) {
+    public void accept(long j3) {
         n();
         long[] jArr = (long[]) this.e;
-        int i3 = this.b;
-        this.b = i3 + 1;
-        jArr[i3] = j10;
+        int i7 = this.b;
+        this.b = i7 + 1;
+        jArr[i7] = j3;
     }
 
     @Override // java.lang.Iterable
@@ -78,6 +78,6 @@ public class q6 extends s6 implements LongConsumer {
         if (jArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(jArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, hs.e3)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(jArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(jArr, qs.e3)));
     }
 }

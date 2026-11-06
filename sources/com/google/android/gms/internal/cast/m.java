@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.cast;
 
+import a8.m8;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
-import b8.aa;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,64 +13,64 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m extends r4.s {
-    public static final i6.b f = new i6.b("MRDiscoveryCallback", null);
-    public final p4.q e;
+public final class m extends s4.s {
+    public static final j6.b f = new j6.b("MRDiscoveryCallback", null);
+    public final q4.q e;
     public final Map c = DesugarCollections.synchronizedMap(new HashMap());
     public final LinkedHashSet d = new LinkedHashSet();
     public final Set b = DesugarCollections.synchronizedSet(new LinkedHashSet());
     public final l a = new l(this);
 
     public m(Context context) {
-        this.e = new p4.q(context);
+        this.e = new q4.q(context);
     }
 
-    @Override // r4.s
-    public final void d(r4.w wVar) {
+    @Override // s4.s
+    public final void d(s4.v vVar) {
         f.b("MediaRouterDiscoveryCallback.onRouteAdded.", new Object[0]);
-        o(wVar, true);
+        o(vVar, true);
     }
 
-    @Override // r4.s
-    public final void e(r4.w wVar) {
+    @Override // s4.s
+    public final void e(s4.v vVar) {
         f.b("MediaRouterDiscoveryCallback.onRouteChanged.", new Object[0]);
-        o(wVar, true);
+        o(vVar, true);
     }
 
-    @Override // r4.s
-    public final void f(r4.w wVar) {
+    @Override // s4.s
+    public final void f(s4.v vVar) {
         f.b("MediaRouterDiscoveryCallback.onRouteRemoved.", new Object[0]);
-        o(wVar, false);
+        o(vVar, false);
     }
 
     public final void m() {
-        i6.b bVar = f;
-        bVar.b(k2.p1.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        j6.b bVar = f;
+        bVar.b(jg.g.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
         } else {
-            new z(Looper.getMainLooper(), 0).post(new j(this, 1));
+            new y(Looper.getMainLooper(), 0).post(new j(this, 1));
         }
     }
 
     public final void n() {
-        p4.q qVar = this.e;
-        if (((r4.y) qVar.b) == null) {
-            qVar.b = r4.y.d((Context) qVar.a);
+        q4.q qVar = this.e;
+        if (((s4.x) qVar.c) == null) {
+            qVar.c = s4.x.d((Context) qVar.b);
         }
-        r4.y yVar = (r4.y) qVar.b;
-        if (yVar != null) {
-            yVar.h(this);
+        s4.x xVar = (s4.x) qVar.c;
+        if (xVar != null) {
+            xVar.h(this);
         }
         synchronized (this.d) {
             try {
                 Iterator it = this.d.iterator();
                 while (it.hasNext()) {
                     String str = (String) it.next();
-                    String a10 = e6.y.a(str);
+                    String a10 = f6.y.a(str);
                     if (a10 == null) {
                         throw new IllegalArgumentException("category must not be null");
                     }
@@ -80,16 +80,16 @@ public final class m extends r4.s {
                     }
                     Bundle bundle = new Bundle();
                     bundle.putStringArrayList("controlCategories", arrayList);
-                    r4.r rVar = new r4.r(bundle, arrayList);
+                    s4.r rVar = new s4.r(bundle, arrayList);
                     if (((k) this.c.get(str)) == null) {
                         this.c.put(str, new k(rVar));
                     }
-                    f.b("Adding mediaRouter callback for control category " + e6.y.a(str), new Object[0]);
-                    p4.q qVar2 = this.e;
-                    if (((r4.y) qVar2.b) == null) {
-                        qVar2.b = r4.y.d((Context) qVar2.a);
+                    f.b("Adding mediaRouter callback for control category " + f6.y.a(str), new Object[0]);
+                    q4.q qVar2 = this.e;
+                    if (((s4.x) qVar2.c) == null) {
+                        qVar2.c = s4.x.d((Context) qVar2.b);
                     }
-                    ((r4.y) qVar2.b).a(rVar, this, 4);
+                    ((s4.x) qVar2.c).a(rVar, this, 4);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -109,64 +109,64 @@ public final class m extends r4.s {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void o(r4.w wVar, boolean z10) {
-        boolean z11;
+    public final void o(s4.v vVar, boolean z9) {
+        boolean z10;
         Set m10;
         boolean remove;
-        i6.b bVar = f;
-        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z10), wVar);
+        j6.b bVar = f;
+        bVar.b("MediaRouterDiscoveryCallback.updateRouteToAppIds (add=%b) route %s", Boolean.valueOf(z9), vVar);
         synchronized (this.c) {
             try {
                 bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
-                z11 = false;
+                z10 = false;
                 for (Map.Entry entry : this.c.entrySet()) {
                     String str = (String) entry.getKey();
                     k kVar = (k) entry.getValue();
-                    if (wVar.h(kVar.b)) {
-                        if (z10) {
-                            i6.b bVar2 = f;
+                    if (vVar.h(kVar.b)) {
+                        if (z9) {
+                            j6.b bVar2 = f;
                             bVar2.b("Adding/updating route for appId " + str, new Object[0]);
-                            remove = kVar.a.add(wVar);
+                            remove = kVar.a.add(vVar);
                             if (!remove) {
-                                Log.w(bVar2.a, bVar2.d("Route " + String.valueOf(wVar) + " already exists for appId " + str, new Object[0]));
+                                Log.w(bVar2.a, bVar2.d("Route " + String.valueOf(vVar) + " already exists for appId " + str, new Object[0]));
                             }
                         } else {
-                            i6.b bVar3 = f;
+                            j6.b bVar3 = f;
                             bVar3.b("Removing route for appId " + str, new Object[0]);
-                            remove = kVar.a.remove(wVar);
+                            remove = kVar.a.remove(vVar);
                             if (!remove) {
-                                Log.w(bVar3.a, bVar3.d("Route " + String.valueOf(wVar) + " already removed from appId " + str, new Object[0]));
+                                Log.w(bVar3.a, bVar3.d("Route " + String.valueOf(vVar) + " already removed from appId " + str, new Object[0]));
                             }
                         }
-                        z11 = remove;
+                        z10 = remove;
                     }
                 }
             } finally {
             }
         }
-        if (z11) {
+        if (z10) {
             f.b("Invoking callback.onRouteUpdated.", new Object[0]);
             synchronized (this.b) {
                 try {
                     HashMap hashMap = new HashMap();
                     synchronized (this.c) {
                         for (String str2 : this.c.keySet()) {
-                            k kVar2 = (k) this.c.get(aa.a(str2));
+                            k kVar2 = (k) this.c.get(m8.a(str2));
                             if (kVar2 == null) {
-                                int i3 = i0.c;
-                                m10 = r0.s;
+                                int i7 = h0.c;
+                                m10 = q0.s;
                             } else {
                                 LinkedHashSet linkedHashSet = kVar2.a;
-                                int i10 = i0.c;
+                                int i10 = h0.c;
                                 Object[] array = linkedHashSet.toArray();
-                                m10 = i0.m(array.length, array);
+                                m10 = h0.m(array.length, array);
                             }
                             if (!m10.isEmpty()) {
                                 hashMap.put(str2, m10);
                             }
                         }
                     }
-                    b8.m.b(hashMap.entrySet());
+                    a8.v.b(hashMap.entrySet());
                     Iterator it = this.b.iterator();
                     if (it.hasNext()) {
                         if (it.next() != null) {

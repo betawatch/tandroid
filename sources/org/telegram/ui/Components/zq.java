@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class zq extends ImageView {
     public final /* synthetic */ int a = 0;
@@ -14,10 +14,10 @@ public final class zq extends ImageView {
     public final /* synthetic */ ViewGroup c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq(br brVar, Context context, y00 y00Var) {
+    public zq(br brVar, Context context, uy uyVar) {
         super(context);
         this.c = brVar;
-        this.b = y00Var;
+        this.b = uyVar;
     }
 
     @Override // android.view.View
@@ -32,15 +32,15 @@ public final class zq extends ImageView {
                     removeCallbacks(brVar.h);
                 }
                 super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((y00) this.b).a).onTouchEvent(motionEvent);
+                return ((GestureDetector) ((uy) this.b).b).onTouchEvent(motionEvent);
             default:
                 return super.onTouchEvent(motionEvent);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq(li0 li0Var, Context context) {
+    public zq(ii0 ii0Var, Context context) {
         super(context);
-        this.c = li0Var;
+        this.c = ii0Var;
     }
 }

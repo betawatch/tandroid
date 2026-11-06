@@ -6,13 +6,13 @@ import java.util.function.Consumer;
 public interface j5 extends Consumer {
     void accept(double d);
 
-    void accept(int i3);
+    void accept(int i7);
 
-    void accept(long j10);
+    void accept(long j3);
 
     void end();
 
-    void o(long j10);
+    void o(long j3);
 
     boolean q();
 }

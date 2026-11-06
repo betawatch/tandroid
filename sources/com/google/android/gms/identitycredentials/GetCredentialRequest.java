@@ -4,17 +4,18 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.ResultReceiver;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import f6.c0;
+import j7.b;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.j;
-import q6.a;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class GetCredentialRequest extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new c0(25);
+    public static final Parcelable.Creator<GetCredentialRequest> CREATOR = new b(10);
     public final List a;
     public final Bundle b;
     public final String c;
@@ -31,13 +32,13 @@ public final class GetCredentialRequest extends a implements ReflectedParcelable
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i3) {
+    public final void writeToParcel(Parcel dest, int i7) {
         j.e(dest, "dest");
-        int s6 = j8.a.s(dest, 20293);
-        j8.a.q(dest, 1, this.a);
-        j8.a.c(dest, 2, this.b);
-        j8.a.m(dest, 3, this.c);
-        j8.a.l(dest, 4, this.d, i3);
-        j8.a.t(dest, s6);
+        int r10 = wb.r(dest, 20293);
+        wb.p(dest, 1, this.a);
+        wb.b(dest, 2, this.b);
+        wb.l(dest, 3, this.c);
+        wb.k(dest, 4, this.d, i7);
+        wb.s(dest, r10);
     }
 }

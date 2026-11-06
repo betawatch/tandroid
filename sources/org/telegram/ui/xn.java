@@ -1,92 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xn extends org.telegram.ui.Components.b70 {
-    public final /* synthetic */ Context x;
-    public final /* synthetic */ bo y;
+public final class xn extends org.telegram.ui.Components.hm0 {
+    public final /* synthetic */ go N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xn(bo boVar, Context context, TLRPC.Chat chat, Context context2) {
-        super(context, chat);
-        this.y = boVar;
-        this.x = context2;
+    public xn(go goVar, Context context, org.telegram.ui.Components.gm0 gm0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, gm0Var, f6Var, false);
+        this.N = goVar;
     }
 
-    @Override // org.telegram.ui.Components.b70
-    public final boolean a(final boolean z10, org.telegram.ui.Components.z60 z60Var) {
-        TLRPC.ChatFull chatFull;
-        int i3;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        bo boVar = this.y;
-        final int i10 = 1;
-        if (!boVar.W || (chatFull = boVar.Z) == null || (i3 = chatFull.invitesCount) == 0) {
-            return true;
-        }
-        String str = boVar.b0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
-        Context context = this.x;
-        e6Var = ((org.telegram.ui.ActionBar.d2) boVar).resourceProvider;
-        final int i11 = 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, e6Var);
-        String M0 = org.telegram.messenger.bd.M0(2131754204, null);
-        org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-        s1Var.S = M0;
-        s1Var.U = org.telegram.messenger.g0.X2(org.telegram.messenger.bd.G(i3, str, new Object[0]));
-        alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131754206, null), new org.telegram.ui.ActionBar.p1(this) { // from class: org.telegram.ui.wn
-            public final /* synthetic */ xn b;
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.N.L && super.onInterceptTouchEvent(motionEvent);
+    }
 
-            {
-                this.b = this;
-            }
+    @Override // android.widget.ScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.N.L && super.onTouchEvent(motionEvent);
+    }
 
-            @Override // org.telegram.ui.ActionBar.p1
-            public final void g(org.telegram.ui.ActionBar.s1 s1Var2, int i12) {
-                switch (i11) {
-                    case 0:
-                        boolean z11 = z10;
-                        xn xnVar = this.b;
-                        xnVar.setJoinRequest(z11);
-                        xnVar.y.X = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        xn xnVar2 = this.b;
-                        xnVar2.setJoinRequest(z12);
-                        xnVar2.y.X = false;
-                        break;
-                }
-            }
-        });
-        alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131754205, null), new org.telegram.ui.ActionBar.p1(this) { // from class: org.telegram.ui.wn
-            public final /* synthetic */ xn b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.p1
-            public final void g(org.telegram.ui.ActionBar.s1 s1Var2, int i12) {
-                switch (i10) {
-                    case 0:
-                        boolean z11 = z10;
-                        xn xnVar = this.b;
-                        xnVar.setJoinRequest(z11);
-                        xnVar.y.X = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        xn xnVar2 = this.b;
-                        xnVar2.setJoinRequest(z12);
-                        xnVar2.y.X = false;
-                        break;
-                }
-            }
-        });
-        boVar.showDialog(s1Var);
-        return false;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z9) {
+        rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+        return super.requestChildRectangleOnScreen(view, rect, z9);
     }
 }

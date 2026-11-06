@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import android.text.style.URLSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class t31 extends URLSpan {
     public final ty0 a;
@@ -17,7 +17,7 @@ public final class t31 extends URLSpan {
 
     @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
-        sf.c.q(view.getContext(), Uri.parse(getURL()), true, true);
+        vf.c.q(view.getContext(), Uri.parse(getURL()), true, true);
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

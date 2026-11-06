@@ -1,77 +1,51 @@
 package com.google.android.gms.internal.cast;
 
-import b8.ba;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import a8.n8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e0 extends b8.y implements ListIterator {
-    public final int b;
-    public int c;
-    public final g0 d;
+public final class e0 extends f0 {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ f0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(g0 g0Var, int i3) {
-        super(2);
-        int size = g0Var.size();
-        ba.b(i3, size);
-        this.b = size;
-        this.c = i3;
-        this.d = g0Var;
+    public e0(f0 f0Var, int i7, int i10) {
+        this.e = f0Var;
+        this.c = i7;
+        this.d = i10;
     }
 
-    public final Object a(int i3) {
-        return this.d.get(i3);
+    @Override // java.util.List
+    public final Object get(int i7) {
+        n8.a(i7, this.d);
+        return this.e.get(i7 + this.c);
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int i() {
+        return this.e.j() + this.c + this.d;
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
+    @Override // com.google.android.gms.internal.cast.c0
+    public final int j() {
+        return this.e.j() + this.c;
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
+    @Override // com.google.android.gms.internal.cast.c0
+    public final Object[] k() {
+        return this.e.k();
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i3 = this.c;
-        this.c = i3 + 1;
-        return a(i3);
+    @Override // com.google.android.gms.internal.cast.f0, java.util.List
+    /* renamed from: l, reason: merged with bridge method [inline-methods] */
+    public final f0 subList(int i7, int i10) {
+        n8.c(i7, i10, this.d);
+        int i11 = this.c;
+        return this.e.subList(i7 + i11, i10 + i11);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i3 = this.c - 1;
-        this.c = i3;
-        return a(i3);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

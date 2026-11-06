@@ -1,43 +1,16 @@
 package l7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import p6.h;
+import android.util.Base64;
+import java.security.SecureRandom;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e extends h {
-    @Override // p6.d, com.google.android.gms.common.api.c
-    public final int d() {
-        return 12451000;
-    }
+public abstract class e {
+    public static final SecureRandom a = new SecureRandom();
 
-    @Override // p6.d
-    public final /* synthetic */ IInterface g(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService");
-        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new d(iBinder);
-    }
-
-    @Override // p6.d
-    public final m6.c[] i() {
-        return b.b;
-    }
-
-    @Override // p6.d
-    public final String n() {
-        return "com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService";
-    }
-
-    @Override // p6.d
-    public final String o() {
-        return "com.google.android.gms.auth.api.phone.service.SmsRetrieverApiService.START";
-    }
-
-    @Override // p6.d
-    public final boolean w() {
-        return true;
+    public static String a() {
+        byte[] bArr = new byte[16];
+        a.nextBytes(bArr);
+        return Base64.encodeToString(bArr, 11);
     }
 }

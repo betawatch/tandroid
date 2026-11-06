@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e implements Collection {
     public final /* synthetic */ int a = 0;
@@ -53,7 +53,7 @@ public final class e implements Collection {
             case 0:
                 return ((f) this.b).b(obj) >= 0;
             default:
-                return ed.f.a((Object[]) this.b, obj);
+                return hd.e.a((Object[]) this.b, obj);
         }
     }
 
@@ -74,7 +74,7 @@ public final class e implements Collection {
                 if (!collection.isEmpty()) {
                     Iterator it2 = collection.iterator();
                     while (it2.hasNext()) {
-                        if (!ed.f.a((Object[]) this.b, it2.next())) {
+                        if (!hd.e.a((Object[]) this.b, it2.next())) {
                             break;
                         }
                     }
@@ -103,7 +103,7 @@ public final class e implements Collection {
             default:
                 Object[] array = (Object[]) this.b;
                 kotlin.jvm.internal.j.e(array, "array");
-                return new ed.a(array);
+                return new cd.b(array);
         }
     }
 
@@ -128,19 +128,19 @@ public final class e implements Collection {
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
-                int i3 = fVar.c;
+                int i7 = fVar.c;
                 int i10 = 0;
-                boolean z10 = false;
-                while (i10 < i3) {
+                boolean z9 = false;
+                while (i10 < i7) {
                     if (collection.contains(fVar.i(i10))) {
                         fVar.g(i10);
                         i10--;
-                        i3--;
-                        z10 = true;
+                        i7--;
+                        z9 = true;
                     }
                     i10++;
                 }
-                return z10;
+                return z9;
             default:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
@@ -151,19 +151,19 @@ public final class e implements Collection {
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
-                int i3 = fVar.c;
+                int i7 = fVar.c;
                 int i10 = 0;
-                boolean z10 = false;
-                while (i10 < i3) {
+                boolean z9 = false;
+                while (i10 < i7) {
                     if (!collection.contains(fVar.i(i10))) {
                         fVar.g(i10);
                         i10--;
-                        i3--;
-                        z10 = true;
+                        i7--;
+                        z9 = true;
                     }
                     i10++;
                 }
-                return z10;
+                return z9;
             default:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
@@ -184,15 +184,15 @@ public final class e implements Collection {
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
-                int i3 = fVar.c;
-                if (array.length < i3) {
-                    array = (Object[]) Array.newInstance(array.getClass().getComponentType(), i3);
+                int i7 = fVar.c;
+                if (array.length < i7) {
+                    array = (Object[]) Array.newInstance(array.getClass().getComponentType(), i7);
                 }
-                for (int i10 = 0; i10 < i3; i10++) {
+                for (int i10 = 0; i10 < i7; i10++) {
                     array[i10] = fVar.i(i10);
                 }
-                if (array.length > i3) {
-                    array[i3] = null;
+                if (array.length > i7) {
+                    array[i7] = null;
                 }
                 return array;
             default:
@@ -210,9 +210,9 @@ public final class e implements Collection {
         switch (this.a) {
             case 0:
                 f fVar = (f) this.b;
-                int i3 = fVar.c;
-                Object[] objArr = new Object[i3];
-                for (int i10 = 0; i10 < i3; i10++) {
+                int i7 = fVar.c;
+                Object[] objArr = new Object[i7];
+                for (int i10 = 0; i10 < i7; i10++) {
                     objArr[i10] = fVar.i(i10);
                 }
                 return objArr;

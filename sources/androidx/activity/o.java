@@ -1,117 +1,118 @@
 package androidx.activity;
 
 import android.util.Log;
-import androidx.fragment.app.a0;
+import androidx.fragment.app.h0;
 import androidx.fragment.app.i0;
-import androidx.fragment.app.j0;
+import androidx.fragment.app.s0;
 import androidx.fragment.app.t0;
-import androidx.fragment.app.u0;
+import androidx.fragment.app.z;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class o extends kotlin.jvm.internal.k implements od.l {
+public final class o extends kotlin.jvm.internal.k implements rd.l {
     public final /* synthetic */ int b;
-    public final /* synthetic */ v c;
+    public final /* synthetic */ w c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o(v vVar, int i3) {
+    public /* synthetic */ o(w wVar, int i7) {
         super(1);
-        this.b = i3;
-        this.c = vVar;
+        this.b = i7;
+        this.c = wVar;
     }
 
-    @Override // od.l
+    @Override // rd.l
     public final Object invoke(Object obj) {
         Object obj2;
         Object obj3;
         switch (this.b) {
             case 0:
                 kotlin.jvm.internal.j.e((b) obj, "backEvent");
-                v vVar = this.c;
-                ed.e eVar = vVar.b;
-                eVar.getClass();
-                ListIterator listIterator = eVar.listIterator(eVar.c);
+                w wVar = this.c;
+                hd.d dVar = wVar.b;
+                dVar.getClass();
+                ListIterator listIterator = dVar.listIterator(dVar.c);
                 while (true) {
                     if (listIterator.hasPrevious()) {
                         obj2 = listIterator.previous();
-                        if (((a0) obj2).a) {
+                        if (((z) obj2).a) {
                         }
                     } else {
                         obj2 = null;
                     }
                 }
-                a0 a0Var = (a0) obj2;
-                vVar.c = a0Var;
-                if (a0Var != null) {
-                    j0 j0Var = a0Var.d;
-                    if (j0.K(3)) {
-                        Log.d("FragmentManager", "handleOnBackStarted. PREDICTIVE_BACK = true fragment manager " + j0Var);
+                z zVar = (z) obj2;
+                wVar.c = zVar;
+                if (zVar != null) {
+                    i0 i0Var = zVar.d;
+                    if (i0.K(3)) {
+                        Log.d("FragmentManager", "handleOnBackStarted. PREDICTIVE_BACK = true fragment manager " + i0Var);
                     }
-                    j0Var.x();
-                    j0Var.y(new i0(j0Var), false);
+                    i0Var.x();
+                    i0Var.y(new h0(i0Var), false);
                 }
-                return dd.k.a;
+                return gd.k.a;
             default:
                 b backEvent = (b) obj;
                 kotlin.jvm.internal.j.e(backEvent, "backEvent");
-                v vVar2 = this.c;
-                a0 a0Var2 = vVar2.c;
-                if (a0Var2 == null) {
-                    ed.e eVar2 = vVar2.b;
-                    eVar2.getClass();
-                    ListIterator listIterator2 = eVar2.listIterator(eVar2.c);
+                w wVar2 = this.c;
+                z zVar2 = wVar2.c;
+                if (zVar2 == null) {
+                    hd.d dVar2 = wVar2.b;
+                    dVar2.getClass();
+                    ListIterator listIterator2 = dVar2.listIterator(dVar2.c);
                     while (true) {
                         if (listIterator2.hasPrevious()) {
                             obj3 = listIterator2.previous();
-                            if (((a0) obj3).a) {
+                            if (((z) obj3).a) {
                             }
                         } else {
                             obj3 = null;
                         }
                     }
-                    a0Var2 = (a0) obj3;
+                    zVar2 = (z) obj3;
                 }
-                if (a0Var2 != null) {
-                    j0 j0Var2 = a0Var2.d;
-                    if (j0.K(2)) {
-                        Log.v("FragmentManager", "handleOnBackProgressed. PREDICTIVE_BACK = true fragment manager " + j0Var2);
+                if (zVar2 != null) {
+                    i0 i0Var2 = zVar2.d;
+                    if (i0.K(2)) {
+                        Log.v("FragmentManager", "handleOnBackProgressed. PREDICTIVE_BACK = true fragment manager " + i0Var2);
                     }
-                    if (j0Var2.h != null) {
-                        Iterator it = j0Var2.f(0, 1, new ArrayList(Collections.singletonList(j0Var2.h))).iterator();
+                    if (i0Var2.h != null) {
+                        Iterator it = i0Var2.f(0, 1, new ArrayList(Collections.singletonList(i0Var2.h))).iterator();
                         while (it.hasNext()) {
-                            androidx.fragment.app.l lVar = (androidx.fragment.app.l) it.next();
-                            lVar.getClass();
-                            if (j0.K(2)) {
+                            androidx.fragment.app.k kVar = (androidx.fragment.app.k) it.next();
+                            kVar.getClass();
+                            if (i0.K(2)) {
                                 Log.v("FragmentManager", "SpecialEffectsController: Processing Progress " + backEvent.c);
                             }
-                            ArrayList arrayList = lVar.c;
+                            ArrayList arrayList = kVar.c;
                             ArrayList arrayList2 = new ArrayList();
                             int size = arrayList.size();
-                            int i3 = 0;
-                            while (i3 < size) {
-                                Object obj4 = arrayList.get(i3);
-                                i3++;
-                                ((u0) obj4).getClass();
-                                ed.m.e(null, arrayList2);
+                            int i7 = 0;
+                            while (i7 < size) {
+                                Object obj4 = arrayList.get(i7);
+                                i7++;
+                                ((t0) obj4).getClass();
+                                hd.l.e(null, arrayList2);
                             }
-                            List l10 = ed.g.l(ed.g.o(arrayList2));
+                            List l10 = hd.f.l(hd.f.o(arrayList2));
                             int size2 = l10.size();
                             for (int i10 = 0; i10 < size2; i10++) {
-                                ((t0) l10.get(i10)).b(backEvent, lVar.a);
+                                ((s0) l10.get(i10)).b(backEvent, kVar.a);
                             }
                         }
-                        Iterator it2 = j0Var2.n.iterator();
+                        Iterator it2 = i0Var2.n.iterator();
                         if (it2.hasNext()) {
-                            throw a1.g.m(it2);
+                            it2.next().getClass();
+                            throw new ClassCastException();
                         }
                     }
                 }
-                return dd.k.a;
+                return gd.k.a;
         }
     }
 }

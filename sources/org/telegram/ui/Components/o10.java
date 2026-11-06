@@ -1,20 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
-import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o10 extends FrameLayout {
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !org.telegram.messenger.t3.W(sharedInstance.getChat())) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.bd.M0(2131743360, null)));
-        } else {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.bd.M0(2131743477, null)));
-        }
+public final class o10 extends AnimatorListenerAdapter {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ WindowManager c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ View e;
+    public final /* synthetic */ p10 f;
+
+    public o10(p10 p10Var, n10 n10Var, bi.e5 e5Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.w7 w7Var) {
+        this.f = p10Var;
+        this.a = n10Var;
+        this.b = e5Var;
+        this.c = windowManager;
+        this.d = frameLayout;
+        this.e = w7Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.messenger.qs.f(this.f.h).d(new bi.u0(this.a, this.b, this.c, this.d, this.e, 29));
     }
 }

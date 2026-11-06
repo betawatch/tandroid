@@ -14,7 +14,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ly0 {
     public final TextPaint a;
@@ -27,7 +27,7 @@ public final class ly0 {
     public float h;
     public boolean i;
     public View j;
-    public l5 k;
+    public n5 k;
     public int l;
     public PorterDuffColorFilter m;
     public int n;
@@ -58,19 +58,19 @@ public final class ly0 {
 
     public final float b() {
         float f10 = 0.0f;
-        for (int i3 = 0; i3 < this.b.getLineCount(); i3++) {
-            f10 = Math.max(f10, this.b.getLineWidth(i3));
+        for (int i7 = 0; i7 < this.b.getLineCount(); i7++) {
+            f10 = Math.max(f10, this.b.getLineWidth(i7));
         }
         return f10;
     }
 
-    public final void c(float f10, float f11, float f12, int i3, Canvas canvas) {
+    public final void c(float f10, float f11, float f12, int i7, Canvas canvas) {
         if (this.b == null) {
             return;
         }
         TextPaint textPaint = this.a;
-        textPaint.setColor(i3);
-        textPaint.linkColor = i3;
+        textPaint.setColor(i7);
+        textPaint.linkColor = i7;
         int alpha = textPaint.getAlpha();
         if (f12 != 1.0f) {
             textPaint.setAlpha((int) (alpha * f12));
@@ -88,13 +88,13 @@ public final class ly0 {
         }
         float f10 = this.p;
         if (f10 >= 0.0f && this.c > f10) {
-            canvas.saveLayerAlpha(0.0f, -this.t, f10 - 1.0f, r0.getHeight() + this.t, org.telegram.messenger.hs.e4, 31);
+            canvas.saveLayerAlpha(0.0f, -this.t, f10 - 1.0f, r0.getHeight() + this.t, org.telegram.messenger.qs.e4, 31);
         }
         canvas.save();
         canvas.translate(-this.d, 0.0f);
-        boolean z10 = this.o;
+        boolean z9 = this.o;
         TextPaint textPaint = this.a;
-        if (z10) {
+        if (z9) {
             canvas.drawText(this.b.getText().toString(), 0.0f, -textPaint.getFontMetricsInt().ascent, textPaint);
         } else {
             this.b.draw(canvas);
@@ -105,7 +105,7 @@ public final class ly0 {
                 this.n = color;
                 this.m = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
             }
-            p5.drawAnimatedEmojis(canvas, this.b, this.k, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
+            r5.drawAnimatedEmojis(canvas, this.b, this.k, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
         }
         canvas.restore();
         float f11 = this.p;
@@ -176,21 +176,21 @@ public final class ly0 {
         }
     }
 
-    public final void m(int i3) {
-        this.f = i3;
+    public final void m(int i7) {
+        this.f = i7;
         q(this.b.getText());
     }
 
-    public final void n(int i3) {
-        this.a.setColor(i3);
+    public final void n(int i7) {
+        this.a.setColor(i7);
     }
 
-    public final void o(int i3) {
-        if (this.l != i3) {
-            this.l = i3;
+    public final void o(int i7) {
+        if (this.l != i7) {
+            this.l = i7;
             if (this.i) {
-                p5.release(this.j, this.k);
-                this.k = p5.update(this.l, this.j, this.k, this.b);
+                r5.release(this.j, this.k);
+                this.k = r5.update(this.l, this.j, this.k, this.b);
             }
         }
     }
@@ -212,26 +212,26 @@ public final class ly0 {
         } else {
             this.c = 0.0f;
             this.d = this.b.getWidth();
-            for (int i3 = 0; i3 < this.b.getLineCount(); i3++) {
-                this.c = Math.max(this.c, this.b.getLineWidth(i3));
-                this.d = Math.min(this.d, this.b.getLineLeft(i3));
+            for (int i7 = 0; i7 < this.b.getLineCount(); i7++) {
+                this.c = Math.max(this.c, this.b.getLineWidth(i7));
+                this.d = Math.min(this.d, this.b.getLineLeft(i7));
             }
         }
         View view = this.j;
         if (view == null || !view.isAttachedToWindow()) {
             return;
         }
-        this.k = p5.update(this.l, this.j, this.k, this.b);
+        this.k = r5.update(this.l, this.j, this.k, this.b);
     }
 
     public final void r(View view) {
-        int i3 = 1;
+        int i7 = 1;
         this.i = true;
         this.j = view;
         if (view.isAttachedToWindow()) {
-            this.k = p5.update(this.l, view, this.k, this.b);
+            this.k = r5.update(this.l, view, this.k, this.b);
         }
-        view.addOnAttachStateChangeListener(new z9(i3, this, view));
+        view.addOnAttachStateChangeListener(new aa(i7, this, view));
     }
 
     public ly0(String str, float f10) {

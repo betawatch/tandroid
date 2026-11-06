@@ -1,13 +1,28 @@
 package vb;
 
-import java.util.ArrayList;
+import a8.r7;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.mlkit.vision.common.internal.MobileVisionBase;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
-    ArrayList a(rb.a aVar);
+public final class a implements OnFailureListener, u9.d {
+    public static final a a = new a();
+    public static final /* synthetic */ a b = new a();
+    public static final /* synthetic */ a c = new a();
 
-    void zzb();
+    @Override // u9.d
+    public Object e(r7 r7Var) {
+        return new c(r7Var.H(b.class));
+    }
 
-    void zzc();
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        f5.a aVar = MobileVisionBase.e;
+        if (Log.isLoggable(aVar.a, 6)) {
+            String str = aVar.b;
+            Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
+        }
+    }
 }

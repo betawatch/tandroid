@@ -5,19 +5,19 @@ import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
 import java.util.Arrays;
-import k2.p1;
+import jg.g;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
 
-    public static String audioEncodingToString(int i3) {
-        if (i3 == 0) {
+    public static String audioEncodingToString(int i7) {
+        if (i7 == 0) {
             return "INVALID";
         }
-        switch (i3) {
+        switch (i7) {
             case 2:
                 return "PCM_16BIT";
             case 3:
@@ -34,12 +34,12 @@ final class WebRtcAudioUtils {
             case 9:
                 return "MP3";
             default:
-                return p1.i(i3, "Invalid encoding: ");
+                return g.j(i7, "Invalid encoding: ");
         }
     }
 
-    public static String audioSourceToString(int i3) {
-        switch (i3) {
+    public static String audioSourceToString(int i7) {
+        switch (i7) {
             case 0:
                 return "DEFAULT";
             case 1:
@@ -66,12 +66,12 @@ final class WebRtcAudioUtils {
         }
     }
 
-    public static String channelMaskToString(int i3) {
-        return i3 != 12 ? i3 != 16 ? "INVALID" : "IN_MONO" : "IN_STEREO";
+    public static String channelMaskToString(int i7) {
+        return i7 != 12 ? i7 != 16 ? "INVALID" : "IN_MONO" : "IN_STEREO";
     }
 
-    public static String deviceTypeToString(int i3) {
-        switch (i3) {
+    public static String deviceTypeToString(int i7) {
+        switch (i7) {
             case 1:
                 return "TYPE_BUILTIN_EARPIECE";
             case 2:
@@ -179,8 +179,8 @@ final class WebRtcAudioUtils {
         if (isVolumeFixed) {
             return;
         }
-        for (int i3 = 0; i3 < 6; i3++) {
-            int i10 = iArr[i3];
+        for (int i7 = 0; i7 < 6; i7++) {
+            int i10 = iArr[i7];
             StringBuilder sb2 = new StringBuilder();
             sb2.append("  " + streamTypeToString(i10) + ": ");
             sb2.append("volume=");
@@ -196,20 +196,20 @@ final class WebRtcAudioUtils {
         Logging.d(str, "Android SDK: " + Build.VERSION.SDK_INT + ", Release: " + Build.VERSION.RELEASE + ", Brand: " + Build.BRAND + ", Device: " + Build.DEVICE + ", Id: " + Build.ID + ", Hardware: " + Build.HARDWARE + ", Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Product: " + Build.PRODUCT);
     }
 
-    private static void logIsStreamMute(String str, AudioManager audioManager, int i3, StringBuilder sb2) {
+    private static void logIsStreamMute(String str, AudioManager audioManager, int i7, StringBuilder sb2) {
         sb2.append(", muted=");
-        sb2.append(audioManager.isStreamMute(i3));
+        sb2.append(audioManager.isStreamMute(i7));
     }
 
-    public static String modeToString(int i3) {
-        return i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? "MODE_INVALID" : "MODE_IN_COMMUNICATION" : "MODE_IN_CALL" : "MODE_RINGTONE" : "MODE_NORMAL";
+    public static String modeToString(int i7) {
+        return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "MODE_INVALID" : "MODE_IN_COMMUNICATION" : "MODE_IN_CALL" : "MODE_RINGTONE" : "MODE_NORMAL";
     }
 
     public static boolean runningOnEmulator() {
         return Build.HARDWARE.equals("goldfish") && Build.BRAND.startsWith("generic_");
     }
 
-    private static String streamTypeToString(int i3) {
-        return i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? i3 != 5 ? "STREAM_INVALID" : "STREAM_NOTIFICATION" : "STREAM_ALARM" : "STREAM_MUSIC" : "STREAM_RING" : "STREAM_SYSTEM" : "STREAM_VOICE_CALL";
+    private static String streamTypeToString(int i7) {
+        return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? i7 != 5 ? "STREAM_INVALID" : "STREAM_NOTIFICATION" : "STREAM_ALARM" : "STREAM_MUSIC" : "STREAM_RING" : "STREAM_SYSTEM" : "STREAM_VOICE_CALL";
     }
 }

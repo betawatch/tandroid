@@ -1,65 +1,82 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
+import android.app.Activity;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g11 b;
+public final class kz0 extends FrameLayout {
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public final org.telegram.ui.Components.b01 d;
+    public boolean e;
+    public long f;
+    public long h;
+    public final org.telegram.ui.Components.zg0 n;
+    public final TextPaint r;
+    public StaticLayout s;
+    public float w;
+    public float x;
+    public final /* synthetic */ SecretMediaViewer y;
 
-    public /* synthetic */ kz0(g11 g11Var, int i3) {
-        this.a = i3;
-        this.b = g11Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kz0(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.y = secretMediaViewer;
+        this.c = new RectF();
+        this.d = new org.telegram.ui.Components.b01();
+        this.r = new TextPaint(1);
+        setWillNotDraw(false);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
+        paint.setColor(-1644826);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.a = paint2;
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setColor(-1644826);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        new Paint(1).setColor(2130706432);
+        org.telegram.ui.Components.zg0 zg0Var = new org.telegram.ui.Components.zg0(R.raw.fire_on, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
+        this.n = zg0Var;
+        zg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        zg0Var.R(this);
+        zg0Var.start();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g11 g11Var = this.b;
-                g11Var.getClass();
-                HashSet hashSet = dh.d0.a;
-                com.google.android.gms.internal.cast.c0 c0Var = org.telegram.messenger.zb.D().p;
-                if (((CountDownLatch) c0Var.c) == null) {
-                    c0Var.c = new CountDownLatch(1);
-                }
-                dh.d0.b = true;
-                dh.d0.e = false;
-                dh.d0.g = false;
-                org.telegram.messenger.g0.i3(new kz0(g11Var, 2), 0L);
-                break;
-            case 1:
-                g11 g11Var2 = this.b;
-                ArrayList arrayList = g11Var2.C1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = g11Var2.D1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = g11Var2.F1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                g11Var2.r0.E(true);
-                break;
-            case 2:
-                this.b.W1.start();
-                break;
-            case 3:
-                this.b.B(true, true, true);
-                break;
-            default:
-                g11 g11Var3 = this.b;
-                org.telegram.messenger.hs e10 = org.telegram.messenger.hs.e();
-                kz0 kz0Var = g11Var3.T1;
-                e10.e.remove(kz0Var);
-                org.telegram.messenger.hs.e().d(kz0Var);
-                break;
-        }
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException
+        */
+    @Override // android.view.View
+    public final void onDraw(android.graphics.Canvas r15) {
+        /*
+            Method dump skipped, instructions count: 217
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.kz0.onDraw(android.graphics.Canvas):void");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        float measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(35.0f);
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float N = org.telegram.messenger.g0.N(10.5f);
+        this.c.set(measuredWidth - N, measuredHeight - N, measuredWidth + N, N + measuredHeight);
+        setPivotX(measuredWidth);
+        setPivotY(measuredHeight);
     }
 }

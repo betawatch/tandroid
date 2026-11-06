@@ -1,46 +1,29 @@
 package p4;
 
-import android.media.session.MediaSession;
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class o implements Parcelable {
-    public static final Parcelable.Creator<o> CREATOR = new n8.g(11);
-    public final h a;
+public final class o {
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final int a;
     public final long b;
-    public MediaSession.QueueItem c;
+    public final k1 c;
 
-    public o(h hVar, long j10) {
-        if (j10 == -1) {
-            throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
-        }
-        this.a = hVar;
-        this.b = j10;
-        this.c = null;
+    static {
+        String str = h2.m0.a;
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        Integer.toString(2, 36);
+        Integer.toString(3, 36);
+        f = Integer.toString(4, 36);
+        g = Integer.toString(5, 36);
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem { Description=");
-        sb2.append(this.a);
-        sb2.append(", Id=");
-        return a1.g.r(sb2, this.b, " }");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        this.a.writeToParcel(parcel, i3);
-        parcel.writeLong(this.b);
-    }
-
-    public o(Parcel parcel) {
-        this.a = h.CREATOR.createFromParcel(parcel);
-        this.b = parcel.readLong();
+    public o(int i7, long j3, k1 k1Var) {
+        this.a = i7;
+        this.b = j3;
+        this.c = k1Var;
     }
 }

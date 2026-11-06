@@ -1,63 +1,41 @@
 package sg;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.ui.Cells.y7;
-import org.telegram.ui.Components.tj0;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public abstract class d extends tj0 {
-    public boolean f3;
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.tj0
-    public final void J0(Canvas canvas, RectF rectF, long j10) {
-        super.J0(canvas, rectF, j10);
-        int childCount = getChildCount();
-        for (int i3 = 0; i3 < childCount; i3++) {
-            View childAt = getChildAt(i3);
-            if (childAt instanceof c) {
-                float x10 = childAt.getX();
-                float y9 = childAt.getY();
-                if (rectF.intersects(x10, y9, childAt.getWidth() + x10, childAt.getHeight() + y9)) {
-                    canvas.save();
-                    canvas.translate(x10, y9);
-                    y7 y7Var = (y7) ((c) childAt);
-                    if (y7Var.M) {
-                        y7Var.b(canvas, this);
-                    }
-                    canvas.restore();
-                }
-            }
-        }
+public final class d extends h {
+    @Override // sg.h
+    public final float a() {
+        return 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.tj0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        this.f3 = false;
-        for (int i3 = 0; i3 < getChildCount(); i3++) {
-            if (getChildAt(i3) instanceof c) {
-                c cVar = (c) getChildAt(i3);
-                canvas.save();
-                canvas.translate(cVar.getX(), cVar.getY());
-                y7 y7Var = (y7) cVar;
-                if (y7Var.M) {
-                    y7Var.b(canvas, this);
-                }
-                canvas.restore();
-            }
-        }
-        super.dispatchDraw(canvas);
+    @Override // sg.h
+    public final float d() {
+        return 1.0f;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.f3) {
-            return;
+    @Override // sg.h
+    public final int e() {
+        return R.raw.photo_eraser;
+    }
+
+    @Override // sg.h
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // sg.h
+    public final String i(int i7) {
+        if (i7 == 0) {
+            return "blitWithMaskEraser";
         }
-        super.invalidate();
-        this.f3 = true;
+        if (i7 == 1) {
+            return "compositeWithMaskEraser";
+        }
+        if (i7 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

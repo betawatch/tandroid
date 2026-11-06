@@ -13,18 +13,17 @@ import android.graphics.RectF;
 import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
-import o4.v0;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public abstract class v {
-    public static void a(y yVar, e0.e0 e0Var, JSONArray jSONArray, int i3, JSONObject jSONObject, x xVar, float f10) {
+    public static void a(y yVar, a4.k kVar, JSONArray jSONArray, int i7, JSONObject jSONObject, x xVar, float f10) {
         JSONArray optJSONArray = jSONObject.optJSONArray("fl");
-        RenderEffect c2 = optJSONArray == null ? null : c(optJSONArray, f10, Shader.TileMode.CLAMP);
+        RenderEffect c10 = optJSONArray == null ? null : c(optJSONArray, f10, Shader.TileMode.CLAMP);
         Matrix matrix = new Matrix();
-        if (c2 == null || !((Matrix) e0Var.d).invert(matrix)) {
+        if (c10 == null || !((Matrix) kVar.d).invert(matrix)) {
             return;
         }
         if (y.j(jSONObject, "r", new RectF()).isEmpty()) {
@@ -36,10 +35,10 @@ public abstract class v {
         beginRecording.translate(-r3, -r4);
         beginRecording.scale(f10, f10);
         beginRecording.concat(matrix);
-        yVar.e(beginRecording, jSONArray, i3, xVar, f10, false);
+        yVar.e(beginRecording, jSONArray, i7, xVar, f10, false);
         renderNode.endRecording();
-        renderNode.setRenderEffect(c2);
-        Canvas canvas = (Canvas) e0Var.c;
+        renderNode.setRenderEffect(c10);
+        Canvas canvas = (Canvas) kVar.c;
         canvas.save();
         Path path = yVar.f;
         yVar.k(jSONObject, "r", path);
@@ -54,8 +53,8 @@ public abstract class v {
     public static Canvas b(w wVar, RectF rectF, JSONArray jSONArray, float f10) {
         Shader.TileMode tileMode;
         tileMode = Shader.TileMode.DECAL;
-        RenderEffect c2 = c(jSONArray, f10, tileMode);
-        if (c2 == null) {
+        RenderEffect c10 = c(jSONArray, f10, tileMode);
+        if (c10 == null) {
             return null;
         }
         RenderNode renderNode = new RenderNode("widget-filter");
@@ -63,7 +62,7 @@ public abstract class v {
         int floor = ((int) Math.floor(rectF.top * f10)) - 1;
         wVar.e = floor;
         renderNode.setPosition(wVar.d, floor, ((int) Math.ceil(rectF.right * f10)) + 1, ((int) Math.ceil(rectF.bottom * f10)) + 1);
-        renderNode.setRenderEffect(c2);
+        renderNode.setRenderEffect(c10);
         wVar.c = renderNode;
         RecordingCanvas beginRecording = renderNode.beginRecording();
         beginRecording.translate(-wVar.d, -wVar.e);
@@ -75,8 +74,8 @@ public abstract class v {
         BlendMode blendMode;
         Shader.TileMode tileMode2;
         RenderEffect renderEffect = null;
-        for (int i3 = 0; i3 < jSONArray.length(); i3++) {
-            JSONArray optJSONArray = jSONArray.optJSONArray(i3);
+        for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+            JSONArray optJSONArray = jSONArray.optJSONArray(i7);
             if (optJSONArray != null) {
                 float optDouble = (float) optJSONArray.optDouble(1);
                 int optInt = optJSONArray.optInt(0);
@@ -116,12 +115,12 @@ public abstract class v {
     }
 
     public static void d(w wVar, float f10) {
-        RenderNode d = v0.d(wVar.c);
-        d.endRecording();
+        RenderNode e10 = ni.a.e(wVar.c);
+        e10.endRecording();
         wVar.a.save();
         float f11 = 1.0f / f10;
         wVar.a.scale(f11, f11);
-        wVar.a.drawRenderNode(d);
+        wVar.a.drawRenderNode(e10);
         wVar.a.restore();
     }
 }

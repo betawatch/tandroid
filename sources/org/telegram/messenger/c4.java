@@ -5,33 +5,33 @@ import java.util.List;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c4 implements ResultCallback {
-    public final /* synthetic */ jg.b a;
-    public final /* synthetic */ org.telegram.ui.de b;
+    public final /* synthetic */ ig.b a;
+    public final /* synthetic */ org.telegram.ui.fe b;
 
-    public c4(jg.b bVar, org.telegram.ui.de deVar) {
+    public c4(ig.b bVar, org.telegram.ui.fe feVar) {
         this.a = bVar;
-        this.b = deVar;
+        this.b = feVar;
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
-        org.telegram.ui.de deVar;
-        org.telegram.ui.ActionBar.p3 p3Var;
+        org.telegram.ui.fe feVar;
+        org.telegram.ui.ActionBar.r3 r3Var;
         Iterator it = ((List) obj).iterator();
         do {
             boolean hasNext = it.hasNext();
-            deVar = this.b;
+            feVar = this.b;
             if (!hasNext) {
-                deVar.onComplete(null);
+                feVar.onComplete(null);
                 return;
             }
-            p3Var = (org.telegram.ui.ActionBar.p3) it.next();
-        } while (!this.a.equals(p3Var.c));
-        p3Var.k();
-        deVar.onComplete(p3Var);
+            r3Var = (org.telegram.ui.ActionBar.r3) it.next();
+        } while (!this.a.equals(r3Var.c));
+        r3Var.k();
+        feVar.onComplete(r3Var);
     }
 
     @Override // org.telegram.tgnet.ResultCallback

@@ -1,0 +1,42 @@
+package li;
+
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.hd;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class u0 extends q31 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        q31.h(new u0());
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+        v0 v0Var = (v0) view;
+        a aVar = (a) r31Var.G;
+        q2 q2Var = (q2) r31Var.H;
+        v0Var.a = aVar;
+        v0Var.w = q2Var;
+        v0Var.x = hd.a0;
+        v0Var.c(aVar);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
+        return new v0(context, f6Var);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final boolean f() {
+        return false;
+    }
+}

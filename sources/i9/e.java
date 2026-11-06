@@ -1,46 +1,27 @@
 package i9;
 
-import java.math.RoundingMode;
+import a8.ia;
+import java.io.OutputStream;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class e {
-    public static final /* synthetic */ int[] a;
+public final class e extends OutputStream {
+    public final String toString() {
+        return "ByteStreams.nullOutputStream()";
+    }
 
-    static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
+    @Override // java.io.OutputStream
+    public final void write(int i7) {
+    }
+
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr) {
+        bArr.getClass();
+    }
+
+    @Override // java.io.OutputStream
+    public final void write(byte[] bArr, int i7, int i10) {
+        bArr.getClass();
+        ia.n(i7, i10 + i7, bArr.length);
     }
 }

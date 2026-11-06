@@ -3,8 +3,9 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import e6.v;
+import f6.v;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -12,10 +13,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import q6.a;
-import w6.c;
+import r6.a;
+import x6.c;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class MediaTrack extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
@@ -30,9 +31,9 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public String r;
     public final JSONObject s;
 
-    public MediaTrack(long j10, int i3, String str, String str2, String str3, String str4, int i10, List list, JSONObject jSONObject) {
-        this.a = j10;
-        this.b = i3;
+    public MediaTrack(long j3, int i7, String str, String str2, String str3, String str4, int i10, List list, JSONObject jSONObject) {
+        this.a = j3;
+        this.b = i7;
         this.c = str;
         this.d = str2;
         this.e = str3;
@@ -47,12 +48,12 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("trackId", this.a);
-            int i3 = this.b;
-            if (i3 == 1) {
+            int i7 = this.b;
+            if (i7 == 1) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "TEXT");
-            } else if (i3 == 2) {
+            } else if (i7 == 2) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "AUDIO");
-            } else if (i3 == 3) {
+            } else if (i7 == 3) {
                 jSONObject.put(TeXSymbolParser.TYPE_ATTR, "VIDEO");
             }
             String str2 = this.c;
@@ -104,12 +105,12 @@ public final class MediaTrack extends a implements ReflectedParcelable {
         }
         MediaTrack mediaTrack = (MediaTrack) obj;
         JSONObject jSONObject = this.s;
-        boolean z10 = jSONObject == null;
+        boolean z9 = jSONObject == null;
         JSONObject jSONObject2 = mediaTrack.s;
-        if (z10 != (jSONObject2 == null)) {
+        if (z9 != (jSONObject2 == null)) {
             return false;
         }
-        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && i6.a.d(this.c, mediaTrack.c) && i6.a.d(this.d, mediaTrack.d) && i6.a.d(this.e, mediaTrack.e) && i6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && i6.a.d(this.n, mediaTrack.n);
+        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && this.a == mediaTrack.a && this.b == mediaTrack.b && j6.a.d(this.c, mediaTrack.c) && j6.a.d(this.d, mediaTrack.d) && j6.a.d(this.e, mediaTrack.e) && j6.a.d(this.f, mediaTrack.f) && this.h == mediaTrack.h && j6.a.d(this.n, mediaTrack.n);
     }
 
     public final int hashCode() {
@@ -117,22 +118,22 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
+    public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.r(parcel, 2, 8);
+        int r10 = wb.r(parcel, 20293);
+        wb.q(parcel, 2, 8);
         parcel.writeLong(this.a);
-        j8.a.r(parcel, 3, 4);
+        wb.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        j8.a.m(parcel, 4, this.c);
-        j8.a.m(parcel, 5, this.d);
-        j8.a.m(parcel, 6, this.e);
-        j8.a.m(parcel, 7, this.f);
-        j8.a.r(parcel, 8, 4);
+        wb.l(parcel, 4, this.c);
+        wb.l(parcel, 5, this.d);
+        wb.l(parcel, 6, this.e);
+        wb.l(parcel, 7, this.f);
+        wb.q(parcel, 8, 4);
         parcel.writeInt(this.h);
-        j8.a.o(parcel, 9, this.n);
-        j8.a.m(parcel, 10, this.r);
-        j8.a.t(parcel, s6);
+        wb.n(parcel, 9, this.n);
+        wb.l(parcel, 10, this.r);
+        wb.s(parcel, r10);
     }
 }

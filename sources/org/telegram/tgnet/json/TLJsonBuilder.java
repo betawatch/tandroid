@@ -7,12 +7,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -42,16 +42,16 @@ public class TLJsonBuilder {
         }
     }
 
-    public void writeBoolean(String str, boolean z10) {
-        write(str, Boolean.valueOf(z10));
+    public void writeBoolean(String str, boolean z9) {
+        write(str, Boolean.valueOf(z9));
     }
 
-    public void writeInt32(String str, int i3) {
-        writeString(str, Integer.toString(i3, 10));
+    public void writeInt32(String str, int i7) {
+        writeString(str, Integer.toString(i7, 10));
     }
 
-    public void writeInt64(String str, long j10) {
-        writeString(str, Long.toString(j10, 10));
+    public void writeInt64(String str, long j3) {
+        writeString(str, Long.toString(j3, 10));
     }
 
     public void writeObject(String str, Serializable serializable) {

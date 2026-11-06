@@ -1,269 +1,137 @@
 package ei;
 
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.util.SparseIntArray;
-import j$.util.Objects;
+import android.view.MotionEvent;
+import android.view.View;
+import bi.m5;
 import java.util.HashSet;
-import org.telegram.messenger.az;
-import org.telegram.messenger.hs;
+import java.util.List;
+import java.util.regex.Pattern;
+import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.Cells.z2;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.b8;
+import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.fm0;
+import org.telegram.ui.Components.hg0;
+import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.vj;
+import org.telegram.ui.Components.vo;
+import org.telegram.ui.Components.vt;
+import org.telegram.ui.Components.wk;
+import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.yv0;
+import org.telegram.ui.ah0;
+import org.telegram.ui.an;
+import org.telegram.ui.g4;
+import org.telegram.ui.hl0;
+import org.telegram.ui.la;
+import org.telegram.ui.mb;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public class b implements org.telegram.ui.ActionBar.e6 {
-    public final HashSet a = new HashSet();
-    public final SparseIntArray b;
-    public final Paint c;
-    public Paint d;
-    public PorterDuffColorFilter e;
-    public org.telegram.ui.ActionBar.t4 f;
+public final /* synthetic */ class b implements View.OnTouchListener {
+    public final /* synthetic */ int a;
 
-    public b() {
-        SparseIntArray sparseIntArray = new SparseIntArray();
-        this.b = sparseIntArray;
-        Paint paint = new Paint();
-        this.c = paint;
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.lg, -1308622848);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.mg, -1056964608);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Mj, -1214008894);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Nj, -1946157057);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Oj, 452984831);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Pj, -665229191);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Qj, -667862461);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Rj, -665229191);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Cj, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.J5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.q7, -2406842);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.H5, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.eg, i0.a.f(0.2f, -16777216, -1));
-        int i3 = org.telegram.ui.ActionBar.k6.P5;
-        sparseIntArray.put(i3, i0.a.f(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Q5, i0.a.f(0.5f, -16777216, -1));
-        int i10 = org.telegram.ui.ActionBar.k6.O5;
-        sparseIntArray.put(i10, i0.a.o(-1, 17));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.E8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.F8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.p7, -1152913);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.i6, 385875967);
-        int i11 = org.telegram.ui.ActionBar.k6.I5;
-        sparseIntArray.put(i11, 436207615);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Hf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Oi, -1711276033);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.H6, i0.a.f(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.t5, i0.a.f(0.5f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.wj, i0.a.f(0.2f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.j5, -592138);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.r5, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.v6, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.If, 1946157055);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Kf, 1946157055);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.jg, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ai, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.s8, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.dg, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.xf, i0.a.o(-1, 30));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.wf, -14670806);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.y8, -1);
-        sparseIntArray.put(i3, i0.a.f(0.5f, -16777216, -1));
-        sparseIntArray.put(i10, i0.a.o(-1, 17));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.y6, i0.a.o(-1, hs.L1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Oe, -14606046);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ne, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Xf, -1221292);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Sf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Yf, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Tf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.bg, 2030043135);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.ag, -10638868);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ke, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Je, org.telegram.ui.ActionBar.k6.r1(0.6f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.ig, -1515107571);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Vc, -5316609);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ie, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Le, org.telegram.ui.ActionBar.k6.r1(0.9f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Kl, org.telegram.ui.ActionBar.k6.r1(0.8f, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ge, -14670806);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.h5, -14737633);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.i5, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.M5, -15393241);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.d6, -15198183);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ml, -15198183);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ql, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.G6, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Af, -8553090);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.h6, -10177027);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ef, 181267199);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.yf, i0.a.o(-1, hs.J1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Bf, -2130706433);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Cf, i0.a.o(-1, hs.J1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Df, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ff, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.zf, i0.a.o(-16777216, 30));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Gf, i0.a.o(-1, hs.J1));
-        int i12 = org.telegram.ui.ActionBar.k6.d7;
-        sparseIntArray.put(i12, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.ng, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.U5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.e7, -14079703);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.f7, -8158332);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.a7, -16777216);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.L6, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.l6, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.k6, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.A6, i0.a.f(0.3f, -1, -16777216));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.tj, -14605274);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.uj, -7616267);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.vj, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.H8, -233499371);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Jf, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.B6, -8355712);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.bh, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Tg, -14538189);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.A5, -14538189);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Z8, -9316522);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.X8, -1446156);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Zc, -2110438831);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.M6, -10263709);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.N6, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.B5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.E5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.n5, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.kk, -832444);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.i7, -12692893);
-        int i13 = org.telegram.ui.ActionBar.k6.j7;
-        sparseIntArray.put(i13, -10329502);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.C5, -1);
-        sparseIntArray.put(i11, 436207615);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Qi, -13816531);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ri, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Pi, -657931);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.J7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Li, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Mi, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.G8, -232841441);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.t8, 385875967);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.m7, -12500671);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.l7, -13133079);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.n7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ci, -15033089);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.k5, -10177041);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.R5, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Uc, -12147733);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.q5, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.ij, -592138);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.kj, -14737633);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.lj, -12632257);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.jj, -8796932);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.xj, 1140850687);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.ob, i0.a.f(0.4f, -16777216, -1));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.rb, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.sb, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.tb, 0);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ae, i0.a.o(-1, 75));
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.h7, -10177041);
-        sparseIntArray.put(i13, -12237499);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.k7, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.K7, -10703370);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.L7, -12547121);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Jl, -1);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Hl, -1207959553);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Il, 352321535);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Gj, -8553091);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Jj, -11292689);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Hj, -12829636);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Ij, -11184811);
-        sparseIntArray.put(org.telegram.ui.ActionBar.k6.Nl, -15198183);
-        k();
-        paint.setColor(h(i12));
+    public /* synthetic */ b(int i7) {
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final boolean a() {
-        return org.telegram.ui.ActionBar.k6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final void b(float f10, float f11, int i3, int i10) {
-        org.telegram.ui.ActionBar.k6.r(f10, f11, i3, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final ColorFilter c() {
-        if (this.e == null) {
-            this.e = new PorterDuffColorFilter(h(org.telegram.ui.ActionBar.k6.G6), PorterDuff.Mode.SRC_IN);
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                int i7 = n.a0;
+                break;
+            case 1:
+                int i10 = v2.h1;
+                break;
+            case 3:
+                HashSet hashSet = g4.c1;
+            case 2:
+                return true;
+            case 4:
+                int i11 = m5.f;
+                break;
+            case 5:
+                int i12 = z2.x;
+                break;
+            case 6:
+                Paint paint = la.H;
+                break;
+            case 7:
+                int i13 = mb.Q0;
+                break;
+            case 8:
+                int i14 = an.id;
+                break;
+            case 10:
+                Pattern pattern = v4.a;
+            case 9:
+                return true;
+            case 11:
+                b8 b8Var = b8.P2;
+                break;
+            case 12:
+                int i15 = ChatActivityEnterView.s5;
+                break;
+            case 13:
+                int i16 = di.E4;
+                break;
+            case 14:
+                int i17 = vj.g0;
+                break;
+            case 15:
+                int i18 = wk.F0;
+                break;
+            case 16:
+                int i19 = vo.c2;
+                break;
+            case 17:
+                vt vtVar = vt.O1;
+                break;
+            case 18:
+                int i20 = iy.h;
+                break;
+            case 19:
+                int[] iArr = ec0.i0;
+                break;
+            case 20:
+                int i21 = hg0.R;
+                break;
+            case 21:
+                int i22 = fm0.a1;
+                break;
+            case 22:
+                int i23 = mo0.Q2;
+                break;
+            case 23:
+                int[] iArr2 = xs0.s2;
+                break;
+            case 24:
+                int i24 = yv0.n2;
+                break;
+            case 25:
+                int i25 = n01.e0;
+                break;
+            case 26:
+                int i26 = UndoView.i0;
+                break;
+            case 27:
+                int i27 = UndoView.i0;
+                break;
+            case 28:
+                int i28 = ah0.V1;
+                break;
+            default:
+                List list = hl0.g1;
+                break;
         }
-        return this.e;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final Paint d(String str) {
-        if (str.equals("paintDivider")) {
-            return this.c;
-        }
-        if (!str.equals("paintChatActionBackground")) {
-            return org.telegram.ui.ActionBar.k6.V0(str);
-        }
-        if (this.d == null) {
-            Paint paint = new Paint(1);
-            this.d = paint;
-            paint.setColor(i0.a.f(0.1f, -16777216, -1));
-        }
-        return this.d;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final boolean e() {
-        return az.H0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int f(int i3) {
-        return h(i3);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final Drawable getDrawable(String str) {
-        if (!Objects.equals(str, "drawableMsgOutMedia")) {
-            return null;
-        }
-        if (this.f == null) {
-            this.f = new org.telegram.ui.ActionBar.t4(1, true, false, this);
-        }
-        return this.f;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int h(int i3) {
-        SparseIntArray sparseIntArray = this.b;
-        int indexOfKey = sparseIntArray.indexOfKey(i3);
-        if (indexOfKey >= 0) {
-            return sparseIntArray.valueAt(indexOfKey);
-        }
-        Integer valueOf = Integer.valueOf(i3);
-        HashSet hashSet = this.a;
-        if (!hashSet.contains(valueOf)) {
-            hashSet.add(Integer.valueOf(i3));
-        }
-        return org.telegram.ui.ActionBar.k6.v0(i3);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int j(int i3) {
-        return h(i3);
-    }
-
-    public void k() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final /* synthetic */ void i(int i3, int i10) {
+        return true;
     }
 }

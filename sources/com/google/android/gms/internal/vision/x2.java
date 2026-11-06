@@ -6,10 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -32,35 +32,35 @@ public abstract class x2 {
         Class<?> cls;
         Class<?> cls2;
         Class<?> cls3;
-        boolean z10;
+        boolean z9;
         Unsafe unsafe;
+        boolean z10;
         boolean z11;
-        boolean z12;
         Class<?> cls4;
         Field m10;
         w2 w2Var2;
-        Unsafe g7 = g();
-        a = g7;
+        Unsafe g10 = g();
+        a = g10;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
         boolean k10 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
         boolean k11 = k(cls6);
-        if (g7 != null) {
+        if (g10 != null) {
             if (!m0.a()) {
-                w2Var = new v2(g7);
+                w2Var = new v2(g10);
             } else if (k10) {
-                w2Var = new u2(g7, 1);
+                w2Var = new u2(g10, 1);
             } else if (k11) {
-                w2Var = new u2(g7, 0);
+                w2Var = new u2(g10, 0);
             }
             c = w2Var;
             Class<?> cls7 = Byte.TYPE;
-            if (g7 != null) {
+            if (g10 != null) {
                 cls = cls5;
             } else {
                 try {
-                    cls3 = g7.getClass();
+                    cls3 = g10.getClass();
                     cls = cls5;
                     try {
                         cls3.getMethod("objectFieldOffset", Field.class);
@@ -75,13 +75,13 @@ public abstract class x2 {
                         sb2.append("platform method missing - proto runtime falling back to safer methods: ");
                         sb2.append(valueOf);
                         logger.logp(level, "com.google.protobuf.UnsafeUtil", "supportsUnsafeByteBufferOperations", sb2.toString());
-                        z10 = false;
-                        d = z10;
+                        z9 = false;
+                        d = z9;
                         unsafe = a;
                         if (unsafe != null) {
                         }
-                        z11 = true;
-                        e = z12;
+                        z10 = true;
+                        e = z11;
                         f = f(byte[].class);
                         f(boolean[].class);
                         h(boolean[].class);
@@ -98,7 +98,7 @@ public abstract class x2 {
                         m10 = m();
                         if (m10 != null) {
                         }
-                        g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                        g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
                     }
                 } catch (Throwable th3) {
                     th = th3;
@@ -107,7 +107,7 @@ public abstract class x2 {
                 if (m() != null) {
                     if (m0.a()) {
                         cls2 = cls6;
-                        z10 = true;
+                        z9 = true;
                     } else {
                         cls3.getMethod("getByte", cls);
                         cls3.getMethod("putByte", cls, cls7);
@@ -118,12 +118,12 @@ public abstract class x2 {
                         cls3.getMethod("copyMemory", cls, cls, cls);
                         cls3.getMethod("copyMemory", Object.class, cls, Object.class, cls, cls);
                         cls2 = cls6;
-                        z10 = true;
+                        z9 = true;
                     }
-                    d = z10;
+                    d = z9;
                     unsafe = a;
                     if (unsafe != null) {
-                        z12 = false;
+                        z11 = false;
                     } else {
                         try {
                             cls4 = unsafe.getClass();
@@ -141,7 +141,7 @@ public abstract class x2 {
                                 cls4.getMethod("putLong", clsArr);
                                 Class<?>[] clsArr2 = new Class[2];
                                 clsArr2[0] = Object.class;
-                                z11 = true;
+                                z10 = true;
                                 try {
                                     clsArr2[1] = cls;
                                     cls4.getMethod("getObject", clsArr2);
@@ -159,8 +159,8 @@ public abstract class x2 {
                                     sb3.append("platform method missing - proto runtime falling back to safer methods: ");
                                     sb3.append(valueOf2);
                                     logger2.logp(level2, "com.google.protobuf.UnsafeUtil", "supportsUnsafeArrayOperations", sb3.toString());
-                                    z12 = false;
-                                    e = z12;
+                                    z11 = false;
+                                    e = z11;
                                     f = f(byte[].class);
                                     f(boolean[].class);
                                     h(boolean[].class);
@@ -177,15 +177,15 @@ public abstract class x2 {
                                     m10 = m();
                                     if (m10 != null) {
                                     }
-                                    g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                                    g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
                                 }
                             } catch (Throwable th5) {
                                 th = th5;
-                                z11 = true;
+                                z10 = true;
                             }
                         } catch (Throwable th6) {
                             th = th6;
-                            z11 = true;
+                            z10 = true;
                         }
                         if (!m0.a()) {
                             Class<?>[] clsArr4 = new Class[2];
@@ -217,12 +217,12 @@ public abstract class x2 {
                             cls4.getMethod("putFloat", clsArr9);
                             Class<?>[] clsArr10 = new Class[2];
                             clsArr10[0] = Object.class;
-                            z11 = true;
+                            z10 = true;
                             clsArr10[1] = cls;
                             cls4.getMethod("getDouble", clsArr10);
                             cls4.getMethod("putDouble", Object.class, cls, Double.TYPE);
-                            z12 = true;
-                            e = z12;
+                            z11 = true;
+                            e = z11;
                             f = f(byte[].class);
                             f(boolean[].class);
                             h(boolean[].class);
@@ -240,12 +240,12 @@ public abstract class x2 {
                             if (m10 != null && (w2Var2 = c) != null) {
                                 w2Var2.a.objectFieldOffset(m10);
                             }
-                            g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                            g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
                         }
-                        z12 = true;
+                        z11 = true;
                     }
-                    z11 = true;
-                    e = z12;
+                    z10 = true;
+                    e = z11;
                     f = f(byte[].class);
                     f(boolean[].class);
                     h(boolean[].class);
@@ -263,17 +263,17 @@ public abstract class x2 {
                     if (m10 != null) {
                         w2Var2.a.objectFieldOffset(m10);
                     }
-                    g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+                    g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
                 }
             }
             cls2 = cls6;
-            z10 = false;
-            d = z10;
+            z9 = false;
+            d = z9;
             unsafe = a;
             if (unsafe != null) {
             }
-            z11 = true;
-            e = z12;
+            z10 = true;
+            e = z11;
             f = f(byte[].class);
             f(boolean[].class);
             h(boolean[].class);
@@ -290,21 +290,21 @@ public abstract class x2 {
             m10 = m();
             if (m10 != null) {
             }
-            g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+            g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
         }
         w2Var = null;
         c = w2Var;
         Class<?> cls72 = Byte.TYPE;
-        if (g7 != null) {
+        if (g10 != null) {
         }
         cls2 = cls6;
-        z10 = false;
-        d = z10;
+        z9 = false;
+        d = z9;
         unsafe = a;
         if (unsafe != null) {
         }
-        z11 = true;
-        e = z12;
+        z10 = true;
+        e = z11;
         f = f(byte[].class);
         f(boolean[].class);
         h(boolean[].class);
@@ -321,11 +321,11 @@ public abstract class x2 {
         m10 = m();
         if (m10 != null) {
         }
-        g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z11 : false;
+        g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN ? z10 : false;
     }
 
-    public static byte a(long j10, byte[] bArr) {
-        return c.a(bArr, f + j10);
+    public static byte a(long j3, byte[] bArr) {
+        return c.a(bArr, f + j3);
     }
 
     public static Object b(Class cls) {
@@ -336,16 +336,16 @@ public abstract class x2 {
         }
     }
 
-    public static void c(long j10, Object obj, int i3) {
-        c.b(j10, obj, i3);
+    public static void c(long j3, Object obj, int i7) {
+        c.b(j3, obj, i7);
     }
 
-    public static void d(Object obj, long j10, Object obj2) {
-        c.a.putObject(obj, j10, obj2);
+    public static void d(Object obj, long j3, Object obj2) {
+        c.a.putObject(obj, j3, obj2);
     }
 
-    public static void e(byte[] bArr, long j10, byte b10) {
-        c.c(bArr, f + j10, b10);
+    public static void e(byte[] bArr, long j3, byte b10) {
+        c.c(bArr, f + j3, b10);
     }
 
     public static int f(Class cls) {
@@ -369,17 +369,17 @@ public abstract class x2 {
         }
     }
 
-    public static void i(Object obj, long j10, byte b10) {
-        long j11 = (-4) & j10;
-        int k10 = c.k(obj, j11);
-        int i3 = ((~((int) j10)) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i3) | (k10 & (~(hs.e4 << i3))));
+    public static void i(Object obj, long j3, byte b10) {
+        long j10 = (-4) & j3;
+        int k10 = c.k(obj, j10);
+        int i7 = ((~((int) j3)) & 3) << 3;
+        c(j10, obj, ((255 & b10) << i7) | (k10 & (~(qs.e4 << i7))));
     }
 
-    public static void j(Object obj, long j10, byte b10) {
-        long j11 = (-4) & j10;
-        int i3 = (((int) j10) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i3) | (c.k(obj, j11) & (~(hs.e4 << i3))));
+    public static void j(Object obj, long j3, byte b10) {
+        long j10 = (-4) & j3;
+        int i7 = (((int) j3) & 3) << 3;
+        c(j10, obj, ((255 & b10) << i7) | (c.k(obj, j10) & (~(qs.e4 << i7))));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -405,8 +405,8 @@ public abstract class x2 {
         }
     }
 
-    public static Object l(Object obj, long j10) {
-        return c.a.getObject(obj, j10);
+    public static Object l(Object obj, long j3) {
+        return c.a.getObject(obj, j3);
     }
 
     public static Field m() {
@@ -433,11 +433,11 @@ public abstract class x2 {
         return field;
     }
 
-    public static byte n(Object obj, long j10) {
-        return (byte) (c.k(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3)));
+    public static byte n(Object obj, long j3) {
+        return (byte) (c.k(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3)));
     }
 
-    public static byte o(Object obj, long j10) {
-        return (byte) (c.k(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3)));
+    public static byte o(Object obj, long j3) {
+        return (byte) (c.k(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3)));
     }
 }

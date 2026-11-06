@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.k;
-import fd.c;
+import gd.k;
+import id.c;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import wd.b0;
-import wd.z;
+import zd.b0;
+import zd.z;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzip implements zzik {
     private final z zza;
@@ -39,7 +39,7 @@ public final class zzip implements zzik {
         }
         zzb.zzf();
         long zza2 = zzb.zza(TimeUnit.MICROSECONDS);
-        int i3 = zzco.zza;
+        int i7 = zzco.zza;
         int zzk = zzzuVar.zzk();
         if (zzk == 1) {
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
@@ -50,13 +50,13 @@ public final class zzip implements zzik {
     /* JADX INFO: Access modifiers changed from: private */
     public final Object zzg(List list, zziz zzizVar, c cVar) {
         Object e10 = b0.e(new zzim(zzizVar, list, this, null), cVar);
-        return e10 == gd.a.a ? e10 : k.a;
+        return e10 == jd.a.a ? e10 : k.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object zzh(Exception exc, zziz zzizVar, c cVar) {
         Object e10 = b0.e(new zzin(exc, zzizVar, this, null), cVar);
-        return e10 == gd.a.a ? e10 : k.a;
+        return e10 == jd.a.a ? e10 : k.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzik

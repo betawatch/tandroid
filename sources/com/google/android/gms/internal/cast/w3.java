@@ -1,16 +1,22 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class w3 {
-    public final Throwable a;
+    public static final w3 d = new w3();
+    public final Runnable a;
+    public final Executor b;
+    public w3 c;
 
-    static {
-        new w3(new c0.b("Failure occurred while trying to finish a future.", 2));
+    public w3() {
+        this.a = null;
+        this.b = null;
     }
 
-    public w3(Throwable th2) {
-        th2.getClass();
-        this.a = th2;
+    public w3(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
     }
 }

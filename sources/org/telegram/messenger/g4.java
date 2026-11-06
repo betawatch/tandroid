@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g4 {
     public static final SparseArray e = new SparseArray();
@@ -14,13 +14,13 @@ public final class g4 {
     public final int c;
     public final boolean d;
 
-    public g4(int i3, int i10) {
-        if (i3 == -2) {
+    public g4(int i7, int i10) {
+        if (i7 == -2) {
             this.d = true;
-            i3 = -1;
+            i7 = -1;
         }
-        this.a = i3;
-        Integer valueOf = Integer.valueOf(i3);
+        this.a = i7;
+        Integer valueOf = Integer.valueOf(i7);
         this.b = i10;
         this.c = Objects.hash(0, valueOf, Integer.valueOf(i10));
     }

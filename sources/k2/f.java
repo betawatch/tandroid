@@ -1,53 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
-    public final long a;
-    public final long b;
-    public long c = -9223372036854775807L;
-    public long d = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public float j = 0.97f;
-    public float i = 1.03f;
-    public float k = 1.0f;
-    public long l = -9223372036854775807L;
-    public long e = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public long m = -9223372036854775807L;
-    public long n = -9223372036854775807L;
-
-    public f(long j10, long j11) {
-        this.a = j10;
-        this.b = j11;
-    }
-
-    public final void a() {
-        long j10;
-        long j11 = this.c;
-        if (j11 != -9223372036854775807L) {
-            j10 = this.d;
-            if (j10 == -9223372036854775807L) {
-                long j12 = this.f;
-                if (j12 != -9223372036854775807L && j11 < j12) {
-                    j11 = j12;
-                }
-                j10 = this.g;
-                if (j10 == -9223372036854775807L || j11 <= j10) {
-                    j10 = j11;
-                }
-            }
-        } else {
-            j10 = -9223372036854775807L;
-        }
-        if (this.e == j10) {
-            return;
-        }
-        this.e = j10;
-        this.h = j10;
-        this.m = -9223372036854775807L;
-        this.n = -9223372036854775807L;
-        this.l = -9223372036854775807L;
-    }
+public abstract class f extends Exception {
 }

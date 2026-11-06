@@ -20,8 +20,8 @@ public final class f extends p implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -29,25 +29,25 @@ public final class f extends p implements Spliterator {
         throw new IllegalStateException();
     }
 
-    public f(l[] lVarArr, int i3, int i10, int i11, long j10, ConcurrentHashMap concurrentHashMap) {
-        super(lVarArr, i3, i10, i11);
+    public f(l[] lVarArr, int i7, int i10, int i11, long j3, ConcurrentHashMap concurrentHashMap) {
+        super(lVarArr, i7, i10, i11);
         this.i = concurrentHashMap;
-        this.j = j10;
+        this.j = j3;
     }
 
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
-        int i3 = this.f;
+        int i7 = this.f;
         int i10 = this.g;
-        int i11 = (i3 + i10) >>> 1;
-        if (i11 <= i3) {
+        int i11 = (i7 + i10) >>> 1;
+        if (i11 <= i7) {
             return null;
         }
         l[] lVarArr = this.a;
         this.g = i11;
-        long j10 = this.j >>> 1;
-        this.j = j10;
-        return new f(lVarArr, this.h, i11, i10, j10, this.i);
+        long j3 = this.j >>> 1;
+        this.j = j3;
+        return new f(lVarArr, this.h, i11, i10, j3, this.i);
     }
 
     @Override // j$.util.Spliterator

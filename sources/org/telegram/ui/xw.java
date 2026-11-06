@@ -1,51 +1,39 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xw implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class xw implements org.telegram.messenger.x5 {
+    public long a;
+    public long b;
+    public final String c;
+    public final /* synthetic */ yw d;
 
-    public /* synthetic */ xw(Object obj, int i3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i3;
+    public xw(yw ywVar, String str) {
+        this.d = ywVar;
+        this.c = str;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i3) {
-        switch (this.a) {
-            case 0:
-                cx cxVar = (cx) ((mi.h0) this.c).c;
-                if (i3 == 0) {
-                    cxVar.e.remove(this.b - cxVar.n);
-                    cxVar.e0();
-                    bx bxVar = cxVar.f;
-                    if (bxVar != null) {
-                        bxVar.a();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                NotificationsSettingsActivity.c0((NotificationsSettingsActivity) this.c, this.b, i3);
-                break;
-            default:
-                ThemeActivity themeActivity = (ThemeActivity) this.c;
-                themeActivity.getClass();
-                SharedPreferences.Editor edit = org.telegram.messenger.hp.e1().edit();
-                edit.putInt("sortContactsBy", i3);
-                edit.commit();
-                v51 v51Var = themeActivity.a;
-                if (v51Var != null) {
-                    v51Var.g(this.b);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.x5
+    public final int getObserverTag() {
+        return 0;
+    }
+
+    @Override // org.telegram.messenger.x5
+    public final void i(long j3, long j10) {
+        this.b = j3;
+        this.a = j10;
+        this.d.b();
+    }
+
+    @Override // org.telegram.messenger.x5
+    public final void C(boolean z9) {
+    }
+
+    @Override // org.telegram.messenger.x5
+    public final void M(String str) {
+    }
+
+    @Override // org.telegram.messenger.x5
+    public final void o(long j3, long j10) {
     }
 }

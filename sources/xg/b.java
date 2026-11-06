@@ -1,108 +1,110 @@
 package xg;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.i81;
-import ug.f2;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b extends View {
-    public final g6 a;
-    public float b;
-    public ValueAnimator c;
-    public int d;
-    public final Paint e;
+public final class b extends rg.a {
+    public CharSequence c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public Object f;
+    public boolean g;
+    public long h;
+    public int i;
+    public int j;
+    public List k;
+    public int l;
+    public TLObject m;
 
-    public b(Context context) {
-        super(context);
-        this.b = 1.0f;
-        g6 g6Var = new g6(false, false, true);
-        this.a = g6Var;
-        g6Var.n(0.3f, 250L, xq.h);
-        g6Var.setCallback(this);
-        g6Var.w(org.telegram.messenger.g0.L(11.5f));
-        g6Var.x(org.telegram.messenger.g0.o());
-        g6Var.u(-1);
-        g6Var.t("", true, true);
-        g6Var.b = 17;
-        Paint paint = new Paint(1);
-        this.e = paint;
-        paint.setColor(-6915073);
-        setVisibility(8);
+    public static b b(int i7, TLRPC.Chat chat, boolean z9) {
+        b bVar = new b(9, false);
+        bVar.e = chat;
+        bVar.d = null;
+        bVar.g = z9;
+        bVar.i = i7;
+        return bVar;
     }
 
-    public final void a(int i3, boolean z10) {
-        if (!s.i()) {
-            i3 = 0;
+    public static b c(CharSequence charSequence, boolean z9) {
+        b bVar = new b(7, false);
+        bVar.c = charSequence;
+        bVar.g = z9;
+        return bVar;
+    }
+
+    public static b d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i7, long j3, boolean z9, boolean z10) {
+        b bVar = new b(17, z9);
+        bVar.i = i7;
+        bVar.h = j3;
+        bVar.m = tL_starsGiveawayOption;
+        bVar.g = z10;
+        return bVar;
+    }
+
+    public static b e(int i7, int i10, boolean z9, ArrayList arrayList) {
+        b bVar = new b(11, i10 == i7);
+        bVar.l = i7;
+        bVar.g = z9;
+        bVar.f = arrayList;
+        return bVar;
+    }
+
+    public static b f(String str) {
+        b bVar = new b(6, false);
+        bVar.c = str;
+        return bVar;
+    }
+
+    public static boolean g(List list, List list2) {
+        if (list == null && list2 == null) {
+            return true;
         }
-        if (i3 > 0) {
-            setVisibility(0);
+        if (list == null || list2 == null || list.size() != list2.size()) {
+            return false;
         }
-        g6 g6Var = this.a;
-        if (z10) {
-            g6Var.a();
-        }
-        if (z10 && i3 != this.d && i3 > 0) {
-            ValueAnimator valueAnimator = this.c;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.c = null;
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            if (((Integer) list.get(i7)).intValue() != ((Integer) list2.get(i7)).intValue()) {
+                return false;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.c = ofFloat;
-            ofFloat.addUpdateListener(new f2(this, 5));
-            this.c.addListener(new i81(this, 23));
-            org.telegram.messenger.camera.q.i(2.0f, this.c);
-            this.c.setDuration(200L);
-            this.c.start();
         }
-        this.d = i3;
-        int length = g6Var.i.length();
-        g6Var.t("x" + i3, z10, true);
-        int length2 = g6Var.i.length();
-        invalidate();
-        if (length != length2) {
-            requestLayout();
-        }
+        return true;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        Rect rect = org.telegram.messenger.g0.Q;
-        int L = org.telegram.messenger.g0.L(8.0f);
-        g6 g6Var = this.a;
-        rect.set(0, 0, L + ((int) g6Var.c()), org.telegram.messenger.g0.L(20.0f));
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(rect);
-        if (this.b != 1.0f) {
-            canvas.save();
-            float f10 = this.b;
-            canvas.scale(f10, f10, rect.centerX(), rect.centerY());
+    @Override // rg.a
+    public final boolean a(rg.a aVar) {
+        b bVar;
+        int i7;
+        int i10;
+        if (this == aVar) {
+            return true;
         }
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.e);
-        rect.set(0, 0, (int) rectF.width(), org.telegram.messenger.g0.L(19.0f));
-        g6Var.setBounds(rect);
-        g6Var.draw(canvas);
-        if (this.b != 1.0f) {
-            canvas.restore();
+        if (b.class == aVar.getClass() && (i7 = (bVar = (b) aVar).a) == (i10 = this.a)) {
+            return i10 == 0 ? this.g == bVar.g : i7 == 17 ? this.i == bVar.i && this.h == bVar.h && this.m == bVar.m && this.g == bVar.g && this.b == bVar.b : i10 == 5 ? this.i == bVar.i && g(this.k, bVar.k) : i10 == 13 && this.i == bVar.i && TextUtils.equals(this.c, bVar.c);
         }
-        canvas.restore();
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (this.a.e() + org.telegram.messenger.g0.L(15.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(26.0f), TLObject.FLAG_30));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
+        }
+        b bVar = (b) obj;
+        int i7 = this.a;
+        if (i7 != bVar.a) {
+            return false;
+        }
+        if (i7 == 0) {
+            return true;
+        }
+        return i7 == 17 ? this.i == bVar.i && this.m == bVar.m : i7 == 5 ? g(this.k, bVar.k) : i7 == 13 ? TextUtils.equals(this.c, bVar.c) : this.e == bVar.e && this.f == bVar.f && this.d == bVar.d && this.m == bVar.m && this.g == bVar.g && this.i == bVar.i && this.j == bVar.j && this.h == bVar.h && this.l == bVar.l && TextUtils.equals(this.c, bVar.c);
     }
 }

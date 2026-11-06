@@ -1,92 +1,118 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ty extends org.telegram.ui.Cells.n4 {
-    public final /* synthetic */ ez E;
-    public final TextView r;
-    public final ci.kb s;
-    public int w;
-    public final org.telegram.ui.Components.x4 x;
-    public boolean y;
+public final class ty extends az {
+    public final /* synthetic */ uy E;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ty(ez ezVar, Context context) {
-        super(context, r2, 22, 15, false, r6);
-        org.telegram.ui.ActionBar.e6 e6Var;
-        this.E = ezVar;
-        int i3 = org.telegram.ui.ActionBar.k6.L6;
-        e6Var = ((org.telegram.ui.ActionBar.d2) ezVar).resourceProvider;
-        TextView textView = new TextView(getContext());
-        this.r = textView;
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.z6, ezVar.getResourceProvider());
-        textView.setText(org.telegram.messenger.bd.M0(ezVar.getUserConfig().q() ? 2131750621 : 2131750620, null));
-        textView.setGravity(5);
-        int i10 = (org.telegram.messenger.bd.a0 ? 3 : 5) | 48;
-        float f10 = this.b;
-        addView(textView, b8.mf.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
-        textView.setAlpha(0.0f);
-        ci.kb kbVar = new ci.kb(this, getContext());
-        this.s = kbVar;
-        this.x = new org.telegram.ui.Components.x4(kbVar, 320L, org.telegram.ui.Components.xq.h, 0);
-        kbVar.setTextSize(org.telegram.messenger.g0.L(10.0f));
-        kbVar.setTypeface(org.telegram.messenger.g0.o());
-        kbVar.setGravity(5);
-        kbVar.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
-        int i11 = (org.telegram.messenger.bd.a0 ? 3 : 5) | 48;
-        float f11 = this.b;
-        addView(kbVar, b8.mf.d(-1, -1.0f, i11, f11, 16.66f, f11, this.c));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ty(uy uyVar, Context context, int i7, int i10) {
+        super(context, null, i7, i10);
+        this.E = uyVar;
     }
 
-    public final void d(int i3, boolean z10) {
-        ez ezVar = this.E;
-        String M0 = org.telegram.messenger.bd.M0(ezVar.getUserConfig().q() ? 2131750621 : 2131750620, null);
-        TextView textView = this.r;
-        textView.setText(M0);
-        int i10 = 0;
-        boolean z11 = i3 < 0;
-        if (!z11) {
-            int[] iArr = org.telegram.ui.ActionBar.k6.r8;
-            i10 = ezVar.getThemedColor(iArr[i3 % iArr.length]);
-        }
-        this.w = i10;
-        ci.kb kbVar = this.s;
-        if (!z11) {
-            kbVar.setEmojiColor(i10);
-        }
-        if (!z10) {
-            this.x.a(this.w, true);
-        }
-        if (z11 != this.y) {
-            this.y = z11;
-            ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
-            org.telegram.ui.Components.xq xqVar = org.telegram.ui.Components.xq.h;
-            duration.setInterpolator(xqVar).start();
-            kbVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(xqVar).start();
-        }
+    @Override // org.telegram.ui.az
+    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
+        uy uyVar = this.E;
+        uyVar.d.R1.remove(tL_exportedChatlistInvite);
+        uyVar.d.g1();
+        uyVar.d.h1(true);
     }
 
-    public final void e(CharSequence charSequence, boolean z10) {
-        if (charSequence == null) {
-            charSequence = "";
+    @Override // org.telegram.ui.az
+    public final void c() {
+        org.telegram.ui.Components.k60 F = org.telegram.ui.Components.k60.F(this.E.d.c, null, this);
+        final int i7 = 0;
+        F.c(R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131751762, null), new Runnable(this) { // from class: org.telegram.ui.sy
+            public final /* synthetic */ ty b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i7) {
+                    case 0:
+                        ty tyVar = this.b;
+                        String str = tyVar.y;
+                        if (str != null && org.telegram.messenger.g0.g(str)) {
+                            new org.telegram.ui.Components.hc(tyVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, false);
+        final int i10 = 1;
+        F.c(R.drawable.msg_qrcode, org.telegram.messenger.hd.M0(2131750471, null), new Runnable(this) { // from class: org.telegram.ui.sy
+            public final /* synthetic */ ty b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        ty tyVar = this.b;
+                        String str = tyVar.y;
+                        if (str != null && org.telegram.messenger.g0.g(str)) {
+                            new org.telegram.ui.Components.hc(tyVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, false);
+        final int i11 = 2;
+        F.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751535, null), new Runnable(this) { // from class: org.telegram.ui.sy
+            public final /* synthetic */ ty b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        ty tyVar = this.b;
+                        String str = tyVar.y;
+                        if (str != null && org.telegram.messenger.g0.g(str)) {
+                            new org.telegram.ui.Components.hc(tyVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, true);
+        if (org.telegram.messenger.hd.a0) {
+            F.i = 3;
         }
-        boolean z11 = false;
-        if (charSequence.length() > 12) {
-            charSequence = charSequence.subSequence(0, 12);
-        }
-        ci.kb kbVar = this.s;
-        CharSequence m10 = org.telegram.messenger.i6.m(charSequence, kbVar.getPaint().getFontMetricsInt(), false, null, 0);
-        if (z10 && !org.telegram.messenger.bd.a0) {
-            z11 = true;
-        }
-        kbVar.c(m10, z11, true);
+        F.Z();
     }
 }

@@ -4,10 +4,9 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import j$.util.Objects;
-import k2.p1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class AppInfo {
     public static final String MIN_API_LEVEL_METADATA_KEY = "androidx.car.app.minCarApiLevel";
@@ -15,8 +14,8 @@ public final class AppInfo {
     private final String mLibraryVersion;
     private final int mMinCarAppApiLevel;
 
-    public AppInfo(int i3, int i10, String str) {
-        this.mMinCarAppApiLevel = i3;
+    public AppInfo(int i7, int i10, String str) {
+        this.mMinCarAppApiLevel = i7;
         this.mLibraryVersion = str;
         this.mLatestCarAppApiLevel = i10;
     }
@@ -26,18 +25,18 @@ public final class AppInfo {
         if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= z.a.a()) {
             return new AppInfo(retrieveMinCarAppApiLevel, z.a.a(), context.getResources().getString(R.string.car_app_library_version));
         }
-        StringBuilder m10 = p1.m(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
-        m10.append(z.a.a());
-        m10.append(")");
-        throw new IllegalArgumentException(m10.toString());
+        StringBuilder n10 = jg.g.n(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
+        n10.append(z.a.a());
+        n10.append(")");
+        throw new IllegalArgumentException(n10.toString());
     }
 
     public static int retrieveMinCarAppApiLevel(Context context) {
         try {
             Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
-            int i3 = bundle != null ? bundle.getInt(MIN_API_LEVEL_METADATA_KEY, 0) : 0;
-            if (i3 != 0) {
-                return i3;
+            int i7 = bundle != null ? bundle.getInt(MIN_API_LEVEL_METADATA_KEY, 0) : 0;
+            if (i7 != 0) {
+                return i7;
             }
             throw new IllegalArgumentException("Min API level not declared in manifest (androidx.car.app.minCarApiLevel)");
         } catch (PackageManager.NameNotFoundException unused) {

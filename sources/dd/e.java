@@ -1,37 +1,23 @@
 package dd;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e implements Serializable {
-    public final Object a;
-    public final Object b;
+public final class e extends k {
+    public final StringBuilder c;
 
-    public e(Object obj, Object obj2) {
-        this.a = obj;
-        this.b = obj2;
+    public e() {
+        super(4, 0);
+        this.c = new StringBuilder();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return kotlin.jvm.internal.j.a(this.a, eVar.a) && kotlin.jvm.internal.j.a(this.b, eVar.b);
+    @Override // dd.k
+    public final k b() {
+        k.c(this.c);
+        return this;
     }
 
-    public final int hashCode() {
-        Object obj = this.a;
-        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
-        Object obj2 = this.b;
-        return hashCode + (obj2 != null ? obj2.hashCode() : 0);
-    }
-
+    @Override // dd.k
     public final String toString() {
-        return "(" + this.a + ", " + this.b + ')';
+        return "<!--" + this.c.toString() + "-->";
     }
 }

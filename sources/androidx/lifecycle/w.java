@@ -1,6 +1,5 @@
 package androidx.lifecycle;
 
-import b8.tb;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -30,13 +29,13 @@ public abstract class w {
     /* JADX WARN: Multi-variable type inference failed */
     public static int b(Class cls) {
         Constructor constructor;
-        boolean z10;
+        boolean z9;
         HashMap hashMap = a;
         Integer num = (Integer) hashMap.get(cls);
         if (num != null) {
             return num.intValue();
         }
-        int i3 = 1;
+        int i7 = 1;
         if (cls.getCanonicalName() != null) {
             ArrayList arrayList = null;
             try {
@@ -50,7 +49,7 @@ public abstract class w {
                     kotlin.jvm.internal.j.d(name, "this as java.lang.String).substring(startIndex)");
                 }
                 kotlin.jvm.internal.j.d(name, "if (fullPackage.isEmpty(…g(fullPackage.length + 1)");
-                String concat = ud.l.c(name, ".", "_").concat("_LifecycleAdapter");
+                String concat = xd.l.c(name, ".", "_").concat("_LifecycleAdapter");
                 if (fullPackage.length() != 0) {
                     concat = fullPackage + '.' + concat;
                 }
@@ -65,13 +64,13 @@ public abstract class w {
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, tb.a(constructor));
+                hashMap2.put(cls, c8.d0.a(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;
                 Boolean bool = (Boolean) hashMap3.get(cls);
                 if (bool != null) {
-                    z10 = bool.booleanValue();
+                    z9 = bool.booleanValue();
                 } else {
                     try {
                         Method[] declaredMethods = cls.getDeclaredMethods();
@@ -80,12 +79,12 @@ public abstract class w {
                         while (true) {
                             if (i10 >= length) {
                                 hashMap3.put(cls, Boolean.FALSE);
-                                z10 = false;
+                                z9 = false;
                                 break;
                             }
                             if (((b0) declaredMethods[i10].getAnnotation(b0.class)) != null) {
                                 dVar.a(cls, declaredMethods);
-                                z10 = true;
+                                z9 = true;
                                 break;
                             }
                             i10++;
@@ -94,7 +93,7 @@ public abstract class w {
                         throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e11);
                     }
                 }
-                if (!z10) {
+                if (!z9) {
                     Class superclass = cls.getSuperclass();
                     if (superclass != null && s.class.isAssignableFrom(superclass)) {
                         kotlin.jvm.internal.j.d(superclass, "superclass");
@@ -130,9 +129,9 @@ public abstract class w {
                     }
                 }
             }
-            i3 = 2;
+            i7 = 2;
         }
-        hashMap.put(cls, Integer.valueOf(i3));
-        return i3;
+        hashMap.put(cls, Integer.valueOf(i7));
+        return i7;
     }
 }

@@ -8,8 +8,8 @@ import java.util.function.IntFunction;
 /* loaded from: classes2.dex */
 public final class t2 extends x2 implements y1 {
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.S(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.S(this, j3, j10);
     }
 
     @Override // j$.util.stream.e2
@@ -18,19 +18,19 @@ public final class t2 extends x2 implements y1 {
     }
 
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i3) {
-        a(i3);
+    public final /* bridge */ /* synthetic */ e2 a(int i7) {
+        a(i7);
         throw null;
     }
 
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final d2 a(int i3) {
+    public final d2 a(int i7) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i3) {
-        t3.M(this, (Double[]) objArr, i3);
+    public final /* synthetic */ void f(Object[] objArr, int i7) {
+        t3.M(this, (Double[]) objArr, i7);
     }
 
     @Override // j$.util.stream.d2

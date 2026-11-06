@@ -1,7 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Path;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface bd0 {
-    void m(int i3, int i10);
+public final class bd0 extends Path {
+    public int a;
+    public int b;
+    public int c;
+
+    public final void a(int i7, int i10, int i11) {
+        if (this.a == i7 && this.b == i10 && this.c == i11) {
+            return;
+        }
+        rewind();
+        RectF rectF = org.telegram.messenger.g0.P;
+        float f10 = i7 - i11;
+        float f11 = i10 + i11;
+        rectF.set(f10, i10 - i11, i7 + i11, f11);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f12 = i11 / 81.0f;
+        float f13 = i7;
+        float f14 = f11 - (3.0f * f12);
+        cubicTo(f13 - (13.0f * f12), f11, f13 - (25.0f * f12), f14, f13 - (36.0f * f12), f11 - (8.42f * f12));
+        float f15 = f11 - f12;
+        cubicTo(f13 - (52.0f * f12), f15, f13 - (56.5f * f12), f15, f13 - (78.02f * f12), f15);
+        cubicTo(f13 - (80.0f * f12), f15, f13 - (81.0f * f12), f14, f13 - (79.52f * f12), f11 - (4.5f * f12));
+        float f16 = f13 - (63.73f * f12);
+        cubicTo(f13 - (78.0f * f12), f11 - (6.0f * f12), f16, f11 - (15.0f * f12), f16, f11 - (31.0f * f12));
+        float f17 = i10;
+        cubicTo(f13 - (74.5f * f12), f11 - (44.75f * f12), f10, (f12 * 18.87f) + f17, f10, f17);
+        close();
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+    }
 }

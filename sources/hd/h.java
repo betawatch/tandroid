@@ -1,17 +1,12 @@
 package hd;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public abstract class h extends a {
-    public h(fd.c cVar) {
-        super(cVar);
-        if (cVar != null && cVar.getContext() != fd.i.a) {
-            throw new IllegalArgumentException("Coroutines with restricted suspension must have EmptyCoroutineContext");
-        }
-    }
+import java.util.Collection;
 
-    @Override // fd.c
-    public final fd.h getContext() {
-        return fd.i.a;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class h extends g {
+    public static int d(Iterable iterable, int i7) {
+        kotlin.jvm.internal.j.e(iterable, "<this>");
+        return iterable instanceof Collection ? ((Collection) iterable).size() : i7;
     }
 }

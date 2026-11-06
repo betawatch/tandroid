@@ -135,8 +135,8 @@ public final /* synthetic */ class a0 implements c0 {
     }
 
     @Override // j$.util.stream.c0
-    public final /* synthetic */ c0 limit(long j10) {
-        return f(this.a.limit(j10));
+    public final /* synthetic */ c0 limit(long j3) {
+        return f(this.a.limit(j3));
     }
 
     @Override // j$.util.stream.c0
@@ -205,8 +205,8 @@ public final /* synthetic */ class a0 implements c0 {
     }
 
     @Override // j$.util.stream.c0
-    public final /* synthetic */ c0 skip(long j10) {
-        return f(this.a.skip(j10));
+    public final /* synthetic */ c0 skip(long j3) {
+        return f(this.a.skip(j3));
     }
 
     @Override // j$.util.stream.c0

@@ -1,22 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface x30 {
-    long a();
+public final class x30 {
+    public final ByteBuffer[] a = new ByteBuffer[10];
+    public final long[] b = new long[10];
+    public final int[] c = new int[10];
+    public int d;
+    public int e;
+    public boolean f;
 
-    boolean c();
-
-    int getClassGuid();
-
-    View getFragmentView();
-
-    Activity getParentActivity();
-
-    void u(org.telegram.messenger.ye yeVar, org.telegram.messenger.b20 b20Var, boolean z10, int i3, int i10, boolean z11, long j10);
-
-    boolean z();
+    public x30() {
+        for (int i7 = 0; i7 < 10; i7++) {
+            this.a[i7] = ByteBuffer.allocateDirect(2048);
+            this.a[i7].order(ByteOrder.nativeOrder());
+        }
+    }
 }

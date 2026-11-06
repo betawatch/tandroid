@@ -1,64 +1,60 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class sl0 extends g11 {
-    public final /* synthetic */ vl0 f2;
-    public final /* synthetic */ x01[] g2;
-    public final /* synthetic */ wl0 h2;
+public final class sl0 extends org.telegram.ui.Components.pj0 {
+    public final /* synthetic */ int e3;
+    public final /* synthetic */ bm0 f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sl0(wl0 wl0Var, org.telegram.ui.ActionBar.d2 d2Var, Context context, Integer num, int i3, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11, vl0 vl0Var, x01[] x01VarArr) {
-        super(d2Var, context, true, num, i3, true, e6Var, i10, i11);
-        this.h2 = wl0Var;
-        this.f2 = vl0Var;
-        this.g2 = x01VarArr;
+    public sl0(bm0 bm0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
+        super(context, f6Var);
+        this.f3 = bm0Var;
+        this.e3 = i7;
     }
 
-    @Override // org.telegram.ui.g11
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
+    @Override // org.telegram.ui.Components.pj0
+    public final Integer V0(int i7) {
+        bm0 bm0Var = this.f3;
+        if ((i7 < bm0Var.b0 || i7 >= bm0Var.c0) && (i7 < bm0Var.d0 || i7 >= bm0Var.e0)) {
+            return super.V0(i7);
+        }
+        return 0;
     }
 
-    @Override // org.telegram.ui.g11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        wl0 wl0Var = this.h2;
-        if (tL_starGiftUnique != null) {
-            if (wl0Var.n0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
-                }
-                wl0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                wl0Var.r = null;
-            } else {
-                wl0Var.s = null;
-                wl0Var.r = org.telegram.messenger.hp.q0(tL_starGiftUnique);
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        bm0 bm0Var = this.f3;
+        if (!bm0Var.G || bm0Var.E == null || bm0Var.F == null) {
+            return;
+        }
+        int save = canvas.save();
+        canvas.translate(bm0Var.E.getLeft() + bm0Var.F.getLeft(), bm0Var.F.getTop());
+        bm0Var.E.draw(canvas);
+        canvas.restoreToCount(save);
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        bm0 bm0Var = this.f3;
+        hm0 hm0Var = bm0Var.p0;
+        bm0Var.h();
+        if (bm0Var.K != null) {
+            if (bm0Var.J == null || !bm0Var.c()) {
+                return;
             }
-            wl0Var.J = null;
-            wl0Var.h = -1;
-        } else {
-            wl0Var.n = l10 == null ? 0L : l10.longValue();
-            wl0Var.r = null;
-            wl0Var.s = null;
-            wl0Var.J = null;
+            bm0Var.J.g(false);
+            return;
         }
-        vl0 vl0Var = this.f2;
-        if (vl0Var != null) {
-            vl0Var.b(true);
+        bi.v9 v9Var = this.e3 == 1 ? hm0Var.c : hm0Var.b;
+        if (v9Var == null || !bm0Var.c()) {
+            return;
         }
-        wl0Var.j(true);
-        wl0Var.i();
-        wl0Var.f(true);
-        x01 x01Var = this.g2[0];
-        if (x01Var != null) {
-            wl0Var.p0 = null;
-            x01Var.dismiss();
-        }
+        v9Var.a();
     }
 }

@@ -2,17 +2,17 @@ package org.telegram.ui;
 
 import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 class ArticleViewer$BlockEmbedCell$TelegramWebviewProxy {
-    public final /* synthetic */ r1 a;
+    public final /* synthetic */ q1 a;
 
-    public ArticleViewer$BlockEmbedCell$TelegramWebviewProxy(r1 r1Var) {
-        this.a = r1Var;
+    public ArticleViewer$BlockEmbedCell$TelegramWebviewProxy(q1 q1Var) {
+        this.a = q1Var;
     }
 
     @JavascriptInterface
     public void postEvent(String str, String str2) {
-        org.telegram.messenger.g0.h3(new p1(this, str, str2, 0));
+        org.telegram.messenger.g0.h3(new o1(this, str, str2, 0));
     }
 }

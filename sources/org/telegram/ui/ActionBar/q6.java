@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.IdentityHashMap;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class q6 implements q0.a {
     public final IdentityHashMap a = new IdentityHashMap();
@@ -32,15 +32,15 @@ public final class q6 implements q0.a {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final void b(View view) {
-        u4.v0 recycledViewPool;
+        v4.u0 recycledViewPool;
         if (view == 0 || this.a.put(view, Boolean.TRUE) != null) {
             return;
         }
-        int i3 = 0;
+        int i7 = 0;
         if (this.c == 0) {
-            if (view instanceof z5) {
+            if (view instanceof a6) {
                 try {
-                    ((z5) view).updateColors();
+                    ((a6) view).updateColors();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
@@ -51,18 +51,18 @@ public final class q6 implements q0.a {
                 a8.g(e11, true);
             }
             Drawable background = view.getBackground();
-            if (background instanceof z5) {
+            if (background instanceof a6) {
                 try {
-                    ((z5) background).updateColors();
+                    ((a6) background).updateColors();
                 } catch (Exception e12) {
                     a8.g(e12, true);
                 }
                 background.invalidateSelf();
             }
             Drawable foreground = view.getForeground();
-            if (foreground instanceof z5) {
+            if (foreground instanceof a6) {
                 try {
-                    ((z5) foreground).updateColors();
+                    ((a6) foreground).updateColors();
                 } catch (Exception e13) {
                     a8.g(e13, true);
                 }
@@ -71,8 +71,8 @@ public final class q6 implements q0.a {
             view.invalidate();
         } else {
             HashSet hashSet = this.d;
-            if (view instanceof z5) {
-                ((z5) view).addColorKeys(hashSet);
+            if (view instanceof a6) {
+                ((a6) view).addColorKeys(hashSet);
             }
             m6 p10 = r6.p(view, false);
             if (p10 != null) {
@@ -105,16 +105,16 @@ public final class q6 implements q0.a {
         if (!(view instanceof RecyclerView)) {
             if (view instanceof ViewGroup) {
                 ViewGroup viewGroup = (ViewGroup) view;
-                while (i3 < viewGroup.getChildCount()) {
-                    b(viewGroup.getChildAt(i3));
-                    i3++;
+                while (i7 < viewGroup.getChildCount()) {
+                    b(viewGroup.getChildAt(i7));
+                    i7++;
                 }
                 return;
             }
             return;
         }
         RecyclerView recyclerView = (RecyclerView) view;
-        boolean z10 = this.b;
+        boolean z9 = this.b;
         for (int i13 = 0; i13 < recyclerView.getChildCount(); i13++) {
             b(recyclerView.getChildAt(i13));
         }
@@ -127,20 +127,20 @@ public final class q6 implements q0.a {
         for (int i16 = 0; i16 < recyclerView.getCachedChildCount(); i16++) {
             b(recyclerView.P(i16));
         }
-        if (!z10 || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
+        if (!z9 || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
             return;
         }
         ArrayList arrayList = new ArrayList();
         SparseArray sparseArray = recycledViewPool.a;
         for (int i17 = 0; i17 < sparseArray.size(); i17++) {
-            ArrayList arrayList2 = ((u4.u0) sparseArray.valueAt(i17)).a;
+            ArrayList arrayList2 = ((v4.t0) sparseArray.valueAt(i17)).a;
             for (int i18 = 0; i18 < arrayList2.size(); i18++) {
-                arrayList.add(((u4.d1) arrayList2.get(i18)).a);
+                arrayList.add(((v4.d1) arrayList2.get(i18)).a);
             }
         }
-        while (i3 < arrayList.size()) {
-            b((View) arrayList.get(i3));
-            i3++;
+        while (i7 < arrayList.size()) {
+            b((View) arrayList.get(i7));
+            i7++;
         }
     }
 }

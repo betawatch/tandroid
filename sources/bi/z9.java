@@ -1,0 +1,175 @@
+package bi;
+
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class z9 {
+    public final org.telegram.ui.ActionBar.f2 a;
+    public final long b;
+    public final org.telegram.ui.Components.cc c;
+    public final org.telegram.ui.Components.wb d;
+    public final org.telegram.ui.Components.ac e;
+    public final da f;
+    public int g;
+    public long h;
+    public b9 i;
+    public final ArrayList j = new ArrayList();
+    public final HashSet k = new HashSet();
+    public final long l = System.currentTimeMillis();
+    public boolean m = true;
+    public boolean n;
+    public boolean o;
+    public final y9 p;
+
+    /* JADX WARN: Type inference failed for: r2v0, types: [bi.y9, java.lang.Runnable] */
+    public z9(org.telegram.ui.ActionBar.f2 f2Var, long j3) {
+        final int i7 = 0;
+        ?? r22 = new Runnable(this) { // from class: bi.y9
+            public final /* synthetic */ z9 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i7) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        z9 z9Var = this.b;
+                        if (!z9Var.n && !z9Var.o && z9Var.m) {
+                            z9Var.n = true;
+                            b9 b9Var = z9Var.i;
+                            if (b9Var != null) {
+                                b9Var.a(z9Var.k);
+                            }
+                            if (z9Var.e != null) {
+                                z9Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        this.p = r22;
+        this.a = f2Var;
+        this.b = j3;
+        Context t6 = ea.t(f2Var);
+        org.telegram.ui.Components.wb wbVar = new org.telegram.ui.Components.wb(t6, f2Var.getResourceProvider());
+        this.d = wbVar;
+        wbVar.c(R.raw.stars_topup, new String[0]);
+        da daVar = new da(t6, f2Var.getResourceProvider());
+        this.f = daVar;
+        daVar.b = 3000L;
+        int i10 = org.telegram.ui.ActionBar.k6.uj;
+        org.telegram.ui.ActionBar.f6 resourceProvider = f2Var.getResourceProvider();
+        a3.l lVar = new a3.l(24);
+        a3.l lVar2 = new a3.l(25);
+        int Q = org.telegram.ui.ActionBar.r6.Q(i10, -1, 0, 0.0f, resourceProvider);
+        lVar2.c(Q, daVar);
+        org.telegram.ui.ActionBar.l6 x10 = org.telegram.ui.ActionBar.r6.x(101, daVar);
+        x10.c(i10, -1, 0, 0.0f, resourceProvider);
+        x10.n = lVar;
+        x10.o = lVar2;
+        x10.m = false;
+        x10.g = Q;
+        final int i11 = 1;
+        org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, f2Var.getResourceProvider(), true, false);
+        this.e = acVar;
+        acVar.e(org.telegram.messenger.hd.M0(2131745024, null));
+        acVar.b = new Runnable(this) { // from class: bi.y9
+            public final /* synthetic */ z9 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        z9 z9Var = this.b;
+                        if (!z9Var.n && !z9Var.o && z9Var.m) {
+                            z9Var.n = true;
+                            b9 b9Var = z9Var.i;
+                            if (b9Var != null) {
+                                b9Var.a(z9Var.k);
+                            }
+                            if (z9Var.e != null) {
+                                z9Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        acVar.addView(daVar, c8.ha.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        acVar.e.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(8.0f));
+        wbVar.setButton(acVar);
+        org.telegram.ui.Components.cc b10 = org.telegram.ui.Components.hc.a0(f2Var).b(wbVar, -1);
+        this.c = b10;
+        b10.r = false;
+        b10.k(true);
+        b10.v = new Runnable(this) { // from class: bi.y9
+            public final /* synthetic */ z9 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i7) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        z9 z9Var = this.b;
+                        if (!z9Var.n && !z9Var.o && z9Var.m) {
+                            z9Var.n = true;
+                            b9 b9Var = z9Var.i;
+                            if (b9Var != null) {
+                                b9Var.a(z9Var.k);
+                            }
+                            if (z9Var.e != null) {
+                                z9Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        org.telegram.messenger.g0.r(r22);
+        org.telegram.messenger.g0.i3(r22, 3000L);
+    }
+
+    public final void a() {
+        if (this.n || this.o) {
+            return;
+        }
+        this.o = true;
+        ArrayList arrayList = this.j;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((Runnable) obj).run();
+        }
+        if (this.e != null) {
+            this.c.b();
+        }
+    }
+}

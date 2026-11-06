@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ry0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ sy0 b;
 
-    public /* synthetic */ ry0(sy0 sy0Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ ry0(sy0 sy0Var, int i7) {
+        this.a = i7;
         this.b = sy0Var;
     }
 
@@ -19,13 +19,13 @@ public final /* synthetic */ class ry0 implements ValueAnimator.AnimatorUpdateLi
             case 0:
                 sy0 sy0Var = this.b;
                 sy0Var.getClass();
-                sy0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sy0Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 sy0Var.invalidate();
                 break;
             case 1:
                 sy0 sy0Var2 = this.b;
                 sy0Var2.getClass();
-                sy0Var2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sy0Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 sy0Var2.invalidate();
                 break;
             case 2:

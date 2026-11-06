@@ -1,21 +1,48 @@
 package e5;
 
-import org.json.JSONObject;
+import android.content.pm.PackageInfo;
+import android.os.Build;
+import java.lang.reflect.InvocationTargetException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i {
-    public final String a;
-    public final long b;
-    public final String c;
-    public final String d;
+public final class i extends c {
+    public final Pattern d;
 
-    public i(JSONObject jSONObject) {
-        this.d = jSONObject.optString("billingPeriod");
-        this.c = jSONObject.optString("priceCurrencyCode");
-        this.a = jSONObject.optString("formattedPrice");
-        this.b = jSONObject.optLong("priceAmountMicros");
-        jSONObject.optInt("recurrenceMode");
-        jSONObject.optInt("billingCycleCount");
+    public i() {
+        super("ALGORITHMIC_DARKENING", "ALGORITHMIC_DARKENING");
+        this.d = Pattern.compile("\\A\\d+");
+    }
+
+    @Override // e5.c
+    public final boolean a() {
+        return Build.VERSION.SDK_INT >= 33;
+    }
+
+    @Override // e5.c
+    public final boolean b() {
+        int i7;
+        PackageInfo packageInfo;
+        boolean b10 = super.b();
+        if (!b10 || (i7 = Build.VERSION.SDK_INT) >= 29) {
+            return b10;
+        }
+        boolean z9 = d5.b.a;
+        if (i7 >= 26) {
+            packageInfo = z6.a.b();
+        } else {
+            try {
+                packageInfo = d5.b.b();
+            } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+                packageInfo = null;
+            }
+        }
+        if (packageInfo == null) {
+            return false;
+        }
+        Matcher matcher = this.d.matcher(packageInfo.versionName);
+        return matcher.find() && Integer.parseInt(packageInfo.versionName.substring(matcher.start(), matcher.end())) >= 105;
     }
 }

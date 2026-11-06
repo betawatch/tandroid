@@ -1,7 +1,33 @@
 package de;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import c8.u0;
+import kotlin.jvm.internal.u;
+import rd.p;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g {
-    public static final g a = new g();
+public abstract class g {
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NULL", 1);
+
+    public static final Object a(id.h hVar, Object obj, Object obj2, p pVar, id.c frame) {
+        Object invoke;
+        Object l10 = ee.a.l(hVar, obj2);
+        try {
+            m mVar = new m(frame, hVar);
+            if (com.google.android.recaptcha.internal.a.u(pVar)) {
+                u.a(2, pVar);
+                invoke = pVar.invoke(obj, mVar);
+            } else {
+                invoke = u0.c(pVar, obj, mVar);
+            }
+            ee.a.g(hVar, l10);
+            if (invoke == jd.a.a) {
+                kotlin.jvm.internal.j.e(frame, "frame");
+            }
+            return invoke;
+        } catch (Throwable th2) {
+            ee.a.g(hVar, l10);
+            throw th2;
+        }
+    }
 }

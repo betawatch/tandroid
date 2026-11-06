@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u50 implements org.telegram.ui.ActionBar.d1 {
+public final class u50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f60 b;
+    public final /* synthetic */ w50 b;
 
-    public /* synthetic */ u50(f60 f60Var, int i3) {
-        this.a = i3;
-        this.b = f60Var;
+    public /* synthetic */ u50(w50 w50Var, int i7) {
+        this.a = i7;
+        this.b = w50Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.d1
-    public final void k(KeyEvent keyEvent) {
-        f60 f60Var;
-        b60 b60Var;
-        f60 f60Var2;
-        b60 b60Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (b60Var = (f60Var = this.b).m) != null && b60Var.isShowing()) {
-                    f60Var.u();
-                    break;
-                }
+                w50 w50Var = this.b;
+                w50Var.e.U1 = null;
+                w50Var.requestLayout();
                 break;
             default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (b60Var2 = (f60Var2 = this.b).m) != null && b60Var2.isShowing()) {
-                    f60Var2.u();
-                    break;
-                }
+                w50 w50Var2 = this.b;
+                w50Var2.e.U1 = null;
+                w50Var2.a = false;
                 break;
         }
     }

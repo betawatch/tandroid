@@ -1,17 +1,74 @@
 package ca;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class e implements ma.d {
-    public static final e a = new e();
-    public static final ma.c b = ma.c.c("files");
-    public static final ma.c c = ma.c.c("orgId");
+import android.util.Log;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
 
-    @Override // ma.a
-    public final void a(Object obj, Object obj2) {
-        ma.e eVar = (ma.e) obj2;
-        i0 i0Var = (i0) ((x1) obj);
-        eVar.a(b, i0Var.a);
-        eVar.a(c, i0Var.b);
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class e {
+    public final HashMap a = new HashMap();
+    public final int b = 64;
+    public final int c;
+
+    public e(int i7) {
+        this.c = i7;
+    }
+
+    public static String b(int i7, String str) {
+        if (str != null) {
+            str = str.trim();
+            if (str.length() > i7) {
+                return str.substring(0, i7);
+            }
+        }
+        return str;
+    }
+
+    public final synchronized Map a() {
+        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
+    }
+
+    public final synchronized boolean c(String str, String str2) {
+        String b10 = b(this.c, str);
+        if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
+            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: " + this.b, null);
+            return false;
+        }
+        String b11 = b(this.c, str2);
+        String str3 = (String) this.a.get(b10);
+        if (str3 == null ? b11 == null : str3.equals(b11)) {
+            return false;
+        }
+        HashMap hashMap = this.a;
+        if (str2 == null) {
+            b11 = "";
+        }
+        hashMap.put(b10, b11);
+        return true;
+    }
+
+    public final synchronized void d(Map map) {
+        try {
+            int i7 = 0;
+            for (Map.Entry entry : map.entrySet()) {
+                String str = (String) entry.getKey();
+                if (str == null) {
+                    throw new IllegalArgumentException("Custom attribute key must not be null.");
+                }
+                String b10 = b(this.c, str);
+                if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
+                    i7++;
+                }
+                String str2 = (String) entry.getValue();
+                this.a.put(b10, str2 == null ? "" : b(this.c, str2));
+            }
+            if (i7 > 0) {
+                Log.w("FirebaseCrashlytics", "Ignored " + i7 + " entries when adding custom keys. Maximum allowable: " + this.b, null);
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
     }
 }

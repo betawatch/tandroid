@@ -5,17 +5,18 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import i7.p;
+import c8.wb;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.hs;
-import q6.a;
+import m6.e;
+import org.telegram.messenger.qs;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new p(27);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new e(12);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -31,8 +32,8 @@ public final class DataHolder extends a implements Closeable {
         new HashMap();
     }
 
-    public DataHolder(int i3, String[] strArr, CursorWindow[] cursorWindowArr, int i10, Bundle bundle) {
-        this.a = i3;
+    public DataHolder(int i7, String[] strArr, CursorWindow[] cursorWindowArr, int i10, Bundle bundle) {
+        this.a = i7;
         this.b = strArr;
         this.d = cursorWindowArr;
         this.e = i10;
@@ -45,14 +46,14 @@ public final class DataHolder extends a implements Closeable {
             try {
                 if (!this.r) {
                     this.r = true;
-                    int i3 = 0;
+                    int i7 = 0;
                     while (true) {
                         CursorWindow[] cursorWindowArr = this.d;
-                        if (i3 >= cursorWindowArr.length) {
+                        if (i7 >= cursorWindowArr.length) {
                             break;
                         }
-                        cursorWindowArr[i3].close();
-                        i3++;
+                        cursorWindowArr[i7].close();
+                        i7++;
                     }
                 }
             } catch (Throwable th2) {
@@ -62,16 +63,16 @@ public final class DataHolder extends a implements Closeable {
     }
 
     public final void finalize() {
-        boolean z10;
+        boolean z9;
         try {
             if (this.d.length > 0) {
                 synchronized (this) {
-                    z10 = this.r;
+                    z9 = this.r;
                 }
-                if (!z10) {
+                if (!z9) {
                     close();
                     String obj = toString();
-                    StringBuilder sb2 = new StringBuilder(String.valueOf(obj).length() + hs.I2);
+                    StringBuilder sb2 = new StringBuilder(String.valueOf(obj).length() + qs.I2);
                     sb2.append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ");
                     sb2.append(obj);
                     sb2.append(")");
@@ -84,17 +85,17 @@ public final class DataHolder extends a implements Closeable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.n(parcel, 1, this.b);
-        j8.a.p(parcel, 2, this.d, i3);
-        j8.a.r(parcel, 3, 4);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.m(parcel, 1, this.b);
+        wb.o(parcel, 2, this.d, i7);
+        wb.q(parcel, 3, 4);
         parcel.writeInt(this.e);
-        j8.a.c(parcel, 4, this.f);
-        j8.a.r(parcel, 1000, 4);
+        wb.b(parcel, 4, this.f);
+        wb.q(parcel, 1000, 4);
         parcel.writeInt(this.a);
-        j8.a.t(parcel, s6);
-        if ((i3 & 1) != 0) {
+        wb.s(parcel, r10);
+        if ((i7 & 1) != 0) {
             close();
         }
     }

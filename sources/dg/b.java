@@ -1,27 +1,43 @@
 package dg;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.messenger.video.AudioConversions;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final /* synthetic */ b[] c;
+public final class b extends a {
+    public final long b;
+    public int c;
 
-    static {
-        b bVar = new b("STARS", 0);
-        a = bVar;
-        b bVar2 = new b("TON", 1);
-        b = bVar2;
-        c = new b[]{bVar, bVar2};
+    public b(long j3) {
+        this.b = j3;
     }
 
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
+    @Override // dg.a
+    public final short a() {
+        if (!c()) {
+            throw new RuntimeException("Audio input has no remaining value.");
+        }
+        this.c--;
+        return (short) 0;
     }
 
-    public static b[] values() {
-        return (b[]) c.clone();
+    @Override // dg.a
+    public final int b() {
+        return -1;
+    }
+
+    @Override // dg.a
+    public final boolean c() {
+        return this.c > 0;
+    }
+
+    @Override // dg.a
+    public final void d() {
+        this.c = 0;
+    }
+
+    @Override // dg.a
+    public final void e(int i7, int i10) {
+        this.c = AudioConversions.usToShorts(this.b, i7, i10);
     }
 }

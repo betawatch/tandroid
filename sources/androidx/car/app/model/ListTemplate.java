@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class ListTemplate implements x0 {
     static final int MAX_ALLOWED_ITEMS = 100;
@@ -60,9 +60,9 @@ public final class ListTemplate implements x0 {
                     break;
                 }
                 androidx.car.app.messaging.model.f fVar = new androidx.car.app.messaging.model.f(conversationItem);
-                int i3 = vVar.a - 1;
-                vVar.a = i3;
-                int min = Math.min(i3, 10);
+                int i7 = vVar.a - 1;
+                vVar.a = i7;
+                int min = Math.min(i7, 10);
                 int size = conversationItem.getMessages().size();
                 int min2 = Math.min(size, min);
                 fVar.f = conversationItem.getMessages().subList(size - min2, size);

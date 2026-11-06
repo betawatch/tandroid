@@ -28,8 +28,8 @@ public abstract class ZoneId implements Serializable {
     static {
         Map.Entry[] entryArr = {j$.com.android.tools.r8.a.O("ACT", "Australia/Darwin"), j$.com.android.tools.r8.a.O("AET", "Australia/Sydney"), j$.com.android.tools.r8.a.O("AGT", "America/Argentina/Buenos_Aires"), j$.com.android.tools.r8.a.O("ART", "Africa/Cairo"), j$.com.android.tools.r8.a.O("AST", "America/Anchorage"), j$.com.android.tools.r8.a.O("BET", "America/Sao_Paulo"), j$.com.android.tools.r8.a.O("BST", "Asia/Dhaka"), j$.com.android.tools.r8.a.O("CAT", "Africa/Harare"), j$.com.android.tools.r8.a.O("CNT", "America/St_Johns"), j$.com.android.tools.r8.a.O("CST", "America/Chicago"), j$.com.android.tools.r8.a.O("CTT", "Asia/Shanghai"), j$.com.android.tools.r8.a.O("EAT", "Africa/Addis_Ababa"), j$.com.android.tools.r8.a.O("ECT", "Europe/Paris"), j$.com.android.tools.r8.a.O("IET", "America/Indiana/Indianapolis"), j$.com.android.tools.r8.a.O("IST", "Asia/Kolkata"), j$.com.android.tools.r8.a.O("JST", "Asia/Tokyo"), j$.com.android.tools.r8.a.O("MIT", "Pacific/Apia"), j$.com.android.tools.r8.a.O("NET", "Asia/Yerevan"), j$.com.android.tools.r8.a.O("NST", "Pacific/Auckland"), j$.com.android.tools.r8.a.O("PLT", "Asia/Karachi"), j$.com.android.tools.r8.a.O("PNT", "America/Phoenix"), j$.com.android.tools.r8.a.O("PRT", "America/Puerto_Rico"), j$.com.android.tools.r8.a.O("PST", "America/Los_Angeles"), j$.com.android.tools.r8.a.O("SST", "Pacific/Guadalcanal"), j$.com.android.tools.r8.a.O("VST", "Asia/Ho_Chi_Minh"), j$.com.android.tools.r8.a.O("EST", "-05:00"), j$.com.android.tools.r8.a.O("MST", "-07:00"), j$.com.android.tools.r8.a.O("HST", "-10:00")};
         HashMap hashMap = new HashMap(28);
-        for (int i3 = 0; i3 < 28; i3++) {
-            Map.Entry entry = entryArr[i3];
+        for (int i7 = 0; i7 < 28; i7++) {
+            Map.Entry entry = entryArr[i7];
             Object requireNonNull = Objects.requireNonNull(entry.getKey());
             if (hashMap.put(requireNonNull, Objects.requireNonNull(entry.getValue())) != null) {
                 throw new IllegalArgumentException("duplicate key: " + requireNonNull);
@@ -69,30 +69,30 @@ public abstract class ZoneId implements Serializable {
         return new u(str, zoneOffset.getRules());
     }
 
-    public static ZoneId H(String str, boolean z10) {
+    public static ZoneId H(String str, boolean z9) {
         Objects.requireNonNull(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
             return ZoneOffset.M(str);
         }
         if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            return J(str, 3, z10);
+            return J(str, 3, z9);
         }
         if (str.startsWith("UT")) {
-            return J(str, 2, z10);
+            return J(str, 2, z9);
         }
-        return u.L(str, z10);
+        return u.L(str, z9);
     }
 
-    public static ZoneId J(String str, int i3, boolean z10) {
-        String substring = str.substring(0, i3);
-        if (str.length() == i3) {
+    public static ZoneId J(String str, int i7, boolean z9) {
+        String substring = str.substring(0, i7);
+        if (str.length() == i7) {
             return I(substring, ZoneOffset.UTC);
         }
-        if (str.charAt(i3) != '+' && str.charAt(i3) != '-') {
-            return u.L(str, z10);
+        if (str.charAt(i7) != '+' && str.charAt(i7) != '-') {
+            return u.L(str, z9);
         }
         try {
-            ZoneOffset M = ZoneOffset.M(str.substring(i3));
+            ZoneOffset M = ZoneOffset.M(str.substring(i7));
             if (M == ZoneOffset.UTC) {
                 return I(substring, M);
             }

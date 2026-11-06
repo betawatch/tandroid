@@ -1,50 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ u0(int i3, Runnable runnable) {
-        this.a = i3;
-        this.b = runnable;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class u0 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u4 b;
+
+    public /* synthetic */ u0(int i7, u4 u4Var) {
+        this.a = i7;
+        this.b = u4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                u4 u4Var = this.b;
+                u4Var.requestFocus();
+                org.telegram.messenger.g0.K3(u4Var);
                 break;
             case 1:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.run();
-                break;
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                s1Var.dismiss();
+                u4 u4Var2 = this.b;
+                u4Var2.requestFocus();
+                org.telegram.messenger.g0.K3(u4Var2);
                 break;
             default:
-                s1Var.dismiss();
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new xf(this.b, 2));
                 break;
         }
     }

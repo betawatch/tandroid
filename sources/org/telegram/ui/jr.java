@@ -1,92 +1,76 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.RectF;
-import android.view.View;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class jr extends org.telegram.ui.Cells.l8 {
-    public final /* synthetic */ int a0 = 1;
-    public final /* synthetic */ Object b0;
+public final class jr extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ nr a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jr(lr lrVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.b0 = lrVar;
+    public jr(nr nrVar) {
+        this.a = nrVar;
     }
 
-    @Override // org.telegram.ui.Cells.l8
-    public int e(int i3) {
-        switch (this.a0) {
-            case 2:
-                ProfileActivity profileActivity = ((bw0) this.b0).e;
-                RectF rectF = ProfileActivity.T6;
-                profileActivity.getClass();
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        int i10;
+        int i11;
+        nr nrVar = this.a;
+        if (i7 == -1) {
+            nrVar.finishFragment();
+            return;
         }
-        return i3;
-    }
-
-    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        switch (this.a0) {
-            case 0:
-                super.onLayout(z10, i3, i10, i11, i12);
-                int L = org.telegram.messenger.g0.L(21.0f);
-                int measuredHeight = getMeasuredHeight();
-                lr lrVar = (lr) this.b0;
-                int measuredHeight2 = (measuredHeight - lrVar.V.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.k9 k9Var = lrVar.V;
-                k9Var.layout(L, measuredHeight2, k9Var.getMeasuredWidth() + L, lrVar.V.getMeasuredHeight() + measuredHeight2);
-                break;
-            case 1:
-                super.onLayout(z10, i3, i10, i11, i12);
-                int L2 = org.telegram.messenger.g0.L(21.0f);
-                int measuredHeight3 = getMeasuredHeight();
-                at0 at0Var = (at0) this.b0;
-                int measuredHeight4 = (measuredHeight3 - at0Var.d.x0.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.k9 k9Var2 = at0Var.d.x0;
-                k9Var2.layout(L2, measuredHeight4, k9Var2.getMeasuredWidth() + L2, at0Var.d.x0.getMeasuredHeight() + measuredHeight4);
-                break;
-            default:
-                super.onLayout(z10, i3, i10, i11, i12);
-                break;
+        if (i7 != 1 || nrVar.b.getText().length() == 0) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i3, int i10) {
-        switch (this.a0) {
-            case 0:
-                super.onMeasure(i3, i10);
-                lr lrVar = (lr) this.b0;
-                lrVar.V.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-                lrVar.V.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
-                break;
-            case 1:
-                super.onMeasure(i3, i10);
-                at0 at0Var = (at0) this.b0;
-                at0Var.d.x0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-                at0Var.d.x0.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
-                break;
-            default:
-                super.onMeasure(i3, i10);
-                break;
+        TLRPC.User a22 = nrVar.getMessagesController().a2(Long.valueOf(nrVar.H));
+        TLRPC.UserFull b22 = nrVar.getMessagesController().b2(nrVar.H);
+        a22.first_name = nrVar.b.getText().toString();
+        a22.last_name = nrVar.c.getText().toString();
+        a22.contact = true;
+        TLRPC.TL_textWithEntities textWithEntities = nrVar.d.getTextWithEntities();
+        nrVar.getMessagesController().X3(a22, false, false);
+        org.telegram.messenger.g5 contactsController = nrVar.getContactsController();
+        boolean z9 = nrVar.K && nrVar.X;
+        contactsController.getClass();
+        TLRPC.TL_contacts_addContact tL_contacts_addContact = new TLRPC.TL_contacts_addContact();
+        tL_contacts_addContact.id = contactsController.getMessagesController().q1(a22);
+        tL_contacts_addContact.first_name = a22.first_name;
+        tL_contacts_addContact.last_name = a22.last_name;
+        String str = a22.phone;
+        tL_contacts_addContact.phone = str;
+        tL_contacts_addContact.add_phone_privacy_exception = z9;
+        if (str == null) {
+            tL_contacts_addContact.phone = "";
+        } else if (str.length() > 0 && !tL_contacts_addContact.phone.startsWith("+")) {
+            tL_contacts_addContact.phone = "+" + tL_contacts_addContact.phone;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jr(at0 at0Var, Activity activity) {
-        super(activity);
-        this.b0 = at0Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jr(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(18, context, e6Var, false, false);
-        this.b0 = bw0Var;
+        if (textWithEntities != null) {
+            tL_contacts_addContact.flags |= 2;
+            tL_contacts_addContact.note = textWithEntities;
+        }
+        contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.s4(1, contactsController, a22), 6);
+        i10 = ((org.telegram.ui.ActionBar.f2) nrVar).currentAccount;
+        org.telegram.messenger.qp.s1(i10).d7.edit().putInt("dialog_bar_vis3" + nrVar.H, 3).commit();
+        nrVar.getNotificationCenter().k(org.telegram.messenger.qs.r, 1);
+        nrVar.getNotificationCenter().k(org.telegram.messenger.qs.Q0, Long.valueOf(nrVar.H));
+        if (b22 != null) {
+            if (textWithEntities == null || textWithEntities.text.length() <= 0) {
+                b22.flags2 &= -4194305;
+                b22.note = null;
+            } else {
+                b22.flags2 |= TLObject.FLAG_22;
+                b22.note = textWithEntities;
+            }
+            i11 = ((org.telegram.ui.ActionBar.f2) nrVar).currentAccount;
+            org.telegram.messenger.yr.a0(i11).j2(b22, true);
+            nrVar.getNotificationCenter().k(org.telegram.messenger.qs.E0, Long.valueOf(b22.id), b22);
+        }
+        nrVar.finishFragment();
+        mr mrVar = nrVar.O;
+        if (mrVar != null) {
+            mrVar.a();
+        }
     }
 }

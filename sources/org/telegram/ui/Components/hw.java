@@ -1,25 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class hw extends b8.of {
-    public final /* synthetic */ ey a;
+public final class hw extends g.p {
+    public final /* synthetic */ gy c;
 
-    public hw(ey eyVar) {
-        this.a = eyVar;
+    public hw(gy gyVar) {
+        this.c = gyVar;
     }
 
-    @Override // b8.of
-    public final void a() {
-        ey eyVar = this.a;
-        eyVar.g0 = false;
-        eyVar.Q.B1();
-    }
-
-    @Override // b8.of
-    public final void b() {
-        ey eyVar = this.a;
-        eyVar.Q.B1();
-        eyVar.g0 = true;
+    @Override // g.p
+    public final int i(int i7) {
+        gy gyVar = this.c;
+        pw pwVar = gyVar.R;
+        gw gwVar = gyVar.Q;
+        v4.g0 adapter = gyVar.P.getAdapter();
+        gx gxVar = gyVar.S;
+        if (adapter == gxVar) {
+            int d = gxVar.d(i7);
+            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
+                return gwVar.J;
+            }
+        } else if ((gyVar.d0 && i7 == 0) || i7 == pwVar.d || i7 == pwVar.c || i7 == pwVar.f || pwVar.r.indexOfKey(i7) >= 0 || pwVar.w.indexOfKey(i7) >= 0) {
+            return gwVar.J;
+        }
+        return 1;
     }
 }

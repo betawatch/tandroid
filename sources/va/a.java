@@ -1,31 +1,46 @@
 package va;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import a8.p0;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a {
-    public String a;
-    public int b;
-    public String c;
-    public String d;
-    public long e;
-    public long f;
-    public String g;
-    public byte h;
+    public final String a;
+    public final long b;
+    public final long c;
 
-    public final b a() {
-        if (this.h == 3 && this.b != 0) {
-            return new b(this.a, this.b, this.c, this.d, this.e, this.f, this.g);
+    public a(long j3, String str, long j10) {
+        this.a = str;
+        this.b = j3;
+        this.c = j10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb2 = new StringBuilder();
-        if (this.b == 0) {
-            sb2.append(" registrationStatus");
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (this.a.equals(aVar.a) && this.b == aVar.b && this.c == aVar.c) {
+                return true;
+            }
         }
-        if ((this.h & 1) == 0) {
-            sb2.append(" expiresInSecs");
-        }
-        if ((this.h & 2) == 0) {
-            sb2.append(" tokenCreationEpochInSecs");
-        }
-        throw new IllegalStateException(t4.c.g("Missing required properties:", sb2));
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        long j3 = this.b;
+        long j10 = this.c;
+        return ((hashCode ^ ((int) (j3 ^ (j3 >>> 32)))) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("InstallationTokenResult{token=");
+        sb2.append(this.a);
+        sb2.append(", tokenExpirationTimestamp=");
+        sb2.append(this.b);
+        sb2.append(", tokenCreationTimestamp=");
+        return p0.r(sb2, this.c, "}");
     }
 }

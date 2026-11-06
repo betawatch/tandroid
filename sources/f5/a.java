@@ -1,72 +1,75 @@
 package f5;
 
-import java.util.Random;
+import android.content.Context;
+import android.util.Log;
+import java.io.IOException;
+import java.io.InputStream;
+import sg.i0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends Random {
-    public long a;
-    public long b;
+public final class a {
+    public String a;
+    public String b;
 
-    @Override // java.util.Random
-    public final int next(int i3) {
-        return ((int) nextLong()) >>> (32 - i3);
+    public /* synthetic */ a(String str, String str2, boolean z9) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // java.util.Random
-    public final boolean nextBoolean() {
-        return nextLong() >= 0;
+    public o a() {
+        if ("first_party".equals(this.b)) {
+            throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
+        }
+        if (this.a == null) {
+            throw new IllegalArgumentException("Product id must be provided.");
+        }
+        if (this.b != null) {
+            return new o(this);
+        }
+        throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    @Override // java.util.Random
-    public final void nextBytes(byte[] bArr) {
-        int length = bArr.length;
-        int i3 = 0;
-        while (i3 < length) {
-            long nextLong = (int) nextLong();
-            int min = Math.min(length - i3, 8);
-            while (true) {
-                int i10 = min - 1;
-                if (min > 0) {
-                    bArr[i3] = (byte) nextLong;
-                    nextLong >>>= 8;
-                    i3++;
-                    min = i10;
+    public a(String str, String str2) {
+        Object[] objArr = {str, 23};
+        if (!(str.length() <= 23)) {
+            throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
+        }
+        this.a = str;
+        this.b = (str2 == null || str2.length() <= 0) ? null : str2;
+    }
+
+    public a(i0 i0Var) {
+        Context context = (Context) i0Var.b;
+        int e10 = aa.g.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e10 != 0) {
+            this.a = "Unity";
+            String string = context.getResources().getString(e10);
+            this.b = string;
+            String i7 = rf.b.i("Unity Editor version is: ", string);
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", i7, null);
+                return;
+            }
+            return;
+        }
+        if (context.getAssets() != null) {
+            try {
+                InputStream open = context.getAssets().open("flutter_assets/NOTICES.Z");
+                if (open != null) {
+                    open.close();
                 }
+                this.a = "Flutter";
+                this.b = null;
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
+                    return;
+                }
+                return;
+            } catch (IOException unused) {
             }
         }
-    }
-
-    @Override // java.util.Random
-    public final double nextDouble() {
-        return (nextLong() >>> 11) * 1.1102230246251565E-16d;
-    }
-
-    @Override // java.util.Random
-    public final float nextFloat() {
-        return (((int) nextLong()) >>> 8) * 5.9604645E-8f;
-    }
-
-    @Override // java.util.Random
-    public final int nextInt() {
-        return (int) nextLong();
-    }
-
-    @Override // java.util.Random
-    public final long nextLong() {
-        long j10 = this.a;
-        long j11 = this.b;
-        long j12 = j10 + j11;
-        long j13 = j11 ^ j10;
-        this.a = (Long.rotateLeft(j10, 55) ^ j13) ^ (j13 << 14);
-        this.b = Long.rotateLeft(j13, 36);
-        return j12;
-    }
-
-    @Override // java.util.Random
-    public final void setSeed(long j10) {
-        if (this.a != 0 || this.b != 0) {
-            throw new RuntimeException("No seed set");
-        }
+        this.a = null;
+        this.b = null;
     }
 }

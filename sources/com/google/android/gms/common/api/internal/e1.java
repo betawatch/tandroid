@@ -1,9 +1,42 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class e1 extends k implements DialogInterface.OnCancelListener {
-    public abstract void a(m6.a aVar, int i3);
+public final class e1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public final com.google.android.gms.common.api.e a;
+    public final boolean b;
+    public g0 c;
+
+    public e1(com.google.android.gms.common.api.e eVar, boolean z9) {
+        this.a = eVar;
+        this.b = z9;
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnected(bundle);
+    }
+
+    @Override // com.google.android.gms.common.api.l
+    public final void onConnectionFailed(n6.a aVar) {
+        com.google.android.gms.common.api.e eVar = this.a;
+        boolean z9 = this.b;
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        g0 g0Var = this.c;
+        g0Var.a.lock();
+        try {
+            g0Var.m.q(aVar, eVar, z9);
+        } finally {
+            g0Var.a.unlock();
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i7) {
+        q6.m.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnectionSuspended(i7);
+    }
 }

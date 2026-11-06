@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -27,12 +27,12 @@ public class v {
     public int f = 8388611;
     public final t k = new t(this);
 
-    public v(Context context, k kVar, View view, boolean z10, int i3, int i10) {
+    public v(Context context, k kVar, View view, boolean z9, int i7, int i10) {
         this.a = context;
         this.b = kVar;
         this.e = view;
-        this.c = z10;
-        this.d = i3;
+        this.c = z9;
+        this.d = i7;
     }
 
     public final s a() {
@@ -71,20 +71,20 @@ public class v {
         }
     }
 
-    public final void d(int i3, int i10, boolean z10, boolean z11) {
+    public final void d(int i7, int i10, boolean z9, boolean z10) {
         s a10 = a();
-        a10.s(z11);
-        if (z10) {
+        a10.s(z10);
+        if (z9) {
             int i11 = this.f;
             View view = this.e;
             WeakHashMap weakHashMap = i0.a;
             if ((Gravity.getAbsoluteGravity(i11, view.getLayoutDirection()) & 7) == 5) {
-                i3 -= this.e.getWidth();
+                i7 -= this.e.getWidth();
             }
-            a10.q(i3);
+            a10.q(i7);
             a10.t(i10);
             int i12 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
-            a10.a = new Rect(i3 - i12, i10 - i12, i3 + i12, i10 + i12);
+            a10.a = new Rect(i7 - i12, i10 - i12, i7 + i12, i10 + i12);
         }
         a10.g();
     }

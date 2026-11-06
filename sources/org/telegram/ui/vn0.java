@@ -1,50 +1,44 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import android.view.View;
-import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class vn0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class vn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ vn0(PhotoViewer photoViewer, View view, int i3) {
-        this.a = i3;
-        this.c = photoViewer;
-        this.b = view;
+    public /* synthetic */ vn0(PhotoViewer photoViewer, int i7) {
+        this.a = i7;
+        this.b = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i7) {
             case 0:
-                PhotoViewer photoViewer = this.c;
-                photoViewer.C3 = false;
-                this.b.setOutlineProvider(null);
-                ImageView imageView = photoViewer.y3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
-                }
-                fq0 fq0Var = photoViewer.F2;
-                if (fq0Var != null) {
-                    fq0Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.D2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
-                    break;
-                }
+                photoViewer.m7 = null;
+                break;
+            case 1:
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                photoViewer.x3();
+                break;
+            case 2:
+                photoViewer.D1.e(photoViewer.I2, photoViewer.J2, photoViewer.K2, photoViewer.O2, photoViewer.Q2, photoViewer.N2, photoViewer.o2(true), photoViewer.o2(true), photoViewer.L2, photoViewer.M2, 0.0f, 0.0f, photoViewer.P2);
+                photoViewer.b3(0);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.Y8;
+                photoViewer.z0(true, false);
+                break;
+            case 4:
+                Drawable[] drawableArr3 = PhotoViewer.Y8;
+                photoViewer.c3(1, false);
                 break;
             default:
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.C3 = false;
-                photoViewer2.j4.run();
-                org.telegram.messenger.g0.i3(new hk0(6, this, this.b), 100L);
+                PhotoViewer.K(photoViewer);
                 break;
         }
     }

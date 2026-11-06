@@ -1,73 +1,80 @@
 package mi;
 
-import android.view.View;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.logging.Level;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.f2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements Runnable {
+public final class g implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ a c;
+    public boolean b;
+    public Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ g(p pVar, a aVar, int i3) {
-        this.a = i3;
-        this.b = pVar;
-        this.c = aVar;
+    public /* synthetic */ g(Object obj, Object obj2, boolean z9, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.c = obj2;
+        this.b = z9;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
-        a aVar = this.c;
-        p pVar = this.b;
-        switch (i3) {
+        switch (this.a) {
             case 0:
-                t3 t3Var = pVar.r;
-                View C1 = t3Var.C1(aVar);
-                if (!(C1 instanceof n4)) {
-                    t3Var.g3.O(false);
-                    break;
-                } else {
-                    ((n4) C1).g(aVar, t3Var.getMapDelegate());
+                l lVar = (l) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    v4.j jVar = (v4.j) obj;
+                    lVar.T(jVar.a, jVar, this.b);
+                }
+                arrayList.clear();
+                lVar.u.remove(arrayList);
+                break;
+            case 1:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
+                if (actionBarLayout.e == this) {
+                    actionBarLayout.e = null;
+                    ((f2) this.c).onTransitionAnimationStart(true, false);
+                    actionBarLayout.h0(true, true, this.b);
                     break;
                 }
-            case 1:
-                pVar.r.Z4(aVar, 0);
-                break;
-            case 2:
-                pVar.r.Z4(aVar, 1);
-                break;
-            case 3:
-                pVar.r.Z4(aVar, 2);
-                break;
-            case 4:
-                pVar.r.Z4(aVar, 3);
-                break;
-            case 5:
-                pVar.r.Y4(aVar, new TL_iv.pageBlockParagraph());
-                break;
-            case 6:
-                t3 t3Var2 = pVar.r;
-                ArrayList arrayList = t3.A4;
-                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-                pageblockblockquote.caption = new TL_iv.textEmpty();
-                t3Var2.X4(this.c, pageblockblockquote, 0, 0, false, false);
-                break;
-            case 7:
-                t3 t3Var3 = pVar.r;
-                ArrayList arrayList2 = t3.A4;
-                TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
-                pageblockpullquote.caption = new TL_iv.textEmpty();
-                t3Var3.X4(this.c, pageblockpullquote, 0, 0, false, false);
-                break;
-            case 8:
-                pVar.r.Y4(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             default:
-                pVar.r.Y4(aVar, new TL_iv.pageBlockFooter());
-                break;
+                try {
+                    ((yc.i) this.d).a.bind(new InetSocketAddress(61578));
+                    this.b = true;
+                    do {
+                        try {
+                            Socket accept = ((yc.i) this.d).a.accept();
+                            accept.setSoTimeout(5000);
+                            InputStream inputStream = accept.getInputStream();
+                            yc.i iVar = (yc.i) this.d;
+                            iVar.c.D(new yc.a(iVar, inputStream, accept));
+                        } catch (IOException e10) {
+                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e10);
+                        }
+                    } while (!((yc.i) this.d).a.isClosed());
+                } catch (IOException e11) {
+                    this.c = e11;
+                    return;
+                }
         }
+    }
+
+    public g(yc.i iVar) {
+        this.a = 2;
+        this.d = iVar;
+        this.b = false;
     }
 }

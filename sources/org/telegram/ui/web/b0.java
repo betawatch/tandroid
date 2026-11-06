@@ -1,37 +1,37 @@
 package org.telegram.ui.web;
 
 import android.os.Bundle;
-import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.l10;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fc;
-import org.telegram.ui.f31;
-import org.telegram.ui.wm;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.an;
+import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class b0 extends wm {
-    public boolean sd;
-    public final /* synthetic */ TLRPC.User td;
-    public final /* synthetic */ long ud;
-    public final /* synthetic */ w0 vd;
+public final class b0 extends an {
+    public boolean rd;
+    public final /* synthetic */ TLRPC.User sd;
+    public final /* synthetic */ long td;
+    public final /* synthetic */ x0 ud;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(w0 w0Var, Bundle bundle, TLRPC.User user, long j10) {
+    public b0(x0 x0Var, Bundle bundle, TLRPC.User user, long j3) {
         super(bundle);
-        this.vd = w0Var;
-        this.td = user;
-        this.ud = j10;
+        this.ud = x0Var;
+        this.sd = user;
+        this.td = j3;
     }
 
-    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.f2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.sd) {
+        if (this.rd) {
             return;
         }
-        this.sd = true;
-        fc.a0(this).I(R.raw.contact_check, bd.a0(null, null, 2131751740, l10.p(this.td)), org.telegram.messenger.g0.U2(bd.a0(null, null, 2131751741, l10.p(this.vd.V)), new f31(this, this.ud, 1))).j();
+        this.rd = true;
+        hc.a0(this).I(R.raw.contact_check, hd.a0(null, null, 2131751740, t10.p(this.sd)), org.telegram.messenger.g0.U2(hd.a0(null, null, 2131751741, t10.p(this.ud.U)), new p31(this, this.td, 1))).j();
     }
 }

@@ -1,26 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nk implements q0.a {
+public final /* synthetic */ class nk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uk b;
+    public final /* synthetic */ wk b;
+    public final /* synthetic */ org.telegram.messenger.za c;
 
-    public /* synthetic */ nk(uk ukVar, int i3) {
-        this.a = i3;
-        this.b = ukVar;
+    public /* synthetic */ nk(wk wkVar, org.telegram.messenger.za zaVar, int i7) {
+        this.a = i7;
+        this.b = wkVar;
+        this.c = zaVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                uk.Z(this.b, (org.telegram.messenger.z9) obj);
+                org.telegram.messenger.za zaVar = this.c;
+                try {
+                    ((a8.r7) zaVar).u();
+                } catch (Exception unused) {
+                }
+                org.telegram.messenger.g0.h3(new nk(this.b, zaVar, 1));
                 break;
             default:
-                uk.W(this.b, (Location) obj);
+                wk.R(this.b, this.c);
                 break;
         }
     }

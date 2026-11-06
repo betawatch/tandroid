@@ -1,33 +1,71 @@
 package org.telegram.messenger;
 
-import android.util.Pair;
-import java.util.HashMap;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class ts {
-    public final long a;
-    public String b;
-    public final HashMap c;
-    public boolean d;
-    public long e;
+public final /* synthetic */ class ts implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dt b;
+    public final /* synthetic */ ArrayList c;
 
-    public ts(String str, long j10, int i3, long j11, long j12) {
-        HashMap hashMap = new HashMap();
-        this.c = hashMap;
-        this.a = j10;
-        this.b = str;
-        hashMap.put(Integer.valueOf(i3), new Pair(Long.valueOf(j11), Long.valueOf(j12)));
-        this.e = j11;
+    public /* synthetic */ ts(dt dtVar, ArrayList arrayList, int i7) {
+        this.a = i7;
+        this.b = dtVar;
+        this.c = arrayList;
     }
 
-    public final long a() {
-        long j10 = -1;
-        for (Pair pair : this.c.values()) {
-            if (j10 == -1 || j10 > ((Long) pair.first).longValue()) {
-                j10 = ((Long) pair.first).longValue();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dt dtVar = this.b;
+                dtVar.x = this.c;
+                Intent intent = new Intent(t0.b, (Class<?>) PopupNotificationActivity.class);
+                intent.putExtra("force", true);
+                intent.putExtra("currentAccount", dtVar.currentAccount);
+                intent.setFlags(268763140);
+                t0.b.startActivity(intent);
+                t0.b.sendBroadcast(new Intent("android.intent.action.CLOSE_SYSTEM_DIALOGS"));
+                break;
+            case 1:
+                dt dtVar2 = this.b;
+                ArrayList arrayList = this.c;
+                int size = arrayList.size();
+                for (int i7 = 0; i7 < size; i7++) {
+                    dtVar2.w.remove(arrayList.get(i7));
+                }
+                qs.e().k(qs.d4, new Object[0]);
+                break;
+            case 2:
+                dt dtVar3 = this.b;
+                ArrayList arrayList2 = this.c;
+                int size2 = arrayList2.size();
+                for (int i10 = 0; i10 < size2; i10++) {
+                    dtVar3.w.remove(arrayList2.get(i10));
+                }
+                qs.e().k(qs.d4, new Object[0]);
+                break;
+            case 3:
+                dt dtVar4 = this.b;
+                ArrayList arrayList3 = this.c;
+                int size3 = arrayList3.size();
+                for (int i11 = 0; i11 < size3; i11++) {
+                    dtVar4.w.remove(arrayList3.get(i11));
+                }
+                qs.e().k(qs.d4, new Object[0]);
+                break;
+            default:
+                dt dtVar5 = this.b;
+                ArrayList arrayList4 = this.c;
+                int size4 = arrayList4.size();
+                for (int i12 = 0; i12 < size4; i12++) {
+                    dtVar5.w.remove(arrayList4.get(i12));
+                }
+                qs.e().k(qs.d4, new Object[0]);
+                break;
         }
-        return j10;
     }
 }

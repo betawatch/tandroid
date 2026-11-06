@@ -1,25 +1,82 @@
 package l9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class a {
-    public static final a c;
-    public static final a d;
-    public final boolean a;
-    public final Throwable b;
+import a8.ia;
+import java.io.Serializable;
 
-    static {
-        if (o.d) {
-            d = null;
-            c = null;
-        } else {
-            d = new a(null, false);
-            c = new a(null, true);
-        }
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class a implements Serializable {
+    public static final a c = new a(new int[0]);
+    public final int[] a;
+    public final int b;
+
+    public a(int[] iArr) {
+        int length = iArr.length;
+        this.a = iArr;
+        this.b = length;
     }
 
-    public a(Throwable th2, boolean z10) {
-        this.a = z10;
-        this.b = th2;
+    public final boolean a(int i7) {
+        int i10 = 0;
+        while (true) {
+            if (i10 >= this.b) {
+                i10 = -1;
+                break;
+            }
+            if (this.a[i10] == i7) {
+                break;
+            }
+            i10++;
+        }
+        return i10 >= 0;
+    }
+
+    public final int b(int i7) {
+        ia.j(i7, this.b);
+        return this.a[i7];
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            int i7 = aVar.b;
+            int i10 = this.b;
+            if (i10 == i7) {
+                for (int i11 = 0; i11 < i10; i11++) {
+                    if (b(i11) == aVar.b(i11)) {
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i7 = 1;
+        for (int i10 = 0; i10 < this.b; i10++) {
+            i7 = (i7 * 31) + this.a[i10];
+        }
+        return i7;
+    }
+
+    public final String toString() {
+        int i7 = this.b;
+        if (i7 == 0) {
+            return "[]";
+        }
+        StringBuilder sb2 = new StringBuilder(i7 * 5);
+        sb2.append('[');
+        int[] iArr = this.a;
+        sb2.append(iArr[0]);
+        for (int i10 = 1; i10 < i7; i10++) {
+            sb2.append(", ");
+            sb2.append(iArr[i10]);
+        }
+        sb2.append(']');
+        return sb2.toString();
     }
 }

@@ -19,8 +19,8 @@ import java.util.function.ToLongFunction;
 public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOperator, ToLongFunction, BiConsumer, IntFunction, LongFunction, Supplier, Consumer, BinaryOperator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ a1(int i3) {
-        this.a = i3;
+    public /* synthetic */ a1(int i7) {
+        this.a = i7;
     }
 
     private final void accept$j$$util$stream$Node$$ExternalSyntheticLambda0(Object obj) {
@@ -35,7 +35,7 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public void x(Object obj) {
-        int i3 = this.a;
+        int i7 = this.a;
     }
 
     public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
@@ -61,28 +61,28 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     }
 
     @Override // java.util.function.LongFunction
-    public Object apply(long j10) {
+    public Object apply(long j3) {
         switch (this.a) {
             case 5:
-                return Long.valueOf(j10);
+                return Long.valueOf(j3);
             case 13:
-                return t3.h0(j10);
+                return t3.h0(j3);
             case 15:
-                return t3.s0(j10);
+                return t3.s0(j3);
             default:
-                return t3.t0(j10);
+                return t3.t0(j3);
         }
     }
 
     @Override // java.util.function.LongBinaryOperator
-    public long applyAsLong(long j10, long j11) {
+    public long applyAsLong(long j3, long j10) {
         switch (this.a) {
             case 1:
-                return Math.min(j10, j11);
+                return Math.min(j3, j10);
             case 9:
-                return Math.max(j10, j11);
+                return Math.max(j3, j10);
             default:
-                return j10 + j11;
+                return j3 + j10;
         }
     }
 
@@ -97,15 +97,15 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     }
 
     @Override // java.util.function.ObjLongConsumer
-    public void accept(Object obj, long j10) {
+    public void accept(Object obj, long j3) {
         switch (this.a) {
             case 0:
-                ((j$.util.z) obj).accept(j10);
+                ((j$.util.z) obj).accept(j3);
                 break;
             default:
                 long[] jArr = (long[]) obj;
                 jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + j10;
+                jArr[1] = jArr[1] + j3;
                 break;
         }
     }
@@ -126,28 +126,28 @@ public final /* synthetic */ class a1 implements ObjLongConsumer, LongBinaryOper
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i3) {
+    public Object apply(int i7) {
         switch (this.a) {
             case 4:
-                return new Long[i3];
+                return new Long[i7];
             case 12:
-                return new Object[i3];
+                return new Object[i7];
             case 20:
-                return new Object[i3];
+                return new Object[i7];
             case 21:
-                return new Integer[i3];
+                return new Integer[i7];
             case 22:
-                return new Long[i3];
+                return new Long[i7];
             case 23:
-                return new Double[i3];
+                return new Double[i7];
             case 26:
-                return new Integer[i3];
+                return new Integer[i7];
             case 27:
-                return new Integer[i3];
+                return new Integer[i7];
             case 28:
-                return new Long[i3];
+                return new Long[i7];
             default:
-                return new Long[i3];
+                return new Long[i7];
         }
     }
 

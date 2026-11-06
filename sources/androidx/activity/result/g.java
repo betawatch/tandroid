@@ -6,20 +6,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g implements Parcelable {
-    public static final Parcelable.Creator<g> CREATOR = new w.a(7);
+    public static final Parcelable.Creator<g> CREATOR = new w.a(15);
     public final IntentSender a;
     public final Intent b;
     public final int c;
     public final int d;
 
-    public g(IntentSender intentSender, Intent intent, int i3, int i10) {
+    public g(IntentSender intentSender, Intent intent, int i7, int i10) {
         j.e(intentSender, "intentSender");
         this.a = intentSender;
         this.b = intent;
-        this.c = i3;
+        this.c = i7;
         this.d = i10;
     }
 
@@ -29,10 +29,10 @@ public final class g implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i3) {
+    public final void writeToParcel(Parcel dest, int i7) {
         j.e(dest, "dest");
-        dest.writeParcelable(this.a, i3);
-        dest.writeParcelable(this.b, i3);
+        dest.writeParcelable(this.a, i7);
+        dest.writeParcelable(this.b, i7);
         dest.writeInt(this.c);
         dest.writeInt(this.d);
     }

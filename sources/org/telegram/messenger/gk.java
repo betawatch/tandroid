@@ -1,60 +1,102 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gk implements RequestDelegate {
+public final /* synthetic */ class gk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hp b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ qp b;
+    public final /* synthetic */ ArrayList c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ gk(int i3, long j10, long j11, hp hpVar) {
-        this.a = i3;
-        this.b = hpVar;
-        this.c = j10;
-        this.d = j11;
+    public /* synthetic */ gk(qp qpVar, long j3, ArrayList arrayList, int i7) {
+        this.a = i7;
+        this.b = qpVar;
+        this.d = j3;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        long j3 = this.d;
+        ArrayList arrayList = this.c;
+        qp qpVar = this.b;
+        switch (i7) {
             case 0:
-                hp hpVar = this.b;
-                hpVar.getClass();
-                if (tL_error == null) {
-                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
-                    hpVar.L3(tL_messages_affectedMessages.pts, tL_messages_affectedMessages.pts_count, this.c);
-                }
+                yr messagesStorage = qpVar.getMessagesStorage();
                 long j10 = this.d;
-                if (j10 != 0) {
-                    hpVar.getMessagesStorage().q1(j10);
-                    break;
-                }
+                ArrayList arrayList2 = this.c;
+                qpVar.getMessagesStorage().R1(j10, -j10, arrayList2, messagesStorage.P0(j10, arrayList2, false, true, 0, 0));
                 break;
-            default:
-                hp hpVar2 = this.b;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
-                    if (!tL_messages_peerDialogs.dialogs.isEmpty()) {
-                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
-                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
-                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
-                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
-                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
-                        hpVar2.J3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, hpVar2.P7, false, false, false);
+            case 1:
+                qpVar.getNotificationCenter().k(7, arrayList, Long.valueOf(j3), Boolean.FALSE);
+                if (j3 == 0) {
+                    int size = arrayList.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        ij ijVar = (ij) qpVar.U.get(((Integer) arrayList.get(i10)).intValue());
+                        if (ijVar != null) {
+                            ijVar.Z = true;
+                        }
+                    }
+                    break;
+                } else {
+                    ArrayList arrayList3 = (ArrayList) qpVar.R.f(-j3);
+                    if (arrayList3 != null) {
+                        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                            ij ijVar2 = (ij) arrayList3.get(i11);
+                            int size2 = arrayList.size();
+                            int i12 = 0;
+                            while (true) {
+                                if (i12 >= size2) {
+                                    break;
+                                } else if (ijVar2.f1() == ((Integer) arrayList.get(i12)).intValue()) {
+                                    ijVar2.Z = true;
+                                } else {
+                                    i12++;
+                                }
+                            }
+                        }
+                        break;
                     }
                 }
-                long j11 = this.c;
-                if (j11 != 0) {
-                    hpVar2.getMessagesStorage().q1(j11);
+                break;
+            case 2:
+                if (arrayList != null) {
+                    qpVar.getClass();
+                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i13);
+                        qp messagesController = qpVar.getMessagesController();
+                        int i14 = tL_forumTopic.top_message;
+                        TLRPC.Message message = tL_forumTopic.topMessage;
+                        int i15 = message != null ? message.date : 0;
+                        long j11 = this.d;
+                        messagesController.j3(j11, i14, 0, i15, false, qpVar.y2(j11) ? m5.o(tL_forumTopic.from_id) : tL_forumTopic.id, 0, true, 0);
+                        qpVar.getMessagesStorage().d2(-j11, qpVar.y2(j11) ? m5.o(tL_forumTopic.from_id) : tL_forumTopic.id, tL_forumTopic.top_message, 0);
+                    }
                 }
-                hpVar2.d1.e(this.d);
+                qpVar.getMessagesStorage().a.c(new wj(qpVar, 20));
+                break;
+            case 3:
+                qpVar.l5(0, -j3, arrayList);
+                qpVar.getNotificationCenter().k(3, new Object[0]);
+                break;
+            case 4:
+                g0.h3(new gk(this.b, this.d, this.c, 5));
+                break;
+            default:
+                qpVar.l5(0, j3, arrayList);
+                qpVar.getNotificationCenter().k(3, new Object[0]);
                 break;
         }
+    }
+
+    public /* synthetic */ gk(qp qpVar, ArrayList arrayList, long j3, int i7) {
+        this.a = i7;
+        this.b = qpVar;
+        this.c = arrayList;
+        this.d = j3;
     }
 }

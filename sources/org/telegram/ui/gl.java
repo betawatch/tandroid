@@ -1,11 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface gl {
-    void T0(int i3);
+public final class gl extends org.telegram.ui.Cells.a0 {
+    public final /* synthetic */ jl f;
 
-    void Y(boolean z10, boolean z11);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gl(jl jlVar, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(i7, context, f6Var);
+        this.f = jlVar;
+    }
 
-    void w0(String str);
+    @Override // org.telegram.ui.Cells.a0
+    public final int getSideMenuWidth() {
+        an anVar = this.f.Q;
+        int i7 = an.id;
+        return anVar.l9();
+    }
 }

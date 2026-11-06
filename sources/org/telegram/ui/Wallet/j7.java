@@ -1,22 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Wallet.WalletEngine2;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class j7 {
-    public final CountDownLatch a = new CountDownLatch(1);
-    public int b;
-    public byte[] c;
-    public WalletEngine2.HttpTransport.HostException d;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ FutureTask c;
 
-    public final synchronized void a(byte[] bArr, WalletEngine2.HttpTransport.HostException hostException) {
-        if (this.a.getCount() == 0) {
-            return;
+    public /* synthetic */ j7(AtomicBoolean atomicBoolean, FutureTask futureTask, int i7) {
+        this.a = i7;
+        this.b = atomicBoolean;
+        this.c = futureTask;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                WalletEngine2.lambda$emulateSend$18(this.b, this.c);
+                break;
+            default:
+                WalletEngine2.lambda$emulateSendNFT$23(this.b, this.c);
+                break;
         }
-        this.c = bArr;
-        this.d = hostException;
-        this.a.countDown();
     }
 }

@@ -1,32 +1,61 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ dw b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1 d;
 
-    public /* synthetic */ aw(yy yyVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, int i3) {
-        this.a = i3;
-        this.b = yyVar;
-        this.c = tL_updateNewChannelMessage;
+    public /* synthetic */ aw(dw dwVar, Context context, org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        this.a = i7;
+        this.b = dwVar;
+        this.c = context;
+        this.d = u1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.u1 u1Var = this.d;
+        Context context = this.c;
+        dw dwVar = this.b;
+        switch (i7) {
             case 0:
-                hp messagesController = this.b.getMessagesController();
-                TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage = this.c;
-                messagesController.L3(tL_updateNewChannelMessage.pts, tL_updateNewChannelMessage.pts_count, tL_updateNewChannelMessage.message.peer_id.channel_id);
+                dwVar.n = false;
+                if (!((Activity) context).isFinishing()) {
+                    try {
+                        u1Var.dismiss();
+                        break;
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                        return;
+                    }
+                }
                 break;
             default:
-                hp messagesController2 = this.b.getMessagesController();
-                TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage2 = this.c;
-                messagesController2.L3(tL_updateNewChannelMessage2.pts, tL_updateNewChannelMessage2.pts_count, tL_updateNewChannelMessage2.message.peer_id.channel_id);
+                if (!((Activity) context).isFinishing()) {
+                    dwVar.n = false;
+                    try {
+                        u1Var.dismiss();
+                    } catch (Exception e11) {
+                        a8.g(e11, true);
+                    }
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
+                    String M0 = hd.M0(R.string.AppName, null);
+                    org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
+                    u1Var2.R = M0;
+                    u1Var2.T = hd.M0(2131751750, null);
+                    alertDialog$Builder.k(hd.M0(2131747830, null), null);
+                    alertDialog$Builder.p().setCanceledOnTouchOutside(true);
+                    break;
+                }
                 break;
         }
     }

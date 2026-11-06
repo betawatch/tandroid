@@ -1,13 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 
-    public /* synthetic */ s5(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class s5 {
+    public final BitmapShader[] a = new BitmapShader[3];
+    public final Bitmap b;
+    public final int c;
+    public final int d;
+    public int e;
+    public boolean f;
+
+    public s5(Bitmap bitmap) {
+        this.b = bitmap;
+        this.c = bitmap.getWidth();
+        this.d = bitmap.getHeight();
     }
 }

@@ -1,69 +1,69 @@
 package androidx.mediarouter.app;
 
+import a8.a7;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import b8.c1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class h extends androidx.fragment.app.p {
-    public boolean B0 = false;
-    public g.u C0;
-    public r4.r D0;
+public class h extends androidx.fragment.app.o {
+    public boolean A0 = false;
+    public g.u B0;
+    public s4.r C0;
 
     public h() {
-        this.r0 = true;
-        Dialog dialog = this.w0;
+        this.q0 = true;
+        Dialog dialog = this.v0;
         if (dialog != null) {
             dialog.setCancelable(true);
         }
     }
 
-    @Override // androidx.fragment.app.p
+    @Override // androidx.fragment.app.o
     public final Dialog O() {
-        if (this.B0) {
-            c0 c0Var = new c0(n());
-            this.C0 = c0Var;
+        if (this.A0) {
+            b0 b0Var = new b0(n());
+            this.B0 = b0Var;
             P();
-            c0Var.f(this.D0);
+            b0Var.f(this.C0);
         } else {
             g gVar = new g(n());
-            this.C0 = gVar;
+            this.B0 = gVar;
             P();
-            gVar.h(this.D0);
+            gVar.h(this.C0);
         }
-        return this.C0;
+        return this.B0;
     }
 
     public final void P() {
-        if (this.D0 == null) {
+        if (this.C0 == null) {
             Bundle bundle = this.f;
             if (bundle != null) {
-                this.D0 = r4.r.b(bundle.getBundle("selector"));
+                this.C0 = s4.r.b(bundle.getBundle("selector"));
             }
-            if (this.D0 == null) {
-                this.D0 = r4.r.c;
+            if (this.C0 == null) {
+                this.C0 = s4.r.c;
             }
         }
     }
 
-    @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
+    @Override // androidx.fragment.app.r, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
-        this.V = true;
-        g.u uVar = this.C0;
+        this.U = true;
+        g.u uVar = this.B0;
         if (uVar == null) {
             return;
         }
-        if (!this.B0) {
+        if (!this.A0) {
             g gVar = (g) uVar;
-            gVar.getWindow().setLayout(c1.a(gVar.getContext()), -2);
+            gVar.getWindow().setLayout(a7.a(gVar.getContext()), -2);
         } else {
-            c0 c0Var = (c0) uVar;
-            Context context = c0Var.n;
-            c0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : c1.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+            b0 b0Var = (b0) uVar;
+            Context context = b0Var.n;
+            b0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : a7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         }
     }
 }

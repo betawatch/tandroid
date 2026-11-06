@@ -1,40 +1,34 @@
 package vg;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.h10;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b extends a {
-    public c d;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ int c;
 
-    @Override // vg.a
-    public final u4.h0 a() {
-        c cVar = new c(h10.t0, this.a);
-        this.d = cVar;
-        cVar.r = this;
-        return cVar;
+    public /* synthetic */ b(e eVar, int i7, int i10) {
+        this.a = i10;
+        this.b = eVar;
+        this.c = i7;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(i3, i10);
-        c cVar = this.d;
-        Context context = getContext();
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        ArrayList arrayList = cVar.f;
-        e eVar = new e(context, cVar.c);
-        int i11 = 0;
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            eVar.a((d) arrayList.get(i12));
-            eVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
-            ((d) arrayList.get(i12)).e = i11;
-            i11 += eVar.getMeasuredHeight();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e eVar = this.b;
+                eVar.postOnAnimation(new b(eVar, this.c, 1));
+                break;
+            default:
+                e eVar2 = this.b;
+                int i7 = this.c;
+                if (eVar2.e && !eVar2.r && i7 == eVar2.E) {
+                    eVar2.y = true;
+                    eVar2.requestRender();
+                    break;
+                }
+                break;
         }
-        cVar.n = i11;
     }
 }

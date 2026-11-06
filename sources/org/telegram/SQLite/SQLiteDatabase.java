@@ -3,9 +3,9 @@ package org.telegram.SQLite;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
-import t4.c;
+import rf.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
@@ -18,14 +18,14 @@ public class SQLiteDatabase {
 
     public void beginTransaction() {
         if (this.inTransaction) {
-            boolean z10 = r2.a;
+            boolean z9 = r2.a;
             commitTransaction();
         }
         this.inTransaction = true;
         beginTransaction(this.sqliteHandle);
     }
 
-    public native void beginTransaction(long j10);
+    public native void beginTransaction(long j3);
 
     public void checkOpened() {
         if (!this.isOpen) {
@@ -47,7 +47,7 @@ public class SQLiteDatabase {
         }
     }
 
-    public native void closedb(long j10);
+    public native void closedb(long j3);
 
     public void commitTransaction() {
         if (this.inTransaction) {
@@ -56,7 +56,7 @@ public class SQLiteDatabase {
         }
     }
 
-    public native void commitTransaction(long j10);
+    public native void commitTransaction(long j3);
 
     public SQLitePreparedStatement executeFast(String str) {
         return new SQLitePreparedStatement(this, str);
@@ -78,12 +78,12 @@ public class SQLiteDatabase {
 
     public void explainQuery(String str, Object... objArr) {
         checkOpened();
-        SQLiteCursor query = new SQLitePreparedStatement(this, c.f("EXPLAIN QUERY PLAN ", str)).query(objArr);
+        SQLiteCursor query = new SQLitePreparedStatement(this, b.i("EXPLAIN QUERY PLAN ", str)).query(objArr);
         while (query.next()) {
             int columnCount = query.getColumnCount();
             StringBuilder sb2 = new StringBuilder();
-            for (int i3 = 0; i3 < columnCount; i3++) {
-                sb2.append(query.stringValue(i3));
+            for (int i7 = 0; i7 < columnCount; i7++) {
+                sb2.append(query.stringValue(i7));
                 sb2.append(", ");
             }
             a8.b("EXPLAIN QUERY PLAN " + sb2.toString());

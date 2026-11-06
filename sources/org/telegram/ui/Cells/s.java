@@ -9,9 +9,9 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.ui.Components.ks;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class s extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
+public final class s extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int h = 0;
     public Paint a;
     public Paint b;
@@ -25,21 +25,21 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.z
         this.f = true;
         TextView textView = this.d;
         int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false);
-        int i3 = org.telegram.ui.ActionBar.k6.I6;
-        textView.setTextColor(i0.a.f(f10, x02, org.telegram.ui.ActionBar.k6.x0(null, i3, false)));
+        int i7 = org.telegram.ui.ActionBar.k6.I6;
+        textView.setTextColor(i0.a.f(f10, x02, org.telegram.ui.ActionBar.k6.x0(null, i7, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.f(f10, i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.M6, false), 63), org.telegram.ui.ActionBar.k6.x0(null, i3, false)));
+        paint.setColor(i0.a.f(f10, i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.M6, false), 63), org.telegram.ui.ActionBar.k6.x0(null, i7, false)));
         paint.setStrokeWidth(Math.max(2, org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(0.5f, 2.0f, f10))));
         invalidate();
     }
 
-    public final void b(boolean z10, boolean z11) {
-        float f10 = z10 ? 1.0f : 0.0f;
+    public final void b(boolean z9, boolean z10) {
+        float f10 = z9 ? 1.0f : 0.0f;
         float f11 = this.e;
-        if (f10 == f11 && z11) {
+        if (f10 == f11 && z10) {
             return;
         }
-        if (!z11) {
+        if (!z10) {
             a(f10);
             return;
         }
@@ -61,7 +61,7 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.z
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), paint);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final void updateColors() {
         try {
             if (!this.f || this.d == null) {
@@ -73,7 +73,7 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.z
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

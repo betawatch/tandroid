@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
+import a8.ab;
 import android.content.Context;
-import b8.hb;
-import b8.jc;
-import ed.n;
-import ed.v;
+import c8.u0;
+import hd.m;
+import hd.u;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
 import kotlin.jvm.internal.j;
-import td.c;
-import wd.b0;
+import wd.c;
+import zd.b0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -44,7 +44,7 @@ public final class zzgz implements zzgs {
         if (zzgoVar != null) {
             List zzd = zzgoVar.zzd();
             j.e(zzd, "<this>");
-            int i3 = 0;
+            int i7 = 0;
             if ((zzd instanceof RandomAccess) && (zzd instanceof List)) {
                 List list = zzd;
                 int size = list.size();
@@ -65,21 +65,21 @@ public final class zzgz implements zzgs {
                 Iterator iterator = zzd.iterator();
                 j.e(iterator, "iterator");
                 if (iterator.hasNext()) {
-                    v vVar = new v(iterator, null);
+                    u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = jc.a(cVar, cVar, vVar);
+                    cVar.c = u0.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
-                    it = n.a;
+                    it = m.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
                 }
             }
             int size2 = arrayList.size();
-            while (i3 < size2) {
-                Object obj = arrayList.get(i3);
-                i3++;
+            while (i7 < size2) {
+                Object obj = arrayList.get(i7);
+                i7++;
                 zzg((List) obj);
             }
         }
@@ -89,7 +89,7 @@ public final class zzgz implements zzgs {
         zzgo zzgoVar;
         zzzm zzk;
         int zzN;
-        int i3;
+        int i7;
         zzwo zzi = zzwq.zzi();
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
@@ -98,7 +98,7 @@ public final class zzgz implements zzgs {
             try {
                 zzk = zzzm.zzk(zzpp.zzg().zzj(zzgpVar.zzc()));
                 zzN = zzk.zzN();
-                i3 = zzN - 1;
+                i7 = zzN - 1;
             } catch (Exception unused) {
                 zzgo zzgoVar2 = this.zzc;
                 if (zzgoVar2 != null) {
@@ -108,11 +108,11 @@ public final class zzgz implements zzgs {
             if (zzN == 0) {
                 throw null;
             }
-            if (i3 == 0) {
+            if (i7 == 0) {
                 zzi.zzq(zzk.zzf());
-            } else if (i3 == 1) {
+            } else if (i7 == 1) {
                 zzi.zzr(zzk.zzg());
-            } else if (i3 != 2) {
+            } else if (i7 != 2) {
                 throw new androidx.car.app.j();
             }
             arrayList.add(zzgpVar);
@@ -123,7 +123,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i10 = zzby.zza;
-            if (!((zzha) hb.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) ab.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -142,8 +142,8 @@ public final class zzgz implements zzgs {
     @Override // com.google.android.recaptcha.internal.zzgs
     public final void zza(zzzm zzzmVar) {
         try {
-            int i3 = zzby.zza;
-            b0.q(((zzcr) hb.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
+            int i7 = zzby.zza;
+            b0.q(((zzcr) ab.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

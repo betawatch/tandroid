@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -15,20 +15,20 @@ final class zzfu extends j implements p {
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfu(zzgb zzgbVar, long j10, c cVar) {
+    public zzfu(zzgb zzgbVar, long j3, c cVar) {
         super(2, cVar);
         this.zzb = zzgbVar;
-        this.zzc = j10;
+        this.zzc = j3;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -43,7 +43,7 @@ final class zzfu extends j implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,30 +53,30 @@ final class zzfu extends j implements p {
         zzdt zzdtVar;
         zzhk zzhkVar;
         long longValue;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
         try {
-            if (i3 == 0) {
-                ib.b(obj);
+            if (i7 == 0) {
+                b.c(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
-                long j10 = this.zzc;
+                long j3 = this.zzc;
                 this.zzd = zzhkVar;
                 this.zza = 1;
-                obj = zzgbVar.zzq(j10, this);
-            } else if (i3 == 1) {
+                obj = zzgbVar.zzq(j3, this);
+            } else if (i7 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                ib.b(obj);
+                b.c(obj);
             } else {
-                if (i3 != 2) {
-                    ib.b(obj);
+                if (i7 != 2) {
+                    b.c(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                ib.b(obj);
+                b.c(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;

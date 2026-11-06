@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class m extends Animation {
     public final /* synthetic */ int a;
@@ -13,26 +13,26 @@ public final class m extends Animation {
     public final /* synthetic */ int c;
     public final /* synthetic */ View d;
 
-    public /* synthetic */ m(View view, int i3, int i10, int i11) {
+    public /* synthetic */ m(View view, int i7, int i10, int i11) {
         this.a = i11;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
         this.d = view;
     }
 
     @Override // android.view.animation.Animation
     public final void applyTransformation(float f10, Transformation transformation) {
-        int i3 = this.a;
+        int i7 = this.a;
         View view = this.d;
         int i10 = this.c;
         int i11 = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 t.o(i11 - ((int) ((i11 - i10) * f10)), view);
                 break;
             default:
                 int i12 = i10 + ((int) ((i11 - i10) * f10));
-                int i13 = o0.k0;
+                int i13 = n0.j0;
                 ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 layoutParams.height = i12;
                 view.setLayoutParams(layoutParams);

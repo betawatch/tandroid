@@ -8,7 +8,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c implements Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
     public static final c e = new c();
@@ -38,16 +38,16 @@ public final class c implements Application.ActivityLifecycleCallbacks, Componen
         }
     }
 
-    public final void c(boolean z10) {
+    public final void c(boolean z9) {
         synchronized (e) {
             try {
                 ArrayList arrayList = this.c;
                 int size = arrayList.size();
-                int i3 = 0;
-                while (i3 < size) {
-                    Object obj = arrayList.get(i3);
-                    i3++;
-                    ((b) obj).a(z10);
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    ((b) obj).a(z9);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -74,8 +74,8 @@ public final class c implements Application.ActivityLifecycleCallbacks, Componen
     }
 
     @Override // android.content.ComponentCallbacks2
-    public final void onTrimMemory(int i3) {
-        if (i3 == 20 && this.a.compareAndSet(false, true)) {
+    public final void onTrimMemory(int i7) {
+        if (i7 == 20 && this.a.compareAndSet(false, true)) {
             this.b.set(true);
             c(true);
         }

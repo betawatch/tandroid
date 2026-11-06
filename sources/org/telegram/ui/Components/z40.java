@@ -1,27 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class z40 extends m70 {
-    public final /* synthetic */ d50 N;
+public final class z40 extends pj0 {
+    public int e3;
+    public final /* synthetic */ m50 f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z40(d50 d50Var, Context context, org.telegram.ui.ActionBar.d2 d2Var, org.telegram.ui.ActionBar.t2 t2Var, boolean z10) {
-        super(context, d2Var, t2Var, false, z10);
-        this.N = d50Var;
+    public z40(m50 m50Var, Context context) {
+        super(context, null);
+        this.f3 = m50Var;
     }
 
-    @Override // org.telegram.ui.Components.m70
-    public final void e(SpannableStringBuilder spannableStringBuilder) {
-        i50 i50Var = this.N.c;
-        org.telegram.ui.ActionBar.j2 j2Var = i50Var.c;
-        int i3 = i50.f2;
-        ac Q = new fc(j2Var, i50Var.J0).Q(R.raw.forward, 36, spannableStringBuilder);
-        Q.r = false;
-        Q.k(true);
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        m50 m50Var = this.f3;
+        z40 z40Var = m50Var.M1;
+        if (this.e3 != View.MeasureSpec.getSize(i10)) {
+            this.e3 = View.MeasureSpec.getSize(i10);
+            m50Var.R1 = true;
+            z40Var.setPadding(0, 0, 0, 0);
+            m50Var.R1 = false;
+            measure(i7, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
+            int measuredHeight = getMeasuredHeight();
+            int i11 = this.e3;
+            int i12 = (int) ((i11 / 5.0f) * 2.0f);
+            if (i12 < org.telegram.messenger.g0.L(60.0f) + (i11 - measuredHeight)) {
+                i12 = this.e3 - measuredHeight;
+            }
+            m50Var.R1 = true;
+            z40Var.setPadding(0, i12, 0, 0);
+            m50Var.R1 = false;
+            measure(i7, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
+        }
+        super.onMeasure(i7, i10);
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.R1) {
+            return;
+        }
+        super.requestLayout();
     }
 }

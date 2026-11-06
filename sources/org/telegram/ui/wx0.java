@@ -1,45 +1,92 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.fc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ ei.k0 e;
+public final class wx0 extends org.telegram.ui.Components.oj0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ay0 d;
 
-    public /* synthetic */ wx0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.fc fcVar, Context context, ei.k0 k0Var, int i3) {
-        this.a = i3;
-        this.b = aVar;
-        this.c = fcVar;
-        this.d = context;
-        this.e = k0Var;
+    public wx0(ay0 ay0Var, Context context) {
+        this.d = ay0Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        ei.k0 k0Var = this.e;
-        Context context = this.d;
-        org.telegram.ui.Components.fc fcVar = this.c;
-        org.telegram.messenger.video.a aVar = this.b;
-        int i10 = 2;
-        switch (i3) {
-            case 0:
-                aVar.run();
-                fcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new zt(context, i10), k0Var)).j();
-                break;
-            case 1:
-                aVar.run();
-                fcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new zt(context, 5), k0Var)).j();
-                break;
-            default:
-                aVar.run();
-                fcVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new zt(context, 6), k0Var)).j();
-                break;
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
+        int i7 = d1Var.f;
+        return i7 == 3 || i7 == 2;
+    }
+
+    @Override // v4.g0
+    public final int b() {
+        ay0 ay0Var = this.d;
+        return ay0Var.f + (ay0Var.e < 0 ? ay0Var.getMediaDataController().h.size() : 0) + 1;
+    }
+
+    @Override // v4.g0
+    public final int d(int i7) {
+        if (i7 == 0) {
+            return 0;
         }
+        ay0 ay0Var = this.d;
+        if (i7 == ay0Var.c) {
+            return 2;
+        }
+        if (i7 == ay0Var.e) {
+            return 3;
+        }
+        return i7 == b() - 1 ? 4 : 1;
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        int i10;
+        int i11;
+        if (d(i7) != 1) {
+            return;
+        }
+        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) d1Var.a;
+        ay0 ay0Var = this.d;
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ay0Var.getMediaDataController().h.get(i7 - ay0Var.d);
+        String str = tL_availableReaction.reaction;
+        i10 = ((org.telegram.ui.ActionBar.f2) ay0Var).currentAccount;
+        boolean contains = str.contains(org.telegram.messenger.ui.b0(i10).Q());
+        i11 = ((org.telegram.ui.ActionBar.f2) ay0Var).currentAccount;
+        xVar.a(tL_availableReaction, contains, i11);
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        org.telegram.ui.ActionBar.q4 q4Var;
+        View view;
+        ay0 ay0Var = this.d;
+        Context context = this.c;
+        if (i7 == 0) {
+            q4Var = ((org.telegram.ui.ActionBar.f2) ay0Var).parentLayout;
+            org.telegram.ui.Cells.z9 z9Var = new org.telegram.ui.Cells.z9(context, q4Var, 2);
+            z9Var.setImportantForAccessibility(4);
+            z9Var.x = ay0Var;
+            view = z9Var;
+        } else if (i7 == 2) {
+            org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context);
+            z8Var.setText(org.telegram.messenger.hd.M0(2131751353, null));
+            view = z8Var;
+        } else if (i7 == 3) {
+            zx0 zx0Var = new zx0(ay0Var, context);
+            zx0Var.a(false);
+            view = zx0Var;
+        } else if (i7 != 4) {
+            view = new org.telegram.ui.Cells.x(context, true, true);
+        } else {
+            View tmVar = new org.telegram.ui.Components.tm(context, 22);
+            tmVar.setTag(-33024);
+            view = tmVar;
+        }
+        return new org.telegram.ui.Components.xi0(view);
     }
 }

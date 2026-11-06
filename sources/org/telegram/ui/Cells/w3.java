@@ -6,15 +6,15 @@ import android.view.View;
 import android.widget.Button;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w3 extends org.telegram.ui.Components.h6 {
+public final class w3 extends org.telegram.ui.Components.j6 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w3(Context context, boolean z10, boolean z11, boolean z12, int i3) {
-        super(context, z10, z11, z12);
-        this.s = i3;
+    public /* synthetic */ w3(Context context, boolean z9, boolean z10, boolean z11, int i7) {
+        super(context, z9, z10, z11);
+        this.s = i7;
     }
 
     @Override // android.view.View
@@ -43,7 +43,7 @@ public final class w3 extends org.telegram.ui.Components.h6 {
     public void invalidate() {
         switch (this.s) {
             case 4:
-                if (!dh.d0.b(this)) {
+                if (!ch.e0.b(this)) {
                     super.invalidate();
                     break;
                 }
@@ -54,7 +54,7 @@ public final class w3 extends org.telegram.ui.Components.h6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h6, android.view.View
+    @Override // org.telegram.ui.Components.j6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 2:
@@ -69,41 +69,41 @@ public final class w3 extends org.telegram.ui.Components.h6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h6, android.view.View
-    public void onMeasure(int i3, int i10) {
+    @Override // org.telegram.ui.Components.j6, android.view.View
+    public void onMeasure(int i7, int i10) {
         switch (this.s) {
             case 3:
-                super.onMeasure(i3, i10);
+                super.onMeasure(i7, i10);
                 setPivotX(getMeasuredWidth());
                 break;
             case 4:
             default:
-                super.onMeasure(i3, i10);
+                super.onMeasure(i7, i10);
                 break;
             case 5:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_31), i10);
-                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i3), getMeasuredHeight());
+                setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i7), getMeasuredHeight());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w3(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        super(context, z10, z11, z12, z13, z14);
+    public /* synthetic */ w3(Context context, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13) {
+        super(context, z9, z10, z11, z12, z13);
         this.s = 5;
     }
 
     @Override // android.view.View
-    public void invalidate(int i3, int i10, int i11, int i12) {
+    public void invalidate(int i7, int i10, int i11, int i12) {
         switch (this.s) {
             case 4:
-                if (!dh.d0.b(this)) {
-                    super.invalidate(i3, i10, i11, i12);
+                if (!ch.e0.b(this)) {
+                    super.invalidate(i7, i10, i11, i12);
                     break;
                 }
                 break;
             default:
-                super.invalidate(i3, i10, i11, i12);
+                super.invalidate(i7, i10, i11, i12);
                 break;
         }
     }

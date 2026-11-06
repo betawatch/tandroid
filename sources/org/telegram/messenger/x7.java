@@ -2,14 +2,14 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mg.f b;
+    public final /* synthetic */ lg.f b;
 
-    public /* synthetic */ x7(mg.f fVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ x7(lg.f fVar, int i7) {
+        this.a = i7;
         this.b = fVar;
     }
 
@@ -25,21 +25,21 @@ public final /* synthetic */ class x7 implements Runnable {
     */
     public final void run() {
         i7 i7Var;
-        int i3;
+        int i7;
         int i10;
         switch (this.a) {
             case 0:
                 this.b.b(false);
                 break;
             default:
-                mg.f fVar = this.b;
-                int i11 = fVar.a == 1 ? hp.s1(fVar.b).e0 : hp.s1(fVar.b).f0;
+                lg.f fVar = this.b;
+                int i11 = fVar.a == 1 ? qp.s1(fVar.b).d0 : qp.s1(fVar.b).e0;
                 ((ArrayList) fVar.e).clear();
                 if (fVar.a == 1 && !((ArrayList) fVar.d).isEmpty()) {
                     i7Var = (i7) ((ArrayList) fVar.d).get(0);
                     if (i7Var.j && i7Var.W0 >= 1048576 && !i7Var.a && i7Var.Y != 3) {
                         if (i7Var.k) {
-                            long j10 = i7Var.a0;
+                            long j3 = i7Var.a0;
                             int i12 = i7Var.J;
                             if (i12 <= 0) {
                                 i12 = 1048576;
@@ -47,26 +47,26 @@ public final /* synthetic */ class x7 implements Runnable {
                             break;
                         }
                         ((p5) fVar.f).a((x7) fVar.g);
-                        ((p5) fVar.f).e((x7) fVar.g, 250L);
-                        i3 = 0;
-                        boolean z10 = false;
+                        ((p5) fVar.f).d((x7) fVar.g, 250L);
+                        i7 = 0;
+                        boolean z9 = false;
                         int i13 = 0;
-                        while (i3 < ((ArrayList) fVar.d).size()) {
-                            i7 i7Var2 = i3 > 0 ? (i7) ((ArrayList) fVar.d).get(i3 - 1) : null;
-                            i7 i7Var3 = (i7) ((ArrayList) fVar.d).get(i3);
+                        while (i7 < ((ArrayList) fVar.d).size()) {
+                            i7 i7Var2 = i7 > 0 ? (i7) ((ArrayList) fVar.d).get(i7 - 1) : null;
+                            i7 i7Var3 = (i7) ((ArrayList) fVar.d).get(i7);
                             if (i7Var == null || i7Var3 == i7Var || (i7Var3.p0 == i7Var.p0 && b6.g())) {
-                                if (i3 > 0 && !z10) {
+                                if (i7 > 0 && !z9) {
                                     if (fVar.a == 1 && i7Var2 != null && i7Var2.j && i7Var2.W0 >= 1048576 && i7Var3.W0 <= 0) {
-                                        z10 = true;
+                                        z9 = true;
                                     }
                                     if (i13 > 0 && i7Var3.W0 == 0) {
-                                        z10 = true;
+                                        z9 = true;
                                     }
                                 }
                                 if (i7Var3.a) {
                                     i11++;
                                 } else {
-                                    if (!z10 && i3 < i11) {
+                                    if (!z9 && i7 < i11) {
                                         ((ArrayList) fVar.e).add(i7Var3);
                                     } else if (i7Var3.S && !i7Var3.Z) {
                                         i7Var3.l();
@@ -76,7 +76,7 @@ public final /* synthetic */ class x7 implements Runnable {
                             } else if (i7Var3.S && !i7Var3.Z) {
                                 i7Var3.l();
                             }
-                            i3++;
+                            i7++;
                         }
                         for (i10 = 0; i10 < ((ArrayList) fVar.e).size(); i10++) {
                             ((i7) ((ArrayList) fVar.e).get(i10)).r();
@@ -86,10 +86,10 @@ public final /* synthetic */ class x7 implements Runnable {
                     }
                 }
                 i7Var = null;
-                i3 = 0;
-                boolean z102 = false;
+                i7 = 0;
+                boolean z92 = false;
                 int i132 = 0;
-                while (i3 < ((ArrayList) fVar.d).size()) {
+                while (i7 < ((ArrayList) fVar.d).size()) {
                 }
                 while (i10 < ((ArrayList) fVar.e).size()) {
                 }

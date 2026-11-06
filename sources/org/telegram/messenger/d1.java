@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.Log;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d1 {
     public final String a;
@@ -28,29 +28,33 @@ public final class d1 {
         }
         this.b = sb2;
         this.a = str;
-        int i3 = 2;
+        int i7 = 2;
         Object[] objArr = {str, 23};
         if (!(str.length() <= 23)) {
             throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
         }
-        while (i3 <= 7 && !Log.isLoggable(this.a, i3)) {
-            i3++;
+        while (i7 <= 7 && !Log.isLoggable(this.a, i7)) {
+            i7++;
         }
-        this.c = i3;
+        this.c = i7;
     }
 
     public void a(String str, Object... objArr) {
         if (this.c <= 3) {
-            if (objArr.length > 0) {
-                str = String.format(Locale.US, str, objArr);
-            }
-            Log.d(this.a, this.b.concat(str));
+            Log.d(this.a, b(str, objArr));
         }
     }
 
-    public d1(String str, int i3, String str2) {
+    public String b(String str, Object... objArr) {
+        if (objArr.length > 0) {
+            str = String.format(Locale.US, str, objArr);
+        }
+        return this.b.concat(str);
+    }
+
+    public d1(String str, int i7, String str2) {
         this.a = str;
-        this.c = i3;
+        this.c = i7;
         this.b = str2;
     }
 }

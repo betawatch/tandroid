@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ky0 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -18,20 +18,20 @@ public final class ky0 extends FrameLayout {
 
     public final void a() {
         jy0 jy0Var = this.b;
-        int i3 = this.d;
-        org.telegram.ui.h80 h80Var = (org.telegram.ui.h80) jy0Var;
-        h80Var.getClass();
-        org.telegram.messenger.h10.i(i3).a0 = null;
-        org.telegram.messenger.h10.i(i3).v(false);
-        LaunchActivity launchActivity = h80Var.a;
-        ArrayList arrayList = launchActivity.e0;
+        int i7 = this.d;
+        org.telegram.ui.k80 k80Var = (org.telegram.ui.k80) jy0Var;
+        k80Var.getClass();
+        org.telegram.messenger.p10.i(i7).Z = null;
+        org.telegram.messenger.p10.i(i7).v(false);
+        LaunchActivity launchActivity = k80Var.a;
+        ArrayList arrayList = launchActivity.d0;
         if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.d2) k2.p1.h(1, arrayList)).onResume();
+            ((org.telegram.ui.ActionBar.f2) jg.g.i(1, arrayList)).onResume();
         }
-        launchActivity.D0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.fz(h80Var, 17)).start();
+        launchActivity.A0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.hz(k80Var, 17)).start();
         TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
         tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ei.u5(22));
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new di.u5(22));
     }
 
     public void setDelegate(jy0 jy0Var) {

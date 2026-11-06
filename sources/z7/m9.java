@@ -1,6 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class m9 {
+public final class m9 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final va e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
+
+    public /* synthetic */ m9(a8.s9 s9Var) {
+        this.a = s9Var.a;
+        this.b = s9Var.b;
+        this.c = s9Var.c;
+        this.d = s9Var.d;
+        this.e = (va) s9Var.k;
+        this.f = s9Var.e;
+        this.g = s9Var.f;
+        this.h = s9Var.g;
+        this.i = s9Var.h;
+        this.j = s9Var.i;
+        this.k = s9Var.j;
+    }
 }

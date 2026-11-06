@@ -38,7 +38,7 @@ public abstract class a0 {
         return xVar.c();
     }
 
-    public static int b(long j10) {
-        return (int) (j10 ^ (j10 >>> 32));
+    public static int b(long j3) {
+        return (int) (j3 ^ (j3 >>> 32));
     }
 }

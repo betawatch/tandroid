@@ -1,102 +1,38 @@
 package r2;
 
-import android.net.Uri;
-import android.os.SystemClock;
-import b8.zb;
-import g9.g2;
-import g9.i0;
-import g9.t0;
-import java.util.HashMap;
-import org.telegram.ui.Cells.f1;
+import c8.e1;
+import e2.s0;
+import e2.u;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c {
-    public final w a;
-    public final HashMap b;
-    public final /* synthetic */ d c;
+    public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
+    public w7.s a;
+    public boolean b;
+    public int c;
 
-    public c(d dVar, w wVar) {
-        this.c = dVar;
-        this.a = wVar;
-        HashMap hashMap = new HashMap();
-        g2 it = t0.q(wVar.b.keySet()).iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            Uri uri = (Uri) wVar.b.get(str);
-            uri.getClass();
-            hashMap.put(uri, new b(this.c, uri, str));
+    public static void a(int i7, ArrayList arrayList) {
+        if (e1.d(i7, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i7))) {
+            return;
         }
-        this.b = hashMap;
+        arrayList.add(Integer.valueOf(i7));
     }
 
-    public static m a(c cVar, Uri uri) {
-        b bVar = (b) f1.p(cVar.b, uri, uri);
-        bVar.getClass();
-        return bVar.e;
-    }
-
-    public static void b(c cVar, Uri uri, boolean z10) {
-        b bVar = (b) f1.p(cVar.b, uri, uri);
-        bVar.getClass();
-        bVar.c(z10 ? bVar.a() : bVar.a);
-    }
-
-    public static boolean c(c cVar, Uri uri, long j10) {
-        HashMap hashMap = cVar.b;
-        b bVar = (b) f1.p(hashMap, uri, uri);
-        bVar.getClass();
-        bVar.r = SystemClock.elapsedRealtime() + j10;
-        d dVar = cVar.c;
-        w wVar = cVar.a;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        for (b bVar2 : hashMap.values()) {
-            if (!bVar2.b.equals(wVar.d) && elapsedRealtime > bVar2.r) {
-                Uri c2 = wVar.c();
-                String str = bVar2.b;
-                zb.p(wVar.b.containsKey(str));
-                wVar.d = str;
-                if (c2.equals(dVar.G)) {
-                    dVar.g(bVar2.a);
-                }
-                b bVar3 = (b) hashMap.get(c2);
-                bVar3.getClass();
-                bVar2.x = bVar3.x;
-                bVar3.x = false;
-                return true;
-            }
+    public final u b(u uVar) {
+        if (!this.b || !this.a.w(uVar)) {
+            return uVar;
         }
-        Uri uri2 = dVar.G;
-        if (uri2 == null || uri.equals(uri2)) {
-            i0 i0Var = dVar.x;
-            long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            boolean z10 = false;
-            int i3 = 0;
-            while (true) {
-                if (i3 >= i0Var.size()) {
-                    break;
-                }
-                Uri c10 = ((w) i0Var.get(i3)).c();
-                c cVar2 = (c) dVar.d.get(c10);
-                cVar2.getClass();
-                HashMap hashMap2 = cVar2.b;
-                b bVar4 = (b) f1.p(hashMap2, c10, c10);
-                bVar4.getClass();
-                if (elapsedRealtime2 > bVar4.r) {
-                    dVar.G = c10;
-                    Uri d = dVar.d(c10);
-                    b bVar5 = (b) f1.p(hashMap2, c10, c10);
-                    bVar5.getClass();
-                    bVar5.c(d);
-                    z10 = true;
-                    break;
-                }
-                i3++;
-            }
-            if (!z10) {
-                return false;
-            }
-        }
-        return true;
+        e2.t a10 = uVar.a();
+        String str = uVar.k;
+        a10.r = s0.n("application/x-media3-cues");
+        a10.P = this.a.D(uVar);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(uVar.s);
+        sb2.append(str != null ? " ".concat(str) : "");
+        a10.j = sb2.toString();
+        a10.w = Long.MAX_VALUE;
+        return new u(a10);
     }
 }

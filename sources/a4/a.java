@@ -1,94 +1,42 @@
 package a4;
 
-import e3.d0;
-import e3.o;
-import e3.p;
-import e3.q;
-import e3.s;
-import g9.g0;
-import g9.i0;
-import g9.s1;
-import java.util.List;
+import f3.b0;
+import f3.c0;
+import f3.d0;
+import h2.m0;
+import java.math.BigInteger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements o {
-    public final /* synthetic */ int a;
-    public final d0 b;
+public final class a implements c0 {
+    public final /* synthetic */ b a;
 
-    public a(int i3) {
-        this.a = i3;
-        switch (i3) {
-            case 1:
-                this.b = new d0(16973, 2, "image/bmp");
-                break;
-            default:
-                this.b = new d0(35152, 2, "image/png");
-                break;
-        }
+    public a(b bVar) {
+        this.a = bVar;
     }
 
-    @Override // e3.o
-    public final o a() {
-        int i3 = this.a;
-        return this;
+    @Override // f3.c0
+    public final boolean d() {
+        return true;
     }
 
-    @Override // e3.o
-    public final boolean b(p pVar) {
-        switch (this.a) {
-        }
-        return this.b.b(pVar);
+    @Override // f3.c0
+    public final /* synthetic */ boolean e() {
+        return false;
     }
 
-    @Override // e3.o
-    public final void c(q qVar) {
-        switch (this.a) {
-            case 0:
-                this.b.c(qVar);
-                break;
-            default:
-                this.b.c(qVar);
-                break;
-        }
+    @Override // f3.c0
+    public final b0 f(long j3) {
+        b bVar = this.a;
+        long j10 = bVar.b;
+        BigInteger valueOf = BigInteger.valueOf((bVar.d.i * j3) / 1000000);
+        long j11 = bVar.c;
+        d0 d0Var = new d0(j3, m0.j((valueOf.multiply(BigInteger.valueOf(j11 - j10)).divide(BigInteger.valueOf(bVar.f)).longValue() + j10) - 30000, bVar.b, j11 - 1));
+        return new b0(d0Var, d0Var);
     }
 
-    @Override // e3.o
-    public final void d(long j10, long j11) {
-        switch (this.a) {
-            case 0:
-                this.b.d(j10, j11);
-                break;
-            default:
-                this.b.d(j10, j11);
-                break;
-        }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // e3.o
-    public final List e() {
-        switch (this.a) {
-        }
-        g0 g0Var = i0.b;
-        return s1.e;
-    }
-
-    @Override // e3.o
-    public final int f(p pVar, s sVar) {
-        switch (this.a) {
-        }
-        return this.b.f(pVar, sVar);
-    }
-
-    @Override // e3.o
-    public final void release() {
-        int i3 = this.a;
-    }
-
-    private final void g() {
-    }
-
-    private final void h() {
+    @Override // f3.c0
+    public final long h() {
+        return (this.a.f * 1000000) / r0.d.i;
     }
 }

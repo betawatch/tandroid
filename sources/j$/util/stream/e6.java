@@ -24,12 +24,12 @@ public final class e6 extends z4 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i3, j5 j5Var) {
+    public final j5 Q0(int i7, j5 j5Var) {
         Objects.requireNonNull(j5Var);
-        if (v6.SORTED.m(i3) && this.s) {
+        if (v6.SORTED.m(i7) && this.s) {
             return j5Var;
         }
-        if (v6.SIZED.m(i3)) {
+        if (v6.SIZED.m(i7)) {
             return new j6(j5Var, this.t);
         }
         return new f6(j5Var, this.t);
@@ -40,8 +40,8 @@ public final class e6 extends z4 {
         if (v6.SORTED.m(((a) t3Var).m) && this.s) {
             return t3Var.j0(spliterator, false, intFunction);
         }
-        Object[] g7 = t3Var.j0(spliterator, true, intFunction).g(intFunction);
-        Arrays.sort(g7, this.t);
-        return new h2(g7);
+        Object[] g10 = t3Var.j0(spliterator, true, intFunction).g(intFunction);
+        Arrays.sort(g10, this.t);
+        return new h2(g10);
     }
 }

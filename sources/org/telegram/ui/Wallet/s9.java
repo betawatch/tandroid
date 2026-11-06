@@ -1,54 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Intent;
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class s9 implements kg.c0, org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ w9 a;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class s9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x9 b;
 
-    public /* synthetic */ s9(w9 w9Var) {
-        this.a = w9Var;
+    public /* synthetic */ s9(x9 x9Var, int i7) {
+        this.a = i7;
+        this.b = x9Var;
     }
 
-    @Override // kg.c0
-    public void a(a0.h hVar, ArrayList arrayList) {
-        w9 w9Var = this.a;
-        ArrayList arrayList2 = w9Var.s;
-        if (w9Var.r) {
-            return;
-        }
-        arrayList2.clear();
-        int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            kg.d0 d0Var = (kg.d0) obj;
-            TLObject tLObject = d0Var.a;
-            if ((tLObject instanceof TLRPC.User) && w9.h0((TLRPC.User) tLObject)) {
-                arrayList2.add((TLRPC.User) d0Var.a);
-            }
-        }
-        ai.h4 h4Var = w9Var.a;
-        if (h4Var != null) {
-            h4Var.g3.O(true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        w9 w9Var = this.a;
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-            w9Var.getParentActivity().startActivity(intent);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        x9 x9Var = this.b;
+        switch (i7) {
+            case 0:
+                x9Var.d0 = null;
+                break;
+            default:
+                hc.a0(x9Var).N(hd.M0(2131745862, null), hd.M0(2131751106, null)).j();
+                break;
         }
     }
 }

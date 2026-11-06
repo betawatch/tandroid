@@ -1,32 +1,51 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yd0 implements org.telegram.ui.Components.gj0, org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ zd0 a;
+public final /* synthetic */ class yd0 implements ViewSwitcher.ViewFactory {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ yd0(zd0 zd0Var) {
-        this.a = zd0Var;
+    public /* synthetic */ yd0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.gj0
-    public void b(float f10, float f11, int i3, View view) {
-        zd0.b0(this.a, i3);
-    }
-
-    @Override // org.telegram.ui.Components.gj0
-    public /* synthetic */ boolean b1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        org.telegram.messenger.hp.s1(this.a.currentAccount).A3(1);
-    }
-
-    @Override // org.telegram.ui.Components.gj0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
+    @Override // android.widget.ViewSwitcher.ViewFactory
+    public final View makeView() {
+        int i7 = this.a;
+        int i10 = 1;
+        Object obj = this.b;
+        switch (i7) {
+            case 0:
+                TextView textView = new TextView((Context) obj);
+                textView.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
+                textView.setTextSize(1, 16.0f);
+                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
+                org.telegram.ui.ActionBar.r6.E(textView, org.telegram.ui.ActionBar.k6.H6, null);
+                textView.setMaxLines(1);
+                textView.setSingleLine(true);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 1);
+                return textView;
+            case 1:
+                TextView textView2 = new TextView((Context) obj);
+                org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.D6, null);
+                textView2.setGravity(1);
+                textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+                textView2.setTextSize(1, 15.0f);
+                return textView2;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) obj;
+                Drawable[] drawableArr = PhotoViewer.Y8;
+                return new jq0(photoViewer.E, photoViewer.T1, photoViewer.Q, new kn0(photoViewer, 0), new td0(photoViewer, i10));
+        }
     }
 }

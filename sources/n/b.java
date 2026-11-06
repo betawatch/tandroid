@@ -1,38 +1,32 @@
 package n;
 
+import aa.z;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import c8.w9;
+import d1.f;
+import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-import z9.t;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements ThreadFactory {
-    public final /* synthetic */ int a;
-    public final Number b;
+public final class b extends w9 {
+    public final Object a = new Object();
+    public final ExecutorService b = Executors.newFixedThreadPool(4, new z());
+    public volatile Handler c;
 
-    public b() {
-        this.a = 0;
-        this.b = new AtomicInteger(0);
-    }
-
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                Thread thread = new Thread(runnable);
-                thread.setName("arch_disk_io_" + ((AtomicInteger) this.b).getAndIncrement());
-                return thread;
-            default:
-                Thread newThread = Executors.defaultThreadFactory().newThread(new t(runnable));
-                newThread.setName("awaitEvenIfOnMainThread task continuation executor" + ((AtomicLong) this.b).getAndIncrement());
-                return newThread;
+    public static Handler a(Looper looper) {
+        if (Build.VERSION.SDK_INT >= 28) {
+            return f.c(looper);
         }
-    }
-
-    public b(AtomicLong atomicLong) {
-        this.a = 1;
-        this.b = atomicLong;
+        try {
+            return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
+        } catch (IllegalAccessException | InstantiationException | NoSuchMethodException unused) {
+            return new Handler(looper);
+        } catch (InvocationTargetException unused2) {
+            return new Handler(looper);
+        }
     }
 }

@@ -1,60 +1,107 @@
 package h9;
 
-import b8.od;
-import java.io.InputStream;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
+import java.util.Iterator;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
+import java.util.SortedMap;
+import java.util.SortedSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class f {
-    static {
-        new e();
+public final class f extends i implements NavigableSet {
+    public final /* synthetic */ l1 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(l1 l1Var, NavigableMap navigableMap) {
+        super(l1Var, navigableMap);
+        this.e = l1Var;
     }
 
-    public static byte[] a(ArrayDeque arrayDeque, int i3) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
-        }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i3) {
-            return bArr;
-        }
-        int length = i3 - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i3);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i3 - length, min);
-            length -= min;
-        }
-        return copyOf;
+    @Override // java.util.NavigableSet
+    public final Object ceiling(Object obj) {
+        return f().ceilingKey(obj);
     }
 
-    public static byte[] b(InputStream inputStream) {
-        inputStream.getClass();
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int min = Math.min(TLObject.FLAG_13, Math.max(128, Integer.highestOneBit(0) * 2));
-        int i3 = 0;
-        while (i3 < 2147483639) {
-            int min2 = Math.min(min, 2147483639 - i3);
-            byte[] bArr = new byte[min2];
-            arrayDeque.add(bArr);
-            int i10 = 0;
-            while (i10 < min2) {
-                int read = inputStream.read(bArr, i10, min2 - i10);
-                if (read == -1) {
-                    return a(arrayDeque, i3);
-                }
-                i10 += read;
-                i3 += read;
-            }
-            min = od.e(min * (min < 4096 ? 4 : 2));
+    @Override // java.util.NavigableSet
+    public final Iterator descendingIterator() {
+        return ((d) descendingSet()).iterator();
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet descendingSet() {
+        return new f(this.e, f().descendingMap());
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object floor(Object obj) {
+        return f().floorKey(obj);
+    }
+
+    @Override // h9.i, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet headSet(Object obj) {
+        return headSet(obj, false);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object higher(Object obj) {
+        return f().higherKey(obj);
+    }
+
+    @Override // h9.i
+    /* renamed from: i, reason: merged with bridge method [inline-methods] */
+    public final NavigableMap f() {
+        return (NavigableMap) ((SortedMap) this.b);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object lower(Object obj) {
+        return f().lowerKey(obj);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollFirst() {
+        a8.d dVar = (a8.d) iterator();
+        if (!dVar.hasNext()) {
+            return null;
         }
-        if (inputStream.read() == -1) {
-            return a(arrayDeque, 2147483639);
+        Object next = dVar.next();
+        dVar.remove();
+        return next;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollLast() {
+        Iterator descendingIterator = descendingIterator();
+        if (!descendingIterator.hasNext()) {
+            return null;
         }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
+        Object next = descendingIterator.next();
+        descendingIterator.remove();
+        return next;
+    }
+
+    @Override // h9.i, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet subSet(Object obj, Object obj2) {
+        return subSet(obj, true, obj2, false);
+    }
+
+    @Override // h9.i, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet tailSet(Object obj) {
+        return tailSet(obj, true);
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet headSet(Object obj, boolean z9) {
+        return new f(this.e, f().headMap(obj, z9));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet subSet(Object obj, boolean z9, Object obj2, boolean z10) {
+        return new f(this.e, f().subMap(obj, z9, obj2, z10));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet tailSet(Object obj, boolean z9) {
+        return new f(this.e, f().tailMap(obj, z9));
     }
 }

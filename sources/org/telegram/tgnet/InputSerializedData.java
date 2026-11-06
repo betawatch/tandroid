@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface InputSerializedData {
     TLDataSourceType getDataSourceType();
@@ -9,29 +9,29 @@ public interface InputSerializedData {
 
     int length();
 
-    boolean readBool(boolean z10);
+    boolean readBool(boolean z9);
 
-    byte readByte(boolean z10);
+    byte readByte(boolean z9);
 
-    byte[] readByteArray(boolean z10);
+    byte[] readByteArray(boolean z9);
 
-    NativeByteBuffer readByteBuffer(boolean z10);
+    NativeByteBuffer readByteBuffer(boolean z9);
 
-    void readBytes(byte[] bArr, boolean z10);
+    void readBytes(byte[] bArr, boolean z9);
 
-    byte[] readData(int i3, boolean z10);
+    byte[] readData(int i7, boolean z9);
 
-    double readDouble(boolean z10);
+    double readDouble(boolean z9);
 
-    float readFloat(boolean z10);
+    float readFloat(boolean z9);
 
-    int readInt32(boolean z10);
+    int readInt32(boolean z9);
 
-    long readInt64(boolean z10);
+    long readInt64(boolean z9);
 
-    String readString(boolean z10);
+    String readString(boolean z9);
 
     int remaining();
 
-    void skip(int i3);
+    void skip(int i7);
 }

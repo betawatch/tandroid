@@ -1,6 +1,6 @@
 package org.webrtc.audio;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 @Deprecated
 /* loaded from: classes4.dex */
 public class LegacyAudioDeviceModule implements AudioDeviceModule {
@@ -10,13 +10,13 @@ public class LegacyAudioDeviceModule implements AudioDeviceModule {
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setMicrophoneMute(boolean z10) {
-        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z10);
+    public void setMicrophoneMute(boolean z9) {
+        org.webrtc.voiceengine.WebRtcAudioRecord.setMicrophoneMute(z9);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public final /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z10) {
-        return a.a(this, z10);
+    public final /* synthetic */ boolean setNoiseSuppressorEnabled(boolean z9) {
+        return a.a(this, z9);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
@@ -25,8 +25,8 @@ public class LegacyAudioDeviceModule implements AudioDeviceModule {
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
-    public void setSpeakerMute(boolean z10) {
-        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z10);
+    public void setSpeakerMute(boolean z9) {
+        org.webrtc.voiceengine.WebRtcAudioTrack.setSpeakerMute(z9);
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule

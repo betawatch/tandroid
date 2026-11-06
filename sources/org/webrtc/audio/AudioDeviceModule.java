@@ -1,17 +1,17 @@
 package org.webrtc.audio;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public interface AudioDeviceModule {
     long getNativeAudioDeviceModulePointer();
 
     void release();
 
-    void setMicrophoneMute(boolean z10);
+    void setMicrophoneMute(boolean z9);
 
-    boolean setNoiseSuppressorEnabled(boolean z10);
+    boolean setNoiseSuppressorEnabled(boolean z9);
 
     boolean setPreferredMicrophoneFieldDimension(float f10);
 
-    void setSpeakerMute(boolean z10);
+    void setSpeakerMute(boolean z9);
 }

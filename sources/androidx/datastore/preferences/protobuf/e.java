@@ -1,10 +1,10 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.google.android.gms.internal.cast.v4;
+import com.google.android.gms.internal.cast.u4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -12,9 +12,9 @@ public final class e implements Iterator {
     public final int c;
     public final /* synthetic */ Object d;
 
-    public e(v4 v4Var) {
-        this.d = v4Var;
-        this.c = v4Var.j();
+    public e(u4 u4Var) {
+        this.d = u4Var;
+        this.c = u4Var.j();
     }
 
     @Override // java.util.Iterator
@@ -52,19 +52,19 @@ public final class e implements Iterator {
     public final Object next() {
         switch (this.a) {
             case 0:
-                int i3 = this.b;
-                if (i3 >= this.c) {
+                int i7 = this.b;
+                if (i7 >= this.c) {
                     throw new NoSuchElementException();
                 }
-                this.b = i3 + 1;
-                return Byte.valueOf(((h) this.d).m(i3));
+                this.b = i7 + 1;
+                return Byte.valueOf(((h) this.d).m(i7));
             case 1:
                 int i10 = this.b;
                 if (i10 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i10 + 1;
-                return Byte.valueOf(((v4) this.d).i(i10));
+                return Byte.valueOf(((u4) this.d).i(i10));
             case 2:
                 try {
                     com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
@@ -94,7 +94,7 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i14 + 1;
-                return Byte.valueOf(((p7.t0) this.d).i(i14));
+                return Byte.valueOf(((q7.s0) this.d).i(i14));
         }
     }
 
@@ -131,9 +131,9 @@ public final class e implements Iterator {
         this.c = q0Var.i();
     }
 
-    public e(p7.t0 t0Var) {
-        this.d = t0Var;
-        this.c = t0Var.k();
+    public e(q7.s0 s0Var) {
+        this.d = s0Var;
+        this.c = s0Var.k();
     }
 
     public e(h hVar) {

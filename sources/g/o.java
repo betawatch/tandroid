@@ -8,7 +8,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class o extends p {
     public final /* synthetic */ int c = 0;
@@ -41,18 +41,18 @@ public final class o extends p {
     @Override // g.p
     public final int e() {
         Location location;
-        boolean z10;
-        long j10;
+        boolean z9;
+        long j3;
         Location location2;
         switch (this.c) {
             case 0:
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
                 android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) this.e;
-                eh.a aVar = (eh.a) a0Var.d;
+                dh.a aVar = (dh.a) a0Var.d;
                 LocationManager locationManager = (LocationManager) a0Var.c;
                 if (aVar.b > System.currentTimeMillis()) {
-                    z10 = aVar.a;
+                    z9 = aVar.a;
                 } else {
                     Context context = (Context) a0Var.b;
                     Location location3 = null;
@@ -90,32 +90,32 @@ public final class o extends p {
                         y yVar = y.d;
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis - 86400000);
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis);
-                        z10 = yVar.c == 1;
-                        long j11 = yVar.b;
-                        long j12 = yVar.a;
+                        z9 = yVar.c == 1;
+                        long j10 = yVar.b;
+                        long j11 = yVar.a;
                         yVar.a(location.getLatitude(), location.getLongitude(), currentTimeMillis + 86400000);
-                        long j13 = yVar.b;
-                        if (j11 == -1 || j12 == -1) {
-                            j10 = currentTimeMillis + 43200000;
+                        long j12 = yVar.b;
+                        if (j10 == -1 || j11 == -1) {
+                            j3 = currentTimeMillis + 43200000;
                         } else {
-                            if (currentTimeMillis > j12) {
-                                j11 = j13;
-                            } else if (currentTimeMillis > j11) {
-                                j11 = j12;
+                            if (currentTimeMillis > j11) {
+                                j10 = j12;
+                            } else if (currentTimeMillis > j10) {
+                                j10 = j11;
                             }
-                            j10 = j11 + 60000;
+                            j3 = j10 + 60000;
                         }
-                        aVar.a = z10;
-                        aVar.b = j10;
+                        aVar.a = z9;
+                        aVar.b = j3;
                     } else {
                         Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
-                        int i3 = Calendar.getInstance().get(11);
-                        if (i3 < 6 || i3 >= 22) {
-                            z10 = true;
+                        int i7 = Calendar.getInstance().get(11);
+                        if (i7 < 6 || i7 >= 22) {
+                            z9 = true;
                         }
                     }
                 }
-                return z10 ? 2 : 1;
+                return z9 ? 2 : 1;
         }
     }
 
@@ -123,10 +123,10 @@ public final class o extends p {
     public final void k() {
         switch (this.c) {
             case 0:
-                this.d.e(true);
+                this.d.d(true);
                 break;
             default:
-                this.d.e(true);
+                this.d.d(true);
                 break;
         }
     }

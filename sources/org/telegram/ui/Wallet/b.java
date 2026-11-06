@@ -10,19 +10,19 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import j$.util.Objects;
-import org.telegram.messenger.ac;
-import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
 public final class b extends q31 {
     public static final /* synthetic */ int b = 0;
 
@@ -31,17 +31,17 @@ public final class b extends q31 {
     }
 
     @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
+    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
         c cVar = (c) view;
-        boolean z11 = false;
+        boolean z10 = false;
         cVar.setGrid(r31Var.u == 1);
         TL_wallet.nftItem nftitem = (TL_wallet.nftItem) r31Var.G;
         TextView textView = cVar.d;
         TextView textView2 = cVar.c;
-        org.telegram.ui.Components.k9 k9Var = cVar.b;
-        ac acVar = null;
+        org.telegram.ui.Components.l9 l9Var = cVar.b;
+        hc hcVar = null;
         if (TextUtils.isEmpty(nftitem.name)) {
-            textView2.setText(bd.M0(2131743186, null));
+            textView2.setText(hd.M0(2131743177, null));
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(nftitem.name);
             int indexOf = nftitem.name.indexOf(35);
@@ -55,9 +55,9 @@ public final class b extends q31 {
         if (TextUtils.isEmpty(b10) || TextUtils.isEmpty(b11)) {
             textView.setText(nftitem.description);
         } else {
-            textView.setText(bd.V(null, null, 2131743184, b10, b11));
+            textView.setText(hd.V(null, null, 2131743175, b10, b11));
         }
-        ac c2 = c.c(nftitem, !cVar.f);
+        hc c10 = c.c(nftitem, !cVar.f);
         int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, cVar.a);
         Drawable mutate = cVar.getContext().getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
@@ -66,21 +66,21 @@ public final class b extends q31 {
         cVar.h = mutate;
         cVar.n = d02;
         cVar.r = w02;
-        if (c2 != null && cVar.f) {
+        if (c10 != null && cVar.f) {
             if (nftitem.image_small != null && nftitem.image != null) {
-                acVar = c.c(nftitem, true);
+                hcVar = c.c(nftitem, true);
             }
-            k9Var.a.r0(c2, "160_160", acVar, "100_100", xpVar, 0L, null, nftitem, 0);
-            k9Var.d();
-        } else if (c2 != null) {
-            k9Var.j(c2, "46_46", xpVar, nftitem);
+            l9Var.a.r0(c10, "160_160", hcVar, "100_100", xpVar, 0L, null, nftitem, 0);
+            l9Var.d();
+        } else if (c10 != null) {
+            l9Var.j(c10, "46_46", xpVar, nftitem);
         } else {
-            k9Var.setImageDrawable(xpVar);
+            l9Var.setImageDrawable(xpVar);
         }
-        if (z10 && !cVar.f) {
-            z11 = true;
+        if (z9 && !cVar.f) {
+            z10 = true;
         }
-        cVar.e = z11;
+        cVar.e = z10;
         cVar.updateColors();
         cVar.invalidate();
     }
@@ -99,8 +99,8 @@ public final class b extends q31 {
     }
 
     @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, tj0 tj0Var, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new c(context, e6Var);
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new c(context, f6Var);
     }
 
     @Override // org.telegram.ui.Components.q31

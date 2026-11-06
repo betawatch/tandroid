@@ -4,17 +4,17 @@ import android.os.Binder;
 import androidx.car.app.model.AlertCallbackDelegateImpl;
 import androidx.car.app.model.OnSelectedDelegateImpl;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Binder c;
 
-    public /* synthetic */ g(Binder binder, int i3, int i10) {
+    public /* synthetic */ g(Binder binder, int i7, int i10) {
         this.a = i10;
         this.c = binder;
-        this.b = i3;
+        this.b = i7;
     }
 
     @Override // androidx.car.app.utils.a

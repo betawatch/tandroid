@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k9 implements q1.c {
+public final /* synthetic */ class k9 implements r1.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ s9 b;
 
-    public /* synthetic */ k9(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public /* synthetic */ k9(s9 s9Var, int i7) {
+        this.a = i7;
+        this.b = s9Var;
     }
 
-    @Override // q1.c
-    public final void a(q1.g gVar, boolean z10, float f10, float f11) {
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                s9 s9Var = (s9) this.b;
-                q1.g gVar2 = s9Var.E;
-                if (gVar2 != null) {
-                    gVar2.d();
-                    s9Var.E = null;
-                    break;
-                }
-                break;
-            case 1:
-                zk0 zk0Var = (zk0) this.b;
-                if (gVar == zk0Var.c) {
-                    zk0Var.c = null;
-                    break;
-                }
+                s9 s9Var = this.b;
+                s9Var.E = f10 / 500.0f;
+                s9Var.fragmentView.invalidate();
                 break;
             default:
-                ((zp0) this.b).E();
+                s9 s9Var2 = this.b;
+                s9Var2.b0 = s9Var2.N ? f10 / 500.0f : 1.0f - (f10 / 500.0f);
+                s9Var2.fragmentView.invalidate();
                 break;
         }
     }

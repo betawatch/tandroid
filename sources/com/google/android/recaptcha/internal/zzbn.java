@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import fe.d;
-import hd.j;
-import od.p;
-import wd.b0;
+import af.b;
+import gd.k;
+import id.c;
+import ie.d;
+import kd.j;
+import rd.p;
+import zd.b0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzbn extends j implements p {
     Object zza;
@@ -23,14 +23,14 @@ final class zzbn extends j implements p {
         this.zzd = zzboVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzbn zzbnVar = new zzbn(this.zzd, cVar);
         zzbnVar.zze = obj;
         return zzbnVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzbn) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -40,23 +40,23 @@ final class zzbn extends j implements p {
         if (r6 != r0) goto L28;
      */
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a4 A[RETURN] */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
         zzbo zzboVar;
-        fe.a aVar;
+        ie.a aVar;
         Object obj2;
         zzbp zzbpVar;
         zzhk zzhkVar2;
-        gd.a aVar2 = gd.a.a;
-        int i3 = this.zzc;
+        jd.a aVar2 = jd.a.a;
+        int i7 = this.zzc;
         k kVar = k.a;
         try {
-            if (i3 == 0) {
-                ib.b(obj);
+            if (i7 == 0) {
+                b.c(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzboVar = this.zzd;
                 aVar = zzboVar.zzf;
@@ -68,21 +68,21 @@ final class zzbn extends j implements p {
                 Object d = dVar.d(this);
                 obj2 = dVar;
             } else {
-                if (i3 != 1) {
-                    if (i3 != 2) {
-                        ib.b(obj);
+                if (i7 != 1) {
+                    if (i7 != 2) {
+                        b.c(obj);
                         return kVar;
                     }
                     zzhkVar2 = (zzhk) this.zze;
-                    ib.b(obj);
+                    b.c(obj);
                     this.zze = null;
                     this.zzc = 3;
                     return ((zzhg) obj).zza(zzhkVar2, this) != aVar2 ? aVar2 : kVar;
                 }
                 zzboVar = (zzbo) this.zzb;
-                Object obj3 = (fe.a) this.zza;
+                Object obj3 = (ie.a) this.zza;
                 zzhk zzhkVar3 = (zzhk) this.zze;
-                ib.b(obj);
+                b.c(obj);
                 zzhkVar = zzhkVar3;
                 obj2 = obj3;
             }

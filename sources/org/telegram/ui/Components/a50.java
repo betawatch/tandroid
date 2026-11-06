@@ -1,29 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a50 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c50 b;
+public final class a50 extends v4.s0 {
+    public final /* synthetic */ v4.b0 a;
+    public final /* synthetic */ m50 b;
 
-    public /* synthetic */ a50(c50 c50Var, int i3) {
-        this.a = i3;
-        this.b = c50Var;
+    public a50(m50 m50Var, v4.b0 b0Var) {
+        this.b = m50Var;
+        this.a = b0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new e7((Object) this.b, (Object) tL_error, (Object) tLObject, 13));
-                break;
-            default:
-                org.telegram.messenger.g0.h3(new cl(29, this.b, tL_error));
-                break;
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        m50 m50Var = this.b;
+        m50.I0(m50Var);
+        if (!m50Var.I1 || m50Var.H1) {
+            return;
+        }
+        if (m50Var.J1 - this.a.N0() < 10) {
+            m50Var.K0();
         }
     }
 }

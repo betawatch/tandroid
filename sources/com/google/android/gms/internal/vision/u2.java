@@ -2,19 +2,19 @@ package com.google.android.gms.internal.vision;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class u2 extends w2 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u2(Unsafe unsafe, int i3) {
+    public /* synthetic */ u2(Unsafe unsafe, int i7) {
         super(unsafe);
-        this.b = i3;
+        this.b = i7;
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final byte a(Object obj, long j10) {
+    public final byte a(Object obj, long j3) {
         switch (this.b) {
             case 0:
                 if (!x2.g) {
@@ -29,92 +29,92 @@ public final class u2 extends w2 {
                     break;
                 }
         }
-        return x2.o(obj, j10);
+        return x2.o(obj, j3);
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final void c(Object obj, long j10, byte b10) {
+    public final void c(Object obj, long j3, byte b10) {
         switch (this.b) {
             case 0:
                 if (!x2.g) {
-                    x2.j(obj, j10, b10);
+                    x2.j(obj, j3, b10);
                     break;
                 } else {
-                    x2.i(obj, j10, b10);
+                    x2.i(obj, j3, b10);
                     break;
                 }
             default:
                 if (!x2.g) {
-                    x2.j(obj, j10, b10);
+                    x2.j(obj, j3, b10);
                     break;
                 } else {
-                    x2.i(obj, j10, b10);
+                    x2.i(obj, j3, b10);
                     break;
                 }
         }
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final void d(Object obj, long j10, double d) {
+    public final void d(Object obj, long j3, double d) {
         switch (this.b) {
             case 0:
-                f(obj, j10, Double.doubleToLongBits(d));
+                f(obj, j3, Double.doubleToLongBits(d));
                 break;
             default:
-                f(obj, j10, Double.doubleToLongBits(d));
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.internal.vision.w2
-    public final void e(Object obj, long j10, float f10) {
-        switch (this.b) {
-            case 0:
-                b(j10, obj, Float.floatToIntBits(f10));
-                break;
-            default:
-                b(j10, obj, Float.floatToIntBits(f10));
+                f(obj, j3, Double.doubleToLongBits(d));
                 break;
         }
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final void g(Object obj, long j10, boolean z10) {
+    public final void e(Object obj, long j3, float f10) {
+        switch (this.b) {
+            case 0:
+                b(j3, obj, Float.floatToIntBits(f10));
+                break;
+            default:
+                b(j3, obj, Float.floatToIntBits(f10));
+                break;
+        }
+    }
+
+    @Override // com.google.android.gms.internal.vision.w2
+    public final void g(Object obj, long j3, boolean z9) {
         switch (this.b) {
             case 0:
                 if (!x2.g) {
-                    x2.j(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    x2.j(obj, j3, z9 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    x2.i(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    x2.i(obj, j3, z9 ? (byte) 1 : (byte) 0);
                     break;
                 }
             default:
                 if (!x2.g) {
-                    x2.j(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    x2.j(obj, j3, z9 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    x2.i(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    x2.i(obj, j3, z9 ? (byte) 1 : (byte) 0);
                     break;
                 }
         }
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final boolean h(Object obj, long j10) {
+    public final boolean h(Object obj, long j3) {
         switch (this.b) {
             case 0:
                 if (x2.g) {
-                    if (x2.n(obj, j10) == 0) {
+                    if (x2.n(obj, j3) == 0) {
                     }
-                } else if (x2.o(obj, j10) == 0) {
+                } else if (x2.o(obj, j3) == 0) {
                 }
                 break;
             default:
                 if (x2.g) {
-                    if (x2.n(obj, j10) == 0) {
+                    if (x2.n(obj, j3) == 0) {
                     }
-                } else if (x2.o(obj, j10) == 0) {
+                } else if (x2.o(obj, j3) == 0) {
                 }
                 break;
         }
@@ -122,16 +122,16 @@ public final class u2 extends w2 {
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final float i(Object obj, long j10) {
+    public final float i(Object obj, long j3) {
         switch (this.b) {
         }
-        return Float.intBitsToFloat(k(obj, j10));
+        return Float.intBitsToFloat(k(obj, j3));
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final double j(Object obj, long j10) {
+    public final double j(Object obj, long j3) {
         switch (this.b) {
         }
-        return Double.longBitsToDouble(l(obj, j10));
+        return Double.longBitsToDouble(l(obj, j3));
     }
 }

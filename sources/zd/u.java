@@ -1,119 +1,65 @@
 package zd;
 
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class u extends ae.b implements s, b, ae.g {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(u.class, Object.class, "_state$volatile");
-    private volatile /* synthetic */ Object _state$volatile;
-    public int d;
+public final class u {
+    public final Object a;
+    public final k b;
+    public final rd.q c;
+    public final Object d;
+    public final Throwable e;
 
-    public u(Object obj) {
-        this._state$volatile = obj;
+    public u(Object obj, k kVar, rd.q qVar, Object obj2, Throwable th2) {
+        this.a = obj;
+        this.b = kVar;
+        this.c = qVar;
+        this.d = obj2;
+        this.e = th2;
     }
 
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00cc A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x010b A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00e6  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x010a -> B:15:0x00c4). Please report as a decompilation issue!!! */
-    @Override // zd.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final java.lang.Object U(zd.c r18, hd.c r19) {
-        /*
-            Method dump skipped, instructions count: 329
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: zd.u.U(zd.c, hd.c):java.lang.Object");
-    }
-
-    @Override // zd.c
-    public final Object b(Object obj, fd.c cVar) {
-        if (obj == null) {
-            obj = ae.i.a;
+    public static u a(u uVar, k kVar, Throwable th2, int i7) {
+        Object obj = uVar.a;
+        if ((i7 & 2) != 0) {
+            kVar = uVar.b;
         }
-        c(null, obj);
-        return dd.k.a;
-    }
-
-    public final boolean c(Object obj, Object obj2) {
-        int i3;
-        w[] wVarArr;
-        be.t tVar;
-        synchronized (this) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
-            Object obj3 = atomicReferenceFieldUpdater.get(this);
-            if (obj != null && !kotlin.jvm.internal.j.a(obj3, obj)) {
-                return false;
-            }
-            if (kotlin.jvm.internal.j.a(obj3, obj2)) {
-                return true;
-            }
-            atomicReferenceFieldUpdater.set(this, obj2);
-            int i10 = this.d;
-            if ((i10 & 1) != 0) {
-                this.d = i10 + 2;
-                return true;
-            }
-            int i11 = i10 + 1;
-            this.d = i11;
-            w[] wVarArr2 = this.a;
-            while (true) {
-                if (wVarArr2 != null) {
-                    for (w wVar : wVarArr2) {
-                        if (wVar != null) {
-                            AtomicReference atomicReference = wVar.a;
-                            while (true) {
-                                Object obj4 = atomicReference.get();
-                                if (obj4 != null && obj4 != (tVar = v.b)) {
-                                    be.t tVar2 = v.a;
-                                    if (obj4 != tVar2) {
-                                        while (!atomicReference.compareAndSet(obj4, tVar2)) {
-                                            if (atomicReference.get() != obj4) {
-                                                break;
-                                            }
-                                        }
-                                        ((wd.m) obj4).resumeWith(dd.k.a);
-                                        break;
-                                    }
-                                    while (!atomicReference.compareAndSet(obj4, tVar)) {
-                                        if (atomicReference.get() != obj4) {
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                synchronized (this) {
-                    i3 = this.d;
-                    if (i3 == i11) {
-                        this.d = i11 + 1;
-                        return true;
-                    }
-                    wVarArr = this.a;
-                }
-                wVarArr2 = wVarArr;
-                i11 = i3;
-            }
+        k kVar2 = kVar;
+        rd.q qVar = uVar.c;
+        Object obj2 = uVar.d;
+        if ((i7 & 16) != 0) {
+            th2 = uVar.e;
         }
+        return new u(obj, kVar2, qVar, obj2, th2);
     }
 
-    @Override // ae.g
-    public final b h(fd.h hVar, int i3, yd.a aVar) {
-        return ((((i3 < 0 || i3 >= 2) && i3 != -2) || aVar != yd.a.b) && !((i3 == 0 || i3 == -3) && aVar == yd.a.a)) ? new ae.e(this, hVar, i3, aVar, 0) : this;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof u)) {
+            return false;
+        }
+        u uVar = (u) obj;
+        return kotlin.jvm.internal.j.a(this.a, uVar.a) && kotlin.jvm.internal.j.a(this.b, uVar.b) && kotlin.jvm.internal.j.a(this.c, uVar.c) && kotlin.jvm.internal.j.a(this.d, uVar.d) && kotlin.jvm.internal.j.a(this.e, uVar.e);
+    }
+
+    public final int hashCode() {
+        Object obj = this.a;
+        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
+        k kVar = this.b;
+        int hashCode2 = (hashCode + (kVar == null ? 0 : kVar.hashCode())) * 31;
+        rd.q qVar = this.c;
+        int hashCode3 = (hashCode2 + (qVar == null ? 0 : qVar.hashCode())) * 31;
+        Object obj2 = this.d;
+        int hashCode4 = (hashCode3 + (obj2 == null ? 0 : obj2.hashCode())) * 31;
+        Throwable th2 = this.e;
+        return hashCode4 + (th2 != null ? th2.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "CompletedContinuation(result=" + this.a + ", cancelHandler=" + this.b + ", onCancellation=" + this.c + ", idempotentResume=" + this.d + ", cancelCause=" + this.e + ')';
+    }
+
+    public /* synthetic */ u(Object obj, k kVar, rd.q qVar, Throwable th2, int i7) {
+        this(obj, (i7 & 2) != 0 ? null : kVar, (i7 & 4) != 0 ? null : qVar, (Object) null, (i7 & 16) != 0 ? null : th2);
     }
 }

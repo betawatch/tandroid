@@ -1,25 +1,39 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class q5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r5 b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
 
-    public /* synthetic */ q5(r5 r5Var, int i3) {
-        this.a = i3;
-        this.b = r5Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class q5 extends q31 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        q31.h(new q5());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new q5(this.b, 1));
-                break;
-            default:
-                this.b.a();
-                break;
-        }
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+        ((r5) view).a(r31Var.k, r31Var.l, r31Var.m);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new r5(context, f6Var);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final boolean g() {
+        return true;
     }
 }

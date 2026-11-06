@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -24,7 +24,7 @@ public final class d {
     }
 
     public final b a(Class cls, Method[] methodArr) {
-        int i3;
+        int i7;
         Class superclass = cls.getSuperclass();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = this.a;
@@ -51,18 +51,18 @@ public final class d {
                 throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
             }
         }
-        boolean z10 = false;
+        boolean z9 = false;
         for (Method method : methodArr) {
             b0 b0Var = (b0) method.getAnnotation(b0.class);
             if (b0Var != null) {
                 Class<?>[] parameterTypes = method.getParameterTypes();
                 if (parameterTypes.length <= 0) {
-                    i3 = 0;
+                    i7 = 0;
                 } else {
                     if (!t.class.isAssignableFrom(parameterTypes[0])) {
                         throw new IllegalArgumentException("invalid parameter type. Must be one and instanceof LifecycleOwner");
                     }
-                    i3 = 1;
+                    i7 = 1;
                 }
                 m value = b0Var.value();
                 if (parameterTypes.length > 1) {
@@ -72,18 +72,18 @@ public final class d {
                     if (value != m.ON_ANY) {
                         throw new IllegalArgumentException("Second arg is supported only for ON_ANY value");
                     }
-                    i3 = 2;
+                    i7 = 2;
                 }
                 if (parameterTypes.length > 2) {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
-                b(hashMap, new c(i3, method), value, cls);
-                z10 = true;
+                b(hashMap, new c(i7, method), value, cls);
+                z9 = true;
             }
         }
         b bVar3 = new b(hashMap);
         hashMap2.put(cls, bVar3);
-        this.b.put(cls, Boolean.valueOf(z10));
+        this.b.put(cls, Boolean.valueOf(z9));
         return bVar3;
     }
 }

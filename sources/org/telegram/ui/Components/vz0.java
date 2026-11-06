@@ -17,7 +17,7 @@ import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class vz0 extends BitmapDrawable {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -26,20 +26,20 @@ public final class vz0 extends BitmapDrawable {
     */
     public vz0(File file, org.telegram.messenger.s5 s5Var) {
         super(r16);
-        int i3;
+        int i7;
         int i10;
         BitmapDrawable bitmapDrawable;
         int i11;
         Bitmap bitmap;
-        la0 la0Var;
+        qa0 qa0Var;
         Bitmap bitmap2;
         Bitmap decodeFile;
         int i12;
         new RectF();
         Paint paint = new Paint();
         Bitmap.Config config = Bitmap.Config.ARGB_8888;
-        Bitmap c2 = org.telegram.messenger.sr.c(560, 678);
-        Canvas canvas = new Canvas(c2);
+        Bitmap c10 = org.telegram.messenger.as.c(560, 678);
+        Canvas canvas = new Canvas(c10);
         SparseIntArray T0 = org.telegram.ui.ActionBar.k6.T0(null, s5Var.c.d, null);
         SparseIntArray clone = T0.clone();
         s5Var.d.d(T0, clone);
@@ -67,9 +67,9 @@ public final class vz0 extends BitmapDrawable {
         while (i18 < 2) {
             Drawable drawable = mutate4;
             org.telegram.ui.ActionBar.t4[] t4VarArr2 = t4VarArr;
-            org.telegram.ui.ActionBar.p5 p5Var = new org.telegram.ui.ActionBar.p5(i18 == 1, clone, 1);
-            t4VarArr2[i18] = p5Var;
-            org.telegram.ui.ActionBar.k6.C1(i18 == 1 ? I06 : I05, p5Var);
+            org.telegram.ui.ActionBar.q5 q5Var = new org.telegram.ui.ActionBar.q5(i18 == 1, clone, 1);
+            t4VarArr2[i18] = q5Var;
+            org.telegram.ui.ActionBar.k6.C1(i18 == 1 ? I06 : I05, q5Var);
             i18++;
             mutate4 = drawable;
             t4VarArr = t4VarArr2;
@@ -77,35 +77,35 @@ public final class vz0 extends BitmapDrawable {
         Drawable drawable2 = mutate4;
         org.telegram.ui.ActionBar.t4[] t4VarArr3 = t4VarArr;
         if (i15 != 0) {
-            i3 = i13;
+            i7 = i13;
             i10 = i14;
             i11 = 120;
-            la0Var = new la0(true, i13, i14, i15, i16);
+            qa0Var = new qa0(true, i13, i14, i15, i16);
             bitmapDrawable = null;
-            bitmap = c2;
+            bitmap = c10;
         } else {
-            i3 = i13;
+            i7 = i13;
             i10 = i14;
-            int width = c2.getWidth();
-            int height = c2.getHeight() - 120;
-            GradientDrawable.Orientation d = j9.d(i17);
+            int width = c10.getWidth();
+            int height = c10.getHeight() - 120;
+            GradientDrawable.Orientation d = k9.d(i17);
             i11 = 120;
             Resources resources = org.telegram.messenger.t0.b.getResources();
-            Rect e10 = j9.e(d, width, height);
-            bitmap = c2;
+            Rect e10 = k9.e(d, width, height);
+            bitmap = c10;
             Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            Utilities.drawDitheredGradient(createBitmap, new int[]{i3, i10}, e10.left, e10.top, e10.right, e10.bottom);
+            Utilities.drawDitheredGradient(createBitmap, new int[]{i7, i10}, e10.left, e10.top, e10.right, e10.bottom);
             bitmapDrawable = new BitmapDrawable(resources, createBitmap);
-            la0Var = null;
+            qa0Var = null;
         }
-        int V0 = org.telegram.messenger.g0.V0(org.telegram.messenger.g0.w0(i3, i10), false);
+        int V0 = org.telegram.messenger.g0.V0(org.telegram.messenger.g0.w0(i7, i10), false);
         if (bitmapDrawable != null) {
             bitmapDrawable.setBounds(0, i11, bitmap.getWidth(), bitmap.getHeight() - 120);
             bitmapDrawable.draw(canvas);
         }
         if (file != null) {
             if ("application/x-tgwallpattern".equals(s5Var.mime_type)) {
-                decodeFile = org.telegram.messenger.kz.f(file, 560, 678, 1);
+                decodeFile = org.telegram.messenger.sz.f(file, 560, 678, 1);
             } else {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inSampleSize = 1;
@@ -136,16 +136,16 @@ public final class vz0 extends BitmapDrawable {
             }
             bitmap2 = decodeFile;
             if (bitmap2 != null) {
-                if (la0Var != null) {
-                    la0Var.s(bitmap2, (int) (s5Var.d.p * 100.0f));
-                    la0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-                    la0Var.draw(canvas);
+                if (qa0Var != null) {
+                    qa0Var.s(bitmap2, (int) (s5Var.d.p * 100.0f));
+                    qa0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+                    qa0Var.draw(canvas);
                 } else {
                     Paint paint2 = new Paint(2);
                     if (s5Var.d.p >= 0.0f) {
                         paint2.setColorFilter(new PorterDuffColorFilter(V0, PorterDuff.Mode.SRC_IN));
                     }
-                    paint2.setAlpha(org.telegram.messenger.hs.e4);
+                    paint2.setAlpha(org.telegram.messenger.qs.e4);
                     float max = Math.max(560 / bitmap2.getWidth(), 678 / bitmap2.getHeight());
                     int width2 = (int) (bitmap2.getWidth() * max);
                     canvas.save();
@@ -158,9 +158,9 @@ public final class vz0 extends BitmapDrawable {
         } else {
             bitmap2 = null;
         }
-        if (bitmap2 == null && la0Var != null) {
-            la0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-            la0Var.draw(canvas);
+        if (bitmap2 == null && qa0Var != null) {
+            qa0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
+            qa0Var.draw(canvas);
         }
         paint.setColor(I0);
         canvas.drawRect(0.0f, 0.0f, bitmap.getWidth(), 120.0f, paint);
@@ -175,14 +175,14 @@ public final class vz0 extends BitmapDrawable {
             mutate2.setBounds(width3, intrinsicHeight2, mutate2.getIntrinsicWidth() + width3, mutate2.getIntrinsicHeight() + intrinsicHeight2);
             mutate2.draw(canvas);
         }
-        t4VarArr3[1].setBounds(org.telegram.messenger.hs.r2, org.telegram.messenger.hs.t3, bitmap.getWidth() - 20, org.telegram.messenger.hs.f5);
+        t4VarArr3[1].setBounds(org.telegram.messenger.qs.r2, org.telegram.messenger.qs.t3, bitmap.getWidth() - 20, org.telegram.messenger.qs.f5);
         t4VarArr3[1].p(0, 560, 522);
         t4VarArr3[1].draw(canvas);
-        t4VarArr3[1].setBounds(org.telegram.messenger.hs.r2, 430, bitmap.getWidth() - 20, 522);
+        t4VarArr3[1].setBounds(org.telegram.messenger.qs.r2, 430, bitmap.getWidth() - 20, 522);
         t4VarArr3[1].p(430, 560, 522);
         t4VarArr3[1].draw(canvas);
-        t4VarArr3[0].setBounds(20, org.telegram.messenger.hs.u5, 399, 415);
-        t4VarArr3[0].p(org.telegram.messenger.hs.u5, 560, 522);
+        t4VarArr3[0].setBounds(20, org.telegram.messenger.qs.u5, 399, 415);
+        t4VarArr3[0].p(org.telegram.messenger.qs.u5, 560, 522);
         t4VarArr3[0].draw(canvas);
         paint.setColor(I03);
         canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);

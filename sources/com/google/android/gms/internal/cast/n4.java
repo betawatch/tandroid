@@ -1,29 +1,47 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n4 extends d4 implements Runnable {
-    public final Runnable n;
+public final class n4 extends j4 implements ScheduledExecutorService {
+    public final ScheduledExecutorService b;
 
-    public n4(Runnable runnable) {
-        runnable.getClass();
-        this.n = runnable;
+    public n4(ScheduledExecutorService scheduledExecutorService) {
+        super(scheduledExecutorService);
+        this.b = scheduledExecutorService;
     }
 
-    @Override // com.google.android.gms.internal.cast.d4
-    public final String a() {
-        return a1.g.q("task=[", this.n.toString(), "]");
+    @Override // com.google.android.gms.internal.cast.j4, java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        f4.d(this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            this.n.run();
-        } catch (Error | RuntimeException e10) {
-            if (d4.f.f(this, null, new w3(e10))) {
-                d4.h(this);
-            }
-            throw e10;
-        }
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final ScheduledFuture schedule(Runnable runnable, long j3, TimeUnit timeUnit) {
+        p4 p4Var = new p4(Executors.callable(runnable, null));
+        return new k4(p4Var, this.b.schedule(p4Var, j3, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j3, long j10, TimeUnit timeUnit) {
+        m4 m4Var = new m4(runnable);
+        return new k4(m4Var, this.b.scheduleAtFixedRate(m4Var, j3, j10, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j3, long j10, TimeUnit timeUnit) {
+        m4 m4Var = new m4(runnable);
+        return new k4(m4Var, this.b.scheduleWithFixedDelay(m4Var, j3, j10, timeUnit));
+    }
+
+    @Override // java.util.concurrent.ScheduledExecutorService
+    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j3, TimeUnit timeUnit) {
+        p4 p4Var = new p4(callable);
+        return new k4(p4Var, this.b.schedule(p4Var, j3, timeUnit));
     }
 }

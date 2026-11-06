@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface INavigationHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$INavigationHost".replace('$', '.');
@@ -16,7 +16,7 @@ public interface INavigationHost extends IInterface {
 
     void updateTrip(w.b bVar);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Default implements INavigationHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -36,13 +36,13 @@ public interface INavigationHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Stub extends Binder implements INavigationHost {
         static final int TRANSACTION_navigationEnded = 3;
         static final int TRANSACTION_navigationStarted = 2;
         static final int TRANSACTION_updateTrip = 4;
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public static class Proxy implements INavigationHost {
             private IBinder mRemote;
 
@@ -121,24 +121,24 @@ public interface INavigationHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
             String str = INavigationHost.DESCRIPTOR;
-            if (i3 >= 1 && i3 <= 16777215) {
+            if (i7 >= 1 && i7 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i3 == 1598968902) {
+            if (i7 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 navigationStarted();
                 parcel2.writeNoException();
-            } else if (i3 == 3) {
+            } else if (i7 == 3) {
                 navigationEnded();
                 parcel2.writeNoException();
             } else {
-                if (i3 != 4) {
-                    return super.onTransact(i3, parcel, parcel2, i10);
+                if (i7 != 4) {
+                    return super.onTransact(i7, parcel, parcel2, i10);
                 }
                 updateTrip(parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null);
                 parcel2.writeNoException();

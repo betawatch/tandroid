@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ur {
     public final int a;
@@ -17,8 +17,8 @@ public final class ur {
     public final ArrayList h = new ArrayList();
     public boolean i = false;
 
-    public ur(int i3, rr rrVar) {
-        this.a = i3;
+    public ur(int i7, rr rrVar) {
+        this.a = i7;
         this.b = rrVar;
     }
 
@@ -27,12 +27,12 @@ public final class ur {
             return;
         }
         this.c = true;
-        boolean z10 = this.d;
-        int i3 = this.a;
-        if (!z10) {
+        boolean z9 = this.d;
+        int i7 = this.a;
+        if (!z9) {
             tr trVar = new tr(this, 0);
-            org.telegram.messenger.qr a02 = org.telegram.messenger.qr.a0(i3);
-            a02.a.c(new e7(this, a02, trVar, 8));
+            org.telegram.messenger.yr a02 = org.telegram.messenger.yr.a0(i7);
+            a02.a.c(new ng(this, a02, trVar, 4));
             return;
         }
         TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
@@ -42,6 +42,6 @@ public final class ur {
             str = "";
         }
         getpopularappbots.offset = str;
-        ConnectionsManager.getInstance(i3).sendRequest(getpopularappbots, new w1(this, 2));
+        ConnectionsManager.getInstance(i7).sendRequest(getpopularappbots, new x1(this, 2));
     }
 }

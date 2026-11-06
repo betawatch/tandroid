@@ -1,44 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e70 implements org.telegram.ui.ActionBar.p1, org.telegram.ui.ActionBar.d1 {
+public final /* synthetic */ class e70 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m70 b;
+    public final /* synthetic */ f70 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ e70(m70 m70Var, int i3) {
-        this.a = i3;
-        this.b = m70Var;
+    public /* synthetic */ e70(f70 f70Var, boolean z9, boolean z10, int i7) {
+        this.a = i7;
+        this.b = f70Var;
+        this.c = z9;
+        this.d = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                l70 l70Var = this.b.r;
-                if (l70Var != null) {
-                    l70Var.i();
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new e70(this.b, this.c, this.d, 1));
                 break;
             default:
-                l70 l70Var2 = this.b.r;
-                if (l70Var2 != null) {
-                    l70Var2.d();
-                    break;
-                }
+                f70 f70Var = this.b;
+                f70Var.setJoinRequest(this.c);
+                f70Var.setJoinToSend(this.d);
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d1
-    public void k(KeyEvent keyEvent) {
-        m70 m70Var = this.b;
-        m70Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && m70Var.s.isShowing()) {
-            m70Var.s.d(true);
         }
     }
 }

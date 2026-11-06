@@ -1,32 +1,64 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l90 extends wm {
-    public boolean sd;
-    public final /* synthetic */ TLRPC.User td;
-    public final /* synthetic */ TLRPC.User[] ud;
-    public final /* synthetic */ long vd;
+public final /* synthetic */ class l90 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p90 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l90(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j10) {
-        super(bundle);
-        this.td = user;
-        this.ud = userArr;
-        this.vd = j10;
+    public /* synthetic */ l90(p90 p90Var, String str, int i7) {
+        this.a = i7;
+        this.b = p90Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.sd) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                p90 p90Var = this.b;
+                if (p90Var.a()) {
+                    p90Var.w(this.c);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.w(this.c);
+                break;
+            case 2:
+                p90 p90Var2 = this.b;
+                p90Var2.getClass();
+                String str = this.c;
+                if ("disable".equalsIgnoreCase(str)) {
+                    p90Var2.x("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    p90Var2.x("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    p90Var2.x("emailRow");
+                    break;
+                }
+                break;
+            default:
+                p90 p90Var3 = this.b;
+                p90Var3.getClass();
+                String str2 = this.c;
+                if ("disable".equalsIgnoreCase(str2)) {
+                    p90Var3.x("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str2)) {
+                    p90Var3.x("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str2)) {
+                    p90Var3.x("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str2)) {
+                    p90Var3.x("fingerprintRow");
+                    break;
+                }
+                break;
         }
-        this.sd = true;
-        org.telegram.ui.Components.fc.a0(this).I(R.raw.contact_check, org.telegram.messenger.bd.a0(null, null, 2131751740, org.telegram.messenger.l10.p(this.td)), org.telegram.messenger.g0.U2(org.telegram.messenger.bd.a0(null, null, 2131751741, org.telegram.messenger.l10.p(this.ud[0])), new ci.e3(this, this.vd, 27))).j();
     }
 }

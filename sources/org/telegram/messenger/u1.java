@@ -7,23 +7,23 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class u1 extends TLObject {
     public static final /* synthetic */ int b = 0;
     public ArrayList a = new ArrayList();
 
     @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        int readInt32 = inputSerializedData.readInt32(z9);
         if (readInt32 != 481674261) {
-            if (z10) {
+            if (z9) {
                 throw new RuntimeException(String.format("wrong Vector magic, got %x", Integer.valueOf(readInt32)));
             }
         } else {
-            int readInt322 = inputSerializedData.readInt32(z10);
-            for (int i3 = 0; i3 < readInt322; i3++) {
-                this.a.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10));
+            int readInt322 = inputSerializedData.readInt32(z9);
+            for (int i7 = 0; i7 < readInt322; i7++) {
+                this.a.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9));
             }
         }
     }
@@ -34,8 +34,8 @@ public final class u1 extends TLObject {
         outputSerializedData.writeInt32(Vector.constructor);
         int size = this.a.size();
         outputSerializedData.writeInt32(size);
-        for (int i3 = 0; i3 < size; i3++) {
-            ((TL_account.TL_contactBirthday) this.a.get(i3)).serializeToStream(outputSerializedData);
+        for (int i7 = 0; i7 < size; i7++) {
+            ((TL_account.TL_contactBirthday) this.a.get(i7)).serializeToStream(outputSerializedData);
         }
     }
 }

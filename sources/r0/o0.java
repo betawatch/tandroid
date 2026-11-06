@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.animation.PathInterpolator;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class o0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ v0 a;
@@ -15,11 +15,11 @@ public final class o0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int d;
     public final /* synthetic */ View e;
 
-    public o0(v0 v0Var, k1 k1Var, k1 k1Var2, int i3, View view) {
+    public o0(v0 v0Var, k1 k1Var, k1 k1Var2, int i7, View view) {
         this.a = v0Var;
         this.b = k1Var;
         this.c = k1Var2;
-        this.d = i3;
+        this.d = i7;
         this.e = view;
     }
 
@@ -33,8 +33,8 @@ public final class o0 implements ValueAnimator.AnimatorUpdateListener {
         h1 h1Var = k1Var.a;
         float b10 = u0Var.b();
         PathInterpolator pathInterpolator = q0.e;
-        int i3 = Build.VERSION.SDK_INT;
-        a1 z0Var = i3 >= 34 ? new z0(k1Var) : i3 >= 30 ? new y0(k1Var) : i3 >= 29 ? new x0(k1Var) : new w0(k1Var);
+        int i7 = Build.VERSION.SDK_INT;
+        a1 z0Var = i7 >= 34 ? new z0(k1Var) : i7 >= 30 ? new y0(k1Var) : i7 >= 29 ? new x0(k1Var) : new w0(k1Var);
         for (int i10 = 1; i10 <= 512; i10 <<= 1) {
             if ((this.d & i10) == 0) {
                 z0Var.c(i10, h1Var.f(i10));

@@ -1,30 +1,45 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.s1 b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ z1(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        this.a = i3;
-        this.b = s1Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class z1 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable c;
+
+    public /* synthetic */ z1(Runnable runnable, boolean[] zArr) {
+        this.c = runnable;
+        this.b = zArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                try {
-                    this.b.dismiss();
+                Runnable runnable = this.c;
+                if (runnable != null && this.b[0]) {
+                    runnable.run();
                     break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
                 }
+                break;
             default:
-                this.b.dismiss();
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    Runnable runnable2 = this.c;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ z1(boolean[] zArr, Runnable runnable) {
+        this.b = zArr;
+        this.c = runnable;
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -30,20 +30,20 @@ public abstract class o2 {
         return list.size() << 2;
     }
 
-    public static void B(int i3, List list, y1 y1Var, boolean z10) {
+    public static void B(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.C(intValue);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             i11 += r0.P(((Integer) list.get(i12)).intValue());
@@ -54,32 +54,32 @@ public abstract class o2 {
         }
     }
 
-    public static int C(int i3, List list) {
+    public static int C(int i7, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return r0.R(i3) * size;
+        return r0.R(i7) * size;
     }
 
     public static int D(List list) {
         return list.size() << 3;
     }
 
-    public static void E(int i3, List list, y1 y1Var, boolean z10) {
+    public static void E(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.H(intValue);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             i11 += r0.T(((Integer) list.get(i12)).intValue());
@@ -90,20 +90,20 @@ public abstract class o2 {
         }
     }
 
-    public static void F(int i3, List list, y1 y1Var, boolean z10) {
+    public static void F(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.H((intValue >> 31) ^ (intValue << 1));
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             int intValue2 = ((Integer) list.get(i12)).intValue();
@@ -116,22 +116,22 @@ public abstract class o2 {
         }
     }
 
-    public static void G(int i3, List list, y1 y1Var, boolean z10) {
+    public static void G(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 5);
+                r0Var.D(i7, 5);
                 r0Var.M(intValue);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Integer) list.get(i12)).getClass();
@@ -145,22 +145,22 @@ public abstract class o2 {
         }
     }
 
-    public static void H(int i3, List list, y1 y1Var, boolean z10) {
+    public static void H(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 5);
+                r0Var.D(i7, 5);
                 r0Var.M(intValue);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Integer) list.get(i12)).getClass();
@@ -174,20 +174,20 @@ public abstract class o2 {
         }
     }
 
-    public static void I(int i3, List list, y1 y1Var, boolean z10) {
+    public static void I(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 int intValue = ((Integer) list.get(i10)).intValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.C(intValue);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             i11 += r0.P(((Integer) list.get(i12)).intValue());
@@ -198,20 +198,20 @@ public abstract class o2 {
         }
     }
 
-    public static void J(int i3, List list, y1 y1Var, boolean z10) {
+    public static void J(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 boolean booleanValue = ((Boolean) list.get(i10)).booleanValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.B(booleanValue ? (byte) 1 : (byte) 0);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Boolean) list.get(i12)).getClass();
@@ -224,33 +224,33 @@ public abstract class o2 {
         }
     }
 
-    public static int a(int i3, Object obj, n2 n2Var) {
+    public static int a(int i7, Object obj, n2 n2Var) {
         l0 l0Var = (l0) obj;
-        int T = r0.T(i3 << 3);
-        int c2 = l0Var.c();
-        if (c2 == -1) {
-            c2 = n2Var.zzb(l0Var);
-            l0Var.b(c2);
+        int T = r0.T(i7 << 3);
+        int c10 = l0Var.c();
+        if (c10 == -1) {
+            c10 = n2Var.zzb(l0Var);
+            l0Var.b(c10);
         }
-        return a1.g.B(c2, c2, T);
+        return a8.p0.C(c10, c10, T);
     }
 
-    public static int b(int i3, List list, n2 n2Var) {
+    public static int b(int i7, List list, n2 n2Var) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        int y9 = r0.y(i3) * size;
+        int y10 = r0.y(i7) * size;
         for (int i10 = 0; i10 < size; i10++) {
             l0 l0Var = (l0) list.get(i10);
-            int c2 = l0Var.c();
-            if (c2 == -1) {
-                c2 = n2Var.zzb(l0Var);
-                l0Var.b(c2);
+            int c10 = l0Var.c();
+            if (c10 == -1) {
+                c10 = n2Var.zzb(l0Var);
+                l0Var.b(c10);
             }
-            y9 = a1.g.B(c2, c2, y9);
+            y10 = a8.p0.C(c10, c10, y10);
         }
-        return y9;
+        return y10;
     }
 
     public static int c(List list) {
@@ -264,14 +264,14 @@ public abstract class o2 {
             }
             throw null;
         }
-        int i3 = 0;
+        int i7 = 0;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 += r0.O(((Long) list.get(i10)).longValue());
+            i7 += r0.O(((Long) list.get(i10)).longValue());
         }
-        return i3;
+        return i7;
     }
 
-    public static p2 d(boolean z10) {
+    public static p2 d(boolean z9) {
         Class<?> cls;
         try {
             cls = Class.forName("com.google.protobuf.UnknownFieldSetSchema");
@@ -280,14 +280,14 @@ public abstract class o2 {
         }
         if (cls != null) {
             try {
-                return (p2) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z10));
+                return (p2) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z9));
             } catch (Throwable unused2) {
             }
         }
         return null;
     }
 
-    public static void e(int i3, List list, y1 y1Var) {
+    public static void e(int i7, List list, y1 y1Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -295,7 +295,7 @@ public abstract class o2 {
         if (!(list instanceof t1)) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 String str = (String) list.get(i10);
-                r0Var.D(i3, 2);
+                r0Var.D(i7, 2);
                 byte[] bArr = r0Var.c;
                 int i11 = r0Var.e;
                 try {
@@ -335,7 +335,7 @@ public abstract class o2 {
             Object a10 = t1Var.a(i13);
             if (a10 instanceof String) {
                 String str2 = (String) a10;
-                r0Var.D(i3, 2);
+                r0Var.D(i7, 2);
                 byte[] bArr2 = r0Var.c;
                 int i14 = r0Var.e;
                 try {
@@ -369,41 +369,41 @@ public abstract class o2 {
                 }
             } else {
                 q0 q0Var = (q0) a10;
-                r0Var.D(i3, 2);
+                r0Var.D(i7, 2);
                 r0Var.H(q0Var.i());
                 r0Var.L(q0Var.b, q0Var.m(), q0Var.i());
             }
         }
     }
 
-    public static void f(int i3, List list, y1 y1Var, n2 n2Var) {
+    public static void f(int i7, List list, y1 y1Var, n2 n2Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         y1Var.getClass();
         for (int i10 = 0; i10 < list.size(); i10++) {
-            y1Var.b(i3, list.get(i10), n2Var);
+            y1Var.b(i7, list.get(i10), n2Var);
         }
     }
 
-    public static void g(int i3, List list, y1 y1Var, boolean z10) {
+    public static void g(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 double doubleValue = ((Double) list.get(i10)).doubleValue();
                 r0Var.getClass();
                 long doubleToRawLongBits = Double.doubleToRawLongBits(doubleValue);
-                r0Var.D(i3, 1);
+                r0Var.D(i7, 1);
                 r0Var.K(doubleToRawLongBits);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Double) list.get(i12)).getClass();
@@ -423,12 +423,12 @@ public abstract class o2 {
         q2 q2Var = f1Var.zzb;
         q2 q2Var2 = ((f1) obj2).zzb;
         if (!q2Var2.equals(q2.f)) {
-            int i3 = q2Var.a + q2Var2.a;
-            int[] copyOf = Arrays.copyOf(q2Var.b, i3);
+            int i7 = q2Var.a + q2Var2.a;
+            int[] copyOf = Arrays.copyOf(q2Var.b, i7);
             System.arraycopy(q2Var2.b, 0, copyOf, q2Var.a, q2Var2.a);
-            Object[] copyOf2 = Arrays.copyOf(q2Var.c, i3);
+            Object[] copyOf2 = Arrays.copyOf(q2Var.c, i7);
             System.arraycopy(q2Var2.c, 0, copyOf2, q2Var.a, q2Var2.a);
-            q2Var = new q2(i3, copyOf, copyOf2, true);
+            q2Var = new q2(i7, copyOf, copyOf2, true);
         }
         f1Var.zzb = q2Var;
     }
@@ -440,38 +440,38 @@ public abstract class o2 {
         return true;
     }
 
-    public static int j(int i3, List list) {
+    public static int j(int i7, List list) {
         int size = list.size();
         int i10 = 0;
         if (size == 0) {
             return 0;
         }
-        int y9 = r0.y(i3) * size;
+        int y10 = r0.y(i7) * size;
         if (!(list instanceof t1)) {
             while (i10 < size) {
                 Object obj = list.get(i10);
                 if (obj instanceof q0) {
                     int i11 = ((q0) obj).i();
-                    y9 = a1.g.B(i11, i11, y9);
+                    y10 = a8.p0.C(i11, i11, y10);
                 } else {
-                    y9 = r0.G((String) obj) + y9;
+                    y10 = r0.G((String) obj) + y10;
                 }
                 i10++;
             }
-            return y9;
+            return y10;
         }
         t1 t1Var = (t1) list;
         while (i10 < size) {
             Object a10 = t1Var.a(i10);
             if (a10 instanceof q0) {
                 int i12 = ((q0) a10).i();
-                y9 = a1.g.B(i12, i12, y9);
+                y10 = a8.p0.C(i12, i12, y10);
             } else {
-                y9 = r0.G((String) a10) + y9;
+                y10 = r0.G((String) a10) + y10;
             }
             i10++;
         }
-        return y9;
+        return y10;
     }
 
     public static int k(List list) {
@@ -485,14 +485,14 @@ public abstract class o2 {
             }
             throw null;
         }
-        int i3 = 0;
+        int i7 = 0;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 += r0.O(((Long) list.get(i10)).longValue());
+            i7 += r0.O(((Long) list.get(i10)).longValue());
         }
-        return i3;
+        return i7;
     }
 
-    public static void l(int i3, List list, y1 y1Var) {
+    public static void l(int i7, List list, y1 y1Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -500,40 +500,40 @@ public abstract class o2 {
         for (int i10 = 0; i10 < list.size(); i10++) {
             r0 r0Var = (r0) y1Var.a;
             q0 q0Var = (q0) list.get(i10);
-            r0Var.D(i3, 2);
+            r0Var.D(i7, 2);
             r0Var.H(q0Var.i());
             r0Var.L(q0Var.b, q0Var.m(), q0Var.i());
         }
     }
 
-    public static void m(int i3, List list, y1 y1Var, n2 n2Var) {
+    public static void m(int i7, List list, y1 y1Var, n2 n2Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         y1Var.getClass();
         for (int i10 = 0; i10 < list.size(); i10++) {
-            y1Var.c(i3, list.get(i10), n2Var);
+            y1Var.c(i7, list.get(i10), n2Var);
         }
     }
 
-    public static void n(int i3, List list, y1 y1Var, boolean z10) {
+    public static void n(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 float floatValue = ((Float) list.get(i10)).floatValue();
                 r0Var.getClass();
                 int floatToRawIntBits = Float.floatToRawIntBits(floatValue);
-                r0Var.D(i3, 5);
+                r0Var.D(i7, 5);
                 r0Var.M(floatToRawIntBits);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Float) list.get(i12)).getClass();
@@ -547,29 +547,29 @@ public abstract class o2 {
         }
     }
 
-    public static int o(int i3, List list) {
+    public static int o(int i7, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        int y9 = r0.y(i3) * size;
+        int y10 = r0.y(i7) * size;
         for (int i10 = 0; i10 < list.size(); i10++) {
             int i11 = ((q0) list.get(i10)).i();
-            y9 = a1.g.B(i11, i11, y9);
+            y10 = a8.p0.C(i11, i11, y10);
         }
-        return y9;
+        return y10;
     }
 
     public static int p(List list) {
         int size = list.size();
         if (size != 0) {
             if (!(list instanceof v1)) {
-                int i3 = 0;
+                int i7 = 0;
                 for (int i10 = 0; i10 < size; i10++) {
                     long longValue = ((Long) list.get(i10)).longValue();
-                    i3 += r0.O((longValue >> 63) ^ (longValue << 1));
+                    i7 += r0.O((longValue >> 63) ^ (longValue << 1));
                 }
-                return i3;
+                return i7;
             }
             if (size > 0) {
                 throw null;
@@ -578,20 +578,20 @@ public abstract class o2 {
         return 0;
     }
 
-    public static void q(int i3, List list, y1 y1Var, boolean z10) {
+    public static void q(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 long longValue = ((Long) list.get(i10)).longValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.E(longValue);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             i11 += r0.O(((Long) list.get(i12)).longValue());
@@ -604,42 +604,42 @@ public abstract class o2 {
 
     public static int r(List list) {
         int size = list.size();
-        int i3 = 0;
+        int i7 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
             int i10 = 0;
-            while (i3 < size) {
-                i10 += r0.P(((Integer) list.get(i3)).intValue());
-                i3++;
+            while (i7 < size) {
+                i10 += r0.P(((Integer) list.get(i7)).intValue());
+                i7++;
             }
             return i10;
         }
         h1 h1Var = (h1) list;
         int i11 = 0;
-        while (i3 < size) {
-            h1Var.j(i3);
-            i11 += r0.P(h1Var.b[i3]);
-            i3++;
+        while (i7 < size) {
+            h1Var.j(i7);
+            i11 += r0.P(h1Var.b[i7]);
+            i7++;
         }
         return i11;
     }
 
-    public static void s(int i3, List list, y1 y1Var, boolean z10) {
+    public static void s(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 long longValue = ((Long) list.get(i10)).longValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.E(longValue);
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             i11 += r0.O(((Long) list.get(i12)).longValue());
@@ -652,42 +652,42 @@ public abstract class o2 {
 
     public static int t(List list) {
         int size = list.size();
-        int i3 = 0;
+        int i7 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
             int i10 = 0;
-            while (i3 < size) {
-                i10 += r0.P(((Integer) list.get(i3)).intValue());
-                i3++;
+            while (i7 < size) {
+                i10 += r0.P(((Integer) list.get(i7)).intValue());
+                i7++;
             }
             return i10;
         }
         h1 h1Var = (h1) list;
         int i11 = 0;
-        while (i3 < size) {
-            h1Var.j(i3);
-            i11 += r0.P(h1Var.b[i3]);
-            i3++;
+        while (i7 < size) {
+            h1Var.j(i7);
+            i11 += r0.P(h1Var.b[i7]);
+            i7++;
         }
         return i11;
     }
 
-    public static void u(int i3, List list, y1 y1Var, boolean z10) {
+    public static void u(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        if (!z10) {
+        if (!z9) {
             for (int i10 = 0; i10 < list.size(); i10++) {
                 long longValue = ((Long) list.get(i10)).longValue();
-                r0Var.D(i3, 0);
+                r0Var.D(i7, 0);
                 r0Var.E((longValue >> 63) ^ (longValue << 1));
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             long longValue2 = ((Long) list.get(i12)).longValue();
@@ -702,44 +702,44 @@ public abstract class o2 {
 
     public static int v(List list) {
         int size = list.size();
-        int i3 = 0;
+        int i7 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
             int i10 = 0;
-            while (i3 < size) {
-                i10 += r0.T(((Integer) list.get(i3)).intValue());
-                i3++;
+            while (i7 < size) {
+                i10 += r0.T(((Integer) list.get(i7)).intValue());
+                i7++;
             }
             return i10;
         }
         h1 h1Var = (h1) list;
         int i11 = 0;
-        while (i3 < size) {
-            h1Var.j(i3);
-            i11 += r0.T(h1Var.b[i3]);
-            i3++;
+        while (i7 < size) {
+            h1Var.j(i7);
+            i11 += r0.T(h1Var.b[i7]);
+            i7++;
         }
         return i11;
     }
 
-    public static void w(int i3, List list, y1 y1Var, boolean z10) {
+    public static void w(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 long longValue = ((Long) list.get(i10)).longValue();
-                r0Var.D(i3, 1);
+                r0Var.D(i7, 1);
                 r0Var.K(longValue);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Long) list.get(i12)).getClass();
@@ -755,46 +755,46 @@ public abstract class o2 {
 
     public static int x(List list) {
         int size = list.size();
-        int i3 = 0;
+        int i7 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
             int i10 = 0;
-            while (i3 < size) {
-                int intValue = ((Integer) list.get(i3)).intValue();
+            while (i7 < size) {
+                int intValue = ((Integer) list.get(i7)).intValue();
                 i10 += r0.T((intValue >> 31) ^ (intValue << 1));
-                i3++;
+                i7++;
             }
             return i10;
         }
         h1 h1Var = (h1) list;
         int i11 = 0;
-        while (i3 < size) {
-            h1Var.j(i3);
-            int i12 = h1Var.b[i3];
+        while (i7 < size) {
+            h1Var.j(i7);
+            int i12 = h1Var.b[i7];
             i11 += r0.T((i12 >> 31) ^ (i12 << 1));
-            i3++;
+            i7++;
         }
         return i11;
     }
 
-    public static void y(int i3, List list, y1 y1Var, boolean z10) {
+    public static void y(int i7, List list, y1 y1Var, boolean z9) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         int i10 = 0;
-        if (!z10) {
+        if (!z9) {
             while (i10 < list.size()) {
                 long longValue = ((Long) list.get(i10)).longValue();
-                r0Var.D(i3, 1);
+                r0Var.D(i7, 1);
                 r0Var.K(longValue);
                 i10++;
             }
             return;
         }
-        r0Var.D(i3, 2);
+        r0Var.D(i7, 2);
         int i11 = 0;
         for (int i12 = 0; i12 < list.size(); i12++) {
             ((Long) list.get(i12)).getClass();
@@ -808,11 +808,11 @@ public abstract class o2 {
         }
     }
 
-    public static int z(int i3, List list) {
+    public static int z(int i7, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return r0.V(i3) * size;
+        return r0.V(i7) * size;
     }
 }

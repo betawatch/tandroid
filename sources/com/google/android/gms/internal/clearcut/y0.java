@@ -2,14 +2,14 @@ package com.google.android.gms.internal.clearcut;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public final class y0 {
     public Object A;
-    public final ad.b a;
+    public final z0 a;
     public final Object[] b;
     public final Class c;
     public final int d;
@@ -38,11 +38,11 @@ public final class y0 {
 
     public y0(Class cls, String str, Object[] objArr) {
         this.c = cls;
-        ad.b bVar = new ad.b(str, 1);
-        this.a = bVar;
+        z0 z0Var = new z0(str, 0);
+        this.a = z0Var;
         this.b = objArr;
-        this.d = bVar.a();
-        int a10 = bVar.a();
+        this.d = z0Var.a();
+        int a10 = z0Var.a();
         this.e = a10;
         if (a10 == 0) {
             this.f = 0;
@@ -55,16 +55,16 @@ public final class y0 {
             this.m = null;
             return;
         }
-        int a11 = bVar.a();
+        int a11 = z0Var.a();
         this.f = a11;
-        int a12 = bVar.a();
-        this.g = bVar.a();
-        this.h = bVar.a();
-        this.k = bVar.a();
-        this.j = bVar.a();
-        this.i = bVar.a();
-        this.l = bVar.a();
-        int a13 = bVar.a();
+        int a12 = z0Var.a();
+        this.g = z0Var.a();
+        this.h = z0Var.a();
+        this.k = z0Var.a();
+        this.j = z0Var.a();
+        this.i = z0Var.a();
+        this.l = z0Var.a();
+        int a13 = z0Var.a();
         this.m = a13 != 0 ? new int[a13] : null;
         this.n = (a11 << 1) + a12;
     }
@@ -86,20 +86,20 @@ public final class y0 {
             sb2.append(str);
             sb2.append(" for ");
             sb2.append(name);
-            throw new RuntimeException(a1.g.s(sb2, " not found. Known fields are ", arrays));
+            throw new RuntimeException(a8.p0.s(sb2, " not found. Known fields are ", arrays));
         }
     }
 
     public final boolean a() {
-        ad.b bVar = this.a;
-        if (bVar.c >= bVar.b.length()) {
+        z0 z0Var = this.a;
+        if (z0Var.b >= z0Var.c.length()) {
             return false;
         }
-        this.s = bVar.a();
-        int a10 = bVar.a();
+        this.s = z0Var.a();
+        int a10 = z0Var.a();
         this.t = a10;
-        int i3 = a10 & hs.e4;
-        this.u = i3;
+        int i7 = a10 & qs.e4;
+        this.u = i7;
         int i10 = this.s;
         if (i10 < this.p) {
             this.p = i10;
@@ -109,16 +109,16 @@ public final class y0 {
         }
         u uVar = u.s;
         int i11 = uVar.a;
-        if (i3 != i11 && i3 >= u.e.a) {
+        if (i7 != i11 && i7 >= u.e.a) {
             int i12 = u.r.a;
         }
         int i13 = this.r + 1;
         this.r = i13;
         int i14 = this.p;
-        Class cls = a1.a;
+        Class cls = b1.a;
         if (i10 >= 40) {
-            long j10 = i13;
-            int i15 = (((i10 - i14) + 10) > (((j10 + 3) * 3) + (2 * j10) + 3) ? 1 : (((i10 - i14) + 10) == (((j10 + 3) * 3) + (2 * j10) + 3) ? 0 : -1));
+            long j3 = i13;
+            int i15 = (((i10 - i14) + 10) > (((j3 + 3) * 3) + (2 * j3) + 3) ? 1 : (((i10 - i14) + 10) == (((j3 + 3) * 3) + (2 * j3) + 3) ? 0 : -1));
         }
         if ((a10 & 1024) != 0) {
             int i16 = this.o;
@@ -129,8 +129,8 @@ public final class y0 {
         this.z = null;
         this.A = null;
         int i17 = this.d;
-        if (i3 > i11) {
-            this.v = bVar.a();
+        if (i7 > i11) {
+            this.v = z0Var.a();
             int i18 = this.u;
             if (i18 == u.b.a + 51 || i18 == u.d.a + 51) {
                 this.y = c();
@@ -143,7 +143,7 @@ public final class y0 {
         }
         this.x = b(this.c, (String) c());
         if ((i17 & 1) == 1 && this.u <= u.d.a) {
-            this.w = bVar.a();
+            this.w = z0Var.a();
         }
         int i19 = this.u;
         if (i19 == u.b.a || i19 == u.d.a) {
@@ -170,8 +170,8 @@ public final class y0 {
     }
 
     public final Object c() {
-        int i3 = this.n;
-        this.n = i3 + 1;
-        return this.b[i3];
+        int i7 = this.n;
+        this.n = i7 + 1;
+        return this.b[i7];
     }
 }

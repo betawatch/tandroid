@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import org.telegram.ui.Cells.f1;
-import ud.d;
+import xd.d;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzcn implements Comparable {
     private int zza;
@@ -11,7 +11,7 @@ public final class zzcn implements Comparable {
     private long zzc;
 
     public final String toString() {
-        return f1.r(d.k(10, String.valueOf(this.zzb)), " us| #Usages: ", d.k(5, String.valueOf(this.zza)), a.n("avgExecutionTime: ", d.k(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", d.k(10, String.valueOf(this.zzc)), " us| totalTime: "));
+        return f1.n(d.k(10, String.valueOf(this.zzb)), " us| #Usages: ", d.k(5, String.valueOf(this.zza)), a.n("avgExecutionTime: ", d.k(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", d.k(10, String.valueOf(this.zzc)), " us| totalTime: "));
     }
 
     @Override // java.lang.Comparable
@@ -37,15 +37,15 @@ public final class zzcn implements Comparable {
         return this.zzb;
     }
 
-    public final void zze(long j10) {
-        this.zzc = j10;
+    public final void zze(long j3) {
+        this.zzc = j3;
     }
 
-    public final void zzf(long j10) {
-        this.zzb = j10;
+    public final void zzf(long j3) {
+        this.zzb = j3;
     }
 
-    public final void zzg(int i3) {
-        this.zza = i3;
+    public final void zzg(int i7) {
+        this.zza = i7;
     }
 }

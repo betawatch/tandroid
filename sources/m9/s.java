@@ -1,0 +1,10 @@
+package m9;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class s extends o implements g {
+    @Override // m9.o, java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.a instanceof a;
+    }
+}

@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a8 {
     public static boolean j = false;
@@ -58,8 +58,8 @@ public final class a8 {
         }
     }
 
-    public static void c(boolean z10) {
-        if (z10 || System.currentTimeMillis() - l >= 30000) {
+    public static void c(boolean z9) {
+        if (z9 || System.currentTimeMillis() - l >= 30000) {
             l = System.currentTimeMillis();
             try {
                 Debug.dumpHprofData(new File(g0.P0(), j().b.format(System.currentTimeMillis()) + "_heap.hprof").getAbsolutePath());
@@ -93,19 +93,19 @@ public final class a8 {
         g(th2, true);
     }
 
-    public static void g(Throwable th2, boolean z10) {
+    public static void g(Throwable th2, boolean z9) {
         if (r2.a) {
-            if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7) && z10) {
+            if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7) && z9) {
                 Typeface typeface = g0.a;
                 t0.a(th2);
             }
-            int i3 = 0;
+            int i7 = 0;
             if (th2.getMessage() != null && th2.getMessage().contains("disk image is malformed") && !j) {
                 b("copy malformed files");
                 j = true;
                 File file = new File(t0.h(), "malformed_database/");
                 file.mkdirs();
-                qr a02 = qr.a0(h10.t0);
+                yr a02 = yr.a0(p10.s0);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(a02.c);
                 arrayList.add(a02.d);
@@ -121,7 +121,7 @@ public final class a8 {
             h();
             th2.printStackTrace();
             if (j().a != null) {
-                j().d.c(new y7(i3, th2));
+                j().d.c(new y7(i7, th2));
             } else {
                 th2.printStackTrace();
             }
@@ -132,13 +132,13 @@ public final class a8 {
         j().k();
     }
 
-    public static void i(Throwable th2, boolean z10) {
+    public static void i(Throwable th2, boolean z9) {
         if (r2.a) {
             if (th2 instanceof OutOfMemoryError) {
                 j();
                 c(false);
             }
-            if (z10 && !(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7)) {
+            if (z9 && !(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7)) {
                 Typeface typeface = g0.a;
                 t0.a(th2);
             }

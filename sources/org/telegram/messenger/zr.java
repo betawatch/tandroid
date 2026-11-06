@@ -1,27 +1,22 @@
 package org.telegram.messenger;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class zr implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ yr a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ hs c;
-
-    public zr(hs hsVar, yr yrVar, int i3) {
-        this.c = hsVar;
-        this.a = yrVar;
-        this.b = i3;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.c.b(this.a, this.b);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.c.n(this.a, this.b);
-    }
+public final class zr {
+    public int a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public String l;
+    public String m;
+    public int n;
+    public boolean o;
+    public String p;
 }

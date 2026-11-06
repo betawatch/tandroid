@@ -11,7 +11,7 @@ import android.support.v4.media.session.a0;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
@@ -60,13 +60,13 @@ public final class MediaMetadataCompat implements Parcelable {
         e = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER"};
         f = new String[]{"android.media.metadata.DISPLAY_ICON", "android.media.metadata.ART", "android.media.metadata.ALBUM_ART"};
         h = new String[]{"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
-        CREATOR = new w.a(4);
+        CREATOR = new w.a(12);
     }
 
     public MediaMetadataCompat(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        a0.f(bundle2);
+        a0.g(bundle2);
     }
 
     public final MediaDescriptionCompat a() {
@@ -84,9 +84,9 @@ public final class MediaMetadataCompat implements Parcelable {
         CharSequence[] charSequenceArr = new CharSequence[3];
         CharSequence charSequence3 = bundle.getCharSequence("android.media.metadata.DISPLAY_TITLE");
         if (TextUtils.isEmpty(charSequence3)) {
-            int i3 = 0;
+            int i7 = 0;
             int i10 = 0;
-            while (i3 < 3) {
+            while (i7 < 3) {
                 String[] strArr = e;
                 if (i10 >= strArr.length) {
                     break;
@@ -94,8 +94,8 @@ public final class MediaMetadataCompat implements Parcelable {
                 int i11 = i10 + 1;
                 CharSequence charSequence4 = bundle.getCharSequence(strArr[i10]);
                 if (!TextUtils.isEmpty(charSequence4)) {
-                    charSequenceArr[i3] = charSequence4;
-                    i3++;
+                    charSequenceArr[i7] = charSequence4;
+                    i7++;
                 }
                 i10 = i11;
             }
@@ -166,7 +166,7 @@ public final class MediaMetadataCompat implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
+    public final void writeToParcel(Parcel parcel, int i7) {
         parcel.writeBundle(this.a);
     }
 

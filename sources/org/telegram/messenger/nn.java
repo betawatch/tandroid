@@ -1,118 +1,52 @@
 package org.telegram.messenger;
 
-import android.content.Context;
 import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nn implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ c1 d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
 
-    public /* synthetic */ nn(hp hpVar, long j10, int i3, int i10, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, org.telegram.ui.tf tfVar) {
-        this.h = hpVar;
-        this.c = j10;
-        this.b = i3;
-        this.e = i10;
-        this.d = j11;
-        this.n = tL_messages_affectedHistory;
-        this.f = z10;
-        this.r = tfVar;
+    public /* synthetic */ nn(qp qpVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z9, boolean z10) {
+        this.d = qpVar;
+        this.e = tL_error;
+        this.f = f2Var;
+        this.h = tL_channels_editAdmin;
+        this.b = z9;
+        this.c = z10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0091, code lost:
-    
-        if (0 == 0) goto L22;
-     */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        c1 c1Var = this.d;
+        switch (i7) {
             case 0:
-                final hp hpVar = (hp) this.h;
-                final long j10 = this.c;
-                final int i3 = this.b;
-                final int i10 = this.e;
-                final TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) this.n;
-                final org.telegram.ui.tf tfVar = (org.telegram.ui.tf) this.r;
-                qr messagesStorage = hpVar.getMessagesStorage();
-                messagesStorage.getClass();
-                final ArrayList arrayList = new ArrayList();
-                SQLiteCursor sQLiteCursor = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = messagesStorage.b;
-                        Locale locale = Locale.US;
-                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT mid FROM messages_v2 WHERE uid = " + j10 + " AND date >= " + i3 + " AND date <= " + i10, new Object[0]);
-                        while (sQLiteCursor.next()) {
-                            try {
-                                arrayList.add(Integer.valueOf(sQLiteCursor.intValue(0)));
-                            } catch (Exception e10) {
-                                messagesStorage.o(e10, true);
-                            }
-                        }
-                        sQLiteCursor.dispose();
-                    } catch (Exception e11) {
-                        messagesStorage.o(e11, true);
-                        break;
-                    }
-                    sQLiteCursor.dispose();
-                    hpVar.getMessagesStorage().P0(j10, arrayList, false, true, 0, 0);
-                    hpVar.getMessagesStorage().R1(j10, 0L, arrayList, null);
-                    final long j11 = this.d;
-                    final boolean z10 = this.f;
-                    g0.h3(new Runnable() { // from class: org.telegram.messenger.qn
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            hp hpVar2 = hp.this;
-                            hs notificationCenter = hpVar2.getNotificationCenter();
-                            long j12 = j11;
-                            notificationCenter.k(hs.w, arrayList, Long.valueOf(j12), Boolean.FALSE);
-                            int i11 = tL_messages_affectedHistory.offset;
-                            org.telegram.ui.tf tfVar2 = tfVar;
-                            if (i11 > 0) {
-                                hpVar2.d0(j10, j12, i3, i10, z10, tfVar2);
-                            } else {
-                                tfVar2.run();
-                            }
-                        }
-                    });
-                    return;
-                } catch (Throwable th2) {
-                    if (0 != 0) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th2;
-                }
+                org.telegram.ui.Components.v4.c0(((qp) c1Var).currentAccount, (TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.f2) obj2, (TLRPC.TL_channels_editAdmin) obj, Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+                break;
             default:
-                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
-                return;
+                dt.e((dt) c1Var, (ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
+                break;
         }
     }
 
-    public /* synthetic */ nn(TLObject tLObject, int i3, long j10, long j11, int i10, boolean z10, Context context, String str) {
-        this.h = tLObject;
-        this.b = i3;
-        this.c = j10;
-        this.d = j11;
-        this.e = i10;
-        this.f = z10;
-        this.n = context;
-        this.r = str;
+    public /* synthetic */ nn(dt dtVar, ArrayList arrayList, ArrayList arrayList2, boolean z9, boolean z10, CountDownLatch countDownLatch) {
+        this.d = dtVar;
+        this.e = arrayList;
+        this.f = arrayList2;
+        this.b = z9;
+        this.c = z10;
+        this.h = countDownLatch;
     }
 }

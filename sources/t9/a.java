@@ -1,70 +1,86 @@
 package t9;
 
-import d2.l0;
-import j$.util.DesugarCollections;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.ui.ActionBar.e3;
-import x7.b0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import q4.x;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final Set b;
-    public final Set c;
-    public final int d;
-    public final int e;
-    public final d f;
-    public final Set g;
+public final class a extends r6.a {
+    public static final Parcelable.Creator<a> CREATOR = new x(25);
+    public int a;
+    public final boolean b;
+    public final String c;
+    public final String d;
+    public final byte[] e;
+    public final boolean f;
 
-    public a(String str, Set set, Set set2, int i3, int i10, d dVar, Set set3) {
-        this.a = str;
-        this.b = DesugarCollections.unmodifiableSet(set);
-        this.c = DesugarCollections.unmodifiableSet(set2);
-        this.d = i3;
-        this.e = i10;
-        this.f = dVar;
-        this.g = DesugarCollections.unmodifiableSet(set3);
-    }
-
-    public static l0 a(Class cls) {
-        return new l0(cls, new Class[0]);
-    }
-
-    public static l0 b(r rVar) {
-        r[] rVarArr = new r[0];
-        l0 l0Var = new l0();
-        l0Var.d = null;
-        HashSet hashSet = new HashSet();
-        l0Var.c = hashSet;
-        l0Var.e = new HashSet();
-        l0Var.a = 0;
-        l0Var.b = 0;
-        l0Var.g = new HashSet();
-        hashSet.add(rVar);
-        for (r rVar2 : rVarArr) {
-            b0.a(rVar2, "Null interface");
-        }
-        Collections.addAll((HashSet) l0Var.c, rVarArr);
-        return l0Var;
-    }
-
-    public static a c(Object obj, Class cls, Class... clsArr) {
-        HashSet hashSet = new HashSet();
-        HashSet hashSet2 = new HashSet();
-        HashSet hashSet3 = new HashSet();
-        hashSet.add(r.a(cls));
-        for (Class cls2 : clsArr) {
-            b0.a(cls2, "Null interface");
-            hashSet.add(r.a(cls2));
-        }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new e3(obj, 15), hashSet3);
+    public a() {
+        this.a = 0;
+        this.b = true;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = false;
     }
 
     public final String toString() {
-        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
+        StringBuilder sb2 = new StringBuilder("MetadataImpl { { eventStatus: '");
+        sb2.append(this.a);
+        sb2.append("' } { uploadable: '");
+        sb2.append(this.b);
+        sb2.append("' } ");
+        String str = this.c;
+        if (str != null) {
+            sb2.append("{ completionToken: '");
+            sb2.append(str);
+            sb2.append("' } ");
+        }
+        String str2 = this.d;
+        if (str2 != null) {
+            sb2.append("{ accountName: '");
+            sb2.append(str2);
+            sb2.append("' } ");
+        }
+        byte[] bArr = this.e;
+        if (bArr != null) {
+            sb2.append("{ ssbContext: [ ");
+            for (byte b10 : bArr) {
+                sb2.append("0x");
+                sb2.append(Integer.toHexString(b10));
+                sb2.append(" ");
+            }
+            sb2.append("] } ");
+        }
+        sb2.append("{ contextOnly: '");
+        sb2.append(this.f);
+        sb2.append("' } }");
+        return sb2.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        int i10 = this.a;
+        wb.q(parcel, 1, 4);
+        parcel.writeInt(i10);
+        wb.q(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        wb.l(parcel, 3, this.c);
+        wb.l(parcel, 4, this.d);
+        wb.c(parcel, 5, this.e);
+        wb.q(parcel, 6, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        wb.s(parcel, r10);
+    }
+
+    public a(int i7, boolean z9, String str, String str2, byte[] bArr, boolean z10) {
+        this.a = i7;
+        this.b = z9;
+        this.c = str;
+        this.d = str2;
+        this.e = bArr;
+        this.f = z10;
     }
 }

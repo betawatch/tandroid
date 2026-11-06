@@ -2,18 +2,18 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class xp0 {
     public final /* synthetic */ Context a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
-    public final /* synthetic */ ws0 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ xs0 d;
 
-    public xp0(ws0 ws0Var, Context context, org.telegram.ui.ActionBar.d2 d2Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.d = ws0Var;
+    public xp0(xs0 xs0Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.d = xs0Var;
         this.a = context;
-        this.b = d2Var;
-        this.c = e6Var;
+        this.b = f2Var;
+        this.c = f6Var;
     }
 }

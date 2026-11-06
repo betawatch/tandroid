@@ -1,51 +1,99 @@
 package p2;
 
-import java.util.UUID;
+import h2.m0;
+import java.math.RoundingMode;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n implements g {
-    public final f a;
+public abstract class n extends s {
+    public final long d;
+    public final long e;
+    public final List f;
+    public final long g;
+    public final long h;
+    public final long i;
 
-    public n(f fVar) {
-        this.a = fVar;
+    public n(j jVar, long j3, long j10, long j11, long j12, List list, long j13, long j14, long j15) {
+        super(jVar, j3, j10);
+        this.d = j11;
+        this.e = j12;
+        this.f = list;
+        this.i = j13;
+        this.g = j14;
+        this.h = j15;
     }
 
-    @Override // p2.g
-    public final UUID a() {
-        return d2.m.b;
+    public final long b(long j3, long j10) {
+        long d = d(j3);
+        return d != -1 ? d : (int) (f((j10 - this.h) + this.i, j3) - c(j3, j10));
     }
 
-    @Override // p2.g
-    public final boolean c() {
-        return false;
+    public final long c(long j3, long j10) {
+        long d = d(j3);
+        long j11 = this.d;
+        if (d == -1) {
+            long j12 = this.g;
+            if (j12 != -9223372036854775807L) {
+                return Math.max(j11, f((j10 - this.h) - j12, j3));
+            }
+        }
+        return j11;
     }
 
-    @Override // p2.g
-    public final int d() {
-        return 1;
+    public abstract long d(long j3);
+
+    public final long e(long j3, long j10) {
+        long j11 = this.b;
+        long j12 = this.d;
+        List list = this.f;
+        if (list != null) {
+            return (((q) list.get((int) (j3 - j12))).b * 1000000) / j11;
+        }
+        long d = d(j10);
+        return (d == -1 || j3 != (j12 + d) - 1) ? (this.e * 1000000) / j11 : j10 - g(j3);
     }
 
-    @Override // p2.g
-    public final boolean f(String str) {
-        return false;
+    public final long f(long j3, long j10) {
+        long d = d(j10);
+        long j11 = this.d;
+        if (d != 0) {
+            if (this.f != null) {
+                long j12 = (d + j11) - 1;
+                long j13 = j11;
+                while (j13 <= j12) {
+                    long j14 = ((j12 - j13) / 2) + j13;
+                    long g10 = g(j14);
+                    if (g10 < j3) {
+                        j13 = j14 + 1;
+                    } else {
+                        if (g10 <= j3) {
+                            return j14;
+                        }
+                        j12 = j14 - 1;
+                    }
+                }
+                return j13 == j11 ? j13 : j12;
+            }
+            long j15 = (j3 / ((this.e * 1000000) / this.b)) + j11;
+            if (j15 >= j11) {
+                return d == -1 ? j15 : Math.min(j15, (j11 + d) - 1);
+            }
+        }
+        return j11;
     }
 
-    @Override // p2.g
-    public final f g() {
-        return this.a;
+    public final long g(long j3) {
+        long j10 = this.d;
+        List list = this.f;
+        long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a - this.c : (j3 - j10) * this.e;
+        String str = m0.a;
+        return m0.a0(j11, 1000000L, this.b, RoundingMode.DOWN);
     }
 
-    @Override // p2.g
-    public final j2.b h() {
-        return null;
-    }
+    public abstract j h(k kVar, long j3);
 
-    @Override // p2.g
-    public final void b(j jVar) {
-    }
-
-    @Override // p2.g
-    public final void e(j jVar) {
+    public boolean i() {
+        return this.f != null;
     }
 }

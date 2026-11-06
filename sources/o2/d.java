@@ -1,29 +1,33 @@
 package o2;
 
-import d2.v;
-import g9.i0;
-import java.util.ArrayList;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d {
-    public final v a;
-    public final i0 b;
-    public final s c;
-    public final String d;
-    public final ArrayList e;
-    public final ArrayList f;
-    public final ArrayList g;
-    public final ArrayList h;
+public final class d implements b3.p {
+    public final /* synthetic */ h a;
 
-    public d(v vVar, ArrayList arrayList, s sVar, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
-        this.a = vVar;
-        this.b = i0.q(arrayList);
-        this.c = sVar;
-        this.d = str;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = arrayList4;
-        this.h = arrayList5;
+    @Override // b3.p
+    public void a() {
+        h hVar = this.a;
+        hVar.A.a();
+        IOException iOException = hVar.C;
+        if (iOException != null) {
+            throw iOException;
+        }
+    }
+
+    public void b() {
+        long j3;
+        h hVar = this.a;
+        synchronized (c3.b.b) {
+            try {
+                j3 = c3.b.c ? c3.b.d : -9223372036854775807L;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        hVar.K = j3;
+        hVar.z(true);
     }
 }

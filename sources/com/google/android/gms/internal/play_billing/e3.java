@@ -1,21 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class e3 {
     public static final /* synthetic */ int a = 0;
 
     static {
         if (c3.e && c3.d) {
-            int i3 = g1.a;
+            int i7 = g1.a;
         }
     }
 
-    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i3, int i10) {
-        int i11 = i10 - i3;
-        byte b10 = bArr[i3 - 1];
+    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i7, int i10) {
+        int i11 = i10 - i7;
+        byte b10 = bArr[i7 - 1];
         if (i11 == 0) {
             if (b10 <= -12) {
                 return b10;
@@ -23,7 +23,7 @@ public abstract class e3 {
             return -1;
         }
         if (i11 == 1) {
-            byte b11 = bArr[i3];
+            byte b11 = bArr[i7];
             if (b10 > -12 || b11 > -65) {
                 return -1;
             }
@@ -32,8 +32,8 @@ public abstract class e3 {
         if (i11 != 2) {
             throw new AssertionError();
         }
-        byte b12 = bArr[i3];
-        byte b13 = bArr[i3 + 1];
+        byte b12 = bArr[i7];
+        byte b13 = bArr[i7 + 1];
         if (b10 > -12 || b12 > -65 || b13 > -65) {
             return -1;
         }
@@ -47,7 +47,7 @@ public abstract class e3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int b(String str, byte[] bArr, int i3, int i10) {
+    public static int b(String str, byte[] bArr, int i7, int i10) {
         int i11;
         int i12;
         int i13;
@@ -55,14 +55,14 @@ public abstract class e3 {
         int length = str.length();
         int i14 = 0;
         while (true) {
-            i11 = i3 + i10;
-            if (i14 >= length || (i13 = i14 + i3) >= i11 || (charAt = str.charAt(i14)) >= 128) {
+            i11 = i7 + i10;
+            if (i14 >= length || (i13 = i14 + i7) >= i11 || (charAt = str.charAt(i14)) >= 128) {
                 break;
             }
             bArr[i13] = (byte) charAt;
             i14++;
         }
-        int i15 = i3 + i14;
+        int i15 = i7 + i14;
         while (i14 < length) {
             char charAt2 = str.charAt(i14);
             if (charAt2 < 128 && i15 < i11) {
@@ -86,7 +86,7 @@ public abstract class e3 {
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
                             int i17 = i15 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i15] = (byte) ((codePoint >>> 18) | hs.P3);
+                            bArr[i15] = (byte) ((codePoint >>> 18) | qs.P3);
                             bArr[i15 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                             bArr[i15 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
                             i15 += 4;
@@ -110,7 +110,7 @@ public abstract class e3 {
 
     public static int c(String str) {
         int length = str.length();
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         while (i10 < length && str.charAt(i10) < 128) {
             i10++;
@@ -129,9 +129,9 @@ public abstract class e3 {
                 while (i10 < length2) {
                     char charAt2 = str.charAt(i10);
                     if (charAt2 < 2048) {
-                        i3 += (127 - charAt2) >>> 31;
+                        i7 += (127 - charAt2) >>> 31;
                     } else {
-                        i3 += 2;
+                        i7 += 2;
                         if (charAt2 >= 55296 && charAt2 <= 57343) {
                             if (Character.codePointAt(str, i10) < 65536) {
                                 throw new d3(i10, length2);
@@ -141,7 +141,7 @@ public abstract class e3 {
                     }
                     i10++;
                 }
-                i11 += i3;
+                i11 += i7;
             }
         }
         if (i11 >= length) {
@@ -155,18 +155,18 @@ public abstract class e3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean d(int i3, int i10, byte[] bArr) {
-        while (i3 < i10 && bArr[i3] >= 0) {
-            i3++;
+    public static boolean d(int i7, int i10, byte[] bArr) {
+        while (i7 < i10 && bArr[i7] >= 0) {
+            i7++;
         }
-        if (i3 >= i10) {
+        if (i7 >= i10) {
             return true;
         }
-        while (i3 < i10) {
-            int i11 = i3 + 1;
-            int i12 = bArr[i3];
+        while (i7 < i10) {
+            int i11 = i7 + 1;
+            int i12 = bArr[i7];
             if (i12 >= 0) {
-                i3 = i11;
+                i7 = i11;
             } else if (i12 < -32) {
                 if (i11 >= i10) {
                     return i12 == 0;
@@ -174,7 +174,7 @@ public abstract class e3 {
                 if (i12 < -62) {
                     return false;
                 }
-                i3 += 2;
+                i7 += 2;
                 if (bArr[i11] > 65471) {
                     return false;
                 }
@@ -184,18 +184,18 @@ public abstract class e3 {
                     if (i12 == 0) {
                     }
                 } else {
-                    int i13 = i3 + 2;
-                    char c2 = bArr[i11];
-                    if (c2 > 65471) {
+                    int i13 = i7 + 2;
+                    char c10 = bArr[i11];
+                    if (c10 > 65471) {
                         return false;
                     }
-                    if (i12 == -32 && c2 < 65440) {
+                    if (i12 == -32 && c10 < 65440) {
                         return false;
                     }
-                    if (i12 == -19 && c2 >= 65440) {
+                    if (i12 == -19 && c10 >= 65440) {
                         return false;
                     }
-                    i3 += 3;
+                    i7 += 3;
                     if (bArr[i13] > 65471) {
                         return false;
                     }
@@ -205,19 +205,19 @@ public abstract class e3 {
                 if (i12 == 0) {
                 }
             } else {
-                int i14 = i3 + 2;
+                int i14 = i7 + 2;
                 int i15 = bArr[i11];
                 if (i15 > -65) {
                     return false;
                 }
-                if ((((i15 + hs.x1) + (i12 << 28)) >> 30) != 0) {
+                if ((((i15 + qs.x1) + (i12 << 28)) >> 30) != 0) {
                     return false;
                 }
-                int i16 = i3 + 3;
+                int i16 = i7 + 3;
                 if (bArr[i14] > 65471) {
                     return false;
                 }
-                i3 += 4;
+                i7 += 4;
                 if (bArr[i16] > 65471) {
                     return false;
                 }

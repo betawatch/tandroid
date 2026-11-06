@@ -1,47 +1,44 @@
 package r2;
 
-import b8.zb;
-import j$.util.Objects;
+import c8.p0;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e {
-    public final String a;
-    public final int b;
-    public final double c;
-    public final String d;
+public final class e extends y2.f {
+    public byte[] s;
+    public volatile boolean w;
+    public byte[] x;
 
-    public e(String str, double d) {
-        this.a = str;
-        this.b = 2;
-        this.c = d;
-        this.d = null;
+    @Override // b3.l
+    public final void a() {
+        try {
+            this.r.open(this.b);
+            int i7 = 0;
+            int i10 = 0;
+            while (i7 != -1 && !this.w) {
+                byte[] bArr = this.s;
+                if (bArr.length < i10 + TLObject.FLAG_14) {
+                    this.s = Arrays.copyOf(bArr, bArr.length + TLObject.FLAG_14);
+                }
+                i7 = this.r.read(this.s, i10, TLObject.FLAG_14);
+                if (i7 != -1) {
+                    i10 += i7;
+                }
+            }
+            if (!this.w) {
+                this.x = Arrays.copyOf(this.s, i10);
+            }
+            p0.a(this.r);
+        } catch (Throwable th2) {
+            p0.a(this.r);
+            throw th2;
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return this.b == eVar.b && Double.compare(this.c, eVar.c) == 0 && Objects.equals(this.a, eVar.a) && Objects.equals(this.d, eVar.d);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.b), Double.valueOf(this.c), this.d);
-    }
-
-    public e(int i3, String str, String str2) {
-        boolean z10 = true;
-        if (i3 == 1 && !str2.startsWith("0x") && !str2.startsWith("0X")) {
-            z10 = false;
-        }
-        zb.p(z10);
-        this.a = str;
-        this.b = i3;
-        this.d = str2;
-        this.c = 0.0d;
+    @Override // b3.l
+    public final void q0() {
+        this.w = true;
     }
 }

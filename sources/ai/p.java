@@ -1,43 +1,69 @@
 package ai;
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class p extends v4.g0 {
+    public final /* synthetic */ q0 c;
 
-    public /* synthetic */ p(EditTextBoldCursor editTextBoldCursor, int i3) {
-        this.a = i3;
-        this.b = editTextBoldCursor;
+    public p(q0 q0Var) {
+        this.c = q0Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                z zVar = (z) this.b;
-                zVar.requestFocus();
-                org.telegram.messenger.g0.K3(zVar);
-                break;
-            case 1:
-                u3 u3Var = (u3) this.b;
-                u3Var.requestFocus();
-                org.telegram.messenger.g0.K3(u3Var);
-                break;
-            case 2:
-                lg.s sVar = (lg.s) this.b;
-                sVar.requestFocus();
-                org.telegram.messenger.g0.K3(sVar);
-                break;
-            default:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                org.telegram.messenger.g0.K3(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
+    @Override // v4.g0
+    public final int b() {
+        return this.c.s;
+    }
+
+    @Override // v4.g0
+    public final int d(int i7) {
+        q0 q0Var = this.c;
+        t tVar = (t) q0Var.n.get(q0Var.f(i7));
+        return (tVar.b == null || i7 != tVar.d) ? 1 : 0;
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        q0 q0Var = this.c;
+        t tVar = (t) q0Var.n.get(q0Var.f(i7));
+        int i10 = d1Var.f;
+        View view = d1Var.a;
+        if (i10 != 0) {
+            ((q) view).set((TLRPC.Document) tVar.c.get((i7 - tVar.d) - (tVar.b == null ? 0 : 1)));
+            return;
         }
+        s sVar = (s) view;
+        String str = tVar.b;
+        int i11 = (q0Var.x || tVar.a != 2) ? 0 : 1;
+        TextView textView = sVar.b;
+        TextView textView2 = sVar.a;
+        textView2.setText(str != null ? str.replace('\n', ' ') : null);
+        textView2.setTextColor(sVar.c.y);
+        textView.setVisibility(i11 != 0 ? 0 : 8);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
+        int L = org.telegram.messenger.g0.L(15.0f) + (i11 != 0 ? org.telegram.messenger.g0.L(6.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(12.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString()))) : 0);
+        if (layoutParams.rightMargin != L) {
+            layoutParams.rightMargin = L;
+            textView2.setLayoutParams(layoutParams);
+        }
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        View qVar;
+        q0 q0Var = this.c;
+        if (i7 == 0) {
+            qVar = new s(q0Var, viewGroup.getContext());
+            qVar.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(44.0f)));
+        } else {
+            qVar = new q(viewGroup.getContext(), q0Var.a);
+            qVar.setLayoutParams(new v4.o0(-1, -2));
+        }
+        return new o(qVar);
     }
 }

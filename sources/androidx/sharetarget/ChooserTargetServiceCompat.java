@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import w4.a;
-import w4.b;
-import w4.c;
-import w4.d;
+import x4.a;
+import x4.b;
+import x4.c;
+import x4.d;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -37,10 +37,10 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
         ArrayList arrayList = d.a;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
             c cVar = (c) obj;
             if (cVar.b.equals(componentName.getClassName())) {
                 b[] bVarArr = cVar.a;

@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class dz0 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -58,11 +58,11 @@ public final class dz0 extends FrameLayout {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.q4 q4Var;
         ArrayList<org.telegram.ui.ActionBar.t6> arrayList;
-        boolean z10;
+        boolean z9;
         ArrayList arrayList2;
+        boolean z10;
         boolean z11;
-        boolean z12;
-        int i3;
+        int i7;
         float f10;
         ThemeEditorView themeEditorView = this.d;
         int i10 = themeEditorView.g;
@@ -72,7 +72,7 @@ public final class dz0 extends FrameLayout {
         int i11 = 4;
         Property property = View.ALPHA;
         int i12 = 0;
-        boolean z13 = true;
+        boolean z12 = true;
         if (action == 0) {
             this.a = rawX;
             this.b = rawY;
@@ -80,12 +80,12 @@ public final class dz0 extends FrameLayout {
             if (motionEvent.getAction() == 1 && !this.c && themeEditorView.n == null) {
                 LaunchActivity launchActivity = (LaunchActivity) themeEditorView.d;
                 if (org.telegram.messenger.g0.Q1()) {
-                    q4Var = launchActivity.s0;
+                    q4Var = launchActivity.p0;
                     if (q4Var != null && q4Var.getFragmentStack().isEmpty()) {
                         q4Var = null;
                     }
                     if (q4Var == null) {
-                        q4Var = launchActivity.t0;
+                        q4Var = launchActivity.q0;
                         if (q4Var != null) {
                         }
                     }
@@ -93,12 +93,12 @@ public final class dz0 extends FrameLayout {
                         q4Var = launchActivity.M();
                     }
                     if (q4Var != null) {
-                        org.telegram.ui.ActionBar.d2 d2Var = !q4Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.d2) q4Var.getFragmentStack().get(q4Var.getFragmentStack().size() - 1) : null;
-                        if (d2Var != null) {
+                        org.telegram.ui.ActionBar.f2 f2Var = !q4Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.f2) q4Var.getFragmentStack().get(q4Var.getFragmentStack().size() - 1) : null;
+                        if (f2Var != null) {
                             ArrayList arrayList3 = new ArrayList();
                             HashSet hashSet = new HashSet();
                             try {
-                                arrayList = d2Var.getThemeDescriptions();
+                                arrayList = f2Var.getThemeDescriptions();
                             } catch (Exception e10) {
                                 org.telegram.messenger.a8.g(e10, true);
                                 arrayList = null;
@@ -112,30 +112,30 @@ public final class dz0 extends FrameLayout {
                                     }
                                 }
                             }
-                            HashSet<Integer> s6 = org.telegram.ui.ActionBar.r6.s();
+                            HashSet<Integer> s5 = org.telegram.ui.ActionBar.r6.s();
                             try {
-                                d2Var.addThemeColorKeys(s6);
+                                f2Var.addThemeColorKeys(s5);
                             } catch (Exception e11) {
                                 org.telegram.messenger.a8.g(e11, true);
                             }
-                            ArrayList arrayList4 = new ArrayList(s6);
-                            Collections.sort(arrayList4, new d80(8));
+                            ArrayList arrayList4 = new ArrayList(s5);
+                            Collections.sort(arrayList4, new org.telegram.ui.oe(18));
                             int i14 = 0;
                             while (i14 < arrayList4.size()) {
                                 Integer num = (Integer) arrayList4.get(i14);
                                 int intValue = num.intValue();
-                                boolean z14 = z13;
+                                boolean z13 = z12;
                                 if (intValue >= 0 && intValue < org.telegram.ui.ActionBar.k6.f5 && hashSet.add(num)) {
                                     arrayList3.add(new org.telegram.ui.ActionBar.t6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, intValue));
                                 }
                                 i14++;
-                                z13 = z14;
+                                z12 = z13;
                             }
-                            z10 = z13;
+                            z9 = z12;
                             if (!arrayList3.isEmpty()) {
                                 ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.d, arrayList3);
                                 themeEditorView.n = editorAlert;
-                                editorAlert.setOnDismissListener(new gi.d1(i11));
+                                editorAlert.setOnDismissListener(new fi.d1(i11));
                                 themeEditorView.n.setOnDismissListener(new p0(this, 10));
                                 themeEditorView.n.show();
                                 if (themeEditorView.d != null) {
@@ -146,7 +146,7 @@ public final class dz0 extends FrameLayout {
                                         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(themeEditorView.c, (Property<dz0, Float>) View.SCALE_Y, 1.0f, 0.0f);
                                         Animator[] animatorArr = new Animator[3];
                                         animatorArr[0] = ofFloat;
-                                        animatorArr[z10 ? 1 : 0] = ofFloat2;
+                                        animatorArr[z9 ? 1 : 0] = ofFloat2;
                                         animatorArr[2] = ofFloat3;
                                         animatorSet.playTogether(animatorArr);
                                         animatorSet.setInterpolator(themeEditorView.k);
@@ -178,7 +178,7 @@ public final class dz0 extends FrameLayout {
                                     }
                                     int i19 = layoutParams.x;
                                     if (i19 < 0) {
-                                        f11 = a1.g.A(i19, i16, 0.5f, 1.0f);
+                                        f11 = com.google.android.recaptcha.internal.a.c(i19, i16, 0.5f, 1.0f);
                                     } else {
                                         if (i19 > org.telegram.messenger.g0.q.x - layoutParams.width) {
                                             f11 = org.telegram.messenger.camera.q.v((i19 - r9) + r7, i16, 0.5f, 1.0f);
@@ -201,27 +201,27 @@ public final class dz0 extends FrameLayout {
                                     this.a = rawX;
                                     this.b = rawY;
                                 } else {
-                                    boolean z15 = z10;
-                                    if (motionEvent.getAction() != z15) {
-                                        return z15;
+                                    boolean z14 = z9;
+                                    if (motionEvent.getAction() != z14) {
+                                        return z14;
                                     }
                                     this.c = false;
-                                    int c2 = ThemeEditorView.c(0.0f, 0, i10, z15);
-                                    int c10 = ThemeEditorView.c(0.0f, z15 ? 1 : 0, i10, z15);
+                                    int c10 = ThemeEditorView.c(0.0f, 0, i10, z14);
+                                    int c11 = ThemeEditorView.c(0.0f, z14 ? 1 : 0, i10, z14);
                                     int i22 = themeEditorView.h;
-                                    int c11 = ThemeEditorView.c(0.0f, 0, i22, false);
-                                    int c12 = ThemeEditorView.c(0.0f, z15 ? 1 : 0, i22, false);
+                                    int c12 = ThemeEditorView.c(0.0f, 0, i22, false);
+                                    int c13 = ThemeEditorView.c(0.0f, z14 ? 1 : 0, i22, false);
                                     SharedPreferences.Editor edit = themeEditorView.l.edit();
                                     int L = org.telegram.messenger.g0.L(20.0f);
-                                    if (Math.abs(c2 - themeEditorView.i.x) <= L || ((i3 = themeEditorView.i.x) < 0 && i3 > (-i10) / 4)) {
+                                    if (Math.abs(c10 - themeEditorView.i.x) <= L || ((i7 = themeEditorView.i.x) < 0 && i7 > (-i10) / 4)) {
                                         arrayList2 = new ArrayList();
                                         edit.putInt("sidex", 0);
                                         if (themeEditorView.c.getAlpha() != 1.0f) {
                                             arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<dz0, Float>) property, 1.0f));
                                         }
-                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c2));
+                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c10));
                                     } else {
-                                        if (Math.abs(c10 - i3) > L) {
+                                        if (Math.abs(c11 - i7) > L) {
                                             int i23 = themeEditorView.i.x;
                                             Point point = org.telegram.messenger.g0.q;
                                             f10 = 1.0f;
@@ -235,28 +235,28 @@ public final class dz0 extends FrameLayout {
                                                         arrayList5.add(ObjectAnimator.ofInt(themeEditorView, "x", point.x));
                                                     }
                                                     arrayList2 = arrayList5;
-                                                    z11 = true;
+                                                    z10 = true;
                                                 } else {
-                                                    edit.putFloat("px", (themeEditorView.i.x - c2) / (c10 - c2));
+                                                    edit.putFloat("px", (themeEditorView.i.x - c10) / (c11 - c10));
                                                     edit.putInt("sidex", 2);
-                                                    z11 = false;
+                                                    z10 = false;
                                                     arrayList2 = null;
                                                 }
-                                                if (!z11) {
-                                                    if (Math.abs(c11 - themeEditorView.i.y) <= L || themeEditorView.i.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
+                                                if (!z10) {
+                                                    if (Math.abs(c12 - themeEditorView.i.y) <= L || themeEditorView.i.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
                                                         if (arrayList2 == null) {
                                                             arrayList2 = new ArrayList();
                                                         }
                                                         edit.putInt("sidey", 0);
-                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c11));
-                                                    } else if (Math.abs(c12 - themeEditorView.i.y) <= L) {
+                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c12));
+                                                    } else if (Math.abs(c13 - themeEditorView.i.y) <= L) {
                                                         if (arrayList2 == null) {
                                                             arrayList2 = new ArrayList();
                                                         }
                                                         edit.putInt("sidey", 1);
-                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c12));
+                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c13));
                                                     } else {
-                                                        edit.putFloat("py", (themeEditorView.i.y - c11) / (c12 - c11));
+                                                        edit.putFloat("py", (themeEditorView.i.y - c12) / (c13 - c12));
                                                         edit.putInt("sidey", 2);
                                                     }
                                                     edit.commit();
@@ -270,16 +270,16 @@ public final class dz0 extends FrameLayout {
                                                 AnimatorSet animatorSet2 = new AnimatorSet();
                                                 animatorSet2.setInterpolator(themeEditorView.k);
                                                 animatorSet2.setDuration(150L);
-                                                if (z11) {
-                                                    z12 = true;
+                                                if (z10) {
+                                                    z11 = true;
                                                     arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<dz0, Float>) property, 0.0f));
                                                     animatorSet2.addListener(new fz0(themeEditorView, 1 == true ? 1 : 0));
                                                 } else {
-                                                    z12 = true;
+                                                    z11 = true;
                                                 }
                                                 animatorSet2.playTogether(arrayList2);
                                                 animatorSet2.start();
-                                                return z12;
+                                                return z11;
                                             }
                                         } else {
                                             f10 = 1.0f;
@@ -289,16 +289,16 @@ public final class dz0 extends FrameLayout {
                                         if (themeEditorView.c.getAlpha() != f10) {
                                             arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<dz0, Float>) property, f10));
                                         }
-                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c10));
+                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c11));
                                     }
-                                    z11 = false;
-                                    if (!z11) {
+                                    z10 = false;
+                                    if (!z10) {
                                     }
                                     if (arrayList2 != null) {
                                     }
                                 }
                             }
-                            return z10;
+                            return z9;
                         }
                     }
                 }
@@ -313,9 +313,9 @@ public final class dz0 extends FrameLayout {
             this.a = rawX;
             this.b = rawY;
         }
-        z10 = true;
+        z9 = true;
         if (this.c) {
         }
-        return z10;
+        return z9;
     }
 }

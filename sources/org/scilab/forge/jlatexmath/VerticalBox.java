@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 class VerticalBox extends Box {
     private float leftMostPos;
@@ -57,21 +57,21 @@ class VerticalBox extends Box {
     public int getLastFontId() {
         LinkedList<Box> linkedList = this.children;
         ListIterator<Box> listIterator = linkedList.listIterator(linkedList.size());
-        int i3 = -1;
-        while (i3 == -1 && listIterator.hasPrevious()) {
-            i3 = listIterator.previous().getLastFontId();
+        int i7 = -1;
+        while (i7 == -1 && listIterator.hasPrevious()) {
+            i7 = listIterator.previous().getLastFontId();
         }
-        return i3;
+        return i7;
     }
 
     public int getSize() {
         return this.children.size();
     }
 
-    public VerticalBox(Box box, float f10, int i3) {
+    public VerticalBox(Box box, float f10, int i7) {
         this();
         add(box);
-        if (i3 == 2) {
+        if (i7 == 2) {
             float f11 = f10 / 2.0f;
             StrutBox strutBox = new StrutBox(0.0f, f11, 0.0f, 0.0f);
             super.add(0, strutBox);
@@ -80,10 +80,10 @@ class VerticalBox extends Box {
             super.add(strutBox);
             return;
         }
-        if (i3 == 3) {
+        if (i7 == 3) {
             this.depth += f10;
             super.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
-        } else if (i3 == 4) {
+        } else if (i7 == 4) {
             this.height += f10;
             super.add(0, new StrutBox(0.0f, f10, 0.0f, 0.0f));
         }
@@ -97,9 +97,9 @@ class VerticalBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void add(int i3, Box box) {
-        super.add(i3, box);
-        if (i3 == 0) {
+    public void add(int i7, Box box) {
+        super.add(i7, box);
+        if (i7 == 0) {
             this.depth = box.depth + this.height + this.depth;
             this.height = box.height;
         } else {

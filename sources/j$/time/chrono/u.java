@@ -34,8 +34,8 @@ public final class u extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.k
-    public final l u(int i3) {
-        return x.s(i3);
+    public final l u(int i7) {
+        return x.s(i7);
     }
 
     @Override // j$.time.chrono.k
@@ -51,33 +51,33 @@ public final class u extends a implements Serializable {
                 int year = xVarArr[xVarArr.length - 1].b.getYear();
                 int year2 = 1000000000 - xVarArr[xVarArr.length - 1].b.getYear();
                 int year3 = xVarArr[0].b.getYear();
-                int i3 = 1;
+                int i7 = 1;
                 while (true) {
                     x[] xVarArr2 = x.e;
-                    if (i3 >= xVarArr2.length) {
+                    if (i7 >= xVarArr2.length) {
                         return j$.time.temporal.s.f(year2, 999999999 - year);
                     }
-                    x xVar = xVarArr2[i3];
+                    x xVar = xVarArr2[i7];
                     year2 = Math.min(year2, (xVar.b.getYear() - year3) + 1);
                     year3 = xVar.b.getYear();
-                    i3++;
+                    i7++;
                 }
             case 6:
                 x xVar2 = x.d;
-                long j10 = j$.time.temporal.a.DAY_OF_YEAR.b.c;
+                long j3 = j$.time.temporal.a.DAY_OF_YEAR.b.c;
                 for (x xVar3 : x.e) {
-                    j10 = Math.min(j10, ((xVar3.b.O() ? 366 : 365) - xVar3.b.L()) + 1);
+                    j3 = Math.min(j3, ((xVar3.b.O() ? 366 : 365) - xVar3.b.L()) + 1);
                     if (xVar3.p() != null) {
-                        j10 = Math.min(j10, xVar3.p().b.L() - 1);
+                        j3 = Math.min(j3, xVar3.p().b.L() - 1);
                     }
                 }
-                return j$.time.temporal.s.f(j10, j$.time.temporal.a.DAY_OF_YEAR.b.d);
+                return j$.time.temporal.s.f(j3, j$.time.temporal.a.DAY_OF_YEAR.b.d);
             case 7:
                 return j$.time.temporal.s.e(w.d.getYear(), 999999999L);
             case 8:
-                long j11 = x.d.a;
+                long j10 = x.d.a;
                 x[] xVarArr3 = x.e;
-                return j$.time.temporal.s.e(j11, xVarArr3[xVarArr3.length - 1].a);
+                return j$.time.temporal.s.e(j10, xVarArr3[xVarArr3.length - 1].a);
             default:
                 return aVar.b;
         }

@@ -1,60 +1,155 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import bi.de;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j2 b;
+public final class h2 extends FrameLayout {
+    public TextView[] a;
+    public TextView b;
+    public FrameLayout c;
+    public l2 d;
+    public CharSequence e;
+    public boolean f;
+    public ValueAnimator h;
+    public boolean n;
 
-    public /* synthetic */ h2(j2 j2Var, int i3) {
-        this.a = i3;
-        this.b = j2Var;
+    public final void a(View view, View view2, Runnable runnable) {
+        view.setVisibility(0);
+        view2.setVisibility(0);
+        view2.setTranslationY(org.telegram.messenger.g0.L(15.0f));
+        view2.setAlpha(0.0f);
+        this.f = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new de(19, view2, view));
+        this.h.addListener(new jg.j0((FrameLayout) this, view, view2, (Object) runnable, 4));
+        this.h.setDuration(250L).setInterpolator(xq.f);
+        this.h.start();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                j2 j2Var = this.b;
-                j2Var.getClass();
-                j2Var.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j2Var.invalidate();
-                j2Var.U.c();
-                break;
-            case 1:
-                j2 j2Var2 = this.b;
-                j2Var2.getClass();
-                j2Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j2Var2.invalidate();
-                j2Var2.U.c();
-                break;
-            case 2:
-                j2 j2Var3 = this.b;
-                j2Var3.getClass();
-                j2Var3.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j2Var3.invalidate();
-                j2Var3.U.c();
-                break;
-            case 3:
-                j2 j2Var4 = this.b;
-                j2Var4.getClass();
-                j2Var4.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j2Var4.invalidate();
-                break;
-            case 4:
-                j2 j2Var5 = this.b;
-                j2Var5.getClass();
-                j2Var5.G = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j2Var5.invalidate();
-                break;
-            default:
-                j2 j2Var6 = this.b;
-                j2Var6.getClass();
-                j2Var6.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j2Var6.invalidate();
-                break;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(String str, boolean z9, boolean z10) {
+        View view = this.d;
+        TextView[] textViewArr = this.a;
+        if (z9) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            SpannableString spannableString = new SpannableString(".");
+            spannableString.setSpan(new kg.o1(textViewArr), 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            str = spannableStringBuilder;
         }
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z10 = false;
+        }
+        if (!z10) {
+            ValueAnimator valueAnimator = this.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.f = false;
+            textViewArr[0].setText(str);
+            textViewArr[0].setVisibility(0);
+            textViewArr[1].setVisibility(8);
+            view.setVisibility(8);
+            return;
+        }
+        if (this.f) {
+            this.e = str;
+            return;
+        }
+        if (this.n) {
+            textViewArr[0].setText(str);
+            a(view, textViewArr[0], null);
+        } else {
+            if (textViewArr[0].getText().equals(str)) {
+                return;
+            }
+            textViewArr[1].setText(str);
+            a(textViewArr[0], textViewArr[1], new m5(this, 7));
+        }
+    }
+
+    public final void c(boolean z9) {
+        FrameLayout frameLayout = this.c;
+        if (!z9) {
+            if (frameLayout.getVisibility() == 8) {
+                return;
+            }
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(xq.f).setListener(new g2(this, 1)).setDuration(300L).start();
+        } else {
+            if (frameLayout.getVisibility() == 0) {
+                return;
+            }
+            frameLayout.setVisibility(0);
+            frameLayout.setAlpha(0.0f);
+            frameLayout.setScaleY(0.6f);
+            frameLayout.setScaleX(0.6f);
+            frameLayout.animate().setListener(null).cancel();
+            org.telegram.messenger.camera.q.l(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), xq.k, 300L);
+        }
+    }
+
+    public final void d(boolean z9, boolean z10) {
+        TextView textView = this.b;
+        if (!z10) {
+            textView.animate().setListener(null).cancel();
+            textView.setVisibility(z9 ? 0 : 8);
+        } else {
+            if (!z9) {
+                textView.animate().alpha(0.0f).setListener(new g2(this, 0)).setDuration(150L).start();
+                return;
+            }
+            if (textView.getVisibility() != 0) {
+                textView.setVisibility(0);
+                textView.setAlpha(0.0f);
+            }
+            textView.animate().setListener(null).cancel();
+            textView.animate().alpha(1.0f).setDuration(150L).start();
+        }
+    }
+
+    public final void e(boolean z9) {
+        l2 l2Var = this.d;
+        TextView[] textViewArr = this.a;
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z9 = false;
+        }
+        if (this.n) {
+            return;
+        }
+        l2Var.a();
+        if (z9) {
+            if (this.f) {
+                this.e = "timer";
+                return;
+            } else {
+                this.n = true;
+                a(textViewArr[0], l2Var, null);
+                return;
+            }
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.n = true;
+        this.f = false;
+        textViewArr[0].setVisibility(8);
+        textViewArr[1].setVisibility(8);
+        l2Var.setVisibility(0);
+    }
+
+    public void setSignalBarCount(int i7) {
+        this.d.setSignalBarCount(i7);
     }
 }

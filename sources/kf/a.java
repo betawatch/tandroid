@@ -1,18 +1,13 @@
 package kf;
 
-import df.e;
-import gf.s;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
-    int a(e eVar, e eVar2);
-
-    char b();
-
-    void c(s sVar, s sVar2, int i3);
-
-    int d();
-
-    char e();
+public abstract class a extends p {
+    @Override // kf.p
+    public final void e(p pVar) {
+        if (!(pVar instanceof a)) {
+            throw new IllegalArgumentException("Parent of block must also be block (can not be inline)");
+        }
+        this.b = pVar;
+    }
 }

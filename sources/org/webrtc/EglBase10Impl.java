@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -25,7 +25,7 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -75,7 +75,7 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 
@@ -121,16 +121,16 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setFormat(int i3) {
+        public void setFormat(int i7) {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setKeepScreenOn(boolean z10) {
+        public void setKeepScreenOn(boolean z9) {
         }
 
         @Override // android.view.SurfaceHolder
         @Deprecated
-        public void setType(int i3) {
+        public void setType(int i7) {
         }
 
         @Override // android.view.SurfaceHolder
@@ -138,7 +138,7 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setFixedSize(int i3, int i10) {
+        public void setFixedSize(int i7, int i10) {
         }
     }
 
@@ -162,12 +162,12 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    private EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i3) {
+    private EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i7) {
         EGLContext eglCreateContext;
         if (eGLContext != null && eGLContext == EGL10.EGL_NO_CONTEXT) {
             throw new RuntimeException("Invalid sharedContext");
         }
-        int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, i3, 12344};
+        int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, i7, 12344};
         if (eGLContext == null) {
             eGLContext = EGL10.EGL_NO_CONTEXT;
         }
@@ -180,13 +180,13 @@ class EglBase10Impl implements EglBase10 {
         throw new RuntimeException("Failed to create EGL context: 0x" + Integer.toHexString(this.egl.eglGetError()));
     }
 
-    private void createSurfaceInternal(Object obj, boolean z10) {
+    private void createSurfaceInternal(Object obj, boolean z9) {
         if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
             throw new IllegalStateException("Input must be either a SurfaceHolder or SurfaceTexture");
         }
         checkIsNotReleased();
         EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-        if (z10) {
+        if (z9) {
             if (this.eglBackgroundSurface != eGLSurface) {
                 throw new RuntimeException("Already has an EGLSurface");
             }
@@ -249,21 +249,21 @@ class EglBase10Impl implements EglBase10 {
     }
 
     @Override // org.webrtc.EglBase
-    public void createPbufferSurface(int i3, int i10) {
+    public void createPbufferSurface(int i7, int i10) {
         checkIsNotReleased();
         EGLSurface eGLSurface = this.eglSurface;
         EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
         if (eGLSurface != eGLSurface2) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        EGLSurface eglCreatePbufferSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i3, 12374, i10, 12344});
+        EGLSurface eglCreatePbufferSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i7, 12374, i10, 12344});
         this.eglSurface = eglCreatePbufferSurface;
         if (eglCreatePbufferSurface != eGLSurface2) {
             return;
         }
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("Failed to create pixel buffer surface with size ", i3, "x", i10, ": 0x");
-        m10.append(Integer.toHexString(this.egl.eglGetError()));
-        throw new RuntimeException(m10.toString());
+        StringBuilder o4 = jg.g.o("Failed to create pixel buffer surface with size ", i7, "x", i10, ": 0x");
+        o4.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(o4.toString());
     }
 
     @Override // org.webrtc.EglBase
@@ -356,9 +356,9 @@ class EglBase10Impl implements EglBase10 {
     }
 
     @Override // org.webrtc.EglBase
-    public void releaseSurface(boolean z10) {
+    public void releaseSurface(boolean z9) {
         EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
-        if (z10) {
+        if (z9) {
             EGLSurface eGLSurface2 = this.eglBackgroundSurface;
             if (eGLSurface2 != eGLSurface) {
                 this.egl.eglDestroySurface(this.eglDisplay, eGLSurface2);
@@ -389,8 +389,8 @@ class EglBase10Impl implements EglBase10 {
     }
 
     @Override // org.webrtc.EglBase
-    public void swapBuffers(boolean z10) {
-        EGLSurface eGLSurface = z10 ? this.eglBackgroundSurface : this.eglSurface;
+    public void swapBuffers(boolean z9) {
+        EGLSurface eGLSurface = z9 ? this.eglBackgroundSurface : this.eglSurface;
         checkIsNotReleased();
         if (eGLSurface == EGL10.EGL_NO_SURFACE) {
             throw new RuntimeException("No EGLSurface - can't swap buffers");
@@ -406,7 +406,7 @@ class EglBase10Impl implements EglBase10 {
     }
 
     @Override // org.webrtc.EglBase
-    public void swapBuffers(long j10, boolean z10) {
-        swapBuffers(z10);
+    public void swapBuffers(long j3, boolean z9) {
+        swapBuffers(z9);
     }
 }

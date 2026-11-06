@@ -1,24 +1,81 @@
 package h2;
 
-import g9.i0;
-import g9.s1;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class i {
-    public final i0 a;
-    public final int[] b;
+    public final g0 a;
+    public boolean b;
 
-    public i(s1 s1Var, int[] iArr, int i3) {
-        switch (i3) {
-            case 1:
-                this.a = i0.q(s1Var);
-                this.b = iArr;
-                break;
-            default:
-                this.a = i0.q(s1Var);
-                this.b = iArr;
-                break;
+    public i() {
+        this(g0.a);
+    }
+
+    public final synchronized void a() {
+        while (!this.b) {
+            this.a.getClass();
+            wait();
         }
+    }
+
+    public final synchronized void b() {
+        boolean z9 = false;
+        while (!this.b) {
+            try {
+                this.a.getClass();
+                wait();
+            } catch (InterruptedException unused) {
+                z9 = true;
+            }
+        }
+        if (z9) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public final synchronized boolean c(long j3) {
+        if (j3 <= 0) {
+            return this.b;
+        }
+        this.a.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = j3 + elapsedRealtime;
+        if (j10 < elapsedRealtime) {
+            b();
+        } else {
+            boolean z9 = false;
+            while (!this.b && elapsedRealtime < j10) {
+                try {
+                    this.a.getClass();
+                    wait(j10 - elapsedRealtime);
+                } catch (InterruptedException unused) {
+                    z9 = true;
+                }
+                this.a.getClass();
+                elapsedRealtime = SystemClock.elapsedRealtime();
+            }
+            if (z9) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        return this.b;
+    }
+
+    public final synchronized void d() {
+        this.b = false;
+    }
+
+    public final synchronized boolean e() {
+        if (this.b) {
+            return false;
+        }
+        this.b = true;
+        notifyAll();
+        return true;
+    }
+
+    public i(g0 g0Var) {
+        this.a = g0Var;
     }
 }

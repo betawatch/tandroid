@@ -1,41 +1,31 @@
 package gd;
 
-import b8.ib;
-import hd.h;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.u;
-import od.p;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends h {
-    public int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ fd.c c;
+public final class b implements Comparable {
+    public static final b b = new b();
+    public final int a = 131348;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(fd.c cVar, fd.c cVar2, p pVar) {
-        super(cVar);
-        this.b = pVar;
-        this.c = cVar2;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        b other = (b) obj;
+        kotlin.jvm.internal.j.e(other, "other");
+        return this.a - other.a;
     }
 
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
-        int i3 = this.a;
-        if (i3 != 0) {
-            if (i3 != 1) {
-                throw new IllegalStateException("This coroutine had already completed");
-            }
-            this.a = 2;
-            ib.b(obj);
-            return obj;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.a = 1;
-        ib.b(obj);
-        p pVar = this.b;
-        j.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
-        u.a(2, pVar);
-        return pVar.invoke(this.c, this);
+        b bVar = obj instanceof b ? (b) obj : null;
+        return bVar != null && this.a == bVar.a;
+    }
+
+    public final int hashCode() {
+        return this.a;
+    }
+
+    public final String toString() {
+        return "2.1.20";
     }
 }

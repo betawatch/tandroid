@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class Char {
     private final char c;
@@ -10,10 +10,10 @@ public class Char {
     private final int fontCode;
     private final Metrics m;
 
-    public Char(char c2, Font font, int i3, Metrics metrics) {
+    public Char(char c10, Font font, int i7, Metrics metrics) {
         this.font = font;
-        this.fontCode = i3;
-        this.c = c2;
+        this.fontCode = i7;
+        this.c = c10;
         this.m = metrics;
     }
 

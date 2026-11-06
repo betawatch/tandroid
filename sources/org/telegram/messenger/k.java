@@ -6,27 +6,27 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ k(int i3, ArrayList arrayList) {
-        this.a = i3;
+    public /* synthetic */ k(int i7, ArrayList arrayList) {
+        this.a = i7;
         this.b = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         q5 q5Var;
-        int i3 = 0;
+        int i7 = 0;
         switch (this.a) {
             case 0:
                 ArrayList arrayList = this.b;
-                while (i3 < arrayList.size()) {
-                    Bitmap bitmap = (Bitmap) ((WeakReference) arrayList.get(i3)).get();
-                    ((WeakReference) arrayList.get(i3)).clear();
+                while (i7 < arrayList.size()) {
+                    Bitmap bitmap = (Bitmap) ((WeakReference) arrayList.get(i7)).get();
+                    ((WeakReference) arrayList.get(i7)).clear();
                     if (bitmap != null && !bitmap.isRecycled()) {
                         try {
                             bitmap.recycle();
@@ -34,11 +34,11 @@ public final /* synthetic */ class k implements Runnable {
                             a8.g(e10, true);
                         }
                     }
-                    i3++;
+                    i7++;
                 }
                 break;
             case 1:
-                Utilities.e.c(new k(i3, this.b));
+                Utilities.e.c(new k(i7, this.b));
                 break;
             case 2:
                 ArrayList arrayList2 = this.b;
@@ -57,18 +57,18 @@ public final /* synthetic */ class k implements Runnable {
                             q5Var = (q5) r5Var.a.remove(0);
                         }
                         if (!r5Var.h) {
-                            Utilities.e.e(r5Var.i, 30000L);
+                            Utilities.e.d(r5Var.i, 30000L);
                             r5Var.h = true;
                         }
                         r5Var.g++;
                         r5Var.c.add(q5Var);
                         r5Var.b.put(q5Var.index, r5Var.b.get(q5Var.index, 0) + 1);
-                        if (dh.d0.b) {
+                        if (ch.e0.b) {
                             q5Var.setPriority(1);
                         } else if (q5Var.getPriority() != 10) {
                             q5Var.setPriority(10);
                         }
-                        q5Var.postRunnable(new fg(r5Var, runnable, q5Var, 17));
+                        q5Var.postRunnable(new ng(r5Var, runnable, q5Var, 17));
                     }
                 }
                 arrayList2.clear();
@@ -80,13 +80,13 @@ public final /* synthetic */ class k implements Runnable {
             case 4:
                 ArrayList arrayList3 = this.b;
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(t0.b);
-                while (i3 < arrayList3.size()) {
-                    appWidgetManager.notifyAppWidgetViewDataChanged(((Integer) arrayList3.get(i3)).intValue(), R.id.list_view);
-                    i3++;
+                while (i7 < arrayList3.size()) {
+                    appWidgetManager.notifyAppWidgetViewDataChanged(((Integer) arrayList3.get(i7)).intValue(), R.id.list_view);
+                    i7++;
                 }
                 break;
             default:
-                hs.e().k(hs.e4, this.b);
+                qs.e().k(qs.e4, this.b);
                 break;
         }
     }

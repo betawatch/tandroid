@@ -1,43 +1,52 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class f1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.m0 b;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.iz;
 
-    public /* synthetic */ f1(org.telegram.ui.m0 m0Var, int i3) {
-        this.a = i3;
-        this.b = m0Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class f1 {
+    public static ArrayList d;
+    public final String a;
+    public final String b;
+    public final String c;
+
+    public f1(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.m0 m0Var = this.b;
-                m0Var.B0 = true;
-                if (m0Var.getParent() != null) {
-                    m0Var.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                try {
-                    m0Var.performHapticFeedback(0, 1);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            default:
-                org.telegram.ui.m0 m0Var2 = this.b;
-                ci.s sVar = m0Var2.c0;
-                if (!m0Var2.a0) {
-                    sVar.clearFocus();
-                    org.telegram.messenger.g0.v1(sVar);
-                    break;
-                } else {
-                    sVar.requestFocus();
-                    org.telegram.messenger.g0.K3(sVar);
+    public static f1 a() {
+        ArrayList b10 = b();
+        return b10.isEmpty() ? new f1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (f1) b10.get(Utilities.j(iz.p0, b10.size() - 1, 0));
+    }
+
+    public static ArrayList b() {
+        if (d == null) {
+            d = new ArrayList();
+            int i7 = 1;
+            while (true) {
+                String c10 = c(hd.N0("SearchEngine" + i7 + "Name"));
+                if (c10 == null) {
                     break;
                 }
+                String c11 = c(hd.N0("SearchEngine" + i7 + "SearchURL"));
+                String c12 = c(hd.N0("SearchEngine" + i7 + "AutocompleteURL"));
+                c(hd.N0("SearchEngine" + i7 + "PrivacyPolicyURL"));
+                d.add(new f1(c10, c11, c12));
+                i7++;
+            }
         }
+        return d;
+    }
+
+    public static String c(String str) {
+        if (str == null || str.startsWith("LOC_ERR") || "reserved".equals(str)) {
+            return null;
+        }
+        return str;
     }
 }

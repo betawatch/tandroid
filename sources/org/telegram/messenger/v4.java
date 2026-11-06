@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,15 +50,15 @@ public final /* synthetic */ class v4 implements Runnable {
                 break;
             default:
                 g5 g5Var4 = this.b;
-                g5Var4.d0 = this.d;
-                g5Var4.e0 = this.c;
-                g5Var4.c0 = this.e;
+                g5Var4.c0 = this.d;
+                g5Var4.d0 = this.c;
+                g5Var4.b0 = this.e;
                 break;
         }
     }
 
-    public /* synthetic */ v4(g5 g5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i3) {
-        this.a = i3;
+    public /* synthetic */ v4(g5 g5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i7) {
+        this.a = i7;
         this.b = g5Var;
         this.c = hashMap;
         this.d = arrayList;

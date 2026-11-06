@@ -1,42 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.Components.f60;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ce implements Runnable {
+public final /* synthetic */ class ce implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ cs c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ce(cs csVar, Object obj, float f10, int i3) {
-        this.a = i3;
-        this.c = csVar;
-        this.d = obj;
-        this.b = f10;
+    public /* synthetic */ ce(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        int i7 = this.a;
+        Object obj = this.b;
+        switch (i7) {
             case 0:
-                MediaController mediaController = (MediaController) this.c;
-                zi ziVar = (zi) this.d;
-                if (mediaController.j0 != null && mediaController.v0 != null && !mediaController.h0) {
-                    if (mediaController.L(ziVar)) {
-                        mediaController.i0(mediaController.v0, this.b);
-                    }
-                    mediaController.j0.h0();
-                    break;
-                }
+                String[] strArr = MediaController.V1;
+                ((boolean[]) obj)[0] = true;
+                break;
+            case 1:
+                String[] strArr2 = MediaController.V1;
+                ((boolean[]) obj)[0] = true;
+                break;
+            case 2:
+                ((boolean[]) obj)[0] = true;
                 break;
             default:
-                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
-                f60 f60Var = (f60) this.d;
-                i4Var.i0.N.c(true, 0.0f);
-                f60Var.p = new org.telegram.ui.c0(i4Var, this.b, 0);
-                f60Var.Z();
+                ((cf) obj).f = true;
                 break;
         }
     }

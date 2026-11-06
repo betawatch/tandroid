@@ -1,86 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.content.SharedPreferences;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class z20 extends Drawable {
-    public byte[] a;
-    public final Paint b = new Paint();
-    public final int[] c = {-1, -2758925, -13805707, -13657655};
+public final class z20 {
+    public static final z20 d;
+    public static final z20 e;
+    public static final z20 f;
+    public static final z20 h;
+    public static final z20 n;
+    public static final z20 r;
+    public static final z20 s;
+    public static final z20 w;
+    public static final z20 x;
+    public static final /* synthetic */ z20[] y;
+    public final String a;
+    public final int b;
+    public final float c;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte[] bArr = this.a;
-        if (bArr == null) {
-            return;
-        }
-        int length = bArr.length;
-        int[] iArr = this.c;
-        Paint paint = this.b;
-        if (length == 16) {
-            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
-            float f10 = 8.0f * floor;
-            float max = Math.max(0.0f, (getBounds().width() - f10) / 2.0f);
-            float max2 = Math.max(0.0f, (getBounds().height() - f10) / 2.0f);
-            int i3 = 0;
-            for (int i10 = 0; i10 < 8; i10++) {
-                int i11 = 0;
-                while (i11 < 8) {
-                    int i12 = i3 + 2;
-                    paint.setColor(iArr[Math.abs((this.a[i3 / 8] >> (i3 % 8)) & 3) % 4]);
-                    float f11 = (i11 * floor) + max;
-                    float f12 = i10 * floor;
-                    canvas.drawRect(f11, f12 + max2, f11 + floor, f12 + floor + max2, paint);
-                    i11++;
-                    i3 = i12;
-                }
+    static {
+        z20 z20Var = new z20("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
+        d = z20Var;
+        z20 z20Var2 = new z20("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
+        e = z20Var2;
+        z20 z20Var3 = new z20("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
+        f = z20Var3;
+        z20 z20Var4 = new z20("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
+        h = z20Var4;
+        z20 z20Var5 = new z20("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
+        n = z20Var5;
+        z20 z20Var6 = new z20("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
+        r = z20Var6;
+        z20 z20Var7 = new z20("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
+        s = z20Var7;
+        z20 z20Var8 = new z20("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
+        w = z20Var8;
+        z20 z20Var9 = new z20();
+        x = z20Var9;
+        y = new z20[]{z20Var, z20Var2, z20Var3, z20Var4, z20Var5, z20Var6, z20Var7, z20Var8, z20Var9};
+    }
+
+    public z20() {
+        this.a = "hints_controller_" + this;
+        this.b = 3;
+        this.c = 1.0f;
+    }
+
+    public static z20 valueOf(String str) {
+        return (z20) Enum.valueOf(z20.class, str);
+    }
+
+    public static z20[] values() {
+        return (z20[]) y.clone();
+    }
+
+    public final void a() {
+        org.telegram.messenger.qp.e1().edit().putInt(this.a, this.b).apply();
+    }
+
+    public final void b() {
+        SharedPreferences e12 = org.telegram.messenger.qp.e1();
+        String str = this.a;
+        org.telegram.messenger.qp.e1().edit().putInt(str, e12.getInt(str, 0) + 1).apply();
+    }
+
+    public final boolean c() {
+        if (org.telegram.messenger.qp.e1().getInt(this.a, 0) < this.b) {
+            float f10 = this.c;
+            if (f10 >= 1.0f) {
+                return true;
             }
-            return;
-        }
-        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
-        float f13 = 12.0f * floor2;
-        float max3 = Math.max(0.0f, (getBounds().width() - f13) / 2.0f);
-        float max4 = Math.max(0.0f, (getBounds().height() - f13) / 2.0f);
-        int i13 = 0;
-        int i14 = 0;
-        while (i14 < 12) {
-            int i15 = i13;
-            for (int i16 = 0; i16 < 12; i16++) {
-                paint.setColor(iArr[Math.abs((this.a[i15 / 8] >> (i15 % 8)) & 3) % 4]);
-                float f14 = (i16 * floor2) + max3;
-                float f15 = i14 * floor2;
-                canvas.drawRect(f14, f15 + max4, f14 + floor2, f15 + floor2 + max4, paint);
-                i15 += 2;
+            if (f10 > 0.0f && Utilities.c.nextFloat() < f10) {
+                return true;
             }
-            i14++;
-            i13 = i15;
         }
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public z20(String str, int i7, String str2, int i10, float f10) {
+        this.a = str2;
+        this.b = i10;
+        this.c = f10;
     }
 }

@@ -1,184 +1,77 @@
 package ud;
 
-import k2.p1;
-import x7.e5;
+import c8.t9;
+import java.util.Iterator;
 
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class d extends l {
-    public static boolean e(String str, String str2) {
-        kotlin.jvm.internal.j.e(str, "<this>");
-        return i(0, 2, str, str2) >= 0;
+public class d implements Iterable {
+    public final int a;
+    public final int b;
+    public final int c;
+
+    public d(int i7, int i10, int i11) {
+        if (i11 == 0) {
+            throw new IllegalArgumentException("Step must be non-zero.");
+        }
+        if (i11 == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
+        }
+        this.a = i7;
+        this.b = t9.a(i7, i10, i11);
+        this.c = i11;
     }
 
-    public static final int f(CharSequence charSequence) {
-        kotlin.jvm.internal.j.e(charSequence, "<this>");
-        return charSequence.length() - 1;
+    public boolean equals(Object obj) {
+        if (!(obj instanceof d)) {
+            return false;
+        }
+        if (isEmpty() && ((d) obj).isEmpty()) {
+            return true;
+        }
+        d dVar = (d) obj;
+        return this.a == dVar.a && this.b == dVar.b && this.c == dVar.c;
     }
 
-    public static final int g(int i3, CharSequence other, String string, boolean z10) {
-        String str;
-        boolean z11;
-        boolean regionMatches;
-        kotlin.jvm.internal.j.e(other, "<this>");
-        kotlin.jvm.internal.j.e(string, "string");
-        if (!z10 && (other instanceof String)) {
-            return ((String) other).indexOf(string, i3);
-        }
-        int length = other.length();
-        if (i3 < 0) {
-            i3 = 0;
-        }
-        int length2 = other.length();
-        if (length > length2) {
-            length = length2;
-        }
-        rd.e eVar = new rd.e(i3, length, 1);
-        boolean z12 = other instanceof String;
-        int i10 = eVar.c;
-        int i11 = eVar.b;
-        int i12 = eVar.a;
-        if (z12 && (string instanceof String)) {
-            if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
-                return -1;
-            }
-            int i13 = i12;
-            while (true) {
-                String other2 = (String) other;
-                int length3 = string.length();
-                kotlin.jvm.internal.j.e(string, "<this>");
-                kotlin.jvm.internal.j.e(other2, "other");
-                if (z10) {
-                    str = string;
-                    z11 = z10;
-                    regionMatches = str.regionMatches(z11, 0, other2, i13, length3);
-                } else {
-                    regionMatches = string.regionMatches(0, other2, i13, length3);
-                    str = string;
-                    z11 = z10;
-                }
-                if (regionMatches) {
-                    return i13;
-                }
-                if (i13 == i11) {
-                    return -1;
-                }
-                i13 += i10;
-                string = str;
-                z10 = z11;
-            }
-        } else {
-            if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
-                return -1;
-            }
-            while (true) {
-                int length4 = string.length();
-                kotlin.jvm.internal.j.e(other, "other");
-                if (i12 >= 0 && string.length() - length4 >= 0 && i12 <= other.length() - length4) {
-                    for (int i14 = 0; i14 < length4; i14++) {
-                        if (e5.a(string.charAt(i14), other.charAt(i12 + i14), z10)) {
-                        }
-                    }
-                    return i12;
-                }
-                if (i12 == i11) {
-                    return -1;
-                }
-                i12 += i10;
-            }
-        }
-    }
-
-    public static int h(char c2, int i3, int i10, CharSequence charSequence) {
-        if ((i10 & 2) != 0) {
-            i3 = 0;
-        }
-        kotlin.jvm.internal.j.e(charSequence, "<this>");
-        if (charSequence instanceof String) {
-            return ((String) charSequence).indexOf(c2, i3);
-        }
-        char[] cArr = {c2};
-        if (charSequence instanceof String) {
-            return ((String) charSequence).indexOf(cArr[0], i3);
-        }
-        if (i3 < 0) {
-            i3 = 0;
-        }
-        int f10 = f(charSequence);
-        if (i3 > f10) {
+    public int hashCode() {
+        if (isEmpty()) {
             return -1;
         }
-        while (!e5.a(cArr[0], charSequence.charAt(i3), false)) {
-            if (i3 == f10) {
-                return -1;
-            }
-            i3++;
-        }
-        return i3;
+        return (((this.a * 31) + this.b) * 31) + this.c;
     }
 
-    public static /* synthetic */ int i(int i3, int i10, CharSequence charSequence, String str) {
-        if ((i10 & 2) != 0) {
-            i3 = 0;
-        }
-        return g(i3, charSequence, str, false);
+    public boolean isEmpty() {
+        int i7 = this.c;
+        int i10 = this.b;
+        int i11 = this.a;
+        return i7 > 0 ? i11 > i10 : i11 < i10;
     }
 
-    public static boolean j(String str) {
-        kotlin.jvm.internal.j.e(str, "<this>");
-        for (int i3 = 0; i3 < str.length(); i3++) {
-            char charAt = str.charAt(i3);
-            if (!Character.isWhitespace(charAt) && !Character.isSpaceChar(charAt)) {
-                return false;
-            }
-        }
-        return true;
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new b(this.a, this.b, this.c);
     }
 
-    public static String k(int i3, String str) {
-        CharSequence charSequence;
-        kotlin.jvm.internal.j.e(str, "<this>");
-        if (i3 < 0) {
-            throw new IllegalArgumentException(p1.j(i3, "Desired length ", " is less than zero."));
-        }
-        if (i3 <= str.length()) {
-            charSequence = str.subSequence(0, str.length());
+    public String toString() {
+        StringBuilder sb2;
+        int i7 = this.b;
+        int i10 = this.a;
+        int i11 = this.c;
+        if (i11 > 0) {
+            sb2 = new StringBuilder();
+            sb2.append(i10);
+            sb2.append("..");
+            sb2.append(i7);
+            sb2.append(" step ");
+            sb2.append(i11);
         } else {
-            StringBuilder sb2 = new StringBuilder(i3);
-            sb2.append((CharSequence) str);
-            int length = i3 - str.length();
-            int i10 = 1;
-            if (1 <= length) {
-                while (true) {
-                    sb2.append(' ');
-                    if (i10 == length) {
-                        break;
-                    }
-                    i10++;
-                }
-            }
-            charSequence = sb2;
+            sb2 = new StringBuilder();
+            sb2.append(i10);
+            sb2.append(" downTo ");
+            sb2.append(i7);
+            sb2.append(" step ");
+            sb2.append(-i11);
         }
-        return charSequence.toString();
-    }
-
-    public static String l(String str, String delimiter, String str2) {
-        kotlin.jvm.internal.j.e(delimiter, "delimiter");
-        int i3 = i(0, 6, str, delimiter);
-        if (i3 == -1) {
-            return str2;
-        }
-        String substring = str.substring(delimiter.length() + i3, str.length());
-        kotlin.jvm.internal.j.d(substring, "substring(...)");
-        return substring;
-    }
-
-    public static String m(String str, String str2) {
-        int lastIndexOf = str.lastIndexOf(46, f(str));
-        if (lastIndexOf == -1) {
-            return str2;
-        }
-        String substring = str.substring(lastIndexOf + 1, str.length());
-        kotlin.jvm.internal.j.d(substring, "substring(...)");
-        return substring;
+        return sb2.toString();
     }
 }

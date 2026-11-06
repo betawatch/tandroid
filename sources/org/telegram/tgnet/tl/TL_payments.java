@@ -10,43 +10,43 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.m;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class TL_payments {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class StarGiftActiveAuctions extends TLObject {
-        public static StarGiftActiveAuctions TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (StarGiftActiveAuctions) TLObject.TLdeserialize(StarGiftActiveAuctions.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static StarGiftActiveAuctions TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (StarGiftActiveAuctions) TLObject.TLdeserialize(StarGiftActiveAuctions.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static StarGiftActiveAuctions fromConstructor(int i3) {
-            if (i3 == -1359565892) {
+        private static StarGiftActiveAuctions fromConstructor(int i7) {
+            if (i7 == -1359565892) {
                 return new TL_starGiftActiveAuctions();
             }
-            if (i3 != -617358640) {
+            if (i7 != -617358640) {
                 return null;
             }
             return new TL_starGiftActiveAuctionsNotModified();
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_StarGiftAuctionAcquiredGifts extends TLObject {
         public static final int constructor = 2103169520;
         public ArrayList<TL_stars.TL_StarGiftAuctionAcquiredGift> gifts = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
 
-        public static TL_StarGiftAuctionAcquiredGifts TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (TL_StarGiftAuctionAcquiredGifts) TLObject.TLdeserialize(TL_StarGiftAuctionAcquiredGifts.class, 2103169520 != i3 ? null : new TL_StarGiftAuctionAcquiredGifts(), inputSerializedData, i3, z10);
+        public static TL_StarGiftAuctionAcquiredGifts TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (TL_StarGiftAuctionAcquiredGifts) TLObject.TLdeserialize(TL_StarGiftAuctionAcquiredGifts.class, 2103169520 != i7 ? null : new TL_StarGiftAuctionAcquiredGifts(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.gifts = Vector.deserialize(inputSerializedData, new b(2), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.gifts = Vector.deserialize(inputSerializedData, new b(2), z9);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z9);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -58,7 +58,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_StarGiftAuctionState extends TLObject {
         public static final int constructor = 1798960364;
         public ArrayList<TLRPC.Chat> chats;
@@ -68,18 +68,18 @@ public class TL_payments {
         public TL_stars.TL_StarGiftAuctionUserState user_state;
         public ArrayList<TLRPC.User> users;
 
-        public static TL_StarGiftAuctionState TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (TL_StarGiftAuctionState) TLObject.TLdeserialize(TL_StarGiftAuctionState.class, 1798960364 != i3 ? null : new TL_StarGiftAuctionState(), inputSerializedData, i3, z10);
+        public static TL_StarGiftAuctionState TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (TL_StarGiftAuctionState) TLObject.TLdeserialize(TL_StarGiftAuctionState.class, 1798960364 != i7 ? null : new TL_StarGiftAuctionState(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.gift = TL_stars.StarGift.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.timeout = inputSerializedData.readInt32(z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.gift = TL_stars.StarGift.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.timeout = inputSerializedData.readInt32(z9);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z9);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -94,7 +94,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_getStarGiftActiveAuctions extends TLMethod<StarGiftActiveAuctions> {
         public static final int constructor = -1513074355;
         public long hash;
@@ -106,12 +106,12 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public StarGiftActiveAuctions deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return StarGiftActiveAuctions.TLdeserialize(inputSerializedData, i3, z10);
+        public StarGiftActiveAuctions deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return StarGiftActiveAuctions.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_getStarGiftAuctionAcquiredGifts extends TLMethod<TL_StarGiftAuctionAcquiredGifts> {
         public static final int constructor = 1805831148;
         public long gift_id;
@@ -123,12 +123,12 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TL_StarGiftAuctionAcquiredGifts deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TL_StarGiftAuctionAcquiredGifts.TLdeserialize(inputSerializedData, i3, z10);
+        public TL_StarGiftAuctionAcquiredGifts deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TL_StarGiftAuctionAcquiredGifts.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_getStarGiftAuctionState extends TLMethod<TL_StarGiftAuctionState> {
         public static final int constructor = 1553986774;
         public TL_stars.InputStarGiftAuction auction;
@@ -142,12 +142,12 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TL_StarGiftAuctionState deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TL_StarGiftAuctionState.TLdeserialize(inputSerializedData, i3, z10);
+        public TL_StarGiftAuctionState deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TL_StarGiftAuctionState.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_resolveStarGiftOffer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -372344804;
         public boolean decline;
@@ -161,12 +161,12 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_sendStarGiftOffer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1883739327;
         public long allow_paid_stars;
@@ -192,12 +192,12 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_starGiftActiveAuctions extends StarGiftActiveAuctions {
         public static final int constructor = -1359565892;
         public ArrayList<TL_stars.TL_StarGiftActiveAuctionState> auctions = new ArrayList<>();
@@ -205,10 +205,10 @@ public class TL_payments {
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.auctions = Vector.deserialize(inputSerializedData, new b(3), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.auctions = Vector.deserialize(inputSerializedData, new b(3), z9);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z9);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -220,15 +220,15 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class connectStarRefBot extends TLObject {
         public static final int constructor = 2127901834;
         public TLRPC.InputUser bot;
         public TLRPC.InputPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return connectedStarRefBots.TLdeserialize(inputSerializedData, i3, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return connectedStarRefBots.TLdeserialize(inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -239,7 +239,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class connectedBotStarRef extends TLObject {
         public static final int constructor = 429997937;
         public long bot_id;
@@ -252,24 +252,24 @@ public class TL_payments {
         public boolean revoked;
         public String url;
 
-        public static connectedBotStarRef TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (connectedBotStarRef) TLObject.TLdeserialize(connectedBotStarRef.class, 429997937 != i3 ? null : new connectedBotStarRef(), inputSerializedData, i3, z10);
+        public static connectedBotStarRef TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (connectedBotStarRef) TLObject.TLdeserialize(connectedBotStarRef.class, 429997937 != i7 ? null : new connectedBotStarRef(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.revoked = TLObject.hasFlag(readInt32, 2);
-            this.url = inputSerializedData.readString(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.bot_id = inputSerializedData.readInt64(z10);
-            this.commission_permille = inputSerializedData.readInt32(z10);
+            this.url = inputSerializedData.readString(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.bot_id = inputSerializedData.readInt64(z9);
+            this.commission_permille = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.duration_months = inputSerializedData.readInt32(z10);
+                this.duration_months = inputSerializedData.readInt32(z9);
             }
-            this.participants = inputSerializedData.readInt64(z10);
-            this.revenue = inputSerializedData.readInt64(z10);
+            this.participants = inputSerializedData.readInt64(z9);
+            this.revenue = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -290,22 +290,23 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class connectedStarRefBots extends TLObject {
         public static final int constructor = -1730811363;
         public int count;
         public ArrayList<connectedBotStarRef> connected_bots = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static connectedStarRefBots TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (connectedStarRefBots) TLObject.TLdeserialize(connectedStarRefBots.class, -1730811363 != i3 ? null : new connectedStarRefBots(), inputSerializedData, i3, z10);
+        public static connectedStarRefBots TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (connectedStarRefBots) TLObject.TLdeserialize(connectedStarRefBots.class, -1730811363 != i7 ? null : new connectedStarRefBots(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.count = inputSerializedData.readInt32(z10);
-            this.connected_bots = Vector.deserialize(inputSerializedData, new b(4), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.count = inputSerializedData.readInt32(z9);
+            int i7 = 4;
+            this.connected_bots = Vector.deserialize(inputSerializedData, new b(i7), z9);
+            this.users = Vector.deserialize(inputSerializedData, new m(i7), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -317,7 +318,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class editConnectedStarRefBot extends TLObject {
         public static final int constructor = -453204829;
         public int flags;
@@ -326,8 +327,8 @@ public class TL_payments {
         public boolean revoked;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return connectedStarRefBots.TLdeserialize(inputSerializedData, i3, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return connectedStarRefBots.TLdeserialize(inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -341,15 +342,15 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class getConnectedStarRefBot extends TLObject {
         public static final int constructor = -1210476304;
         public TLRPC.InputUser bot;
         public TLRPC.InputPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return connectedStarRefBots.TLdeserialize(inputSerializedData, i3, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return connectedStarRefBots.TLdeserialize(inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -360,7 +361,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class getConnectedStarRefBots extends TLObject {
         public static final int constructor = 1483318611;
         public int flags;
@@ -370,8 +371,8 @@ public class TL_payments {
         public TLRPC.InputPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return connectedStarRefBots.TLdeserialize(inputSerializedData, i3, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return connectedStarRefBots.TLdeserialize(inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -387,7 +388,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class getSuggestedStarRefBots extends TLObject {
         public static final int constructor = 225134839;
         public int flags;
@@ -398,8 +399,8 @@ public class TL_payments {
         public TLRPC.InputPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return suggestedStarRefBots.TLdeserialize(inputSerializedData, i3, z10);
+        public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return suggestedStarRefBots.TLdeserialize(inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -416,7 +417,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class starRefProgram extends TLObject {
         public static final int constructor = -586389774;
         public long bot_id;
@@ -426,23 +427,23 @@ public class TL_payments {
         public int end_date;
         public int flags;
 
-        public static starRefProgram TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (starRefProgram) TLObject.TLdeserialize(starRefProgram.class, -586389774 != i3 ? null : new starRefProgram(), inputSerializedData, i3, z10);
+        public static starRefProgram TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (starRefProgram) TLObject.TLdeserialize(starRefProgram.class, -586389774 != i7 ? null : new starRefProgram(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.bot_id = inputSerializedData.readInt64(z10);
-            this.commission_permille = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.bot_id = inputSerializedData.readInt64(z9);
+            this.commission_permille = inputSerializedData.readInt32(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.duration_months = inputSerializedData.readInt32(z10);
+                this.duration_months = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.end_date = inputSerializedData.readInt32(z10);
+                this.end_date = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.daily_revenue_per_user = TL_stars.StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.daily_revenue_per_user = TL_stars.StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -464,7 +465,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class suggestedStarRefBots extends TLObject {
         public static final int constructor = -1261053863;
         public int count;
@@ -473,18 +474,18 @@ public class TL_payments {
         public ArrayList<starRefProgram> suggested_bots = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static suggestedStarRefBots TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (suggestedStarRefBots) TLObject.TLdeserialize(suggestedStarRefBots.class, -1261053863 != i3 ? null : new suggestedStarRefBots(), inputSerializedData, i3, z10);
+        public static suggestedStarRefBots TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (suggestedStarRefBots) TLObject.TLdeserialize(suggestedStarRefBots.class, -1261053863 != i7 ? null : new suggestedStarRefBots(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.count = inputSerializedData.readInt32(z10);
-            this.suggested_bots = Vector.deserialize(inputSerializedData, new b(5), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.count = inputSerializedData.readInt32(z9);
+            this.suggested_bots = Vector.deserialize(inputSerializedData, new b(5), z9);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.next_offset = inputSerializedData.readString(z10);
+                this.next_offset = inputSerializedData.readString(z9);
             }
         }
 
@@ -501,7 +502,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_starGiftActiveAuctionsNotModified extends StarGiftActiveAuctions {
         public static final int constructor = -617358640;
 
@@ -511,7 +512,7 @@ public class TL_payments {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
         }
     }
 }

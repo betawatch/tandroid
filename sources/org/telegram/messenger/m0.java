@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class m0 implements k0 {
     public Set b = Collections.EMPTY_SET;
@@ -19,8 +19,8 @@ public final class m0 implements k0 {
             TLRPC.TL_jsonArray tL_jsonArray = (TLRPC.TL_jsonArray) jSONValue;
             HashSet hashSet = new HashSet();
             int size = tL_jsonArray.value.size();
-            for (int i3 = 0; i3 < size; i3++) {
-                TLRPC.JSONValue jSONValue2 = tL_jsonArray.value.get(i3);
+            for (int i7 = 0; i7 < size; i7++) {
+                TLRPC.JSONValue jSONValue2 = tL_jsonArray.value.get(i7);
                 if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
                     hashSet.add(Long.valueOf((long) ((TLRPC.TL_jsonNumber) jSONValue2).value));
                 } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {

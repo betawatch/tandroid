@@ -1,20 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class rj extends org.telegram.ui.Components.n41 {
-    public final /* synthetic */ wm O;
+public final class rj extends org.telegram.ui.Components.yc {
+    public final /* synthetic */ an d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rj(wm wmVar, Context context) {
+    public rj(an anVar, Context context) {
         super(context);
-        this.O = wmVar;
+        this.d = anVar;
     }
 
-    @Override // org.telegram.ui.Components.n41
-    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
-        return this.O.ya;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        an anVar = this.d;
+        qj qjVar = anVar.Z;
+        if (qjVar != null) {
+            qjVar.invalidate();
+        }
+        if (getVisibility() != 8) {
+            anVar.E9(true);
+            FrameLayout frameLayout = anVar.Q;
+            if (frameLayout != null) {
+                frameLayout.setTranslationY(f10);
+            }
+            anVar.K9();
+            anVar.M9();
+            View view = anVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i7) {
+        FrameLayout frameLayout;
+        super.setVisibility(i7);
+        if (i7 != 8 || (frameLayout = this.d.Q) == null) {
+            return;
+        }
+        frameLayout.setTranslationY(0.0f);
     }
 }

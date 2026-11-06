@@ -22,8 +22,8 @@ public final class p1 implements x0 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -31,52 +31,52 @@ public final class p1 implements x0 {
         return j$.com.android.tools.r8.a.z(this, consumer);
     }
 
-    public p1(int[] iArr, int i3, int i10, int i11) {
+    public p1(int[] iArr, int i7, int i10, int i11) {
         this.a = iArr;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
         this.d = i11 | 16448;
     }
 
     @Override // j$.util.d1, j$.util.Spliterator
     public final x0 trySplit() {
-        int i3 = this.b;
-        int i10 = (this.c + i3) >>> 1;
-        if (i3 >= i10) {
+        int i7 = this.b;
+        int i10 = (this.c + i7) >>> 1;
+        if (i7 >= i10) {
             return null;
         }
         this.b = i10;
-        return new p1(this.a, i3, i10, this.d);
+        return new p1(this.a, i7, i10, this.d);
     }
 
     @Override // j$.util.d1
     public final void forEachRemaining(IntConsumer intConsumer) {
-        int i3;
+        int i7;
         intConsumer.getClass();
         int[] iArr = this.a;
         int length = iArr.length;
         int i10 = this.c;
-        if (length < i10 || (i3 = this.b) < 0) {
+        if (length < i10 || (i7 = this.b) < 0) {
             return;
         }
         this.b = i10;
-        if (i3 < i10) {
+        if (i7 < i10) {
             do {
-                intConsumer.accept(iArr[i3]);
-                i3++;
-            } while (i3 < i10);
+                intConsumer.accept(iArr[i7]);
+                i7++;
+            } while (i7 < i10);
         }
     }
 
     @Override // j$.util.d1
     public final boolean tryAdvance(IntConsumer intConsumer) {
         intConsumer.getClass();
-        int i3 = this.b;
-        if (i3 < 0 || i3 >= this.c) {
+        int i7 = this.b;
+        if (i7 < 0 || i7 >= this.c) {
             return false;
         }
-        this.b = i3 + 1;
-        intConsumer.accept(this.a[i3]);
+        this.b = i7 + 1;
+        intConsumer.accept(this.a[i7]);
         return true;
     }
 

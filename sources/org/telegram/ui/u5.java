@@ -1,53 +1,39 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class u5 extends sg.a {
-    public final String c;
-    public final TL_stories.Boost d;
-    public TL_stories.PrepaidGiveaway e;
-    public boolean f;
-    public final int g;
+public final /* synthetic */ class u5 implements b60 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x5 b;
+    public final /* synthetic */ org.telegram.messenger.s2 c;
 
-    public u5(int i3, String str) {
-        super(i3, false);
-        this.c = str;
+    public /* synthetic */ u5(x5 x5Var, org.telegram.messenger.s2 s2Var, int i7) {
+        this.a = i7;
+        this.b = x5Var;
+        this.c = s2Var;
     }
 
-    public final boolean equals(Object obj) {
-        TL_stories.PrepaidGiveaway prepaidGiveaway;
-        boolean z10 = this.f;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.b60
+    public final void a(int i7) {
+        switch (this.a) {
+            case 0:
+                x5 x5Var = this.b;
+                org.telegram.messenger.s2 s2Var = this.c;
+                if (i7 == 4) {
+                    x5Var.d.remove(s2Var);
+                    x5Var.Z();
+                } else {
+                    s2Var.b = i7;
+                    org.telegram.messenger.g0.b4(x5Var.b);
+                }
+                x5Var.getMessagesController().r7.h(x5Var.e, x5Var.d);
+                break;
+            default:
+                this.c.b = i7;
+                x5 x5Var2 = this.b;
+                x5Var2.getMessagesController().r7.h(x5Var2.e, x5Var2.d);
+                org.telegram.messenger.g0.b4(x5Var2.b);
+                break;
         }
-        if (obj == null || u5.class != obj.getClass()) {
-            return false;
-        }
-        u5 u5Var = (u5) obj;
-        TL_stories.Boost boost = u5Var.d;
-        boolean z11 = u5Var.f;
-        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
-        if (prepaidGiveaway2 != null && (prepaidGiveaway = u5Var.e) != null) {
-            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
-        }
-        TL_stories.Boost boost2 = this.d;
-        if (boost2 == null || boost == null) {
-            return true;
-        }
-        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == u5Var.g;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
-    }
-
-    public u5(TL_stories.Boost boost, boolean z10, int i3) {
-        super(5, true);
-        this.d = boost;
-        this.f = z10;
-        this.g = i3;
     }
 }

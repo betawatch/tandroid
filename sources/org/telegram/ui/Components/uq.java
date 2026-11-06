@@ -11,7 +11,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class uq extends Drawable {
     public final Drawable a;
@@ -26,12 +26,12 @@ public final class uq extends Drawable {
     public float j;
     public float k;
 
-    public uq(Context context, int i3, int i10) {
+    public uq(Context context, int i7, int i10) {
         Paint paint = new Paint(1);
         this.c = paint;
         Paint paint2 = new Paint(1);
         this.d = paint2;
-        this.a = context.getDrawable(i3);
+        this.a = context.getDrawable(i7);
         this.f = i10;
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
@@ -43,13 +43,13 @@ public final class uq extends Drawable {
         paint2.setStrokeWidth(org.telegram.messenger.g0.N(2.5f));
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.h != z10) {
-            this.h = z10;
-            if (z11) {
-                this.g = z10 ? 0.0f : 1.0f;
+    public final void a(boolean z9, boolean z10) {
+        if (this.h != z9) {
+            this.h = z9;
+            if (z10) {
+                this.g = z9 ? 0.0f : 1.0f;
             } else {
-                this.g = z10 ? 1.0f : 0.0f;
+                this.g = z9 ? 1.0f : 0.0f;
             }
             invalidateSelf();
         }
@@ -66,9 +66,9 @@ public final class uq extends Drawable {
     */
     public final void draw(Canvas canvas) {
         int x02;
-        int i3;
-        boolean z10 = this.h;
-        if (z10) {
+        int i7;
+        boolean z9 = this.h;
+        if (z9) {
             float f10 = this.g;
             if (f10 != 1.0f) {
                 this.g = f10 + 0.10666667f;
@@ -78,10 +78,10 @@ public final class uq extends Drawable {
                 }
                 int i10 = this.f;
                 x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.k6.x0(null, i10, false);
-                i3 = this.e;
+                i7 = this.e;
                 Drawable drawable = this.a;
                 Paint paint = this.c;
-                if (i3 != x02) {
+                if (i7 != x02) {
                     this.e = x02;
                     paint.setColor(x02);
                     drawable.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.MULTIPLY));
@@ -93,7 +93,7 @@ public final class uq extends Drawable {
                 Rect bounds = drawable.getBounds();
                 RectF rectF = this.b;
                 rectF.set(bounds);
-                canvas.saveLayerAlpha(rectF, org.telegram.messenger.hs.e4, 31);
+                canvas.saveLayerAlpha(rectF, org.telegram.messenger.qs.e4, 31);
                 drawable.draw(canvas);
                 float N = org.telegram.messenger.g0.N(4.5f) + rectF.left + this.i + this.j;
                 float N2 = ((org.telegram.messenger.g0.N(4.5f) + rectF.top) - org.telegram.messenger.g0.L(1.0f)) + this.j;
@@ -102,11 +102,11 @@ public final class uq extends Drawable {
                 if (this.h) {
                     float f11 = this.g;
                     L = ((L - N) * f11) + N;
-                    L2 = com.google.android.recaptcha.internal.a.y(L2, N2, f11, N2);
+                    L2 = com.google.android.recaptcha.internal.a.z(L2, N2, f11, N2);
                 } else {
                     float f12 = this.g;
-                    N = com.google.android.recaptcha.internal.a.y(1.0f, f12, L - N, N);
-                    N2 = com.google.android.recaptcha.internal.a.y(1.0f, f12, L2 - N2, N2);
+                    N = com.google.android.recaptcha.internal.a.z(1.0f, f12, L - N, N);
+                    N2 = com.google.android.recaptcha.internal.a.z(1.0f, f12, L2 - N2, N2);
                 }
                 float f13 = L2;
                 float f14 = N2;
@@ -123,7 +123,7 @@ public final class uq extends Drawable {
                 return;
             }
         }
-        if (!z10) {
+        if (!z9) {
             float f17 = this.g;
             if (f17 != 0.0f) {
                 this.g = f17 - 0.10666667f;
@@ -136,10 +136,10 @@ public final class uq extends Drawable {
         int i102 = this.f;
         if (i102 >= 0) {
         }
-        i3 = this.e;
+        i7 = this.e;
         Drawable drawable2 = this.a;
         Paint paint3 = this.c;
-        if (i3 != x02) {
+        if (i7 != x02) {
         }
         if (this.g != 0.0f) {
         }
@@ -161,13 +161,13 @@ public final class uq extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i3, int i10, int i11, int i12) {
-        super.setBounds(i3, i10, i11, i12);
-        this.a.setBounds(i3, i10, i11, i12);
+    public final void setBounds(int i7, int i10, int i11, int i12) {
+        super.setBounds(i7, i10, i11, i12);
+        this.a.setBounds(i7, i10, i11, i12);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

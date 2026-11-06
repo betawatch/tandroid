@@ -1,305 +1,304 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import android.os.AsyncTask;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class z61 extends FrameLayout {
-    public static final /* synthetic */ int J = 0;
-    public AnimatorSet E;
-    public int F;
-    public int G;
-    public final f51 H;
-    public final /* synthetic */ d71 I;
-    public final ImageReceiver a;
-    public boolean b;
-    public final TextPaint c;
-    public StaticLayout d;
-    public StaticLayout e;
-    public final Paint f;
-    public final Paint h;
-    public final Paint n;
-    public int r;
-    public int s;
-    public int w;
-    public int x;
-    public boolean y;
+public final class z61 extends AsyncTask {
+    public final /* synthetic */ int a;
+    public String b;
+    public final String[] c;
+    public final /* synthetic */ f71 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z61(d71 d71Var, Context context) {
-        super(context);
-        this.I = d71Var;
-        this.y = true;
-        this.H = new f51(this, 4);
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-15095832);
-        Paint paint2 = new Paint();
-        this.h = paint2;
-        paint2.setColor(-6975081);
-        Paint paint3 = new Paint(1);
-        this.n = paint3;
-        paint3.setColor(-1);
-        this.a = new ImageReceiver(this);
-    }
-
-    public final void a() {
-        f51 f51Var = this.H;
-        org.telegram.messenger.g0.r(f51Var);
-        if (this.y && this.I.a.d0()) {
-            org.telegram.messenger.g0.i3(f51Var, 3000L);
+    public z61(f71 f71Var, String str, int i7) {
+        this.a = i7;
+        switch (i7) {
+            case 1:
+                this.d = f71Var;
+                this.c = new String[4];
+                this.b = str;
+                break;
+            case 2:
+                this.d = f71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 3:
+                this.d = f71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 4:
+                this.d = f71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            default:
+                this.d = f71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
         }
     }
 
-    public final void b(int i3) {
-        if (this.s == i3 || i3 < 0 || this.I.I) {
-            return;
-        }
-        this.s = i3;
-        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.g0.g0(this.s, false, false), this.c, org.telegram.messenger.g0.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        if (staticLayout.getLineCount() > 0) {
-            this.r = (int) Math.ceil(this.d.getLineWidth(0));
-        }
-        invalidate();
-    }
-
-    public final void c(int i3) {
-        if (this.b || i3 < 0 || this.I.I) {
-            return;
-        }
-        this.w = i3;
-        this.e = new StaticLayout(org.telegram.messenger.g0.g0(this.w, false, false), this.c, org.telegram.messenger.g0.L(1000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        invalidate();
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        if (this.y == z10) {
-            return;
-        }
-        this.y = z10;
-        AnimatorSet animatorSet = this.E;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        boolean z12 = this.y;
-        Property property = View.ALPHA;
-        if (z12) {
-            if (z11) {
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.E = animatorSet2;
-                animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<z61, Float>) property, 1.0f));
-                this.E.setDuration(150L);
-                this.E.addListener(new y61(this, 0));
-                this.E.start();
-            } else {
-                setAlpha(1.0f);
-            }
-        } else if (z11) {
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            this.E = animatorSet3;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(this, (Property<z61, Float>) property, 0.0f));
-            this.E.setDuration(150L);
-            this.E.addListener(new y61(this, 1));
-            this.E.start();
-        } else {
-            setAlpha(0.0f);
-        }
-        a();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int L;
-        int L2;
-        Canvas canvas2;
-        int i3;
-        d71 d71Var = this.I;
-        if (d71Var.Q) {
-            if (d71Var.N && d71Var.O != 0.0f) {
-                long currentTimeMillis = System.currentTimeMillis();
-                long j10 = currentTimeMillis - d71Var.M;
-                d71Var.M = currentTimeMillis;
-                float f10 = d71Var.O - (j10 / 150.0f);
-                d71Var.O = f10;
-                if (f10 < 0.0f) {
-                    d71Var.O = 0.0f;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                String[] strArr = this.c;
+                Locale locale = Locale.US;
+                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
+                this.d.getClass();
+                String c10 = f71.c(this, str, null, true);
+                if (isCancelled()) {
+                    return null;
                 }
-                invalidate();
-            }
-            float f11 = d71Var.O;
-            ImageReceiver imageReceiver = this.a;
-            imageReceiver.setAlpha(f11);
-            imageReceiver.h(canvas, null);
-        }
-        if (d71Var.a.d == null || d71Var.I) {
-            return;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        if (!d71Var.V) {
-            if (this.d != null) {
-                canvas.save();
-                canvas.translate((measuredWidth - org.telegram.messenger.g0.L(58.0f)) - this.r, measuredHeight - org.telegram.messenger.g0.L((d71Var.U ? 6 : 10) + 29));
-                this.d.draw(canvas);
-                canvas.restore();
-            }
-            if (this.e != null) {
-                canvas.save();
-                canvas.translate(org.telegram.messenger.g0.L(18.0f), measuredHeight - org.telegram.messenger.g0.L((d71Var.U ? 6 : 10) + 29));
-                this.e.draw(canvas);
-                canvas.restore();
-            }
-        }
-        if (this.s != 0) {
-            int i10 = 0;
-            if (d71Var.V) {
-                L = measuredHeight - org.telegram.messenger.g0.L(3.0f);
-                L2 = org.telegram.messenger.g0.L(7.0f);
-            } else if (d71Var.U) {
-                L = measuredHeight - org.telegram.messenger.g0.L(29.0f);
-                i10 = org.telegram.messenger.g0.L(36.0f) + this.r;
-                measuredWidth = (measuredWidth - org.telegram.messenger.g0.L(76.0f)) - this.r;
-                L2 = org.telegram.messenger.g0.L(28.0f);
-            } else {
-                L = measuredHeight - org.telegram.messenger.g0.L(13.0f);
-                L2 = org.telegram.messenger.g0.L(12.0f);
-            }
-            int i11 = measuredHeight - L2;
-            boolean z10 = d71Var.U;
-            Paint paint = this.h;
-            if (z10) {
-                canvas.drawRect(i10, L, measuredWidth, org.telegram.messenger.g0.L(3.0f) + L, paint);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-            }
-            int i12 = this.b ? this.G : ((int) ((this.w / this.s) * (measuredWidth - i10))) + i10;
-            int i13 = this.x;
-            if (i13 != 0 && (i3 = this.s) != 0) {
-                float f12 = i10;
-                float f13 = L;
-                float A = a1.g.A(i13, i3, measuredWidth - i10, f12);
-                float L3 = org.telegram.messenger.g0.L(3.0f) + L;
-                if (d71Var.U) {
-                    paint = this.n;
+                try {
+                    Matcher matcher = f71.r0.matcher(c10);
+                    if (matcher.find()) {
+                        JSONArray jSONArray = new JSONArray(matcher.group(1));
+                        for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+                            JSONArray jSONArray2 = jSONArray.getJSONArray(i7);
+                            if (jSONArray2.length() != 0) {
+                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
+                                if (jSONObject.has("file")) {
+                                    strArr[0] = jSONObject.getString("file");
+                                    strArr[1] = "other";
+                                }
+                            }
+                        }
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
                 }
-                canvas2.drawRect(f12, f13, A, L3, paint);
-            }
-            float f14 = i12;
-            float L4 = org.telegram.messenger.g0.L(3.0f) + L;
-            Paint paint2 = this.f;
-            canvas2.drawRect(i10, L, f14, L4, paint2);
-            if (d71Var.V) {
-                return;
-            }
-            canvas2.drawCircle(f14, i11, org.telegram.messenger.g0.L(this.b ? 7.0f : 5.0f), paint2);
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr[0];
+            case 1:
+                String[] strArr2 = this.c;
+                Locale locale2 = Locale.US;
+                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
+                this.d.getClass();
+                String c11 = f71.c(this, str2, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject2 = new JSONObject(c11).getJSONObject("file_versions").getJSONObject("mobile");
+                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
+                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
+                    if (string != null && string2 != null) {
+                        strArr2[0] = string;
+                        strArr2[1] = "other";
+                        strArr2[2] = string2;
+                        strArr2[3] = "other";
+                    }
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr2[0];
+            case 2:
+                String[] strArr3 = this.c;
+                String str3 = this.b;
+                this.d.getClass();
+                String c12 = f71.c(this, str3, null, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    Matcher matcher2 = f71.s0.matcher(c12);
+                    if (matcher2.find()) {
+                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
+                        strArr3[1] = "other";
+                    }
+                } catch (Exception e12) {
+                    org.telegram.messenger.a8.g(e12, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr3[0];
+            case 3:
+                String[] strArr4 = this.c;
+                HashMap hashMap = new HashMap();
+                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
+                int indexOf = this.b.indexOf(38);
+                if (indexOf > 0) {
+                    this.b = this.b.substring(0, indexOf);
+                }
+                Locale locale3 = Locale.US;
+                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
+                this.d.getClass();
+                String c13 = f71.c(this, str4, hashMap, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    new JSONObject(c13).getJSONObject("stream");
+                    JSONObject jSONObject3 = new JSONObject(f71.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
+                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
+                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
+                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
+                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
+                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
+                    strArr4[1] = "hls";
+                } catch (Exception e13) {
+                    org.telegram.messenger.a8.g(e13, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr4[0];
+            default:
+                String[] strArr5 = this.c;
+                Locale locale4 = Locale.US;
+                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
+                this.d.getClass();
+                String c14 = f71.c(this, str6, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject4 = new JSONObject(c14).getJSONObject("request").getJSONObject("files");
+                    if (jSONObject4.has("hls")) {
+                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
+                        try {
+                            strArr5[0] = jSONObject5.getString("url");
+                        } catch (Exception unused) {
+                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
+                        }
+                        strArr5[1] = "hls";
+                    } else if (jSONObject4.has("progressive")) {
+                        strArr5[1] = "other";
+                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
+                    }
+                } catch (Exception e14) {
+                    org.telegram.messenger.a8.g(e14, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr5[0];
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        if (this.y) {
-            onTouchEvent(motionEvent);
-            return this.b;
-        }
-        d(true, true);
-        return true;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int measuredWidth;
-        int measuredHeight;
-        int i3;
-        int i10;
-        d71 d71Var = this.I;
-        m51 m51Var = d71Var.a;
-        if (d71Var.U) {
-            i3 = org.telegram.messenger.g0.L(36.0f) + this.r;
-            measuredWidth = (getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f)) - this.r;
-            measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(28.0f);
-        } else {
-            measuredWidth = getMeasuredWidth();
-            measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(12.0f);
-            i3 = 0;
-        }
-        int i11 = this.s;
-        if (i11 != 0) {
-            i10 = (int) ((this.w / i11) * (measuredWidth - i3));
-        } else {
-            i10 = 0;
-        }
-        int i12 = i10 + i3;
-        int action = motionEvent.getAction();
-        f51 f51Var = this.H;
-        if (action == 0) {
-            if (!this.y || d71Var.V || d71Var.I) {
-                d(true, true);
-            } else if (this.s != 0) {
-                int x10 = (int) motionEvent.getX();
-                int y9 = (int) motionEvent.getY();
-                if (x10 >= i12 - org.telegram.messenger.g0.L(10.0f) && x10 <= org.telegram.messenger.g0.L(10.0f) + i12 && y9 >= measuredHeight - org.telegram.messenger.g0.L(10.0f) && y9 <= org.telegram.messenger.g0.L(10.0f) + measuredHeight) {
-                    this.b = true;
-                    this.F = x10;
-                    this.G = i12;
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                f71 f71Var = this.d;
+                if (str == null) {
+                    if (!isCancelled()) {
+                        f71Var.h();
+                        break;
+                    }
+                } else {
+                    f71Var.x = true;
+                    f71Var.y = str;
+                    f71Var.D = this.c[1];
+                    if (f71Var.s) {
+                        f71Var.i();
+                    }
+                    f71Var.j(false, true);
+                    f71Var.f0.d(true, true);
+                    break;
                 }
-            }
-            org.telegram.messenger.g0.r(f51Var);
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (d71Var.x && m51Var.d0()) {
-                org.telegram.messenger.g0.i3(f51Var, 3000L);
-            }
-            if (this.b) {
-                this.b = false;
-                if (d71Var.x) {
-                    int i13 = (int) (((this.G - i3) / (measuredWidth - i3)) * this.s);
-                    this.w = i13;
-                    m51Var.q0(i13 * 1000, false);
+                break;
+            case 1:
+                String str2 = (String) obj;
+                f71 f71Var2 = this.d;
+                if (str2 == null) {
+                    if (!isCancelled()) {
+                        f71Var2.h();
+                        break;
+                    }
+                } else {
+                    f71Var2.x = true;
+                    f71Var2.y = str2;
+                    String[] strArr = this.c;
+                    f71Var2.D = strArr[1];
+                    f71Var2.E = strArr[2];
+                    f71Var2.F = strArr[3];
+                    if (f71Var2.s) {
+                        f71Var2.i();
+                    }
+                    f71Var2.j(false, true);
+                    f71Var2.f0.d(true, true);
+                    break;
                 }
-            }
-        } else if (motionEvent.getAction() == 2 && this.b) {
-            int x11 = (int) motionEvent.getX();
-            int i14 = this.G - (this.F - x11);
-            this.G = i14;
-            this.F = x11;
-            if (i14 < i3) {
-                this.G = i3;
-            } else if (i14 > measuredWidth) {
-                this.G = measuredWidth;
-            }
-            c((int) (((this.G - i3) / (measuredWidth - i3)) * this.s * 1000));
-            invalidate();
+                break;
+            case 2:
+                String str3 = (String) obj;
+                f71 f71Var3 = this.d;
+                if (str3 == null) {
+                    if (!isCancelled()) {
+                        f71Var3.h();
+                        break;
+                    }
+                } else {
+                    f71Var3.x = true;
+                    f71Var3.y = str3;
+                    f71Var3.D = this.c[1];
+                    if (f71Var3.s) {
+                        f71Var3.i();
+                    }
+                    f71Var3.j(false, true);
+                    f71Var3.f0.d(true, true);
+                    break;
+                }
+                break;
+            case 3:
+                String str4 = (String) obj;
+                f71 f71Var4 = this.d;
+                if (str4 == null) {
+                    if (!isCancelled()) {
+                        f71Var4.h();
+                        break;
+                    }
+                } else {
+                    f71Var4.x = true;
+                    f71Var4.y = str4;
+                    f71Var4.D = this.c[1];
+                    if (f71Var4.s) {
+                        f71Var4.i();
+                    }
+                    f71Var4.j(false, true);
+                    f71Var4.f0.d(true, true);
+                    break;
+                }
+                break;
+            default:
+                String str5 = (String) obj;
+                f71 f71Var5 = this.d;
+                if (str5 == null) {
+                    if (!isCancelled()) {
+                        f71Var5.h();
+                        break;
+                    }
+                } else {
+                    f71Var5.x = true;
+                    f71Var5.y = str5;
+                    f71Var5.D = this.c[1];
+                    if (f71Var5.s) {
+                        f71Var5.i();
+                    }
+                    f71Var5.j(false, true);
+                    f71Var5.f0.d(true, true);
+                    break;
+                }
+                break;
         }
-        super.onTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void requestDisallowInterceptTouchEvent(boolean z10) {
-        super.requestDisallowInterceptTouchEvent(z10);
-        a();
     }
 }

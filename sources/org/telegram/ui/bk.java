@@ -1,39 +1,15 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.view.ViewTreeObserver;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class bk extends org.telegram.ui.Components.u21 {
+    public final /* synthetic */ an D;
 
-    public /* synthetic */ bk(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
-        int i3 = this.a;
-        Object obj = this.b;
-        switch (i3) {
-            case 0:
-                kVar = ((org.telegram.ui.ActionBar.d2) ((ck) obj).d).actionBar;
-                kVar.invalidate();
-                break;
-            case 1:
-                ProfileActivity profileActivity = (ProfileActivity) obj;
-                RectF rectF = ProfileActivity.T6;
-                profileActivity.y5();
-                profileActivity.z5();
-                break;
-            default:
-                ((r41) obj).t0();
-                break;
-        }
-        return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bk(an anVar, Activity activity, an anVar2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, f6Var, anVar2);
+        this.D = anVar;
     }
 }

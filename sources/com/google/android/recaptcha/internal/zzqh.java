@@ -1,34 +1,34 @@
 package com.google.android.recaptcha.internal;
 
-import a1.g;
-import k2.p1;
+import a8.p0;
+import jg.g;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzqh extends zzqk {
     private final int zzc;
 
-    public zzqh(byte[] bArr, int i3, int i10) {
+    public zzqh(byte[] bArr, int i7, int i10) {
         super(bArr);
         zzqm.zzj(0, i10, bArr.length);
         this.zzc = i10;
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final byte zza(int i3) {
+    public final byte zza(int i7) {
         int i10 = this.zzc;
-        if (((i10 - (i3 + 1)) | i3) >= 0) {
-            return ((zzqk) this).zza[i3];
+        if (((i10 - (i7 + 1)) | i7) >= 0) {
+            return ((zzqk) this).zza[i7];
         }
-        if (i3 < 0) {
-            throw new ArrayIndexOutOfBoundsException(p1.i(i3, "Index < 0: "));
+        if (i7 < 0) {
+            throw new ArrayIndexOutOfBoundsException(g.j(i7, "Index < 0: "));
         }
-        throw new ArrayIndexOutOfBoundsException(g.n(i3, i10, "Index > length: ", ", "));
+        throw new ArrayIndexOutOfBoundsException(p0.m(i7, i10, "Index > length: ", ", "));
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final byte zzb(int i3) {
-        return ((zzqk) this).zza[i3];
+    public final byte zzb(int i7) {
+        return ((zzqk) this).zza[i7];
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk
@@ -42,7 +42,7 @@ final class zzqh extends zzqk {
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm
-    public final void zze(byte[] bArr, int i3, int i10, int i11) {
+    public final void zze(byte[] bArr, int i7, int i10, int i11) {
         System.arraycopy(((zzqk) this).zza, 0, bArr, 0, i11);
     }
 }

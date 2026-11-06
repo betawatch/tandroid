@@ -3,16 +3,16 @@ package com.google.android.play.core.integrity;
 import com.google.android.gms.common.api.Status;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class StandardIntegrityException extends com.google.android.gms.common.api.f {
     private final Throwable a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public StandardIntegrityException(int i3, Throwable th2) {
-        super(new Status(i3, "Standard Integrity API error (" + i3 + "): " + com.google.android.play.core.integrity.model.b.a(i3) + ".", null, null));
+    public StandardIntegrityException(int i7, Throwable th2) {
+        super(new Status(i7, "Standard Integrity API error (" + i7 + "): " + com.google.android.play.core.integrity.model.b.a(i7) + ".", null, null));
         Locale locale = Locale.ROOT;
-        if (i3 == 0) {
+        if (i7 == 0) {
             throw new IllegalArgumentException("ErrorCode should not be 0.");
         }
         this.a = th2;

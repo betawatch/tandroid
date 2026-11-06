@@ -1,45 +1,34 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b50 implements org.telegram.ui.d90 {
-    public final /* synthetic */ c50 a;
+public final class b50 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    public b50(c50 c50Var) {
-        this.a = c50Var;
+    public b50(org.telegram.ui.ActionBar.v2[] v2VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = v2VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // org.telegram.ui.d90
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i3;
-        org.telegram.ui.za zaVar = this.a.a.c.b2;
-        if (zaVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.kb kbVar = zaVar.a;
-            tL_channelAdminLogEvent.user_id = org.telegram.messenger.h10.i(kbVar.getAccountInstance().a).n;
-            i3 = ((org.telegram.ui.ActionBar.d2) kbVar).currentAccount;
-            if (new org.telegram.messenger.zi(i3, tL_channelAdminLogEvent, kbVar.o0, kbVar.n0, kbVar.f, kbVar.U, true).U < 0) {
-                return;
-            }
-            kbVar.W0();
-            kbVar.F.f();
-            org.telegram.ui.kb.P0(kbVar);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(ProfileActivity.A4(this.b.user_id));
         }
     }
 
-    @Override // org.telegram.ui.d90
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-    }
-
-    @Override // org.telegram.ui.d90
-    public final void c(TLObject tLObject) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

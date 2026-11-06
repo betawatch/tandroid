@@ -1,13 +1,50 @@
 package e8;
 
-import java.io.Closeable;
+import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import m.q3;
+import q6.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements Closeable {
-    public static final a a = new a();
+public final class a extends h {
+    public final Context F;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+    public a(Context context, Looper looper, k kVar, l lVar, q3 q3Var) {
+        super(context, looper, 45, q3Var, kVar, lVar, 0);
+        this.F = context;
+    }
+
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 12200000;
+    }
+
+    @Override // q6.d
+    public final /* bridge */ /* synthetic */ IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.safetynet.internal.ISafetyNetService");
+        return queryLocalInterface instanceof c ? (c) queryLocalInterface : new c(iBinder);
+    }
+
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.safetynet.internal.ISafetyNetService";
+    }
+
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.safetynet.service.START";
+    }
+
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

@@ -1,49 +1,45 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g20 implements org.telegram.ui.ActionBar.n2 {
-    public final /* synthetic */ x30 a;
+public final class g20 implements nh.a {
+    public final /* synthetic */ c40 a;
 
-    public g20(x30 x30Var) {
-        this.a = x30Var;
+    public g20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void v() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
         }
-        x30 x30Var = this.a;
-        if (x30Var.x3 == 6) {
-            SharedPreferences e12 = org.telegram.messenger.hp.e1();
-            if (e12.getBoolean("reminderhint", false)) {
-                return;
-            }
-            e12.edit().putBoolean("reminderhint", true).commit();
-            if (x30Var.f2 == null) {
-                org.telegram.ui.Components.u20 u20Var = new org.telegram.ui.Components.u20(x30Var.getContext(), 8);
-                x30Var.f2 = u20Var;
-                u20Var.setAlpha(0.0f);
-                x30Var.f2.setVisibility(4);
-                x30Var.f2.setShowingDuration(4000L);
-                x30Var.b.addView(x30Var.f2, b8.mf.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                x30Var.f2.setText(org.telegram.messenger.bd.M0(2131743448, null));
-                x30Var.f2.b();
-            }
-            x30Var.f2.setExtraTranslationY(-org.telegram.messenger.g0.m);
-            x30Var.f2.c(x30Var.t1);
+        boolean z9 = Q instanceof ProfileActivity;
+        c40 c40Var = this.a;
+        if (z9 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
+            c40Var.dismiss();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean x() {
-        return true;
+        int R0 = c40Var.R0();
+        Bundle bundle = new Bundle();
+        long j3 = groupCallMessage.fromId;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        boolean z10 = true;
+        if (groupCallMessage.fromId == org.telegram.messenger.p10.i(c40Var.k1.a).e()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (R0 > 0 && R0 != Integer.MAX_VALUE) {
+            z10 = false;
+        }
+        Q.presentFragment(profileActivity, false, z10);
+        c40Var.dismiss();
     }
 }

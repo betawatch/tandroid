@@ -2,15 +2,15 @@ package androidx.car.app.model;
 
 import androidx.car.app.model.SearchCallbackDelegateImpl;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ SearchCallbackDelegateImpl.SearchCallbackStub b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ p0(SearchCallbackDelegateImpl.SearchCallbackStub searchCallbackStub, String str, int i3) {
-        this.a = i3;
+    public /* synthetic */ p0(SearchCallbackDelegateImpl.SearchCallbackStub searchCallbackStub, String str, int i7) {
+        this.a = i7;
         this.b = searchCallbackStub;
         this.c = str;
     }

@@ -1,21 +1,21 @@
 package androidx.biometric;
 
+import a8.l1;
 import android.os.Looper;
 import androidx.lifecycle.p0;
-import b8.l0;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class z extends p0 {
     public androidx.lifecycle.z A;
     public Executor d;
-    public l0 e;
-    public l6.n f;
+    public l1 e;
+    public m6.n f;
     public v g;
     public android.support.v4.media.session.a0 h;
-    public tf.b i;
+    public q4.q i;
     public y j;
     public String k;
     public boolean m;
@@ -43,19 +43,19 @@ public class z extends p0 {
     }
 
     public final int c() {
-        l6.n nVar = this.f;
+        m6.n nVar = this.f;
         if (nVar == null) {
             return 0;
         }
         v vVar = this.g;
-        int i3 = nVar.a;
-        if (i3 != 0) {
-            return i3;
+        int i7 = nVar.a;
+        if (i7 != 0) {
+            return i7;
         }
         if (vVar != null) {
             return 15;
         }
-        return hs.e4;
+        return qs.e4;
     }
 
     public final void d(e eVar) {
@@ -72,17 +72,17 @@ public class z extends p0 {
         h(this.A, charSequence);
     }
 
-    public final void f(int i3) {
+    public final void f(int i7) {
         if (this.z == null) {
             this.z = new androidx.lifecycle.z();
         }
-        h(this.z, Integer.valueOf(i3));
+        h(this.z, Integer.valueOf(i7));
     }
 
-    public final void g(boolean z10) {
+    public final void g(boolean z9) {
         if (this.v == null) {
             this.v = new androidx.lifecycle.z();
         }
-        h(this.v, Boolean.valueOf(z10));
+        h(this.v, Boolean.valueOf(z9));
     }
 }

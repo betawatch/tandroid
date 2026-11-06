@@ -1,30 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vx implements org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class vx extends FrameLayout {
+    public xh.l a;
 
-    public /* synthetic */ vx(EditTextBoldCursor editTextBoldCursor, int i3) {
-        this.a = i3;
-        this.b = editTextBoldCursor;
+    public xh.l getSubtitleTextView() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            case 1:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            default:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

@@ -1,24 +1,24 @@
 package org.telegram.ui.Cells;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.u10;
+import org.telegram.messenger.c20;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l2 implements u10 {
+public final /* synthetic */ class l2 implements c20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ l2(ViewGroup viewGroup, int i3) {
-        this.a = i3;
+    public /* synthetic */ l2(ViewGroup viewGroup, int i7) {
+        this.a = i7;
         this.b = viewGroup;
     }
 
-    @Override // org.telegram.messenger.u10
+    @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                ((t2) this.b).k0(true);
+                ((t2) this.b).l0(true);
                 break;
             default:
                 ((o4) this.b).c(true);

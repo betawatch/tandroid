@@ -1,23 +1,57 @@
 package v4;
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import m.p;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements d {
-    public final LinkedHashSet a = new LinkedHashSet();
+public final class a {
+    public int a;
+    public int b;
+    public Object c;
+    public int d;
 
-    public a(p pVar) {
-        pVar.f("androidx.savedstate.Restarter", this);
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj == null || a.class != obj.getClass()) {
+                return false;
+            }
+            a aVar = (a) obj;
+            int i7 = this.a;
+            if (i7 != aVar.a) {
+                return false;
+            }
+            if (i7 != 8 || Math.abs(this.d - this.b) != 1 || this.d != aVar.b || this.b != aVar.d) {
+                if (this.d != aVar.d || this.b != aVar.b) {
+                    return false;
+                }
+                Object obj2 = this.c;
+                if (obj2 != null) {
+                    if (!obj2.equals(aVar.c)) {
+                        return false;
+                    }
+                } else if (aVar.c != null) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
-    @Override // v4.d
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putStringArrayList("classes_to_restore", new ArrayList<>(this.a));
-        return bundle;
+    public final int hashCode() {
+        return (((this.a * 31) + this.b) * 31) + this.d;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        sb2.append("[");
+        int i7 = this.a;
+        sb2.append(i7 != 1 ? i7 != 2 ? i7 != 4 ? i7 != 8 ? "??" : "mv" : "up" : "rm" : "add");
+        sb2.append(",s:");
+        sb2.append(this.b);
+        sb2.append("c:");
+        sb2.append(this.d);
+        sb2.append(",p:");
+        sb2.append(this.c);
+        sb2.append("]");
+        return sb2.toString();
     }
 }

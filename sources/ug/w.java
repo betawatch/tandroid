@@ -1,49 +1,47 @@
 package ug;
 
-import android.app.Activity;
-import org.telegram.messenger.h10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.wm;
+import android.view.View;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w extends wm {
-    public final /* synthetic */ f0 sd;
+public final /* synthetic */ class w implements org.telegram.ui.ActionBar.r1, dj0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(f0 f0Var) {
-        super(null);
-        this.sd = f0Var;
+    public /* synthetic */ w(i0 i0Var, int i7) {
+        this.a = i7;
+        this.b = i0Var;
     }
 
-    @Override // org.telegram.ui.wm
-    public final boolean T9() {
+    @Override // org.telegram.ui.Components.dj0
+    public boolean c(int i7, View view) {
+        i0 i0Var = this.b;
+        i0Var.k1.getOnItemClickListener().c(i7, view);
+        if (i0Var.Z1 != 19) {
+            try {
+                view.performHapticFeedback(0);
+            } catch (Exception unused) {
+            }
+        }
         return false;
     }
 
-    @Override // org.telegram.ui.wm, org.telegram.ui.Components.ig, org.telegram.ui.Components.x30
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d2
-    public final Activity getParentActivity() {
-        return org.telegram.messenger.g0.W(this.sd.getContext());
-    }
-
-    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
-    public final e6 getResourceProvider() {
-        return this.sd.A1;
-    }
-
-    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
-    public final boolean isLightStatusBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.wm, org.telegram.ui.Components.ig
-    public final TLRPC.User j() {
-        return h10.i(this.currentAccount).f();
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                i0 i0Var = this.b;
+                i0Var.C2.presentFragment(new PremiumPreviewFragment(0, null));
+                i0Var.dismiss();
+                u1Var.dismiss();
+                break;
+            default:
+                u1Var.dismiss();
+                this.b.i1();
+                break;
+        }
     }
 }

@@ -9,14 +9,14 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.k0;
+import e0.j0;
 import f0.g;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c {
     public Context a;
@@ -27,7 +27,7 @@ public final class c {
     public CharSequence f;
     public CharSequence g;
     public IconCompat h;
-    public k0[] i;
+    public j0[] i;
     public Set j;
     public g k;
     public boolean l;
@@ -76,17 +76,17 @@ public final class c {
         if (persistableBundle != null) {
             intents.setExtras(persistableBundle);
         }
-        int i3 = 0;
+        int i7 = 0;
         if (Build.VERSION.SDK_INT >= 29) {
-            k0[] k0VarArr = this.i;
-            if (k0VarArr != null && k0VarArr.length > 0) {
-                int length = k0VarArr.length;
+            j0[] j0VarArr = this.i;
+            if (j0VarArr != null && j0VarArr.length > 0) {
+                int length = j0VarArr.length;
                 Person[] personArr = new Person[length];
-                while (i3 < length) {
-                    k0 k0Var = this.i[i3];
-                    k0Var.getClass();
-                    personArr[i3] = d1.f.E(k0Var);
-                    i3++;
+                while (i7 < length) {
+                    j0 j0Var = this.i[i7];
+                    j0Var.getClass();
+                    personArr[i7] = d1.f.E(j0Var);
+                    i7++;
                 }
                 intents.setPersons(personArr);
             }
@@ -99,26 +99,26 @@ public final class c {
             if (this.n == null) {
                 this.n = new PersistableBundle();
             }
-            k0[] k0VarArr2 = this.i;
-            if (k0VarArr2 != null && k0VarArr2.length > 0) {
-                this.n.putInt("extraPersonCount", k0VarArr2.length);
-                while (i3 < this.i.length) {
+            j0[] j0VarArr2 = this.i;
+            if (j0VarArr2 != null && j0VarArr2.length > 0) {
+                this.n.putInt("extraPersonCount", j0VarArr2.length);
+                while (i7 < this.i.length) {
                     PersistableBundle persistableBundle2 = this.n;
                     StringBuilder sb2 = new StringBuilder("extraPerson_");
-                    int i10 = i3 + 1;
+                    int i10 = i7 + 1;
                     sb2.append(i10);
                     String sb3 = sb2.toString();
-                    k0 k0Var2 = this.i[i3];
-                    k0Var2.getClass();
+                    j0 j0Var2 = this.i[i7];
+                    j0Var2.getClass();
                     PersistableBundle persistableBundle3 = new PersistableBundle();
-                    CharSequence charSequence = k0Var2.a;
+                    CharSequence charSequence = j0Var2.a;
                     persistableBundle3.putString("name", charSequence != null ? charSequence.toString() : null);
-                    persistableBundle3.putString("uri", k0Var2.c);
-                    persistableBundle3.putString("key", k0Var2.d);
-                    persistableBundle3.putBoolean("isBot", k0Var2.e);
-                    persistableBundle3.putBoolean("isImportant", k0Var2.f);
+                    persistableBundle3.putString("uri", j0Var2.c);
+                    persistableBundle3.putString("key", j0Var2.d);
+                    persistableBundle3.putBoolean("isBot", j0Var2.e);
+                    persistableBundle3.putBoolean("isImportant", j0Var2.f);
                     persistableBundle2.putPersistableBundle(sb3, persistableBundle3);
-                    i3 = i10;
+                    i7 = i10;
                 }
             }
             g gVar2 = this.k;
@@ -129,7 +129,7 @@ public final class c {
             intents.setExtras(this.n);
         }
         if (Build.VERSION.SDK_INT >= 33) {
-            a.h(intents);
+            a.i(intents);
         }
         return intents.build();
     }

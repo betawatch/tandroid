@@ -1,18 +1,18 @@
 package b1;
 
-import v0.h;
+import w0.h;
 import w0.i;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h b;
+    public final /* synthetic */ v0.g b;
     public final /* synthetic */ i c;
 
-    public /* synthetic */ g(h hVar, i iVar, int i3) {
-        this.a = i3;
-        this.b = hVar;
+    public /* synthetic */ g(v0.g gVar, i iVar, int i7) {
+        this.a = i7;
+        this.b = gVar;
         this.c = iVar;
     }
 
@@ -22,9 +22,12 @@ public final /* synthetic */ class g implements Runnable {
             case 0:
                 Object obj = this.c;
                 if (obj == null) {
-                    obj = new w0.h(2, "No provider data returned");
+                    obj = new h(2, "No provider data returned");
                 }
                 this.b.a(obj);
+                break;
+            case 1:
+                this.b.a(this.c);
                 break;
             default:
                 this.b.a(this.c);

@@ -1,52 +1,40 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
+import org.telegram.ui.c40;
+import org.telegram.ui.z20;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ g0(l0 l0Var, int i3) {
-        this.a = i3;
-        this.b = l0Var;
+    public /* synthetic */ g0(k0 k0Var, int i7) {
+        this.a = i7;
+        this.b = k0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                l0 l0Var = this.b;
-                l0Var.getClass();
-                l0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.invalidate();
-                break;
-            case 1:
-                l0 l0Var2 = this.b;
-                l0Var2.getClass();
-                l0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float L = l0Var2.J + org.telegram.messenger.g0.L(28.0f);
-                float L2 = l0Var2.K + org.telegram.messenger.g0.L(52.0f);
-                float f10 = l0Var2.E;
-                l0Var2.H = L - (L * f10);
-                l0Var2.I = L2 - (f10 * L2);
-                l0Var2.invalidate();
-                break;
-            case 2:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0 l0Var3 = this.b;
-                l0Var3.F = floatValue;
-                int L3 = (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(36.0f)) - org.telegram.messenger.g0.L(52.0f);
-                j0 j0Var = l0Var3.c;
-                j0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L3 * l0Var3.F));
-                j0Var.requestLayout();
+                k0 k0Var = this.b;
+                k0Var.getClass();
+                k0Var.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k0Var.invalidate();
                 break;
             default:
-                l0 l0Var4 = this.b;
-                l0Var4.getClass();
-                l0Var4.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var4.e();
+                k0 k0Var2 = this.b;
+                k0Var2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k0Var2.c = floatValue;
+                c40 c40Var = k0Var2.j0;
+                c40Var.q3.setAlpha(1.0f - floatValue);
+                z20 z20Var = c40Var.F1;
+                z20Var.setAlpha((1.0f - c40Var.R3.c) * (z20Var.getTag() != null ? 1.0f : 0.0f));
+                c40Var.J1(c40Var.p2);
+                k0Var2.l();
                 break;
         }
     }

@@ -1,42 +1,35 @@
 package de;
 
-import be.u;
-import java.util.concurrent.Executor;
-import wd.u0;
-import wd.x;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d extends u0 implements Executor {
-    public static final d c = new d();
-    public static final x d;
+public final class d implements id.h {
+    public final /* synthetic */ id.h a;
+    public final Throwable b;
 
-    static {
-        l lVar = l.c;
-        int i3 = u.a;
-        if (64 >= i3) {
-            i3 = 64;
-        }
-        d = lVar.f(be.a.j(i3, 12, "kotlinx.coroutines.io.parallelism"));
+    public d(id.h hVar, Throwable th2) {
+        this.a = hVar;
+        this.b = th2;
     }
 
-    @Override // wd.x
-    public final void c(fd.h hVar, Runnable runnable) {
-        d.c(hVar, runnable);
+    @Override // id.h
+    public final Object fold(Object obj, p pVar) {
+        return this.a.fold(obj, pVar);
     }
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        throw new IllegalStateException("Cannot be invoked on Dispatchers.IO");
+    @Override // id.h
+    public final id.f get(id.g gVar) {
+        return this.a.get(gVar);
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        c(fd.i.a, runnable);
+    @Override // id.h
+    public final id.h minusKey(id.g gVar) {
+        return this.a.minusKey(gVar);
     }
 
-    @Override // wd.x
-    public final String toString() {
-        return "Dispatchers.IO";
+    @Override // id.h
+    public final id.h plus(id.h hVar) {
+        return this.a.plus(hVar);
     }
 }

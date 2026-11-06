@@ -9,7 +9,7 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
 /* loaded from: classes2.dex */
 public final class a implements Externalizable {
@@ -51,15 +51,15 @@ public final class a implements Externalizable {
         }
         ZoneRules zoneRules = (ZoneRules) obj;
         objectOutput.writeInt(zoneRules.a.length);
-        for (long j10 : zoneRules.a) {
-            c(j10, objectOutput);
+        for (long j3 : zoneRules.a) {
+            c(j3, objectOutput);
         }
         for (ZoneOffset zoneOffset : zoneRules.b) {
             d(zoneOffset, objectOutput);
         }
         objectOutput.writeInt(zoneRules.c.length);
-        for (long j11 : zoneRules.c) {
-            c(j11, objectOutput);
+        for (long j10 : zoneRules.c) {
+            c(j10, objectOutput);
         }
         for (ZoneOffset zoneOffset2 : zoneRules.e) {
             d(zoneOffset2, objectOutput);
@@ -79,8 +79,8 @@ public final class a implements Externalizable {
             long[] jArr = ZoneRules.i;
             int readInt = objectInput.readInt();
             long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
-            for (int i3 = 0; i3 < readInt; i3++) {
-                jArr2[i3] = a(objectInput);
+            for (int i7 = 0; i7 < readInt; i7++) {
+                jArr2[i7] = a(objectInput);
             }
             int i10 = readInt + 1;
             ZoneOffset[] zoneOffsetArr = new ZoneOffset[i10];
@@ -132,9 +132,9 @@ public final class a implements Externalizable {
 
     public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i3 = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
-        dataOutput.writeByte(i3);
-        if (i3 == 127) {
+        int i7 = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
+        dataOutput.writeByte(i7);
+        if (i7 == 127) {
             dataOutput.writeInt(totalSeconds);
         }
     }
@@ -144,16 +144,16 @@ public final class a implements Externalizable {
         return readByte == Byte.MAX_VALUE ? ZoneOffset.O(dataInput.readInt()) : ZoneOffset.O(readByte * 900);
     }
 
-    public static void c(long j10, DataOutput dataOutput) {
-        if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
-            int i3 = (int) ((j10 + 4575744000L) / 900);
-            dataOutput.writeByte((i3 >>> 16) & hs.e4);
-            dataOutput.writeByte((i3 >>> 8) & hs.e4);
-            dataOutput.writeByte(i3 & hs.e4);
+    public static void c(long j3, DataOutput dataOutput) {
+        if (j3 >= -4575744000L && j3 < 10413792000L && j3 % 900 == 0) {
+            int i7 = (int) ((j3 + 4575744000L) / 900);
+            dataOutput.writeByte((i7 >>> 16) & qs.e4);
+            dataOutput.writeByte((i7 >>> 8) & qs.e4);
+            dataOutput.writeByte(i7 & qs.e4);
             return;
         }
-        dataOutput.writeByte(hs.e4);
-        dataOutput.writeLong(j10);
+        dataOutput.writeByte(qs.e4);
+        dataOutput.writeLong(j3);
     }
 
     public static long a(DataInput dataInput) {

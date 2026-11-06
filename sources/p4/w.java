@@ -1,106 +1,32 @@
 package p4;
 
-import android.media.session.PlaybackState;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import g9.g0;
-import g9.i0;
-import g9.s1;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class w implements Parcelable {
-    public static final Parcelable.Creator<w> CREATOR = new n8.g(13);
-    public final int a;
-    public final long b;
+public final class w {
+    public final h9.i0 a;
+    public final int b;
     public final long c;
-    public final float d;
-    public final long e;
-    public final int f;
-    public final CharSequence h;
-    public final long n;
-    public final AbstractCollection r;
-    public final long s;
-    public final Bundle w;
-    public PlaybackState x;
 
-    public w(int i3, long j10, long j11, float f10, long j12, int i10, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
-        this.a = i3;
-        this.b = j10;
-        this.c = j11;
-        this.d = f10;
-        this.e = j12;
-        this.f = i10;
-        this.h = charSequence;
-        this.n = j13;
-        this.r = new ArrayList(arrayList);
-        this.s = j14;
-        this.w = bundle;
+    public w(List list, int i7, long j3) {
+        this.a = h9.i0.q(list);
+        this.b = i7;
+        this.c = j3;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PlaybackState {state=");
-        sb2.append(this.a);
-        sb2.append(", position=");
-        sb2.append(this.b);
-        sb2.append(", buffered position=");
-        sb2.append(this.c);
-        sb2.append(", speed=");
-        sb2.append(this.d);
-        sb2.append(", updated=");
-        sb2.append(this.n);
-        sb2.append(", actions=");
-        sb2.append(this.e);
-        sb2.append(", error code=");
-        sb2.append(this.f);
-        sb2.append(", error message=");
-        sb2.append(this.h);
-        sb2.append(", custom actions=");
-        sb2.append(this.r);
-        sb2.append(", active item id=");
-        return a1.g.r(sb2, this.s, "}");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        parcel.writeInt(this.a);
-        parcel.writeLong(this.b);
-        parcel.writeFloat(this.d);
-        parcel.writeLong(this.n);
-        parcel.writeLong(this.c);
-        parcel.writeLong(this.e);
-        TextUtils.writeToParcel(this.h, parcel, i3);
-        parcel.writeTypedList(this.r);
-        parcel.writeLong(this.s);
-        parcel.writeBundle(this.w);
-        parcel.writeInt(this.f);
-    }
-
-    public w(Parcel parcel) {
-        this.a = parcel.readInt();
-        this.b = parcel.readLong();
-        this.d = parcel.readFloat();
-        this.n = parcel.readLong();
-        this.c = parcel.readLong();
-        this.e = parcel.readLong();
-        this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        AbstractCollection createTypedArrayList = parcel.createTypedArrayList(v.CREATOR);
-        if (createTypedArrayList == null) {
-            g0 g0Var = i0.b;
-            createTypedArrayList = s1.e;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.r = createTypedArrayList;
-        this.s = parcel.readLong();
-        this.w = parcel.readBundle(q.class.getClassLoader());
-        this.f = parcel.readInt();
+        if (!(obj instanceof w)) {
+            return false;
+        }
+        w wVar = (w) obj;
+        return this.a.equals(wVar.a) && this.b == wVar.b && this.c == wVar.c;
+    }
+
+    public final int hashCode() {
+        return c8.f1.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

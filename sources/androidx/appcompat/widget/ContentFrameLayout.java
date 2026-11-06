@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import aa.n;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -9,14 +10,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import g.s;
 import l.k;
-import m.h;
-import m.i1;
+import m.e;
+import m.i;
 import m.j1;
-import m.k3;
+import m.k1;
+import m.m3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -26,7 +28,7 @@ public class ContentFrameLayout extends FrameLayout {
     public TypedValue e;
     public TypedValue f;
     public final Rect h;
-    public i1 n;
+    public j1 n;
 
     public ContentFrameLayout(Context context) {
         this(context, null);
@@ -77,47 +79,47 @@ public class ContentFrameLayout extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        i1 i1Var = this.n;
-        if (i1Var != null) {
-            i1Var.getClass();
+        j1 j1Var = this.n;
+        if (j1Var != null) {
+            j1Var.getClass();
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        h hVar;
+        i iVar;
         super.onDetachedFromWindow();
-        i1 i1Var = this.n;
-        if (i1Var != null) {
-            s sVar = (s) ((bb.c) i1Var).b;
-            j1 j1Var = sVar.s;
-            if (j1Var != null) {
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
+        j1 j1Var = this.n;
+        if (j1Var != null) {
+            s sVar = (s) ((n) j1Var).b;
+            k1 k1Var = sVar.s;
+            if (k1Var != null) {
+                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
                 actionBarOverlayLayout.e();
-                ActionMenuView actionMenuView = ((k3) actionBarOverlayLayout.e).a.a;
-                if (actionMenuView != null && (hVar = actionMenuView.K) != null) {
-                    hVar.f();
-                    m.d dVar = hVar.K;
-                    if (dVar != null && dVar.b()) {
-                        dVar.i.dismiss();
+                ActionMenuView actionMenuView = ((m3) actionBarOverlayLayout.e).a.a;
+                if (actionMenuView != null && (iVar = actionMenuView.J) != null) {
+                    iVar.f();
+                    e eVar = iVar.J;
+                    if (eVar != null && eVar.b()) {
+                        eVar.i.dismiss();
                     }
                 }
             }
-            if (sVar.F != null) {
-                sVar.f.getDecorView().removeCallbacks(sVar.G);
-                if (sVar.F.isShowing()) {
+            if (sVar.E != null) {
+                sVar.f.getDecorView().removeCallbacks(sVar.F);
+                if (sVar.E.isShowing()) {
                     try {
-                        sVar.F.dismiss();
+                        sVar.E.dismiss();
                     } catch (IllegalArgumentException unused) {
                     }
                 }
-                sVar.F = null;
+                sVar.E = null;
             }
-            l0 l0Var = sVar.H;
+            l0 l0Var = sVar.G;
             if (l0Var != null) {
                 l0Var.b();
             }
-            k kVar = sVar.p(0).h;
+            k kVar = sVar.o(0).h;
             if (kVar != null) {
                 kVar.c(true);
             }
@@ -140,9 +142,9 @@ public class ContentFrameLayout extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         int i11;
-        boolean z10;
+        boolean z9;
         int i12;
         int measuredWidth;
         TypedValue typedValue;
@@ -156,13 +158,13 @@ public class ContentFrameLayout extends FrameLayout {
         int i18;
         float fraction3;
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        boolean z11 = true;
-        boolean z12 = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        int mode = View.MeasureSpec.getMode(i3);
+        boolean z10 = true;
+        boolean z11 = displayMetrics.widthPixels < displayMetrics.heightPixels;
+        int mode = View.MeasureSpec.getMode(i7);
         int mode2 = View.MeasureSpec.getMode(i10);
         Rect rect = this.h;
         if (mode == Integer.MIN_VALUE) {
-            TypedValue typedValue2 = z12 ? this.d : this.c;
+            TypedValue typedValue2 = z11 ? this.d : this.c;
             if (typedValue2 != null && (i17 = typedValue2.type) != 0) {
                 if (i17 == 5) {
                     fraction3 = typedValue2.getDimension(displayMetrics);
@@ -172,10 +174,10 @@ public class ContentFrameLayout extends FrameLayout {
                 } else {
                     i18 = 0;
                     if (i18 > 0) {
-                        i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i18 - (rect.left + rect.right), View.MeasureSpec.getSize(i3)), TLObject.FLAG_30);
-                        z10 = true;
+                        i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i18 - (rect.left + rect.right), View.MeasureSpec.getSize(i7)), TLObject.FLAG_30);
+                        z9 = true;
                         if (mode2 == Integer.MIN_VALUE) {
-                            TypedValue typedValue3 = z12 ? this.e : this.f;
+                            TypedValue typedValue3 = z11 ? this.e : this.f;
                             if (typedValue3 != null && (i15 = typedValue3.type) != 0) {
                                 if (i15 == 5) {
                                     fraction2 = typedValue3.getDimension(displayMetrics);
@@ -189,8 +191,8 @@ public class ContentFrameLayout extends FrameLayout {
                                         super.onMeasure(i11, i12);
                                         measuredWidth = getMeasuredWidth();
                                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                                        if (!z10 && mode == Integer.MIN_VALUE) {
-                                            typedValue = !z12 ? this.b : this.a;
+                                        if (!z9 && mode == Integer.MIN_VALUE) {
+                                            typedValue = !z11 ? this.b : this.a;
                                             if (typedValue != null && (i13 = typedValue.type) != 0) {
                                                 if (i13 != 5) {
                                                     fraction = typedValue.getDimension(displayMetrics);
@@ -204,7 +206,7 @@ public class ContentFrameLayout extends FrameLayout {
                                                     }
                                                     if (measuredWidth < i14) {
                                                         makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30);
-                                                        if (z11) {
+                                                        if (z10) {
                                                             return;
                                                         }
                                                         super.onMeasure(makeMeasureSpec, i12);
@@ -218,8 +220,8 @@ public class ContentFrameLayout extends FrameLayout {
                                                 }
                                             }
                                         }
-                                        z11 = false;
-                                        if (z11) {
+                                        z10 = false;
+                                        if (z10) {
                                         }
                                     }
                                 }
@@ -232,8 +234,8 @@ public class ContentFrameLayout extends FrameLayout {
                         super.onMeasure(i11, i12);
                         measuredWidth = getMeasuredWidth();
                         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-                        if (!z10) {
-                            if (!z12) {
+                        if (!z9) {
+                            if (!z11) {
                             }
                             if (typedValue != null) {
                                 if (i13 != 5) {
@@ -245,8 +247,8 @@ public class ContentFrameLayout extends FrameLayout {
                                 }
                             }
                         }
-                        z11 = false;
-                        if (z11) {
+                        z10 = false;
+                        if (z10) {
                         }
                     }
                 }
@@ -255,31 +257,31 @@ public class ContentFrameLayout extends FrameLayout {
                 }
             }
         }
-        i11 = i3;
-        z10 = false;
+        i11 = i7;
+        z9 = false;
         if (mode2 == Integer.MIN_VALUE) {
         }
         i12 = i10;
         super.onMeasure(i11, i12);
         measuredWidth = getMeasuredWidth();
         int makeMeasureSpec22 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
-        if (!z10) {
+        if (!z9) {
         }
-        z11 = false;
-        if (z11) {
+        z10 = false;
+        if (z10) {
         }
     }
 
-    public void setAttachListener(i1 i1Var) {
-        this.n = i1Var;
+    public void setAttachListener(j1 j1Var) {
+        this.n = j1Var;
     }
 
     public ContentFrameLayout(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
-    public ContentFrameLayout(Context context, AttributeSet attributeSet, int i3) {
-        super(context, attributeSet, i3);
+    public ContentFrameLayout(Context context, AttributeSet attributeSet, int i7) {
+        super(context, attributeSet, i7);
         this.h = new Rect();
     }
 }

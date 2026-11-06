@@ -1,74 +1,45 @@
 package ba;
 
 import android.util.Log;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
-import java.util.Map;
+import androidx.activity.v;
+import com.google.android.gms.tasks.Tasks;
+import java.util.concurrent.ExecutorService;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e {
-    public final HashMap a = new HashMap();
-    public final int b = 64;
-    public final int c;
+    public static final d d = new d();
+    public final c a;
+    public final c b;
+    public final c c;
 
-    public e(int i3) {
-        this.c = i3;
+    public e(ExecutorService backgroundExecutorService, ExecutorService blockingExecutorService) {
+        j.e(backgroundExecutorService, "backgroundExecutorService");
+        j.e(blockingExecutorService, "blockingExecutorService");
+        this.a = new c(backgroundExecutorService);
+        this.b = new c(backgroundExecutorService);
+        Tasks.forResult(null);
+        this.c = new c(blockingExecutorService);
     }
 
-    public static String b(int i3, String str) {
-        if (str != null) {
-            str = str.trim();
-            if (str.length() > i3) {
-                return str.substring(0, i3);
-            }
+    public static final void a() {
+        if (((Boolean) new v(0, d, d.class, "isBackgroundThread", "isBackgroundThread()Z", 0, 2).invoke()).booleanValue()) {
+            return;
         }
-        return str;
+        String str = "Must be called on a background thread, was called on " + Thread.currentThread().getName() + '.';
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", str, null);
+        }
     }
 
-    public final synchronized Map a() {
-        return DesugarCollections.unmodifiableMap(new HashMap(this.a));
-    }
-
-    public final synchronized boolean c(String str, String str2) {
-        String b10 = b(this.c, str);
-        if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
-            Log.w("FirebaseCrashlytics", "Ignored entry \"" + str + "\" when adding custom keys. Maximum allowable: " + this.b, null);
-            return false;
+    public static final void b() {
+        if (((Boolean) new v(0, d, d.class, "isBlockingThread", "isBlockingThread()Z", 0, 3).invoke()).booleanValue()) {
+            return;
         }
-        String b11 = b(this.c, str2);
-        String str3 = (String) this.a.get(b10);
-        if (str3 == null ? b11 == null : str3.equals(b11)) {
-            return false;
-        }
-        HashMap hashMap = this.a;
-        if (str2 == null) {
-            b11 = "";
-        }
-        hashMap.put(b10, b11);
-        return true;
-    }
-
-    public final synchronized void d(Map map) {
-        try {
-            int i3 = 0;
-            for (Map.Entry entry : map.entrySet()) {
-                String str = (String) entry.getKey();
-                if (str == null) {
-                    throw new IllegalArgumentException("Custom attribute key must not be null.");
-                }
-                String b10 = b(this.c, str);
-                if (this.a.size() >= this.b && !this.a.containsKey(b10)) {
-                    i3++;
-                }
-                String str2 = (String) entry.getValue();
-                this.a.put(b10, str2 == null ? "" : b(this.c, str2));
-            }
-            if (i3 > 0) {
-                Log.w("FirebaseCrashlytics", "Ignored " + i3 + " entries when adding custom keys. Maximum allowable: " + this.b, null);
-            }
-        } catch (Throwable th2) {
-            throw th2;
+        String str = "Must be called on a blocking thread, was called on " + Thread.currentThread().getName() + '.';
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", str, null);
         }
     }
 }

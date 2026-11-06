@@ -5,35 +5,35 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ f b;
     public final /* synthetic */ TL_wallet.currencyRates c;
 
-    public /* synthetic */ e(f fVar, TL_wallet.currencyRates currencyrates, int i3) {
-        this.a = i3;
+    public /* synthetic */ e(f fVar, TL_wallet.currencyRates currencyrates, int i7) {
+        this.a = i7;
         this.b = fVar;
         this.c = currencyrates;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3;
+        int i7;
         switch (this.a) {
             case 0:
                 f fVar = this.b;
                 TL_wallet.currencyRates currencyrates = this.c;
-                boolean z10 = true;
+                boolean z9 = true;
                 if (currencyrates == null || currencyrates.rates == null) {
-                    i3 = 1;
+                    i7 = 1;
                 } else {
                     try {
                         InputStream open = org.telegram.messenger.t0.b.getAssets().open("currencies.json");
                         try {
-                            String str = g2.n0.a;
-                            JSONObject jSONObject = new JSONObject(new String(h9.f.b(open), f9.j.a));
+                            String str = h2.m0.a;
+                            JSONObject jSONObject = new JSONObject(new String(i9.f.b(open), g9.j.a));
                             ArrayList<TL_wallet.currencyRate> arrayList = currencyrates.rates;
                             int size = arrayList.size();
                             int i10 = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class e implements Runnable {
                                         currencyrate2.symbol = str2;
                                         currencyrate2.thousandsSeparator = ",";
                                         currencyrate2.decimalSeparator = ".";
-                                        currencyrate2.spaceBetween = z10;
+                                        currencyrate2.spaceBetween = z9;
                                         currencyrate2.exp = 2;
                                     } else {
                                         currencyrate2.title = optJSONObject.optString("title", currencyrate2.currency);
@@ -66,20 +66,20 @@ public final /* synthetic */ class e implements Runnable {
                                         } else if ("USD".equalsIgnoreCase(currencyrate2.currency)) {
                                             currencyrate2.title = currencyrate2.title.replace("United States", "US");
                                         }
-                                        z10 = true;
+                                        z9 = true;
                                     }
                                 }
                             }
                             open.close();
-                            i3 = 1;
+                            i7 = 1;
                         } finally {
                         }
                     } catch (Exception e10) {
-                        i3 = 1;
+                        i7 = 1;
                         org.telegram.messenger.a8.g(e10, true);
                     }
                 }
-                org.telegram.messenger.g0.h3(new e(fVar, currencyrates, i3));
+                org.telegram.messenger.g0.h3(new e(fVar, currencyrates, i7));
                 return;
             default:
                 f fVar2 = this.b;

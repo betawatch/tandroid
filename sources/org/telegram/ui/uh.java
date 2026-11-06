@@ -1,53 +1,88 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class uh extends org.telegram.ui.ActionBar.f1 {
-    public final /* synthetic */ org.telegram.ui.Components.li0 o;
-    public final /* synthetic */ wm p;
+public final class uh implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uh(wm wmVar, va vaVar, org.telegram.ui.Components.li0 li0Var) {
-        super(vaVar, -2, -2);
-        this.p = wmVar;
-        this.o = li0Var;
+    public uh(c40 c40Var, Rect rect) {
+        this.a = 1;
+        this.d = c40Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    @Override // org.telegram.ui.ActionBar.f1
-    public final void d(boolean z10) {
-        super.d(z10);
-        org.telegram.ui.Components.li0 li0Var = this.o;
-        if (li0Var != null) {
-            li0Var.d(z10);
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        e30 e30Var;
+        switch (this.a) {
+            case 0:
+                an anVar = (an) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        anVar.O7(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.ActionBar.g1 g1Var = anVar.e9;
+                    if (g1Var != null && g1Var.isShowing()) {
+                        View contentView = anVar.e9.getContentView();
+                        int[] iArr = this.b;
+                        contentView.getLocationInWindow(iArr);
+                        int i7 = iArr[0];
+                        int i10 = iArr[1];
+                        int measuredWidth = contentView.getMeasuredWidth() + i7;
+                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
+                        Rect rect = this.c;
+                        rect.set(i7, i10, measuredWidth, measuredHeight);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            anVar.O7(true);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                c40 c40Var = (c40) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (e30Var = c40Var.W4) != null && e30Var.isShowing()) {
+                        c40Var.W4.dismiss();
+                        break;
+                    }
+                } else {
+                    e30 e30Var2 = c40Var.W4;
+                    if (e30Var2 != null && e30Var2.isShowing()) {
+                        View contentView2 = c40Var.W4.getContentView();
+                        int[] iArr2 = this.b;
+                        contentView2.getLocationInWindow(iArr2);
+                        int i11 = iArr2[0];
+                        int i12 = iArr2[1];
+                        int measuredWidth2 = contentView2.getMeasuredWidth() + i11;
+                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
+                        Rect rect2 = this.c;
+                        rect2.set(i11, i12, measuredWidth2, measuredHeight2);
+                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            c40Var.W4.dismiss();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        wm wmVar = this.p;
-        if (wmVar.f9 != this) {
-            return;
-        }
-        org.telegram.ui.Components.ac acVar = org.telegram.ui.Components.ac.w;
-        org.telegram.ui.Components.ac acVar2 = wmVar.C1;
-        if (acVar == acVar2 && acVar2 != null) {
-            acVar2.b();
-            wmVar.C1 = null;
-        }
-        wmVar.f9 = null;
-        wmVar.i9 = null;
-        wmVar.h9 = null;
-        wmVar.C0.R = true;
-        if (wmVar.g9) {
-            wmVar.v8(false, true, 0.0f);
-        } else {
-            wmVar.g9 = true;
-        }
-        mj mjVar = wmVar.a0;
-        if (mjVar == null || mjVar.getEditField() == null) {
-            return;
-        }
-        wmVar.a0.getEditField().setAllowDrawCursor(true);
+    public uh(an anVar, Rect rect) {
+        this.a = 0;
+        this.d = anVar;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

@@ -1,37 +1,21 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class uj extends vq0 {
-    public uj(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class uj extends lh.e {
+    public final /* synthetic */ an L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uj(an anVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, oi oiVar, dh.c cVar) {
+        super(context, cVar, oiVar, f6Var);
+        this.L = anVar;
     }
 
-    @Override // org.telegram.ui.vq0
-    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
-        if (f10 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.q1) {
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-                int max = (int) Math.max(f13, f12);
-                int min = (int) Math.min(f14, q1Var.getMeasuredHeight() + f12);
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(f11, max, q1Var.getMeasuredWidth() + f11, min);
-                canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
-                canvas.translate(f11, f12 + q1Var.getPaddingTop());
-                q1Var.Lb = true;
-                q1Var.j1(canvas);
-                if (q1Var.D3() && q1Var.getCurrentMessagesGroup() == null) {
-                    q1Var.x1(1.0f, canvas, false);
-                }
-                q1Var.Lb = false;
-                canvas.restore();
-            }
-        }
+    @Override // lh.e, android.view.View
+    public final void setVisibility(int i7) {
+        super.setVisibility(i7);
+        this.L.fd.h(3, i7 == 0, getMeasuredWidth() > 0);
     }
 }

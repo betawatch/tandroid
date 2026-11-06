@@ -3,9 +3,9 @@ package com.google.android.gms.tasks;
 import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import p6.m;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -124,26 +124,26 @@ final class zzw<TResult> extends Task<TResult> {
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isComplete() {
-        boolean z10;
+        boolean z9;
         synchronized (this.zza) {
-            z10 = this.zzc;
+            z9 = this.zzc;
         }
-        return z10;
+        return z9;
     }
 
     @Override // com.google.android.gms.tasks.Task
     public final boolean isSuccessful() {
-        boolean z10;
+        boolean z9;
         synchronized (this.zza) {
             try {
-                z10 = false;
+                z9 = false;
                 if (this.zzc && !this.zzd && this.zzf == null) {
-                    z10 = true;
+                    z9 = true;
                 }
             } finally {
             }
         }
-        return z10;
+        return z9;
     }
 
     @Override // com.google.android.gms.tasks.Task

@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ls implements ms {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ ls(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ ls(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
     @Override // org.telegram.ui.Components.ms
-    public final void a(int i3, boolean z10) {
+    public final void a(int i7, boolean z9) {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = ((os) this.b).b;
@@ -23,7 +23,7 @@ public final /* synthetic */ class ls implements ms {
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((ms) obj).a(i3, z10);
+                    ((ms) obj).a(i7, z9);
                 }
                 break;
             default:

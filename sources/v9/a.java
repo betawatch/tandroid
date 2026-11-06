@@ -1,33 +1,32 @@
 package v9;
 
-import android.os.Bundle;
-import android.util.Log;
-import androidx.emoji2.text.f;
-import java.util.ArrayList;
-import z9.j;
+import android.os.StrictMode;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicLong;
+import ti.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements x9.a {
-    public final /* synthetic */ f a;
+public final class a implements ThreadFactory {
+    public static final ThreadFactory e = Executors.defaultThreadFactory();
+    public final AtomicLong a = new AtomicLong();
+    public final String b;
+    public final int c;
+    public final StrictMode.ThreadPolicy d;
 
-    public /* synthetic */ a(f fVar) {
-        this.a = fVar;
+    public a(String str, int i7, StrictMode.ThreadPolicy threadPolicy) {
+        this.b = str;
+        this.c = i7;
+        this.d = threadPolicy;
     }
 
-    public void a(j jVar) {
-        f fVar = this.a;
-        synchronized (fVar) {
-            ((ArrayList) fVar.b).add(jVar);
-            ((nb.a) fVar.c).getClass();
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
-            }
-        }
-    }
-
-    @Override // x9.a
-    public void t(Bundle bundle) {
-        ((nb.a) this.a.a).t(bundle);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread newThread = e.newThread(new p(14, this, runnable));
+        Locale locale = Locale.ROOT;
+        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
+        return newThread;
     }
 }

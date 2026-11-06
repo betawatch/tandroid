@@ -8,11 +8,11 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
-import k2.p1;
+import jg.g;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -70,7 +70,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static zzsn zzi(zzsn zzsnVar, byte[] bArr, int i3, int i10, zzry zzryVar) {
+    public static zzsn zzi(zzsn zzsnVar, byte[] bArr, int i7, int i10, zzry zzryVar) {
         if (i10 == 0) {
             return zzsnVar;
         }
@@ -98,7 +98,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean zzj(zzsn zzsnVar, boolean z10) {
+    public static final boolean zzj(zzsn zzsnVar, boolean z9) {
         byte byteValue = ((Byte) zzsnVar.zzh(1, null, null)).byteValue();
         if (byteValue == 1) {
             return true;
@@ -107,14 +107,14 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             return false;
         }
         boolean zzl = zzuc.zza().zzb(zzsnVar.getClass()).zzl(zzsnVar);
-        if (z10) {
+        if (z9) {
             zzsnVar.zzh(2, true != zzl ? null : zzsnVar, null);
         }
         return zzl;
     }
 
-    public static zzsm zzs(zzts zztsVar, Object obj, zzts zztsVar2, zzsq zzsqVar, int i3, zzvg zzvgVar, Class cls) {
-        return new zzsm(zztsVar, "", null, new zzsl(null, i3, zzvgVar, false, false), cls);
+    public static zzsm zzs(zzts zztsVar, Object obj, zzts zztsVar2, zzsq zzsqVar, int i7, zzvg zzvgVar, Class cls) {
+        return new zzsm(zztsVar, "", null, new zzsl(null, i7, zzvgVar, false, false), cls);
     }
 
     public static zzsn zzu(Class cls) {
@@ -148,7 +148,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         } else {
             zzqoVar = new zzqo(inputStream, TLObject.FLAG_12, null);
         }
-        int i3 = zzry.zzb;
+        int i7 = zzry.zzb;
         int i10 = zzuc.zza;
         zzry zzryVar = zzry.zza;
         zzsn zzv = zzsnVar.zzv();
@@ -179,7 +179,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     }
 
     public static zzsn zzx(zzsn zzsnVar, byte[] bArr) {
-        int i3 = zzry.zzb;
+        int i7 = zzry.zzb;
         int i10 = zzuc.zza;
         zzsn zzi = zzi(zzsnVar, bArr, 0, bArr.length, zzry.zza);
         zzg(zzi);
@@ -209,9 +209,9 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         if (zzL()) {
             return zzn();
         }
-        int i3 = this.zza;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.zza;
+        if (i7 != 0) {
+            return i7;
         }
         int zzn = zzn();
         this.zza = zzn;
@@ -236,7 +236,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public final void zzJ(int i3) {
+    public final void zzJ(int i7) {
         this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
@@ -251,15 +251,15 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            throw new IllegalStateException(p1.i(zza, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(g.j(zza, "serialized size must be non-negative, was "));
         }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
+        int i7 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i7 != Integer.MAX_VALUE) {
+            return i7;
         }
         int zza2 = zzugVar.zza(this);
         if (zza2 < 0) {
-            throw new IllegalStateException(p1.i(zza2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(g.j(zza2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
         return zza2;
@@ -282,7 +282,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         zzuc.zza().zzb(getClass()).zzj(this, zzqw.zza(zzqvVar));
     }
 
-    public abstract Object zzh(int i3, Object obj, Object obj2);
+    public abstract Object zzh(int i7, Object obj, Object obj2);
 
     @Override // com.google.android.recaptcha.internal.zztt
     public final /* synthetic */ zzts zzm() {
@@ -300,15 +300,15 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            throw new IllegalStateException(p1.i(zzf, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(g.j(zzf, "serialized size must be non-negative, was "));
         }
-        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i3 != Integer.MAX_VALUE) {
-            return i3;
+        int i7 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i7 != Integer.MAX_VALUE) {
+            return i7;
         }
         int zzf2 = zzf(null);
         if (zzf2 < 0) {
-            throw new IllegalStateException(p1.i(zzf2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(g.j(zzf2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
         return zzf2;

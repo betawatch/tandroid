@@ -1,19 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class pm extends u4.k {
-    public final /* synthetic */ an F;
+import android.content.Intent;
+import java.util.ArrayList;
 
-    public pm(an anVar) {
-        this.F = anVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class pm implements mj {
+    public final /* synthetic */ org.telegram.messenger.c20 a;
+    public final /* synthetic */ di.u2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 c;
+
+    public pm(di.u2 u2Var, org.telegram.messenger.c20 c20Var, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = c20Var;
+        this.b = u2Var;
+        this.c = f2Var;
     }
 
-    @Override // u4.k
-    public final void P(u4.d1 d1Var) {
-        if (d1Var.b() == 0) {
-            an anVar = this.F;
-            anVar.b.M1(anVar, 0);
+    @Override // org.telegram.ui.Components.mj
+    public final void A() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.c.getParentActivity().startActivityForResult(intent, 28);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.mj
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.a(new th.c((String) arrayList.get(0)));
+        }
+        this.b.a(true);
+    }
+
+    @Override // org.telegram.ui.Components.mj
+    public final void p(ArrayList arrayList, boolean z9, int i7, long j3) {
+        if (!arrayList.isEmpty()) {
+            this.a.a(new th.d((org.telegram.messenger.fz) arrayList.get(0)));
+        }
+        this.b.a(true);
+    }
+
+    @Override // org.telegram.ui.Components.mj
+    public final /* synthetic */ void S() {
     }
 }

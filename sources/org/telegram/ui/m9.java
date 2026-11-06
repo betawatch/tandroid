@@ -1,24 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class m9 extends s9 {
-    public final /* synthetic */ n9 h0;
+public final /* synthetic */ class m9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m9(n9 n9Var, int i3) {
-        super(i3);
-        this.h0 = n9Var;
+    public /* synthetic */ m9(s9 s9Var, int i7) {
+        this.a = i7;
+        this.b = s9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.d2
-    public final void finishFragment() {
-        setFinishing(true);
-        this.h0.dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d2
-    public final void removeSelfFromStack() {
-        this.h0.dismiss();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s9 s9Var = this.b;
+                s9Var.Y = floatValue;
+                s9Var.b.setAlpha(1.0f - floatValue);
+                if (s9Var.W == 3) {
+                    s9Var.c.setAlpha(1.0f - s9Var.Y);
+                }
+                s9Var.s.setAlpha(1.0f - s9Var.Y);
+                s9Var.x = (s9Var.Y * 0.25f) + 0.5f;
+                s9Var.fragmentView.invalidate();
+                break;
+            default:
+                this.b.s.invalidate();
+                break;
+        }
     }
 }

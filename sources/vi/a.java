@@ -6,18 +6,18 @@ import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ge;
-import org.telegram.messenger.hs;
-import org.telegram.ui.f31;
+import org.telegram.messenger.me;
+import org.telegram.messenger.qs;
+import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.utils.recorder.audio.d b;
 
-    public /* synthetic */ a(org.telegram.utils.recorder.audio.d dVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(org.telegram.utils.recorder.audio.d dVar, int i7) {
+        this.a = i7;
         this.b = dVar;
     }
 
@@ -47,8 +47,8 @@ public final /* synthetic */ class a implements Runnable {
                     }
                     dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
                     dVar.r = SystemClock.elapsedRealtime();
-                    f fVar = dVar.g;
-                    ((j) fVar.c).i.post(new f31(fVar, fVar.a, 2));
+                    ac.e eVar = dVar.g;
+                    ((h) eVar.c).i.post(new p31(eVar, eVar.a, 2));
                     dVar.i.post(new a(dVar, 2));
                     return;
                 } catch (Throwable th2) {
@@ -78,34 +78,34 @@ public final /* synthetic */ class a implements Runnable {
                         throw new IllegalStateException("AudioRecord read failed: " + read);
                     }
                     byteBuffer.limit(read);
-                    int i3 = read / 2;
-                    long j10 = 0;
+                    int i7 = read / 2;
+                    long j3 = 0;
                     for (int i10 = 0; i10 + 1 < read; i10 += 2) {
-                        long j11 = byteBuffer.getShort(i10);
-                        j10 += j11 * j11;
+                        long j10 = byteBuffer.getShort(i10);
+                        j3 += j10 * j10;
                     }
-                    dVar2.q += i3;
+                    dVar2.q += i7;
                     dVar2.m.incrementAndGet();
                     dVar2.k.post(new org.telegram.utils.recorder.audio.c(0, dVar2, byteBuffer));
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     if (elapsedRealtime - dVar2.r >= 32) {
-                        final double sqrt = i3 == 0 ? 0.0d : Math.sqrt(j10 / i3);
-                        final f fVar2 = dVar2.g;
-                        final long j12 = dVar2.q;
-                        Handler handler = ((j) fVar2.c).i;
-                        final long j13 = fVar2.a;
+                        final double sqrt = i7 == 0 ? 0.0d : Math.sqrt(j3 / i7);
+                        final ac.e eVar2 = dVar2.g;
+                        final long j11 = dVar2.q;
+                        Handler handler = ((h) eVar2.c).i;
+                        final long j12 = eVar2.a;
                         handler.post(new Runnable() { // from class: vi.e
                             @Override // java.lang.Runnable
                             public final void run() {
-                                j jVar = (j) f.this.c;
-                                if (j13 == jVar.o && jVar.G == 3) {
-                                    jVar.q = j12;
-                                    long j14 = jVar.j();
+                                h hVar = (h) ac.e.this.c;
+                                if (j12 == hVar.o && hVar.G == 3) {
+                                    hVar.q = j11;
+                                    long j13 = hVar.j();
                                     double d = sqrt;
                                     if (d >= 0.0d) {
-                                        MediaController mediaController = ((ge) jVar.f.b).a;
-                                        mediaController.l1 = j14;
-                                        hs.f(mediaController.i1).k(hs.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
+                                        MediaController mediaController = ((me) hVar.f.b).a;
+                                        mediaController.k1 = j13;
+                                        qs.f(mediaController.h1).k(qs.k2, Integer.valueOf(mediaController.g1), Double.valueOf(d / 2.0d));
                                     }
                                 }
                             }

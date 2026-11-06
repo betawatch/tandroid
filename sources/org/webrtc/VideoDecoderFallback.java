@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class VideoDecoderFallback extends WrappedNativeVideoDecoder {
     private final VideoDecoder fallback;
@@ -11,10 +11,10 @@ public class VideoDecoderFallback extends WrappedNativeVideoDecoder {
         this.primary = videoDecoder2;
     }
 
-    private static native long nativeCreate(long j10, VideoDecoder videoDecoder, VideoDecoder videoDecoder2);
+    private static native long nativeCreate(long j3, VideoDecoder videoDecoder, VideoDecoder videoDecoder2);
 
     @Override // org.webrtc.WrappedNativeVideoDecoder, org.webrtc.VideoDecoder
-    public long createNative(long j10) {
-        return nativeCreate(j10, this.fallback, this.primary);
+    public long createNative(long j3) {
+        return nativeCreate(j3, this.fallback, this.primary);
     }
 }

@@ -15,19 +15,19 @@ public abstract class p3 extends CountedCompleter implements j5 {
     public int f;
     public int g;
 
-    public abstract p3 a(Spliterator spliterator, long j10, long j11);
+    public abstract p3 a(Spliterator spliterator, long j3, long j10);
 
     public /* synthetic */ void accept(double d) {
         t3.C();
         throw null;
     }
 
-    public /* synthetic */ void accept(int i3) {
+    public /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
 
-    public /* synthetic */ void accept(long j10) {
+    public /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -45,23 +45,23 @@ public abstract class p3 extends CountedCompleter implements j5 {
         return false;
     }
 
-    public p3(Spliterator spliterator, t3 t3Var, int i3) {
+    public p3(Spliterator spliterator, t3 t3Var, int i7) {
         this.a = spliterator;
         this.b = t3Var;
         this.c = d.e(spliterator.estimateSize());
         this.d = 0L;
-        this.e = i3;
+        this.e = i7;
     }
 
-    public p3(p3 p3Var, Spliterator spliterator, long j10, long j11, int i3) {
+    public p3(p3 p3Var, Spliterator spliterator, long j3, long j10, int i7) {
         super(p3Var);
         this.a = spliterator;
         this.b = p3Var.b;
         this.c = p3Var.c;
-        this.d = j10;
-        this.e = j11;
-        if (j10 < 0 || j11 < 0 || (j10 + j11) - 1 >= i3) {
-            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j10), Long.valueOf(j10), Long.valueOf(j11), Integer.valueOf(i3)));
+        this.d = j3;
+        this.e = j10;
+        if (j3 < 0 || j10 < 0 || (j3 + j10) - 1 >= i7) {
+            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j3), Long.valueOf(j3), Long.valueOf(j10), Integer.valueOf(i7)));
         }
     }
 
@@ -83,13 +83,13 @@ public abstract class p3 extends CountedCompleter implements j5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
-        long j11 = this.e;
-        if (j10 > j11) {
+    public final void o(long j3) {
+        long j10 = this.e;
+        if (j3 > j10) {
             throw new IllegalStateException("size passed to Sink.begin exceeds array length");
         }
-        int i3 = (int) this.d;
-        this.f = i3;
-        this.g = i3 + ((int) j11);
+        int i7 = (int) this.d;
+        this.f = i7;
+        this.g = i7 + ((int) j10);
     }
 }

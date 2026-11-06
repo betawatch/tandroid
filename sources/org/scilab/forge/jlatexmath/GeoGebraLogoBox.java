@@ -1,18 +1,18 @@
 package org.scilab.forge.jlatexmath;
 
-import a1.g;
-import org.telegram.messenger.hs;
+import a8.p0;
+import org.telegram.messenger.qs;
 import ru.noties.jlatexmath.awt.BasicStroke;
 import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class GeoGebraLogoBox extends Box {
-    private static final Color gray = new Color(hs.n1, hs.n1, hs.n1);
-    private static final Color blue = new Color(hs.j2, hs.j2, hs.e4);
+    private static final Color gray = new Color(qs.n1, qs.n1, qs.n1);
+    private static final Color blue = new Color(qs.j2, qs.j2, qs.e4);
     private static final BasicStroke st = new BasicStroke(3.8f, 0, 0, 4.0f);
 
     public GeoGebraLogoBox(float f10, float f11) {
@@ -37,7 +37,7 @@ public class GeoGebraLogoBox extends Box {
         Color color = graphics2D.getColor();
         Stroke stroke = graphics2D.getStroke();
         float f12 = this.height;
-        graphics2D.translate(g.e(f12, 0.25f, 2.15f, f10), f11 - (f12 * 0.81395346f));
+        graphics2D.translate(p0.f(f12, 0.25f, 2.15f, f10), f11 - (f12 * 0.81395346f));
         graphics2D.setColor(gray);
         graphics2D.setStroke(st);
         float f13 = this.height;

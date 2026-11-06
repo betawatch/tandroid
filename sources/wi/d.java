@@ -2,22 +2,22 @@ package wi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ j b;
     public final /* synthetic */ m c;
 
-    public /* synthetic */ d(j jVar, m mVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ d(j jVar, m mVar, int i7) {
+        this.a = i7;
         this.b = jVar;
         this.c = mVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        s sVar;
+        t tVar;
         switch (this.a) {
             case 0:
                 j jVar = this.b;
@@ -47,27 +47,27 @@ public final /* synthetic */ class d implements Runnable {
                     }
                     jVar3.j.b("common A/V start completed: segmentElapsedMs=" + j.z(jVar3.F0));
                     t0 t0Var = (t0) jVar3.k.b;
-                    t0Var.i.post(new h0(t0Var, 2));
+                    t0Var.i.post(new i0(t0Var, 2));
                     return;
                 }
                 return;
             default:
                 j jVar4 = this.b;
                 m mVar2 = this.c;
-                if (!jVar4.V || jVar4.b0 || jVar4.x != mVar2 || jVar4.A == null || (sVar = jVar4.w) == null) {
+                if (!jVar4.V || jVar4.b0 || jVar4.x != mVar2 || jVar4.A == null || (tVar = jVar4.w) == null) {
                     return;
                 }
                 try {
-                    long j10 = mVar2.F;
-                    if (j10 <= 0) {
+                    long j3 = mVar2.F;
+                    if (j3 <= 0) {
                         throw new IllegalArgumentException("Invalid recording time origin");
                     }
-                    sVar.p = j10;
-                    sVar.Q = -1L;
-                    sVar.R = 0L;
-                    sVar.S = -1L;
-                    sVar.q = Long.MAX_VALUE;
-                    sVar.s0 = true;
+                    tVar.p = j3;
+                    tVar.Q = -1L;
+                    tVar.R = 0L;
+                    tVar.S = -1L;
+                    tVar.q = Long.MAX_VALUE;
+                    tVar.s0 = true;
                     jVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + j.z(jVar4.F0));
                     return;
                 } catch (RuntimeException e10) {

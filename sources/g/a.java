@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import android.widget.AdapterView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a implements AdapterView.OnItemClickListener {
     public final /* synthetic */ e a;
@@ -16,11 +16,11 @@ public final class a implements AdapterView.OnItemClickListener {
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i3, long j10) {
+    public final void onItemClick(AdapterView adapterView, View view, int i7, long j3) {
         b bVar = this.b;
         DialogInterface.OnClickListener onClickListener = (DialogInterface.OnClickListener) bVar.m;
         e eVar = this.a;
-        onClickListener.onClick(eVar.b, i3);
+        onClickListener.onClick(eVar.b, i7);
         if (bVar.a) {
             return;
         }

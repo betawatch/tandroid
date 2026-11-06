@@ -1,120 +1,473 @@
 package kg;
 
 import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import b8.mf;
-import java.util.HashSet;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.bd;
+import android.widget.FrameLayout;
+import c8.ha;
+import di.q4;
+import j$.time.DayOfWeek;
+import j$.time.format.TextStyle;
+import java.util.ArrayList;
+import java.util.Calendar;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.t3;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k5;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.u8;
-import org.telegram.ui.Components.xp;
-import org.telegram.ui.cz;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.Cells.h5;
+import org.telegram.ui.Cells.m8;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class c1 extends LinearLayout implements z5 {
-    public ShapeDrawable a;
-    public final e6 b;
-    public final k9 c;
-    public final u8 d;
-    public final TextView e;
-    public final TextView f;
+public final class c1 extends f2 implements ls {
+    public k41 a;
+    public b5 b;
+    public boolean c;
+    public boolean d;
+    public ArrayList[] e;
+    public ArrayList[] f;
+    public String h;
+    public String n;
 
-    public c1(Context context, e6 e6Var, boolean z10) {
-        super(context);
-        this.d = new u8((e6) null);
-        this.b = e6Var;
-        setOrientation(0);
-        k9 k9Var = new k9(context);
-        this.c = k9Var;
-        k9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
-        addView(k9Var, mf.t(28, 28, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, mf.t(-1, -2, 55, 0, 4, 12, 4));
-        TextView textView = new TextView(context);
-        this.e = textView;
-        textView.setTextSize(1, 15.0f);
-        int i3 = k6.G6;
-        r6.V(textView, i3, e6Var);
-        linearLayout.addView(textView, mf.o(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTextSize(1, 13.0f);
-        r6.W(textView2, z10 ? r6.L(0.5f, i3) : r6.N(k6.z6), e6Var);
-        linearLayout.addView(textView2, mf.o(-1, -2));
+    public c1() {
+        super(null);
+        this.e = null;
+        this.f = new ArrayList[]{new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList()};
     }
 
-    public final void a(int i3, String str, TLRPC.Chat chat) {
-        if (str == null) {
+    public static void Z(c1 c1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
+        if (tL_error != null) {
+            c1Var.b.b(false);
+            hc.d0(tL_error);
+        } else {
+            if (tLObject instanceof TLRPC.TL_boolFalse) {
+                if (c1Var.getParentActivity() == null) {
+                    return;
+                }
+                c1Var.b.b(false);
+                k5.p(null, 2131743880, hc.a0(c1Var), null);
+                return;
+            }
+            if (c1Var.isFinished || c1Var.finishing) {
+                return;
+            }
+            c1Var.finishFragment();
+        }
+    }
+
+    public static void a0(c1 c1Var, ArrayList arrayList) {
+        String M0 = hd.M0(2131752764, null);
+        String M02 = hd.M0(2131752749, null);
+        r31 r31Var = new r31(2);
+        r31Var.l = M0;
+        r31Var.o = M02;
+        r31Var.k = R.raw.biz_clock;
+        arrayList.add(r31Var);
+        r31 i7 = r31.i(-1, hd.M0(2131752729, null));
+        i7.L(c1Var.d);
+        arrayList.add(i7);
+        arrayList.add(r31.B(-100, null));
+        if (!c1Var.d) {
             return;
         }
-        TextView textView = this.f;
-        TextView textView2 = this.e;
-        k9 k9Var = this.c;
-        if (i3 == 0) {
-            ShapeDrawable d02 = k6.d0(org.telegram.messenger.g0.L(28.0f), k6.w0(k6.Ci, this.b));
-            this.a = d02;
-            xp xpVar = new xp(d02, getContext().getResources().getDrawable(R.drawable.menu_hashtag).mutate());
-            xpVar.s = org.telegram.messenger.g0.L(-0.66f);
-            xpVar.w = 0;
-            int L = org.telegram.messenger.g0.L(20.0f);
-            int L2 = org.telegram.messenger.g0.L(20.0f);
-            xpVar.e = L;
-            xpVar.f = L2;
-            k9Var.setImageDrawable(xpVar);
-            textView2.setText(bd.a0(null, null, 2131749352, str));
-            textView.setText(bd.M0(2131749353, null));
-            return;
+        arrayList.add(r31.u(hd.M0(2131752764, null)));
+        int i10 = 0;
+        while (true) {
+            ArrayList[] arrayListArr = c1Var.f;
+            if (i10 >= arrayListArr.length) {
+                arrayList.add(r31.B(-101, null));
+                arrayList.add(r31.f(hd.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
+                arrayList.add(r31.B(-102, null));
+                return;
+            }
+            if (arrayListArr[i10] == null) {
+                arrayListArr[i10] = new ArrayList();
+            }
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
+            String f02 = f0(c1Var.f[i10]);
+            r31 r31Var2 = new r31(5);
+            r31Var2.d = i10;
+            r31Var2.l = str;
+            r31Var2.m = f02;
+            r31Var2.L(!c1Var.f[i10].isEmpty());
+            arrayList.add(r31Var2);
+            i10++;
         }
-        u8 u8Var = this.d;
-        u8Var.q(chat);
-        k9Var.e(chat, u8Var);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(bd.a0(null, null, 2131749350, str + "@" + t3.K(chat, false)));
-        spannableStringBuilder.append((CharSequence) "  d");
-        cz czVar = new cz(8);
-        czVar.f = k6.x0(null, k6.zk, false);
-        czVar.n = false;
-        spannableStringBuilder.setSpan(czVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-        textView2.setText(spannableStringBuilder);
-        textView.setText(bd.M0(2131749351, null));
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i10);
+    public static /* synthetic */ void b0(c1 c1Var, View view, String str) {
+        x1 b10 = x1.b(c1Var.currentAccount);
+        c1Var.n = str;
+        ((m8) view).w(b10.d(str, false), true);
+        c1Var.d0(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.a;
-            if (shapeDrawable != null) {
-                k6.C1(k6.w0(k6.Ci, this.b), shapeDrawable);
-                k9 k9Var = this.c;
-                if (k9Var != null) {
-                    k9Var.invalidate();
+    public static ArrayList[] e0(ArrayList arrayList) {
+        int i7;
+        ArrayList[] arrayListArr = new ArrayList[7];
+        for (int i10 = 0; i10 < 7; i10++) {
+            arrayListArr[i10] = new ArrayList();
+        }
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = (TL_account.TL_businessWeeklyOpen) arrayList.get(i11);
+            int i12 = tL_businessWeeklyOpen.start_minute;
+            int i13 = i12 % 1440;
+            arrayListArr[(i12 / 1440) % 7].add(new b1(i13, (tL_businessWeeklyOpen.end_minute - i12) + i13));
+        }
+        int i14 = 0;
+        while (i14 < 7) {
+            int i15 = i14 * 1440;
+            int i16 = i14 + 1;
+            int i17 = i16 * 1440;
+            int i18 = i15;
+            for (int i19 = 0; i19 < arrayList.size(); i19++) {
+                TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2 = (TL_account.TL_businessWeeklyOpen) arrayList.get(i19);
+                if (tL_businessWeeklyOpen2.start_minute <= i18 && (i7 = tL_businessWeeklyOpen2.end_minute) >= i18) {
+                    i18 = i7 + 1;
                 }
             }
-        } catch (Exception e10) {
-            a8.g(e10, true);
+            if (i18 >= i17) {
+                int i20 = (i14 + 6) % 7;
+                if (!arrayListArr[i20].isEmpty() && ((b1) jg.g.i(1, arrayListArr[i20])).b >= 1440) {
+                    ((b1) jg.g.i(1, arrayListArr[i20])).b = 1439;
+                }
+                int min = Math.min((i18 - i15) - 1, 2879);
+                ArrayList arrayList2 = arrayListArr[(i14 + 8) % 7];
+                if (min >= 1440 && !arrayList2.isEmpty() && ((b1) arrayList2.get(0)).a < min - 1440) {
+                    min = ((b1) arrayList2.get(0)).a + 1439;
+                }
+                arrayListArr[i14].clear();
+                arrayListArr[i14].add(new b1(0, min));
+            } else {
+                int i21 = i16 % 7;
+                if (!arrayListArr[i14].isEmpty() && !arrayListArr[i21].isEmpty()) {
+                    b1 b1Var = (b1) jg.g.i(1, arrayListArr[i14]);
+                    b1 b1Var2 = (b1) arrayListArr[i21].get(0);
+                    int i22 = b1Var.b;
+                    if (i22 > 1440 && i22 - 1439 == b1Var2.a) {
+                        b1Var.b = 1439;
+                        b1Var2.a = 0;
+                    }
+                }
+            }
+            i14 = i16;
+        }
+        return arrayListArr;
+    }
+
+    public static String f0(ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
+            return hd.M0(2131752755, null);
+        }
+        if (h0(arrayList)) {
+            return hd.M0(2131752754, null);
+        }
+        String str = "";
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            b1 b1Var = (b1) arrayList.get(i7);
+            if (i7 > 0) {
+                str = rf.b.q(str, "\n");
+            }
+            StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str);
+            m10.append(b1.a(b1Var.a));
+            m10.append(" - ");
+            m10.append(b1.a(b1Var.b));
+            str = m10.toString();
+        }
+        return str;
+    }
+
+    public static boolean h0(ArrayList arrayList) {
+        if (arrayList == null || arrayList.isEmpty()) {
+            return false;
+        }
+        int i7 = 0;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            b1 b1Var = (b1) arrayList.get(i10);
+            if (i7 < b1Var.a) {
+                return false;
+            }
+            i7 = b1Var.b;
+        }
+        return i7 == 1439 || i7 == 1440;
+    }
+
+    public static String k0(int i7, TLRPC.User user, TL_account.TL_businessWorkHours tL_businessWorkHours) {
+        if (tL_businessWorkHours == null) {
+            return null;
+        }
+        ArrayList[] e02 = e0(tL_businessWorkHours.weekly_open);
+        StringBuilder sb2 = new StringBuilder();
+        if (user != null) {
+            sb2.append(hd.a0(null, null, 2131752759, t10.p(user)));
+            sb2.append("\n");
+        }
+        for (int i10 = 0; i10 < 7; i10++) {
+            ArrayList arrayList = e02[i10];
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
+            sb2.append(": ");
+            if (h0(arrayList)) {
+                sb2.append(hd.M0(2131752741, null));
+            } else if (arrayList.isEmpty()) {
+                sb2.append(hd.M0(2131752745, null));
+            } else {
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    if (i11 > 0) {
+                        sb2.append(", ");
+                    }
+                    b1 b1Var = (b1) arrayList.get(i11);
+                    sb2.append(b1.a(b1Var.a));
+                    sb2.append(" - ");
+                    sb2.append(b1.a(b1Var.b));
+                }
+            }
+            sb2.append("\n");
+        }
+        TLRPC.TL_timezone a10 = x1.b(i7).a(tL_businessWorkHours.timezone_id);
+        if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a10 == null ? 0 : a10.utc_offset)) / 60 != 0 && a10 != null) {
+            x1.b(i7);
+            sb2.append(hd.a0(null, null, 2131752760, x1.e(a10, true)));
+        }
+        return sb2.toString();
+    }
+
+    public final void c0(int i7) {
+        if ((this.f[i7].isEmpty() ? null : (b1) jg.g.i(1, this.f[i7])) == null) {
+            return;
+        }
+        int i10 = (i7 + 6) % 7;
+        b1 b1Var = this.f[i10].isEmpty() ? null : (b1) jg.g.i(1, this.f[i10]);
+        if (b1Var == null || b1Var.b <= 1439) {
+            return;
+        }
+        b1Var.b = 1439;
+        if (b1Var.a >= 1439) {
+            this.f[i10].remove(b1Var);
+        }
+        View B1 = this.a.B1(i10);
+        if (B1 instanceof h5) {
+            ((h5) B1).setValue(f0(this.f[i10]));
+        } else {
+            this.a.f3.O(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.ActionBar.f2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(hd.M0(2131752764, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 16));
+        this.b = this.simpleActionBar.n(hd.M0(2131745947, null));
+        d0(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        k41 k41Var = new k41(this, new hi.u1(this, 11), new q4(this, 24), null);
+        this.a = k41Var;
+        k41Var.r1();
+        k41 k41Var2 = this.a;
+        k41Var2.f3.r = false;
+        k41Var2.setSectionsDrawBackground(true);
+        frameLayout.addView(this.a, ha.c(-1.0f, -1));
+        j0();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    public final void d0(boolean z9) {
+        if (this.b == null) {
+            return;
+        }
+        this.b.a(g0(), z9);
+    }
+
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        f41 f41Var;
+        if (i7 == qs.E0) {
+            j0();
+            return;
+        }
+        if (i7 == qs.r3) {
+            if (this.e == null) {
+                this.n = x1.b(this.currentAccount).c();
+            }
+            k41 k41Var = this.a;
+            if (k41Var == null || (f41Var = k41Var.f3) == null) {
+                return;
+            }
+            f41Var.O(true);
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x006c, code lost:
+    
+        return true;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean g0() {
+        if ((this.e != null) != this.d || !TextUtils.equals(this.h, this.n)) {
+            return true;
+        }
+        if (this.e != null && this.d) {
+            if (this.f == null) {
+                return true;
+            }
+            int i7 = 0;
+            loop0: while (true) {
+                ArrayList[] arrayListArr = this.e;
+                if (i7 >= arrayListArr.length) {
+                    break;
+                }
+                if (arrayListArr[i7].size() != this.f[i7].size()) {
+                    return true;
+                }
+                for (int i10 = 0; i10 < this.f[i7].size(); i10++) {
+                    b1 b1Var = (b1) this.e[i7].get(i10);
+                    b1 b1Var2 = (b1) this.f[i7].get(i10);
+                    if (b1Var.a != b1Var2.a || b1Var.b != b1Var2.b) {
+                        break loop0;
+                    }
+                }
+                i7++;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final pj0 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    public final void i0() {
+        if (this.b.y.f) {
+            return;
+        }
+        if (!g0()) {
+            finishFragment();
+            return;
+        }
+        this.b.b(true);
+        TLRPC.UserFull b22 = getMessagesController().b2(getUserConfig().e());
+        TL_account.updateBusinessWorkHours updatebusinessworkhours = new TL_account.updateBusinessWorkHours();
+        ArrayList[] arrayListArr = this.f;
+        ArrayList arrayList = new ArrayList();
+        if (arrayListArr != null) {
+            for (int i7 = 0; i7 < arrayListArr.length; i7++) {
+                if (arrayListArr[i7] != null) {
+                    for (int i10 = 0; i10 < arrayListArr[i7].size(); i10++) {
+                        b1 b1Var = (b1) arrayListArr[i7].get(i10);
+                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = new TL_account.TL_businessWeeklyOpen();
+                        int i11 = i7 * 1440;
+                        tL_businessWeeklyOpen.start_minute = b1Var.a + i11;
+                        tL_businessWeeklyOpen.end_minute = i11 + b1Var.b;
+                        arrayList.add(tL_businessWeeklyOpen);
+                    }
+                }
+            }
+        }
+        if (this.d && !arrayList.isEmpty()) {
+            TL_account.TL_businessWorkHours tL_businessWorkHours = new TL_account.TL_businessWorkHours();
+            tL_businessWorkHours.timezone_id = this.n;
+            tL_businessWorkHours.weekly_open.addAll(arrayList);
+            updatebusinessworkhours.flags |= 1;
+            updatebusinessworkhours.business_work_hours = tL_businessWorkHours;
+            if (b22 != null) {
+                b22.flags2 = 1 | b22.flags2;
+                b22.business_work_hours = tL_businessWorkHours;
+            }
+        } else if (b22 != null) {
+            b22.flags2 &= -2;
+            b22.business_work_hours = null;
+        }
+        getConnectionsManager().sendRequest(updatebusinessworkhours, new bi.j0(this, 18));
+        getMessagesStorage().j2(b22, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    public final void j0() {
+        f41 f41Var;
+        if (this.c) {
+            return;
+        }
+        TLRPC.UserFull b22 = getMessagesController().b2(getUserConfig().e());
+        if (b22 == null) {
+            getMessagesController().g3(getUserConfig().f(), true, getClassGuid());
+            return;
+        }
+        TL_account.TL_businessWorkHours tL_businessWorkHours = b22.business_work_hours;
+        boolean z9 = tL_businessWorkHours != null;
+        this.d = z9;
+        if (!z9) {
+            String c10 = x1.b(this.currentAccount).c();
+            this.n = c10;
+            this.h = c10;
+            this.e = null;
+            this.f = new ArrayList[7];
+            int i7 = 0;
+            while (true) {
+                ArrayList[] arrayListArr = this.f;
+                if (i7 >= arrayListArr.length) {
+                    break;
+                }
+                arrayListArr[i7] = new ArrayList();
+                if (i7 >= 0 && i7 < 5) {
+                    this.f[i7].add(new b1(0, 1439));
+                }
+                i7++;
+            }
+        } else {
+            String str = tL_businessWorkHours.timezone_id;
+            this.n = str;
+            this.h = str;
+            this.e = e0(tL_businessWorkHours.weekly_open);
+            this.f = e0(b22.business_work_hours.weekly_open);
+        }
+        k41 k41Var = this.a;
+        if (k41Var != null && (f41Var = k41Var.f3) != null) {
+            f41Var.O(true);
+        }
+        d0(false);
+        this.c = true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean onFragmentCreate() {
+        x1.b(this.currentAccount).g();
+        this.n = x1.b(this.currentAccount).c();
+        getNotificationCenter().c(this, qs.E0);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().n(this, qs.E0);
+        super.onFragmentDestroy();
+        i0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

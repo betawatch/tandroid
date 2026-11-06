@@ -1,32 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x90 b;
+import android.content.Context;
+import android.view.View;
 
-    public /* synthetic */ o90(x90 x90Var, int i3) {
-        this.a = i3;
-        this.b = x90Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class o90 extends h61 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ ia0 b;
+
+    public o90(ia0 ia0Var, Context context) {
+        this.b = ia0Var;
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                x90 x90Var = this.b;
-                ci.j1 j1Var = x90Var.f;
-                if (!x90Var.d0.d.r) {
-                    j1Var.x0(j1Var.computeVerticalScrollRange() - (j1Var.computeVerticalScrollExtent() + j1Var.computeVerticalScrollOffset()), org.telegram.messenger.hs.Z3, ni.l.V);
-                    break;
-                } else {
-                    j1Var.x0(-j1Var.computeVerticalScrollOffset(), org.telegram.messenger.hs.Z3, ni.l.V);
-                    break;
-                }
-            default:
-                this.b.h(true, false);
-                break;
-        }
+    @Override // org.telegram.ui.Components.h61
+    public final void b(View view, int i7, int i10) {
+        ca0 ca0Var = (ca0) view;
+        ca0Var.i();
+        ca0Var.l(false);
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final View d(int i7) {
+        return new ca0(this.b, this.a, i7);
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.h61
+    public final int h(int i7) {
+        return ((fa0) this.b.e.a.get(i7)).a;
     }
 }

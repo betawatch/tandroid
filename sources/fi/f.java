@@ -1,72 +1,69 @@
 package fi;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Cells.n7;
-import u4.a1;
-import u4.n0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class f extends n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class f extends gh.b {
+    public final /* synthetic */ int s;
 
-    public /* synthetic */ f(m mVar, int i3) {
-        this.a = i3;
-        this.b = mVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f(int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(i7, f6Var);
+        this.s = 2;
     }
 
-    @Override // u4.n0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, a1 a1Var) {
-        switch (this.a) {
-            case 0:
-                if (!(view instanceof n7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    n7 n7Var = (n7) view;
-                    m mVar = this.b;
-                    mVar.f.getClass();
-                    int R = RecyclerView.R(n7Var);
-                    int i3 = mVar.h.J;
-                    n7Var.b0 = R < i3;
-                    int i10 = R % i3;
-                    n7Var.W = i10 == 0;
-                    n7Var.a0 = i10 == i3 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
+    @Override // gh.b, gh.a
+    public int A() {
+        switch (this.s) {
+            case 2:
+                return c() ? 117440511 : 285212672;
             default:
-                if (!(view instanceof n7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    n7 n7Var2 = (n7) view;
-                    m mVar2 = this.b;
-                    mVar2.r.getClass();
-                    int R2 = RecyclerView.R(n7Var2);
-                    int i11 = mVar2.s.J;
-                    n7Var2.b0 = R2 < i11;
-                    int i12 = R2 % i11;
-                    n7Var2.W = i12 == 0;
-                    n7Var2.a0 = i12 == i11 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
+                return super.A();
         }
+    }
+
+    @Override // gh.b, gh.a
+    public int O() {
+        switch (this.s) {
+            case 2:
+                if (c()) {
+                    return 301989887;
+                }
+                return TLObject.FLAG_29;
+            default:
+                return super.O();
+        }
+    }
+
+    @Override // gh.b, gh.a
+    public int R0() {
+        switch (this.s) {
+            case 2:
+                if (c()) {
+                    return 83886079;
+                }
+                return TLObject.FLAG_29;
+            default:
+                return super.R0();
+        }
+    }
+
+    @Override // gh.b
+    public boolean c() {
+        switch (this.s) {
+            case 0:
+                return true;
+            case 1:
+                return true;
+            default:
+                return super.c();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f(org.telegram.ui.ActionBar.f6 f6Var, int i7, float f10, int i10) {
+        super(f6Var, i7, f10);
+        this.s = i10;
     }
 }

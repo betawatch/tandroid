@@ -26,38 +26,38 @@ public final class k6 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
-    public k6(t6 t6Var, int i3, int i10, int i11, int i12) {
+    public k6(t6 t6Var, int i7, int i10, int i11, int i12) {
         this.f = t6Var;
-        this.a = i3;
+        this.a = i7;
         this.b = i10;
         this.c = i11;
         this.d = i12;
         Object[][] objArr = t6Var.f;
-        this.e = objArr == null ? t6Var.e : objArr[i3];
+        this.e = objArr == null ? t6Var.e : objArr[i7];
     }
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.d;
         int i11 = this.b;
-        if (i3 == i11) {
+        if (i7 == i11) {
             return i10 - this.c;
         }
         long[] jArr = this.f.d;
-        return ((jArr[i11] + i10) - jArr[i3]) - this.c;
+        return ((jArr[i11] + i10) - jArr[i7]) - this.c;
     }
 
     @Override // j$.util.Spliterator
     public final boolean tryAdvance(Consumer consumer) {
         Objects.requireNonNull(consumer);
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.b;
-        if (i3 >= i10 && (i3 != i10 || this.c >= this.d)) {
+        if (i7 >= i10 && (i7 != i10 || this.c >= this.d)) {
             return false;
         }
         Object[] objArr = this.e;
@@ -80,22 +80,22 @@ public final class k6 implements Spliterator {
     public final void forEachRemaining(Consumer consumer) {
         t6 t6Var;
         Objects.requireNonNull(consumer);
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.d;
         int i11 = this.b;
-        if (i3 < i11 || (i3 == i11 && this.c < i10)) {
+        if (i7 < i11 || (i7 == i11 && this.c < i10)) {
             int i12 = this.c;
             while (true) {
                 t6Var = this.f;
-                if (i3 >= i11) {
+                if (i7 >= i11) {
                     break;
                 }
-                Object[] objArr = t6Var.f[i3];
+                Object[] objArr = t6Var.f[i7];
                 while (i12 < objArr.length) {
                     consumer.x(objArr[i12]);
                     i12++;
                 }
-                i3++;
+                i7++;
                 i12 = 0;
             }
             Object[] objArr2 = this.a == i11 ? this.e : t6Var.f[i11];
@@ -110,19 +110,19 @@ public final class k6 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = this.b;
-        if (i3 < i10) {
+        if (i7 < i10) {
             int i11 = i10 - 1;
             int i12 = this.c;
             t6 t6Var = this.f;
-            k6 k6Var = new k6(t6Var, i3, i11, i12, t6Var.f[i11].length);
+            k6 k6Var = new k6(t6Var, i7, i11, i12, t6Var.f[i11].length);
             this.a = i10;
             this.c = 0;
             this.e = t6Var.f[i10];
             return k6Var;
         }
-        if (i3 != i10) {
+        if (i7 != i10) {
             return null;
         }
         int i13 = this.c;

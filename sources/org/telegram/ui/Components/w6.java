@@ -1,64 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Bundle;
+import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w6 implements org.telegram.messenger.u10 {
+public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z7 b;
+    public final /* synthetic */ b8 b;
+    public final /* synthetic */ org.telegram.messenger.ij c;
 
-    public /* synthetic */ w6(z7 z7Var, int i3) {
-        this.a = i3;
-        this.b = z7Var;
+    public /* synthetic */ w6(b8 b8Var, org.telegram.messenger.ij ijVar, int i7) {
+        this.a = i7;
+        this.b = b8Var;
+        this.c = ijVar;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        TLRPC.Document F0;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        org.telegram.messenger.ij ijVar = this.c;
+        b8 b8Var = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) obj;
-                if (ziVar != null) {
-                    z7 z7Var = this.b;
-                    if (z7Var.n2 != null && (F0 = ziVar.F0()) != null) {
-                        if (F0.id == 0) {
-                            org.telegram.ui.ActionBar.s1 s1Var = new org.telegram.ui.ActionBar.s1(3, z7Var.getContext(), null);
-                            s1Var.r(180L);
-                            File file = new File(ziVar.k.attachPath);
-                            if (file.exists()) {
-                                org.telegram.messenger.w7.G(z7Var.a).g0(file.getAbsolutePath(), new ai.m(z7Var, s1Var, F0, 8));
-                                break;
-                            }
-                        } else {
-                            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
-                            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                            tL_account_saveMusic.id = tL_inputDocument;
-                            tL_inputDocument.id = F0.id;
-                            tL_inputDocument.access_hash = F0.access_hash;
-                            tL_inputDocument.file_reference = F0.file_reference;
-                            org.telegram.messenger.bp bpVar = z7Var.n2;
-                            if (bpVar != null) {
-                                bpVar.c.add(0, bpVar.d(F0));
-                                bpVar.e();
-                            }
-                            z7Var.o2.clear();
-                            z7Var.o2.addAll(z7Var.n2.c);
-                            z7Var.r1.f();
-                            ConnectionsManager.getInstance(z7Var.a).sendRequest(tL_account_saveMusic, null);
-                            break;
-                        }
+                org.telegram.messenger.kp kpVar = b8Var.m2;
+                if (kpVar != null) {
+                    TLRPC.Document a10 = kpVar.a();
+                    kpVar.c.remove(ijVar);
+                    if (kpVar.a() != a10) {
+                        kpVar.e();
+                    }
+                    if (!b8Var.m2.c.isEmpty()) {
+                        org.telegram.messenger.qs.f(b8Var.a).k(org.telegram.messenger.qs.T3, b8Var.m2);
+                        break;
+                    } else {
+                        MediaController.B().o();
+                        b8Var.dismiss();
+                        break;
                     }
                 }
                 break;
             default:
-                z7 z7Var2 = this.b;
-                FrameLayout frameLayout = (FrameLayout) z7Var2.b;
-                org.telegram.ui.ActionBar.e6 e6Var = z7Var2.J0;
-                new fc(frameLayout, e6Var).o(ec.G, e6Var).j();
+                LaunchActivity launchActivity = b8Var.w2;
+                int i10 = org.telegram.messenger.p10.s0;
+                int i11 = b8Var.a;
+                if (i10 != i11) {
+                    launchActivity.O0(i11);
+                }
+                Bundle bundle = new Bundle();
+                long B0 = org.telegram.messenger.ij.B0(ijVar.k);
+                if (org.telegram.messenger.m5.C(B0)) {
+                    bundle.putInt("enc_id", (int) (B0 & 4294967295L));
+                } else if (org.telegram.messenger.m5.E(B0)) {
+                    bundle.putLong("user_id", B0);
+                } else {
+                    TLRPC.Chat M0 = org.telegram.messenger.qp.s1(b8Var.a).M0(Long.valueOf(-B0));
+                    if (M0 != null && M0.migrated_to != null) {
+                        bundle.putLong("migrated_to", B0);
+                        B0 = -M0.migrated_to.channel_id;
+                    }
+                    bundle.putLong("chat_id", -B0);
+                }
+                bundle.putInt("message_id", ijVar.f1());
+                org.telegram.messenger.qs.f(b8Var.a).k(4, new Object[0]);
+                launchActivity.u0(new org.telegram.ui.an(bundle), false, false);
+                b8Var.dismiss();
                 break;
         }
     }

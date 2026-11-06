@@ -2,126 +2,126 @@ package i0;
 
 import android.graphics.Path;
 import android.util.Log;
-import b8.rc;
-import org.telegram.messenger.hs;
+import c8.i0;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d {
     public char a;
     public final float[] b;
 
-    public d(char c2, float[] fArr) {
-        this.a = c2;
+    public d(char c10, float[] fArr) {
+        this.a = c10;
         this.b = fArr;
     }
 
-    public static void a(Path path, float f10, float f11, float f12, float f13, float f14, float f15, float f16, boolean z10, boolean z11) {
+    public static void a(Path path, float f10, float f11, float f12, float f13, float f14, float f15, float f16, boolean z9, boolean z10) {
         double d;
-        double d10;
+        double d2;
         double radians = Math.toRadians(f16);
         double cos = Math.cos(radians);
         double sin = Math.sin(radians);
-        double d11 = f10;
-        double d12 = f11;
-        double d13 = f14;
-        double d14 = ((d12 * sin) + (d11 * cos)) / d13;
-        double d15 = f15;
-        double d16 = ((d12 * cos) + ((-f10) * sin)) / d15;
-        double d17 = f13;
-        double d18 = ((d17 * sin) + (f12 * cos)) / d13;
-        double d19 = ((d17 * cos) + ((-f12) * sin)) / d15;
-        double d20 = d14 - d18;
-        double d21 = d16 - d19;
-        double d22 = (d14 + d18) / 2.0d;
-        double d23 = (d16 + d19) / 2.0d;
-        double d24 = (d21 * d21) + (d20 * d20);
-        if (d24 == 0.0d) {
+        double d10 = f10;
+        double d11 = f11;
+        double d12 = f14;
+        double d13 = ((d11 * sin) + (d10 * cos)) / d12;
+        double d14 = f15;
+        double d15 = ((d11 * cos) + ((-f10) * sin)) / d14;
+        double d16 = f13;
+        double d17 = ((d16 * sin) + (f12 * cos)) / d12;
+        double d18 = ((d16 * cos) + ((-f12) * sin)) / d14;
+        double d19 = d13 - d17;
+        double d20 = d15 - d18;
+        double d21 = (d13 + d17) / 2.0d;
+        double d22 = (d15 + d18) / 2.0d;
+        double d23 = (d20 * d20) + (d19 * d19);
+        if (d23 == 0.0d) {
             Log.w("PathParser", " Points are coincident");
             return;
         }
-        double d25 = (1.0d / d24) - 0.25d;
-        if (d25 < 0.0d) {
-            Log.w("PathParser", "Points are too far apart " + d24);
-            float sqrt = (float) (Math.sqrt(d24) / 1.99999d);
-            a(path, f10, f11, f12, f13, f14 * sqrt, sqrt * f15, f16, z10, z11);
+        double d24 = (1.0d / d23) - 0.25d;
+        if (d24 < 0.0d) {
+            Log.w("PathParser", "Points are too far apart " + d23);
+            float sqrt = (float) (Math.sqrt(d23) / 1.99999d);
+            a(path, f10, f11, f12, f13, f14 * sqrt, sqrt * f15, f16, z9, z10);
             return;
         }
-        double sqrt2 = Math.sqrt(d25);
+        double sqrt2 = Math.sqrt(d24);
+        double d25 = sqrt2 * d19;
         double d26 = sqrt2 * d20;
-        double d27 = sqrt2 * d21;
-        if (z10 == z11) {
-            d = d22 - d27;
-            d10 = d23 + d26;
+        if (z9 == z10) {
+            d = d21 - d26;
+            d2 = d22 + d25;
         } else {
-            d = d22 + d27;
-            d10 = d23 - d26;
+            d = d21 + d26;
+            d2 = d22 - d25;
         }
-        double atan2 = Math.atan2(d16 - d10, d14 - d);
-        double atan22 = Math.atan2(d19 - d10, d18 - d) - atan2;
-        if (z11 != (atan22 >= 0.0d)) {
+        double atan2 = Math.atan2(d15 - d2, d13 - d);
+        double atan22 = Math.atan2(d18 - d2, d17 - d) - atan2;
+        if (z10 != (atan22 >= 0.0d)) {
             atan22 = atan22 > 0.0d ? atan22 - 6.283185307179586d : atan22 + 6.283185307179586d;
         }
-        double d28 = d * d13;
-        double d29 = d10 * d15;
-        double d30 = (d28 * cos) - (d29 * sin);
-        double d31 = (d29 * cos) + (d28 * sin);
+        double d27 = d * d12;
+        double d28 = d2 * d14;
+        double d29 = (d27 * cos) - (d28 * sin);
+        double d30 = (d28 * cos) + (d27 * sin);
         int ceil = (int) Math.ceil(Math.abs((atan22 * 4.0d) / 3.141592653589793d));
         double cos2 = Math.cos(radians);
         double sin2 = Math.sin(radians);
         double cos3 = Math.cos(atan2);
         double sin3 = Math.sin(atan2);
-        double d32 = -d13;
-        double d33 = d32 * cos2;
-        double d34 = d15 * sin2;
-        double d35 = (d33 * sin3) - (d34 * cos3);
-        double d36 = d32 * sin2;
-        double d37 = d15 * cos2;
-        double d38 = atan22 / ceil;
-        double d39 = (cos3 * d37) + (sin3 * d36);
+        double d31 = -d12;
+        double d32 = d31 * cos2;
+        double d33 = d14 * sin2;
+        double d34 = (d32 * sin3) - (d33 * cos3);
+        double d35 = d31 * sin2;
+        double d36 = d14 * cos2;
+        double d37 = atan22 / ceil;
+        double d38 = (cos3 * d36) + (sin3 * d35);
+        double d39 = d10;
         double d40 = d11;
-        double d41 = d12;
-        int i3 = 0;
-        double d42 = atan2;
-        while (i3 < ceil) {
-            double d43 = d42 + d38;
-            double sin4 = Math.sin(d43);
-            double cos4 = Math.cos(d43);
+        int i7 = 0;
+        double d41 = atan2;
+        while (i7 < ceil) {
+            double d42 = d41 + d37;
+            double sin4 = Math.sin(d42);
+            double cos4 = Math.cos(d42);
             int i10 = ceil;
-            double d44 = (((d13 * cos2) * cos4) + d30) - (d34 * sin4);
-            double d45 = (d37 * sin4) + (d13 * sin2 * cos4) + d31;
-            double d46 = (d33 * sin4) - (d34 * cos4);
-            double d47 = (cos4 * d37) + (sin4 * d36);
-            double d48 = d43 - d42;
-            double tan = Math.tan(d48 / 2.0d);
-            double sqrt3 = ((Math.sqrt(((tan * 3.0d) * tan) + 4.0d) - 1.0d) * Math.sin(d48)) / 3.0d;
+            double d43 = (((d12 * cos2) * cos4) + d29) - (d33 * sin4);
+            double d44 = (d36 * sin4) + (d12 * sin2 * cos4) + d30;
+            double d45 = (d32 * sin4) - (d33 * cos4);
+            double d46 = (cos4 * d36) + (sin4 * d35);
+            double d47 = d42 - d41;
+            double tan = Math.tan(d47 / 2.0d);
+            double sqrt3 = ((Math.sqrt(((tan * 3.0d) * tan) + 4.0d) - 1.0d) * Math.sin(d47)) / 3.0d;
             path.rLineTo(0.0f, 0.0f);
-            path.cubicTo((float) ((d35 * sqrt3) + d40), (float) ((d39 * sqrt3) + d41), (float) (d44 - (sqrt3 * d46)), (float) (d45 - (sqrt3 * d47)), (float) d44, (float) d45);
-            i3++;
-            d41 = d45;
-            cos2 = cos2;
-            d36 = d36;
-            d42 = d43;
-            d39 = d47;
+            path.cubicTo((float) ((d34 * sqrt3) + d39), (float) ((d38 * sqrt3) + d40), (float) (d43 - (sqrt3 * d45)), (float) (d44 - (sqrt3 * d46)), (float) d43, (float) d44);
+            i7++;
             d40 = d44;
+            cos2 = cos2;
+            d35 = d35;
+            d41 = d42;
+            d38 = d46;
+            d39 = d43;
             ceil = i10;
-            d35 = d46;
-            d38 = d38;
+            d34 = d45;
+            d37 = d37;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static void b(d[] dVarArr, Path path) {
-        int i3;
+        int i7;
         float[] fArr;
         int i10;
         d dVar;
         int i11;
-        char c2;
+        char c10;
         float f10;
         float f11;
         d dVar2;
-        boolean z10;
+        boolean z9;
         float f12;
         float f13;
         float f14;
@@ -136,10 +136,10 @@ public final class d {
         int length = dVarArr2.length;
         int i12 = 0;
         int i13 = 0;
-        char c10 = 'm';
+        char c11 = 'm';
         while (i13 < length) {
             d dVar3 = dVarArr2[i13];
-            char c11 = dVar3.a;
+            char c12 = dVar3.a;
             float[] fArr3 = dVar3.b;
             float f20 = fArr2[i12];
             float f21 = fArr2[1];
@@ -148,29 +148,29 @@ public final class d {
             float f24 = fArr2[4];
             int i14 = i12;
             float f25 = fArr2[5];
-            switch (c11) {
+            switch (c12) {
                 case 'A':
-                case hs.i1 /* 97 */:
-                    i3 = 7;
+                case qs.i1 /* 97 */:
+                    i7 = 7;
                     break;
-                case hs.E0 /* 67 */:
-                case hs.k1 /* 99 */:
-                    i3 = 6;
+                case qs.E0 /* 67 */:
+                case qs.k1 /* 99 */:
+                    i7 = 6;
                     break;
-                case hs.J0 /* 72 */:
-                case hs.X0 /* 86 */:
-                case hs.p1 /* 104 */:
-                case hs.D1 /* 118 */:
-                    i3 = 1;
+                case qs.J0 /* 72 */:
+                case qs.X0 /* 86 */:
+                case qs.p1 /* 104 */:
+                case qs.D1 /* 118 */:
+                    i7 = 1;
                     break;
-                case hs.S0 /* 81 */:
-                case hs.U0 /* 83 */:
-                case hs.y1 /* 113 */:
-                case hs.A1 /* 115 */:
-                    i3 = 4;
+                case qs.S0 /* 81 */:
+                case qs.U0 /* 83 */:
+                case qs.y1 /* 113 */:
+                case qs.A1 /* 115 */:
+                    i7 = 4;
                     break;
-                case hs.b1 /* 90 */:
-                case hs.G1 /* 122 */:
+                case qs.b1 /* 90 */:
+                case qs.G1 /* 122 */:
                     path2.close();
                     path2.moveTo(f24, f25);
                     f20 = f24;
@@ -178,7 +178,7 @@ public final class d {
                     f21 = f25;
                     f23 = f21;
                 default:
-                    i3 = 2;
+                    i7 = 2;
                     break;
             }
             float f26 = f24;
@@ -187,14 +187,14 @@ public final class d {
             float f29 = f21;
             int i15 = i14;
             while (i15 < fArr3.length) {
-                if (c11 == 'A') {
+                if (c12 == 'A') {
                     fArr = fArr3;
                     i10 = i15;
                     dVar = dVar3;
                     float f30 = f28;
                     float f31 = f29;
                     i11 = i13;
-                    c2 = c11;
+                    c10 = c12;
                     int i16 = i10 + 5;
                     int i17 = i10 + 6;
                     a(path, f30, f31, fArr[i16], fArr[i17], fArr[i10], fArr[i10 + 1], fArr[i10 + 2], fArr[i10 + 3] != 0.0f ? 1 : i14, fArr[i10 + 4] != 0.0f ? 1 : i14);
@@ -202,12 +202,12 @@ public final class d {
                     f10 = fArr[i17];
                     f23 = f10;
                     f11 = f22;
-                } else if (c11 == 'C') {
+                } else if (c12 == 'C') {
                     fArr = fArr3;
                     i10 = i15;
                     i11 = i13;
                     dVar = dVar3;
-                    c2 = c11;
+                    c10 = c12;
                     int i18 = i10 + 2;
                     int i19 = i10 + 3;
                     int i20 = i10 + 4;
@@ -219,21 +219,21 @@ public final class d {
                     f23 = fArr[i19];
                     f10 = f33;
                     f11 = f32;
-                } else if (c11 == 'H') {
+                } else if (c12 == 'H') {
                     fArr = fArr3;
                     i10 = i15;
                     dVar = dVar3;
-                    c2 = c11;
+                    c10 = c12;
                     f10 = f29;
                     i11 = i13;
                     path2.lineTo(fArr[i10], f10);
                     f11 = fArr[i10];
-                } else if (c11 == 'Q') {
+                } else if (c12 == 'Q') {
                     fArr = fArr3;
                     i10 = i15;
                     i11 = i13;
                     dVar = dVar3;
-                    c2 = c11;
+                    c10 = c12;
                     int i22 = i10 + 1;
                     int i23 = i10 + 2;
                     int i24 = i10 + 3;
@@ -246,17 +246,17 @@ public final class d {
                     f23 = f35;
                     f11 = f36;
                     f10 = f37;
-                } else if (c11 == 'V') {
+                } else if (c12 == 'V') {
                     fArr = fArr3;
                     i10 = i15;
                     i11 = i13;
                     dVar = dVar3;
                     f11 = f28;
-                    c2 = c11;
+                    c10 = c12;
                     path2.lineTo(f11, fArr[i10]);
                     f10 = fArr[i10];
-                } else if (c11 != 'a') {
-                    if (c11 == 'c') {
+                } else if (c12 != 'a') {
+                    if (c12 == 'c') {
                         fArr = fArr3;
                         i10 = i15;
                         int i25 = i10 + 2;
@@ -270,17 +270,17 @@ public final class d {
                         f29 += fArr[i28];
                         f22 = f38;
                         f23 = f39;
-                    } else if (c11 != 'h') {
-                        if (c11 != 'q') {
-                            if (c11 != 'v') {
-                                if (c11 == 'L') {
+                    } else if (c12 != 'h') {
+                        if (c12 != 'q') {
+                            if (c12 != 'v') {
+                                if (c12 == 'L') {
                                     fArr = fArr3;
                                     i10 = i15;
                                     int i29 = i10 + 1;
                                     path2.lineTo(fArr[i10], fArr[i29]);
                                     f11 = fArr[i10];
                                     f10 = fArr[i29];
-                                } else if (c11 == 'M') {
+                                } else if (c12 == 'M') {
                                     fArr = fArr3;
                                     i10 = i15;
                                     f11 = fArr[i10];
@@ -292,11 +292,11 @@ public final class d {
                                         f26 = f11;
                                         f27 = f10;
                                     }
-                                } else if (c11 != 'S') {
-                                    if (c11 == 'T') {
+                                } else if (c12 != 'S') {
+                                    if (c12 == 'T') {
                                         fArr = fArr3;
                                         i10 = i15;
-                                        if (c10 == 'q' || c10 == 't' || c10 == 'Q' || c10 == 'T') {
+                                        if (c11 == 'q' || c11 == 't' || c11 == 'Q' || c11 == 'T') {
                                             f28 = (f28 * 2.0f) - f22;
                                             f29 = (f29 * 2.0f) - f23;
                                         }
@@ -307,14 +307,14 @@ public final class d {
                                         dVar = dVar3;
                                         f22 = f28;
                                         f23 = f29;
-                                    } else if (c11 == 'l') {
+                                    } else if (c12 == 'l') {
                                         fArr = fArr3;
                                         i10 = i15;
                                         int i31 = i10 + 1;
                                         path2.rLineTo(fArr[i10], fArr[i31]);
                                         f28 += fArr[i10];
                                         f15 = fArr[i31];
-                                    } else if (c11 == 'm') {
+                                    } else if (c12 == 'm') {
                                         fArr = fArr3;
                                         i10 = i15;
                                         float f40 = fArr[i10];
@@ -331,14 +331,14 @@ public final class d {
                                             f10 = f29;
                                             f27 = f10;
                                         }
-                                    } else if (c11 != 's') {
-                                        if (c11 != 't') {
+                                    } else if (c12 != 's') {
+                                        if (c12 != 't') {
                                             fArr = fArr3;
                                             i10 = i15;
                                             dVar = dVar3;
                                             f11 = f28;
                                         } else {
-                                            if (c10 == 'q' || c10 == 't' || c10 == 'Q' || c10 == 'T') {
+                                            if (c11 == 'q' || c11 == 't' || c11 == 'Q' || c11 == 'T') {
                                                 f18 = f28 - f22;
                                                 f19 = f29 - f23;
                                             } else {
@@ -360,7 +360,7 @@ public final class d {
                                         }
                                         f10 = f29;
                                     } else {
-                                        if (c10 == 'c' || c10 == 's' || c10 == 'C' || c10 == 'S') {
+                                        if (c11 == 'c' || c11 == 's' || c11 == 'C' || c11 == 'S') {
                                             f16 = f29 - f23;
                                             f17 = f28 - f22;
                                         } else {
@@ -380,11 +380,11 @@ public final class d {
                                         f14 = fArr[i36];
                                     }
                                     i11 = i13;
-                                    c2 = c11;
+                                    c10 = c12;
                                 } else {
                                     fArr = fArr3;
                                     i10 = i15;
-                                    if (c10 == 'c' || c10 == 's' || c10 == 'C' || c10 == 'S') {
+                                    if (c11 == 'c' || c11 == 's' || c11 == 'C' || c11 == 'S') {
                                         f28 = (f28 * 2.0f) - f22;
                                         f29 = (f29 * 2.0f) - f23;
                                     }
@@ -401,7 +401,7 @@ public final class d {
                                 }
                                 i11 = i13;
                                 dVar = dVar3;
-                                c2 = c11;
+                                c10 = c12;
                             } else {
                                 fArr = fArr3;
                                 i10 = i15;
@@ -434,7 +434,7 @@ public final class d {
                     f11 = f28;
                     f10 = f29;
                     i11 = i13;
-                    c2 = c11;
+                    c10 = c12;
                 } else {
                     fArr = fArr3;
                     i10 = i15;
@@ -447,30 +447,30 @@ public final class d {
                     float f51 = fArr[i10 + 2];
                     if (fArr[i10 + 3] != 0.0f) {
                         dVar2 = dVar3;
-                        z10 = 1;
+                        z9 = 1;
                     } else {
                         dVar2 = dVar3;
-                        z10 = i14;
+                        z9 = i14;
                     }
                     dVar = dVar2;
                     float f52 = f28;
-                    c2 = c11;
+                    c10 = c12;
                     float f53 = f29;
                     i11 = i13;
-                    a(path, f52, f53, f47, f48, f49, f50, f51, z10, fArr[i10 + 4] != 0.0f ? 1 : i14);
+                    a(path, f52, f53, f47, f48, f49, f50, f51, z9, fArr[i10 + 4] != 0.0f ? 1 : i14);
                     f11 = f52 + fArr[i43];
                     f10 = f53 + fArr[i44];
                     f22 = f11;
                     f23 = f10;
                 }
-                i15 = i10 + i3;
+                i15 = i10 + i7;
                 path2 = path;
                 dVar3 = dVar;
-                c11 = c2;
+                c12 = c10;
                 i13 = i11;
                 f28 = f11;
                 f29 = f10;
-                c10 = c11;
+                c11 = c12;
                 fArr3 = fArr;
             }
             fArr2[i14] = f28;
@@ -479,7 +479,7 @@ public final class d {
             fArr2[3] = f23;
             fArr2[4] = f26;
             fArr2[5] = f27;
-            c10 = dVar3.a;
+            c11 = dVar3.a;
             i13++;
             dVarArr2 = dVarArr;
             path2 = path;
@@ -490,6 +490,6 @@ public final class d {
     public d(d dVar) {
         this.a = dVar.a;
         float[] fArr = dVar.b;
-        this.b = rc.b(fArr.length, fArr);
+        this.b = i0.b(fArr.length, fArr);
     }
 }

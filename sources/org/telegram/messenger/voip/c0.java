@@ -1,28 +1,28 @@
 package org.telegram.messenger.voip;
 
-import android.media.AudioManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ AudioManager c;
+    public final /* synthetic */ TLRPC.GroupCallParticipant c;
 
-    public /* synthetic */ c0(VoIPService voIPService, AudioManager audioManager, int i3) {
-        this.a = i3;
+    public /* synthetic */ c0(VoIPService voIPService, TLRPC.GroupCallParticipant groupCallParticipant, int i7) {
+        this.a = i7;
         this.b = voIPService;
-        this.c = audioManager;
+        this.c = groupCallParticipant;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$configureDeviceForCall$111(this.c);
+                this.b.lambda$startConferenceGroupCall$37(this.c);
                 break;
             default:
-                this.b.lambda$configureDeviceForCall$112(this.c);
+                this.b.lambda$startGroupCall$26(this.c);
                 break;
         }
     }

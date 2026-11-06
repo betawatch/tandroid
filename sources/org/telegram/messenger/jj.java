@@ -2,46 +2,32 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hp b;
-    public final /* synthetic */ TLRPC.Chat c;
+public final class jj extends ij {
+    public final /* synthetic */ int s3;
+    public final /* synthetic */ mj t3;
 
-    public /* synthetic */ jj(hp hpVar, TLRPC.Chat chat, int i3) {
-        this.a = i3;
-        this.b = hpVar;
-        this.c = chat;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jj(mj mjVar, int i7, TLRPC.TL_message tL_message, int i10) {
+        super(i7, tL_message, true, false);
+        this.t3 = mjVar;
+        this.s3 = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        TLRPC.Chat chat = this.c;
-        hp hpVar = this.b;
-        switch (i3) {
-            case 0:
-                hpVar.j(chat);
-                break;
-            case 1:
-                hpVar.getNotificationCenter().k(90, chat);
-                break;
-            case 2:
-                hpVar.getClass();
-                hpVar.G(chat.id, true);
-                break;
-            case 3:
-                hpVar.getNotificationCenter().k(90, chat);
-                break;
-            case 4:
-                hpVar.getNotificationCenter().k(hs.r5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
-                break;
-            default:
-                hpVar.T4(null);
-                hpVar.getNotificationCenter().k(hs.T5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
-                hpVar.getNotificationCenter().k(3, new Object[0]);
-                break;
+    @Override // org.telegram.messenger.ij
+    public final void n0(TLRPC.User user) {
+        super.n0(user);
+        if (this.s3 == 2) {
+            this.t3.b(this);
         }
+    }
+
+    @Override // org.telegram.messenger.ij
+    public final boolean o5() {
+        if (this.t3.k) {
+            return false;
+        }
+        return super.o5();
     }
 }

@@ -1,33 +1,12 @@
 package androidx.mediarouter.app;
 
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.view.animation.Interpolator;
+import android.content.Context;
+import android.media.MediaRouter2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class p0 {
-    public final BitmapDrawable a;
-    public final Rect c;
-    public Interpolator d;
-    public long e;
-    public final Rect f;
-    public int g;
-    public long i;
-    public boolean j;
-    public boolean k;
-    public tf.b l;
-    public float b = 1.0f;
-    public float h = 1.0f;
-
-    public p0(BitmapDrawable bitmapDrawable, Rect rect) {
-        this.a = bitmapDrawable;
-        this.f = rect;
-        Rect rect2 = new Rect(rect);
-        this.c = rect2;
-        if (bitmapDrawable != null) {
-            bitmapDrawable.setAlpha((int) (this.b * 255.0f));
-            bitmapDrawable.setBounds(rect2);
-        }
+public abstract class p0 {
+    public static MediaRouter2 a(Context context) {
+        return MediaRouter2.getInstance(context);
     }
 }

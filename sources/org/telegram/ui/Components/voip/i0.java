@@ -1,43 +1,75 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import org.telegram.ui.sb1;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i0 extends GestureDetector.SimpleOnGestureListener {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ sb1 c;
+public final class i0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y b;
+    public final /* synthetic */ k0 c;
 
-    public i0(sb1 sb1Var) {
-        this.c = sb1Var;
+    public /* synthetic */ i0(k0 k0Var, y yVar, int i7) {
+        this.a = i7;
+        this.c = k0Var;
+        this.b = yVar;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        this.a = true;
-        return super.onDown(motionEvent);
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        float x10 = motionEvent.getX() - motionEvent2.getX();
-        float y9 = motionEvent.getY() - motionEvent2.getY();
-        if (Math.abs(x10) > org.telegram.messenger.g0.a1(true, 0.4f) && Math.abs(x10) / 3.0f > y9 && this.a && !this.b) {
-            this.a = false;
-            org.telegram.ui.c0 c0Var = new org.telegram.ui.c0(this, x10, 2);
-            sb1 sb1Var = this.c;
-            ValueAnimator valueAnimator = sb1Var.V;
-            if (valueAnimator != null) {
-                this.b = true;
-                org.telegram.messenger.g0.i3(c0Var, (valueAnimator.getDuration() - sb1Var.V.getCurrentPlayTime()) + 50);
-            } else {
-                c0Var.run();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                k0 k0Var = this.c;
+                k0Var.N0 = null;
+                this.b.E = false;
+                y yVar = k0Var.E;
+                if (yVar != null) {
+                    if (yVar.getParent() != null) {
+                        k0Var.removeView(k0Var.E);
+                        k0Var.E.e();
+                    }
+                    k0Var.E = null;
+                    break;
+                }
+                break;
+            case 1:
+                k0 k0Var2 = this.c;
+                k0Var2.y.e();
+                k0Var2.r = null;
+                this.b.r = false;
+                if (!k0Var2.b) {
+                    k0Var2.d();
+                    k0Var2.D = null;
+                    k0Var2.d = 0L;
+                }
+                k0Var2.c = k0Var2.b ? 1.0f : 0.0f;
+                k0Var2.l();
+                k0Var2.i(false);
+                if (!k0Var2.b) {
+                    k0Var2.k0.setVisibility(8);
+                    k0Var2.l0.setVisibility(8);
+                    k0Var2.e0.setVisibility(8);
+                    k0Var2.f0.setVisibility(8);
+                    break;
+                }
+                break;
+            case 2:
+                y yVar2 = this.b;
+                if (yVar2.getParent() != null) {
+                    this.c.removeView(yVar2);
+                    yVar2.e();
+                    break;
+                }
+                break;
+            default:
+                y yVar3 = this.b;
+                if (yVar3.getParent() != null) {
+                    this.c.removeView(yVar3);
+                    yVar3.e();
+                    break;
+                }
+                break;
         }
-        return super.onScroll(motionEvent, motionEvent2, f10, f11);
     }
 }

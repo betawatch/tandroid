@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import dd.g;
-import hd.c;
+import gd.g;
+import kd.c;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzei extends c {
     /* synthetic */ Object zza;
@@ -12,16 +12,16 @@ final class zzei extends c {
     int zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzei(zzeq zzeqVar, fd.c cVar) {
+    public zzei(zzeq zzeqVar, id.c cVar) {
         super(cVar);
         this.zzb = zzeqVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         this.zza = obj;
         this.zzc |= TLObject.FLAG_31;
         Object obj2 = this.zzb.execute-0E7RQCE(null, 0L, this);
-        return obj2 == gd.a.a ? obj2 : new g(obj2);
+        return obj2 == jd.a.a ? obj2 : new g(obj2);
     }
 }

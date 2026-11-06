@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class xq implements Interpolator {
     public static final xq f = new xq(0.25d, 0.1d, 0.25d, 1.0d);
@@ -21,7 +21,7 @@ public final class xq implements Interpolator {
     public final PointF e;
 
     static {
-        new PathInterpolator(b8.rc.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(c8.i0.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
         new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
         new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
         l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
@@ -52,7 +52,7 @@ public final class xq implements Interpolator {
         PointF pointF3;
         PointF pointF4;
         PointF pointF5;
-        int i3 = 1;
+        int i7 = 1;
         float f11 = f10;
         while (true) {
             pointF = this.b;
@@ -60,7 +60,7 @@ public final class xq implements Interpolator {
             pointF3 = this.c;
             pointF4 = this.d;
             pointF5 = this.e;
-            if (i3 >= 14) {
+            if (i7 >= 14) {
                 break;
             }
             float f12 = pointF2.x * 3.0f;
@@ -74,7 +74,7 @@ public final class xq implements Interpolator {
                 break;
             }
             f11 -= f15 / (((((pointF3.x * 3.0f) * f11) + (pointF4.x * 2.0f)) * f11) + pointF5.x);
-            i3++;
+            i7++;
         }
         float f16 = pointF2.y * 3.0f;
         pointF5.y = f16;
@@ -85,7 +85,7 @@ public final class xq implements Interpolator {
         return ((((f18 * f11) + pointF4.y) * f11) + pointF5.y) * f11;
     }
 
-    public xq(double d, double d10, double d11, double d12) {
-        this((float) d, (float) d10, (float) d11, (float) d12);
+    public xq(double d, double d2, double d10, double d11) {
+        this((float) d, (float) d2, (float) d10, (float) d11);
     }
 }

@@ -1,358 +1,70 @@
 package t1;
 
-import android.util.Log;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Serializable;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.text.InputFilter;
+import android.text.Selection;
+import android.text.Spannable;
+import android.widget.TextView;
+import androidx.emoji2.text.l;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c {
-    public final int a;
-    public final int b;
-    public final long c;
-    public final byte[] d;
+public final class c extends androidx.emoji2.text.i {
+    public final WeakReference a;
+    public final WeakReference b;
 
-    public c(int i3, int i10, byte[] bArr) {
-        this(-1L, bArr, i3, i10);
+    public c(TextView textView, d dVar) {
+        this.a = new WeakReference(textView);
+        this.b = new WeakReference(dVar);
     }
 
-    public static c a(long j10, ByteOrder byteOrder) {
-        long[] jArr = {j10};
-        ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[4]]);
-        wrap.order(byteOrder);
-        wrap.putInt((int) jArr[0]);
-        return new c(4, 1, wrap.array());
-    }
-
-    public static c b(e eVar, ByteOrder byteOrder) {
-        e[] eVarArr = {eVar};
-        ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[5]]);
-        wrap.order(byteOrder);
-        e eVar2 = eVarArr[0];
-        wrap.putInt((int) eVar2.a);
-        wrap.putInt((int) eVar2.b);
-        return new c(5, 1, wrap.array());
-    }
-
-    public static c c(int i3, ByteOrder byteOrder) {
-        ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[3]]);
-        wrap.order(byteOrder);
-        wrap.putShort((short) new int[]{i3}[0]);
-        return new c(3, 1, wrap.array());
-    }
-
-    public final double d(ByteOrder byteOrder) {
-        Object g7 = g(byteOrder);
-        if (g7 == null) {
-            throw new NumberFormatException("NULL can't be converted to a double value");
+    @Override // androidx.emoji2.text.i
+    public final void a() {
+        InputFilter[] filters;
+        int length;
+        TextView textView = (TextView) this.a.get();
+        InputFilter inputFilter = (InputFilter) this.b.get();
+        if (inputFilter == null || textView == null || (filters = textView.getFilters()) == null) {
+            return;
         }
-        if (g7 instanceof String) {
-            return Double.parseDouble((String) g7);
-        }
-        if (g7 instanceof long[]) {
-            if (((long[]) g7).length == 1) {
-                return r5[0];
-            }
-            throw new NumberFormatException("There are more than one component");
-        }
-        if (g7 instanceof int[]) {
-            if (((int[]) g7).length == 1) {
-                return r5[0];
-            }
-            throw new NumberFormatException("There are more than one component");
-        }
-        if (g7 instanceof double[]) {
-            double[] dArr = (double[]) g7;
-            if (dArr.length == 1) {
-                return dArr[0];
-            }
-            throw new NumberFormatException("There are more than one component");
-        }
-        if (!(g7 instanceof e[])) {
-            throw new NumberFormatException("Couldn't find a double value");
-        }
-        e[] eVarArr = (e[]) g7;
-        if (eVarArr.length != 1) {
-            throw new NumberFormatException("There are more than one component");
-        }
-        e eVar = eVarArr[0];
-        return eVar.a / eVar.b;
-    }
-
-    public final int e(ByteOrder byteOrder) {
-        Object g7 = g(byteOrder);
-        if (g7 == null) {
-            throw new NumberFormatException("NULL can't be converted to a integer value");
-        }
-        if (g7 instanceof String) {
-            return Integer.parseInt((String) g7);
-        }
-        if (g7 instanceof long[]) {
-            long[] jArr = (long[]) g7;
-            if (jArr.length == 1) {
-                return (int) jArr[0];
-            }
-            throw new NumberFormatException("There are more than one component");
-        }
-        if (!(g7 instanceof int[])) {
-            throw new NumberFormatException("Couldn't find a integer value");
-        }
-        int[] iArr = (int[]) g7;
-        if (iArr.length == 1) {
-            return iArr[0];
-        }
-        throw new NumberFormatException("There are more than one component");
-    }
-
-    public final String f(ByteOrder byteOrder) {
-        Object g7 = g(byteOrder);
-        if (g7 == null) {
-            return null;
-        }
-        if (g7 instanceof String) {
-            return (String) g7;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        int i3 = 0;
-        if (g7 instanceof long[]) {
-            long[] jArr = (long[]) g7;
-            while (i3 < jArr.length) {
-                sb2.append(jArr[i3]);
-                i3++;
-                if (i3 != jArr.length) {
-                    sb2.append(",");
-                }
-            }
-            return sb2.toString();
-        }
-        if (g7 instanceof int[]) {
-            int[] iArr = (int[]) g7;
-            while (i3 < iArr.length) {
-                sb2.append(iArr[i3]);
-                i3++;
-                if (i3 != iArr.length) {
-                    sb2.append(",");
-                }
-            }
-            return sb2.toString();
-        }
-        if (g7 instanceof double[]) {
-            double[] dArr = (double[]) g7;
-            while (i3 < dArr.length) {
-                sb2.append(dArr[i3]);
-                i3++;
-                if (i3 != dArr.length) {
-                    sb2.append(",");
-                }
-            }
-            return sb2.toString();
-        }
-        if (!(g7 instanceof e[])) {
-            return null;
-        }
-        e[] eVarArr = (e[]) g7;
-        while (i3 < eVarArr.length) {
-            sb2.append(eVarArr[i3].a);
-            sb2.append('/');
-            sb2.append(eVarArr[i3].b);
-            i3++;
-            if (i3 != eVarArr.length) {
-                sb2.append(",");
-            }
-        }
-        return sb2.toString();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Not initialized variable reg: 4, insn: 0x0032: MOVE (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]) (LINE:51), block:B:100:0x0032 */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x012e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r14v11, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r14v19, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r14v23, types: [int[]] */
-    /* JADX WARN: Type inference failed for: r14v24, types: [long[]] */
-    /* JADX WARN: Type inference failed for: r14v25, types: [t1.e[]] */
-    /* JADX WARN: Type inference failed for: r14v26, types: [int[]] */
-    /* JADX WARN: Type inference failed for: r14v27, types: [int[]] */
-    /* JADX WARN: Type inference failed for: r14v28, types: [t1.e[]] */
-    /* JADX WARN: Type inference failed for: r14v29, types: [double[]] */
-    /* JADX WARN: Type inference failed for: r14v30, types: [java.io.Serializable] */
-    /* JADX WARN: Type inference failed for: r14v31, types: [double[]] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Serializable g(ByteOrder byteOrder) {
-        b bVar;
-        InputStream inputStream;
-        ?? str;
-        byte b10;
-        byte[] bArr = this.d;
-        InputStream inputStream2 = null;
-        try {
-            try {
-                bVar = new b(bArr);
-                try {
-                    bVar.b = byteOrder;
-                    int i3 = this.a;
-                    int i10 = 0;
-                    int i11 = this.b;
-                    switch (i3) {
-                        case 1:
-                        case 6:
-                            if (bArr.length == 1 && (b10 = bArr[0]) >= 0 && b10 <= 1) {
-                                String str2 = new String(new char[]{(char) (b10 + 48)});
-                                try {
-                                    bVar.close();
-                                    return str2;
-                                } catch (IOException e10) {
-                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
-                                    return str2;
-                                }
-                            }
-                            str = new String(bArr, g.O);
-                            break;
-                            break;
-                        case 2:
-                        case 7:
-                            if (i11 >= g.G.length) {
-                                int i12 = 0;
-                                while (true) {
-                                    byte[] bArr2 = g.G;
-                                    if (i12 >= bArr2.length) {
-                                        i10 = bArr2.length;
-                                    } else if (bArr[i12] == bArr2[i12]) {
-                                        i12++;
-                                    }
-                                }
-                            }
-                            StringBuilder sb2 = new StringBuilder();
-                            while (i10 < i11) {
-                                byte b11 = bArr[i10];
-                                if (b11 == 0) {
-                                    str = sb2.toString();
-                                    break;
-                                } else {
-                                    if (b11 >= 32) {
-                                        sb2.append((char) b11);
-                                    } else {
-                                        sb2.append('?');
-                                    }
-                                    i10++;
-                                }
-                            }
-                            str = sb2.toString();
-                        case 3:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readUnsignedShort();
-                                i10++;
-                            }
-                        case 4:
-                            str = new long[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readInt() & 4294967295L;
-                                i10++;
-                            }
-                        case 5:
-                            str = new e[i11];
-                            while (i10 < i11) {
-                                str[i10] = new e(bVar.readInt() & 4294967295L, bVar.readInt() & 4294967295L);
-                                i10++;
-                            }
-                        case 8:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readShort();
-                                i10++;
-                            }
-                        case 9:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readInt();
-                                i10++;
-                            }
-                        case 10:
-                            str = new e[i11];
-                            while (i10 < i11) {
-                                str[i10] = new e(bVar.readInt(), bVar.readInt());
-                                i10++;
-                            }
-                        case 11:
-                            str = new double[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readFloat();
-                                i10++;
-                            }
-                        case 12:
-                            str = new double[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readDouble();
-                                i10++;
-                            }
-                        default:
-                            try {
-                                bVar.close();
-                                return null;
-                            } catch (IOException e11) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
-                                return null;
-                            }
+        for (InputFilter inputFilter2 : filters) {
+            if (inputFilter2 == inputFilter) {
+                if (textView.isAttachedToWindow()) {
+                    CharSequence text = textView.getText();
+                    l a10 = l.a();
+                    if (text == null) {
+                        length = 0;
+                    } else {
+                        a10.getClass();
+                        length = text.length();
                     }
-                    try {
-                        bVar.close();
-                        return str;
-                    } catch (IOException e12) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
-                        return str;
+                    CharSequence e10 = a10.e(0, length, text);
+                    if (text == e10) {
+                        return;
                     }
-                } catch (IOException e13) {
-                    e = e13;
-                    Log.w("ExifInterface", "IOException occurred during reading a value", e);
-                    if (bVar != null) {
-                        try {
-                            bVar.close();
-                        } catch (IOException e14) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
+                    int selectionStart = Selection.getSelectionStart(e10);
+                    int selectionEnd = Selection.getSelectionEnd(e10);
+                    textView.setText(e10);
+                    if (e10 instanceof Spannable) {
+                        Spannable spannable = (Spannable) e10;
+                        if (selectionStart >= 0 && selectionEnd >= 0) {
+                            Selection.setSelection(spannable, selectionStart, selectionEnd);
+                            return;
+                        } else if (selectionStart >= 0) {
+                            Selection.setSelection(spannable, selectionStart);
+                            return;
+                        } else {
+                            if (selectionEnd >= 0) {
+                                Selection.setSelection(spannable, selectionEnd);
+                                return;
+                            }
+                            return;
                         }
                     }
-                    return null;
+                    return;
                 }
-            } catch (Throwable th2) {
-                th = th2;
-                inputStream2 = inputStream;
-                if (inputStream2 != null) {
-                    try {
-                        inputStream2.close();
-                    } catch (IOException e15) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e15);
-                    }
-                }
-                throw th;
+                return;
             }
-        } catch (IOException e16) {
-            e = e16;
-            bVar = null;
-        } catch (Throwable th3) {
-            th = th3;
-            if (inputStream2 != null) {
-            }
-            throw th;
         }
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("(");
-        sb2.append(g.E[this.a]);
-        sb2.append(", data length:");
-        return a1.g.o(this.d.length, ")", sb2);
-    }
-
-    public c(long j10, byte[] bArr, int i3, int i10) {
-        this.a = i3;
-        this.b = i10;
-        this.c = j10;
-        this.d = bArr;
     }
 }

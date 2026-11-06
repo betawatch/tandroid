@@ -9,17 +9,17 @@ public class i implements f {
     public final x d;
     public final int e;
 
-    public i(j$.time.temporal.o oVar, int i3, int i10, x xVar) {
+    public i(j$.time.temporal.o oVar, int i7, int i10, x xVar) {
         this.a = oVar;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
         this.d = xVar;
         this.e = 0;
     }
 
-    public i(j$.time.temporal.o oVar, int i3, int i10, x xVar, int i11) {
+    public i(j$.time.temporal.o oVar, int i7, int i10, x xVar, int i11) {
         this.a = oVar;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
         this.d = xVar;
         this.e = i11;
@@ -32,8 +32,8 @@ public class i implements f {
         return new i(this.a, this.b, this.c, this.d, -1);
     }
 
-    public i b(int i3) {
-        return new i(this.a, this.b, this.c, this.d, this.e + i3);
+    public i b(int i7) {
+        return new i(this.a, this.b, this.c, this.d, this.e + i7);
     }
 
     @Override // j$.time.format.f
@@ -47,9 +47,9 @@ public class i implements f {
         v vVar = rVar.b.c;
         String l10 = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
         int length = l10.length();
-        int i3 = this.c;
-        if (length > i3) {
-            throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i3);
+        int i7 = this.c;
+        if (length > i7) {
+            throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i7);
         }
         vVar.getClass();
         int i10 = this.b;
@@ -79,16 +79,16 @@ public class i implements f {
     }
 
     public String toString() {
-        int i3 = this.c;
+        int i7 = this.c;
         j$.time.temporal.o oVar = this.a;
         x xVar = this.d;
         int i10 = this.b;
-        if (i10 == 1 && i3 == 19 && xVar == x.NORMAL) {
+        if (i10 == 1 && i7 == 19 && xVar == x.NORMAL) {
             return "Value(" + oVar + ")";
         }
-        if (i10 == i3 && xVar == x.NOT_NEGATIVE) {
+        if (i10 == i7 && xVar == x.NOT_NEGATIVE) {
             return "Value(" + oVar + "," + i10 + ")";
         }
-        return "Value(" + oVar + "," + i10 + "," + i3 + "," + xVar + ")";
+        return "Value(" + oVar + "," + i10 + "," + i7 + "," + xVar + ")";
     }
 }

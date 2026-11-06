@@ -1,13 +1,22 @@
 package z8;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
+import y8.v;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
-    void a(a9.f fVar);
+public final class a extends r6.a {
+    public static final Parcelable.Creator<a> CREATOR = new v(8);
+    public String a;
+    public String b;
 
-    void b(a9.f fVar);
-
-    void c(a9.f fVar);
-
-    void d(a9.f fVar);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 2, this.a);
+        wb.l(parcel, 3, this.b);
+        wb.s(parcel, r10);
+    }
 }

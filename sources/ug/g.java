@@ -1,59 +1,23 @@
 package ug;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
+public final class g {
+    public final int a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final int e;
 
-    public /* synthetic */ g(j jVar, int i3) {
-        this.a = i3;
-        this.b = jVar;
+    public g(int i7) {
+        this.a = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                j jVar = this.b;
-                if (animator == jVar.b0) {
-                    jVar.b0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                j jVar2 = this.b;
-                if (animator == jVar2.c0) {
-                    jVar2.c0 = null;
-                    break;
-                }
-                break;
-            case 2:
-                j jVar3 = this.b;
-                if (animator == jVar3.Q) {
-                    jVar3.Q = null;
-                    jVar3.P = 0.0f;
-                    break;
-                }
-                break;
-            case 3:
-                j jVar4 = this.b;
-                if (animator == jVar4.R) {
-                    jVar4.R = null;
-                    break;
-                }
-                break;
-            default:
-                j jVar5 = this.b;
-                if (!jVar5.m0) {
-                    org.telegram.messenger.g0.E2(jVar5.I);
-                    jVar5.I = null;
-                    break;
-                }
-                break;
-        }
+    public g(int i7, int i10, String str, String str2) {
+        this.a = 1;
+        this.b = i7;
+        this.c = str;
+        this.d = str2;
+        this.e = i10;
     }
 }

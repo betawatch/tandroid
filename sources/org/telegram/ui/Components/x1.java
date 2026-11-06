@@ -1,28 +1,110 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x1 implements Runnable {
+public final /* synthetic */ class x1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.u10 b;
-    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ x1(org.telegram.messenger.u10 u10Var, HashMap hashMap, int i3) {
-        this.a = i3;
-        this.b = u10Var;
-        this.c = hashMap;
+    public /* synthetic */ x1(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = this.a;
+        int i10 = 10;
+        int i11 = 13;
+        int i12 = 23;
+        int i13 = 0;
+        Object obj = this.b;
+        switch (i7) {
             case 0:
-                this.b.a(this.c);
+                org.telegram.messenger.c cVar = (org.telegram.messenger.c) obj;
+                if (tLObject instanceof TLRPC.Updates) {
+                    org.telegram.messenger.qp.s1(cVar.a).O3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.messenger.g0.h3(new fq(3, (tq) obj, tLObject));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new fq(4, (ur) obj, tLObject));
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new fq(i10, (bw) obj, tLObject));
+                break;
+            case 4:
+                lx lxVar = (lx) obj;
+                if (tLObject != null) {
+                    org.telegram.messenger.g0.h3(new fq(15, lxVar, tLObject));
+                    break;
+                }
+                break;
+            case 5:
+                org.telegram.messenger.g0.h3(new fq(i12, (m50) obj, tLObject));
+                break;
+            case 6:
+                org.telegram.messenger.g0.h3(new ng((x50) obj, tL_error, tLObject, i10));
+                break;
+            case 7:
+                org.telegram.messenger.g0.h3(new ng((na0) obj, tL_error, tLObject, i11));
+                break;
+            case 8:
+                org.telegram.messenger.g0.h3(new v80(2, (ze0) obj, tLObject));
+                break;
+            case 9:
+                hh0 hh0Var = (hh0) obj;
+                if (tLObject instanceof TLRPC.TL_messages_messageReactionsList) {
+                    TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) tLObject;
+                    int i14 = tL_messages_messageReactionsList.count;
+                    tL_messages_messageReactionsList.users.size();
+                    hh0Var.post(new org.telegram.ui.q8(hh0Var, i14, tL_messages_messageReactionsList, i11));
+                    break;
+                }
+                break;
+            case 10:
+                org.telegram.messenger.g0.h3(new ih0((rh0) obj, tLObject, i13));
+                break;
+            case 11:
+                lr0 lr0Var = (lr0) obj;
+                lr0Var.getClass();
+                org.telegram.messenger.g0.h3(new ng(lr0Var, tL_error, tLObject, 21));
+                break;
+            case 12:
+                org.telegram.messenger.g0.h3(new ng((yv0) obj, tL_error, tLObject, 27));
+                break;
+            case 13:
+                org.telegram.messenger.g0.h3(new bi.j9(tLObject, (org.telegram.messenger.c20) obj, 1));
+                break;
+            case 14:
+                g11 g11Var = (g11) obj;
+                if (tLObject != null) {
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    org.telegram.messenger.qp.s1(g11Var.e).O3(updates, false);
+                    if (!updates.chats.isEmpty()) {
+                        org.telegram.messenger.g0.i3(new v80(i12, g11Var, updates), 1000L);
+                        break;
+                    }
+                }
+                break;
+            case 15:
+                org.telegram.messenger.g0.h3(new v80(25, (e21) obj, tLObject));
+                break;
+            case 16:
+                m31 m31Var = (m31) obj;
+                m31Var.getClass();
+                org.telegram.messenger.g0.h3(new l31(m31Var, tL_error, tLObject, i13));
                 break;
             default:
-                this.b.a(this.c);
+                int i15 = UndoView.i0;
+                org.telegram.messenger.g0.h3(new v80(28, (UndoView) obj, tLObject));
                 break;
         }
     }

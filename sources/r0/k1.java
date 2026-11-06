@@ -6,17 +6,17 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class k1 {
     public static final k1 b;
     public final h1 a;
 
     static {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 34) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 34) {
             b = g1.s;
-        } else if (i3 >= 30) {
+        } else if (i7 >= 30) {
             b = f1.r;
         } else {
             b = h1.b;
@@ -24,30 +24,30 @@ public final class k1 {
     }
 
     public k1(WindowInsets windowInsets) {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 34) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 34) {
             this.a = new g1(this, windowInsets);
             return;
         }
-        if (i3 >= 30) {
+        if (i7 >= 30) {
             this.a = new f1(this, windowInsets);
             return;
         }
-        if (i3 >= 29) {
+        if (i7 >= 29) {
             this.a = new e1(this, windowInsets);
-        } else if (i3 >= 28) {
+        } else if (i7 >= 28) {
             this.a = new d1(this, windowInsets);
         } else {
             this.a = new c1(this, windowInsets);
         }
     }
 
-    public static i0.b e(i0.b bVar, int i3, int i10, int i11, int i12) {
-        int max = Math.max(0, bVar.a - i3);
+    public static i0.b e(i0.b bVar, int i7, int i10, int i11, int i12) {
+        int max = Math.max(0, bVar.a - i7);
         int max2 = Math.max(0, bVar.b - i10);
         int max3 = Math.max(0, bVar.c - i11);
         int max4 = Math.max(0, bVar.d - i12);
-        return (max == i3 && max2 == i10 && max3 == i11 && max4 == i12) ? bVar : i0.b.b(max, max2, max3, max4);
+        return (max == i7 && max2 == i10 && max3 == i11 && max4 == i12) ? bVar : i0.b.b(max, max2, max3, max4);
     }
 
     public static k1 h(View view, WindowInsets windowInsets) {
@@ -90,10 +90,10 @@ public final class k1 {
         return false;
     }
 
-    public final k1 f(int i3, int i10, int i11, int i12) {
+    public final k1 f(int i7, int i10, int i11, int i12) {
         int i13 = Build.VERSION.SDK_INT;
         a1 z0Var = i13 >= 34 ? new z0(this) : i13 >= 30 ? new y0(this) : i13 >= 29 ? new x0(this) : new w0(this);
-        z0Var.g(i0.b.b(i3, i10, i11, i12));
+        z0Var.g(i0.b.b(i7, i10, i11, i12));
         return z0Var.b();
     }
 

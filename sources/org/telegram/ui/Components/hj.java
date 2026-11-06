@@ -1,60 +1,61 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.Comparator;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hj implements Comparator {
+public final /* synthetic */ class hj implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uj b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ FrameLayout d;
 
-    public /* synthetic */ hj(uj ujVar, int i3) {
-        this.a = i3;
-        this.b = ujVar;
+    public /* synthetic */ hj(FrameLayout frameLayout, int i7, float f10, int i10) {
+        this.a = i10;
+        this.d = frameLayout;
+        this.b = i7;
+        this.c = f10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        oj ojVar = (oj) obj;
-        oj ojVar2 = (oj) obj2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                uj ujVar = this.b;
-                ujVar.getClass();
-                File file = ojVar.f;
-                if (file != null) {
-                    if (ojVar2.f != null) {
-                        boolean isDirectory = file.isDirectory();
-                        if (isDirectory != ojVar2.f.isDirectory()) {
-                            if (isDirectory) {
-                            }
-                        } else if (isDirectory || ujVar.d0) {
-                            break;
-                        } else {
-                            long lastModified = ojVar.f.lastModified();
-                            long lastModified2 = ojVar2.f.lastModified();
-                            if (lastModified != lastModified2) {
-                                if (lastModified > lastModified2) {
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                if (this.b.d0) {
+                vj vjVar = (vj) this.d;
+                kj kjVar = vjVar.r;
+                kj kjVar2 = vjVar.s;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i7 = this.b;
+                float f10 = this.c;
+                if (i7 != 1) {
+                    kjVar2.setTranslationX(f10 * floatValue);
+                    kjVar2.setAlpha(Math.max(0.0f, 1.0f - floatValue));
+                    kjVar2.invalidate();
+                    kjVar.setAlpha(floatValue);
+                    float f11 = (floatValue * 0.05f) + 0.95f;
+                    kjVar.setScaleX(f11);
+                    kjVar.setScaleY(f11);
+                    kjVar2.invalidate();
                     break;
                 } else {
-                    long lastModified3 = ojVar.f.lastModified();
-                    long lastModified4 = ojVar2.f.lastModified();
-                    if (lastModified3 != lastModified4) {
-                        if (lastModified3 > lastModified4) {
-                        }
-                    }
+                    kjVar.setTranslationX(f10 * floatValue);
+                    kjVar.setAlpha(1.0f - floatValue);
+                    kjVar.invalidate();
+                    kjVar2.setAlpha(floatValue);
+                    float f12 = (floatValue * 0.05f) + 0.95f;
+                    kjVar2.setScaleX(f12);
+                    kjVar2.setScaleY(f12);
+                    break;
                 }
+            default:
+                ca0 ca0Var = (ca0) this.d;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f13 = 1.0f - floatValue2;
+                int i10 = (int) ((ca0Var.R * floatValue2) + (this.b * f13));
+                ca0Var.T = i10;
+                ca0Var.f((ca0Var.S * floatValue2) + (this.c * f13), i10);
                 break;
         }
-        return ojVar.f.getName().compareToIgnoreCase(ojVar2.f.getName());
     }
 }

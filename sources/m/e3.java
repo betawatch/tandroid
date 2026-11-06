@@ -1,27 +1,32 @@
 package m;
 
-import android.view.View;
-import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-import j$.util.Objects;
+import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class e3 {
-    public static OnBackInvokedDispatcher a(View view) {
-        return view.findOnBackInvokedDispatcher();
+public final /* synthetic */ class e3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Toolbar b;
+
+    public /* synthetic */ e3(Toolbar toolbar, int i7) {
+        this.a = i7;
+        this.b = toolbar;
     }
 
-    public static OnBackInvokedCallback b(Runnable runnable) {
-        Objects.requireNonNull(runnable);
-        return new androidx.activity.q(runnable, 4);
-    }
-
-    public static void c(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(1000000, (OnBackInvokedCallback) obj2);
-    }
-
-    public static void d(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                h3 h3Var = this.b.e0;
+                l.m mVar = h3Var == null ? null : h3Var.b;
+                if (mVar != null) {
+                    mVar.collapseActionView();
+                    break;
+                }
+                break;
+            default:
+                this.b.m();
+                break;
+        }
     }
 }

@@ -1,10 +1,10 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import p7.d;
-import x7.q0;
+import org.telegram.ui.hy0;
+import y7.r0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        d dVar = new d("IdentifiedLanguage", 22);
-        d dVar2 = new d(21, false);
-        ((d) dVar.c).c = dVar2;
-        dVar.c = dVar2;
-        dVar2.d = this.a;
-        dVar2.b = "languageTag";
+        hy0 hy0Var = new hy0("IdentifiedLanguage", 29);
+        hy0 hy0Var2 = new hy0(28, false);
+        ((hy0) hy0Var.d).d = hy0Var2;
+        hy0Var.d = hy0Var2;
+        hy0Var2.c = this.a;
+        hy0Var2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        q0 q0Var = new q0(21, false);
-        ((d) dVar.c).c = q0Var;
-        dVar.c = q0Var;
-        q0Var.d = valueOf;
-        q0Var.b = "confidence";
-        return dVar.toString();
+        r0 r0Var = new r0(28, false);
+        ((hy0) hy0Var.d).d = r0Var;
+        hy0Var.d = r0Var;
+        r0Var.c = valueOf;
+        r0Var.b = "confidence";
+        return hy0Var.toString();
     }
 }

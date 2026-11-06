@@ -1,6 +1,154 @@
 package m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.R;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.InputFilter;
+import android.util.AttributeSet;
+import android.widget.ToggleButton;
+import c8.fc;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface i1 {
+public final class i1 extends ToggleButton implements u0.k {
+    public final h2.c a;
+    public final x0 b;
+    public u c;
+
+    public i1(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.buttonStyleToggle);
+        a3.a(this, getContext());
+        h2.c cVar = new h2.c(this);
+        this.a = cVar;
+        cVar.x(attributeSet, R.attr.buttonStyleToggle);
+        x0 x0Var = new x0(this);
+        this.b = x0Var;
+        x0Var.f(attributeSet, R.attr.buttonStyleToggle);
+        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyleToggle);
+    }
+
+    private u getEmojiTextViewHelper() {
+        if (this.c == null) {
+            this.c = new u(this);
+        }
+        return this.c;
+    }
+
+    @Override // android.widget.ToggleButton, android.widget.CompoundButton, android.widget.TextView, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.b();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    public ColorStateList getSupportBackgroundTintList() {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.v();
+        }
+        return null;
+    }
+
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.w();
+        }
+        return null;
+    }
+
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        return this.b.d();
+    }
+
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        return this.b.e();
+    }
+
+    @Override // android.widget.TextView
+    public void setAllCaps(boolean z9) {
+        super.setAllCaps(z9);
+        getEmojiTextViewHelper().b(z9);
+    }
+
+    @Override // android.widget.ToggleButton, android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.y();
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundResource(int i7) {
+        super.setBackgroundResource(i7);
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.z(i7);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    public void setEmojiCompatEnabled(boolean z9) {
+        getEmojiTextViewHelper().c(z9);
+    }
+
+    @Override // android.widget.TextView
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(((fc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    }
+
+    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.D(colorStateList);
+        }
+    }
+
+    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
+        h2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.E(mode);
+        }
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
+        x0 x0Var = this.b;
+        x0Var.l(colorStateList);
+        x0Var.b();
+    }
+
+    @Override // u0.k
+    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
+        x0 x0Var = this.b;
+        x0Var.m(mode);
+        x0Var.b();
+    }
 }

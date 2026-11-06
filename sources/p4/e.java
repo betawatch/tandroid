@@ -1,85 +1,65 @@
 package p4;
 
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.Parcel;
-import java.lang.ref.WeakReference;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e extends Binder implements b {
-    public static final /* synthetic */ int b = 0;
-    public final WeakReference a;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d0 b;
+    public final /* synthetic */ v c;
 
-    public e() {
-        attachInterface(this, "android.support.v4.media.session.IMediaControllerCallback");
-        this.a = new WeakReference(null);
+    public /* synthetic */ e(d0 d0Var, v vVar, int i7) {
+        this.a = i7;
+        this.b = d0Var;
+        this.c = vVar;
     }
 
-    @Override // p4.b
-    public final void c(int i3) {
-        if (this.a.get() != null) {
-            throw new ClassCastException();
-        }
-    }
-
-    @Override // p4.b
-    public final void i(int i3) {
-        if (this.a.get() != null) {
-            throw new ClassCastException();
-        }
-    }
-
-    @Override // android.os.Binder
-    public final boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
-        if (i3 == 3) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-            u0(parcel.readInt() != 0 ? w.CREATOR.createFromParcel(parcel) : null);
-            return true;
-        }
-        if (i3 == 9) {
-            parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-            c(parcel.readInt());
-            return true;
-        }
-        if (i3 == 1598968902) {
-            parcel2.getClass();
-            parcel2.writeString("android.support.v4.media.session.IMediaControllerCallback");
-            return true;
-        }
-        WeakReference weakReference = this.a;
-        switch (i3) {
-            case 11:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                parcel.readInt();
-                if (weakReference.get() != null) {
-                    throw new ClassCastException();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                d0 d0Var = this.b;
+                if (!d0Var.j()) {
+                    if (d0Var.x) {
+                        v vVar = this.c;
+                        if (!d0.k(vVar)) {
+                            if (d0Var.i(vVar)) {
+                                d0Var.x = false;
+                            }
+                        }
+                    }
+                    d0Var.e.getClass();
+                    break;
                 }
-                return true;
-            case 12:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                i(parcel.readInt());
-                return true;
-            case 13:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaControllerCallback");
-                if (weakReference.get() != null) {
-                    throw new ClassCastException();
-                }
-                return true;
+                break;
+            case 1:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 1, c1.S0(new org.telegram.utils.twidget.a(20)));
+                break;
+            case 2:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 9, c1.S0(new org.telegram.utils.twidget.a(29)));
+                break;
+            case 3:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 7, c1.S0(new org.telegram.utils.twidget.a(25)));
+                break;
+            case 4:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 12, c1.S0(new org.telegram.utils.twidget.a(28)));
+                break;
+            case 5:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 11, c1.S0(new org.telegram.utils.twidget.a(24)));
+                break;
+            case 6:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 3, c1.S0(new r0(5)));
+                break;
+            case 7:
+                this.b.g.Q0(this.c, TLObject.FLAG_31, 1, c1.S0(new org.telegram.utils.twidget.a(20)));
+                break;
+            case 8:
+                this.b.g.O0(this.c, TLObject.FLAG_31);
+                break;
             default:
-                return super.onTransact(i3, parcel, parcel2, i10);
+                this.b.g.O0(this.c, TLObject.FLAG_31);
+                break;
         }
-    }
-
-    @Override // p4.b
-    public final void u0(w wVar) {
-        if (this.a.get() != null) {
-            throw new ClassCastException();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
     }
 }

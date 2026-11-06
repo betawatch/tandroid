@@ -4,7 +4,7 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class HorizontalRule extends Box {
     private Color color;
@@ -41,12 +41,12 @@ public class HorizontalRule extends Box {
         return -1;
     }
 
-    public HorizontalRule(float f10, float f11, float f12, boolean z10) {
+    public HorizontalRule(float f10, float f11, float f12, boolean z9) {
         this.color = null;
         this.speShift = 0.0f;
         this.height = f10;
         this.width = f11;
-        if (z10) {
+        if (z9) {
             this.shift = f12;
         } else {
             this.shift = 0.0f;

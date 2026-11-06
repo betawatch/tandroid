@@ -1,197 +1,51 @@
 package bc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class b {
-    public final a a;
-    public final int[] b;
+    public static final b a;
+    public static final b b;
+    public static final b c;
+    public static final b d;
+    public static final b e;
+    public static final b f;
+    public static final b h;
+    public static final /* synthetic */ b[] n;
 
-    public b(a aVar, int[] iArr) {
-        if (iArr.length == 0) {
-            throw new IllegalArgumentException();
-        }
-        this.a = aVar;
-        int length = iArr.length;
-        int i3 = 1;
-        if (length <= 1 || iArr[0] != 0) {
-            this.b = iArr;
-            return;
-        }
-        while (i3 < length && iArr[i3] == 0) {
-            i3++;
-        }
-        if (i3 == length) {
-            this.b = new int[]{0};
-            return;
-        }
-        int i10 = length - i3;
-        int[] iArr2 = new int[i10];
-        this.b = iArr2;
-        System.arraycopy(iArr, i3, iArr2, 0, i10);
+    static {
+        b bVar = new b("ERROR_CORRECTION", 0);
+        a = bVar;
+        b bVar2 = new b("CHARACTER_SET", 1);
+        b = bVar2;
+        b bVar3 = new b("DATA_MATRIX_SHAPE", 2);
+        b bVar4 = new b("DATA_MATRIX_COMPACT", 3);
+        b bVar5 = new b("MIN_SIZE", 4);
+        b bVar6 = new b("MAX_SIZE", 5);
+        b bVar7 = new b("MARGIN", 6);
+        c = bVar7;
+        b bVar8 = new b("PDF417_COMPACT", 7);
+        b bVar9 = new b("PDF417_COMPACTION", 8);
+        b bVar10 = new b("PDF417_DIMENSIONS", 9);
+        b bVar11 = new b("PDF417_AUTO_ECI", 10);
+        b bVar12 = new b("AZTEC_LAYERS", 11);
+        b bVar13 = new b("QR_VERSION", 12);
+        d = bVar13;
+        b bVar14 = new b("QR_MASK_PATTERN", 13);
+        e = bVar14;
+        b bVar15 = new b("QR_COMPACT", 14);
+        f = bVar15;
+        b bVar16 = new b("GS1_FORMAT", 15);
+        h = bVar16;
+        n = new b[]{bVar, bVar2, bVar3, bVar4, bVar5, bVar6, bVar7, bVar8, bVar9, bVar10, bVar11, bVar12, bVar13, bVar14, bVar15, bVar16, new b("FORCE_CODE_SET", 16), new b("FORCE_C40", 17), new b("CODE128_COMPACT", 18)};
     }
 
-    public final b a(b bVar) {
-        a aVar = bVar.a;
-        a aVar2 = this.a;
-        if (!aVar2.equals(aVar)) {
-            throw new IllegalArgumentException("GenericGFPolys do not have same GenericGF field");
-        }
-        if (e()) {
-            return bVar;
-        }
-        if (bVar.e()) {
-            return this;
-        }
-        int[] iArr = bVar.b;
-        int[] iArr2 = this.b;
-        if (iArr2.length > iArr.length) {
-            iArr2 = iArr;
-            iArr = iArr2;
-        }
-        int[] iArr3 = new int[iArr.length];
-        int length = iArr.length - iArr2.length;
-        System.arraycopy(iArr, 0, iArr3, 0, length);
-        for (int i3 = length; i3 < iArr.length; i3++) {
-            iArr3[i3] = iArr2[i3 - length] ^ iArr[i3];
-        }
-        return new b(aVar2, iArr3);
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    public final int b(int i3) {
-        if (i3 == 0) {
-            return c(0);
-        }
-        int[] iArr = this.b;
-        if (i3 != 1) {
-            int i10 = iArr[0];
-            int length = iArr.length;
-            for (int i11 = 1; i11 < length; i11++) {
-                i10 = this.a.c(i3, i10) ^ iArr[i11];
-            }
-            return i10;
-        }
-        int i12 = 0;
-        for (int i13 : iArr) {
-            a aVar = a.h;
-            i12 ^= i13;
-        }
-        return i12;
-    }
-
-    public final int c(int i3) {
-        return this.b[(r0.length - 1) - i3];
-    }
-
-    public final int d() {
-        return this.b.length - 1;
-    }
-
-    public final boolean e() {
-        return this.b[0] == 0;
-    }
-
-    public final b f(int i3) {
-        a aVar = this.a;
-        if (i3 == 0) {
-            return aVar.c;
-        }
-        if (i3 == 1) {
-            return this;
-        }
-        int[] iArr = this.b;
-        int length = iArr.length;
-        int[] iArr2 = new int[length];
-        for (int i10 = 0; i10 < length; i10++) {
-            iArr2[i10] = aVar.c(iArr[i10], i3);
-        }
-        return new b(aVar, iArr2);
-    }
-
-    public final b g(b bVar) {
-        a aVar = bVar.a;
-        a aVar2 = this.a;
-        if (!aVar2.equals(aVar)) {
-            throw new IllegalArgumentException("GenericGFPolys do not have same GenericGF field");
-        }
-        if (e() || bVar.e()) {
-            return aVar2.c;
-        }
-        int[] iArr = this.b;
-        int length = iArr.length;
-        int[] iArr2 = bVar.b;
-        int length2 = iArr2.length;
-        int[] iArr3 = new int[(length + length2) - 1];
-        for (int i3 = 0; i3 < length; i3++) {
-            int i10 = iArr[i3];
-            for (int i11 = 0; i11 < length2; i11++) {
-                int i12 = i3 + i11;
-                iArr3[i12] = iArr3[i12] ^ aVar2.c(i10, iArr2[i11]);
-            }
-        }
-        return new b(aVar2, iArr3);
-    }
-
-    public final b h(int i3, int i10) {
-        if (i3 < 0) {
-            throw new IllegalArgumentException();
-        }
-        a aVar = this.a;
-        if (i10 == 0) {
-            return aVar.c;
-        }
-        int[] iArr = this.b;
-        int length = iArr.length;
-        int[] iArr2 = new int[i3 + length];
-        for (int i11 = 0; i11 < length; i11++) {
-            iArr2[i11] = aVar.c(iArr[i11], i10);
-        }
-        return new b(aVar, iArr2);
-    }
-
-    public final String toString() {
-        if (e()) {
-            return "0";
-        }
-        StringBuilder sb2 = new StringBuilder(d() * 8);
-        for (int d = d(); d >= 0; d--) {
-            int c2 = c(d);
-            if (c2 != 0) {
-                if (c2 < 0) {
-                    if (d == d()) {
-                        sb2.append("-");
-                    } else {
-                        sb2.append(" - ");
-                    }
-                    c2 = -c2;
-                } else if (sb2.length() > 0) {
-                    sb2.append(" + ");
-                }
-                if (d == 0 || c2 != 1) {
-                    a aVar = this.a;
-                    if (c2 == 0) {
-                        aVar.getClass();
-                        throw new IllegalArgumentException();
-                    }
-                    int i3 = aVar.b[c2];
-                    if (i3 == 0) {
-                        sb2.append('1');
-                    } else if (i3 == 1) {
-                        sb2.append('a');
-                    } else {
-                        sb2.append("a^");
-                        sb2.append(i3);
-                    }
-                }
-                if (d != 0) {
-                    if (d == 1) {
-                        sb2.append('x');
-                    } else {
-                        sb2.append("x^");
-                        sb2.append(d);
-                    }
-                }
-            }
-        }
-        return sb2.toString();
+    public static b[] values() {
+        return (b[]) n.clone();
     }
 }

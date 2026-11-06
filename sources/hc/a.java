@@ -1,55 +1,14 @@
 package hc;
 
-import com.googlecode.mp4parser.c;
-import ic.k;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.ui.Components.i9;
+import bc.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a extends c {
-    public static final Logger f;
-    public static final /* synthetic */ i9 h;
-    public ByteBuffer e;
+public final class a extends j {
+    public final float c;
 
-    static {
-        we.a aVar = new we.a(a.class, "AbstractDescriptorBox.java");
-        aVar.e(aVar.d("getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.nio.ByteBuffer"));
-        aVar.e(aVar.d("getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"));
-        aVar.e(aVar.d("getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.lang.String"));
-        aVar.e(aVar.d("setDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor", "descriptor", "void"));
-        h = aVar.e(aVar.d("setData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "java.nio.ByteBuffer", "data", "void"));
-        f = Logger.getLogger(a.class.getName());
-    }
-
-    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
-    public final void _parseDetails(ByteBuffer byteBuffer) {
-        Logger logger = f;
-        f(byteBuffer);
-        this.e = byteBuffer.slice();
-        byteBuffer.position(byteBuffer.remaining() + byteBuffer.position());
-        try {
-            this.e.rewind();
-            k.a(-1, this.e);
-        } catch (IOException e10) {
-            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e10);
-        } catch (IndexOutOfBoundsException e11) {
-            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e11);
-        }
-    }
-
-    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
-    public final void getContent(ByteBuffer byteBuffer) {
-        i(byteBuffer);
-        this.e.rewind();
-        byteBuffer.put(this.e);
-    }
-
-    @Override // com.googlecode.mp4parser.a
-    public final long getContentSize() {
-        return this.e.limit() + 4;
+    public a(float f10, float f11, float f12) {
+        super(f10, f11);
+        this.c = f12;
     }
 }

@@ -1,29 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class uj0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public boolean f;
+import android.view.View;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
 
-    public final void a(float f10, float f11, float f12, float f13) {
-        this.a = f10;
-        this.d = f12;
-        this.b = f10 - Math.max(0.0f, Math.min(f11, Math.max(0.0f, f12 - f13)));
-        this.c = Math.max(f10, f12);
-        this.f = this.b <= f13 + 0.5f;
-        this.e = 0.0f;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class uj0 extends FrameLayout {
+    public View a;
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        View view = this.a;
+        if (view == null) {
+            ViewParent parent = getParent();
+            while (true) {
+                if (!(parent instanceof View)) {
+                    view = null;
+                    break;
+                } else {
+                    if (parent instanceof RecyclerView) {
+                        view = (RecyclerView) parent;
+                        break;
+                    }
+                    parent = parent.getParent();
+                }
+            }
+        }
+        int max = view != null ? Math.max(0, (view.getMeasuredHeight() - view.getPaddingTop()) - view.getPaddingBottom()) : 0;
+        if (max > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    public final float b() {
-        if (this.f) {
-            return this.c;
+    public void setViewportView(View view) {
+        if (this.a == view) {
+            return;
         }
-        float f10 = this.b;
-        return ((this.c - f10) * this.e) + f10;
+        this.a = view;
+        requestLayout();
     }
 }

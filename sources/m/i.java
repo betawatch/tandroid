@@ -1,9 +1,466 @@
 package m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public interface i {
-    boolean a();
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.SparseBooleanArray;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.appcompat.view.menu.ActionMenuItemView;
+import androidx.appcompat.widget.ActionMenuView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-    boolean c();
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class i implements l.x {
+    public int D;
+    public int E;
+    public int F;
+    public boolean G;
+    public e I;
+    public e J;
+    public g K;
+    public f L;
+    public final Context a;
+    public Context b;
+    public l.k c;
+    public final LayoutInflater d;
+    public l.w e;
+    public l.z n;
+    public h r;
+    public Drawable s;
+    public boolean w;
+    public boolean x;
+    public boolean y;
+    public final int f = R.layout.abc_action_menu_layout;
+    public final int h = R.layout.abc_action_menu_item_layout;
+    public final SparseBooleanArray H = new SparseBooleanArray();
+    public final gf.g M = new gf.g(this, 15);
+
+    public i(Context context) {
+        this.a = context;
+        this.d = LayoutInflater.from(context);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v0, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r5v4, types: [l.y] */
+    /* JADX WARN: Type inference failed for: r5v7 */
+    /* JADX WARN: Type inference failed for: r5v8 */
+    public final View a(l.m mVar, View view, ViewGroup viewGroup) {
+        View actionView = mVar.getActionView();
+        if (actionView == null || mVar.e()) {
+            ActionMenuItemView actionMenuItemView = view instanceof l.y ? (l.y) view : (l.y) this.d.inflate(this.h, viewGroup, false);
+            actionMenuItemView.b(mVar);
+            ActionMenuItemView actionMenuItemView2 = actionMenuItemView;
+            actionMenuItemView2.setItemInvoker((ActionMenuView) this.n);
+            if (this.L == null) {
+                this.L = new f(this);
+            }
+            actionMenuItemView2.setPopupCallback(this.L);
+            actionView = actionMenuItemView;
+        }
+        actionView.setVisibility(mVar.C ? 8 : 0);
+        ViewGroup.LayoutParams layoutParams = actionView.getLayoutParams();
+        ((ActionMenuView) viewGroup).getClass();
+        if (!(layoutParams instanceof k)) {
+            actionView.setLayoutParams(ActionMenuView.j(layoutParams));
+        }
+        return actionView;
+    }
+
+    @Override // l.x
+    public final boolean b(l.m mVar) {
+        return false;
+    }
+
+    @Override // l.x
+    public final void c(l.k kVar, boolean z9) {
+        f();
+        e eVar = this.J;
+        if (eVar != null && eVar.b()) {
+            eVar.i.dismiss();
+        }
+        l.w wVar = this.e;
+        if (wVar != null) {
+            wVar.c(kVar, z9);
+        }
+    }
+
+    @Override // l.x
+    public final boolean d() {
+        int i7;
+        ArrayList arrayList;
+        int i10;
+        boolean z9;
+        i iVar = this;
+        l.k kVar = iVar.c;
+        if (kVar != null) {
+            arrayList = kVar.l();
+            i7 = arrayList.size();
+        } else {
+            i7 = 0;
+            arrayList = null;
+        }
+        int i11 = iVar.F;
+        int i12 = iVar.E;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+        ViewGroup viewGroup = (ViewGroup) iVar.n;
+        int i13 = 0;
+        boolean z10 = false;
+        int i14 = 0;
+        int i15 = 0;
+        while (true) {
+            i10 = 2;
+            z9 = true;
+            if (i13 >= i7) {
+                break;
+            }
+            l.m mVar = (l.m) arrayList.get(i13);
+            int i16 = mVar.y;
+            if ((i16 & 2) == 2) {
+                i14++;
+            } else if ((i16 & 1) == 1) {
+                i15++;
+            } else {
+                z10 = true;
+            }
+            if (iVar.G && mVar.C) {
+                i11 = 0;
+            }
+            i13++;
+        }
+        if (iVar.x && (z10 || i15 + i14 > i11)) {
+            i11--;
+        }
+        int i17 = i11 - i14;
+        SparseBooleanArray sparseBooleanArray = iVar.H;
+        sparseBooleanArray.clear();
+        int i18 = 0;
+        int i19 = 0;
+        while (i18 < i7) {
+            l.m mVar2 = (l.m) arrayList.get(i18);
+            int i20 = mVar2.y;
+            boolean z11 = (i20 & 2) == i10 ? z9 : false;
+            int i21 = mVar2.b;
+            if (z11) {
+                View a10 = iVar.a(mVar2, null, viewGroup);
+                a10.measure(makeMeasureSpec, makeMeasureSpec);
+                int measuredWidth = a10.getMeasuredWidth();
+                i12 -= measuredWidth;
+                if (i19 == 0) {
+                    i19 = measuredWidth;
+                }
+                if (i21 != 0) {
+                    sparseBooleanArray.put(i21, z9);
+                }
+                mVar2.f(z9);
+            } else if ((i20 & 1) == z9) {
+                boolean z12 = sparseBooleanArray.get(i21);
+                boolean z13 = ((i17 > 0 || z12) && i12 > 0) ? z9 : false;
+                if (z13) {
+                    View a11 = iVar.a(mVar2, null, viewGroup);
+                    a11.measure(makeMeasureSpec, makeMeasureSpec);
+                    int measuredWidth2 = a11.getMeasuredWidth();
+                    i12 -= measuredWidth2;
+                    if (i19 == 0) {
+                        i19 = measuredWidth2;
+                    }
+                    z13 &= i12 + i19 > 0;
+                }
+                if (z13 && i21 != 0) {
+                    sparseBooleanArray.put(i21, true);
+                } else if (z12) {
+                    sparseBooleanArray.put(i21, false);
+                    for (int i22 = 0; i22 < i18; i22++) {
+                        l.m mVar3 = (l.m) arrayList.get(i22);
+                        if (mVar3.b == i21) {
+                            if ((mVar3.x & 32) == 32) {
+                                i17++;
+                            }
+                            mVar3.f(false);
+                        }
+                    }
+                }
+                if (z13) {
+                    i17--;
+                }
+                mVar2.f(z13);
+            } else {
+                mVar2.f(false);
+                i18++;
+                i10 = 2;
+                iVar = this;
+                z9 = true;
+            }
+            i18++;
+            i10 = 2;
+            iVar = this;
+            z9 = true;
+        }
+        return z9;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // l.x
+    public final void e() {
+        int i7;
+        ViewGroup viewGroup = (ViewGroup) this.n;
+        ArrayList arrayList = null;
+        boolean z9 = false;
+        if (viewGroup != null) {
+            l.k kVar = this.c;
+            if (kVar != null) {
+                kVar.i();
+                ArrayList l10 = this.c.l();
+                int size = l10.size();
+                i7 = 0;
+                for (int i10 = 0; i10 < size; i10++) {
+                    l.m mVar = (l.m) l10.get(i10);
+                    if ((mVar.x & 32) == 32) {
+                        View childAt = viewGroup.getChildAt(i7);
+                        l.m itemData = childAt instanceof l.y ? ((l.y) childAt).getItemData() : null;
+                        View a10 = a(mVar, childAt, viewGroup);
+                        if (mVar != itemData) {
+                            a10.setPressed(false);
+                            a10.jumpDrawablesToCurrentState();
+                        }
+                        if (a10 != childAt) {
+                            ViewGroup viewGroup2 = (ViewGroup) a10.getParent();
+                            if (viewGroup2 != null) {
+                                viewGroup2.removeView(a10);
+                            }
+                            ((ViewGroup) this.n).addView(a10, i7);
+                        }
+                        i7++;
+                    }
+                }
+            } else {
+                i7 = 0;
+            }
+            while (i7 < viewGroup.getChildCount()) {
+                if (viewGroup.getChildAt(i7) == this.r) {
+                    i7++;
+                } else {
+                    viewGroup.removeViewAt(i7);
+                }
+            }
+        }
+        ((View) this.n).requestLayout();
+        l.k kVar2 = this.c;
+        if (kVar2 != null) {
+            kVar2.i();
+            ArrayList arrayList2 = kVar2.i;
+            int size2 = arrayList2.size();
+            for (int i11 = 0; i11 < size2; i11++) {
+                l.n nVar = ((l.m) arrayList2.get(i11)).A;
+            }
+        }
+        l.k kVar3 = this.c;
+        if (kVar3 != null) {
+            kVar3.i();
+            arrayList = kVar3.j;
+        }
+        if (this.x && arrayList != null) {
+            int size3 = arrayList.size();
+            if (size3 == 1) {
+                z9 = !((l.m) arrayList.get(0)).C;
+            } else if (size3 > 0) {
+                z9 = true;
+            }
+        }
+        if (z9) {
+            if (this.r == null) {
+                this.r = new h(this, this.a);
+            }
+            ViewGroup viewGroup3 = (ViewGroup) this.r.getParent();
+            if (viewGroup3 != this.n) {
+                if (viewGroup3 != null) {
+                    viewGroup3.removeView(this.r);
+                }
+                ActionMenuView actionMenuView = (ActionMenuView) this.n;
+                h hVar = this.r;
+                actionMenuView.getClass();
+                k i12 = ActionMenuView.i();
+                i12.a = true;
+                actionMenuView.addView(hVar, i12);
+            }
+        } else {
+            h hVar2 = this.r;
+            if (hVar2 != null) {
+                Object parent = hVar2.getParent();
+                Object obj = this.n;
+                if (parent == obj) {
+                    ((ViewGroup) obj).removeView(this.r);
+                }
+            }
+        }
+        ((ActionMenuView) this.n).setOverflowReserved(this.x);
+    }
+
+    public final boolean f() {
+        Object obj;
+        g gVar = this.K;
+        if (gVar != null && (obj = this.n) != null) {
+            ((View) obj).removeCallbacks(gVar);
+            this.K = null;
+            return true;
+        }
+        e eVar = this.I;
+        if (eVar == null) {
+            return false;
+        }
+        if (eVar.b()) {
+            eVar.i.dismiss();
+        }
+        return true;
+    }
+
+    public final boolean g() {
+        e eVar = this.I;
+        return eVar != null && eVar.b();
+    }
+
+    @Override // l.x
+    public final void h(l.w wVar) {
+        throw null;
+    }
+
+    @Override // l.x
+    public final void i(Context context, l.k kVar) {
+        this.b = context;
+        LayoutInflater.from(context);
+        this.c = kVar;
+        Resources resources = context.getResources();
+        if (!this.y) {
+            this.x = true;
+        }
+        int i7 = 2;
+        this.D = context.getResources().getDisplayMetrics().widthPixels / 2;
+        Configuration configuration = context.getResources().getConfiguration();
+        int i10 = configuration.screenWidthDp;
+        int i11 = configuration.screenHeightDp;
+        if (configuration.smallestScreenWidthDp > 600 || i10 > 600 || ((i10 > 960 && i11 > 720) || (i10 > 720 && i11 > 960))) {
+            i7 = 5;
+        } else if (i10 >= 500 || ((i10 > 640 && i11 > 480) || (i10 > 480 && i11 > 640))) {
+            i7 = 4;
+        } else if (i10 >= 360) {
+            i7 = 3;
+        }
+        this.F = i7;
+        int i12 = this.D;
+        if (this.x) {
+            if (this.r == null) {
+                h hVar = new h(this, this.a);
+                this.r = hVar;
+                if (this.w) {
+                    hVar.setImageDrawable(this.s);
+                    this.s = null;
+                    this.w = false;
+                }
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+                this.r.measure(makeMeasureSpec, makeMeasureSpec);
+            }
+            i12 -= this.r.getMeasuredWidth();
+        } else {
+            this.r = null;
+        }
+        this.E = i12;
+        float f10 = resources.getDisplayMetrics().density;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // l.x
+    public final boolean j(l.d0 d0Var) {
+        boolean z9;
+        if (d0Var.hasVisibleItems()) {
+            l.d0 d0Var2 = d0Var;
+            while (true) {
+                l.k kVar = d0Var2.z;
+                if (kVar == this.c) {
+                    break;
+                }
+                d0Var2 = (l.d0) kVar;
+            }
+            l.m mVar = d0Var2.A;
+            ViewGroup viewGroup = (ViewGroup) this.n;
+            View view = null;
+            if (viewGroup != null) {
+                int childCount = viewGroup.getChildCount();
+                int i7 = 0;
+                while (true) {
+                    if (i7 >= childCount) {
+                        break;
+                    }
+                    View childAt = viewGroup.getChildAt(i7);
+                    if ((childAt instanceof l.y) && ((l.y) childAt).getItemData() == mVar) {
+                        view = childAt;
+                        break;
+                    }
+                    i7++;
+                }
+            }
+            if (view != null) {
+                d0Var.A.getClass();
+                int size = d0Var.f.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size) {
+                        z9 = false;
+                        break;
+                    }
+                    MenuItem item = d0Var.getItem(i10);
+                    if (item.isVisible() && item.getIcon() != null) {
+                        z9 = true;
+                        break;
+                    }
+                    i10++;
+                }
+                e eVar = new e(this, this.b, d0Var, view);
+                this.J = eVar;
+                eVar.g = z9;
+                l.s sVar = eVar.i;
+                if (sVar != null) {
+                    sVar.o(z9);
+                }
+                e eVar2 = this.J;
+                if (!eVar2.b()) {
+                    if (eVar2.e == null) {
+                        throw new IllegalStateException("MenuPopupHelper cannot be used without an anchor");
+                    }
+                    eVar2.d(0, 0, false, false);
+                }
+                l.w wVar = this.e;
+                if (wVar != null) {
+                    wVar.A(d0Var);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // l.x
+    public final boolean k(l.m mVar) {
+        return false;
+    }
+
+    public final boolean l() {
+        l.k kVar;
+        if (!this.x || g() || (kVar = this.c) == null || this.n == null || this.K != null) {
+            return false;
+        }
+        kVar.i();
+        if (kVar.j.isEmpty()) {
+            return false;
+        }
+        g gVar = new g(this, new e(this, this.b, this.c, this.r));
+        this.K = gVar;
+        ((View) this.n).post(gVar);
+        return true;
+    }
 }

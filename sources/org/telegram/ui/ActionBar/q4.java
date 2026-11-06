@@ -7,16 +7,16 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public interface q4 {
-    d2 getBackgroundFragment();
+    f2 getBackgroundFragment();
 
-    t2 getBottomSheet();
+    v2 getBottomSheet();
 
     List getFragmentStack();
 
-    d2 getLastFragment();
+    f2 getLastFragment();
 
     t4 getMessageDrawableOutMediaStart();
 
@@ -28,7 +28,7 @@ public interface q4 {
 
     List getPulledDialogs();
 
-    d2 getSafeLastFragment();
+    f2 getSafeLastFragment();
 
     float getThemeAnimationValue();
 
@@ -40,25 +40,25 @@ public interface q4 {
 
     void setDelegate(n4 n4Var);
 
-    void setDrawerLayoutContainer(l3 l3Var);
+    void setDrawerLayoutContainer(n3 n3Var);
 
-    void setFragmentPanTranslationOffset(int i3);
+    void setFragmentPanTranslationOffset(int i7);
 
     void setFragmentStack(List list);
 
-    void setHighlightActionButtons(boolean z10);
+    void setHighlightActionButtons(boolean z9);
 
-    void setInBubbleMode(boolean z10);
+    void setInBubbleMode(boolean z9);
 
-    void setIsSheet(boolean z10);
+    void setIsSheet(boolean z9);
 
-    void setNavigationBarColor(int i3);
+    void setNavigationBarColor(int i7);
 
     void setPulledDialogs(List list);
 
-    void setRemoveActionBarExtraHeight(boolean z10);
+    void setRemoveActionBarExtraHeight(boolean z9);
 
-    void setUseAlphaAnimations(boolean z10);
+    void setUseAlphaAnimations(boolean z9);
 
     void setWindow(Window window);
 }

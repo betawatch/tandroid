@@ -1,6 +1,7 @@
 package c0;
 
-import b8.u1;
+import a8.n7;
+import a8.p0;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -12,21 +13,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import l9.y;
+import m9.y;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final u1 f;
+    public static final n7 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        u1 fVar;
+        n7 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -107,21 +108,21 @@ public abstract class h implements y {
 
     public static Object h(h hVar) {
         Object obj;
-        boolean z10 = false;
+        boolean z9 = false;
         while (true) {
             try {
                 obj = hVar.get();
                 break;
             } catch (InterruptedException unused) {
-                z10 = true;
+                z9 = true;
             } catch (Throwable th2) {
-                if (z10) {
+                if (z9) {
                     Thread.currentThread().interrupt();
                 }
                 throw th2;
             }
         }
-        if (z10) {
+        if (z9) {
             Thread.currentThread().interrupt();
         }
         return obj;
@@ -146,7 +147,7 @@ public abstract class h implements y {
         }
     }
 
-    @Override // l9.y
+    @Override // m9.y
     public final void b(Runnable runnable, Executor executor) {
         executor.getClass();
         d dVar = this.b;
@@ -166,10 +167,10 @@ public abstract class h implements y {
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
+    public final boolean cancel(boolean z9) {
         Object obj = this.a;
         if (obj == null) {
-            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z10) : z10 ? a.c : a.d)) {
+            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z9) : z9 ? a.c : a.d)) {
                 e(this);
                 return true;
             }
@@ -178,9 +179,9 @@ public abstract class h implements y {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
+    public final Object get(long j3, TimeUnit timeUnit) {
         g gVar = g.c;
-        long nanos = timeUnit.toNanos(j10);
+        long nanos = timeUnit.toNanos(j3);
         if (Thread.interrupted()) {
             throw new InterruptedException();
         }
@@ -194,9 +195,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    u1 u1Var = f;
-                    u1Var.d(gVar3, gVar2);
-                    if (u1Var.c(this, gVar2, gVar3)) {
+                    n7 n7Var = f;
+                    n7Var.d(gVar3, gVar2);
+                    if (n7Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -236,31 +237,31 @@ public abstract class h implements y {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder t10 = a1.g.t(j10, "Waited ", " ");
-        t10.append(timeUnit.toString().toLowerCase(locale));
-        String sb2 = t10.toString();
+        StringBuilder t6 = p0.t(j3, "Waited ", " ");
+        t6.append(timeUnit.toString().toLowerCase(locale));
+        String sb2 = t6.toString();
         if (nanos + 1000 < 0) {
-            String q10 = t4.c.q(sb2, " (plus ");
-            long j11 = -nanos;
-            long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
-            long nanos2 = j11 - timeUnit.toNanos(convert);
-            boolean z10 = convert == 0 || nanos2 > 1000;
+            String q10 = rf.b.q(sb2, " (plus ");
+            long j10 = -nanos;
+            long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
+            long nanos2 = j10 - timeUnit.toNanos(convert);
+            boolean z9 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
                 String str = q10 + convert + " " + lowerCase;
-                if (z10) {
-                    str = t4.c.q(str, ",");
+                if (z9) {
+                    str = rf.b.q(str, ",");
                 }
-                q10 = t4.c.q(str, " ");
+                q10 = rf.b.q(str, " ");
             }
-            if (z10) {
+            if (z9) {
                 q10 = q10 + nanos2 + " nanoseconds ";
             }
-            sb2 = t4.c.q(q10, "delay)");
+            sb2 = rf.b.q(q10, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(t4.c.q(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(rf.b.q(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(a1.g.C(sb2, " for ", hVar));
+        throw new TimeoutException(p0.D(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -371,9 +372,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    u1 u1Var = f;
-                    u1Var.d(gVar3, gVar2);
-                    if (u1Var.c(this, gVar2, gVar3)) {
+                    n7 n7Var = f;
+                    n7Var.d(gVar3, gVar2);
+                    if (n7Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

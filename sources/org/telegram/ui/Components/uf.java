@@ -1,101 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import java.io.File;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface uf {
-    void A(boolean z10);
+public final class uf extends org.telegram.ui.mq0 {
+    public boolean a;
+    public final /* synthetic */ org.telegram.messenger.gf b;
+    public final /* synthetic */ File c;
+    public final /* synthetic */ vf d;
 
-    void E();
+    public uf(vf vfVar, org.telegram.messenger.gf gfVar, File file) {
+        this.d = vfVar;
+        this.b = gfVar;
+        this.c = file;
+    }
 
-    void F();
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final void G() {
+        if (this.a) {
+            return;
+        }
+        try {
+            this.c.delete();
+        } catch (Throwable unused) {
+        }
+    }
 
-    void F0();
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final boolean g() {
+        return false;
+    }
 
-    void G(CharSequence charSequence, boolean z10, int i3, int i10, long j10);
-
-    void I0();
-
-    TLRPC.TL_channels_sendAsPeers M();
-
-    void M0(int i3);
-
-    void O(float f10, int i3);
-
-    int O0();
-
-    void O1();
-
-    TL_stories.StoryItem R0();
-
-    boolean T0(long j10);
-
-    void T1(int i3);
-
-    boolean V0();
-
-    void Y0(CharSequence charSequence, boolean z10, boolean z11);
-
-    void Z0();
-
-    void a0();
-
-    boolean a1();
-
-    void b1();
-
-    void b2();
-
-    void c0(boolean z10);
-
-    void c2(boolean z10);
-
-    void d2(int i3, int i10, int i11, long j10, long j11, boolean z10);
-
-    void e();
-
-    void e1();
-
-    void f();
-
-    void g0();
-
-    void g1();
-
-    void g2();
-
-    void h1(View view, CharSequence charSequence, boolean z10);
-
-    org.telegram.ui.mm i0();
-
-    void j1(CharSequence charSequence);
-
-    boolean k();
-
-    boolean k1();
-
-    void m1();
-
-    void n2();
-
-    int o();
-
-    void q0();
-
-    void r2();
-
-    void s1();
-
-    TLRPC.Peer t();
-
-    void u();
-
-    boolean u0();
-
-    void w0();
-
-    void x(float f10);
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
+        org.telegram.messenger.ij threadMessage;
+        String str;
+        org.telegram.ui.an anVar;
+        ChatActivityEnterView chatActivityEnterView = this.d.Z1;
+        org.telegram.ui.qm qmVar = chatActivityEnterView.V2;
+        if (qmVar != null && (anVar = chatActivityEnterView.P2) != null && qmVar.f) {
+            anVar.uc();
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        org.telegram.messenger.fz fzVar = new org.telegram.messenger.fz();
+        org.telegram.messenger.gf gfVar = this.b;
+        if (gfVar.b || (str = gfVar.h) == null) {
+            String str2 = gfVar.I;
+            if (str2 != null) {
+                fzVar.c = str2;
+            }
+        } else {
+            fzVar.c = str;
+        }
+        fzVar.e = gfVar.c;
+        fzVar.p = gfVar.d();
+        fzVar.o = gfVar.b;
+        fzVar.q = gfVar.j();
+        fzVar.z = gfVar.m;
+        fzVar.A = gfVar.P;
+        CharSequence charSequence = gfVar.a;
+        fzVar.d = charSequence != null ? charSequence.toString() : null;
+        fzVar.i = gfVar.n;
+        fzVar.j = gfVar.r;
+        fzVar.h = gfVar.x;
+        fzVar.k = j20Var;
+        fzVar.r = true;
+        arrayList.add(fzVar);
+        gfVar.e();
+        this.a = true;
+        boolean h = org.telegram.messenger.gz.h(fzVar.d);
+        org.telegram.messenger.c cVar = chatActivityEnterView.R;
+        org.telegram.messenger.nj njVar = null;
+        long j3 = chatActivityEnterView.Q2;
+        org.telegram.messenger.ij ijVar = chatActivityEnterView.T2;
+        threadMessage = chatActivityEnterView.getThreadMessage();
+        org.telegram.ui.qm qmVar2 = chatActivityEnterView.V2;
+        org.telegram.messenger.ij ijVar2 = chatActivityEnterView.Z1;
+        org.telegram.ui.an anVar2 = chatActivityEnterView.P2;
+        org.telegram.messenger.hw W8 = anVar2 != null ? anVar2.W8() : null;
+        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
+        org.telegram.ui.an anVar3 = chatActivityEnterView.P2;
+        if (anVar3 != null) {
+            njVar = anVar3.w5;
+        }
+        org.telegram.messenger.gz.X(cVar, arrayList, j3, ijVar, threadMessage, null, qmVar2, false, false, ijVar2, null, z9, i10, i11, h, null, W8, 0L, false, 0L, sendMonoForumPeerId, njVar, null, false);
+        wf wfVar = chatActivityEnterView.Z2;
+        if (wfVar != null) {
+            wfVar.F(null, true, i10, i11, 0L);
+        }
+    }
 }

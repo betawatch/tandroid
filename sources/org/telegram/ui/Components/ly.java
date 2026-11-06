@@ -1,79 +1,159 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ly implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ py b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public class ly extends v4.b0 {
+    public final SparseArray I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final RecyclerView N;
+    public boolean O;
+    public boolean P;
+    public final boolean Q;
+    public boolean R;
+    public int S;
+    public final boolean T;
 
-    public /* synthetic */ ly(py pyVar, int i3, int i10, int i11) {
-        this.a = i11;
-        this.b = pyVar;
-        this.c = i3;
-        this.d = i10;
+    public ly(int i7, pj0 pj0Var) {
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = pj0Var;
+        this.M = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3;
-        switch (this.a) {
-            case 0:
-                py pyVar = this.b;
-                int i10 = this.c;
-                int i11 = this.d;
-                if (pyVar.X != i10 || pyVar.Y != i11) {
-                    pyVar.X = i10;
-                    pyVar.Y = i11;
-                    int o10 = org.telegram.messenger.az.o();
-                    int i12 = 1920;
-                    if (o10 != 1) {
-                        if (o10 != 2) {
-                            i12 = 720;
-                        } else {
-                            Point point = org.telegram.messenger.g0.q;
-                            i12 = Math.min(1920, Math.max(point.x, point.y));
-                        }
-                    }
-                    if (org.telegram.messenger.az.o() == 0 && ((i3 = pyVar.X) > 1280 || pyVar.Y > 1280)) {
-                        pyVar.X = i3 / 2;
-                        pyVar.Y /= 2;
-                    }
-                    int i13 = pyVar.X;
-                    if (i13 > i12 || pyVar.Y > i12) {
-                        int i14 = pyVar.Y;
-                        if (i13 > i14) {
-                            pyVar.Y = (int) (i14 / (i12 / i13));
-                            pyVar.X = i12;
-                        } else {
-                            pyVar.X = (int) (i13 / (i12 / i14));
-                            pyVar.Y = i12;
-                        }
-                    }
-                    pyVar.a0 = false;
-                    pyVar.f();
-                    pyVar.e0.run();
-                    break;
-                }
-                break;
-            case 1:
-                py pyVar2 = this.b;
-                int i15 = this.c;
-                int i16 = this.d;
-                pyVar2.n = i15;
-                pyVar2.r = i16;
-                break;
-            default:
-                py pyVar3 = this.b;
-                int i17 = this.c;
-                int i18 = this.d;
-                ca caVar = pyVar3.J;
-                caVar.l = i17;
-                caVar.m = i18;
-                break;
+    @Override // v4.n0
+    public final void P(View view) {
+        if (this.T) {
+            RecyclerView recyclerView = this.N;
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+                ((ViewGroup.MarginLayoutParams) ((v4.o0) view.getLayoutParams())).height = Math.max(this.J, 0);
+            }
         }
+        super.P(view);
+    }
+
+    @Override // v4.n0
+    public final void Q() {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void V(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void W(RecyclerView recyclerView) {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void X(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void Y(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void Z() {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
+        p1();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void d0(v4.v0 v0Var, v4.a1 a1Var, int i7, int i10) {
+        int i11 = this.K;
+        this.L = View.MeasureSpec.getSize(i7);
+        int size = View.MeasureSpec.getSize(i10);
+        this.K = size;
+        if (i11 != size) {
+            p1();
+        }
+        super.d0(v0Var, a1Var, i7, i10);
+    }
+
+    @Override // v4.b0, v4.n0
+    public final boolean e() {
+        return this.Q;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void p1() {
+        RecyclerView recyclerView;
+        v4.g0 adapter;
+        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
+            int b10 = adapter.b() - 1;
+            int i7 = 0;
+            int i10 = 0;
+            for (int i11 = this.O; i11 < b10; i11++) {
+                int d = adapter.d(i11);
+                SparseArray sparseArray = this.I;
+                v4.d1 d1Var = (v4.d1) sparseArray.get(d, null);
+                if (d1Var == null) {
+                    d1Var = adapter.a(recyclerView, d);
+                    View view = d1Var.a;
+                    sparseArray.put(d, d1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
+                    }
+                }
+                View view2 = d1Var.a;
+                if (this.P) {
+                    adapter.t(d1Var, i11);
+                }
+                v4.o0 o0Var = (v4.o0) view2.getLayoutParams();
+                view2.measure(v4.n0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), v4.n0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
+                i7 += view2.getMeasuredHeight();
+                if (i11 == 0) {
+                    i10 = view2.getMeasuredHeight();
+                }
+                if (this.R) {
+                    if (i7 >= this.K + i10) {
+                        break;
+                    }
+                } else {
+                    if (i7 >= this.K) {
+                        break;
+                    }
+                }
+            }
+            if (this.R) {
+                this.J = Math.max(this.S, (((this.K - i7) - this.M) - recyclerView.getPaddingBottom()) + i10);
+            } else {
+                this.J = Math.max(this.S, ((this.K - i7) - this.M) - recyclerView.getPaddingBottom());
+            }
+        }
+    }
+
+    public ly(int i7, int i10, pj0 pj0Var) {
+        super(1, false);
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = pj0Var;
+        this.M = i7;
     }
 }

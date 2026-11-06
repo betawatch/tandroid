@@ -23,12 +23,12 @@ public final class e implements Serializable {
     public final ZoneOffset h;
     public final ZoneOffset i;
 
-    public e(j jVar, int i3, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z10, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
+    public e(j jVar, int i7, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z9, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
         this.a = jVar;
-        this.b = (byte) i3;
+        this.b = (byte) i7;
         this.c = dayOfWeek;
         this.d = hVar;
-        this.e = z10;
+        this.e = z9;
         this.f = dVar;
         this.g = zoneOffset;
         this.h = zoneOffset2;
@@ -54,15 +54,15 @@ public final class e implements Serializable {
         } else {
             b10 = 31;
         }
-        int i3 = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : 255;
+        int i7 = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : 255;
         int i10 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
         int i11 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
-        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b10 << 14) + (this.f.ordinal() << 12) + (i3 << 4) + (i10 << 2) + i11);
+        dataOutput.writeInt((this.a.getValue() << 28) + ((this.b + 32) << 22) + ((dayOfWeek == null ? 0 : dayOfWeek.getValue()) << 19) + (b10 << 14) + (this.f.ordinal() << 12) + (i7 << 4) + (i10 << 2) + i11);
         if (b10 == 31) {
             dataOutput.writeInt(S);
         }
-        if (i3 == 255) {
+        if (i7 == 255) {
             dataOutput.writeInt(totalSeconds);
         }
         if (i10 == 3) {
@@ -78,7 +78,7 @@ public final class e implements Serializable {
         j$.time.h hVar;
         int readInt = dataInput.readInt();
         j J = j.J(readInt >>> 28);
-        int i3 = ((264241152 & readInt) >>> 22) - 32;
+        int i7 = ((264241152 & readInt) >>> 22) - 32;
         int i10 = (3670016 & readInt) >>> 19;
         DayOfWeek G = i10 == 0 ? null : DayOfWeek.G(i10);
         int i11 = (507904 & readInt) >>> 14;
@@ -91,9 +91,9 @@ public final class e implements Serializable {
             j$.time.h hVar2 = j$.time.h.e;
             j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
             int i15 = (int) (readInt2 / 3600);
-            long j10 = readInt2 - (i15 * 3600);
+            long j3 = readInt2 - (i15 * 3600);
             dVar = dVar2;
-            hVar = j$.time.h.H(i15, (int) (j10 / 60), (int) (j10 - (r14 * 60)), 0);
+            hVar = j$.time.h.H(i15, (int) (j3 / 60), (int) (j3 - (r14 * 60)), 0);
         } else {
             dVar = dVar2;
             int i16 = i11 % 24;
@@ -104,7 +104,7 @@ public final class e implements Serializable {
         ZoneOffset O = ZoneOffset.O(i12 == 255 ? dataInput.readInt() : (i12 - 128) * 900);
         ZoneOffset O2 = ZoneOffset.O(i13 == 3 ? dataInput.readInt() : (i13 * 1800) + O.getTotalSeconds());
         ZoneOffset O3 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
-        boolean z10 = i11 == 24;
+        boolean z9 = i11 == 24;
         Objects.requireNonNull(J, "month");
         Objects.requireNonNull(hVar, "time");
         d dVar3 = dVar;
@@ -112,16 +112,16 @@ public final class e implements Serializable {
         Objects.requireNonNull(O, "standardOffset");
         Objects.requireNonNull(O2, "offsetBefore");
         Objects.requireNonNull(O3, "offsetAfter");
-        if (i3 < -28 || i3 > 31 || i3 == 0) {
+        if (i7 < -28 || i7 > 31 || i7 == 0) {
             throw new IllegalArgumentException("Day of month indicator must be between -28 and 31 inclusive excluding zero");
         }
-        if (z10 && !hVar.equals(j$.time.h.g)) {
+        if (z9 && !hVar.equals(j$.time.h.g)) {
             throw new IllegalArgumentException("Time must be midnight when end of day flag is true");
         }
         if (hVar.d != 0) {
             throw new IllegalArgumentException("Time's nano-of-second must be zero");
         }
-        return new e(J, i3, G, hVar, z10, dVar3, O, O2, O3);
+        return new e(J, i7, G, hVar, z9, dVar3, O, O2, O3);
     }
 
     public final boolean equals(Object obj) {

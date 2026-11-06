@@ -5,17 +5,17 @@ import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e extends e1 {
-    public final p4.q b = new p4.q(12);
+    public final q4.q b = new q4.q(15);
 
     @Override // com.google.android.gms.internal.vision.e1
     public final void q(Exception exc) {
         exc.printStackTrace();
-        p4.q qVar = this.b;
-        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) qVar.a;
-        ReferenceQueue referenceQueue = (ReferenceQueue) qVar.b;
+        q4.q qVar = this.b;
+        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) qVar.b;
+        ReferenceQueue referenceQueue = (ReferenceQueue) qVar.c;
         for (Reference poll = referenceQueue.poll(); poll != null; poll = referenceQueue.poll()) {
             concurrentHashMap.remove(poll);
         }

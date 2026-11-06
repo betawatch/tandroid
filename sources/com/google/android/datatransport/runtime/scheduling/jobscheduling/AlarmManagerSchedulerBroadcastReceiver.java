@@ -4,16 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
-import ha.c;
+import h6.m;
+import ia.c;
 import java.util.concurrent.Executor;
-import k4.j;
-import n5.i;
-import n5.s;
-import org.telegram.ui.Components.zo0;
-import org.telegram.ui.hb1;
-import x5.a;
+import o5.i;
+import o5.s;
+import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Wallet.z;
+import y5.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -23,15 +23,15 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         String queryParameter = intent.getData().getQueryParameter("backendName");
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
-        int i3 = intent.getExtras().getInt("attemptNumber");
+        int i7 = intent.getExtras().getInt("attemptNumber");
         s.b(context);
-        j a10 = i.a();
-        a10.I(queryParameter);
-        a10.c = a.b(intValue);
+        m a10 = i.a();
+        a10.F(queryParameter);
+        a10.d = a.b(intValue);
         if (queryParameter2 != null) {
-            a10.b = Base64.decode(queryParameter2, 0);
+            a10.c = Base64.decode(queryParameter2, 0);
         }
         c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new zo0(cVar, a10.l(), i3, new hb1(13), 22));
+        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i7, new z(16), 24));
     }
 }

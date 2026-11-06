@@ -1,14 +1,15 @@
 package com.google.android.gms.wearable.internal;
 
-import a1.g;
-import a9.c;
+import a8.p0;
 import android.os.Parcel;
 import android.os.Parcelable;
+import b9.c;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import p6.m;
-import q6.a;
+import q6.m;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class DataItemAssetParcelable extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);
@@ -35,15 +36,15 @@ public class DataItemAssetParcelable extends a implements ReflectedParcelable {
             sb2.append(str);
         }
         sb2.append(", key=");
-        return g.s(sb2, this.b, "]");
+        return p0.s(sb2, this.b, "]");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.m(parcel, 2, this.a);
-        j8.a.m(parcel, 3, this.b);
-        j8.a.t(parcel, s6);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.l(parcel, 2, this.a);
+        wb.l(parcel, 3, this.b);
+        wb.s(parcel, r10);
     }
 
     public DataItemAssetParcelable(String str, String str2) {

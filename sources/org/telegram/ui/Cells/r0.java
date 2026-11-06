@@ -9,10 +9,10 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.az;
-import org.telegram.messenger.zi;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.iz;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class r0 {
     public TextPaint a;
@@ -39,10 +39,10 @@ public final class r0 {
         this.d = 25;
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint.setColor(-1);
-        int o10 = az.o();
-        if (o10 == 0) {
+        int o4 = iz.o();
+        if (o4 == 0) {
             this.b = 0.25f;
-        } else if (o10 != 1) {
+        } else if (o4 != 1) {
             this.b = 0.75f;
         } else {
             this.b = 0.5f;
@@ -51,25 +51,25 @@ public final class r0 {
         paint.setColor(-1);
     }
 
-    public void a(CharSequence charSequence, TextPaint textPaint, int i3) {
+    public void a(CharSequence charSequence, TextPaint textPaint, int i7) {
         t0 t0Var;
         this.a = textPaint;
-        this.d = i3;
-        StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i3, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
+        this.d = i7;
+        StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
         this.f = staticLayout;
         t0 t0Var2 = (t0) this.i;
-        zi ziVar = t0Var2.Q0;
+        ij ijVar = t0Var2.P0;
         ArrayList arrayList = this.c;
-        if (ziVar == null || !ziVar.L0) {
+        if (ijVar == null || !ijVar.L0) {
             t0Var = t0Var2;
-            yh.f.b(t0Var, staticLayout, -1, i3, null, arrayList);
+            xh.f.b(t0Var, staticLayout, -1, i7, null, arrayList);
         } else {
             if (arrayList != null) {
                 arrayList.clear();
             }
             t0Var = t0Var2;
         }
-        this.h = org.telegram.ui.Components.p5.update(0, (View) t0Var, false, (org.telegram.ui.Components.l5) this.h, (StaticLayout) this.f);
+        this.h = org.telegram.ui.Components.r5.update(0, (View) t0Var, false, (org.telegram.ui.Components.n5) this.h, (StaticLayout) this.f);
     }
 
     public r0(t0 t0Var) {

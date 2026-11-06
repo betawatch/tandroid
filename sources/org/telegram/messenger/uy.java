@@ -1,11 +1,22 @@
 package org.telegram.messenger;
 
-import android.location.Location;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface uy {
-    void B(Location location);
+public final class uy implements RequestDelegate {
+    public final /* synthetic */ TLRPC.TL_messages_initHistoryImport a;
+    public final /* synthetic */ xy b;
 
-    void y();
+    public uy(xy xyVar, TLRPC.TL_messages_initHistoryImport tL_messages_initHistoryImport) {
+        this.b = xyVar;
+        this.a = tL_messages_initHistoryImport;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        g0.h3(new em(this, tLObject, this.a, tL_error, 25));
+    }
 }

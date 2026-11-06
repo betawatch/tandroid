@@ -12,10 +12,10 @@ public final class a {
     public final Unsafe a;
 
     static {
-        Field g7 = g();
-        g7.setAccessible(true);
+        Field g10 = g();
+        g10.setAccessible(true);
         try {
-            b = new a((Unsafe) g7.get(null));
+            b = new a((Unsafe) g10.get(null));
         } catch (IllegalAccessException e10) {
             throw new AssertionError("Couldn't get the Unsafe", e10);
         }
@@ -38,16 +38,16 @@ public final class a {
         }
     }
 
-    public final int e(q qVar, long j10) {
+    public final int e(q qVar, long j3) {
         while (true) {
-            int intVolatile = this.a.getIntVolatile(qVar, j10);
+            int intVolatile = this.a.getIntVolatile(qVar, j3);
             q qVar2 = qVar;
-            long j11 = j10;
-            if (this.a.compareAndSwapInt(qVar2, j11, intVolatile, intVolatile - 4)) {
+            long j10 = j3;
+            if (this.a.compareAndSwapInt(qVar2, j10, intVolatile, intVolatile - 4)) {
                 return intVolatile;
             }
             qVar = qVar2;
-            j10 = j11;
+            j3 = j10;
         }
     }
 
@@ -71,19 +71,19 @@ public final class a {
         return this.a.arrayIndexScale(cls);
     }
 
-    public final Object f(Object obj, long j10) {
-        return this.a.getObjectVolatile(obj, j10);
+    public final Object f(Object obj, long j3) {
+        return this.a.getObjectVolatile(obj, j3);
     }
 
-    public final void j(Object obj, long j10, l lVar) {
-        this.a.putObjectVolatile(obj, j10, lVar);
+    public final void j(Object obj, long j3, l lVar) {
+        this.a.putObjectVolatile(obj, j3, lVar);
     }
 
-    public final boolean c(Object obj, long j10, int i3, int i10) {
-        return this.a.compareAndSwapInt(obj, j10, i3, i10);
+    public final boolean c(Object obj, long j3, int i7, int i10) {
+        return this.a.compareAndSwapInt(obj, j3, i7, i10);
     }
 
-    public final boolean d(Object obj, long j10, long j11, long j12) {
-        return this.a.compareAndSwapLong(obj, j10, j11, j12);
+    public final boolean d(Object obj, long j3, long j10, long j11) {
+        return this.a.compareAndSwapLong(obj, j3, j10, j11);
     }
 }

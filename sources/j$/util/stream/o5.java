@@ -11,28 +11,28 @@ public final class o5 extends e5 {
         super(j5Var);
         this.d = p5Var;
         this.b = p5Var.s;
-        long j10 = p5Var.t;
-        this.c = j10 < 0 ? Long.MAX_VALUE : j10;
+        long j3 = p5Var.t;
+        this.c = j3 < 0 ? Long.MAX_VALUE : j3;
     }
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j10) {
-        this.a.o(t3.W(j10, this.d.s, this.c));
+    public final void o(long j3) {
+        this.a.o(t3.W(j3, this.d.s, this.c));
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j10) {
-        long j11 = this.b;
-        if (j11 == 0) {
-            long j12 = this.c;
-            if (j12 > 0) {
-                this.c = j12 - 1;
-                this.a.accept(j10);
+    public final void accept(long j3) {
+        long j10 = this.b;
+        if (j10 == 0) {
+            long j11 = this.c;
+            if (j11 > 0) {
+                this.c = j11 - 1;
+                this.a.accept(j3);
                 return;
             }
             return;
         }
-        this.b = j11 - 1;
+        this.b = j10 - 1;
     }
 
     @Override // j$.util.stream.e5, j$.util.stream.j5

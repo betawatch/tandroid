@@ -1,82 +1,106 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g30 implements org.telegram.ui.Components.e30 {
-    public float a;
-    public TLRPC.FileLocation b;
-    public TLRPC.FileLocation c;
-    public org.telegram.messenger.ac d;
-    public final long e;
-    public final /* synthetic */ x30 f;
+public final class g30 implements org.telegram.ui.Components.hi0 {
+    public final Path a = new Path();
+    public final Paint b;
+    public final /* synthetic */ c40 c;
 
-    public g30(x30 x30Var, long j10) {
-        this.f = x30Var;
-        this.e = j10;
+    public g30(c40 c40Var) {
+        this.c = c40Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final void H(float f10) {
-        this.f.j1.O(this.d, f10);
-        a(f10);
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final void U(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        org.telegram.messenger.g0.h3(new ji.j(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
-    }
-
-    public final void a(float f10) {
-        this.a = f10;
-        f30 f30Var = this.f.I1;
-        if (f30Var == null) {
-            return;
-        }
-        for (int i3 = 0; i3 < f30Var.getChildCount(); i3++) {
-            View childAt = f30Var.getChildAt(i3);
-            if (childAt instanceof org.telegram.ui.Cells.f4) {
-                org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) childAt;
-                if (f4Var.c()) {
-                    org.telegram.ui.Cells.b4 b4Var = f4Var.y;
-                    b4Var.setProgress(f10);
-                    if (f10 < 1.0f) {
-                        org.telegram.messenger.g0.Z3(b4Var, true, 1.0f, true, true);
-                    } else {
-                        org.telegram.messenger.g0.Z3(b4Var, false, 1.0f, true, true);
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final /* synthetic */ mq0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final /* synthetic */ boolean x() {
+    @Override // org.telegram.ui.Components.hi0
+    public final /* synthetic */ boolean E() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final /* synthetic */ void T() {
+    @Override // org.telegram.ui.Components.hi0
+    public final void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
+        Paint paint = this.b;
+        if (f10 > 0.0f) {
+            canvas.drawRoundRect(rectF, f10, f10, paint);
+        } else {
+            canvas.drawRect(rectF, paint);
+        }
+        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
+            return;
+        }
+        c40 c40Var = this.c;
+        if (c40Var.H4 != null) {
+            canvas.save();
+            if (f10 > 0.0f) {
+                Path path = this.a;
+                path.rewind();
+                path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
+                path.close();
+                canvas.clipPath(path);
+            } else {
+                canvas.clipRect(rectF);
+            }
+            canvas.translate(-c40Var.B1.getX(), -c40Var.B1.getY());
+            float f13 = c40Var.I4;
+            canvas.scale(f13, f13);
+            canvas.drawRenderNode(c40Var.H4);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final void O(boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.hi0
+    public final boolean U() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.hi0
+    public final void i(View view, ch.o0 o0Var, boolean z9, boolean z10) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = o0Var.f;
+        if (str == null) {
+            str = "👍";
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j3 = o0Var.g;
+        if (j3 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j3;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        c40 c40Var = this.c;
+        c40Var.F1(tL_textWithEntities);
+        h20 h20Var = c40Var.y1;
+        if (h20Var.m()) {
+            h20Var.j();
+        } else {
+            h20Var.d();
+        }
+        ch.b0 reactionsWindow = c40Var.B1.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
+            return;
+        }
+        c40Var.B1.getReactionsWindow().e();
+        c40Var.B1.n();
+    }
+
+    @Override // org.telegram.ui.Components.hi0
+    public final boolean v() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.hi0
+    public final /* synthetic */ void M() {
     }
 }

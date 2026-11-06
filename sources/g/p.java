@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class p {
     public Object a;
@@ -47,11 +47,11 @@ public abstract class p {
         return rVar;
     }
 
-    public int g(int i3, int i10) {
-        int i11 = i(i3);
+    public int g(int i7, int i10) {
+        int i11 = i(i7);
         int i12 = 0;
         int i13 = 0;
-        for (int i14 = 0; i14 < i3; i14++) {
+        for (int i14 = 0; i14 < i7; i14++) {
             int i15 = i(i14);
             i12 += i15;
             if (i12 == i10) {
@@ -65,13 +65,13 @@ public abstract class p {
         return i12 + i11 > i10 ? i13 + 1 : i13;
     }
 
-    public int h(int i3, int i10) {
-        int i11 = i(i3);
+    public int h(int i7, int i10) {
+        int i11 = i(i7);
         if (i11 == i10) {
             return 0;
         }
         int i12 = 0;
-        for (int i13 = 0; i13 < i3; i13++) {
+        for (int i13 = 0; i13 < i7; i13++) {
             int i14 = i(i13);
             i12 += i14;
             if (i12 == i10) {
@@ -86,7 +86,7 @@ public abstract class p {
         return 0;
     }
 
-    public abstract int i(int i3);
+    public abstract int i(int i7);
 
     public void j() {
         ((SparseIntArray) this.a).clear();

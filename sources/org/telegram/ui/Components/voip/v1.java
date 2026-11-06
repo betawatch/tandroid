@@ -1,27 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class v1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class v1 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w1 b;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ Intent c;
 
-    public /* synthetic */ v1(w1 w1Var, int i3) {
-        this.a = i3;
-        this.b = w1Var;
+    public /* synthetic */ v1(Activity activity, Intent intent, int i7) {
+        this.a = i7;
+        this.b = activity;
+        this.c = intent;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                this.b.b.setVisibility(8);
+                this.b.startActivity(this.c);
                 break;
             default:
-                this.b.c.setVisibility(8);
+                this.b.startActivity(this.c);
                 break;
         }
     }

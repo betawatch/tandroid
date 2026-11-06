@@ -1,102 +1,108 @@
 package com.google.android.gms.internal.clearcut;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.net.Uri;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.util.HashMap;
 
 /* loaded from: classes.dex */
-public final class b2 extends q6.a {
-    public static final Parcelable.Creator<b2> CREATOR = new c2();
-    public final String a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final boolean f;
-    public final String h;
-    public final boolean n;
-    public final int r;
+public final class b2 {
+    public static final Charset b = Charset.forName("UTF-8");
+    public static final i c;
+    public static final i d;
+    public static final ConcurrentHashMap e;
+    public static final HashMap f;
+    public static Boolean g;
+    public static Long h;
+    public static final f i;
+    public final Context a;
 
-    public b2(String str, int i3, int i10, String str2, o1 o1Var) {
-        p6.m.g(str);
-        this.a = str;
-        this.b = i3;
-        this.c = i10;
-        this.h = str2;
-        this.d = null;
-        this.e = null;
-        this.f = true;
-        this.n = false;
-        this.r = o1Var.a;
+    static {
+        String valueOf = String.valueOf(Uri.encode("com.google.android.gms.clearcut.public"));
+        i iVar = new i(Uri.parse(valueOf.length() != 0 ? "content://com.google.android.gms.phenotype/".concat(valueOf) : new String("content://com.google.android.gms.phenotype/")), "gms:playlog:service:samplingrules_", "LogSamplingRules__");
+        c = iVar;
+        String valueOf2 = String.valueOf(Uri.encode("com.google.android.gms.clearcut.public"));
+        d = new i(Uri.parse(valueOf2.length() != 0 ? "content://com.google.android.gms.phenotype/".concat(valueOf2) : new String("content://com.google.android.gms.phenotype/")), "gms:playlog:service:sampling_", "LogSampling__");
+        e = new ConcurrentHashMap();
+        f = new HashMap();
+        g = null;
+        h = null;
+        i = new f(iVar, "enable_log_sampling_rules", Boolean.FALSE, 0);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    public b2(Context context) {
+        this.a = context;
+        if (context != null) {
+            d.b(context);
+        }
+    }
+
+    public static long a(long j3, String str) {
+        if (str == null || str.isEmpty()) {
+            return m1.h(ByteBuffer.allocate(8).putLong(j3).array());
+        }
+        byte[] bytes = str.getBytes(b);
+        ByteBuffer allocate = ByteBuffer.allocate(bytes.length + 8);
+        allocate.put(bytes);
+        allocate.putLong(j3);
+        return m1.h(allocate.array());
+    }
+
+    public static boolean b(long j3, long j10, long j11) {
+        if (j10 < 0 || j11 <= 0) {
             return true;
         }
-        if (obj instanceof b2) {
-            b2 b2Var = (b2) obj;
-            if (p6.m.k(this.a, b2Var.a) && this.b == b2Var.b && this.c == b2Var.c && p6.m.k(this.h, b2Var.h) && p6.m.k(this.d, b2Var.d) && p6.m.k(this.e, b2Var.e) && this.f == b2Var.f && this.n == b2Var.n && this.r == b2Var.r) {
-                return true;
+        if (j3 < 0) {
+            j3 = ((j3 & Long.MAX_VALUE) % j11) + (Long.MAX_VALUE % j11) + 1;
+        }
+        return j3 % j11 < j10;
+    }
+
+    public static boolean c(Context context) {
+        if (g == null) {
+            g = Boolean.valueOf(z6.b.a(context).a.checkCallingOrSelfPermission("com.google.android.providers.gsf.permission.READ_GSERVICES") == 0);
+        }
+        return g.booleanValue();
+    }
+
+    public static long d(Context context) {
+        Object obj;
+        long j3 = 0;
+        if (h == null) {
+            if (context == null) {
+                return 0L;
+            }
+            if (c(context)) {
+                ContentResolver contentResolver = context.getContentResolver();
+                Uri uri = e2.a;
+                synchronized (e2.class) {
+                    e2.c(contentResolver);
+                    obj = e2.k;
+                }
+                HashMap hashMap = e2.i;
+                Long l10 = (Long) e2.a(hashMap, "android_id", 0L);
+                if (l10 != null) {
+                    j3 = l10.longValue();
+                } else {
+                    String b10 = e2.b(contentResolver, "android_id");
+                    if (b10 != null) {
+                        try {
+                            long parseLong = Long.parseLong(b10);
+                            l10 = Long.valueOf(parseLong);
+                            j3 = parseLong;
+                        } catch (NumberFormatException unused) {
+                        }
+                    }
+                    e2.e(obj, hashMap, "android_id", l10);
+                }
+                h = Long.valueOf(j3);
+            } else {
+                h = 0L;
             }
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), Integer.valueOf(this.c), this.h, this.d, this.e, Boolean.valueOf(this.f), Boolean.valueOf(this.n), Integer.valueOf(this.r)});
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PlayLoggerContext[package=");
-        sb2.append(this.a);
-        sb2.append(",packageVersionCode=");
-        sb2.append(this.b);
-        sb2.append(",logSource=");
-        sb2.append(this.c);
-        sb2.append(",logSourceName=");
-        sb2.append(this.h);
-        sb2.append(",uploadAccount=");
-        sb2.append(this.d);
-        sb2.append(",loggingId=");
-        sb2.append(this.e);
-        sb2.append(",logAndroidId=");
-        sb2.append(this.f);
-        sb2.append(",isAnonymous=");
-        sb2.append(this.n);
-        sb2.append(",qosTier=");
-        return a1.g.o(this.r, "]", sb2);
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.m(parcel, 2, this.a);
-        j8.a.r(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        j8.a.r(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        j8.a.m(parcel, 5, this.d);
-        j8.a.m(parcel, 6, this.e);
-        j8.a.r(parcel, 7, 4);
-        parcel.writeInt(this.f ? 1 : 0);
-        j8.a.m(parcel, 8, this.h);
-        j8.a.r(parcel, 9, 4);
-        parcel.writeInt(this.n ? 1 : 0);
-        j8.a.r(parcel, 10, 4);
-        parcel.writeInt(this.r);
-        j8.a.t(parcel, s6);
-    }
-
-    public b2(String str, int i3, int i10, String str2, String str3, boolean z10, String str4, boolean z11, int i11) {
-        this.a = str;
-        this.b = i3;
-        this.c = i10;
-        this.d = str2;
-        this.e = str3;
-        this.f = z10;
-        this.h = str4;
-        this.n = z11;
-        this.r = i11;
+        return h.longValue();
     }
 }

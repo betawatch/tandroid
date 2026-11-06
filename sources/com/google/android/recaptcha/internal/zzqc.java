@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzqc {
     public static final /* synthetic */ int zza = 0;
     private static volatile int zzb = 100;
 
-    public static int zza(byte[] bArr, int i3, zzqb zzqbVar) {
-        int zzi = zzi(bArr, i3, zzqbVar);
+    public static int zza(byte[] bArr, int i7, zzqb zzqbVar) {
+        int zzi = zzi(bArr, i7, zzqbVar);
         int i10 = zzqbVar.zza;
         if (i10 < 0) {
             throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
@@ -25,35 +25,35 @@ final class zzqc {
         return zzi + i10;
     }
 
-    public static int zzb(byte[] bArr, int i3) {
-        int i10 = bArr[i3] & 255;
-        int i11 = bArr[i3 + 1] & 255;
-        int i12 = bArr[i3 + 2] & 255;
-        return ((bArr[i3 + 3] & 255) << 24) | (i11 << 8) | i10 | (i12 << 16);
+    public static int zzb(byte[] bArr, int i7) {
+        int i10 = bArr[i7] & 255;
+        int i11 = bArr[i7 + 1] & 255;
+        int i12 = bArr[i7 + 2] & 255;
+        return ((bArr[i7 + 3] & 255) << 24) | (i11 << 8) | i10 | (i12 << 16);
     }
 
-    public static int zzc(zzug zzugVar, byte[] bArr, int i3, int i10, int i11, zzqb zzqbVar) {
+    public static int zzc(zzug zzugVar, byte[] bArr, int i7, int i10, int i11, zzqb zzqbVar) {
         Object zze = zzugVar.zze();
-        int zzm = zzm(zze, zzugVar, bArr, i3, i10, i11, zzqbVar);
+        int zzm = zzm(zze, zzugVar, bArr, i7, i10, i11, zzqbVar);
         zzugVar.zzf(zze);
         zzqbVar.zzc = zze;
         return zzm;
     }
 
-    public static int zzd(zzug zzugVar, byte[] bArr, int i3, int i10, zzqb zzqbVar) {
+    public static int zzd(zzug zzugVar, byte[] bArr, int i7, int i10, zzqb zzqbVar) {
         Object zze = zzugVar.zze();
-        int zzn = zzn(zze, zzugVar, bArr, i3, i10, zzqbVar);
+        int zzn = zzn(zze, zzugVar, bArr, i7, i10, zzqbVar);
         zzugVar.zzf(zze);
         zzqbVar.zzc = zze;
         return zzn;
     }
 
-    public static int zze(zzug zzugVar, int i3, byte[] bArr, int i10, int i11, zzsu zzsuVar, zzqb zzqbVar) {
+    public static int zze(zzug zzugVar, int i7, byte[] bArr, int i10, int i11, zzsu zzsuVar, zzqb zzqbVar) {
         int zzd = zzd(zzugVar, bArr, i10, i11, zzqbVar);
         zzsuVar.add(zzqbVar.zzc);
         while (zzd < i11) {
             int zzi = zzi(bArr, zzd, zzqbVar);
-            if (i3 != zzqbVar.zza) {
+            if (i7 != zzqbVar.zza) {
                 break;
             }
             zzd = zzd(zzugVar, bArr, zzi, i11, zzqbVar);
@@ -62,9 +62,9 @@ final class zzqc {
         return zzd;
     }
 
-    public static int zzf(byte[] bArr, int i3, zzsu zzsuVar, zzqb zzqbVar) {
+    public static int zzf(byte[] bArr, int i7, zzsu zzsuVar, zzqb zzqbVar) {
         zzso zzsoVar = (zzso) zzsuVar;
-        int zzi = zzi(bArr, i3, zzqbVar);
+        int zzi = zzi(bArr, i7, zzqbVar);
         int i10 = zzqbVar.zza + zzi;
         while (zzi < i10) {
             zzi = zzi(bArr, zzi, zzqbVar);
@@ -76,8 +76,8 @@ final class zzqc {
         throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
     }
 
-    public static int zzg(byte[] bArr, int i3, zzqb zzqbVar) {
-        int zzi = zzi(bArr, i3, zzqbVar);
+    public static int zzg(byte[] bArr, int i7, zzqb zzqbVar) {
+        int zzi = zzi(bArr, i7, zzqbVar);
         int i10 = zzqbVar.zza;
         if (i10 < 0) {
             throw new zzsx("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
@@ -90,18 +90,18 @@ final class zzqc {
         return zzi + i10;
     }
 
-    public static int zzh(int i3, byte[] bArr, int i10, int i11, zzuw zzuwVar, zzqb zzqbVar) {
-        if ((i3 >>> 3) == 0) {
+    public static int zzh(int i7, byte[] bArr, int i10, int i11, zzuw zzuwVar, zzqb zzqbVar) {
+        if ((i7 >>> 3) == 0) {
             throw new zzsx("Protocol message contained an invalid tag (zero).");
         }
-        int i12 = i3 & 7;
+        int i12 = i7 & 7;
         if (i12 == 0) {
             int zzl = zzl(bArr, i10, zzqbVar);
-            zzuwVar.zzj(i3, Long.valueOf(zzqbVar.zzb));
+            zzuwVar.zzj(i7, Long.valueOf(zzqbVar.zzb));
             return zzl;
         }
         if (i12 == 1) {
-            zzuwVar.zzj(i3, Long.valueOf(zzp(bArr, i10)));
+            zzuwVar.zzj(i7, Long.valueOf(zzp(bArr, i10)));
             return i10 + 8;
         }
         if (i12 == 2) {
@@ -114,9 +114,9 @@ final class zzqc {
                 throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             }
             if (i13 == 0) {
-                zzuwVar.zzj(i3, zzqm.zzb);
+                zzuwVar.zzj(i7, zzqm.zzb);
             } else {
-                zzuwVar.zzj(i3, zzqm.zzl(bArr, zzi, i13));
+                zzuwVar.zzj(i7, zzqm.zzl(bArr, zzi, i13));
             }
             return zzi + i13;
         }
@@ -124,10 +124,10 @@ final class zzqc {
             if (i12 != 5) {
                 throw new zzsx("Protocol message contained an invalid tag (zero).");
             }
-            zzuwVar.zzj(i3, Integer.valueOf(zzb(bArr, i10)));
+            zzuwVar.zzj(i7, Integer.valueOf(zzb(bArr, i10)));
             return i10 + 4;
         }
-        int i14 = (i3 & (-8)) | 4;
+        int i14 = (i7 & (-8)) | 4;
         zzuw zzf = zzuw.zzf();
         int i15 = zzqbVar.zze + 1;
         zzqbVar.zze = i15;
@@ -151,13 +151,13 @@ final class zzqc {
         if (i10 > i11 || i16 != i14) {
             throw new zzsx("Failed to parse the message.");
         }
-        zzuwVar.zzj(i3, zzf);
+        zzuwVar.zzj(i7, zzf);
         return i10;
     }
 
-    public static int zzi(byte[] bArr, int i3, zzqb zzqbVar) {
-        int i10 = i3 + 1;
-        byte b10 = bArr[i3];
+    public static int zzi(byte[] bArr, int i7, zzqb zzqbVar) {
+        int i10 = i7 + 1;
+        byte b10 = bArr[i7];
         if (b10 < 0) {
             return zzj(b10, bArr, i10, zzqbVar);
         }
@@ -165,10 +165,10 @@ final class zzqc {
         return i10;
     }
 
-    public static int zzj(int i3, byte[] bArr, int i10, zzqb zzqbVar) {
+    public static int zzj(int i7, byte[] bArr, int i10, zzqb zzqbVar) {
         byte b10 = bArr[i10];
         int i11 = i10 + 1;
-        int i12 = i3 & hs.L1;
+        int i12 = i7 & qs.L1;
         if (b10 >= 0) {
             zzqbVar.zza = i12 | (b10 << 7);
             return i11;
@@ -205,13 +205,13 @@ final class zzqc {
         }
     }
 
-    public static int zzk(int i3, byte[] bArr, int i10, int i11, zzsu zzsuVar, zzqb zzqbVar) {
+    public static int zzk(int i7, byte[] bArr, int i10, int i11, zzsu zzsuVar, zzqb zzqbVar) {
         zzso zzsoVar = (zzso) zzsuVar;
         int zzi = zzi(bArr, i10, zzqbVar);
         zzsoVar.zzh(zzqbVar.zza);
         while (zzi < i11) {
             int zzi2 = zzi(bArr, zzi, zzqbVar);
-            if (i3 != zzqbVar.zza) {
+            if (i7 != zzqbVar.zza) {
                 break;
             }
             zzi = zzi(bArr, zzi2, zzqbVar);
@@ -220,41 +220,41 @@ final class zzqc {
         return zzi;
     }
 
-    public static int zzl(byte[] bArr, int i3, zzqb zzqbVar) {
-        long j10 = bArr[i3];
-        int i10 = i3 + 1;
-        if (j10 >= 0) {
-            zzqbVar.zzb = j10;
+    public static int zzl(byte[] bArr, int i7, zzqb zzqbVar) {
+        long j3 = bArr[i7];
+        int i10 = i7 + 1;
+        if (j3 >= 0) {
+            zzqbVar.zzb = j3;
             return i10;
         }
-        int i11 = i3 + 2;
+        int i11 = i7 + 2;
         byte b10 = bArr[i10];
-        long j11 = (j10 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
+        long j10 = (j3 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
         int i12 = 7;
         while (b10 < 0) {
             int i13 = i11 + 1;
             i12 += 7;
-            j11 |= (r10 & Byte.MAX_VALUE) << i12;
+            j10 |= (r10 & Byte.MAX_VALUE) << i12;
             b10 = bArr[i11];
             i11 = i13;
         }
-        zzqbVar.zzb = j11;
+        zzqbVar.zzb = j10;
         return i11;
     }
 
-    public static int zzm(Object obj, zzug zzugVar, byte[] bArr, int i3, int i10, int i11, zzqb zzqbVar) {
+    public static int zzm(Object obj, zzug zzugVar, byte[] bArr, int i7, int i10, int i11, zzqb zzqbVar) {
         int i12 = zzqbVar.zze + 1;
         zzqbVar.zze = i12;
         zzq(i12);
-        int zzc = ((zztv) zzugVar).zzc(obj, bArr, i3, i10, i11, zzqbVar);
+        int zzc = ((zztv) zzugVar).zzc(obj, bArr, i7, i10, i11, zzqbVar);
         zzqbVar.zze--;
         zzqbVar.zzc = obj;
         return zzc;
     }
 
-    public static int zzn(Object obj, zzug zzugVar, byte[] bArr, int i3, int i10, zzqb zzqbVar) {
-        int i11 = i3 + 1;
-        int i12 = bArr[i3];
+    public static int zzn(Object obj, zzug zzugVar, byte[] bArr, int i7, int i10, zzqb zzqbVar) {
+        int i11 = i7 + 1;
+        int i12 = bArr[i7];
         if (i12 < 0) {
             i11 = zzj(i12, bArr, i11, zzqbVar);
             i12 = zzqbVar.zza;
@@ -273,11 +273,11 @@ final class zzqc {
         return i15;
     }
 
-    public static int zzo(int i3, byte[] bArr, int i10, int i11, zzqb zzqbVar) {
-        if ((i3 >>> 3) == 0) {
+    public static int zzo(int i7, byte[] bArr, int i10, int i11, zzqb zzqbVar) {
+        if ((i7 >>> 3) == 0) {
             throw new zzsx("Protocol message contained an invalid tag (zero).");
         }
-        int i12 = i3 & 7;
+        int i12 = i7 & 7;
         if (i12 == 0) {
             return zzl(bArr, i10, zzqbVar);
         }
@@ -293,7 +293,7 @@ final class zzqc {
             }
             throw new zzsx("Protocol message contained an invalid tag (zero).");
         }
-        int i13 = (i3 & (-8)) | 4;
+        int i13 = (i7 & (-8)) | 4;
         int i14 = 0;
         while (i10 < i11) {
             i10 = zzi(bArr, i10, zzqbVar);
@@ -309,12 +309,12 @@ final class zzqc {
         return i10;
     }
 
-    public static long zzp(byte[] bArr, int i3) {
-        return (bArr[i3] & 255) | ((bArr[i3 + 1] & 255) << 8) | ((bArr[i3 + 2] & 255) << 16) | ((bArr[i3 + 3] & 255) << 24) | ((bArr[i3 + 4] & 255) << 32) | ((bArr[i3 + 5] & 255) << 40) | ((bArr[i3 + 6] & 255) << 48) | ((bArr[i3 + 7] & 255) << 56);
+    public static long zzp(byte[] bArr, int i7) {
+        return (bArr[i7] & 255) | ((bArr[i7 + 1] & 255) << 8) | ((bArr[i7 + 2] & 255) << 16) | ((bArr[i7 + 3] & 255) << 24) | ((bArr[i7 + 4] & 255) << 32) | ((bArr[i7 + 5] & 255) << 40) | ((bArr[i7 + 6] & 255) << 48) | ((bArr[i7 + 7] & 255) << 56);
     }
 
-    private static void zzq(int i3) {
-        if (i3 >= zzb) {
+    private static void zzq(int i7) {
+        if (i7 >= zzb) {
             throw new zzsx("Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit.");
         }
     }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e3 {
     public boolean a;
@@ -34,10 +34,10 @@ public final class e3 {
         }
         ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i7);
+            i7++;
             if (this.j == m5.o(tL_myBoost.peer)) {
                 this.i++;
             }
@@ -81,7 +81,7 @@ public final class e3 {
                 this.a = true;
             } else if (arrayList3.size() >= 1) {
                 this.e = true;
-                if (!xg.s.i()) {
+                if (!wg.s.i()) {
                     TL_stories.TL_myBoost tL_myBoost7 = (TL_stories.TL_myBoost) arrayList3.get(0);
                     this.c = m5.o(tL_myBoost7.peer);
                     this.g = tL_myBoost7.slot;

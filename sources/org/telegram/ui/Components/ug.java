@@ -1,69 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.LinearLayout;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ug implements q1.d {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ KeyEvent.Callback e;
+public final /* synthetic */ class ug implements eh.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ug(bi biVar, float f10, float f11, boolean z10) {
-        this.e = biVar;
-        this.c = f10;
-        this.d = f11;
-        this.b = z10;
+    public /* synthetic */ ug(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // q1.d
-    public final void a(q1.g gVar, float f10, float f11) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // eh.a
+    public final void c(dh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // eh.a
+    public final void d(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        RectF rectF2;
+        vh vhVar;
         switch (this.a) {
             case 0:
-                bi biVar = (bi) this.e;
-                LinearLayout linearLayout = biVar.g3;
-                LinearLayout linearLayout2 = biVar.i3;
-                float f12 = f10 / 500.0f;
-                lh lhVar = biVar.W1;
-                th thVar = biVar.t2;
-                Float valueOf = Float.valueOf(f12);
-                lhVar.getClass();
-                lhVar.a(thVar, valueOf);
-                biVar.S2.setAlpha(org.telegram.messenger.g0.T1(this.c, this.d, f12));
-                biVar.M1(biVar.t2, 0);
-                biVar.M1(biVar.u2, 0);
-                if (!(biVar.u2 instanceof am) || this.b) {
-                    f12 = 1.0f - f12;
+                di diVar = (di) this.b;
+                int i7 = 0;
+                while (i7 < 2) {
+                    vh vhVar2 = i7 == 0 ? diVar.s2 : diVar.t2;
+                    if (vhVar2 == null || vhVar2.c == null || vhVar2.getVisibility() != 0) {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                    } else {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                        ih.d.b(vhVar2.c, canvas2, rectF2, vhVar2.d, diVar.b, (int) (((i7 == 0 && (vhVar = diVar.t2) != null && vhVar.getVisibility() == 0) ? (1.0f - diVar.t2.getAlpha()) * vhVar2.getAlpha() : vhVar2.getAlpha()) * 255.0f));
+                    }
+                    i7++;
+                    canvas = canvas2;
+                    rectF = rectF2;
                 }
-                float i3 = Utilities.i(f12, 1.0f, 0.0f);
-                linearLayout2.setAlpha(i3);
-                float f13 = 1.0f - i3;
-                linearLayout.setAlpha(f13);
-                linearLayout.setTranslationX(i3 * (-org.telegram.messenger.g0.L(16.0f)));
-                linearLayout2.setTranslationX(f13 * org.telegram.messenger.g0.L(16.0f));
+                break;
+            case 1:
+                gy gyVar = (gy) this.b;
+                sw swVar = gyVar.P;
+                ih.d.a(swVar, canvas, rectF, swVar, gyVar);
+                kv kvVar = gyVar.h0;
+                ih.d.a(kvVar, canvas, rectF, kvVar, gyVar);
+                pv pvVar = gyVar.D0;
+                ih.d.a(pvVar, canvas, rectF, pvVar, gyVar);
                 break;
             default:
-                fn0 fn0Var = (fn0) this.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    if (f10 > this.c / 2.0f || !fn0Var.s) {
-                    }
-                } else if (f10 < this.d / 2.0f || !fn0Var.r) {
-                }
-                fn0Var.s = !z10;
-                fn0Var.r = z10;
+                mo0 mo0Var = (mo0) this.b;
+                on0 on0Var = mo0Var.x1;
+                ih.d.a(on0Var, canvas, rectF, on0Var, mo0Var.b);
                 break;
         }
-    }
-
-    public /* synthetic */ ug(fn0 fn0Var, boolean z10, float f10, float f11) {
-        this.e = fn0Var;
-        this.b = z10;
-        this.c = f10;
-        this.d = f11;
     }
 }

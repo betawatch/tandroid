@@ -8,12 +8,12 @@ import java.util.Map;
 /* loaded from: classes.dex */
 public abstract class z extends j {
     private static Map<Object, z> zzjr = new ConcurrentHashMap();
-    protected b1 zzjp;
+    protected c1 zzjp;
     private int zzjq;
 
     public z() {
         this.zzex = 0;
-        this.zzjp = b1.e;
+        this.zzjp = c1.e;
         this.zzjq = -1;
     }
 
@@ -55,7 +55,7 @@ public abstract class z extends j {
         throw new IllegalStateException(name.length() != 0 ? "Unable to get default instance for: ".concat(name) : new String("Unable to get default instance for: "));
     }
 
-    public abstract Object a(int i3);
+    public abstract Object a(int i7);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -70,9 +70,9 @@ public abstract class z extends j {
     }
 
     public final int hashCode() {
-        int i3 = this.zzex;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.zzex;
+        if (i7 != 0) {
+            return i7;
         }
         v0 v0Var = v0.c;
         v0Var.getClass();
@@ -86,7 +86,7 @@ public abstract class z extends j {
         StringBuilder sb2 = new StringBuilder();
         sb2.append("# ");
         sb2.append(obj);
-        l1.i(this, sb2, 0);
+        m1.i(this, sb2, 0);
         return sb2.toString();
     }
 }

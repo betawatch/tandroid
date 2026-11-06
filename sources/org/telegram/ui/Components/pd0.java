@@ -1,94 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pd0 extends LinearLayout {
-    public final /* synthetic */ int a = 0;
-    public final LinearLayout b;
-    public final LinearLayout c;
+public final class pd0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ y9 b;
+    public final /* synthetic */ sd0 c;
 
-    public pd0(Context context) {
-        super(context);
-        setOrientation(0);
-        setGravity(17);
-        setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        LinearLayout a10 = a(R.drawable.msg_replace, org.telegram.messenger.bd.M0(2131746279, null));
-        this.c = a10;
-        addView(a10, b8.mf.o(-2, -1));
-        LinearLayout a11 = a(R.drawable.media_button_restore, org.telegram.messenger.bd.M0(2131751336, null));
-        this.b = a11;
-        addView(a11, b8.mf.o(-2, -1));
+    public pd0(sd0 sd0Var, boolean z9, y9 y9Var) {
+        this.c = sd0Var;
+        this.a = z9;
+        this.b = y9Var;
     }
 
-    public LinearLayout a(int i3, String str) {
-        Context context = getContext();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(17);
-        linearLayout.setPadding(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f));
-        linearLayout.addView(org.telegram.messenger.camera.q.e(context, i3), b8.mf.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
-        TextView textView = new TextView(context);
-        textView.setGravity(16);
-        textView.setText(str);
-        textView.setTextSize(2, 14.0f);
-        textView.setSingleLine(true);
-        textView.setTextColor(-1);
-        linearLayout.addView(textView, b8.mf.o(-2, -2));
-        b8.pf.a(linearLayout);
-        return linearLayout;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
+        sd0 sd0Var = this.c;
+        TextureView textureView = sd0Var.i0;
+        if (sd0Var.l0 != null || surfaceTexture == null) {
+            return;
+        }
+        ry ryVar = new ry(surfaceTexture, sd0Var.C0, sd0Var.H0, sd0Var.w0, this.a, this.b, i7, i10);
+        sd0Var.l0 = ryVar;
+        if (!this.a) {
+            ryVar.h(sd0Var.J0, sd0Var.K0);
+            ry ryVar2 = sd0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            da daVar = ryVar2.I;
+            if (daVar != null) {
+                Matrix matrix = daVar.v;
+                transform.invert(matrix);
+                float f10 = width;
+                float f11 = height;
+                matrix.preScale(f10, f11);
+                matrix.postScale(1.0f / f10, 1.0f / f11);
+                daVar.c(matrix);
+                ryVar2.c(false, false, false);
+            }
+        }
+        sd0Var.l0.d(sd0Var);
+        ry ryVar3 = sd0Var.l0;
+        ryVar3.getClass();
+        ryVar3.postRunnable(new ny(ryVar3, i7, i10, 1));
+        sd0Var.l0.c(true, true, false);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        switch (this.a) {
-            case 0:
-                LinearLayout linearLayout = this.b;
-                ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-                ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
-                int size = View.MeasureSpec.getSize(i3);
-                int size2 = View.MeasureSpec.getSize(i10);
-                int paddingRight = getPaddingRight() + getPaddingLeft();
-                int paddingBottom = getPaddingBottom() + getPaddingTop();
-                int max = Math.max(0, size - paddingRight);
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
-                int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
-                linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
-                LinearLayout linearLayout2 = this.c;
-                linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
-                int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
-                layoutParams2.width = min;
-                layoutParams.width = min;
-                super.onMeasure(i3, i10);
-                break;
-            default:
-                int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_31);
-                int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(0, 0);
-                LinearLayout linearLayout3 = this.b;
-                linearLayout3.measure(makeMeasureSpec3, makeMeasureSpec4);
-                LinearLayout linearLayout4 = this.c;
-                if (linearLayout4 == null) {
-                    setMeasuredDimension(linearLayout3.getMeasuredWidth(), linearLayout3.getMeasuredHeight());
-                    break;
-                } else {
-                    linearLayout4.measure(View.MeasureSpec.makeMeasureSpec(linearLayout3.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                    setMeasuredDimension(linearLayout3.getMeasuredWidth(), linearLayout4.getMeasuredHeight() + linearLayout3.getMeasuredHeight());
-                    break;
-                }
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        sd0 sd0Var = this.c;
+        ry ryVar = sd0Var.l0;
+        if (ryVar == null) {
+            return true;
+        }
+        ryVar.postRunnable(new oy(ryVar, 0));
+        sd0Var.l0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
+        sd0 sd0Var = this.c;
+        ry ryVar = sd0Var.l0;
+        if (ryVar != null) {
+            ryVar.postRunnable(new ny(ryVar, i7, i10, 1));
+            sd0Var.l0.c(false, true, false);
+            sd0Var.l0.postRunnable(new ob0(this, 3));
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pd0(Context context, LinearLayout linearLayout, LinearLayout linearLayout2) {
-        super(context);
-        this.b = linearLayout;
-        this.c = linearLayout2;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

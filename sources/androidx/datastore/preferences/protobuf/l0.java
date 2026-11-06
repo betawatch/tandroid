@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l0 {
     public static final w b = new w(1);
@@ -14,11 +14,11 @@ public final class l0 {
         mVar.a = this;
     }
 
-    public void a(int i3, Object obj, b1 b1Var) {
+    public void a(int i7, Object obj, b1 b1Var) {
         m mVar = (m) this.a;
-        mVar.B(i3, 3);
+        mVar.B(i7, 3);
         b1Var.c((a) obj, mVar.a);
-        mVar.B(i3, 4);
+        mVar.B(i7, 4);
     }
 
     public l0() {

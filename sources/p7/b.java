@@ -1,29 +1,80 @@
 package p7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import a8.i0;
+import c8.cb;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends e {
-    public static final b a = new b();
+public final class b extends i0 implements ListIterator {
+    public final int b;
+    public int c;
+    public final e d;
 
-    @Override // p7.e
-    public final Object a() {
-        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(e eVar, int i7) {
+        super(5);
+        int size = eVar.size();
+        if (i7 < 0 || i7 > size) {
+            throw new IndexOutOfBoundsException(cb.c(i7, size, "index"));
+        }
+        this.b = size;
+        this.c = i7;
+        this.d = eVar;
     }
 
-    @Override // p7.e
-    public final boolean b() {
-        return false;
+    public final Object a(int i7) {
+        return this.d.get(i7);
     }
 
-    public final boolean equals(Object obj) {
-        return obj == this;
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public final int hashCode() {
-        return 2040732332;
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
     }
 
-    public final String toString() {
-        return "Optional.absent()";
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i7 = this.c;
+        this.c = i7 + 1;
+        return a(i7);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i7 = this.c - 1;
+        this.c = i7;
+        return a(i7);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

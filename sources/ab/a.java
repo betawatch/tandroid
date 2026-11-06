@@ -1,22 +1,43 @@
 package ab;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public enum a implements pa.b {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2);
+public final class a implements na.d {
+    public static final a a = new a();
+    public static final na.c b = new na.c("projectNumber", jg.g.q(jg.g.p(qa.d.class, new qa.a(1))));
+    public static final na.c c = new na.c("messageId", jg.g.q(jg.g.p(qa.d.class, new qa.a(2))));
+    public static final na.c d = new na.c("instanceId", jg.g.q(jg.g.p(qa.d.class, new qa.a(3))));
+    public static final na.c e = new na.c("messageType", jg.g.q(jg.g.p(qa.d.class, new qa.a(4))));
+    public static final na.c f = new na.c("sdkPlatform", jg.g.q(jg.g.p(qa.d.class, new qa.a(5))));
+    public static final na.c g = new na.c("packageName", jg.g.q(jg.g.p(qa.d.class, new qa.a(6))));
+    public static final na.c h = new na.c("collapseKey", jg.g.q(jg.g.p(qa.d.class, new qa.a(7))));
+    public static final na.c i = new na.c("priority", jg.g.q(jg.g.p(qa.d.class, new qa.a(8))));
+    public static final na.c j = new na.c("ttl", jg.g.q(jg.g.p(qa.d.class, new qa.a(9))));
+    public static final na.c k = new na.c("topic", jg.g.q(jg.g.p(qa.d.class, new qa.a(10))));
+    public static final na.c l = new na.c("bulkId", jg.g.q(jg.g.p(qa.d.class, new qa.a(11))));
+    public static final na.c m = new na.c("event", jg.g.q(jg.g.p(qa.d.class, new qa.a(12))));
+    public static final na.c n = new na.c("analyticsLabel", jg.g.q(jg.g.p(qa.d.class, new qa.a(13))));
+    public static final na.c o = new na.c("campaignId", jg.g.q(jg.g.p(qa.d.class, new qa.a(14))));
+    public static final na.c p = new na.c("composerLabel", jg.g.q(jg.g.p(qa.d.class, new qa.a(15))));
 
-    public final int a;
-
-    a(int i3) {
-        this.a = i3;
-    }
-
-    @Override // pa.b
-    public final int a() {
-        return this.a;
+    @Override // na.a
+    public final void a(Object obj, Object obj2) {
+        bb.d dVar = (bb.d) obj;
+        na.e eVar = (na.e) obj2;
+        eVar.e(b, dVar.a);
+        eVar.a(c, dVar.b);
+        eVar.a(d, dVar.c);
+        eVar.a(e, dVar.d);
+        eVar.a(f, bb.c.b);
+        eVar.a(g, dVar.e);
+        eVar.a(h, dVar.f);
+        eVar.d(i, dVar.g);
+        eVar.d(j, dVar.h);
+        eVar.a(k, dVar.i);
+        eVar.e(l, 0L);
+        eVar.a(m, bb.a.b);
+        eVar.a(n, dVar.j);
+        eVar.e(o, 0L);
+        eVar.a(p, dVar.k);
     }
 }

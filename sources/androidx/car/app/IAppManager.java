@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface IAppManager extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppManager".replace('$', '.');
@@ -19,14 +19,14 @@ public interface IAppManager extends IInterface {
 
     void stopLocationUpdates(IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Stub extends Binder implements IAppManager {
         static final int TRANSACTION_getTemplate = 2;
         static final int TRANSACTION_onBackPressed = 3;
         static final int TRANSACTION_startLocationUpdates = 4;
         static final int TRANSACTION_stopLocationUpdates = 5;
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public static class Proxy implements IAppManager {
             private IBinder mRemote;
 
@@ -105,24 +105,24 @@ public interface IAppManager extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
             String str = IAppManager.DESCRIPTOR;
-            if (i3 >= 1 && i3 <= 16777215) {
+            if (i7 >= 1 && i7 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i3 == 1598968902) {
+            if (i7 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 getTemplate(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
-            } else if (i3 == 3) {
+            } else if (i7 == 3) {
                 onBackPressed(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
-            } else if (i3 == 4) {
+            } else if (i7 == 4) {
                 startLocationUpdates(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             } else {
-                if (i3 != 5) {
-                    return super.onTransact(i3, parcel, parcel2, i10);
+                if (i7 != 5) {
+                    return super.onTransact(i7, parcel, parcel2, i10);
                 }
                 stopLocationUpdates(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             }
@@ -135,7 +135,7 @@ public interface IAppManager extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Default implements IAppManager {
         @Override // android.os.IInterface
         public IBinder asBinder() {

@@ -1,103 +1,125 @@
 package p1;
 
-import b8.ib;
-import dd.k;
-import hd.j;
-import java.util.LinkedHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import od.p;
+import androidx.datastore.preferences.protobuf.a1;
+import androidx.datastore.preferences.protobuf.b1;
+import androidx.datastore.preferences.protobuf.e0;
+import androidx.datastore.preferences.protobuf.g1;
+import androidx.datastore.preferences.protobuf.o0;
+import androidx.datastore.preferences.protobuf.p;
+import androidx.datastore.preferences.protobuf.x;
+import androidx.datastore.preferences.protobuf.x0;
+import androidx.datastore.preferences.protobuf.y;
+import androidx.datastore.preferences.protobuf.y0;
+import androidx.datastore.preferences.protobuf.z;
+import j$.util.DesugarCollections;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c extends j implements p {
-    public final /* synthetic */ int a;
-    public int b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ j d;
+public final class c extends z {
+    private static final c DEFAULT_INSTANCE;
+    private static volatile x0 PARSER = null;
+    public static final int PREFERENCES_FIELD_NUMBER = 1;
+    private o0 preferences_ = o0.b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public c(p pVar, fd.c cVar, int i3) {
-        super(2, cVar);
-        this.a = i3;
-        switch (i3) {
+    static {
+        c cVar = new c();
+        DEFAULT_INSTANCE = cVar;
+        z.j(c.class, cVar);
+    }
+
+    public static o0 l(c cVar) {
+        o0 o0Var = cVar.preferences_;
+        if (!o0Var.a) {
+            cVar.preferences_ = o0Var.c();
+        }
+        return cVar.preferences_;
+    }
+
+    public static a n() {
+        return (a) ((x) DEFAULT_INSTANCE.c(5));
+    }
+
+    public static c o(FileInputStream fileInputStream) {
+        c cVar = DEFAULT_INSTANCE;
+        androidx.datastore.preferences.protobuf.j jVar = new androidx.datastore.preferences.protobuf.j(fileInputStream);
+        p a10 = p.a();
+        z i7 = cVar.i();
+        try {
+            y0 y0Var = y0.c;
+            y0Var.getClass();
+            b1 a11 = y0Var.a(i7.getClass());
+            d4.f fVar = (d4.f) jVar.b;
+            if (fVar == null) {
+                fVar = new d4.f(jVar);
+            }
+            a11.i(i7, fVar, a10);
+            a11.d(i7);
+            if (z.f(i7, true)) {
+                return (c) i7;
+            }
+            throw new e0(new g1().getMessage());
+        } catch (e0 e10) {
+            if (e10.a) {
+                throw new e0(e10.getMessage(), e10);
+            }
+            throw e10;
+        } catch (g1 e11) {
+            throw new e0(e11.getMessage());
+        } catch (IOException e12) {
+            if (e12.getCause() instanceof e0) {
+                throw ((e0) e12.getCause());
+            }
+            throw new e0(e12.getMessage(), e12);
+        } catch (RuntimeException e13) {
+            if (e13.getCause() instanceof e0) {
+                throw ((e0) e13.getCause());
+            }
+            throw e13;
+        }
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.z
+    public final Object c(int i7) {
+        x0 x0Var;
+        switch (g.c(i7)) {
+            case 0:
+                return (byte) 1;
             case 1:
-                this.d = (j) pVar;
-                super(2, cVar);
-                break;
-            default:
-                this.d = (j) pVar;
-                break;
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r1v0, types: [hd.j, od.p] */
-    /* JADX WARN: Type inference failed for: r1v1, types: [hd.j, od.p] */
-    @Override // hd.a
-    public final fd.c create(Object obj, fd.c cVar) {
-        switch (this.a) {
-            case 0:
-                c cVar2 = new c(this.d, cVar, 0);
-                cVar2.c = obj;
-                return cVar2;
-            default:
-                c cVar3 = new c(this.d, cVar, 1);
-                cVar3.c = obj;
-                return cVar3;
-        }
-    }
-
-    @Override // od.p
-    public final Object invoke(Object obj, Object obj2) {
-        b bVar = (b) obj;
-        fd.c cVar = (fd.c) obj2;
-        switch (this.a) {
-        }
-        return ((c) create(bVar, cVar)).invokeSuspend(k.a);
-    }
-
-    /* JADX WARN: Type inference failed for: r1v1, types: [hd.j, od.p] */
-    /* JADX WARN: Type inference failed for: r5v14, types: [hd.j, od.p] */
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
-        switch (this.a) {
-            case 0:
-                gd.a aVar = gd.a.a;
-                int i3 = this.b;
-                if (i3 == 0) {
-                    ib.b(obj);
-                    b bVar = (b) this.c;
-                    this.b = 1;
-                    obj = this.d.invoke(bVar, this);
-                    if (obj == aVar) {
-                        return aVar;
-                    }
-                } else {
-                    if (i3 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    ib.b(obj);
+                return null;
+            case 2:
+                return new a1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012", new Object[]{"preferences_", b.a});
+            case 3:
+                return new c();
+            case 4:
+                return new a(DEFAULT_INSTANCE);
+            case 5:
+                return DEFAULT_INSTANCE;
+            case 6:
+                x0 x0Var2 = PARSER;
+                if (x0Var2 != null) {
+                    return x0Var2;
                 }
-                b bVar2 = (b) obj;
-                kotlin.jvm.internal.j.c(bVar2, "null cannot be cast to non-null type androidx.datastore.preferences.core.MutablePreferences");
-                ((AtomicBoolean) bVar2.b.b).set(true);
-                return bVar2;
-            default:
-                gd.a aVar2 = gd.a.a;
-                int i10 = this.b;
-                if (i10 != 0) {
-                    if (i10 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                synchronized (c.class) {
+                    try {
+                        x0Var = PARSER;
+                        if (x0Var == null) {
+                            x0Var = new y();
+                            PARSER = x0Var;
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
-                    b bVar3 = (b) this.c;
-                    ib.b(obj);
-                    return bVar3;
                 }
-                ib.b(obj);
-                b bVar4 = new b(new LinkedHashMap(((b) this.c).a()), false);
-                this.c = bVar4;
-                this.b = 1;
-                return this.d.invoke(bVar4, this) == aVar2 ? aVar2 : bVar4;
+                return x0Var;
+            default:
+                throw new UnsupportedOperationException();
         }
+    }
+
+    public final Map m() {
+        return DesugarCollections.unmodifiableMap(this.preferences_);
     }
 }

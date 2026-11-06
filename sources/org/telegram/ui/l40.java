@@ -1,22 +1,47 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l40 implements Comparator {
-    public static String a(TLObject tLObject) {
-        if (!(tLObject instanceof TLRPC.User)) {
-            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
-        }
-        TLRPC.User user = (TLRPC.User) tLObject;
-        return org.telegram.messenger.g5.m(0, user.first_name, user.last_name);
+public final /* synthetic */ class l40 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w40 b;
+
+    public /* synthetic */ l40(w40 w40Var, int i7) {
+        this.a = i7;
+        this.b = w40Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                w40 w40Var = this.b;
+                w40Var.X = null;
+                w40Var.Z.b();
+                w40Var.h.b();
+                w40Var.p0();
+                w40Var.w0();
+                w40Var.x0();
+                break;
+            case 1:
+                w40 w40Var2 = this.b;
+                w40Var2.f.r.clearFocus();
+                w40Var2.f.r.requestFocus();
+                org.telegram.messenger.g0.K3(w40Var2.f.r);
+                break;
+            case 2:
+                this.b.t0();
+                break;
+            case 3:
+                w40 w40Var3 = this.b;
+                w40Var3.s0(w40Var3.q0());
+                break;
+            default:
+                w40 w40Var4 = this.b;
+                w40Var4.s0(w40Var4.q0());
+                break;
+        }
     }
 }

@@ -1,19 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class ov extends u4.b0 {
-    public final /* synthetic */ tw I;
-    public final /* synthetic */ pv J;
+import android.view.View;
 
-    public ov(pv pvVar, tw twVar) {
-        this.J = pvVar;
-        this.I = twVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ov {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pv b;
+    public final /* synthetic */ View c;
+
+    public /* synthetic */ ov(pv pvVar, View view, int i7) {
+        this.a = i7;
+        this.b = pvVar;
+        this.c = view;
     }
 
-    @Override // u4.b0
-    public final int R0() {
-        tw twVar = this.I;
-        return (twVar.s == 0 && this.J.a0.l4() && twVar.w == 2) ? 1 : 0;
+    public final void a(boolean z9) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof di.p) {
+                    this.b.O0.E0.i((di.p) view, false);
+                    if (z9) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l10(14), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof di.p) {
+                    this.b.O0.E0.i((di.p) view2, false);
+                    if (z9) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l10(14), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

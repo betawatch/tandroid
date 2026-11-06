@@ -3,7 +3,7 @@ package n0;
 import android.os.LocaleList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f implements e {
     public final LocaleList a;
@@ -27,8 +27,8 @@ public final class f implements e {
     }
 
     @Override // n0.e
-    public final Locale get(int i3) {
-        return this.a.get(i3);
+    public final Locale get(int i7) {
+        return this.a.get(i7);
     }
 
     public final int hashCode() {

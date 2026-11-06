@@ -1,39 +1,49 @@
 package p4;
 
-import android.text.TextUtils;
-import j$.util.Objects;
+import a8.ia;
+import android.util.SparseBooleanArray;
+import h9.t1;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class t {
-    public final String a;
-    public final int b;
-    public final int c;
+public final class t {
+    public static final j1 e;
+    public static final e2.y0 f;
+    public final j1 a;
+    public final e2.y0 b;
+    public final h9.i0 c;
+    public final h9.i0 d;
 
-    public t(String str, int i3, int i10) {
-        this.a = str;
-        this.b = i3;
-        this.c = i10;
+    static {
+        HashSet hashSet = new HashSet();
+        t1 t1Var = i1.d;
+        for (int i7 = 0; i7 < t1Var.d; i7++) {
+            hashSet.add(new i1(((Integer) t1Var.get(i7)).intValue()));
+        }
+        e = new j1(hashSet);
+        HashSet hashSet2 = new HashSet();
+        t1 t1Var2 = i1.e;
+        for (int i10 = 0; i10 < t1Var2.d; i10++) {
+            hashSet2.add(new i1(((Integer) t1Var2.get(i10)).intValue()));
+        }
+        for (int i11 = 0; i11 < t1Var.d; i11++) {
+            hashSet2.add(new i1(((Integer) t1Var.get(i11)).intValue()));
+        }
+        new j1(hashSet2);
+        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+        for (int i12 : e2.x0.b) {
+            ia.p(!false);
+            sparseBooleanArray.append(i12, true);
+        }
+        ia.p(!false);
+        f = new e2.y0(new e2.s(sparseBooleanArray));
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof t)) {
-            return false;
-        }
-        t tVar = (t) obj;
-        int i3 = tVar.c;
-        String str = tVar.a;
-        int i10 = tVar.b;
-        int i11 = this.c;
-        String str2 = this.a;
-        int i12 = this.b;
-        return (i12 < 0 || i10 < 0) ? TextUtils.equals(str2, str) && i11 == i3 : TextUtils.equals(str2, str) && i12 == i10 && i11 == i3;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.c));
+    public t(j1 j1Var, e2.y0 y0Var, h9.i0 i0Var, h9.i0 i0Var2) {
+        this.a = j1Var;
+        this.b = y0Var;
+        this.c = i0Var;
+        this.d = i0Var2;
     }
 }

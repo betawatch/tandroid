@@ -1,42 +1,134 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h10 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l10 b;
+public final class h10 extends oj0 {
+    public org.telegram.messenger.r3 c;
+    public final int d;
+    public ArrayList h;
+    public org.telegram.ui.z10 n;
+    public final org.telegram.ui.c40 r;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public boolean s = false;
 
-    public /* synthetic */ h10(l10 l10Var, int i3) {
-        this.a = i3;
-        this.b = l10Var;
+    public h10(org.telegram.messenger.r3 r3Var, int i7, org.telegram.ui.c40 c40Var) {
+        this.c = r3Var;
+        this.d = i7;
+        this.r = c40Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l10 l10Var = this.b;
-                l10Var.r.x = (int) floatValue;
-                l10Var.h();
-                j10 j10Var = l10Var.a;
-                if (j10Var.getParent() != null) {
-                    l10Var.n.updateViewLayout(j10Var, l10Var.r);
-                    break;
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
+        return false;
+    }
+
+    public final void E(ArrayList arrayList, org.telegram.ui.z10 z10Var) {
+        this.h = arrayList;
+        this.n = z10Var;
+    }
+
+    public final void F(org.telegram.ui.v10 v10Var, boolean z9) {
+        this.s = z9;
+        for (int i7 = 0; i7 < v10Var.getChildCount(); i7++) {
+            View childAt = v10Var.getChildAt(i7);
+            if (childAt instanceof g10) {
+                g10 g10Var = (g10) childAt;
+                if (g10Var.getVideoParticipant() != null) {
+                    g10Var.b(z9);
                 }
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l10 l10Var2 = this.b;
-                l10Var2.r.y = (int) floatValue2;
-                j10 j10Var2 = l10Var2.a;
-                if (j10Var2.getParent() != null) {
-                    l10Var2.n.updateViewLayout(j10Var2, l10Var2.r);
-                    break;
-                }
-                break;
+            }
         }
+    }
+
+    public final void G(pj0 pj0Var, boolean z9) {
+        if (this.c == null) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        ArrayList arrayList2 = this.f;
+        if (!z9) {
+            arrayList2.clear();
+            org.telegram.messenger.r3 r3Var = this.c;
+            if (!r3Var.b.rtmp_stream) {
+                arrayList2.addAll(r3Var.g);
+            }
+            arrayList.clear();
+            org.telegram.messenger.r3 r3Var2 = this.c;
+            if (!r3Var2.b.rtmp_stream) {
+                arrayList.addAll(r3Var2.f);
+            }
+            f();
+            return;
+        }
+        ArrayList arrayList3 = new ArrayList(arrayList2);
+        ArrayList arrayList4 = new ArrayList(arrayList);
+        arrayList2.clear();
+        org.telegram.messenger.r3 r3Var3 = this.c;
+        if (!r3Var3.b.rtmp_stream) {
+            arrayList2.addAll(r3Var3.g);
+        }
+        arrayList.clear();
+        org.telegram.messenger.r3 r3Var4 = this.c;
+        if (!r3Var4.b.rtmp_stream) {
+            arrayList.addAll(r3Var4.f);
+        }
+        v4.o.c(new f10(this, arrayList4, arrayList3), true).c(this);
+        org.telegram.messenger.g0.b4(pj0Var);
+    }
+
+    @Override // v4.g0
+    public final int b() {
+        return this.f.size() + this.e.size();
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        TLRPC.GroupCallParticipant groupCallParticipant;
+        org.telegram.messenger.s3 s3Var;
+        g10 g10Var = (g10) d1Var.a;
+        org.telegram.messenger.s3 s3Var2 = g10Var.f;
+        ArrayList arrayList = this.e;
+        if (i7 < arrayList.size()) {
+            s3Var = (org.telegram.messenger.s3) arrayList.get(i7);
+            groupCallParticipant = ((org.telegram.messenger.s3) arrayList.get(i7)).a;
+        } else {
+            int size = i7 - arrayList.size();
+            ArrayList arrayList2 = this.f;
+            if (size >= arrayList2.size()) {
+                return;
+            }
+            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i7 - arrayList.size());
+            s3Var = null;
+        }
+        g10Var.e(s3Var, groupCallParticipant);
+        if (s3Var2 != null && !s3Var2.equals(s3Var) && g10Var.K && g10Var.getRenderer() != null) {
+            g10Var.b(false);
+            if (s3Var != null) {
+                g10Var.b(true);
+                return;
+            }
+            return;
+        }
+        if (g10Var.K) {
+            if (g10Var.getRenderer() == null && s3Var != null && this.s) {
+                g10Var.b(true);
+            } else {
+                if (g10Var.getRenderer() == null || s3Var != null) {
+                    return;
+                }
+                g10Var.b(false);
+            }
+        }
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        return new xi0(new g10(this, viewGroup.getContext()));
     }
 }

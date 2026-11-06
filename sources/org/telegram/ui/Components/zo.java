@@ -10,37 +10,37 @@ import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zo extends gi.l3 {
-    public final /* synthetic */ int X0 = 0;
+public final class zo extends fi.m3 {
+    public final /* synthetic */ int W0 = 0;
+    public final Object X0;
     public final Object Y0;
-    public final Object Z0;
 
-    public zo(Activity activity, int i3, org.telegram.ui.Components.voip.x0 x0Var, boolean z10) {
-        super(activity, i3);
+    public zo(Activity activity, int i7, org.telegram.ui.Components.voip.i1 i1Var, boolean z9) {
+        super(activity, i7);
         Paint paint = new Paint(1);
-        this.Y0 = paint;
-        this.Z0 = x0Var;
-        x0Var.a(this);
+        this.X0 = paint;
+        this.Y0 = i1Var;
+        i1Var.a(this);
         paint.setPathEffect(new CornerPathEffect(this.w));
-        if (z10) {
+        if (z9) {
             k(true);
         }
     }
 
-    @Override // gi.l3
+    @Override // fi.m3
     public void c(Canvas canvas, float f10) {
-        switch (this.X0) {
+        switch (this.W0) {
             case 1:
-                Paint paint = (Paint) this.Y0;
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.Z0;
-                paint.setShader(x0Var.b().getShader());
-                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.G.getAlpha(), x0Var.b().getAlpha()) * f10), 31);
-                Path path = this.F0;
+                Paint paint = (Paint) this.X0;
+                org.telegram.ui.Components.voip.i1 i1Var = (org.telegram.ui.Components.voip.i1) this.Y0;
+                paint.setShader(i1Var.b().getShader());
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.F.getAlpha(), i1Var.b().getAlpha()) * f10), 31);
+                Path path = this.E0;
                 canvas.drawPath(path, paint);
-                if (x0Var.e) {
-                    paint.setShader(((Paint) x0Var.d.a).getShader());
+                if (i1Var.e) {
+                    paint.setShader(((Paint) i1Var.d.a).getShader());
                     canvas.drawPath(path, paint);
                 }
                 canvas.restore();
@@ -51,11 +51,11 @@ public final class zo extends gi.l3 {
         }
     }
 
-    @Override // gi.l3, android.view.View
+    @Override // fi.m3, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        switch (this.X0) {
+        switch (this.W0) {
             case 1:
-                ((org.telegram.ui.Components.voip.x0) this.Z0).d(getX(), getY());
+                ((org.telegram.ui.Components.voip.i1) this.Y0).d(getX(), getY());
                 super.dispatchDraw(canvas);
                 break;
             default:
@@ -64,12 +64,12 @@ public final class zo extends gi.l3 {
         }
     }
 
-    @Override // gi.l3, android.view.View
+    @Override // fi.m3, android.view.View
     public boolean verifyDrawable(Drawable drawable) {
-        switch (this.X0) {
+        switch (this.W0) {
             case 0:
-                ch0[] ch0VarArr = (ch0[]) this.Y0;
-                return (ch0VarArr != null && (drawable == ch0VarArr[0] || drawable == ch0VarArr[1])) || super.verifyDrawable(drawable);
+                zg0[] zg0VarArr = (zg0[]) this.X0;
+                return (zg0VarArr != null && (drawable == zg0VarArr[0] || drawable == zg0VarArr[1])) || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -78,28 +78,28 @@ public final class zo extends gi.l3 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zo(Activity activity) {
         super(activity, 3);
-        int i3 = 0;
-        this.Y0 = new ch0[2];
-        this.Z0 = new int[2];
+        int i7 = 0;
+        this.X0 = new zg0[2];
+        this.Y0 = new int[2];
         r(true);
-        this.L = Layout.Alignment.ALIGN_NORMAL;
+        this.K = Layout.Alignment.ALIGN_NORMAL;
         this.d = 3200L;
-        this.U = true;
+        this.T = true;
         this.e = true;
         n(8.0f, 6.0f, 10.0f, 6.0f);
-        this.v0 = 0.0f;
+        this.u0 = 0.0f;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        while (i3 < 2) {
-            ((ch0[]) this.Y0)[i3] = new ch0(i3 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
-            ((ch0[]) this.Y0)[i3].setCallback(this);
-            if (i3 > 0) {
+        while (i7 < 2) {
+            ((zg0[]) this.X0)[i7] = new zg0(i7 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+            ((zg0[]) this.X0)[i7].setCallback(this);
+            if (i7 > 0) {
                 spannableStringBuilder.append((CharSequence) "\n");
             }
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) "x");
-            spannableStringBuilder.setSpan(new yo(((ch0[]) this.Y0)[i3]), length, spannableStringBuilder.length(), 33);
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.bd.M0(i3 == 0 ? 2131749306 : 2131749307, null));
-            i3++;
+            spannableStringBuilder.setSpan(new yo(((zg0[]) this.X0)[i7]), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(i7 == 0 ? 2131749297 : 2131749298, null));
+            i7++;
         }
         u(spannableStringBuilder);
     }

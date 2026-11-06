@@ -8,17 +8,17 @@ public final class r extends l {
     public r h;
     public boolean i;
 
-    public r(int i3, Object obj, Object obj2, l lVar, r rVar) {
-        super(i3, obj, obj2, lVar);
+    public r(int i7, Object obj, Object obj2, l lVar, r rVar) {
+        super(i7, obj, obj2, lVar);
         this.e = rVar;
     }
 
     @Override // j$.util.concurrent.l
-    public final l a(int i3, Object obj) {
-        return b(i3, obj, null);
+    public final l a(int i7, Object obj) {
+        return b(i7, obj, null);
     }
 
-    public final r b(int i3, Object obj, Class cls) {
+    public final r b(int i7, Object obj, Class cls) {
         if (obj == null) {
             return null;
         }
@@ -27,8 +27,8 @@ public final class r extends l {
             r rVar2 = rVar.f;
             r rVar3 = rVar.g;
             int i10 = rVar.a;
-            if (i10 <= i3) {
-                if (i10 >= i3) {
+            if (i10 <= i7) {
+                if (i10 >= i7) {
                     Object obj2 = rVar.b;
                     if (obj2 == obj || (obj2 != null && obj.equals(obj2))) {
                         return rVar;
@@ -44,7 +44,7 @@ public final class r extends l {
                                     }
                                 }
                             }
-                            r b10 = rVar3.b(i3, obj, cls);
+                            r b10 = rVar3.b(i7, obj, cls);
                             if (b10 != null) {
                                 return b10;
                             }

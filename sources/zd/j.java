@@ -1,18 +1,41 @@
 package zd;
 
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.ScheduledFuture;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class j extends hd.c {
-    public kotlin.jvm.internal.r a;
-    public /* synthetic */ Object b;
-    public int c;
+public final class j implements k {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    @Override // hd.a
-    public final Object invokeSuspend(Object obj) {
+    public /* synthetic */ j(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
-        this.c |= TLObject.FLAG_31;
-        return v.b(null, null, this);
+    }
+
+    @Override // zd.k
+    public final void a(Throwable th2) {
+        switch (this.a) {
+            case 0:
+                ((ScheduledFuture) this.b).cancel(false);
+                break;
+            case 1:
+                ((rd.l) this.b).invoke(th2);
+                break;
+            default:
+                ((l0) this.b).dispose();
+                break;
+        }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                return "CancelFutureOnCancel[" + ((ScheduledFuture) this.b) + ']';
+            case 1:
+                return "CancelHandler.UserSupplied[" + ((rd.l) this.b).getClass().getSimpleName() + '@' + b0.j(this) + ']';
+            default:
+                return "DisposeOnCancel[" + ((l0) this.b) + ']';
+        }
     }
 }

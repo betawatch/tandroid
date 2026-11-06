@@ -9,14 +9,14 @@ public final class h8 extends d5 implements o8 {
         return 0L;
     }
 
-    public h8(c6 c6Var, j5 j5Var, boolean z10) {
+    public h8(c6 c6Var, j5 j5Var, boolean z9) {
         super(j5Var);
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
+    public final void accept(int i7) {
         IntPredicate intPredicate = null;
-        intPredicate.test(i3);
+        intPredicate.test(i7);
         throw null;
     }
 }

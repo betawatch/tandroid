@@ -1,27 +1,66 @@
 package bi;
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.io.Serializable;
+import org.telegram.messenger.a20;
+import org.telegram.ui.Components.dt0;
+import org.telegram.ui.Components.ft0;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.ya1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class e {
-    public Bitmap a;
-    public int b;
-    public int d;
-    public int e;
-    public float f;
-    public boolean[] h;
-    public float[] i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public float[] n;
-    public float[] o;
-    public float[] p;
-    public boolean[] q;
-    public int[] r;
-    public final Rect c = new Rect();
-    public final int g = 16;
+public final /* synthetic */ class e implements te.b, dt0, ft0, org.telegram.ui.ActionBar.r1, a20 {
+    public final /* synthetic */ z a;
+
+    public /* synthetic */ e(z zVar) {
+        this.a = zVar;
+    }
+
+    @Override // te.b
+    public void Y(int i7, float f10, float f11, te.c cVar) {
+        this.a.x0();
+    }
+
+    @Override // org.telegram.ui.Components.dt0
+    public int b() {
+        return this.a.n;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        z zVar = this.a;
+        zVar.getClass();
+        zVar.presentFragment(new ya1(6, null));
+    }
+
+    @Override // org.telegram.ui.Components.ft0
+    public /* synthetic */ float h(RecyclerView recyclerView) {
+        return org.telegram.ui.Cells.f1.c(recyclerView);
+    }
+
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        z.a0(this.a, (r31) obj);
+    }
+
+    @Override // org.telegram.ui.Components.ft0
+    public RecyclerView l(View view) {
+        z zVar = this.a;
+        if (zVar.a == 1) {
+            return ((y) view).c;
+        }
+        zVar.K.getClass();
+        return ((ad) view).a;
+    }
+
+    @Override // org.telegram.ui.Components.ft0
+    public /* synthetic */ void s(RecyclerView recyclerView) {
+        org.telegram.ui.Cells.f1.b(recyclerView);
+    }
+
+    @Override // te.b
+    public /* synthetic */ void F(float f10, int i7) {
+    }
 }

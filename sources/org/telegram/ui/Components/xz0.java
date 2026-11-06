@@ -10,7 +10,7 @@ import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class xz0 {
     public final Paint a;
@@ -38,27 +38,27 @@ public final class xz0 {
         float f14;
         float f15;
         float f16;
-        int i3;
+        int i7;
         yz0 yz0Var = this.f;
-        ImageReceiver imageReceiver = yz0Var.Q;
+        ImageReceiver imageReceiver = yz0Var.P;
         float f17 = yz0Var.e;
-        org.telegram.ui.ActionBar.t4 t4Var = yz0Var.T;
-        org.telegram.ui.ActionBar.t4 t4Var2 = yz0Var.S;
+        org.telegram.ui.ActionBar.t4 t4Var = yz0Var.S;
+        org.telegram.ui.ActionBar.t4 t4Var2 = yz0Var.R;
         float f18 = yz0Var.d;
         float f19 = yz0Var.c;
-        int i10 = yz0Var.L;
+        int i10 = yz0Var.K;
         RectF rectF = yz0Var.w;
-        if (yz0Var.a0 || yz0Var.E != null) {
-            uo uoVar = yz0Var.H;
+        if (yz0Var.W || yz0Var.D != null) {
+            uo uoVar = yz0Var.G;
             f11 = 255.0f;
-            int w02 = yz0Var.H.a.l() ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, yz0Var.y) : ((org.telegram.ui.ActionBar.o3) uoVar.a.f.get(uoVar.c)).j;
+            int w02 = yz0Var.G.a.l() ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, yz0Var.y) : ((org.telegram.ui.ActionBar.q3) uoVar.a.f.get(uoVar.c)).j;
             Paint paint = this.a;
             paint.setColor(w02);
-            paint.setAlpha((int) (yz0Var.N * f10 * 255.0f));
+            paint.setAlpha((int) (yz0Var.M * f10 * 255.0f));
             f12 = 4.0f;
             f13 = 0.5f;
-            float y9 = com.google.android.recaptcha.internal.a.y(1.0f, yz0Var.N, org.telegram.messenger.g0.L(4.0f), paint.getStrokeWidth() * 0.5f);
-            rectF.set(y9, y9, yz0Var.getWidth() - y9, yz0Var.getHeight() - y9);
+            float z9 = com.google.android.recaptcha.internal.a.z(1.0f, yz0Var.M, org.telegram.messenger.g0.L(4.0f), paint.getStrokeWidth() * 0.5f);
+            rectF.set(z9, z9, yz0Var.getWidth() - z9, yz0Var.getHeight() - z9);
             float f20 = yz0Var.a;
             canvas.drawRoundRect(rectF, f20, f20, paint);
         } else {
@@ -72,12 +72,12 @@ public final class xz0 {
         Paint paint3 = this.c;
         paint3.setAlpha(i11);
         rectF.set(f19, f19, yz0Var.getWidth() - f19, yz0Var.getHeight() - f19);
-        org.telegram.ui.ActionBar.p3 p3Var = yz0Var.H.a;
-        if (p3Var != null) {
-            if (!p3Var.l()) {
+        org.telegram.ui.ActionBar.r3 r3Var = yz0Var.G.a;
+        if (r3Var != null) {
+            if (!r3Var.l()) {
                 if (i10 != 4) {
                     if (i10 == 2) {
-                        yz0Var.H.getClass();
+                        yz0Var.G.getClass();
                         return;
                     }
                     float L = org.telegram.messenger.g0.L(8.0f) + f19;
@@ -107,20 +107,20 @@ public final class xz0 {
                     if (i10 == 0 || i10 == 3) {
                         float L3 = f19 + org.telegram.messenger.g0.L(5.0f);
                         float L4 = f15 + org.telegram.messenger.g0.L(f12) + L;
-                        i3 = 3;
+                        i7 = 3;
                         rectF.set(L3, L4, (f14 * (i10 == 3 ? 0.8f : 1.0f)) + L3, L4 + f15);
                     } else {
                         rectF.set(yz0Var.getMeasuredWidth() * 0.1f, yz0Var.getMeasuredHeight() * 0.35f, yz0Var.getMeasuredWidth() * 0.65f, yz0Var.getMeasuredHeight() * 0.55f);
-                        i3 = 3;
+                        i7 = 3;
                     }
-                    if (i10 != 0 && i10 != i3) {
+                    if (i10 != 0 && i10 != i7) {
                         t4Var.setBounds(((int) rectF.left) - org.telegram.messenger.g0.L(f12), ((int) rectF.top) - org.telegram.messenger.g0.L(f16), (int) rectF.right, org.telegram.messenger.g0.L(f16) + ((int) rectF.bottom));
                         t4Var.Q = (int) (rectF.height() * f13);
                         t4Var.c(canvas, paint3);
                         return;
                     }
                     canvas.drawRoundRect(rectF, rectF.height() * f13, rectF.height() * f13, paint3);
-                    if (yz0Var.V != 0) {
+                    if (yz0Var.U != 0) {
                         float centerY = rectF.centerY();
                         float height = (rectF.height() / f16) + rectF.left;
                         float height2 = rectF.right - (rectF.height() / f16);
@@ -140,9 +140,9 @@ public final class xz0 {
                 }
                 return;
             }
-            yz0Var.H.a.getClass();
+            yz0Var.G.a.getClass();
         }
-        if (yz0Var.U == null) {
+        if (yz0Var.T == null) {
             float f21 = yz0Var.b;
             canvas.drawRoundRect(rectF, f21, f21, yz0Var.s);
             canvas.save();
@@ -154,14 +154,14 @@ public final class xz0 {
     }
 
     public final void b(Canvas canvas, float f10) {
-        org.telegram.ui.ActionBar.p3 p3Var;
+        org.telegram.ui.ActionBar.r3 r3Var;
         int[] iArr;
-        int i3;
+        int i7;
         Drawable drawable = this.d;
         yz0 yz0Var = this.f;
         if (drawable == null) {
-            uo uoVar = yz0Var.H;
-            if (uoVar == null || (p3Var = uoVar.a) == null || !p3Var.l() || yz0Var.O == null) {
+            uo uoVar = yz0Var.G;
+            if (uoVar == null || (r3Var = uoVar.a) == null || !r3Var.l() || yz0Var.N == null) {
                 RectF rectF = yz0Var.w;
                 float f11 = yz0Var.b;
                 canvas.drawRoundRect(rectF, f11, f11, yz0Var.s);
@@ -190,7 +190,7 @@ public final class xz0 {
         this.d.setAlpha((int) (255.0f * f10));
         this.d.draw(canvas);
         Drawable drawable3 = this.d;
-        if ((drawable3 instanceof ColorDrawable) || ((drawable3 instanceof la0) && (i3 = (iArr = ((la0) drawable3).a)[0]) == iArr[1] && i3 == iArr[2] && i3 == iArr[3])) {
+        if ((drawable3 instanceof ColorDrawable) || ((drawable3 instanceof qa0) && (i7 = (iArr = ((qa0) drawable3).a)[0]) == iArr[1] && i7 == iArr[2] && i7 == iArr[3])) {
             int alpha = yz0Var.r.getAlpha();
             yz0Var.r.setAlpha((int) (alpha * f10));
             float f12 = yz0Var.c;

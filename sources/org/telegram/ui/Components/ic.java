@@ -1,72 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.SpannableString;
-import android.text.style.ReplacementSpan;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ic extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final Paint b = new Paint(1);
-    public final ly0 c;
-    public final Runnable d;
-    public gc e;
-    public Integer f;
+public class ic {
+    public View a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public long e;
+    public Runnable f;
+    public ValueAnimator g;
+    public final float h;
+    public boolean i;
+    public float j;
 
-    public ic(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = e6Var;
-        this.d = runnable;
-        this.c = new ly0(charSequence, 12.0f, null);
+    public ic(View view) {
+        this(view, 1.0f, 5.0f);
     }
 
-    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var, Integer num) {
-        SpannableString spannableString = new SpannableString("btn");
-        ic icVar = new ic(charSequence, runnable, e6Var);
-        spannableString.setSpan(icVar, 0, spannableString.length(), 33);
-        icVar.f = num;
-        return spannableString;
+    public final float a(float f10) {
+        return com.google.android.recaptcha.internal.a.z(1.0f, this.j, f10, 1.0f - f10) * this.h;
     }
 
-    public final int a() {
-        return (int) (this.c.c + org.telegram.messenger.g0.L(14.0f));
-    }
-
-    public final void c(hc hcVar, boolean z10) {
-        if (this.e == null) {
-            this.e = new gc(hcVar);
+    public void b() {
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
         }
-        this.e.c(z10);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float N = org.telegram.messenger.g0.N(17.0f);
-        float f11 = (i11 + i13) / 2.0f;
-        RectF rectF = org.telegram.messenger.g0.P;
-        float f12 = N / 2.0f;
-        rectF.set(f10, f11 - f12, a() + f10, f11 + f12);
-        gc gcVar = this.e;
-        float a10 = gcVar == null ? 1.0f : gcVar.a(0.025f);
-        canvas.save();
-        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-        Integer num = this.f;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, this.a);
-        int r12 = org.telegram.ui.ActionBar.k6.r1(0.15f, intValue);
-        Paint paint2 = this.b;
-        paint2.setColor(r12);
-        canvas.drawRoundRect(rectF, f12, f12, paint2);
-        this.c.c(f10 + org.telegram.messenger.g0.L(7.0f), f11, 1.0f, intValue, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            paint.getFontMetricsInt(fontMetricsInt);
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
         }
-        return a();
+    }
+
+    public final void c(boolean z9) {
+        if (this.i != z9) {
+            this.i = z9;
+            ValueAnimator valueAnimator = this.g;
+            this.g = null;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z9 ? 1.0f : 0.0f);
+            this.g = ofFloat;
+            ofFloat.addUpdateListener(new e6(this, 7));
+            this.g.addListener(new t9(1, this, z9));
+            if (this.i) {
+                this.g.setInterpolator(xq.f);
+                this.g.setDuration((long) (this.b * 60.0f));
+                this.g.setStartDelay(0L);
+            } else {
+                this.g.setInterpolator(new OvershootInterpolator(this.d));
+                this.g.setDuration((long) (this.c * 350.0f));
+                this.g.setStartDelay(this.e);
+            }
+            this.g.start();
+        }
+    }
+
+    public ic(View view, float f10, float f11) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = view;
+        this.c = f10;
+        this.b = f10;
+        this.d = f11;
+    }
+
+    public ic(fi.m5 m5Var) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = m5Var;
+        this.b = 1.5f;
+        this.c = 1.0f;
+        this.d = 2.0f;
     }
 }

@@ -1,35 +1,87 @@
 package m2;
 
-import android.media.AudioDeviceInfo;
+import a8.ia;
+import android.content.ClipData;
+import android.media.metrics.LogSessionId;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.ContentInfo;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i {
-    public final d2.v a;
-    public d2.f b;
-    public AudioDeviceInfo c;
-    public boolean d;
-    public int e;
-    public int f;
-    public boolean g;
-    public int h;
+public final class i implements r0.d, r0.f {
+    public final /* synthetic */ int a = 0;
+    public Object b;
 
-    public i(i iVar) {
-        this.a = iVar.a;
-        this.b = iVar.b;
-        this.c = iVar.c;
-        this.d = iVar.d;
-        this.e = iVar.e;
-        this.f = iVar.f;
-        this.g = iVar.g;
-        this.h = iVar.h;
+    public i() {
+        LogSessionId logSessionId;
+        logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
+        this.b = logSessionId;
     }
 
-    public i(d2.v vVar) {
-        this.a = vVar;
-        this.b = d2.f.i;
-        this.e = 0;
-        this.f = -1;
-        this.h = -1;
+    @Override // r0.f
+    public ClipData a() {
+        return ((ContentInfo) this.b).getClip();
+    }
+
+    @Override // r0.d
+    public void b(Uri uri) {
+        ((ContentInfo.Builder) this.b).setLinkUri(uri);
+    }
+
+    @Override // r0.d
+    public r0.g build() {
+        return new r0.g(new i(((ContentInfo.Builder) this.b).build()));
+    }
+
+    @Override // r0.d
+    public void c(int i7) {
+        ((ContentInfo.Builder) this.b).setFlags(i7);
+    }
+
+    @Override // r0.f
+    public ContentInfo d() {
+        return (ContentInfo) this.b;
+    }
+
+    @Override // r0.f
+    public int e() {
+        return ((ContentInfo) this.b).getSource();
+    }
+
+    public void f(LogSessionId logSessionId) {
+        LogSessionId logSessionId2;
+        LogSessionId logSessionId3 = (LogSessionId) this.b;
+        logSessionId2 = LogSessionId.LOG_SESSION_ID_NONE;
+        ia.p(logSessionId3.equals(logSessionId2));
+        this.b = logSessionId;
+    }
+
+    @Override // r0.f
+    public int l() {
+        return ((ContentInfo) this.b).getFlags();
+    }
+
+    @Override // r0.d
+    public void setExtras(Bundle bundle) {
+        ((ContentInfo.Builder) this.b).setExtras(bundle);
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                return "ContentInfoCompat{" + ((ContentInfo) this.b) + "}";
+            default:
+                return super.toString();
+        }
+    }
+
+    public i(ContentInfo contentInfo) {
+        contentInfo.getClass();
+        this.b = contentInfo;
+    }
+
+    public i(ClipData clipData, int i7) {
+        this.b = r0.c.a(clipData, i7);
     }
 }

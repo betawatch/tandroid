@@ -1,0 +1,94 @@
+package d6;
+
+import android.os.AsyncTask;
+import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Semaphore;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class d {
+    public z1.a a;
+    public boolean b = false;
+    public boolean c = false;
+    public boolean d = true;
+    public boolean e = false;
+    public Executor f;
+    public volatile a2.a g;
+    public volatile a2.a h;
+    public final Semaphore i;
+    public final Set j;
+
+    public d(SignInHubActivity signInHubActivity, Set set) {
+        signInHubActivity.getApplicationContext();
+        this.i = new Semaphore(0);
+        this.j = set;
+    }
+
+    public final void a() {
+        if (this.g != null) {
+            boolean z9 = this.b;
+            if (!z9) {
+                if (z9) {
+                    c();
+                } else {
+                    this.e = true;
+                }
+            }
+            if (this.h != null) {
+                this.g.getClass();
+                this.g = null;
+                return;
+            }
+            this.g.getClass();
+            a2.a aVar = this.g;
+            aVar.c.set(true);
+            if (aVar.a.cancel(false)) {
+                this.h = this.g;
+            }
+            this.g = null;
+        }
+    }
+
+    public final void b() {
+        if (this.h != null || this.g == null) {
+            return;
+        }
+        this.g.getClass();
+        if (this.f == null) {
+            this.f = AsyncTask.THREAD_POOL_EXECUTOR;
+        }
+        a2.a aVar = this.g;
+        Executor executor = this.f;
+        if (aVar.b == 1) {
+            aVar.b = 2;
+            executor.execute(aVar.a);
+            return;
+        }
+        int c10 = p1.g.c(aVar.b);
+        if (c10 == 1) {
+            throw new IllegalStateException("Cannot execute task: the task is already running.");
+        }
+        if (c10 == 2) {
+            throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
+        }
+        throw new IllegalStateException("We should never reach this state");
+    }
+
+    public final void c() {
+        a();
+        this.g = new a2.a(this);
+        b();
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder(64);
+        Class<?> cls = getClass();
+        sb2.append(cls.getSimpleName());
+        sb2.append("{");
+        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb2.append(" id=0}");
+        return sb2.toString();
+    }
+}

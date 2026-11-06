@@ -38,12 +38,12 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     public final /* synthetic */ int a;
     public Object b;
 
-    public /* synthetic */ t(int i3) {
-        this.a = i3;
+    public /* synthetic */ t(int i7) {
+        this.a = i7;
     }
 
-    public /* synthetic */ t(int i3, Object obj) {
-        this.a = i3;
+    public /* synthetic */ t(int i7, Object obj) {
+        this.a = i7;
         this.b = obj;
     }
 
@@ -148,8 +148,8 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     }
 
     @Override // java.util.function.LongFunction
-    public Object apply(long j10) {
-        Object apply = ((LongFunction) this.b).apply(j10);
+    public Object apply(long j3) {
+        Object apply = ((LongFunction) this.b).apply(j3);
         if (apply == null) {
             return null;
         }

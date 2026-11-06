@@ -40,26 +40,26 @@ public final class n extends a implements Serializable {
         try {
             HashMap hashMap = new HashMap();
             int[][] w10 = w();
-            int z10 = (int) LocalDate.of(1882, 11, 12).z();
-            for (int i3 = 1300; i3 <= 1600; i3++) {
-                int[] iArr = w10[i3 - 1300];
+            int z9 = (int) LocalDate.of(1882, 11, 12).z();
+            for (int i7 = 1300; i7 <= 1600; i7++) {
+                int[] iArr = w10[i7 - 1300];
                 if (iArr.length != 12) {
                     throw new IllegalArgumentException("wrong number of months on line: " + Arrays.toString(iArr) + "; count: " + iArr.length);
                 }
-                hashMap.put(Integer.valueOf(i3), iArr);
+                hashMap.put(Integer.valueOf(i7), iArr);
             }
-            if (z10 == 0) {
+            if (z9 == 0) {
                 throw new IllegalArgumentException("Configuration does not contain a ISO start date");
             }
             this.g = 15600;
-            this.e = z10;
-            int[] l10 = l(z10, hashMap);
+            this.e = z9;
+            int[] l10 = l(z9, hashMap);
             this.d = l10;
             this.f = l10[3612];
             for (int i10 = 1300; i10 < 1600; i10++) {
-                int y9 = y(i10, 12);
-                this.j = Math.min(this.j, y9);
-                this.k = Math.max(this.k, y9);
+                int y10 = y(i10, 12);
+                this.j = Math.min(this.j, y10);
+                this.k = Math.max(this.k, y10);
             }
             this.c = true;
         } catch (Exception e10) {
@@ -86,8 +86,8 @@ public final class n extends a implements Serializable {
     }
 
     @Override // j$.time.chrono.k
-    public final l u(int i3) {
-        if (i3 == 1) {
+    public final l u(int i7) {
+        if (i7 == 1) {
             return q.AH;
         }
         throw new j$.time.b("invalid Hijrah era");
@@ -106,8 +106,8 @@ public final class n extends a implements Serializable {
                     return j$.time.temporal.s.e(1L, 5L);
                 case 4:
                 case 5:
-                    int i3 = this.g;
-                    return j$.time.temporal.s.e(i3 / 12, (((this.d.length - 1) + i3) / 12) - 1);
+                    int i7 = this.g;
+                    return j$.time.temporal.s.e(i7 / 12, (((this.d.length - 1) + i7) / 12) - 1);
                 case 6:
                     return j$.time.temporal.s.e(1L, 1L);
                 default:
@@ -122,34 +122,34 @@ public final class n extends a implements Serializable {
         return j.H(this, instant, zoneId);
     }
 
-    public final long m(int i3, int i10, int i11) {
+    public final long m(int i7, int i10, int i11) {
         k();
         if (i10 < 1 || i10 > 12) {
             throw new j$.time.b("Invalid Hijrah month: " + i10);
         }
-        int i12 = (i10 - 1) + ((i3 * 12) - this.g);
+        int i12 = (i10 - 1) + ((i7 * 12) - this.g);
         if (i12 < 0 || i12 >= this.d.length) {
-            throw new j$.time.b("Invalid Hijrah date, year: " + i3 + ", month: " + i10);
+            throw new j$.time.b("Invalid Hijrah date, year: " + i7 + ", month: " + i10);
         }
-        if (i11 < 1 || i11 > q(i3, i10)) {
+        if (i11 < 1 || i11 > q(i7, i10)) {
             throw new j$.time.b("Invalid Hijrah day of month: " + i11);
         }
         return (i11 - 1) + this.d[i12];
     }
 
-    public final int q(int i3, int i10) {
-        int i11 = (i10 - 1) + ((i3 * 12) - this.g);
+    public final int q(int i7, int i10) {
+        int i11 = (i10 - 1) + ((i7 * 12) - this.g);
         if (i11 >= 0) {
             int[] iArr = this.d;
             if (i11 < iArr.length) {
                 return iArr[i11 + 1] - iArr[i11];
             }
         }
-        throw new j$.time.b("Invalid Hijrah date, year: " + i3 + ", month: " + i10);
+        throw new j$.time.b("Invalid Hijrah date, year: " + i7 + ", month: " + i10);
     }
 
-    public final int y(int i3, int i10) {
-        int i11 = (i3 * 12) - this.g;
+    public final int y(int i7, int i10) {
+        int i11 = (i7 * 12) - this.g;
         int[] iArr = this.d;
         return iArr[i10 + i11] - iArr[i11];
     }
@@ -158,7 +158,7 @@ public final class n extends a implements Serializable {
         return new d0((byte) 1, this);
     }
 
-    public final int[] l(int i3, Map map) {
+    public final int[] l(int i7, Map map) {
         int[] iArr = new int[3613];
         this.h = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.i = TLObject.FLAG_31;
@@ -169,11 +169,11 @@ public final class n extends a implements Serializable {
             while (i12 < 12) {
                 int i13 = iArr2[i12];
                 int i14 = i10 + 1;
-                iArr[i10] = i3;
+                iArr[i10] = i7;
                 if (i13 < 29 || i13 > 32) {
                     throw new IllegalArgumentException("Invalid month length in year: 1300");
                 }
-                i3 += i13;
+                i7 += i13;
                 this.h = Math.min(this.h, i13);
                 this.i = Math.max(this.i, i13);
                 i12++;
@@ -181,7 +181,7 @@ public final class n extends a implements Serializable {
             }
         }
         int i15 = i10 + 1;
-        iArr[i10] = i3;
+        iArr[i10] = i7;
         if (i15 == 3613) {
             return iArr;
         }

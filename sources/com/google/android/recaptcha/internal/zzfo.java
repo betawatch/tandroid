@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
-import wd.b0;
-import wd.x1;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
+import zd.b0;
+import zd.x1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzfo extends j implements p {
     int zza;
@@ -17,40 +17,40 @@ final class zzfo extends j implements p {
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfo(long j10, zzfp zzfpVar, c cVar) {
+    public zzfo(long j3, zzfp zzfpVar, c cVar) {
         super(2, cVar);
-        this.zzb = j10;
+        this.zzb = j3;
         this.zzc = zzfpVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzfo zzfoVar = new zzfo(this.zzb, this.zzc, cVar);
         zzfoVar.zzd = obj;
         return zzfoVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzfo) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         zzcg zzt;
         zzcg zzt2;
         zzcg zzt3;
-        gd.a aVar = gd.a.a;
+        jd.a aVar = jd.a.a;
         try {
             if (this.zza != 0) {
-                ib.b(obj);
+                b.c(obj);
             } else {
-                ib.b(obj);
+                b.c(obj);
                 zzgr zzgrVar = (zzgr) this.zzd;
-                long j10 = this.zzb;
+                long j3 = this.zzb;
                 zzfn zzfnVar = new zzfn(zzgrVar, this.zzc, null);
                 this.zza = 1;
-                obj = b0.z(j10, zzfnVar, this);
+                obj = b0.z(j3, zzfnVar, this);
                 if (obj == aVar) {
                     return aVar;
                 }

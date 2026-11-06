@@ -4,15 +4,15 @@ import android.os.Build;
 import android.view.View;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class h1 {
     public static final k1 b;
     public final k1 a;
 
     static {
-        int i3 = Build.VERSION.SDK_INT;
-        b = (i3 >= 34 ? new z0() : i3 >= 30 ? new y0() : i3 >= 29 ? new x0() : new w0()).b().a.a().a.b().a.c();
+        int i7 = Build.VERSION.SDK_INT;
+        b = (i7 >= 34 ? new z0() : i7 >= 30 ? new y0() : i7 >= 29 ? new x0() : new w0()).b().a.a().a.b().a.c();
     }
 
     public h1(k1 k1Var) {
@@ -46,12 +46,12 @@ public class h1 {
         return o() == h1Var.o() && n() == h1Var.n() && Objects.equals(k(), h1Var.k()) && Objects.equals(i(), h1Var.i()) && Objects.equals(e(), h1Var.e());
     }
 
-    public i0.b f(int i3) {
+    public i0.b f(int i7) {
         return i0.b.e;
     }
 
-    public i0.b g(int i3) {
-        if ((i3 & 8) == 0) {
+    public i0.b g(int i7) {
+        if ((i7 & 8) == 0) {
             return i0.b.e;
         }
         throw new IllegalArgumentException("Unable to query the maximum insets for IME");
@@ -81,7 +81,7 @@ public class h1 {
         return k();
     }
 
-    public k1 m(int i3, int i10, int i11, int i12) {
+    public k1 m(int i7, int i10, int i11, int i12) {
         return b;
     }
 
@@ -93,7 +93,7 @@ public class h1 {
         return false;
     }
 
-    public boolean p(int i3) {
+    public boolean p(int i7) {
         return true;
     }
 
@@ -109,6 +109,6 @@ public class h1 {
     public void s(i0.b bVar) {
     }
 
-    public void t(int i3) {
+    public void t(int i7) {
     }
 }

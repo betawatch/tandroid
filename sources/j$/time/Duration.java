@@ -23,26 +23,26 @@ public final class Duration implements Comparable<Duration>, Serializable {
         BigInteger.valueOf(1000000000L);
     }
 
-    public static Duration k(long j10) {
-        long j11 = j10 / 1000000000;
-        int i3 = (int) (j10 % 1000000000);
-        if (i3 < 0) {
-            i3 = (int) (i3 + 1000000000);
-            j11--;
+    public static Duration k(long j3) {
+        long j10 = j3 / 1000000000;
+        int i7 = (int) (j3 % 1000000000);
+        if (i7 < 0) {
+            i7 = (int) (i7 + 1000000000);
+            j10--;
         }
-        return j(j11, i3);
+        return j(j10, i7);
     }
 
-    public static Duration j(long j10, int i3) {
-        if ((i3 | j10) == 0) {
+    public static Duration j(long j3, int i7) {
+        if ((i7 | j3) == 0) {
             return c;
         }
-        return new Duration(j10, i3);
+        return new Duration(j3, i7);
     }
 
-    public Duration(long j10, int i3) {
-        this.a = j10;
-        this.b = i3;
+    public Duration(long j3, int i7) {
+        this.a = j3;
+        this.b = i7;
     }
 
     public long getSeconds() {
@@ -63,29 +63,29 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     public final int hashCode() {
-        long j10 = this.a;
-        return (this.b * 51) + ((int) (j10 ^ (j10 >>> 32)));
+        long j3 = this.a;
+        return (this.b * 51) + ((int) (j3 ^ (j3 >>> 32)));
     }
 
     public final String toString() {
         if (this == c) {
             return "PT0S";
         }
-        long j10 = this.a;
-        if (j10 < 0 && this.b > 0) {
-            j10++;
+        long j3 = this.a;
+        if (j3 < 0 && this.b > 0) {
+            j3++;
         }
-        long j11 = j10 / 3600;
-        int i3 = (int) ((j10 % 3600) / 60);
-        int i10 = (int) (j10 % 60);
+        long j10 = j3 / 3600;
+        int i7 = (int) ((j3 % 3600) / 60);
+        int i10 = (int) (j3 % 60);
         StringBuilder sb2 = new StringBuilder(24);
         sb2.append("PT");
-        if (j11 != 0) {
-            sb2.append(j11);
+        if (j10 != 0) {
+            sb2.append(j10);
             sb2.append('H');
         }
-        if (i3 != 0) {
-            sb2.append(i3);
+        if (i7 != 0) {
+            sb2.append(i7);
             sb2.append('M');
         }
         if (i10 == 0 && this.b == 0 && sb2.length() > 2) {

@@ -23,7 +23,7 @@ public interface k extends Comparable {
 
     String toString();
 
-    l u(int i3);
+    l u(int i7);
 
     b x(j$.time.temporal.l lVar);
 }

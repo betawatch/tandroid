@@ -6,7 +6,7 @@ import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.TotalCaptureResult;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class g extends CameraCaptureSession.CaptureCallback {
     public final /* synthetic */ j a;
@@ -17,7 +17,7 @@ public final class g extends CameraCaptureSession.CaptureCallback {
 
     @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
     public final void onCaptureCompleted(CameraCaptureSession cameraCaptureSession, CaptureRequest captureRequest, TotalCaptureResult totalCaptureResult) {
-        int i3;
+        int i7;
         j jVar = this.a;
         n nVar = jVar.j;
         if (cameraCaptureSession != jVar.A) {
@@ -29,15 +29,15 @@ public final class g extends CameraCaptureSession.CaptureCallback {
                 jVar.R++;
                 Integer num = (Integer) totalCaptureResult.get(CaptureResult.FLASH_MODE);
                 Integer num2 = (Integer) totalCaptureResult.get(CaptureResult.FLASH_STATE);
-                boolean z10 = !jVar.P ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
-                boolean z11 = !jVar.P || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
-                if (z10 && z11) {
+                boolean z9 = !jVar.P ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
+                boolean z10 = !jVar.P || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
+                if (z9 && z10) {
                     nVar.b("torch result confirmed: enabled=" + jVar.P + ", resultMode=" + num + ", flashState=" + num2 + ", frames=" + jVar.R + ", retries=" + jVar.S);
                     jVar.Q = false;
                 } else {
                     int i10 = jVar.R;
-                    if (i10 == 3 && (i3 = jVar.S) == 0) {
-                        jVar.S = i3 + 1;
+                    if (i10 == 3 && (i7 = jVar.S) == 0) {
+                        jVar.S = i7 + 1;
                         jVar.R = 0;
                         nVar.b("torch result not applied; rebuilding request: enabled=" + jVar.P + ", resultMode=" + num + ", flashState=" + num2);
                         jVar.g();
@@ -62,8 +62,8 @@ public final class g extends CameraCaptureSession.CaptureCallback {
             jVar.d1 += longValue;
             double d = longValue;
             jVar.e1 = (d * d) + jVar.e1;
-            long j10 = jVar.f1;
-            if (j10 == 0 || longValue < j10) {
+            long j3 = jVar.f1;
+            if (j3 == 0 || longValue < j3) {
                 jVar.f1 = longValue;
             }
             jVar.g1 = Math.max(jVar.g1, longValue);
@@ -75,12 +75,12 @@ public final class g extends CameraCaptureSession.CaptureCallback {
             }
             jVar.a1++;
         }
-        long j11 = jVar.b1;
-        if (j11 != 0) {
-            long j12 = elapsedRealtimeNanos - j11;
+        long j10 = jVar.b1;
+        if (j10 != 0) {
+            long j11 = elapsedRealtimeNanos - j10;
             jVar.j1++;
-            jVar.k1 += j12;
-            jVar.l1 = Math.max(jVar.l1, j12);
+            jVar.k1 += j11;
+            jVar.l1 = Math.max(jVar.l1, j11);
         }
         jVar.b1 = elapsedRealtimeNanos;
         jVar.Z0 = l10.longValue();

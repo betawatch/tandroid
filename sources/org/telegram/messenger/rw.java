@@ -1,37 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ List d;
+    public final /* synthetic */ gz b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ rw(yy yyVar, String str, List list, int i3) {
-        this.a = i3;
-        this.b = yyVar;
-        this.c = str;
-        this.d = list;
+    public /* synthetic */ rw(gz gzVar, long j3, ArrayList arrayList, int i7) {
+        this.a = i7;
+        this.b = gzVar;
+        this.c = j3;
+        this.d = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                HashMap hashMap = this.b.r;
-                String str = this.c;
-                hashMap.remove(str);
-                this.d.remove(str);
+                this.b.getMessagesController().l3(this.d, this.c);
+                break;
+            case 1:
+                this.b.getMessagesController().l3(this.d, this.c);
                 break;
             default:
-                HashMap hashMap2 = this.b.r;
-                String str2 = this.c;
-                hashMap2.remove(str2);
-                this.d.remove(str2);
+                this.b.getMessagesController().l3(this.d, this.c);
                 break;
         }
     }

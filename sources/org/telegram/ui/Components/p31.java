@@ -5,10 +5,10 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class p31 extends nu0 {
-    public final int a = org.telegram.messenger.h10.t0;
+public final class p31 extends ou0 {
+    public final int a = org.telegram.messenger.p10.s0;
     public boolean b = false;
     public final float[] c = new float[3];
     public final float[] d = {0.0f, 150.0f, 300.0f};
@@ -19,26 +19,26 @@ public final class p31 extends nu0 {
     public boolean i;
     public final Paint j;
 
-    public p31(boolean z10) {
-        if (z10) {
+    public p31(boolean z9) {
+        if (z9) {
             this.j = new Paint(1);
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
-    public final void b(int i3) {
+    @Override // org.telegram.ui.Components.ou0
+    public final void b(int i7) {
         Paint paint = this.j;
         if (paint != null) {
-            paint.setColor(i3);
+            paint.setColor(i7);
         }
     }
 
-    @Override // org.telegram.ui.Components.nu0
-    public final void c(boolean z10) {
-        this.b = z10;
+    @Override // org.telegram.ui.Components.ou0
+    public final void c(boolean z9) {
+        this.b = z9;
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public final void d() {
         this.f = System.currentTimeMillis();
         this.g = true;
@@ -48,20 +48,20 @@ public final class p31 extends nu0 {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         int L;
-        int i3;
+        int i7;
         int i10 = getBounds().left;
         if (this.b) {
             L = org.telegram.messenger.g0.L(8.5f);
-            i3 = getBounds().top;
+            i7 = getBounds().top;
         } else {
             L = org.telegram.messenger.g0.L(9.3f);
-            i3 = getBounds().top;
+            i7 = getBounds().top;
         }
-        int i11 = L + i3;
+        int i11 = L + i7;
         Paint paint = this.j;
         if (paint == null) {
             paint = org.telegram.ui.ActionBar.k6.c2;
-            paint.setAlpha(org.telegram.messenger.hs.e4);
+            paint.setAlpha(org.telegram.messenger.qs.e4);
         }
         float L2 = org.telegram.messenger.g0.L(3.0f) + i10;
         float f10 = i11;
@@ -72,11 +72,11 @@ public final class p31 extends nu0 {
         f();
     }
 
-    @Override // org.telegram.ui.Components.nu0
+    @Override // org.telegram.ui.Components.ou0
     public final void e() {
-        for (int i3 = 0; i3 < 3; i3++) {
-            this.e[i3] = 0.0f;
-            this.c[i3] = 1.33f;
+        for (int i7 = 0; i7 < 3; i7++) {
+            this.e[i7] = 0.0f;
+            this.c[i7] = 1.33f;
         }
         float[] fArr = this.d;
         fArr[0] = 0.0f;
@@ -87,38 +87,38 @@ public final class p31 extends nu0 {
 
     public final void f() {
         if (this.g) {
-            if (org.telegram.messenger.hs.f(this.a).g() && !this.i) {
-                org.telegram.messenger.g0.i3(new sp0(this, 26), 100L);
+            if (org.telegram.messenger.qs.f(this.a).g() && !this.i) {
+                org.telegram.messenger.g0.i3(new ir0(this, 24), 100L);
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.f;
+            long j3 = currentTimeMillis - this.f;
             this.f = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
+            if (j3 > 50) {
+                j3 = 50;
             }
-            for (int i3 = 0; i3 < 3; i3++) {
+            for (int i7 = 0; i7 < 3; i7++) {
                 float[] fArr = this.e;
-                float f10 = fArr[i3] + j10;
-                fArr[i3] = f10;
+                float f10 = fArr[i7] + j3;
+                fArr[i7] = f10;
                 float[] fArr2 = this.d;
-                float f11 = f10 - fArr2[i3];
+                float f11 = f10 - fArr2[i7];
                 float[] fArr3 = this.c;
                 if (f11 > 0.0f) {
                     DecelerateInterpolator decelerateInterpolator = this.h;
                     if (f11 <= 320.0f) {
-                        fArr3[i3] = decelerateInterpolator.getInterpolation(f11 / 320.0f) + 1.33f;
+                        fArr3[i7] = decelerateInterpolator.getInterpolation(f11 / 320.0f) + 1.33f;
                     } else if (f11 <= 640.0f) {
-                        fArr3[i3] = (1.0f - decelerateInterpolator.getInterpolation((f11 - 320.0f) / 320.0f)) + 1.33f;
+                        fArr3[i7] = (1.0f - decelerateInterpolator.getInterpolation((f11 - 320.0f) / 320.0f)) + 1.33f;
                     } else if (f11 >= 800.0f) {
-                        fArr[i3] = 0.0f;
-                        fArr2[i3] = 0.0f;
-                        fArr3[i3] = 1.33f;
+                        fArr[i7] = 0.0f;
+                        fArr2[i7] = 0.0f;
+                        fArr3[i7] = 1.33f;
                     } else {
-                        fArr3[i3] = 1.33f;
+                        fArr3[i7] = 1.33f;
                     }
                 } else {
-                    fArr3[i3] = 1.33f;
+                    fArr3[i7] = 1.33f;
                 }
             }
             a();
@@ -149,6 +149,6 @@ public final class p31 extends nu0 {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 }

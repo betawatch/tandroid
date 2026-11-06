@@ -1,33 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xt extends FrameLayout {
-    public org.telegram.ui.ActionBar.d2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.tj0 d;
-    public ci.j1 e;
-    public int f;
-    public final /* synthetic */ yt h;
+public final /* synthetic */ class xt implements qw, vr {
+    public final /* synthetic */ au a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xt(yt ytVar, Context context) {
-        super(context);
-        this.h = ytVar;
+    public /* synthetic */ xt(au auVar) {
+        this.a = auVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        xt xtVar;
-        super.setTranslationX(f10);
-        yt ytVar = this.h;
-        xt[] xtVarArr = ytVar.f;
-        if (ytVar.n && (xtVar = xtVarArr[0]) == this) {
-            ytVar.e.i(Math.abs(xtVar.getTranslationX()) / xtVarArr[0].getMeasuredWidth(), xtVarArr[1].f);
+    @Override // org.telegram.ui.qw
+    public /* synthetic */ boolean G() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qw
+    public /* synthetic */ boolean N(ww wwVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.vr
+    public void b(TLRPC.User user) {
+        this.a.q0(user);
+    }
+
+    @Override // org.telegram.ui.qw
+    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+        if (arrayList.isEmpty()) {
+            return true;
         }
+        long j3 = ((org.telegram.messenger.xr) arrayList.get(0)).a;
+        if (!org.telegram.messenger.m5.E(j3)) {
+            return true;
+        }
+        au auVar = this.a;
+        auVar.q0(auVar.getMessagesController().a2(Long.valueOf(j3)));
+        return true;
     }
 }

@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -31,76 +31,76 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
             if (r2.a) {
                 a8.b("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
             }
-            if (SystemClock.elapsedRealtime() - us.t(c.a(intValue).a).P <= 1000) {
+            if (SystemClock.elapsedRealtime() - dt.t(c.a(intValue).a).O <= 1000) {
                 if (r2.a) {
                     a8.b("received disable notification event right after creating notification channel, ignoring");
                     return;
                 }
                 return;
             }
-            SharedPreferences c2 = c.a(intValue).c();
+            SharedPreferences c10 = c.a(intValue).c();
             boolean startsWith = split[1].startsWith("channel");
-            int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (startsWith) {
-                if (!stringExtra.equals(c2.getString("channels", null))) {
+                if (!stringExtra.equals(c10.getString("channels", null))) {
                     return;
                 }
                 if (r2.a) {
                     a8.b("apply channel{channel} " + stringExtra + " state");
                 }
-                c2.edit().putInt(us.q(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                us.t(c.a(intValue).a).b0(2);
+                c10.edit().putInt(dt.q(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                dt.t(c.a(intValue).a).b0(2);
             } else if (split[1].startsWith("groups")) {
-                if (!stringExtra.equals(c2.getString("groups", null))) {
+                if (!stringExtra.equals(c10.getString("groups", null))) {
                     return;
                 }
                 if (r2.a) {
                     a8.b("apply channel{groups} " + stringExtra + " state");
                 }
-                SharedPreferences.Editor edit = c2.edit();
-                String q10 = us.q(0);
+                SharedPreferences.Editor edit = c10.edit();
+                String q10 = dt.q(0);
                 if (!booleanExtra) {
-                    i3 = 0;
+                    i7 = 0;
                 }
-                edit.putInt(q10, i3).commit();
-                us.t(c.a(intValue).a).b0(0);
+                edit.putInt(q10, i7).commit();
+                dt.t(c.a(intValue).a).b0(0);
             } else if (split[1].startsWith("private")) {
-                if (!stringExtra.equals(c2.getString("private", null))) {
+                if (!stringExtra.equals(c10.getString("private", null))) {
                     return;
                 }
                 if (r2.a) {
                     a8.b("apply channel{private} " + stringExtra + " state");
                 }
-                c2.edit().putInt(us.q(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
-                us.t(c.a(intValue).a).b0(1);
+                c10.edit().putInt(dt.q(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
+                dt.t(c.a(intValue).a).b0(1);
             } else if (!split[1].startsWith("stories")) {
                 long longValue = Utilities.A(split[1]).longValue();
                 if (longValue == 0) {
                     return;
                 }
-                String v = us.v(longValue, 0, false);
-                if (!stringExtra.equals(c2.getString("org.telegram.key" + longValue, null))) {
+                String v = dt.v(longValue, 0, false);
+                if (!stringExtra.equals(c10.getString("org.telegram.key" + longValue, null))) {
                     return;
                 }
                 if (r2.a) {
                     a8.b("apply channel{else} " + stringExtra + " state");
                 }
-                SharedPreferences.Editor edit2 = c2.edit();
-                edit2.putInt(t4.c.f("notify2_", v), booleanExtra ? 2 : 0);
+                SharedPreferences.Editor edit2 = c10.edit();
+                edit2.putInt(rf.b.i("notify2_", v), booleanExtra ? 2 : 0);
                 if (!booleanExtra) {
                     edit2.remove("notifyuntil_" + v);
                 }
                 edit2.commit();
-                us.t(c.a(intValue).a).c0(longValue, 0L, true);
+                dt.t(c.a(intValue).a).c0(longValue, 0L, true);
             } else {
-                if (!stringExtra.equals(c2.getString("stories", null))) {
+                if (!stringExtra.equals(c10.getString("stories", null))) {
                     return;
                 }
                 if (r2.a) {
                     a8.b("apply channel{stories} " + stringExtra + " state");
                 }
-                c2.edit().putBoolean(us.q(3), !booleanExtra).commit();
-                us.t(c.a(intValue).a).b0(1);
+                c10.edit().putBoolean(dt.q(3), !booleanExtra).commit();
+                dt.t(c.a(intValue).a).b0(1);
             }
             ConnectionsManager.getInstance(c.a(intValue).a).resumeNetworkMaybe();
         }

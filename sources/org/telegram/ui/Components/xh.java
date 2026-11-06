@@ -1,21 +1,52 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xh extends n00 {
-    public final bi K;
+public final class xh extends yh {
+    public int b;
+    public final /* synthetic */ di c;
 
-    public xh(Context context, org.telegram.ui.ActionBar.e6 e6Var, bi biVar) {
-        super(context, e6Var);
-        this.K = biVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xh(di diVar, Context context) {
+        super(context);
+        this.c = diVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        int i7 = di.E4;
+        org.telegram.ui.ActionBar.f6 f6Var = diVar.I0;
+        qh.b bVar = new qh.b(context);
+        bVar.d = f6Var;
+        bVar.Q = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+        bVar.b(false);
+        bVar.b.setLayoutParams(c8.ha.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.x = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ql, f6Var);
+        bVar.s = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ol, f6Var);
+        bVar.w = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Pl, f6Var);
+        bVar.a();
+        this.a = bVar;
+        addView(bVar, c8.ha.c(-1.0f, -1));
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.K.h1(this.r, true);
-        return super.onInterceptTouchEvent(motionEvent);
+    public final void a(int i7, String str, qh.a aVar) {
+        this.a.setText(str);
+        this.a.setTabAnimation(aVar);
+        this.b = i7;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.f(((long) this.b) == this.c.Q2, false);
     }
 }

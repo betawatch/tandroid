@@ -1,23 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class x11 extends f21 {
-    public final /* synthetic */ org.telegram.ui.xe R1;
+public final class x11 extends e21 {
+    public final /* synthetic */ Runnable Q1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x11(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i3, TL_iv.RichMessage richMessage, org.telegram.ui.xe xeVar) {
-        super(activity, str, str2, null, inputPeer, i3, false, richMessage);
-        this.R1 = xeVar;
+    public x11(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
+        super(context, str, str2, charSequence, null, 0, false, null);
+        this.Q1 = runnable;
     }
 
-    @Override // org.telegram.ui.Components.f21, org.telegram.ui.ActionBar.t2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.z1
+    @Override // org.telegram.ui.Components.e21, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
         super.dismiss();
-        this.R1.run();
+        Runnable runnable = this.Q1;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

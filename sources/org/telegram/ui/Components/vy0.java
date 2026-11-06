@@ -6,12 +6,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class vy0 extends ViewSwitcher {
-    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
-        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
-            if (!z10) {
+    public final void a(CharSequence charSequence, boolean z9, boolean z10) {
+        if (z10 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z9) {
                 getCurrentView().setText(charSequence);
             } else {
                 getNextView().setText(charSequence);
@@ -21,11 +21,11 @@ public class vy0 extends ViewSwitcher {
     }
 
     @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
-    public final void addView(View view, int i3, ViewGroup.LayoutParams layoutParams) {
+    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
         if (!(view instanceof TextView)) {
             throw new IllegalArgumentException();
         }
-        super.addView(view, i3, layoutParams);
+        super.addView(view, i7, layoutParams);
     }
 
     public void setText(CharSequence charSequence) {

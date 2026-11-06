@@ -4,18 +4,18 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a0 extends ClickableSpan {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
     public final /* synthetic */ Runnable d;
 
-    public a0(boolean z10, int i3, org.telegram.ui.ActionBar.e6 e6Var, Runnable runnable) {
-        this.a = z10;
-        this.b = i3;
-        this.c = e6Var;
+    public a0(boolean z9, int i7, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable) {
+        this.a = z9;
+        this.b = i7;
+        this.c = f6Var;
         this.d = runnable;
     }
 

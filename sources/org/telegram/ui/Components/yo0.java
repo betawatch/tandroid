@@ -1,38 +1,55 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ws0 b;
-    public final /* synthetic */ int c;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public /* synthetic */ yo0(ws0 ws0Var, int i3, int i10) {
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class yo0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
+
+    public /* synthetic */ yo0(FrameLayout frameLayout, boolean z9, int i7, int i10) {
         this.a = i10;
-        this.b = ws0Var;
-        this.c = i3;
+        this.d = frameLayout;
+        this.b = z9;
+        this.c = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.q1(this.c);
-                break;
-            case 1:
-                ws0 ws0Var = this.b;
-                ws0Var.Y0(ws0Var.y1, ws0Var.m1, this.c);
-                break;
-            case 2:
-                this.b.p1(this.c, false);
-                break;
-            case 3:
-                this.b.q1(this.c);
-                break;
+                xs0 xs0Var = (xs0) this.d;
+                org.telegram.ui.ActionBar.f2 f2Var = xs0Var.x1;
+                if (!this.b) {
+                    f2Var.getMessagesController().e7.edit().putBoolean("story_keep", true).apply();
+                    fi.va.D(f2Var.getParentActivity(), f2Var.getCurrentAccount()).Q(null);
+                    break;
+                } else {
+                    xs0Var.Y0(f2Var, xs0Var.l1, this.c);
+                    break;
+                }
             default:
-                ws0 ws0Var2 = this.b;
-                ws0Var2.Z0(ws0Var2.y1, ws0Var2.m1, this.c);
-                break;
+                up0 up0Var = (up0) this.d;
+                if (up0Var.e.h() && up0Var.h.getCurrentPosition() != 0) {
+                    up0Var.a();
+                    break;
+                } else {
+                    boolean z9 = this.b;
+                    int i7 = this.c;
+                    if (!z9) {
+                        wg.f1.l1(2, org.telegram.messenger.v1.a(i7).b());
+                        break;
+                    } else {
+                        zh.h1 h1Var = new zh.h1(up0Var.getContext(), i7, up0Var.c, null, null);
+                        h1Var.e1(org.telegram.messenger.v1.a(i7).c(up0Var.c));
+                        h1Var.show();
+                        break;
+                    }
+                }
         }
     }
 }

@@ -1,64 +1,188 @@
 package ii;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.x4;
-import org.telegram.ui.Components.xq;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.k5;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.t3;
+import org.telegram.messenger.uo;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class t {
-    public final RectF a = new RectF();
-    public final u5 b;
-    public final u5 c;
-    public final u5 d;
-    public final u5 e;
-    public final x4 f;
-    public final x4 g;
-    public final u5 h;
-    public final u5 i;
-    public final gc j;
-    public final Paint k;
-    public final g6 l;
-    public int m;
-    public final org.telegram.ui.Cells.y n;
-    public final cp o;
-    public final org.telegram.ui.Components.voip.g p;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class t implements v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d0 b;
 
-    public t(v vVar) {
-        xq xqVar = xq.h;
-        this.b = new u5(vVar, 0L, 320L, xqVar);
-        this.c = new u5(vVar, 0L, 320L, xqVar);
-        this.d = new u5(vVar, 0L, 320L, xqVar);
-        this.e = new u5(vVar, 0L, 320L, xqVar);
-        this.f = new x4(vVar, 320L, xqVar, 0);
-        this.g = new x4(vVar, 320L, xqVar, 0);
-        this.h = new u5(vVar, 0L, 320L, xqVar);
-        this.i = new u5(vVar, 0L, 320L, xqVar);
-        this.j = new gc(vVar);
-        this.k = new Paint(1);
-        g6 g6Var = new g6(true, false, true);
-        this.l = g6Var;
-        org.telegram.ui.Cells.y a02 = k6.a0(0, 9, 9);
-        this.n = a02;
-        cp cpVar = new cp(-1);
-        this.o = cpVar;
-        org.telegram.ui.Components.voip.g gVar = new org.telegram.ui.Components.voip.g();
-        this.p = gVar;
-        g6Var.b = 17;
-        g6Var.w(org.telegram.messenger.g0.L(14.0f));
-        g6Var.x(org.telegram.messenger.g0.o());
-        g6Var.M = org.telegram.messenger.g0.q.x * 4;
-        g6Var.q(true);
-        g6Var.setCallback(vVar);
-        cpVar.setCallback(vVar);
-        a02.setCallback(vVar);
-        gVar.l = true;
-        gVar.m = 2.0f;
+    public /* synthetic */ t(d0 d0Var, int i7) {
+        this.a = i7;
+        this.b = d0Var;
+    }
+
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        boolean z9;
+        ArrayList arrayList;
+        int i7 = this.a;
+        boolean z10 = true;
+        int i10 = 2;
+        int i11 = 0;
+        d0 d0Var = this.b;
+        switch (i7) {
+            case 0:
+                d0Var.J0((ArrayList) obj, true);
+                break;
+            case 1:
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error == null) {
+                    d0Var.getClass();
+                    break;
+                } else {
+                    f1.r((FrameLayout) d0Var.b, d0Var.I0, tL_error, false);
+                    break;
+                }
+            case 2:
+                ArrayList arrayList2 = (ArrayList) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                d0Var.o1.setLoading(false);
+                if (tL_error2 == null) {
+                    if (arrayList2 != null) {
+                        d0Var.H1 = arrayList2;
+                        if (!arrayList2.isEmpty()) {
+                            d0Var.t1.d.f3.O(false);
+                            d0Var.k1.E(2);
+                            break;
+                        } else {
+                            k5.o(null, 2131751905, new hc((FrameLayout) d0Var.b, d0Var.I0), R.raw.info, 36);
+                            break;
+                        }
+                    }
+                } else {
+                    f1.r((FrameLayout) d0Var.b, d0Var.I0, tL_error2, false);
+                    break;
+                }
+                break;
+            case 3:
+                int i12 = d0.M1;
+                d0Var.J0((ArrayList) obj, false);
+                break;
+            case 4:
+                ArrayList arrayList3 = (ArrayList) obj;
+                int i13 = d0.M1;
+                arrayList3.add(r31.E(99, Math.min(org.telegram.messenger.g0.L(176.0f) + org.telegram.messenger.g0.m, (int) (org.telegram.messenger.g0.q.y * 0.25f))));
+                arrayList3.add(r31.E(0, org.telegram.messenger.g0.L(56.0f)));
+                String M0 = hd.M0(2131751849, null);
+                r31 r31Var = new r31(39);
+                r31Var.d = 101;
+                r31Var.l = M0;
+                r31Var.z = 0;
+                r31Var.L(d0Var.n1);
+                arrayList3.add(r31Var);
+                arrayList3.add(r31.B(2, hd.M0(2131751848, null)));
+                l0 l0Var = d0Var.D1;
+                if (l0Var.n && l0Var.l == 1 && (arrayList = l0Var.j) != null && arrayList.size() == 1) {
+                    arrayList3.add(r31.t(3, hd.M0(2131751904, null)));
+                    l0Var.c(arrayList3);
+                    arrayList3.add(r31.E(5, org.telegram.messenger.g0.L(14.33f)));
+                } else {
+                    int i14 = l0Var.l;
+                    if (i14 > 0) {
+                        int i15 = l0Var.p;
+                        String M02 = i14 == i15 ? hd.M0(2131751895, null) : hd.G(i14, "CommunityPendingRequestsRow", new Object[0]);
+                        String num = i15 > 0 ? Integer.toString(i15) : null;
+                        int i16 = ji.i.b;
+                        r31 K = r31.K(ji.i.class);
+                        K.d = 100;
+                        K.k = R.drawable.filled_requests_24;
+                        K.l = M02;
+                        K.n = num;
+                        K.B = ((-15497247) << 32) | ((-14899731) & 4294967295L);
+                        K.q = true;
+                        arrayList3.add(K);
+                        arrayList3.add(r31.E(5, org.telegram.messenger.g0.L(14.33f)));
+                    }
+                }
+                ui.e x10 = qp.s1(d0Var.a).x(d0Var.l1);
+                ArrayList arrayList4 = (ArrayList) x10.e;
+                ArrayList arrayList5 = (ArrayList) x10.d;
+                ArrayList arrayList6 = (ArrayList) x10.c;
+                ArrayList arrayList7 = (ArrayList) x10.b;
+                if (arrayList7.isEmpty()) {
+                    z9 = false;
+                } else {
+                    arrayList3.add(r31.t(21, hd.M0(2131751878, null)));
+                    int size = arrayList7.size();
+                    int i17 = 0;
+                    while (i17 < size) {
+                        Object obj3 = arrayList7.get(i17);
+                        i17++;
+                        arrayList3.add(i0.i((uo) obj3, d0Var));
+                    }
+                    z9 = true;
+                }
+                if (!arrayList6.isEmpty()) {
+                    if (z9) {
+                        arrayList3.add(r31.E(22, org.telegram.messenger.g0.L(12.0f)));
+                    }
+                    arrayList3.add(r31.t(23, hd.M0(2131751875, null)));
+                    int size2 = arrayList6.size();
+                    int i18 = 0;
+                    while (i18 < size2) {
+                        Object obj4 = arrayList6.get(i18);
+                        i18++;
+                        arrayList3.add(i0.i((uo) obj4, d0Var));
+                    }
+                    z9 = true;
+                }
+                if (arrayList5.isEmpty()) {
+                    z10 = z9;
+                } else {
+                    if (z9) {
+                        arrayList3.add(r31.E(24, org.telegram.messenger.g0.L(12.0f)));
+                    }
+                    arrayList3.add(r31.t(25, hd.M0(2131751876, null)));
+                    int size3 = arrayList5.size();
+                    int i19 = 0;
+                    while (i19 < size3) {
+                        Object obj5 = arrayList5.get(i19);
+                        i19++;
+                        arrayList3.add(i0.i((uo) obj5, d0Var));
+                    }
+                }
+                if (!arrayList4.isEmpty()) {
+                    if (z10) {
+                        arrayList3.add(r31.E(26, org.telegram.messenger.g0.L(12.0f)));
+                    }
+                    arrayList3.add(r31.t(27, hd.M0(2131751873, null)));
+                    int size4 = arrayList4.size();
+                    while (i11 < size4) {
+                        Object obj6 = arrayList4.get(i11);
+                        i11++;
+                        arrayList3.add(i0.i((uo) obj6, d0Var));
+                    }
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList8 = (ArrayList) obj;
+                l0 l0Var2 = d0Var.D1;
+                arrayList8.add(r31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
+                arrayList8.add(r31.E(0, org.telegram.messenger.g0.L(48.0f)));
+                if (t3.w(2, d0Var.m1)) {
+                    arrayList8.add(r31.B(1, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.M0(2131751894, null), new v(d0Var, i10)), true)));
+                } else {
+                    arrayList8.add(r31.B(1, hd.M0(2131751893, null)));
+                }
+                arrayList8.add(r31.j(2, d0Var.C1));
+                arrayList8.add(r31.t(3, hd.G(l0Var2.l, "CommunityPendingRequestsSuggestedHeader", new Object[0])));
+                l0Var2.c(arrayList8);
+                break;
+        }
     }
 }

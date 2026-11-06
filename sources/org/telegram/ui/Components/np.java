@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class np extends Drawable {
     public final Drawable a;
@@ -18,7 +18,7 @@ public final class np extends Drawable {
     public final float[] f;
 
     public np(Drawable drawable) {
-        ah.a aVar = new ah.a(this, 7);
+        a5.b bVar = new a5.b(this, 6);
         this.c = new RectF();
         this.d = new RectF();
         this.e = false;
@@ -30,7 +30,7 @@ public final class np extends Drawable {
         this.a = drawable;
         if (drawable != null) {
             drawable.setBounds(getBounds());
-            this.a.setCallback(aVar);
+            this.a.setCallback(bVar);
         }
     }
 
@@ -93,10 +93,10 @@ public final class np extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setAlpha(i3);
+            drawable.setAlpha(i7);
         }
     }
 

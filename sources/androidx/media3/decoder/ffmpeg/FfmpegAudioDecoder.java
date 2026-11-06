@@ -1,20 +1,20 @@
 package androidx.media3.decoder.ffmpeg;
 
+import a8.ia;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
-import b8.zb;
-import d2.v;
-import g2.n0;
-import g2.y;
-import j2.f;
-import j2.h;
-import j2.j;
-import j2.l;
+import e2.u;
+import h2.m0;
+import h2.x;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
-import org.telegram.messenger.hs;
+import k2.f;
+import k2.h;
+import k2.j;
+import k2.l;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -36,64 +36,64 @@ public final class FfmpegAudioDecoder extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i3, v vVar, boolean z10) {
+    public FfmpegAudioDecoder(int i7, u uVar, boolean z9) {
         super(new h[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i10;
         byte[] bArr2;
         String str = FfmpegLibrary.a;
-        vVar.s.getClass();
-        String str2 = vVar.s;
+        uVar.s.getClass();
+        String str2 = uVar.s;
         String a10 = FfmpegLibrary.a(str2);
         a10.getClass();
         this.o = a10;
-        List list = vVar.v;
-        char c2 = 65535;
+        List list = uVar.v;
+        char c10 = 65535;
         switch (str2.hashCode()) {
             case -1003765268:
                 if (str2.equals("audio/vorbis")) {
-                    c2 = 0;
+                    c10 = 0;
                     break;
                 }
                 break;
             case -53558318:
                 if (str2.equals("audio/mp4a-latm")) {
-                    c2 = 1;
+                    c10 = 1;
                     break;
                 }
                 break;
             case 1504470054:
                 if (str2.equals("audio/alac")) {
-                    c2 = 2;
+                    c10 = 2;
                     break;
                 }
                 break;
             case 1504619009:
                 if (str2.equals("audio/flac")) {
-                    c2 = 3;
+                    c10 = 3;
                     break;
                 }
                 break;
             case 1504891608:
                 if (str2.equals("audio/opus")) {
-                    c2 = 4;
+                    c10 = 4;
                     break;
                 }
                 break;
         }
         byte[] bArr3 = null;
-        switch (c2) {
+        switch (c10) {
             case 0:
                 byte[] bArr4 = (byte[]) list.get(0);
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & hs.e4);
+                bArr6[1] = (byte) (bArr4.length & qs.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & hs.e4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & qs.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;
@@ -155,67 +155,67 @@ public final class FfmpegAudioDecoder extends l {
                 break;
         }
         this.p = bArr;
-        this.q = z10 ? 4 : 2;
-        this.r = z10 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, vVar.L, vVar.K);
+        this.q = z9 ? 4 : 2;
+        this.r = z9 ? 131070 : 65535;
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z9, uVar.L, uVar.K);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
         }
-        o(i3);
+        o(i7);
     }
 
-    private native int ffmpegDecode(long j10, ByteBuffer byteBuffer, int i3, SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, ByteBuffer byteBuffer2, int i10);
+    private native int ffmpegDecode(long j3, ByteBuffer byteBuffer, int i7, SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, ByteBuffer byteBuffer2, int i10);
 
-    private native int ffmpegGetChannelCount(long j10);
+    private native int ffmpegGetChannelCount(long j3);
 
-    private native int ffmpegGetSampleRate(long j10);
+    private native int ffmpegGetSampleRate(long j3);
 
-    private native long ffmpegInitialize(String str, byte[] bArr, boolean z10, int i3, int i10);
+    private native long ffmpegInitialize(String str, byte[] bArr, boolean z9, int i7, int i10);
 
-    private native void ffmpegRelease(long j10);
+    private native void ffmpegRelease(long j3);
 
-    private native long ffmpegReset(long j10, byte[] bArr);
+    private native long ffmpegReset(long j3, byte[] bArr);
 
-    private ByteBuffer growOutputBuffer(SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, int i3) {
-        this.r = i3;
+    private ByteBuffer growOutputBuffer(SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, int i7) {
+        this.r = i7;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        zb.f(i3 >= byteBuffer.limit());
-        ByteBuffer order = ByteBuffer.allocateDirect(i3).order(ByteOrder.nativeOrder());
+        ia.f(i7 >= byteBuffer.limit());
+        ByteBuffer order = ByteBuffer.allocateDirect(i7).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
         order.put(byteBuffer);
         order.position(position);
-        order.limit(i3);
+        order.limit(i7);
         simpleDecoderOutputBuffer.b = order;
         return order;
     }
 
-    @Override // j2.l
+    @Override // k2.l
     public final h f() {
         return new h(2, FfmpegLibrary.b());
     }
 
-    @Override // j2.l
+    @Override // k2.l
     public final j g() {
         return new SimpleDecoderOutputBuffer(new a(this, 1));
     }
 
-    @Override // j2.e
+    @Override // k2.e
     public final String getName() {
         return "ffmpeg" + FfmpegLibrary.c() + "-" + this.o;
     }
 
-    @Override // j2.l
+    @Override // k2.l
     public final f h(Throwable th2) {
         return new FfmpegDecoderException("Unexpected decode error", th2);
     }
 
-    @Override // j2.l
-    public final f i(h hVar, j jVar, boolean z10) {
+    @Override // k2.l
+    public final f i(h hVar, j jVar, boolean z9) {
         SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) jVar;
-        if (z10) {
+        if (z9) {
             long ffmpegReset = ffmpegReset(this.s, this.p);
             this.s = ffmpegReset;
             if (ffmpegReset == 0) {
@@ -223,17 +223,17 @@ public final class FfmpegAudioDecoder extends l {
             }
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = n0.a;
+        String str = m0.a;
         int limit = byteBuffer.limit();
-        long j10 = hVar.e;
-        int i3 = this.r;
-        simpleDecoderOutputBuffer.timeUs = j10;
+        long j3 = hVar.e;
+        int i7 = this.r;
+        simpleDecoderOutputBuffer.timeUs = j3;
         ByteBuffer byteBuffer2 = simpleDecoderOutputBuffer.b;
-        if (byteBuffer2 == null || byteBuffer2.capacity() < i3) {
-            simpleDecoderOutputBuffer.b = ByteBuffer.allocateDirect(i3).order(ByteOrder.nativeOrder());
+        if (byteBuffer2 == null || byteBuffer2.capacity() < i7) {
+            simpleDecoderOutputBuffer.b = ByteBuffer.allocateDirect(i7).order(ByteOrder.nativeOrder());
         }
         simpleDecoderOutputBuffer.b.position(0);
-        simpleDecoderOutputBuffer.b.limit(i3);
+        simpleDecoderOutputBuffer.b.limit(i7);
         int ffmpegDecode = ffmpegDecode(this.s, byteBuffer, limit, simpleDecoderOutputBuffer, simpleDecoderOutputBuffer.b, this.r);
         if (ffmpegDecode == -2) {
             return new FfmpegDecoderException("Error decoding (see logcat).");
@@ -251,9 +251,9 @@ public final class FfmpegAudioDecoder extends l {
             this.v = ffmpegGetSampleRate(this.s);
             if (this.v == 0 && "alac".equals(this.o)) {
                 this.p.getClass();
-                y yVar = new y(this.p);
-                yVar.N(this.p.length - 4);
-                this.v = yVar.E();
+                x xVar = new x(this.p);
+                xVar.N(this.p.length - 4);
+                this.v = xVar.E();
             }
             this.t = true;
         }
@@ -264,7 +264,7 @@ public final class FfmpegAudioDecoder extends l {
         return null;
     }
 
-    @Override // j2.l, j2.e
+    @Override // k2.l, k2.e
     public final void release() {
         super.release();
         ffmpegRelease(this.s);

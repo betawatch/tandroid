@@ -1,39 +1,49 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q60;
+import android.animation.ValueAnimator;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.xq;
+import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l1 extends q60 {
-    public final /* synthetic */ TLRPC.User k1;
-    public final /* synthetic */ TLRPC.Chat l1;
-    public final /* synthetic */ String m1;
-    public final /* synthetic */ TLRPC.InputPeer n1;
-    public final /* synthetic */ boolean o1;
-    public final /* synthetic */ boolean p1;
-    public final /* synthetic */ Activity q1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 r1;
-    public final /* synthetic */ org.telegram.messenger.c s1;
+public final class l1 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ n1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l1(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, Activity activity, org.telegram.ui.ActionBar.d2 d2Var, org.telegram.messenger.c cVar) {
-        super(context, chat);
-        this.k1 = user;
-        this.l1 = chat2;
-        this.m1 = str;
-        this.n1 = inputPeer;
-        this.o1 = z10;
-        this.p1 = z11;
-        this.q1 = activity;
-        this.r1 = d2Var;
-        this.s1 = cVar;
+    public l1(n1 n1Var, float f10, float f11) {
+        this.c = n1Var;
+        this.a = f10;
+        this.b = f11;
     }
 
-    @Override // org.telegram.ui.Components.q60
-    public final void I0() {
-        n1.b(this.k1, this.l1, this.m1, this.n1, true, this.o1, this.p1, false, this.q1, this.r1, this.s1, false, false, false);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        n1 n1Var = this.c;
+        if (n1Var.P) {
+            n1Var.M = false;
+            n1Var.requestLayout();
+            return false;
+        }
+        ValueAnimator valueAnimator = n1Var.d0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(n1Var.J, 0.0f);
+        n1Var.d0 = ofFloat;
+        ofFloat.addUpdateListener(n1Var.e0);
+        n1Var.d0.setDuration(300L);
+        n1Var.d0.start();
+        float measuredWidth = this.a - ((n1Var.getMeasuredWidth() - (n1Var.getMeasuredWidth() * 0.23f)) / 2.0f);
+        float measuredHeight = this.b - ((n1Var.getMeasuredHeight() - (n1Var.getMeasuredHeight() * 0.23f)) / 2.0f);
+        n1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        n1Var.setTranslationX(measuredWidth);
+        n1Var.setTranslationY(measuredHeight);
+        n1Var.setScaleX(0.23f);
+        n1Var.setScaleY(0.23f);
+        n1Var.animate().setListener(null).cancel();
+        n1Var.animate().setListener(new va(this, 15)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(xq.f).start();
+        return false;
     }
 }

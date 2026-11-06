@@ -1,0 +1,29 @@
+package c8;
+
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class sf implements rf {
+    public final ArrayList a;
+
+    public sf(Context context, qf qfVar) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        qfVar.getClass();
+        arrayList.add(new vf(context, qfVar));
+    }
+
+    @Override // c8.rf
+    public final void a(a8.wa waVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((rf) obj).a(waVar);
+        }
+    }
+}

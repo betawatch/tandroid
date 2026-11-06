@@ -1,48 +1,27 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n6 extends o6 {
-    @Override // com.google.android.gms.internal.cast.o6
-    public final double a(Object obj, long j10) {
-        return Double.longBitsToDouble(this.a.getLong(obj, j10));
+public abstract class n6 {
+    public final Unsafe a;
+
+    public n6(Unsafe unsafe) {
+        this.a = unsafe;
     }
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final float b(Object obj, long j10) {
-        return Float.intBitsToFloat(this.a.getInt(obj, j10));
-    }
+    public abstract double a(Object obj, long j3);
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final void c(Object obj, long j10, boolean z10) {
-        if (p6.g) {
-            p6.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
-        } else {
-            p6.d(obj, j10, z10 ? (byte) 1 : (byte) 0);
-        }
-    }
+    public abstract float b(Object obj, long j3);
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final void d(Object obj, long j10, byte b10) {
-        if (p6.g) {
-            p6.c(obj, j10, b10);
-        } else {
-            p6.d(obj, j10, b10);
-        }
-    }
+    public abstract void c(Object obj, long j3, boolean z9);
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final void e(Object obj, long j10, double d) {
-        this.a.putLong(obj, j10, Double.doubleToLongBits(d));
-    }
+    public abstract void d(Object obj, long j3, byte b10);
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final void f(Object obj, long j10, float f10) {
-        this.a.putInt(obj, j10, Float.floatToIntBits(f10));
-    }
+    public abstract void e(Object obj, long j3, double d);
 
-    @Override // com.google.android.gms.internal.cast.o6
-    public final boolean g(Object obj, long j10) {
-        return p6.g ? p6.m(obj, j10) : p6.n(obj, j10);
-    }
+    public abstract void f(Object obj, long j3, float f10);
+
+    public abstract boolean g(Object obj, long j3);
 }

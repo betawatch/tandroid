@@ -1,15 +1,19 @@
 package h2;
 
-import java.util.ArrayList;
+import android.telephony.TelephonyCallback;
+import android.telephony.TelephonyDisplayInfo;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class t implements Comparable {
-    public long b = -9223372036854775807L;
-    public final ArrayList a = new ArrayList();
+public final class t extends TelephonyCallback implements TelephonyCallback.DisplayInfoListener {
+    public final w a;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.b, ((t) obj).b);
+    public t(w wVar) {
+        this.a = wVar;
+    }
+
+    public final void onDisplayInfoChanged(TelephonyDisplayInfo telephonyDisplayInfo) {
+        int overrideNetworkType = telephonyDisplayInfo.getOverrideNetworkType();
+        this.a.c(overrideNetworkType == 3 || overrideNetworkType == 4 || overrideNetworkType == 5 ? 10 : 5);
     }
 }

@@ -1,36 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.bi;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class l6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ bi a;
-    public final /* synthetic */ u6 b;
-    public final /* synthetic */ m6 c;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class l6 extends FrameLayout {
+    public final /* synthetic */ o6 a;
 
-    public l6(m6 m6Var, bi biVar, u6 u6Var) {
-        this.c = m6Var;
-        this.a = biVar;
-        this.b = u6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(o6 o6Var, Context context) {
+        super(context);
+        this.a = o6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.a(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.a(true);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            org.telegram.messenger.g0.v1(this.b);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        o6 o6Var = this.a;
+        o6Var.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (o6Var.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

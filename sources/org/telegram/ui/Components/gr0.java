@@ -2,29 +2,29 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class gr0 extends ts0 {
-    public final /* synthetic */ ws0 H;
+public final class gr0 extends us0 {
+    public final /* synthetic */ xs0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gr0(ws0 ws0Var, Context context) {
-        super(ws0Var, context, 0, false);
-        this.H = ws0Var;
+    public gr0(xs0 xs0Var, Context context) {
+        super(xs0Var, context, 0, false);
+        this.G = xs0Var;
     }
 
-    @Override // org.telegram.ui.Components.ts0, u4.h0
+    @Override // org.telegram.ui.Components.us0, v4.g0
     public final void f() {
         super.f();
-        ws0 ws0Var = this.H;
-        rr0 g02 = ws0Var.g0(8);
+        xs0 xs0Var = this.G;
+        sr0 g02 = xs0Var.g0(8);
         if (g02 != null && g02.n.getVisibility() == 0) {
-            ws0Var.g0.f();
+            xs0Var.f0.f();
         }
         if (g02 != null) {
             nq0 nq0Var = g02.w;
-            ei.r6 r6Var = this.s;
-            nq0Var.e(r6Var != null && (r6Var.k() || (ws0Var.t0() && this.s.g() > 0)), true);
+            di.q6 q6Var = this.s;
+            nq0Var.e(q6Var != null && (q6Var.k() || (xs0Var.t0() && this.s.g() > 0)), true);
         }
     }
 }

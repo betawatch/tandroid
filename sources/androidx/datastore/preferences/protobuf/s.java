@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class s {
     public static final /* synthetic */ int c = 0;
@@ -19,13 +19,13 @@ public final class s {
     public s() {
     }
 
-    public static void b(m mVar, v1 v1Var, int i3, Object obj) {
+    public static void b(m mVar, v1 v1Var, int i7, Object obj) {
         if (v1Var == v1.d) {
-            mVar.B(i3, 3);
+            mVar.B(i7, 3);
             ((a) obj).b(mVar);
-            mVar.B(i3, 4);
+            mVar.B(i7, 4);
         }
-        mVar.B(i3, v1Var.b);
+        mVar.B(i7, v1Var.b);
         switch (v1Var.ordinal()) {
             case 0:
                 mVar.v(Double.doubleToRawLongBits(((Double) obj).doubleValue()));
@@ -108,8 +108,8 @@ public final class s {
         }
         d1 d1Var = this.a;
         int size = d1Var.a.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            Map.Entry d = d1Var.d(i3);
+        for (int i7 = 0; i7 < size; i7++) {
+            Map.Entry d = d1Var.d(i7);
             if (d.getValue() instanceof z) {
                 z zVar = (z) d.getValue();
                 zVar.getClass();
@@ -175,7 +175,7 @@ public final class s {
         return this.a.hashCode();
     }
 
-    public s(int i3) {
+    public s(int i7) {
         a();
         a();
     }

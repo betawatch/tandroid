@@ -1,34 +1,81 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class nk0 implements bl0 {
-    public final /* synthetic */ dl0 a;
+public final class nk0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
 
-    public nk0(dl0 dl0Var) {
-        this.a = dl0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nk0(Context context, int i7, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i7;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // org.telegram.ui.bl0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        this.a = true;
+        int L = org.telegram.messenger.g0.L(9.0f);
+        int i11 = this.b;
+        int i12 = (i11 - 1) * L;
+        int[] iArr = this.c;
+        float f10 = 1.0f;
+        if ((iArr[0] * i11) + i12 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i13 = 0; i13 < childCount; i13++) {
+                getChildAt(i13).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i13).getLayoutParams()).weight = 1.0f / childCount;
+            }
+        } else if (this.d[0] + i12 <= size) {
+            setWeightSum(1.0f);
+            int i14 = size - i12;
+            int childCount2 = getChildCount();
+            for (int i15 = 0; i15 < childCount2; i15++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i15).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r10.getTag(R.id.width_tag)).intValue() / i14;
+                layoutParams.weight = intValue;
+                f10 -= intValue;
+            }
+            float f11 = f10 / (i11 - 1);
+            if (f11 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i16 = 0; i16 < childCount3; i16++) {
+                    View childAt = getChildAt(i16);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f11;
+                    }
+                }
+            }
+        } else {
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i17 = 0; i17 < childCount4; i17++) {
+                getChildAt(i17).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i17).getLayoutParams()).weight = 0.0f;
+            }
+        }
+        this.a = false;
+        super.onMeasure(i7, i10);
     }
 
-    @Override // org.telegram.ui.bl0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        dl0 dl0Var = this.a;
-        dl0Var.J0 = tL_payments_validateRequestedInfo;
-        dl0Var.H0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.bl0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.bl0
-    public final /* synthetic */ void b() {
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

@@ -1,17 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class yj extends ln {
-    public boolean U0;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 
-    @Override // org.telegram.ui.ActionBar.d2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.U0) {
-            return;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class yj extends er0 {
+    public yj(ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+    }
+
+    @Override // org.telegram.ui.er0
+    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+        if (f10 > 0.0f) {
+            View view = this.e;
+            if (view instanceof org.telegram.ui.Cells.q1) {
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
+                int max = (int) Math.max(f13, f12);
+                int min = (int) Math.min(f14, q1Var.getMeasuredHeight() + f12);
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(f11, max, q1Var.getMeasuredWidth() + f11, min);
+                canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
+                canvas.translate(f11, f12 + q1Var.getPaddingTop());
+                q1Var.Lb = true;
+                q1Var.j1(canvas);
+                if (q1Var.E3() && q1Var.getCurrentMessagesGroup() == null) {
+                    q1Var.x1(1.0f, canvas, false);
+                }
+                q1Var.Lb = false;
+                canvas.restore();
+            }
         }
-        n0();
-        this.U0 = true;
     }
 }

@@ -1,60 +1,49 @@
 package o2;
 
-import d2.v;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
-import java.util.List;
+import android.os.Handler;
+import android.os.Message;
+import h2.m0;
+import java.util.TreeMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class p extends n {
-    public final k4.j j;
-    public final k4.j k;
-    public final long l;
+public final class p implements Handler.Callback {
+    public final h6.m a;
+    public final f b;
+    public p2.c f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public final TreeMap e = new TreeMap();
+    public final Handler d = m0.q(this);
+    public final p3.b c = new p3.b(1);
 
-    public p(j jVar, long j10, long j11, long j12, long j13, long j14, List list, long j15, k4.j jVar2, k4.j jVar3, long j16, long j17) {
-        super(jVar, j10, j11, j12, j14, list, j15, j16, j17);
-        this.j = jVar2;
-        this.k = jVar3;
-        this.l = j13;
+    public p(p2.c cVar, f fVar, h6.m mVar) {
+        this.f = cVar;
+        this.b = fVar;
+        this.a = mVar;
     }
 
-    @Override // o2.s
-    public final j a(m mVar) {
-        k4.j jVar = this.j;
-        if (jVar == null) {
-            return this.a;
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        if (!this.r) {
+            if (message.what != 1) {
+                return false;
+            }
+            n nVar = (n) message.obj;
+            long j3 = nVar.a;
+            long j10 = nVar.b;
+            Long valueOf = Long.valueOf(j10);
+            TreeMap treeMap = this.e;
+            Long l10 = (Long) treeMap.get(valueOf);
+            if (l10 == null) {
+                treeMap.put(Long.valueOf(j10), Long.valueOf(j3));
+                return true;
+            }
+            if (l10.longValue() > j3) {
+                treeMap.put(Long.valueOf(j10), Long.valueOf(j3));
+            }
         }
-        v vVar = mVar.a;
-        return new j(0L, jVar.n(vVar.j, 0L, 0L, vVar.a), -1L);
-    }
-
-    @Override // o2.n
-    public final long d(long j10) {
-        if (this.f != null) {
-            return r0.size();
-        }
-        long j11 = this.l;
-        if (j11 != -1) {
-            return (j11 - this.d) + 1;
-        }
-        if (j10 == -9223372036854775807L) {
-            return -1L;
-        }
-        BigInteger multiply = BigInteger.valueOf(j10).multiply(BigInteger.valueOf(this.b));
-        BigInteger multiply2 = BigInteger.valueOf(this.e).multiply(BigInteger.valueOf(1000000L));
-        RoundingMode roundingMode = RoundingMode.CEILING;
-        int i3 = i9.a.a;
-        return new BigDecimal(multiply).divide(new BigDecimal(multiply2), 0, roundingMode).toBigIntegerExact().longValue();
-    }
-
-    @Override // o2.n
-    public final j h(k kVar, long j10) {
-        long j11 = this.d;
-        List list = this.f;
-        long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a : (j10 - j11) * this.e;
-        v vVar = kVar.a;
-        return new j(0L, this.k.n(vVar.j, j10, j12, vVar.a), -1L);
+        return true;
     }
 }

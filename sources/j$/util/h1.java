@@ -51,9 +51,9 @@ public final class h1 implements p0, LongConsumer, y {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         this.a = true;
-        this.b = j10;
+        this.b = j3;
     }
 
     @Override // java.util.Iterator

@@ -1,81 +1,63 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import org.telegram.ui.l71;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.os.SystemClock;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.ij;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class p5 extends t4 {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ Object V;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p5(boolean z10, SparseIntArray sparseIntArray, int i3) {
-        super(2, z10, false, null);
-        this.U = i3;
-        this.V = sparseIntArray;
-    }
-
-    @Override // org.telegram.ui.ActionBar.t4
-    public int h(int i3) {
-        switch (this.U) {
-            case 0:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.V;
-                int indexOfKey = sparseIntArray.indexOfKey(i3);
-                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : k6.em[i3];
-            case 1:
-                return ((SparseIntArray) this.V).get(i3);
-            default:
-                return super.h(i3);
+public final class p5 implements SensorEventListener {
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        float f10 = sensorEvent.values[0];
+        if (f10 <= 0.0f) {
+            f10 = 0.1f;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.t4
-    public int j(int i3) {
-        switch (this.U) {
-            case 0:
-                return ((SparseIntArray) this.V).get(i3);
-            case 1:
-                return ((SparseIntArray) this.V).get(i3);
-            default:
-                return super.j(i3);
+        if (org.telegram.messenger.t0.x || !org.telegram.messenger.t0.w) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.t4
-    public void p(int i3, int i10, int i11) {
-        switch (this.U) {
-            case 2:
-                if (!((l71) this.V).f2) {
-                    super.p(i3, i10, i11);
-                    break;
-                }
-                break;
-            default:
-                super.p(i3, i10, i11);
-                break;
+        if (f10 > 500.0f) {
+            k6.h = 1.0f;
+        } else {
+            k6.h = ((float) Math.ceil((Math.log(f10) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.t4
-    public void q(int i3, int i10, int i11, int i12, int i13, int i14, boolean z10, boolean z11) {
-        switch (this.U) {
-            case 2:
-                if (!((l71) this.V).f2) {
-                    super.q(i3, i10, i11, i12, i13, i14, z10, z11);
-                    break;
-                }
-                break;
-            default:
-                super.q(i3, i10, i11, i12, i13, i14, z10, z11);
-                break;
+        if (k6.h > k6.q) {
+            if (k6.k) {
+                k6.k = false;
+                org.telegram.messenger.g0.r(k6.m);
+            }
+            if (k6.j) {
+                return;
+            }
+            k6.j = true;
+            org.telegram.messenger.g0.i3(k6.l, Math.abs(k6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+            return;
         }
+        MediaController B = MediaController.B();
+        if (B.I) {
+            if (B.J()) {
+                return;
+            }
+            ij ijVar = B.u0;
+            if (ijVar != null && (ij.S4(ijVar.k) || B.u0.i4())) {
+                return;
+            }
+        }
+        if (k6.j) {
+            k6.j = false;
+            org.telegram.messenger.g0.r(k6.l);
+        }
+        if (k6.k) {
+            return;
+        }
+        k6.k = true;
+        org.telegram.messenger.g0.i3(k6.m, Math.abs(k6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(l71 l71Var, int i3, boolean z10) {
-        super(i3, true, z10, null);
-        this.U = 2;
-        this.V = l71Var;
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i7) {
     }
 }

@@ -1,44 +1,37 @@
 package h2;
 
-import d2.p0;
-import d2.r0;
-import d2.v;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements r0 {
-    public final int a;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+    public final /* synthetic */ Object c;
 
-    public b(int i3) {
-        this.a = i3;
+    public /* synthetic */ b(c cVar, Object obj, int i7) {
+        this.a = i7;
+        this.b = cVar;
+        this.c = obj;
     }
 
-    @Override // d2.r0
-    public final /* synthetic */ v b() {
-        return null;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c cVar = this.b;
+                if (cVar.a == 0) {
+                    cVar.G(this.c);
+                    break;
+                }
+                break;
+            default:
+                c cVar2 = this.b;
+                int i7 = cVar2.a - 1;
+                cVar2.a = i7;
+                if (i7 == 0) {
+                    cVar2.G(this.c);
+                    break;
+                }
+                break;
         }
-        return (obj instanceof b) && this.a == ((b) obj).a;
-    }
-
-    public final int hashCode() {
-        return this.a;
-    }
-
-    public final String toString() {
-        return "Mp4AlternateGroup: " + this.a;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ void a(p0 p0Var) {
     }
 }

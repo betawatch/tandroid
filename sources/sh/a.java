@@ -1,9 +1,45 @@
 package sh;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public interface a {
-    void c(int i3);
+import a8.p0;
+import android.text.TextUtils;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.w7;
+import org.telegram.tgnet.TLRPC;
 
-    void d(float f10);
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class a {
+    public final int a;
+    public final TLRPC.Document b;
+    public final String c;
+    public final ij d;
+    public final String e;
+    public boolean f;
+    public boolean g;
+
+    public a(int i7, ij ijVar, TLRPC.Document document, String str) {
+        this.a = i7;
+        this.d = ijVar;
+        this.b = document;
+        this.c = str;
+        this.e = TextUtils.isEmpty(str) ? w7.r(null, document) : str;
+        a();
+    }
+
+    public final void a() {
+        boolean z9 = false;
+        String str = this.c;
+        boolean B = str != null ? p0.B(str) : false;
+        int i7 = this.a;
+        if (!B) {
+            w7.G(i7);
+            B = w7.I(this.b).exists();
+        }
+        this.f = B;
+        String str2 = this.e;
+        if (!TextUtils.isEmpty(str2) && w7.G(i7).T(str2)) {
+            z9 = true;
+        }
+        this.g = z9;
+    }
 }

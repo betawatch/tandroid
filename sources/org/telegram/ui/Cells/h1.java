@@ -4,17 +4,17 @@ import android.graphics.RectF;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextUtils;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.zi;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class h1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ q1 b;
 
-    public /* synthetic */ h1(q1 q1Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ h1(q1 q1Var, int i7) {
+        this.a = i7;
         this.b = q1Var;
     }
 
@@ -25,25 +25,25 @@ public final class h1 implements Runnable {
             case 0:
                 l1 l1Var = this.b.Ra;
                 if (l1Var != null) {
-                    l1Var.v();
+                    l1Var.u();
                     break;
                 }
                 break;
             default:
                 q1 q1Var = this.b;
                 h1 h1Var = q1Var.vb;
-                zi ziVar = q1Var.P5;
-                if (ziVar != null && (w22 = q1Var.w2(ziVar)) != q1Var.g3) {
+                ij ijVar = q1Var.P5;
+                if (ijVar != null && (w22 = q1Var.w2(ijVar)) != q1Var.g3) {
                     q1Var.g3 = w22;
                     if (w22) {
-                        zi ziVar2 = q1Var.P5;
+                        ij ijVar2 = q1Var.P5;
                         q1Var.P5 = null;
-                        q1Var.u3(ziVar2, q1Var.L, q1Var.G, q1Var.F, q1Var.H, false);
+                        q1Var.v3(ijVar2, q1Var.K, q1Var.F, q1Var.E, q1Var.G, false);
                     } else {
                         org.telegram.messenger.g0.i3(h1Var, 1000L);
                         q1Var.eb = true;
                         int L = q1Var.a7 - org.telegram.messenger.g0.L(91.0f);
-                        q1Var.d3 = new StaticLayout(TextUtils.ellipsize(bd.M0(2131753966, null), org.telegram.ui.ActionBar.k6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.k6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        q1Var.d3 = new StaticLayout(TextUtils.ellipsize(hd.M0(2131753966, null), org.telegram.ui.ActionBar.k6.H2, L, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.k6.H2, L, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
                 if (!q1Var.g3) {

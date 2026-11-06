@@ -20,12 +20,12 @@ public final class o1 extends q1 implements i5 {
     }
 
     @Override // j$.util.stream.q1, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         if (this.a) {
             return;
         }
         LongPredicate longPredicate = null;
-        longPredicate.test(j10);
+        longPredicate.test(j3);
         throw null;
     }
 }

@@ -1,28 +1,28 @@
 package androidx.profileinstaller;
 
-import ai.s1;
 import android.content.Context;
 import android.os.Build;
+import bi.pa;
 import java.util.Collections;
 import java.util.List;
-import nb.a;
-import t4.f;
-import x4.b;
+import u4.e;
+import w7.s;
+import y4.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ProfileInstallerInitializer implements b {
-    @Override // x4.b
+    @Override // y4.b
     public final List a() {
         return Collections.EMPTY_LIST;
     }
 
-    @Override // x4.b
+    @Override // y4.b
     public final Object b(Context context) {
         if (Build.VERSION.SDK_INT < 24) {
-            return new a(24);
+            return new s(25, false);
         }
-        f.a(new s1(this, context.getApplicationContext()));
-        return new a(24);
+        e.a(new pa(this, context.getApplicationContext()));
+        return new s(25, false);
     }
 }

@@ -9,32 +9,32 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import com.google.android.gms.internal.cast.z;
+import com.google.android.gms.internal.cast.y;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
     public int a = 0;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i3, int i10, Intent intent) {
-        super.onActivityResult(i3, i10, intent);
-        if (i3 == 1) {
+    public final void onActivityResult(int i7, int i10, Intent intent) {
+        super.onActivityResult(i7, i10, intent);
+        if (i7 == 1) {
             boolean booleanExtra = getIntent().getBooleanExtra("notify_manager", true);
             this.a = 0;
             setResult(i10, intent);
             if (booleanExtra) {
                 com.google.android.gms.common.api.internal.g e10 = com.google.android.gms.common.api.internal.g.e(this);
                 if (i10 == -1) {
-                    z zVar = e10.y;
-                    zVar.sendMessage(zVar.obtainMessage(3));
+                    y yVar = e10.y;
+                    yVar.sendMessage(yVar.obtainMessage(3));
                 } else if (i10 == 0) {
-                    e10.h(new m6.a(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
+                    e10.h(new n6.a(13, null, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
-        } else if (i3 == 2) {
+        } else if (i7 == 2) {
             this.a = 0;
             setResult(i10, intent);
         }
@@ -72,8 +72,8 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             return;
         }
         if (pendingIntent == null) {
-            p6.m.g(num);
-            m6.d.e.e(this, num.intValue(), this);
+            q6.m.g(num);
+            n6.d.e.e(this, num.intValue(), this);
             this.a = 1;
             return;
         }
@@ -85,14 +85,14 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             } catch (ActivityNotFoundException e10) {
                 e = e10;
                 if (extras.getBoolean("notify_manager", true)) {
-                    com.google.android.gms.common.api.internal.g.e(this).h(new m6.a(22, null, null), getIntent().getIntExtra("failing_client_id", -1));
+                    com.google.android.gms.common.api.internal.g.e(this).h(new n6.a(22, null, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
                     String obj = pendingIntent.toString();
-                    String r5 = f1.r("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
+                    String n10 = f1.n("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
                     if (Build.FINGERPRINT.contains("generic")) {
-                        r5 = r5.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                        n10 = n10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }
-                    Log.e("GoogleApiActivity", r5, e);
+                    Log.e("GoogleApiActivity", n10, e);
                 }
                 googleApiActivity.a = 1;
                 finish();

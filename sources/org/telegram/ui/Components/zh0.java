@@ -1,24 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zh0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ li0 b;
+public final class zh0 extends rg.a {
+    public final ch.o0 c;
 
-    public zh0(li0 li0Var, float f10) {
-        this.b = li0Var;
-        this.a = f10;
+    public zh0(int i7, ch.o0 o0Var) {
+        super(i7, false);
+        this.c = o0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        li0 li0Var = this.b;
-        li0Var.p0 = floatValue;
-        li0Var.o0 = (1.0f - li0Var.p0) * this.a;
-        li0Var.invalidate();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && zh0.class == obj.getClass()) {
+            zh0 zh0Var = (zh0) obj;
+            int i7 = this.a;
+            int i10 = zh0Var.a;
+            if (i7 == i10 && (i7 == 0 || i7 == 3)) {
+                ch.o0 o0Var = this.c;
+                return o0Var != null && o0Var.equals(zh0Var.c);
+            }
+            if (i7 == i10) {
+                return true;
+            }
+        }
+        return false;
     }
 }

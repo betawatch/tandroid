@@ -1,31 +1,119 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yg implements u10 {
+public final /* synthetic */ class yg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
-    public final /* synthetic */ TLRPC.StickerSet c;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ yg(li liVar, TLRPC.StickerSet stickerSet, int i3) {
-        this.a = i3;
-        this.b = liVar;
-        this.c = stickerSet;
+    public /* synthetic */ yg(ui uiVar, long j3, int i7) {
+        this.a = i7;
+        this.b = uiVar;
+        this.c = j3;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        int i3 = this.a;
-        li liVar = this.b;
-        liVar.getClass();
-        switch (i3) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        int i10 = this.a;
+        ui uiVar = this.b;
+        long j3 = this.c;
+        int i11 = 0;
+        switch (i10) {
             case 0:
-                liVar.f1(this.c.id, false);
+                a0.h hVar = uiVar.w1;
+                ArrayList arrayList = (ArrayList) hVar.f(j3);
+                if (arrayList != null) {
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        TLRPC.Message message = (TLRPC.Message) arrayList.get(i12);
+                        int i13 = uiVar.currentAccount;
+                        xr a10 = xr.a(j3, ij.c2(i13, message, t3.b0(i13, j3), false));
+                        uiVar.x1.remove(a10);
+                        uiVar.getNotificationCenter().k(69, null, a10);
+                    }
+                }
+                hVar.l(j3);
+                break;
+            case 1:
+                uiVar.p1.l(j3);
+                break;
+            case 2:
+                final long j10 = this.c;
+                final ui uiVar2 = this.b;
+                uiVar2.getClass();
+                double d = 0.0d;
+                try {
+                    SQLiteDatabase sQLiteDatabase = uiVar2.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT MAX(mid), MAX(date) FROM messages_v2 WHERE uid = " + j10 + " AND out = 1", new Object[0]);
+                    if (queryFinalized.next()) {
+                        i11 = queryFinalized.intValue(0);
+                        i7 = queryFinalized.intValue(1);
+                    } else {
+                        i7 = 0;
+                    }
+                    queryFinalized.dispose();
+                    if (i11 > 0 && uiVar2.getUserConfig().D != 0) {
+                        d = i7 - uiVar2.getUserConfig().D;
+                    }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                }
+                final double d2 = d;
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.xg
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ui uiVar3;
+                        long j11;
+                        TLRPC.TL_topPeer tL_topPeer;
+                        int i14 = 0;
+                        while (true) {
+                            uiVar3 = ui.this;
+                            int size = uiVar3.i1.size();
+                            j11 = j10;
+                            if (i14 >= size) {
+                                tL_topPeer = null;
+                                break;
+                            }
+                            tL_topPeer = (TLRPC.TL_topPeer) uiVar3.i1.get(i14);
+                            if (tL_topPeer.peer.user_id == j11) {
+                                break;
+                            } else {
+                                i14++;
+                            }
+                        }
+                        if (tL_topPeer == null) {
+                            tL_topPeer = new TLRPC.TL_topPeer();
+                            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                            tL_topPeer.peer = tL_peerUser;
+                            tL_peerUser.user_id = j11;
+                            uiVar3.i1.add(tL_topPeer);
+                        }
+                        tL_topPeer.rating = Math.exp(d2 / uiVar3.getMessagesController().Z2) + tL_topPeer.rating;
+                        Collections.sort(uiVar3.i1, new jg.x(22));
+                        uiVar3.getMessagesStorage().a.c(new ah(uiVar3, j11, 0, tL_topPeer.rating));
+                        uiVar3.getNotificationCenter().k(qs.S0, new Object[0]);
+                    }
+                });
                 break;
             default:
-                liVar.g1(this.c.id, false);
+                ui uiVar3 = this.b;
+                ArrayList[] arrayListArr = uiVar3.u0;
+                arrayListArr[0].remove(Long.valueOf(j3));
+                uiVar3.v0[0].remove(Long.valueOf(j3));
+                long[] jArr = uiVar3.p0;
+                ArrayList[] arrayListArr2 = uiVar3.s0;
+                jArr[0] = uiVar3.o(arrayListArr2[0], false);
+                uiVar3.getNotificationCenter().k(62, new Object[0]);
+                uiVar3.G1(false, arrayListArr2[0], arrayListArr[0], uiVar3.q0[0], jArr[0], uiVar3.r0);
                 break;
         }
     }

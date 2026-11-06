@@ -5,16 +5,16 @@ import android.os.Message;
 import android.util.Log;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c0 extends com.google.android.gms.internal.cast.z {
+public final class c0 extends com.google.android.gms.internal.cast.y {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c0(Object obj, Looper looper, int i3) {
+    public /* synthetic */ c0(Object obj, Looper looper, int i7) {
         super(looper, 2);
-        this.a = i3;
+        this.a = i7;
         this.b = obj;
     }
 
@@ -23,26 +23,26 @@ public final class c0 extends com.google.android.gms.internal.cast.z {
         switch (this.a) {
             case 0:
                 d0 d0Var = (d0) this.b;
-                int i3 = message.what;
-                if (i3 == 1) {
+                int i7 = message.what;
+                if (i7 == 1) {
                     ReentrantLock reentrantLock = d0Var.b;
                     reentrantLock.lock();
                     try {
-                        if (d0Var.i()) {
-                            d0Var.m();
+                        if (d0Var.h()) {
+                            d0Var.n();
                         }
                         return;
                     } finally {
                         reentrantLock.unlock();
                     }
                 }
-                if (i3 == 2) {
-                    d0Var.k();
+                if (i7 == 2) {
+                    d0Var.l();
                     return;
                 }
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i3).length() + 20);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i7).length() + 20);
                 sb2.append("Unknown message id: ");
-                sb2.append(i3);
+                sb2.append(i7);
                 Log.w("GoogleApiClientImpl", sb2.toString());
                 return;
             default:

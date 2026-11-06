@@ -1,39 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hm b;
-    public final /* synthetic */ TLRPC.Chat c;
+public abstract class sl extends org.telegram.ui.Components.pj0 implements di.f7 {
+    public final /* synthetic */ an e3;
 
-    public /* synthetic */ sl(hm hmVar, TLRPC.Chat chat, int i3) {
-        this.a = i3;
-        this.b = hmVar;
-        this.c = chat;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sl(an anVar, Context context, ym ymVar) {
+        super(context, ymVar);
+        this.e3 = anVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        TLRPC.Chat chat = this.c;
-        hm hmVar = this.b;
-        switch (i3) {
-            case 0:
-                hmVar.m(chat);
-                break;
-            case 1:
-                hmVar.a(chat);
-                break;
-            case 2:
-                hmVar.a.Ka(chat);
-                break;
-            default:
-                org.telegram.ui.Components.fc.a0(hmVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.bd.a0(null, null, 2131742846, chat == null ? "" : chat.title)).k(true);
-                break;
-        }
+    @Override // di.f7
+    public final void a(int[] iArr) {
+        an anVar = this.e3;
+        iArr[0] = ((int) anVar.L9) - org.telegram.messenger.g0.L(4.0f);
+        iArr[1] = org.telegram.messenger.k5.B(3.0f, anVar.z0.getPaddingBottom(), anVar.z0.getMeasuredHeight());
     }
 }

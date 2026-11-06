@@ -1,38 +1,40 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b61 implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l71 b;
+public final class b61 extends org.telegram.ui.Cells.i0 implements org.telegram.ui.ActionBar.a6 {
+    public int e;
+    public final /* synthetic */ f61 f;
 
-    public /* synthetic */ b61(l71 l71Var, int i3) {
-        this.a = i3;
-        this.b = l71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b61(f61 f61Var, Context context) {
+        super(context);
+        this.f = f61Var;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                l71 l71Var = this.b;
-                l71Var.getClass();
-                l71Var.p1 = ((Float) obj).floatValue();
-                l71Var.z0.invalidate();
-                l71Var.a1();
-                break;
-            case 1:
-                l71 l71Var2 = this.b;
-                l71Var2.X1 = (TL_stories.TL_premium_boostsStatus) obj;
-                l71Var2.W1 = true;
-                l71Var2.m1(true);
-                l71Var2.V1 = false;
-                break;
-            default:
-                l71.Z(this.b, (org.telegram.messenger.e3) obj);
-                break;
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Jj));
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        org.telegram.ui.Cells.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return;
+        }
+        try {
+            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Jj, false);
+            if (x02 != this.e) {
+                this.e = x02;
+                h0Var.setOuterColor(x02);
+                h0Var.invalidate();
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

@@ -1,24 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public enum l7 implements z {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
+public final class l7 {
+    public final m9 a;
+    public final k7 b;
+    public final f7 c;
 
-    public final int a;
-
-    l7(int i3) {
-        this.a = i3;
-    }
-
-    @Override // z7.z
-    public final int zza() {
-        return this.a;
+    public /* synthetic */ l7(y7.d6 d6Var) {
+        this.a = (m9) d6Var.a;
+        this.b = (k7) d6Var.b;
+        this.c = (f7) d6Var.c;
     }
 }

@@ -6,7 +6,7 @@ import android.text.TextPaint;
 import android.text.style.ImageSpan;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f6 extends ImageSpan {
     public Paint.FontMetricsInt a;
@@ -19,14 +19,14 @@ public final class f6 extends ImageSpan {
     public float n;
     public float r;
 
-    public static void a(Paint.FontMetricsInt fontMetricsInt, int i3) {
+    public static void a(Paint.FontMetricsInt fontMetricsInt, int i7) {
         int i10 = fontMetricsInt.descent;
         int i11 = fontMetricsInt.ascent;
         int i12 = i10 - i11;
-        if (i3 <= i12) {
+        if (i7 <= i12) {
             return;
         }
-        int i13 = i3 - i12;
+        int i13 = i7 - i12;
         int i14 = (i13 + 1) / 2;
         int i15 = i11 - i14;
         fontMetricsInt.ascent = i15;
@@ -36,17 +36,17 @@ public final class f6 extends ImageSpan {
     }
 
     @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        boolean z10;
-        this.n = a1.g.e(this.b, this.c, 2.0f, f10);
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        boolean z9;
+        this.n = a8.p0.f(this.b, this.c, 2.0f, f10);
         this.r = ((i13 - i11) / 2.0f) + i11;
-        boolean z11 = true;
+        boolean z10 = true;
         this.h = true;
         if (paint.getAlpha() == 255 || !i6.n) {
-            z10 = false;
+            z9 = false;
         } else {
             getDrawable().setAlpha(paint.getAlpha());
-            z10 = true;
+            z9 = true;
         }
         float f11 = i6.m;
         int i14 = this.c;
@@ -55,14 +55,14 @@ public final class f6 extends ImageSpan {
             canvas.save();
             canvas.translate(0.0f, f12);
         } else {
-            z11 = false;
+            z10 = false;
         }
-        super.draw(canvas, charSequence, i3, i10, f10, i11, i12, i13, paint);
-        if (z11) {
+        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
+        if (z10) {
             canvas.restore();
         }
-        if (z10) {
-            getDrawable().setAlpha(hs.e4);
+        if (z9) {
+            getDrawable().setAlpha(qs.e4);
         }
     }
 
@@ -80,14 +80,14 @@ public final class f6 extends ImageSpan {
     }
 
     @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
         Paint.FontMetricsInt fontMetricsInt2 = fontMetricsInt;
-        boolean z10 = this.e && fontMetricsInt2 != null;
-        int i11 = z10 ? fontMetricsInt2.top : 0;
-        int i12 = z10 ? fontMetricsInt2.ascent : 0;
-        int i13 = z10 ? fontMetricsInt2.descent : 0;
-        int i14 = z10 ? fontMetricsInt2.bottom : 0;
-        int i15 = z10 ? fontMetricsInt2.leading : 0;
+        boolean z9 = this.e && fontMetricsInt2 != null;
+        int i11 = z9 ? fontMetricsInt2.top : 0;
+        int i12 = z9 ? fontMetricsInt2.ascent : 0;
+        int i13 = z9 ? fontMetricsInt2.descent : 0;
+        int i14 = z9 ? fontMetricsInt2.bottom : 0;
+        int i15 = z9 ? fontMetricsInt2.leading : 0;
         if (fontMetricsInt2 == null) {
             fontMetricsInt2 = new Paint.FontMetricsInt();
         }
@@ -102,7 +102,7 @@ public final class f6 extends ImageSpan {
             if (getDrawable() != null) {
                 getDrawable().setBounds(0, 0, i16, i16);
             }
-            if (z10) {
+            if (z9) {
                 fontMetricsInt3.top = i11;
                 fontMetricsInt3.ascent = i12;
                 fontMetricsInt3.descent = i13;
@@ -112,7 +112,7 @@ public final class f6 extends ImageSpan {
             }
             return i16;
         }
-        int size = super.getSize(paint, charSequence, i3, i10, fontMetricsInt3);
+        int size = super.getSize(paint, charSequence, i7, i10, fontMetricsInt3);
         int L = g0.L(8.0f);
         int L2 = g0.L(10.0f);
         int i17 = (-L2) - L;
@@ -122,7 +122,7 @@ public final class f6 extends ImageSpan {
         fontMetricsInt3.ascent = i17;
         fontMetricsInt3.leading = 0;
         fontMetricsInt3.descent = i18;
-        if (z10) {
+        if (z9) {
             fontMetricsInt3.top = i11;
             fontMetricsInt3.ascent = i12;
             fontMetricsInt3.descent = i13;

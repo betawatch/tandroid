@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class ActionStrip {
     private final List<Action> mActions;
@@ -28,11 +28,11 @@ public final class ActionStrip {
         return list != null ? list : Collections.EMPTY_LIST;
     }
 
-    public Action getFirstActionOfType(int i3) {
+    public Action getFirstActionOfType(int i7) {
         for (Action action : this.mActions) {
             if (action instanceof Action) {
                 Action action2 = action;
-                if (action2.getType() == i3) {
+                if (action2.getType() == i7) {
                     return action2;
                 }
             }

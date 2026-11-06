@@ -3,7 +3,7 @@ package androidx.biometric;
 import android.content.DialogInterface;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class y implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -14,7 +14,7 @@ public final class y implements DialogInterface.OnClickListener {
     }
 
     @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i3) {
+    public final void onClick(DialogInterface dialogInterface, int i7) {
         switch (this.a) {
             case 0:
                 WeakReference weakReference = (WeakReference) this.b;
@@ -24,7 +24,7 @@ public final class y implements DialogInterface.OnClickListener {
                 }
                 break;
             default:
-                ((g0) this.b).D0.g(true);
+                ((g0) this.b).C0.g(true);
                 break;
         }
     }

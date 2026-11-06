@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.util.StateSet;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class mp extends h6 {
+public final class mp extends j6 {
     public final Rect s;
     public Drawable w;
     public boolean x;
@@ -24,7 +24,7 @@ public final class mp extends h6 {
         return this.s;
     }
 
-    @Override // org.telegram.ui.Components.h6, android.view.View
+    @Override // org.telegram.ui.Components.j6, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.w != null) {
             Rect bounds = getDrawable().getBounds();
@@ -36,10 +36,10 @@ public final class mp extends h6 {
             } else if (getDrawable().b == 5) {
                 rect.left = rect.right - ceil;
             } else if (getDrawable().b == 17) {
-                int i3 = (rect.left + rect.right) / 2;
+                int i7 = (rect.left + rect.right) / 2;
                 int i10 = ceil / 2;
-                rect.left = i3 - i10;
-                rect.right = i3 + i10;
+                rect.left = i7 - i10;
+                rect.right = i7 + i10;
             }
             rect.left -= getPaddingLeft();
             rect.top -= getPaddingTop();

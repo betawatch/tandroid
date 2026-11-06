@@ -2,14 +2,14 @@ package org.telegram.ui.Components;
 
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class vq implements Drawable.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ wq b;
 
-    public /* synthetic */ vq(wq wqVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ vq(wq wqVar, int i7) {
+        this.a = i7;
         this.b = wqVar;
     }
 
@@ -34,19 +34,19 @@ public final class vq implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
         switch (this.a) {
             case 0:
                 wq wqVar = this.b;
                 if (wqVar.c < 1.0f) {
-                    wqVar.scheduleSelf(runnable, j10);
+                    wqVar.scheduleSelf(runnable, j3);
                     break;
                 }
                 break;
             default:
                 wq wqVar2 = this.b;
                 if (wqVar2.c > 0.0f) {
-                    wqVar2.scheduleSelf(runnable, j10);
+                    wqVar2.scheduleSelf(runnable, j3);
                     break;
                 }
                 break;

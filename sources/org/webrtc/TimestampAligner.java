@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class TimestampAligner {
     private volatile long nativeTimestampAligner = nativeCreateTimestampAligner();
@@ -17,11 +17,11 @@ public class TimestampAligner {
 
     private static native long nativeCreateTimestampAligner();
 
-    private static native void nativeReleaseTimestampAligner(long j10);
+    private static native void nativeReleaseTimestampAligner(long j3);
 
     private static native long nativeRtcTimeNanos();
 
-    private static native long nativeTranslateTimestamp(long j10, long j11);
+    private static native long nativeTranslateTimestamp(long j3, long j10);
 
     public void dispose() {
         checkNativeAlignerExists();
@@ -29,8 +29,8 @@ public class TimestampAligner {
         this.nativeTimestampAligner = 0L;
     }
 
-    public long translateTimestamp(long j10) {
+    public long translateTimestamp(long j3) {
         checkNativeAlignerExists();
-        return nativeTranslateTimestamp(this.nativeTimestampAligner, j10);
+        return nativeTranslateTimestamp(this.nativeTimestampAligner, j3);
     }
 }

@@ -1,79 +1,24 @@
 package p4;
 
-import android.media.Rating;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.os.Bundle;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class x implements Parcelable {
-    public static final Parcelable.Creator<x> CREATOR = new n8.g(15);
-    public final int a;
-    public final float b;
-    public Rating c;
+public class x {
+    public static final Object b = new Object();
+    public static final HashMap c = new HashMap();
+    public final d0 a;
 
-    public x(int i3, float f10) {
-        this.a = i3;
-        this.b = f10;
-    }
-
-    public static x c(float f10) {
-        if (f10 >= 0.0f && f10 <= 100.0f) {
-            return new x(6, f10);
-        }
-        g2.a.c("Rating", "Invalid percentage-based rating value");
-        return null;
-    }
-
-    public static x d(float f10, int i3) {
-        float f11;
-        if (i3 == 3) {
-            f11 = 3.0f;
-        } else if (i3 == 4) {
-            f11 = 4.0f;
-        } else {
-            if (i3 != 5) {
-                g2.a.c("Rating", "Invalid rating style (" + i3 + ") for a star rating");
-                return null;
+    public x(Context context, String str, e2.c1 c1Var, h9.i0 i0Var, h9.i0 i0Var2, h9.i0 i0Var3, pb.b bVar, Bundle bundle, Bundle bundle2, h2.d dVar, boolean z9, boolean z10) {
+        synchronized (b) {
+            HashMap hashMap = c;
+            if (hashMap.containsKey(str)) {
+                throw new IllegalStateException("Session ID must be unique. ID=" + str);
             }
-            f11 = 5.0f;
+            hashMap.put(str, this);
         }
-        if (f10 >= 0.0f && f10 <= f11) {
-            return new x(i3, f10);
-        }
-        g2.a.c("Rating", "Trying to set out of range star-based rating");
-        return null;
-    }
-
-    public final float a() {
-        int i3 = this.a;
-        if ((i3 == 3 || i3 == 4 || i3 == 5) && b()) {
-            return this.b;
-        }
-        return -1.0f;
-    }
-
-    public final boolean b() {
-        return this.b >= 0.0f;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return this.a;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("Rating:style=");
-        sb2.append(this.a);
-        sb2.append(" rating=");
-        float f10 = this.b;
-        sb2.append(f10 < 0.0f ? "unrated" : String.valueOf(f10));
-        return sb2.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        parcel.writeInt(this.a);
-        parcel.writeFloat(this.b);
+        this.a = new d0(this, context, str, c1Var, i0Var, i0Var2, i0Var3, bVar, bundle, bundle2, dVar, z9, z10);
     }
 }

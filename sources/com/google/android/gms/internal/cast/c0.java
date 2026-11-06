@@ -1,53 +1,139 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.CopyOnWriteArraySet;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c0 implements b0 {
-    public final /* synthetic */ int a;
-    public Object b;
-    public volatile Object c;
+public abstract class c0 extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    public /* synthetic */ c0(int i3) {
-        this.a = i3;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                Object obj = (b0) this.c;
-                if (obj == y.b) {
-                    obj = a1.g.q("<supplier that returned ", String.valueOf(this.b), ">");
-                }
-                return a1.g.q("Suppliers.memoize(", String.valueOf(obj), ")");
-            default:
-                return super.toString();
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // com.google.android.gms.internal.cast.b0
-    public Object zza() {
-        b0 b0Var = (b0) this.c;
-        y yVar = y.b;
-        if (b0Var != yVar) {
-            synchronized (this) {
-                try {
-                    if (((b0) this.c) != yVar) {
-                        Object zza = ((b0) this.c).zza();
-                        this.b = zza;
-                        this.c = yVar;
-                        return zza;
-                    }
-                } finally {
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract int f(Object[] objArr);
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public int i() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int j() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Object[] k() {
+        return null;
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] k10 = k();
+            if (k10 == null) {
+                if (length != 0) {
+                    objArr = Arrays.copyOf(objArr, 0);
                 }
+                objArr = Arrays.copyOf(objArr, size);
+            } else {
+                return Arrays.copyOfRange(k10, j(), i(), objArr.getClass());
             }
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        return this.b;
-    }
-
-    public c0() {
-        this.a = 1;
-        this.b = new CopyOnWriteArraySet();
+        f(objArr);
+        return objArr;
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.ContentInfo;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e implements d, f {
     public final /* synthetic */ int a = 0;
@@ -35,8 +35,8 @@ public final class e implements d, f {
     }
 
     @Override // r0.d
-    public void c(int i3) {
-        this.d = i3;
+    public void c(int i7) {
+        this.d = i7;
     }
 
     @Override // r0.f
@@ -67,8 +67,8 @@ public final class e implements d, f {
                 StringBuilder sb2 = new StringBuilder("ContentInfoCompat{clip=");
                 sb2.append(this.b.getDescription());
                 sb2.append(", source=");
-                int i3 = this.c;
-                sb2.append(i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? i3 != 5 ? String.valueOf(i3) : "SOURCE_PROCESS_TEXT" : "SOURCE_AUTOFILL" : "SOURCE_DRAG_AND_DROP" : "SOURCE_INPUT_METHOD" : "SOURCE_CLIPBOARD" : "SOURCE_APP");
+                int i7 = this.c;
+                sb2.append(i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? i7 != 5 ? String.valueOf(i7) : "SOURCE_PROCESS_TEXT" : "SOURCE_AUTOFILL" : "SOURCE_DRAG_AND_DROP" : "SOURCE_INPUT_METHOD" : "SOURCE_CLIPBOARD" : "SOURCE_APP");
                 sb2.append(", flags=");
                 int i10 = this.d;
                 sb2.append((i10 & 1) != 0 ? "FLAG_CONVERT_TO_PLAIN_TEXT" : String.valueOf(i10));
@@ -78,7 +78,7 @@ public final class e implements d, f {
                     str = ", hasLinkUri(" + uri.toString().length() + ")";
                 }
                 sb2.append(str);
-                return a1.g.s(sb2, this.f != null ? ", hasExtras" : "", "}");
+                return a8.p0.s(sb2, this.f != null ? ", hasExtras" : "", "}");
             default:
                 return super.toString();
         }
@@ -88,16 +88,16 @@ public final class e implements d, f {
         ClipData clipData = eVar.b;
         clipData.getClass();
         this.b = clipData;
-        int i3 = eVar.c;
-        if (i3 < 0) {
+        int i7 = eVar.c;
+        if (i7 < 0) {
             Locale locale = Locale.US;
             throw new IllegalArgumentException("source is out of range of [0, 5] (too low)");
         }
-        if (i3 > 5) {
+        if (i7 > 5) {
             Locale locale2 = Locale.US;
             throw new IllegalArgumentException("source is out of range of [0, 5] (too high)");
         }
-        this.c = i3;
+        this.c = i7;
         int i10 = eVar.d;
         if ((i10 & 1) == i10) {
             this.d = i10;

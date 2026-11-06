@@ -1,31 +1,29 @@
 package w7;
 
-import b8.y;
+import a8.i0;
+import c8.ed;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import x7.o5;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends y implements ListIterator {
+public final class b extends i0 implements ListIterator {
     public final int b;
     public int c;
     public final d d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i3) {
+    public b(d dVar, int i7) {
         super(7);
         int size = dVar.size();
-        if (i3 < 0 || i3 > size) {
-            throw new IndexOutOfBoundsException(o5.c(i3, size, "index"));
-        }
+        ed.b(i7, size);
         this.b = size;
-        this.c = i3;
+        this.c = i7;
         this.d = dVar;
     }
 
-    public final Object a(int i3) {
-        return this.d.get(i3);
+    public final Object a(int i7) {
+        return this.d.get(i7);
     }
 
     @Override // java.util.ListIterator
@@ -48,9 +46,9 @@ public final class b extends y implements ListIterator {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        int i3 = this.c;
-        this.c = i3 + 1;
-        return a(i3);
+        int i7 = this.c;
+        this.c = i7 + 1;
+        return a(i7);
     }
 
     @Override // java.util.ListIterator
@@ -63,9 +61,9 @@ public final class b extends y implements ListIterator {
         if (!hasPrevious()) {
             throw new NoSuchElementException();
         }
-        int i3 = this.c - 1;
-        this.c = i3;
-        return a(i3);
+        int i7 = this.c - 1;
+        this.c = i7;
+        return a(i7);
     }
 
     @Override // java.util.ListIterator

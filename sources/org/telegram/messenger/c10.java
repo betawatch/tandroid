@@ -1,74 +1,90 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d10 b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ a10 d;
-    public final /* synthetic */ TLRPC.TL_error e;
+public final class c10 extends TLObject {
+    public TLRPC.TL_textWithEntities a;
+    public ArrayList b = new ArrayList();
+    public TLRPC.TL_textWithEntities c;
 
-    public /* synthetic */ c10(d10 d10Var, a10 a10Var, TLObject tLObject, TLRPC.TL_error tL_error, int i3) {
-        this.a = i3;
-        this.b = d10Var;
-        this.d = a10Var;
-        this.c = tLObject;
-        this.e = tL_error;
+    public static c10 a(TLRPC.TL_messageMediaPoll tL_messageMediaPoll) {
+        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+        c10 c10Var = new c10();
+        c10Var.a = poll.question;
+        for (int i7 = 0; i7 < poll.answers.size(); i7++) {
+            TLRPC.PollAnswer pollAnswer = poll.answers.get(i7);
+            TLRPC.TL_pollAnswer tL_pollAnswer = new TLRPC.TL_pollAnswer();
+            tL_pollAnswer.text = pollAnswer.text;
+            tL_pollAnswer.option = pollAnswer.option;
+            c10Var.b.add(tL_pollAnswer);
+        }
+        TLRPC.PollResults pollResults = tL_messageMediaPoll.results;
+        if (pollResults != null && !TextUtils.isEmpty(pollResults.solution)) {
+            TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+            c10Var.c = tL_textWithEntities;
+            TLRPC.PollResults pollResults2 = tL_messageMediaPoll.results;
+            tL_textWithEntities.text = pollResults2.solution;
+            tL_textWithEntities.entities = pollResults2.solution_entities;
+        }
+        return c10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        boolean z11;
-        switch (this.a) {
-            case 0:
-                e10 e10Var = this.b.i;
-                if ((this.c instanceof TLRPC.TL_boolTrue) && this.e == null) {
-                    z10 = true;
-                } else {
-                    e10Var.getClass();
-                    z10 = false;
-                }
-                this.d.a(Boolean.valueOf(z10));
-                e10Var.getClass();
-                break;
-            case 1:
-                e10 e10Var2 = this.b.i;
-                TLObject tLObject = this.c;
-                boolean z12 = tLObject instanceof TLRPC.Updates;
-                boolean z13 = false;
-                if (z12) {
-                    hp.s1(e10Var2.a).O3((TLRPC.Updates) tLObject, false);
-                }
-                lg.f.a(e10Var2.a).b();
-                if (z12 && this.e == null) {
-                    z13 = true;
-                }
-                this.d.a(Boolean.valueOf(z13));
-                break;
-            default:
-                e10 e10Var3 = this.b.i;
-                if ((this.c instanceof TLRPC.TL_boolTrue) && this.e == null) {
-                    z11 = true;
-                } else {
-                    e10Var3.getClass();
-                    z11 = false;
-                }
-                this.d.a(Boolean.valueOf(z11));
-                e10Var3.getClass();
-                break;
+    public static boolean b(ij ijVar, c10 c10Var) {
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll;
+        TLRPC.Poll poll;
+        TLRPC.MessageMedia n1 = ij.n1(ijVar);
+        if (!(n1 instanceof TLRPC.TL_messageMediaPoll) || (poll = (tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) n1).poll) == null) {
+            return true;
+        }
+        if ((poll.question != null) != (c10Var.a != null)) {
+            return false;
+        }
+        TLRPC.PollResults pollResults = tL_messageMediaPoll.results;
+        return (pollResults != null && pollResults.solution != null) == (c10Var.c != null) && poll.answers.size() == c10Var.b.size();
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        int readInt32 = inputSerializedData.readInt32(z9);
+        if ((readInt32 & 1) != 0) {
+            this.a = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        }
+        if ((readInt32 & 2) != 0) {
+            this.b = Vector.deserialize(inputSerializedData, new ch(12), z9);
+        }
+        if ((readInt32 & 4) != 0) {
+            this.c = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
     }
 
-    public /* synthetic */ c10(d10 d10Var, TLObject tLObject, a10 a10Var, TLRPC.TL_error tL_error) {
-        this.a = 1;
-        this.b = d10Var;
-        this.c = tLObject;
-        this.d = a10Var;
-        this.e = tL_error;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(613759672);
+        int i7 = this.a != null ? 1 : 0;
+        ArrayList arrayList = this.b;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            i7 |= 2;
+        }
+        if (this.c != null) {
+            i7 |= 4;
+        }
+        outputSerializedData.writeInt32(i7);
+        if ((i7 & 1) != 0) {
+            this.a.serializeToStream(outputSerializedData);
+        }
+        if ((i7 & 2) != 0) {
+            Vector.serialize(outputSerializedData, this.b);
+        }
+        if ((i7 & 4) != 0) {
+            this.c.serializeToStream(outputSerializedData);
+        }
     }
 }

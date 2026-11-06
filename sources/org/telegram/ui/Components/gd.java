@@ -1,58 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.view.View;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gd implements Runnable {
+public final /* synthetic */ class gd implements View.OnLongClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ gd(ChatActivityEnterView chatActivityEnterView, boolean z10, int i3) {
-        this.a = i3;
+    public /* synthetic */ gd(ChatActivityEnterView chatActivityEnterView, int i7) {
+        this.a = i7;
         this.b = chatActivityEnterView;
-        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        se seVar;
-        int i3 = this.a;
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        int i7 = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
-        boolean z10 = this.c;
-        switch (i3) {
+        switch (i7) {
             case 0:
-                if (!z10) {
-                    chatActivityEnterView.u1.setVisibility(8);
-                    break;
-                } else {
-                    int i10 = ChatActivityEnterView.t5;
-                    chatActivityEnterView.getClass();
-                    break;
-                }
-            case 1:
-                if (!z10) {
-                    chatActivityEnterView.v1.setVisibility(8);
-                    break;
-                } else {
-                    int i11 = ChatActivityEnterView.t5;
-                    chatActivityEnterView.getClass();
-                    break;
-                }
+                int i10 = ChatActivityEnterView.s5;
+                break;
             default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                yc ycVar = chatActivityEnterView2.G4;
-                chatActivityEnterView2.N0 = System.currentTimeMillis();
-                boolean S0 = chatActivityEnterView2.S0(false, 0, 0, 0L, true);
-                if (!z10 && (seVar = chatActivityEnterView2.M0) != null) {
-                    seVar.g(!S0);
-                    chatActivityEnterView2.M0 = null;
-                    break;
-                } else {
-                    chatActivityEnterView2.F4 = !S0;
-                    org.telegram.messenger.g0.r(ycVar);
-                    org.telegram.messenger.g0.i3(ycVar, 500L);
+                xe xeVar = chatActivityEnterView.E0;
+                if (xeVar != null && xeVar.length() > 0) {
                     break;
                 }
+                break;
         }
+        return chatActivityEnterView.F0(view);
     }
 }

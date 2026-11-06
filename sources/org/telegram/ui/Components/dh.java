@@ -3,125 +3,178 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.Menu;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class dh extends jt {
-    public boolean W;
-    public int a0;
-    public int b0;
-    public ValueAnimator c0;
-    public final /* synthetic */ bi d0;
+public final class dh extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ di b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dh(bi biVar, Context context, oh ohVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, ohVar, null, 1, true, e6Var);
-        this.d0 = biVar;
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void c(float f10) {
-        bi biVar = this.d0;
-        biVar.b4 = f10;
-        ah ahVar = biVar.y2;
-        ahVar.setTranslationY(f10);
-        ahVar.invalidate();
-        biVar.U0();
-        biVar.M1(biVar.t2, 0);
+    public /* synthetic */ dh(di diVar, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.b = diVar;
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.W) {
-            xs editText = this.d0.z2.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.b0 - editText.getScrollY()) + (this.a0 - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new ci.uc(15, this, editText));
-            ValueAnimator valueAnimator = this.c0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.c0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(xq.f);
-            ofFloat.start();
-            this.W = false;
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void e() {
-        super/*org.telegram.ui.ActionBar.t2*/.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void f() {
-        super.f();
-        ey emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.x0 = false;
-            emojiView.y2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(org.telegram.messenger.g0.n);
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                canvas.save();
+                canvas.clipRect(0.0f, this.b.P3, getMeasuredWidth(), getMeasuredHeight());
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
-    public final void i(ActionMode actionMode, Menu menu) {
-        org.telegram.ui.ActionBar.d2 d2Var = this.d0.X1;
-        if (d2Var instanceof org.telegram.ui.wm) {
-            org.telegram.ui.wm.A8(menu, ((org.telegram.ui.wm) d2Var).h, true, true, true, true);
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                di diVar = this.b;
+                dh dhVar = diVar.x2;
+                if (diVar.w2.getAlpha() > 0.0f) {
+                    float f10 = diVar.Q3;
+                    if (f10 != 0.0f && f10 != dhVar.getTop() + diVar.Q3) {
+                        ValueAnimator valueAnimator = diVar.R3;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                        }
+                        float top = diVar.Q3 - (dhVar.getTop() + diVar.P3);
+                        diVar.P3 = top;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
+                        diVar.R3 = ofFloat;
+                        ofFloat.addUpdateListener(new e6(this, 10));
+                        diVar.R3.setInterpolator(xq.f);
+                        diVar.R3.setDuration(200L);
+                        diVar.R3.start();
+                        diVar.Q3 = 0.0f;
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 3:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                di diVar = this.b;
+                vh vhVar = diVar.s2;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = diVar.a2;
+                if (vhVar == chatAttachAlertPhotoLayout) {
+                    accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(chatAttachAlertPhotoLayout.getSelectedItemsCount(), "AccDescrSendPhotos", new Object[0]));
+                } else {
+                    vj vjVar = diVar.g2;
+                    if (vhVar == vjVar) {
+                        accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(vjVar.getSelectedItemsCount(), "AccDescrSendFiles", new Object[0]));
+                    } else {
+                        ni niVar = diVar.c2;
+                        if (vhVar == niVar) {
+                            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(niVar.getSelectedItemsCount(), "AccDescrSendAudio", new Object[0]));
+                        }
+                    }
+                }
+                accessibilityNodeInfo.setClassName(Button.class.getName());
+                accessibilityNodeInfo.setLongClickable(true);
+                accessibilityNodeInfo.setClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
         }
     }
 
     @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        bi biVar = this.d0;
-        dh dhVar = biVar.z2;
-        if (!biVar.p3) {
-            if (motionEvent.getX() <= dhVar.getEditText().getLeft() || motionEvent.getX() >= dhVar.getEditText().getRight() || motionEvent.getY() <= dhVar.getEditText().getTop() || motionEvent.getY() >= dhVar.getEditText().getBottom()) {
-                biVar.h1(dhVar.getEditText(), false);
-            } else {
-                biVar.h1(dhVar.getEditText(), true);
-            }
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.c3.getVisibility() != 0) {
+                    return false;
+                }
+                return super.onInterceptTouchEvent(motionEvent);
+            default:
+                return super.onInterceptTouchEvent(motionEvent);
         }
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        this.d0.J1();
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                di diVar = this.b;
+                if (diVar.y1 && diVar.z1 != 0) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(36.0f) + (org.telegram.messenger.g0.L(80.0f) * Integer.bitCount(diVar.z1))), TLObject.FLAG_30), i10);
+                    break;
+                } else {
+                    super.onMeasure(i7, i10);
+                    break;
+                }
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.jt
-    public final void q(int i3, int i10) {
-        bi biVar = this.d0;
-        ah ahVar = biVar.y2;
-        boolean z10 = false;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.W = false;
-        } else {
-            this.W = true;
-            this.a0 = getEditText().getMeasuredHeight();
-            this.b0 = getEditText().getScrollY();
-            invalidate();
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.c3.getVisibility() != 0) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
         }
-        if (!biVar.U1) {
-            if (i10 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
-                z10 = true;
-            }
-            biVar.B1(z10);
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f10);
+                di diVar = this.b;
+                diVar.P1(0);
+                diVar.b.invalidate();
+                break;
+            case 1:
+            default:
+                super.setAlpha(f10);
+                break;
+            case 2:
+                super.setAlpha(f10);
+                invalidate();
+                break;
         }
-        biVar.R3 = ahVar.getTop() + biVar.Q3;
-        ahVar.invalidate();
-        biVar.J1();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        switch (this.a) {
+            case 1:
+                super.setTranslationY(f10);
+                this.b.s2.l();
+                break;
+            default:
+                super.setTranslationY(f10);
+                break;
+        }
     }
 }

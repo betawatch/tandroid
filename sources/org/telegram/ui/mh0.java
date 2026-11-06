@@ -1,91 +1,114 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class mh0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ph0 b;
+public final class mh0 extends org.telegram.ui.Components.oj0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public lh0 f;
+    public final jg.z1 h;
+    public final /* synthetic */ NotificationsCustomSettingsActivity n;
 
-    public mh0(ph0 ph0Var, Context context) {
-        this.b = ph0Var;
-        this.a = context;
+    public mh0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
+        this.n = notificationsCustomSettingsActivity;
+        this.c = context;
+        jg.z1 z1Var = new jg.z1(true);
+        this.h = z1Var;
+        z1Var.a = new wr(this, 25);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i3) {
-        int i10;
-        int i11;
-        org.telegram.ui.ActionBar.y4 y4Var;
-        ph0 ph0Var = this.b;
-        org.telegram.ui.ActionBar.e6 e6Var = ph0Var.f;
-        SparseArray sparseArray = ph0Var.J;
-        if (i3 == -1) {
-            y4Var = ((org.telegram.ui.ActionBar.d2) ph0Var).simpleActionBar;
-            if (y4Var.s()) {
-                ph0.b0(ph0Var);
-                return;
-            } else {
-                ph0Var.finishFragment();
-                return;
-            }
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
+        return true;
+    }
+
+    public final Object E(int i7) {
+        if (i7 >= 0 && i7 < this.d.size()) {
+            return this.d.get(i7);
         }
-        if (i3 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ph0Var.getParentActivity(), e6Var);
-            String G = org.telegram.messenger.bd.G(sparseArray.size(), "DeleteTones", new Object[0]);
-            org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-            s1Var.S = G;
-            s1Var.U = org.telegram.messenger.g0.X2(org.telegram.messenger.bd.G(sparseArray.size(), "DeleteTonesMessage", new Object[0]));
-            alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), new u70(2));
-            alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131751599, null), new ur(this, 29));
-            TextView textView = (TextView) alertDialog$Builder.p().d(-1);
-            if (textView != null) {
-                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, e6Var);
-                return;
-            }
+        int g10 = jg.g.g(1, i7, this.d);
+        jg.z1 z1Var = this.h;
+        ArrayList arrayList = z1Var.e;
+        if (g10 < 0 || g10 >= arrayList.size()) {
+            return null;
+        }
+        return z1Var.e.get(g10);
+    }
+
+    public final void F(String str) {
+        if (this.f != null) {
+            Utilities.g.a(this.f);
+            this.f = null;
+        }
+        if (str != null) {
+            org.telegram.messenger.p5 p5Var = Utilities.g;
+            lh0 lh0Var = new lh0(this, str, 0);
+            this.f = lh0Var;
+            p5Var.d(lh0Var, 300L);
             return;
         }
-        if (i3 == 2) {
-            int size = sparseArray.size();
-            Context context = this.a;
-            if (size == 1) {
-                Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent.setAction("android.intent.action.SEND");
-                nh0 nh0Var = (nh0) sparseArray.valueAt(0);
-                i11 = ((org.telegram.ui.ActionBar.d2) ph0Var).currentAccount;
-                Uri a10 = nh0Var.a(i11);
-                if (a10 != null) {
-                    intent.putExtra("android.intent.extra.STREAM", a10);
-                    context.startActivity(intent);
-                }
-            } else {
-                Intent intent2 = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent2.setAction("android.intent.action.SEND_MULTIPLE");
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-                for (int i12 = 0; i12 < sparseArray.size(); i12++) {
-                    nh0 nh0Var2 = (nh0) sparseArray.valueAt(i12);
-                    i10 = ((org.telegram.ui.ActionBar.d2) ph0Var).currentAccount;
-                    Uri a11 = nh0Var2.a(i10);
-                    if (a11 != null) {
-                        arrayList.add(a11);
-                    }
-                }
-                if (!arrayList.isEmpty()) {
-                    intent2.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList);
-                    context.startActivity(intent2);
-                }
+        this.d.clear();
+        this.e.clear();
+        this.h.f(null, null);
+        jg.z1 z1Var = this.h;
+        int i7 = this.n.s;
+        z1Var.g(null, true, (i7 == 1 || i7 == 3) ? false : true, true, false, 0L, false, 0, 0);
+        f();
+    }
+
+    @Override // v4.g0
+    public final int b() {
+        int size = this.d.size();
+        ArrayList arrayList = this.h.e;
+        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
+    }
+
+    @Override // v4.g0
+    public final int d(int i7) {
+        return i7 == this.d.size() ? 1 : 0;
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        int i10 = d1Var.f;
+        View view = d1Var.a;
+        if (i10 != 0) {
+            if (i10 != 1) {
+                return;
             }
-            ph0.b0(ph0Var);
-            ph0Var.i0();
-            ph0Var.e.f();
+            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.M0(2131754376, "AddToExceptions"));
+            return;
         }
+        org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
+        if (i7 < this.d.size()) {
+            paVar.f((oh0) this.d.get(i7), (CharSequence) this.e.get(i7), i7 != this.d.size() - 1);
+            paVar.setAddButtonVisible(false);
+        } else {
+            int g10 = jg.g.g(1, i7, this.d);
+            ArrayList arrayList = this.h.e;
+            paVar.d((TLObject) arrayList.get(g10), null, org.telegram.messenger.hd.M0(2131747891, "NotificationsOn"), g10 != arrayList.size() - 1);
+            paVar.setAddButtonVisible(true);
+        }
+    }
+
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        View paVar;
+        if (i7 != 0) {
+            paVar = new org.telegram.ui.Cells.x3(this.c, null);
+            paVar.setBackgroundColor(0);
+            paVar.setTag(-33024);
+        } else {
+            paVar = new org.telegram.ui.Cells.pa(4, 0, this.c, null, false, true);
+        }
+        return new org.telegram.ui.Components.xi0(paVar);
     }
 }

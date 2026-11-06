@@ -1,40 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements org.telegram.ui.ActionBar.p1 {
+public final /* synthetic */ class x0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ x0(LaunchActivity launchActivity, int i3) {
-        this.a = i3;
-        this.b = launchActivity;
+    public /* synthetic */ x0(int i7, boolean[] zArr) {
+        this.a = i7;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.t0(new LanguageSelectActivity());
+                boolean[] zArr = this.b;
+                boolean z9 = !zArr[0];
+                zArr[0] = z9;
+                ((org.telegram.ui.Cells.c2) view).c(z9, true);
                 break;
             case 1:
-                this.b.t0(new org.telegram.ui.z6());
+                boolean[] zArr2 = this.b;
+                boolean z10 = !zArr2[0];
+                zArr2[0] = z10;
+                ((org.telegram.ui.Cells.c2) view).c(z10, true);
+                break;
+            case 2:
+                boolean[] zArr3 = this.b;
+                boolean z11 = !zArr3[0];
+                zArr3[0] = z11;
+                ((org.telegram.ui.Cells.c2) view).c(z11, true);
+                break;
+            case 3:
+                boolean[] zArr4 = this.b;
+                boolean z12 = !zArr4[0];
+                zArr4[0] = z12;
+                ((org.telegram.ui.Cells.c2) view).c(z12, true);
+                break;
+            case 4:
+                boolean[] zArr5 = this.b;
+                boolean z13 = !zArr5[0];
+                zArr5[0] = z13;
+                ((org.telegram.ui.Cells.c2) view).c(z13, true);
+                break;
+            case 5:
+                boolean[] zArr6 = this.b;
+                boolean z14 = !zArr6[0];
+                zArr6[0] = z14;
+                ((org.telegram.ui.Cells.c2) view).c(z14, true);
                 break;
             default:
-                LaunchActivity launchActivity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    launchActivity.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                }
+                boolean[] zArr7 = this.b;
+                boolean z15 = !zArr7[0];
+                zArr7[0] = z15;
+                ((org.telegram.ui.Cells.c2) view).c(z15, true);
+                break;
         }
     }
 }

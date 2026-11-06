@@ -1,59 +1,65 @@
 package jc;
 
-import ed.e;
-import java.util.Arrays;
-import kotlin.jvm.internal.j;
-import ne.b;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final /* synthetic */ int a;
-    public char[] b;
-    public int c;
+public final class a extends FilterInputStream {
+    public int a;
+    public int b;
 
-    public void a(int i3, int i10) {
-        int i11 = i10 + i3;
-        char[] cArr = this.b;
-        if (cArr.length <= i11) {
-            int i12 = i3 * 2;
-            if (i11 < i12) {
-                i11 = i12;
+    public a(InputStream inputStream) {
+        super(inputStream);
+        this.a = -1;
+        this.b = -1;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final boolean markSupported() {
+        return false;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        int read = super.read();
+        if (read == 3 && this.a == 0 && this.b == 0) {
+            this.a = -1;
+            this.b = -1;
+            read = super.read();
+        }
+        this.a = this.b;
+        this.b = read;
+        return read;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i7, int i10) {
+        bArr.getClass();
+        if (i7 < 0 || i10 < 0 || i10 > bArr.length - i7) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (i10 == 0) {
+            return 0;
+        }
+        int read = read();
+        if (read == -1) {
+            return -1;
+        }
+        bArr[i7] = (byte) read;
+        int i11 = 1;
+        while (i11 < i10) {
+            try {
+                int read2 = read();
+                if (read2 == -1) {
+                    break;
+                }
+                bArr[i7 + i11] = (byte) read2;
+                i11++;
+            } catch (IOException unused) {
             }
-            char[] copyOf = Arrays.copyOf(cArr, i11);
-            j.d(copyOf, "copyOf(...)");
-            this.b = copyOf;
         }
-    }
-
-    public void b() {
-        b bVar = b.c;
-        char[] array = this.b;
-        bVar.getClass();
-        j.e(array, "array");
-        synchronized (bVar) {
-            int i3 = bVar.a;
-            if (array.length + i3 < ne.a.a) {
-                bVar.a = i3 + array.length;
-                ((e) bVar.b).addLast(array);
-            }
-        }
-    }
-
-    public void c(String text) {
-        j.e(text, "text");
-        int length = text.length();
-        if (length == 0) {
-            return;
-        }
-        a(this.c, length);
-        text.getChars(0, text.length(), this.b, this.c);
-        this.c += length;
-    }
-
-    public final String toString() {
-        switch (this.a) {
-        }
-        return new String(this.b, 0, this.c);
+        return i11;
     }
 }

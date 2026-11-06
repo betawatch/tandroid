@@ -1,5 +1,6 @@
 package c1;
 
+import a8.m9;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -9,35 +10,32 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import b8.db;
 import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.common.api.internal.t;
-import e7.i;
-import e7.k;
-import e7.r;
-import e7.u;
-import gi.w5;
-import java.util.Iterator;
+import f7.i;
+import f7.k;
+import f7.r;
+import f7.u;
+import h9.f1;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import p7.t0;
-import v0.h;
-import v0.l;
+import q7.s0;
+import v0.g;
 import v0.m;
 import v0.n;
 import v0.o;
-import x7.r6;
-import z5.g;
+import v0.q;
+import w0.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
-    public h f;
+    public g f;
     public Executor g;
     public CancellationSignal h;
     public final d i;
@@ -55,10 +53,10 @@ public final class e extends b1.d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final n d(g gVar) {
-        l lVar;
+    public final o e(a6.g gVar) {
+        m mVar;
         k kVar;
-        e7.g gVar2;
+        f7.g gVar2;
         String jSONObject;
         u uVar = gVar.r;
         String idToken = gVar.h;
@@ -69,9 +67,9 @@ public final class e extends b1.d {
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_ID", id2);
             bundle.putString("androidx.credentials.BUNDLE_KEY_PASSWORD", str);
-            lVar = new l(str, 2, bundle);
+            mVar = new m(str, 2, bundle);
         } else {
-            boolean z10 = false;
+            boolean z9 = false;
             JSONObject jSONObject2 = null;
             if (idToken != null) {
                 j.d(id2, "getId(...)");
@@ -103,7 +101,7 @@ public final class e extends b1.d {
                 bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_GIVEN_NAME", str3);
                 bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PHONE_NUMBER", str5);
                 bundle2.putParcelable("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PROFILE_PICTURE_URI", uri2);
-                lVar = new b9.a("com.google.android.libraries.identity.googleid.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL", 0, bundle2);
+                mVar = new c9.a("com.google.android.libraries.identity.googleid.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL", 0, bundle2);
                 if (id2.length() <= 0) {
                     throw new IllegalArgumentException("id should not be empty");
                 }
@@ -113,7 +111,7 @@ public final class e extends b1.d {
             } else if (uVar != null) {
                 k kVar2 = uVar.f;
                 i iVar = uVar.e;
-                e7.j jVar = uVar.d;
+                f7.j jVar = uVar.d;
                 LinkedHashMap linkedHashMap = d1.g.a;
                 JSONObject jSONObject3 = new JSONObject();
                 if (jVar != 0) {
@@ -133,20 +131,20 @@ public final class e extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) d1.g.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), t4.c.f("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), rf.b.i("unknown fido gms exception - ", str6));
                     }
-                    if (rVar == r.x && str6 != null && ud.d.e(str6, "Unable to get sync account")) {
+                    if (rVar == r.x && str6 != null && xd.d.e(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
                     }
                     throw new y0.b(aVar, str6);
                 }
                 if (kVar instanceof i) {
                     try {
-                        t0 t0Var = uVar.c;
+                        s0 s0Var = uVar.c;
                         try {
                             JSONObject jSONObject4 = new JSONObject();
-                            if (t0Var != null && t0Var.p().length > 0) {
-                                jSONObject4.put("rawId", w6.b.c(t0Var.p()));
+                            if (s0Var != null && s0Var.p().length > 0) {
+                                jSONObject4.put("rawId", x6.b.c(s0Var.p()));
                             }
                             String str7 = uVar.n;
                             if (str7 != null) {
@@ -185,13 +183,13 @@ public final class e extends b1.d {
                                 gVar2 = uVar.h;
                                 if (gVar2 == null) {
                                     jSONObject4.put("clientExtensionResults", gVar2.b());
-                                } else if (z10) {
+                                } else if (z9) {
                                     jSONObject4.put("clientExtensionResults", new JSONObject());
                                 }
                                 jSONObject = jSONObject4.toString();
                                 j.d(jSONObject, "toJson(...)");
                             }
-                            z10 = true;
+                            z9 = true;
                             if (jSONObject2 != null) {
                             }
                             gVar2 = uVar.h;
@@ -203,7 +201,7 @@ public final class e extends b1.d {
                             throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e11);
                         }
                     } catch (Throwable th2) {
-                        throw new w0.h(2, "The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage());
+                        throw new h(2, "The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage());
                     }
                 } else {
                     Log.e("PublicKeyUtility", "AuthenticatorResponse expected assertion response but got: ".concat(kVar.getClass().getName()));
@@ -212,28 +210,28 @@ public final class e extends b1.d {
                 }
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON", jSONObject);
-                lVar = new l(jSONObject, 3, bundle3);
+                mVar = new m(jSONObject, 3, bundle3);
             } else {
                 Log.w("BeginSignIn", "Credential returned but no google Id or password or passkey found");
-                lVar = null;
+                mVar = null;
             }
         }
-        if (lVar != null) {
-            return new n(lVar);
+        if (mVar != null) {
+            return new o(mVar);
         }
-        throw new w0.h(2, "When attempting to convert get response, null credential found");
+        throw new h(2, "When attempting to convert get response, null credential found");
     }
 
-    public final h e() {
-        h hVar = this.f;
-        if (hVar != null) {
-            return hVar;
+    public final g f() {
+        g gVar = this.f;
+        if (gVar != null) {
+            return gVar;
         }
         j.h("callback");
         throw null;
     }
 
-    public final Executor f() {
+    public final Executor g() {
         Executor executor = this.g;
         if (executor != null) {
             return executor;
@@ -242,7 +240,7 @@ public final class e extends b1.d {
         throw null;
     }
 
-    public final void g(m request, CancellationSignal cancellationSignal, Executor executor, h callback) {
+    public final void h(n request, CancellationSignal cancellationSignal, Executor executor, g callback) {
         j.e(request, "request");
         j.e(callback, "callback");
         j.e(executor, "executor");
@@ -250,54 +248,47 @@ public final class e extends b1.d {
         this.f = callback;
         this.g = executor;
         CredentialProviderPlayServicesImpl.Companion.getClass();
-        if (a1.h.a(cancellationSignal)) {
+        if (a1.g.a(cancellationSignal)) {
             return;
         }
         Context context = this.e;
         j.e(context, "context");
-        z5.d dVar = new z5.d(false);
-        z5.a aVar = new z5.a(false, null, null, true, null, null, false);
-        z5.c cVar = new z5.c(false, null, null);
-        z5.b bVar = new z5.b(null, false);
+        a6.d dVar = new a6.d(false);
+        a6.a aVar = new a6.a(false, null, null, true, null, null, false);
+        a6.c cVar = new a6.c(false, null, null);
+        a6.b bVar = new a6.b(null, false);
         PackageManager packageManager = context.getPackageManager();
         j.d(packageManager, "getPackageManager(...)");
-        long j10 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
-        Iterator it = request.a.iterator();
-        z5.b bVar2 = bVar;
-        boolean z10 = false;
-        while (true) {
-            int i3 = 1;
-            if (!it.hasNext()) {
-                boolean z11 = j10 > 241217000 ? request.b : false;
-                k7.b a10 = r6.a(context);
-                new z5.a(false, null, null, true, null, null, false);
-                z5.e eVar = new z5.e(dVar, aVar, a10.l, false, 0, cVar, bVar2, z11);
-                s b10 = t.b();
-                b10.d = new m6.c[]{new m6.c("auth_api_credentials_begin_sign_in", 8L)};
-                b10.c = new w5(a10, eVar, 7);
-                b10.b = false;
-                b10.a = 1553;
-                int i10 = 8;
-                a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new b1.e(i3, cancellationSignal, this), i10)).addOnFailureListener(new ai.n(i10, this, cancellationSignal));
-                return;
-            }
-            o oVar = (o) it.next();
-            if ((oVar instanceof o) && !z10) {
-                if (j10 >= 231815000) {
+        long j3 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
+        a6.b bVar2 = bVar;
+        boolean z9 = false;
+        for (v0.h hVar : request.a) {
+            if ((hVar instanceof q) && !z9) {
+                if (j3 >= 231815000) {
                     LinkedHashMap linkedHashMap = d1.g.a;
-                    bVar2 = new z5.b(oVar.d, true);
+                    bVar2 = new a6.b(((q) hVar).e, true);
                 } else {
                     LinkedHashMap linkedHashMap2 = d1.g.a;
-                    JSONObject jSONObject = new JSONObject(oVar.d);
+                    JSONObject jSONObject = new JSONObject(((q) hVar).e);
                     String optString = jSONObject.optString("rpId", "");
                     j.b(optString);
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new z5.c(true, db.a(jSONObject), optString);
+                    cVar = new a6.c(true, m9.a(jSONObject), optString);
                 }
-                z10 = true;
+                z9 = true;
             }
         }
+        boolean z10 = j3 > 241217000 ? request.b : false;
+        l7.b a10 = a.a.a(context);
+        new a6.a(false, null, null, true, null, null, false);
+        a6.e eVar = new a6.e(dVar, aVar, a10.l, false, 0, cVar, bVar2, z10);
+        s b10 = t.b();
+        b10.d = new n6.c[]{new n6.c("auth_api_credentials_begin_sign_in", 8L)};
+        b10.c = new f1(a10, eVar, 8);
+        b10.b = false;
+        b10.a = 1553;
+        a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 20)).addOnFailureListener(new ab.g(6, this, cancellationSignal));
     }
 }

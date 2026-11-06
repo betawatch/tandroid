@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class j6 {
     public static final char[] a;
@@ -39,14 +39,14 @@ public abstract class j6 {
         l = new HashSet(strArr.length);
         m = new HashSet(strArr2.length);
         n = new HashMap(strArr3.length);
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
             char[] cArr3 = a;
-            if (i3 >= cArr3.length) {
+            if (i7 >= cArr3.length) {
                 break;
             }
-            j.put(Character.valueOf(cArr3[i3]), Boolean.TRUE);
-            i3++;
+            j.put(Character.valueOf(cArr3[i7]), Boolean.TRUE);
+            i7++;
         }
         int i10 = 0;
         while (true) {

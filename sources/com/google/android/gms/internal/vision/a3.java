@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class a3 {
     public static final e1 a;
@@ -11,7 +11,7 @@ public abstract class a3 {
 
     public static int a(String str) {
         int length = str.length();
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         while (i10 < length && str.charAt(i10) < 128) {
             i10++;
@@ -30,9 +30,9 @@ public abstract class a3 {
                 while (i10 < length2) {
                     char charAt2 = str.charAt(i10);
                     if (charAt2 < 2048) {
-                        i3 += (127 - charAt2) >>> 31;
+                        i7 += (127 - charAt2) >>> 31;
                     } else {
-                        i3 += 2;
+                        i7 += 2;
                         if (55296 <= charAt2 && charAt2 <= 57343) {
                             if (Character.codePointAt(str, i10) < 65536) {
                                 throw new b3(i10, length2);
@@ -42,7 +42,7 @@ public abstract class a3 {
                     }
                     i10++;
                 }
-                i11 += i3;
+                i11 += i7;
             }
         }
         if (i11 >= length) {
@@ -54,9 +54,9 @@ public abstract class a3 {
         throw new IllegalArgumentException(sb2.toString());
     }
 
-    public static int b(int i3, int i10, byte[] bArr) {
-        byte b10 = bArr[i3 - 1];
-        int i11 = i10 - i3;
+    public static int b(int i7, int i10, byte[] bArr) {
+        byte b10 = bArr[i7 - 1];
+        int i11 = i10 - i7;
         if (i11 == 0) {
             if (b10 > -12) {
                 return -1;
@@ -64,7 +64,7 @@ public abstract class a3 {
             return b10;
         }
         if (i11 == 1) {
-            byte b11 = bArr[i3];
+            byte b11 = bArr[i7];
             if (b10 > -12 || b11 > -65) {
                 return -1;
             }
@@ -73,8 +73,8 @@ public abstract class a3 {
         if (i11 != 2) {
             throw new AssertionError();
         }
-        byte b12 = bArr[i3];
-        byte b13 = bArr[i3 + 1];
+        byte b12 = bArr[i7];
+        byte b13 = bArr[i7 + 1];
         if (b10 > -12 || b12 > -65 || b13 > -65) {
             return -1;
         }

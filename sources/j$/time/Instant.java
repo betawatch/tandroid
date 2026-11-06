@@ -32,13 +32,13 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         I(31556889864403199L, 999999999L);
     }
 
-    public static Instant I(long j10, long j11) {
-        return G(j$.com.android.tools.r8.a.N(j10, j$.com.android.tools.r8.a.R(j11, 1000000000L)), (int) j$.com.android.tools.r8.a.Q(j11, 1000000000L));
+    public static Instant I(long j3, long j10) {
+        return G(j$.com.android.tools.r8.a.N(j3, j$.com.android.tools.r8.a.R(j10, 1000000000L)), (int) j$.com.android.tools.r8.a.Q(j10, 1000000000L));
     }
 
-    public static Instant ofEpochMilli(long j10) {
-        long j11 = 1000;
-        return G(j$.com.android.tools.r8.a.R(j10, j11), ((int) j$.com.android.tools.r8.a.Q(j10, j11)) * 1000000);
+    public static Instant ofEpochMilli(long j3) {
+        long j10 = 1000;
+        return G(j$.com.android.tools.r8.a.R(j3, j10), ((int) j$.com.android.tools.r8.a.Q(j3, j10)) * 1000000);
     }
 
     public static Instant H(j$.time.temporal.l lVar) {
@@ -59,19 +59,19 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         return ZonedDateTime.q(this.a, this.b, zoneId);
     }
 
-    public static Instant G(long j10, int i3) {
-        if ((i3 | j10) == 0) {
+    public static Instant G(long j3, int i7) {
+        if ((i7 | j3) == 0) {
             return c;
         }
-        if (j10 < -31557014167219200L || j10 > 31556889864403199L) {
+        if (j3 < -31557014167219200L || j3 > 31556889864403199L) {
             throw new b("Instant exceeds minimum or maximum instant");
         }
-        return new Instant(j10, i3);
+        return new Instant(j3, i7);
     }
 
-    public Instant(long j10, int i3) {
-        this.a = j10;
-        this.b = i3;
+    public Instant(long j3, int i7) {
+        this.a = j3;
+        this.b = i7;
     }
 
     @Override // j$.time.temporal.l
@@ -89,17 +89,17 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         if (!(oVar instanceof j$.time.temporal.a)) {
             return j$.time.temporal.p.d(this, oVar).a(oVar.m(this), oVar);
         }
-        int i3 = d.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i3 == 1) {
+        int i7 = d.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i7 == 1) {
             return this.b;
         }
-        if (i3 == 2) {
+        if (i7 == 2) {
             return this.b / 1000;
         }
-        if (i3 == 3) {
+        if (i7 == 3) {
             return this.b / 1000000;
         }
-        if (i3 == 4) {
+        if (i7 == 4) {
             j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
             aVar.b.a(this.a, aVar);
         }
@@ -108,15 +108,15 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i3;
+        int i7;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
         int i10 = d.a[((j$.time.temporal.a) oVar).ordinal()];
         if (i10 == 1) {
-            i3 = this.b;
+            i7 = this.b;
         } else if (i10 == 2) {
-            i3 = this.b / 1000;
+            i7 = this.b / 1000;
         } else {
             if (i10 != 3) {
                 if (i10 == 4) {
@@ -124,9 +124,9 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i3 = this.b / 1000000;
+            i7 = this.b / 1000000;
         }
-        return i3;
+        return i7;
     }
 
     @Override // j$.time.temporal.Temporal
@@ -136,76 +136,76 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal c(long j10, j$.time.temporal.o oVar) {
+    public final Temporal c(long j3, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (Instant) oVar.q(this, j10);
+            return (Instant) oVar.q(this, j3);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.w(j10);
-        int i3 = d.a[aVar.ordinal()];
-        if (i3 != 1) {
-            if (i3 == 2) {
-                int i10 = ((int) j10) * 1000;
+        aVar.w(j3);
+        int i7 = d.a[aVar.ordinal()];
+        if (i7 != 1) {
+            if (i7 == 2) {
+                int i10 = ((int) j3) * 1000;
                 if (i10 != this.b) {
                     return G(this.a, i10);
                 }
-            } else if (i3 == 3) {
-                int i11 = ((int) j10) * 1000000;
+            } else if (i7 == 3) {
+                int i11 = ((int) j3) * 1000000;
                 if (i11 != this.b) {
                     return G(this.a, i11);
                 }
             } else {
-                if (i3 != 4) {
+                if (i7 != 4) {
                     throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
                 }
-                if (j10 != this.a) {
-                    return G(j10, this.b);
+                if (j3 != this.a) {
+                    return G(j3, this.b);
                 }
             }
-        } else if (j10 != this.b) {
-            return G(this.a, (int) j10);
+        } else if (j3 != this.b) {
+            return G(this.a, (int) j3);
         }
         return this;
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: K, reason: merged with bridge method [inline-methods] */
-    public final Instant d(long j10, j$.time.temporal.q qVar) {
+    public final Instant d(long j3, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (Instant) qVar.j(this, j10);
+            return (Instant) qVar.j(this, j3);
         }
         switch (d.b[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return J(0L, j10);
+                return J(0L, j3);
             case 2:
-                return J(j10 / 1000000, (j10 % 1000000) * 1000);
+                return J(j3 / 1000000, (j3 % 1000000) * 1000);
             case 3:
-                return J(j10 / 1000, (j10 % 1000) * 1000000);
+                return J(j3 / 1000, (j3 % 1000) * 1000000);
             case 4:
-                return J(j10, 0L);
+                return J(j3, 0L);
             case 5:
-                return J(j$.com.android.tools.r8.a.S(j10, 60), 0L);
+                return J(j$.com.android.tools.r8.a.S(j3, 60), 0L);
             case 6:
-                return J(j$.com.android.tools.r8.a.S(j10, 3600), 0L);
+                return J(j$.com.android.tools.r8.a.S(j3, 3600), 0L);
             case 7:
-                return J(j$.com.android.tools.r8.a.S(j10, 43200), 0L);
+                return J(j$.com.android.tools.r8.a.S(j3, 43200), 0L);
             case 8:
-                return J(j$.com.android.tools.r8.a.S(j10, 86400), 0L);
+                return J(j$.com.android.tools.r8.a.S(j3, 86400), 0L);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
-    public final Instant J(long j10, long j11) {
-        if ((j10 | j11) == 0) {
+    public final Instant J(long j3, long j10) {
+        if ((j3 | j10) == 0) {
             return this;
         }
-        return I(j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.N(this.a, j10), j11 / 1000000000), this.b + (j11 % 1000000000));
+        return I(j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.N(this.a, j3), j10 / 1000000000), this.b + (j10 % 1000000000));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
@@ -254,8 +254,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
 
     public final long L(Instant instant) {
         long T = j$.com.android.tools.r8.a.T(instant.a, this.a);
-        long j10 = instant.b - this.b;
-        return (T <= 0 || j10 >= 0) ? (T >= 0 || j10 <= 0) ? T : T + 1 : T - 1;
+        long j3 = instant.b - this.b;
+        return (T <= 0 || j3 >= 0) ? (T >= 0 || j3 <= 0) ? T : T + 1 : T - 1;
     }
 
     public OffsetDateTime atOffset(ZoneOffset zoneOffset) {
@@ -263,8 +263,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
     }
 
     public long toEpochMilli() {
-        long j10 = this.a;
-        return (j10 >= 0 || this.b <= 0) ? j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10, 1000), this.b / 1000000) : j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10 + 1, 1000), (this.b / 1000000) - 1000);
+        long j3 = this.a;
+        return (j3 >= 0 || this.b <= 0) ? j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j3, 1000), this.b / 1000000) : j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j3 + 1, 1000), (this.b / 1000000) - 1000);
     }
 
     public final boolean equals(Object obj) {
@@ -281,8 +281,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
     }
 
     public final int hashCode() {
-        long j10 = this.a;
-        return (this.b * 51) + ((int) (j10 ^ (j10 >>> 32)));
+        long j3 = this.a;
+        return (this.b * 51) + ((int) (j3 ^ (j3 >>> 32)));
     }
 
     public final String toString() {

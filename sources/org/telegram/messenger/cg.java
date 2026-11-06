@@ -1,73 +1,90 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
 
-    public /* synthetic */ cg(li liVar, String str, boolean z10, int i3) {
-        this.a = i3;
-        this.b = liVar;
-        this.c = str;
-        this.d = z10;
+    public /* synthetic */ cg(ui uiVar, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i7) {
+        this.a = i7;
+        this.b = uiVar;
+        this.c = tL_messages_stickerSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
-        SQLiteCursor queryFinalized;
-        int i3 = 0;
-        switch (this.a) {
+        int i7 = this.a;
+        String str = "";
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.c;
+        ui uiVar = this.b;
+        switch (i7) {
             case 0:
-                this.b.c1(this.c, this.d, false);
-                return;
+                uiVar.M.k(tL_messages_stickerSet, tL_messages_stickerSet.set.id);
+                uiVar.getNotificationCenter().k(64, Long.valueOf(tL_messages_stickerSet.set.id), tL_messages_stickerSet);
+                break;
+            case 1:
+                uiVar.M.k(tL_messages_stickerSet, tL_messages_stickerSet.set.id);
+                uiVar.getNotificationCenter().k(64, Long.valueOf(tL_messages_stickerSet.set.id), tL_messages_stickerSet);
+                break;
+            case 2:
+                a0.h hVar = uiVar.H[4];
+                for (int i10 = 0; i10 < tL_messages_stickerSet.documents.size(); i10++) {
+                    TLRPC.Document document = tL_messages_stickerSet.documents.get(i10);
+                    hVar.k(document, document.id);
+                }
+                break;
+            case 3:
+                try {
+                    SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    executeFast.requery();
+                    executeFast.bindString(1, "s_" + tL_messages_stickerSet.set.id);
+                    executeFast.bindInteger(2, 6);
+                    executeFast.bindString(3, "");
+                    executeFast.bindString(4, "");
+                    executeFast.bindString(5, "");
+                    executeFast.bindInteger(6, 0);
+                    executeFast.bindInteger(7, 0);
+                    executeFast.bindInteger(8, 0);
+                    executeFast.bindInteger(9, 0);
+                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_messages_stickerSet.getObjectSize());
+                    tL_messages_stickerSet.serializeToStream(nativeByteBuffer);
+                    executeFast.bindByteBuffer(10, nativeByteBuffer);
+                    executeFast.step();
+                    nativeByteBuffer.reuse();
+                    executeFast.dispose();
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                }
             default:
-                li liVar = this.b;
-                String str = this.c;
-                SQLiteCursor sQLiteCursor = null;
-                r5 = null;
-                r5 = null;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = null;
                 try {
-                    queryFinalized = liVar.getMessagesStorage().b.queryFinalized("SELECT data, date FROM stickers_dice WHERE emoji = ?", str);
-                } catch (Throwable th2) {
-                    th = th2;
-                    tL_messages_stickerSet = null;
-                }
-                try {
-                    if (queryFinalized.next()) {
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                        if (byteBufferValue != null) {
-                            tL_messages_stickerSet2 = TLRPC.messages_StickerSet.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                            byteBufferValue.reuse();
-                        }
-                        i3 = queryFinalized.intValue(1);
+                    SQLitePreparedStatement executeFast2 = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO stickersets2 VALUES(?, ?, ?, ?, ?)");
+                    executeFast2.requery();
+                    NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(tL_messages_stickerSet.getObjectSize());
+                    tL_messages_stickerSet.serializeToStream(nativeByteBuffer2);
+                    executeFast2.bindLong(1, tL_messages_stickerSet.set.id);
+                    executeFast2.bindByteBuffer(2, nativeByteBuffer2);
+                    executeFast2.bindInteger(3, tL_messages_stickerSet.set.hash);
+                    executeFast2.bindLong(4, System.currentTimeMillis());
+                    String str2 = tL_messages_stickerSet.set.short_name;
+                    if (str2 != null) {
+                        str = str2.toLowerCase();
                     }
-                    queryFinalized.dispose();
-                } catch (Throwable th3) {
-                    th = th3;
-                    tL_messages_stickerSet = tL_messages_stickerSet2;
-                    sQLiteCursor = queryFinalized;
-                    try {
-                        a8.g(th, true);
-                        tL_messages_stickerSet2 = tL_messages_stickerSet;
-                        liVar.s1(str, this.d, tL_messages_stickerSet2, true, i3);
-                        return;
-                    } finally {
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
-                        }
-                    }
+                    executeFast2.bindString(5, str);
+                    executeFast2.step();
+                    nativeByteBuffer2.reuse();
+                    executeFast2.dispose();
+                    break;
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                    return;
                 }
-                liVar.s1(str, this.d, tL_messages_stickerSet2, true, i3);
-                return;
         }
     }
 }

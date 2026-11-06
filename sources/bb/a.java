@@ -1,42 +1,22 @@
 package bb;
 
-import a1.g;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final String b;
+public enum a implements qa.b {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2);
 
-    public a(String str, String str2) {
-        this.a = str;
-        if (str2 == null) {
-            throw new NullPointerException("Null version");
-        }
-        this.b = str2;
+    public final int a;
+
+    a(int i7) {
+        this.a = i7;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            if (this.a.equals(aVar.a) && this.b.equals(aVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("LibraryVersion{libraryName=");
-        sb2.append(this.a);
-        sb2.append(", version=");
-        return g.s(sb2, this.b, "}");
+    @Override // qa.b
+    public final int a() {
+        return this.a;
     }
 }

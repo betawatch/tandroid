@@ -1,6 +1,6 @@
 package w;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class f extends Exception {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -9,8 +9,8 @@ public class f extends Exception {
     */
     public f(String str, e eVar) {
         super(r2.toString());
-        StringBuilder h = t4.c.h(str, ", frames: ");
-        h.append(eVar.a());
+        StringBuilder j3 = rf.b.j(str, ", frames: ");
+        j3.append(eVar.a());
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -19,7 +19,7 @@ public class f extends Exception {
     */
     public f(String str, e eVar, Exception exc) {
         super(r2.toString(), exc);
-        StringBuilder h = t4.c.h(str, ", frames: ");
-        h.append(eVar.a());
+        StringBuilder j3 = rf.b.j(str, ", frames: ");
+        j3.append(eVar.a());
     }
 }

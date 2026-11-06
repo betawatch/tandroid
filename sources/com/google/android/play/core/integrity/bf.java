@@ -3,10 +3,10 @@ package com.google.android.play.core.integrity;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
-import c9.g0;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import d9.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -14,14 +14,14 @@ final class bf extends bm {
     final /* synthetic */ bn c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i3, long j10, TaskCompletionSource taskCompletionSource2) {
+    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i7, long j3, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
-        this.a = j10;
+        this.a = j3;
         this.b = taskCompletionSource2;
         this.c = bnVar;
     }
 
-    @Override // c9.h0
+    @Override // d9.h0
     public final void b() {
         g0 g0Var;
         if (bn.l(this.c)) {
@@ -34,23 +34,23 @@ final class bf extends bm {
         }
         try {
             bn bnVar = this.c;
-            c9.w wVar = (c9.w) bnVar.a.n;
+            d9.w wVar = (d9.w) bnVar.a.n;
             Bundle b10 = bn.b(bnVar, this.a, 0);
             bl blVar = new bl(this.c, this.b);
-            c9.u uVar = (c9.u) wVar;
+            d9.u uVar = (d9.u) wVar;
             uVar.getClass();
             Parcel obtain = Parcel.obtain();
             obtain.writeInterfaceToken(uVar.c);
-            int i3 = c9.s.a;
+            int i7 = d9.s.a;
             obtain.writeInt(1);
             b10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
             uVar.I0(obtain, 2);
         } catch (RemoteException e10) {
             bn bnVar2 = this.c;
-            long j10 = this.a;
+            long j3 = this.a;
             g0Var = bnVar2.b;
-            g0Var.a(e10, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
+            g0Var.a(e10, "warmUpIntegrityToken(%s)", Long.valueOf(j3));
             this.b.trySetException(new StandardIntegrityException(-100, e10));
         }
     }

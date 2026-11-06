@@ -1,71 +1,46 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class v6 extends sg.a {
-    public final int c;
-    public CharSequence d;
-    public String e;
-    public int f;
-    public long g;
-    public int h;
-    public boolean i;
-    public boolean j;
+public final class v6 extends org.telegram.ui.Components.nc {
+    public final /* synthetic */ w6 e0;
 
-    public v6(int i3, String str) {
-        super(i3, true);
-        this.c = -1;
-        this.d = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v6(w6 w6Var, Context context) {
+        super(context, 11, org.telegram.ui.Components.nc.W, 0, org.telegram.ui.Components.nc.a0);
+        this.e0 = w6Var;
     }
 
-    public static v6 b(int i3, long j10, String str, int i10) {
-        v6 v6Var = new v6(11);
-        v6Var.f = i3;
-        v6Var.d = str;
-        v6Var.g = j10;
-        v6Var.h = i10;
-        v6Var.j = false;
-        return v6Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj == null || v6.class != obj.getClass()) {
-                return false;
-            }
-            v6 v6Var = (v6) obj;
-            int i3 = this.a;
-            if (i3 != v6Var.a) {
-                return false;
-            }
-            if (i3 != 9 && i3 != 10 && i3 != 8 && i3 != 4 && i3 != 2 && i3 != 0 && i3 != 13) {
-                if (i3 == 3) {
-                    return Objects.equals(this.d, v6Var.d);
+    @Override // org.telegram.ui.Components.nc
+    public final void d(int i7, boolean z9) {
+        y6 y6Var = (y6) this.e0.f;
+        if (!z9) {
+            y6Var.b.l1();
+            return;
+        }
+        int i10 = -1;
+        if (i7 == 8) {
+            i7 = -1;
+        }
+        int i11 = 0;
+        while (true) {
+            if (i11 < y6Var.f0.size()) {
+                u6 u6Var = (u6) y6Var.f0.get(i11);
+                if (u6Var != null && u6Var.a == 11 && u6Var.f == i7) {
+                    i10 = i11;
+                    break;
                 }
-                if (i3 == 1) {
-                    return Objects.equals(this.e, v6Var.e);
-                }
-                if (i3 == 11) {
-                    if (this.f != v6Var.f || this.g != v6Var.g) {
-                        return false;
-                    }
-                } else if (i3 != 7 || this.c != v6Var.c) {
-                    return false;
-                }
+                i11++;
+            } else {
+                break;
             }
         }
-        return true;
-    }
-
-    public v6(int i3, int i10) {
-        super(7, true);
-        this.c = i3;
-    }
-
-    public v6(int i3) {
-        super(i3, true);
-        this.c = -1;
+        if (i10 >= 0) {
+            y6Var.b.e1(new l2.u(i10, 3), 0, true);
+        } else {
+            y6Var.b.l1();
+        }
     }
 }

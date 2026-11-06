@@ -1,16 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface fq {
-    void a(TLRPC.User user);
+public final class fq implements r40 {
+    public final /* synthetic */ w40 a;
+    public final /* synthetic */ oq b;
 
-    void b(long j10);
+    public fq(oq oqVar, w40 w40Var) {
+        this.b = oqVar;
+        this.a = w40Var;
+    }
 
-    void c(long j10, TLObject tLObject);
+    @Override // org.telegram.ui.r40
+    public final void e(TLRPC.User user) {
+        this.b.y0(user.id, null, null, null, "", true, 0, false);
+    }
 
-    void d(long j10);
+    @Override // org.telegram.ui.r40
+    public final void f(int i7, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
+        }
+        oq oqVar = this.b;
+        oqVar.getMessagesController().o(oqVar.n, oqVar, arrayList, i7, new f3(this, 2), new eq(0), null);
+    }
 }

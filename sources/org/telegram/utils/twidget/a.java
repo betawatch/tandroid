@@ -1,32 +1,101 @@
 package org.telegram.utils.twidget;
 
 import android.media.AudioRecordingConfiguration;
-import android.media.MediaRoute2Info;
+import android.os.Bundle;
+import p4.a1;
+import p4.g1;
+import p4.i1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements p2.l, f9.k, androidx.car.app.utils.b {
+public final /* synthetic */ class a implements p4.c0, a1, h2.j {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ a(int i7) {
+        this.a = i7;
+    }
+
     public static /* bridge */ /* synthetic */ AudioRecordingConfiguration a(Object obj) {
         return (AudioRecordingConfiguration) obj;
     }
 
-    public static /* bridge */ /* synthetic */ MediaRoute2Info b(Object obj) {
-        return (MediaRoute2Info) obj;
+    @Override // h2.j
+    public void accept(Object obj) {
+        g1 g1Var = (g1) obj;
+        switch (this.a) {
+            case 19:
+                g1Var.B0();
+                break;
+            case 20:
+                g1Var.b();
+                break;
+            case 21:
+                g1Var.g0();
+                break;
+            case 22:
+            case 27:
+            default:
+                g1Var.H0();
+                break;
+            case 23:
+                g1Var.C0();
+                break;
+            case 24:
+                g1Var.L0();
+                break;
+            case 25:
+                g1Var.U();
+                break;
+            case 26:
+                g1Var.E();
+                break;
+            case 28:
+                g1Var.J0();
+                break;
+        }
     }
 
-    @Override // f9.k
-    public Object apply(Object obj) {
-        q2.q qVar = (q2.q) obj;
-        qVar.m();
-        return g9.i0.q(g9.o.y(qVar.Z.b, new u9.j(15)));
+    @Override // p4.c0
+    public void b(p4.u uVar, int i7) {
+        switch (this.a) {
+            case 14:
+                uVar.getClass();
+                break;
+            case 15:
+                uVar.c(i7);
+                break;
+            default:
+                uVar.getClass();
+                break;
+        }
     }
 
-    @Override // androidx.car.app.utils.b
-    public void call() {
-        throw null;
+    @Override // p4.a1
+    public Object i(p4.d0 d0Var, p4.v vVar, int i7) {
+        switch (this.a) {
+            case 17:
+                d0Var.getClass();
+                throw new ClassCastException();
+            case 18:
+                d0Var.getClass();
+                throw new ClassCastException();
+            case 22:
+                return d0Var.n(vVar);
+            default:
+                d0Var.getClass();
+                throw new ClassCastException();
+        }
     }
 
-    @Override // p2.l
-    public void release() {
+    public /* synthetic */ a(Object obj, int i7) {
+        this.a = i7;
+    }
+
+    public /* synthetic */ a(String str, int i7, int i10, p4.q qVar) {
+        this.a = 18;
+    }
+
+    public /* synthetic */ a(boolean z9, i1 i1Var, Bundle bundle) {
+        this.a = 22;
     }
 }

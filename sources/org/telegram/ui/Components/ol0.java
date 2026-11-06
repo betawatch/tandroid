@@ -1,51 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ol0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ nl0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.s1[] d;
-    public final /* synthetic */ View e;
+public final class ol0 extends ch.m0 {
+    public final /* synthetic */ pl0 g0;
 
-    public ol0(nl0 nl0Var, int i3, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.s1[] s1VarArr, View view) {
-        this.a = nl0Var;
-        this.b = i3;
-        this.c = reaction;
-        this.d = s1VarArr;
-        this.e = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ol0(pl0 pl0Var, int i7, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(null, i7, view, tL_reactionCount, true, f6Var);
+        this.g0 = pl0Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-        if (i3 != 6) {
-            return false;
-        }
-        nl0 nl0Var = this.a;
-        String obj = nl0Var.getText().toString();
-        if (obj.length() > 12) {
-            org.telegram.messenger.g0.F3(nl0Var);
-            return true;
-        }
-        org.telegram.messenger.hp.s1(this.b).l4(dh.n0.d(this.c), obj);
-        org.telegram.ui.ActionBar.s1[] s1VarArr = this.d;
-        org.telegram.ui.ActionBar.s1 s1Var = s1VarArr[0];
-        if (s1Var != null) {
-            s1Var.dismiss();
-        }
-        if (s1VarArr[0] == tl0.I) {
-            tl0.I = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    @Override // ch.m0
+    public final boolean e() {
+        return this.v > 0 || this.t || this.E.l != 1.0f;
+    }
+
+    @Override // ch.m0
+    public final boolean h() {
+        return !e();
+    }
+
+    @Override // ch.m0
+    public final int i() {
+        return 18;
+    }
+
+    @Override // ch.m0
+    public final void r(float f10) {
+        int i7 = this.h;
+        pl0 pl0Var = this.g0;
+        this.M = i0.a.f(f10, i7, org.telegram.ui.ActionBar.k6.w0(pl0Var.e ? org.telegram.ui.ActionBar.k6.tk : org.telegram.ui.ActionBar.k6.jb, pl0Var.s.c));
+        int f11 = i0.a.f(f10, this.f, pl0Var.e ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.qk, pl0Var.s.c) : 0);
+        this.N = f11;
+        this.M = org.telegram.ui.ActionBar.k6.w(f11, this.M);
+        this.O = i0.a.f(f10, this.g, pl0Var.e ? 1526726655 : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.kb, pl0Var.s.c));
     }
 }

@@ -5,8 +5,8 @@ public abstract class a extends p {
     public final ConcurrentHashMap i;
     public l j;
 
-    public a(l[] lVarArr, int i3, int i10, ConcurrentHashMap concurrentHashMap) {
-        super(lVarArr, i3, 0, i10);
+    public a(l[] lVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap) {
+        super(lVarArr, i7, 0, i10);
         this.i = concurrentHashMap;
         a();
     }

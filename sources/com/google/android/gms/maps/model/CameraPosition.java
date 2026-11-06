@@ -2,17 +2,18 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import i7.p;
+import j2.n;
 import java.util.Arrays;
-import m2.t;
-import p6.m;
-import q6.a;
+import m6.e;
+import q6.m;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class CameraPosition extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<CameraPosition> CREATOR = new p(16);
+    public static final Parcelable.Creator<CameraPosition> CREATOR = new e(2);
     public final LatLng a;
     public final float b;
     public final float c;
@@ -20,11 +21,11 @@ public final class CameraPosition extends a implements ReflectedParcelable {
 
     public CameraPosition(LatLng latLng, float f10, float f11, float f12) {
         m.h(latLng, "camera target must not be null.");
-        boolean z10 = false;
+        boolean z9 = false;
         if (f11 >= 0.0f && f11 <= 90.0f) {
-            z10 = true;
+            z9 = true;
         }
-        if (!z10) {
+        if (!z9) {
             throw new IllegalArgumentException("Tilt needs to be between 0 and 90 inclusive: " + f11);
         }
         this.a = latLng;
@@ -49,24 +50,24 @@ public final class CameraPosition extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        t tVar = new t(this);
-        tVar.A(this.a, "target");
-        tVar.A(Float.valueOf(this.b), "zoom");
-        tVar.A(Float.valueOf(this.c), "tilt");
-        tVar.A(Float.valueOf(this.d), "bearing");
-        return tVar.toString();
+        n nVar = new n(this);
+        nVar.X(this.a, "target");
+        nVar.X(Float.valueOf(this.b), "zoom");
+        nVar.X(Float.valueOf(this.c), "tilt");
+        nVar.X(Float.valueOf(this.d), "bearing");
+        return nVar.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.l(parcel, 2, this.a, i3);
-        j8.a.r(parcel, 3, 4);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.k(parcel, 2, this.a, i7);
+        wb.q(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        j8.a.r(parcel, 4, 4);
+        wb.q(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        j8.a.r(parcel, 5, 4);
+        wb.q(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        j8.a.t(parcel, s6);
+        wb.s(parcel, r10);
     }
 }

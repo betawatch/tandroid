@@ -3,17 +3,17 @@ package org.webrtc;
 import java.util.List;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class SoftwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final String TAG = "SoftwareVideoEncoderFactory";
     private final long nativeFactory = nativeCreateFactory();
 
-    private static native long nativeCreateEncoder(long j10, VideoCodecInfo videoCodecInfo);
+    private static native long nativeCreateEncoder(long j3, VideoCodecInfo videoCodecInfo);
 
     private static native long nativeCreateFactory();
 
-    private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j10);
+    private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j3);
 
     @Override // org.webrtc.VideoEncoderFactory
     public VideoEncoder createEncoder(VideoCodecInfo videoCodecInfo) {

@@ -1,16 +1,38 @@
 package q1;
 
-import a0.l;
-import java.util.ArrayList;
-import org.telegram.ui.Components.nh;
+import java.util.Map;
+import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.k;
+import org.telegram.ui.Cells.f1;
+import rd.l;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final ThreadLocal f = new ThreadLocal();
-    public p7.d d;
-    public final l a = new l(0);
-    public final ArrayList b = new ArrayList();
-    public final nh c = new nh(this, 11);
-    public boolean e = false;
+public final class a extends k implements l {
+    public static final a b = new a(1);
+
+    @Override // rd.l
+    public final Object invoke(Object obj) {
+        String valueOf;
+        Map.Entry entry = (Map.Entry) obj;
+        j.e(entry, "entry");
+        Object value = entry.getValue();
+        if (value instanceof byte[]) {
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append((CharSequence) "[");
+            int i7 = 0;
+            for (byte b10 : (byte[]) value) {
+                i7++;
+                if (i7 > 1) {
+                    sb2.append((CharSequence) ", ");
+                }
+                sb2.append((CharSequence) String.valueOf((int) b10));
+            }
+            sb2.append((CharSequence) "]");
+            valueOf = sb2.toString();
+        } else {
+            valueOf = String.valueOf(entry.getValue());
+        }
+        return f1.n(((e) entry.getKey()).a, " = ", valueOf, new StringBuilder("  "));
+    }
 }

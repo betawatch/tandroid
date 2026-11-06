@@ -1,47 +1,41 @@
 package tg;
 
-import android.graphics.RectF;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class x0 {
-    public final g a;
+public final class x0 extends View {
+    public int a;
     public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public boolean l;
+    public final /* synthetic */ y0 c;
 
-    public x0(g gVar) {
-        this.a = gVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x0(y0 y0Var, Context context) {
+        super(context);
+        this.c = y0Var;
+        setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
+        setLayoutParams(new v4.o0(-2, 0));
     }
 
-    public final void a(RectF rectF) {
-        g gVar = this.a;
-        if (gVar.o() == 4) {
-            float f10 = this.b;
-            float f11 = this.k;
-            float f12 = this.c;
-            rectF.set(f10 - f11, f12 - f11, f10 + f11, f12 + f11);
-            rectF.union(this.d, this.e);
-            rectF.union(this.i, this.j);
-        } else {
-            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
-            float f13 = this.b;
-            float f14 = max * 1.42f;
-            float f15 = this.c;
-            rectF.set(f13 - f14, f15 - f14, f13 + f14, f15 + f14);
-            if (gVar.o() == 3) {
-                rectF.union(this.i, this.j);
-            }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        y0 y0Var = this.c;
+        y0Var.e3.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (y0Var.f3.getStrokeWidth() + org.telegram.messenger.g0.L(3.0f)) * this.b;
         }
-        float f16 = (-this.f) - 3.0f;
-        rectF.inset(f16, f16);
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        y0.A1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            y0Var.f3.setColor(this.a);
+            y0Var.f3.setAlpha(qs.e4);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), y0Var.f3);
+        }
     }
 }

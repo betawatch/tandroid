@@ -1,46 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class tu0 extends ProfileStoriesView {
-    public final /* synthetic */ Context u0;
-    public final /* synthetic */ ProfileActivity v0;
+public final /* synthetic */ class tu0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vu0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tu0(ProfileActivity profileActivity, Context context, int i3, long j10, boolean z10, l0 l0Var, qu0 qu0Var, org.telegram.ui.ActionBar.e6 e6Var, Context context2) {
-        super(context, i3, j10, z10, l0Var, qu0Var, e6Var);
-        this.v0 = profileActivity;
-        this.u0 = context2;
+    public /* synthetic */ tu0(vu0 vu0Var, int i7) {
+        this.a = i7;
+        this.b = vu0Var;
     }
 
-    @Override // org.telegram.ui.Stories.ProfileStoriesView
-    public final void e(c6.i iVar) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        ProfileActivity profileActivity = this.v0;
-        long a10 = profileActivity.a();
-        ei.z6 P1 = profileActivity.getMessagesController().P1();
-        boolean K = P1.K(a10);
-        Context context = this.u0;
-        if (K || P1.M(a10) || P1.Q(a10)) {
-            profileActivity.getOrCreateStoryViewer().R(context, a10, iVar);
-            return;
-        }
-        TLRPC.UserFull userFull = profileActivity.v2;
-        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().n) {
-            profileActivity.getOrCreateStoryViewer().S(context, profileActivity.v2.stories, iVar);
-            return;
-        }
-        TLRPC.ChatFull chatFull = profileActivity.u2;
-        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
-            profileActivity.a4();
-        } else {
-            profileActivity.getOrCreateStoryViewer().S(context, profileActivity.u2.stories, iVar);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                vu0 vu0Var = this.b;
+                vu0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new tu0(vu0Var, 1));
+                break;
+            default:
+                this.b.c.getMessagesController().R2(true);
+                break;
         }
     }
 }

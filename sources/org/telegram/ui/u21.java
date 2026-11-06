@@ -1,20 +1,32 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class u21 extends lw0 {
-    public final /* synthetic */ c31 H;
+public final class u21 extends UndoView {
+    public final /* synthetic */ SessionsActivity j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u21(c31 c31Var, c31 c31Var2, Context context) {
-        super(context, c31Var2);
-        this.H = c31Var;
+    public u21(SessionsActivity sessionsActivity, Context context) {
+        super(context);
+        this.j0 = sessionsActivity;
     }
 
-    @Override // u4.h0
-    public final void f() {
-        this.H.c.g3.O(true);
+    @Override // org.telegram.ui.Components.UndoView
+    public final void d(int i7, boolean z9) {
+        int i10;
+        if (!z9 && getCurrentInfoObject() != null) {
+            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
+            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
+            resetauthorization.hash = tL_authorization.hash;
+            i10 = ((org.telegram.ui.ActionBar.f2) this.j0).currentAccount;
+            ConnectionsManager.getInstance(i10).sendRequest(resetauthorization, new h50(25, this, tL_authorization));
+        }
+        super.d(i7, z9);
     }
 }

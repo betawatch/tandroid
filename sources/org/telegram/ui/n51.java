@@ -1,41 +1,44 @@
 package org.telegram.ui;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class n51 implements LocationListener {
-    public final /* synthetic */ ThemeActivity a;
+public final /* synthetic */ class n51 implements org.telegram.ui.Components.yi0, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    public n51(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    public /* synthetic */ n51(ThemeActivity themeActivity, int i7) {
+        this.a = i7;
+        this.b = themeActivity;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        ThemeActivity themeActivity = this.a;
-        if (location == null) {
-            return;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 1:
+                ThemeActivity themeActivity = this.b;
+                if (themeActivity.getParentActivity() != null) {
+                    try {
+                        themeActivity.getParentActivity().startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                themeActivity2.getClass();
+                org.telegram.ui.Components.v4.T(themeActivity2, 0, null, null);
+                break;
         }
-        themeActivity.L0 = false;
-        LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
-        locationManager.removeUpdates(themeActivity.R0);
-        locationManager.removeUpdates(themeActivity.S0);
-        themeActivity.G0(location, false);
     }
 
-    @Override // android.location.LocationListener
-    public final void onProviderDisabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderEnabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onStatusChanged(String str, int i3, Bundle bundle) {
+    @Override // org.telegram.ui.Components.yi0
+    public int run() {
+        int i7;
+        i7 = this.b.sensitiveContentRow;
+        return i7;
     }
 }

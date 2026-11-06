@@ -1,25 +1,27 @@
 package o2;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import h9.i0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a {
-    public final long a;
+    public final int[] a;
     public final int b;
-    public final List c;
-    public final List d;
-    public final List e;
-    public final List f;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final i0 h;
 
-    public a(long j10, int i3, ArrayList arrayList, List list, List list2, List list3) {
-        this.a = j10;
-        this.b = i3;
-        this.c = DesugarCollections.unmodifiableList(arrayList);
-        this.d = DesugarCollections.unmodifiableList(list);
-        this.e = DesugarCollections.unmodifiableList(list2);
-        this.f = DesugarCollections.unmodifiableList(list3);
+    public a(int i7, int i10, int[] iArr, int i11, int i12, int i13, int i14, i0 i0Var) {
+        this.b = i7;
+        this.a = iArr;
+        this.c = i10;
+        this.e = i11;
+        this.f = i12;
+        this.g = i13;
+        this.d = i14;
+        this.h = i0Var;
     }
 }

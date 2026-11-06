@@ -1,13 +1,43 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class db extends org.telegram.ui.Cells.t0 {
-    @Override // org.telegram.ui.Cells.t0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class db extends mi.l {
+    public int W;
+    public fq0 X;
+    public final /* synthetic */ mb Y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public db(mb mbVar, org.telegram.ui.Components.pj0 pj0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(null, pj0Var, f6Var);
+        this.Y = mbVar;
+        this.W = -1;
+    }
+
+    @Override // mi.l, v4.k
+    public final void N() {
+        super.N();
+        fq0 fq0Var = this.X;
+        if (fq0Var != null) {
+            org.telegram.messenger.g0.r(fq0Var);
+        }
+        fq0 fq0Var2 = new fq0(this, 20);
+        this.X = fq0Var2;
+        org.telegram.messenger.g0.h3(fq0Var2);
+    }
+
+    @Override // mi.l
+    public final void W() {
+        if (this.W == -1) {
+            this.W = this.Y.getNotificationCenter().q(mb.R0, this.W, false);
+        }
+        fq0 fq0Var = this.X;
+        if (fq0Var != null) {
+            org.telegram.messenger.g0.r(fq0Var);
+            this.X = null;
+        }
+        if (org.telegram.messenger.r2.a) {
+            org.telegram.messenger.a8.b("admin logs chatItemAnimator disable notifications");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package androidx.activity;
 
+import a8.b8;
 import android.media.MediaCodec;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
@@ -11,66 +12,64 @@ import android.view.Surface;
 import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
-import b8.xe;
+import c8.za;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d2.a1;
-import g2.n0;
+import e2.y0;
+import h2.m0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.jvm.internal.j;
-import m.p;
-import o4.e0;
-import o4.w;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.y00;
+import m.q;
+import org.telegram.ui.Components.st0;
+import p4.d0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n implements l9.t, t2.k, com.google.android.gms.common.api.internal.p {
+public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.p {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
     public Object d;
 
-    public n(String str, String str2, boolean z10) {
+    public n(String str, String str2, boolean z9) {
         this.a = 4;
         this.d = str;
         this.c = str2;
-        this.b = z10;
+        this.b = z9;
     }
 
-    @Override // t2.k
+    @Override // u2.k
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public t2.c L(l2.e eVar) {
+    public u2.c Y(b8 b8Var) {
         MediaCodec mediaCodec;
-        t2.m eVar2;
-        int i3;
-        t2.c cVar;
-        String str = ((t2.o) eVar.a).a;
-        t2.c cVar2 = null;
+        u2.m eVar;
+        int i7;
+        u2.c cVar;
+        String str = ((u2.o) b8Var.a).a;
+        u2.c cVar2 = null;
         try {
             Trace.beginSection("createCodec:" + str);
             mediaCodec = MediaCodec.createByCodecName(str);
             try {
                 if (!this.b || Build.VERSION.SDK_INT < 36) {
-                    eVar2 = new t2.e(mediaCodec, (HandlerThread) ((t2.b) this.d).get());
-                    i3 = 0;
+                    eVar = new u2.e(mediaCodec, (HandlerThread) ((u2.b) this.d).get());
+                    i7 = 0;
                 } else {
-                    eVar2 = new y00(mediaCodec);
-                    i3 = 4;
+                    eVar = new org.telegram.ui.Components.n(mediaCodec);
+                    i7 = 4;
                 }
-                cVar = new t2.c(mediaCodec, (HandlerThread) ((t2.b) this.c).get(), eVar2, (t2.j) eVar.f);
+                cVar = new u2.c(mediaCodec, (HandlerThread) ((u2.b) this.c).get(), eVar, (u2.j) b8Var.f);
             } catch (Exception e10) {
                 e = e10;
             }
             try {
                 Trace.endSection();
-                Surface surface = (Surface) eVar.d;
-                if (surface == null && ((t2.o) eVar.a).h && Build.VERSION.SDK_INT >= 35) {
-                    i3 |= 8;
+                Surface surface = (Surface) b8Var.d;
+                if (surface == null && ((u2.o) b8Var.a).h && Build.VERSION.SDK_INT >= 35) {
+                    i7 |= 8;
                 }
-                t2.c.o(cVar, (MediaFormat) eVar.b, surface, (MediaCrypto) eVar.e, i3);
+                u2.c.o(cVar, (MediaFormat) b8Var.b, surface, (MediaCrypto) b8Var.e, i7);
                 return cVar;
             } catch (Exception e11) {
                 e = e11;
@@ -91,31 +90,31 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
     @Override // com.google.android.gms.common.api.internal.p
     public void accept(Object obj, Object obj2) {
         com.google.android.gms.common.api.internal.m mVar;
-        boolean z10;
-        t7.k kVar = (t7.k) obj;
+        boolean z9;
+        u7.k kVar = (u7.k) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         synchronized (this) {
             mVar = ((com.google.android.gms.common.api.internal.o) this.c).b;
-            z10 = this.b;
+            z9 = this.b;
             ((com.google.android.gms.common.api.internal.o) this.c).b = null;
         }
         if (mVar == null) {
             taskCompletionSource.setResult(Boolean.FALSE);
         } else {
-            t7.a.a.a(kVar, mVar, z10, taskCompletionSource);
+            u7.a.a.a(kVar, mVar, z9, taskCompletionSource);
         }
     }
 
     public boolean b(Long l10) {
-        boolean z10;
+        boolean z9;
         synchronized (((HashMap) this.d)) {
             try {
-                ue.b bVar = (ue.b) ((HashMap) this.d).get(l10);
-                z10 = (bVar == null || bVar.isEmpty()) ? false : true;
+                xe.b bVar = (xe.b) ((HashMap) this.d).get(l10);
+                z9 = (bVar == null || bVar.isEmpty()) ? false : true;
             } finally {
             }
         }
-        return z10;
+        return z9;
     }
 
     public void c() {
@@ -130,21 +129,21 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
     }
 
     public void d() {
-        v4.e eVar = (v4.e) this.c;
+        w4.e eVar = (w4.e) this.c;
         androidx.lifecycle.o m10 = eVar.m();
         if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
         m10.a(new Recreator(eVar));
-        final m.p pVar = (m.p) this.d;
-        pVar.getClass();
-        if (pVar.c) {
+        final m.q qVar = (m.q) this.d;
+        qVar.getClass();
+        if (qVar.c) {
             throw new IllegalStateException("SavedStateRegistry was already attached.");
         }
-        m10.a(new androidx.lifecycle.r() { // from class: v4.b
+        m10.a(new androidx.lifecycle.r() { // from class: w4.b
             @Override // androidx.lifecycle.r
             public final void d(t tVar, m mVar) {
-                p this$0 = p.this;
+                q this$0 = q.this;
                 j.e(this$0, "this$0");
                 if (mVar == m.ON_START) {
                     this$0.e = true;
@@ -153,7 +152,7 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
                 }
             }
         });
-        pVar.c = true;
+        qVar.c = true;
         this.b = true;
     }
 
@@ -161,36 +160,36 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
         if (!this.b) {
             d();
         }
-        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((v4.e) this.c).m();
+        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((w4.e) this.c).m();
         if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
             throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
         }
-        m.p pVar = (m.p) this.d;
-        if (!pVar.c) {
+        m.q qVar = (m.q) this.d;
+        if (!qVar.c) {
             throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
         }
-        if (pVar.d) {
+        if (qVar.d) {
             throw new IllegalStateException("SavedStateRegistry was already restored.");
         }
-        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        pVar.d = true;
+        qVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
+        qVar.d = true;
     }
 
     public void f(Bundle bundle) {
-        m.p pVar = (m.p) this.d;
-        pVar.getClass();
+        m.q qVar = (m.q) this.d;
+        qVar.getClass();
         Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) pVar.a;
+        Bundle bundle3 = (Bundle) qVar.a;
         if (bundle3 != null) {
             bundle2.putAll(bundle3);
         }
-        o.f fVar = (o.f) pVar.f;
+        o.f fVar = (o.f) qVar.f;
         fVar.getClass();
         o.d dVar = new o.d(fVar);
         fVar.c.put(dVar, Boolean.FALSE);
         while (dVar.hasNext()) {
             Map.Entry entry = (Map.Entry) dVar.next();
-            bundle2.putBundle((String) entry.getKey(), ((v4.d) entry.getValue()).c());
+            bundle2.putBundle((String) entry.getKey(), ((w4.d) entry.getValue()).c());
         }
         if (bundle2.isEmpty()) {
             return;
@@ -202,49 +201,49 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
         return (com.google.android.gms.common.api.internal.o) this.c;
     }
 
-    @Override // l9.t
+    @Override // m9.t
     public void h(Throwable th2) {
-        e0 e0Var = (e0) this.d;
+        d0 d0Var = (d0) this.d;
         if (th2 instanceof UnsupportedOperationException) {
-            g2.a.m("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
+            h2.a.m("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
         } else {
-            g2.a.d("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
+            h2.a.d("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
         }
-        n0.J(e0Var.t);
+        m0.J(d0Var.t);
         if (this.b) {
-            e0Var.p((o4.v) this.c);
+            d0Var.p((p4.v) this.c);
         }
     }
 
-    @Override // l9.t
+    @Override // m9.t
     public void onSuccess(Object obj) {
-        e0 e0Var = (e0) this.d;
-        o4.v vVar = (o4.v) this.c;
-        boolean z10 = this.b;
-        xe.b(e0Var.t, (w) obj);
-        n0.J(e0Var.t);
-        if (z10) {
-            e0Var.p(vVar);
+        d0 d0Var = (d0) this.d;
+        p4.v vVar = (p4.v) this.c;
+        boolean z9 = this.b;
+        za.b(d0Var.t, (p4.w) obj);
+        m0.J(d0Var.t);
+        if (z9) {
+            d0Var.p(vVar);
         }
     }
 
-    public /* synthetic */ n(rt0 rt0Var, Object obj, int i3) {
-        this.a = i3;
-        this.d = rt0Var;
+    public /* synthetic */ n(st0 st0Var, Object obj, int i7) {
+        this.a = i7;
+        this.d = st0Var;
         this.c = obj;
     }
 
-    public n(t7.c cVar, com.google.android.gms.common.api.internal.o oVar) {
-        this.a = 7;
+    public n(u7.c cVar, com.google.android.gms.common.api.internal.o oVar) {
+        this.a = 8;
         this.d = cVar;
         this.b = true;
         this.c = oVar;
     }
 
-    public n(v4.e eVar) {
-        this.a = 10;
+    public n(w4.e eVar) {
+        this.a = 9;
         this.c = eVar;
-        this.d = new m.p();
+        this.d = new m.q();
     }
 
     public n(k kVar, d dVar) {
@@ -253,33 +252,33 @@ public final class n implements l9.t, t2.k, com.google.android.gms.common.api.in
         this.d = new ArrayList();
     }
 
-    public n(int i3) {
-        this.a = i3;
-        switch (i3) {
-            case 8:
+    public n(int i7) {
+        this.a = i7;
+        switch (i7) {
+            case 10:
                 this.d = new HashMap();
                 this.b = true;
                 break;
         }
     }
 
-    public n(t2.b bVar, t2.b bVar2) {
-        this.a = 6;
+    public n(u2.b bVar, u2.b bVar2) {
+        this.a = 7;
         this.c = bVar;
         this.d = bVar2;
         this.b = true;
     }
 
-    public n(lh.a aVar, qe.a aVar2) {
+    public n(kh.a aVar, te.a aVar2) {
         this.a = 2;
         this.c = aVar;
         this.d = aVar2;
     }
 
-    public n(e0 e0Var, o4.v vVar, boolean z10, a1 a1Var) {
+    public n(d0 d0Var, p4.v vVar, boolean z9, y0 y0Var) {
         this.a = 3;
-        this.d = e0Var;
+        this.d = d0Var;
         this.c = vVar;
-        this.b = z10;
+        this.b = z9;
     }
 }

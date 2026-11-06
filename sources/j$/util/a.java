@@ -21,8 +21,8 @@ public final class a implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -36,17 +36,17 @@ public final class a implements Spliterator {
         this.c = -1;
     }
 
-    public a(a aVar, int i3, int i10) {
+    public a(a aVar, int i7, int i10) {
         this.a = aVar.a;
-        this.b = i3;
+        this.b = i7;
         this.c = i10;
     }
 
     public final int a() {
         java.util.List list = this.a;
-        int i3 = this.c;
-        if (i3 >= 0) {
-            return i3;
+        int i7 = this.c;
+        if (i7 >= 0) {
+            return i7;
         }
         int size = list.size();
         this.c = size;
@@ -56,26 +56,26 @@ public final class a implements Spliterator {
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
         int a10 = a();
-        int i3 = this.b;
-        int i10 = (a10 + i3) >>> 1;
-        if (i3 >= i10) {
+        int i7 = this.b;
+        int i10 = (a10 + i7) >>> 1;
+        if (i7 >= i10) {
             return null;
         }
         this.b = i10;
-        return new a(this, i3, i10);
+        return new a(this, i7, i10);
     }
 
     @Override // j$.util.Spliterator
     public final boolean tryAdvance(Consumer consumer) {
         consumer.getClass();
         int a10 = a();
-        int i3 = this.b;
-        if (i3 >= a10) {
+        int i7 = this.b;
+        if (i7 >= a10) {
             return false;
         }
-        this.b = i3 + 1;
+        this.b = i7 + 1;
         try {
-            consumer.x(this.a.get(i3));
+            consumer.x(this.a.get(i7));
             return true;
         } catch (IndexOutOfBoundsException unused) {
             throw new ConcurrentModificationException();
@@ -88,9 +88,9 @@ public final class a implements Spliterator {
         java.util.List list = this.a;
         int a10 = a();
         this.b = a10;
-        for (int i3 = this.b; i3 < a10; i3++) {
+        for (int i7 = this.b; i7 < a10; i7++) {
             try {
-                consumer.x(list.get(i3));
+                consumer.x(list.get(i7));
             } catch (IndexOutOfBoundsException unused) {
                 throw new ConcurrentModificationException();
             }

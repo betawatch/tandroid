@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class k3 extends v1 {
     private static final k3 zzb;
@@ -28,19 +28,19 @@ public final class k3 extends v1 {
         k3Var.zzf = str;
     }
 
-    public static /* synthetic */ void p(k3 k3Var, int i3) {
+    public static /* synthetic */ void p(k3 k3Var, int i7) {
         k3Var.zzd |= 16;
-        k3Var.zzi = i3;
+        k3Var.zzi = i7;
     }
 
-    public static void q(k3 k3Var, int i3) {
-        k3Var.zzg = a1.g.d(i3);
+    public static void q(k3 k3Var, int i7) {
+        k3Var.zzg = a8.p0.e(i7);
         k3Var.zzd |= 4;
     }
 
-    public static /* synthetic */ void r(k3 k3Var, int i3) {
+    public static /* synthetic */ void r(k3 k3Var, int i7) {
         k3Var.zzd |= 1;
-        k3Var.zze = i3;
+        k3Var.zze = i7;
     }
 
     public static j3 s() {
@@ -48,8 +48,8 @@ public final class k3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i3) {
-        int i10 = i3 - 1;
+    public final Object d(int i7) {
+        int i10 = i7 - 1;
         if (i10 == 0) {
             return (byte) 1;
         }

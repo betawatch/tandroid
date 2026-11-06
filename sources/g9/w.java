@@ -1,21 +1,45 @@
 package g9;
 
-import java.util.Comparator;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class w {
-    public static final u a = new u();
-    public static final v b = new v(-1);
-    public static final v c = new v(1);
+public final class w implements u {
+    public static final d3.q d = new d3.q(1);
+    public final Object a = new Object();
+    public volatile u b;
+    public Object c;
 
-    public abstract w a(int i3, int i10);
+    public w(u uVar) {
+        this.b = uVar;
+    }
 
-    public abstract w b(Object obj, Object obj2, Comparator comparator);
+    @Override // g9.u
+    public final Object get() {
+        u uVar = this.b;
+        d3.q qVar = d;
+        if (uVar != qVar) {
+            synchronized (this.a) {
+                try {
+                    if (this.b != qVar) {
+                        Object obj = this.b.get();
+                        this.c = obj;
+                        this.b = qVar;
+                        return obj;
+                    }
+                } finally {
+                }
+            }
+        }
+        return this.c;
+    }
 
-    public abstract w c(boolean z10, boolean z11);
-
-    public abstract w d(boolean z10, boolean z11);
-
-    public abstract int e();
+    public final String toString() {
+        Object obj = this.b;
+        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
+        if (obj == d) {
+            obj = "<supplier that returned " + this.c + ">";
+        }
+        sb2.append(obj);
+        sb2.append(")");
+        return sb2.toString();
+    }
 }

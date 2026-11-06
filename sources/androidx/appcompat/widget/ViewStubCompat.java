@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import java.lang.ref.WeakReference;
-import m.q3;
+import m.s3;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class ViewStubCompat extends View {
     public int a;
@@ -37,9 +37,9 @@ public final class ViewStubCompat extends View {
             layoutInflater = LayoutInflater.from(getContext());
         }
         View inflate = layoutInflater.inflate(this.a, viewGroup, false);
-        int i3 = this.b;
-        if (i3 != -1) {
-            inflate.setId(i3);
+        int i7 = this.b;
+        if (i7 != -1) {
+            inflate.setId(i7);
         }
         int indexOfChild = viewGroup.indexOfChild(this);
         viewGroup.removeViewInLayout(this);
@@ -66,43 +66,43 @@ public final class ViewStubCompat extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         setMeasuredDimension(0, 0);
     }
 
-    public void setInflatedId(int i3) {
-        this.b = i3;
+    public void setInflatedId(int i7) {
+        this.b = i7;
     }
 
     public void setLayoutInflater(LayoutInflater layoutInflater) {
         this.d = layoutInflater;
     }
 
-    public void setLayoutResource(int i3) {
-        this.a = i3;
+    public void setLayoutResource(int i7) {
+        this.a = i7;
     }
 
     @Override // android.view.View
-    public void setVisibility(int i3) {
+    public void setVisibility(int i7) {
         WeakReference weakReference = this.c;
         if (weakReference != null) {
             View view = (View) weakReference.get();
             if (view == null) {
                 throw new IllegalStateException("setVisibility called on un-referenced view");
             }
-            view.setVisibility(i3);
+            view.setVisibility(i7);
             return;
         }
-        super.setVisibility(i3);
-        if (i3 == 0 || i3 == 4) {
+        super.setVisibility(i7);
+        if (i7 == 0 || i7 == 4) {
             a();
         }
     }
 
-    public ViewStubCompat(Context context, AttributeSet attributeSet, int i3) {
-        super(context, attributeSet, i3);
+    public ViewStubCompat(Context context, AttributeSet attributeSet, int i7) {
+        super(context, attributeSet, i7);
         this.a = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.A, i3, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.A, i7, 0);
         this.b = obtainStyledAttributes.getResourceId(2, -1);
         this.a = obtainStyledAttributes.getResourceId(1, 0);
         setId(obtainStyledAttributes.getResourceId(0, -1));
@@ -119,6 +119,6 @@ public final class ViewStubCompat extends View {
     public final void draw(Canvas canvas) {
     }
 
-    public void setOnInflateListener(q3 q3Var) {
+    public void setOnInflateListener(s3 s3Var) {
     }
 }

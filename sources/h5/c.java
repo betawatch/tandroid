@@ -1,25 +1,21 @@
 package h5;
 
-import org.telegram.ui.Components.i9;
+import com.googlecode.mp4parser.e;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class c extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ i9 e;
-
+public abstract class c extends e {
     static {
-        we.a aVar = new we.a(c.class, "ChunkOffsetBox.java");
-        e = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.ChunkOffsetBox", "", "", "java.lang.String"));
+        pc.c.a(c.class);
     }
 
-    public final String toString() {
-        ui.f b10 = we.a.b(e, this, this);
-        com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(b10);
-        StringBuilder sb2 = new StringBuilder(getClass().getSimpleName());
-        sb2.append("[entryCount=");
-        t tVar = (t) this;
-        com.google.android.recaptcha.internal.a.t(we.a.b(t.h, tVar, tVar));
-        return a1.g.o(tVar.f.length, "]", sb2);
+    public static byte[] d(String str) {
+        byte[] bArr = new byte[4];
+        if (str != null) {
+            for (int i7 = 0; i7 < Math.min(4, str.length()); i7++) {
+                bArr[i7] = (byte) str.charAt(i7);
+            }
+        }
+        return bArr;
     }
 }

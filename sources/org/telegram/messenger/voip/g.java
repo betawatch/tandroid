@@ -1,6 +1,6 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -8,10 +8,10 @@ public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ g(VideoCapturerDevice videoCapturerDevice, int i3, long j10) {
+    public /* synthetic */ g(VideoCapturerDevice videoCapturerDevice, int i7, long j3) {
         this.b = videoCapturerDevice;
-        this.d = i3;
-        this.c = j10;
+        this.d = i7;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
@@ -26,9 +26,9 @@ public final /* synthetic */ class g implements Runnable {
         }
     }
 
-    public /* synthetic */ g(VideoCapturerDevice videoCapturerDevice, long j10, int i3) {
+    public /* synthetic */ g(VideoCapturerDevice videoCapturerDevice, long j3, int i7) {
         this.b = videoCapturerDevice;
-        this.c = j10;
-        this.d = i3;
+        this.c = j3;
+        this.d = i7;
     }
 }

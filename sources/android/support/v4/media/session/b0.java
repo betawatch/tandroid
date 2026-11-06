@@ -4,7 +4,7 @@ import android.media.session.PlaybackState;
 import android.os.Bundle;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static void a(PlaybackState.Builder builder, PlaybackState.CustomAction customAction) {
@@ -23,8 +23,8 @@ public abstract class b0 {
         return new PlaybackState.Builder();
     }
 
-    public static PlaybackState.CustomAction.Builder e(String str, CharSequence charSequence, int i3) {
-        return new PlaybackState.CustomAction.Builder(str, charSequence, i3);
+    public static PlaybackState.CustomAction.Builder e(String str, CharSequence charSequence, int i7) {
+        return new PlaybackState.CustomAction.Builder(str, charSequence, i7);
     }
 
     public static String f(PlaybackState.CustomAction customAction) {
@@ -79,16 +79,16 @@ public abstract class b0 {
         return playbackState.getState();
     }
 
-    public static void s(PlaybackState.Builder builder, long j10) {
-        builder.setActions(j10);
+    public static void s(PlaybackState.Builder builder, long j3) {
+        builder.setActions(j3);
     }
 
-    public static void t(PlaybackState.Builder builder, long j10) {
-        builder.setActiveQueueItemId(j10);
+    public static void t(PlaybackState.Builder builder, long j3) {
+        builder.setActiveQueueItemId(j3);
     }
 
-    public static void u(PlaybackState.Builder builder, long j10) {
-        builder.setBufferedPosition(j10);
+    public static void u(PlaybackState.Builder builder, long j3) {
+        builder.setBufferedPosition(j3);
     }
 
     public static void v(PlaybackState.Builder builder, CharSequence charSequence) {
@@ -99,7 +99,7 @@ public abstract class b0 {
         builder.setExtras(bundle);
     }
 
-    public static void x(PlaybackState.Builder builder, int i3, long j10, float f10, long j11) {
-        builder.setState(i3, j10, f10, j11);
+    public static void x(PlaybackState.Builder builder, int i7, long j3, float f10, long j10) {
+        builder.setState(i7, j3, f10, j10);
     }
 }

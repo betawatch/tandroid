@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
 /* loaded from: classes2.dex */
 public class o6 extends s6 implements IntConsumer {
@@ -15,12 +15,12 @@ public class o6 extends s6 implements IntConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i3, int i10, Object obj2) {
+    public final void i(Object obj, int i7, int i10, Object obj2) {
         int[] iArr = (int[]) obj;
         IntConsumer intConsumer = (IntConsumer) obj2;
-        while (i3 < i10) {
-            intConsumer.accept(iArr[i3]);
-            i3++;
+        while (i7 < i10) {
+            intConsumer.accept(iArr[i7]);
+            i7++;
         }
     }
 
@@ -48,17 +48,17 @@ public class o6 extends s6 implements IntConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i3) {
-        return new int[i3];
+    public final Object newArray(int i7) {
+        return new int[i7];
     }
 
     @Override // java.util.function.IntConsumer
-    public void accept(int i3) {
+    public void accept(int i7) {
         n();
         int[] iArr = (int[]) this.e;
         int i10 = this.b;
         this.b = i10 + 1;
-        iArr[i10] = i3;
+        iArr[i10] = i7;
     }
 
     @Override // java.lang.Iterable
@@ -79,6 +79,6 @@ public class o6 extends s6 implements IntConsumer {
         if (iArr.length < 200) {
             return String.format("%s[length=%d, chunks=%d]%s", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(iArr));
         }
-        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, hs.e3)));
+        return String.format("%s[length=%d, chunks=%d]%s...", getClass().getSimpleName(), Integer.valueOf(iArr.length), Integer.valueOf(this.c), Arrays.toString(Arrays.copyOf(iArr, qs.e3)));
     }
 }

@@ -1,9 +1,9 @@
 package org.telegram.utils.twidget;
 
-import ai.z1;
+import a8.p0;
 import android.content.Context;
 import android.text.TextUtils;
-import ii.i2;
+import hi.j2;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -19,26 +19,24 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.InflaterInputStream;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.h10;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.l10;
-import org.telegram.messenger.qr;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ik;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.yj;
+import org.telegram.messenger.t10;
+import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Wallet.f2;
-import org.telegram.ui.Wallet.t1;
-import org.telegram.ui.hb1;
-import org.telegram.ui.hc1;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Wallet.h2;
+import org.telegram.ui.Wallet.w1;
+import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public abstract class p {
     public static boolean i;
@@ -47,13 +45,13 @@ public abstract class p {
     public static final ConcurrentHashMap b = new ConcurrentHashMap();
     public static final HashMap c = new HashMap();
     public static final HashMap d = new HashMap();
-    public static final hb1 e = new hb1(10);
+    public static final org.telegram.ui.Wallet.z e = new org.telegram.ui.Wallet.z(9);
     public static final ArrayList f = new ArrayList();
     public static final ArrayList g = new ArrayList();
     public static final ArrayList h = new ArrayList();
     public static final boolean[] k = new boolean[4];
     public static final HashMap l = new HashMap();
-    public static final mb.b m = new mb.b(20);
+    public static final nb.a m = new nb.a(20);
 
     public static String A(String str) {
         if (str == null || str.isEmpty()) {
@@ -69,13 +67,13 @@ public abstract class p {
                 arrayList.add(mVar);
             }
         }
-        Collections.sort(arrayList, new d80(28));
-        for (int i3 = 0; i3 < arrayList.size(); i3++) {
-            u uVar = ((m) arrayList.get(i3)).t;
-            if (i3 >= 4) {
+        Collections.sort(arrayList, new rv0(10));
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            u uVar = ((m) arrayList.get(i7)).t;
+            if (i7 >= 4) {
                 uVar.p();
             }
-            if (i3 >= 12 && uVar.f == null) {
+            if (i7 >= 12 && uVar.f == null) {
                 uVar.g = null;
             }
         }
@@ -114,7 +112,7 @@ public abstract class p {
     }
 
     public static boolean D(m mVar) {
-        return mVar.i && !mVar.k && ((org.telegram.messenger.h0) hp.s1(mVar.b).x7.j0.b).c;
+        return mVar.i && !mVar.k && ((org.telegram.messenger.h0) qp.s1(mVar.b).x7.j0.b).c;
     }
 
     public static void a(m mVar) {
@@ -132,10 +130,10 @@ public abstract class p {
         }
         ArrayList arrayList2 = new ArrayList(arrayList);
         int size = arrayList2.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList2.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList2.get(i7);
+            i7++;
             org.telegram.messenger.g0.h3((Runnable) obj);
         }
     }
@@ -158,7 +156,7 @@ public abstract class p {
         }
     }
 
-    public static int d(String str, u uVar, int i3) {
+    public static int d(String str, u uVar, int i7) {
         int i10;
         m mVar = n(str) ? (m) a.get(str) : null;
         int i11 = 0;
@@ -168,13 +166,13 @@ public abstract class p {
         if (mVar.f > 0) {
             return org.telegram.messenger.g0.L(Math.max(50, Math.min(600, r1)));
         }
-        int i12 = (uVar == null || Math.abs(uVar.k - i3) > 1) ? 0 : uVar.i;
+        int i12 = (uVar == null || Math.abs(uVar.k - i7) > 1) ? 0 : uVar.i;
         if (i12 > 0) {
             return Math.min(org.telegram.messenger.g0.L(600.0f), Math.max(org.telegram.messenger.g0.L(50.0f), i12));
         }
         n nVar = (n) b.get(mVar.a());
         if (nVar != null) {
-            int f10 = f(i3);
+            int f10 = f(i7);
             synchronized (nVar) {
                 ArrayList arrayList = nVar.a;
                 int size = arrayList.size();
@@ -195,7 +193,7 @@ public abstract class p {
             i11 = i10;
         }
         if (i11 <= 0) {
-            i11 = hs.q2;
+            i11 = qs.q2;
         }
         return org.telegram.messenger.g0.L(Math.max(50, Math.min(600, i11)));
     }
@@ -203,10 +201,10 @@ public abstract class p {
     public static String e(m mVar) {
         try {
             JSONObject jSONObject = new JSONObject();
-            boolean z10 = mVar.h;
-            boolean z11 = mVar.i;
-            jSONObject.put("isCopy", z10);
-            jSONObject.put("canQuery", z11);
+            boolean z9 = mVar.h;
+            boolean z10 = mVar.i;
+            jSONObject.put("isCopy", z9);
+            jSONObject.put("canQuery", z10);
             jSONObject.put("backgroundQuery", mVar.j);
             jSONObject.put("preview", mVar.k);
             jSONObject.put("wallet", D(mVar));
@@ -214,7 +212,7 @@ public abstract class p {
             if (obj != null) {
                 jSONObject.put("chatType", obj);
             }
-            TLRPC.User f10 = z11 ? h10.i(mVar.b).f() : null;
+            TLRPC.User f10 = z10 ? p10.i(mVar.b).f() : null;
             if (f10 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("id", f10.id);
@@ -224,9 +222,9 @@ public abstract class p {
                 if (!TextUtils.isEmpty(f10.last_name)) {
                     jSONObject2.put("lastName", f10.last_name);
                 }
-                String n4 = l10.n(f10);
-                if (!TextUtils.isEmpty(n4)) {
-                    jSONObject2.put("username", n4);
+                String n10 = t10.n(f10);
+                if (!TextUtils.isEmpty(n10)) {
+                    jSONObject2.put("username", n10);
                 }
                 jSONObject2.put("isPremium", f10.premium);
                 jSONObject.put("viewer", jSONObject2);
@@ -237,8 +235,8 @@ public abstract class p {
         }
     }
 
-    public static int f(int i3) {
-        return Math.round(i3 / org.telegram.messenger.g0.p);
+    public static int f(int i7) {
+        return Math.round(i7 / org.telegram.messenger.g0.p);
     }
 
     public static String g(String str, String str2) {
@@ -284,7 +282,7 @@ public abstract class p {
                     }
                     u uVar = new u(t0.b, mVar.a, mVar.s);
                     try {
-                        str2 = bd.E0().y.toLanguageTag();
+                        str2 = hd.E0().y.toLanguageTag();
                     } catch (Exception unused) {
                         str2 = null;
                     }
@@ -315,13 +313,13 @@ public abstract class p {
             JSONObject jSONObject = (JSONObject) c.get(mVar.a());
             JSONObject optJSONObject = jSONObject != null ? jSONObject.optJSONObject("local") : null;
             String jSONObject2 = (optJSONObject == null || optJSONObject.length() == 0) ? "" : optJSONObject.toString();
-            qr a02 = qr.a0(mVar.b);
-            a02.a.c(new yj(mVar.d, 9, mVar.c, a02, jSONObject2));
+            yr a02 = yr.a0(mVar.b);
+            a02.a.c(new ik(mVar.d, 9, mVar.c, a02, jSONObject2));
         }
         hashMap.clear();
     }
 
-    public static String k(String str, u uVar, int i3) {
+    public static String k(String str, u uVar, int i7) {
         int[] iArr = null;
         m mVar = n(str) ? (m) a.get(str) : null;
         if (mVar == null) {
@@ -330,12 +328,12 @@ public abstract class p {
         if (mVar.f > 0) {
             return "anchor " + mVar.f;
         }
-        if (uVar != null && Math.abs(uVar.k - i3) <= 1 && uVar.i > 0) {
+        if (uVar != null && Math.abs(uVar.k - i7) <= 1 && uVar.i > 0) {
             return "frame";
         }
         n nVar = (n) b.get(mVar.a());
         if (nVar != null) {
-            int f10 = f(i3);
+            int f10 = f(i7);
             synchronized (nVar) {
                 ArrayList arrayList = nVar.a;
                 int size = arrayList.size();
@@ -353,7 +351,7 @@ public abstract class p {
         if (iArr == null || iArr[1] <= 0) {
             return "placeholder";
         }
-        if (iArr[0] == f(i3)) {
+        if (iArr[0] == f(i7)) {
             return "cache";
         }
         return "cache of width " + iArr[0];
@@ -374,9 +372,9 @@ public abstract class p {
         if (bArr == null) {
             return null;
         }
-        boolean z10 = bArr.length >= 2 && (bArr[0] & 255) == 31 && (bArr[1] & 255) == 139;
+        boolean z9 = bArr.length >= 2 && (bArr[0] & 255) == 31 && (bArr[1] & 255) == 139;
         try {
-            InputStream gZIPInputStream = z10 ? new GZIPInputStream(new ByteArrayInputStream(bArr)) : new InflaterInputStream(new ByteArrayInputStream(bArr));
+            InputStream gZIPInputStream = z9 ? new GZIPInputStream(new ByteArrayInputStream(bArr)) : new InflaterInputStream(new ByteArrayInputStream(bArr));
             try {
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(bArr.length * 4);
                 try {
@@ -391,7 +389,7 @@ public abstract class p {
                     if (r2.a) {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append("widget payload: ");
-                        sb2.append(z10 ? "gzip" : "zlib");
+                        sb2.append(z9 ? "gzip" : "zlib");
                         sb2.append(", ");
                         sb2.append(bArr.length);
                         sb2.append(" -> ");
@@ -424,20 +422,20 @@ public abstract class p {
                 return;
             }
             ArrayList arrayList2 = f;
-            long j10 = Long.MAX_VALUE;
+            long j3 = Long.MAX_VALUE;
             m mVar = null;
             for (int size = arrayList2.size() - 1; size >= 0; size--) {
                 m mVar2 = (m) arrayList2.get(size);
                 if (mVar2.z) {
-                    long j11 = 9223372036854775806L;
+                    long j10 = 9223372036854775806L;
                     for (m mVar3 : a.values()) {
                         if (mVar3.x != 0 && mVar3.b == mVar2.b && mVar3.c == mVar2.c) {
-                            j11 = Math.min(j11, Math.abs(mVar3.d - mVar2.d));
+                            j10 = Math.min(j10, Math.abs(mVar3.d - mVar2.d));
                         }
                     }
-                    if (j11 < j10) {
+                    if (j10 < j3) {
                         mVar = mVar2;
-                        j10 = j11;
+                        j3 = j10;
                     }
                 }
             }
@@ -463,38 +461,38 @@ public abstract class p {
         }
     }
 
-    public static gk0 p(ArrayList arrayList) {
+    public static ck0 p(ArrayList arrayList) {
         int size = arrayList.size();
-        gk0 gk0Var = null;
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            gk0 gk0Var2 = (gk0) obj;
-            if (gk0Var == null || gk0Var2.d0 > gk0Var.d0) {
-                gk0Var = gk0Var2;
+        ck0 ck0Var = null;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ck0 ck0Var2 = (ck0) obj;
+            if (ck0Var == null || ck0Var2.c0 > ck0Var.c0) {
+                ck0Var = ck0Var2;
             }
         }
-        return gk0Var;
+        return ck0Var;
     }
 
-    public static void q(boolean z10) {
-        if (j == z10) {
+    public static void q(boolean z9) {
+        if (j == z9) {
             return;
         }
-        j = z10;
+        j = z9;
         Iterator it = a.values().iterator();
         while (it.hasNext()) {
             u uVar = ((m) it.next()).t;
-            if (uVar != null && uVar.p != z10) {
-                uVar.p = z10;
+            if (uVar != null && uVar.p != z9) {
+                uVar.p = z9;
                 h0 h0Var = uVar.f;
                 if (h0Var != null) {
-                    h0Var.d(uVar.n && !z10);
+                    h0Var.d(uVar.n && !z9);
                 }
             }
         }
-        if (z10) {
+        if (z9) {
             j();
         } else {
             o();
@@ -521,12 +519,12 @@ public abstract class p {
         }
         h7.x++;
         h7.y = System.currentTimeMillis();
-        boolean z10 = j;
-        if (uVar.p != z10) {
-            uVar.p = z10;
+        boolean z9 = j;
+        if (uVar.p != z9) {
+            uVar.p = z9;
             h0 h0Var = uVar.f;
             if (h0Var != null) {
-                h0Var.d(uVar.n && !z10);
+                h0Var.d(uVar.n && !z9);
             }
         }
         if (h7.z) {
@@ -538,16 +536,16 @@ public abstract class p {
         C();
     }
 
-    public static void t(int i3) {
-        org.telegram.messenger.g0.h3(new i2(i3, 14));
+    public static void t(int i7) {
+        org.telegram.messenger.g0.h3(new j2(i7, 14));
     }
 
-    public static void u(m mVar, u uVar, long j10, TLRPC.WidgetQueryType widgetQueryType, byte[] bArr) {
+    public static void u(m mVar, u uVar, long j3, TLRPC.WidgetQueryType widgetQueryType, byte[] bArr) {
         boolean[] zArr = new boolean[1];
         int[] iArr = new int[1];
-        z1 z1Var = new z1(zArr, ConnectionsManager.getInstance(mVar.b), iArr, uVar, j10, 17);
-        w(mVar, widgetQueryType, bArr, iArr, new i(zArr, z1Var, uVar, j10));
-        org.telegram.messenger.g0.i3(z1Var, 30000L);
+        bi.i0 i0Var = new bi.i0(zArr, ConnectionsManager.getInstance(mVar.b), iArr, uVar, j3, 16);
+        w(mVar, widgetQueryType, bArr, iArr, new i(zArr, i0Var, uVar, j3));
+        org.telegram.messenger.g0.i3(i0Var, 30000L);
     }
 
     public static void v(String str, Set set) {
@@ -560,22 +558,22 @@ public abstract class p {
     }
 
     public static void w(m mVar, TLRPC.WidgetQueryType widgetQueryType, byte[] bArr, int[] iArr, i iVar) {
-        boolean z10 = (widgetQueryType instanceof TLRPC.TL_widgetQueryTypeData) && !((TLRPC.TL_widgetQueryTypeData) widgetQueryType).with_wallet;
-        int i3 = mVar.b;
-        boolean z11 = k[i3];
-        if (z11 && !z10) {
+        boolean z9 = (widgetQueryType instanceof TLRPC.TL_widgetQueryTypeData) && !((TLRPC.TL_widgetQueryTypeData) widgetQueryType).with_wallet;
+        int i7 = mVar.b;
+        boolean z10 = k[i7];
+        if (z10 && !z9) {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.code = 400;
             tL_error.text = "WIDGET_QUERY_TYPE_UNSUPPORTED";
-            org.telegram.messenger.g0.h3(new hc1(14, iVar, tL_error));
+            org.telegram.messenger.g0.h3(new org.telegram.ui.web.w(9, iVar, tL_error));
             return;
         }
-        TLRPC.TL_messages_getBotWidgetQueryAnswer tL_messages_getBotWidgetQueryAnswer_layer233 = z11 ? new TLRPC.TL_messages_getBotWidgetQueryAnswer_layer233() : new TLRPC.TL_messages_getBotWidgetQueryAnswer();
-        tL_messages_getBotWidgetQueryAnswer_layer233.peer = hp.s1(i3).j1(mVar.c);
+        TLRPC.TL_messages_getBotWidgetQueryAnswer tL_messages_getBotWidgetQueryAnswer_layer233 = z10 ? new TLRPC.TL_messages_getBotWidgetQueryAnswer_layer233() : new TLRPC.TL_messages_getBotWidgetQueryAnswer();
+        tL_messages_getBotWidgetQueryAnswer_layer233.peer = qp.s1(i7).j1(mVar.c);
         tL_messages_getBotWidgetQueryAnswer_layer233.msg_id = mVar.d;
         tL_messages_getBotWidgetQueryAnswer_layer233.query_type = widgetQueryType;
         tL_messages_getBotWidgetQueryAnswer_layer233.data = bArr;
-        iArr[0] = ConnectionsManager.getInstance(i3).sendRequestTyped(tL_messages_getBotWidgetQueryAnswer_layer233, new c3.b(1), new t1(z11, mVar, widgetQueryType, bArr, iArr, iVar));
+        iArr[0] = ConnectionsManager.getInstance(i7).sendRequestTyped(tL_messages_getBotWidgetQueryAnswer_layer233, new d3.b(1), new w1(z10, mVar, widgetQueryType, bArr, iArr, iVar));
     }
 
     public static boolean x() {
@@ -583,9 +581,9 @@ public abstract class p {
         f0 f0Var;
         for (m mVar : a.values()) {
             u uVar = mVar.t;
-            gk0 gk0Var = mVar.w;
-            if (mVar.x != 0 && uVar != null && gk0Var != null && !mVar.D && ((h0Var = uVar.f) == null || (f0Var = h0Var.F) == null || (!f0Var.g && !h0Var.x))) {
-                String k10 = k(mVar.a, uVar, gk0Var.u0());
+            ck0 ck0Var = mVar.w;
+            if (mVar.x != 0 && uVar != null && ck0Var != null && !mVar.D && ((h0Var = uVar.f) == null || (f0Var = h0Var.F) == null || (!f0Var.g && !h0Var.x))) {
+                String k10 = k(mVar.a, uVar, ck0Var.u0());
                 if (k10.equals("placeholder") || k10.startsWith("cache of width")) {
                     return false;
                 }
@@ -597,7 +595,7 @@ public abstract class p {
     public static void y(m mVar) {
         h0 h0Var;
         u uVar = mVar.t;
-        boolean z10 = false;
+        boolean z9 = false;
         if (mVar.D) {
             if (mVar.B >= 2) {
                 return;
@@ -618,40 +616,40 @@ public abstract class p {
         if (str == null && uVar.t == null && uVar.u == null) {
             Context context = uVar.c;
             String str2 = uVar.b;
-            boolean z11 = uVar.m;
-            int i3 = uVar.d;
+            boolean z10 = uVar.m;
+            int i7 = uVar.d;
             int[] iArr = i0.a;
-            h0Var = new h0(context, str2, a1.g.s(new StringBuilder("{\"colorScheme\":\""), z11 ? "dark" : "light", "\"}"), i3, null, null);
+            h0Var = new h0(context, str2, p0.s(new StringBuilder("{\"colorScheme\":\""), z10 ? "dark" : "light", "\"}"), i7, null, null);
         } else {
             Context context2 = uVar.c;
             String str3 = uVar.b;
             if (str == null) {
-                boolean z12 = uVar.m;
+                boolean z11 = uVar.m;
                 int[] iArr2 = i0.a;
-                str = a1.g.s(new StringBuilder("{\"colorScheme\":\""), z12 ? "dark" : "light", "\"}");
+                str = p0.s(new StringBuilder("{\"colorScheme\":\""), z11 ? "dark" : "light", "\"}");
             }
             h0Var = new h0(context2, str3, str, uVar.d, uVar.t, uVar.u);
         }
         StringBuilder sb2 = new StringBuilder("{\"data\":");
         sb2.append(uVar.v);
         sb2.append(",\"context\":");
-        String s6 = a1.g.s(sb2, uVar.w, "}");
-        if (s6 != null) {
-            h0Var.h = s6;
+        String s5 = p0.s(sb2, uVar.w, "}");
+        if (s5 != null) {
+            h0Var.h = s5;
         }
         h0Var.c(uVar.x);
         h0Var.J = uVar;
         h0Var.K = uVar;
         if (uVar.n && !uVar.p) {
-            z10 = true;
+            z9 = true;
         }
-        h0Var.d(z10);
+        h0Var.d(z9);
         uVar.f = h0Var;
         uVar.q++;
-        z.a.execute(new f2(h0Var, uVar.j, 5));
+        z.a.execute(new h2(h0Var, uVar.j, 5));
     }
 
-    public static String z(int i3, int i10, long j10) {
-        return i3 + "/" + j10 + "/" + i10;
+    public static String z(int i7, int i10, long j3) {
+        return i7 + "/" + j3 + "/" + i10;
     }
 }

@@ -3,45 +3,45 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class lq0 extends iz {
-    public final /* synthetic */ zp0 V;
-    public final /* synthetic */ ws0 W;
+public final class lq0 extends lz {
+    public final /* synthetic */ zp0 U;
+    public final /* synthetic */ xs0 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lq0(ws0 ws0Var, Context context, zp0 zp0Var) {
+    public lq0(xs0 xs0Var, Context context, zp0 zp0Var) {
         super(context, null);
-        this.W = ws0Var;
-        this.V = zp0Var;
+        this.V = xs0Var;
+        this.U = zp0Var;
     }
 
-    @Override // org.telegram.ui.Components.iz
+    @Override // org.telegram.ui.Components.lz
     public final int getColumnsCount() {
-        return this.W.p1[ws0.z0(this.V.F) ? 1 : 0];
+        return this.V.o1[xs0.z0(this.U.E) ? 1 : 0];
     }
 
-    @Override // org.telegram.ui.Components.iz
+    @Override // org.telegram.ui.Components.lz
     public final int getViewType() {
         setIsSingleCell(false);
-        int i3 = this.V.F;
-        if (i3 == 0 || i3 == 5) {
+        int i7 = this.U.E;
+        if (i7 == 0 || i7 == 5) {
             return 2;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             return 3;
         }
-        if (i3 != 2 && i3 != 4) {
-            if (i3 == 3) {
+        if (i7 != 2 && i7 != 4) {
+            if (i7 == 3) {
                 return 5;
             }
-            if (i3 != 7) {
-                if (i3 == 6) {
-                    if (this.W.L0.getTabsCount() == 1) {
+            if (i7 != 7) {
+                if (i7 == 6) {
+                    if (this.V.K0.getTabsCount() == 1) {
                         setIsSingleCell(true);
                         return 1;
                     }
-                } else if (ws0.z0(i3)) {
+                } else if (xs0.z0(i7)) {
                     return 27;
                 }
                 return 1;
@@ -50,11 +50,11 @@ public final class lq0 extends iz {
         return 6;
     }
 
-    @Override // org.telegram.ui.Components.iz, android.view.View
+    @Override // org.telegram.ui.Components.lz, android.view.View
     public final void onDraw(Canvas canvas) {
-        ws0 ws0Var = this.W;
-        ws0Var.W0.setColor(ws0Var.s0(org.telegram.ui.ActionBar.k6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), ws0Var.W0);
+        xs0 xs0Var = this.V;
+        xs0Var.V0.setColor(xs0Var.s0(org.telegram.ui.ActionBar.k6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), xs0Var.V0);
         super.onDraw(canvas);
     }
 }

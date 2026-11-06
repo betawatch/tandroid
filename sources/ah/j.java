@@ -1,0 +1,898 @@
+package ah;
+
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.ViewPropertyAnimator;
+import android.widget.ImageView;
+import androidx.appcompat.widget.SearchView;
+import bi.e1;
+import bi.h1;
+import bi.n0;
+import bi.q1;
+import bi.u7;
+import bi.v;
+import bi.z;
+import di.s7;
+import fi.d2;
+import fi.e2;
+import fi.p8;
+import fi.s6;
+import fi.w6;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Locale;
+import kg.a1;
+import kg.d0;
+import kg.e0;
+import kg.k0;
+import kg.q0;
+import kg.s1;
+import kg.t1;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.iz;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.r0;
+import org.telegram.ui.ActionBar.y4;
+import org.telegram.ui.Components.aj;
+import org.telegram.ui.Components.bj;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.ei;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.fj;
+import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.rp;
+import org.telegram.ui.Components.sx;
+import org.telegram.ui.Components.tx;
+import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.v80;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.Wallet.m4;
+import org.telegram.ui.Wallet.n9;
+import org.telegram.ui.Wallet.x9;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class j implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ j(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r13v10 */
+    /* JADX WARN: Type inference failed for: r13v11 */
+    /* JADX WARN: Type inference failed for: r13v14 */
+    /* JADX WARN: Type inference failed for: r4v1 */
+    /* JADX WARN: Type inference failed for: r4v2 */
+    /* JADX WARN: Type inference failed for: r4v4 */
+    /* JADX WARN: Type inference failed for: r4v41, types: [org.telegram.messenger.p5] */
+    /* JADX WARN: Type inference failed for: r4v45 */
+    /* JADX WARN: Type inference failed for: r4v46 */
+    /* JADX WARN: Type inference failed for: r4v47 */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    /* JADX WARN: Type inference failed for: r4v6 */
+    /* JADX WARN: Type inference failed for: r4v8 */
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        c20 c20Var;
+        int i7;
+        String obj;
+        int indexOf;
+        String obj2;
+        int indexOf2;
+        c20 c20Var2;
+        int currentTop;
+        int currentTop2;
+        q1 q1Var;
+        String str = null;
+        boolean z9 = false;
+        z9 = false;
+        z9 = false;
+        switch (this.a) {
+            case 0:
+                o oVar = (o) this.b;
+                if (!oVar.h && (c20Var = oVar.n) != null && editable != null) {
+                    c20Var.a(editable.toString());
+                    break;
+                }
+                break;
+            case 1:
+                z zVar = (z) this.b;
+                bi.d dVar = zVar.s0;
+                i7 = ((f2) zVar).currentAccount;
+                TLRPC.TL_payments_starsRevenueStats h = n0.g(i7).h(zVar.b, false);
+                long j3 = h == null ? 0L : h.status.available_balance.amount;
+                long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+                zVar.Y = parseLong;
+                if (parseLong > j3) {
+                    zVar.Y = j3;
+                    zVar.W = true;
+                    zVar.Z.setText(Long.toString(j3));
+                    v vVar = zVar.Z;
+                    vVar.setSelection(vVar.getText().length());
+                    zVar.W = false;
+                }
+                zVar.X = zVar.Y == j3;
+                g0.r(dVar);
+                dVar.run();
+                if (!zVar.W) {
+                    zVar.X = false;
+                    break;
+                }
+                break;
+            case 2:
+                e1 e1Var = (e1) this.b;
+                ?? r42 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
+                if (r42 == false && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
+                    editable.delete(indexOf + 3, obj.length());
+                }
+                e1Var.M0(r42 == false ? cg.a.h(editable.toString(), e1Var.y1.a) : cg.a.i(0L, e1Var.y1.a), false, false, true);
+                e1Var.m1.c(e1Var.n1.isFocused(), !TextUtils.isEmpty(e1Var.n1.getText()));
+                break;
+            case 3:
+                h1 h1Var = (h1) this.b;
+                ?? r43 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
+                if (r43 == false && (indexOf2 = (obj2 = editable.toString()).indexOf(46)) >= 0 && (obj2.length() - indexOf2) - 1 > 2) {
+                    editable.delete(indexOf2 + 3, obj2.length());
+                }
+                h1Var.J0(r43 == false ? cg.a.h(editable.toString(), h1Var.v1.a) : cg.a.i(0L, h1Var.v1.a), false, false, true);
+                h1Var.i1.c(h1Var.j1.isFocused(), !TextUtils.isEmpty(h1Var.j1.getText()));
+                break;
+            case 4:
+                e2 e2Var = (e2) this.b;
+                ImageView imageView = e2Var.r;
+                i iVar = e2Var.e;
+                if (!e2Var.s) {
+                    e2Var.d(false);
+                    String obj3 = iVar.getText().toString();
+                    String str2 = TextUtils.isEmpty(obj3) ? null : obj3;
+                    v10 v10Var = e2Var.x;
+                    if (v10Var != null) {
+                        v10Var.a(str2, -1);
+                    }
+                    d2 d2Var = e2Var.h;
+                    if (d2Var != null) {
+                        d2Var.I1(null);
+                        e2Var.h.J1(TextUtils.isEmpty(obj3), true);
+                    }
+                    if (iVar != null) {
+                        iVar.animate().cancel();
+                        ViewPropertyAnimator translationX = iVar.animate().translationX(0.0f);
+                        xq xqVar = xq.h;
+                        translationX.setInterpolator(xqVar).start();
+                        if (imageView != null && e2Var.n != (!TextUtils.isEmpty(iVar.getText()))) {
+                            e2Var.n = !e2Var.n;
+                            imageView.animate().cancel();
+                            if (e2Var.n) {
+                                imageView.setVisibility(0);
+                            }
+                            imageView.animate().scaleX(e2Var.n ? 1.0f : 0.7f).scaleY(e2Var.n ? 1.0f : 0.7f).alpha(e2Var.n ? 1.0f : 0.0f).withEndAction(new s7(this, 20)).setInterpolator(xqVar).setDuration(320L).setStartDelay(e2Var.n ? 240L : 0L).start();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                w6 w6Var = (w6) this.b;
+                String obj4 = editable.toString();
+                w6Var.j2 = obj4;
+                if (!w6Var.R1) {
+                    String str3 = w6Var.o2;
+                    if (obj4 == null) {
+                        obj4 = "";
+                    }
+                    if (!TextUtils.equals(str3, obj4)) {
+                        w6Var.f1();
+                        String str4 = w6Var.j2;
+                        w6Var.n2 = str4 != null && str4.length() > 0;
+                    }
+                    String str5 = w6Var.z2;
+                    String str6 = w6Var.j2;
+                    if (!TextUtils.equals(str5, str6 != null ? str6 : "")) {
+                        w6Var.e1();
+                        String str7 = w6Var.j2;
+                        if (str7 != null && str7.length() > 3 && !TextUtils.isEmpty(((org.telegram.messenger.n0) qp.s1(w6Var.a).x7.F.b).c)) {
+                            z9 = true;
+                        }
+                        w6Var.u2 = z9;
+                    }
+                    s6 s6Var = w6Var.q2;
+                    g0.r(s6Var);
+                    g0.i3(s6Var, 400L);
+                    s6 s6Var2 = w6Var.B2;
+                    g0.r(s6Var2);
+                    g0.i3(s6Var2, 400L);
+                }
+                w6Var.h2.O(true);
+                break;
+            case 6:
+                p8 p8Var = (p8) this.b;
+                if (!p8Var.n && (c20Var2 = p8Var.r) != null && editable != null) {
+                    c20Var2.a(editable.toString());
+                    break;
+                }
+                break;
+            case 7:
+                ((ii.p) this.b).d0();
+                break;
+            case 8:
+                kg.g0 g0Var = (kg.g0) this.b;
+                q1 q1Var2 = g0Var.s;
+                iy iyVar = g0Var.E;
+                d0 d0Var = g0Var.y;
+                String obj5 = editable.toString();
+                if (obj5.isEmpty()) {
+                    if (q1Var2.getAdapter() != d0Var) {
+                        currentTop = g0Var.getCurrentTop();
+                        iyVar.c();
+                        q1Var2.setAdapter(d0Var);
+                        d0Var.f();
+                        if (currentTop > 0) {
+                            g0Var.w.h1(0, -currentTop);
+                        }
+                    }
+                } else if (iyVar != null) {
+                    iyVar.setText(hd.M0(2131748166, null));
+                }
+                e0 e0Var = g0Var.D;
+                if (e0Var != null) {
+                    kg.g0 g0Var2 = e0Var.f;
+                    q1 q1Var3 = g0Var2.s;
+                    ArrayList arrayList = e0Var.d;
+                    arrayList.clear();
+                    e0Var.e = obj5;
+                    String O3 = g0.O3(obj5);
+                    if (O3.startsWith("/")) {
+                        O3 = O3.substring(1);
+                    }
+                    ArrayList arrayList2 = t1.f(p10.s0).b;
+                    for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                        s1 s1Var = (s1) arrayList2.get(i10);
+                        if (!t1.g(s1Var.b)) {
+                            String O32 = g0.O3(s1Var.b);
+                            if (O32.startsWith(O3) || jg.g.A(" ", O3, O32)) {
+                                arrayList.add(s1Var);
+                            }
+                        }
+                    }
+                    v4.g0 adapter = q1Var3.getAdapter();
+                    e0 e0Var2 = g0Var2.D;
+                    if (adapter != e0Var2) {
+                        q1Var3.setAdapter(e0Var2);
+                    }
+                    e0Var.f();
+                    break;
+                }
+                break;
+            case 9:
+                q0 q0Var = (q0) this.b;
+                q0Var.y = false;
+                k0 k0Var = q0Var.F;
+                g0.r(k0Var);
+                if (TextUtils.isEmpty(q0Var.f.getText())) {
+                    q0Var.D = null;
+                    q0Var.d.b();
+                } else {
+                    q0Var.y = true;
+                    g0.i3(k0Var, 800L);
+                }
+                q0Var.c.f3.O(true);
+                q0Var.g0();
+                break;
+            case 10:
+                a1 a1Var = (a1) this.b;
+                if (!a1Var.c) {
+                    a1Var.D = false;
+                    a1Var.y = editable.toString();
+                    a1Var.Z(true);
+                    break;
+                }
+                break;
+            case 11:
+            case 12:
+            case 13:
+                break;
+            case 14:
+                uc ucVar = (uc) this.b;
+                ucVar.F((ucVar.f.getEditText().getLineCount() <= 2 || editable == null || TextUtils.isEmpty(editable.toString().trim())) ? false : true);
+                break;
+            case 15:
+                ni niVar = (ni) this.b;
+                ei eiVar = niVar.f0;
+                TextUtils.isEmpty(niVar.D);
+                niVar.D = editable.toString().trim();
+                ei eiVar2 = niVar.a0;
+                g0.r(eiVar2);
+                if (!TextUtils.isEmpty(niVar.D)) {
+                    String str8 = niVar.D;
+                    niVar.W = str8 != null && str8.length() >= 0;
+                    if (!TextUtils.equals(niVar.V, niVar.D)) {
+                        niVar.L.clear();
+                        niVar.b0 = 0;
+                        niVar.c0 = false;
+                    }
+                    g0.i3(eiVar2, 1500L);
+                }
+                g0.r(eiVar);
+                if (!TextUtils.isEmpty(niVar.D)) {
+                    String str9 = niVar.D;
+                    niVar.m0 = (str9 == null || str9.length() < 3 || TextUtils.isEmpty(((org.telegram.messenger.n0) qp.s1(niVar.b.D3).x7.F.b).c)) ? false : true;
+                    if (!TextUtils.equals(niVar.e0, niVar.D)) {
+                        niVar.M.clear();
+                        niVar.g0 = false;
+                    }
+                    g0.i3(eiVar, 1500L);
+                }
+                niVar.T();
+                break;
+            case 16:
+                String obj6 = editable.toString();
+                if (obj6.isEmpty()) {
+                    v4.g0 adapter2 = ((fj) this.b).s.getAdapter();
+                    fj fjVar = (fj) this.b;
+                    if (adapter2 != fjVar.E) {
+                        currentTop2 = fjVar.getCurrentTop();
+                        ((fj) this.b).G.setText(hd.M0(2131748222, null));
+                        ((fj) this.b).G.c();
+                        fj fjVar2 = (fj) this.b;
+                        fjVar2.s.setAdapter(fjVar2.E);
+                        ((fj) this.b).E.f();
+                        if (currentTop2 > 0) {
+                            ((fj) this.b).w.h1(0, -currentTop2);
+                        }
+                    }
+                } else {
+                    iy iyVar2 = ((fj) this.b).G;
+                    if (iyVar2 != null) {
+                        iyVar2.setText(hd.M0(2131748166, null));
+                    }
+                }
+                bj bjVar = ((fj) this.b).F;
+                if (bjVar != null) {
+                    if (bjVar.f != null) {
+                        Utilities.g.a(bjVar.f);
+                        bjVar.f = null;
+                    }
+                    int i11 = bjVar.h + 1;
+                    bjVar.h = i11;
+                    ?? r44 = Utilities.g;
+                    aj ajVar = new aj(bjVar, obj6, i11, false ? 1 : 0);
+                    bjVar.f = ajVar;
+                    r44.d(ajVar, 300L);
+                    break;
+                }
+                break;
+            case 17:
+                ys ysVar = (ys) this.b;
+                if (ysVar.R1 != ysVar.getLineCount()) {
+                    if (!ysVar.S1 && ysVar.getMeasuredWidth() > 0) {
+                        ysVar.F(ysVar.R1, ysVar.getLineCount());
+                    }
+                    ysVar.R1 = ysVar.getLineCount();
+                    break;
+                }
+                break;
+            case 18:
+                ((fi.q1) this.b).run();
+                break;
+            case 19:
+                tx txVar = (tx) this.b;
+                txVar.g(false);
+                rp rpVar = txVar.d;
+                String obj7 = rpVar.getText().toString();
+                txVar.c(obj7, true);
+                sx sxVar = txVar.r;
+                if (sxVar != null) {
+                    sxVar.I1(null);
+                    sxVar.J1(TextUtils.isEmpty(obj7), true);
+                }
+                txVar.f(!TextUtils.isEmpty(obj7));
+                if (rpVar != null) {
+                    rpVar.clearAnimation();
+                    rpVar.animate().translationX(0.0f).setInterpolator(xq.h).start();
+                }
+                txVar.d(false);
+                break;
+            case 20:
+                r00 r00Var = (r00) this.b;
+                if (!r00Var.F.isEmpty() && editable.length() > 0 && r00Var.I >= 0) {
+                    r00Var.I = -1;
+                    r00Var.e();
+                }
+                r00Var.a.a(r00Var.n || r00Var.r.length() > 0, true);
+                break;
+            case 21:
+                ec0 ec0Var = (ec0) this.b;
+                if (ec0Var.r.length() == 4 && iz.r == 0) {
+                    ec0Var.n(false);
+                    break;
+                }
+                break;
+            case 22:
+                el0 el0Var = (el0) this.b;
+                ImageView imageView2 = el0Var.b;
+                i iVar2 = el0Var.d;
+                ?? r45 = iVar2.length() > 0;
+                if (r45 != (imageView2.getAlpha() == 0.0f ? 0 : 1)) {
+                    imageView2.animate().alpha(r45 == true ? 1.0f : 0.0f).setDuration(150L).scaleX(r45 != false ? 1.0f : 0.1f).scaleY(r45 != false ? 1.0f : 0.1f).start();
+                }
+                el0Var.a(iVar2.getText().toString());
+                break;
+            case 23:
+                ow0 ow0Var = (ow0) this.b;
+                mw0 mw0Var = ow0Var.c;
+                if (mw0Var != null && mw0Var.getVisibility() == 0) {
+                    ow0Var.e();
+                    break;
+                }
+                break;
+            case 24:
+                dy0 dy0Var = (dy0) this.b;
+                j6 j6Var = dy0Var.n;
+                if (!dy0Var.y) {
+                    String trim = editable.toString().trim();
+                    if (trim.length() > 16) {
+                        j6Var.setText("-" + (trim.length() - 16));
+                        trim = trim.substring(0, 16);
+                    } else {
+                        j6Var.setText("");
+                    }
+                    c20 c20Var3 = dy0Var.x;
+                    if (c20Var3 != null) {
+                        c20Var3.a(trim);
+                    }
+                    ij ijVar = dy0Var.r;
+                    if (ijVar != null) {
+                        ijVar.K1 = true;
+                        dy0Var.d.v3(ijVar, null, false, false, false, false);
+                        break;
+                    }
+                }
+                break;
+            case 25:
+                n01 n01Var = (n01) this.b;
+                String lowerCase = editable.toString().trim().toLowerCase();
+                n01Var.L = lowerCase;
+                if (lowerCase.startsWith("@")) {
+                    n01Var.L = n01Var.L.substring(1);
+                }
+                n01Var.b();
+                n01Var.M.clear();
+                if (!n01Var.d && !n01Var.c && !TextUtils.isEmpty(n01Var.L)) {
+                    v80 v80Var = new v80(21, n01Var, n01Var.L);
+                    n01Var.O = v80Var;
+                    g0.i3(v80Var, 350L);
+                }
+                n01Var.g();
+                break;
+            case 26:
+                v41 v41Var = (v41) this.b;
+                String obj8 = v41Var.J.getText().toString();
+                w41 w41Var = v41Var.K;
+                int b10 = w41Var.k1.getAdapter() == null ? 0 : w41Var.k1.getAdapter().b();
+                w41Var.L0(obj8);
+                if (TextUtils.isEmpty(obj8) && (q1Var = w41Var.k1) != null) {
+                    v4.g0 adapter3 = q1Var.getAdapter();
+                    oj0 oj0Var = w41Var.m1;
+                    if (adapter3 != oj0Var) {
+                        q1 q1Var4 = w41Var.k1;
+                        q1Var4.W1 = false;
+                        q1Var4.X1 = 0;
+                        q1Var4.setAdapter(oj0Var);
+                        q1 q1Var5 = w41Var.k1;
+                        q1Var5.W1 = true;
+                        q1Var5.X1 = 0;
+                        if (b10 == 0) {
+                            w41Var.O0(0);
+                        }
+                    }
+                }
+                w41Var.r1.setVisibility(0);
+                break;
+            case 27:
+                break;
+            case 28:
+                ((n9) this.b).C0();
+                break;
+            default:
+                final x9 x9Var = (x9) this.b;
+                ArrayList arrayList3 = x9Var.w;
+                arrayList3.clear();
+                final String trim2 = editable.toString().trim();
+                Runnable runnable = x9Var.K;
+                if (runnable != null) {
+                    g0.r(runnable);
+                    x9Var.K = null;
+                }
+                if (x9Var.E != 0) {
+                    x9Var.getConnectionsManager().cancelRequest(x9Var.E, true);
+                    x9Var.E = 0;
+                }
+                String str10 = WalletEngine2.isValidRecipientAddress(trim2) ? trim2 : null;
+                x9Var.y = str10;
+                if (str10 == null && trim2 != null && trim2.length() <= 126) {
+                    String lowerCase2 = trim2.toLowerCase(Locale.ROOT);
+                    if (lowerCase2.matches("[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*\\.ton")) {
+                        str = lowerCase2;
+                    }
+                }
+                x9Var.D = str;
+                final int i12 = x9Var.J + 1;
+                x9Var.J = i12;
+                x9Var.L = !TextUtils.isEmpty(trim2) && x9Var.y == null;
+                x9Var.x.g(null, true, false, false, false, 0L, false, 0, i12);
+                fi.d dVar2 = x9Var.Z;
+                if (dVar2 != null) {
+                    dVar2.setEnabled(x9Var.y != null);
+                }
+                if (!TextUtils.isEmpty(trim2) && x9Var.y == null && x9Var.D == null) {
+                    x9Var.j0(trim2);
+                    final int i13 = true ? 1 : 0;
+                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Wallet.u9
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i13) {
+                                case 0:
+                                    x9.f0(x9Var, trim2, i12);
+                                    break;
+                                default:
+                                    x9 x9Var2 = x9Var;
+                                    x9Var2.K = null;
+                                    jg.z1 z1Var = x9Var2.x;
+                                    int i14 = i12;
+                                    z1Var.h(trim2, true, false, false, false, false, 0L, false, 0, i14, 0L, new h2(x9Var2, i14, 4));
+                                    break;
+                            }
+                        }
+                    };
+                    x9Var.K = runnable2;
+                    g0.i3(runnable2, 300L);
+                } else {
+                    arrayList3.clear();
+                    x9Var.a.f3.O(true);
+                    final String str11 = x9Var.D;
+                    if (str11 != null) {
+                        final int i14 = false ? 1 : 0;
+                        Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Wallet.u9
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i14) {
+                                    case 0:
+                                        x9.f0(x9Var, str11, i12);
+                                        break;
+                                    default:
+                                        x9 x9Var2 = x9Var;
+                                        x9Var2.K = null;
+                                        jg.z1 z1Var = x9Var2.x;
+                                        int i142 = i12;
+                                        z1Var.h(str11, true, false, false, false, false, 0L, false, 0, i142, 0L, new h2(x9Var2, i142, 4));
+                                        break;
+                                }
+                            }
+                        };
+                        x9Var.K = runnable3;
+                        g0.i3(runnable3, 300L);
+                    }
+                }
+                x9Var.p0(true);
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        boolean z9;
+        switch (this.a) {
+            case 21:
+                ec0 ec0Var = (ec0) this.b;
+                LinkedList linkedList = ec0Var.V;
+                LinkedList linkedList2 = ec0Var.U;
+                Drawable drawable = ec0Var.a;
+                if (drawable instanceof qa0) {
+                    qa0 qa0Var = (qa0) drawable;
+                    qa0Var.D = null;
+                    qa0Var.y();
+                    float f10 = qa0Var.h;
+                    int i12 = 0;
+                    boolean z10 = true;
+                    if (i10 == 0 && i11 == 1) {
+                        qa0Var.w(true);
+                        z9 = true;
+                    } else if (i10 == 1 && i11 == 0) {
+                        qa0Var.x();
+                        z9 = false;
+                    } else {
+                        z9 = false;
+                        z10 = false;
+                    }
+                    if (z10) {
+                        if (f10 >= 1.0f) {
+                            ec0Var.b(qa0Var);
+                            break;
+                        } else {
+                            linkedList2.offer(new u7(this, z9, qa0Var, 23));
+                            linkedList.offer(Boolean.valueOf(z9));
+                            ArrayList arrayList = new ArrayList();
+                            ArrayList arrayList2 = new ArrayList();
+                            for (int i13 = 0; i13 < linkedList2.size(); i13++) {
+                                Runnable runnable = (Runnable) linkedList2.get(i13);
+                                if (((Boolean) linkedList.get(i13)).booleanValue() != z9) {
+                                    arrayList.add(runnable);
+                                    arrayList2.add(Integer.valueOf(i13));
+                                }
+                            }
+                            int size = arrayList.size();
+                            int i14 = 0;
+                            while (i14 < size) {
+                                Object obj = arrayList.get(i14);
+                                i14++;
+                                linkedList2.remove((Runnable) obj);
+                            }
+                            int size2 = arrayList2.size();
+                            while (i12 < size2) {
+                                Object obj2 = arrayList2.get(i12);
+                                i12++;
+                                int intValue = ((Integer) obj2).intValue();
+                                if (intValue < linkedList.size()) {
+                                    linkedList.remove(intValue);
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        org.telegram.ui.ActionBar.n0 searchListener;
+        switch (this.a) {
+            case 11:
+                SearchView searchView = (SearchView) this.b;
+                Editable text = searchView.F.getText();
+                searchView.o0 = text;
+                boolean isEmpty = TextUtils.isEmpty(text);
+                searchView.u(!isEmpty);
+                int i12 = 8;
+                if (searchView.n0 && !searchView.g0 && isEmpty) {
+                    searchView.K.setVisibility(8);
+                    i12 = 0;
+                }
+                searchView.M.setVisibility(i12);
+                searchView.q();
+                searchView.t();
+                charSequence.toString();
+                break;
+            case 12:
+                r0 r0Var = (r0) this.b;
+                org.telegram.ui.ActionBar.n0 n0Var = r0Var.H;
+                if (n0Var != null) {
+                    n0Var.l(r0Var.e);
+                }
+                r0Var.j();
+                if (!r0Var.g0.isEmpty() && !TextUtils.isEmpty(r0Var.e.getText()) && r0Var.h0 >= 0) {
+                    r0Var.h0 = -1;
+                    r0Var.D();
+                    break;
+                }
+                break;
+            case 13:
+                y4 y4Var = (y4) this.b;
+                y4Var.h();
+                searchListener = y4Var.getSearchListener();
+                if (searchListener != null) {
+                    searchListener.l(y4Var.s);
+                    break;
+                }
+                break;
+            case 27:
+                ((m4) this.b).a(charSequence.toString());
+                break;
+        }
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(Editable editable) {
+    }
+
+    private final void d(Editable editable) {
+    }
+
+    private final void A(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void B(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void C(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void D(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void E(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void F(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void G(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void H(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void I(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void J(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void K(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void L(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void M(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void N(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void O(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void P(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void Q(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void R(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void S(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void T(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void U(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void V(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void W(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void X(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void Y(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void Z(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void a0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void e0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void f0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void g(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void g0(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void h(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void i(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void j(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void k(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void l(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void m(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void n(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void o(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void p(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void q(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void r(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void s(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void t(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final /* synthetic */ void u(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void v(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void w(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void x(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void y(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void z(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+}

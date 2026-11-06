@@ -11,15 +11,15 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     public final /* synthetic */ int f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t8(Spliterator spliterator, int i3) {
+    public /* synthetic */ t8(Spliterator spliterator, int i7) {
         super(spliterator);
-        this.f = i3;
+        this.f = i7;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t8(Spliterator spliterator, v8 v8Var, int i3) {
+    public /* synthetic */ t8(Spliterator spliterator, v8 v8Var, int i7) {
         super(spliterator, v8Var);
-        this.f = i3;
+        this.f = i7;
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
@@ -43,9 +43,9 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         this.d = (this.d + 1) & 63;
-        this.e = j10;
+        this.e = j3;
     }
 
     @Override // j$.util.stream.v8
@@ -82,9 +82,9 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     public final boolean tryAdvance(LongConsumer longConsumer) {
         switch (this.f) {
             case 0:
-                boolean z10 = this.c;
+                boolean z9 = this.c;
                 Spliterator spliterator = this.a;
-                if (z10) {
+                if (z9) {
                     this.c = false;
                     boolean tryAdvance = ((j$.util.a1) spliterator).tryAdvance((LongConsumer) this);
                     if (tryAdvance && a()) {

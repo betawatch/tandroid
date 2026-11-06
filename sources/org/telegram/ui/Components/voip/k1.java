@@ -1,29 +1,71 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k1 implements org.telegram.ui.ActionBar.p1 {
+public final class k1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ Intent c;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ k1(Activity activity, Intent intent, int i3) {
-        this.a = i3;
-        this.b = activity;
-        this.c = intent;
+    public /* synthetic */ k1(Object obj, float f10, float f11, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = f10;
+        this.c = f11;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+    public void a() {
+        te.c cVar = (te.c) this.d;
+        if (cVar.h) {
+            cVar.d(this.b + this.c, 1.0f);
+            if (cVar.h) {
+                cVar.h = false;
+            }
+            cVar.b.F(cVar.f, cVar.a);
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                this.b.startActivity(this.c);
+            case 1:
+                a();
                 break;
             default:
-                this.b.startActivity(this.c);
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                n1 n1Var = (n1) this.d;
+                n1Var.O = false;
+                n1Var.M = true;
+                n1Var.W = this.b;
+                n1Var.a0 = this.c;
+                n1Var.requestLayout();
+                break;
+            default:
+                a();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ((te.c) this.d).getClass();
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

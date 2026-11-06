@@ -1,60 +1,32 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g9 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.Cells.f6 a;
-    public final org.telegram.ui.Components.dg0 b;
-    public TLRPC.Chat c;
+public final class g9 extends org.telegram.ui.Components.q31 {
+    public static final /* synthetic */ int b = 0;
 
-    public g9(Context context) {
-        super(context);
-        String M0 = org.telegram.messenger.bd.M0(2131743452, null);
-        org.telegram.ui.Components.dg0 dg0Var = new org.telegram.ui.Components.dg0(context);
-        this.b = dg0Var;
-        int ceil = (int) Math.ceil(dg0Var.getPaint().measureText(M0));
-        org.telegram.ui.Cells.f6 f6Var = new org.telegram.ui.Cells.f6(context, null);
-        this.a = f6Var;
-        f6Var.N0 = true;
-        f6Var.F0 = true;
-        f6Var.setPadding(org.telegram.messenger.bd.a0 ? org.telegram.messenger.g0.L(44.0f) + ceil : 0, 0, org.telegram.messenger.bd.a0 ? 0 : org.telegram.messenger.g0.L(44.0f) + ceil, 0);
-        int i3 = -org.telegram.messenger.g0.L(4.0f);
-        f6Var.c0 = 0;
-        f6Var.d0 = i3;
-        addView(f6Var, b8.mf.c(-1.0f, -1));
-        dg0Var.setText(M0);
-        dg0Var.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.V(dg0Var, org.telegram.ui.ActionBar.k6.Gi, null);
-        dg0Var.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Bi, false));
-        int i10 = org.telegram.ui.ActionBar.k6.Vl;
-        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
-        org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ei, false);
-        dg0Var.setBackground(org.telegram.ui.ActionBar.y5.e(x02, 16.0f));
-        Drawable background = dg0Var.getBackground();
-        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i10);
-        dg0Var.setBackground(background);
-        org.telegram.ui.ActionBar.r6.k(dg0Var, background, N, null, null);
-        dg0Var.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
-        addView(dg0Var, b8.mf.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
+    static {
+        org.telegram.ui.Components.q31.h(new g9());
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            this.b.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Bi, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
+        h9 h9Var = (h9) view;
+        TLRPC.Chat chat = (TLRPC.Chat) r31Var.G;
+        View.OnClickListener onClickListener = r31Var.D;
+        h9Var.c = chat;
+        org.telegram.ui.Components.ag0 ag0Var = h9Var.b;
+        ag0Var.setTag(Long.valueOf(chat.id));
+        h9Var.a.x(chat, null, null, (!org.telegram.messenger.t3.T(chat) || chat.megagroup) ? chat.has_geo ? org.telegram.messenger.hd.M0(2131748641, null) : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.hd.M0(2131748640, null).toLowerCase() : org.telegram.messenger.hd.M0(2131748637, null).toLowerCase() : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.hd.M0(2131752329, null).toLowerCase() : org.telegram.messenger.hd.M0(2131752318, null).toLowerCase(), false, false);
+        ag0Var.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new h9(context);
     }
 }

@@ -13,7 +13,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l6 {
     public final MappedByteBuffer a;
@@ -43,8 +43,8 @@ public final class l6 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l6() {
-        int i3;
-        char c2;
+        int i7;
+        char c10;
         int i10;
         int i11;
         AssetFileDescriptor openFd = t0.b.getAssets().openFd("emoji.pack");
@@ -77,96 +77,96 @@ public final class l6 {
                             if (i16 != 0 && i16 != i13 && o(f10) <= o(f10 - 20)) {
                                 throw new IOException("Unsorted EPK3 IDs");
                             }
-                            int o10 = o(f10 + 2);
-                            if ((i16 >= i13 && o10 != i14) || (i16 < i13 && o10 != i14 && g(o10, i13, i12) < 0)) {
-                                throw new IOException(k2.p1.i(i16, "Invalid mask reference at record "));
+                            int o4 = o(f10 + 2);
+                            if ((i16 >= i13 && o4 != i14) || (i16 < i13 && o4 != i14 && g(o4, i13, i12) < 0)) {
+                                throw new IOException(jg.g.j(i16, "Invalid mask reference at record "));
                             }
                             int i17 = map.getInt(f10 + 4);
-                            int o11 = o(f10 + 8);
-                            int o12 = o(f10 + 10);
-                            int o13 = o(f10 + 12);
-                            int o14 = o(f10 + 14);
+                            int o10 = o(f10 + 8);
+                            int o11 = o(f10 + 10);
+                            int o12 = o(f10 + 12);
+                            int o13 = o(f10 + 14);
                             int p10 = p(f10 + 16);
                             int p11 = p(f10 + 17);
                             int i18 = f10 + 18;
-                            int p12 = p(i18) & hs.L1;
-                            if (i17 < i15 || o11 == 0) {
-                                i3 = i16;
+                            int p12 = p(i18) & qs.L1;
+                            if (i17 < i15 || o10 == 0) {
+                                i7 = i16;
                             } else {
                                 int i19 = i15;
                                 int i20 = i16;
-                                if (i17 + o11 <= map.capacity()) {
-                                    char c10 = 4;
+                                if (i17 + o10 <= map.capacity()) {
+                                    char c11 = 4;
                                     if (p10 <= 4 && p11 <= 6) {
                                         if (p10 != 2 && p10 != 3) {
-                                            if (o14 >= 1 && o14 <= 256 && p12 != 2 && p12 <= 4 && (p12 != 0 || o14 == 256)) {
+                                            if (o13 >= 1 && o13 <= 256 && p12 != 2 && p12 <= 4 && (p12 != 0 || o13 == 256)) {
                                                 if (p10 == 4) {
-                                                    if (j(f10) != o11) {
+                                                    if (j(f10) != o10) {
                                                     }
                                                     if (p12 == 0 || ((p(f10 + 19) & 1) == 0 && (p(i18) & 128) == 0)) {
-                                                        c10 = 4;
+                                                        c11 = 4;
                                                         if ((p10 != 4) == (p11 != 4)) {
                                                             throw new IOException("Invalid map reference encoding");
                                                         }
-                                                        if (p10 == 4 && (o12 >= i12 || o14 != o(f(o12) + 14))) {
+                                                        if (p10 == 4 && (o11 >= i12 || o13 != o(f(o11) + 14))) {
                                                             throw new IOException("Map reference palette size mismatch");
                                                         }
                                                         if (p11 != 0) {
                                                             i11 = i20;
-                                                            q(o12, i11);
+                                                            q(o11, i11);
                                                             if (p11 == 3 || p11 == 5) {
-                                                                c2 = 6;
+                                                                c10 = 6;
                                                             } else {
-                                                                c2 = 6;
+                                                                c10 = 6;
                                                                 if (p11 != 6) {
                                                                     i10 = 65535;
-                                                                    if (o13 != 65535) {
+                                                                    if (o12 != 65535) {
                                                                         throw new IOException("Unexpected second root");
                                                                     }
                                                                 }
                                                             }
-                                                            q(o13, i11);
+                                                            q(o12, i11);
                                                             i10 = 65535;
                                                         } else {
-                                                            if (o12 != 65535 || o13 != 65535) {
+                                                            if (o11 != 65535 || o12 != 65535) {
                                                                 throw new IOException("Unexpected root reference");
                                                             }
                                                             i10 = 65535;
                                                             i11 = i20;
-                                                            c2 = 6;
+                                                            c10 = 6;
                                                         }
                                                         i16 = i11 + 1;
                                                         i14 = i10;
                                                         i15 = i19;
                                                     }
                                                 } else {
-                                                    if (j(f10) >= o11) {
+                                                    if (j(f10) >= o10) {
                                                     }
                                                     if (p12 == 0) {
                                                     }
-                                                    c10 = 4;
+                                                    c11 = 4;
                                                     if ((p10 != 4) == (p11 != 4)) {
                                                     }
                                                 }
                                             }
-                                            throw new IOException(k2.p1.i(i20, "Invalid palette at record "));
+                                            throw new IOException(jg.g.j(i20, "Invalid palette at record "));
                                         }
                                         i11 = i20;
-                                        c2 = 6;
-                                        if (o14 == 0 && p(i18) == 0 && p11 == 0 && (p(f10 + 19) & hs.L1) == 0) {
+                                        c10 = 6;
+                                        if (o13 == 0 && p(i18) == 0 && p11 == 0 && (p(f10 + 19) & qs.L1) == 0) {
                                             i10 = 65535;
-                                            if (o12 == 65535 && o13 == 65535) {
+                                            if (o11 == 65535 && o12 == 65535) {
                                                 i16 = i11 + 1;
                                                 i14 = i10;
                                                 i15 = i19;
                                             }
                                         }
-                                        throw new IOException(k2.p1.i(i11, "Invalid full image record "));
+                                        throw new IOException(jg.g.j(i11, "Invalid full image record "));
                                     }
                                 }
-                                i3 = i20;
+                                i7 = i20;
                             }
-                            throw new IOException(k2.p1.i(i3, "Invalid EPK3 record "));
+                            throw new IOException(jg.g.j(i7, "Invalid EPK3 record "));
                         }
                         Arrays.fill(this.m, -1);
                         BitmapFactory.Options options = this.e;
@@ -187,13 +187,13 @@ public final class l6 {
         return new IllegalStateException("Damaged emoji.pack: ".concat(str));
     }
 
-    public static int f(int i3) {
-        return (i3 * 20) + 32;
+    public static int f(int i7) {
+        return (i7 * 20) + 32;
     }
 
-    public static int n(int i3, int i10) {
-        int i11 = i3 & 63;
-        int i12 = i3 >>> 6;
+    public static int n(int i7, int i10) {
+        int i11 = i7 & 63;
+        int i12 = i7 >>> 6;
         if ((i10 & 1) != 0) {
             i11 = 63 - i11;
         }
@@ -203,8 +203,8 @@ public final class l6 {
         return (i10 & 4) != 0 ? i12 | (i11 << 6) : (i12 << 6) | i11;
     }
 
-    public final Bitmap b(int i3, int i10) {
-        Bitmap decodeByteArray = BitmapFactory.decodeByteArray(this.f, i3, i10, this.e);
+    public final Bitmap b(int i7, int i10) {
+        Bitmap decodeByteArray = BitmapFactory.decodeByteArray(this.f, i7, i10, this.e);
         if (decodeByteArray == null) {
             throw a("Bitmap decoder rejected image");
         }
@@ -222,7 +222,7 @@ public final class l6 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(int i3, byte[] bArr) {
+    public final void c(int i7, byte[] bArr) {
         byte[] bArr2;
         byte[] bArr3;
         int i10;
@@ -230,16 +230,16 @@ public final class l6 {
         int i12;
         int i13;
         int i14;
-        int f10 = f(i3);
+        int f10 = f(i7);
         int p10 = p(f10 + 17);
         if (p10 != 0) {
-            int o10 = o(f10 + 10);
-            bArr2 = m(o10);
-            i11 = o(f(o10) + 14);
+            int o4 = o(f10 + 10);
+            bArr2 = m(o4);
+            i11 = o(f(o4) + 14);
             if (p10 == 3 || p10 == 5 || p10 == 6) {
-                int o11 = o(f10 + 12);
-                bArr3 = m(o11);
-                i10 = o(f(o11) + 14);
+                int o10 = o(f10 + 12);
+                bArr3 = m(o10);
+                i10 = o(f(o10) + 14);
             } else {
                 bArr3 = null;
                 i10 = 0;
@@ -260,16 +260,16 @@ public final class l6 {
             return;
         }
         int i17 = i11 + i10;
-        int j10 = j(f10);
-        int i18 = this.a.getInt(f10 + 4) + j10;
-        int o12 = o(f10 + 8) - j10;
+        int j3 = j(f10);
+        int i18 = this.a.getInt(f10 + 4) + j3;
+        int o11 = o(f10 + 8) - j3;
         if (p10 == 5 || p10 == 6) {
-            if (o12 < 2) {
+            if (o11 < 2) {
                 throw a("Truncated split record");
             }
             int i19 = i18 + 1;
             int p13 = p(i18);
-            o12--;
+            o11--;
             if (p13 < 1 || p13 >= 64) {
                 throw a("Invalid split position");
             }
@@ -278,22 +278,22 @@ public final class l6 {
         } else {
             i12 = 32;
         }
-        l(i18, o12);
+        l(i18, o11);
         int p14 = p(f10 + 16);
         byte[] bArr4 = this.g;
         if (p14 == 0) {
-            i(o12, i17 + TLObject.FLAG_12);
+            i(o11, i17 + TLObject.FLAG_12);
             i13 = 0;
             System.arraycopy(bArr4, i17, bArr, 0, TLObject.FLAG_12);
             i14 = f10;
         } else {
             i13 = 0;
-            if (o12 <= i17) {
+            if (o11 <= i17) {
                 throw a("Truncated index WebP");
             }
             i14 = f10;
             System.arraycopy(this.f, 20, bArr4, 0, i17);
-            Bitmap e10 = e(i17 + 20, o12 - i17);
+            Bitmap e10 = e(i17 + 20, o11 - i17);
             try {
                 e10.getPixels(this.i, 0, 64, 0, 0, 64, 64);
                 for (int i20 = 0; i20 < 4096; i20++) {
@@ -326,40 +326,40 @@ public final class l6 {
                 i24 = 6;
             }
         }
-        int o13 = o(i14 + 14);
-        if (o13 < 256) {
+        int o12 = o(i14 + 14);
+        if (o12 < 256) {
             int length = bArr.length;
             for (int i28 = i13; i28 < length; i28++) {
-                if ((bArr[i28] & 255) >= o13) {
+                if ((bArr[i28] & 255) >= o12) {
                     throw a("Decoded index out of range");
                 }
             }
         }
     }
 
-    public final void d(int[] iArr, int i3) {
+    public final void d(int[] iArr, int i7) {
         Bitmap e10;
         int[] iArr2;
         int i10;
-        int f10 = f(i3);
+        int f10 = f(i7);
         MappedByteBuffer mappedByteBuffer = this.a;
         int i11 = mappedByteBuffer.getInt(f10 + 4);
-        int o10 = o(f10 + 8);
+        int o4 = o(f10 + 8);
         int p10 = p(f10 + 16);
         if (p10 != 2) {
             int i12 = 3;
             if (p10 != 3) {
                 byte[] bArr = this.h;
-                c(i3, bArr);
-                int o11 = o(f10 + 14);
+                c(i7, bArr);
+                int o10 = o(f10 + 14);
                 int i13 = f10 + 18;
-                int p11 = p(i13) & hs.L1;
-                int i14 = o11 * p11;
-                boolean z10 = (p(i13) & 128) != 0;
-                if (z10) {
-                    int j10 = j(f10) - 2;
-                    l(i11 + 2, j10);
-                    i(j10, (p(f10 + 19) & 1) != 0 ? ((i14 * 7) + 7) / 8 : i14);
+                int p11 = p(i13) & qs.L1;
+                int i14 = o10 * p11;
+                boolean z9 = (p(i13) & 128) != 0;
+                if (z9) {
+                    int j3 = j(f10) - 2;
+                    l(i11 + 2, j3);
+                    i(j3, (p(f10 + 19) & 1) != 0 ? ((i14 * 7) + 7) / 8 : i14);
                 }
                 int p12 = p(f10 + 19) & 1;
                 byte[] bArr2 = this.g;
@@ -370,16 +370,16 @@ public final class l6 {
                         int i16 = i15 * 7;
                         int i17 = i16 & 7;
                         int i18 = i16 >>> i12;
-                        int p13 = (z10 ? bArr2[i18] & 255 : p(i11 + i18)) >>> i17;
+                        int p13 = (z9 ? bArr2[i18] & 255 : p(i11 + i18)) >>> i17;
                         if (i17 > 1) {
-                            p13 |= (z10 ? bArr2[i18 + 1] & 255 : p((i18 + i11) + 1)) << (8 - i17);
+                            p13 |= (z9 ? bArr2[i18 + 1] & 255 : p((i18 + i11) + 1)) << (8 - i17);
                         }
-                        int i19 = p13 & hs.L1;
+                        int i19 = p13 & qs.L1;
                         bArr3[i15] = (byte) ((i19 >>> 6) | (i19 << 1));
                         i15++;
                         i12 = 3;
                     }
-                } else if (z10) {
+                } else if (z9) {
                     System.arraycopy(bArr2, 0, bArr3, 0, i14);
                 } else {
                     for (int i20 = 0; i20 < i14; i20++) {
@@ -390,7 +390,7 @@ public final class l6 {
                 int i22 = 0;
                 while (true) {
                     iArr2 = this.k;
-                    if (i21 >= o11) {
+                    if (i21 >= o10) {
                         break;
                     }
                     if (p11 == 0) {
@@ -416,7 +416,7 @@ public final class l6 {
                 }
                 for (int i27 = 0; i27 < 4096; i27++) {
                     int i28 = bArr[i27] & 255;
-                    if (i28 >= o11) {
+                    if (i28 >= o10) {
                         throw a("Palette index out of range");
                     }
                     iArr[i27] = iArr2[i28];
@@ -424,12 +424,12 @@ public final class l6 {
                 return;
             }
         }
-        l(i11, o10);
+        l(i11, o4);
         BitmapFactory.Options options = this.e;
         options.inPremultiplied = false;
         Bitmap bitmap = null;
         try {
-            e10 = p10 == 2 ? e(20, o10) : b(20, o10);
+            e10 = p10 == 2 ? e(20, o4) : b(20, o4);
         } catch (Throwable th2) {
             th = th2;
         }
@@ -448,29 +448,29 @@ public final class l6 {
         }
     }
 
-    public final Bitmap e(int i3, int i10) {
-        int i11 = i3 - 20;
+    public final Bitmap e(int i7, int i10) {
+        int i11 = i7 - 20;
         int i12 = i10 & 1;
         k(i11, 1179011410);
-        k(i3 - 16, i10 + 12 + i12);
-        k(i3 - 12, 1346520407);
-        k(i3 - 8, 1278758998);
-        k(i3 - 4, i10);
+        k(i7 - 16, i10 + 12 + i12);
+        k(i7 - 12, 1346520407);
+        k(i7 - 8, 1278758998);
+        k(i7 - 4, i10);
         if (i12 != 0) {
-            this.f[i3 + i10] = 0;
+            this.f[i7 + i10] = 0;
         }
         return b(i11, i10 + 20 + i12);
     }
 
-    public final int g(int i3, int i10, int i11) {
+    public final int g(int i7, int i10, int i11) {
         int i12 = i11 - 1;
         while (i10 <= i12) {
             int i13 = (i10 + i12) >>> 1;
-            int o10 = o(f(i13));
-            if (o10 < i3) {
+            int o4 = o(f(i13));
+            if (o4 < i7) {
                 i10 = i13 + 1;
             } else {
-                if (o10 <= i3) {
+                if (o4 <= i7) {
                     return i13;
                 }
                 i12 = i13 - 1;
@@ -479,14 +479,14 @@ public final class l6 {
         return -1;
     }
 
-    public final synchronized Bitmap h(int i3, int i10) {
+    public final synchronized Bitmap h(int i7, int i10) {
         int i11;
         Bitmap e10;
-        if (i3 < 0 || i3 > 15 || i10 < 0 || i10 >= 4096) {
+        if (i7 < 0 || i7 > 15 || i10 < 0 || i10 >= 4096) {
             i11 = -1;
         } else {
             try {
-                i11 = g((i3 * TLObject.FLAG_12) + i10, 0, this.c);
+                i11 = g((i7 * TLObject.FLAG_12) + i10, 0, this.c);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -494,36 +494,36 @@ public final class l6 {
         if (i11 < 0) {
             return null;
         }
-        int o10 = o(f(i11) + 2);
-        if (o10 != 65535) {
+        int o4 = o(f(i11) + 2);
+        if (o4 != 65535) {
             d(this.j, i11);
-            d(this.i, g(o10, this.c, this.b));
+            d(this.i, g(o4, this.c, this.b));
             for (int i12 = 0; i12 < 4096; i12++) {
                 int[] iArr = this.j;
                 int i13 = iArr[i12];
-                iArr[i12] = (i13 & 16777215) | (((((i13 >>> 24) * (this.i[i12] & hs.e4)) + hs.L1) / hs.e4) << 24);
+                iArr[i12] = (i13 & 16777215) | (((((i13 >>> 24) * (this.i[i12] & qs.e4)) + qs.L1) / qs.e4) << 24);
             }
             return Bitmap.createBitmap(this.j, 64, 64, Bitmap.Config.ARGB_8888);
         }
         int[] iArr2 = this.i;
         int f10 = f(i11);
         int i14 = this.a.getInt(f10 + 4);
-        int o11 = o(f10 + 8);
+        int o10 = o(f10 + 8);
         int p10 = p(f10 + 16);
         if (p10 != 2 && p10 != 3) {
             d(iArr2, i11);
             e10 = Bitmap.createBitmap(iArr2, 64, 64, Bitmap.Config.ARGB_8888);
             return e10;
         }
-        l(i14, o11);
-        e10 = p10 == 2 ? e(20, o11) : b(20, o11);
+        l(i14, o10);
+        e10 = p10 == 2 ? e(20, o10) : b(20, o10);
         return e10;
     }
 
-    public final void i(int i3, int i10) {
+    public final void i(int i7, int i10) {
         Inflater inflater = this.d;
         inflater.reset();
-        inflater.setInput(this.f, 20, i3);
+        inflater.setInput(this.f, 20, i7);
         int i11 = 0;
         while (i11 < i10) {
             try {
@@ -544,33 +544,33 @@ public final class l6 {
         }
     }
 
-    public final int j(int i3) {
+    public final int j(int i7) {
         int i10;
-        int i11 = i3 + 18;
+        int i11 = i7 + 18;
         if ((p(i11) & 128) == 0) {
-            int o10 = o(i3 + 14) * (p(i11) & hs.L1);
-            return (p(i3 + 19) & 1) != 0 ? ((o10 * 7) + 7) / 8 : o10;
+            int o4 = o(i7 + 14) * (p(i11) & qs.L1);
+            return (p(i7 + 19) & 1) != 0 ? ((o4 * 7) + 7) / 8 : o4;
         }
-        int i12 = i3 + 8;
+        int i12 = i7 + 8;
         if (o(i12) < 3) {
             throw a("Truncated compressed palette");
         }
-        int o11 = o(this.a.getInt(i3 + 4));
-        if (o11 == 0 || (i10 = o11 + 2) > o(i12)) {
+        int o10 = o(this.a.getInt(i7 + 4));
+        if (o10 == 0 || (i10 = o10 + 2) > o(i12)) {
             throw a("Invalid compressed palette");
         }
         return i10;
     }
 
-    public final void k(int i3, int i10) {
+    public final void k(int i7, int i10) {
         byte[] bArr = this.f;
-        bArr[i3] = (byte) i10;
-        bArr[i3 + 1] = (byte) (i10 >>> 8);
-        bArr[i3 + 2] = (byte) (i10 >>> 16);
-        bArr[i3 + 3] = (byte) (i10 >>> 24);
+        bArr[i7] = (byte) i10;
+        bArr[i7 + 1] = (byte) (i10 >>> 8);
+        bArr[i7 + 2] = (byte) (i10 >>> 16);
+        bArr[i7 + 3] = (byte) (i10 >>> 24);
     }
 
-    public final void l(int i3, int i10) {
+    public final void l(int i7, int i10) {
         byte[] bArr = this.f;
         int i11 = i10 + 21;
         if (bArr.length < i11) {
@@ -581,11 +581,11 @@ public final class l6 {
             this.f = new byte[length];
         }
         MappedByteBuffer mappedByteBuffer = this.a;
-        mappedByteBuffer.position(i3);
+        mappedByteBuffer.position(i7);
         mappedByteBuffer.get(this.f, 20, i10);
     }
 
-    public final byte[] m(int i3) {
+    public final byte[] m(int i7) {
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -597,17 +597,17 @@ public final class l6 {
                     bArr[i11] = new byte[TLObject.FLAG_12];
                 }
                 iArr[i11] = -1;
-                c(i3, bArr[i11]);
-                iArr[i11] = i3;
-                long j10 = this.p + 1;
-                this.p = j10;
-                jArr[i11] = j10;
+                c(i7, bArr[i11]);
+                iArr[i11] = i7;
+                long j3 = this.p + 1;
+                this.p = j3;
+                jArr[i11] = j3;
                 return bArr[i11];
             }
-            if (iArr[i10] == i3) {
-                long j11 = this.p + 1;
-                this.p = j11;
-                jArr[i10] = j11;
+            if (iArr[i10] == i7) {
+                long j10 = this.p + 1;
+                this.p = j10;
+                jArr[i10] = j10;
                 return bArr[i10];
             }
             if (jArr[i10] < jArr[i11]) {
@@ -617,19 +617,19 @@ public final class l6 {
         }
     }
 
-    public final int o(int i3) {
-        return this.a.getShort(i3) & 65535;
+    public final int o(int i7) {
+        return this.a.getShort(i7) & 65535;
     }
 
-    public final int p(int i3) {
-        return this.a.get(i3) & 255;
+    public final int p(int i7) {
+        return this.a.get(i7) & 255;
     }
 
-    public final void q(int i3, int i10) {
-        if (i3 >= this.b || i3 == i10) {
+    public final void q(int i7, int i10) {
+        if (i7 >= this.b || i7 == i10) {
             throw new IOException("Invalid root reference");
         }
-        int f10 = f(i3);
+        int f10 = f(i7);
         if (p(f10 + 16) > 1 || p(f10 + 17) != 0 || o(f10 + 10) != 65535 || o(f10 + 12) != 65535) {
             throw new IOException("EPK3 dependency chains are forbidden");
         }

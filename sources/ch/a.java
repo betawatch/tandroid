@@ -1,80 +1,31 @@
 package ch;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.g0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a extends Drawable {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final RectF c;
-    public final Drawable d;
-    public float e;
-    public String f;
+public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b b;
+    public final /* synthetic */ d0 c;
 
-    public a(Context context) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.c = new RectF();
-        textPaint.setColor(-1);
-        textPaint.setTypeface(g0.o());
-        textPaint.setTextSize(g0.L(12.0f));
-        textPaint2.setColor(-6915073);
-        this.d = context.getDrawable(R.drawable.mini_boost_badge);
+    public /* synthetic */ a(b bVar, d0 d0Var, int i7) {
+        this.a = i7;
+        this.b = bVar;
+        this.c = d0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        float f10 = bounds.left;
-        float f11 = bounds.top;
-        float f12 = bounds.right;
-        float f13 = bounds.bottom;
-        RectF rectF = this.c;
-        rectF.set(f10, f11, f12, f13);
-        canvas.drawRoundRect(rectF, g0.L(12.0f), g0.L(12.0f), this.b);
-        int L = g0.L(2.0f) + bounds.left;
-        int L2 = g0.L(1.0f) + bounds.top;
-        int L3 = g0.L(2.0f) + bounds.left;
-        Drawable drawable = this.d;
-        drawable.setBounds(L, L2, drawable.getIntrinsicWidth() + L3, drawable.getIntrinsicHeight() + g0.L(1.0f) + getBounds().top);
-        drawable.draw(canvas);
-        String str = this.f;
-        if (str != null) {
-            canvas.drawText(str, g0.L(16.5f) + bounds.left, g0.L(13.0f) + bounds.top, this.a);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                this.c.invalidate();
+                break;
+            default:
+                this.b.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                this.c.invalidate();
+                break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return g0.L(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (g0.L(23.0f) + this.e);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -1;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

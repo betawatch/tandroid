@@ -1,48 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import org.json.JSONObject;
-import org.telegram.tgnet.tl.TL_wallet;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class y1 extends org.telegram.ui.ActionBar.u4 {
+    public final /* synthetic */ fi.d r;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class y1 {
-    public final TL_wallet.tonConnectSession a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final b2 f;
-    public final byte[] g;
-    public final String h;
-    public final String i;
-    public final String j;
-    public final String k;
-    public final int l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public Runnable r;
+    public y1(fi.d dVar) {
+        this.r = dVar;
+    }
 
-    public y1(TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, JSONObject jSONObject, String str, byte[] bArr) {
-        this.a = tonconnectpending.session;
-        this.b = tonconnectrequest.msg_id;
-        this.c = tonconnectrequest.expires;
-        tonconnectrequest.body.clone();
-        this.i = tonconnectrequest.trace_id;
-        this.d = jSONObject.getString("id");
-        this.e = jSONObject.optString("method");
-        int optInt = jSONObject.optInt("errorCode", -1);
-        this.l = optInt;
-        String str2 = null;
-        this.j = jSONObject.optString("errorMessage", null);
-        this.f = (optInt >= 0 || !jSONObject.has("transaction")) ? null : new b2(jSONObject.getJSONObject("transaction"));
-        if (optInt < 0 && jSONObject.has("data")) {
-            str2 = jSONObject.getJSONObject("data").toString();
-        }
-        this.k = str2;
-        this.h = str;
-        this.g = (byte[]) bArr.clone();
+    @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.p2
+    public final boolean x() {
+        return !this.r.Q;
     }
 }

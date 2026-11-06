@@ -1,28 +1,54 @@
 package aa;
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.ActionBar.s1;
+import a8.p0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements Continuation, p1 {
-    public final /* synthetic */ Runnable a;
+public final class c {
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public /* synthetic */ c(Runnable runnable) {
-        this.a = runnable;
+    public c(String str, String str2, String str3) {
+        if (str == null) {
+            throw new NullPointerException("Null crashlyticsInstallId");
+        }
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(s1 s1Var, int i3) {
-        this.a.run();
+    public final boolean equals(Object obj) {
+        String str;
+        String str2;
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof c) {
+            c cVar = (c) obj;
+            String str3 = cVar.c;
+            String str4 = cVar.b;
+            if (this.a.equals(cVar.a) && ((str = this.b) != null ? str.equals(str4) : str4 == null) && ((str2 = this.c) != null ? str2.equals(str3) : str3 == null)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        this.a.run();
-        return Tasks.forResult(null);
+    public final int hashCode() {
+        int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
+        String str = this.b;
+        int hashCode2 = (hashCode ^ (str == null ? 0 : str.hashCode())) * 1000003;
+        String str2 = this.c;
+        return hashCode2 ^ (str2 != null ? str2.hashCode() : 0);
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("InstallIds{crashlyticsInstallId=");
+        sb2.append(this.a);
+        sb2.append(", firebaseInstallationId=");
+        sb2.append(this.b);
+        sb2.append(", firebaseAuthenticationToken=");
+        return p0.s(sb2, this.c, "}");
     }
 }

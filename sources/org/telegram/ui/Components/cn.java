@@ -1,53 +1,130 @@
 package org.telegram.ui.Components;
 
-import java.util.concurrent.atomic.AtomicReference;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cn implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jn b;
+public final class cn extends vh {
+    public final iy n;
+    public final pj0 r;
+    public final int s;
+    public final org.telegram.ui.x7 w;
+    public int x;
 
-    public /* synthetic */ cn(jn jnVar, int i3) {
-        this.a = i3;
-        this.b = jnVar;
+    public cn(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, di diVar) {
+        super(context, f6Var, diVar);
+        this.s = i7;
+        iy iyVar = new iy(context, f6Var);
+        this.n = iyVar;
+        iyVar.setText(org.telegram.messenger.hd.M0(2131748179, null));
+        iyVar.setOnTouchListener(null);
+        iyVar.setTextSize(16);
+        addView(iyVar, c8.ha.c(-2.0f, -1));
+        iyVar.a(R.raw.media_forbidden, org.telegram.messenger.qs.g2, org.telegram.messenger.qs.g2);
+        TLRPC.Chat Y0 = this.b.Y0();
+        int i10 = 4;
+        if (i7 == 1) {
+            iyVar.setText(org.telegram.messenger.t3.L(7, Y0));
+        } else if (i7 == 3) {
+            iyVar.setText(org.telegram.messenger.t3.L(18, Y0));
+        } else if (i7 == 4) {
+            iyVar.setText(org.telegram.messenger.t3.L(19, Y0));
+        } else {
+            iyVar.setText(org.telegram.messenger.t3.L(22, Y0));
+        }
+        iyVar.c();
+        pj0 pj0Var = new pj0(context, f6Var);
+        this.r = pj0Var;
+        pj0Var.setSectionsType(2);
+        pj0Var.setVerticalScrollBarEnabled(false);
+        pj0Var.setLayoutManager(new v4.b0());
+        pj0Var.setClipToPadding(false);
+        org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, i10);
+        this.w = x7Var;
+        pj0Var.setAdapter(x7Var);
+        pj0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(48.0f));
+        pj0Var.setOnScrollListener(new ui(this, i10));
+        addView(pj0Var, c8.ha.c(-1.0f, -1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                jn jnVar = this.b;
-                AtomicReference atomicReference = jnVar.n;
-                org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) atomicReference.get();
-                if (k5Var != null) {
-                    jnVar.removeView(k5Var);
-                    atomicReference.set(null);
-                    break;
-                }
-                break;
-            case 1:
-                jn jnVar2 = this.b;
-                AtomicReference atomicReference2 = jnVar2.w;
-                org.telegram.ui.ActionBar.k5 k5Var2 = (org.telegram.ui.ActionBar.k5) atomicReference2.get();
-                if (k5Var2 != null) {
-                    jnVar2.removeView(k5Var2);
-                    atomicReference2.set(null);
-                    if (!jnVar2.b) {
-                        jnVar2.setClipChildren(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                jn jnVar3 = this.b;
-                jnVar3.k0 = false;
-                jnVar3.i0.c(false);
-                if (jnVar3.a()) {
-                    jnVar3.f();
-                    break;
-                }
-                break;
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.vh
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void B(int i7, int i10) {
+        int i11;
+        int i12;
+        pj0 pj0Var;
+        int max = Math.max(0, i10 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
+        if (this.x != max) {
+            this.x = max;
+            this.w.f();
         }
+        if (!org.telegram.messenger.g0.Q1()) {
+            Point point = org.telegram.messenger.g0.q;
+            if (point.x > point.y) {
+                i11 = (int) (i10 / 3.5f);
+                int L = i11 - org.telegram.messenger.g0.L(52.0f);
+                i12 = L >= 0 ? L : 0;
+                pj0Var = this.r;
+                if (pj0Var.getPaddingTop() == i12) {
+                    pj0Var.setPadding(org.telegram.messenger.g0.L(6.0f), i12, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
+                    return;
+                }
+                return;
+            }
+        }
+        i11 = (i10 / 5) * 2;
+        int L2 = i11 - org.telegram.messenger.g0.L(52.0f);
+        if (L2 >= 0) {
+        }
+        pj0Var = this.r;
+        if (pj0Var.getPaddingTop() == i12) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vh
+    public int getCurrentItemTop() {
+        pj0 pj0Var = this.r;
+        if (pj0Var.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        int i7 = 0;
+        View childAt = pj0Var.getChildAt(0);
+        xi0 xi0Var = (xi0) pj0Var.G(childAt);
+        int top = childAt.getTop() - org.telegram.messenger.g0.L(8.0f);
+        if (top > 0 && xi0Var != null && xi0Var.b() == 0) {
+            i7 = top;
+        }
+        if (top < 0 || xi0Var == null || xi0Var.b() != 0) {
+            top = i7;
+        }
+        int measuredHeight = (getMeasuredHeight() - top) - org.telegram.messenger.g0.L(50.0f);
+        this.n.setTranslationY(((measuredHeight - r1.getMeasuredHeight()) / 2) + top);
+        return org.telegram.messenger.g0.L(12.0f) + top;
+    }
+
+    @Override // org.telegram.ui.Components.vh
+    public int getFirstOffset() {
+        return org.telegram.messenger.g0.L(4.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.vh
+    public int getListTopPadding() {
+        return this.r.getPaddingTop();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        this.b.b.invalidate();
     }
 }

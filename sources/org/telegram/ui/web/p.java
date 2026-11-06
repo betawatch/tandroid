@@ -1,92 +1,69 @@
 package org.telegram.ui.web;
 
-import ei.p7;
+import di.o7;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p implements n10 {
+public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
-    public final /* synthetic */ p7 c;
+    public final /* synthetic */ x0 b;
 
-    public /* synthetic */ p(w0 w0Var, p7 p7Var, int i3) {
-        this.a = i3;
-        this.b = w0Var;
-        this.c = p7Var;
+    public /* synthetic */ p(x0 x0Var, int i7) {
+        this.a = i7;
+        this.b = x0Var;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        d0 d0Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                String str = (String) obj2;
-                JSONObject A = w0.A(str, "status");
-                w0 w0Var = this.b;
-                w0Var.x(this.c, "emoji_status_access_requested", A);
-                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (d0Var = w0Var.c) != null) {
-                    d0Var.a();
-                    break;
+                d0 d0Var = this.b.c;
+                if (d0Var != null) {
+                    d0Var.b();
                 }
+                LaunchActivity.J();
                 break;
             case 1:
-                Boolean bool = (Boolean) obj;
-                Boolean bool2 = (Boolean) obj2;
-                w0 w0Var2 = this.b;
-                if (w0Var2.c != null && bool.booleanValue()) {
-                    w0Var2.c.w(bool2.booleanValue());
-                }
-                w0Var2.l0.j(new q(w0Var2, this.c, 1));
-                break;
-            case 2:
-                w0 w0Var3 = this.b;
-                w0Var3.getClass();
-                if (((Boolean) obj).booleanValue()) {
-                    ii.r rVar = w0Var3.k0;
-                    rVar.e = true;
-                    rVar.k();
-                }
-                w0Var3.v(this.c);
-                break;
-            case 3:
-                p7 p7Var = this.c;
-                Boolean bool3 = (Boolean) obj;
-                String str2 = (String) obj2;
-                boolean booleanValue = bool3.booleanValue();
-                w0 w0Var4 = this.b;
-                if (booleanValue) {
-                    w0Var4.k0.e = true;
-                }
-                try {
-                    JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
-                    jSONObject.put("token", str2);
-                    w0Var4.x(p7Var, "biometry_auth_requested", jSONObject);
-                    break;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
-                }
-            default:
-                String str3 = (String) obj;
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                w0 w0Var5 = this.b;
-                p7 p7Var2 = this.c;
-                if (str3 != null) {
-                    w0Var5.x(p7Var2, "emoji_status_failed", w0.A(str3, "error"));
-                    break;
-                } else {
-                    w0Var5.x(p7Var2, "emoji_status_set", null);
-                    d0 d0Var2 = w0Var5.c;
+                x0 x0Var = this.b;
+                if (x0Var.S) {
+                    x0Var.S = false;
+                    d0 d0Var2 = x0Var.c;
                     if (d0Var2 != null) {
-                        d0Var2.d(document);
-                        break;
+                        d0Var2.t(false);
                     }
                 }
+                x0Var.c();
+                x0Var.N = false;
+                x0Var.P = 0L;
+                x0Var.T = false;
+                u0 u0Var = x0Var.a;
+                if (u0Var != null) {
+                    u0Var.onResume();
+                    x0Var.a.reload();
+                    break;
+                }
+                break;
+            default:
+                x0 x0Var2 = this.b;
+                o7 o7Var = x0Var2.J0;
+                hi.r0 r0Var = x0Var2.k0;
+                r0Var.getClass();
+                JSONObject jSONObject = new JSONObject();
+                try {
+                    jSONObject.put("available", r0Var.d());
+                    if (r0Var.d()) {
+                        jSONObject.put("access_requested", r0Var.d);
+                        if (r0Var.d) {
+                            jSONObject.put("access_granted", r0Var.e && r0Var.a());
+                        }
+                    }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                }
+                x0Var2.x(o7Var, "location_checked", jSONObject);
                 break;
         }
     }

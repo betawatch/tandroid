@@ -6,17 +6,17 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class rw0 extends Drawable {
     public boolean a;
-    public final u5 b;
+    public final w5 b;
     public final Drawable c;
     public final Drawable d;
-    public int e = org.telegram.messenger.hs.e4;
+    public int e = org.telegram.messenger.qs.e4;
 
     public rw0(org.telegram.ui.Cells.q1 q1Var) {
-        this.b = new u5(q1Var, 420L, xq.h);
+        this.b = new w5(q1Var, 420L, xq.h);
         this.c = q1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
         this.d = q1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
     }
@@ -86,8 +86,8 @@ public final class rw0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        this.e = i3;
+    public final void setAlpha(int i7) {
+        this.e = i7;
     }
 
     @Override // android.graphics.drawable.Drawable

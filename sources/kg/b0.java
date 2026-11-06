@@ -1,23 +1,27 @@
 package kg;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.k5;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public enum b0 {
-    d(0, 2131745765, 2131745764),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF30(8, 2131745756, 2131745755),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF45(4, 2131745758, 2131745757),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF60(2, 2131745763, 2131745762);
+public final class b0 extends v4.c0 {
+    public final /* synthetic */ c0 r;
 
-    public final int a;
-    public final int b;
-    public final int c;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b0(c0 c0Var, Context context) {
+        super(context);
+        this.r = c0Var;
+    }
 
-    b0(int i3, int i10, int i11) {
-        this.a = i3;
-        this.b = i10;
-        this.c = i11;
+    @Override // v4.c0
+    public final int k(int i7, View view) {
+        return k5.B(8.0f, ((g0) this.r.V).s.getPaddingTop() - org.telegram.messenger.g0.m, super.k(i7, view));
+    }
+
+    @Override // v4.c0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

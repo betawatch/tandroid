@@ -1,84 +1,37 @@
 package tg;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.nh;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+public final class d0 extends y0 {
+    public final Path n3;
+    public final /* synthetic */ tp0 o3;
 
-    public /* synthetic */ d0(i0 i0Var, int i3) {
-        this.a = i3;
-        this.b = i0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(tp0 tp0Var, Context context) {
+        super(context);
+        this.o3 = tp0Var;
+        this.n3 = new Path();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                final i0 i0Var = this.b;
-                final int i3 = 1;
-                i0Var.f.f(new Runnable() { // from class: tg.c0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i3) {
-                            case 0:
-                                i0 i0Var2 = i0Var;
-                                i0Var2.getClass();
-                                i0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                nh nhVar = i0Var2.a;
-                                if (nhVar != null) {
-                                    nhVar.x();
-                                    break;
-                                }
-                                break;
-                            default:
-                                i0 i0Var3 = i0Var;
-                                i0Var3.getClass();
-                                i0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                nh nhVar2 = i0Var3.a;
-                                if (nhVar2 != null) {
-                                    nhVar2.x();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final i0 i0Var2 = this.b;
-                final int i10 = 0;
-                i0Var2.f.f(new Runnable() { // from class: tg.c0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                i0 i0Var22 = i0Var2;
-                                i0Var22.getClass();
-                                i0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                nh nhVar = i0Var22.a;
-                                if (nhVar != null) {
-                                    nhVar.x();
-                                    break;
-                                }
-                                break;
-                            default:
-                                i0 i0Var3 = i0Var2;
-                                i0Var3.getClass();
-                                i0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                nh nhVar2 = i0Var3.a;
-                                if (nhVar2 != null) {
-                                    nhVar2.x();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.o3.getBarView();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(org.telegram.messenger.g0.W1(r0.w1, barView.getLeft() - getLeft(), 0), org.telegram.messenger.g0.W1(r0.w1, barView.getTop() - getTop(), 0), org.telegram.messenger.g0.W1(r0.w1, barView.getRight() - getLeft(), getWidth()), org.telegram.messenger.g0.W1(r0.w1, barView.getBottom() - getTop(), getHeight()));
+        Path path = this.n3;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

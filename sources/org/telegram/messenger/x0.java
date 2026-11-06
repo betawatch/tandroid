@@ -14,46 +14,55 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.f71;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ x0(int i3, Object obj, int i10) {
+    public /* synthetic */ x0(int i7, Object obj, int i10) {
         this.a = i10;
-        this.b = i3;
+        this.b = i7;
         this.c = obj;
     }
 
-    /* JADX WARN: Not initialized variable reg: 3, insn: 0x00d8: MOVE (r4 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) (LINE:217), block:B:68:0x00d8 */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x0591  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x05bb  */
-    /* JADX WARN: Removed duplicated region for block: B:371:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x010b  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Not initialized variable reg: 4, insn: 0x00d9: MOVE (r5 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]) (LINE:218), block:B:68:0x00d9 */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x05b9  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x05e3  */
+    /* JADX WARN: Removed duplicated region for block: B:382:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x010c  */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v15 */
+    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v7 */
+    /* JADX WARN: Type inference failed for: r1v8, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v9 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        File file;
-        long j10;
-        int i3;
+        int i7;
+        long j3;
         int i10;
-        File file2;
         int i11;
+        File file;
+        int[] iArr;
+        ?? r12;
+        File file2;
+        long j10;
         long j11;
-        long j12;
-        d71 d71Var;
-        d71 d71Var2;
+        File[] fileArr;
+        f71 f71Var;
+        f71 f71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
-        long j13 = 0;
+        int i12 = 3;
         SQLiteCursor sQLiteCursor3 = null;
-        int i12 = 0;
         int i13 = 1;
         switch (this.a) {
             case 0:
@@ -66,120 +75,165 @@ public final /* synthetic */ class x0 implements Runnable {
                 }
                 ArrayList arrayList = new ArrayList();
                 int i15 = 0;
-                boolean z10 = false;
+                boolean z9 = false;
                 while (true) {
-                    int i16 = 4;
                     if (i15 < 4) {
-                        if (h10.i(i15).p()) {
-                            u2 u2Var = h10.i(i15).getMessagesController().r7;
+                        if (p10.i(i15).p()) {
+                            u2 u2Var = p10.i(i15).getMessagesController().r7;
                             arrayList.add(u2Var);
                             if (u2Var.e().size() > 0) {
-                                z10 = true;
+                                z9 = true;
                             }
                         }
                         i15++;
                     } else {
-                        int[] iArr = new int[4];
-                        int i17 = 0;
-                        boolean z11 = true;
-                        long j14 = Long.MAX_VALUE;
-                        while (i17 < 4) {
-                            long j15 = j13;
-                            int i18 = az.q().getInt(k2.p1.i(i17, "keep_media_type_"), u2.b(i17));
-                            iArr[i17] = i18;
+                        int[] iArr2 = new int[4];
+                        int i16 = 0;
+                        boolean z10 = true;
+                        long j12 = Long.MAX_VALUE;
+                        for (int i17 = 4; i16 < i17; i17 = 4) {
+                            int i18 = iz.q().getInt(jg.g.j(i16, "keep_media_type_"), u2.b(i16));
+                            iArr2[i16] = i18;
                             if (i18 != 2) {
-                                z11 = false;
+                                z10 = false;
                             }
                             long a10 = u2.a(i18);
-                            if (a10 < j14) {
-                                j14 = a10;
+                            if (a10 < j12) {
+                                j12 = a10;
                             }
-                            i17++;
-                            j13 = j15;
+                            i16++;
                         }
-                        long j16 = j13;
-                        if (z10) {
-                            z11 = false;
+                        if (z9) {
+                            z10 = false;
                         }
-                        SparseArray l10 = zb.D().l();
-                        long j17 = j16;
+                        SparseArray l10 = gc.D().l();
+                        long j13 = 0;
                         int i19 = 0;
                         int i20 = 0;
                         while (i19 < l10.size()) {
-                            if (z11 && (l10.keyAt(i19) == i13 || l10.keyAt(i19) == 3)) {
-                                i11 = i13;
+                            if (z10 && (l10.keyAt(i19) == i13 || l10.keyAt(i19) == 3)) {
+                                iArr = iArr2;
+                                r12 = i13;
                             } else {
-                                int i21 = l10.keyAt(i19) == i16 ? i13 : 0;
+                                int i21 = l10.keyAt(i19) == 4 ? i13 : 0;
                                 try {
                                     File[] listFiles = ((File) l10.valueAt(i19)).listFiles();
                                     ArrayList arrayList2 = new ArrayList();
                                     if (listFiles != null) {
-                                        for (int i22 = 0; i22 < listFiles.length; i22++) {
-                                            if (!listFiles[i22].isDirectory() && !set.contains(listFiles[i22].getAbsolutePath())) {
-                                                arrayList2.add(new t2(listFiles[i22]));
+                                        int i22 = 0;
+                                        while (i22 < listFiles.length) {
+                                            try {
+                                                if (listFiles[i22].isDirectory() || set.contains(listFiles[i22].getAbsolutePath())) {
+                                                    fileArr = listFiles;
+                                                } else {
+                                                    fileArr = listFiles;
+                                                    arrayList2.add(new t2(fileArr[i22]));
+                                                }
+                                                i22++;
+                                                listFiles = fileArr;
+                                            } catch (Throwable th2) {
+                                                th = th2;
+                                                iArr = iArr2;
+                                                r12 = 1;
+                                                a8.g(th, r12);
+                                                i19++;
+                                                i13 = r12;
+                                                iArr2 = iArr;
                                             }
                                         }
                                     }
                                     for (int i23 = 0; i23 < arrayList.size(); i23++) {
                                         ((u2) arrayList.get(i23)).g(arrayList2);
                                     }
-                                    for (int i24 = 0; i24 < arrayList2.size(); i24++) {
+                                    int i24 = 0;
+                                    while (i24 < arrayList2.size()) {
                                         t2 t2Var = (t2) arrayList2.get(i24);
-                                        boolean z12 = t2Var.d;
+                                        boolean z11 = t2Var.d;
                                         File file4 = t2Var.a;
-                                        if (z12) {
-                                            j12 = u2.a(iArr[3]);
+                                        if (z11) {
+                                            try {
+                                                file2 = file4;
+                                                j11 = i14 - u2.a(iArr2[3]);
+                                                iArr = iArr2;
+                                            } catch (Throwable th3) {
+                                                th = th3;
+                                                iArr = iArr2;
+                                                r12 = 1;
+                                                a8.g(th, r12);
+                                                i19++;
+                                                i13 = r12;
+                                                iArr2 = iArr;
+                                            }
                                         } else {
+                                            file2 = file4;
                                             int i25 = t2Var.b;
+                                            iArr = iArr2;
                                             if (i25 != 2) {
                                                 if (i25 >= 0) {
-                                                    j11 = u2.a(i25);
+                                                    j10 = u2.a(i25);
                                                 } else {
                                                     int i26 = t2Var.c;
                                                     if (i26 >= 0) {
-                                                        j11 = u2.a(iArr[i26]);
+                                                        j10 = u2.a(iArr[i26]);
                                                     } else if (i21 == 0) {
-                                                        j11 = j14;
+                                                        j10 = j12;
                                                     }
                                                 }
-                                                if (j11 != Long.MAX_VALUE) {
-                                                    j12 = j11;
+                                                if (j10 != Long.MAX_VALUE) {
+                                                    j11 = i14 - j10;
                                                 }
+                                            } else {
+                                                continue;
                                             }
+                                            i24++;
+                                            iArr2 = iArr;
                                         }
-                                        long j18 = i14 - j12;
-                                        long lastUsageFileTime = Utilities.getLastUsageFileTime(file4.getAbsolutePath());
-                                        if (lastUsageFileTime > 316000000 && lastUsageFileTime < j18 && !set.contains(file4.getPath())) {
+                                        long lastUsageFileTime = Utilities.getLastUsageFileTime(file2.getAbsolutePath());
+                                        if (lastUsageFileTime > 316000000 && lastUsageFileTime < j11) {
                                             try {
-                                                if (r2.a) {
-                                                    i20++;
-                                                    j17 += file4.length();
+                                                if (!set.contains(file2.getPath())) {
+                                                    try {
+                                                        if (r2.a) {
+                                                            i20++;
+                                                            j13 += file2.length();
+                                                        }
+                                                        file2.delete();
+                                                    } catch (Exception e10) {
+                                                        a8.g(e10, true);
+                                                    }
                                                 }
-                                                file4.delete();
-                                            } catch (Exception e10) {
-                                                a8.g(e10, true);
+                                            } catch (Throwable th4) {
+                                                th = th4;
+                                                r12 = 1;
+                                                a8.g(th, r12);
+                                                i19++;
+                                                i13 = r12;
+                                                iArr2 = iArr;
                                             }
                                         }
+                                        i24++;
+                                        iArr2 = iArr;
                                     }
-                                    i11 = 1;
-                                } catch (Throwable th2) {
-                                    i11 = 1;
-                                    a8.g(th2, true);
+                                    iArr = iArr2;
+                                    r12 = 1;
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    iArr = iArr2;
                                 }
                             }
                             i19++;
-                            i13 = i11;
-                            i16 = 4;
+                            i13 = r12;
+                            iArr2 = iArr;
                         }
                         int i27 = i13;
-                        int i28 = az.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        int i28 = iz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
                         if (i28 != Integer.MAX_VALUE) {
-                            long j19 = i28 == i27 ? 314572800L : i28 * 1048576000;
-                            long j20 = j16;
+                            long j14 = i28 == i27 ? 314572800L : i28 * 1048576000;
+                            long j15 = 0;
                             for (int i29 = 0; i29 < l10.size(); i29++) {
-                                j20 += Utilities.getDirSize(((File) l10.valueAt(i29)).getAbsolutePath(), 0, true);
+                                j15 = Utilities.getDirSize(((File) l10.valueAt(i29)).getAbsolutePath(), 0, true) + j15;
                             }
-                            if (j20 > j19) {
+                            if (j15 > j14) {
                                 ArrayList arrayList3 = new ArrayList();
                                 for (int i30 = 0; i30 < l10.size(); i30++) {
                                     z0.a((File) l10.valueAt(i30), arrayList3);
@@ -187,66 +241,65 @@ public final /* synthetic */ class x0 implements Runnable {
                                 for (int i31 = 0; i31 < arrayList.size(); i31++) {
                                     ((u2) arrayList.get(i31)).g(arrayList3);
                                 }
-                                int i32 = 2;
-                                Collections.sort(arrayList3, new o0.a(i32));
-                                long j21 = j16;
+                                Collections.sort(arrayList3, new jg.x(12));
+                                long j16 = 0;
+                                int i32 = 0;
                                 int i33 = 0;
                                 int i34 = 0;
-                                i10 = 0;
                                 while (true) {
-                                    if (i33 < arrayList3.size()) {
-                                        if (((y0) arrayList3.get(i33)).b == i32) {
-                                            file = file3;
+                                    if (i32 < arrayList3.size()) {
+                                        if (((y0) arrayList3.get(i32)).b == 2) {
+                                            i7 = i20;
                                         } else {
-                                            file = file3;
-                                            if (((y0) arrayList3.get(i33)).e <= j16) {
-                                                i34++;
+                                            i7 = i20;
+                                            if (((y0) arrayList3.get(i32)).e <= 0) {
+                                                i33++;
                                             } else {
-                                                long length = ((y0) arrayList3.get(i33)).a.length();
-                                                j20 -= length;
-                                                i10++;
-                                                j21 += length;
+                                                long length = ((y0) arrayList3.get(i32)).a.length();
+                                                j15 -= length;
+                                                i34++;
+                                                j16 += length;
                                                 try {
-                                                    ((y0) arrayList3.get(i33)).a.delete();
+                                                    ((y0) arrayList3.get(i32)).a.delete();
                                                 } catch (Exception unused) {
                                                 }
-                                                if (j20 < j19) {
+                                                if (j15 < j14) {
                                                 }
                                             }
                                         }
-                                        i33++;
-                                        file3 = file;
-                                        i32 = 2;
+                                        i32++;
+                                        i20 = i7;
                                     } else {
-                                        file = file3;
+                                        i7 = i20;
                                     }
                                 }
-                                i3 = i34;
-                                j10 = j21;
-                                file2 = new File(file, "acache");
-                                if (file2.exists()) {
+                                i10 = i34;
+                                i11 = i33;
+                                j3 = j16;
+                                file = new File(file3, "acache");
+                                if (file.exists()) {
                                     try {
-                                        Utilities.clearDir(file2.getAbsolutePath(), 0, i14 - 86400, false);
-                                    } catch (Throwable th3) {
-                                        a8.g(th3, true);
+                                        Utilities.clearDir(file.getAbsolutePath(), 0, i14 - 86400, false);
+                                    } catch (Throwable th6) {
+                                        a8.g(th6, true);
                                     }
                                 }
-                                hp.e1().edit().putInt("lastKeepMediaCheckTime", az.H).apply();
+                                qp.e1().edit().putInt("lastKeepMediaCheckTime", iz.H).apply();
                                 if (r2.a) {
                                     return;
                                 }
-                                a8.b("checkKeepMedia task end time " + (System.currentTimeMillis() - currentTimeMillis) + " auto deleted info: files " + i20 + " size " + g0.i0(j17, false, false) + "   deleted by size limit info: files " + i10 + " size " + g0.i0(j10, false, false) + " unknownTimeFiles " + i3);
+                                a8.b("checkKeepMedia task end time " + (System.currentTimeMillis() - currentTimeMillis) + " auto deleted info: files " + i7 + " size " + g0.i0(j13, false, false) + "   deleted by size limit info: files " + i10 + " size " + g0.i0(j3, false, false) + " unknownTimeFiles " + i11);
                                 return;
                             }
                         }
-                        file = file3;
-                        j10 = j16;
-                        i3 = 0;
+                        i7 = i20;
+                        j3 = 0;
                         i10 = 0;
-                        file2 = new File(file, "acache");
-                        if (file2.exists()) {
+                        i11 = 0;
+                        file = new File(file3, "acache");
+                        if (file.exists()) {
                         }
-                        hp.e1().edit().putInt("lastKeepMediaCheckTime", az.H).apply();
+                        qp.e1().edit().putInt("lastKeepMediaCheckTime", iz.H).apply();
                         if (r2.a) {
                         }
                     }
@@ -255,8 +308,8 @@ public final /* synthetic */ class x0 implements Runnable {
             case 1:
                 ArrayList arrayList4 = (ArrayList) this.c;
                 int i35 = this.b;
-                while (i12 < arrayList4.size()) {
-                    File file5 = (File) arrayList4.get(i12);
+                for (int i36 = 0; i36 < arrayList4.size(); i36++) {
+                    File file5 = (File) arrayList4.get(i36);
                     File file6 = new File(file5.getAbsolutePath() + ".enc");
                     if (file6.exists()) {
                         try {
@@ -291,69 +344,68 @@ public final /* synthetic */ class x0 implements Runnable {
                     } catch (Exception e14) {
                         a8.g(e14, true);
                     }
-                    i12++;
                 }
                 if (i35 == 2) {
-                    zb.D().j();
+                    gc.D().j();
                     return;
                 }
                 return;
             case 2:
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
-                int i36 = this.b;
-                boolean z13 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(hs.Y4, e9.b.a(filesMigrationService, us.k0).setContentTitle(bd.M0(2131748438, null)).setContentText(i36 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i36, false).build());
+                int i37 = this.b;
+                boolean z12 = FilesMigrationService.c;
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(qs.Y4, z8.a(filesMigrationService, dt.j0).setContentTitle(hd.M0(2131748429, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
                 return;
             case 3:
-                org.telegram.ui.ActionBar.s1 s1Var = (org.telegram.ui.ActionBar.s1) this.c;
-                int i37 = this.b;
-                String[] strArr = MediaController.W1;
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
+                int i38 = this.b;
+                String[] strArr = MediaController.V1;
                 try {
-                    s1Var.o(i37);
+                    u1Var.o(i38);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
                     return;
                 }
             case 4:
-                ne neVar = (ne) this.c;
-                int i38 = this.b;
-                MediaController mediaController = neVar.a;
-                if (i38 == 1) {
-                    if (mediaController.I(mediaController.v0) && !mediaController.H()) {
-                        mediaController.R(mediaController.v0, true);
+                ue ueVar = (ue) this.c;
+                int i39 = this.b;
+                MediaController mediaController = ueVar.a;
+                if (i39 == 1) {
+                    if (mediaController.I(mediaController.u0) && !mediaController.H()) {
+                        mediaController.R(mediaController.u0, true);
                     } else if (mediaController.J()) {
                         mediaController.B0(2, 0, false, false);
                     }
-                    org.telegram.ui.Components.ut utVar = org.telegram.ui.Components.ut.K1;
-                    if (utVar != null && (d71Var2 = utVar.k1) != null && d71Var2.x) {
-                        d71Var2.a.g0();
-                        d71Var2.n();
-                        d71Var2.g0.d(true, true);
+                    org.telegram.ui.Components.vt vtVar = org.telegram.ui.Components.vt.O1;
+                    if (vtVar != null && (f71Var2 = vtVar.j1) != null && f71Var2.x) {
+                        f71Var2.a.g0();
+                        f71Var2.n();
+                        f71Var2.f0.d(true, true);
                     }
-                    mediaController.X = true;
+                    mediaController.W = true;
                     return;
                 }
-                if (i38 == 0) {
-                    mediaController.X = false;
+                if (i39 == 0) {
+                    mediaController.W = false;
                     return;
                 }
-                if (i38 == 2) {
-                    org.telegram.ui.Components.ut utVar2 = org.telegram.ui.Components.ut.K1;
-                    if (utVar2 != null && (d71Var = utVar2.k1) != null && d71Var.x) {
-                        d71Var.a.g0();
-                        d71Var.n();
-                        d71Var.g0.d(true, true);
+                if (i39 == 2) {
+                    org.telegram.ui.Components.vt vtVar2 = org.telegram.ui.Components.vt.O1;
+                    if (vtVar2 != null && (f71Var = vtVar2.j1) != null && f71Var.x) {
+                        f71Var.a.g0();
+                        f71Var.n();
+                        f71Var.f0.d(true, true);
                     }
-                    mediaController.X = true;
+                    mediaController.W = true;
                     return;
                 }
                 return;
             case 5:
-                int i39 = this.b;
+                int i40 = this.b;
                 TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = qr.a0(i39).b;
+                    SQLiteDatabase sQLiteDatabase = yr.a0(i40).b;
                     if (sQLiteDatabase != null) {
                         sQLiteDatabase.executeFast("DELETE FROM app_config").stepThis().dispose();
                         if (tL_help_appConfig != null) {
@@ -375,10 +427,10 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 6:
-                int i40 = this.b;
+                int i41 = this.b;
                 TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = qr.a0(i40).b;
+                    SQLiteDatabase sQLiteDatabase2 = yr.a0(i41).b;
                     if (sQLiteDatabase2 != null) {
                         sQLiteDatabase2.executeFast("DELETE FROM effects").stepThis().dispose();
                         if (messages_availableeffects != null) {
@@ -400,26 +452,26 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 7:
-                int i41 = this.b;
-                n10 n10Var = (n10) this.c;
+                int i42 = this.b;
+                v10 v10Var = (v10) this.c;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase3 = qr.a0(i41).b;
+                        SQLiteDatabase sQLiteDatabase3 = yr.a0(i42).b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteCursor = sQLiteDatabase3.queryFinalized("SELECT data FROM web_browser_settings", new Object[0]);
                             try {
-                                TL_account.WebBrowserSettings webBrowserSettings = sQLiteCursor.next() ? (TL_account.WebBrowserSettings) sQLiteCursor.tlObjectValue(0, new go(i12), true) : null;
+                                TL_account.WebBrowserSettings webBrowserSettings = sQLiteCursor.next() ? (TL_account.WebBrowserSettings) sQLiteCursor.tlObjectValue(0, new ch(i12), true) : null;
                                 if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
                                     TL_account.TL_webBrowserSettings tL_webBrowserSettings = (TL_account.TL_webBrowserSettings) webBrowserSettings;
-                                    n10Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
+                                    v10Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
                                 } else {
-                                    n10Var.a(0L, null);
+                                    v10Var.a(0L, null);
                                 }
                                 sQLiteCursor3 = sQLiteCursor;
                             } catch (Exception e18) {
                                 e = e18;
                                 a8.g(e, true);
-                                n10Var.a(0L, null);
+                                v10Var.a(0L, null);
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                     return;
@@ -432,8 +484,8 @@ public final /* synthetic */ class x0 implements Runnable {
                             return;
                         }
                         return;
-                    } catch (Throwable th4) {
-                        th = th4;
+                    } catch (Throwable th7) {
+                        th = th7;
                         sQLiteCursor3 = sQLiteCursor2;
                         if (sQLiteCursor3 != null) {
                             sQLiteCursor3.dispose();
@@ -443,17 +495,17 @@ public final /* synthetic */ class x0 implements Runnable {
                 } catch (Exception e19) {
                     e = e19;
                     sQLiteCursor = null;
-                } catch (Throwable th5) {
-                    th = th5;
+                } catch (Throwable th8) {
+                    th = th8;
                     if (sQLiteCursor3 != null) {
                     }
                     throw th;
                 }
             case 8:
-                int i42 = this.b;
+                int i43 = this.b;
                 TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = (TL_account.TL_webBrowserSettings) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase4 = qr.a0(i42).b;
+                    SQLiteDatabase sQLiteDatabase4 = yr.a0(i43).b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.executeFast("DELETE FROM web_browser_settings").stepThis().dispose();
                         if (tL_webBrowserSettings2 != null) {
@@ -472,7 +524,7 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 9:
-                ((org.telegram.ui.bg) this.c).a(this.b);
+                ((org.telegram.ui.fg) this.c).a(this.b);
                 return;
             case 10:
                 PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
@@ -481,15 +533,15 @@ public final /* synthetic */ class x0 implements Runnable {
                 PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
                 return;
             case 12:
-                int i43 = this.b;
+                int i44 = this.b;
                 c cVar = (c) this.c;
                 try {
-                    if (i43 == 1) {
-                        hs.e().k(hs.P4, 1, bd.M0(2131743843, null));
-                    } else if (i43 != 2) {
+                    if (i44 == 1) {
+                        qs.e().k(qs.P4, 1, hd.M0(2131743834, null));
+                    } else if (i44 != 2) {
                         return;
                     } else {
-                        hs.f(cVar.a).k(hs.i5, 6);
+                        qs.f(cVar.a).k(qs.i5, 6);
                     }
                     return;
                 } catch (Exception e21) {
@@ -497,14 +549,14 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             default:
-                Utilities.u(this.b + 1, (u10[]) this.c);
+                Utilities.u(this.b + 1, (c20[]) this.c);
                 return;
         }
     }
 
-    public /* synthetic */ x0(Object obj, int i3, int i10) {
+    public /* synthetic */ x0(Object obj, int i7, int i10) {
         this.a = i10;
         this.c = obj;
-        this.b = i3;
+        this.b = i7;
     }
 }

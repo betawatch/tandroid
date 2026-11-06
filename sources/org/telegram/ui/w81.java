@@ -1,24 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w81 extends org.telegram.ui.Components.t50 {
-    public final /* synthetic */ long s2;
-    public final /* synthetic */ y81 t2;
+public final /* synthetic */ class w81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v91 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w81(y81 y81Var, Context context, int i3, a0.h hVar, long j10, org.telegram.ui.ActionBar.d2 d2Var, long j11) {
-        super(context, i3, hVar, j10, d2Var, null);
-        this.t2 = y81Var;
-        this.s2 = j11;
+    public /* synthetic */ w81(v91 v91Var, int i7) {
+        this.a = i7;
+        this.b = v91Var;
     }
 
-    @Override // org.telegram.ui.Components.t50
-    public final boolean R0() {
-        TLRPC.Chat M0 = this.t2.b.getMessagesController().M0(Long.valueOf(this.s2));
-        return M0 != null && org.telegram.messenger.t3.y(3, M0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                v91 v91Var = this.b;
+                v91Var.B0();
+                v91Var.F0();
+                break;
+            case 1:
+                this.b.B0();
+                break;
+            case 2:
+                this.b.S0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                v91 v91Var2 = this.b;
+                v91Var2.A0 = null;
+                v91Var2.Z0(true, false);
+                break;
+            default:
+                v91 v91Var3 = this.b;
+                v91Var3.N.postOnAnimation(new w81(v91Var3, 1));
+                break;
+        }
     }
 }

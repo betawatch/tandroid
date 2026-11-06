@@ -1,92 +1,69 @@
 package ui;
 
-import android.os.Handler;
-import android.os.SystemClock;
-import java.util.ArrayDeque;
-import org.telegram.messenger.hs;
-import org.telegram.messenger.u10;
-import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import wi.m0;
-import wi.s;
-import wi.u0;
+import l2.y;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ d c;
 
-    public /* synthetic */ b(Object obj, Object obj2, Object obj3, Object obj4, int i3) {
-        this.a = i3;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+    public /* synthetic */ b(e eVar, d dVar, int i7) {
+        this.a = i7;
+        this.b = eVar;
+        this.c = dVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int a10;
         switch (this.a) {
             case 0:
-                f fVar = (f) this.b;
-                ((ArrayDeque) fVar.b).addLast(new e((l5.b) this.c, (a) this.d, (RequestTimeDelegate) this.e));
-                fVar.I();
-                return;
+                e eVar = this.b;
+                d dVar = (d) eVar.c;
+                d dVar2 = this.c;
+                if (dVar == dVar2) {
+                    eVar.d = null;
+                    eVar.m(dVar2);
+                    break;
+                }
+                break;
             case 1:
-                s sVar = (s) this.b;
-                m0 m0Var = (m0) this.c;
-                m0 m0Var2 = (m0) this.d;
-                Handler handler = (Handler) this.e;
-                if (sVar.r0 && sVar.W == 0 && sVar.T) {
-                    sVar.N.g(sVar.L, sVar.D, false);
-                    sVar.U = false;
-                    sVar.V = false;
-                    sVar.c0 = 0.0f;
-                    sVar.W = 1;
-                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
-                    sVar.X = elapsedRealtimeNanos;
-                    sVar.Y = elapsedRealtimeNanos;
-                    sVar.d0 = m0Var;
-                    sVar.e0 = m0Var2;
-                    String[] strArr = u0.a;
-                    synchronized (u0.class) {
-                        u0.b();
-                        if (m0Var == m0Var2) {
-                            throw new IllegalArgumentException("Camera switch direction must change");
-                        }
-                        a10 = u0.a(m0Var == m0.b ? 0 : 1);
+                e eVar2 = this.b;
+                d dVar3 = (d) eVar2.c;
+                d dVar4 = this.c;
+                if (dVar3 == dVar4) {
+                    b bVar = (b) eVar2.d;
+                    if (bVar != null) {
+                        g0.r(bVar);
+                        eVar2.d = null;
                     }
-                    sVar.b0 = a10;
-                    sVar.Z = ((Math.max(hs.n3, Math.min(hs.X4, 300 - ((Math.max(0, a10 - 400) * 3) / 20))) * 45) / 100) * 1000000;
-                    sVar.a0 = (r4 - r5) * 1000000;
-                    sVar.i.b("synthetic camera switch started: from=" + m0Var + ", to=" + m0Var2 + ", expectedWaitMs=" + sVar.b0 + ", targetBlurRadiusPx=" + (((sVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((sVar.Z + sVar.a0) / 1000000));
-                    sVar.Q = -1L;
-                    handler.removeCallbacks(sVar.x0);
-                    handler.post(sVar.x0);
-                    return;
+                    int i7 = dVar4.d;
+                    if (i7 != 0) {
+                        b bVar2 = new b(eVar2, dVar4, 2);
+                        eVar2.e = bVar2;
+                        g0.i3(bVar2, 20000L);
+                        y yVar = dVar4.a;
+                        ((ConnectionsManager) yVar.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
+                        break;
+                    } else {
+                        eVar2.m(dVar4);
+                        break;
+                    }
                 }
-                return;
+                break;
             default:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
-                u10 u10Var = (u10) this.c;
-                TLObject tLObject = (TLObject) this.d;
-                u10 u10Var2 = (u10) this.e;
-                if (tL_error != null) {
-                    u10Var.a(tL_error);
-                    return;
-                } else {
-                    if (tLObject instanceof TLRPC.payments_GiveawayInfo) {
-                        u10Var2.a((TLRPC.payments_GiveawayInfo) tLObject);
-                        return;
-                    }
-                    return;
+                e eVar3 = this.b;
+                d dVar5 = (d) eVar3.c;
+                d dVar6 = this.c;
+                if (dVar5 == dVar6) {
+                    eVar3.e = null;
+                    eVar3.m(dVar6);
+                    break;
                 }
+                break;
         }
     }
 }

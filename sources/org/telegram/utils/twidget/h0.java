@@ -11,12 +11,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.bd;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.hc1;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class h0 {
     public boolean A;
@@ -69,7 +68,7 @@ public final class h0 {
     /* JADX WARN: Type inference failed for: r1v12, types: [org.telegram.utils.twidget.c0] */
     /* JADX WARN: Type inference failed for: r1v13, types: [org.telegram.utils.twidget.d0] */
     /* JADX WARN: Type inference failed for: r1v9, types: [org.telegram.utils.twidget.d0] */
-    public h0(Context context, String str, String str2, int i3, String str3, String str4) {
+    public h0(Context context, String str, String str2, int i7, String str3, String str4) {
         new JSONObject();
         final int i10 = 1;
         this.M = new Runnable(this) { // from class: org.telegram.utils.twidget.d0
@@ -84,23 +83,23 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                h71 h71Var;
+                j71 j71Var;
                 h0 h0Var;
                 m h;
                 int i11;
                 switch (i10) {
                     case 0:
                         h0 h0Var2 = this.b;
-                        long j10 = h0Var2.t;
+                        long j3 = h0Var2.t;
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
-                        if (h0Var2.u || j10 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
+                        if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
                             h0Var2.b();
                             return;
                         }
                         h0Var2.n.set(false);
                         h0Var2.Q = nanoTime;
-                        WidgetSandboxNative.tick(j10, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
+                        WidgetSandboxNative.tick(j3, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
                         return;
                     case 1:
                         h0 h0Var3 = this.b;
@@ -153,12 +152,12 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (h71Var = uVar.h) == null) {
+                            if (!uVar.e() || (j71Var = uVar.h) == null) {
                                 return;
                             }
-                            g71 g71Var = h71Var.a;
-                            g71Var.j();
-                            g71Var.h();
+                            i71 i71Var = j71Var.a;
+                            i71Var.j();
+                            i71Var.h();
                             return;
                         }
                     case 2:
@@ -185,23 +184,23 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                h71 h71Var;
+                j71 j71Var;
                 h0 h0Var;
                 m h;
                 int i112;
                 switch (i11) {
                     case 0:
                         h0 h0Var2 = this.b;
-                        long j10 = h0Var2.t;
+                        long j3 = h0Var2.t;
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
-                        if (h0Var2.u || j10 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
+                        if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
                             h0Var2.b();
                             return;
                         }
                         h0Var2.n.set(false);
                         h0Var2.Q = nanoTime;
-                        WidgetSandboxNative.tick(j10, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
+                        WidgetSandboxNative.tick(j3, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
                         return;
                     case 1:
                         h0 h0Var3 = this.b;
@@ -254,12 +253,12 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (h71Var = uVar.h) == null) {
+                            if (!uVar.e() || (j71Var = uVar.h) == null) {
                                 return;
                             }
-                            g71 g71Var = h71Var.a;
-                            g71Var.j();
-                            g71Var.h();
+                            i71 i71Var = j71Var.a;
+                            i71Var.j();
+                            i71Var.h();
                             return;
                         }
                     case 2:
@@ -286,23 +285,23 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                h71 h71Var;
+                j71 j71Var;
                 h0 h0Var;
                 m h;
                 int i112;
                 switch (i12) {
                     case 0:
                         h0 h0Var2 = this.b;
-                        long j10 = h0Var2.t;
+                        long j3 = h0Var2.t;
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
-                        if (h0Var2.u || j10 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
+                        if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
                             h0Var2.b();
                             return;
                         }
                         h0Var2.n.set(false);
                         h0Var2.Q = nanoTime;
-                        WidgetSandboxNative.tick(j10, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
+                        WidgetSandboxNative.tick(j3, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
                         return;
                     case 1:
                         h0 h0Var3 = this.b;
@@ -355,12 +354,12 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (h71Var = uVar.h) == null) {
+                            if (!uVar.e() || (j71Var = uVar.h) == null) {
                                 return;
                             }
-                            g71 g71Var = h71Var.a;
-                            g71Var.j();
-                            g71Var.h();
+                            i71 i71Var = j71Var.a;
+                            i71Var.j();
+                            i71Var.h();
                             return;
                         }
                     case 2:
@@ -376,20 +375,20 @@ public final class h0 {
         };
         this.P = new Choreographer.FrameCallback() { // from class: org.telegram.utils.twidget.c0
             @Override // android.view.Choreographer.FrameCallback
-            public final void doFrame(long j10) {
+            public final void doFrame(long j3) {
                 h0 h0Var = h0.this;
                 h0Var.B = false;
-                long j11 = h0Var.t;
-                if (h0Var.u || j11 == 0) {
+                long j10 = h0Var.t;
+                if (h0Var.u || j10 == 0) {
                     return;
                 }
                 if (h0Var.m.compareAndSet(false, true)) {
-                    boolean z10 = h0Var.D && (h0Var.p.getAndSet(false) || h0Var.o.get());
-                    boolean z11 = h0Var.D && h0Var.n.getAndSet(false);
-                    if (z11) {
-                        h0Var.Q = j10;
+                    boolean z9 = h0Var.D && (h0Var.p.getAndSet(false) || h0Var.o.get());
+                    boolean z10 = h0Var.D && h0Var.n.getAndSet(false);
+                    if (z10) {
+                        h0Var.Q = j3;
                     }
-                    WidgetSandboxNative.tick(j11, (j10 - h0Var.k) / 1000000.0f, z11, z10, h0Var.l.getAndSet(false));
+                    WidgetSandboxNative.tick(j10, (j3 - h0Var.k) / 1000000.0f, z10, z9, h0Var.l.getAndSet(false));
                 }
             }
         };
@@ -406,23 +405,23 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                h71 h71Var;
+                j71 j71Var;
                 h0 h0Var;
                 m h;
                 int i112;
                 switch (i13) {
                     case 0:
                         h0 h0Var2 = this.b;
-                        long j10 = h0Var2.t;
+                        long j3 = h0Var2.t;
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
-                        if (h0Var2.u || j10 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
+                        if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
                             h0Var2.b();
                             return;
                         }
                         h0Var2.n.set(false);
                         h0Var2.Q = nanoTime;
-                        WidgetSandboxNative.tick(j10, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
+                        WidgetSandboxNative.tick(j3, (nanoTime - h0Var2.k) / 1000000.0f, true, false, false);
                         return;
                     case 1:
                         h0 h0Var3 = this.b;
@@ -475,12 +474,12 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (h71Var = uVar.h) == null) {
+                            if (!uVar.e() || (j71Var = uVar.h) == null) {
                                 return;
                             }
-                            g71 g71Var = h71Var.a;
-                            g71Var.j();
-                            g71Var.h();
+                            i71 i71Var = j71Var.a;
+                            i71Var.j();
+                            i71Var.h();
                             return;
                         }
                     case 2:
@@ -494,22 +493,22 @@ public final class h0 {
                 }
             }
         };
-        if (i3 < 1 || i3 > 4) {
+        if (i7 < 1 || i7 > 4) {
             throw new IllegalArgumentException("CPU multiplier must be 1..4");
         }
         this.c = context.getApplicationContext();
         this.d = str;
         this.z = str2;
         str2.contains("\"dark\"");
-        this.e = i3;
+        this.e = i7;
         this.f = str3 == null ? "en-US" : str3;
         this.g = str4 == null ? "{}" : str4;
         this.j = context.getResources().getDisplayMetrics().density;
     }
 
-    public final void a(g gVar, g0[] g0VarArr, double d, int i3, int i10, float f10, float f11, int i11, int i12, int i13, m0 m0Var) {
+    public final void a(g gVar, g0[] g0VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, m0 m0Var) {
         Object obj;
-        boolean z10 = this.w;
+        boolean z9 = this.w;
         Object obj2 = this.q;
         synchronized (obj2) {
             try {
@@ -523,7 +522,7 @@ public final class h0 {
                         f0Var.a.c();
                     }
                     try {
-                        this.G = new f0(gVar, g0VarArr, d, i3, i10, f10, f11, i11, i12, i13, m0Var, z10, this.y);
+                        this.G = new f0(gVar, g0VarArr, d, i7, i10, f10, f11, i11, i12, i13, m0Var, z9, this.y);
                         if (!this.I) {
                             this.I = true;
                             this.a.post(this.M);
@@ -566,33 +565,33 @@ public final class h0 {
             return;
         }
         this.i = str;
-        long j10 = this.t;
-        if (j10 != 0) {
-            WidgetSandboxNative.safeArea(j10, str.getBytes(StandardCharsets.UTF_8));
+        long j3 = this.t;
+        if (j3 != 0) {
+            WidgetSandboxNative.safeArea(j3, str.getBytes(StandardCharsets.UTF_8));
         }
     }
 
-    public final void d(boolean z10) {
-        if (this.u || this.D == z10) {
+    public final void d(boolean z9) {
+        if (this.u || this.D == z9) {
             return;
         }
-        this.D = z10;
-        long j10 = this.t;
-        if (j10 != 0) {
-            WidgetSandboxNative.visible(j10, z10);
+        this.D = z9;
+        long j3 = this.t;
+        if (j3 != 0) {
+            WidgetSandboxNative.visible(j3, z9);
         }
-        if (z10) {
+        if (z9) {
             b();
         }
     }
 
-    public final void e(final int i3) {
-        final long j10;
+    public final void e(final int i7) {
+        final long j3;
         if (Looper.myLooper() == Looper.getMainLooper()) {
             throw new IllegalStateException("Start WidgetSandboxSession off UI");
         }
         if (this.E == 0) {
-            this.E = i3;
+            this.E = i7;
         }
         Trace.beginSection("WidgetSandbox:Create");
         try {
@@ -612,49 +611,49 @@ public final class h0 {
                 byte[] bytes2 = this.d.getBytes(charset);
                 byte[] bytes3 = this.z.getBytes(charset);
                 float f10 = this.j;
-                j10 = WidgetSandboxNative.create(bytes, bytes2, bytes3, i3 / f10, f10, this.e, this.f.getBytes(charset), this.g.getBytes(charset), str2.getBytes(charset), bd.M0(2131742877, null).getBytes(charset), this.D, this.b);
+                j3 = WidgetSandboxNative.create(bytes, bytes2, bytes3, i7 / f10, f10, this.e, this.f.getBytes(charset), this.g.getBytes(charset), str2.getBytes(charset), hd.M0(2131742868, null).getBytes(charset), this.D, this.b);
                 try {
                     final String str3 = this.z;
                     this.a.post(new Runnable() { // from class: org.telegram.utils.twidget.b0
                         @Override // java.lang.Runnable
                         public final void run() {
                             h0 h0Var = h0.this;
-                            long j11 = j10;
-                            int i10 = i3;
+                            long j10 = j3;
+                            int i10 = i7;
                             String str4 = str3;
                             String str5 = str;
                             if (h0Var.u) {
-                                z.a.execute(new a0(j11));
+                                z.a.execute(new a0(j10));
                                 return;
                             }
-                            h0Var.t = j11;
+                            h0Var.t = j10;
                             int i11 = h0Var.E;
                             if (i11 != i10 && i11 > 0) {
-                                WidgetSandboxNative.width(j11, i11 / h0Var.j);
+                                WidgetSandboxNative.width(j10, i11 / h0Var.j);
                             }
                             if (!h0Var.z.equals(str4)) {
-                                WidgetSandboxNative.theme(j11, h0Var.z.getBytes(StandardCharsets.UTF_8));
+                                WidgetSandboxNative.theme(j10, h0Var.z.getBytes(StandardCharsets.UTF_8));
                             }
                             if (h0Var.i != null && !h0Var.i.equals(str5)) {
-                                WidgetSandboxNative.safeArea(j11, h0Var.i.getBytes(StandardCharsets.UTF_8));
+                                WidgetSandboxNative.safeArea(j10, h0Var.i.getBytes(StandardCharsets.UTF_8));
                             }
                             h0Var.A = true;
-                            WidgetSandboxNative.visible(j11, h0Var.D);
+                            WidgetSandboxNative.visible(j10, h0Var.D);
                             h0Var.b();
                         }
                     });
                     Trace.endSection();
                 } catch (Exception e10) {
                     e = e10;
-                    if (j10 != 0) {
-                        z.a.execute(new a0(j10));
+                    if (j3 != 0) {
+                        z.a.execute(new a0(j3));
                     }
-                    this.a.post(new hc1(17, this, e));
+                    this.a.post(new org.telegram.ui.web.w(12, this, e));
                     throw e;
                 }
             } catch (Exception e11) {
                 e = e11;
-                j10 = 0;
+                j3 = 0;
             }
         } catch (Throwable th2) {
             Trace.endSection();

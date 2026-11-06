@@ -11,13 +11,13 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -28,8 +28,8 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.V(this, j10, j11, intFunction);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.V(this, j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.j5
@@ -47,29 +47,29 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.e2
-    public final e2 a(int i3) {
+    public final e2 a(int i7) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i3) {
-        long j10 = i3;
-        long count = count() + j10;
-        if (count > objArr.length || count < j10) {
+    public final void f(Object[] objArr, int i7) {
+        long j3 = i7;
+        long count = count() + j3;
+        if (count > objArr.length || count < j3) {
             throw new IndexOutOfBoundsException("does not fit");
         }
         if (this.c == 0) {
-            System.arraycopy(this.e, 0, objArr, i3, this.b);
+            System.arraycopy(this.e, 0, objArr, i7, this.b);
             return;
         }
         for (int i10 = 0; i10 < this.c; i10++) {
             Object[] objArr2 = this.f[i10];
-            System.arraycopy(objArr2, 0, objArr, i3, objArr2.length);
-            i3 += this.f[i10].length;
+            System.arraycopy(objArr2, 0, objArr, i7, objArr2.length);
+            i7 += this.f[i10].length;
         }
         int i11 = this.b;
         if (i11 > 0) {
-            System.arraycopy(this.e, 0, objArr, i3, i11);
+            System.arraycopy(this.e, 0, objArr, i7, i11);
         }
     }
 
@@ -85,8 +85,8 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         clear();
-        i(j10);
+        i(j3);
     }
 }

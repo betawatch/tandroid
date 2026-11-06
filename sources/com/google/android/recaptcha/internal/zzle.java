@@ -8,9 +8,9 @@ import java.io.ByteArrayInputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.j;
-import wd.t;
+import zd.t;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzle extends WebViewClient {
     final /* synthetic */ zzly zza;
@@ -29,18 +29,18 @@ public final class zzle extends WebViewClient {
         zzmf zzmfVar;
         zzmfVar = this.zza.zzg;
         long zza = zzmfVar.zza(TimeUnit.MICROSECONDS);
-        int i3 = zzco.zza;
+        int i7 = zzco.zza;
         zzco.zza(zzcp.zzb.zza(), zza);
     }
 
     @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i3, String str, String str2) {
+    public final void onReceivedError(WebView webView, int i7, String str, String str2) {
         Map map;
-        super.onReceivedError(webView, i3, str, str2);
+        super.onReceivedError(webView, i7, str, str2);
         zzly zzlyVar = this.zza;
         zzce zzceVar = zzce.zzc;
         map = zzlyVar.zzc;
-        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i3));
+        zzcd zzcdVar = (zzcd) map.get(Integer.valueOf(i7));
         if (zzcdVar == null) {
             zzcdVar = zzcd.zzM;
         }

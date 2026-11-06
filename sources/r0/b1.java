@@ -5,11 +5,12 @@ import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
+import c8.ub;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b1 extends h1 {
     public static boolean i = false;
@@ -30,15 +31,15 @@ public abstract class b1 extends h1 {
         this.c = windowInsets;
     }
 
-    public static boolean B(int i3, int i10) {
-        return (i3 & 6) == (i10 & 6);
+    public static boolean B(int i7, int i10) {
+        return (i7 & 6) == (i10 & 6);
     }
 
-    private i0.b u(int i3, boolean z10) {
+    private i0.b u(int i7, boolean z9) {
         i0.b bVar = i0.b.e;
         for (int i10 = 1; i10 <= 512; i10 <<= 1) {
-            if ((i3 & i10) != 0) {
-                bVar = i0.b.a(bVar, v(i10, z10));
+            if ((i7 & i10) != 0) {
+                bVar = i0.b.a(bVar, v(i10, z9));
             }
         }
         return bVar;
@@ -113,13 +114,13 @@ public abstract class b1 extends h1 {
     }
 
     @Override // r0.h1
-    public i0.b f(int i3) {
-        return u(i3, false);
+    public i0.b f(int i7) {
+        return u(i7, false);
     }
 
     @Override // r0.h1
-    public i0.b g(int i3) {
-        return u(i3, true);
+    public i0.b g(int i7) {
+        return u(i7, true);
     }
 
     @Override // r0.h1
@@ -132,12 +133,12 @@ public abstract class b1 extends h1 {
     }
 
     @Override // r0.h1
-    public k1 m(int i3, int i10, int i11, int i12) {
+    public k1 m(int i7, int i10, int i11, int i12) {
         k1 h = k1.h(null, this.c);
         int i13 = Build.VERSION.SDK_INT;
         a1 z0Var = i13 >= 34 ? new z0(h) : i13 >= 30 ? new y0(h) : i13 >= 29 ? new x0(h) : new w0(h);
-        z0Var.g(k1.e(k(), i3, i10, i11, i12));
-        z0Var.e(k1.e(i(), i3, i10, i11, i12));
+        z0Var.g(k1.e(k(), i7, i10, i11, i12));
+        z0Var.e(k1.e(i(), i7, i10, i11, i12));
         return z0Var.b();
     }
 
@@ -147,9 +148,9 @@ public abstract class b1 extends h1 {
     }
 
     @Override // r0.h1
-    public boolean p(int i3) {
+    public boolean p(int i7) {
         for (int i10 = 1; i10 <= 512; i10 <<= 1) {
-            if ((i3 & i10) != 0 && !y(i10)) {
+            if ((i7 & i10) != 0 && !y(i10)) {
                 return false;
             }
         }
@@ -167,19 +168,19 @@ public abstract class b1 extends h1 {
     }
 
     @Override // r0.h1
-    public void t(int i3) {
-        this.h = i3;
+    public void t(int i7) {
+        this.h = i7;
     }
 
-    public i0.b v(int i3, boolean z10) {
+    public i0.b v(int i7, boolean z9) {
         i0.b i10;
         int i11;
         i0.b bVar = i0.b.e;
-        if (i3 != 1) {
-            if (i3 != 2) {
-                if (i3 == 8) {
+        if (i7 != 1) {
+            if (i7 != 2) {
+                if (i7 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i10 = bVarArr != null ? bVarArr[x7.l.a(8)] : null;
+                    i10 = bVarArr != null ? bVarArr[ub.a(8)] : null;
                     if (i10 != null) {
                         return i10;
                     }
@@ -194,16 +195,16 @@ public abstract class b1 extends h1 {
                         return i0.b.b(0, 0, 0, i11);
                     }
                 } else {
-                    if (i3 == 16) {
+                    if (i7 == 16) {
                         return j();
                     }
-                    if (i3 == 32) {
+                    if (i7 == 32) {
                         return h();
                     }
-                    if (i3 == 64) {
+                    if (i7 == 64) {
                         return l();
                     }
-                    if (i3 == 128) {
+                    if (i7 == 128) {
                         k1 k1Var = this.f;
                         h e10 = k1Var != null ? k1Var.a.e() : e();
                         if (e10 != null) {
@@ -213,7 +214,7 @@ public abstract class b1 extends h1 {
                     }
                 }
             } else {
-                if (z10) {
+                if (z9) {
                     i0.b w11 = w();
                     i0.b i14 = i();
                     return i0.b.b(Math.max(w11.a, i14.a), 0, Math.max(w11.c, i14.c), Math.max(w11.d, i14.d));
@@ -230,7 +231,7 @@ public abstract class b1 extends h1 {
                 }
             }
         } else {
-            if (z10) {
+            if (z9) {
                 return i0.b.b(0, Math.max(w().b, k().b), 0, 0);
             }
             if ((this.h & 4) == 0) {
@@ -240,15 +241,15 @@ public abstract class b1 extends h1 {
         return bVar;
     }
 
-    public boolean y(int i3) {
-        if (i3 != 1 && i3 != 2) {
-            if (i3 == 4) {
+    public boolean y(int i7) {
+        if (i7 != 1 && i7 != 2) {
+            if (i7 == 4) {
                 return false;
             }
-            if (i3 != 8 && i3 != 128) {
+            if (i7 != 8 && i7 != 128) {
                 return true;
             }
         }
-        return !v(i3, false).equals(i0.b.e);
+        return !v(i7, false).equals(i0.b.e);
     }
 }

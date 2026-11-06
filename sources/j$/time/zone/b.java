@@ -28,9 +28,9 @@ public final class b implements Comparable, Serializable {
         this.d = zoneOffset2;
     }
 
-    public b(long j10, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = j10;
-        this.b = LocalDateTime.K(j10, 0, zoneOffset);
+    public b(long j3, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = j3;
+        this.b = LocalDateTime.K(j3, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }

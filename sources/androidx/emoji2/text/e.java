@@ -1,34 +1,29 @@
 package androidx.emoji2.text;
 
-import b8.w0;
+import a8.t6;
+import ab.b0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e extends w0 {
+public final class e extends t6 {
     public final /* synthetic */ f a;
 
     public e(f fVar) {
         this.a = fVar;
     }
 
-    @Override // b8.w0
+    @Override // a8.t6
     public final void a(Throwable th2) {
         ((l) this.a.b).d(th2);
     }
 
-    @Override // b8.w0
-    public final void b(ui.f fVar) {
-        f fVar2 = this.a;
-        fVar2.c = fVar;
-        ui.f fVar3 = (ui.f) fVar2.c;
-        new nb.a(2);
-        d dVar = ((l) fVar2.b).h;
-        p4.q qVar = new p4.q();
-        qVar.a = fVar3;
-        qVar.b = dVar;
-        fVar2.a = qVar;
-        l lVar = (l) fVar2.b;
+    @Override // a8.t6
+    public final void b(b0 b0Var) {
+        f fVar = this.a;
+        fVar.c = b0Var;
+        fVar.a = new wf.b((b0) fVar.c, new nb.a(3), ((l) fVar.b).h);
+        l lVar = (l) fVar.b;
         lVar.getClass();
         ArrayList arrayList = new ArrayList();
         lVar.a.writeLock().lock();

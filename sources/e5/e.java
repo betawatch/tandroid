@@ -1,20 +1,26 @@
 package e5;
 
-import android.content.Context;
+import android.webkit.WebView;
+import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
+import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e {
-    public boolean a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e = new a0(this, true);
-    public Object f = new a0(this, false);
+public final class e implements n {
+    public static final String[] a = new String[0];
 
-    public e(Context context, n nVar, tf.b bVar) {
-        this.b = context;
-        this.c = nVar;
-        this.d = bVar;
+    @Override // e5.n
+    public final String[] D() {
+        return a;
+    }
+
+    @Override // e5.n
+    public final WebViewProviderBoundaryInterface createWebView(WebView webView) {
+        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
+    }
+
+    @Override // e5.n
+    public final StaticsBoundaryInterface getStatics() {
+        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
     }
 }

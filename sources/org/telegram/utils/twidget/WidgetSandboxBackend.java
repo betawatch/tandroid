@@ -25,13 +25,13 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.ny;
-import org.telegram.ui.rw;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.py;
+import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements x, c {
     private static final long MEMORY_BUDGET = 33554432;
@@ -59,18 +59,18 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    private void checkCanvasSize(int i3, int i10, int i11) {
-        long j10 = i10 * i11;
-        if (j10 > 4194304) {
+    private void checkCanvasSize(int i7, int i10, int i11) {
+        long j3 = i10 * i11;
+        if (j3 > 4194304) {
             throw new IllegalArgumentException("Canvas dimensions");
         }
-        long j11 = (j10 * 8) + this.imageBytes;
+        long j10 = (j3 * 8) + this.imageBytes;
         for (Map.Entry<Integer, d> entry : this.canvases.entrySet()) {
-            if (entry.getKey().intValue() != i3) {
-                j11 += entry.getValue().o == null ? 0L : r4.getWidth() * r3.o.getHeight() * 8;
+            if (entry.getKey().intValue() != i7) {
+                j10 += entry.getValue().o == null ? 0L : r4.getWidth() * r3.o.getHeight() * 8;
             }
         }
-        if (j11 > MEMORY_BUDGET) {
+        if (j10 > MEMORY_BUDGET) {
             throw new IllegalArgumentException("Canvas memory budget");
         }
     }
@@ -102,10 +102,10 @@ final class WidgetSandboxBackend implements x, c {
     }
 
     private g0[] layers(JSONObject jSONObject, float f10) {
-        int i3;
+        int i7;
         JSONArray jSONArray;
         int i10;
-        long j10;
+        long j3;
         float[] fArr;
         float[] fArr2;
         int i11;
@@ -126,7 +126,7 @@ final class WidgetSandboxBackend implements x, c {
                 JSONArray optJSONArray2 = optJSONObject.optJSONArray("b");
                 if (optJSONArray2 != null) {
                     double optDouble = optJSONArray2.optDouble(i13);
-                    i3 = length;
+                    i7 = length;
                     double d = f10;
                     jSONArray = optJSONArray;
                     int floor = (int) Math.floor(optDouble * d);
@@ -141,11 +141,11 @@ final class WidgetSandboxBackend implements x, c {
                             i12 = floor;
                             i11 = floor2;
                             i10 = i14;
-                            j10 = optLong;
+                            j3 = optLong;
                             fVar = eVar;
                         } else {
                             i10 = i14;
-                            j10 = optLong;
+                            j3 = optLong;
                             i11 = floor2;
                             i12 = floor;
                             fVar = new f(i12, i11, ceil, ceil2);
@@ -163,17 +163,17 @@ final class WidgetSandboxBackend implements x, c {
                         }
                     } else {
                         i10 = i14;
-                        j10 = optLong;
+                        j3 = optLong;
                         if (sVar != null) {
                             if (sVar.b != ((int) optLong2)) {
                             }
                         }
                         i14 = i10 + 1;
-                        length = i3;
+                        length = i7;
                         optJSONArray = jSONArray;
                         i13 = 0;
                     }
-                    hashMap.put(Long.valueOf(j10), sVar);
+                    hashMap.put(Long.valueOf(j3), sVar);
                     JSONArray optJSONArray3 = optJSONObject.optJSONArray("l");
                     float[] fArr3 = null;
                     if (optJSONArray3 != null) {
@@ -198,16 +198,16 @@ final class WidgetSandboxBackend implements x, c {
                     g0VarArr[i15] = new g0(sVar.a, fArr, fArr2, optJSONObject.optDouble("ts"), optJSONObject.optDouble("td"), optJSONObject.optInt("tr") != 0, fArr5);
                     i15 = i16;
                     i14 = i10 + 1;
-                    length = i3;
+                    length = i7;
                     optJSONArray = jSONArray;
                     i13 = 0;
                 }
             }
             jSONArray = optJSONArray;
-            i3 = length;
+            i7 = length;
             i10 = i14;
             i14 = i10 + 1;
-            length = i3;
+            length = i7;
             optJSONArray = jSONArray;
             i13 = 0;
         }
@@ -232,7 +232,7 @@ final class WidgetSandboxBackend implements x, c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static Typeface typeface(String str, int i3, boolean z10) {
+    private static Typeface typeface(String str, int i7, boolean z9) {
         Typeface typeface;
         Typeface typeface2 = Typeface.SANS_SERIF;
         String[] split = str.split(",");
@@ -284,14 +284,14 @@ final class WidgetSandboxBackend implements x, c {
             }
         }
         if (Build.VERSION.SDK_INT >= 28) {
-            return Typeface.create(typeface2, Math.max(1, Math.min(1000, i3)), z10);
+            return Typeface.create(typeface2, Math.max(1, Math.min(1000, i7)), z9);
         }
-        return Typeface.create(typeface2, (i3 < 600 ? 0 : 1) | (z10 ? 2 : 0));
+        return Typeface.create(typeface2, (i7 < 600 ? 0 : 1) | (z9 ? 2 : 0));
     }
 
     @Override // org.telegram.utils.twidget.x
-    public Bitmap canvas(int i3) {
-        d dVar = this.canvases.get(Integer.valueOf(i3));
+    public Bitmap canvas(int i7) {
+        d dVar = this.canvases.get(Integer.valueOf(i7));
         if (dVar == null) {
             return null;
         }
@@ -316,21 +316,21 @@ final class WidgetSandboxBackend implements x, c {
     }
 
     @Override // org.telegram.utils.twidget.c
-    public Bitmap canvasBitmap(int i3) {
-        d dVar = this.canvases.get(Integer.valueOf(i3));
+    public Bitmap canvasBitmap(int i7) {
+        d dVar = this.canvases.get(Integer.valueOf(i7));
         if (dVar == null) {
             return null;
         }
         return dVar.o;
     }
 
-    public byte[] canvasRead(int i3, int i10, int i11, int i12, int i13) {
+    public byte[] canvasRead(int i7, int i10, int i11, int i12, int i13) {
         int i14 = i10;
         assertWorker();
         if (i12 <= 0 || i13 <= 0 || i12 * i13 > 4194304) {
             return null;
         }
-        d dVar = this.canvases.get(Integer.valueOf(i3));
+        d dVar = this.canvases.get(Integer.valueOf(i7));
         if (dVar == null) {
             return new byte[i12 * i13 * 4];
         }
@@ -366,9 +366,9 @@ final class WidgetSandboxBackend implements x, c {
         return bArr;
     }
 
-    public void canvasRelease(int i3) {
+    public void canvasRelease(int i7) {
         assertWorker();
-        d remove = this.canvases.remove(Integer.valueOf(i3));
+        d remove = this.canvases.remove(Integer.valueOf(i7));
         if (remove != null) {
             synchronized (remove) {
                 try {
@@ -390,17 +390,17 @@ final class WidgetSandboxBackend implements x, c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void canvasRun(int i3, int i10, int i11, int[] iArr) {
+    public void canvasRun(int i7, int i10, int i11, int[] iArr) {
         assertWorker();
         if (i10 <= 0 || i11 <= 0) {
-            canvasRelease(i3);
+            canvasRelease(i7);
             return;
         }
-        checkCanvasSize(i3, i10, i11);
-        d dVar = this.canvases.get(Integer.valueOf(i3));
+        checkCanvasSize(i7, i10, i11);
+        d dVar = this.canvases.get(Integer.valueOf(i7));
         if (dVar == null) {
-            dVar = new d(i3);
-            this.canvases.put(Integer.valueOf(i3), dVar);
+            dVar = new d(i7);
+            this.canvases.put(Integer.valueOf(i7), dVar);
         }
         synchronized (dVar) {
             try {
@@ -436,11 +436,11 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    public float[] createFont(byte[] bArr, float f10, int i3, boolean z10, byte[] bArr2) {
+    public float[] createFont(byte[] bArr, float f10, int i7, boolean z9, byte[] bArr2) {
         assertWorker();
-        Paint paint = new Paint(hs.N1);
+        Paint paint = new Paint(qs.N1);
         paint.setTextSize(f10);
-        paint.setTypeface(typeface(text(bArr), i3, z10));
+        paint.setTypeface(typeface(text(bArr), i7, z9));
         String featureSettings = featureSettings(text(bArr2));
         if (featureSettings != null) {
             paint.setFontFeatureSettings(featureSettings);
@@ -459,19 +459,19 @@ final class WidgetSandboxBackend implements x, c {
         return new float[]{i10, (-f12) / f11, f13 / f11, ((f13 - f12) + fontMetrics.leading) / f11, this.bounds.height() / f11, paint2.measureText("0") / f11};
     }
 
-    public void deleteFont(int i3) {
-        this.fonts.remove(Integer.valueOf(i3));
-        this.deviceFonts.remove(Integer.valueOf(i3));
+    public void deleteFont(int i7) {
+        this.fonts.remove(Integer.valueOf(i7));
+        this.deviceFonts.remove(Integer.valueOf(i7));
     }
 
     @Override // org.telegram.utils.twidget.x
-    public Paint deviceFont(int i3) {
-        return this.deviceFonts.get(Integer.valueOf(i3));
+    public Paint deviceFont(int i7) {
+        return this.deviceFonts.get(Integer.valueOf(i7));
     }
 
     @Override // org.telegram.utils.twidget.c
-    public Paint font(int i3) {
-        return this.fonts.get(Integer.valueOf(i3));
+    public Paint font(int i7) {
+        return this.fonts.get(Integer.valueOf(i7));
     }
 
     public byte[] formatIntl(byte[] bArr) {
@@ -479,8 +479,8 @@ final class WidgetSandboxBackend implements x, c {
     }
 
     @Override // org.telegram.utils.twidget.x, org.telegram.utils.twidget.c
-    public Bitmap image(int i3) {
-        return this.images.get(Integer.valueOf(i3));
+    public Bitmap image(int i7) {
+        return this.images.get(Integer.valueOf(i7));
     }
 
     /* JADX WARN: Finally extract failed */
@@ -492,25 +492,25 @@ final class WidgetSandboxBackend implements x, c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public float[] loadImage(int i3, byte[] bArr) {
+    public float[] loadImage(int i7, byte[] bArr) {
         int i10;
         BitmapFactory.Options options;
         Bitmap bitmap;
         int i11;
         int i12;
-        long j10;
+        long j3;
         ByteArrayOutputStream byteArrayOutputStream;
         int i13;
         ByteArrayOutputStream byteArrayOutputStream2;
         byte[] bArr2;
+        long j10;
         long j11;
-        long j12;
         int a10;
         int i14;
         int i15;
         byte[] bArr3;
+        boolean z9;
         boolean z10;
-        boolean z11;
         int i16;
         long a11;
         int i17;
@@ -565,12 +565,12 @@ final class WidgetSandboxBackend implements x, c {
                                     while (true) {
                                         options = options2;
                                         if (i12 + 12 <= length) {
-                                            j10 = a13;
+                                            j3 = a13;
                                             break;
                                         }
                                         a11 = q.a(i12, decode);
                                         i17 = i12;
-                                        j10 = a13;
+                                        j3 = a13;
                                         if (a11 <= (length - i12) - 12) {
                                             int i23 = i17 + 4;
                                             if (q.c(i23, "IEND", decode)) {
@@ -586,7 +586,7 @@ final class WidgetSandboxBackend implements x, c {
                                             }
                                             i12 = ((int) a11) + 12 + i17;
                                             options2 = options;
-                                            a13 = j10;
+                                            a13 = j3;
                                         } else {
                                             break;
                                         }
@@ -596,22 +596,22 @@ final class WidgetSandboxBackend implements x, c {
                                     ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
                                     Inflater inflater = new Inflater(true);
                                     byte[] bArr5 = new byte[TLObject.FLAG_14];
-                                    long j13 = 0;
+                                    long j12 = 0;
                                     i13 = 8;
-                                    boolean z12 = true;
-                                    while (i13 + 12 <= length && j13 < j10) {
+                                    boolean z11 = true;
+                                    while (i13 + 12 <= length && j12 < j3) {
                                         bArr2 = bArr4;
-                                        j11 = a12;
+                                        j10 = a12;
                                         try {
                                             a10 = (int) q.a(i13, decode);
                                             if (a10 > (length - i13) - 12) {
                                                 int i26 = i13 + 4;
                                                 if (!q.c(i26, "IEND", decode)) {
                                                     if (q.c(i26, "IDAT", decode)) {
-                                                        int min = z12 ? Math.min(2, a10) : 0;
+                                                        int min = z11 ? Math.min(2, a10) : 0;
                                                         inflater.setInput(decode, i13 + 8 + min, a10 - min);
-                                                        boolean z13 = false;
-                                                        while (!inflater.needsInput() && !inflater.finished() && !z13) {
+                                                        boolean z12 = false;
+                                                        while (!inflater.needsInput() && !inflater.finished() && !z12) {
                                                             try {
                                                                 int inflate = inflater.inflate(bArr5);
                                                                 if (inflate == 0 && inflater.needsDictionary()) {
@@ -621,41 +621,41 @@ final class WidgetSandboxBackend implements x, c {
                                                                 byteArrayOutputStream.write(bArr5, 0, inflate);
                                                                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                                                                 while (true) {
-                                                                    if (j13 >= j10) {
+                                                                    if (j12 >= j3) {
                                                                         byteArrayOutputStream2 = byteArrayOutputStream;
                                                                         i15 = a10;
-                                                                        z11 = z13;
+                                                                        z10 = z12;
                                                                         i16 = inflate;
                                                                         bArr3 = bArr5;
                                                                         break;
                                                                     }
                                                                     i15 = a10;
-                                                                    z11 = z13;
-                                                                    long j14 = i25;
-                                                                    long j15 = j13 * j14;
+                                                                    z10 = z12;
+                                                                    long j13 = i25;
+                                                                    long j14 = j12 * j13;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream;
                                                                     i16 = inflate;
                                                                     bArr3 = bArr5;
-                                                                    if (j15 >= byteArray.length) {
+                                                                    if (j14 >= byteArray.length) {
                                                                         break;
                                                                     }
-                                                                    if ((byteArray[(int) j15] & 255) > 4) {
-                                                                        z13 = true;
+                                                                    if ((byteArray[(int) j14] & 255) > 4) {
+                                                                        z12 = true;
                                                                         break;
                                                                     }
-                                                                    if (j15 + j14 > byteArray.length) {
+                                                                    if (j14 + j13 > byteArray.length) {
                                                                         break;
                                                                     }
-                                                                    j13++;
-                                                                    z13 = z11;
+                                                                    j12++;
+                                                                    z12 = z10;
                                                                     a10 = i15;
                                                                     byteArrayOutputStream = byteArrayOutputStream2;
                                                                     bArr5 = bArr3;
                                                                     inflate = i16;
                                                                 }
-                                                                z13 = z11;
+                                                                z12 = z10;
                                                                 if (i16 == 0) {
-                                                                    z10 = z13;
+                                                                    z9 = z12;
                                                                     break;
                                                                 }
                                                                 length = i14;
@@ -667,18 +667,18 @@ final class WidgetSandboxBackend implements x, c {
                                                                 i14 = length;
                                                                 i15 = a10;
                                                                 bArr3 = bArr5;
-                                                                z10 = true;
+                                                                z9 = true;
                                                             }
                                                         }
                                                         byteArrayOutputStream2 = byteArrayOutputStream;
                                                         i14 = length;
                                                         i15 = a10;
                                                         bArr3 = bArr5;
-                                                        z10 = z13;
-                                                        if (z10) {
+                                                        z9 = z12;
+                                                        if (z9) {
                                                             break;
                                                         }
-                                                        z12 = false;
+                                                        z11 = false;
                                                     } else {
                                                         byteArrayOutputStream2 = byteArrayOutputStream;
                                                         i14 = length;
@@ -691,7 +691,7 @@ final class WidgetSandboxBackend implements x, c {
                                                     i13 += i15 + 12;
                                                     bArr4 = bArr2;
                                                     length = i14;
-                                                    a12 = j11;
+                                                    a12 = j10;
                                                     byteArrayOutputStream = byteArrayOutputStream2;
                                                     bArr5 = bArr3;
                                                 }
@@ -705,20 +705,20 @@ final class WidgetSandboxBackend implements x, c {
                                     }
                                     byteArrayOutputStream2 = byteArrayOutputStream;
                                     bArr2 = bArr4;
-                                    j11 = a12;
-                                    j12 = j13;
+                                    j10 = a12;
+                                    j11 = j12;
                                     inflater.end();
-                                    if (j12 < j10) {
-                                        bitmap = Bitmap.createBitmap((int) j11, (int) j10, Bitmap.Config.ARGB_8888);
-                                        if (j12 != 0) {
-                                            int i27 = (int) (i25 * j12);
+                                    if (j11 < j3) {
+                                        bitmap = Bitmap.createBitmap((int) j10, (int) j3, Bitmap.Config.ARGB_8888);
+                                        if (j11 != 0) {
+                                            int i27 = (int) (i25 * j11);
                                             byte[] bArr6 = new byte[i27];
                                             System.arraycopy(byteArrayOutputStream2.toByteArray(), 0, bArr6, 0, i27);
                                             ByteArrayOutputStream byteArrayOutputStream4 = new ByteArrayOutputStream();
                                             byteArrayOutputStream4.write(bArr2, 0, 8);
                                             byte[] bArr7 = new byte[13];
                                             System.arraycopy(decode, 16, bArr7, 0, 13);
-                                            q.b(bArr7, 4, j12);
+                                            q.b(bArr7, 4, j11);
                                             q.d(byteArrayOutputStream4, "IHDR", bArr7, crc32);
                                             byte[] byteArray2 = byteArrayOutputStream3.toByteArray();
                                             byteArrayOutputStream4.write(byteArray2, 0, byteArray2.length);
@@ -754,19 +754,19 @@ final class WidgetSandboxBackend implements x, c {
                                 }
                                 i12 = ((int) a11) + 12 + i17;
                                 options2 = options;
-                                a13 = j10;
+                                a13 = j3;
                             }
                             int i252 = (int) (((((i11 * a12) * i20) + 7) / 8) + 1);
                             byteArrayOutputStream = new ByteArrayOutputStream();
                             ByteArrayOutputStream byteArrayOutputStream32 = new ByteArrayOutputStream();
                             Inflater inflater2 = new Inflater(true);
                             byte[] bArr52 = new byte[TLObject.FLAG_14];
-                            long j132 = 0;
+                            long j122 = 0;
                             i13 = 8;
-                            boolean z122 = true;
+                            boolean z112 = true;
                             while (i13 + 12 <= length) {
                                 bArr2 = bArr4;
-                                j11 = a12;
+                                j10 = a12;
                                 a10 = (int) q.a(i13, decode);
                                 if (a10 > (length - i13) - 12) {
                                 }
@@ -774,10 +774,10 @@ final class WidgetSandboxBackend implements x, c {
                             }
                             byteArrayOutputStream2 = byteArrayOutputStream;
                             bArr2 = bArr4;
-                            j11 = a12;
-                            j12 = j132;
+                            j10 = a12;
+                            j11 = j122;
                             inflater2.end();
-                            if (j12 < j10) {
+                            if (j11 < j3) {
                             }
                         }
                     }
@@ -791,7 +791,7 @@ final class WidgetSandboxBackend implements x, c {
             if (bitmap == null) {
                 return null;
             }
-            Bitmap put = this.images.put(Integer.valueOf(i3), bitmap);
+            Bitmap put = this.images.put(Integer.valueOf(i7), bitmap);
             long allocationByteCount = this.imageBytes + bitmap.getAllocationByteCount();
             this.imageBytes = allocationByteCount;
             if (put != null) {
@@ -803,7 +803,7 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    public void record(byte[] bArr, byte[] bArr2, double d, int i3, int i10, float f10, float f11, int i11, int i12) {
+    public void record(byte[] bArr, byte[] bArr2, double d, int i7, int i10, float f10, float f11, int i11, int i12) {
         g fVar;
         int i13;
         int i14;
@@ -813,11 +813,11 @@ final class WidgetSandboxBackend implements x, c {
         Trace.beginSection("WidgetSandbox:Record");
         double nanoTime = d - (System.nanoTime() / 1.0E9d);
         if (Build.VERSION.SDK_INT >= 29) {
-            i13 = i3;
+            i13 = i7;
             fVar = new e("widget-sandbox-content", 0, 0, i13, i10);
             i14 = i10;
         } else {
-            i13 = i3;
+            i13 = i7;
             i14 = i10;
             fVar = new f(0, 0, i13, i14);
         }
@@ -852,10 +852,10 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    public void recordLayer(int i3, int i10, byte[] bArr) {
+    public void recordLayer(int i7, int i10, byte[] bArr) {
         assertWorker();
         long nanoTime = System.nanoTime();
-        this.pendingLayers.put(Integer.valueOf(i3), new JSONArray(text(bArr)));
+        this.pendingLayers.put(Integer.valueOf(i7), new JSONArray(text(bArr)));
         this.layerParseNanos = (System.nanoTime() - nanoTime) + this.layerParseNanos;
     }
 
@@ -871,16 +871,16 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    public void signal(int i3, byte[] bArr) {
+    public void signal(int i7, byte[] bArr) {
         final h0 h0Var = this.owner;
         final String text = text(bArr);
-        if (i3 == 8) {
+        if (i7 == 8) {
             final int i10 = 0;
             h0Var.a.post(new Runnable() { // from class: org.telegram.utils.twidget.e0
                 @Override // java.lang.Runnable
                 public final void run() {
                     u uVar;
-                    h71 h71Var;
+                    j71 j71Var;
                     u uVar2;
                     switch (i10) {
                         case 0:
@@ -905,9 +905,9 @@ final class WidgetSandboxBackend implements x, c {
                         case 1:
                             h0 h0Var3 = h0Var;
                             String str2 = text;
-                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (h71Var = uVar.h) != null) {
-                                if (h71Var.F || (h71Var.w && h71Var.E)) {
-                                    h71Var.a.f(str2);
+                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
+                                if (j71Var.F || (j71Var.w && j71Var.E)) {
+                                    j71Var.a.f(str2);
                                     break;
                                 }
                             }
@@ -929,24 +929,24 @@ final class WidgetSandboxBackend implements x, c {
             });
             return;
         }
-        if (i3 == 10) {
+        if (i7 == 10) {
             h0Var.getClass();
             return;
         }
         if (h0Var.u) {
             return;
         }
-        if (i3 == 12 || i3 == 13 || i3 == 14 || i3 == 19) {
-            h0Var.a.post(new rw(h0Var, i3, text, 21));
+        if (i7 == 12 || i7 == 13 || i7 == 14 || i7 == 19) {
+            h0Var.a.post(new d10(h0Var, i7, text, 20));
             return;
         }
-        if (i3 == 11) {
+        if (i7 == 11) {
             final int i11 = 1;
             h0Var.a.post(new Runnable() { // from class: org.telegram.utils.twidget.e0
                 @Override // java.lang.Runnable
                 public final void run() {
                     u uVar;
-                    h71 h71Var;
+                    j71 j71Var;
                     u uVar2;
                     switch (i11) {
                         case 0:
@@ -971,9 +971,9 @@ final class WidgetSandboxBackend implements x, c {
                         case 1:
                             h0 h0Var3 = h0Var;
                             String str2 = text;
-                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (h71Var = uVar.h) != null) {
-                                if (h71Var.F || (h71Var.w && h71Var.E)) {
-                                    h71Var.a.f(str2);
+                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
+                                if (j71Var.F || (j71Var.w && j71Var.E)) {
+                                    j71Var.a.f(str2);
                                     break;
                                 }
                             }
@@ -996,7 +996,7 @@ final class WidgetSandboxBackend implements x, c {
             return;
         }
         try {
-            if (i3 == 18) {
+            if (i7 == 18) {
                 JSONObject jSONObject = new JSONObject(text);
                 jSONObject.optDouble("receive");
                 jSONObject.optDouble("animate");
@@ -1009,38 +1009,38 @@ final class WidgetSandboxBackend implements x, c {
                 jSONObject.optDouble("hop", -1.0d);
                 return;
             }
-            if (i3 == 16 || i3 == 17 || i3 == 9) {
+            if (i7 == 16 || i7 == 17 || i7 == 9) {
                 return;
             }
-            if (i3 == 6) {
+            if (i7 == 6) {
                 h0Var.m.set(false);
                 h0Var.a.post(h0Var.N);
                 return;
             }
-            if (i3 == 1) {
+            if (i7 == 1) {
                 h0Var.n.set(true);
                 h0Var.a.post(h0Var.R);
                 return;
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 h0Var.l.set(true);
                 h0Var.a.removeCallbacks(h0Var.N);
                 h0Var.a.post(h0Var.N);
                 return;
             }
-            if (i3 == 3) {
+            if (i7 == 3) {
                 JSONObject jSONObject2 = new JSONObject(text);
-                h0Var.a.post(new ny(h0Var, jSONObject2.optBoolean("x"), jSONObject2.optBoolean("y"), jSONObject2.optBoolean("hold"), 2));
+                h0Var.a.post(new py(h0Var, jSONObject2.optBoolean("x"), jSONObject2.optBoolean("y"), jSONObject2.optBoolean("hold"), 2));
                 return;
             }
-            if (i3 != 4) {
-                if (i3 == 5) {
+            if (i7 != 4) {
+                if (i7 == 5) {
                     final int i12 = 2;
                     h0Var.a.post(new Runnable() { // from class: org.telegram.utils.twidget.e0
                         @Override // java.lang.Runnable
                         public final void run() {
                             u uVar;
-                            h71 h71Var;
+                            j71 j71Var;
                             u uVar2;
                             switch (i12) {
                                 case 0:
@@ -1065,9 +1065,9 @@ final class WidgetSandboxBackend implements x, c {
                                 case 1:
                                     h0 h0Var3 = h0Var;
                                     String str2 = text;
-                                    if (!h0Var3.u && (uVar = h0Var3.J) != null && (h71Var = uVar.h) != null) {
-                                        if (h71Var.F || (h71Var.w && h71Var.E)) {
-                                            h71Var.a.f(str2);
+                                    if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
+                                        if (j71Var.F || (j71Var.w && j71Var.E)) {
+                                            j71Var.a.f(str2);
                                             break;
                                         }
                                     }
@@ -1089,10 +1089,10 @@ final class WidgetSandboxBackend implements x, c {
                     });
                     return;
                 } else {
-                    if (i3 == 7) {
+                    if (i7 == 7) {
                         float parseFloat = Float.parseFloat(text);
                         h0Var.o.set(parseFloat == 0.0f);
-                        h0Var.a.post(new org.telegram.ui.c0(h0Var, parseFloat, 4));
+                        h0Var.a.post(new org.telegram.ui.b0(h0Var, parseFloat, 4));
                         return;
                     }
                     return;
@@ -1128,8 +1128,8 @@ final class WidgetSandboxBackend implements x, c {
         }
     }
 
-    public float textWidth(int i3, byte[] bArr) {
-        Paint paint = this.deviceFonts.get(Integer.valueOf(i3));
+    public float textWidth(int i7, byte[] bArr) {
+        Paint paint = this.deviceFonts.get(Integer.valueOf(i7));
         if (paint == null) {
             return 0.0f;
         }

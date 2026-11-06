@@ -1,31 +1,93 @@
 package m2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import e2.k1;
+import e2.l1;
+import x2.g0;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f {
-    public static final f d = new ha.a().a();
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
+    public final String a;
+    public int b;
+    public long c;
+    public final g0 d;
+    public boolean e;
+    public boolean f;
+    public final /* synthetic */ g g;
 
-    public f(ha.a aVar) {
-        this.a = aVar.a;
-        this.b = aVar.b;
-        this.c = aVar.c;
+    public f(g gVar, String str, int i7, g0 g0Var) {
+        this.g = gVar;
+        this.a = str;
+        this.b = i7;
+        this.c = g0Var == null ? -1L : g0Var.d;
+        if (g0Var == null || !g0Var.b()) {
+            return;
+        }
+        this.d = g0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final boolean a(a aVar) {
+        g0 g0Var = aVar.d;
+        l1 l1Var = aVar.b;
+        if (g0Var == null) {
+            return this.b != aVar.c;
         }
-        if (obj == null || f.class != obj.getClass()) {
+        long j3 = this.c;
+        if (j3 == -1) {
             return false;
         }
-        f fVar = (f) obj;
-        return this.a == fVar.a && this.b == fVar.b && this.c == fVar.c;
+        if (g0Var.d > j3) {
+            return true;
+        }
+        g0 g0Var2 = this.d;
+        if (g0Var2 == null) {
+            return false;
+        }
+        int i7 = g0Var2.b;
+        int b10 = l1Var.b(g0Var.a);
+        int b11 = l1Var.b(g0Var2.a);
+        if (g0Var.d < g0Var2.d || b10 < b11) {
+            return false;
+        }
+        if (b10 > b11) {
+            return true;
+        }
+        if (!g0Var.b()) {
+            int i10 = g0Var.e;
+            return i10 == -1 || i10 > i7;
+        }
+        int i11 = g0Var.b;
+        int i12 = g0Var.c;
+        if (i11 <= i7) {
+            return i11 == i7 && i12 > g0Var2.c;
+        }
+        return true;
     }
 
-    public final int hashCode() {
-        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x000e, code lost:
+    
+        if (r0 < r8.o()) goto L15;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(l1 l1Var, l1 l1Var2) {
+        g0 g0Var;
+        int i7 = this.b;
+        if (i7 < l1Var.o()) {
+            g gVar = this.g;
+            k1 k1Var = gVar.a;
+            l1Var.n(i7, k1Var);
+            for (int i10 = k1Var.n; i10 <= k1Var.o; i10++) {
+                int b10 = l1Var2.b(l1Var.l(i10));
+                if (b10 != -1) {
+                    i7 = l1Var2.f(b10, gVar.b, false).c;
+                    break;
+                }
+            }
+            i7 = -1;
+        }
+        this.b = i7;
+        return i7 != -1 && ((g0Var = this.d) == null || l1Var2.b(g0Var.a) != -1);
     }
 }

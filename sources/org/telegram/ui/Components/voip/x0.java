@@ -1,162 +1,137 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
+import a8.b8;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
-import java.util.ArrayList;
-import org.telegram.messenger.hs;
-import org.telegram.ui.Cells.w9;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qs;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.yb1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class x0 {
-    public final l2.e a;
-    public final l2.e b;
-    public l2.e c;
-    public l2.e d;
-    public boolean e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public final Paint j;
-    public final Paint k;
-    public final Paint l;
-    public final ArrayList m;
+public final class x0 extends TextView {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ FrameLayout d;
 
-    public x0() {
-        l2.e eVar = new l2.e(80, 80);
-        this.a = eVar;
-        l2.e eVar2 = new l2.e(80, 80);
-        this.b = eVar2;
-        this.f = 0;
-        this.g = 0;
-        Paint paint = new Paint(1);
-        this.j = paint;
-        Paint paint2 = new Paint(1);
-        this.k = paint2;
-        Paint paint3 = new Paint(1);
-        this.l = paint3;
-        this.m = new ArrayList();
-        eVar2.m(0.0f, 0.0f, 80.0f, 80.0f);
-        eVar.m(0.0f, 0.0f, 80.0f, 80.0f);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x0(h2 h2Var, Activity activity, i1 i1Var) {
+        super(activity);
+        this.d = h2Var;
+        this.c = i1Var;
+        this.b = new RectF();
+        i1Var.a(this);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7;
+        int i10 = this.a;
+        Object obj = this.c;
+        FrameLayout frameLayout = this.d;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                Paint paint = (Paint) obj2;
+                yb1 yb1Var = (yb1) frameLayout;
+                x0 x0Var = yb1Var.c;
+                yb1Var.P.k(-getX(), -getY(), yb1Var.getWidth() - getX(), yb1Var.getHeight() - getY());
+                yb1Var.Q.k(-getX(), -getY(), yb1Var.getWidth() - getX(), yb1Var.getHeight() - getY());
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                Paint[] paintArr = (Paint[]) obj;
+                paintArr[yb1Var.w].setAlpha(qs.e4);
+                float L = org.telegram.messenger.g0.L(8.0f) + ((int) ((1.0f - yb1Var.D) * (org.telegram.messenger.g0.L(26.0f) - org.telegram.messenger.g0.L(8.0f))));
+                canvas.drawRoundRect(rectF, L, L, paintArr[yb1Var.w]);
+                float f10 = yb1Var.s;
+                if (f10 > 0.0f && (i7 = yb1Var.w + 1) < paintArr.length) {
+                    paintArr[i7].setAlpha((int) (f10 * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paintArr[yb1Var.w + 1]);
+                }
+                float f11 = yb1Var.D;
+                if (f11 < 1.0f) {
+                    paint.setAlpha((int) ((1.0f - f11) * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paint);
+                }
+                super.onDraw(canvas);
+                if (yb1Var.O) {
+                    canvas.drawText(hd.M0(2131743241, null), getWidth() / 2, (int) ((getHeight() / 2) - ((x0Var.getPaint().ascent() + x0Var.getPaint().descent()) / 2.0f)), x0Var.getPaint());
+                    break;
+                }
+                break;
+            default:
+                RectF rectF2 = (RectF) obj2;
+                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                h2 h2Var = (h2) frameLayout;
+                i1 i1Var = (i1) obj;
+                i1Var.d(((View) h2Var.getParent()).getX() + h2Var.getX() + ((View) getParent()).getX() + getX(), ((View) h2Var.getParent()).getY() + h2Var.getY() + ((View) getParent()).getY() + getY());
+                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), i1Var.b());
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                yb1 yb1Var = (yb1) this.d;
+                b8 b8Var = yb1Var.P;
+                super.onSizeChanged(i7, i10, i11, i12);
+                int i13 = 0;
+                while (true) {
+                    Paint[] paintArr = (Paint[]) this.c;
+                    if (i13 >= paintArr.length) {
+                        break;
+                    } else {
+                        if (i13 == 0) {
+                            paintArr[i13] = (Paint) b8Var.a;
+                        } else if (i13 == 1) {
+                            paintArr[i13] = (Paint) yb1Var.Q.a;
+                        } else {
+                            paintArr[i13] = (Paint) b8Var.a;
+                        }
+                        i13++;
+                    }
+                }
+            default:
+                super.onSizeChanged(i7, i10, i11, i12);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x0(yb1 yb1Var, Context context) {
+        super(context);
+        this.d = yb1Var;
+        Paint paint = new Paint();
+        this.b = paint;
+        this.c = new Paint[yb1Var.e.length];
+        qa0 qa0Var = yb1Var.R;
+        qa0Var.setBounds(0, 0, 80, 80);
+        qa0 qa0Var2 = yb1Var.S;
+        qa0Var2.setBounds(0, 0, 80, 80);
+        b8 b8Var = yb1Var.P;
+        b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
+        b8 b8Var2 = yb1Var.Q;
+        b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
+        qa0Var.setAlpha(qs.e4);
+        qa0Var2.setAlpha(qs.e4);
+        Canvas canvas = (Canvas) b8Var.b;
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        canvas.drawColor(0, mode);
+        ((Canvas) b8Var2.b).drawColor(0, mode);
+        qa0Var.draw((Canvas) b8Var.b);
+        qa0Var2.draw((Canvas) b8Var2.b);
         paint.setColor(-1);
-        paint.setAlpha(35);
-        paint2.setColor(-16777216);
-        paint2.setAlpha(hs.n1);
-        paint3.setColor(-16777216);
-        paint3.setAlpha(35);
-        ((Paint) eVar2.a).setAlpha(hs.K2);
-    }
-
-    public final void a(View view) {
-        this.m.add(view);
-    }
-
-    public final Paint b() {
-        return this.i ? this.k : (Paint) this.b.a;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.m;
-        int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
-            ((View) obj).invalidate();
-        }
-    }
-
-    public final void d(float f10, float f11) {
-        float f12 = this.g * 1.12f;
-        float f13 = -f10;
-        float f14 = -f11;
-        this.b.o(f13 - ((f12 - this.f) / 2.0f), f14 - ((f12 - this.g) / 2.0f), f12 / ((Bitmap) r1.c).getHeight(), this.h);
-        this.d.m(f13, f14, this.f - f10, this.g - f11);
-    }
-
-    public final void e(boolean z10) {
-        if (!this.i || z10) {
-            this.i = z10;
-        } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-            final int i3 = 0;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.w0
-                public final /* synthetic */ x0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i3) {
-                        case 0:
-                            x0 x0Var = this.b;
-                            x0Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i10 = (int) (35.0f * floatValue);
-                            x0Var.l.setAlpha(i10);
-                            x0Var.k.setAlpha((int) (floatValue * 102.0f));
-                            x0Var.j.setAlpha(i10);
-                            x0Var.c();
-                            break;
-                        default:
-                            x0 x0Var2 = this.b;
-                            x0Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) x0Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) x0Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            x0Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat.setInterpolator(new LinearInterpolator());
-            ofFloat.setDuration(80L);
-            ofFloat.addListener(new w9(this, 14));
-            ofFloat.start();
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            final int i10 = 1;
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.w0
-                public final /* synthetic */ x0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    switch (i10) {
-                        case 0:
-                            x0 x0Var = this.b;
-                            x0Var.getClass();
-                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            int i102 = (int) (35.0f * floatValue);
-                            x0Var.l.setAlpha(i102);
-                            x0Var.k.setAlpha((int) (floatValue * 102.0f));
-                            x0Var.j.setAlpha(i102);
-                            x0Var.c();
-                            break;
-                        default:
-                            x0 x0Var2 = this.b;
-                            x0Var2.getClass();
-                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                            ((Paint) x0Var2.b.a).setAlpha((int) (180.0f * floatValue2));
-                            ((Paint) x0Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
-                            x0Var2.c();
-                            break;
-                    }
-                }
-            });
-            ofFloat2.setInterpolator(new LinearInterpolator());
-            ofFloat2.setStartDelay(80L);
-            ofFloat2.setDuration(80L);
-            ofFloat2.start();
-        }
-        c();
     }
 }

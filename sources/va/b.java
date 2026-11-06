@@ -1,133 +1,96 @@
 package va;
 
-import o1.g;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final /* synthetic */ int h = 0;
-    public final String a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final long f;
-    public final String g;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    static {
-        byte b10 = (byte) (((byte) (0 | 2)) | 1);
-        if (b10 == 3) {
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        if ((b10 & 1) == 0) {
-            sb2.append(" expiresInSecs");
-        }
-        if ((b10 & 2) == 0) {
-            sb2.append(" tokenCreationEpochInSecs");
-        }
-        throw new IllegalStateException(t4.c.g("Missing required properties:", sb2));
+    public /* synthetic */ b(c cVar, int i7) {
+        this.a = i7;
+        this.b = cVar;
     }
 
-    public b(String str, int i3, String str2, String str3, long j10, long j11, String str4) {
-        this.a = str;
-        this.b = i3;
-        this.c = str2;
-        this.d = str3;
-        this.e = j10;
-        this.f = j11;
-        this.g = str4;
-    }
-
-    public final a a() {
-        a aVar = new a();
-        aVar.a = this.a;
-        aVar.b = this.b;
-        aVar.c = this.c;
-        aVar.d = this.d;
-        aVar.e = this.e;
-        aVar.f = this.f;
-        aVar.g = this.g;
-        aVar.h = (byte) 3;
-        return aVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0068  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        wa.b d;
+        wa.b j3;
+        int i7;
+        switch (this.a) {
+            case 0:
+                this.b.c();
+                return;
+            case 1:
+                this.b.c();
+                return;
+            default:
+                c cVar = this.b;
+                synchronized (c.m) {
+                    try {
+                        o9.g gVar = cVar.a;
+                        gVar.a();
+                        v6.e a10 = v6.e.a(gVar.a);
+                        try {
+                            d = cVar.c.d();
+                            if (a10 != null) {
+                                a10.e();
+                            }
+                        } catch (Throwable th2) {
+                            if (a10 != null) {
+                                a10.e();
+                            }
+                            throw th2;
+                        }
+                    } finally {
+                    }
+                }
+                try {
+                    int i10 = d.b;
+                    if (!(i10 == 5)) {
+                        if (!(i10 == 3)) {
+                            if (cVar.d.a(d)) {
+                                j3 = cVar.d(d);
+                                cVar.g(j3);
+                                cVar.b(d, j3);
+                                if (j3.b == 4) {
+                                    cVar.m(j3.a);
+                                }
+                                i7 = j3.b;
+                                if (i7 != 5) {
+                                    cVar.k(new e());
+                                    return;
+                                } else if (i7 == 2 || i7 == 1) {
+                                    cVar.k(new IOException("Installation ID could not be validated with the Firebase servers (maybe it was deleted). Firebase Installations will need to create a new Installation ID and auth token. Please retry your last request."));
+                                    return;
+                                } else {
+                                    cVar.l(j3);
+                                    return;
+                                }
+                            }
+                            return;
+                        }
+                    }
+                    j3 = cVar.j(d);
+                    cVar.g(j3);
+                    cVar.b(d, j3);
+                    if (j3.b == 4) {
+                    }
+                    i7 = j3.b;
+                    if (i7 != 5) {
+                    }
+                } catch (e e10) {
+                    cVar.k(e10);
+                    return;
+                }
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        String str = bVar.g;
-        String str2 = bVar.d;
-        String str3 = bVar.c;
-        String str4 = bVar.a;
-        String str5 = this.a;
-        if (str5 == null) {
-            if (str4 != null) {
-                return false;
-            }
-        } else if (!str5.equals(str4)) {
-            return false;
-        }
-        if (!g.b(this.b, bVar.b)) {
-            return false;
-        }
-        String str6 = this.c;
-        if (str6 == null) {
-            if (str3 != null) {
-                return false;
-            }
-        } else if (!str6.equals(str3)) {
-            return false;
-        }
-        String str7 = this.d;
-        if (str7 == null) {
-            if (str2 != null) {
-                return false;
-            }
-        } else if (!str7.equals(str2)) {
-            return false;
-        }
-        if (this.e != bVar.e || this.f != bVar.f) {
-            return false;
-        }
-        String str8 = this.g;
-        return str8 == null ? str == null : str8.equals(str);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ g.c(this.b)) * 1000003;
-        String str2 = this.c;
-        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.d;
-        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        long j10 = this.e;
-        int i3 = (hashCode3 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        long j11 = this.f;
-        int i10 = (i3 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003;
-        String str4 = this.g;
-        return (str4 != null ? str4.hashCode() : 0) ^ i10;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
-        sb2.append(this.a);
-        sb2.append(", registrationStatus=");
-        int i3 = this.b;
-        sb2.append(i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? i3 != 5 ? "null" : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
-        sb2.append(", authToken=");
-        sb2.append(this.c);
-        sb2.append(", refreshToken=");
-        sb2.append(this.d);
-        sb2.append(", expiresInSecs=");
-        sb2.append(this.e);
-        sb2.append(", tokenCreationEpochInSecs=");
-        sb2.append(this.f);
-        sb2.append(", fisError=");
-        return a1.g.s(sb2, this.g, "}");
     }
 }

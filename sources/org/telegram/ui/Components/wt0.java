@@ -1,41 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wt0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yt0 b;
+import android.os.Bundle;
+import android.widget.LinearLayout;
 
-    public /* synthetic */ wt0(yt0 yt0Var, int i3) {
-        this.a = i3;
-        this.b = yt0Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public abstract class wt0 extends LinearLayout {
+    public boolean a() {
+        return this instanceof org.telegram.ui.ob0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yt0 yt0Var = this.b;
-                yt0Var.W0 = false;
-                if (!yt0Var.Z0 && yt0Var.X0) {
-                    yt0Var.C(true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.W0 = false;
-                break;
-            case 2:
-                yt0 yt0Var2 = this.b;
-                yt0Var2.Z0 = false;
-                if (!yt0Var2.W0 && yt0Var2.X0) {
-                    yt0Var2.C(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.Z0 = false;
-                break;
-        }
+    public boolean b() {
+        return this instanceof org.telegram.ui.ob0;
+    }
+
+    public boolean c(boolean z9) {
+        return true;
+    }
+
+    public String getHeaderName() {
+        return "";
+    }
+
+    public void h(String str) {
+    }
+
+    public void k(Bundle bundle) {
+    }
+
+    public void l(Bundle bundle) {
+    }
+
+    public void d() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void updateColors() {
+    }
+
+    public void m(Bundle bundle, boolean z9) {
     }
 }

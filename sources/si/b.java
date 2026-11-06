@@ -1,93 +1,94 @@
 package si;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
+import android.content.Context;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
-    public int n;
+public final class b {
+    public static SparseIntArray b;
+    public static final b c = new b();
+    public final SparseArray a;
 
     public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+        this.a = new SparseArray();
     }
 
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
-        }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            c();
+    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
+        try {
+            SerializedData serializedData = new SerializedData(bufferedInputStream);
+            int readInt32 = serializedData.readInt32(true);
+            int i7 = 0;
+            if (sparseArray == null) {
+                sparseArray = new SparseArray(readInt32);
+                while (i7 < readInt32) {
+                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
+                    i7++;
+                }
+            } else {
+                while (i7 < readInt32) {
+                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
+                    i7++;
+                }
+            }
+            bufferedInputStream.close();
+            return sparseArray;
+        } catch (Throwable th2) {
+            try {
+                bufferedInputStream.close();
+            } catch (Throwable th3) {
+                th2.addSuppressed(th3);
+            }
+            throw th2;
         }
     }
 
-    public final void b(int i3, int i10) {
-        if (this.h == i3 && this.n == i10) {
-            return;
+    public final String b(String str) {
+        if (str == null) {
+            return null;
         }
-        this.h = i3;
-        this.n = i10;
-        c();
+        return (String) this.a.get(str.hashCode());
     }
 
-    public final void c() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
+    public final String c(int i7, Context context, String str) {
+        String b10 = str != null ? b(str) : null;
+        if (b10 != null || i7 == 0) {
+            return b10;
         }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i3 = this.h;
-        int i10 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i3 <= 0 || i10 <= 0) {
-            return;
+        if (context != null && i7 != 0) {
+            if (b == null) {
+                try {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                    try {
+                        SerializedData serializedData = new SerializedData(bufferedInputStream);
+                        int readInt32 = serializedData.readInt32(true);
+                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
+                        for (int i10 = 0; i10 < readInt32; i10++) {
+                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        }
+                        bufferedInputStream.close();
+                        b = sparseIntArray;
+                    } finally {
+                    }
+                } catch (IOException e10) {
+                    throw new RuntimeException(e10);
+                }
+            }
+            int i11 = b.get(i7);
+            if (i11 != 0) {
+                return (String) this.a.get(i11);
+            }
         }
-        float f10 = i3;
-        float f11 = width;
-        float f12 = i10;
-        float f13 = height;
-        float max = Math.max(f10 / f11, f12 / f13);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
+        return null;
     }
 
-    @Override // si.a
-    public final void l(Canvas canvas, float f10, float f11, float f12, float f13) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
-        }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f10, f11);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f10, f11, f12, f13, this.a);
+    public b(a aVar) {
+        SparseArray sparseArray = aVar.a;
+        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

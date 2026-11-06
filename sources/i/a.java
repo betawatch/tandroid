@@ -1,39 +1,39 @@
 package i;
 
 import android.graphics.drawable.Animatable;
-import b8.qc;
+import c8.h0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends qc {
+public final class a extends h0 {
     public final /* synthetic */ int a;
     public final Animatable b;
 
-    public /* synthetic */ a(Animatable animatable, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(Animatable animatable, int i7) {
+        this.a = i7;
         this.b = animatable;
     }
 
-    @Override // b8.qc
+    @Override // c8.h0
     public final void c() {
         switch (this.a) {
             case 0:
                 this.b.start();
                 break;
             default:
-                ((z4.d) this.b).start();
+                ((a5.e) this.b).start();
                 break;
         }
     }
 
-    @Override // b8.qc
+    @Override // c8.h0
     public final void d() {
         switch (this.a) {
             case 0:
                 this.b.stop();
                 break;
             default:
-                ((z4.d) this.b).stop();
+                ((a5.e) this.b).stop();
                 break;
         }
     }

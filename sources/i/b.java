@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.util.StateSet;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -61,11 +61,11 @@ public final class b extends Drawable.ConstantState {
         this.z = 0;
         this.a = eVar;
         this.b = resources != null ? resources : bVar != null ? bVar.b : null;
-        int i3 = bVar != null ? bVar.c : 0;
-        int i10 = e.K;
-        i3 = resources != null ? resources.getDisplayMetrics().densityDpi : i3;
-        i3 = i3 == 0 ? hs.q2 : i3;
-        this.c = i3;
+        int i7 = bVar != null ? bVar.c : 0;
+        int i10 = e.J;
+        i7 = resources != null ? resources.getDisplayMetrics().densityDpi : i7;
+        i7 = i7 == 0 ? qs.q2 : i7;
+        this.c = i7;
         if (bVar != null) {
             this.d = bVar.d;
             this.e = bVar.e;
@@ -84,7 +84,7 @@ public final class b extends Drawable.ConstantState {
             this.E = bVar.E;
             this.F = bVar.F;
             this.G = bVar.G;
-            if (bVar.c == i3) {
+            if (bVar.c == i7) {
                 if (bVar.j) {
                     this.k = bVar.k != null ? new Rect(bVar.k) : null;
                     this.j = true;
@@ -144,23 +144,23 @@ public final class b extends Drawable.ConstantState {
     }
 
     public final int a(Drawable drawable) {
-        int i3 = this.h;
-        if (i3 >= this.g.length) {
-            int i10 = i3 + 10;
+        int i7 = this.h;
+        if (i7 >= this.g.length) {
+            int i10 = i7 + 10;
             Drawable[] drawableArr = new Drawable[i10];
             Drawable[] drawableArr2 = this.g;
             if (drawableArr2 != null) {
-                System.arraycopy(drawableArr2, 0, drawableArr, 0, i3);
+                System.arraycopy(drawableArr2, 0, drawableArr, 0, i7);
             }
             this.g = drawableArr;
             int[][] iArr = new int[i10][];
-            System.arraycopy(this.H, 0, iArr, 0, i3);
+            System.arraycopy(this.H, 0, iArr, 0, i7);
             this.H = iArr;
         }
         drawable.mutate();
         drawable.setVisible(false, true);
         drawable.setCallback(this.a);
-        this.g[i3] = drawable;
+        this.g[i7] = drawable;
         this.h++;
         this.e = drawable.getChangingConfigurations() | this.e;
         this.r = false;
@@ -169,19 +169,19 @@ public final class b extends Drawable.ConstantState {
         this.j = false;
         this.m = false;
         this.u = false;
-        return i3;
+        return i7;
     }
 
     public final void b() {
         this.m = true;
         c();
-        int i3 = this.h;
+        int i7 = this.h;
         Drawable[] drawableArr = this.g;
         this.o = -1;
         this.n = -1;
         this.q = 0;
         this.p = 0;
-        for (int i10 = 0; i10 < i3; i10++) {
+        for (int i10 = 0; i10 < i7; i10++) {
             Drawable drawable = drawableArr[i10];
             int intrinsicWidth = drawable.getIntrinsicWidth();
             if (intrinsicWidth > this.n) {
@@ -206,9 +206,9 @@ public final class b extends Drawable.ConstantState {
         SparseArray sparseArray = this.f;
         if (sparseArray != null) {
             int size = sparseArray.size();
-            for (int i3 = 0; i3 < size; i3++) {
-                int keyAt = this.f.keyAt(i3);
-                Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.valueAt(i3);
+            for (int i7 = 0; i7 < size; i7++) {
+                int keyAt = this.f.keyAt(i7);
+                Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.valueAt(i7);
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
                 newDrawable.setLayoutDirection(this.x);
@@ -222,9 +222,9 @@ public final class b extends Drawable.ConstantState {
 
     @Override // android.graphics.drawable.Drawable.ConstantState
     public final boolean canApplyTheme() {
-        int i3 = this.h;
+        int i7 = this.h;
         Drawable[] drawableArr = this.g;
-        for (int i10 = 0; i10 < i3; i10++) {
+        for (int i10 = 0; i10 < i7; i10++) {
             Drawable drawable = drawableArr[i10];
             if (drawable == null) {
                 Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.get(i10);
@@ -238,21 +238,21 @@ public final class b extends Drawable.ConstantState {
         return false;
     }
 
-    public final Drawable d(int i3) {
+    public final Drawable d(int i7) {
         int indexOfKey;
-        Drawable drawable = this.g[i3];
+        Drawable drawable = this.g[i7];
         if (drawable != null) {
             return drawable;
         }
         SparseArray sparseArray = this.f;
-        if (sparseArray == null || (indexOfKey = sparseArray.indexOfKey(i3)) < 0) {
+        if (sparseArray == null || (indexOfKey = sparseArray.indexOfKey(i7)) < 0) {
             return null;
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
         newDrawable.setLayoutDirection(this.x);
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);
-        this.g[i3] = mutate;
+        this.g[i7] = mutate;
         this.f.removeAt(indexOfKey);
         if (this.f.size() == 0) {
             this.f = null;
@@ -263,24 +263,24 @@ public final class b extends Drawable.ConstantState {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v1, types: [java.lang.Object[]] */
     /* JADX WARN: Type inference failed for: r5v3 */
-    public final int e(int i3) {
-        ?? r5;
-        if (i3 < 0) {
+    public final int e(int i7) {
+        ?? r52;
+        if (i7 < 0) {
             return 0;
         }
         m mVar = this.J;
         int i10 = 0;
-        int a10 = b0.a.a(mVar.c, i3, mVar.a);
-        if (a10 >= 0 && (r5 = mVar.b[a10]) != i.b) {
-            i10 = r5;
+        int a10 = b0.a.a(mVar.c, i7, mVar.a);
+        if (a10 >= 0 && (r52 = mVar.b[a10]) != i.b) {
+            i10 = r52;
         }
         return i10.intValue();
     }
 
     public final int f(int[] iArr) {
         int[][] iArr2 = this.H;
-        int i3 = this.h;
-        for (int i10 = 0; i10 < i3; i10++) {
+        int i7 = this.h;
+        for (int i10 = 0; i10 < i7; i10++) {
             if (StateSet.stateSetMatches(iArr2[i10], iArr)) {
                 return i10;
             }

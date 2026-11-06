@@ -1,39 +1,23 @@
 package q2;
 
-import android.os.SystemClock;
-import java.util.List;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g extends z2.c {
-    public int g;
+public interface g {
+    UUID a();
 
-    @Override // z2.p
-    public final int c() {
-        return this.g;
-    }
+    void b(j jVar);
 
-    @Override // z2.p
-    public final void d(long j10, long j11, long j12, List list, x2.m[] mVarArr) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (a(this.g, elapsedRealtime)) {
-            for (int i3 = this.b - 1; i3 >= 0; i3--) {
-                if (!a(i3, elapsedRealtime)) {
-                    this.g = i3;
-                    return;
-                }
-            }
-            throw new IllegalStateException();
-        }
-    }
+    void c(j jVar);
 
-    @Override // z2.p
-    public final int o() {
-        return 0;
-    }
+    boolean d();
 
-    @Override // z2.p
-    public final Object r() {
-        return null;
-    }
+    int e();
+
+    boolean f(String str);
+
+    f g();
+
+    k2.b h();
 }

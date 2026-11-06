@@ -1,65 +1,225 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.app.Activity;
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.util.SparseArray;
+import android.widget.EditText;
+import java.io.File;
 import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xf extends j1.b {
-    public final /* synthetic */ yf o;
+public final /* synthetic */ class xf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xf(yf yfVar, yf yfVar2) {
-        super(yfVar2);
-        this.o = yfVar;
+    public /* synthetic */ xf(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // j1.b
-    public final int g(float f10, float f11) {
-        yf yfVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = yfVar.c0;
-        if (chatActivityEnterView.t4 && chatActivityEnterView.O1 != null && chatActivityEnterView.T3.contains(f10, f11)) {
-            return 2;
-        }
-        return (!chatActivityEnterView.Q || chatActivityEnterView.O1 == null || chatActivityEnterView.o4 <= 0.1f || !yfVar.K.contains(f10, f11)) ? -1 : 4;
-    }
-
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.o.c0;
-        if (chatActivityEnterView.t4) {
-            arrayList.add(2);
-        }
-        if (!chatActivityEnterView.Q || chatActivityEnterView.O1 == null || chatActivityEnterView.o4 <= 0.1f) {
-            return;
-        }
-        arrayList.add(4);
-    }
-
-    @Override // j1.b
-    public final boolean k(int i3, int i10) {
-        return true;
-    }
-
-    @Override // j1.b
-    public final void l(int i3, s0.d dVar) {
-        yf yfVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = yfVar.c0;
-        if (i3 == 2) {
-            Rect rect = chatActivityEnterView.V3;
-            RectF rectF = chatActivityEnterView.T3;
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(chatActivityEnterView.V3);
-            dVar.o(org.telegram.messenger.bd.M0(chatActivityEnterView.q4 > 0.5f ? 2131754927 : 2131754930, null));
-            return;
-        }
-        if (i3 == 4) {
-            Rect rect2 = chatActivityEnterView.V3;
-            RectF rectF2 = yfVar.K;
-            rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            dVar.h(chatActivityEnterView.V3);
-            dVar.o(org.telegram.messenger.bd.M0(chatActivityEnterView.P ? 2131754934 : 2131754935, null));
+    @Override // java.lang.Runnable
+    public final void run() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
+        int i7 = this.a;
+        int i10 = 0;
+        Object obj = this.b;
+        switch (i7) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = ((ag) obj).b0;
+                if (!MediaController.B().K()) {
+                    org.telegram.messenger.qp.e1().edit().putInt("voicepausehint", 3).apply();
+                }
+                if (chatActivityEnterView.s4) {
+                    chatActivityEnterView.J3 = true;
+                }
+                MediaController.B().D0(chatActivityEnterView.O);
+                chatActivityEnterView.Z2.R0(0);
+                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
+                if (slideTextView != null) {
+                    slideTextView.setEnabled(false);
+                    break;
+                }
+                break;
+            case 1:
+                hc hcVar = (hc) obj;
+                new ug.w0(42, hcVar.W(), hcVar.c).show();
+                break;
+            case 2:
+                u4 u4Var = (u4) obj;
+                u4Var.requestFocus();
+                org.telegram.messenger.g0.K3(u4Var);
+                break;
+            case 3:
+                org.telegram.messenger.g0.K3((EditText) obj);
+                break;
+            case 4:
+                SparseArray sparseArray = i5.r;
+                ((i5) obj).u();
+                break;
+            case 5:
+                e5 e5Var = (e5) obj;
+                ArrayList arrayList = new ArrayList(e5Var.c);
+                e5Var.c.clear();
+                org.telegram.messenger.yr.a0(e5Var.e).a.c(new b5(e5Var, arrayList, i10));
+                e5Var.d = null;
+                break;
+            case 6:
+                ((g5) obj).invalidate();
+                break;
+            case 7:
+                ((r1.g) obj).h();
+                break;
+            case 8:
+                j6 j6Var = (j6) obj;
+                CharSequence charSequence = j6Var.f;
+                if (charSequence != null) {
+                    j6Var.c(charSequence, j6Var.h, true);
+                    j6Var.f = null;
+                    j6Var.h = false;
+                    break;
+                }
+                break;
+            case 9:
+                ((a8) obj).n.o1.setVisibility(8);
+                break;
+            case 10:
+                ((f8) ((org.telegram.messenger.re) obj).d).i1();
+                break;
+            case 11:
+                w9 w9Var = (w9) obj;
+                w9Var.o = true;
+                w9Var.d.invalidate();
+                break;
+            case 12:
+                v9 v9Var = (v9) obj;
+                if (!v9Var.a) {
+                    w9 w9Var2 = v9Var.d;
+                    Bitmap[] bitmapArr = w9Var2.g;
+                    Canvas[] canvasArr = w9Var2.h;
+                    w9Var2.g = w9Var2.f;
+                    w9Var2.h = w9Var2.i;
+                    w9Var2.f = bitmapArr;
+                    w9Var2.i = canvasArr;
+                    w9Var2.k = false;
+                    fi.p5 p5Var = w9Var2.d;
+                    if (p5Var != null) {
+                        p5Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 13:
+                y9 y9Var = ((da) obj).t;
+                if (y9Var != null) {
+                    y9Var.d();
+                    break;
+                }
+                break;
+            case 14:
+                y9 y9Var2 = (y9) obj;
+                y9Var2.o = (Bitmap) y9Var2.n.c;
+                y9Var2.d();
+                break;
+            case 15:
+                cc ccVar = ((va) obj).b;
+                gb gbVar = ccVar.e;
+                gbVar.transitionRunningEnter = false;
+                gbVar.onEnterTransitionEnd();
+                if (ccVar.u) {
+                    ccVar.i(true);
+                    break;
+                }
+                break;
+            case 16:
+                sc scVar = (sc) obj;
+                scVar.getClass();
+                if (org.telegram.messenger.rc.e(512)) {
+                    scVar.invalidateSelf();
+                    break;
+                }
+                break;
+            case 17:
+                uc ucVar = (uc) obj;
+                if (ucVar.n1) {
+                    ucVar.n1 = false;
+                    ucVar.invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                int i11 = ChatActivityEnterView.s5;
+                org.telegram.messenger.g0.Q3((Activity) obj);
+                break;
+            case 19:
+                ((Dialog) obj).dismiss();
+                break;
+            case 20:
+                ChatActivityEnterView chatActivityEnterView2 = ((ze) obj).f;
+                int i12 = ChatActivityEnterView.s5;
+                chatActivityEnterView2.q1();
+                break;
+            case 21:
+                ((jg) obj).s = null;
+                break;
+            case 22:
+                ((qh) obj).k0.u3.f();
+                break;
+            case 23:
+                vj vjVar = (vj) ((androidx.mediarouter.app.f) obj).b;
+                try {
+                    File file = vjVar.O;
+                    if (file == null) {
+                        vjVar.S();
+                    } else {
+                        vjVar.R(file);
+                    }
+                    vjVar.a0();
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 24:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((ml) obj).b;
+                boolean z9 = ChatAttachAlertPhotoLayout.q1;
+                chatAttachAlertPhotoLayout2.s0(-1, true);
+                break;
+            case 25:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((kl) obj).c;
+                ql qlVar = chatAttachAlertPhotoLayout3.P;
+                if (qlVar != null && !chatAttachAlertPhotoLayout3.b.I) {
+                    qlVar.setSystemUiVisibility(1028);
+                    break;
+                }
+                break;
+            case 26:
+                bm bmVar = (bm) obj;
+                di diVar = bmVar.b;
+                if (bmVar.Q && (chatAttachAlertPhotoLayout = diVar.a2) != null) {
+                    org.telegram.ui.ActionBar.z0 z0Var = chatAttachAlertPhotoLayout.c1;
+                    z0Var.setIcon(R.drawable.ic_ab_back);
+                    z0Var.setText(org.telegram.messenger.hd.M0(2131753756, null));
+                    z0Var.setRightIcon(0);
+                    break;
+                }
+                break;
+            case 27:
+                bn bnVar = (bn) obj;
+                bnVar.l1 = -1;
+                bnVar.k1 = null;
+                break;
+            case 28:
+                ((xn) obj).p();
+                break;
+            default:
+                ((zn) obj).setVisibility(8);
+                break;
         }
     }
 }

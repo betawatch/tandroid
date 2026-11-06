@@ -1,22 +1,18 @@
 package ca;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n implements ma.d {
-    public static final n a = new n();
-    public static final ma.c b = ma.c.c("baseAddress");
-    public static final ma.c c = ma.c.c("size");
-    public static final ma.c d = ma.c.c("name");
-    public static final ma.c e = ma.c.c("uuid");
+public final class n {
+    public final int a;
+    public final byte[] b;
 
-    @Override // ma.a
-    public final void a(Object obj, Object obj2) {
-        ma.e eVar = (ma.e) obj2;
-        x0 x0Var = (x0) ((d2) obj);
-        eVar.f(b, x0Var.a);
-        eVar.f(c, x0Var.b);
-        eVar.a(d, x0Var.c);
-        String str = x0Var.d;
-        eVar.a(e, str != null ? str.getBytes(u2.a) : null);
+    public n(int i7, byte[] bArr) {
+        this.a = i7;
+        this.b = bArr;
+    }
+
+    public n(byte[] bArr, int i7) {
+        this.b = bArr;
+        this.a = i7;
     }
 }

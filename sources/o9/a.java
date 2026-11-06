@@ -1,6 +1,47 @@
 package o9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import a8.p0;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
+public final class a {
+    public final long a;
+    public final long b;
+    public final long c;
+
+    public a(long j3, long j10, long j11) {
+        this.a = j3;
+        this.b = j10;
+        this.c = j11;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        long j3 = this.a;
+        long j10 = this.b;
+        int i7 = (((((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
+        long j11 = this.c;
+        return i7 ^ ((int) ((j11 >>> 32) ^ j11));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("StartupTime{epochMillis=");
+        sb2.append(this.a);
+        sb2.append(", elapsedRealtime=");
+        sb2.append(this.b);
+        sb2.append(", uptimeMillis=");
+        return p0.r(sb2, this.c, "}");
+    }
 }

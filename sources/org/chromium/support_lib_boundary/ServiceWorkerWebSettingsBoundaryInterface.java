@@ -2,7 +2,7 @@ package org.chromium.support_lib_boundary;
 
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface ServiceWorkerWebSettingsBoundaryInterface {
     boolean getAllowContentAccess();
@@ -17,15 +17,15 @@ public interface ServiceWorkerWebSettingsBoundaryInterface {
 
     Set<String> getRequestedWithHeaderOriginAllowList();
 
-    void setAllowContentAccess(boolean z10);
+    void setAllowContentAccess(boolean z9);
 
-    void setAllowFileAccess(boolean z10);
+    void setAllowFileAccess(boolean z9);
 
-    void setBlockNetworkLoads(boolean z10);
+    void setBlockNetworkLoads(boolean z9);
 
-    void setCacheMode(int i3);
+    void setCacheMode(int i7);
 
-    void setIncludeCookiesOnIntercept(boolean z10);
+    void setIncludeCookiesOnIntercept(boolean z9);
 
     void setRequestedWithHeaderOriginAllowList(Set<String> set);
 }

@@ -1,100 +1,112 @@
 package dh;
 
-import android.graphics.Rect;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.view.ViewGroup;
+import java.lang.ref.WeakReference;
+import java.util.Iterator;
+import oi.p;
+import oi.q;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class c {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public long i;
-    public boolean j;
-    public float k;
-    public final /* synthetic */ d l;
+    public final ri.a a;
+    public final ri.a b;
+    public final ri.a c;
+    public int d;
+    public int e;
+    public xe.b f;
+    public xe.b g;
+    public jh.k h;
+    public ViewGroup i;
+    public q j;
+    public boolean k;
 
-    public c(d dVar) {
-        this.l = dVar;
+    public c(ri.a aVar) {
+        this(aVar, aVar, aVar);
     }
 
-    public final void a() {
-        d dVar = this.l;
-        boolean z10 = dVar.f;
-        ArrayList arrayList = dVar.c;
-        Rect rect = dVar.b;
-        float f10 = 0.0f;
-        this.h = 0.0f;
-        float b10 = b();
-        float c2 = c();
-        for (int i3 = 0; i3 < 20; i3++) {
-            float b11 = b();
-            float c10 = c();
-            float f11 = 2.14748365E9f;
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                float f12 = ((c) arrayList.get(i10)).c - b11;
-                float f13 = ((c) arrayList.get(i10)).d - c10;
-                float f14 = (f13 * f13) + (f12 * f12);
-                if (f14 < f11) {
-                    f11 = f14;
-                }
-            }
-            if (f11 > f10) {
-                b10 = b11;
-                c2 = c10;
-                f10 = f11;
-            }
-        }
-        float f15 = z10 ? 0.8f : 0.5f;
-        this.c = b10;
-        if (b10 > rect.width() * f15) {
-            this.a = rect.width() * f15;
+    public final fh.g a(View view) {
+        return c(view, null, false);
+    }
+
+    public final fh.g b(View view, gh.a aVar) {
+        return c(view, aVar, false);
+    }
+
+    public final fh.g c(View view, gh.a aVar, boolean z9) {
+        fh.g gVar;
+        ri.a aVar2 = this.c;
+        ri.a aVar3 = this.a;
+        ri.a aVar4 = this.b;
+        if (aVar3 == aVar4 && aVar4 == aVar2) {
+            gVar = aVar3 instanceof b ? ((b) aVar3).b() : new fh.g(aVar3, aVar3, aVar3);
         } else {
-            float width = rect.width() * f15;
-            this.a = width;
-            if (this.c > width) {
-                this.c = width - 0.1f;
+            fh.g gVar2 = new fh.g(aVar3, aVar4, aVar2);
+            if (aVar3 instanceof b) {
+                ((b) aVar3).c(gVar2);
+            }
+            if (aVar4 != aVar3 && (aVar4 instanceof b)) {
+                ((b) aVar4).c(gVar2);
+            }
+            if (aVar2 != aVar3 && aVar2 != aVar4 && (aVar2 instanceof b)) {
+                ((b) aVar2).c(gVar2);
+            }
+            gVar = gVar2;
+        }
+        if (this.k && !gVar.W) {
+            gVar.W = true;
+            gVar.Z = true;
+        }
+        gVar.p(aVar);
+        int i7 = this.d;
+        int i10 = this.e;
+        gVar.K = i7;
+        gVar.L = i10;
+        xe.b bVar = this.g;
+        if (bVar != null && view != null) {
+            bVar.add(view);
+        }
+        q qVar = this.j;
+        if (qVar != null && view != null) {
+            qVar.c.add(new p(view, gVar));
+        }
+        if (this.h != null && this.i != null && view != null) {
+            this.h.d(view, this.i, new ab.g(10, gVar, new WeakReference(view)), z9);
+        }
+        xe.b bVar2 = this.f;
+        if (bVar2 != null) {
+            bVar2.add(gVar);
+        }
+        return gVar;
+    }
+
+    public final void d() {
+        xe.b bVar = this.g;
+        if (bVar != null) {
+            Iterator it = bVar.iterator();
+            while (it.hasNext()) {
+                ((View) it.next()).invalidate();
             }
         }
-        float height = rect.height() * 0.1f;
-        f5.a aVar = Utilities.c;
-        this.b = a1.g.A(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, height, rect.height() * 0.45f);
-        if (z10) {
-            float A = a1.g.A(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
-            this.f = A;
-            this.g = (((Math.abs(((int) aVar.nextLong()) % 100) / 100.0f) * 1.5f) + 1.5f) * A;
-            this.d = a1.g.A(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.height() * 0.1f, this.f / 2.0f);
-            this.e = rect.height() + this.f;
-            this.i = Math.abs(((int) aVar.nextLong()) % 600) + 1000;
-        } else {
-            float A2 = a1.g.A(Math.abs(((int) aVar.nextLong()) % 100), 100.0f, rect.width() * 0.1f, rect.width() * 0.05f);
-            this.f = A2;
-            this.g = (((Math.abs(((int) aVar.nextLong()) % 100) / 100.0f) * 0.5f) + 1.5f) * A2;
-            this.d = c2;
-            this.e = c2 + rect.height();
-            this.i = 1800L;
-        }
-        this.i = (long) (this.i / 1.75f);
-        this.j = aVar.nextBoolean();
-        this.k = ((((int) aVar.nextLong()) % 100) / 100.0f) * 20.0f;
     }
 
-    public final float b() {
-        d dVar = this.l;
-        Rect rect = dVar.b;
-        if (!dVar.f) {
-            return (Math.abs(((int) Utilities.c.nextLong()) % 100) / 100.0f) * rect.width();
-        }
-        return a1.g.A(Math.abs(((int) Utilities.c.nextLong()) % 100), 100.0f, rect.width() * 1.5f, rect.width() * (-0.25f));
+    public final void e(q qVar) {
+        this.j = qVar;
     }
 
-    public final float c() {
-        return (Math.abs(((int) Utilities.c.nextLong()) % 100) / 100.0f) * this.l.b.height() * 0.5f;
+    public final void f(xe.b bVar) {
+        this.g = bVar;
+    }
+
+    public final void g(jh.k kVar, ViewGroup viewGroup) {
+        this.h = kVar;
+        this.i = viewGroup;
+    }
+
+    public c(ri.a aVar, ri.a aVar2, ri.a aVar3) {
+        this.a = aVar;
+        this.b = aVar2;
+        this.c = aVar3;
     }
 }

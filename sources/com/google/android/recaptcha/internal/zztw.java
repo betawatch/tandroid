@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zztw implements zzug {
     private final zzts zza;
@@ -63,7 +63,7 @@ final class zztw implements zzug {
         while (zzufVar.zzc() != Integer.MAX_VALUE) {
             try {
                 int zzd = zzufVar.zzd();
-                int i3 = 0;
+                int i7 = 0;
                 if (zzd != 11) {
                     if ((zzd & 7) != 2) {
                         zzO = zzufVar.zzO();
@@ -93,8 +93,8 @@ final class zztw implements zzug {
                                 zzqmVar = zzufVar.zzp();
                             }
                         } else {
-                            i3 = zzufVar.zzj();
-                            zzsmVar = zzryVar.zza(this.zza, i3);
+                            i7 = zzufVar.zzj();
+                            zzsmVar = zzryVar.zza(this.zza, i7);
                         }
                     }
                     if (zzufVar.zzd() != 12) {
@@ -106,7 +106,7 @@ final class zztw implements zzug {
                         if (zzsmVar != null) {
                             throw null;
                         }
-                        zzuvVar.zzg(zza, i3, zzqmVar);
+                        zzuvVar.zzg(zza, i7, zzqmVar);
                     }
                 }
             } finally {
@@ -121,7 +121,7 @@ final class zztw implements zzug {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void zzi(Object obj, byte[] bArr, int i3, int i10, zzqb zzqbVar) {
+    public final void zzi(Object obj, byte[] bArr, int i7, int i10, zzqb zzqbVar) {
         int i11;
         zzsn zzsnVar = (zzsn) obj;
         zzuw zzuwVar = zzsnVar.zzc;
@@ -132,8 +132,8 @@ final class zztw implements zzug {
         zzuw zzuwVar2 = zzuwVar;
         ((zzsk) obj).zzi();
         zzsm zzsmVar = null;
-        while (i3 < i10) {
-            int zzi = zzqc.zzi(bArr, i3, zzqbVar);
+        while (i7 < i10) {
+            int zzi = zzqc.zzi(bArr, i7, zzqbVar);
             int i12 = zzqbVar.zza;
             if (i12 == 11) {
                 byte[] bArr2 = bArr;
@@ -176,7 +176,7 @@ final class zztw implements zzug {
                 if (zzqmVar != null) {
                     zzuwVar2.zzj((i14 << 3) | 2, zzqmVar);
                 }
-                i3 = i11;
+                i7 = i11;
                 bArr = bArr2;
                 i10 = i13;
                 zzqbVar = zzqbVar2;
@@ -186,12 +186,12 @@ final class zztw implements zzug {
                     int i19 = zzuc.zza;
                     throw null;
                 }
-                i3 = zzqc.zzh(i12, bArr, zzi, i10, zzuwVar2, zzqbVar);
+                i7 = zzqc.zzh(i12, bArr, zzi, i10, zzuwVar2, zzqbVar);
             } else {
-                i3 = zzqc.zzo(i12, bArr, zzi, i10, zzqbVar);
+                i7 = zzqc.zzo(i12, bArr, zzi, i10, zzqbVar);
             }
         }
-        if (i3 != i10) {
+        if (i7 != i10) {
             throw new zzsx("Failed to parse the message.");
         }
     }

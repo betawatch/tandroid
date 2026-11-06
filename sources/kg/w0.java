@@ -1,53 +1,113 @@
 package kg;
 
-import org.telegram.messenger.hp;
-import org.telegram.messenger.qr;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.k5;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ hp c;
-    public final /* synthetic */ qr d;
-    public final /* synthetic */ e1 e;
+public final /* synthetic */ class w0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a1 b;
 
-    public w0(e1 e1Var, String str, String str2, hp hpVar, qr qrVar) {
-        this.e = e1Var;
-        this.a = str;
-        this.b = str2;
-        this.c = hpVar;
-        this.d = qrVar;
+    public /* synthetic */ w0(a1 a1Var, int i7) {
+        this.a = i7;
+        this.b = a1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        e1 e1Var = this.e;
-        if (e1Var.z0 != this) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i7 = 1;
+                final a1 a1Var = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: kg.u0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i10 = i7;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        a1 a1Var2 = a1Var;
+                        switch (i10) {
+                            case 0:
+                                a1Var2.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        a1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        k5.p(null, 2131743880, hc.a0(a1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    hc.d0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        a1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        a1Var2.b.b(false);
+                                        k5.p(null, 2131743880, hc.a0(a1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    a1Var2.b.b(false);
+                                    hc.d0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i10 = 0;
+                final a1 a1Var2 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: kg.u0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i102 = i10;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        a1 a1Var22 = a1Var2;
+                        switch (i102) {
+                            case 0:
+                                a1Var22.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        a1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        k5.p(null, 2131743880, hc.a0(a1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    hc.d0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        a1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        a1Var22.b.b(false);
+                                        k5.p(null, 2131743880, hc.a0(a1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    a1Var22.b.b(false);
+                                    hc.d0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
         }
-        e1Var.z0 = null;
-        TLRPC.User user = e1Var.x0;
-        if (user != null || e1Var.w0) {
-            if (e1Var.w0) {
-                return;
-            }
-            e1Var.T(true, user, this.a, "");
-            return;
-        }
-        String str = this.b;
-        e1Var.r0 = str;
-        hp hpVar = this.c;
-        TLObject f22 = hpVar.f2(str);
-        if (f22 instanceof TLRPC.User) {
-            e1Var.R((TLRPC.User) f22);
-            return;
-        }
-        TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-        tL_contacts_resolveUsername.username = e1Var.r0;
-        e1Var.u0 = ConnectionsManager.getInstance(e1Var.f).sendRequest(tL_contacts_resolveUsername, new ai.q1(this, str, hpVar, this.d, 8));
     }
 }

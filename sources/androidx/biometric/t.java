@@ -1,27 +1,38 @@
 package androidx.biometric;
 
+import a8.r7;
 import android.content.Context;
-import android.hardware.fingerprint.FingerprintManager;
+import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
 import android.os.Build;
-import android.os.CancellationSignal;
-import b8.jc;
-import java.security.Signature;
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
-import org.telegram.messenger.ft;
+import android.os.Bundle;
+import android.util.Log;
+import e2.s0;
+import h2.m0;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.messenger.qs;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class t {
-    public final Context a;
+    public Context a;
 
-    public t(Context context, int i3) {
-        switch (i3) {
-            case 1:
+    public t(Context context, int i7) {
+        switch (i7) {
+            case 2:
+                context.getClass();
                 this.a = context;
                 break;
-            case 2:
+            case 3:
                 kotlin.jvm.internal.j.e(context, "context");
+                this.a = context;
+                break;
+            case 4:
                 this.a = context;
                 break;
             default:
@@ -30,75 +41,129 @@ public final class t {
         }
     }
 
-    public static FingerprintManager c(Context context) {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 == 23) {
-            return (FingerprintManager) context.getSystemService(FingerprintManager.class);
+    public static v0.i b(t tVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return tVar.e();
         }
-        if (i3 <= 23 || !context.getPackageManager().hasSystemFeature("android.hardware.fingerprint")) {
+        if (obj instanceof v0.n) {
+            Iterator it = ((v0.n) obj).a.iterator();
+            while (it.hasNext()) {
+                if (((v0.h) it.next()) instanceof v0.p) {
+                    return tVar.e();
+                }
+            }
+        }
+        Context ctx = tVar.a;
+        kotlin.jvm.internal.j.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return tVar.e();
+        }
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 34) {
+            v0.l lVar = new v0.l(ctx);
+            v0.l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
+            return lVar2 == null ? tVar.e() : lVar2;
+        }
+        if (i7 <= 33) {
+            return tVar.e();
+        }
+        return null;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int d(e2.u uVar) {
+        String str = uVar.s;
+        if (str == null || !s0.k(str)) {
+            return jg.g.b(0, 0, 0, 0);
+        }
+        String str2 = uVar.s;
+        String str3 = m0.a;
+        str2.getClass();
+        switch (str2) {
+            case "image/jpeg":
+            case "image/webp":
+            case "image/bmp":
+            case "image/png":
+                return jg.g.b(4, 0, 0, 0);
+        }
+        return jg.g.b(1, 0, 0, 0);
+    }
+
+    public o5.j a() {
+        Context context = this.a;
+        if (context == null) {
+            throw new IllegalStateException(Context.class.getCanonicalName() + " must be set");
+        }
+        o5.j jVar = new o5.j();
+        jVar.a = q5.a.a(o5.m.a);
+        e.a aVar = new e.a(context);
+        jVar.b = aVar;
+        jVar.c = q5.a.a(new j2.n(aVar, new qt(aVar, 7), false, 23));
+        e.a aVar2 = jVar.b;
+        jVar.d = new uy(aVar2, 27);
+        fd.a a10 = q5.a.a(new sg.i0(6, jVar.d, q5.a.a(new org.telegram.ui.Components.n(aVar2))));
+        jVar.e = a10;
+        sa.d dVar = new sa.d(24);
+        e.a aVar3 = jVar.b;
+        hy0 hy0Var = new hy0(aVar3, a10, dVar, 16);
+        fd.a aVar4 = jVar.a;
+        fd.a aVar5 = jVar.c;
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, hy0Var, a10, a10, 20), new ga.d(aVar3, aVar5, a10, hy0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, hy0Var, a10, 14), 17));
+        return jVar;
+    }
+
+    public PackageInfo c(int i7, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i7);
+    }
+
+    public v0.i e() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), qs.Q1);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        List l10 = hd.f.l(arrayList);
+        if (l10.isEmpty()) {
             return null;
         }
-        return (FingerprintManager) context.getSystemService(FingerprintManager.class);
-    }
-
-    public void a(android.support.v4.media.session.a0 a0Var, ba.i iVar, bb.c cVar) {
-        CancellationSignal cancellationSignal;
-        CancellationSignal cancellationSignal2;
-        FingerprintManager.CryptoObject cryptoObject = null;
-        if (iVar != null) {
-            synchronized (iVar) {
-                try {
-                    if (((CancellationSignal) iVar.c) == null) {
-                        CancellationSignal cancellationSignal3 = new CancellationSignal();
-                        iVar.c = cancellationSignal3;
-                        if (iVar.b) {
-                            cancellationSignal3.cancel();
-                        }
+        Iterator it = l10.iterator();
+        v0.i iVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                kotlin.jvm.internal.j.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                v0.i iVar2 = (v0.i) newInstance;
+                if (!iVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (iVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
                     }
-                    cancellationSignal2 = (CancellationSignal) iVar.c;
-                } finally {
+                    iVar = iVar2;
                 }
+            } catch (Throwable unused) {
             }
-            cancellationSignal = cancellationSignal2;
-        } else {
-            cancellationSignal = null;
         }
-        FingerprintManager c2 = c(this.a);
-        if (c2 != null) {
-            if (a0Var != null) {
-                Mac mac = (Mac) a0Var.d;
-                Signature signature = (Signature) a0Var.b;
-                Cipher cipher = (Cipher) a0Var.c;
-                if (cipher != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(cipher);
-                } else if (signature != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(signature);
-                } else if (mac != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(mac);
-                }
-            }
-            c2.authenticate(cryptoObject, cancellationSignal, 0, new k0.a(cVar, 0), null);
-        }
-    }
-
-    public Object b(Context context, v0.e eVar, ft ftVar) {
-        wd.m mVar = new wd.m(1, jc.b(ftVar));
-        mVar.s();
-        CancellationSignal cancellationSignal = new CancellationSignal();
-        mVar.u(new v0.g(cancellationSignal, 0));
-        ge.b bVar = new ge.b(mVar);
-        c3.b bVar2 = new c3.b(3);
-        kotlin.jvm.internal.j.e(context, "context");
-        v0.i c2 = androidx.emoji2.text.n.c(new androidx.emoji2.text.n(this.a, 4), eVar);
-        if (c2 == null) {
-            bVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
-        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            bVar.a(new w0.c(3, "createCredential is not supported on this device"));
-        } else {
-            c2.onCreateCredential(context, eVar, cancellationSignal, bVar2, bVar);
-        }
-        Object r5 = mVar.r();
-        gd.a aVar = gd.a.a;
-        return r5;
+        return iVar;
     }
 }

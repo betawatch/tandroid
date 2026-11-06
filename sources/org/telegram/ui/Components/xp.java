@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class xp extends Drawable implements Drawable.Callback {
     public Drawable a;
@@ -22,10 +22,10 @@ public class xp extends Drawable implements Drawable.Callback {
     public boolean x;
     public float y;
 
-    public xp(Drawable drawable, Drawable drawable2, int i3, int i10) {
+    public xp(Drawable drawable, Drawable drawable2, int i7, int i10) {
         this.a = drawable;
         this.b = drawable2;
-        this.c = i3;
+        this.c = i7;
         this.d = i10;
         if (drawable2 != null) {
             drawable2.setCallback(this);
@@ -47,13 +47,13 @@ public class xp extends Drawable implements Drawable.Callback {
         }
         Drawable drawable2 = this.b;
         if (drawable2 != null) {
-            boolean z10 = this.x;
-            int i3 = this.d;
+            boolean z9 = this.x;
+            int i7 = this.d;
             int i10 = this.c;
-            if (z10) {
+            if (z9) {
                 Rect bounds2 = getBounds();
                 if (i10 != 0) {
-                    drawable2.setBounds(bounds2.left + i10, bounds2.top + i3, bounds2.right - i10, bounds2.bottom - i3);
+                    drawable2.setBounds(bounds2.left + i10, bounds2.top + i7, bounds2.right - i10, bounds2.bottom - i7);
                 } else {
                     drawable2.setBounds(bounds2);
                 }
@@ -61,11 +61,11 @@ public class xp extends Drawable implements Drawable.Callback {
                 int centerX = (getBounds().centerX() - (this.e / 2)) + i10 + this.s;
                 int centerY = getBounds().centerY();
                 int i11 = this.f;
-                int i12 = (centerY - (i11 / 2)) + i3 + this.w;
+                int i12 = (centerY - (i11 / 2)) + i7 + this.w;
                 drawable2.setBounds(centerX, i12, this.e + centerX, i11 + i12);
             } else {
                 int centerX2 = (getBounds().centerX() - (drawable2.getIntrinsicWidth() / 2)) + i10;
-                int centerY2 = (getBounds().centerY() - (drawable2.getIntrinsicHeight() / 2)) + i3;
+                int centerY2 = (getBounds().centerY() - (drawable2.getIntrinsicHeight() / 2)) + i7;
                 drawable2.setBounds(centerX2, centerY2, drawable2.getIntrinsicWidth() + centerX2, drawable2.getIntrinsicHeight() + centerY2);
             }
             drawable2.draw(canvas);
@@ -80,26 +80,26 @@ public class xp extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
-        int i3 = this.n;
-        return i3 != 0 ? i3 : this.a.getIntrinsicHeight();
+        int i7 = this.n;
+        return i7 != 0 ? i7 : this.a.getIntrinsicHeight();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
-        int i3 = this.h;
-        return i3 != 0 ? i3 : this.a.getIntrinsicWidth();
+        int i7 = this.h;
+        return i7 != 0 ? i7 : this.a.getIntrinsicWidth();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getMinimumHeight() {
-        int i3 = this.n;
-        return i3 != 0 ? i3 : this.a.getMinimumHeight();
+        int i7 = this.n;
+        return i7 != 0 ? i7 : this.a.getMinimumHeight();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getMinimumWidth() {
-        int i3 = this.h;
-        return i3 != 0 ? i3 : this.a.getMinimumWidth();
+        int i7 = this.h;
+        return i7 != 0 ? i7 : this.a.getMinimumWidth();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -133,14 +133,14 @@ public class xp extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        scheduleSelf(runnable, j10);
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        this.b.setAlpha(i3);
-        this.a.setAlpha(i3);
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
+        this.a.setAlpha(i7);
     }
 
     @Override // android.graphics.drawable.Drawable

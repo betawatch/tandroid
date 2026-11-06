@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
@@ -65,16 +65,16 @@ public final class TemplateWrapper {
         return this.mIsRefresh;
     }
 
-    public void setCurrentTaskStep(int i3) {
-        this.mCurrentTaskStep = i3;
+    public void setCurrentTaskStep(int i7) {
+        this.mCurrentTaskStep = i7;
     }
 
     public void setId(String str) {
         this.mId = str;
     }
 
-    public void setRefresh(boolean z10) {
-        this.mIsRefresh = z10;
+    public void setRefresh(boolean z9) {
+        this.mIsRefresh = z9;
     }
 
     public void setTemplate(x0 x0Var) {
@@ -89,7 +89,7 @@ public final class TemplateWrapper {
         StringBuilder sb2 = new StringBuilder("[template: ");
         sb2.append(this.mTemplate);
         sb2.append(", ID: ");
-        return a1.g.s(sb2, this.mId, "]");
+        return a8.p0.s(sb2, this.mId, "]");
     }
 
     public static TemplateWrapper wrap(x0 x0Var, String str) {

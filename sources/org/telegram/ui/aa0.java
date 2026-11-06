@@ -1,190 +1,160 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.location.Location;
-import android.location.LocationManager;
-import android.os.Parcel;
-import android.os.RemoteException;
+import android.net.Uri;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
-import com.google.android.gms.maps.model.LatLng;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aa0 implements q0.a {
+public final /* synthetic */ class aa0 implements org.telegram.messenger.bb, org.telegram.ui.ActionBar.r1, org.telegram.messenger.db, jg.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ la0 b;
+    public final /* synthetic */ pa0 b;
 
-    public /* synthetic */ aa0(la0 la0Var, int i3) {
-        this.a = i3;
-        this.b = la0Var;
+    public /* synthetic */ aa0(pa0 pa0Var, int i7) {
+        this.a = i7;
+        this.b = pa0Var;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        ImageView imageView;
-        org.telegram.messenger.kd h;
-        int i3;
-        switch (this.a) {
+    @Override // jg.b
+    public void a() {
+        pa0 pa0Var = this.b;
+        pa0Var.v0 = false;
+        pa0Var.L0();
+    }
+
+    @Override // org.telegram.messenger.bb
+    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ia iaVar) {
+        MotionEvent motionEvent2;
+        Location location;
+        int i7 = this.a;
+        pa0 pa0Var = this.b;
+        switch (i7) {
             case 0:
-                la0 la0Var = this.b;
-                la0Var.F = (org.telegram.messenger.z9) obj;
-                int i10 = org.telegram.messenger.g0.B(la0Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6)) < 0.721f ? R.raw.mapstyle_night : 0;
-                int i11 = 1;
-                if (i10 != 0) {
-                    la0Var.i0 = true;
-                    la0Var.F.i(((mb.b) org.telegram.messenger.t0.k()).loadRawResourceStyle(org.telegram.messenger.t0.b, i10));
+                pa0Var.D0();
+                if (pa0Var.J != 0.0f) {
+                    motionEvent = MotionEvent.obtain(motionEvent);
+                    motionEvent.offsetLocation(0.0f, (-pa0Var.J) / 2.0f);
+                    motionEvent2 = motionEvent;
+                } else {
+                    motionEvent2 = null;
                 }
-                la0Var.F.o(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), la0Var.t0());
-                int i12 = 5;
-                if (la0Var.F != null) {
-                    ((ai.c0) ((b8.ke) la0Var.H).b).animate().alpha(1.0f).setStartDelay(200L).setDuration(100L).setUpdateListener(new b3(la0Var, 15)).start();
-                    float f10 = la0Var.P0 ? la0Var.F.f() + 4.0f : la0Var.F.e() - 4.0f;
-                    TLRPC.TL_channelLocation tL_channelLocation = la0Var.C0;
-                    if (tL_channelLocation != null) {
-                        TLRPC.GeoPoint geoPoint = tL_channelLocation.geo_point;
-                        double d = geoPoint.lat;
-                        double d10 = geoPoint._long;
-                        ha0 ha0Var = new ha0();
-                        if (org.telegram.messenger.m5.E(la0Var.m0)) {
-                            ha0Var.c = la0Var.getMessagesController().a2(Long.valueOf(la0Var.m0));
-                        } else {
-                            ha0Var.d = la0Var.getMessagesController().M0(Long.valueOf(-la0Var.m0));
-                        }
-                        ha0Var.a = la0Var.m0;
-                        la0Var.H0(ha0Var);
-                        try {
-                            gi.v5 v5Var = (gi.v5) ((mb.b) org.telegram.messenger.t0.k()).onCreateMarkerOptions();
-                            ((l8.g) v5Var.b).a = new LatLng(d, d10);
-                            Bitmap n02 = la0Var.n0(ha0Var);
-                            if (n02 != null) {
-                                ((l8.g) v5Var.b).d = b8.wd.a(n02);
-                                l8.g gVar = (l8.g) v5Var.b;
-                                gVar.e = 0.5f;
-                                gVar.f = 0.907f;
-                                ha0Var.e = la0Var.F.a(v5Var);
-                                if (!org.telegram.messenger.l10.B(ha0Var.c)) {
-                                    gi.v5 v5Var2 = (gi.v5) ((mb.b) org.telegram.messenger.t0.k()).onCreateMarkerOptions();
-                                    ((l8.g) v5Var2.b).a = new LatLng(d, d10);
-                                    l8.g gVar2 = (l8.g) v5Var2.b;
-                                    gVar2.r = true;
-                                    gVar2.d = b8.wd.b(R.drawable.map_pin_circle);
-                                    l8.g gVar3 = (l8.g) v5Var2.b;
-                                    gVar3.e = 0.5f;
-                                    gVar3.f = 0.5f;
-                                    ha0Var.f = la0Var.F.a(v5Var2);
-                                }
-                                la0Var.o0.add(ha0Var);
-                                la0Var.p0.k(ha0Var, ha0Var.a);
-                            }
-                        } catch (Exception e10) {
-                            org.telegram.messenger.a8.g(e10, true);
-                        }
-                        la0Var.F.h(((mb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(ha0Var.e.a(), f10));
-                    } else {
-                        org.telegram.messenger.zi ziVar = la0Var.E0;
-                        if (ziVar == null) {
-                            Location location = new Location("network");
-                            la0Var.A0 = location;
-                            TLRPC.TL_channelLocation tL_channelLocation2 = la0Var.D0;
-                            if (tL_channelLocation2 != null) {
-                                TLRPC.GeoPoint geoPoint2 = tL_channelLocation2.geo_point;
-                                la0Var.F.h(((mb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(new org.telegram.messenger.va(geoPoint2.lat, geoPoint2._long), f10));
-                                la0Var.A0.setLatitude(la0Var.D0.geo_point.lat);
-                                la0Var.A0.setLongitude(la0Var.D0.geo_point._long);
-                                la0Var.A0.setAccuracy(la0Var.D0.geo_point.accuracy_radius);
-                                la0Var.Q.L(la0Var.A0);
-                            } else {
-                                location.setLatitude(20.659322d);
-                                la0Var.A0.setLongitude(-11.40625d);
-                            }
-                        } else if (ziVar.D3()) {
-                            ha0 i02 = la0Var.i0(la0Var.E0.k);
-                            if (!la0Var.v0()) {
-                                la0Var.F.h(((mb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(i02.e.a(), f10));
-                            }
-                        } else {
-                            double latitude = la0Var.A0.getLatitude();
-                            double longitude = la0Var.A0.getLongitude();
-                            org.telegram.messenger.va vaVar = new org.telegram.messenger.va(latitude, longitude);
-                            try {
-                                org.telegram.messenger.z9 z9Var = la0Var.F;
-                                gi.v5 v5Var3 = (gi.v5) ((mb.b) org.telegram.messenger.t0.k()).onCreateMarkerOptions();
-                                ((l8.g) v5Var3.b).a = new LatLng(latitude, longitude);
-                                ((l8.g) v5Var3.b).d = b8.wd.b(R.drawable.map_pin2);
-                                z9Var.a(v5Var3);
-                            } catch (Exception e11) {
-                                org.telegram.messenger.a8.g(e11, true);
-                            }
-                            la0Var.F.h(((mb.b) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom(vaVar, f10));
-                            la0Var.n0 = false;
-                            la0Var.v0();
-                        }
-                    }
-                    try {
-                        la0Var.F.k(true);
-                    } catch (Exception e12) {
-                        org.telegram.messenger.a8.g(e12, false);
-                    }
-                    la0Var.F.g().n2();
-                    la0Var.F.g().s2();
-                    la0Var.F.g().k2();
-                    la0Var.F.l(new x90(la0Var, i12));
-                    la0Var.F.n(new aa0(la0Var, i11));
-                    la0Var.F.m(new u70(1));
-                    org.telegram.messenger.z9 z9Var2 = la0Var.F;
-                    u90 u90Var = new u90(la0Var, 6);
-                    p4.q qVar = z9Var2.a;
-                    org.telegram.messenger.p1 p1Var = new org.telegram.messenger.p1(u90Var, 5);
-                    k8.e eVar = (k8.e) qVar.a;
-                    try {
-                        j8.b bVar = new j8.b(p1Var, (char) 0);
-                        Parcel P0 = eVar.P0();
-                        u7.b.c(P0, bVar);
-                        eVar.T0(P0, 97);
-                        LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
-                        List<String> providers = locationManager.getProviders(true);
-                        Location location2 = null;
-                        for (int size = providers.size() - 1; size >= 0; size--) {
-                            location2 = locationManager.getLastKnownLocation(providers.get(size));
-                            if (location2 != null) {
-                                la0Var.z0 = location2;
-                                la0Var.E0(location2);
-                                if (la0Var.j0 && la0Var.getParentActivity() != null) {
-                                    la0Var.j0 = false;
-                                    la0Var.l0();
-                                }
-                                imageView = la0Var.c;
-                                if (imageView != null && imageView.getVisibility() == 0 && (h = la0Var.getLocationController().h(la0Var.m0)) != null && (i3 = h.f) > 0) {
-                                    la0Var.m0(i3);
-                                }
-                            }
-                        }
-                        la0Var.z0 = location2;
-                        la0Var.E0(location2);
-                        if (la0Var.j0) {
-                            la0Var.j0 = false;
-                            la0Var.l0();
-                        }
-                        imageView = la0Var.c;
-                        if (imageView != null) {
-                            la0Var.m0(i3);
-                        }
-                    } catch (RemoteException e13) {
-                        throw new androidx.car.app.j(e13);
-                    }
+                boolean booleanValue = iaVar.a(motionEvent).booleanValue();
+                if (motionEvent2 != null) {
+                    motionEvent2.recycle();
                 }
-                org.telegram.messenger.g0.h3(new u90(la0Var, 5));
-                return;
+                return booleanValue;
             default:
-                la0 la0Var2 = this.b;
-                Location location3 = (Location) obj;
-                la0Var2.E0(location3);
-                la0Var2.getLocationController().n(location3, la0Var2.l0);
-                la0Var2.l0 = false;
+                if (pa0Var.D0 == null && pa0Var.B0 == null) {
+                    if (motionEvent.getAction() == 0) {
+                        AnimatorSet animatorSet = pa0Var.r0;
+                        if (animatorSet != null) {
+                            animatorSet.cancel();
+                        }
+                        AnimatorSet animatorSet2 = new AnimatorSet();
+                        pa0Var.r0 = animatorSet2;
+                        animatorSet2.setDuration(200L);
+                        pa0Var.r0.playTogether(ObjectAnimator.ofFloat(pa0Var.T, (Property<View, Float>) View.TRANSLATION_Y, pa0Var.A0 - org.telegram.messenger.g0.L(10.0f)));
+                        pa0Var.r0.start();
+                    } else if (motionEvent.getAction() == 1) {
+                        AnimatorSet animatorSet3 = pa0Var.r0;
+                        if (animatorSet3 != null) {
+                            animatorSet3.cancel();
+                        }
+                        pa0Var.J = 0.0f;
+                        AnimatorSet animatorSet4 = new AnimatorSet();
+                        pa0Var.r0 = animatorSet4;
+                        animatorSet4.setDuration(200L);
+                        pa0Var.r0.playTogether(ObjectAnimator.ofFloat(pa0Var.T, (Property<View, Float>) View.TRANSLATION_Y, pa0Var.A0));
+                        pa0Var.r0.start();
+                        pa0Var.P.H();
+                    }
+                    if (motionEvent.getAction() == 2) {
+                        if (!pa0Var.E0) {
+                            ImageView imageView = pa0Var.a;
+                            int i10 = org.telegram.ui.ActionBar.k6.ij;
+                            org.telegram.ui.ActionBar.r6.t(imageView, i10, pa0Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+                            pa0Var.a.setTag(Integer.valueOf(i10));
+                            pa0Var.E0 = true;
+                        }
+                        org.telegram.messenger.fa faVar = pa0Var.E;
+                        if (faVar != null && (location = pa0Var.z0) != null) {
+                            location.setLatitude(((org.telegram.messenger.cb) faVar.d().b).a);
+                            pa0Var.z0.setLongitude(((org.telegram.messenger.cb) pa0Var.E.d().b).b);
+                        }
+                        pa0Var.P.L(pa0Var.z0);
+                    }
+                }
+                return iaVar.a(motionEvent).booleanValue();
+        }
+    }
+
+    @Override // org.telegram.messenger.db
+    public void c(int i7) {
+        View childAt;
+        pa0 pa0Var = this.b;
+        int i10 = pa0Var.H0;
+        if (i7 == 1) {
+            pa0Var.p0 = -1L;
+            if (pa0Var.q0) {
+                pa0Var.q0 = false;
+                pa0Var.N0();
+            }
+            if (pa0Var.M) {
                 return;
+            }
+            if ((i10 == 0 || i10 == 1) && pa0Var.Q.getChildCount() > 0 && (childAt = pa0Var.Q.getChildAt(0)) != null) {
+                zs zsVar = pa0Var.Q;
+                View F = zsVar.F(childAt);
+                v4.d1 T = F == null ? null : zsVar.T(F);
+                if (T == null || T.b() != 0) {
+                    return;
+                }
+                int L = i10 == 0 ? 0 : org.telegram.messenger.g0.L(66.0f);
+                int top = childAt.getTop();
+                if (top < (-L)) {
+                    fi.y4 d = pa0Var.E.d();
+                    pa0Var.H = ((nb.a) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.cb) d.b, d.c);
+                    pa0Var.Q.w0(0, top + L, null);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 2:
+                pa0 pa0Var = this.b;
+                if (pa0Var.getParentActivity() != null) {
+                    try {
+                        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                        intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                        pa0Var.getParentActivity().startActivity(intent);
+                        break;
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
+                    }
+                }
+                break;
+            default:
+                pa0 pa0Var2 = this.b;
+                if (pa0Var2.getParentActivity() != null) {
+                    try {
+                        pa0Var2.getParentActivity().startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
         }
     }
 }

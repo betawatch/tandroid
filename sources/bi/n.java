@@ -1,46 +1,68 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import b8.mf;
-import org.telegram.messenger.bd;
+import android.view.View;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class n extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final /* synthetic */ h0 c;
+public final /* synthetic */ class n implements View.OnFocusChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(h0 h0Var, Context context) {
-        super(context);
-        this.c = h0Var;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextColor(h0Var.y);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(16);
-        addView(textView, mf.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextColor(-1);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setGravity(17);
-        textView2.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
-        textView2.setText(bd.M0(2131743886, null));
-        GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setColor(620756991);
-        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(13.0f));
-        textView2.setBackground(gradientDrawable);
-        textView2.setOnClickListener(new ai.b(this, 5));
-        addView(textView2, mf.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
+    public /* synthetic */ n(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z9) {
+        switch (this.a) {
+            case 0:
+                u uVar = ((z) this.b).V;
+                float f10 = z9 ? 1.0f : 0.0f;
+                uVar.b(f10, f10, true);
+                break;
+            case 1:
+                ((a1) this.b).V1.c(z9, !TextUtils.isEmpty(r2.W1.getText()));
+                break;
+            case 2:
+                ((e1) this.b).m1.c(z9, !TextUtils.isEmpty(r2.n1.getText()));
+                break;
+            case 3:
+                ((h1) this.b).i1.c(z9, !TextUtils.isEmpty(r2.j1.getText()));
+                break;
+            case 4:
+                ch.l lVar = (ch.l) this.b;
+                if (!z9) {
+                    lVar.I();
+                    break;
+                } else {
+                    lVar.J(true);
+                    Runnable runnable = lVar.a2;
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                li.a6.a((li.a6) this.b, z9);
+                break;
+            case 6:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) ((org.telegram.ui.t4) this.b).f;
+                if (!z9 && TextUtils.isEmpty(editTextBoldCursor.getText())) {
+                    editTextBoldCursor.setText("0");
+                    break;
+                }
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor2 = ((sg.p) this.b).d;
+                if (!z9 && TextUtils.isEmpty(editTextBoldCursor2.getText())) {
+                    editTextBoldCursor2.setText("0");
+                    break;
+                }
+                break;
+        }
     }
 }

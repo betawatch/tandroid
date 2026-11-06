@@ -1,39 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w5 implements v50 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z5 b;
-    public final /* synthetic */ org.telegram.messenger.s2 c;
+public final class w5 extends rg.a {
+    public final org.telegram.messenger.s2 c;
 
-    public /* synthetic */ w5(z5 z5Var, org.telegram.messenger.s2 s2Var, int i3) {
-        this.a = i3;
-        this.b = z5Var;
+    public w5(int i7, org.telegram.messenger.s2 s2Var) {
+        super(i7, false);
         this.c = s2Var;
     }
 
-    @Override // org.telegram.ui.v50
-    public final void a(int i3) {
-        switch (this.a) {
-            case 0:
-                z5 z5Var = this.b;
-                org.telegram.messenger.s2 s2Var = this.c;
-                if (i3 == 4) {
-                    z5Var.d.remove(s2Var);
-                    z5Var.Z();
-                } else {
-                    s2Var.b = i3;
-                    org.telegram.messenger.g0.b4(z5Var.b);
-                }
-                z5Var.getMessagesController().r7.h(z5Var.e, z5Var.d);
-                break;
-            default:
-                this.c.b = i3;
-                z5 z5Var2 = this.b;
-                z5Var2.getMessagesController().r7.h(z5Var2.e, z5Var2.d);
-                org.telegram.messenger.g0.b4(z5Var2.b);
-                break;
+    public final boolean equals(Object obj) {
+        org.telegram.messenger.s2 s2Var;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || w5.class != obj.getClass()) {
+            return false;
+        }
+        w5 w5Var = (w5) obj;
+        if (this.a != w5Var.a) {
+            return false;
+        }
+        org.telegram.messenger.s2 s2Var2 = this.c;
+        return s2Var2 == null || (s2Var = w5Var.c) == null || s2Var2.a == s2Var.a;
     }
 }

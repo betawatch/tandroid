@@ -1,36 +1,60 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class vj0 extends View implements org.telegram.ui.ActionBar.z5 {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class vj0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj0 b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public vj0(xj0 xj0Var, int i7) {
+        this.b = xj0Var;
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            this.a.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ui, false));
-            this.b.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vi, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length;
+        String code;
+        xj0 xj0Var = this.b;
+        if (!xj0Var.H && (length = editable.length()) >= 1) {
+            int i7 = this.a;
+            if (length > 1) {
+                String obj = editable.toString();
+                xj0Var.H = true;
+                for (int i10 = 0; i10 < Math.min(xj0Var.O - i7, length); i10++) {
+                    if (i10 == 0) {
+                        editable.replace(0, length, obj.substring(i10, i10 + 1));
+                    } else {
+                        xj0Var.d[i7 + i10].setText(obj.substring(i10, i10 + 1));
+                    }
+                }
+                xj0Var.H = false;
+            }
+            if (i7 != xj0Var.O - 1) {
+                int i11 = i7 + 1;
+                EditTextBoldCursor editTextBoldCursor = xj0Var.d[i11];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                xj0Var.d[i11].requestFocus();
+            }
+            int i12 = xj0Var.O;
+            if (i7 == i12 - 1 || (i7 == i12 - 2 && length >= 2)) {
+                code = xj0Var.getCode();
+                if (code.length() == xj0Var.O) {
+                    xj0Var.h(null);
+                }
+            }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

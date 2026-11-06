@@ -1,115 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class tn0 extends FrameLayout {
+public final class tn0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oo0 b;
+    public final /* synthetic */ mo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ tn0(oo0 oo0Var, Context context, int i3) {
-        super(context);
-        this.a = i3;
-        this.b = oo0Var;
+    public /* synthetic */ tn0(mo0 mo0Var, int i7) {
+        this.a = i7;
+        this.b = mo0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                oo0 oo0Var = this.b;
-                oo0Var.P2.setBounds(0, (int) oo0Var.n2, getMeasuredWidth(), getMeasuredHeight());
-                oo0Var.P2.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, oo0Var.n2, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
+                org.telegram.messenger.g0.h3(new ob0(this, 25));
                 break;
             default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                oo0 oo0Var = this.b;
-                tn0 tn0Var = oo0Var.k1;
-                float f10 = oo0Var.o2;
-                if (f10 != 0.0f && f10 != tn0Var.getTop() + oo0Var.o2) {
-                    ValueAnimator valueAnimator = oo0Var.p2;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
+                mo0 mo0Var = this.b;
+                fo0 fo0Var = mo0Var.C1;
+                av0 av0Var = mo0Var.I1;
+                r00 r00Var = mo0Var.q2;
+                if (!TextUtils.isEmpty(r00Var.r.getText())) {
+                    mo0Var.K0(false);
+                }
+                if (mo0Var.s2) {
+                    String obj = r00Var.r.getText().toString();
+                    if (obj.length() != 0) {
+                        if (av0Var != null) {
+                            av0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+                        }
+                    } else if (mo0Var.x1.getAdapter() != fo0Var) {
+                        int J0 = mo0.J0(mo0Var);
+                        av0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+                        av0Var.e(false, true);
+                        mo0Var.K0(false);
+                        fo0Var.f();
+                        if (J0 > 0) {
+                            mo0Var.z1.h1(0, -J0);
+                        }
                     }
-                    float top = oo0Var.o2 - (tn0Var.getTop() + oo0Var.n2);
-                    oo0Var.n2 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    oo0Var.p2 = ofFloat;
-                    ofFloat.addUpdateListener(new y50(this, 17));
-                    oo0Var.p2.setInterpolator(xq.f);
-                    oo0Var.p2.setDuration(200L);
-                    oo0Var.p2.start();
-                    oo0Var.o2 = 0.0f;
-                }
-                oo0Var.L1[1].setTranslationY((-(tn0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))) + oo0Var.n2 + oo0Var.m2 + ((1.0f - getAlpha()) * (tn0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.bd.G(this.b.N1.m(), "AccDescrShareInChats", new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i3) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i3);
-                if (i3 != 0) {
-                    this.b.L1[1].setTranslationY(0.0f);
-                    break;
+                    jo0 jo0Var = mo0Var.E1;
+                    if (jo0Var != null) {
+                        jo0Var.E(obj);
+                        break;
+                    }
                 }
                 break;
-            default:
-                super.setVisibility(i3);
-                break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

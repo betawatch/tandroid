@@ -6,13 +6,13 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
 
     @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i3, Bundle bundle) {
+    public final void onReceiveResult(int i7, Bundle bundle) {
         d dVar;
         h hVar = (h) this.a.get();
         if (hVar == null || bundle == null) {
@@ -35,7 +35,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
                 }
             }
             mediaSessionCompat$Token.b(dVar);
-            hVar.e.c(a5.a.a(bundle));
+            hVar.e.c(b5.a.c(bundle));
             hVar.a();
         }
     }

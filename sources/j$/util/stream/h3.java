@@ -24,8 +24,8 @@ public abstract class h3 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i3) {
-        return j$.com.android.tools.r8.a.o(this, i3);
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        return j$.com.android.tools.r8.a.o(this, i7);
     }
 
     @Override // j$.util.Spliterator
@@ -101,9 +101,9 @@ public abstract class h3 implements Spliterator {
         }
         if (this.b < e2Var.h() - 1) {
             e2 e2Var2 = this.a;
-            int i3 = this.b;
-            this.b = i3 + 1;
-            return e2Var2.a(i3).spliterator();
+            int i7 = this.b;
+            this.b = i7 + 1;
+            return e2Var2.a(i7).spliterator();
         }
         e2 a10 = this.a.a(this.b);
         this.a = a10;
@@ -119,7 +119,7 @@ public abstract class h3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        long j10 = 0;
+        long j3 = 0;
         if (this.a == null) {
             return 0L;
         }
@@ -127,10 +127,10 @@ public abstract class h3 implements Spliterator {
         if (spliterator != null) {
             return spliterator.estimateSize();
         }
-        for (int i3 = this.b; i3 < this.a.h(); i3++) {
-            j10 += this.a.a(i3).count();
+        for (int i7 = this.b; i7 < this.a.h(); i7++) {
+            j3 += this.a.a(i7).count();
         }
-        return j10;
+        return j3;
     }
 
     @Override // j$.util.Spliterator

@@ -1,30 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class g8 extends AnimatorListenerAdapter {
+public final /* synthetic */ class g8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r8 b;
+    public final /* synthetic */ t8 b;
 
-    public /* synthetic */ g8(r8 r8Var, int i3) {
-        this.a = i3;
-        this.b = r8Var;
+    public /* synthetic */ g8(t8 t8Var, int i7) {
+        this.a = i7;
+        this.b = t8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                this.b.f = false;
+                t8 t8Var = this.b;
+                if (!t8Var.U) {
+                    if (t8Var.N <= 0.0f) {
+                        t8Var.l0(!t8Var.a.w, true, false);
+                        break;
+                    } else {
+                        if (t8Var.M != null) {
+                            t8Var.E = 1.0f;
+                            t8Var.F = true;
+                        }
+                        org.telegram.messenger.g0.v1(t8Var.fragmentView);
+                        break;
+                    }
+                }
                 break;
             default:
-                r8 r8Var = this.b;
-                r8Var.n0(false, r8Var.G ? 1.0f : 0.0f);
-                r8Var.G = false;
+                t8 t8Var2 = this.b;
+                t8Var2.getClass();
+                t8Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
                 break;
         }
     }

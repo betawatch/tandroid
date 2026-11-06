@@ -1,38 +1,73 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o01 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q01 b;
+public final class o01 extends t01 {
+    public final /* synthetic */ int m3;
+    public final /* synthetic */ q11 n3;
 
-    public /* synthetic */ o01(q01 q01Var, int i3) {
-        this.a = i3;
-        this.b = q01Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o01(q11 q11Var, Context context, int i7) {
+        super(q11Var, context);
+        this.n3 = q11Var;
+        this.m3 = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.J = null;
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                this.b.J = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                q01 q01Var = this.b;
-                q01Var.O = 0.0f;
-                q01Var.J = null;
-                q01Var.N = false;
-                q01Var.d(true, false);
-                break;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i7) {
+        if (i7 == 0) {
+            q11 q11Var = this.n3;
+            q11Var.x1 = false;
+            if (q11Var.a == -1 || q11Var.f0.getVisibility() != 0 || q11Var.f0.getTranslationY() <= (-org.telegram.messenger.g0.L(51.0f))) {
+                return;
+            }
+            q11.a(q11Var, q11Var.f0.getTranslationY() > ((float) (-org.telegram.messenger.g0.L(16.0f))) ? 0 : 1, 0);
         }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i7) {
+        int i10;
+        q11 q11Var = this.n3;
+        q11Var.h();
+        if (!q11Var.x1) {
+            int I0 = q11Var.r0.I0();
+            ArrayList arrayList = q11Var.D0;
+            SparseIntArray sparseIntArray = q11Var.w0;
+            if (I0 != -1) {
+                if (I0 > ((arrayList.size() <= 40 || q11Var.C0) ? arrayList.size() + (q11Var.N0 ? 1 : 0) : 40) && I0 > q11Var.I0.size()) {
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 >= sparseIntArray.size()) {
+                            break;
+                        }
+                        int keyAt = sparseIntArray.keyAt(i11);
+                        int valueAt = sparseIntArray.valueAt(i11);
+                        org.telegram.ui.Components.tw twVar = valueAt >= 0 ? (org.telegram.ui.Components.tw) q11Var.M0.get(valueAt) : null;
+                        if (twVar != null) {
+                            boolean z9 = twVar.h;
+                            int size = twVar.c.size();
+                            if (!z9) {
+                                size = Math.min(24, size);
+                            }
+                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
+                                org.telegram.ui.Components.av avVar = q11Var.d0;
+                                avVar.j(((avVar.E == null || !avVar.b0) ? 0 : 1) + (avVar.D != null ? 1 : 0) + valueAt, true);
+                            }
+                        }
+                        i11++;
+                    }
+                } else {
+                    q11Var.d0.j(0, true);
+                }
+            }
+        }
+        q11Var.C();
+        org.telegram.messenger.g0.Z3(q11Var.e0, q11Var.h0.computeVerticalScrollOffset() != 0 || (i10 = this.m3) == 0 || i10 == 12 || i10 == 10 || i10 == 1 || i10 == 11 || i10 == 6, 1.0f, true, true);
+        q11Var.m();
     }
 }

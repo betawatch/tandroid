@@ -132,18 +132,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.cq0;
-import org.telegram.ui.Components.la0;
+import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.o31;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.rx0;
-import org.telegram.ui.Components.tj0;
-import org.telegram.ui.Components.yd0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.qx0;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.l71;
-import org.telegram.ui.qv0;
+import org.telegram.ui.qn0;
+import org.telegram.ui.u71;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class g0 {
     public static final int C;
@@ -242,11 +242,11 @@ public abstract class g0 {
         o0 = new Paint(1);
     }
 
-    public static int A(int i3, int i10) {
-        if (i3 == i10) {
+    public static int A(int i7, int i10) {
+        if (i7 == i10) {
             return 0;
         }
-        return i3 > i10 ? 1 : -1;
+        return i7 > i10 ? 1 : -1;
     }
 
     public static void A0(SurfaceView surfaceView, Bitmap bitmap, Runnable runnable) {
@@ -260,13 +260,13 @@ public abstract class g0 {
         if (str2.isEmpty() || str.isEmpty()) {
             return str.indexOf(str2);
         }
-        for (int i3 = 0; i3 < str.length() && str2.length() + i3 <= str.length(); i3++) {
+        for (int i7 = 0; i7 < str.length() && str2.length() + i7 <= str.length(); i7++) {
             int i10 = 0;
-            for (int i11 = i3; i11 < str.length() && i10 < str2.length() && Character.toLowerCase(str.charAt(i11)) == Character.toLowerCase(str2.charAt(i10)); i11++) {
+            for (int i11 = i7; i11 < str.length() && i10 < str2.length() && Character.toLowerCase(str.charAt(i11)) == Character.toLowerCase(str2.charAt(i10)); i11++) {
                 i10++;
             }
             if (i10 == str2.length()) {
-                return i3;
+                return i7;
             }
         }
         return -1;
@@ -277,8 +277,8 @@ public abstract class g0 {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i3 = 0; i3 < list.size(); i3++) {
-            Bitmap bitmap = (Bitmap) list.get(i3);
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            Bitmap bitmap = (Bitmap) list.get(i7);
             if (bitmap != null && !bitmap.isRecycled()) {
                 arrayList.add(new WeakReference(bitmap));
             }
@@ -286,31 +286,31 @@ public abstract class g0 {
         i3(new k(1, arrayList), 36L);
     }
 
-    public static void A3(org.telegram.ui.s2 s2Var, int i3) {
+    public static void A3(org.telegram.ui.r2 r2Var, int i7) {
         if (Build.VERSION.SDK_INT >= 29) {
-            s2Var.setEdgeEffectColor(i3);
+            r2Var.setEdgeEffectColor(i7);
             return;
         }
         try {
             Field declaredField = HorizontalScrollView.class.getDeclaredField("mEdgeGlowLeft");
             declaredField.setAccessible(true);
-            EdgeEffect edgeEffect = (EdgeEffect) declaredField.get(s2Var);
+            EdgeEffect edgeEffect = (EdgeEffect) declaredField.get(r2Var);
             if (edgeEffect != null) {
-                edgeEffect.setColor(i3);
+                edgeEffect.setColor(i7);
             }
             Field declaredField2 = HorizontalScrollView.class.getDeclaredField("mEdgeGlowRight");
             declaredField2.setAccessible(true);
-            EdgeEffect edgeEffect2 = (EdgeEffect) declaredField2.get(s2Var);
+            EdgeEffect edgeEffect2 = (EdgeEffect) declaredField2.get(r2Var);
             if (edgeEffect2 != null) {
-                edgeEffect2.setColor(i3);
+                edgeEffect2.setColor(i7);
             }
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    public static float B(int i3) {
-        return com.google.android.recaptcha.internal.a.x(Color.blue(i3), 0.0722f, (Color.green(i3) * 0.7152f) + (Color.red(i3) * 0.2126f), 255.0f);
+    public static float B(int i7) {
+        return com.google.android.recaptcha.internal.a.y(Color.blue(i7), 0.0722f, (Color.green(i7) * 0.7152f) + (Color.red(i7) * 0.2126f), 255.0f);
     }
 
     public static Bitmap B0(Window window) {
@@ -320,10 +320,10 @@ public abstract class g0 {
             final CountDownLatch countDownLatch = new CountDownLatch(1);
             PixelCopy.request(window, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.messenger.n
                 @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-                public final void onPixelCopyFinished(int i3) {
+                public final void onPixelCopyFinished(int i7) {
                     boolean[] zArr2 = zArr;
                     CountDownLatch countDownLatch2 = countDownLatch;
-                    zArr2[0] = i3 == 0;
+                    zArr2[0] = i7 == 0;
                     countDownLatch2.countDown();
                 }
             }, Utilities.g.b());
@@ -340,28 +340,28 @@ public abstract class g0 {
         return null;
     }
 
-    public static boolean B1(int i3, int i10, int i11, int i12) {
-        return Math.max(i3, i10) > Math.min(i11, i12) && Math.max(i11, i12) > Math.min(i3, i10);
+    public static boolean B1(int i7, int i10, int i11, int i12) {
+        return Math.max(i7, i10) > Math.min(i11, i12) && Math.max(i11, i12) > Math.min(i7, i10);
     }
 
-    public static void B2(Activity activity, int i3) {
-        if (activity == null || Q1() || N != i3) {
+    public static void B2(Activity activity, int i7) {
+        if (activity == null || Q1() || N != i7) {
             return;
         }
         activity.getWindow().setSoftInputMode(32);
     }
 
-    public static void B3(View view, int i3, int i10, int i11, int i12) {
+    public static void B3(View view, int i7, int i10, int i11, int i12) {
         if (view == null) {
             return;
         }
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-            if (marginLayoutParams.leftMargin == i3 && marginLayoutParams.topMargin == i10 && marginLayoutParams.rightMargin == i11 && marginLayoutParams.bottomMargin == i12) {
+            if (marginLayoutParams.leftMargin == i7 && marginLayoutParams.topMargin == i10 && marginLayoutParams.rightMargin == i11 && marginLayoutParams.bottomMargin == i12) {
                 return;
             }
-            marginLayoutParams.leftMargin = i3;
+            marginLayoutParams.leftMargin = i7;
             marginLayoutParams.topMargin = i10;
             marginLayoutParams.rightMargin = i11;
             marginLayoutParams.bottomMargin = i12;
@@ -373,7 +373,7 @@ public abstract class g0 {
         if (charSequenceArr.length == 0) {
             return "";
         }
-        int i3 = 0;
+        int i7 = 0;
         if (charSequenceArr.length == 1) {
             return charSequenceArr[0];
         }
@@ -381,22 +381,22 @@ public abstract class g0 {
             if (charSequence instanceof Spanned) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 int length = charSequenceArr.length;
-                while (i3 < length) {
-                    CharSequence charSequence2 = charSequenceArr[i3];
+                while (i7 < length) {
+                    CharSequence charSequence2 = charSequenceArr[i7];
                     if (charSequence2 == null) {
                         charSequence2 = "null";
                     }
                     spannableStringBuilder.append(charSequence2);
-                    i3++;
+                    i7++;
                 }
                 return new SpannedString(spannableStringBuilder);
             }
         }
         StringBuilder sb2 = new StringBuilder();
         int length2 = charSequenceArr.length;
-        while (i3 < length2) {
-            sb2.append(charSequenceArr[i3]);
-            i3++;
+        while (i7 < length2) {
+            sb2.append(charSequenceArr[i7]);
+            i7++;
         }
         return sb2.toString();
     }
@@ -419,9 +419,9 @@ public abstract class g0 {
                 fileOutputStream.close();
                 Context context = t0.b;
                 t0.d();
-                Uri d10 = FileProvider.d(context, "org.telegram.messenger.beta.provider", file);
+                Uri d2 = FileProvider.d(context, "org.telegram.messenger.beta.provider", file);
                 fileOutputStream.close();
-                return d10;
+                return d2;
             } finally {
             }
         } catch (Exception e11) {
@@ -437,25 +437,25 @@ public abstract class g0 {
         return I.isEnabled() && I.isTouchExplorationEnabled();
     }
 
-    public static void C2(Activity activity, int i3) {
-        if (activity != null && O == i3) {
+    public static void C2(Activity activity, int i7) {
+        if (activity != null && O == i7) {
             activity.getWindow().clearFlags(131072);
         }
     }
 
-    public static void C3(b5.l lVar, int i3) {
+    public static void C3(c5.k kVar, int i7) {
         try {
-            Field declaredField = b5.l.class.getDeclaredField("g0");
+            Field declaredField = c5.k.class.getDeclaredField("f0");
             declaredField.setAccessible(true);
-            EdgeEffect edgeEffect = (EdgeEffect) declaredField.get(lVar);
+            EdgeEffect edgeEffect = (EdgeEffect) declaredField.get(kVar);
             if (edgeEffect != null) {
-                edgeEffect.setColor(i3);
+                edgeEffect.setColor(i7);
             }
-            Field declaredField2 = b5.l.class.getDeclaredField("h0");
+            Field declaredField2 = c5.k.class.getDeclaredField("g0");
             declaredField2.setAccessible(true);
-            EdgeEffect edgeEffect2 = (EdgeEffect) declaredField2.get(lVar);
+            EdgeEffect edgeEffect2 = (EdgeEffect) declaredField2.get(kVar);
             if (edgeEffect2 != null) {
-                edgeEffect2.setColor(i3);
+                edgeEffect2.setColor(i7);
             }
         } catch (Exception unused) {
         }
@@ -479,9 +479,9 @@ public abstract class g0 {
         String str;
         try {
             PackageInfo packageInfo = t0.b.getPackageManager().getPackageInfo(t0.b.getPackageName(), 0);
-            int i3 = packageInfo.versionCode;
-            int i10 = i3 / 10;
-            int i11 = i3 % 10;
+            int i7 = packageInfo.versionCode;
+            int i10 = i7 / 10;
+            int i11 = i7 % 10;
             if (i11 == 1 || i11 == 2) {
                 str = "store bundled " + Build.CPU_ABI + " " + Build.CPU_ABI2;
             } else {
@@ -489,7 +489,7 @@ public abstract class g0 {
                 str = "universal " + Build.CPU_ABI + " " + Build.CPU_ABI2;
             }
             Locale locale = Locale.US;
-            return bd.a0("TelegramVersion", null, 2131744220, "v" + packageInfo.versionName + " (" + i10 + ") " + str);
+            return hd.a0("TelegramVersion", null, 2131744211, "v" + packageInfo.versionName + " (" + i10 + ") " + str);
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
@@ -509,11 +509,11 @@ public abstract class g0 {
         return (pattern == null || (matcher = pattern.matcher(str)) == null) ? str : matcher.replaceAll("$1");
     }
 
-    public static void D3(boolean z10) {
+    public static void D3(boolean z9) {
         synchronized (l) {
             try {
                 try {
-                    if (z10) {
+                    if (z9) {
                         if (d0 == null) {
                             IntentFilter intentFilter = new IntentFilter("android.intent.action.PHONE_STATE");
                             if (Build.VERSION.SDK_INT >= 33) {
@@ -579,17 +579,17 @@ public abstract class g0 {
             a8.b("external dir mounted");
             try {
                 File[] externalCacheDirs = t0.b.getExternalCacheDirs();
-                int i3 = 0;
+                int i7 = 0;
                 File file = externalCacheDirs[0];
-                if (!TextUtils.isEmpty(az.h0)) {
+                if (!TextUtils.isEmpty(iz.h0)) {
                     while (true) {
-                        if (i3 < externalCacheDirs.length) {
-                            File file2 = externalCacheDirs[i3];
-                            if (file2 != null && file2.getAbsolutePath().startsWith(az.h0)) {
-                                file = externalCacheDirs[i3];
+                        if (i7 < externalCacheDirs.length) {
+                            File file2 = externalCacheDirs[i7];
+                            if (file2 != null && file2.getAbsolutePath().startsWith(iz.h0)) {
+                                file = externalCacheDirs[i7];
                                 break;
                             }
-                            i3++;
+                            i7++;
                         } else {
                             break;
                         }
@@ -658,18 +658,18 @@ public abstract class g0 {
         ((ViewGroup) view.getParent()).removeView(view);
     }
 
-    public static void E3(boolean z10) {
+    public static void E3(boolean z9) {
         synchronized (k) {
             try {
-                j = z10;
-                if (z10) {
+                j = z9;
+                if (z9) {
                     try {
-                        l7.a aVar = new l7.a(t0.b, a6.a.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
+                        m7.a aVar = new m7.a(t0.b, b6.a.l, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
                         com.google.android.gms.common.api.internal.s b10 = com.google.android.gms.common.api.internal.t.b();
-                        b10.c = new kb.a(aVar, 14);
-                        b10.d = new m6.c[]{l7.b.a};
+                        b10.c = new sa.d(aVar, 14);
+                        b10.d = new n6.c[]{m7.b.a};
                         b10.a = 1567;
-                        aVar.e(1, b10.a()).addOnSuccessListener(new o4.v0(8));
+                        aVar.e(1, b10.a()).addOnSuccessListener(new ni.a(11));
                     } catch (Throwable th2) {
                         a8.g(th2, true);
                     }
@@ -688,10 +688,10 @@ public abstract class g0 {
         }
     }
 
-    public static int F0(int i3, int i10) {
-        int red = Color.red(i3);
-        int green = Color.green(i3);
-        int blue = Color.blue(i3);
+    public static int F0(int i7, int i10) {
+        int red = Color.red(i7);
+        int green = Color.green(i7);
+        int blue = Color.blue(i7);
         int red2 = Color.red(i10);
         int i11 = (red + red2) / 2;
         int i12 = red - red2;
@@ -728,7 +728,7 @@ public abstract class g0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new g(view, 0));
-        ofFloat.addListener(new ei.p2(2, view));
+        ofFloat.addListener(new di.l2(2, view));
         ofFloat.setDuration(300L);
         ofFloat.start();
         view.setTag(R.id.shake_animation, ofFloat);
@@ -775,14 +775,14 @@ public abstract class g0 {
             if (!TextUtils.isEmpty(str)) {
                 return new String[]{str.replace('_', '-')};
             }
-            String Q0 = bd.Q0();
-            yc ycVar = bd.E0().B;
-            String str3 = ycVar.e;
+            String Q0 = hd.Q0();
+            ed edVar = hd.E0().B;
+            String str3 = edVar.e;
             String replace = str3 == null ? "" : str3.replace("_", "-");
             boolean isEmpty = TextUtils.isEmpty(replace);
             String str4 = replace;
             if (isEmpty) {
-                str4 = ycVar.c();
+                str4 = edVar.c();
             }
             if (!Q0.contains(str4) && !str4.contains(Q0)) {
                 str2 = str4;
@@ -815,7 +815,7 @@ public abstract class g0 {
         }
         int L2 = L(f10);
         if (view.getTag(R.id.spring_tag) != null) {
-            ((q1.g) view.getTag(R.id.spring_tag)).d();
+            ((r1.g) view.getTag(R.id.spring_tag)).d();
         }
         Float f11 = (Float) view.getTag(R.id.spring_was_translation_x_tag);
         if (f11 != null) {
@@ -823,12 +823,12 @@ public abstract class g0 {
         }
         view.setTag(R.id.spring_was_translation_x_tag, Float.valueOf(view.getTranslationX()));
         float translationX = view.getTranslationX();
-        q1.g gVar = new q1.g(view, q1.g.o, translationX);
-        q1.h hVar = new q1.h(translationX);
+        r1.g gVar = new r1.g(view, r1.g.o, translationX);
+        r1.h hVar = new r1.h(translationX);
         hVar.b(600.0f);
         gVar.m = hVar;
         gVar.a = (-L2) * 100;
-        gVar.a(new gi.f3(translationX, view, runnable));
+        gVar.a(new fi.h3(translationX, view, runnable));
         view.setTag(R.id.spring_tag, gVar);
         gVar.h();
     }
@@ -838,14 +838,14 @@ public abstract class g0 {
             return null;
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        int i3 = 0;
-        while (i3 < bArr.length) {
-            byte b10 = bArr[i3];
+        int i7 = 0;
+        while (i7 < bArr.length) {
+            byte b10 = bArr[i7];
             if (b10 == 61) {
                 try {
-                    int digit = Character.digit((char) bArr[i3 + 1], 16);
-                    i3 += 2;
-                    byteArrayOutputStream.write((char) ((digit << 4) + Character.digit((char) bArr[i3], 16)));
+                    int digit = Character.digit((char) bArr[i7 + 1], 16);
+                    i7 += 2;
+                    byteArrayOutputStream.write((char) ((digit << 4) + Character.digit((char) bArr[i7], 16)));
                 } catch (Exception e10) {
                     a8.g(e10, true);
                     return null;
@@ -853,7 +853,7 @@ public abstract class g0 {
             } else {
                 byteArrayOutputStream.write(b10);
             }
-            i3++;
+            i7++;
         }
         byte[] byteArray = byteArrayOutputStream.toByteArray();
         try {
@@ -904,8 +904,8 @@ public abstract class g0 {
         return Build.VERSION.SDK_INT >= 24 && activity.isInPictureInPictureMode();
     }
 
-    public static SpannableStringBuilder H2(CharSequence charSequence, boolean z10) {
-        return J2(charSequence, z10, L(2.6666667f), 0.0f, 1.0f, R.drawable.msg_mini_forumarrow);
+    public static SpannableStringBuilder H2(CharSequence charSequence, boolean z9) {
+        return J2(charSequence, z9, L(2.6666667f), 0.0f, 1.0f, R.drawable.msg_mini_forumarrow);
     }
 
     public static void H3(View view) {
@@ -916,21 +916,21 @@ public abstract class g0 {
         return (float) Math.sin((f10 - 0.5f) * 0.47123894f);
     }
 
-    public static i0.b I0(r0.k1 k1Var, boolean z10) {
-        i0.b g7 = k1Var.a.g(647);
+    public static i0.b I0(r0.k1 k1Var, boolean z9) {
+        i0.b g10 = k1Var.a.g(647);
         r0.h1 h1Var = k1Var.a;
-        i0.b a10 = i0.b.a(g7, h1Var.f(647));
-        return z10 ? i0.b.a(a10, h1Var.f(8)) : a10;
+        i0.b a10 = i0.b.a(g10, h1Var.f(647));
+        return z9 ? i0.b.a(a10, h1Var.f(8)) : a10;
     }
 
-    public static boolean I1(Uri uri, int i3) {
+    public static boolean I1(Uri uri, int i7) {
         String str;
         if (uri == null) {
             str = "";
             int i10 = 0;
             while (str.length() <= 4096) {
                 try {
-                    String readlinkFd = Utilities.readlinkFd(i3);
+                    String readlinkFd = Utilities.readlinkFd(i7);
                     if (readlinkFd != null && !readlinkFd.equals(str)) {
                         i10++;
                         if (i10 >= 10) {
@@ -981,8 +981,8 @@ public abstract class g0 {
         return str.toLowerCase().contains("/data/data/" + t0.b.getPackageName());
     }
 
-    public static SpannableStringBuilder I2(CharSequence charSequence, boolean z10, float f10, float f11) {
-        return J2(charSequence, z10, f10, f11, 1.0f, R.drawable.msg_mini_forumarrow);
+    public static SpannableStringBuilder I2(CharSequence charSequence, boolean z9, float f10, float f11) {
+        return J2(charSequence, z9, f10, f11, 1.0f, R.drawable.msg_mini_forumarrow);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0020, code lost:
@@ -993,17 +993,17 @@ public abstract class g0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static boolean I3() {
-        boolean z10;
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 31) {
-            if (sr.j()) {
-                if ((!sr.j() ? 0 : sr.i) == 40000) {
-                    z10 = true;
+        boolean z9;
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 31) {
+            if (as.j()) {
+                if ((!as.j() ? 0 : as.i) == 40000) {
+                    z9 = true;
                 }
             }
-            z10 = false;
+            z9 = false;
         }
-        return i3 < 32;
+        return i7 < 32;
     }
 
     public static void J(View view, Runnable runnable) {
@@ -1020,7 +1020,7 @@ public abstract class g0 {
         }
         float height = (bitmap.getHeight() - 1) / 10.0f;
         float width = (bitmap.getWidth() - 1) / 10.0f;
-        int i3 = 0;
+        int i7 = 0;
         int i10 = 0;
         int i11 = 0;
         int i12 = 0;
@@ -1030,50 +1030,50 @@ public abstract class g0 {
                 if (Color.alpha(pixel) > 200) {
                     int red = Color.red(pixel) + i10;
                     int green = Color.green(pixel) + i11;
-                    i3++;
+                    i7++;
                     i12 = Color.blue(pixel) + i12;
                     i11 = green;
                     i10 = red;
                 }
             }
         }
-        if (i3 == 0) {
+        if (i7 == 0) {
             return 0;
         }
-        return Color.argb(hs.e4, i10 / i3, i11 / i3, i12 / i3);
+        return Color.argb(qs.e4, i10 / i7, i11 / i7, i12 / i7);
     }
 
-    public static boolean J1(org.telegram.ui.ActionBar.d2 d2Var) {
-        ((mb.b) t0.k()).getClass();
+    public static boolean J1(org.telegram.ui.ActionBar.f2 f2Var) {
+        ((nb.a) t0.k()).getClass();
         String str = "com.google.android.apps.maps";
-        int i3 = 0;
+        int i7 = 0;
         try {
             t0.b.getPackageManager().getApplicationInfo("com.google.android.apps.maps", 0);
             return true;
         } catch (PackageManager.NameNotFoundException unused) {
-            if (d2Var.getParentActivity() == null) {
+            if (f2Var.getParentActivity() == null) {
                 return false;
             }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(d2Var.getParentActivity());
-            ((mb.b) t0.k()).getClass();
-            alertDialog$Builder.a.U = bd.M0(2131749204, null);
-            alertDialog$Builder.k(bd.M0(2131747839, null), new o(i3, str, d2Var));
-            alertDialog$Builder.h(bd.M0(2131752589, null), null);
-            d2Var.showDialog(alertDialog$Builder.a);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getParentActivity());
+            ((nb.a) t0.k()).getClass();
+            alertDialog$Builder.a.T = hd.M0(2131749195, null);
+            alertDialog$Builder.k(hd.M0(2131747830, null), new o(i7, str, f2Var));
+            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            f2Var.showDialog(alertDialog$Builder.a);
             return false;
         }
     }
 
-    public static SpannableStringBuilder J2(CharSequence charSequence, boolean z10, float f10, float f11, float f12, int i3) {
-        org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(i3, 0);
+    public static SpannableStringBuilder J2(CharSequence charSequence, boolean z9, float f10, float f11, float f12, int i7) {
+        org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(i7, 0);
         float f13 = f12 * 0.88f;
+        wpVar.H = f13;
         wpVar.I = f13;
-        wpVar.J = f13;
         wpVar.r = -f10;
         wpVar.s = f11;
-        wpVar.H = 0.8f;
-        if (z10) {
-            wpVar.f = z10;
+        wpVar.G = 0.8f;
+        if (z9) {
+            wpVar.f = z9;
         }
         SpannableString spannableString = new SpannableString(" >");
         spannableString.setSpan(wpVar, spannableString.length() - 1, spannableString.length(), 33);
@@ -1081,15 +1081,15 @@ public abstract class g0 {
         SpannableString spannableString2 = new SpannableString(">");
         spannableString2.setSpan(wpVar, 0, 1, 33);
         SpannableStringBuilder M22 = M2(M2, spannableString2, ">");
-        org.telegram.ui.Components.wp wpVar2 = new org.telegram.ui.Components.wp(i3, 0);
+        org.telegram.ui.Components.wp wpVar2 = new org.telegram.ui.Components.wp(i7, 0);
+        wpVar2.H = f13;
         wpVar2.I = f13;
-        wpVar2.J = f13;
         wpVar2.r = f10;
         wpVar2.s = f11;
         wpVar2.w = 180.0f;
-        wpVar2.H = 0.8f;
-        if (z10) {
-            wpVar2.f = z10;
+        wpVar2.G = 0.8f;
+        if (z9) {
+            wpVar2.f = z9;
         }
         SpannableString spannableString3 = new SpannableString("<");
         spannableString3.setSpan(wpVar2, 0, 1, 33);
@@ -1127,7 +1127,7 @@ public abstract class g0 {
         viewTreeObserver.addOnPreDrawListener(onPreDrawListener);
     }
 
-    public static String K0(String str, boolean z10) {
+    public static String K0(String str, boolean z9) {
         if (str == null) {
             return null;
         }
@@ -1142,23 +1142,23 @@ public abstract class g0 {
         if (group != null) {
             group = group.toLowerCase();
         }
-        return (z10 && group != null && group.startsWith("www.")) ? group.substring(4) : group;
+        return (z9 && group != null && group.startsWith("www.")) ? group.substring(4) : group;
     }
 
-    public static boolean K1(char c2) {
+    public static boolean K1(char c10) {
         if (k0 == null) {
             k0 = new HashSet();
-            int i3 = 0;
+            int i7 = 0;
             while (true) {
                 char[] cArr = j0;
-                if (i3 >= cArr.length) {
+                if (i7 >= cArr.length) {
                     break;
                 }
-                k0.add(Character.valueOf(cArr[i3]));
-                i3++;
+                k0.add(Character.valueOf(cArr[i7]));
+                i7++;
             }
         }
-        return k0.contains(Character.valueOf(c2));
+        return k0.contains(Character.valueOf(c10));
     }
 
     public static SpannableStringBuilder K2(CharSequence charSequence, CharSequence charSequence2, String str) {
@@ -1191,7 +1191,7 @@ public abstract class g0 {
 
     public static Pair L0(File file) {
         try {
-            return O0(new t1.g(file));
+            return O0(new u1.g(file));
         } catch (Exception e10) {
             a8.g(e10, true);
             return new Pair(0, 0);
@@ -1200,8 +1200,8 @@ public abstract class g0 {
 
     public static boolean L1(CharSequence charSequence) {
         if (charSequence != null && charSequence.length() > 0) {
-            for (int i3 = 0; i3 < charSequence.length(); i3++) {
-                char charAt = charSequence.charAt(i3);
+            for (int i7 = 0; i7 < charSequence.length(); i7++) {
+                char charAt = charSequence.charAt(i7);
                 if (charAt >= 1424 && charAt <= 1791) {
                     return true;
                 }
@@ -1210,103 +1210,103 @@ public abstract class g0 {
         return false;
     }
 
-    public static SpannableStringBuilder L2(String str, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.qr qrVar) {
+    public static SpannableStringBuilder L2(String str, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.qr qrVar) {
         if (e0 == null) {
             e0 = Pattern.compile("\\[(.+?)\\]\\((.+?)\\)");
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         Matcher matcher = e0.matcher(str);
-        int i3 = 0;
+        int i7 = 0;
         while (matcher.find()) {
-            spannableStringBuilder.append((CharSequence) str, i3, matcher.start());
+            spannableStringBuilder.append((CharSequence) str, i7, matcher.start());
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             spannableStringBuilder.append((CharSequence) group);
-            spannableStringBuilder.setSpan(new v(qrVar, group2, e6Var, 0), spannableStringBuilder.length() - group.length(), spannableStringBuilder.length(), 33);
-            i3 = matcher.end();
+            spannableStringBuilder.setSpan(new v(qrVar, group2, f6Var, 0), spannableStringBuilder.length() - group.length(), spannableStringBuilder.length(), 33);
+            i7 = matcher.end();
         }
-        spannableStringBuilder.append((CharSequence) str, i3, str.length());
+        spannableStringBuilder.append((CharSequence) str, i7, str.length());
         return spannableStringBuilder;
     }
 
     public static void L3(final LaunchActivity launchActivity, final ui.a aVar) {
         if (aVar.g()) {
             String str = aVar.b;
-            int i3 = aVar.c;
+            int i7 = aVar.c;
             String str2 = aVar.d;
             String str3 = aVar.e;
             String str4 = aVar.f;
-            org.telegram.ui.ActionBar.t2 t2Var = new org.telegram.ui.ActionBar.t2(1, (Context) launchActivity, (org.telegram.ui.ActionBar.e6) null, false);
-            t2Var.N();
-            t2Var.v0 = false;
-            t2Var.w0 = false;
+            org.telegram.ui.ActionBar.v2 v2Var = new org.telegram.ui.ActionBar.v2(1, (Context) launchActivity, (org.telegram.ui.ActionBar.f6) null, false);
+            v2Var.N();
+            v2Var.u0 = false;
+            v2Var.v0 = false;
             LinearLayout linearLayout = new LinearLayout(launchActivity);
             linearLayout.setOrientation(1);
-            t2Var.O = linearLayout;
-            TextView b10 = b8.rf.b(launchActivity, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, null);
-            b10.setText(bd.M0(2131743785, null));
-            linearLayout.addView(b10, b8.mf.t(-1, -2, 55, 22, 18, 22, 0));
-            rx0 rx0Var = new rx0(launchActivity, null);
-            linearLayout.addView(rx0Var, b8.mf.t(-1, -2, 55, 14, 18, 14, 0));
+            v2Var.N = linearLayout;
+            TextView b10 = c8.na.b(launchActivity, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, null);
+            b10.setText(hd.M0(2131743776, null));
+            linearLayout.addView(b10, c8.ha.t(-1, -2, 55, 22, 18, 22, 0));
+            sx0 sx0Var = new sx0(launchActivity, null);
+            linearLayout.addView(sx0Var, c8.ha.t(-1, -2, 55, 14, 18, 14, 0));
             if (!TextUtils.isEmpty(str)) {
-                rx0Var.c(bd.M0(2131743801, null), str, null, null);
+                sx0Var.c(hd.M0(2131743792, null), str, null, null);
             }
-            if (i3 != 0) {
-                rx0Var.c(bd.M0(2131743796, null), Integer.toString(i3), null, null);
+            if (i7 != 0) {
+                sx0Var.c(hd.M0(2131743787, null), Integer.toString(i7), null, null);
             }
             if (!TextUtils.isEmpty(str4)) {
-                rx0Var.c(bd.M0(2131743794, null), str4, null, null);
+                sx0Var.c(hd.M0(2131743785, null), str4, null, null);
             }
             if (!TextUtils.isEmpty(str2)) {
-                rx0Var.c(bd.M0(2131743784, null), str2, null, null);
+                sx0Var.c(hd.M0(2131743775, null), str2, null, null);
             }
             if (!TextUtils.isEmpty(str3)) {
-                rx0Var.c(bd.M0(2131743797, null), str3, null, null);
+                sx0Var.c(hd.M0(2131743788, null), str3, null, null);
             }
-            org.telegram.ui.Components.hc[] hcVarArr = new org.telegram.ui.Components.hc[1];
-            rx0Var.c(bd.M0(2131746608, null), "", null, hcVarArr);
-            ((View) hcVarArr[0].getParent()).setPadding(0, 0, 0, 0);
-            hcVarArr[0].setDisablePaddingsOffsetY(true);
-            hcVarArr[0].setPadding(L(12.66f), L(9.33f), L(12.66f), L(9.33f));
-            hcVarArr[0].setText(O2(bd.M0(2131746617, null), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false), new ul(new boolean[1], hcVarArr, aVar, launchActivity, 5)));
+            org.telegram.ui.Components.jc[] jcVarArr = new org.telegram.ui.Components.jc[1];
+            sx0Var.c(hd.M0(2131746599, null), "", null, jcVarArr);
+            ((View) jcVarArr[0].getParent()).setPadding(0, 0, 0, 0);
+            jcVarArr[0].setDisablePaddingsOffsetY(true);
+            jcVarArr[0].setPadding(L(12.66f), L(9.33f), L(12.66f), L(9.33f));
+            jcVarArr[0].setText(O2(hd.M0(2131746608, null), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false), new em(new boolean[1], jcVarArr, aVar, launchActivity, 5)));
             if (!TextUtils.isEmpty(str4)) {
-                px0 a10 = rx0Var.a(bd.M0(2131743786, null));
+                qx0 a10 = sx0Var.a(hd.M0(2131743777, null));
                 a10.setFilled(true);
-                yh.l lVar = (yh.l) a10.getChildAt(0);
+                xh.l lVar = (xh.l) a10.getChildAt(0);
                 lVar.setTextSize(1, 11.0f);
                 lVar.setGravity(17);
             }
-            gi.d dVar = new gi.d(launchActivity, null, true);
+            fi.d dVar = new fi.d(launchActivity, null, true);
             dVar.setRoundRadius(24);
-            dVar.setText(bd.M0(2131751808, null));
-            final org.telegram.ui.ActionBar.e2 e2Var = t2Var.y0;
+            dVar.setText(hd.M0(2131751808, null));
+            final org.telegram.ui.ActionBar.g2 g2Var = v2Var.x0;
             dVar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.m
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SharedPreferences.Editor edit = hp.e1().edit();
+                    SharedPreferences.Editor edit = qp.e1().edit();
                     edit.putBoolean("proxy_enabled", true);
                     ui.a aVar2 = ui.a.this;
                     aVar2.i(edit);
                     edit.commit();
-                    az.B1 = az.a(new zy(aVar2));
+                    iz.B1 = iz.a(new hz(aVar2));
                     ConnectionsManager.setProxySettings(true, aVar2);
-                    hs.e().k(hs.A4, new Object[0]);
-                    org.telegram.ui.ActionBar.d2 lastFragment = launchActivity.M().getLastFragment();
-                    if (lastFragment instanceof org.telegram.ui.wm) {
-                        org.telegram.ui.wm wmVar = (org.telegram.ui.wm) lastFragment;
-                        wmVar.f8();
-                        UndoView undoView = wmVar.N3;
+                    qs.e().k(qs.A4, new Object[0]);
+                    org.telegram.ui.ActionBar.f2 lastFragment = launchActivity.M().getLastFragment();
+                    if (lastFragment instanceof org.telegram.ui.an) {
+                        org.telegram.ui.an anVar = (org.telegram.ui.an) lastFragment;
+                        anVar.f8();
+                        UndoView undoView = anVar.M3;
                         if (undoView != null) {
                             undoView.j(87, 0L, null);
-                            e2Var.run();
+                            g2Var.run();
                         }
                     }
-                    hs.e().k(hs.P4, 6, bd.M0(2131746618, null));
-                    e2Var.run();
+                    qs.e().k(qs.P4, 6, hd.M0(2131746609, null));
+                    g2Var.run();
                 }
             });
-            linearLayout.addView(dVar, b8.mf.t(-1, 48, 55, 14, 18, 14, 14));
-            t2Var.show();
+            linearLayout.addView(dVar, c8.ha.t(-1, 48, 55, 14, 18, 14, 14));
+            v2Var.show();
         }
     }
 
@@ -1319,7 +1319,7 @@ public abstract class g0 {
 
     public static Pair M0(InputStream inputStream) {
         try {
-            return O0(new t1.g(inputStream));
+            return O0(new u1.g(inputStream));
         } catch (Exception e10) {
             a8.g(e10, true);
             return new Pair(0, 0);
@@ -1344,14 +1344,14 @@ public abstract class g0 {
         return spannableStringBuilder;
     }
 
-    public static void M3(int i3, int i10, int[] iArr, Canvas canvas, View view) {
+    public static void M3(int i7, int i10, int[] iArr, Canvas canvas, View view) {
         if (view instanceof TextureView) {
             TextureView textureView = (TextureView) view;
             textureView.getLocationInWindow(iArr);
             Bitmap bitmap = textureView.getBitmap();
             if (bitmap != null) {
                 canvas.save();
-                canvas.drawBitmap(bitmap, iArr[0] - i3, iArr[1] - i10, (Paint) null);
+                canvas.drawBitmap(bitmap, iArr[0] - i7, iArr[1] - i10, (Paint) null);
                 canvas.restore();
                 bitmap.recycle();
             }
@@ -1359,7 +1359,7 @@ public abstract class g0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                M3(i3, i10, iArr, canvas, viewGroup.getChildAt(i11));
+                M3(i7, i10, iArr, canvas, viewGroup.getChildAt(i11));
             }
         }
     }
@@ -1373,7 +1373,7 @@ public abstract class g0 {
 
     public static Pair N0(String str) {
         try {
-            return O0(new t1.g(str));
+            return O0(new u1.g(str));
         } catch (Exception unused) {
             return new Pair(0, 0);
         }
@@ -1386,26 +1386,26 @@ public abstract class g0 {
     }
 
     public static CharSequence N2(CharSequence charSequence) {
-        int i3 = 0;
+        int i7 = 0;
         if (charSequence instanceof StringBuilder) {
             StringBuilder sb2 = (StringBuilder) charSequence;
             int length = sb2.length();
-            while (i3 < length) {
-                if (sb2.charAt(i3) == '\n') {
-                    sb2.setCharAt(i3, ' ');
+            while (i7 < length) {
+                if (sb2.charAt(i7) == '\n') {
+                    sb2.setCharAt(i7, ' ');
                 }
-                i3++;
+                i7++;
             }
             return charSequence;
         }
         if (charSequence instanceof SpannableStringBuilder) {
             SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) charSequence;
             int length2 = charSequence.length();
-            while (i3 < length2) {
-                if (charSequence.charAt(i3) == '\n') {
-                    spannableStringBuilder.replace(i3, i3 + 1, (CharSequence) " ");
+            while (i7 < length2) {
+                if (charSequence.charAt(i7) == '\n') {
+                    spannableStringBuilder.replace(i7, i7 + 1, (CharSequence) " ");
                 }
-                i3++;
+                i7++;
             }
             return spannableStringBuilder;
         }
@@ -1420,11 +1420,11 @@ public abstract class g0 {
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence);
         int length3 = charSequence.length();
-        while (i3 < length3) {
-            if (charSequence.charAt(i3) == '\n') {
-                spannableStringBuilder2.replace(i3, i3 + 1, (CharSequence) " ");
+        while (i7 < length3) {
+            if (charSequence.charAt(i7) == '\n') {
+                spannableStringBuilder2.replace(i7, i7 + 1, (CharSequence) " ");
             }
-            i3++;
+            i7++;
         }
         return spannableStringBuilder2;
     }
@@ -1439,16 +1439,16 @@ public abstract class g0 {
         return createBitmap;
     }
 
-    public static void O(Canvas canvas, FrameLayout frameLayout, int i3, int i10, float f10) {
-        int r12 = org.telegram.ui.ActionBar.k6.r1(T1(0.0f, 0.75f, R0(i10)) * f10, i3);
+    public static void O(Canvas canvas, FrameLayout frameLayout, int i7, int i10, float f10) {
+        int r12 = org.telegram.ui.ActionBar.k6.r1(T1(0.0f, 0.75f, R0(i10)) * f10, i7);
         Paint paint = o0;
         paint.setColor(r12);
         canvas.drawRect(0.0f, (frameLayout.getY() + frameLayout.getMeasuredHeight()) - i10, frameLayout.getMeasuredWidth(), frameLayout.getY() + frameLayout.getMeasuredHeight(), paint);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static Pair O0(t1.g gVar) {
-        int i3;
+    public static Pair O0(u1.g gVar) {
+        int i7;
         int i10 = 0;
         try {
             int i11 = 2;
@@ -1457,9 +1457,9 @@ public abstract class g0 {
                     i11 = 1;
                     break;
                 case 3:
-                    i3 = hs.K2;
+                    i7 = qs.K2;
                     i11 = 0;
-                    i10 = i3;
+                    i10 = i7;
                     break;
                 case 4:
                     break;
@@ -1467,9 +1467,9 @@ public abstract class g0 {
                     i10 = 270;
                     break;
                 case 6:
-                    i3 = 90;
+                    i7 = 90;
                     i11 = 0;
-                    i10 = i3;
+                    i10 = i7;
                     break;
                 case 7:
                     i11 = 1;
@@ -1498,7 +1498,7 @@ public abstract class g0 {
         return M.booleanValue();
     }
 
-    public static SpannableStringBuilder O2(String str, int i3, Runnable runnable) {
+    public static SpannableStringBuilder O2(String str, int i7, Runnable runnable) {
         int i10;
         int i11;
         int indexOf = str.indexOf("**");
@@ -1513,10 +1513,10 @@ public abstract class g0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replace);
         if (indexOf >= 0) {
             if (runnable != null) {
-                spannableStringBuilder.setSpan(new z(i3, runnable), indexOf, i10 + indexOf, 0);
+                spannableStringBuilder.setSpan(new z(i7, runnable), indexOf, i10 + indexOf, 0);
                 return spannableStringBuilder;
             }
-            spannableStringBuilder.setSpan(new t(i3, 1), indexOf, i10 + indexOf, 0);
+            spannableStringBuilder.setSpan(new t(i7, 1), indexOf, i10 + indexOf, 0);
         }
         return spannableStringBuilder;
     }
@@ -1529,7 +1529,7 @@ public abstract class g0 {
                 return "";
             }
         }
-        String S0 = bd.E0().S0(str, true, false);
+        String S0 = hd.E0().S0(str, true, false);
         return S0 == null ? "" : S0;
     }
 
@@ -1546,7 +1546,7 @@ public abstract class g0 {
         canvas.save();
         float f12 = rectF.left - f11;
         float f13 = rectF.top;
-        if (canvas.clipRect(f12, f13, rectF.right + f11, b8.be.a(f13 + max, f13, rectF.bottom))) {
+        if (canvas.clipRect(f12, f13, rectF.right + f11, c8.j9.a(f13 + max, f13, rectF.bottom))) {
             canvas.drawRoundRect(rectF.left, rectF.top + f11, rectF.right, f11 + rectF.bottom, max, max, paint);
         }
         canvas.restore();
@@ -1560,7 +1560,7 @@ public abstract class g0 {
         canvas.save();
         float f15 = rectF.left - f14;
         float f16 = rectF.bottom;
-        if (canvas.clipRect(f15, b8.be.a(f16 - max2, rectF.top, f16), rectF.right + f14, rectF.bottom)) {
+        if (canvas.clipRect(f15, c8.j9.a(f16 - max2, rectF.top, f16), rectF.right + f14, rectF.bottom)) {
             canvas.drawRoundRect(rectF.left, rectF.top - f14, rectF.right, rectF.bottom - f14, max2, max2, paint2);
         }
         canvas.restore();
@@ -1596,7 +1596,7 @@ public abstract class g0 {
         return ((float) Math.min(point.x, point.y)) / p <= 690.0f;
     }
 
-    public static SpannableStringBuilder P2(int i3, String str) {
+    public static SpannableStringBuilder P2(int i7, String str) {
         int i10;
         int i11;
         int indexOf = str.indexOf("**");
@@ -1610,7 +1610,7 @@ public abstract class g0 {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replace);
         if (indexOf >= 0) {
-            spannableStringBuilder.setSpan(new t(i3, 0), indexOf, i10 + indexOf, 0);
+            spannableStringBuilder.setSpan(new t(i7, 0), indexOf, i10 + indexOf, 0);
         }
         return spannableStringBuilder;
     }
@@ -1620,20 +1620,20 @@ public abstract class g0 {
             return null;
         }
         int length = charSequence.length();
-        int i3 = 0;
-        while (i3 < length && charSequence.charAt(i3) <= ' ') {
-            i3++;
+        int i7 = 0;
+        while (i7 < length && charSequence.charAt(i7) <= ' ') {
+            i7++;
         }
-        while (i3 < length && charSequence.charAt(length - 1) <= ' ') {
+        while (i7 < length && charSequence.charAt(length - 1) <= ' ') {
             length--;
         }
         if (iArr != null) {
-            iArr[0] = i3;
+            iArr[0] = i7;
         }
-        return (i3 > 0 || length < charSequence.length()) ? charSequence.subSequence(i3, length) : charSequence;
+        return (i7 > 0 || length < charSequence.length()) ? charSequence.subSequence(i7, length) : charSequence;
     }
 
-    public static CharSequence Q(CharSequence charSequence, String str, int i3, TextPaint textPaint) {
+    public static CharSequence Q(CharSequence charSequence, String str, int i7, TextPaint textPaint) {
         CharSequence charSequence2;
         int i10;
         CharSequence subSequence;
@@ -1664,7 +1664,7 @@ public abstract class g0 {
         try {
             StaticLayout staticLayout = new StaticLayout(charSequence2, textPaint, ConnectionsManager.DEFAULT_DATACENTER_ID, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             float lineWidth = staticLayout.getLineWidth(0);
-            float f10 = i3;
+            float f10 = i7;
             if (textPaint.measureText("...") + lineWidth >= f10) {
                 int i11 = i10 + 1;
                 int i12 = i11;
@@ -1731,10 +1731,10 @@ public abstract class g0 {
     }
 
     public static boolean Q1() {
-        return R1() && !az.W;
+        return R1() && !iz.W;
     }
 
-    public static SpannableStringBuilder Q2(String str, int i3, org.telegram.ui.ActionBar.e6 e6Var, Runnable runnable, boolean z10) {
+    public static SpannableStringBuilder Q2(String str, int i7, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable, boolean z9) {
         int i10;
         int i11;
         int indexOf = str.indexOf("**");
@@ -1749,10 +1749,10 @@ public abstract class g0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replace);
         if (indexOf >= 0) {
             if (runnable != null) {
-                spannableStringBuilder.setSpan(new a0(z10, i3, e6Var, runnable), indexOf, i10 + indexOf, 0);
+                spannableStringBuilder.setSpan(new a0(z9, i7, f6Var, runnable), indexOf, i10 + indexOf, 0);
                 return spannableStringBuilder;
             }
-            spannableStringBuilder.setSpan(new b0(z10, i3, e6Var), indexOf, i10 + indexOf, 0);
+            spannableStringBuilder.setSpan(new b0(z9, i7, f6Var), indexOf, i10 + indexOf, 0);
         }
         return spannableStringBuilder;
     }
@@ -1781,8 +1781,8 @@ public abstract class g0 {
         return MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
     }
 
-    public static float R0(int i3) {
-        return Utilities.l((i3 - L(32.0f)) / L(16.0f));
+    public static float R0(int i7) {
+        return Utilities.l((i7 - L(32.0f)) / L(16.0f));
     }
 
     public static boolean R1() {
@@ -1792,21 +1792,21 @@ public abstract class g0 {
         return K.booleanValue();
     }
 
-    public static SpannableStringBuilder R2(String str, int i3, org.telegram.ui.ActionBar.e6 e6Var, qv0 qv0Var) {
-        return Q2(str, i3, e6Var, qv0Var, false);
+    public static SpannableStringBuilder R2(String str, int i7, org.telegram.ui.ActionBar.f6 f6Var, qn0 qn0Var) {
+        return Q2(str, i7, f6Var, qn0Var, false);
     }
 
-    public static void R3(ImageView imageView, int i3) {
-        S3(imageView, imageView.getContext().getDrawable(i3));
+    public static void R3(ImageView imageView, int i7) {
+        S3(imageView, imageView.getContext().getDrawable(i7));
     }
 
     public static void S(Window window) {
         Objects.requireNonNull(window);
         window.getDecorView();
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 35) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 35) {
             g0.f.t(window);
-        } else if (i3 >= 30) {
+        } else if (i7 >= 30) {
             g0.f.s(window);
         } else {
             View decorView = window.getDecorView();
@@ -1814,36 +1814,36 @@ public abstract class g0 {
         }
         window.setStatusBarColor(0);
         window.setNavigationBarColor(0);
-        if (i3 >= 28) {
-            int i10 = i3 >= 30 ? 3 : 1;
+        if (i7 >= 28) {
+            int i10 = i7 >= 30 ? 3 : 1;
             WindowManager.LayoutParams attributes = window.getAttributes();
             if (attributes.layoutInDisplayCutoutMode != i10) {
                 attributes.layoutInDisplayCutoutMode = i10;
                 window.setAttributes(attributes);
             }
         }
-        if (i3 >= 29) {
+        if (i7 >= 29) {
             window.setStatusBarContrastEnforced(false);
             window.setNavigationBarContrastEnforced(false);
         }
     }
 
-    public static int S0(float f10, float f11, int i3, int i10) {
+    public static int S0(float f10, float f11, int i7, int i10) {
         int red = Color.red(i10);
         int green = Color.green(i10);
         int blue = Color.blue(i10);
         int alpha = Color.alpha(i10);
-        int red2 = Color.red(i3);
-        int green2 = Color.green(i3);
-        int blue2 = Color.blue(i3);
-        return Color.argb((int) com.google.android.recaptcha.internal.a.A(alpha - r9, f10, Color.alpha(i3), f11), (int) (((red - red2) * f10) + red2), (int) (((green - green2) * f10) + green2), (int) (((blue - blue2) * f10) + blue2));
+        int red2 = Color.red(i7);
+        int green2 = Color.green(i7);
+        int blue2 = Color.blue(i7);
+        return Color.argb((int) com.google.android.recaptcha.internal.a.B(alpha - r9, f10, Color.alpha(i7), f11), (int) (((red - red2) * f10) + red2), (int) (((green - green2) * f10) + green2), (int) (((blue - blue2) * f10) + blue2));
     }
 
-    public static boolean S1(char c2) {
-        return c2 == '-' || c2 == '~';
+    public static boolean S1(char c10) {
+        return c10 == '-' || c10 == '~';
     }
 
-    public static SpannableStringBuilder S2(String str, int i3, int i10, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
+    public static SpannableStringBuilder S2(String str, int i7, int i10, Runnable runnable, org.telegram.ui.ActionBar.f6 f6Var) {
         int i11;
         int i12;
         int indexOf = str.indexOf("**");
@@ -1862,10 +1862,10 @@ public abstract class g0 {
                 spannableStringBuilder.replace(indexOf, i13, (CharSequence) M2(spannableStringBuilder.subSequence(indexOf, i13), " ", " "));
             }
             if (i10 != 0 && i10 != 3 && i10 != 2 && i10 != 4) {
-                spannableStringBuilder.setSpan(new mi.x5(e6Var, 1), indexOf, i11 + indexOf, 0);
+                spannableStringBuilder.setSpan(new li.w5(f6Var, 1), indexOf, i11 + indexOf, 0);
                 return spannableStringBuilder;
             }
-            spannableStringBuilder.setSpan(new y(i10, i3, e6Var, runnable), indexOf, i11 + indexOf, 0);
+            spannableStringBuilder.setSpan(new y(i10, i7, f6Var, runnable), indexOf, i11 + indexOf, 0);
         }
         return spannableStringBuilder;
     }
@@ -1971,26 +1971,26 @@ public abstract class g0 {
     }
 
     public static float T1(float f10, float f11, float f12) {
-        return com.google.android.recaptcha.internal.a.y(f11, f10, f12, f10);
+        return com.google.android.recaptcha.internal.a.z(f11, f10, f12, f10);
     }
 
-    public static SpannableStringBuilder T2(String str, int i3, org.telegram.ui.xe xeVar) {
-        return S2(str, i3, 0, xeVar, null);
+    public static SpannableStringBuilder T2(String str, int i7, org.telegram.ui.af afVar) {
+        return S2(str, i7, 0, afVar, null);
     }
 
-    public static void T3(WindowManager windowManager, View view, ViewGroup.LayoutParams layoutParams) {
-        if (windowManager == null || view == null || view.getParent() == null) {
+    public static void T3(WindowManager windowManager, bi.x5 x5Var, WindowManager.LayoutParams layoutParams) {
+        if (windowManager == null || x5Var == null || x5Var.getParent() == null) {
             return;
         }
-        windowManager.updateViewLayout(view, layoutParams);
+        windowManager.updateViewLayout(x5Var, layoutParams);
     }
 
     public static String U(String str) {
         return F2(D2(str));
     }
 
-    public static int U0(int i3) {
-        return V0(i3, false);
+    public static int U0(int i7) {
+        return V0(i7, false);
     }
 
     public static float U1(float f10, float[] fArr) {
@@ -2001,26 +2001,26 @@ public abstract class g0 {
         return S2(str, -1, 0, runnable, null);
     }
 
-    public static void U3(float f10, View view, boolean z10, boolean z11) {
+    public static void U3(float f10, View view, boolean z9, boolean z10) {
         if (view == null) {
             return;
         }
-        boolean z12 = view.getParent() != null;
+        boolean z11 = view.getParent() != null;
         view.animate().setListener(null).cancel();
-        if (!z12) {
-            view.setVisibility(z10 ? 0 : 8);
-            view.setTag(z10 ? 1 : null);
+        if (!z11) {
+            view.setVisibility(z9 ? 0 : 8);
+            view.setTag(z9 ? 1 : null);
             view.setAlpha(1.0f);
-            view.setScaleX((!z11 || z10) ? 1.0f : 0.5f);
-            view.setScaleY((!z11 || z10) ? 1.0f : 0.5f);
+            view.setScaleX((!z10 || z9) ? 1.0f : 0.5f);
+            view.setScaleY((!z10 || z9) ? 1.0f : 0.5f);
             if (f10 != 0.0f) {
-                view.setTranslationY(z10 ? 0.0f : L(-16.0f) * f10);
+                view.setTranslationY(z9 ? 0.0f : L(-16.0f) * f10);
                 return;
             }
             return;
         }
-        if (!z10) {
-            ViewPropertyAnimator withEndAction = view.animate().alpha(0.0f).scaleY(z11 ? 0.5f : 1.0f).scaleX(z11 ? 0.5f : 1.0f).setListener(new org.telegram.ui.Components.s9(view)).setInterpolator(org.telegram.ui.Components.xq.h).setDuration(340L).withEndAction(null);
+        if (!z9) {
+            ViewPropertyAnimator withEndAction = view.animate().alpha(0.0f).scaleY(z10 ? 0.5f : 1.0f).scaleX(z10 ? 0.5f : 1.0f).setListener(new org.telegram.ui.Components.t9(view)).setInterpolator(org.telegram.ui.Components.xq.h).setDuration(340L).withEndAction(null);
             if (f10 != 0.0f) {
                 withEndAction.translationY(L(-16.0f) * f10);
             }
@@ -2030,8 +2030,8 @@ public abstract class g0 {
         if (view.getVisibility() != 0) {
             view.setVisibility(0);
             view.setAlpha(0.0f);
-            view.setScaleX(z11 ? 0.5f : 1.0f);
-            view.setScaleY(z11 ? 0.5f : 1.0f);
+            view.setScaleX(z10 ? 0.5f : 1.0f);
+            view.setScaleY(z10 ? 0.5f : 1.0f);
             if (f10 != 0.0f) {
                 view.setTranslationY(L(-16.0f) * f10);
             }
@@ -2047,8 +2047,8 @@ public abstract class g0 {
         if (list == null) {
             return null;
         }
-        for (int i3 = 0; i3 < list.size(); i3++) {
-            Object obj = list.get(i3);
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            Object obj = list.get(i7);
             if (cls.isInstance(obj)) {
                 return cls.cast(obj);
             }
@@ -2066,53 +2066,53 @@ public abstract class g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int V0(int i3, boolean z10) {
-        float[] b10 = b(Color.red(i3), Color.green(i3), Color.blue(i3));
+    public static int V0(int i7, boolean z9) {
+        float[] b10 = b(Color.red(i7), Color.green(i7), Color.blue(i7));
         float f10 = b10[1];
         if (f10 <= 0.0f) {
             float f11 = b10[2];
             if (f11 < 1.0f) {
             }
-            if (!z10) {
+            if (!z9) {
                 float f12 = b10[2];
                 if (f12 <= 0.5f) {
                     b10[2] = Math.max(0.0f, Math.min(1.0f, 1.0f - (f12 * 0.65f)));
-                    return a(b10[0], b10[1], b10[2]) & (z10 ? -1711276033 : 1728053247);
+                    return a(b10[0], b10[1], b10[2]) & (z9 ? -1711276033 : 1728053247);
                 }
             }
             b10[2] = Math.max(0.0f, b10[2] * 0.65f);
-            return a(b10[0], b10[1], b10[2]) & (z10 ? -1711276033 : 1728053247);
+            return a(b10[0], b10[1], b10[2]) & (z9 ? -1711276033 : 1728053247);
         }
-        b10[1] = Math.min(1.0f, ((1.0f - f10) * 0.1f) + (z10 ? 0.15f : 0.05f) + f10);
-        if (!z10) {
+        b10[1] = Math.min(1.0f, ((1.0f - f10) * 0.1f) + (z9 ? 0.15f : 0.05f) + f10);
+        if (!z9) {
         }
         b10[2] = Math.max(0.0f, b10[2] * 0.65f);
-        return a(b10[0], b10[1], b10[2]) & (z10 ? -1711276033 : 1728053247);
+        return a(b10[0], b10[1], b10[2]) & (z9 ? -1711276033 : 1728053247);
     }
 
-    public static float V1(boolean z10, boolean z11, float f10) {
-        return com.google.android.recaptcha.internal.a.y(z11 ? 1.0f : 0.0f, z10 ? 1.0f : 0.0f, f10, z10 ? 1.0f : 0.0f);
+    public static float V1(boolean z9, boolean z10, float f10) {
+        return com.google.android.recaptcha.internal.a.z(z10 ? 1.0f : 0.0f, z9 ? 1.0f : 0.0f, f10, z9 ? 1.0f : 0.0f);
     }
 
     public static SpannableStringBuilder V2(SpannableStringBuilder spannableStringBuilder) {
         try {
             ArrayList arrayList = new ArrayList();
             while (true) {
-                int t10 = t(spannableStringBuilder, "**");
-                if (t10 == -1) {
+                int t6 = t(spannableStringBuilder, "**");
+                if (t6 == -1) {
                     break;
                 }
-                spannableStringBuilder.replace(t10, t10 + 2, "");
-                int t11 = t(spannableStringBuilder, "**");
-                if (t11 >= 0) {
-                    spannableStringBuilder.replace(t11, t11 + 2, "");
+                spannableStringBuilder.replace(t6, t6 + 2, "");
+                int t10 = t(spannableStringBuilder, "**");
+                if (t10 >= 0) {
+                    spannableStringBuilder.replace(t10, t10 + 2, "");
+                    arrayList.add(Integer.valueOf(t6));
                     arrayList.add(Integer.valueOf(t10));
-                    arrayList.add(Integer.valueOf(t11));
                 }
             }
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-            for (int i3 = 0; i3 < arrayList.size() / 2; i3++) {
-                int i10 = i3 * 2;
+            for (int i7 = 0; i7 < arrayList.size() / 2; i7++) {
+                int i10 = i7 * 2;
                 spannableStringBuilder2.setSpan(new o31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
             }
             return spannableStringBuilder2;
@@ -2122,8 +2122,8 @@ public abstract class g0 {
         }
     }
 
-    public static void V3(View view, boolean z10, boolean z11) {
-        U3(0.0f, view, z10, z11);
+    public static void V3(View view, boolean z9, boolean z10) {
+        U3(0.0f, view, z9, z10);
     }
 
     public static Activity W(Context context) {
@@ -2136,8 +2136,8 @@ public abstract class g0 {
         return null;
     }
 
-    public static int W0(int i3) {
-        float[] b10 = b(Color.red(i3), Color.green(i3), Color.blue(i3));
+    public static int W0(int i7) {
+        float[] b10 = b(Color.red(i7), Color.green(i7), Color.blue(i7));
         b10[1] = Math.min(1.0f, b10[1] + 0.05f);
         float f10 = b10[2];
         if (f10 > 0.5f) {
@@ -2148,24 +2148,24 @@ public abstract class g0 {
         return a(b10[0], b10[1], b10[2]) | (-16777216);
     }
 
-    public static int W1(float f10, int i3, int i10) {
-        return (int) ((f10 * (i10 - i3)) + i3);
+    public static int W1(float f10, int i7, int i10) {
+        return (int) ((f10 * (i10 - i7)) + i7);
     }
 
     public static SpannableStringBuilder W2(CharSequence charSequence) {
         return charSequence instanceof SpannableStringBuilder ? V2((SpannableStringBuilder) charSequence) : V2(new SpannableStringBuilder(charSequence));
     }
 
-    public static void W3(float f10, View view, boolean z10, boolean z11) {
-        Z3(view, z10, f10, true, z11);
+    public static void W3(float f10, View view, boolean z9, boolean z10) {
+        Z3(view, z9, f10, true, z10);
     }
 
     public static View X(ViewGroup viewGroup, float f10, float f11) {
         if (viewGroup.getVisibility() != 0) {
             return null;
         }
-        for (int i3 = 0; i3 < viewGroup.getChildCount(); i3++) {
-            View childAt = viewGroup.getChildAt(i3);
+        for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
+            View childAt = viewGroup.getChildAt(i7);
             if (childAt != null && childAt.getVisibility() == 0) {
                 if (childAt instanceof ViewGroup) {
                     View X2 = X((ViewGroup) childAt, f10 - childAt.getLeft(), f11 - childAt.getTop());
@@ -2180,8 +2180,8 @@ public abstract class g0 {
         return null;
     }
 
-    public static int X0(int i3) {
-        return Math.max(73, (i3 >> 16) & 65535);
+    public static int X0(int i7) {
+        return Math.max(73, (i7 >> 16) & 65535);
     }
 
     public static void X1(Rect rect, Rect rect2, float f10, Rect rect3) {
@@ -2249,8 +2249,8 @@ public abstract class g0 {
                 }
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb2);
-            for (int i3 = 0; i3 < arrayList.size() / 2; i3++) {
-                int i10 = i3 * 2;
+            for (int i7 = 0; i7 < arrayList.size() / 2; i7++) {
+                int i10 = i7 * 2;
                 spannableStringBuilder.setSpan(new o31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
             }
             return spannableStringBuilder;
@@ -2260,12 +2260,12 @@ public abstract class g0 {
         }
     }
 
-    public static void X3(View view, boolean z10) {
-        Z3(view, z10, 1.0f, true, true);
+    public static void X3(View view, boolean z9) {
+        Z3(view, z9, 1.0f, true, true);
     }
 
     public static boolean Y(ViewGroup viewGroup, float f10, float f11, View view) {
-        int i3;
+        int i7;
         Rect rect;
         if (viewGroup == null) {
             return false;
@@ -2273,25 +2273,25 @@ public abstract class g0 {
         int i10 = 0;
         while (i10 < viewGroup.getChildCount()) {
             View childAt = viewGroup.getChildAt(i10);
-            if (childAt.getVisibility() == 0 && (!(childAt instanceof ei.j4) || childAt == view)) {
-                if (childAt instanceof ei.r8) {
-                    ei.t8 t8Var = (ei.t8) viewGroup;
+            if (childAt.getVisibility() == 0 && (!(childAt instanceof di.i4) || childAt == view)) {
+                if (childAt instanceof di.r8) {
+                    di.t8 t8Var = (di.t8) viewGroup;
                     if (t8Var.b == null || (f10 >= L(60.0f) && f10 <= viewGroup.getWidth() - L(60.0f))) {
                         int i11 = 0;
                         while (i11 < t8Var.getChildCount()) {
                             View childAt2 = t8Var.getChildAt(i11);
-                            if (childAt2 instanceof ei.w8) {
+                            if (childAt2 instanceof di.w8) {
                                 float translationX = childAt2.getTranslationX();
                                 float translationY = childAt2.getTranslationY();
                                 float measuredWidth = childAt2.getMeasuredWidth();
                                 float measuredHeight = childAt2.getMeasuredHeight();
                                 double radians = Math.toRadians(-childAt2.getRotation());
-                                double d10 = f10 - translationX;
-                                i3 = i10;
-                                double d11 = f11 - translationY;
-                                float cos = (float) ((Math.cos(radians) * d10) - (Math.sin(radians) * d11));
-                                float c2 = (float) k2.p1.c(radians, d11, Math.sin(radians) * d10);
-                                if (cos >= (-measuredWidth) / 2.0f && cos <= measuredWidth / 2.0f && c2 >= (-measuredHeight) / 2.0f && c2 <= measuredHeight / 2.0f) {
+                                double d2 = f10 - translationX;
+                                i7 = i10;
+                                double d10 = f11 - translationY;
+                                float cos = (float) ((Math.cos(radians) * d2) - (Math.sin(radians) * d10));
+                                float d11 = (float) jg.g.d(radians, d10, Math.sin(radians) * d2);
+                                if (cos >= (-measuredWidth) / 2.0f && cos <= measuredWidth / 2.0f && d11 >= (-measuredHeight) / 2.0f && d11 <= measuredHeight / 2.0f) {
                                     rect = Q;
                                     childAt.getHitRect(rect);
                                     if (!rect.contains((int) f10, (int) f11) && childAt.isClickable()) {
@@ -2300,17 +2300,17 @@ public abstract class g0 {
                                     if ((childAt instanceof ViewGroup) && Y((ViewGroup) childAt, f10 - childAt.getX(), f11 - childAt.getY(), view)) {
                                         return true;
                                     }
-                                    i10 = i3 + 1;
+                                    i10 = i7 + 1;
                                 }
                             } else {
-                                i3 = i10;
+                                i7 = i10;
                             }
                             i11++;
-                            i10 = i3;
+                            i10 = i7;
                         }
                     }
                 }
-                i3 = i10;
+                i7 = i10;
                 rect = Q;
                 childAt.getHitRect(rect);
                 if (!rect.contains((int) f10, (int) f11)) {
@@ -2319,10 +2319,10 @@ public abstract class g0 {
                     return true;
                 }
                 continue;
-                i10 = i3 + 1;
+                i10 = i7 + 1;
             }
-            i3 = i10;
-            i10 = i3 + 1;
+            i7 = i10;
+            i10 = i7 + 1;
         }
         return false;
     }
@@ -2342,16 +2342,16 @@ public abstract class g0 {
         if (charSequence instanceof StringBuilder) {
             StringBuilder sb2 = (StringBuilder) charSequence;
             int length = sb2.length();
-            int i3 = 0;
-            while (i3 < length - 2) {
-                int i10 = i3 + 2;
-                sb2.getChars(i3, i10, cArr, 0);
+            int i7 = 0;
+            while (i7 < length - 2) {
+                int i10 = i7 + 2;
+                sb2.getChars(i7, i10, cArr, 0);
                 if (cArr[0] == '\n' && cArr[1] == '\n') {
-                    sb2 = sb2.replace(i3, i10, "\n");
-                    i3--;
+                    sb2 = sb2.replace(i7, i10, "\n");
+                    i7--;
                     length--;
                 }
-                i3++;
+                i7++;
             }
             return charSequence;
         }
@@ -2393,28 +2393,28 @@ public abstract class g0 {
         return spannableStringBuilder2;
     }
 
-    public static void Y3(View view, boolean z10, float f10, boolean z11, float f11, boolean z12, ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+    public static void Y3(View view, boolean z9, float f10, boolean z10, float f11, boolean z11, ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
         if (view == null) {
             return;
         }
         if (view.getParent() == null) {
-            z12 = false;
+            z11 = false;
         }
-        if (!z12) {
+        if (!z11) {
             view.animate().setListener(null).cancel();
-            view.setVisibility(z10 ? 0 : z11 ? 8 : 4);
-            view.setTag(z10 ? 1 : null);
+            view.setVisibility(z9 ? 0 : z10 ? 8 : 4);
+            view.setTag(z9 ? 1 : null);
             view.setAlpha(f11);
             view.setScaleX(1.0f);
             view.setScaleY(1.0f);
             return;
         }
-        if (!z10 || view.getTag() != null) {
-            if (z10 || view.getTag() == null) {
+        if (!z9 || view.getTag() != null) {
+            if (z9 || view.getTag() == null) {
                 return;
             }
             view.animate().setListener(null).cancel();
-            view.animate().alpha(0.0f).scaleY(f10).scaleX(f10).setListener(new org.telegram.ui.Components.s9(view, z11)).setDuration(150L).setUpdateListener(animatorUpdateListener).start();
+            view.animate().alpha(0.0f).scaleY(f10).scaleX(f10).setListener(new org.telegram.ui.Components.t9(view, z10)).setDuration(150L).setUpdateListener(animatorUpdateListener).start();
             view.setTag(null);
             return;
         }
@@ -2429,21 +2429,21 @@ public abstract class g0 {
         view.setTag(r0);
     }
 
-    public static TLRPC.Document Z(long j10, List list) {
+    public static TLRPC.Document Z(long j3, List list) {
         if (list == null) {
             return null;
         }
-        for (int i3 = 0; i3 < list.size(); i3++) {
-            TLRPC.Document document = (TLRPC.Document) list.get(i3);
-            if (document != null && document.id == j10) {
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            TLRPC.Document document = (TLRPC.Document) list.get(i7);
+            if (document != null && document.id == j3) {
                 return document;
             }
         }
         return null;
     }
 
-    public static int Z0(boolean z10) {
-        if (z10) {
+    public static int Z0(boolean z9) {
+        if (z9) {
             if (A == null) {
                 A = 2560;
             }
@@ -2461,66 +2461,66 @@ public abstract class g0 {
         }
     }
 
-    public static void Z2(Activity activity, int i3) {
+    public static void Z2(Activity activity, int i7) {
         if (activity == null || Q1()) {
             return;
         }
         activity.getWindow().setSoftInputMode(48);
-        N = i3;
+        N = i7;
     }
 
-    public static void Z3(View view, boolean z10, float f10, boolean z11, boolean z12) {
-        Y3(view, z10, f10, z11, 1.0f, z12, null);
+    public static void Z3(View view, boolean z9, float f10, boolean z10, boolean z11) {
+        Y3(view, z9, f10, z10, 1.0f, z11, null);
     }
 
     public static int a(float f10, float f11, float f12) {
-        int i3;
+        int i7;
         int i10;
         int i11;
         if (f11 != 0.0f) {
             float floor = (f10 - ((float) Math.floor(f10))) * 6.0f;
             float floor2 = floor - ((float) Math.floor(floor));
             float f13 = (1.0f - f11) * f12;
-            float B2 = com.google.android.recaptcha.internal.a.B(f11, floor2, 1.0f, f12);
+            float C2 = com.google.android.recaptcha.internal.a.C(f11, floor2, 1.0f, f12);
             float f14 = (1.0f - ((1.0f - floor2) * f11)) * f12;
             int i12 = (int) floor;
             if (i12 == 0) {
-                i3 = (int) ((f12 * 255.0f) + 0.5f);
+                i7 = (int) ((f12 * 255.0f) + 0.5f);
                 i10 = (int) ((f14 * 255.0f) + 0.5f);
             } else {
                 if (i12 != 1) {
                     if (i12 != 2) {
                         if (i12 == 3) {
-                            i3 = (int) ((f13 * 255.0f) + 0.5f);
-                            i10 = (int) ((B2 * 255.0f) + 0.5f);
+                            i7 = (int) ((f13 * 255.0f) + 0.5f);
+                            i10 = (int) ((C2 * 255.0f) + 0.5f);
                         } else if (i12 == 4) {
-                            i3 = (int) ((f14 * 255.0f) + 0.5f);
+                            i7 = (int) ((f14 * 255.0f) + 0.5f);
                             i10 = (int) ((f13 * 255.0f) + 0.5f);
                         } else if (i12 != 5) {
-                            i3 = 0;
+                            i7 = 0;
                         } else {
-                            i3 = (int) ((f12 * 255.0f) + 0.5f);
+                            i7 = (int) ((f12 * 255.0f) + 0.5f);
                             i10 = (int) ((f13 * 255.0f) + 0.5f);
-                            i11 = (int) ((B2 * 255.0f) + 0.5f);
+                            i11 = (int) ((C2 * 255.0f) + 0.5f);
                         }
                         i11 = (int) ((f12 * 255.0f) + 0.5f);
                     } else {
-                        i3 = (int) ((f13 * 255.0f) + 0.5f);
+                        i7 = (int) ((f13 * 255.0f) + 0.5f);
                         i10 = (int) ((f12 * 255.0f) + 0.5f);
                         i11 = (int) ((f14 * 255.0f) + 0.5f);
                     }
-                    return ((i3 & hs.e4) << 16) | (-16777216) | ((i10 & hs.e4) << 8) | (i11 & hs.e4);
+                    return ((i7 & qs.e4) << 16) | (-16777216) | ((i10 & qs.e4) << 8) | (i11 & qs.e4);
                 }
-                i3 = (int) ((B2 * 255.0f) + 0.5f);
+                i7 = (int) ((C2 * 255.0f) + 0.5f);
                 i10 = (int) ((f12 * 255.0f) + 0.5f);
             }
             i11 = (int) ((f13 * 255.0f) + 0.5f);
-            return ((i3 & hs.e4) << 16) | (-16777216) | ((i10 & hs.e4) << 8) | (i11 & hs.e4);
+            return ((i7 & qs.e4) << 16) | (-16777216) | ((i10 & qs.e4) << 8) | (i11 & qs.e4);
         }
-        i3 = (int) ((f12 * 255.0f) + 0.5f);
-        i10 = i3;
+        i7 = (int) ((f12 * 255.0f) + 0.5f);
+        i10 = i7;
         i11 = i10;
-        return ((i3 & hs.e4) << 16) | (-16777216) | ((i10 & hs.e4) << 8) | (i11 & hs.e4);
+        return ((i7 & qs.e4) << 16) | (-16777216) | ((i10 & qs.e4) << 8) | (i11 & qs.e4);
     }
 
     public static void a0() {
@@ -2532,58 +2532,58 @@ public abstract class g0 {
         sharedPreferences.edit().putBoolean("fixed", true).apply();
     }
 
-    public static float a1(boolean z10, float f10) {
+    public static float a1(boolean z9, float f10) {
         float f11 = f10 / 2.54f;
         DisplayMetrics displayMetrics = B;
-        return f11 * (z10 ? displayMetrics.xdpi : displayMetrics.ydpi);
+        return f11 * (z9 ? displayMetrics.xdpi : displayMetrics.ydpi);
     }
 
     public static void a2(float[] fArr, float[] fArr2, float f10, float[] fArr3) {
         if (fArr3 == null) {
             return;
         }
-        int i3 = 0;
-        while (i3 < fArr3.length) {
+        int i7 = 0;
+        while (i7 < fArr3.length) {
             float f11 = 0.0f;
-            float f12 = (fArr == null || i3 >= fArr.length) ? 0.0f : fArr[i3];
-            if (fArr2 != null && i3 < fArr2.length) {
-                f11 = fArr2[i3];
+            float f12 = (fArr == null || i7 >= fArr.length) ? 0.0f : fArr[i7];
+            if (fArr2 != null && i7 < fArr2.length) {
+                f11 = fArr2[i7];
             }
-            fArr3[i3] = T1(f12, f11, f10);
-            i3++;
+            fArr3[i7] = T1(f12, f11, f10);
+            i7++;
         }
     }
 
-    public static void a3(Activity activity, int i3) {
+    public static void a3(Activity activity, int i7) {
         Window window;
         if (activity == null || (window = activity.getWindow()) == null || Q1()) {
             return;
         }
         window.setSoftInputMode(16);
-        N = i3;
+        N = i7;
     }
 
-    public static void a4(int i3, tj0 tj0Var) {
-        u4.h0 adapter;
-        u4.d1 T2;
-        if (tj0Var == null || (adapter = tj0Var.getAdapter()) == null) {
+    public static void a4(int i7, pj0 pj0Var) {
+        v4.g0 adapter;
+        v4.d1 T2;
+        if (pj0Var == null || (adapter = pj0Var.getAdapter()) == null) {
             return;
         }
-        for (int i10 = 0; i10 < tj0Var.getChildCount(); i10++) {
-            View childAt = tj0Var.getChildAt(i10);
+        for (int i10 = 0; i10 < pj0Var.getChildCount(); i10++) {
+            View childAt = pj0Var.getChildAt(i10);
             int R2 = RecyclerView.R(childAt);
-            if (R2 >= 0 && (T2 = tj0Var.T(childAt)) != null && !T2.r() && T2.b() == i3) {
+            if (R2 >= 0 && (T2 = pj0Var.T(childAt)) != null && !T2.r() && T2.b() == i7) {
                 adapter.t(T2, R2);
             }
         }
     }
 
-    public static float[] b(int i3, int i10, int i11) {
-        int max = Math.max(i3, i10);
+    public static float[] b(int i7, int i10, int i11) {
+        int max = Math.max(i7, i10);
         if (i11 > max) {
             max = i11;
         }
-        int min = Math.min(i3, i10);
+        int min = Math.min(i7, i10);
         if (i11 < min) {
             min = i11;
         }
@@ -2593,24 +2593,24 @@ public abstract class g0 {
         float f13 = max != 0 ? (max - min) / f10 : 0.0f;
         if (f13 != 0.0f) {
             float f14 = max - min;
-            float f15 = (max - i3) / f14;
+            float f15 = (max - i7) / f14;
             float f16 = (max - i10) / f14;
             float f17 = (max - i11) / f14;
-            float f18 = (i3 == max ? f17 - f16 : i10 == max ? (f15 + 2.0f) - f17 : (f16 + 4.0f) - f15) / 6.0f;
+            float f18 = (i7 == max ? f17 - f16 : i10 == max ? (f15 + 2.0f) - f17 : (f16 + 4.0f) - f15) / 6.0f;
             f12 = f18 < 0.0f ? f18 + 1.0f : f18;
         }
         return new float[]{f12, f13, f11};
     }
 
-    public static double b0(double d10) {
-        return ((long) (d10 * 1000000.0d)) / 1000000.0d;
+    public static double b0(double d2) {
+        return ((long) (d2 * 1000000.0d)) / 1000000.0d;
     }
 
-    public static long b1(SharedPreferences sharedPreferences, String str, long j10) {
+    public static long b1(SharedPreferences sharedPreferences, String str, long j3) {
         try {
-            return sharedPreferences.getLong(str, j10);
+            return sharedPreferences.getLong(str, j3);
         } catch (Exception unused) {
-            return sharedPreferences.getInt(str, (int) j10);
+            return sharedPreferences.getInt(str, (int) j3);
         }
     }
 
@@ -2618,24 +2618,24 @@ public abstract class g0 {
         return ((((((((f11 - f10) + 360.0f) + 180.0f) % 360.0f) - 180.0f) * f12) + f10) + 360.0f) % 360.0f;
     }
 
-    public static void b3(Activity activity, int i3) {
+    public static void b3(Activity activity, int i7) {
         if (activity == null) {
             return;
         }
         activity.getWindow().setFlags(131072, 131072);
-        O = i3;
+        O = i7;
     }
 
-    public static void b4(tj0 tj0Var) {
-        u4.h0 adapter;
-        u4.d1 T2;
-        if (tj0Var == null || (adapter = tj0Var.getAdapter()) == null) {
+    public static void b4(pj0 pj0Var) {
+        v4.g0 adapter;
+        v4.d1 T2;
+        if (pj0Var == null || (adapter = pj0Var.getAdapter()) == null) {
             return;
         }
-        for (int i3 = 0; i3 < tj0Var.getChildCount(); i3++) {
-            View childAt = tj0Var.getChildAt(i3);
+        for (int i7 = 0; i7 < pj0Var.getChildCount(); i7++) {
+            View childAt = pj0Var.getChildAt(i7);
             int R2 = RecyclerView.R(childAt);
-            if (R2 >= 0 && (T2 = tj0Var.T(childAt)) != null && !T2.r()) {
+            if (R2 >= 0 && (T2 = pj0Var.T(childAt)) != null && !T2.r()) {
                 adapter.t(T2, R2);
             }
         }
@@ -2646,14 +2646,14 @@ public abstract class g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void c(Spannable spannable, int i3, boolean z10, boolean z11) {
+    public static void c(Spannable spannable, int i7, boolean z9, boolean z10) {
         Future future;
-        boolean z12;
+        boolean z11;
         if (spannable == null) {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(spannable);
-        final r rVar = new r(spannableStringBuilder, i3, z10, z11);
+        final r rVar = new r(spannableStringBuilder, i7, z9, z10);
         ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
         Callable callable = new Callable() { // from class: org.telegram.messenger.j
             @Override // java.util.concurrent.Callable
@@ -2675,21 +2675,21 @@ public abstract class g0 {
                 }
             } catch (Exception e10) {
                 a8.g(e10, true);
-                z12 = false;
-                if (z12) {
+                z11 = false;
+                if (z11) {
                 }
             }
             try {
-                z12 = ((Boolean) future.get(hs.e3, TimeUnit.MILLISECONDS)).booleanValue();
+                z11 = ((Boolean) future.get(qs.e3, TimeUnit.MILLISECONDS)).booleanValue();
             } catch (TimeoutException unused2) {
                 if (future != null) {
                     future.cancel(true);
                 }
-                z12 = false;
-                if (z12) {
+                z11 = false;
+                if (z11) {
                 }
             }
-            if (z12) {
+            if (z11) {
                 for (URLSpan uRLSpan : (URLSpan[]) spannable.getSpans(0, spannable.length(), URLSpan.class)) {
                     spannable.removeSpan(uRLSpan);
                 }
@@ -2704,15 +2704,15 @@ public abstract class g0 {
         }
     }
 
-    public static void c0(View view, u10 u10Var) {
+    public static void c0(View view, c20 c20Var) {
         if (!(view instanceof ViewGroup)) {
-            u10Var.a(view);
+            c20Var.a(view);
             return;
         }
         ViewGroup viewGroup = (ViewGroup) view;
-        for (int i3 = 0; i3 < viewGroup.getChildCount(); i3++) {
-            u10Var.a(view);
-            c0(viewGroup.getChildAt(i3), u10Var);
+        for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
+            c20Var.a(view);
+            c0(viewGroup.getChildAt(i7), c20Var);
         }
     }
 
@@ -2739,12 +2739,12 @@ public abstract class g0 {
     }
 
     public static void c3(Activity activity) {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 26) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 26) {
             PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
             builder.setSourceRectHint(null);
             builder.setAspectRatio(null);
-            if (i3 >= 31) {
+            if (i7 >= 31) {
                 builder.setAutoEnterEnabled(false);
             }
             w3(activity, builder.build());
@@ -2776,21 +2776,21 @@ public abstract class g0 {
         }
     }
 
-    public static void d0(RecyclerView recyclerView, u10 u10Var) {
+    public static void d0(RecyclerView recyclerView, c20 c20Var) {
         if (recyclerView == null) {
             return;
         }
-        for (int i3 = 0; i3 < recyclerView.getChildCount(); i3++) {
-            u10Var.a(recyclerView.getChildAt(i3));
+        for (int i7 = 0; i7 < recyclerView.getChildCount(); i7++) {
+            c20Var.a(recyclerView.getChildAt(i7));
         }
         for (int i10 = 0; i10 < recyclerView.getCachedChildCount(); i10++) {
-            u10Var.a(recyclerView.P(i10));
+            c20Var.a(recyclerView.P(i10));
         }
         for (int i11 = 0; i11 < recyclerView.getHiddenChildCount(); i11++) {
-            u10Var.a(recyclerView.V(i11));
+            c20Var.a(recyclerView.V(i11));
         }
         for (int i12 = 0; i12 < recyclerView.getAttachedScrapChildCount(); i12++) {
-            u10Var.a(recyclerView.O(i12));
+            c20Var.a(recyclerView.O(i12));
         }
     }
 
@@ -2808,8 +2808,8 @@ public abstract class g0 {
                         arrayList = new ArrayList();
                     }
                     File file2 = new File(absolutePath.substring(0, indexOf));
-                    for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                        ((File) arrayList.get(i3)).getPath().equals(file2.getPath());
+                    for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                        ((File) arrayList.get(i7)).getPath().equals(file2.getPath());
                     }
                     if (!hashSet.contains(file2.getAbsolutePath())) {
                         hashSet.add(file2.getAbsolutePath());
@@ -2827,8 +2827,8 @@ public abstract class g0 {
         return arrayList;
     }
 
-    public static int d2(float f10, int i3, int i10) {
-        return Color.argb(W1(f10, Color.alpha(i3), Color.alpha(i10)), W1(f10, Color.red(i3), Color.red(i10)), W1(f10, Color.green(i3), Color.green(i10)), W1(f10, Color.blue(i3), Color.blue(i10)));
+    public static int d2(float f10, int i7, int i10) {
+        return Color.argb(W1(f10, Color.alpha(i7), Color.alpha(i10)), W1(f10, Color.red(i7), Color.red(i10)), W1(f10, Color.green(i7), Color.green(i10)), W1(f10, Color.blue(i7), Color.blue(i10)));
     }
 
     public static void d3() {
@@ -2836,16 +2836,16 @@ public abstract class g0 {
             L = Boolean.valueOf(R1());
         }
         K = null;
-        if (az.X0) {
+        if (iz.X0) {
             SharedPreferences sharedPreferences = t0.b.getSharedPreferences("mainconfig", 0);
-            int i3 = sharedPreferences.getInt("fons_size", (!Q1() || (t0.b != null && t0.b.getPackageManager().hasSystemFeature("android.hardware.sensor.hinge_angle"))) ? 16 : 18);
-            az.W0 = i3;
-            az.Z0 = sharedPreferences.getInt("iv_font_size", i3);
+            int i7 = sharedPreferences.getInt("fons_size", (!Q1() || (t0.b != null && t0.b.getPackageManager().hasSystemFeature("android.hardware.sensor.hinge_angle"))) ? 16 : 18);
+            iz.W0 = i7;
+            iz.Z0 = sharedPreferences.getInt("iv_font_size", i7);
         }
     }
 
     public static SpannableStringBuilder d4(CharSequence charSequence, Runnable runnable) {
-        SpannableString spannableString = new SpannableString(bd.M0(2131749017, null));
+        SpannableString spannableString = new SpannableString(hd.M0(2131749008, null));
         spannableString.setSpan(new w(0, runnable), 0, spannableString.length(), 33);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
         spannableStringBuilder.append((CharSequence) " ");
@@ -2860,21 +2860,21 @@ public abstract class g0 {
         d(new File(str));
     }
 
-    public static String e0(int i3, double d10, double d11, int i10, int i11, boolean z10, int i12, int i13) {
+    public static String e0(int i7, double d2, double d10, int i10, int i11, boolean z9, int i12, int i13) {
         int i14 = 2;
         int min = Math.min(2, (int) Math.ceil(p));
-        int i15 = i13 == -1 ? hp.s1(i3).n3 : i13;
+        int i15 = i13 == -1 ? qp.s1(i7).m3 : i13;
         if (i15 != 1 && i15 != 3) {
-            String str = hp.s1(i3).t3;
-            return !TextUtils.isEmpty(str) ? z10 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false&key=%s", Double.valueOf(d10), Double.valueOf(d11), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d10), Double.valueOf(d11), str) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&key=%s", Double.valueOf(d10), Double.valueOf(d11), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), str) : z10 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false", Double.valueOf(d10), Double.valueOf(d11), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d10), Double.valueOf(d11)) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d", Double.valueOf(d10), Double.valueOf(d11), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min));
+            String str = qp.s1(i7).s3;
+            return !TextUtils.isEmpty(str) ? z9 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false&key=%s", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d2), Double.valueOf(d10), str) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&key=%s", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), str) : z9 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d2), Double.valueOf(d10)) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min));
         }
         String[] strArr = {"ru_RU", "tr_TR"};
-        yc ycVar = bd.E0().B;
+        ed edVar = hd.E0().B;
         String str2 = null;
         int i16 = 0;
         while (i16 < i14) {
             int i17 = i14;
-            if (strArr[i16].toLowerCase().contains(ycVar.c)) {
+            if (strArr[i16].toLowerCase().contains(edVar.c)) {
                 str2 = strArr[i16];
             }
             i16++;
@@ -2884,10 +2884,10 @@ public abstract class g0 {
         if (str2 == null) {
             str2 = "en_US";
         }
-        if (!z10) {
+        if (!z9) {
             Locale locale = Locale.US;
-            Double valueOf = Double.valueOf(d11);
-            Double valueOf2 = Double.valueOf(d10);
+            Double valueOf = Double.valueOf(d10);
+            Double valueOf2 = Double.valueOf(d2);
             Integer valueOf3 = Integer.valueOf(i12);
             Integer valueOf4 = Integer.valueOf(i10 * min);
             Integer valueOf5 = Integer.valueOf(i11 * min);
@@ -2903,14 +2903,14 @@ public abstract class g0 {
             return String.format(locale, "https://static-maps.yandex.ru/1.x/?ll=%.6f,%.6f&z=%d&size=%d,%d&l=map&scale=%d&lang=%s", objArr);
         }
         Locale locale2 = Locale.US;
-        Double valueOf7 = Double.valueOf(d11);
-        Double valueOf8 = Double.valueOf(d10);
+        Double valueOf7 = Double.valueOf(d10);
+        Double valueOf8 = Double.valueOf(d2);
         Integer valueOf9 = Integer.valueOf(i12);
         Integer valueOf10 = Integer.valueOf(i10 * min);
         Integer valueOf11 = Integer.valueOf(i11 * min);
         Integer valueOf12 = Integer.valueOf(min);
-        Double valueOf13 = Double.valueOf(d11);
-        Double valueOf14 = Double.valueOf(d10);
+        Double valueOf13 = Double.valueOf(d10);
+        Double valueOf14 = Double.valueOf(d2);
         Object[] objArr2 = new Object[9];
         objArr2[0] = valueOf7;
         objArr2[1] = valueOf8;
@@ -2924,7 +2924,7 @@ public abstract class g0 {
         return String.format(locale2, "https://static-maps.yandex.ru/1.x/?ll=%.6f,%.6f&z=%d&size=%d,%d&l=map&scale=%d&pt=%.6f,%.6f,vkbkm&lang=%s", objArr2);
     }
 
-    public static Bitmap e1(float f10, float f11, String str, String str2, int i3) {
+    public static Bitmap e1(float f10, float f11, String str, String str2, int i7) {
         FileInputStream fileInputStream;
         BitmapFactory.Options options;
         int i10;
@@ -2941,7 +2941,7 @@ public abstract class g0 {
                 } else {
                     fileInputStream = new FileInputStream(str2);
                     try {
-                        fileInputStream.getChannel().position(i3);
+                        fileInputStream.getChannel().position(i7);
                         BitmapFactory.decodeStream(fileInputStream, null, options);
                     } catch (Throwable th2) {
                         th = th2;
@@ -2993,7 +2993,7 @@ public abstract class g0 {
         if (str != null) {
             decodeStream = BitmapFactory.decodeFile(str, options);
         } else {
-            fileInputStream.getChannel().position(i3);
+            fileInputStream.getChannel().position(i7);
             decodeStream = BitmapFactory.decodeStream(fileInputStream, null, options);
         }
         if (fileInputStream != null) {
@@ -3026,7 +3026,7 @@ public abstract class g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList e2(Uri uri, int i3, boolean z10, ArrayList arrayList, String str) {
+    public static ArrayList e2(Uri uri, int i7, boolean z9, ArrayList arrayList, String str) {
         InputStream createInputStream;
         int i10;
         ArrayList arrayList2;
@@ -3041,7 +3041,7 @@ public abstract class g0 {
         f0 f0Var;
         ArrayList arrayList3 = arrayList;
         int i14 = 1;
-        if (z10) {
+        if (z9) {
             try {
                 createInputStream = t0.b.getContentResolver().openAssetFileDescriptor(uri, "r").createInputStream();
             } catch (Throwable th2) {
@@ -3243,7 +3243,7 @@ public abstract class g0 {
                         }
                         String str6 = (String) e0Var2.b.get(i20);
                         i11 = 0;
-                        if (g5.r(i3).m0.get(str6.substring(Math.max(0, str6.length() - 7))) != null) {
+                        if (g5.r(i7).l0.get(str6.substring(Math.max(0, str6.length() - 7))) != null) {
                             str5 = str6;
                             break;
                         }
@@ -3271,33 +3271,33 @@ public abstract class g0 {
         return arrayList2;
     }
 
-    public static double[] e3(int i3, int i10, int i11) {
+    public static double[] e3(int i7, int i10, int i11) {
+        double d2;
         double d10;
         double d11;
-        double d12;
-        double d13 = i3 / 255.0d;
-        double d14 = i10 / 255.0d;
-        double d15 = i11 / 255.0d;
-        double max = (d13 <= d14 || d13 <= d15) ? Math.max(d14, d15) : d13;
-        double min = (d13 >= d14 || d13 >= d15) ? Math.min(d14, d15) : d13;
-        double d16 = max - min;
-        double d17 = 0.0d;
-        double d18 = max == 0.0d ? 0.0d : d16 / max;
+        double d12 = i7 / 255.0d;
+        double d13 = i10 / 255.0d;
+        double d14 = i11 / 255.0d;
+        double max = (d12 <= d13 || d12 <= d14) ? Math.max(d13, d14) : d12;
+        double min = (d12 >= d13 || d12 >= d14) ? Math.min(d13, d14) : d12;
+        double d15 = max - min;
+        double d16 = 0.0d;
+        double d17 = max == 0.0d ? 0.0d : d15 / max;
         if (max != min) {
-            if (d13 > d14 && d13 > d15) {
-                d10 = (d14 - d15) / d16;
-                d11 = d14 < d15 ? 6 : 0;
-            } else if (d14 > d15) {
-                d12 = 2.0d + ((d15 - d13) / d16);
-                d17 = d12 / 6.0d;
+            if (d12 > d13 && d12 > d14) {
+                d2 = (d13 - d14) / d15;
+                d10 = d13 < d14 ? 6 : 0;
+            } else if (d13 > d14) {
+                d11 = 2.0d + ((d14 - d12) / d15);
+                d16 = d11 / 6.0d;
             } else {
-                d10 = (d13 - d14) / d16;
-                d11 = 4.0d;
+                d2 = (d12 - d13) / d15;
+                d10 = 4.0d;
             }
-            d12 = d10 + d11;
-            d17 = d12 / 6.0d;
+            d11 = d2 + d10;
+            d16 = d11 / 6.0d;
         }
-        return new double[]{d17, d18, max};
+        return new double[]{d16, d17, max};
     }
 
     public static void f(CharSequence charSequence, String str) {
@@ -3312,15 +3312,15 @@ public abstract class g0 {
         }
     }
 
-    public static String f0(int i3) {
-        if (i3 < 1000) {
-            return Integer.toString(i3);
+    public static String f0(int i7) {
+        if (i7 < 1000) {
+            return Integer.toString(i7);
         }
         ArrayList arrayList = new ArrayList();
-        while (i3 != 0) {
-            int i10 = i3 % 1000;
-            i3 /= 1000;
-            if (i3 > 0) {
+        while (i7 != 0) {
+            int i10 = i7 % 1000;
+            i7 /= 1000;
+            if (i7 > 0) {
                 arrayList.add(String.format(Locale.ENGLISH, "%03d", Integer.valueOf(i10)));
             } else {
                 arrayList.add(Integer.toString(i10));
@@ -3359,9 +3359,9 @@ public abstract class g0 {
                 return;
             }
             int rotation = windowManager.getDefaultDisplay().getRotation();
-            int i3 = activity.getResources().getConfiguration().orientation;
+            int i7 = activity.getResources().getConfiguration().orientation;
             if (rotation == 3) {
-                if (i3 == 1) {
+                if (i7 == 1) {
                     activity.setRequestedOrientation(1);
                     return;
                 } else {
@@ -3370,7 +3370,7 @@ public abstract class g0 {
                 }
             }
             if (rotation == 1) {
-                if (i3 == 1) {
+                if (i7 == 1) {
                     activity.setRequestedOrientation(9);
                     return;
                 } else {
@@ -3379,7 +3379,7 @@ public abstract class g0 {
                 }
             }
             if (rotation == 0) {
-                if (i3 == 2) {
+                if (i7 == 2) {
                     activity.setRequestedOrientation(0);
                     return;
                 } else {
@@ -3387,7 +3387,7 @@ public abstract class g0 {
                     return;
                 }
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 activity.setRequestedOrientation(8);
             } else {
                 activity.setRequestedOrientation(9);
@@ -3411,13 +3411,13 @@ public abstract class g0 {
         for (float f11 : fArr) {
             f10 += f11;
         }
-        int i3 = 0;
+        int i7 = 0;
         for (int i10 = 0; i10 < fArr.length; i10++) {
             int floor = (int) Math.floor((fArr[i10] / f10) * 100.0f);
             iArr[i10] = floor;
-            i3 += floor;
+            i7 += floor;
         }
-        while (i3 < 100) {
+        while (i7 < 100) {
             int i11 = -1;
             float f12 = 0.0f;
             for (int i12 = 0; i12 < fArr.length; i12++) {
@@ -3432,7 +3432,7 @@ public abstract class g0 {
                 return;
             }
             iArr[i11] = iArr[i11] + 1;
-            i3++;
+            i7++;
         }
     }
 
@@ -3440,7 +3440,7 @@ public abstract class g0 {
         try {
             ClipboardManager clipboardManager = (ClipboardManager) t0.b.getSystemService("clipboard");
             if (charSequence instanceof Spanned) {
-                clipboardManager.setPrimaryClip(ClipData.newHtmlText("label", charSequence, cg.q.c((Spanned) charSequence)));
+                clipboardManager.setPrimaryClip(ClipData.newHtmlText("label", charSequence, bg.r.c((Spanned) charSequence)));
                 return true;
             }
             clipboardManager.setPrimaryClip(ClipData.newPlainText("label", charSequence));
@@ -3451,11 +3451,11 @@ public abstract class g0 {
         }
     }
 
-    public static String g0(int i3, boolean z10, boolean z11) {
-        int i10 = i3 / 3600;
-        int i11 = (i3 / 60) % 60;
-        int i12 = i3 % 60;
-        return i10 == 0 ? z10 ? String.format(Locale.US, "%02d:%02d", Integer.valueOf(i11), Integer.valueOf(i12)) : String.format(Locale.US, "%d:%02d", Integer.valueOf(i11), Integer.valueOf(i12)) : z11 ? String.format(Locale.US, "%d:%02d", Integer.valueOf(i10), Integer.valueOf(i11)) : String.format(Locale.US, "%d:%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12));
+    public static String g0(int i7, boolean z9, boolean z10) {
+        int i10 = i7 / 3600;
+        int i11 = (i7 / 60) % 60;
+        int i12 = i7 % 60;
+        return i10 == 0 ? z9 ? String.format(Locale.US, "%02d:%02d", Integer.valueOf(i11), Integer.valueOf(i12)) : String.format(Locale.US, "%d:%02d", Integer.valueOf(i11), Integer.valueOf(i12)) : z10 ? String.format(Locale.US, "%d:%02d", Integer.valueOf(i10), Integer.valueOf(i11)) : String.format(Locale.US, "%d:%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12));
     }
 
     public static File g1() {
@@ -3478,12 +3478,12 @@ public abstract class g0 {
         }
     }
 
-    public static int g3(boolean z10, boolean z11) {
-        if (z10) {
+    public static int g3(boolean z9, boolean z10) {
+        if (z9) {
             return w;
         }
-        int i3 = v;
-        return z11 ? i3 - L(42.0f) : i3;
+        int i7 = v;
+        return z10 ? i7 - L(42.0f) : i7;
     }
 
     public static void h(ColorMatrix colorMatrix, float f10) {
@@ -3491,10 +3491,10 @@ public abstract class g0 {
         colorMatrix.postConcat(new ColorMatrix(new float[]{1.0f, 0.0f, 0.0f, 0.0f, f11, 0.0f, 1.0f, 0.0f, 0.0f, f11, 0.0f, 0.0f, 1.0f, 0.0f, f11, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
     }
 
-    public static String h0(int i3, boolean z10) {
-        int i10 = i3 / 60;
-        int i11 = i3 % 60;
-        return z10 ? String.format(Locale.US, "%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11)) : String.format(Locale.US, "%d:%02d", Integer.valueOf(i10), Integer.valueOf(i11));
+    public static String h0(int i7, boolean z9) {
+        int i10 = i7 / 60;
+        int i11 = i7 % 60;
+        return z9 ? String.format(Locale.US, "%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11)) : String.format(Locale.US, "%d:%02d", Integer.valueOf(i10), Integer.valueOf(i11));
     }
 
     public static byte[] h1(String str) {
@@ -3522,26 +3522,26 @@ public abstract class g0 {
         colorMatrix.postConcat(new ColorMatrix(new float[]{f13 + f11, f14, f15, 0.0f, 0.0f, f13, f14 + f11, f15, 0.0f, 0.0f, f13, f14, f11 + f15, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
     }
 
-    public static String i0(long j10, boolean z10, boolean z11) {
-        if (j10 == 0) {
+    public static String i0(long j3, boolean z9, boolean z10) {
+        if (j3 == 0) {
             return String.format("%d KB", 0);
         }
-        if (j10 < 1024) {
-            return String.format("%d B", Long.valueOf(j10));
+        if (j3 < 1024) {
+            return String.format("%d B", Long.valueOf(j3));
         }
-        if (j10 < 1048576) {
-            float f10 = j10 / 1024.0f;
-            if (z10) {
-                int i3 = (int) f10;
-                if ((f10 - i3) * 10.0f == 0.0f) {
-                    return String.format("%d KB", Integer.valueOf(i3));
+        if (j3 < 1048576) {
+            float f10 = j3 / 1024.0f;
+            if (z9) {
+                int i7 = (int) f10;
+                if ((f10 - i7) * 10.0f == 0.0f) {
+                    return String.format("%d KB", Integer.valueOf(i7));
                 }
             }
             return String.format("%.1f KB", Float.valueOf(f10));
         }
-        if (j10 < 1048576000) {
-            float f11 = (j10 / 1024.0f) / 1024.0f;
-            if (z10) {
+        if (j3 < 1048576000) {
+            float f11 = (j3 / 1024.0f) / 1024.0f;
+            if (z9) {
                 int i10 = (int) f11;
                 if ((f11 - i10) * 10.0f == 0.0f) {
                     return String.format("%d MB", Integer.valueOf(i10));
@@ -3549,14 +3549,14 @@ public abstract class g0 {
             }
             return String.format("%.1f MB", Float.valueOf(f11));
         }
-        float f12 = ((int) ((j10 / 1024) / 1024)) / 1000.0f;
-        if (z10) {
+        float f12 = ((int) ((j3 / 1024) / 1024)) / 1000.0f;
+        if (z9) {
             int i11 = (int) f12;
             if ((f12 - i11) * 10.0f == 0.0f) {
                 return String.format("%d GB", Integer.valueOf(i11));
             }
         }
-        return z11 ? String.format("%.1f GB", Float.valueOf(f12)) : String.format("%.2f GB", Float.valueOf(f12));
+        return z10 ? String.format("%.1f GB", Float.valueOf(f12)) : String.format("%.2f GB", Float.valueOf(f12));
     }
 
     public static Long i1(String str) {
@@ -3584,14 +3584,14 @@ public abstract class g0 {
         }
     }
 
-    public static void i3(Runnable runnable, long j10) {
+    public static void i3(Runnable runnable, long j3) {
         if (t0.d == null) {
             return;
         }
-        if (j10 == 0) {
+        if (j3 == 0) {
             t0.d.post(runnable);
         } else {
-            t0.d.postDelayed(runnable, j10);
+            t0.d.postDelayed(runnable, j3);
         }
     }
 
@@ -3616,11 +3616,11 @@ public abstract class g0 {
         }
     }
 
-    public static String j0(int i3) {
-        int i10 = i3 / 3600;
-        int i11 = (i3 / 60) % 60;
-        int i12 = i3 % 60;
-        return i3 < 0 ? String.format(Locale.US, "-%02d:%02d:%02d", Integer.valueOf(Math.abs(i10)), Integer.valueOf(Math.abs(i11)), Integer.valueOf(Math.abs(i12))) : String.format(Locale.US, "%02d:%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12));
+    public static String j0(int i7) {
+        int i10 = i7 / 3600;
+        int i11 = (i7 / 60) % 60;
+        int i12 = i7 % 60;
+        return i7 < 0 ? String.format(Locale.US, "-%02d:%02d:%02d", Integer.valueOf(Math.abs(i10)), Integer.valueOf(Math.abs(i11)), Integer.valueOf(Math.abs(i12))) : String.format(Locale.US, "%02d:%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0023, code lost:
@@ -3668,7 +3668,7 @@ public abstract class g0 {
         return null;
     }
 
-    public static Bitmap j2(float f10, int i3, View view) {
+    public static Bitmap j2(float f10, int i7, View view) {
         if (view == null) {
             return null;
         }
@@ -3680,7 +3680,7 @@ public abstract class g0 {
         canvas.scale(f11, f11);
         canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
         view.draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(i3, Math.max(width, height) / hs.K2));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(i7, Math.max(width, height) / qs.K2));
         return createBitmap;
     }
 
@@ -3690,28 +3690,28 @@ public abstract class g0 {
         rectF.set(f11 - (f13 * f10), f12 - ((f12 - rectF.top) * f10), (f14 * f10) + f11, ((rectF.bottom - f12) * f10) + f12);
     }
 
-    public static int k(int i3, ColorMatrix colorMatrix) {
+    public static int k(int i7, ColorMatrix colorMatrix) {
         float[] array = colorMatrix.getArray();
-        int alpha = Color.alpha(i3);
-        int red = Color.red(i3);
-        int green = Color.green(i3);
+        int alpha = Color.alpha(i7);
+        int red = Color.red(i7);
+        int green = Color.green(i7);
         float f10 = red;
         float f11 = green;
-        float blue = Color.blue(i3);
+        float blue = Color.blue(i7);
         float f12 = alpha;
         float f13 = (array[3] * f12) + (array[2] * blue) + (array[1] * f11) + (array[0] * f10) + array[4];
         float f14 = (array[8] * f12) + (array[7] * blue) + (array[6] * f11) + (array[5] * f10) + array[9];
         float f15 = (array[13] * f12) + (array[12] * blue) + (array[11] * f11) + (array[10] * f10) + array[14];
-        return Color.argb(b8.be.b(Math.round((array[18] * f12) + (array[17] * blue) + (array[16] * f11) + (array[15] * f10) + array[19]), 0, hs.e4), b8.be.b(Math.round(f13), 0, hs.e4), b8.be.b(Math.round(f14), 0, hs.e4), b8.be.b(Math.round(f15), 0, hs.e4));
+        return Color.argb(c8.j9.b(Math.round((array[18] * f12) + (array[17] * blue) + (array[16] * f11) + (array[15] * f10) + array[19]), 0, qs.e4), c8.j9.b(Math.round(f13), 0, qs.e4), c8.j9.b(Math.round(f14), 0, qs.e4), c8.j9.b(Math.round(f15), 0, qs.e4));
     }
 
-    public static String k0(int i3, int i10) {
+    public static String k0(int i7, int i10) {
         int i11 = i10 / 3600;
         int i12 = (i10 / 60) % 60;
         int i13 = i10 % 60;
-        int i14 = i3 / 3600;
-        int i15 = (i3 / 60) % 60;
-        int i16 = i3 % 60;
+        int i14 = i7 / 3600;
+        int i15 = (i7 / 60) % 60;
+        int i16 = i7 % 60;
         return i10 == 0 ? i14 == 0 ? String.format(Locale.US, "%d:%02d / -:--", Integer.valueOf(i15), Integer.valueOf(i16)) : String.format(Locale.US, "%d:%02d:%02d / -:--", Integer.valueOf(i14), Integer.valueOf(i15), Integer.valueOf(i16)) : (i14 == 0 && i11 == 0) ? String.format(Locale.US, "%d:%02d / %d:%02d", Integer.valueOf(i15), Integer.valueOf(i16), Integer.valueOf(i12), Integer.valueOf(i13)) : String.format(Locale.US, "%d:%02d:%02d / %d:%02d:%02d", Integer.valueOf(i14), Integer.valueOf(i15), Integer.valueOf(i16), Integer.valueOf(i11), Integer.valueOf(i12), Integer.valueOf(i13));
     }
 
@@ -3733,12 +3733,12 @@ public abstract class g0 {
         if (q4Var == null || str == null) {
             return;
         }
-        org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) q4Var.getFragmentStack().get(q4Var.getFragmentStack().size() - 1);
+        org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) q4Var.getFragmentStack().get(q4Var.getFragmentStack().size() - 1);
         try {
-            Field declaredField = d2Var.getClass().getDeclaredField("listView");
+            Field declaredField = f2Var.getClass().getDeclaredField("listView");
             declaredField.setAccessible(true);
-            tj0 tj0Var = (tj0) declaredField.get(d2Var);
-            tj0Var.e1(new i(d2Var, str, tj0Var), 700, true);
+            pj0 pj0Var = (pj0) declaredField.get(f2Var);
+            pj0Var.e1(new i(f2Var, str, pj0Var), 700, true);
             declaredField.setAccessible(false);
         } catch (Throwable unused) {
         }
@@ -3753,68 +3753,68 @@ public abstract class g0 {
         return createBitmap;
     }
 
-    public static SpannableStringBuilder l0(CharSequence charSequence, e9 e9Var, CharSequence... charSequenceArr) {
+    public static SpannableStringBuilder l0(CharSequence charSequence, k9 k9Var, CharSequence... charSequenceArr) {
         String charSequence2 = charSequence.toString();
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence);
-        for (int i3 = 0; i3 < charSequenceArr.length; i3++) {
-            String str = (String) e9Var.k(Integer.valueOf(i3));
+        for (int i7 = 0; i7 < charSequenceArr.length; i7++) {
+            String str = (String) k9Var.j(Integer.valueOf(i7));
             int indexOf = charSequence2.indexOf(str);
             if (indexOf != -1) {
-                valueOf.replace(indexOf, str.length() + indexOf, charSequenceArr[i3]);
-                charSequence2 = charSequence2.substring(0, indexOf) + charSequenceArr[i3].toString() + charSequence2.substring(str.length() + indexOf);
+                valueOf.replace(indexOf, str.length() + indexOf, charSequenceArr[i7]);
+                charSequence2 = charSequence2.substring(0, indexOf) + charSequenceArr[i7].toString() + charSequence2.substring(str.length() + indexOf);
             }
         }
         return valueOf;
     }
 
-    public static int l1(int i3, int i10, int i11) {
-        return Math.max(L(320.0f), (((i3 - i10) - i11) * 35) / 100) + i10;
+    public static int l1(int i7, int i10, int i11) {
+        return Math.max(L(320.0f), (((i7 - i10) - i11) * 35) / 100) + i10;
     }
 
-    public static void l2(u10 u10Var, float f10) {
-        m2(u10Var, f10, (int) f10, null);
+    public static void l2(c20 c20Var, float f10) {
+        m2(c20Var, f10, (int) f10, null);
     }
 
-    public static void l3(Activity activity, int i3) {
+    public static void l3(Activity activity, int i7) {
         if (activity == null || Q1()) {
             return;
         }
         int i10 = N;
-        if (i10 == 0 || i10 == i3) {
+        if (i10 == 0 || i10 == i7) {
             activity.getWindow().setSoftInputMode(48);
         }
     }
 
     public static void m(WindowManager.LayoutParams layoutParams) {
-        int i3 = Build.VERSION.SDK_INT;
-        if (i3 >= 28) {
-            layoutParams.layoutInDisplayCutoutMode = i3 >= 30 ? 3 : 1;
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 28) {
+            layoutParams.layoutInDisplayCutoutMode = i7 >= 30 ? 3 : 1;
         }
     }
 
     public static SpannableStringBuilder m0(CharSequence charSequence, CharSequence... charSequenceArr) {
-        return charSequence.toString().contains("%s") ? l0(charSequence, new o4.v0(7), charSequenceArr) : l0(charSequence, new o4.v0(9), charSequenceArr);
+        return charSequence.toString().contains("%s") ? l0(charSequence, new ni.a(10), charSequenceArr) : l0(charSequence, new ni.a(12), charSequenceArr);
     }
 
-    public static int m1(String str, boolean z10) {
+    public static int m1(String str, boolean z9) {
         int[] iArr = b0;
         int[] iArr2 = a0;
         if (str == null || str.length() == 0) {
-            return z10 ? iArr[0] : iArr2[0];
+            return z9 ? iArr[0] : iArr2[0];
         }
-        int i3 = (str.contains(".doc") || str.contains(".txt") || str.contains(".psd")) ? 0 : (str.contains(".xls") || str.contains(".csv")) ? 1 : (str.contains(".pdf") || str.contains(".ppt") || str.contains(".key")) ? 2 : (str.contains(".zip") || str.contains(".rar") || str.contains(".ai") || str.contains(".mp3") || str.contains(".mov") || str.contains(".avi")) ? 3 : -1;
-        if (i3 == -1) {
+        int i7 = (str.contains(".doc") || str.contains(".txt") || str.contains(".psd")) ? 0 : (str.contains(".xls") || str.contains(".csv")) ? 1 : (str.contains(".pdf") || str.contains(".ppt") || str.contains(".key")) ? 2 : (str.contains(".zip") || str.contains(".rar") || str.contains(".ai") || str.contains(".mp3") || str.contains(".mov") || str.contains(".avi")) ? 3 : -1;
+        if (i7 == -1) {
             int lastIndexOf = str.lastIndexOf(46);
             String substring = lastIndexOf == -1 ? "" : str.substring(lastIndexOf + 1);
-            i3 = substring.length() != 0 ? substring.charAt(0) % iArr2.length : str.charAt(0) % iArr2.length;
+            i7 = substring.length() != 0 ? substring.charAt(0) % iArr2.length : str.charAt(0) % iArr2.length;
         }
-        return z10 ? iArr[i3] : iArr2[i3];
+        return z9 ? iArr[i7] : iArr2[i7];
     }
 
-    public static void m2(u10 u10Var, float f10, int i3, ArrayList arrayList) {
-        List j10 = j();
-        if (j10 == null) {
-            u10Var.a(null);
+    public static void m2(c20 c20Var, float f10, int i7, ArrayList arrayList) {
+        List j3 = j();
+        if (j3 == null) {
+            c20Var.a(null);
             return;
         }
         m0 = true;
@@ -3829,9 +3829,9 @@ public abstract class g0 {
                 float f11 = 1.0f / f10;
                 canvas.scale(f11, f11);
                 canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
-                for (int i12 = 0; i12 < j10.size(); i12++) {
-                    View view = (View) j10.get(i12);
-                    if (!(view instanceof yd0) && (arrayList == null || !arrayList.contains(view))) {
+                for (int i12 = 0; i12 < j3.size(); i12++) {
+                    View view = (View) j3.get(i12);
+                    if (!(view instanceof ee0) && (arrayList == null || !arrayList.contains(view))) {
                         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                         if (layoutParams instanceof WindowManager.LayoutParams) {
                             WindowManager.LayoutParams layoutParams2 = (WindowManager.LayoutParams) layoutParams;
@@ -3850,11 +3850,11 @@ public abstract class g0 {
                         canvas.restore();
                     }
                 }
-                Utilities.stackBlurBitmap(createBitmap, Math.max(i3, Math.max(i10, i11) / hs.K2));
-                u10Var.a(createBitmap);
+                Utilities.stackBlurBitmap(createBitmap, Math.max(i7, Math.max(i10, i11) / qs.K2));
+                c20Var.a(createBitmap);
             } catch (Exception e11) {
                 a8.g(e11, true);
-                u10Var.a(null);
+                c20Var.a(null);
             }
             m0 = false;
         } catch (Throwable th2) {
@@ -3863,51 +3863,51 @@ public abstract class g0 {
         }
     }
 
-    public static void m3(Activity activity, boolean z10) {
+    public static void m3(Activity activity, boolean z9) {
         Window window;
         if (activity == null || (window = activity.getWindow()) == null) {
             return;
         }
-        o3(window.getDecorView(), z10);
+        o3(window.getDecorView(), z9);
     }
 
-    public static void n(Animator animator, double d10, double d11) {
+    public static void n(Animator animator, double d2, double d10) {
+        double d11;
         double d12;
-        double d13;
-        double sqrt = Math.sqrt(d10 / 1.0d);
-        double sqrt2 = d11 / (Math.sqrt(d10 * 1.0d) * 2.0d);
+        double sqrt = Math.sqrt(d2 / 1.0d);
+        double sqrt2 = d10 / (Math.sqrt(d2 * 1.0d) * 2.0d);
         if (sqrt2 < 1.0d) {
-            d13 = Math.sqrt(1.0d - (sqrt2 * sqrt2)) * sqrt;
-            d12 = ((sqrt2 * sqrt) + (-0.0d)) / d13;
+            d12 = Math.sqrt(1.0d - (sqrt2 * sqrt2)) * sqrt;
+            d11 = ((sqrt2 * sqrt) + (-0.0d)) / d12;
         } else {
-            d12 = (-0.0d) + sqrt;
-            d13 = 0.0d;
+            d11 = (-0.0d) + sqrt;
+            d12 = 0.0d;
         }
-        double d14 = d13;
-        double d15 = d12;
+        double d13 = d12;
+        double d14 = d11;
         animator.setDuration((long) ((Math.log(0.0025d) / ((-sqrt2) * sqrt)) * 1000.0d));
-        animator.setInterpolator(new x(sqrt2, sqrt, d14, d15));
+        animator.setInterpolator(new x(sqrt2, sqrt, d13, d14));
     }
 
-    public static String n0(int i3) {
+    public static String n0(int i7) {
         String str;
-        int i10 = i3 / 3600;
-        int i11 = (i3 / 60) % 60;
-        int i12 = i3 % 60;
+        int i10 = i7 / 3600;
+        int i11 = (i7 / 60) % 60;
+        int i12 = i7 % 60;
         if (i10 > 0) {
             Locale locale = Locale.US;
-            str = com.google.android.recaptcha.internal.a.h(i10, "h");
+            str = com.google.android.recaptcha.internal.a.i(i10, "h");
         } else {
             str = "";
         }
         if (i11 > 0) {
-            StringBuilder l10 = com.google.android.recaptcha.internal.a.l(str);
-            l10.append(String.format(Locale.US, i10 > 0 ? "%02dm" : "%dm", Integer.valueOf(i11)));
-            str = l10.toString();
+            StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str);
+            m10.append(String.format(Locale.US, i10 > 0 ? "%02dm" : "%dm", Integer.valueOf(i11)));
+            str = m10.toString();
         }
-        StringBuilder l11 = com.google.android.recaptcha.internal.a.l(str);
-        l11.append(String.format(Locale.US, (i10 > 0 || i11 > 0) ? "%02ds" : "%ds", Integer.valueOf(i12)));
-        return l11.toString();
+        StringBuilder m11 = com.google.android.recaptcha.internal.a.m(str);
+        m11.append(String.format(Locale.US, (i10 > 0 || i11 > 0) ? "%02ds" : "%ds", Integer.valueOf(i12)));
+        return m11.toString();
     }
 
     public static CharSequence n1(CharSequence charSequence) {
@@ -3926,17 +3926,17 @@ public abstract class g0 {
         colorMatrix.postConcat(new ColorMatrix(new float[]{f10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, f10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, f10, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f}));
     }
 
-    public static void n3(Dialog dialog, boolean z10) {
+    public static void n3(Dialog dialog, boolean z9) {
         Window window;
         if (dialog == null || (window = dialog.getWindow()) == null) {
             return;
         }
-        o3(window.getDecorView(), z10);
+        o3(window.getDecorView(), z9);
     }
 
     public static Typeface o() {
         if (a == null) {
-            if (!az.V0 || Build.VERSION.SDK_INT < 28) {
+            if (!iz.V0 || Build.VERSION.SDK_INT < 28) {
                 a = o1("fonts/rmedium.ttf");
             } else {
                 a = Typeface.create(null, 500, false);
@@ -3945,17 +3945,17 @@ public abstract class g0 {
         return a;
     }
 
-    public static String o0(int i3, int i10) {
+    public static String o0(int i7, int i10) {
         String[] strArr;
-        if (i3 == 0) {
+        if (i7 == 0) {
             return "0";
         }
-        float f10 = i3;
+        float f10 = i7;
         if (i10 == 0) {
-            i10 = i3;
+            i10 = i7;
         }
         if (i10 < 1000) {
-            return f0(i3);
+            return f0(i7);
         }
         int i11 = 0;
         while (true) {
@@ -3976,7 +3976,7 @@ public abstract class g0 {
             return String.format(Locale.ENGLISH, "%.1f%s", Float.valueOf(f12 / 10.0f), strArr[i11]);
         }
         Locale locale = Locale.ENGLISH;
-        return t4.c.q(f0((int) f10), strArr[i11]);
+        return rf.b.q(f0((int) f10), strArr[i11]);
     }
 
     public static Typeface o1(String str) {
@@ -4022,10 +4022,10 @@ public abstract class g0 {
         return p2(false);
     }
 
-    public static void o3(View view, boolean z10) {
+    public static void o3(View view, boolean z9) {
         int systemUiVisibility;
         int b10;
-        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = x7.u.b((systemUiVisibility = view.getSystemUiVisibility()), 16, z10))) {
+        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.yc.b((systemUiVisibility = view.getSystemUiVisibility()), 16, z9))) {
             return;
         }
         view.setSystemUiVisibility(b10);
@@ -4051,14 +4051,14 @@ public abstract class g0 {
         return 0;
     }
 
-    public static String p0(int i3, String str) {
+    public static String p0(int i7, String str) {
         Date date = new Date();
         date.setTime(System.currentTimeMillis() + Utilities.b.nextInt(1000) + 1);
         String format = new SimpleDateFormat("yyyyMMdd_HHmmss_SSS", Locale.US).format(date);
-        if (i3 != 0) {
-            return a1.g.q("VID_", format, ".mp4");
+        if (i7 != 0) {
+            return a8.p0.p("VID_", format, ".mp4");
         }
-        StringBuilder u10 = a1.g.u("IMG_", format, ".");
+        StringBuilder u10 = a8.p0.u("IMG_", format, ".");
         if (TextUtils.isEmpty(str)) {
             str = "jpg";
         }
@@ -4073,60 +4073,60 @@ public abstract class g0 {
         return J;
     }
 
-    public static boolean p2(boolean z10) {
+    public static boolean p2(boolean z9) {
         r0 r0Var = r0.f;
-        if (z10) {
+        if (z9) {
             r0Var.getClass();
             if (SystemClock.elapsedRealtime() - r0Var.c < 200) {
                 r0Var.b = false;
             }
         }
-        boolean z11 = r0Var.b;
-        if (z10) {
+        boolean z10 = r0Var.b;
+        if (z9) {
             r0.f.b = false;
         }
         int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
-        if (r2.a && z10 && az.s.length() > 0) {
-            a8.b("wasInBackground = " + z11 + " appLocked = " + az.x + " autoLockIn = " + az.y + " lastPauseTime = " + az.B + " uptime = " + elapsedRealtime);
+        if (r2.a && z9 && iz.s.length() > 0) {
+            a8.b("wasInBackground = " + z10 + " appLocked = " + iz.x + " autoLockIn = " + iz.y + " lastPauseTime = " + iz.B + " uptime = " + elapsedRealtime);
         }
-        if (az.s.length() > 0 && z11) {
-            if (az.x) {
+        if (iz.s.length() > 0 && z10) {
+            if (iz.x) {
                 return true;
             }
-            if ((az.y != 0 && az.B != 0 && !az.x && az.B + az.y <= elapsedRealtime) || elapsedRealtime + 5 < az.B) {
+            if ((iz.y != 0 && iz.B != 0 && !iz.x && iz.B + iz.y <= elapsedRealtime) || elapsedRealtime + 5 < iz.B) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void p3(Activity activity, boolean z10) {
+    public static void p3(Activity activity, boolean z9) {
         if (activity != null) {
-            s3(activity.getWindow(), z10);
+            s3(activity.getWindow(), z9);
         }
     }
 
     public static int[] q(Drawable drawable) {
-        if (drawable instanceof org.telegram.ui.zm) {
-            return q(((org.telegram.ui.zm) drawable).c(true));
+        if (drawable instanceof org.telegram.ui.dn) {
+            return q(((org.telegram.ui.dn) drawable).c(true));
         }
         int[] iArr = new int[4];
-        int i3 = -16777216;
+        int i7 = -16777216;
         try {
             if (drawable instanceof BitmapDrawable) {
-                i3 = p(((BitmapDrawable) drawable).getBitmap());
+                i7 = p(((BitmapDrawable) drawable).getBitmap());
             } else if (drawable instanceof ColorDrawable) {
-                i3 = ((ColorDrawable) drawable).getColor();
-            } else if (drawable instanceof org.telegram.ui.Components.j9) {
-                int[] iArr2 = ((org.telegram.ui.Components.j9) drawable).a;
+                i7 = ((ColorDrawable) drawable).getColor();
+            } else if (drawable instanceof org.telegram.ui.Components.k9) {
+                int[] iArr2 = ((org.telegram.ui.Components.k9) drawable).a;
                 if (iArr2 != null) {
                     if (iArr2.length > 1) {
-                        i3 = w0(iArr2[0], iArr2[1]);
+                        i7 = w0(iArr2[0], iArr2[1]);
                     } else if (iArr2.length > 0) {
-                        i3 = iArr2[0];
+                        i7 = iArr2[0];
                     }
                 }
-            } else if (drawable instanceof la0) {
+            } else if (drawable instanceof qa0) {
                 int argb = Color.argb(45, 0, 0, 0);
                 iArr[2] = argb;
                 iArr[0] = argb;
@@ -4138,23 +4138,23 @@ public abstract class g0 {
         } catch (Exception e10) {
             a8.g(e10, true);
         }
-        double[] e32 = e3((i3 >> 16) & hs.e4, (i3 >> 8) & hs.e4, i3 & hs.e4);
-        double d10 = e32[1];
-        e32[1] = Math.min(1.0d, ((1.0d - d10) * 0.1d) + 0.05d + d10);
+        double[] e32 = e3((i7 >> 16) & qs.e4, (i7 >> 8) & qs.e4, i7 & qs.e4);
+        double d2 = e32[1];
+        e32[1] = Math.min(1.0d, ((1.0d - d2) * 0.1d) + 0.05d + d2);
         int[] y12 = y1(e32[0], e32[1], Math.max(0.0d, e32[2] * 0.65d));
-        iArr[0] = Color.argb(hs.n1, y12[0], y12[1], y12[2]);
-        iArr[1] = Color.argb(hs.S1, y12[0], y12[1], y12[2]);
+        iArr[0] = Color.argb(qs.n1, y12[0], y12[1], y12[2]);
+        iArr[1] = Color.argb(qs.S1, y12[0], y12[1], y12[2]);
         int[] y13 = y1(e32[0], e32[1], Math.max(0.0d, e32[2] * 0.72d));
-        iArr[2] = Color.argb(hs.n1, y13[0], y13[1], y13[2]);
-        iArr[3] = Color.argb(hs.S1, y13[0], y13[1], y13[2]);
+        iArr[2] = Color.argb(qs.n1, y13[0], y13[1], y13[2]);
+        iArr[3] = Color.argb(qs.S1, y13[0], y13[1], y13[2]);
         return iArr;
     }
 
-    public static File q0(String str, boolean z10) {
+    public static File q0(String str, boolean z9) {
         try {
-            File z11 = w7.z(100);
-            if (!z10 && z11 != null) {
-                return new File(z11, p0(0, str));
+            File z10 = w7.z(100);
+            if (!z9 && z10 != null) {
+                return new File(z10, p0(0, str));
             }
             return new File(t0.b.getExternalFilesDir(Environment.DIRECTORY_PICTURES), p0(0, str));
         } catch (Exception e10) {
@@ -4181,18 +4181,18 @@ public abstract class g0 {
         return 0;
     }
 
-    public static void q2(long j10, StringBuilder sb2) {
-        if (j10 >= 10) {
-            sb2.append(j10);
+    public static void q2(long j3, StringBuilder sb2) {
+        if (j3 >= 10) {
+            sb2.append(j3);
         } else {
             sb2.append("0");
-            sb2.append(j10);
+            sb2.append(j3);
         }
     }
 
-    public static void q3(Dialog dialog, boolean z10) {
+    public static void q3(Dialog dialog, boolean z9) {
         if (dialog != null) {
-            s3(dialog.getWindow(), z10);
+            s3(dialog.getWindow(), z9);
         }
     }
 
@@ -4211,24 +4211,24 @@ public abstract class g0 {
         if (str == null || str.length() == 0) {
             str = str2;
         } else if (str2 != null && str2.length() != 0) {
-            str = a1.g.C(str, " ", str2);
+            str = a8.p0.D(str, " ", str2);
         }
         if (str == null) {
             return "";
         }
         String trim = str.trim();
         String str4 = " " + trim.toLowerCase();
-        int i3 = 0;
+        int i7 = 0;
         while (true) {
-            int indexOf = str4.indexOf(" " + str3, i3);
+            int indexOf = str4.indexOf(" " + str3, i7);
             if (indexOf == -1) {
                 break;
             }
             int i10 = indexOf - (indexOf == 0 ? 0 : 1);
             int length = str3.length() + (indexOf == 0 ? 0 : 1) + i10;
-            if (i3 != 0 && i3 != i10 + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i3, i10));
-            } else if (i3 == 0 && i10 != 0) {
+            if (i7 != 0 && i7 != i10 + 1) {
+                spannableStringBuilder.append((CharSequence) trim.substring(i7, i10));
+            } else if (i7 == 0 && i10 != 0) {
                 spannableStringBuilder.append((CharSequence) trim.substring(0, i10));
             }
             String substring = trim.substring(i10, Math.min(trim.length(), length));
@@ -4238,11 +4238,11 @@ public abstract class g0 {
             String trim2 = substring.trim();
             int length2 = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.q6, null), length2, trim2.length() + length2, 33);
-            i3 = length;
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, null), length2, trim2.length() + length2, 33);
+            i7 = length;
         }
-        if (i3 != -1 && i3 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i3));
+        if (i7 != -1 && i7 < trim.length()) {
+            spannableStringBuilder.append((CharSequence) trim.substring(i7));
         }
         return spannableStringBuilder;
     }
@@ -4254,7 +4254,7 @@ public abstract class g0 {
             return;
         }
         while (view != viewGroup) {
-            if (!(view.getParent() instanceof b5.l)) {
+            if (!(view.getParent() instanceof c5.k)) {
                 fArr[0] = view.getX() + fArr[0];
                 fArr[1] = view.getY() + fArr[1];
             }
@@ -4273,10 +4273,10 @@ public abstract class g0 {
         }
     }
 
-    public static void r3(View view, boolean z10) {
+    public static void r3(View view, boolean z9) {
         int systemUiVisibility;
         int b10;
-        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = x7.u.b((systemUiVisibility = view.getSystemUiVisibility()), TLObject.FLAG_13, z10))) {
+        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.yc.b((systemUiVisibility = view.getSystemUiVisibility()), TLObject.FLAG_13, z9))) {
             return;
         }
         view.setSystemUiVisibility(b10);
@@ -4287,12 +4287,12 @@ public abstract class g0 {
             return f10;
         }
         float min = Math.min(f13, f12) * (1.0f / f12);
-        return b8.be.a((f10 - ((1.0f - min) * (f11 / f12))) / min, 0.0f, 1.0f);
+        return c8.j9.a((f10 - ((1.0f - min) * (f11 / f12))) / min, 0.0f, 1.0f);
     }
 
-    public static File s0(boolean z10) {
+    public static File s0(boolean z9) {
         try {
-            File v02 = v0(z10);
+            File v02 = v0(z9);
             Date date = new Date();
             date.setTime(System.currentTimeMillis() + Utilities.b.nextInt(1000) + 1);
             if (f0 == null) {
@@ -4305,8 +4305,8 @@ public abstract class g0 {
         }
     }
 
-    public static int s1(int i3, boolean z10) {
-        int i10 = z10 ? i3 + hs.K2 : i3 - 180;
+    public static int s1(int i7, boolean z9) {
+        int i10 = z9 ? i7 + qs.K2 : i7 - 180;
         while (i10 >= 360) {
             i10 -= 360;
         }
@@ -4316,50 +4316,50 @@ public abstract class g0 {
         return i10;
     }
 
-    public static void s2(zi ziVar, Activity activity, org.telegram.ui.ActionBar.d2 d2Var) {
+    public static void s2(ij ijVar, Activity activity, org.telegram.ui.ActionBar.f2 f2Var) {
         TLRPC.Document F0;
-        char c2;
+        char c10;
         String str;
-        if (ziVar == null || (F0 = ziVar.F0()) == null) {
+        if (ijVar == null || (F0 = ijVar.F0()) == null) {
             return;
         }
-        String r5 = ziVar.k.media != null ? w7.r(null, F0) : "";
-        String str2 = ziVar.k.attachPath;
-        File file = (str2 == null || str2.length() == 0) ? null : new File(ziVar.k.attachPath);
+        String r10 = ijVar.k.media != null ? w7.r(null, F0) : "";
+        String str2 = ijVar.k.attachPath;
+        File file = (str2 == null || str2.length() == 0) ? null : new File(ijVar.k.attachPath);
         if (file == null || !file.exists()) {
-            w7.G(h10.t0);
-            file = w7.N(ziVar.k, false, true);
+            w7.G(p10.s0);
+            file = w7.N(ijVar.k, false, true);
         }
         if (file == null || !file.exists()) {
             return;
         }
-        if (d2Var != null && file.getName().toLowerCase().endsWith("attheme")) {
-            org.telegram.ui.ActionBar.j6 v10 = org.telegram.ui.ActionBar.k6.v(file, ziVar.I0(), null, true);
+        if (f2Var != null && file.getName().toLowerCase().endsWith("attheme")) {
+            org.telegram.ui.ActionBar.j6 v10 = org.telegram.ui.ActionBar.k6.v(file, ijVar.I0(), null, true);
             if (v10 != null) {
-                d2Var.presentFragment(new l71(v10));
+                f2Var.presentFragment(new u71(v10));
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
             HashMap hashMap = new HashMap();
-            int i3 = org.telegram.ui.ActionBar.k6.L5;
-            hashMap.put("info1", Integer.valueOf(d2Var.getThemedColor(i3)));
-            hashMap.put("info2", Integer.valueOf(d2Var.getThemedColor(i3)));
-            alertDialog$Builder.m(R.raw.not_available, 52, d2Var.getThemedColor(i3), hashMap);
-            org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-            s1Var.X = true;
-            s1Var.U = bd.M0(2131749208, null);
-            alertDialog$Builder.k(bd.M0(2131747839, null), null);
-            d2Var.showDialog(s1Var);
+            int i7 = org.telegram.ui.ActionBar.k6.L5;
+            hashMap.put("info1", Integer.valueOf(f2Var.getThemedColor(i7)));
+            hashMap.put("info2", Integer.valueOf(f2Var.getThemedColor(i7)));
+            alertDialog$Builder.m(R.raw.not_available, 52, f2Var.getThemedColor(i7), hashMap);
+            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+            u1Var.W = true;
+            u1Var.T = hd.M0(2131749199, null);
+            alertDialog$Builder.k(hd.M0(2131747830, null), null);
+            f2Var.showDialog(u1Var);
             return;
         }
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.setFlags(1);
             MimeTypeMap singleton = MimeTypeMap.getSingleton();
-            c2 = 0;
+            c10 = 0;
             try {
-                int lastIndexOf = r5.lastIndexOf(46);
-                if (lastIndexOf == -1 || ((str = singleton.getMimeTypeFromExtension(r5.substring(lastIndexOf + 1).toLowerCase())) == null && ((str = F0.mime_type) == null || str.length() == 0))) {
+                int lastIndexOf = r10.lastIndexOf(46);
+                if (lastIndexOf == -1 || ((str = singleton.getMimeTypeFromExtension(r10.substring(lastIndexOf + 1).toLowerCase())) == null && ((str = F0.mime_type) == null || str.length() == 0))) {
                     str = null;
                 }
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -4390,26 +4390,26 @@ public abstract class g0 {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(activity);
                 HashMap hashMap2 = new HashMap();
                 int i10 = org.telegram.ui.ActionBar.k6.L5;
-                hashMap2.put("info1", Integer.valueOf(d2Var.getThemedColor(i10)));
-                hashMap2.put("info2", Integer.valueOf(d2Var.getThemedColor(i10)));
-                alertDialog$Builder2.m(R.raw.not_available, 52, d2Var.getThemedColor(i10), hashMap2);
-                org.telegram.ui.ActionBar.s1 s1Var2 = alertDialog$Builder2.a;
-                s1Var2.X = true;
-                alertDialog$Builder2.k(bd.M0(2131747839, null), null);
+                hashMap2.put("info1", Integer.valueOf(f2Var.getThemedColor(i10)));
+                hashMap2.put("info2", Integer.valueOf(f2Var.getThemedColor(i10)));
+                alertDialog$Builder2.m(R.raw.not_available, 52, f2Var.getThemedColor(i10), hashMap2);
+                org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
+                u1Var2.W = true;
+                alertDialog$Builder2.k(hd.M0(2131747830, null), null);
                 Object[] objArr = new Object[1];
-                objArr[c2] = ziVar.F0().mime_type;
-                s1Var2.U = bd.a0("NoHandleAppInstalled", null, 2131748213, objArr);
-                d2Var.showDialog(s1Var2);
+                objArr[c10] = ijVar.F0().mime_type;
+                u1Var2.T = hd.a0("NoHandleAppInstalled", null, 2131748204, objArr);
+                f2Var.showDialog(u1Var2);
             }
         } catch (Exception unused3) {
-            c2 = 0;
+            c10 = 0;
         }
     }
 
-    public static void s3(Window window, boolean z10) {
+    public static void s3(Window window, boolean z9) {
         View decorView = window.getDecorView();
         int systemUiVisibility = decorView.getSystemUiVisibility();
-        int b10 = x7.u.b(systemUiVisibility, TLObject.FLAG_13, z10);
+        int b10 = c8.yc.b(systemUiVisibility, TLObject.FLAG_13, z9);
         if (systemUiVisibility != b10) {
             decorView.setSystemUiVisibility(b10);
         }
@@ -4430,41 +4430,41 @@ public abstract class g0 {
         if (charSequence2 == null || charSequence2.length() <= 0) {
             return -1;
         }
-        int i3 = 0;
-        while (i3 <= charSequence.length() - charSequence2.length()) {
+        int i7 = 0;
+        while (i7 <= charSequence.length() - charSequence2.length()) {
             for (int i10 = 0; i10 < charSequence2.length(); i10++) {
-                if (charSequence2.charAt(i10) != charSequence.charAt(i3 + i10)) {
+                if (charSequence2.charAt(i10) != charSequence.charAt(i7 + i10)) {
                     break;
                 }
             }
-            return i3;
+            return i7;
         }
         return -1;
     }
 
     public static int t0() {
-        if (h10.i(h10.t0).p() && !ConnectionsManager.getInstance(h10.t0).isTestBackend()) {
-            return h10.t0;
+        if (p10.i(p10.s0).p() && !ConnectionsManager.getInstance(p10.s0).isTestBackend()) {
+            return p10.s0;
         }
-        for (int i3 = 0; i3 < 4; i3++) {
-            if (h10.i(i3).p() && !ConnectionsManager.getInstance(i3).isTestBackend()) {
-                return i3;
+        for (int i7 = 0; i7 < 4; i7++) {
+            if (p10.i(i7).p() && !ConnectionsManager.getInstance(i7).isTestBackend()) {
+                return i7;
             }
         }
-        return h10.t0;
+        return p10.s0;
     }
 
     public static boolean t1(LaunchActivity launchActivity, Intent intent) {
         Uri data;
-        ui.a d10;
+        ui.a d2;
         if (intent == null) {
             return false;
         }
         try {
-            if ((intent.getFlags() & TLObject.FLAG_20) != 0 || (data = intent.getData()) == null || (d10 = ui.a.d(data)) == null || !d10.g()) {
+            if ((intent.getFlags() & TLObject.FLAG_20) != 0 || (data = intent.getData()) == null || (d2 = ui.a.d(data)) == null || !d2.g()) {
                 return false;
             }
-            L3(launchActivity, d10);
+            L3(launchActivity, d2);
             return true;
         } catch (Exception unused) {
             return false;
@@ -4483,7 +4483,7 @@ public abstract class g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean t2(File file, String str, String str2, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+    public static boolean t2(File file, String str, String str2, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
         if (file == null || !file.exists()) {
             return false;
         }
@@ -4493,7 +4493,7 @@ public abstract class g0 {
         int lastIndexOf = str == null ? -1 : str.lastIndexOf(46);
         if (lastIndexOf != -1) {
             String substring = str.substring(lastIndexOf + 1);
-            if (z10) {
+            if (z9) {
                 if (substring != null) {
                     switch (substring.toLowerCase().hashCode()) {
                         case -1535907675:
@@ -4660,9 +4660,9 @@ public abstract class g0 {
             } else if (str2 != null) {
             }
             if (str2 != null && str2.equals("application/vnd.android.package-archive")) {
-                if (!z10) {
+                if (!z9) {
                     if (Build.VERSION.SDK_INT >= 26 && !t0.b.getPackageManager().canRequestPackageInstalls()) {
-                        org.telegram.ui.Components.t4.j(activity, e6Var).show();
+                        org.telegram.ui.Components.v4.j(activity, f6Var).show();
                         return true;
                     }
                 }
@@ -4694,7 +4694,7 @@ public abstract class g0 {
         }
         str2 = null;
         if (str2 != null) {
-            if (!z10) {
+            if (!z9) {
             }
             return true;
         }
@@ -4704,43 +4704,43 @@ public abstract class g0 {
         }
     }
 
-    public static void t3(Activity activity, int i3, boolean z10) {
+    public static void t3(Activity activity, int i7, boolean z9) {
         if (activity != null) {
-            v3(activity.getWindow(), i3, z10, null);
+            v3(activity.getWindow(), i7, z9, null);
         }
     }
 
-    public static void u(Context context, boolean z10) {
+    public static void u(Context context, boolean z9) {
         if (context == null) {
             return;
         }
-        context.setTheme((org.telegram.ui.ActionBar.k6.I.q() && z10) ? R.style.Theme_TMessages_Dark : R.style.Theme_TMessages);
+        context.setTheme((org.telegram.ui.ActionBar.k6.I.q() && z9) ? R.style.Theme_TMessages_Dark : R.style.Theme_TMessages);
     }
 
     public static Activity u0() {
         Activity W2 = W(null);
         if (W2 == null || W2.isFinishing()) {
-            W2 = LaunchActivity.K1;
+            W2 = LaunchActivity.G1;
         }
         return (W2 == null || W2.isFinishing()) ? W(t0.b) : W2;
     }
 
-    public static boolean u1(org.telegram.ui.ActionBar.d2 d2Var) {
-        List j10;
-        if (d2Var == null) {
+    public static boolean u1(org.telegram.ui.ActionBar.f2 f2Var) {
+        List j3;
+        if (f2Var == null) {
             return false;
         }
-        Dialog dialog = d2Var.visibleDialog;
-        if (dialog == null || (dialog instanceof org.telegram.ui.ActionBar.s1) || ((dialog instanceof org.telegram.ui.ActionBar.t2) && ((org.telegram.ui.ActionBar.t2) dialog).g1 != null)) {
-            if (d2Var.getParentLayout() == null || (j10 = j()) == null || j10.isEmpty()) {
+        Dialog dialog = f2Var.visibleDialog;
+        if (dialog == null || (dialog instanceof org.telegram.ui.ActionBar.u1) || ((dialog instanceof org.telegram.ui.ActionBar.v2) && ((org.telegram.ui.ActionBar.v2) dialog).f1 != null)) {
+            if (f2Var.getParentLayout() == null || (j3 = j()) == null || j3.isEmpty()) {
                 return false;
             }
             View view = null;
-            for (int size = j10.size() - 1; size >= 0; size--) {
-                view = (View) j10.get(size);
-                Dialog dialog2 = d2Var.visibleDialog;
-                if (dialog2 instanceof org.telegram.ui.ActionBar.s1) {
-                    View view2 = ((org.telegram.ui.ActionBar.s1) dialog2).d1;
+            for (int size = j3.size() - 1; size >= 0; size--) {
+                view = (View) j3.get(size);
+                Dialog dialog2 = f2Var.visibleDialog;
+                if (dialog2 instanceof org.telegram.ui.ActionBar.u1) {
+                    View view2 = ((org.telegram.ui.ActionBar.u1) dialog2).a1;
                     while (view2 != null && (view2.getParent() instanceof View)) {
                         view2 = (View) view2.getParent();
                     }
@@ -4748,11 +4748,11 @@ public abstract class g0 {
                         continue;
                     }
                 }
-                if (!(view instanceof org.telegram.ui.ActionBar.o1) && !(view instanceof yd0)) {
+                if (!(view instanceof org.telegram.ui.ActionBar.q1) && !(view instanceof ee0)) {
                     break;
                 }
             }
-            View view3 = d2Var.getParentLayout().getView();
+            View view3 = f2Var.getParentLayout().getView();
             while (view3 != null && (view3.getParent() instanceof View)) {
                 view3 = (View) view3.getParent();
             }
@@ -4763,21 +4763,21 @@ public abstract class g0 {
         return true;
     }
 
-    public static boolean u2(zi ziVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        String str = ziVar.k.attachPath;
-        File file = (str == null || str.length() == 0) ? null : new File(ziVar.k.attachPath);
+    public static boolean u2(ij ijVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
+        String str = ijVar.k.attachPath;
+        File file = (str == null || str.length() == 0) ? null : new File(ijVar.k.attachPath);
         if (file == null || !file.exists()) {
-            w7.G(ziVar.I1);
-            file = w7.N(ziVar.k, false, true);
+            w7.G(ijVar.I1);
+            file = w7.N(ijVar.k, false, true);
         }
         File file2 = file;
-        int i3 = ziVar.D;
-        return t2(file2, ziVar.S0(), (i3 == 9 || i3 == 0) ? ziVar.u1() : null, activity, e6Var, z10);
+        int i7 = ijVar.D;
+        return t2(file2, ijVar.S0(), (i7 == 9 || i7 == 0) ? ijVar.u1() : null, activity, f6Var, z9);
     }
 
-    public static void u3(Dialog dialog, int i3, boolean z10, org.telegram.ui.Components.kg kgVar) {
+    public static void u3(Dialog dialog, int i7, boolean z9, org.telegram.ui.Components.mg mgVar) {
         if (dialog != null) {
-            v3(dialog.getWindow(), i3, z10, kgVar);
+            v3(dialog.getWindow(), i7, z9, mgVar);
         }
     }
 
@@ -4858,9 +4858,9 @@ public abstract class g0 {
         }
     }
 
-    public static File v0(boolean z10) {
-        int i3;
-        if (z10 || !r2.b || (((i3 = Build.VERSION.SDK_INT) >= 33 && t0.b.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) || (i3 <= 33 && t0.b.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0))) {
+    public static File v0(boolean z9) {
+        int i7;
+        if (z9 || !r2.b || (((i7 = Build.VERSION.SDK_INT) >= 33 && t0.b.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) || (i7 <= 33 && t0.b.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0))) {
             return w7.z(0);
         }
         if ("mounted".equals(Environment.getExternalStorageState())) {
@@ -4904,8 +4904,8 @@ public abstract class g0 {
             return false;
         }
         String str = null;
-        String r5 = w7.r(null, tLObject);
-        w7.G(h10.t0);
+        String r10 = w7.r(null, tLObject);
+        w7.G(p10.s0);
         File K2 = w7.K(tLObject, null, true, true);
         if (K2 == null || !K2.exists()) {
             return false;
@@ -4913,9 +4913,9 @@ public abstract class g0 {
         Intent intent = new Intent("android.intent.action.VIEW");
         intent.setFlags(1);
         MimeTypeMap singleton = MimeTypeMap.getSingleton();
-        int lastIndexOf = r5.lastIndexOf(46);
+        int lastIndexOf = r10.lastIndexOf(46);
         if (lastIndexOf != -1) {
-            String mimeTypeFromExtension = singleton.getMimeTypeFromExtension(r5.substring(lastIndexOf + 1).toLowerCase());
+            String mimeTypeFromExtension = singleton.getMimeTypeFromExtension(r10.substring(lastIndexOf + 1).toLowerCase());
             if (mimeTypeFromExtension == null) {
                 if (tLObject instanceof TLRPC.TL_document) {
                     mimeTypeFromExtension = ((TLRPC.TL_document) tLObject).mime_type;
@@ -4950,7 +4950,7 @@ public abstract class g0 {
         }
     }
 
-    public static void v3(Window window, int i3, boolean z10, org.telegram.ui.Components.kg kgVar) {
+    public static void v3(Window window, int i7, boolean z9, org.telegram.ui.Components.mg mgVar) {
         ValueAnimator valueAnimator;
         if (window == null) {
             return;
@@ -4960,23 +4960,23 @@ public abstract class g0 {
             valueAnimator.cancel();
             l0.remove(window);
         }
-        if (!z10) {
-            if (kgVar != null) {
-                org.telegram.ui.Components.bi biVar = kgVar.b;
-                biVar.G0 = -1;
-                biVar.H0 = i3;
-                biVar.b.invalidate();
+        if (!z9) {
+            if (mgVar != null) {
+                org.telegram.ui.Components.di diVar = mgVar.b;
+                diVar.F0 = -1;
+                diVar.G0 = i7;
+                diVar.b.invalidate();
             }
             try {
-                window.setNavigationBarColor(i3);
+                window.setNavigationBarColor(i7);
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        ValueAnimator ofArgb = ValueAnimator.ofArgb(window.getNavigationBarColor(), i3);
-        ofArgb.addUpdateListener(new q(0, kgVar, window));
-        ofArgb.addListener(new ii.v3(window, 5));
+        ValueAnimator ofArgb = ValueAnimator.ofArgb(window.getNavigationBarColor(), i7);
+        ofArgb.addUpdateListener(new q(0, mgVar, window));
+        ofArgb.addListener(new m.a(window, 4));
         ofArgb.setDuration(200L);
         ofArgb.setInterpolator(org.telegram.ui.Components.xq.f);
         ofArgb.start();
@@ -4987,54 +4987,54 @@ public abstract class g0 {
     }
 
     public static boolean w(String str) {
+        boolean z9;
         boolean z10;
-        boolean z11;
         if (str == null) {
             return false;
         }
         try {
             int length = str.length();
+            z9 = false;
             z10 = false;
-            z11 = false;
-            for (int i3 = 0; i3 < length; i3++) {
+            for (int i7 = 0; i7 < length; i7++) {
                 try {
-                    char charAt = str.charAt(i3);
+                    char charAt = str.charAt(i7);
                     if (charAt != '.' && charAt != '-' && charAt != '/' && charAt != '+' && (charAt < '0' || charAt > '9')) {
                         if ((charAt < 'a' || charAt > 'z') && (charAt < 'A' || charAt > 'Z')) {
-                            z11 = true;
-                        } else {
                             z10 = true;
+                        } else {
+                            z9 = true;
                         }
-                        if (z10 && z11) {
+                        if (z9 && z10) {
                             break;
                         }
                     }
                 } catch (Exception e10) {
                     e = e10;
                     a8.g(e, true);
-                    return !z10 ? false : false;
+                    return !z9 ? false : false;
                 }
             }
         } catch (Exception e11) {
             e = e11;
+            z9 = false;
             z10 = false;
-            z11 = false;
         }
-        if (!z10 && z11) {
+        if (!z9 && z10) {
             return true;
         }
     }
 
-    public static int w0(int i3, int i10) {
-        int red = Color.red(i3);
+    public static int w0(int i7, int i10) {
+        int red = Color.red(i7);
         int red2 = Color.red(i10);
-        int green = Color.green(i3);
+        int green = Color.green(i7);
         int green2 = Color.green(i10);
-        int blue = Color.blue(i3);
-        return Color.argb(hs.e4, (red2 / 2) + (red / 2), (green2 / 2) + (green / 2), (Color.blue(i10) / 2) + (blue / 2));
+        int blue = Color.blue(i7);
+        return Color.argb(qs.e4, (red2 / 2) + (red / 2), (green2 / 2) + (green / 2), (Color.blue(i10) / 2) + (blue / 2));
     }
 
-    public static SpannableStringBuilder w1(CharSequence charSequence, String str, org.telegram.ui.ActionBar.e6 e6Var) {
+    public static SpannableStringBuilder w1(CharSequence charSequence, String str, org.telegram.ui.ActionBar.f6 f6Var) {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(charSequence)) {
             return null;
         }
@@ -5043,7 +5043,7 @@ public abstract class g0 {
         int indexOf = lowerCase.indexOf(str);
         while (indexOf >= 0) {
             try {
-                valueOf.setSpan(new org.telegram.ui.Components.tz(org.telegram.ui.ActionBar.k6.q6, e6Var), indexOf, Math.min(str.length() + indexOf, charSequence.length()), 0);
+                valueOf.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, f6Var), indexOf, Math.min(str.length() + indexOf, charSequence.length()), 0);
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
@@ -5052,8 +5052,8 @@ public abstract class g0 {
         return valueOf;
     }
 
-    public static long w2(int i3, int i10) {
-        return (i10 & 4294967295L) | (i3 << 32);
+    public static long w2(int i7, int i10) {
+        return (i10 & 4294967295L) | (i7 << 32);
     }
 
     public static void w3(Activity activity, PictureInPictureParams pictureInPictureParams) {
@@ -5074,15 +5074,15 @@ public abstract class g0 {
     public static boolean x(String str, String str2) {
         if (!TextUtils.isEmpty(str) && !str.equals("*")) {
             String[] split = str.split("\\*");
-            String d10 = mf.b.d(str2, false);
-            int i3 = 0;
+            String d2 = pf.b.d(str2, false);
+            int i7 = 0;
             for (String str3 : split) {
                 if (!TextUtils.isEmpty(str3)) {
-                    int indexOf = d10.indexOf(str3, i3);
+                    int indexOf = d2.indexOf(str3, i7);
                     if (indexOf == -1) {
                         return false;
                     }
-                    i3 = indexOf + str3.length();
+                    i7 = indexOf + str3.length();
                 }
             }
         }
@@ -5115,18 +5115,18 @@ public abstract class g0 {
         return bitmap;
     }
 
-    public static CharSequence x1(CharSequence charSequence, ArrayList arrayList, org.telegram.ui.ActionBar.e6 e6Var) {
+    public static CharSequence x1(CharSequence charSequence, ArrayList arrayList, org.telegram.ui.ActionBar.f6 f6Var) {
         if (arrayList != null) {
-            int i3 = 0;
+            int i7 = 0;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                SpannableStringBuilder w12 = w1(charSequence, (String) arrayList.get(i10), e6Var);
+                SpannableStringBuilder w12 = w1(charSequence, (String) arrayList.get(i10), f6Var);
                 if (w12 != null) {
                     charSequence = w12;
                 } else {
-                    i3++;
+                    i7++;
                 }
             }
-            if (i3 != arrayList.size()) {
+            if (i7 != arrayList.size()) {
                 return charSequence;
             }
         }
@@ -5183,46 +5183,46 @@ public abstract class g0 {
         }
     }
 
-    public static int[] y1(double d10, double d11, double d12) {
-        double d13;
-        double d14 = d10 * 6.0d;
-        double floor = (int) Math.floor(d14);
-        double d15 = d14 - floor;
-        double d16 = (1.0d - d11) * d12;
-        double d17 = (1.0d - (d15 * d11)) * d12;
-        double d18 = (1.0d - ((1.0d - d15) * d11)) * d12;
-        int i3 = ((int) floor) % 6;
-        if (i3 == 0) {
-            d16 = d18;
-            d18 = d16;
-        } else if (i3 != 1) {
-            if (i3 == 2) {
-                d13 = d16;
-                d16 = d12;
-            } else if (i3 == 3) {
-                d18 = d12;
-                d12 = d16;
-                d16 = d17;
-            } else if (i3 == 4) {
-                d13 = d18;
-                d18 = d12;
-            } else if (i3 != 5) {
-                d12 = 0.0d;
-                d18 = 0.0d;
-                d16 = 0.0d;
+    public static int[] y1(double d2, double d10, double d11) {
+        double d12;
+        double d13 = d2 * 6.0d;
+        double floor = (int) Math.floor(d13);
+        double d14 = d13 - floor;
+        double d15 = (1.0d - d10) * d11;
+        double d16 = (1.0d - (d14 * d10)) * d11;
+        double d17 = (1.0d - ((1.0d - d14) * d10)) * d11;
+        int i7 = ((int) floor) % 6;
+        if (i7 == 0) {
+            d15 = d17;
+            d17 = d15;
+        } else if (i7 != 1) {
+            if (i7 == 2) {
+                d12 = d15;
+                d15 = d11;
+            } else if (i7 == 3) {
+                d17 = d11;
+                d11 = d15;
+                d15 = d16;
+            } else if (i7 == 4) {
+                d12 = d17;
+                d17 = d11;
+            } else if (i7 != 5) {
+                d11 = 0.0d;
+                d17 = 0.0d;
+                d15 = 0.0d;
             } else {
-                d18 = d17;
+                d17 = d16;
             }
-            d12 = d13;
+            d11 = d12;
         } else {
-            d18 = d16;
-            d16 = d12;
-            d12 = d17;
+            d17 = d15;
+            d15 = d11;
+            d11 = d16;
         }
-        return new int[]{(int) (d12 * 255.0d), (int) (d16 * 255.0d), (int) (d18 * 255.0d)};
+        return new int[]{(int) (d11 * 255.0d), (int) (d15 * 255.0d), (int) (d17 * 255.0d)};
     }
 
-    public static String y2(File file, int i3) {
+    public static String y2(File file, int i7) {
         InputStream inputStream;
         ThreadLocal threadLocal = b;
         byte[] bArr = (byte[]) threadLocal.get();
@@ -5231,7 +5231,7 @@ public abstract class g0 {
             threadLocal.set(bArr);
         }
         try {
-            inputStream = file != null ? new FileInputStream(file) : t0.b.getResources().openRawResource(i3);
+            inputStream = file != null ? new FileInputStream(file) : t0.b.getResources().openRawResource(i7);
             try {
                 ThreadLocal threadLocal2 = c;
                 byte[] bArr2 = (byte[]) threadLocal2.get();
@@ -5328,10 +5328,10 @@ public abstract class g0 {
         A2(Collections.singletonList(bitmap));
     }
 
-    public static void z3(ScrollView scrollView, int i3) {
+    public static void z3(ScrollView scrollView, int i7) {
         if (Build.VERSION.SDK_INT >= 29) {
-            scrollView.setTopEdgeEffectColor(i3);
-            scrollView.setBottomEdgeEffectColor(i3);
+            scrollView.setTopEdgeEffectColor(i7);
+            scrollView.setBottomEdgeEffectColor(i7);
             return;
         }
         try {
@@ -5339,13 +5339,13 @@ public abstract class g0 {
             declaredField.setAccessible(true);
             EdgeEffect edgeEffect = (EdgeEffect) declaredField.get(scrollView);
             if (edgeEffect != null) {
-                edgeEffect.setColor(i3);
+                edgeEffect.setColor(i7);
             }
             Field declaredField2 = ScrollView.class.getDeclaredField("mEdgeGlowBottom");
             declaredField2.setAccessible(true);
             EdgeEffect edgeEffect2 = (EdgeEffect) declaredField2.get(scrollView);
             if (edgeEffect2 != null) {
-                edgeEffect2.setColor(i3);
+                edgeEffect2.setColor(i7);
             }
         } catch (Exception unused) {
         }

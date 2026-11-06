@@ -1,91 +1,154 @@
 package org.telegram.ui.Wallet;
 
-import android.view.KeyEvent;
-import android.widget.EditText;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.t10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class r8 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class r8 extends FrameLayout {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final FrameLayout b;
+    public final org.telegram.ui.Components.w8 c;
+    public final org.telegram.ui.Components.l9 d;
+    public ShapeDrawable e;
+    public final TextView f;
+    public final q8 h;
+    public final ImageView n;
+    public TLRPC.User r;
+    public String s;
 
-    public /* synthetic */ r8(Object obj, int i3) {
-        this.a = i3;
-        this.b = obj;
+    public r8(Context context, Runnable runnable, Runnable runnable2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
+        this.a = f6Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setDuplicateParentStateEnabled(true);
+        frameLayout.setPivotX(0.0f);
+        frameLayout.setPivotY(0.0f);
+        addView(frameLayout, c8.ha.c(-1.0f, -1));
+        int i7 = org.telegram.ui.ActionBar.k6.a7;
+        int w02 = org.telegram.ui.ActionBar.k6.w0(i7, f6Var);
+        int w03 = org.telegram.ui.ActionBar.k6.w0(i7, f6Var);
+        int i10 = org.telegram.ui.ActionBar.k6.i6;
+        org.telegram.ui.Cells.y b02 = org.telegram.ui.ActionBar.k6.b0(w02, org.telegram.ui.ActionBar.k6.w(w03, org.telegram.ui.ActionBar.k6.w0(i10, f6Var)), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
+        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i7);
+        org.telegram.ui.ActionBar.n6 q10 = org.telegram.ui.ActionBar.r6.q(i7, i10);
+        frameLayout.setBackground(b02);
+        org.telegram.ui.ActionBar.r6.k(frameLayout, b02, N, q10, f6Var);
+        c8.ka.b(this, 0.02f, 1.2f);
+        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
+        this.d = l9Var;
+        l9Var.setRoundRadius(org.telegram.messenger.g0.L(18.0f));
+        frameLayout.addView(l9Var, c8.ha.d(34, 34.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.f = textView;
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
+        textView.setSingleLine();
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        frameLayout.addView(textView, c8.ha.d(-1, -2.0f, 51, 60.0f, 7.0f, 52.0f, 0.0f));
+        q8 q8Var = new q8(this, context);
+        this.h = q8Var;
+        frameLayout.addView(q8Var, c8.ha.d(-1, -2.0f, 51, 60.0f, 26.0f, 52.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.n = imageView;
+        imageView.setImageResource(R.drawable.msg2_help);
+        org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.D6, f6Var, PorterDuff.Mode.SRC_IN);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setScaleX(0.9f);
+        imageView.setScaleY(0.9f);
+        frameLayout.addView(imageView, c8.ha.d(24, 24.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
+        setOnClickListener(new i8(this, f6Var, runnable, runnable2, 2));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                s8 s8Var = (s8) this.b;
-                if (i3 != 3) {
-                    s8Var.getClass();
-                    return false;
-                }
-                org.telegram.messenger.g0.v1(s8Var.b);
-                return true;
-            case 1:
-                m9 m9Var = (m9) this.b;
-                if (i3 == 6) {
-                    gi.d dVar = m9Var.e0;
-                    if (dVar.d0) {
-                        dVar.performClick();
-                        return true;
-                    }
-                } else {
-                    m9Var.getClass();
-                }
-                return false;
-            default:
-                na naVar = (na) this.b;
-                EditText editText = naVar.a;
-                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i3 != 5 && !z10) {
-                    return false;
-                }
-                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
-                    String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !naVar.b()) {
-                        String str = null;
-                        if (!lowerCase.isEmpty()) {
-                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
-                            int length = mnemonicWordlist.length;
-                            int i10 = 0;
-                            while (true) {
-                                if (i10 < length) {
-                                    String str2 = mnemonicWordlist[i10];
-                                    if (str2.startsWith(lowerCase)) {
-                                        str = str2;
-                                    } else {
-                                        i10++;
-                                    }
-                                }
-                            }
-                        }
-                        if (str != null) {
-                            editText.setText(str);
-                            editText.setSelection(str.length());
-                            naVar.setError(false);
-                            naVar.a();
-                            Runnable runnable = naVar.r;
-                            if (runnable != null) {
-                                editText.post(runnable);
-                            }
-                        } else {
-                            naVar.setError(true);
-                        }
-                    } else {
-                        naVar.setError(false);
-                        naVar.a();
-                        Runnable runnable2 = naVar.r;
-                        if (runnable2 != null) {
-                            editText.post(runnable2);
-                        }
-                    }
-                }
-                return true;
+    public final void a(String str, TLRPC.User user) {
+        TLRPC.User user2 = this.r;
+        boolean z9 = (user2 == null ? 0L : user2.id) != (user != null ? user.id : 0L);
+        this.r = user;
+        this.s = str;
+        setClickable(!TextUtils.isEmpty(str));
+        TLRPC.User user3 = this.r;
+        TextView textView = this.f;
+        ImageView imageView = this.n;
+        org.telegram.ui.Components.l9 l9Var = this.d;
+        q8 q8Var = this.h;
+        if (user3 != null) {
+            setClickable(true);
+            setVisibility(0);
+            TLRPC.User user4 = this.r;
+            org.telegram.ui.Components.w8 w8Var = this.c;
+            w8Var.r(user4);
+            l9Var.e(this.r, w8Var);
+            textView.setText(t10.p(this.r));
+            if (TextUtils.isEmpty(str)) {
+                q8Var.c(null, z9);
+                imageView.setVisibility(8);
+                return;
+            } else {
+                q8Var.c(str, z9);
+                imageView.setVisibility(0);
+                return;
+            }
         }
+        if (TextUtils.isEmpty(str)) {
+            setClickable(false);
+            setVisibility(8);
+            q8Var.c(null, true);
+            return;
+        }
+        setClickable(false);
+        setVisibility(0);
+        if (this.e == null) {
+            ShapeDrawable L = org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(34.0f), -1);
+            this.e = L;
+            org.telegram.ui.ActionBar.r6.y(l9Var, L, org.telegram.ui.ActionBar.k6.Ci, this.a, PorterDuff.Mode.SRC_IN);
+        }
+        l9Var.setImageDrawable(new xp(this.e, getContext().getResources().getDrawable(R.drawable.menu_gram_24).mutate()));
+        textView.setText(hd.M0(2131743100, null));
+        q8Var.c(str, z9);
+        imageView.setVisibility(8);
+    }
+
+    public float getContentBottom() {
+        FrameLayout frameLayout = this.b;
+        return (frameLayout.getScaleY() * (frameLayout.getHeight() - frameLayout.getPivotY())) + frameLayout.getPivotY() + frameLayout.getY();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        float measuredHeight = getMeasuredHeight();
+        FrameLayout frameLayout = this.b;
+        int round = Math.round((measuredHeight - (frameLayout.getScaleY() * frameLayout.getMeasuredHeight())) / 2.0f);
+        frameLayout.layout(0, round, frameLayout.getMeasuredWidth(), frameLayout.getMeasuredHeight() + round);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.h.getLayoutParams();
+        int ceil = ((int) Math.ceil(r5.a())) + 1 + layoutParams.leftMargin + layoutParams.rightMargin;
+        setMeasuredDimension(View.resolveSize(Math.max(getMeasuredWidth(), ceil), i7), getMeasuredHeight());
+        int max = Math.max(getMeasuredWidth(), ceil);
+        float measuredWidth = getMeasuredWidth() / max;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
+        FrameLayout frameLayout = this.b;
+        frameLayout.measure(makeMeasureSpec, makeMeasureSpec2);
+        frameLayout.setScaleX(measuredWidth);
+        frameLayout.setScaleY(measuredWidth);
     }
 }

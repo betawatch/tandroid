@@ -1,22 +1,20 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class rr {
-    public int a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public String l;
-    public String m;
-    public int n;
-    public boolean o;
-    public String p;
+    public final int a;
+    public final int b;
+    public final int c;
+
+    public rr(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
+    }
+
+    public rr(int i7, int i10, int i11) {
+        this.c = i7;
+        this.a = i10;
+        this.b = i11;
+    }
 }

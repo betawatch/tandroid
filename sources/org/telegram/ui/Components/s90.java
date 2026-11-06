@@ -1,37 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s90 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t90 b;
+    public final /* synthetic */ ca0 b;
 
-    public /* synthetic */ s90(t90 t90Var, int i3) {
-        this.a = i3;
-        this.b = t90Var;
+    public /* synthetic */ s90(ca0 ca0Var, int i7) {
+        this.a = i7;
+        this.b = ca0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                t90 t90Var = this.b;
-                if (t90Var.W != -1) {
-                    org.telegram.messenger.hs.f(t90Var.Y.d0.x).j(t90Var.W);
-                    t90Var.W = -1;
+                ca0 ca0Var = this.b;
+                bi.q1 q1Var = ca0Var.f;
+                if (!ca0Var.c0.d.r) {
+                    q1Var.x0(q1Var.computeVerticalScrollRange() - (q1Var.computeVerticalScrollExtent() + q1Var.computeVerticalScrollOffset()), org.telegram.messenger.qs.Z3, mi.l.V);
+                    break;
+                } else {
+                    q1Var.x0(-q1Var.computeVerticalScrollOffset(), org.telegram.messenger.qs.Z3, mi.l.V);
                     break;
                 }
-                break;
-            case 1:
-                this.b.Y.i();
-                break;
             default:
-                t90 t90Var2 = this.b;
-                if (t90Var2.W != -1) {
-                    org.telegram.messenger.hs.f(t90Var2.Y.d0.x).j(t90Var2.W);
-                    t90Var2.W = -1;
-                    break;
-                }
+                this.b.h(true, false);
                 break;
         }
     }

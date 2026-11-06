@@ -5,17 +5,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p4 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ p4(Object obj, long j10, int i3) {
-        this.a = i3;
+    public /* synthetic */ p4(Object obj, long j3, int i7) {
+        this.a = i7;
         this.c = obj;
-        this.b = j10;
+        this.b = j3;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -26,7 +26,7 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                 ArrayList arrayList = g5Var.x;
                 if (tL_error == null) {
                     TLRPC.contacts_Contacts contacts_contacts = (TLRPC.contacts_Contacts) tLObject;
-                    int i3 = 0;
+                    int i7 = 0;
                     if (this.b != 0 && (contacts_contacts instanceof TLRPC.TL_contacts_contactsNotModified)) {
                         g5Var.h = true;
                         if (!arrayList.isEmpty() && g5Var.r) {
@@ -43,42 +43,42 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                     } else {
                         g5Var.getUserConfig().h = contacts_contacts.saved_count;
                         g5Var.getUserConfig().v(false);
-                        g0.h3(new vf(g5Var, contacts_contacts.users, i3, contacts_contacts.contacts, 3));
+                        g0.h3(new dg(g5Var, contacts_contacts.users, i7, contacts_contacts.contacts, 3));
                         break;
                     }
                 }
                 break;
             case 1:
-                ld ldVar = (ld) this.c;
+                sd sdVar = (sd) this.c;
                 if (tL_error == null) {
-                    g0.h3(new a4(ldVar, this.b, tLObject, 1));
+                    g0.h3(new a4(sdVar, this.b, tLObject, 1));
                     break;
                 }
                 break;
             case 2:
-                g0.h3(new zq((nv) this.c, tLObject, this.b, 4));
+                g0.h3(new hr((vv) this.c, tLObject, this.b, 4));
                 break;
             case 3:
-                vv vvVar = (vv) this.c;
-                long j10 = this.b;
-                if (j10 == 0) {
-                    vvVar.getClass();
+                dw dwVar = (dw) this.c;
+                long j3 = this.b;
+                if (j3 == 0) {
+                    dwVar.getClass();
                     break;
                 } else {
-                    vvVar.getMessagesStorage().q1(j10);
+                    dwVar.getMessagesStorage().q1(j3);
                     break;
                 }
             default:
-                yy yyVar = (yy) this.c;
+                gz gzVar = (gz) this.c;
                 if (tL_error == null) {
-                    yyVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
                 }
-                long j11 = this.b;
-                if (j11 == 0) {
-                    yyVar.getClass();
+                long j10 = this.b;
+                if (j10 == 0) {
+                    gzVar.getClass();
                     break;
                 } else {
-                    yyVar.getMessagesStorage().q1(j11);
+                    gzVar.getMessagesStorage().q1(j10);
                     break;
                 }
         }

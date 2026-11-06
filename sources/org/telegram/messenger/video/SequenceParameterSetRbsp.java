@@ -3,7 +3,7 @@ package org.telegram.messenger.video;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class SequenceParameterSetRbsp {
     public int bit_depth_chroma_minus8;
@@ -21,8 +21,8 @@ public class SequenceParameterSetRbsp {
     public boolean sps_temporal_id_nesting_flag;
 
     public SequenceParameterSetRbsp(InputStream inputStream) {
-        lc.a aVar = new lc.a();
-        jc.a aVar2 = new jc.a(0);
+        oc.a aVar = new oc.a();
+        mc.a aVar2 = new mc.a(0);
         aVar2.b = new char[50];
         aVar.e = aVar2;
         aVar.a = inputStream;
@@ -50,15 +50,15 @@ public class SequenceParameterSetRbsp {
         this.bit_depth_chroma_minus8 = aVar.e("bit_depth_chroma_minus8");
         int e11 = aVar.e("log2_max_pic_order_cnt_lsb_minus4");
         boolean b10 = aVar.b("sps_sub_layer_ordering_info_present_flag");
-        int i3 = this.sps_max_sub_layers_minus1;
-        int i10 = (i3 - (b10 ? 0 : i3)) + 1;
+        int i7 = this.sps_max_sub_layers_minus1;
+        int i10 = (i7 - (b10 ? 0 : i7)) + 1;
         int[] iArr = new int[i10];
         int[] iArr2 = new int[i10];
         int[] iArr3 = new int[i10];
-        for (i3 = b10 ? 0 : i3; i3 <= this.sps_max_sub_layers_minus1; i3++) {
-            iArr[i3] = aVar.e("sps_max_dec_pic_buffering_minus1[" + i3 + "]");
-            iArr2[i3] = aVar.e("sps_max_num_reorder_pics[" + i3 + "]");
-            iArr3[i3] = aVar.e("sps_max_latency_increase_plus1[" + i3 + "]");
+        for (i7 = b10 ? 0 : i7; i7 <= this.sps_max_sub_layers_minus1; i7++) {
+            iArr[i7] = aVar.e("sps_max_dec_pic_buffering_minus1[" + i7 + "]");
+            iArr2[i7] = aVar.e("sps_max_num_reorder_pics[" + i7 + "]");
+            iArr3[i7] = aVar.e("sps_max_latency_increase_plus1[" + i7 + "]");
         }
         aVar.e("log2_min_luma_coding_block_size_minus3");
         aVar.e("log2_diff_max_min_luma_coding_block_size");
@@ -92,13 +92,13 @@ public class SequenceParameterSetRbsp {
         aVar.b("strong_intra_smoothing_enabled_flag");
     }
 
-    private void parse_short_term_ref_pic_sets(int i3, lc.a aVar) {
-        long[] jArr = new long[i3];
-        for (int i10 = 0; i10 < i3; i10++) {
+    private void parse_short_term_ref_pic_sets(int i7, oc.a aVar) {
+        long[] jArr = new long[i7];
+        for (int i10 = 0; i10 < i7; i10++) {
             if (i10 == 0 || aVar.a() != 1) {
                 long e10 = aVar.e("num_positive_pics") + aVar.e("num_negative_pics");
                 jArr[i10] = e10;
-                for (long j10 = 0; j10 < e10; j10++) {
+                for (long j3 = 0; j3 < e10; j3++) {
                     aVar.e("delta_poc_s0/1_minus1");
                     aVar.b("used_by_curr_pic_s0/1_flag");
                 }
@@ -107,9 +107,9 @@ public class SequenceParameterSetRbsp {
                 aVar.e("abs_delta_rps_minus1");
                 jArr[i10] = 0;
                 for (int i11 = 0; i11 <= jArr[i10 - 1]; i11++) {
-                    boolean z10 = aVar.a() == 1;
-                    boolean z11 = !z10 && aVar.a() == 1;
-                    if (z10 || z11) {
+                    boolean z9 = aVar.a() == 1;
+                    boolean z10 = !z9 && aVar.a() == 1;
+                    if (z9 || z10) {
                         jArr[i10] = jArr[i10] + 1;
                     }
                 }
@@ -117,12 +117,12 @@ public class SequenceParameterSetRbsp {
         }
     }
 
-    private void profile_tier_level(int i3, lc.a aVar) {
+    private void profile_tier_level(int i7, oc.a aVar) {
         boolean[] zArr;
         int[] iArr;
         boolean[] zArr2;
         long[] jArr;
-        int i10 = i3;
+        int i10 = i7;
         long d = aVar.d(2, "general_profile_space");
         InputStream inputStream = aVar.a;
         this.general_profile_space = (int) d;
@@ -190,7 +190,7 @@ public class SequenceParameterSetRbsp {
                 iArr[i14] = (int) aVar.d(8, "sub_layer_level_idc[" + i14 + "]");
             }
             i14++;
-            i10 = i3;
+            i10 = i7;
             jArr2 = jArr;
             zArr10 = zArr2;
             zArr3 = zArr;
@@ -198,17 +198,17 @@ public class SequenceParameterSetRbsp {
         }
     }
 
-    private static void skip_scaling_list_data(lc.a aVar) {
-        int i3 = 0;
-        while (i3 < 4) {
+    private static void skip_scaling_list_data(oc.a aVar) {
+        int i7 = 0;
+        while (i7 < 4) {
             int i10 = 0;
             while (true) {
-                if (i10 < (i3 == 3 ? 2 : 6)) {
+                if (i10 < (i7 == 3 ? 2 : 6)) {
                     if (aVar.a() == 1) {
                         aVar.e("scaling_list_pred_matrix_id_delta");
                     } else {
-                        int min = Math.min(64, 1 << ((i3 << 1) + 4));
-                        if (i3 > 1) {
+                        int min = Math.min(64, 1 << ((i7 << 1) + 4));
+                        if (i7 > 1) {
                             aVar.e("scaling_list_dc_coef_minus8");
                         }
                         for (int i11 = 0; i11 < min; i11++) {
@@ -218,7 +218,7 @@ public class SequenceParameterSetRbsp {
                     i10++;
                 }
             }
-            i3++;
+            i7++;
         }
     }
 }

@@ -1,70 +1,82 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.support.SparseLongArray;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class lb extends ib implements org.telegram.messenger.cs {
-    public final jb d;
-    public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.d2 f;
-    public final int h;
-    public ac n;
+public final class lb extends ii0 {
+    public final /* synthetic */ int m1 = 0;
+    public final /* synthetic */ Object n1;
 
-    public lb(int i3, org.telegram.ui.ActionBar.d2 d2Var) {
-        super(d2Var.getContext(), d2Var.getResourceProvider());
-        this.f = d2Var;
-        this.h = i3;
-        this.b.setLayoutParams(b8.mf.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(b8.mf.h(56.0f, 48.0f, 8388659));
-        jb jbVar = new jb(this, d2Var, getContext(), d2Var.getCurrentAccount(), d2Var.getResourceProvider());
-        this.d = jbVar;
-        jbVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(0.0f));
-        this.d.setDelegate(new kb(this));
-        this.d.setTop(true);
-        this.d.setClipChildren(false);
-        this.d.setClipToPadding(false);
-        this.d.setVisibility(0);
-        this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.bd.M0(2131745885, null));
-        addView(this.d, b8.mf.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
-        this.d.p(null, null, true);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lb(org.telegram.ui.ks ksVar, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(4, i7, context, null, f6Var);
+        this.n1 = ksVar;
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
-        if (i3 == org.telegram.messenger.hs.k3) {
-            this.e = (SparseLongArray) objArr[0];
+    @Override // org.telegram.ui.Components.ii0, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        cc ccVar;
+        switch (this.m1) {
+            case 0:
+                nb nbVar = (nb) this.n1;
+                if (motionEvent.getAction() == 0) {
+                    cc ccVar2 = nbVar.n;
+                    if (ccVar2 != null) {
+                        ccVar2.i(false);
+                    }
+                } else if (motionEvent.getAction() == 1 && (ccVar = nbVar.n) != null) {
+                    ccVar.i(true);
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ii0
+    public void j() {
+        switch (this.m1) {
+            case 1:
+                super.j();
+                org.telegram.ui.ks ksVar = (org.telegram.ui.ks) this.n1;
+                if (getReactionsWindow() != null) {
+                    WindowManager.LayoutParams layoutParams = ksVar.x;
+                    layoutParams.flags &= -131073;
+                    layoutParams.softInputMode = 16;
+                } else {
+                    ksVar.x.flags |= 131072;
+                }
+                try {
+                    ((WindowManager) ksVar.w.getSystemService("window")).updateViewLayout(ksVar.y, ksVar.x);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            default:
+                super.j();
+                break;
         }
     }
 
-    public final void f() {
-        if (this.d.getReactionsWindow() != null) {
-            this.d.e();
-            if (this.d.getReactionsWindow().a != null) {
-                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
-            }
+    @Override // org.telegram.ui.Components.ii0
+    public void m() {
+        switch (this.m1) {
+            case 0:
+                cc ccVar = cc.w;
+                if (ccVar != null) {
+                    ccVar.i(false);
+                }
+                ((nb) this.n1).d.getReactionsWindow().c.setOnClickListener(new h0(this, 3));
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public int getMeasuredBackgroundHeight() {
-        return org.telegram.messenger.g0.L(30.0f) + this.b.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.messenger.hs.f(org.telegram.messenger.h10.t0).c(this, org.telegram.messenger.hs.k3);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.hs.f(org.telegram.messenger.h10.t0).n(this, org.telegram.messenger.hs.k3);
-    }
-
-    public void setBulletin(ac acVar) {
-        this.n = acVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lb(nb nbVar, org.telegram.ui.ActionBar.f2 f2Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i7, context, f2Var, f6Var);
+        this.n1 = nbVar;
     }
 }

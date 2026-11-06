@@ -1,83 +1,155 @@
 package li;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.widget.TextView;
-import b8.mf;
-import ci.gb;
-import gi.d;
-import gi.q4;
-import ii.m;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.t3;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.ma;
-import org.telegram.ui.Components.sj0;
-import org.telegram.ui.Components.tj0;
-import org.telegram.ui.Components.u8;
-import org.telegram.ui.Components.wp;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class b extends ma {
-    public final gb Q1;
-    public f41 R1;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t3 b;
 
-    public b(Context context, TLRPC.Chat chat, Runnable runnable) {
-        super(context, (e6) null, false);
-        this.C1 = g0.L(30.0f);
-        tj0 tj0Var = this.l1;
-        int i3 = this.u0;
-        tj0Var.setPadding(i3, 0, i3, g0.L(130.0f) + g0.n);
-        this.l1.setClipToPadding(false);
-        d dVar = new d(context, this.J0, true);
-        dVar.setText(bd.M0(2131752589, null));
-        dVar.e();
-        dVar.f();
-        dVar.setOnClickListener(new m(this, 12));
-        boolean V = t3.V(chat);
-        d dVar2 = new d(context, this.J0, true);
-        dVar2.setText(bd.M0(V ? 2131751924 : 2131751922, null));
-        dVar2.f();
-        dVar2.setOnClickListener(new ai.d(27, this, runnable));
-        gb gbVar = new gb(context, 3);
-        TextView textView = (TextView) gbVar.d;
-        TextView textView2 = (TextView) gbVar.c;
-        this.Q1 = gbVar;
-        gbVar.setPadding(g0.L(20.0f), 0, g0.L(20.0f), g0.L(17.0f));
-        ((k9) gbVar.b).e(chat, new u8(chat));
-        textView2.setText(m5.m(chat));
-        int i10 = k6.G6;
-        r6.V(textView2, i10, this.J0);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new wp(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) bd.M0(V ? 2131751925 : 2131751923, null));
-        r6.V(textView, i10, this.J0);
-        textView.setText(spannableStringBuilder);
-        this.b.addView(dVar2, mf.f(48.0f, -1, 80, g0.L(12.0f) + this.u0, 0, g0.L(12.0f) + this.u0, g0.L(70.0f) + g0.n));
-        this.b.addView(dVar, mf.f(48.0f, -1, 80, g0.L(12.0f) + this.u0, 0, g0.L(12.0f) + this.u0, g0.L(12.0f) + g0.n));
-        this.R1.O(false);
+    public /* synthetic */ b(t3 t3Var, int i7) {
+        this.a = i7;
+        this.b = t3Var;
     }
 
-    @Override // org.telegram.ui.Components.ma
-    public final sj0 L0(tj0 tj0Var) {
-        f41 f41Var = new f41(this.l1, getContext(), this.a, 0, true, new q4(this, 25), this.J0);
-        this.R1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
-    }
-
-    @Override // org.telegram.ui.Components.ma
-    public final CharSequence O0() {
-        return null;
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x017c, code lost:
+    
+        if (r3 <= (r4.getHeight() + r4.getTop())) goto L87;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x014a, code lost:
+    
+        if (li.a6.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.F2();
+                break;
+            case 1:
+                this.b.w3();
+                break;
+            case 2:
+                t3 t3Var = this.b;
+                if (t3Var.E3 != null && !t3Var.u3.x()) {
+                    if (t3Var.W4(t3Var.E3, t3Var.C3, t3Var.D3)) {
+                        t3Var.H3 = true;
+                        break;
+                    } else {
+                        int left = (int) ((t3Var.C3 - t3Var.E3.getLeft()) - t3Var.getLeft());
+                        int top = (int) ((t3Var.D3 - t3Var.E3.getTop()) - t3Var.getTop());
+                        View view = t3Var.E3;
+                        if (view instanceof f0) {
+                            f0 f0Var = (f0) view;
+                            f0Var.getLocationOnScreen(new int[2]);
+                            float f10 = r8[0] + left;
+                            float f11 = r8[1] + top;
+                            if (!f0.g(f0Var.x, f10, f11) && !f0.g(f0Var.y, f10, f11)) {
+                                ArrayList arrayList = f0Var.D;
+                                int size = arrayList.size();
+                                int i7 = 0;
+                                while (i7 < size) {
+                                    Object obj = arrayList.get(i7);
+                                    i7++;
+                                    if (f0.g((c0) obj, f10, f11)) {
+                                    }
+                                }
+                            }
+                            t3Var.H3 = true;
+                            break;
+                        }
+                        View view2 = t3Var.E3;
+                        if (view2 instanceof m5) {
+                            m5 m5Var = (m5) view2;
+                            if (t3Var.m3(m5Var, left, top)) {
+                                try {
+                                    m5Var.performHapticFeedback(0);
+                                } catch (Exception unused) {
+                                }
+                                t3Var.H3 = true;
+                                break;
+                            } else {
+                                TL_iv.pageTableCell n10 = m5Var.n(left, top);
+                                if (n10 != null) {
+                                    k60 k60Var = t3Var.q4;
+                                    if (k60Var != null) {
+                                        t3Var.q4 = null;
+                                        k60Var.u();
+                                    }
+                                    t3Var.j2(m5Var);
+                                    t3Var.C0();
+                                    t3Var.requestDisallowInterceptTouchEvent(true);
+                                    t3Var.I3 = true;
+                                    t3Var.K3 = n10;
+                                    t3Var.L3 = n10;
+                                    m5Var.y(n10, n10);
+                                    try {
+                                        m5Var.performHapticFeedback(0);
+                                    } catch (Exception unused2) {
+                                    }
+                                    t3Var.H3 = true;
+                                    break;
+                                } else {
+                                    t3Var.M4(t3Var.E3);
+                                    break;
+                                }
+                            }
+                        } else if (view2 instanceof a6) {
+                            a6 a6Var = (a6) view2;
+                            g1 g1Var = a6Var.h;
+                            g1 g1Var2 = a6Var.f;
+                            LinearLayout linearLayout = a6Var.b;
+                            if (!a6.m(g1Var2, g1Var2.getLeft() + linearLayout.getLeft(), g1Var2.getTop() + linearLayout.getTop(), left, top)) {
+                                if (g1Var.getVisibility() == 0) {
+                                    break;
+                                }
+                                t3Var.M4(t3Var.E3);
+                                break;
+                            }
+                            t3Var.H3 = true;
+                            break;
+                        } else {
+                            if (view2 instanceof r0) {
+                                g1 g1Var3 = ((r0) view2).d;
+                                if (g1Var3.length() == 0 && left >= g1Var3.getLeft()) {
+                                    if (left <= g1Var3.getWidth() + g1Var3.getLeft() && top >= g1Var3.getTop()) {
+                                        break;
+                                    }
+                                }
+                            }
+                            t3Var.M4(t3Var.E3);
+                        }
+                    }
+                }
+                break;
+            case 3:
+                t3 t3Var2 = this.b;
+                g3 g3Var = t3Var2.u3;
+                if (g3Var != null && g3Var.x()) {
+                    for (int i10 = 0; i10 < t3Var2.getChildCount(); i10++) {
+                        View childAt = t3Var2.getChildAt(i10);
+                        if ((childAt instanceof a6) || (childAt instanceof m5) || (childAt instanceof k0) || (childAt instanceof r0)) {
+                            childAt.invalidate();
+                        }
+                    }
+                    g3Var.w();
+                    break;
+                }
+                break;
+            case 4:
+                this.b.r3(true);
+                break;
+            default:
+                this.b.d3();
+                break;
+        }
     }
 }

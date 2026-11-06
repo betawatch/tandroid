@@ -1,54 +1,100 @@
 package wd;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import gd.k;
+import id.h;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import kd.i;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c extends e1 {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(c.class, Object.class, "_disposer$volatile");
-    private volatile /* synthetic */ Object _disposer$volatile;
-    public final m e;
-    public l0 f;
-    public final /* synthetic */ e h;
+public final class c implements Iterator, id.c {
+    public int a;
+    public Object b;
+    public id.c c;
 
-    public c(e eVar, m mVar) {
-        this.h = eVar;
-        this.e = mVar;
+    public final RuntimeException a() {
+        int i7 = this.a;
+        if (i7 == 4) {
+            return new NoSuchElementException();
+        }
+        if (i7 == 5) {
+            return new IllegalStateException("Iterator has failed.");
+        }
+        return new IllegalStateException("Unexpected state of the iterator: " + this.a);
     }
 
-    @Override // wd.e1
-    public final boolean i() {
-        return false;
+    public final void b(Object obj, i iVar) {
+        this.b = obj;
+        this.a = 3;
+        this.c = iVar;
+        jd.a aVar = jd.a.a;
     }
 
-    @Override // wd.e1
-    public final void j(Throwable th2) {
-        m mVar = this.e;
-        if (th2 != null) {
-            mVar.getClass();
-            be.t F = mVar.F(new v(th2, false), null);
-            if (F != null) {
-                mVar.e(F);
-                d dVar = (d) n.get(this);
-                if (dVar != null) {
-                    dVar.b();
-                    return;
-                }
-                return;
+    @Override // id.c
+    public final h getContext() {
+        return id.i.a;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i7;
+        while (true) {
+            i7 = this.a;
+            if (i7 != 0) {
+                break;
             }
-            return;
+            this.a = 5;
+            id.c cVar = this.c;
+            j.b(cVar);
+            this.c = null;
+            cVar.resumeWith(k.a);
         }
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = e.b;
-        e eVar = this.h;
-        if (atomicIntegerFieldUpdater.decrementAndGet(eVar) == 0) {
-            e0[] e0VarArr = eVar.a;
-            ArrayList arrayList = new ArrayList(e0VarArr.length);
-            for (e0 e0Var : e0VarArr) {
-                arrayList.add(e0Var.getCompleted());
+        if (i7 == 1) {
+            j.b(null);
+            throw null;
+        }
+        if (i7 == 2 || i7 == 3) {
+            return true;
+        }
+        if (i7 == 4) {
+            return false;
+        }
+        throw a();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        int i7 = this.a;
+        if (i7 == 0 || i7 == 1) {
+            if (hasNext()) {
+                return next();
             }
-            mVar.resumeWith(arrayList);
+            throw new NoSuchElementException();
         }
+        if (i7 == 2) {
+            this.a = 1;
+            j.b(null);
+            throw null;
+        }
+        if (i7 != 3) {
+            throw a();
+        }
+        this.a = 0;
+        Object obj = this.b;
+        this.b = null;
+        return obj;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // id.c
+    public final void resumeWith(Object obj) {
+        af.b.c(obj);
+        this.a = 4;
     }
 }

@@ -13,18 +13,18 @@ public abstract class c {
         this.a = 4;
     }
 
-    public c(int i3) {
-        if (i3 < 0) {
-            throw new IllegalArgumentException("Illegal Capacity: " + i3);
+    public c(int i7) {
+        if (i7 < 0) {
+            throw new IllegalArgumentException("Illegal Capacity: " + i7);
         }
-        this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i3 - 1));
+        this.a = Math.max(4, 32 - Integer.numberOfLeadingZeros(i7 - 1));
     }
 
     public final long count() {
-        int i3 = this.c;
-        if (i3 == 0) {
+        int i7 = this.c;
+        if (i7 == 0) {
             return this.b;
         }
-        return this.d[i3] + this.b;
+        return this.d[i7] + this.b;
     }
 }

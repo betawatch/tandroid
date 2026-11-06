@@ -1,39 +1,49 @@
 package db;
 
-import b8.zc;
+import java.util.ArrayList;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m implements oa.f {
-    public static final m b;
-    public static final /* synthetic */ m[] c;
-    public final int a;
+public final class m extends kotlin.jvm.internal.k implements rd.l {
+    public static final m b = new m(1);
 
-    static {
-        m mVar = new m("EVENT_TYPE_UNKNOWN", 0, 0);
-        m mVar2 = new m("SESSION_START", 1, 1);
-        b = mVar2;
-        m[] mVarArr = {mVar, mVar2};
-        c = mVarArr;
-        zc.a(mVarArr);
-    }
-
-    public m(String str, int i3, int i10) {
-        this.a = i10;
-    }
-
-    public static m valueOf(String str) {
-        return (m) Enum.valueOf(m.class, str);
-    }
-
-    public static m[] values() {
-        return (m[]) c.clone();
-    }
-
-    @Override // oa.f
-    public final int a() {
-        return this.a;
+    @Override // rd.l
+    public final Object invoke(Object obj) {
+        int i7;
+        ArrayList arrayList = ((l) obj).a;
+        ArrayList arrayList2 = new ArrayList(hd.h.d(arrayList, 10));
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj2 = arrayList.get(i10);
+            i10++;
+            i iVar = (i) obj2;
+            int i11 = iVar.c;
+            if (i11 != 0) {
+                i7 = 1;
+                if (i11 != 1) {
+                    i7 = 2;
+                    if (i11 != 2) {
+                        i7 = 3;
+                        if (i11 != 3) {
+                            i7 = 4;
+                            if (i11 != 4) {
+                                throw new IllegalStateException("Unknown capability status: " + iVar.c);
+                            }
+                        } else {
+                            continue;
+                        }
+                    } else {
+                        continue;
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                i7 = 0;
+            }
+            arrayList2.add(new c(iVar.a, i7, iVar.b));
+        }
+        return arrayList2;
     }
 }

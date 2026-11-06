@@ -1,170 +1,129 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class jf0 implements si.a, eh.b, qi.a {
-    public final si.a a;
-    public final Paint b = new Paint(1);
-    public RadialGradient c;
-    public int d;
-    public float e;
-    public final /* synthetic */ kf0 f;
+public final /* synthetic */ class jf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kf0 b;
 
-    public jf0(kf0 kf0Var, if0 if0Var) {
-        this.f = kf0Var;
-        this.a = if0Var;
+    public /* synthetic */ jf0(kf0 kf0Var, int i7) {
+        this.a = i7;
+        this.b = kf0Var;
     }
 
-    @Override // qi.a
-    public final int a() {
-        return i().a();
-    }
-
-    @Override // eh.b
-    public final gh.g b() {
-        return new gh.g(this, this, this);
-    }
-
-    @Override // qi.a
-    public final void c(float f10, float f11, int i3, Canvas canvas, RectF rectF) {
-        float f12;
-        int i10;
-        Canvas canvas2;
-        RectF rectF2;
-        kf0 kf0Var = this.f;
-        si.a aVar = this.a;
-        float f13 = aVar != null ? kf0Var.l : 0.0f;
-        if (f13 < 1.0f) {
-            pi.c cVar = kf0Var.b;
-            if (cVar == null) {
-                cVar = null;
-            }
-            cVar.c(f10, f11, i3, canvas, rectF);
-            i10 = i3;
-            canvas2 = canvas;
-            rectF2 = rectF;
-            float f14 = 1.0f - kf0Var.k;
-            if (f14 > 0.0f) {
-                canvas2.save();
-                float f15 = 1.0f / i10;
-                canvas2.scale(f15, f15);
-                f12 = f10;
-                canvas2.translate(-f12, -f11);
-                h(canvas2, rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, f14, i10 * 2);
-                canvas2.restore();
-            } else {
-                f12 = f10;
-            }
-        } else {
-            f12 = f10;
-            i10 = i3;
-            canvas2 = canvas;
-            rectF2 = rectF;
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
+    
+        if (r3.getHeight() != r5.b.getHeight()) goto L30;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i7;
+        xf0[] xf0VarArr;
+        switch (this.a) {
+            case 0:
+                kf0 kf0Var = this.b;
+                synchronized (kf0Var.b) {
+                    xf0[] xf0VarArr2 = kf0Var.c;
+                    xf0 xf0Var = xf0VarArr2[0];
+                    xf0[] xf0VarArr3 = kf0Var.d;
+                    i7 = 2;
+                    xf0VarArr = new xf0[]{xf0Var, xf0VarArr3[0], xf0VarArr2[1], xf0VarArr3[1], xf0VarArr2[2], xf0VarArr3[2]};
+                }
+                boolean z9 = false;
+                for (int i10 = 0; i10 < 6; i10 += 2) {
+                    xf0 xf0Var2 = xf0VarArr[i10];
+                    xf0 xf0Var3 = xf0VarArr[i10 + 1];
+                    if (xf0Var2 != null && !xf0Var2.c && xf0Var2.f) {
+                        xf0Var2.e = true;
+                        if (xf0Var3 != null) {
+                            Bitmap bitmap = xf0Var3.b;
+                            if (!xf0Var3.d) {
+                                if (bitmap.getWidth() == xf0Var2.b.getWidth()) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (xf0Var3 != null) {
+                            xf0Var3.a();
+                        }
+                        xf0Var3 = new xf0();
+                        Bitmap createBitmap = Bitmap.createBitmap(xf0Var2.b.getWidth(), xf0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
+                        xf0Var3.b = createBitmap;
+                        xf0Var3.a = new Canvas(createBitmap);
+                        synchronized (kf0Var.b) {
+                            xf0[] xf0VarArr4 = kf0Var.d;
+                            int i11 = 0;
+                            while (true) {
+                                xf0[] xf0VarArr5 = kf0Var.c;
+                                if (i11 >= xf0VarArr5.length) {
+                                    i11 = 0;
+                                } else if (xf0VarArr5[i11] != xf0Var2) {
+                                    i11++;
+                                }
+                            }
+                            xf0VarArr4[i11] = xf0Var3;
+                        }
+                        Bitmap bitmap2 = xf0Var2.b;
+                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.qs.K2));
+                        synchronized (kf0Var.b) {
+                            if (!xf0Var3.d) {
+                                xf0Var3.f = false;
+                                xf0Var3.b.eraseColor(0);
+                            }
+                            xf0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
+                            xf0Var3.f = true;
+                            Bitmap bitmap3 = xf0Var3.b;
+                            int i12 = 0;
+                            while (true) {
+                                xf0[] xf0VarArr6 = kf0Var.c;
+                                if (i12 >= xf0VarArr6.length) {
+                                    i12 = 0;
+                                } else if (xf0VarArr6[i12] != xf0Var2) {
+                                    i12++;
+                                }
+                            }
+                            kf0Var.b(bitmap3, i12);
+                        }
+                        if (!xf0Var2.d) {
+                            xf0Var2.f = false;
+                            xf0Var2.b.eraseColor(0);
+                        }
+                        xf0Var2.e = false;
+                        if (!xf0Var2.d && xf0Var2.c) {
+                            xf0Var2.d = true;
+                            xf0Var2.b.recycle();
+                        }
+                        z9 = true;
+                    }
+                }
+                if (z9 && kf0Var.e && kf0Var.h != null) {
+                    kf0Var.postInvalidateOnAnimation();
+                }
+                if (kf0Var.e && (kf0Var.F || kf0Var.H)) {
+                    org.telegram.messenger.g0.h3(new jf0(kf0Var, i7));
+                    return;
+                } else {
+                    kf0Var.e = false;
+                    return;
+                }
+            case 1:
+                kf0 kf0Var2 = this.b;
+                kf0Var2.H = true;
+                kf0Var2.postInvalidateOnAnimation();
+                return;
+            default:
+                kf0 kf0Var3 = this.b;
+                kf0Var3.c();
+                yf0.a.postRunnable(kf0Var3.s);
+                return;
         }
-        if (f13 > 0.0f) {
-            if (f13 < 1.0f) {
-                canvas2.saveLayerAlpha(null, (int) (f13 * 255.0f));
-            }
-            (aVar instanceof qi.a ? (qi.a) aVar : null).c(f12, f11, i10, canvas2, rectF2);
-            if (f13 < 1.0f) {
-                canvas.restore();
-            }
-        }
-    }
-
-    @Override // qi.a
-    public final int e() {
-        return i().e();
-    }
-
-    @Override // qi.a
-    public final int f() {
-        return i().f();
-    }
-
-    @Override // qi.a
-    public final boolean g() {
-        pi.c cVar = this.f.b;
-        if (cVar == null) {
-            cVar = null;
-        }
-        si.a aVar = this.a;
-        qi.a aVar2 = aVar instanceof qi.a ? (qi.a) aVar : null;
-        if (!pi.q.f().a || cVar == null || cVar.e() <= 1) {
-            return false;
-        }
-        return aVar == null || (aVar2 != null && aVar2.g());
-    }
-
-    public final void h(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15) {
-        kf0 kf0Var = this.f;
-        boolean z10 = kf0Var.j;
-        Paint paint = this.b;
-        if (!z10) {
-            paint.setShader(null);
-            paint.setColor(org.telegram.ui.ActionBar.k6.r1(f14, kf0Var.i));
-            canvas.drawRect(f10 - f15, f11 - f15, f12 + f15, f13 + f15, paint);
-            return;
-        }
-        float f16 = f12 - f10;
-        float max = Math.max(1.0f, 0.65f * f16);
-        if (this.c == null || this.d != kf0Var.i || this.e != max) {
-            this.d = kf0Var.i;
-            this.e = max;
-            this.c = new RadialGradient(0.0f, 0.0f, max, org.telegram.ui.ActionBar.k6.r1(0.8f, kf0Var.i), kf0Var.i, Shader.TileMode.CLAMP);
-        }
-        canvas.save();
-        canvas.translate((f10 + f12) / 2.0f, (f11 + f13) / 2.0f);
-        paint.setShader(this.c);
-        paint.setColor(-16777216);
-        paint.setAlpha((int) (f14 * 255.0f));
-        canvas.drawRect(((f10 - f12) / 2.0f) - f15, ((f11 - f13) / 2.0f) - f15, (f16 / 2.0f) + f15, com.google.android.recaptcha.internal.a.z(f13, f11, 2.0f, f15), paint);
-        canvas.restore();
-    }
-
-    public final qi.a i() {
-        pi.c cVar = this.f.b;
-        if (cVar == null) {
-            cVar = null;
-        }
-        si.a aVar = this.a;
-        qi.a aVar2 = aVar instanceof qi.a ? (qi.a) aVar : null;
-        return (aVar2 == null || cVar.e() < aVar2.e()) ? cVar : aVar2;
-    }
-
-    @Override // si.a
-    public final void l(Canvas canvas, float f10, float f11, float f12, float f13) {
-        si.a aVar = this.a;
-        kf0 kf0Var = this.f;
-        float f14 = aVar != null ? kf0Var.l : 0.0f;
-        if (f14 < 1.0f) {
-            boolean z10 = kf0Var.b != null && canvas.isHardwareAccelerated() && pi.q.f().a;
-            if (z10) {
-                kf0Var.b.l(canvas, f10, f11, f12, f13);
-            }
-            float f15 = z10 ? 1.0f - kf0Var.k : 1.0f;
-            if (f15 > 0.0f) {
-                h(canvas, f10, f11, f12, f13, f15, 0.0f);
-            }
-        }
-        if (f14 > 0.0f) {
-            if (f14 < 1.0f) {
-                canvas.saveLayerAlpha(f10, f11, f12, f13, (int) (f14 * 255.0f));
-            }
-            this.a.l(canvas, f10, f11, f12, f13);
-            if (f14 < 1.0f) {
-                canvas.restore();
-            }
-        }
-    }
-
-    @Override // eh.b
-    public final /* synthetic */ void d(gh.g gVar) {
     }
 }

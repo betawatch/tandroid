@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
-import wd.x1;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
+import zd.x1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzet extends j implements p {
     int zza;
@@ -17,21 +17,21 @@ final class zzet extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzet(zzfp zzfpVar, String str, long j10, c cVar) {
+    public zzet(zzfp zzfpVar, String str, long j3, c cVar) {
         super(2, cVar);
         this.zzb = zzfpVar;
         this.zzc = str;
-        this.zzd = j10;
+        this.zzd = j3;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, cVar);
         zzetVar.zze = obj;
         return zzetVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzet) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -40,31 +40,31 @@ final class zzet extends j implements p {
     
         if (r8 != r0) goto L19;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
         try {
-            if (i3 == 0) {
-                ib.b(obj);
+            if (i7 == 0) {
+                b.c(obj);
                 zzgrVar = (zzgr) this.zze;
                 zzq zzb = zzfp.zzb(this.zzb);
                 String str = this.zzc;
-                long j10 = this.zzd;
+                long j3 = this.zzd;
                 this.zze = zzgrVar;
                 this.zza = 1;
-                obj = zzb.zzb(str, j10, this);
+                obj = zzb.zzb(str, j3, this);
             } else {
-                if (i3 != 1) {
-                    ib.b(obj);
+                if (i7 != 1) {
+                    b.c(obj);
                     return (zzxx) obj;
                 }
                 zzgrVar = (zzgr) this.zze;
-                ib.b(obj);
+                b.c(obj);
             }
             this.zze = null;
             this.zza = 2;

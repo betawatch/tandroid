@@ -1,20 +1,69 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a00 {
-    public int a = -1;
-    public long b;
-    public long c;
-    public int d;
-    public int e;
-    public int f;
-    public TLRPC.Message g;
-    public ArrayList h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
+    public final String b;
+    public int a = 0;
+    public final ArrayList d = new ArrayList();
+    public final long c = System.currentTimeMillis();
+
+    public a00(String str) {
+        this.b = str;
+    }
+
+    public static void a(zz zzVar) {
+        if (zzVar != null) {
+            if (zzVar.b < 0) {
+                a00 a00Var = zzVar.e;
+                int i7 = a00Var.a;
+                a00Var.a = i7 - 1;
+                zzVar.d = i7;
+            }
+            zzVar.b = System.currentTimeMillis();
+        }
+    }
+
+    public static void b(a00 a00Var) {
+        if (a00Var != null) {
+            ArrayList arrayList = a00Var.d;
+            long currentTimeMillis = System.currentTimeMillis() - a00Var.c;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(a00Var.b);
+            sb2.append(" total=");
+            sb2.append(currentTimeMillis);
+            sb2.append("ms\n");
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                if (arrayList.get(i7) != null) {
+                    sb2.append("#");
+                    sb2.append(i7);
+                    int i10 = ((zz) arrayList.get(i7)).d;
+                    for (int i11 = 0; i11 < i10; i11++) {
+                        sb2.append(" ");
+                    }
+                    sb2.append(" ");
+                    sb2.append(arrayList.get(i7));
+                    sb2.append("\n");
+                }
+            }
+            a8.b(sb2.toString());
+        }
+    }
+
+    public static void c(a00 a00Var, String str) {
+        if (a00Var != null) {
+            a00Var.d.add(new yz(a00Var, str));
+        }
+    }
+
+    public static zz d(a00 a00Var, String str) {
+        if (a00Var == null) {
+            return null;
+        }
+        zz zzVar = new zz(a00Var, str);
+        a00Var.d.add(zzVar);
+        return zzVar;
+    }
 }

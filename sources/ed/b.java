@@ -1,56 +1,39 @@
 package ed;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.regex.Pattern;
+import kf.p;
+import kf.s;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends a implements ListIterator {
-    public final /* synthetic */ d d;
+public final class b extends h {
+    public static final Pattern e = i.m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i3) {
-        super(dVar);
-        this.d = dVar;
-        int h = dVar.h();
-        if (i3 < 0 || i3 > h) {
-            throw new IndexOutOfBoundsException(a1.g.n(i3, h, "index: ", ", size: "));
+    @Override // ed.h
+    public final p b() {
+        this.d++;
+        if (c() == '\n') {
+            kf.g gVar = new kf.g(1);
+            this.d++;
+            return gVar;
         }
-        this.b = i3;
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.b > 0;
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+        if (this.d < this.c.length()) {
+            String str = this.c;
+            int i7 = this.d;
+            if (e.matcher(str.substring(i7, i7 + 1)).matches()) {
+                String str2 = this.c;
+                int i10 = this.d;
+                this.a.getClass();
+                s sVar = new s(str2.substring(i10, i10 + 1));
+                this.d++;
+                return sVar;
+            }
         }
-        int i3 = this.b - 1;
-        this.b = i3;
-        return this.d.get(i3);
+        return f("\\");
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.b - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // ed.h
+    public final char d() {
+        return '\\';
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -12,10 +12,10 @@ public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ TLObject d;
     public final /* synthetic */ TLRPC.TL_error e;
 
-    public /* synthetic */ a(ConferenceCall conferenceCall, long j10, TLObject tLObject, TLRPC.TL_error tL_error, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(ConferenceCall conferenceCall, long j3, TLObject tLObject, TLRPC.TL_error tL_error, int i7) {
+        this.a = i7;
         this.b = conferenceCall;
-        this.c = j10;
+        this.c = j3;
         this.d = tLObject;
         this.e = tL_error;
     }

@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
 import androidx.car.app.j;
-import ed.h;
-import ed.i;
-import ed.p;
-import ed.s;
-import fd.c;
+import hd.g;
+import hd.h;
+import hd.o;
+import hd.r;
+import id.c;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
@@ -32,7 +32,7 @@ public final class zzaj extends zzg {
         List list = (List) this.zzc.remove(str);
         if (list != null) {
             List<zzat> list2 = list;
-            int b10 = s.b(i.d(list2, 10));
+            int b10 = r.b(h.d(list2, 10));
             if (b10 < 16) {
                 b10 = 16;
             }
@@ -41,7 +41,7 @@ public final class zzaj extends zzg {
                 map.put(Integer.valueOf(zzatVar.zzb()), zzatVar);
             }
         } else {
-            map = p.a;
+            map = o.a;
         }
         zzyo zzr = zzr(map, str);
         zzxw zzf = zzxx.zzf();
@@ -87,10 +87,10 @@ public final class zzaj extends zzg {
             }
         }
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj2 = arrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj2 = arrayList.get(i7);
+            i7++;
             zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
@@ -102,7 +102,7 @@ public final class zzaj extends zzg {
             }
         }
         Collection values = map.values();
-        ArrayList arrayList2 = new ArrayList(i.d(values, 10));
+        ArrayList arrayList2 = new ArrayList(h.d(values, 10));
         Iterator it = values.iterator();
         while (it.hasNext()) {
             arrayList2.add(zzq((zzat) it.next()));
@@ -148,8 +148,8 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i3, f fVar) {
-        this.zza = h.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
+    public /* synthetic */ zzaj(List list, int i7, f fVar) {
+        this.zza = g.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }
 }

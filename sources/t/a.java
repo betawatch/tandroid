@@ -2,7 +2,7 @@ package t;
 
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a b = new a(new int[]{0, 1, 2, 3, 4, 5, 6, 7});
@@ -13,8 +13,8 @@ public final class a {
     }
 
     public a(int[] iArr) {
-        for (int i3 : iArr) {
-            this.a.add(Integer.valueOf(i3));
+        for (int i7 : iArr) {
+            this.a.add(Integer.valueOf(i7));
         }
     }
 }

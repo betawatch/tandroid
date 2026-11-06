@@ -1,34 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class i8 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r8 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ i8(r8 r8Var, int i3) {
-        this.a = i3;
-        this.b = r8Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class i8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t8 b;
+
+    public /* synthetic */ i8(t8 t8Var, int i7) {
+        this.a = i7;
+        this.b = t8Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i3) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (i3 == -1) {
-                    r8.Z(this.b);
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                this.b.f = false;
                 break;
             default:
-                r8 r8Var = this.b;
-                if (i3 == -1) {
-                    r8.Z(r8Var);
-                }
-                if (i3 == 1) {
-                    r8Var.k0();
-                    break;
-                }
+                t8 t8Var = this.b;
+                t8Var.n0(false, t8Var.F ? 1.0f : 0.0f);
+                t8Var.F = false;
                 break;
         }
     }

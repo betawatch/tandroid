@@ -8,8 +8,8 @@ public final /* synthetic */ class g implements Predicate {
     public final /* synthetic */ Predicate b;
     public final /* synthetic */ Predicate c;
 
-    public /* synthetic */ g(Predicate predicate, Predicate predicate2, int i3) {
-        this.a = i3;
+    public /* synthetic */ g(Predicate predicate, Predicate predicate2, int i7) {
+        this.a = i7;
         this.b = predicate;
         this.c = predicate2;
     }

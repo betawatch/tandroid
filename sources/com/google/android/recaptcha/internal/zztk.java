@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zztk implements zzuh {
     private static final zztq zza = new zzti();
@@ -8,7 +8,7 @@ final class zztk implements zzuh {
 
     public zztk() {
         zzsg zza2 = zzsg.zza();
-        int i3 = zzuc.zza;
+        int i7 = zzuc.zza;
         zztj zztjVar = new zztj(zza2, zza);
         byte[] bArr = zzsv.zzb;
         this.zzb = zztjVar;
@@ -16,7 +16,7 @@ final class zztk implements zzuh {
 
     @Override // com.google.android.recaptcha.internal.zzuh
     public final zzug zza(Class cls) {
-        int i3 = zzui.zza;
+        int i7 = zzui.zza;
         if (!zzsn.class.isAssignableFrom(cls)) {
             int i10 = zzuc.zza;
         }

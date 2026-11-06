@@ -1,36 +1,90 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
+import java.lang.reflect.Field;
+import org.telegram.messenger.a8;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class u0 extends View {
-    public final Paint a;
-    public float b;
+public final class u0 extends c5.k {
+    public long w0;
+    public boolean x0;
+    public final t0 y0;
+    public final /* synthetic */ w0 z0;
 
-    public u0(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u0(w0 w0Var, Context context) {
         super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        this.z0 = w0Var;
+        try {
+            Field declaredField = c5.k.class.getDeclaredField("r");
+            declaredField.setAccessible(true);
+            t0 t0Var = new t0(this, getContext());
+            this.y0 = t0Var;
+            declaredField.set(this, t0Var);
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Paint paint = this.a;
-        canvas.drawLine((getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 0.0f, this.b)), (getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -7.0f, this.b)), paint);
-        canvas.drawLine((getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 7.0f, this.b)), (getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, 0.0f, this.b)), paint);
+    public final boolean A(MotionEvent motionEvent) {
+        t0 t0Var;
+        if (motionEvent.getAction() == 0) {
+            this.w0 = System.currentTimeMillis();
+            return true;
+        }
+        if (motionEvent.getAction() == 1) {
+            if (System.currentTimeMillis() - this.w0 <= ViewConfiguration.getTapTimeout() && (t0Var = this.y0) != null && t0Var.isFinished()) {
+                this.x0 = true;
+                float x10 = motionEvent.getX();
+                float width = getWidth() * 0.45f;
+                w0 w0Var = this.z0;
+                if (x10 <= width) {
+                    int i7 = w0Var.x1 - 1;
+                    if (i7 >= 0) {
+                        x(i7, true);
+                    }
+                } else if (w0Var.x1 + 1 < w0Var.k1.size()) {
+                    x(w0Var.x1 + 1, true);
+                }
+                this.x0 = false;
+                return false;
+            }
+        } else if (motionEvent.getAction() == 3) {
+            this.w0 = -1L;
+        }
+        return false;
     }
 
-    public void setProgress(float f10) {
-        this.b = f10;
-        invalidate();
+    @Override // c5.k, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        try {
+            A(motionEvent);
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
+    @Override // c5.k, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int L = org.telegram.messenger.g0.L(100.0f);
+        if (getChildCount() > 0) {
+            getChildAt(0).measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
+            L = getChildAt(0).getMeasuredHeight();
+        }
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(L + this.z0.C1, TLObject.FLAG_30));
+    }
+
+    @Override // c5.k, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.z0.s1) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent) || A(motionEvent);
     }
 }

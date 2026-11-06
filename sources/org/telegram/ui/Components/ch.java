@@ -1,69 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ch extends View {
+public final class ch extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bi b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ jh c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ch(bi biVar, Context context, int i3) {
-        super(context);
-        this.a = i3;
-        this.b = biVar;
+    public /* synthetic */ ch(jh jhVar, boolean z9, int i7) {
+        this.a = i7;
+        this.c = jhVar;
+        this.b = z9;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                super.draw(canvas);
-                this.b.T1.draw(canvas);
+                jh jhVar = this.c;
+                di diVar = jhVar.e;
+                boolean z9 = this.b;
+                if (z9) {
+                    diVar.r3.setVisibility(8);
+                } else {
+                    diVar.y3.setVisibility(8);
+                }
+                int L = z9 ? org.telegram.messenger.g0.L(36.0f) : 0;
+                for (int i7 = 0; i7 < diVar.r2.size(); i7++) {
+                    ((hi.c4) diVar.r2.valueAt(i7)).setMeasureOffsetY(L);
+                }
+                if (jhVar.a == animator) {
+                    jhVar.a = null;
+                    break;
+                }
                 break;
             default:
-                super.draw(canvas);
+                di diVar2 = this.c.e;
+                boolean z10 = this.b;
+                diVar2.v3 = z10;
+                if (!z10) {
+                    diVar2.w3.setVisibility(8);
+                    break;
+                }
                 break;
         }
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                bi biVar = this.b;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, biVar.t2.getSelectedItemsCount())));
-                int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(biVar.E2.measureText(format))), org.telegram.messenger.g0.L(24.0f));
-                int measuredWidth = getMeasuredWidth() / 2;
-                biVar.E2.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.C5, biVar.J0), (int) (((biVar.Q2 * 0.42d) + 0.58d) * Color.alpha(r5))));
-                biVar.G2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, biVar.J0));
-                int i3 = max / 2;
-                biVar.F2.set(measuredWidth - i3, 0.0f, i3 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(biVar.F2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), biVar.G2);
-                biVar.G2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W9, biVar.J0));
-                biVar.F2.set(org.telegram.messenger.g0.L(2.0f) + r6, org.telegram.messenger.g0.L(2.0f), r3 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
-                canvas.drawRoundRect(biVar.F2, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), biVar.G2);
-                canvas.drawText(format, measuredWidth - (r2 / 2), org.telegram.messenger.g0.L(16.2f), biVar.E2);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i3, int i10, int i11, int i12) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                super.onSizeChanged(i3, i10, i11, i12);
-                this.b.T1.setBounds(0, (i10 - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(48.0f), i3, i10);
-                break;
+                di diVar = this.c.e;
+                if (this.b) {
+                    diVar.y3.setAlpha(0.0f);
+                    diVar.y3.setVisibility(0);
+                    int L = org.telegram.messenger.g0.L(36.0f);
+                    for (int i7 = 0; i7 < diVar.r2.size(); i7++) {
+                        ((hi.c4) diVar.r2.valueAt(i7)).setMeasureOffsetY(L);
+                    }
+                    break;
+                } else {
+                    diVar.r3.setAlpha(0.0f);
+                    diVar.r3.setVisibility(0);
+                    break;
+                }
             default:
-                super.onSizeChanged(i3, i10, i11, i12);
+                super.onAnimationStart(animator);
                 break;
         }
     }

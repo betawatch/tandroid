@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l2 {
     public final l0 a;
@@ -17,17 +17,17 @@ public final class l2 {
             this.d = charAt;
             return;
         }
-        int i3 = charAt & 8191;
+        int i7 = charAt & 8191;
         int i10 = 13;
         int i11 = 1;
         while (true) {
             int i12 = i11 + 1;
             char charAt2 = str.charAt(i11);
             if (charAt2 < 55296) {
-                this.d = i3 | (charAt2 << i10);
+                this.d = i7 | (charAt2 << i10);
                 return;
             } else {
-                i3 |= (charAt2 & 8191) << i10;
+                i7 |= (charAt2 & 8191) << i10;
                 i10 += 13;
                 i11 = i12;
             }

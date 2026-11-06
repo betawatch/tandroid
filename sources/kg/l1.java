@@ -1,42 +1,46 @@
 package kg;
 
-import java.util.ArrayList;
-import org.telegram.ui.pr;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l1 implements u1 {
-    public final /* synthetic */ pr a;
+public final class l1 extends rt0 {
+    public final /* synthetic */ int f0;
 
-    public l1(pr prVar) {
-        this.a = prVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l1(Context context, q4 q4Var, int i7) {
+        super(context, q4Var);
+        this.f0 = i7;
     }
 
-    @Override // kg.u1
-    public final /* synthetic */ a0.h C0() {
-        return null;
-    }
-
-    @Override // kg.u1
-    public final /* synthetic */ boolean J1(int i3) {
-        return true;
-    }
-
-    @Override // kg.u1
-    public final a0.h k1() {
-        return null;
-    }
-
-    @Override // kg.u1
-    public final void r(int i3) {
-        pr prVar = this.a;
-        prVar.f();
-        if (i3 != 0) {
-            prVar.F();
+    @Override // org.telegram.ui.Components.rt0
+    public boolean O() {
+        switch (this.f0) {
+            case 2:
+                return false;
+            case 3:
+                return false;
+            default:
+                return super.O();
         }
     }
 
-    @Override // kg.u1
-    public final /* synthetic */ void b2(ArrayList arrayList) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.f0) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
     }
 }

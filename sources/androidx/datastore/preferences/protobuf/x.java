@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class x implements Cloneable {
     public final z a;
@@ -40,12 +40,12 @@ public abstract class x implements Cloneable {
         if (this.b.g()) {
             return;
         }
-        z i3 = this.a.i();
+        z i7 = this.a.i();
         z zVar = this.b;
         y0 y0Var = y0.c;
         y0Var.getClass();
-        y0Var.a(i3.getClass()).b(i3, zVar);
-        this.b = i3;
+        y0Var.a(i7.getClass()).b(i7, zVar);
+        this.b = i7;
     }
 
     public final Object clone() {

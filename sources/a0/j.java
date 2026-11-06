@@ -6,31 +6,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class j {
     public final int a;
-    public final bb.c b;
+    public final d6.i b;
     public final nb.a c;
     public int d;
     public int e;
     public int f;
 
-    public j(int i3) {
-        this.a = i3;
-        if (i3 <= 0) {
+    public j(int i7) {
+        this.a = i7;
+        if (i7 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new bb.c(6);
-        this.c = new nb.a(3);
+        this.b = new d6.i(9);
+        this.c = new nb.a(4);
     }
 
     public final Object a(Object key) {
         kotlin.jvm.internal.j.e(key, "key");
         synchronized (this.c) {
-            bb.c cVar = this.b;
-            cVar.getClass();
-            Object obj = ((LinkedHashMap) cVar.b).get(key);
+            d6.i iVar = this.b;
+            iVar.getClass();
+            Object obj = ((LinkedHashMap) iVar.b).get(key);
             if (obj != null) {
                 this.e++;
                 return obj;
@@ -45,9 +45,9 @@ public class j {
         kotlin.jvm.internal.j.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            bb.c cVar = this.b;
-            cVar.getClass();
-            put = ((LinkedHashMap) cVar.b).put(key, obj);
+            d6.i iVar = this.b;
+            iVar.getClass();
+            put = ((LinkedHashMap) iVar.b).put(key, obj);
             if (put != null) {
                 this.d--;
             }
@@ -63,14 +63,14 @@ public class j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(int i3) {
+    public final void c(int i7) {
         while (true) {
             synchronized (this.c) {
                 try {
                     if (this.d < 0 || (((LinkedHashMap) this.b.b).isEmpty() && this.d != 0)) {
                         break;
                     }
-                    if (this.d <= i3 || ((LinkedHashMap) this.b.b).isEmpty()) {
+                    if (this.d <= i7 || ((LinkedHashMap) this.b.b).isEmpty()) {
                         break;
                     }
                     Set entrySet = ((LinkedHashMap) this.b.b).entrySet();
@@ -93,10 +93,10 @@ public class j {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    bb.c cVar = this.b;
-                    cVar.getClass();
+                    d6.i iVar = this.b;
+                    iVar.getClass();
                     kotlin.jvm.internal.j.e(key, "key");
-                    ((LinkedHashMap) cVar.b).remove(key);
+                    ((LinkedHashMap) iVar.b).remove(key);
                     int i10 = this.d;
                     kotlin.jvm.internal.j.e(value, "value");
                     this.d = i10 - 1;
@@ -111,9 +111,9 @@ public class j {
         String str;
         synchronized (this.c) {
             try {
-                int i3 = this.e;
-                int i10 = this.f + i3;
-                str = "LruCache[maxSize=" + this.a + ",hits=" + this.e + ",misses=" + this.f + ",hitRate=" + (i10 != 0 ? (i3 * 100) / i10 : 0) + "%]";
+                int i7 = this.e;
+                int i10 = this.f + i7;
+                str = "LruCache[maxSize=" + this.a + ",hits=" + this.e + ",misses=" + this.f + ",hitRate=" + (i10 != 0 ? (i7 * 100) / i10 : 0) + "%]";
             } catch (Throwable th2) {
                 throw th2;
             }

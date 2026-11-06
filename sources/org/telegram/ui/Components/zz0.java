@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class zz0 extends Drawable {
     public final TextPaint a;
@@ -25,13 +25,13 @@ public final class zz0 extends Drawable {
     public Drawable g;
     public int h;
     public final Context i;
-    public final org.telegram.ui.ActionBar.e6 j;
+    public final org.telegram.ui.ActionBar.f6 j;
     public boolean k;
     public boolean l;
     public boolean m;
     public ColorFilter n;
 
-    public zz0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public zz0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new Paint(1);
@@ -40,70 +40,70 @@ public final class zz0 extends Drawable {
         this.e = 0;
         this.f = -1;
         this.i = context;
-        this.j = e6Var;
+        this.j = f6Var;
         textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
         paint.setStyle(Paint.Style.STROKE);
     }
 
-    public static zz0 a(int i3) {
+    public static zz0 a(int i7) {
         zz0 zz0Var = new zz0(org.telegram.messenger.t0.b, null);
-        zz0Var.b(i3);
+        zz0Var.b(i7);
         zz0Var.l = true;
         return zz0Var;
     }
 
-    public final void b(int i3) {
+    public final void b(int i7) {
         String str;
-        if (this.f != i3) {
-            this.f = i3;
-            boolean z10 = this.m;
+        if (this.f != i7) {
+            this.f = i7;
+            boolean z9 = this.m;
             Context context = this.i;
-            if (z10) {
+            if (z9) {
                 this.g = context.getDrawable(R.drawable.msg_autodelete_badge2).mutate();
             } else {
-                Drawable mutate = context.getDrawable(i3 == 0 ? R.drawable.msg_mini_autodelete : R.drawable.msg_mini_autodelete_empty).mutate();
+                Drawable mutate = context.getDrawable(i7 == 0 ? R.drawable.msg_mini_autodelete : R.drawable.msg_mini_autodelete_empty).mutate();
                 this.g = mutate;
                 mutate.setColorFilter(this.n);
             }
             invalidateSelf();
             int i10 = this.f;
             if (i10 >= 1 && i10 < 60) {
-                str = k2.p1.i(i3, "");
+                str = jg.g.j(i7, "");
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745698, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745689, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 60 && i10 < 3600) {
-                str = "" + (i3 / 60);
+                str = "" + (i7 / 60);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745700, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745691, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 3600 && i10 < 86400) {
-                str = "" + ((i3 / 60) / 60);
+                str = "" + ((i7 / 60) / 60);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745701, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745692, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 86400 && i10 < 604800) {
-                str = "" + (((i3 / 60) / 60) / 24);
+                str = "" + (((i7 / 60) / 60) / 24);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745702, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745693, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 < 2678400) {
-                str = "" + ((((i3 / 60) / 60) / 24) / 7);
+                str = "" + ((((i7 / 60) / 60) / 24) / 7);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745697, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745688, null, com.google.android.recaptcha.internal.a.m(str));
                 } else if (str.length() > 2) {
                     str = "c";
                 }
             } else if (i10 < 31449600) {
-                str = "" + ((((i3 / 60) / 60) / 24) / 30);
+                str = "" + ((((i7 / 60) / 60) / 24) / 30);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745699, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745690, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else {
-                str = "" + ((((i3 / 60) / 60) / 24) / 364);
+                str = "" + ((((i7 / 60) / 60) / 24) / 364);
                 if (str.length() < 2) {
-                    str = k2.p1.k(2131745696, null, com.google.android.recaptcha.internal.a.l(str));
+                    str = jg.g.l(2131745687, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             }
             String str2 = str;
@@ -136,24 +136,24 @@ public final class zz0 extends Drawable {
     public final void draw(Canvas canvas) {
         int L = org.telegram.messenger.g0.L(23.0f);
         int L2 = org.telegram.messenger.g0.L(23.0f);
-        boolean z10 = this.m;
+        boolean z9 = this.m;
         Paint paint = this.b;
         TextPaint textPaint = this.a;
-        org.telegram.ui.ActionBar.e6 e6Var = this.j;
-        if (z10) {
+        org.telegram.ui.ActionBar.f6 f6Var = this.j;
+        if (z9) {
             textPaint.setColor(-1);
         } else if (this.l) {
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.F8, e6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.F8, f6Var));
         } else {
             if (!this.k) {
-                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.s8, e6Var));
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.s8, f6Var));
             }
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, e6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, f6Var));
         }
         if (this.g != null) {
             if (!this.l && !this.m) {
                 canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
-                int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, e6Var);
+                int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, f6Var);
                 if (this.h != w02) {
                     this.h = w02;
                     this.g.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
@@ -172,13 +172,13 @@ public final class zz0 extends Drawable {
         if (this.f == 0 || this.c == null) {
             return;
         }
-        int i3 = org.telegram.messenger.g0.p != 3.0f ? 0 : -1;
+        int i7 = org.telegram.messenger.g0.p != 3.0f ? 0 : -1;
         canvas.save();
         if (this.m) {
-            canvas.translate((float) (((getBounds().width() / 2) - Math.ceil(this.d / 2.0f)) + i3), (getBounds().height() - this.e) / 2.0f);
+            canvas.translate((float) (((getBounds().width() / 2) - Math.ceil(this.d / 2.0f)) + i7), (getBounds().height() - this.e) / 2.0f);
             this.c.draw(canvas);
         } else {
-            canvas.translate(((int) ((L / 2) - Math.ceil(this.d / 2.0f))) + i3, (L2 - this.e) / 2.0f);
+            canvas.translate(((int) ((L / 2) - Math.ceil(this.d / 2.0f))) + i7, (L2 - this.e) / 2.0f);
             this.c.draw(canvas);
         }
         canvas.restore();
@@ -208,6 +208,6 @@ public final class zz0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 }

@@ -1,47 +1,46 @@
 package xf;
 
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.os.Process;
-import android.provider.Settings;
-import android.view.WindowManager;
-import org.telegram.messenger.g0;
+import android.view.View;
+import c8.td;
+import java.util.ArrayList;
+import oi.h;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final int[] a = new int[2];
-
-    public static int a(Context context) {
-        Typeface typeface = g0.a;
-        if (Settings.canDrawOverlays(context)) {
-            return 2;
+public final class b implements View.OnAttachStateChangeListener {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        a a10;
+        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (cVar == null || (a10 = td.a(view, cVar)) == null) {
+            return;
         }
-        if (Build.VERSION.SDK_INT >= 26) {
-            return (context.getPackageManager().hasSystemFeature("android.software.picture_in_picture") && ((AppOpsManager) context.getSystemService("appops")).checkOpNoThrow("android:picture_in_picture", Process.myUid(), context.getPackageName()) == 0) ? 1 : -2;
+        ArrayList arrayList = cVar.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((xe.b) a10.a.b).add((h) obj);
         }
-        return -1;
     }
 
-    public static WindowManager.LayoutParams b(Context context, boolean z10) {
-        int i3;
-        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-        layoutParams.gravity = 51;
-        layoutParams.format = -3;
-        if (!z10) {
-            Typeface typeface = g0.a;
-            if (Settings.canDrawOverlays(context)) {
-                i3 = Build.VERSION.SDK_INT >= 26 ? 2038 : 2003;
-                layoutParams.type = i3;
-                layoutParams.flags = 520;
-                return layoutParams;
-            }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        a aVar;
+        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (cVar == null || (aVar = cVar.b) == null) {
+            return;
         }
-        i3 = 2;
-        layoutParams.type = i3;
-        layoutParams.flags = 520;
-        return layoutParams;
+        ArrayList arrayList = cVar.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((xe.b) aVar.a.b).remove((h) obj);
+        }
+        cVar.b = null;
     }
 }

@@ -1,49 +1,82 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pa1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ra1 a;
+public final /* synthetic */ class pa1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ya1 b;
 
-    public pa1(ra1 ra1Var) {
-        this.a = ra1Var;
+    public /* synthetic */ pa1(ya1 ya1Var, int i7) {
+        this.a = i7;
+        this.b = ya1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i3) {
-        org.telegram.ui.ActionBar.q4 q4Var;
-        ra1 ra1Var = this.a;
-        if (i3 == -1) {
-            if (ra1Var.H >= 0) {
-                q4Var = ((org.telegram.ui.ActionBar.d2) ra1Var).parentLayout;
-                if (q4Var.getFragmentStack().size() == 1) {
-                    ra1Var.N0();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                int i7 = 0;
+                while (true) {
+                    br[] brVarArr = this.b.x.f;
+                    if (i7 >= brVarArr.length) {
+                        break;
+                    } else {
+                        brVarArr[i7].z(0.0f);
+                        i7++;
+                    }
                 }
-            }
-            ra1Var.finishFragment();
-            return;
-        }
-        if (i3 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ra1Var.getParentActivity());
-            TL_account.Password password = ra1Var.V;
-            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.bd.M0(2131752578, null) : org.telegram.messenger.bd.M0(2131752586, null);
-            String M02 = org.telegram.messenger.bd.M0(2131752585, null);
-            String M03 = org.telegram.messenger.bd.M0(2131754950, null);
-            org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
-            s1Var.U = M0;
-            s1Var.S = M02;
-            alertDialog$Builder.k(M03, new ci0(this, 23));
-            alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), null);
-            ra1Var.showDialog(s1Var);
-            TextView textView = (TextView) s1Var.d(-1);
-            if (textView != null) {
-                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
-            }
+            case 1:
+                ya1 ya1Var = this.b;
+                EditTextBoldCursor editTextBoldCursor = ya1Var.n;
+                if (editTextBoldCursor != null) {
+                    if (editTextBoldCursor.length() != 0) {
+                        ya1Var.f0[2].P(49);
+                        ya1Var.f0[2].T(false, 0.0f);
+                        ya1Var.a.d();
+                        break;
+                    } else {
+                        ya1Var.K0(true);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                ya1 ya1Var2 = this.b;
+                EditTextBoldCursor editTextBoldCursor2 = ya1Var2.n;
+                if (editTextBoldCursor2 != null && editTextBoldCursor2.getVisibility() == 0) {
+                    ya1Var2.n.requestFocus();
+                    org.telegram.messenger.g0.K3(ya1Var2.n);
+                    break;
+                }
+                break;
+            case 3:
+                ya1 ya1Var3 = this.b;
+                lb0 lb0Var = ya1Var3.x;
+                if (lb0Var != null && lb0Var.getVisibility() == 0) {
+                    ya1Var3.x.f[0].requestFocus();
+                    break;
+                }
+                break;
+            case 4:
+                ya1 ya1Var4 = this.b;
+                if (ya1Var4.g0 != null) {
+                    ya1Var4.K0(false);
+                    break;
+                }
+                break;
+            case 5:
+                ya1.k0(this.b);
+                break;
+            case 6:
+                org.telegram.messenger.g0.i3(new pa1(this.b, 7), 150L);
+                break;
+            default:
+                for (br brVar : this.b.x.f) {
+                    brVar.z(0.0f);
+                }
+                break;
         }
     }
 }

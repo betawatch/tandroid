@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import java.util.ArrayList;
 import org.json.JSONArray;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class m0 {
     public static final TextPaint b = new TextPaint();
@@ -24,7 +24,7 @@ public final class m0 {
     public static m0 a(String str, r rVar, float f10) {
         k0 k0Var;
         ArrayList arrayList;
-        int i3;
+        int i7;
         float f11;
         float f12;
         float f13;
@@ -104,7 +104,7 @@ public final class m0 {
                                 j0Var.b = Math.max(j0Var.b, f25);
                                 float f26 = optDouble6;
                                 paint = (Paint) rVar.a.get(Integer.valueOf(jSONArray2.optInt(6)));
-                                i3 = i13;
+                                i7 = i13;
                                 if (fArr.length < optString.length()) {
                                     fArr = new float[optString.length()];
                                 }
@@ -141,7 +141,7 @@ public final class m0 {
                                 arrayList3 = arrayList;
                                 jSONArray = jSONArray3;
                                 arrayList2 = arrayList4;
-                                i13 = i3;
+                                i13 = i7;
                             }
                         } else {
                             f17 = f12;
@@ -162,7 +162,7 @@ public final class m0 {
                         j0Var.b = Math.max(j0Var.b, f252);
                         float f262 = optDouble6;
                         paint = (Paint) rVar.a.get(Integer.valueOf(jSONArray2.optInt(6)));
-                        i3 = i13;
+                        i7 = i13;
                         if (fArr.length < optString.length()) {
                         }
                         if (paint != null) {
@@ -183,7 +183,7 @@ public final class m0 {
                         arrayList3 = arrayList;
                         jSONArray = jSONArray3;
                         arrayList2 = arrayList4;
-                        i13 = i3;
+                        i13 = i7;
                     } else if (j0Var != null) {
                         j0Var.d.append('\n');
                         j0Var.e.add(Float.valueOf(j0Var.c));
@@ -191,12 +191,12 @@ public final class m0 {
                     }
                 }
                 arrayList = arrayList5;
-                i3 = i13;
+                i7 = i13;
                 i12 = i14 + 1;
                 arrayList3 = arrayList;
                 jSONArray = jSONArray3;
                 arrayList2 = arrayList4;
-                i13 = i3;
+                i13 = i7;
             }
             JSONArray jSONArray4 = jSONArray;
             ArrayList arrayList6 = arrayList2;

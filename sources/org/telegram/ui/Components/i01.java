@@ -3,47 +3,47 @@ package org.telegram.ui.Components;
 import android.widget.EditText;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class i01 extends u4.t0 {
+public final class i01 extends v4.s0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ n01 c;
 
-    public i01(n01 n01Var, int i3, long j10) {
+    public i01(n01 n01Var, int i7, long j3) {
         this.c = n01Var;
-        this.a = i3;
-        this.b = j10;
+        this.a = i7;
+        this.b = j3;
     }
 
-    @Override // u4.t0
-    public final void a(RecyclerView recyclerView, int i3) {
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
         EditText editText = this.c.w;
-        if (i3 == 1 && editText.hasFocus()) {
+        if (i7 == 1 && editText.hasFocus()) {
             org.telegram.messenger.g0.v1(editText);
             editText.clearFocus();
         }
     }
 
-    @Override // u4.t0
-    public final void b(RecyclerView recyclerView, int i3, int i10) {
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
         n01 n01Var = this.c;
         n01Var.h();
-        u4.b0 b0Var = (u4.b0) recyclerView.getLayoutManager();
+        v4.b0 b0Var = (v4.b0) recyclerView.getLayoutManager();
         if (b0Var == null || b0Var.N0() < n01Var.s.c.size() - 3) {
             return;
         }
-        boolean z10 = n01Var.d;
+        boolean z9 = n01Var.d;
         int i11 = this.a;
-        if (z10) {
-            org.telegram.messenger.hp.s1(i11).G1().g(false);
+        if (z9) {
+            org.telegram.messenger.qp.s1(i11).G1().g(false);
             return;
         }
-        org.telegram.messenger.c00 c00Var = org.telegram.messenger.hp.s1(i11).q7;
-        long j10 = -this.b;
-        if (c00Var.e(j10)) {
+        org.telegram.messenger.k00 k00Var = org.telegram.messenger.qp.s1(i11).q7;
+        long j3 = -this.b;
+        if (k00Var.e(j3)) {
             return;
         }
-        c00Var.o(j10);
+        k00Var.o(j3);
     }
 }

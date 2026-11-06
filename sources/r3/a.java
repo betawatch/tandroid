@@ -1,69 +1,83 @@
 package r3;
 
-import b8.te;
-import b8.xb;
-import d2.s0;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.CharsetDecoder;
+import e2.n0;
+import e2.p0;
+import e2.s0;
+import e2.u;
+import h2.x;
 import java.nio.charset.StandardCharsets;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends te {
-    public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
-    public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
-    public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
+public final class a implements p0 {
+    public final int a;
+    public final String b;
+    public final String c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final byte[] h;
 
-    @Override // b8.te
-    public final s0 b(n3.a aVar, ByteBuffer byteBuffer) {
-        String str;
-        CharsetDecoder charsetDecoder = this.b;
-        CharsetDecoder charsetDecoder2 = this.a;
-        String str2 = null;
-        try {
-            str = charsetDecoder2.decode(byteBuffer).toString();
-        } catch (CharacterCodingException unused) {
-            try {
-                String charBuffer = charsetDecoder.decode(byteBuffer).toString();
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = charBuffer;
-            } catch (CharacterCodingException unused2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = null;
-            } catch (Throwable th2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                throw th2;
+    public a(int i7, String str, String str2, int i10, int i11, int i12, int i13, byte[] bArr) {
+        this.a = i7;
+        this.b = str;
+        this.c = str2;
+        this.d = i10;
+        this.e = i11;
+        this.f = i12;
+        this.g = i13;
+        this.h = bArr;
+    }
+
+    public static a d(x xVar) {
+        int m10 = xVar.m();
+        String n10 = s0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
+        String y10 = xVar.y(xVar.m(), StandardCharsets.UTF_8);
+        int m11 = xVar.m();
+        int m12 = xVar.m();
+        int m13 = xVar.m();
+        int m14 = xVar.m();
+        int m15 = xVar.m();
+        byte[] bArr = new byte[m15];
+        xVar.k(0, m15, bArr);
+        return new a(m10, n10, y10, m11, m12, m13, m14, bArr);
+    }
+
+    @Override // e2.p0
+    public final /* synthetic */ u a() {
+        return null;
+    }
+
+    @Override // e2.p0
+    public final void b(n0 n0Var) {
+        n0Var.a(this.a, this.h);
+    }
+
+    @Override // e2.p0
+    public final /* synthetic */ byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.b.equals(aVar.b) && this.c.equals(aVar.c) && this.d == aVar.d && this.e == aVar.e && this.f == aVar.f && this.g == aVar.g && Arrays.equals(this.h, aVar.h)) {
+                return true;
             }
-        } finally {
-            charsetDecoder2.reset();
-            byteBuffer.rewind();
         }
-        byte[] bArr = new byte[byteBuffer.limit()];
-        byteBuffer.get(bArr);
-        if (str == null) {
-            return new s0(new c(bArr, null, null));
-        }
-        Matcher matcher = c.matcher(str);
-        String str3 = null;
-        for (int i3 = 0; matcher.find(i3); i3 = matcher.end()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(2);
-            if (group != null) {
-                String c2 = xb.c(group);
-                c2.getClass();
-                if (c2.equals("streamurl")) {
-                    str3 = group2;
-                } else if (c2.equals("streamtitle")) {
-                    str2 = group2;
-                }
-            }
-        }
-        return new s0(new c(bArr, str2, str3));
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.h) + ((((((((com.google.android.recaptcha.internal.a.h(com.google.android.recaptcha.internal.a.h((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
+    }
+
+    public final String toString() {
+        return "Picture: mimeType=" + this.b + ", description=" + this.c;
     }
 }

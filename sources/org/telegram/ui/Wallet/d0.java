@@ -1,65 +1,47 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.n10;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.hb1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements n10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class d0 implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TL_wallet.nftItem d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ v10 f;
+    public final /* synthetic */ n0 h;
 
-    public /* synthetic */ d0(e0 e0Var, int i3) {
-        this.a = i3;
-        this.b = e0Var;
+    public d0(n0 n0Var, String str, TL_wallet.nftItem nftitem, String str2, v10 v10Var) {
+        this.h = n0Var;
+        this.c = str;
+        this.d = nftitem;
+        this.e = str2;
+        this.f = v10Var;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
-                String str = (String) obj2;
-                e0 e0Var = this.b;
-                k0 k0Var = e0Var.d;
-                if (importedWalletProof != null) {
-                    TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
-                    disablebackup.new_public_key = e0Var.c;
-                    TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
-                    disablebackup.proof = walletownershipproof;
-                    walletownershipproof.signature = importedWalletProof.signature;
-                    walletownershipproof.timestamp = importedWalletProof.timestamp;
-                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(disablebackup, new c3.b(1), new d0(e0Var, 1));
-                    break;
-                } else {
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    k0.j("disable backup: failed to prove challenge: ".concat(str));
-                    break;
+    @Override // java.lang.Runnable
+    public final synchronized void run() {
+        try {
+            try {
+                if (this.a) {
+                    return;
                 }
-            default:
-                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
-                Object obj3 = (TLRPC.TL_error) obj2;
-                k0 k0Var2 = this.b.d;
-                if (walletState != null) {
-                    k0Var2.l0(walletState);
-                    k0Var2.R();
-                    org.telegram.messenger.g0.i3(new hb1(2), 1000L);
-                    break;
-                } else {
-                    StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");
-                    if (obj3 == null) {
-                        obj3 = "NULL_ERROR";
-                    }
-                    sb2.append(obj3);
-                    k0.j(sb2.toString());
-                    break;
-                }
+                WalletEngine2 walletEngine2 = this.h.b;
+                String str = this.c;
+                TL_wallet.nftItem nftitem = this.d;
+                String str2 = nftitem.address;
+                String str3 = this.e;
+                this.b = walletEngine2.emulateSendNFT(str, str2, str3, new r(this, nftitem, str3, this.f, 4));
+            } catch (Throwable th2) {
+                th = th2;
+                throw th;
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            throw th;
         }
     }
 }

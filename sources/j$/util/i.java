@@ -43,35 +43,35 @@ public class i extends h implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final Object get(int i3) {
+    public final Object get(int i7) {
         Object obj;
         synchronized (this.b) {
-            obj = this.c.get(i3);
+            obj = this.c.get(i7);
         }
         return obj;
     }
 
     @Override // java.util.List
-    public final Object set(int i3, Object obj) {
+    public final Object set(int i7, Object obj) {
         Object obj2;
         synchronized (this.b) {
-            obj2 = this.c.set(i3, obj);
+            obj2 = this.c.set(i7, obj);
         }
         return obj2;
     }
 
     @Override // java.util.List
-    public final void add(int i3, Object obj) {
+    public final void add(int i7, Object obj) {
         synchronized (this.b) {
-            this.c.add(i3, obj);
+            this.c.add(i7, obj);
         }
     }
 
     @Override // java.util.List
-    public final Object remove(int i3) {
+    public final Object remove(int i7) {
         Object remove;
         synchronized (this.b) {
-            remove = this.c.remove(i3);
+            remove = this.c.remove(i7);
         }
         return remove;
     }
@@ -95,10 +95,10 @@ public class i extends h implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final boolean addAll(int i3, java.util.Collection collection) {
+    public final boolean addAll(int i7, java.util.Collection collection) {
         boolean addAll;
         synchronized (this.b) {
-            addAll = this.c.addAll(i3, collection);
+            addAll = this.c.addAll(i7, collection);
         }
         return addAll;
     }
@@ -109,15 +109,15 @@ public class i extends h implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i3) {
-        return this.c.listIterator(i3);
+    public final ListIterator listIterator(int i7) {
+        return this.c.listIterator(i7);
     }
 
     @Override // java.util.List
-    public java.util.List subList(int i3, int i10) {
+    public java.util.List subList(int i7, int i10) {
         i iVar;
         synchronized (this.b) {
-            iVar = new i(this.c.subList(i3, i10), this.b);
+            iVar = new i(this.c.subList(i7, i10), this.b);
         }
         return iVar;
     }

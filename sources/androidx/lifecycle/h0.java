@@ -6,13 +6,13 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class h0 extends Fragment {
     public static final /* synthetic */ int b = 0;
-    public android.support.v4.media.c a;
+    public cb.c a;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static final class a implements Application.ActivityLifecycleCallbacks {
         public static final g0 Companion = new g0();
 
@@ -39,42 +39,42 @@ public class h0 extends Fragment {
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPostCreated(Activity activity, Bundle bundle) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_CREATE);
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPostResumed(Activity activity) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_RESUME);
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPostStarted(Activity activity) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_START);
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPreDestroyed(Activity activity) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_DESTROY);
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPrePaused(Activity activity) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_PAUSE);
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPreStopped(Activity activity) {
             kotlin.jvm.internal.j.e(activity, "activity");
-            int i3 = h0.b;
+            int i7 = h0.b;
             f0.a(activity, m.ON_STOP);
         }
 
@@ -130,7 +130,7 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onResume() {
         super.onResume();
-        android.support.v4.media.c cVar = this.a;
+        cb.c cVar = this.a;
         if (cVar != null) {
             ((e0) cVar.b).a();
         }
@@ -140,12 +140,12 @@ public class h0 extends Fragment {
     @Override // android.app.Fragment
     public final void onStart() {
         super.onStart();
-        android.support.v4.media.c cVar = this.a;
+        cb.c cVar = this.a;
         if (cVar != null) {
             e0 e0Var = (e0) cVar.b;
-            int i3 = e0Var.a + 1;
-            e0Var.a = i3;
-            if (i3 == 1 && e0Var.d) {
+            int i7 = e0Var.a + 1;
+            e0Var.a = i7;
+            if (i7 == 1 && e0Var.d) {
                 e0Var.f.e(m.ON_START);
                 e0Var.d = false;
             }

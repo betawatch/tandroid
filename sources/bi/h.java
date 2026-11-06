@@ -1,44 +1,32 @@
 package bi;
 
-import android.view.ViewGroup;
-import b8.of;
-import gi.m1;
-import org.telegram.ui.g11;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h extends of {
+public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+    public final /* synthetic */ z b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public /* synthetic */ h(ViewGroup viewGroup, int i3) {
-        this.a = i3;
-        this.b = viewGroup;
+    public /* synthetic */ h(z zVar, TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
+        this.a = i7;
+        this.b = zVar;
+        this.c = twoStepVerificationActivity;
     }
 
-    @Override // b8.of
-    public final void a() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((h0) this.b).w = false;
-                break;
-            case 1:
-                ((m1) this.b).j3 = false;
+                z zVar = this.b;
+                zVar.h0.setLoading(false);
+                zVar.presentFragment(this.c);
                 break;
             default:
-                ((g11) this.b).y1 = false;
-                break;
-        }
-    }
-
-    @Override // b8.of
-    public void b() {
-        switch (this.a) {
-            case 1:
-                ((m1) this.b).j3 = true;
-                break;
-            case 2:
-                ((g11) this.b).y1 = true;
+                z zVar2 = this.b;
+                zVar2.a0.setLoading(false);
+                zVar2.presentFragment(this.c);
                 break;
         }
     }

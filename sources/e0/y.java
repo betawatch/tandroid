@@ -2,7 +2,7 @@ package e0;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class y {
     public q a;
@@ -18,13 +18,13 @@ public abstract class y {
         if (charSequence != null) {
             bundle.putCharSequence("android.title.big", charSequence);
         }
-        String c2 = c();
-        if (c2 != null) {
-            bundle.putString("androidx.core.app.extra.COMPAT_TEMPLATE", c2);
+        String c10 = c();
+        if (c10 != null) {
+            bundle.putString("androidx.core.app.extra.COMPAT_TEMPLATE", c10);
         }
     }
 
-    public abstract void b(e0 e0Var);
+    public abstract void b(a4.k kVar);
 
     public String c() {
         return null;

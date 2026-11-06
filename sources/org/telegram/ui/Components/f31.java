@@ -1,33 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class f31 extends g.p {
-    public final /* synthetic */ n31 c;
+public final class f31 extends v4.s0 {
+    public final /* synthetic */ n31 a;
 
     public f31(n31 n31Var) {
-        this.c = n31Var;
+        this.a = n31Var;
     }
 
-    @Override // g.p
-    public final int i(int i3) {
-        n31 n31Var = this.c;
-        u4.h0 adapter = n31Var.n.getAdapter();
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        v4.s0 s0Var = this.a.D;
+        if (s0Var != null) {
+            s0Var.a(recyclerView, i7);
+        }
+    }
+
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        n31 n31Var = this.a;
         m31 m31Var = n31Var.s;
-        if (adapter == m31Var) {
-            if ((m31Var.d.get(i3) instanceof Integer) || i3 >= m31Var.x) {
-                return m31Var.w;
+        c31 c31Var = n31Var.n;
+        v4.s0 s0Var = n31Var.D;
+        if (s0Var != null) {
+            s0Var.b(c31Var, i7, i10);
+        }
+        if (i10 <= 0 || c31Var.getAdapter() != m31Var || !n31Var.J || m31Var.r || m31Var.s) {
+            return;
+        }
+        if (n31Var.r.N0() >= ((m31Var.x + 1) - ((m31Var.w + 1) * 10)) - 1) {
+            n31 n31Var2 = m31Var.y;
+            if (!n31Var2.J || m31Var.r || m31Var.s) {
+                return;
             }
-            return 1;
+            m31Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = m31Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(n31Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new x1(m31Var, 16));
         }
-        kg.y1 y1Var = n31Var.w;
-        SparseArray sparseArray = y1Var.s;
-        if (i3 == y1Var.E || !(sparseArray.get(i3) == null || (sparseArray.get(i3) instanceof TLRPC.Document))) {
-            return y1Var.e.a();
-        }
-        return 1;
     }
 }

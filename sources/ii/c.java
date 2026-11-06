@@ -1,0 +1,525 @@
+package ii;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.Pair;
+import android.view.TextureView;
+import fi.e5;
+import fi.w3;
+import java.util.ArrayList;
+import java.util.HashMap;
+import kg.q0;
+import kg.q1;
+import kg.s0;
+import kg.x0;
+import li.a6;
+import li.b2;
+import li.f2;
+import li.g3;
+import li.j3;
+import li.k3;
+import li.t3;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.rc;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.w0;
+import org.telegram.ui.Components.ac;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.an;
+import org.telegram.ui.fw;
+import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
+import org.telegram.ui.web.o1;
+import org.telegram.ui.web.u0;
+import org.telegram.ui.web.z0;
+import org.telegram.ui.ww;
+import sg.t0;
+import tg.i2;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class c implements c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ c(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        boolean z9;
+        f41 f41Var;
+        f41 f41Var2;
+        int i7;
+        TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
+        int i10 = this.a;
+        String str = "";
+        int i11 = 3;
+        int i12 = 2;
+        boolean z10 = false;
+        int i13 = 1;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                f fVar = (f) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = fVar.n;
+                boolean z11 = arrayList2 == null || arrayList2.isEmpty();
+                fVar.n = arrayList;
+                k41 k41Var = fVar.f;
+                if (k41Var != null) {
+                    k41Var.f3.O(z11);
+                    break;
+                }
+                break;
+            case 1:
+                ((jg.n) obj2).M((TLRPC.User) obj);
+                break;
+            case 2:
+                TLRPC.User user = (TLRPC.User) obj;
+                yl0 yl0Var = (yl0) ((jg.h0) obj2);
+                fw fwVar = yl0Var.K0;
+                if (user != null) {
+                    ww wwVar = fwVar.L0;
+                    if (wwVar != null) {
+                        wwVar.W3();
+                    }
+                    qp.s1(fwVar.J0).x3(null, user, null, 0, null, false, false);
+                    yl0Var.Q(user.id, user);
+                    break;
+                }
+                break;
+            case 3:
+                kg.m mVar = (kg.m) obj2;
+                boolean z12 = ((Integer) obj).intValue() > org.telegram.messenger.g0.L(20.0f);
+                if (mVar.F != z12) {
+                    mVar.F = z12;
+                    if (!z12) {
+                        mVar.a.y0(0);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                org.telegram.messenger.g0.d0(((kg.g0) obj2).s, new di.e(i11));
+                break;
+            case 5:
+                q0 q0Var = (q0) obj2;
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
+                q0Var.G = connectedbots;
+                TL_account.TL_connectedBot tL_connectedBot = (connectedbots == null || connectedbots.connected_bots.isEmpty()) ? null : q0Var.G.connected_bots.get(0);
+                q0Var.H = tL_connectedBot;
+                q0Var.M = tL_connectedBot == null ? null : q0Var.getMessagesController().a2(Long.valueOf(q0Var.H.bot_id));
+                TL_account.TL_connectedBot tL_connectedBot2 = q0Var.H;
+                q0Var.J = tL_connectedBot2 != null ? TL_account.TL_businessBotRights.clone(tL_connectedBot2.rights) : TL_account.TL_businessBotRights.makeDefault();
+                TL_account.TL_connectedBot tL_connectedBot3 = q0Var.H;
+                q0Var.I = tL_connectedBot3 != null ? tL_connectedBot3.recipients.exclude_selected : true;
+                kg.a0 a0Var = q0Var.w;
+                if (a0Var != null) {
+                    a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
+                }
+                k41 k41Var2 = q0Var.c;
+                if (k41Var2 == null || (f41Var = k41Var2.f3) == null) {
+                    z9 = true;
+                } else {
+                    z9 = true;
+                    f41Var.O(true);
+                }
+                q0Var.d0(z9);
+                q0Var.T = z9;
+                break;
+            case 6:
+                s0 s0Var = (s0) obj2;
+                s0Var.w = s0Var.d[((Integer) obj).intValue()];
+                s0Var.a0(true);
+                break;
+            case 7:
+                q1 q1Var = (q1) obj2;
+                q1Var.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putInt("chatMode", 5);
+                bundle.putLong("user_id", q1Var.getUserConfig().e());
+                bundle.putString("quick_reply", (String) obj);
+                an anVar = new an(bundle);
+                anVar.V9 = true;
+                q1Var.presentFragment(anVar);
+                break;
+            case 8:
+                org.telegram.messenger.g0.v1((x0) obj2);
+                org.telegram.messenger.g0.i3((Runnable) obj, 80L);
+                break;
+            case 9:
+                k3 k3Var = (k3) obj2;
+                TL_iv.RichMessage richMessage = (TL_iv.RichMessage) obj;
+                int i14 = k3Var.b;
+                int i15 = k3Var.a;
+                t3 t3Var = k3Var.e;
+                if (richMessage != null) {
+                    ArrayList arrayList3 = t3Var.s3;
+                    ArrayList arrayList4 = t3Var.s3;
+                    if (i15 < arrayList3.size() && i14 < arrayList4.size()) {
+                        f2 f2Var = t3Var.Q3;
+                        if (f2Var != null) {
+                            f2Var.d();
+                        }
+                        g3 g3Var = t3Var.u3;
+                        if (g3Var != null) {
+                            g3Var.f(false);
+                        }
+                        li.a aVar = (li.a) arrayList4.get(i15);
+                        li.a aVar2 = (li.a) arrayList4.get(i14);
+                        String P4 = t3.D3(aVar.b) ? t3Var.P4(aVar) : "";
+                        CharSequence charSequence = str;
+                        if (t3.D3(aVar2.b)) {
+                            charSequence = t3Var.P4(aVar2);
+                        }
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(P4.subSequence(0, Math.max(0, Math.min(k3Var.c, P4.length()))));
+                        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence.subSequence(Math.max(0, Math.min(k3Var.d, charSequence.length())), charSequence.length()));
+                        ArrayList arrayList5 = new ArrayList();
+                        t3.Z2(arrayList5, richMessage.blocks, null);
+                        if (arrayList5.isEmpty()) {
+                            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(spannableStringBuilder);
+                            spannableStringBuilder3.append((CharSequence) spannableStringBuilder2);
+                            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                            a6.d(pageblockparagraph, spannableStringBuilder3);
+                            arrayList5.add(new li.a(pageblockparagraph, aVar.c, aVar.d));
+                        } else {
+                            if (spannableStringBuilder.length() > 0) {
+                                li.a aVar3 = (li.a) arrayList5.get(0);
+                                if (t3.D3(aVar3.b)) {
+                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(spannableStringBuilder);
+                                    spannableStringBuilder4.append((CharSequence) a6.A(aVar3.b));
+                                    a6.d(aVar3.b, spannableStringBuilder4);
+                                } else {
+                                    TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
+                                    a6.d(pageblockparagraph2, spannableStringBuilder);
+                                    arrayList5.add(0, new li.a(pageblockparagraph2, aVar.c, aVar.d));
+                                }
+                            }
+                            if (spannableStringBuilder2.length() > 0) {
+                                li.a aVar4 = (li.a) jg.g.i(1, arrayList5);
+                                if (t3.D3(aVar4.b)) {
+                                    SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(a6.A(aVar4.b));
+                                    spannableStringBuilder5.append((CharSequence) spannableStringBuilder2);
+                                    a6.d(aVar4.b, spannableStringBuilder5);
+                                } else {
+                                    TL_iv.pageBlockParagraph pageblockparagraph3 = new TL_iv.pageBlockParagraph();
+                                    a6.d(pageblockparagraph3, spannableStringBuilder2);
+                                    arrayList5.add(new li.a(pageblockparagraph3, aVar2.c, aVar2.d));
+                                }
+                            }
+                        }
+                        TL_iv.RichMessage richMessage2 = t3Var.r3;
+                        if (richMessage2 == null) {
+                            t3Var.r3 = richMessage;
+                        } else {
+                            ArrayList<TLRPC.Photo> arrayList6 = richMessage.photos;
+                            if (arrayList6 != null) {
+                                richMessage2.photos.addAll(arrayList6);
+                            }
+                            ArrayList<TLRPC.Document> arrayList7 = richMessage.documents;
+                            if (arrayList7 != null) {
+                                t3Var.r3.documents.addAll(arrayList7);
+                            }
+                        }
+                        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
+                            t3Var.y4((li.a) arrayList5.get(i16));
+                        }
+                        while (i14 >= i15) {
+                            arrayList4.remove(i14);
+                            i14--;
+                        }
+                        arrayList4.addAll(i15, arrayList5);
+                        t3Var.v4();
+                        t3Var.f3.O(false);
+                        f2 f2Var2 = t3Var.Q3;
+                        if (f2Var2 != null) {
+                            f2Var2.h();
+                        }
+                        t3Var.o3.onContentChanged();
+                        t3Var.post(new j3(z10 ? 1 : 0, k3Var, arrayList5.isEmpty() ? null : (li.a) jg.g.i(1, arrayList5)));
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                ((li.l) obj2).a.r.Y1((TL_iv.RichMessage) obj);
+                break;
+            case 11:
+                ((b2) obj2).P.Y1((TL_iv.RichMessage) obj);
+                break;
+            case 12:
+                t3 t3Var2 = (t3) obj2;
+                String str2 = (String) obj;
+                t3Var2.getClass();
+                if (!TextUtils.isEmpty(str2)) {
+                    TL_iv.pageBlockMath pageblockmath = new TL_iv.pageBlockMath();
+                    pageblockmath.source = str2;
+                    t3Var2.V1(pageblockmath);
+                    break;
+                }
+                break;
+            case 13:
+                w0 w0Var = (w0) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                Paint paint = w0Var.F;
+                w0Var.W = false;
+                w0Var.f = bitmap;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                w0Var.h = new BitmapShader(bitmap, tileMode, tileMode);
+                Matrix matrix = w0Var.n;
+                if (matrix == null) {
+                    w0Var.n = new Matrix();
+                } else {
+                    matrix.reset();
+                }
+                w0Var.n.postScale(8.0f, 8.0f);
+                Matrix matrix2 = w0Var.n;
+                int[] iArr = w0Var.r;
+                matrix2.postTranslate(-iArr[0], -iArr[1]);
+                w0Var.h.setLocalMatrix(w0Var.n);
+                paint.setShader(w0Var.h);
+                ColorMatrix colorMatrix = new ColorMatrix();
+                org.telegram.messenger.g0.i(colorMatrix, -0.2f);
+                paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                w0Var.invalidate();
+                break;
+            case 14:
+                u1 u1Var = (u1) obj2;
+                Bitmap bitmap2 = (Bitmap) obj;
+                if (bitmap2 == null) {
+                    u1Var.getClass();
+                    break;
+                } else {
+                    if (u1Var.F0 == null) {
+                        u1Var.F0 = new Paint(1);
+                    }
+                    u1Var.C0 = bitmap2;
+                    Bitmap bitmap3 = u1Var.C0;
+                    Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
+                    BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode2, tileMode2);
+                    u1Var.E0 = bitmapShader;
+                    u1Var.F0.setShader(bitmapShader);
+                    Matrix matrix3 = new Matrix();
+                    u1Var.D0 = matrix3;
+                    matrix3.postScale(8.0f, 8.0f);
+                    Matrix matrix4 = u1Var.D0;
+                    int[] iArr2 = u1Var.x0;
+                    matrix4.postTranslate(-iArr2[0], -iArr2[1]);
+                    u1Var.E0.setLocalMatrix(u1Var.D0);
+                    u1Var.a1.invalidate();
+                    break;
+                }
+            case 15:
+                org.telegram.messenger.g0.v1((ys) obj2);
+                org.telegram.messenger.g0.i3((Runnable) obj, 80L);
+                break;
+            case 16:
+                u0 u0Var = ((BotWebViewContainer$WebViewProxy) obj2).b;
+                StringBuilder sb2 = new StringBuilder("window.navigator.__share__receive(");
+                String str3 = str;
+                if (!((Boolean) obj).booleanValue()) {
+                    str3 = "'abort'";
+                }
+                sb2.append(str3);
+                sb2.append(")");
+                u0Var.d(sb2.toString());
+                break;
+            case 17:
+                z0 z0Var = (z0) obj2;
+                z0Var.f = (ArrayList) obj;
+                w3 w3Var = z0Var.a;
+                if (w3Var.G) {
+                    w3Var.f3.O(true);
+                    break;
+                }
+                break;
+            case 18:
+                o1 o1Var = (o1) obj2;
+                o1Var.r = ((ArrayList) obj).size();
+                w3 w3Var2 = o1Var.a;
+                if (w3Var2 != null && (f41Var2 = w3Var2.f3) != null && w3Var2.G) {
+                    f41Var2.O(true);
+                    break;
+                }
+                break;
+            case 19:
+                rh.h hVar = (rh.h) obj2;
+                if (((rh.b) obj) == rh.b.d && ((i7 = hVar.s) == 2 || i7 == 3)) {
+                    hVar.s = 1;
+                }
+                hVar.h.run();
+                break;
+            case 20:
+                sg.w wVar = (sg.w) obj2;
+                sg.z0 z0Var2 = (sg.z0) obj;
+                sg.w0 w0Var2 = wVar.a;
+                if (z0Var2 != null) {
+                    float currentWeight = w0Var2.getCurrentWeight();
+                    z0Var2.f = currentWeight;
+                    double d = wVar.p;
+                    if (d > 0.0d) {
+                        z0Var2.f = (float) ((d / wVar.q) * currentWeight);
+                    }
+                    if (z0Var2.a.o() == 4) {
+                        z0Var2.k *= z0Var2.f;
+                    }
+                }
+                sg.j0 painting = w0Var2.getPainting();
+                if (painting.L == null) {
+                    painting.f.f(new sg.e0(painting, z0Var2, i13));
+                    break;
+                }
+                break;
+            case 21:
+                sh.b bVar = (sh.b) obj2;
+                sh.c cVar = (sh.c) obj;
+                bVar.h = cVar;
+                bVar.c.b(cVar, true);
+                org.telegram.messenger.g0.i3(new t0(bVar, i12), 200L);
+                break;
+            case 22:
+                e5 e5Var = (e5) obj2;
+                TextureView textureView = (TextureView) obj;
+                e5Var.w0 = textureView;
+                if (textureView != null) {
+                    e5Var.q0.addView(textureView, 0);
+                    break;
+                }
+                break;
+            case 23:
+                i2 i2Var = (i2) obj2;
+                i2Var.n = (Bitmap) obj;
+                Paint paint2 = new Paint(1);
+                i2Var.s = paint2;
+                Bitmap bitmap4 = i2Var.n;
+                Shader.TileMode tileMode3 = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader2 = new BitmapShader(bitmap4, tileMode3, tileMode3);
+                i2Var.r = bitmapShader2;
+                paint2.setShader(bitmapShader2);
+                ColorMatrix colorMatrix2 = new ColorMatrix();
+                org.telegram.messenger.g0.i(colorMatrix2, k6.I.q() ? 0.08f : 0.25f);
+                org.telegram.messenger.g0.h(colorMatrix2, k6.I.q() ? -0.02f : -0.07f);
+                i2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+                i2Var.w = new Matrix();
+                break;
+            case 24:
+                ((ug.i0) obj2).y1((HashMap) obj);
+                break;
+            case 25:
+                ug.q1 q1Var2 = (ug.q1) obj2;
+                boolean e10 = rc.e(131072);
+                if (q1Var2.e != e10) {
+                    q1Var2.e = e10;
+                    q1Var2.invalidate();
+                    break;
+                }
+                break;
+            case 26:
+                vh.g.d1((vh.g) obj2, (Pair) obj);
+                break;
+            case 27:
+                ij ijVar = (ij) obj2;
+                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) obj;
+                TLRPC.MessageMedia messageMedia = ijVar.k.media;
+                if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
+                    TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia;
+                    tL_messageMediaGiveaway = new TLRPC.TL_messageMediaGiveaway();
+                    tL_messageMediaGiveaway.prize_description = tL_messageMediaGiveawayResults.prize_description;
+                    tL_messageMediaGiveaway.months = tL_messageMediaGiveawayResults.months;
+                    tL_messageMediaGiveaway.quantity = tL_messageMediaGiveawayResults.winners_count + tL_messageMediaGiveawayResults.unclaimed_count;
+                    tL_messageMediaGiveaway.only_new_subscribers = tL_messageMediaGiveawayResults.only_new_subscribers;
+                    tL_messageMediaGiveaway.until_date = tL_messageMediaGiveawayResults.until_date;
+                    if ((tL_messageMediaGiveawayResults.flags & 32) != 0) {
+                        tL_messageMediaGiveaway.flags |= 32;
+                        tL_messageMediaGiveaway.stars = tL_messageMediaGiveawayResults.stars;
+                    }
+                } else {
+                    tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
+                }
+                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
+                long j3 = ijVar.k.date * 1000;
+                org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    String b10 = wg.h.b(ijVar);
+                    TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-ijVar.Z0()));
+                    boolean z13 = M0 != null && org.telegram.messenger.t3.V(M0);
+                    kb kbVar = new kb(Q.getParentActivity(), Q.getResourceProvider());
+                    if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
+                        kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                        kbVar.b.setText(hd.M0(2131753371, null));
+                    } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
+                        if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
+                            kbVar.c(R.raw.forward, 30, 30, new String[0]);
+                            kbVar.b.setText(hd.M0(2131753369, null));
+                        } else {
+                            kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                            kbVar.b.setText(hd.M0(2131753370, null));
+                        }
+                    }
+                    kbVar.b.setSingleLine(false);
+                    kbVar.b.setMaxLines(2);
+                    ac acVar = new ac(Q.getParentActivity(), Q.getResourceProvider(), true);
+                    acVar.e(hd.M0(2131749009, null));
+                    acVar.b = new fi.q1(payments_giveawayinfo, z13, b10, j3, tL_messageMediaGiveaway2, Q);
+                    kbVar.setButton(acVar);
+                    cc.g(Q, kbVar, 2750).j();
+                    break;
+                }
+                break;
+            case 28:
+                wg.q0 q0Var2 = (wg.q0) obj2;
+                q0Var2.S1.setLoading(false);
+                wg.h.j(q0Var2.getContext(), (TLRPC.TL_error) obj);
+                break;
+            default:
+                wh.h hVar2 = (wh.h) obj2;
+                Bitmap bitmap5 = (Bitmap) obj;
+                Matrix matrix5 = hVar2.K;
+                if (hVar2.T) {
+                    hVar2.I.recycle();
+                    break;
+                } else {
+                    hVar2.I = bitmap5;
+                    Bitmap bitmap6 = hVar2.I;
+                    Shader.TileMode tileMode4 = Shader.TileMode.CLAMP;
+                    hVar2.J = new BitmapShader(bitmap6, tileMode4, tileMode4);
+                    Paint paint3 = new Paint(2);
+                    hVar2.L = paint3;
+                    paint3.setShader(hVar2.J);
+                    ColorMatrix colorMatrix3 = new ColorMatrix();
+                    org.telegram.messenger.g0.i(colorMatrix3, k6.I.q() ? 0.08f : 1.25f);
+                    org.telegram.messenger.g0.h(colorMatrix3, k6.I.q() ? 0.02f : -0.15f);
+                    hVar2.L.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
+                    matrix5.reset();
+                    matrix5.setScale(15.0f, 15.0f);
+                    hVar2.J.setLocalMatrix(matrix5);
+                    break;
+                }
+        }
+    }
+}

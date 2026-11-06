@@ -8,14 +8,14 @@ public final class q extends a5 {
     public final /* synthetic */ Object t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q(a aVar, int i3, Object obj, int i10) {
-        super(aVar, i3);
+    public /* synthetic */ q(a aVar, int i7, Object obj, int i10) {
+        super(aVar, i7);
         this.s = i10;
         this.t = obj;
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i3, j5 j5Var) {
+    public final j5 Q0(int i7, j5 j5Var) {
         switch (this.s) {
             case 0:
                 return new p(this, j5Var, 0);

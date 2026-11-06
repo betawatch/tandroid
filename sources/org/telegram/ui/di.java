@@ -1,69 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class di extends sf.b {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 f;
-    public final /* synthetic */ wm g;
+public final class di implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.ii0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ ch.o0 n;
+    public final /* synthetic */ org.telegram.messenger.ij r;
+    public final /* synthetic */ an s;
 
-    public /* synthetic */ di(wm wmVar, int i3, org.telegram.ui.Cells.q1 q1Var, int i10) {
-        this.d = i10;
-        this.g = wmVar;
-        this.e = i3;
-        this.f = q1Var;
+    public di(an anVar, boolean z9, boolean z10, int i7, boolean z11, org.telegram.ui.Components.ii0 ii0Var, float f10, float f11, ch.o0 o0Var, org.telegram.messenger.ij ijVar) {
+        this.s = anVar;
+        this.a = z9;
+        this.b = z10;
+        this.c = i7;
+        this.d = z11;
+        this.e = ii0Var;
+        this.f = f10;
+        this.h = f11;
+        this.n = o0Var;
+        this.r = ijVar;
     }
 
-    @Override // sf.b
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    org.telegram.messenger.g0.i3(new cg.l0(this, this.e, 22), 240L);
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            an anVar = this.s;
+            if (anVar.Fc != null) {
+                anVar.Fc = null;
+                if (this.b) {
+                    anVar.w8(new ci(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    anVar.w8(new qf(15, this, this.r));
                 }
-                break;
-            case 1:
-                if (!z10) {
-                    org.telegram.messenger.g0.i3(new cg.l0(this, this.e, 25), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    org.telegram.messenger.g0.i3(new cg.l0(this, this.e, 26), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // sf.b
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i3 = this.e;
-                wm wmVar = this.g;
-                wmVar.Xb = i3;
-                wmVar.Yb = 6;
-                this.f.invalidate();
-                break;
-            case 1:
-                int i10 = this.e;
-                wm wmVar2 = this.g;
-                wmVar2.Xb = i10;
-                wmVar2.Yb = 5;
-                wmVar2.ac = null;
-                this.f.invalidate();
-                break;
-            default:
-                int i11 = this.e;
-                wm wmVar3 = this.g;
-                wmVar3.Xb = i11;
-                wmVar3.Yb = 7;
-                this.f.invalidate();
-                break;
+                anVar.O7(true);
+            }
         }
     }
 }

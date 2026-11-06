@@ -2,6 +2,7 @@ package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import c8.gc;
 import com.google.android.gms.internal.vision.d0;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f;
@@ -16,13 +17,12 @@ import com.google.android.gms.internal.vision.y;
 import com.google.android.gms.internal.vision.z;
 import java.util.ArrayList;
 import java.util.List;
-import x7.q;
-import y6.b;
+import z6.b;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class LogUtils {
-    public static f0 zza(long j10, int i3, String str, String str2, List<d0> list, f3 f3Var) {
+    public static f0 zza(long j3, int i7, String str, String str2, List<d0> list, f3 f3Var) {
         v l10 = w.l();
         o m10 = p.m();
         if (m10.c) {
@@ -34,13 +34,13 @@ public class LogUtils {
             m10.d();
             m10.c = false;
         }
-        p.j((p) m10.b, j10);
-        long j11 = i3;
+        p.j((p) m10.b, j3);
+        long j10 = i7;
         if (m10.c) {
             m10.d();
             m10.c = false;
         }
-        p.n((p) m10.b, j11);
+        p.n((p) m10.b, j10);
         if (m10.c) {
             m10.d();
             m10.c = false;
@@ -54,30 +54,30 @@ public class LogUtils {
         }
         w.k((w) l10.b, arrayList);
         y k10 = z.k();
-        long j12 = f3Var.b;
+        long j11 = f3Var.b;
         if (k10.c) {
             k10.d();
             k10.c = false;
         }
-        z.l((z) k10.b, j12);
-        long j13 = f3Var.a;
+        z.l((z) k10.b, j11);
+        long j12 = f3Var.a;
         if (k10.c) {
             k10.d();
             k10.c = false;
         }
-        z.j((z) k10.b, j13);
-        long j14 = f3Var.c;
+        z.j((z) k10.b, j12);
+        long j13 = f3Var.c;
         if (k10.c) {
             k10.d();
             k10.c = false;
         }
-        z.m((z) k10.b, j14);
-        long j15 = f3Var.d;
+        z.m((z) k10.b, j13);
+        long j14 = f3Var.d;
         if (k10.c) {
             k10.d();
             k10.c = false;
         }
-        z.n((z) k10.b, j15);
+        z.n((z) k10.b, j14);
         z zVar = (z) k10.f();
         if (l10.c) {
             l10.d();
@@ -96,9 +96,9 @@ public class LogUtils {
 
     private static String zzb(Context context) {
         try {
-            return b.a(context).d(0, context.getPackageName()).versionName;
+            return b.a(context).c(0, context.getPackageName()).versionName;
         } catch (PackageManager.NameNotFoundException e10) {
-            q.a(e10, "Unable to find calling package info for %s", context.getPackageName());
+            gc.a(e10, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

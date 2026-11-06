@@ -1,34 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w21 extends org.telegram.ui.Components.q31 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class w21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x21 b;
 
-    static {
-        org.telegram.ui.Components.q31.h(new w21());
+    public /* synthetic */ w21(x21 x21Var, int i7) {
+        this.a = i7;
+        this.b = x21Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z10, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.l41 l41Var) {
-        ((x21) view).set(r31Var.z);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean c(org.telegram.ui.Components.r31 r31Var, org.telegram.ui.Components.r31 r31Var2) {
-        return r31Var.z == r31Var2.z;
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, org.telegram.ui.Components.tj0 tj0Var, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new x21(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean e(org.telegram.ui.Components.r31 r31Var, org.telegram.ui.Components.r31 r31Var2) {
-        return r31Var.d == r31Var2.d;
+    @Override // java.lang.Runnable
+    public final void run() {
+        String sb2;
+        int i7 = this.a;
+        x21 x21Var = this.b;
+        switch (i7) {
+            case 0:
+                String str = x21Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb3 = new StringBuilder();
+                    org.telegram.messenger.camera.q.q(null, 2131751106, sb3, "\n");
+                    sb3.append(x21Var.b.text);
+                    sb2 = sb3.toString();
+                } else {
+                    sb2 = org.telegram.messenger.hd.M0(2131754709, null);
+                }
+                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.hd.M0(2131753894, null), sb2, null);
+                break;
+            default:
+                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.hd.M0(2131753894, null), org.telegram.messenger.hd.M0(2131751106, null), null);
+                break;
+        }
     }
 }

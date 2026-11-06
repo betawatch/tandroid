@@ -1,9 +1,10 @@
 package androidx.lifecycle;
 
+import a8.ra;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -16,12 +17,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final a3.o j;
+    public final ra j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new a3.o(this, 6);
+        this.j = new ra(this, 7);
         this.e = obj;
         this.g = -1;
     }
@@ -29,7 +30,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a1.g.q("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a8.p0.p("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -39,13 +40,13 @@ public class z {
                 yVar.c(false);
                 return;
             }
-            int i3 = yVar.c;
+            int i7 = yVar.c;
             int i10 = this.g;
-            if (i3 >= i10) {
+            if (i7 >= i10) {
                 return;
             }
             yVar.c = i10;
-            yVar.a.v(this.e);
+            yVar.a.X(this.e);
         }
     }
 
@@ -84,9 +85,9 @@ public class z {
         }
         LiveData$LifecycleBoundObserver liveData$LifecycleBoundObserver = new LiveData$LifecycleBoundObserver(this, tVar, a0Var);
         o.f fVar = this.b;
-        o.c h = fVar.h(a0Var);
-        if (h != null) {
-            obj = h.b;
+        o.c f10 = fVar.f(a0Var);
+        if (f10 != null) {
+            obj = f10.b;
         } else {
             o.c cVar = new o.c(a0Var, liveData$LifecycleBoundObserver);
             fVar.d++;
@@ -111,25 +112,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(bb.c cVar) {
+    public final void e(d6.i iVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, cVar);
+        x xVar = new x(this, iVar);
         o.f fVar = this.b;
-        o.c h = fVar.h(cVar);
-        if (h != null) {
-            obj = h.b;
+        o.c f10 = fVar.f(iVar);
+        if (f10 != null) {
+            obj = f10.b;
         } else {
-            o.c cVar2 = new o.c(cVar, xVar);
+            o.c cVar = new o.c(iVar, xVar);
             fVar.d++;
-            o.c cVar3 = fVar.b;
-            if (cVar3 == null) {
-                fVar.a = cVar2;
-                fVar.b = cVar2;
+            o.c cVar2 = fVar.b;
+            if (cVar2 == null) {
+                fVar.a = cVar;
+                fVar.b = cVar;
             } else {
-                cVar3.c = cVar2;
-                cVar2.d = cVar3;
-                fVar.b = cVar2;
+                cVar2.c = cVar;
+                cVar.d = cVar2;
+                fVar.b = cVar;
             }
             obj = null;
         }
@@ -144,12 +145,12 @@ public class z {
     }
 
     public final void h(Object obj) {
-        boolean z10;
+        boolean z9;
         synchronized (this.a) {
-            z10 = this.f == k;
+            z9 = this.f == k;
             this.f = obj;
         }
-        if (z10) {
+        if (z9) {
             n.a.a().b(this.j);
         }
     }

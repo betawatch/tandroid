@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ContactsWidgetService extends RemoteViewsService {
     @Override // android.widget.RemoteViewsService
@@ -20,9 +20,9 @@ public class ContactsWidgetService extends RemoteViewsService {
         int intExtra = intent.getIntExtra("appWidgetId", 0);
         i5Var.c = intExtra;
         SharedPreferences sharedPreferences = applicationContext.getSharedPreferences("shortcut_widget", 0);
-        int i3 = sharedPreferences.getInt("account" + intExtra, -1);
-        if (i3 >= 0) {
-            i5Var.d = c.a(i3);
+        int i7 = sharedPreferences.getInt("account" + intExtra, -1);
+        if (i7 >= 0) {
+            i5Var.d = c.a(i7);
         }
         StringBuilder sb2 = new StringBuilder("deleted");
         sb2.append(intExtra);

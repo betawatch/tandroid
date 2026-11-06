@@ -1,31 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class w61 implements d71 {
-    public boolean a;
-    public final /* synthetic */ wm b;
+public final class w61 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ u71 c;
 
-    public w61(wm wmVar, boolean z10) {
-        this.b = wmVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w61(u71 u71Var, Context context, int i7, Rect rect) {
+        super(context);
+        this.c = u71Var;
+        this.a = i7;
+        this.b = rect;
     }
 
-    @Override // org.telegram.ui.d71
-    public final boolean Y0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.d71
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.d71
-    public final void l1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        um umVar = this.b.ya;
-        umVar.r(umVar.f, umVar.g, z10, Boolean.valueOf(z11), false);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = this.a;
+        Rect rect = this.b;
+        u71 u71Var = this.c;
+        if (i7 == 0) {
+            u71Var.r.setBounds(u71Var.W.getLeft() - rect.left, 0, u71Var.W.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            u71Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+        }
+        u71Var.r.draw(canvas);
     }
 }

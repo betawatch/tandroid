@@ -1,66 +1,80 @@
 package r2;
 
 import android.net.Uri;
-import android.os.SystemClock;
-import g9.g0;
-import g9.g2;
-import g9.t0;
-import java.util.HashMap;
-import org.telegram.ui.Cells.f1;
+import j2.d0;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Map;
+import javax.crypto.Cipher;
+import javax.crypto.CipherInputStream;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements u {
-    public final /* synthetic */ d a;
+public final class a implements j2.h {
+    public final j2.h a;
+    public final byte[] b;
+    public final byte[] c;
+    public CipherInputStream d;
 
-    public a(d dVar) {
-        this.a = dVar;
+    public a(j2.h hVar, byte[] bArr, byte[] bArr2) {
+        this.a = hVar;
+        this.b = bArr;
+        this.c = bArr2;
     }
 
-    @Override // r2.u
-    public final void a() {
-        this.a.e.remove(this);
+    @Override // j2.h
+    public final void addTransferListener(d0 d0Var) {
+        d0Var.getClass();
+        this.a.addTransferListener(d0Var);
     }
 
-    @Override // r2.u
-    public final boolean b(Uri uri, e5.u uVar, boolean z10) {
-        c cVar;
-        d dVar = this.a;
-        HashMap hashMap = dVar.d;
-        if (dVar.H == null) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            c cVar2 = (c) hashMap.get(uri);
-            cVar2.getClass();
-            w wVar = cVar2.a;
-            int size = wVar.b.size();
-            g2 it = t0.q(wVar.b.values()).iterator();
-            int i3 = 0;
-            while (it.hasNext()) {
-                Uri uri2 = (Uri) it.next();
-                c cVar3 = (c) hashMap.get(uri2);
-                if (cVar3 != null) {
-                    b bVar = (b) f1.p(cVar3.b, uri2, uri2);
-                    bVar.getClass();
-                    if (elapsedRealtime <= bVar.r) {
-                        i3++;
-                    }
-                }
-            }
-            int size2 = dVar.x.size();
-            g0 listIterator = dVar.x.listIterator(0);
-            int i10 = 0;
-            while (listIterator.hasNext()) {
-                if (dVar.e((w) listIterator.next(), elapsedRealtime)) {
-                    i10++;
-                }
-            }
-            a3.h hVar = new a3.h(size, i3, size2, i10);
-            dVar.c.getClass();
-            a3.i D4 = kb.a.D4(hVar, uVar);
-            if (D4 != null && (cVar = (c) hashMap.get(uri)) != null) {
-                return c.c(cVar, uri, D4.b);
-            }
+    @Override // j2.h
+    public final void close() {
+        if (this.d != null) {
+            this.d = null;
+            this.a.close();
         }
-        return false;
+    }
+
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        try {
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+            try {
+                cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
+                j2.k kVar = new j2.k(this.a, mVar);
+                this.d = new CipherInputStream(kVar, cipher);
+                kVar.a();
+                return -1L;
+            } catch (InvalidAlgorithmParameterException | InvalidKeyException e10) {
+                throw new RuntimeException(e10);
+            }
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e11) {
+            throw new RuntimeException(e11);
+        }
+    }
+
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        this.d.getClass();
+        int read = this.d.read(bArr, i7, i10);
+        if (read < 0) {
+            return -1;
+        }
+        return read;
     }
 }

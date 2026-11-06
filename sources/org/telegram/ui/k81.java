@@ -1,48 +1,116 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k81 extends g11 {
-    public boolean f2;
-    public final /* synthetic */ l81 g2;
+public final /* synthetic */ class k81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l81 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k81(l81 l81Var, l81 l81Var2, Activity activity) {
-        super(l81Var2, activity, false, null, 3, null);
-        this.g2 = l81Var;
-        this.f2 = true;
+    public /* synthetic */ k81(l81 l81Var, String str, int i7, int i10) {
+        this.a = i10;
+        this.b = l81Var;
+        this.c = str;
+        this.d = i7;
     }
 
-    @Override // org.telegram.ui.g11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        if (this.f2) {
-            this.f2 = false;
-            this.g2.f.s(null);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00a6 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00b5 A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        l81 l81Var;
+        switch (this.a) {
+            case 0:
+                l81 l81Var2 = this.b;
+                String str = this.c;
+                int i7 = this.d;
+                l81Var2.getClass();
+                Utilities.g.c(new k81(l81Var2, str, i7, 1));
+                break;
+            default:
+                l81 l81Var3 = this.b;
+                String str2 = this.c;
+                int i10 = this.d;
+                m81 m81Var = l81Var3.h;
+                ArrayList arrayList = m81Var.f;
+                String lowerCase = str2.trim().toLowerCase();
+                String str3 = null;
+                if (lowerCase.length() != 0) {
+                    boolean z9 = false;
+                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                    if (!lowerCase.equals(S0) && S0.length() != 0) {
+                        str3 = S0;
+                    }
+                    int i11 = (str3 != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i11];
+                    strArr[0] = lowerCase;
+                    if (str3 != null) {
+                        strArr[1] = str3;
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    ArrayList arrayList3 = new ArrayList();
+                    int i12 = 0;
+                    while (i12 < arrayList.size()) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i12);
+                        int i13 = z9 ? 1 : 0;
+                        int i14 = i13;
+                        boolean z10 = z9;
+                        while (true) {
+                            if (i13 < 2) {
+                                String K = i13 == 0 ? chat.title : org.telegram.messenger.t3.K(chat, z10);
+                                if (K == null) {
+                                    l81Var = l81Var3;
+                                } else {
+                                    String lowerCase2 = K.toLowerCase();
+                                    int i15 = z10;
+                                    while (i15 < i11) {
+                                        String str4 = strArr[i15];
+                                        if (lowerCase2.startsWith(str4)) {
+                                            l81Var = l81Var3;
+                                        } else {
+                                            l81Var = l81Var3;
+                                            if (!jg.g.A(" ", str4, lowerCase2)) {
+                                                i15++;
+                                                l81Var3 = l81Var;
+                                            }
+                                        }
+                                        i14 = 1;
+                                        if (i14 == 0) {
+                                            arrayList2.add(chat);
+                                            arrayList3.add((String) m81Var.h.get(i12));
+                                        }
+                                    }
+                                    l81Var = l81Var3;
+                                    if (i14 == 0) {
+                                    }
+                                }
+                                i13++;
+                                l81Var3 = l81Var;
+                                z10 = 0;
+                            } else {
+                                l81Var = l81Var3;
+                            }
+                        }
+                        i12++;
+                        l81Var3 = l81Var;
+                        z9 = false;
+                    }
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(l81Var3, i10, arrayList2, arrayList3, 17));
+                    break;
+                } else {
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(l81Var3, i10, str3, str3, 17));
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.g11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i3;
-        int i10;
-        l81 l81Var = this.g2;
-        i3 = ((org.telegram.ui.ActionBar.d2) l81Var).currentAccount;
-        boolean z10 = false;
-        if (!TextUtils.isEmpty(org.telegram.messenger.h10.i(i3).f0)) {
-            org.telegram.messenger.li mediaDataController = l81Var.getMediaDataController();
-            i10 = ((org.telegram.ui.ActionBar.d2) l81Var).currentAccount;
-            TLRPC.TL_messages_stickerSet n02 = mediaDataController.n0(org.telegram.messenger.h10.i(i10).f0);
-            if ((n02 == null ? 0L : n02.set.id) == org.telegram.messenger.li.q0(document)) {
-                z10 = true;
-            }
-        }
-        l81Var.g0(l10, z10);
     }
 }

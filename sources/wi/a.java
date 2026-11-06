@@ -2,21 +2,21 @@ package wi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ j b;
 
-    public /* synthetic */ a(j jVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ a(j jVar, int i7) {
+        this.a = i7;
         this.b = jVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         m mVar;
-        boolean z10;
+        boolean z9;
         switch (this.a) {
             case 0:
                 this.b.u();
@@ -38,9 +38,9 @@ public final /* synthetic */ class a implements Runnable {
                     return;
                 }
                 synchronized (mVar) {
-                    z10 = mVar.E;
+                    z9 = mVar.E;
                 }
-                if (z10) {
+                if (z9) {
                     return;
                 }
                 try {
@@ -78,12 +78,12 @@ public final /* synthetic */ class a implements Runnable {
                 m mVar4 = jVar4.x;
                 if (mVar4 != null) {
                     long p10 = mVar4.p();
-                    s sVar = jVar4.w;
-                    if (sVar != null && p10 != Long.MAX_VALUE) {
-                        sVar.q = Math.max(0L, p10) * 1000;
-                        Handler handler3 = sVar.u;
+                    t tVar = jVar4.w;
+                    if (tVar != null && p10 != Long.MAX_VALUE) {
+                        tVar.q = Math.max(0L, p10) * 1000;
+                        Handler handler3 = tVar.u;
                         if (handler3 != null) {
-                            handler3.removeCallbacks(sVar.x0);
+                            handler3.removeCallbacks(tVar.x0);
                         }
                     }
                 }
@@ -95,7 +95,7 @@ public final /* synthetic */ class a implements Runnable {
                 }
                 jVar4.b0 = false;
                 t0 t0Var = (t0) jVar4.k.b;
-                t0Var.i.post(new h0(t0Var, 3));
+                t0Var.i.post(new i0(t0Var, 3));
                 return;
             case 7:
                 this.b.I();

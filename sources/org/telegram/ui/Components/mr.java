@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class mr {
     public int a;
@@ -15,11 +15,11 @@ public final class mr {
     public int f;
     public int g;
 
-    public static mr b(org.telegram.ui.Cells.t2 t2Var, org.telegram.messenger.mo moVar) {
+    public static mr b(org.telegram.ui.Cells.t2 t2Var, org.telegram.messenger.vo voVar) {
         mr mrVar = new mr();
-        mrVar.a = moVar.a;
-        mrVar.b = moVar.m;
-        String str = moVar.b;
+        mrVar.a = voVar.a;
+        mrVar.b = voVar.m;
+        String str = voVar.b;
         if (str == null) {
             str = "";
         }
@@ -27,17 +27,17 @@ public final class mr {
         ly0 ly0Var = new ly0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
         ly0Var.r(t2Var);
         mrVar.c = ly0Var;
-        mrVar.c.q(org.telegram.messenger.zi.C5(org.telegram.messenger.i6.m(spannableStringBuilder, ly0Var.a.getFontMetricsInt(), false, null, 0), moVar.c, mrVar.c.a.getFontMetricsInt(), false));
+        mrVar.c.q(org.telegram.messenger.ij.C5(org.telegram.messenger.i6.m(spannableStringBuilder, ly0Var.a.getFontMetricsInt(), false, null, 0), voVar.c, mrVar.c.a.getFontMetricsInt(), false));
         mrVar.c.o(26);
         int L = org.telegram.messenger.g0.L(9.32f);
         ly0 ly0Var2 = mrVar.c;
         mrVar.g = L + ((int) ly0Var2.c);
         ly0Var2.i();
         int[] iArr = org.telegram.ui.ActionBar.k6.r8;
-        int i3 = iArr[moVar.m % iArr.length];
-        mrVar.f = i3;
+        int i7 = iArr[voVar.m % iArr.length];
+        mrVar.f = i7;
         mrVar.e = true;
-        mrVar.d = org.telegram.ui.ActionBar.k6.x0(null, i3, false);
+        mrVar.d = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
         return mrVar;
     }
 

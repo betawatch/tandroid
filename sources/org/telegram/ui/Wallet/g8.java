@@ -1,84 +1,45 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.n10;
-import org.telegram.ui.Components.fc;
-import org.telegram.ui.ma1;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g8 implements n10 {
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g8 implements c20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n8 b;
-    public final /* synthetic */ sf.b c;
-    public final /* synthetic */ k0 d;
+    public final /* synthetic */ o8 b;
 
-    public /* synthetic */ g8(n8 n8Var, sf.b bVar, k0 k0Var, int i3) {
-        this.a = i3;
-        this.b = n8Var;
-        this.c = bVar;
-        this.d = k0Var;
+    public /* synthetic */ g8(o8 o8Var, int i7) {
+        this.a = i7;
+        this.b = o8Var;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        int i7 = this.a;
+        o8 o8Var = this.b;
+        switch (i7) {
             case 0:
-                h0 h0Var = (h0) obj;
-                String str = (String) obj2;
-                this.c.c(false);
-                n8 n8Var = this.b;
-                if (h0Var != null) {
-                    u8 u8Var = new u8();
-                    u8Var.h = true;
-                    ArrayList arrayList = u8Var.a;
-                    arrayList.clear();
-                    if (!h0Var.d()) {
-                        arrayList.addAll(h0Var.f());
-                    }
-                    u8Var.a0();
-                    u8Var.f = new ma1(27, n8Var, this.d);
-                    n8Var.presentFragment(u8Var);
+                n0.x(o8Var.currentAccount).z(new v1(2, o8Var, (c20) obj), true, false);
+                break;
+            case 1:
+                String str = (String) obj;
+                if (str == null) {
+                    cc I = hc.a0(o8Var).I(R.raw.contact_check, hd.M0(2131743189, null), hd.M0(2131743187, null));
+                    I.j = 5000;
+                    I.j();
+                    o8Var.a.f3.O(true);
                     break;
                 } else {
-                    fc a02 = fc.a0(n8Var);
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    a02.e0(str, false);
+                    hc.a0(o8Var).e0(str, false);
                     break;
                 }
             default:
-                f0 f0Var = (f0) obj;
-                String str2 = (String) obj2;
-                this.c.c(false);
-                n8 n8Var2 = this.b;
-                if (f0Var != null) {
-                    if (!n8Var2.f) {
-                        n8Var2.e.add(f0Var);
-                        u8 u8Var2 = new u8();
-                        h0 h0Var2 = f0Var.b;
-                        ArrayList arrayList2 = u8Var2.a;
-                        arrayList2.clear();
-                        if (!h0Var2.d()) {
-                            arrayList2.addAll(h0Var2.f());
-                        }
-                        u8Var2.a0();
-                        u8Var2.f = new g(n8Var2, this.d, f0Var, 21);
-                        n8Var2.presentFragment(u8Var2);
-                        break;
-                    } else {
-                        f0Var.close();
-                        break;
-                    }
-                } else {
-                    fc a03 = fc.a0(n8Var2);
-                    if (str2 == null) {
-                        str2 = "NULL_ERROR";
-                    }
-                    a03.e0(str2, false);
-                    break;
-                }
+                o8.f0(o8Var, (Boolean) obj);
+                break;
         }
     }
 }

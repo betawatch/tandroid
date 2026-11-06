@@ -1,53 +1,32 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class o90 extends sg.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class o90 extends an {
+    public boolean rd;
+    public final /* synthetic */ TLRPC.User sd;
+    public final /* synthetic */ TLRPC.User[] td;
+    public final /* synthetic */ long ud;
 
-    public o90(int i3, int i10, CharSequence charSequence, int i11, int i12) {
-        super(i3, false);
-        this.c = charSequence;
-        this.d = i10;
-        this.e = i11;
-        this.f = i12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o90(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j3) {
+        super(bundle);
+        this.sd = user;
+        this.td = userArr;
+        this.ud = j3;
     }
 
-    public static o90 b(int i3, String str) {
-        return new o90(4, 0, str, i3, 0);
-    }
-
-    public static o90 c(int i3, int i10, String str) {
-        return new o90(3, i3, str, i10, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.f2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.rd) {
+            return;
         }
-        if (!(obj instanceof o90)) {
-            return false;
-        }
-        o90 o90Var = (o90) obj;
-        int i3 = o90Var.a;
-        int i10 = this.a;
-        if (i3 != i10) {
-            return false;
-        }
-        if (i10 == 3 && o90Var.d != this.d) {
-            return false;
-        }
-        if (i10 == 5 && o90Var.f != this.f) {
-            return false;
-        }
-        if ((i10 == 3 || i10 == 4) && o90Var.e != this.e) {
-            return false;
-        }
-        return !(i10 == 0 || i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) || TextUtils.equals(o90Var.c, this.c);
+        this.rd = true;
+        org.telegram.ui.Components.hc.a0(this).I(R.raw.contact_check, org.telegram.messenger.hd.a0(null, null, 2131751740, org.telegram.messenger.t10.p(this.sd)), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131751741, org.telegram.messenger.t10.p(this.td[0])), new bi.r3(this, this.ud, 27))).j();
     }
 }

@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import fd.c;
-import od.p;
+import af.b;
+import id.c;
 import org.telegram.tgnet.TLObject;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
     private final Integer zzb;
     private final int zzc;
 
-    public zzhf(int i3, p pVar, Integer num) {
-        this.zzc = i3;
+    public zzhf(int i7, p pVar, Integer num) {
+        this.zzc = i7;
         this.zza = pVar;
         this.zzb = num;
     }
@@ -25,7 +25,7 @@ public final class zzhf {
     */
     public final Object zza(zzhk zzhkVar, c cVar) {
         zzhe zzheVar;
-        int i3;
+        int i7;
         zzcg e10;
         zzgr zzgrVar;
         if (cVar instanceof zzhe) {
@@ -34,10 +34,10 @@ public final class zzhf {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzheVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzheVar.zza;
-                gd.a aVar = gd.a.a;
-                i3 = zzheVar.zzc;
-                if (i3 != 0) {
-                    ib.b(obj);
+                jd.a aVar = jd.a.a;
+                i7 = zzheVar.zzc;
+                if (i7 != 0) {
+                    b.c(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -55,12 +55,12 @@ public final class zzhf {
                         throw e10;
                     }
                 } else {
-                    if (i3 != 1) {
+                    if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        ib.b(obj);
+                        b.c(obj);
                     } catch (zzcg e12) {
                         e10 = e12;
                         zzgrVar.zzc(e10);
@@ -73,9 +73,9 @@ public final class zzhf {
         }
         zzheVar = new zzhe(this, cVar);
         Object obj2 = zzheVar.zza;
-        gd.a aVar2 = gd.a.a;
-        i3 = zzheVar.zzc;
-        if (i3 != 0) {
+        jd.a aVar2 = jd.a.a;
+        i7 = zzheVar.zzc;
+        if (i7 != 0) {
         }
         zzgrVar.zzb();
         return obj2;

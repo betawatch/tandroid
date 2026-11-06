@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import a8.ab;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
-import b8.hb;
-import dd.c;
-import ed.h;
+import gd.c;
+import hd.g;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,22 +12,22 @@ import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 import kotlin.jvm.internal.j;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
-        int i3 = zzby.zza;
-        this.zza = hb.b(zzhb.zza);
+        int i7 = zzby.zza;
+        this.zza = ab.b(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
         for (zzwn zzwnVar : zzwq.zzk(bArr).zzl()) {
             String str = "INIT_TOTAL";
-            List c2 = h.c("INIT_TOTAL", "EXECUTE_TOTAL");
+            List c10 = g.c("INIT_TOTAL", "EXECUTE_TOTAL");
             switch (zzwnVar.zzaa()) {
                 case 2:
                     str = "UNKNOWN";
@@ -112,10 +112,10 @@ public final class zzhc implements zzha {
                 case 29:
                     str = "POST_EXECUTE";
                     break;
-                case hs.T /* 30 */:
+                case qs.T /* 30 */:
                     str = "SIGNAL_MANAGER_INITIALIZATION";
                     break;
-                case hs.U /* 31 */:
+                case qs.U /* 31 */:
                     str = "SIGNAL_MANAGER_COLLECT_SIGNALS";
                     break;
                 case 32:
@@ -179,7 +179,7 @@ public final class zzhc implements zzha {
                     str = "UNRECOGNIZED";
                     break;
             }
-            if (c2.contains(str) && zzwnVar.zzY()) {
+            if (c10.contains(str) && zzwnVar.zzY()) {
                 zzwnVar.zzN();
                 zzwnVar.zzO();
                 zzwnVar.zzaa();

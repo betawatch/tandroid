@@ -13,15 +13,14 @@ import android.view.InflateException;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.SubMenu;
-import b8.oc;
 import java.io.IOException;
 import l.n;
-import m.l1;
+import m.m1;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -50,14 +49,14 @@ public final class h extends MenuInflater {
     }
 
     public final void b(XmlPullParser xmlPullParser, AttributeSet attributeSet, Menu menu) {
-        int i3;
+        int i7;
         XmlPullParser xmlPullParser2;
         ColorStateList colorStateList;
         int resourceId;
         g gVar = new g(this, menu);
         int eventType = xmlPullParser.getEventType();
         while (true) {
-            i3 = 2;
+            i7 = 2;
             if (eventType == 2) {
                 String name = xmlPullParser.getName();
                 if (!name.equals("menu")) {
@@ -71,25 +70,25 @@ public final class h extends MenuInflater {
                 }
             }
         }
+        boolean z9 = false;
         boolean z10 = false;
-        boolean z11 = false;
         String str = null;
-        while (!z10) {
+        while (!z9) {
             if (eventType == 1) {
                 throw new RuntimeException("Unexpected end of document");
             }
             Menu menu2 = gVar.a;
-            if (eventType != i3) {
+            if (eventType != i7) {
                 if (eventType == 3) {
                     String name2 = xmlPullParser.getName();
-                    if (z11 && name2.equals(str)) {
+                    if (z10 && name2.equals(str)) {
                         xmlPullParser2 = xmlPullParser;
-                        z11 = false;
+                        z10 = false;
                         str = null;
                         eventType = xmlPullParser2.next();
-                        i3 = 2;
+                        i7 = 2;
+                        z9 = z9;
                         z10 = z10;
-                        z11 = z11;
                     } else if (name2.equals("group")) {
                         gVar.b = 0;
                         gVar.c = 0;
@@ -110,13 +109,13 @@ public final class h extends MenuInflater {
                         }
                     } else if (name2.equals("menu")) {
                         xmlPullParser2 = xmlPullParser;
-                        z10 = true;
+                        z9 = true;
                     }
                 }
                 xmlPullParser2 = xmlPullParser;
-                z10 = z10;
+                z9 = z9;
             } else {
-                if (!z11) {
+                if (!z10) {
                     String name3 = xmlPullParser.getName();
                     boolean equals = name3.equals("group");
                     Context context = this.c;
@@ -156,11 +155,11 @@ public final class h extends MenuInflater {
                             gVar.w = obtainStyledAttributes2.getResourceId(13, 0);
                             gVar.x = obtainStyledAttributes2.getString(15);
                             String string3 = obtainStyledAttributes2.getString(14);
-                            boolean z12 = string3 != null;
-                            if (z12 && gVar.w == 0 && gVar.x == null) {
+                            boolean z11 = string3 != null;
+                            if (z11 && gVar.w == 0 && gVar.x == null) {
                                 gVar.z = (n) gVar.a(string3, f, this.b);
                             } else {
-                                if (z12) {
+                                if (z11) {
                                     Log.w("SupportMenuInflater", "Ignoring attribute 'actionProviderClass'. Action view already specified.");
                                 }
                                 gVar.z = null;
@@ -168,12 +167,12 @@ public final class h extends MenuInflater {
                             gVar.A = obtainStyledAttributes2.getText(17);
                             gVar.B = obtainStyledAttributes2.getText(22);
                             if (obtainStyledAttributes2.hasValue(19)) {
-                                gVar.D = l1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
+                                gVar.D = m1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
                             } else {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = oc.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = b5.a.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -192,35 +191,35 @@ public final class h extends MenuInflater {
                         } else {
                             xmlPullParser2 = xmlPullParser;
                             str = name3;
-                            z11 = true;
+                            z10 = true;
                         }
                         eventType = xmlPullParser2.next();
-                        i3 = 2;
+                        i7 = 2;
+                        z9 = z9;
                         z10 = z10;
-                        z11 = z11;
                     }
                 }
                 xmlPullParser2 = xmlPullParser;
-                z10 = z10;
+                z9 = z9;
             }
             eventType = xmlPullParser2.next();
-            i3 = 2;
+            i7 = 2;
+            z9 = z9;
             z10 = z10;
-            z11 = z11;
         }
     }
 
     @Override // android.view.MenuInflater
-    public final void inflate(int i3, Menu menu) {
+    public final void inflate(int i7, Menu menu) {
         if (!(menu instanceof l.k)) {
-            super.inflate(i3, menu);
+            super.inflate(i7, menu);
             return;
         }
         XmlResourceParser xmlResourceParser = null;
         try {
             try {
                 try {
-                    xmlResourceParser = this.c.getResources().getLayout(i3);
+                    xmlResourceParser = this.c.getResources().getLayout(i7);
                     b(xmlResourceParser, Xml.asAttributeSet(xmlResourceParser), menu);
                     xmlResourceParser.close();
                 } catch (IOException e10) {

@@ -1,170 +1,18 @@
 package l4;
 
-import d2.u0;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.messenger.hs;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
+public final class f implements Comparable {
     public final int a;
-    public final List b;
+    public final b b;
 
-    public f(int i3, List list) {
-        this.a = i3;
-        this.b = list;
+    public f(int i7, b bVar) {
+        this.a = i7;
+        this.b = bVar;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x005f  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public g0 a(int i3, l6.n nVar) {
-        String str = (String) nVar.b;
-        if (i3 != 2) {
-            if (i3 == 3 || i3 == 4) {
-                return new w(new u(str, nVar.d(), "video/mp2t"));
-            }
-            if (i3 == 21) {
-                return new w(new h());
-            }
-            if (i3 == 27) {
-                if (c(4)) {
-                    return null;
-                }
-                return new w(new q(new c0(0, b(nVar)), c(1), c(8)));
-            }
-            if (i3 == 36) {
-                return new w(new s(new c0(0, b(nVar))));
-            }
-            if (i3 == 45) {
-                return new w(new v());
-            }
-            if (i3 == 89) {
-                return new w(new h((List) nVar.c));
-            }
-            if (i3 == 172) {
-                return new w(new b(nVar.d(), 1, str, "video/mp2t"));
-            }
-            if (i3 == 257) {
-                return new b0(new k4.j("application/vnd.dvb.ait"));
-            }
-            if (i3 != 138) {
-                if (i3 == 139) {
-                    return new w(new g(str, nVar.d(), 5408));
-                }
-                switch (i3) {
-                    case 15:
-                        if (c(2)) {
-                            return null;
-                        }
-                        return new w(new e(nVar.d(), str, "video/mp2t", false));
-                    case 16:
-                        return new w(new n(new c0(1, b(nVar))));
-                    case 17:
-                        if (c(2)) {
-                            return null;
-                        }
-                        return new w(new t(str, nVar.d()));
-                    default:
-                        switch (i3) {
-                            case 128:
-                                break;
-                            case hs.N1 /* 129 */:
-                                return new w(new b(nVar.d(), 0, str, "video/mp2t"));
-                            case hs.O1 /* 130 */:
-                                if (!c(64)) {
-                                    return null;
-                                }
-                                break;
-                            default:
-                                switch (i3) {
-                                    case 134:
-                                        if (c(16)) {
-                                            return null;
-                                        }
-                                        return new b0(new k4.j("application/x-scte35"));
-                                    case hs.R1 /* 135 */:
-                                        break;
-                                    case hs.S1 /* 136 */:
-                                        break;
-                                    default:
-                                        return null;
-                                }
-                        }
-                }
-            }
-            return new w(new g(str, nVar.d(), TLObject.FLAG_12));
-        }
-        return new w(new k(new c0(1, b(nVar)), "video/mp2t"));
-    }
-
-    public List b(l6.n nVar) {
-        String str;
-        int i3;
-        List list;
-        boolean c2 = c(32);
-        List list2 = this.b;
-        if (c2) {
-            return list2;
-        }
-        g2.y yVar = new g2.y((byte[]) nVar.d);
-        while (yVar.a() > 0) {
-            int A = yVar.A();
-            int A2 = yVar.b + yVar.A();
-            if (A == 134) {
-                ArrayList arrayList = new ArrayList();
-                int A3 = yVar.A() & 31;
-                for (int i10 = 0; i10 < A3; i10++) {
-                    String y9 = yVar.y(3, StandardCharsets.UTF_8);
-                    int A4 = yVar.A();
-                    boolean z10 = (A4 & 128) != 0;
-                    if (z10) {
-                        i3 = A4 & 63;
-                        str = "application/cea-708";
-                    } else {
-                        str = "application/cea-608";
-                        i3 = 1;
-                    }
-                    byte A5 = (byte) yVar.A();
-                    yVar.O(1);
-                    if (z10) {
-                        boolean z11 = (A5 & 64) != 0;
-                        byte[] bArr = g2.h.a;
-                        list = Collections.singletonList(z11 ? new byte[]{1} : new byte[]{0});
-                    } else {
-                        list = null;
-                    }
-                    d2.u uVar = new d2.u();
-                    uVar.r = u0.n(str);
-                    uVar.d = y9;
-                    uVar.O = i3;
-                    uVar.u = list;
-                    arrayList.add(new d2.v(uVar));
-                }
-                list2 = arrayList;
-            }
-            yVar.N(A2);
-        }
-        return list2;
-    }
-
-    public boolean c(int i3) {
-        return (i3 & this.a) != 0;
-    }
-
-    public f() {
-        this.a = 1;
-        this.b = Collections.singletonList(null);
-    }
-
-    public f(ArrayList arrayList) {
-        this.a = 0;
-        this.b = arrayList;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.a, ((f) obj).a);
     }
 }

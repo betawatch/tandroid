@@ -1,68 +1,70 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class fh extends jt {
-    public final /* synthetic */ bi W;
+public final class fh extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ di b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fh(bi biVar, Context context, oh ohVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, ohVar, null, 1, true, e6Var);
-        this.W = biVar;
+    public /* synthetic */ fh(di diVar, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.b = diVar;
     }
 
-    @Override // org.telegram.ui.Components.jt
-    public final void f() {
-        super.f();
-        ey emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.x0 = false;
-            emojiView.y2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(org.telegram.messenger.g0.n);
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.draw(canvas);
+                this.b.S1.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.jt
-    public final void i(ActionMode actionMode, Menu menu) {
-        org.telegram.ui.ActionBar.d2 d2Var = this.W.X1;
-        if (d2Var instanceof org.telegram.ui.wm) {
-            org.telegram.ui.wm.A8(menu, ((org.telegram.ui.wm) d2Var).h, true, true, true, true);
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                di diVar = this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, diVar.s2.getSelectedItemsCount())));
+                int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(diVar.D2.measureText(format))), org.telegram.messenger.g0.L(24.0f));
+                int measuredWidth = getMeasuredWidth() / 2;
+                diVar.D2.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.C5, diVar.I0), (int) (((diVar.P2 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                diVar.F2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, diVar.I0));
+                int i7 = max / 2;
+                diVar.E2.set(measuredWidth - i7, 0.0f, i7 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(diVar.E2, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), diVar.F2);
+                diVar.F2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W9, diVar.I0));
+                diVar.E2.set(org.telegram.messenger.g0.L(2.0f) + r6, org.telegram.messenger.g0.L(2.0f), r3 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
+                canvas.drawRoundRect(diVar.E2, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), diVar.F2);
+                canvas.drawText(format, measuredWidth - (r2 / 2), org.telegram.messenger.g0.L(16.2f), diVar.D2);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        bi biVar = this.W;
-        fh fhVar = biVar.K2;
-        if (!biVar.p3) {
-            if (motionEvent.getX() <= fhVar.getEditText().getLeft() || motionEvent.getX() >= fhVar.getEditText().getRight() || motionEvent.getY() <= fhVar.getEditText().getTop() || motionEvent.getY() >= fhVar.getEditText().getBottom()) {
-                biVar.h1(fhVar.getEditText(), false);
-            } else {
-                biVar.h1(fhVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        super.onLayout(z10, i3, i10, i11, i12);
-        this.W.Q1();
-    }
-
-    @Override // org.telegram.ui.Components.jt
-    public final void q(int i3, int i10) {
-        bi biVar = this.W;
-        biVar.Q1();
-        if (biVar.U1) {
-            biVar.B1(i10 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+    @Override // android.view.View
+    public void onSizeChanged(int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i7, i10, i11, i12);
+                this.b.S1.setBounds(0, (i10 - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(48.0f), i7, i10);
+                break;
+            default:
+                super.onSizeChanged(i7, i10, i11, i12);
+                break;
         }
     }
 }

@@ -1,110 +1,84 @@
 package yg;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import c8.ha;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qs;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a extends sg.a {
-    public CharSequence c;
-    public TLRPC.InputPeer d;
-    public TLRPC.Chat e;
-    public Object f;
-    public boolean g;
-    public long h;
-    public int i;
-    public int j;
-    public List k;
-    public int l;
-    public TLObject m;
+public final class a extends FrameLayout {
+    public final fi.d a;
+    public final View b;
+    public final f6 c;
+    public final Paint d;
+    public boolean e;
 
-    public static a b(int i3, TLRPC.Chat chat, boolean z10) {
-        a aVar = new a(9, false);
-        aVar.e = chat;
-        aVar.d = null;
-        aVar.g = z10;
-        aVar.i = i3;
-        return aVar;
+    public a(Context context, f6 f6Var) {
+        super(context);
+        this.d = new Paint(1);
+        this.c = f6Var;
+        View view = new View(context);
+        this.b = view;
+        addView(view, ha.o(-1, -1));
+        fi.d dVar = new fi.d(context, f6Var, true);
+        this.a = dVar;
+        addView(dVar, ha.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
 
-    public static a c(CharSequence charSequence, boolean z10) {
-        a aVar = new a(7, false);
-        aVar.c = charSequence;
-        aVar.g = z10;
-        return aVar;
+    public final void a(int i7, boolean z9) {
+        this.e = true;
+        fi.d dVar = this.a;
+        dVar.k();
+        dVar.setShowZero(true);
+        dVar.setEnabled(true);
+        dVar.c(i7, z9);
+        dVar.i(hd.M0(2131753193, null), z9, true);
+        r6.i(k6.h5, this.b, this.c);
     }
 
-    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i3, long j10, boolean z10, boolean z11) {
-        a aVar = new a(17, z10);
-        aVar.i = i3;
-        aVar.h = j10;
-        aVar.m = tL_starsGiveawayOption;
-        aVar.g = z11;
-        return aVar;
+    public final void b(boolean z9) {
+        this.a.setLoading(z9);
     }
 
-    public static a e(int i3, int i10, boolean z10, ArrayList arrayList) {
-        a aVar = new a(11, i10 == i3);
-        aVar.l = i3;
-        aVar.g = z10;
-        aVar.f = arrayList;
-        return aVar;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.e) {
+            int w02 = k6.w0(k6.a7, this.c);
+            Paint paint = this.d;
+            paint.setColor(w02);
+            paint.setAlpha(qs.e4);
+            canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
+        }
     }
 
-    public static a f(String str) {
-        a aVar = new a(6, false);
-        aVar.c = str;
-        return aVar;
+    public void setCloseStyle(boolean z9) {
+        this.e = false;
+        fi.d dVar = this.a;
+        dVar.setShowZero(false);
+        dVar.setEnabled(true);
+        dVar.i(hd.a0("Close", null, 2131752041, new Object[0]), false, true);
+        this.e = z9;
     }
 
-    public static boolean g(List list, List list2) {
-        if (list == null && list2 == null) {
-            return true;
-        }
-        if (list == null || list2 == null || list.size() != list2.size()) {
-            return false;
-        }
-        for (int i3 = 0; i3 < list.size(); i3++) {
-            if (((Integer) list.get(i3)).intValue() != ((Integer) list2.get(i3)).intValue()) {
-                return false;
-            }
-        }
-        return true;
+    public void setOkStyle(boolean z9) {
+        this.e = false;
+        fi.d dVar = this.a;
+        dVar.setShowZero(false);
+        dVar.setEnabled(true);
+        dVar.i(z9 ? hd.a0("BoostingUseLink", null, 2131753174, new Object[0]) : hd.a0("OK", null, 2131747830, new Object[0]), false, true);
     }
 
-    @Override // sg.a
-    public final boolean a(sg.a aVar) {
-        a aVar2;
-        int i3;
-        int i10;
-        if (this == aVar) {
-            return true;
-        }
-        if (a.class == aVar.getClass() && (i3 = (aVar2 = (a) aVar).a) == (i10 = this.a)) {
-            return i10 == 0 ? this.g == aVar2.g : i3 == 17 ? this.i == aVar2.i && this.h == aVar2.h && this.m == aVar2.m && this.g == aVar2.g && this.b == aVar2.b : i10 == 5 ? this.i == aVar2.i && g(this.k, aVar2.k) : i10 == 13 && this.i == aVar2.i && TextUtils.equals(this.c, aVar2.c);
-        }
-        return false;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || a.class != obj.getClass()) {
-            return false;
-        }
-        a aVar = (a) obj;
-        int i3 = this.a;
-        if (i3 != aVar.a) {
-            return false;
-        }
-        if (i3 == 0) {
-            return true;
-        }
-        return i3 == 17 ? this.i == aVar.i && this.m == aVar.m : i3 == 5 ? g(this.k, aVar.k) : i3 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
+    @Override // android.view.View
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.a.setOnClickListener(onClickListener);
     }
 }

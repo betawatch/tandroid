@@ -12,7 +12,7 @@ public final class v0 {
     public v0() {
         String[] strArr = {"com.google.protobuf.AndroidProto3SchemaFactory"};
         k0 k0Var = null;
-        for (int i3 = 0; i3 <= 0; i3++) {
+        for (int i7 = 0; i7 <= 0; i7++) {
             try {
                 k0Var = (k0) Class.forName(strArr[0]).getConstructor(null).newInstance(null);
             } catch (Throwable unused) {
@@ -25,27 +25,27 @@ public final class v0 {
         this.a = k0Var == null ? new k0() : k0Var;
     }
 
-    public final z0 a(Class cls) {
+    public final a1 a(Class cls) {
         s0 s0Var;
         h0 h0Var;
-        c1 c1Var;
+        d1 d1Var;
         r rVar;
         n0 n0Var;
-        z0 n4;
+        a1 n10;
         Class cls2;
         Charset charset = a0.a;
         if (cls == null) {
             throw new NullPointerException("messageType");
         }
         ConcurrentHashMap concurrentHashMap = this.b;
-        z0 z0Var = (z0) concurrentHashMap.get(cls);
-        if (z0Var != null) {
-            return z0Var;
+        a1 a1Var = (a1) concurrentHashMap.get(cls);
+        if (a1Var != null) {
+            return a1Var;
         }
         k0 k0Var = this.a;
         k0Var.getClass();
-        Class cls3 = a1.a;
-        if (!z.class.isAssignableFrom(cls) && (cls2 = a1.a) != null && !cls2.isAssignableFrom(cls)) {
+        Class cls3 = b1.a;
+        if (!z.class.isAssignableFrom(cls) && (cls2 = b1.a) != null && !cls2.isAssignableFrom(cls)) {
             throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
         }
         x0 zzb = k0Var.a.zzb(cls);
@@ -56,12 +56,12 @@ public final class v0 {
                 if ((zzb.b.d & 1) == 1) {
                     s0Var = t0.b;
                     h0Var = h0.b;
-                    c1Var = a1.d;
+                    d1Var = b1.d;
                     rVar = s.a;
                 } else {
                     s0Var = t0.b;
                     h0Var = h0.b;
-                    c1Var = a1.d;
+                    d1Var = b1.d;
                     rVar = null;
                 }
                 n0Var = o0.b;
@@ -69,7 +69,7 @@ public final class v0 {
                 if ((zzb.b.d & 1) == 1) {
                     s0Var = t0.a;
                     h0Var = h0.a;
-                    c1Var = a1.b;
+                    d1Var = b1.b;
                     rVar = s.b;
                     if (rVar == null) {
                         throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
@@ -77,23 +77,23 @@ public final class v0 {
                 } else {
                     s0Var = t0.a;
                     h0Var = h0.a;
-                    c1Var = a1.c;
+                    d1Var = b1.c;
                     rVar = null;
                 }
                 n0Var = o0.a;
             }
-            n4 = q0.n(zzb, s0Var, h0Var, c1Var, rVar, n0Var);
+            n10 = q0.n(zzb, s0Var, h0Var, d1Var, rVar, n0Var);
         } else if (z.class.isAssignableFrom(cls)) {
-            n4 = new r0(a1.d, s.a, jVar);
+            n10 = new r0(b1.d, s.a, jVar);
         } else {
-            c1 c1Var2 = a1.b;
+            d1 d1Var2 = b1.b;
             r rVar2 = s.b;
             if (rVar2 == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
-            n4 = new r0(c1Var2, rVar2, jVar);
+            n10 = new r0(d1Var2, rVar2, jVar);
         }
-        z0 z0Var2 = (z0) concurrentHashMap.putIfAbsent(cls, n4);
-        return z0Var2 != null ? z0Var2 : n4;
+        a1 a1Var2 = (a1) concurrentHashMap.putIfAbsent(cls, n10);
+        return a1Var2 != null ? a1Var2 : n10;
     }
 }

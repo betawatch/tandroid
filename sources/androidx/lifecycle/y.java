@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class y {
     public final a0 a;
@@ -13,15 +13,15 @@ public abstract class y {
         this.a = a0Var;
     }
 
-    public final void c(boolean z10) {
-        if (z10 == this.b) {
+    public final void c(boolean z9) {
+        if (z9 == this.b) {
             return;
         }
-        this.b = z10;
-        int i3 = z10 ? 1 : -1;
+        this.b = z9;
+        int i7 = z9 ? 1 : -1;
         z zVar = this.d;
         int i10 = zVar.c;
-        zVar.c = i3 + i10;
+        zVar.c = i7 + i10;
         if (!zVar.d) {
             zVar.d = true;
             while (true) {
@@ -30,11 +30,11 @@ public abstract class y {
                     if (i10 == i11) {
                         break;
                     }
-                    boolean z11 = i10 == 0 && i11 > 0;
-                    boolean z12 = i10 > 0 && i11 == 0;
-                    if (z11) {
+                    boolean z10 = i10 == 0 && i11 > 0;
+                    boolean z11 = i10 > 0 && i11 == 0;
+                    if (z10) {
                         zVar.f();
-                    } else if (z12) {
+                    } else if (z11) {
                         zVar.g();
                     }
                     i10 = i11;

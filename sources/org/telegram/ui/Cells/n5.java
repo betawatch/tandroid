@@ -5,16 +5,16 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class n5 extends FrameLayout {
     public final /* synthetic */ int a;
     public RectF b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n5(Context context, int i3) {
+    public /* synthetic */ n5(Context context, int i7) {
         super(context);
-        this.a = i3;
+        this.a = i7;
     }
 
     @Override // android.view.View

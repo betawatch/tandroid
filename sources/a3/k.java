@@ -1,15 +1,19 @@
 package a3;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface k {
-    void M(m mVar, long j10, long j11, int i3);
+public final class k implements Comparable {
+    public final boolean a;
+    public final boolean b;
 
-    void h(m mVar, long j10, long j11);
+    public k(e2.u uVar, int i7) {
+        this.a = (uVar.e & 1) != 0;
+        this.b = jg.g.c(i7, false);
+    }
 
-    i k(m mVar, long j10, long j11, IOException iOException, int i3);
-
-    void q0(m mVar, long j10, long j11, boolean z10);
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        k kVar = (k) obj;
+        return h9.w.a.c(this.b, kVar.b).c(this.a, kVar.a).e();
+    }
 }

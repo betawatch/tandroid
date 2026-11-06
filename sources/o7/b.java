@@ -1,80 +1,44 @@
 package o7;
 
-import b8.bf;
-import b8.y;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.os.IBinder;
+import android.os.IInterface;
+import m6.i;
+import q6.h;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b extends y implements ListIterator {
-    public final int b;
-    public int c;
-    public final e d;
+public final class b extends h {
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 261200000;
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(e eVar, int i3) {
-        super(4);
-        int size = eVar.size();
-        if (i3 < 0 || i3 > size) {
-            throw new IndexOutOfBoundsException(bf.c(i3, size, "index"));
+    @Override // q6.d
+    public final /* synthetic */ IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        this.b = size;
-        this.c = i3;
-        this.d = eVar;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cloudmessaging.internal.ICloudMessagingService");
+        return queryLocalInterface instanceof c ? (c) queryLocalInterface : new c(iBinder);
     }
 
-    public final Object a(int i3) {
-        return this.d.get(i3);
+    @Override // q6.d
+    public final n6.c[] k() {
+        return i.b;
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.cloudmessaging.internal.ICloudMessagingService";
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.gms.cloudmessaging.service.START";
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i3 = this.c;
-        this.c = i3 + 1;
-        return a(i3);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i3 = this.c - 1;
-        this.c = i3;
-        return a(i3);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

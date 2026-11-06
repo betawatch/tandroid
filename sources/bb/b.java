@@ -1,46 +1,23 @@
 package bb;
 
-import j$.util.DesugarCollections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final c b;
+public enum b implements qa.b {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    c(3);
 
-    public b(Set set, c cVar) {
-        this.a = b(set);
-        this.b = cVar;
+    public final int a;
+
+    b(int i7) {
+        this.a = i7;
     }
 
-    public static String b(Set set) {
-        StringBuilder sb2 = new StringBuilder();
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            a aVar = (a) it.next();
-            sb2.append(aVar.a);
-            sb2.append('/');
-            sb2.append(aVar.b);
-            if (it.hasNext()) {
-                sb2.append(' ');
-            }
-        }
-        return sb2.toString();
-    }
-
-    public final String a() {
-        Set unmodifiableSet;
-        String str = this.a;
-        c cVar = this.b;
-        synchronized (((HashSet) cVar.b)) {
-            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) cVar.b);
-        }
-        if (unmodifiableSet.isEmpty()) {
-            return str;
-        }
-        return str + ' ' + b(cVar.c());
+    @Override // qa.b
+    public final int a() {
+        return this.a;
     }
 }

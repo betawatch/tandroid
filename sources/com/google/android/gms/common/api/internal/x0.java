@@ -1,20 +1,11 @@
 package com.google.android.gms.common.api.internal;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class x0 extends t {
-    public final /* synthetic */ s d;
+public final class x0 {
+    public final /* synthetic */ y0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(s sVar, m6.c[] cVarArr, boolean z10, int i3) {
-        super(cVarArr, z10, i3);
-        this.d = sVar;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.t
-    public final void c(com.google.android.gms.common.api.c cVar, TaskCompletionSource taskCompletionSource) {
-        ((p) this.d.c).accept(cVar, taskCompletionSource);
+    public x0(y0 y0Var) {
+        this.a = y0Var;
     }
 }

@@ -1,52 +1,50 @@
 package db;
 
-import android.os.Build;
+import ab.a0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final a b;
-
-    public b(String appId, a aVar) {
-        String deviceModel = Build.MODEL;
-        String osVersion = Build.VERSION.RELEASE;
-        x xVar = x.b;
-        kotlin.jvm.internal.j.e(appId, "appId");
-        kotlin.jvm.internal.j.e(deviceModel, "deviceModel");
-        kotlin.jvm.internal.j.e(osVersion, "osVersion");
-        this.a = appId;
-        this.b = aVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public class b extends a0 {
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b(int i7, String str) {
+        super(str, r0);
+        String str2;
+        switch (i7) {
+            case 55501:
+                str2 = "The carrier associated with this SIM is not supported.";
+                break;
+            case 55502:
+                str2 = "Invalid digital credential response.";
+                break;
+            case 55503:
+                str2 = "Integrity check failed in an unexpected place.";
+                break;
+            case 55504:
+                str2 = "Preflight check failed - we could not mint a digital credentials request on the server.";
+                break;
+            case 55505:
+                str2 = "The API is not supported - this API with the specified parameters is not intended to be called at this time.";
+                break;
+            case 55506:
+                str2 = "The Android Credential Manager has failed unexpectedly.";
+                break;
+            case 55507:
+                str2 = "Invalid test number ID(s) - might be empty, expired or duplicated.";
+                break;
+            case 55508:
+                str2 = "Test session already enabled - `enableTestSession` should only be called once.";
+                break;
+            case 55509:
+                str2 = "An Activity context is required to call this API.";
+                break;
+            default:
+                str2 = "An unexpected error has occurred.";
+                break;
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        if (!kotlin.jvm.internal.j.a(this.a, bVar.a)) {
-            return false;
-        }
-        String str = Build.MODEL;
-        if (!kotlin.jvm.internal.j.a(str, str)) {
-            return false;
-        }
-        String str2 = Build.VERSION.RELEASE;
-        if (!kotlin.jvm.internal.j.a(str2, str2)) {
-            return false;
-        }
-        x xVar = x.b;
-        return this.b.equals(bVar.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + ((x.b.hashCode() + com.google.android.recaptcha.internal.a.g((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 48517567) * 31, 31, Build.VERSION.RELEASE)) * 31);
-    }
-
-    public final String toString() {
-        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=3.0.8, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + x.b + ", androidAppInfo=" + this.b + ')';
+        Throwable th2 = new Throwable(str2);
+        q6.m.f(str, "Detail message must not be empty");
     }
 }

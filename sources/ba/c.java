@@ -1,39 +1,42 @@
 package ba;
 
-import java.util.Map;
+import aa.o;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c {
-    public final String a;
-    public final long b;
-    public final Map c;
+public final class c implements Executor {
+    public final ExecutorService a;
+    public final Object b = new Object();
+    public Task c = Tasks.forResult(null);
 
-    public c(String str, long j10, Map additionalCustomKeys) {
-        kotlin.jvm.internal.j.e(additionalCustomKeys, "additionalCustomKeys");
-        this.a = str;
-        this.b = j10;
-        this.c = additionalCustomKeys;
+    public c(ExecutorService executorService) {
+        this.a = executorService;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final Task a(Runnable runnable) {
+        Task continueWithTask;
+        synchronized (this.b) {
+            continueWithTask = this.c.continueWithTask(this.a, new b(runnable));
+            this.c = continueWithTask;
         }
-        if (!(obj instanceof c)) {
-            return false;
+        return continueWithTask;
+    }
+
+    public final Task b(o oVar) {
+        Task continueWithTask;
+        synchronized (this.b) {
+            continueWithTask = this.c.continueWithTask(this.a, new a1.c(oVar, 8));
+            this.c = continueWithTask;
         }
-        c cVar = (c) obj;
-        return kotlin.jvm.internal.j.a(this.a, cVar.a) && this.b == cVar.b && kotlin.jvm.internal.j.a(this.c, cVar.c);
+        return continueWithTask;
     }
 
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        long j10 = this.b;
-        return this.c.hashCode() + ((hashCode + ((int) (j10 ^ (j10 >>> 32)))) * 31);
-    }
-
-    public final String toString() {
-        return "EventMetadata(sessionId=" + this.a + ", timestamp=" + this.b + ", additionalCustomKeys=" + this.c + ')';
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
     }
 }

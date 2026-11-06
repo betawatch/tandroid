@@ -1,19 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class yu0 extends x01 {
-    public final /* synthetic */ ProfileActivity e;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yu0(ProfileActivity profileActivity, xu0 xu0Var) {
-        super(xu0Var);
-        this.e = profileActivity;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class yu0 extends wv0 {
+    public yu0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.x01, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.O5 = null;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        di.z2 z2Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.i5 i5Var = this.e;
+        if (i5Var == null || (z2Var = i5Var.k) == null) {
+            return;
+        }
+        z2Var.P0(false);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().L()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754798, null));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.M0(2131747816, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.hd.M0(2131754818, null)));
     }
 }

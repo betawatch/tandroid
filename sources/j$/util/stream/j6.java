@@ -8,29 +8,29 @@ public final class j6 extends x5 {
     public int e;
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j10) {
-        if (j10 >= 2147483639) {
+    public final void o(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.d = new Object[(int) j10];
+        this.d = new Object[(int) j3];
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
     public final void end() {
-        int i3 = 0;
+        int i7 = 0;
         Arrays.sort(this.d, 0, this.e, this.b);
-        long j10 = this.e;
+        long j3 = this.e;
         j5 j5Var = this.a;
-        j5Var.o(j10);
+        j5Var.o(j3);
         if (!this.c) {
-            while (i3 < this.e) {
-                j5Var.accept((j5) this.d[i3]);
-                i3++;
+            while (i7 < this.e) {
+                j5Var.accept((j5) this.d[i7]);
+                i7++;
             }
         } else {
-            while (i3 < this.e && !j5Var.q()) {
-                j5Var.accept((j5) this.d[i3]);
-                i3++;
+            while (i7 < this.e && !j5Var.q()) {
+                j5Var.accept((j5) this.d[i7]);
+                i7++;
             }
         }
         j5Var.end();
@@ -40,8 +40,8 @@ public final class j6 extends x5 {
     @Override // java.util.function.Consumer
     public final void accept(Object obj) {
         Object[] objArr = this.d;
-        int i3 = this.e;
-        this.e = i3 + 1;
-        objArr[i3] = obj;
+        int i7 = this.e;
+        this.e = i7 + 1;
+        objArr[i7] = obj;
     }
 }

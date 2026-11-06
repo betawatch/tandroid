@@ -12,10 +12,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class m01 extends FrameLayout implements e60 {
-    public final k9 a;
+public final class m01 extends FrameLayout implements j60 {
+    public final l9 a;
     public final Paint b;
     public boolean c;
     public StaticLayout d;
@@ -35,17 +35,17 @@ public final class m01 extends FrameLayout implements e60 {
         this.y = n01Var;
         this.b = new Paint(1);
         setWillNotDraw(false);
-        k9 k9Var = new k9(context);
-        this.a = k9Var;
-        addView(k9Var, b8.mf.d(20, 20.0f, 51, 12.0f, 10.0f, 0.0f, 0.0f));
+        l9 l9Var = new l9(context);
+        this.a = l9Var;
+        addView(l9Var, c8.ha.d(20, 20.0f, 51, 12.0f, 10.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.e60
+    @Override // org.telegram.ui.Components.j60
     public final void g(RectF rectF) {
         rectF.set(0.0f, 0.0f, getWidth(), getHeight());
     }
 
-    @Override // org.telegram.ui.Components.e60
+    @Override // org.telegram.ui.Components.j60
     public final void h(Canvas canvas, float f10) {
         int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.y.e);
         Paint paint = this.b;
@@ -106,10 +106,10 @@ public final class m01 extends FrameLayout implements e60 {
         } else {
             drawable2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
             int L2 = org.telegram.messenger.g0.L(13.0f);
-            int i3 = (int) f10;
+            int i7 = (int) f10;
             f11 = 12.0f;
             f12 = 2.0f;
-            this.x.setBounds(i3 - L2, org.telegram.messenger.g0.L(14.0f), i3, org.telegram.messenger.g0.L(14.0f) + L2);
+            this.x.setBounds(i7 - L2, org.telegram.messenger.g0.L(14.0f), i7, org.telegram.messenger.g0.L(14.0f) + L2);
             this.x.draw(canvas2);
             f10 -= org.telegram.messenger.g0.L(6.0f) + L2;
         }
@@ -127,13 +127,13 @@ public final class m01 extends FrameLayout implements e60 {
             canvas2.restore();
         }
         if (this.h != null) {
-            float max = Math.max(org.telegram.messenger.g0.L(23.0f), n01Var.e0.measureText(this.h) + org.telegram.messenger.g0.L(14.0f));
+            float max = Math.max(org.telegram.messenger.g0.L(23.0f), n01Var.d0.measureText(this.h) + org.telegram.messenger.g0.L(14.0f));
             paint.setColor(org.telegram.ui.ActionBar.k6.w0(this.n ? org.telegram.ui.ActionBar.k6.V8 : org.telegram.ui.ActionBar.k6.U8, n01Var.e));
             RectF rectF2 = org.telegram.messenger.g0.P;
             rectF2.set(f13 - max, org.telegram.messenger.g0.L(34.0f), f13, org.telegram.messenger.g0.L(57.0f));
             canvas2.drawRoundRect(rectF2, org.telegram.messenger.g0.L(11.5f), org.telegram.messenger.g0.L(11.5f), paint);
-            n01Var.e0.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W8, n01Var.e));
-            canvas2.drawText(this.h, rectF2.centerX() - (n01Var.e0.measureText(this.h) / f12), rectF2.centerY() - ((n01Var.e0.ascent() + n01Var.e0.descent()) / f12), n01Var.e0);
+            n01Var.d0.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W8, n01Var.e));
+            canvas2.drawText(this.h, rectF2.centerX() - (n01Var.d0.measureText(this.h) / f12), rectF2.centerY() - ((n01Var.d0.ascent() + n01Var.d0.descent()) / f12), n01Var.d0);
         }
         if (!this.c || this.s) {
             return;
@@ -143,10 +143,10 @@ public final class m01 extends FrameLayout implements e60 {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         StaticLayout staticLayout = this.e;
         int height = (staticLayout == null || staticLayout.getText().length() <= 0) ? 0 : this.e.getHeight();
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(height > org.telegram.messenger.g0.L(24.0f) ? 6.0f : 10.0f) + org.telegram.messenger.g0.L(34.0f) + height), TLObject.FLAG_30));
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.max(org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(height > org.telegram.messenger.g0.L(24.0f) ? 6.0f : 10.0f) + org.telegram.messenger.g0.L(34.0f) + height), TLObject.FLAG_30));
     }
 
     @Override // android.view.View

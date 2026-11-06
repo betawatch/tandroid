@@ -2,11 +2,11 @@ package org.webrtc;
 
 import org.webrtc.EncodedImage;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public interface VideoEncoder {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class BitrateAllocation {
         public final int[][] bitratesBbs;
 
@@ -15,51 +15,51 @@ public interface VideoEncoder {
         }
 
         public int getSum() {
-            int i3 = 0;
+            int i7 = 0;
             for (int[] iArr : this.bitratesBbs) {
                 for (int i10 : iArr) {
-                    i3 += i10;
+                    i7 += i10;
                 }
             }
-            return i3;
+            return i7;
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface Callback {
         void onEncodedFrame(EncodedImage encodedImage, CodecSpecificInfo codecSpecificInfo);
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Capabilities {
         public final boolean lossNotification;
 
-        public Capabilities(boolean z10) {
-            this.lossNotification = z10;
+        public Capabilities(boolean z9) {
+            this.lossNotification = z9;
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class CodecSpecificInfo {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class CodecSpecificInfoAV1 extends CodecSpecificInfo {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class CodecSpecificInfoH264 extends CodecSpecificInfo {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class CodecSpecificInfoVP8 extends CodecSpecificInfo {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class CodecSpecificInfoVP9 extends CodecSpecificInfo {
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class EncodeInfo {
         public final EncodedImage.FrameType[] frameTypes;
 
@@ -68,14 +68,14 @@ public interface VideoEncoder {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class EncoderInfo {
         public final boolean applyAlignmentToAllSimulcastLayers;
         public final int requestedResolutionAlignment;
 
-        public EncoderInfo(int i3, boolean z10) {
-            this.requestedResolutionAlignment = i3;
-            this.applyAlignmentToAllSimulcastLayers = z10;
+        public EncoderInfo(int i7, boolean z9) {
+            this.requestedResolutionAlignment = i7;
+            this.applyAlignmentToAllSimulcastLayers = z9;
         }
 
         public boolean getApplyAlignmentToAllSimulcastLayers() {
@@ -87,7 +87,7 @@ public interface VideoEncoder {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class RateControlParameters {
         public final BitrateAllocation bitrate;
         public final double framerateFps;
@@ -98,15 +98,15 @@ public interface VideoEncoder {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class ResolutionBitrateLimits {
         public final int frameSizePixels;
         public final int maxBitrateBps;
         public final int minBitrateBps;
         public final int minStartBitrateBps;
 
-        public ResolutionBitrateLimits(int i3, int i10, int i11, int i12) {
-            this.frameSizePixels = i3;
+        public ResolutionBitrateLimits(int i7, int i10, int i11, int i12) {
+            this.frameSizePixels = i7;
             this.minStartBitrateBps = i10;
             this.minBitrateBps = i11;
             this.maxBitrateBps = i12;
@@ -129,7 +129,7 @@ public interface VideoEncoder {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Settings {
         public final boolean automaticResizeOn;
         public final Capabilities capabilities;
@@ -141,18 +141,18 @@ public interface VideoEncoder {
         public final int width;
 
         @Deprecated
-        public Settings(int i3, int i10, int i11, int i12, int i13, int i14, boolean z10) {
-            this(i3, i10, i11, i12, i13, i14, z10, new Capabilities(false));
+        public Settings(int i7, int i10, int i11, int i12, int i13, int i14, boolean z9) {
+            this(i7, i10, i11, i12, i13, i14, z9, new Capabilities(false));
         }
 
-        public Settings(int i3, int i10, int i11, int i12, int i13, int i14, boolean z10, Capabilities capabilities) {
-            this.numberOfCores = i3;
+        public Settings(int i7, int i10, int i11, int i12, int i13, int i14, boolean z9, Capabilities capabilities) {
+            this.numberOfCores = i7;
             this.width = i10;
             this.height = i11;
             this.startBitrate = i12;
             this.maxFramerate = i13;
             this.numberOfSimulcastStreams = i14;
-            this.automaticResizeOn = z10;
+            this.automaticResizeOn = z9;
             this.capabilities = capabilities;
         }
     }
@@ -175,20 +175,20 @@ public interface VideoEncoder {
 
     VideoCodecStatus release();
 
-    VideoCodecStatus setRateAllocation(BitrateAllocation bitrateAllocation, int i3);
+    VideoCodecStatus setRateAllocation(BitrateAllocation bitrateAllocation, int i7);
 
     VideoCodecStatus setRates(RateControlParameters rateControlParameters);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class ScalingSettings {
         public static final ScalingSettings OFF = new ScalingSettings();
         public final Integer high;
         public final Integer low;
         public final boolean on;
 
-        public ScalingSettings(int i3, int i10) {
+        public ScalingSettings(int i7, int i10) {
             this.on = true;
-            this.low = Integer.valueOf(i3);
+            this.low = Integer.valueOf(i7);
             this.high = Integer.valueOf(i10);
         }
 
@@ -206,16 +206,16 @@ public interface VideoEncoder {
         }
 
         @Deprecated
-        public ScalingSettings(boolean z10) {
-            this.on = z10;
+        public ScalingSettings(boolean z9) {
+            this.on = z9;
             this.low = null;
             this.high = null;
         }
 
         @Deprecated
-        public ScalingSettings(boolean z10, int i3, int i10) {
-            this.on = z10;
-            this.low = Integer.valueOf(i3);
+        public ScalingSettings(boolean z9, int i7, int i10) {
+            this.on = z9;
+            this.low = Integer.valueOf(i7);
             this.high = Integer.valueOf(i10);
         }
     }

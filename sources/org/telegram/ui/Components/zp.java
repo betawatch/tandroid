@@ -1,53 +1,119 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zp extends LinearLayout {
-    public final k9 a;
+public final class zp extends View implements org.telegram.ui.ActionBar.a6 {
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public int d;
+    public long e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
 
-    public zp(Context context) {
+    public zp(Context context, int i7) {
         super(context);
-        setOrientation(1);
-        k9 k9Var = new k9(context);
-        this.a = k9Var;
-        k9Var.setImageDrawable(new y70(k9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
-        if (!org.telegram.messenger.g0.Q1()) {
-            addView(k9Var, b8.mf.r(org.telegram.messenger.hs.v1, org.telegram.messenger.hs.v1, 49));
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        this.c = new RectF();
+        this.d = 0;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        if (i7 == 0) {
+            this.f = org.telegram.ui.ActionBar.k6.B7;
+            this.h = org.telegram.ui.ActionBar.k6.C7;
+        } else if (i7 == 1) {
+            this.f = org.telegram.ui.ActionBar.k6.D7;
+            this.h = org.telegram.ui.ActionBar.k6.E7;
+        } else if (i7 == 2) {
+            this.f = org.telegram.ui.ActionBar.k6.F7;
+            this.h = org.telegram.ui.ActionBar.k6.G7;
+        } else if (i7 == 3) {
+            this.f = org.telegram.ui.ActionBar.k6.H7;
+            this.h = org.telegram.ui.ActionBar.k6.I7;
         }
-        TextView g7 = org.telegram.messenger.k5.g(context, 1, 20.0f);
-        org.telegram.ui.ActionBar.r6.V(g7, org.telegram.ui.ActionBar.k6.G6, null);
-        g7.setGravity(1);
-        g7.setText(org.telegram.messenger.bd.M0(2131748227, null));
-        g7.setTypeface(org.telegram.messenger.g0.o());
-        addView(g7, b8.mf.t(-2, -2, 49, 0, 15, 0, 7));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.c7, null);
-        textView.setGravity(1);
-        textView.setText(org.telegram.messenger.bd.M0(2131748226, null));
-        textView.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
-        textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        addView(textView, b8.mf.t(-2, -2, 49, 0, 0, 0, 19));
-        gi.d dVar = new gi.d(context, null, true);
-        dVar.setUseWrapContent(true);
-        dVar.f();
-        dVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-        spannableStringBuilder.setSpan(new wp(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.bd.M0(2131748291, null));
-        dVar.i(spannableStringBuilder, false, true);
-        addView(dVar, b8.mf.r(-2, 44, 49));
+        updateColors();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    public final void a(int i7, int i10) {
+        this.f = -1;
+        this.h = -1;
+        this.n = i7;
+        this.r = i10;
+        updateColors();
+    }
+
+    @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.setImageDrawable(new ch0(R.raw.utyan_empty, org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
+        this.e = System.currentTimeMillis();
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (getVisibility() != 0) {
+            return;
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.e;
+        this.e = currentTimeMillis;
+        this.d = (int) (((j3 * 360) / 1000.0f) + this.d);
+        int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(9.0f);
+        int measuredHeight = (getMeasuredHeight() / 2) - org.telegram.messenger.g0.L(9.0f);
+        float f10 = measuredWidth;
+        float f11 = measuredHeight;
+        float L = org.telegram.messenger.g0.L(18.0f) + measuredWidth;
+        float L2 = org.telegram.messenger.g0.L(18.0f) + measuredHeight;
+        RectF rectF = this.c;
+        rectF.set(f10, f11, L, L2);
+        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, org.telegram.messenger.g0.L(9.0f), this.a);
+        canvas.drawArc(rectF, this.d - 90, 90.0f, false, this.b);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i7) {
+        super.setVisibility(i7);
+        this.e = System.currentTimeMillis();
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        int i7 = this.f;
+        Paint paint = this.a;
+        if (i7 >= 0) {
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i7, false));
+        } else {
+            paint.setColor(this.n);
+        }
+        int i10 = this.h;
+        Paint paint2 = this.b;
+        if (i10 >= 0) {
+            paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+        } else {
+            paint2.setColor(this.r);
+        }
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -1,21 +1,17 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class n90 extends org.telegram.ui.Cells.y8 {
-    @Override // org.telegram.ui.Cells.y8, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
+public final class n90 extends ai.s0 {
+    public n90(Bundle bundle) {
+        super(bundle);
     }
 
-    @Override // android.view.View
-    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        super.onPopulateAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setContentDescription(getTextView().getText());
-        setContentDescription(getTextView().getText());
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        org.telegram.messenger.g0.h3(new hz(this, 19));
     }
 }

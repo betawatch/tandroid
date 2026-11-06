@@ -1,49 +1,100 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ad b;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
-    public /* synthetic */ qc(ad adVar, int i3) {
-        this.a = i3;
-        this.b = adVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class qc implements org.telegram.ui.ActionBar.f6 {
+    public final /* synthetic */ rc a;
+
+    public qc(rc rcVar) {
+        this.a = rcVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.m0(true);
-                break;
-            case 1:
-                ad adVar = this.b;
-                adVar.l0 = true;
-                adVar.n0();
-                break;
-            case 2:
-                ad adVar2 = this.b;
-                adVar2.E = null;
-                adVar2.F = null;
-                adVar2.n0 = null;
-                adVar2.o0 = null;
-                adVar2.q0 = null;
-                adVar2.p0 = null;
-                adVar2.r0 = 0.0d;
-                adVar2.k0(false, true);
-                adVar2.f.j(null, null, adVar2.w, null);
-                adVar2.n.setAnimation(adVar2.L);
-                adVar2.L.M(0);
-                break;
-            default:
-                ad adVar3 = this.b;
-                adVar3.l0 = true;
-                if (adVar3.y.length() > 0) {
-                    adVar3.j0(adVar3.y.getText().toString());
-                }
-                adVar3.n0();
-                break;
+    @Override // org.telegram.ui.ActionBar.f6
+    public final boolean a() {
+        return this.a.J;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final void b(float f10, float f11, int i7, int i10) {
+        org.telegram.ui.ActionBar.k6.r(f10, f11, i7, i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final ColorFilter c() {
+        return org.telegram.ui.ActionBar.k6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final Paint d(String str) {
+        return str.equals("paintDivider") ? this.a.y0 : org.telegram.ui.ActionBar.k6.V0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final boolean e() {
+        return org.telegram.messenger.iz.H0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final int f(int i7) {
+        return h(i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final Drawable getDrawable(String str) {
+        rc rcVar = this.a;
+        Drawable drawable = rcVar.x0;
+        Drawable drawable2 = rcVar.w0;
+        if (str.equals("drawableMsgIn")) {
+            return rcVar.s0;
         }
+        if (str.equals("drawableMsgInSelected")) {
+            return rcVar.t0;
+        }
+        if (str.equals("drawableMsgOut")) {
+            return rcVar.u0;
+        }
+        if (str.equals("drawableMsgOutSelected")) {
+            return rcVar.v0;
+        }
+        if (str.equals("drawableMsgOutCheckRead")) {
+            drawable2.setColorFilter(h(org.telegram.ui.ActionBar.k6.zb), PorterDuff.Mode.MULTIPLY);
+            return drawable2;
+        }
+        if (str.equals("drawableMsgOutHalfCheck")) {
+            drawable.setColorFilter(h(org.telegram.ui.ActionBar.k6.zb), PorterDuff.Mode.MULTIPLY);
+            return drawable;
+        }
+        org.telegram.ui.ActionBar.f6 f6Var = rcVar.q0;
+        return f6Var != null ? f6Var.getDrawable(str) : org.telegram.ui.ActionBar.k6.R0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final int h(int i7) {
+        rc rcVar = this.a;
+        int indexOfKey = rcVar.r0.indexOfKey(i7);
+        if (indexOfKey >= 0) {
+            return rcVar.r0.valueAt(indexOfKey);
+        }
+        org.telegram.ui.ActionBar.f6 f6Var = rcVar.q0;
+        return f6Var != null ? f6Var.h(i7) : org.telegram.ui.ActionBar.k6.v0(i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final int j(int i7) {
+        return h(i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public final /* synthetic */ void i(int i7, int i10) {
     }
 }

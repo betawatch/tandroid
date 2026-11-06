@@ -1,69 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ct extends org.telegram.ui.Components.lc {
-    public final /* synthetic */ org.telegram.ui.Components.bi0 f0;
+public final class ct extends rg.a {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final CharSequence f;
+    public final CharSequence g;
+    public final int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ct(org.telegram.ui.Components.bi0 bi0Var, Context context, int i3, int[] iArr, int[] iArr2) {
-        super(context, i3, iArr, 1, iArr2);
-        this.f0 = bi0Var;
+    public ct(int i7, String str) {
+        super(i7, false);
+        this.f = str;
     }
 
-    @Override // org.telegram.ui.Components.lc
-    public final int c() {
-        return org.telegram.messenger.hs.t3;
+    public static ct b(CharSequence charSequence, String str) {
+        return new ct(-1, 0, 0, 0, charSequence, str);
     }
 
-    @Override // org.telegram.ui.Components.lc
-    public final void d(int i3, boolean z10) {
-        int i10;
-        et etVar = (et) this.f0.e;
-        if (!z10) {
-            etVar.l1();
-            return;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ct)) {
+            return false;
         }
-        if (i3 < 0 || i3 >= etVar.o3.length) {
-            return;
+        ct ctVar = (ct) obj;
+        CharSequence charSequence = ctVar.f;
+        int i7 = ctVar.a;
+        int i10 = this.a;
+        if (i7 != i10) {
+            return false;
         }
-        int i11 = 0;
-        while (true) {
-            dt[] dtVarArr = etVar.o3;
-            i10 = -1;
-            if (i11 >= dtVarArr.length) {
-                i11 = -1;
-                break;
-            } else if (dtVarArr[i11].d == i3) {
-                break;
-            } else {
-                i11++;
-            }
+        CharSequence charSequence2 = this.f;
+        if (i10 == 1 || i10 == 4 || i10 == 3 || i10 == 5) {
+            return TextUtils.equals(charSequence2, charSequence);
         }
-        int i12 = 0;
-        while (true) {
-            if (i12 < etVar.k3.size()) {
-                at atVar = (at) etVar.k3.get(i12);
-                if (atVar != null && atVar.a == 2 && atVar.h == i11) {
-                    i10 = i12;
-                    break;
-                }
-                i12++;
-            } else {
-                break;
-            }
+        if (i10 == 2) {
+            return ctVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && ctVar.d == this.d && ctVar.e == this.e && ctVar.c == this.c;
         }
-        if (i10 >= 0) {
-            etVar.e1(new k2.v(i10, 7), 0, true);
-        } else {
-            etVar.l1();
-        }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.lc
-    public final int e() {
-        return 10;
+    public ct(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2) {
+        super(2, false);
+        this.h = i7;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = charSequence;
+        this.g = charSequence2;
     }
 }

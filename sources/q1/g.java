@@ -1,244 +1,48 @@
 package q1;
 
-import android.os.Looper;
-import android.util.AndroidRuntimeException;
-import android.view.Choreographer;
-import java.util.ArrayList;
-import org.telegram.ui.Components.a6;
-import org.telegram.ui.Components.wy0;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g {
-    public static final b o = new b(1);
-    public static final b p = new b(2);
-    public static final b q = new b(3);
-    public static final b r = new b(4);
-    public static final b s = new b(5);
-    public static final b t = new b(6);
-    public static final b u = new b(7);
-    public static final b v = new b(0);
-    public float a;
-    public float b;
-    public boolean c;
-    public final Object d;
-    public final e e;
-    public boolean f;
-    public float g;
-    public float h;
-    public long i;
-    public float j;
-    public final ArrayList k;
-    public final ArrayList l;
-    public h m;
-    public float n;
+public abstract /* synthetic */ class g {
+    public static final /* synthetic */ int[] a;
 
-    public g(Object obj, e eVar) {
-        this(obj, eVar, 0);
-        this.m = null;
-        this.n = Float.MAX_VALUE;
-    }
-
-    public final void a(c cVar) {
-        ArrayList arrayList = this.k;
-        if (arrayList.contains(cVar)) {
-            return;
+    static {
+        int[] iArr = new int[p1.g.d(9).length];
+        try {
+            iArr[0] = 1;
+        } catch (NoSuchFieldError unused) {
         }
-        arrayList.add(cVar);
-    }
-
-    public final void b(d dVar) {
-        if (this.f) {
-            throw new UnsupportedOperationException("Error: Update listeners must be added beforethe animation.");
+        try {
+            iArr[1] = 2;
+        } catch (NoSuchFieldError unused2) {
         }
-        ArrayList arrayList = this.l;
-        if (arrayList.contains(dVar)) {
-            return;
+        try {
+            iArr[6] = 3;
+        } catch (NoSuchFieldError unused3) {
         }
-        arrayList.add(dVar);
-    }
-
-    public final void c(float f10) {
-        if (this.f) {
-            this.n = f10;
-            return;
+        try {
+            iArr[2] = 4;
+        } catch (NoSuchFieldError unused4) {
         }
-        if (this.m == null) {
-            this.m = new h(f10);
+        try {
+            iArr[3] = 5;
+        } catch (NoSuchFieldError unused5) {
         }
-        this.m.i = f10;
-        h();
-    }
-
-    public final void d() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be canceled on the main thread");
+        try {
+            iArr[4] = 6;
+        } catch (NoSuchFieldError unused6) {
         }
-        if (this.f) {
-            e(true);
+        try {
+            iArr[5] = 7;
+        } catch (NoSuchFieldError unused7) {
         }
-    }
-
-    public final void e(boolean z10) {
-        ArrayList arrayList;
-        int i3 = 0;
-        this.f = false;
-        ThreadLocal threadLocal = a.f;
-        if (threadLocal.get() == null) {
-            threadLocal.set(new a());
+        try {
+            iArr[7] = 8;
+        } catch (NoSuchFieldError unused8) {
         }
-        a aVar = (a) threadLocal.get();
-        aVar.a.remove(this);
-        ArrayList arrayList2 = aVar.b;
-        int indexOf = arrayList2.indexOf(this);
-        if (indexOf >= 0) {
-            arrayList2.set(indexOf, null);
-            aVar.e = true;
+        try {
+            iArr[8] = 9;
+        } catch (NoSuchFieldError unused9) {
         }
-        this.i = 0L;
-        this.c = false;
-        while (true) {
-            arrayList = this.k;
-            if (i3 >= arrayList.size()) {
-                break;
-            }
-            if (arrayList.get(i3) != null) {
-                ((c) arrayList.get(i3)).a(this, z10, this.b, this.a);
-            }
-            i3++;
-        }
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (arrayList.get(size) == null) {
-                arrayList.remove(size);
-            }
-        }
-    }
-
-    public final void f(float f10) {
-        if (f10 <= 0.0f) {
-            throw new IllegalArgumentException("Minimum visible change must be positive.");
-        }
-        this.j = f10;
-    }
-
-    public final void g(float f10) {
-        ArrayList arrayList;
-        this.e.b(this.d, f10);
-        int i3 = 0;
-        while (true) {
-            arrayList = this.l;
-            if (i3 >= arrayList.size()) {
-                break;
-            }
-            if (arrayList.get(i3) != null) {
-                ((d) arrayList.get(i3)).a(this, this.b, this.a);
-            }
-            i3++;
-        }
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (arrayList.get(size) == null) {
-                arrayList.remove(size);
-            }
-        }
-    }
-
-    public final void h() {
-        h hVar = this.m;
-        if (hVar == null) {
-            throw new UnsupportedOperationException("Incomplete SpringAnimation: Either final position or a spring force needs to be set.");
-        }
-        double d = (float) hVar.i;
-        if (d > this.g) {
-            throw new UnsupportedOperationException("Final position of the spring cannot be greater than the max value.");
-        }
-        if (d < this.h) {
-            throw new UnsupportedOperationException("Final position of the spring cannot be less than the min value.");
-        }
-        double abs = Math.abs(this.j * 0.75f);
-        hVar.d = abs;
-        hVar.e = abs * 62.5d;
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new AndroidRuntimeException("Animations may only be started on the main thread");
-        }
-        boolean z10 = this.f;
-        if (z10 || z10) {
-            return;
-        }
-        this.f = true;
-        if (!this.c) {
-            this.b = this.e.a(this.d);
-        }
-        float f10 = this.b;
-        if (f10 > this.g || f10 < this.h) {
-            throw new IllegalArgumentException("Starting value need to be in between min value and max value");
-        }
-        ThreadLocal threadLocal = a.f;
-        if (threadLocal.get() == null) {
-            threadLocal.set(new a());
-        }
-        a aVar = (a) threadLocal.get();
-        ArrayList arrayList = aVar.b;
-        if (arrayList.size() == 0) {
-            if (aVar.d == null) {
-                aVar.d = new p7.d(aVar.c);
-            }
-            p7.d dVar = aVar.d;
-            ((Choreographer) dVar.d).postFrameCallback((wy0) dVar.c);
-        }
-        if (arrayList.contains(this)) {
-            return;
-        }
-        arrayList.add(this);
-    }
-
-    public g(Object obj, e eVar, float f10) {
-        this(obj, eVar, 0);
-        this.m = null;
-        this.n = Float.MAX_VALUE;
-        this.m = new h(f10);
-    }
-
-    public g(f fVar) {
-        this.a = 0.0f;
-        this.b = Float.MAX_VALUE;
-        this.c = false;
-        this.f = false;
-        this.g = Float.MAX_VALUE;
-        this.h = -3.4028235E38f;
-        this.i = 0L;
-        this.k = new ArrayList();
-        this.l = new ArrayList();
-        this.d = null;
-        this.e = new a6(fVar, 1);
-        this.j = 1.0f;
-        this.m = null;
-        this.n = Float.MAX_VALUE;
-    }
-
-    public g(Object obj, e eVar, int i3) {
-        this.a = 0.0f;
-        this.b = Float.MAX_VALUE;
-        this.c = false;
-        this.f = false;
-        this.g = Float.MAX_VALUE;
-        this.h = -3.4028235E38f;
-        this.i = 0L;
-        this.k = new ArrayList();
-        this.l = new ArrayList();
-        this.d = obj;
-        this.e = eVar;
-        if (eVar != s && eVar != t && eVar != u) {
-            if (eVar == v) {
-                this.j = 0.00390625f;
-                return;
-            } else if (eVar != q && eVar != r) {
-                this.j = 1.0f;
-                return;
-            } else {
-                this.j = 0.00390625f;
-                return;
-            }
-        }
-        this.j = 0.1f;
+        a = iArr;
     }
 }

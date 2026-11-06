@@ -1,47 +1,35 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.text.Spanned;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class eu extends xt {
-    public final Paint X;
+public final /* synthetic */ class eu implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
 
-    public eu(cv cvVar, Rect rect, int i3) {
-        super(cvVar, rect, i3);
-        this.X = new Paint(1);
+    public /* synthetic */ eu(Spanned spanned, int i7) {
+        this.a = i7;
+        this.b = spanned;
     }
 
-    @Override // org.telegram.messenger.xt
-    public final int I() {
-        Rect rect = this.b;
-        return k5.C(6.0f, rect.top, 1) + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final int K() {
-        Rect rect = this.b;
-        return g0.L(32.0f) + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final void W(Canvas canvas) {
-        cv cvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(cvVar.E() ? org.telegram.ui.ActionBar.k6.ul : org.telegram.ui.ActionBar.k6.tl, cvVar.D);
-        Paint paint = this.X;
-        paint.setColor(w02);
-        float f10 = -cvVar.S;
-        int i3 = cvVar.C + cvVar.T;
-        Rect rect = this.b;
-        float f11 = (i3 - rect.left) - rect.right;
-        if (cvVar.s) {
-            r2 = g0.T1(this.S ? 1.0f : 0.0f, this.R ? 1.0f : 0.0f, cvVar.t);
-        } else if (this.R) {
-            r2 = 1.0f;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int spanStart;
+        int spanStart2;
+        switch (this.a) {
+            case 0:
+                Spanned spanned = this.b;
+                spanStart = spanned.getSpanStart((org.telegram.ui.Cells.o9) obj2);
+                spanStart2 = spanned.getSpanStart((org.telegram.ui.Cells.o9) obj);
+                break;
+            default:
+                Spanned spanned2 = this.b;
+                spanStart = spanned2.getSpanStart((iu) obj2);
+                spanStart2 = spanned2.getSpanStart((iu) obj);
+                break;
         }
-        float T1 = g0.T1((-1.0f) - (this.M != null ? r0.b.bottom : 0), g0.L(6.0f), r2);
-        canvas.drawRect(f10, T1, f11, T1 + 1.0f, paint);
+        return spanStart - spanStart2;
     }
 }

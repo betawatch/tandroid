@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzbb extends j implements p {
     int zza;
@@ -21,14 +21,14 @@ final class zzbb extends j implements p {
         this.zzc = str;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzbb zzbbVar = new zzbb(this.zzb, this.zzc, cVar);
         zzbbVar.zzd = obj;
         return zzbbVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -73,13 +73,13 @@ final class zzbb extends j implements p {
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        gd.a aVar = gd.a.a;
+        jd.a aVar = jd.a.a;
         Object obj2 = this.zza;
         try {
         } catch (Exception unused) {
@@ -90,7 +90,7 @@ final class zzbb extends j implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            ib.b(obj);
+            b.c(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -100,13 +100,13 @@ final class zzbb extends j implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            ib.b(obj);
+            b.c(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            ib.b(obj);
+            b.c(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            ib.b(obj);
+            b.c(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

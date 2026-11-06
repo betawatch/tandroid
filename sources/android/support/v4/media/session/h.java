@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -36,10 +36,10 @@ public class h {
         }
         ArrayList arrayList = this.c;
         int size = arrayList.size();
-        int i3 = 0;
-        while (i3 < size) {
-            Object obj = arrayList.get(i3);
-            i3++;
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
             androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) obj;
             g gVar = new g(qVar);
             this.d.put(qVar, gVar);
@@ -62,7 +62,7 @@ public class h {
                     g gVar = (g) this.d.remove(qVar);
                     if (gVar != null) {
                         qVar.c = null;
-                        this.e.a().L(gVar);
+                        this.e.a().K(gVar);
                     }
                 } catch (RemoteException e10) {
                     Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e10);

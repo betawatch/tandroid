@@ -6,9 +6,9 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements g0 {
+public final class a implements f0 {
     public final ArrayList a;
     public int b;
     public int c;
@@ -25,25 +25,25 @@ public final class a implements g0 {
     public ArrayList n;
     public boolean o;
     public ArrayList p;
-    public final j0 q;
+    public final i0 q;
     public boolean r;
     public int s;
 
-    public a(j0 j0Var) {
-        j0Var.H();
-        u uVar = j0Var.w;
-        if (uVar != null) {
-            uVar.b.getClassLoader();
+    public a(i0 i0Var) {
+        i0Var.H();
+        t tVar = i0Var.w;
+        if (tVar != null) {
+            tVar.b.getClassLoader();
         }
         this.a = new ArrayList();
         this.o = false;
         this.s = -1;
-        this.q = j0Var;
+        this.q = i0Var;
     }
 
-    @Override // androidx.fragment.app.g0
+    @Override // androidx.fragment.app.f0
     public final boolean a(ArrayList arrayList, ArrayList arrayList2) {
-        if (j0.K(2)) {
+        if (i0.K(2)) {
             Log.v("FragmentManager", "Run: " + this);
         }
         arrayList.add(this);
@@ -55,28 +55,28 @@ public final class a implements g0 {
         return true;
     }
 
-    public final void b(q0 q0Var) {
-        this.a.add(q0Var);
-        q0Var.d = this.b;
-        q0Var.e = this.c;
-        q0Var.f = this.d;
-        q0Var.g = this.e;
+    public final void b(p0 p0Var) {
+        this.a.add(p0Var);
+        p0Var.d = this.b;
+        p0Var.e = this.c;
+        p0Var.f = this.d;
+        p0Var.g = this.e;
     }
 
-    public final void c(int i3) {
+    public final void c(int i7) {
         if (this.g) {
-            if (j0.K(2)) {
-                Log.v("FragmentManager", "Bump nesting in " + this + " by " + i3);
+            if (i0.K(2)) {
+                Log.v("FragmentManager", "Bump nesting in " + this + " by " + i7);
             }
             ArrayList arrayList = this.a;
             int size = arrayList.size();
             for (int i10 = 0; i10 < size; i10++) {
-                q0 q0Var = (q0) arrayList.get(i10);
-                s sVar = q0Var.b;
-                if (sVar != null) {
-                    sVar.J += i3;
-                    if (j0.K(2)) {
-                        Log.v("FragmentManager", "Bump nesting of " + q0Var.b + " to " + q0Var.b.J);
+                p0 p0Var = (p0) arrayList.get(i10);
+                r rVar = p0Var.b;
+                if (rVar != null) {
+                    rVar.I += i7;
+                    if (i0.K(2)) {
+                        Log.v("FragmentManager", "Bump nesting of " + p0Var.b + " to " + p0Var.b.I);
                     }
                 }
             }
@@ -87,19 +87,19 @@ public final class a implements g0 {
         ArrayList arrayList = this.a;
         int size = arrayList.size() - 1;
         while (size >= 0) {
-            q0 q0Var = (q0) arrayList.get(size);
-            if (q0Var.c) {
-                if (q0Var.a == 8) {
-                    q0Var.c = false;
+            p0 p0Var = (p0) arrayList.get(size);
+            if (p0Var.c) {
+                if (p0Var.a == 8) {
+                    p0Var.c = false;
                     arrayList.remove(size - 1);
                     size--;
                 } else {
-                    int i3 = q0Var.b.P;
-                    q0Var.a = 2;
-                    q0Var.c = false;
+                    int i7 = p0Var.b.O;
+                    p0Var.a = 2;
+                    p0Var.c = false;
                     for (int i10 = size - 1; i10 >= 0; i10--) {
-                        q0 q0Var2 = (q0) arrayList.get(i10);
-                        if (q0Var2.c && q0Var2.b.P == i3) {
+                        p0 p0Var2 = (p0) arrayList.get(i10);
+                        if (p0Var2.c && p0Var2.b.O == i7) {
                             arrayList.remove(i10);
                             size--;
                         }
@@ -110,68 +110,68 @@ public final class a implements g0 {
         }
     }
 
-    public final int e(boolean z10, boolean z11) {
+    public final int e(boolean z9, boolean z10) {
         if (this.r) {
             throw new IllegalStateException("commit already called");
         }
-        if (j0.K(2)) {
+        if (i0.K(2)) {
             Log.v("FragmentManager", "Commit: " + this);
-            PrintWriter printWriter = new PrintWriter(new s0());
+            PrintWriter printWriter = new PrintWriter(new r0());
             g("  ", printWriter, true);
             printWriter.close();
         }
         this.r = true;
-        boolean z12 = this.g;
-        j0 j0Var = this.q;
-        if (z12) {
-            this.s = j0Var.k.getAndIncrement();
+        boolean z11 = this.g;
+        i0 i0Var = this.q;
+        if (z11) {
+            this.s = i0Var.k.getAndIncrement();
         } else {
             this.s = -1;
         }
-        if (z11) {
-            j0Var.y(this, z10);
+        if (z10) {
+            i0Var.y(this, z9);
         }
         return this.s;
     }
 
-    public final void f(int i3, s sVar, String str) {
-        String str2 = sVar.c0;
+    public final void f(int i7, r rVar, String str) {
+        String str2 = rVar.b0;
         if (str2 != null) {
-            v1.c.c(sVar, str2);
+            w1.c.c(rVar, str2);
         }
-        Class<?> cls = sVar.getClass();
+        Class<?> cls = rVar.getClass();
         int modifiers = cls.getModifiers();
         if (cls.isAnonymousClass() || !Modifier.isPublic(modifiers) || (cls.isMemberClass() && !Modifier.isStatic(modifiers))) {
             throw new IllegalStateException("Fragment " + cls.getCanonicalName() + " must be a public static class to be  properly recreated from instance state.");
         }
         if (str != null) {
-            String str3 = sVar.Q;
+            String str3 = rVar.P;
             if (str3 != null && !str.equals(str3)) {
                 StringBuilder sb2 = new StringBuilder("Can't change tag of fragment ");
-                sb2.append(sVar);
+                sb2.append(rVar);
                 sb2.append(": was ");
-                throw new IllegalStateException(f1.r(sVar.Q, " now ", str, sb2));
+                throw new IllegalStateException(f1.n(rVar.P, " now ", str, sb2));
             }
-            sVar.Q = str;
+            rVar.P = str;
         }
-        if (i3 != 0) {
-            if (i3 == -1) {
-                throw new IllegalArgumentException("Can't add fragment " + sVar + " with tag " + str + " to container view with no id");
+        if (i7 != 0) {
+            if (i7 == -1) {
+                throw new IllegalArgumentException("Can't add fragment " + rVar + " with tag " + str + " to container view with no id");
             }
-            int i10 = sVar.O;
-            if (i10 != 0 && i10 != i3) {
-                throw new IllegalStateException("Can't change container ID of fragment " + sVar + ": was " + sVar.O + " now " + i3);
+            int i10 = rVar.N;
+            if (i10 != 0 && i10 != i7) {
+                throw new IllegalStateException("Can't change container ID of fragment " + rVar + ": was " + rVar.N + " now " + i7);
             }
-            sVar.O = i3;
-            sVar.P = i3;
+            rVar.N = i7;
+            rVar.O = i7;
         }
-        b(new q0(1, sVar));
-        sVar.K = this.q;
+        b(new p0(1, rVar));
+        rVar.J = this.q;
     }
 
-    public final void g(String str, PrintWriter printWriter, boolean z10) {
+    public final void g(String str, PrintWriter printWriter, boolean z9) {
         String str2;
-        if (z10) {
+        if (z9) {
             printWriter.print(str);
             printWriter.print("mName=");
             printWriter.print(this.h);
@@ -220,9 +220,9 @@ public final class a implements g0 {
         printWriter.print(str);
         printWriter.println("Operations:");
         int size = arrayList.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            q0 q0Var = (q0) arrayList.get(i3);
-            switch (q0Var.a) {
+        for (int i7 = 0; i7 < size; i7++) {
+            p0 p0Var = (p0) arrayList.get(i7);
+            switch (p0Var.a) {
                 case 0:
                     str2 = "NULL";
                     break;
@@ -257,42 +257,42 @@ public final class a implements g0 {
                     str2 = "OP_SET_MAX_LIFECYCLE";
                     break;
                 default:
-                    str2 = "cmd=" + q0Var.a;
+                    str2 = "cmd=" + p0Var.a;
                     break;
             }
             printWriter.print(str);
             printWriter.print("  Op #");
-            printWriter.print(i3);
+            printWriter.print(i7);
             printWriter.print(": ");
             printWriter.print(str2);
             printWriter.print(" ");
-            printWriter.println(q0Var.b);
-            if (z10) {
-                if (q0Var.d != 0 || q0Var.e != 0) {
+            printWriter.println(p0Var.b);
+            if (z9) {
+                if (p0Var.d != 0 || p0Var.e != 0) {
                     printWriter.print(str);
                     printWriter.print("enterAnim=#");
-                    printWriter.print(Integer.toHexString(q0Var.d));
+                    printWriter.print(Integer.toHexString(p0Var.d));
                     printWriter.print(" exitAnim=#");
-                    printWriter.println(Integer.toHexString(q0Var.e));
+                    printWriter.println(Integer.toHexString(p0Var.e));
                 }
-                if (q0Var.f != 0 || q0Var.g != 0) {
+                if (p0Var.f != 0 || p0Var.g != 0) {
                     printWriter.print(str);
                     printWriter.print("popEnterAnim=#");
-                    printWriter.print(Integer.toHexString(q0Var.f));
+                    printWriter.print(Integer.toHexString(p0Var.f));
                     printWriter.print(" popExitAnim=#");
-                    printWriter.println(Integer.toHexString(q0Var.g));
+                    printWriter.println(Integer.toHexString(p0Var.g));
                 }
             }
         }
     }
 
-    public final void h(s sVar) {
-        j0 j0Var = sVar.K;
-        if (j0Var == null || j0Var == this.q) {
-            b(new q0(3, sVar));
+    public final void h(r rVar) {
+        i0 i0Var = rVar.J;
+        if (i0Var == null || i0Var == this.q) {
+            b(new p0(3, rVar));
             return;
         }
-        throw new IllegalStateException("Cannot remove Fragment attached to a different FragmentManager. Fragment " + sVar.toString() + " is already attached to a FragmentManager.");
+        throw new IllegalStateException("Cannot remove Fragment attached to a different FragmentManager. Fragment " + rVar.toString() + " is already attached to a FragmentManager.");
     }
 
     public final String toString() {

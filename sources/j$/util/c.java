@@ -12,8 +12,8 @@ public final /* synthetic */ class c implements Comparator, Serializable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ c(int i3, Object obj) {
-        this.a = i3;
+    public /* synthetic */ c(int i7, Object obj) {
+        this.a = i7;
         this.b = obj;
     }
 

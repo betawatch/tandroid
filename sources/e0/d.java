@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final Class a;
@@ -32,7 +32,7 @@ public abstract class d {
         Class cls2;
         Method declaredMethod2;
         Class cls3;
-        int i3;
+        int i7;
         Method method = null;
         try {
             cls = Class.forName("android.app.ActivityThread");
@@ -72,8 +72,8 @@ public abstract class d {
                 }
                 e = declaredMethod2;
                 cls3 = a;
-                i3 = Build.VERSION.SDK_INT;
-                if ((i3 != 26 || i3 == 27) && cls3 != null) {
+                i7 = Build.VERSION.SDK_INT;
+                if ((i7 != 26 || i7 == 27) && cls3 != null) {
                     Method declaredMethod3 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
                     declaredMethod3.setAccessible(true);
                     method = declaredMethod3;
@@ -83,8 +83,8 @@ public abstract class d {
             declaredMethod2 = null;
             e = declaredMethod2;
             cls3 = a;
-            i3 = Build.VERSION.SDK_INT;
-            if (i3 != 26) {
+            i7 = Build.VERSION.SDK_INT;
+            if (i7 != 26) {
             }
             Method declaredMethod32 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
             declaredMethod32.setAccessible(true);
@@ -99,8 +99,8 @@ public abstract class d {
         declaredMethod2 = null;
         e = declaredMethod2;
         cls3 = a;
-        i3 = Build.VERSION.SDK_INT;
-        if (i3 != 26) {
+        i7 = Build.VERSION.SDK_INT;
+        if (i7 != 26) {
         }
         Method declaredMethod322 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
         declaredMethod322.setAccessible(true);

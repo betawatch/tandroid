@@ -1,43 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class xk0 extends o5 {
-    public final u5 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final /* synthetic */ class xk0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ dl0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xk0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i3) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i3;
-        this.d = new u5(this, 360L, xq.h);
+    public /* synthetic */ xk0(dl0 dl0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
+        this.b = dl0Var;
+        this.c = str;
+        this.d = arrayList;
+        this.e = arrayList2;
     }
 
-    @Override // org.telegram.ui.Components.o5, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float d = this.d.d(this.f.o0);
-        if (d > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (org.telegram.messenger.g0.T1(1.0f, 0.5f, d) * 255.0f));
-        } else {
-            canvas2 = canvas;
-        }
-        super.onDraw(canvas2);
-        if (d > 0.0f) {
-            canvas2.restore();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        ArrayList arrayList = this.e;
+        ArrayList arrayList2 = this.d;
+        String str = this.c;
+        dl0 dl0Var = this.b;
+        switch (i7) {
+            case 0:
+                int i10 = dl0Var.d;
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                    String B = org.telegram.messenger.w7.B(((org.telegram.messenger.ij) arrayList2.get(i11)).F0());
+                    if (B != null && B.toLowerCase().contains(str)) {
+                        org.telegram.messenger.ij ijVar = new org.telegram.messenger.ij(i10, ((org.telegram.messenger.ij) arrayList2.get(i11)).k, false, false);
+                        ijVar.x0 = ((org.telegram.messenger.ij) arrayList2.get(i11)).x0;
+                        ijVar.L5(dl0Var.K, true);
+                        arrayList3.add(ijVar);
+                    }
+                }
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    String B2 = org.telegram.messenger.w7.B(((org.telegram.messenger.ij) arrayList.get(i12)).F0());
+                    if (B2 != null && B2.toLowerCase().contains(str)) {
+                        org.telegram.messenger.ij ijVar2 = new org.telegram.messenger.ij(i10, ((org.telegram.messenger.ij) arrayList.get(i12)).k, false, false);
+                        ijVar2.x0 = ((org.telegram.messenger.ij) arrayList.get(i12)).x0;
+                        ijVar2.L5(dl0Var.K, true);
+                        arrayList4.add(ijVar2);
+                    }
+                }
+                org.telegram.messenger.g0.h3(new xk0(dl0Var, str, arrayList3, arrayList4));
+                break;
+            default:
+                av0 av0Var = dl0Var.a;
+                if (str.equals(dl0Var.L)) {
+                    if (dl0Var.r == 0) {
+                        dl0Var.N.b(0);
+                    }
+                    dl0Var.e(arrayList2, arrayList, true);
+                    if (dl0Var.r == 0) {
+                        av0Var.e(false, true);
+                        w70 w70Var = av0Var.e;
+                        av0Var.d.setText(org.telegram.messenger.hd.M0(2131745801, null));
+                        w70Var.setVisibility(0);
+                        w70Var.setText(org.telegram.messenger.hd.M0(2131745808, null));
+                        break;
+                    }
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    public /* synthetic */ xk0(dl0 dl0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
+        this.b = dl0Var;
+        this.d = arrayList;
+        this.c = str;
+        this.e = arrayList2;
     }
 }

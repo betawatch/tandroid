@@ -1,110 +1,144 @@
 package b5;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.common.api.Scope;
-import j$.util.Objects;
-import java.net.Inet6Address;
-import java.net.InetAddress;
-import java.util.Comparator;
-import java.util.Map;
-import u4.n;
-import u4.p;
+import a0.f;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b implements Comparator {
-    public static final /* synthetic */ b b = new b(2);
-    public static final /* synthetic */ b c = new b(10);
-    public final /* synthetic */ int a;
+public abstract class b {
+    public final f a;
+    public final f b;
+    public final f c;
 
-    public /* synthetic */ b(int i3) {
-        this.a = i3;
+    public b(f fVar, f fVar2, f fVar3) {
+        this.a = fVar;
+        this.b = fVar2;
+        this.c = fVar3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0040, code lost:
-    
-        if (r0 == null) goto L24;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:?, code lost:
-    
-        return -1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:?, code lost:
-    
-        return 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0049, code lost:
-    
-        if (r0 != false) goto L23;
-     */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((e) obj).b - ((e) obj2).b;
-            case 1:
-                f fVar = (f) ((View) obj).getLayoutParams();
-                f fVar2 = (f) ((View) obj2).getLayoutParams();
-                boolean z10 = fVar.a;
-                return z10 != fVar2.a ? z10 ? 1 : -1 : fVar.e - fVar2.e;
-            case 2:
-                return ((Scope) obj).b.compareTo(((Scope) obj2).b);
-            case 3:
-                return ((Scope) obj).b.compareTo(((Scope) obj2).b);
-            case 4:
-                Runnable runnable = (Runnable) obj;
-                Runnable runnable2 = (Runnable) obj2;
-                return (runnable2 instanceof lf.b ? ((lf.b) runnable2).a : 1) - (runnable instanceof lf.b ? ((lf.b) runnable).a : 1);
-            case 5:
-                InetAddress inetAddress = (InetAddress) obj;
-                if (inetAddress.getClass() == ((InetAddress) obj2).getClass()) {
-                    return 0;
+    public abstract c a();
+
+    public final Class b(Class cls) {
+        String name = cls.getName();
+        f fVar = this.c;
+        Class cls2 = (Class) fVar.get(name);
+        if (cls2 != null) {
+            return cls2;
+        }
+        Class<?> cls3 = Class.forName(cls.getPackage().getName() + "." + cls.getSimpleName() + "Parcelizer", false, cls.getClassLoader());
+        fVar.put(cls.getName(), cls3);
+        return cls3;
+    }
+
+    public final Method c(String str) {
+        f fVar = this.a;
+        Method method = (Method) fVar.get(str);
+        if (method != null) {
+            return method;
+        }
+        System.currentTimeMillis();
+        Method declaredMethod = Class.forName(str, true, b.class.getClassLoader()).getDeclaredMethod("read", b.class);
+        fVar.put(str, declaredMethod);
+        return declaredMethod;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final Method d(Class cls) {
+        String name = cls.getName();
+        f fVar = this.b;
+        Method method = (Method) fVar.get(name);
+        if (method != null) {
+            return method;
+        }
+        Class b10 = b(cls);
+        System.currentTimeMillis();
+        Method declaredMethod = b10.getDeclaredMethod("write", cls, b.class);
+        fVar.put(cls.getName(), declaredMethod);
+        return declaredMethod;
+    }
+
+    public abstract boolean e(int i7);
+
+    public final int f(int i7, int i10) {
+        return !e(i10) ? i7 : ((c) this).e.readInt();
+    }
+
+    public final Parcelable g(Parcelable parcelable, int i7) {
+        if (!e(i7)) {
+            return parcelable;
+        }
+        return ((c) this).e.readParcelable(c.class.getClassLoader());
+    }
+
+    public final d h() {
+        String readString = ((c) this).e.readString();
+        if (readString == null) {
+            return null;
+        }
+        try {
+            return (d) c(readString).invoke(null, a());
+        } catch (ClassNotFoundException e10) {
+            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
+        } catch (IllegalAccessException e11) {
+            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
+        } catch (NoSuchMethodException e12) {
+            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
+        } catch (InvocationTargetException e13) {
+            if (e13.getCause() instanceof RuntimeException) {
+                throw ((RuntimeException) e13.getCause());
+            }
+            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
+        }
+    }
+
+    public abstract void i(int i7);
+
+    public final void j(int i7, int i10) {
+        i(i10);
+        ((c) this).e.writeInt(i7);
+    }
+
+    public final void k(Parcelable parcelable, int i7) {
+        i(i7);
+        ((c) this).e.writeParcelable(parcelable, 0);
+    }
+
+    public final void l(d dVar) {
+        if (dVar == null) {
+            ((c) this).e.writeString(null);
+            return;
+        }
+        try {
+            ((c) this).e.writeString(b(dVar.getClass()).getName());
+            c a10 = a();
+            try {
+                d(dVar.getClass()).invoke(null, dVar, a10);
+                Parcel parcel = a10.e;
+                int i7 = a10.i;
+                if (i7 >= 0) {
+                    int i10 = a10.d.get(i7);
+                    int dataPosition = parcel.dataPosition();
+                    parcel.setDataPosition(i10);
+                    parcel.writeInt(dataPosition - i10);
+                    parcel.setDataPosition(dataPosition);
                 }
-                return inetAddress instanceof Inet6Address ? -1 : 1;
-            case 6:
-                Map.Entry entry = (Map.Entry) obj;
-                Map.Entry entry2 = (Map.Entry) obj2;
-                Objects.requireNonNull(entry);
-                Objects.requireNonNull(entry2);
-                Comparable comparable = (Comparable) entry.getKey();
-                Comparable comparable2 = (Comparable) entry2.getKey();
-                comparable.getClass();
-                comparable2.getClass();
-                return comparable.compareTo(comparable2);
-            case 7:
-                return ((s4.a) obj2).b() - ((s4.a) obj).b();
-            case 8:
-                n nVar = (n) obj;
-                n nVar2 = (n) obj2;
-                int i3 = nVar.a - nVar2.a;
-                return i3 == 0 ? nVar.b - nVar2.b : i3;
-            case 9:
-                p pVar = (p) obj;
-                p pVar2 = (p) obj2;
-                RecyclerView recyclerView = pVar.d;
-                if ((recyclerView == null) == (pVar2.d == null)) {
-                    boolean z11 = pVar.a;
-                    if (z11 == pVar2.a) {
-                        int i10 = pVar2.b - pVar.b;
-                        if (i10 != 0) {
-                            return i10;
-                        }
-                        int i11 = pVar.c - pVar2.c;
-                        if (i11 != 0) {
-                            return i11;
-                        }
-                        return 0;
-                    }
+            } catch (ClassNotFoundException e10) {
+                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
+            } catch (IllegalAccessException e11) {
+                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
+            } catch (NoSuchMethodException e12) {
+                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
+            } catch (InvocationTargetException e13) {
+                if (!(e13.getCause() instanceof RuntimeException)) {
+                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
                 }
-                break;
-            default:
-                m6.c cVar = (m6.c) obj2;
-                m6.c cVar2 = (m6.c) obj;
-                return !cVar2.a.equals(cVar.a) ? cVar2.a.compareTo(cVar.a) : Long.compare(cVar2.b(), cVar.b());
+                throw ((RuntimeException) e13.getCause());
+            }
+        } catch (ClassNotFoundException e14) {
+            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e14);
         }
     }
 }

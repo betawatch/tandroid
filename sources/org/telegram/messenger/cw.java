@@ -1,29 +1,41 @@
 package org.telegram.messenger;
 
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ TLRPC.Updates c;
+public final class cw extends TLObject {
+    public int a;
+    public TLRPC.TL_decryptedMessageLayer b;
+    public TLRPC.EncryptedFile c;
+    public boolean d;
+    public int e;
 
-    public /* synthetic */ cw(yy yyVar, TLRPC.Updates updates, int i3) {
-        this.a = i3;
-        this.b = yyVar;
-        this.c = updates;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        inputSerializedData.readInt64(z9);
+        this.a = inputSerializedData.readInt32(z9);
+        this.b = TLRPC.TL_decryptedMessageLayer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        if (inputSerializedData.readBool(z9)) {
+            this.c = TLRPC.EncryptedFile.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        }
+        this.d = inputSerializedData.readBool(z9);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.getMessagesController().O3(this.c, false);
-                break;
-            default:
-                this.b.getMessagesController().O3(this.c, false);
-                break;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(TLRPC.TL_message_secret_layer72.constructor);
+        outputSerializedData.writeInt64(0L);
+        outputSerializedData.writeInt32(this.a);
+        this.b.serializeToStream(outputSerializedData);
+        outputSerializedData.writeBool(this.c != null);
+        TLRPC.EncryptedFile encryptedFile = this.c;
+        if (encryptedFile != null) {
+            encryptedFile.serializeToStream(outputSerializedData);
         }
+        outputSerializedData.writeBool(this.d);
     }
 }

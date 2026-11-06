@@ -1,41 +1,27 @@
 package t5;
 
-import java.util.HashMap;
+import java.util.concurrent.Executor;
+import java.util.logging.Logger;
+import o5.s;
+import org.telegram.ui.hy0;
+import p5.d;
+import w5.c;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final w5.a a;
-    public final HashMap b;
+public final class a implements b {
+    public static final Logger f = Logger.getLogger(s.class.getName());
+    public final hy0 a;
+    public final Executor b;
+    public final d c;
+    public final v5.d d;
+    public final c e;
 
-    public a(w5.a aVar, HashMap hashMap) {
-        this.a = aVar;
-        this.b = hashMap;
-    }
-
-    public final long a(k5.d dVar, long j10, int i3) {
-        long o10 = j10 - this.a.o();
-        b bVar = (b) this.b.get(dVar);
-        long j11 = bVar.a;
-        return Math.min(Math.max((long) (Math.pow(3.0d, i3 - 1) * j11 * Math.max(1.0d, Math.log(10000.0d) / Math.log((j11 > 1 ? j11 : 2L) * r12))), o10), bVar.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.a.equals(aVar.a) && this.b.equals(aVar.b);
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        return "SchedulerConfig{clock=" + this.a + ", values=" + this.b + "}";
+    public a(Executor executor, d dVar, hy0 hy0Var, v5.d dVar2, c cVar) {
+        this.b = executor;
+        this.c = dVar;
+        this.a = hy0Var;
+        this.d = dVar2;
+        this.e = cVar;
     }
 }

@@ -19,40 +19,40 @@ public final class w0 extends k {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i3, Object obj) {
-        h();
-        this.b.add(i3, obj);
+    public final void add(int i7, Object obj) {
+        f();
+        this.b.add(i7, obj);
         ((AbstractList) this).modCount++;
     }
 
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i7) {
+        return this.b.get(i7);
+    }
+
     @Override // com.google.android.gms.internal.clearcut.c0
-    public final c0 g(int i3) {
+    public final c0 h(int i7) {
         ArrayList arrayList = this.b;
-        if (i3 < arrayList.size()) {
+        if (i7 < arrayList.size()) {
             throw new IllegalArgumentException();
         }
-        ArrayList arrayList2 = new ArrayList(i3);
+        ArrayList arrayList2 = new ArrayList(i7);
         arrayList2.addAll(arrayList);
         return new w0(arrayList2);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i3) {
-        return this.b.get(i3);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i3) {
-        h();
-        Object remove = this.b.remove(i3);
+    public final Object remove(int i7) {
+        f();
+        Object remove = this.b.remove(i7);
         ((AbstractList) this).modCount++;
         return remove;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i3, Object obj) {
-        h();
-        Object obj2 = this.b.set(i3, obj);
+    public final Object set(int i7, Object obj) {
+        f();
+        Object obj2 = this.b.set(i7, obj);
         ((AbstractList) this).modCount++;
         return obj2;
     }

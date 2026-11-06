@@ -4,34 +4,34 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class pq0 extends org.telegram.ui.Cells.f7 {
-    public final /* synthetic */ ws0 m0;
+public final class pq0 extends org.telegram.ui.Cells.g7 {
+    public final /* synthetic */ xs0 l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pq0(ws0 ws0Var, Context context) {
+    public pq0(xs0 xs0Var, Context context) {
         super(context);
-        this.m0 = ws0Var;
+        this.l0 = xs0Var;
     }
 
-    @Override // org.telegram.ui.Cells.f7
-    public final boolean d(org.telegram.messenger.zi ziVar) {
+    @Override // org.telegram.ui.Cells.g7
+    public final boolean d(org.telegram.messenger.ij ijVar) {
         long playlistTopicId;
-        ws0 ws0Var = this.m0;
-        ls0[] ls0VarArr = ws0Var.w1;
-        if (org.telegram.messenger.zi.S4(ziVar.k) || ziVar.i4()) {
-            boolean S = MediaController.B().S(ziVar);
-            MediaController.B().r0(S ? ls0VarArr[4].a : null, false);
+        xs0 xs0Var = this.l0;
+        ms0[] ms0VarArr = xs0Var.v1;
+        if (org.telegram.messenger.ij.S4(ijVar.k) || ijVar.i4()) {
+            boolean S = MediaController.B().S(ijVar);
+            MediaController.B().r0(S ? ms0VarArr[4].a : null, false);
             return S;
         }
-        if (!ziVar.J3()) {
+        if (!ijVar.J3()) {
             return false;
         }
         MediaController B = MediaController.B();
-        ArrayList arrayList = ls0VarArr[4].a;
-        long j10 = ws0Var.f1;
-        playlistTopicId = ws0Var.getPlaylistTopicId();
-        return B.o0(arrayList, ziVar, j10, true, null, playlistTopicId);
+        ArrayList arrayList = ms0VarArr[4].a;
+        long j3 = xs0Var.e1;
+        playlistTopicId = xs0Var.getPlaylistTopicId();
+        return B.o0(arrayList, ijVar, j3, true, null, playlistTopicId);
     }
 }

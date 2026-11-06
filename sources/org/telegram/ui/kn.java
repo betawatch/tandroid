@@ -1,17 +1,85 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class kn extends org.telegram.ui.Cells.l8 {
-    public kn(Context context) {
-        super(context);
+public final /* synthetic */ class kn implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.tr, ma0, org.telegram.messenger.qr {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pn b;
+
+    public /* synthetic */ kn(pn pnVar, int i7) {
+        this.a = i7;
+        this.b = pnVar;
     }
 
-    @Override // org.telegram.ui.Cells.l8, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawLine(org.telegram.messenger.bd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.bd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+    @Override // org.telegram.ui.ma0
+    public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3) {
+        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+        tL_channelLocation.address = messageMedia.address;
+        tL_channelLocation.geo_point = messageMedia.geo;
+        pn pnVar = this.b;
+        TLRPC.ChatFull chatFull = pnVar.x0;
+        chatFull.location = tL_channelLocation;
+        chatFull.flags |= 32768;
+        pnVar.u0(false, true);
+        pnVar.getMessagesController().V2(0, pnVar.v0, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                this.b.o0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+                this.b.o0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.qr
+    public void k(boolean z9) {
+        boolean Q1 = org.telegram.messenger.g0.Q1();
+        int i7 = org.telegram.messenger.qs.t;
+        pn pnVar = this.b;
+        if (Q1) {
+            pnVar.getNotificationCenter().k(i7, Long.valueOf(-pnVar.v0));
+        } else {
+            pnVar.getNotificationCenter().k(i7, new Object[0]);
+        }
+        pnVar.finishFragment();
+        pnVar.getNotificationCenter().k(org.telegram.messenger.qs.K2, Long.valueOf(-pnVar.w0.id), null, pnVar.w0, Boolean.valueOf(z9));
+    }
+
+    @Override // org.telegram.messenger.tr
+    public void run(long j3) {
+        switch (this.a) {
+            case 4:
+                this.b.y0(Long.valueOf(j3));
+                break;
+            default:
+                pn pnVar = this.b;
+                if (j3 != 0) {
+                    pnVar.v0 = j3;
+                    pnVar.w0 = pnVar.getMessagesController().M0(Long.valueOf(j3));
+                    pnVar.N0 = false;
+                    TLRPC.ChatFull chatFull = pnVar.x0;
+                    if (chatFull != null) {
+                        chatFull.hidden_prehistory = true;
+                    }
+                    pnVar.o0();
+                    break;
+                } else {
+                    pnVar.N0 = false;
+                    break;
+                }
+        }
     }
 }

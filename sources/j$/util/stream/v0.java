@@ -19,18 +19,18 @@ public final class v0 extends d5 {
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a.o(-1L);
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i3) {
-        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i3);
+    public final void accept(int i7) {
+        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i7);
         if (intStream != null) {
             try {
-                boolean z10 = this.b;
+                boolean z9 = this.b;
                 j$.util.i0 i0Var = this.c;
-                if (!z10) {
+                if (!z9) {
                     intStream.sequential().forEach(i0Var);
                 } else {
                     j$.util.x0 spliterator = intStream.sequential().spliterator();

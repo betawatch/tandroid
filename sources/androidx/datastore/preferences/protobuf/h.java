@@ -1,11 +1,12 @@
 package androidx.datastore.preferences.protobuf;
 
+import a8.q6;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class h implements Iterable, Serializable {
     public static final h c = new h(c0.b);
@@ -22,30 +23,30 @@ public class h implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static int i(int i3, int i10, int i11) {
-        int i12 = i10 - i3;
-        if ((i3 | i10 | i12 | (i11 - i10)) >= 0) {
+    public static int i(int i7, int i10, int i11) {
+        int i12 = i10 - i7;
+        if ((i7 | i10 | i12 | (i11 - i10)) >= 0) {
             return i12;
         }
-        if (i3 < 0) {
-            throw new IndexOutOfBoundsException(k2.p1.j(i3, "Beginning index: ", " < 0"));
+        if (i7 < 0) {
+            throw new IndexOutOfBoundsException(jg.g.k(i7, "Beginning index: ", " < 0"));
         }
-        if (i10 < i3) {
-            throw new IndexOutOfBoundsException(a1.g.n(i3, i10, "Beginning index larger than ending index: ", ", "));
+        if (i10 < i7) {
+            throw new IndexOutOfBoundsException(a8.p0.m(i7, i10, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a1.g.n(i10, i11, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a8.p0.m(i10, i11, "End index: ", " >= "));
     }
 
-    public static h j(int i3, int i10, byte[] bArr) {
+    public static h j(int i7, int i10, byte[] bArr) {
         byte[] copyOfRange;
-        i(i3, i3 + i10, bArr.length);
+        i(i7, i7 + i10, bArr.length);
         switch (d.a) {
             case 0:
-                copyOfRange = Arrays.copyOfRange(bArr, i3, i10 + i3);
+                copyOfRange = Arrays.copyOfRange(bArr, i7, i10 + i7);
                 break;
             default:
                 copyOfRange = new byte[i10];
-                System.arraycopy(bArr, i3, copyOfRange, 0, i10);
+                System.arraycopy(bArr, i7, copyOfRange, 0, i10);
                 break;
         }
         return new h(copyOfRange);
@@ -65,9 +66,9 @@ public class h implements Iterable, Serializable {
             return obj.equals(this);
         }
         h hVar = (h) obj;
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = hVar.a;
-        if (i3 != 0 && i10 != 0 && i3 != i10) {
+        if (i7 != 0 && i10 != 0 && i7 != i10) {
             return false;
         }
         int size = size();
@@ -75,9 +76,9 @@ public class h implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > hVar.size()) {
-            StringBuilder m10 = k2.p1.m(size, "Ran off end of other: 0, ", ", ");
-            m10.append(hVar.size());
-            throw new IllegalArgumentException(m10.toString());
+            StringBuilder n10 = jg.g.n(size, "Ran off end of other: 0, ", ", ");
+            n10.append(hVar.size());
+            throw new IllegalArgumentException(n10.toString());
         }
         byte[] bArr = hVar.b;
         int l10 = l() + size;
@@ -93,14 +94,14 @@ public class h implements Iterable, Serializable {
         return true;
     }
 
-    public byte h(int i3) {
-        return this.b[i3];
+    public byte f(int i7) {
+        return this.b[i7];
     }
 
     public final int hashCode() {
-        int i3 = this.a;
-        if (i3 != 0) {
-            return i3;
+        int i7 = this.a;
+        if (i7 != 0) {
+            return i7;
         }
         int size = size();
         int l10 = l();
@@ -120,16 +121,16 @@ public class h implements Iterable, Serializable {
         return new e(this);
     }
 
-    public void k(int i3, byte[] bArr) {
-        System.arraycopy(this.b, 0, bArr, 0, i3);
+    public void k(int i7, byte[] bArr) {
+        System.arraycopy(this.b, 0, bArr, 0, i7);
     }
 
     public int l() {
         return 0;
     }
 
-    public byte m(int i3) {
-        return this.b[i3];
+    public byte m(int i7) {
+        return this.b[i7];
     }
 
     public int size() {
@@ -142,11 +143,11 @@ public class h implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int size = size();
         if (size() <= 50) {
-            sb2 = b8.t0.a(this);
+            sb2 = q6.a(this);
         } else {
             StringBuilder sb3 = new StringBuilder();
-            int i3 = i(0, 47, size());
-            sb3.append(b8.t0.a(i3 == 0 ? c : new g(this.b, l(), i3)));
+            int i7 = i(0, 47, size());
+            sb3.append(q6.a(i7 == 0 ? c : new g(this.b, l(), i7)));
             sb3.append("...");
             sb2 = sb3.toString();
         }
@@ -155,6 +156,6 @@ public class h implements Iterable, Serializable {
         sb4.append(" size=");
         sb4.append(size);
         sb4.append(" contents=\"");
-        return a1.g.s(sb4, sb2, "\">");
+        return a8.p0.s(sb4, sb2, "\">");
     }
 }

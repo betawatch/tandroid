@@ -4,27 +4,27 @@ import android.util.Log;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class h implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ q b;
 
-    public /* synthetic */ h(q qVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ h(q qVar, int i7) {
+        this.a = i7;
         this.b = qVar;
     }
 
     @Override // androidx.lifecycle.a0
-    public final void v(Object obj) {
-        int i3 = this.a;
+    public final void X(Object obj) {
+        int i7 = this.a;
         q qVar = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 u uVar = (u) obj;
                 if (uVar != null) {
                     qVar.V(uVar);
-                    z zVar = qVar.m0;
+                    z zVar = qVar.l0;
                     if (zVar.r == null) {
                         zVar.r = new androidx.lifecycle.z();
                     }
@@ -37,7 +37,7 @@ public final class h implements androidx.lifecycle.a0 {
                     if (qVar.R()) {
                         qVar.W(qVar.q(R.string.fingerprint_not_recognized));
                     }
-                    z zVar2 = qVar.m0;
+                    z zVar2 = qVar.l0;
                     if (zVar2.n) {
                         Executor executor = zVar2.d;
                         if (executor == null) {
@@ -47,7 +47,7 @@ public final class h implements androidx.lifecycle.a0 {
                     } else {
                         Log.w("BiometricFragment", "Failure not sent to client. Client is not awaiting a result.");
                     }
-                    z zVar3 = qVar.m0;
+                    z zVar3 = qVar.l0;
                     if (zVar3.u == null) {
                         zVar3.u = new androidx.lifecycle.z();
                     }

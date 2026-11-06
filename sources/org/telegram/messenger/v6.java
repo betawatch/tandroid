@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class v6 implements TextWatcher {
     public boolean a;
@@ -14,8 +14,8 @@ public final class v6 implements TextWatcher {
     public final /* synthetic */ TextView[] d;
     public final /* synthetic */ TLRPC.TL_factCheck e;
 
-    public v6(int i3, t6 t6Var, TextView[] textViewArr, TLRPC.TL_factCheck tL_factCheck) {
-        this.b = i3;
+    public v6(int i7, t6 t6Var, TextView[] textViewArr, TLRPC.TL_factCheck tL_factCheck) {
+        this.b = i7;
         this.c = t6Var;
         this.d = textViewArr;
         this.e = tL_factCheck;
@@ -27,11 +27,11 @@ public final class v6 implements TextWatcher {
             return;
         }
         int length = editable.length();
-        boolean z10 = true;
-        int i3 = this.b;
-        if (length > i3) {
+        boolean z9 = true;
+        int i7 = this.b;
+        if (length > i7) {
             this.a = true;
-            editable.delete(i3, editable.length());
+            editable.delete(i7, editable.length());
             t6 t6Var = this.c;
             g0.F3(t6Var);
             try {
@@ -43,18 +43,18 @@ public final class v6 implements TextWatcher {
         TextView[] textViewArr = this.d;
         if (textViewArr[0] != null) {
             if (editable.length() <= 0 && this.e != null) {
-                z10 = false;
+                z9 = false;
             }
-            textViewArr[0].setText(bd.M0(z10 ? 2131751355 : 2131746329, null));
-            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.k6.x0(null, z10 ? org.telegram.ui.ActionBar.k6.H5 : org.telegram.ui.ActionBar.k6.q7, false));
+            textViewArr[0].setText(hd.M0(z9 ? 2131751355 : 2131746320, null));
+            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.k6.x0(null, z9 ? org.telegram.ui.ActionBar.k6.H5 : org.telegram.ui.ActionBar.k6.q7, false));
         }
     }
 
     @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 
     @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

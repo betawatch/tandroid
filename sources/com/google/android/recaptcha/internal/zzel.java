@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
+import af.b;
 import com.google.android.recaptcha.RecaptchaAction;
-import dd.g;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
+import gd.g;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzel extends j implements p {
     int zza;
@@ -18,21 +18,21 @@ final class zzel extends j implements p {
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzel(zzeq zzeqVar, long j10, RecaptchaAction recaptchaAction, c cVar) {
+    public zzel(zzeq zzeqVar, long j3, RecaptchaAction recaptchaAction, c cVar) {
         super(2, cVar);
         this.zzb = zzeqVar;
-        this.zzc = j10;
+        this.zzc = j3;
         this.zzd = recaptchaAction;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, cVar);
         zzelVar.zze = obj;
         return zzelVar;
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzel) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
@@ -49,34 +49,34 @@ final class zzel extends j implements p {
     
         if (r11 != r0) goto L15;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        gd.a aVar = gd.a.a;
-        int i3 = this.zza;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zza;
         try {
         } catch (zzcg e10) {
-            obj = ib.a(e10.zzc());
+            obj = b.b(e10.zzc());
         }
-        if (i3 == 0) {
-            ib.b(obj);
+        if (i7 == 0) {
+            b.c(obj);
             zzhkVar = (zzhk) this.zze;
             zzeq zzeqVar = this.zzb;
-            long j10 = this.zzc;
+            long j3 = this.zzc;
             RecaptchaAction recaptchaAction = this.zzd;
             this.zze = zzhkVar;
             this.zza = 1;
-            obj = new zzhf(9, new zzeo(zzeqVar, j10, recaptchaAction, null), null);
+            obj = new zzhf(9, new zzeo(zzeqVar, j3, recaptchaAction, null), null);
         } else {
-            if (i3 != 1) {
-                ib.b(obj);
+            if (i7 != 1) {
+                b.c(obj);
                 return new g(obj);
             }
             zzhkVar = (zzhk) this.zze;
-            ib.b(obj);
+            b.c(obj);
         }
         this.zze = null;
         this.zza = 2;

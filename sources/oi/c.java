@@ -1,25 +1,52 @@
 package oi;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.Canvas;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class c {
-    public final String a;
-    public final String b;
+public final class c implements ri.a, pi.a {
+    public final int a;
+    public final /* synthetic */ d b;
 
-    public c(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public c(d dVar, int i7) {
+        this.b = dVar;
+        this.a = i7;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return this.a.equals(cVar.a) && this.b.equals(cVar.b);
+    @Override // pi.a
+    public final int a() {
+        boolean a10 = jg.g.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.s : dVar.q;
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    @Override // pi.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        d.b(this.b, this.a, canvas, rectF, i7, f10, f11);
+    }
+
+    @Override // ri.a
+    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
+        d.a(this.b, canvas, this.a, f10, f11, f12, f13);
+    }
+
+    @Override // pi.a
+    public final int f() {
+        boolean a10 = jg.g.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.n : dVar.m;
+    }
+
+    @Override // pi.a
+    public final int g() {
+        boolean a10 = jg.g.a(this.a);
+        d dVar = this.b;
+        return a10 ? dVar.r : dVar.p;
+    }
+
+    @Override // pi.a
+    public final boolean h() {
+        return true;
     }
 }

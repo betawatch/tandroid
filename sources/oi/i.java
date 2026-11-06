@@ -1,33 +1,33 @@
 package oi;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.ui.Components.vv;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class i extends MetricAffectingSpan {
-    public static final Typeface[] c;
-    public final int a;
-    public final int b;
+public final class i implements c5.g {
+    public int a;
+    public final /* synthetic */ vv b;
+    public final /* synthetic */ q c;
 
-    static {
-        Typeface typeface = Typeface.MONOSPACE;
-        c = new Typeface[]{typeface, Typeface.create(typeface, 1), Typeface.create(typeface, 2), Typeface.create(typeface, 3)};
+    public i(q qVar, vv vvVar) {
+        this.c = qVar;
+        this.b = vvVar;
+        this.a = vvVar.getScrollX();
     }
 
-    public i(int i3) {
-        this.b = i3;
-        this.a = ((i3 & 256) != 0 ? 1 : 0) | ((i3 & 512) != 0 ? 2 : 0);
+    @Override // c5.g
+    public final void b(float f10, int i7, int i10) {
+        int scrollX = this.b.getScrollX();
+        this.c.h(scrollX - this.a, 0);
+        this.a = scrollX;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        updateMeasureState(textPaint);
+    @Override // c5.g
+    public final void c(int i7) {
+        this.c.g++;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTypeface(c[this.a]);
+    @Override // c5.g
+    public final void a(int i7) {
     }
 }

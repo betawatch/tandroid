@@ -1,40 +1,55 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ dw b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ bw(yy yyVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j10, int i3) {
-        this.a = i3;
-        this.b = yyVar;
-        this.c = tL_updateNewChannelMessage;
-        this.d = j10;
+    public /* synthetic */ bw(dw dwVar, ArrayList arrayList, int i7) {
+        this.a = i7;
+        this.b = dwVar;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                yy yyVar = this.b;
-                yyVar.getClass();
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(Integer.valueOf(this.c.message.id));
-                yyVar.getMessagesStorage().c2(-this.d, arrayList, true, -1, 0, false, null);
-                break;
+                dw dwVar = this.b;
+                dwVar.getClass();
+                int i7 = 0;
+                while (true) {
+                    ArrayList arrayList = this.c;
+                    if (i7 >= arrayList.size()) {
+                        break;
+                    } else {
+                        ij ijVar = new ij(dwVar.currentAccount, (TLRPC.Message) arrayList.get(i7), false, true);
+                        ijVar.A0 = true;
+                        dwVar.getSendMessagesHelper().k0(0L, ijVar, true);
+                        i7++;
+                    }
+                }
             default:
-                yy yyVar2 = this.b;
-                yyVar2.getClass();
-                ArrayList arrayList2 = new ArrayList();
-                arrayList2.add(Integer.valueOf(this.c.message.id));
-                yyVar2.getMessagesStorage().c2(-this.d, arrayList2, true, -1, 0, false, null);
-                break;
+                dw dwVar2 = this.b;
+                dwVar2.getClass();
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.c;
+                    if (i10 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        ij ijVar2 = (ij) dwVar2.getMessagesController().S.f(((Long) arrayList2.get(i10)).longValue());
+                        if (ijVar2 != null) {
+                            ijVar2.Z = true;
+                        }
+                        i10++;
+                    }
+                }
         }
     }
 }

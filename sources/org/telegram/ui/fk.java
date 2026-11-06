@@ -1,16 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class fk implements org.telegram.messenger.kr {
-    public final /* synthetic */ wm a;
+import android.graphics.RectF;
+import android.view.ViewTreeObserver;
 
-    public fk(wm wmVar) {
-        this.a = wmVar;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fk implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ fk(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.kr
-    public final void a(int i3) {
-        this.a.fa(i3);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        org.telegram.ui.ActionBar.k kVar;
+        int i7 = this.a;
+        Object obj = this.b;
+        switch (i7) {
+            case 0:
+                kVar = ((org.telegram.ui.ActionBar.f2) ((gk) obj).d).actionBar;
+                kVar.invalidate();
+                break;
+            case 1:
+                ProfileActivity profileActivity = (ProfileActivity) obj;
+                RectF rectF = ProfileActivity.S6;
+                profileActivity.y5();
+                profileActivity.z5();
+                break;
+            default:
+                ((c51) obj).t0();
+                break;
+        }
+        return true;
     }
 }

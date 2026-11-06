@@ -1,21 +1,21 @@
 package androidx.biometric;
 
+import a8.k1;
+import a8.n1;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
-import b8.k0;
-import b8.n0;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ q b;
 
-    public /* synthetic */ i(q qVar, int i3) {
-        this.a = i3;
+    public /* synthetic */ i(q qVar, int i7) {
+        this.a = i7;
         this.b = qVar;
     }
 
@@ -27,13 +27,13 @@ public final class i implements androidx.lifecycle.a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(Object obj) {
-        boolean z10;
-        int i3 = this.a;
+    public final void X(Object obj) {
+        boolean z9;
+        int i7 = this.a;
         int i10 = 0;
         CharSequence charSequence = null;
         q qVar = this.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 e eVar = (e) obj;
                 if (eVar != null) {
@@ -60,51 +60,51 @@ public final class i implements androidx.lifecycle.a0 {
                             i11 = 8;
                             break;
                     }
-                    Context n4 = qVar.n();
+                    Context n10 = qVar.n();
                     int i12 = Build.VERSION.SDK_INT;
-                    if (i12 < 29 && ((i11 == 7 || i11 == 9) && n4 != null)) {
-                        KeyguardManager a10 = h0.a(n4);
-                        if ((a10 == null ? false : h0.b(a10)) && k0.a(qVar.m0.c())) {
+                    if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
+                        KeyguardManager a10 = h0.a(n10);
+                        if ((a10 == null ? false : h0.b(a10)) && k1.a(qVar.l0.c())) {
                             qVar.S();
-                            qVar.m0.d(null);
+                            qVar.l0.d(null);
                             break;
                         }
                     }
                     if (qVar.R()) {
                         if (charSequence2 == null) {
-                            charSequence2 = n0.a(qVar.n(), i11);
+                            charSequence2 = n1.a(qVar.n(), i11);
                         }
                         if (i11 == 5) {
-                            int i13 = qVar.m0.l;
+                            int i13 = qVar.l0.l;
                             if (i13 == 0 || i13 == 3) {
                                 qVar.U(i11, charSequence2);
                             }
                             qVar.O();
                         } else {
-                            if (qVar.m0.w) {
+                            if (qVar.l0.w) {
                                 qVar.T(i11, charSequence2);
                             } else {
                                 qVar.W(charSequence2);
-                                Handler handler = qVar.l0;
+                                Handler handler = qVar.k0;
                                 f fVar = new f(qVar, i11, charSequence2, 1);
-                                Context n10 = qVar.n();
-                                if (n10 != null) {
+                                Context n11 = qVar.n();
+                                if (n11 != null) {
                                     String str = Build.MODEL;
                                     if (i12 == 28 && str != null) {
-                                        for (String str2 : n10.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
+                                        for (String str2 : n11.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
                                             if (str.startsWith(str2)) {
-                                                z10 = true;
+                                                z9 = true;
                                                 break;
                                             }
                                         }
                                     }
-                                    z10 = false;
+                                    z9 = false;
                                     break;
                                 }
                                 i10 = 2000;
                                 handler.postDelayed(fVar, i10);
                             }
-                            qVar.m0.w = true;
+                            qVar.l0.w = true;
                         }
                     } else {
                         if (charSequence2 == null) {
@@ -112,7 +112,7 @@ public final class i implements androidx.lifecycle.a0 {
                         }
                         qVar.T(i11, charSequence2);
                     }
-                    qVar.m0.d(null);
+                    qVar.l0.d(null);
                 }
                 break;
             default:
@@ -120,12 +120,12 @@ public final class i implements androidx.lifecycle.a0 {
                     if (qVar.Q()) {
                         qVar.S();
                     } else {
-                        z zVar = qVar.m0;
+                        z zVar = qVar.l0;
                         String str3 = zVar.k;
                         if (str3 != null) {
                             charSequence = str3;
                         } else {
-                            l6.n nVar = zVar.f;
+                            m6.n nVar = zVar.f;
                             if (nVar != null && (charSequence = (CharSequence) nVar.d) == null) {
                                 charSequence = "";
                             }
@@ -136,7 +136,7 @@ public final class i implements androidx.lifecycle.a0 {
                         qVar.T(13, charSequence);
                         qVar.N(2);
                     }
-                    qVar.m0.g(false);
+                    qVar.l0.g(false);
                     break;
                 }
                 break;

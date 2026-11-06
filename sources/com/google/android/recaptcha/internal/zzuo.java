@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 class zzuo extends AbstractMap {
     private Object[] zza;
@@ -26,13 +26,13 @@ class zzuo extends AbstractMap {
     }
 
     private final int zzl(Comparable comparable) {
-        int i3 = this.zzb;
-        int i10 = i3 - 1;
+        int i7 = this.zzb;
+        int i10 = i7 - 1;
         int i11 = 0;
         if (i10 >= 0) {
             int compareTo = comparable.compareTo(((zzuk) this.zza[i10]).zza());
             if (compareTo > 0) {
-                return -(i3 + 1);
+                return -(i7 + 1);
             }
             if (compareTo == 0) {
                 return i10;
@@ -54,11 +54,11 @@ class zzuo extends AbstractMap {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Object zzm(int i3) {
+    public final Object zzm(int i7) {
         zzo();
-        Object value = ((zzuk) this.zza[i3]).getValue();
+        Object value = ((zzuk) this.zza[i7]).getValue();
         Object[] objArr = this.zza;
-        System.arraycopy(objArr, i3 + 1, objArr, i3, (this.zzb - i3) - 1);
+        System.arraycopy(objArr, i7 + 1, objArr, i7, (this.zzb - i7) - 1);
         this.zzb--;
         if (!this.zzc.isEmpty()) {
             Iterator it = zzn().entrySet().iterator();
@@ -129,16 +129,16 @@ class zzuo extends AbstractMap {
         if (size != zzuoVar.size()) {
             return false;
         }
-        int i3 = this.zzb;
-        if (i3 != zzuoVar.zzb) {
+        int i7 = this.zzb;
+        if (i7 != zzuoVar.zzb) {
             return entrySet().equals(zzuoVar.entrySet());
         }
-        for (int i10 = 0; i10 < i3; i10++) {
+        for (int i10 = 0; i10 < i7; i10++) {
             if (!zzg(i10).equals(zzuoVar.zzg(i10))) {
                 return false;
             }
         }
-        if (i3 != size) {
+        if (i7 != size) {
             return this.zzc.equals(zzuoVar.zzc);
         }
         return true;
@@ -153,9 +153,9 @@ class zzuo extends AbstractMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        int i3 = this.zzb;
+        int i7 = this.zzb;
         int i10 = 0;
-        for (int i11 = 0; i11 < i3; i11++) {
+        for (int i11 = 0; i11 < i7; i11++) {
             i10 += this.zza[i11].hashCode();
         }
         return this.zzc.size() > 0 ? this.zzc.hashCode() + i10 : i10;
@@ -209,8 +209,8 @@ class zzuo extends AbstractMap {
         if (this.zza == null) {
             this.zza = new Object[16];
         }
-        int i3 = -(zzl + 1);
-        if (i3 >= 16) {
+        int i7 = -(zzl + 1);
+        if (i7 >= 16) {
             return zzn().put(comparable, obj);
         }
         if (this.zzb == 16) {
@@ -220,17 +220,17 @@ class zzuo extends AbstractMap {
         }
         Object[] objArr = this.zza;
         int length = objArr.length;
-        System.arraycopy(objArr, i3, objArr, i3 + 1, 15 - i3);
-        this.zza[i3] = new zzuk(this, comparable, obj);
+        System.arraycopy(objArr, i7, objArr, i7 + 1, 15 - i7);
+        this.zza[i7] = new zzuk(this, comparable, obj);
         this.zzb++;
         return null;
     }
 
-    public final Map.Entry zzg(int i3) {
-        if (i3 < this.zzb) {
-            return (zzuk) this.zza[i3];
+    public final Map.Entry zzg(int i7) {
+        if (i7 < this.zzb) {
+            return (zzuk) this.zza[i7];
         }
-        throw new ArrayIndexOutOfBoundsException(i3);
+        throw new ArrayIndexOutOfBoundsException(i7);
     }
 
     public final boolean zzj() {

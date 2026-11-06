@@ -1,58 +1,33 @@
 package p4;
 
-import android.os.IBinder;
-import android.os.Parcel;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public IBinder a;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b b;
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public /* synthetic */ a(b bVar, int i7) {
+        this.a = i7;
+        this.b = bVar;
     }
 
-    @Override // p4.b
-    public final void c(int i3) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i3);
-            if (!this.a.transact(9, obtain, null, 1)) {
-                int i10 = e.b;
-            }
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // p4.b
-    public final void i(int i3) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(i3);
-            if (!this.a.transact(12, obtain, null, 1)) {
-                int i10 = e.b;
-            }
-        } finally {
-            obtain.recycle();
-        }
-    }
-
-    @Override // p4.b
-    public final void u0(w wVar) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeInt(1);
-            wVar.writeToParcel(obtain, 0);
-            if (!this.a.transact(3, obtain, null, 1)) {
-                int i3 = e.b;
-            }
-        } finally {
-            obtain.recycle();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        b bVar = this.b;
+        switch (i7) {
+            case 0:
+                bVar.a.unregisterReceiver(bVar.d);
+                break;
+            case 1:
+                b.a(bVar);
+                break;
+            default:
+                Uri uri = b.g;
+                bVar.b();
+                break;
         }
     }
 }

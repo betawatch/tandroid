@@ -18,32 +18,31 @@ import android.view.View;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import k2.p1;
-import o4.m0;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.b20;
-import org.telegram.messenger.bd;
-import org.telegram.messenger.df;
 import org.telegram.messenger.f6;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.h10;
+import org.telegram.messenger.g20;
+import org.telegram.messenger.h20;
+import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.mf;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.re;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.y10;
-import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.p5;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.t5;
-import tg.b0;
+import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.s5;
+import org.telegram.ui.Components.v5;
+import sg.b0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -51,51 +50,51 @@ public class WebmEncoder {
         private final Paint clearPaint;
         private final Path clipPath;
         private final int fps;
-        private final ArrayList<z10> mediaEntities;
+        private final ArrayList<h20> mediaEntities;
         Path path;
         private final Bitmap photo;
         Paint textColorPaint;
         Paint xRefPaint;
 
         public FrameDrawer(MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
-            ArrayList<z10> arrayList = new ArrayList<>();
+            ArrayList<h20> arrayList = new ArrayList<>();
             this.mediaEntities = arrayList;
             this.clearPaint = new Paint(1);
             this.bitmapPaint = new Paint(5);
-            int i3 = convertVideoParams.resultWidth;
-            this.W = i3;
+            int i7 = convertVideoParams.resultWidth;
+            this.W = i7;
             int i10 = convertVideoParams.resultHeight;
             this.H = i10;
             this.fps = convertVideoParams.framerate;
             Path path = new Path();
             this.clipPath = path;
-            path.addRoundRect(new RectF(0.0f, 0.0f, i3, i10), i3 * 0.125f, i10 * 0.125f, Path.Direction.CW);
+            path.addRoundRect(new RectF(0.0f, 0.0f, i7, i10), i7 * 0.125f, i10 * 0.125f, Path.Direction.CW);
             this.photo = BitmapFactory.decodeFile(convertVideoParams.videoPath);
             arrayList.addAll(convertVideoParams.mediaEntities);
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
-                z10 z10Var = this.mediaEntities.get(i11);
-                byte b10 = z10Var.a;
+                h20 h20Var = this.mediaEntities.get(i11);
+                byte b10 = h20Var.a;
                 if (b10 == 0 || b10 == 2 || b10 == 5) {
-                    initStickerEntity(z10Var);
+                    initStickerEntity(h20Var);
                 } else if (b10 == 1) {
-                    initTextEntity(z10Var);
+                    initTextEntity(h20Var);
                 }
             }
             this.clearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         }
 
-        private void applyRoundRadius(z10 z10Var, Bitmap bitmap, int i3) {
-            if (bitmap == null || z10Var == null) {
+        private void applyRoundRadius(h20 h20Var, Bitmap bitmap, int i7) {
+            if (bitmap == null || h20Var == null) {
                 return;
             }
-            if (z10Var.s == 0.0f && i3 == 0) {
+            if (h20Var.s == 0.0f && i7 == 0) {
                 return;
             }
-            if (z10Var.L == null) {
-                z10Var.L = new Canvas(bitmap);
+            if (h20Var.L == null) {
+                h20Var.L = new Canvas(bitmap);
             }
-            if (z10Var.s != 0.0f) {
+            if (h20Var.s != 0.0f) {
                 if (this.path == null) {
                     this.path = new Path();
                 }
@@ -105,232 +104,232 @@ public class WebmEncoder {
                     paint.setColor(-16777216);
                     this.xRefPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 }
-                float min = Math.min(bitmap.getWidth(), bitmap.getHeight()) * z10Var.s;
+                float min = Math.min(bitmap.getWidth(), bitmap.getHeight()) * h20Var.s;
                 this.path.rewind();
                 this.path.addRoundRect(new RectF(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight()), min, min, Path.Direction.CCW);
                 this.path.toggleInverseFillType();
-                z10Var.L.drawPath(this.path, this.xRefPaint);
+                h20Var.L.drawPath(this.path, this.xRefPaint);
             }
-            if (i3 != 0) {
+            if (i7 != 0) {
                 if (this.textColorPaint == null) {
                     Paint paint2 = new Paint(1);
                     this.textColorPaint = paint2;
                     paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
                 }
-                this.textColorPaint.setColor(i3);
-                z10Var.L.drawRect(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight(), this.textColorPaint);
+                this.textColorPaint.setColor(i7);
+                h20Var.L.drawRect(0.0f, 0.0f, bitmap.getWidth(), bitmap.getHeight(), this.textColorPaint);
             }
         }
 
-        private void drawEntity(Canvas canvas, z10 z10Var, int i3, long j10) {
-            z10 z10Var2;
+        private void drawEntity(Canvas canvas, h20 h20Var, int i7, long j3) {
+            h20 h20Var2;
             Canvas canvas2;
-            long j11;
-            RLottieNative rLottieNative = z10Var.D;
+            long j10;
+            RLottieNative rLottieNative = h20Var.D;
             int i10 = 0;
             if (rLottieNative != null) {
-                Bitmap bitmap = z10Var.G;
-                if (bitmap == null || z10Var.U <= 0 || z10Var.V <= 0) {
+                Bitmap bitmap = h20Var.G;
+                if (bitmap == null || h20Var.U <= 0 || h20Var.V <= 0) {
                     return;
                 }
-                rLottieNative.c((int) z10Var.E, bitmap, true);
-                Bitmap bitmap2 = z10Var.G;
-                if ((z10Var.b & 8) == 0) {
-                    i3 = 0;
+                rLottieNative.c((int) h20Var.E, bitmap, true);
+                Bitmap bitmap2 = h20Var.G;
+                if ((h20Var.b & 8) == 0) {
+                    i7 = 0;
                 }
-                applyRoundRadius(z10Var, bitmap2, i3);
-                canvas.drawBitmap(z10Var.G, z10Var.H, this.bitmapPaint);
-                float f10 = z10Var.E + z10Var.F;
-                z10Var.E = f10;
-                if (f10 >= z10Var.D.a[0]) {
-                    z10Var.E = 0.0f;
+                applyRoundRadius(h20Var, bitmap2, i7);
+                canvas.drawBitmap(h20Var.G, h20Var.H, this.bitmapPaint);
+                float f10 = h20Var.E + h20Var.F;
+                h20Var.E = f10;
+                if (f10 >= h20Var.D.a[0]) {
+                    h20Var.E = 0.0f;
                     return;
                 }
                 return;
             }
-            if (z10Var.J != null) {
-                float f11 = z10Var.E;
+            if (h20Var.J != null) {
+                float f11 = h20Var.E;
                 int i11 = (int) f11;
-                float f12 = f11 + z10Var.F;
-                z10Var.E = f12;
+                float f12 = f11 + h20Var.F;
+                h20Var.E = f12;
                 for (int i12 = (int) f12; i11 != i12; i12--) {
-                    z10Var.J.r(true);
+                    h20Var.J.r(true);
                 }
-                q5 q5Var = z10Var.J.w;
-                Bitmap bitmap3 = q5Var != null ? q5Var.b : null;
+                s5 s5Var = h20Var.J.w;
+                Bitmap bitmap3 = s5Var != null ? s5Var.b : null;
                 if (bitmap3 != null) {
-                    canvas.drawBitmap(bitmap3, z10Var.H, this.bitmapPaint);
+                    canvas.drawBitmap(bitmap3, h20Var.H, this.bitmapPaint);
                     return;
                 }
                 return;
             }
-            canvas.drawBitmap(z10Var.G, z10Var.H, this.bitmapPaint);
-            ArrayList arrayList = z10Var.k;
+            canvas.drawBitmap(h20Var.G, h20Var.H, this.bitmapPaint);
+            ArrayList arrayList = h20Var.k;
             if (arrayList == null || arrayList.isEmpty()) {
                 return;
             }
-            while (i10 < z10Var.k.size()) {
-                y10 y10Var = (y10) z10Var.k.get(i10);
-                if (y10Var == null || (z10Var2 = y10Var.b) == null) {
+            while (i10 < h20Var.k.size()) {
+                g20 g20Var = (g20) h20Var.k.get(i10);
+                if (g20Var == null || (h20Var2 = g20Var.b) == null) {
                     canvas2 = canvas;
-                    j11 = j10;
+                    j10 = j3;
                 } else {
                     canvas2 = canvas;
-                    j11 = j10;
-                    drawEntity(canvas2, z10Var2, z10Var.l, j11);
+                    j10 = j3;
+                    drawEntity(canvas2, h20Var2, h20Var.l, j10);
                 }
                 i10++;
                 canvas = canvas2;
-                j10 = j11;
+                j3 = j10;
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public void initStickerEntity(z10 z10Var) {
-            int i3;
-            int i10 = (int) (z10Var.f * this.W);
-            z10Var.U = i10;
-            int i11 = (int) (z10Var.g * this.H);
-            z10Var.V = i11;
+        public void initStickerEntity(h20 h20Var) {
+            int i7;
+            int i10 = (int) (h20Var.f * this.W);
+            h20Var.U = i10;
+            int i11 = (int) (h20Var.g * this.H);
+            h20Var.V = i11;
             if (i10 > 512) {
-                z10Var.V = (int) ((i11 / i10) * 512.0f);
-                z10Var.U = 512;
+                h20Var.V = (int) ((i11 / i10) * 512.0f);
+                h20Var.U = 512;
             }
-            int i12 = z10Var.V;
+            int i12 = h20Var.V;
             if (i12 > 512) {
-                z10Var.U = (int) ((z10Var.U / i12) * 512.0f);
-                z10Var.V = 512;
+                h20Var.U = (int) ((h20Var.U / i12) * 512.0f);
+                h20Var.V = 512;
             }
-            byte b10 = z10Var.b;
+            byte b10 = h20Var.b;
             if ((b10 & 1) != 0) {
-                int i13 = z10Var.U;
-                if (i13 <= 0 || (i3 = z10Var.V) <= 0) {
+                int i13 = h20Var.U;
+                if (i13 <= 0 || (i7 = h20Var.V) <= 0) {
                     return;
                 }
-                z10Var.G = Bitmap.createBitmap(i13, i3, Bitmap.Config.ARGB_8888);
-                RLottieNative a10 = RLottieNative.a(z10Var.j, null, null, null, 0, null);
-                z10Var.D = a10;
-                z10Var.F = a10 != null ? a10.a[1] / this.fps : 0.0f;
+                h20Var.G = Bitmap.createBitmap(i13, i7, Bitmap.Config.ARGB_8888);
+                RLottieNative a10 = RLottieNative.a(h20Var.j, null, null, null, 0, null);
+                h20Var.D = a10;
+                h20Var.F = a10 != null ? a10.a[1] / this.fps : 0.0f;
             } else if ((b10 & 4) != 0) {
-                z10Var.K = false;
-                t5 t5Var = new t5(new File(z10Var.j), true, 0L, 0, null, null, null, 0L, h10.t0, true, 512, 512, null, 0, true);
-                z10Var.J = t5Var;
-                z10Var.F = t5Var.d[5] / this.fps;
-                z10Var.E = 1.0f;
-                t5Var.r(true);
+                h20Var.K = false;
+                v5 v5Var = new v5(new File(h20Var.j), true, 0L, 0, null, null, null, 0L, p10.s0, true, 512, 512, null, 0, true);
+                h20Var.J = v5Var;
+                h20Var.F = v5Var.d[5] / this.fps;
+                h20Var.E = 1.0f;
+                v5Var.r(true);
             } else {
-                String str = z10Var.j;
-                if (!TextUtils.isEmpty(z10Var.t) && (z10Var.b & 16) != 0) {
-                    str = z10Var.t;
+                String str = h20Var.j;
+                if (!TextUtils.isEmpty(h20Var.t) && (h20Var.b & 16) != 0) {
+                    str = h20Var.t;
                 }
                 BitmapFactory.Options options = new BitmapFactory.Options();
-                if (z10Var.a == 2) {
+                if (h20Var.a == 2) {
                     options.inMutable = true;
                 }
                 Bitmap decodeFile = BitmapFactory.decodeFile(str, options);
-                z10Var.G = decodeFile;
-                if (z10Var.a == 2 && decodeFile != null) {
-                    z10Var.s = g0.L(12.0f) / Math.min(z10Var.q, z10Var.r);
-                    Pair N0 = g0.N0(z10Var.j);
-                    z10Var.e = (float) (z10Var.e - Math.toRadians(((Integer) N0.first).intValue()));
+                h20Var.G = decodeFile;
+                if (h20Var.a == 2 && decodeFile != null) {
+                    h20Var.s = g0.L(12.0f) / Math.min(h20Var.q, h20Var.r);
+                    Pair N0 = g0.N0(h20Var.j);
+                    h20Var.e = (float) (h20Var.e - Math.toRadians(((Integer) N0.first).intValue()));
                     if ((((Integer) N0.first).intValue() / 90) % 2 == 1) {
-                        float f10 = z10Var.c;
-                        float f11 = z10Var.f;
+                        float f10 = h20Var.c;
+                        float f11 = h20Var.f;
                         float f12 = (f11 / 2.0f) + f10;
-                        float f13 = z10Var.d;
-                        float f14 = z10Var.g;
+                        float f13 = h20Var.d;
+                        float f14 = h20Var.g;
                         float f15 = (f14 / 2.0f) + f13;
                         float f16 = this.W;
                         float f17 = this.H;
                         float f18 = (f11 * f16) / f17;
                         float f19 = (f14 * f17) / f16;
-                        z10Var.f = f19;
-                        z10Var.g = f18;
-                        z10Var.c = f12 - (f19 / 2.0f);
-                        z10Var.d = f15 - (f18 / 2.0f);
+                        h20Var.f = f19;
+                        h20Var.g = f18;
+                        h20Var.c = f12 - (f19 / 2.0f);
+                        h20Var.d = f15 - (f18 / 2.0f);
                     }
-                    applyRoundRadius(z10Var, z10Var.G, 0);
+                    applyRoundRadius(h20Var, h20Var.G, 0);
                 } else if (decodeFile != null) {
-                    float width = decodeFile.getWidth() / z10Var.G.getHeight();
+                    float width = decodeFile.getWidth() / h20Var.G.getHeight();
                     if (width > 1.0f) {
-                        float f20 = z10Var.g;
+                        float f20 = h20Var.g;
                         float f21 = f20 / width;
-                        z10Var.d = com.google.android.recaptcha.internal.a.z(f20, f21, 2.0f, z10Var.d);
-                        z10Var.g = f21;
+                        h20Var.d = com.google.android.recaptcha.internal.a.A(f20, f21, 2.0f, h20Var.d);
+                        h20Var.g = f21;
                     } else if (width < 1.0f) {
-                        float f22 = z10Var.f;
+                        float f22 = h20Var.f;
                         float f23 = width * f22;
-                        z10Var.c = com.google.android.recaptcha.internal.a.z(f22, f23, 2.0f, z10Var.c);
-                        z10Var.f = f23;
+                        h20Var.c = com.google.android.recaptcha.internal.a.A(f22, f23, 2.0f, h20Var.c);
+                        h20Var.f = f23;
                     }
                 }
             }
-            setupMatrix(z10Var);
+            setupMatrix(h20Var);
         }
 
-        private void initTextEntity(final z10 z10Var) {
+        private void initTextEntity(final h20 h20Var) {
             f6[] f6VarArr;
             Typeface d;
-            final ug.b bVar = new ug.b(t0.b);
+            final tg.b bVar = new tg.b(t0.b);
             bVar.getPaint().setAntiAlias(true);
-            bVar.H = false;
+            bVar.G = false;
             bVar.setBackgroundColor(0);
             bVar.setPadding(g0.L(7.0f), g0.L(7.0f), g0.L(7.0f), g0.L(7.0f));
-            b0 b0Var = z10Var.n;
+            b0 b0Var = h20Var.n;
             if (b0Var != null && (d = b0Var.d()) != null) {
                 bVar.setTypeface(d);
             }
-            bVar.setTextSize(0, z10Var.m);
-            SpannableString spannableString = new SpannableString(z10Var.j);
-            ArrayList arrayList = z10Var.k;
+            bVar.setTextSize(0, h20Var.m);
+            SpannableString spannableString = new SpannableString(h20Var.j);
+            ArrayList arrayList = h20Var.k;
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                int i10 = i3 + 1;
-                final y10 y10Var = (y10) arrayList.get(i3);
-                if (y10Var.a != null) {
-                    z10 z10Var2 = new z10();
-                    y10Var.b = z10Var2;
-                    z10Var2.j = y10Var.a;
-                    z10Var2.b = y10Var.c;
-                    p5 p5Var = new p5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
-                        @Override // org.telegram.ui.Components.p5, android.text.style.ReplacementSpan
+            int i7 = 0;
+            while (i7 < size) {
+                int i10 = i7 + 1;
+                final g20 g20Var = (g20) arrayList.get(i7);
+                if (g20Var.a != null) {
+                    h20 h20Var2 = new h20();
+                    g20Var.b = h20Var2;
+                    h20Var2.j = g20Var.a;
+                    h20Var2.b = g20Var.c;
+                    r5 r5Var = new r5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
+                        @Override // org.telegram.ui.Components.r5, android.text.style.ReplacementSpan
                         public void draw(Canvas canvas, CharSequence charSequence, int i11, int i12, float f10, int i13, int i14, int i15, Paint paint) {
                             super.draw(canvas, charSequence, i11, i12, f10, i13, i14, i15, paint);
-                            z10 z10Var3 = z10Var;
-                            float paddingLeft = ((((this.measuredSize / 2.0f) + (bVar.getPaddingLeft() + f10)) / z10Var3.q) * z10Var3.f) + z10Var.c;
-                            float f11 = z10Var3.d;
-                            z10 z10Var4 = z10Var;
-                            float f12 = z10Var4.g;
-                            float paddingTop = (((((i15 - i13) / 2.0f) + (bVar.getPaddingTop() + i13)) / z10Var4.r) * f12) + f11;
-                            if (z10Var4.e != 0.0f) {
-                                float f13 = (z10Var4.f / 2.0f) + z10Var4.c;
-                                float f14 = (f12 / 2.0f) + z10Var4.d;
+                            h20 h20Var3 = h20Var;
+                            float paddingLeft = ((((this.measuredSize / 2.0f) + (bVar.getPaddingLeft() + f10)) / h20Var3.q) * h20Var3.f) + h20Var.c;
+                            float f11 = h20Var3.d;
+                            h20 h20Var4 = h20Var;
+                            float f12 = h20Var4.g;
+                            float paddingTop = (((((i15 - i13) / 2.0f) + (bVar.getPaddingTop() + i13)) / h20Var4.r) * f12) + f11;
+                            if (h20Var4.e != 0.0f) {
+                                float f13 = (h20Var4.f / 2.0f) + h20Var4.c;
+                                float f14 = (f12 / 2.0f) + h20Var4.d;
                                 float f15 = FrameDrawer.this.W / FrameDrawer.this.H;
-                                double d10 = paddingLeft - f13;
-                                double d11 = (paddingTop - f14) / f15;
-                                paddingLeft = ((float) ((Math.cos(-z10Var.e) * d10) - (Math.sin(-z10Var.e) * d11))) + f13;
-                                paddingTop = (((float) p1.c(-z10Var.e, d11, Math.sin(-z10Var.e) * d10)) * f15) + f14;
+                                double d2 = paddingLeft - f13;
+                                double d10 = (paddingTop - f14) / f15;
+                                paddingLeft = ((float) ((Math.cos(-h20Var.e) * d2) - (Math.sin(-h20Var.e) * d10))) + f13;
+                                paddingTop = (((float) jg.g.d(-h20Var.e, d10, Math.sin(-h20Var.e) * d2)) * f15) + f14;
                             }
-                            z10 z10Var5 = y10Var.b;
+                            h20 h20Var5 = g20Var.b;
                             int i16 = this.measuredSize;
-                            z10 z10Var6 = z10Var;
-                            float f16 = (i16 / z10Var6.q) * z10Var6.f;
-                            z10Var5.f = f16;
-                            float f17 = (i16 / z10Var6.r) * z10Var6.g;
-                            z10Var5.g = f17;
-                            z10Var5.c = paddingLeft - (f16 / 2.0f);
-                            z10Var5.d = paddingTop - (f17 / 2.0f);
-                            z10Var5.e = z10Var6.e;
-                            if (z10Var5.G == null) {
-                                FrameDrawer.this.initStickerEntity(z10Var5);
+                            h20 h20Var6 = h20Var;
+                            float f16 = (i16 / h20Var6.q) * h20Var6.f;
+                            h20Var5.f = f16;
+                            float f17 = (i16 / h20Var6.r) * h20Var6.g;
+                            h20Var5.g = f17;
+                            h20Var5.c = paddingLeft - (f16 / 2.0f);
+                            h20Var5.d = paddingTop - (f17 / 2.0f);
+                            h20Var5.e = h20Var6.e;
+                            if (h20Var5.G == null) {
+                                FrameDrawer.this.initStickerEntity(h20Var5);
                             }
                         }
                     };
-                    int i11 = y10Var.offset;
-                    spannableString.setSpan(p5Var, i11, y10Var.length + i11, 33);
+                    int i11 = g20Var.offset;
+                    spannableString.setSpan(r5Var, i11, g20Var.length + i11, 33);
                 }
-                i3 = i10;
+                i7 = i10;
             }
             CharSequence m10 = i6.m(spannableString, bVar.getPaint().getFontMetricsInt(), false, null, 0);
             if ((m10 instanceof Spanned) && (f6VarArr = (f6[]) ((Spanned) m10).getSpans(0, m10.length(), f6.class)) != null) {
@@ -339,58 +338,58 @@ public class WebmEncoder {
                 }
             }
             bVar.setText(m10);
-            bVar.setTextColor(z10Var.l);
-            int i12 = z10Var.p;
+            bVar.setTextColor(h20Var.l);
+            int i12 = h20Var.p;
             bVar.setGravity(i12 != 1 ? i12 != 2 ? 19 : 21 : 17);
-            int i13 = z10Var.p;
-            bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !bd.a0 : bd.a0) ? 3 : 2 : 4);
+            int i13 = h20Var.p;
+            bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !hd.a0 : hd.a0) ? 3 : 2 : 4);
             bVar.setHorizontallyScrolling(false);
             bVar.setImeOptions(TLObject.FLAG_28);
             bVar.setFocusableInTouchMode(true);
             bVar.setInputType(bVar.getInputType() | TLObject.FLAG_14);
             setBreakStrategy(bVar);
-            byte b10 = z10Var.b;
+            byte b10 = h20Var.b;
             if (b10 == 0) {
-                bVar.setFrameColor(z10Var.l);
-                bVar.setTextColor(g0.B(z10Var.l) >= 0.721f ? -16777216 : -1);
+                bVar.setFrameColor(h20Var.l);
+                bVar.setTextColor(g0.B(h20Var.l) >= 0.721f ? -16777216 : -1);
             } else if (b10 == 1) {
-                bVar.setFrameColor(g0.B(z10Var.l) >= 0.25f ? -1728053248 : -1711276033);
-                bVar.setTextColor(z10Var.l);
+                bVar.setFrameColor(g0.B(h20Var.l) >= 0.25f ? -1728053248 : -1711276033);
+                bVar.setTextColor(h20Var.l);
             } else if (b10 == 2) {
-                bVar.setFrameColor(g0.B(z10Var.l) >= 0.25f ? -16777216 : -1);
-                bVar.setTextColor(z10Var.l);
+                bVar.setFrameColor(g0.B(h20Var.l) >= 0.25f ? -16777216 : -1);
+                bVar.setTextColor(h20Var.l);
             } else if (b10 == 3) {
                 bVar.setFrameColor(0);
-                bVar.setTextColor(z10Var.l);
+                bVar.setTextColor(h20Var.l);
             }
-            bVar.measure(View.MeasureSpec.makeMeasureSpec(z10Var.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(z10Var.r, TLObject.FLAG_30));
-            bVar.layout(0, 0, z10Var.q, z10Var.r);
-            z10Var.G = Bitmap.createBitmap(z10Var.q, z10Var.r, Bitmap.Config.ARGB_8888);
-            bVar.draw(new Canvas(z10Var.G));
-            setupMatrix(z10Var);
+            bVar.measure(View.MeasureSpec.makeMeasureSpec(h20Var.q, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(h20Var.r, TLObject.FLAG_30));
+            bVar.layout(0, 0, h20Var.q, h20Var.r);
+            h20Var.G = Bitmap.createBitmap(h20Var.q, h20Var.r, Bitmap.Config.ARGB_8888);
+            bVar.draw(new Canvas(h20Var.G));
+            setupMatrix(h20Var);
         }
 
-        private void setupMatrix(z10 z10Var) {
-            t5 t5Var;
+        private void setupMatrix(h20 h20Var) {
+            v5 v5Var;
             Matrix matrix = new Matrix();
-            z10Var.H = matrix;
-            Bitmap bitmap = z10Var.G;
-            if (bitmap == null && (t5Var = z10Var.J) != null) {
-                q5 q5Var = t5Var.w;
-                bitmap = q5Var != null ? q5Var.b : null;
+            h20Var.H = matrix;
+            Bitmap bitmap = h20Var.G;
+            if (bitmap == null && (v5Var = h20Var.J) != null) {
+                s5 s5Var = v5Var.w;
+                bitmap = s5Var != null ? s5Var.b : null;
             }
             if (bitmap != null) {
                 matrix.postScale(1.0f / bitmap.getWidth(), 1.0f / bitmap.getHeight());
             }
-            if (z10Var.a != 1 && (z10Var.b & 2) != 0) {
-                z10Var.H.postScale(-1.0f, 1.0f, 0.5f, 0.5f);
+            if (h20Var.a != 1 && (h20Var.b & 2) != 0) {
+                h20Var.H.postScale(-1.0f, 1.0f, 0.5f, 0.5f);
             }
-            z10Var.H.postScale(z10Var.f * this.W, z10Var.g * this.H);
-            z10Var.H.postTranslate(z10Var.c * this.W, z10Var.d * this.H);
-            z10Var.H.postRotate((float) (((-z10Var.e) / 3.141592653589793d) * 180.0d), ((z10Var.f / 2.0f) + z10Var.c) * this.W, ((z10Var.g / 2.0f) + z10Var.d) * this.H);
+            h20Var.H.postScale(h20Var.f * this.W, h20Var.g * this.H);
+            h20Var.H.postTranslate(h20Var.c * this.W, h20Var.d * this.H);
+            h20Var.H.postRotate((float) (((-h20Var.e) / 3.141592653589793d) * 180.0d), ((h20Var.f / 2.0f) + h20Var.c) * this.W, ((h20Var.g / 2.0f) + h20Var.d) * this.H);
         }
 
-        public void draw(Canvas canvas, int i3) {
+        public void draw(Canvas canvas, int i7) {
             canvas.drawPaint(this.clearPaint);
             canvas.save();
             canvas.clipPath(this.clipPath);
@@ -398,16 +397,16 @@ public class WebmEncoder {
             if (bitmap != null) {
                 canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
             }
-            long j10 = (1000000000 / this.fps) * i3;
+            long j3 = (1000000000 / this.fps) * i7;
             int size = this.mediaEntities.size();
             for (int i10 = 0; i10 < size; i10++) {
-                z10 z10Var = this.mediaEntities.get(i10);
-                drawEntity(canvas, z10Var, z10Var.l, j10);
+                h20 h20Var = this.mediaEntities.get(i10);
+                drawEntity(canvas, h20Var, h20Var.l, j3);
             }
             canvas.restore();
         }
 
-        public void setBreakStrategy(ug.b bVar) {
+        public void setBreakStrategy(tg.b bVar) {
             bVar.setBreakStrategy(0);
         }
     }
@@ -419,18 +418,18 @@ public class WebmEncoder {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean convert(MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams, int i3) {
-        long j10;
-        boolean z10;
+    public static boolean convert(MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams, int i7) {
+        long j3;
+        boolean z9;
         long length;
-        df dfVar;
+        mf mfVar;
         int i10;
         int i11;
-        df dfVar2;
+        mf mfVar2;
         int i12 = convertVideoParams.resultWidth;
         int i13 = convertVideoParams.resultHeight;
         long createEncoder = createEncoder(convertVideoParams.cacheFile.getAbsolutePath(), i12, i13, convertVideoParams.framerate, convertVideoParams.bitrate);
-        boolean z11 = true;
+        boolean z10 = true;
         if (createEncoder == 0) {
             return true;
         }
@@ -452,79 +451,79 @@ public class WebmEncoder {
                             a8.b("webm writeFile error at " + i14 + "/" + ceil);
                             stop(createEncoder);
                             bitmap.recycle();
-                            return z11;
+                            return z10;
                         } catch (Exception e10) {
                             e = e10;
-                            j10 = createEncoder;
-                            a8.g(e, z11);
-                            stop(j10);
+                            j3 = createEncoder;
+                            a8.g(e, z10);
+                            stop(j3);
                             if (bitmap != null) {
                             }
-                            z10 = true;
+                            z9 = true;
                             length = convertVideoParams.cacheFile.length();
-                            if (i3 > 0) {
+                            if (i7 > 0) {
                             }
-                            dfVar = convertVideoParams.callback;
-                            if (dfVar != null) {
+                            mfVar = convertVideoParams.callback;
+                            if (mfVar != null) {
                             }
-                            a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i3);
-                            return z10;
+                            a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i7);
+                            return z9;
                         }
                     }
-                    df dfVar3 = convertVideoParams.callback;
-                    if (dfVar3 != null) {
+                    mf mfVar3 = convertVideoParams.callback;
+                    if (mfVar3 != null) {
                         i10 = i12;
-                        j10 = createEncoder;
+                        j3 = createEncoder;
                         i11 = i13;
                         try {
                             try {
-                                ((m0) dfVar3).k(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
+                                ((re) mfVar3).k(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
                             } catch (Exception e11) {
                                 e = e11;
-                                z11 = true;
-                                a8.g(e, z11);
-                                stop(j10);
+                                z10 = true;
+                                a8.g(e, z10);
+                                stop(j3);
                                 if (bitmap != null) {
                                     bitmap.recycle();
                                 }
-                                z10 = true;
+                                z9 = true;
                                 length = convertVideoParams.cacheFile.length();
-                                if (i3 > 0) {
+                                if (i7 > 0) {
                                 }
-                                dfVar = convertVideoParams.callback;
-                                if (dfVar != null) {
+                                mfVar = convertVideoParams.callback;
+                                if (mfVar != null) {
                                 }
-                                a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i3);
-                                return z10;
+                                a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i7);
+                                return z9;
                             }
                         } catch (Throwable th2) {
                             th = th2;
-                            stop(j10);
+                            stop(j3);
                             if (bitmap != null) {
                             }
                             throw th;
                         }
                     } else {
                         i10 = i12;
-                        j10 = createEncoder;
+                        j3 = createEncoder;
                         i11 = i13;
                     }
-                    if (i14 % 3 == 0 && (dfVar2 = convertVideoParams.callback) != null) {
-                        boolean z12 = ((b20) ((m0) dfVar2).a).W;
+                    if (i14 % 3 == 0 && (mfVar2 = convertVideoParams.callback) != null) {
+                        boolean z11 = ((j20) ((re) mfVar2).b).W;
                     }
                     i14++;
                     i13 = i11;
                     i12 = i10;
-                    createEncoder = j10;
-                    z11 = true;
+                    createEncoder = j3;
+                    z10 = true;
                 }
                 stop(createEncoder);
                 bitmap.recycle();
-                z10 = false;
+                z9 = false;
             } catch (Throwable th3) {
                 th = th3;
-                j10 = createEncoder;
-                stop(j10);
+                j3 = createEncoder;
+                stop(j3);
                 if (bitmap != null) {
                     bitmap.recycle();
                 }
@@ -532,27 +531,27 @@ public class WebmEncoder {
             }
         } catch (Exception e12) {
             e = e12;
-            j10 = createEncoder;
+            j3 = createEncoder;
         }
         length = convertVideoParams.cacheFile.length();
-        if (i3 > 0 || length <= 261120) {
-            dfVar = convertVideoParams.callback;
-            if (dfVar != null) {
-                ((m0) dfVar).k(length, 1.0f);
+        if (i7 > 0 || length <= 261120) {
+            mfVar = convertVideoParams.callback;
+            if (mfVar != null) {
+                ((re) mfVar).k(length, 1.0f);
             }
-            a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i3);
-            return z10;
+            a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i7);
+            return z9;
         }
         int i15 = convertVideoParams.bitrate;
         convertVideoParams.bitrate = (int) ((261120.0f / length) * 0.9f * i15);
         convertVideoParams.cacheFile.delete();
         a8.b("webm encoded too much, got " + length + ", old bitrate = " + i15 + " new bitrate = " + convertVideoParams.bitrate);
-        return convert(convertVideoParams, i3 - 1);
+        return convert(convertVideoParams, i7 - 1);
     }
 
-    private static native long createEncoder(String str, int i3, int i10, int i11, long j10);
+    private static native long createEncoder(String str, int i7, int i10, int i11, long j3);
 
-    public static native void stop(long j10);
+    public static native void stop(long j3);
 
-    private static native boolean writeFrame(long j10, ByteBuffer byteBuffer, int i3, int i10);
+    private static native boolean writeFrame(long j3, ByteBuffer byteBuffer, int i7, int i10);
 }

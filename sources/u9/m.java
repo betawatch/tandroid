@@ -1,35 +1,36 @@
 package u9;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.Executor;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class m implements Executor {
-    public static final m a;
-    public static final Handler b;
-    public static final /* synthetic */ m[] c;
+public final class m implements ua.b {
+    public static final Object c = new Object();
+    public volatile Object a = c;
+    public volatile ua.b b;
 
-    static {
-        m mVar = new m("INSTANCE", 0);
-        a = mVar;
-        c = new m[]{mVar};
-        b = new Handler(Looper.getMainLooper());
+    public m(ua.b bVar) {
+        this.b = bVar;
     }
 
-    public static m valueOf(String str) {
-        return (m) Enum.valueOf(m.class, str);
-    }
-
-    public static m[] values() {
-        return (m[]) c.clone();
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        b.post(runnable);
+    @Override // ua.b
+    public final Object get() {
+        Object obj;
+        Object obj2 = this.a;
+        Object obj3 = c;
+        if (obj2 != obj3) {
+            return obj2;
+        }
+        synchronized (this) {
+            try {
+                obj = this.a;
+                if (obj == obj3) {
+                    obj = this.b.get();
+                    this.a = obj;
+                    this.b = null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return obj;
     }
 }

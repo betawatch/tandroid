@@ -1,49 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.net.Uri;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class h0 extends org.telegram.ui.ActionBar.u4 {
+    public final /* synthetic */ int r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ h0(i4 i4Var, int i3, TLRPC.WebPage webPage, org.telegram.messenger.zi ziVar, boolean z10, String str) {
-        this.d = i4Var;
-        this.b = i3;
-        this.e = webPage;
-        this.f = ziVar;
-        this.c = z10;
-        this.g = str;
+    public /* synthetic */ h0(Object obj, int i7) {
+        this.r = i7;
+        this.s = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new x((i4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (org.telegram.messenger.zi) this.f, this.c, (String) this.g));
-                break;
-            default:
-                org.telegram.messenger.g0.h3(new x((sf.b) this.d, (org.telegram.ui.ActionBar.s1[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
+    @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.p2
+    public void v() {
+        switch (this.r) {
+            case 1:
+                ((org.telegram.ui.Components.mo0) this.s).Q1 = true;
                 break;
         }
     }
 
-    public /* synthetic */ h0(sf.b bVar, org.telegram.ui.ActionBar.s1[] s1VarArr, int i3, Uri uri, Context context, boolean z10) {
-        this.d = bVar;
-        this.e = s1VarArr;
-        this.b = i3;
-        this.f = uri;
-        this.g = context;
-        this.c = z10;
+    @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.p2
+    public boolean x() {
+        boolean z9;
+        switch (this.r) {
+            case 0:
+                g4 g4Var = (g4) this.s;
+                org.telegram.ui.Cells.i9 i9Var = g4Var.Q0;
+                if (i9Var == null || !i9Var.x()) {
+                    return true;
+                }
+                g4Var.Q0.f(false);
+                return false;
+            case 1:
+            default:
+                return super.x();
+            case 2:
+                z9 = ((org.telegram.ui.Wallet.b2) this.s).m;
+                break;
+            case 3:
+                z9 = ((org.telegram.ui.Wallet.u2) this.s).d;
+                break;
+        }
+        return !z9;
     }
 }

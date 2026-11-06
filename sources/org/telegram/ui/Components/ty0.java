@@ -5,7 +5,7 @@ import android.text.TextPaint;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ty0 {
     public int a;
@@ -22,10 +22,10 @@ public final class ty0 {
         if (this.e) {
             typeface = (this.a & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/mw_bolditalic.ttf") : org.telegram.messenger.g0.o1("fonts/mw_bold.ttf");
         } else {
-            int i3 = this.a;
-            if ((i3 & 4) == 0 && (i3 & 2048) == 0) {
-                int i10 = i3 & 1;
-                typeface = (i10 == 0 || (i3 & 2) == 0) ? i10 != 0 ? org.telegram.messenger.g0.o() : (i3 & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/ritalic.ttf") : null : org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
+            int i7 = this.a;
+            if ((i7 & 4) == 0 && (i7 & 2048) == 0) {
+                int i10 = i7 & 1;
+                typeface = (i10 == 0 || (i7 & 2) == 0) ? i10 != 0 ? org.telegram.messenger.g0.o() : (i7 & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/ritalic.ttf") : null : org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
             } else {
                 typeface = Typeface.MONOSPACE;
             }

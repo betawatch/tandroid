@@ -1,14 +1,16 @@
 package gg;
 
-import java.nio.ShortBuffer;
-import mb.b;
-import v7.s;
+import android.graphics.Bitmap;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface a {
-    public static final s t = new s(8);
-    public static final b u = new b(9);
+public final class a {
+    public final Bitmap a;
+    public final List b;
 
-    void l0(ShortBuffer shortBuffer, int i3, ShortBuffer shortBuffer2, int i10, int i11);
+    public a(Bitmap bitmap, int i7, List list) {
+        this.b = list;
+        this.a = bitmap;
+    }
 }

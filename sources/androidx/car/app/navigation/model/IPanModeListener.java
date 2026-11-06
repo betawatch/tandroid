@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public interface IPanModeListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$navigation$model$IPanModeListener".replace('$', '.');
 
-    void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback);
+    void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Stub extends Binder implements IPanModeListener {
         static final int TRANSACTION_onPanModeChanged = 2;
 
-        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+        /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
         public static class Proxy implements IPanModeListener {
             private IBinder mRemote;
 
@@ -35,11 +35,11 @@ public interface IPanModeListener extends IInterface {
             }
 
             @Override // androidx.car.app.navigation.model.IPanModeListener
-            public void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback) {
+            public void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IPanModeListener.DESCRIPTOR);
-                    obtain.writeInt(z10 ? 1 : 0);
+                    obtain.writeInt(z9 ? 1 : 0);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -61,17 +61,17 @@ public interface IPanModeListener extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
             String str = IPanModeListener.DESCRIPTOR;
-            if (i3 >= 1 && i3 <= 16777215) {
+            if (i7 >= 1 && i7 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i3 == 1598968902) {
+            if (i7 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i3 != 2) {
-                return super.onTransact(i3, parcel, parcel2, i10);
+            if (i7 != 2) {
+                return super.onTransact(i7, parcel, parcel2, i10);
             }
             onPanModeChanged(parcel.readInt() != 0, IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             return true;
@@ -83,7 +83,7 @@ public interface IPanModeListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Default implements IPanModeListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -91,7 +91,7 @@ public interface IPanModeListener extends IInterface {
         }
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
-        public void onPanModeChanged(boolean z10, IOnDoneCallback iOnDoneCallback) {
+        public void onPanModeChanged(boolean z9, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

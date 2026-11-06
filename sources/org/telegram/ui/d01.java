@@ -1,81 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.util.SparseIntArray;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d01 extends org.telegram.ui.Components.zu {
-    public final /* synthetic */ int h0;
-    public final /* synthetic */ g11 i0;
+public final class d01 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q11 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d01(g11 g11Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11, int i3, qv0 qv0Var, int i10, int i11) {
-        super(context, e6Var, z10, z11, false, true, i3, qv0Var, i10, false);
-        this.i0 = g11Var;
-        this.h0 = i11;
+    public /* synthetic */ d01(q11 q11Var, int i7) {
+        this.c = i7;
+        this.d = q11Var;
     }
 
-    @Override // org.telegram.ui.Components.zu
-    public final ColorFilter getEmojiColorFilter() {
-        return this.i0.l1;
-    }
-
-    @Override // org.telegram.ui.Components.zu
-    public final boolean h(int i3) {
+    @Override // g.p
+    public final int i(int i7) {
         int i10;
-        v01 v01Var;
-        g11 g11Var = this.i0;
-        SparseIntArray sparseIntArray = g11Var.y0;
-        if (g11Var.y1) {
-            return false;
-        }
-        int i11 = this.h0;
-        if (i11 == 4 && i3 == 0) {
-            g11Var.R = !g11Var.R;
-            g11Var.e0.setVisibility(8);
-            org.telegram.ui.Components.zu zuVar = g11Var.d0[g11Var.R ? 1 : 0];
-            g11Var.e0 = zuVar;
-            zuVar.setVisibility(0);
-            g11Var.e0.y.setDrawable(getContext().getDrawable(g11Var.R ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            g11Var.e0.y.setContentDescription(org.telegram.messenger.bd.M0(g11Var.R ? 2131754756 : 2131751197, null));
-            g11Var.B(true, false, false);
-            g11Var.s0.h1(0, 0);
-            return true;
-        }
-        org.telegram.ui.Components.vu vuVar = this.F;
-        int i12 = ((vuVar == null || !this.c0) ? 0 : 1) + 1;
-        if (vuVar != null && this.c0 && i3 == 1) {
-            i10 = g11Var.n;
-        } else {
-            if ((i11 != 4 || i3 != 0) && i3 > 0) {
-                int i13 = i3 - i12;
-                if (sparseIntArray.indexOfKey(i13) >= 0) {
-                    i10 = sparseIntArray.get(i13);
+        ArrayList arrayList;
+        int i11;
+        switch (this.c) {
+            case 0:
+                q11 q11Var = this.d;
+                return (q11Var.w0.indexOfKey(i7) >= 0 || q11Var.z0.indexOfKey(i7) >= 0 || i7 == q11Var.f || i7 == q11Var.D || i7 == q11Var.n || i7 == q11Var.h || i7 == q11Var.w || i7 == q11Var.a || i7 == q11Var.y) ? q11Var.r0.J : ((i7 < q11Var.E || i7 >= q11Var.F) && !q11Var.Q) ? 5 : 8;
+            default:
+                q11 q11Var2 = this.d;
+                b11 b11Var = q11Var2.q0;
+                int d = b11Var.d(i7);
+                if (d == 6) {
+                    return q11Var2.r0.J;
                 }
-            }
-            i10 = 0;
-        }
-        g11.a(g11Var, i10, org.telegram.messenger.g0.L((i11 == 6 ? 7 : 0) - 2));
-        g11Var.e0.j(i3, true);
-        g11Var.i0.K1 = true;
-        g11Var.v(null, true, true);
-        yz0 yz0Var = g11Var.g0;
-        if (yz0Var != null && (v01Var = yz0Var.n) != null) {
-            v01Var.I1(null);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.zu
-    public final void i(org.telegram.ui.Components.vu vuVar) {
-        ValueAnimator valueAnimator = this.i0.W1;
-        if (valueAnimator == null || valueAnimator.isRunning()) {
-            vuVar.setScaleX(0.0f);
-            vuVar.setScaleY(0.0f);
+                if (d != 5) {
+                    q11 q11Var3 = b11Var.s;
+                    if (q11Var3.W != 14 ? i7 <= (i10 = b11Var.c) || (i7 - i10) - 1 >= q11Var3.D1.size() : (arrayList = q11Var3.C1) == null || i7 < (i11 = b11Var.c) || i7 - i11 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

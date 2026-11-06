@@ -1,35 +1,40 @@
 package b2;
 
-import android.app.Notification;
-import android.media.session.MediaSession;
-import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.os.Build;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static Notification.MediaStyle a() {
-        return new Notification.MediaStyle();
-    }
+public final class a {
+    public d a;
 
-    public static Notification.MediaStyle b(Notification.MediaStyle mediaStyle, int[] iArr, MediaSessionCompat$Token mediaSessionCompat$Token) {
-        if (iArr != null) {
-            e(mediaStyle, iArr);
+    public a(String str, int i7, int i10) {
+        if (str == null) {
+            throw new NullPointerException("package shouldn't be null");
         }
-        if (mediaSessionCompat$Token != null) {
-            c(mediaStyle, (MediaSession.Token) mediaSessionCompat$Token.b);
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("packageName should be nonempty");
         }
-        return mediaStyle;
+        if (Build.VERSION.SDK_INT < 28) {
+            this.a = new d(str, i7, i10);
+            return;
+        }
+        c cVar = new c(str, i7, i10);
+        b.a(i7, i10, str);
+        this.a = cVar;
     }
 
-    public static void c(Notification.MediaStyle mediaStyle, MediaSession.Token token) {
-        mediaStyle.setMediaSession(token);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof a) {
+            return this.a.equals(((a) obj).a);
+        }
+        return false;
     }
 
-    public static void d(Notification.Builder builder, Notification.MediaStyle mediaStyle) {
-        builder.setStyle(mediaStyle);
-    }
-
-    public static void e(Notification.MediaStyle mediaStyle, int... iArr) {
-        mediaStyle.setShowActionsInCompactView(iArr);
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

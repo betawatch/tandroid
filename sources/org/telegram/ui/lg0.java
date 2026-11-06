@@ -1,12 +1,46 @@
 package org.telegram.ui;
 
-import android.text.Layout;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface lg0 {
-    Layout a();
+public final /* synthetic */ class lg0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qg0 b;
 
-    View e();
+    public /* synthetic */ lg0(qg0 qg0Var, int i7) {
+        this.a = i7;
+        this.b = qg0Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                qg0 qg0Var = this.b;
+                pg0 pg0Var = qg0Var.i2;
+                HashSet hashSet = qg0Var.V1;
+                if (hashSet.size() != 0 && pg0Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : qg0Var.a2.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    pg0Var.a(arrayList);
+                    qg0Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                qg0 qg0Var2 = this.b;
+                qg0Var2.V1.clear();
+                qg0Var2.Q1.d.b(true);
+                qg0Var2.g1(true, false);
+                break;
+        }
+    }
 }

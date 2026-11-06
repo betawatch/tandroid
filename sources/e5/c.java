@@ -1,9 +1,36 @@
 package e5;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public interface c {
-    void a(f fVar);
+import android.os.Build;
+import java.util.HashSet;
 
-    void b();
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public abstract class c implements d {
+    public static final HashSet c = new HashSet();
+    public final String a;
+    public final String b;
+
+    public c(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        c.add(this);
+    }
+
+    public abstract boolean a();
+
+    public boolean b() {
+        HashSet hashSet = a.a;
+        String str = this.b;
+        if (hashSet.contains(str)) {
+            return true;
+        }
+        String str2 = Build.TYPE;
+        if (!"eng".equals(str2) && !"userdebug".equals(str2)) {
+            return false;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(str);
+        sb2.append(":dev");
+        return hashSet.contains(sb2.toString());
+    }
 }

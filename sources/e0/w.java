@@ -7,40 +7,40 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class w {
     public final CharSequence a;
     public final long b;
-    public final k0 c;
+    public final j0 c;
     public final Bundle d = new Bundle();
     public String e;
     public Uri f;
 
-    public w(CharSequence charSequence, long j10, k0 k0Var) {
+    public w(CharSequence charSequence, long j3, j0 j0Var) {
         this.a = charSequence;
-        this.b = j10;
-        this.c = k0Var;
+        this.b = j3;
+        this.c = j0Var;
     }
 
     public static Bundle[] a(ArrayList arrayList) {
         Bundle[] bundleArr = new Bundle[arrayList.size()];
         int size = arrayList.size();
-        for (int i3 = 0; i3 < size; i3++) {
-            w wVar = (w) arrayList.get(i3);
-            k0 k0Var = wVar.c;
+        for (int i7 = 0; i7 < size; i7++) {
+            w wVar = (w) arrayList.get(i7);
+            j0 j0Var = wVar.c;
             Bundle bundle = new Bundle();
             CharSequence charSequence = wVar.a;
             if (charSequence != null) {
                 bundle.putCharSequence("text", charSequence);
             }
             bundle.putLong("time", wVar.b);
-            if (k0Var != null) {
-                bundle.putCharSequence("sender", k0Var.a);
+            if (j0Var != null) {
+                bundle.putCharSequence("sender", j0Var.a);
                 if (Build.VERSION.SDK_INT >= 28) {
-                    bundle.putParcelable("sender_person", v.a(d1.f.E(k0Var)));
+                    bundle.putParcelable("sender_person", v.a(d1.f.E(j0Var)));
                 } else {
-                    bundle.putBundle("person", k0Var.c());
+                    bundle.putBundle("person", j0Var.c());
                 }
             }
             String str = wVar.e;
@@ -55,21 +55,21 @@ public final class w {
             if (bundle2 != null) {
                 bundle.putBundle("extras", bundle2);
             }
-            bundleArr[i3] = bundle;
+            bundleArr[i7] = bundle;
         }
         return bundleArr;
     }
 
     public final Notification.MessagingStyle.Message b() {
         Notification.MessagingStyle.Message a10;
-        int i3 = Build.VERSION.SDK_INT;
-        long j10 = this.b;
+        int i7 = Build.VERSION.SDK_INT;
+        long j3 = this.b;
         CharSequence charSequence = this.a;
-        k0 k0Var = this.c;
-        if (i3 >= 28) {
-            a10 = v.b(charSequence, j10, k0Var != null ? d1.f.E(k0Var) : null);
+        j0 j0Var = this.c;
+        if (i7 >= 28) {
+            a10 = v.b(charSequence, j3, j0Var != null ? d1.f.E(j0Var) : null);
         } else {
-            a10 = u.a(charSequence, j10, k0Var != null ? k0Var.a : null);
+            a10 = u.a(charSequence, j3, j0Var != null ? j0Var.a : null);
         }
         String str = this.e;
         if (str != null) {

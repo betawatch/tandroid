@@ -1,107 +1,60 @@
 package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class p4 extends AtomicReference implements Runnable {
-    public static final i4 c = new i4();
-    public static final i4 d = new i4();
-    public final Callable a;
-    public final /* synthetic */ q4 b;
+public final class p4 extends c4 implements RunnableFuture {
+    public volatile o4 n;
 
-    public p4(q4 q4Var, Callable callable) {
-        this.b = q4Var;
-        callable.getClass();
-        this.a = callable;
+    public p4(Callable callable) {
+        this.n = new o4(this, callable);
     }
 
-    public final void a(Thread thread) {
-        Runnable runnable = (Runnable) get();
-        h4 h4Var = null;
-        boolean z10 = false;
-        int i3 = 0;
-        while (true) {
-            boolean z11 = runnable instanceof h4;
-            i4 i4Var = d;
-            if (!z11) {
-                if (runnable != i4Var) {
-                    break;
-                }
-            } else {
-                h4Var = (h4) runnable;
-            }
-            i3++;
-            if (i3 <= 1000) {
-                Thread.yield();
-            } else if (runnable == i4Var || compareAndSet(runnable, i4Var)) {
-                z10 = Thread.interrupted() || z10;
-                LockSupport.park(h4Var);
-            }
-            runnable = (Runnable) get();
-        }
-        if (z10) {
-            thread.interrupt();
-        }
+    @Override // com.google.android.gms.internal.cast.c4
+    public final String a() {
+        o4 o4Var = this.n;
+        return o4Var != null ? a8.p0.p("task=[", o4Var.toString(), "]") : super.a();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Object call;
-        Thread currentThread = Thread.currentThread();
-        if (compareAndSet(null, currentThread)) {
-            q4 q4Var = this.b;
-            boolean isDone = q4Var.isDone();
-            i4 i4Var = c;
-            if (isDone) {
-                call = null;
-            } else {
-                try {
-                    call = this.a.call();
-                } catch (Throwable th2) {
+    @Override // com.google.android.gms.internal.cast.c4
+    public final void d() {
+        o4 o4Var;
+        Object obj = this.a;
+        if ((obj instanceof u3) && ((u3) obj).a && (o4Var = this.n) != null) {
+            h4 h4Var = o4.d;
+            h4 h4Var2 = o4.c;
+            Runnable runnable = (Runnable) o4Var.get();
+            if (runnable instanceof Thread) {
+                g4 g4Var = new g4(o4Var);
+                g4Var.setExclusiveOwnerThread(Thread.currentThread());
+                if (o4Var.compareAndSet(runnable, g4Var)) {
                     try {
-                        if (th2 instanceof InterruptedException) {
-                            Thread.currentThread().interrupt();
+                        Thread thread = (Thread) runnable;
+                        thread.interrupt();
+                        if (((Runnable) o4Var.getAndSet(h4Var2)) == h4Var) {
+                            LockSupport.unpark(thread);
                         }
-                        if (!compareAndSet(currentThread, i4Var)) {
-                            a(currentThread);
+                    } catch (Throwable th2) {
+                        if (((Runnable) o4Var.getAndSet(h4Var2)) == h4Var) {
+                            LockSupport.unpark((Thread) runnable);
                         }
-                        if (d4.f.f(q4Var, null, new w3(th2))) {
-                            d4.h(q4Var);
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        if (!compareAndSet(currentThread, i4Var)) {
-                            a(currentThread);
-                        }
-                        if (d4.f.f(q4Var, null, d4.h)) {
-                            d4.h(q4Var);
-                        }
-                        throw th3;
+                        throw th2;
                     }
                 }
             }
-            if (!compareAndSet(currentThread, i4Var)) {
-                a(currentThread);
-            }
-            if (isDone) {
-                return;
-            }
-            if (call == null) {
-                call = d4.h;
-            }
-            if (d4.f.f(q4Var, null, call)) {
-                d4.h(q4Var);
-            }
         }
+        this.n = null;
     }
 
-    @Override // java.util.concurrent.atomic.AtomicReference
-    public final String toString() {
-        Runnable runnable = (Runnable) get();
-        return a1.g.C(runnable == c ? "running=[DONE]" : runnable instanceof h4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.q("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
+    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
+    public final void run() {
+        o4 o4Var = this.n;
+        if (o4Var != null) {
+            o4Var.run();
+        }
+        this.n = null;
     }
 }

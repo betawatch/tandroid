@@ -1,68 +1,9 @@
 package y1;
 
-import androidx.lifecycle.a0;
-import androidx.lifecycle.t;
-import androidx.lifecycle.z;
-import ba.i;
-import c6.d;
+import bi.b1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a extends z {
-    public final d l;
-    public t m;
-    public i n;
-
-    public a(d dVar) {
-        this.l = dVar;
-        if (dVar.a != null) {
-            throw new IllegalStateException("There is already a listener registered");
-        }
-        dVar.a = this;
-    }
-
-    @Override // androidx.lifecycle.z
-    public final void f() {
-        d dVar = this.l;
-        dVar.b = true;
-        dVar.d = false;
-        dVar.c = false;
-        dVar.i.drainPermits();
-        dVar.c();
-    }
-
-    @Override // androidx.lifecycle.z
-    public final void g() {
-        this.l.b = false;
-    }
-
-    @Override // androidx.lifecycle.z
-    public final void i(a0 a0Var) {
-        super.i(a0Var);
-        this.m = null;
-        this.n = null;
-    }
-
-    public final void k() {
-        t tVar = this.m;
-        i iVar = this.n;
-        if (tVar == null || iVar == null) {
-            return;
-        }
-        super.i(iVar);
-        d(tVar, iVar);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder(64);
-        sb2.append("LoaderInfo{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append(" #0 : ");
-        Class<?> cls = this.l.getClass();
-        sb2.append(cls.getSimpleName());
-        sb2.append("{");
-        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
-        sb2.append("}}");
-        return sb2.toString();
-    }
+public final class a extends b1 {
+    public static final a b = new a(9);
 }

@@ -19,7 +19,7 @@ public final class v3 extends p4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i3) {
+    public final /* synthetic */ void accept(int i7) {
         t3.J();
         throw null;
     }
@@ -58,13 +58,13 @@ public final class v3 extends p4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a = this.b.get();
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j10) {
-        this.c.accept(this.a, j10);
+    public final void accept(long j3) {
+        this.c.accept(this.a, j3);
     }
 
     public v3(Supplier supplier, ObjLongConsumer objLongConsumer, o oVar) {

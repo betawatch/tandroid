@@ -1,23 +1,28 @@
 package t3;
 
-import a1.g;
-import b8.zb;
-import g2.n0;
+import e2.n0;
 import j$.util.Objects;
-import java.util.Locale;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final long a;
-    public final long b;
-    public final int c;
+public final class a extends i {
+    public final String b;
+    public final String c;
+    public final int d;
+    public final byte[] e;
 
-    public a(long j10, int i3, long j11) {
-        zb.f(j10 < j11);
-        this.a = j10;
-        this.b = j11;
-        this.c = i3;
+    public a(int i7, String str, String str2, byte[] bArr) {
+        super("APIC");
+        this.b = str;
+        this.c = str2;
+        this.d = i7;
+        this.e = bArr;
+    }
+
+    @Override // t3.i, e2.p0
+    public final void b(n0 n0Var) {
+        n0Var.a(this.d, this.e);
     }
 
     public final boolean equals(Object obj) {
@@ -26,7 +31,7 @@ public final class a {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c) {
+            if (this.d == aVar.d && Objects.equals(this.b, aVar.b) && Objects.equals(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
                 return true;
             }
         }
@@ -34,16 +39,15 @@ public final class a {
     }
 
     public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
+        int i7 = (527 + this.d) * 31;
+        String str = this.b;
+        int hashCode = (i7 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
     }
 
+    @Override // t3.i
     public final String toString() {
-        String str = n0.a;
-        Locale locale = Locale.US;
-        StringBuilder t10 = g.t(this.a, "Segment: startTimeMs=", ", endTimeMs=");
-        t10.append(this.b);
-        t10.append(", speedDivisor=");
-        t10.append(this.c);
-        return t10.toString();
+        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
     }
 }

@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import a8.ab;
 import android.app.Application;
-import b8.hb;
-import dd.c;
+import gd.c;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzgh {
     private zzvu zza;
     private final c zzb;
 
     public zzgh() {
-        int i3 = zzby.zza;
-        this.zzb = hb.b(zzgg.zza);
+        int i7 = zzby.zza;
+        this.zzb = ab.b(zzgg.zza);
     }
 
     private final Application zzb() {
@@ -54,7 +54,7 @@ public final class zzgh {
             r10 = this;
             int r0 = com.google.android.recaptcha.internal.zzby.zza
             com.google.android.recaptcha.internal.zzgf r0 = com.google.android.recaptcha.internal.zzgf.zza
-            dd.i r0 = b8.hb.b(r0)
+            gd.i r0 = a8.ab.b(r0)
             java.lang.Object r0 = r0.getValue()
             com.google.android.recaptcha.internal.zzch r0 = (com.google.android.recaptcha.internal.zzch) r0
             android.app.Application r0 = r10.zzb()

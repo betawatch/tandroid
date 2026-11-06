@@ -14,12 +14,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b5 extends View implements qe.b {
+public final class b5 extends View implements te.b {
+    public int D;
     public int E;
     public int F;
-    public int G;
     public final y4 a;
     public final int b;
     public final a5 c;
@@ -31,8 +31,8 @@ public final class b5 extends View implements qe.b {
     public final RectF r;
     public CharSequence s;
     public float w;
-    public final qe.a x;
-    public final qe.a y;
+    public final te.a x;
+    public final te.a y;
 
     public b5(Context context, y4 y4Var, CharSequence charSequence) {
         super(context);
@@ -41,8 +41,8 @@ public final class b5 extends View implements qe.b {
         this.n = new Paint(1);
         this.r = new RectF();
         xq xqVar = xq.h;
-        this.x = new qe.a(0, this, xqVar, 380L, true);
-        this.y = new qe.a(1, this, xqVar, 250L, false);
+        this.x = new te.a(0, this, xqVar, 380L, true);
+        this.y = new te.a(1, this, xqVar, 250L, false);
         this.a = y4Var;
         this.b = 1;
         this.c = (a5) xi.e.k.a();
@@ -58,51 +58,51 @@ public final class b5 extends View implements qe.b {
         CharSequence charSequence2 = this.s;
         this.w = charSequence2 != null ? textPaint.measureText(charSequence2, 0, charSequence2.length()) : 0.0f;
         setContentDescription(charSequence);
-        setOnClickListener(new ii.m(this, 19));
+        setOnClickListener(new ii.g(this, 16));
     }
 
-    @Override // qe.b
-    public final void Y(int i3, float f10, float f11, qe.c cVar) {
-        if (i3 == 0) {
+    @Override // te.b
+    public final void Y(int i7, float f10, float f11, te.c cVar) {
+        if (i7 == 0) {
             this.a.g();
         }
         invalidate();
     }
 
-    public final void a(boolean z10, boolean z11) {
-        qe.c cVar;
-        qe.a aVar = this.x;
-        if (aVar.f == z10 && (z11 || (cVar = aVar.h) == null || !cVar.h)) {
+    public final void a(boolean z9, boolean z10) {
+        te.c cVar;
+        te.a aVar = this.x;
+        if (aVar.f == z9 && (z10 || (cVar = aVar.h) == null || !cVar.h)) {
             return;
         }
         y4 y4Var = this.a;
-        aVar.a(z10, z11 && y4Var.t());
+        aVar.a(z9, z10 && y4Var.t());
         Y(0, aVar.e, 0.0f, null);
         y4Var.requestLayout();
     }
 
-    public final void b(boolean z10) {
-        this.y.a(z10, this.a.t());
+    public final void b(boolean z9) {
+        this.y.a(z9, this.a.t());
         invalidate();
     }
 
     public final void c() {
         y4 y4Var = this.a;
-        e6 e6Var = y4Var.a;
-        this.E = k6.w0(k6.Ci, e6Var);
-        this.F = i0.a.f(0.5f, k6.w0(k6.a7, e6Var), this.E);
-        int w02 = k6.w0(k6.Gi, e6Var);
-        this.G = w02;
-        int i3 = y4Var.g0;
+        f6 f6Var = y4Var.a;
+        this.D = k6.w0(k6.Ci, f6Var);
+        this.E = i0.a.f(0.5f, k6.w0(k6.a7, f6Var), this.D);
+        int w02 = k6.w0(k6.Gi, f6Var);
+        this.F = w02;
+        int i7 = y4Var.f0;
         a5 a5Var = this.c;
         a5 a5Var2 = a5.b;
         if (a5Var != a5Var2) {
-            w02 = i3;
+            w02 = i7;
         }
         this.e.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         this.f.b(w02);
         this.h.setColor(w02);
-        setBackground(k6.a0(a5Var == a5Var2 ? k6.r1(0.2f, this.G) : y4Var.i0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
+        setBackground(k6.a0(a5Var == a5Var2 ? k6.r1(0.2f, this.F) : y4Var.h0, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(23.0f)));
         invalidate();
     }
 
@@ -142,7 +142,7 @@ public final class b5 extends View implements qe.b {
         float width = getWidth();
         float height = getHeight();
         if (this.c == a5.b) {
-            int f11 = i0.a.f(this.x.e, this.F, this.E);
+            int f11 = i0.a.f(this.x.e, this.E, this.D);
             Paint paint = this.n;
             paint.setColor(f11);
             RectF rectF = this.r;
@@ -156,14 +156,14 @@ public final class b5 extends View implements qe.b {
             canvas.save();
             canvas.scale(T1, T1, width / 2.0f, height / 2.0f);
             float f14 = 1.0f - f13;
-            int i3 = (int) (f14 * 255.0f);
+            int i7 = (int) (f14 * 255.0f);
             if (this.d == z4.a || TextUtils.isEmpty(this.s)) {
                 f10 = 0.0f;
                 Drawable drawable = this.e;
                 float intrinsicWidth = drawable.getIntrinsicWidth();
                 float intrinsicHeight = drawable.getIntrinsicHeight();
                 drawable.setBounds((int) ((width - intrinsicWidth) / 2.0f), (int) ((height - intrinsicHeight) / 2.0f), (int) ((intrinsicWidth + width) / 2.0f), (int) ((intrinsicHeight + height) / 2.0f));
-                drawable.setAlpha(i3);
+                drawable.setAlpha(i7);
                 drawable.draw(canvas);
             } else {
                 TextPaint textPaint = this.h;
@@ -192,7 +192,7 @@ public final class b5 extends View implements qe.b {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i3, int i10) {
+    public final void onMeasure(int i7, int i10) {
         setMeasuredDimension(getButtonWidth(), org.telegram.messenger.g0.L(46.0f));
     }
 
@@ -225,7 +225,7 @@ public final class b5 extends View implements qe.b {
         return drawable == this.f || super.verifyDrawable(drawable);
     }
 
-    @Override // qe.b
-    public final /* synthetic */ void F(float f10, int i3) {
+    @Override // te.b
+    public final /* synthetic */ void F(float f10, int i7) {
     }
 }

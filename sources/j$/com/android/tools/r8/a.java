@@ -58,10 +58,10 @@ import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class a {
-    public static /* synthetic */ long N(long j10, long j11) {
-        long j12 = j10 + j11;
-        if (((j11 ^ j10) < 0) || ((j10 ^ j12) >= 0)) {
-            return j12;
+    public static /* synthetic */ long N(long j3, long j10) {
+        long j11 = j3 + j10;
+        if (((j10 ^ j3) < 0) || ((j3 ^ j11) >= 0)) {
+            return j11;
         }
         throw new ArithmeticException();
     }
@@ -70,58 +70,58 @@ public abstract /* synthetic */ class a {
         return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
     }
 
-    public static /* synthetic */ boolean P(Unsafe unsafe, Object obj, long j10, l lVar) {
+    public static /* synthetic */ boolean P(Unsafe unsafe, Object obj, long j3, l lVar) {
         while (true) {
             Unsafe unsafe2 = unsafe;
             Object obj2 = obj;
-            long j11 = j10;
+            long j10 = j3;
             l lVar2 = lVar;
-            if (unsafe2.compareAndSwapObject(obj2, j11, (Object) null, lVar2)) {
+            if (unsafe2.compareAndSwapObject(obj2, j10, (Object) null, lVar2)) {
                 return true;
             }
-            if (unsafe2.getObject(obj2, j11) != null) {
+            if (unsafe2.getObject(obj2, j10) != null) {
                 return false;
             }
             unsafe = unsafe2;
             obj = obj2;
-            j10 = j11;
+            j3 = j10;
             lVar = lVar2;
         }
     }
 
-    public static /* synthetic */ long Q(long j10, long j11) {
-        long j12 = j10 % j11;
-        if (j12 == 0) {
+    public static /* synthetic */ long Q(long j3, long j10) {
+        long j11 = j3 % j10;
+        if (j11 == 0) {
             return 0L;
         }
-        return (((j10 ^ j11) >> 63) | 1) > 0 ? j12 : j12 + j11;
+        return (((j3 ^ j10) >> 63) | 1) > 0 ? j11 : j11 + j10;
     }
 
-    public static /* synthetic */ long R(long j10, long j11) {
-        long j12 = j10 / j11;
-        return (j10 - (j11 * j12) != 0 && (((j10 ^ j11) >> 63) | 1) < 0) ? j12 - 1 : j12;
+    public static /* synthetic */ long R(long j3, long j10) {
+        long j11 = j3 / j10;
+        return (j3 - (j10 * j11) != 0 && (((j3 ^ j10) >> 63) | 1) < 0) ? j11 - 1 : j11;
     }
 
-    public static /* synthetic */ long S(long j10, long j11) {
-        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j11) + Long.numberOfLeadingZeros(j11) + Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10);
+    public static /* synthetic */ long S(long j3, long j10) {
+        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10) + Long.numberOfLeadingZeros(~j3) + Long.numberOfLeadingZeros(j3);
         if (numberOfLeadingZeros > 65) {
-            return j10 * j11;
+            return j3 * j10;
         }
         if (numberOfLeadingZeros >= 64) {
-            if ((j11 != Long.MIN_VALUE) | (j10 >= 0)) {
-                long j12 = j10 * j11;
-                if (j10 == 0 || j12 / j10 == j11) {
-                    return j12;
+            if ((j10 != Long.MIN_VALUE) | (j3 >= 0)) {
+                long j11 = j3 * j10;
+                if (j3 == 0 || j11 / j3 == j10) {
+                    return j11;
                 }
             }
         }
         throw new ArithmeticException();
     }
 
-    public static /* synthetic */ long T(long j10, long j11) {
-        long j12 = j10 - j11;
-        if (((j11 ^ j10) >= 0) || ((j10 ^ j12) >= 0)) {
-            return j12;
+    public static /* synthetic */ long T(long j3, long j10) {
+        long j11 = j3 - j10;
+        if (((j10 ^ j3) >= 0) || ((j3 ^ j11) >= 0)) {
+            return j11;
         }
         throw new ArithmeticException();
     }
@@ -181,9 +181,9 @@ public abstract /* synthetic */ class a {
             }
 
             @Override // java.util.function.LongConsumer
-            public final void accept(long j10) {
-                LongConsumer.this.accept(j10);
-                longConsumer2.accept(j10);
+            public final void accept(long j3) {
+                LongConsumer.this.accept(j3);
+                longConsumer2.accept(j3);
             }
         };
     }
@@ -198,13 +198,13 @@ public abstract /* synthetic */ class a {
         return new d0(optionalLong.getAsLong());
     }
 
-    public static String C(long j10, String str, Locale locale) {
+    public static String C(long j3, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(0, (int) j10, 0, 0, 0, 0);
+        calendar.set(0, (int) j3, 0, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
@@ -247,13 +247,13 @@ public abstract /* synthetic */ class a {
         return new String(cArr);
     }
 
-    public static String B(long j10, String str, Locale locale) {
+    public static String B(long j3, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(2016, 1, (int) j10, 0, 0, 0);
+        calendar.set(2016, 1, (int) j3, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
@@ -272,11 +272,11 @@ public abstract /* synthetic */ class a {
         if (b0Var == null) {
             return null;
         }
-        boolean z10 = b0Var.a;
-        if (!z10) {
+        boolean z9 = b0Var.a;
+        if (!z9) {
             return OptionalDouble.empty();
         }
-        if (z10) {
+        if (z9) {
             return OptionalDouble.of(b0Var.b);
         }
         throw new NoSuchElementException("No value present");
@@ -286,11 +286,11 @@ public abstract /* synthetic */ class a {
         if (c0Var == null) {
             return null;
         }
-        boolean z10 = c0Var.a;
-        if (!z10) {
+        boolean z9 = c0Var.a;
+        if (!z9) {
             return OptionalInt.empty();
         }
-        if (z10) {
+        if (z9) {
             return OptionalInt.of(c0Var.b);
         }
         throw new NoSuchElementException("No value present");
@@ -300,11 +300,11 @@ public abstract /* synthetic */ class a {
         if (d0Var == null) {
             return null;
         }
-        boolean z10 = d0Var.a;
-        if (!z10) {
+        boolean z9 = d0Var.a;
+        if (!z9) {
             return OptionalLong.empty();
         }
-        if (z10) {
+        if (z9) {
             return OptionalLong.of(d0Var.b);
         }
         throw new NoSuchElementException("No value present");
@@ -326,11 +326,11 @@ public abstract /* synthetic */ class a {
 
     public static int k(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i3 = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i3 == 1) {
+            int i7 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i7 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i3 == 2) {
+            if (i7 == 2) {
                 return chronoZonedDateTime.h().getTotalSeconds();
             }
             return chronoZonedDateTime.r().j(oVar);
@@ -441,8 +441,8 @@ public abstract /* synthetic */ class a {
         return spliterator.estimateSize();
     }
 
-    public static boolean o(Spliterator spliterator, int i3) {
-        return (spliterator.characteristics() & i3) == i3;
+    public static boolean o(Spliterator spliterator, int i7) {
+        return (spliterator.characteristics() & i7) == i7;
     }
 
     public static Instant x(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {

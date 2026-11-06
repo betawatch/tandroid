@@ -1,24 +1,28 @@
 package org.telegram.ui;
 
-import java.util.Iterator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n91 implements org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ p91 a;
+public final class n91 extends rg.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public /* synthetic */ n91(p91 p91Var) {
-        this.a = p91Var;
+    public n91(int i7, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i7, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        s91 s91Var = this.a.a;
-        Iterator it = s91Var.e.iterator();
-        while (it.hasNext()) {
-            s91.Z(s91Var, ((Integer) it.next()).intValue());
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        s91Var.e.clear();
-        s91Var.a0();
+        if (obj != null && n91.class == obj.getClass()) {
+            n91 n91Var = (n91) obj;
+            int i7 = this.a;
+            if (i7 == n91Var.a && i7 == 0 && this.c.id == n91Var.c.id) {
+                return true;
+            }
+        }
+        return false;
     }
 }

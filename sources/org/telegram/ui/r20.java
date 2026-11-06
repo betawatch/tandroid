@@ -1,36 +1,43 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class r20 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x30 b;
+public final class r20 extends er0 {
+    public final /* synthetic */ c40 T;
 
-    public /* synthetic */ r20(x30 x30Var, int i3) {
-        this.a = i3;
-        this.b = x30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r20(c40 c40Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = c40Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                x30 x30Var = this.b;
-                x30Var.I1.getViewTreeObserver().removeOnPreDrawListener(this);
-                x30Var.S3.j(null);
-                org.telegram.messenger.g0.b4(x30Var.e4);
-                x30Var.b.requestLayout();
-                break;
-            default:
-                x30 x30Var2 = this.b;
-                x30Var2.I1.getViewTreeObserver().removeOnPreDrawListener(this);
-                x30Var2.S3.j(null);
-                org.telegram.messenger.g0.b4(x30Var2.e4);
-                x30Var2.b.requestLayout();
-                break;
+    @Override // org.telegram.ui.er0
+    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+        c40 c40Var = this.T;
+        b20 b20Var = c40Var.i1;
+        c20 c20Var = c40Var.t4;
+        if (f10 > 0.0f) {
+            float x10 = c40Var.b.getX() + c20Var.getX();
+            float y10 = c40Var.b.getY() + c20Var.getY();
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(x10, y10, b20Var.getMeasuredWidth() + x10, b20Var.getMeasuredHeight() + y10);
+            canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
+            canvas.translate(x10, y10);
+            c20Var.draw(canvas);
+            canvas.restore();
         }
-        return false;
+    }
+
+    @Override // org.telegram.ui.er0
+    public final void e() {
+        b20 b20Var = this.T.i1;
+        super.e();
+        for (int i7 = 0; i7 < b20Var.getChildCount(); i7++) {
+            b20Var.getChildAt(i7).invalidate();
+        }
     }
 }

@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class q5 extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -18,13 +18,13 @@ public class q5 extends Thread {
     private volatile Handler handler = null;
     private CountDownLatch syncLatch = new CountDownLatch(1);
 
-    public q5(String str, boolean z10) {
-        int i3 = indexPointer;
-        indexPointer = i3 + 1;
-        this.index = i3;
+    public q5(String str, boolean z9) {
+        int i7 = indexPointer;
+        indexPointer = i7 + 1;
+        this.index = i7;
         this.threadPriority = THREAD_PRIORITY_DEFAULT;
         setName(str);
-        if (z10) {
+        if (z9) {
             start();
         }
     }
@@ -93,42 +93,42 @@ public class q5 extends Thread {
         Looper.prepare();
         this.handler = new Handler(Looper.myLooper(), new n5(this, 0));
         this.syncLatch.countDown();
-        int i3 = this.threadPriority;
-        if (i3 != THREAD_PRIORITY_DEFAULT) {
-            Process.setThreadPriority(i3);
+        int i7 = this.threadPriority;
+        if (i7 != THREAD_PRIORITY_DEFAULT) {
+            Process.setThreadPriority(i7);
         }
         Looper.loop();
     }
 
-    public void sendMessage(Message message, int i3) {
+    public void sendMessage(Message message, int i7) {
         try {
             this.syncLatch.await();
-            if (i3 <= 0) {
+            if (i7 <= 0) {
                 this.handler.sendMessage(message);
             } else {
-                this.handler.sendMessageDelayed(message, i3);
+                this.handler.sendMessageDelayed(message, i7);
             }
         } catch (Exception unused) {
         }
     }
 
-    public boolean postRunnable(Runnable runnable, long j10) {
+    public boolean postRunnable(Runnable runnable, long j3) {
         try {
             this.syncLatch.await();
         } catch (Exception e10) {
             a8.g(e10, false);
         }
-        if (j10 <= 0) {
+        if (j3 <= 0) {
             return this.handler.post(runnable);
         }
-        return this.handler.postDelayed(runnable, j10);
+        return this.handler.postDelayed(runnable, j3);
     }
 
-    public q5(String str, int i3) {
+    public q5(String str, int i7) {
         int i10 = indexPointer;
         indexPointer = i10 + 1;
         this.index = i10;
-        this.threadPriority = i3;
+        this.threadPriority = i7;
         setName(str);
         start();
     }

@@ -1,6 +1,6 @@
 package com.googlecode.mp4parser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class g {
     public static final /* synthetic */ Throwable a;
@@ -28,13 +28,13 @@ public final class g {
             stringBuffer2.append(th2);
             stringBuffer = stringBuffer2.toString();
         }
-        ve.a aVar = new ve.a(stringBuffer);
+        ye.a aVar = new ye.a(stringBuffer);
         aVar.a = th2;
         throw aVar;
     }
 
-    public static void b(ui.f fVar) {
-        Object obj = fVar.c;
+    public static void b(ui.e eVar) {
+        Object obj = eVar.c;
         if (obj instanceof a) {
             if (((a) obj).isParsed()) {
                 return;

@@ -1,116 +1,112 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
-import android.view.Choreographer;
-import android.view.PixelCopy;
-import android.view.Surface;
-import android.view.SurfaceView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class c80 {
-    public final org.telegram.ui.u90 a;
-    public SurfaceView d;
-    public Bitmap e;
-    public Bitmap f;
-    public boolean g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public long l;
-    public final Handler b = new Handler(Looper.getMainLooper());
-    public final Paint c = new Paint(2);
-    public final a80 m = new Choreographer.FrameCallback() { // from class: org.telegram.ui.Components.a80
-        @Override // android.view.Choreographer.FrameCallback
-        public final void doFrame(long j10) {
-            c80 c80Var = c80.this;
-            c80Var.j = false;
-            c80Var.c();
-        }
-    };
-    public final gp n = new gp(this, 23);
+public final class c80 extends Drawable {
+    public final Bitmap a;
+    public final Paint b = new Paint(2);
+    public long c;
+    public LinearGradient d;
+    public final Matrix e;
+    public float f;
+    public float g;
+    public final l9 h;
+    public int i;
+    public int j;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Components.a80] */
-    public c80(org.telegram.ui.u90 u90Var) {
-        this.a = u90Var;
+    public c80(l9 l9Var, String str, int i7, int i10) {
+        Bitmap bitmap;
+        try {
+            Path b10 = org.telegram.messenger.sz.b(str);
+            bitmap = Bitmap.createBitmap(i7, i10, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            float f10 = 512;
+            canvas.scale(i7 / f10, i10 / f10);
+            Paint paint = new Paint();
+            paint.setColor(-1);
+            canvas.drawPath(b10, paint);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            bitmap = null;
+        }
+        this.a = bitmap;
+        this.h = l9Var;
+        this.e = new Matrix();
     }
 
-    public final void a() {
-        this.l = SystemClock.uptimeMillis() + 1500;
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
-        }
-        b();
-    }
-
-    public final void b() {
-        if (!this.g || this.i || this.d == null || this.j || this.k) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Bitmap bitmap = this.a;
+        if (bitmap == null) {
             return;
         }
-        if (SystemClock.uptimeMillis() < this.l) {
-            this.j = true;
-            Choreographer.getInstance().postFrameCallback(this.m);
-        } else {
-            this.k = true;
-            this.b.postDelayed(this.n, 400L);
+        int i7 = org.telegram.ui.ActionBar.k6.h5;
+        int i10 = org.telegram.ui.ActionBar.k6.i5;
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i7, false);
+        int x03 = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
+        int i11 = this.i;
+        Paint paint = this.b;
+        Matrix matrix = this.e;
+        if (i11 != x02 || this.j != x03) {
+            this.i = x02;
+            this.j = x03;
+            int w02 = org.telegram.messenger.g0.w0(x03, x02);
+            paint.setColor(x03);
+            float L = org.telegram.messenger.g0.L(500.0f);
+            this.g = L;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{x03, w02, x03}, new float[]{0.0f, 0.18f, 0.36f}, Shader.TileMode.REPEAT);
+            this.d = linearGradient;
+            linearGradient.setLocalMatrix(matrix);
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            paint.setShader(new ComposeShader(this.d, new BitmapShader(bitmap, tileMode, tileMode), PorterDuff.Mode.MULTIPLY));
         }
-    }
-
-    public final void c() {
-        Surface surface;
-        if (!this.g || this.i) {
-            return;
+        Rect bounds = getBounds();
+        canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long abs = Math.abs(this.c - elapsedRealtime);
+        if (abs > 17) {
+            abs = 16;
         }
-        if (!this.h) {
-            SurfaceView surfaceView = this.d;
-            if (Build.VERSION.SDK_INT >= 24 && surfaceView != null && surfaceView.isAttachedToWindow() && surfaceView.getWidth() > 0 && surfaceView.getHeight() > 0 && (surface = surfaceView.getHolder().getSurface()) != null && surface.isValid()) {
-                int max = Math.max(1, surfaceView.getWidth() / 4);
-                int max2 = Math.max(1, surfaceView.getHeight() / 4);
-                Bitmap bitmap = this.f;
-                if (bitmap == null || bitmap.getWidth() != max || this.f.getHeight() != max2) {
-                    this.f = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
-                }
-                final Bitmap bitmap2 = this.f;
-                this.h = true;
-                try {
-                    PixelCopy.request(surfaceView, bitmap2, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.Components.b80
-                        @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-                        public final void onPixelCopyFinished(int i3) {
-                            c80 c80Var = c80.this;
-                            Bitmap bitmap3 = bitmap2;
-                            c80Var.h = false;
-                            if (c80Var.i || i3 != 0) {
-                                return;
-                            }
-                            c80Var.f = c80Var.e;
-                            c80Var.e = bitmap3;
-                            c80Var.a.run();
-                        }
-                    }, this.b);
-                } catch (Exception e10) {
-                    this.h = false;
-                    org.telegram.messenger.a8.g(e10, true);
-                }
+        this.c = elapsedRealtime;
+        this.f = a8.p0.f(abs, this.g, 1800.0f, this.f);
+        while (true) {
+            float f10 = this.f;
+            float f11 = this.g * 2.0f;
+            if (f10 < f11) {
+                matrix.setTranslate(f10, 0.0f);
+                this.d.setLocalMatrix(matrix);
+                this.h.invalidate();
+                return;
             }
+            this.f = f10 - f11;
         }
-        b();
     }
 
-    public final void d() {
-        if (this.j) {
-            Choreographer.getInstance().removeFrameCallback(this.m);
-            this.j = false;
-        }
-        if (this.k) {
-            this.b.removeCallbacks(this.n);
-            this.k = false;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

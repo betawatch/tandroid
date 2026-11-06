@@ -1,24 +1,24 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.la;
+import a8.a9;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class q extends r {
     public final transient int c;
     public final transient int d;
     public final /* synthetic */ r e;
 
-    public q(r rVar, int i3, int i10) {
+    public q(r rVar, int i7, int i10) {
         this.e = rVar;
-        this.c = i3;
+        this.c = i7;
         this.d = i10;
     }
 
     @Override // java.util.List
-    public final Object get(int i3) {
-        la.a(i3, this.d);
-        return this.e.get(i3 + this.c);
+    public final Object get(int i7) {
+        a9.a(i7, this.d);
+        return this.e.get(i7 + this.c);
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
@@ -43,10 +43,10 @@ public final class q extends r {
 
     @Override // com.google.android.gms.internal.play_billing.r, java.util.List
     /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public final r subList(int i3, int i10) {
-        la.c(i3, i10, this.d);
+    public final r subList(int i7, int i10) {
+        a9.c(i7, i10, this.d);
         int i11 = this.c;
-        return this.e.subList(i3 + i11, i10 + i11);
+        return this.e.subList(i7 + i11, i10 + i11);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List

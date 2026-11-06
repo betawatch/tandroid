@@ -1,9 +1,42 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface tr {
-    void c(TLRPC.User user);
+public final class tr extends v4.s0 {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ ContactsActivity c;
+
+    public tr(ContactsActivity contactsActivity) {
+        this.c = contactsActivity;
+    }
+
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        if (i7 != 1) {
+            this.b = false;
+            return;
+        }
+        ContactsActivity contactsActivity = this.c;
+        if (contactsActivity.D && contactsActivity.y) {
+            org.telegram.messenger.g0.v1(contactsActivity.getParentActivity().getCurrentFocus());
+        }
+        this.b = true;
+    }
+
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        ContactsActivity contactsActivity = this.c;
+        if (contactsActivity.s == null || contactsActivity.D) {
+            return;
+        }
+        boolean z9 = i10 > 0;
+        if (i10 != 0 && this.a && (z9 || this.b)) {
+            contactsActivity.w = !z9;
+            ContactsActivity.g0(contactsActivity);
+        }
+        this.a = true;
+    }
 }

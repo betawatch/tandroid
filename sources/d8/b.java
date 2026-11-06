@@ -1,21 +1,12 @@
 package d8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.IInterface;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final /* synthetic */ int a = 0;
+public interface b extends IInterface {
+    void n(Status status, o8.b bVar);
 
-    static {
-        b.class.getClassLoader();
-    }
-
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
+    void n0(Status status, o8.d dVar);
 }

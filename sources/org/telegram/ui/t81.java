@@ -1,25 +1,48 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.text.TextUtils;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class t81 implements View.OnClickListener {
-    public final /* synthetic */ m91 a;
+public final class t81 extends q11 {
+    public boolean e2;
+    public final /* synthetic */ u81 f2;
 
-    public t81(m91 m91Var) {
-        this.a = m91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t81(u81 u81Var, u81 u81Var2, Activity activity) {
+        super(u81Var2, activity, false, null, 3, null);
+        this.f2 = u81Var;
+        this.e2 = true;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        m91 m91Var = this.a;
-        if (m91Var.N == 1) {
-            org.telegram.ui.Components.t4.i0(m91Var, -m91Var.a, null, m91Var.g(), null, false, m91Var.K, new ma(this, 4), m91Var.getResourceProvider());
-            return;
+    @Override // org.telegram.ui.q11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        if (this.e2) {
+            this.e2 = false;
+            this.f2.f.s(null);
         }
-        m91Var.getMessagesController().m(m91Var.a, m91Var.getUserConfig().f(), 0, null, m91Var, false, new n81(m91Var, 2), new o81(m91Var), null);
-        org.telegram.messenger.hs.e().k(org.telegram.messenger.hs.I4, new Object[0]);
-        m91Var.S0(false);
+    }
+
+    @Override // org.telegram.ui.q11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i7;
+        int i10;
+        u81 u81Var = this.f2;
+        i7 = ((org.telegram.ui.ActionBar.f2) u81Var).currentAccount;
+        boolean z9 = false;
+        if (!TextUtils.isEmpty(org.telegram.messenger.p10.i(i7).e0)) {
+            org.telegram.messenger.ui mediaDataController = u81Var.getMediaDataController();
+            i10 = ((org.telegram.ui.ActionBar.f2) u81Var).currentAccount;
+            TLRPC.TL_messages_stickerSet n02 = mediaDataController.n0(org.telegram.messenger.p10.i(i10).e0);
+            if ((n02 == null ? 0L : n02.set.id) == org.telegram.messenger.ui.q0(document)) {
+                z9 = true;
+            }
+        }
+        u81Var.g0(l10, z9);
     }
 }

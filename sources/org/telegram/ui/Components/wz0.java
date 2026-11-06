@@ -16,7 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class wz0 extends ImageView {
     public static final org.telegram.ui.Cells.g1 x = new org.telegram.ui.Cells.g1(Float.class, "radius", 3);
@@ -27,7 +27,7 @@ public final class wz0 extends ImageView {
     public float e;
     public float f;
     public float h;
-    public fh0 n;
+    public ch0 n;
     public ColorFilter r;
     public final int[] s;
     public final int[] w;
@@ -40,16 +40,16 @@ public final class wz0 extends ImageView {
         this.w = new int[2];
     }
 
-    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.l3 l3Var, fh0 fh0Var) {
-        Drawable drawable = fh0Var.getDrawable();
-        if (drawable != null && fh0Var.isAttachedToWindow() && bitmap.isMutable()) {
+    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.n3 n3Var, ch0 ch0Var) {
+        Drawable drawable = ch0Var.getDrawable();
+        if (drawable != null && ch0Var.isAttachedToWindow() && bitmap.isMutable()) {
             int[] iArr = new int[2];
             RectF rectF = new RectF(drawable.getBounds());
-            fh0Var.getImageMatrix().mapRect(rectF);
-            fh0Var.getLocationInWindow(iArr);
-            rectF.offset(fh0Var.getPaddingLeft() + iArr[0], fh0Var.getPaddingTop() + iArr[1]);
-            if (l3Var != null) {
-                l3Var.getLocationInWindow(iArr);
+            ch0Var.getImageMatrix().mapRect(rectF);
+            ch0Var.getLocationInWindow(iArr);
+            rectF.offset(ch0Var.getPaddingLeft() + iArr[0], ch0Var.getPaddingTop() + iArr[1]);
+            if (n3Var != null) {
+                n3Var.getLocationInWindow(iArr);
                 rectF.offset(-iArr[0], -iArr[1]);
             }
             int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
@@ -59,19 +59,19 @@ public final class wz0 extends ImageView {
             if (max >= min || max2 >= min2) {
                 return;
             }
-            int i3 = min - max;
-            int[] iArr2 = new int[i3];
+            int i7 = min - max;
+            int[] iArr2 = new int[i7];
             for (int i10 = max2; i10 < min2; i10++) {
                 Arrays.fill(iArr2, bitmap.getPixel(max - 1, i10));
-                bitmap.setPixels(iArr2, 0, i3, max, i10, i3, 1);
+                bitmap.setPixels(iArr2, 0, i7, max, i10, i7, 1);
             }
         }
     }
 
-    public final void b(float f10, float f11, boolean z10) {
+    public final void b(float f10, float f11, boolean z9) {
         this.e = f10;
         this.f = f11;
-        this.d = z10;
+        this.d = z9;
         RadialGradient radialGradient = this.c;
         Paint paint = this.a;
         if (radialGradient == null) {
@@ -79,7 +79,7 @@ public final class wz0 extends ImageView {
             this.c = radialGradient2;
             paint.setShader(radialGradient2);
         }
-        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
+        paint.setXfermode(new PorterDuffXfermode(z9 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -92,8 +92,8 @@ public final class wz0 extends ImageView {
         if (this.h >= 1.0f || this.d) {
             int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
             super.onDraw(canvas);
-            fh0 fh0Var = this.n;
-            Drawable drawable = fh0Var != null ? fh0Var.getDrawable() : 0;
+            ch0 ch0Var = this.n;
+            Drawable drawable = ch0Var != null ? ch0Var.getDrawable() : 0;
             if (drawable != 0 && this.n.isAttachedToWindow()) {
                 this.n.getLocationInWindow(this.s);
                 getLocationInWindow(this.w);

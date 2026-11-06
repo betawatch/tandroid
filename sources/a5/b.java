@@ -1,144 +1,179 @@
 package a5;
 
-import a0.f;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import bi.u6;
+import ch.m0;
+import li.r0;
+import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public final f a;
-    public final f b;
-    public final f c;
+public final class b implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public b(f fVar, f fVar2, f fVar3) {
-        this.a = fVar;
-        this.b = fVar2;
-        this.c = fVar3;
-    }
-
-    public abstract c a();
-
-    public final Class b(Class cls) {
-        String name = cls.getName();
-        f fVar = this.c;
-        Class cls2 = (Class) fVar.get(name);
-        if (cls2 != null) {
-            return cls2;
-        }
-        Class<?> cls3 = Class.forName(cls.getPackage().getName() + "." + cls.getSimpleName() + "Parcelizer", false, cls.getClassLoader());
-        fVar.put(cls.getName(), cls3);
-        return cls3;
-    }
-
-    public final Method c(String str) {
-        f fVar = this.a;
-        Method method = (Method) fVar.get(str);
-        if (method != null) {
-            return method;
-        }
-        System.currentTimeMillis();
-        Method declaredMethod = Class.forName(str, true, b.class.getClassLoader()).getDeclaredMethod("read", b.class);
-        fVar.put(str, declaredMethod);
-        return declaredMethod;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final Method d(Class cls) {
-        String name = cls.getName();
-        f fVar = this.b;
-        Method method = (Method) fVar.get(name);
-        if (method != null) {
-            return method;
-        }
-        Class b10 = b(cls);
-        System.currentTimeMillis();
-        Method declaredMethod = b10.getDeclaredMethod("write", cls, b.class);
-        fVar.put(cls.getName(), declaredMethod);
-        return declaredMethod;
-    }
-
-    public abstract boolean e(int i3);
-
-    public final int f(int i3, int i10) {
-        return !e(i10) ? i3 : ((c) this).e.readInt();
-    }
-
-    public final Parcelable g(Parcelable parcelable, int i3) {
-        if (!e(i3)) {
-            return parcelable;
-        }
-        return ((c) this).e.readParcelable(c.class.getClassLoader());
-    }
-
-    public final d h() {
-        String readString = ((c) this).e.readString();
-        if (readString == null) {
-            return null;
-        }
-        try {
-            return (d) c(readString).invoke(null, a());
-        } catch (ClassNotFoundException e10) {
-            throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
-        } catch (IllegalAccessException e11) {
-            throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
-        } catch (NoSuchMethodException e12) {
-            throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
-        } catch (InvocationTargetException e13) {
-            if (e13.getCause() instanceof RuntimeException) {
-                throw ((RuntimeException) e13.getCause());
-            }
-            throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
-        }
-    }
-
-    public abstract void i(int i3);
-
-    public final void j(int i3, int i10) {
-        i(i10);
-        ((c) this).e.writeInt(i3);
-    }
-
-    public final void k(Parcelable parcelable, int i3) {
-        i(i3);
-        ((c) this).e.writeParcelable(parcelable, 0);
-    }
-
-    public final void l(d dVar) {
-        if (dVar == null) {
-            ((c) this).e.writeString(null);
-            return;
-        }
-        try {
-            ((c) this).e.writeString(b(dVar.getClass()).getName());
-            c a10 = a();
-            try {
-                d(dVar.getClass()).invoke(null, dVar, a10);
-                Parcel parcel = a10.e;
-                int i3 = a10.i;
-                if (i3 >= 0) {
-                    int i10 = a10.d.get(i3);
-                    int dataPosition = parcel.dataPosition();
-                    parcel.setDataPosition(i10);
-                    parcel.writeInt(dataPosition - i10);
-                    parcel.setDataPosition(dataPosition);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).invalidateSelf();
+                break;
+            case 1:
+                ((u6) this.b).h.invalidate();
+                break;
+            case 2:
+                m0 m0Var = (m0) this.b;
+                View view = m0Var.V;
+                if (view != null) {
+                    view.invalidate();
+                    if (m0Var.Q && m0Var.V.getParent() != null && (m0Var.V.getParent().getParent() instanceof View)) {
+                        ((View) m0Var.V.getParent().getParent()).invalidate();
+                        break;
+                    }
                 }
-            } catch (ClassNotFoundException e10) {
-                throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e10);
-            } catch (IllegalAccessException e11) {
-                throw new RuntimeException("VersionedParcel encountered IllegalAccessException", e11);
-            } catch (NoSuchMethodException e12) {
-                throw new RuntimeException("VersionedParcel encountered NoSuchMethodException", e12);
-            } catch (InvocationTargetException e13) {
-                if (!(e13.getCause() instanceof RuntimeException)) {
-                    throw new RuntimeException("VersionedParcel encountered InvocationTargetException", e13);
-                }
-                throw ((RuntimeException) e13.getCause());
-            }
-        } catch (ClassNotFoundException e14) {
-            throw new RuntimeException(dVar.getClass().getSimpleName().concat(" does not have a Parcelizer"), e14);
+                break;
+            case 3:
+                ((dh.d) this.b).invalidateSelf();
+                break;
+            case 4:
+                break;
+            case 5:
+                ((r0) this.b).b.invalidate();
+                break;
+            case 6:
+                ((np) this.b).invalidateSelf();
+                break;
+            case 7:
+                ((qm0) this.b).b.run();
+                break;
+            case 8:
+                ((l11) this.b).invalidateSelf();
+                break;
+            case 9:
+                ((zg.a) this.b).c.invalidate();
+                break;
+            default:
+                ((zg.c) this.b).c.invalidate();
+                break;
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 1:
+                break;
+            case 2:
+                View view = ((m0) this.b).V;
+                if (view != null) {
+                    view.scheduleDrawable(drawable, runnable, j3);
+                    break;
+                }
+                break;
+            case 3:
+                ((dh.d) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 4:
+                Drawable.Callback callback = (Drawable.Callback) this.b;
+                if (callback != null) {
+                    callback.scheduleDrawable(drawable, runnable, j3);
+                    break;
+                }
+                break;
+            case 5:
+                break;
+            case 6:
+                ((np) this.b).scheduleSelf(runnable, j3);
+                break;
+            case 7:
+            case 8:
+                break;
+            case 9:
+                ((zg.a) this.b).c.invalidate();
+                break;
+            default:
+                ((zg.c) this.b).c.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((e) this.b).unscheduleSelf(runnable);
+                break;
+            case 1:
+                break;
+            case 2:
+                View view = ((m0) this.b).V;
+                if (view != null) {
+                    view.unscheduleDrawable(drawable, runnable);
+                    break;
+                }
+                break;
+            case 3:
+                ((dh.d) this.b).unscheduleSelf(runnable);
+                break;
+            case 4:
+                Drawable.Callback callback = (Drawable.Callback) this.b;
+                if (callback != null) {
+                    callback.unscheduleDrawable(drawable, runnable);
+                    break;
+                }
+                break;
+            case 5:
+                break;
+            case 6:
+                ((np) this.b).unscheduleSelf(runnable);
+                break;
+            case 7:
+            case 8:
+                break;
+            case 9:
+                ((zg.a) this.b).c.invalidate();
+                break;
+            default:
+                ((zg.c) this.b).c.invalidate();
+                break;
+        }
+    }
+
+    public /* synthetic */ b(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    private final void a(Drawable drawable) {
+    }
+
+    private final void f(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void g(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void h(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void i(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void b(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void c(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void d(Drawable drawable, Runnable runnable, long j3) {
+    }
+
+    private final void e(Drawable drawable, Runnable runnable, long j3) {
     }
 }

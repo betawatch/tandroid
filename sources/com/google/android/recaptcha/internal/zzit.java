@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import dd.k;
+import gd.k;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzit implements InvocationHandler {
     private final Object zza;
@@ -23,14 +23,14 @@ public abstract class zzit implements InvocationHandler {
             return Integer.valueOf(System.identityHashCode(obj));
         }
         if (j.a(method.getName(), "equals") && method.getParameterTypes().length != 0) {
-            boolean z10 = false;
+            boolean z9 = false;
             if (objArr != null && objArr.length != 0) {
                 Object obj2 = objArr[0];
                 if ((obj2 != null ? obj2.hashCode() : 0) == obj.hashCode()) {
-                    z10 = true;
+                    z9 = true;
                 }
             }
-            return Boolean.valueOf(z10);
+            return Boolean.valueOf(z9);
         }
         boolean zza = zza(obj, method, objArr);
         k kVar = k.a;

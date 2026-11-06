@@ -1,38 +1,74 @@
 package bi;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.hp;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d {
-    public static final d[] f = new d[4];
-    public final int a;
-    public TLRPC.TL_shareThemeBackdrops b;
-    public boolean c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z b;
 
-    public d(int i3) {
-        this.a = i3;
-        String string = hp.s1(i3).e7.getString("qrBackdrops", null);
-        if (TextUtils.isEmpty(string)) {
-            return;
-        }
-        try {
-            SerializedData serializedData = new SerializedData(Utilities.v(string));
-            TLRPC.ShareThemeBackdrops TLdeserialize = TLRPC.ShareThemeBackdrops.TLdeserialize(serializedData, serializedData.readInt32(false), false);
-            if (TLdeserialize instanceof TLRPC.TL_shareThemeBackdrops) {
-                this.b = (TLRPC.TL_shareThemeBackdrops) TLdeserialize;
-            }
-            serializedData.cleanup();
-        } catch (Exception e10) {
-            a8.g(e10, true);
+    public /* synthetic */ d(z zVar, int i7) {
+        this.a = i7;
+        this.b = zVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        z zVar = this.b;
+        switch (i7) {
+            case 0:
+                d dVar = zVar.s0;
+                int currentTime = zVar.getConnectionsManager().getCurrentTime();
+                zVar.a0.setEnabled(zVar.Y > 0 || zVar.P > currentTime);
+                if (currentTime >= zVar.P) {
+                    zVar.a0.g(null, true);
+                    zVar.a0.i(dd.Y0(false, zVar.X ? org.telegram.messenger.hd.M0(2131752969, null) : org.telegram.messenger.hd.H(' ', "BotStarsButtonWithdrawShort", (int) zVar.Y), zVar.c0), true, true);
+                    break;
+                } else {
+                    zVar.a0.i(org.telegram.messenger.hd.M0(2131752968, null), true, true);
+                    if (zVar.r0 == null) {
+                        zVar.r0 = new SpannableStringBuilder("l");
+                        wp wpVar = new wp(R.drawable.mini_switch_lock, 0);
+                        wpVar.n = 1;
+                        zVar.r0.setSpan(wpVar, 0, 1, 33);
+                    }
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) zVar.r0).append((CharSequence) z.w0(zVar.P - currentTime));
+                    zVar.a0.g(spannableStringBuilder, true);
+                    org.telegram.ui.Components.cc ccVar = zVar.j0;
+                    if (ccVar != null) {
+                        org.telegram.ui.Components.gb gbVar = ccVar.e;
+                        if ((gbVar instanceof org.telegram.ui.Components.kb) && gbVar.isAttachedToWindow()) {
+                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{z.w0(zVar.P - currentTime)}, ((org.telegram.ui.Components.kb) zVar.j0.e).b);
+                        }
+                    }
+                    org.telegram.messenger.g0.r(dVar);
+                    org.telegram.messenger.g0.i3(dVar, 1000L);
+                    break;
+                }
+                break;
+            case 1:
+                z.b0(zVar);
+                break;
+            case 2:
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131752956, null));
+                break;
+            case 3:
+                z.Z(zVar);
+                break;
+            case 4:
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131753029, null));
+                break;
+            case 5:
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131753049, null));
+                break;
+            default:
+                zVar.b0.setLoading(false);
+                break;
         }
     }
 }

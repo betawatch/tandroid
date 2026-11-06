@@ -1,6 +1,34 @@
 package wi;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.graphics.SurfaceTexture;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public interface r {
+public final /* synthetic */ class r implements SurfaceTexture.OnFrameAvailableListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ r(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                ((t) this.b).b(false);
+                return;
+            case 1:
+                ((t) this.b).b(true);
+                return;
+            default:
+                v0 v0Var = (v0) this.b;
+                synchronized (v0Var.b) {
+                    v0Var.m = true;
+                    v0Var.b.notifyAll();
+                }
+                return;
+        }
+    }
 }

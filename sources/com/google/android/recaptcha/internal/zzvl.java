@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -37,23 +37,23 @@ public final class zzvl {
         return zzutVar;
     }
 
-    public static zzut zzb(long j10) {
-        long j11 = j10 / 1000;
-        if (!zze(j11)) {
-            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j11)));
+    public static zzut zzb(long j3) {
+        long j10 = j3 / 1000;
+        if (!zze(j10)) {
+            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j10)));
         }
-        int i3 = (int) ((j10 % 1000) * 1000000);
-        if (i3 <= -1000000000 || i3 >= 1000000000) {
-            j11 = zzps.zza(j11, i3 / 1000000000);
-            i3 %= 1000000000;
+        int i7 = (int) ((j3 % 1000) * 1000000);
+        if (i7 <= -1000000000 || i7 >= 1000000000) {
+            j10 = zzps.zza(j10, i7 / 1000000000);
+            i7 %= 1000000000;
         }
-        if (i3 < 0) {
-            i3 += 1000000000;
-            j11 = zzps.zzb(j11, 1L);
+        if (i7 < 0) {
+            i7 += 1000000000;
+            j10 = zzps.zzb(j10, 1L);
         }
         zzur zzi = zzut.zzi();
-        zzi.zzf(j11);
-        zzi.zze(i3);
+        zzi.zzf(j10);
+        zzi.zze(i7);
         zzut zzutVar = (zzut) zzi.zzk();
         zza(zzutVar);
         return zzutVar;
@@ -81,7 +81,7 @@ public final class zzvl {
         }
     }
 
-    private static boolean zze(long j10) {
-        return j10 >= -62135596800L && j10 <= 253402300799L;
+    private static boolean zze(long j3) {
+        return j3 >= -62135596800L && j3 <= 253402300799L;
     }
 }

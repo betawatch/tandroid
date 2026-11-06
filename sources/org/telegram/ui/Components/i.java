@@ -2,18 +2,18 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f60 b;
+    public final /* synthetic */ k60 b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ i(f60 f60Var, boolean z10, Runnable runnable, int i3) {
-        this.a = i3;
-        this.b = f60Var;
-        this.c = z10;
+    public /* synthetic */ i(k60 k60Var, boolean z9, Runnable runnable, int i7) {
+        this.a = i7;
+        this.b = k60Var;
+        this.c = z9;
         this.d = runnable;
     }
 

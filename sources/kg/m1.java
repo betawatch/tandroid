@@ -1,69 +1,69 @@
 package kg;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.y4;
-import org.telegram.messenger.zi;
-import org.telegram.ui.Components.nj;
-import org.telegram.ui.Components.p11;
-import org.telegram.ui.p50;
-import org.telegram.ui.q50;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import di.s2;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class m1 extends TimerTask {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class m1 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ x0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ s1 c;
+    public final /* synthetic */ TextView d;
+    public final /* synthetic */ s2 e;
+    public final /* synthetic */ c20 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1[] g;
+    public final /* synthetic */ View h;
 
-    public /* synthetic */ m1(int i3, Object obj, Object obj2) {
-        this.a = i3;
-        this.c = obj;
-        this.b = obj2;
+    public m1(x0 x0Var, int i7, s1 s1Var, TextView textView, s2 s2Var, c20 c20Var, org.telegram.ui.ActionBar.u1[] u1VarArr, View view) {
+        this.a = x0Var;
+        this.b = i7;
+        this.c = s1Var;
+        this.d = textView;
+        this.e = s2Var;
+        this.f = c20Var;
+        this.g = u1VarArr;
+        this.h = view;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o1 o1Var = (o1) this.c;
-                try {
-                    o1Var.n.cancel();
-                    o1Var.n = null;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                }
-                String str = (String) this.b;
-                o1Var.getClass();
-                org.telegram.messenger.g0.h3(new ii.e(15, o1Var, str));
-                return;
-            case 1:
-                synchronized (((MediaController) this.c).x1) {
-                    org.telegram.messenger.g0.h3(new y4(25, this, (zi) this.b));
-                }
-                return;
-            case 2:
-                try {
-                    ((Timer) ((nj) this.c).h).cancel();
-                    ((nj) this.c).h = null;
-                } catch (Exception e11) {
-                    a8.g(e11, true);
-                }
-                Utilities.g.c(new p11(13, (nj) this.c, (String) this.b));
-                return;
-            default:
-                q50 q50Var = (q50) this.c;
-                try {
-                    q50Var.f.cancel();
-                    q50Var.f = null;
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                }
-                org.telegram.messenger.g0.h3(new p50(this, (String) this.b, 0));
-                return;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+        if (i7 != 6) {
+            return false;
         }
+        x0 x0Var = this.a;
+        String obj = x0Var.getText().toString();
+        if (obj.length() <= 0 || obj.length() > 32) {
+            org.telegram.messenger.g0.F3(x0Var);
+            return true;
+        }
+        t1 f10 = t1.f(this.b);
+        s1 s1Var = this.c;
+        int i10 = s1Var == null ? -1 : s1Var.a;
+        s1 d = f10.d(obj);
+        if (d != null && d.a != i10) {
+            org.telegram.messenger.g0.F3(x0Var);
+            this.d.setText(hd.M0(2131752662, null));
+            this.e.a(Boolean.TRUE);
+            return true;
+        }
+        this.f.a(obj);
+        org.telegram.ui.ActionBar.u1[] u1VarArr = this.g;
+        org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
+        if (u1Var != null) {
+            u1Var.dismiss();
+        }
+        if (u1VarArr[0] == q1.f) {
+            q1.f = null;
+        }
+        View view = this.h;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

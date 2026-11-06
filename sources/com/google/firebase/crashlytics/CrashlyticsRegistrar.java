@@ -1,57 +1,56 @@
 package com.google.firebase.crashlytics;
 
+import a8.h8;
 import android.util.Log;
-import b8.r1;
 import com.google.firebase.components.ComponentRegistrar;
-import d2.l0;
-import eb.d;
+import e2.j0;
+import hb.d;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
-import n9.h;
-import org.telegram.ui.ActionBar.e3;
-import p9.a;
-import p9.b;
-import p9.c;
-import t9.j;
-import t9.r;
-import ua.e;
+import o9.g;
+import q9.a;
+import q9.b;
+import q9.c;
+import u5.e;
+import u9.i;
+import u9.q;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
-    public final r a = new r(a.class, ExecutorService.class);
-    public final r b = new r(b.class, ExecutorService.class);
-    public final r c = new r(c.class, ExecutorService.class);
+    public final q a = new q(a.class, ExecutorService.class);
+    public final q b = new q(b.class, ExecutorService.class);
+    public final q c = new q(c.class, ExecutorService.class);
 
     static {
         d dVar = d.a;
-        Map map = eb.c.b;
+        Map map = hb.c.b;
         if (map.containsKey(dVar)) {
             Log.d("FirebaseSessions", "Dependency " + dVar + " already added.");
             return;
         }
-        map.put(dVar, new eb.a(new CountDownLatch(1)));
+        map.put(dVar, new hb.a(new CountDownLatch(1)));
         Log.d("FirebaseSessions", "Dependency to " + dVar + " added.");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        l0 a10 = t9.a.a(v9.b.class);
+        j0 a10 = u9.a.a(w9.b.class);
         a10.d = "fire-cls";
-        a10.a(j.a(h.class));
-        a10.a(j.a(e.class));
-        a10.a(new j(this.a, 1, 0));
-        a10.a(new j(this.b, 1, 0));
-        a10.a(new j(this.c, 1, 0));
-        a10.a(new j(0, 2, w9.a.class));
-        a10.a(new j(0, 2, o9.a.class));
-        a10.a(new j(0, 2, cb.a.class));
-        a10.f = new e3(this, 26);
+        a10.a(i.a(g.class));
+        a10.a(i.a(va.d.class));
+        a10.a(new i(this.a, 1, 0));
+        a10.a(new i(this.b, 1, 0));
+        a10.a(new i(this.c, 1, 0));
+        a10.a(new i(0, 2, x9.a.class));
+        a10.a(new i(0, 2, p9.a.class));
+        a10.a(new i(0, 2, fb.a.class));
+        a10.f = new e(this, 3);
         a10.c(2);
-        return Arrays.asList(a10.b(), r1.a("fire-cls", "20.1.1"));
+        return Arrays.asList(a10.b(), h8.a("fire-cls", "20.1.1"));
     }
 }

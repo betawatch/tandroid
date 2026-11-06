@@ -1,33 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ue implements fj0 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class ue extends org.telegram.ui.bg0 {
+    public final /* synthetic */ Object A0;
+    public final /* synthetic */ int z0;
 
-    public ue(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ue(Object obj, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
+        super(context, f6Var);
+        this.z0 = i7;
+        this.A0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.fj0
-    public final void f(int i3, View view) {
-        if (view instanceof ii.y) {
-            String command = ((ii.y) view).getCommand();
-            if (TextUtils.isEmpty(command)) {
-                return;
-            }
-            ChatActivityEnterView chatActivityEnterView = this.a;
-            if (chatActivityEnterView.c()) {
-                t4.L(chatActivityEnterView.P2, chatActivityEnterView.R2, new org.telegram.ui.jo(14, this, command), chatActivityEnterView.X3);
-                return;
-            }
-            org.telegram.ui.wm wmVar = chatActivityEnterView.Q2;
-            if (wmVar == null || !wmVar.s7(view)) {
-                t4.Z(chatActivityEnterView.R, 1, chatActivityEnterView.R2, new mi.f(26, this, command));
-            }
+    @Override // org.telegram.ui.bg0
+    public final void l(long j3) {
+        switch (this.z0) {
+            case 0:
+                ((ChatActivityEnterView) this.A0).setEffectId(j3);
+                break;
+            default:
+                di diVar = (di) this.A0;
+                lh lhVar = diVar.C2;
+                diVar.H2 = j3;
+                lhVar.setEffect(j3);
+                break;
         }
     }
 }

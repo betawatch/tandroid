@@ -2,16 +2,16 @@ package com.google.android.recaptcha.internal;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import ed.h;
-import ed.i;
+import hd.g;
+import hd.h;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.j;
-import ud.l;
+import xd.l;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class zzig {
     private final List zza;
@@ -44,7 +44,7 @@ public final class zzig {
 
     private static final List zzf(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(i.d(list2, 10));
+        ArrayList arrayList = new ArrayList(h.d(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add("https://" + ((String) it.next()) + "/");
@@ -62,7 +62,7 @@ public final class zzig {
         return zze(parse) && zzd(parse.toString());
     }
 
-    public zzig(boolean z10) {
-        this.zza = zzf(h.c("www.recaptcha.net", "www.gstatic.com/recaptcha", "www.gstatic.cn/recaptcha"));
+    public zzig(boolean z9) {
+        this.zza = zzf(g.c("www.recaptcha.net", "www.gstatic.com/recaptcha", "www.gstatic.cn/recaptcha"));
     }
 }

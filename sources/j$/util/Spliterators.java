@@ -7,12 +7,12 @@ public final class Spliterators {
     public static final n1 c = new n1();
     public static final l1 d = new l1();
 
-    public static void a(int i3, int i10, int i11) {
+    public static void a(int i7, int i10, int i11) {
         if (i10 <= i11) {
             if (i10 < 0) {
                 throw new ArrayIndexOutOfBoundsException(i10);
             }
-            if (i11 > i3) {
+            if (i11 > i7) {
                 throw new ArrayIndexOutOfBoundsException(i11);
             }
             return;
@@ -20,7 +20,7 @@ public final class Spliterators {
         throw new ArrayIndexOutOfBoundsException("origin(" + i10 + ") > fence(" + i11 + ")");
     }
 
-    public static <T> Spliterator<T> spliterator(java.util.Collection<? extends T> collection, int i3) {
-        return new q1((java.util.Collection) Objects.requireNonNull(collection), i3);
+    public static <T> Spliterator<T> spliterator(java.util.Collection<? extends T> collection, int i7) {
+        return new q1((java.util.Collection) Objects.requireNonNull(collection), i7);
     }
 }

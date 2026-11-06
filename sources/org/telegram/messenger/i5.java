@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -38,8 +38,8 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public final long getItemId(int i3) {
-        return i3;
+    public final long getItemId(int i7) {
+        return i7;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -57,7 +57,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     /* JADX WARN: Type inference failed for: r0v10 */
     /* JADX WARN: Type inference failed for: r0v11 */
     /* JADX WARN: Type inference failed for: r0v12, types: [org.telegram.tgnet.TLRPC$User] */
-    /* JADX WARN: Type inference failed for: r0v41, types: [org.telegram.ui.Components.u8] */
+    /* JADX WARN: Type inference failed for: r0v41, types: [org.telegram.ui.Components.w8] */
     /* JADX WARN: Type inference failed for: r0v56 */
     /* JADX WARN: Type inference failed for: r0v57 */
     /* JADX WARN: Type inference failed for: r12v40 */
@@ -77,7 +77,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final RemoteViews getViewAt(int i3) {
+    public final RemoteViews getViewAt(int i7) {
         String str;
         String str2;
         ?? r12;
@@ -93,7 +93,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         String format;
         ?? r13;
         Canvas canvas;
-        org.telegram.ui.Components.u8 u8Var;
+        org.telegram.ui.Components.w8 w8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation2;
         ArrayList arrayList = this.a;
@@ -102,12 +102,12 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         String str4 = null;
         if (this.h) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, bd.M0(2131742884, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, hd.M0(2131742875, null));
             return remoteViews;
         }
-        if (i3 >= getCount() - 1) {
+        if (i7 >= getCount() - 1) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, bd.M0(2131744266, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, hd.M0(2131744257, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 1);
@@ -121,7 +121,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         int i14 = 0;
         int i15 = 0;
         while (i15 < 2) {
-            int i16 = (2 * i3) + i15;
+            int i16 = (2 * i7) + i15;
             if (i16 >= arrayList.size()) {
                 remoteViews3.setViewVisibility(i15 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, 4);
                 str3 = str4;
@@ -130,9 +130,9 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                 remoteViews3.setViewVisibility(i15 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, i14);
                 Long l10 = (Long) arrayList.get(i16);
                 if (m5.E(l10.longValue())) {
-                    TLRPC.User a22 = hp.s1(cVar.a).a2(l10);
-                    String M0 = l10.B(a22) ? bd.M0(2131745911, str4) : l10.z(a22) ? bd.M0(2131746274, str4) : l10.x(a22) ? bd.M0(2131749336, str4) : l10.j(a22, true);
-                    if (l10.z(a22) || l10.B(a22) || a22 == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
+                    TLRPC.User a22 = qp.s1(cVar.a).a2(l10);
+                    String M0 = t10.B(a22) ? hd.M0(2131745902, str4) : t10.z(a22) ? hd.M0(2131746265, str4) : t10.x(a22) ? hd.M0(2131749327, str4) : t10.j(a22, true);
+                    if (t10.z(a22) || t10.B(a22) || a22 == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         String str5 = str4;
                         str2 = M0;
                         r12 = str5;
@@ -145,7 +145,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                         r02 = a22;
                     }
                 } else {
-                    TLRPC.Chat M02 = hp.s1(cVar.a).M0(Long.valueOf(-l10.longValue()));
+                    TLRPC.Chat M02 = qp.s1(cVar.a).M0(Long.valueOf(-l10.longValue()));
                     if (M02 != null) {
                         str = M02.title;
                         TLRPC.ChatPhoto chatPhoto = M02.photo;
@@ -167,7 +167,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                 remoteViews3.setTextViewText(i15 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2, str2);
                 if (r14 != 0) {
                     try {
-                        w7.G(h10.t0);
+                        w7.G(p10.s0);
                         r13 = BitmapFactory.decodeFile(w7.K(r14, str4, true, true).toString());
                     } catch (Throwable th2) {
                         th = th2;
@@ -203,20 +203,20 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                     canvas = new Canvas(createBitmap);
                     if (r13 == 0) {
                         if (r02 != 0) {
-                            u8Var = new org.telegram.ui.Components.u8(i14, r02);
-                            if (l10.z(r02)) {
-                                u8Var.g(12);
-                            } else if (l10.B(r02)) {
-                                u8Var.g(1);
+                            w8Var = new org.telegram.ui.Components.w8(i14, r02);
+                            if (t10.z(r02)) {
+                                w8Var.g(12);
+                            } else if (t10.B(r02)) {
+                                w8Var.g(1);
                             }
                         } else {
-                            ?? u8Var2 = new org.telegram.ui.Components.u8((org.telegram.ui.ActionBar.e6) null);
+                            ?? w8Var2 = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.f6) null);
                             int i17 = cVar.a;
-                            u8Var2.q(r12);
-                            u8Var = u8Var2;
+                            w8Var2.q(r12);
+                            w8Var = w8Var2;
                         }
-                        u8Var.setBounds(i14, i14, L, L);
-                        u8Var.draw(canvas);
+                        w8Var.setBounds(i14, i14, L, L);
+                        w8Var.draw(canvas);
                         i10 = i14;
                     } else {
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -352,23 +352,23 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         arrayList.clear();
         c cVar = this.d;
         if (cVar != null) {
-            int i3 = cVar.a;
-            if (h10.i(i3).p()) {
+            int i7 = cVar.a;
+            if (p10.i(i7).p()) {
                 ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
                 a0.h hVar = new a0.h();
-                qr a02 = qr.a0(i3);
+                yr a02 = yr.a0(i7);
                 int i10 = this.c;
                 a0.h hVar2 = this.g;
                 CountDownLatch countDownLatch = new CountDownLatch(1);
-                a02.a.c(new cg.c(a02, i10, arrayList, 1, hVar2, hVar, arrayList3, arrayList2, countDownLatch));
+                a02.a.c(new bg.c(a02, i10, arrayList, 1, hVar2, hVar, arrayList3, arrayList2, countDownLatch));
                 try {
                     countDownLatch.await();
                 } catch (Exception e10) {
                     a02.o(e10, true);
                 }
-                hp.s1(i3).Y3(arrayList2, true);
-                hp.s1(i3).S3(arrayList3, true);
+                qp.s1(i7).Y3(arrayList2, true);
+                qp.s1(i7).S3(arrayList3, true);
             }
         }
     }

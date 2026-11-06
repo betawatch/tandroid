@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -17,8 +17,8 @@ public final class e {
     public int f = -1;
     public long g = 0;
 
-    public e(int i3) {
-        this.a = i3;
+    public e(int i7) {
+        this.a = i7;
     }
 
     public final void a() {
@@ -30,12 +30,12 @@ public final class e {
 
     public final void b() {
         ArrayList arrayList = this.b;
-        boolean z10 = this.e;
-        int i3 = this.a;
-        if (!z10) {
+        boolean z9 = this.e;
+        int i7 = this.a;
+        if (!z9) {
             this.e = true;
             try {
-                String string = hp.s1(i3).e7.getString("ai_styles", null);
+                String string = qp.s1(i7).e7.getString("ai_styles", null);
                 if (string != null) {
                     SerializedData serializedData = new SerializedData(Base64.getDecoder().decode(string));
                     TL_aicompose.Tones TLdeserialize = TL_aicompose.Tones.TLdeserialize(serializedData, serializedData.readInt32(true), true);
@@ -52,12 +52,12 @@ public final class e {
         if (this.f < 0 && System.currentTimeMillis() - this.g >= 1800000) {
             TL_aicompose.getTones gettones = new TL_aicompose.getTones();
             gettones.hash = this.c;
-            this.f = ConnectionsManager.getInstance(i3).sendRequestTyped(gettones, new c3.b(1), new d(this, 0));
+            this.f = ConnectionsManager.getInstance(i7).sendRequestTyped(gettones, new d3.b(1), new d(this, 0));
         }
     }
 
     public final void c() {
-        hs.f(this.a).k(hs.Y3, this);
+        qs.f(this.a).k(qs.Y3, this);
     }
 
     public final void d() {
@@ -66,6 +66,6 @@ public final class e {
         tL_tones.tones.addAll(this.b);
         SerializedData serializedData = new SerializedData(tL_tones.getObjectSize());
         tL_tones.serializeToStream(serializedData);
-        hp.s1(this.a).e7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
+        qp.s1(this.a).e7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
     }
 }

@@ -1,114 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.PhotoViewer;
+import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zd0 extends org.telegram.ui.l4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class zd0 {
+    public final /* synthetic */ org.telegram.ui.bq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zd0(int i3, Context context, Object obj) {
-        super(context);
-        this.h = i3;
-        this.n = obj;
+    public zd0(org.telegram.ui.bq0 bq0Var) {
+        this.a = bq0Var;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.h) {
-            case 2:
-                if (!((PhotoViewer) this.n).U8) {
-                    super.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        org.telegram.messenger.g0.h3(new r2(this, Integer.parseInt(str), 8));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        org.telegram.messenger.g0.h3(new xd0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f10) {
+        this.a.J = f10;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i7) {
+        this.a.I = i7 * 1000;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i7) {
+        org.telegram.ui.bq0 bq0Var = this.a;
+        bq0Var.H = i7 * 1000;
+        String str = bq0Var.s;
+        if (str != null) {
+            ae0.a(bq0Var, str);
+            bq0Var.s = null;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.messenger.zi ziVar;
-        switch (this.h) {
-            case 0:
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (ziVar = MediaController.B().v0) != null) {
-                    pipRoundVideoView.F.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
-                    canvas.drawArc(pipRoundVideoView.F, -90.0f, ziVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.k6.k2);
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.bq0 bq0Var = this.a;
+        boolean z9 = bq0Var.G;
+        boolean z10 = false;
+        int i7 = 1;
+        bq0Var.G = parseInt == 1 || parseInt == 3;
+        bq0Var.b(z9);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z10 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z10 = true;
+                    i7 = 2;
                 }
-                return drawChild;
-            case 1:
-            default:
-                return super.drawChild(canvas, view, j10);
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                if (view == photoViewer.F3 && photoViewer.h4) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j10);
+            }
+            i7 = 3;
+        } else {
+            i7 = 4;
         }
-    }
-
-    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i3, int i10) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i3, i10);
-                d71 d71Var = (d71) this.n;
-                if (d71Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = d71Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = d71Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                super.onMeasure(i3, i10);
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                ImageView imageView2 = photoViewer.y3;
-                if (imageView2 != null) {
-                    ViewGroup.LayoutParams layoutParams3 = imageView2.getLayoutParams();
-                    layoutParams3.width = getMeasuredWidth();
-                    layoutParams3.height = getMeasuredHeight();
-                }
-                TextureView textureView = photoViewer.C2;
-                if (textureView instanceof b51) {
-                    textureView.setPivotX(textureView.getMeasuredWidth() / 2);
-                    photoViewer.F2.setPivotX(photoViewer.C2.getMeasuredWidth() / 2);
-                } else {
-                    if (textureView != null) {
-                        textureView.setPivotX(0.0f);
-                    }
-                    SurfaceView surfaceView = photoViewer.D2;
-                    if (surfaceView != null) {
-                        surfaceView.setPivotX(0.0f);
-                    }
-                    photoViewer.F2.setPivotX(0.0f);
-                }
-                photoViewer.A0();
-                break;
-            default:
-                super.onMeasure(i3, i10);
-                break;
+        if (i7 == 3 && bq0Var.h.getVisibility() != 4) {
+            org.telegram.messenger.g0.i3(new xd0(this, 1), 300L);
         }
+        org.telegram.messenger.g0.h3(new bi.c9(this, z10, i7, 4));
     }
 }

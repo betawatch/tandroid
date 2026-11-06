@@ -1,26 +1,58 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zr extends org.telegram.ui.ActionBar.f1 {
-    public final /* synthetic */ es o;
+public final /* synthetic */ class zr implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ks b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zr(es esVar, ViewGroup viewGroup) {
-        super(viewGroup, -2, -2);
-        this.o = esVar;
+    public /* synthetic */ zr(ks ksVar, int i7) {
+        this.a = i7;
+        this.b = ksVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        is isVar = this.o.a;
-        isVar.k = null;
-        isVar.K = false;
-        if (isVar.R) {
-            isVar.m();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                ks ksVar = this.b;
+                ksVar.K = false;
+                ksVar.z.invalidate();
+                ksVar.m();
+                break;
+            case 1:
+                ks ksVar2 = this.b;
+                Activity activity = ksVar2.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.M() != null && launchActivity.M().getLastFragment() != null) {
+                        launchActivity.M().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(5)));
+                }
+                ksVar2.K = false;
+                ksVar2.z.invalidate();
+                ksVar2.m();
+                break;
+            case 2:
+                ks ksVar3 = this.b;
+                is isVar = ksVar3.l;
+                if (isVar != null) {
+                    isVar.K();
+                }
+                ksVar3.o();
+                break;
+            default:
+                ks ksVar4 = this.b;
+                is isVar2 = ksVar4.l;
+                if (isVar2 != null) {
+                    isVar2.r();
+                }
+                ksVar4.o();
+                break;
         }
     }
 }

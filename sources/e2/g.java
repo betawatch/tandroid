@@ -1,51 +1,77 @@
 package e2;
 
-import android.media.AudioFocusRequest;
-import android.media.AudioManager;
-import android.os.Build;
-import android.os.Handler;
-import j$.util.Objects;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g {
-    public final int a;
-    public final AudioManager.OnAudioFocusChangeListener b;
-    public final Handler c;
-    public final d2.f d;
-    public final boolean e;
-    public final Object f;
+public final class g extends Binder {
+    public final h9.i0 a;
 
-    public g(int i3, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, d2.f fVar, boolean z10, boolean z11) {
-        this.a = i3;
-        this.c = handler;
-        this.d = fVar;
-        this.e = z10;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 26) {
-            this.b = new f(onAudioFocusChangeListener, handler);
-        } else {
-            this.b = onAudioFocusChangeListener;
-        }
-        if (i10 >= 26) {
-            this.f = new AudioFocusRequest.Builder(i3).setAudioAttributes(fVar.b()).setWillPauseWhenDucked(z10).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).setAcceptsDelayedFocusGain(z11).build();
-        } else {
-            this.f = null;
-        }
+    public g(List list) {
+        this.a = h9.i0.q(list);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static h9.i0 a(IBinder iBinder) {
+        int readInt;
+        if (iBinder instanceof g) {
+            return ((g) iBinder).a;
         }
-        if (!(obj instanceof g)) {
+        h9.f0 p10 = h9.i0.p();
+        int i7 = 0;
+        int i10 = 1;
+        while (i10 != 0) {
+            Parcel obtain = Parcel.obtain();
+            Parcel obtain2 = Parcel.obtain();
+            try {
+                obtain.writeInt(i7);
+                try {
+                    iBinder.transact(1, obtain, obtain2, 0);
+                    while (true) {
+                        readInt = obtain2.readInt();
+                        if (readInt == 1) {
+                            Bundle readBundle = obtain2.readBundle();
+                            readBundle.getClass();
+                            p10.c(readBundle);
+                            i7++;
+                        }
+                    }
+                    obtain2.recycle();
+                    obtain.recycle();
+                    i10 = readInt;
+                } catch (RemoteException e10) {
+                    throw new RuntimeException(e10);
+                }
+            } catch (Throwable th2) {
+                obtain2.recycle();
+                obtain.recycle();
+                throw th2;
+            }
+        }
+        return p10.f();
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i7, Parcel parcel, Parcel parcel2, int i10) {
+        if (i7 != 1) {
+            return super.onTransact(i7, parcel, parcel2, i10);
+        }
+        if (parcel2 == null) {
             return false;
         }
-        g gVar = (g) obj;
-        return this.a == gVar.a && this.e == gVar.e && Objects.equals(this.b, gVar.b) && Objects.equals(this.c, gVar.c) && Objects.equals(this.d, gVar.d);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), this.b, this.c, this.d, Boolean.valueOf(this.e));
+        h9.i0 i0Var = this.a;
+        int size = i0Var.size();
+        int readInt = parcel.readInt();
+        while (readInt < size && parcel2.dataSize() < l.a) {
+            parcel2.writeInt(1);
+            parcel2.writeBundle((Bundle) i0Var.get(readInt));
+            readInt++;
+        }
+        parcel2.writeInt(readInt < size ? 2 : 0);
+        return true;
     }
 }

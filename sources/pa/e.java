@@ -1,241 +1,237 @@
 package pa;
 
-import b8.b0;
-import b8.h0;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
+import android.util.Base64;
+import android.util.JsonWriter;
+import java.io.Writer;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import k2.p1;
-import org.telegram.messenger.hs;
+import na.g;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e implements ma.e {
-    public static final Charset f = Charset.forName("UTF-8");
-    public static final ma.c g = new ma.c("key", p1.o(p1.n(d.class, new a(1))));
-    public static final ma.c h = new ma.c("value", p1.o(p1.n(d.class, new a(2))));
-    public static final oa.a i = new oa.a(1);
-    public OutputStream a;
-    public final HashMap b;
-    public final HashMap c;
-    public final ma.d d;
-    public final h0 e = new h0(this, 1);
+public final class e implements na.e, g {
+    public final boolean a = true;
+    public final JsonWriter b;
+    public final Map c;
+    public final Map d;
+    public final na.d e;
+    public final boolean f;
 
-    public e(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ma.d dVar) {
-        this.a = byteArrayOutputStream;
-        this.b = hashMap;
-        this.c = hashMap2;
-        this.d = dVar;
+    public e(Writer writer, Map map, Map map2, na.d dVar, boolean z9) {
+        this.b = new JsonWriter(writer);
+        this.c = map;
+        this.d = map2;
+        this.e = dVar;
+        this.f = z9;
     }
 
-    public static int j(ma.c cVar) {
-        d dVar = (d) cVar.b(d.class);
-        if (dVar != null) {
-            return ((a) dVar).a;
-        }
-        throw new ma.b("Field has no @Protobuf config");
-    }
-
-    @Override // ma.e
-    public final ma.e a(ma.c cVar, Object obj) {
-        h(cVar, obj, true);
+    @Override // na.e
+    public final na.e a(na.c cVar, Object obj) {
+        i(obj, cVar.a);
         return this;
     }
 
-    @Override // ma.e
-    public final ma.e b(ma.c cVar, boolean z10) {
-        g(cVar, z10 ? 1 : 0, true);
+    @Override // na.e
+    public final na.e b(na.c cVar, double d) {
+        String str = cVar.a;
+        j();
+        JsonWriter jsonWriter = this.b;
+        jsonWriter.name(str);
+        j();
+        jsonWriter.value(d);
         return this;
     }
 
-    @Override // ma.e
-    public final ma.e c(ma.c cVar, double d) {
-        d(cVar, d, true);
+    @Override // na.e
+    public final na.e c(na.c cVar, boolean z9) {
+        String str = cVar.a;
+        j();
+        JsonWriter jsonWriter = this.b;
+        jsonWriter.name(str);
+        j();
+        jsonWriter.value(z9);
         return this;
     }
 
-    public final void d(ma.c cVar, double d, boolean z10) {
-        if (z10 && d == 0.0d) {
-            return;
-        }
-        k((j(cVar) << 3) | 1);
-        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
-    }
-
-    @Override // ma.e
-    public final ma.e e(ma.c cVar, int i3) {
-        g(cVar, i3, true);
+    @Override // na.e
+    public final na.e d(na.c cVar, int i7) {
+        String str = cVar.a;
+        j();
+        JsonWriter jsonWriter = this.b;
+        jsonWriter.name(str);
+        j();
+        jsonWriter.value(i7);
         return this;
     }
 
-    @Override // ma.e
-    public final ma.e f(ma.c cVar, long j10) {
-        if (j10 == 0) {
+    @Override // na.e
+    public final na.e e(na.c cVar, long j3) {
+        String str = cVar.a;
+        j();
+        JsonWriter jsonWriter = this.b;
+        jsonWriter.name(str);
+        j();
+        jsonWriter.value(j3);
+        return this;
+    }
+
+    @Override // na.g
+    public final g f(String str) {
+        j();
+        this.b.value(str);
+        return this;
+    }
+
+    @Override // na.g
+    public final g g(boolean z9) {
+        j();
+        this.b.value(z9);
+        return this;
+    }
+
+    public final e h(Object obj) {
+        JsonWriter jsonWriter = this.b;
+        if (obj == null) {
+            jsonWriter.nullValue();
             return this;
         }
-        d dVar = (d) cVar.b(d.class);
-        if (dVar == null) {
-            throw new ma.b("Field has no @Protobuf config");
+        if (obj instanceof Number) {
+            jsonWriter.value((Number) obj);
+            return this;
         }
-        k(((a) dVar).a << 3);
-        l(j10);
+        int i7 = 0;
+        if (!obj.getClass().isArray()) {
+            if (obj instanceof Collection) {
+                jsonWriter.beginArray();
+                Iterator it = ((Collection) obj).iterator();
+                while (it.hasNext()) {
+                    h(it.next());
+                }
+                jsonWriter.endArray();
+                return this;
+            }
+            if (obj instanceof Map) {
+                jsonWriter.beginObject();
+                for (Map.Entry entry : ((Map) obj).entrySet()) {
+                    Object key = entry.getKey();
+                    try {
+                        i(entry.getValue(), (String) key);
+                    } catch (ClassCastException e10) {
+                        throw new na.b(String.format("Only String keys are currently supported in maps, got %s of type %s instead.", key, key.getClass()), e10);
+                    }
+                }
+                jsonWriter.endObject();
+                return this;
+            }
+            na.d dVar = (na.d) this.c.get(obj.getClass());
+            if (dVar != null) {
+                jsonWriter.beginObject();
+                dVar.a(obj, this);
+                jsonWriter.endObject();
+                return this;
+            }
+            na.f fVar = (na.f) this.d.get(obj.getClass());
+            if (fVar != null) {
+                fVar.a(obj, this);
+                return this;
+            }
+            if (!(obj instanceof Enum)) {
+                jsonWriter.beginObject();
+                this.e.a(obj, this);
+                jsonWriter.endObject();
+                return this;
+            }
+            if (obj instanceof f) {
+                int a10 = ((f) obj).a();
+                j();
+                jsonWriter.value(a10);
+                return this;
+            }
+            String name = ((Enum) obj).name();
+            j();
+            jsonWriter.value(name);
+            return this;
+        }
+        if (obj instanceof byte[]) {
+            j();
+            jsonWriter.value(Base64.encodeToString((byte[]) obj, 2));
+            return this;
+        }
+        jsonWriter.beginArray();
+        if (obj instanceof int[]) {
+            int length = ((int[]) obj).length;
+            while (i7 < length) {
+                jsonWriter.value(r7[i7]);
+                i7++;
+            }
+        } else if (obj instanceof long[]) {
+            long[] jArr = (long[]) obj;
+            int length2 = jArr.length;
+            while (i7 < length2) {
+                long j3 = jArr[i7];
+                j();
+                jsonWriter.value(j3);
+                i7++;
+            }
+        } else if (obj instanceof double[]) {
+            double[] dArr = (double[]) obj;
+            int length3 = dArr.length;
+            while (i7 < length3) {
+                jsonWriter.value(dArr[i7]);
+                i7++;
+            }
+        } else if (obj instanceof boolean[]) {
+            boolean[] zArr = (boolean[]) obj;
+            int length4 = zArr.length;
+            while (i7 < length4) {
+                jsonWriter.value(zArr[i7]);
+                i7++;
+            }
+        } else if (obj instanceof Number[]) {
+            Number[] numberArr = (Number[]) obj;
+            int length5 = numberArr.length;
+            while (i7 < length5) {
+                h(numberArr[i7]);
+                i7++;
+            }
+        } else {
+            Object[] objArr = (Object[]) obj;
+            int length6 = objArr.length;
+            while (i7 < length6) {
+                h(objArr[i7]);
+                i7++;
+            }
+        }
+        jsonWriter.endArray();
         return this;
     }
 
-    public final void g(ma.c cVar, int i3, boolean z10) {
-        if (z10 && i3 == 0) {
-            return;
+    public final e i(Object obj, String str) {
+        boolean z9 = this.f;
+        JsonWriter jsonWriter = this.b;
+        if (z9) {
+            if (obj == null) {
+                return this;
+            }
+            j();
+            jsonWriter.name(str);
+            h(obj);
+            return this;
         }
-        d dVar = (d) cVar.b(d.class);
-        if (dVar == null) {
-            throw new ma.b("Field has no @Protobuf config");
-        }
-        k(((a) dVar).a << 3);
-        k(i3);
-    }
-
-    public final void h(ma.c cVar, Object obj, boolean z10) {
+        j();
+        jsonWriter.name(str);
         if (obj == null) {
-            return;
+            jsonWriter.nullValue();
+            return this;
         }
-        if (obj instanceof CharSequence) {
-            CharSequence charSequence = (CharSequence) obj;
-            if (z10 && charSequence.length() == 0) {
-                return;
-            }
-            k((j(cVar) << 3) | 2);
-            byte[] bytes = charSequence.toString().getBytes(f);
-            k(bytes.length);
-            this.a.write(bytes);
-            return;
-        }
-        if (obj instanceof Collection) {
-            Iterator it = ((Collection) obj).iterator();
-            while (it.hasNext()) {
-                h(cVar, it.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                i(i, cVar, (Map.Entry) it2.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Double) {
-            d(cVar, ((Double) obj).doubleValue(), z10);
-            return;
-        }
-        if (obj instanceof Float) {
-            float floatValue = ((Float) obj).floatValue();
-            if (z10 && floatValue == 0.0f) {
-                return;
-            }
-            k((j(cVar) << 3) | 5);
-            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
-            return;
-        }
-        if (obj instanceof Number) {
-            long longValue = ((Number) obj).longValue();
-            if (z10 && longValue == 0) {
-                return;
-            }
-            d dVar = (d) cVar.b(d.class);
-            if (dVar == null) {
-                throw new ma.b("Field has no @Protobuf config");
-            }
-            k(((a) dVar).a << 3);
-            l(longValue);
-            return;
-        }
-        if (obj instanceof Boolean) {
-            g(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z10);
-            return;
-        }
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            if (z10 && bArr.length == 0) {
-                return;
-            }
-            k((j(cVar) << 3) | 2);
-            k(bArr.length);
-            this.a.write(bArr);
-            return;
-        }
-        ma.d dVar2 = (ma.d) this.b.get(obj.getClass());
-        if (dVar2 != null) {
-            i(dVar2, cVar, obj, z10);
-            return;
-        }
-        ma.f fVar = (ma.f) this.c.get(obj.getClass());
-        if (fVar != null) {
-            h0 h0Var = this.e;
-            h0Var.b = false;
-            h0Var.d = cVar;
-            h0Var.c = z10;
-            fVar.a(obj, h0Var);
-            return;
-        }
-        if (obj instanceof b) {
-            g(cVar, ((b) obj).a(), true);
-        } else if (obj instanceof Enum) {
-            g(cVar, ((Enum) obj).ordinal(), true);
-        } else {
-            i(this.d, cVar, obj, z10);
-        }
+        h(obj);
+        return this;
     }
 
-    public final void i(ma.d dVar, ma.c cVar, Object obj, boolean z10) {
-        b0 b0Var = new b0(1);
-        b0Var.b = 0L;
-        try {
-            OutputStream outputStream = this.a;
-            this.a = b0Var;
-            try {
-                dVar.a(obj, this);
-                this.a = outputStream;
-                long j10 = b0Var.b;
-                b0Var.close();
-                if (z10 && j10 == 0) {
-                    return;
-                }
-                k((j(cVar) << 3) | 2);
-                l(j10);
-                dVar.a(obj, this);
-            } catch (Throwable th2) {
-                this.a = outputStream;
-                throw th2;
-            }
-        } catch (Throwable th3) {
-            try {
-                b0Var.close();
-            } catch (Throwable th4) {
-                th3.addSuppressed(th4);
-            }
-            throw th3;
+    public final void j() {
+        if (!this.a) {
+            throw new IllegalStateException("Parent context used since this context was created. Cannot use this context anymore.");
         }
-    }
-
-    public final void k(int i3) {
-        while ((i3 & (-128)) != 0) {
-            this.a.write((i3 & hs.L1) | 128);
-            i3 >>>= 7;
-        }
-        this.a.write(i3 & hs.L1);
-    }
-
-    public final void l(long j10) {
-        while (((-128) & j10) != 0) {
-            this.a.write((((int) j10) & hs.L1) | 128);
-            j10 >>>= 7;
-        }
-        this.a.write(((int) j10) & hs.L1);
     }
 }

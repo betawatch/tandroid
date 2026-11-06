@@ -1,21 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class uu extends vg.y0 {
+public final class uu extends ug.z0 {
     @Override // android.view.View
     public final void invalidate() {
-        if (dh.d0.b(this)) {
+        if (ch.e0.b(this)) {
             return;
         }
         super.invalidate();
     }
 
     @Override // android.view.View
-    public final void invalidate(int i3, int i10, int i11, int i12) {
-        if (dh.d0.b(this)) {
+    public final void invalidate(int i7, int i10, int i11, int i12) {
+        if (ch.e0.b(this)) {
             return;
         }
-        super.invalidate(i3, i10, i11, i12);
+        super.invalidate(i7, i10, i11, i12);
     }
 }

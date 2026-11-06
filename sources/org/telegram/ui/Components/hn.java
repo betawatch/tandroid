@@ -1,25 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class hn extends org.telegram.ui.ActionBar.f1 {
-    public final /* synthetic */ jn o;
+public final class hn implements f8 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.g1[] a;
+    public final /* synthetic */ kn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hn(jn jnVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = jnVar;
+    public hn(kn knVar, org.telegram.ui.ActionBar.g1[] g1VarArr) {
+        this.b = knVar;
+        this.a = g1VarArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        org.telegram.ui.wm wmVar = this.o.H;
-        if (wmVar != null) {
-            wmVar.getClass();
-            wmVar.v8(false, true, 0.0f);
+    @Override // org.telegram.ui.Components.f8
+    public final void X0(int i7, int i10) {
+        org.telegram.ui.an anVar = this.b.G;
+        if (anVar == null) {
+            return;
         }
+        anVar.getMessagesController().I4(i7, anVar.a());
+        TLRPC.ChatFull chatFull = anVar.p8;
+        TLRPC.UserFull userFull = anVar.q8;
+        if (userFull == null && chatFull == null) {
+            return;
+        }
+        anVar.f8();
+        UndoView undoView = anVar.M3;
+        if (undoView != null) {
+            undoView.k(anVar.a(), i10, anVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f8
+    public final void dismiss() {
+        org.telegram.ui.ActionBar.g1 g1Var = this.a[0];
+        if (g1Var != null) {
+            g1Var.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f8
+    public final /* synthetic */ void i1() {
     }
 }

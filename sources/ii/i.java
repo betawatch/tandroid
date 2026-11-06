@@ -1,41 +1,33 @@
 package ii;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.tj0;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.qs;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class i extends q31 {
-    static {
-        q31.h(new i());
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p b;
+
+    public /* synthetic */ i(p pVar, int i7) {
+        this.a = i7;
+        this.b = pVar;
     }
 
-    public static r31 i(int i3, String str, String str2) {
-        r31 K = r31.K(i.class);
-        K.k = i3;
-        K.l = str;
-        K.m = str2;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
-        ((j) view).a(r31Var.k, r31Var.l, r31Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, tj0 tj0Var, int i3, e6 e6Var) {
-        return new j(context, e6Var, false);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean f() {
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        p pVar = this.b;
+        switch (i7) {
+            case 0:
+                p.b0(pVar);
+                break;
+            default:
+                qs notificationCenter = pVar.getNotificationCenter();
+                int i10 = qp.C8;
+                notificationCenter.k(2, Integer.valueOf(TLObject.FLAG_13));
+                break;
+        }
     }
 }

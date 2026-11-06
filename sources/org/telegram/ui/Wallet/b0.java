@@ -1,14 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
+import org.telegram.messenger.v10;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class b0 {
-    public String a;
-    public long b;
-    public byte[] c;
-    public int d;
-    public boolean e;
-    public ArrayList f;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final class b0 implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ v10 h;
+    public final /* synthetic */ n0 n;
+
+    public b0(n0 n0Var, String str, long j3, String str2, byte[] bArr, v10 v10Var) {
+        this.n = n0Var;
+        this.c = str;
+        this.d = j3;
+        this.e = str2;
+        this.f = bArr;
+        this.h = v10Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final synchronized void run() {
+        if (this.a) {
+            return;
+        }
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new bi.p5(27, this, this.h));
+    }
 }

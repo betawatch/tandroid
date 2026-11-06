@@ -7,15 +7,15 @@ public final class y5 extends u5 {
     public m6 c;
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         m6 m6Var;
-        if (j10 >= 2147483639) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j10 <= 0) {
+        if (j3 <= 0) {
             m6Var = new m6();
         } else {
-            m6Var = new m6((int) j10);
+            m6Var = new m6((int) j3);
         }
         this.c = m6Var;
     }
@@ -27,22 +27,22 @@ public final class y5 extends u5 {
         long length = dArr.length;
         j5 j5Var = this.a;
         j5Var.o(length);
-        int i3 = 0;
+        int i7 = 0;
         if (!this.b) {
             int length2 = dArr.length;
-            while (i3 < length2) {
-                j5Var.accept(dArr[i3]);
-                i3++;
+            while (i7 < length2) {
+                j5Var.accept(dArr[i7]);
+                i7++;
             }
         } else {
             int length3 = dArr.length;
-            while (i3 < length3) {
-                double d = dArr[i3];
+            while (i7 < length3) {
+                double d = dArr[i7];
                 if (j5Var.q()) {
                     break;
                 }
                 j5Var.accept(d);
-                i3++;
+                i7++;
             }
         }
         j5Var.end();

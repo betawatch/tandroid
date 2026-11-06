@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final Runnable a;
@@ -30,10 +30,10 @@ public final class c0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public w70 r;
+    public a80 r;
     public y s;
     public Drawable t;
-    public org.telegram.ui.Components.g5 u;
+    public org.telegram.ui.Components.i5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -52,19 +52,19 @@ public final class c0 {
                 this.a.run();
             }
         }
-        return com.google.android.recaptcha.internal.a.y(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.recaptcha.internal.a.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
-    public final void b(boolean z10) {
+    public final void b(boolean z9) {
         ValueAnimator valueAnimator;
-        if (this.v != z10) {
-            this.v = z10;
+        if (this.v != z9) {
+            this.v = z9;
             this.a.run();
-            if (z10 && (valueAnimator = this.x) != null) {
+            if (z9 && (valueAnimator = this.x) != null) {
                 valueAnimator.removeAllListeners();
                 this.x.cancel();
             }
-            if (z10) {
+            if (z9) {
                 return;
             }
             float f10 = this.w;
@@ -72,7 +72,7 @@ public final class c0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new ii.v3(this, 23));
+                this.x.addListener(new m.a(this, 22));
                 org.telegram.messenger.camera.q.i(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();

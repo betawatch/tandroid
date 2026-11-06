@@ -3,7 +3,7 @@ package org.telegram.tgnet.tl;
 import android.graphics.Bitmap;
 import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.go;
+import org.telegram.messenger.ch;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
@@ -14,11 +14,11 @@ import org.telegram.tgnet.p;
 import org.telegram.tgnet.s;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public class TL_iv {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class Page extends TLObject {
         public int flags;
         public File local;
@@ -32,12 +32,12 @@ public class TL_iv {
         public ArrayList<TLRPC.Photo> photos = new ArrayList<>();
         public ArrayList<TLRPC.Document> documents = new ArrayList<>();
 
-        public static Page TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (Page) TLObject.TLdeserialize(Page.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static Page TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (Page) TLObject.TLdeserialize(Page.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static Page fromConstructor(int i3) {
-            switch (i3) {
+        private static Page fromConstructor(int i7) {
+            switch (i7) {
                 case TL_pagePart_layer67.constructor /* -1913754556 */:
                     return new TL_pagePart_layer67();
                 case TL_pagePart_layer82.constructor /* -1908433218 */:
@@ -58,7 +58,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class PageBlock extends TLObject {
         public boolean bottom;
         public int cachedHeight;
@@ -73,12 +73,12 @@ public class TL_iv {
         public TLRPC.PhotoSize thumb;
         public TLObject thumbObject;
 
-        public static PageBlock TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (PageBlock) TLObject.TLdeserialize(PageBlock.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static PageBlock TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (PageBlock) TLObject.TLdeserialize(PageBlock.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static PageBlock fromConstructor(int i3) {
-            switch (i3) {
+        private static PageBlock fromConstructor(int i7) {
+            switch (i7) {
                 case pageBlockAudio.constructor /* -2143067670 */:
                     return new pageBlockAudio();
                 case pageBlockSubtitle.constructor /* -1879401953 */:
@@ -191,20 +191,20 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class PageCaption extends TLObject {
         public static final int constructor = 1869903447;
         public RichText credit;
         public RichText text;
 
-        public static PageCaption TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (PageCaption) TLObject.TLdeserialize(PageCaption.class, 1869903447 != i3 ? null : new PageCaption(), inputSerializedData, i3, z10);
+        public static PageCaption TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (PageCaption) TLObject.TLdeserialize(PageCaption.class, 1869903447 != i7 ? null : new PageCaption(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.credit = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.credit = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -215,15 +215,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class PageListItem extends TLObject {
         public boolean checkbox;
         public boolean checked;
         public int flags;
 
-        public static PageListItem TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+        public static PageListItem TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
             TLObject tL_pageListItemText_layer226;
-            switch (i3) {
+            switch (i7) {
                 case TL_pageListItemText_layer226.constructor /* -1188055347 */:
                     tL_pageListItemText_layer226 = new TL_pageListItemText_layer226();
                     break;
@@ -240,11 +240,11 @@ public class TL_iv {
                     tL_pageListItemText_layer226 = null;
                     break;
             }
-            return (PageListItem) TLObject.TLdeserialize(PageListItem.class, tL_pageListItemText_layer226, inputSerializedData, i3, z10);
+            return (PageListItem) TLObject.TLdeserialize(PageListItem.class, tL_pageListItemText_layer226, inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class PageListOrderedItem extends TLObject {
         public boolean checkbox;
         public boolean checked;
@@ -253,9 +253,9 @@ public class TL_iv {
         public String type;
         public int value;
 
-        public static PageListOrderedItem TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+        public static PageListOrderedItem TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
             TLObject tL_pageListOrderedItemBlocks;
-            switch (i3) {
+            switch (i7) {
                 case TL_pageListOrderedItemBlocks.constructor /* -1879910928 */:
                     tL_pageListOrderedItemBlocks = new TL_pageListOrderedItemBlocks();
                     break;
@@ -272,11 +272,11 @@ public class TL_iv {
                     tL_pageListOrderedItemBlocks = null;
                     break;
             }
-            return (PageListOrderedItem) TLObject.TLdeserialize(PageListOrderedItem.class, tL_pageListOrderedItemBlocks, inputSerializedData, i3, z10);
+            return (PageListOrderedItem) TLObject.TLdeserialize(PageListOrderedItem.class, tL_pageListOrderedItemBlocks, inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class RichMessage extends TLObject {
         public static final int constructor = -1158439541;
         public int flags;
@@ -286,19 +286,19 @@ public class TL_iv {
         public ArrayList<TLRPC.Photo> photos = new ArrayList<>();
         public ArrayList<TLRPC.Document> documents = new ArrayList<>();
 
-        public static RichMessage TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (RichMessage) TLObject.TLdeserialize(RichMessage.class, i3 != -1158439541 ? null : new RichMessage(), inputSerializedData, i3, z10);
+        public static RichMessage TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (RichMessage) TLObject.TLdeserialize(RichMessage.class, i7 != -1158439541 ? null : new RichMessage(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.rtl = TLObject.hasFlag(readInt32, 1);
             this.part = TLObject.hasFlag(this.flags, 2);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -315,7 +315,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static abstract class RichText extends TLObject {
         public String email;
         public RichText parentRichText;
@@ -324,12 +324,12 @@ public class TL_iv {
         public String url;
         public long webpage_id;
 
-        public static RichText TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (RichText) TLObject.TLdeserialize(RichText.class, fromConstructor(i3), inputSerializedData, i3, z10);
+        public static RichText TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (RichText) TLObject.TLdeserialize(RichText.class, fromConstructor(i7), inputSerializedData, i7, z9);
         }
 
-        private static RichText fromConstructor(int i3) {
-            switch (i3) {
+        private static RichText fromConstructor(int i7) {
+            switch (i7) {
                 case textDiff.constructor /* -1769551024 */:
                     return new textDiff();
                 case textStrike.constructor /* -1678197867 */:
@@ -400,7 +400,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_inputRichMessage extends TLObject {
         public static final int constructor = -456898052;
         public int flags;
@@ -411,25 +411,25 @@ public class TL_iv {
         public ArrayList<TLRPC.InputDocument> documents = new ArrayList<>();
         public ArrayList<TLRPC.InputUser> users = new ArrayList<>();
 
-        public static TL_inputRichMessage TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (TL_inputRichMessage) TLObject.TLdeserialize(TL_inputRichMessage.class, i3 != -456898052 ? null : new TL_inputRichMessage(), inputSerializedData, i3, z10);
+        public static TL_inputRichMessage TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (TL_inputRichMessage) TLObject.TLdeserialize(TL_inputRichMessage.class, i7 != -456898052 ? null : new TL_inputRichMessage(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.rtl = TLObject.hasFlag(readInt32, 1);
             this.noautolink = TLObject.hasFlag(this.flags, 2);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.photos = Vector.deserialize(inputSerializedData, new c(23), z10);
+                this.photos = Vector.deserialize(inputSerializedData, new c(23), z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.documents = Vector.deserialize(inputSerializedData, new p(10), z10);
+                this.documents = Vector.deserialize(inputSerializedData, new p(10), z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.users = Vector.deserialize(inputSerializedData, new p(11), z10);
+                this.users = Vector.deserialize(inputSerializedData, new p(11), z9);
             }
         }
 
@@ -454,23 +454,23 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_page extends Page {
         public static final int constructor = -1738178803;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.part = TLObject.hasFlag(readInt32, 1);
             this.rtl = TLObject.hasFlag(this.flags, 2);
             this.v2 = TLObject.hasFlag(this.flags, 4);
-            this.url = inputSerializedData.readString(z10);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.url = inputSerializedData.readString(z9);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.views = inputSerializedData.readInt32(z10);
+                this.views = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -494,15 +494,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageFull_layer67 extends TL_page {
         public static final int constructor = -677274263;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -514,15 +514,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageFull_layer82 extends TL_page {
         public static final int constructor = 1433323434;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -534,18 +534,18 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListItemBlocks extends PageListItem {
         public static final int constructor = 1674209194;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.checkbox = TLObject.hasFlag(readInt32, 1);
             this.checked = TLObject.hasFlag(this.flags, 2);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -560,13 +560,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListItemBlocks_226 extends TL_pageListItemBlocks {
         public static final int constructor = 635466748;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListItemBlocks, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListItemBlocks, org.telegram.tgnet.TLObject
@@ -576,18 +576,18 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListItemText extends PageListItem {
         public static final int constructor = 794323004;
         public RichText text;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.checkbox = TLObject.hasFlag(readInt32, 1);
             this.checked = TLObject.hasFlag(this.flags, 2);
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -602,13 +602,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListItemText_layer226 extends TL_pageListItemText {
         public static final int constructor = -1188055347;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListItemText, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListItemText, org.telegram.tgnet.TLObject
@@ -618,26 +618,26 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListOrderedItemBlocks extends PageListOrderedItem {
         public static final int constructor = -1879910928;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.checkbox = TLObject.hasFlag(readInt32, 1);
             this.checked = TLObject.hasFlag(this.flags, 2);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.num = inputSerializedData.readString(z10);
+                this.num = inputSerializedData.readString(z9);
             }
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.value = inputSerializedData.readInt32(z10);
+                this.value = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.type = inputSerializedData.readString(z10);
+                this.type = inputSerializedData.readString(z9);
             }
         }
 
@@ -666,14 +666,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListOrderedItemBlocks_layer226 extends TL_pageListOrderedItemBlocks {
         public static final int constructor = -1730311882;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListOrderedItemBlocks, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.num = inputSerializedData.readString(z10);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.num = inputSerializedData.readString(z9);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListOrderedItemBlocks, org.telegram.tgnet.TLObject
@@ -684,26 +684,26 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListOrderedItemText extends PageListOrderedItem {
         public static final int constructor = 352522633;
         public RichText text;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.checkbox = TLObject.hasFlag(readInt32, 1);
             this.checked = TLObject.hasFlag(this.flags, 2);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.num = inputSerializedData.readString(z10);
+                this.num = inputSerializedData.readString(z9);
             }
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.value = inputSerializedData.readInt32(z10);
+                this.value = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.type = inputSerializedData.readString(z10);
+                this.type = inputSerializedData.readString(z9);
             }
         }
 
@@ -732,14 +732,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pageListOrderedItemText_layer226 extends TL_pageListOrderedItemText {
         public static final int constructor = 1577484359;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListOrderedItemText, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.num = inputSerializedData.readString(z10);
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.num = inputSerializedData.readString(z9);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pageListOrderedItemText, org.telegram.tgnet.TLObject
@@ -750,16 +750,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pagePart_layer67 extends TL_pagePart_layer82 {
         public static final int constructor = -1913754556;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pagePart_layer82, org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
             this.part = true;
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pagePart_layer82, org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -771,16 +771,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_pagePart_layer82 extends TL_page {
         public static final int constructor = -1908433218;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
             this.part = true;
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -792,20 +792,20 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_page_layer110 extends TL_page {
         public static final int constructor = -1366746132;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.part = TLObject.hasFlag(readInt32, 1);
             this.rtl = TLObject.hasFlag(this.flags, 2);
-            this.url = inputSerializedData.readString(z10);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.url = inputSerializedData.readString(z9);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -823,20 +823,20 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class TL_page_layer88 extends TL_page {
         public static final int constructor = -241590104;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.part = TLObject.hasFlag(readInt32, 1);
             this.rtl = TLObject.hasFlag(this.flags, 2);
             this.v2 = TLObject.hasFlag(this.flags, 4);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z9);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -855,7 +855,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class getRichMessage extends TLMethod<TLRPC.messages_Messages> {
         public static final int constructor = 1343580623;
         public int id;
@@ -869,12 +869,12 @@ public class TL_iv {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.messages_Messages deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return TLRPC.messages_Messages.TLdeserialize(inputSerializedData, i3, z10);
+        public TLRPC.messages_Messages deserializeResponseT(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return TLRPC.messages_Messages.TLdeserialize(inputSerializedData, i7, z9);
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class inputPageBlockMap extends PageBlock {
         public static final int constructor = 1464557951;
         public TLRPC.InputGeoPoint geo;
@@ -883,12 +883,12 @@ public class TL_iv {
         public int zoom;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.geo = TLRPC.InputGeoPoint.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.zoom = inputSerializedData.readInt32(z10);
-            this.w = inputSerializedData.readInt32(z10);
-            this.h = inputSerializedData.readInt32(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.geo = TLRPC.InputGeoPoint.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.zoom = inputSerializedData.readInt32(z9);
+            this.w = inputSerializedData.readInt32(z9);
+            this.h = inputSerializedData.readInt32(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -902,14 +902,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockAnchor extends PageBlock {
         public static final int constructor = -837994576;
         public String name;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.name = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.name = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -919,15 +919,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockAudio extends PageBlock {
         public static final int constructor = -2143067670;
         public long audio_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.audio_id = inputSerializedData.readInt64(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.audio_id = inputSerializedData.readInt64(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -938,16 +938,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockAudio_layer82 extends pageBlockAudio {
         public static final int constructor = 834148991;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockAudio, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.audio_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.audio_id = inputSerializedData.readInt64(z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -959,16 +959,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockAuthorDate extends PageBlock {
         public static final int constructor = -1162877472;
         public RichText author;
         public int published_date;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.author = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.published_date = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.author = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.published_date = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -979,17 +979,17 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockAuthorDate_layer60 extends pageBlockAuthorDate {
         public static final int constructor = 1029399794;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockAuthorDate, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            String readString = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            String readString = inputSerializedData.readString(z9);
             textPlain textplain = new textPlain();
             this.author = textplain;
             textplain.text = readString;
-            this.published_date = inputSerializedData.readInt32(z10);
+            this.published_date = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockAuthorDate, org.telegram.tgnet.TLObject
@@ -1000,7 +1000,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockBlockquote extends PageBlock {
         public static final int constructor = 1724999435;
         public RichText caption;
@@ -1008,12 +1008,12 @@ public class TL_iv {
         public int flags;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.collapsed = TLObject.hasFlag(readInt32, 1);
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1027,16 +1027,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockBlockquoteBlocks extends PageBlock {
         public static final int constructor = 242108356;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
         public RichText caption;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1047,14 +1047,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockBlockquote_layer228 extends pageBlockBlockquote {
         public static final int constructor = 641563686;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockBlockquote, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            ((pageBlockBlockquote) this).caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            ((pageBlockBlockquote) this).caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockBlockquote, org.telegram.tgnet.TLObject
@@ -1065,7 +1065,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockButtonRow extends PageBlock {
         public static final int constructor = 1835270936;
         public boolean align_center;
@@ -1075,13 +1075,13 @@ public class TL_iv {
         public int flags;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.align_left = TLObject.hasFlag(readInt32, 1);
             this.align_center = TLObject.hasFlag(this.flags, 2);
             this.align_right = TLObject.hasFlag(this.flags, 4);
-            this.buttons = Vector.deserialize(inputSerializedData, new c(24), z10);
+            this.buttons = Vector.deserialize(inputSerializedData, new c(24), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1098,14 +1098,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockChannel extends PageBlock {
         public static final int constructor = -283684427;
         public TLRPC.Chat channel;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.channel = TLRPC.Chat.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.channel = TLRPC.Chat.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1115,15 +1115,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockCollage extends PageBlock {
         public static final int constructor = 1705048653;
         public ArrayList<PageBlock> items = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1134,16 +1134,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockCollage_layer82 extends pageBlockCollage {
         public static final int constructor = 145955919;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockCollage, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(22), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(22), z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1155,14 +1155,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockCover extends PageBlock {
         public static final int constructor = 972174080;
         public PageBlock cover;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.cover = PageBlock.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.cover = PageBlock.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1172,7 +1172,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockDetails extends PageBlock {
         public static final int constructor = 1987480557;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
@@ -1181,12 +1181,12 @@ public class TL_iv {
         public RichText title;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.open = TLObject.hasFlag(readInt32, 1);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1200,7 +1200,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockDivider extends PageBlock {
         public static final int constructor = -618614392;
 
@@ -1210,15 +1210,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockDocument extends PageBlock {
         public static final int constructor = 955923363;
         public long document_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.document_id = inputSerializedData.readInt64(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.document_id = inputSerializedData.readInt64(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1229,7 +1229,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockEmbed extends PageBlock {
         public static final int constructor = -1468953147;
         public boolean allow_scrolling;
@@ -1242,27 +1242,27 @@ public class TL_iv {
         public int w;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.full_width = TLObject.hasFlag(readInt32, 1);
             this.allow_scrolling = TLObject.hasFlag(this.flags, 8);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.url = inputSerializedData.readString(z10);
+                this.url = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.html = inputSerializedData.readString(z10);
+                this.html = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.poster_photo_id = inputSerializedData.readInt64(z10);
+                this.poster_photo_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 32)) {
-                this.w = inputSerializedData.readInt32(z10);
+                this.w = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 32)) {
-                this.h = inputSerializedData.readInt32(z10);
+                this.h = inputSerializedData.readInt32(z9);
             }
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1292,7 +1292,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockEmbedPost extends PageBlock {
         public static final int constructor = -229005301;
         public String author;
@@ -1303,14 +1303,14 @@ public class TL_iv {
         public long webpage_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.url = inputSerializedData.readString(z10);
-            this.webpage_id = inputSerializedData.readInt64(z10);
-            this.author_photo_id = inputSerializedData.readInt64(z10);
-            this.author = inputSerializedData.readString(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.url = inputSerializedData.readString(z9);
+            this.webpage_id = inputSerializedData.readInt64(z9);
+            this.author_photo_id = inputSerializedData.readInt64(z9);
+            this.author = inputSerializedData.readString(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1326,21 +1326,21 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockEmbedPost_layer82 extends pageBlockEmbedPost {
         public static final int constructor = 690781161;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockEmbedPost, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.url = inputSerializedData.readString(z10);
-            this.webpage_id = inputSerializedData.readInt64(z10);
-            this.author_photo_id = inputSerializedData.readInt64(z10);
-            this.author = inputSerializedData.readString(z10);
-            this.date = inputSerializedData.readInt32(z10);
-            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.url = inputSerializedData.readString(z9);
+            this.webpage_id = inputSerializedData.readInt64(z9);
+            this.author_photo_id = inputSerializedData.readInt64(z9);
+            this.author = inputSerializedData.readString(z9);
+            this.date = inputSerializedData.readInt32(z9);
+            this.blocks = Vector.deserialize(inputSerializedData, new c(22), z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1357,27 +1357,27 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockEmbed_layer60 extends pageBlockEmbed {
         public static final int constructor = -650782469;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockEmbed, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.full_width = TLObject.hasFlag(readInt32, 1);
             this.allow_scrolling = TLObject.hasFlag(this.flags, 8);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.url = inputSerializedData.readString(z10);
+                this.url = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.html = inputSerializedData.readString(z10);
+                this.html = inputSerializedData.readString(z9);
             }
-            this.w = inputSerializedData.readInt32(z10);
-            this.h = inputSerializedData.readInt32(z10);
+            this.w = inputSerializedData.readInt32(z9);
+            this.h = inputSerializedData.readInt32(z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1401,30 +1401,30 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockEmbed_layer82 extends pageBlockEmbed {
         public static final int constructor = -840826671;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockEmbed, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.full_width = TLObject.hasFlag(readInt32, 1);
             this.allow_scrolling = TLObject.hasFlag(this.flags, 8);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.url = inputSerializedData.readString(z10);
+                this.url = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.html = inputSerializedData.readString(z10);
+                this.html = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.poster_photo_id = inputSerializedData.readInt64(z10);
+                this.poster_photo_id = inputSerializedData.readInt64(z9);
             }
-            this.w = inputSerializedData.readInt32(z10);
-            this.h = inputSerializedData.readInt32(z10);
+            this.w = inputSerializedData.readInt32(z9);
+            this.h = inputSerializedData.readInt32(z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1451,13 +1451,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockFooter extends PageBlock {
         public static final int constructor = 1216809369;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1467,13 +1467,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeader extends PageBlock {
         public static final int constructor = -1076861716;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1483,13 +1483,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading1 extends PageBlock {
         public static final int constructor = -1157691601;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1499,13 +1499,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading2 extends PageBlock {
         public static final int constructor = 158018284;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1515,13 +1515,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading3 extends PageBlock {
         public static final int constructor = 1743204781;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1531,13 +1531,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading4 extends PageBlock {
         public static final int constructor = -1254983893;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1547,13 +1547,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading5 extends PageBlock {
         public static final int constructor = -608277398;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1563,13 +1563,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockHeading6 extends PageBlock {
         public static final int constructor = 1747599785;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1579,13 +1579,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockKicker extends PageBlock {
         public static final int constructor = 504660880;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1595,15 +1595,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockList extends PageBlock {
         public static final int constructor = -454524911;
         public ArrayList<PageListItem> items = new ArrayList<>();
         public boolean ordered;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(25), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(25), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1613,19 +1613,19 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockList_layer82 extends pageBlockList {
         public static final int constructor = 978896884;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockList, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.ordered = inputSerializedData.readBool(z10);
-            ArrayList deserialize = Vector.deserialize(inputSerializedData, new go(6), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.ordered = inputSerializedData.readBool(z9);
+            ArrayList deserialize = Vector.deserialize(inputSerializedData, new ch(9), z9);
             int size = deserialize.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = deserialize.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = deserialize.get(i7);
+                i7++;
                 TL_pageListItemText tL_pageListItemText = new TL_pageListItemText();
                 tL_pageListItemText.text = (RichText) obj;
                 this.items.add(tL_pageListItemText);
@@ -1639,10 +1639,10 @@ public class TL_iv {
             ArrayList arrayList = new ArrayList(this.items.size());
             ArrayList<PageListItem> arrayList2 = this.items;
             int size = arrayList2.size();
-            int i3 = 0;
-            while (i3 < size) {
-                PageListItem pageListItem = arrayList2.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                PageListItem pageListItem = arrayList2.get(i7);
+                i7++;
                 PageListItem pageListItem2 = pageListItem;
                 if (pageListItem2 instanceof TL_pageListItemText) {
                     arrayList.add(((TL_pageListItemText) pageListItem2).text);
@@ -1652,7 +1652,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockMap extends PageBlock {
         public static final int constructor = -1538310410;
         public TLRPC.GeoPoint geo;
@@ -1661,12 +1661,12 @@ public class TL_iv {
         public int zoom;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.geo = TLRPC.GeoPoint.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.zoom = inputSerializedData.readInt32(z10);
-            this.w = inputSerializedData.readInt32(z10);
-            this.h = inputSerializedData.readInt32(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.geo = TLRPC.GeoPoint.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.zoom = inputSerializedData.readInt32(z9);
+            this.w = inputSerializedData.readInt32(z9);
+            this.h = inputSerializedData.readInt32(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1680,14 +1680,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockMath extends PageBlock {
         public static final int constructor = 1493699616;
         public String source;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.source = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.source = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1697,7 +1697,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockOrderedList extends PageBlock {
         public static final int constructor = 534181569;
         public int flags;
@@ -1707,16 +1707,16 @@ public class TL_iv {
         public String type;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.reversed = TLObject.hasFlag(readInt32, 4);
-            this.items = Vector.deserialize(inputSerializedData, new c(26), z10);
+            this.items = Vector.deserialize(inputSerializedData, new c(26), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.start = inputSerializedData.readInt32(z10);
+                this.start = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.type = inputSerializedData.readString(z10);
+                this.type = inputSerializedData.readString(z9);
             }
         }
 
@@ -1736,13 +1736,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockOrderedList_layer226 extends pageBlockOrderedList {
         public static final int constructor = -1702174239;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockOrderedList, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(26), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(26), z9);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockOrderedList, org.telegram.tgnet.TLObject
@@ -1752,13 +1752,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockParagraph extends PageBlock {
         public static final int constructor = 1182402406;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1768,7 +1768,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockPhoto extends PageBlock {
         public static final int constructor = 391759200;
         public int flags;
@@ -1778,17 +1778,17 @@ public class TL_iv {
         public long webpage_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.spoiler = TLObject.hasFlag(readInt32, 2);
-            this.photo_id = inputSerializedData.readInt64(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.photo_id = inputSerializedData.readInt64(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.url = inputSerializedData.readString(z10);
+                this.url = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.webpage_id = inputSerializedData.readInt64(z10);
+                this.webpage_id = inputSerializedData.readInt64(z9);
             }
         }
 
@@ -1809,16 +1809,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockPhoto_layer82 extends pageBlockPhoto {
         public static final int constructor = -372860542;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockPhoto, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.photo_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.photo_id = inputSerializedData.readInt64(z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1830,7 +1830,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockPreformatted extends PageBlock {
         public static final int constructor = -1066346178;
         public int codeLength = -1;
@@ -1841,9 +1841,9 @@ public class TL_iv {
         public String language;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.language = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.language = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1854,15 +1854,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockPullquote extends PageBlock {
         public static final int constructor = 1329878739;
         public RichText caption;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.caption = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1873,16 +1873,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockRelatedArticles extends PageBlock {
         public static final int constructor = 370236054;
         public ArrayList<pageRelatedArticle> articles = new ArrayList<>();
         public RichText title;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.articles = Vector.deserialize(inputSerializedData, new c(27), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.articles = Vector.deserialize(inputSerializedData, new c(27), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1893,15 +1893,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockSlideshow extends PageBlock {
         public static final int constructor = 52401552;
         public ArrayList<PageBlock> items = new ArrayList<>();
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(22), z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1912,16 +1912,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockSlideshow_layer82 extends pageBlockSlideshow {
         public static final int constructor = 319588707;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockSlideshow, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(22), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.items = Vector.deserialize(inputSerializedData, new c(22), z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -1933,13 +1933,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockSubheader extends PageBlock {
         public static final int constructor = -248793375;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1949,13 +1949,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockSubtitle extends PageBlock {
         public static final int constructor = -1879401953;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1965,7 +1965,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockTable extends PageBlock {
         public static final int constructor = -1085412734;
         public boolean bordered;
@@ -1976,14 +1976,14 @@ public class TL_iv {
         public RichText title;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.bordered = TLObject.hasFlag(readInt32, 1);
             this.striped = TLObject.hasFlag(this.flags, 2);
             this.compact = TLObject.hasFlag(this.flags, 4);
-            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.rows = Vector.deserialize(inputSerializedData, new c(28), z10);
+            this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.rows = Vector.deserialize(inputSerializedData, new c(28), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2001,13 +2001,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockThinking extends PageBlock {
         public static final int constructor = 1009361890;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2017,13 +2017,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockTitle extends PageBlock {
         public static final int constructor = 1890305021;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2033,7 +2033,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockUnsupported extends PageBlock {
         public static final int constructor = 324435594;
 
@@ -2043,7 +2043,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockVideo extends PageBlock {
         public static final int constructor = 2089805750;
         public boolean autoplay;
@@ -2053,14 +2053,14 @@ public class TL_iv {
         public long video_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.autoplay = TLObject.hasFlag(readInt32, 1);
             this.loop = TLObject.hasFlag(this.flags, 2);
             this.spoiler = TLObject.hasFlag(this.flags, 4);
-            this.video_id = inputSerializedData.readInt64(z10);
-            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.video_id = inputSerializedData.readInt64(z9);
+            this.caption = PageCaption.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2078,20 +2078,20 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageBlockVideo_layer82 extends pageBlockVideo {
         public static final int constructor = -640214938;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockVideo, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.autoplay = TLObject.hasFlag(readInt32, 1);
             this.loop = TLObject.hasFlag(this.flags, 2);
-            this.video_id = inputSerializedData.readInt64(z10);
+            this.video_id = inputSerializedData.readInt64(z9);
             PageCaption pageCaption = new PageCaption();
             this.caption = pageCaption;
-            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            pageCaption.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             this.caption.credit = new textEmpty();
         }
 
@@ -2108,7 +2108,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageRelatedArticle extends TLObject {
         public static final int constructor = -1282352120;
         public String author;
@@ -2120,29 +2120,29 @@ public class TL_iv {
         public String url;
         public long webpage_id;
 
-        public static pageRelatedArticle TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (pageRelatedArticle) TLObject.TLdeserialize(pageRelatedArticle.class, -1282352120 != i3 ? null : new pageRelatedArticle(), inputSerializedData, i3, z10);
+        public static pageRelatedArticle TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (pageRelatedArticle) TLObject.TLdeserialize(pageRelatedArticle.class, -1282352120 != i7 ? null : new pageRelatedArticle(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.url = inputSerializedData.readString(z10);
-            this.webpage_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.url = inputSerializedData.readString(z9);
+            this.webpage_id = inputSerializedData.readInt64(z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.title = inputSerializedData.readString(z10);
+                this.title = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.description = inputSerializedData.readString(z10);
+                this.description = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.photo_id = inputSerializedData.readInt64(z10);
+                this.photo_id = inputSerializedData.readInt64(z9);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.author = inputSerializedData.readString(z10);
+                this.author = inputSerializedData.readString(z9);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.published_date = inputSerializedData.readInt32(z10);
+                this.published_date = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -2170,7 +2170,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageTableCell extends TLObject {
         public static final int constructor = 878078826;
         public boolean align_center;
@@ -2183,13 +2183,13 @@ public class TL_iv {
         public boolean valign_bottom;
         public boolean valign_middle;
 
-        public static pageTableCell TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (pageTableCell) TLObject.TLdeserialize(pageTableCell.class, 878078826 != i3 ? null : new pageTableCell(), inputSerializedData, i3, z10);
+        public static pageTableCell TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (pageTableCell) TLObject.TLdeserialize(pageTableCell.class, 878078826 != i7 ? null : new pageTableCell(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.header = TLObject.hasFlag(readInt32, 1);
             this.align_center = TLObject.hasFlag(this.flags, 8);
@@ -2197,13 +2197,13 @@ public class TL_iv {
             this.valign_middle = TLObject.hasFlag(this.flags, 32);
             this.valign_bottom = TLObject.hasFlag(this.flags, 64);
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.colspan = inputSerializedData.readInt32(z10);
+                this.colspan = inputSerializedData.readInt32(z9);
             }
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.rowspan = inputSerializedData.readInt32(z10);
+                this.rowspan = inputSerializedData.readInt32(z9);
             }
         }
 
@@ -2233,18 +2233,18 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class pageTableRow extends TLObject {
         public static final int constructor = -524237339;
         public ArrayList<pageTableCell> cells = new ArrayList<>();
 
-        public static pageTableRow TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
-            return (pageTableRow) TLObject.TLdeserialize(pageTableRow.class, -524237339 != i3 ? null : new pageTableRow(), inputSerializedData, i3, z10);
+        public static pageTableRow TLdeserialize(InputSerializedData inputSerializedData, int i7, boolean z9) {
+            return (pageTableRow) TLObject.TLdeserialize(pageTableRow.class, -524237339 != i7 ? null : new pageTableRow(), inputSerializedData, i7, z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.cells = Vector.deserialize(inputSerializedData, new c(29), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.cells = Vector.deserialize(inputSerializedData, new c(29), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2254,15 +2254,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textAnchor extends RichText {
         public static final int constructor = 894777186;
         public String name;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.name = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.name = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2273,13 +2273,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textAutoEmail extends RichText {
         public static final int constructor = -984177571;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2289,13 +2289,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textAutoPhone extends RichText {
         public static final int constructor = 616720265;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2305,13 +2305,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textAutoUrl extends RichText {
         public static final int constructor = -1402305622;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2321,13 +2321,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textBankCard extends RichText {
         public static final int constructor = -1185513171;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2337,13 +2337,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textBold extends RichText {
         public static final int constructor = 1730456516;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2353,13 +2353,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textBotCommand extends RichText {
         public static final int constructor = 50276819;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2369,7 +2369,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textButton extends RichText implements TL_keyboard.KeyboardButtonProto {
         public static final int constructor = -1345872682;
         public int flags;
@@ -2401,12 +2401,12 @@ public class TL_iv {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.flags = inputSerializedData.readInt32(z10);
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.type = TL_keyboard.InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.flags = inputSerializedData.readInt32(z9);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.type = TL_keyboard.InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.style = TL_keyboard.RichButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+                this.style = TL_keyboard.RichButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
             }
         }
 
@@ -2424,13 +2424,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textCashtag extends RichText {
         public static final int constructor = 2073958401;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2440,13 +2440,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textConcat extends RichText {
         public static final int constructor = 2120376535;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.texts = Vector.deserialize(inputSerializedData, new go(6), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.texts = Vector.deserialize(inputSerializedData, new ch(9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2456,16 +2456,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textCustomEmoji extends RichText {
         public static final int constructor = -1570679104;
         public String alt;
         public long document_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.document_id = inputSerializedData.readInt64(z10);
-            this.alt = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.document_id = inputSerializedData.readInt64(z9);
+            this.alt = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2476,7 +2476,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textDate extends RichText {
         public static final int constructor = -1514906069;
         public int date;
@@ -2489,8 +2489,8 @@ public class TL_iv {
         public boolean short_time;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            int readInt32 = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            int readInt32 = inputSerializedData.readInt32(z9);
             this.flags = readInt32;
             this.relative = TLObject.hasFlag(readInt32, 1);
             this.short_time = TLObject.hasFlag(this.flags, 2);
@@ -2498,8 +2498,8 @@ public class TL_iv {
             this.short_date = TLObject.hasFlag(this.flags, 8);
             this.long_date = TLObject.hasFlag(this.flags, 16);
             this.day_of_week = TLObject.hasFlag(this.flags, 32);
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.date = inputSerializedData.readInt32(z10);
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.date = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2523,16 +2523,16 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textDiff extends RichText {
         public static final int constructor = -1769551024;
         public RichText old_text;
         public RichText text;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.old_text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.old_text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2543,14 +2543,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textEmail extends RichText {
         public static final int constructor = -564523562;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.email = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.email = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2561,7 +2561,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textEmpty extends RichText {
         public static final int constructor = -599948721;
 
@@ -2571,13 +2571,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textFixed extends RichText {
         public static final int constructor = 1816074681;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2587,13 +2587,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textHashtag extends RichText {
         public static final int constructor = 1368728810;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2603,7 +2603,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textImage extends RichText {
         public static final int constructor = 136105807;
         public long document_id;
@@ -2612,10 +2612,10 @@ public class TL_iv {
         public int w;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.document_id = inputSerializedData.readInt64(z10);
-            this.w = inputSerializedData.readInt32(z10);
-            this.h = inputSerializedData.readInt32(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.document_id = inputSerializedData.readInt64(z9);
+            this.w = inputSerializedData.readInt32(z9);
+            this.h = inputSerializedData.readInt32(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2627,13 +2627,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textItalic extends RichText {
         public static final int constructor = -653089380;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2643,13 +2643,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textMarked extends RichText {
         public static final int constructor = 55281185;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2659,7 +2659,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textMath extends RichText {
         public static final int constructor = -1657885545;
         public Bitmap bitmap;
@@ -2670,8 +2670,8 @@ public class TL_iv {
         public int w;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.source = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.source = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2681,13 +2681,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textMention extends RichText {
         public static final int constructor = -853225660;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2697,15 +2697,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textMentionName extends RichText {
         public static final int constructor = 27917308;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.user_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.user_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2716,15 +2716,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textPhone extends RichText {
         public static final int constructor = 483104362;
         public String phone;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.phone = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.phone = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2735,14 +2735,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textPlain extends RichText {
         public static final int constructor = 1950782688;
         public String text;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = inputSerializedData.readString(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = inputSerializedData.readString(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2752,13 +2752,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textSpoiler extends RichText {
         public static final int constructor = 1277844834;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2768,13 +2768,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textStrike extends RichText {
         public static final int constructor = -1678197867;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2784,13 +2784,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textSubscript extends RichText {
         public static final int constructor = -311786236;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2800,13 +2800,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textSuperscript extends RichText {
         public static final int constructor = -939827711;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2816,13 +2816,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textTonAddress extends RichText {
         public static final int constructor = 1020437354;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2832,13 +2832,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textUnderline extends RichText {
         public static final int constructor = -1054465340;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2848,15 +2848,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class textUrl extends RichText {
         public static final int constructor = 1009288385;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.url = inputSerializedData.readString(z10);
-            this.webpage_id = inputSerializedData.readInt64(z10);
+        public void readParams(InputSerializedData inputSerializedData, boolean z9) {
+            this.text = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+            this.url = inputSerializedData.readString(z9);
+            this.webpage_id = inputSerializedData.readInt64(z9);
         }
 
         @Override // org.telegram.tgnet.TLObject

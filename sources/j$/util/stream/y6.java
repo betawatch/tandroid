@@ -10,22 +10,22 @@ public final class y6 extends b7 implements DoubleConsumer {
         return j$.com.android.tools.r8.a.b(this, doubleConsumer);
     }
 
-    public y6(int i3) {
-        this.c = new double[i3];
+    public y6(int i7) {
+        this.c = new double[i7];
     }
 
     @Override // j$.util.stream.b7
-    public final void a(Object obj, long j10) {
+    public final void a(Object obj, long j3) {
         DoubleConsumer doubleConsumer = (DoubleConsumer) obj;
-        for (int i3 = 0; i3 < j10; i3++) {
-            doubleConsumer.accept(this.c[i3]);
+        for (int i7 = 0; i7 < j3; i7++) {
+            doubleConsumer.accept(this.c[i7]);
         }
     }
 
     @Override // java.util.function.DoubleConsumer
     public final void accept(double d) {
-        int i3 = this.b;
-        this.b = i3 + 1;
-        this.c[i3] = d;
+        int i7 = this.b;
+        this.b = i7 + 1;
+        this.c[i7] = d;
     }
 }

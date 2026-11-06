@@ -5,24 +5,24 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class f1 extends AbstractList implements z1 {
     public boolean a;
 
-    public f1(boolean z10) {
-        this.a = z10;
+    public f1(boolean z9) {
+        this.a = z9;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final boolean addAll(int i3, Collection collection) {
-        h();
-        return super.addAll(i3, collection);
+    public final boolean addAll(int i7, Collection collection) {
+        f();
+        return super.addAll(i7, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        h();
+        f();
         super.clear();
     }
 
@@ -42,15 +42,15 @@ public abstract class f1 extends AbstractList implements z1 {
         if (size != list.size()) {
             return false;
         }
-        for (int i3 = 0; i3 < size; i3++) {
-            if (!get(i3).equals(list.get(i3))) {
+        for (int i7 = 0; i7 < size; i7++) {
+            if (!get(i7).equals(list.get(i7))) {
                 return false;
             }
         }
         return true;
     }
 
-    public final void h() {
+    public final void f() {
         if (!this.a) {
             throw new UnsupportedOperationException();
         }
@@ -59,19 +59,19 @@ public abstract class f1 extends AbstractList implements z1 {
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
-        int i3 = 1;
+        int i7 = 1;
         for (int i10 = 0; i10 < size; i10++) {
-            i3 = (i3 * 31) + get(i10).hashCode();
+            i7 = (i7 * 31) + get(i10).hashCode();
         }
-        return i3;
+        return i7;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public abstract Object remove(int i3);
+    public abstract Object remove(int i7);
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
-        h();
+        f();
         int indexOf = indexOf(obj);
         if (indexOf == -1) {
             return false;
@@ -82,19 +82,19 @@ public abstract class f1 extends AbstractList implements z1 {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
-        h();
+        f();
         return super.removeAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean retainAll(Collection collection) {
-        h();
+        f();
         return super.retainAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection collection) {
-        h();
+        f();
         return super.addAll(collection);
     }
 }

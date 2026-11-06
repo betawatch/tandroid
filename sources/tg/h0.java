@@ -1,30 +1,61 @@
 package tg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextUtils;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+public final class h0 extends TLObject {
+    public static final /* synthetic */ int j = 0;
+    public int a;
+    public String b;
+    public String c;
+    public TLRPC.WebPage d;
+    public boolean e;
+    public boolean f = true;
+    public int i;
 
-    public /* synthetic */ h0(i0 i0Var, int i3) {
-        this.a = i3;
-        this.b = i0Var;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z9) {
+        int readInt32 = inputSerializedData.readInt32(z9);
+        this.a = readInt32;
+        this.e = (readInt32 & 8) != 0;
+        this.f = (readInt32 & 16) != 0;
+        this.c = inputSerializedData.readString(z9);
+        if ((this.a & 1) != 0) {
+            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z9), z9);
+        }
+        if ((this.a & 2) != 0) {
+            this.b = inputSerializedData.readString(z9);
+        }
+        if ((this.a & 4) != 0) {
+            this.i = inputSerializedData.readInt32(z9);
+        }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                i0 i0Var = this.b;
-                i0Var.K = null;
-                i0Var.f.f(new r4.u(this, 5));
-                break;
-            default:
-                this.b.f.f(new r4.u(this, 6));
-                break;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-625858389);
+        this.a = this.d != null ? this.a | 1 : this.a & (-2);
+        int i7 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
+        this.a = i7;
+        int i10 = this.e ? i7 | 8 : i7 & (-9);
+        this.a = i10;
+        int i11 = this.f ? i10 | 16 : i10 & (-17);
+        this.a = i11;
+        outputSerializedData.writeInt32(i11);
+        outputSerializedData.writeString(this.c);
+        if ((this.a & 1) != 0) {
+            this.d.serializeToStream(outputSerializedData);
+        }
+        if ((this.a & 2) != 0) {
+            outputSerializedData.writeString(this.b);
+        }
+        if ((this.a & 4) != 0) {
+            outputSerializedData.writeInt32(this.i);
         }
     }
 }

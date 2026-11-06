@@ -1,38 +1,20 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e3 extends c5 {
-    private static final e3 zzb;
-    private int zzd;
-    private int zze;
-    private int zzf;
-    private int zzg;
+public final class e3 {
+    public final String a;
+    public final long b;
+    public final int c;
+    public final long d;
+    public final long e;
+    public long f;
 
-    static {
-        e3 e3Var = new e3();
-        zzb = e3Var;
-        c5.e(e3.class, e3Var);
-    }
-
-    @Override // com.google.android.gms.internal.cast.c5
-    public final Object h(int i3, c5 c5Var) {
-        int i10 = i3 - 1;
-        if (i10 == 0) {
-            return (byte) 1;
-        }
-        if (i10 == 2) {
-            return new d6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001င\u0000\u0002᠌\u0001\u0003င\u0002", new Object[]{"zzd", "zze", "zzf", x0.h, "zzg"});
-        }
-        if (i10 == 3) {
-            return new e3();
-        }
-        if (i10 == 4) {
-            return new b3(zzb);
-        }
-        if (i10 != 5) {
-            return null;
-        }
-        return zzb;
+    public e3(p2 p2Var) {
+        this.a = p2Var.a;
+        this.b = p2Var.b;
+        this.c = p2Var.c;
+        this.d = p2Var.d;
+        this.e = p2Var.e;
     }
 }

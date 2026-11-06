@@ -1,13 +1,27 @@
 package yf;
 
-import ei.e3;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a {
-    public final e3 a;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    public a(e3 e3Var) {
-        this.a = e3Var;
+    public /* synthetic */ a(c cVar, int i7) {
+        this.a = i7;
+        this.b = cVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.g(false);
+                break;
+            default:
+                qs.f(this.b.c).k(qs.e5, new Object[0]);
+                break;
+        }
     }
 }

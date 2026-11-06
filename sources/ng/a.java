@@ -1,17 +1,32 @@
 package ng;
 
-import m2.t;
+import android.graphics.Paint;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class a {
-    public long[] a;
-    public t b;
-    public String c;
-    public String d;
-    public int g;
-    public long e = 0;
-    public long f = Long.MAX_VALUE;
-    public int h = -16777216;
-    public int i = -1;
+public final class a extends f {
+    public final f6 q;
+    public final Paint r;
+    public int s;
+
+    public a(mg.a aVar, f6 f6Var) {
+        super(aVar, false, null);
+        Paint paint = new Paint();
+        this.r = paint;
+        this.s = 0;
+        this.q = f6Var;
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint.setStyle(style);
+        this.c.setAntiAlias(false);
+    }
+
+    @Override // ng.f
+    public final void a() {
+        super.a();
+        this.s = i0.a.f(0.3f, k6.w0(k6.d6, this.q), this.m);
+    }
 }

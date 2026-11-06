@@ -1,153 +1,87 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.hs;
+import android.text.TextUtils;
+import com.google.android.gms.cast.CastDevice;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class r6 {
-    public static final c1 a;
+public final class r6 {
+    public static final j6.b n = new j6.b("SessionFlowSummary", null);
+    public static final String o = "21.4.0";
+    public static long p = System.currentTimeMillis();
+    public final b0 a;
+    public final List b;
+    public final List c;
+    public final List d;
+    public final Map e;
+    public final m0 f;
+    public final String g;
+    public final long h;
+    public final long i;
+    public g6.c j;
+    public String k;
+    public String l;
+    public String m;
 
-    static {
-        if (p6.e && p6.d) {
-            int i3 = t4.a;
-        }
-        a = new c1();
+    public r6(m0 m0Var, String str) {
+        b1 b1Var = b1.b;
+        b0 b0Var = new b0(0);
+        b0Var.c = b1Var;
+        this.a = b0Var;
+        this.b = DesugarCollections.synchronizedList(new ArrayList());
+        this.c = DesugarCollections.synchronizedList(new ArrayList());
+        this.d = DesugarCollections.synchronizedList(new ArrayList());
+        this.e = DesugarCollections.synchronizedMap(new HashMap());
+        this.f = m0Var;
+        this.g = str;
+        this.h = System.currentTimeMillis();
+        long j3 = p;
+        p = 1 + j3;
+        this.i = j3;
     }
 
-    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i3, int i10) {
-        int i11 = i10 - i3;
-        byte b10 = bArr[i3 - 1];
-        if (i11 == 0) {
-            if (b10 <= -12) {
-                return b10;
+    public final void a(g6.c cVar) {
+        if (cVar == null) {
+            b(2);
+            return;
+        }
+        q6.m.d("Must be called from the main thread.");
+        CastDevice castDevice = cVar.k;
+        if (castDevice == null) {
+            b(3);
+            return;
+        }
+        String str = castDevice.x;
+        this.j = cVar;
+        String str2 = this.l;
+        if (str2 == null) {
+            this.l = str;
+            this.m = castDevice.e;
+            cVar.e();
+        } else {
+            if (TextUtils.equals(str2, str)) {
+                return;
             }
-            return -1;
+            b(5);
         }
-        if (i11 == 1) {
-            byte b11 = bArr[i3];
-            if (b10 > -12 || b11 > -65) {
-                return -1;
-            }
-            return (b11 << 8) ^ b10;
-        }
-        if (i11 != 2) {
-            throw new AssertionError();
-        }
-        byte b12 = bArr[i3];
-        byte b13 = bArr[i3 + 1];
-        if (b10 > -12 || b12 > -65 || b13 > -65) {
-            return -1;
-        }
-        return (b13 << 16) ^ ((b12 << 8) ^ b10);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x001e, code lost:
-    
-        return r10 + r0;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int b(String str, byte[] bArr, int i3, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        char charAt;
-        int length = str.length();
-        int i14 = 0;
-        while (true) {
-            i11 = i3 + i10;
-            if (i14 >= length || (i13 = i14 + i3) >= i11 || (charAt = str.charAt(i14)) >= 128) {
-                break;
-            }
-            bArr[i13] = (byte) charAt;
-            i14++;
+    public final void b(int i7) {
+        Integer valueOf = Integer.valueOf(i7 - 1);
+        Map map = this.e;
+        b bVar = (b) map.get(valueOf);
+        if (bVar != null) {
+            bVar.d.incrementAndGet();
+            bVar.b = System.currentTimeMillis();
+        } else {
+            b bVar2 = new b(new b7.l(i7));
+            bVar2.c = this.h;
+            map.put(valueOf, bVar2);
         }
-        int i15 = i3 + i14;
-        while (i14 < length) {
-            char charAt2 = str.charAt(i14);
-            if (charAt2 < 128 && i15 < i11) {
-                bArr[i15] = (byte) charAt2;
-                i15++;
-            } else if (charAt2 < 2048 && i15 <= i11 - 2) {
-                bArr[i15] = (byte) ((charAt2 >>> 6) | 960);
-                bArr[i15 + 1] = (byte) ((charAt2 & '?') | 128);
-                i15 += 2;
-            } else {
-                if ((charAt2 >= 55296 && charAt2 <= 57343) || i15 > i11 - 3) {
-                    if (i15 > i11 - 4) {
-                        if (charAt2 >= 55296 && charAt2 <= 57343 && ((i12 = i14 + 1) == str.length() || !Character.isSurrogatePair(charAt2, str.charAt(i12)))) {
-                            throw new q6(i14, length);
-                        }
-                        throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i15);
-                    }
-                    int i16 = i14 + 1;
-                    if (i16 != str.length()) {
-                        char charAt3 = str.charAt(i16);
-                        if (Character.isSurrogatePair(charAt2, charAt3)) {
-                            int i17 = i15 + 3;
-                            int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i15] = (byte) ((codePoint >>> 18) | hs.P3);
-                            bArr[i15 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
-                            bArr[i15 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
-                            i15 += 4;
-                            bArr[i17] = (byte) ((codePoint & 63) | 128);
-                            i14 = i16;
-                        } else {
-                            i14 = i16;
-                        }
-                    }
-                    throw new q6(i14 - 1, length);
-                }
-                bArr[i15] = (byte) ((charAt2 >>> '\f') | 480);
-                bArr[i15 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
-                bArr[i15 + 2] = (byte) ((charAt2 & '?') | 128);
-                i15 += 3;
-            }
-            i14++;
-        }
-        return i15;
-    }
-
-    public static int c(String str) {
-        int length = str.length();
-        int i3 = 0;
-        int i10 = 0;
-        while (i10 < length && str.charAt(i10) < 128) {
-            i10++;
-        }
-        int i11 = length;
-        while (true) {
-            if (i10 >= length) {
-                break;
-            }
-            char charAt = str.charAt(i10);
-            if (charAt < 2048) {
-                i11 += (127 - charAt) >>> 31;
-                i10++;
-            } else {
-                int length2 = str.length();
-                while (i10 < length2) {
-                    char charAt2 = str.charAt(i10);
-                    if (charAt2 < 2048) {
-                        i3 += (127 - charAt2) >>> 31;
-                    } else {
-                        i3 += 2;
-                        if (charAt2 >= 55296 && charAt2 <= 57343) {
-                            if (Character.codePointAt(str, i10) < 65536) {
-                                throw new q6(i10, length2);
-                            }
-                            i10++;
-                        }
-                    }
-                    i10++;
-                }
-                i11 += i3;
-            }
-        }
-        if (i11 >= length) {
-            return i11;
-        }
-        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i11 + 4294967296L));
     }
 }

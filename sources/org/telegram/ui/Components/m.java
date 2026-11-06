@@ -5,39 +5,39 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class m extends oo0 {
-    public final /* synthetic */ e0 S2;
+public final class m extends mo0 {
+    public final /* synthetic */ g0 R2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.S2 = e0Var;
+    public m(g0 g0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, str, false, str2, false, f6Var);
+        this.R2 = g0Var;
     }
 
-    @Override // org.telegram.ui.Components.oo0
-    public final void R0(a0.h hVar, int i3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        FrameLayout frameLayout = this.S2.z2;
-        if (z10) {
-            fc fcVar = new fc(frameLayout, this.J0);
+    @Override // org.telegram.ui.Components.mo0
+    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
+        FrameLayout frameLayout = this.R2.y2;
+        if (z9) {
+            hc hcVar = new hc(frameLayout, this.I0);
             if (hVar.m() == 1) {
-                long j10 = hVar.j(0);
-                if (j10 == org.telegram.messenger.h10.i(this.a).n) {
-                    ac G = fcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.bd.a0(null, null, 2131754967, new Object[0])));
+                long j3 = hVar.j(0);
+                if (j3 == org.telegram.messenger.p10.i(this.a).n) {
+                    cc G = hcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754967, new Object[0])));
                     G.r = false;
                     G.j();
-                } else if (j10 < 0) {
-                    ac G2 = fcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.bd.a0(null, null, 2131754971, tL_forumTopic != null ? tL_forumTopic.title : org.telegram.messenger.hp.s1(this.a).M0(Long.valueOf(-j10)).title)));
+                } else if (j3 < 0) {
+                    cc G2 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754971, tL_forumTopic != null ? tL_forumTopic.title : org.telegram.messenger.qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    ac G3 = fcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.bd.a0(null, null, 2131754971, org.telegram.messenger.hp.s1(this.a).a2(Long.valueOf(j10)).first_name)));
+                    cc G3 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754971, org.telegram.messenger.qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                ac Q = fcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.bd.G(hVar.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(hVar.m()))));
+                cc Q = hcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(hVar.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(hVar.m()))));
                 Q.r = false;
                 Q.j();
             }

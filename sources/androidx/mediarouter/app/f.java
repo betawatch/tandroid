@@ -6,25 +6,23 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.view.KeyEvent;
 import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.z5;
-import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.vf;
-import org.telegram.ui.pp;
+import org.telegram.ui.Components.vj;
+import org.telegram.ui.Components.xf;
+import org.telegram.ui.rp;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ f(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ f(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
@@ -35,87 +33,85 @@ public final class f extends BroadcastReceiver {
             case 0:
                 if ("android.intent.action.SCREEN_OFF".equals(intent.getAction())) {
                     ((g) this.b).dismiss();
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 1:
                 ((g.p) this.b).k();
-                return;
+                break;
             case 2:
                 try {
                     ((IntentSender) this.b).sendIntent(context, 0, null, null, null);
-                    return;
+                    break;
                 } catch (IntentSender.SendIntentException unused) {
                     return;
                 }
             case 3:
-                ((Executor) ((g2.x) this.b).c).execute(new g2.c(2, this, context));
-                return;
+                ((Executor) ((h2.w) this.b).c).execute(new f2.h(26, context, (Object) this));
+                break;
             case 4:
-                m2.e eVar = (m2.e) this.b;
-                if (isInitialStickyBroadcast()) {
-                    return;
+                n2.e eVar = (n2.e) this.b;
+                if (!isInitialStickyBroadcast()) {
+                    eVar.b(n2.b.b(context, intent, eVar.j, eVar.i, eVar.a()));
+                    break;
                 }
-                eVar.b(m2.b.b(context, intent, eVar.j, eVar.i, eVar.a()));
-                return;
+                break;
             case 5:
-                o4.b bVar = (o4.b) this.b;
-                bVar.c.execute(new o4.a(bVar, 2));
-                return;
-            case 6:
-                if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((p4.f) ((p4.u) ((o4.o0) this.b).n.b).a).a.dispatchMediaButtonEvent(keyEvent);
-                    return;
-                }
-                return;
-            case 7:
                 ((z5) this.b).g();
-                return;
-            case 8:
+                break;
+            case 6:
                 if (r2.a) {
                     a8.b("file system changed");
                 }
-                org.telegram.messenger.a aVar = new org.telegram.messenger.a(this, 11);
-                if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    org.telegram.messenger.g0.i3(aVar, 1000L);
-                    return;
-                } else {
+                org.telegram.messenger.a aVar = new org.telegram.messenger.a(this, 12);
+                if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
                     aVar.run();
-                    return;
+                    break;
+                } else {
+                    org.telegram.messenger.g0.i3(aVar, 1000L);
+                    break;
+                }
+            case 7:
+                t0.d.post(new org.telegram.messenger.a(this, 14));
+                break;
+            case 8:
+                xf xfVar = new xf(this, 23);
+                if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
+                    xfVar.run();
+                    break;
+                } else {
+                    ((vj) this.b).r.postDelayed(xfVar, 1000L);
+                    break;
                 }
             case 9:
-                t0.d.post(new org.telegram.messenger.a(this, 13));
-                return;
+                org.telegram.messenger.g0.h3(new rp(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
+                break;
             case 10:
-                vf vfVar = new vf(this, 23);
-                if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((uj) this.b).r.postDelayed(vfVar, 1000L);
-                    return;
-                } else {
-                    vfVar.run();
-                    return;
-                }
+                p4.b bVar = (p4.b) this.b;
+                bVar.c.execute(new p4.a(bVar, 2));
+                break;
             case 11:
-                org.telegram.messenger.g0.h3(new pp(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
-                return;
-            case 12:
-                ((ne.h) this.b).o();
-                return;
-            default:
-                if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
-                    String stringExtra = intent.getStringExtra("source_id");
-                    intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((uf.b) this.b).c.get(stringExtra);
-                    if (arrayList == null) {
-                        return;
-                    }
-                    Iterator it = arrayList.iterator();
-                    if (it.hasNext()) {
-                        throw a1.g.m(it);
-                    }
-                    return;
+                if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
+                    ((q4.f) ((q4.u) ((p4.m0) this.b).n.c).a).a.dispatchMediaButtonEvent(keyEvent);
+                    break;
                 }
-                return;
+                break;
+            case 12:
+                ((qe.h) this.b).o();
+                break;
+            default:
+                if ("org.telegram.utils.pip.ACTION".equals(intent.getAction())) {
+                    ti.r rVar = (ti.r) this.b;
+                    ti.o oVar = rVar.f;
+                    if (oVar == null) {
+                        oVar = rVar.e;
+                    }
+                    if (oVar != null) {
+                        oVar.a.f0(intent.getIntExtra("action_id", -1));
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

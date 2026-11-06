@@ -1,44 +1,56 @@
 package s3;
 
-import j$.util.Objects;
+import e2.n0;
+import e2.p0;
+import e2.u;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c extends i {
+public final class c implements p0 {
+    public final byte[] a;
     public final String b;
-    public final int c;
-    public final int d;
-    public final long e;
-    public final long f;
-    public final i[] g;
+    public final String c;
 
-    public c(String str, int i3, int i10, long j10, long j11, i[] iVarArr) {
-        super("CHAP");
+    public c(byte[] bArr, String str, String str2) {
+        this.a = bArr;
         this.b = str;
-        this.c = i3;
-        this.d = i10;
-        this.e = j10;
-        this.f = j11;
-        this.g = iVarArr;
+        this.c = str2;
+    }
+
+    @Override // e2.p0
+    public final /* synthetic */ u a() {
+        return null;
+    }
+
+    @Override // e2.p0
+    public final void b(n0 n0Var) {
+        String str = this.b;
+        if (str != null) {
+            n0Var.a = str;
+        }
+    }
+
+    @Override // e2.p0
+    public final /* synthetic */ byte[] c() {
+        return null;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj != null && c.class == obj.getClass()) {
-            c cVar = (c) obj;
-            if (this.c == cVar.c && this.d == cVar.d && this.e == cVar.e && this.f == cVar.f && Objects.equals(this.b, cVar.b) && Arrays.equals(this.g, cVar.g)) {
-                return true;
-            }
+        if (obj == null || c.class != obj.getClass()) {
+            return false;
         }
-        return false;
+        return Arrays.equals(this.a, ((c) obj).a);
     }
 
     public final int hashCode() {
-        int i3 = (((((((527 + this.c) * 31) + this.d) * 31) + ((int) this.e)) * 31) + ((int) this.f)) * 31;
-        String str = this.b;
-        return i3 + (str != null ? str.hashCode() : 0);
+        return Arrays.hashCode(this.a);
+    }
+
+    public final String toString() {
+        return a8.p0.n(this.a.length, "\"", com.google.android.recaptcha.internal.a.n("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
     }
 }

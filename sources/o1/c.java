@@ -1,125 +1,25 @@
 package o1;
 
-import androidx.datastore.preferences.protobuf.a1;
-import androidx.datastore.preferences.protobuf.b1;
-import androidx.datastore.preferences.protobuf.e0;
-import androidx.datastore.preferences.protobuf.g1;
-import androidx.datastore.preferences.protobuf.o0;
-import androidx.datastore.preferences.protobuf.p;
-import androidx.datastore.preferences.protobuf.x;
-import androidx.datastore.preferences.protobuf.x0;
-import androidx.datastore.preferences.protobuf.y;
-import androidx.datastore.preferences.protobuf.y0;
-import androidx.datastore.preferences.protobuf.z;
-import j$.util.DesugarCollections;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Map;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c extends z {
-    private static final c DEFAULT_INSTANCE;
-    private static volatile x0 PARSER = null;
-    public static final int PREFERENCES_FIELD_NUMBER = 1;
-    private o0 preferences_ = o0.b;
+public final class c extends kd.c {
+    public d a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ d c;
+    public int d;
 
-    static {
-        c cVar = new c();
-        DEFAULT_INSTANCE = cVar;
-        z.j(c.class, cVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(d dVar, kd.c cVar) {
+        super(cVar);
+        this.c = dVar;
     }
 
-    public static o0 l(c cVar) {
-        o0 o0Var = cVar.preferences_;
-        if (!o0Var.a) {
-            cVar.preferences_ = o0Var.c();
-        }
-        return cVar.preferences_;
-    }
-
-    public static a n() {
-        return (a) ((x) DEFAULT_INSTANCE.c(5));
-    }
-
-    public static c o(FileInputStream fileInputStream) {
-        c cVar = DEFAULT_INSTANCE;
-        androidx.datastore.preferences.protobuf.j jVar = new androidx.datastore.preferences.protobuf.j(fileInputStream);
-        p a10 = p.a();
-        z i3 = cVar.i();
-        try {
-            y0 y0Var = y0.c;
-            y0Var.getClass();
-            b1 a11 = y0Var.a(i3.getClass());
-            c4.f fVar = (c4.f) jVar.b;
-            if (fVar == null) {
-                fVar = new c4.f(jVar);
-            }
-            a11.i(i3, fVar, a10);
-            a11.d(i3);
-            if (z.f(i3, true)) {
-                return (c) i3;
-            }
-            throw new e0(new g1().getMessage());
-        } catch (e0 e10) {
-            if (e10.a) {
-                throw new e0(e10.getMessage(), e10);
-            }
-            throw e10;
-        } catch (g1 e11) {
-            throw new e0(e11.getMessage());
-        } catch (IOException e12) {
-            if (e12.getCause() instanceof e0) {
-                throw ((e0) e12.getCause());
-            }
-            throw new e0(e12.getMessage(), e12);
-        } catch (RuntimeException e13) {
-            if (e13.getCause() instanceof e0) {
-                throw ((e0) e13.getCause());
-            }
-            throw e13;
-        }
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.z
-    public final Object c(int i3) {
-        x0 x0Var;
-        switch (g.c(i3)) {
-            case 0:
-                return (byte) 1;
-            case 1:
-                return null;
-            case 2:
-                return new a1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u00012", new Object[]{"preferences_", b.a});
-            case 3:
-                return new c();
-            case 4:
-                return new a(DEFAULT_INSTANCE);
-            case 5:
-                return DEFAULT_INSTANCE;
-            case 6:
-                x0 x0Var2 = PARSER;
-                if (x0Var2 != null) {
-                    return x0Var2;
-                }
-                synchronized (c.class) {
-                    try {
-                        x0Var = PARSER;
-                        if (x0Var == null) {
-                            x0Var = new y();
-                            PARSER = x0Var;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                return x0Var;
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    public final Map m() {
-        return DesugarCollections.unmodifiableMap(this.preferences_);
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.a(null, this);
     }
 }

@@ -1,70 +1,162 @@
 package org.telegram.ui.web;
 
-import ei.p7;
-import org.json.JSONObject;
+import android.content.Context;
+import android.os.Bundle;
+import bi.s7;
+import di.o7;
+import di.s2;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.lq;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r implements Runnable {
+public final /* synthetic */ class r implements v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+    public final /* synthetic */ x0 b;
+    public final /* synthetic */ o7 c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ r(w0 w0Var, int i3) {
-        this.a = i3;
-        this.b = w0Var;
+    public /* synthetic */ r(x0 x0Var, o7 o7Var, String str, int i7) {
+        this.a = i7;
+        this.b = x0Var;
+        this.c = o7Var;
+        this.d = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        int i7;
+        qg0 qg0Var;
+        int i10 = this.a;
+        String str = this.d;
+        o7 o7Var = this.c;
+        x0 x0Var = this.b;
+        switch (i10) {
             case 0:
-                d0 d0Var = this.b.c;
-                if (d0Var != null) {
-                    d0Var.b();
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                x0 x0Var2 = this.b;
+                f6 f6Var = x0Var2.e;
+                TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) cg.c.a((TL_keyboard.KeyboardButton) obj, TL_keyboard.TL_buttonTypeRequestPeer.class);
+                o7 o7Var2 = this.c;
+                String str2 = this.d;
+                if (tL_buttonTypeRequestPeer == null) {
+                    if (tL_error == null) {
+                        new hc(x0Var2, f6Var).e0("UNKNOWN_BUTTON", false);
+                        x0Var2.x(o7Var2, "requested_chat_failed", x0.A(str2, "req_id"));
+                        break;
+                    } else {
+                        new hc(x0Var2, f6Var).f0(tL_error, false);
+                        x0Var2.x(o7Var2, "requested_chat_failed", x0.A(str2, "req_id"));
+                        break;
+                    }
+                } else {
+                    TLRPC.RequestPeerType requestPeerType = tL_buttonTypeRequestPeer.peer_type;
+                    if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeCreateBot)) {
+                        if ((requestPeerType instanceof TLRPC.TL_requestPeerTypeUser) && (i7 = tL_buttonTypeRequestPeer.max_quantity) > 1) {
+                            TLRPC.TL_requestPeerTypeUser tL_requestPeerTypeUser = (TLRPC.TL_requestPeerTypeUser) requestPeerType;
+                            boolean[] zArr = new boolean[1];
+                            Boolean bool = tL_requestPeerTypeUser.bot;
+                            Boolean bool2 = tL_requestPeerTypeUser.premium;
+                            y yVar = new y(x0Var2, zArr, str2, tL_buttonTypeRequestPeer, o7Var2);
+                            qg0 qg0Var2 = qg0.m2;
+                            f2 Q = LaunchActivity.Q();
+                            if (Q == null) {
+                                qg0Var = null;
+                            } else {
+                                qg0Var = qg0.m2;
+                                if (qg0Var == null) {
+                                    qg0 qg0Var3 = new qg0(Q, i7, bool, bool2, yVar);
+                                    qg0Var3.show();
+                                    qg0.m2 = qg0Var3;
+                                    qg0Var = qg0Var3;
+                                }
+                            }
+                            if (qg0Var != null) {
+                                qg0Var.setOnDismissListener(new s7(x0Var2, zArr, o7Var2, str2));
+                                break;
+                            }
+                        } else {
+                            Bundle h = org.telegram.ui.Cells.f1.h(15, "onlySelect", "dialogsType", true);
+                            h.putLong("requestPeerBotId", x0Var2.U.id);
+                            try {
+                                SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());
+                                tL_buttonTypeRequestPeer.peer_type.serializeToStream(serializedData);
+                                h.putByteArray("requestPeerType", serializedData.toByteArray());
+                                serializedData.cleanup();
+                            } catch (Exception e10) {
+                                a8.g(e10, true);
+                            }
+                            boolean[] zArr2 = new boolean[1];
+                            c0 c0Var = new c0(x0Var2, h, zArr2, o7Var2);
+                            c0Var.C2 = new y(x0Var2, zArr2, str2, tL_buttonTypeRequestPeer, o7Var2);
+                            f2 T = LaunchActivity.T();
+                            if (T != null) {
+                                d2 d2Var = new d2();
+                                d2Var.a = true;
+                                T.showAsSheet(c0Var, d2Var);
+                                break;
+                            }
+                        }
+                    } else {
+                        Context context = x0Var2.getContext();
+                        int i11 = x0Var2.M;
+                        TLRPC.User user = x0Var2.U;
+                        s2 s2Var = new s2(x0Var2, o7Var2, str2, tL_buttonTypeRequestPeer, 14);
+                        f6 f6Var2 = x0Var2.e;
+                        lq.e(context, i11, user, (TLRPC.TL_requestPeerTypeCreateBot) requestPeerType, false, s2Var, f6Var2, new hc(x0Var2, f6Var2));
+                        break;
+                    }
                 }
-                LaunchActivity.J();
                 break;
             case 1:
-                w0 w0Var = this.b;
-                if (w0Var.T) {
-                    w0Var.T = false;
-                    d0 d0Var2 = w0Var.c;
-                    if (d0Var2 != null) {
-                        d0Var2.t(false);
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                f6 f6Var3 = x0Var.e;
+                if (updates == null) {
+                    if (tL_error2 == null) {
+                        new hc(x0Var, f6Var3).e0("UNKNOWN_BUTTON", false);
+                        x0Var.x(o7Var, "requested_chat_failed", x0.A(str, "req_id"));
+                        break;
+                    } else {
+                        new hc(x0Var, f6Var3).f0(tL_error2, false);
+                        x0Var.x(o7Var, "requested_chat_failed", x0.A(str, "req_id"));
+                        break;
                     }
-                }
-                w0Var.c();
-                w0Var.O = false;
-                w0Var.Q = 0L;
-                w0Var.U = false;
-                t0 t0Var = w0Var.a;
-                if (t0Var != null) {
-                    t0Var.onResume();
-                    w0Var.a.reload();
+                } else {
+                    qp.s1(x0Var.M).O3(updates, false);
+                    x0Var.x(o7Var, "requested_chat_sent", x0.A(str, "req_id"));
                     break;
                 }
-                break;
             default:
-                w0 w0Var2 = this.b;
-                p7 p7Var = w0Var2.K0;
-                ii.s0 s0Var = w0Var2.l0;
-                s0Var.getClass();
-                JSONObject jSONObject = new JSONObject();
-                try {
-                    jSONObject.put("available", s0Var.d());
-                    if (s0Var.d()) {
-                        jSONObject.put("access_requested", s0Var.d);
-                        if (s0Var.d) {
-                            jSONObject.put("access_granted", s0Var.e && s0Var.a());
-                        }
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                f6 f6Var4 = x0Var.e;
+                if (updates2 == null) {
+                    if (tL_error3 == null) {
+                        new hc(x0Var, f6Var4).e0("UNKNOWN_BUTTON", false);
+                        x0Var.x(o7Var, "requested_chat_failed", x0.A(str, "req_id"));
+                        break;
+                    } else {
+                        new hc(x0Var, f6Var4).f0(tL_error3, false);
+                        x0Var.x(o7Var, "requested_chat_failed", x0.A(str, "req_id"));
+                        break;
                     }
-                } catch (Exception e10) {
-                    a8.g(e10, true);
+                } else {
+                    qp.s1(x0Var.M).O3(updates2, false);
+                    x0Var.x(o7Var, "requested_chat_sent", x0.A(str, "req_id"));
+                    break;
                 }
-                w0Var2.x(p7Var, "location_checked", jSONObject);
-                break;
         }
     }
 }

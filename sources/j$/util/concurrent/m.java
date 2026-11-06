@@ -3,7 +3,7 @@ package j$.util.concurrent;
 /* loaded from: classes2.dex */
 public final class m extends l {
     @Override // j$.util.concurrent.l
-    public final l a(int i3, Object obj) {
+    public final l a(int i7, Object obj) {
         return null;
     }
 

@@ -10,7 +10,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends t0 {
     @Override // org.telegram.messenger.t0
@@ -18,7 +18,7 @@ public class ApplicationLoaderImpl extends t0 {
         if (Build.VERSION.SDK_INT < 26 || t0.b.getPackageManager().canRequestPackageInstalls()) {
             return true;
         }
-        org.telegram.ui.Components.t4.j(context, null).show();
+        org.telegram.ui.Components.v4.j(context, null).show();
         return false;
     }
 
@@ -41,18 +41,18 @@ public class ApplicationLoaderImpl extends t0 {
 
     @Override // org.telegram.messenger.t0
     public final boolean q() {
-        return !TextUtils.isEmpty("https://telegram.org/dl/android/apk-public-beta.json");
+        return !TextUtils.isEmpty("null");
     }
 
     @Override // org.telegram.messenger.t0
     public final boolean v(Activity activity, TLRPC.Document document) {
-        boolean z10 = false;
+        boolean z9 = false;
         try {
             w7.r(null, document);
-            w7.G(h10.t0);
+            w7.G(p10.s0);
             File K = w7.K(document, null, true, true);
-            z10 = K.exists();
-            if (z10) {
+            z9 = K.exists();
+            if (z9) {
                 Intent intent = new Intent("android.intent.action.VIEW");
                 intent.setFlags(1);
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -70,6 +70,6 @@ public class ApplicationLoaderImpl extends t0 {
         } catch (Exception e11) {
             a8.g(e11, true);
         }
-        return z10;
+        return z9;
     }
 }

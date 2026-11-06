@@ -1,40 +1,117 @@
 package ei;
 
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.xp;
-import org.telegram.ui.mv;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import fi.f3;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.nl;
+import org.telegram.ui.Components.oi;
+import org.telegram.ui.Components.vh;
+import org.telegram.ui.Components.yv0;
+import v4.a1;
+import v4.s;
+import v4.v0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h extends xp {
-    public int E;
-    public final /* synthetic */ Drawable F;
-    public final /* synthetic */ Drawable G;
-    public final /* synthetic */ mv H;
+public final class h extends s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ KeyEvent.Callback R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(mv mvVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super(drawable, drawable2);
-        this.H = mvVar;
-        this.F = drawable3;
-        this.G = drawable4;
+    public /* synthetic */ h(int i7, FrameLayout frameLayout) {
+        super(3);
+        this.Q = i7;
+        this.R = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.xp, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        mv mvVar = this.H;
-        int i3 = mvVar.b;
-        int f10 = mvVar.f(i3 == 0 ? org.telegram.ui.ActionBar.k6.s8 : org.telegram.ui.ActionBar.k6.M8);
-        if (this.E != f10) {
-            this.E = f10;
-            int f11 = i0.a.f(0.1f, mvVar.f(i3 == 0 ? org.telegram.ui.ActionBar.k6.A8 : org.telegram.ui.ActionBar.k6.P8), f10);
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            this.F.setColorFilter(new PorterDuffColorFilter(f11, mode));
-            this.G.setColorFilter(new PorterDuffColorFilter(f10, mode));
+    @Override // v4.b0
+    public boolean Y0() {
+        switch (this.Q) {
+            case 4:
+                return ((yv0) this.R).N1 != null && hd.a0;
+            default:
+                return super.Y0();
         }
-        super.draw(canvas);
+    }
+
+    @Override // v4.s, v4.b0, v4.n0
+    public void b0(v0 v0Var, a1 a1Var) {
+        switch (this.Q) {
+            case 1:
+                super.b0(v0Var, a1Var);
+                f3 f3Var = (f3) this.R;
+                if (f3Var.U) {
+                    f3Var.U = false;
+                    f3Var.a();
+                    break;
+                }
+                break;
+            default:
+                super.b0(v0Var, a1Var);
+                break;
+        }
+    }
+
+    @Override // v4.s, v4.b0, v4.n0
+    public int o0(int i7, v0 v0Var, a1 a1Var) {
+        switch (this.Q) {
+            case 0:
+                if (((n) this.R).b) {
+                    i7 = 0;
+                }
+                return super.o0(i7, v0Var, a1Var);
+            default:
+                return super.o0(i7, v0Var, a1Var);
+        }
+    }
+
+    @Override // v4.b0, v4.n0
+    public void v0(RecyclerView recyclerView, a1 a1Var, int i7) {
+        switch (this.Q) {
+            case 2:
+                oi oiVar = new oi(this, recyclerView.getContext());
+                oiVar.a = i7;
+                w0(oiVar);
+                break;
+            case 3:
+                nl nlVar = new nl(this, recyclerView.getContext());
+                nlVar.a = i7;
+                w0(nlVar);
+                break;
+            default:
+                super.v0(recyclerView, a1Var, i7);
+                break;
+        }
+    }
+
+    @Override // v4.s, v4.b0, v4.n0
+    public boolean y0() {
+        switch (this.Q) {
+            case 0:
+                return false;
+            case 1:
+            default:
+                return super.y0();
+            case 2:
+                return false;
+            case 3:
+                return false;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h(vh vhVar, int i7, int i10) {
+        super(i7);
+        this.Q = i10;
+        this.R = vhVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(yv0 yv0Var) {
+        super(5);
+        this.Q = 4;
+        this.R = yv0Var;
     }
 }

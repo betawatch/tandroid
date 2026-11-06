@@ -3,16 +3,16 @@ package com.google.mlkit.nl.languageid.bundled.internal;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import com.google.mlkit.nl.languageid.IdentifiedLanguage;
-import ib.a;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import p6.m;
+import lb.a;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -23,11 +23,11 @@ public class ThickLanguageIdentifier {
         this.a = context;
     }
 
-    private native void nativeDestroy(long j10);
+    private native void nativeDestroy(long j3);
 
-    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j10, byte[] bArr, float f10);
+    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j3, byte[] bArr, float f10);
 
-    private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j10);
+    private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j3);
 
     public final ArrayList a(String str) {
         m.j(this.b != 0);
@@ -73,11 +73,11 @@ public class ThickLanguageIdentifier {
     }
 
     public final void c() {
-        long j10 = this.b;
-        if (j10 == 0) {
+        long j3 = this.b;
+        if (j3 == 0) {
             return;
         }
-        nativeDestroy(j10);
+        nativeDestroy(j3);
         this.b = 0L;
     }
 }

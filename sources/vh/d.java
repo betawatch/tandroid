@@ -1,94 +1,60 @@
 package vh;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
+import android.content.Context;
 import android.view.View;
-import cg.r;
-import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.xq;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.camera.q;
+import org.telegram.messenger.hd;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.c20;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class d extends c {
-    public final g6 d;
-    public final gh0 e;
-    public final qe.a f;
-    public float h;
+public final class d implements bj0 {
+    public final /* synthetic */ f6 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ g c;
 
-    public d(View view, e6 e6Var) {
-        super(e6Var);
-        gh0 gh0Var = new gh0(view);
-        this.e = gh0Var;
-        gh0Var.d(null, true, false);
-        gh0Var.v = 650.0f;
-        gh0Var.e(false, 0.69f);
-        gh0Var.p.setStrokeWidth(g0.L(1.5f));
-        this.f = new qe.a(view, xq.h, 260L);
-        g6 g6Var = new g6(true, false, false);
-        this.d = g6Var;
-        g6Var.x(g0.o());
-        g6Var.w(g0.L(13.0f));
-        g6Var.b = 17;
-        int w02 = k6.w0(k6.i6, e6Var);
-        if (this.b != w02) {
-            k6.H1(this.a, w02, false);
-            this.b = w02;
+    public d(Context context, f6 f6Var, g gVar) {
+        this.c = gVar;
+        this.a = f6Var;
+        this.b = context;
+    }
+
+    @Override // org.telegram.ui.Components.bj0
+    public final void c(int i7, View view) {
+        TLRPC.TL_help_country tL_help_country;
+        g gVar = this.c;
+        v00 v00Var = gVar.Z1;
+        HashMap hashMap = gVar.b2;
+        if (i7 == 0 || (tL_help_country = (TLRPC.TL_help_country) gVar.V1.G(i7 - 1).G) == null) {
+            return;
         }
-    }
-
-    @Override // vh.c
-    public final void a(int i3) {
-        this.a.setAlpha(i3);
-        this.d.B = i3;
-    }
-
-    public final float b() {
-        return this.f.e;
-    }
-
-    public final void c(int i3) {
-        this.d.u(i3);
-        this.e.o = i3;
-    }
-
-    public final void d(float f10) {
-        if (this.h != f10) {
-            this.h = f10;
-            Rect bounds = getBounds();
-            int i3 = (int) this.h;
-            this.d.setBounds(bounds.left, bounds.top + i3, bounds.right, bounds.bottom + i3);
+        boolean z9 = false;
+        if (hashMap.containsKey(tL_help_country.iso2)) {
+            v00Var.c((c20) hashMap.remove(tL_help_country.iso2));
+        } else {
+            int size = hashMap.size();
+            int i10 = gVar.e2;
+            if (size >= i10) {
+                q.s(hd.a0(null, null, 2131747111, Integer.valueOf(i10)), new hc(gVar.f2, this.a), R.raw.info, 36);
+                return;
+            }
+            c20 c20Var = new c20(this.b, tL_help_country);
+            c20Var.setOnClickListener(new a(gVar, 4));
+            v00Var.a(c20Var);
+            hashMap.put(tL_help_country.iso2, c20Var);
+            z9 = true;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f10 = this.f.e;
-        if (f10 < 1.0f) {
-            r.b(canvas, this.d, 1.0f - f10);
+        if (view instanceof ah.c) {
+            ((ah.c) view).c(z9, true);
         }
-        if (f10 > 0.0f) {
-            float exactCenterX = getBounds().exactCenterX();
-            float exactCenterY = getBounds().exactCenterY();
-            canvas.save();
-            canvas.scale(f10, f10, exactCenterX, exactCenterY);
-            this.e.a(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // vh.c, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        Rect bounds = getBounds();
-        int i3 = (int) this.h;
-        this.d.setBounds(bounds.left, bounds.top + i3, bounds.right, bounds.bottom + i3);
-        int L = g0.L(11.0f);
-        int centerX = rect.centerX();
-        int centerY = rect.centerY();
-        this.e.f(centerX - L, centerY - L, centerX + L, centerY + L);
+        gVar.V1.O(true);
+        gVar.W1.c(hashMap.size(), true);
     }
 }

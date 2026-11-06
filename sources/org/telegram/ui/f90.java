@@ -1,55 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f90 implements org.telegram.messenger.n10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m90 b;
-    public final /* synthetic */ String c;
+public final class f90 extends org.telegram.ui.Cells.k3 {
+    public boolean E;
+    public final /* synthetic */ h90 F;
 
-    public /* synthetic */ f90(m90 m90Var, String str, int i3) {
-        this.a = i3;
-        this.b = m90Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f90(h90 h90Var, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, str, false, false, -1, f6Var);
+        this.F = h90Var;
     }
 
-    @Override // org.telegram.messenger.n10
-    public final void a(Object obj, Object obj2) {
-        int i3 = this.a;
-        String str = this.c;
-        m90 m90Var = this.b;
-        switch (i3) {
-            case 0:
-                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                m90Var.c();
-                if (passkeys != null) {
-                    m90Var.u(new PasskeysActivity(passkeys.passkeys), false);
-                    if ("create".equalsIgnoreCase(str)) {
-                        m90Var.x("addPasskeyRow");
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.x1 x1Var = (org.telegram.ui.Wallet.x1) obj;
-                String str2 = (String) obj2;
-                m90Var.c();
-                if (x1Var != null) {
-                    org.telegram.ui.ActionBar.d2 T = LaunchActivity.T();
-                    if (T != null && T.getContext() != null) {
-                        org.telegram.ui.Wallet.c2.D(T.getContext(), m90Var.b, x1Var, null, T.getResourceProvider(), null, new i90(m90Var, str, 1));
-                        break;
-                    }
-                } else {
-                    if (str2 == null) {
-                        str2 = org.telegram.messenger.bd.M0(2131743001, null);
-                    }
-                    org.telegram.ui.Components.fc.b0(str2);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.k3
+    public final void b(Editable editable) {
+        int i7;
+        if (this.E) {
+            return;
+        }
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        h90 h90Var = this.F;
+        if (isEmpty) {
+            h90Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > h90Var.getMessagesController().a6) {
+                this.E = true;
+                parseLong = h90Var.getMessagesController().a6;
+                setText(Long.toString(parseLong));
+                this.E = false;
+            }
+            TextView textView = h90Var.s;
+            int i10 = h90Var.getConnectionsManager().isTestBackend() ? 2131746153 : 2131746156;
+            org.telegram.messenger.r1 i11 = org.telegram.messenger.r1.i();
+            i7 = ((org.telegram.ui.ActionBar.f2) h90Var).currentAccount;
+            textView.setText(org.telegram.messenger.hd.a0(null, null, i10, i11.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.qp.s1(i7).c6), "USD")));
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

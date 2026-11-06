@@ -1,38 +1,43 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ml0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wl0 b;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
 
-    public /* synthetic */ ml0(wl0 wl0Var, int i3) {
-        this.a = i3;
-        this.b = wl0Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class ml0 extends ol0 {
+    public int G;
+    public final /* synthetic */ hm0 H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ml0(hm0 hm0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.H = hm0Var;
+        this.G = 0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i3 = this.a;
-        wl0 wl0Var = this.b;
-        switch (i3) {
-            case 0:
-                if (wl0Var.H) {
-                    wl0Var.b.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                wl0Var.h();
-                break;
-            case 2:
-                int i10 = wl0.r0;
-                wl0Var.h();
-                break;
-            default:
-                int i11 = wl0.r0;
-                wl0Var.h();
-                break;
+    @Override // org.telegram.ui.ol0
+    public final void a() {
+        hm0 hm0Var = this.H;
+        if (hm0Var.getParentActivity() != null) {
+            org.telegram.messenger.g0.p3(hm0Var.getParentActivity(), hm0Var.isLightStatusBar());
         }
+        int actionBarButtonColor = getActionBarButtonColor();
+        if (this.G != actionBarButtonColor) {
+            ImageView imageView = hm0Var.J;
+            if (imageView != null) {
+                this.G = actionBarButtonColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+            ImageView imageView2 = hm0Var.K;
+            if (imageView2 != null) {
+                this.G = actionBarButtonColor;
+                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+        }
+        hm0Var.K0();
+        hm0Var.F0();
     }
 }

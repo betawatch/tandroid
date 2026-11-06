@@ -1,236 +1,82 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class cj0 implements RequestDelegate {
-    public final /* synthetic */ nj0 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ TL_account.saveSecureValue c;
-    public final /* synthetic */ TLRPC.TL_secureRequiredType d;
-    public final /* synthetic */ TLRPC.TL_secureRequiredType e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ org.telegram.messenger.wv g;
-    public final /* synthetic */ org.telegram.messenger.wv h;
-    public final /* synthetic */ org.telegram.messenger.wv i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ String k;
-    public final /* synthetic */ String l;
-    public final /* synthetic */ Runnable m;
-    public final /* synthetic */ dj0 n;
-    public final /* synthetic */ TLRPC.TL_inputSecureValue o;
-    public final /* synthetic */ dj0 p;
+public final class cj0 extends mq0 {
+    public final /* synthetic */ bk0 a;
 
-    public cj0(dj0 dj0Var, nj0 nj0Var, String str, TL_account.saveSecureValue savesecurevalue, TLRPC.TL_secureRequiredType tL_secureRequiredType, TLRPC.TL_secureRequiredType tL_secureRequiredType2, ArrayList arrayList, org.telegram.messenger.wv wvVar, org.telegram.messenger.wv wvVar2, org.telegram.messenger.wv wvVar3, ArrayList arrayList2, String str2, String str3, Runnable runnable, dj0 dj0Var2, TLRPC.TL_inputSecureValue tL_inputSecureValue) {
-        this.p = dj0Var;
-        this.a = nj0Var;
-        this.b = str;
-        this.c = savesecurevalue;
-        this.d = tL_secureRequiredType;
-        this.e = tL_secureRequiredType2;
-        this.f = arrayList;
-        this.g = wvVar;
-        this.h = wvVar2;
-        this.i = wvVar3;
-        this.j = arrayList2;
-        this.k = str2;
-        this.l = str3;
-        this.m = runnable;
-        this.n = dj0Var2;
-        this.o = tL_inputSecureValue;
+    public cj0(bk0 bk0Var) {
+        this.a = bk0Var;
     }
 
-    public final void a(final TLRPC.TL_error tL_error, final TLRPC.TL_secureValue tL_secureValue, final TLRPC.TL_secureValue tL_secureValue2) {
-        dj0 dj0Var = this.p;
-        final boolean z10 = dj0Var.b;
-        final int i3 = dj0Var.c;
-        final nj0 nj0Var = this.a;
-        final String str = this.b;
-        final TL_account.saveSecureValue savesecurevalue = this.c;
-        final TLRPC.TL_secureRequiredType tL_secureRequiredType = this.d;
-        final TLRPC.TL_secureRequiredType tL_secureRequiredType2 = this.e;
-        final ArrayList arrayList = this.f;
-        final org.telegram.messenger.wv wvVar = this.g;
-        final org.telegram.messenger.wv wvVar2 = this.h;
-        final org.telegram.messenger.wv wvVar3 = this.i;
-        final ArrayList arrayList2 = this.j;
-        final String str2 = this.k;
-        final String str3 = this.l;
-        final Runnable runnable = this.m;
-        org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.bj0
-            @Override // java.lang.Runnable
-            public final void run() {
-                yj0 yj0Var;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType3;
-                int i10;
-                dj0 dj0Var2 = cj0.this.p;
-                yj0 yj0Var2 = dj0Var2.d;
-                TLRPC.TL_error tL_error2 = tL_error;
-                String str4 = str;
-                int i11 = 0;
-                if (tL_error2 != null) {
-                    nj0 nj0Var2 = nj0Var;
-                    if (nj0Var2 != null) {
-                        nj0Var2.f(tL_error2.text, str4);
-                    }
-                    i10 = ((org.telegram.ui.ActionBar.d2) yj0Var2).currentAccount;
-                    org.telegram.ui.Components.t4.e0(i10, tL_error2, yj0Var2, savesecurevalue, str4);
-                    return;
-                }
-                boolean z11 = z10;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType4 = tL_secureRequiredType;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType5 = tL_secureRequiredType2;
-                if (!z11) {
-                    yj0Var2.L1(tL_secureRequiredType5);
-                    yj0Var2.L1(tL_secureRequiredType4);
-                } else if (tL_secureRequiredType4 != null) {
-                    yj0Var2.L1(tL_secureRequiredType4);
-                } else {
-                    yj0Var2.L1(tL_secureRequiredType5);
-                }
-                TLRPC.TL_secureValue tL_secureValue3 = tL_secureValue;
-                if (tL_secureValue3 != null) {
-                    yj0Var2.E.values.add(tL_secureValue3);
-                }
-                TLRPC.TL_secureValue tL_secureValue4 = tL_secureValue2;
-                if (tL_secureValue4 != null) {
-                    yj0Var2.E.values.add(tL_secureValue4);
-                }
-                ArrayList arrayList3 = arrayList;
-                if (arrayList3 != null && !arrayList3.isEmpty()) {
-                    int size = arrayList3.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        org.telegram.messenger.wv wvVar4 = (org.telegram.messenger.wv) arrayList3.get(i12);
-                        if (wvVar4.d != null) {
-                            int size2 = tL_secureValue3.files.size();
-                            int i13 = i11;
-                            while (i13 < size2) {
-                                TLRPC.SecureFile secureFile = tL_secureValue3.files.get(i13);
-                                if (secureFile instanceof TLRPC.TL_secureFile) {
-                                    TLRPC.TL_secureFile tL_secureFile = (TLRPC.TL_secureFile) secureFile;
-                                    yj0Var = yj0Var2;
-                                    tL_secureRequiredType3 = tL_secureRequiredType5;
-                                    if (Utilities.d(wvVar4.e, tL_secureFile.secret, 0)) {
-                                        dj0.a(dj0Var2, wvVar4, tL_secureFile);
-                                        break;
-                                    }
-                                } else {
-                                    yj0Var = yj0Var2;
-                                    tL_secureRequiredType3 = tL_secureRequiredType5;
-                                }
-                                i13++;
-                                yj0Var2 = yj0Var;
-                                tL_secureRequiredType5 = tL_secureRequiredType3;
-                            }
-                        }
-                        yj0Var = yj0Var2;
-                        tL_secureRequiredType3 = tL_secureRequiredType5;
-                        i12++;
-                        yj0Var2 = yj0Var;
-                        tL_secureRequiredType5 = tL_secureRequiredType3;
-                        i11 = 0;
-                    }
-                }
-                yj0 yj0Var3 = yj0Var2;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType6 = tL_secureRequiredType5;
-                org.telegram.messenger.wv wvVar5 = wvVar;
-                if (wvVar5 != null && wvVar5.d != null) {
-                    TLRPC.SecureFile secureFile2 = tL_secureValue3.selfie;
-                    if (secureFile2 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile2 = (TLRPC.TL_secureFile) secureFile2;
-                        if (Utilities.d(wvVar5.e, tL_secureFile2.secret, 0)) {
-                            dj0.a(dj0Var2, wvVar5, tL_secureFile2);
-                        }
-                    }
-                }
-                org.telegram.messenger.wv wvVar6 = wvVar2;
-                if (wvVar6 != null && wvVar6.d != null) {
-                    TLRPC.SecureFile secureFile3 = tL_secureValue3.front_side;
-                    if (secureFile3 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile3 = (TLRPC.TL_secureFile) secureFile3;
-                        if (Utilities.d(wvVar6.e, tL_secureFile3.secret, 0)) {
-                            dj0.a(dj0Var2, wvVar6, tL_secureFile3);
-                        }
-                    }
-                }
-                org.telegram.messenger.wv wvVar7 = wvVar3;
-                if (wvVar7 != null && wvVar7.d != null) {
-                    TLRPC.SecureFile secureFile4 = tL_secureValue3.reverse_side;
-                    if (secureFile4 instanceof TLRPC.TL_secureFile) {
-                        TLRPC.TL_secureFile tL_secureFile4 = (TLRPC.TL_secureFile) secureFile4;
-                        if (Utilities.d(wvVar7.e, tL_secureFile4.secret, 0)) {
-                            dj0.a(dj0Var2, wvVar7, tL_secureFile4);
-                        }
-                    }
-                }
-                ArrayList arrayList4 = arrayList2;
-                if (arrayList4 != null && !arrayList4.isEmpty()) {
-                    int size3 = arrayList4.size();
-                    for (int i14 = 0; i14 < size3; i14++) {
-                        org.telegram.messenger.wv wvVar8 = (org.telegram.messenger.wv) arrayList4.get(i14);
-                        if (wvVar8.d != null) {
-                            int size4 = tL_secureValue3.translation.size();
-                            for (int i15 = 0; i15 < size4; i15++) {
-                                TLRPC.SecureFile secureFile5 = tL_secureValue3.translation.get(i15);
-                                if (secureFile5 instanceof TLRPC.TL_secureFile) {
-                                    TLRPC.TL_secureFile tL_secureFile5 = (TLRPC.TL_secureFile) secureFile5;
-                                    if (Utilities.d(wvVar8.e, tL_secureFile5.secret, 0)) {
-                                        dj0.a(dj0Var2, wvVar8, tL_secureFile5);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                yj0Var3.P1(tL_secureRequiredType6, str4, str2, tL_secureRequiredType4, str3, z11, i3);
-                runnable.run();
-            }
-        });
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        cj0 cj0Var;
-        TLRPC.TL_inputSecureValue tL_inputSecureValue;
-        int i3;
-        int i10;
-        yj0 yj0Var = this.p.d;
-        if (tL_error != null) {
-            boolean equals = tL_error.text.equals("EMAIL_VERIFICATION_NEEDED");
-            String str = this.b;
-            if (equals) {
-                TL_account.sendVerifyEmailCode sendverifyemailcode = new TL_account.sendVerifyEmailCode();
-                sendverifyemailcode.purpose = new TLRPC.TL_emailVerifyPurposePassport();
-                sendverifyemailcode.email = str;
-                i10 = ((org.telegram.ui.ActionBar.d2) yj0Var).currentAccount;
-                ConnectionsManager.getInstance(i10).sendRequest(sendverifyemailcode, new ci.s7(this, this.b, this.e, this.n, this.a, 11));
-                return;
-            }
-            cj0Var = this;
-            if (tL_error.text.equals("PHONE_VERIFICATION_NEEDED")) {
-                org.telegram.messenger.g0.h3(new hc0(cj0Var.a, tL_error, str, false, 14));
-                return;
-            }
-        } else {
-            cj0Var = this;
-        }
-        if (tL_error != null || (tL_inputSecureValue = cj0Var.o) == null) {
-            a(tL_error, (TLRPC.TL_secureValue) tLObject, null);
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final void B(int i7) {
+        bk0 bk0Var = this.a;
+        int i10 = bk0Var.S0;
+        org.telegram.messenger.ew ewVar = i10 == 1 ? bk0Var.j1 : i10 == 4 ? (org.telegram.messenger.ew) bk0Var.k1.get(i7) : i10 == 2 ? bk0Var.l1 : i10 == 3 ? bk0Var.m1 : (org.telegram.messenger.ew) bk0Var.i1.get(i7);
+        zj0 zj0Var = (zj0) bk0Var.n1.remove(ewVar);
+        if (zj0Var == null) {
             return;
         }
-        TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
-        savesecurevalue.value = tL_inputSecureValue;
-        savesecurevalue.secure_secret_id = yj0Var.c1;
-        i3 = ((org.telegram.ui.ActionBar.d2) yj0Var).currentAccount;
-        ConnectionsManager.getInstance(i3).sendRequest(savesecurevalue, new xy(16, this, (TLRPC.TL_secureValue) tLObject));
+        String r12 = bk0.r1(ewVar);
+        int i11 = bk0Var.S0;
+        String str = null;
+        if (i11 == 1) {
+            bk0Var.j1 = null;
+            str = rf.b.i("selfie", r12);
+        } else if (i11 == 4) {
+            str = rf.b.i("translation", r12);
+        } else if (i11 == 2) {
+            bk0Var.l1 = null;
+            str = rf.b.i("front", r12);
+        } else if (i11 == 3) {
+            bk0Var.m1 = null;
+            str = rf.b.i("reverse", r12);
+        } else if (i11 == 0) {
+            str = rf.b.i("files", r12);
+        }
+        if (str != null) {
+            HashMap hashMap = bk0Var.x1;
+            if (hashMap != null) {
+                hashMap.remove(str);
+            }
+            HashMap hashMap2 = bk0Var.y1;
+            if (hashMap2 != null) {
+                hashMap2.remove(str);
+            }
+        }
+        bk0Var.X1(bk0Var.S0);
+        bk0Var.i0.removeView(zj0Var);
+    }
+
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        if (i7 < 0) {
+            return null;
+        }
+        bk0 bk0Var = this.a;
+        if (i7 >= bk0Var.i0.getChildCount()) {
+            return null;
+        }
+        zj0 zj0Var = (zj0) bk0Var.i0.getChildAt(i7);
+        int[] iArr = new int[2];
+        zj0Var.c.getLocationInWindow(iArr);
+        vq0 vq0Var = new vq0();
+        vq0Var.b = iArr[0];
+        vq0Var.c = iArr[1];
+        vq0Var.d = bk0Var.i0;
+        ImageReceiver imageReceiver = zj0Var.c.getImageReceiver();
+        vq0Var.a = imageReceiver;
+        vq0Var.e = imageReceiver.p();
+        return vq0Var;
+    }
+
+    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    public final String b0() {
+        return this.a.S0 == 1 ? org.telegram.messenger.hd.a0("PassportDeleteSelfieAlert", null, 2131747580, new Object[0]) : org.telegram.messenger.hd.a0("PassportDeleteScanAlert", null, 2131747582, new Object[0]);
     }
 }

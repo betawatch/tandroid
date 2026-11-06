@@ -1,21 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class jo0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
+public final /* synthetic */ class jo0 implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ po0 b;
+    public final /* synthetic */ boolean c;
 
-    public jo0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    public /* synthetic */ jo0(po0 po0Var, boolean z9, int i7) {
+        this.a = i7;
+        this.b = po0Var;
+        this.c = z9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        PhotoViewer photoViewer = this.a;
-        org.telegram.messenger.zi ziVar = photoViewer.U4;
-        if (ziVar == null) {
-            return;
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.hc.F(this.b.b.e0, this.c).j();
+                break;
+            default:
+                org.telegram.ui.Components.hc.F(this.b.b.e0, this.c).j();
+                break;
         }
-        org.telegram.messenger.w7.G(ziVar.I1).c0(photoViewer.U4.F0(), true, false);
     }
 }

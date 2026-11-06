@@ -1,108 +1,82 @@
 package h9;
 
-import b8.zb;
-import j$.util.Objects;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class d {
-    public static final b d;
-    public final a a;
-    public final Character b;
-    public volatile d c;
+public class d extends a8.h0 {
+    public final Map b;
+    public final /* synthetic */ l1 c;
 
-    static {
-        new c("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
-        new c("base64Url()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_");
-        new d("base32()", "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567");
-        new d("base32Hex()", "0123456789ABCDEFGHIJKLMNOPQRSTUV");
-        d = new b(new a("base16()", "0123456789ABCDEF".toCharArray()));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(l1 l1Var, Map map) {
+        super(2);
+        this.c = l1Var;
+        map.getClass();
+        this.b = map;
     }
 
-    public d(a aVar, Character ch2) {
-        boolean z10;
-        this.a = aVar;
-        if (ch2 != null) {
-            char charValue = ch2.charValue();
-            byte[] bArr = aVar.g;
-            if (charValue < bArr.length && bArr[charValue] != -1) {
-                z10 = false;
-                zb.h(z10, "Padding character %s was already in alphabet", ch2);
-                this.b = ch2;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        Iterator it = iterator();
+        while (true) {
+            a8.d dVar = (a8.d) it;
+            if (!dVar.hasNext()) {
+                return;
             }
-        }
-        z10 = true;
-        zb.h(z10, "Padding character %s was already in alphabet", ch2);
-        this.b = ch2;
-    }
-
-    public final void a(StringBuilder sb2, byte[] bArr, int i3, int i10) {
-        zb.n(i3, i3 + i10, bArr.length);
-        a aVar = this.a;
-        int i11 = aVar.f;
-        int i12 = aVar.d;
-        int i13 = 0;
-        zb.f(i10 <= i11);
-        long j10 = 0;
-        for (int i14 = 0; i14 < i10; i14++) {
-            j10 = (j10 | (bArr[i3 + i14] & 255)) << 8;
-        }
-        int i15 = ((i10 + 1) * 8) - i12;
-        while (i13 < i10 * 8) {
-            sb2.append(aVar.b[((int) (j10 >>> (i15 - i13))) & aVar.c]);
-            i13 += i12;
-        }
-        Character ch2 = this.b;
-        if (ch2 != null) {
-            while (i13 < aVar.f * 8) {
-                sb2.append(ch2.charValue());
-                i13 += i12;
-            }
+            dVar.next();
+            dVar.remove();
         }
     }
 
-    public void b(StringBuilder sb2, byte[] bArr, int i3) {
-        int i10 = 0;
-        zb.n(0, i3, bArr.length);
-        while (i10 < i3) {
-            a aVar = this.a;
-            a(sb2, bArr, i10, Math.min(aVar.f, i3 - i10));
-            i10 += aVar.f;
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.b.containsKey(obj);
     }
 
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        return this.b.keySet().containsAll(collection);
+    }
+
+    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
     public final boolean equals(Object obj) {
-        if (obj instanceof d) {
-            d dVar = (d) obj;
-            if (this.a.equals(dVar.a) && Objects.equals(this.b, dVar.b)) {
-                return true;
-            }
-        }
-        return false;
+        return this == obj || this.b.keySet().equals(obj);
     }
 
+    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
     public final int hashCode() {
-        return this.a.hashCode() ^ Objects.hashCode(this.b);
+        return this.b.keySet().hashCode();
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("BaseEncoding.");
-        a aVar = this.a;
-        sb2.append(aVar);
-        if (8 % aVar.d != 0) {
-            Character ch2 = this.b;
-            if (ch2 == null) {
-                sb2.append(".omitPadding()");
-            } else {
-                sb2.append(".withPadChar('");
-                sb2.append(ch2);
-                sb2.append("')");
-            }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return this.b.isEmpty();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new a8.d(this, this.b.entrySet().iterator(), 7);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        int i7;
+        Collection collection = (Collection) this.b.remove(obj);
+        if (collection != null) {
+            i7 = collection.size();
+            collection.clear();
+            this.c.f -= i7;
+        } else {
+            i7 = 0;
         }
-        return sb2.toString();
+        return i7 > 0;
     }
 
-    public d(String str, String str2) {
-        this(new a(str, str2.toCharArray()), (Character) '=');
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.b.size();
     }
 }

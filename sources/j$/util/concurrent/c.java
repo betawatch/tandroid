@@ -4,7 +4,7 @@ package j$.util.concurrent;
 public final class c {
     volatile long value;
 
-    public c(long j10) {
-        this.value = j10;
+    public c(long j3) {
+        this.value = j3;
     }
 }

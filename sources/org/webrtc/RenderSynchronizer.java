@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -25,7 +25,7 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public interface Listener {
         void onRenderWindowClose();
 
@@ -62,7 +62,7 @@ public final class RenderSynchronizer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void onDisplayRefreshCycleBegin(long j10) {
+    public void onDisplayRefreshCycleBegin(long j3) {
         synchronized (this.lock) {
             try {
                 if (this.listeners.isEmpty()) {
@@ -71,11 +71,11 @@ public final class RenderSynchronizer {
                     return;
                 }
                 this.choreographer.postFrameCallback(new o(this));
-                long j11 = j10 - this.lastOpenedTimeNanos;
-                long j12 = j10 - this.lastRefreshTimeNanos;
-                this.lastRefreshTimeNanos = j10;
-                if (Math.abs(j11 - this.targetFrameIntervalNanos) < Math.abs((j11 - this.targetFrameIntervalNanos) + j12)) {
-                    this.lastOpenedTimeNanos = j10;
+                long j10 = j3 - this.lastOpenedTimeNanos;
+                long j11 = j3 - this.lastRefreshTimeNanos;
+                this.lastRefreshTimeNanos = j3;
+                if (Math.abs(j10 - this.targetFrameIntervalNanos) < Math.abs((j10 - this.targetFrameIntervalNanos) + j11)) {
+                    this.lastOpenedTimeNanos = j3;
                     openRenderWindow();
                 } else if (this.renderWindowOpen) {
                     closeRenderWindow();

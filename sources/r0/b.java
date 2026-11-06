@@ -12,9 +12,8 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.nh;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -25,10 +24,10 @@ public class b {
         this(c);
     }
 
-    public nh a(View view) {
+    public org.telegram.ui.Components.n a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new nh(accessibilityNodeProvider, 17);
+            return new org.telegram.ui.Components.n(accessibilityNodeProvider);
         }
         return null;
     }
@@ -41,17 +40,17 @@ public class b {
         this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
     }
 
-    public boolean d(View view, int i3, Bundle bundle) {
+    public boolean d(View view, int i7, Bundle bundle) {
         WeakReference weakReference;
         ClickableSpan clickableSpan;
         List list = (List) view.getTag(R.id.tag_accessibility_actions);
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        for (int i10 = 0; i10 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.c) list.get(i10)).a).getId() != i3; i10++) {
+        for (int i10 = 0; i10 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.c) list.get(i10)).a).getId() != i7; i10++) {
         }
-        boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i3, bundle);
-        if (performAccessibilityAction || i3 != R.id.accessibility_action_clickable_span || bundle == null) {
+        boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i7, bundle);
+        if (performAccessibilityAction || i7 != R.id.accessibility_action_clickable_span || bundle == null) {
             return performAccessibilityAction;
         }
         int i11 = bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1);

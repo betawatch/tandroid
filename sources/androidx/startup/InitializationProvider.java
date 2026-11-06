@@ -9,10 +9,10 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Trace;
 import androidx.car.app.j;
-import x4.a;
-import x7.e6;
+import c8.ge;
+import y4.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -39,12 +39,12 @@ public class InitializationProvider extends ContentProvider {
         if (context.getApplicationContext() == null) {
             return true;
         }
-        a c2 = a.c(context);
-        Context context2 = c2.c;
+        a c10 = a.c(context);
+        Context context2 = c10.c;
         try {
             try {
-                e6.a("Startup");
-                c2.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
+                ge.a("Startup");
+                c10.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
             } catch (PackageManager.NameNotFoundException e10) {
                 throw new j(e10);

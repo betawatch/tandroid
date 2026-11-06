@@ -1,114 +1,66 @@
 package l2;
 
-import g2.p;
+import android.media.MediaFormat;
+import j$.util.DesugarCollections;
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements p {
-    public final /* synthetic */ int a;
+public final class c {
+    public static final c b = new c(new HashMap());
+    public final Map a;
 
-    @Override // g2.p
-    public final void invoke(Object obj) {
-        b bVar = (b) obj;
-        switch (this.a) {
-            case 0:
-                bVar.getClass();
-                break;
-            case 1:
-                bVar.getClass();
-                break;
-            case 2:
-                bVar.getClass();
-                break;
-            case 3:
-                bVar.getClass();
-                break;
-            case 4:
-                bVar.getClass();
-                break;
-            case 5:
-                bVar.getClass();
-                break;
-            case 6:
-                bVar.getClass();
-                break;
-            case 7:
-                bVar.getClass();
-                break;
-            case 8:
-                bVar.getClass();
-                break;
-            case 9:
-                bVar.getClass();
-                break;
-            case 10:
-                bVar.getClass();
-                break;
-            case 11:
-                bVar.getClass();
-                break;
-            case 12:
-                bVar.getClass();
-                break;
-            case 13:
-                bVar.getClass();
-                break;
-            case 14:
-                bVar.getClass();
-                break;
-            case 15:
-                bVar.getClass();
-                break;
-            case 16:
-                bVar.getClass();
-                break;
-            case 17:
-                bVar.getClass();
-                break;
-            case 18:
-                bVar.getClass();
-                break;
-            case 19:
-                bVar.getClass();
-                break;
-            case 20:
-                bVar.getClass();
-                break;
-            case 21:
-                bVar.getClass();
-                break;
-            case 22:
-                bVar.getClass();
-                break;
-            case 23:
-                bVar.getClass();
-                break;
-            case 24:
-                bVar.getClass();
-                break;
-            case 25:
-                bVar.getClass();
-                break;
-            case 26:
-                bVar.getClass();
-                break;
-            case 27:
-                bVar.getClass();
-                break;
-            case 28:
-                bVar.getClass();
-                break;
-            default:
-                bVar.getClass();
-                break;
+    public c(HashMap hashMap) {
+        this.a = DesugarCollections.unmodifiableMap(hashMap);
+    }
+
+    public static gf.g a(MediaFormat mediaFormat, Set set) {
+        gf.g gVar = new gf.g();
+        HashMap hashMap = (HashMap) gVar.b;
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (mediaFormat.containsKey(str)) {
+                int valueTypeForKey = mediaFormat.getValueTypeForKey(str);
+                if (valueTypeForKey == 1) {
+                    hashMap.put(str, Integer.valueOf(mediaFormat.getInteger(str)));
+                } else if (valueTypeForKey == 2) {
+                    hashMap.put(str, Long.valueOf(mediaFormat.getLong(str)));
+                } else if (valueTypeForKey == 3) {
+                    hashMap.put(str, Float.valueOf(mediaFormat.getFloat(str)));
+                } else if (valueTypeForKey == 4) {
+                    hashMap.put(str, mediaFormat.getString(str));
+                } else if (valueTypeForKey == 5) {
+                    ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
+                    if (byteBuffer == null) {
+                        hashMap.put(str, null);
+                    } else {
+                        ByteBuffer allocate = ByteBuffer.allocate(byteBuffer.remaining());
+                        allocate.put(byteBuffer.duplicate());
+                        allocate.flip();
+                        hashMap.put(str, allocate);
+                    }
+                }
+            }
         }
+        return gVar;
     }
 
-    public /* synthetic */ c(a aVar, int i3) {
-        this.a = i3;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof c) {
+            return this.a.equals(((c) obj).a);
+        }
+        return false;
     }
 
-    public /* synthetic */ c(a aVar, int i3, int i10, char c2) {
-        this.a = i10;
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

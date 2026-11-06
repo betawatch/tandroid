@@ -10,19 +10,19 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public class RadialProgressView extends View implements org.telegram.ui.ActionBar.z5 {
+public class RadialProgressView extends View implements org.telegram.ui.ActionBar.a6 {
+    public float D;
     public float E;
-    public float F;
-    public int G;
-    public float H;
-    public boolean I;
-    public float J;
-    public boolean K;
-    public final org.telegram.ui.ActionBar.e6 L;
+    public int F;
+    public float G;
+    public boolean H;
+    public float I;
+    public boolean J;
+    public final org.telegram.ui.ActionBar.f6 K;
+    public int L;
     public int M;
-    public int N;
     public long a;
     public float b;
     public float c;
@@ -50,17 +50,17 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         this.n = f14;
         canvas.drawArc(rectF, f13, f14, false, this.x);
         long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.a;
-        if (j10 > 17) {
-            j10 = 17;
+        long j3 = currentTimeMillis - this.a;
+        if (j3 > 17) {
+            j3 = 17;
         }
         this.a = currentTimeMillis;
-        b(j10);
+        b(j3);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(this.M));
+        hashSet.add(Integer.valueOf(this.L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -68,40 +68,40 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j10) {
-        this.b = (((360 * j10) / 2000.0f) + this.b) - (((int) (r1 / 360.0f)) * 360);
-        boolean z10 = this.I;
-        if (z10) {
-            float f10 = this.J;
+    public final void b(long j3) {
+        this.b = (((360 * j3) / 2000.0f) + this.b) - (((int) (r1 / 360.0f)) * 360);
+        boolean z9 = this.H;
+        if (z9) {
+            float f10 = this.I;
             if (f10 != 1.0f) {
                 float f11 = f10 + 0.07272727f;
-                this.J = f11;
+                this.I = f11;
                 if (f11 > 1.0f) {
-                    this.J = 1.0f;
+                    this.I = 1.0f;
                 }
-                if (this.K) {
-                    float f12 = this.E;
-                    float f13 = this.F;
+                if (this.J) {
+                    float f12 = this.D;
+                    float f13 = this.E;
                     float f14 = f12 - f13;
                     if (f14 > 0.0f) {
-                        int i3 = (int) (this.G + j10);
-                        this.G = i3;
-                        float f15 = i3;
+                        int i7 = (int) (this.F + j3);
+                        this.F = i7;
+                        float f15 = i7;
                         if (f15 >= 200.0f) {
-                            this.F = f12;
-                            this.H = f12;
-                            this.G = 0;
+                            this.E = f12;
+                            this.G = f12;
+                            this.F = 0;
                         } else {
-                            this.H = (org.telegram.messenger.g0.F.getInterpolation(f15 / 200.0f) * f14) + f13;
+                            this.G = (org.telegram.messenger.g0.F.getInterpolation(f15 / 200.0f) * f14) + f13;
                         }
                     }
-                    this.c = Math.max(4.0f, this.H * 360.0f);
+                    this.c = Math.max(4.0f, this.G * 360.0f);
                 } else {
-                    float f16 = this.J;
+                    float f16 = this.I;
                     DecelerateInterpolator decelerateInterpolator = this.s;
                     AccelerateInterpolator accelerateInterpolator = this.w;
                     if (f16 == 0.0f) {
-                        float f17 = this.e + j10;
+                        float f17 = this.e + j3;
                         this.e = f17;
                         if (f17 >= 500.0f) {
                             this.e = 500.0f;
@@ -112,17 +112,17 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
                             this.c = 4.0f - ((1.0f - decelerateInterpolator.getInterpolation(this.e / 500.0f)) * 270.0f);
                         }
                         if (this.e == 500.0f) {
-                            boolean z11 = this.d;
-                            if (z11) {
+                            boolean z10 = this.d;
+                            if (z10) {
                                 this.b += 270.0f;
                                 this.c = -266.0f;
                             }
-                            this.d = !z11;
+                            this.d = !z10;
                             this.e = 0.0f;
                         }
                     } else if (this.d) {
                         float f18 = this.c;
-                        float interpolation = (this.J * 360.0f) + (accelerateInterpolator.getInterpolation(this.e / 500.0f) * 266.0f) + 4.0f;
+                        float interpolation = (this.I * 360.0f) + (accelerateInterpolator.getInterpolation(this.e / 500.0f) * 266.0f) + 4.0f;
                         this.c = interpolation;
                         float f19 = f18 - interpolation;
                         if (f19 > 0.0f) {
@@ -130,7 +130,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
                         }
                     } else {
                         float f20 = this.c;
-                        float interpolation2 = (4.0f - ((1.0f - decelerateInterpolator.getInterpolation(this.e / 500.0f)) * 270.0f)) - (this.J * 364.0f);
+                        float interpolation2 = (4.0f - ((1.0f - decelerateInterpolator.getInterpolation(this.e / 500.0f)) * 270.0f)) - (this.I * 364.0f);
                         this.c = interpolation2;
                         float f21 = f20 - interpolation2;
                         if (f21 > 0.0f) {
@@ -141,17 +141,17 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
                 invalidate();
             }
         }
-        if (!z10) {
-            float f22 = this.J;
+        if (!z9) {
+            float f22 = this.I;
             if (f22 != 0.0f) {
                 float f23 = f22 - 0.04f;
-                this.J = f23;
+                this.I = f23;
                 if (f23 < 0.0f) {
-                    this.J = 0.0f;
+                    this.I = 0.0f;
                 }
             }
         }
-        if (this.K) {
+        if (this.J) {
         }
         invalidate();
     }
@@ -167,12 +167,12 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         this.n = f11;
         canvas.drawArc(rectF, f10, f11, false, this.x);
         long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.a;
-        if (j10 > 17) {
-            j10 = 17;
+        long j3 = currentTimeMillis - this.a;
+        if (j3 > 17) {
+            j3 = 17;
         }
         this.a = currentTimeMillis;
-        b(j10);
+        b(j3);
     }
 
     @Override // android.view.View
@@ -180,40 +180,40 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         super.setAlpha(f10);
         if (this.h) {
             Drawable background = getBackground();
-            int i3 = (int) (f10 * 255.0f);
+            int i7 = (int) (f10 * 255.0f);
             if (background != null) {
-                background.setAlpha(i3);
+                background.setAlpha(i7);
             }
-            this.x.setAlpha(i3);
+            this.x.setAlpha(i7);
         }
     }
 
-    public void setNoProgress(boolean z10) {
-        this.K = z10;
+    public void setNoProgress(boolean z9) {
+        this.J = z9;
     }
 
     public void setProgress(float f10) {
-        this.E = f10;
-        if (this.H > f10) {
-            this.H = f10;
+        this.D = f10;
+        if (this.G > f10) {
+            this.G = f10;
         }
-        this.F = this.H;
-        this.G = 0;
+        this.E = this.G;
+        this.F = 0;
     }
 
-    public void setProgressColor(int i3) {
-        this.r = i3;
-        this.x.setColor(i3);
+    public void setProgressColor(int i7) {
+        this.r = i7;
+        this.x.setColor(i7);
     }
 
-    public void setProgressColorKey(int i3) {
-        this.M = i3;
-        setProgressColor(org.telegram.ui.ActionBar.k6.w0(i3, this.L));
-        this.N = this.r;
+    public void setProgressColorKey(int i7) {
+        this.L = i7;
+        setProgressColor(org.telegram.ui.ActionBar.k6.w0(i7, this.K));
+        this.M = this.r;
     }
 
-    public void setSize(int i3) {
-        this.y = i3;
+    public void setSize(int i7) {
+        this.y = i7;
         invalidate();
     }
 
@@ -221,24 +221,24 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         this.x.setStrokeWidth(org.telegram.messenger.g0.L(f10));
     }
 
-    public void setUseSelfAlpha(boolean z10) {
-        this.h = z10;
+    public void setUseSelfAlpha(boolean z9) {
+        this.h = z9;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.a6
     public final void updateColors() {
         Paint paint = this.x;
         if (paint != null) {
             try {
-                if (this.r != this.N) {
+                if (this.r != this.M) {
                     return;
                 }
-                int w02 = org.telegram.ui.ActionBar.k6.w0(this.M, this.L);
-                this.N = w02;
+                int w02 = org.telegram.ui.ActionBar.k6.w0(this.L, this.K);
+                this.M = w02;
                 if (w02 != this.r) {
                     int alpha = paint.getAlpha();
                     setProgressColor(w02);
-                    this.N = w02;
+                    this.M = w02;
                     if (this.h) {
                         paint.setAlpha(alpha);
                     }
@@ -250,15 +250,15 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         }
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.f = new RectF();
-        this.K = true;
-        int i3 = org.telegram.ui.ActionBar.k6.h6;
-        this.M = i3;
-        this.L = e6Var;
+        this.J = true;
+        int i7 = org.telegram.ui.ActionBar.k6.h6;
+        this.L = i7;
+        this.K = f6Var;
         this.y = org.telegram.messenger.g0.L(40.0f);
-        this.r = org.telegram.ui.ActionBar.k6.w0(i3, e6Var);
+        this.r = org.telegram.ui.ActionBar.k6.w0(i7, f6Var);
         this.s = new DecelerateInterpolator();
         this.w = new AccelerateInterpolator();
         Paint paint = new Paint(1);
@@ -267,6 +267,6 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
         paint.setColor(this.r);
-        this.N = this.r;
+        this.M = this.r;
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class z extends f1 {
     private static final z zzi;
@@ -18,35 +18,35 @@ public final class z extends f1 {
         f1.g(z.class, zVar);
     }
 
-    public static void j(z zVar, long j10) {
+    public static void j(z zVar, long j3) {
         zVar.zzc |= 2;
-        zVar.zze = j10;
+        zVar.zze = j3;
     }
 
     public static y k() {
         return (y) ((d1) zzi.e(5));
     }
 
-    public static void l(z zVar, long j10) {
+    public static void l(z zVar, long j3) {
         zVar.zzc |= 4;
-        zVar.zzf = j10;
+        zVar.zzf = j3;
     }
 
-    public static void m(z zVar, long j10) {
+    public static void m(z zVar, long j3) {
         zVar.zzc |= 8;
-        zVar.zzg = j10;
+        zVar.zzg = j3;
     }
 
-    public static void n(z zVar, long j10) {
+    public static void n(z zVar, long j3) {
         zVar.zzc |= 16;
-        zVar.zzh = j10;
+        zVar.zzh = j3;
     }
 
     /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.vision.j2, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.f1
-    public final Object e(int i3) {
+    public final Object e(int i7) {
         j2 j2Var;
-        switch (g0.a[i3 - 1]) {
+        switch (g0.a[i7 - 1]) {
             case 1:
                 return new z();
             case 2:

@@ -1,14 +1,15 @@
 package com.google.android.play.core.integrity;
 
+import a8.p0;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class e extends StandardIntegrityManager.PrepareIntegrityTokenRequest {
     private final long a;
 
-    public /* synthetic */ e(long j10, int i3, d dVar) {
-        this.a = j10;
+    public /* synthetic */ e(long j3, int i7, d dVar) {
+        this.a = j3;
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.PrepareIntegrityTokenRequest
@@ -36,11 +37,11 @@ final class e extends StandardIntegrityManager.PrepareIntegrityTokenRequest {
     }
 
     public final int hashCode() {
-        long j10 = this.a;
-        return (((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003;
+        long j3 = this.a;
+        return (((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003;
     }
 
     public final String toString() {
-        return a1.g.r(new StringBuilder("PrepareIntegrityTokenRequest{cloudProjectNumber="), this.a, ", webViewRequestMode=0}");
+        return p0.r(new StringBuilder("PrepareIntegrityTokenRequest{cloudProjectNumber="), this.a, ", webViewRequestMode=0}");
     }
 }

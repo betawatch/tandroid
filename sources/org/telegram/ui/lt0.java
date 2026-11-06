@@ -1,82 +1,119 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Intent;
-import android.graphics.RectF;
-import android.net.Uri;
-import org.telegram.tgnet.TLObject;
+import android.app.Dialog;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lt0 implements Runnable {
+public final /* synthetic */ class lt0 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ PrivacySettingsActivity b;
 
-    public /* synthetic */ lt0(ProfileActivity profileActivity, TLRPC.User user, int i3) {
-        this.a = i3;
-        this.b = profileActivity;
-        this.c = user;
+    public /* synthetic */ lt0(PrivacySettingsActivity privacySettingsActivity, int i7) {
+        this.a = i7;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public void a() {
+        int i7;
         switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b;
-                TLRPC.User user = this.c;
-                RectF rectF = ProfileActivity.T6;
-                profileActivity.getClass();
-                profileActivity.presentFragment(wm.ra(user.id));
-                break;
-            case 1:
-                ProfileActivity profileActivity2 = this.b;
-                TLRPC.User user2 = this.c;
-                RectF rectF2 = ProfileActivity.T6;
-                if (profileActivity2.getParentActivity() != null) {
-                    TLRPC.UserFull userFull = profileActivity2.v2;
-                    org.telegram.ui.Components.voip.n1.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.v2, profileActivity2.getAccountInstance());
-                    break;
-                }
-                break;
             case 2:
-                ProfileActivity profileActivity3 = this.b;
-                TLRPC.User user3 = this.c;
-                RectF rectF3 = ProfileActivity.T6;
-                if (profileActivity3.getParentActivity() != null) {
-                    TLRPC.UserFull userFull2 = profileActivity3.v2;
-                    org.telegram.ui.Components.voip.n1.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.v2, profileActivity3.getAccountInstance());
+                PrivacySettingsActivity privacySettingsActivity = this.b;
+                nt0 nt0Var = privacySettingsActivity.a;
+                if (nt0Var != null && (i7 = privacySettingsActivity.s) >= 0) {
+                    nt0Var.g(i7);
                     break;
                 }
                 break;
-            case 3:
-                ProfileActivity profileActivity4 = this.b;
-                TLRPC.User user4 = this.c;
-                RectF rectF4 = ProfileActivity.T6;
+            default:
+                PrivacySettingsActivity.Z(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        String M0;
+        int i10 = this.a;
+        int i11 = 0;
+        PrivacySettingsActivity privacySettingsActivity = this.b;
+        int i12 = 1;
+        switch (i10) {
+            case 0:
                 try {
-                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
-                    intent.addFlags(TLObject.FLAG_28);
-                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
-                    break;
+                    Dialog dialog = privacySettingsActivity.visibleDialog;
+                    if (dialog != null) {
+                        dialog.dismiss();
+                    }
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
-                    return;
                 }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+                String M02 = org.telegram.messenger.hd.M0(2131746793, "PrivacyPaymentsClearAlertTitle");
+                org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
+                u1Var2.R = M02;
+                u1Var2.T = org.telegram.messenger.hd.M0(2131746795, "PrivacyPaymentsClearAlert");
+                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752099, "ClearButton"), new lt0(privacySettingsActivity, i12));
+                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, "Cancel"), null);
+                privacySettingsActivity.showDialog(u1Var2);
+                privacySettingsActivity.showDialog(u1Var2);
+                TextView textView = (TextView) u1Var2.d(-1);
+                if (textView != null) {
+                    org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
+                    break;
+                }
+                break;
+            case 1:
+                TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
+                boolean[] zArr = privacySettingsActivity.Z;
+                tL_payments_clearSavedInfo.credentials = zArr[1];
+                tL_payments_clearSavedInfo.info = zArr[0];
+                privacySettingsActivity.getUserConfig().y = null;
+                privacySettingsActivity.getUserConfig().v(false);
+                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new di.u5(9));
+                boolean z9 = zArr[0];
+                if (z9 && zArr[1]) {
+                    M0 = org.telegram.messenger.hd.M0(2131746791, "PrivacyPaymentsPaymentShippingCleared");
+                } else if (z9) {
+                    M0 = org.telegram.messenger.hd.M0(2131746790, "PrivacyPaymentsShippingInfoCleared");
+                } else if (zArr[1]) {
+                    M0 = org.telegram.messenger.hd.M0(2131746792, "PrivacyPaymentsPaymentInfoCleared");
+                }
+                org.telegram.ui.Components.hc.a0(privacySettingsActivity).Q(R.raw.chats_infotip, 36, M0).j();
+                break;
+            case 2:
+            case 3:
             default:
-                ProfileActivity profileActivity5 = this.b;
-                TLRPC.User user5 = this.c;
-                RectF rectF5 = ProfileActivity.T6;
-                try {
-                    ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
-                    if (org.telegram.messenger.g0.I3()) {
-                        org.telegram.ui.Components.fc.a0(profileActivity5).i(org.telegram.messenger.bd.M0(2131747303, null)).j();
-                        break;
-                    }
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
+                org.telegram.ui.ActionBar.u1 p10 = new AlertDialog$Builder(3, privacySettingsActivity.getParentActivity(), null).p();
+                privacySettingsActivity.c = p10;
+                p10.i0 = false;
+                if (privacySettingsActivity.S != privacySettingsActivity.T) {
+                    org.telegram.messenger.p10 userConfig = privacySettingsActivity.getUserConfig();
+                    boolean z10 = privacySettingsActivity.T;
+                    userConfig.U = z10;
+                    privacySettingsActivity.S = z10;
+                    privacySettingsActivity.getUserConfig().v(false);
                 }
+                org.telegram.messenger.g5 contactsController = privacySettingsActivity.getContactsController();
+                kt0 kt0Var = new kt0(privacySettingsActivity, i12);
+                contactsController.K();
+                TLRPC.TL_contacts_deleteContacts tL_contacts_deleteContacts = new TLRPC.TL_contacts_deleteContacts();
+                int size = contactsController.e0.size();
+                for (int i13 = 0; i13 < size; i13++) {
+                    tL_contacts_deleteContacts.id.add(contactsController.getMessagesController().o1(((TLRPC.TL_contact) contactsController.e0.get(i13)).user_id));
+                }
+                contactsController.getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new org.telegram.messenger.s4(i11, contactsController, kt0Var));
+                break;
+            case 4:
+                ce0 ce0Var = new ce0();
+                kt0 kt0Var2 = new kt0(privacySettingsActivity, 2);
+                ce0Var.F = 3;
+                ce0Var.a = 12;
+                ce0Var.d0 = kt0Var2;
+                privacySettingsActivity.presentFragment(ce0Var);
                 break;
         }
     }

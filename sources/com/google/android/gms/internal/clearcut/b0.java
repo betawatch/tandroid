@@ -2,5 +2,5 @@ package com.google.android.gms.internal.clearcut;
 
 /* loaded from: classes.dex */
 public interface b0 {
-    o1 a(int i3);
+    p1 a(int i7);
 }

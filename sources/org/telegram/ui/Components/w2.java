@@ -1,40 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t2 b;
+public final /* synthetic */ class w2 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ w2(org.telegram.ui.ActionBar.t2 t2Var, int i3) {
-        this.a = i3;
-        this.b = t2Var;
+    public /* synthetic */ w2(int i7, int[] iArr, org.telegram.ui.q10 q10Var) {
+        this.b = i7;
+        this.c = iArr;
+        this.d = q10Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        Runnable runnable = this.d;
+        int[] iArr = this.c;
+        int i10 = this.b;
+        switch (i7) {
             case 0:
-                this.b.dismiss();
+                iArr[0] = i10;
+                runnable.run();
                 break;
-            case 1:
-                org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Q.presentFragment(new PremiumPreviewFragment(0, "contact"));
-                    this.b.dismiss();
+            default:
+                String str = LaunchActivity.B1;
+                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
                 break;
-            case 2:
-                this.b.dismiss();
-                break;
-            default:
-                this.b.dismiss();
-                break;
         }
+    }
+
+    public /* synthetic */ w2(int[] iArr, int i7, Runnable runnable) {
+        this.c = iArr;
+        this.b = i7;
+        this.d = runnable;
     }
 }

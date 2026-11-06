@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class Glue {
     private static final int[][][] glueTable;
@@ -29,14 +29,14 @@ public class Glue {
         return new GlueBox((this.space / 18.0f) * quad, (this.stretch / 18.0f) * quad, (this.shrink / 18.0f) * quad);
     }
 
-    public static Box get(int i3, int i10, TeXEnvironment teXEnvironment) {
-        if (i3 > 7) {
-            i3 = 0;
+    public static Box get(int i7, int i10, TeXEnvironment teXEnvironment) {
+        if (i7 > 7) {
+            i7 = 0;
         }
         if (i10 > 7) {
             i10 = 0;
         }
-        return glueTypes[glueTable[i3][i10][teXEnvironment.getStyle() / 2]].createBox(teXEnvironment);
+        return glueTypes[glueTable[i7][i10][teXEnvironment.getStyle() / 2]].createBox(teXEnvironment);
     }
 
     public String getName() {

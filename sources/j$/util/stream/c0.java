@@ -42,7 +42,7 @@ public interface c0 extends BaseStream {
     @Override // j$.util.stream.BaseStream
     j$.util.h0 iterator();
 
-    c0 limit(long j10);
+    c0 limit(long j3);
 
     boolean m();
 
@@ -66,7 +66,7 @@ public interface c0 extends BaseStream {
     @Override // j$.util.stream.BaseStream
     c0 sequential();
 
-    c0 skip(long j10);
+    c0 skip(long j3);
 
     c0 sorted();
 

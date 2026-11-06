@@ -1,220 +1,145 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
+import android.text.Spanned;
+import android.text.style.ReplacementSpan;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.widget.OverScroller;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class iu extends xt {
-    public final TL_iv.pageBlockMath X;
-    public final Bitmap Y;
-    public final int Z;
-    public final int a0;
-    public final int b0;
-    public final int c0;
-    public final int d0;
-    public int e0;
-    public float f0;
-    public int g0;
-    public boolean h0;
-    public int i0;
-    public final Paint j0;
-    public int k0;
-    public int l0;
-    public VelocityTracker m0;
-    public OverScroller n0;
-    public final mi.b0 o0;
+public final class iu extends ReplacementSpan {
+    public final gu a;
+    public final TL_iv.textButton b;
+    public final RectF c = new RectF();
+    public float d;
+    public boolean e;
+    public int f;
+    public View h;
 
-    public iu(cv cvVar, Rect rect, int i3, TL_iv.pageBlockMath pageblockmath) {
-        super(cvVar, rect, i3);
-        this.j0 = new Paint(3);
-        this.o0 = new mi.b0(this, 9);
-        this.X = pageblockmath;
-        int i10 = this.c;
-        this.b0 = i10;
-        mi.q a10 = (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? null : mi.q.a(pageblockmath.source, g0.L(cvVar.M + 4), false);
-        if (a10 != null) {
-            this.Y = a10.a;
-            this.Z = a10.b;
-            this.a0 = a10.c;
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public iu(kv kvVar, int i7, TL_iv.textButton textbutton, Boolean bool) {
+        boolean z9;
+        boolean z10;
+        this.b = textbutton;
+        TL_iv.RichText richText = textbutton.text;
+        if (richText instanceof TL_iv.textConcat) {
+            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
+            if (!textconcat.texts.isEmpty()) {
+                boolean z11 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
+                z10 = jg.g.i(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
+                z9 = z11;
+                TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
+                boolean z12 = richButtonStyle == null && richButtonStyle.link;
+                SpannableStringBuilder l10 = kvVar.l(textbutton.text, !z12 ? kv.R(512, 0) : kv.R(16, 13));
+                TL_keyboard.InlineButtonType inlineButtonType = textbutton.type;
+                gu guVar = new gu(kvVar, i7, l10, null, inlineButtonType, textbutton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z9, z10, z12, true, bool, new ds(this, 6));
+                this.a = guVar;
+                guVar.e = guVar.h();
+            }
         }
-        int D = k5.D(0.0f, 2, this.Z);
-        this.c0 = D;
-        this.d0 = Math.max(0, D - i10);
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final int I() {
-        Rect rect = this.b;
-        return k5.D(8.0f, 2, rect.top + this.a0) + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final int J() {
-        return K();
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final int K() {
-        Rect rect = this.b;
-        return Math.min(this.b0, this.c0) + rect.left + rect.right;
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final boolean Q() {
-        if (this.h0) {
-            return true;
+        z9 = false;
+        z10 = false;
+        TL_keyboard.RichButtonStyle richButtonStyle2 = textbutton.style;
+        if (richButtonStyle2 == null) {
         }
-        OverScroller overScroller = this.n0;
-        return (overScroller == null || overScroller.isFinished()) ? false : true;
+        SpannableStringBuilder l102 = kvVar.l(textbutton.text, !z12 ? kv.R(512, 0) : kv.R(16, 13));
+        TL_keyboard.InlineButtonType inlineButtonType2 = textbutton.type;
+        gu guVar2 = new gu(kvVar, i7, l102, null, inlineButtonType2, textbutton.style, inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z9, z10, z12, true, bool, new ds(this, 6));
+        this.a = guVar2;
+        guVar2.e = guVar2.h();
     }
 
-    @Override // org.telegram.messenger.xt
-    public final void W(Canvas canvas) {
-        float f10;
-        Canvas canvas2;
-        Bitmap bitmap = this.Y;
-        if (bitmap == null) {
-            return;
+    public final void a(View view) {
+        this.h = view;
+        this.a.a.i(view);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        float f11;
+        gu guVar = this.a;
+        int i14 = guVar.a.s;
+        int i15 = (i14 <= 0 || this.f <= 0) ? 0 : 1;
+        if (i15 == 0 && i14 > 0 && (charSequence instanceof Spanned)) {
+            gv[] gvVarArr = (gv[]) ((Spanned) charSequence).getSpans(i7, i10, gv.class);
+            int length = gvVarArr.length;
+            int i16 = 0;
+            while (true) {
+                if (i16 >= length) {
+                    break;
+                }
+                if ((gvVarArr[i16].b & 15) == 14) {
+                    i15 = 1;
+                    break;
+                }
+                i16++;
+            }
         }
-        cv cvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(cvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, cvVar.D);
-        Paint paint = this.j0;
-        paint.setColor(w02);
-        int D = k5.D(8.0f, 2, this.a0);
-        int i3 = this.d0;
-        Rect rect = this.b;
-        if (i3 > 0) {
-            f10 = 0.0f;
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(-cvVar.S, 0.0f, ((cvVar.C + cvVar.T) - rect.left) - rect.right, D, hs.e4, 31);
-            canvas2.save();
-            canvas2.translate(g0.L(0.0f) - this.e0, g0.L(8.0f));
+        if (i15 != 0) {
+            f11 = (i11 + i13) / 2.0f;
         } else {
-            f10 = 0.0f;
-            canvas2 = canvas;
-            canvas2.save();
-            canvas2.translate(((cvVar.C / 2.0f) - rect.left) - (this.Z / 2.0f), g0.L(8.0f));
+            Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
+            f11 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2.0f) + i12;
         }
-        float f11 = f10;
-        canvas2.drawBitmap(bitmap, f11, f11, paint);
-        if (i3 > 0) {
-            canvas2.restore();
-            RectF rectF = g0.P;
-            int i10 = cvVar.S;
-            float f12 = D;
-            rectF.set(-i10, f11, g0.L(12.0f) + (-i10), f12);
-            cvVar.z.w(canvas2, rectF, 0, 1.0f);
-            rectF.set(r4 - g0.L(12.0f), f11, ((cvVar.C + cvVar.T) - rect.left) - rect.right, f12);
-            cvVar.z.w(canvas2, rectF, 2, 1.0f);
-        }
-        canvas2.restore();
+        canvas.save();
+        int round = Math.round(f10 + (guVar.s ? 0 : g0.L(1.0f)));
+        int ceil = (int) Math.ceil((f11 - (guVar.c() / 2.0f)) + (i15 ^ 1));
+        float f12 = round;
+        float f13 = ceil;
+        this.c.set(f12, f13, round + guVar.e, guVar.c() + ceil);
+        canvas.translate(f12, f13);
+        guVar.a(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.xt
-    public final boolean Y(MotionEvent motionEvent) {
-        VelocityTracker velocityTracker;
-        View view;
-        int i3 = this.d0;
-        if (i3 > 0) {
-            int actionMasked = motionEvent.getActionMasked();
-            if (actionMasked == 0) {
-                if (this.i0 == 0 && (view = this.W) != null) {
-                    ViewConfiguration viewConfiguration = ViewConfiguration.get(view.getContext());
-                    this.i0 = viewConfiguration.getScaledTouchSlop();
-                    this.k0 = viewConfiguration.getScaledMinimumFlingVelocity();
-                    this.l0 = viewConfiguration.getScaledMaximumFlingVelocity();
-                }
-                if (this.n0 == null && this.W != null) {
-                    this.n0 = new OverScroller(this.W.getContext());
-                }
-                OverScroller overScroller = this.n0;
-                if (overScroller != null && !overScroller.isFinished()) {
-                    this.n0.forceFinished(true);
-                }
-                this.f0 = motionEvent.getX();
-                this.g0 = this.e0;
-                this.h0 = false;
-                VelocityTracker velocityTracker2 = this.m0;
-                if (velocityTracker2 == null) {
-                    this.m0 = VelocityTracker.obtain();
-                } else {
-                    velocityTracker2.clear();
-                }
-                this.m0.addMovement(motionEvent);
-                return true;
-            }
-            if (actionMasked == 2) {
-                VelocityTracker velocityTracker3 = this.m0;
-                if (velocityTracker3 != null) {
-                    velocityTracker3.addMovement(motionEvent);
-                }
-                float x10 = motionEvent.getX() - this.f0;
-                if (!this.h0 && Math.abs(x10) > this.i0) {
-                    this.h0 = true;
-                    a0(true);
-                }
-                if (this.h0) {
-                    int i10 = (int) (this.g0 - x10);
-                    int i11 = i10 >= 0 ? i10 : 0;
-                    if (i11 <= i3) {
-                        i3 = i11;
-                    }
-                    if (i3 != this.e0) {
-                        this.e0 = i3;
-                        View view2 = this.W;
-                        if (view2 != null) {
-                            view2.invalidate();
-                            return true;
-                        }
-                    }
-                    return true;
-                }
-            } else if (actionMasked == 1 || actionMasked == 3) {
-                boolean z10 = this.h0;
-                this.h0 = false;
-                if (z10) {
-                    a0(false);
-                    if (actionMasked == 1 && (velocityTracker = this.m0) != null && this.n0 != null && this.W != null) {
-                        velocityTracker.addMovement(motionEvent);
-                        this.m0.computeCurrentVelocity(1000, this.l0);
-                        float f10 = -this.m0.getXVelocity();
-                        if (Math.abs(f10) > this.k0) {
-                            this.n0.fling(this.e0, 0, (int) f10, 0, 0, this.d0, 0, 0);
-                            this.W.postOnAnimation(this.o0);
-                        }
-                    }
-                }
-                VelocityTracker velocityTracker4 = this.m0;
-                if (velocityTracker4 != null) {
-                    velocityTracker4.recycle();
-                    this.m0 = null;
-                }
-                if (z10 || actionMasked == 1) {
-                    return true;
-                }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        boolean z9 = this.e && fontMetricsInt != null;
+        int i11 = z9 ? fontMetricsInt.top : 0;
+        int i12 = z9 ? fontMetricsInt.ascent : 0;
+        int i13 = z9 ? fontMetricsInt.descent : 0;
+        int i14 = z9 ? fontMetricsInt.bottom : 0;
+        int i15 = z9 ? fontMetricsInt.leading : 0;
+        int L = g0.L(8.0f);
+        int L2 = g0.L(10.0f);
+        gu guVar = this.a;
+        if (fontMetricsInt != null && guVar.s) {
+            float f10 = this.d;
+            int i16 = (int) (((-L2) - L) * f10);
+            fontMetricsInt.top = i16;
+            int i17 = (int) ((L2 - L) * f10);
+            fontMetricsInt.bottom = i17;
+            fontMetricsInt.ascent = i16;
+            fontMetricsInt.descent = i17;
+            fontMetricsInt.leading = 0;
+        }
+        if (z9) {
+            fontMetricsInt.top = i11;
+            fontMetricsInt.ascent = i12;
+            fontMetricsInt.descent = i13;
+            fontMetricsInt.bottom = i14;
+            fontMetricsInt.leading = i15;
+            int i18 = this.f;
+            int i19 = i13 - i12;
+            if (i18 > i19) {
+                int i20 = i18 - i19;
+                int i21 = (i20 + 1) / 2;
+                int i22 = i12 - i21;
+                fontMetricsInt.ascent = i22;
+                fontMetricsInt.descent = i13 + (i20 - i21);
+                fontMetricsInt.top = Math.min(i11, i22);
+                fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
             }
         }
-        return false;
-    }
-
-    @Override // org.telegram.messenger.xt
-    public final void k(SpannableStringBuilder spannableStringBuilder) {
-        TL_iv.pageBlockMath pageblockmath = this.X;
-        if (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) {
-            return;
-        }
-        spannableStringBuilder.append((CharSequence) pageblockmath.source);
+        return guVar.e + (guVar.s ? 0 : g0.L(1.0f) * 2);
     }
 }

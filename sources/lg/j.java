@@ -1,138 +1,246 @@
 package lg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
+import android.animation.ValueAnimator;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.cs;
-import org.telegram.messenger.hs;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.xq;
+import android.view.MotionEvent;
+import fi.j6;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j extends FrameLayout {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public final Object c;
-    public final Object d;
-    public final /* synthetic */ cs e;
+public final class j {
+    public g a;
+    public float b;
+    public boolean c;
+    public float d;
+    public float e;
+    public long f;
+    public ValueAnimator g;
+    public Rect h;
+    public Rect i;
+    public Rect j;
+    public float k;
+    public float l;
+    public float m;
+    public h[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(m mVar, Context context) {
-        super(context);
-        this.e = mVar;
-        this.b = -1;
-        this.c = new Rect();
-        this.d = new u5(this, 220L, xq.h);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                k4.j jVar = (k4.j) this.d;
-                Path path = (Path) this.c;
-                bi biVar = (bi) this.e;
-                gh.g gVar = biVar.w2;
-                if (gVar != null) {
-                    gVar.setBounds(0, (int) biVar.Q3, getMeasuredWidth(), getMeasuredHeight());
-                    biVar.w2.draw(canvas);
+    public final boolean a(int i7, int i10, int i11) {
+        h hVar;
+        Rect rect = this.i;
+        Rect rect2 = this.h;
+        h[] hVarArr = this.n;
+        if (i11 != 0) {
+            if (i11 == 1 && (hVar = hVarArr[0]) != null && hVar.a != 4) {
+                if (rect2.contains(i7, i10) && hVarArr[0].a != 1) {
+                    h hVar2 = new h(this, 1);
+                    hVarArr[1] = hVar2;
+                    hVar2.c = this.k;
+                    hVar2.b = i7;
+                    hVar2.a();
+                    ValueAnimator valueAnimator = this.g;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        return true;
+                    }
+                } else if (rect.contains(i7, i10) && hVarArr[0].a != 2) {
+                    h hVar3 = new h(this, 2);
+                    hVarArr[1] = hVar3;
+                    hVar3.d = this.l;
+                    hVar3.b = i7;
+                    hVar3.a();
+                    ValueAnimator valueAnimator2 = this.g;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.cancel();
+                    }
                 }
-                float L = org.telegram.messenger.g0.L(20.0f);
-                int L2 = org.telegram.messenger.g0.L(7.0f);
-                int L3 = org.telegram.messenger.g0.L(7.0f);
-                RectF rectF = org.telegram.messenger.g0.P;
-                float f10 = L2;
-                rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), getHeight() - L3);
-                path.rewind();
-                path.addRoundRect(rectF, L, L, Path.Direction.CW);
-                canvas.save();
-                canvas.clipPath(path);
-                canvas.saveLayerAlpha(rectF, hs.e4, 31);
-                super.dispatchDraw(canvas);
-                rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), org.telegram.messenger.g0.L(6.0f) + L2);
-                jVar.w(canvas, rectF, 1, 1.0f);
-                rectF.set(getPaddingLeft(), (getHeight() - L3) - org.telegram.messenger.g0.L(6.0f), getWidth() - getPaddingRight(), getHeight() - L3);
-                jVar.w(canvas, rectF, 3, 1.0f);
-                canvas.restore();
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+                return true;
+            }
+            return false;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 0:
-                float width = getWidth() / 2.0f;
-                u5 u5Var = (u5) this.d;
-                m mVar = (m) this.e;
-                float e10 = u5Var.e(false, mVar.n.getWidth());
-                Rect rect = (Rect) this.c;
-                float f10 = e10 / 2.0f;
-                rect.set((int) (width - (mVar.n.getScaleX() * f10)), (int) (((1.0f - mVar.n.getScaleY()) * mVar.n.getHeight()) + mVar.n.getY()), (int) ((mVar.n.getScaleX() * f10) + width), (int) (mVar.n.getY() + mVar.n.getHeight()));
-                mVar.r.setBounds(rect);
-                mVar.r.draw(canvas);
-                return super.drawChild(canvas, view, j10);
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                int i13 = this.b;
-                bi biVar = (bi) this.e;
-                int top = i13 - biVar.t1.getTop();
-                super.onLayout(z10, i3, i10, i11, i12);
-                this.b = getHeight();
-                if (biVar.t1.getVisibility() == 0 && getHeight() - biVar.t1.getTop() != top) {
-                    biVar.t1.setTranslationY(biVar.t1.getTranslationY() + ((getHeight() - biVar.t1.getTop()) - top));
-                    biVar.t1.animate().translationY(0.0f).setDuration(320L).setInterpolator(xq.h).start();
-                    break;
+        if (rect2.contains(i7, i10)) {
+            h hVar4 = hVarArr[0];
+            if (hVar4 != null) {
+                hVarArr[1] = hVar4;
+            }
+            h hVar5 = new h(this, 1);
+            hVarArr[0] = hVar5;
+            hVar5.c = this.k;
+            hVar5.b = i7;
+            hVar5.a();
+            ValueAnimator valueAnimator3 = this.g;
+            if (valueAnimator3 != null) {
+                valueAnimator3.cancel();
+                return true;
+            }
+        } else if (rect.contains(i7, i10)) {
+            h hVar6 = hVarArr[0];
+            if (hVar6 != null) {
+                hVarArr[1] = hVar6;
+            }
+            h hVar7 = new h(this, 2);
+            hVarArr[0] = hVar7;
+            hVar7.d = this.l;
+            hVar7.b = i7;
+            hVar7.a();
+            ValueAnimator valueAnimator4 = this.g;
+            if (valueAnimator4 != null) {
+                valueAnimator4.cancel();
+                return true;
+            }
+        } else {
+            if (!this.j.contains(i7, i10)) {
+                if (i10 < rect2.bottom && i10 > rect2.top) {
+                    this.c = true;
+                    this.d = i7;
+                    this.e = i10;
+                    this.f = System.currentTimeMillis();
+                    ValueAnimator valueAnimator5 = this.g;
+                    if (valueAnimator5 != null) {
+                        if (valueAnimator5.isRunning()) {
+                            this.a.a(this.k, this.l, true);
+                        }
+                        this.g.cancel();
+                        return true;
+                    }
                 }
-                break;
-            default:
-                super.onLayout(z10, i3, i10, i11, i12);
-                break;
+                return false;
+            }
+            h hVar8 = new h(this, 4);
+            hVarArr[0] = hVar8;
+            hVar8.d = this.l;
+            hVar8.c = this.k;
+            hVar8.b = i7;
+            hVar8.a();
+            ValueAnimator valueAnimator6 = this.g;
+            if (valueAnimator6 != null) {
+                valueAnimator6.cancel();
+                return true;
+            }
         }
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i3, int i10) {
-        switch (this.a) {
-            case 0:
-                m mVar = (m) this.e;
-                mVar.n.measure(i3, i10);
-                invalidate();
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, org.telegram.messenger.g0.L(36.0f) + mVar.n.getMeasuredHeight()), TLObject.FLAG_30));
-                if (this.b < 0) {
-                    this.b = getMeasuredHeight();
-                    break;
+    public final boolean b(int i7, int i10) {
+        h hVar;
+        boolean z9;
+        if (this.c || (hVar = this.n[i10]) == null) {
+            return false;
+        }
+        int i11 = hVar.a;
+        float f10 = hVar.c;
+        float f11 = hVar.d;
+        int i12 = hVar.b;
+        if (i11 == 1) {
+            float f12 = f10 - ((i12 - i7) / this.b);
+            this.k = f12;
+            if (f12 < 0.0f) {
+                this.k = 0.0f;
+            }
+            float f13 = this.l;
+            float f14 = f13 - this.k;
+            float f15 = this.m;
+            if (f14 < f15) {
+                this.k = f13 - f15;
+            }
+            z9 = true;
+        } else {
+            z9 = false;
+        }
+        if (i11 == 2) {
+            float f16 = f11 - ((i12 - i7) / this.b);
+            this.l = f16;
+            if (f16 > 1.0f) {
+                this.l = 1.0f;
+            }
+            float f17 = this.l;
+            float f18 = this.k;
+            float f19 = f17 - f18;
+            float f20 = this.m;
+            if (f19 < f20) {
+                this.l = f18 + f20;
+            }
+            z9 = true;
+        }
+        if (i11 == 4) {
+            float f21 = (i12 - i7) / this.b;
+            float f22 = f10 - f21;
+            this.k = f22;
+            this.l = f11 - f21;
+            if (f22 < 0.0f) {
+                this.k = 0.0f;
+                this.l = f11 - f10;
+            }
+            if (this.l > 1.0f) {
+                this.l = 1.0f;
+                this.k = 1.0f - (f11 - f10);
+            }
+            z9 = true;
+        }
+        if (z9) {
+            this.a.A(true, false, false);
+        }
+        return true;
+    }
+
+    public final boolean c(int i7, MotionEvent motionEvent) {
+        ValueAnimator valueAnimator;
+        ValueAnimator valueAnimator2;
+        float f10;
+        float f11;
+        h[] hVarArr = this.n;
+        if (i7 != 0) {
+            h hVar = hVarArr[1];
+            if (hVar != null && (valueAnimator = hVar.e) != null) {
+                valueAnimator.cancel();
+            }
+            hVarArr[1] = null;
+            return false;
+        }
+        if (!this.c) {
+            h hVar2 = hVarArr[0];
+            if (hVar2 != null && (valueAnimator2 = hVar2.e) != null) {
+                valueAnimator2.cancel();
+            }
+            hVarArr[0] = null;
+            h hVar3 = hVarArr[1];
+            if (hVar3 != null) {
+                hVarArr[0] = hVar3;
+                hVarArr[1] = null;
+            }
+            return false;
+        }
+        this.c = false;
+        float x10 = this.d - motionEvent.getX();
+        float y10 = this.e - motionEvent.getY();
+        if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.f < 300) {
+            if (Math.sqrt((y10 * y10) + (x10 * x10)) < g0.L(10.0f)) {
+                float f12 = (this.d - g.k1) / this.b;
+                float f13 = this.l;
+                float f14 = this.k;
+                float f15 = f13 - f14;
+                float f16 = f15 / 2.0f;
+                float f17 = f12 - f16;
+                float f18 = f12 + f16;
+                if (f17 < 0.0f) {
+                    f10 = f15;
+                    f11 = 0.0f;
+                } else {
+                    if (f18 > 1.0f) {
+                        f17 = 1.0f - f15;
+                        f10 = 1.0f;
+                    } else {
+                        f10 = f18;
+                    }
+                    f11 = f17;
                 }
-                break;
-            default:
-                super.onMeasure(i3, i10);
-                break;
+                this.g = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.a.a(f11, f10, true);
+                this.g.addUpdateListener(new j6(this, f14, f11, f13, f10, 1));
+                this.g.setInterpolator(g.C1);
+                this.g.start();
+                return true;
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(bi biVar, Context context) {
-        super(context);
-        this.e = biVar;
-        this.c = new Path();
-        this.d = new k4.j(24);
+        return true;
     }
 }

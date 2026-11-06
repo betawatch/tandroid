@@ -1,122 +1,107 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.bd;
+import android.app.Dialog;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import c8.ha;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.qs;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class z2 extends j1.b {
-    public static final /* synthetic */ int r = 0;
-    public final RectF o;
-    public final Rect p;
-    public final /* synthetic */ b3 q;
+public final class z2 extends Dialog {
+    public final h3 a;
+    public final y2 b;
+    public final x2 c;
+    public final Paint d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z2(b3 b3Var, b3 b3Var2) {
-        super(b3Var2);
-        this.q = b3Var;
-        this.o = new RectF();
-        this.p = new Rect();
+    public z2(h3 h3Var) {
+        super(h3Var.d().getContext(), R.style.TransparentDialog);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = h3Var;
+        i3 d = h3Var.d();
+        x2 x2Var = new x2(this, getContext());
+        this.c = x2Var;
+        paint.setColor(k6.x0(null, k6.a7, false));
+        y2 y2Var = new y2(d);
+        this.b = y2Var;
+        setContentView(y2Var, new ViewGroup.LayoutParams(-1, -1));
+        y2Var.addView(x2Var, ha.e(-1, -2, 80));
+        y2Var.setClipToPadding(false);
     }
 
-    @Override // j1.b
-    public final int g(float f10, float f11) {
-        y2 c2;
-        b3 b3Var = this.q;
-        if (!b3Var.b) {
-            return -1;
-        }
-        ArrayList<a3> tabs = b3Var.getTabs();
-        if (tabs.isEmpty() || (c2 = b3Var.c(tabs.get(0))) == null) {
-            return -1;
-        }
-        float c10 = c2.c();
-        RectF rectF = this.o;
-        b3Var.d(rectF, c10);
-        Rect bounds = c2.l.getBounds();
-        if (bounds.isEmpty() || !bounds.contains((int) (f10 - rectF.left), (int) (f11 - rectF.centerY()))) {
-            return rectF.contains(f10, f11) ? 1 : -1;
-        }
-        return 2;
+    public static /* synthetic */ WindowInsets a(View view, WindowInsets windowInsets) {
+        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
+        return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
     }
 
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        b3 b3Var = this.q;
-        if (b3Var.b) {
-            ArrayList<a3> tabs = b3Var.getTabs();
-            if (tabs.isEmpty() || b3Var.c(tabs.get(0)) == null) {
-                return;
-            }
-            arrayList.add(1);
-            arrayList.add(2);
-        }
-    }
-
-    @Override // j1.b
-    public final boolean k(int i3, int i10) {
-        if (i10 == 16) {
-            b3 b3Var = this.q;
-            ArrayList<a3> tabs = b3Var.getTabs();
-            if (!tabs.isEmpty()) {
-                a3 a3Var = tabs.get(0);
-                if (i3 == 1) {
-                    b3Var.b();
-                    return true;
-                }
-                if (i3 == 2) {
-                    b3Var.g(a3Var, new ei.e(7));
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // j1.b
-    public final void l(int i3, s0.d dVar) {
-        String str;
-        String str2;
-        b3 b3Var = this.q;
-        ArrayList<a3> tabs = b3Var.getTabs();
-        a3 a3Var = tabs.isEmpty() ? null : tabs.get(0);
-        y2 c2 = a3Var == null ? null : b3Var.c(a3Var);
-        dVar.i("android.widget.Button");
-        dVar.b(s0.c.c);
-        Rect rect = this.p;
-        if (c2 == null) {
-            rect.set(0, 0, 1, 1);
-            dVar.h(rect);
-            dVar.j("");
-            dVar.p(false);
+    public static void b(h3 h3Var) {
+        f2 T = LaunchActivity.T();
+        if (T == null) {
             return;
         }
-        float c10 = c2.c();
-        RectF rectF = this.o;
-        b3Var.d(rectF, c10);
-        String b10 = a3Var.b() != null ? a3Var.b() : "";
-        if (i3 != 2) {
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(rect);
-            if (TextUtils.isEmpty(b10)) {
-                str = bd.M0(2131747825, null);
-            } else {
-                str = bd.M0(2131747825, null) + ", " + b10;
+        if (org.telegram.messenger.g0.Q1() || h3Var.g() || org.telegram.messenger.g0.u1(T)) {
+            z2 z2Var = new z2(h3Var);
+            if (h3Var.i(z2Var)) {
+                y2 y2Var = z2Var.b;
+                View view = (View) y2Var.a;
+                org.telegram.messenger.g0.E2(view);
+                y2Var.addView(view, ha.e(-1, -1, qs.E1));
             }
-            dVar.j(str);
-            return;
         }
-        Rect bounds = c2.l.getBounds();
-        rect.set((int) (rectF.left + bounds.left), (int) (rectF.centerY() + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.centerY() + bounds.bottom));
-        dVar.h(rect);
-        if (TextUtils.isEmpty(b10)) {
-            str2 = bd.M0(2131752041, null);
+    }
+
+    public final void c() {
+        this.a.i(null);
+        if (this.e) {
+            this.e = false;
+            try {
+                super.dismiss();
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
+        }
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        this.a.a(false);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= 30) {
+            window.addFlags(-2147483392);
         } else {
-            str2 = bd.M0(2131752041, null) + ", " + b10;
+            window.addFlags(-2147417856);
         }
-        dVar.j(str2);
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        org.telegram.messenger.g0.m(attributes);
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        y2 y2Var = this.b;
+        y2Var.setFitsSystemWindows(true);
+        y2Var.setSystemUiVisibility(1792);
+        y2Var.setPadding(0, 0, 0, 0);
+        y2Var.setOnApplyWindowInsetsListener(new w2(0));
     }
 }

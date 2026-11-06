@@ -1,13 +1,29 @@
 package p2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class o {
-    public final byte[] a;
-    public final String b;
+import java.util.List;
 
-    public o(String str, byte[] bArr) {
-        this.a = bArr;
-        this.b = str;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class o extends n {
+    public final List j;
+
+    public o(j jVar, long j3, long j10, long j11, long j12, List list, long j13, List list2, long j14, long j15) {
+        super(jVar, j3, j10, j11, j12, list, j13, j14, j15);
+        this.j = list2;
+    }
+
+    @Override // p2.n
+    public final long d(long j3) {
+        return this.j.size();
+    }
+
+    @Override // p2.n
+    public final j h(k kVar, long j3) {
+        return (j) this.j.get((int) (j3 - this.d));
+    }
+
+    @Override // p2.n
+    public final boolean i() {
+        return true;
     }
 }

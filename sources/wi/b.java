@@ -2,9 +2,9 @@ package wi;
 
 import android.os.Handler;
 import j$.util.Objects;
-import org.telegram.ui.Components.y00;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -12,11 +12,11 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ m0 c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ b(j jVar, m0 m0Var, long j10, int i3) {
-        this.a = i3;
+    public /* synthetic */ b(j jVar, m0 m0Var, long j3, int i7) {
+        this.a = i7;
         this.b = jVar;
         this.c = m0Var;
-        this.d = j10;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
@@ -29,14 +29,14 @@ public final /* synthetic */ class b implements Runnable {
             default:
                 j jVar2 = this.b;
                 m0 m0Var = this.c;
-                long j10 = this.d;
+                long j3 = this.d;
                 if (jVar2.V && jVar2.G == m0Var) {
-                    jVar2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + j.z(j10));
+                    jVar2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + j.z(j3));
                     t0 t0Var = (t0) jVar2.k.b;
                     Handler handler = t0Var.i;
-                    y00 y00Var = t0Var.d;
-                    Objects.requireNonNull(y00Var);
-                    handler.post(new r4.u(y00Var, 29));
+                    qt qtVar = t0Var.d;
+                    Objects.requireNonNull(qtVar);
+                    handler.post(new wg.p(qtVar, 3));
                     break;
                 }
                 break;

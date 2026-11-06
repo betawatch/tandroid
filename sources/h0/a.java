@@ -2,7 +2,7 @@ package h0;
 
 import android.graphics.Color;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class a {
     public final float a;
@@ -21,11 +21,11 @@ public final class a {
         this.f = f15;
     }
 
-    public static a a(int i3) {
+    public static a a(int i7) {
         k kVar = k.k;
-        float e10 = b.e(Color.red(i3));
-        float e11 = b.e(Color.green(i3));
-        float e12 = b.e(Color.blue(i3));
+        float e10 = b.e(Color.red(i7));
+        float e11 = b.e(Color.green(i7));
+        float e12 = b.e(Color.blue(i7));
         float[][] fArr = b.d;
         float[] fArr2 = fArr[0];
         float f10 = (fArr2[2] * e12) + (fArr2[1] * e11) + (fArr2[0] * e10);
@@ -58,7 +58,7 @@ public final class a {
         float f23 = ((float) (((signum2 * (-12.0d)) + (signum * 11.0d)) + d)) / 11.0f;
         float f24 = ((float) ((signum + signum2) - (d * 2.0d))) / 9.0f;
         float f25 = signum2 * 20.0f;
-        float x10 = com.google.android.recaptcha.internal.a.x(signum3, 21.0f, (signum * 20.0f) + f25, 20.0f);
+        float y10 = com.google.android.recaptcha.internal.a.y(signum3, 21.0f, (signum * 20.0f) + f25, 20.0f);
         float f26 = (((signum * 40.0f) + f25) + signum3) / 20.0f;
         float atan2 = (((float) Math.atan2(f24, f23)) * 180.0f) / 3.1415927f;
         if (atan2 < 0.0f) {
@@ -70,12 +70,12 @@ public final class a {
         float pow4 = ((float) Math.pow((f26 * kVar.b) / f18, kVar.j * f17)) * 100.0f;
         Math.sqrt(pow4 / 100.0f);
         float f28 = f18 + 4.0f;
-        float pow5 = ((float) Math.pow(1.64d - Math.pow(0.29d, kVar.f), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) atan2) < 20.14d ? atan2 + 360.0f : atan2) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * kVar.e) * kVar.c) * ((float) Math.sqrt((f24 * f24) + (f23 * f23)))) / (x10 + 0.305f), 0.9d)) * ((float) Math.sqrt(pow4 / 100.0d));
+        float pow5 = ((float) Math.pow(1.64d - Math.pow(0.29d, kVar.f), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) atan2) < 20.14d ? atan2 + 360.0f : atan2) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * kVar.e) * kVar.c) * ((float) Math.sqrt((f24 * f24) + (f23 * f23)))) / (y10 + 0.305f), 0.9d)) * ((float) Math.sqrt(pow4 / 100.0d));
         Math.sqrt((r0 * f17) / f28);
         float f29 = (1.7f * pow4) / ((0.007f * pow4) + 1.0f);
         float log = ((float) Math.log((f16 * pow5 * 0.0228f) + 1.0f)) * 43.85965f;
-        double d10 = f27;
-        return new a(atan2, pow5, pow4, f29, log * ((float) Math.cos(d10)), log * ((float) Math.sin(d10)));
+        double d2 = f27;
+        return new a(atan2, pow5, pow4, f29, log * ((float) Math.cos(d2)), log * ((float) Math.sin(d2)));
     }
 
     public static a b(float f10, float f11, float f12) {
@@ -97,30 +97,30 @@ public final class a {
         double d = f11;
         float f12 = this.c;
         if (d != 0.0d) {
-            double d10 = f12;
-            if (d10 != 0.0d) {
-                f10 = f11 / ((float) Math.sqrt(d10 / 100.0d));
+            double d2 = f12;
+            if (d2 != 0.0d) {
+                f10 = f11 / ((float) Math.sqrt(d2 / 100.0d));
                 float f13 = kVar.f;
                 float f14 = kVar.h;
                 float pow = (float) Math.pow(f10 / Math.pow(1.64d - Math.pow(0.29d, f13), 0.73d), 1.1111111111111112d);
-                double d11 = (this.a * 3.1415927f) / 180.0f;
-                float cos = ((float) (Math.cos(2.0d + d11) + 3.8d)) * 0.25f;
+                double d10 = (this.a * 3.1415927f) / 180.0f;
+                float cos = ((float) (Math.cos(2.0d + d10) + 3.8d)) * 0.25f;
                 float pow2 = kVar.a * ((float) Math.pow(f12 / 100.0d, (1.0d / kVar.d) / kVar.j));
                 float f15 = cos * 3846.1538f * kVar.e * kVar.c;
                 float f16 = pow2 / kVar.b;
-                float sin = (float) Math.sin(d11);
-                float cos2 = (float) Math.cos(d11);
-                float v = (((0.305f + f16) * 23.0f) * pow) / (((pow * 108.0f) * sin) + com.google.android.recaptcha.internal.a.v(pow, 11.0f, cos2, f15 * 23.0f));
-                float f17 = cos2 * v;
-                float f18 = v * sin;
+                float sin = (float) Math.sin(d10);
+                float cos2 = (float) Math.cos(d10);
+                float x10 = (((0.305f + f16) * 23.0f) * pow) / (((pow * 108.0f) * sin) + com.google.android.recaptcha.internal.a.x(pow, 11.0f, cos2, f15 * 23.0f));
+                float f17 = cos2 * x10;
+                float f18 = x10 * sin;
                 float f19 = f16 * 460.0f;
-                float x10 = com.google.android.recaptcha.internal.a.x(f18, 288.0f, (451.0f * f17) + f19, 1403.0f);
-                float c2 = com.google.android.recaptcha.internal.a.c(f18, 261.0f, f19 - (891.0f * f17), 1403.0f);
-                float c10 = com.google.android.recaptcha.internal.a.c(f18, 6300.0f, f19 - (f17 * 220.0f), 1403.0f);
+                float y10 = com.google.android.recaptcha.internal.a.y(f18, 288.0f, (451.0f * f17) + f19, 1403.0f);
+                float w10 = com.google.android.recaptcha.internal.a.w(f18, 261.0f, f19 - (891.0f * f17), 1403.0f);
+                float w11 = com.google.android.recaptcha.internal.a.w(f18, 6300.0f, f19 - (f17 * 220.0f), 1403.0f);
                 float f20 = 100.0f / f14;
-                float signum = Math.signum(x10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(x10) * 27.13d) / (400.0d - Math.abs(x10))), 2.380952380952381d));
-                float signum2 = Math.signum(c2) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c2) * 27.13d) / (400.0d - Math.abs(c2))), 2.380952380952381d));
-                float signum3 = Math.signum(c10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c10) * 27.13d) / (400.0d - Math.abs(c10))), 2.380952380952381d));
+                float signum = Math.signum(y10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(y10) * 27.13d) / (400.0d - Math.abs(y10))), 2.380952380952381d));
+                float signum2 = Math.signum(w10) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w10) * 27.13d) / (400.0d - Math.abs(w10))), 2.380952380952381d));
+                float signum3 = Math.signum(w11) * f20 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w11) * 27.13d) / (400.0d - Math.abs(w11))), 2.380952380952381d));
                 float[] fArr = kVar.g;
                 float f21 = signum / fArr[0];
                 float f22 = signum2 / fArr[1];
@@ -138,24 +138,24 @@ public final class a {
         float f132 = kVar.f;
         float f142 = kVar.h;
         float pow3 = (float) Math.pow(f10 / Math.pow(1.64d - Math.pow(0.29d, f132), 0.73d), 1.1111111111111112d);
-        double d112 = (this.a * 3.1415927f) / 180.0f;
-        float cos3 = ((float) (Math.cos(2.0d + d112) + 3.8d)) * 0.25f;
+        double d102 = (this.a * 3.1415927f) / 180.0f;
+        float cos3 = ((float) (Math.cos(2.0d + d102) + 3.8d)) * 0.25f;
         float pow22 = kVar.a * ((float) Math.pow(f12 / 100.0d, (1.0d / kVar.d) / kVar.j));
         float f152 = cos3 * 3846.1538f * kVar.e * kVar.c;
         float f162 = pow22 / kVar.b;
-        float sin2 = (float) Math.sin(d112);
-        float cos22 = (float) Math.cos(d112);
-        float v10 = (((0.305f + f162) * 23.0f) * pow3) / (((pow3 * 108.0f) * sin2) + com.google.android.recaptcha.internal.a.v(pow3, 11.0f, cos22, f152 * 23.0f));
-        float f172 = cos22 * v10;
-        float f182 = v10 * sin2;
+        float sin2 = (float) Math.sin(d102);
+        float cos22 = (float) Math.cos(d102);
+        float x102 = (((0.305f + f162) * 23.0f) * pow3) / (((pow3 * 108.0f) * sin2) + com.google.android.recaptcha.internal.a.x(pow3, 11.0f, cos22, f152 * 23.0f));
+        float f172 = cos22 * x102;
+        float f182 = x102 * sin2;
         float f192 = f162 * 460.0f;
-        float x102 = com.google.android.recaptcha.internal.a.x(f182, 288.0f, (451.0f * f172) + f192, 1403.0f);
-        float c22 = com.google.android.recaptcha.internal.a.c(f182, 261.0f, f192 - (891.0f * f172), 1403.0f);
-        float c102 = com.google.android.recaptcha.internal.a.c(f182, 6300.0f, f192 - (f172 * 220.0f), 1403.0f);
+        float y102 = com.google.android.recaptcha.internal.a.y(f182, 288.0f, (451.0f * f172) + f192, 1403.0f);
+        float w102 = com.google.android.recaptcha.internal.a.w(f182, 261.0f, f192 - (891.0f * f172), 1403.0f);
+        float w112 = com.google.android.recaptcha.internal.a.w(f182, 6300.0f, f192 - (f172 * 220.0f), 1403.0f);
         float f202 = 100.0f / f142;
-        float signum4 = Math.signum(x102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(x102) * 27.13d) / (400.0d - Math.abs(x102))), 2.380952380952381d));
-        float signum22 = Math.signum(c22) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c22) * 27.13d) / (400.0d - Math.abs(c22))), 2.380952380952381d));
-        float signum32 = Math.signum(c102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(c102) * 27.13d) / (400.0d - Math.abs(c102))), 2.380952380952381d));
+        float signum4 = Math.signum(y102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(y102) * 27.13d) / (400.0d - Math.abs(y102))), 2.380952380952381d));
+        float signum22 = Math.signum(w102) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w102) * 27.13d) / (400.0d - Math.abs(w102))), 2.380952380952381d));
+        float signum32 = Math.signum(w112) * f202 * ((float) Math.pow((float) Math.max(0.0d, (Math.abs(w112) * 27.13d) / (400.0d - Math.abs(w112))), 2.380952380952381d));
         float[] fArr6 = kVar.g;
         float f212 = signum4 / fArr6[0];
         float f222 = signum22 / fArr6[1];

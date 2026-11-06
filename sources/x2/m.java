@@ -1,13 +1,40 @@
 package x2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import java.util.List;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface m {
-    public static final mb.b B = new mb.b(27);
+public final class m implements e1 {
+    public final e1 a;
+    public final h9.i0 b;
 
-    long D();
+    public m(e1 e1Var, List list) {
+        this.a = e1Var;
+        this.b = h9.i0.q(list);
+    }
 
-    boolean next();
+    @Override // x2.e1
+    public final boolean c(l2.v0 v0Var) {
+        return this.a.c(v0Var);
+    }
 
-    long t();
+    @Override // x2.e1
+    public final long e() {
+        return this.a.e();
+    }
+
+    @Override // x2.e1
+    public final boolean g() {
+        return this.a.g();
+    }
+
+    @Override // x2.e1
+    public final long p() {
+        return this.a.p();
+    }
+
+    @Override // x2.e1
+    public final void r(long j3) {
+        this.a.r(j3);
+    }
 }

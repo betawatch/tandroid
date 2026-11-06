@@ -1,29 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class bi implements org.telegram.messenger.cs {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bi.q0 b;
-    public final /* synthetic */ wm c;
-    public final /* synthetic */ wm d;
+import android.app.Activity;
 
-    public bi(wm wmVar, int i3, bi.q0 q0Var, wm wmVar2) {
-        this.d = wmVar;
-        this.a = i3;
-        this.b = q0Var;
-        this.c = wmVar2;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class bi extends org.telegram.ui.Cells.t0 {
+    public final /* synthetic */ an t2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bi(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, an anVar) {
+        super(activity, f6Var, false);
+        this.t2 = anVar;
     }
 
-    @Override // org.telegram.messenger.cs
-    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
-        int i11;
-        int i12 = org.telegram.messenger.hs.D;
-        if (i3 == i12 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            org.telegram.messenger.g0.i3(new k2.a0(this.c, i3, i10, objArr, 10), 50L);
-            i11 = ((org.telegram.ui.ActionBar.d2) this.d).currentAccount;
-            org.telegram.messenger.hs.f(i11).n(this, i12);
-        }
+    @Override // org.telegram.ui.Cells.t0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        float y10 = getY();
+        an anVar = this.t2;
+        i0(anVar.f1.getY() + y10, anVar.l1.getBackgroundSizeY());
     }
 }

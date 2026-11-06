@@ -2,26 +2,26 @@ package org.telegram.messenger;
 
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile c[] b = new c[4];
     public int a;
 
-    public static c a(int i3) {
+    public static c a(int i7) {
         c cVar;
-        c cVar2 = b[i3];
+        c cVar2 = b[i7];
         if (cVar2 != null) {
             return cVar2;
         }
         synchronized (c.class) {
             try {
-                cVar = b[i3];
+                cVar = b[i7];
                 if (cVar == null) {
                     c[] cVarArr = b;
                     c cVar3 = new c();
-                    cVar3.a = i3;
-                    cVarArr[i3] = cVar3;
+                    cVar3.a = i7;
+                    cVarArr[i7] = cVar3;
                     cVar = cVar3;
                 }
             } catch (Throwable th2) {
@@ -31,15 +31,15 @@ public final class c {
         return cVar;
     }
 
-    public final hs b() {
-        return hs.f(this.a);
+    public final qs b() {
+        return qs.f(this.a);
     }
 
     public final SharedPreferences c() {
-        return hp.s1(this.a).d7;
+        return qp.s1(this.a).d7;
     }
 
-    public final h10 d() {
-        return h10.i(this.a);
+    public final p10 d() {
+        return p10.i(this.a);
     }
 }

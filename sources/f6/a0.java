@@ -1,24 +1,58 @@
 package f6;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-import e7.r0;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a0 extends q6.a {
-    public static final Parcelable.Creator<a0> CREATOR = new r0(29);
-    public final boolean a;
+public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.p {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ e0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ f d;
 
-    public a0(boolean z10) {
-        this.a = z10;
+    public /* synthetic */ a0(e0 e0Var, f fVar, String str) {
+        this.b = e0Var;
+        this.d = fVar;
+        this.c = str;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.r(parcel, 2, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        j8.a.t(parcel, s6);
+    @Override // com.google.android.gms.common.api.internal.p
+    public final void accept(Object obj, Object obj2) {
+        j6.w wVar = (j6.w) obj;
+        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
+        switch (this.a) {
+            case 0:
+                q6.m.i("Not active connection", this.b.G != 1);
+                if (this.d != null) {
+                    j6.f fVar = (j6.f) wVar.n();
+                    Parcel P0 = fVar.P0();
+                    P0.writeString(this.c);
+                    fVar.U0(P0, 12);
+                }
+                taskCompletionSource.setResult(null);
+                break;
+            default:
+                q6.m.i("Not active connection", this.b.G != 1);
+                j6.f fVar2 = (j6.f) wVar.n();
+                Parcel P02 = fVar2.P0();
+                String str = this.c;
+                P02.writeString(str);
+                fVar2.U0(P02, 12);
+                if (this.d != null) {
+                    j6.f fVar3 = (j6.f) wVar.n();
+                    Parcel P03 = fVar3.P0();
+                    P03.writeString(str);
+                    fVar3.U0(P03, 11);
+                }
+                taskCompletionSource.setResult(null);
+                break;
+        }
+    }
+
+    public /* synthetic */ a0(e0 e0Var, String str, h6.h hVar) {
+        this.b = e0Var;
+        this.c = str;
+        this.d = hVar;
     }
 }

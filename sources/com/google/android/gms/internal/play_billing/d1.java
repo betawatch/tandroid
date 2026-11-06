@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class d1 implements x1 {
     public static final d1 b = new d1(0);
@@ -13,20 +13,20 @@ public final class d1 implements x1 {
     public static final d1 i = new d1(7);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ d1(int i3) {
-        this.a = i3;
+    public /* synthetic */ d1(int i7) {
+        this.a = i7;
     }
 
     @Override // com.google.android.gms.internal.play_billing.x1
-    public final boolean zza(int i3) {
+    public final boolean zza(int i7) {
         switch (this.a) {
             case 0:
-                switch (i3) {
+                switch (i7) {
                 }
             case 1:
-                switch (i3) {
+                switch (i7) {
                     default:
-                        switch (i3) {
+                        switch (i7) {
                         }
                     case 0:
                     case 1:
@@ -47,25 +47,25 @@ public final class d1 implements x1 {
                         return true;
                 }
             case 2:
-                if (a1.g.c(i3) != 0) {
+                if (a8.p0.c(i7) != 0) {
                 }
                 break;
             case 3:
-                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
+                if ((i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
                 }
                 break;
             case 4:
-                if (i3 == 0 || i3 == 1 || i3 == 2 || i3 == 3) {
+                if (i7 == 0 || i7 == 1 || i7 == 2 || i7 == 3) {
                 }
                 break;
             case 5:
-                switch (i3) {
+                switch (i7) {
                 }
             case 6:
-                switch (i3) {
+                switch (i7) {
                 }
             default:
-                if (i3 == 0 || i3 == 1) {
+                if (i7 == 0 || i7 == 1) {
                 }
                 break;
         }

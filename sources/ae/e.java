@@ -1,141 +1,115 @@
 package ae;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import wd.b0;
+import android.os.Handler;
+import android.os.Looper;
+import ee.n;
+import id.h;
+import java.util.concurrent.CancellationException;
+import kotlin.jvm.internal.j;
+import m9.u;
+import zd.a1;
+import zd.g0;
+import zd.j0;
+import zd.l0;
+import zd.m;
+import zd.p1;
+import zd.x;
+import zd.y;
+import zd.y1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class e implements g {
-    public final fd.h a;
-    public final int b;
-    public final yd.a c;
-    public final /* synthetic */ int d;
-    public final Object e;
+public final class e extends x implements g0 {
+    public final Handler c;
+    public final boolean d;
+    public final e e;
 
-    public e(Object obj, fd.h hVar, int i3, yd.a aVar, int i10) {
-        this.d = i10;
-        this.a = hVar;
-        this.b = i3;
-        this.c = aVar;
-        this.e = obj;
+    public e(Handler handler, boolean z9) {
+        this.c = handler;
+        this.d = z9;
+        this.e = z9 ? this : new e(handler, true);
     }
 
-    @Override // zd.b
-    public Object U(zd.c cVar, hd.c cVar2) {
-        Object a10;
-        switch (this.d) {
-            case 0:
-                int i3 = this.b;
-                dd.k kVar = dd.k.a;
-                if (i3 == -3) {
-                    fd.h context = cVar2.getContext();
-                    Boolean bool = Boolean.FALSE;
-                    j jVar = new j(10);
-                    fd.h hVar = this.a;
-                    fd.h plus = !((Boolean) hVar.fold(bool, jVar)).booleanValue() ? context.plus(hVar) : b0.h(context, hVar, false);
-                    if (kotlin.jvm.internal.j.a(plus, context)) {
-                        a10 = ((zd.b) this.e).U(cVar, cVar2);
-                        gd.a aVar = gd.a.a;
-                        if (a10 != aVar) {
-                            a10 = kVar;
-                        }
-                        if (a10 != aVar) {
-                            return kVar;
-                        }
-                    } else {
-                        fd.d dVar = fd.d.a;
-                        if (kotlin.jvm.internal.j.a(plus.get(dVar), context.get(dVar))) {
-                            fd.h context2 = cVar2.getContext();
-                            if (!(cVar instanceof o)) {
-                                cVar = new q(cVar, context2);
-                            }
-                            a10 = i.a(plus, cVar, be.a.k(plus), new d(this, (fd.c) null, 1), cVar2);
-                            if (a10 != gd.a.a) {
-                                return kVar;
-                            }
-                        }
-                    }
-                    return a10;
-                }
-                a10 = a(cVar, cVar2);
-                if (a10 != gd.a.a) {
-                    return kVar;
-                }
-                return a10;
-            default:
-                return a(cVar, cVar2);
+    @Override // zd.g0
+    public final l0 a(long j3, y1 y1Var, h hVar) {
+        if (j3 > 4611686018427387903L) {
+            j3 = 4611686018427387903L;
         }
+        if (this.c.postDelayed(y1Var, j3)) {
+            return new c(0, this, y1Var);
+        }
+        g(hVar, y1Var);
+        return p1.a;
     }
 
-    public final Object a(zd.c cVar, hd.c cVar2) {
-        Object e10 = b0.e(new c(cVar, this, (fd.c) null), cVar2);
-        return e10 == gd.a.a ? e10 : dd.k.a;
-    }
-
-    public final String b() {
-        ArrayList arrayList = new ArrayList(4);
-        fd.i iVar = fd.i.a;
-        fd.h hVar = this.a;
-        if (hVar != iVar) {
-            arrayList.add("context=" + hVar);
+    @Override // zd.g0
+    public final void b(long j3, m mVar) {
+        u uVar = new u(6, mVar, this);
+        if (j3 > 4611686018427387903L) {
+            j3 = 4611686018427387903L;
         }
-        int i3 = this.b;
-        if (i3 != -3) {
-            arrayList.add("capacity=" + i3);
-        }
-        yd.a aVar = yd.a.a;
-        yd.a aVar2 = this.c;
-        if (aVar2 != aVar) {
-            arrayList.add("onBufferOverflow=" + aVar2);
-        }
-        return getClass().getSimpleName() + '[' + ed.g.g(arrayList, ", ", null, null, null, 62) + ']';
-    }
-
-    @Override // ae.g
-    public final zd.b h(fd.h hVar, int i3, yd.a aVar) {
-        yd.a aVar2;
-        fd.h hVar2 = this.a;
-        fd.h plus = hVar.plus(hVar2);
-        yd.a aVar3 = yd.a.a;
-        yd.a aVar4 = this.c;
-        int i10 = this.b;
-        if (aVar != aVar3) {
-            aVar2 = aVar;
+        if (this.c.postDelayed(uVar, j3)) {
+            mVar.u(new d(0, this, uVar));
         } else {
-            if (i10 != -3) {
-                if (i3 != -3) {
-                    if (i10 != -2) {
-                        if (i3 != -2) {
-                            i3 += i10;
-                            if (i3 < 0) {
-                                i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                            }
-                        }
-                    }
-                }
-                i3 = i10;
-            }
-            aVar2 = aVar4;
-        }
-        int i11 = i3;
-        if (kotlin.jvm.internal.j.a(plus, hVar2) && i11 == i10 && aVar2 == aVar4) {
-            return this;
-        }
-        switch (this.d) {
-            case 0:
-                return new e((zd.b) this.e, plus, i11, aVar2, 0);
-            default:
-                return new e((c) this.e, plus, i11, aVar2, 1);
+            g(mVar.e, uVar);
         }
     }
 
-    public final String toString() {
-        switch (this.d) {
-            case 0:
-                return ((zd.b) this.e) + " -> " + b();
-            default:
-                return "block[" + ((c) this.e) + "] -> " + b();
+    @Override // zd.x
+    public final void c(h hVar, Runnable runnable) {
+        if (this.c.post(runnable)) {
+            return;
         }
+        g(hVar, runnable);
+    }
+
+    @Override // zd.x
+    public final boolean d(h hVar) {
+        return (this.d && j.a(Looper.myLooper(), this.c.getLooper())) ? false : true;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        return eVar.c == this.c && eVar.d == this.d;
+    }
+
+    public final void g(h hVar, Runnable runnable) {
+        CancellationException cancellationException = new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed");
+        a1 a1Var = (a1) hVar.get(y.b);
+        if (a1Var != null) {
+            a1Var.cancel(cancellationException);
+        }
+        ge.e eVar = j0.a;
+        ge.d.c.c(hVar, runnable);
+    }
+
+    public final int hashCode() {
+        return System.identityHashCode(this.c) ^ (this.d ? 1231 : 1237);
+    }
+
+    @Override // zd.x
+    public final String toString() {
+        e eVar;
+        String str;
+        ge.e eVar2 = j0.a;
+        e eVar3 = n.a;
+        if (this == eVar3) {
+            str = "Dispatchers.Main";
+        } else {
+            try {
+                eVar = eVar3.e;
+            } catch (UnsupportedOperationException unused) {
+                eVar = null;
+            }
+            str = this == eVar ? "Dispatchers.Main.immediate" : null;
+        }
+        if (str != null) {
+            return str;
+        }
+        String handler = this.c.toString();
+        return this.d ? rf.b.q(handler, ".immediate") : handler;
     }
 }

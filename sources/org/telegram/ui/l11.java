@@ -1,16 +1,59 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final class l11 extends u4.k {
-    public final /* synthetic */ q11 F;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public l11(q11 q11Var) {
-        this.F = q11Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class l11 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ m11 f;
+
+    public l11(m11 m11Var, boolean z9, Runnable runnable, boolean[] zArr, boolean z10, Runnable runnable2) {
+        this.f = m11Var;
+        this.a = z9;
+        this.b = runnable;
+        this.c = zArr;
+        this.d = z10;
+        this.e = runnable2;
     }
 
-    @Override // u4.k
-    public final void P(u4.d1 d1Var) {
-        q11.d1(this.F);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        m11 m11Var = this.f;
+        k0 k0Var = m11Var.s;
+        boolean z9 = this.a;
+        float f10 = z9 ? 1.0f : 0.0f;
+        m11Var.I = f10;
+        org.telegram.messenger.g0.X1(m11Var.c, m11Var.d, f10, m11Var.e);
+        k0Var.invalidate();
+        if (!z9) {
+            m11Var.w.setAlpha(m11Var.I);
+        }
+        if (m11Var.I < 0.5f && !z9 && (runnable = this.b) != null) {
+            boolean[] zArr = this.c;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                runnable.run();
+            }
+        }
+        if (!z9) {
+            if (this.d) {
+                m11Var.a.b = false;
+                m11Var.P.h0.invalidate();
+            }
+            org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.k1, 4);
+        }
+        m11Var.K = null;
+        k0Var.invalidate();
+        Runnable runnable2 = this.e;
+        if (runnable2 != null) {
+            runnable2.run();
+        }
     }
 }

@@ -1,51 +1,55 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ce implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class ce implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm b;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ ce(wm wmVar, int i3) {
-        this.a = i3;
-        this.b = wmVar;
+    public /* synthetic */ ce(an anVar, int i7) {
+        this.a = i7;
+        this.b = anVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                hj hjVar = this.b.m2;
-                if (hjVar != null) {
-                    hjVar.c(false);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                an anVar = this.b;
+                anVar.Y8 = floatValue;
+                ol olVar = anVar.l1;
+                if (olVar != null) {
+                    olVar.invalidate();
+                    anVar.z0.invalidate();
                     break;
                 }
                 break;
             case 1:
-                wm.c1(this.b);
+                an anVar2 = this.b;
+                anVar2.getClass();
+                anVar2.w3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                anVar2.Pc();
                 break;
             case 2:
-                this.b.v8(false, true, 0.0f);
+                an anVar3 = this.b;
+                anVar3.getClass();
+                anVar3.w3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                anVar3.Pc();
                 break;
             case 3:
-                this.b.v8(false, true, 0.0f);
-                break;
-            case 4:
-                this.b.v8(false, true, 0.0f);
-                break;
-            case 5:
-                this.b.v8(false, true, 0.0f);
-                break;
-            case 6:
-                this.b.v8(false, true, 0.0f);
-                break;
-            case 7:
-                this.b.v8(false, true, 0.0f);
+                an anVar4 = this.b;
+                anVar4.getClass();
+                anVar4.Xa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                anVar4.K9();
                 break;
             default:
-                this.b.hc = null;
+                an anVar5 = this.b;
+                anVar5.getClass();
+                anVar5.Xa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                anVar5.K9();
                 break;
         }
     }

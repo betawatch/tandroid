@@ -1,10 +1,10 @@
 package ru.noties.jlatexmath.awt.geom;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class Line2D {
 
-    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
     public static class Float {
         public double x1;
         public double x2;
@@ -14,11 +14,11 @@ public class Line2D {
         public Float() {
         }
 
-        public void setLine(double d, double d10, double d11, double d12) {
+        public void setLine(double d, double d2, double d10, double d11) {
             this.x1 = d;
-            this.y1 = d10;
-            this.x2 = d11;
-            this.y2 = d12;
+            this.y1 = d2;
+            this.x2 = d10;
+            this.y2 = d11;
         }
 
         public String toString() {

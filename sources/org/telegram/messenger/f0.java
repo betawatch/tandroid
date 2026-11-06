@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f0 {
     public int c;
@@ -12,7 +12,7 @@ public final class f0 {
     public String b = "";
     public boolean d = true;
 
-    public final String a(boolean z10) {
+    public final String a(boolean z9) {
         int indexOf = this.b.indexOf(58);
         if (indexOf < 0) {
             return "";
@@ -20,12 +20,12 @@ public final class f0 {
         String substring = this.b.substring(0, indexOf);
         if (this.c == 20) {
             String[] split = substring.substring(2).split(";");
-            return z10 ? split[0] : split.length > 1 ? split[split.length - 1] : "";
+            return z9 ? split[0] : split.length > 1 ? split[split.length - 1] : "";
         }
         String[] split2 = substring.split(";");
-        for (int i3 = 0; i3 < split2.length; i3++) {
-            if (split2[i3].indexOf(61) < 0) {
-                substring = split2[i3];
+        for (int i7 = 0; i7 < split2.length; i7++) {
+            if (split2[i7].indexOf(61) < 0) {
+                substring = split2[i7];
             }
         }
         return substring;
@@ -52,10 +52,10 @@ public final class f0 {
             }
         }
         String[] split2 = substring2.split(";");
-        for (int i3 = 0; i3 < split2.length; i3++) {
-            if (!TextUtils.isEmpty(split2[i3]) && str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = g0.H(g0.h1(split2[i3]))) != null && H.length != 0) {
+        for (int i7 = 0; i7 < split2.length; i7++) {
+            if (!TextUtils.isEmpty(split2[i7]) && str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = g0.H(g0.h1(split2[i7]))) != null && H.length != 0) {
                 try {
-                    split2[i3] = new String(H, str2);
+                    split2[i7] = new String(H, str2);
                 } catch (Exception unused) {
                 }
             }
@@ -63,7 +63,7 @@ public final class f0 {
         return split2;
     }
 
-    public final String c(boolean z10) {
+    public final String c(boolean z9) {
         byte[] H;
         StringBuilder sb2 = new StringBuilder();
         int indexOf = this.b.indexOf(58);
@@ -88,28 +88,28 @@ public final class f0 {
             }
         }
         String[] split2 = substring2.split(";");
-        boolean z11 = false;
-        for (int i3 = 0; i3 < split2.length; i3++) {
-            if (!TextUtils.isEmpty(split2[i3])) {
-                if (str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = g0.H(g0.h1(split2[i3]))) != null && H.length != 0) {
+        boolean z10 = false;
+        for (int i7 = 0; i7 < split2.length; i7++) {
+            if (!TextUtils.isEmpty(split2[i7])) {
+                if (str != null && str.equalsIgnoreCase("QUOTED-PRINTABLE") && (H = g0.H(g0.h1(split2[i7]))) != null && H.length != 0) {
                     try {
-                        split2[i3] = new String(H, str2);
+                        split2[i7] = new String(H, str2);
                     } catch (Exception unused) {
                     }
                 }
-                if (z11 && sb2.length() > 0) {
+                if (z10 && sb2.length() > 0) {
                     sb2.append(" ");
                 }
-                sb2.append(split2[i3]);
-                if (!z11) {
-                    z11 = split2[i3].length() > 0;
+                sb2.append(split2[i7]);
+                if (!z10) {
+                    z10 = split2[i7].length() > 0;
                 }
             }
         }
-        if (z10) {
+        if (z9) {
             int i10 = this.c;
             if (i10 == 0) {
-                return mf.b.c().b(sb2.toString());
+                return pf.b.c().b(sb2.toString());
             }
             if (i10 == 5) {
                 String[] split3 = sb2.toString().split("T");
@@ -120,7 +120,7 @@ public final class f0 {
                         calendar.set(1, Utilities.z(split4[0]).intValue());
                         calendar.set(2, Utilities.z(split4[1]).intValue() - 1);
                         calendar.set(5, Utilities.z(split4[2]).intValue());
-                        return bd.E0().D0().format(calendar.getTime());
+                        return hd.E0().D0().format(calendar.getTime());
                     }
                 }
             }

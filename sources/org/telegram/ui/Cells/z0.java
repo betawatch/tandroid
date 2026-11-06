@@ -19,20 +19,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.cv;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.l10;
-import org.telegram.messenger.wi;
-import org.telegram.messenger.xt;
-import org.telegram.messenger.zi;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fu;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.kv;
+import org.telegram.messenger.qp;
+import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class z0 extends AccessibilityNodeProvider {
     public final q1 a;
@@ -44,13 +44,13 @@ public final class z0 extends AccessibilityNodeProvider {
         this.a = q1Var;
     }
 
-    public final ClickableSpan a(int i3, boolean z10) {
-        if (i3 == 5000) {
+    public final ClickableSpan a(int i7, boolean z9) {
+        if (i7 == 5000) {
             return null;
         }
         q1 q1Var = this.a;
-        if (z10) {
-            int i10 = i3 - 3000;
+        if (z9) {
+            int i10 = i7 - 3000;
             CharSequence charSequence = q1Var.P5.z;
             if (!(charSequence instanceof Spannable) || i10 < 0) {
                 return null;
@@ -62,7 +62,7 @@ public final class z0 extends AccessibilityNodeProvider {
             }
             return clickableSpanArr[i10];
         }
-        int i11 = i3 - 2000;
+        int i11 = i7 - 2000;
         CharSequence charSequence2 = q1Var.P5.v;
         if (!(charSequence2 instanceof Spannable) || i11 < 0) {
             return null;
@@ -75,25 +75,25 @@ public final class z0 extends AccessibilityNodeProvider {
         return clickableSpanArr2[i11];
     }
 
-    public final xt b(int[] iArr, int i3) {
-        cv cvVar;
-        zi ziVar = this.a.P5;
-        if (ziVar == null || (cvVar = ziVar.w2) == null) {
+    public final fu b(int[] iArr, int i7) {
+        kv kvVar;
+        ij ijVar = this.a.P5;
+        if (ijVar == null || (kvVar = ijVar.w2) == null) {
             return null;
         }
-        ArrayList arrayList = cvVar.g;
-        int i10 = i3 - 6000;
+        ArrayList arrayList = kvVar.g;
+        int i10 = i7 - 6000;
         if (i10 < 0) {
             return null;
         }
         int i11 = 0;
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            xt xtVar = (xt) arrayList.get(i12);
-            if (xtVar.S()) {
-                int B = xtVar.B() + (xtVar.r == null ? 0 : 1) + i11;
+            fu fuVar = (fu) arrayList.get(i12);
+            if (fuVar.S()) {
+                int B = fuVar.B() + (fuVar.r == null ? 0 : 1) + i11;
                 if (i10 < B) {
                     iArr[0] = i10 - i11;
-                    return xtVar;
+                    return fuVar;
                 }
                 i11 = B;
             }
@@ -151,40 +151,40 @@ public final class z0 extends AccessibilityNodeProvider {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i3) {
-        boolean z10;
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i7) {
+        boolean z9;
         String str;
         int i10;
         String S;
         ArrayList arrayList;
         String str2;
         int i11;
+        boolean z10;
         boolean z11;
+        char c10;
         boolean z12;
-        char c2;
-        boolean z13;
-        long j10;
+        long j3;
         ArrayList arrayList2;
         ArrayList arrayList3;
         SpannableStringBuilder spannableStringBuilder;
         AccessibilityNodeInfo accessibilityNodeInfo;
         StaticLayout[] staticLayoutArr;
-        long j11;
+        long j10;
         ArrayList arrayList4;
         TLRPC.Document document;
-        cv cvVar;
+        kv kvVar;
         Spanned spanned;
         TLRPC.TL_messageReactions tL_messageReactions;
         int i12;
         ArrayList<TLRPC.ReactionCount> arrayList5;
-        boolean z14;
+        boolean z13;
         TLRPC.MessagePeerReaction messagePeerReaction;
         String str3;
         int i13;
         String M0;
         int i14;
         StaticLayout staticLayout;
-        String s6;
+        String s5;
         AccessibilityNodeInfo accessibilityNodeInfo2;
         AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo;
         ArrayList arrayList6;
@@ -194,8 +194,8 @@ public final class z0 extends AccessibilityNodeProvider {
         int i16;
         r1 r1Var;
         int i17;
-        zi ziVar;
-        cv cvVar2;
+        ij ijVar;
+        kv kvVar2;
         int i18;
         RectF rectF;
         ArrayList arrayList7;
@@ -208,23 +208,23 @@ public final class z0 extends AccessibilityNodeProvider {
         ArrayList arrayList9 = q1Var.H5;
         StaticLayout[] staticLayoutArr2 = q1Var.p9;
         SparseArray sparseArray = q1Var.wb;
-        if (i3 != -1) {
+        if (i7 != -1) {
             AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain();
-            obtain.setSource(q1Var, i3);
+            obtain.setSource(q1Var, i7);
             obtain.setParent(q1Var);
             obtain.setPackageName(q1Var.getContext().getPackageName());
             Rect rect = this.d;
-            if (i3 == 5000) {
+            if (i7 == 5000) {
                 TLRPC.User user = q1Var.ia;
                 if (user != null) {
-                    obtain.setText(l10.p(user));
+                    obtain.setText(t10.p(user));
                     float f10 = q1Var.g9;
                     int i20 = (int) f10;
                     float f11 = q1Var.h9;
                     rect.set(i20, (int) f11, (int) (f10 + q1Var.e9), (int) (f11 + (q1Var.U8 != null ? r4.getHeight() : 10)));
                     obtain.setBoundsInParent(rect);
-                    if (sparseArray.get(i3) == null) {
-                        sparseArray.put(i3, new Rect(rect));
+                    if (sparseArray.get(i7) == null) {
+                        sparseArray.put(i7, new Rect(rect));
                     }
                     rect.offset(iArr[0], iArr[1]);
                     obtain.setBoundsInScreen(rect);
@@ -234,26 +234,26 @@ public final class z0 extends AccessibilityNodeProvider {
                     obtain.setLongClickable(true);
                     obtain.addAction(16);
                     obtain.addAction(32);
-                    z10 = true;
+                    z9 = true;
                 }
                 return null;
             }
-            if (i3 >= 6000) {
+            if (i7 >= 6000) {
                 int[] iArr2 = {0};
-                xt b10 = b(iArr2, i3);
+                fu b10 = b(iArr2, i7);
                 if (b10 != null) {
                     obtain.setText(b10.x(iArr2[0]));
                     b10.w(iArr2[0], rect);
-                    rect.offset(q1Var.o0, q1Var.u0);
+                    rect.offset(q1Var.n0, q1Var.t0);
                     obtain.setBoundsInParent(rect);
-                    if (sparseArray.get(i3) == null) {
-                        sparseArray.put(i3, new Rect(rect));
+                    if (sparseArray.get(i7) == null) {
+                        sparseArray.put(i7, new Rect(rect));
                     }
                     rect.offset(iArr[0], iArr[1]);
                     obtain.setBoundsInScreen(rect);
                     int i21 = iArr2[0];
-                    boolean z15 = b10.r != null && i21 == 0;
-                    if (z15) {
+                    boolean z14 = b10.r != null && i21 == 0;
+                    if (z14) {
                         obtain.setClassName("android.widget.CheckBox");
                     } else if (b10.P(i21)) {
                         obtain.setClassName("android.widget.TextView");
@@ -261,29 +261,29 @@ public final class z0 extends AccessibilityNodeProvider {
                         obtain.setClassName("android.widget.ImageView");
                     }
                     obtain.setEnabled(true);
-                    if (z15) {
+                    if (z14) {
                         obtain.setCheckable(true);
-                        c2 = 0;
+                        c10 = 0;
                         obtain.setChecked(b10.N(iArr2[0]));
                     } else {
-                        c2 = 0;
+                        c10 = 0;
                     }
-                    boolean O = b10.O(iArr2[c2]);
+                    boolean O = b10.O(iArr2[c10]);
                     obtain.setClickable(O);
                     if (O) {
                         obtain.addAction(16);
                     }
-                    z10 = true;
+                    z9 = true;
                 }
                 return null;
             }
             RectF rectF2 = this.c;
             Path path = this.b;
-            if (i3 >= 3000) {
+            if (i7 >= 3000) {
                 CharSequence charSequence = q1Var.P5.z;
                 if ((charSequence instanceof Spannable) && q1Var.l3 != null) {
                     Spannable spannable = (Spannable) charSequence;
-                    ClickableSpan a10 = a(i3, false);
+                    ClickableSpan a10 = a(i7, false);
                     if (a10 != null) {
                         int[] W1 = q1.W1(spannable, a10);
                         obtain.setText(spannable.subSequence(W1[0], W1[1]).toString());
@@ -292,30 +292,30 @@ public final class z0 extends AccessibilityNodeProvider {
                         int i22 = 0;
                         while (true) {
                             if (i22 >= size4) {
-                                z12 = true;
+                                z11 = true;
                                 break;
                             }
                             Object obj = arrayList10.get(i22);
                             i22++;
-                            wi wiVar = (wi) obj;
-                            int length = wiVar.e.getText().length();
-                            int i23 = wiVar.n;
+                            fj fjVar = (fj) obj;
+                            int length = fjVar.e.getText().length();
+                            int i23 = fjVar.n;
                             ArrayList arrayList11 = arrayList10;
                             int i24 = W1[0];
                             if (i23 <= i24) {
                                 int i25 = length + i23;
                                 int i26 = W1[1];
                                 if (i25 >= i26) {
-                                    wiVar.e.getSelectionPath(i24 - i23, i26 - i23, path);
+                                    fjVar.e.getSelectionPath(i24 - i23, i26 - i23, path);
                                     path.computeBounds(rectF2, true);
                                     rect.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                                    rect.offset(0, (int) wiVar.p(q1Var.l3.e, q1Var.hb));
-                                    rect.offset(q1Var.o0, q1Var.u0);
+                                    rect.offset(0, (int) fjVar.p(q1Var.l3.e, q1Var.hb));
+                                    rect.offset(q1Var.n0, q1Var.t0);
                                     obtain.setBoundsInParent(rect);
-                                    if (sparseArray.get(i3) == null) {
-                                        sparseArray.put(i3, new Rect(rect));
+                                    if (sparseArray.get(i7) == null) {
+                                        sparseArray.put(i7, new Rect(rect));
                                     }
-                                    z12 = true;
+                                    z11 = true;
                                     rect.offset(iArr[0], iArr[1]);
                                     obtain.setBoundsInScreen(rect);
                                 }
@@ -323,21 +323,21 @@ public final class z0 extends AccessibilityNodeProvider {
                             arrayList10 = arrayList11;
                         }
                         obtain.setClassName("android.widget.TextView");
-                        obtain.setEnabled(z12);
-                        obtain.setClickable(z12);
-                        obtain.setLongClickable(z12);
+                        obtain.setEnabled(z11);
+                        obtain.setClickable(z11);
+                        obtain.setLongClickable(z11);
                         obtain.addAction(16);
                         obtain.addAction(32);
-                        z10 = true;
+                        z9 = true;
                     }
                 }
                 return null;
             }
-            if (i3 >= 2000) {
+            if (i7 >= 2000) {
                 CharSequence charSequence2 = q1Var.P5.v;
                 if (charSequence2 instanceof Spannable) {
                     Spannable spannable2 = (Spannable) charSequence2;
-                    ClickableSpan a11 = a(i3, false);
+                    ClickableSpan a11 = a(i7, false);
                     if (a11 != null) {
                         int[] W12 = q1.W1(spannable2, a11);
                         obtain.setText(spannable2.subSequence(W12[0], W12[1]).toString());
@@ -346,47 +346,47 @@ public final class z0 extends AccessibilityNodeProvider {
                         int i27 = 0;
                         while (true) {
                             if (i27 >= size5) {
-                                z11 = true;
+                                z10 = true;
                                 break;
                             }
                             Object obj2 = arrayList12.get(i27);
                             i27++;
-                            wi wiVar2 = (wi) obj2;
-                            int length2 = wiVar2.e.getText().length();
-                            int i28 = wiVar2.n;
+                            fj fjVar2 = (fj) obj2;
+                            int length2 = fjVar2.e.getText().length();
+                            int i28 = fjVar2.n;
                             int i29 = W12[0];
                             if (i28 <= i29) {
                                 int i30 = length2 + i28;
                                 int i31 = W12[1];
                                 if (i30 >= i31) {
-                                    wiVar2.e.getSelectionPath(i29 - i28, i31 - i28, path);
+                                    fjVar2.e.getSelectionPath(i29 - i28, i31 - i28, path);
                                     path.computeBounds(rectF2, true);
                                     rect.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                                    rect.offset(0, (int) wiVar2.p(q1Var.P5.z2, q1Var.hb));
-                                    rect.offset(q1Var.o0, q1Var.u0);
+                                    rect.offset(0, (int) fjVar2.p(q1Var.P5.z2, q1Var.hb));
+                                    rect.offset(q1Var.n0, q1Var.t0);
                                     obtain.setBoundsInParent(rect);
-                                    if (sparseArray.get(i3) == null) {
-                                        sparseArray.put(i3, new Rect(rect));
+                                    if (sparseArray.get(i7) == null) {
+                                        sparseArray.put(i7, new Rect(rect));
                                     }
-                                    z11 = true;
+                                    z10 = true;
                                     rect.offset(iArr[0], iArr[1]);
                                     obtain.setBoundsInScreen(rect);
                                 }
                             }
                         }
                         obtain.setClassName("android.widget.TextView");
-                        obtain.setEnabled(z11);
-                        obtain.setClickable(z11);
-                        obtain.setLongClickable(z11);
+                        obtain.setEnabled(z10);
+                        obtain.setClickable(z10);
+                        obtain.setLongClickable(z10);
                         obtain.addAction(16);
                         obtain.addAction(32);
-                        z10 = true;
+                        z9 = true;
                     }
                 }
                 return null;
             }
-            if (i3 >= 1000) {
-                int i32 = i3 - 1000;
+            if (i7 >= 1000) {
+                int i32 = i7 - 1000;
                 if (i32 < arrayList9.size()) {
                     c0 c0Var = (c0) arrayList9.get(i32);
                     if (!c0Var.b) {
@@ -401,18 +401,18 @@ public final class z0 extends AccessibilityNodeProvider {
                         rect.set((int) (f12 * f13), i33, (int) ((f12 + c0Var.e) * f13), c0Var.f + i33);
                         rect.offset(q1Var.P5.Q3() ? (q1Var.getMeasuredWidth() - q1Var.getWidthForButtons()) - org.telegram.messenger.g0.L(10.0f) : q1Var.M6 + org.telegram.messenger.g0.L(q1Var.B6 ? 1.0f : 7.0f), q1Var.d7);
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
-                        z10 = true;
+                        z9 = true;
                     }
                 }
                 return null;
             }
-            if (i3 >= 500) {
-                int i34 = i3 - 500;
+            if (i7 >= 500) {
+                int i34 = i7 - 500;
                 if (i34 < arrayList8.size()) {
                     p1 p1Var = (p1) arrayList8.get(i34);
                     StringBuilder sb2 = new StringBuilder(p1Var.p.getText());
@@ -431,7 +431,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                 str2 = "AccDescrQuizIncorrectAnswer";
                                 i11 = 2131754794;
                             }
-                            sb2.append(bd.M0(i11, str2));
+                            sb2.append(hd.M0(i11, str2));
                         }
                     } else {
                         obtain.setClassName("android.widget.Button");
@@ -444,32 +444,32 @@ public final class z0 extends AccessibilityNodeProvider {
                     int i36 = p1Var.a;
                     rect.set(i36, i35, L + i36, p1Var.c + i35);
                     obtain.setBoundsInParent(rect);
-                    if (sparseArray.get(i3) == null) {
-                        sparseArray.put(i3, new Rect(rect));
+                    if (sparseArray.get(i7) == null) {
+                        sparseArray.put(i7, new Rect(rect));
                     }
-                    z10 = true;
+                    z9 = true;
                     rect.offset(iArr[0], iArr[1]);
                     obtain.setBoundsInScreen(rect);
                     obtain.setClickable(true);
                 }
                 return null;
             }
-            z10 = true;
-            if (i3 == 495) {
+            z9 = true;
+            if (i7 == 495) {
                 obtain.setClassName("android.widget.Button");
                 obtain.setEnabled(true);
-                obtain.setText(bd.L0(2131754795));
+                obtain.setText(hd.L0(2131754795));
                 obtain.addAction(16);
                 rect.set(q1Var.n5 - org.telegram.messenger.g0.L(8.0f), q1Var.o5 - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(32.0f) + q1Var.n5, org.telegram.messenger.g0.L(32.0f) + q1Var.o5);
                 obtain.setBoundsInParent(rect);
-                if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                    sparseArray.put(i3, new Rect(rect));
+                if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                    sparseArray.put(i7, new Rect(rect));
                 }
-                z10 = true;
+                z9 = true;
                 rect.offset(iArr[0], iArr[1]);
                 obtain.setBoundsInScreen(rect);
                 obtain.setClickable(true);
-            } else if (i3 == 499) {
+            } else if (i7 == 499) {
                 obtain.setClassName("android.widget.Button");
                 obtain.setEnabled(true);
                 StaticLayout staticLayout2 = q1Var.q2;
@@ -479,41 +479,41 @@ public final class z0 extends AccessibilityNodeProvider {
                 obtain.addAction(16);
                 q1Var.L2.round(rect);
                 obtain.setBoundsInParent(rect);
-                if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                    sparseArray.put(i3, new Rect(rect));
+                if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                    sparseArray.put(i7, new Rect(rect));
                 }
-                z10 = true;
+                z9 = true;
                 rect.offset(iArr[0], iArr[1]);
                 obtain.setBoundsInScreen(rect);
                 obtain.setClickable(true);
-            } else if (i3 != 492) {
+            } else if (i7 != 492) {
                 int i37 = 491;
-                if (i3 != 491) {
-                    if (i3 == 490 || i3 == 489) {
+                if (i7 != 491) {
+                    if (i7 == 490 || i7 == 489) {
                         i37 = 491;
-                    } else if (i3 == 498) {
+                    } else if (i7 == 498) {
                         obtain.setClassName("android.widget.ImageButton");
                         obtain.setEnabled(true);
-                        if (q1Var.E2(q1Var.P5)) {
-                            obtain.setContentDescription(bd.M0(2131754819, "AccDescrOpenChat"));
+                        if (q1Var.F2(q1Var.P5)) {
+                            obtain.setContentDescription(hd.M0(2131754819, "AccDescrOpenChat"));
                         } else {
-                            obtain.setContentDescription(bd.M0(2131745469, "ShareFile"));
+                            obtain.setContentDescription(hd.M0(2131745460, "ShareFile"));
                         }
                         obtain.addAction(16);
                         int i38 = (int) q1Var.Q8;
                         rect.set(i38, (int) q1Var.R8, org.telegram.messenger.g0.L(40.0f) + i38, org.telegram.messenger.g0.L(32.0f) + ((int) q1Var.R8));
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
-                    } else if (i3 == 497) {
+                    } else if (i7 == 497) {
                         obtain.setEnabled(true);
                         StringBuilder sb3 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("Reply", 2131746271, sb3, ", ");
+                        org.telegram.messenger.camera.q.q("Reply", 2131746262, sb3, ", ");
                         StaticLayout staticLayout3 = q1Var.P7;
                         if (staticLayout3 != null) {
                             sb3.append(staticLayout3.getText());
@@ -528,14 +528,14 @@ public final class z0 extends AccessibilityNodeProvider {
                         int i39 = q1Var.T7;
                         rect.set(i39, q1Var.U7, Math.max(q1Var.W7, q1Var.Y7) + i39, q1Var.U7 + ((int) q1Var.V7));
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
-                    } else if (i3 == 494) {
+                    } else if (i7 == 494) {
                         obtain.setEnabled(true);
                         StringBuilder sb4 = new StringBuilder();
                         if (staticLayoutArr2[0] != null && staticLayoutArr2[1] != null) {
@@ -554,24 +554,24 @@ public final class z0 extends AccessibilityNodeProvider {
                         int i41 = q1Var.t9;
                         rect.set(min, i41, q1Var.q9 + min, q1Var.u9 + i41);
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
-                    } else if (i3 == 496) {
+                    } else if (i7 == 496) {
                         obtain.setClassName("android.widget.Button");
                         obtain.setEnabled(true);
                         int repliesCount = q1Var.getRepliesCount();
-                        zi ziVar2 = q1Var.P5;
-                        if (ziVar2 == null || ziVar2.Q5() || q1Var.P5.H2()) {
-                            S = (q1Var.t6 || repliesCount <= 0) ? null : bd.S(null, repliesCount);
+                        ij ijVar2 = q1Var.P5;
+                        if (ijVar2 == null || ijVar2.Q5() || q1Var.P5.H2()) {
+                            S = (q1Var.t6 || repliesCount <= 0) ? null : hd.S(null, repliesCount);
                         } else if (q1Var.t6) {
-                            S = bd.M0(2131743562, "ViewInChat");
+                            S = hd.M0(2131743553, "ViewInChat");
                         } else {
-                            S = repliesCount == 0 ? bd.M0(2131749016, "LeaveAComment") : bd.G(repliesCount, "CommentsCount", new Object[0]);
+                            S = repliesCount == 0 ? hd.M0(2131749007, "LeaveAComment") : hd.G(repliesCount, "CommentsCount", new Object[0]);
                         }
                         if (S != null) {
                             obtain.setText(S);
@@ -579,14 +579,14 @@ public final class z0 extends AccessibilityNodeProvider {
                         obtain.addAction(16);
                         rect.set(q1Var.x7);
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
-                    } else if (i3 == 493) {
+                    } else if (i7 == 493) {
                         obtain.setClassName("android.widget.Button");
                         obtain.setEnabled(true);
                         if (q1Var.P5.U4()) {
@@ -596,19 +596,19 @@ public final class z0 extends AccessibilityNodeProvider {
                             str = "AccActionOpenTranscription";
                             i10 = 2131754931;
                         }
-                        obtain.setText(bd.M0(i10, str));
+                        obtain.setText(hd.M0(i10, str));
                         obtain.addAction(16);
                         if (q1Var.I4 != null) {
                             rect.set((int) q1Var.C1().b, (int) q1Var.C1().c, (int) (q1Var.C1().b + q1Var.I4.u()), (int) (q1Var.C1().c + q1Var.I4.h()));
                         }
                         obtain.setBoundsInParent(rect);
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
                     }
                 }
-                int i42 = i3 == i37 ? 5 : i3 == 490 ? 31 : 30;
+                int i42 = i7 == i37 ? 5 : i7 == 490 ? 31 : 30;
                 int i43 = 0;
                 while (true) {
                     r1 r1Var2 = q1Var.v2;
@@ -626,10 +626,10 @@ public final class z0 extends AccessibilityNodeProvider {
                         obtain.addAction(16);
                         n1Var.e.round(rect);
                         obtain.setBoundsInParent(rect);
-                        if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                            sparseArray.put(i3, new Rect(rect));
+                        if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                            sparseArray.put(i7, new Rect(rect));
                         }
-                        z10 = true;
+                        z9 = true;
                         rect.offset(iArr[0], iArr[1]);
                         obtain.setBoundsInScreen(rect);
                         obtain.setClickable(true);
@@ -654,33 +654,33 @@ public final class z0 extends AccessibilityNodeProvider {
                     }
                 }
                 obtain.setBoundsInParent(rect);
-                if (sparseArray.get(i3) == null || !((Rect) sparseArray.get(i3)).equals(rect)) {
-                    sparseArray.put(i3, new Rect(rect));
+                if (sparseArray.get(i7) == null || !((Rect) sparseArray.get(i7)).equals(rect)) {
+                    sparseArray.put(i7, new Rect(rect));
                 }
-                z10 = true;
+                z9 = true;
                 rect.offset(iArr[0], iArr[1]);
                 obtain.setBoundsInScreen(rect);
                 obtain.setClickable(true);
             }
-            obtain.setFocusable(z10);
-            obtain.setVisibleToUser(z10);
+            obtain.setFocusable(z9);
+            obtain.setVisibleToUser(z9);
             return obtain;
         }
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain(q1Var);
         q1Var.onInitializeAccessibilityNodeInfo(obtain2);
-        zi ziVar3 = q1Var.P5;
-        if (ziVar3 != null && ziVar3.O3()) {
-            zi ziVar4 = q1Var.P5;
-            if (!ziVar4.p1 && ziVar4.G4()) {
-                z13 = true;
-                zi ziVar5 = q1Var.P5;
-                boolean z16 = ziVar5 == null && ziVar5.S2();
-                zi ziVar6 = q1Var.P5;
-                j10 = ziVar6 == null ? ziVar6.F0 : 0L;
-                if (q1Var.O2 == null && q1Var.P2 == z13 && q1Var.Q2 == z16) {
+        ij ijVar3 = q1Var.P5;
+        if (ijVar3 != null && ijVar3.O3()) {
+            ij ijVar4 = q1Var.P5;
+            if (!ijVar4.p1 && ijVar4.G4()) {
+                z12 = true;
+                ij ijVar5 = q1Var.P5;
+                boolean z15 = ijVar5 == null && ijVar5.S2();
+                ij ijVar6 = q1Var.P5;
+                j3 = ijVar6 == null ? ijVar6.F0 : 0L;
+                if (q1Var.O2 == null && q1Var.P2 == z12 && q1Var.Q2 == z15) {
                     arrayList2 = arrayList8;
                     arrayList3 = arrayList9;
-                    if (q1Var.R2 == j10) {
+                    if (q1Var.R2 == j3) {
                         accessibilityNodeInfo = obtain2;
                         staticLayoutArr = staticLayoutArr2;
                         arrayList4 = arrayList2;
@@ -696,15 +696,15 @@ public final class z0 extends AccessibilityNodeProvider {
                         if (collectionItemInfo != null) {
                             accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), 1, 0, 1, false));
                         }
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, bd.M0(2131754936, "AccActionMessageOptions")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
                         int iconForCurrentState = q1Var.getIconForCurrentState();
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? q1Var.P5.D == 16 ? bd.M0(2131752633, "CallAgain") : null : bd.M0(2131754933, "AccActionOpenFile") : bd.M0(2131754941, "AccActionCancelDownload") : bd.M0(2131754938, "AccActionDownload") : bd.M0(2131754930, "AccActionPause") : bd.M0(2131754929, "AccActionPlay")));
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, bd.M0(2131754937, "AccActionEnterSelectionMode")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
                         if (q1Var.getMiniIconForCurrentState() == 2) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, bd.M0(2131754938, "AccActionDownload")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, hd.M0(2131754938, "AccActionDownload")));
                         }
                         if (!q1Var.I8 || q1Var.r8) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, bd.M0(2131744338, "SummaryTitle")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
                         }
                         arrayList6 = q1Var.P5.z2;
                         if (arrayList6 != null) {
@@ -716,8 +716,8 @@ public final class z0 extends AccessibilityNodeProvider {
                                 }
                                 Object obj3 = arrayList6.get(i44);
                                 i44++;
-                                if (((wi) obj3).O) {
-                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, bd.M0(2131751765, "CopyCode")));
+                                if (((fj) obj3).N) {
+                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, hd.M0(2131751765, "CopyCode")));
                                     break;
                                 }
                             }
@@ -809,13 +809,13 @@ public final class z0 extends AccessibilityNodeProvider {
                         if (q1Var.P7 != null) {
                             accessibilityNodeInfo2.addChild(q1Var, 497);
                         }
-                        ziVar = q1Var.P5;
-                        if (ziVar != null && (cvVar2 = ziVar.w2) != null) {
+                        ijVar = q1Var.P5;
+                        if (ijVar != null && (kvVar2 = ijVar.w2) != null) {
                             int i49 = 0;
-                            for (i18 = 0; i18 < cvVar2.g.size(); i18++) {
-                                xt xtVar = (xt) cvVar2.g.get(i18);
-                                if (xtVar.S()) {
-                                    int B = xtVar.B() + (xtVar.r == null ? 0 : 1);
+                            for (i18 = 0; i18 < kvVar2.g.size(); i18++) {
+                                fu fuVar = (fu) kvVar2.g.get(i18);
+                                if (fuVar.S()) {
+                                    int B = fuVar.B() + (fuVar.r == null ? 0 : 1);
                                     for (int i50 = 0; i50 < B; i50++) {
                                         accessibilityNodeInfo2.addChild(q1Var, i49 + 6000 + i50);
                                     }
@@ -824,9 +824,9 @@ public final class z0 extends AccessibilityNodeProvider {
                             }
                         }
                         if (staticLayoutArr[0] != null && staticLayoutArr[1] != null) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, bd.M0(2131754932, "AccActionOpenForwardedOrigin")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.M0(2131754932, "AccActionOpenForwardedOrigin")));
                         }
-                        if (q1Var.k1 && q1Var.getBackground() == null) {
+                        if (q1Var.j1 && q1Var.getBackground() == null) {
                             return accessibilityNodeInfo2;
                         }
                         accessibilityNodeInfo2.setSelected(true);
@@ -840,22 +840,22 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (q1Var.e6 || q1Var.ia == null || q1Var.P5.O3()) {
                     accessibilityNodeInfo = obtain2;
                     staticLayoutArr = staticLayoutArr2;
-                    j11 = j10;
+                    j10 = j3;
                     arrayList4 = arrayList2;
                 } else {
-                    spannableStringBuilder.append((CharSequence) l10.p(q1Var.ia));
+                    spannableStringBuilder.append((CharSequence) t10.p(q1Var.ia));
                     staticLayoutArr = staticLayoutArr2;
                     accessibilityNodeInfo = obtain2;
                     arrayList4 = arrayList2;
                     spannableStringBuilder.setSpan(new y0(this, q1Var.ia), 0, spannableStringBuilder.length(), 33);
                     CharSequence adminAccessibilityText = q1Var.getAdminAccessibilityText();
                     if (TextUtils.isEmpty(adminAccessibilityText)) {
-                        j11 = j10;
+                        j10 = j3;
                     } else if (q1Var.Y8) {
-                        j11 = j10;
-                        spannableStringBuilder.append(' ').append((CharSequence) bd.Z(q1Var.W8 ? 2131754727 : 2131754726, adminAccessibilityText));
+                        j10 = j3;
+                        spannableStringBuilder.append(' ').append((CharSequence) hd.Z(q1Var.W8 ? 2131754727 : 2131754726, adminAccessibilityText));
                     } else {
-                        j11 = j10;
+                        j10 = j3;
                         spannableStringBuilder.append((CharSequence) ", ").append(adminAccessibilityText);
                     }
                     spannableStringBuilder.append('\n');
@@ -873,36 +873,36 @@ public final class z0 extends AccessibilityNodeProvider {
                 }
                 document = q1Var.M1;
                 if (document != null && q1Var.L1 == 1) {
-                    s6 = org.telegram.messenger.w7.s(document);
-                    if (s6.indexOf(46) != -1) {
-                        spannableStringBuilder.append((CharSequence) bd.Z(2131754889, s6.substring(s6.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
+                    s5 = org.telegram.messenger.w7.s(document);
+                    if (s5.indexOf(46) != -1) {
+                        spannableStringBuilder.append((CharSequence) hd.Z(2131754889, s5.substring(s5.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
                     }
                 }
-                cvVar = q1Var.P5.w2;
-                if (cvVar == null && !cvVar.g.isEmpty()) {
+                kvVar = q1Var.P5.w2;
+                if (kvVar == null && !kvVar.g.isEmpty()) {
                     ArrayList arrayList14 = q1Var.P5.w2.g;
                     int size7 = arrayList14.size();
                     int i52 = 0;
                     while (i52 < size7) {
                         Object obj7 = arrayList14.get(i52);
                         i52++;
-                        xt xtVar2 = (xt) obj7;
-                        if (xtVar2.S()) {
+                        fu fuVar2 = (fu) obj7;
+                        if (fuVar2.S()) {
                             int length3 = spannableStringBuilder.length();
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                            xtVar2.k(spannableStringBuilder2);
+                            fuVar2.k(spannableStringBuilder2);
                             ArrayList arrayList15 = arrayList14;
-                            CharSequence y9 = xtVar2.y();
+                            CharSequence y10 = fuVar2.y();
                             int i53 = size7;
-                            CharSequence text = (!xtVar2.x || (staticLayout = xtVar2.d) == null) ? null : staticLayout.getText();
+                            CharSequence text = (!fuVar2.x || (staticLayout = fuVar2.d) == null) ? null : staticLayout.getText();
                             if (!TextUtils.isEmpty(text)) {
                                 spannableStringBuilder.append(text);
-                                if (!TextUtils.isEmpty(y9) || spannableStringBuilder2.length() > 0) {
+                                if (!TextUtils.isEmpty(y10) || spannableStringBuilder2.length() > 0) {
                                     spannableStringBuilder.append(' ');
                                 }
                             }
-                            if (!TextUtils.isEmpty(y9)) {
-                                spannableStringBuilder.append(y9);
+                            if (!TextUtils.isEmpty(y10)) {
+                                spannableStringBuilder.append(y10);
                                 if (spannableStringBuilder2.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) ", ");
                                 }
@@ -919,21 +919,21 @@ public final class z0 extends AccessibilityNodeProvider {
                     CharSequence charSequence5 = q1Var.P5.v;
                     if (charSequence5 instanceof Spanned) {
                         Spanned spanned2 = (Spanned) charSequence5;
-                        oi.h[] hVarArr = (oi.h[]) spanned2.getSpans(0, spanned2.length(), oi.h.class);
-                        if (hVarArr != null && hVarArr.length > 0) {
+                        ni.j[] jVarArr = (ni.j[]) spanned2.getSpans(0, spanned2.length(), ni.j.class);
+                        if (jVarArr != null && jVarArr.length > 0) {
                             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(charSequence5);
-                            Arrays.sort(hVarArr, new x0(spanned2, 0));
-                            int length4 = hVarArr.length;
+                            Arrays.sort(jVarArr, new x0(spanned2, 0));
+                            int length4 = jVarArr.length;
                             int i54 = 0;
                             while (i54 < length4) {
-                                oi.h hVar = hVarArr[i54];
+                                ni.j jVar = jVarArr[i54];
                                 int i55 = length4;
-                                int spanStart = spanned2.getSpanStart(hVar);
+                                int spanStart = spanned2.getSpanStart(jVar);
                                 if (spanStart < 0) {
                                     spanned = spanned2;
                                 } else {
                                     spanned = spanned2;
-                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(hVar.a) ? bd.L0(2131754897) : bd.Z(2131754896, wi.b(hVar.a)))) + ". "));
+                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(jVar.a) ? hd.L0(2131754897) : hd.Z(2131754896, fj.b(jVar.a)))) + ". "));
                                 }
                                 i54++;
                                 length4 = i55;
@@ -947,21 +947,21 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (q1Var.M1 != null && (((i14 = q1Var.L1) == 1 || i14 == 2 || i14 == 4) && q1Var.N3 == 1 && q1Var.z3 != null)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     boolean p42 = q1Var.P5.p4();
-                    spannableStringBuilder.append((CharSequence) bd.Y(!p42 ? 2131754742 : 2131754888, !p42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+                    spannableStringBuilder.append((CharSequence) hd.Y(!p42 ? 2131754742 : 2131754888, !p42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
                 }
                 if (!q1Var.P5.J3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) bd.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.x1(true), q1Var.P5.z1(true)));
+                    spannableStringBuilder.append((CharSequence) hd.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.x1(true), q1Var.P5.z1(true)));
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) bd.z((int) q1Var.P5.L0()));
+                    spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
                 } else if (q1Var.P5.Q4() || q1Var.xb) {
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) bd.z((int) q1Var.P5.L0()));
+                    spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (q1Var.P5.S2()) {
-                        spannableStringBuilder.append((CharSequence) bd.M0(2131754838, "AccDescrMsgNotPlayed"));
+                        spannableStringBuilder.append((CharSequence) hd.M0(2131754838, "AccDescrMsgNotPlayed"));
                     } else {
-                        spannableStringBuilder.append((CharSequence) bd.M0(2131754837, "AccDescrMsgPlayed"));
+                        spannableStringBuilder.append((CharSequence) hd.M0(2131754837, "AccDescrMsgPlayed"));
                     }
                 }
                 if (q1Var.i5 != null) {
@@ -969,17 +969,17 @@ public final class z0 extends AccessibilityNodeProvider {
                     spannableStringBuilder.append((CharSequence) q1Var.i5.question.text);
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (q1Var.W4) {
-                        M0 = bd.M0(2131750696, "FinalResults");
+                        M0 = hd.M0(2131750696, "FinalResults");
                     } else {
                         TLRPC.Poll poll2 = q1Var.i5;
-                        M0 = poll2.quiz ? poll2.public_voters ? bd.M0(2131746453, "QuizPoll") : bd.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? bd.M0(2131746596, "PublicPoll") : bd.M0(2131754249, "AnonymousPoll");
+                        M0 = poll2.quiz ? poll2.public_voters ? hd.M0(2131746444, "QuizPoll") : hd.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? hd.M0(2131746587, "PublicPoll") : hd.M0(2131754249, "AnonymousPoll");
                     }
                     spannableStringBuilder.append((CharSequence) M0);
                 }
                 if (q1Var.M1 != null) {
                     if (q1Var.L1 == 4) {
                         spannableStringBuilder.append((CharSequence) ", ");
-                        spannableStringBuilder.append((CharSequence) bd.z((int) q1Var.P5.L0()));
+                        spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
                     }
                     if (q1Var.N3 == 0 || q1Var.L1 == 1) {
                         spannableStringBuilder.append((CharSequence) ", ");
@@ -989,25 +989,25 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (!q1Var.P5.U4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append(q1Var.P5.j2());
-                } else if (zi.o1(q1Var.P5.k) != null && !TextUtils.isEmpty(q1Var.P5.z)) {
+                } else if (ij.o1(q1Var.P5.k) != null && !TextUtils.isEmpty(q1Var.P5.z)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     spannableStringBuilder.append(q1Var.P5.z);
                 }
                 if (q1Var.P5.O3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     StringBuilder sb5 = new StringBuilder();
-                    org.telegram.messenger.camera.q.q("TodayAt", 2131744122, sb5, " ");
+                    org.telegram.messenger.camera.q.q("TodayAt", 2131744113, sb5, " ");
                     sb5.append((Object) q1Var.D9);
-                    spannableStringBuilder.append((CharSequence) bd.Y(2131754789, "AccDescrReceivedDate", sb5.toString()));
+                    spannableStringBuilder.append((CharSequence) hd.Y(2131754789, "AccDescrReceivedDate", sb5.toString()));
                 } else if (q1Var.P5.r4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     if (q1Var.P5.p1) {
-                        spannableStringBuilder.append((CharSequence) bd.Y(2131754781, "AccDescrScheduledDate", q1Var.D9));
+                        spannableStringBuilder.append((CharSequence) hd.Y(2131754781, "AccDescrScheduledDate", q1Var.D9));
                     } else {
                         StringBuilder sb6 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("TodayAt", 2131744122, sb6, " ");
+                        org.telegram.messenger.camera.q.q("TodayAt", 2131744113, sb6, " ");
                         sb6.append((Object) q1Var.D9);
-                        spannableStringBuilder.append((CharSequence) bd.Y(2131754765, "AccDescrSentDate", sb6.toString()));
+                        spannableStringBuilder.append((CharSequence) hd.Y(2131754765, "AccDescrSentDate", sb6.toString()));
                         spannableStringBuilder.append((CharSequence) ", ");
                         if (q1Var.P5.G4()) {
                             str3 = "AccDescrMsgUnread";
@@ -1016,23 +1016,23 @@ public final class z0 extends AccessibilityNodeProvider {
                             str3 = "AccDescrMsgRead";
                             i13 = 2131754836;
                         }
-                        spannableStringBuilder.append((CharSequence) bd.M0(i13, str3));
+                        spannableStringBuilder.append((CharSequence) hd.M0(i13, str3));
                     }
                 } else if (q1Var.P5.p4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) bd.M0(2131754835, "AccDescrMsgSending"));
-                    RadialProgress2 radialProgress2 = q1Var.Q0;
+                    spannableStringBuilder.append((CharSequence) hd.M0(2131754835, "AccDescrMsgSending"));
+                    RadialProgress2 radialProgress2 = q1Var.P0;
                     float f15 = (radialProgress2.c ? radialProgress2.j : radialProgress2.i).w;
                     if (f15 > 0.0f) {
                         spannableStringBuilder.append((CharSequence) Integer.toString(Math.round(f15 * 100.0f))).append((CharSequence) "%");
                     }
                 } else if (q1Var.P5.o4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) bd.M0(2131754834, "AccDescrMsgSendingError"));
+                    spannableStringBuilder.append((CharSequence) hd.M0(2131754834, "AccDescrMsgSendingError"));
                 }
                 if (q1Var.getRepliesCount() > 0 && !q1Var.d2()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) bd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
                 }
                 tL_messageReactions = q1Var.P5.k.reactions;
                 if (tL_messageReactions != null && (arrayList5 = tL_messageReactions.results) != null) {
@@ -1046,25 +1046,25 @@ public final class z0 extends AccessibilityNodeProvider {
                             spannableStringBuilder.append((CharSequence) "\n");
                             ArrayList<TLRPC.MessagePeerReaction> arrayList16 = q1Var.P5.k.reactions.recent_reactions;
                             if (arrayList16 == null || arrayList16.size() != 1 || (messagePeerReaction = q1Var.P5.k.reactions.recent_reactions.get(0)) == null) {
-                                z14 = false;
+                                z13 = false;
                             } else {
-                                TLRPC.User a22 = hp.s1(q1Var.Z5).a2(Long.valueOf(zi.C1(messagePeerReaction.peer_id)));
-                                z14 = l10.B(a22);
+                                TLRPC.User a22 = qp.s1(q1Var.Z5).a2(Long.valueOf(ij.C1(messagePeerReaction.peer_id)));
+                                z13 = t10.B(a22);
                                 if (a22 != null) {
-                                    str4 = l10.i(a22);
+                                    str4 = t10.i(a22);
                                 }
                             }
-                            if (z14) {
-                                spannableStringBuilder.append((CharSequence) bd.Y(2131754725, "AccDescrYouReactedWith", str5));
+                            if (z13) {
+                                spannableStringBuilder.append((CharSequence) hd.Y(2131754725, "AccDescrYouReactedWith", str5));
                             } else {
-                                spannableStringBuilder.append((CharSequence) bd.Y(2131754791, "AccDescrReactedWith", str4, str5));
+                                spannableStringBuilder.append((CharSequence) hd.Y(2131754791, "AccDescrReactedWith", str4, str5));
                             }
                         } else if (i56 > 1) {
                             spannableStringBuilder.append((CharSequence) "\n");
-                            spannableStringBuilder.append((CharSequence) bd.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
+                            spannableStringBuilder.append((CharSequence) hd.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
                         }
                     } else {
-                        spannableStringBuilder.append((CharSequence) bd.M0(2131746395, "Reactions")).append((CharSequence) ": ");
+                        spannableStringBuilder.append((CharSequence) hd.M0(2131746386, "Reactions")).append((CharSequence) ": ");
                         int size8 = q1Var.P5.k.reactions.results.size();
                         int i57 = 0;
                         while (i57 < size8) {
@@ -1082,7 +1082,7 @@ public final class z0 extends AccessibilityNodeProvider {
                 if ((q1Var.P5.k.flags & 1024) == 0) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     i12 = 0;
-                    spannableStringBuilder.append((CharSequence) bd.G(q1Var.P5.k.views, "AccDescrNumberOfViews", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) hd.G(q1Var.P5.k.views, "AccDescrNumberOfViews", new Object[0]));
                 } else {
                     i12 = 0;
                 }
@@ -1094,24 +1094,24 @@ public final class z0 extends AccessibilityNodeProvider {
                     spannableStringBuilder.setSpan(new h(2, this, characterStyle3), spanStart2, spanEnd, 33);
                 }
                 q1Var.O2 = spannableStringBuilder;
-                q1Var.P2 = z13;
-                q1Var.Q2 = z16;
-                q1Var.R2 = j11;
+                q1Var.P2 = z12;
+                q1Var.Q2 = z15;
+                q1Var.R2 = j10;
                 if (Build.VERSION.SDK_INT < 24) {
                 }
                 accessibilityNodeInfo2.setEnabled(true);
                 collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
                 if (collectionItemInfo != null) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, bd.M0(2131754936, "AccActionMessageOptions")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
                 int iconForCurrentState2 = q1Var.getIconForCurrentState();
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? q1Var.P5.D == 16 ? bd.M0(2131752633, "CallAgain") : null : bd.M0(2131754933, "AccActionOpenFile") : bd.M0(2131754941, "AccActionCancelDownload") : bd.M0(2131754938, "AccActionDownload") : bd.M0(2131754930, "AccActionPause") : bd.M0(2131754929, "AccActionPlay")));
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, bd.M0(2131754937, "AccActionEnterSelectionMode")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
                 if (q1Var.getMiniIconForCurrentState() == 2) {
                 }
                 if (!q1Var.I8) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, bd.M0(2131744338, "SummaryTitle")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
                 arrayList6 = q1Var.P5.z2;
                 if (arrayList6 != null) {
                 }
@@ -1159,27 +1159,27 @@ public final class z0 extends AccessibilityNodeProvider {
                 accessibilityNodeInfo2.addChild(q1Var, 498);
                 if (q1Var.P7 != null) {
                 }
-                ziVar = q1Var.P5;
-                if (ziVar != null) {
+                ijVar = q1Var.P5;
+                if (ijVar != null) {
                     int i492 = 0;
-                    while (i18 < cvVar2.g.size()) {
+                    while (i18 < kvVar2.g.size()) {
                     }
                 }
                 if (staticLayoutArr[0] != null) {
-                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, bd.M0(2131754932, "AccActionOpenForwardedOrigin")));
+                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.M0(2131754932, "AccActionOpenForwardedOrigin")));
                 }
-                if (q1Var.k1) {
+                if (q1Var.j1) {
                 }
                 accessibilityNodeInfo2.setSelected(true);
                 return accessibilityNodeInfo2;
             }
         }
-        z13 = false;
-        zi ziVar52 = q1Var.P5;
-        if (ziVar52 == null) {
+        z12 = false;
+        ij ijVar52 = q1Var.P5;
+        if (ijVar52 == null) {
         }
-        zi ziVar62 = q1Var.P5;
-        if (ziVar62 == null) {
+        ij ijVar62 = q1Var.P5;
+        if (ijVar62 == null) {
         }
         if (q1Var.O2 == null) {
         }
@@ -1190,25 +1190,25 @@ public final class z0 extends AccessibilityNodeProvider {
         }
         accessibilityNodeInfo = obtain2;
         staticLayoutArr = staticLayoutArr2;
-        j11 = j10;
+        j10 = j3;
         arrayList4 = arrayList2;
         if (q1Var.r9) {
         }
         document = q1Var.M1;
         if (document != null) {
-            s6 = org.telegram.messenger.w7.s(document);
-            if (s6.indexOf(46) != -1) {
+            s5 = org.telegram.messenger.w7.s(document);
+            if (s5.indexOf(46) != -1) {
             }
         }
-        cvVar = q1Var.P5.w2;
-        if (cvVar == null) {
+        kvVar = q1Var.P5.w2;
+        if (kvVar == null) {
         }
         if (!TextUtils.isEmpty(q1Var.P5.v)) {
         }
         if (q1Var.M1 != null) {
             spannableStringBuilder.append((CharSequence) "\n");
             boolean p422 = q1Var.P5.p4();
-            spannableStringBuilder.append((CharSequence) bd.Y(!p422 ? 2131754742 : 2131754888, !p422 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+            spannableStringBuilder.append((CharSequence) hd.Y(!p422 ? 2131754742 : 2131754888, !p422 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
         }
         if (!q1Var.P5.J3()) {
         }
@@ -1222,7 +1222,7 @@ public final class z0 extends AccessibilityNodeProvider {
         }
         if (q1Var.getRepliesCount() > 0) {
             spannableStringBuilder.append((CharSequence) "\n");
-            spannableStringBuilder.append((CharSequence) bd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+            spannableStringBuilder.append((CharSequence) hd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
         }
         tL_messageReactions = q1Var.P5.k.reactions;
         if (tL_messageReactions != null) {
@@ -1236,24 +1236,24 @@ public final class z0 extends AccessibilityNodeProvider {
         while (r7 < r6) {
         }
         q1Var.O2 = spannableStringBuilder;
-        q1Var.P2 = z13;
-        q1Var.Q2 = z16;
-        q1Var.R2 = j11;
+        q1Var.P2 = z12;
+        q1Var.Q2 = z15;
+        q1Var.R2 = j10;
         if (Build.VERSION.SDK_INT < 24) {
         }
         accessibilityNodeInfo2.setEnabled(true);
         collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
         if (collectionItemInfo != null) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, bd.M0(2131754936, "AccActionMessageOptions")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
         int iconForCurrentState22 = q1Var.getIconForCurrentState();
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? q1Var.P5.D == 16 ? bd.M0(2131752633, "CallAgain") : null : bd.M0(2131754933, "AccActionOpenFile") : bd.M0(2131754941, "AccActionCancelDownload") : bd.M0(2131754938, "AccActionDownload") : bd.M0(2131754930, "AccActionPause") : bd.M0(2131754929, "AccActionPlay")));
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, bd.M0(2131754937, "AccActionEnterSelectionMode")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
         if (q1Var.getMiniIconForCurrentState() == 2) {
         }
         if (!q1Var.I8) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, bd.M0(2131744338, "SummaryTitle")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
         arrayList6 = q1Var.P5.z2;
         if (arrayList6 != null) {
         }
@@ -1289,12 +1289,12 @@ public final class z0 extends AccessibilityNodeProvider {
         accessibilityNodeInfo2.addChild(q1Var, 498);
         if (q1Var.P7 != null) {
         }
-        ziVar = q1Var.P5;
-        if (ziVar != null) {
+        ijVar = q1Var.P5;
+        if (ijVar != null) {
         }
         if (staticLayoutArr[0] != null) {
         }
-        if (q1Var.k1) {
+        if (q1Var.j1) {
         }
         accessibilityNodeInfo2.setSelected(true);
         return accessibilityNodeInfo2;
@@ -1308,7 +1308,7 @@ public final class z0 extends AccessibilityNodeProvider {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean performAction(int i3, int i10, Bundle bundle) {
+    public final boolean performAction(int i7, int i10, Bundle bundle) {
         l1 l1Var;
         a1 a1Var;
         TLRPC.Message message;
@@ -1316,26 +1316,26 @@ public final class z0 extends AccessibilityNodeProvider {
         boolean U;
         CharSequence D;
         q1 q1Var = this.a;
-        if (i3 == -1) {
+        if (i7 == -1) {
             q1Var.performAccessibilityAction(i10, bundle);
             return true;
         }
         if (i10 == 64) {
-            q1Var.g3(i3, 32768, null);
+            q1Var.h3(i7, 32768, null);
             return true;
         }
         r4 = null;
         Object[] objArr = null;
         if (i10 == 16) {
-            if (i3 == 5000) {
+            if (i7 == 5000) {
                 l1 l1Var2 = q1Var.Ra;
                 if (l1Var2 != null) {
                     l1Var2.s0(q1Var, q1Var.ia, 0.0f, 0.0f);
                     return true;
                 }
-            } else if (i3 >= 6000) {
+            } else if (i7 >= 6000) {
                 int[] iArr = {0};
-                xt b10 = b(iArr, i3);
+                fu b10 = b(iArr, i7);
                 if (b10 != null) {
                     int i11 = iArr[0];
                     CheckBoxBase checkBoxBase = b10.r;
@@ -1348,13 +1348,13 @@ public final class z0 extends AccessibilityNodeProvider {
                         U = false;
                     }
                     if (U) {
-                        q1Var.g3(i3, 1, null);
+                        q1Var.h3(i7, 1, null);
                         int i12 = iArr[0];
                         if (b10.r != null && i12 == 0) {
                             objArr = 1;
                         }
                         if (objArr != null) {
-                            D = bd.M0(b10.G() ? 2131754902 : 2131754830, null);
+                            D = hd.M0(b10.G() ? 2131754902 : 2131754830, null);
                         } else {
                             D = b10.D();
                         }
@@ -1362,144 +1362,144 @@ public final class z0 extends AccessibilityNodeProvider {
                         return true;
                     }
                 }
-            } else if (i3 >= 3000) {
-                ClickableSpan a10 = a(i3, true);
+            } else if (i7 >= 3000) {
+                ClickableSpan a10 = a(i7, true);
                 if (a10 != null) {
                     q1Var.Ra.N0(q1Var, a10, false);
-                    q1Var.g3(i3, 1, null);
+                    q1Var.h3(i7, 1, null);
                     return true;
                 }
             } else {
-                if (i3 < 2000) {
-                    if (i3 >= 1000) {
-                        int i13 = i3 - 1000;
+                if (i7 < 2000) {
+                    if (i7 >= 1000) {
+                        int i13 = i7 - 1000;
                         if (i13 < q1Var.H5.size()) {
                             c0 c0Var = (c0) q1Var.H5.get(i13);
                             l1 l1Var3 = q1Var.Ra;
                             if (l1Var3 != null && !c0Var.m) {
                                 org.telegram.messenger.o2 o2Var = c0Var.j;
                                 if (o2Var != null) {
-                                    l1Var3.H(q1Var, o2Var);
+                                    l1Var3.G(q1Var, o2Var);
                                 } else {
                                     TL_keyboard.KeyboardInlineButton keyboardInlineButton = c0Var.i;
                                     if (keyboardInlineButton != null) {
-                                        l1Var3.d1(q1Var, keyboardInlineButton);
+                                        l1Var3.b1(q1Var, keyboardInlineButton);
                                     }
                                 }
                             }
-                            q1Var.g3(i3, 1, null);
+                            q1Var.h3(i7, 1, null);
                             return true;
                         }
-                    } else if (i3 >= 500) {
-                        int i14 = i3 - 500;
+                    } else if (i7 >= 500) {
+                        int i14 = i7 - 500;
                         if (i14 < q1Var.P4.size()) {
                             p1 p1Var = (p1) q1Var.P4.get(i14);
                             if (q1Var.Ra != null) {
                                 ArrayList arrayList = new ArrayList();
                                 arrayList.add(p1Var.s);
-                                q1Var.Ra.i(q1Var, arrayList, -1, 0, 0);
+                                q1Var.Ra.j(q1Var, arrayList, -1, 0, 0);
                             }
-                            q1Var.g3(i3, 1, null);
+                            q1Var.h3(i7, 1, null);
                             return true;
                         }
                     } else {
-                        if (i3 == 495) {
+                        if (i7 == 495) {
                             q1Var.G0();
                             return true;
                         }
-                        if (i3 == 499) {
+                        if (i7 == 499) {
                             l1 l1Var4 = q1Var.Ra;
                             if (l1Var4 != null) {
-                                l1Var4.f1(q1Var, q1Var.x2);
+                                l1Var4.g1(q1Var, q1Var.x2);
                                 return true;
                             }
-                        } else if (i3 == 492) {
+                        } else if (i7 == 492) {
                             l1 l1Var5 = q1Var.Ra;
                             if (l1Var5 != null) {
-                                l1Var5.f1(q1Var, 5);
+                                l1Var5.g1(q1Var, 5);
                                 return true;
                             }
-                        } else if (i3 == 491) {
+                        } else if (i7 == 491) {
                             l1 l1Var6 = q1Var.Ra;
                             if (l1Var6 != null) {
-                                l1Var6.f1(q1Var, 5);
+                                l1Var6.g1(q1Var, 5);
                                 return true;
                             }
-                        } else if (i3 == 490) {
+                        } else if (i7 == 490) {
                             l1 l1Var7 = q1Var.Ra;
                             if (l1Var7 != null) {
-                                l1Var7.f1(q1Var, 31);
+                                l1Var7.g1(q1Var, 31);
                                 return true;
                             }
-                        } else if (i3 == 489) {
+                        } else if (i7 == 489) {
                             l1 l1Var8 = q1Var.Ra;
                             if (l1Var8 != null) {
-                                l1Var8.f1(q1Var, 30);
+                                l1Var8.g1(q1Var, 30);
                                 return true;
                             }
-                        } else if (i3 == 498) {
+                        } else if (i7 == 498) {
                             l1 l1Var9 = q1Var.Ra;
                             if (l1Var9 != null) {
-                                l1Var9.s(q1Var);
+                                l1Var9.r(q1Var);
                                 return true;
                             }
-                        } else if (i3 == 497) {
+                        } else if (i7 == 497) {
                             if (q1Var.Ra != null) {
                                 if (q1Var.n6 && !q1Var.l6) {
                                     TLRPC.MessageReplyHeader messageReplyHeader2 = q1Var.P5.k.reply_to;
                                 }
                                 if (q1Var.P5.C2() || q1Var.L7 || ((message = q1Var.P5.k) != null && (messageReplyHeader = message.reply_to) != null && messageReplyHeader.reply_from != null)) {
-                                    q1Var.Ra.W1(q1Var, q1Var.P5.O1(), 0.0f, 0.0f, false);
+                                    q1Var.Ra.R1(q1Var, q1Var.P5.O1(), 0.0f, 0.0f, false);
                                     return true;
                                 }
                             }
-                        } else if (i3 == 494) {
+                        } else if (i7 == 494) {
                             l1 l1Var10 = q1Var.Ra;
                             if (l1Var10 != null) {
                                 TLRPC.Chat chat = q1Var.ta;
                                 if (chat != null) {
-                                    l1Var10.U(q1Var, chat, q1Var.P5.k.fwd_from.channel_post, q1Var.h1, q1Var.i1, false);
+                                    l1Var10.U(q1Var, chat, q1Var.P5.k.fwd_from.channel_post, q1Var.g1, q1Var.h1, false);
                                     return true;
                                 }
                                 TLRPC.User user = q1Var.ra;
                                 if (user != null) {
-                                    l1Var10.s0(q1Var, user, q1Var.h1, q1Var.i1);
+                                    l1Var10.s0(q1Var, user, q1Var.g1, q1Var.h1);
                                     return true;
                                 }
                                 if (q1Var.ua != null) {
-                                    l1Var10.p(q1Var);
+                                    l1Var10.o(q1Var);
                                     return true;
                                 }
                             }
-                        } else if (i3 == 496) {
+                        } else if (i7 == 496) {
                             l1 l1Var11 = q1Var.Ra;
                             if (l1Var11 != null) {
                                 if (q1Var.t6) {
-                                    l1Var11.s(q1Var);
+                                    l1Var11.r(q1Var);
                                     return true;
                                 }
-                                l1Var11.y(q1Var);
+                                l1Var11.x(q1Var);
                                 return true;
                             }
-                        } else if (i3 == 493 && (a1Var = q1Var.I4) != null) {
+                        } else if (i7 == 493 && (a1Var = q1Var.I4) != null) {
                             a1Var.l();
                             return true;
                         }
                     }
                     return false;
                 }
-                ClickableSpan a11 = a(i3, false);
+                ClickableSpan a11 = a(i7, false);
                 if (a11 != null) {
                     q1Var.Ra.N0(q1Var, a11, false);
-                    q1Var.g3(i3, 1, null);
+                    q1Var.h3(i7, 1, null);
                     return true;
                 }
             }
         } else if (i10 == 32) {
-            ClickableSpan a12 = a(i3, i3 >= 3000);
+            ClickableSpan a12 = a(i7, i7 >= 3000);
             if (a12 != null && (l1Var = q1Var.Ra) != null) {
                 l1Var.N0(q1Var, a12, true);
-                q1Var.g3(i3, 2, null);
+                q1Var.h3(i7, 2, null);
             }
         }
         return true;

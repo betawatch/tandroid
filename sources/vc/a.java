@@ -1,70 +1,13 @@
 package vc;
 
-import e5.j;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.util.List;
-import java.util.logging.Level;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements Runnable {
-    public final InputStream a;
-    public final Socket b;
-    public final /* synthetic */ i c;
+public final class a {
+    public final String a;
+    public final String b;
 
-    public a(i iVar, InputStream inputStream, Socket socket) {
-        this.c = iVar;
-        this.a = inputStream;
-        this.b = socket;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        OutputStream outputStream;
-        InputStream inputStream = this.a;
-        i iVar = this.c;
-        Socket socket = this.b;
-        OutputStream outputStream2 = null;
-        try {
-            try {
-                outputStream = socket.getOutputStream();
-            } catch (Exception e10) {
-                e = e10;
-            }
-        } catch (Throwable th2) {
-            th = th2;
-        }
-        try {
-            d dVar = new d(iVar, new j(3), this.a, outputStream, socket.getInetAddress());
-            while (!socket.isClosed()) {
-                dVar.c();
-            }
-            i.d(outputStream);
-        } catch (Exception e11) {
-            e = e11;
-            outputStream2 = outputStream;
-            if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
-                i.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
-            }
-            i.d(outputStream2);
-            i.d(inputStream);
-            i.d(socket);
-            ((List) iVar.c.c).remove(this);
-        } catch (Throwable th3) {
-            th = th3;
-            outputStream2 = outputStream;
-            i.d(outputStream2);
-            i.d(inputStream);
-            i.d(socket);
-            ((List) iVar.c.c).remove(this);
-            throw th;
-        }
-        i.d(inputStream);
-        i.d(socket);
-        ((List) iVar.c.c).remove(this);
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 }

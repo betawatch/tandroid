@@ -1,20 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class uz0 extends j01 {
-    public final /* synthetic */ g11 n3;
+public final /* synthetic */ class uz0 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.qi0 {
+    public final /* synthetic */ q11 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz0(g11 g11Var, Context context) {
-        super(g11Var, context);
-        this.n3 = g11Var;
+    public /* synthetic */ uz0(q11 q11Var) {
+        this.a = q11Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i3) {
-        this.n3.h();
+    @Override // org.telegram.ui.Components.qi0
+    public void e() {
+        this.a.m();
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        q11 q11Var = this.a;
+        int i10 = q11Var.V;
+        ConnectionsManager.getInstance(i10).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
+        org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i10);
+        ArrayList[] arrayListArr = b02.E0;
+        ArrayList arrayList = arrayListArr[0];
+        if (arrayList != null) {
+            arrayList.clear();
+        }
+        b02.D0[0] = 0;
+        b02.getMessagesStorage().a.c(new org.telegram.messenger.fg(b02, 8));
+        ArrayList arrayList2 = arrayListArr[0];
+        q11Var.B(false, true, true);
     }
 }

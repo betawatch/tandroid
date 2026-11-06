@@ -1,43 +1,42 @@
 package com.google.firebase.messaging;
 
+import a8.b1;
+import ab.h;
+import ab.z;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.media.session.a0;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.tasks.Tasks;
-import e5.r;
+import d6.i;
+import f5.r;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import l6.c;
-import l6.l;
-import l6.m;
-import l6.n;
-import org.telegram.ui.Components.y00;
-import x7.a7;
-import z7.q0;
-import za.f;
-import za.o;
+import m6.c;
+import m6.m;
+import m6.n;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class FirebaseMessagingService extends f {
+public class FirebaseMessagingService extends h {
     public static final ArrayDeque h = new ArrayDeque(10);
     public c f;
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01cb  */
-    @Override // za.f
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0180  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01c5  */
+    @Override // ab.h
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(Intent intent) {
         String stringExtra;
         c cVar;
-        int i3;
+        int i7;
         String action = intent.getAction();
         if (!"com.google.android.c2dm.intent.RECEIVE".equals(action) && !"com.google.firebase.messaging.RECEIVE_DIRECT_BOOT".equals(action)) {
             if ("com.google.firebase.messaging.NEW_TOKEN".equals(action)) {
@@ -83,10 +82,10 @@ public class FirebaseMessagingService extends f {
                 }
                 n i10 = n.i(cVar.b);
                 synchronized (i10) {
-                    i3 = i10.a;
-                    i10.a = i3 + 1;
+                    i7 = i10.a;
+                    i10.a = i7 + 1;
                 }
-                i10.k(new l(i3, 3, bundle, 0));
+                i10.k(new m(i7, 3, bundle, 0));
                 return;
             }
             if (arrayDeque.size() >= 10) {
@@ -102,37 +101,36 @@ public class FirebaseMessagingService extends f {
             case "deleted_messages":
                 break;
             case "gcm":
-                a7.b(intent);
+                b1.b(intent);
                 Bundle extras = intent.getExtras();
                 if (extras == null) {
                     extras = new Bundle();
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (y00.w(extras)) {
-                    y00 y00Var = new y00();
-                    y00Var.a = new Bundle(extras);
+                if (i.l0(extras)) {
+                    i iVar = new i(extras);
                     ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new r("Firebase-Messaging-Network-Io"));
                     try {
-                        if (new q0(this, y00Var, newSingleThreadExecutor).b()) {
+                        if (new a0(this, iVar, newSingleThreadExecutor, 5).k()) {
                             break;
                         } else {
                             newSingleThreadExecutor.shutdown();
-                            if (a7.d(intent)) {
-                                a7.c("_nf", intent.getExtras());
+                            if (b1.d(intent)) {
+                                b1.c("_nf", intent.getExtras());
                             }
                         }
                     } finally {
                         newSingleThreadExecutor.shutdown();
                     }
                 }
-                c(new o(extras));
+                c(new z(extras));
                 break;
             case "send_error":
                 if (intent.getStringExtra("google.message_id") == null) {
                     intent.getStringExtra("message_id");
                 }
                 String stringExtra4 = intent.getStringExtra("error");
-                new m(stringExtra4);
+                new ab.a0(stringExtra4);
                 if (stringExtra4 != null) {
                     stringExtra4.toLowerCase(Locale.US).getClass();
                     break;
@@ -152,7 +150,7 @@ public class FirebaseMessagingService extends f {
         }
     }
 
-    public void c(o oVar) {
+    public void c(z zVar) {
     }
 
     public void d(String str) {

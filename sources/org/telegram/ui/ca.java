@@ -1,38 +1,46 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class ca extends ha {
-    public final /* synthetic */ int K = 0;
-    public final /* synthetic */ org.telegram.ui.Components.sj0 L;
+public final class ca implements org.telegram.ui.Components.bj0 {
+    public final /* synthetic */ la a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ca(da daVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(activity, e6Var);
-        this.L = daVar;
-        this.a = true;
+    public ca(la laVar) {
+        this.a = laVar;
     }
 
-    @Override // org.telegram.ui.ha
-    public final String getUsernameEditable() {
-        switch (this.K) {
-            case 0:
-                return ((da) this.L).c.r;
-            default:
-                bh.g gVar = ((zn) this.L).c.i3.b;
-                if (gVar == null) {
-                    return null;
-                }
-                return gVar.getText().toString();
+    @Override // org.telegram.ui.Components.bj0
+    public final void c(int i7, View view) {
+        boolean z9 = view instanceof ia;
+        la laVar = this.a;
+        if (!z9) {
+            if (view instanceof ga) {
+                laVar.j0(true);
+                return;
+            }
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ca(zn znVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.L = znVar;
+        ia iaVar = (ia) view;
+        TLRPC.TL_username tL_username = iaVar.w;
+        if (tL_username == null || iaVar.r) {
+            return;
+        }
+        if (tL_username.editable && laVar.y == 0) {
+            laVar.b.y0(0);
+            laVar.j0(true);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, laVar.getParentActivity(), laVar.getResourceProvider());
+        String M0 = org.telegram.messenger.hd.M0(tL_username.active ? 2131743665 : 2131743672, null);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.R = M0;
+        u1Var.T = org.telegram.messenger.hd.M0(tL_username.active ? 2131743663 : 2131743670, null);
+        alertDialog$Builder.k(org.telegram.messenger.hd.M0(tL_username.active ? 2131749324 : 2131745354, null), new bg.f0(this, tL_username, i7, view, 1));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.messenger.ch(18));
+        alertDialog$Builder.p();
     }
 }

@@ -1,68 +1,22 @@
 package p4;
 
-import android.graphics.Bitmap;
-import android.media.MediaDescription;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class h implements Parcelable {
-    public static final Parcelable.Creator<h> CREATOR = new n8.g(9);
-    public final String a;
-    public final CharSequence b;
-    public final CharSequence c;
-    public final CharSequence d;
-    public final Bitmap e;
-    public byte[] f;
-    public final Uri h;
-    public final Bundle n;
-    public final Uri r;
-    public MediaDescription s;
+public final class h {
+    public final Object a;
+    public final com.google.android.gms.common.api.internal.s b;
+    public j1 d;
+    public e2.y0 e;
+    public boolean f;
+    public final ArrayDeque c = new ArrayDeque();
+    public e2.y0 g = e2.y0.b;
 
-    public h(String str, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Bitmap bitmap, Uri uri, Bundle bundle, Uri uri2) {
-        this.a = str;
-        this.b = charSequence;
-        this.c = charSequence2;
-        this.d = charSequence3;
-        this.e = bitmap;
-        this.h = uri;
-        this.n = bundle;
-        this.r = uri2;
-    }
-
-    public final MediaDescription a() {
-        MediaDescription mediaDescription = this.s;
-        if (mediaDescription != null) {
-            return mediaDescription;
-        }
-        MediaDescription.Builder builder = new MediaDescription.Builder();
-        builder.setMediaId(this.a);
-        builder.setTitle(this.b);
-        builder.setSubtitle(this.c);
-        builder.setDescription(this.d);
-        builder.setIconBitmap(this.e);
-        builder.setIconUri(this.h);
-        builder.setExtras(this.n);
-        builder.setMediaUri(this.r);
-        MediaDescription build = builder.build();
-        this.s = build;
-        return build;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final String toString() {
-        return ((Object) this.b) + ", " + ((Object) this.c) + ", " + ((Object) this.d);
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        a().writeToParcel(parcel, i3);
+    public h(Object obj, com.google.android.gms.common.api.internal.s sVar, j1 j1Var, e2.y0 y0Var) {
+        this.a = obj;
+        this.b = sVar;
+        this.d = j1Var;
+        this.e = y0Var;
     }
 }

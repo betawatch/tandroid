@@ -2,65 +2,60 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class nh0 extends u4.h0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ uh0 h;
+public final class nh0 extends LinearLayout {
+    public boolean a;
 
-    public nh0(uh0 uh0Var, int i3, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        this.h = uh0Var;
-        this.c = i3;
-        this.d = context;
-        this.e = e6Var;
-        this.f = z10;
+    public nh0(Context context) {
+        super(context);
     }
 
-    @Override // u4.h0
-    public final int b() {
-        uh0 uh0Var = this.h;
-        return uh0Var.n.size() + ((uh0Var.I.isEmpty() || org.telegram.messenger.hp.s1(this.c).D3()) ? 0 : 1);
-    }
-
-    @Override // u4.h0
-    public final int d(int i3) {
-        return i3 < this.h.n.size() ? 0 : 1;
-    }
-
-    @Override // u4.h0
-    public final void t(u4.d1 d1Var, int i3) {
-        if (d1Var.f == 0) {
-            ((org.telegram.ui.Cells.l6) d1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i3));
-        }
-    }
-
-    @Override // u4.h0
-    public final u4.d1 x(ViewGroup viewGroup, int i3) {
-        FrameLayout l6Var;
-        if (i3 != 0) {
-            uh0 uh0Var = this.h;
-            h90 h90Var = uh0Var.K;
-            if (h90Var == null) {
-                uh0Var.i();
-            } else if (h90Var.getParent() != null) {
-                ((ViewGroup) uh0Var.K.getParent()).removeView(uh0Var.K);
-            }
-            Context context = this.d;
-            l6Var = new FrameLayout(context);
-            View view = new View(context);
-            org.telegram.ui.ActionBar.r6.j(view, org.telegram.ui.ActionBar.r6.L(0.06f, org.telegram.ui.ActionBar.k6.E8), this.e);
-            l6Var.addView(view, b8.mf.c(8.0f, -1));
-            l6Var.addView(uh0Var.K, b8.mf.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        jh0 jh0Var = null;
+        if (this.a) {
+            i11 = 0;
         } else {
-            l6Var = new org.telegram.ui.Cells.l6(0, this.c, this.d, this.e, true, this.f);
+            i11 = 0;
+            for (int i12 = 0; i12 < getChildCount(); i12++) {
+                if (getChildAt(i12) instanceof rh0) {
+                    jh0Var = ((rh0) getChildAt(i12)).e;
+                    if (jh0Var.getAdapter().b() == jh0Var.getChildCount()) {
+                        int childCount = jh0Var.getChildCount();
+                        for (int i13 = 0; i13 < childCount; i13++) {
+                            jh0Var.getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), 0), i10);
+                            if (jh0Var.getChildAt(i13).getMeasuredWidth() > i11) {
+                                i11 = jh0Var.getChildAt(i13).getMeasuredWidth();
+                            }
+                        }
+                        i11 += org.telegram.messenger.g0.L(16.0f);
+                    }
+                }
+            }
         }
-        return new bj0(l6Var);
+        int size = View.MeasureSpec.getSize(i7);
+        if (size < org.telegram.messenger.g0.L(240.0f)) {
+            size = org.telegram.messenger.g0.L(240.0f);
+        }
+        if (size > org.telegram.messenger.g0.L(280.0f)) {
+            size = org.telegram.messenger.g0.L(280.0f);
+        }
+        if (size < 0) {
+            size = 0;
+        }
+        if (i11 == 0 || i11 >= size) {
+            i11 = size;
+        }
+        if (jh0Var != null) {
+            for (int i14 = 0; i14 < jh0Var.getChildCount(); i14++) {
+                jh0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
+            }
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
     }
 }

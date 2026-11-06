@@ -1,57 +1,36 @@
 package bi;
 
-import android.text.TextUtils;
-import org.telegram.messenger.u10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r0 implements u10 {
+public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ r0(a1 a1Var, String str, int i3) {
-        this.a = i3;
-        this.b = a1Var;
-        this.c = str;
+    public /* synthetic */ r0(int i7, int i10, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = i7;
+        this.b = i10;
+        this.c = f2Var;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final void a(Object obj) {
-        e eVar = (e) obj;
-        switch (this.a) {
-            case 0:
-                a1 a1Var = this.b;
-                if (TextUtils.equals(a1Var.d, this.c)) {
-                    boolean z10 = a1Var.u0 == null;
-                    a1Var.u0 = eVar;
-                    if (!a1Var.w0) {
-                        if (!z10) {
-                            a1Var.j1(eVar);
-                            break;
-                        } else {
-                            a1Var.t0.a(eVar);
-                            a1Var.invalidate();
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                a1 a1Var2 = this.b;
-                if (TextUtils.equals(a1Var2.e, this.c)) {
-                    a1Var2.v0 = eVar;
-                    if (a1Var2.w0 && a1Var2.x0 && a1Var2.B0) {
-                        a1Var2.B0 = false;
-                        a1Var2.A0 = System.currentTimeMillis() + 60000;
-                        a1Var2.B2 = -1;
-                    }
-                    if (a1Var2.w0) {
-                        a1Var2.j1(eVar);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
+        vf.b h = u1Var.h(-1, true, true);
+        h.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i10 = this.b;
+        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_resolveStarGiftOffer, new v0(i10, f2Var, h, u1Var));
+    }
+
+    public /* synthetic */ r0(ys ysVar, int i7, int i10) {
+        this.c = ysVar;
+        this.a = i7;
+        this.b = i10;
     }
 }

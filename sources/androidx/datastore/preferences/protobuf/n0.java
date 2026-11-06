@@ -1,11 +1,11 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class n0 {
     public final m0 a;
 
-    public n0(v1 v1Var, v1 v1Var2, o1.h hVar) {
+    public n0(v1 v1Var, v1 v1Var2, p1.h hVar) {
         this.a = new m0(v1Var, v1Var2, hVar);
     }
 
@@ -35,12 +35,12 @@ public final class n0 {
     public static int a(m0 m0Var, Object obj, Object obj2) {
         int k10;
         int size;
-        int j10;
+        int j3;
         v1 v1Var;
         int size2;
-        int j11;
+        int j10;
         v1 v1Var2 = m0Var.a;
-        int i3 = s.c;
+        int i7 = s.c;
         int i10 = 1;
         int i11 = m.i(1);
         s1 s1Var = v1.d;
@@ -92,26 +92,26 @@ public final class n0 {
                             return i10 + i13 + i12;
                         }
                         size2 = ((h) obj2).size();
-                        j11 = m.j(size2);
-                        i10 = j11 + size2;
+                        j10 = m.j(size2);
+                        i10 = j10 + size2;
                         return i10 + i13 + i12;
                     case 9:
                         i10 = ((z) ((a) obj2)).a(null);
                         return i10 + i13 + i12;
                     case 10:
                         size2 = ((z) ((a) obj2)).a(null);
-                        j11 = m.j(size2);
-                        i10 = j11 + size2;
+                        j10 = m.j(size2);
+                        i10 = j10 + size2;
                         return i10 + i13 + i12;
                     case 11:
                         if (obj2 instanceof h) {
                             size2 = ((h) obj2).size();
-                            j11 = m.j(size2);
+                            j10 = m.j(size2);
                         } else {
                             size2 = ((byte[]) obj2).length;
-                            j11 = m.j(size2);
+                            j10 = m.j(size2);
                         }
-                        i10 = j11 + size2;
+                        i10 = j10 + size2;
                         return i10 + i13 + i12;
                     case 12:
                         i10 = m.j(((Integer) obj2).intValue());
@@ -208,8 +208,8 @@ public final class n0 {
             case 8:
                 if (obj instanceof h) {
                     size = ((h) obj).size();
-                    j10 = m.j(size);
-                    k10 = size + j10;
+                    j3 = m.j(size);
+                    k10 = size + j3;
                     int i1222222222 = k10 + i11;
                     v1Var = m0Var.b;
                     int i1322222222 = m.i(2);
@@ -238,8 +238,8 @@ public final class n0 {
                 }
             case 10:
                 size = ((z) ((a) obj)).a(null);
-                j10 = m.j(size);
-                k10 = size + j10;
+                j3 = m.j(size);
+                k10 = size + j3;
                 int i1222222222222 = k10 + i11;
                 v1Var = m0Var.b;
                 int i1322222222222 = m.i(2);
@@ -250,12 +250,12 @@ public final class n0 {
             case 11:
                 if (obj instanceof h) {
                     size = ((h) obj).size();
-                    j10 = m.j(size);
+                    j3 = m.j(size);
                 } else {
                     size = ((byte[]) obj).length;
-                    j10 = m.j(size);
+                    j3 = m.j(size);
                 }
-                k10 = size + j10;
+                k10 = size + j3;
                 int i12222222222222 = k10 + i11;
                 v1Var = m0Var.b;
                 int i13222222222222 = m.i(2);

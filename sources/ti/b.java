@@ -1,94 +1,54 @@
 package ti;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import android.widget.ImageView;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final class b {
-    public static SparseIntArray b;
-    public static final b c = new b();
-    public final SparseArray a;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public b() {
-        this.a = new SparseArray();
+    public /* synthetic */ b(i iVar, int i7) {
+        this.a = i7;
+        this.b = iVar;
     }
 
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i3 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i3 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i3++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                i iVar = this.b;
+                ImageView imageView = iVar.l;
+                if (imageView != null) {
+                    imageView.setVisibility(8);
+                    iVar.l.setImageDrawable(null);
+                    break;
                 }
-            } else {
-                while (i3 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i3++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
-        }
-    }
-
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String c(int i3, Context context, String str) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i3 == 0) {
-            return b10;
-        }
-        if (context != null && i3 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i10 = 0; i10 < readInt32; i10++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                break;
+            case 1:
+                i iVar2 = this.b;
+                if (iVar2.b() && iVar2.c()) {
+                    float f10 = iVar2.M[0];
+                    if (iVar2.b.R(f10 >= ((float) iVar2.x) * 0.5f, f10, iVar2.G) && !iVar2.u) {
+                        iVar2.u = true;
+                        iVar2.o(true);
+                        if (!iVar2.w) {
+                            iVar2.w = true;
+                            g0.i3(iVar2.P, 1500L);
+                            break;
                         }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
                     }
-                } catch (IOException e10) {
-                    throw new RuntimeException(e10);
                 }
-            }
-            int i11 = b.get(i3);
-            if (i11 != 0) {
-                return (String) this.a.get(i11);
-            }
+                break;
+            case 2:
+                g0.h3(new b(this.b, 0));
+                break;
+            default:
+                i iVar3 = this.b;
+                iVar3.getClass();
+                g0.h3(new b(iVar3, 0));
+                break;
         }
-        return null;
-    }
-
-    public b(a aVar) {
-        SparseArray sparseArray = aVar.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

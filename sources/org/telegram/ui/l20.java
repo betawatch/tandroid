@@ -1,45 +1,49 @@
 package org.telegram.ui;
 
-import android.widget.LinearLayout;
+import android.content.SharedPreferences;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class l20 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.cb0 b;
-    public final /* synthetic */ h20 c;
-    public final /* synthetic */ i20 d;
+public final class l20 implements org.telegram.ui.ActionBar.p2 {
+    public final /* synthetic */ c40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l20(LaunchActivity launchActivity, org.telegram.ui.Components.cb0 cb0Var, h20 h20Var, i20 i20Var) {
-        super(launchActivity);
-        this.b = cb0Var;
-        this.c = h20Var;
-        this.d = i20Var;
-        this.a = false;
+    public l20(c40 c40Var) {
+        this.a = c40Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        this.a = true;
-        org.telegram.ui.Components.cb0 cb0Var = this.b;
-        cb0Var.setItemCount(5);
-        h20 h20Var = this.c;
-        h20Var.setItemCount(5);
-        i20 i20Var = this.d;
-        i20Var.setItemCount(5);
-        cb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
-        h20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
-        i20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
-        this.a = false;
-        super.onMeasure(i3, i10);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void v() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-        super.requestLayout();
+        c40 c40Var = this.a;
+        if (c40Var.w3 == 6) {
+            SharedPreferences e12 = org.telegram.messenger.qp.e1();
+            if (e12.getBoolean("reminderhint", false)) {
+                return;
+            }
+            e12.edit().putBoolean("reminderhint", true).commit();
+            if (c40Var.e2 == null) {
+                org.telegram.ui.Components.y20 y20Var = new org.telegram.ui.Components.y20(c40Var.getContext(), 8);
+                c40Var.e2 = y20Var;
+                y20Var.setAlpha(0.0f);
+                c40Var.e2.setVisibility(4);
+                c40Var.e2.setShowingDuration(4000L);
+                c40Var.b.addView(c40Var.e2, c8.ha.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
+                c40Var.e2.setText(org.telegram.messenger.hd.M0(2131743439, null));
+                c40Var.e2.b();
+            }
+            c40Var.e2.setExtraTranslationY(-org.telegram.messenger.g0.m);
+            c40Var.e2.c(c40Var.s1);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public final boolean x() {
+        return true;
     }
 }

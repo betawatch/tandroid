@@ -3,48 +3,50 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class w extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x b;
+    public final /* synthetic */ y b;
 
-    public /* synthetic */ w(x xVar, int i3) {
-        this.a = i3;
-        this.b = xVar;
+    public /* synthetic */ w(y yVar, int i7) {
+        this.a = i7;
+        this.b = yVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                x xVar = this.b;
-                xVar.O0 = null;
-                xVar.E.F = false;
-                r rVar = xVar.F;
-                if (rVar != null) {
-                    if (rVar.getParent() != null) {
-                        xVar.removeView(xVar.F);
-                        xVar.F.e();
-                    }
-                    xVar.F = null;
+                y yVar = this.b;
+                yVar.E = false;
+                yVar.invalidate();
+                break;
+            case 1:
+                y yVar2 = this.b;
+                x xVar = yVar2.b0;
+                float f10 = yVar2.W ? 0.0f : 1.0f;
+                yVar2.a0 = f10;
+                xVar.setAlpha(f10);
+                xVar.setVisibility(yVar2.W ? 8 : 0);
+                yVar2.a.invalidate();
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                y yVar3 = this.b;
+                yVar3.J0 = null;
+                u uVar = yVar3.a;
+                uVar.setRotationY(0.0f);
+                if (!yVar3.K0) {
+                    uVar.d.clearImage();
                     break;
                 }
                 break;
-            case 1:
-                super.onAnimationEnd(animator);
-                x xVar2 = this.b;
-                xVar2.K0 = null;
-                xVar2.J0 = 0.0f;
-                xVar2.invalidate();
+            case 3:
+                this.b.E = false;
                 break;
             default:
-                x xVar3 = this.b;
-                xVar3.C0 = null;
-                xVar3.z0 = 1.0f;
-                xVar3.s0 = 0.0f;
-                xVar3.t0 = 0.0f;
-                xVar3.invalidate();
+                this.b.E = false;
                 break;
         }
     }

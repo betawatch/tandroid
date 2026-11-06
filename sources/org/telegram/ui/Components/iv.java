@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class iv extends FrameLayout {
-    public final /* synthetic */ ey a;
+public final class iv implements View.OnFocusChangeListener {
+    public final /* synthetic */ gy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv(ey eyVar, Context context) {
-        super(context);
-        this.a = eyVar;
+    public iv(gy gyVar) {
+        this.a = gyVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        ey eyVar = this.a;
-        lv lvVar = eyVar.p0;
-        if (view != eyVar.i0) {
-            return super.drawChild(canvas, view, j10);
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z9) {
+        if (z9) {
+            String[] G0 = org.telegram.messenger.g0.G0();
+            gy gyVar = this.a;
+            gyVar.W0 = G0;
+            org.telegram.messenger.ui.b0(gyVar.c1).M(gyVar.W0, false);
         }
-        canvas.save();
-        canvas.clipRect(0.0f, lvVar.getY() + lvVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
     }
 }

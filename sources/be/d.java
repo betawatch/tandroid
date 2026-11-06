@@ -1,22 +1,17 @@
 package be;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.ServiceConfigurationError;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final Collection a;
+public final /* synthetic */ class d extends kotlin.jvm.internal.i implements rd.p {
+    public static final d a = new d(2, e.class, "createSegment", "createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;", 1);
 
-    static {
-        try {
-            Iterator it = Arrays.asList(new xd.b()).iterator();
-            kotlin.jvm.internal.j.e(it, "<this>");
-            a = td.d.a(new td.a(new td.e(it, 1)));
-        } catch (Throwable th2) {
-            throw new ServiceConfigurationError(th2.getMessage(), th2);
-        }
+    @Override // rd.p
+    public final Object invoke(Object obj, Object obj2) {
+        long longValue = ((Number) obj).longValue();
+        k kVar = (k) obj2;
+        k kVar2 = e.a;
+        c cVar = kVar.e;
+        kotlin.jvm.internal.j.b(cVar);
+        return new k(longValue, kVar, cVar, 0);
     }
 }

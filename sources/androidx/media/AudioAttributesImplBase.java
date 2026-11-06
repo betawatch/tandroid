@@ -1,10 +1,10 @@
 package androidx.media;
 
 import java.util.Arrays;
-import k2.p1;
-import org.telegram.messenger.hs;
+import jg.g;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -13,7 +13,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int d = -1;
 
     public final boolean equals(Object obj) {
-        int i3;
+        int i7;
         if (!(obj instanceof AudioAttributesImplBase)) {
             return false;
         }
@@ -26,14 +26,14 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 int i13 = audioAttributesImplBase.a;
                 int i14 = AudioAttributesCompat.b;
                 if ((i11 & 1) != 1) {
-                    i3 = 4;
+                    i7 = 4;
                     if ((i11 & 4) != 4) {
                         switch (i13) {
                             case 2:
-                                i3 = 0;
+                                i7 = 0;
                                 break;
                             case 3:
-                                i3 = 8;
+                                i7 = 8;
                                 break;
                             case 4:
                                 break;
@@ -42,37 +42,37 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                             case 8:
                             case 9:
                             case 10:
-                                i3 = 5;
+                                i7 = 5;
                                 break;
                             case 6:
-                                i3 = 2;
+                                i7 = 2;
                                 break;
                             case 11:
-                                i3 = 10;
+                                i7 = 10;
                                 break;
                             case 12:
                             default:
-                                i3 = 3;
+                                i7 = 3;
                                 break;
                             case 13:
-                                i3 = 1;
+                                i7 = 1;
                                 break;
                         }
                     } else {
-                        i3 = 6;
+                        i7 = 6;
                     }
                 } else {
-                    i3 = 7;
+                    i7 = 7;
                 }
             } else {
-                i3 = i12;
+                i7 = i12;
             }
-            if (i3 == 6) {
+            if (i7 == 6) {
                 i11 |= 4;
-            } else if (i3 == 7) {
+            } else if (i7 == 7) {
                 i11 |= 1;
             }
-            if (i10 == (i11 & hs.w4) && this.a == audioAttributesImplBase.a && this.d == i12) {
+            if (i10 == (i11 & qs.w4) && this.a == audioAttributesImplBase.a && this.d == i12) {
                 return true;
             }
         }
@@ -92,9 +92,9 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
             sb2.append(" derived");
         }
         sb2.append(" usage=");
-        int i3 = this.a;
+        int i7 = this.a;
         int i10 = AudioAttributesCompat.b;
-        switch (i3) {
+        switch (i7) {
             case 0:
                 str = "USAGE_UNKNOWN";
                 break;
@@ -142,7 +142,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = p1.i(i3, "unknown usage ");
+                str = g.j(i7, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

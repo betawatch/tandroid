@@ -21,12 +21,12 @@ public class Base64 {
             int length = ((bArr.length + 2) / 3) * 4;
             byte[] bArr2 = new byte[length];
             int length2 = bArr.length;
-            int i3 = (length2 / 3) * 3;
+            int i7 = (length2 / 3) * 3;
             int i10 = 0;
             int i11 = 0;
             while (true) {
                 char[] cArr = a;
-                if (i10 >= i3) {
+                if (i10 >= i7) {
                     if (i10 < length2) {
                         int i12 = i10 + 1;
                         int i13 = bArr[i10] & 255;
@@ -52,7 +52,7 @@ public class Base64 {
                     }
                     return new String(bArr2, 0, 0, bArr2.length);
                 }
-                int min = Math.min(i10 + i3, i3);
+                int min = Math.min(i10 + i7, i7);
                 int i18 = i10;
                 int i19 = i11;
                 while (i18 < min) {
@@ -86,8 +86,8 @@ public class Base64 {
             int[] iArr = new int[256];
             a = iArr;
             Arrays.fill(iArr, -1);
-            for (int i3 = 0; i3 < 64; i3++) {
-                a[Encoder.a[i3]] = i3;
+            for (int i7 = 0; i7 < 64; i7++) {
+                a[Encoder.a[i7]] = i7;
             }
             a[61] = -2;
             int[] iArr2 = new int[256];
@@ -112,13 +112,13 @@ public class Base64 {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public byte[] decode(String str) {
-            int i3;
+            int i7;
             int i10;
             int i11;
-            char c2;
+            char c10;
             byte[] bytes = str.getBytes(j$.sun.nio.cs.c.a);
             int length = bytes.length;
-            char c10 = 2;
+            char c11 = 2;
             if (length == 0) {
                 i10 = 0;
             } else {
@@ -126,14 +126,14 @@ public class Base64 {
                     throw new IllegalArgumentException("Input byte[] should at least have 2 bytes for base64 bytes");
                 }
                 if (bytes[length - 1] == 61) {
-                    i3 = bytes[length + (-2)] == 61 ? 2 : 1;
+                    i7 = bytes[length + (-2)] == 61 ? 2 : 1;
                 } else {
-                    i3 = 0;
+                    i7 = 0;
                 }
-                if (i3 == 0 && (i11 = length & 3) != 0) {
-                    i3 = 4 - i11;
+                if (i7 == 0 && (i11 = length & 3) != 0) {
+                    i7 = 4 - i11;
                 }
-                i10 = (((length + 3) / 4) * 3) - i3;
+                i10 = (((length + 3) / 4) * 3) - i7;
             }
             byte[] bArr = new byte[i10];
             int length2 = bytes.length;
@@ -151,11 +151,11 @@ public class Base64 {
                     int i17 = ((length2 - i14) & (-4)) + i14;
                     while (true) {
                         if (i14 >= i17) {
-                            c2 = c10;
+                            c10 = c11;
                             break;
                         }
                         int i18 = iArr[bytes[i14] & 255];
-                        c2 = c10;
+                        c10 = c11;
                         int i19 = iArr[bytes[i14 + 1] & 255];
                         int i20 = iArr[bytes[i14 + 2] & 255];
                         int i21 = i14 + 4;
@@ -170,13 +170,13 @@ public class Base64 {
                         i15 += 3;
                         bArr[i24] = (byte) i23;
                         i14 = i21;
-                        c10 = c2;
+                        c11 = c10;
                     }
                     if (i14 >= length2) {
                         break;
                     }
                 } else {
-                    c2 = c10;
+                    c10 = c11;
                 }
                 int i25 = i14 + 1;
                 int i26 = iArr[bytes[i14] & 255];
@@ -196,7 +196,7 @@ public class Base64 {
                         i16 = i27;
                     }
                     i14 = i25;
-                    c10 = c2;
+                    c11 = c10;
                 } else {
                     if (i26 != -2) {
                         throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i14], 16));

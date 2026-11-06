@@ -1,23 +1,34 @@
 package a9;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class i extends q6.a {
-    public static final Parcelable.Creator<i> CREATOR = new c(5);
-    public final int a;
+public final class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d b;
 
-    public i(int i3) {
-        this.a = i3;
+    public /* synthetic */ i(d dVar, r6.a aVar, int i7) {
+        this.a = i7;
+        this.b = dVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.r(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        j8.a.t(parcel, s6);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c.getClass();
+                break;
+            case 1:
+                this.b.c.getClass();
+                break;
+            case 2:
+                this.b.c.getClass();
+                break;
+            case 3:
+                this.b.c.getClass();
+                break;
+            default:
+                this.b.c.getClass();
+                break;
+        }
     }
 }

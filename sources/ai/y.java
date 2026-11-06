@@ -1,259 +1,53 @@
 package ai;
 
-import org.telegram.ui.Components.ac;
-import org.telegram.ui.Components.za;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.w7;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class y implements za {
-    public final /* synthetic */ int a;
+public final class y implements ls {
+    public final int a;
+    public final TLRPC.Document b;
+    public final int c;
+    public final f1 d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
 
-    public /* synthetic */ y(int i3) {
-        this.a = i3;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean a() {
-        switch (this.a) {
+    public y(int i7, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10, f1 f1Var) {
+        this.a = i7;
+        this.b = document;
+        this.c = i10;
+        this.d = f1Var;
+        qs.f(i7).b(this, qs.Y1);
+        w7.G(i7);
+        if (!w7.K(document, null, true, true).exists()) {
+            w7.G(i7).X(document, tL_starGiftUnique, 3, 1);
         }
-        return true;
+        a();
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void b(ac acVar) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void c(float f10) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void d(ac acVar) {
-        int i3 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ boolean e() {
-        switch (this.a) {
+    public final void a() {
+        if (this.e || this.f) {
+            return;
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final int f(int i3) {
-        int i10;
-        int L;
-        switch (this.a) {
-            case 0:
-                return org.telegram.messenger.g0.L(64.0f);
-            case 1:
-                return 0;
-            case 2:
-                return 0;
-            case 3:
-                return 0;
-            case 4:
-                return 0;
-            case 5:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(64.0f);
-                break;
-            case 6:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(60.0f);
-                break;
-            case 7:
-                return 0;
-            case 8:
-                return org.telegram.messenger.g0.L(51.0f);
-            case 9:
-                return org.telegram.messenger.g0.L(74.0f);
-            case 10:
-                return org.telegram.messenger.g0.L(80.0f);
-            case 11:
-                i10 = org.telegram.messenger.g0.n;
-                L = org.telegram.messenger.g0.L(16.0f);
-                break;
-            case 12:
-                return org.telegram.messenger.g0.L(62.0f);
-            case 13:
-                return org.telegram.messenger.g0.L(64.0f);
-            case 14:
-                return 0;
-            case 15:
-                return 0;
-            default:
-                return org.telegram.messenger.g0.L(68.0f);
+        w7.G(this.a);
+        if (w7.K(this.b, null, true, true).exists()) {
+            this.f = true;
+            qs.f(this.a).n(this, qs.Y1);
+            w7.G(this.a);
+            Utilities.e.c(new a1.e(9, this, w7.K(this.b, null, true, true)));
         }
-        return L + i10;
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final boolean g(int i3) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == qs.Y1) {
+            a();
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final int h(int i3) {
-        switch (this.a) {
-        }
-        return org.telegram.messenger.g0.m;
-    }
-
-    private final /* synthetic */ void A(ac acVar) {
-    }
-
-    private final /* synthetic */ void B(ac acVar) {
-    }
-
-    private final /* synthetic */ void C(ac acVar) {
-    }
-
-    private final /* synthetic */ void D(ac acVar) {
-    }
-
-    private final /* synthetic */ void E(ac acVar) {
-    }
-
-    private final /* synthetic */ void F(ac acVar) {
-    }
-
-    private final /* synthetic */ void G(ac acVar) {
-    }
-
-    private final /* synthetic */ void H(ac acVar) {
-    }
-
-    private final /* synthetic */ void I(ac acVar) {
-    }
-
-    private final /* synthetic */ void J(ac acVar) {
-    }
-
-    private final /* synthetic */ void K(ac acVar) {
-    }
-
-    private final /* synthetic */ void L(ac acVar) {
-    }
-
-    private final /* synthetic */ void M(ac acVar) {
-    }
-
-    private final /* synthetic */ void N(ac acVar) {
-    }
-
-    private final /* synthetic */ void O(ac acVar) {
-    }
-
-    private final /* synthetic */ void P(ac acVar) {
-    }
-
-    private final /* synthetic */ void Q(ac acVar) {
-    }
-
-    private final /* synthetic */ void R(ac acVar) {
-    }
-
-    private final /* synthetic */ void S(ac acVar) {
-    }
-
-    private final /* synthetic */ void T(ac acVar) {
-    }
-
-    private final /* synthetic */ void U(ac acVar) {
-    }
-
-    private final /* synthetic */ void V(ac acVar) {
-    }
-
-    private final /* synthetic */ void W(ac acVar) {
-    }
-
-    private final /* synthetic */ void X(ac acVar) {
-    }
-
-    private final /* synthetic */ void Y(ac acVar) {
-    }
-
-    private final /* synthetic */ void Z(ac acVar) {
-    }
-
-    private final /* synthetic */ void a0(ac acVar) {
-    }
-
-    private final /* synthetic */ void b0(ac acVar) {
-    }
-
-    private final /* synthetic */ void c0(ac acVar) {
-    }
-
-    private final /* synthetic */ void d0(ac acVar) {
-    }
-
-    private final /* synthetic */ void e0(ac acVar) {
-    }
-
-    private final /* synthetic */ void f0(ac acVar) {
-    }
-
-    private final /* synthetic */ void g0(ac acVar) {
-    }
-
-    private final /* synthetic */ void i(float f10) {
-    }
-
-    private final /* synthetic */ void j(float f10) {
-    }
-
-    private final /* synthetic */ void k(float f10) {
-    }
-
-    private final /* synthetic */ void l(float f10) {
-    }
-
-    private final /* synthetic */ void m(float f10) {
-    }
-
-    private final /* synthetic */ void n(float f10) {
-    }
-
-    private final /* synthetic */ void o(float f10) {
-    }
-
-    private final /* synthetic */ void p(float f10) {
-    }
-
-    private final /* synthetic */ void q(float f10) {
-    }
-
-    private final /* synthetic */ void r(float f10) {
-    }
-
-    private final /* synthetic */ void s(float f10) {
-    }
-
-    private final /* synthetic */ void t(float f10) {
-    }
-
-    private final /* synthetic */ void u(float f10) {
-    }
-
-    private final /* synthetic */ void v(float f10) {
-    }
-
-    private final /* synthetic */ void w(float f10) {
-    }
-
-    private final /* synthetic */ void x(float f10) {
-    }
-
-    private final /* synthetic */ void y(float f10) {
-    }
-
-    private final /* synthetic */ void z(ac acVar) {
     }
 }

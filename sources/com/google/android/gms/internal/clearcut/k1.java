@@ -1,37 +1,20 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.lang.reflect.Field;
+import java.security.PrivilegedExceptionAction;
+import sun.misc.Unsafe;
+
 /* loaded from: classes.dex */
-public abstract class k1 {
-    public static final l1 a;
-
-    static {
-        a = (i1.f && i1.e) ? new l1(1) : new l1(0);
-    }
-
-    public static int a(int i3, int i10, byte[] bArr) {
-        byte b10 = bArr[i3 - 1];
-        int i11 = i10 - i3;
-        if (i11 == 0) {
-            if (b10 > -12) {
-                return -1;
+public final class k1 implements PrivilegedExceptionAction {
+    @Override // java.security.PrivilegedExceptionAction
+    public final /* synthetic */ Object run() {
+        for (Field field : Unsafe.class.getDeclaredFields()) {
+            field.setAccessible(true);
+            Object obj = field.get(null);
+            if (Unsafe.class.isInstance(obj)) {
+                return (Unsafe) Unsafe.class.cast(obj);
             }
-            return b10;
         }
-        if (i11 == 1) {
-            byte b11 = bArr[i3];
-            if (b10 > -12 || b11 > -65) {
-                return -1;
-            }
-            return (b11 << 8) ^ b10;
-        }
-        if (i11 != 2) {
-            throw new AssertionError();
-        }
-        byte b12 = bArr[i3];
-        byte b13 = bArr[i3 + 1];
-        if (b10 > -12 || b12 > -65 || b13 > -65) {
-            return -1;
-        }
-        return (b13 << 16) ^ ((b12 << 8) ^ b10);
+        return null;
     }
 }

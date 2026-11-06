@@ -2,7 +2,7 @@ package j$.time;
 
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import org.telegram.messenger.hs;
+import org.telegram.messenger.qs;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -60,11 +60,11 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static j J(int i3) {
-        if (i3 < 1 || i3 > 12) {
-            throw new b("Invalid value for MonthOfYear: " + i3);
+    public static j J(int i7) {
+        if (i7 < 1 || i7 > 12) {
+            throw new b("Invalid value for MonthOfYear: " + i7);
         }
-        return a[i3 - 1];
+        return a[i7 - 1];
     }
 
     public final int getValue() {
@@ -103,45 +103,45 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         return oVar.m(this);
     }
 
-    public final int H(boolean z10) {
-        int i3 = i.a[ordinal()];
-        return i3 != 1 ? (i3 == 2 || i3 == 3 || i3 == 4 || i3 == 5) ? 30 : 31 : z10 ? 29 : 28;
+    public final int H(boolean z9) {
+        int i7 = i.a[ordinal()];
+        return i7 != 1 ? (i7 == 2 || i7 == 3 || i7 == 4 || i7 == 5) ? 30 : 31 : z9 ? 29 : 28;
     }
 
     public final int I() {
-        int i3 = i.a[ordinal()];
-        if (i3 != 1) {
-            return (i3 == 2 || i3 == 3 || i3 == 4 || i3 == 5) ? 30 : 31;
+        int i7 = i.a[ordinal()];
+        if (i7 != 1) {
+            return (i7 == 2 || i7 == 3 || i7 == 4 || i7 == 5) ? 30 : 31;
         }
         return 29;
     }
 
-    public final int G(boolean z10) {
+    public final int G(boolean z9) {
         switch (i.a[ordinal()]) {
             case 1:
                 return 32;
             case 2:
-                return (z10 ? 1 : 0) + 91;
+                return (z9 ? 1 : 0) + 91;
             case 3:
-                return (z10 ? 1 : 0) + hs.i2;
+                return (z9 ? 1 : 0) + qs.i2;
             case 4:
-                return (z10 ? 1 : 0) + hs.T3;
+                return (z9 ? 1 : 0) + qs.T3;
             case 5:
-                return (z10 ? 1 : 0) + hs.c5;
+                return (z9 ? 1 : 0) + qs.c5;
             case 6:
                 return 1;
             case 7:
-                return (z10 ? 1 : 0) + 60;
+                return (z9 ? 1 : 0) + 60;
             case 8:
-                return (z10 ? 1 : 0) + hs.F1;
+                return (z9 ? 1 : 0) + qs.F1;
             case 9:
-                return (z10 ? 1 : 0) + hs.M2;
+                return (z9 ? 1 : 0) + qs.M2;
             case 10:
-                return (z10 ? 1 : 0) + hs.q3;
+                return (z9 ? 1 : 0) + qs.q3;
             case 11:
-                return (z10 ? 1 : 0) + hs.x4;
+                return (z9 ? 1 : 0) + qs.x4;
             default:
-                return (z10 ? 1 : 0) + hs.G5;
+                return (z9 ? 1 : 0) + qs.G5;
         }
     }
 

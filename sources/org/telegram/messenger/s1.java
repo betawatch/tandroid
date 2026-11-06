@@ -7,14 +7,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ s1(Object obj, int i3) {
-        this.a = i3;
+    public /* synthetic */ s1(Object obj, int i7) {
+        this.a = i7;
         this.b = obj;
     }
 
@@ -39,8 +39,8 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                         if (i7Var.q0 == null) {
                             i7Var.q0 = new HashMap();
                         }
-                        for (int i3 = 0; i3 < vector.objects.size(); i3++) {
-                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector.objects.get(i3);
+                        for (int i7 = 0; i7 < vector.objects.size(); i7++) {
+                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector.objects.get(i7);
                             i7Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
                         }
                     }
@@ -79,21 +79,21 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                 }
                 break;
             case 3:
-                g0.h3(new a((Runnable) this.b, 23));
+                g0.h3(new a((Runnable) this.b, 24));
                 break;
             case 4:
-                uo uoVar = (uo) this.b;
-                if (uoVar != null) {
+                dp dpVar = (dp) this.b;
+                if (dpVar != null) {
                     TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null;
-                    uoVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
+                    dpVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
                     break;
                 }
                 break;
             case 5:
-                g0.h3(new yh(27, (ap) this.b, tLObject));
+                g0.h3(new hi(27, (jp) this.b, tLObject));
                 break;
             case 6:
-                bp bpVar = (bp) this.b;
+                kp kpVar = (kp) this.b;
                 ArrayList arrayList = new ArrayList();
                 if (tLObject instanceof TLRPC.TL_savedMusic) {
                     ArrayList<TLRPC.Document> arrayList2 = ((TLRPC.TL_savedMusic) tLObject).documents;
@@ -102,24 +102,24 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                     while (i11 < size) {
                         TLRPC.Document document = arrayList2.get(i11);
                         i11++;
-                        arrayList.add(bpVar.d(document));
+                        arrayList.add(kpVar.d(document));
                     }
                 }
-                g0.h3(new dg(bpVar, tLObject, arrayList, 15));
+                g0.h3(new lg(kpVar, tLObject, arrayList, 15));
                 break;
             case 7:
-                c00 c00Var = (c00) this.b;
+                k00 k00Var = (k00) this.b;
                 if (tLObject != null) {
-                    c00Var.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    k00Var.getMessagesController().O3((TLRPC.Updates) tLObject, false);
                     break;
                 } else {
-                    c00Var.getClass();
+                    k00Var.getClass();
                     break;
                 }
             default:
-                h10 h10Var = (h10) this.b;
-                h10Var.getClass();
-                g0.h3(new pq(23, h10Var, tLObject));
+                p10 p10Var = (p10) this.b;
+                p10Var.getClass();
+                g0.h3(new yq(23, p10Var, tLObject));
                 break;
         }
     }

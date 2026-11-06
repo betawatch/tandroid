@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l0 implements k0 {
     public final String a;
     public final long b;
     public long c;
 
-    public l0(String str, long j10) {
+    public l0(String str, long j3) {
         this.a = str;
-        this.b = j10;
+        this.b = j3;
     }
 
     @Override // org.telegram.messenger.k0
@@ -24,9 +24,9 @@ public final class l0 implements k0 {
         if (d == this.c) {
             return false;
         }
-        long j10 = (long) d;
-        this.c = j10;
-        editor.putLong(this.a, j10);
+        long j3 = (long) d;
+        this.c = j3;
+        editor.putLong(this.a, j3);
         return true;
     }
 

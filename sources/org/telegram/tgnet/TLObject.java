@@ -1,8 +1,9 @@
 package org.telegram.tgnet;
 
+import c8.yc;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class TLObject {
     public static final int FLAG_0 = 1;
@@ -46,34 +47,34 @@ public class TLObject {
     public boolean disableFree = false;
     public int networkType;
 
-    public static <T extends TLObject> T TLdeserialize(Class<T> cls, T t10, InputSerializedData inputSerializedData, int i3, boolean z10) {
-        if (t10 == null) {
-            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i3, z10);
+    public static <T extends TLObject> T TLdeserialize(Class<T> cls, T t6, InputSerializedData inputSerializedData, int i7, boolean z9) {
+        if (t6 == null) {
+            TLParseException.doThrowOrLog(inputSerializedData, cls.getName(), i7, z9);
             return null;
         }
-        t10.readParams(inputSerializedData, z10);
-        return t10;
+        t6.readParams(inputSerializedData, z9);
+        return t6;
     }
 
-    public static <T extends TLObject> T deepCopy(T t10, Vector.TLDeserializer<T> tLDeserializer) {
-        if (t10 == null) {
+    public static <T extends TLObject> T deepCopy(T t6, Vector.TLDeserializer<T> tLDeserializer) {
+        if (t6 == null) {
             return null;
         }
-        SerializedData serializedData = new SerializedData(t10.getObjectSize());
-        t10.serializeToStream(serializedData);
+        SerializedData serializedData = new SerializedData(t6.getObjectSize());
+        t6.serializeToStream(serializedData);
         SerializedData serializedData2 = new SerializedData(serializedData.toByteArray());
         return tLDeserializer.deserialize(serializedData2, serializedData2.readInt32(false), false);
     }
 
-    public static boolean hasFlag(int i3, int i10) {
-        return x7.u.a(i3, i10);
+    public static boolean hasFlag(int i7, int i10) {
+        return yc.a(i7, i10);
     }
 
-    public static int setFlag(int i3, int i10, boolean z10) {
-        return x7.u.b(i3, i10, z10);
+    public static int setFlag(int i7, int i10, boolean z9) {
+        return yc.b(i7, i10, z9);
     }
 
-    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i3, boolean z10) {
+    public TLObject deserializeResponse(InputSerializedData inputSerializedData, int i7, boolean z9) {
         return null;
     }
 
@@ -91,6 +92,6 @@ public class TLObject {
     public void serializeToStream(OutputSerializedData outputSerializedData) {
     }
 
-    public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+    public void readParams(InputSerializedData inputSerializedData, boolean z9) {
     }
 }

@@ -1,31 +1,45 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg implements View.OnClickListener {
+public final /* synthetic */ class fg implements org.telegram.messenger.sr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.f60 b;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ fg(org.telegram.ui.Components.f60 f60Var, int i3) {
-        this.a = i3;
-        this.b = f60Var;
+    public /* synthetic */ fg(an anVar, int i7) {
+        this.a = i7;
+        this.b = anVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i3 = this.a;
-        org.telegram.ui.Components.f60 f60Var = this.b;
-        switch (i3) {
+    @Override // org.telegram.messenger.sr
+    public final void a(int i7) {
+        switch (this.a) {
             case 0:
-                f60Var.s();
+                an anVar = this.b;
+                if (anVar.getParentActivity() != null && anVar.fragmentView != null && i7 > 0) {
+                    org.telegram.ui.Components.hc.a0(anVar).m(org.telegram.ui.Components.gc.r, i7, 0, 0, anVar.xa).j();
+                    break;
+                }
                 break;
+            case 1:
+                an anVar2 = this.b;
+                if (i7 != 0) {
+                    anVar2.l(i7, 0, false, 0, true, 0);
+                    break;
+                } else {
+                    anVar2.C6 = false;
+                    anVar2.ha();
+                    break;
+                }
             default:
-                Drawable[] drawableArr = PhotoViewer.V8;
-                f60Var.s();
-                break;
+                an anVar3 = this.b;
+                if (i7 != 0) {
+                    anVar3.finishFragment();
+                    break;
+                } else {
+                    anVar3.vd(true);
+                    break;
+                }
         }
     }
 }

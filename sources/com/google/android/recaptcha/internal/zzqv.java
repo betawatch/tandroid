@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -15,17 +15,17 @@ public abstract class zzqv extends zzqe {
         throw null;
     }
 
-    public static int zzA(int i3) {
-        return (352 - (Integer.numberOfLeadingZeros(i3) * 9)) >>> 6;
+    public static int zzA(int i7) {
+        return (352 - (Integer.numberOfLeadingZeros(i7) * 9)) >>> 6;
     }
 
-    public static int zzB(long j10) {
-        return (640 - (Long.numberOfLeadingZeros(j10) * 9)) >>> 6;
+    public static int zzB(long j3) {
+        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
     }
 
     @Deprecated
-    public static int zzw(int i3, zzts zztsVar, zzug zzugVar) {
-        int zzA = zzA(i3 << 3);
+    public static int zzw(int i7, zzts zztsVar, zzug zzugVar) {
+        int zzA = zzA(i7 << 3);
         return ((zzpw) zztsVar).zza(zzugVar) + zzA + zzA;
     }
 
@@ -71,41 +71,41 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzb(byte b10);
 
-    public abstract void zzd(int i3, boolean z10);
+    public abstract void zzd(int i7, boolean z9);
 
-    public abstract void zze(int i3, zzqm zzqmVar);
+    public abstract void zze(int i7, zzqm zzqmVar);
 
-    public abstract void zzf(int i3, int i10);
+    public abstract void zzf(int i7, int i10);
 
-    public abstract void zzg(int i3);
+    public abstract void zzg(int i7);
 
-    public abstract void zzh(int i3, long j10);
+    public abstract void zzh(int i7, long j3);
 
-    public abstract void zzi(long j10);
+    public abstract void zzi(long j3);
 
-    public abstract void zzj(int i3, int i10);
+    public abstract void zzj(int i7, int i10);
 
-    public abstract void zzk(int i3);
+    public abstract void zzk(int i7);
 
-    public abstract void zzl(byte[] bArr, int i3, int i10);
+    public abstract void zzl(byte[] bArr, int i7, int i10);
 
-    public abstract void zzm(int i3, zzts zztsVar, zzug zzugVar);
+    public abstract void zzm(int i7, zzts zztsVar, zzug zzugVar);
 
-    public abstract void zzn(int i3, zzts zztsVar);
+    public abstract void zzn(int i7, zzts zztsVar);
 
-    public abstract void zzo(int i3, zzqm zzqmVar);
+    public abstract void zzo(int i7, zzqm zzqmVar);
 
-    public abstract void zzp(int i3, String str);
+    public abstract void zzp(int i7, String str);
 
-    public abstract void zzr(int i3, int i10);
+    public abstract void zzr(int i7, int i10);
 
-    public abstract void zzs(int i3, int i10);
+    public abstract void zzs(int i7, int i10);
 
-    public abstract void zzt(int i3);
+    public abstract void zzt(int i7);
 
-    public abstract void zzu(int i3, long j10);
+    public abstract void zzu(int i7, long j3);
 
-    public abstract void zzv(long j10);
+    public abstract void zzv(long j3);
 
     public /* synthetic */ zzqv(zzqu zzquVar) {
     }

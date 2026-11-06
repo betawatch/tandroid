@@ -1,24 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hd0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+    public final /* synthetic */ ld0 b;
 
-    public /* synthetic */ hd0(s3 s3Var, int i3) {
-        this.a = i3;
-        this.b = s3Var;
+    public /* synthetic */ hd0(ld0 ld0Var, int i7) {
+        this.a = i7;
+        this.b = ld0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7;
+        int i10 = this.a;
+        ld0 ld0Var = this.b;
+        switch (i10) {
             case 0:
-                org.telegram.messenger.g0.h3(new hd0(this.b, 1));
+                ld0Var.o();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
+                ce0 ce0Var = ld0Var.w;
+                i7 = ((org.telegram.ui.ActionBar.f2) ce0Var).currentAccount;
+                premiumPreviewFragment.setCurrentAccount(i7);
+                ce0Var.presentFragment(premiumPreviewFragment);
+                break;
+            case 2:
+                ce0 ce0Var2 = ld0Var.w;
+                ce0Var2.M1(0, true, null, true);
+                ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, null));
+                break;
+            case 3:
+                ce0 ce0Var3 = ld0Var.w;
+                ce0Var3.M1(0, true, null, true);
+                ce0Var3.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, null));
                 break;
             default:
-                this.b.a("CANCELLED");
+                ld0Var.b.setLoading(false);
                 break;
         }
     }

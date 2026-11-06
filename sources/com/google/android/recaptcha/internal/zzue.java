@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzue implements zztp {
     private final zzts zza;
@@ -17,17 +17,17 @@ final class zzue implements zztp {
             this.zzd = charAt;
             return;
         }
-        int i3 = charAt & 8191;
+        int i7 = charAt & 8191;
         int i10 = 1;
         int i11 = 13;
         while (true) {
             int i12 = i10 + 1;
             char charAt2 = str.charAt(i10);
             if (charAt2 < 55296) {
-                this.zzd = i3 | (charAt2 << i11);
+                this.zzd = i7 | (charAt2 << i11);
                 return;
             } else {
-                i3 |= (charAt2 & 8191) << i11;
+                i7 |= (charAt2 & 8191) << i11;
                 i11 += 13;
                 i10 = i12;
             }
@@ -46,11 +46,11 @@ final class zzue implements zztp {
 
     @Override // com.google.android.recaptcha.internal.zztp
     public final int zzc() {
-        int i3 = this.zzd;
-        if ((i3 & 1) != 0) {
+        int i7 = this.zzd;
+        if ((i7 & 1) != 0) {
             return 1;
         }
-        return (i3 & 4) == 4 ? 3 : 2;
+        return (i7 & 4) == 4 ? 3 : 2;
     }
 
     public final String zzd() {

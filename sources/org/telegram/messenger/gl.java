@@ -1,83 +1,90 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gl implements Runnable {
+public final /* synthetic */ class gl implements v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hp b;
-    public final /* synthetic */ a0.h c;
+    public final /* synthetic */ qp b;
 
-    public /* synthetic */ gl(hp hpVar, a0.h hVar, int i3) {
-        this.a = i3;
-        this.b = hpVar;
-        this.c = hVar;
+    public /* synthetic */ gl(qp qpVar, int i7) {
+        this.a = i7;
+        this.b = qpVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.Message message;
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                hp hpVar = this.b;
-                a0.h hVar = this.c;
-                us notificationsController = hpVar.getNotificationsController();
-                notificationsController.getClass();
-                if (hVar.m() != 0) {
-                    for (int i3 = 0; i3 < hVar.m(); i3++) {
-                        ArrayList arrayList = (ArrayList) hVar.n(i3);
-                        if (arrayList != null) {
-                            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                                zi ziVar = (zi) arrayList.get(i10);
-                                if (ziVar != null && (message = ziVar.k) != null) {
-                                    TLRPC.MessageAction messageAction = message.action;
-                                    if (messageAction instanceof TLRPC.TL_messageActionConferenceCall) {
-                                        TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction;
-                                        if (tL_messageActionConferenceCall.active || tL_messageActionConferenceCall.missed) {
-                                            VoIPGroupNotification.hide(t0.b, notificationsController.currentAccount, ziVar.f1());
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    new ArrayList(0);
-                    us.l0.c(new pq(14, notificationsController, hVar));
-                }
-                c00 c00Var = hpVar.q7;
-                c00Var.getClass();
-                HashSet hashSet = new HashSet();
-                for (int i11 = 0; i11 < hVar.m(); i11++) {
-                    ArrayList arrayList2 = (ArrayList) hVar.n(i11);
-                    for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) c00Var.e.f(c00.p(((zi) arrayList2.get(i12)).f1(), -zi.B0(((zi) arrayList2.get(i12)).k)));
-                        if (tL_forumTopic != null) {
-                            tL_forumTopic.topMessage = ((zi) arrayList2.get(i12)).k;
-                            hashSet.add(Long.valueOf(-zi.B0(((zi) arrayList2.get(i12)).k)));
-                        }
-                    }
-                }
-                Iterator it = hashSet.iterator();
-                while (it.hasNext()) {
-                    c00Var.y(((Long) it.next()).longValue(), true);
-                }
+                g0.h3(new ll(this.b, (TL_account.TL_webBrowserSettings) obj2, 1));
                 break;
             case 1:
-                g0.h3(new gl(this.b, this.c, 0));
+                TL_account.WebBrowserSettings webBrowserSettings = (TL_account.WebBrowserSettings) obj;
+                boolean z9 = webBrowserSettings instanceof TL_account.TL_webBrowserSettings;
+                qp qpVar = this.b;
+                if (!z9) {
+                    qpVar.getClass();
+                    break;
+                } else {
+                    qpVar.Q4((TL_account.TL_webBrowserSettings) webBrowserSettings);
+                    break;
+                }
+            case 2:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                qp qpVar2 = this.b;
+                if (updates == null) {
+                    qpVar2.getClass();
+                    break;
+                } else {
+                    qpVar2.O3(updates, false);
+                    break;
+                }
+            case 3:
+                TLRPC.Updates updates2 = (TLRPC.Updates) obj;
+                qp qpVar3 = this.b;
+                if (updates2 != null) {
+                    qpVar3.O3(updates2, false);
+                }
+                g0.h3(new wj(qpVar3, 22));
+                break;
+            case 4:
+                TLRPC.Updates updates3 = (TLRPC.Updates) obj;
+                qp qpVar4 = this.b;
+                if (updates3 != null) {
+                    qpVar4.O3(updates3, false);
+                }
+                g0.h3(new wj(qpVar4, 21));
+                break;
+            case 5:
+                TLRPC.EmojiGameInfo emojiGameInfo = (TLRPC.EmojiGameInfo) obj;
+                qp qpVar5 = this.b;
+                if (emojiGameInfo != null) {
+                    qpVar5.w8 = emojiGameInfo;
+                }
+                ArrayList arrayList = qpVar5.v8;
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj3 = arrayList.get(i7);
+                    i7++;
+                    ((c20) obj3).a(Boolean.valueOf(qpVar5.w8 instanceof TLRPC.TL_emojiGameDiceInfo));
+                }
+                qpVar5.v8 = null;
                 break;
             default:
-                hp hpVar2 = this.b;
-                a0.h hVar2 = this.c;
-                for (int i13 = 0; i13 < hVar2.m(); i13++) {
-                    hpVar2.l5(0, hVar2.j(i13), (ArrayList) hVar2.n(i13));
+                TL_account.WebBrowserSettings webBrowserSettings2 = (TL_account.WebBrowserSettings) obj;
+                boolean z10 = webBrowserSettings2 instanceof TL_account.TL_webBrowserSettings;
+                qp qpVar6 = this.b;
+                if (!z10) {
+                    qpVar6.getClass();
+                    break;
+                } else {
+                    qpVar6.Q4((TL_account.TL_webBrowserSettings) webBrowserSettings2);
+                    break;
                 }
-                hpVar2.getNotificationCenter().k(3, new Object[0]);
-                break;
         }
     }
 }

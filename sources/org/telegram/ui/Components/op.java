@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public abstract class op extends Drawable {
     public final Paint a;
@@ -42,7 +42,7 @@ public abstract class op extends Drawable {
         float f11;
         float f12;
         float f13;
-        float y9;
+        float y10;
         Paint paint;
         float f14;
         long currentTimeMillis = System.currentTimeMillis();
@@ -50,16 +50,16 @@ public abstract class op extends Drawable {
         Paint paint2 = this.a;
         if (a10 != 0) {
             this.g = Color.alpha(a10);
-            paint2.setColor(i0.a.o(a10, org.telegram.messenger.hs.e4));
+            paint2.setColor(i0.a.o(a10, org.telegram.messenger.qs.e4));
         }
-        long j10 = this.b;
-        if (j10 != 0) {
-            long j11 = currentTimeMillis - j10;
-            boolean z10 = this.e;
-            if (z10 || this.d != 0.0f) {
-                float f15 = ((j11 * 360) / 500.0f) + this.d;
+        long j3 = this.b;
+        if (j3 != 0) {
+            long j10 = currentTimeMillis - j3;
+            boolean z9 = this.e;
+            if (z9 || this.d != 0.0f) {
+                float f15 = ((j10 * 360) / 500.0f) + this.d;
                 this.d = f15;
-                if (z10 || f15 < 720.0f) {
+                if (z9 || f15 < 720.0f) {
                     this.d = f15 - (((int) (f15 / 720.0f)) * 720);
                 } else {
                     this.d = 0.0f;
@@ -85,9 +85,9 @@ public abstract class op extends Drawable {
                 f12 = 1.0f;
             } else if (f16 < 180.0f || f16 >= 270.0f) {
                 if (f16 >= 270.0f && f16 < 360.0f) {
-                    y9 = (f16 - 270.0f) / 90.0f;
+                    y10 = (f16 - 270.0f) / 90.0f;
                 } else if (f16 >= 360.0f && f16 < 450.0f) {
-                    y9 = org.telegram.messenger.k5.y(f16, 360.0f, 90.0f, 1.0f);
+                    y10 = org.telegram.messenger.k5.y(f16, 360.0f, 90.0f, 1.0f);
                 } else if (f16 >= 450.0f && f16 < 540.0f) {
                     f11 = (f16 - 450.0f) / 90.0f;
                     f13 = 0.0f;
@@ -108,7 +108,7 @@ public abstract class op extends Drawable {
                     f11 = 1.0f;
                     f13 = 1.0f;
                 }
-                f10 = y9;
+                f10 = y10;
                 f11 = 0.0f;
                 f13 = f11;
             } else {
@@ -136,11 +136,11 @@ public abstract class op extends Drawable {
             canvas.restore();
             int centerX = getBounds().centerX();
             int centerY = getBounds().centerY();
-            int i3 = this.f;
-            float f18 = centerX - i3;
-            float f19 = centerY - i3;
-            float f20 = centerX + i3;
-            float f21 = centerY + i3;
+            int i7 = this.f;
+            float f18 = centerX - i7;
+            float f19 = centerY - i7;
+            float f20 = centerX + i7;
+            float f21 = centerY + i7;
             RectF rectF = this.c;
             rectF.set(f18, f19, f20, f21);
             f14 = this.d;
@@ -166,11 +166,11 @@ public abstract class op extends Drawable {
         canvas.restore();
         int centerX2 = getBounds().centerX();
         int centerY2 = getBounds().centerY();
-        int i32 = this.f;
-        float f182 = centerX2 - i32;
-        float f192 = centerY2 - i32;
-        float f202 = centerX2 + i32;
-        float f212 = centerY2 + i32;
+        int i72 = this.f;
+        float f182 = centerX2 - i72;
+        float f192 = centerY2 - i72;
+        float f202 = centerX2 + i72;
+        float f212 = centerY2 + i72;
         RectF rectF2 = this.c;
         rectF2.set(f182, f192, f202, f212);
         f14 = this.d;
@@ -201,7 +201,7 @@ public abstract class op extends Drawable {
         this.a = paint;
         new DecelerateInterpolator();
         this.c = new RectF();
-        this.g = org.telegram.messenger.hs.e4;
+        this.g = org.telegram.messenger.qs.e4;
         paint.setColor(-1);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(f10));
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -210,7 +210,7 @@ public abstract class op extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
+    public final void setAlpha(int i7) {
     }
 
     @Override // android.graphics.drawable.Drawable

@@ -1,38 +1,46 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import android.graphics.Typeface;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class kb0 extends TextView {
-    public final /* synthetic */ lb0 a;
+public final class kb0 extends lb0 {
+    public final ah.i L;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb0(lb0 lb0Var, Context context, int i3) {
-        super(context);
-        this.a = lb0Var;
+    public kb0(Context context) {
+        super(context, null);
+        ah.i iVar = new ah.i(7, context, this);
+        this.L = iVar;
+        iVar.setTextSize(1, 18.0f);
+        org.telegram.ui.ActionBar.r6.V(iVar, org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.r6.E(iVar, org.telegram.ui.ActionBar.k6.H6, null);
+        iVar.setBackground(null);
+        iVar.setSingleLine(true);
+        iVar.setInputType(1);
+        iVar.setTypeface(Typeface.DEFAULT);
+        org.telegram.ui.ActionBar.r6.m(iVar, 30, org.telegram.ui.ActionBar.k6.l6, null);
+        iVar.setCursorWidth(1.5f);
+        iVar.setPadding(org.telegram.messenger.g0.L(15.0f), 0, org.telegram.messenger.g0.L(15.0f), 0);
+        e(iVar);
+        addView(iVar, c8.ha.e(-1, -2, 16));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        lb0 lb0Var = this.a;
-        if (lb0Var.e.getAdapter() instanceof yw) {
-            ((yw) lb0Var.e.getAdapter()).getClass();
-        }
+    public EditTextBoldCursor getEditText() {
+        return this.L;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z10) {
-        super.setSelected(z10);
-        Drawable background = getBackground();
-        lb0 lb0Var = this.a;
-        if (background != null) {
-            org.telegram.ui.ActionBar.k6.H1(background, lb0Var.c(z10 ? 0.1f : 0.05f), true);
+    public void setHint(String str) {
+        setText(str);
+    }
+
+    @Override // org.telegram.ui.Components.lb0, org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        super.updateColors();
+        try {
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        setTextColor(lb0Var.c(z10 ? 0.8f : 0.6f));
     }
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class r0 implements Application.ActivityLifecycleCallbacks {
     public static r0 f;
@@ -25,9 +25,9 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
     }
 
     public final void a(Activity activity) {
-        int i3 = this.a + 1;
-        this.a = i3;
-        if (i3 == 1) {
+        int i7 = this.a + 1;
+        this.a = i7;
+        if (i7 == 1) {
             if (SystemClock.elapsedRealtime() - this.c < 200) {
                 this.b = false;
             }
@@ -37,7 +37,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.uz) it.next()).b();
+                    ((org.telegram.ui.Components.yz) it.next()).b();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
@@ -73,18 +73,18 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityStarted(Activity activity) {
-        boolean z10 = this.a == 0;
+        boolean z9 = this.a == 0;
         a(activity);
-        if (z10) {
+        if (z9) {
             t0.c(true);
         }
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityStopped(Activity activity) {
-        int i3 = this.a - 1;
-        this.a = i3;
-        if (i3 == 0) {
+        int i7 = this.a - 1;
+        this.a = i7;
+        if (i7 == 0) {
             this.c = SystemClock.elapsedRealtime();
             this.b = true;
             if (r2.a) {
@@ -93,7 +93,7 @@ public final class r0 implements Application.ActivityLifecycleCallbacks {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
                 try {
-                    ((org.telegram.ui.Components.uz) it.next()).a();
+                    ((org.telegram.ui.Components.yz) it.next()).a();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }

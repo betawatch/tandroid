@@ -1,15 +1,43 @@
 package zh;
 
-import android.graphics.Canvas;
-import org.telegram.ui.s4;
+import android.view.View;
+import org.telegram.messenger.b20;
+import org.telegram.messenger.k9;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class h extends s4 {
-    @Override // org.telegram.ui.s4, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.Q.getRealCount() > 1) {
-            super.onDraw(canvas);
+public final /* synthetic */ class h implements org.telegram.ui.ActionBar.r1, b20, k9 {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ h(int i7) {
+        this.a = i7;
+    }
+
+    @Override // org.telegram.messenger.b20
+    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.FALSE;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                u1Var.dismiss();
+                break;
+            default:
+                u1Var.dismiss();
+                break;
         }
+    }
+
+    @Override // org.telegram.messenger.k9
+    public Object j(Object obj) {
+        int i7 = l3.c2;
+        return 0;
+    }
+
+    public /* synthetic */ h(m3 m3Var) {
+        this.a = 2;
     }
 }

@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class i implements ActionMode.Callback {
     public final ActionMode.Callback a;
@@ -50,9 +50,9 @@ public final class i implements ActionMode.Callback {
         TextView textView = this.b;
         Context context = textView.getContext();
         PackageManager packageManager = context.getPackageManager();
-        boolean z10 = this.f;
+        boolean z9 = this.f;
         Class<?> cls = Integer.TYPE;
-        if (!z10) {
+        if (!z9) {
             this.f = true;
             try {
                 Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");
@@ -87,9 +87,9 @@ public final class i implements ActionMode.Callback {
                     arrayList.add(resolveInfo);
                 }
             }
-            for (int i3 = 0; i3 < arrayList.size(); i3++) {
-                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i3);
-                MenuItem add = menu.add(0, 0, i3 + 100, resolveInfo2.loadLabel(packageManager));
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i7);
+                MenuItem add = menu.add(0, 0, i7 + 100, resolveInfo2.loadLabel(packageManager));
                 Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
                 ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
                 add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);

@@ -12,8 +12,8 @@ public class h2 implements e2 {
     public int b;
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.V(this, j10, j11, intFunction);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.V(this, j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.e2
@@ -22,15 +22,15 @@ public class h2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final e2 a(int i3) {
+    public final e2 a(int i7) {
         throw new IndexOutOfBoundsException();
     }
 
-    public h2(long j10, IntFunction intFunction) {
-        if (j10 >= 2147483639) {
+    public h2(long j3, IntFunction intFunction) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = (Object[]) intFunction.apply((int) j10);
+        this.a = (Object[]) intFunction.apply((int) j3);
         this.b = 0;
     }
 
@@ -45,8 +45,8 @@ public class h2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i3) {
-        System.arraycopy(this.a, 0, objArr, i3, this.b);
+    public final void f(Object[] objArr, int i7) {
+        System.arraycopy(this.a, 0, objArr, i7, this.b);
     }
 
     @Override // j$.util.stream.e2
@@ -65,8 +65,8 @@ public class h2 implements e2 {
 
     @Override // j$.util.stream.e2
     public final void forEach(Consumer consumer) {
-        for (int i3 = 0; i3 < this.b; i3++) {
-            consumer.x(this.a[i3]);
+        for (int i7 = 0; i7 < this.b; i7++) {
+            consumer.x(this.a[i7]);
         }
     }
 

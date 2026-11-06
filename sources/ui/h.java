@@ -1,24 +1,18 @@
 package ui;
 
-import j$.util.function.IntUnaryOperator$-CC;
-import java.util.function.IntUnaryOperator;
+import java.net.Socket;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements IntUnaryOperator {
-    public /* synthetic */ IntUnaryOperator andThen(IntUnaryOperator intUnaryOperator) {
-        return IntUnaryOperator$-CC.$default$andThen(this, intUnaryOperator);
-    }
+public final class h {
+    public final int a;
+    public final Socket b;
+    public long c = 4194304;
+    public long d = 4194304;
+    public boolean e;
 
-    @Override // java.util.function.IntUnaryOperator
-    public final int applyAsInt(int i3) {
-        if (i3 >= 16777215) {
-            return 1;
-        }
-        return i3 + 1;
-    }
-
-    public /* synthetic */ IntUnaryOperator compose(IntUnaryOperator intUnaryOperator) {
-        return IntUnaryOperator$-CC.$default$compose(this, intUnaryOperator);
+    public h(int i7, Socket socket) {
+        this.a = i7;
+        this.b = socket;
     }
 }

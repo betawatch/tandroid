@@ -1,24 +1,47 @@
 package l6;
 
-import android.content.Intent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import i7.p;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.util.Log;
+import b9.j0;
+import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.internal.clearcut.b2;
+import com.google.android.gms.internal.clearcut.p1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends q6.a {
-    public static final Parcelable.Creator<a> CREATOR = new p(13);
-    public final Intent a;
+public final class a {
+    public static final e j = new e("ClearcutLogger.API", new a9.e(8), new d());
+    public final Context a;
+    public final String b;
+    public final int c;
+    public final String d;
+    public final int e;
+    public final p1 f;
+    public final j0 g;
+    public final x6.a h;
+    public final b2 i;
 
-    public a(Intent intent) {
-        this.a = intent;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.l(parcel, 1, this.a, i3);
-        j8.a.t(parcel, s6);
+    public a(Context context) {
+        j0 j0Var = new j0(context, j, null, new sa.d(6));
+        b2 b2Var = new b2(context);
+        this.e = -1;
+        p1 p1Var = p1.b;
+        this.f = p1Var;
+        this.a = context;
+        this.b = context.getPackageName();
+        int i7 = 0;
+        try {
+            i7 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e10) {
+            Log.wtf("ClearcutLogger", "This can't happen.", e10);
+        }
+        this.c = i7;
+        this.e = -1;
+        this.d = "VISION";
+        this.g = j0Var;
+        this.h = x6.a.a;
+        this.f = p1Var;
+        this.i = b2Var;
     }
 }

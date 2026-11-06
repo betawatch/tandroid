@@ -28,9 +28,9 @@ public final class s1 extends b {
         t3 t3Var = this.a;
         q1 q1Var = (q1) ((Supplier) this.j.c).get();
         t3Var.F0(this.b, q1Var);
-        boolean z10 = q1Var.b;
-        if (z10 == ((r1) this.j.b).b) {
-            Boolean valueOf = Boolean.valueOf(z10);
+        boolean z9 = q1Var.b;
+        if (z9 == ((r1) this.j.b).b) {
+            Boolean valueOf = Boolean.valueOf(z9);
             AtomicReference atomicReference = this.h;
             while (!atomicReference.compareAndSet(null, valueOf) && atomicReference.get() == null) {
             }

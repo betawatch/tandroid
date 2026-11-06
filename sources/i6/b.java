@@ -1,56 +1,80 @@
 package i6;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.Locale;
+import a8.r7;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.internal.cast.t;
+import g6.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final boolean b;
-    public final String c;
+public final class b extends AsyncTask {
+    public static final j6.b c = new j6.b("FetchBitmapTask", null);
+    public final e a;
+    public final r7 b;
 
-    public b(String str, String str2) {
-        p6.m.f(str, "The log tag cannot be null or empty.");
-        this.a = str;
-        this.b = str.length() <= 23;
-        this.c = TextUtils.isEmpty(str2) ? null : a1.g.q("[", str2, "] ");
+    public b(Context context, int i7, int i10, r7 r7Var) {
+        e eVar;
+        this.b = r7Var;
+        Context applicationContext = context.getApplicationContext();
+        j jVar = new j(this);
+        j6.b bVar = com.google.android.gms.internal.cast.d.a;
+        try {
+            com.google.android.gms.internal.cast.f b10 = com.google.android.gms.internal.cast.d.b(applicationContext.getApplicationContext());
+            a7.b bVar2 = new a7.b(applicationContext.getApplicationContext());
+            Parcel R0 = b10.R0(b10.P0(), 8);
+            int readInt = R0.readInt();
+            R0.recycle();
+            eVar = readInt >= 233700000 ? b10.b1(bVar2, new a7.b(this), jVar, i7, i10) : b10.a1(new a7.b(this), jVar, i7, i10);
+        } catch (RemoteException e10) {
+            e = e10;
+            com.google.android.gms.internal.cast.d.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.f.class.getSimpleName());
+            eVar = null;
+            this.a = eVar;
+        } catch (g6.d e11) {
+            e = e11;
+            com.google.android.gms.internal.cast.d.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.f.class.getSimpleName());
+            eVar = null;
+            this.a = eVar;
+        }
+        this.a = eVar;
     }
 
-    public final void a(Exception exc, String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Uri uri;
+        e eVar;
+        Uri[] uriArr = (Uri[]) objArr;
+        if (uriArr.length == 1 && (uri = uriArr[0]) != null && (eVar = this.a) != null) {
+            try {
+                c cVar = (c) eVar;
+                Parcel P0 = cVar.P0();
+                t.c(P0, uri);
+                Parcel R0 = cVar.R0(P0, 1);
+                Bitmap bitmap = (Bitmap) t.a(R0, Bitmap.CREATOR);
+                R0.recycle();
+                return bitmap;
+            } catch (RemoteException e10) {
+                c.a(e10, "Unable to call %s on %s.", "doFetch", e.class.getSimpleName());
+            }
         }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr), exc);
-        }
+        return null;
     }
 
-    public final void b(String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        r7 r7Var = this.b;
+        if (r7Var != null) {
+            a aVar = (a) r7Var.f;
+            if (aVar != null) {
+                aVar.p(bitmap);
+            }
+            r7Var.e = null;
         }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr));
-        }
-    }
-
-    public final void c(Object... objArr) {
-        Log.e(this.a, d("Bundle is null", objArr));
-    }
-
-    public final String d(String str, Object... objArr) {
-        if (objArr.length != 0) {
-            str = String.format(Locale.ROOT, str, objArr);
-        }
-        String str2 = this.c;
-        if (TextUtils.isEmpty(str2)) {
-            return str;
-        }
-        return String.valueOf(str2).concat(String.valueOf(str));
     }
 }

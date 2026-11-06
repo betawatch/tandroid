@@ -3,17 +3,17 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class x extends t {
-    public final transient b8.m c;
+    public final transient a8.v c;
     public final transient Object[] d;
     public final transient int e;
 
-    public x(b8.m mVar, Object[] objArr, int i3) {
-        this.c = mVar;
+    public x(a8.v vVar, Object[] objArr, int i7) {
+        this.c = vVar;
         this.d = objArr;
-        this.e = i3;
+        this.e = i7;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -30,8 +30,8 @@ public final class x extends t {
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final int h(Object[] objArr) {
-        return k().h(objArr);
+    public final int f(Object[] objArr) {
+        return k().f(objArr);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set

@@ -1,25 +1,29 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class tj0 extends TimerTask {
-    public final /* synthetic */ uj0 a;
+public final /* synthetic */ class tj0 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj0 b;
 
-    public tj0(uj0 uj0Var) {
-        this.a = uj0Var;
+    public /* synthetic */ tj0(xj0 xj0Var, int i7) {
+        this.a = i7;
+        this.b = xj0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        uj0 uj0Var = this.a;
-        if (uj0Var.w == null) {
-            return;
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                xj0 xj0Var = this.b;
+                xj0Var.c(true);
+                xj0Var.Q.finishFragment();
+                break;
+            default:
+                xj0 xj0Var2 = this.b;
+                xj0Var2.c(true);
+                xj0Var2.Q.O1(null, 0, true);
+                break;
         }
-        double currentTimeMillis = System.currentTimeMillis();
-        uj0Var.E = (int) (uj0Var.E - (currentTimeMillis - uj0Var.G));
-        uj0Var.G = currentTimeMillis;
-        org.telegram.messenger.g0.h3(new sg0(this, 8));
     }
 }

@@ -1,19 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class zb extends x01 {
-    public final /* synthetic */ pc e;
+public final class zb extends ug.i0 {
+    public final /* synthetic */ int P2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(pc pcVar, yb ybVar) {
-        super(ybVar);
-        this.e = pcVar;
+    public zb(rc rcVar, Activity activity, int i7, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        super(i7, i10, activity, rcVar, f6Var);
+        this.P2 = i11;
     }
 
-    @Override // org.telegram.ui.x01, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.R = null;
+    @Override // ug.i0
+    public final int j1() {
+        return this.P2;
     }
 }

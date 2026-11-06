@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class y0 {
     public static final y0 c = new y0();
@@ -25,9 +25,9 @@ public final class y0 {
             throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
         }
         a1 a10 = ((k0) l0Var.a).a(cls);
-        int i3 = a10.d;
+        int i7 = a10.d;
         a aVar = a10.a;
-        if ((i3 & 2) == 2) {
+        if ((i7 & 2) == 2) {
             if (z.class.isAssignableFrom(cls)) {
                 w10 = new u0(c1.c, r.a, aVar);
             } else {
@@ -43,7 +43,7 @@ public final class y0 {
             v0 v0Var = w0.b;
             h0 h0Var = i0.b;
             i1 i1Var2 = c1.c;
-            if (o1.g.c(a10.a()) != 1) {
+            if (p1.g.c(a10.a()) != 1) {
                 qVar2 = r.a;
             }
             q qVar3 = qVar2;
@@ -59,7 +59,7 @@ public final class y0 {
             v0 v0Var2 = w0.a;
             h0 h0Var2 = i0.a;
             i1 i1Var3 = c1.b;
-            if (o1.g.c(a10.a()) != 1 && (qVar4 = r.b) == null) {
+            if (p1.g.c(a10.a()) != 1 && (qVar4 = r.b) == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
             q qVar5 = qVar4;

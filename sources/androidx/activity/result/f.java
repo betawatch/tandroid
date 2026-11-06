@@ -1,10 +1,11 @@
 package androidx.activity.result;
 
+import a8.p0;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.activity.l;
-import androidx.fragment.app.e0;
+import androidx.fragment.app.d0;
 import androidx.lifecycle.m;
 import androidx.lifecycle.n;
 import androidx.lifecycle.r;
@@ -13,7 +14,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -24,8 +25,8 @@ public abstract class f {
     public final HashMap f = new HashMap();
     public final Bundle g = new Bundle();
 
-    public final boolean a(int i3, int i10, Intent intent) {
-        String str = (String) this.a.get(Integer.valueOf(i3));
+    public final boolean a(int i7, int i10, Intent intent) {
+        String str = (String) this.a.get(Integer.valueOf(i7));
         if (str == null) {
             return false;
         }
@@ -33,7 +34,7 @@ public abstract class f {
         if (dVar != null) {
             b bVar = dVar.a;
             if (this.d.contains(str)) {
-                bVar.g(dVar.b.a(intent, i10));
+                bVar.f(dVar.b.a(intent, i10));
                 this.d.remove(str);
                 return true;
             }
@@ -43,9 +44,9 @@ public abstract class f {
         return true;
     }
 
-    public abstract void b(int i3, e0 e0Var, Object obj);
+    public abstract void b(int i7, d0 d0Var, Object obj);
 
-    public final c c(final String str, l lVar, final e0 e0Var, final b bVar) {
+    public final c c(final String str, l lVar, final d0 d0Var, final b bVar) {
         v vVar = lVar.d;
         if (vVar.c.compareTo(n.d) >= 0) {
             throw new IllegalStateException("LifecycleOwner " + lVar + " is attempting to register while current state is " + vVar.c + ". LifecycleOwners must call register before they are STARTED.");
@@ -78,42 +79,42 @@ public abstract class f {
                 Bundle bundle = fVar.g;
                 HashMap hashMap3 = fVar.f;
                 b bVar2 = bVar;
-                e0 e0Var2 = e0Var;
-                hashMap2.put(str2, new d(bVar2, e0Var2));
+                d0 d0Var2 = d0Var;
+                hashMap2.put(str2, new d(bVar2, d0Var2));
                 if (hashMap3.containsKey(str2)) {
                     Object obj = hashMap3.get(str2);
                     hashMap3.remove(str2);
-                    bVar2.g(obj);
+                    bVar2.f(obj);
                 }
                 a aVar = (a) bundle.getParcelable(str2);
                 if (aVar != null) {
                     bundle.remove(str2);
-                    bVar2.g(e0Var2.a(aVar.b, aVar.a));
+                    bVar2.f(d0Var2.a(aVar.b, aVar.a));
                 }
             }
         };
         eVar.a.a(rVar);
         eVar.b.add(rVar);
         hashMap.put(str, eVar);
-        return new c(this, str, e0Var, 0);
+        return new c(this, str, d0Var, 0);
     }
 
-    public final c d(String str, e0 e0Var, b bVar) {
+    public final c d(String str, d0 d0Var, b bVar) {
         e(str);
-        this.e.put(str, new d(bVar, e0Var));
+        this.e.put(str, new d(bVar, d0Var));
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
             Object obj = hashMap.get(str);
             hashMap.remove(str);
-            bVar.g(obj);
+            bVar.f(obj);
         }
         Bundle bundle = this.g;
         a aVar = (a) bundle.getParcelable(str);
         if (aVar != null) {
             bundle.remove(str);
-            bVar.g(e0Var.a(aVar.b, aVar.a));
+            bVar.f(d0Var.a(aVar.b, aVar.a));
         }
-        return new c(this, str, e0Var, 1);
+        return new c(this, str, d0Var, 1);
     }
 
     public final void e(String str) {
@@ -121,19 +122,19 @@ public abstract class f {
         if (((Integer) hashMap.get(str)) != null) {
             return;
         }
-        pd.a aVar = pd.d.a;
-        int nextInt = pd.d.a.a().nextInt(2147418112);
+        sd.a aVar = sd.d.a;
+        int nextInt = sd.d.a.a().nextInt(2147418112);
         while (true) {
-            int i3 = nextInt + 65536;
-            Integer valueOf = Integer.valueOf(i3);
+            int i7 = nextInt + 65536;
+            Integer valueOf = Integer.valueOf(i7);
             HashMap hashMap2 = this.a;
             if (!hashMap2.containsKey(valueOf)) {
-                hashMap2.put(Integer.valueOf(i3), str);
-                hashMap.put(str, Integer.valueOf(i3));
+                hashMap2.put(Integer.valueOf(i7), str);
+                hashMap.put(str, Integer.valueOf(i7));
                 return;
             } else {
-                pd.a aVar2 = pd.d.a;
-                nextInt = pd.d.a.a().nextInt(2147418112);
+                sd.a aVar2 = sd.d.a;
+                nextInt = sd.d.a.a().nextInt(2147418112);
             }
         }
     }
@@ -146,14 +147,14 @@ public abstract class f {
         this.e.remove(str);
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
-            StringBuilder u10 = a1.g.u("Dropping pending result for request ", str, ": ");
+            StringBuilder u10 = p0.u("Dropping pending result for request ", str, ": ");
             u10.append(hashMap.get(str));
             Log.w("ActivityResultRegistry", u10.toString());
             hashMap.remove(str);
         }
         Bundle bundle = this.g;
         if (bundle.containsKey(str)) {
-            StringBuilder u11 = a1.g.u("Dropping pending result for request ", str, ": ");
+            StringBuilder u11 = p0.u("Dropping pending result for request ", str, ": ");
             u11.append(bundle.getParcelable(str));
             Log.w("ActivityResultRegistry", u11.toString());
             bundle.remove(str);
@@ -163,10 +164,10 @@ public abstract class f {
         if (eVar != null) {
             ArrayList arrayList = eVar.b;
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
                 eVar.a.b((r) obj);
             }
             arrayList.clear();

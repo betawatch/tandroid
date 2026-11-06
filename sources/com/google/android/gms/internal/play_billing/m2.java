@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import b8.za;
+import a8.j9;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class m2 {
     public static final char[] a;
@@ -23,23 +23,23 @@ public abstract class m2 {
         Arrays.fill(cArr, ' ');
     }
 
-    public static void a(StringBuilder sb2, int i3, String str, Object obj) {
+    public static void a(StringBuilder sb2, int i7, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                a(sb2, i3, str, it.next());
+                a(sb2, i7, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                a(sb2, i3, str, (Map.Entry) it2.next());
+                a(sb2, i7, str, (Map.Entry) it2.next());
             }
             return;
         }
         sb2.append('\n');
-        b(i3, sb2);
+        b(i7, sb2);
         if (!str.isEmpty()) {
             StringBuilder sb3 = new StringBuilder();
             sb3.append(Character.toLowerCase(str.charAt(0)));
@@ -56,21 +56,21 @@ public abstract class m2 {
         if (obj instanceof String) {
             sb2.append(": \"");
             l1 l1Var = l1.c;
-            sb2.append(za.a(new l1(((String) obj).getBytes(a2.a))));
+            sb2.append(j9.a(new l1(((String) obj).getBytes(a2.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof l1) {
             sb2.append(": \"");
-            sb2.append(za.a((l1) obj));
+            sb2.append(j9.a((l1) obj));
             sb2.append('\"');
             return;
         }
         if (obj instanceof v1) {
             sb2.append(" {");
-            c((v1) obj, sb2, i3 + 2);
+            c((v1) obj, sb2, i7 + 2);
             sb2.append("\n");
-            b(i3, sb2);
+            b(i7, sb2);
             sb2.append("}");
             return;
         }
@@ -79,28 +79,28 @@ public abstract class m2 {
             sb2.append(obj);
             return;
         }
-        int i11 = i3 + 2;
+        int i11 = i7 + 2;
         sb2.append(" {");
         Map.Entry entry = (Map.Entry) obj;
         a(sb2, i11, "key", entry.getKey());
         a(sb2, i11, "value", entry.getValue());
         sb2.append("\n");
-        b(i3, sb2);
+        b(i7, sb2);
         sb2.append("}");
     }
 
-    public static void b(int i3, StringBuilder sb2) {
-        while (i3 > 0) {
+    public static void b(int i7, StringBuilder sb2) {
+        while (i7 > 0) {
             int i10 = 80;
-            if (i3 <= 80) {
-                i10 = i3;
+            if (i7 <= 80) {
+                i10 = i7;
             }
             sb2.append(a, 0, i10);
-            i3 -= i10;
+            i7 -= i10;
         }
     }
 
-    public static void c(v1 v1Var, StringBuilder sb2, int i3) {
+    public static void c(v1 v1Var, StringBuilder sb2, int i7) {
         int i10;
         int i11;
         boolean equals;
@@ -138,12 +138,12 @@ public abstract class m2 {
             } else {
                 i11 = i10;
                 if (method2.getReturnType().equals(List.class)) {
-                    a(sb2, i3, substring.substring(0, substring.length() - 4), v1.i(method2, v1Var, new Object[0]));
+                    a(sb2, i7, substring.substring(0, substring.length() - 4), v1.i(method2, v1Var, new Object[0]));
                     i10 = i11;
                 }
             }
             if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                a(sb2, i3, substring.substring(0, substring.length() - 3), v1.i(method, v1Var, new Object[0]));
+                a(sb2, i7, substring.substring(0, substring.length() - 3), v1.i(method, v1Var, new Object[0]));
             } else if (hashSet.contains("set".concat(substring)) && (!substring.endsWith("Bytes") || !treeMap.containsKey("get".concat(String.valueOf(substring.substring(0, substring.length() - 5)))))) {
                 Method method4 = (Method) entry.getValue();
                 Method method5 = (Method) hashMap.get("has".concat(substring));
@@ -152,23 +152,23 @@ public abstract class m2 {
                     if (method5 != null) {
                         if (!((Boolean) v1.i(method5, v1Var, new Object[0])).booleanValue()) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     } else if (i13 instanceof Boolean) {
                         if (!((Boolean) i13).booleanValue()) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     } else if (i13 instanceof Integer) {
                         if (((Integer) i13).intValue() == 0) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     } else if (i13 instanceof Float) {
                         if (Float.floatToRawIntBits(((Float) i13).floatValue()) == 0) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     } else if (i13 instanceof Double) {
                         if (Double.doubleToRawLongBits(((Double) i13).doubleValue()) == 0) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     } else {
                         if (i13 instanceof String) {
                             equals = i13.equals("");
@@ -177,15 +177,15 @@ public abstract class m2 {
                         } else if (i13 instanceof e1) {
                             if (i13 == ((v1) ((v1) ((e1) i13)).d(6))) {
                             }
-                            a(sb2, i3, substring, i13);
+                            a(sb2, i7, substring, i13);
                         } else {
                             if ((i13 instanceof Enum) && ((Enum) i13).ordinal() == 0) {
                             }
-                            a(sb2, i3, substring, i13);
+                            a(sb2, i7, substring, i13);
                         }
                         if (equals) {
                         }
-                        a(sb2, i3, substring, i13);
+                        a(sb2, i7, substring, i13);
                     }
                 }
             }
@@ -194,7 +194,7 @@ public abstract class m2 {
         x2 x2Var = v1Var.zzc;
         if (x2Var != null) {
             for (int i14 = 0; i14 < x2Var.a; i14++) {
-                a(sb2, i3, String.valueOf(x2Var.b[i14] >>> 3), x2Var.c[i14]);
+                a(sb2, i7, String.valueOf(x2Var.b[i14] >>> 3), x2Var.c[i14]);
             }
         }
     }

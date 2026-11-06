@@ -1,153 +1,114 @@
 package tf;
 
-import android.net.Uri;
-import android.os.Bundle;
-import e6.l;
+import java.io.EOFException;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
-    public final l b;
-    public final Uri c;
-    public final String d;
-    public final int e;
-    public final int f;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
+    public final boolean f;
+    public final int g;
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00d7  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00cc  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public f(e eVar) {
-        String str;
-        int i3;
-        l lVar;
-        Bundle bundle;
-        StringBuilder sb2;
-        StringBuilder sb3;
-        String str2;
-        String str3;
-        int i10;
-        str = (String) eVar.c;
-        this.a = str;
-        str.getClass();
-        i3 = 3;
-        switch (str) {
-            case "image/jpeg":
-            case "image/png":
-                i3 = 4;
-                lVar = (l) eVar.h;
-                lVar = lVar == null ? new l(i3) : lVar;
-                bundle = lVar.b;
-                sb2 = new StringBuilder();
-                sb3 = new StringBuilder();
-                str2 = (String) eVar.e;
-                if (str2 != null) {
-                    sb2.append(str2);
+    public f(hy0 hy0Var) {
+        byte b10;
+        byte b11;
+        uf.a aVar = (uf.a) hy0Var.b;
+        long j3 = aVar.b;
+        uy uyVar = (uy) hy0Var.d;
+        h hVar = (h) hy0Var.c;
+        int i7 = hVar.a;
+        int i10 = hVar.a;
+        byte b12 = 2;
+        if (i7 == 2) {
+            uyVar.getClass();
+            byte[] bArr = new byte[3];
+            int i11 = 0;
+            while (i11 < 3) {
+                int read = ((ab.d) uyVar.b).read(bArr, i11, 3 - i11);
+                if (read <= 0) {
+                    throw new EOFException();
                 }
-                str3 = (String) eVar.f;
-                if (str3 != null) {
-                    sb3.append(str3);
+                i11 += read;
+            }
+            this.a = new String(bArr, "ISO-8859-1");
+        } else {
+            uyVar.getClass();
+            byte[] bArr2 = new byte[4];
+            int i12 = 0;
+            while (i12 < 4) {
+                int read2 = ((ab.d) uyVar.b).read(bArr2, i12, 4 - i12);
+                if (read2 <= 0) {
+                    throw new EOFException();
                 }
-                i10 = eVar.a;
-                if (i10 != 0 && eVar.b != 0) {
-                    l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
-                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
-                    int i11 = eVar.b;
-                    l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
-                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i11);
-                    if (sb3.length() > 0) {
-                        sb3.append(' ');
-                    }
-                    sb3.append("(");
-                    sb3.append(eVar.a);
-                    sb3.append("x");
-                    sb3.append(eVar.b);
-                    sb3.append(")");
-                }
-                if (sb2.length() > 0) {
-                    lVar.b("com.google.android.gms.cast.metadata.TITLE", sb2.toString());
-                } else {
-                    lVar.b("com.google.android.gms.cast.metadata.TITLE", "No Title");
-                }
-                if (sb3.length() > 0) {
-                    lVar.b("com.google.android.gms.cast.metadata.SUBTITLE", sb3.toString());
-                    break;
-                }
-                break;
-            case "application/x-mpegURL":
-            case "video/mp4":
-                i3 = 1;
-                lVar = (l) eVar.h;
-                if (lVar == null) {
-                }
-                bundle = lVar.b;
-                sb2 = new StringBuilder();
-                sb3 = new StringBuilder();
-                str2 = (String) eVar.e;
-                if (str2 != null) {
-                }
-                str3 = (String) eVar.f;
-                if (str3 != null) {
-                }
-                i10 = eVar.a;
-                if (i10 != 0) {
-                    l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
-                    bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
-                    int i112 = eVar.b;
-                    l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
-                    bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i112);
-                    if (sb3.length() > 0) {
-                    }
-                    sb3.append("(");
-                    sb3.append(eVar.a);
-                    sb3.append("x");
-                    sb3.append(eVar.b);
-                    sb3.append(")");
-                    break;
-                }
-                if (sb2.length() > 0) {
-                }
-                if (sb3.length() > 0) {
-                }
-                break;
-            default:
-                if (!str.startsWith("audio/")) {
-                    lVar = null;
-                    break;
-                }
-                lVar = (l) eVar.h;
-                if (lVar == null) {
-                }
-                bundle = lVar.b;
-                sb2 = new StringBuilder();
-                sb3 = new StringBuilder();
-                str2 = (String) eVar.e;
-                if (str2 != null) {
-                }
-                str3 = (String) eVar.f;
-                if (str3 != null) {
-                }
-                i10 = eVar.a;
-                if (i10 != 0) {
-                }
-                if (sb2.length() > 0) {
-                }
-                if (sb3.length() > 0) {
-                }
-                break;
+                i12 += read2;
+            }
+            this.a = new String(bArr2, "ISO-8859-1");
         }
-        this.b = lVar;
-        this.c = (Uri) eVar.g;
-        this.d = (String) eVar.d;
-        this.e = eVar.a;
-        this.f = eVar.b;
+        byte b13 = 8;
+        if (i10 == 2) {
+            this.c = ((uyVar.M() & 255) << 16) | ((uyVar.M() & 255) << 8) | (uyVar.M() & 255);
+        } else if (i10 == 3) {
+            this.c = uyVar.O();
+        } else {
+            this.c = uyVar.P();
+        }
+        if (i10 > 2) {
+            uyVar.M();
+            byte M = uyVar.M();
+            byte b14 = 64;
+            if (i10 == 3) {
+                b13 = 128;
+                b11 = 0;
+                b10 = 32;
+                b12 = 0;
+            } else {
+                b10 = 64;
+                b11 = 1;
+                b14 = 4;
+            }
+            boolean z9 = (b13 & M) != 0;
+            this.e = z9;
+            this.d = (b12 & M) != 0;
+            boolean z10 = (M & b14) != 0;
+            this.f = z10;
+            if (i10 == 3) {
+                if (z9) {
+                    this.g = uyVar.O();
+                    this.c -= 4;
+                }
+                if (z10) {
+                    uyVar.M();
+                    this.c--;
+                }
+                if ((M & b10) != 0) {
+                    uyVar.M();
+                    this.c--;
+                }
+            } else {
+                if ((M & b10) != 0) {
+                    uyVar.M();
+                    this.c--;
+                }
+                if (z10) {
+                    uyVar.M();
+                    this.c--;
+                }
+                if ((M & b11) != 0) {
+                    this.g = uyVar.P();
+                    this.c -= 4;
+                }
+            }
+        }
+        this.b = (int) (aVar.b - j3);
+    }
+
+    public final String toString() {
+        return String.format("%s[id=%s, bodysize=%d]", f.class.getSimpleName(), this.a, Integer.valueOf(this.c));
     }
 }

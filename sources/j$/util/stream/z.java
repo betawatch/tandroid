@@ -55,13 +55,13 @@ public abstract class z extends a implements c0 {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
-        return t3.b0(aVar, spliterator, z10);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z9, IntFunction intFunction) {
+        return t3.b0(aVar, spliterator, z9);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
-        return new g7(aVar, supplier, z10);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z9) {
+        return new g7(aVar, supplier, z9);
     }
 
     @Override // j$.util.stream.a
@@ -89,8 +89,8 @@ public abstract class z extends a implements c0 {
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j10, IntFunction intFunction) {
-        return t3.h0(j10);
+    public final w1 A0(long j3, IntFunction intFunction) {
+        return t3.h0(j3);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -153,31 +153,31 @@ public abstract class z extends a implements c0 {
     }
 
     @Override // j$.util.stream.c0
-    public final c0 limit(long j10) {
-        if (j10 < 0) {
-            throw new IllegalArgumentException(Long.toString(j10));
+    public final c0 limit(long j3) {
+        if (j3 < 0) {
+            throw new IllegalArgumentException(Long.toString(j3));
         }
-        return t3.v0(this, 0L, j10);
+        return t3.v0(this, 0L, j3);
     }
 
     @Override // j$.util.stream.c0
-    public final c0 skip(long j10) {
-        if (j10 >= 0) {
-            return j10 == 0 ? this : t3.v0(this, j10, -1L);
+    public final c0 skip(long j3) {
+        if (j3 >= 0) {
+            return j3 == 0 ? this : t3.v0(this, j3, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j10));
+        throw new IllegalArgumentException(Long.toString(j3));
     }
 
     @Override // j$.util.stream.c0
     public final c0 a() {
-        int i3 = w8.a;
+        int i7 = w8.a;
         Objects.requireNonNull(null);
         return new b6(this, w8.a, 1);
     }
 
     @Override // j$.util.stream.c0
     public final c0 c() {
-        int i3 = w8.a;
+        int i7 = w8.a;
         Objects.requireNonNull(null);
         return new b6(this, w8.b, 2);
     }
@@ -192,8 +192,8 @@ public abstract class z extends a implements c0 {
         double[] dArr = (double[]) collect(new n(8), new n(9), new j$.time.format.a(27));
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
-        double d10 = dArr[dArr.length - 1];
-        return (Double.isNaN(d) && Double.isInfinite(d10)) ? d10 : d;
+        double d2 = dArr[dArr.length - 1];
+        return (Double.isNaN(d) && Double.isInfinite(d2)) ? d2 : d;
     }
 
     @Override // j$.util.stream.c0
@@ -214,9 +214,9 @@ public abstract class z extends a implements c0 {
         }
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
-        double d10 = dArr[dArr.length - 1];
-        if (Double.isNaN(d) && Double.isInfinite(d10)) {
-            d = d10;
+        double d2 = dArr[dArr.length - 1];
+        if (Double.isNaN(d) && Double.isInfinite(d2)) {
+            d = d2;
         }
         return new j$.util.b0(d / dArr[2]);
     }

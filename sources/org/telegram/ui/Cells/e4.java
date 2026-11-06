@@ -3,39 +3,39 @@ package org.telegram.ui.Cells;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import org.telegram.messenger.lc;
+import org.telegram.messenger.rc;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class e4 {
     public float a;
     public float b;
     public float c;
     public boolean e;
-    public final org.telegram.ui.Components.q9 f;
-    public final org.telegram.ui.Components.q9 g;
+    public final org.telegram.ui.Components.r9 f;
+    public final org.telegram.ui.Components.r9 g;
     public boolean h;
     public int i;
     public float d = 0.0f;
     public float j = 0.0f;
 
-    public e4(int i3, int i10) {
-        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(6);
-        this.f = q9Var;
-        org.telegram.ui.Components.q9 q9Var2 = new org.telegram.ui.Components.q9(8);
-        this.g = q9Var2;
-        float f10 = i3;
-        q9Var.a = f10;
+    public e4(int i7, int i10) {
+        org.telegram.ui.Components.r9 r9Var = new org.telegram.ui.Components.r9(6);
+        this.f = r9Var;
+        org.telegram.ui.Components.r9 r9Var2 = new org.telegram.ui.Components.r9(8);
+        this.g = r9Var2;
+        float f10 = i7;
+        r9Var.a = f10;
         float f11 = i10;
-        q9Var.b = f11;
-        q9Var2.a = f10;
-        q9Var2.b = f11;
-        q9Var.b();
-        q9Var2.b();
+        r9Var.b = f11;
+        r9Var2.a = f10;
+        r9Var2.b = f11;
+        r9Var.b();
+        r9Var2.b();
         int i11 = org.telegram.ui.ActionBar.k6.eh;
-        q9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
-        q9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
+        r9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
+        r9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
@@ -44,17 +44,17 @@ public final class e4 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Canvas canvas, float f10, float f11, View view) {
-        if (lc.e(512)) {
+        if (rc.e(512)) {
             float f12 = (this.a * 0.4f) + 0.8f;
             if (this.e || this.d != 0.0f) {
                 canvas.save();
                 float interpolation = xq.f.getInterpolation(this.d) * f12;
                 canvas.scale(interpolation, interpolation, f10, f11);
-                boolean z10 = this.h;
-                org.telegram.ui.Components.q9 q9Var = this.f;
-                if (!z10) {
-                    int i3 = this.i;
-                    if (i3 != 1) {
+                boolean z9 = this.h;
+                org.telegram.ui.Components.r9 r9Var = this.f;
+                if (!z9) {
+                    int i7 = this.i;
+                    if (i7 != 1) {
                         float f13 = this.j;
                         if (f13 != 1.0f) {
                             float f14 = f13 + 0.10666667f;
@@ -62,10 +62,10 @@ public final class e4 {
                             if (f14 > 1.0f) {
                                 this.j = 1.0f;
                             }
-                            q9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                            r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
                         }
                     }
-                    if (i3 == 1) {
+                    if (i7 == 1) {
                         float f15 = this.j;
                         if (f15 != 0.0f) {
                             float f16 = f15 - 0.10666667f;
@@ -75,15 +75,15 @@ public final class e4 {
                             }
                         }
                     }
-                    q9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                    r9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
                 }
-                q9Var.e(this.a, 1.0f);
-                Paint paint = q9Var.d;
-                q9Var.a(f10, f11, canvas, paint);
+                r9Var.e(this.a, 1.0f);
+                Paint paint = r9Var.d;
+                r9Var.a(f10, f11, canvas, paint);
                 float f17 = this.a;
-                org.telegram.ui.Components.q9 q9Var2 = this.g;
-                q9Var2.e(f17, 1.0f);
-                q9Var2.a(f10, f11, canvas, paint);
+                org.telegram.ui.Components.r9 r9Var2 = this.g;
+                r9Var2.e(f17, 1.0f);
+                r9Var2.a(f10, f11, canvas, paint);
                 canvas.restore();
             }
             if (this.d != 0.0f) {
@@ -95,7 +95,7 @@ public final class e4 {
     public final float b() {
         float f10 = (this.a * 0.2f) + 0.9f;
         float interpolation = xq.g.getInterpolation(this.d);
-        return com.google.android.recaptcha.internal.a.y(1.0f, interpolation, 1.0f, f10 * interpolation);
+        return com.google.android.recaptcha.internal.a.z(1.0f, interpolation, 1.0f, f10 * interpolation);
     }
 
     public final void c(double d) {
@@ -113,16 +113,16 @@ public final class e4 {
         this.c = (f11 - this.a) / 200.0f;
     }
 
-    public final void d(int i3) {
+    public final void d(int i7) {
         this.h = true;
-        this.f.d.setColor(i3);
+        this.f.d.setColor(i7);
     }
 
-    public final void e(View view, boolean z10) {
-        if (this.e != z10) {
+    public final void e(View view, boolean z9) {
+        if (this.e != z9) {
             view.invalidate();
         }
-        this.e = z10;
+        this.e = z9;
     }
 
     public final void f() {
@@ -140,8 +140,8 @@ public final class e4 {
                 this.a = f10;
             }
         }
-        boolean z10 = this.e;
-        if (z10) {
+        boolean z9 = this.e;
+        if (z9) {
             float f14 = this.d;
             if (f14 != 1.0f) {
                 float f15 = f14 + 0.045714285f;
@@ -153,7 +153,7 @@ public final class e4 {
                 return;
             }
         }
-        if (z10) {
+        if (z9) {
             return;
         }
         float f16 = this.d;

@@ -1,75 +1,69 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mi0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yj0 b;
+public final class mi0 extends org.telegram.ui.Components.q31 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ mi0(yj0 yj0Var, int i3) {
-        this.a = i3;
-        this.b = yj0Var;
+    static {
+        org.telegram.ui.Components.q31.h(new mi0());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                yj0 yj0Var = this.b;
-                ViewGroup[] viewGroupArr = yj0Var.a0;
-                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
-                    yj0Var.Z[0].requestFocus();
-                    org.telegram.messenger.g0.K3(yj0Var.Z[0]);
-                    break;
-                }
-                break;
-            case 1:
-                yj0 yj0Var2 = this.b;
-                yj0Var2.presentFragment(yj0Var2.i1, true);
-                yj0Var2.i1 = null;
-                break;
-            case 2:
-                yj0 yj0Var3 = this.b;
-                EditTextBoldCursor[] editTextBoldCursorArr = yj0Var3.b0;
-                if (editTextBoldCursorArr != null) {
-                    yj0Var3.M1(editTextBoldCursorArr[0]);
-                    break;
-                }
-                break;
-            case 3:
-                org.telegram.messenger.g0.K3(this.b.Z[2]);
-                break;
-            case 4:
-                this.b.B1();
-                break;
-            case 5:
-                int i3 = 0;
-                while (true) {
-                    yj0 yj0Var4 = this.b;
-                    if (i3 >= yj0Var4.d0.getChildCount()) {
-                        yj0Var4.B1();
-                        yj0Var4.r1.clear();
-                        yj0Var4.q1.clear();
-                        yj0Var4.E.values.clear();
-                        yj0Var4.V1();
-                        break;
-                    } else {
-                        View childAt = yj0Var4.d0.getChildAt(i3);
-                        if (childAt instanceof xj0) {
-                            yj0Var4.d0.removeView(childAt);
-                            i3--;
-                        }
-                        i3++;
-                    }
-                }
-            default:
-                this.b.finishFragment();
-                break;
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
+        ni0 ni0Var = (ni0) view;
+        TL_account.Passkey passkey = (TL_account.Passkey) r31Var.G;
+        View.OnClickListener onClickListener = r31Var.D;
+        TextView textView = ni0Var.n;
+        TextView textView2 = ni0Var.h;
+        org.telegram.ui.ActionBar.f6 f6Var = ni0Var.d;
+        FrameLayout frameLayout = ni0Var.e;
+        org.telegram.ui.Components.l9 l9Var = ni0Var.f;
+        ni0Var.w = passkey.id;
+        long j3 = passkey.software_emoji_id;
+        if (j3 != 0) {
+            l9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.i5.m(ni0Var.c, j3, null, 3));
+            frameLayout.setBackground(null);
+            l9Var.setColorFilter(null);
+            ni0Var.a = false;
+            l9Var.setScaleX(1.0f);
+            l9Var.setScaleY(1.0f);
+        } else {
+            int L = org.telegram.messenger.g0.L(4.0f);
+            int i7 = org.telegram.ui.ActionBar.k6.G6;
+            org.telegram.ui.ActionBar.r6.C(frameLayout, org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.r1(0.04f, org.telegram.ui.ActionBar.k6.w0(i7, f6Var))), org.telegram.ui.ActionBar.r6.L(0.04f, i7), f6Var);
+            ni0Var.a();
+            l9Var.setImageResource(R.drawable.msg2_permissions);
+            l9Var.setScaleX(0.666f);
+            l9Var.setScaleY(0.666f);
+            l9Var.setAnimatedEmojiDrawable(null);
         }
+        if (TextUtils.isEmpty(passkey.name)) {
+            textView2.setText(org.telegram.messenger.hd.M0(2131747627, null));
+        } else {
+            textView2.setText(passkey.name);
+        }
+        int i10 = passkey.last_usage_date;
+        if (i10 != 0) {
+            textView.setText(org.telegram.messenger.hd.a0(null, null, 2131747633, org.telegram.messenger.hd.x(i10, false)));
+        } else {
+            textView.setText(org.telegram.messenger.hd.a0(null, null, 2131747646, org.telegram.messenger.hd.x(passkey.date, false)));
+        }
+        ni0Var.r.setOnClickListener(onClickListener);
+        ni0Var.s = z9;
+        ni0Var.setWillNotDraw(!z9);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new ni0(i7, context, f6Var);
     }
 }

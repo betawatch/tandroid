@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import b8.ib;
-import dd.k;
-import fd.c;
-import hd.j;
-import od.p;
-import wd.z;
+import af.b;
+import gd.k;
+import id.c;
+import kd.j;
+import rd.p;
+import zd.z;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class zzlw extends j implements p {
     Object zza;
@@ -22,19 +22,19 @@ final class zzlw extends j implements p {
         this.zzd = zzgrVar;
     }
 
-    @Override // hd.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzlw(this.zzc, this.zzd, cVar);
     }
 
-    @Override // od.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzlw) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003e, code lost:
     
-        if (wd.b0.z(20000, r10, r9) == r1) goto L23;
+        if (zd.b0.z(20000, r10, r9) == r1) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
     
@@ -44,29 +44,29 @@ final class zzlw extends j implements p {
     
         if (r10.zzw(r9) != r1) goto L16;
      */
-    @Override // hd.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        gd.a aVar = gd.a.a;
-        int i3 = this.zzb;
+        jd.a aVar = jd.a.a;
+        int i7 = this.zzb;
         try {
-            if (i3 == 0) {
-                ib.b(obj);
+            if (i7 == 0) {
+                b.c(obj);
                 zzly zzlyVar = this.zzc;
                 this.zzb = 1;
             } else {
-                if (i3 != 1) {
-                    if (i3 == 2) {
-                        ib.b(obj);
+                if (i7 != 1) {
+                    if (i7 == 2) {
+                        b.c(obj);
                         return k.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zza;
-                    ib.b(obj);
+                    b.c(obj);
                     throw zzcgVar;
                 }
-                ib.b(obj);
+                b.c(obj);
             }
             zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
             this.zzb = 2;

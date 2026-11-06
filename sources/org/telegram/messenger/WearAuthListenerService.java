@@ -8,18 +8,18 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class WearAuthListenerService extends Service implements z8.a {
+public class WearAuthListenerService extends Service implements a9.a {
     public static final /* synthetic */ int r = 0;
     public ComponentName a;
-    public z8.f b;
-    public z8.d c;
+    public a9.g b;
+    public a9.d c;
     public Intent d;
     public Looper e;
     public boolean h;
     public final Object f = new Object();
-    public final a9.d n = new a9.d(new kb.a(this, 29));
+    public final b9.d n = new b9.d(new qb.a(this));
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:10:0x004b, code lost:
@@ -93,11 +93,11 @@ public class WearAuthListenerService extends Service implements z8.a {
             handlerThread.start();
             this.e = handlerThread.getLooper();
         }
-        this.b = new z8.f(this, this.e);
+        this.b = new a9.g(this, this.e);
         Intent intent = new Intent("com.google.android.gms.wearable.BIND_LISTENER");
         this.d = intent;
         intent.setComponent(this.a);
-        this.c = new z8.d(this);
+        this.c = new a9.d(this);
     }
 
     @Override // android.app.Service
@@ -107,29 +107,29 @@ public class WearAuthListenerService extends Service implements z8.a {
         }
         synchronized (this.f) {
             this.h = true;
-            z8.f fVar = this.b;
-            if (fVar == null) {
+            a9.g gVar = this.b;
+            if (gVar == null) {
                 throw new IllegalStateException("onDestroy: mServiceHandler not set, did you override onCreate() but forget to call super.onCreate()? component=".concat(String.valueOf(this.a)));
             }
-            fVar.getLooper().quit();
-            fVar.a("quit");
+            gVar.getLooper().quit();
+            gVar.a("quit");
         }
         super.onDestroy();
     }
 
-    @Override // z8.a
-    public final void a(a9.f fVar) {
+    @Override // a9.a
+    public final void a(b9.f fVar) {
     }
 
-    @Override // z8.a
-    public final void b(a9.f fVar) {
+    @Override // a9.a
+    public final void b(b9.f fVar) {
     }
 
-    @Override // z8.a
-    public final void c(a9.f fVar) {
+    @Override // a9.a
+    public final void c(b9.f fVar) {
     }
 
-    @Override // z8.a
-    public final void d(a9.f fVar) {
+    @Override // a9.a
+    public final void d(b9.f fVar) {
     }
 }

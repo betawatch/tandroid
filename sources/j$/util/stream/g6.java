@@ -8,29 +8,29 @@ public final class g6 extends u5 {
     public int d;
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j10) {
-        if (j10 >= 2147483639) {
+    public final void o(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.c = new double[(int) j10];
+        this.c = new double[(int) j3];
     }
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
     public final void end() {
-        int i3 = 0;
+        int i7 = 0;
         Arrays.sort(this.c, 0, this.d);
-        long j10 = this.d;
+        long j3 = this.d;
         j5 j5Var = this.a;
-        j5Var.o(j10);
+        j5Var.o(j3);
         if (!this.b) {
-            while (i3 < this.d) {
-                j5Var.accept(this.c[i3]);
-                i3++;
+            while (i7 < this.d) {
+                j5Var.accept(this.c[i7]);
+                i7++;
             }
         } else {
-            while (i3 < this.d && !j5Var.q()) {
-                j5Var.accept(this.c[i3]);
-                i3++;
+            while (i7 < this.d && !j5Var.q()) {
+                j5Var.accept(this.c[i7]);
+                i7++;
             }
         }
         j5Var.end();
@@ -40,8 +40,8 @@ public final class g6 extends u5 {
     @Override // j$.util.stream.g5, j$.util.stream.j5
     public final void accept(double d) {
         double[] dArr = this.c;
-        int i3 = this.d;
-        this.d = i3 + 1;
-        dArr[i3] = d;
+        int i7 = this.d;
+        this.d = i7 + 1;
+        dArr[i7] = d;
     }
 }

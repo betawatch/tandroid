@@ -1,21 +1,80 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class j70 extends og0 {
-    public final /* synthetic */ m70 r1;
+public final /* synthetic */ class j70 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j70(m70 m70Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.r1 = m70Var;
+    public /* synthetic */ j70(q70 q70Var, int i7) {
+        this.a = i7;
+        this.b = q70Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.t2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.z1
-    public final void dismiss() {
-        super.dismiss();
-        this.r1.F = null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        q70 q70Var = this.b;
+        int i10 = 1;
+        switch (i7) {
+            case 0:
+                q70Var.r.f();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.g1 g1Var = q70Var.s;
+                if (g1Var != null) {
+                    g1Var.d(true);
+                }
+                q70Var.r.d();
+                break;
+            case 2:
+                q70 q70Var2 = this.b;
+                String str = q70Var2.b;
+                boolean z9 = str != null && str.endsWith("?direct");
+                Context context = q70Var2.getContext();
+                String M0 = org.telegram.messenger.hd.M0(2131749169, null);
+                String str2 = q70Var2.b;
+                String str3 = q70Var2.J;
+                if (str3 == null) {
+                    str3 = org.telegram.messenger.hd.M0(q70Var2.H ? z9 ? 2131746506 : 2131746507 : 2131746504, null);
+                }
+                n70 n70Var = new n70(q70Var2, context, M0, str2, str3);
+                q70Var2.E = n70Var;
+                n70Var.I0();
+                q70Var2.E.show();
+                org.telegram.ui.ActionBar.g1 g1Var2 = q70Var2.s;
+                if (g1Var2 != null) {
+                    g1Var2.d(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.g1 g1Var3 = q70Var.s;
+                if (g1Var3 != null) {
+                    g1Var3.d(true);
+                }
+                org.telegram.ui.ActionBar.f2 f2Var = q70Var.c;
+                if (f2Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getParentActivity());
+                    String M02 = org.telegram.messenger.hd.M0(2131746024, null);
+                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                    u1Var.R = M02;
+                    u1Var.T = org.telegram.messenger.hd.M0(2131746027, null);
+                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746025, null), new i70(q70Var, i10));
+                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                    TextView textView = (TextView) u1Var.d(-1);
+                    if (textView != null) {
+                        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
+                    }
+                    alertDialog$Builder.p();
+                    break;
+                }
+                break;
+        }
     }
 }

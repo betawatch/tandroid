@@ -1,5 +1,6 @@
 package com.google.android.gms.cast.framework;
 
+import a7.a;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -7,17 +8,17 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.internal.cast.d;
 import com.google.android.gms.internal.cast.f;
-import f6.g;
-import f6.k;
-import f6.r;
-import f6.s;
-import f6.u;
-import f6.y;
-import i6.b;
-import p6.m;
-import z6.a;
+import com.google.android.gms.internal.cast.t;
+import g6.g;
+import g6.k;
+import g6.r;
+import g6.s;
+import g6.u;
+import g6.y;
+import j6.b;
+import q6.m;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class ReconnectionService extends Service {
     public static final b b = new b("ReconnectionService", null);
@@ -30,7 +31,7 @@ public class ReconnectionService extends Service {
             try {
                 s sVar = (s) uVar;
                 Parcel P0 = sVar.P0();
-                com.google.android.gms.internal.cast.u.c(P0, intent);
+                t.c(P0, intent);
                 Parcel R0 = sVar.R0(P0, 3);
                 IBinder readStrongBinder = R0.readStrongBinder();
                 R0.recycle();
@@ -46,26 +47,26 @@ public class ReconnectionService extends Service {
     public final void onCreate() {
         a aVar;
         a aVar2;
-        f6.a c2 = f6.a.c(this);
-        g b10 = c2.b();
+        g6.a c10 = g6.a.c(this);
+        g b10 = c10.b();
         b10.getClass();
         u uVar = null;
         try {
             y yVar = b10.a;
             Parcel R0 = yVar.R0(yVar.P0(), 7);
-            aVar = z6.b.M0(R0.readStrongBinder());
+            aVar = a7.b.M0(R0.readStrongBinder());
             R0.recycle();
         } catch (RemoteException e10) {
             g.c.a(e10, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
             aVar = null;
         }
         m.d("Must be called from the main thread.");
-        k kVar = c2.d;
+        k kVar = c10.d;
         kVar.getClass();
         try {
             r rVar = kVar.a;
             Parcel R02 = rVar.R0(rVar.P0(), 5);
-            aVar2 = z6.b.M0(R02.readStrongBinder());
+            aVar2 = a7.b.M0(R02.readStrongBinder());
             R02.recycle();
         } catch (RemoteException e11) {
             k.b.a(e11, "Unable to call %s on %s.", "getWrappedThis", r.class.getSimpleName());
@@ -74,8 +75,8 @@ public class ReconnectionService extends Service {
         b bVar = d.a;
         if (aVar != null && aVar2 != null) {
             try {
-                uVar = d.b(getApplicationContext()).Y0(new z6.b(this), aVar, aVar2);
-            } catch (RemoteException | f6.d e12) {
+                uVar = d.b(getApplicationContext()).Y0(new a7.b(this), aVar, aVar2);
+            } catch (RemoteException | g6.d e12) {
                 d.a.a(e12, "Unable to call %s on %s.", "newReconnectionServiceImpl", f.class.getSimpleName());
             }
         }
@@ -106,14 +107,14 @@ public class ReconnectionService extends Service {
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i3, int i10) {
+    public final int onStartCommand(Intent intent, int i7, int i10) {
         u uVar = this.a;
         if (uVar != null) {
             try {
                 s sVar = (s) uVar;
                 Parcel P0 = sVar.P0();
-                com.google.android.gms.internal.cast.u.c(P0, intent);
-                P0.writeInt(i3);
+                t.c(P0, intent);
+                P0.writeInt(i7);
                 P0.writeInt(i10);
                 Parcel R0 = sVar.R0(P0, 2);
                 int readInt = R0.readInt();

@@ -1,355 +1,186 @@
 package h6;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.support.v4.media.session.MediaSessionCompat$Token;
-import android.text.TextUtils;
-import android.util.Log;
-import b8.jb;
-import b8.ke;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.wb;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
-import com.google.android.gms.internal.cast.b1;
-import com.google.android.gms.internal.cast.b2;
-import e0.q;
-import g6.o;
+import com.google.android.gms.internal.cast.d0;
+import com.google.android.gms.internal.cast.f0;
+import com.google.android.gms.internal.cast.j0;
+import f7.t0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.beta.R;
-import p6.m;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class f {
-    public static final i6.b u = new i6.b("MediaNotificationProxy", null);
-    public final Context a;
-    public final NotificationManager b;
-    public final g6.f c;
-    public final ComponentName d;
-    public final ComponentName e;
-    public ArrayList f = new ArrayList();
-    public int[] g;
-    public final long h;
-    public final ke i;
-    public final Resources j;
-    public df.d k;
-    public tf.b l;
-    public e0.h m;
-    public e0.h n;
-    public e0.h o;
-    public e0.h p;
-    public e0.h q;
-    public e0.h r;
-    public e0.h s;
-    public e0.h t;
+public final class f extends r6.a {
+    public static final Parcelable.Creator<f> CREATOR;
+    public static final j0 Y;
+    public static final int[] Z;
+    public final int D;
+    public final int E;
+    public final int F;
+    public final int G;
+    public final int H;
+    public final int I;
+    public final int J;
+    public final int K;
+    public final int L;
+    public final int M;
+    public final int N;
+    public final int O;
+    public final int P;
+    public final int Q;
+    public final int R;
+    public final int S;
+    public final int T;
+    public final int U;
+    public final p V;
+    public final boolean W;
+    public final boolean X;
+    public final ArrayList a;
+    public final int[] b;
+    public final long c;
+    public final String d;
+    public final int e;
+    public final int f;
+    public final int h;
+    public final int n;
+    public final int r;
+    public final int s;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public f(Context context) {
-        this.a = context;
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
-        this.b = notificationManager;
-        i6.b bVar = f6.a.l;
-        m.d("Must be called from the main thread.");
-        f6.a aVar = f6.a.n;
-        m.g(aVar);
-        m.d("Must be called from the main thread.");
-        f6.b bVar2 = aVar.e;
-        m.g(bVar2);
-        g6.a aVar2 = bVar2.f;
-        m.g(aVar2);
-        g6.f fVar = aVar2.d;
-        m.g(fVar);
-        this.c = fVar;
-        aVar2.b();
-        Resources resources = context.getResources();
-        this.j = resources;
-        this.d = new ComponentName(context.getApplicationContext(), aVar2.a);
-        String str = fVar.d;
-        if (TextUtils.isEmpty(str)) {
-            this.e = null;
-        } else {
-            this.e = new ComponentName(context.getApplicationContext(), str);
+    static {
+        d0 d0Var = f0.b;
+        Object[] objArr = {MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK, MediaIntentReceiver.ACTION_STOP_CASTING};
+        for (int i7 = 0; i7 < 2; i7++) {
+            if (objArr[i7] == null) {
+                throw new NullPointerException(jg.g.j(i7, "at index "));
+            }
         }
-        this.h = fVar.c;
-        int dimensionPixelSize = resources.getDimensionPixelSize(fVar.I);
-        this.i = new ke(context.getApplicationContext(), new g6.b(1, dimensionPixelSize, dimensionPixelSize));
-        if (w6.b.d() && notificationManager != null) {
-            NotificationChannel notificationChannel = new NotificationChannel("cast_media_notification", context.getResources().getString(R.string.media_notification_channel_name), 2);
-            notificationChannel.setShowBadge(false);
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
-        b2.a(b1.v0);
+        Y = f0.m(2, objArr);
+        Z = new int[]{0, 1};
+        CREATOR = new t0(18);
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    public final e0.h a(String str) {
-        int i3;
-        int i10;
-        int hashCode = str.hashCode();
-        long j10 = this.h;
-        PendingIntent pendingIntent = null;
-        Resources resources = this.j;
-        Context context = this.a;
-        ComponentName componentName = this.d;
-        g6.f fVar = this.c;
-        switch (hashCode) {
-            case -1699820260:
-                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
-                    if (this.r == null) {
-                        Intent intent = new Intent(MediaIntentReceiver.ACTION_REWIND);
-                        intent.setComponent(componentName);
-                        intent.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 201326592);
-                        i6.b bVar = i.a;
-                        int i11 = fVar.E;
-                        if (j10 == 10000) {
-                            i11 = fVar.F;
-                        } else if (j10 == 30000) {
-                            i11 = fVar.G;
-                        }
-                        int i12 = fVar.S;
-                        if (j10 == 10000) {
-                            i12 = fVar.T;
-                        } else if (j10 == 30000) {
-                            i12 = fVar.U;
-                        }
-                        this.r = new e0.g(i11, broadcast, resources.getString(i12)).b();
-                    }
-                    return this.r;
-                }
-                break;
-            case -945151566:
-                if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
-                    boolean z10 = this.k.c;
-                    if (this.o == null) {
-                        if (z10) {
-                            Intent intent2 = new Intent(MediaIntentReceiver.ACTION_SKIP_NEXT);
-                            intent2.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent2, 67108864);
-                        }
-                        this.o = new e0.g(fVar.r, pendingIntent, resources.getString(fVar.N)).b();
-                    }
-                    return this.o;
-                }
-                break;
-            case -945080078:
-                if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
-                    boolean z11 = this.k.d;
-                    if (this.p == null) {
-                        if (z11) {
-                            Intent intent3 = new Intent(MediaIntentReceiver.ACTION_SKIP_PREV);
-                            intent3.setComponent(componentName);
-                            pendingIntent = PendingIntent.getBroadcast(context, 0, intent3, 67108864);
-                        }
-                        this.p = new e0.g(fVar.s, pendingIntent, resources.getString(fVar.O)).b();
-                    }
-                    return this.p;
-                }
-                break;
-            case -668151673:
-                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
-                    if (this.t == null) {
-                        Intent intent4 = new Intent(MediaIntentReceiver.ACTION_STOP_CASTING);
-                        intent4.setComponent(componentName);
-                        this.t = new e0.g(fVar.H, PendingIntent.getBroadcast(context, 0, intent4, 67108864), resources.getString(fVar.V)).b();
-                    }
-                    return this.t;
-                }
-                break;
-            case -124479363:
-                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                    if (this.s == null) {
-                        Intent intent5 = new Intent(MediaIntentReceiver.ACTION_DISCONNECT);
-                        intent5.setComponent(componentName);
-                        this.s = new e0.g(fVar.H, PendingIntent.getBroadcast(context, 0, intent5, 67108864), resources.getString(fVar.V, "")).b();
-                    }
-                    return this.s;
-                }
-                break;
-            case 235550565:
-                if (str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK)) {
-                    df.d dVar = this.k;
-                    int i13 = dVar.b;
-                    if (!dVar.a) {
-                        if (this.m == null) {
-                            Intent intent6 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
-                            intent6.setComponent(componentName);
-                            this.m = new e0.g(fVar.n, PendingIntent.getBroadcast(context, 0, intent6, 67108864), resources.getString(fVar.M)).b();
-                        }
-                        return this.m;
-                    }
-                    if (this.n == null) {
-                        if (i13 == 2) {
-                            i3 = fVar.f;
-                            i10 = fVar.K;
-                        } else {
-                            i3 = fVar.h;
-                            i10 = fVar.L;
-                        }
-                        Intent intent7 = new Intent(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK);
-                        intent7.setComponent(componentName);
-                        this.n = new e0.g(i3, PendingIntent.getBroadcast(context, 0, intent7, 67108864), resources.getString(i10)).b();
-                    }
-                    return this.n;
-                }
-                break;
-            case 1362116196:
-                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
-                    if (this.q == null) {
-                        Intent intent8 = new Intent(MediaIntentReceiver.ACTION_FORWARD);
-                        intent8.setComponent(componentName);
-                        intent8.putExtra(MediaIntentReceiver.EXTRA_SKIP_STEP_MS, j10);
-                        PendingIntent broadcast2 = PendingIntent.getBroadcast(context, 0, intent8, 201326592);
-                        i6.b bVar2 = i.a;
-                        int i14 = fVar.w;
-                        if (j10 == 10000) {
-                            i14 = fVar.x;
-                        } else if (j10 == 30000) {
-                            i14 = fVar.y;
-                        }
-                        int i15 = fVar.P;
-                        if (j10 == 10000) {
-                            i15 = fVar.Q;
-                        } else if (j10 == 30000) {
-                            i15 = fVar.R;
-                        }
-                        this.q = new e0.g(i14, broadcast2, resources.getString(i15)).b();
-                    }
-                    return this.q;
-                }
-                break;
+    public f(List list, int[] iArr, long j3, String str, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20, int i21, int i22, int i23, int i24, int i25, int i26, int i27, int i28, int i29, int i30, int i31, int i32, int i33, int i34, int i35, IBinder iBinder, boolean z9, boolean z10) {
+        p pVar;
+        this.a = new ArrayList(list);
+        this.b = Arrays.copyOf(iArr, iArr.length);
+        this.c = j3;
+        this.d = str;
+        this.e = i7;
+        this.f = i10;
+        this.h = i11;
+        this.n = i12;
+        this.r = i13;
+        this.s = i14;
+        this.w = i15;
+        this.x = i16;
+        this.y = i17;
+        this.D = i18;
+        this.E = i19;
+        this.F = i20;
+        this.G = i21;
+        this.H = i22;
+        this.I = i23;
+        this.J = i24;
+        this.K = i25;
+        this.L = i26;
+        this.M = i27;
+        this.N = i28;
+        this.O = i29;
+        this.P = i30;
+        this.Q = i31;
+        this.R = i32;
+        this.S = i33;
+        this.T = i34;
+        this.U = i35;
+        this.W = z9;
+        this.X = z10;
+        if (iBinder == null) {
+            pVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.INotificationActionsProvider");
+            pVar = queryLocalInterface instanceof p ? (p) queryLocalInterface : new p(iBinder, "com.google.android.gms.cast.framework.media.INotificationActionsProvider", 2);
         }
-        i6.b bVar3 = u;
-        Log.e(bVar3.a, bVar3.d("Action: %s is not a pre-defined action.", str));
-        return null;
+        this.V = pVar;
     }
 
-    public final void b() {
-        PendingIntent activities;
-        e0.h a10;
-        NotificationManager notificationManager = this.b;
-        if (notificationManager == null || this.k == null) {
-            return;
-        }
-        tf.b bVar = this.l;
-        Bitmap bitmap = bVar == null ? null : (Bitmap) bVar.b;
-        Context context = this.a;
-        q qVar = new q(context, "cast_media_notification");
-        qVar.j(bitmap);
-        g6.f fVar = this.c;
-        qVar.F.icon = fVar.e;
-        qVar.e = q.d((String) this.k.f);
-        int i3 = 0;
-        qVar.f = q.d(this.j.getString(fVar.J, (String) this.k.g));
-        qVar.h(2, true);
-        qVar.k = false;
-        qVar.x = 1;
-        ComponentName componentName = this.e;
-        if (componentName == null) {
-            activities = null;
-        } else {
-            Intent intent = new Intent();
-            intent.putExtra("targetActivity", componentName);
-            intent.setAction(componentName.flattenToString());
-            intent.setComponent(componentName);
-            ArrayList arrayList = new ArrayList();
-            ComponentName component = intent.getComponent();
-            if (component == null) {
-                component = intent.resolveActivity(context.getPackageManager());
-            }
-            if (component != null) {
-                int size = arrayList.size();
-                try {
-                    for (Intent a11 = jb.a(context, component); a11 != null; a11 = jb.a(context, a11.getComponent())) {
-                        arrayList.add(size, a11);
-                    }
-                } catch (PackageManager.NameNotFoundException e10) {
-                    Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
-                    throw new IllegalArgumentException(e10);
-                }
-            }
-            arrayList.add(intent);
-            if (arrayList.isEmpty()) {
-                throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
-            }
-            Intent[] intentArr = (Intent[]) arrayList.toArray(new Intent[0]);
-            intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
-            activities = PendingIntent.getActivities(context, 1, intentArr, 201326592, null);
-        }
-        if (activities != null) {
-            qVar.g = activities;
-        }
-        o oVar = fVar.W;
-        i6.b bVar2 = u;
-        if (oVar != null) {
-            bVar2.b("actionsProvider != null", new Object[0]);
-            int[] b10 = i.b(oVar);
-            this.g = b10 == null ? null : (int[]) b10.clone();
-            ArrayList a12 = i.a(oVar);
-            this.f = new ArrayList();
-            if (a12 != null) {
-                int size2 = a12.size();
-                int i10 = 0;
-                while (i10 < size2) {
-                    Object obj = a12.get(i10);
-                    i10++;
-                    g6.d dVar = (g6.d) obj;
-                    String str = dVar.a;
-                    if (str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT) || str.equals(MediaIntentReceiver.ACTION_SKIP_PREV) || str.equals(MediaIntentReceiver.ACTION_FORWARD) || str.equals(MediaIntentReceiver.ACTION_REWIND) || str.equals(MediaIntentReceiver.ACTION_STOP_CASTING) || str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
-                        a10 = a(str);
-                    } else {
-                        Intent intent2 = new Intent(str);
-                        intent2.setComponent(this.d);
-                        a10 = new e0.g(dVar.b, PendingIntent.getBroadcast(context, 0, intent2, 67108864), dVar.c).b();
-                    }
-                    if (a10 != null) {
-                        this.f.add(a10);
-                    }
-                }
-            }
-        } else {
-            bVar2.b("actionsProvider == null", new Object[0]);
-            this.f = new ArrayList();
-            ArrayList arrayList2 = fVar.a;
-            int size3 = arrayList2.size();
-            int i11 = 0;
-            while (i11 < size3) {
-                Object obj2 = arrayList2.get(i11);
-                i11++;
-                e0.h a13 = a((String) obj2);
-                if (a13 != null) {
-                    this.f.add(a13);
-                }
-            }
-            int[] iArr = fVar.b;
-            this.g = (int[]) Arrays.copyOf(iArr, iArr.length).clone();
-        }
-        ArrayList arrayList3 = this.f;
-        int size4 = arrayList3.size();
-        while (i3 < size4) {
-            Object obj3 = arrayList3.get(i3);
-            i3++;
-            e0.h hVar = (e0.h) obj3;
-            if (hVar != null) {
-                qVar.b.add(hVar);
-            }
-        }
-        b2.c cVar = new b2.c();
-        cVar.e = null;
-        int[] iArr2 = this.g;
-        if (iArr2 != null) {
-            cVar.e = iArr2;
-        }
-        MediaSessionCompat$Token mediaSessionCompat$Token = (MediaSessionCompat$Token) this.k.e;
-        if (mediaSessionCompat$Token != null) {
-            cVar.f = mediaSessionCompat$Token;
-        }
-        qVar.n(cVar);
-        notificationManager.notify("castMediaNotification", 1, qVar.b());
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.n(parcel, 2, this.a);
+        int[] iArr = this.b;
+        wb.g(parcel, 3, Arrays.copyOf(iArr, iArr.length));
+        wb.q(parcel, 4, 8);
+        parcel.writeLong(this.c);
+        wb.l(parcel, 5, this.d);
+        wb.q(parcel, 6, 4);
+        parcel.writeInt(this.e);
+        wb.q(parcel, 7, 4);
+        parcel.writeInt(this.f);
+        wb.q(parcel, 8, 4);
+        parcel.writeInt(this.h);
+        wb.q(parcel, 9, 4);
+        parcel.writeInt(this.n);
+        wb.q(parcel, 10, 4);
+        parcel.writeInt(this.r);
+        wb.q(parcel, 11, 4);
+        parcel.writeInt(this.s);
+        wb.q(parcel, 12, 4);
+        parcel.writeInt(this.w);
+        wb.q(parcel, 13, 4);
+        parcel.writeInt(this.x);
+        wb.q(parcel, 14, 4);
+        parcel.writeInt(this.y);
+        wb.q(parcel, 15, 4);
+        parcel.writeInt(this.D);
+        wb.q(parcel, 16, 4);
+        parcel.writeInt(this.E);
+        wb.q(parcel, 17, 4);
+        parcel.writeInt(this.F);
+        wb.q(parcel, 18, 4);
+        parcel.writeInt(this.G);
+        wb.q(parcel, 19, 4);
+        parcel.writeInt(this.H);
+        wb.q(parcel, 20, 4);
+        parcel.writeInt(this.I);
+        wb.q(parcel, 21, 4);
+        parcel.writeInt(this.J);
+        wb.q(parcel, 22, 4);
+        parcel.writeInt(this.K);
+        wb.q(parcel, 23, 4);
+        parcel.writeInt(this.L);
+        wb.q(parcel, 24, 4);
+        parcel.writeInt(this.M);
+        wb.q(parcel, 25, 4);
+        parcel.writeInt(this.N);
+        wb.q(parcel, 26, 4);
+        parcel.writeInt(this.O);
+        wb.q(parcel, 27, 4);
+        parcel.writeInt(this.P);
+        wb.q(parcel, 28, 4);
+        parcel.writeInt(this.Q);
+        wb.q(parcel, 29, 4);
+        parcel.writeInt(this.R);
+        wb.q(parcel, 30, 4);
+        parcel.writeInt(this.S);
+        wb.q(parcel, 31, 4);
+        parcel.writeInt(this.T);
+        wb.q(parcel, 32, 4);
+        parcel.writeInt(this.U);
+        p pVar = this.V;
+        wb.f(parcel, 33, pVar == null ? null : pVar.b);
+        wb.q(parcel, 34, 4);
+        parcel.writeInt(this.W ? 1 : 0);
+        wb.q(parcel, 35, 4);
+        parcel.writeInt(this.X ? 1 : 0);
+        wb.s(parcel, r10);
     }
 }

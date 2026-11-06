@@ -1,30 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class cw extends u4.c0 {
-    public final /* synthetic */ int r;
+public final class cw extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ gy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cw(Context context, int i3) {
-        super(context);
-        this.r = i3;
+    public /* synthetic */ cw(gy gyVar, boolean z9, int i7) {
+        this.a = i7;
+        this.c = gyVar;
+        this.b = z9;
     }
 
-    @Override // u4.c0
-    public final int i(int i3, int i10, int i11, int i12, int i13) {
-        return super.i(i3, i10, i11, i12, i13) + this.r;
-    }
-
-    @Override // u4.c0
-    public final int m(int i3) {
-        return super.m(i3) * 16;
-    }
-
-    @Override // u4.c0
-    public final int p() {
-        return -1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.D.setVisibility(4);
+                    break;
+                }
+                break;
+        }
     }
 }

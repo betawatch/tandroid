@@ -1,8 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class si {
-    public int[] a;
-    public float[] b;
+    public final boolean a;
+    public final String b;
+    public final String c;
+
+    public si(String str, String str2, boolean z9) {
+        this.a = z9;
+        this.b = str;
+        this.c = str2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || si.class != obj.getClass()) {
+            return false;
+        }
+        si siVar = (si) obj;
+        return this.a == siVar.a && Objects.equals(this.b, siVar.b) && Objects.equals(this.c, siVar.c);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.a), this.b, this.c);
+    }
 }

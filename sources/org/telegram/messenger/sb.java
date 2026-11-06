@@ -1,38 +1,25 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ub b;
-    public final /* synthetic */ Boolean c;
+    public final /* synthetic */ tb b;
 
-    public /* synthetic */ sb(ub ubVar, Boolean bool, int i3) {
-        this.a = i3;
-        this.b = ubVar;
-        this.c = bool;
+    public /* synthetic */ sb(tb tbVar, int i7) {
+        this.a = i7;
+        this.b = tbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i3 = this.a;
-        Boolean bool = this.c;
-        ub ubVar = this.b;
-        int i10 = 1;
-        switch (i3) {
+        switch (this.a) {
             case 0:
-                ubVar.h.u.remove(ubVar.a.e);
-                g0.h3(new sb(ubVar, bool, i10));
+                this.b.e.T(true);
                 break;
             default:
-                nb nbVar = ubVar.a;
-                if (!bool.booleanValue()) {
-                    hs.f(nbVar.o).k(hs.Z1, nbVar.e, 2);
-                    break;
-                } else {
-                    hs.f(nbVar.o).k(hs.Y1, nbVar.e, nbVar.p);
-                    break;
-                }
+                this.b.e.T(true);
+                break;
         }
     }
 }

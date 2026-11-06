@@ -1,22 +1,16 @@
 package m7;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class b {
-    public static final m6.c a;
-    public static final m6.c b;
-    public static final m6.c[] c;
-    public static final m6.c d;
-    public static final m6.c[] e;
+    public static final n6.c a;
+    public static final n6.c[] b;
 
     static {
-        m6.c cVar = new m6.c("CLIENT_TELEMETRY", 1L);
-        a = cVar;
-        m6.c cVar2 = new m6.c("CLIENT_NOTIFICATION_TELEMETRY", 1L);
-        b = cVar2;
-        c = new m6.c[]{cVar, cVar2};
-        m6.c cVar3 = new m6.c("moduleinstall", 7L);
-        d = cVar3;
-        e = new m6.c[]{cVar3};
+        n6.c cVar = new n6.c("sms_code_autofill", 2L);
+        n6.c cVar2 = new n6.c("sms_code_browser", 2L);
+        n6.c cVar3 = new n6.c("sms_retrieve", 1L);
+        a = cVar3;
+        b = new n6.c[]{cVar, cVar2, cVar3, new n6.c("user_consent", 3L)};
     }
 }

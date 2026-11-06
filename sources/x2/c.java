@@ -1,78 +1,78 @@
 package x2;
 
-import d2.o;
-import d2.v;
-import e3.h0;
-import e3.i0;
-import g2.n0;
-import g2.y;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class c implements i0 {
-    public final int a;
-    public final v b;
-    public final e3.n c = new e3.n();
-    public final d d;
-    public v e;
-    public i0 f;
-    public long g;
+public final class c implements c1 {
+    public final c1 a;
+    public boolean b;
+    public final /* synthetic */ d c;
 
-    public c(int i3, int i10, v vVar, d dVar) {
-        this.a = i10;
-        this.b = vVar;
-        this.d = dVar;
+    public c(d dVar, c1 c1Var) {
+        this.c = dVar;
+        this.a = c1Var;
     }
 
-    @Override // e3.i0
-    public final int a(o oVar, int i3, boolean z10) {
-        return c(oVar, i3, z10);
+    @Override // x2.c1
+    public final void a() {
+        this.a.a();
     }
 
-    @Override // e3.i0
-    public final int c(o oVar, int i3, boolean z10) {
-        i0 i0Var = this.f;
-        String str = n0.a;
-        return i0Var.a(oVar, i3, z10);
+    @Override // x2.c1
+    public final boolean f() {
+        return !this.c.f() && this.a.f();
     }
 
-    @Override // e3.i0
-    public final void d(long j10, int i3, int i10, int i11, h0 h0Var) {
-        long j11 = this.g;
-        if (j11 != -9223372036854775807L && j10 >= j11) {
-            this.f = this.c;
+    @Override // x2.c1
+    public final int l(long j3) {
+        if (this.c.f()) {
+            return -3;
         }
-        i0 i0Var = this.f;
-        String str = n0.a;
-        i0Var.d(j10, i3, i10, i11, h0Var);
+        return this.a.l(j3);
     }
 
-    @Override // e3.i0
-    public final /* synthetic */ void e(int i3, y yVar) {
-        com.google.android.recaptcha.internal.a.a(this, yVar, i3);
-    }
-
-    @Override // e3.i0
-    public final void f(y yVar, int i3, int i10) {
-        i0 i0Var = this.f;
-        String str = n0.a;
-        i0Var.e(i3, yVar);
-    }
-
-    @Override // e3.i0
-    public final void g(v vVar) {
-        this.d.getClass();
-        v vVar2 = this.b;
-        if (vVar2 != null) {
-            vVar = vVar.d(vVar2);
+    @Override // x2.c1
+    public final int m(wf.b bVar, k2.h hVar, int i7) {
+        d dVar = this.c;
+        if (dVar.f()) {
+            return -3;
         }
-        this.e = vVar;
-        i0 i0Var = this.f;
-        String str = n0.a;
-        i0Var.g(vVar);
-    }
-
-    @Override // e3.i0
-    public final /* synthetic */ void b(long j10) {
+        if (this.b) {
+            hVar.setFlags(4);
+            return -4;
+        }
+        long p10 = dVar.p();
+        int m10 = this.a.m(bVar, hVar, i7);
+        if (dVar.e != -9223372036854775807L && m10 != -3) {
+            dVar.e = -9223372036854775807L;
+        }
+        if (m10 != -5) {
+            long j3 = dVar.h;
+            if (j3 == Long.MIN_VALUE || ((m10 != -4 || hVar.e < j3) && !(m10 == -3 && p10 == Long.MIN_VALUE && !hVar.d))) {
+                return m10;
+            }
+            hVar.clear();
+            hVar.setFlags(4);
+            this.b = true;
+            return -4;
+        }
+        long j10 = dVar.f;
+        long j11 = dVar.h;
+        e2.u uVar = (e2.u) bVar.c;
+        uVar.getClass();
+        int i10 = uVar.O;
+        int i11 = uVar.N;
+        if (i11 != 0 || i10 != 0) {
+            if (j10 != 0) {
+                i11 = 0;
+            }
+            if (j11 != Long.MIN_VALUE) {
+                i10 = 0;
+            }
+            e2.t a10 = uVar.a();
+            a10.M = i11;
+            a10.N = i10;
+            bVar.c = new e2.u(a10);
+        }
+        return -5;
     }
 }

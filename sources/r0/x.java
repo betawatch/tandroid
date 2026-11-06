@@ -4,7 +4,7 @@ import android.os.Build;
 import android.view.View;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public abstract class x {
     public int a;
@@ -13,14 +13,14 @@ public abstract class x {
     public Object d;
 
     public x() {
-        if (nb.a.c == null) {
-            nb.a.c = new nb.a(22);
+        if (qb.a.c == null) {
+            qb.a.c = new qb.a(23);
         }
     }
 
-    public int a(int i3) {
-        if (i3 < this.c) {
-            return ((ByteBuffer) this.d).getShort(this.b + i3);
+    public int a(int i7) {
+        if (i7 < this.c) {
+            return ((ByteBuffer) this.d).getShort(this.b + i7);
         }
         return 0;
     }

@@ -3,9 +3,8 @@ package org.telegram.ui.Components;
 import android.util.Pair;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class ax0 extends ArrayList {
     public final Class a;
@@ -17,30 +16,14 @@ public final class ax0 extends ArrayList {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final k4.j h() {
+    public final h6.m f() {
         int size = size();
         Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
         Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i3 = 0; i3 < size; i3++) {
-            objArr[i3] = ((Pair) get(i3)).first;
-            objArr2[i3] = ((Pair) get(i3)).second;
+        for (int i7 = 0; i7 < size; i7++) {
+            objArr[i7] = ((Pair) get(i7)).first;
+            objArr2[i7] = ((Pair) get(i7)).second;
         }
-        k4.j jVar = new k4.j();
-        int length = objArr.length;
-        int[] iArr = new int[length];
-        HashMap hashMap = new HashMap();
-        for (int i10 = 0; i10 < length; i10++) {
-            Object obj = objArr[i10];
-            Integer num = (Integer) hashMap.get(obj);
-            if (num == null) {
-                num = Integer.valueOf(hashMap.size());
-                hashMap.put(obj, num);
-            }
-            iArr[i10] = num.intValue();
-        }
-        jVar.a = iArr;
-        jVar.b = k4.j.q(objArr, iArr);
-        jVar.c = k4.j.q(objArr2, iArr);
-        return jVar;
+        return new h6.m(objArr, objArr2);
     }
 }

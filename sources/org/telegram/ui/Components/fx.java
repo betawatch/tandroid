@@ -1,63 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public interface fx {
-    boolean A();
+public final class fx implements ux {
+    public final /* synthetic */ gx a;
 
-    long a();
+    public fx(gx gxVar) {
+        this.a = gxVar;
+    }
 
-    boolean b();
+    @Override // org.telegram.ui.Components.ux
+    public final void e() {
+        gx gxVar = this.a;
+        if (gxVar.F.V.F) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        gxVar.F.V.e(true);
+        gx.E(gxVar, new fq(13, this, arrayList), arrayList, true);
+    }
 
-    boolean c();
-
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    void e(Object obj, Object obj2);
-
-    int f();
-
-    boolean g();
-
-    void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void i(int i3);
-
-    boolean j();
-
-    boolean k();
-
-    void l(String str);
-
-    void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.vi viVar, boolean z10, int i3);
-
-    void n();
-
-    void o(n31 n31Var);
-
-    float p();
-
-    void q();
-
-    void r(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void s(int i3);
-
-    void t(ArrayList arrayList);
-
-    void u();
-
-    void v(View view, Object obj, String str, Object obj2, boolean z10, int i3, int i10);
-
-    void w();
-
-    void x(long j10, TLRPC.Document document, String str, boolean z10);
-
-    void y(long j10);
-
-    boolean z();
+    @Override // java.lang.Runnable
+    public final void run() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        String str = this.a.w;
+        fq fqVar = new fq(12, this, str);
+        if (org.telegram.messenger.i6.d(str)) {
+            yu0.F3.c(org.telegram.messenger.p10.s0, str, new org.telegram.messenger.voip.k(28, linkedHashSet, fqVar));
+        } else {
+            fqVar.run();
+        }
+    }
 }

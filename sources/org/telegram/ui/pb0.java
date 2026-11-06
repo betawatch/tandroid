@@ -1,33 +1,102 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.app.Dialog;
+import android.text.TextUtils;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pb0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qb0 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class pb0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ ub0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
     public final /* synthetic */ String d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ pb0(qb0 qb0Var, String str, String str2, int i3) {
-        this.a = i3;
-        this.b = qb0Var;
-        this.c = str;
-        this.d = str2;
+    public /* synthetic */ pb0(ub0 ub0Var, TLRPC.TL_error tL_error, String str, String str2, TLObject tLObject) {
+        this.b = ub0Var;
+        this.c = tL_error;
+        this.d = str;
+        this.e = str2;
+        this.f = tLObject;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7;
+        int i10 = this.a;
+        TLObject tLObject = this.f;
+        String str = this.e;
+        String str2 = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        ub0 ub0Var = this.b;
+        switch (i10) {
             case 0:
-                org.telegram.messenger.g0.h3(new mb0(this.b, tL_error, this.c, this.d, tLObject));
+                ub0Var.getClass();
+                if (tL_error == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject;
+                    ub0Var.s = password;
+                    TwoStepVerificationActivity.r0(password);
+                    ub0Var.n(str2, str);
+                    break;
+                }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new mb0(this.b, tL_error, tLObject, this.c, this.d));
+                ce0 ce0Var = ub0Var.G;
+                int i11 = 1;
+                if (tL_error != null && ("SRP_ID_INVALID".equals(tL_error.text) || "NEW_SALT_INVALID".equals(tL_error.text))) {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    i7 = ((org.telegram.ui.ActionBar.f2) ce0Var).currentAccount;
+                    ConnectionsManager.getInstance(i7).sendRequest(getpassword, new sb0(ub0Var, str2, str, i11), 8);
+                    break;
+                } else {
+                    ce0Var.C1(false, true);
+                    if (!(tLObject instanceof TLRPC.auth_Authorization)) {
+                        if (tL_error != null) {
+                            ub0Var.x = false;
+                            if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                                ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error.text);
+                                break;
+                            } else {
+                                int intValue = Utilities.z(tL_error.text).intValue();
+                                ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                                break;
+                            }
+                        }
+                    } else {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce0Var.getParentActivity());
+                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751771, null), new pu(19, ub0Var, tLObject));
+                        boolean isEmpty = TextUtils.isEmpty(str2);
+                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                        if (isEmpty) {
+                            u1Var.T = org.telegram.messenger.hd.M0(2131742800, null);
+                        } else {
+                            u1Var.T = org.telegram.messenger.hd.M0(2131742805, null);
+                        }
+                        u1Var.R = org.telegram.messenger.hd.M0(2131743932, null);
+                        Dialog showDialog = ce0Var.showDialog(u1Var);
+                        if (showDialog != null) {
+                            showDialog.setCanceledOnTouchOutside(false);
+                            showDialog.setCancelable(false);
+                            break;
+                        }
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ pb0(ub0 ub0Var, TLRPC.TL_error tL_error, TLObject tLObject, String str, String str2) {
+        this.b = ub0Var;
+        this.c = tL_error;
+        this.f = tLObject;
+        this.d = str;
+        this.e = str2;
     }
 }

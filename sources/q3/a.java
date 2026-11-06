@@ -1,62 +1,62 @@
 package q3;
 
-import d2.p0;
-import d2.r0;
-import d2.u0;
-import d2.v;
-import g2.y;
-import java.nio.charset.StandardCharsets;
+import e2.n0;
+import e2.p0;
+import e2.s0;
+import e2.t;
+import e2.u;
+import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class a implements r0 {
-    public final int a;
+public final class a implements p0 {
+    public static final u g;
+    public static final u h;
+    public final String a;
     public final String b;
-    public final String c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final byte[] h;
+    public final long c;
+    public final long d;
+    public final byte[] e;
+    public int f;
 
-    public a(int i3, String str, String str2, int i10, int i11, int i12, int i13, byte[] bArr) {
-        this.a = i3;
-        this.b = str;
-        this.c = str2;
-        this.d = i10;
-        this.e = i11;
-        this.f = i12;
-        this.g = i13;
-        this.h = bArr;
+    static {
+        t tVar = new t();
+        tVar.r = s0.n("application/id3");
+        g = new u(tVar);
+        t tVar2 = new t();
+        tVar2.r = s0.n("application/x-scte35");
+        h = new u(tVar2);
     }
 
-    public static a d(y yVar) {
-        int m10 = yVar.m();
-        String n4 = u0.n(yVar.y(yVar.m(), StandardCharsets.US_ASCII));
-        String y9 = yVar.y(yVar.m(), StandardCharsets.UTF_8);
-        int m11 = yVar.m();
-        int m12 = yVar.m();
-        int m13 = yVar.m();
-        int m14 = yVar.m();
-        int m15 = yVar.m();
-        byte[] bArr = new byte[m15];
-        yVar.k(0, m15, bArr);
-        return new a(m10, n4, y9, m11, m12, m13, m14, bArr);
+    public a(String str, String str2, long j3, long j10, byte[] bArr) {
+        this.a = str;
+        this.b = str2;
+        this.c = j3;
+        this.d = j10;
+        this.e = bArr;
     }
 
-    @Override // d2.r0
-    public final void a(p0 p0Var) {
-        p0Var.a(this.a, this.h);
+    @Override // e2.p0
+    public final u a() {
+        String str = this.a;
+        str.getClass();
+        switch (str) {
+            case "urn:scte:scte35:2014:bin":
+                return h;
+            case "https://aomedia.org/emsg/ID3":
+            case "https://developer.apple.com/streaming/emsg-id3":
+                return g;
+            default:
+                return null;
+        }
     }
 
-    @Override // d2.r0
-    public final /* synthetic */ v b() {
-        return null;
-    }
-
-    @Override // d2.r0
-    public final /* synthetic */ byte[] c() {
+    @Override // e2.p0
+    public final byte[] c() {
+        if (a() != null) {
+            return this.e;
+        }
         return null;
     }
 
@@ -66,7 +66,7 @@ public final class a implements r0 {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.a == aVar.a && this.b.equals(aVar.b) && this.c.equals(aVar.c) && this.d == aVar.d && this.e == aVar.e && this.f == aVar.f && this.g == aVar.g && Arrays.equals(this.h, aVar.h)) {
+            if (this.c == aVar.c && this.d == aVar.d && Objects.equals(this.a, aVar.a) && Objects.equals(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
                 return true;
             }
         }
@@ -74,10 +74,24 @@ public final class a implements r0 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.h) + ((((((((com.google.android.recaptcha.internal.a.g(com.google.android.recaptcha.internal.a.g((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
+        if (this.f == 0) {
+            String str = this.a;
+            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+            String str2 = this.b;
+            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+            long j3 = this.c;
+            int i7 = (hashCode2 + ((int) (j3 ^ (j3 >>> 32)))) * 31;
+            long j10 = this.d;
+            this.f = Arrays.hashCode(this.e) + ((i7 + ((int) (j10 ^ (j10 >>> 32)))) * 31);
+        }
+        return this.f;
     }
 
     public final String toString() {
-        return "Picture: mimeType=" + this.b + ", description=" + this.c;
+        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
+    }
+
+    @Override // e2.p0
+    public final /* synthetic */ void b(n0 n0Var) {
     }
 }

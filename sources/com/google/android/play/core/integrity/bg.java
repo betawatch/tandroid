@@ -3,11 +3,11 @@ package com.google.android.play.core.integrity;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
-import c9.g0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
+import d9.g0;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -17,16 +17,16 @@ final class bg extends bm {
     final /* synthetic */ bn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i3, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, TaskCompletionSource taskCompletionSource2) {
+    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i7, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j3, long j10, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
         this.a = standardIntegrityTokenRequest;
-        this.b = j10;
-        this.c = j11;
+        this.b = j3;
+        this.c = j10;
         this.d = taskCompletionSource2;
         this.e = bnVar;
     }
 
-    @Override // c9.h0
+    @Override // d9.h0
     public final void b() {
         g0 g0Var;
         if (bn.l(this.e)) {
@@ -39,14 +39,14 @@ final class bg extends bm {
         }
         try {
             bn bnVar = this.e;
-            c9.w wVar = (c9.w) bnVar.a.n;
+            d9.w wVar = (d9.w) bnVar.a.n;
             Bundle a10 = bn.a(bnVar, this.a, this.b, this.c, 0);
             bk bkVar = new bk(this.e, this.d, this.b);
-            c9.u uVar = (c9.u) wVar;
+            d9.u uVar = (d9.u) wVar;
             uVar.getClass();
             Parcel obtain = Parcel.obtain();
             obtain.writeInterfaceToken(uVar.c);
-            int i3 = c9.s.a;
+            int i7 = d9.s.a;
             obtain.writeInt(1);
             a10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);

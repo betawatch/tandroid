@@ -6,10 +6,14 @@ import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class c0 extends LinkMovementMethod {
     public final /* synthetic */ int a;
+
+    public /* synthetic */ c0(int i7) {
+        this.a = i7;
+    }
 
     @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
     public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
@@ -58,7 +62,7 @@ public final class c0 extends LinkMovementMethod {
         return false;
     }
 
-    public /* synthetic */ c0(boolean z10) {
+    public /* synthetic */ c0(boolean z9) {
         this.a = 0;
     }
 }

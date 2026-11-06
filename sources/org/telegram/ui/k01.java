@@ -1,25 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class k01 extends FrameLayout {
-    public FrameLayout a;
-    public org.telegram.ui.Cells.w3 b;
-    public vg.o0 c;
-    public String d;
-    public ValueAnimator e;
-    public float f;
-    public Boolean h;
-    public ValueAnimator n;
+public final class k01 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ q11 c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i3, int i10) {
-        setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(8.0f));
-        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
+    public /* synthetic */ k01(q11 q11Var, boolean z9, int i7) {
+        this.a = i7;
+        this.c = q11Var;
+        this.b = z9;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                q11 q11Var = this.c;
+                e01 e01Var = q11Var.i0;
+                boolean z9 = this.b;
+                e01Var.setVisibility(z9 ? 0 : 8);
+                q11Var.h0.setVisibility(z9 ? 8 : 0);
+                q11Var.F1 = null;
+                if (!z9 && (arrayList2 = q11Var.B1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = q11Var.E1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    q11Var.q0.E(false);
+                }
+                if (!z9 && (arrayList = q11Var.C1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                q11 q11Var2 = this.c;
+                q11Var2.j0.setVisibility((this.b && q11Var2.i0.getVisibility() == 0) ? 0 : 8);
+                q11Var2.I1 = null;
+                break;
+        }
     }
 }

@@ -1,119 +1,177 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
+import android.os.Build;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class aq extends View implements org.telegram.ui.ActionBar.z5 {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public int d;
-    public long e;
+public class aq extends Path {
+    public static ArrayList g;
+    public int e;
     public int f;
-    public int h;
-    public int n;
-    public int r;
+    public boolean b = false;
+    public boolean c = true;
+    public float d = 0.0f;
+    public final ArrayList a = new ArrayList(1);
 
-    public aq(Context context, int i3) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        this.c = new RectF();
-        this.d = 0;
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        if (i3 == 0) {
-            this.f = org.telegram.ui.ActionBar.k6.B7;
-            this.h = org.telegram.ui.ActionBar.k6.C7;
-        } else if (i3 == 1) {
-            this.f = org.telegram.ui.ActionBar.k6.D7;
-            this.h = org.telegram.ui.ActionBar.k6.E7;
-        } else if (i3 == 2) {
-            this.f = org.telegram.ui.ActionBar.k6.F7;
-            this.h = org.telegram.ui.ActionBar.k6.G7;
-        } else if (i3 == 3) {
-            this.f = org.telegram.ui.ActionBar.k6.H7;
-            this.h = org.telegram.ui.ActionBar.k6.I7;
-        }
-        updateColors();
+    public aq() {
     }
 
-    public final void a(int i3, int i10) {
-        this.f = -1;
-        this.h = -1;
-        this.n = i3;
-        this.r = i10;
-        updateColors();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = System.currentTimeMillis();
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (getVisibility() != 0) {
+    public final void a() {
+        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.e;
-        this.e = currentTimeMillis;
-        this.d = (int) (((j10 * 360) / 1000.0f) + this.d);
-        int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(9.0f);
-        int measuredHeight = (getMeasuredHeight() / 2) - org.telegram.messenger.g0.L(9.0f);
-        float f10 = measuredWidth;
-        float f11 = measuredHeight;
-        float L = org.telegram.messenger.g0.L(18.0f) + measuredWidth;
-        float L2 = org.telegram.messenger.g0.L(18.0f) + measuredHeight;
-        RectF rectF = this.c;
-        rectF.set(f10, f11, L, L2);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, org.telegram.messenger.g0.L(9.0f), this.a);
-        canvas.drawArc(rectF, this.d - 90, 90.0f, false, this.b);
-        invalidate();
+        b(this.a);
+        this.b = true;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i3) {
-        super.setVisibility(i3);
-        this.e = System.currentTimeMillis();
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int i3 = this.f;
-        Paint paint = this.a;
-        if (i3 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i3, false));
-        } else {
-            paint.setColor(this.n);
+    @Override // android.graphics.Path
+    public final void addRect(RectF rectF, Path.Direction direction) {
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            float f10 = rectF.left;
+            int i7 = this.e;
+            float f11 = f10 - i7;
+            float f12 = rectF.top;
+            int i10 = this.f;
+            super.addRect(f11, f12 - i10, rectF.right + i7, rectF.bottom + i10, direction);
+            return;
         }
-        int i10 = this.h;
-        Paint paint2 = this.b;
-        if (i10 >= 0) {
-            paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
-        } else {
-            paint2.setColor(this.r);
+        ArrayList arrayList = this.a;
+        if (arrayList.size() <= 0 || !((RectF) jg.g.i(1, arrayList)).contains(rectF)) {
+            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) jg.g.i(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) jg.g.i(1, arrayList)).bottom) > this.d) {
+                ArrayList arrayList2 = g;
+                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
+                rectF2.set(rectF);
+                arrayList.add(rectF2);
+            } else {
+                ((RectF) jg.g.i(1, arrayList)).union(rectF);
+            }
+            this.b = false;
         }
-        invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public final void b(List list) {
+        if (list.isEmpty()) {
+            return;
+        }
+        boolean z9 = false;
+        if (list.size() == 1) {
+            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
+            return;
+        }
+        RectF rectF = (RectF) list.get(0);
+        int size = list.size() - 1;
+        super.moveTo(rectF.left - this.e, rectF.top - this.f);
+        for (int i7 = 1; i7 < list.size(); i7++) {
+            RectF rectF2 = (RectF) list.get(i7);
+            if (rectF2.width() != 0.0f) {
+                float f10 = rectF.bottom;
+                int i10 = this.f;
+                float f11 = f10 + i10;
+                float f12 = rectF2.top;
+                if (f11 >= f12 - i10) {
+                    float f13 = rectF.left;
+                    if (f13 <= rectF2.right) {
+                        float f14 = rectF.right;
+                        float f15 = rectF2.left;
+                        if (f14 >= f15) {
+                            if (f13 != f15) {
+                                super.lineTo(f13 - this.e, f12);
+                                super.lineTo(rectF2.left - this.e, rectF2.top);
+                            }
+                            rectF = rectF2;
+                        }
+                    }
+                }
+                z9 = true;
+                size = i7;
+                break;
+            }
+        }
+        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
+        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
+        for (int i11 = size - 1; i11 >= 0; i11--) {
+            RectF rectF3 = (RectF) list.get(i11);
+            if (rectF3.width() != 0.0f) {
+                float f16 = rectF.right;
+                if (f16 != rectF3.right) {
+                    super.lineTo(f16 + this.e, rectF.top);
+                    super.lineTo(rectF3.right + this.e, rectF.top);
+                }
+                rectF = rectF3;
+            }
+        }
+        super.lineTo(rectF.right + this.e, rectF.top - this.f);
+        super.close();
+        if (z9) {
+            b(list.subList(size, list.size()));
+        }
+    }
+
+    @Override // android.graphics.Path
+    public void reset() {
+        super.reset();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    @Override // android.graphics.Path
+    public final void rewind() {
+        super.rewind();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    public aq(int i7) {
+    }
+
+    @Override // android.graphics.Path
+    public void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        RectF rectF;
+        if (Build.VERSION.SDK_INT >= 34 && this.c) {
+            ArrayList arrayList = this.a;
+            if (arrayList.size() <= 0 || !((RectF) jg.g.i(1, arrayList)).contains(f10, f11, f12, f13)) {
+                if (arrayList.size() > 0 && Math.abs(f11 - ((RectF) jg.g.i(1, arrayList)).top) <= this.d && Math.abs(f13 - ((RectF) jg.g.i(1, arrayList)).bottom) <= this.d) {
+                    ((RectF) jg.g.i(1, arrayList)).union(f10, f11, f12, f13);
+                } else {
+                    ArrayList arrayList2 = g;
+                    if (arrayList2 != null && arrayList2.size() > 0) {
+                        rectF = (RectF) g.remove(0);
+                    } else {
+                        rectF = new RectF();
+                    }
+                    rectF.set(f10, f11, f12, f13);
+                    arrayList.add(rectF);
+                }
+                this.b = false;
+                return;
+            }
+            return;
+        }
+        int i7 = this.e;
+        float f14 = f10 - i7;
+        int i10 = this.f;
+        super.addRect(f14, f11 - i10, f12 + i7, f13 + i10, direction);
     }
 }

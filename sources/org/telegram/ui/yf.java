@@ -1,46 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.s1[] b;
+    public final /* synthetic */ an b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ yf(org.telegram.ui.ActionBar.s1[] s1VarArr, int i3) {
-        this.a = i3;
-        this.b = s1VarArr;
+    public /* synthetic */ yf(an anVar, TLRPC.User user, int i7) {
+        this.a = i7;
+        this.b = anVar;
+        this.c = user;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.s1[] s1VarArr = this.b;
-                try {
-                    s1VarArr[0].dismiss();
-                } catch (Throwable unused) {
-                }
-                s1VarArr[0] = null;
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.s1[] s1VarArr2 = this.b;
-                try {
-                    s1VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
-                }
-                s1VarArr2[0] = null;
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new yf(this.b, 4));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new yf(this.b, 5));
-                break;
-            case 4:
-                this.b[0].dismiss();
+                an anVar = this.b;
+                anVar.getClass();
+                anVar.presentFragment(an.ra(this.c.id));
                 break;
             default:
-                this.b[0].dismiss();
+                this.b.Ma(this.c);
                 break;
         }
     }

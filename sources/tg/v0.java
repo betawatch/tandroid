@@ -1,50 +1,36 @@
 package tg;
 
-import android.graphics.Color;
-import android.opengl.GLES20;
-import java.util.HashMap;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.r2;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class v0 {
-    public int a;
-    public HashMap b;
+public final class v0 extends View {
+    public final Paint a;
+    public float b;
 
-    public static void a(int i3, int i10) {
-        GLES20.glUniform4f(i3, Color.red(i10) / 255.0f, Color.green(i10) / 255.0f, Color.blue(i10) / 255.0f, Color.alpha(i10) / 255.0f);
+    public v0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
     }
 
-    public static d2.t0 b(int i3, String str) {
-        int glCreateShader = GLES20.glCreateShader(i3);
-        GLES20.glShaderSource(glCreateShader, str);
-        GLES20.glCompileShader(glCreateShader);
-        int[] iArr = new int[1];
-        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
-        if (iArr[0] == 0 && r2.a) {
-            a8.d(GLES20.glGetShaderInfoLog(glCreateShader));
-        }
-        int i10 = iArr[0];
-        d2.t0 t0Var = new d2.t0();
-        t0Var.a = glCreateShader;
-        t0Var.b = i10;
-        return t0Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint = this.a;
+        canvas.drawLine((getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 0.0f, this.b)), (getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -7.0f, this.b)), paint);
+        canvas.drawLine((getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(5.33f, 7.0f, this.b)), (getWidth() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(org.telegram.messenger.g0.T1(-5.33f, 0.0f, this.b)), paint);
     }
 
-    public static void c(int i3, int i10, int i11) {
-        if (i3 != 0) {
-            GLES20.glDeleteShader(i3);
-        }
-        if (i10 != 0) {
-            GLES20.glDeleteShader(i10);
-        }
-        if (i11 != 0) {
-            GLES20.glDeleteProgram(i3);
-        }
-    }
-
-    public final int d(String str) {
-        return ((Integer) this.b.get(str)).intValue();
+    public void setProgress(float f10) {
+        this.b = f10;
+        invalidate();
     }
 }

@@ -1,39 +1,52 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class n8 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class n8 extends org.telegram.ui.q11 {
+    public boolean e2;
+    public final /* synthetic */ t8 f2;
 
-    public final n8 a() {
-        n8 n8Var = new n8();
-        n8Var.c = this.c;
-        n8Var.d = this.d;
-        n8Var.e = this.e;
-        n8Var.f = this.f;
-        n8Var.b = this.b;
-        return n8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n8(t8 t8Var, t8 t8Var2, Activity activity, int i7) {
+        super(t8Var2, activity, false, null, 4, true, null, 16, i7);
+        this.f2 = t8Var;
+        this.e2 = true;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.q11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        if (this.e2) {
+            this.e2 = false;
+            this.f2.b.s(null);
         }
-        if (!(obj instanceof n8)) {
-            return false;
-        }
-        n8 n8Var = (n8) obj;
-        return this.c == n8Var.c && this.d == n8Var.d && this.e == n8Var.e && this.f == n8Var.f;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    @Override // org.telegram.ui.q11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i7;
+        TLRPC.TL_emojiList tL_emojiList;
+        boolean z9;
+        int i10;
+        boolean z10 = this.R;
+        t8 t8Var = this.f2;
+        if (z10) {
+            i10 = ((org.telegram.ui.ActionBar.f2) t8Var).currentAccount;
+            tL_emojiList = org.telegram.messenger.ui.b0(i10).J1;
+        } else {
+            i7 = ((org.telegram.ui.ActionBar.f2) t8Var).currentAccount;
+            tL_emojiList = org.telegram.messenger.ui.b0(i7).K1;
+        }
+        if (tL_emojiList != null) {
+            z9 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l10 != null ? l10.longValue() : 0L));
+        } else {
+            z9 = false;
+        }
+        t8Var.m0(z9, l10 != null ? l10.longValue() : 0L, document);
     }
 }

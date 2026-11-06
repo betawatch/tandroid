@@ -4,14 +4,14 @@ import android.content.Intent;
 import android.text.TextUtils;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Intent b;
 
-    public /* synthetic */ s(Intent intent, int i3) {
-        this.a = i3;
+    public /* synthetic */ s(Intent intent, int i7) {
+        this.a = i7;
         this.b = intent;
     }
 
@@ -21,23 +21,23 @@ public final /* synthetic */ class s implements Runnable {
             case 0:
                 Intent intent = this.b;
                 try {
-                    int i3 = h10.t0;
+                    int i7 = p10.s0;
                     t0.w();
-                    if (!g0.p2(false) && !az.C) {
+                    if (!g0.p2(false) && !iz.C) {
                         String stringExtra = intent.getStringExtra("android.intent.extra.TEXT");
                         if (!TextUtils.isEmpty(stringExtra)) {
                             String stringExtra2 = intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_URI");
                             long parseLong = Long.parseLong(intent.getStringExtra("com.google.android.voicesearch.extra.RECIPIENT_CONTACT_CHAT_ID"));
-                            TLRPC.User a22 = hp.s1(i3).a2(Long.valueOf(parseLong));
-                            if (a22 == null && (a22 = qr.a0(i3).k0(parseLong)) != null) {
-                                hp.s1(i3).X3(a22, true, false);
+                            TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(parseLong));
+                            if (a22 == null && (a22 = yr.a0(i7).k0(parseLong)) != null) {
+                                qp.s1(i7).X3(a22, true, false);
                             }
                             if (a22 != null) {
-                                g5.r(i3);
+                                g5.r(i7);
                                 if (stringExtra2 != null) {
                                     Utilities.h.c(new l4(stringExtra2, 0));
                                 }
-                                yy.C(i3).r0(wy.b(stringExtra, a22.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                                gz.C(i7).r0(ez.b(stringExtra, a22.id, null, null, null, true, null, null, null, true, 0, 0, null, false));
                                 break;
                             }
                         }

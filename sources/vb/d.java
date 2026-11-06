@@ -1,26 +1,73 @@
 package vb;
 
-import android.content.Context;
-import ci.u0;
-import g2.q0;
-import mb.g;
-import z7.fa;
+import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
+import com.google.mlkit.vision.common.internal.MobileVisionBase;
+import java.util.HashMap;
+import java.util.concurrent.Callable;
+import x4.f;
+import z7.ha;
+import z7.ia;
+import z7.pa;
+import z7.qa;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class d extends u0 {
-    public final g b;
+public final /* synthetic */ class d implements Callable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public d(g gVar) {
-        super(4);
-        this.b = gVar;
+    public /* synthetic */ d(MobileVisionBase mobileVisionBase, ub.a aVar) {
+        this.b = mobileVisionBase;
+        this.c = aVar;
     }
 
-    @Override // ci.u0
-    public final Object Q0(Object obj) {
-        ub.a aVar = (ub.a) obj;
-        Context b10 = this.b.b();
-        m6.e.b.getClass();
-        return new e(aVar, m6.e.a(b10) >= 204700000 ? new q0(b10, aVar) : new b(b10, aVar), fa.b());
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        ia iaVar;
+        int i7 = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i7) {
+            case 0:
+                MobileVisionBase mobileVisionBase = (MobileVisionBase) obj;
+                ub.a aVar = (ub.a) obj2;
+                HashMap hashMap = ia.f;
+                qa.b();
+                int i10 = pa.a;
+                qa.b();
+                if (Boolean.parseBoolean("")) {
+                    HashMap hashMap2 = ia.f;
+                    if (hashMap2.get("detectorTaskWithResource#run") == null) {
+                        hashMap2.put("detectorTaskWithResource#run", new ia("detectorTaskWithResource#run"));
+                    }
+                    iaVar = (ia) hashMap2.get("detectorTaskWithResource#run");
+                } else {
+                    iaVar = ha.h;
+                }
+                iaVar.a();
+                try {
+                    Object e10 = mobileVisionBase.b.e(aVar);
+                    iaVar.close();
+                    return e10;
+                } catch (Throwable th2) {
+                    try {
+                        iaVar.close();
+                    } catch (Throwable th3) {
+                        try {
+                            Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th2, th3);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    throw th2;
+                }
+            default:
+                return (f) ((ShortcutInfoCompatSaverImpl) obj2).b.get((String) obj);
+        }
+    }
+
+    public d(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, String str) {
+        this.c = shortcutInfoCompatSaverImpl;
+        this.b = str;
     }
 }

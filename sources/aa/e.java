@@ -1,44 +1,52 @@
 package aa;
 
-import androidx.activity.v;
-import dd.k;
-import kotlin.jvm.internal.i;
-import kotlin.jvm.internal.j;
+import android.os.Process;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Date;
+import java.util.Locale;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e extends i implements od.a {
-    public final /* synthetic */ int a;
+public final class e {
+    public static final String b = g.i(UUID.randomUUID().toString() + System.currentTimeMillis());
+    public static final AtomicLong c = new AtomicLong(0);
+    public final String a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e(int i3, Object obj, Class cls, String str, String str2, int i10, int i11) {
-        super(i3, obj, cls, str, str2, i10);
-        this.a = i11;
+    public e() {
+        long time = new Date().getTime();
+        ByteBuffer allocate = ByteBuffer.allocate(4);
+        allocate.putInt((int) (time / 1000));
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.position(0);
+        byte[] array = allocate.array();
+        byte b10 = array[0];
+        byte b11 = array[1];
+        byte b12 = array[2];
+        byte b13 = array[3];
+        byte[] a10 = a(time % 1000);
+        byte b14 = a10[0];
+        byte b15 = a10[1];
+        byte[] a11 = a(c.incrementAndGet());
+        byte b16 = a11[0];
+        byte b17 = a11[1];
+        byte[] a12 = a(Integer.valueOf(Process.myPid()).shortValue());
+        String f10 = g.f(new byte[]{b10, b11, b12, b13, b14, b15, b16, b17, a12[0], a12[1]});
+        Locale locale = Locale.US;
+        this.a = String.format(locale, "%s%s%s%s", f10.substring(0, 12), f10.substring(12, 16), f10.subSequence(16, 20), b.substring(0, 12)).toUpperCase(locale);
     }
 
-    @Override // od.a
-    public final Object invoke() {
-        switch (this.a) {
-            case 0:
-                ((f) this.receiver).getClass();
-                String name = Thread.currentThread().getName();
-                j.d(name, "<get-threadName>(...)");
-                break;
-            case 1:
-                ((f) this.receiver).getClass();
-                String name2 = Thread.currentThread().getName();
-                j.d(name2, "<get-threadName>(...)");
-                break;
-            case 2:
-                ((f) this.receiver).getClass();
-                break;
-            case 3:
-                ((v) this.receiver).d();
-                break;
-            default:
-                ((v) this.receiver).d();
-                break;
-        }
-        return k.a;
+    public static byte[] a(long j3) {
+        ByteBuffer allocate = ByteBuffer.allocate(2);
+        allocate.putShort((short) j3);
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.position(0);
+        return allocate.array();
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

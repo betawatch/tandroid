@@ -1,31 +1,30 @@
 package org.telegram.messenger.secretmedia;
 
+import a8.ia;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
-import b8.zb;
-import g2.n0;
-import i2.b;
-import i2.b0;
-import i2.d0;
-import i2.e;
-import i2.f;
-import i2.h;
-import i2.m;
-import i2.n;
-import i2.s;
-import i2.u;
+import h2.m0;
 import j$.util.Objects;
+import j2.b;
+import j2.b0;
+import j2.d0;
+import j2.e;
+import j2.f;
+import j2.h;
+import j2.l;
+import j2.m;
+import j2.s;
+import j2.u;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.s8;
-import p4.q;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -47,13 +46,13 @@ public final class ExtendedDefaultDataSource implements h {
     private s8 streamLoadOperation;
     private final List<d0> transferListeners;
 
-    public ExtendedDefaultDataSource(Context context, String str, boolean z10) {
-        this(context, str, 8000, 8000, z10);
+    public ExtendedDefaultDataSource(Context context, String str, boolean z9) {
+        this(context, str, 8000, 8000, z9);
     }
 
     private void addListenersToDataSource(h hVar) {
-        for (int i3 = 0; i3 < this.transferListeners.size(); i3++) {
-            hVar.addTransferListener(this.transferListeners.get(i3));
+        for (int i7 = 0; i7 < this.transferListeners.size(); i7++) {
+            hVar.addTransferListener(this.transferListeners.get(i7));
         }
     }
 
@@ -144,7 +143,7 @@ public final class ExtendedDefaultDataSource implements h {
         }
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public void addTransferListener(d0 d0Var) {
         this.baseDataSource.addTransferListener(d0Var);
         this.transferListeners.add(d0Var);
@@ -156,7 +155,7 @@ public final class ExtendedDefaultDataSource implements h {
         maybeAddListenerToDataSource(this.rawResourceDataSource, d0Var);
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public void close() {
         h hVar = this.dataSource;
         if (hVar != null) {
@@ -168,13 +167,13 @@ public final class ExtendedDefaultDataSource implements h {
         }
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public Map<String, List<String>> getResponseHeaders() {
         h hVar = this.dataSource;
         return hVar == null ? Collections.EMPTY_MAP : hVar.getResponseHeaders();
     }
 
-    @Override // i2.h
+    @Override // j2.h
     public Uri getUri() {
         h hVar = this.dataSource;
         if (hVar == null) {
@@ -183,18 +182,18 @@ public final class ExtendedDefaultDataSource implements h {
         return hVar.getUri();
     }
 
-    @Override // i2.h
-    public long open(n nVar) {
-        zb.p(this.dataSource == null);
-        Uri uri = nVar.a;
+    @Override // j2.h
+    public long open(m mVar) {
+        ia.p(this.dataSource == null);
+        Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
-            uri = this.mtprotoUris.get(Long.parseLong(nVar.a.toString().substring(8)));
-            m a10 = nVar.a();
+            uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));
+            l a10 = mVar.a();
             a10.e = uri;
-            nVar = a10.d();
+            mVar = a10.d();
         }
         String scheme = uri.getScheme();
-        String str = n0.a;
+        String str = m0.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || Objects.equals(scheme2, "file")) {
             String path = uri.getPath();
@@ -220,18 +219,18 @@ public final class ExtendedDefaultDataSource implements h {
         } else {
             this.dataSource = this.baseDataSource;
         }
-        return this.dataSource.open(nVar);
+        return this.dataSource.open(mVar);
     }
 
-    @Override // d2.o
-    public int read(byte[] bArr, int i3, int i10) {
+    @Override // e2.n
+    public int read(byte[] bArr, int i7, int i10) {
         h hVar = this.dataSource;
         hVar.getClass();
-        return hVar.read(bArr, i3, i10);
+        return hVar.read(bArr, i7, i10);
     }
 
-    public ExtendedDefaultDataSource(Context context, String str, int i3, int i10, boolean z10) {
-        this(context, new s(str, i3, i10, z10, new q(23)), (LongSparseArray<Uri>) null);
+    public ExtendedDefaultDataSource(Context context, String str, int i7, int i10, boolean z9) {
+        this(context, new s(str, i7, i10, z9, new wf.b(24)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {

@@ -1,12 +1,11 @@
 package x4;
 
-import android.content.Context;
-import java.util.List;
-
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public interface b {
-    List a();
+public final class b {
+    public final String a;
 
-    Object b(Context context);
+    public b(String str) {
+        this.a = str;
+    }
 }

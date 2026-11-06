@@ -1,47 +1,47 @@
 package com.google.firebase.messaging;
 
-import b8.r1;
+import a8.h8;
+import ab.r;
 import com.google.firebase.components.ComponentRegistrar;
-import d2.l0;
+import e2.j0;
 import java.util.Arrays;
 import java.util.List;
-import k5.f;
-import n9.h;
-import ra.g;
-import sa.a;
-import t9.b;
-import t9.j;
-import t9.r;
-import ua.e;
+import o9.g;
+import sa.f;
+import ta.a;
+import u9.b;
+import u9.i;
+import u9.q;
+import va.d;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(r rVar, b bVar) {
-        h hVar = (h) bVar.a(h.class);
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(q qVar, b bVar) {
+        g gVar = (g) bVar.a(g.class);
         if (bVar.a(a.class) == null) {
-            return new FirebaseMessaging(hVar, bVar.f(bb.b.class), bVar.f(g.class), (e) bVar.a(e.class), bVar.c(rVar), (qa.b) bVar.a(qa.b.class));
+            return new FirebaseMessaging(gVar, bVar.c(cb.b.class), bVar.c(f.class), (d) bVar.a(d.class), bVar.f(qVar), (ra.b) bVar.a(ra.b.class));
         }
         throw new ClassCastException();
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<t9.a> getComponents() {
-        r rVar = new r(ka.b.class, f.class);
-        l0 a10 = t9.a.a(FirebaseMessaging.class);
+    public List<u9.a> getComponents() {
+        q qVar = new q(la.b.class, l5.f.class);
+        j0 a10 = u9.a.a(FirebaseMessaging.class);
         a10.d = LIBRARY_NAME;
-        a10.a(j.a(h.class));
-        a10.a(new j(0, 0, a.class));
-        a10.a(new j(0, 1, bb.b.class));
-        a10.a(new j(0, 1, g.class));
-        a10.a(j.a(e.class));
-        a10.a(new j(rVar, 0, 1));
-        a10.a(j.a(qa.b.class));
-        a10.f = new ra.b(rVar, 1);
+        a10.a(i.a(g.class));
+        a10.a(new i(0, 0, a.class));
+        a10.a(new i(0, 1, cb.b.class));
+        a10.a(new i(0, 1, f.class));
+        a10.a(i.a(d.class));
+        a10.a(new i(qVar, 0, 1));
+        a10.a(i.a(ra.b.class));
+        a10.f = new r(qVar, 0);
         a10.c(1);
-        return Arrays.asList(a10.b(), r1.a(LIBRARY_NAME, "25.1.3"));
+        return Arrays.asList(a10.b(), h8.a(LIBRARY_NAME, "25.1.3"));
     }
 }

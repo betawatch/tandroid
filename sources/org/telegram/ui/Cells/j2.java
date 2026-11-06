@@ -2,14 +2,14 @@ package org.telegram.ui.Cells;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ t2 b;
 
-    public /* synthetic */ j2(t2 t2Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ j2(t2 t2Var, int i7) {
+        this.a = i7;
         this.b = t2Var;
     }
 
@@ -19,19 +19,19 @@ public final /* synthetic */ class j2 implements ValueAnimator.AnimatorUpdateLis
             case 0:
                 t2 t2Var = this.b;
                 t2Var.getClass();
-                t2Var.W3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var.V3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 t2Var.invalidate();
                 break;
             case 1:
                 t2 t2Var2 = this.b;
                 t2Var2.getClass();
-                t2Var2.X3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var2.W3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 t2Var2.invalidate();
                 break;
             default:
                 t2 t2Var3 = this.b;
                 t2Var3.getClass();
-                t2Var3.z4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var3.y4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 t2Var3.invalidate();
                 break;
         }

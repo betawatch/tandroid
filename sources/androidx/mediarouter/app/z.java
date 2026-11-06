@@ -1,48 +1,31 @@
 package androidx.mediarouter.app;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
+import a8.b7;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import v4.d1;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class z implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class z extends d1 {
+    public final View v;
+    public final ImageView w;
+    public final ProgressBar x;
+    public final TextView y;
+    public final /* synthetic */ a0 z;
 
-    public z(Context context, Intent intent) {
-        this.b = context;
-        this.c = intent;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                a0 a0Var = (a0) this.c;
-                c0 c0Var = a0Var.z.r;
-                r4.w wVar = (r4.w) this.b;
-                c0Var.E = wVar;
-                wVar.l();
-                a0Var.w.setVisibility(4);
-                a0Var.x.setVisibility(0);
-                break;
-            default:
-                try {
-                    ((Context) this.b).startActivity((Intent) this.c);
-                    break;
-                } catch (ActivityNotFoundException e10) {
-                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e10);
-                    return;
-                }
-        }
-    }
-
-    public z(a0 a0Var, r4.w wVar) {
-        this.c = a0Var;
-        this.b = wVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z(a0 a0Var, View view) {
+        super(view);
+        this.z = a0Var;
+        this.v = view;
+        this.w = (ImageView) view.findViewById(R.id.mr_picker_route_icon);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_picker_route_progress_bar);
+        this.x = progressBar;
+        this.y = (TextView) view.findViewById(R.id.mr_picker_route_name);
+        b7.i(a0Var.r.n, progressBar);
     }
 }

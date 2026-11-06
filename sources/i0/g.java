@@ -6,8 +6,8 @@ import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.Log;
-import b8.sc;
-import b8.tc;
+import c8.j0;
+import c8.k0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,9 +20,9 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class g extends sc {
+public final class g extends j0 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -52,9 +52,9 @@ public final class g extends sc {
         d = method;
     }
 
-    public static boolean g(Object obj, ByteBuffer byteBuffer, int i3, int i10, boolean z10) {
+    public static boolean g(Object obj, ByteBuffer byteBuffer, int i7, int i10, boolean z9) {
         try {
-            return ((Boolean) c.invoke(obj, byteBuffer, Integer.valueOf(i3), null, Integer.valueOf(i10), Boolean.valueOf(z10))).booleanValue();
+            return ((Boolean) c.invoke(obj, byteBuffer, Integer.valueOf(i7), null, Integer.valueOf(i10), Boolean.valueOf(z9))).booleanValue();
         } catch (IllegalAccessException | InvocationTargetException unused) {
             return false;
         }
@@ -70,8 +70,8 @@ public final class g extends sc {
         }
     }
 
-    @Override // b8.sc
-    public final Typeface a(Context context, h0.e eVar, Resources resources, int i3) {
+    @Override // c8.j0
+    public final Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
         Object obj;
         int i10;
         MappedByteBuffer mappedByteBuffer;
@@ -84,12 +84,12 @@ public final class g extends sc {
         if (obj != null) {
             for (h0.f fVar : eVar.a) {
                 int i11 = fVar.f;
-                File d10 = tc.d(context);
-                if (d10 != null) {
+                File d2 = k0.d(context);
+                if (d2 != null) {
                     try {
-                        if (tc.b(d10, resources, i11)) {
+                        if (k0.b(d2, resources, i11)) {
                             try {
-                                fileInputStream = new FileInputStream(d10);
+                                fileInputStream = new FileInputStream(d2);
                             } catch (IOException unused2) {
                                 mappedByteBuffer = null;
                             }
@@ -102,7 +102,7 @@ public final class g extends sc {
                             }
                         }
                     } finally {
-                        d10.delete();
+                        d2.delete();
                     }
                 }
                 mappedByteBuffer = null;
@@ -114,8 +114,8 @@ public final class g extends sc {
         return null;
     }
 
-    @Override // b8.sc
-    public final Typeface b(Context context, o0.i[] iVarArr, int i3) {
+    @Override // c8.j0
+    public final Typeface b(Context context, o0.h[] hVarArr, int i7) {
         Object obj;
         try {
             obj = b.newInstance(null);
@@ -125,24 +125,24 @@ public final class g extends sc {
         if (obj != null) {
             int i10 = 0;
             l lVar = new l(0);
-            int length = iVarArr.length;
+            int length = hVarArr.length;
             while (true) {
                 if (i10 < length) {
-                    o0.i iVar = iVarArr[i10];
-                    Uri uri = iVar.a;
+                    o0.h hVar = hVarArr[i10];
+                    Uri uri = hVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) lVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = tc.e(context, uri);
+                        byteBuffer = k0.e(context, uri);
                         lVar.put(uri, byteBuffer);
                     }
-                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
+                    if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {
                         break;
                     }
                     i10++;
                 } else {
                     Typeface h = h(obj);
                     if (h != null) {
-                        return Typeface.create(h, i3);
+                        return Typeface.create(h, i7);
                     }
                 }
             }

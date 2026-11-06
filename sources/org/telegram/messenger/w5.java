@@ -5,14 +5,14 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ z5 b;
 
-    public /* synthetic */ w5(z5 z5Var, int i3) {
-        this.a = i3;
+    public /* synthetic */ w5(z5 z5Var, int i7) {
+        this.a = i7;
         this.b = z5Var;
     }
 
@@ -33,13 +33,13 @@ public final /* synthetic */ class w5 implements Runnable {
                         if (byteBufferValue != null) {
                             TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
                             if (TLdeserialize != null) {
-                                TLdeserialize.readAttachPath(byteBufferValue, h10.i(z5Var.currentAccount).n);
-                                zi ziVar = new zi(z5Var.currentAccount, TLdeserialize, false, false);
-                                arrayList3.add(ziVar);
+                                TLdeserialize.readAttachPath(byteBufferValue, p10.i(z5Var.currentAccount).n);
+                                ij ijVar = new ij(z5Var.currentAccount, TLdeserialize, false, false);
+                                arrayList3.add(ijVar);
                                 if (intValue == 0) {
-                                    arrayList.add(ziVar);
+                                    arrayList.add(ijVar);
                                 } else {
-                                    arrayList2.add(ziVar);
+                                    arrayList2.add(ijVar);
                                 }
                             }
                             byteBufferValue.reuse();
@@ -51,16 +51,16 @@ public final /* synthetic */ class w5 implements Runnable {
                 }
                 z5Var.getFileLoader().l(arrayList);
                 z5Var.getFileLoader().l(arrayList2);
-                g0.h3(new fg(z5Var, arrayList, arrayList2, 18));
+                g0.h3(new ng(z5Var, arrayList, arrayList2, 18));
                 break;
             case 1:
                 z5 z5Var2 = this.b;
-                z5Var2.getNotificationCenter().b(z5Var2, hs.Z1);
-                z5Var2.getNotificationCenter().b(z5Var2, hs.Y1);
-                z5Var2.getNotificationCenter().b(z5Var2, hs.X1);
-                z5Var2.getNotificationCenter().b(z5Var2, hs.W1);
-                z5Var2.getNotificationCenter().b(z5Var2, hs.R1);
-                z5Var2.getNotificationCenter().b(z5Var2, hs.S1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.Z1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.Y1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.X1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.W1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.R1);
+                z5Var2.getNotificationCenter().b(z5Var2, qs.S1);
                 z5Var2.s(false);
                 break;
             default:

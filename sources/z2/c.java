@@ -1,172 +1,138 @@
 package z2;
 
-import android.os.SystemClock;
-import b8.zb;
-import d2.o1;
-import d2.v;
-import g2.n0;
-import java.util.Arrays;
-import java.util.List;
-import vg.i1;
+import a8.ia;
+import h9.f0;
+import h9.g0;
+import h9.i0;
+import h9.n;
+import h9.o1;
+import h9.t1;
+import h9.x;
+import java.util.ArrayList;
+import v0.j;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public abstract class c implements p {
-    public final o1 a;
-    public final int b;
-    public final int[] c;
-    public final v[] d;
-    public final long[] e;
-    public int f;
+public final class c implements a {
+    public static final x b = new x(new n(new j(27), o1.b), new n(new j(28), o1.c));
+    public final ArrayList a = new ArrayList();
 
-    public c(o1 o1Var, int[] iArr) {
-        int i3 = 0;
-        zb.p(iArr.length > 0);
-        o1Var.getClass();
-        this.a = o1Var;
-        int length = iArr.length;
-        this.b = length;
-        this.d = new v[length];
-        for (int i10 = 0; i10 < iArr.length; i10++) {
-            this.d[i10] = o1Var.d[iArr[i10]];
-        }
-        Arrays.sort(this.d, new i1(2));
-        this.c = new int[this.b];
+    @Override // z2.a
+    public final long a(long j3) {
+        int i7 = 0;
+        long j10 = -9223372036854775807L;
         while (true) {
-            int i11 = this.b;
-            if (i3 >= i11) {
-                this.e = new long[i11];
-                return;
+            ArrayList arrayList = this.a;
+            if (i7 >= arrayList.size()) {
+                break;
+            }
+            long j11 = ((c4.a) arrayList.get(i7)).b;
+            long j12 = ((c4.a) arrayList.get(i7)).d;
+            if (j3 < j11) {
+                j10 = j10 == -9223372036854775807L ? j11 : Math.min(j10, j11);
             } else {
-                this.c[i3] = o1Var.a(this.d[i3]);
-                i3++;
+                if (j3 < j12) {
+                    j10 = j10 == -9223372036854775807L ? j12 : Math.min(j10, j12);
+                }
+                i7++;
             }
         }
+        if (j10 != -9223372036854775807L) {
+            return j10;
+        }
+        return Long.MIN_VALUE;
     }
 
-    @Override // z2.p
-    public final boolean a(int i3, long j10) {
-        return this.e[i3] > j10;
-    }
-
-    @Override // z2.p
-    public final o1 b() {
-        return this.a;
-    }
-
-    @Override // z2.p
-    public final int e(v vVar) {
-        for (int i3 = 0; i3 < this.b; i3++) {
-            if (this.d[i3] == vVar) {
-                return i3;
+    @Override // z2.a
+    public final i0 b(long j3) {
+        ArrayList arrayList = this.a;
+        if (!arrayList.isEmpty()) {
+            if (j3 >= ((c4.a) arrayList.get(0)).b) {
+                ArrayList arrayList2 = new ArrayList();
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    c4.a aVar = (c4.a) arrayList.get(i7);
+                    if (j3 >= aVar.b && j3 < aVar.d) {
+                        arrayList2.add(aVar);
+                    }
+                    if (j3 < aVar.b) {
+                        break;
+                    }
+                }
+                t1 w10 = i0.w(b, arrayList2);
+                f0 p10 = i0.p();
+                for (int i10 = 0; i10 < w10.d; i10++) {
+                    p10.d(((c4.a) w10.get(i10)).a);
+                }
+                return p10.f();
             }
         }
-        return -1;
+        g0 g0Var = i0.b;
+        return t1.e;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && getClass() == obj.getClass()) {
-            c cVar = (c) obj;
-            if (this.a.equals(cVar.a) && Arrays.equals(this.c, cVar.c)) {
-                return true;
+    @Override // z2.a
+    public final boolean c(c4.a aVar, long j3) {
+        long j10 = aVar.b;
+        ia.f(j10 != -9223372036854775807L);
+        ia.f(aVar.c != -9223372036854775807L);
+        boolean z9 = j10 <= j3 && j3 < aVar.d;
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (j10 >= ((c4.a) arrayList.get(size)).b) {
+                arrayList.add(size + 1, aVar);
+                return z9;
             }
         }
-        return false;
+        arrayList.add(0, aVar);
+        return z9;
     }
 
-    @Override // z2.p
-    public final v g(int i3) {
-        return this.d[i3];
+    @Override // z2.a
+    public final void clear() {
+        this.a.clear();
     }
 
-    public final int hashCode() {
-        if (this.f == 0) {
-            this.f = Arrays.hashCode(this.c) + (System.identityHashCode(this.a) * 31);
+    @Override // z2.a
+    public final long d(long j3) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            return -9223372036854775807L;
         }
-        return this.f;
-    }
-
-    @Override // z2.p
-    public final int i(int i3) {
-        return this.c[i3];
-    }
-
-    @Override // z2.p
-    public int j(long j10, List list) {
-        return list.size();
-    }
-
-    @Override // z2.p
-    public final int l() {
-        return this.c[c()];
-    }
-
-    @Override // z2.p
-    public final int length() {
-        return this.c.length;
-    }
-
-    @Override // z2.p
-    public final /* synthetic */ boolean m(long j10, x2.f fVar, List list) {
-        return false;
-    }
-
-    @Override // z2.p
-    public final v n() {
-        return this.d[c()];
-    }
-
-    @Override // z2.p
-    public final boolean p(int i3, long j10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean a10 = a(i3, elapsedRealtime);
-        int i10 = 0;
-        while (i10 < this.b && !a10) {
-            a10 = (i10 == i3 || a(i10, elapsedRealtime)) ? false : true;
-            i10++;
+        if (j3 < ((c4.a) arrayList.get(0)).b) {
+            return -9223372036854775807L;
         }
-        if (!a10) {
-            return false;
-        }
-        long[] jArr = this.e;
-        jArr[i3] = Math.max(jArr[i3], n0.a(elapsedRealtime, j10));
-        return true;
-    }
-
-    @Override // z2.p
-    public final int u(int i3) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            if (this.c[i10] == i3) {
-                return i10;
+        long j10 = ((c4.a) arrayList.get(0)).b;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            long j11 = ((c4.a) arrayList.get(i7)).b;
+            long j12 = ((c4.a) arrayList.get(i7)).d;
+            if (j12 > j3) {
+                if (j11 > j3) {
+                    break;
+                }
+                j10 = Math.max(j10, j11);
+            } else {
+                j10 = Math.max(j10, j12);
             }
         }
-        return -1;
+        return j10;
     }
 
-    @Override // z2.p
-    public void h() {
-    }
-
-    @Override // z2.p
-    public void k() {
-    }
-
-    @Override // z2.p
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // z2.p
-    public final /* synthetic */ void t() {
-    }
-
-    @Override // z2.p
-    public final void f(boolean z10) {
-    }
-
-    @Override // z2.p
-    public void q(float f10) {
+    @Override // z2.a
+    public final void e(long j3) {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i7 >= arrayList.size()) {
+                return;
+            }
+            long j10 = ((c4.a) arrayList.get(i7)).b;
+            if (j3 > j10 && j3 > ((c4.a) arrayList.get(i7)).d) {
+                arrayList.remove(i7);
+                i7--;
+            } else if (j3 < j10) {
+                return;
+            }
+            i7++;
+        }
     }
 }

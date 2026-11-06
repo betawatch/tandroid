@@ -1,16 +1,17 @@
 package androidx.emoji2.text;
 
+import ab.b0;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
-import com.google.android.gms.internal.play_billing.s1;
+import c8.ob;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -24,21 +25,21 @@ public final class l {
     public final int g;
     public final d h;
 
-    public l(s sVar) {
+    public l(r rVar) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
         this.a = reentrantReadWriteLock;
         this.c = 3;
-        k kVar = (k) sVar.b;
+        k kVar = (k) rVar.b;
         this.f = kVar;
-        int i3 = sVar.a;
-        this.g = i3;
-        this.h = (d) sVar.c;
+        int i7 = rVar.a;
+        this.g = i7;
+        this.h = (d) rVar.c;
         this.d = new Handler(Looper.getMainLooper());
         this.b = new a0.g(0);
         f fVar = new f(this);
         this.e = fVar;
         reentrantReadWriteLock.writeLock().lock();
-        if (i3 == 0) {
+        if (i7 == 0) {
             try {
                 this.c = 0;
             } catch (Throwable th2) {
@@ -49,7 +50,7 @@ public final class l {
         reentrantReadWriteLock.writeLock().unlock();
         if (b() == 0) {
             try {
-                kVar.a(new e(fVar));
+                kVar.b(new e(fVar));
             } catch (Throwable th3) {
                 d(th3);
             }
@@ -96,7 +97,7 @@ public final class l {
             f fVar = this.e;
             l lVar = (l) fVar.b;
             try {
-                lVar.f.a(new e(fVar));
+                lVar.f.b(new e(fVar));
             } catch (Throwable th2) {
                 lVar.d(th2);
             }
@@ -126,7 +127,7 @@ public final class l {
      */
     /* JADX WARN: Code restructure failed: missing block: B:114:0x0175, code lost:
     
-        ((androidx.emoji2.text.v) r14).b();
+        ((androidx.emoji2.text.u) r14).b();
      */
     /* JADX WARN: Code restructure failed: missing block: B:115:0x017b, code lost:
     
@@ -141,144 +142,144 @@ public final class l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final CharSequence e(int i3, int i10, CharSequence charSequence) {
-        q qVar;
+    public final CharSequence e(int i7, int i10, CharSequence charSequence) {
+        p pVar;
         int codePointAt;
-        z zVar;
+        y yVar;
         int i11;
         int a10;
-        w[] wVarArr;
+        v[] vVarArr;
         if (!(b() == 1)) {
             throw new IllegalStateException("Not initialized yet");
         }
-        if (i3 < 0) {
+        if (i7 < 0) {
             throw new IllegalArgumentException("start cannot be negative");
         }
         if (i10 < 0) {
             throw new IllegalArgumentException("end cannot be negative");
         }
-        if (!(i3 <= i10)) {
+        if (!(i7 <= i10)) {
             throw new IllegalArgumentException("start should be <= than end");
         }
-        z zVar2 = null;
+        y yVar2 = null;
         if (charSequence == null) {
             return null;
         }
-        if (!(i3 <= charSequence.length())) {
+        if (!(i7 <= charSequence.length())) {
             throw new IllegalArgumentException("start should be < than charSequence length");
         }
         if (!(i10 <= charSequence.length())) {
             throw new IllegalArgumentException("end should be < than charSequence length");
         }
-        if (charSequence.length() != 0 && i3 != i10) {
-            p4.q qVar2 = (p4.q) this.e.a;
-            qVar2.getClass();
-            boolean z10 = charSequence instanceof v;
-            if (z10) {
-                ((v) charSequence).a();
+        if (charSequence.length() != 0 && i7 != i10) {
+            wf.b bVar = (wf.b) this.e.a;
+            bVar.getClass();
+            boolean z9 = charSequence instanceof u;
+            if (z9) {
+                ((u) charSequence).a();
             }
-            if (!z10) {
+            if (!z9) {
                 try {
                     if (!(charSequence instanceof Spannable)) {
-                        if ((charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(i3 - 1, i10 + 1, w.class) <= i10) {
-                            zVar2 = new z(charSequence);
+                        if ((charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(i7 - 1, i10 + 1, v.class) <= i10) {
+                            yVar2 = new y(charSequence);
                         }
-                        if (zVar2 != null && (wVarArr = (w[]) zVar2.b.getSpans(i3, i10, w.class)) != null && wVarArr.length > 0) {
-                            for (w wVar : wVarArr) {
-                                int spanStart = zVar2.b.getSpanStart(wVar);
-                                int spanEnd = zVar2.b.getSpanEnd(wVar);
+                        if (yVar2 != null && (vVarArr = (v[]) yVar2.b.getSpans(i7, i10, v.class)) != null && vVarArr.length > 0) {
+                            for (v vVar : vVarArr) {
+                                int spanStart = yVar2.b.getSpanStart(vVar);
+                                int spanEnd = yVar2.b.getSpanEnd(vVar);
                                 if (spanStart != i10) {
-                                    zVar2.removeSpan(wVar);
+                                    yVar2.removeSpan(vVar);
                                 }
-                                i3 = Math.min(spanStart, i3);
+                                i7 = Math.min(spanStart, i7);
                                 i10 = Math.max(spanEnd, i10);
                             }
                         }
-                        if (i3 != i10 && i3 < charSequence.length()) {
-                            t tVar = (t) ((ui.f) qVar2.a).d;
-                            qVar = new q();
-                            qVar.a = 1;
-                            qVar.d = tVar;
-                            qVar.e = tVar;
-                            codePointAt = Character.codePointAt(charSequence, i3);
+                        if (i7 != i10 && i7 < charSequence.length()) {
+                            s sVar = (s) ((b0) bVar.b).d;
+                            pVar = new p();
+                            pVar.a = 1;
+                            pVar.d = sVar;
+                            pVar.e = sVar;
+                            codePointAt = Character.codePointAt(charSequence, i7);
                             int i12 = 0;
-                            zVar = zVar2;
+                            yVar = yVar2;
                             loop1: while (true) {
-                                i11 = i3;
-                                while (i3 < i10 && i12 < Integer.MAX_VALUE) {
-                                    a10 = qVar.a(codePointAt);
+                                i11 = i7;
+                                while (i7 < i10 && i12 < Integer.MAX_VALUE) {
+                                    a10 = pVar.a(codePointAt);
                                     if (a10 != 1) {
                                         i11 += Character.charCount(Character.codePointAt(charSequence, i11));
                                         if (i11 < i10) {
                                             codePointAt = Character.codePointAt(charSequence, i11);
                                         }
-                                        i3 = i11;
+                                        i7 = i11;
                                     } else if (a10 == 2) {
-                                        i3 += Character.charCount(codePointAt);
-                                        if (i3 < i10) {
-                                            codePointAt = Character.codePointAt(charSequence, i3);
+                                        i7 += Character.charCount(codePointAt);
+                                        if (i7 < i10) {
+                                            codePointAt = Character.codePointAt(charSequence, i7);
                                         }
                                     } else if (a10 == 3) {
-                                        if (!qVar2.y(charSequence, i11, i3, ((t) qVar.f).b)) {
-                                            if (zVar == null) {
-                                                zVar = new z((Spannable) new SpannableString(charSequence));
+                                        if (!bVar.c0(charSequence, i11, i7, ((s) pVar.f).b)) {
+                                            if (yVar == null) {
+                                                yVar = new y((Spannable) new SpannableString(charSequence));
                                             }
-                                            zVar.setSpan(new w(((t) qVar.f).b), i11, i3, 33);
+                                            yVar.setSpan(new v(((s) pVar.f).b), i11, i7, 33);
                                             i12++;
                                         }
                                     }
                                 }
                             }
-                            if (qVar.a == 2 && ((t) qVar.e).b != null && ((qVar.c > 1 || qVar.e()) && i12 < Integer.MAX_VALUE && !qVar2.y(charSequence, i11, i3, ((t) qVar.e).b))) {
-                                if (zVar == null) {
-                                    zVar = new z(charSequence);
+                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i12 < Integer.MAX_VALUE && !bVar.c0(charSequence, i11, i7, ((s) pVar.e).b))) {
+                                if (yVar == null) {
+                                    yVar = new y(charSequence);
                                 }
-                                zVar.setSpan(new w(((t) qVar.e).b), i11, i3, 33);
+                                yVar.setSpan(new v(((s) pVar.e).b), i11, i7, 33);
                             }
-                            if (zVar == null) {
-                                Spannable spannable = zVar.b;
-                                if (z10) {
-                                    ((v) charSequence).b();
+                            if (yVar == null) {
+                                Spannable spannable = yVar.b;
+                                if (z9) {
+                                    ((u) charSequence).b();
                                 }
                                 return spannable;
                             }
                         }
                     }
                 } catch (Throwable th2) {
-                    if (z10) {
-                        ((v) charSequence).b();
+                    if (z9) {
+                        ((u) charSequence).b();
                     }
                     throw th2;
                 }
             }
-            zVar2 = new z((Spannable) charSequence);
-            if (zVar2 != null) {
+            yVar2 = new y((Spannable) charSequence);
+            if (yVar2 != null) {
                 while (r7 < r6) {
                 }
             }
-            if (i3 != i10) {
-                t tVar2 = (t) ((ui.f) qVar2.a).d;
-                qVar = new q();
-                qVar.a = 1;
-                qVar.d = tVar2;
-                qVar.e = tVar2;
-                codePointAt = Character.codePointAt(charSequence, i3);
+            if (i7 != i10) {
+                s sVar2 = (s) ((b0) bVar.b).d;
+                pVar = new p();
+                pVar.a = 1;
+                pVar.d = sVar2;
+                pVar.e = sVar2;
+                codePointAt = Character.codePointAt(charSequence, i7);
                 int i122 = 0;
-                zVar = zVar2;
+                yVar = yVar2;
                 loop1: while (true) {
-                    i11 = i3;
-                    while (i3 < i10) {
-                        a10 = qVar.a(codePointAt);
+                    i11 = i7;
+                    while (i7 < i10) {
+                        a10 = pVar.a(codePointAt);
                         if (a10 != 1) {
                         }
                     }
                 }
-                if (qVar.a == 2) {
-                    if (zVar == null) {
+                if (pVar.a == 2) {
+                    if (yVar == null) {
                     }
-                    zVar.setSpan(new w(((t) qVar.e).b), i11, i3, 33);
+                    yVar.setSpan(new v(((s) pVar.e).b), i11, i7, 33);
                 }
-                if (zVar == null) {
+                if (yVar == null) {
                 }
             }
         }
@@ -286,7 +287,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        s1.a(iVar, "initCallback cannot be null");
+        ob.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

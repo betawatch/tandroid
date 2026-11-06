@@ -5,16 +5,16 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
 public final class as extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ u4.d1 b;
+    public final /* synthetic */ v4.d1 b;
     public final /* synthetic */ View c;
     public final /* synthetic */ ViewPropertyAnimator d;
     public final /* synthetic */ es e;
 
-    public as(es esVar, u4.d1 d1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
+    public as(es esVar, v4.d1 d1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
         this.e = esVar;
         this.b = d1Var;
         this.d = viewPropertyAnimator;
@@ -40,7 +40,7 @@ public final class as extends AnimatorListenerAdapter {
                 this.d.setListener(null);
                 this.c.setAlpha(1.0f);
                 es esVar = this.e;
-                u4.d1 d1Var = this.b;
+                v4.d1 d1Var = this.b;
                 esVar.d(d1Var);
                 esVar.x.remove(d1Var);
                 esVar.A();
@@ -48,7 +48,7 @@ public final class as extends AnimatorListenerAdapter {
             default:
                 this.d.setListener(null);
                 es esVar2 = this.e;
-                u4.d1 d1Var2 = this.b;
+                v4.d1 d1Var2 = this.b;
                 esVar2.u(d1Var2);
                 esVar2.v.remove(d1Var2);
                 esVar2.A();
@@ -73,7 +73,7 @@ public final class as extends AnimatorListenerAdapter {
         }
     }
 
-    public as(es esVar, u4.d1 d1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
+    public as(es esVar, v4.d1 d1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
         this.e = esVar;
         this.b = d1Var;
         this.c = view;

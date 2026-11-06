@@ -1,28 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rs0 implements org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-    public /* synthetic */ rs0(PrivacyControlActivity privacyControlActivity, int i3) {
-        this.a = i3;
-        this.b = privacyControlActivity;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final class rs0 extends ug.k1 {
+    public final /* synthetic */ ss0 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rs0(ss0 ss0Var, Context context) {
+        super(context);
+        this.N = ss0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
-        switch (this.a) {
-            case 0:
-                this.b.K0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
+    @Override // ug.k1, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.r.getVisibility() == 0) {
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
+            ss0 ss0Var = this.N;
+            ss0Var.d.n.n0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, ss0Var.d.n.O);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), ss0Var.d.n.n0.f);
         }
+        super.dispatchDraw(canvas);
     }
 }

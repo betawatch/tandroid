@@ -1,22 +1,24 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class m6 {
-    public final String a;
+    public final /* synthetic */ int a;
     public final String b;
+    public final String c;
 
-    public /* synthetic */ m6(String str, String str2, boolean z10) {
-        this.a = str;
-        this.b = str2;
+    public /* synthetic */ m6(int i7, String str, String str2) {
+        this.a = i7;
+        this.b = str;
+        this.c = str2;
     }
 
-    public m6(String str, String str2) {
-        Object[] objArr = {str, 23};
-        if (!(str.length() <= 23)) {
-            throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b + ", " + this.c;
+            default:
+                return super.toString();
         }
-        this.a = str;
-        this.b = (str2 == null || str2.length() <= 0) ? null : str2;
     }
 }

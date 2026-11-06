@@ -1,47 +1,93 @@
 package sf;
 
-import org.telegram.messenger.k7;
+import a8.p0;
+import ab.d;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import kf.p;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public class b {
-    public Runnable a;
-    public Runnable b;
-    public Runnable c;
+public final class b extends p {
+    public final /* synthetic */ int g;
 
-    public b(Runnable runnable, Runnable runnable2) {
-        this.a = runnable;
-        this.c = runnable2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(d dVar, p pVar, String str, int i7) {
+        super(dVar, pVar, str);
+        this.g = i7;
     }
 
-    public final void a(boolean z10) {
-        Runnable runnable = this.b;
-        if (runnable != null) {
-            runnable.run();
+    public static void h(StringBuffer stringBuffer, p pVar) {
+        p pVar2 = (p) pVar.c;
+        if (pVar2 != null) {
+            h(stringBuffer, pVar2);
+            stringBuffer.append("/");
         }
-        c(z10);
+        stringBuffer.append((String) pVar.d);
     }
 
-    public void b() {
-        c(false);
+    public long i() {
+        return ((uf.a) ((d) this.b)).e();
     }
 
-    public void c(boolean z10) {
-        Runnable runnable = this.c;
-        if (runnable != null) {
-            runnable.run();
+    public boolean j() {
+        b bVar = (b) this.f;
+        return (bVar != null ? bVar.i() : 0L) < i();
+    }
+
+    public b k(String str) {
+        while (i() > 0) {
+            b c10 = c();
+            if (((String) c10.d).matches(str)) {
+                return c10;
+            }
+        }
+        throw new IOException("atom type mismatch, not found: ".concat(str));
+    }
+
+    public short l() {
+        return ((DataInputStream) this.e).readShort();
+    }
+
+    public String m() {
+        byte[] bArr = new byte[(int) i()];
+        ((DataInputStream) this.e).readFully(bArr);
+        String str = new String(bArr, "UTF-8");
+        int indexOf = str.indexOf(0);
+        return indexOf < 0 ? str : str.substring(0, indexOf);
+    }
+
+    public void n(int i7) {
+        int i10 = 0;
+        while (i10 < i7) {
+            int skipBytes = ((DataInputStream) this.e).skipBytes(i7 - i10);
+            if (skipBytes <= 0) {
+                throw new EOFException();
+            }
+            i10 += skipBytes;
         }
     }
 
-    public void d() {
-        Runnable runnable = this.a;
-        if (runnable != null) {
-            runnable.run();
-            this.a = null;
+    @Override // kf.p
+    public final String toString() {
+        switch (this.g) {
+            case 0:
+                StringBuffer stringBuffer = new StringBuffer();
+                h(stringBuffer, this);
+                stringBuffer.append("[off=");
+                long j3 = ((d) ((p) this.c).b).b;
+                d dVar = (d) this.b;
+                stringBuffer.append(j3 - dVar.b);
+                stringBuffer.append(",pos=");
+                stringBuffer.append(dVar.b);
+                stringBuffer.append(",len=");
+                uf.a aVar = (uf.a) dVar;
+                stringBuffer.append(aVar.e() + aVar.b);
+                stringBuffer.append("]");
+                return stringBuffer.toString();
+            default:
+                return p0.r(new StringBuilder("mp4[pos="), ((d) this.b).b, "]");
         }
-    }
-
-    public final void e(k7 k7Var) {
-        this.b = k7Var;
     }
 }

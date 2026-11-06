@@ -4,21 +4,22 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import c8.wb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import i7.p;
+import j7.b;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import p6.m;
-import q6.a;
+import q6.m;
+import r6.a;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class LocationResult extends a implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new p(9);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new b(24);
 
     public LocationResult(List list) {
         this.a = list;
@@ -29,9 +30,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
             return false;
         }
         List list = ((LocationResult) obj).a;
-        int i3 = Build.VERSION.SDK_INT;
+        int i7 = Build.VERSION.SDK_INT;
         List<Location> list2 = this.a;
-        if (i3 >= 31) {
+        if (i7 >= 31) {
             return list2.equals(list);
         }
         if (list2.size() != list.size()) {
@@ -56,9 +57,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i3) {
-        int s6 = j8.a.s(parcel, 20293);
-        j8.a.q(parcel, 1, this.a);
-        j8.a.t(parcel, s6);
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = wb.r(parcel, 20293);
+        wb.p(parcel, 1, this.a);
+        wb.s(parcel, r10);
     }
 }

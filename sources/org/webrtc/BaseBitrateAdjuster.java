@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 class BaseBitrateAdjuster implements BitrateAdjuster {
     protected int targetBitrateBps;
@@ -17,12 +17,12 @@ class BaseBitrateAdjuster implements BitrateAdjuster {
     }
 
     @Override // org.webrtc.BitrateAdjuster
-    public void setTargets(int i3, double d) {
-        this.targetBitrateBps = i3;
+    public void setTargets(int i7, double d) {
+        this.targetBitrateBps = i7;
         this.targetFramerateFps = d;
     }
 
     @Override // org.webrtc.BitrateAdjuster
-    public void reportEncodedFrame(int i3) {
+    public void reportEncodedFrame(int i7) {
     }
 }

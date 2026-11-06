@@ -18,11 +18,11 @@ public abstract class g2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final e2 a(int i3) {
-        if (i3 == 0) {
+    public final e2 a(int i7) {
+        if (i7 == 0) {
             return this.a;
         }
-        if (i3 == 1) {
+        if (i7 == 1) {
             return this.b;
         }
         throw new IndexOutOfBoundsException();
@@ -34,7 +34,7 @@ public abstract class g2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public /* bridge */ /* synthetic */ d2 a(int i3) {
-        return (d2) a(i3);
+    public /* bridge */ /* synthetic */ d2 a(int i7) {
+        return (d2) a(i7);
     }
 }

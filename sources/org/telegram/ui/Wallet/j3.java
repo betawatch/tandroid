@@ -1,45 +1,52 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class j3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n3 b;
+import android.app.Activity;
+import android.view.View;
 
-    public /* synthetic */ j3(n3 n3Var, int i3) {
-        this.a = i3;
-        this.b = n3Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ j3(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                n3 n3Var = this.b;
-                if (!n3Var.T && !n3Var.S) {
-                    n3Var.a(1.0f);
+                ((p3) this.b).dismiss();
+                break;
+            case 1:
+                vf.c.v((Activity) this.b, "https://fragment.com/", false);
+                break;
+            case 2:
+                ((w4) this.b).dismiss();
+                break;
+            case 3:
+                ((Runnable) this.b).run();
+                break;
+            case 4:
+                w6 w6Var = (w6) this.b;
+                if (!w6Var.y && w6Var.r && !w6Var.h.b()) {
+                    w6Var.h.setProgress(0.0f);
+                    w6Var.h.d();
                     break;
                 }
                 break;
+            case 5:
+                ((t8) this.b).b(!r3.y);
+                break;
+            case 6:
+                ((org.telegram.ui.Cells.c2) this.b).c(!r3.b(), true);
+                break;
             default:
-                n3 n3Var2 = this.b;
-                if (!n3Var2.T && !n3Var2.S) {
-                    jh.d.c(n3Var2.F, n3Var2.h);
-                    n3Var2.G.d();
-                    f6 f6Var = n3Var2.r;
-                    j3 j3Var = new j3(n3Var2, 0);
-                    a6 a6Var = f6Var.E;
-                    if (a6Var == null) {
-                        j3Var.run();
-                        break;
-                    } else if (a6Var.b == null) {
-                        a6Var.d = j3Var;
-                        break;
-                    } else {
-                        j3Var.run();
-                        break;
-                    }
-                }
+                i9 i9Var = ((m9) this.b).c;
+                i9Var.requestFocus();
+                org.telegram.messenger.g0.K3(i9Var);
                 break;
         }
     }

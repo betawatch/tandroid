@@ -1,41 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.SerializedData;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
 public final class to {
-    public final String a;
-    public final String[] b;
-    public final String c;
-    public int d;
+    public final int a;
+    public final long b;
+    public boolean c;
+    public boolean d;
+    public final ArrayList e;
+    public int f;
+    public int g;
 
-    public to(String str, String[] strArr, String str2) {
-        this.a = str;
-        this.b = strArr;
-        this.c = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof to) {
-            return this.a.equals(((to) obj).a);
+    public to(int i7, long j3) {
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.f = -1;
+        this.a = i7;
+        this.b = j3;
+        if (this.c || this.d) {
+            return;
         }
-        return false;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.d);
-        serializedData.writeInt32(0);
-        serializedData.writeString(this.a);
-        String[] strArr = this.b;
-        serializedData.writeInt32(strArr != null ? strArr.length : 0);
-        if (strArr != null) {
-            for (String str : strArr) {
-                serializedData.writeString(str);
-            }
-        }
-        serializedData.writeString(this.c);
-        return Utilities.f(serializedData.toByteArray());
+        boolean isEmpty = arrayList.isEmpty();
+        this.c = true;
+        TLRPC.TL_messages_getCommonChats tL_messages_getCommonChats = new TLRPC.TL_messages_getCommonChats();
+        tL_messages_getCommonChats.user_id = qp.s1(i7).o1(j3);
+        tL_messages_getCommonChats.max_id = arrayList.isEmpty() ? 0L : ((TLRPC.Chat) jg.g.i(1, arrayList)).id;
+        tL_messages_getCommonChats.limit = isEmpty ? 15 : 30;
+        int sendRequest = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCommonChats, new n3(this, r7, isEmpty, 4));
+        this.f = sendRequest;
+        int[] iArr = {sendRequest};
     }
 }

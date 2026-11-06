@@ -1,60 +1,22 @@
 package rg;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import jg.h;
+import org.telegram.ui.Components.oj0;
+import v4.o;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public Drawable a;
-    public float b;
-    public int c;
+public abstract class b extends oj0 {
+    public final h c = new h();
 
-    public final void a(int i3) {
-        if (this.c != i3) {
-            this.c = i3;
-            setColorFilter(new PorterDuffColorFilter(i3, PorterDuff.Mode.MULTIPLY));
+    public final void E(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList2 == null) {
+            arrayList2 = new ArrayList();
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Rect bounds = getBounds();
-        float f10 = this.b;
-        if (f10 == 1.0f) {
-            drawable.setBounds(bounds);
-        } else {
-            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f10)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f10)), (int) (((bounds.width() / 2.0f) * f10) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f10) + bounds.centerY()));
-        }
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final ColorFilter getColorFilter() {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            return drawable.getColorFilter();
-        }
-        return null;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i3) {
-        this.a.setAlpha(i3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+        h hVar = this.c;
+        hVar.c = arrayList;
+        hVar.d = arrayList2;
+        o.c(hVar, true).c(this);
     }
 }

@@ -1,141 +1,168 @@
 package ni;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.g0;
-import u4.b0;
-import u4.o0;
-import u4.p0;
-import u4.y0;
-import u4.z0;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.CharacterStyle;
+import com.google.android.gms.internal.play_billing.s0;
+import hi.n1;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
-public class m extends z0 {
-    public final LinearInterpolator i;
-    public final DecelerateInterpolator j;
-    public final float k;
-    public int l;
-    public int m;
-    public final int n;
-    public final float o;
-    public int p;
+public abstract class m {
+    public static int c;
+    public static final s a = new s(new a(0), new a(1));
+    public static final LinkedHashMap b = new LinkedHashMap(8, 0.75f, true);
+    public static final Object d = new Object();
+    public static final ArrayList e = new ArrayList();
 
-    public m(Context context, int i3) {
-        this.i = new LinearInterpolator();
-        this.j = new DecelerateInterpolator(1.5f);
-        this.l = 0;
-        this.m = 0;
-        this.o = 1.0f;
-        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
-        this.n = i3;
-    }
-
-    @Override // u4.z0
-    public final PointF a(int i3) {
-        o0 o0Var = this.c;
-        if (o0Var instanceof b0) {
-            return ((b0) o0Var).E0(i3);
-        }
-        return null;
-    }
-
-    @Override // u4.z0
-    public final void d(int i3, int i10, y0 y0Var) {
-        if (this.b.y.r() == 0) {
-            h();
+    public static void a(Spannable spannable, int i7, s0 s0Var) {
+        if (i7 == 0) {
             return;
         }
-        int i11 = this.l;
-        int i12 = i11 - i3;
-        if (i11 * i12 <= 0) {
-            i12 = 0;
+        boolean z9 = spannable instanceof g;
+        for (f fVar : (f[]) (z9 ? g.a((g) spannable, i7, f.class) : spannable.getSpans(0, i7, f.class))) {
+            d(spannable, i7, fVar);
+            spannable.removeSpan(fVar);
         }
-        this.l = i12;
-        int i13 = this.m;
-        int i14 = i13 - i10;
-        int i15 = i13 * i14 > 0 ? i14 : 0;
-        this.m = i15;
-        if (i12 == 0 && i15 == 0) {
-            PointF a10 = a(this.a);
-            if (a10 == null || (a10.x == 0.0f && a10.y == 0.0f)) {
-                y0Var.d = this.a;
-                h();
-            } else {
-                z0.b(a10);
-                this.l = (int) (a10.x * 10000.0f);
-                this.m = (int) (a10.y * 10000.0f);
-                y0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
+        for (k kVar : (k[]) (z9 ? g.a((g) spannable, i7, k.class) : spannable.getSpans(0, i7, k.class))) {
+            d(spannable, i7, kVar);
+            spannable.removeSpan(kVar);
+        }
+        if (s0Var == null) {
+            return;
+        }
+        int[] b10 = s0Var.b();
+        for (int i10 = 0; i10 < b10.length; i10 += 3) {
+            int i11 = b10[i10];
+            int i12 = b10[i10 + 1];
+            int i13 = b10[i10 + 2];
+            if (i11 >= 0 && i12 <= i7 && i11 < i12) {
+                int i14 = i13 & qs.e4;
+                if (i14 != 0) {
+                    spannable.setSpan(new f(i14), i11, i12, 33);
+                }
+                if ((i13 & 768) != 0) {
+                    spannable.setSpan(new k(i13), i11, i12, 33);
+                }
             }
         }
     }
 
-    @Override // u4.z0
-    public final void f() {
-        this.m = 0;
-        this.l = 0;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x005a, code lost:
-    
-        if (r0 < 0) goto L22;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008b  */
-    @Override // u4.z0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, y0 y0Var) {
-        int i3;
-        int ceil;
-        o0 o0Var = this.c;
-        if (o0Var != null && o0Var.e()) {
-            p0 p0Var = (p0) view.getLayoutParams();
-            int z10 = o0.z(view) - ((ViewGroup.MarginLayoutParams) p0Var).topMargin;
-            int v = o0.v(view) + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin;
-            int C = (o0Var.n - o0Var.C()) - o0Var.F();
-            int i10 = v - z10;
-            int i11 = this.n;
-            int F = i11 == 2 ? o0Var.F() + this.p : i10 > C ? 0 : i11 == 0 ? (C - i10) / 2 : (o0Var.F() + this.p) - g0.L(88.0f);
-            int i12 = i10 + F;
-            i3 = F - z10;
-            if (i3 <= 0) {
-                i3 = i12 - v;
-            }
-            ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i3) * this.k)) / 0.3356d);
-            if (ceil <= 0) {
-                y0Var.b(0, -i3, Math.max((int) (this.o * 400.0f), ceil), this.j);
-                return;
-            } else {
-                i();
-                return;
-            }
+    public static SpannableString b(CharSequence charSequence, String str) {
+        if (charSequence == null) {
+            charSequence = "";
         }
-        i3 = 0;
-        ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i3) * this.k)) / 0.3356d);
-        if (ceil <= 0) {
+        String b10 = s.b(str);
+        if (b10.isEmpty() || charSequence.length() == 0) {
+            return new SpannableString(charSequence);
+        }
+        String charSequence2 = charSequence.toString();
+        e eVar = new e(b10, charSequence2);
+        boolean z9 = !(charSequence instanceof Spanned) && charSequence2.length() <= 65536;
+        LinkedHashMap linkedHashMap = b;
+        synchronized (linkedHashMap) {
+            if (z9) {
+                try {
+                    SpannableString spannableString = (SpannableString) linkedHashMap.get(eVar);
+                    if (spannableString != null) {
+                        return spannableString;
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            g gVar = new g(charSequence);
+            if (z9) {
+                linkedHashMap.put(eVar, gVar);
+                c += charSequence2.length();
+                while (true) {
+                    LinkedHashMap linkedHashMap2 = b;
+                    if (linkedHashMap2.size() <= 8 && c <= 65536) {
+                        break;
+                    }
+                    Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
+                    c -= ((e) entry.getKey()).b.length();
+                    linkedHashMap2.remove(entry.getKey());
+                }
+            }
+            c(gVar, gVar.length(), b10);
+            return gVar;
         }
     }
 
-    public m(Context context, int i3, float f10) {
-        this.i = new LinearInterpolator();
-        this.j = new DecelerateInterpolator(1.5f);
-        this.l = 0;
-        this.m = 0;
-        this.o = f10;
-        this.k = (25.0f / context.getResources().getDisplayMetrics().densityDpi) * f10;
-        this.n = i3;
+    public static void c(Spannable spannable, int i7, String str) {
+        l lVar;
+        l lVar2;
+        r rVar;
+        if (spannable == null) {
+            return;
+        }
+        if (i7 < 0 || i7 > spannable.length()) {
+            throw new IndexOutOfBoundsException();
+        }
+        i iVar = new i(spannable.subSequence(0, i7).toString());
+        long j3 = (0 << 32) | (i7 & 4294967295L);
+        synchronized (d) {
+            try {
+                ArrayList arrayList = e;
+                Iterator it = arrayList.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        lVar = new l(spannable);
+                        arrayList.add(lVar);
+                        break;
+                    }
+                    lVar = (l) it.next();
+                    Spannable spannable2 = (Spannable) lVar.a.get();
+                    if (spannable2 == null) {
+                        it.remove();
+                    } else if (spannable2 == spannable) {
+                        break;
+                    }
+                }
+                lVar2 = lVar;
+                i iVar2 = (i) lVar2.b.put(Long.valueOf(j3), iVar);
+                if (iVar2 != null && (rVar = iVar2.b) != null) {
+                    rVar.a = null;
+                }
+            } finally {
+            }
+        }
+        r d2 = a.d(iVar.a, str, new n1(i7, 2, j3, lVar2, iVar));
+        synchronized (d) {
+            try {
+                if (lVar2.b.get(Long.valueOf(j3)) == iVar) {
+                    iVar.b = d2;
+                } else {
+                    d2.a = null;
+                }
+            } finally {
+            }
+        }
     }
 
-    @Override // u4.z0
-    public void e() {
-    }
-
-    public void i() {
+    public static void d(Spannable spannable, int i7, CharacterStyle characterStyle) {
+        int spanStart;
+        int spanEnd;
+        if (spannable instanceof g) {
+            g gVar = (g) spannable;
+            spanStart = g.b(gVar, characterStyle);
+            spanEnd = g.c(gVar, characterStyle);
+        } else {
+            spanStart = spannable.getSpanStart(characterStyle);
+            spanEnd = spannable.getSpanEnd(characterStyle);
+        }
+        if (spanStart >= 0 && spanStart < 0) {
+            spannable.setSpan(characterStyle instanceof f ? new f(((f) characterStyle).a) : new k(((k) characterStyle).b), spanStart, Math.min(0, spanEnd), 33);
+        }
+        if (spanEnd > i7) {
+            spannable.setSpan(characterStyle instanceof f ? new f(((f) characterStyle).a) : new k(((k) characterStyle).b), Math.max(i7, spanStart), spanEnd, 33);
+        }
     }
 }

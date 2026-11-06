@@ -1,63 +1,131 @@
 package x2;
 
-import b8.uc;
-import d2.v;
-import e3.i0;
-import i2.c0;
-import org.telegram.tgnet.ConnectionsManager;
-import w2.c1;
+import a8.ia;
+import h9.t1;
+import java.util.List;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes.dex */
-public final class n extends a {
-    public final int F;
-    public final v G;
-    public long H;
-    public boolean I;
+public final class n implements e1 {
+    public final t1 a;
+    public long b;
 
-    public n(i2.h hVar, i2.n nVar, v vVar, int i3, Object obj, long j10, long j11, long j12, int i10, v vVar2) {
-        super(hVar, nVar, vVar, i3, obj, j10, j11, -9223372036854775807L, -9223372036854775807L, j12);
-        this.F = i10;
-        this.G = vVar2;
-    }
-
-    @Override // a3.m
-    public final void a() {
-        c0 c0Var = this.r;
-        ua.b bVar = this.y;
-        bVar.getClass();
-        for (c1 c1Var : (c1[]) bVar.c) {
-            if (c1Var.H != 0) {
-                c1Var.H = 0L;
-                c1Var.B = true;
-            }
+    public n(List list, List list2) {
+        h9.f0 p10 = h9.i0.p();
+        ia.f(list.size() == list2.size());
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            p10.c(new m((e1) list.get(i7), (List) list2.get(i7)));
         }
-        i0 c2 = bVar.c(this.F);
-        c2.g(this.G);
-        try {
-            long open = c0Var.open(this.b.b(this.H));
-            if (open != -1) {
-                open += this.H;
+        this.a = p10.f();
+        this.b = -9223372036854775807L;
+    }
+
+    @Override // x2.e1
+    public final boolean c(l2.v0 v0Var) {
+        boolean z9;
+        boolean z10 = false;
+        do {
+            long e10 = e();
+            if (e10 == Long.MIN_VALUE) {
+                return z10;
             }
-            e3.l lVar = new e3.l(this.r, this.H, open);
-            for (int i3 = 0; i3 != -1; i3 = c2.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
-                this.H += i3;
+            int i7 = 0;
+            z9 = false;
+            while (true) {
+                t1 t1Var = this.a;
+                if (i7 >= t1Var.d) {
+                    break;
+                }
+                long e11 = ((m) t1Var.get(i7)).a.e();
+                boolean z11 = e11 != Long.MIN_VALUE && e11 <= v0Var.a;
+                if (e11 == e10 || z11) {
+                    z9 |= ((m) t1Var.get(i7)).a.c(v0Var);
+                }
+                i7++;
             }
-            c2.d(this.h, 1, (int) this.H, 0, null);
-            uc.a(c0Var);
-            this.I = true;
-        } catch (Throwable th2) {
-            uc.a(c0Var);
-            throw th2;
+            z10 |= z9;
+        } while (z9);
+        return z10;
+    }
+
+    @Override // x2.e1
+    public final long e() {
+        int i7 = 0;
+        long j3 = Long.MAX_VALUE;
+        while (true) {
+            t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
+                break;
+            }
+            long e10 = ((m) t1Var.get(i7)).a.e();
+            if (e10 != Long.MIN_VALUE) {
+                j3 = Math.min(j3, e10);
+            }
+            i7++;
+        }
+        if (j3 == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return j3;
+    }
+
+    @Override // x2.e1
+    public final boolean g() {
+        int i7 = 0;
+        while (true) {
+            t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
+                return false;
+            }
+            if (((m) t1Var.get(i7)).a.g()) {
+                return true;
+            }
+            i7++;
         }
     }
 
-    @Override // x2.l
-    public final boolean c() {
-        return this.I;
+    @Override // x2.e1
+    public final long p() {
+        int i7 = 0;
+        long j3 = Long.MAX_VALUE;
+        long j10 = Long.MAX_VALUE;
+        while (true) {
+            t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
+                break;
+            }
+            m mVar = (m) t1Var.get(i7);
+            long p10 = mVar.a.p();
+            h9.i0 i0Var = mVar.b;
+            if ((i0Var.contains(1) || i0Var.contains(2) || i0Var.contains(4)) && p10 != Long.MIN_VALUE) {
+                j3 = Math.min(j3, p10);
+            }
+            if (p10 != Long.MIN_VALUE) {
+                j10 = Math.min(j10, p10);
+            }
+            i7++;
+        }
+        if (j3 != Long.MAX_VALUE) {
+            this.b = j3;
+            return j3;
+        }
+        if (j10 == Long.MAX_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        long j11 = this.b;
+        return j11 != -9223372036854775807L ? j11 : j10;
     }
 
-    @Override // a3.m
-    public final void X1() {
+    @Override // x2.e1
+    public final void r(long j3) {
+        int i7 = 0;
+        while (true) {
+            t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
+                return;
+            }
+            ((m) t1Var.get(i7)).r(j3);
+            i7++;
+        }
     }
 }

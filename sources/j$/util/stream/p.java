@@ -13,20 +13,20 @@ public final class p extends c5 {
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(a aVar, j5 j5Var, int i3) {
+    public /* synthetic */ p(a aVar, j5 j5Var, int i7) {
         super(j5Var);
-        this.b = i3;
+        this.b = i7;
         this.c = aVar;
     }
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
-    public void o(long j10) {
+    public void o(long j3) {
         switch (this.b) {
             case 4:
                 this.a.o(-1L);
                 break;
             default:
-                super.o(j10);
+                super.o(j3);
                 break;
         }
     }

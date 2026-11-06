@@ -4,24 +4,24 @@ import android.content.Context;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes4.dex */
 public class Camera1Capturer extends CameraCapturer {
     private final boolean captureToTexture;
 
-    public Camera1Capturer(String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler, boolean z10) {
-        super(str, cameraEventsHandler, new Camera1Enumerator(z10));
-        this.captureToTexture = z10;
+    public Camera1Capturer(String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler, boolean z9) {
+        super(str, cameraEventsHandler, new Camera1Enumerator(z9));
+        this.captureToTexture = z9;
     }
 
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
-    public /* bridge */ /* synthetic */ void changeCaptureFormat(int i3, int i10, int i11) {
-        super.changeCaptureFormat(i3, i10, i11);
+    public /* bridge */ /* synthetic */ void changeCaptureFormat(int i7, int i10, int i11) {
+        super.changeCaptureFormat(i7, i10, i11);
     }
 
     @Override // org.webrtc.CameraCapturer
-    public void createCameraSession(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i3, int i10, int i11) {
-        Camera1Session.create(createSessionCallback, events, this.captureToTexture, context, surfaceTextureHelper, str, i3, i10, i11);
+    public void createCameraSession(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i7, int i10, int i11) {
+        Camera1Session.create(createSessionCallback, events, this.captureToTexture, context, surfaceTextureHelper, str, i7, i10, i11);
     }
 
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
@@ -45,8 +45,8 @@ public class Camera1Capturer extends CameraCapturer {
     }
 
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
-    public /* bridge */ /* synthetic */ void startCapture(int i3, int i10, int i11) {
-        super.startCapture(i3, i10, i11);
+    public /* bridge */ /* synthetic */ void startCapture(int i7, int i10, int i11) {
+        super.startCapture(i7, i10, i11);
     }
 
     @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer

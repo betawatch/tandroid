@@ -1,20 +1,29 @@
 package y7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes.dex */
-public final class c {
-    public static final c a;
-    public static final /* synthetic */ c[] b;
+import c8.xd;
 
-    static {
-        c cVar = new c("DEFAULT", 0);
-        a = cVar;
-        b = new c[]{cVar, new c("SIGNED", 1), new c("FIXED", 2)};
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes.dex */
+public final class c extends l9 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e = 1;
+
+    public c(int i7, Object[] objArr) {
+        this.c = objArr;
+        this.d = i7;
     }
 
-    public static c[] values() {
-        return (c[]) b.clone();
+    @Override // java.util.List
+    public final Object get(int i7) {
+        xd.a(i7, this.e);
+        Object obj = this.c[i7 + i7 + this.d];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

@@ -1,29 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.s1 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2 d;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ y0(s4 s4Var, org.telegram.ui.ActionBar.s1 s1Var, org.telegram.ui.ActionBar.d2 d2Var, int i3) {
-        this.a = i3;
-        this.b = s4Var;
-        this.c = s1Var;
-        this.d = d2Var;
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class y0 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+
+    public /* synthetic */ y0(LaunchActivity launchActivity, int i7) {
+        this.a = i7;
+        this.b = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new y0(this.b, this.c, this.d, 1));
+                this.b.t0(new LanguageSelectActivity());
+                break;
+            case 1:
+                this.b.t0(new org.telegram.ui.y6());
                 break;
             default:
-                t4.d0(this.b, this.c, this.d);
-                break;
+                LaunchActivity launchActivity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    launchActivity.startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
         }
     }
 }

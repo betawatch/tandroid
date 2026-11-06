@@ -4,86 +4,86 @@ import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final class qq0 extends tl0 {
-    public final /* synthetic */ ws0 J;
+public final class qq0 extends ql0 {
+    public final /* synthetic */ xs0 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qq0(ws0 ws0Var, Context context, org.telegram.ui.ActionBar.d2 d2Var, int i3, long j10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, d2Var, i3, j10, e6Var);
-        this.J = ws0Var;
+    public qq0(xs0 xs0Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f2Var, i7, j3, f6Var);
+        this.I = xs0Var;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void b(boolean z10) {
-        tq0 tq0Var = this.J.L0;
-        tq0Var.setAlpha(1.0f - this.F);
+    @Override // org.telegram.ui.Components.ql0
+    public final void b(boolean z9) {
+        tq0 tq0Var = this.I.K0;
+        tq0Var.setAlpha(1.0f - this.E);
         tq0Var.setPivotX(tq0Var.getWidth() / 2.0f);
-        tq0Var.setScaleX(((1.0f - this.F) * 0.2f) + 0.8f);
+        tq0Var.setScaleX(((1.0f - this.E) * 0.2f) + 0.8f);
         tq0Var.setPivotY(org.telegram.messenger.g0.L(48.0f));
-        tq0Var.setScaleY(((1.0f - this.F) * 0.2f) + 0.8f);
+        tq0Var.setScaleY(((1.0f - this.E) * 0.2f) + 0.8f);
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final boolean f(dh.n0 n0Var) {
+    @Override // org.telegram.ui.Components.ql0
+    public final boolean f(ch.o0 o0Var) {
         er0 er0Var;
-        ws0 ws0Var = this.J;
-        org.telegram.ui.ActionBar.q0 q0Var = ws0Var.q0;
-        if (q0Var == null) {
+        xs0 xs0Var = this.I;
+        org.telegram.ui.ActionBar.r0 r0Var = xs0Var.p0;
+        if (r0Var == null) {
             return false;
         }
-        ws0Var.Z0 = n0Var;
-        String obj = q0Var.getSearchField().getText().toString();
-        ws0Var.X0 = (obj.length() == 0 && ws0Var.Z0 == null) ? false : true;
-        ws0Var.z1(false);
-        int i3 = ws0Var.n0[0].F;
-        if (i3 == 11) {
-            is0 is0Var = ws0Var.V;
-            if (is0Var != null) {
-                is0Var.E(ws0Var.Z0, obj);
+        xs0Var.Y0 = o0Var;
+        String obj = r0Var.getSearchField().getText().toString();
+        xs0Var.W0 = (obj.length() == 0 && xs0Var.Y0 == null) ? false : true;
+        xs0Var.z1(false);
+        int i7 = xs0Var.m0[0].E;
+        if (i7 == 11) {
+            js0 js0Var = xs0Var.U;
+            if (js0Var != null) {
+                js0Var.E(xs0Var.Y0, obj);
             }
-            org.telegram.messenger.g0.v1(q0Var.getSearchField());
+            org.telegram.messenger.g0.v1(r0Var.getSearchField());
             return true;
         }
-        if (i3 == 12 && (er0Var = ws0Var.W) != null) {
-            org.telegram.ui.xm xmVar = er0Var.a;
-            org.telegram.ui.wj wjVar = xmVar.D1;
-            if (wjVar != null) {
-                wjVar.e(n0Var, true);
+        if (i7 == 12 && (er0Var = xs0Var.V) != null) {
+            org.telegram.ui.bn bnVar = er0Var.a;
+            org.telegram.ui.ak akVar = bnVar.C1;
+            if (akVar != null) {
+                akVar.e(o0Var, true);
             }
-            boolean z10 = (TextUtils.isEmpty(xmVar.I3) && xmVar.F3 == null) ? false : true;
-            xmVar.H3 = z10;
-            xmVar.r0 = z10;
-            xmVar.Lc(false);
-            xmVar.md();
+            boolean z9 = (TextUtils.isEmpty(bnVar.H3) && bnVar.E3 == null) ? false : true;
+            bnVar.G3 = z9;
+            bnVar.q0 = z9;
+            bnVar.Lc(false);
+            bnVar.md();
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void h(boolean z10) {
-        super.h(z10);
-        ws0 ws0Var = this.J;
-        qq0 qq0Var = ws0Var.M0;
-        g(ws0Var.Y0 && (ws0Var.getSelectedTab() == 11 || ws0Var.getSelectedTab() == 12) && qq0Var.a());
-        org.telegram.ui.ActionBar.q0 q0Var = ws0Var.p0;
-        if (q0Var != null) {
-            int i3 = (a() && ws0Var.y1.getUserConfig().q()) ? R.drawable.navbar_search_tag : R.drawable.outline_header_search;
-            fh0 fh0Var = q0Var.y;
-            if (fh0Var != null && q0Var.E != i3) {
-                if (z10) {
-                    q0Var.E = i3;
-                    org.telegram.messenger.g0.R3(fh0Var, i3);
+    @Override // org.telegram.ui.Components.ql0
+    public final void h(boolean z9) {
+        super.h(z9);
+        xs0 xs0Var = this.I;
+        qq0 qq0Var = xs0Var.L0;
+        g(xs0Var.X0 && (xs0Var.getSelectedTab() == 11 || xs0Var.getSelectedTab() == 12) && qq0Var.a());
+        org.telegram.ui.ActionBar.r0 r0Var = xs0Var.o0;
+        if (r0Var != null) {
+            int i7 = (a() && xs0Var.x1.getUserConfig().q()) ? R.drawable.navbar_search_tag : R.drawable.outline_header_search;
+            ch0 ch0Var = r0Var.y;
+            if (ch0Var != null && r0Var.D != i7) {
+                if (z9) {
+                    r0Var.D = i7;
+                    org.telegram.messenger.g0.R3(ch0Var, i7);
                 } else {
-                    q0Var.E = i3;
-                    fh0Var.setImageResource(i3);
+                    r0Var.D = i7;
+                    ch0Var.setImageResource(i7);
                 }
             }
         }
-        org.telegram.ui.ActionBar.q0 q0Var2 = ws0Var.q0;
-        if (q0Var2 != null) {
-            q0Var2.setSearchFieldHint(org.telegram.messenger.bd.M0((qq0Var != null && qq0Var.a() && ws0Var.getSelectedTab() == 11) ? 2131745878 : 2131745846, null));
+        org.telegram.ui.ActionBar.r0 r0Var2 = xs0Var.p0;
+        if (r0Var2 != null) {
+            r0Var2.setSearchFieldHint(org.telegram.messenger.hd.M0((qq0Var != null && qq0Var.a() && xs0Var.getSelectedTab() == 11) ? 2131745869 : 2131745837, null));
         }
     }
 }

@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface IntBinaryOperator {
-    int applyAsInt(int i3, int i10);
+    int applyAsInt(int i7, int i10);
 }

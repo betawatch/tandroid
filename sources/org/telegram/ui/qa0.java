@@ -1,45 +1,42 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qa0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ xd0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class qa0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ce0 b;
 
-    public /* synthetic */ qa0(xd0 xd0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
-        this.b = xd0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z10;
+    public /* synthetic */ qa0(ce0 ce0Var, int i7) {
+        this.a = i7;
+        this.b = ce0Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        ce0 ce0Var = this.b;
+        switch (i7) {
             case 0:
-                xd0.a0(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                ce0Var.c0 = false;
+                break;
+            case 1:
+                ce0Var.w0 = false;
+                ce0Var.P1(true, true);
                 break;
             default:
-                xd0.c0(this.b, this.c, this.d, this.e, this.f, (o8.d) obj);
+                if (ce0Var.getParentActivity() != null && !ce0Var.getParentActivity().isFinishing() && ce0Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce0Var.getParentActivity());
+                    String M0 = org.telegram.messenger.hd.M0(2131746072, null);
+                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                    u1Var.R = M0;
+                    u1Var.T = org.telegram.messenger.hd.M0(2131745950, null);
+                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), new ta0(ce0Var, 1));
+                    alertDialog$Builder.p();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ qa0(xd0 xd0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
-        this.b = xd0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z10;
     }
 }
