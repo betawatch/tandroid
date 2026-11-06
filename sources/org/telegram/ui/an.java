@@ -131,7 +131,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
 /* loaded from: classes3.dex */
 public class an extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, qw, ma0, org.telegram.ui.Components.mj, org.telegram.ui.Components.kg, pg.b, org.telegram.ui.Components.b40, te.b {
     public static int id = 22;
@@ -34007,23 +34007,32 @@ public class an extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
     }
 
     public final void pb() {
-        org.telegram.ui.Cells.q1 q1Var = null;
+        View view = null;
         int i7 = 0;
-        for (int i10 = 0; i10 < this.z0.getChildCount(); i10++) {
-            View childAt = this.z0.getChildAt(i10);
+        int i10 = 0;
+        while (true) {
+            if (i7 >= this.z0.getChildCount()) {
+                break;
+            }
+            View childAt = this.z0.getChildAt(i7);
+            if ((childAt instanceof org.telegram.ui.Cells.z1) && childAt.getBottom() > 0 && childAt.getTop() < this.z0.getHeight()) {
+                view = childAt;
+                break;
+            }
             if (childAt instanceof org.telegram.ui.Cells.q1) {
-                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt;
-                int min = Math.min(q1Var2.getBottom(), this.z0.getHeight()) - Math.max(0, q1Var2.getTop());
-                if (min > i7) {
-                    q1Var = q1Var2;
-                    i7 = min;
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
+                int min = Math.min(q1Var.getBottom(), this.z0.getHeight()) - Math.max(0, q1Var.getTop());
+                if (min > i10) {
+                    view = q1Var;
+                    i10 = min;
                 }
             }
+            i7++;
         }
-        if (q1Var != null) {
+        if (view != null) {
             dj djVar = this.B0;
             this.z0.getClass();
-            djVar.i1(RecyclerView.R(q1Var), q1Var.getTop() - ((int) this.L9), false);
+            djVar.i1(RecyclerView.R(view), view.getTop() - ((int) this.L9), false);
         }
     }
 

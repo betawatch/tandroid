@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ve0;
 
-/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
 /* loaded from: classes3.dex */
 public final class i5 extends FrameLayout {
     public boolean D;
@@ -88,12 +88,20 @@ public final class i5 extends FrameLayout {
         paint.setColor(-16777216);
     }
 
-    public static float d(float f10, float f11, float f12) {
+    public static void d(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+        if (f14 >= 1.0f) {
+            canvas.save();
+        } else {
+            canvas.saveLayerAlpha(f10, f11, f12, f13, (int) (f14 * 255.0f));
+        }
+    }
+
+    public static float e(float f10, float f11, float f12) {
         float l10 = Utilities.l((f12 - f10) / (f11 - f10));
         return com.google.android.recaptcha.internal.a.C(l10, 2.0f, 3.0f, l10 * l10);
     }
 
-    public static double e(double d, double d2, double d10) {
+    public static double f(double d, double d2, double d10) {
         if (d <= 0.0d) {
             return 0.0d;
         }
@@ -139,7 +147,7 @@ public final class i5 extends FrameLayout {
             if (z10) {
                 this.y = false;
                 if (z9 && isAttachedToWindow() && isLaidOut()) {
-                    f();
+                    g();
                     return;
                 }
             }
@@ -246,8 +254,8 @@ public final class i5 extends FrameLayout {
             float f14 = this.I;
             if (this.y) {
                 this.L = 0.0f;
-                this.J = f13 > 0.7f ? 1.0f : ((1.0f - f14) * ((float) e(f13, 0.78d, 0.3d))) + f14;
-                this.K = f13 > 0.7f ? 1.0f : ((1.0f - f14) * ((float) e(f13 - 0.02d, 0.8d, 0.34d))) + f14;
+                this.J = f13 > 0.7f ? 1.0f : ((1.0f - f14) * ((float) f(f13, 0.78d, 0.3d))) + f14;
+                this.K = f13 > 0.7f ? 1.0f : ((1.0f - f14) * ((float) f(f13 - 0.02d, 0.8d, 0.34d))) + f14;
                 if (f13 > 0.7f) {
                     setAnimating(false);
                 }
@@ -335,11 +343,11 @@ public final class i5 extends FrameLayout {
             this.d.setMenuGlassFrostedProgress(l15);
             this.h.updateColors();
             fh.g gVar2 = this.h;
-            float g10 = g(this.d.getButtonsGlassColorProvider(), true);
+            float h = h(this.d.getButtonsGlassColorProvider(), true);
             g6.d0 d0Var = this.c;
             c10 = 1;
-            float T15 = org.telegram.messenger.g0.T1(g10, g(d0Var, true), this.a);
-            float T16 = org.telegram.messenger.g0.T1(g(this.d.getButtonsGlassColorProvider(), false), g(d0Var, false), this.a);
+            float T15 = org.telegram.messenger.g0.T1(h, h(d0Var, true), this.a);
+            float T16 = org.telegram.messenger.g0.T1(h(this.d.getButtonsGlassColorProvider(), false), h(d0Var, false), this.a);
             fh.f fVar = gVar2.Q;
             fVar.i = T15;
             fVar.j = T16;
@@ -355,7 +363,7 @@ public final class i5 extends FrameLayout {
             float max = (Math.max(rectF6.width(), rectF6.height()) * 0.04f) + org.telegram.messenger.g0.L(4.0f);
             rectF = rectF2;
             this.h.a.set((int) Math.floor(rectF6.left - max), (int) Math.floor(rectF6.top - max), (int) Math.ceil(rectF6.right + max), (int) Math.ceil(rectF6.bottom + max));
-            this.h.setAlpha((int) (l14 * 255.0f));
+            this.h.setAlpha((int) (255.0f * l14));
             this.h.draw(canvas);
         } else {
             float f25 = l14;
@@ -396,20 +404,19 @@ public final class i5 extends FrameLayout {
             float l17 = 1.0f - (Utilities.l(l12 / 0.3f) * 0.15f);
             f11 = 0.004f;
             f12 = 0.25f;
-            canvas.saveLayerAlpha(rectF6.left, rectF6.top, rectF6.right, rectF6.bottom, (int) (l16 * 255.0f));
+            d(canvas, rectF6.left, rectF6.top, rectF6.right, rectF6.bottom, l16);
             float f27 = this.L;
             canvas.scale(com.google.android.recaptcha.internal.a.B(f27, 0.5f, 1.0f, l17), (1.0f - f27) * l17, rectF6.centerX(), rectF6.centerY());
             canvas.translate(rectF6.left, rectF6.top);
             menuView.draw(canvas);
             canvas.restore();
         }
-        float d = this.s ? this.y ? d(0.15f, 0.6f, l12) : d(0.6f, 1.0f, l12) : this.y ? d(f12, 0.75f, l12) : d(0.5f, 0.95f, l12);
-        if (d <= f11 || !this.s) {
-            float f28 = d;
+        float e10 = this.s ? this.y ? e(0.15f, 0.6f, l12) : e(0.6f, 1.0f, l12) : this.y ? e(f12, 0.75f, l12) : e(0.5f, 0.95f, l12);
+        if (e10 <= f11 || !this.s) {
             RectF rectF8 = rectF;
-            if (d > f11) {
+            if (e10 > f11) {
                 float max2 = Math.max(0.3f, rectF4.width() / Math.max(1.0f, rectF8.width()));
-                canvas.saveLayerAlpha(rectF4.left, rectF4.top, rectF4.right, rectF4.bottom, (int) (f28 * 255.0f));
+                d(canvas, rectF4.left, rectF4.top, rectF4.right, rectF4.bottom, e10);
                 canvas.translate(rectF4.right - rectF8.right, rectF4.top - rectF8.top);
                 canvas.scale(max2, max2, rectF8.right, rectF8.top);
                 super.dispatchDraw(canvas);
@@ -417,13 +424,13 @@ public final class i5 extends FrameLayout {
             }
         } else {
             float centerX2 = rectF4.centerX() - rectF.centerX();
-            float f29 = rectF4.top - rectF.top;
+            float f28 = rectF4.top - rectF.top;
             if (Math.abs(this.a0) < 0.6f) {
                 centerX2 = Math.round(centerX2);
-                f29 = Math.round(f29);
+                f28 = Math.round(f28);
             }
-            canvas.saveLayerAlpha(rectF5.left, rectF5.top, rectF5.right, rectF5.bottom, (int) (d * 255.0f));
-            canvas.translate(centerX2, f29);
+            d(canvas, rectF5.left, rectF5.top, rectF5.right, rectF5.bottom, e10);
+            canvas.translate(centerX2, f28);
             super.dispatchDraw(canvas);
             canvas.restore();
         }
@@ -494,7 +501,7 @@ public final class i5 extends FrameLayout {
         return true;
     }
 
-    public final void f() {
+    public final void g() {
         this.I = Math.max(this.J, this.K);
         this.W = this.K;
         this.b0 = 0.0f;
@@ -503,7 +510,11 @@ public final class i5 extends FrameLayout {
         invalidate();
     }
 
-    public final float g(gh.a aVar, boolean z9) {
+    public r0 getItem() {
+        return this.e;
+    }
+
+    public final float h(gh.a aVar, boolean z9) {
         if (aVar == this.c) {
             s4 s4Var = this.d;
             aVar = s4Var != null ? s4Var.getMenuGlassColorProvider() : null;
@@ -515,11 +526,7 @@ public final class i5 extends FrameLayout {
         return z9 ? eVar.f : eVar.h;
     }
 
-    public r0 getItem() {
-        return this.e;
-    }
-
-    public final void h(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i7) {
+    public final void i(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i7) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.V;

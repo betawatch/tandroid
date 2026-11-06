@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements er0, org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ g4 a;

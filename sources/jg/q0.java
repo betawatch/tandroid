@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
 /* loaded from: classes3.dex */
 public final class q0 extends pj0 implements a6 {
     public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745408, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745411, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745415, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745406, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745403, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};

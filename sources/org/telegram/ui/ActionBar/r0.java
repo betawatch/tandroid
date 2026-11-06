@@ -58,7 +58,7 @@ import org.telegram.ui.c61;
 import org.telegram.ui.ch;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
 /* loaded from: classes3.dex */
 public class r0 extends FrameLayout {
     public int D;
@@ -523,7 +523,7 @@ public class r0 extends FrameLayout {
                         }
                         subMenuOverlay.f = popupLayout;
                     }
-                    subMenuOverlay.h(popupLayout, org.telegram.messenger.g0.L(5.0f));
+                    subMenuOverlay.i(popupLayout, org.telegram.messenger.g0.L(5.0f));
                     popupLayout.setTranslationX(0.0f);
                     popupLayout.setTranslationY(0.0f);
                     popupLayout.setAlpha(1.0f);
@@ -546,7 +546,7 @@ public class r0 extends FrameLayout {
                         for (int i10 = 1; i10 < swipeBack.getChildCount(); i10++) {
                             if (swipeBack.getChildAt(i10) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) swipeBack.getChildAt(i10);
-                                subMenuOverlay.h(actionBarPopupWindow$ActionBarPopupWindowLayout3, 0);
+                                subMenuOverlay.i(actionBarPopupWindow$ActionBarPopupWindowLayout3, 0);
                                 r6.d0(actionBarPopupWindow$ActionBarPopupWindowLayout3, false);
                                 k60.U(actionBarPopupWindow$ActionBarPopupWindowLayout3, k6.r1(0.06f, k6.w0(k6.E8, subMenuOverlay.d.getMenuResourcesProvider())));
                             }
@@ -585,7 +585,7 @@ public class r0 extends FrameLayout {
                     subMenuOverlay.setVisibility(0);
                     subMenuOverlay.y = true;
                     subMenuOverlay.F = SystemClock.uptimeMillis();
-                    subMenuOverlay.f();
+                    subMenuOverlay.g();
                     subMenuOverlayHost.d(subMenuOverlay, this);
                     subMenuOverlay.b();
                     if (!subMenuOverlay.D) {
