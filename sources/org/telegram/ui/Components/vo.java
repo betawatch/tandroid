@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.u71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls {
     public static final /* synthetic */ int c2 = 0;
@@ -47,7 +47,7 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
     public boolean E1;
     public boolean F1;
     public int G1;
-    public wz0 H1;
+    public xz0 H1;
     public float I1;
     public ValueAnimator J1;
     public y20 K1;
@@ -284,19 +284,19 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
         return z9 ? org.telegram.ui.ActionBar.k6.Q0(str2) : org.telegram.ui.ActionBar.k6.Q0(str);
     }
 
-    public static void W0(wz0 wz0Var) {
-        if (wz0Var == null) {
+    public static void W0(xz0 xz0Var) {
+        if (xz0Var == null) {
             return;
         }
-        float width = wz0Var.getWidth() / 2.0f;
-        float width2 = wz0Var.getWidth();
-        float height = wz0Var.getHeight();
+        float width = xz0Var.getWidth() / 2.0f;
+        float width2 = xz0Var.getWidth();
+        float height = xz0Var.getHeight();
         float max = Math.max(width, width2 - width);
         float max2 = Math.max(0.0f, height - 0.0f);
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(wz0Var, wz0.x, 0.0f, ((float) Math.sqrt((max2 * max2) + (max * max))) / 0.6f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(xz0Var, xz0.x, 0.0f, ((float) Math.sqrt((max2 * max2) + (max * max))) / 0.6f);
         ofFloat.setDuration(450L);
         ofFloat.setInterpolator(ks.e);
-        ofFloat.addListener(new z5(wz0Var, 17));
+        ofFloat.addListener(new z5(xz0Var, 17));
         ofFloat.start();
     }
 
@@ -358,7 +358,7 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
                             TLRPC.WallPaper wallPaper = P0() ? null : this.o1.g;
                             boolean z11 = this.D1;
                             boolean z12 = this.q1;
-                            wz0 L0 = z11 != z12 ? L0() : null;
+                            xz0 L0 = z11 != z12 ? L0() : null;
                             if (r3Var.a) {
                                 c10 = 0;
                                 this.o1.r(null, wallPaper, L0 == null, Boolean.valueOf(z12), false);
@@ -450,7 +450,7 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final wz0 L0() {
+    public final xz0 L0() {
         Bitmap bitmap;
         Bitmap bitmap2;
         org.telegram.ui.an anVar = this.r1;
@@ -483,13 +483,13 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
         if (bitmap2 != null) {
             return null;
         }
-        wz0 wz0Var = new wz0(parentActivity);
-        wz0Var.setScaleType(ImageView.ScaleType.MATRIX);
-        wz0Var.setImageBitmap(bitmap2);
-        wz0Var.b(frameLayout.getWidth() / 2.0f, 0.0f, true);
-        wz0Var.setRadius(0.0f);
-        frameLayout.addView(wz0Var, new FrameLayout.LayoutParams(-1, -1));
-        return wz0Var;
+        xz0 xz0Var = new xz0(parentActivity);
+        xz0Var.setScaleType(ImageView.ScaleType.MATRIX);
+        xz0Var.setImageBitmap(bitmap2);
+        xz0Var.b(frameLayout.getWidth() / 2.0f, 0.0f, true);
+        xz0Var.setRadius(0.0f);
+        frameLayout.addView(xz0Var, new FrameLayout.LayoutParams(-1, -1));
+        return xz0Var;
     }
 
     public final void M0() {
@@ -856,7 +856,7 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
                 B02.recycle();
                 org.telegram.ui.yc ycVar = this.w1;
                 if (bitmap == null) {
-                    wz0.a(bitmap, null, ycVar);
+                    xz0.a(bitmap, null, ycVar);
                 } else {
                     bitmap = Bitmap.createBitmap(frameLayout2.getWidth(), frameLayout2.getHeight(), Bitmap.Config.ARGB_8888);
                     Canvas canvas2 = new Canvas(bitmap);
@@ -870,24 +870,24 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
                 float measuredHeight = (ycVar.getMeasuredHeight() / 2.0f) + r3[1];
                 float width = bitmap.getWidth();
                 float height = bitmap.getHeight();
-                org.telegram.ui.Cells.g1 g1Var = wz0.x;
+                org.telegram.ui.Cells.g1 g1Var = xz0.x;
                 float max = Math.max(measuredWidth, width - measuredWidth);
                 float max2 = Math.max(measuredHeight, height - measuredHeight);
                 float sqrt = ((float) Math.sqrt((max2 * max2) + (max * max))) / 0.6f;
-                wz0 wz0Var = new wz0(getContext());
-                wz0Var.setScaleType(ImageView.ScaleType.MATRIX);
-                wz0Var.setImageBitmap(bitmap);
-                wz0Var.b(measuredWidth, measuredHeight, z9);
+                xz0 xz0Var = new xz0(getContext());
+                xz0Var.setScaleType(ImageView.ScaleType.MATRIX);
+                xz0Var.setImageBitmap(bitmap);
+                xz0Var.b(measuredWidth, measuredHeight, z9);
                 ColorFilter colorFilter = this.v1.getColorFilter();
-                wz0Var.n = ycVar;
-                wz0Var.r = colorFilter;
-                wz0Var.setRadius(!z9 ? 0.0f : sqrt);
-                this.H1 = wz0Var;
-                wz0Var.setOnTouchListener(new ei.b(16));
+                xz0Var.n = ycVar;
+                xz0Var.r = colorFilter;
+                xz0Var.setRadius(!z9 ? 0.0f : sqrt);
+                this.H1 = xz0Var;
+                xz0Var.setOnTouchListener(new ei.b(16));
                 this.I1 = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.J1 = ofFloat;
-                ofFloat.addUpdateListener(new jo(this, wz0Var, sqrt, z9));
+                ofFloat.addUpdateListener(new jo(this, xz0Var, sqrt, z9));
                 this.J1.addListener(new z5(this, 16));
                 this.J1.setDuration(400L);
                 this.J1.setInterpolator(ks.e);
@@ -908,24 +908,24 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
         float measuredHeight2 = (ycVar2.getMeasuredHeight() / 2.0f) + r3[1];
         float width2 = bitmap.getWidth();
         float height2 = bitmap.getHeight();
-        org.telegram.ui.Cells.g1 g1Var2 = wz0.x;
+        org.telegram.ui.Cells.g1 g1Var2 = xz0.x;
         float max3 = Math.max(measuredWidth2, width2 - measuredWidth2);
         float max22 = Math.max(measuredHeight2, height2 - measuredHeight2);
         float sqrt2 = ((float) Math.sqrt((max22 * max22) + (max3 * max3))) / 0.6f;
-        wz0 wz0Var2 = new wz0(getContext());
-        wz0Var2.setScaleType(ImageView.ScaleType.MATRIX);
-        wz0Var2.setImageBitmap(bitmap);
-        wz0Var2.b(measuredWidth2, measuredHeight2, z9);
+        xz0 xz0Var2 = new xz0(getContext());
+        xz0Var2.setScaleType(ImageView.ScaleType.MATRIX);
+        xz0Var2.setImageBitmap(bitmap);
+        xz0Var2.b(measuredWidth2, measuredHeight2, z9);
         ColorFilter colorFilter2 = this.v1.getColorFilter();
-        wz0Var2.n = ycVar2;
-        wz0Var2.r = colorFilter2;
-        wz0Var2.setRadius(!z9 ? 0.0f : sqrt2);
-        this.H1 = wz0Var2;
-        wz0Var2.setOnTouchListener(new ei.b(16));
+        xz0Var2.n = ycVar2;
+        xz0Var2.r = colorFilter2;
+        xz0Var2.setRadius(!z9 ? 0.0f : sqrt2);
+        this.H1 = xz0Var2;
+        xz0Var2.setOnTouchListener(new ei.b(16));
         this.I1 = 0.0f;
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.J1 = ofFloat2;
-        ofFloat2.addUpdateListener(new jo(this, wz0Var2, sqrt2, z9));
+        ofFloat2.addUpdateListener(new jo(this, xz0Var2, sqrt2, z9));
         this.J1.addListener(new z5(this, 16));
         this.J1.setDuration(400L);
         this.J1.setInterpolator(ks.e);
@@ -1131,7 +1131,7 @@ public final class vo extends org.telegram.ui.ActionBar.v2 implements org.telegr
         this.r1.getClass();
         boolean z9 = this.E1;
         boolean z10 = this.q1;
-        wz0 L0 = (z9 || this.D1 == z10) ? null : L0();
+        xz0 L0 = (z9 || this.D1 == z10) ? null : L0();
         if (!this.E1) {
             org.telegram.ui.ym ymVar = this.o1;
             TLRPC.WallPaper wallPaper = ymVar.g;

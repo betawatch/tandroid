@@ -12,8 +12,8 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.opengl.GLES20;
 import bi.nb;
-import c8.cc;
-import c8.ec;
+import c8.dc;
+import c8.fc;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class j0 {
     public final Bitmap A;
@@ -85,7 +85,7 @@ public final class j0 {
         this.A = bitmap;
         this.B = i7;
         this.u = ByteBuffer.allocateDirect(((int) mt0Var.a) * ((int) mt0Var.b) * 4);
-        this.x = cc.b(mt0Var.a, mt0Var.b);
+        this.x = dc.b(mt0Var.a, mt0Var.b);
         if (this.m == null) {
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
             this.m = allocateDirect;
@@ -174,7 +174,7 @@ public final class j0 {
     public final void b() {
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        ec.a();
+        fc.a();
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             mt0 mt0Var = this.g;
             GLES20.glViewport(0, 0, (int) mt0Var.a, (int) mt0Var.b);
@@ -437,7 +437,7 @@ public final class j0 {
                 GLES20.glUseProgram(x0Var2.a);
                 Matrix matrix = new Matrix();
                 matrix.preTranslate(-i7, -i10);
-                float[] c10 = cc.c(this.x, cc.a(matrix));
+                float[] c10 = dc.c(this.x, dc.a(matrix));
                 GLES20.glUniformMatrix4fv(x0Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(c10));
                 if (z9 || !this.G) {
                     GLES20.glUniform1i(x0Var2.d("texture"), 0);
@@ -512,7 +512,7 @@ public final class j0 {
             int[] iArr = new int[1];
             GLES20.glGenFramebuffers(1, iArr, 0);
             this.o = iArr[0];
-            ec.a();
+            fc.a();
         }
         return this.o;
     }
@@ -553,7 +553,7 @@ public final class j0 {
         }
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        ec.a();
+        fc.a();
         RectF rectF = null;
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             mt0 mt0Var = this.g;
@@ -911,7 +911,7 @@ public final class j0 {
                 } else {
                     GLES20.glDrawArrays(5, 0, 4);
                 }
-                ec.a();
+                fc.a();
             }
             k1 k1Var = this.z;
             if (k1Var != null) {
@@ -926,7 +926,7 @@ public final class j0 {
         GLES20.glEnableVertexAttribArray(1);
         if (obj == null) {
         }
-        ec.a();
+        fc.a();
     }
 
     public final void o(int i7, int i10, z0 z0Var, float f10) {
@@ -973,7 +973,7 @@ public final class j0 {
         GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) this.n);
         GLES20.glEnableVertexAttribArray(1);
         GLES20.glDrawArrays(5, 0, 4);
-        ec.a();
+        fc.a();
     }
 
     public final void p(wa waVar, boolean z9) {

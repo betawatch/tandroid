@@ -65,7 +65,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class dt extends c1 implements ls {
     public static String j0;
@@ -1548,22 +1548,22 @@ public final class dt extends c1 implements ls {
                     w7 fileLoader = getFileLoader();
                     TLRPC.FileLocation fileLocation2 = a22.photo.photo_small;
                     fileLoader.getClass();
-                    File K = w7.K(fileLocation2, null, true, true);
-                    if (!K.exists()) {
+                    File J = w7.J(fileLocation2, null, true, true);
+                    if (!J.exists()) {
                         if (a22.photo.photo_big != null) {
                             w7 fileLoader2 = getFileLoader();
                             TLRPC.FileLocation fileLocation3 = a22.photo.photo_big;
                             fileLoader2.getClass();
-                            K = w7.K(fileLocation3, null, true, true);
+                            J = w7.J(fileLocation3, null, true, true);
                         } else {
-                            K = null;
+                            J = null;
                         }
-                        if (K != null && !K.exists()) {
-                            K = null;
+                        if (J != null && !J.exists()) {
+                            J = null;
                         }
                     }
-                    if (K != null) {
-                        file = K;
+                    if (J != null) {
+                        file = J;
                     }
                 }
             } else {
@@ -2552,7 +2552,7 @@ public final class dt extends c1 implements ls {
                     if (fileLocation8 != null) {
                         dtVar.getFileLoader().getClass();
                         i22 = 2131748017;
-                        file = w7.L(fileLocation8, true);
+                        file = w7.K(fileLocation8, true);
                         if (Build.VERSION.SDK_INT < 28) {
                             BitmapDrawable C = gc.D().C(fileLocation8);
                             if (C != null) {
@@ -2702,13 +2702,13 @@ public final class dt extends c1 implements ls {
                                         w7 fileLoader = dtVar.getFileLoader();
                                         TLRPC.FileLocation fileLocation15 = a24.photo.photo_small;
                                         fileLoader.getClass();
-                                        File L2 = w7.L(fileLocation15, true);
+                                        File K = w7.K(fileLocation15, true);
                                         if (dtVar.getUserConfig().e() == 489001) {
                                             iconCompat2 = IconCompat.d(t0.b, R.drawable.ic_launcher_dr);
                                         } else {
-                                            if (L2 != null && i43 >= 28) {
+                                            if (K != null && i43 >= 28) {
                                                 try {
-                                                    iconCompat2 = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(L2), new vs()));
+                                                    iconCompat2 = IconCompat.c(ImageDecoder.decodeBitmap(ImageDecoder.createSource(K), new vs()));
                                                 } catch (Throwable unused3) {
                                                 }
                                             }
@@ -3117,7 +3117,7 @@ public final class dt extends c1 implements ls {
                                                                     w7 fileLoader2 = dtVar.getFileLoader();
                                                                     TLRPC.FileLocation fileLocation16 = a25.photo.photo_small;
                                                                     fileLoader2.getClass();
-                                                                    file2 = w7.L(fileLocation16, true);
+                                                                    file2 = w7.K(fileLocation16, true);
                                                                 }
                                                             }
                                                             file2 = null;
@@ -3129,7 +3129,7 @@ public final class dt extends c1 implements ls {
                                                                     w7 fileLoader3 = dtVar.getFileLoader();
                                                                     TLRPC.FileLocation fileLocation17 = a26.photo.photo_small;
                                                                     fileLoader3.getClass();
-                                                                    file2 = w7.L(fileLocation17, true);
+                                                                    file2 = w7.K(fileLocation17, true);
                                                                 }
                                                             } else {
                                                                 TLRPC.Chat M02 = dtVar.getMessagesController().M0(Long.valueOf(-j18));
@@ -3137,7 +3137,7 @@ public final class dt extends c1 implements ls {
                                                                     w7 fileLoader4 = dtVar.getFileLoader();
                                                                     TLRPC.FileLocation fileLocation18 = M02.photo.photo_small;
                                                                     fileLoader4.getClass();
-                                                                    file2 = w7.L(fileLocation18, true);
+                                                                    file2 = w7.K(fileLocation18, true);
                                                                 }
                                                             }
                                                         }
@@ -3190,14 +3190,14 @@ public final class dt extends c1 implements ls {
                                                         w7 fileLoader5 = dtVar.getFileLoader();
                                                         TLRPC.Message message2 = ijVar6.k;
                                                         fileLoader5.getClass();
-                                                        File M = w7.M(message2);
-                                                        if (M.exists() && ijVar6.u2()) {
-                                                            File file4 = new File(M.getParentFile(), M.getName() + ".blur.jpg");
+                                                        File L2 = w7.L(message2);
+                                                        if (L2.exists() && ijVar6.u2()) {
+                                                            File file4 = new File(L2.getParentFile(), L2.getName() + ".blur.jpg");
                                                             if (file4.exists()) {
                                                                 hVar8 = hVar;
                                                             } else {
                                                                 try {
-                                                                    Bitmap decodeFile = BitmapFactory.decodeFile(M.getAbsolutePath());
+                                                                    Bitmap decodeFile = BitmapFactory.decodeFile(L2.getAbsolutePath());
                                                                     Bitmap C2 = Utilities.C(decodeFile);
                                                                     decodeFile.recycle();
                                                                     createScaledBitmap = Bitmap.createScaledBitmap(C2, decodeFile.getWidth(), decodeFile.getHeight(), true);
@@ -3218,14 +3218,14 @@ public final class dt extends c1 implements ls {
                                                                     fileOutputStream.close();
                                                                     createScaledBitmap.recycle();
                                                                     file3 = file4;
-                                                                    M = file3;
+                                                                    L2 = file3;
                                                                 } catch (Exception e12) {
                                                                     e = e12;
                                                                     a8.f(e);
                                                                     file3 = file4;
                                                                     e0.w wVar3 = new e0.w(str21, ijVar6.k.date * 1000, j0Var6);
                                                                     String str23 = !ijVar6.u4() ? "image/webp" : "image/jpeg";
-                                                                    if (M.exists()) {
+                                                                    if (L2.exists()) {
                                                                     }
                                                                     if (d != null) {
                                                                     }
@@ -3263,14 +3263,14 @@ public final class dt extends c1 implements ls {
                                                         }
                                                         e0.w wVar32 = new e0.w(str21, ijVar6.k.date * 1000, j0Var6);
                                                         String str232 = !ijVar6.u4() ? "image/webp" : "image/jpeg";
-                                                        if (M.exists()) {
-                                                            if (dtVar.getFileLoader().T(M.getName())) {
+                                                        if (L2.exists()) {
+                                                            if (dtVar.getFileLoader().S(L2.getName())) {
                                                                 Uri.Builder scheme = new Uri.Builder().scheme("content");
                                                                 if (NotificationImageProvider.d == null) {
                                                                     t0.d();
                                                                     NotificationImageProvider.d = "org.telegram.messenger.beta.notification_image_provider";
                                                                 }
-                                                                d = scheme.authority(NotificationImageProvider.d).appendPath("msg_media_raw").appendPath(dtVar.currentAccount + "").appendPath(M.getName()).appendQueryParameter("final_path", M.getAbsolutePath()).build();
+                                                                d = scheme.authority(NotificationImageProvider.d).appendPath("msg_media_raw").appendPath(dtVar.currentAccount + "").appendPath(L2.getName()).appendQueryParameter("final_path", L2.getAbsolutePath()).build();
                                                             }
                                                             d = null;
                                                         } else {
@@ -3280,7 +3280,7 @@ public final class dt extends c1 implements ls {
                                                                 t0.d();
                                                                 sb7.append("org.telegram.messenger.beta");
                                                                 sb7.append(".provider");
-                                                                d = FileProvider.d(context, sb7.toString(), M);
+                                                                d = FileProvider.d(context, sb7.toString(), L2);
                                                             } catch (Exception e13) {
                                                                 a8.f(e13);
                                                             }
@@ -3311,8 +3311,8 @@ public final class dt extends c1 implements ls {
                                                                     w7 fileLoader6 = dtVar.getFileLoader();
                                                                     TLRPC.Message message3 = ijVar6.k;
                                                                     fileLoader6.getClass();
-                                                                    File M2 = w7.M(message3);
-                                                                    if (M2.exists()) {
+                                                                    File L3 = w7.L(message3);
+                                                                    if (L3.exists()) {
                                                                         if (Build.VERSION.SDK_INT >= 24) {
                                                                             try {
                                                                                 Context context2 = t0.b;
@@ -3320,12 +3320,12 @@ public final class dt extends c1 implements ls {
                                                                                 t0.d();
                                                                                 sb8.append("org.telegram.messenger.beta");
                                                                                 sb8.append(".provider");
-                                                                                uri2 = FileProvider.d(context2, sb8.toString(), M2);
+                                                                                uri2 = FileProvider.d(context2, sb8.toString(), L3);
                                                                             } catch (Exception unused5) {
                                                                                 uri2 = null;
                                                                             }
                                                                         } else {
-                                                                            uri2 = Uri.fromFile(M2);
+                                                                            uri2 = Uri.fromFile(L3);
                                                                         }
                                                                         if (uri2 != null) {
                                                                             e0.w wVar6 = (e0.w) jg.g.i(1, arrayList8);
@@ -3336,7 +3336,7 @@ public final class dt extends c1 implements ls {
                                                                         String s5 = w7.s(ijVar6.F0());
                                                                         if (!dtVar.s.contains(s5)) {
                                                                             dtVar.s.add(s5);
-                                                                            dtVar.getFileLoader().X(ijVar6.F0(), ijVar6, 3, 0);
+                                                                            dtVar.getFileLoader().W(ijVar6.F0(), ijVar6, 3, 0);
                                                                         }
                                                                     }
                                                                 }
@@ -4958,12 +4958,12 @@ public final class dt extends c1 implements ls {
                                                                         } else {
                                                                             try {
                                                                                 getFileLoader().getClass();
-                                                                                File L = w7.L(fileLocation, true);
-                                                                                if (L.exists()) {
-                                                                                    float L2 = 160.0f / g0.L(50.0f);
+                                                                                File K = w7.K(fileLocation, true);
+                                                                                if (K.exists()) {
+                                                                                    float L = 160.0f / g0.L(50.0f);
                                                                                     BitmapFactory.Options options = new BitmapFactory.Options();
-                                                                                    options.inSampleSize = L2 < 1.0f ? 1 : (int) L2;
-                                                                                    Bitmap decodeFile = BitmapFactory.decodeFile(L.getAbsolutePath(), options);
+                                                                                    options.inSampleSize = L < 1.0f ? 1 : (int) L;
+                                                                                    Bitmap decodeFile = BitmapFactory.decodeFile(K.getAbsolutePath(), options);
                                                                                     if (decodeFile != null) {
                                                                                         qVar.j(decodeFile);
                                                                                     }

@@ -6,7 +6,7 @@ import android.net.TrafficStats;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import c8.pb;
+import c8.qb;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -32,7 +32,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.qs;
 import u9.m;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -407,7 +407,7 @@ public final class c implements d {
                     break;
                 }
                 String str3 = strArr[i7];
-                String str4 = (String) cVar.a.b(pb.a("|T|" + cVar.b + "|" + str3), null);
+                String str4 = (String) cVar.a.b(qb.a("|T|" + cVar.b + "|" + str3), null);
                 if (str4 == null || str4.isEmpty()) {
                     i7++;
                 } else if (str4.startsWith("{")) {

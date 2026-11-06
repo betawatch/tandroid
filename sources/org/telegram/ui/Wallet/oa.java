@@ -22,9 +22,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.nu0;
+import org.telegram.ui.ou0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class oa extends FrameLayout {
     public final Rect D;
@@ -394,7 +394,7 @@ public final class oa extends FrameLayout {
                 textView.setMaxWidth(org.telegram.messenger.g0.L(140.0f));
                 textView.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(9.0f));
                 textView.setVisibility(8);
-                textView.setOnClickListener(new nu0(this, i7, 2));
+                textView.setOnClickListener(new ou0(this, i7, 2));
                 textViewArr[i7] = textView;
                 this.x.addView(textView, c8.ha.t(-2, -2, 16, i7 == 0 ? 0 : 12, 0, 0, 0));
                 i7++;

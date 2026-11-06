@@ -28,16 +28,16 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.ca;
 import org.telegram.ui.Cells.s7;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.l00;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class j extends o00 implements ls {
     public final long R;
@@ -64,13 +64,13 @@ public final class j extends o00 implements ls {
     public static void A0(j jVar, Context context) {
         if (jVar.V.c0) {
             FrameLayout frameLayout = new FrameLayout(context);
-            sx0 sx0Var = new sx0(context, jVar.resourceProvider);
+            tx0 tx0Var = new tx0(context, jVar.resourceProvider);
             d dVar = new d(jVar, 1);
-            sx0Var.c(hd.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
+            tx0Var.c(hd.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
             String M0 = hd.M0(2131754342, null);
             int i7 = jVar.a0.duration_months;
-            sx0Var.c(M0, i7 <= 0 ? hd.M0(2131749197, null) : (i7 < 12 || i7 % 12 != 0) ? hd.G(i7, "Months", new Object[0]) : hd.G(i7 / 12, "Years", new Object[0]), null, null);
-            frameLayout.addView(sx0Var, ha.d(-1, -2.0f, qs.E1, 24.0f, 0.0f, 24.0f, 0.0f));
+            tx0Var.c(M0, i7 <= 0 ? hd.M0(2131749197, null) : (i7 < 12 || i7 % 12 != 0) ? hd.G(i7, "Months", new Object[0]) : hd.G(i7 / 12, "Years", new Object[0]), null, null);
+            frameLayout.addView(tx0Var, ha.d(-1, -2.0f, qs.E1, 24.0f, 0.0f, 24.0f, 0.0f));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, jVar.resourceProvider);
             String M02 = hd.M0(2131754347, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
@@ -227,38 +227,38 @@ public final class j extends o00 implements ls {
         }
     }
 
-    public final void H0(ArrayList arrayList, f41 f41Var) {
+    public final void H0(ArrayList arrayList, l41 l41Var) {
         if (getParentActivity() == null) {
             return;
         }
         l00 l00Var = (l00) super.o0(getParentActivity());
-        r31 r31Var = new r31(-2);
-        r31Var.c = l00Var;
-        arrayList.add(r31Var);
+        x31 x31Var = new x31(-2);
+        x31Var.c = l00Var;
+        arrayList.add(x31Var);
         arrayList.add(h.i(R.drawable.menu_feature_premium, hd.M0(2131753151, null), hd.M0(2131753152, null)));
         arrayList.add(h.i(R.drawable.msg_channel, hd.M0(2131753149, null), hd.M0(2131753150, null)));
         arrayList.add(h.i(R.drawable.menu_feature_links2, hd.M0(2131753147, null), hd.M0(2131753148, null)));
-        arrayList.add(r31.B(1, null));
-        arrayList.add(r31.u(hd.M0(2131754344, null)));
+        arrayList.add(x31.B(1, null));
+        arrayList.add(x31.u(hd.M0(2131754344, null)));
         int i7 = getMessagesController().h6;
         int i10 = this.a0.commission_permille;
         int i11 = getMessagesController().i6;
         int i12 = 2;
         ai.c0 c0Var = new ai.c0(i12);
         a aVar = new a(this, 1);
-        r31 r31Var2 = new r31(15);
-        r31Var2.z = i10;
-        r31Var2.C = aVar;
+        x31 x31Var2 = new x31(15);
+        x31Var2.z = i10;
+        x31Var2.C = aVar;
         s7 s7Var = new s7();
         s7Var.a = i7;
         s7Var.b = i11;
         s7Var.e = new ca(c0Var, 7);
-        r31Var2.G = s7Var;
-        r31Var2.B = -1L;
-        r31Var2.B = this.Z == null ? -1 : r4.commission_permille;
-        arrayList.add(r31Var2);
-        arrayList.add(r31.C(hd.M0(2131754343, null)));
-        arrayList.add(r31.u(hd.M0(2131754342, null)));
+        x31Var2.G = s7Var;
+        x31Var2.B = -1L;
+        x31Var2.B = this.Z == null ? -1 : r4.commission_permille;
+        arrayList.add(x31Var2);
+        arrayList.add(x31.C(hd.M0(2131754343, null)));
+        arrayList.add(x31.u(hd.M0(2131754342, null)));
         String[] strArr = this.b0;
         List list = this.c0;
         if (strArr == null) {
@@ -277,11 +277,11 @@ public final class j extends o00 implements ls {
         String[] strArr2 = this.b0;
         int indexOf = list.indexOf(Integer.valueOf(this.a0.duration_months));
         a aVar2 = new a(this, i12);
-        r31 r31Var3 = new r31(14);
-        r31Var3.p = strArr2;
-        r31Var3.z = indexOf;
-        r31Var3.C = aVar2;
-        r31Var3.B = -1L;
+        x31 x31Var3 = new x31(14);
+        x31Var3.p = strArr2;
+        x31Var3.z = indexOf;
+        x31Var3.C = aVar2;
+        x31Var3.B = -1L;
         TL_payments.starRefProgram starrefprogram = this.Z;
         if (starrefprogram != null) {
             if (starrefprogram.duration_months > 0) {
@@ -291,27 +291,27 @@ public final class j extends o00 implements ls {
                         break;
                     }
                     if (((Integer) list.get(size)).intValue() > 0 && ((Integer) list.get(size)).intValue() <= this.Z.duration_months) {
-                        r31Var3.B = size;
+                        x31Var3.B = size;
                         break;
                     }
                     size--;
                 }
             } else {
-                r31Var3.B = list.size() - 1;
+                x31Var3.B = list.size() - 1;
             }
         }
-        arrayList.add(r31Var3);
-        arrayList.add(r31.C(hd.M0(2131754341, null)));
+        arrayList.add(x31Var3);
+        arrayList.add(x31.C(hd.M0(2131754341, null)));
         arrayList.add(f.i(2, getThemedColor(k6.ik), hd.M0(2131754337, null), hd.M0(2131754338, null)));
-        arrayList.add(r31.B(3, null));
+        arrayList.add(x31.B(3, null));
         if (!this.Y && this.a0.end_date == 0) {
-            r31 e10 = r31.e(4, hd.M0(2131754324, null));
+            x31 e10 = x31.e(4, hd.M0(2131754324, null));
             e10.r = true;
             arrayList.add(e10);
-            arrayList.add(r31.B(5, null));
+            arrayList.add(x31.B(5, null));
         }
-        arrayList.add(r31.B(6, null));
-        arrayList.add(r31.B(7, null));
+        arrayList.add(x31.B(6, null));
+        arrayList.add(x31.B(7, null));
     }
 
     public final TL_payments.starRefProgram I0() {

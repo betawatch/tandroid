@@ -61,18 +61,18 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.zv0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class ui extends c1 {
     public static final Pattern R1 = Pattern.compile("\\*\\*(.+?)\\*\\*");
@@ -390,21 +390,21 @@ public final class ui extends c1 {
         this.e = getMessagesController().e7.getInt("menuBotsUpdateDate", 0);
     }
 
-    public static CharacterStyle J(CharacterStyle characterStyle, ty0 ty0Var, ty0 ty0Var2, boolean z9) {
-        ty0 ty0Var3 = new ty0(ty0Var);
-        if (ty0Var2 != null) {
+    public static CharacterStyle J(CharacterStyle characterStyle, uy0 uy0Var, uy0 uy0Var2, boolean z9) {
+        uy0 uy0Var3 = new uy0(uy0Var);
+        if (uy0Var2 != null) {
             if (z9) {
-                ty0Var3.b(ty0Var2);
+                uy0Var3.b(uy0Var2);
             } else {
-                ty0Var3.a = ty0Var2.a;
-                ty0Var3.d = ty0Var2.d;
+                uy0Var3.a = uy0Var2.a;
+                uy0Var3.d = uy0Var2.d;
             }
         }
-        if (characterStyle instanceof uy0) {
-            return new uy0(ty0Var3, 0);
+        if (characterStyle instanceof vy0) {
+            return new vy0(uy0Var3, 0);
         }
-        if (characterStyle instanceof x31) {
-            return new x31(((x31) characterStyle).getURL(), ty0Var3);
+        if (characterStyle instanceof d41) {
+            return new d41(((d41) characterStyle).getURL(), uy0Var3);
         }
         return null;
     }
@@ -577,8 +577,8 @@ public final class ui extends c1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void f(uy0 uy0Var, int i7, int i10, Spannable spannable, boolean z9) {
-        ty0 ty0Var;
+    public static void f(vy0 vy0Var, int i7, int i10, Spannable spannable, boolean z9) {
+        uy0 uy0Var;
         int i11;
         try {
             int i12 = i7;
@@ -589,39 +589,39 @@ public final class ui extends c1 {
                 int i15 = 0;
                 while (i15 < characterStyleArr.length) {
                     CharacterStyle characterStyle = characterStyleArr[i15];
-                    ty0 ty0Var2 = uy0Var != null ? uy0Var.b : new ty0();
-                    if (characterStyle instanceof uy0) {
-                        ty0Var = ((uy0) characterStyle).b;
-                    } else if (characterStyle instanceof x31) {
-                        ty0Var = ((x31) characterStyle).a;
-                        if (ty0Var == null) {
-                            ty0Var = new ty0();
+                    uy0 uy0Var2 = vy0Var != null ? vy0Var.b : new uy0();
+                    if (characterStyle instanceof vy0) {
+                        uy0Var = ((vy0) characterStyle).b;
+                    } else if (characterStyle instanceof d41) {
+                        uy0Var = ((d41) characterStyle).a;
+                        if (uy0Var == null) {
+                            uy0Var = new uy0();
                         }
                     } else {
                         i15++;
                         i14 = 0;
                     }
-                    if (ty0Var != null) {
+                    if (uy0Var != null) {
                         int spanStart = spannable.getSpanStart(characterStyle);
                         int spanEnd = spannable.getSpanEnd(characterStyle);
                         spannable.removeSpan(characterStyle);
                         if (spanStart <= i12 || i13 <= spanEnd) {
                             if (spanStart <= i12) {
                                 if (spanStart != i12) {
-                                    spannable.setSpan(J(characterStyle, ty0Var, null, z9), spanStart, i12, 33);
+                                    spannable.setSpan(J(characterStyle, uy0Var, null, z9), spanStart, i12, 33);
                                 }
                                 if (spanEnd > i12) {
-                                    if (uy0Var != null) {
-                                        spannable.setSpan(J(characterStyle, ty0Var, ty0Var2, z9), i12, Math.min(spanEnd, i13), 33);
+                                    if (vy0Var != null) {
+                                        spannable.setSpan(J(characterStyle, uy0Var, uy0Var2, z9), i12, Math.min(spanEnd, i13), 33);
                                     }
                                     i11 = spanEnd;
                                     if (spanEnd >= i13) {
                                         if (spanEnd != i13) {
-                                            spannable.setSpan(J(characterStyle, ty0Var, null, z9), i13, spanEnd, 33);
+                                            spannable.setSpan(J(characterStyle, uy0Var, null, z9), i13, spanEnd, 33);
                                         }
                                         if (i13 > spanStart && spanEnd <= i12) {
-                                            if (uy0Var != null) {
-                                                spannable.setSpan(J(characterStyle, ty0Var, ty0Var2, z9), spanStart, Math.min(spanEnd, i13), 33);
+                                            if (vy0Var != null) {
+                                                spannable.setSpan(J(characterStyle, uy0Var, uy0Var2, z9), spanStart, Math.min(spanEnd, i13), 33);
                                             }
                                             i12 = i11;
                                         }
@@ -634,9 +634,9 @@ public final class ui extends c1 {
                             }
                             i12 = i11;
                         } else {
-                            spannable.setSpan(J(characterStyle, ty0Var, ty0Var2, z9), spanStart, spanEnd, 33);
-                            if (uy0Var != null) {
-                                spannable.setSpan(new uy0(new ty0(ty0Var2), i14), spanEnd, i13, 33);
+                            spannable.setSpan(J(characterStyle, uy0Var, uy0Var2, z9), spanStart, spanEnd, 33);
+                            if (vy0Var != null) {
+                                spannable.setSpan(new vy0(new uy0(uy0Var2), i14), spanEnd, i13, 33);
                             }
                         }
                         i13 = spanStart;
@@ -645,10 +645,10 @@ public final class ui extends c1 {
                     i14 = 0;
                 }
             }
-            if (uy0Var == null || i12 >= i13 || i12 >= spannable.length()) {
+            if (vy0Var == null || i12 >= i13 || i12 >= spannable.length()) {
                 return;
             }
-            spannable.setSpan(uy0Var, i12, Math.min(spannable.length(), i13), 33);
+            spannable.setSpan(vy0Var, i12, Math.min(spannable.length(), i13), 33);
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -724,8 +724,8 @@ public final class ui extends c1 {
         int i11;
         int i12;
         int i13;
-        for (uy0 uy0Var : (uy0[]) spannable.getSpans(0, spannable.length(), uy0.class)) {
-            spannable.removeSpan(uy0Var);
+        for (vy0 vy0Var : (vy0[]) spannable.getSpans(0, spannable.length(), vy0.class)) {
+            spannable.removeSpan(vy0Var);
         }
         int i14 = 1;
         int i15 = 100;
@@ -754,47 +754,47 @@ public final class ui extends c1 {
                             i10 = i14;
                             i12 = i15;
                         } else {
-                            ty0 ty0Var = new ty0();
+                            uy0 uy0Var = new uy0();
                             int i19 = messageEntity2.offset;
-                            ty0Var.b = i19;
-                            ty0Var.c = Math.min(messageEntity2.length, charSequence.length() - ty0Var.b) + i19;
+                            uy0Var.b = i19;
+                            uy0Var.c = Math.min(messageEntity2.length, charSequence.length() - uy0Var.b) + i19;
                             if (messageEntity2 instanceof TLRPC.TL_messageEntitySpoiler) {
-                                ty0Var.a = 256;
+                                uy0Var.a = 256;
                             } else if (messageEntity2 instanceof TLRPC.TL_messageEntityStrike) {
-                                ty0Var.a = 8;
+                                uy0Var.a = 8;
                             } else if (messageEntity2 instanceof TLRPC.TL_messageEntityUnderline) {
-                                ty0Var.a = 16;
+                                uy0Var.a = 16;
                             } else if (messageEntity2 instanceof TLRPC.TL_messageEntityBold) {
-                                ty0Var.a = i14;
+                                uy0Var.a = i14;
                             } else if (messageEntity2 instanceof TLRPC.TL_messageEntityItalic) {
-                                ty0Var.a = 2;
+                                uy0Var.a = 2;
                             } else if ((messageEntity2 instanceof TLRPC.TL_messageEntityCode) || (messageEntity2 instanceof TLRPC.TL_messageEntityPre)) {
-                                ty0Var.a = 4;
+                                uy0Var.a = 4;
                             } else if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
-                                ty0Var.a = 64;
-                                ty0Var.d = messageEntity2;
+                                uy0Var.a = 64;
+                                uy0Var.d = messageEntity2;
                             } else if (messageEntity2 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                                ty0Var.a = 64;
-                                ty0Var.d = messageEntity2;
+                                uy0Var.a = 64;
+                                uy0Var.d = messageEntity2;
                             } else {
-                                ty0Var.a = 128;
-                                ty0Var.d = messageEntity2;
+                                uy0Var.a = 128;
+                                uy0Var.d = messageEntity2;
                             }
                             if (messageEntity2 instanceof TLRPC.TL_messageEntityTextUrl) {
-                                ty0Var.a |= 1024;
+                                uy0Var.a |= 1024;
                             }
-                            ty0Var.a &= i7;
+                            uy0Var.a &= i7;
                             int size3 = arrayList4.size();
                             int i20 = 0;
                             while (true) {
                                 if (i20 >= size3) {
                                     i10 = i14;
-                                    if (ty0Var.b < ty0Var.c) {
+                                    if (uy0Var.b < uy0Var.c) {
                                         i12 = 100;
                                         if (arrayList4.size() >= 100) {
                                             break;
                                         } else {
-                                            arrayList4.add(ty0Var);
+                                            arrayList4.add(uy0Var);
                                         }
                                     } else {
                                         i12 = 100;
@@ -805,75 +805,75 @@ public final class ui extends c1 {
                                         i10 = i14;
                                         break loop3;
                                     }
-                                    ty0 ty0Var2 = (ty0) arrayList4.get(i20);
-                                    int i21 = ty0Var.b;
+                                    uy0 uy0Var2 = (uy0) arrayList4.get(i20);
+                                    int i21 = uy0Var.b;
                                     i10 = i14;
-                                    int i22 = ty0Var2.b;
+                                    int i22 = uy0Var2.b;
                                     if (i21 > i22) {
-                                        int i23 = ty0Var2.c;
+                                        int i23 = uy0Var2.c;
                                         if (i21 >= i23) {
                                             continue;
-                                        } else if (ty0Var.c < i23) {
+                                        } else if (uy0Var.c < i23) {
                                             if (arrayList4.size() > 98) {
                                                 break loop3;
                                             }
-                                            ty0 ty0Var3 = new ty0(ty0Var);
-                                            ty0Var3.b(ty0Var2);
-                                            arrayList4.add(i20 + 1, ty0Var3);
-                                            ty0 ty0Var4 = new ty0(ty0Var2);
-                                            ty0Var4.b = ty0Var.c;
+                                            uy0 uy0Var3 = new uy0(uy0Var);
+                                            uy0Var3.b(uy0Var2);
+                                            arrayList4.add(i20 + 1, uy0Var3);
+                                            uy0 uy0Var4 = new uy0(uy0Var2);
+                                            uy0Var4.b = uy0Var.c;
                                             i20 += 2;
-                                            arrayList4.add(i20, ty0Var4);
+                                            arrayList4.add(i20, uy0Var4);
                                             size3 += 2;
-                                            int i24 = ty0Var.b;
-                                            ty0Var.b = ty0Var2.c;
-                                            ty0Var2.c = i24;
+                                            int i24 = uy0Var.b;
+                                            uy0Var.b = uy0Var2.c;
+                                            uy0Var2.c = i24;
                                         } else {
                                             if (arrayList4.size() >= i15) {
                                                 break loop3;
                                             }
-                                            ty0 ty0Var5 = new ty0(ty0Var);
-                                            ty0Var5.b(ty0Var2);
-                                            ty0Var5.c = ty0Var2.c;
+                                            uy0 uy0Var5 = new uy0(uy0Var);
+                                            uy0Var5.b(uy0Var2);
+                                            uy0Var5.c = uy0Var2.c;
                                             i20++;
-                                            arrayList4.add(i20, ty0Var5);
+                                            arrayList4.add(i20, uy0Var5);
                                             size3++;
-                                            int i242 = ty0Var.b;
-                                            ty0Var.b = ty0Var2.c;
-                                            ty0Var2.c = i242;
+                                            int i242 = uy0Var.b;
+                                            uy0Var.b = uy0Var2.c;
+                                            uy0Var2.c = i242;
                                         }
                                         i20++;
                                         i14 = i10;
                                         i15 = 100;
                                     } else {
-                                        int i25 = ty0Var.c;
+                                        int i25 = uy0Var.c;
                                         if (i22 < i25) {
-                                            int i26 = ty0Var2.c;
+                                            int i26 = uy0Var2.c;
                                             if (i25 == i26) {
-                                                ty0Var2.b(ty0Var);
+                                                uy0Var2.b(uy0Var);
                                             } else if (i25 < i26) {
                                                 if (arrayList4.size() >= 100) {
                                                     break loop3;
                                                 }
-                                                ty0 ty0Var6 = new ty0(ty0Var2);
-                                                ty0Var6.b(ty0Var);
-                                                ty0Var6.c = ty0Var.c;
+                                                uy0 uy0Var6 = new uy0(uy0Var2);
+                                                uy0Var6.b(uy0Var);
+                                                uy0Var6.c = uy0Var.c;
                                                 i20++;
-                                                arrayList4.add(i20, ty0Var6);
+                                                arrayList4.add(i20, uy0Var6);
                                                 size3++;
-                                                ty0Var2.b = ty0Var.c;
+                                                uy0Var2.b = uy0Var.c;
                                             } else {
                                                 if (arrayList4.size() >= 100) {
                                                     break loop3;
                                                 }
-                                                ty0 ty0Var7 = new ty0(ty0Var);
-                                                ty0Var7.b = ty0Var2.c;
+                                                uy0 uy0Var7 = new uy0(uy0Var);
+                                                uy0Var7.b = uy0Var2.c;
                                                 i20++;
-                                                arrayList4.add(i20, ty0Var7);
+                                                arrayList4.add(i20, uy0Var7);
                                                 size3++;
-                                                ty0Var2.b(ty0Var);
+                                                uy0Var2.b(uy0Var);
                                             }
-                                            ty0Var.c = i22;
+                                            uy0Var.c = i22;
                                         } else {
                                             continue;
                                         }
@@ -891,9 +891,9 @@ public final class ui extends c1 {
                         i10 = i14;
                         int size4 = arrayList4.size();
                         for (int i27 = 0; i27 < size4; i27++) {
-                            ty0 ty0Var8 = (ty0) arrayList4.get(i27);
-                            int i28 = ty0Var8.b;
-                            if (i28 >= 0 && i28 < (i11 = ty0Var8.c) && i11 <= charSequence.length()) {
+                            uy0 uy0Var8 = (uy0) arrayList4.get(i27);
+                            int i28 = uy0Var8.b;
+                            if (i28 >= 0 && i28 < (i11 = uy0Var8.c) && i11 <= charSequence.length()) {
                             }
                         }
                         arrayList2 = arrayList4;
@@ -907,8 +907,8 @@ public final class ui extends c1 {
             i10 = 1;
         }
         for (int i29 = 0; i29 < Math.min(1000, t02.size()); i29++) {
-            ty0 ty0Var9 = (ty0) t02.get(i29);
-            f(new uy0(ty0Var9, 0), ty0Var9.b, ty0Var9.c, spannable, i10);
+            uy0 uy0Var9 = (uy0) t02.get(i29);
+            f(new vy0(uy0Var9, 0), uy0Var9.b, uy0Var9.c, spannable, i10);
         }
     }
 
@@ -1131,36 +1131,36 @@ public final class ui extends c1 {
                     int i15 = messageEntity2.offset;
                     int min = Math.min(messageEntity2.length, charSequence.length() - i15) + i15;
                     if (!(messageEntity2 instanceof TLRPC.TL_messageEntityCustomEmoji)) {
-                        ty0 ty0Var = new ty0();
-                        ty0Var.b = i15;
-                        ty0Var.c = min;
+                        uy0 uy0Var = new uy0();
+                        uy0Var.b = i15;
+                        uy0Var.c = min;
                         if (messageEntity2 instanceof TLRPC.TL_messageEntitySpoiler) {
-                            ty0Var.a = 256;
+                            uy0Var.a = 256;
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityStrike) {
-                            ty0Var.a = 8;
+                            uy0Var.a = 8;
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityUnderline) {
-                            ty0Var.a = 16;
+                            uy0Var.a = 16;
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityBold) {
-                            ty0Var.a = 1;
+                            uy0Var.a = 1;
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityItalic) {
-                            ty0Var.a = 2;
+                            uy0Var.a = 2;
                         } else if ((messageEntity2 instanceof TLRPC.TL_messageEntityCode) || (messageEntity2 instanceof TLRPC.TL_messageEntityPre)) {
-                            ty0Var.a = 4;
+                            uy0Var.a = 4;
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
-                            ty0Var.a = 64;
-                            ty0Var.d = messageEntity2;
+                            uy0Var.a = 64;
+                            uy0Var.d = messageEntity2;
                         } else if (messageEntity2 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                            ty0Var.a = 64;
-                            ty0Var.d = messageEntity2;
+                            uy0Var.a = 64;
+                            uy0Var.d = messageEntity2;
                         } else {
-                            ty0Var.a = 128;
-                            ty0Var.d = messageEntity2;
+                            uy0Var.a = 128;
+                            uy0Var.d = messageEntity2;
                         }
                         if (messageEntity2 instanceof TLRPC.TL_messageEntityTextUrl) {
-                            ty0Var.a |= 1024;
+                            uy0Var.a |= 1024;
                         }
-                        ty0Var.a &= i7;
-                        arrayList4.add(ty0Var);
+                        uy0Var.a &= i7;
+                        arrayList4.add(uy0Var);
                         int i16 = i13 + 1;
                         iArr[i13] = i15;
                         i13 += 2;
@@ -1181,36 +1181,36 @@ public final class ui extends c1 {
                     }
                     int i19 = iArr[i17];
                     int size3 = arrayList4.size();
-                    ty0 ty0Var2 = null;
+                    uy0 uy0Var2 = null;
                     int i20 = TLObject.FLAG_31;
                     for (int i21 = i11; i21 < size3; i21++) {
-                        ty0 ty0Var3 = (ty0) arrayList4.get(i21);
-                        if (ty0Var3.b <= i18 && ty0Var3.c >= i19) {
-                            if (ty0Var2 == null) {
-                                ty0Var2 = new ty0();
-                                ty0Var2.b = i18;
-                                ty0Var2.c = i19;
+                        uy0 uy0Var3 = (uy0) arrayList4.get(i21);
+                        if (uy0Var3.b <= i18 && uy0Var3.c >= i19) {
+                            if (uy0Var2 == null) {
+                                uy0Var2 = new uy0();
+                                uy0Var2.b = i18;
+                                uy0Var2.c = i19;
                             }
-                            ty0Var2.a = ty0Var3.a | ty0Var2.a;
-                            TLRPC.MessageEntity messageEntity3 = ty0Var3.d;
-                            if (messageEntity3 != null && (ty0Var2.d == null || ty0Var3.b > i20)) {
-                                ty0Var2.d = messageEntity3;
-                                i20 = ty0Var3.b;
+                            uy0Var2.a = uy0Var3.a | uy0Var2.a;
+                            TLRPC.MessageEntity messageEntity3 = uy0Var3.d;
+                            if (messageEntity3 != null && (uy0Var2.d == null || uy0Var3.b > i20)) {
+                                uy0Var2.d = messageEntity3;
+                                i20 = uy0Var3.b;
                             }
                         }
                     }
-                    if (ty0Var2 != null) {
+                    if (uy0Var2 != null) {
                         if (!arrayList2.isEmpty()) {
-                            ty0 ty0Var4 = (ty0) jg.g.i(1, arrayList2);
-                            if (ty0Var4.c == ty0Var2.b && ty0Var4.a == ty0Var2.a && ty0Var4.d == ty0Var2.d) {
-                                ty0Var4.c = ty0Var2.c;
+                            uy0 uy0Var4 = (uy0) jg.g.i(1, arrayList2);
+                            if (uy0Var4.c == uy0Var2.b && uy0Var4.a == uy0Var2.a && uy0Var4.d == uy0Var2.d) {
+                                uy0Var4.c = uy0Var2.c;
                             }
                         }
                         if (arrayList2.size() >= 1000) {
                             arrayList2.clear();
                             return arrayList2;
                         }
-                        arrayList2.add(ty0Var2);
+                        arrayList2.add(uy0Var2);
                     }
                     i11 = 0;
                 }
@@ -4040,11 +4040,11 @@ public final class ui extends c1 {
         CharSequence charSequence5 = charSequenceArr[0];
         if (charSequence5 instanceof Spanned) {
             Spanned spanned = (Spanned) charSequence5;
-            uy0[] uy0VarArr = (uy0[]) spanned.getSpans(0, charSequence5.length(), uy0.class);
-            if (uy0VarArr != null && uy0VarArr.length > 0) {
-                for (uy0 uy0Var : uy0VarArr) {
-                    int spanStart = spanned.getSpanStart(uy0Var);
-                    int spanEnd = spanned.getSpanEnd(uy0Var);
+            vy0[] vy0VarArr = (vy0[]) spanned.getSpans(0, charSequence5.length(), vy0.class);
+            if (vy0VarArr != null && vy0VarArr.length > 0) {
+                for (vy0 vy0Var : vy0VarArr) {
+                    int spanStart = spanned.getSpanStart(vy0Var);
+                    int spanEnd = spanned.getSpanEnd(vy0Var);
                     if (!y(spanStart, arrayList, false) && !y(spanEnd, arrayList, true)) {
                         if (arrayList != null && !arrayList.isEmpty()) {
                             int size = arrayList.size();
@@ -4057,41 +4057,41 @@ public final class ui extends c1 {
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
-                        e(uy0Var.b.a, spanStart, spanEnd, arrayList);
+                        e(vy0Var.b.a, spanStart, spanEnd, arrayList);
                     }
                 }
             }
-            y31[] y31VarArr = (y31[]) spanned.getSpans(0, charSequenceArr[0].length(), y31.class);
-            if (y31VarArr != null && y31VarArr.length > 0) {
+            e41[] e41VarArr = (e41[]) spanned.getSpans(0, charSequenceArr[0].length(), e41.class);
+            if (e41VarArr != null && e41VarArr.length > 0) {
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
-                for (int i24 = 0; i24 < y31VarArr.length; i24++) {
+                for (int i24 = 0; i24 < e41VarArr.length; i24++) {
                     TLRPC.TL_inputMessageEntityMentionName tL_inputMessageEntityMentionName = new TLRPC.TL_inputMessageEntityMentionName();
                     qp messagesController = getMessagesController();
-                    tL_inputMessageEntityMentionName.user_id = messagesController.q1(messagesController.a2(Utilities.A(y31VarArr[i24].getURL())));
-                    tL_inputMessageEntityMentionName.offset = spanned.getSpanStart(y31VarArr[i24]);
-                    tL_inputMessageEntityMentionName.length = Math.min(spanned.getSpanEnd(y31VarArr[i24]), charSequenceArr[0].length()) - tL_inputMessageEntityMentionName.offset;
+                    tL_inputMessageEntityMentionName.user_id = messagesController.q1(messagesController.a2(Utilities.A(e41VarArr[i24].getURL())));
+                    tL_inputMessageEntityMentionName.offset = spanned.getSpanStart(e41VarArr[i24]);
+                    tL_inputMessageEntityMentionName.length = Math.min(spanned.getSpanEnd(e41VarArr[i24]), charSequenceArr[0].length()) - tL_inputMessageEntityMentionName.offset;
                     if (charSequenceArr[0].charAt((r10 + r7) - 1) == ' ') {
                         tL_inputMessageEntityMentionName.length--;
                     }
                     arrayList.add(tL_inputMessageEntityMentionName);
                 }
             }
-            x31[] x31VarArr = (x31[]) spanned.getSpans(0, charSequenceArr[0].length(), x31.class);
-            if (x31VarArr != null && x31VarArr.length > 0) {
+            d41[] d41VarArr = (d41[]) spanned.getSpans(0, charSequenceArr[0].length(), d41.class);
+            if (d41VarArr != null && d41VarArr.length > 0) {
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
-                for (int i25 = 0; i25 < x31VarArr.length; i25++) {
+                for (int i25 = 0; i25 < d41VarArr.length; i25++) {
                     TLRPC.TL_messageEntityTextUrl tL_messageEntityTextUrl = new TLRPC.TL_messageEntityTextUrl();
-                    tL_messageEntityTextUrl.offset = spanned.getSpanStart(x31VarArr[i25]);
-                    tL_messageEntityTextUrl.length = Math.min(spanned.getSpanEnd(x31VarArr[i25]), charSequenceArr[0].length()) - tL_messageEntityTextUrl.offset;
-                    tL_messageEntityTextUrl.url = x31VarArr[i25].getURL();
+                    tL_messageEntityTextUrl.offset = spanned.getSpanStart(d41VarArr[i25]);
+                    tL_messageEntityTextUrl.length = Math.min(spanned.getSpanEnd(d41VarArr[i25]), charSequenceArr[0].length()) - tL_messageEntityTextUrl.offset;
+                    tL_messageEntityTextUrl.url = d41VarArr[i25].getURL();
                     arrayList.add(tL_messageEntityTextUrl);
-                    ty0 ty0Var = x31VarArr[i25].a;
-                    if (ty0Var != null) {
-                        int i26 = ty0Var.a;
+                    uy0 uy0Var = d41VarArr[i25].a;
+                    if (uy0Var != null) {
+                        int i26 = uy0Var.a;
                         int i27 = tL_messageEntityTextUrl.offset;
                         e(i26, i27, tL_messageEntityTextUrl.length + i27, arrayList);
                     }
@@ -4191,7 +4191,7 @@ public final class ui extends c1 {
                     }
                     for (int i28 = 0; i28 < uRLSpanArr.length; i28++) {
                         URLSpan uRLSpan = uRLSpanArr[i28];
-                        if (!(uRLSpan instanceof x31) && !(uRLSpan instanceof y31) && !(uRLSpan instanceof org.telegram.ui.Components.zz)) {
+                        if (!(uRLSpan instanceof d41) && !(uRLSpan instanceof e41) && !(uRLSpan instanceof org.telegram.ui.Components.zz)) {
                             TLRPC.TL_messageEntityUrl tL_messageEntityUrl = new TLRPC.TL_messageEntityUrl();
                             tL_messageEntityUrl.offset = spanned.getSpanStart(uRLSpanArr[i28]);
                             tL_messageEntityUrl.length = Math.min(spanned.getSpanEnd(uRLSpanArr[i28]), charSequenceArr[0].length()) - tL_messageEntityUrl.offset;
@@ -8163,7 +8163,7 @@ public final class ui extends c1 {
     }
 
     public final void l1(hc hcVar, int i7) {
-        getFileLoader().W(hcVar, null, null, i7, 11);
+        getFileLoader().V(hcVar, null, null, i7, 11);
     }
 
     public final void l2(String str) {
@@ -8219,7 +8219,7 @@ public final class ui extends c1 {
         }
         ArrayList arrayList = arrayListArr[3];
         this.y0 = (TLRPC.Document) arrayList.get(Utilities.b.nextInt(arrayList.size()));
-        getFileLoader().W(hc.b(this.y0), this.y0, null, 0, 1);
+        getFileLoader().V(hc.b(this.y0), this.y0, null, 0, 1);
     }
 
     public final void n2(TLRPC.Message message, boolean z9) {
@@ -8352,7 +8352,7 @@ public final class ui extends c1 {
         }
         hc k10 = hc.k(w10, document, stickerSetCovered.set.thumb_version);
         if (k10 != null) {
-            getFileLoader().W(k10, stickerSetCovered, k10.p == 1 ? "tgs" : "webp", 3, 1);
+            getFileLoader().V(k10, stickerSetCovered, k10.p == 1 ? "tgs" : "webp", 3, 1);
         }
     }
 
@@ -8364,7 +8364,7 @@ public final class ui extends c1 {
         if (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || (w10 = w7.w(stickerSet.thumbs, 90, false, null, false)) == null || (arrayList = tL_messages_stickerSet.documents) == null || arrayList.isEmpty() || (k10 = hc.k(w10, arrayList.get(0), tL_messages_stickerSet.set.thumb_version)) == null) {
             return;
         }
-        getFileLoader().W(k10, tL_messages_stickerSet, k10.p == 1 ? "tgs" : "webp", 3, 1);
+        getFileLoader().V(k10, tL_messages_stickerSet, k10.p == 1 ? "tgs" : "webp", 3, 1);
     }
 
     public final String r0(long j3) {
@@ -9000,7 +9000,7 @@ public final class ui extends c1 {
                         } else {
                             try {
                                 getFileLoader().getClass();
-                                bitmap = BitmapFactory.decodeFile(w7.K(fileLocation2, null, true, true).toString());
+                                bitmap = BitmapFactory.decodeFile(w7.J(fileLocation2, null, true, true).toString());
                             } catch (Throwable th2) {
                                 th = th2;
                                 bitmap = null;

@@ -3,11 +3,11 @@ package l7;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
-import c8.xb;
+import c8.yb;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.j;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b extends j {
     public static final com.google.android.gms.common.api.e m = new com.google.android.gms.common.api.e("Auth.Api.Identity.SignIn.API", new a9.e(9), new com.google.android.gms.common.api.d());
@@ -25,7 +25,7 @@ public final class b extends j {
         }
         Parcelable.Creator<Status> creator = Status.CREATOR;
         byte[] byteArrayExtra = intent.getByteArrayExtra("status");
-        Status status2 = (Status) (byteArrayExtra == null ? null : xb.a(byteArrayExtra, creator));
+        Status status2 = (Status) (byteArrayExtra == null ? null : yb.a(byteArrayExtra, creator));
         if (status2 == null) {
             throw new com.google.android.gms.common.api.f(Status.r);
         }
@@ -34,7 +34,7 @@ public final class b extends j {
         }
         Parcelable.Creator<a6.g> creator2 = a6.g.CREATOR;
         byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
-        a6.g gVar = (a6.g) (byteArrayExtra2 != null ? xb.a(byteArrayExtra2, creator2) : null);
+        a6.g gVar = (a6.g) (byteArrayExtra2 != null ? yb.a(byteArrayExtra2, creator2) : null);
         if (gVar != null) {
             return gVar;
         }

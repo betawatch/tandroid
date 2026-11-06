@@ -27,19 +27,19 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ad0;
 import org.telegram.ui.Components.b30;
 import org.telegram.ui.Components.ck;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.jr0;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.s21;
 import org.telegram.ui.Components.tw;
 import org.telegram.ui.Components.up0;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.y21;
 import org.telegram.ui.Components.yc0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.SaveToGallerySettingsActivity;
@@ -57,7 +57,7 @@ import org.telegram.ui.uc1;
 import org.telegram.ui.v01;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class la implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -181,7 +181,7 @@ public final /* synthetic */ class la implements View.OnClickListener {
                 break;
             case 9:
                 lr lrVar = (lr) obj2;
-                f41 f41Var = (f41) obj;
+                l41 l41Var = (l41) obj;
                 if (!lrVar.e1()) {
                     r6 = i15 <= 0 ? 1 : 0;
                     TLRPC.TL_chatBannedRights tL_chatBannedRights = lrVar.o2;
@@ -201,7 +201,7 @@ public final /* synthetic */ class la implements View.OnClickListener {
                     tL_chatBannedRights.send_polls = z10;
                     tL_chatBannedRights.send_reactions = z10;
                     lrVar.h1();
-                    f41Var.O(true);
+                    l41Var.O(true);
                     break;
                 } else {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lrVar.getContext());
@@ -304,7 +304,7 @@ public final /* synthetic */ class la implements View.OnClickListener {
                 f2Var2.getMessagesController().n(chat.id, f2Var2.getUserConfig().f(), null, f2Var2, new v80(16, jr0Var, chat));
                 break;
             case 13:
-                ((s21) obj2).run();
+                ((y21) obj2).run();
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) obj).getSwipeBack().e(i15);
                 break;
             case 14:

@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class ru extends fu implements x5 {
     public static Paint o0;
@@ -546,7 +546,7 @@ public abstract class ru extends fu implements x5 {
             }
         } else {
             z5.q(kvVar.a).a(o02, null, this);
-            if (this.d0 || this.l0 || w7.G(kvVar.a).T(o02)) {
+            if (this.d0 || this.l0 || w7.G(kvVar.a).S(o02)) {
                 this.f0 = 1;
                 Float w10 = gc.D().w(o02);
                 r2 = w10 != null ? w10.floatValue() : 0.0f;

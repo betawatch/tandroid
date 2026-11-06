@@ -2,23 +2,23 @@ package fi;
 
 import android.content.Context;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.g41;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class w3 extends k41 {
+public final class w3 extends q41 {
     public final /* synthetic */ int m3 = 4;
     public final /* synthetic */ Object n3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(h41 h41Var, h41 h41Var2, org.telegram.ui.Components.d dVar, g41 g41Var, g41 g41Var2) {
-        super(h41Var2, dVar, g41Var, g41Var2);
-        this.n3 = h41Var;
+    public w3(n41 n41Var, n41 n41Var2, org.telegram.ui.Components.d dVar, m41 m41Var, m41 m41Var2) {
+        super(n41Var2, dVar, m41Var, m41Var2);
+        this.n3 = n41Var;
     }
 
     @Override // org.telegram.ui.Components.pj0
@@ -32,7 +32,7 @@ public final class w3 extends k41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k41
+    @Override // org.telegram.ui.Components.q41
     public void F1() {
         switch (this.m3) {
             case 1:
@@ -42,7 +42,7 @@ public final class w3 extends k41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k41
+    @Override // org.telegram.ui.Components.q41
     public void K1() {
         switch (this.m3) {
             case 0:
@@ -84,7 +84,7 @@ public final class w3 extends k41 {
                 break;
             case 2:
                 super.onLayout(z9, i7, i10, i11, i12);
-                ((h41) this.n3).c = -1;
+                ((n41) this.n3).c = -1;
                 break;
             case 3:
             default:

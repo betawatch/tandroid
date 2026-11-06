@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
-import c8.na;
+import c8.qa;
 import java.util.Date;
 import org.telegram.messenger.hd;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class k1 extends FrameLayout {
     public final String a;
@@ -27,10 +27,10 @@ public final class k1 extends FrameLayout {
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
         r6.P(radioButton, k6.D5, k6.E5, null);
         addView(radioButton, ha.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        TextView b10 = na.b(context, 16.0f, k6.G6, true, null);
+        TextView b10 = qa.b(context, 16.0f, k6.G6, true, null);
         b10.setText(l1Var.c);
         addView(b10, ha.t(-1, -2, 7, 62, 9, 8, 0));
-        TextView b11 = na.b(context, 14.0f, k6.y6, false, null);
+        TextView b11 = qa.b(context, 14.0f, k6.y6, false, null);
         b11.setText(hd.a0(null, null, 2131752993, hd.a0(null, null, 2131742784, hd.T(l1Var.d / 1000), hd.E0().p0().format(new Date(l1Var.d / 1000)))));
         addView(b11, ha.t(-1, -2, 7, 62, 32, 8, 0));
         this.c = z9;

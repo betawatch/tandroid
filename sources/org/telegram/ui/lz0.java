@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class lz0 extends FrameLayout {
     public float a;
@@ -65,9 +65,9 @@ public final class lz0 extends FrameLayout {
         ((FrameLayout.LayoutParams) secretMediaViewer.Q.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(12.0f);
         this.d = false;
         super.onMeasure(i7, i10);
-        jp0 jp0Var = secretMediaViewer.D;
-        if (jp0Var != null) {
-            j3 = jp0Var.U();
+        kp0 kp0Var = secretMediaViewer.D;
+        if (kp0Var != null) {
+            j3 = kp0Var.U();
         }
         j3 = 0;
         int ceil = (int) Math.ceil(secretMediaViewer.Q.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j3 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
@@ -83,12 +83,12 @@ public final class lz0 extends FrameLayout {
                 this.e = ceil;
             }
         }
-        org.telegram.ui.Components.q51 q51Var = secretMediaViewer.O;
+        org.telegram.ui.Components.v51 v51Var = secretMediaViewer.O;
         int z9 = org.telegram.messenger.k5.z(16.0f, getMeasuredWidth(), ceil);
         int measuredHeight = getMeasuredHeight();
-        q51Var.h = z9;
-        q51Var.i = measuredHeight;
-        View view = q51Var.v;
+        v51Var.h = z9;
+        v51Var.i = measuredHeight;
+        View view = v51Var.v;
         if (view != null) {
             view.invalidate();
         }

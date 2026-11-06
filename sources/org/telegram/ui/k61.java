@@ -5,9 +5,9 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k61 implements org.telegram.messenger.lc, org.telegram.ui.Components.cj0, org.telegram.ui.Components.r61, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class k61 implements org.telegram.messenger.lc, org.telegram.ui.Components.cj0, org.telegram.ui.Components.x61, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ u71 b;
 
@@ -162,7 +162,7 @@ public final /* synthetic */ class k61 implements org.telegram.messenger.lc, org
         }
     }
 
-    @Override // org.telegram.ui.Components.r61
+    @Override // org.telegram.ui.Components.x61
     public void h(int i7, int i10) {
         u71 u71Var = this.b;
         if (u71Var.F1) {

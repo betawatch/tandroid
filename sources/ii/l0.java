@@ -28,13 +28,13 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.bc;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class l0 implements ji.e {
     public final Context a;
@@ -84,8 +84,8 @@ public final class l0 implements ji.e {
         }
     }
 
-    public final void b(k41 k41Var) {
-        if (this.m || this.n || k41Var.e3.N0() + 10 <= k41Var.f3.D.size()) {
+    public final void b(q41 q41Var) {
+        if (this.m || this.n || q41Var.e3.N0() + 10 <= q41Var.f3.D.size()) {
             return;
         }
         d();
@@ -109,7 +109,7 @@ public final class l0 implements ji.e {
                     boolean z9 = !communityPeerRequest.visible;
                     boolean z10 = i7 < size + (-1);
                     int i10 = ji.g.b;
-                    r31 K = r31.K(ji.g.class);
+                    x31 K = x31.K(ji.g.class);
                     K.G = new ji.f(o4, a22, z9);
                     K.H = this;
                     K.j = !z10;
@@ -121,7 +121,7 @@ public final class l0 implements ji.e {
         if (this.n) {
             return;
         }
-        arrayList.add(r31.p(29));
+        arrayList.add(x31.p(29));
     }
 
     public final void d() {

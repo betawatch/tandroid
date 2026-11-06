@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, org.telegram.ui.Components.i30 {
     public org.telegram.ui.Cells.m8 D;
@@ -45,7 +45,7 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
     public TLRPC.Photo T;
     public org.telegram.ui.Components.l9 U;
     public FrameLayout V;
-    public org.telegram.ui.Components.k41 W;
+    public org.telegram.ui.Components.q41 W;
     public boolean X;
     public boolean Y;
     public org.telegram.messenger.ij Z;
@@ -243,9 +243,9 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
             TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(arrayList, 1000, false, null, false);
             if (w10 != null && fileLocation != null) {
                 org.telegram.messenger.w7.G(nrVar.currentAccount);
-                File K = org.telegram.messenger.w7.K(w10, null, true, true);
+                File J = org.telegram.messenger.w7.J(w10, null, true, true);
                 org.telegram.messenger.w7.G(nrVar.currentAccount);
-                org.telegram.messenger.w7.K(fileLocation, null, true, true).renameTo(K);
+                org.telegram.messenger.w7.J(fileLocation, null, true, true).renameTo(J);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(fileLocation.volume_id);
                 sb2.append("_");
@@ -257,9 +257,9 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
             }
             if (w11 != null && fileLocation2 != null) {
                 org.telegram.messenger.w7.G(nrVar.currentAccount);
-                File K2 = org.telegram.messenger.w7.K(w11, null, true, true);
+                File J2 = org.telegram.messenger.w7.J(w11, null, true, true);
                 org.telegram.messenger.w7.G(nrVar.currentAccount);
-                org.telegram.messenger.w7.K(fileLocation2, null, true, true).renameTo(K2);
+                org.telegram.messenger.w7.J(fileLocation2, null, true, true).renameTo(J2);
             }
             bg.n0.a(tL_photos_photo.photo, a22, true);
             ArrayList arrayList2 = new ArrayList();
@@ -799,7 +799,7 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
             this.F.g(i16, i17);
             this.F.setNeedDivider(true);
             this.F.e.setTranslationX(org.telegram.messenger.g0.L(4.0f));
-            this.F.setOnClickListener(new org.telegram.ui.Components.n41(i11, this, a22));
+            this.F.setOnClickListener(new org.telegram.ui.Components.t41(i11, this, a22));
             TLRPC.UserFull b22 = getMessagesController().b2(this.H);
             if (b22 != null) {
                 TLRPC.Photo photo = b22.profile_photo;
@@ -810,9 +810,9 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
             }
             k0();
         }
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(this, new a5(this, 7), new w0(this, 29), null);
-        this.W = k41Var;
-        k41Var.r1();
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(this, new a5(this, 7), new w0(this, 29), null);
+        this.W = q41Var;
+        q41Var.r1();
         this.W.setSectionsDrawBackground(true);
         this.W.setOnScrollListener(new ai.o0(i11, this, frameLayout));
         frameLayout.addView(this.W, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
@@ -864,7 +864,7 @@ public final class nr extends org.telegram.ui.ActionBar.f2 implements org.telegr
     }
 
     @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ vq0 getCloseIntoObject() {
+    public final /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 

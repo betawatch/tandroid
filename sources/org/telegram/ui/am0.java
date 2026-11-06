@@ -8,11 +8,11 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final TextView a;
-    public org.telegram.ui.Components.ly0 b;
+    public org.telegram.ui.Components.my0 b;
     public final org.telegram.ui.Components.g5 c;
     public final /* synthetic */ bm0 d;
 
@@ -91,7 +91,7 @@ public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.
         } else {
             g5Var.g(null, z9);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.ly0(org.telegram.messenger.hd.M0(bm0Var.p0.a ? 2131752311 : 2131743730, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(bm0Var.p0.a ? 2131752311 : 2131743730, null), 16.0f, null);
             }
         }
     }
@@ -109,9 +109,9 @@ public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.
         Integer valueOf = Integer.valueOf(a());
         org.telegram.ui.Components.g5 g5Var = this.c;
         g5Var.k(valueOf);
-        org.telegram.ui.Components.ly0 ly0Var = this.b;
-        if (ly0Var != null) {
-            ly0Var.c((getMeasuredWidth() - this.b.k()) - org.telegram.messenger.g0.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, this.d.p0.getThemedColor(org.telegram.ui.ActionBar.k6.q6), canvas);
+        org.telegram.ui.Components.my0 my0Var = this.b;
+        if (my0Var != null) {
+            my0Var.c((getMeasuredWidth() - this.b.k()) - org.telegram.messenger.g0.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, this.d.p0.getThemedColor(org.telegram.ui.ActionBar.k6.q6), canvas);
         } else {
             g5Var.draw(canvas);
         }

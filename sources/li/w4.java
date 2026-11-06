@@ -11,7 +11,7 @@ import org.telegram.messenger.gz;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
@@ -83,9 +83,9 @@ public final /* synthetic */ class w4 implements Runnable {
                                     document.thumbs.add(Z);
                                     document.flags |= 1;
                                     w7.G(y4Var.a);
-                                    File K = w7.K(Z, null, true, true);
-                                    if (K != null && K.exists()) {
-                                        str2 = K.getAbsolutePath();
+                                    File J = w7.J(Z, null, true, true);
+                                    if (J != null && J.exists()) {
+                                        str2 = J.getAbsolutePath();
                                     }
                                     break;
                                 } else {
@@ -119,16 +119,16 @@ public final /* synthetic */ class w4 implements Runnable {
                     String str5 = options.outMimeType;
                     boolean z9 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
                     float Z0 = org.telegram.messenger.g0.Z0(false);
-                    Bitmap K2 = gc.K(str4, null, Z0, Z0, true);
-                    if (K2 == null) {
-                        K2 = gc.K(str4, null, 800.0f, 800.0f, true);
+                    Bitmap K = gc.K(str4, null, Z0, Z0, true);
+                    if (K == null) {
+                        K = gc.K(str4, null, 800.0f, 800.0f, true);
                     }
-                    if (K2 != null) {
+                    if (K != null) {
                         File file = new File(w7.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
                         try {
                             FileOutputStream fileOutputStream = new FileOutputStream(file);
                             try {
-                                boolean compress = K2.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
+                                boolean compress = K.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
                                 fileOutputStream.close();
                                 if (compress && file.length() > 0) {
                                     if (z9) {
@@ -141,7 +141,7 @@ public final /* synthetic */ class w4 implements Runnable {
                             } finally {
                             }
                         } finally {
-                            K2.recycle();
+                            K.recycle();
                         }
                     }
                 } catch (Throwable unused3) {

@@ -38,22 +38,22 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.an;
 import org.telegram.ui.oq;
-import org.telegram.ui.vq0;
+import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class p extends f2 implements i30, ls, te.b {
     public RadialProgressView D;
@@ -69,7 +69,7 @@ public final class p extends f2 implements i30, ls, te.b {
     public final te.a b;
     public long c;
     public s1 d;
-    public k41 e;
+    public q41 e;
     public String f;
     public boolean h;
     public boolean n;
@@ -86,12 +86,12 @@ public final class p extends f2 implements i30, ls, te.b {
         this.L = new n(this);
     }
 
-    public static boolean Z(p pVar, r31 r31Var, View view) {
+    public static boolean Z(p pVar, x31 x31Var, View view) {
         long j3;
         boolean t6;
         boolean z9;
         boolean z10;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         int i7 = 1;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
@@ -125,10 +125,10 @@ public final class p extends f2 implements i30, ls, te.b {
         return false;
     }
 
-    public static void a0(p pVar, r31 r31Var) {
+    public static void a0(p pVar, x31 x31Var) {
         TLRPC.Chat M0;
         TLRPC.ChatPhoto chatPhoto;
-        int i7 = r31Var.d;
+        int i7 = x31Var.d;
         if (i7 == 140) {
             if (pVar.F.g() || (chatPhoto = (M0 = pVar.getMessagesController().M0(Long.valueOf(pVar.c))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -194,7 +194,7 @@ public final class p extends f2 implements i30, ls, te.b {
             m0.e(pVar.K, pVar, pVar.currentAccount, pVar.I);
             return;
         }
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof TLRPC.Chat) {
             pVar.presentFragment(an.ra(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -312,14 +312,14 @@ public final class p extends f2 implements i30, ls, te.b {
         this.D.setNoProgress(false);
         this.s.addView(this.D, ha.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         f0(false, false);
-        k41 k41Var = new k41(this, new j(this, i7), new k(this), new k(this));
-        this.e = k41Var;
-        k41Var.setClipToPadding(false);
-        k41 k41Var2 = this.e;
-        f41 f41Var = k41Var2.f3;
-        f41Var.r = false;
-        f41Var.s = true;
-        k41Var2.r1();
+        q41 q41Var = new q41(this, new j(this, i7), new k(this), new k(this));
+        this.e = q41Var;
+        q41Var.setClipToPadding(false);
+        q41 q41Var2 = this.e;
+        l41 l41Var = q41Var2.f3;
+        l41Var.r = false;
+        l41Var.s = true;
+        q41Var2.r1();
         this.actionBar.setBackground(null);
         this.d.addView(this.e, ha.c(-1.0f, -1));
         this.d.addView(this.actionBar, ha.e(-1, -2, 48));
@@ -429,7 +429,7 @@ public final class p extends f2 implements i30, ls, te.b {
     }
 
     @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ vq0 getCloseIntoObject() {
+    public final /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 

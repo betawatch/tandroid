@@ -46,8 +46,8 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.up0;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.wp;
@@ -55,10 +55,10 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.yo0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class f2 extends FrameLayout implements ls {
     public static final HashMap U = new HashMap();
@@ -86,7 +86,7 @@ public abstract class f2 extends FrameLayout implements ls {
     public final t9 e;
     public final f6 f;
     public final ei.a h;
-    public final o61 n;
+    public final u61 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder w;
@@ -144,7 +144,7 @@ public abstract class f2 extends FrameLayout implements ls {
         aVar.setAllowDisallowInterceptTouch(true);
         aVar.setAdapter(new m1(up0Var, i7, f6Var));
         addView(aVar, ha.e(-1, -1, qs.E1));
-        o61 n10 = aVar.n(10, true);
+        u61 n10 = aVar.n(10, true);
         this.n = n10;
         n10.g(k6.ui, k6.G6, k6.si, k6.vi, k6.s8);
         n10.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
@@ -153,18 +153,18 @@ public abstract class f2 extends FrameLayout implements ls {
         n10.setPreTabClick(new j1(up0Var));
         n10.setOnTabLongClick(new i6(up0Var, i7, f2Var, context, f6Var));
         addView(n10, ha.e(-1, 42, 48));
-        rq0 rq0Var = new rq0(context);
-        fh.g c10 = cVar.c(rq0Var, new gh.b(k6.d6, f6Var), false);
+        sq0 sq0Var = new sq0(context);
+        fh.g c10 = cVar.c(sq0Var, new gh.b(k6.d6, f6Var), false);
         c10.q(org.telegram.messenger.g0.L(8.0f));
         c10.r(org.telegram.messenger.g0.L(22.0f));
-        rq0Var.setBackground(c10);
-        ka.b(rq0Var, 0.02f, 1.2f);
+        sq0Var.setBackground(c10);
+        ka.b(sq0Var, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         FrameLayout.LayoutParams e10 = ha.e(-1, 60, 87);
         e10.bottomMargin += org.telegram.messenger.g0.n;
         addView(frameLayout, e10);
-        frameLayout.addView(rq0Var, ha.e(-2, 60, 1));
+        frameLayout.addView(sq0Var, ha.e(-2, 60, 1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.G = frameLayout2;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -189,7 +189,7 @@ public abstract class f2 extends FrameLayout implements ls {
         r6.V(textView, k6.j5, f6Var);
         jg.g.v(textView, 1, 14.0f, null, 2131750256);
         linearLayout.addView(textView, ha.t(-2, -2, 16, 9, 0, 0, 0));
-        rq0Var.addView(linearLayout, ha.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
+        sq0Var.addView(linearLayout, ha.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         ka.b(linearLayout, 0.025f, 1.5f);
         linearLayout.setOnClickListener(new la(up0Var, f2Var, i7, 24));
         Boolean bool = G.h;
@@ -217,8 +217,8 @@ public abstract class f2 extends FrameLayout implements ls {
                 dVar.setRoundRadius(org.telegram.messenger.g0.L(19.0f));
                 dVar.i(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
-                rq0Var.addView(dVar, ha.e(-2, -1, 17));
-                rq0Var.setOnClickListener(new yo0(up0Var, z9, i7, 1));
+                sq0Var.addView(dVar, ha.e(-2, -1, 17));
+                sq0Var.setOnClickListener(new yo0(up0Var, z9, i7, 1));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.y = 60;
@@ -247,8 +247,8 @@ public abstract class f2 extends FrameLayout implements ls {
         dVar2.setRoundRadius(org.telegram.messenger.g0.L(19.0f));
         dVar2.i(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
-        rq0Var.addView(dVar2, ha.e(-2, -1, 17));
-        rq0Var.setOnClickListener(new yo0(up0Var, z9, i7, 1));
+        sq0Var.addView(dVar2, ha.e(-2, -1, 17));
+        sq0Var.setOnClickListener(new yo0(up0Var, z9, i7, 1));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.y = 60;
@@ -456,9 +456,9 @@ public abstract class f2 extends FrameLayout implements ls {
     }
 
     public float getTabsVisibility() {
-        o61 o61Var = this.n;
-        if (o61Var != null) {
-            return o61Var.getAlpha();
+        u61 u61Var = this.n;
+        if (u61Var != null) {
+            return u61Var.getAlpha();
         }
         return 0.0f;
     }
@@ -686,16 +686,16 @@ public abstract class f2 extends FrameLayout implements ls {
 
     public final void p() {
         float f10;
-        o61 o61Var = this.n;
-        if (o61Var == null) {
+        u61 u61Var = this.n;
+        if (u61Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - org.telegram.messenger.g0.L(42.0f));
         float l10 = Utilities.l(org.telegram.messenger.g0.z1(min - this.K, -org.telegram.messenger.g0.L(42.0f), 0.0f));
         float T1 = org.telegram.messenger.g0.T1(0.9f, 1.0f, l10);
-        o61Var.setTranslationY(min);
-        o61Var.setScaleX(T1);
-        o61Var.setScaleY(T1);
+        u61Var.setTranslationY(min);
+        u61Var.setScaleX(T1);
+        u61Var.setScaleY(T1);
         ei.a aVar = this.h;
         if (aVar.getViewPages() != null) {
             f10 = 0.0f;
@@ -707,7 +707,7 @@ public abstract class f2 extends FrameLayout implements ls {
         } else {
             f10 = 0.0f;
         }
-        o61Var.setAlpha(j9.a(f10, 0.0f, 1.0f) * l10);
+        u61Var.setAlpha(j9.a(f10, 0.0f, 1.0f) * l10);
     }
 
     public abstract void q(boolean z9);

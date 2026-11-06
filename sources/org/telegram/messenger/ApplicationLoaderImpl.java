@@ -10,7 +10,7 @@ import androidx.core.content.FileProvider;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class ApplicationLoaderImpl extends t0 {
     @Override // org.telegram.messenger.t0
@@ -50,16 +50,16 @@ public class ApplicationLoaderImpl extends t0 {
         try {
             w7.r(null, document);
             w7.G(p10.s0);
-            File K = w7.K(document, null, true, true);
-            z9 = K.exists();
+            File J = w7.J(document, null, true, true);
+            z9 = J.exists();
             if (z9) {
                 Intent intent = new Intent("android.intent.action.VIEW");
                 intent.setFlags(1);
                 if (Build.VERSION.SDK_INT >= 24) {
                     t0.d();
-                    intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", K), "application/vnd.android.package-archive");
+                    intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", J), "application/vnd.android.package-archive");
                 } else {
-                    intent.setDataAndType(Uri.fromFile(K), "application/vnd.android.package-archive");
+                    intent.setDataAndType(Uri.fromFile(J), "application/vnd.android.package-archive");
                 }
                 try {
                     activity.startActivityForResult(intent, 500);

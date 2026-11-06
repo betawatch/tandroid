@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e00 extends rg.b {
     public final Context d;
@@ -343,7 +343,7 @@ public final class e00 extends rg.b {
                     ag0Var.setBackground(background);
                     org.telegram.ui.ActionBar.r6.k(ag0Var, background, N, null, null);
                     f00Var.addView(ag0Var, c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
-                    f00Var.setAddOnClickListener(new org.telegram.ui.Components.n41(13, this, f00Var));
+                    f00Var.setAddOnClickListener(new org.telegram.ui.Components.t41(13, this, f00Var));
                     frameLayout = f00Var;
                 } else {
                     frameLayout = new org.telegram.ui.Cells.r8(context);

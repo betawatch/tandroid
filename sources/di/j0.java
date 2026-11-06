@@ -14,9 +14,9 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.rz;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class j0 extends Drawable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class j0 extends Drawable {
                 Drawable drawable = (Drawable) this.b;
                 drawable.setBounds(bounds);
                 drawable.draw(canvas);
-                ((ly0) this.d).c(bounds.centerX() - (((ly0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
+                ((my0) this.d).c(bounds.centerX() - (((my0) this.d).c / 2.0f), org.telegram.messenger.g0.L(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
                 canvas.restore();
                 break;
             case 1:
@@ -203,9 +203,9 @@ public final class j0 extends Drawable {
         this.a = 0;
         this.c = 0.75f;
         this.b = jg.g.h(context, R.drawable.filled_stream_crown);
-        ly0 ly0Var = new ly0(jg.g.j(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-        this.d = ly0Var;
-        ly0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        my0 my0Var = new my0(jg.g.j(i7, ""), 8.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.d = my0Var;
+        my0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
     private final void a(int i7) {

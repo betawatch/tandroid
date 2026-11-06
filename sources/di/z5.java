@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.SparseBooleanArray;
-import c8.za;
+import c8.ab;
 import fi.nb;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,9 +28,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.mt0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.q11;
-import org.telegram.ui.tt0;
+import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z5 implements Runnable {
     public final /* synthetic */ int a;
@@ -408,14 +408,14 @@ public final /* synthetic */ class z5 implements Runnable {
                                     }
                             }
                         }
-                    }, new s2(q11Var, strArr, str, linkedHashSet, 12), new tt0(q11Var, d, linkedHashSet, str, hashMap, arrayList4), new s2((Object) q11Var, str, arrayList6, (Object) hashMap2, 13), new org.telegram.ui.y(q11Var, str, arrayList7, 12), c20Var2);
+                    }, new s2(q11Var, strArr, str, linkedHashSet, 12), new ut0(q11Var, d, linkedHashSet, str, hashMap, arrayList4), new s2((Object) q11Var, str, arrayList6, (Object) hashMap2, 13), new org.telegram.ui.y(q11Var, str, arrayList7, 12), c20Var2);
                     break;
                 }
             case 4:
                 p4.v vVar = (p4.v) obj;
                 p4.d0 d0Var = ((p4.m0) ((m.c3) obj3).d).h;
                 p4.g1 g1Var = d0Var.t;
-                za.b(g1Var, (p4.w) obj2);
+                ab.b(g1Var, (p4.w) obj2);
                 int i21 = g1Var.i();
                 if (z10) {
                     if (i21 == 1) {

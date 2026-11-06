@@ -76,8 +76,8 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.s11;
 import org.telegram.ui.Components.t60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -87,7 +87,7 @@ import org.telegram.ui.m80;
 import org.telegram.ui.mc0;
 import org.telegram.ui.v91;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class qp extends c1 implements ls {
     public static volatile long A8;
@@ -9196,7 +9196,7 @@ public final class qp extends c1 implements ls {
                                                                                                                         sb2.append(" text=");
                                                                                                                         org.telegram.ui.Cells.f1.u(tL_updateTranscribedAudio.text, sb2);
                                                                                                                     }
-                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !m11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !s11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
                                                                                                                         qpVar.getMessagesStorage().b2(tL_updateTranscribedAudio.msg_id, m5.o(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
                                                                                                                         c12 = 2;
                                                                                                                         qpVar.getNotificationCenter().k(qs.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
@@ -10481,13 +10481,13 @@ public final class qp extends c1 implements ls {
                         TLRPC.User a22 = qpVar.a2(Long.valueOf(j11));
                         if (a22 != null) {
                             a22.linked_community_id = z12 ? 0L : j12;
-                            a22.flags2 = c8.yc.b(a22.flags2, TLObject.FLAG_21, !z12);
+                            a22.flags2 = c8.zc.b(a22.flags2, TLObject.FLAG_21, !z12);
                         }
                     } else {
                         TLRPC.Chat M02 = qpVar.M0(Long.valueOf(-j11));
                         if (M02 != null) {
                             M02.linked_community_id = z12 ? 0L : j12;
-                            M02.flags2 = c8.yc.b(M02.flags2, TLObject.FLAG_20, !z12);
+                            M02.flags2 = c8.zc.b(M02.flags2, TLObject.FLAG_20, !z12);
                         }
                     }
                 }
@@ -13320,7 +13320,7 @@ public final class qp extends c1 implements ls {
                             if (z12 && (N0 = qpVar2.N0(j11)) != null) {
                                 int i7 = N0.flags2;
                                 long j13 = j12;
-                                N0.flags2 = c8.yc.b(i7, TLObject.FLAG_23, j13 != 0);
+                                N0.flags2 = c8.zc.b(i7, TLObject.FLAG_23, j13 != 0);
                                 N0.guard_bot_id = j13;
                                 qpVar2.getMessagesStorage().N1(N0, false);
                                 qs notificationCenter = qpVar2.getNotificationCenter();
@@ -24703,7 +24703,7 @@ public final class qp extends c1 implements ls {
             return;
         }
         if (tL_updateWebBrowserException.delete) {
-            if (!c8.yc.a(tL_updateWebBrowserException.flags, 1)) {
+            if (!c8.zc.a(tL_updateWebBrowserException.flags, 1)) {
                 m0(this.y8.external_exceptions, tL_updateWebBrowserException.exception);
                 m0(this.y8.inapp_exceptions, tL_updateWebBrowserException.exception);
             } else if (tL_updateWebBrowserException.open_external_browser) {
@@ -26338,7 +26338,7 @@ public final class qp extends c1 implements ls {
         if (file != null) {
             this.Q2 = file.getAbsolutePath();
             this.R2 = c6Var;
-            getFileLoader().i0(false, 16777216, this.Q2, true);
+            getFileLoader().h0(false, 16777216, this.Q2, true);
         } else if (!"d".equals(c6Var.c) && !"c".equals(c6Var.c) && c6Var.l > 0 && !"t".equals(c6Var.c)) {
             TLRPC.InputWallPaper r12 = r1(c6Var);
             TLRPC.TL_wallPaperSettings g22 = g2(c6Var);

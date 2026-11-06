@@ -43,11 +43,11 @@ import org.telegram.ui.aq;
 import org.telegram.ui.ea0;
 import org.telegram.ui.kp;
 import org.telegram.ui.oq;
-import org.telegram.ui.tq0;
-import org.telegram.ui.wo0;
+import org.telegram.ui.uq0;
+import org.telegram.ui.xo0;
 import org.telegram.ui.zp;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -444,13 +444,13 @@ public final /* synthetic */ class i0 implements Runnable {
                 gfVar.e = null;
                 gfVar.f = null;
                 photoViewer.p5.b.setLoading(false);
-                tq0 tq0Var = photoViewer.d;
-                if (tq0Var != null) {
-                    tq0Var.X(photoViewer.O4);
+                uq0 uq0Var = photoViewer.d;
+                if (uq0Var != null) {
+                    uq0Var.X(photoViewer.O4);
                 }
-                wo0 wo0Var = photoViewer.g1;
-                if (wo0Var != null) {
-                    wo0Var.setImage(bitmap);
+                xo0 xo0Var = photoViewer.g1;
+                if (xo0Var != null) {
+                    xo0Var.setImage(bitmap);
                 }
                 photoViewer.b3(0);
                 CheckBox checkBox = photoViewer.N0;

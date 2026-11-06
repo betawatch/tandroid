@@ -12,7 +12,7 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
     public Matrix D;
@@ -22,9 +22,9 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
     public Paint c;
     public Path d;
     public float[] e;
-    public ly0 f;
-    public ly0 h;
-    public ly0 n;
+    public my0 f;
+    public my0 h;
+    public my0 n;
     public LinearGradient r;
     public LinearGradient s;
     public Paint w;
@@ -41,24 +41,24 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
         float f11;
         float f12;
         float f13;
-        ly0 ly0Var;
+        my0 my0Var;
         float f14;
         float f15;
         Paint paint = this.c;
         Matrix matrix = this.D;
         Matrix matrix2 = this.y;
         Path path = this.d;
-        ly0 ly0Var2 = this.f;
+        my0 my0Var2 = this.f;
         i6 i6Var = this.E;
-        ly0 ly0Var3 = this.n;
+        my0 my0Var3 = this.n;
         super.onDraw(canvas);
         canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.qs.e4, 31);
         float measuredWidth = getMeasuredWidth() / 2.0f;
         float measuredHeight = getMeasuredHeight() / 2.0f;
-        ly0 ly0Var4 = this.h;
-        if (ly0Var4 != null) {
+        my0 my0Var4 = this.h;
+        if (my0Var4 != null) {
             canvas.save();
-            float f16 = ly0Var4.c;
+            float f16 = my0Var4.c;
             f10 = 15.32f;
             CharSequence charSequence = i6Var.i;
             if (charSequence == null || charSequence.length() == 0) {
@@ -68,8 +68,8 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
             }
             float f17 = f16 + f15;
             f11 = measuredWidth - (f17 / 2.0f);
-            canvas.translate(f11, measuredHeight - (ly0Var4.i() / 2.0f));
-            ly0Var4.d(canvas);
+            canvas.translate(f11, measuredHeight - (my0Var4.i() / 2.0f));
+            my0Var4.d(canvas);
             canvas.restore();
             f12 = f17;
         } else {
@@ -80,16 +80,16 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
         CharSequence charSequence2 = i6Var.i;
         if (charSequence2 == null || charSequence2.length() == 0) {
             f13 = measuredHeight;
-            ly0Var = ly0Var4;
+            my0Var = my0Var4;
             f14 = 2.0f;
         } else {
             Rect rect = org.telegram.messenger.g0.Q;
             f14 = 2.0f;
-            int L = (int) (ly0Var4.c + f11 + org.telegram.messenger.g0.L(4.66f));
+            int L = (int) (my0Var4.c + f11 + org.telegram.messenger.g0.L(4.66f));
             int L2 = (int) (measuredHeight - org.telegram.messenger.g0.L(9.0f));
             f13 = measuredHeight;
-            int c10 = (int) (i6Var.c() + ly0Var4.c + f11 + org.telegram.messenger.g0.L(f10));
-            ly0Var = ly0Var4;
+            int c10 = (int) (i6Var.c() + my0Var4.c + f11 + org.telegram.messenger.g0.L(f10));
+            my0Var = my0Var4;
             rect.set(L, L2, c10, (int) (f13 + org.telegram.messenger.g0.L(9.0f)));
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(rect);
@@ -99,21 +99,21 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
             i6Var.draw(canvas);
         }
         float L3 = org.telegram.messenger.g0.L(30.0f);
-        float f18 = (f11 - L3) - ly0Var2.c;
+        float f18 = (f11 - L3) - my0Var2.c;
         canvas.save();
-        canvas.translate(f18, (f13 - (ly0Var2.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
-        ly0Var2.d(canvas);
+        canvas.translate(f18, (f13 - (my0Var2.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
+        my0Var2.d(canvas);
         canvas.restore();
         float f19 = f11 + f12;
-        if (ly0Var3 != null) {
+        if (my0Var3 != null) {
             canvas.save();
-            canvas.translate(f19 + L3, (f13 - (ly0Var3.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
-            ly0Var3.d(canvas);
+            canvas.translate(f19 + L3, (f13 - (my0Var3.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
+            my0Var3.d(canvas);
             canvas.restore();
-            f19 += L3 + ly0Var3.c;
+            f19 += L3 + my0Var3.c;
         }
         float f20 = f19;
-        float L4 = org.telegram.messenger.g0.L(12.0f) + (ly0Var.i() / f14) + f13;
+        float L4 = org.telegram.messenger.g0.L(12.0f) + (my0Var.i() / f14) + f13;
         canvas.drawRect(0.0f, L4, getMeasuredWidth(), 1.0f + L4, this.a);
         path.rewind();
         RectF rectF2 = org.telegram.messenger.g0.P;
@@ -156,17 +156,17 @@ public final class tz extends View implements org.telegram.ui.ActionBar.a6 {
                 i6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
             }
             int r12 = org.telegram.ui.ActionBar.k6.r1(0.8f, org.telegram.ui.ActionBar.k6.x0(null, i7, false));
-            ly0 ly0Var = this.f;
-            if (ly0Var != null) {
-                ly0Var.n(r12);
+            my0 my0Var = this.f;
+            if (my0Var != null) {
+                my0Var.n(r12);
             }
-            ly0 ly0Var2 = this.h;
-            if (ly0Var2 != null) {
-                ly0Var2.n(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+            my0 my0Var2 = this.h;
+            if (my0Var2 != null) {
+                my0Var2.n(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
             }
-            ly0 ly0Var3 = this.n;
-            if (ly0Var3 != null) {
-                ly0Var3.n(r12);
+            my0 my0Var3 = this.n;
+            if (my0Var3 != null) {
+                my0Var3.n(r12);
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);

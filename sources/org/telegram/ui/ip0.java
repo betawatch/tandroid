@@ -1,29 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class ip0 extends org.telegram.ui.Components.u51 {
-    public final /* synthetic */ PhotoViewer h0;
+public final class ip0 extends org.telegram.ui.Components.mz {
+    public final /* synthetic */ ro0 e;
+    public final /* synthetic */ PhotoViewer f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ip0(PhotoViewer photoViewer, Context context, ln0 ln0Var) {
-        super(context, ln0Var);
-        this.h0 = photoViewer;
+    public ip0(PhotoViewer photoViewer, ro0 ro0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = ro0Var;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        PhotoViewer.P(this.h0);
+    @Override // org.telegram.ui.Components.km0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.l3;
+        sb2.append(org.telegram.messenger.hd.G(iArr[0], "Minutes", new Object[0]));
+        sb2.append(' ');
+        sb2.append(org.telegram.messenger.hd.G(iArr[1], "Seconds", new Object[0]));
+        String sb3 = sb2.toString();
+        StringBuilder sb4 = new StringBuilder();
+        int[] iArr2 = photoViewer.m3;
+        sb4.append(org.telegram.messenger.hd.G(iArr2[0], "Minutes", new Object[0]));
+        sb4.append(' ');
+        sb4.append(org.telegram.messenger.hd.G(iArr2[1], "Seconds", new Object[0]));
+        return org.telegram.messenger.hd.a0("AccDescrPlayerDuration", null, 2131754806, sb3, sb4.toString());
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i7) {
-        super.setVisibility(i7);
-        if (i7 == 0) {
-            PhotoViewer.P(this.h0);
-        }
+    @Override // org.telegram.ui.Components.mz
+    public final float k() {
+        return this.f.p3.c();
+    }
+
+    @Override // org.telegram.ui.Components.mz
+    public final void l(float f10) {
+        this.e.a(f10);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.p3.h(false, f10);
+        photoViewer.q3.invalidate();
     }
 }

@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
-import c8.gc;
+import c8.hc;
 import j$.util.Objects;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -115,7 +115,7 @@ public abstract class g3 {
                 try {
                     fVar = b7.f.c(this.a, b7.f.b, str);
                 } catch (b7.b e10) {
-                    gc.a(e10, "Error loading optional module %s", str);
+                    hc.a(e10, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {

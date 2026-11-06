@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ni extends vh implements org.telegram.messenger.ls, te.b {
     public String D;
@@ -908,16 +908,16 @@ public final class ni extends vh implements org.telegram.messenger.ls, te.b {
         this.w.setPadding(0, (int) (this.y.c(0.0f) + org.telegram.messenger.g0.L(56.0f) + i7 + org.telegram.messenger.g0.m), 0, this.e);
     }
 
-    public final void Q(r31 r31Var, View view) {
-        if (r31Var != null && r31Var.d == this.R) {
+    public final void Q(x31 x31Var, View view) {
+        if (x31Var != null && x31Var.d == this.R) {
             this.J.b();
             return;
         }
-        if (r31Var != null && r31Var.d == this.P) {
+        if (x31Var != null && x31Var.d == this.P) {
             R();
             return;
         }
-        if (r31Var != null && r31Var.d == this.Q) {
+        if (x31Var != null && x31Var.d == this.Q) {
             S();
             return;
         }
@@ -936,7 +936,7 @@ public final class ni extends vh implements org.telegram.messenger.ls, te.b {
                 HashSet hashSet = this.I;
                 if (hashSet.contains(xeVar)) {
                     hashSet.remove(xeVar);
-                    r31Var.e = false;
+                    x31Var.e = false;
                     g7Var.e(false, true);
                     i7 = 2;
                 } else {
@@ -954,7 +954,7 @@ public final class ni extends vh implements org.telegram.messenger.ls, te.b {
                             return;
                         }
                     }
-                    r31Var.e = true;
+                    x31Var.e = true;
                     hashSet.add(xeVar);
                     g7Var.e(true, true);
                 }

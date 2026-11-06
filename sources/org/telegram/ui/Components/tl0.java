@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tl0 extends vr {
     public final /* synthetic */ org.telegram.ui.fw k0;
@@ -14,7 +14,7 @@ public final class tl0 extends vr {
         this.k0 = fwVar;
     }
 
-    @Override // org.telegram.ui.Components.f41
+    @Override // org.telegram.ui.Components.l41
     public final void O(boolean z9) {
         ArrayList arrayList;
         super.O(z9);

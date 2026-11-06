@@ -5,12 +5,12 @@ import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
-import c8.ub;
+import c8.vb;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class b1 extends h1 {
     public static boolean i = false;
@@ -180,7 +180,7 @@ public abstract class b1 extends h1 {
             if (i7 != 2) {
                 if (i7 == 8) {
                     i0.b[] bVarArr = this.d;
-                    i10 = bVarArr != null ? bVarArr[ub.a(8)] : null;
+                    i10 = bVarArr != null ? bVarArr[vb.a(8)] : null;
                     if (i10 != null) {
                         return i10;
                     }

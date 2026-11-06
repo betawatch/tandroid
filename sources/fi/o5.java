@@ -70,14 +70,14 @@ import org.telegram.ui.Components.hg;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.jg;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.qt0;
 import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
     public final j5 A0;
@@ -1513,9 +1513,9 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                 ja jaVar = vaVar.X0;
                                 if (jaVar != null) {
                                     jaVar.x = j02;
-                                    n51 n51Var = jaVar.y;
-                                    if (n51Var != null) {
-                                        n51Var.A0(j02.u0);
+                                    t51 t51Var = jaVar.y;
+                                    if (t51Var != null) {
+                                        t51Var.A0(j02.u0);
                                     }
                                 }
                                 la laVar = vaVar.c1;
@@ -2217,7 +2217,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                 org.telegram.ui.Components.i5.g(i10).e(document);
                             }
                             org.telegram.messenger.w7.G(i10);
-                            if (e7.u(document, org.telegram.messenger.w7.K(document, null, true, true).getAbsolutePath())) {
+                            if (e7.u(document, org.telegram.messenger.w7.J(document, null, true, true).getAbsolutePath())) {
                                 break loop0;
                             }
                         }
@@ -2228,7 +2228,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                 } else if (childAt instanceof tg.d2) {
                     TLRPC.Document sticker = ((tg.d2) childAt).getSticker();
                     org.telegram.messenger.w7.G(i10);
-                    if (e7.u(sticker, org.telegram.messenger.w7.K(sticker, null, true, true).getAbsolutePath())) {
+                    if (e7.u(sticker, org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath())) {
                         break;
                     } else {
                         i7++;
@@ -2962,7 +2962,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                                 g20Var.offset = spanned2.getSpanStart(r5Var);
                                                 g20Var.length = spanned2.getSpanEnd(r5Var) - g20Var.offset;
                                                 org.telegram.messenger.w7.G(i16);
-                                                g20Var.a = org.telegram.messenger.w7.K(document, null, true, true).getAbsolutePath();
+                                                g20Var.a = org.telegram.messenger.w7.J(document, null, true, true).getAbsolutePath();
                                                 int i21 = 0;
                                                 while (document != null) {
                                                     ArrayList<TLRPC.PhotoSize> arrayList2 = document.thumbs;
@@ -2972,7 +2972,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                                     org.telegram.messenger.w7.G(i16);
                                                     spanned = spanned2;
                                                     z19 = true;
-                                                    g20Var.a = org.telegram.messenger.w7.K(document.thumbs.get(i21), null, true, true).getAbsolutePath();
+                                                    g20Var.a = org.telegram.messenger.w7.J(document.thumbs.get(i21), null, true, true).getAbsolutePath();
                                                     i21++;
                                                     if (i21 >= document.thumbs.size()) {
                                                         break;
@@ -3025,7 +3025,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                         h20Var.C = d2Var.getParentObject();
                                         TLRPC.Document sticker = d2Var.getSticker();
                                         org.telegram.messenger.w7.G(p10.s0);
-                                        h20Var.j = org.telegram.messenger.w7.K(sticker, null, true, true).getAbsolutePath();
+                                        h20Var.j = org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath();
                                         if (ij.L2(sticker, true) || u0(sticker)) {
                                             boolean L22 = ij.L2(sticker, true);
                                             h20Var.b = (byte) (h20Var.b | (L22 ? (byte) 1 : (byte) 4));
@@ -3073,7 +3073,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                             g20Var2.document_id = codeEmojiDocument.id;
                                             g20Var2.document = codeEmojiDocument;
                                             org.telegram.messenger.w7.G(i16);
-                                            g20Var2.a = org.telegram.messenger.w7.K(codeEmojiDocument, null, true, true).getAbsolutePath();
+                                            g20Var2.a = org.telegram.messenger.w7.J(codeEmojiDocument, null, true, true).getAbsolutePath();
                                             boolean L23 = ij.L2(g20Var2.document, true);
                                             if (L23 || u0(g20Var2.document)) {
                                                 g20Var2.c = (byte) (g20Var2.c | (L23 ? (byte) 1 : (byte) 4));
@@ -3103,7 +3103,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                             g20Var3.document_id = codeEmojiDocument2.id;
                                             g20Var3.document = codeEmojiDocument2;
                                             org.telegram.messenger.w7.G(i16);
-                                            g20Var3.a = org.telegram.messenger.w7.K(codeEmojiDocument2, null, true, true).getAbsolutePath();
+                                            g20Var3.a = org.telegram.messenger.w7.J(codeEmojiDocument2, null, true, true).getAbsolutePath();
                                             boolean L24 = ij.L2(g20Var3.document, true);
                                             if (L24 || u0(g20Var3.document)) {
                                                 g20Var3.c = (byte) (g20Var3.c | (L24 ? (byte) 1 : (byte) 4));
@@ -3410,7 +3410,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                                                 h20Var2.B = document2;
                                                                 h20Var2.C = starGift;
                                                                 org.telegram.messenger.w7.G(p10.s0);
-                                                                h20Var2.j = org.telegram.messenger.w7.L(document2, true).getAbsolutePath();
+                                                                h20Var2.j = org.telegram.messenger.w7.K(document2, true).getAbsolutePath();
                                                                 if (ij.L2(document2, true) || u0(document2)) {
                                                                     boolean L25 = ij.L2(document2, true);
                                                                     h20Var2.b = (byte) (h20Var2.b | (L25 ? (byte) 1 : (byte) 4));

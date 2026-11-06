@@ -15,7 +15,7 @@ import android.graphics.Typeface;
 import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class pz0 extends org.telegram.ui.Cells.q1 {
     public boolean kd;
@@ -27,7 +27,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
     public final Path qd;
     public Paint rd;
     public final Paint sd;
-    public org.telegram.ui.Components.b01 td;
+    public org.telegram.ui.Components.c01 td;
     public final org.telegram.ui.Components.w5 ud;
     public final /* synthetic */ int vd;
     public final /* synthetic */ int wd;
@@ -113,9 +113,9 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
         rectF2.inset(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
         canvas.drawArc(rectF2, -90.0f, (1.0f - rz0Var.a0) * (-360.0f), false, paint3);
         if (this.td == null) {
-            org.telegram.ui.Components.b01 b01Var = new org.telegram.ui.Components.b01(120);
-            this.td = b01Var;
-            b01Var.b = true;
+            org.telegram.ui.Components.c01 c01Var = new org.telegram.ui.Components.c01(120);
+            this.td = c01Var;
+            c01Var.b = true;
         }
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(2.8f));
         this.td.a((1.0f - rz0Var.a0) * (-360.0f), 1.0f, canvas, paint3, rectF2);

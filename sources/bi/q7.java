@@ -21,11 +21,11 @@ import org.telegram.ui.Components.fb0;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.bv0;
+import org.telegram.ui.cv0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.j9, OnFailureListener, org.telegram.ui.ActionBar.r1, fb0, f5.m, ri {
     public final /* synthetic */ Object a;
@@ -111,9 +111,9 @@ public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.j
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        bv0 bv0Var = (bv0) nVar.b;
+        cv0 cv0Var = (cv0) nVar.b;
         int i7 = ProfileStoriesView.s0;
-        bv0Var.a(canvas, k4Var, k4Var2);
+        cv0Var.a(canvas, k4Var, k4Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }

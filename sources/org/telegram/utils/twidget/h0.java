@@ -12,10 +12,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hd;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.j71;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.p71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class h0 {
     public boolean A;
@@ -83,7 +85,7 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                j71 j71Var;
+                p71 p71Var;
                 h0 h0Var;
                 m h;
                 int i11;
@@ -94,7 +96,7 @@ public final class h0 {
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
                         if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
-                            h0Var2.b();
+                            h0Var2.c();
                             return;
                         }
                         h0Var2.n.set(false);
@@ -152,21 +154,21 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (j71Var = uVar.h) == null) {
+                            if (!uVar.e() || (p71Var = uVar.h) == null) {
                                 return;
                             }
-                            i71 i71Var = j71Var.a;
-                            i71Var.j();
-                            i71Var.h();
+                            o71 o71Var = p71Var.a;
+                            o71Var.j();
+                            o71Var.h();
                             return;
                         }
                     case 2:
-                        this.b.b();
+                        this.b.c();
                         return;
                     default:
                         h0 h0Var4 = this.b;
                         h0Var4.p.set(true);
-                        h0Var4.b();
+                        h0Var4.c();
                         return;
                 }
             }
@@ -184,7 +186,7 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                j71 j71Var;
+                p71 p71Var;
                 h0 h0Var;
                 m h;
                 int i112;
@@ -195,7 +197,7 @@ public final class h0 {
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
                         if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
-                            h0Var2.b();
+                            h0Var2.c();
                             return;
                         }
                         h0Var2.n.set(false);
@@ -253,21 +255,21 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (j71Var = uVar.h) == null) {
+                            if (!uVar.e() || (p71Var = uVar.h) == null) {
                                 return;
                             }
-                            i71 i71Var = j71Var.a;
-                            i71Var.j();
-                            i71Var.h();
+                            o71 o71Var = p71Var.a;
+                            o71Var.j();
+                            o71Var.h();
                             return;
                         }
                     case 2:
-                        this.b.b();
+                        this.b.c();
                         return;
                     default:
                         h0 h0Var4 = this.b;
                         h0Var4.p.set(true);
-                        h0Var4.b();
+                        h0Var4.c();
                         return;
                 }
             }
@@ -285,7 +287,7 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                j71 j71Var;
+                p71 p71Var;
                 h0 h0Var;
                 m h;
                 int i112;
@@ -296,7 +298,7 @@ public final class h0 {
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
                         if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
-                            h0Var2.b();
+                            h0Var2.c();
                             return;
                         }
                         h0Var2.n.set(false);
@@ -354,21 +356,21 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (j71Var = uVar.h) == null) {
+                            if (!uVar.e() || (p71Var = uVar.h) == null) {
                                 return;
                             }
-                            i71 i71Var = j71Var.a;
-                            i71Var.j();
-                            i71Var.h();
+                            o71 o71Var = p71Var.a;
+                            o71Var.j();
+                            o71Var.h();
                             return;
                         }
                     case 2:
-                        this.b.b();
+                        this.b.c();
                         return;
                     default:
                         h0 h0Var4 = this.b;
                         h0Var4.p.set(true);
-                        h0Var4.b();
+                        h0Var4.c();
                         return;
                 }
             }
@@ -405,7 +407,7 @@ public final class h0 {
                 f0 f0Var;
                 JSONObject jSONObject;
                 u uVar;
-                j71 j71Var;
+                p71 p71Var;
                 h0 h0Var;
                 m h;
                 int i112;
@@ -416,7 +418,7 @@ public final class h0 {
                         long nanoTime = System.nanoTime();
                         long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
                         if (h0Var2.u || j3 == 0 || !h0Var2.D || !h0Var2.n.get() || nanoTime - h0Var2.Q < (max * 9) / 10 || !h0Var2.m.compareAndSet(false, true)) {
-                            h0Var2.b();
+                            h0Var2.c();
                             return;
                         }
                         h0Var2.n.set(false);
@@ -474,21 +476,21 @@ public final class h0 {
                             uVar.g(h0Var);
                             return;
                         } else {
-                            if (!uVar.e() || (j71Var = uVar.h) == null) {
+                            if (!uVar.e() || (p71Var = uVar.h) == null) {
                                 return;
                             }
-                            i71 i71Var = j71Var.a;
-                            i71Var.j();
-                            i71Var.h();
+                            o71 o71Var = p71Var.a;
+                            o71Var.j();
+                            o71Var.h();
                             return;
                         }
                     case 2:
-                        this.b.b();
+                        this.b.c();
                         return;
                     default:
                         h0 h0Var4 = this.b;
                         h0Var4.p.set(true);
-                        h0Var4.b();
+                        h0Var4.c();
                         return;
                 }
             }
@@ -506,7 +508,16 @@ public final class h0 {
         this.j = context.getResources().getDisplayMetrics().density;
     }
 
-    public final void a(g gVar, g0[] g0VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, m0 m0Var) {
+    public static boolean a() {
+        for (int i7 = 0; i7 < 4; i7++) {
+            if (p10.i(i7).p() && ((org.telegram.messenger.h0) qp.s1(i7).x7.o0.b).c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void b(g gVar, g0[] g0VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, m0 m0Var) {
         Object obj;
         boolean z9 = this.w;
         Object obj2 = this.q;
@@ -544,7 +555,7 @@ public final class h0 {
         }
     }
 
-    public final void b() {
+    public final void c() {
         if (this.u || this.t == 0 || this.B || this.m.get()) {
             return;
         }
@@ -560,7 +571,7 @@ public final class h0 {
         Choreographer.getInstance().postFrameCallback(this.P);
     }
 
-    public final void c(String str) {
+    public final void d(String str) {
         if (this.u || str == null || str.equals(this.i)) {
             return;
         }
@@ -571,7 +582,7 @@ public final class h0 {
         }
     }
 
-    public final void d(boolean z9) {
+    public final void e(boolean z9) {
         if (this.u || this.D == z9) {
             return;
         }
@@ -581,14 +592,17 @@ public final class h0 {
             WidgetSandboxNative.visible(j3, z9);
         }
         if (z9) {
-            b();
+            c();
         }
     }
 
-    public final void e(final int i7) {
+    public final void f(final int i7) {
         final long j3;
         if (Looper.myLooper() == Looper.getMainLooper()) {
             throw new IllegalStateException("Start WidgetSandboxSession off UI");
+        }
+        if (a()) {
+            throw new IllegalStateException("Widgets are disabled by the app config");
         }
         if (this.E == 0) {
             this.E = i7;
@@ -639,7 +653,7 @@ public final class h0 {
                             }
                             h0Var.A = true;
                             WidgetSandboxNative.visible(j10, h0Var.D);
-                            h0Var.b();
+                            h0Var.c();
                         }
                     });
                     Trace.endSection();

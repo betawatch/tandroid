@@ -19,9 +19,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ve0;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.io0;
+import org.telegram.ui.jo0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class re implements mf, m9.t, p4.u {
     public long a;
@@ -479,18 +479,18 @@ public final class re implements mf, m9.t, p4.u {
             arrayList.add(l1Var.m(i10, k1Var, 0L).c);
         }
         ArrayList arrayList2 = new ArrayList();
-        io0 io0Var = new io0(this, new AtomicInteger(0), arrayList, arrayList2, 22);
+        jo0 jo0Var = new jo0(this, new AtomicInteger(0), arrayList, arrayList2, 22);
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             byte[] bArr = ((e2.l0) arrayList.get(i11)).d.k;
             if (bArr == null) {
                 arrayList2.add(null);
-                io0Var.run();
+                jo0Var.run();
             } else {
                 m9.y W = d0Var.m.W(bArr);
                 arrayList2.add(W);
                 Handler handler = d0Var.l;
                 Objects.requireNonNull(handler);
-                W.b(io0Var, new l2.g0(handler, 1));
+                W.b(jo0Var, new l2.g0(handler, 1));
             }
         }
     }

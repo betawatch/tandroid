@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fu implements org.telegram.ui.Components.oo0, org.telegram.ui.Components.cj0, org.telegram.ui.Components.dj0, pz, org.telegram.ui.ActionBar.r1, oi.m, r0.m, oi.n, org.telegram.ui.Components.qi0 {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class fu implements org.telegram.ui.Components.oo0,
         switch (this.a) {
             case 1:
                 ww wwVar = this.b;
-                org.telegram.ui.Components.r31 G = wwVar.C0.l0.G(i7);
+                org.telegram.ui.Components.x31 G = wwVar.C0.l0.G(i7);
                 Object obj = G != null ? G.G : null;
                 if (!(obj instanceof TLRPC.Chat)) {
                     if (obj instanceof org.telegram.messenger.ij) {
@@ -108,7 +108,7 @@ public final /* synthetic */ class fu implements org.telegram.ui.Components.oo0,
                             wwVar.presentFragment(anVar2);
                             break;
                         } else {
-                            org.telegram.ui.Components.r31 G2 = am0Var.G(i7);
+                            org.telegram.ui.Components.x31 G2 = am0Var.G(i7);
                             if (G2 != null) {
                                 Object obj2 = G2.G;
                                 if (obj2 instanceof TLRPC.Chat) {
@@ -127,7 +127,7 @@ public final /* synthetic */ class fu implements org.telegram.ui.Components.oo0,
                 break;
             case 2:
                 ww wwVar2 = this.b;
-                org.telegram.ui.Components.r31 G3 = wwVar2.C0.q0.G(i7);
+                org.telegram.ui.Components.x31 G3 = wwVar2.C0.q0.G(i7);
                 Object obj3 = G3 != null ? G3.G : null;
                 if (!(obj3 instanceof TLRPC.User)) {
                     if (obj3 instanceof org.telegram.messenger.ij) {

@@ -12,7 +12,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class up implements Runnable {
     public final /* synthetic */ int a;
@@ -266,11 +266,11 @@ public final /* synthetic */ class up implements Runnable {
                     }
                     if (str != null && !hashMap.containsKey(str)) {
                         if (photoSize != null) {
-                            downloadController.getFileLoader().W(hc.i(photoSize, (TLRPC.Photo) a6Var.a), a6Var.f, null, 0, a6Var.d ? 2 : a6Var.e ? 1 : 0);
+                            downloadController.getFileLoader().V(hc.i(photoSize, (TLRPC.Photo) a6Var.a), a6Var.f, null, 0, a6Var.d ? 2 : a6Var.e ? 1 : 0);
                         } else {
                             TLObject tLObject2 = a6Var.a;
                             if (tLObject2 instanceof TLRPC.Document) {
-                                downloadController.getFileLoader().X((TLRPC.Document) tLObject2, a6Var.f, 0, a6Var.d ? 2 : 0);
+                                downloadController.getFileLoader().W((TLRPC.Document) tLObject2, a6Var.f, 0, a6Var.d ? 2 : 0);
                             }
                         }
                         arrayList6.add(a6Var);

@@ -2,13 +2,13 @@ package com.google.android.gms.wallet.wobs;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import java.util.ArrayList;
 import r6.a;
 import y8.v;
 import z8.f;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends a {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new v(7);
@@ -34,30 +34,30 @@ public class CommonWalletObject extends a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.l(parcel, 3, this.b);
-        wb.l(parcel, 4, this.c);
-        wb.l(parcel, 5, this.d);
-        wb.l(parcel, 6, this.e);
-        wb.l(parcel, 7, this.f);
-        wb.l(parcel, 8, this.h);
-        wb.l(parcel, 9, this.n);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.l(parcel, 3, this.b);
+        xb.l(parcel, 4, this.c);
+        xb.l(parcel, 5, this.d);
+        xb.l(parcel, 6, this.e);
+        xb.l(parcel, 7, this.f);
+        xb.l(parcel, 8, this.h);
+        xb.l(parcel, 9, this.n);
         int i10 = this.r;
-        wb.q(parcel, 10, 4);
+        xb.q(parcel, 10, 4);
         parcel.writeInt(i10);
-        wb.p(parcel, 11, this.s);
-        wb.k(parcel, 12, this.w, i7);
-        wb.p(parcel, 13, this.x);
-        wb.l(parcel, 14, this.y);
-        wb.l(parcel, 15, this.D);
-        wb.p(parcel, 16, this.E);
+        xb.p(parcel, 11, this.s);
+        xb.k(parcel, 12, this.w, i7);
+        xb.p(parcel, 13, this.x);
+        xb.l(parcel, 14, this.y);
+        xb.l(parcel, 15, this.D);
+        xb.p(parcel, 16, this.E);
         boolean z9 = this.F;
-        wb.q(parcel, 17, 4);
+        xb.q(parcel, 17, 4);
         parcel.writeInt(z9 ? 1 : 0);
-        wb.p(parcel, 18, this.G);
-        wb.p(parcel, 19, this.H);
-        wb.p(parcel, 20, this.I);
-        wb.s(parcel, r10);
+        xb.p(parcel, 18, this.G);
+        xb.p(parcel, 19, this.H);
+        xb.p(parcel, 20, this.I);
+        xb.s(parcel, r10);
     }
 }

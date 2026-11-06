@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wy implements cj0, dj0 {
     public final /* synthetic */ ez a;
@@ -186,9 +186,9 @@ public final /* synthetic */ class wy implements cj0, dj0 {
                             }
                             boolean z18 = z9;
                             H.l(i18, org.telegram.messenger.hd.M0(i12, str2), new bi.u7(nwVar, arrayList, z11, 28), z17);
-                            H.l(R.drawable.msg_markread, org.telegram.messenger.hd.M0(2131748681, null), new g51(17, nwVar, arrayList), z16);
+                            H.l(R.drawable.msg_markread, org.telegram.messenger.hd.M0(2131748681, null), new l51(17, nwVar, arrayList), z16);
                             H.l(R.drawable.msg_share, org.telegram.ui.gz.E0((voVar2 == null && voVar2.f()) ? -1 : 0, org.telegram.messenger.hd.M0(2131748924, null), true), new org.telegram.ui.rp(nwVar, zArr, voVar2, 3), z12);
-                            H.m(R.drawable.msg_delete, new g51(18, nwVar, voVar), org.telegram.messenger.hd.M0(2131750788, null), !z18, true);
+                            H.m(R.drawable.msg_delete, new l51(18, nwVar, voVar), org.telegram.messenger.hd.M0(2131750788, null), !z18, true);
                             H.s = 96;
                             H.i = 3;
                             H.a0(org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(-4.0f));
@@ -230,9 +230,9 @@ public final /* synthetic */ class wy implements cj0, dj0 {
                     }
                     boolean z182 = z9;
                     H2.l(i18, org.telegram.messenger.hd.M0(i12, str2), new bi.u7(nwVar, arrayList, z11, 28), z17);
-                    H2.l(R.drawable.msg_markread, org.telegram.messenger.hd.M0(2131748681, null), new g51(17, nwVar, arrayList), z162);
+                    H2.l(R.drawable.msg_markread, org.telegram.messenger.hd.M0(2131748681, null), new l51(17, nwVar, arrayList), z162);
                     H2.l(R.drawable.msg_share, org.telegram.ui.gz.E0((voVar2 == null && voVar2.f()) ? -1 : 0, org.telegram.messenger.hd.M0(2131748924, null), true), new org.telegram.ui.rp(nwVar, zArr2, voVar2, 3), z12);
-                    H2.m(R.drawable.msg_delete, new g51(18, nwVar, voVar), org.telegram.messenger.hd.M0(2131750788, null), !z182, true);
+                    H2.m(R.drawable.msg_delete, new l51(18, nwVar, voVar), org.telegram.messenger.hd.M0(2131750788, null), !z182, true);
                     H2.s = 96;
                     H2.i = 3;
                     H2.a0(org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(-4.0f));

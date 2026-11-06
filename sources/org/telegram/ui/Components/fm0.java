@@ -21,9 +21,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegram.messenger.ls, eh.a {
+public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegram.messenger.ls, eh.a {
     public static final /* synthetic */ int a1 = 0;
     public boolean A0;
     public final HashMap B0;
@@ -271,10 +271,10 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         this.f0 = new si0(q1Var, true);
         ze0 ze0Var = new ze0(context, wwVar);
         this.r0 = ze0Var;
-        k41 k41Var = ze0Var.c;
-        k41Var.setClipToPadding(false);
-        k41Var.j(new xl0(fwVar, i12));
-        k41Var.D0(new ob0(fwVar, 19));
+        q41 q41Var = ze0Var.c;
+        q41Var.setClipToPadding(false);
+        q41Var.j(new xl0(fwVar, i12));
+        q41Var.D0(new ob0(fwVar, 19));
         bi.g5 g5Var = new bi.g5(fwVar);
         this.V = g5Var;
         setAdapter(g5Var);
@@ -317,8 +317,8 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
             int i7 = 0;
             this.s0 = false;
             S();
-            f61 f61Var = this.M;
-            if (f61Var != null && f61Var.getCurrentTabId() != 0) {
+            k61 k61Var = this.M;
+            if (k61Var != null && k61Var.getCurrentTabId() != 0) {
                 this.M.d(0, 0);
             }
             yl0 yl0Var = this.d0;
@@ -523,7 +523,7 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         }
         ze0 ze0Var = this.r0;
         if (view == ze0Var) {
-            k41 k41Var = ze0Var.c;
+            q41 q41Var = ze0Var.c;
             ArrayList arrayList7 = ze0Var.n;
             if (TextUtils.equals(ze0Var.x, str)) {
                 return;
@@ -549,8 +549,8 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
                 arrayList7.clear();
             }
             ze0Var.d();
-            k41Var.v0(0);
-            k41Var.f3.O(true);
+            q41Var.v0(0);
+            q41Var.f3.O(true);
             return;
         }
         if (view == this.t0) {
@@ -734,9 +734,9 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
     public final void S() {
         this.V.l();
         o(false);
-        f61 f61Var = this.M;
-        if (f61Var != null) {
-            f61Var.y.f();
+        k61 k61Var = this.M;
+        if (k61Var != null) {
+            k61Var.y.f();
         }
     }
 
@@ -850,7 +850,7 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         return this.T0;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public long getManualScrollDuration() {
         return 320L;
     }
@@ -859,7 +859,7 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         return this.D0;
     }
 
-    public o61 getTabsView() {
+    public u61 getTabsView() {
         return this.M;
     }
 
@@ -974,7 +974,7 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void s() {
         this.S0.L();
     }
@@ -1004,21 +1004,21 @@ public abstract class fm0 extends p61 implements org.telegram.ui.xz, org.telegra
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void setPosition(int i7) {
         if (i7 < 0) {
             return;
         }
         super.setPosition(i7);
         this.h.clear();
-        f61 f61Var = this.M;
-        if (f61Var != null) {
-            f61Var.f(1.0f, i7);
+        k61 k61Var = this.M;
+        if (k61Var != null) {
+            k61Var.f(1.0f, i7);
         }
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void t(View view, View view2, int i7, int i10) {
         yl0 yl0Var = this.d0;
         org.telegram.ui.yz yzVar = this.O0;

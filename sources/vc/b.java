@@ -1,8 +1,8 @@
 package vc;
 
 import a8.wa;
-import c8.nd;
-import c8.xc;
+import c8.od;
+import c8.yc;
 import g9.l;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +28,7 @@ import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -164,7 +164,7 @@ public abstract class b {
             g(i7, str2, str3);
             throw null;
         }
-        hy0Var = xc.a(str2);
+        hy0Var = yc.a(str2);
         if (bool.booleanValue()) {
         }
         return hy0Var;
@@ -276,12 +276,12 @@ public abstract class b {
         String str3;
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            nd.a(jSONObject.optString("charge"));
-            nd.a(jSONObject.optString("code"));
-            nd.a(jSONObject.optString("decline_code"));
-            str3 = nd.a(jSONObject.optString("message"));
-            nd.a(jSONObject.optString("param"));
-            nd.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
+            od.a(jSONObject.optString("charge"));
+            od.a(jSONObject.optString("code"));
+            od.a(jSONObject.optString("decline_code"));
+            str3 = od.a(jSONObject.optString("message"));
+            od.a(jSONObject.optString("param"));
+            od.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
         } catch (JSONException unused) {
             str3 = "An improperly formatted error response was found.";
         }

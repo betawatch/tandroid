@@ -72,11 +72,11 @@ import org.telegram.ui.Components.ej0;
 import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.SecretMediaViewer;
@@ -98,9 +98,9 @@ import org.telegram.ui.wt;
 import org.telegram.ui.zw;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.android.gms.common.api.internal.p, lm0, qr, xn, za, i7, ej0, l51, h2.d, q5.b, s2.t {
+public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.android.gms.common.api.internal.p, lm0, qr, xn, za, i7, ej0, q51, h2.d, q5.b, s2.t {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -808,8 +808,8 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         int i7 = secretMediaViewer.Z;
         if (i7 <= 0) {
@@ -820,11 +820,11 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
         org.telegram.messenger.g0.i3(new by0(6, this, (File) this.b), 100L);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         dz0 dz0Var = secretMediaViewer.g1;
@@ -868,12 +868,12 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         j4 j4Var = ((SecretMediaViewer) this.c).x;
         if (j4Var != null) {
@@ -903,12 +903,12 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
     public void t(boolean z9, float f10) {
         ob0 ob0Var = (ob0) this.b;
         ud0 ud0Var = (ud0) this.c;
-        n51 n51Var = ud0Var.d;
-        if (n51Var == null) {
+        t51 t51Var = ud0Var.d;
+        if (t51Var == null) {
             return;
         }
         float max = 2.8f / Math.max(60L, r2);
-        long U = (long) ((((f10 / (1.0f - max)) * max) + f10) * n51Var.U());
+        long U = (long) ((((f10 / (1.0f - max)) * max) + f10) * t51Var.U());
         ud0Var.e = U;
         ud0Var.d.q0(U, !z9);
         if (z9) {
@@ -1324,7 +1324,7 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         if (secretMediaViewer.a0) {
@@ -1478,15 +1478,15 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
     public /* synthetic */ void h(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 

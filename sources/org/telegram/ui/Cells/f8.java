@@ -7,27 +7,27 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class f8 extends q31 {
+public final class f8 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new f8());
+        w31.h(new f8());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void a(pj0 pj0Var, View view, r31 r31Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void a(pj0 pj0Var, View view, x31 x31Var) {
         g8 g8Var = (g8) view;
         boolean z9 = false;
-        g8Var.b(r31Var != null && r31Var.e, true);
-        if ((pj0Var instanceof k41) && ((k41) pj0Var).j3) {
+        g8Var.b(x31Var != null && x31Var.e, true);
+        if ((pj0Var instanceof q41) && ((q41) pj0Var).j3) {
             z9 = true;
         }
         g8Var.c(z9);
@@ -35,22 +35,22 @@ public final class f8 extends q31 {
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x006f  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0079  */
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        int i7 = f41Var.f;
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+        int i7 = l41Var.f;
         g8 g8Var = (g8) view;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) r31Var.G;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) x31Var.G;
         boolean z10 = false;
         g8Var.d(tL_messages_stickerSet, z9, false);
-        g8Var.b(r31Var.e, false);
-        g8Var.c(k41Var.j3);
-        g8Var.setOnOptionsClick(r31Var.D);
-        g8Var.D.setOnClickListener(r31Var.E);
-        g8Var.E.setOnClickListener(r31Var.E);
-        g8Var.F.setOnClickListener(r31Var.E);
+        g8Var.b(x31Var.e, false);
+        g8Var.c(q41Var.j3);
+        g8Var.setOnOptionsClick(x31Var.D);
+        g8Var.D.setOnClickListener(x31Var.E);
+        g8Var.E.setOnClickListener(x31Var.E);
+        g8Var.F.setOnClickListener(x31Var.E);
         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
         if (stickerSet == null || !stickerSet.emojis) {
             return;
@@ -77,20 +77,20 @@ public final class f8 extends q31 {
         g8Var.e(i10);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         final g8 g8Var = new g8(context, 1);
-        if (pj0Var instanceof k41) {
-            final k41 k41Var = (k41) pj0Var;
+        if (pj0Var instanceof q41) {
+            final q41 q41Var = (q41) pj0Var;
             g8Var.setOnReorderButtonTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.e8
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    k41 k41Var2;
+                    q41 q41Var2;
                     v4.y yVar;
-                    if (motionEvent.getAction() != 0 || (yVar = (k41Var2 = k41.this).g3) == null) {
+                    if (motionEvent.getAction() != 0 || (yVar = (q41Var2 = q41.this).g3) == null) {
                         return false;
                     }
-                    yVar.t(k41Var2.T(g8Var));
+                    yVar.t(q41Var2.T(g8Var));
                     return false;
                 }
             });

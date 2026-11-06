@@ -26,23 +26,23 @@ import org.telegram.messenger.j20;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ny;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.je0;
-import org.telegram.ui.kp0;
 import org.telegram.ui.li0;
-import org.telegram.ui.vo0;
+import org.telegram.ui.lp0;
+import org.telegram.ui.wo0;
 import ti.q;
 import v4.d0;
 import v4.g0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public class i implements l, d0, l51, a0 {
+public class i implements l, d0, q51, a0 {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
@@ -223,11 +223,11 @@ public class i implements l, d0, l51, a0 {
         ((g0) this.c).o(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
         View findViewWithTag;
         PhotoViewer photoViewer = (PhotoViewer) this.c;
-        if (photoViewer.F2 != n51Var) {
+        if (photoViewer.F2 != t51Var) {
             return;
         }
         a8.g(exc, true);
@@ -245,7 +245,7 @@ public class i implements l, d0, l51, a0 {
         photoViewer.P2(alertDialog$Builder);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         if (!photoViewer.G3) {
@@ -253,25 +253,25 @@ public class i implements l, d0, l51, a0 {
             photoViewer.e0.invalidate();
         }
         if (photoViewer.E2 != null) {
-            n51 n51Var = photoViewer.F2;
-            if (n51Var == null || !n51Var.V) {
-                org.telegram.messenger.g0.i3(new kp0(this, 1), 64L);
+            t51 t51Var = photoViewer.F2;
+            if (t51Var == null || !t51Var.V) {
+                org.telegram.messenger.g0.i3(new lp0(this, 1), 64L);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
-        n51 n51Var;
+        t51 t51Var;
         int i10;
         j20 j20Var;
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         ArrayList arrayList = photoViewer.f7;
-        n51 n51Var2 = photoViewer.F2;
-        if (n51Var2 != null) {
-            n51Var2.t0(d1.f.u() || photoViewer.r);
+        t51 t51Var2 = photoViewer.F2;
+        if (t51Var2 != null) {
+            t51Var2.t0(d1.f.u() || photoViewer.r);
         }
-        if (this.b && (n51Var = photoViewer.F2) != null && n51Var.U() != -9223372036854775807L) {
+        if (this.b && (t51Var = photoViewer.F2) != null && t51Var.U() != -9223372036854775807L) {
             this.b = false;
             if (photoViewer.X6.isEmpty() && photoViewer.d7.isEmpty() && photoViewer.Z6.isEmpty() && !arrayList.isEmpty() && (i10 = photoViewer.P4) >= 0 && i10 < arrayList.size()) {
                 Object obj = arrayList.get(photoViewer.P4);
@@ -279,9 +279,9 @@ public class i implements l, d0, l51, a0 {
                     gf gfVar = (gf) obj;
                     if (gfVar.b && (j20Var = gfVar.s) != null) {
                         photoViewer.F2.p0((long) (j20Var.d * r3.U()));
-                        vo0 vo0Var = photoViewer.R7;
-                        if (vo0Var != null) {
-                            vo0Var.setProgress(gfVar.s.d);
+                        wo0 wo0Var = photoViewer.R7;
+                        if (wo0Var != null) {
+                            wo0Var.setProgress(gfVar.s.d);
                         }
                     }
                 }
@@ -290,7 +290,7 @@ public class i implements l, d0, l51, a0 {
         photoViewer.w3(i7, z9);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         q qVar = photoViewer.P8;
@@ -316,15 +316,15 @@ public class i implements l, d0, l51, a0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         Drawable[] drawableArr = PhotoViewer.Y8;
         photoViewer.q0(false);
-        org.telegram.messenger.g0.h3(new kp0(this, 0));
+        org.telegram.messenger.g0.h3(new lp0(this, 0));
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         PhotoViewer photoViewer = (PhotoViewer) this.c;
         if (photoViewer.y2 != null) {
@@ -338,12 +338,12 @@ public class i implements l, d0, l51, a0 {
                 oVar.c();
             }
             photoViewer.y2.a(i10 == 0 ? 1.0f : f11 / f12, 0);
-            if (photoViewer.B2 instanceof c51) {
-                ((c51) photoViewer.B2).setHDRInfo(photoViewer.F2.V(null));
-                c51 c51Var = (c51) photoViewer.B2;
-                c51Var.d = i12;
-                c51Var.e = i10;
-                ry ryVar = c51Var.b;
+            if (photoViewer.B2 instanceof h51) {
+                ((h51) photoViewer.B2).setHDRInfo(photoViewer.F2.V(null));
+                h51 h51Var = (h51) photoViewer.B2;
+                h51Var.d = i12;
+                h51Var.e = i10;
+                ry ryVar = h51Var.b;
                 if (ryVar != null) {
                     ryVar.postRunnable(new ny(ryVar, i12, i10, 0));
                 }
@@ -412,7 +412,7 @@ public class i implements l, d0, l51, a0 {
         this.b = z9;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame(m2.a aVar) {
         long j3 = aVar.e;
         PhotoViewer photoViewer = (PhotoViewer) this.c;
@@ -422,9 +422,9 @@ public class i implements l, d0, l51, a0 {
             PhotoViewer.N(photoViewer);
         }
         if (photoViewer.E2 != null) {
-            n51 n51Var = photoViewer.F2;
-            if (n51Var == null || !n51Var.V) {
-                org.telegram.messenger.g0.i3(new kp0(this, 2), 64L);
+            t51 t51Var = photoViewer.F2;
+            if (t51Var == null || !t51Var.V) {
+                org.telegram.messenger.g0.i3(new lp0(this, 2), 64L);
             }
         }
     }
@@ -454,11 +454,11 @@ public class i implements l, d0, l51, a0 {
     public void l() {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 }

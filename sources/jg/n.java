@@ -67,9 +67,9 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.bv;
@@ -78,7 +78,7 @@ import org.telegram.ui.sw;
 import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class n extends oj0 implements p2 {
     public boolean D;
@@ -857,7 +857,7 @@ public class n extends oj0 implements p2 {
             int i16 = this.a0;
             int F = F();
             this.a0 = F;
-            vy0 vy0Var = z2Var.n;
+            wy0 wy0Var = z2Var.n;
             TextView textView = z2Var.h;
             ch0 ch0Var = z2Var.f;
             if (z2Var.r != F) {
@@ -890,7 +890,7 @@ public class n extends oj0 implements p2 {
                         if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
                             M03 = M03.replace('\n', ' ');
                         }
-                        vy0Var.a(M03, true, false);
+                        wy0Var.a(M03, true, false);
                         z2Var.requestLayout();
                     } else {
                         z2Var.a(true);
@@ -904,7 +904,7 @@ public class n extends oj0 implements p2 {
                 if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
                     M02 = M02.replace('\n', ' ');
                 }
-                vy0Var.a(M02, false, false);
+                wy0Var.a(M02, false, false);
             }
             int i17 = this.h;
             if (i17 != 7 && i17 != 8) {

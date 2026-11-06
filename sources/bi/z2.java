@@ -12,6 +12,7 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.fx;
 import org.telegram.ui.Components.gx;
 import org.telegram.ui.Components.gy;
@@ -19,17 +20,16 @@ import org.telegram.ui.Components.hv;
 import org.telegram.ui.Components.jk0;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.sw;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.yw;
 import org.telegram.ui.an;
-import org.telegram.ui.fq0;
 import org.telegram.ui.ge;
+import org.telegram.ui.gq0;
 import org.telegram.ui.he;
 import org.telegram.ui.qw;
 import org.telegram.ui.ww;
 import org.telegram.ui.yf;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements c20 {
     public final /* synthetic */ int a;
@@ -97,10 +97,10 @@ public final /* synthetic */ class z2 implements c20 {
                 I.p = new ge(jk0Var, i10);
                 org.telegram.ui.y yVar = new org.telegram.ui.y(anVar, user, str, 2);
                 k60 J = I.J();
-                J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new fq0(I, 27), false);
+                J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new gq0(I, 27), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, org.telegram.messenger.hd.M0(2131751718, null), new org.telegram.ui.o1(anVar, I, str), false);
-                J.c(R.drawable.menu_contact_existing, org.telegram.messenger.hd.M0(2131754375, null), new fq0(yVar, 28), false);
+                J.c(R.drawable.menu_contact_existing, org.telegram.messenger.hd.M0(2131754375, null), new gq0(yVar, 28), false);
                 int i12 = 4;
                 if (tL_contact == null && (user == null || !anVar.getContactsController().f0.containsKey(Long.valueOf(user.id)))) {
                     I.c(R.drawable.msg_contact_add, org.telegram.messenger.hd.M0(2131754377, null), new hi.h2(I, J, i12), false);
@@ -202,8 +202,8 @@ public final /* synthetic */ class z2 implements c20 {
                     I.n(user, org.telegram.messenger.hd.M0(2131743547, null), new org.telegram.ui.o1(anVar, jk0Var, user, 17));
                 }
                 jk0Var.e(I);
-                if (characterStyle instanceof x31) {
-                    String url = ((x31) characterStyle).getURL();
+                if (characterStyle instanceof d41) {
+                    String url = ((d41) characterStyle).getURL();
                     String trim = (url != null ? url : "").trim();
                     if (trim.startsWith("tel:")) {
                         trim = trim.substring(4);

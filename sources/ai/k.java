@@ -51,13 +51,13 @@ import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -65,12 +65,12 @@ import org.telegram.ui.an;
 import org.telegram.ui.gv;
 import org.telegram.ui.hw;
 import org.telegram.ui.pv;
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 import zh.o3;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements bj0 {
     public final /* synthetic */ int a;
@@ -85,14 +85,14 @@ public final /* synthetic */ class k implements bj0 {
     public final void c(int i7, View view) {
         TLRPC.Document document;
         q0 q0Var;
-        r31 G;
-        r31 G2;
-        r31 G3;
+        x31 G;
+        x31 G2;
+        x31 G3;
         TLRPC.Document document2;
         i5 i5Var;
         org.telegram.ui.ActionBar.k kVar;
         int i10;
-        r31 G4;
+        x31 G4;
         int i11 = this.a;
         int i12 = 4;
         int i13 = 2;
@@ -172,9 +172,9 @@ public final /* synthetic */ class k implements bj0 {
                 break;
             case 2:
                 oc ocVar = (oc) obj;
-                f41 f41Var = ocVar.T1;
-                if (f41Var != null && (G = f41Var.G(i7 - 1)) != null) {
-                    f41 f41Var2 = ocVar.T1;
+                l41 l41Var = ocVar.T1;
+                if (l41Var != null && (G = l41Var.G(i7 - 1)) != null) {
+                    l41 l41Var2 = ocVar.T1;
                     if (G.d != -1) {
                         if (G.H(pc.class) && (G.G instanceof TL_stars.TL_starsGiftOption)) {
                             Context W = org.telegram.messenger.g0.W(ocVar.getContext());
@@ -233,7 +233,7 @@ public final /* synthetic */ class k implements bj0 {
                         }
                     } else {
                         ocVar.U1 = !ocVar.U1;
-                        f41Var2.O(true);
+                        l41Var2.O(true);
                         ocVar.k1.w0(0, org.telegram.messenger.g0.L(200.0f), xq.g);
                         break;
                     }
@@ -241,9 +241,9 @@ public final /* synthetic */ class k implements bj0 {
                 break;
             case 3:
                 tc tcVar = (tc) obj;
-                f41 f41Var3 = tcVar.W1;
-                if (f41Var3 != null && (G2 = f41Var3.G(i7 - 1)) != null) {
-                    f41 f41Var4 = tcVar.W1;
+                l41 l41Var3 = tcVar.W1;
+                if (l41Var3 != null && (G2 = l41Var3.G(i7 - 1)) != null) {
+                    l41 l41Var4 = tcVar.W1;
                     if (G2.d != -1) {
                         if (G2.H(pc.class) && (G2.G instanceof TL_stars.TL_starsTopupOption)) {
                             Activity W2 = org.telegram.messenger.g0.W(tcVar.getContext());
@@ -257,16 +257,16 @@ public final /* synthetic */ class k implements bj0 {
                         }
                     } else {
                         tcVar.X1 = !tcVar.X1;
-                        f41Var4.O(true);
+                        l41Var4.O(true);
                         break;
                     }
                 }
                 break;
             case 4:
                 uc ucVar = (uc) obj;
-                f41 f41Var5 = ucVar.Q1;
-                if (f41Var5 != null && (G3 = f41Var5.G(i7 - 1)) != null) {
-                    f41 f41Var6 = ucVar.Q1;
+                l41 l41Var5 = ucVar.Q1;
+                if (l41Var5 != null && (G3 = l41Var5.G(i7 - 1)) != null) {
+                    l41 l41Var6 = ucVar.Q1;
                     if (G3.d != -1) {
                         if (G3.H(pc.class) && (G3.G instanceof TL_stars.TL_starsTopupOption)) {
                             Activity W3 = org.telegram.messenger.g0.W(ucVar.getContext());
@@ -280,7 +280,7 @@ public final /* synthetic */ class k implements bj0 {
                         }
                     } else {
                         ucVar.R1 = !ucVar.R1;
-                        f41Var6.O(true);
+                        l41Var6.O(true);
                         ucVar.k1.w0(0, org.telegram.messenger.g0.L(300.0f), null);
                         break;
                     }
@@ -394,9 +394,9 @@ public final /* synthetic */ class k implements bj0 {
                 gi.f.A0((gi.f) obj, i7);
                 break;
             case 12:
-                f41 f41Var7 = ((gi.e) obj).U1;
-                if (f41Var7 != null) {
-                    f41Var7.G(i7 - 1);
+                l41 l41Var7 = ((gi.e) obj).U1;
+                if (l41Var7 != null) {
+                    l41Var7.G(i7 - 1);
                     break;
                 }
                 break;
@@ -500,7 +500,7 @@ public final /* synthetic */ class k implements bj0 {
                 break;
             case 16:
                 kg.i0 i0Var = (kg.i0) obj;
-                r31 G5 = i0Var.W1.G(i7 - 1);
+                x31 G5 = i0Var.W1.G(i7 - 1);
                 if (G5 != null) {
                     kg.a0 a0Var = i0Var.R1;
                     if (!a0Var.h(G5)) {
@@ -548,18 +548,18 @@ public final /* synthetic */ class k implements bj0 {
                 }
                 break;
             case 19:
-                tp0 tp0Var = (tp0) obj;
+                up0 up0Var = (up0) obj;
                 sg.b0 b0Var2 = (sg.b0) sg.b0.c().get(i7);
-                tp0Var.d1.setTypeface(b0Var2.a);
-                sg.l0 e11 = sg.l0.e(tp0Var.y1);
+                up0Var.d1.setTypeface(b0Var2.a);
+                sg.l0 e11 = sg.l0.e(up0Var.y1);
                 String str2 = b0Var2.a;
                 e11.j = str2;
                 e11.a.edit().putString("typeface", str2).apply();
-                tg.j jVar3 = tp0Var.B0;
+                tg.j jVar3 = up0Var.B0;
                 if (jVar3 instanceof tg.k2) {
                     ((tg.k2) jVar3).setTypeface(b0Var2);
                 }
-                tp0Var.z0(false);
+                up0Var.z0(false);
                 break;
             case 20:
                 tg.y0 y0Var = (tg.y0) obj;
@@ -629,8 +629,8 @@ public final /* synthetic */ class k implements bj0 {
                 o3 o3Var = (o3) obj;
                 fi.d dVar = o3Var.U1;
                 HashSet hashSet2 = o3Var.R1;
-                f41 f41Var8 = o3Var.Y1;
-                if (f41Var8 != null && (G4 = f41Var8.G(i7 - 1)) != null) {
+                l41 l41Var8 = o3Var.Y1;
+                if (l41Var8 != null && (G4 = l41Var8.G(i7 - 1)) != null) {
                     Object obj2 = G4.G;
                     if (obj2 instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;

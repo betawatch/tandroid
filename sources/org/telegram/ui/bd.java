@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class bd extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, org.telegram.ui.Components.i30 {
     public TLRPC.FileLocation D;
@@ -643,7 +643,7 @@ public final class bd extends org.telegram.ui.ActionBar.f2 implements org.telegr
     }
 
     @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ vq0 getCloseIntoObject() {
+    public final /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 

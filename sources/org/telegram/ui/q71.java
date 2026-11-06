@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q71 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -557,18 +557,18 @@ public final class q71 extends org.telegram.ui.Components.oj0 {
                 if (u71Var.z0.getParent() != null) {
                     ((ViewGroup) u71Var.z0.getParent()).removeView(u71Var.z0);
                 }
-                rq0 rq0Var = new rq0(context, 9);
-                rq0Var.addView(u71Var.z0, c8.ha.e(-1, 76, 17));
-                view = rq0Var;
+                sq0 sq0Var = new sq0(context, 9);
+                sq0Var.addView(u71Var.z0, c8.ha.e(-1, 76, 17));
+                view = sq0Var;
             } else if (i7 == 5) {
                 view = new org.telegram.ui.Components.tm(u71Var.getParentActivity(), 25);
             } else {
                 if (u71Var.A0.getParent() != null) {
                     ((ViewGroup) u71Var.A0.getParent()).removeView(u71Var.A0);
                 }
-                rq0 rq0Var2 = new rq0(context, 10);
-                rq0Var2.addView(u71Var.A0, c8.ha.e(-1, 76, 17));
-                view = rq0Var2;
+                sq0 sq0Var2 = new sq0(context, 10);
+                sq0Var2.addView(u71Var.A0, c8.ha.e(-1, 76, 17));
+                view = sq0Var2;
             }
         }
         return jg.g.r(view, view, -1, -2);

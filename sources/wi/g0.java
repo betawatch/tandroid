@@ -4,14 +4,14 @@ import java.io.File;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.j20;
-import org.telegram.ui.Components.ey0;
 import org.telegram.ui.Components.fy0;
 import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g0 implements Runnable {
         synchronized (t0Var.g) {
             if (!t0Var.G && !p0Var.d && !p0Var.e) {
                 p0Var.e = true;
-                ((gy0) t0Var.e).b(p0Var.a, file.length(), file);
+                ((hy0) t0Var.e).b(p0Var.a, file.length(), file);
                 t0Var.i.post(new g0(t0Var, p0Var, j3, file, z9));
             }
         }
@@ -46,8 +46,8 @@ public final /* synthetic */ class g0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        fy0 fy0Var;
-        fy0 fy0Var2;
+        gy0 gy0Var;
+        gy0 gy0Var2;
         switch (this.a) {
             case 0:
                 a();
@@ -74,28 +74,28 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 n40Var.U = null;
                 n40Var.j0 = true;
-                gy0 gy0Var = n40Var.S;
-                if (gy0Var == null) {
-                    fy0Var2 = null;
+                hy0 hy0Var = n40Var.S;
+                if (hy0Var == null) {
+                    gy0Var2 = null;
                 } else {
-                    synchronized (gy0Var) {
-                        ey0 ey0Var = (ey0) gy0Var.c.get(Long.valueOf(j10));
-                        if (ey0Var != null && !ey0Var.e) {
-                            fy0Var = new fy0(Math.max(ey0Var.c, file.length()), ey0Var.f, ey0Var.g, ey0Var.h, ey0Var.i);
+                    synchronized (hy0Var) {
+                        fy0 fy0Var = (fy0) hy0Var.c.get(Long.valueOf(j10));
+                        if (fy0Var != null && !fy0Var.e) {
+                            gy0Var = new gy0(Math.max(fy0Var.c, file.length()), fy0Var.f, fy0Var.g, fy0Var.h, fy0Var.i);
                         }
-                        fy0Var = new fy0(file.length(), null, null, null, null);
+                        gy0Var = new gy0(file.length(), null, null, null, null);
                     }
-                    fy0Var2 = fy0Var;
+                    gy0Var2 = gy0Var;
                 }
-                j20 s5 = n40Var.s(file, j3, fy0Var2);
+                j20 s5 = n40Var.s(file, j3, gy0Var2);
                 s5.t = !z9;
                 gf gfVar = new gf(0, file.getAbsolutePath(), 0, true, 0, 0);
                 gfVar.x = m40Var.c;
                 gfVar.y = m40Var.d;
                 n40Var.e.u(gfVar, s5, m40Var.a, m40Var.b, 0, false, m40Var.e);
-                gy0 gy0Var2 = n40Var.S;
-                if (gy0Var2 != null) {
-                    gy0Var2.d(false);
+                hy0 hy0Var2 = n40Var.S;
+                if (hy0Var2 != null) {
+                    hy0Var2.d(false);
                 }
                 n40Var.S = null;
                 MediaController.B().Y(false);

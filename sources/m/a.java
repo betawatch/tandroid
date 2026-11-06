@@ -24,7 +24,7 @@ import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.ag0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.e8;
 import org.telegram.ui.ew0;
 import org.telegram.ui.g4;
@@ -34,7 +34,7 @@ import org.telegram.ui.s9;
 import org.telegram.ui.t4;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -94,15 +94,15 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                n51 n51Var = ((MediaController) this.b).i0;
-                if (n51Var != null) {
-                    n51Var.g0();
+                t51 t51Var = ((MediaController) this.b).i0;
+                if (t51Var != null) {
+                    t51Var.g0();
                     break;
                 }
                 break;
             case 6:
                 try {
-                    ((n51) this.b).m0();
+                    ((t51) this.b).m0();
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);

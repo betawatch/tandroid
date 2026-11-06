@@ -5,7 +5,7 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class d3 implements x4 {
     public final /* synthetic */ s a;
@@ -36,7 +36,7 @@ public final class d3 implements x4 {
         String str = this.c;
         document.localPath = str;
         t3 t3Var = this.d;
-        w7.G(t3Var.m3).f0(str, document);
+        w7.G(t3Var.m3).e0(str, document);
         s sVar = this.a;
         sVar.h = document;
         sVar.a = 2;

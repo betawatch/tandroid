@@ -4,9 +4,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class s1 implements f6 {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final class s1 implements f6 {
             case 1:
                 return ((f2) this.b).getThemedColor(i7);
             default:
-                return ((f41) this.b).I(i7);
+                return ((l41) this.b).I(i7);
         }
     }
 

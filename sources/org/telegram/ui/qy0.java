@@ -20,7 +20,7 @@ import java.util.Set;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public static boolean s;
@@ -115,7 +115,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable = (Runnable) obj;
                             try {
                                 String str = org.telegram.messenger.hd.E0().B.f;
-                                if (org.telegram.ui.Components.e21.O0(str, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
                             } catch (Exception e10) {
@@ -128,7 +128,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable2 = (Runnable) obj;
                             try {
                                 String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.e21.O0(language, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(language, null, null) != null) {
                                     hashSet3.add(language);
                                 }
                             } catch (Exception e11) {
@@ -149,7 +149,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                                             if (locale != null && locale.contains("_")) {
                                                 locale = locale.split("_")[0];
                                             }
-                                            if (org.telegram.ui.Components.e21.O0(locale, null, null) != null) {
+                                            if (org.telegram.ui.Components.k21.O0(locale, null, null) != null) {
                                                 hashSet4.add(locale);
                                             }
                                         }
@@ -171,7 +171,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable = (Runnable) obj;
                             try {
                                 String str = org.telegram.messenger.hd.E0().B.f;
-                                if (org.telegram.ui.Components.e21.O0(str, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
                             } catch (Exception e10) {
@@ -184,7 +184,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable2 = (Runnable) obj;
                             try {
                                 String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.e21.O0(language, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(language, null, null) != null) {
                                     hashSet3.add(language);
                                 }
                             } catch (Exception e11) {
@@ -205,7 +205,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                                             if (locale != null && locale.contains("_")) {
                                                 locale = locale.split("_")[0];
                                             }
-                                            if (org.telegram.ui.Components.e21.O0(locale, null, null) != null) {
+                                            if (org.telegram.ui.Components.k21.O0(locale, null, null) != null) {
                                                 hashSet4.add(locale);
                                             }
                                         }
@@ -227,7 +227,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable = (Runnable) obj;
                             try {
                                 String str = org.telegram.messenger.hd.E0().B.f;
-                                if (org.telegram.ui.Components.e21.O0(str, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(str, null, null) != null) {
                                     hashSet2.add(str);
                                 }
                             } catch (Exception e10) {
@@ -240,7 +240,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                             Runnable runnable2 = (Runnable) obj;
                             try {
                                 String language = Resources.getSystem().getConfiguration().locale.getLanguage();
-                                if (org.telegram.ui.Components.e21.O0(language, null, null) != null) {
+                                if (org.telegram.ui.Components.k21.O0(language, null, null) != null) {
                                     hashSet3.add(language);
                                 }
                             } catch (Exception e11) {
@@ -261,7 +261,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                                             if (locale != null && locale.contains("_")) {
                                                 locale = locale.split("_")[0];
                                             }
-                                            if (org.telegram.ui.Components.e21.O0(locale, null, null) != null) {
+                                            if (org.telegram.ui.Components.k21.O0(locale, null, null) != null) {
                                                 hashSet4.add(locale);
                                             }
                                         }
@@ -379,7 +379,7 @@ public final class qy0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131751359, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new mt0(this, 6));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, 6));
         org.telegram.ui.ActionBar.f5 b10 = this.simpleActionBar.o().b(0, R.drawable.outline_header_search);
         b10.N();
         b10.B0 = new kg.v1(this, 20);

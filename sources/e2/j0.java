@@ -1,9 +1,9 @@
 package e2;
 
-import c8.sc;
+import c8.tc;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class j0 {
     public int a;
@@ -23,7 +23,7 @@ public final class j0 {
         this.g = new HashSet();
         hashSet.add(u9.q.a(cls));
         for (Class cls2 : clsArr) {
-            sc.a(cls2, "Null interface");
+            tc.a(cls2, "Null interface");
             ((HashSet) this.c).add(u9.q.a(cls2));
         }
     }

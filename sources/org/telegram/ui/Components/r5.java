@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class r5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -88,10 +88,10 @@ public class r5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i7, int i10) {
         if (layout.getText() instanceof Spanned) {
-            uy0[] uy0VarArr = (uy0[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i7), Math.min(layout.getText().length() - 1, i10), uy0.class);
-            for (int i11 = 0; uy0VarArr != null && i11 < uy0VarArr.length; i11++) {
-                uy0 uy0Var = uy0VarArr[i11];
-                if (uy0Var != null && uy0Var.c()) {
+            vy0[] vy0VarArr = (vy0[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i7), Math.min(layout.getText().length() - 1, i10), vy0.class);
+            for (int i11 = 0; vy0VarArr != null && i11 < vy0VarArr.length; i11++) {
+                vy0 vy0Var = vy0VarArr[i11];
+                if (vy0Var != null && vy0Var.c()) {
                     return true;
                 }
             }

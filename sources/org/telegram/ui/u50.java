@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class u50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public boolean D;
@@ -230,7 +230,7 @@ public final class u50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.w.N(org.telegram.ui.ActionBar.k6.D0().q() ? this.w.e[0] - 1 : 0, false, false);
         ch0Var.setContentDescription(org.telegram.messenger.hd.M0(org.telegram.ui.ActionBar.k6.D0().q() ? 2131754751 : 2131754750, null));
         ch0Var.setAnimation(this.w);
-        frameLayout.setOnClickListener(new org.telegram.ui.Components.n41(18, this, ch0Var));
+        frameLayout.setOnClickListener(new org.telegram.ui.Components.t41(18, this, ch0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
         this.s.addView(frameLayout2, c8.ha.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));

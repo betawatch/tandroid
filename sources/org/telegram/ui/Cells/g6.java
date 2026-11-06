@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.wp;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.fz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g6 extends z implements ls, org.telegram.ui.ActionBar.a6 {
     public final wo A0;
@@ -66,7 +66,7 @@ public final class g6 extends z implements ls, org.telegram.ui.ActionBar.a6 {
     public TLRPC.FileLocation K;
     public final RectF K0;
     public boolean L;
-    public ly0 L0;
+    public my0 L0;
     public boolean M;
     public boolean M0;
     public final int N;
@@ -111,7 +111,7 @@ public final class g6 extends z implements ls, org.telegram.ui.ActionBar.a6 {
     public final di.n7 u0;
     public final RectF v0;
     public CharSequence w;
-    public ly0 w0;
+    public my0 w0;
     public final org.telegram.ui.ActionBar.f6 x;
     public Paint x0;
     public TLRPC.TL_sponsoredPeer y;
@@ -606,7 +606,7 @@ public final class g6 extends z implements ls, org.telegram.ui.ActionBar.a6 {
             return;
         }
         if (this.L0 == null) {
-            this.L0 = new ly0(hd.M0(2131753020, null), 14.0f, org.telegram.messenger.g0.o());
+            this.L0 = new my0(hd.M0(2131753020, null), 14.0f, org.telegram.messenger.g0.o());
         }
         int L = z9 ? org.telegram.messenger.g0.L(30.0f) + ((int) this.L0.c) : 0;
         boolean z10 = hd.a0;
@@ -731,7 +731,7 @@ public final class g6 extends z implements ls, org.telegram.ui.ActionBar.a6 {
                 wpVar.r = -org.telegram.messenger.g0.L(2.0f);
                 wpVar.s = 0.0f;
                 append.setSpan(wpVar, append.length() - 1, append.length(), 33);
-                this.w0 = new ly0(append, 12.0f, null);
+                this.w0 = new my0(append, 12.0f, null);
             }
             if (this.x0 == null) {
                 this.x0 = new Paint(1);

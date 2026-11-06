@@ -5,43 +5,43 @@ import android.view.View;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class j extends q31 {
+public final class j extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new j());
+        w31.h(new j());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         if0 if0Var = (if0) view;
-        if0Var.a((TLObject) r31Var.G, r31Var.z, true);
-        if0Var.setOnClickListener(r31Var.D);
+        if0Var.a((TLObject) x31Var.G, x31Var.z, true);
+        if0Var.setOnClickListener(x31Var.D);
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final boolean c(r31 r31Var, r31 r31Var2) {
-        return r31Var.B == r31Var2.B;
+    @Override // org.telegram.ui.Components.w31
+    public final boolean c(x31 x31Var, x31 x31Var2) {
+        return x31Var.B == x31Var2.B;
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         if0 if0Var = new if0(context);
         if0Var.setBackground(k6.N0(false));
         return if0Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final boolean e(r31 r31Var, r31 r31Var2) {
-        return r31Var.B == r31Var2.B;
+    @Override // org.telegram.ui.Components.w31
+    public final boolean e(x31 x31Var, x31 x31Var2) {
+        return x31Var.B == x31Var2.B;
     }
 }

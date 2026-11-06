@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import c8.bc;
-import c8.yc;
+import c8.cc;
+import c8.zc;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -49,7 +49,7 @@ import org.telegram.ui.qw;
 import org.telegram.ui.v91;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements h2.o, ws, li.m0, a20, org.telegram.ui.ActionBar.r1, qw, n5, i2.u, oi.m, Vector.TLDeserializer, r0.m, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class y implements h2.o, ws, li.m0, a20, org.telegr
     public li.z c(h6.m mVar) {
         m5.b bVar = (m5.b) this.b;
         URL url = (URL) mVar.b;
-        String c10 = bc.c("CctTransportBackend");
+        String c10 = cc.c("CctTransportBackend");
         if (Log.isLoggable(c10, 4)) {
             Log.i(c10, String.format("Making request to: %s", url));
         }
@@ -154,12 +154,12 @@ public final /* synthetic */ class y implements h2.o, ws, li.m0, a20, org.telegr
                     }
                     int responseCode = httpURLConnection.getResponseCode();
                     Integer valueOf = Integer.valueOf(responseCode);
-                    String c11 = bc.c("CctTransportBackend");
+                    String c11 = cc.c("CctTransportBackend");
                     if (Log.isLoggable(c11, 4)) {
                         Log.i(c11, String.format("Status Code: %d", valueOf));
                     }
-                    bc.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
-                    bc.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    cc.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    cc.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
                     if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                         return new li.z(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                     }
@@ -188,19 +188,19 @@ public final /* synthetic */ class y implements h2.o, ws, li.m0, a20, org.telegr
             }
         } catch (ConnectException e10) {
             e = e10;
-            bc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            cc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new li.z(500, null, 0L);
         } catch (UnknownHostException e11) {
             e = e11;
-            bc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            cc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new li.z(500, null, 0L);
         } catch (IOException e12) {
             e = e12;
-            bc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            cc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new li.z(400, null, 0L);
         } catch (na.b e13) {
             e = e13;
-            bc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            cc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new li.z(400, null, 0L);
         }
     }
@@ -298,7 +298,7 @@ public final /* synthetic */ class y implements h2.o, ws, li.m0, a20, org.telegr
         }
         ArrayList arrayList = dVar.a;
         if (aVar.l || oi.q.f().a) {
-            if (yc.a(i7, 4) || yc.a(i7, 2)) {
+            if (zc.a(i7, 4) || zc.a(i7, 2)) {
                 qi.a e10 = qVar.e();
                 ViewGroup viewGroup = aVar.n;
                 if (viewGroup != null) {

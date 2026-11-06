@@ -1,8 +1,8 @@
 package z7;
 
-import c8.he;
+import c8.ie;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class va extends ta {
     public static final va e = new va(0, new Object[0]);
@@ -24,7 +24,7 @@ public final class va extends ta {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        he.a(i7, this.d);
+        ie.a(i7, this.d);
         Object obj = this.c[i7];
         obj.getClass();
         return obj;

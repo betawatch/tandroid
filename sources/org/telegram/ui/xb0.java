@@ -14,7 +14,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class xb0 extends org.telegram.ui.Components.wt0 {
     public final /* synthetic */ ce0 D;
@@ -103,7 +103,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
                 frameLayout2.addView(textView3, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
                 addView(frameLayout2, c8.ha.r(-1, -1, 80));
                 h6.m.g(textView3);
-                textView3.setOnClickListener(new org.telegram.ui.Components.n41(25, this, context));
+                textView3.setOnClickListener(new org.telegram.ui.Components.t41(25, this, context));
             }
         }
         i7 = 8;
@@ -157,7 +157,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
         frameLayout22.addView(textView32, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
         addView(frameLayout22, c8.ha.r(-1, -1, 80));
         h6.m.g(textView32);
-        textView32.setOnClickListener(new org.telegram.ui.Components.n41(25, this, context));
+        textView32.setOnClickListener(new org.telegram.ui.Components.t41(25, this, context));
     }
 
     @Override // org.telegram.ui.Components.wt0

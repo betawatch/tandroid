@@ -14,11 +14,11 @@ import android.os.SystemClock;
 import android.util.Size;
 import android.view.Surface;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.r31;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -662,7 +662,7 @@ public final class t {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new l31(this, handlerThread, countDownLatch, 24));
+        handler.post(new r31(this, handlerThread, countDownLatch, 24));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {

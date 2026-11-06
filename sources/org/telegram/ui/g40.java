@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g40 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -742,9 +742,9 @@ public final /* synthetic */ class g40 implements View.OnClickListener {
                     return;
                 }
             case 20:
-                hq0 hq0Var = (hq0) this.b;
-                if (hq0Var != null) {
-                    hq0Var.z(0, org.telegram.messenger.g0.L(64.0f), false);
+                iq0 iq0Var = (iq0) this.b;
+                if (iq0Var != null) {
+                    iq0Var.z(0, org.telegram.messenger.g0.L(64.0f), false);
                     return;
                 }
                 return;
@@ -779,88 +779,88 @@ public final /* synthetic */ class g40 implements View.OnClickListener {
                 photoViewer.y3();
                 return;
             case 22:
-                or0 or0Var = (or0) this.b;
-                boolean[] zArr = or0Var.x;
-                CharSequence[] charSequenceArr = or0Var.w;
+                pr0 pr0Var = (pr0) this.b;
+                boolean[] zArr = pr0Var.x;
+                CharSequence[] charSequenceArr = pr0Var.w;
                 if (view.getTag() != null) {
                     return;
                 }
                 view.setTag(1);
                 org.telegram.ui.Cells.a6 a6Var = (org.telegram.ui.Cells.a6) view.getParent();
-                v4.d1 G = or0Var.c.G(a6Var);
+                v4.d1 G = pr0Var.c.G(a6Var);
                 if (G == null || (b10 = G.b()) == -1) {
                     return;
                 }
-                int i15 = b10 - or0Var.n0;
-                if (or0Var.I && i15 < or0Var.y) {
-                    int i16 = -or0Var.O;
-                    or0Var.O = i16;
+                int i15 = b10 - pr0Var.n0;
+                if (pr0Var.I && i15 < pr0Var.y) {
+                    int i16 = -pr0Var.O;
+                    pr0Var.O = i16;
                     org.telegram.messenger.g0.G3(i16, a6Var, null);
                     org.telegram.messenger.p2.D.a();
                     return;
                 }
-                or0Var.b.s(b10);
+                pr0Var.b.s(b10);
                 int i17 = i15 + 1;
                 System.arraycopy(charSequenceArr, i17, charSequenceArr, i15, (charSequenceArr.length - 1) - i15);
                 System.arraycopy(zArr, i17, zArr, i15, (zArr.length - 1) - i15);
                 charSequenceArr[charSequenceArr.length - 1] = null;
                 zArr[zArr.length - 1] = false;
-                int i18 = or0Var.D - 1;
-                or0Var.D = i18;
-                if (or0Var.r != null) {
+                int i18 = pr0Var.D - 1;
+                pr0Var.D = i18;
+                if (pr0Var.r != null) {
                     int[] iArr = new int[i18];
                     while (r10 < i18) {
-                        iArr[r10] = or0Var.r[r10 >= i15 ? r10 + 1 : r10];
+                        iArr[r10] = pr0Var.r[r10 >= i15 ? r10 + 1 : r10];
                         r10++;
                     }
-                    or0Var.r = iArr;
+                    pr0Var.r = iArr;
                 }
-                if (or0Var.D == charSequenceArr.length - 1) {
-                    or0Var.b.i((or0Var.n0 + charSequenceArr.length) - 1);
+                if (pr0Var.D == charSequenceArr.length - 1) {
+                    pr0Var.b.i((pr0Var.n0 + charSequenceArr.length) - 1);
                 }
-                v4.d1 K = or0Var.c.K(b10 - 1);
+                v4.d1 K = pr0Var.c.K(b10 - 1);
                 EditTextBoldCursor textView = a6Var.getTextView();
                 if (K != null) {
                     View view3 = K.a;
                     if (view3 instanceof org.telegram.ui.Cells.a6) {
                         ((org.telegram.ui.Cells.a6) view3).getTextView().requestFocus();
                         textView.clearFocus();
-                        or0Var.n0();
-                        or0Var.w0();
-                        ow0Var = or0Var.Q;
+                        pr0Var.n0();
+                        pr0Var.w0();
+                        ow0Var = pr0Var.Q;
                         if (ow0Var != null) {
                             ow0Var.f();
-                            or0Var.Q.setDelegate(null);
+                            pr0Var.Q.setDelegate(null);
                         }
-                        or0Var.b.g(or0Var.p0);
+                        pr0Var.b.g(pr0Var.p0);
                         return;
                     }
                 }
                 if (textView.isFocused()) {
                     org.telegram.messenger.g0.v1(textView);
-                    or0Var.p0(true);
-                } else if (or0Var.B0) {
-                    or0Var.p0(true);
+                    pr0Var.p0(true);
+                } else if (pr0Var.B0) {
+                    pr0Var.p0(true);
                 }
                 textView.clearFocus();
-                or0Var.n0();
-                or0Var.w0();
-                ow0Var = or0Var.Q;
+                pr0Var.n0();
+                pr0Var.w0();
+                ow0Var = pr0Var.Q;
                 if (ow0Var != null) {
                 }
-                or0Var.b.g(or0Var.p0);
+                pr0Var.b.g(pr0Var.p0);
                 return;
             case 23:
-                ((yr0) this.b).c(true);
+                ((zr0) this.b).c(true);
                 return;
             case 24:
-                ((yr0) ((bi.g5) this.b).c).c(true);
+                ((zr0) ((bi.g5) this.b).c).c(true);
                 return;
             case 25:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                vs0 vs0Var = (vs0) premiumPreviewFragment.d.get(premiumPreviewFragment.e);
-                vs0 vs0Var2 = premiumPreviewFragment.f;
-                if (vs0Var2 != null && (tL_premiumSubscriptionOption = vs0Var2.a) != null && tL_premiumSubscriptionOption.transaction != null) {
+                ws0 ws0Var = (ws0) premiumPreviewFragment.d.get(premiumPreviewFragment.e);
+                ws0 ws0Var2 = premiumPreviewFragment.f;
+                if (ws0Var2 != null && (tL_premiumSubscriptionOption = ws0Var2.a) != null && tL_premiumSubscriptionOption.transaction != null) {
                     String str3 = org.telegram.messenger.r1.i().f;
                     r10 = (TextUtils.isEmpty(str3) && TextUtils.isEmpty(null)) ? 0 : 1;
                     boolean isEmpty = TextUtils.isEmpty(null);
@@ -874,10 +874,10 @@ public final /* synthetic */ class g40 implements View.OnClickListener {
                     z0Var.c = str3;
                     z0Var.b = 5;
                 }
-                PremiumPreviewFragment.p0(premiumPreviewFragment, vs0Var, "settings", z0Var);
+                PremiumPreviewFragment.p0(premiumPreviewFragment, ws0Var, "settings", z0Var);
                 return;
             case 26:
-                PrivacyControlActivity privacyControlActivity = ((it0) this.b).d;
+                PrivacyControlActivity privacyControlActivity = ((jt0) this.b).d;
                 privacyControlActivity.showDialog(new ug.w0((org.telegram.ui.ActionBar.f2) privacyControlActivity, 27, false));
                 return;
             case 27:

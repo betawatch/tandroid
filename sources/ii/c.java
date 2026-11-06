@@ -42,9 +42,9 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.w0;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
@@ -58,7 +58,7 @@ import org.telegram.ui.ww;
 import sg.t0;
 import tg.i2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements c20 {
     public final /* synthetic */ int a;
@@ -72,8 +72,8 @@ public final /* synthetic */ class c implements c20 {
     @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         boolean z9;
-        f41 f41Var;
-        f41 f41Var2;
+        l41 l41Var;
+        l41 l41Var2;
         int i7;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         int i10 = this.a;
@@ -90,9 +90,9 @@ public final /* synthetic */ class c implements c20 {
                 ArrayList arrayList2 = fVar.n;
                 boolean z11 = arrayList2 == null || arrayList2.isEmpty();
                 fVar.n = arrayList;
-                k41 k41Var = fVar.f;
-                if (k41Var != null) {
-                    k41Var.f3.O(z11);
+                q41 q41Var = fVar.f;
+                if (q41Var != null) {
+                    q41Var.f3.O(z11);
                     break;
                 }
                 break;
@@ -142,12 +142,12 @@ public final /* synthetic */ class c implements c20 {
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                k41 k41Var2 = q0Var.c;
-                if (k41Var2 == null || (f41Var = k41Var2.f3) == null) {
+                q41 q41Var2 = q0Var.c;
+                if (q41Var2 == null || (l41Var = q41Var2.f3) == null) {
                     z9 = true;
                 } else {
                     z9 = true;
-                    f41Var.O(true);
+                    l41Var.O(true);
                 }
                 q0Var.d0(z9);
                 q0Var.T = z9;
@@ -362,8 +362,8 @@ public final /* synthetic */ class c implements c20 {
                 o1 o1Var = (o1) obj2;
                 o1Var.r = ((ArrayList) obj).size();
                 w3 w3Var2 = o1Var.a;
-                if (w3Var2 != null && (f41Var2 = w3Var2.f3) != null && w3Var2.G) {
-                    f41Var2.O(true);
+                if (w3Var2 != null && (l41Var2 = w3Var2.f3) != null && w3Var2.G) {
+                    l41Var2.O(true);
                     break;
                 }
                 break;

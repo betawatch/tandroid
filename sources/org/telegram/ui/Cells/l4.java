@@ -30,10 +30,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l4 {
     public int A;
@@ -54,8 +54,8 @@ public final class l4 {
     public final ic n;
     public k4 o;
     public boolean p;
-    public ly0 q;
-    public ly0 r;
+    public my0 q;
+    public my0 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -149,7 +149,7 @@ public final class l4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!k4Var.y && k4Var.K != (max = Math.max(0, k4Var.J - round))) {
                     k4Var.K = max;
-                    k4Var.L = new ly0(org.telegram.messenger.g0.g0(max, true, false), 12.0f, null);
+                    k4Var.L = new my0(org.telegram.messenger.g0.g0(max, true, false), 12.0f, null);
                     if (f21 > 0.0f) {
                         float min = Math.min(this.d + k4Var.a, f19);
                         float min2 = Math.min(this.e + k4Var.b, f16);
@@ -178,7 +178,7 @@ public final class l4 {
                     if (p42) {
                         ijVar = messageObject;
                         f15 = f17;
-                        if (org.telegram.messenger.w7.G(i15).T(k4Var.w)) {
+                        if (org.telegram.messenger.w7.G(i15).S(k4Var.w)) {
                             k4Var.b(3);
                         } else {
                             k4Var.b(k4Var.a());
@@ -1307,16 +1307,16 @@ public final class l4 {
             l4Var.g = (int) ((j4Var4.d / 1000.0f) * l4Var.f);
             l4Var.h = (int) (j4Var4.g * j4Var4.i);
             if (l4Var.i) {
-                ly0 ly0Var = new ly0(dd.a1(false, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
-                l4Var.q = ly0Var;
-                if (ly0Var.c > l4Var.g - org.telegram.messenger.g0.L(30.0f)) {
-                    l4Var.q = new ly0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                my0 my0Var = new my0(dd.a1(false, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                l4Var.q = my0Var;
+                if (my0Var.c > l4Var.g - org.telegram.messenger.g0.L(30.0f)) {
+                    l4Var.q = new my0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
             if (l4Var.r == null || l4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j3 = tL_messageMediaPaidMedia3.stars_amount;
                 l4Var.s = j3;
-                l4Var.r = new ly0(dd.U0(hd.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
+                l4Var.r = new my0(dd.U0(hd.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
             }
         }
     }
@@ -1467,10 +1467,10 @@ public final class l4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = ijVar == null ? null : (TLRPC.TL_messageMediaPaidMedia) ijVar.k.media;
             if (tL_messageMediaPaidMedia != null) {
-                ly0 ly0Var = new ly0(dd.a1(z15, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
-                this.q = ly0Var;
-                if (ly0Var.c > this.g - org.telegram.messenger.g0.L(30.0f)) {
-                    this.q = new ly0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                my0 my0Var = new my0(dd.a1(z15, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                this.q = my0Var;
+                if (my0Var.c > this.g - org.telegram.messenger.g0.L(30.0f)) {
+                    this.q = new my0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
         }

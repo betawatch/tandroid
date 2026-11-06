@@ -47,15 +47,15 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Components.t60;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c40;
-import org.telegram.ui.qu0;
+import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class y1 {
     public static long a;
@@ -530,7 +530,7 @@ public abstract class y1 {
         }
     }
 
-    public static void k(final Context context, qu0 qu0Var, boolean z9, final long j3, final long j10, final int i7, final boolean z10) {
+    public static void k(final Context context, ru0 ru0Var, boolean z9, final long j3, final long j10, final int i7, final boolean z10) {
         File file;
         String M0;
         String str;
@@ -642,16 +642,16 @@ public abstract class y1 {
         f10.addView(editTextBoldCursor, ha.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.c2 c2Var2 = new org.telegram.ui.Cells.c2(context, 1);
-        n41 n41Var = new n41(3, zArr, c2Var2);
+        t41 t41Var = new t41(3, zArr, c2Var2);
         c2Var2.e(hd.M0(2131752604, null), null, true, false, false);
         c2Var2.setClipToPadding(false);
-        c2Var2.setOnClickListener(n41Var);
+        c2Var2.setOnClickListener(t41Var);
         f10.addView(c2Var2, ha.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         org.telegram.messenger.camera.q.o(textView2, k6.r5, null, null, 2131752603);
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-        textView2.setOnClickListener(n41Var);
+        textView2.setOnClickListener(t41Var);
         f10.addView(textView2);
         c2Var2.setVisibility(8);
         textView2.setVisibility(8);
@@ -663,7 +663,7 @@ public abstract class y1 {
         alertDialog$Builder.o(f10);
         alertDialog$Builder.k(hd.M0(2131745641, null), new v0.j(14));
         alertDialog$Builder.h(hd.M0(2131752589, null), null);
-        alertDialog$Builder.a.setOnDismissListener(new org.telegram.ui.ActionBar.j2(2, qu0Var));
+        alertDialog$Builder.a.setOnDismissListener(new org.telegram.ui.ActionBar.j2(2, ru0Var));
         final org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         if (org.telegram.messenger.r2.a && file4.exists()) {
             org.telegram.ui.Components.f2 f2Var = new org.telegram.ui.Components.f2(23, context, file4);

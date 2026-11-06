@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class am extends ViewGroup {
     public long D;
@@ -481,7 +481,7 @@ public final class am extends ViewGroup {
             } else {
                 if (zlVar.u == null || zlVar.v != j3) {
                     zlVar.v = j3;
-                    zlVar.u = new ly0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    zlVar.u = new my0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
                 float L = org.telegram.messenger.g0.L(28.0f) + zlVar.u.c;
                 float L2 = org.telegram.messenger.g0.L(32.0f);
@@ -498,11 +498,11 @@ public final class am extends ViewGroup {
                 paint.setColor(1610612736);
                 float f22 = L2 / f19;
                 canvas.drawRoundRect(rectF, f22, f22, paint);
-                ly0 ly0Var = zlVar.u;
+                my0 my0Var = zlVar.u;
                 float L3 = org.telegram.messenger.g0.L(14.0f) + (((zlVar.r / f19) + zlVar.n) - (L / f19));
                 float f23 = zlVar.p + (zlVar.s / f19);
                 f10 = b10;
-                ly0Var.c(L3, f23, 1.0f, -1, canvas);
+                my0Var.c(L3, f23, 1.0f, -1, canvas);
             }
             if (z10) {
                 invalidate();

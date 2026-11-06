@@ -43,8 +43,8 @@ import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.oj0;
@@ -63,7 +63,7 @@ import org.telegram.ui.hw;
 import org.telegram.ui.pz;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends oj0 {
     public pz A0;
@@ -1763,8 +1763,8 @@ public abstract class h0 extends oj0 {
                                     fwVar.s0 = true;
                                     fwVar.v0.h1(0, 0);
                                     fwVar.S();
-                                    f61 f61Var = fwVar.M;
-                                    if (f61Var != null && f61Var.getCurrentTabId() != 1) {
+                                    k61 k61Var = fwVar.M;
+                                    if (k61Var != null && k61Var.getCurrentTabId() != 1) {
                                         fwVar.M.d(1, 1);
                                     }
                                     wl0Var.Z(fwVar.M0);
@@ -1830,8 +1830,8 @@ public abstract class h0 extends oj0 {
                                         fwVar.s0 = true;
                                         fwVar.v0.h1(0, 0);
                                         fwVar.S();
-                                        f61 f61Var = fwVar.M;
-                                        if (f61Var != null && f61Var.getCurrentTabId() != 1) {
+                                        k61 k61Var = fwVar.M;
+                                        if (k61Var != null && k61Var.getCurrentTabId() != 1) {
                                             fwVar.M.d(1, 1);
                                         }
                                         wl0Var.Z(fwVar.M0);
@@ -1912,8 +1912,8 @@ public abstract class h0 extends oj0 {
                                                 fwVar.s0 = true;
                                                 fwVar.v0.h1(0, 0);
                                                 fwVar.S();
-                                                f61 f61Var = fwVar.M;
-                                                if (f61Var != null && f61Var.getCurrentTabId() != 1) {
+                                                k61 k61Var = fwVar.M;
+                                                if (k61Var != null && k61Var.getCurrentTabId() != 1) {
                                                     fwVar.M.d(1, 1);
                                                 }
                                                 wl0Var.Z(fwVar.M0);
@@ -1977,8 +1977,8 @@ public abstract class h0 extends oj0 {
                                                 fwVar.s0 = true;
                                                 fwVar.v0.h1(0, 0);
                                                 fwVar.S();
-                                                f61 f61Var = fwVar.M;
-                                                if (f61Var != null && f61Var.getCurrentTabId() != 1) {
+                                                k61 k61Var = fwVar.M;
+                                                if (k61Var != null && k61Var.getCurrentTabId() != 1) {
                                                     fwVar.M.d(1, 1);
                                                 }
                                                 wl0Var.Z(fwVar.M0);

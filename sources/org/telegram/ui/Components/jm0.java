@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class jm0 {
     public static Paint D;
@@ -164,7 +164,7 @@ public class jm0 {
             }
             this.y = size;
             if (size >= 0 && size < this.u.size()) {
-                d((v31) ((Pair) this.u.get(this.y)).second);
+                d((b41) ((Pair) this.u.get(this.y)).second);
             }
         }
         if (this.B < 1.0f) {
@@ -480,7 +480,7 @@ public class jm0 {
         }
         Spanned spanned = (Spanned) charSequence;
         try {
-            v31[] v31VarArr = (v31[]) spanned.getSpans(0, spanned.length(), v31.class);
+            b41[] b41VarArr = (b41[]) spanned.getSpans(0, spanned.length(), b41.class);
             this.u = new ArrayList();
             this.x = 0.0f;
             if (this.A == null) {
@@ -489,12 +489,12 @@ public class jm0 {
                 textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
                 this.A.setColor(-1);
             }
-            for (v31 v31Var : v31VarArr) {
+            for (b41 b41Var : b41VarArr) {
                 try {
-                    if (v31Var != null && v31Var.getURL() != null && v31Var.d != null && v31Var.getURL().startsWith("audio?")) {
-                        if (Utilities.z(v31Var.getURL().substring(6)).intValue() >= 0) {
-                            org.telegram.messenger.i6.l(new SpannableStringBuilder(v31Var.d), this.A.getFontMetricsInt(), false);
-                            this.u.add(new Pair(Float.valueOf((r5.intValue() * 1000) / valueOf.longValue()), v31Var));
+                    if (b41Var != null && b41Var.getURL() != null && b41Var.d != null && b41Var.getURL().startsWith("audio?")) {
+                        if (Utilities.z(b41Var.getURL().substring(6)).intValue() >= 0) {
+                            org.telegram.messenger.i6.l(new SpannableStringBuilder(b41Var.d), this.A.getFontMetricsInt(), false);
+                            this.u.add(new Pair(Float.valueOf((r5.intValue() * 1000) / valueOf.longValue()), b41Var));
                         }
                     }
                 } catch (Exception e10) {
@@ -515,6 +515,6 @@ public class jm0 {
         }
     }
 
-    public void d(v31 v31Var) {
+    public void d(b41 b41Var) {
     }
 }

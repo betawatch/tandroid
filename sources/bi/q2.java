@@ -13,11 +13,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.s21;
+import org.telegram.ui.Components.y21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bi0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements v10 {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class q2 implements v10 {
                     break;
                 }
             case 2:
-                s21 s21Var = (s21) obj5;
+                y21 y21Var = (y21) obj5;
                 String str2 = (String) obj4;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj3;
                 ((org.telegram.ui.ActionBar.u1) obj6).dismiss();
@@ -136,7 +136,7 @@ public final /* synthetic */ class q2 implements v10 {
                     bi0.a().I(R.raw.error, org.telegram.messenger.hd.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.hd.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.hd.a0(null, null, 2131753130, str2))).j();
                     break;
                 } else {
-                    s21Var.run();
+                    y21Var.run();
                     break;
                 }
             default:

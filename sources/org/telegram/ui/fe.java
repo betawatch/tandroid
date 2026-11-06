@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements org.telegram.ui.Components.p40, org.telegram.ui.Components.s40, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.on, org.telegram.messenger.qr, org.telegram.ui.Components.oh0, ResultCallback, oi.m, yh.c, lh.a, r40, mr, lh.b, org.telegram.ui.Components.dj0, lh.d {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.p40,
                 Object J = anVar.W1.getAdapter().J(i7 - 1);
                 if (J instanceof jg.f1) {
                     jg.f1 f1Var = (jg.f1) J;
-                    if (anVar.W1.getAdapter().J != null && org.telegram.ui.Components.s31.h) {
+                    if (anVar.W1.getAdapter().J != null && org.telegram.ui.Components.y31.h) {
                         anVar.Z.setFieldText("");
                         qj qjVar = anVar.Z;
                         String str = f1Var.a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.p40,
                         anVar.showDialog(u1Var);
                         return true;
                     }
-                    if (org.telegram.ui.Components.s31.h) {
+                    if (org.telegram.ui.Components.y31.h) {
                         anVar.Z.setFieldText("");
                         qj qjVar2 = anVar.Z;
                         String str2 = (String) J;

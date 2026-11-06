@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ni0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean a;
@@ -41,14 +41,14 @@ public final class ni0 extends FrameLayout implements org.telegram.ui.ActionBar.
         l9Var.setImageResource(R.drawable.msg2_permissions);
         a();
         frameLayout.addView(l9Var, c8.ha.e(36, 36, 17));
-        TextView b10 = c8.na.b(context, 15.0f, org.telegram.ui.ActionBar.k6.G6, true, null);
+        TextView b10 = c8.qa.b(context, 15.0f, org.telegram.ui.ActionBar.k6.G6, true, null);
         this.h = b10;
         b10.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         b10.setEllipsize(truncateAt);
         addView(b10, c8.ha.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.k6.y6;
-        TextView b11 = c8.na.b(context, 13.0f, i10, false, null);
+        TextView b11 = c8.qa.b(context, 13.0f, i10, false, null);
         this.n = b11;
         b11.setSingleLine();
         b11.setEllipsize(truncateAt);

@@ -31,20 +31,20 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.ea;
-import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.r7;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.mt0;
-import org.telegram.ui.us0;
+import org.telegram.ui.nt0;
 import org.telegram.ui.vs0;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w0 extends v2 implements ls {
     public static final /* synthetic */ int F1 = 0;
-    public final vs0 A1;
+    public final ws0 A1;
     public int B1;
     public int C1;
     public int D1;
@@ -244,19 +244,19 @@ public final class w0 extends v2 implements ls {
         this.E1.setCastShadows(true);
         this.E1.setExtraHeight(org.telegram.messenger.g0.L(2.0f));
         this.E1.setBackButtonImage(R.drawable.ic_ab_back);
-        this.E1.setActionBarMenuOnItemClick(new mt0(this, 23));
+        this.E1.setActionBarMenuOnItemClick(new nt0(this, 23));
         this.b.addView(this.E1, ha.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.E1.getLayoutParams()).topMargin = (-this.s0) - org.telegram.messenger.g0.L(2.0f);
         org.telegram.messenger.g0.Z3(this.E1, false, 1.0f, true, false);
         int i10 = this.x1;
         ArrayList arrayList = this.k1;
-        if (((us0) arrayList.get(i10)).a == 14) {
+        if (((vs0) arrayList.get(i10)).a == 14) {
             this.E1.setTitle(hd.M0(2131743806, null));
             this.E1.requestLayout();
-        } else if (((us0) arrayList.get(this.x1)).a == 28) {
+        } else if (((vs0) arrayList.get(this.x1)).a == 28) {
             this.E1.setTitle(hd.M0(2131744253, null));
             this.E1.requestLayout();
-        } else if (((us0) arrayList.get(this.x1)).a == 40) {
+        } else if (((vs0) arrayList.get(this.x1)).a == 40) {
             this.E1.setTitle(hd.M0(2131750838, null));
             this.E1.requestLayout();
         } else {
@@ -283,8 +283,8 @@ public final class w0 extends v2 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, vs0 vs0Var) {
-        this(f2Var, context, i7, z9, i10, z10, vs0Var, r0);
+    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ws0 ws0Var) {
+        this(f2Var, context, i7, z9, i10, z10, ws0Var, r0);
         f6 f6Var;
         if (f2Var == null) {
             f6Var = null;
@@ -296,19 +296,19 @@ public final class w0 extends v2 implements ls {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, vs0 vs0Var, f6 f6Var) {
+    public w0(f2 f2Var, Context context, int i7, boolean z9, int i10, boolean z10, ws0 ws0Var, f6 f6Var) {
         super(1, context, f6Var, false);
         final int i11 = 0;
         ArrayList arrayList = new ArrayList();
         this.k1 = arrayList;
         this.B1 = qs.e4;
         this.i1 = f2Var;
-        this.A1 = vs0Var;
+        this.A1 = ws0Var;
         P(k6.h5);
         this.u1 = i10;
         this.v1 = z10;
         this.t1 = sz.i(org.telegram.messenger.g0.y2(null, R.raw.star_loader));
-        p41 p41Var = new p41(11, getContext(), this);
+        v41 v41Var = new v41(11, getContext(), this);
         if (!z9 && i10 != 35) {
             PremiumPreviewFragment.s0(i7, arrayList);
         } else {
@@ -317,26 +317,26 @@ public final class w0 extends v2 implements ls {
         }
         if (i10 == 40) {
             arrayList.clear();
-            arrayList.add(new us0(40, R.drawable.gift, hd.M0(2131750838, null), hd.M0(2131750837, null)));
+            arrayList.add(new vs0(40, R.drawable.gift, hd.M0(2131750838, null), hd.M0(2131750837, null)));
         }
         int i12 = 0;
         while (true) {
             if (i12 >= this.k1.size()) {
                 i12 = 0;
                 break;
-            } else if (((us0) this.k1.get(i12)).a == i10) {
+            } else if (((vs0) this.k1.get(i12)).a == i10) {
                 break;
             } else {
                 i12++;
             }
         }
         if (z10) {
-            us0 us0Var = (us0) this.k1.get(i12);
+            vs0 vs0Var = (vs0) this.k1.get(i12);
             this.k1.clear();
-            this.k1.add(us0Var);
+            this.k1.add(vs0Var);
             i12 = 0;
         }
-        us0 us0Var2 = (us0) this.k1.get(i12);
+        vs0 vs0Var2 = (vs0) this.k1.get(i12);
         this.u0 = false;
         this.v0 = false;
         this.T0 = false;
@@ -376,7 +376,7 @@ public final class w0 extends v2 implements ls {
                 }
             }
         });
-        p41Var.addView(hVar, ha.t(-1, -2, 1, 0, 16, 0, 0));
+        v41Var.addView(hVar, ha.t(-1, -2, 1, 0, 16, 0, 0));
         u0 u0Var = new u0(this, getContext());
         this.o1 = u0Var;
         u0Var.setOverScrollMode(2);
@@ -384,12 +384,12 @@ public final class w0 extends v2 implements ls {
         u0Var.setAdapter(new a20(this, 4));
         this.x1 = i12;
         u0Var.setCurrentItem(i12);
-        p41Var.addView(u0Var, ha.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
-        p41Var.addView(frameLayout, ha.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
+        v41Var.addView(u0Var, ha.d(-1, 100.0f, 0, 0.0f, 18.0f, 0.0f, 0.0f));
+        v41Var.addView(frameLayout, ha.d(52, 52.0f, 53, 0.0f, 24.0f, 0.0f, 0.0f));
         ea eaVar = new ea(getContext(), u0Var, this.k1.size());
         u0Var.b(new v7(this, eaVar, 1));
         LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.addView(p41Var);
+        linearLayout.addView(v41Var);
         linearLayout.setOrientation(1);
         int i13 = k6.V8;
         int i14 = k6.P9;
@@ -401,7 +401,7 @@ public final class w0 extends v2 implements ls {
         final int i15 = 1;
         p0 p0Var = new p0(getContext(), f6Var, true);
         this.j1 = p0Var;
-        p0Var.w.setOnClickListener(new r3(this, f2Var, z10, us0Var2, 5));
+        p0Var.w.setOnClickListener(new r3(this, f2Var, z10, vs0Var2, 5));
         p0Var.h.setOnClickListener(new View.OnClickListener(this) { // from class: ug.q0
             public final /* synthetic */ w0 b;
 

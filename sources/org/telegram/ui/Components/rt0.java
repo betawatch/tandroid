@@ -20,7 +20,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static boolean e0;
@@ -58,7 +58,7 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public qt0 n;
     public final ArrayList r;
     public boolean s;
-    public s61 w;
+    public y61 w;
     public float x;
     public float y;
 
@@ -127,9 +127,9 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
 
     public final void G() {
         if (!this.e && !this.c) {
-            s61 s61Var = this.w;
-            if (s61Var != null) {
-                s61Var.c(false);
+            y61 y61Var = this.w;
+            if (y61Var != null) {
+                y61Var.c(false);
                 this.w = null;
                 this.D = 1.0f;
                 this.x = 0.0f;
@@ -139,15 +139,15 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
             return;
         }
         if (this.w == null) {
-            s61 s61Var2 = new s61(getContext());
-            this.w = s61Var2;
-            s61Var2.n = new ax(this, 21);
+            y61 y61Var2 = new y61(getContext());
+            this.w = y61Var2;
+            y61Var2.n = new ax(this, 21);
             if (getMeasuredWidth() != 0 && getMeasuredHeight() != 0) {
-                s61 s61Var3 = this.w;
+                y61 y61Var3 = this.w;
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
-                s61Var3.getClass();
-                this.D = s61.a(measuredWidth, measuredHeight);
+                y61Var3.getClass();
+                this.D = y61.a(measuredWidth, measuredHeight);
             }
         }
         if (this.F) {
@@ -353,7 +353,7 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
 
     public void R() {
         if (this.w != null) {
-            this.D = s61.a(getMeasuredWidth(), getMeasuredHeight());
+            this.D = y61.a(getMeasuredWidth(), getMeasuredHeight());
         }
         if (this.n == null && this.r.isEmpty()) {
             return;

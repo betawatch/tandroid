@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class r10 extends org.telegram.ui.Components.w7 {
     public final /* synthetic */ Activity D;
@@ -24,7 +24,7 @@ public final class r10 extends org.telegram.ui.Components.w7 {
         textView.setGravity(51);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new org.telegram.ui.Components.n41(16, this, textView));
+        textView.setOnClickListener(new org.telegram.ui.Components.t41(16, this, textView));
         return textView;
     }
 }

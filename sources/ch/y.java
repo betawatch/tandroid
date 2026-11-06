@@ -27,8 +27,8 @@ import org.telegram.ui.Cells.q5;
 import org.telegram.ui.Cells.ta;
 import org.telegram.ui.Cells.x1;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.an;
 import org.telegram.ui.b5;
 import org.telegram.ui.bd;
@@ -39,7 +39,7 @@ import org.telegram.ui.r4;
 import org.telegram.ui.y4;
 import org.telegram.ui.yc;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -166,7 +166,7 @@ public final class y extends AnimatorListenerAdapter {
                 break;
             case 5:
                 ei.n nVar = (ei.n) this.c;
-                i41 i41Var = nVar.h;
+                o41 o41Var = nVar.h;
                 ei.f fVar = nVar.f;
                 ei.i iVar = nVar.w;
                 nVar.b = false;
@@ -179,7 +179,7 @@ public final class y extends AnimatorListenerAdapter {
                 }
                 int b10 = iVar.b();
                 if (z12) {
-                    i41Var.y1(nVar.d);
+                    o41Var.y1(nVar.d);
                     fVar.a0();
                     if (iVar.b() == b10) {
                         org.telegram.messenger.g0.b4(fVar);
@@ -193,7 +193,7 @@ public final class y extends AnimatorListenerAdapter {
                     if (z12 && (m10 = nVar.s.m(i11)) != null) {
                         nVar.T = m10.getTop();
                     }
-                    i41Var.h1(nVar.S, (-fVar.getPaddingTop()) + nVar.T);
+                    o41Var.h1(nVar.S, (-fVar.getPaddingTop()) + nVar.T);
                 }
                 super.onAnimationEnd(animator);
                 break;

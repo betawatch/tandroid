@@ -4,12 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class mr {
     public int a;
     public int b;
-    public ly0 c;
+    public my0 c;
     public int d;
     public boolean e;
     public int f;
@@ -24,15 +24,15 @@ public final class mr {
             str = "";
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        ly0 ly0Var = new ly0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
-        ly0Var.r(t2Var);
-        mrVar.c = ly0Var;
-        mrVar.c.q(org.telegram.messenger.ij.C5(org.telegram.messenger.i6.m(spannableStringBuilder, ly0Var.a.getFontMetricsInt(), false, null, 0), voVar.c, mrVar.c.a.getFontMetricsInt(), false));
+        my0 my0Var = new my0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o());
+        my0Var.r(t2Var);
+        mrVar.c = my0Var;
+        mrVar.c.q(org.telegram.messenger.ij.C5(org.telegram.messenger.i6.m(spannableStringBuilder, my0Var.a.getFontMetricsInt(), false, null, 0), voVar.c, mrVar.c.a.getFontMetricsInt(), false));
         mrVar.c.o(26);
         int L = org.telegram.messenger.g0.L(9.32f);
-        ly0 ly0Var2 = mrVar.c;
-        mrVar.g = L + ((int) ly0Var2.c);
-        ly0Var2.i();
+        my0 my0Var2 = mrVar.c;
+        mrVar.g = L + ((int) my0Var2.c);
+        my0Var2.i();
         int[] iArr = org.telegram.ui.ActionBar.k6.r8;
         int i7 = iArr[voVar.m % iArr.length];
         mrVar.f = i7;

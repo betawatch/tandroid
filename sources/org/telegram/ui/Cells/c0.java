@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final Runnable a;
@@ -20,7 +20,7 @@ public final class c0 {
     public float e;
     public int f;
     public int g;
-    public ly0 h;
+    public my0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public org.telegram.messenger.o2 j;
     public org.telegram.messenger.m2 k;

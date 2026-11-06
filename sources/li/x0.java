@@ -32,7 +32,7 @@ import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class x0 extends y implements org.telegram.ui.ActionBar.a6, h9, k0, org.telegram.messenger.x5 {
     public final RadialProgress2 D;
@@ -302,7 +302,7 @@ public final class x0 extends y implements org.telegram.ui.ActionBar.a6, h9, k0,
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void m(boolean z9) {
-        File K;
+        File J;
         s sVar;
         boolean z10 = this.L;
         f6 f6Var = this.r;
@@ -329,19 +329,19 @@ public final class x0 extends y implements org.telegram.ui.ActionBar.a6, h9, k0,
         String r10 = w7.r(null, h());
         a aVar = this.a;
         if (aVar != null && (sVar = aVar.g) != null && !TextUtils.isEmpty(sVar.e)) {
-            K = new File(this.a.g.e);
+            J = new File(this.a.g.e);
         }
         if (h() == null) {
-            K = null;
+            J = null;
         } else {
             w7.G(i11);
-            K = w7.K(h(), null, false, true);
-            if (K == null || !K.exists()) {
+            J = w7.J(h(), null, false, true);
+            if (J == null || !J.exists()) {
                 w7.G(i11);
-                K = w7.K(h(), null, true, true);
+                J = w7.J(h(), null, true, true);
             }
         }
-        if (K != null && K.exists()) {
+        if (J != null && J.exists()) {
             org.telegram.messenger.z5.q(i11).v(this);
             this.P = 0;
             radialProgress2.setIcon(this.L ? 4 : 5, false, z9);
@@ -350,7 +350,7 @@ public final class x0 extends y implements org.telegram.ui.ActionBar.a6, h9, k0,
                 return;
             }
             org.telegram.messenger.z5.q(i11).a(r10, null, this);
-            if (!w7.G(i11).T(r10)) {
+            if (!w7.G(i11).S(r10)) {
                 this.P = 1;
                 radialProgress2.p(z9, 0.0f);
                 radialProgress2.setIcon(2, false, z9);
@@ -525,7 +525,7 @@ public final class x0 extends y implements org.telegram.ui.ActionBar.a6, h9, k0,
                                     if (ijVar2 == null) {
                                         ijVar2 = this.T;
                                     }
-                                    G.X(h, ijVar2, 1, 1);
+                                    G.W(h, ijVar2, 1, 1);
                                     this.P = 2;
                                     radialProgress2.setIcon(3, true, true);
                                 } else if (this.P == 2 && h() != null) {

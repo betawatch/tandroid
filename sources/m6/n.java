@@ -13,7 +13,7 @@ import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.yc;
+import c8.zc;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.m0;
 import com.google.android.gms.internal.cast.q5;
@@ -40,7 +40,7 @@ import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -169,7 +169,7 @@ public final class n implements OnSuccessListener, te.i {
 
     public void h(int i7, boolean z9, boolean z10) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = yc.b(this.a, 1 << i7, z9);
+        int b10 = zc.b(this.a, 1 << i7, z9);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {

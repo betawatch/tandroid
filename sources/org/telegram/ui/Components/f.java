@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -55,9 +55,9 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 2:
                 boolean[] zArr = (boolean[]) this.c;
-                org.telegram.ui.qu0 qu0Var = (org.telegram.ui.qu0) this.b;
+                org.telegram.ui.ru0 ru0Var = (org.telegram.ui.ru0) this.b;
                 if (zArr[0]) {
-                    qu0Var.run();
+                    ru0Var.run();
                     break;
                 }
                 break;

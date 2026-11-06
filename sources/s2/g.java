@@ -7,9 +7,9 @@ import h9.t1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.rv0;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
@@ -48,7 +48,7 @@ public final class g {
         this.k = j14;
         this.l = i0.q(arrayList2);
         this.m = i0.q(arrayList3);
-        this.n = i0.w(new rv0(11), arrayList4);
+        this.n = i0.w(new un0(12), arrayList4);
         this.o = z10;
         this.p = str2;
         this.q = str3;

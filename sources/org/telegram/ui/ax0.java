@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ax0 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -112,7 +112,7 @@ public final class ax0 extends View {
                 this.f = true;
                 if (!this.e) {
                     this.e = true;
-                    post(new qu0(this, 5));
+                    post(new ru0(this, 5));
                 }
             }
             if (this.r) {
@@ -120,20 +120,20 @@ public final class ax0 extends View {
                 this.h = Utilities.i(this.h + (Utilities.k(currentTimeMillis - this.n, 20L, 0L) / 4200.0f), 1.0f, 0.0f);
                 this.n = currentTimeMillis;
                 ProfileActivity profileActivity = this.a;
-                pu0 pu0Var = profileActivity.a;
+                qu0 qu0Var = profileActivity.a;
                 int i10 = profileActivity.T2;
                 PointF pointF = this.d;
                 float f10 = 2.0f;
                 if (i10 >= 0) {
                     int i11 = 0;
                     while (true) {
-                        if (i11 >= pu0Var.getChildCount()) {
+                        if (i11 >= qu0Var.getChildCount()) {
                             break;
                         }
-                        View childAt = pu0Var.getChildAt(i11);
+                        View childAt = qu0Var.getChildAt(i11);
                         if (i10 == RecyclerView.R(childAt) && (childAt instanceof org.telegram.ui.Cells.x8)) {
                             xh.l lVar = ((org.telegram.ui.Cells.x8) childAt).a;
-                            pointF.set(lVar.getX() + childAt.getX() + pu0Var.getX() + org.telegram.messenger.g0.L(12.0f), (lVar.getMeasuredHeight() / 2.0f) + lVar.getY() + childAt.getY() + pu0Var.getY());
+                            pointF.set(lVar.getX() + childAt.getX() + qu0Var.getX() + org.telegram.messenger.g0.L(12.0f), (lVar.getMeasuredHeight() / 2.0f) + lVar.getY() + childAt.getY() + qu0Var.getY());
                             break;
                         }
                         i11++;

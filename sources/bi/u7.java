@@ -30,9 +30,9 @@ import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.sz;
@@ -54,7 +54,7 @@ import org.telegram.ui.qf;
 import org.telegram.ui.so;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -320,7 +320,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     qs.f(i17).b(e6Var, qs.Z1);
                     Iterator it2 = e6Var.b.entrySet().iterator();
                     while (it2.hasNext()) {
-                        org.telegram.messenger.w7.G(i17).W(org.telegram.messenger.hc.b(((org.telegram.ui.ActionBar.d6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
+                        org.telegram.messenger.w7.G(i17).V(org.telegram.messenger.hc.b(((org.telegram.ui.ActionBar.d6) ((Map.Entry) it2.next()).getValue()).a.document), "wallpaper", null, 0, 1);
                     }
                     return;
                 }
@@ -430,7 +430,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 return;
             case 24:
                 ze0 ze0Var = (ze0) obj2;
-                k41 k41Var = ze0Var.c;
+                q41 q41Var = ze0Var.c;
                 ArrayList arrayList12 = (ArrayList) obj;
                 if (z9) {
                     arrayList12 = ze0Var.e;
@@ -438,9 +438,9 @@ public final /* synthetic */ class u7 implements Runnable {
                 if (arrayList12.isEmpty()) {
                     return;
                 }
-                if (k41Var.canScrollVertically(1)) {
-                    for (int i18 = 0; i18 < k41Var.getChildCount(); i18++) {
-                        if (!(k41Var.getChildAt(i18) instanceof lz)) {
+                if (q41Var.canScrollVertically(1)) {
+                    for (int i18 = 0; i18 < q41Var.getChildCount(); i18++) {
+                        if (!(q41Var.getChildAt(i18) instanceof lz)) {
                         }
                     }
                     return;

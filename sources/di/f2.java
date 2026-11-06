@@ -11,11 +11,11 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.g51;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -23,7 +23,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.k41;
 import org.telegram.ui.l41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 break;
             case 3:
                 k60 k60Var = (k60) obj2;
-                ((g51) obj).run();
+                ((l51) obj).run();
                 if (k60Var.J) {
                     k60Var.u();
                     break;
@@ -118,7 +118,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 RectF rectF = ProfileActivity.S6;
                 org.telegram.ui.ActionBar.g1 b10 = org.telegram.ui.Components.d9.b(profileActivity, imageView, profileActivity.a(), profileActivity.f1, profileActivity.z0);
                 if (b10 != null) {
-                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.vt0
+                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.wt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i11;
@@ -150,7 +150,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 RectF rectF2 = ProfileActivity.S6;
                 org.telegram.ui.ActionBar.g1 b11 = org.telegram.ui.Components.d9.b(profileActivity2, view2, profileActivity2.a(), profileActivity2.f1, profileActivity2.z0);
                 if (b11 != null) {
-                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.vt0
+                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.wt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i10;

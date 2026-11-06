@@ -9,27 +9,27 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hu0;
 import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class oc extends org.telegram.ui.Components.na implements ls {
     public final nc P1;
     public final FrameLayout Q1;
     public final TLRPC.User R1;
     public final wg.x0 S1;
-    public f41 T1;
+    public l41 T1;
     public boolean U1;
 
     public oc(Context context, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.User user, wg.x0 x0Var) {
@@ -126,13 +126,13 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
         frameLayout.addView(w70Var2, c8.ha.e(-2, -1, 17));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, frameLayout, f6Var);
         this.b.addView(new jz(getContext()), c8.ha.c(-1.0f, -1));
-        f41 f41Var = this.T1;
-        if (f41Var != null) {
-            f41Var.O(false);
+        l41 l41Var = this.T1;
+        if (l41Var != null) {
+            l41Var.O(false);
         }
     }
 
-    public static void d1(oc ocVar, r31 r31Var, long j3, Boolean bool, String str) {
+    public static void d1(oc ocVar, x31 x31Var, long j3, Boolean bool, String str) {
         wg.x0 x0Var;
         if (ocVar.getContext() == null) {
             return;
@@ -152,7 +152,7 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
                 org.telegram.ui.Components.hc.a0(T).Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, str)).j();
             }
         } else {
-            org.telegram.ui.Components.cc L = org.telegram.ui.Components.hc.a0(T).L(R.raw.stars_send, org.telegram.messenger.hd.M0(2131745101, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G((int) r31Var.B, "StarsGiftSentPopupInfo", t10.k(ocVar.R1))), org.telegram.messenger.hd.M0(2131743553, null), new k4(j3, i7));
+            org.telegram.ui.Components.cc L = org.telegram.ui.Components.hc.a0(T).L(R.raw.stars_send, org.telegram.messenger.hd.M0(2131745101, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G((int) x31Var.B, "StarsGiftSentPopupInfo", t10.k(ocVar.R1))), org.telegram.messenger.hd.M0(2131743553, null), new k4(j3, i7));
             L.j = 5000;
             L.k(true);
             if (r80Var != null) {
@@ -171,9 +171,9 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 9), this.I0);
-        this.T1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 9), this.I0);
+        this.T1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -187,9 +187,9 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        f41 f41Var;
-        if ((i7 == qs.w3 || i7 == qs.y3) && (f41Var = this.T1) != null) {
-            f41Var.O(true);
+        l41 l41Var;
+        if ((i7 == qs.w3 || i7 == qs.y3) && (l41Var = this.T1) != null) {
+            l41Var.O(true);
         }
     }
 

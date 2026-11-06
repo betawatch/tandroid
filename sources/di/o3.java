@@ -11,9 +11,9 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.yn;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class o3 implements View.OnClickListener {
                 HashSet hashSet = f10Var.J;
                 if (storyItem3 != null) {
                     d10 d10Var = new d10();
-                    String M0 = e21.M0();
+                    String M0 = k21.M0();
                     if (storyItem3.translatedText != null && TextUtils.equals(storyItem3.translatedLng, M0)) {
                         r3Var.run();
                     } else if (hashSet.contains(d10Var)) {

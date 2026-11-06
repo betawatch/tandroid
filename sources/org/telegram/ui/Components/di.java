@@ -51,7 +51,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class di extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.p2, te.b {
     public static final /* synthetic */ int E4 = 0;
@@ -4484,7 +4484,7 @@ public class di extends org.telegram.ui.ActionBar.v2 implements org.telegram.mes
         int L;
         int measuredWidth;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a2;
-        l71 l71Var = chatAttachAlertPhotoLayout.l0;
+        r71 r71Var = chatAttachAlertPhotoLayout.l0;
         bi.e5 e5Var = chatAttachAlertPhotoLayout.j0;
         TextView textView = chatAttachAlertPhotoLayout.p0;
         jl jlVar = chatAttachAlertPhotoLayout.r;
@@ -4508,20 +4508,20 @@ public class di extends org.telegram.ui.ActionBar.v2 implements org.telegram.mes
             e5Var.layout(org.telegram.messenger.k5.z(126.0f, i11, i15), 0, i11, i14 - i15);
             return true;
         }
-        if (view == l71Var) {
+        if (view == r71Var) {
             if (z9) {
                 if (jlVar.getVisibility() == 0) {
-                    l71Var.layout(0, org.telegram.messenger.k5.z(310.0f, i12, i15), i13, org.telegram.messenger.k5.z(260.0f, i12, i15));
+                    r71Var.layout(0, org.telegram.messenger.k5.z(310.0f, i12, i15), i13, org.telegram.messenger.k5.z(260.0f, i12, i15));
                     return true;
                 }
-                l71Var.layout(0, org.telegram.messenger.k5.z(176.0f, i12, i15), i13, org.telegram.messenger.k5.z(126.0f, i12, i15));
+                r71Var.layout(0, org.telegram.messenger.k5.z(176.0f, i12, i15), i13, org.telegram.messenger.k5.z(126.0f, i12, i15));
                 return true;
             }
             if (jlVar.getVisibility() == 0) {
-                l71Var.layout(org.telegram.messenger.k5.z(310.0f, i11, i15), 0, i11 - org.telegram.messenger.g0.L(260.0f), i14 - i15);
+                r71Var.layout(org.telegram.messenger.k5.z(310.0f, i11, i15), 0, i11 - org.telegram.messenger.g0.L(260.0f), i14 - i15);
                 return true;
             }
-            l71Var.layout(org.telegram.messenger.k5.z(176.0f, i11, i15), 0, i11 - org.telegram.messenger.g0.L(126.0f), i14 - i15);
+            r71Var.layout(org.telegram.messenger.k5.z(176.0f, i11, i15), 0, i11 - org.telegram.messenger.g0.L(126.0f), i14 - i15);
             return true;
         }
         if (view != textView) {
@@ -4600,13 +4600,13 @@ public class di extends org.telegram.ui.ActionBar.v2 implements org.telegram.mes
                 e5Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(126.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30));
                 return true;
             }
-            l71 l71Var = chatAttachAlertPhotoLayout.l0;
-            if (view == l71Var) {
+            r71 r71Var = chatAttachAlertPhotoLayout.l0;
+            if (view == r71Var) {
                 if (z9) {
-                    l71Var.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
+                    r71Var.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
                     return true;
                 }
-                l71Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30));
+                r71Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30));
                 return true;
             }
             if (view == jlVar) {

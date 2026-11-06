@@ -1,39 +1,34 @@
 package org.telegram.ui;
 
-import j$.util.function.Consumer$-CC;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.function.Consumer;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lu0 implements Consumer {
-    public final /* synthetic */ ProfileActivity a;
+public final /* synthetic */ class lu0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ lu0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ lu0(int i7, Runnable runnable) {
+        this.a = i7;
+        this.b = runnable;
     }
 
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        ProfileActivity profileActivity = this.a;
-        HashSet hashSet = profileActivity.h5;
-        ArrayList arrayList = new ArrayList((HashSet) obj);
-        int i7 = 0;
-        while (i7 < arrayList.size()) {
-            if (profileActivity.getMessagesController().q7.f(profileActivity.e1, ((Integer) arrayList.get(i7)).intValue()) == null) {
-                arrayList.remove(i7);
-                i7--;
-            }
-            i7++;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        Runnable runnable = this.b;
+        switch (i7) {
+            case 0:
+                RectF rectF = ProfileActivity.S6;
+                runnable.run();
+                break;
+            default:
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
-        hashSet.clear();
-        hashSet.addAll(arrayList);
-        profileActivity.F5(true);
-    }
-
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

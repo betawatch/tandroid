@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import java.util.HashMap;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yk implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class yk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f41 f41Var;
+        l41 l41Var;
         switch (this.a) {
             case 0:
                 qp qpVar = (qp) this.d;
@@ -57,8 +57,8 @@ public final /* synthetic */ class yk implements Runnable {
                 o1Var.h = j11;
                 o1Var.n = j12;
                 fi.w3 w3Var = o1Var.a;
-                if (w3Var != null && (f41Var = w3Var.f3) != null && w3Var.G) {
-                    f41Var.O(true);
+                if (w3Var != null && (l41Var = w3Var.f3) != null && w3Var.G) {
+                    l41Var.O(true);
                     break;
                 }
                 break;

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements ls {
     public static final boolean w = !TextUtils.isEmpty(g0.k1("ro.miui.ui.version.code"));
@@ -421,10 +421,10 @@ public class MusicPlayerService extends Service implements ls {
                 TLRPC.FileLocation fileLocation = z9 ? user.photo.photo_big : user.photo.photo_small;
                 if (fileLocation != null) {
                     w7.G(p10.s0);
-                    File K = w7.K(fileLocation, null, true, true);
-                    if (K.exists()) {
+                    File J = w7.J(fileLocation, null, true, true);
+                    if (J.exists()) {
                         float f10 = i7;
-                        return gc.K(K.getAbsolutePath(), null, f10, f10, false);
+                        return gc.K(J.getAbsolutePath(), null, f10, f10, false);
                     }
                     if (z9) {
                         if (z10) {
@@ -440,10 +440,10 @@ public class MusicPlayerService extends Service implements ls {
                 TLRPC.FileLocation fileLocation2 = z9 ? chat.photo.photo_big : chat.photo.photo_small;
                 if (fileLocation2 != null) {
                     w7.G(p10.s0);
-                    File K2 = w7.K(fileLocation2, null, true, true);
-                    if (K2.exists()) {
+                    File J2 = w7.J(fileLocation2, null, true, true);
+                    if (J2.exists()) {
                         float f11 = i7;
-                        return gc.K(K2.getAbsolutePath(), null, f11, f11, false);
+                        return gc.K(J2.getAbsolutePath(), null, f11, f11, false);
                     }
                     if (z9) {
                         if (z10) {

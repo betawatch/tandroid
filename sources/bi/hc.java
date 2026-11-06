@@ -6,13 +6,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.v10;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class hc extends f41 {
+public final class hc extends l41 {
     public final /* synthetic */ int P;
     public final /* synthetic */ Object Q;
 
@@ -23,7 +23,7 @@ public final class hc extends f41 {
         this.Q = callback;
     }
 
-    @Override // org.telegram.ui.Components.f41, v4.g0
+    @Override // org.telegram.ui.Components.l41, v4.g0
     public void t(v4.d1 d1Var, int i7) {
         di.n0 n0Var;
         di.s0 s0Var;
@@ -46,7 +46,7 @@ public final class hc extends f41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.f41, v4.g0
+    @Override // org.telegram.ui.Components.l41, v4.g0
     public v4.d1 x(ViewGroup viewGroup, int i7) {
         org.telegram.ui.ActionBar.f6 f6Var;
         org.telegram.ui.ActionBar.f6 f6Var2;
@@ -116,7 +116,7 @@ public final class hc extends f41 {
         return super.x(viewGroup, i7);
     }
 
-    @Override // org.telegram.ui.Components.f41, v4.g0
+    @Override // org.telegram.ui.Components.l41, v4.g0
     public void y(v4.d1 d1Var) {
         di.n0 n0Var;
         di.s0 s0Var;

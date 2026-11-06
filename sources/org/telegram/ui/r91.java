@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class r91 extends org.telegram.ui.Components.p61 implements xz {
+public final class r91 extends org.telegram.ui.Components.v61 implements xz {
     public final FrameLayout V;
     public final org.telegram.ui.Components.pj0 W;
     public final v4.b0 a0;
@@ -33,7 +33,7 @@ public final class r91 extends org.telegram.ui.Components.p61 implements xz {
     public final org.telegram.ui.Components.si0 q0;
     public boolean r0;
     public final bi.g5 s0;
-    public final vr0 t0;
+    public final wr0 t0;
     public final ArrayList u0;
     public final /* synthetic */ v91 v0;
 
@@ -47,7 +47,7 @@ public final class r91 extends org.telegram.ui.Components.p61 implements xz {
         this.u0 = new ArrayList();
         FrameLayout frameLayout = new FrameLayout(context);
         this.V = frameLayout;
-        this.t0 = new vr0(this, 6);
+        this.t0 = new wr0(this, 6);
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.W = pj0Var;
         p91 p91Var = new p91(this);

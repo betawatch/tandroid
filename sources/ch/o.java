@@ -48,19 +48,19 @@ import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class o extends f2 implements ls {
     public final Paint D;
-    public k41 E;
+    public q41 E;
     public final ArrayList F;
     public final ArrayList G;
     public final LinkedHashMap H;
@@ -162,9 +162,9 @@ public final class o extends f2 implements ls {
         this.simpleActionBar.setTitle(hd.M0(2131746386, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 1));
-        k41 k41Var = new k41(this, new ai.e(this, 13), null, null);
-        this.E = k41Var;
-        k41Var.setSections(true);
+        q41 q41Var = new q41(this, new ai.e(this, 13), null, null);
+        this.E = q41Var;
+        q41Var.setSections(true);
         this.E.setSectionsDrawBackground(true);
         x5 x5Var = new x5(this, context);
         x5Var.setFocusableInTouchMode(true);
@@ -912,9 +912,9 @@ public final class o extends f2 implements ls {
         }
         te.a aVar = this.Q;
         int W1 = org.telegram.messenger.g0.W1(aVar != null ? aVar.e : 0.0f, org.telegram.messenger.g0.L(72.0f), org.telegram.messenger.g0.L(12.0f) + Math.max(0, this.c.getMeasuredHeight() - this.mSystemInsets.d));
-        k41 k41Var = this.E;
+        q41 q41Var = this.E;
         i0.b bVar = this.mSystemInsets;
-        oi.a.e(k41Var, bVar.b, bVar.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), W1);
+        oi.a.e(q41Var, bVar.b, bVar.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), W1);
     }
 
     @Override // org.telegram.ui.ActionBar.f2

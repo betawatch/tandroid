@@ -7,7 +7,7 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public static void a(TLRPC.Photo photo, TLRPC.User user, boolean z9) {
@@ -40,9 +40,9 @@ public abstract class n0 {
         TLRPC.PhotoSize w13 = w7.w(photo2.sizes, 1000, false, null, false);
         if (w12 != null && w10 != null) {
             w7.G(i7);
-            File K = w7.K(w12, null, true, true);
+            File J = w7.J(w12, null, true, true);
             w7.G(i7);
-            w7.K(w10, null, true, true).renameTo(K);
+            w7.J(w10, null, true, true).renameTo(J);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(w10.location.volume_id);
             sb2.append("_");
@@ -56,9 +56,9 @@ public abstract class n0 {
             return;
         }
         w7.G(i7);
-        File K2 = w7.K(w13, null, true, true);
+        File J2 = w7.J(w13, null, true, true);
         w7.G(i7);
-        w7.K(w11, null, true, true).renameTo(K2);
+        w7.J(w11, null, true, true).renameTo(J2);
         StringBuilder sb4 = new StringBuilder();
         sb4.append(w11.location.volume_id);
         sb4.append("_");

@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.recorder.StoryUploadingService;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class x6 implements ls {
     public long D;
@@ -630,6 +630,6 @@ public final class x6 implements ls {
             j20 j20Var = this.F;
             r6 = Math.max(1, (int) (j20Var != null ? j20Var.q : 0L));
         }
-        G.h0(str, false, z9, r6, e7Var.K ? 33554432 : 16777216, true);
+        G.g0(str, false, z9, r6, e7Var.K ? 33554432 : 16777216, true);
     }
 }

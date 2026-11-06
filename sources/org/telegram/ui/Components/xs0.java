@@ -64,7 +64,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.ls, org.telegram.ui.Cells.p2, jj0 {
     public static final int[] s2 = {0, 1, 2, 4};
@@ -3812,7 +3812,7 @@ public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionB
                         } else {
                             org.telegram.messenger.ij message = h7Var.getMessage();
                             message.P = true;
-                            f2Var.getFileLoader().X(F0, message, 0, 0);
+                            f2Var.getFileLoader().W(F0, message, 0, 0);
                             h7Var.f(true);
                         }
                     }
@@ -3997,7 +3997,7 @@ public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionB
                     boolean I0 = I0(getClosestTab());
                     k60 I = k60.I(f2Var, view);
                     k60 J = I.J();
-                    J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new org.telegram.ui.fq0(I, 27), false);
+                    J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new org.telegram.ui.gq0(I, 27), false);
                     J.k();
                     k60.f(J, getStoriesController().B(j3, true), hashSet, true, new ng(this, storyItem2, I, 19), new di.s2(this, hashSet, storyItem2, I, 10));
                     I.c(R.drawable.menu_album_add, org.telegram.messenger.hd.M0(2131744806, null), new hi.h2(I, J, 9), false);
@@ -4564,7 +4564,7 @@ public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionB
                 wr0Var.b0(R.drawable.msg_select, new so0(this, 6), org.telegram.messenger.hd.M0(sp0Var2.d() ? 2131746687 : 2131746688, null), false, true);
             }
             if (!TextUtils.isEmpty(sp0Var2.getCurrentLang())) {
-                wr0Var.b0(R.drawable.msg_delete, new so0(this, 7), org.telegram.messenger.hd.a0(null, null, 2131746690, e21.O0(sp0Var2.getCurrentLang(), null, null)), true, true);
+                wr0Var.b0(R.drawable.msg_delete, new so0(this, 7), org.telegram.messenger.hd.a0(null, null, 2131746690, k21.O0(sp0Var2.getCurrentLang(), null, null)), true, true);
                 return true;
             }
         } else {
@@ -5805,8 +5805,8 @@ public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionB
         yp0 yp0Var = this.b0;
         if (yp0Var != null) {
             if (I0(closestTab) || closestTab == 8) {
-                o61 o61Var = yp0Var.b;
-                i7 = o61Var.b0.get(o61Var.F + (z9 ? 1 : -1), -1);
+                u61 u61Var = yp0Var.b;
+                i7 = u61Var.b0.get(u61Var.F + (z9 ? 1 : -1), -1);
             } else if (I0(i10) || i10 == 8) {
                 i7 = yp0Var.getCurrentAlbumId();
             }
@@ -6290,11 +6290,11 @@ public abstract class xs0 extends FrameLayout implements org.telegram.ui.ActionB
         }
         yp0 yp0Var = this.b0;
         if (yp0Var != null) {
-            o61 o61Var = yp0Var.b;
+            u61 u61Var = yp0Var.b;
             if (I0(i7)) {
-                o61Var.f(f10, u1(i7));
+                u61Var.f(f10, u1(i7));
             } else if (i7 == 8) {
-                o61Var.f(f10, 0);
+                u61Var.f(f10, 0);
             }
         }
     }

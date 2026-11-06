@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class by0 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class by0 implements Runnable {
                 break;
             case 5:
                 ((SecretMediaViewer) obj2).K = false;
-                ((vq0) obj).a.O0(false, true);
+                ((wq0) obj).a.O0(false, true);
                 break;
             case 6:
                 ((SecretMediaViewer) ((j2.n) obj2).c).i((File) obj);

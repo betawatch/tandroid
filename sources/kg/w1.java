@@ -20,16 +20,16 @@ import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w1 extends f2 implements ls {
-    public k41 a;
+    public q41 a;
     public LinearLayout b;
     public ai.f1 c;
     public boolean d;
@@ -38,8 +38,8 @@ public final class w1 extends f2 implements ls {
     public boolean h;
     public String n;
 
-    public static void Z(w1 w1Var, r31 r31Var, View view) {
-        if (r31Var.d == -1) {
+    public static void Z(w1 w1Var, x31 x31Var, View view) {
+        if (x31Var.d == -1) {
             boolean z9 = w1Var.h;
             w1Var.h = !z9;
             if (!z9) {
@@ -57,14 +57,14 @@ public final class w1 extends f2 implements ls {
         if (view.isEnabled()) {
             x1 b10 = x1.b(w1Var.currentAccount);
             ArrayList arrayList = b10.d;
-            int i7 = r31Var.d;
+            int i7 = x31Var.d;
             if (i7 >= 0) {
                 b10.g();
                 if (i7 >= arrayList.size()) {
                     return;
                 }
                 b10.g();
-                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(r31Var.d);
+                TLRPC.TL_timezone tL_timezone = (TLRPC.TL_timezone) arrayList.get(x31Var.d);
                 w1Var.h = false;
                 String str2 = tL_timezone.id;
                 w1Var.n = str2;
@@ -80,24 +80,24 @@ public final class w1 extends f2 implements ls {
         }
     }
 
-    public static void a0(w1 w1Var, ArrayList arrayList, f41 f41Var) {
+    public static void a0(w1 w1Var, ArrayList arrayList, l41 l41Var) {
         boolean z9 = w1Var.d && !TextUtils.isEmpty(w1Var.e);
         x1 b10 = x1.b(w1Var.currentAccount);
         ArrayList arrayList2 = b10.d;
         if (!z9) {
-            f41Var.V();
+            l41Var.V();
             String M0 = hd.M0(2131744121, null);
-            r31 r31Var = new r31(9);
-            r31Var.d = -1;
-            r31Var.l = M0;
-            r31Var.L(w1Var.h);
-            arrayList.add(r31Var);
-            f41Var.U();
-            arrayList.add(r31.C(hd.a0(null, null, 2131744120, b10.d(w1Var.n, true))));
+            x31 x31Var = new x31(9);
+            x31Var.d = -1;
+            x31Var.l = M0;
+            x31Var.L(w1Var.h);
+            arrayList.add(x31Var);
+            l41Var.U();
+            arrayList.add(x31.C(hd.a0(null, null, 2131744120, b10.d(w1Var.n, true))));
         }
-        f41Var.V();
+        l41Var.V();
         if (!z9) {
-            arrayList.add(r31.u(hd.M0(2131744119, null)));
+            arrayList.add(x31.u(hd.M0(2131744119, null)));
         }
         boolean z10 = true;
         int i7 = 0;
@@ -119,21 +119,21 @@ public final class w1 extends f2 implements ls {
                 }
             }
             String f10 = x1.f(tL_timezone);
-            r31 r31Var2 = new r31(10);
-            r31Var2.d = i7;
-            r31Var2.l = e10;
-            r31Var2.n = f10;
-            r31Var2.L(TextUtils.equals(tL_timezone.id, w1Var.n));
-            r31Var2.g = !w1Var.h || z9;
-            arrayList.add(r31Var2);
+            x31 x31Var2 = new x31(10);
+            x31Var2.d = i7;
+            x31Var2.l = e10;
+            x31Var2.n = f10;
+            x31Var2.L(TextUtils.equals(tL_timezone.id, w1Var.n));
+            x31Var2.g = !w1Var.h || z9;
+            arrayList.add(x31Var2);
             z10 = false;
             i7++;
         }
-        f41Var.U();
+        l41Var.U();
         if (z10) {
-            arrayList.add(r31.m(w1Var.b));
+            arrayList.add(x31.m(w1Var.b));
         } else {
-            arrayList.add(r31.C(null));
+            arrayList.add(x31.C(null));
         }
     }
 
@@ -148,9 +148,9 @@ public final class w1 extends f2 implements ls {
         b10.B0 = new v1(this, 0);
         b10.setSearchFieldHint(hd.M0(2131745837, null));
         FrameLayout frameLayout = new FrameLayout(context);
-        k41 k41Var = new k41(this, new hi.u1(this, 13), new q4(this, 27), null);
-        this.a = k41Var;
-        k41Var.r1();
+        q41 q41Var = new q41(this, new hi.u1(this, 13), new q4(this, 27), null);
+        this.a = q41Var;
+        q41Var.r1();
         this.a.setSectionsDrawBackground(true);
         frameLayout.addView(this.a, ha.c(-1.0f, -1));
         this.a.setOnScrollListener(new ai.b(this, 22));
@@ -173,12 +173,12 @@ public final class w1 extends f2 implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        k41 k41Var;
-        f41 f41Var;
-        if (i7 != qs.r3 || (k41Var = this.a) == null || (f41Var = k41Var.f3) == null) {
+        q41 q41Var;
+        l41 l41Var;
+        if (i7 != qs.r3 || (q41Var = this.a) == null || (l41Var = q41Var.f3) == null) {
             return;
         }
-        f41Var.O(true);
+        l41Var.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.f2

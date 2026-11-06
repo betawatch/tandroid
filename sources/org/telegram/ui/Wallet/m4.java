@@ -4,9 +4,9 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements c20 {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class m4 implements c20 {
                 String lowerCase = ((String) obj).trim().toLowerCase(Locale.ROOT);
                 y5 y5Var2 = this.b;
                 y5Var2.k0 = lowerCase;
-                k41[] k41VarArr = y5Var2.r0;
-                k41 k41Var = k41VarArr[1];
-                if (k41Var != null) {
-                    y5.Y0(k41Var, true);
-                    k41VarArr[1].v0(0);
-                    k41VarArr[1].post(new f4(y5Var2, 6));
+                q41[] q41VarArr = y5Var2.r0;
+                q41 q41Var = q41VarArr[1];
+                if (q41Var != null) {
+                    y5.Y0(q41Var, true);
+                    q41VarArr[1].v0(0);
+                    q41VarArr[1].post(new f4(y5Var2, 6));
                     break;
                 }
                 break;

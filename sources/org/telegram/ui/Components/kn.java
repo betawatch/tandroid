@@ -32,12 +32,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.v91;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public final ImageView D;
     public final ImageView E;
-    public final zz0 F;
+    public final a01 F;
     public final org.telegram.ui.an G;
     public final ou0[] H;
     public final w8 I;
@@ -279,11 +279,11 @@ public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, 
             this.x = imageView2;
             imageView2.setScaleType(scaleType);
             imageView2.setVisibility(8);
-            zz0 zz0Var = new zz0(context, f6Var);
-            this.F = zz0Var;
-            imageView2.setImageDrawable(zz0Var);
-            zz0Var.k = true;
-            zz0Var.b.setColor(0);
+            a01 a01Var = new a01(context, f6Var);
+            this.F = a01Var;
+            imageView2.setImageDrawable(a01Var);
+            a01Var.k = true;
+            a01Var.b.setColor(0);
             addView(imageView2);
             this.T = z9;
             imageView2.setOnClickListener(new lk(2, this, f6Var));
@@ -344,7 +344,7 @@ public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, 
                     }
                 });
                 chat = this.G.e;
-                ou0VarArr2[0] = new p31(r72);
+                ou0VarArr2[0] = new v31(r72);
                 ou0VarArr2[r72] = new ap(r72);
                 ou0VarArr2[2] = new dn0(r72);
                 ou0VarArr2[3] = new ie0(f6Var, false);
@@ -362,7 +362,7 @@ public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, 
             }
             r72 = 1;
             chat = this.G.e;
-            ou0VarArr2[0] = new p31(r72);
+            ou0VarArr2[0] = new v31(r72);
             ou0VarArr2[r72] = new ap(r72);
             ou0VarArr2[2] = new dn0(r72);
             ou0VarArr2[3] = new ie0(f6Var, false);
@@ -816,8 +816,8 @@ public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, 
     }
 
     public final void g(int i7, boolean z9) {
-        zz0 zz0Var = this.F;
-        if (zz0Var == null) {
+        a01 a01Var = this.F;
+        if (a01Var == null) {
             return;
         }
         boolean z10 = this.m0;
@@ -827,7 +827,7 @@ public class kn extends FrameLayout implements te.b, org.telegram.messenger.ls, 
                 aVar.a(false, z9);
             } else {
                 aVar.a(true, z9);
-                zz0Var.b(i7);
+                a01Var.b(i7);
             }
         }
     }

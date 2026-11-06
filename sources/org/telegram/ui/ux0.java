@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ux0 extends org.telegram.ui.ActionBar.f2 {
     public float D;
@@ -237,7 +237,7 @@ public final class ux0 extends org.telegram.ui.ActionBar.f2 {
         if (q4Var != null && ((ActionBarLayout) q4Var).S0) {
             this.simpleActionBar.setOccupyStatusBar(false);
         }
-        this.simpleActionBar.setActionBarMenuOnItemClick(new mt0(this, 4));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, 4));
         this.r = this.simpleActionBar.n(org.telegram.messenger.hd.M0(2131745947, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;

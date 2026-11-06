@@ -18,11 +18,11 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.c40;
 import org.telegram.ui.kp;
 import org.telegram.ui.p90;
-import org.telegram.ui.pv0;
 import org.telegram.ui.qv0;
+import org.telegram.ui.rv0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -235,10 +235,10 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 return;
             default:
-                qv0 qv0Var = (qv0) obj4;
-                ProfileActivity profileActivity = qv0Var.b;
+                rv0 rv0Var = (rv0) obj4;
+                ProfileActivity profileActivity = rv0Var.b;
                 kp kpVar = new kp(profileActivity.d1, -j3, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z9, null);
-                kpVar.X0 = new pv0(qv0Var, (ww) obj);
+                kpVar.X0 = new qv0(rv0Var, (ww) obj);
                 profileActivity.presentFragment(kpVar);
                 return;
         }
@@ -289,8 +289,8 @@ public final /* synthetic */ class o implements Runnable {
         this.f = tL_error;
     }
 
-    public /* synthetic */ o(qv0 qv0Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z9, ww wwVar) {
-        this.e = qv0Var;
+    public /* synthetic */ o(rv0 rv0Var, long j3, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z9, ww wwVar) {
+        this.e = rv0Var;
         this.b = j3;
         this.f = tL_chatAdminRights;
         this.d = str;

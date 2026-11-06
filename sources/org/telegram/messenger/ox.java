@@ -13,9 +13,9 @@ import org.telegram.ui.Components.v80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ey0;
 import org.telegram.ui.m40;
-import org.telegram.ui.vs0;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ox implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class ox implements RequestDelegate {
                 g0.h3(new jg.c1((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.ww) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, str));
                 break;
             case 5:
-                g0.h3(new ee(tLObject, (org.telegram.ui.ActionBar.f2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (vs0) obj3, (com.google.android.gms.internal.clearcut.z0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
+                g0.h3(new ee(tLObject, (org.telegram.ui.ActionBar.f2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (ws0) obj3, (com.google.android.gms.internal.clearcut.z0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
             default:
                 Context context2 = (Context) obj5;

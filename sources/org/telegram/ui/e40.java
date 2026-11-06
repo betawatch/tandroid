@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class e40 {
     public static void a(org.telegram.ui.ActionBar.u1 u1Var, vf.b bVar, TLObject tLObject, final int i7, Context context, TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug, TLRPC.TL_error tL_error) {
@@ -74,7 +74,7 @@ public abstract class e40 {
         frameLayout.addView(org.telegram.messenger.camera.q.e(context, R.drawable.filled_calls_users), c8.ha.e(56, 56, 17));
         f10.addView(frameLayout, c8.ha.t(80, 80, 1, 2, 21, 2, 13));
         int i11 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.Components.w70 a10 = c8.na.a(context, 20.0f, i11, true, bVar2);
+        org.telegram.ui.Components.w70 a10 = c8.qa.a(context, 20.0f, i11, true, bVar2);
         a10.setText(org.telegram.messenger.hd.M0(2131749461, null));
         a10.setGravity(17);
         f10.addView(a10, c8.ha.t(-1, -2, 1, 2, 0, 2, 4));
@@ -98,7 +98,7 @@ public abstract class e40 {
             }
         }).collect(Collectors.toList());
         boolean isEmpty = list.isEmpty();
-        org.telegram.ui.Components.w70 a11 = c8.na.a(context, 14.0f, i11, false, bVar2);
+        org.telegram.ui.Components.w70 a11 = c8.qa.a(context, 14.0f, i11, false, bVar2);
         a11.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131749467, null)));
         a11.setGravity(17);
         a11.setMaxWidth(fi.m3.a(a11.getText(), a11.getPaint()));
@@ -117,7 +117,7 @@ public abstract class e40 {
             }
             z8Var.a(false);
             f10.addView(z8Var, c8.ha.k(2.0f, 11.0f, 5.0f, 0.0f, -1, 58));
-            org.telegram.ui.Components.w70 a12 = c8.na.a(context, 14.0f, org.telegram.ui.ActionBar.k6.G6, false, bVar2);
+            org.telegram.ui.Components.w70 a12 = c8.qa.a(context, 14.0f, org.telegram.ui.ActionBar.k6.G6, false, bVar2);
             a12.setGravity(17);
             if (list.size() == 1) {
                 a12.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749463, org.telegram.messenger.m5.s(i7, ((Long) list.get(0)).longValue()))));

@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ui extends v4.s0 {
     public final /* synthetic */ int a;
@@ -155,9 +155,9 @@ public final class ui extends v4.s0 {
                 dl0Var.a();
                 break;
             case 19:
-                w41 w41Var = (w41) obj;
-                bi.q1 q1Var = w41Var.k1;
-                if (i7 == 0 && w41Var.x1 && org.telegram.messenger.g0.L(13.0f) + w41Var.u1 + w41Var.s0 < org.telegram.messenger.g0.m * 2 && q1Var.canScrollVertically(1) && (xi0Var5 = (xi0) q1Var.K(0)) != null) {
+                b51 b51Var = (b51) obj;
+                bi.q1 q1Var = b51Var.k1;
+                if (i7 == 0 && b51Var.x1 && org.telegram.messenger.g0.L(13.0f) + b51Var.u1 + b51Var.s0 < org.telegram.messenger.g0.m * 2 && q1Var.canScrollVertically(1) && (xi0Var5 = (xi0) q1Var.K(0)) != null) {
                     View view4 = xi0Var5.a;
                     if (view4.getTop() > 0) {
                         q1Var.w0(0, view4.getTop(), null);
@@ -427,10 +427,10 @@ public final class ui extends v4.s0 {
                 yv0.I0((yv0) this.b);
                 break;
             case 19:
-                ((w41) this.b).Q0();
+                ((b51) this.b).Q0();
                 break;
             case 20:
-                ((o61) this.b).invalidate();
+                ((u61) this.b).invalidate();
                 break;
             case 21:
                 org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.b;

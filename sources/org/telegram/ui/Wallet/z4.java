@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class z4 extends h61 {
+public final class z4 extends m61 {
     public final /* synthetic */ ArrayList a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
@@ -30,14 +30,14 @@ public final class z4 extends h61 {
         this.f = a3VarArr;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void b(View view, int i7, int i10) {
         FrameLayout frameLayout = (FrameLayout) view;
         frameLayout.removeAllViews();
         frameLayout.addView(y5.t0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i7), null, null, null, null, this.c, this.f, true), c8.ha.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final View d(int i7) {
         FrameLayout frameLayout = new FrameLayout(this.b);
         int L = org.telegram.messenger.g0.L(20.0f);
@@ -52,7 +52,7 @@ public final class z4 extends h61 {
         return frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int e() {
         return this.a.size();
     }

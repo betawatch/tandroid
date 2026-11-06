@@ -9,12 +9,12 @@ import android.view.Menu;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f3 extends kt {
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 V;
@@ -52,15 +52,15 @@ public final class f3 extends kt {
         menu.removeItem(android.R.id.shareText);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, hd.M0(2131745263, null));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131753671, null));
-        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.M0(2131749086, null));
-        spannableStringBuilder2.setSpan(new o31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        spannableStringBuilder2.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(hd.M0(2131744438, null));
-        ty0 ty0Var = new ty0();
-        ty0Var.a = 8 | ty0Var.a;
-        spannableStringBuilder3.setSpan(new uy0(ty0Var, 0), 0, spannableStringBuilder3.length(), 33);
+        uy0 uy0Var = new uy0();
+        uy0Var.a = 8 | uy0Var.a;
+        spannableStringBuilder3.setSpan(new vy0(uy0Var, 0), 0, spannableStringBuilder3.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, hd.M0(2131746336, null));
     }

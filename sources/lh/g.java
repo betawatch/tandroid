@@ -22,10 +22,10 @@ import org.telegram.ui.af;
 import org.telegram.ui.an;
 import org.telegram.ui.e0;
 import org.telegram.ui.fe;
-import org.telegram.ui.ku0;
+import org.telegram.ui.lu0;
 import org.telegram.ui.ol;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     z0 z0Var = new z0(0, parentActivity, resourceProvider, true, true);
                     z0Var.setMinimumWidth(g0.L(200.0f));
                     z0Var.j(!z9 ? hd.M0(2131746371, null) : z9 ? hd.M0(2131746373, null) : hd.M0(2131746372, null), R.drawable.msg_seen, null);
-                    z0Var.setOnClickListener(new ku0(1, afVar));
+                    z0Var.setOnClickListener(new lu0(1, afVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
                     g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                     g1Var.e = true;

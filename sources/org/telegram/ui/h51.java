@@ -4,7 +4,7 @@ import android.view.View;
 import java.io.Serializable;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h51 implements org.telegram.messenger.a20, org.telegram.messenger.b20 {
     public final /* synthetic */ StickersActivity a;
@@ -14,10 +14,10 @@ public final /* synthetic */ class h51 implements org.telegram.messenger.a20, or
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(org.telegram.ui.Components.x31 x31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
         StickersActivity stickersActivity = this.a;
-        if (stickersActivity.x.isEmpty() && (r31Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+        if (stickersActivity.x.isEmpty() && (x31Var.G instanceof TLRPC.TL_messages_stickerSet)) {
             stickersActivity.s0((org.telegram.ui.Cells.g8) view);
             z9 = true;
         } else {
@@ -28,6 +28,6 @@ public final /* synthetic */ class h51 implements org.telegram.messenger.a20, or
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        StickersActivity.Z(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
+        StickersActivity.Z(this.a, (org.telegram.ui.Components.x31) obj, (View) obj2);
     }
 }

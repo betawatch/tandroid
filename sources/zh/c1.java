@@ -14,15 +14,15 @@ import bi.ud;
 import org.telegram.messenger.d20;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class c1 extends a5.h {
-    public ly0 c;
-    public ly0 d;
+    public my0 c;
+    public my0 d;
     public final w5 e;
     public final Path f;
     public final Path h;
@@ -81,15 +81,15 @@ public class c1 extends a5.h {
         path.close();
     }
 
-    public final void c(Canvas canvas, ly0 ly0Var, float f10) {
+    public final void c(Canvas canvas, my0 my0Var, float f10) {
         canvas.save();
         canvas.translate(f10, f10);
         float width = (getBounds().width() / 2.0f) + org.telegram.messenger.g0.L(this.x ? -7.0f : 6.0f);
         float height = (getBounds().height() / 2.0f) - org.telegram.messenger.g0.L(this.x ? 5.0f : 6.0f);
         canvas.rotate(this.x ? -45.0f : 45.0f, width, height);
-        float min = Math.min(1.0f, org.telegram.messenger.g0.L(40.0f) / ly0Var.c);
+        float min = Math.min(1.0f, org.telegram.messenger.g0.L(40.0f) / my0Var.c);
         canvas.scale(min, min, width, height);
-        ly0Var.c(width - (ly0Var.k() / 2.0f), height + org.telegram.messenger.g0.L(1.0f), 1.0f, this.y, canvas);
+        my0Var.c(width - (my0Var.k() / 2.0f), height + org.telegram.messenger.g0.L(1.0f), 1.0f, this.y, canvas);
         canvas.restore();
     }
 
@@ -157,20 +157,20 @@ public class c1 extends a5.h {
     public final void f(int i7, CharSequence charSequence, boolean z9) {
         this.d = null;
         this.e.e(true, 1.0f);
-        this.c = new ly0(charSequence, i7, z9 ? org.telegram.messenger.g0.o() : null);
+        this.c = new my0(charSequence, i7, z9 ? org.telegram.messenger.g0.o() : null);
         invalidateSelf();
     }
 
     public final void g(int i7, String str) {
-        ly0 ly0Var = this.c;
-        if (ly0Var == null) {
+        my0 my0Var = this.c;
+        if (my0Var == null) {
             f(i7, str, true);
         } else {
-            if (TextUtils.equals(ly0Var.j(), str)) {
+            if (TextUtils.equals(my0Var.j(), str)) {
                 return;
             }
             this.d = this.c;
-            this.c = new ly0(str, i7, org.telegram.messenger.g0.o());
+            this.c = new my0(str, i7, org.telegram.messenger.g0.o());
             this.e.e(true, 0.0f);
             invalidateSelf();
         }

@@ -3,10 +3,10 @@ package org.telegram.ui.Cells;
 import android.util.Property;
 import android.view.View;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.wz0;
-import org.telegram.ui.br0;
+import org.telegram.ui.Components.xz0;
+import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g1 extends Property {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final class g1 extends Property {
             case 2:
                 return Float.valueOf(((ii0) obj).w);
             case 3:
-                return Float.valueOf(((wz0) obj).h);
+                return Float.valueOf(((xz0) obj).h);
             default:
-                return Float.valueOf(((br0) obj).a);
+                return Float.valueOf(((cr0) obj).a);
         }
     }
 
@@ -46,12 +46,12 @@ public final class g1 extends Property {
                 ((ii0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             case 3:
-                wz0 wz0Var = (wz0) obj;
-                wz0Var.h = ((Float) obj2).floatValue();
-                wz0Var.invalidate();
+                xz0 xz0Var = (xz0) obj;
+                xz0Var.h = ((Float) obj2).floatValue();
+                xz0Var.invalidate();
                 break;
             default:
-                ((br0) obj).b(((Float) obj2).floatValue());
+                ((cr0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

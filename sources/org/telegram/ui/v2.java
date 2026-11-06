@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v2 extends FrameLayout implements org.telegram.messenger.x5, org.telegram.ui.Cells.h9 {
     public static final /* synthetic */ int V = 0;
@@ -130,7 +130,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
             if (z9) {
                 imageReceiver.r0(org.telegram.messenger.hc.b(this.O), null, org.telegram.messenger.hc.c(org.telegram.messenger.w7.w(this.O.thumbs, 40, false, null, false), this.O), "80_80_b", null, this.O.size, null, e4Var.E, 1);
             } else {
-                org.telegram.messenger.w7.G(i7).X(this.O, e4Var.E, 1, 1);
+                org.telegram.messenger.w7.G(i7).W(this.O, e4Var.E, 1, 1);
             }
             this.I = 1;
             radialProgress2.setIcon(getIconForCurrentState(), true, true);
@@ -244,7 +244,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         File I = org.telegram.messenger.w7.I(this.O);
         org.telegram.messenger.w7.G(i7);
         boolean z10 = true;
-        boolean z11 = I.exists() || org.telegram.messenger.w7.K(this.O, null, true, true).exists();
+        boolean z11 = I.exists() || org.telegram.messenger.w7.J(this.O, null, true, true).exists();
         boolean isEmpty = TextUtils.isEmpty(r10);
         RadialProgress2 radialProgress2 = this.r;
         if (isEmpty) {
@@ -264,7 +264,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
             w2 w2Var = this.M;
             float f10 = 0.0f;
             if (w2Var == null || w2Var.b == null) {
-                if (org.telegram.messenger.w7.G(i7).T(r10)) {
+                if (org.telegram.messenger.w7.G(i7).S(r10)) {
                     this.I = 1;
                     Float w10 = org.telegram.messenger.gc.D().w(r10);
                     if (w10 != null) {
@@ -523,8 +523,8 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                                                 org.telegram.messenger.w7.G(i22);
                                                 File I = org.telegram.messenger.w7.I(this.O);
                                                 org.telegram.messenger.w7.G(i22);
-                                                File K = org.telegram.messenger.w7.K(this.O, null, true, true);
-                                                if (this.R || I.exists() || K.exists()) {
+                                                File J = org.telegram.messenger.w7.J(this.O, null, true, true);
+                                                if (this.R || I.exists() || J.exists()) {
                                                     imageReceiver.N = null;
                                                     imageReceiver.u0(null, null, org.telegram.messenger.hc.b(this.O), "200_200_pframe", org.telegram.messenger.hc.c(w10, this.O), "80_80_b", null, this.O.size, null, e4Var2.E, 1);
                                                 } else {

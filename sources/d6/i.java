@@ -78,13 +78,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.co0;
 import org.telegram.ui.Components.et0;
 import org.telegram.ui.Components.hi0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.n00;
 import q4.q;
 import sg.v0;
 import tg.r1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i implements SuccessContinuation, h0, a0, androidx.activity.result.b, et0, ce.c, hi0, e0, c4.d, p, co0, n, og.n, v0, za, OnSuccessListener, ib.b {
     public static i c;
@@ -715,18 +715,18 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
             y5Var.m(j3);
             return;
         }
-        n51 n51Var = y5Var.e;
-        if (n51Var != null) {
-            n51Var.q0(j3, true);
+        t51 t51Var = y5Var.e;
+        if (t51Var != null) {
+            t51Var.q0(j3, true);
             return;
         }
         if (y5Var.j()) {
             y5Var.E.m(j3, true);
             return;
         }
-        n51 n51Var2 = y5Var.D;
-        if (n51Var2 != null) {
-            n51Var2.q0(j3, false);
+        t51 t51Var2 = y5Var.D;
+        if (t51Var2 != null) {
+            t51Var2.q0(j3, false);
         }
     }
 
@@ -911,8 +911,8 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         }
         e7Var.Z = f10;
         e7Var.j = true;
-        n51 n51Var = y5Var.e;
-        if (n51Var == null || n51Var.U() == -9223372036854775807L) {
+        t51 t51Var = y5Var.e;
+        if (t51Var == null || t51Var.U() == -9223372036854775807L) {
             return;
         }
         y5Var.m((long) (f10 * y5Var.e.U()));

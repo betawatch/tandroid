@@ -7,9 +7,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.kt0;
+import org.telegram.ui.lt0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class s4 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 g5 g5Var = (g5) this.b;
-                kt0 kt0Var = (kt0) this.c;
+                lt0 lt0Var = (lt0) this.c;
                 if (tL_error == null) {
                     g5Var.Z.clear();
                     g5Var.Y.clear();
@@ -40,10 +40,10 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                     g5Var.b = false;
                     g5Var.r = false;
                     g5Var.w = "";
-                    g0.h3(new b4(28, g5Var, kt0Var));
+                    g0.h3(new b4(28, g5Var, lt0Var));
                     break;
                 } else {
-                    g0.h3(kt0Var);
+                    g0.h3(lt0Var);
                     break;
                 }
             case 1:

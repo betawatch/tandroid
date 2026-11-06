@@ -17,14 +17,14 @@ import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.h11;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.l00;
 import org.telegram.ui.n30;
 import org.telegram.ui.w40;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b3 extends View {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final class b3 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 1:
-                b11 b11Var = (b11) this.d;
-                org.telegram.ui.Components.i6 i6Var = b11Var.e;
+                h11 h11Var = (h11) this.d;
+                org.telegram.ui.Components.i6 i6Var = h11Var.e;
                 float i7 = i6Var.i();
                 if (i7 > 0.0f) {
                     float T1 = org.telegram.messenger.g0.T1(0.6f, 1.0f, i7);
@@ -70,9 +70,9 @@ public final class b3 extends View {
                     float L = org.telegram.messenger.g0.L(8.33f);
                     float L2 = org.telegram.messenger.g0.L(8.33f);
                     org.telegram.ui.Components.b6 b6Var = (org.telegram.ui.Components.b6) this.b;
-                    b6Var.setColor(b6Var.b.a(org.telegram.ui.ActionBar.k6.w0(b11Var.I, b6Var.a), false));
-                    textColor = b11Var.getTextColor();
-                    b6Var.setColor(i0.a.f(b11Var.F, b6Var.getColor(), textColor));
+                    b6Var.setColor(b6Var.b.a(org.telegram.ui.ActionBar.k6.w0(h11Var.I, b6Var.a), false));
+                    textColor = h11Var.getTextColor();
+                    b6Var.setColor(i0.a.f(h11Var.F, b6Var.getColor(), textColor));
                     b6Var.setAlpha((int) (b6Var.getAlpha() * i7));
                     canvas.drawRoundRect(rectF, L, L2, b6Var);
                     i6Var.p(rectF);
@@ -291,7 +291,7 @@ public final class b3 extends View {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((b11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(16.66f), ((h11) this.d).e.d + org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -332,7 +332,7 @@ public final class b3 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return ((b11) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((h11) this.d).e == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -370,13 +370,13 @@ public final class b3 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(b11 b11Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public b3(h11 h11Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = 1;
-        this.d = b11Var;
+        this.d = h11Var;
         this.c = f6Var;
         this.b = new org.telegram.ui.Components.b6(this, f6Var);
-        b11Var.e.setCallback(this);
+        h11Var.e.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

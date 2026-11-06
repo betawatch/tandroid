@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jw0 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -804,7 +804,7 @@ public final class jw0 extends org.telegram.ui.Components.oj0 {
                         x8Var.setImageClickListener(null);
                     } else {
                         x8Var.b(d2, org.telegram.messenger.hd.L0(2131749679));
-                        x8Var.setImageClickListener(new yt0(profileActivity, 12));
+                        x8Var.setImageClickListener(new zt0(profileActivity, 12));
                     }
                 } else if (z9) {
                     Drawable d10 = f0.d.d(x8Var.getContext(), R.drawable.header_qr_24);
@@ -813,7 +813,7 @@ public final class jw0 extends org.telegram.ui.Components.oj0 {
                     d10.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
                     profileActivity.O6 = d10;
                     x8Var.b(d10, org.telegram.messenger.hd.L0(2131750471));
-                    x8Var.setImageClickListener(new yt0(profileActivity, i106));
+                    x8Var.setImageClickListener(new zt0(profileActivity, i106));
                 } else {
                     x8Var.setImage(null);
                     x8Var.setImageClickListener(null);
@@ -1513,7 +1513,7 @@ public final class jw0 extends org.telegram.ui.Components.oj0 {
                                     i119 = ((org.telegram.ui.ActionBar.f2) profileActivity2).currentAccount;
                                     long a10 = profileActivity2.a();
                                     f6Var = ((org.telegram.ui.ActionBar.f2) profileActivity2).resourceProvider;
-                                    org.telegram.ui.Components.dy0.b(parentActivity, i119, a10, a26, str21, z34, z35, z20, f6Var);
+                                    org.telegram.ui.Components.ey0.b(parentActivity, i119, a10, a26, str21, z34, z35, z20, f6Var);
                                 }
                             });
                             paVar.e(a26, i7 != profileActivity.u4 - 1);
@@ -1534,7 +1534,7 @@ public final class jw0 extends org.telegram.ui.Components.oj0 {
                             i119 = ((org.telegram.ui.ActionBar.f2) profileActivity2).currentAccount;
                             long a10 = profileActivity2.a();
                             f6Var = ((org.telegram.ui.ActionBar.f2) profileActivity2).resourceProvider;
-                            org.telegram.ui.Components.dy0.b(parentActivity, i119, a10, a26, str212, z342, z352, z20, f6Var);
+                            org.telegram.ui.Components.ey0.b(parentActivity, i119, a10, a26, str212, z342, z352, z20, f6Var);
                         }
                     });
                     paVar.e(a26, i7 != profileActivity.u4 - 1);

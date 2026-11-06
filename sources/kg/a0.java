@@ -15,13 +15,13 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
@@ -50,10 +50,10 @@ public final class a0 {
         this.c = f2Var.getResourceProvider();
     }
 
-    public final void a(ArrayList arrayList, f41 f41Var, boolean z9) {
+    public final void a(ArrayList arrayList, l41 l41Var, boolean z9) {
         String str;
         String str2;
-        f41Var.V();
+        l41Var.V();
         int d = d();
         str = "";
         if (!this.h) {
@@ -95,7 +95,7 @@ public final class a0 {
             if (TextUtils.isEmpty(str2)) {
                 str2 = hd.M0(2131752777, null);
             }
-            r31 f10 = r31.f(hd.M0(2131752778, null), str2, 101);
+            x31 f10 = x31.f(hd.M0(2131752778, null), str2, 101);
             f10.g = z9;
             arrayList.add(f10);
         }
@@ -139,11 +139,11 @@ public final class a0 {
             if (TextUtils.isEmpty(str)) {
                 str = hd.M0(2131752779, null);
             }
-            r31 f11 = r31.f(hd.M0(2131752780, null), str, qs.o1);
+            x31 f11 = x31.f(hd.M0(2131752780, null), str, qs.o1);
             f11.g = z9;
             arrayList.add(f11);
         }
-        f41Var.U();
+        l41Var.U();
     }
 
     public final TL_account.TL_inputBusinessBotRecipients b() {
@@ -294,8 +294,8 @@ public final class a0 {
         return false;
     }
 
-    public final boolean h(r31 r31Var) {
-        int i7 = r31Var.d;
+    public final boolean h(x31 x31Var) {
+        int i7 = x31Var.d;
         int i10 = 2;
         f2 f2Var = this.d;
         boolean z9 = false;
@@ -335,17 +335,17 @@ public final class a0 {
             runnable.run();
             return true;
         }
-        if (r31Var.a != 11) {
+        if (x31Var.a != 11) {
             return false;
         }
-        boolean z12 = r31Var.w;
-        String B1 = qp.s1(this.b).B1(r31Var.x, false);
+        boolean z12 = x31Var.w;
+        String B1 = qp.s1(this.b).B1(x31Var.x, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
         String M0 = hd.M0(!z12 ? 2131752686 : 2131752684, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         u1Var.T = hd.a0(null, null, !z12 ? 2131752687 : 2131752685, B1);
-        alertDialog$Builder.k(hd.M0(2131746320, null), new ab.j(this, z12, r31Var, i10));
+        alertDialog$Builder.k(hd.M0(2131746320, null), new ab.j(this, z12, x31Var, i10));
         alertDialog$Builder.h(hd.M0(2131752589, null), null);
         if (f2Var != null) {
             f2Var.showDialog(u1Var);
@@ -430,16 +430,16 @@ public final class a0 {
         arrayList2.addAll(this.l.exclude_users);
     }
 
-    public final boolean k(k41 k41Var) {
+    public final boolean k(q41 q41Var) {
         if (this.h || !this.j.isEmpty() || this.f != 0) {
             return true;
         }
         p2.D.a();
-        View B1 = k41Var.B1(101);
+        View B1 = q41Var.B1(101);
         int i7 = -this.m;
         this.m = i7;
         org.telegram.messenger.g0.G3(i7, B1, null);
-        k41Var.y0(k41Var.A1(101));
+        q41Var.y0(q41Var.A1(101));
         return false;
     }
 

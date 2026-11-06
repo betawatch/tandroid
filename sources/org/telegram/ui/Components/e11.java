@@ -1,48 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class e11 extends q31 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class e11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h11 b;
 
-    static {
-        q31.h(new e11());
+    public /* synthetic */ e11(h11 h11Var, int i7) {
+        this.a = i7;
+        this.b = h11Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        f11 f11Var = (f11) view;
-        boolean z10 = false;
-        if (r31Var.r) {
-            f11Var.e();
-        } else {
-            Object obj = r31Var.G;
-            if (obj == null) {
-                if (r31Var.B == -2) {
-                    f11Var.b(r31Var.q, r31Var.e);
-                } else {
-                    f11Var.c((r31Var.y & 1) != 0, r31Var.q, r31Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (r31Var.I) {
-                    f11Var.a(r31Var.x, (TLRPC.TL_forumTopic) obj, r31Var.e);
-                } else {
-                    f11Var.f((TLRPC.TL_forumTopic) obj, r31Var.e);
-                }
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                di.b3 b3Var = this.b.f;
+                b3Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                b3Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                b3Var.invalidate();
+                break;
+            default:
+                h11 h11Var = this.b;
+                h11Var.getClass();
+                h11Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h11Var.h();
+                break;
         }
-        if (k41Var != null && k41Var.j3 && f11Var.E) {
-            z10 = true;
-        }
-        f11Var.setReorder(z10);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new f11(i7, context, f6Var);
     }
 }

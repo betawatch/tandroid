@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class jg0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public boolean D;
@@ -323,7 +323,7 @@ public class jg0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         this.Y = true;
                         this.X = org.telegram.messenger.ij.M4(ijVar.k);
                         String r10 = org.telegram.messenger.w7.r(null, w11);
-                        if (ijVar.x0 || org.telegram.messenger.z5.q(this.currentAccount).d(ijVar) || org.telegram.messenger.w7.G(this.currentAccount).T(r10)) {
+                        if (ijVar.x0 || org.telegram.messenger.z5.q(this.currentAccount).d(ijVar) || org.telegram.messenger.w7.G(this.currentAccount).S(r10)) {
                             int i13 = (ijVar.D != 1 || w11 == null) ? 0 : w11.size;
                             ImageReceiver imageReceiver2 = this.W;
                             org.telegram.messenger.hc f10 = org.telegram.messenger.hc.f(w11, ijVar.l0);

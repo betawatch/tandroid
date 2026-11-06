@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class qq extends org.telegram.ui.Components.h41 {
+public final class qq extends org.telegram.ui.Components.n41 {
     public final db1 e;
     public final long f;
     public final bb1 h;
@@ -30,18 +30,18 @@ public final class qq extends org.telegram.ui.Components.h41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, org.telegram.ui.Components.f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, org.telegram.ui.Components.l41 l41Var) {
         boolean isEmpty = TextUtils.isEmpty(this.n);
         long j3 = this.f;
         if (isEmpty && j3 != 0) {
-            org.telegram.ui.Components.r31 c10 = org.telegram.ui.Components.r31.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.hd.M0(2131751236, null));
+            org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.hd.M0(2131751236, null));
             c10.r = true;
             arrayList.add(c10);
-            arrayList.add(org.telegram.ui.Components.r31.C(null));
+            arrayList.add(org.telegram.ui.Components.x31.C(null));
         }
         if (TextUtils.isEmpty(this.n)) {
-            arrayList.add(org.telegram.ui.Components.r31.u(org.telegram.messenger.hd.M0(2131751235, null)));
+            arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.hd.M0(2131751235, null)));
         }
         ArrayList arrayList2 = this.e.e;
         int size = arrayList2.size();
@@ -62,33 +62,33 @@ public final class qq extends org.telegram.ui.Components.h41 {
                     }
                 }
                 long j10 = chat.id;
-                org.telegram.ui.Components.r31 r31Var = new org.telegram.ui.Components.r31(11);
-                r31Var.w = true;
-                r31Var.x = -j10;
-                r31Var.L(j3 == j10);
-                arrayList.add(r31Var);
+                org.telegram.ui.Components.x31 x31Var = new org.telegram.ui.Components.x31(11);
+                x31Var.w = true;
+                x31Var.x = -j10;
+                x31Var.L(j3 == j10);
+                arrayList.add(x31Var);
             }
         }
         if (TextUtils.isEmpty(this.n) && i7 == 0) {
-            org.telegram.ui.Components.r31 c11 = org.telegram.ui.Components.r31.c(2, R.drawable.msg_channel_create, org.telegram.messenger.hd.M0(2131751233, null));
+            org.telegram.ui.Components.x31 c11 = org.telegram.ui.Components.x31.c(2, R.drawable.msg_channel_create, org.telegram.messenger.hd.M0(2131751233, null));
             c11.q = true;
             arrayList.add(c11);
         }
-        arrayList.add(org.telegram.ui.Components.r31.C(null));
+        arrayList.add(org.telegram.ui.Components.x31.C(null));
         org.telegram.ui.ActionBar.f5 f5Var = this.r;
         if (f5Var != null) {
             f5Var.setVisibility(i7 > 5 ? 0 : 8);
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return org.telegram.messenger.hd.M0(2131751232, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(org.telegram.ui.Components.r31 r31Var, View view) {
-        int i7 = r31Var.d;
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(org.telegram.ui.Components.x31 x31Var, View view) {
+        int i7 = x31Var.d;
         bb1 bb1Var = this.h;
         if (i7 == 1) {
             bb1Var.a(null);
@@ -96,9 +96,9 @@ public final class qq extends org.telegram.ui.Components.h41 {
             return;
         }
         if (i7 != 2) {
-            if (r31Var.a == 12) {
+            if (x31Var.a == 12) {
                 finishFragment();
-                bb1Var.a(getMessagesController().M0(Long.valueOf(-r31Var.x)));
+                bb1Var.a(getMessagesController().M0(Long.valueOf(-x31Var.x)));
                 return;
             }
             return;
@@ -110,12 +110,12 @@ public final class qq extends org.telegram.ui.Components.h41 {
         e12.edit().putBoolean("channel_intro", true).apply();
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(org.telegram.ui.Components.r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(org.telegram.ui.Components.x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.e5 o4 = this.simpleActionBar.o();
         getResourceProvider();

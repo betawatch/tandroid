@@ -7,7 +7,7 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
-import c8.nc;
+import c8.oc;
 import e2.s0;
 import h2.m0;
 import h9.f0;
@@ -19,7 +19,7 @@ import java.util.List;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -407,7 +407,7 @@ public final class o {
         }
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 29) {
-            int b10 = (i11 < 29 || ((bool = nc.a) != null && bool.booleanValue())) ? 0 : ab.x.b(videoCapabilities, i7, i10, d);
+            int b10 = (i11 < 29 || ((bool = oc.a) != null && bool.booleanValue())) ? 0 : ab.x.b(videoCapabilities, i7, i10, d);
             if (b10 != 2) {
                 if (b10 == 1) {
                     StringBuilder o4 = jg.g.o("sizeAndRate.cover, ", i7, "x", i10, "@");

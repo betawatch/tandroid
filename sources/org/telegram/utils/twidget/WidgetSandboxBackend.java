@@ -27,11 +27,11 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.py;
 import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements x, c {
     private static final long MEMORY_BUDGET = 33554432;
@@ -836,7 +836,7 @@ final class WidgetSandboxBackend implements x, c {
                     h0 h0Var = this.owner;
                     System.nanoTime();
                     h0Var.getClass();
-                    this.owner.a(gVar, layers, nanoTime, i13, i14, f11, (System.nanoTime() - r2) / 1000000.0f, i11, i12, jSONArray.length(), this.text);
+                    this.owner.b(gVar, layers, nanoTime, i13, i14, f11, (System.nanoTime() - r2) / 1000000.0f, i11, i12, jSONArray.length(), this.text);
                 } catch (Throwable th2) {
                     gVar.e();
                     throw th2;
@@ -880,7 +880,7 @@ final class WidgetSandboxBackend implements x, c {
                 @Override // java.lang.Runnable
                 public final void run() {
                     u uVar;
-                    j71 j71Var;
+                    p71 p71Var;
                     u uVar2;
                     switch (i10) {
                         case 0:
@@ -905,9 +905,9 @@ final class WidgetSandboxBackend implements x, c {
                         case 1:
                             h0 h0Var3 = h0Var;
                             String str2 = text;
-                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
-                                if (j71Var.F || (j71Var.w && j71Var.E)) {
-                                    j71Var.a.f(str2);
+                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (p71Var = uVar.h) != null) {
+                                if (p71Var.F || (p71Var.w && p71Var.E)) {
+                                    p71Var.a.f(str2);
                                     break;
                                 }
                             }
@@ -946,7 +946,7 @@ final class WidgetSandboxBackend implements x, c {
                 @Override // java.lang.Runnable
                 public final void run() {
                     u uVar;
-                    j71 j71Var;
+                    p71 p71Var;
                     u uVar2;
                     switch (i11) {
                         case 0:
@@ -971,9 +971,9 @@ final class WidgetSandboxBackend implements x, c {
                         case 1:
                             h0 h0Var3 = h0Var;
                             String str2 = text;
-                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
-                                if (j71Var.F || (j71Var.w && j71Var.E)) {
-                                    j71Var.a.f(str2);
+                            if (!h0Var3.u && (uVar = h0Var3.J) != null && (p71Var = uVar.h) != null) {
+                                if (p71Var.F || (p71Var.w && p71Var.E)) {
+                                    p71Var.a.f(str2);
                                     break;
                                 }
                             }
@@ -1040,7 +1040,7 @@ final class WidgetSandboxBackend implements x, c {
                         @Override // java.lang.Runnable
                         public final void run() {
                             u uVar;
-                            j71 j71Var;
+                            p71 p71Var;
                             u uVar2;
                             switch (i12) {
                                 case 0:
@@ -1065,9 +1065,9 @@ final class WidgetSandboxBackend implements x, c {
                                 case 1:
                                     h0 h0Var3 = h0Var;
                                     String str2 = text;
-                                    if (!h0Var3.u && (uVar = h0Var3.J) != null && (j71Var = uVar.h) != null) {
-                                        if (j71Var.F || (j71Var.w && j71Var.E)) {
-                                            j71Var.a.f(str2);
+                                    if (!h0Var3.u && (uVar = h0Var3.J) != null && (p71Var = uVar.h) != null) {
+                                        if (p71Var.F || (p71Var.w && p71Var.E)) {
+                                            p71Var.a.f(str2);
                                             break;
                                         }
                                     }

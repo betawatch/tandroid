@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.SparseArray;
-import c8.bc;
+import c8.cc;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.n;
 import p5.e;
 import pa.d;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b implements e {
     public final n a;
@@ -175,7 +175,7 @@ public final class b implements e {
             try {
                 i10 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e10) {
-                bc.b("CctTransportBackend", "Unable to find version code for package", e10);
+                cc.b("CctTransportBackend", "Unable to find version code for package", e10);
             }
             c10.a("application_build", Integer.toString(i10));
             return c10.b();

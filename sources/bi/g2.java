@@ -16,12 +16,12 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.jv0;
 import org.telegram.ui.bh;
 import org.telegram.ui.bk0;
-import org.telegram.ui.oo0;
 import org.telegram.ui.oy0;
+import org.telegram.ui.po0;
 import org.telegram.ui.sj0;
 import org.telegram.ui.so;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -112,11 +112,11 @@ public final /* synthetic */ class g2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new u0(obj4, tL_error, obj3, obj2, (TLObject) obj, 27));
                 break;
             case 12:
-                oo0 oo0Var = (oo0) obj4;
+                po0 po0Var = (po0) obj4;
                 TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers2 = (TLRPC.TL_messages_getAttachedStickers) obj2;
                 org.telegram.ui.ld ldVar = (org.telegram.ui.ld) obj;
                 if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && obj3 != null) {
-                    org.telegram.messenger.r8.n(oo0Var.a).u(new Object[]{tL_messages_getAttachedStickers2, ldVar}, obj3);
+                    org.telegram.messenger.r8.n(po0Var.a).u(new Object[]{tL_messages_getAttachedStickers2, ldVar}, obj3);
                     break;
                 } else {
                     ldVar.run(tLObject, tL_error);

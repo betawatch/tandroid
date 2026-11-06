@@ -46,7 +46,7 @@ import org.telegram.ui.pk;
 import zh.a2;
 import zh.z0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -210,7 +210,7 @@ public final /* synthetic */ class q implements Runnable {
             case 6:
                 yf.c cVar3 = (yf.c) this.b;
                 TLRPC.Document document4 = (TLRPC.Document) this.c;
-                w7.G(cVar3.c).X(document4, document4, 0, 0);
+                w7.G(cVar3.c).W(document4, document4, 0, 0);
                 return;
             case 7:
                 yf.d dVar = (yf.d) this.b;

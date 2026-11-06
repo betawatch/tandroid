@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p90 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -1023,7 +1023,7 @@ public final class p90 {
                                 return true;
                             }
                             if (!TextUtils.isEmpty(str9) && "blocked".equalsIgnoreCase(str4)) {
-                                t(new rt0());
+                                t(new st0());
                                 return true;
                             }
                             if (!TextUtils.isEmpty(str9) && "active-websites".equalsIgnoreCase(str4)) {

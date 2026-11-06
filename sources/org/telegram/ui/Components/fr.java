@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0, org.telegram.messenger.tr {
     public final /* synthetic */ int a;
@@ -150,7 +150,7 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
     public void f(float f10, float f11, int i7, View view) {
         boolean z9;
         lr lrVar = this.b;
-        r31 G = lrVar.P1.G(i7 - 1);
+        x31 G = lrVar.P1.G(i7 - 1);
         if (G == null) {
             return;
         }
@@ -322,7 +322,7 @@ public final /* synthetic */ class fr implements org.telegram.messenger.f20, cj0
                                 if (i14 >= lrVar.P1.D.size()) {
                                     break;
                                 }
-                                r31 G2 = lrVar.P1.G(i14);
+                                x31 G2 = lrVar.P1.G(i14);
                                 if (G2.a == 39 && G2.d == 0) {
                                     v4.d1 K = lrVar.k1.K(i14 + 1);
                                     if (K != null) {

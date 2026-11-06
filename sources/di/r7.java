@@ -32,11 +32,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class r7 {
     public static e10 b;
@@ -46,7 +46,7 @@ public abstract class r7 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static ly0 i;
+    public static my0 i;
     public static int j;
     public static BitmapDrawable m;
     public static final e10[] a = new e10[2];
@@ -716,7 +716,7 @@ public abstract class r7 {
     public static void k(float f10, float f11, Canvas canvas, RectF rectF, boolean z9) {
         Canvas canvas2;
         if (i == null) {
-            i = new ly0(hd.M0(2131748824, null), 9.66f, org.telegram.messenger.g0.o());
+            i = new my0(hd.M0(2131748824, null), 9.66f, org.telegram.messenger.g0.o());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -749,10 +749,10 @@ public abstract class r7 {
             f.set(rectF.centerX() - f12, rectF.bottom - f13, rectF.centerX() + f12, rectF.bottom + f14);
             RectF rectF4 = f;
             canvas.drawRoundRect(rectF4, rectF4.height() / 2.0f, f.height() / 2.0f, h);
-            ly0 ly0Var = i;
+            my0 my0Var = i;
             RectF rectF5 = f;
             canvas2 = canvas;
-            ly0Var.c(rectF5.left + W1, rectF5.centerY(), f10, -1, canvas2);
+            my0Var.c(rectF5.left + W1, rectF5.centerY(), f10, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -1011,25 +1011,25 @@ public abstract class r7 {
             }
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false);
             org.telegram.messenger.w7.G(p10.s0);
-            File K = org.telegram.messenger.w7.K(w10, "", false, true);
-            if (K != null && K.exists()) {
+            File J = org.telegram.messenger.w7.J(w10, "", false, true);
+            if (J != null && J.exists()) {
                 runnable.run();
                 return null;
             }
         } else {
             org.telegram.messenger.w7.G(p10.s0);
-            File K2 = org.telegram.messenger.w7.K(storyItem2.media.document, "", false, true);
-            if (K2 != null && K2.exists()) {
+            File J2 = org.telegram.messenger.w7.J(storyItem2.media.document, "", false, true);
+            if (J2 != null && J2.exists()) {
                 runnable.run();
                 return null;
             }
             org.telegram.messenger.w7.G(p10.s0);
-            File K3 = org.telegram.messenger.w7.K(storyItem2.media.document, "", true, true);
-            if (K3 != null) {
+            File J3 = org.telegram.messenger.w7.J(storyItem2.media.document, "", true, true);
+            if (J3 != null) {
                 try {
-                    int lastIndexOf = K3.getName().lastIndexOf(".");
+                    int lastIndexOf = J3.getName().lastIndexOf(".");
                     if (lastIndexOf > 0) {
-                        File file = new File(K3.getParentFile(), K3.getName().substring(0, lastIndexOf) + ".temp");
+                        File file = new File(J3.getParentFile(), J3.getName().substring(0, lastIndexOf) + ".temp");
                         if (file.exists() && file.length() > 0) {
                             runnable.run();
                             return null;

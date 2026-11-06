@@ -29,12 +29,12 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.p90;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e1 {
     public final q1 a;
@@ -380,10 +380,10 @@ public final class e1 {
                                 c0Var2.t.setAlpha(c0Var2.m ? 128 : qs.e4);
                                 c0Var2.t.draw(canvas);
                                 A += L8;
-                                ly0 ly0Var = c0Var2.h;
+                                my0 my0Var = c0Var2.h;
                                 float width = (rectF.width() - org.telegram.messenger.g0.L(15.0f)) - L8;
                                 f11 = 1.0f;
-                                ly0Var.p = Math.max(1.0f, width);
+                                my0Var.p = Math.max(1.0f, width);
                                 c0Var2.h.f(canvas, A, rectF.centerY(), c0Var2.m ? 0.5f : 1.0f);
                                 canvas.restore();
                                 TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) cg.c.a(c0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
@@ -416,10 +416,10 @@ public final class e1 {
                             }
                         }
                         f12 = 2.0f;
-                        ly0 ly0Var2 = c0Var2.h;
+                        my0 my0Var2 = c0Var2.h;
                         float width2 = (rectF.width() - org.telegram.messenger.g0.L(15.0f)) - L8;
                         f11 = 1.0f;
-                        ly0Var2.p = Math.max(1.0f, width2);
+                        my0Var2.p = Math.max(1.0f, width2);
                         c0Var2.h.f(canvas, A, rectF.centerY(), c0Var2.m ? 0.5f : 1.0f);
                         canvas.restore();
                         TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl2 = (TL_keyboard.TL_inlineButtonTypeUrl) cg.c.a(c0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
@@ -483,10 +483,10 @@ public final class e1 {
                 if (c0Var2.u == null) {
                 }
                 f12 = 2.0f;
-                ly0 ly0Var22 = c0Var2.h;
+                my0 my0Var22 = c0Var2.h;
                 float width22 = (rectF.width() - org.telegram.messenger.g0.L(15.0f)) - L82;
                 f11 = 1.0f;
-                ly0Var22.p = Math.max(1.0f, width22);
+                my0Var22.p = Math.max(1.0f, width22);
                 c0Var2.h.f(canvas, A2, rectF.centerY(), c0Var2.m ? 0.5f : 1.0f);
                 canvas.restore();
                 TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl22 = (TL_keyboard.TL_inlineButtonTypeUrl) cg.c.a(c0Var2.i, TL_keyboard.TL_inlineButtonTypeUrl.class);
@@ -566,7 +566,7 @@ public final class e1 {
         CharSequence m10;
         int i16;
         TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl;
-        ly0 ly0Var;
+        my0 my0Var;
         String str;
         int i17 = uVar.b;
         org.telegram.messenger.m2[][] m2VarArr2 = (org.telegram.messenger.m2[][]) uVar.c;
@@ -740,10 +740,10 @@ public final class e1 {
                                     charSequence3 = charSequence4;
                                 }
                                 m10 = org.telegram.messenger.i6.m(charSequence3, textPaint.getFontMetricsInt(), r11, null, r11);
-                                if (c0Var == null && (ly0Var = c0Var.h) != null && TextUtils.equals(ly0Var.j(), m10)) {
+                                if (c0Var == null && (my0Var = c0Var.h) != null && TextUtils.equals(my0Var.j(), m10)) {
                                     c0Var2.h = c0Var.h;
                                 } else {
-                                    c0Var2.h = new ly0(m10, textPaint);
+                                    c0Var2.h = new my0(m10, textPaint);
                                 }
                                 ArrayList arrayList4 = arrayList2;
                                 arrayList4.add(c0Var2);
@@ -825,7 +825,7 @@ public final class e1 {
                                 m10 = org.telegram.messenger.i6.m(charSequence3, textPaint2.getFontMetricsInt(), r11, null, r11);
                                 if (c0Var == null) {
                                 }
-                                c0Var2.h = new ly0(m10, textPaint2);
+                                c0Var2.h = new my0(m10, textPaint2);
                                 ArrayList arrayList42 = arrayList2;
                                 arrayList42.add(c0Var2);
                                 if (i27 == i25) {
@@ -900,7 +900,7 @@ public final class e1 {
                     m10 = org.telegram.messenger.i6.m(charSequence3, textPaint22.getFontMetricsInt(), r11, null, r11);
                     if (c0Var == null) {
                     }
-                    c0Var2.h = new ly0(m10, textPaint22);
+                    c0Var2.h = new my0(m10, textPaint22);
                     ArrayList arrayList422 = arrayList2;
                     arrayList422.add(c0Var2);
                     if (i27 == i25) {

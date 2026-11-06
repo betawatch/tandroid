@@ -25,9 +25,9 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.g11;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.ue;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.yl0;
@@ -39,7 +39,7 @@ import org.telegram.ui.ma0;
 import org.telegram.ui.r40;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, lc, org.telegram.ui.Components.t4, ma0, qr, j2.g, org.telegram.ui.ActionBar.r1, r40, p4.a1, v5.e {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, l
 
     @Override // j2.g
     public j2.h createDataSource() {
-        return new j51(((n51) this.c).h.createDataSource(), this.b);
+        return new o51(((t51) this.c).h.createDataSource(), this.b);
     }
 
     @Override // org.telegram.ui.ma0
@@ -188,7 +188,7 @@ public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, l
 
     @Override // org.telegram.messenger.qr
     public void k(boolean z9) {
-        an anVar = ((g11) this.c).s;
+        an anVar = ((m11) this.c).s;
         if (com.google.android.recaptcha.internal.a.u(anVar)) {
             anVar.Qa(this.b, false);
         }

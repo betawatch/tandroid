@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -50,7 +50,7 @@ public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.
         addView(frameLayout, c8.ha.c(-2.0f, -1));
         org.telegram.ui.Components.to toVar = new org.telegram.ui.Components.to(f2Var.getCurrentAccount(), 0L, null, (i7 == 0 || i7 == -1) ? 0 : 1);
         this.c = toVar;
-        e61 e61Var = new e61(8, getContext(), f6Var);
+        e61 e61Var = new e61(9, getContext(), f6Var);
         this.a = e61Var;
         e61Var.setAdapter(toVar);
         e61Var.setSelectorDrawableColor(0);

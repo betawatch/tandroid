@@ -6,12 +6,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import c8.yb;
 import c8.z;
+import c8.zb;
 import f5.q;
 import g7.f;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class FlagProviderImpl extends f {
     public boolean a;
@@ -30,7 +30,7 @@ public class FlagProviderImpl extends f {
         SharedPreferences sharedPreferences = this.b;
         Boolean valueOf = Boolean.valueOf(z9);
         try {
-            valueOf = (Boolean) yb.a(new q(sharedPreferences, str, valueOf, 4));
+            valueOf = (Boolean) zb.a(new q(sharedPreferences, str, valueOf, 4));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -46,7 +46,7 @@ public class FlagProviderImpl extends f {
         SharedPreferences sharedPreferences = this.b;
         Integer valueOf = Integer.valueOf(i7);
         try {
-            valueOf = (Integer) yb.a(new q(sharedPreferences, str, valueOf, 5));
+            valueOf = (Integer) zb.a(new q(sharedPreferences, str, valueOf, 5));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -62,7 +62,7 @@ public class FlagProviderImpl extends f {
         SharedPreferences sharedPreferences = this.b;
         Long valueOf = Long.valueOf(j3);
         try {
-            valueOf = (Long) yb.a(new q(sharedPreferences, str, valueOf, 6));
+            valueOf = (Long) zb.a(new q(sharedPreferences, str, valueOf, 6));
         } catch (Exception e10) {
             String valueOf2 = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
@@ -76,7 +76,7 @@ public class FlagProviderImpl extends f {
             return str2;
         }
         try {
-            return (String) yb.a(new q(this.b, str, str2, 7));
+            return (String) zb.a(new q(this.b, str, str2, 7));
         } catch (Exception e10) {
             String valueOf = String.valueOf(e10.getMessage());
             Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));

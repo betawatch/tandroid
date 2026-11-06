@@ -32,13 +32,13 @@ import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q0 extends f2 {
     public static final int U = -1;
@@ -81,7 +81,7 @@ public final class q0 extends f2 {
     public boolean T;
     public b5 a;
     public j7 b;
-    public k41 c;
+    public q41 c;
     public z1 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -143,9 +143,9 @@ public final class q0 extends f2 {
         }
     }
 
-    public static void b0(final q0 q0Var, r31 r31Var, final View view) {
-        if (r31Var.g && !q0Var.w.h(r31Var)) {
-            int i7 = r31Var.d;
+    public static void b0(final q0 q0Var, x31 x31Var, final View view) {
+        if (x31Var.g && !q0Var.w.h(x31Var)) {
+            int i7 = x31Var.d;
             final int i10 = 1;
             if (i7 == U) {
                 a0 a0Var = q0Var.w;
@@ -170,8 +170,8 @@ public final class q0 extends f2 {
                 q0Var.d0(true);
                 return;
             }
-            if (r31Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) q0Var.N.get(r31Var.x);
+            if (x31Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) q0Var.N.get(x31Var.x);
                 if (user == null) {
                     return;
                 }
@@ -923,13 +923,13 @@ public final class q0 extends f2 {
         this.w = a0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
         a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        k41 k41Var = new k41(this, new hi.u1(this, i14), new n0(this, i11), null);
-        this.c = k41Var;
-        k41Var.r1();
+        q41 q41Var = new q41(this, new hi.u1(this, i14), new n0(this, i11), null);
+        this.c = q41Var;
+        q41Var.r1();
         this.c.setSectionsDrawBackground(true);
-        k41 k41Var2 = this.c;
-        k41Var2.f3.r = false;
-        frameLayout.addView(k41Var2, ha.c(-1.0f, -1));
+        q41 q41Var2 = this.c;
+        q41Var2.f3.r = false;
+        frameLayout.addView(q41Var2, ha.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }

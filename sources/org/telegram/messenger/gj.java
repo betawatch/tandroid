@@ -11,11 +11,11 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.ug0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class gj {
     public final CharSequence a;
@@ -614,9 +614,9 @@ public final class gj {
                                                         if (fjVar.U) {
                                                             this.c = Math.max(this.c, i11);
                                                         } else {
-                                                            ly0 ly0Var = fjVar.L;
-                                                            if (ly0Var != null) {
-                                                                this.c = (int) Math.max(this.c, Math.min(ly0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
+                                                            my0 my0Var = fjVar.L;
+                                                            if (my0Var != null) {
+                                                                this.c = (int) Math.max(this.c, Math.min(my0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
                                                             }
                                                         }
                                                         if (ijVar != null && !ijVar.L0 && !ijVar.I2) {

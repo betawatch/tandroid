@@ -29,15 +29,15 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.n5;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class l extends TextView implements r9 {
     public static Field R;
@@ -169,7 +169,7 @@ public class l extends TextView implements r9 {
                 r70 b10 = this.H.b();
                 b10.d(layout, spanStart, this.J ? 0.0f : getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                g0.i3(new l31(this, x70Var, a10, 27), ViewConfiguration.getLongPressTimeout());
+                g0.i3(new r31(this, x70Var, a10, 27), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {

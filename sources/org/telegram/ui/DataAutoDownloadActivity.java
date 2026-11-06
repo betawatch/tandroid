@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.f2 {
     public final org.telegram.messenger.y5 D;
@@ -626,7 +626,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.f2 {
         if (!y5Var4.a(y5Var) && !y5Var4.a(y5Var2) && !y5Var4.a(y5Var3)) {
             arrayList.add(y5Var4);
         }
-        Collections.sort(arrayList, new oe(22));
+        Collections.sort(arrayList, new oe(23));
         int i7 = this.e;
         if (i7 == 0 || (i7 == 3 && y5Var4.a(y5Var))) {
             this.d = arrayList.indexOf(y5Var);

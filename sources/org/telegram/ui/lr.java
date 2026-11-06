@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class lr extends org.telegram.ui.Cells.m8 {
     public final /* synthetic */ int W = 1;
@@ -46,10 +46,10 @@ public final class lr extends org.telegram.ui.Cells.m8 {
                 super.onLayout(z9, i7, i10, i11, i12);
                 int L2 = org.telegram.messenger.g0.L(21.0f);
                 int measuredHeight3 = getMeasuredHeight();
-                it0 it0Var = (it0) this.a0;
-                int measuredHeight4 = (measuredHeight3 - it0Var.d.w0.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.l9 l9Var2 = it0Var.d.w0;
-                l9Var2.layout(L2, measuredHeight4, l9Var2.getMeasuredWidth() + L2, it0Var.d.w0.getMeasuredHeight() + measuredHeight4);
+                jt0 jt0Var = (jt0) this.a0;
+                int measuredHeight4 = (measuredHeight3 - jt0Var.d.w0.getMeasuredHeight()) / 2;
+                org.telegram.ui.Components.l9 l9Var2 = jt0Var.d.w0;
+                l9Var2.layout(L2, measuredHeight4, l9Var2.getMeasuredWidth() + L2, jt0Var.d.w0.getMeasuredHeight() + measuredHeight4);
                 break;
             default:
                 super.onLayout(z9, i7, i10, i11, i12);
@@ -68,9 +68,9 @@ public final class lr extends org.telegram.ui.Cells.m8 {
                 break;
             case 1:
                 super.onMeasure(i7, i10);
-                it0 it0Var = (it0) this.a0;
-                it0Var.d.w0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
-                it0Var.d.w0.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
+                jt0 jt0Var = (jt0) this.a0;
+                jt0Var.d.w0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+                jt0Var.d.w0.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -79,9 +79,9 @@ public final class lr extends org.telegram.ui.Cells.m8 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lr(it0 it0Var, Activity activity) {
+    public lr(jt0 jt0Var, Activity activity) {
         super(activity);
-        this.a0 = it0Var;
+        this.a0 = jt0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class yr extends c1 {
     public static volatile yr[] e0 = new yr[4];
@@ -9999,9 +9999,9 @@ public final class yr extends c1 {
                     arrayList3.add(r10);
                 }
                 getFileLoader().getClass();
-                File K = w7.K(G0, null, z9, true);
-                if (K.toString().length() > 0) {
-                    arrayList.add(K);
+                File J = w7.J(G0, null, z9, true);
+                if (J.toString().length() > 0) {
+                    arrayList.add(J);
                 }
                 int size = G0.thumbs.size();
                 while (i10 < size) {
@@ -10024,9 +10024,9 @@ public final class yr extends c1 {
                 arrayList3.add(r11);
             }
             getFileLoader().getClass();
-            File K2 = w7.K(photoSize2, null, z9, true);
-            if (K2.toString().length() > 0) {
-                arrayList.add(K2);
+            File J2 = w7.J(photoSize2, null, z9, true);
+            if (J2.toString().length() > 0) {
+                arrayList.add(J2);
             }
             i10++;
         }
@@ -10076,7 +10076,7 @@ public final class yr extends c1 {
                                     TLdeserialize.linked_monoforum_id = chat.linked_monoforum_id;
                                     TLdeserialize.flags2 |= 262144;
                                 }
-                                if (c8.yc.a(chat.flags2, TLObject.FLAG_20)) {
+                                if (c8.zc.a(chat.flags2, TLObject.FLAG_20)) {
                                     TLdeserialize.linked_community_id = chat.linked_community_id;
                                     TLdeserialize.flags2 |= TLObject.FLAG_20;
                                 }

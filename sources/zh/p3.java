@@ -15,10 +15,10 @@ import org.telegram.messenger.v10;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.o31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements v10 {
     public final /* synthetic */ int a;
@@ -56,19 +56,19 @@ public final /* synthetic */ class p3 implements v10 {
                 qp s12 = qp.s1(i11);
                 long j3 = b4Var.R1;
                 long N1 = s12.N1(j3);
-                arrayList.add(r31.j(-1, b4Var.Z1));
+                arrayList.add(x31.j(-1, b4Var.Z1));
                 if (N1 <= 0) {
-                    arrayList.add(r31.j(-2, b4Var.l2));
-                    arrayList.add(r31.D(org.telegram.messenger.g0.L(12.0f)));
+                    arrayList.add(x31.j(-2, b4Var.l2));
+                    arrayList.add(x31.D(org.telegram.messenger.g0.L(12.0f)));
                 }
                 String str2 = null;
                 if (starGift != null) {
                     if (!starGift.can_upgrade || z11) {
-                        arrayList.add(r31.B(-5, null));
+                        arrayList.add(x31.B(-5, null));
                     } else {
-                        arrayList.add(r31.B(-3, null));
+                        arrayList.add(x31.B(-3, null));
                         int i12 = 2;
-                        r31 i13 = r31.i(2, dd.a1(false, hd.a0(null, null, z11 ? 2131749853 : 2131749877, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
+                        x31 i13 = x31.i(2, dd.a1(false, hd.a0(null, null, z11 ? 2131749853 : 2131749877, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
                         i13.L(b4Var.j2);
                         arrayList.add(i13);
                         if (z10) {
@@ -83,12 +83,12 @@ public final /* synthetic */ class p3 implements v10 {
                             }
                             H2 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(a03, new r3(b4Var, i12)), true);
                         }
-                        r31 B = r31.B(-5, H2);
+                        x31 B = x31.B(-5, H2);
                         B.g = (z9 || z10) ? false : true;
                         arrayList.add(B);
                         str2 = null;
                     }
-                    r31 i14 = r31.i(1, hd.M0(z11 ? 2131750184 : 2131750189, str2));
+                    x31 i14 = x31.i(1, hd.M0(z11 ? 2131750184 : 2131750189, str2));
                     i14.L(b4Var.i2);
                     arrayList.add(i14);
                     if (z11) {
@@ -98,32 +98,32 @@ public final /* synthetic */ class p3 implements v10 {
                     } else {
                         c10 = 0;
                         a02 = hd.a0(str2, str2, 2131750185, str);
-                        arrayList.add(r31.B(-6, a02));
+                        arrayList.add(x31.B(-6, a02));
                         if (frameLayout != null) {
                             int i15 = starGift.gifts_per_round;
                             Object[] objArr = new Object[1];
                             objArr[c10] = Integer.valueOf(i15);
                             SpannableStringBuilder H22 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.G(i15, "Gift2AuctionInfoLearnMore2", objArr), new r3(b4Var, 3)), true);
-                            arrayList.add(r31.j(-43, frameLayout));
-                            arrayList.add(r31.B(-44, H22));
+                            arrayList.add(x31.j(-43, frameLayout));
+                            arrayList.add(x31.B(-44, H22));
                         }
                     }
                     a02 = hd.M0(i7, str2);
                     c10 = 0;
-                    arrayList.add(r31.B(-6, a02));
+                    arrayList.add(x31.B(-6, a02));
                     if (frameLayout != null) {
                     }
                 } else {
                     if (N1 <= 0) {
-                        arrayList.add(r31.B(-3, hd.a0(null, null, 2131750117, str)));
+                        arrayList.add(x31.B(-3, hd.a0(null, null, 2131750117, str)));
                     }
                     if (jVar != null && (jVar.c != null || jVar.d != null)) {
-                        r31 i16 = r31.i(3, dd.a1(false, hd.a0(null, null, 2131750116, Integer.valueOf((int) jVar.g())), 0.78f, null));
+                        x31 i16 = x31.i(3, dd.a1(false, hd.a0(null, null, 2131750116, Integer.valueOf((int) jVar.g())), 0.78f, null));
                         i16.L(b4Var.k2);
                         arrayList.add(i16);
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.E(ea.y(i11, false).p().amount, ','));
-                        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
-                        arrayList.add(r31.B(-7, TextUtils.concat(dd.a1(false, hd.V(null, null, 2131750115, spannableStringBuilder), 0.66f, null), " ", org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(hd.M0(2131750114, null), new r3(b4Var, 4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)))));
+                        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+                        arrayList.add(x31.B(-7, TextUtils.concat(dd.a1(false, hd.V(null, null, 2131750115, spannableStringBuilder), 0.66f, null), " ", org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(hd.M0(2131750114, null), new r3(b4Var, 4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)))));
                     }
                 }
                 if (b4Var.G1) {

@@ -3,7 +3,7 @@ package ia;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import c8.bc;
+import c8.cc;
 import h2.e0;
 import h9.f1;
 import j$.util.Objects;
@@ -40,7 +40,7 @@ import org.telegram.ui.web.a0;
 import p1.g;
 import w7.s;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -223,7 +223,7 @@ public final class c {
                 return;
             }
             if (a10 == null) {
-                bc.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                cc.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new p5.a(3, -1L);
                 bArr = bArr2;
                 j3 = j10;
@@ -305,7 +305,7 @@ public final class c {
                             cVar7.f = str4;
                             cVar = cVar7;
                         } else {
-                            String c11 = bc.c("CctTransportBackend");
+                            String c11 = cc.c("CctTransportBackend");
                             if (Log.isLoggable(c11, 5)) {
                                 Log.w(c11, "Received event of unsupported encoding " + cVar6 + ". Skipping...");
                             }
@@ -382,7 +382,7 @@ public final class c {
                         c10 = yVar.c(mVar2);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
-                            bc.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            cc.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             mVar2 = new h6.m(url2, (m) mVar2.c, (String) mVar2.d, 13);
                         } else {
                             mVar2 = null;
@@ -404,7 +404,7 @@ public final class c {
                                 aVar = new p5.a(4, -1L);
                             } catch (IOException e10) {
                                 e = e10;
-                                bc.b("CctTransportBackend", "Could not make request to the backend", e);
+                                cc.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i10 = 2;
                                 aVar2 = new p5.a(2, -1L);
                                 i11 = aVar2.a;

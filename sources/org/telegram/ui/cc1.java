@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Intent;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class cc1 implements org.telegram.ui.Components.voip.d {
     public final /* synthetic */ ec1 a;
@@ -20,7 +20,7 @@ public final class cc1 implements org.telegram.ui.Components.voip.d {
                 return;
             } else {
                 if (VoIPService.getSharedState() != null) {
-                    ec1Var.i(new qu0(this, 27));
+                    ec1Var.i(new ru0(this, 27));
                     return;
                 }
                 return;

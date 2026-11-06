@@ -15,10 +15,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ps extends View {
-    public final ly0 a;
+    public final my0 a;
     public final Drawable b;
     public final ImageReceiver c;
     public final Rect d;
@@ -32,7 +32,7 @@ public class ps extends View {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.g0.L(22.66f));
-        this.a = new ly0(charSequence, 14.0f, org.telegram.messenger.g0.o());
+        this.a = new my0(charSequence, 14.0f, org.telegram.messenger.g0.o());
         Drawable h = jg.g.h(context, R.drawable.arrow_newchat);
         this.b = h;
         h.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));

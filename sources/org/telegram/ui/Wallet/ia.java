@@ -21,24 +21,24 @@ import org.telegram.messenger.m20;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class ia extends h41 implements ls {
+public final class ia extends n41 implements ls {
     public static void d0(ia iaVar, TL_wallet.tonConnectSession tonconnectsession, c20 c20Var) {
         f2 f2Var = n0.x(iaVar.currentAccount).g;
         f2Var.getClass();
         org.telegram.messenger.g0.h3(new g(f2Var, tonconnectsession, c20Var, 4));
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         f2 f2Var = n0.x(this.currentAccount).g;
         if (!f2Var.d.isEmpty()) {
-            arrayList.add(r31.u(hd.M0(2131743207, null)));
+            arrayList.add(x31.u(hd.M0(2131743207, null)));
         }
         ArrayList arrayList2 = f2Var.d;
         int size = arrayList2.size();
@@ -47,22 +47,22 @@ public final class ia extends h41 implements ls {
             Object obj = arrayList2.get(i7);
             i7++;
             int i10 = ga.b;
-            r31 K = r31.K(ga.class);
+            x31 K = x31.K(ga.class);
             K.G = (TL_wallet.tonConnectSession) obj;
             arrayList.add(K);
         }
-        arrayList.add(r31.C(hd.M0(2131743156, null)));
+        arrayList.add(x31.C(hd.M0(2131743156, null)));
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131743157, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
         TLRPC.WebDocument webDocument;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof TL_wallet.tonConnectSession) {
             TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj;
             Activity parentActivity = getParentActivity();
@@ -134,12 +134,12 @@ public final class ia extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         this.actionBar.setAdaptiveBackground(this.a);

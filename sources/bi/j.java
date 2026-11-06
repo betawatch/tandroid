@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) wallPaper;
                                 if (tL_wallPaper.pattern) {
                                     org.telegram.messenger.w7.G(p10.s0);
-                                    File K = org.telegram.messenger.w7.K(tL_wallPaper.document, str, true, true);
+                                    File J = org.telegram.messenger.w7.J(tL_wallPaper.document, str, true, true);
                                     int size2 = arrayList3.size();
                                     String str2 = str;
                                     ?? r14 = str2;
@@ -185,11 +185,11 @@ public final /* synthetic */ class j implements RequestDelegate {
                                         org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) arrayList3.get(i10);
                                         if (h6Var.o.equals(tL_wallPaper.slug)) {
                                             if (r14 == null) {
-                                                r14 = Boolean.valueOf(K.exists());
+                                                r14 = Boolean.valueOf(J.exists());
                                             }
                                             if (r13 != 0 || r14.booleanValue()) {
                                                 arrayList2 = arrayList3;
-                                                r13 = org.telegram.ui.ActionBar.e6.b(r13, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), K, h6Var);
+                                                r13 = org.telegram.ui.ActionBar.e6.b(r13, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, h6Var);
                                                 if (arrayList4 == null) {
                                                     arrayList4 = new ArrayList();
                                                 }

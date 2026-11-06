@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g60 implements Runnable {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class g60 implements Runnable {
                     if (z14 || d1Var == null || (org.telegram.messenger.iz.U(d1Var2.a, d1Var.a) && d1Var2.c > d1Var.c)) {
                         ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).getClass();
                         try {
-                            new org.telegram.ui.Components.r41(launchActivity2, d1Var2).show();
+                            new org.telegram.ui.Components.x41(launchActivity2, d1Var2).show();
                             return;
                         } catch (Exception e11) {
                             org.telegram.messenger.a8.g(e11, true);
@@ -296,7 +296,7 @@ public final /* synthetic */ class g60 implements Runnable {
                                             }
                                             if (zipOutputStream != null) {
                                             }
-                                            org.telegram.messenger.g0.h3(new io0(u1Var2, zArr2, activity, file, 4));
+                                            org.telegram.messenger.g0.h3(new jo0(u1Var2, zArr2, activity, file, 4));
                                             return;
                                         } catch (Throwable th2) {
                                             th = th2;
@@ -333,7 +333,7 @@ public final /* synthetic */ class g60 implements Runnable {
                             if (zipOutputStream != null) {
                                 zipOutputStream.close();
                             }
-                            org.telegram.messenger.g0.h3(new io0(u1Var2, zArr2, activity, file, 4));
+                            org.telegram.messenger.g0.h3(new jo0(u1Var2, zArr2, activity, file, 4));
                             return;
                         } catch (Throwable th4) {
                             th = th4;
@@ -348,7 +348,7 @@ public final /* synthetic */ class g60 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    org.telegram.messenger.g0.h3(new io0(u1Var2, zArr2, activity, file, 4));
+                    org.telegram.messenger.g0.h3(new jo0(u1Var2, zArr2, activity, file, 4));
                     return;
                 } catch (Exception e15) {
                     e15.printStackTrace();
@@ -383,7 +383,7 @@ public final /* synthetic */ class g60 implements Runnable {
                 }
                 try {
                     if (c1Var.b == ((org.telegram.ui.Wallet.r0) c1Var.c).l()) {
-                        c8.ua.b = w0Var;
+                        c8.va.b = w0Var;
                         LaunchActivity launchActivity3 = LaunchActivity.G1;
                         int i17 = Build.VERSION.SDK_INT;
                         if (launchActivity3 != null && !launchActivity3.isFinishing() && !launchActivity3.isDestroyed() && !launchActivity3.s().P()) {

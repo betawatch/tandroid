@@ -15,7 +15,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jn0 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -120,19 +120,19 @@ public final /* synthetic */ class jn0 implements org.telegram.messenger.c20 {
                 animatorSet2.setDuration(320L);
                 animatorSet2.setInterpolator(xqVar);
                 animatorSet2.start();
-                tp0 tp0Var = photoViewer3.L1;
-                tg.e1 e1Var = tp0Var.d1;
+                up0 up0Var = photoViewer3.L1;
+                tg.e1 e1Var = up0Var.d1;
                 if (e1Var != null) {
-                    if (tp0Var.Q1) {
+                    if (up0Var.Q1) {
                         e1Var.a(R.drawable.input_smile);
-                    } else if (tp0Var.P1) {
+                    } else if (up0Var.P1) {
                         e1Var.a(R.drawable.input_keyboard);
                     } else {
                         e1Var.a(R.drawable.msg_add);
                     }
                 }
-                TextView textView = tp0Var.h1;
-                if (tp0Var.Q1 || tp0Var.P1) {
+                TextView textView = up0Var.h1;
+                if (up0Var.Q1 || up0Var.P1) {
                     z9 = false;
                     z10 = false;
                 } else {
@@ -140,10 +140,10 @@ public final /* synthetic */ class jn0 implements org.telegram.messenger.c20 {
                     z10 = false;
                 }
                 org.telegram.messenger.g0.U3(1.0f, textView, z9, z10);
-                org.telegram.messenger.g0.U3(1.0f, tp0Var.f1, (tp0Var.Q1 || tp0Var.P1) ? z10 : true, z10);
-                org.telegram.messenger.g0.U3(1.0f, tp0Var.j1, (tp0Var.Q1 || tp0Var.P1) ? true : z10, z10);
-                TextView textView2 = tp0Var.i1;
-                if (!tp0Var.Q1 && !tp0Var.P1) {
+                org.telegram.messenger.g0.U3(1.0f, up0Var.f1, (up0Var.Q1 || up0Var.P1) ? z10 : true, z10);
+                org.telegram.messenger.g0.U3(1.0f, up0Var.j1, (up0Var.Q1 || up0Var.P1) ? true : z10, z10);
+                TextView textView2 = up0Var.i1;
+                if (!up0Var.Q1 && !up0Var.P1) {
                     z11 = z10;
                 }
                 org.telegram.messenger.g0.U3(1.0f, textView2, z11, z10);

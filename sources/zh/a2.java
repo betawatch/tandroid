@@ -19,7 +19,7 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.up0;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements ls {
     public final LinearLayout D;
@@ -229,9 +229,9 @@ public final class a2 extends FrameLayout implements ls {
             }
             i7++;
         }
-        f41 f41Var = w3Var.f3;
-        if (f41Var != null) {
-            f41Var.T();
+        l41 l41Var = w3Var.f3;
+        if (l41Var != null) {
+            l41Var.T();
         }
         if (z9) {
             org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
@@ -273,13 +273,13 @@ public final class a2 extends FrameLayout implements ls {
     }
 
     public final void f(boolean z9) {
-        f41 f41Var;
+        l41 l41Var;
         fi.w3 w3Var = this.f;
-        if (w3Var == null || (f41Var = w3Var.f3) == null) {
+        if (w3Var == null || (l41Var = w3Var.f3) == null) {
             return;
         }
         boolean canScrollVertically = w3Var.canScrollVertically(-1);
-        f41Var.O(z9);
+        l41Var.O(z9);
         if (canScrollVertically) {
             return;
         }

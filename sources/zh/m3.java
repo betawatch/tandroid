@@ -37,24 +37,24 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.q4;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.jz;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.p00;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.kx;
-import org.telegram.ui.mt0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.nt0;
+import org.telegram.ui.sq0;
 import org.telegram.ui.v8;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
     public HorizontalScrollView D;
@@ -81,7 +81,7 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
     public FrameLayout r;
     public FrameLayout s;
     public TextView w;
-    public rq0 x;
+    public sq0 x;
     public boolean y;
 
     public m3(long j3, String str, long j10, f6 f6Var) {
@@ -284,8 +284,8 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
         }
     }
 
-    public static void d0(m3 m3Var, r31 r31Var) {
-        Object obj = r31Var.G;
+    public static void d0(m3 m3Var, x31 x31Var) {
+        Object obj = x31Var.G;
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             k7 k7Var = new k7(m3Var.getParentActivity(), m3Var.currentAccount, m3Var.b, m3Var.resourceProvider, null);
@@ -320,7 +320,7 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
         this.f.k = 240.0f;
         this.actionBar.setCastShadows(false);
         this.actionBar.setAddToContainer(false);
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 24));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 24));
         this.actionBar.setTitle(this.c);
         r6.i(i7, this.actionBar, getResourceProvider());
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
@@ -349,7 +349,7 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
         this.n.setClipToPadding(false);
         v8Var.addView(this.n, ha.d(-1, -1.0f, qs.E1, 7.33f, 0.0f, 7.33f, -45.0f));
         v8Var.addView(this.actionBar);
-        rq0 rq0Var = new rq0(context, new View.OnClickListener(this) { // from class: zh.n2
+        sq0 sq0Var = new sq0(context, new View.OnClickListener(this) { // from class: zh.n2
             public final /* synthetic */ m3 b;
 
             {
@@ -376,9 +376,9 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
                 }
             }
         }, this.resourceProvider);
-        this.x = rq0Var;
+        this.x = sq0Var;
         this.y = false;
-        rq0Var.setAlpha(0.0f);
+        sq0Var.setAlpha(0.0f);
         this.x.setScaleX(0.95f);
         this.x.setScaleY(0.95f);
         this.x.setVisibility(8);
@@ -810,7 +810,7 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
     }
 
     public final void j0(boolean z9) {
-        f41 f41Var;
+        l41 l41Var;
         d3 d3Var = this.d;
         int i7 = d3Var.e;
         HashSet hashSet = d3Var.l;
@@ -824,8 +824,8 @@ public class m3 extends org.telegram.ui.ActionBar.f2 implements te.b {
         }
         kx kxVar = this.n;
         boolean z10 = false;
-        if (kxVar != null && (f41Var = kxVar.f3) != null) {
-            f41Var.O(true);
+        if (kxVar != null && (l41Var = kxVar.f3) != null) {
+            l41Var.O(true);
             if (z9) {
                 this.n.v0(0);
             }

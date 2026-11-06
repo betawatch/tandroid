@@ -18,7 +18,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import c8.nc;
+import c8.oc;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import e2.s0;
@@ -27,7 +27,7 @@ import h9.t0;
 import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class x {
     public static void a(AudioAttributes.Builder builder, boolean z9) {
@@ -53,22 +53,22 @@ public abstract class x {
                 }
                 i12++;
             }
-            if (i11 == 1 && nc.a == null) {
+            if (i11 == 1 && oc.a == null) {
                 int i13 = Build.VERSION.SDK_INT;
                 if (i13 < 37) {
                     int c10 = c(true);
                     if (i13 < 35) {
-                        nc.a = Boolean.valueOf(z9);
+                        oc.a = Boolean.valueOf(z9);
                         if (z9) {
                         }
                     } else {
-                        nc.a = Boolean.valueOf(z9);
+                        oc.a = Boolean.valueOf(z9);
                         if (z9) {
                         }
                     }
                 }
                 z9 = false;
-                nc.a = Boolean.valueOf(z9);
+                oc.a = Boolean.valueOf(z9);
                 if (z9) {
                 }
             }

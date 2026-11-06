@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Window a;
@@ -26,7 +26,7 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
     public final ng.c d;
     public final RadialProgressView e;
     public final TextView f;
-    public final rq0 h;
+    public final sq0 h;
     public final ArrayList n;
     public o41 r;
     public final int s;
@@ -42,7 +42,7 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
         }
         this.s = i7;
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
-        this.h = new rq0(context, 8);
+        this.h = new sq0(context, 8);
         ng.c cVar = new ng.c(getContext(), f6Var);
         this.d = cVar;
         cVar.d.setOnTouchListener(new org.telegram.ui.Components.wi0());
@@ -320,7 +320,7 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
         this.r = o41Var;
         boolean z11 = o41Var.l;
         ArrayList arrayList2 = this.n;
-        rq0 rq0Var = this.h;
+        sq0 sq0Var = this.h;
         RadialProgressView radialProgressView = this.e;
         int i7 = 8;
         TextView textView = this.f;
@@ -335,7 +335,7 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
                 }
                 textView.setVisibility(0);
             }
-            rq0Var.removeAllViews();
+            sq0Var.removeAllViews();
             arrayList2.clear();
             gVar.D(null);
             return;
@@ -369,7 +369,7 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
         ng.e eVar3 = gVar2.t0;
         eVar3.setEnabled(eVar3.F);
         int size = arrayList.size();
-        rq0Var.removeAllViews();
+        sq0Var.removeAllViews();
         arrayList2.clear();
         if (size > 1) {
             for (int i10 = 0; i10 < size; i10++) {

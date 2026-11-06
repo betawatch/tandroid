@@ -24,14 +24,14 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.me;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.yk;
-import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.r31;
 import ti.p;
 import vi.f;
 import vi.g;
 import vi.h;
 import w7.s;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class h {
     public static final s H = new s(26, false);
@@ -243,7 +243,7 @@ public final class h {
         g gVar = new g(j3, f10);
         synchronized (this.l) {
             this.z = gVar;
-            this.k.execute(new l31(this, gVar, f10, 19));
+            this.k.execute(new r31(this, gVar, f10, 19));
         }
         b bVar = this.h;
         StringBuilder t6 = p0.t(j3, "output generation started: id=", ", file=");

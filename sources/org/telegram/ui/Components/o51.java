@@ -1,28 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-    public /* synthetic */ o51(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* loaded from: classes3.dex */
+public final class o51 implements j2.h {
+    public final j2.h a;
+    public final long b;
+
+    public o51(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
+        this.a = extendedDefaultDataSource;
+        this.b = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((q51) this.b).g = false;
-                break;
-            case 1:
-                ((f71) ((w30) ((org.telegram.ui.ActionBar.h1) this.b).b).b).w.b();
-                break;
-            default:
-                ((b71) this.b).d(false, true);
-                break;
-        }
+    @Override // j2.h
+    public final void addTransferListener(j2.d0 d0Var) {
+        this.a.addTransferListener(d0Var);
+    }
+
+    @Override // j2.h
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        j2.l a10 = mVar.a();
+        a10.b = mVar.e + this.b;
+        return this.a.open(a10.d());
+    }
+
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        return this.a.read(bArr, i7, i10);
     }
 }

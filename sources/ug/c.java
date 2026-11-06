@@ -17,9 +17,9 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.oj0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c extends oj0 {
     public final f6 c;
@@ -90,7 +90,7 @@ public final class c extends oj0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.rq0] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.sq0] */
     /* JADX WARN: Type inference failed for: r1v7, types: [ug.e] */
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
@@ -109,7 +109,7 @@ public final class c extends oj0 {
                 v3Var = new v3(context, 16);
             }
         } else if (this.s) {
-            ?? rq0Var = new rq0(context, 18);
+            ?? sq0Var = new sq0(context, 18);
             LinearLayout f10 = k5.f(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(ia.e.c(context.getDrawable(R.drawable.other_2x_large), (y0) ia.e.d().b));
@@ -121,8 +121,8 @@ public final class c extends oj0 {
             r6.V(textView, k6.G6, f6Var);
             textView.setTypeface(org.telegram.messenger.g0.o());
             f10.addView(textView, ha.e(-2, -2, 16));
-            rq0Var.addView(f10, ha.e(-2, -2, 17));
-            v3Var = rq0Var;
+            sq0Var.addView(f10, ha.e(-2, -2, 17));
+            v3Var = sq0Var;
         } else {
             v3Var = new v3(context, 64);
         }

@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class os extends org.telegram.ui.Components.kj0 {
     public final Context r;
@@ -25,7 +25,7 @@ public final class os extends org.telegram.ui.Components.kj0 {
     public final /* synthetic */ qs x;
 
     public os(qs qsVar, Context context, ArrayList arrayList, boolean z9) {
-        Comparator rv0Var;
+        Comparator un0Var;
         this.x = qsVar;
         this.r = context;
         if (arrayList != null) {
@@ -75,14 +75,14 @@ public final class os extends org.telegram.ui.Components.kj0 {
         if (Build.VERSION.SDK_INT >= 24) {
             Collator collator = Collator.getInstance(org.telegram.messenger.hd.E0().y != null ? org.telegram.messenger.hd.E0().y : Locale.getDefault());
             Objects.requireNonNull(collator);
-            rv0Var = new bi.s5(collator, 8);
+            un0Var = new bi.s5(collator, 8);
         } else {
-            rv0Var = new rv0(13);
+            un0Var = new un0(14);
         }
-        Collections.sort(this.w, rv0Var);
+        Collections.sort(this.w, un0Var);
         Iterator it = this.s.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new ns(rv0Var, 0));
+            Collections.sort((ArrayList) it.next(), new ns(un0Var, 0));
         }
     }
 

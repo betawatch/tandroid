@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h90 extends org.telegram.ui.ActionBar.f2 {
     public org.telegram.ui.Cells.z8 D;
@@ -227,7 +227,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         this.x.setGravity(16);
         this.x.setTextSize(1, 16.0f);
         this.x.setHint(org.telegram.messenger.hd.M0(2131744140, null));
-        this.x.setOnClickListener(new org.telegram.ui.Components.n41(21, this, context));
+        this.x.setOnClickListener(new org.telegram.ui.Components.t41(21, this, context));
         this.d.setCallback(new x80(this, 2));
         ArrayList arrayList = this.O;
         arrayList.clear();
@@ -301,7 +301,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
                     this.n.setCheckBoxIcon(R.drawable.permission_locked);
                     this.n.setEnabled(false);
                 }
-                this.n.setOnClickListener(new org.telegram.ui.Components.n41(22, this, new Runnable[1]));
+                this.n.setOnClickListener(new org.telegram.ui.Components.t41(22, this, new Runnable[1]));
                 b90Var.addView(this.n, c8.ha.o(-1, 48));
                 TextView textView2 = new TextView(context);
                 this.s = textView2;

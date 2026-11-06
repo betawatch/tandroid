@@ -35,7 +35,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.z;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout implements ls {
     public pj0 D;
@@ -66,11 +66,11 @@ public final class j extends FrameLayout implements ls {
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new z(10)));
+        arrayList.add(new a("Draw action bar shadow", new z(11)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
         arrayList.add(new a(hd.M0(2131751648, null)));
         arrayList.add(new a(hd.M0(iz.J0 ? 2131751639 : 2131751631, null), new d(this, 1)));
-        arrayList.add(new a(k6.I.q() ? "Switch to day theme" : "Switch to dark theme", new z(11)));
+        arrayList.add(new a(k6.I.q() ? "Switch to day theme" : "Switch to dark theme", new z(12)));
         arrayList.add(new a(hd.M0(2131751614, null), new d(this, 2)));
         return arrayList;
     }

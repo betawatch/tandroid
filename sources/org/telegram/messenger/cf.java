@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class cf implements ls {
     public c a;
@@ -250,10 +250,10 @@ public final class cf implements ls {
             return false;
         }
         w7.G(this.a.a);
-        File K = w7.K(w10, null, false, true);
-        File K2 = w7.K(o12.document, null, false, true);
-        ?? r22 = (K == null || !K.exists()) ? 1 : 0;
-        ?? r62 = (K2 == null || !K2.exists()) ? 1 : 0;
+        File J = w7.J(w10, null, false, true);
+        File J2 = w7.J(o12.document, null, false, true);
+        ?? r22 = (J == null || !J.exists()) ? 1 : 0;
+        ?? r62 = (J2 == null || !J2.exists()) ? 1 : 0;
         int i7 = r22 + r62;
         if (i7 > 0) {
             this.r = new CountDownLatch(i7);
@@ -261,14 +261,14 @@ public final class cf implements ls {
             this.r.await();
         }
         if (!this.f) {
-            if (K == null || !K.exists()) {
-                K = w7.K(w10, null, true, true);
+            if (J == null || !J.exists()) {
+                J = w7.J(w10, null, true, true);
             }
-            if (K2 == null || !K2.exists()) {
-                K2 = w7.K(o12.document, null, true, true);
+            if (J2 == null || !J2.exists()) {
+                J2 = w7.J(o12.document, null, true, true);
             }
-            if (K != null && K.exists() && K2 != null && K2.exists()) {
-                String D = w7.D(K);
+            if (J != null && J.exists() && J2 != null && J2.exists()) {
+                String D = w7.D(J);
                 if (TextUtils.isEmpty(D)) {
                     D = "jpg";
                 }
@@ -288,7 +288,7 @@ public final class cf implements ls {
                         OutputStream openOutputStream = t0.b.getContentResolver().openOutputStream(insert);
                         if (openOutputStream != null) {
                             try {
-                                MediaController.H0(K, K2, openOutputStream, null);
+                                MediaController.H0(J, J2, openOutputStream, null);
                                 z9 = !this.f;
                             } finally {
                             }
@@ -314,7 +314,7 @@ public final class cf implements ls {
                     }
                     FileOutputStream fileOutputStream = new FileOutputStream(file2);
                     try {
-                        MediaController.H0(K, K2, fileOutputStream, null);
+                        MediaController.H0(J, J2, fileOutputStream, null);
                         fileOutputStream.close();
                         if (this.f) {
                             file2.delete();

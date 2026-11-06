@@ -25,7 +25,7 @@ import bi.ab;
 import bi.eb;
 import bi.md;
 import c8.ha;
-import c8.yc;
+import c8.zc;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.ImageReceiver;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p9 implements ls, org.telegram.ui.ActionBar.b2 {
     public static boolean C1;
@@ -767,7 +767,7 @@ public final class p9 implements ls, org.telegram.ui.ActionBar.b2 {
         if (z9) {
             Window window = launchActivity.getWindow();
             Typeface typeface = org.telegram.messenger.g0.a;
-            this.w0 = Build.VERSION.SDK_INT >= 26 ? yc.a(window.getDecorView().getSystemUiVisibility(), 16) : false;
+            this.w0 = Build.VERSION.SDK_INT >= 26 ? zc.a(window.getDecorView().getSystemUiVisibility(), 16) : false;
         }
         if (this.w0) {
             org.telegram.messenger.g0.m3(launchActivity, !z9);

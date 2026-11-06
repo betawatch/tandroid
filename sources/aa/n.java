@@ -61,11 +61,11 @@ import org.telegram.messenger.lc;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.et0;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.bv0;
+import org.telegram.ui.cv0;
 import org.telegram.ui.n00;
 import org.telegram.ui.o11;
 import org.telegram.ui.wv0;
@@ -73,9 +73,9 @@ import q7.l1;
 import q7.m1;
 import tg.r1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class n implements androidx.lifecycle.a0, androidx.activity.result.b, et0, lc, o11, o0, l9, WebMessageListenerBoundaryInterface, com.google.android.gms.common.api.internal.p, og.n, tg.c, l51, j1, OnCompleteListener, ib.b {
+public final class n implements androidx.lifecycle.a0, androidx.activity.result.b, et0, lc, o11, o0, l9, WebMessageListenerBoundaryInterface, com.google.android.gms.common.api.internal.p, og.n, tg.c, q51, j1, OnCompleteListener, ib.b {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -427,9 +427,9 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
 
     @Override // di.l9
     public void e(long j3, int i7, l3 l3Var) {
-        bv0 bv0Var = (bv0) this.b;
+        cv0 cv0Var = (cv0) this.b;
         int i10 = ProfileStoriesView.s0;
-        bv0Var.f(true, false);
+        cv0Var.f(true, false);
         l3Var.run();
     }
 
@@ -1253,17 +1253,17 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         k4 k4Var2;
         m9Var.b = null;
         m9Var.c = null;
-        bv0 bv0Var = (bv0) this.b;
-        wv0 wv0Var = bv0Var.h;
-        ArrayList arrayList = bv0Var.x;
-        if (bv0Var.N < 0.2f) {
+        cv0 cv0Var = (cv0) this.b;
+        wv0 wv0Var = cv0Var.h;
+        ArrayList arrayList = cv0Var.x;
+        if (cv0Var.N < 0.2f) {
             m9Var.b = wv0Var.getImageReceiver();
             m9Var.c = null;
             m9Var.a = wv0Var;
             m9Var.h = 0.0f;
             m9Var.i = org.telegram.messenger.g0.q.y;
-            m9Var.g = (View) bv0Var.getParent();
-            m9Var.d = bv0Var.D;
+            m9Var.g = (View) cv0Var.getParent();
+            m9Var.d = cv0Var.D;
             m9Var.n = true;
             return true;
         }
@@ -1292,10 +1292,10 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         }
         m9Var.c = imageReceiver;
         m9Var.b = null;
-        m9Var.a = bv0Var;
+        m9Var.a = cv0Var;
         m9Var.h = 0.0f;
         m9Var.i = org.telegram.messenger.g0.q.y;
-        m9Var.g = (View) bv0Var.getParent();
+        m9Var.g = (View) cv0Var.getParent();
         if (k4Var == null || k4Var2 == null) {
             m9Var.f = null;
             return true;
@@ -1352,31 +1352,31 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         y5 y5Var = (y5) this.b;
         w5 w5Var = y5Var.M;
-        n51 n51Var = y5Var.y;
-        if (n51Var == null) {
+        t51 t51Var = y5Var.y;
+        if (t51Var == null) {
             return;
         }
-        if (n51Var.d0()) {
+        if (t51Var.d0()) {
             org.telegram.messenger.g0.h3(w5Var);
         } else {
             org.telegram.messenger.g0.r(w5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         r1 r1Var = ((y5) this.b).x;
         if (r1Var != null) {
@@ -1478,7 +1478,7 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
         t((int) j3);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
     }
 
@@ -1537,20 +1537,20 @@ public final class n implements androidx.lifecycle.a0, androidx.activity.result.
     public /* synthetic */ void b(boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
     }
 
     @Override // org.telegram.messenger.lc

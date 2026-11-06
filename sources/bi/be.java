@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class be extends View implements org.telegram.ui.ActionBar.a6 {
     public PorterDuffColorFilter a;
@@ -250,7 +250,7 @@ public final class be extends View implements org.telegram.ui.ActionBar.a6 {
             r92.a = (arrayList3.size() - r82) - i11;
             long j3 = vdVar3.d;
             Paint paint = r92.h;
-            r92.o = new ly0(dd.U0(jg.g.m(j3, ',', new StringBuilder("⭐️")), 0.85f, wpVarArr), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+            r92.o = new my0(dd.U0(jg.g.m(j3, ',', new StringBuilder("⭐️")), 0.85f, wpVarArr), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
             boolean z12 = beVar.c;
             int i14 = ceVar.j1;
             if (z12) {
@@ -270,7 +270,7 @@ public final class be extends View implements org.telegram.ui.ActionBar.a6 {
             if (this.c) {
                 int i16 = i11 + 1;
                 r92.v = i16;
-                r92.u = new ly0(jg.g.j(i16, ""), 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+                r92.u = new my0(jg.g.j(i16, ""), 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
                 if (i16 > 0 && r92.s == null) {
                     Drawable mutate = beVar.getContext().getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
                     r92.s = mutate;
@@ -295,7 +295,7 @@ public final class be extends View implements org.telegram.ui.ActionBar.a6 {
                         r22 = null;
                         t6 = org.telegram.messenger.m5.t(r92.j);
                     }
-                    r92.n = new ly0(t6, 12.0f, r22);
+                    r92.n = new my0(t6, 12.0f, r22);
                     beVar.invalidate();
                     i11++;
                     arrayList3 = arrayList;

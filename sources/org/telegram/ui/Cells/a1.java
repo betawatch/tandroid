@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.s11;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class a1 extends m11 {
+public final class a1 extends s11 {
     public final /* synthetic */ b1 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

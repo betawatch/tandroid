@@ -12,9 +12,9 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
@@ -27,7 +27,7 @@ public final class k0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final ly0 k;
+    public final my0 k;
     public boolean l;
     public boolean m;
     public final ic n;
@@ -71,7 +71,7 @@ public final class k0 {
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new ly0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new my0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 
@@ -142,7 +142,7 @@ public final class k0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new ly0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new my0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 }

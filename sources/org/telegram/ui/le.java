@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class le implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class le implements View.OnClickListener {
                     org.telegram.ui.ActionBar.v2 l10 = org.telegram.messenger.k5.l(1, anVar.l1.getContext(), null, false);
                     Activity parentActivity = anVar.getParentActivity();
                     ym ymVar = anVar.xa;
-                    final rq0 rq0Var = new rq0(parentActivity, 7);
+                    final sq0 sq0Var = new sq0(parentActivity, 7);
                     LinearLayout e10 = org.telegram.messenger.k5.e(parentActivity, 1);
                     TextView textView = new TextView(parentActivity);
                     textView.setText(org.telegram.messenger.hd.M0(2131745255, null));
@@ -127,13 +127,13 @@ public final /* synthetic */ class le implements View.OnClickListener {
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i12) {
                                 case 0:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                             }
                         }
@@ -148,13 +148,13 @@ public final /* synthetic */ class le implements View.OnClickListener {
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i13) {
                                 case 0:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                             }
                         }
@@ -170,13 +170,13 @@ public final /* synthetic */ class le implements View.OnClickListener {
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i15) {
                                 case 0:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(rq0Var);
+                                    clickableSpan.onClick(sq0Var);
                                     break;
                             }
                         }
@@ -215,10 +215,10 @@ public final /* synthetic */ class le implements View.OnClickListener {
                     e10.addView(m2Var, c8.ha.t(-2, 34, 1, 22, 14, 22, 0));
                     w70Var4.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
                     e10.addView(w70Var4, c8.ha.t(-1, -2, 0, 0, 14, 0, 0));
-                    ScrollView scrollView = new ScrollView(rq0Var.getContext());
+                    ScrollView scrollView = new ScrollView(sq0Var.getContext());
                     scrollView.addView(e10);
-                    rq0Var.addView(scrollView, c8.ha.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
-                    l10.N = rq0Var;
+                    sq0Var.addView(scrollView, c8.ha.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
+                    l10.N = sq0Var;
                     l10.show();
                     break;
                 }

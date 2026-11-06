@@ -1,28 +1,50 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class g31 implements vv0 {
-    public final /* synthetic */ n31 a;
+public final class g31 {
+    public final /* synthetic */ p31 a;
+    public final /* synthetic */ t31 b;
 
-    public g31(n31 n31Var) {
-        this.a = n31Var;
+    public g31(t31 t31Var, p31 p31Var) {
+        this.b = t31Var;
+        this.a = p31Var;
     }
 
-    @Override // org.telegram.ui.Components.vv0
-    public final void a(TLRPC.Document document, String str, Object obj, org.telegram.messenger.ej ejVar, boolean z9, boolean z10, int i7, int i10) {
-        this.a.b.f(document, obj, z10, i7);
+    public final int a() {
+        return this.b.s.w;
     }
 
-    @Override // org.telegram.ui.Components.vv0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.vv0
-    public final boolean c() {
-        return this.a.b.c();
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z9) {
+        t31 t31Var = this.b;
+        i31 i31Var = t31Var.n;
+        if (z9) {
+            v4.g0 adapter = i31Var.getAdapter();
+            jg.d2 d2Var = t31Var.w;
+            if (adapter != d2Var) {
+                i31Var.setAdapter(d2Var);
+                if (i31Var.getAdapter().b() <= 0) {
+                    t31Var.r.i1(0, org.telegram.messenger.g0.L(58.0f) + (-i31Var.getPaddingTop()) + t31Var.E, false);
+                    return;
+                }
+                return;
+            }
+        }
+        if (z9) {
+            return;
+        }
+        v4.g0 adapter2 = i31Var.getAdapter();
+        s31 s31Var = t31Var.s;
+        if (adapter2 == s31Var) {
+            return;
+        }
+        i31Var.setAdapter(s31Var);
+        if (i31Var.getAdapter().b() <= 0) {
+        }
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class j7 implements Runnable {
             default:
                 k7 k7Var2 = this.b;
                 b8 b8Var2 = k7Var2.H;
-                n51 n51Var = MediaController.B().i0;
-                long U = n51Var == null ? 0L : n51Var.U();
+                t51 t51Var = MediaController.B().i0;
+                long U = t51Var == null ? 0L : t51Var.U();
                 if (U != 0 && U != -9223372036854775807L) {
                     float f10 = b8Var2.y2;
                     long currentTimeMillis = System.currentTimeMillis();
@@ -61,9 +61,9 @@ public final class j7 implements Runnable {
                             k7Var2.y = currentTimeMillis;
                             if (b8Var2.y2 == 0.0f) {
                                 MediaController.B().i0(MediaController.B().u0, 0.0f);
-                                n51 n51Var2 = MediaController.B().i0;
-                                if (n51Var2 != null) {
-                                    n51Var2.g0();
+                                t51 t51Var2 = MediaController.B().i0;
+                                if (t51Var2 != null) {
+                                    t51Var2.g0();
                                 }
                             } else {
                                 MediaController.B().i0(MediaController.B().u0, f11);

@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLObject;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g40 implements Runnable {
     public org.telegram.messenger.q5 B0;
@@ -481,7 +481,7 @@ public final class g40 implements Runnable {
             org.telegram.messenger.w7.G(i7).n(peVar.toString(), o40Var.Q, j3, z9 ? peVar.length() : 0L, null);
             return;
         }
-        org.telegram.messenger.w7.G(i7).h0(peVar.toString(), o40Var.Q, false, 1L, 33554432, false);
+        org.telegram.messenger.w7.G(i7).g0(peVar.toString(), o40Var.Q, false, 1L, 33554432, false);
         this.h = false;
         if (z9) {
             org.telegram.messenger.w7.G(i7).n(peVar.toString(), o40Var.Q, j3, z9 ? peVar.length() : 0L, null);
@@ -690,11 +690,11 @@ public final class g40 implements Runnable {
     }
 
     public final void h(File file) {
-        n51 n51Var = new n51();
+        t51 t51Var = new t51();
         o40 o40Var = this.H0;
-        o40Var.S = n51Var;
-        n51Var.J = new uy(this, 1);
-        n51Var.A0(o40Var.p0);
+        o40Var.S = t51Var;
+        t51Var.J = new uy(this, 1);
+        t51Var.A0(o40Var.p0);
         o40Var.S.j0(Uri.fromFile(file), "other");
         o40Var.S.h0();
         o40Var.S.t0(true);

@@ -12,9 +12,9 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class s2 {
     public final t2 a;
@@ -123,11 +123,11 @@ public final class s2 {
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
                     int i14 = org.telegram.ui.ActionBar.k6.X8;
-                    o31 o31Var = new o31();
-                    o31Var.a = o10;
-                    o31Var.c = i14;
-                    o31Var.b = org.telegram.ui.ActionBar.k6.v0(i14);
-                    spannableStringBuilder.setSpan(o31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    u31 u31Var = new u31();
+                    u31Var.a = o10;
+                    u31Var.c = i14;
+                    u31Var.b = org.telegram.ui.ActionBar.k6.v0(i14);
+                    spannableStringBuilder.setSpan(u31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 s2Var.g = spannableStringBuilder;
             }

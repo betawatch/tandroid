@@ -13,7 +13,7 @@ import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class gt extends org.telegram.ui.Components.pj0 {
     public static final /* synthetic */ int w3 = 0;
@@ -144,7 +144,7 @@ public final class gt extends org.telegram.ui.Components.pj0 {
             int length = iArr.length;
             float[] fArr = this.k3;
             if (i20 >= length) {
-                Arrays.sort(this.n3, new oe(23));
+                Arrays.sort(this.n3, new oe(24));
                 org.telegram.messenger.g0.f3(fArr, this.l3);
                 Arrays.fill(this.p3, true);
                 return;
@@ -276,7 +276,7 @@ public final class gt extends org.telegram.ui.Components.pj0 {
                             format = String.format("%d%%", objArr2);
                         }
                         SpannableString spannableString2 = new SpannableString(format);
-                        spannableString2.setSpan(new org.telegram.ui.Components.o31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new org.telegram.ui.Components.u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
                         spannableString2.setSpan(new RelativeSizeSpan(0.8f), 0, spannableString2.length(), 33);
                         bt btVar = new bt();
                         i15 = i16;
@@ -311,7 +311,7 @@ public final class gt extends org.telegram.ui.Components.pj0 {
             if (i14 > 0) {
             }
             SpannableString spannableString22 = new SpannableString(format);
-            spannableString22.setSpan(new org.telegram.ui.Components.o31(org.telegram.messenger.g0.o()), 0, spannableString22.length(), 33);
+            spannableString22.setSpan(new org.telegram.ui.Components.u31(org.telegram.messenger.g0.o()), 0, spannableString22.length(), 33);
             spannableString22.setSpan(new RelativeSizeSpan(0.8f), 0, spannableString22.length(), 33);
             bt btVar2 = new bt();
             i15 = i16;

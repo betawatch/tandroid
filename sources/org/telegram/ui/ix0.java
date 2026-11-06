@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ix0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,17 +18,17 @@ public final /* synthetic */ class ix0 implements Runnable {
         switch (this.a) {
             case 0:
                 kx0 kx0Var = this.b;
-                org.telegram.ui.Components.o61 o61Var = kx0Var.b;
+                org.telegram.ui.Components.u61 u61Var = kx0Var.b;
                 jx0 jx0Var = kx0Var.d;
                 int i7 = this.c;
-                o61Var.d(i7, jx0Var.i(i7));
+                u61Var.d(i7, jx0Var.i(i7));
                 break;
             default:
                 kx0 kx0Var2 = this.b;
-                org.telegram.ui.Components.o61 o61Var2 = kx0Var2.b;
+                org.telegram.ui.Components.u61 u61Var2 = kx0Var2.b;
                 jx0 jx0Var2 = kx0Var2.d;
                 int i10 = this.c;
-                o61Var2.d(i10, jx0Var2.i(i10));
+                u61Var2.d(i10, jx0Var2.i(i10));
                 break;
         }
     }

@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n41 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class n41 implements RequestDelegate {
                             }
                             str = str4;
                             str2 = str3;
-                            org.telegram.messenger.g0.h3(new io0(o41Var, str, str2, u10Var, 16));
+                            org.telegram.messenger.g0.h3(new jo0(o41Var, str, str2, u10Var, 16));
                             return;
                         }
                     } else {
@@ -85,7 +85,7 @@ public final /* synthetic */ class n41 implements RequestDelegate {
                     str = null;
                     str2 = null;
                 }
-                org.telegram.messenger.g0.h3(new io0(o41Var, str, str2, u10Var, 16));
+                org.telegram.messenger.g0.h3(new jo0(o41Var, str, str2, u10Var, 16));
                 break;
             case 1:
                 org.telegram.messenger.g0.h3(new t21((x71) this.b, (String) this.c, tL_error));
@@ -104,7 +104,7 @@ public final /* synthetic */ class n41 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new t21((r91) this.b, (String) this.c, tLObject, 8));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new io0((ya1) this.b, tLObject, (String) this.c, tL_error, 19));
+                org.telegram.messenger.g0.h3(new jo0((ya1) this.b, tLObject, (String) this.c, tL_error, 19));
                 break;
             case 5:
                 ya1 ya1Var = (ya1) this.b;
@@ -120,10 +120,10 @@ public final /* synthetic */ class n41 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.n(25, (mc1) this.b, (int[]) this.c));
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new io0((tg.c2) this.b, tLObject, (tg.a2) this.c, tL_error, 28));
+                org.telegram.messenger.g0.h3(new jo0((tg.c2) this.b, tLObject, (tg.a2) this.c, tL_error, 28));
                 break;
             case 8:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l31(tLObject, (org.telegram.messenger.qp) this.b, (wg.u0) this.c));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.r31(tLObject, (org.telegram.messenger.qp) this.b, (wg.u0) this.c));
                 break;
             case 9:
                 org.telegram.messenger.qp qpVar = (org.telegram.messenger.qp) this.b;
@@ -143,7 +143,7 @@ public final /* synthetic */ class n41 implements RequestDelegate {
                 }
                 break;
             case 10:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l31((org.telegram.ui.Components.up0) this.b, tL_error, (org.telegram.ui.ActionBar.f2) this.c, 29));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.r31((org.telegram.ui.Components.up0) this.b, tL_error, (org.telegram.ui.ActionBar.f2) this.c, 29));
                 break;
             default:
                 org.telegram.messenger.g0.h3(new zh.p1((zh.d3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 2));

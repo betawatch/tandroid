@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class il extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class il extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                l71 l71Var = chatAttachAlertPhotoLayout.l0;
+                r71 r71Var = chatAttachAlertPhotoLayout.l0;
                 chatAttachAlertPhotoLayout.f1.e();
                 chatAttachAlertPhotoLayout.i1 = false;
                 chatAttachAlertPhotoLayout.setAlertKeepScreenOn(false);
@@ -75,9 +75,9 @@ public final class il extends AnimatorListenerAdapter {
                 if (e5Var != null) {
                     e5Var.setVisibility(8);
                 }
-                if (l71Var != null) {
-                    l71Var.setVisibility(8);
-                    l71Var.setTag(null);
+                if (r71Var != null) {
+                    r71Var.setVisibility(8);
+                    r71Var.setTag(null);
                 }
                 jl jlVar3 = chatAttachAlertPhotoLayout.r;
                 if (jlVar3 != null) {

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a0 extends na {
     public final FrameLayout P1;
@@ -32,7 +32,7 @@ public final class a0 extends na {
     public g c2;
     public g d2;
     public int e2;
-    public f41 f2;
+    public l41 f2;
     public int g2;
 
     public a0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -212,10 +212,10 @@ public final class a0 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new d(this, 2), this.I0);
-        this.f2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 2), this.I0);
+        this.f2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

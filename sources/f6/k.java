@@ -2,12 +2,12 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Arrays;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public final MediaInfo a;
@@ -60,22 +60,22 @@ public final class k extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.n;
         this.h = jSONObject == null ? null : jSONObject.toString();
-        int r10 = wb.r(parcel, 20293);
-        wb.k(parcel, 2, this.a, i7);
-        wb.k(parcel, 3, this.b, i7);
-        wb.a(parcel, 4, this.c);
-        wb.q(parcel, 5, 8);
+        int r10 = xb.r(parcel, 20293);
+        xb.k(parcel, 2, this.a, i7);
+        xb.k(parcel, 3, this.b, i7);
+        xb.a(parcel, 4, this.c);
+        xb.q(parcel, 5, 8);
         parcel.writeLong(this.d);
-        wb.q(parcel, 6, 8);
+        xb.q(parcel, 6, 8);
         parcel.writeDouble(this.e);
-        wb.j(parcel, 7, this.f);
-        wb.l(parcel, 8, this.h);
-        wb.l(parcel, 9, this.r);
-        wb.l(parcel, 10, this.s);
-        wb.l(parcel, 11, this.w);
-        wb.l(parcel, 12, this.x);
-        wb.q(parcel, 13, 8);
+        xb.j(parcel, 7, this.f);
+        xb.l(parcel, 8, this.h);
+        xb.l(parcel, 9, this.r);
+        xb.l(parcel, 10, this.s);
+        xb.l(parcel, 11, this.w);
+        xb.l(parcel, 12, this.x);
+        xb.q(parcel, 13, 8);
         parcel.writeLong(this.y);
-        wb.s(parcel, r10);
+        xb.s(parcel, r10);
     }
 }

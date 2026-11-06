@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import android.content.SharedPreferences;
 import android.os.Looper;
 import android.util.LongSparseArray;
-import c8.wa;
+import c8.xa;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -103,10 +103,10 @@ public final /* synthetic */ class z implements Runnable {
                     if (!file2.exists()) {
                         file2.createNewFile();
                     }
-                    long size = wa.c.size();
+                    long size = xa.c.size();
                     SerializedData serializedData2 = new SerializedData(true);
                     serializedData2.writeInt64(size);
-                    ArrayList arrayList2 = wa.c;
+                    ArrayList arrayList2 = xa.c;
                     int size2 = arrayList2.size();
                     int i11 = 0;
                     while (i11 < size2) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class z implements Runnable {
                     }
                     SerializedData serializedData3 = new SerializedData(serializedData2.length());
                     serializedData3.writeInt64(size);
-                    ArrayList arrayList3 = wa.c;
+                    ArrayList arrayList3 = xa.c;
                     int size3 = arrayList3.size();
                     while (i10 < size3) {
                         Object obj2 = arrayList3.get(i10);
@@ -139,14 +139,27 @@ public final /* synthetic */ class z implements Runnable {
             case 8:
                 break;
             case 9:
-                org.telegram.utils.twidget.p.j();
+                if (org.telegram.utils.twidget.h0.a()) {
+                    org.telegram.utils.twidget.p.f.clear();
+                    Iterator it2 = org.telegram.utils.twidget.p.a.values().iterator();
+                    while (it2.hasNext()) {
+                        org.telegram.utils.twidget.u uVar = ((org.telegram.utils.twidget.m) it2.next()).t;
+                        if (uVar != null && uVar.f != null) {
+                            uVar.p();
+                        }
+                    }
+                    break;
+                }
                 break;
             case 10:
+                org.telegram.utils.twidget.p.j();
+                break;
+            case 11:
                 iz.D1 = !iz.D1;
                 org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", iz.D1);
                 org.telegram.messenger.g0.c0(LaunchActivity.G1.x0.getRootView(), new pg.c(i10));
                 break;
-            case 11:
+            case 12:
                 SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
                 String str = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
@@ -171,33 +184,33 @@ public final /* synthetic */ class z implements Runnable {
                 str = string;
                 org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.i6(org.telegram.ui.ActionBar.k6.I.q() ? org.telegram.ui.ActionBar.k6.Q0(str2) : org.telegram.ui.ActionBar.k6.Q0(str), i7), 200L);
                 break;
-            case 12:
+            case 13:
                 sg.b0.b();
                 break;
-            case 13:
+            case 14:
                 Looper myLooper = Looper.myLooper();
                 if (myLooper != null) {
                     myLooper.quit();
                     break;
                 }
                 break;
-            case 14:
+            case 15:
                 Looper myLooper2 = Looper.myLooper();
                 if (myLooper2 != null) {
                     myLooper2.quit();
                     break;
                 }
                 break;
-            case 15:
+            case 16:
                 qs.f(p10.s0).m(qs.s3, new Object[0]);
                 break;
-            case 16:
+            case 17:
                 int i12 = AlarmManagerSchedulerBroadcastReceiver.a;
                 break;
-            case 17:
+            case 18:
                 float[] fArr = ug.t1.U;
                 break;
-            case 18:
+            case 19:
                 wg.f1.l1(0, null);
                 break;
             default:

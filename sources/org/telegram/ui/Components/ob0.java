@@ -6,7 +6,7 @@ import android.util.StateSet;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ob0 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,12 +55,12 @@ public final /* synthetic */ class ob0 implements Runnable {
                 ud0Var.d.q0(ud0Var.e, false);
                 break;
             case 7:
-                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.b;
-                if (bq0Var.y) {
-                    bq0Var.h("pollPosition();");
+                org.telegram.ui.cq0 cq0Var = (org.telegram.ui.cq0) this.b;
+                if (cq0Var.y) {
+                    cq0Var.h("pollPosition();");
                 }
-                if (bq0Var.G) {
-                    org.telegram.messenger.g0.i3(bq0Var.L, 500L);
+                if (cq0Var.G) {
+                    org.telegram.messenger.g0.i3(cq0Var.L, 500L);
                     break;
                 }
                 break;
@@ -97,9 +97,9 @@ public final /* synthetic */ class ob0 implements Runnable {
                 break;
             case 13:
                 ji0 ji0Var = (ji0) this.b;
-                n51 n51Var = ji0Var.n;
-                if (n51Var != null) {
-                    boolean d02 = n51Var.d0();
+                t51 t51Var = ji0Var.n;
+                if (t51Var != null) {
+                    boolean d02 = t51Var.d0();
                     float S = ji0Var.n.S() / ji0Var.n.U();
                     float f10 = ji0Var.s;
                     if (S < f10) {
@@ -146,16 +146,16 @@ public final /* synthetic */ class ob0 implements Runnable {
                 ArrayList arrayList4 = new ArrayList();
                 int i7 = dl0Var.d;
                 org.telegram.messenger.w7.G(i7).y(arrayList);
-                org.telegram.messenger.w7.G(i7).Q(arrayList2);
+                org.telegram.messenger.w7.G(i7).P(arrayList2);
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                     org.telegram.messenger.w7.G(i7);
-                    if (org.telegram.messenger.w7.N(((org.telegram.messenger.ij) arrayList.get(i10)).k, false, true).exists()) {
+                    if (org.telegram.messenger.w7.M(((org.telegram.messenger.ij) arrayList.get(i10)).k, false, true).exists()) {
                         arrayList3.add((org.telegram.messenger.ij) arrayList.get(i10));
                     }
                 }
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     org.telegram.messenger.w7.G(i7);
-                    if (!org.telegram.messenger.w7.N(((org.telegram.messenger.ij) arrayList2.get(i11)).k, false, true).exists()) {
+                    if (!org.telegram.messenger.w7.M(((org.telegram.messenger.ij) arrayList2.get(i11)).k, false, true).exists()) {
                         arrayList4.add((org.telegram.messenger.ij) arrayList2.get(i11));
                     }
                 }

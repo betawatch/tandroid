@@ -3,16 +3,16 @@ package ii;
 import android.view.View;
 import bi.nc;
 import org.telegram.messenger.hd;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Wallet.x2;
 import org.telegram.ui.Wallet.z2;
 import org.telegram.ui.gt;
 import org.telegram.ui.hm0;
 import org.telegram.ui.kt;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class x extends h61 {
+public final class x extends m61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -22,7 +22,7 @@ public final class x extends h61 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void b(View view, int i7, int i10) {
         switch (this.a) {
             case 0:
@@ -46,7 +46,7 @@ public final class x extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final View d(int i7) {
         switch (this.a) {
             case 0:
@@ -74,7 +74,7 @@ public final class x extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int e() {
         switch (this.a) {
             case 0:
@@ -90,7 +90,7 @@ public final class x extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public CharSequence g(int i7) {
         switch (this.a) {
             case 1:
@@ -102,7 +102,7 @@ public final class x extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public int h(int i7) {
         switch (this.a) {
             case 0:

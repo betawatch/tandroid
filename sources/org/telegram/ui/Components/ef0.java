@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ef0 extends View {
     public final HashSet D;
@@ -692,8 +692,8 @@ public final class ef0 extends View {
                         f11 = f27;
                         float f34 = f24;
                         canvas.scale(f33, f33, centerX2, a8.p0.f(bf0Var10.l.i(), bf0Var10.m, f34, i16));
-                        ly0 ly0Var = bf0Var10.l;
-                        ly0Var.c(centerX2 - (ly0Var.k() / f34), i16, b11, f30, canvas);
+                        my0 my0Var = bf0Var10.l;
+                        my0Var.c(centerX2 - (my0Var.k() / f34), i16, b11, f30, canvas);
                         canvas.restore();
                         float f35 = bf0Var10.q;
                         if (f35 != 1.0f) {
@@ -840,7 +840,7 @@ public final class ef0 extends View {
                         if (i11 == 0) {
                             int i12 = bf0Var5.a;
                             RectF rectF = bf0Var5.d;
-                            ProfileActivity.m0(((org.telegram.ui.st0) df0Var).b, i12, rectF.left, rectF.top);
+                            ProfileActivity.m0(((org.telegram.ui.tt0) df0Var).b, i12, rectF.left, rectF.top);
                         } else {
                             postDelayed(new v80(4, this, bf0Var5), i11);
                         }

@@ -44,12 +44,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.lt;
-import org.telegram.ui.Components.qx0;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.w70;
@@ -65,15 +65,15 @@ import org.telegram.ui.bk0;
 import org.telegram.ui.ge;
 import org.telegram.ui.jy0;
 import org.telegram.ui.ke;
-import org.telegram.ui.ko0;
 import org.telegram.ui.lk0;
+import org.telegram.ui.lo0;
 import org.telegram.ui.m81;
 import org.telegram.ui.ny0;
 import org.telegram.ui.oy0;
 import org.telegram.ui.qf;
 import org.telegram.ui.sj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -176,7 +176,7 @@ public final /* synthetic */ class a3 implements Runnable {
             return;
         }
         int[] iArr = new int[11];
-        Utilities.e.c(new l31(file, iArr, new r7((ls) x0Var, (Object) iArr, (Object) file, (Object) u1Var, str, (Object) str2, (Object) str3, 15), 4));
+        Utilities.e.c(new r31(file, iArr, new r7((ls) x0Var, (Object) iArr, (Object) file, (Object) u1Var, str, (Object) str2, (Object) str3, 15), 4));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:282:0x07a7, code lost:
@@ -266,16 +266,16 @@ public final /* synthetic */ class a3 implements Runnable {
                     LinearLayout linearLayout = new LinearLayout(k7Var2.getContext());
                     linearLayout.setOrientation(1);
                     linearLayout.setPadding(org.telegram.messenger.g0.L(23.0f), 0, org.telegram.messenger.g0.L(23.0f), 0);
-                    TextView b10 = c8.na.b(k7Var2.getContext(), 16.0f, org.telegram.ui.ActionBar.k6.j5, false, null);
+                    TextView b10 = c8.qa.b(k7Var2.getContext(), 16.0f, org.telegram.ui.ActionBar.k6.j5, false, null);
                     b10.setText(org.telegram.messenger.hd.M0(2131750040, null));
                     linearLayout.addView(b10, c8.ha.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
-                    sx0 sx0Var = new sx0(k7Var2.getContext(), k7Var2.I0);
-                    qx0 a10 = sx0Var.a(charSequence);
+                    tx0 tx0Var = new tx0(k7Var2.getContext(), k7Var2.I0);
+                    rx0 a10 = tx0Var.a(charSequence);
                     a10.setFilled(true);
                     xh.l lVar = (xh.l) a10.getChildAt(0);
                     lVar.setTextSize(1, 12.0f);
                     lVar.setGravity(17);
-                    linearLayout.addView(sx0Var, c8.ha.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+                    linearLayout.addView(tx0Var, c8.ha.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var2.getContext(), k7Var2.I0);
                     alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131750039, null);
                     alertDialog$Builder.o(linearLayout);
@@ -668,27 +668,27 @@ public final /* synthetic */ class a3 implements Runnable {
                         g1Var.E(g1Var.b + 1);
                         ny0 ny0Var = (ny0) g1Var.getViewPages()[1];
                         if (ny0Var != null) {
-                            k41 k41Var = ny0Var.f;
+                            q41 q41Var = ny0Var.f;
                             if (tLObject10 instanceof TLRPC.TL_reportResultChooseOption) {
                                 ny0Var.b = null;
                                 ny0Var.c = (TLRPC.TL_reportResultChooseOption) tLObject10;
                                 ny0Var.d = null;
-                                k41Var.f3.O(false);
+                                q41Var.f3.O(false);
                             } else if (tLObject10 instanceof TLRPC.TL_reportResultAddComment) {
                                 ny0Var.b((TLRPC.TL_reportResultAddComment) tLObject10);
                             } else if (z10) {
                                 ny0Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject10;
                                 ny0Var.c = null;
                                 ny0Var.d = null;
-                                k41Var.f3.O(false);
+                                q41Var.f3.O(false);
                             }
                             if (charSequence2 != null) {
                                 m5 m5Var = ny0Var.h;
                                 ((TextView) m5Var.c).setText(charSequence2);
                                 ((TextView) m5Var.c).getText();
                                 m5Var.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(120.0f), TLObject.FLAG_31));
-                                if (k41Var != null) {
-                                    k41Var.f3.O(true);
+                                if (q41Var != null) {
+                                    q41Var.f3.O(true);
                                     break;
                                 }
                             }
@@ -790,7 +790,7 @@ public final /* synthetic */ class a3 implements Runnable {
                         }
                     } else if (!"PASSWORD_MISSING".equals(tL_error8.text) && !tL_error8.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error8.text.startsWith("SESSION_TOO_FRESH_")) {
                         if ("SRP_ID_INVALID".equals(tL_error8.text)) {
-                            ConnectionsManager.getInstance(a21Var.a).sendRequest(new TL_account.getPassword(), new ko0(a21Var, twoStepVerificationActivity, user3, i11), 8);
+                            ConnectionsManager.getInstance(a21Var.a).sendRequest(new TL_account.getPassword(), new lo0(a21Var, twoStepVerificationActivity, user3, i11), 8);
                             break;
                         } else if (!tL_error8.text.equals("CHANNELS_TOO_MUCH")) {
                             if (twoStepVerificationActivity != null) {

@@ -103,19 +103,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.co0;
 import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cr0;
+import org.telegram.ui.dr0;
 import q6.m;
 import sg.h;
 import sg.j1;
 import sg.l0;
 import tg.l1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class c implements SuccessContinuation, k, androidx.activity.result.b, co0, j, te.b, o0, i0, p, cr0, d90, l1, l51, za, w, OnSuccessListener {
+public final class c implements SuccessContinuation, k, androidx.activity.result.b, co0, j, te.b, o0, i0, p, dr0, d90, l1, q51, za, w, OnSuccessListener {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -200,12 +200,12 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         qs.e().k(qs.k1, 512);
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public void I(ij ijVar) {
         ((g9) ((i4) this.b).z1).f(false);
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public void I0(ij ijVar) {
         ((g9) ((i4) this.b).z1).f(true);
     }
@@ -403,7 +403,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         }
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public /* synthetic */ TextureView l0() {
         return null;
     }
@@ -463,17 +463,17 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         y5 y5Var = (y5) this.b;
         w5 w5Var = y5Var.L;
         g0.r(w5Var);
-        n51 n51Var = y5Var.D;
-        if (n51Var == null || !n51Var.d0()) {
+        t51 t51Var = y5Var.D;
+        if (t51Var == null || !t51Var.d0()) {
             return;
         }
         g0.h3(w5Var);
@@ -586,12 +586,12 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((y5) this.b).i();
     }
@@ -847,7 +847,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
     }
 
@@ -988,11 +988,11 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
     public /* synthetic */ void h(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
@@ -1024,8 +1024,8 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
     public /* synthetic */ void j(long j3, boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
     }
 
     @Override // org.telegram.ui.Components.d90
@@ -1040,7 +1040,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
     public /* synthetic */ void M0(b3.l lVar, long j3, long j10, int i7) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 

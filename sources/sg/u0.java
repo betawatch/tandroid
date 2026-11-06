@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
-import c8.ec;
+import c8.fc;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.mt0;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class u0 extends q5 {
     public final /* synthetic */ w0 D;
@@ -261,7 +261,7 @@ public final class u0 extends q5 {
                                     if (j0Var.G && j0Var.l == null) {
                                         j0Var.l = new k1(j0Var.A);
                                     }
-                                    ec.a();
+                                    fc.a();
                                     z9 = true;
                                 } else {
                                     if (r2.a) {

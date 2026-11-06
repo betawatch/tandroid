@@ -6,10 +6,12 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.text.Editable;
 import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import c8.na;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import org.telegram.messenger.qs;
@@ -20,7 +22,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class o5 extends ViewGroup {
     public final RectF D;
@@ -787,17 +789,16 @@ public final class o5 extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i7, int i10) {
         int i11;
+        ArrayList arrayList;
         int i12;
         int i13;
+        int ceil;
         int i14;
-        int i15;
-        int a10;
         int L = org.telegram.messenger.g0.L(20.0f);
         int L2 = org.telegram.messenger.g0.L(4.0f);
         int L3 = org.telegram.messenger.g0.L(4.0f);
         int L4 = org.telegram.messenger.g0.L(10.0f);
         e6 e6Var = this.a;
-        int i16 = 0;
         if (e6Var == null || e6Var.b == 0 || e6Var.c == 0) {
             setMeasuredDimension(View.MeasureSpec.getSize(i7), L2 + L4);
             this.c = new int[0];
@@ -808,196 +809,165 @@ public final class o5 extends ViewGroup {
         }
         int size = (View.MeasureSpec.getSize(i7) - L) - L3;
         e6 e6Var2 = this.a;
-        int i17 = e6Var2.b;
-        int i18 = e6Var2.c;
-        this.c = new int[i18];
-        this.d = new int[i17];
+        int i15 = e6Var2.b;
+        int i16 = e6Var2.c;
+        this.c = new int[i16];
+        this.d = new int[i15];
         int L5 = org.telegram.messenger.g0.L(e6Var2.a.compact ? 20.0f : 50.0f);
-        int i19 = this.a.a.compact ? 5 : 12;
-        int e10 = i18 == 2 ? jg.g.e(i19 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
-        float f10 = i19 * 2;
-        int b10 = org.telegram.messenger.k5.b(f10, e10, L5);
-        for (int i20 = 0; i20 < i18; i20++) {
-            this.c[i20] = L5;
-        }
-        int i21 = 0;
-        while (true) {
-            i11 = 1;
-            if (i21 >= getChildCount()) {
-                break;
-            }
-            View childAt = getChildAt(i21);
+        int L6 = org.telegram.messenger.g0.L((this.a.a.compact ? 5 : 12) * 2);
+        int max = Math.max(1, Math.max(L5, i16 > 1 ? Math.round(size * 0.8f) : size) - L6);
+        ArrayList arrayList2 = new ArrayList();
+        int i17 = 0;
+        while (i17 < getChildCount()) {
+            View childAt = getChildAt(i17);
             if (childAt instanceof p5) {
                 p5 p5Var = (p5) childAt;
                 g1 g1Var = p5Var.a;
-                if (e6.n(p5Var.b) == 1 && (a10 = this.a.a(p5Var.b)) >= 0 && a10 < i18) {
-                    int L6 = org.telegram.messenger.g0.L(f10) + Math.round(Layout.getDesiredWidth(g1Var.getText(), g1Var.getPaint()));
-                    int[] iArr = this.c;
-                    iArr[a10] = Math.max(iArr[a10], Math.min(b10, L6));
-                }
-            }
-            i21++;
-        }
-        int i22 = 0;
-        while (i22 < getChildCount()) {
-            View childAt2 = getChildAt(i22);
-            if (childAt2 instanceof p5) {
-                p5 p5Var2 = (p5) childAt2;
-                g1 g1Var2 = p5Var2.a;
-                int n10 = e6.n(p5Var2.b);
-                if (n10 > i11) {
-                    i15 = i11;
-                    int a11 = this.a.a(p5Var2.b);
-                    int min = Math.min(i18, n10 + a11);
-                    if (a11 >= 0 && a11 < min) {
-                        int i23 = i16;
-                        for (int i24 = a11; i24 < min; i24++) {
-                            i23 += this.c[i24];
-                        }
-                        int min2 = Math.min((min - a11) * b10, org.telegram.messenger.g0.L(f10) + Math.round(Layout.getDesiredWidth(g1Var2.getText(), g1Var2.getPaint()))) - i23;
-                        while (a11 < min && min2 > 0) {
-                            int i25 = ((min2 + r14) - 1) / (min - a11);
-                            int[] iArr2 = this.c;
-                            iArr2[a11] = iArr2[a11] + i25;
-                            min2 -= i25;
-                            a11++;
-                        }
+                int a10 = this.a.a(p5Var.b);
+                if (a10 >= 0 && a10 < i16) {
+                    arrayList = arrayList2;
+                    Editable text = g1Var.getText();
+                    i12 = L;
+                    if (text == null) {
+                        i13 = L3;
+                        ceil = 0;
+                    } else {
+                        i13 = L3;
+                        ceil = (int) Math.ceil(Layout.getDesiredWidth(text, g1Var.getPaint()));
                     }
-                    i22++;
-                    i11 = i15;
-                    i16 = 0;
+                    i14 = i17;
+                    arrayList.add(na.b(text, g1Var.getPaint(), a10, e6.n(p5Var.b), L6, max, ceil));
+                    i17 = i14 + 1;
+                    arrayList2 = arrayList;
+                    L = i12;
+                    L3 = i13;
                 }
             }
-            i15 = i11;
-            i22++;
-            i11 = i15;
-            i16 = 0;
+            i12 = L;
+            i13 = L3;
+            arrayList = arrayList2;
+            i14 = i17;
+            i17 = i14 + 1;
+            arrayList2 = arrayList;
+            L = i12;
+            L3 = i13;
         }
-        int i26 = i11;
-        int i27 = 0;
-        for (int i28 : this.c) {
-            i27 += i28;
+        int i18 = L;
+        int i19 = L3;
+        System.arraycopy(na.a(i16, size, L5, arrayList2), 0, this.c, 0, i16);
+        int i20 = 0;
+        for (int i21 : this.c) {
+            i20 += i21;
         }
-        if (i27 < size && i18 > 0) {
-            int i29 = size - i27;
-            int i30 = 0;
-            while (i30 < i18) {
-                int round = i30 == i18 + (-1) ? i29 : Math.round((this.c[i30] * i29) / i27);
-                int[] iArr3 = this.c;
-                int i31 = iArr3[i30] + round;
-                iArr3[i30] = i31;
-                i29 -= round;
-                i27 -= i31 - round;
-                i30++;
+        if (i20 < size && i16 > 0) {
+            int i22 = size - i20;
+            int i23 = 0;
+            while (i23 < i16) {
+                int round = i23 == i16 + (-1) ? i22 : Math.round((this.c[i23] * i22) / i20);
+                int[] iArr = this.c;
+                int i24 = iArr[i23] + round;
+                iArr[i23] = i24;
+                i22 -= round;
+                i20 -= i24 - round;
+                i23++;
             }
         }
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-        int i32 = 0;
-        while (i32 < getChildCount()) {
-            View childAt3 = getChildAt(i32);
+        for (int i25 = 0; i25 < getChildCount(); i25++) {
+            View childAt2 = getChildAt(i25);
+            if (childAt2 instanceof p5) {
+                p5 p5Var2 = (p5) childAt2;
+                int b10 = this.a.b(p5Var2.b);
+                int a11 = this.a.a(p5Var2.b);
+                int n10 = e6.n(p5Var2.b);
+                int i26 = 0;
+                for (int i27 = a11; i27 < a11 + n10 && i27 < i16; i27++) {
+                    i26 += this.c[i27];
+                }
+                p5Var2.measure(View.MeasureSpec.makeMeasureSpec(i26, TLObject.FLAG_30), makeMeasureSpec);
+                if (e6.o(p5Var2.b) == 1) {
+                    int measuredHeight = p5Var2.getMeasuredHeight();
+                    int[] iArr2 = this.d;
+                    if (measuredHeight > iArr2[b10]) {
+                        iArr2[b10] = p5Var2.getMeasuredHeight();
+                    }
+                }
+            }
+        }
+        for (int i28 = 0; i28 < getChildCount(); i28++) {
+            View childAt3 = getChildAt(i28);
             if (childAt3 instanceof p5) {
                 p5 p5Var3 = (p5) childAt3;
                 int b11 = this.a.b(p5Var3.b);
-                int a12 = this.a.a(p5Var3.b);
-                int n11 = e6.n(p5Var3.b);
-                i14 = i32;
-                int i33 = 0;
-                for (int i34 = a12; i34 < a12 + n11 && i34 < i18; i34++) {
-                    i33 += this.c[i34];
-                }
-                p5Var3.measure(View.MeasureSpec.makeMeasureSpec(i33, TLObject.FLAG_30), makeMeasureSpec);
-                if (e6.o(p5Var3.b) == i26) {
-                    int measuredHeight = p5Var3.getMeasuredHeight();
-                    int[] iArr4 = this.d;
-                    if (measuredHeight > iArr4[b11]) {
-                        iArr4[b11] = p5Var3.getMeasuredHeight();
+                int o4 = e6.o(p5Var3.b);
+                if (o4 > 1) {
+                    int i29 = b11;
+                    int i30 = 0;
+                    while (true) {
+                        i11 = b11 + o4;
+                        if (i29 >= i11 || i29 >= i15) {
+                            break;
+                        }
+                        i30 += this.d[i29];
+                        i29++;
+                    }
+                    int measuredHeight2 = p5Var3.getMeasuredHeight();
+                    if (measuredHeight2 > i30) {
+                        int i31 = measuredHeight2 - i30;
+                        int max2 = i31 / Math.max(o4, 1);
+                        int max3 = i31 % Math.max(o4, 1);
+                        while (b11 < i11 && b11 < i15) {
+                            int[] iArr3 = this.d;
+                            iArr3[b11] = (max3 > 0 ? 1 : 0) + max2 + iArr3[b11];
+                            if (max3 > 0) {
+                                max3--;
+                            }
+                            b11++;
+                        }
                     }
                 }
-            } else {
-                i14 = i32;
             }
-            i32 = i14 + 1;
-            i26 = 1;
         }
-        for (int i35 = 0; i35 < getChildCount(); i35++) {
-            View childAt4 = getChildAt(i35);
+        for (int i32 = 0; i32 < getChildCount(); i32++) {
+            View childAt4 = getChildAt(i32);
             if (childAt4 instanceof p5) {
                 p5 p5Var4 = (p5) childAt4;
                 int b12 = this.a.b(p5Var4.b);
-                int o4 = e6.o(p5Var4.b);
-                if (o4 > 1) {
-                    int i36 = b12;
-                    int i37 = 0;
-                    while (true) {
-                        i13 = b12 + o4;
-                        if (i36 >= i13 || i36 >= i17) {
-                            break;
-                        }
-                        i37 += this.d[i36];
-                        i36++;
-                    }
-                    int measuredHeight2 = p5Var4.getMeasuredHeight();
-                    if (measuredHeight2 > i37) {
-                        int i38 = measuredHeight2 - i37;
-                        int max = i38 / Math.max(o4, 1);
-                        int max2 = i38 % Math.max(o4, 1);
-                        while (b12 < i13 && b12 < i17) {
-                            int[] iArr5 = this.d;
-                            iArr5[b12] = max + (max2 > 0 ? 1 : 0) + iArr5[b12];
-                            if (max2 > 0) {
-                                max2--;
-                            }
-                            b12++;
-                        }
-                    }
+                int a12 = this.a.a(p5Var4.b);
+                int n11 = e6.n(p5Var4.b);
+                int o10 = e6.o(p5Var4.b);
+                int i33 = 0;
+                for (int i34 = a12; i34 < a12 + n11 && i34 < i16; i34++) {
+                    i33 += this.c[i34];
                 }
+                int i35 = 0;
+                for (int i36 = b12; i36 < b12 + o10 && i36 < i15; i36++) {
+                    i35 += this.d[i36];
+                }
+                p5Var4.measure(View.MeasureSpec.makeMeasureSpec(i33, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i35, TLObject.FLAG_30));
             }
         }
+        int[] iArr4 = new int[i16 + 1];
+        this.e = iArr4;
+        iArr4[0] = i18;
+        int i37 = 0;
+        while (i37 < i16) {
+            int[] iArr5 = this.e;
+            int i38 = i37 + 1;
+            iArr5[i38] = iArr5[i37] + this.c[i37];
+            i37 = i38;
+        }
+        int[] iArr6 = new int[i15 + 1];
+        this.f = iArr6;
+        iArr6[0] = L2;
         int i39 = 0;
-        while (i39 < getChildCount()) {
-            View childAt5 = getChildAt(i39);
-            if (childAt5 instanceof p5) {
-                p5 p5Var5 = (p5) childAt5;
-                int b13 = this.a.b(p5Var5.b);
-                int a13 = this.a.a(p5Var5.b);
-                int n12 = e6.n(p5Var5.b);
-                int o10 = e6.o(p5Var5.b);
-                i12 = i39;
-                int i40 = 0;
-                for (int i41 = a13; i41 < a13 + n12 && i41 < i18; i41++) {
-                    i40 += this.c[i41];
-                }
-                int i42 = 0;
-                for (int i43 = b13; i43 < b13 + o10 && i43 < i17; i43++) {
-                    i42 += this.d[i43];
-                }
-                p5Var5.measure(View.MeasureSpec.makeMeasureSpec(i40, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i42, TLObject.FLAG_30));
-            } else {
-                i12 = i39;
-            }
-            i39 = i12 + 1;
+        while (i39 < i15) {
+            int[] iArr7 = this.f;
+            int i40 = i39 + 1;
+            iArr7[i40] = iArr7[i39] + this.d[i39];
+            i39 = i40;
         }
-        int[] iArr6 = new int[i18 + 1];
-        this.e = iArr6;
-        iArr6[0] = L;
-        int i44 = 0;
-        while (i44 < i18) {
-            int[] iArr7 = this.e;
-            int i45 = i44 + 1;
-            iArr7[i45] = iArr7[i44] + this.c[i44];
-            i44 = i45;
-        }
-        int[] iArr8 = new int[i17 + 1];
-        this.f = iArr8;
-        iArr8[0] = L2;
-        int i46 = 0;
-        while (i46 < i17) {
-            int[] iArr9 = this.f;
-            int i47 = i46 + 1;
-            iArr9[i47] = iArr9[i46] + this.d[i46];
-            i46 = i47;
-        }
-        setMeasuredDimension(Math.max(this.e[i18] + L3, size + L + L3), this.f[i17] + L4);
+        setMeasuredDimension(Math.max(this.e[i16] + i19, size + i18 + i19), this.f[i15] + L4);
     }
 
     public final boolean p(int i7, int i10) {

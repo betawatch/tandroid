@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
     public final e2.r0 f0;
@@ -24,7 +24,7 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
     public final Paint i0;
     public boolean j0;
     public final ArrayList k0;
-    public final rv0 l0;
+    public final un0 l0;
     public final /* synthetic */ ProfileActivity m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -35,7 +35,7 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
         this.f0 = new e2.r0();
         this.i0 = new Paint();
         this.k0 = new ArrayList();
-        this.l0 = new rv0(0);
+        this.l0 = new un0(1);
     }
 
     @Override // org.telegram.ui.Components.rt0, android.view.ViewGroup, android.view.View
@@ -133,12 +133,12 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
             return;
         }
         canvas.save();
-        pu0 pu0Var = profileActivity.a;
-        canvas.translate(pu0Var != null ? pu0Var.getTranslationX() : 0.0f, 0.0f);
+        qu0 qu0Var = profileActivity.a;
+        canvas.translate(qu0Var != null ? qu0Var.getTranslationX() : 0.0f, 0.0f);
         int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, profileActivity.z0);
         int i12 = profileActivity.I6;
-        pu0 pu0Var2 = profileActivity.a;
-        org.telegram.messenger.g0.O(canvas, this, w02, i12, pu0Var2 != null ? pu0Var2.getAlpha() : 0.0f);
+        qu0 qu0Var2 = profileActivity.a;
+        org.telegram.messenger.g0.O(canvas, this, w02, i12, qu0Var2 != null ? qu0Var2.getAlpha() : 0.0f);
         canvas.restore();
     }
 
@@ -147,9 +147,9 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
         org.telegram.ui.Components.sr0[] sr0VarArr;
         org.telegram.ui.Components.sr0 sr0Var;
         ProfileActivity profileActivity = this.m0;
-        dv0 dv0Var = profileActivity.V4;
-        if (dv0Var.n) {
-            return dv0Var.g(motionEvent);
+        ev0 ev0Var = profileActivity.V4;
+        if (ev0Var.n) {
+            return ev0Var.g(motionEvent);
         }
         vv0 vv0Var = profileActivity.N;
         if (vv0Var != null && (sr0Var = (sr0VarArr = vv0Var.m0)[0]) != null && sr0Var.h.getFastScroll() != null && sr0VarArr[0].h.getFastScroll().n) {
@@ -285,9 +285,9 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
         HashMap hashMap = profileActivity.X1;
         kVar = ((org.telegram.ui.ActionBar.f2) profileActivity).actionBar;
         int i16 = currentActionBarHeight + (kVar.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
-        pu0 pu0Var = profileActivity.a;
-        if (pu0Var != null) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) pu0Var.getLayoutParams();
+        qu0 qu0Var = profileActivity.a;
+        if (qu0Var != null) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) qu0Var.getLayoutParams();
             if (layoutParams.topMargin != i16) {
                 layoutParams.topMargin = i16;
             }
@@ -379,9 +379,9 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
                 if (uw0Var != null) {
                     uw0Var.a(603979775);
                 }
-                bv0 bv0Var = profileActivity.u0;
-                if (bv0Var != null) {
-                    bv0Var.setExpandProgress(1.0f);
+                cv0 cv0Var = profileActivity.u0;
+                if (cv0Var != null) {
+                    cv0Var.setExpandProgress(1.0f);
                 }
                 bi.g1 g1Var = profileActivity.v0;
                 if (g1Var != null) {
@@ -447,8 +447,8 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
             profileActivity.c.h1(0, -i16);
             profileActivity.a.setPadding(0, measuredWidth2, 0, max2);
             measureChildWithMargins(profileActivity.a, i7, 0, i10, 0);
-            pu0 pu0Var2 = profileActivity.a;
-            pu0Var2.layout(0, i16, pu0Var2.getMeasuredWidth(), profileActivity.a.getMeasuredHeight() + i16);
+            qu0 qu0Var2 = profileActivity.a;
+            qu0Var2.layout(0, i16, qu0Var2.getMeasuredWidth(), profileActivity.a.getMeasuredHeight() + i16);
             this.h0 = false;
         } else if (z11 && !profileActivity.F1 && !profileActivity.T4) {
             this.h0 = true;
@@ -482,9 +482,9 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
                 }
             }
             if (view == null && (view = profileActivity.a.getChildAt(0)) != null) {
-                pu0 pu0Var3 = profileActivity.a;
-                View F = pu0Var3.F(view);
-                v4.d1 T = F != null ? pu0Var3.T(F) : null;
+                qu0 qu0Var3 = profileActivity.a;
+                View F = qu0Var3.F(view);
+                v4.d1 T = F != null ? qu0Var3.T(F) : null;
                 i11 = T.b();
                 if (i11 == -1 && (i11 = T.g) == -1) {
                     i11 = T.c;
@@ -512,8 +512,8 @@ public final class tv0 extends org.telegram.ui.Components.rt0 implements r0.l {
                         if (i15 != 0) {
                             measureChildWithMargins(profileActivity.a, i7, 0, i10, 0);
                             try {
-                                pu0 pu0Var4 = profileActivity.a;
-                                pu0Var4.layout(0, i16, pu0Var4.getMeasuredWidth(), profileActivity.a.getMeasuredHeight() + i16);
+                                qu0 qu0Var4 = profileActivity.a;
+                                qu0Var4.layout(0, i16, qu0Var4.getMeasuredWidth(), profileActivity.a.getMeasuredHeight() + i16);
                             } catch (Exception e11) {
                                 org.telegram.messenger.a8.g(e11, true);
                             }

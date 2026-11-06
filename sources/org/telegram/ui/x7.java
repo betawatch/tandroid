@@ -18,7 +18,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class x7 extends v4.g0 {
     public final /* synthetic */ int c;
@@ -293,7 +293,7 @@ public final class x7 extends v4.g0 {
                     marginLayoutParams.rightMargin = org.telegram.messenger.g0.L(4.0f);
                     textView.setText(spannableString);
                 }
-                sVar.b(c8.sa.a(w80Var), false);
+                sVar.b(c8.ua.a(w80Var), false);
                 int L = org.telegram.messenger.g0.L(18.0f);
                 int i23 = org.telegram.ui.ActionBar.k6.i6;
                 org.telegram.ui.ActionBar.r6.R(qVar, org.telegram.ui.ActionBar.k6.k0(L, L, L, L, 0, org.telegram.ui.ActionBar.k6.x0(null, i23, false), -16777216), null, org.telegram.ui.ActionBar.r6.N(i23), null);

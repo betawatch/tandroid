@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ss extends org.telegram.ui.Components.na {
     public final FrameLayout P1;
@@ -25,7 +25,7 @@ public final class ss extends org.telegram.ui.Components.na {
     public final ArrayList S1;
     public final HashSet T1;
     public boolean U1;
-    public org.telegram.ui.Components.f41 V1;
+    public org.telegram.ui.Components.l41 V1;
 
     public ss(Activity activity, HashSet hashSet) {
         super(activity, null, false, false, new di.b());
@@ -83,18 +83,18 @@ public final class ss extends org.telegram.ui.Components.na {
         frameLayout2.addView(imageView2, c8.ha.e(56, 56, 17));
         e10.addView(frameLayout2, c8.ha.t(80, 80, 1, 2, 21, 2, 13));
         int i12 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.Components.w70 a10 = c8.na.a(activity, 20.0f, i12, true, this.I0);
+        org.telegram.ui.Components.w70 a10 = c8.qa.a(activity, 20.0f, i12, true, this.I0);
         a10.setText(org.telegram.messenger.hd.M0(2131749482, null));
         a10.setGravity(17);
         e10.addView(a10, c8.ha.t(-1, -2, 1, 2, 0, 2, 4));
-        org.telegram.ui.Components.w70 a11 = c8.na.a(activity, 14.0f, i12, false, this.I0);
+        org.telegram.ui.Components.w70 a11 = c8.qa.a(activity, 14.0f, i12, false, this.I0);
         a11.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131749483, null)));
         a11.setGravity(17);
         a11.setMaxWidth(fi.m3.a(a11.getText(), a11.getPaint()));
         e10.addView(a11, c8.ha.t(-1, -2, 1, 2, 0, 2, 23));
-        org.telegram.ui.Components.f41 f41Var = this.V1;
-        if (f41Var != null) {
-            f41Var.O(false);
+        org.telegram.ui.Components.l41 l41Var = this.V1;
+        if (l41Var != null) {
+            l41Var.O(false);
         }
         v4.k kVar = new v4.k();
         kVar.m = false;
@@ -176,9 +176,9 @@ public final class ss extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final org.telegram.ui.Components.oj0 L0(org.telegram.ui.Components.pj0 pj0Var) {
-        org.telegram.ui.Components.f41 f41Var = new org.telegram.ui.Components.f41(pj0Var, getContext(), this.a, 0, true, new a5(this, 10), this.I0);
-        this.V1 = f41Var;
-        return f41Var;
+        org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(pj0Var, getContext(), this.a, 0, true, new a5(this, 10), this.I0);
+        this.V1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

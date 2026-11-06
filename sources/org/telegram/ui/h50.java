@@ -12,7 +12,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h50 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -162,28 +162,28 @@ public final /* synthetic */ class h50 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((hl0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 26));
                 break;
             case 18:
-                org.telegram.messenger.g0.h3(new io0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 1));
+                org.telegram.messenger.g0.h3(new jo0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 1));
                 break;
             case 19:
-                org.telegram.messenger.g0.h3(new io0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 2));
+                org.telegram.messenger.g0.h3(new jo0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 2));
                 break;
             case 20:
                 org.telegram.messenger.g0.h3(new qn0(13, (PrivacySettingsActivity) obj2, (org.telegram.ui.Cells.r8) obj));
                 break;
             case 21:
                 RectF rectF = ProfileActivity.S6;
-                org.telegram.messenger.g0.h3(new io0(obj2, (Object) tLObject, (Object) tL_error, obj, 5));
+                org.telegram.messenger.g0.h3(new jo0(obj2, (Object) tLObject, (Object) tL_error, obj, 5));
                 break;
             case 22:
                 RectF rectF2 = ProfileActivity.S6;
-                org.telegram.messenger.g0.h3(new io0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 8));
+                org.telegram.messenger.g0.h3(new jo0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 8));
                 break;
             case 23:
                 RectF rectF3 = ProfileActivity.S6;
-                org.telegram.messenger.g0.h3(new io0(obj2, (Object) tLObject, obj, (Object) tL_error, 7));
+                org.telegram.messenger.g0.h3(new jo0(obj2, (Object) tLObject, obj, (Object) tL_error, 7));
                 break;
             case 24:
-                org.telegram.messenger.g0.h3(new io0((cw0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 10));
+                org.telegram.messenger.g0.h3(new jo0((cw0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 10));
                 break;
             case 25:
                 org.telegram.messenger.g0.h3(new t21((u21) obj2, tL_error, (TLRPC.TL_authorization) obj, i11));
@@ -192,13 +192,13 @@ public final /* synthetic */ class h50 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new t21((v21) obj2, tL_error, (TLRPC.TL_authorization) obj, i12));
                 break;
             case 27:
-                org.telegram.messenger.g0.h3(new io0((x21) obj2, tLObject, tL_error, (j9) obj, 13));
+                org.telegram.messenger.g0.h3(new jo0((x21) obj2, tLObject, tL_error, (j9) obj, 13));
                 break;
             case 28:
                 org.telegram.messenger.g0.h3(new by0(i10, (m31) obj2, (TLRPC.TL_attachMenuBot) obj));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new io0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 14));
+                org.telegram.messenger.g0.h3(new jo0((org.telegram.ui.ActionBar.f2) obj2, (Object) tL_error, tLObject, obj, 14));
                 break;
         }
     }

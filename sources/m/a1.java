@@ -16,13 +16,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
-import c8.fc;
+import c8.gc;
 import c8.h9;
-import c8.lc;
+import c8.mc;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class a1 extends TextView implements u0.k {
     public final h2.c a;
@@ -116,7 +116,7 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return lc.d(super.getCustomSelectionActionModeCallback());
+        return mc.d(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // android.widget.TextView
@@ -177,7 +177,7 @@ public class a1 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                lc.a(this);
+                mc.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -196,7 +196,7 @@ public class a1 extends TextView implements u0.k {
     }
 
     public p0.c getTextMetricsParamsCompat() {
-        return lc.a(this);
+        return mc.a(this);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -230,7 +230,7 @@ public class a1 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                lc.a(this);
+                mc.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -349,7 +349,7 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(lc.e(callback, this));
+        super.setCustomSelectionActionModeCallback(mc.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z9) {
@@ -358,7 +358,7 @@ public class a1 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((fc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((gc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
@@ -366,7 +366,7 @@ public class a1 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 28) {
             getSuperCaller().P(i7);
         } else {
-            lc.b(this, i7);
+            mc.b(this, i7);
         }
     }
 
@@ -375,7 +375,7 @@ public class a1 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 28) {
             getSuperCaller().B(i7);
         } else {
-            lc.c(this, i7);
+            mc.c(this, i7);
         }
     }
 
@@ -393,7 +393,7 @@ public class a1 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 29) {
             throw null;
         }
-        lc.a(this);
+        mc.a(this);
         throw null;
     }
 

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xd0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,17 +18,17 @@ public final /* synthetic */ class xd0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.bq0 bq0Var = this.b.a;
-                RadialProgressView radialProgressView = bq0Var.n;
-                View view = bq0Var.r;
+                org.telegram.ui.cq0 cq0Var = this.b.a;
+                RadialProgressView radialProgressView = cq0Var.n;
+                View view = cq0Var.r;
                 radialProgressView.setVisibility(4);
-                if (bq0Var.F) {
-                    bq0Var.F = false;
-                    bq0Var.setPlaybackSpeed(bq0Var.E);
+                if (cq0Var.F) {
+                    cq0Var.F = false;
+                    cq0Var.setPlaybackSpeed(cq0Var.E);
                 }
                 view.setEnabled(true);
                 view.setAlpha(1.0f);
-                PhotoViewer photoViewer = bq0Var.b;
+                PhotoViewer photoViewer = cq0Var.b;
                 if (photoViewer != null) {
                     photoViewer.s0();
                     break;

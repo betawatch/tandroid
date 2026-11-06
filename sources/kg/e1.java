@@ -13,10 +13,10 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e1 extends f2 {
     public final CharSequence a;
@@ -26,7 +26,7 @@ public final class e1 extends f2 {
     public final int e;
     public h9 f;
     public ha.b h;
-    public k41 n;
+    public q41 n;
     public boolean r;
 
     public e1(CharSequence charSequence, ArrayList arrayList, int i7, int i10, int i11) {
@@ -59,9 +59,9 @@ public final class e1 extends f2 {
         this.simpleActionBar.setTitle(this.a);
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 17));
         FrameLayout frameLayout = new FrameLayout(context);
-        k41 k41Var = new k41(this, new hi.u1(this, 12), new q4(this, 25), null);
-        this.n = k41Var;
-        k41Var.r1();
+        q41 q41Var = new q41(this, new hi.u1(this, 12), new q4(this, 25), null);
+        this.n = q41Var;
+        q41Var.r1();
         this.n.setSectionsDrawBackground(true);
         frameLayout.addView(this.n, ha.c(-1.0f, -1));
         this.fragmentView = frameLayout;

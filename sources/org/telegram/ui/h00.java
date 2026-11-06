@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class h00 {
     /* JADX WARN: Removed duplicated region for block: B:15:0x00e9  */
@@ -141,14 +141,14 @@ public abstract class h00 {
                 fi.d dVar = new fi.d(activity, f6Var2, true);
                 dVar.setRoundRadius(24);
                 dVar.i(org.telegram.messenger.hd.M0(2131750512, null), false, true);
-                dVar.setOnClickListener(new org.telegram.ui.Components.n41(14, activity, tL_collectibleInfo));
+                dVar.setOnClickListener(new org.telegram.ui.Components.t41(14, activity, tL_collectibleInfo));
                 linearLayout.addView(dVar, c8.ha.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
                 if (pp0Var != null) {
                     fi.d dVar2 = new fi.d(activity, f6Var2, true);
                     dVar2.setRoundRadius(24);
                     dVar2.e();
                     dVar2.i(org.telegram.messenger.hd.M0(i7 == 0 ? 2131750514 : 2131750517, null), false, true);
-                    dVar2.setOnClickListener(new org.telegram.ui.Components.n41(15, pp0Var, v2Var));
+                    dVar2.setOnClickListener(new org.telegram.ui.Components.t41(15, pp0Var, v2Var));
                     linearLayout.addView(dVar2, c8.ha.k(6.0f, 6.0f, 6.0f, 0.0f, -1, 48));
                 }
                 v2Var.N = linearLayout;
@@ -211,7 +211,7 @@ public abstract class h00 {
         fi.d dVar3 = new fi.d(activity, f6Var2, true);
         dVar3.setRoundRadius(24);
         dVar3.i(org.telegram.messenger.hd.M0(2131750512, null), false, true);
-        dVar3.setOnClickListener(new org.telegram.ui.Components.n41(14, activity, tL_collectibleInfo));
+        dVar3.setOnClickListener(new org.telegram.ui.Components.t41(14, activity, tL_collectibleInfo));
         linearLayout.addView(dVar3, c8.ha.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
         if (pp0Var != null) {
         }

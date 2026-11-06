@@ -10,7 +10,7 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class y4 implements ls {
     public int D;
@@ -54,7 +54,7 @@ public final class y4 implements ls {
         f10.b(this, qs.U1);
         f10.b(this, qs.V1);
         f10.b(this, qs.W1);
-        w7.G(this.a).i0(false, this.c ? 33554432 : this.d ? ConnectionsManager.FileTypeAudio : this.e ? 67108864 : 16777216, this.E, (this.c || this.d || this.e) ? false : true);
+        w7.G(this.a).h0(false, this.c ? 33554432 : this.d ? ConnectionsManager.FileTypeAudio : this.e ? 67108864 : 16777216, this.E, (this.c || this.d || this.e) ? false : true);
     }
 
     public final void b() {
@@ -190,7 +190,7 @@ public final class y4 implements ls {
                 this.G = inputFile2;
                 this.H = true;
                 this.E = this.F;
-                w7.G(this.a).i0(false, 16777216, this.E, true);
+                w7.G(this.a).h0(false, 16777216, this.E, true);
                 return;
             }
             if (this.e && this.H) {

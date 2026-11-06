@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ny0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public int a;
@@ -14,7 +14,7 @@ public final class ny0 extends FrameLayout implements org.telegram.ui.ActionBar.
     public TLRPC.TL_reportResultChooseOption c;
     public TLRPC.TL_reportResultAddComment d;
     public final FrameLayout e;
-    public final org.telegram.ui.Components.k41 f;
+    public final org.telegram.ui.Components.q41 f;
     public final bi.m5 h;
     public ly0 n;
     public FrameLayout r;
@@ -45,20 +45,20 @@ public final class ny0 extends FrameLayout implements org.telegram.ui.ActionBar.
         ((org.telegram.ui.ActionBar.y1) m5Var.d).a(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, oy0Var.I0));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, m5Var, oy0Var.I0);
         addView(m5Var, c8.ha.e(-1, -2, 55));
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(context, oy0Var.a, 0, true, new a5(this, 20), new li0(this, 14), null, oy0Var.I0);
-        this.f = k41Var;
-        k41Var.setClipToPadding(false);
-        k41Var.e3.k1(true);
-        k41Var.setOnScrollListener(new g3(this, 28));
-        frameLayout.addView(k41Var, c8.ha.c(-1.0f, -1));
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(context, oy0Var.a, 0, true, new a5(this, 20), new li0(this, 14), null, oy0Var.I0);
+        this.f = q41Var;
+        q41Var.setClipToPadding(false);
+        q41Var.e3.k1(true);
+        q41Var.setOnScrollListener(new g3(this, 28));
+        frameLayout.addView(q41Var, c8.ha.c(-1.0f, -1));
     }
 
     public final void a(int i7) {
         this.a = i7;
         this.h.b(i7 != 0);
-        org.telegram.ui.Components.k41 k41Var = this.f;
-        if (k41Var != null) {
-            k41Var.f3.O(true);
+        org.telegram.ui.Components.q41 q41Var = this.f;
+        if (q41Var != null) {
+            q41Var.f3.O(true);
         }
     }
 

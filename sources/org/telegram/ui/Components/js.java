@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class js implements SensorEventListener {
     public int D;
@@ -31,7 +31,7 @@ public final class js implements SensorEventListener {
     public final PowerManager.WakeLock h;
     public boolean n;
     public boolean r;
-    public n51 s;
+    public t51 s;
     public boolean w;
     public long x;
     public int y;
@@ -62,11 +62,11 @@ public final class js implements SensorEventListener {
     }
 
     public final void a() {
-        n51 n51Var = this.s;
-        if (n51Var == null) {
+        t51 t51Var = this.s;
+        if (t51Var == null) {
             return;
         }
-        n51Var.x0(this.r ? 0 : 3);
+        t51Var.x0(this.r ? 0 : 3);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

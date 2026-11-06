@@ -1,7 +1,7 @@
 package sc;
 
 import android.os.AsyncTask;
-import c8.od;
+import c8.pd;
 import g9.l;
 import java.util.Locale;
 import org.telegram.messenger.g0;
@@ -12,7 +12,7 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.hy0;
 import tc.g;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
@@ -31,7 +31,7 @@ public final class a extends AsyncTask {
     public final Object doInBackground(Object[] objArr) {
         n nVar = this.d;
         try {
-            hy0 c10 = vc.b.c(od.a(this.b), new l(this.a, 2));
+            hy0 c10 = vc.b.c(pd.a(this.b), new l(this.a, 2));
             Object obj = nVar.a;
             return new b(c10, null);
         } catch (g e10) {

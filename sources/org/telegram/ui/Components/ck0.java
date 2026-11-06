@@ -18,9 +18,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class ck0 extends org.telegram.messenger.fu implements i71 {
+public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public static final AtomicInteger s0 = new AtomicInteger();
     public final TL_iv.pageBlockEmbed W;
     public org.telegram.utils.twidget.u X;
@@ -29,7 +29,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
     public final Path a0;
     public final float[] b0;
     public final int c0;
-    public j71 d0;
+    public p71 d0;
     public boolean e0;
     public long f0;
     public boolean g0;
@@ -148,11 +148,11 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
 
     @Override // org.telegram.messenger.fu
     public final boolean Q() {
-        j71 j71Var = this.d0;
-        if (j71Var == null || !this.e0 || !j71Var.w || (j71Var.L & 3) == 2) {
+        p71 p71Var = this.d0;
+        if (p71Var == null || !this.e0 || !p71Var.w || (p71Var.L & 3) == 2) {
             return false;
         }
-        return j71Var.z || j71Var.n();
+        return p71Var.z || p71Var.n();
     }
 
     @Override // org.telegram.messenger.fu
@@ -166,7 +166,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
             return;
         }
         if (this.d0 == null) {
-            this.d0 = new j71(this, org.telegram.messenger.g0.p);
+            this.d0 = new p71(this, org.telegram.messenger.g0.p);
         }
         org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(pageblockembed.url);
         if (mVar != null) {
@@ -175,22 +175,22 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
                 arrayList.add(this);
             }
             if (org.telegram.utils.twidget.p.p(arrayList) != this) {
-                j71 j71Var = this.d0;
+                p71 p71Var = this.d0;
                 org.telegram.utils.twidget.u uVar2 = this.X;
-                j71Var.q();
-                j71Var.p = uVar2;
-                j71Var.r = uVar2 != null;
+                p71Var.q();
+                p71Var.p = uVar2;
+                p71Var.r = uVar2 != null;
                 return;
             }
             ck0 ck0Var = mVar.w;
             mVar.w = this;
             if (ck0Var != null && ck0Var != this && ck0Var.e0 && ck0Var.d0 != null) {
                 ck0Var.s0();
-                j71 j71Var2 = ck0Var.d0;
+                p71 p71Var2 = ck0Var.d0;
                 org.telegram.utils.twidget.u uVar3 = ck0Var.X;
-                j71Var2.q();
-                j71Var2.p = uVar3;
-                j71Var2.r = uVar3 != null;
+                p71Var2.q();
+                p71Var2.p = uVar3;
+                p71Var2.r = uVar3 != null;
                 View view = ck0Var.V;
                 if (view != null) {
                     view.invalidate();
@@ -202,7 +202,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
 
     @Override // org.telegram.messenger.fu
     public final void V() {
-        j71 j71Var;
+        p71 p71Var;
         if (this.d0 == null) {
             return;
         }
@@ -219,10 +219,10 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         }
         ck0 p10 = org.telegram.utils.twidget.p.p(arrayList);
         mVar.w = p10;
-        if (p10 == null || p10.e0 || p10.V == null || (j71Var = p10.d0) == null || p10.X == null) {
+        if (p10 == null || p10.e0 || p10.V == null || (p71Var = p10.d0) == null || p10.X == null) {
             return;
         }
-        j71Var.q();
+        p71Var.q();
         p10.r0();
         p10.V.invalidate();
     }
@@ -322,7 +322,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i71
+    @Override // org.telegram.ui.Components.o71
     public final void d() {
         org.telegram.ui.Cells.q1 q1Var = this.a.E;
         if (q1Var == null || q1Var.Ra == null) {
@@ -335,7 +335,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         q1Var.Ra.p0(q1Var, q1Var.g1, q1Var.h1);
     }
 
-    @Override // org.telegram.ui.Components.i71
+    @Override // org.telegram.ui.Components.o71
     public final void f(String str) {
         View view = this.V;
         if (view == null || Build.VERSION.SDK_INT < 24) {
@@ -344,7 +344,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         androidx.emoji2.text.w.h(view, str);
     }
 
-    @Override // org.telegram.ui.Components.i71
+    @Override // org.telegram.ui.Components.o71
     public final void h() {
         org.telegram.utils.twidget.u uVar = this.X;
         org.telegram.utils.twidget.f0 c10 = uVar == null ? null : uVar.c();
@@ -402,7 +402,7 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.i71
+    @Override // org.telegram.ui.Components.o71
     public final void j() {
         org.telegram.utils.twidget.f0 f0Var;
         ob0 ob0Var = this.h0;
@@ -448,9 +448,9 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         if (org.telegram.messenger.r2.a) {
             long j3 = -1;
             long uptimeMillis = this.e0 ? SystemClock.uptimeMillis() - this.f0 : -1L;
-            j71 j71Var = this.d0;
-            if (j71Var != null && j71Var.s != 0) {
-                j3 = SystemClock.uptimeMillis() - j71Var.s;
+            p71 p71Var = this.d0;
+            if (p71Var != null && p71Var.s != 0) {
+                j3 = SystemClock.uptimeMillis() - p71Var.s;
             }
             StringBuilder sb2 = new StringBuilder("widget height ");
             sb2.append(this.W.url.substring(10));
@@ -574,14 +574,14 @@ public final class ck0 extends org.telegram.messenger.fu implements i71 {
         org.telegram.ui.ActionBar.f6 resourcesProvider = q1Var != null ? q1Var.getResourcesProvider() : null;
         this.Z = org.telegram.utils.twidget.i0.d(resourcesProvider, kvVar.E());
         this.X.l(org.telegram.utils.twidget.i0.a(resourcesProvider, kvVar.E()));
-        j71 j71Var = this.d0;
+        p71 p71Var = this.d0;
         org.telegram.utils.twidget.u uVar = this.X;
-        if (j71Var.p != uVar) {
-            j71Var.q();
-            j71Var.p = uVar;
+        if (p71Var.p != uVar) {
+            p71Var.q();
+            p71Var.p = uVar;
             if (uVar != null) {
-                uVar.h = j71Var;
-                uVar.m(j71Var.q);
+                uVar.h = p71Var;
+                uVar.m(p71Var.q);
             }
         }
         this.d0.p(true);

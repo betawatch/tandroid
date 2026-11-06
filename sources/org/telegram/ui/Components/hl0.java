@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hl0 implements bj0 {
     public final /* synthetic */ int a;
@@ -59,10 +59,10 @@ public final /* synthetic */ class hl0 implements bj0 {
                 break;
             default:
                 ug.f1 f1Var = (ug.f1) this.d;
-                if (view instanceof org.telegram.ui.hs0) {
-                    org.telegram.ui.hs0 hs0Var = (org.telegram.ui.hs0) view;
-                    PremiumPreviewFragment.v0(this.b, hs0Var.f.a);
-                    f1Var.t(new ug.w0(this.c, hs0Var.f.a, false));
+                if (view instanceof org.telegram.ui.is0) {
+                    org.telegram.ui.is0 is0Var = (org.telegram.ui.is0) view;
+                    PremiumPreviewFragment.v0(this.b, is0Var.f.a);
+                    f1Var.t(new ug.w0(this.c, is0Var.f.a, false));
                     break;
                 }
                 break;

@@ -1,42 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class j61 extends v4.c0 {
-    public final /* synthetic */ jg.i0 r;
+public final class j61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j61(jg.i0 i0Var, Context context) {
-        super(context);
-        this.r = i0Var;
+    public /* synthetic */ j61(v61 v61Var, int i7) {
+        this.a = i7;
+        this.b = v61Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.g0.L(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.o61) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // v4.c0, v4.z0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, v4.y0 y0Var) {
-        int j3 = j(o(), view);
-        if (j3 > 0 || (j3 == 0 && view.getLeft() - org.telegram.messenger.g0.L(21.0f) < 0)) {
-            j3 += org.telegram.messenger.g0.L(60.0f);
-        } else {
-            if (j3 >= 0) {
-                if (j3 == 0) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                v61 v61Var = this.b;
+                View[] viewArr = v61Var.e;
+                View[] viewArr2 = v61Var.e;
+                if (viewArr[1] != null) {
+                    v61Var.G();
+                    v61Var.h.put(v61Var.f[1], viewArr2[1]);
+                    v61Var.removeView(viewArr2[1]);
+                    v61Var.F(viewArr2[0], 0.0f);
+                    viewArr2[1] = null;
                 }
-            }
-            j3 -= org.telegram.messenger.g0.L(60.0f);
-        }
-        int k10 = k(p(), view);
-        int max = Math.max(org.telegram.messenger.qs.K2, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
-        if (max > 0) {
-            y0Var.b(-j3, -k10, max, this.j);
+                v61Var.S = null;
+                v61Var.x(true);
+                k61 k61Var = v61Var.M;
+                if (k61Var != null) {
+                    k61Var.w.invalidate();
+                    v61Var.M.w.g1();
+                    v61Var.M.invalidate();
+                }
+                v61Var.u();
+                v61Var.J.e();
+                break;
+            case 1:
+                v61 v61Var2 = this.b;
+                v61Var2.x = null;
+                View[] viewArr3 = v61Var2.e;
+                if (viewArr3[1] != null) {
+                    if (!v61Var2.F) {
+                        v61Var2.G();
+                    }
+                    v61Var2.h.put(v61Var2.f[1], viewArr3[1]);
+                    v61Var2.removeView(viewArr3[1]);
+                    viewArr3[1].setVisibility(8);
+                    viewArr3[1] = null;
+                }
+                v61Var2.y = false;
+                v61Var2.I = false;
+                k61 k61Var2 = v61Var2.M;
+                if (k61Var2 != null) {
+                    k61Var2.setEnabled(true);
+                }
+                v61Var2.x(false);
+                v61Var2.u();
+                v61Var2.J.e();
+                break;
+            case 2:
+                v61 v61Var3 = this.b;
+                v61Var3.x = null;
+                View[] viewArr4 = v61Var3.e;
+                View view = viewArr4[1];
+                if (view != null) {
+                    v61Var3.removeView(view);
+                    viewArr4[1] = null;
+                }
+                v61Var3.y = false;
+                k61 k61Var3 = v61Var3.M;
+                if (k61Var3 != null) {
+                    k61Var3.setEnabled(true);
+                    k61 k61Var4 = v61Var3.M;
+                    k61Var4.J = false;
+                    k61Var4.a = 1.0f;
+                    k61Var4.w.g1();
+                    v61Var3.M.invalidate();
+                    break;
+                }
+                break;
+            default:
+                v61 v61Var4 = this.b;
+                v61Var4.x = null;
+                View[] viewArr5 = v61Var4.e;
+                if (viewArr5[1] != null) {
+                    if (!v61Var4.F) {
+                        v61Var4.G();
+                    }
+                    v61Var4.h.put(v61Var4.f[1], viewArr5[1]);
+                    v61Var4.removeView(viewArr5[1]);
+                    viewArr5[1].setVisibility(8);
+                    viewArr5[1] = null;
+                }
+                v61Var4.y = false;
+                v61Var4.I = false;
+                k61 k61Var5 = v61Var4.M;
+                if (k61Var5 != null) {
+                    k61Var5.setEnabled(true);
+                }
+                v61Var4.x(false);
+                v61Var4.u();
+                v61Var4.J.e();
+                break;
         }
     }
 }

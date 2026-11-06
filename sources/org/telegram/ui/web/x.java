@@ -42,9 +42,9 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -402,7 +402,7 @@ public final /* synthetic */ class x implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                rq0 rq0Var = (rq0) obj3;
+                sq0 sq0Var = (sq0) obj3;
                 String str16 = (String) obj2;
                 p1 p1Var = (p1) obj;
                 if (!zArr2[0]) {
@@ -411,7 +411,7 @@ public final /* synthetic */ class x implements Runnable {
                     webView.onPause();
                     webView.destroy();
                     org.telegram.messenger.g0.E2(webView);
-                    org.telegram.messenger.g0.E2(rq0Var);
+                    org.telegram.messenger.g0.E2(sq0Var);
                     try {
                         jSONObject = new JSONObject(str16);
                     } catch (Exception e16) {

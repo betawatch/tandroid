@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.a01;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class em implements Runnable {
     public final /* synthetic */ int a;
@@ -483,7 +483,7 @@ public final /* synthetic */ class em implements Runnable {
         xyVar.n = SystemClock.elapsedRealtime();
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            gzVar.getFileLoader().i0(false, 67108864, (String) arrayList.get(i10), true);
+            gzVar.getFileLoader().h0(false, 67108864, (String) arrayList.get(i10), true);
         }
     }
 

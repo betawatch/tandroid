@@ -32,7 +32,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -161,14 +161,14 @@ public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
                 xs0.a((xs0) obj4, (TL_stories.StoryItem) obj3, (di.r6) obj);
                 return;
             case 6:
-                n01 n01Var = (n01) obj4;
+                s01 s01Var = (s01) obj4;
                 ArrayList arrayList5 = (ArrayList) obj;
-                ArrayList arrayList6 = n01Var.M;
-                n01Var.N = 0;
-                if (((String) obj3).equals(n01Var.L)) {
+                ArrayList arrayList6 = s01Var.M;
+                s01Var.N = 0;
+                if (((String) obj3).equals(s01Var.L)) {
                     arrayList6.clear();
                     arrayList6.addAll(arrayList5);
-                    n01Var.g();
+                    s01Var.h();
                     return;
                 }
                 return;
@@ -369,10 +369,10 @@ public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
                 ((org.telegram.ui.zh0) obj3).run();
                 return;
             case 19:
-                org.telegram.ui.yr0 yr0Var = (org.telegram.ui.yr0) obj4;
+                org.telegram.ui.zr0 zr0Var = (org.telegram.ui.zr0) obj4;
                 org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) obj3;
                 Long l13 = (Long) obj;
-                yr0Var.getClass();
+                zr0Var.getClass();
                 Bundle bundle3 = new Bundle();
                 if (l13.longValue() >= 0) {
                     bundle3.putLong("user_id", l13.longValue());
@@ -380,7 +380,7 @@ public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
                     bundle3.putLong("chat_id", -l13.longValue());
                 }
                 f2Var3.presentFragment(new ProfileActivity(bundle3, null));
-                yr0Var.c(false);
+                zr0Var.c(false);
                 return;
             case 20:
                 ProfileActivity profileActivity = (ProfileActivity) obj4;
@@ -394,7 +394,7 @@ public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
                 userFull.flags2 |= 32;
                 userFull.birthday = tL_birthday;
                 profileActivity.getMessagesController().m2();
-                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new org.telegram.ui.ko0(profileActivity, userFull, tL_birthday2, i10), 1024);
+                profileActivity.getConnectionsManager().sendRequest(updatebirthday, new org.telegram.ui.lo0(profileActivity, userFull, tL_birthday2, i10), 1024);
                 return;
             case 21:
                 ProfileActivity profileActivity2 = (ProfileActivity) obj4;
@@ -430,9 +430,9 @@ public final /* synthetic */ class ex implements org.telegram.messenger.c20 {
                 xw0Var.c.W(0);
                 org.telegram.ui.zw0 zw0Var2 = xw0Var.c;
                 String str5 = f11 + "_" + f11 + "_precache";
-                org.telegram.ui.qu0 qu0Var = new org.telegram.ui.qu0(xw0Var, i11);
+                org.telegram.ui.ru0 ru0Var = new org.telegram.ui.ru0(xw0Var, i11);
                 zw0Var2.getClass();
-                zw0Var2.g1 = new org.telegram.ui.yw0(new Runnable[]{qu0Var});
+                zw0Var2.g1 = new org.telegram.ui.yw0(new Runnable[]{ru0Var});
                 zw0Var2.q0(org.telegram.messenger.hc.b(k10), str5, null, null, tL_messages_stickerSet2, 0);
                 xw0Var.c.P();
                 xw0Var.g[1] = true;

@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c61 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -546,7 +546,7 @@ public final class c61 extends LinearLayout {
             case 16:
                 super.onMeasure(i7, i10);
                 if (org.telegram.messenger.hd.a0) {
-                    ((org.telegram.ui.Components.c21) this.b).c.setPivotX(getMeasuredWidth());
+                    ((org.telegram.ui.Components.i21) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;
@@ -839,16 +839,16 @@ public final class c61 extends LinearLayout {
             }
         });
         c14.setSelectorColor(268435455);
-        View rq0Var = new rq0(contextThemeWrapper, 6);
-        rq0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-        rq0Var.setBackgroundColor(-15198184);
-        addView(rq0Var);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) rq0Var.getLayoutParams();
+        View sq0Var = new sq0(contextThemeWrapper, 6);
+        sq0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+        sq0Var.setBackgroundColor(-15198184);
+        addView(sq0Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) sq0Var.getLayoutParams();
         if (org.telegram.messenger.hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = org.telegram.messenger.g0.L(8.0f);
-        rq0Var.setLayoutParams(layoutParams);
+        sq0Var.setLayoutParams(layoutParams);
     }
 }

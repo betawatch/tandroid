@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final ArrayList a;
@@ -77,12 +77,12 @@ public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         if (e61Var != null) {
             return e61Var;
         }
-        e61 e61Var2 = new e61(10, getContext(), null);
+        e61 e61Var2 = new e61(11, getContext(), null);
         this.s = e61Var2;
         getContext();
         e61Var2.setLayoutManager(new v4.b0());
         this.s.i(new fi.o1(this, 5));
-        this.s.setAdapter(new bi.k5(this, 6));
+        this.s.setAdapter(new bi.k5(this, 7));
         return this.s;
     }
 

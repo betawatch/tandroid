@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t extends pj0 implements ls {
     public ArrayList e3;
@@ -64,7 +64,7 @@ public final class t extends pj0 implements ls {
         getAdapter().f();
         a0();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (c8.sa.a((w80) arrayList.get(i10))) {
+            if (c8.ua.a((w80) arrayList.get(i10))) {
                 this.f3.h1(i10, org.telegram.messenger.g0.L(16.0f));
                 return;
             }

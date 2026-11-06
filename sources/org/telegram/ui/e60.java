@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Components.w70 T;
@@ -60,7 +60,7 @@ public final class e60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout i
         d60 d60Var = new d60(this, context);
         this.b0 = d60Var;
         a(d60Var, c8.ha.o(-1, 48));
-        d60Var.setOnClickListener(new org.telegram.ui.Components.n41(19, this, f2Var));
+        d60Var.setOnClickListener(new org.telegram.ui.Components.t41(19, this, f2Var));
         for (int i10 = 0; i10 < this.a0.size(); i10++) {
             ((c60) this.a0.get(i10)).a.setOnClickListener(new ai.v(this, ((c60) this.a0.get(i10)).b, 24));
         }

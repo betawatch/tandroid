@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final /* synthetic */ class yt0 implements Runnable {
                 String r10 = org.telegram.messenger.w7.r(null, document);
                 int i7 = this.c;
                 org.telegram.messenger.z5.q(i7).a(r10, this.d, this.e);
-                org.telegram.messenger.w7.G(i7).X(document, this.f, 1, 1);
+                org.telegram.messenger.w7.G(i7).W(document, this.f, 1, 1);
                 break;
             default:
                 TLRPC.Document document2 = this.b;
                 String r11 = org.telegram.messenger.w7.r(null, document2);
                 int i10 = this.c;
                 org.telegram.messenger.z5.q(i10).a(r11, this.d, this.e);
-                org.telegram.messenger.w7.G(i10).X(document2, this.f, 1, 1);
+                org.telegram.messenger.w7.G(i10).W(document2, this.f, 1, 1);
                 break;
         }
     }

@@ -1,11 +1,11 @@
 package i5;
 
 import a8.p0;
-import c8.ib;
+import c8.jb;
 import java.nio.ByteBuffer;
 import y7.i6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ i6 n;
@@ -31,7 +31,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = h5.b.i(byteBuffer);
-        int a10 = ib.a(h5.b.i(byteBuffer));
+        int a10 = jb.a(h5.b.i(byteBuffer));
         this.h = a10;
         if (this.e == 0) {
             this.f = new long[a10];

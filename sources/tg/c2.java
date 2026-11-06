@@ -31,7 +31,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.i6;
 import c8.ha;
-import c8.je;
+import c8.ke;
 import com.google.mlkit.vision.label.internal.ImageLabelerImpl;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import fi.e7;
@@ -64,14 +64,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.jn0;
 import org.telegram.ui.n41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c2 extends FrameLayout implements ls {
     public static final /* synthetic */ int r0 = 0;
@@ -90,7 +90,7 @@ public final class c2 extends FrameLayout implements ls {
     public float P;
     public float Q;
     public float R;
-    public cz0 S;
+    public dz0 S;
     public int T;
     public int U;
     public boolean V;
@@ -494,7 +494,7 @@ public final class c2 extends FrameLayout implements ls {
         if (a2Var.m != null) {
             h();
             a2Var.m.a(a2Var.b, a2Var.e.document);
-            org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(15), 250L);
+            org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(16), 250L);
             return;
         }
         final int i11 = 0;
@@ -2497,7 +2497,7 @@ public final class c2 extends FrameLayout implements ls {
         if (i7 == qs.a2) {
             a2 a2Var7 = this.W;
             if (a2Var7 != null && objArr[0] == a2Var7.r) {
-                w7.G(p10.s0).i0(false, 67108864, this.W.b, true);
+                w7.G(p10.s0).h0(false, 67108864, this.W.b, true);
                 return;
             }
             return;
@@ -2678,14 +2678,14 @@ public final class c2 extends FrameLayout implements ls {
         return this.I;
     }
 
-    public cz0 getThanosEffect() {
-        if (!cz0.c()) {
+    public dz0 getThanosEffect() {
+        if (!dz0.c()) {
             return null;
         }
         if (this.S == null) {
-            cz0 cz0Var = new cz0(getContext(), new t1(this, 1));
-            this.S = cz0Var;
-            addView(cz0Var, ha.c(-1.0f, -1));
+            dz0 dz0Var = new dz0(getContext(), new t1(this, 1));
+            this.S = dz0Var;
+            addView(dz0Var, ha.c(-1.0f, -1));
         }
         return this.S;
     }
@@ -2777,7 +2777,7 @@ public final class c2 extends FrameLayout implements ls {
         ia.a aVar = new ia.a();
         aVar.b = true;
         aVar.c = true;
-        zzd a10 = je.a(new zb.d(aVar));
+        zzd a10 = ke.a(new zb.d(aVar));
         if (n6.h(getContext()).f()) {
             ArrayList arrayList = new ArrayList();
             Bitmap bitmap2 = this.I;
@@ -2978,7 +2978,7 @@ public final class c2 extends FrameLayout implements ls {
                         c2Var.W.r.p0 = j20Var2;
                         MediaController.B().h0(c2Var.W.r, false, false, false);
                     } else {
-                        w7.G(c2Var.a).i0(false, 67108864, str4, true);
+                        w7.G(c2Var.a).h0(false, 67108864, str4, true);
                     }
                 } else {
                     c2Var.a();

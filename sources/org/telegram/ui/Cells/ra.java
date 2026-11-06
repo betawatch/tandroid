@@ -29,14 +29,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.ui;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ra extends View implements ls {
     public static final /* synthetic */ int P = 0;
@@ -55,9 +55,9 @@ public final class ra extends View implements ls {
     public final int a;
     public final org.telegram.ui.ActionBar.f6 b;
     public long c;
-    public ly0 d;
-    public ly0 e;
-    public ly0 f;
+    public my0 d;
+    public my0 e;
+    public my0 f;
     public final ArrayList h;
     public qa n;
     public float r;
@@ -114,13 +114,13 @@ public final class ra extends View implements ls {
         this.h.clear();
         int i7 = (int) (org.telegram.messenger.g0.q.x * 0.95f);
         this.K += org.telegram.messenger.g0.L(14.0f);
-        ly0 ly0Var = new ly0(org.telegram.messenger.m5.l(p10.s0, j3), 14.0f, org.telegram.messenger.g0.o());
-        this.d = ly0Var;
-        this.K = ly0Var.i() + org.telegram.messenger.g0.L(3.0f) + this.K;
+        my0 my0Var = new my0(org.telegram.messenger.m5.l(p10.s0, j3), 14.0f, org.telegram.messenger.g0.o());
+        this.d = my0Var;
+        this.K = my0Var.i() + org.telegram.messenger.g0.L(3.0f) + this.K;
         int i10 = this.a;
-        ly0 ly0Var2 = new ly0(hd.M0(org.telegram.messenger.g5.r(i10).x(j3) ? 2131751801 : 2131751800, null), 14.0f, null);
-        this.e = ly0Var2;
-        this.K = ly0Var2.i() + org.telegram.messenger.g0.L(11.0f) + this.K;
+        my0 my0Var2 = new my0(hd.M0(org.telegram.messenger.g5.r(i10).x(j3) ? 2131751801 : 2131751800, null), 14.0f, null);
+        this.e = my0Var2;
+        this.K = my0Var2.i() + org.telegram.messenger.g0.L(11.0f) + this.K;
         if (peerSettings != null && peerSettings.phone_country != null) {
             String M0 = hd.M0(2131751797, null);
             String str = peerSettings.phone_country;
@@ -194,24 +194,24 @@ public final class ra extends View implements ls {
             wpVar.s = L2;
             spannableStringBuilder2.setSpan(wpVar, 0, 1, 33);
             spannableStringBuilder2.append((CharSequence) hd.M0(2131751798, null));
-            this.f = new ly0(spannableStringBuilder2, 12.0f, null);
+            this.f = new my0(spannableStringBuilder2, 12.0f, null);
             this.K = this.f.i() + org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.L(15.33f) + this.K;
         } else if (b22 == null || (botVerification = b22.bot_verification) == null) {
             this.f = null;
             this.K += org.telegram.messenger.g0.L(14.0f);
         } else {
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder("i  ");
-            this.f = new ly0(spannableStringBuilder3, 12.0f, null);
+            this.f = new my0(spannableStringBuilder3, 12.0f, null);
             spannableStringBuilder3.setSpan(new org.telegram.ui.Components.r5(botVerification.icon, this.f.a.getFontMetricsInt()), 0, 1, 33);
             spannableStringBuilder3.append(ij.h0(botVerification.description, false));
-            ly0 ly0Var3 = new ly0(spannableStringBuilder3, 12.0f, null);
+            my0 my0Var3 = new my0(spannableStringBuilder3, 12.0f, null);
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            ly0Var3.a();
-            ly0Var3.m(5);
+            my0Var3.a();
+            my0Var3.m(5);
             Point point = org.telegram.messenger.g0.q;
-            ly0Var3.p(Math.min(point.x, point.y) * 0.5f);
-            ly0Var3.r(this);
-            this.f = ly0Var3;
+            my0Var3.p(Math.min(point.x, point.y) * 0.5f);
+            my0Var3.r(this);
+            this.f = my0Var3;
             this.K = this.f.i() + org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.L(15.33f) + this.K;
         }
         float max2 = Math.max(this.L, this.d.k());
@@ -253,7 +253,7 @@ public final class ra extends View implements ls {
                 b(this.c, qp.s1(i12).C1(this.c));
                 requestLayout();
             } else {
-                qaVar.b = new ly0(hd.G(i13, "Groups", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
+                qaVar.b = new my0(hd.G(i13, "Groups", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
                 int min = Math.min(3, this.J.e.size());
                 org.telegram.ui.Components.y8 y8Var = this.G;
                 y8Var.i(min);
@@ -327,15 +327,15 @@ public final class ra extends View implements ls {
         float f15 = 14.0f;
         canvas.translate(0.0f, org.telegram.messenger.g0.L(14.0f));
         float L = A + org.telegram.messenger.g0.L(14.0f);
-        ly0 ly0Var = this.d;
+        my0 my0Var = this.d;
         float f16 = 32.0f;
-        ly0Var.p = this.L - org.telegram.messenger.g0.L(32.0f);
-        ly0Var.c(width - (this.d.k() / 2.0f), this.d.i() / 2.0f, 1.0f, w02, canvas);
+        my0Var.p = this.L - org.telegram.messenger.g0.L(32.0f);
+        my0Var.c(width - (this.d.k() / 2.0f), this.d.i() / 2.0f, 1.0f, w02, canvas);
         canvas.translate(0.0f, this.d.i() + org.telegram.messenger.g0.L(3.0f));
         float i11 = L + this.d.i() + org.telegram.messenger.g0.L(3.0f);
-        ly0 ly0Var2 = this.e;
-        ly0Var2.p = this.L - org.telegram.messenger.g0.L(32.0f);
-        ly0Var2.c(width - (this.e.k() / 2.0f), this.e.i() / 2.0f, 0.7f, w02, canvas);
+        my0 my0Var2 = this.e;
+        my0Var2.p = this.L - org.telegram.messenger.g0.L(32.0f);
+        my0Var2.c(width - (this.e.k() / 2.0f), this.e.i() / 2.0f, 0.7f, w02, canvas);
         canvas.translate(0.0f, this.e.i() + org.telegram.messenger.g0.L(11.0f));
         float i12 = this.e.i() + org.telegram.messenger.g0.L(11.0f) + i11;
         int i13 = 0;
@@ -353,17 +353,17 @@ public final class ra extends View implements ls {
             float f17 = f11;
             float L2 = (width - (this.L / f11)) + org.telegram.messenger.g0.L(f13) + this.s;
             float f18 = i12;
-            ly0 ly0Var3 = qaVar.a;
+            my0 my0Var3 = qaVar.a;
             float f19 = f13;
             boolean z9 = qaVar.c;
             float f20 = f15;
             RectF rectF2 = qaVar.d;
             float f21 = f16;
-            float f22 = L2 - ly0Var3.c;
+            float f22 = L2 - my0Var3.c;
             float L3 = (width - (this.L / f17)) + org.telegram.messenger.g0.L(f19) + this.s + org.telegram.messenger.g0.L(7.66f);
-            ly0Var3.p = (L3 - f22) - org.telegram.messenger.g0.L(7.66f);
+            my0Var3.p = (L3 - f22) - org.telegram.messenger.g0.L(7.66f);
             int i14 = i13;
-            ly0Var3.c(f22, ly0Var3.i() / f17, 0.7f, w02, canvas);
+            my0Var3.c(f22, my0Var3.i() / f17, 0.7f, w02, canvas);
             float L4 = (width - (this.L / f17)) + org.telegram.messenger.g0.L(f19) + this.s + org.telegram.messenger.g0.L(7.66f);
             float L5 = (width - (this.L / f17)) + org.telegram.messenger.g0.L(f19) + this.s + org.telegram.messenger.g0.L(7.66f) + qaVar.b.c;
             org.telegram.ui.Components.y8 y8Var = this.G;
@@ -383,9 +383,9 @@ public final class ra extends View implements ls {
             } else {
                 f10 = 4.0f;
             }
-            ly0 ly0Var4 = qaVar.b;
-            ly0Var4.p = (((this.L / f17) + width) - org.telegram.messenger.g0.L(8.0f)) - L3;
-            ly0Var4.c(L3, qaVar.b.i() / f17, 1.0f, w02, canvas);
+            my0 my0Var4 = qaVar.b;
+            my0Var4.p = (((this.L / f17) + width) - org.telegram.messenger.g0.L(8.0f)) - L3;
+            my0Var4.c(L3, qaVar.b.i() / f17, 1.0f, w02, canvas);
             if (z9) {
                 canvas.save();
                 canvas.translate((width - (this.L / f17)) + org.telegram.messenger.g0.L(f19) + this.s + org.telegram.messenger.g0.L(7.66f) + qaVar.b.c + org.telegram.messenger.g0.L(f10), org.telegram.messenger.g0.L(1.0f));
@@ -409,12 +409,12 @@ public final class ra extends View implements ls {
         float f24 = f16;
         if (this.f != null) {
             canvas.translate(0.0f, org.telegram.messenger.g0.L(12.0f));
-            ly0 ly0Var5 = this.f;
-            if (ly0Var5.f > 1) {
-                ly0Var5.c(width - (ly0Var5.k() / f23), 0.0f, 0.7f, w02, canvas);
+            my0 my0Var5 = this.f;
+            if (my0Var5.f > 1) {
+                my0Var5.c(width - (my0Var5.k() / f23), 0.0f, 0.7f, w02, canvas);
             } else {
-                ly0Var5.p = this.L - org.telegram.messenger.g0.L(f24);
-                ly0Var5.c(width - (this.f.k() / f23), this.f.i() / f23, 0.7f, w02, canvas);
+                my0Var5.p = this.L - org.telegram.messenger.g0.L(f24);
+                my0Var5.c(width - (this.f.k() / f23), this.f.i() / f23, 0.7f, w02, canvas);
             }
         }
         canvas.restore();

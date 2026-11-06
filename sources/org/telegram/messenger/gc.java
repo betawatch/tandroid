@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class gc {
     public static Bitmap M;
@@ -611,7 +611,7 @@ public final class gc {
         TLRPC.PhotoSize photoSize2;
         byte[] bArr2;
         TLRPC.FileLocation fileLocation;
-        File K2;
+        File J2;
         int i7;
         TLRPC.PhotoSize tL_photoSize_layer1272;
         TLRPC.MessageMedia messageMedia3 = message.media;
@@ -635,20 +635,20 @@ public final class gc {
             }
             if (t6.h > 50 || t6.w > 50) {
                 w7.G(p10.s0);
-                File K3 = w7.K(t6, null, true, true);
+                File J3 = w7.J(t6, null, true, true);
                 if (ij.S5(message)) {
-                    K3 = new File(K3.getAbsolutePath() + ".enc");
+                    J3 = new File(J3.getAbsolutePath() + ".enc");
                     z9 = true;
                 } else {
                     z9 = false;
                 }
-                if (K3.exists()) {
+                if (J3.exists()) {
                     i10 = 0;
                 } else {
                     try {
                         if (z9) {
                             try {
-                                RandomAccessFile randomAccessFile = new RandomAccessFile(new File(t0.b.getCacheDir(), K3.getName() + ".key"), "rws");
+                                RandomAccessFile randomAccessFile = new RandomAccessFile(new File(t0.b.getCacheDir(), J3.getName() + ".key"), "rws");
                                 long length = randomAccessFile.length();
                                 byte[] bArr3 = new byte[32];
                                 byte[] bArr4 = new byte[16];
@@ -686,7 +686,7 @@ public final class gc {
                         } else {
                             i10 = 0;
                         }
-                        RandomAccessFile randomAccessFile2 = new RandomAccessFile(K3, "rws");
+                        RandomAccessFile randomAccessFile2 = new RandomAccessFile(J3, "rws");
                         randomAccessFile2.write(t6.bytes);
                         randomAccessFile2.close();
                     } catch (Exception e11) {
@@ -765,17 +765,17 @@ public final class gc {
                         }
                         if (photoSize.h <= i10 || photoSize.w > i10) {
                             w7.G(p10.s0);
-                            K2 = w7.K(photoSize, null, true, true);
+                            J2 = w7.J(photoSize, null, true, true);
                             if (ij.S5(message)) {
                                 i7 = i11;
                             } else {
-                                K2 = new File(K2.getAbsolutePath() + ".enc");
+                                J2 = new File(J2.getAbsolutePath() + ".enc");
                                 i7 = 1;
                             }
-                            if (!K2.exists()) {
+                            if (!J2.exists()) {
                                 if (i7 != 0) {
                                     try {
-                                        RandomAccessFile randomAccessFile3 = new RandomAccessFile(new File(t0.b.getCacheDir(), K2.getName() + ".key"), "rws");
+                                        RandomAccessFile randomAccessFile3 = new RandomAccessFile(new File(t0.b.getCacheDir(), J2.getName() + ".key"), "rws");
                                         long length2 = randomAccessFile3.length();
                                         byte[] bArr5 = new byte[32];
                                         byte[] bArr6 = new byte[16];
@@ -795,7 +795,7 @@ public final class gc {
                                         a8.g(e12, true);
                                     }
                                 }
-                                RandomAccessFile randomAccessFile4 = new RandomAccessFile(K2, "rws");
+                                RandomAccessFile randomAccessFile4 = new RandomAccessFile(J2, "rws");
                                 randomAccessFile4.write(photoSize.bytes);
                                 randomAccessFile4.close();
                             }
@@ -896,10 +896,10 @@ public final class gc {
                         if (photoSize.h <= i10) {
                         }
                         w7.G(p10.s0);
-                        K2 = w7.K(photoSize, null, true, true);
+                        J2 = w7.J(photoSize, null, true, true);
                         if (ij.S5(message)) {
                         }
-                        if (!K2.exists()) {
+                        if (!J2.exists()) {
                         }
                         tL_photoSize_layer1272 = new TLRPC.TL_photoSize_layer127();
                         tL_photoSize_layer1272.w = photoSize.w;
@@ -1295,7 +1295,7 @@ public final class gc {
             if (bArr == null || bArr.length == 0) {
                 w7.G(p10.s0);
                 try {
-                    RandomAccessFile randomAccessFile = new RandomAccessFile(w7.K(photoSize, null, true, true), "r");
+                    RandomAccessFile randomAccessFile = new RandomAccessFile(w7.J(photoSize, null, true, true), "r");
                     if (((int) randomAccessFile.length()) < 20000) {
                         int length = (int) randomAccessFile.length();
                         byte[] bArr2 = new byte[length];
@@ -1431,14 +1431,14 @@ public final class gc {
             }
         } else {
             w7.G(p10.s0);
-            File K2 = w7.K(t6, null, true, true);
+            File J2 = w7.J(t6, null, true, true);
             TLRPC.TL_photoSize_layer127 tL_photoSize_layer127 = new TLRPC.TL_photoSize_layer127();
             tL_photoSize_layer127.w = t6.w;
             tL_photoSize_layer127.h = t6.h;
             tL_photoSize_layer127.location = t6.location;
             tL_photoSize_layer127.size = t6.size;
             tL_photoSize_layer127.type = t6.type;
-            if (K2.exists() && message.grouped_id == 0) {
+            if (J2.exists() && message.grouped_id == 0) {
                 PointF P12 = org.telegram.ui.Cells.q1.P1(t6.w, t6.h, 0, 0);
                 Locale locale2 = Locale.US;
                 TLRPC.FileLocation fileLocation = t6.location;
@@ -1448,20 +1448,20 @@ public final class gc {
                 float f15 = g0.p;
                 String str2 = j3 + "_" + i13 + "@" + ((int) (f14 / f15)) + "_" + ((int) (P12.y / f15)) + "_b";
                 if (!D().J(str2, false)) {
-                    String path = K2.getPath();
+                    String path = J2.getPath();
                     float f16 = P12.x;
                     float f17 = g0.p;
-                    Bitmap K3 = K(path, null, (int) (f16 / f17), (int) (P12.y / f17), false);
-                    if (K3 != null) {
-                        Utilities.blurBitmap(K3, 3);
+                    Bitmap K2 = K(path, null, (int) (f16 / f17), (int) (P12.y / f17), false);
+                    if (K2 != null) {
+                        Utilities.blurBitmap(K2, 3);
                         float f18 = P12.x;
                         float f19 = g0.p;
-                        Bitmap createScaledBitmap2 = Bitmap.createScaledBitmap(K3, (int) (f18 / f19), (int) (P12.y / f19), true);
-                        if (createScaledBitmap2 != K3) {
-                            K3.recycle();
-                            K3 = createScaledBitmap2;
+                        Bitmap createScaledBitmap2 = Bitmap.createScaledBitmap(K2, (int) (f18 / f19), (int) (P12.y / f19), true);
+                        if (createScaledBitmap2 != K2) {
+                            K2.recycle();
+                            K2 = createScaledBitmap2;
                         }
-                        return new cc(str2, new BitmapDrawable(K3));
+                        return new cc(str2, new BitmapDrawable(K2));
                     }
                 }
             }
@@ -2743,7 +2743,7 @@ public final class gc {
                         String str24 = ijVar.k.attachPath;
                         w7.G(i28);
                         str9 = "athumb";
-                        file2 = w7.N(ijVar.k, false, true);
+                        file2 = w7.M(ijVar.k, false, true);
                         str10 = str24;
                         i18 = ij.M4(ijVar.k) ? 2 : ij.S4(ijVar.k) ? 1 : ij.o1(ijVar.k) instanceof TLRPC.TL_messageMediaDocument ? 3 : ij.o1(ijVar.k) instanceof TLRPC.TL_messageMediaPhoto ? 0 : 4;
                         document2 = F0;
@@ -2753,10 +2753,10 @@ public final class gc {
                         str9 = "athumb";
                         if (document3 != null) {
                             w7.G(i28);
-                            File K2 = w7.K(document3, null, true, true);
+                            File J2 = w7.J(document3, null, true, true);
                             int i30 = ij.L4(document3) ? 2 : 3;
                             document2 = document3;
-                            file2 = K2;
+                            file2 = J2;
                             z15 = true;
                             i18 = i30;
                             str10 = null;
@@ -3135,17 +3135,17 @@ public final class gc {
                                                     long j14 = j10;
                                                     int i35 = i19 != 0 ? 3 : imageReceiver4.w;
                                                     if (hcVar2.f != null) {
-                                                        w7.G(i28).W(hcVar2, obj4, str27, i35, (i33 != 0 || (j14 > j11 && hcVar2.c == null)) ? i33 : 1);
+                                                        w7.G(i28).V(hcVar2, obj4, str27, i35, (i33 != 0 || (j14 > j11 && hcVar2.c == null)) ? i33 : 1);
                                                     } else if (hcVar2.i != null) {
-                                                        w7.G(i28).X(hcVar2.i, obj4, i35, i33);
+                                                        w7.G(i28).W(hcVar2.i, obj4, i35, i33);
                                                     } else if (hcVar2.h != null) {
                                                         w7 G2 = w7.G(i28);
                                                         ew ewVar2 = hcVar2.h;
                                                         if (ewVar2 != null) {
-                                                            G2.Y(null, ewVar2, null, null, null, null, null, 0L, i35, 1);
+                                                            G2.X(null, ewVar2, null, null, null, null, null, 0L, i35, 1);
                                                         }
                                                     } else if (hcVar2.v != null) {
-                                                        w7.G(i28).Y(null, null, hcVar2.v, null, null, null, null, 0L, i35, i33);
+                                                        w7.G(i28).X(null, null, hcVar2.v, null, null, null, null, 0L, i35, i33);
                                                     }
                                                     if (imageReceiver4.r) {
                                                         gcVar4.w.put(ubVar5.d, 0);

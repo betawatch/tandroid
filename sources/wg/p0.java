@@ -23,9 +23,9 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.i2;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p0 extends LinearLayout {
     public final ArrayList a;
@@ -46,12 +46,12 @@ public final class p0 extends LinearLayout {
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
         frameLayout.addView(frameLayout2, ha.d(-1, 70.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        rq0 rq0Var = new rq0(context, 19);
-        ImageView imageView = new ImageView(rq0Var.getContext());
+        sq0 sq0Var = new sq0(context, 19);
+        ImageView imageView = new ImageView(sq0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
         r6.t(imageView, k6.E6, null, PorterDuff.Mode.SRC_ATOP);
-        rq0Var.addView(imageView);
-        frameLayout.addView(rq0Var, ha.e(24, 24, 17));
+        sq0Var.addView(imageView);
+        frameLayout.addView(sq0Var, ha.e(24, 24, 17));
         n0 n0Var = new n0(context);
         this.b = n0Var;
         n0Var.setLayerType(2, null);

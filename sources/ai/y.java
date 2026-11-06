@@ -7,7 +7,7 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y implements ls {
     public final int a;
@@ -25,8 +25,8 @@ public final class y implements ls {
         this.d = f1Var;
         qs.f(i7).b(this, qs.Y1);
         w7.G(i7);
-        if (!w7.K(document, null, true, true).exists()) {
-            w7.G(i7).X(document, tL_starGiftUnique, 3, 1);
+        if (!w7.J(document, null, true, true).exists()) {
+            w7.G(i7).W(document, tL_starGiftUnique, 3, 1);
         }
         a();
     }
@@ -36,11 +36,11 @@ public final class y implements ls {
             return;
         }
         w7.G(this.a);
-        if (w7.K(this.b, null, true, true).exists()) {
+        if (w7.J(this.b, null, true, true).exists()) {
             this.f = true;
             qs.f(this.a).n(this, qs.Y1);
             w7.G(this.a);
-            Utilities.e.c(new a1.e(9, this, w7.K(this.b, null, true, true)));
+            Utilities.e.c(new a1.e(9, this, w7.J(this.b, null, true, true)));
         }
     }
 

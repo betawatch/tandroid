@@ -2,9 +2,9 @@ package com.google.android.gms.internal.vision;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.vb;
+import c8.wb;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a1 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -13,27 +13,27 @@ public final class a1 implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z9 = vb.z(parcel);
+                int z9 = wb.z(parcel);
                 int i7 = 0;
                 boolean z10 = false;
                 while (parcel.dataPosition() < z9) {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 2) {
-                        i7 = vb.u(parcel, readInt);
+                        i7 = wb.u(parcel, readInt);
                     } else if (c10 != 3) {
-                        vb.y(parcel, readInt);
+                        wb.y(parcel, readInt);
                     } else {
-                        z10 = vb.n(parcel, readInt);
+                        z10 = wb.n(parcel, readInt);
                     }
                 }
-                vb.m(parcel, z9);
+                wb.m(parcel, z9);
                 x1 x1Var = new x1();
                 x1Var.a = i7;
                 x1Var.b = z10;
                 return x1Var;
             default:
-                int z11 = vb.z(parcel);
+                int z11 = wb.z(parcel);
                 int i10 = 0;
                 int i11 = 0;
                 long j3 = 0;
@@ -43,20 +43,20 @@ public final class a1 implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     char c11 = (char) readInt2;
                     if (c11 == 2) {
-                        i10 = vb.u(parcel, readInt2);
+                        i10 = wb.u(parcel, readInt2);
                     } else if (c11 == 3) {
-                        i12 = vb.u(parcel, readInt2);
+                        i12 = wb.u(parcel, readInt2);
                     } else if (c11 == 4) {
-                        i13 = vb.u(parcel, readInt2);
+                        i13 = wb.u(parcel, readInt2);
                     } else if (c11 == 5) {
-                        j3 = vb.w(parcel, readInt2);
+                        j3 = wb.w(parcel, readInt2);
                     } else if (c11 != 6) {
-                        vb.y(parcel, readInt2);
+                        wb.y(parcel, readInt2);
                     } else {
-                        i11 = vb.u(parcel, readInt2);
+                        i11 = wb.u(parcel, readInt2);
                     }
                 }
-                vb.m(parcel, z11);
+                wb.m(parcel, z11);
                 f3 f3Var = new f3();
                 f3Var.a = i10;
                 f3Var.b = i12;

@@ -5,14 +5,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.ViewGroup;
 import java.util.HashSet;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public class a3 extends org.telegram.ui.Components.na implements org.telegram.ui.ActionBar.a6 {
-    public f41 P1;
+    public l41 P1;
     public final ViewGroup Q1;
     public final Paint R1;
     public float S1;
@@ -37,9 +37,9 @@ public class a3 extends org.telegram.ui.Components.na implements org.telegram.ui
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new d(this, 5), this.I0);
-        this.P1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 5), this.I0);
+        this.P1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

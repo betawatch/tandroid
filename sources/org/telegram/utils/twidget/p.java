@@ -34,9 +34,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Wallet.h2;
 import org.telegram.ui.Wallet.w1;
-import org.telegram.ui.rv0;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class p {
     public static boolean i;
@@ -45,7 +45,7 @@ public abstract class p {
     public static final ConcurrentHashMap b = new ConcurrentHashMap();
     public static final HashMap c = new HashMap();
     public static final HashMap d = new HashMap();
-    public static final org.telegram.ui.Wallet.z e = new org.telegram.ui.Wallet.z(9);
+    public static final org.telegram.ui.Wallet.z e = new org.telegram.ui.Wallet.z(10);
     public static final ArrayList f = new ArrayList();
     public static final ArrayList g = new ArrayList();
     public static final ArrayList h = new ArrayList();
@@ -67,7 +67,7 @@ public abstract class p {
                 arrayList.add(mVar);
             }
         }
-        Collections.sort(arrayList, new rv0(10));
+        Collections.sort(arrayList, new un0(11));
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             u uVar = ((m) arrayList.get(i7)).t;
             if (i7 >= 4) {
@@ -268,7 +268,7 @@ public abstract class p {
     public static u i(String str) {
         String str2;
         m mVar = n(str) ? (m) a.get(str) : null;
-        if (mVar == null) {
+        if (mVar == null || h0.a()) {
             return null;
         }
         synchronized (mVar) {
@@ -488,7 +488,7 @@ public abstract class p {
                 uVar.p = z9;
                 h0 h0Var = uVar.f;
                 if (h0Var != null) {
-                    h0Var.d(uVar.n && !z9);
+                    h0Var.e(uVar.n && !z9);
                 }
             }
         }
@@ -524,7 +524,7 @@ public abstract class p {
             uVar.p = z9;
             h0 h0Var = uVar.f;
             if (h0Var != null) {
-                h0Var.d(uVar.n && !z9);
+                h0Var.e(uVar.n && !z9);
             }
         }
         if (h7.z) {
@@ -603,7 +603,7 @@ public abstract class p {
             mVar.D = false;
             uVar.p();
         }
-        if (uVar.o) {
+        if (uVar.o || h0.a()) {
             return;
         }
         uVar.o = true;
@@ -637,13 +637,13 @@ public abstract class p {
         if (s5 != null) {
             h0Var.h = s5;
         }
-        h0Var.c(uVar.x);
+        h0Var.d(uVar.x);
         h0Var.J = uVar;
         h0Var.K = uVar;
         if (uVar.n && !uVar.p) {
             z9 = true;
         }
-        h0Var.d(z9);
+        h0Var.e(z9);
         uVar.f = h0Var;
         uVar.q++;
         z.a.execute(new h2(h0Var, uVar.j, 5));

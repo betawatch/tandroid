@@ -25,13 +25,13 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -496,7 +496,7 @@ public final class d3 extends FrameLayout {
                 if (m10 == null) {
                     a3Var.v = null;
                 } else {
-                    a3Var.v = new ly0(m10, 17.0f, org.telegram.messenger.g0.o());
+                    a3Var.v = new my0(m10, 17.0f, org.telegram.messenger.g0.o());
                 }
             }
             charSequence = m10;

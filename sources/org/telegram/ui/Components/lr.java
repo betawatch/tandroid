@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class lr extends na {
     public static final /* synthetic */ int z2 = 0;
-    public f41 P1;
+    public l41 P1;
     public final TLRPC.Chat Q1;
     public final TLRPC.Chat R1;
     public final boolean S1;
@@ -372,10 +372,10 @@ public final class lr extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, this.o1.getClassGuid(), true, new dr(this, 0), this.I0);
-        this.P1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, this.o1.getClassGuid(), true, new dr(this, 0), this.I0);
+        this.P1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -439,7 +439,7 @@ public final class lr extends na {
         int i10 = krVar.a;
         if (e10) {
             if (!krVar.d()) {
-                r31 z9 = r31.z(i10, krVar.b);
+                x31 z9 = x31.z(i10, krVar.b);
                 z9.L(krVar.i > 0);
                 arrayList.add(z9);
                 return;
@@ -450,14 +450,14 @@ public final class lr extends na {
                 i11 = krVar.e != null ? krVar.h : i7;
             }
             String valueOf = String.valueOf(i11);
-            r31 r31Var = new r31(36);
-            r31Var.d = i10;
-            r31Var.l = str;
-            r31Var.o = valueOf;
-            r31Var.L(krVar.i > 0);
-            r31Var.f = krVar.f;
-            r31Var.D = new lk(6, this, krVar);
-            arrayList.add(r31Var);
+            x31 x31Var = new x31(36);
+            x31Var.d = i10;
+            x31Var.l = str;
+            x31Var.o = valueOf;
+            x31Var.L(krVar.i > 0);
+            x31Var.f = krVar.f;
+            x31Var.D = new lk(6, this, krVar);
+            arrayList.add(x31Var);
             if (krVar.f) {
                 return;
             }
@@ -465,12 +465,12 @@ public final class lr extends na {
                 boolean[] zArr = krVar.e;
                 if (zArr == null || zArr[i12]) {
                     TLObject tLObject = (TLObject) krVar.c.get(i12);
-                    r31 r31Var2 = new r31(37);
-                    r31Var2.d = (i10 << 24) | i12;
-                    r31Var2.G = tLObject;
-                    r31Var2.L(krVar.d[i12]);
-                    r31Var2.i = 1;
-                    arrayList.add(r31Var2);
+                    x31 x31Var2 = new x31(37);
+                    x31Var2.d = (i10 << 24) | i12;
+                    x31Var2.G = tLObject;
+                    x31Var2.L(krVar.d[i12]);
+                    x31Var2.i = 1;
+                    arrayList.add(x31Var2);
                 }
             }
         }

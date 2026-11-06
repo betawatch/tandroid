@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messenger.ls {
     public static boolean q1;
@@ -124,7 +124,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
     public float j1;
     public final ShutterButton k0;
     public float k1;
-    public final l71 l0;
+    public final r71 l0;
     public float l1;
     public AnimatorSet m0;
     public float m1;
@@ -442,12 +442,12 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
                 }
             }
         });
-        l71 l71Var = new l71(context);
-        this.l0 = l71Var;
-        l71Var.setVisibility(8);
-        l71Var.setAlpha(0.0f);
-        l2Var.addView(l71Var, c8.ha.d(-2, 50.0f, 51, 0.0f, 0.0f, 0.0f, 116.0f));
-        l71Var.setDelegate(new yk(this, i10));
+        r71 r71Var = new r71(context);
+        this.l0 = r71Var;
+        r71Var.setVisibility(8);
+        r71Var.setAlpha(0.0f);
+        l2Var.addView(r71Var, c8.ha.d(-2, 50.0f, 51, 0.0f, 0.0f, 0.0f, 116.0f));
+        r71Var.setDelegate(new yk(this, i10));
         ShutterButton shutterButton = new ShutterButton(context);
         shutterButton.b = new DecelerateInterpolator();
         shutterButton.x = new dt(shutterButton, 14);
@@ -1796,7 +1796,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
         bi.e5 e5Var = this.j0;
         jl jlVar2 = this.E;
         ImageView[] imageViewArr = this.S;
-        l71 l71Var = this.l0;
+        r71 r71Var = this.l0;
         if (z9) {
             this.j1 = this.P.getTranslationY();
             this.d0 = true;
@@ -1807,7 +1807,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
             arrayList.add(ObjectAnimator.ofFloat(this, "cameraOpenProgress", 0.0f));
             Property property = View.ALPHA;
             arrayList.add(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property, 0.0f));
-            arrayList.add(ObjectAnimator.ofFloat(l71Var, (Property<l71, Float>) property, 0.0f));
+            arrayList.add(ObjectAnimator.ofFloat(r71Var, (Property<r71, Float>) property, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(jlVar, (Property<jl, Float>) property, 0.0f));
             int i10 = 0;
@@ -1836,9 +1836,9 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
             setCameraOpenProgress(0.0f);
             e5Var.setAlpha(0.0f);
             e5Var.setVisibility(8);
-            l71Var.setAlpha(0.0f);
-            l71Var.setTag(null);
-            l71Var.setVisibility(8);
+            r71Var.setAlpha(0.0f);
+            r71Var.setTag(null);
+            r71Var.setVisibility(8);
             jlVar.setAlpha(0.0f);
             textView.setAlpha(0.0f);
             jlVar.setVisibility(8);
@@ -2296,9 +2296,9 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
         if (diVar.a1().w && isFocusable()) {
             diVar.a1().d();
         }
-        l71 l71Var = this.l0;
-        l71Var.setVisibility(0);
-        l71Var.setAlpha(0.0f);
+        r71 r71Var = this.l0;
+        r71Var.setVisibility(0);
+        r71Var.setAlpha(0.0f);
         bi.e5 e5Var = this.j0;
         e5Var.setVisibility(0);
         e5Var.setTag(null);
@@ -2519,11 +2519,11 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
         if (!this.d0) {
             if (this.b0 && motionEvent != null) {
                 boolean z9 = this.G0;
-                l71 l71Var = this.l0;
+                r71 r71Var = this.l0;
                 if ((!z9 && motionEvent.getActionMasked() == 0) || motionEvent.getActionMasked() == 5) {
                     Rect rect = this.E0;
-                    l71Var.getHitRect(rect);
-                    if (l71Var.getTag() == null || !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                    r71Var.getHitRect(rect);
+                    if (r71Var.getTag() == null || !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                         if (!this.s0 && !this.I0) {
                             if (motionEvent.getPointerCount() == 2) {
                                 this.A0 = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
@@ -2559,7 +2559,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
                                     } else if (f10 > 1.0f) {
                                         this.B0 = 1.0f;
                                     }
-                                    l71Var.b(false, this.B0);
+                                    r71Var.b(false, this.B0);
                                     this.b.b.invalidate();
                                     this.P.setZoom(this.B0);
                                     w0(true);
@@ -2582,7 +2582,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
                             } else if (this.I0 && (qlVar = this.P) != null) {
                                 qlVar.setTranslationY(qlVar.getTranslationY() + f11);
                                 this.F0 = y10;
-                                l71Var.setTag(null);
+                                r71Var.setTag(null);
                                 Runnable runnable = this.n0;
                                 if (runnable != null) {
                                     org.telegram.messenger.g0.r(runnable);
@@ -2591,7 +2591,7 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
                                 if (e5Var.getTag() == null) {
                                     e5Var.setTag(1);
                                     AnimatorSet animatorSet = new AnimatorSet();
-                                    animatorSet.playTogether(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property, 0.0f), ObjectAnimator.ofFloat(l71Var, (Property<l71, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[0], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[1], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(jlVar, (Property<jl, Float>) property, 0.0f));
+                                    animatorSet.playTogether(ObjectAnimator.ofFloat(e5Var, (Property<bi.e5, Float>) property, 0.0f), ObjectAnimator.ofFloat(r71Var, (Property<r71, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[0], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[1], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(jlVar, (Property<jl, Float>) property, 0.0f));
                                     animatorSet.setDuration(220L);
                                     animatorSet.setInterpolator(xq.f);
                                     animatorSet.start();
@@ -2986,9 +2986,9 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
                 }
                 invalidate();
             }
-            l71 l71Var = this.l0;
-            if (l71Var != null) {
-                l71Var.b(false, 0.0f);
+            r71 r71Var = this.l0;
+            if (r71Var != null) {
+                r71Var.b(false, 0.0f);
                 this.B0 = 0.0f;
             }
             if (this.b0) {
@@ -3339,9 +3339,9 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
     }
 
     public final void w0(boolean z9) {
-        l71 l71Var = this.l0;
+        r71 r71Var = this.l0;
         int i7 = 1;
-        if ((l71Var.getTag() != null && z9) || (l71Var.getTag() == null && !z9)) {
+        if ((r71Var.getTag() != null && z9) || (r71Var.getTag() == null && !z9)) {
             if (z9) {
                 Runnable runnable = this.n0;
                 if (runnable != null) {
@@ -3358,11 +3358,11 @@ public class ChatAttachAlertPhotoLayout extends vh implements org.telegram.messe
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        l71Var.setTag(z9 ? 1 : null);
+        r71Var.setTag(z9 ? 1 : null);
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.m0 = animatorSet2;
         animatorSet2.setDuration(180L);
-        this.m0.playTogether(ObjectAnimator.ofFloat(l71Var, (Property<l71, Float>) View.ALPHA, z9 ? 1.0f : 0.0f));
+        this.m0.playTogether(ObjectAnimator.ofFloat(r71Var, (Property<r71, Float>) View.ALPHA, z9 ? 1.0f : 0.0f));
         this.m0.addListener(new il(this, i7));
         this.m0.start();
         if (z9) {

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -250,20 +250,10 @@ public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateLis
                 x50Var.Y1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 x50Var.b.invalidate();
                 break;
-            case 28:
+            default:
                 x50 x50Var2 = ((w50) this.b).e;
                 x50Var2.b2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 x50Var2.b.invalidate();
-                break;
-            default:
-                k60 k60Var = (k60) this.b;
-                k60Var.getClass();
-                float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i60 i60Var = k60Var.x;
-                if (i60Var != null) {
-                    i60Var.setProgress(floatValue8);
-                    break;
-                }
                 break;
         }
     }

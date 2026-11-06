@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gp implements Runnable {
     public final /* synthetic */ int a;
@@ -264,15 +264,15 @@ public final /* synthetic */ class gp implements Runnable {
             case 22:
                 o40 o40Var = (o40) ((fi.h2) obj).b;
                 try {
-                    n51 n51Var = o40Var.S;
-                    if (n51Var != null && (j20Var = o40Var.R) != null) {
+                    t51 t51Var = o40Var.S;
+                    if (t51Var != null && (j20Var = o40Var.R) != null) {
                         if (j20Var.b > 0) {
-                            long S = n51Var.S();
+                            long S = t51Var.S();
                             org.telegram.messenger.j20 j20Var2 = o40Var.R;
                             if (S >= j20Var2.b) {
-                                n51 n51Var2 = o40Var.S;
+                                t51 t51Var2 = o40Var.S;
                                 long j3 = j20Var2.a;
-                                n51Var2.q0(j3 > 0 ? j3 : 0L, false);
+                                t51Var2.q0(j3 > 0 ? j3 : 0L, false);
                                 break;
                             }
                         }

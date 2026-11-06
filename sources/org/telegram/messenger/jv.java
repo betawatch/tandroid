@@ -31,20 +31,20 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.a41;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.eu0;
+import org.telegram.ui.Components.ex0;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.u31;
-import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.sg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class jv implements org.telegram.ui.Cells.t9, dx0 {
+public final class jv implements org.telegram.ui.Cells.t9, ex0 {
     public static Paint T;
     public final AtomicReference D;
     public org.telegram.ui.Components.n5 E;
@@ -171,7 +171,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         return this.b;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final int b() {
         return this.s;
     }
@@ -181,7 +181,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void d(Canvas canvas, View view) {
         canvas.save();
         canvas.translate(-n(), 0.0f);
@@ -286,7 +286,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void f(View view) {
         View view2 = this.S;
         if (view2 == view && view2 != null) {
@@ -308,7 +308,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void g(int i7) {
         this.e = i7;
     }
@@ -341,12 +341,12 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void h(int i7) {
         this.d = i7;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void i(View view) {
         View view2 = this.S;
         if (view == view2) {
@@ -369,7 +369,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void j(int i7) {
         this.c = i7;
     }
@@ -403,7 +403,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
             return;
         }
         kv kvVar = this.a;
-        if (!z9 && (characterStyle instanceof URLSpan) && !(characterStyle instanceof v31) && url != null && url.startsWith("#")) {
+        if (!z9 && (characterStyle instanceof URLSpan) && !(characterStyle instanceof b41) && url != null && url.startsWith("#")) {
             kvVar.getClass();
             if (url.startsWith("#")) {
                 try {
@@ -480,7 +480,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
                 }
             }
         }
-        CharacterStyle u31Var = ((characterStyle instanceof gv) && TLObject.hasFlag(((gv) characterStyle).b, 256)) ? new u31(this.b.getText(), this.N, this.O, kvVar.E() ? (byte) 1 : (byte) 0, null) : characterStyle;
+        CharacterStyle a41Var = ((characterStyle instanceof gv) && TLObject.hasFlag(((gv) characterStyle).b, 256)) ? new a41(this.b.getText(), this.N, this.O, kvVar.E() ? (byte) 1 : (byte) 0, null) : characterStyle;
         org.telegram.ui.Cells.l1 l1Var = kvVar.F;
         org.telegram.ui.Cells.q1 q1Var = kvVar.E;
         if (l1Var != null && q1Var != null) {
@@ -488,7 +488,7 @@ public final class jv implements org.telegram.ui.Cells.t9, dx0 {
             if (view4 != null && !z9) {
                 view4.playSoundEffect(0);
             }
-            l1Var.N0(q1Var, u31Var, z9);
+            l1Var.N0(q1Var, a41Var, z9);
             return;
         }
         if (z9 || (view = this.S) == null || !(characterStyle instanceof ClickableSpan)) {

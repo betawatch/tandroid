@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int A0;
@@ -138,7 +138,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.f2 implements org.t
     public int y0;
     public int z0;
 
-    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+    /* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
     public static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -276,11 +276,11 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.f2 implements org.t
         frameLayout.addView(imageView, c8.ha.e(50, 50, 17));
         f10.addView(frameLayout, c8.ha.t(80, 80, 1, 0, 20, 0, 8));
         int i12 = org.telegram.ui.ActionBar.k6.j5;
-        TextView b10 = c8.na.b(context, 20.0f, i12, true, f6Var);
+        TextView b10 = c8.qa.b(context, 20.0f, i12, true, f6Var);
         b10.setText(org.telegram.messenger.hd.M0(2131754307, null));
         b10.setGravity(17);
         f10.addView(b10, c8.ha.t(-1, -2, 7, 24, 8, 24, 8));
-        TextView b11 = c8.na.b(context, 14.0f, i12, false, f6Var);
+        TextView b11 = c8.qa.b(context, 14.0f, i12, false, f6Var);
         b11.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.N0("AgeVerificationText" + str2)));
         b11.setGravity(17);
         f10.addView(b11, c8.ha.t(-1, -2, 7, 24, 0, 24, 0));
@@ -1193,7 +1193,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.f2 implements org.t
             }
             i19++;
         }
-        Collections.sort(arrayList, new rv0(3));
+        Collections.sort(arrayList, new un0(4));
         if (i7 == 3) {
             int i20 = this.J0;
             this.w0 = i20;

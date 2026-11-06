@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -78,10 +78,10 @@ public final /* synthetic */ class q implements org.telegram.messenger.v10 {
                 break;
             default:
                 ArrayList arrayList = (ArrayList) obj;
-                f41 f41Var = (f41) obj2;
+                l41 l41Var = (l41) obj2;
                 org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) ((bi.g5) obj3).c;
                 if (i10 == 0) {
-                    f41Var.V();
+                    l41Var.V();
                     org.telegram.ui.Wallet.m0 m0Var = y5Var.D0;
                     boolean z9 = (m0Var == null || m0Var.c.isEmpty()) ? false : true;
                     if (z9) {
@@ -89,7 +89,7 @@ public final /* synthetic */ class q implements org.telegram.messenger.v10 {
                             TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) y5Var.D0.c.get(i12);
                             org.telegram.ui.Wallet.v3 v3Var = y5Var.D0.a;
                             int i13 = org.telegram.ui.Wallet.u3.b;
-                            r31 K = r31.K(org.telegram.ui.Wallet.u3.class);
+                            x31 K = x31.K(org.telegram.ui.Wallet.u3.class);
                             org.telegram.ui.Wallet.t3 t3Var = new org.telegram.ui.Wallet.t3(wallettransaction2);
                             t3Var.set(wallettransaction2);
                             t3Var.id = wallettransaction2.id;
@@ -107,15 +107,15 @@ public final /* synthetic */ class q implements org.telegram.messenger.v10 {
                     }
                     org.telegram.ui.Wallet.m0 m0Var2 = y5Var.D0;
                     if (m0Var2 != null && !m0Var2.h) {
-                        arrayList.add(r31.q(-1, 37));
-                        arrayList.add(r31.q(-2, 37));
-                        arrayList.add(r31.q(-3, 37));
+                        arrayList.add(x31.q(-1, 37));
+                        arrayList.add(x31.q(-2, 37));
+                        arrayList.add(x31.q(-3, 37));
                     }
-                    f41Var.U();
+                    l41Var.U();
                     if (z9) {
                         long j3 = ((org.telegram.messenger.l0) y5Var.getMessagesController().x7.l0.b).c;
                         if (j3 > 0) {
-                            arrayList.add(r31.C(org.telegram.messenger.hd.V(null, null, 2131743099, org.telegram.ui.Wallet.n0.s(j3, false))));
+                            arrayList.add(x31.C(org.telegram.messenger.hd.V(null, null, 2131743099, org.telegram.ui.Wallet.n0.s(j3, false))));
                             break;
                         }
                     }
@@ -133,14 +133,14 @@ public final /* synthetic */ class q implements org.telegram.messenger.v10 {
                                 if (nftitem.gift != null) {
                                     org.telegram.ui.Wallet.c8 c8Var = y5Var.j0;
                                     int i15 = org.telegram.ui.Wallet.o7.b;
-                                    r31 K2 = r31.K(org.telegram.ui.Wallet.o7.class);
+                                    x31 K2 = x31.K(org.telegram.ui.Wallet.o7.class);
                                     K2.u = 1;
                                     K2.G = nftitem;
                                     K2.H = c8Var;
                                     arrayList.add(K2);
                                 } else {
                                     int i16 = org.telegram.ui.Wallet.b.b;
-                                    r31 K3 = r31.K(org.telegram.ui.Wallet.b.class);
+                                    x31 K3 = x31.K(org.telegram.ui.Wallet.b.class);
                                     K3.G = nftitem;
                                     K3.u = 1;
                                     arrayList.add(K3);
@@ -150,19 +150,19 @@ public final /* synthetic */ class q implements org.telegram.messenger.v10 {
                         if (arrayList.isEmpty() && !y5Var.k0.isEmpty()) {
                             org.telegram.ui.Wallet.f0 f0Var2 = y5Var.E0;
                             if (!f0Var2.i && f0Var2.g) {
-                                arrayList.add(r31.r(org.telegram.messenger.hd.M0(2131748166, null)));
+                                arrayList.add(x31.r(org.telegram.messenger.hd.M0(2131748166, null)));
                             }
                         }
                         org.telegram.ui.Wallet.f0 f0Var3 = y5Var.E0;
                         if (f0Var3.i) {
                             for (int i17 = 0; i17 < 3; i17++) {
-                                r31 q10 = r31.q((-1) - i17, 35);
+                                x31 q10 = x31.q((-1) - i17, 35);
                                 q10.u = 1;
                                 arrayList.add(q10);
                             }
                             break;
                         } else if (f0Var3.k != null) {
-                            arrayList.add(r31.e(-10001, org.telegram.messenger.hd.M0(2131746053, null)));
+                            arrayList.add(x31.e(-10001, org.telegram.messenger.hd.M0(2131746053, null)));
                             break;
                         }
                     }

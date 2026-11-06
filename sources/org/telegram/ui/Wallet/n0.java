@@ -47,13 +47,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.lk0;
-import org.telegram.ui.rv0;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class n0 {
     public static volatile n0[] O = new n0[4];
@@ -1841,7 +1841,7 @@ public final class n0 {
             u(str, null);
             k0((e0) this.N.get(str));
         }
-        Collections.sort(this.G, new rv0(5));
+        Collections.sort(this.G, new un0(6));
     }
 
     public final void X() {
@@ -2189,7 +2189,7 @@ public final class n0 {
                     return D;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(D);
-                spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
+                spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
                 return spannableStringBuilder;
             }
         }

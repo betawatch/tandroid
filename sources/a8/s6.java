@@ -9,12 +9,12 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.Signature;
 import android.os.Build;
 import android.util.Log;
-import c8.ob;
+import c8.pb;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class s6 {
     /* JADX WARN: Removed duplicated region for block: B:19:0x0081  */
@@ -28,7 +28,7 @@ public abstract class s6 {
         ApplicationInfo applicationInfo;
         w7.s cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2, false) : new w7.s(2, false);
         PackageManager packageManager = context.getPackageManager();
-        ob.a(packageManager, "Package manager required to locate emoji font provider");
+        pb.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {

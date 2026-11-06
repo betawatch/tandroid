@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout implements l0, ls {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -126,7 +126,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                 this.h = w7.r(null, document);
                 zArr = null;
                 this.n.q0(null, null, s1Var, null, tL_help_premiumPromo, 1);
-                w7.G(this.s).X(document, tL_help_premiumPromo, 3, 0);
+                w7.G(this.s).W(document, tL_help_premiumPromo, 3, 0);
                 this.R = document;
                 Utilities.e.c(new ti.p(9, this, document));
                 if (i10 != 1) {
@@ -800,7 +800,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         fi.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new org.telegram.ui.Wallet.z(17));
+            this.H.release(new org.telegram.ui.Wallet.z(18));
             this.H = null;
         }
     }
@@ -943,7 +943,7 @@ public final class t1 extends FrameLayout implements l0, ls {
             fi.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new org.telegram.ui.Wallet.z(17));
+                this.H.release(new org.telegram.ui.Wallet.z(18));
                 this.H = null;
             }
             imageReceiver.Q0();

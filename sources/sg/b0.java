@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.ui.ActionBar.m3;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public static final b0 e;
@@ -202,7 +202,7 @@ public final class b0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new org.telegram.ui.Wallet.z(12));
+            Utilities.i.c(new org.telegram.ui.Wallet.z(13));
         }
         return f;
     }

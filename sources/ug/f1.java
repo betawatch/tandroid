@@ -50,10 +50,10 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.c61;
-import org.telegram.ui.hs0;
-import org.telegram.ui.us0;
+import org.telegram.ui.is0;
+import org.telegram.ui.vs0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class f1 extends na implements ls {
     public ValueAnimator A2;
@@ -70,7 +70,7 @@ public class f1 extends na implements ls {
     public final j S1;
     public final TL_stars.StarGift T1;
     public boolean U1;
-    public final hs0 V1;
+    public final is0 V1;
     public int W1;
     public int X1;
     public int Y1;
@@ -108,7 +108,7 @@ public class f1 extends na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        return new k5(this, 10);
+        return new k5(this, 11);
     }
 
     @Override // org.telegram.ui.Components.na
@@ -129,12 +129,12 @@ public class f1 extends na implements ls {
                 this.c.getLocationOnScreen(this.x2);
                 return;
             }
-            us0 us0Var = (us0) arrayList.get(i11);
-            hs0 hs0Var = this.V1;
-            hs0Var.a(us0Var, false);
-            hs0Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-            ((us0) arrayList.get(i11)).e = i12;
-            i12 += hs0Var.getMeasuredHeight();
+            vs0 vs0Var = (vs0) arrayList.get(i11);
+            is0 is0Var = this.V1;
+            is0Var.a(vs0Var, false);
+            is0Var.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+            ((vs0) arrayList.get(i11)).e = i12;
+            i12 += is0Var.getMeasuredHeight();
             i11++;
         }
     }
@@ -511,7 +511,7 @@ public class f1 extends na implements ls {
         this.Q1 = i7;
         this.S1 = jVar;
         this.T1 = starGift;
-        this.V1 = new hs0(getContext(), null);
+        this.V1 = new is0(getContext(), null);
         PremiumPreviewFragment.s0(i7, arrayList);
         if (jVar != null || p10.i(i7).q()) {
             this.D2.setVisibility(8);

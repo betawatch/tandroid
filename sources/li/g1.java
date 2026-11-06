@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.ws;
-import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
     public final d1 A2;
@@ -114,7 +114,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
     }
 
     @Override // org.telegram.ui.Components.ys
-    public final x31 A(String str) {
+    public final d41 A(String str) {
         return c6.k(str);
     }
 
@@ -336,15 +336,15 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
                 this.l2 = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    uy0[] uy0VarArr = (uy0[]) spanned.getSpans(0, spanned.length(), uy0.class);
-                    int length = uy0VarArr.length;
+                    vy0[] vy0VarArr = (vy0[]) spanned.getSpans(0, spanned.length(), vy0.class);
+                    int length = vy0VarArr.length;
                     int i10 = 0;
                     while (i10 < length) {
-                        uy0 uy0Var = uy0VarArr[i10];
-                        int i11 = uy0Var.b.a;
+                        vy0 vy0Var = vy0VarArr[i10];
+                        int i11 = vy0Var.b.a;
                         if ((65536 & i11) != 0) {
-                            int spanStart = spanned.getSpanStart(uy0Var);
-                            int spanEnd = spanned.getSpanEnd(uy0Var);
+                            int spanStart = spanned.getSpanStart(vy0Var);
+                            int spanEnd = spanned.getSpanEnd(vy0Var);
                             r70Var = r70Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (r70Var == null) {

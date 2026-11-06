@@ -1,16 +1,74 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class nv0 extends ez {
-    @Override // org.telegram.ui.ez, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        canvas.save();
-        canvas.translate(org.telegram.messenger.g0.L(2.0f), 0.0f);
-        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
-        canvas.restore();
+public final class nv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ProfileActivity c;
+
+    public /* synthetic */ nv0(ProfileActivity profileActivity, boolean z9, int i7) {
+        this.a = i7;
+        this.c = profileActivity;
+        this.b = z9;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.c.f0 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        org.telegram.ui.Cells.b4 b4Var;
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.c;
+                boolean z9 = this.b;
+                ProfileActivity.y1(profileActivity, z9);
+                profileActivity.X.setClickable(true);
+                if (z9) {
+                    org.telegram.ui.ActionBar.f5 f5Var = profileActivity.T0;
+                    if (f5Var.F.getWidth() != 0 && !f5Var.e.isFocused()) {
+                        f5Var.e.requestFocus();
+                        org.telegram.messenger.g0.K3(f5Var.e);
+                    }
+                }
+                profileActivity.y4(true);
+                profileActivity.U1 = null;
+                profileActivity.fragmentView.invalidate();
+                if (z9) {
+                    profileActivity.U4 = true;
+                    profileActivity.T4();
+                    Activity parentActivity = profileActivity.getParentActivity();
+                    i7 = ((org.telegram.ui.ActionBar.f2) profileActivity).classGuid;
+                    org.telegram.messenger.g0.a3(parentActivity, i7);
+                    profileActivity.O.setPreventMoving(false);
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.c;
+                if (profileActivity2.f0 != null && (b4Var = profileActivity2.g0) != null) {
+                    if (!this.b) {
+                        b4Var.setVisibility(4);
+                    }
+                    profileActivity2.f0 = null;
+                    break;
+                }
+                break;
+        }
     }
 }

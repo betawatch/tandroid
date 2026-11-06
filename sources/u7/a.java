@@ -3,14 +3,14 @@ package u7;
 import android.location.Location;
 import android.os.IInterface;
 import android.os.Parcel;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import org.telegram.messenger.z9;
 import q6.h0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.p, com.google.android.gms.common.api.internal.n {
     public static final /* synthetic */ a a = new a();
@@ -50,11 +50,11 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                             Parcel P0 = xVar.P0();
                             int i10 = d.a;
                             P0.writeInt(1);
-                            int r10 = wb.r(P0, 20293);
-                            wb.q(P0, 1, 4);
+                            int r10 = xb.r(P0, 20293);
+                            xb.q(P0, 1, 4);
                             P0.writeInt(2);
-                            wb.f(P0, 3, iVar);
-                            wb.s(P0, r10);
+                            xb.f(P0, 3, iVar);
+                            xb.s(P0, r10);
                             d.c(P0, eVar);
                             xVar.T0(P0, 89);
                         }
@@ -69,12 +69,12 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                     Parcel P02 = xVar2.P0();
                     int i12 = d.a;
                     P02.writeInt(1);
-                    int r11 = wb.r(P02, 20293);
-                    wb.q(P02, 1, 4);
+                    int r11 = xb.r(P02, 20293);
+                    xb.q(P02, 1, 4);
                     P02.writeInt(2);
-                    wb.f(P02, 5, iVar2.asBinder());
-                    wb.f(P02, 6, uVar.asBinder());
-                    wb.s(P02, r11);
+                    xb.f(P02, 5, iVar2.asBinder());
+                    xb.f(P02, 6, uVar.asBinder());
+                    xb.s(P02, r11);
                     xVar2.T0(P02, 59);
                 } else {
                     taskCompletionSource.setResult(Boolean.TRUE);

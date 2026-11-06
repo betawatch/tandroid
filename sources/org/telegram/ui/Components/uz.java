@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class uz extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final boolean a;
@@ -72,26 +72,26 @@ public final class uz extends FrameLayout implements org.telegram.ui.ActionBar.a
         int x02 = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
         if (M0 != null) {
             f10 = 15.33f;
-            ly0 ly0Var = new ly0(tz.a(M0), 15.33f, org.telegram.messenger.g0.o());
-            ly0Var.r(tzVar);
-            ly0Var.a.setColor(r12);
-            tzVar.f = ly0Var;
+            my0 my0Var = new my0(tz.a(M0), 15.33f, org.telegram.messenger.g0.o());
+            my0Var.r(tzVar);
+            my0Var.a.setColor(r12);
+            tzVar.f = my0Var;
         } else {
             f10 = 15.33f;
         }
         CharSequence a10 = tz.a(spannableStringBuilder);
-        ly0 ly0Var2 = new ly0(a10, f10, org.telegram.messenger.g0.o());
-        ly0Var2.r(tzVar);
-        TextPaint textPaint3 = ly0Var2.a;
+        my0 my0Var2 = new my0(a10, f10, org.telegram.messenger.g0.o());
+        my0Var2.r(tzVar);
+        TextPaint textPaint3 = my0Var2.a;
         textPaint3.setColor(x02);
-        tzVar.h = ly0Var2;
-        ly0Var2.q(org.telegram.messenger.ij.C5(org.telegram.messenger.i6.m(a10, textPaint3.getFontMetricsInt(), false, null, 0), arrayList, textPaint3.getFontMetricsInt(), false));
-        ly0Var2.o(z10 ? 26 : 0);
+        tzVar.h = my0Var2;
+        my0Var2.q(org.telegram.messenger.ij.C5(org.telegram.messenger.i6.m(a10, textPaint3.getFontMetricsInt(), false, null, 0), arrayList, textPaint3.getFontMetricsInt(), false));
+        my0Var2.o(z10 ? 26 : 0);
         if (M02 != null) {
-            ly0 ly0Var3 = new ly0(tz.a(M02), 15.33f, org.telegram.messenger.g0.o());
-            ly0Var3.r(tzVar);
-            ly0Var3.a.setColor(r12);
-            tzVar.n = ly0Var3;
+            my0 my0Var3 = new my0(tz.a(M02), 15.33f, org.telegram.messenger.g0.o());
+            my0Var3.r(tzVar);
+            my0Var3.a.setColor(r12);
+            tzVar.n = my0Var3;
         }
         float L = org.telegram.messenger.g0.L(3.0f);
         fArr[3] = L;

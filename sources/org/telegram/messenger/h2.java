@@ -16,9 +16,9 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class h2 extends View {
     public final RectF D;
@@ -34,10 +34,10 @@ public final class h2 extends View {
     public final org.telegram.ui.Components.w5 N;
     public boolean O;
     public final org.telegram.ui.Components.w5 P;
-    public final ly0 Q;
-    public final ly0 R;
+    public final my0 Q;
+    public final my0 R;
     public final h6.m S;
-    public ly0 T;
+    public my0 T;
     public Drawable U;
     public Drawable V;
     public RenderNode W;
@@ -98,8 +98,8 @@ public final class h2 extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.Q = new ly0(hd.M0(2131753063, null), 13.0f, g0.o());
-        this.R = new ly0(hd.M0(2131753062, null), 13.0f, g0.o());
+        this.Q = new my0(hd.M0(2131753063, null), 13.0f, g0.o());
+        this.R = new my0(hd.M0(2131753062, null), 13.0f, g0.o());
         paint2.setPathEffect(new CornerPathEffect(g0.L(1.0f)));
         path.rewind();
         path.moveTo(-g0.N(1.33f), g0.N(0.16f));
@@ -170,13 +170,13 @@ public final class h2 extends View {
         float d = this.L.d(this.K);
         float d2 = this.N.d(this.M);
         float L7 = (rectF2.left - g0.L(18.0f)) - (rectF.left + g0.L(38.0f));
-        ly0 ly0Var = this.T;
-        if (ly0Var == null) {
+        my0 my0Var = this.T;
+        if (my0Var == null) {
             f10 = 18.0f;
             L = 0.0f;
         } else {
             f10 = 18.0f;
-            L = ly0Var.c + g0.L(this.U != null ? 30.0f : 12.0f);
+            L = my0Var.c + g0.L(this.U != null ? 30.0f : 12.0f);
         }
         float min = Math.min(L7, L);
         float T1 = g0.T1(g0.T1(this.R.c, this.Q.c, d) + g0.L(12.0f), min, d2);
@@ -244,10 +244,10 @@ public final class h2 extends View {
         } else {
             canvas2.save();
             canvas2.translate(com.google.android.recaptcha.internal.a.v(1.0f, d2, min, rectF5.left + g0.L(30.0f)), rectF5.centerY());
-            ly0 ly0Var2 = this.T;
-            ly0Var2.p = ((rectF5.right - g0.L(this.U != null ? 30.0f : 12.0f)) - (rectF5.left + g0.L(30.0f))) + 2.0f;
+            my0 my0Var2 = this.T;
+            my0Var2.p = ((rectF5.right - g0.L(this.U != null ? 30.0f : 12.0f)) - (rectF5.left + g0.L(30.0f))) + 2.0f;
             f12 = 1.0f;
-            ly0Var2.c(0.0f, 0.0f, d2, -1, canvas);
+            my0Var2.c(0.0f, 0.0f, d2, -1, canvas);
             f11 = d2;
             canvas2 = canvas;
             canvas2.translate(this.T.k() + g0.L(5.0f), 0.0f);

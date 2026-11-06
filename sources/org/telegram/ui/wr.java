@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wr implements ax, org.telegram.ui.Components.cj0, org.telegram.ui.Components.ut0, org.telegram.ui.Components.te0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.bp, org.telegram.messenger.a20, org.telegram.ui.Components.cc0, org.telegram.ui.ActionBar.e1, org.telegram.ui.Components.yi0, jg.y1, org.telegram.ui.Components.dj0, r0.m, te.b, sg0 {
     public final /* synthetic */ int a;
@@ -165,7 +165,7 @@ public final /* synthetic */ class wr implements ax, org.telegram.ui.Components.
 
     @Override // org.telegram.ui.Components.cj0
     public void f(float f10, float f11, int i7, View view) {
-        org.telegram.ui.Components.r31 G;
+        org.telegram.ui.Components.x31 G;
         Object obj;
         long j3;
         int Z;
@@ -384,7 +384,7 @@ public final /* synthetic */ class wr implements ax, org.telegram.ui.Components.
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         nx nxVar = (nx) this.b;
         View view = (View) obj2;
-        if (((org.telegram.ui.Components.r31) obj).d != 1 || nxVar.b == null) {
+        if (((org.telegram.ui.Components.x31) obj).d != 1 || nxVar.b == null) {
             return;
         }
         boolean z9 = !nxVar.c;

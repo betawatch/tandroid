@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout {
     public final /* synthetic */ int a;
@@ -125,10 +125,10 @@ public final class e extends FrameLayout {
         switch (this.a) {
             case 0:
                 i iVar = this.b;
-                e51 e51Var = iVar.F;
-                if (e51Var.j) {
-                    e51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    e51Var.draw(canvas);
+                j51 j51Var = iVar.F;
+                if (j51Var.j) {
+                    j51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    j51Var.draw(canvas);
                 }
                 canvas.save();
                 canvas.translate(getLeft(), getTop());

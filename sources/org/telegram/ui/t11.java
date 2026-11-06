@@ -6,10 +6,10 @@ import android.text.TextWatcher;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t11 implements TextWatcher {
-    public final qu0 a = new qu0(this, 18);
+    public final ru0 a = new ru0(this, 18);
     public final /* synthetic */ a21 b;
 
     public t11(a21 a21Var) {
@@ -49,22 +49,22 @@ public final class t11 implements TextWatcher {
             }
             z11Var.b();
         }
-        org.telegram.ui.Components.f41 f41Var = a21Var.a2;
-        if (f41Var != null) {
-            f41Var.O(true);
+        org.telegram.ui.Components.l41 l41Var = a21Var.a2;
+        if (l41Var != null) {
+            l41Var.O(true);
         }
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         int length = editable.length();
-        qu0 qu0Var = this.a;
+        ru0 ru0Var = this.a;
         if (length <= 0) {
-            org.telegram.messenger.g0.r(qu0Var);
+            org.telegram.messenger.g0.r(ru0Var);
             a();
         } else {
-            org.telegram.messenger.g0.r(qu0Var);
-            org.telegram.messenger.g0.i3(qu0Var, 300L);
+            org.telegram.messenger.g0.r(ru0Var);
+            org.telegram.messenger.g0.i3(ru0Var, 300L);
         }
     }
 

@@ -1,16 +1,16 @@
 package tg;
 
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tp0 b;
+    public final /* synthetic */ up0 b;
 
-    public /* synthetic */ m(tp0 tp0Var, int i7) {
+    public /* synthetic */ m(up0 up0Var, int i7) {
         this.a = i7;
-        this.b = tp0Var;
+        this.b = up0Var;
     }
 
     @Override // q0.a

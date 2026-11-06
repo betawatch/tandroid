@@ -20,18 +20,18 @@ import org.telegram.messenger.l10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c51;
 import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.ry;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.wk;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.j40;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t3 implements c20 {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class t3 implements c20 {
                 if (view instanceof a4) {
                     w3Var.getClass();
                     int R = RecyclerView.R(view);
-                    r31 G = w3Var.f3.G(R);
+                    x31 G = w3Var.f3.G(R);
                     if (G != null) {
                         a4 a4Var = (a4) view;
                         a4Var.setPosition(b4Var.b(R));
@@ -84,14 +84,14 @@ public final /* synthetic */ class t3 implements c20 {
                 e7Var.B0 = i14;
                 y5Var.T.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i11, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                 y5Var.invalidate();
-                c51 c51Var = y5Var.n;
-                if (c51Var != null) {
+                h51 h51Var = y5Var.n;
+                if (h51Var != null) {
                     int i15 = y5Var.U;
                     int i16 = y5Var.V;
-                    ry ryVar = c51Var.b;
+                    ry ryVar = h51Var.b;
                     if (ryVar == null) {
-                        c51Var.n = i15;
-                        c51Var.r = i16;
+                        h51Var.n = i15;
+                        h51Var.r = i16;
                     } else {
                         ryVar.h(i15, i16);
                     }

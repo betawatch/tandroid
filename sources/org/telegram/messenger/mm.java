@@ -6,9 +6,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.vn0;
+import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mm implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -105,9 +105,9 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                 qpVar2 = qpVar4;
                             } else {
                                 qpVar4.getFileLoader().getClass();
-                                File K = w7.K(w10, null, true, true);
+                                File J = w7.J(w10, null, true, true);
                                 qpVar4.getFileLoader().getClass();
-                                w7.K(fileLocation, null, true, true).renameTo(K);
+                                w7.J(fileLocation, null, true, true).renameTo(J);
                                 StringBuilder sb2 = new StringBuilder();
                                 sb2.append(fileLocation.volume_id);
                                 sb2.append("_");
@@ -121,13 +121,13 @@ public final /* synthetic */ class mm implements RequestDelegate {
                             TLRPC.PhotoSize w11 = w7.w(photo.sizes, 800, false, null, false);
                             if (w11 != null && fileLocation2 != null) {
                                 qpVar2.getFileLoader().getClass();
-                                File K2 = w7.K(w11, null, true, true);
+                                File J2 = w7.J(w11, null, true, true);
                                 qpVar2.getFileLoader().getClass();
-                                w7.K(fileLocation2, null, true, true).renameTo(K2);
+                                w7.J(fileLocation2, null, true, true).renameTo(J2);
                             }
                             if (videoSize != null && (str = this.c) != null) {
                                 qpVar2.getFileLoader().getClass();
-                                new File(str).renameTo(w7.K(videoSize, "mp4", true, true));
+                                new File(str).renameTo(w7.J(videoSize, "mp4", true, true));
                             }
                             qpVar = qpVar2;
                             qpVar.U0(-this.d);
@@ -145,7 +145,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                 final f10 f10Var = (f10) this.b;
                 final ij ijVar = (ij) this.e;
                 final f3.s sVar = (f3.s) this.f;
-                final vn0 vn0Var = (vn0) this.g;
+                final wn0 wn0Var = (wn0) this.g;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.h;
                 f10Var.getClass();
                 boolean z10 = tLObject instanceof TLRPC.TL_messages_translateResult;
@@ -168,7 +168,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                     f3.s sVar2 = sVar;
                                     messagesStorage.X1(sVar2.a, ijVar2.k);
                                     f10Var2.L.remove(sVar2);
-                                    g0.i3(vn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                    g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
                                 default:
                                     f10 f10Var3 = f10Var;
@@ -181,7 +181,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                     f3.s sVar3 = sVar;
                                     messagesStorage2.X1(sVar3.a, ijVar3.k);
                                     f10Var3.L.remove(sVar3);
-                                    g0.i3(vn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                    g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                     break;
                             }
                         }
@@ -190,7 +190,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                 } else {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
                     if (arrayList.size() > 0) {
-                        g0.h3(new bi.m4(f10Var, ijVar, str2, tL_textWithEntities, arrayList.get(0), sVar, vn0Var, j3));
+                        g0.h3(new bi.m4(f10Var, ijVar, str2, tL_textWithEntities, arrayList.get(0), sVar, wn0Var, j3));
                         break;
                     } else {
                         final int i11 = 0;
@@ -209,7 +209,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                         f3.s sVar2 = sVar;
                                         messagesStorage.X1(sVar2.a, ijVar2.k);
                                         f10Var2.L.remove(sVar2);
-                                        g0.i3(vn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                        g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;
                                     default:
                                         f10 f10Var3 = f10Var;
@@ -222,7 +222,7 @@ public final /* synthetic */ class mm implements RequestDelegate {
                                         f3.s sVar3 = sVar;
                                         messagesStorage2.X1(sVar3.a, ijVar3.k);
                                         f10Var3.L.remove(sVar3);
-                                        g0.i3(vn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
+                                        g0.i3(wn0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j3)));
                                         break;
                                 }
                             }
@@ -243,12 +243,12 @@ public final /* synthetic */ class mm implements RequestDelegate {
         this.e = runnable;
     }
 
-    public /* synthetic */ mm(f10 f10Var, ij ijVar, String str, f3.s sVar, vn0 vn0Var, long j3, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ mm(f10 f10Var, ij ijVar, String str, f3.s sVar, wn0 wn0Var, long j3, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.b = f10Var;
         this.e = ijVar;
         this.c = str;
         this.f = sVar;
-        this.g = vn0Var;
+        this.g = wn0Var;
         this.d = j3;
         this.h = tL_textWithEntities;
     }

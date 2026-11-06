@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l20 extends View implements GestureDetector.OnGestureListener {
     public float D;
@@ -91,7 +91,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             imageReceiver = imageReceiver2;
         }
         this.c.add(imageReceiver);
-        imageReceiver.d = ((org.telegram.ui.so0) this.W).a.T;
+        imageReceiver.d = ((org.telegram.ui.to0) this.W).a.T;
         return imageReceiver;
     }
 
@@ -170,10 +170,10 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                     if (arrayList4.get(0) instanceof org.telegram.messenger.ij) {
                         obj2 = arrayList4.get(i10);
                     } else if (arrayList4.get(0) instanceof TL_iv.PageBlock) {
-                        org.telegram.ui.pq0 pq0Var = ((org.telegram.ui.so0) this.W).a.i7;
-                        obj2 = pq0Var != null ? pq0Var.g() : null;
+                        org.telegram.ui.qq0 qq0Var = ((org.telegram.ui.to0) this.W).a.i7;
+                        obj2 = qq0Var != null ? qq0Var.g() : null;
                     } else {
-                        obj2 = "avatar_" + ((org.telegram.ui.so0) this.W).a.y5;
+                        obj2 = "avatar_" + ((org.telegram.ui.to0) this.W).a.y5;
                     }
                     freeReceiver.r0(null, null, hcVar, "80_80", null, 0L, null, obj2, 1);
                     freeReceiver.f = i10;
@@ -195,10 +195,10 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                     if (arrayList4.get(0) instanceof org.telegram.messenger.ij) {
                         obj = arrayList4.get(i11);
                     } else if (arrayList4.get(0) instanceof TL_iv.PageBlock) {
-                        org.telegram.ui.pq0 pq0Var2 = ((org.telegram.ui.so0) this.W).a.i7;
-                        obj = pq0Var2 != null ? pq0Var2.g() : null;
+                        org.telegram.ui.qq0 qq0Var2 = ((org.telegram.ui.to0) this.W).a.i7;
+                        obj = qq0Var2 != null ? qq0Var2.g() : null;
                     } else {
-                        obj = "avatar_" + ((org.telegram.ui.so0) this.W).a.y5;
+                        obj = "avatar_" + ((org.telegram.ui.to0) this.W).a.y5;
                     }
                     freeReceiver2.r0(null, null, hcVar2, "80_80", null, 0L, null, obj, 1);
                     freeReceiver2.f = i11;
@@ -227,7 +227,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
         TL_iv.PageBlock pageBlock;
         int i11;
         int i12;
-        org.telegram.ui.tq0 tq0Var;
+        org.telegram.ui.uq0 uq0Var;
         boolean z10;
         int i13;
         int i14 = 0;
@@ -235,13 +235,13 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             this.R = false;
             return;
         }
-        PhotoViewer photoViewer = ((org.telegram.ui.so0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.to0) this.W).a;
         int i15 = photoViewer.O4;
         ArrayList arrayList = photoViewer.Z6;
         ArrayList arrayList2 = photoViewer.X6;
-        org.telegram.ui.pq0 pq0Var = photoViewer.i7;
-        List all = pq0Var != null ? pq0Var.getAll() : null;
-        int i16 = ((org.telegram.ui.so0) this.W).a.w;
+        org.telegram.ui.qq0 qq0Var = photoViewer.i7;
+        List all = qq0Var != null ? qq0Var.getAll() : null;
+        int i16 = ((org.telegram.ui.to0) this.W).a.w;
         this.U = false;
         long j10 = 0;
         if (arrayList != null && !arrayList.isEmpty()) {
@@ -312,7 +312,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             } else {
                 z9 = false;
             }
-            boolean z11 = arrayList2.size() > 1 && (tq0Var = ((org.telegram.ui.so0) this.W).a.d) != null && tq0Var.L();
+            boolean z11 = arrayList2.size() > 1 && (uq0Var = ((org.telegram.ui.to0) this.W).a.d) != null && uq0Var.L();
             if (this.h != 0 || z11) {
                 this.U = true;
                 int min = Math.min(i15 + 10, arrayList2.size());
@@ -540,8 +540,8 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                     }
                 }
             } else {
-                org.telegram.ui.tq0 tq0Var2 = ((org.telegram.ui.so0) this.W).a.d;
-                boolean z14 = (tq0Var2 != null && tq0Var2.L()) && arrayList2.size() > 1;
+                org.telegram.ui.uq0 uq0Var2 = ((org.telegram.ui.to0) this.W).a.d;
+                boolean z14 = (uq0Var2 != null && uq0Var2.L()) && arrayList2.size() > 1;
                 if (this.h != j3 || z14 || i16 != 0) {
                     int min2 = Math.min(i15 + 10, arrayList2.size());
                     int i30 = i15;
@@ -631,7 +631,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             this.T = -1;
             k20 k20Var = this.W;
             if (k20Var != null) {
-                PhotoViewer photoViewer = ((org.telegram.ui.so0) k20Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.to0) k20Var).a;
                 if (PhotoViewer.O2(photoViewer.S4)) {
                     photoViewer.X2 = true;
                     photoViewer.S1(true);
@@ -665,12 +665,12 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             i7 = 0;
         }
         this.T = this.f - i7;
-        PhotoViewer photoViewer = ((org.telegram.ui.so0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.to0) this.W).a;
         int i17 = photoViewer.O4;
         ArrayList arrayList = photoViewer.Z6;
         ArrayList arrayList2 = photoViewer.X6;
-        org.telegram.ui.pq0 pq0Var = photoViewer.i7;
-        List all = pq0Var != null ? pq0Var.getAll() : null;
+        org.telegram.ui.qq0 qq0Var = photoViewer.i7;
+        List all = qq0Var != null ? qq0Var.getAll() : null;
         int i18 = this.T;
         if (i17 != i18 && i18 >= 0 && i18 < this.d.size()) {
             Object obj = this.e.get(this.T);
@@ -683,7 +683,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
             }
             if (i16 >= 0) {
                 this.R = true;
-                ((org.telegram.ui.so0) this.W).a(i16);
+                ((org.telegram.ui.to0) this.W).a(i16);
             }
         }
         if (!this.P) {
@@ -915,12 +915,12 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
 
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        PhotoViewer photoViewer = ((org.telegram.ui.so0) this.W).a;
+        PhotoViewer photoViewer = ((org.telegram.ui.to0) this.W).a;
         int i7 = photoViewer.O4;
         ArrayList arrayList = photoViewer.Z6;
         ArrayList arrayList2 = photoViewer.X6;
-        org.telegram.ui.pq0 pq0Var = photoViewer.i7;
-        List all = pq0Var != null ? pq0Var.getAll() : null;
+        org.telegram.ui.qq0 qq0Var = photoViewer.i7;
+        List all = qq0Var != null ? qq0Var.getAll() : null;
         e();
         ArrayList arrayList3 = this.c;
         int size = arrayList3.size();
@@ -940,7 +940,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                             if (i7 != indexOf) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.so0) this.W).a(indexOf);
+                                ((org.telegram.ui.to0) this.W).a(indexOf);
                                 return false;
                             }
                         } else if (all != null && !all.isEmpty()) {
@@ -948,7 +948,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                             if (i7 != indexOf2) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.so0) this.W).a(indexOf2);
+                                ((org.telegram.ui.to0) this.W).a(indexOf2);
                                 return false;
                             }
                         } else if (arrayList != null && !arrayList.isEmpty()) {
@@ -956,7 +956,7 @@ public final class l20 extends View implements GestureDetector.OnGestureListener
                             if (i7 != indexOf3) {
                                 this.y = 1.0f;
                                 this.I = true;
-                                ((org.telegram.ui.so0) this.W).a(indexOf3);
+                                ((org.telegram.ui.to0) this.W).a(indexOf3);
                                 return false;
                             }
                         }

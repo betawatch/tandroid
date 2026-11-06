@@ -10,7 +10,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
-import c8.qb;
+import c8.rb;
 import h2.m0;
 import h9.i0;
 import j$.util.DesugarCollections;
@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
@@ -360,7 +360,7 @@ public final class b implements g {
             i10 = m0.z(m0.A(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo()));
         } else {
             if (!(th2 instanceof MediaDrmResetException)) {
-                if (!(th2 instanceof NotProvisionedException) && !qb.b(th2)) {
+                if (!(th2 instanceof NotProvisionedException) && !rb.b(th2)) {
                     if (th2 instanceof DeniedByServerException) {
                         i10 = 6007;
                     } else if (th2 instanceof x) {
@@ -396,7 +396,7 @@ public final class b implements g {
             if (!(th2 instanceof Error)) {
                 throw new IllegalStateException("Unexpected Throwable subclass", th2);
             }
-            if (!qb.c(th2) && !qb.b(th2)) {
+            if (!rb.c(th2) && !rb.b(th2)) {
                 throw ((Error) th2);
             }
         }
@@ -406,7 +406,7 @@ public final class b implements g {
     }
 
     public final void m(Throwable th2, boolean z9) {
-        if ((th2 instanceof NotProvisionedException) || qb.b(th2)) {
+        if ((th2 instanceof NotProvisionedException) || rb.b(th2)) {
             this.c.v0(this);
         } else {
             l(z9 ? 1 : 2, th2);
@@ -444,7 +444,7 @@ public final class b implements g {
             return false;
         } catch (Exception e10) {
             e = e10;
-            if (qb.b(e)) {
+            if (rb.b(e)) {
                 l(1, e);
                 return false;
             }
@@ -452,7 +452,7 @@ public final class b implements g {
             return false;
         } catch (NoSuchMethodError e11) {
             e = e11;
-            if (qb.b(e)) {
+            if (rb.b(e)) {
             }
         }
     }

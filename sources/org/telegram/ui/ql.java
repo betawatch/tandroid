@@ -9,9 +9,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class ql implements pq0 {
+public final class ql implements qq0 {
     public final TL_iv.RichMessage a;
     public final ArrayList b;
     public final org.telegram.messenger.ij c;
@@ -22,7 +22,7 @@ public final class ql implements pq0 {
         this.c = ijVar;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final boolean a(int i7) {
         if (i7 < 0) {
             return false;
@@ -42,7 +42,7 @@ public final class ql implements pq0 {
         return false;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final File b(int i7) {
         TLRPC.Document b10;
         TLRPC.PhotoSize w10;
@@ -65,7 +65,7 @@ public final class ql implements pq0 {
         return null;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final String c(int i7) {
         TLObject d = d(i7);
         if (d instanceof TLRPC.Photo) {
@@ -74,7 +74,7 @@ public final class ql implements pq0 {
         return org.telegram.messenger.w7.r(null, d);
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final TLObject d(int i7) {
         if (i7 < 0) {
             return null;
@@ -95,12 +95,12 @@ public final class ql implements pq0 {
         return null;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final boolean e(int i7) {
         return false;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(((TLRPC.Photo) tLObject).sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
@@ -134,23 +134,23 @@ public final class ql implements pq0 {
         return null;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final Object g() {
         org.telegram.messenger.ij ijVar = this.c;
         return ijVar != null ? ijVar : this.a;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final TL_iv.PageBlock get(int i7) {
         return (TL_iv.PageBlock) this.b.get(i7);
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final List getAll() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final void h(TL_iv.PageBlock pageBlock) {
         org.telegram.messenger.kv kvVar;
         org.telegram.messenger.ij ijVar = this.c;
@@ -193,12 +193,12 @@ public final class ql implements pq0 {
         }
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final CharSequence i(int i7) {
         return null;
     }
 
-    @Override // org.telegram.ui.pq0
+    @Override // org.telegram.ui.qq0
     public final int j() {
         return this.b.size();
     }

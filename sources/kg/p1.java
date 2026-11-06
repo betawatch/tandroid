@@ -25,13 +25,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout {
     public final w8 a;
@@ -93,7 +93,7 @@ public final class p1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) s1Var.b);
-        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         int i7 = k6.G6;
         f6 f6Var = this.f;
         spannableStringBuilder.setSpan(new xz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
@@ -122,7 +122,7 @@ public final class p1 extends FrameLayout {
             int i10 = o1.d;
             SpannableString spannableString = new SpannableString("+");
             o1 o1Var = new o1(a10);
-            int L2 = (int) (((ly0) o1Var.c).c + org.telegram.messenger.g0.L(10.0f));
+            int L2 = (int) (((my0) o1Var.c).c + org.telegram.messenger.g0.L(10.0f));
             this.n[0] = L2;
             spannableString.setSpan(o1Var, 0, spannableString.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, lVar.getPaint(), (L * 1.5f) - r13[0], TextUtils.TruncateAt.END));

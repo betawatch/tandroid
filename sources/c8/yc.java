@@ -1,13 +1,23 @@
 package c8;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import java.util.Date;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.hy0;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class yc {
-    public static boolean a(int i7, int i10) {
-        return (i7 & i10) != 0;
-    }
-
-    public static int b(int i7, int i10, boolean z9) {
-        return z9 ? i7 | i10 : i7 & (~i10);
+    public static hy0 a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String a10 = od.a(jSONObject.getString("id"));
+        long j3 = jSONObject.getLong("created");
+        jSONObject.getBoolean("livemode");
+        String str2 = "card".equals(od.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
+        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
+        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
+        uc.a aVar = new uc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, od.a(jSONObject2.optString("name")), od.a(jSONObject2.optString("address_line1")), od.a(jSONObject2.optString("address_line2")), od.a(jSONObject2.optString("address_city")), od.a(jSONObject2.optString("address_state")), od.a(jSONObject2.optString("address_zip")), od.a(jSONObject2.optString("address_country")), qd.a(od.a(jSONObject2.optString("brand"))), od.a(jSONObject2.optString("last4")), od.a(jSONObject2.optString("fingerprint")), qd.b(od.a(jSONObject2.optString("funding"))), od.a(jSONObject2.optString("country")), od.a(jSONObject2.optString("currency")));
+        new Date(j3 * 1000);
+        return new hy0(a10, valueOf, aVar, str2);
     }
 }

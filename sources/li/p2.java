@@ -34,7 +34,7 @@ import org.telegram.ui.Components.zt0;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -493,7 +493,7 @@ public final /* synthetic */ class p2 implements Runnable {
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i17);
                             w7.G(p10.s0);
-                            y22 = org.telegram.messenger.g0.y2(w7.K(document, null, true, true), 0);
+                            y22 = org.telegram.messenger.g0.y2(w7.J(document, null, true, true), 0);
                             if (TextUtils.isEmpty(y22)) {
                                 RLottieNative b10 = RLottieNative.b(y22, iArr, null, null);
                                 if (i23 <= 2) {
@@ -512,7 +512,7 @@ public final /* synthetic */ class p2 implements Runnable {
                         i17 = i23 == 3 ? 1 : 2;
                         TLRPC.Document document2 = tL_messages_stickerSet.documents.get(i17);
                         w7.G(p10.s0);
-                        y22 = org.telegram.messenger.g0.y2(w7.K(document2, null, true, true), 0);
+                        y22 = org.telegram.messenger.g0.y2(w7.J(document2, null, true, true), 0);
                         if (TextUtils.isEmpty(y22)) {
                         }
                     }

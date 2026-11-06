@@ -8,15 +8,15 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.g01;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class a0 extends View {
     public final org.telegram.ui.ActionBar.f6 a;
     public final b0 b;
-    public final f01 c;
+    public final g01 c;
     public int d;
     public float e;
 
@@ -24,9 +24,9 @@ public abstract class a0 extends View {
         super(context);
         this.a = f6Var;
         this.b = new b0(i7, context, f6Var);
-        f01 f01Var = new f01(i7, this, f6Var, true);
-        this.c = f01Var;
-        f01Var.e = new ly0("", 14.0f, org.telegram.messenger.g0.o());
+        g01 g01Var = new g01(i7, this, f6Var, true);
+        this.c = g01Var;
+        g01Var.e = new my0("", 14.0f, org.telegram.messenger.g0.o());
     }
 
     public final void a(float f10, int i7) {
@@ -67,21 +67,21 @@ public abstract class a0 extends View {
 
     public void setDialogId(long j3) {
         b0 b0Var = this.b;
-        ly0 ly0Var = b0Var.d;
+        my0 my0Var = b0Var.d;
         TLRPC.User a22 = qp.s1(b0Var.b).a2(Long.valueOf(j3));
-        ly0 ly0Var2 = b0Var.e;
-        ly0Var2.m(1);
-        ly0Var2.p(9999.0f);
-        ly0Var2.q(hd.a0(null, null, 2131753070, t10.p(a22)));
-        float b10 = (ly0Var2.b() / 2.0f) * 1.2f;
-        ly0Var2.m(4);
+        my0 my0Var2 = b0Var.e;
+        my0Var2.m(1);
+        my0Var2.p(9999.0f);
+        my0Var2.q(hd.a0(null, null, 2131753070, t10.p(a22)));
+        float b10 = (my0Var2.b() / 2.0f) * 1.2f;
+        my0Var2.m(4);
         float f10 = (int) (org.telegram.messenger.g0.q.x * 0.95f);
-        ly0Var2.p(Math.min(f10, b10));
-        if (ly0Var2.b.getLineCount() > 2) {
-            ly0Var2.p(Math.min(f10, b10 * 1.2f));
+        my0Var2.p(Math.min(f10, b10));
+        if (my0Var2.b.getLineCount() > 2) {
+            my0Var2.p(Math.min(f10, b10 * 1.2f));
         }
-        float min = Math.min(Math.max(Math.max(0.0f, ly0Var2.b()), ly0Var.b()) + org.telegram.messenger.g0.L(32.0f), f10);
-        float i7 = ly0Var2.i() + ly0Var.i() + org.telegram.messenger.g0.L(17.0f) + 0.0f + org.telegram.messenger.g0.L(70.0f) + org.telegram.messenger.g0.L(14.0f) + org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.g0.L(2.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(5.0f);
+        float min = Math.min(Math.max(Math.max(0.0f, my0Var2.b()), my0Var.b()) + org.telegram.messenger.g0.L(32.0f), f10);
+        float i7 = my0Var2.i() + my0Var.i() + org.telegram.messenger.g0.L(17.0f) + 0.0f + org.telegram.messenger.g0.L(70.0f) + org.telegram.messenger.g0.L(14.0f) + org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.g0.L(2.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(5.0f);
         b0Var.h = (int) min;
         b0Var.i = (int) i7;
     }

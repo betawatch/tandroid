@@ -6,14 +6,14 @@ import android.widget.TextView;
 import bi.ea;
 import bi.v9;
 import c8.ha;
-import c8.na;
+import c8.qa;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.u10;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e2 extends org.telegram.ui.ActionBar.v2 {
     public long i1;
@@ -24,10 +24,10 @@ public final class e2 extends org.telegram.ui.ActionBar.v2 {
         N();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView b10 = na.b(context, 20.0f, k6.G6, true, f6Var);
+        TextView b10 = qa.b(context, 20.0f, k6.G6, true, f6Var);
         b10.setText(hd.M0(2131749880, null));
         linearLayout.addView(b10, ha.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView b11 = na.b(context, 14.0f, k6.y6, false, f6Var);
+        TextView b11 = qa.b(context, 14.0f, k6.y6, false, f6Var);
         b11.setText(hd.M0(2131749881, null));
         linearLayout.addView(b11, ha.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
         fi.d dVar = new fi.d(context, f6Var, true);

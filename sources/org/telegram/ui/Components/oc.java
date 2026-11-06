@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class oc extends Drawable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class oc extends Drawable {
                 }
                 break;
             case 3:
-                ((ly0) this.b).c(getBounds().centerX() - (((ly0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, (org.telegram.ui.ActionBar.f6) this.c), canvas);
+                ((my0) this.b).c(getBounds().centerX() - (((my0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, (org.telegram.ui.ActionBar.f6) this.c), canvas);
                 break;
             default:
                 ImageReceiver imageReceiver = (ImageReceiver) this.b;

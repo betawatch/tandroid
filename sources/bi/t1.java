@@ -6,33 +6,33 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class t1 extends q31 {
+public final class t1 extends w31 {
     static {
-        q31.h(new t1());
+        w31.h(new t1());
     }
 
-    public static r31 i(int i7, r1 r1Var) {
-        r31 K = r31.K(t1.class);
+    public static x31 i(int i7, r1 r1Var) {
+        x31 K = x31.K(t1.class);
         K.u = 1;
         K.z = i7;
         K.G = r1Var;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         String str;
         u1 u1Var = (u1) view;
-        r1 r1Var = (r1) r31Var.G;
-        int i7 = r31Var.z;
+        r1 r1Var = (r1) x31Var.G;
+        int i7 = x31Var.z;
         Integer[] numArr = new Integer[1];
         u1Var.s = i7 == 0;
         org.telegram.ui.Components.l9 l9Var = u1Var.d;
@@ -44,7 +44,7 @@ public final class t1 extends q31 {
             w0Var.e(null);
             TL_stars.starGiftAttributeModel stargiftattributemodel = r1Var.c;
             textView.setText(stargiftattributemodel.name);
-            u1.a(u1Var, stargiftattributemodel.document, 80, r31Var.G, true);
+            u1.a(u1Var, stargiftattributemodel.document, 80, x31Var.G, true);
             l9Var.setColorFilter(null);
             w0Var.y = org.telegram.ui.ActionBar.k6.Ci;
             str = k7.G1(stargiftattributemodel.rarity, numArr);
@@ -55,7 +55,7 @@ public final class t1 extends q31 {
             w0Var.e(stargiftattributepattern);
             w0Var.y = org.telegram.ui.ActionBar.k6.d6;
             textView.setText(stargiftattributebackdrop.name);
-            u1.a(u1Var, stargiftattributepattern.document, 48, r31Var.G, false);
+            u1.a(u1Var, stargiftattributepattern.document, 48, x31Var.G, false);
             l9Var.setColorFilter(new PorterDuffColorFilter(i0.a.o(stargiftattributebackdrop.pattern_color, 64), PorterDuff.Mode.SRC_IN));
             str = k7.G1(stargiftattributebackdrop.rarity, numArr);
         } else if (i7 == 2) {
@@ -65,7 +65,7 @@ public final class t1 extends q31 {
             w0Var.e(stargiftattributepattern2);
             w0Var.y = org.telegram.ui.ActionBar.k6.d6;
             textView.setText(stargiftattributepattern2.name);
-            u1.a(u1Var, stargiftattributepattern2.document, 64, r31Var.G, false);
+            u1.a(u1Var, stargiftattributepattern2.document, 64, x31Var.G, false);
             l9Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             str = k7.G1(stargiftattributepattern2.rarity, numArr);
         } else {
@@ -82,7 +82,7 @@ public final class t1 extends q31 {
         u1Var.b();
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new u1(context, f6Var);
     }

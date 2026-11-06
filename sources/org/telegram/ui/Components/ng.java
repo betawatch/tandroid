@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class ng implements Runnable {
         org.telegram.ui.n1 n1Var = (org.telegram.ui.n1) this.b;
         String str = (String) this.c;
         WebResourceRequest webResourceRequest = (WebResourceRequest) this.d;
-        org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) n1Var.b;
+        org.telegram.ui.cq0 cq0Var = (org.telegram.ui.cq0) n1Var.b;
         try {
             HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
             httpURLConnection.setRequestMethod("POST");
@@ -68,7 +68,7 @@ public final /* synthetic */ class ng implements Runnable {
             }
             httpURLConnection.setDoOutput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
-            outputStream.write(new JSONObject().put("context", new JSONObject().put("client", new JSONObject().put("userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36,gzip(gfe)").put("clientName", "WEB").put("clientVersion", webResourceRequest.getRequestHeaders().get("X-Youtube-Client-Version")).put("osName", "Windows").put("osVersion", "10.0").put("originalUrl", "https://www.youtube.com/watch?v=" + bq0Var.x).put("platform", "DESKTOP"))).put("videoId", bq0Var.x).toString().getBytes("UTF-8"));
+            outputStream.write(new JSONObject().put("context", new JSONObject().put("client", new JSONObject().put("userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36,gzip(gfe)").put("clientName", "WEB").put("clientVersion", webResourceRequest.getRequestHeaders().get("X-Youtube-Client-Version")).put("osName", "Windows").put("osVersion", "10.0").put("originalUrl", "https://www.youtube.com/watch?v=" + cq0Var.x).put("platform", "DESKTOP"))).put("videoId", cq0Var.x).toString().getBytes("UTF-8"));
             outputStream.close();
             InputStream inputStream = httpURLConnection.getResponseCode() == 200 ? httpURLConnection.getInputStream() : httpURLConnection.getErrorStream();
             byte[] bArr = new byte[10240];
@@ -87,10 +87,10 @@ public final /* synthetic */ class ng implements Runnable {
             if (optJSONObject2 == null || (optJSONObject = optJSONObject2.optJSONObject("playerStoryboardSpecRenderer")) == null || (optString = optJSONObject.optString("spec")) == null) {
                 return;
             }
-            if (bq0Var.H == 0) {
-                bq0Var.s = optString;
+            if (cq0Var.H == 0) {
+                cq0Var.s = optString;
             } else {
-                ae0.a(bq0Var, optString);
+                ae0.a(cq0Var, optString);
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -280,7 +280,7 @@ public final /* synthetic */ class ng implements Runnable {
             for (int i7 = 0; i7 < size; i7++) {
                 org.telegram.messenger.zy zyVar = (org.telegram.messenger.zy) yv0Var.P1.get(i7);
                 yv0Var.Q1.put(zyVar.a, zyVar);
-                org.telegram.messenger.w7.G(yv0Var.a).i0(false, 67108864, zyVar.a, true);
+                org.telegram.messenger.w7.G(yv0Var.a).h0(false, 67108864, zyVar.a, true);
             }
         }
         yv0Var.Z0();
@@ -457,7 +457,7 @@ public final /* synthetic */ class ng implements Runnable {
                     return;
                 }
                 hashMap.put(r10, j6Var);
-                org.telegram.messenger.w7.G(j6Var.E).X(wallPaper.document, wallPaper, 1, 1);
+                org.telegram.messenger.w7.G(j6Var.E).W(wallPaper.document, wallPaper, 1, 1);
                 return;
             case 3:
                 org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) this.b;

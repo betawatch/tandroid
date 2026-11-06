@@ -30,7 +30,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n40 extends t40 {
     public static final /* synthetic */ int K0 = 0;
@@ -59,7 +59,7 @@ public final class n40 extends t40 {
     public wi.r0 P;
     public wi.s0 Q;
     public wi.l0 R;
-    public gy0 S;
+    public hy0 S;
     public org.telegram.messenger.j20 T;
     public m40 U;
     public boolean V;
@@ -528,9 +528,9 @@ public final class n40 extends t40 {
         }
         this.U = null;
         x(z9 ? 0 : 6);
-        gy0 gy0Var = this.S;
-        if (gy0Var != null) {
-            gy0Var.d(true);
+        hy0 hy0Var = this.S;
+        if (hy0Var != null) {
+            hy0Var.d(true);
         }
         this.S = null;
         MediaController.B().Y(false);
@@ -597,9 +597,9 @@ public final class n40 extends t40 {
             }
             this.O = null;
         }
-        gy0 gy0Var = this.S;
-        if (gy0Var != null) {
-            gy0Var.d(true ^ this.j0);
+        hy0 hy0Var = this.S;
+        if (hy0Var != null) {
+            hy0Var.d(true ^ this.j0);
             this.S = null;
         }
         setScreenFlashEnabled(false);
@@ -731,7 +731,7 @@ public final class n40 extends t40 {
             pkVar.setAlpha(1.0f);
             pkVar.invalidate();
         }
-        this.S = new gy0(this.f, this.n);
+        this.S = new hy0(this.f, this.n);
         this.P = (wi.r0) xi.e.e.a();
         wi.k0 k0Var = new wi.k0(getContext(), this.y);
         k0Var.c = new File(org.telegram.messenger.t0.h(), "cache");
@@ -745,8 +745,8 @@ public final class n40 extends t40 {
         k0Var.i = aVar.d;
         qt qtVar = this.J0;
         k0Var.j = qtVar;
-        gy0 gy0Var = this.S;
-        k0Var.k = gy0Var;
+        hy0 hy0Var = this.S;
+        k0Var.k = hy0Var;
         k0Var.l = new ax(this, 5);
         if (k0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
@@ -766,7 +766,7 @@ public final class n40 extends t40 {
         if (qtVar == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (gy0Var == null) {
+        if (hy0Var == null) {
             throw new IllegalStateException("Output listener is required");
         }
         this.O = new wi.t0(k0Var);
@@ -948,13 +948,13 @@ public final class n40 extends t40 {
         }
     }
 
-    public final org.telegram.messenger.j20 s(File file, long j3, fy0 fy0Var) {
+    public final org.telegram.messenger.j20 s(File file, long j3, gy0 gy0Var) {
         wi.o0 o0Var;
         org.telegram.messenger.j20 j20Var = new org.telegram.messenger.j20();
         j20Var.a = -1L;
         j20Var.b = -1L;
         j20Var.r = j3;
-        j20Var.q = Math.max(1L, fy0Var == null ? file.length() : fy0Var.a);
+        j20Var.q = Math.max(1L, gy0Var == null ? file.length() : gy0Var.a);
         j20Var.s = true;
         wi.t0 t0Var = this.O;
         j20Var.n = (t0Var == null || (o0Var = t0Var.u) == null) ? 30 : o0Var.a;
@@ -965,11 +965,11 @@ public final class n40 extends t40 {
         j20Var.i = i7;
         j20Var.l = i7;
         j20Var.o = file.getAbsolutePath();
-        if (fy0Var != null) {
-            j20Var.w = fy0Var.b;
-            j20Var.x = fy0Var.c;
-            j20Var.y = fy0Var.d;
-            j20Var.z = fy0Var.e;
+        if (gy0Var != null) {
+            j20Var.w = gy0Var.b;
+            j20Var.x = gy0Var.c;
+            j20Var.y = gy0Var.d;
+            j20Var.z = gy0Var.e;
         }
         return j20Var;
     }

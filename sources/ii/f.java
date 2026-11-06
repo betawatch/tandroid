@@ -22,13 +22,13 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.g6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class f extends f2 implements ls {
     public ri.c a;
@@ -36,20 +36,20 @@ public final class f extends f2 implements ls {
     public TLRPC.Chat c;
     public TLRPC.User d;
     public FrameLayout e;
-    public k41 f;
+    public q41 f;
     public e h;
     public ArrayList n;
     public ab.b0 r;
 
-    public static void Z(f fVar, r31 r31Var) {
+    public static void Z(f fVar, x31 x31Var) {
         f fVar2;
-        if (r31Var.d == 1) {
+        if (x31Var.d == 1) {
             fVar2 = fVar;
             v4.O(fVar.getParentActivity(), fVar2, hd.M0(2131751906, null), null, hd.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, hd.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().M0(Long.valueOf(-fVar2.b));
@@ -119,14 +119,14 @@ public final class f extends f2 implements ls {
                 this.h.a.e(chat, new w8(this.c));
             }
         }
-        k41 k41Var = new k41(this, new a(this, 0), new b(this), new x3(this, 6));
-        this.f = k41Var;
-        k41Var.setClipToPadding(false);
-        k41 k41Var2 = this.f;
-        f41 f41Var = k41Var2.f3;
-        f41Var.r = false;
-        f41Var.s = true;
-        k41Var2.r1();
+        q41 q41Var = new q41(this, new a(this, 0), new b(this), new x3(this, 6));
+        this.f = q41Var;
+        q41Var.setClipToPadding(false);
+        q41 q41Var2 = this.f;
+        l41 l41Var = q41Var2.f3;
+        l41Var.r = false;
+        l41Var.s = true;
+        q41Var2.r1();
         this.e.addView(this.f, ha.c(-1.0f, -1));
         this.e.addView(this.actionBar, ha.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.e;

@@ -24,7 +24,7 @@ import org.telegram.ui.bi0;
 import org.telegram.ui.hl0;
 import org.telegram.ui.la1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class px implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -273,7 +273,7 @@ public final /* synthetic */ class px implements RequestDelegate {
                                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(anVar2.getParentActivity());
                                     alertDialog$Builder.a.R = hd.M0(2131753019, null);
                                     alertDialog$Builder.a.T = g0.X2(hd.a0("BotOwnershipTransferReadyAlertText", null, 2131753016, new Object[0]));
-                                    alertDialog$Builder.k(hd.M0(2131753017, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.ax
+                                    alertDialog$Builder.k(hd.M0(2131753017, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.zw
                                         @Override // org.telegram.ui.ActionBar.r1
                                         public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i12) {
                                             final TwoStepVerificationActivity twoStepVerificationActivity3 = new TwoStepVerificationActivity();
@@ -301,7 +301,7 @@ public final /* synthetic */ class px implements RequestDelegate {
                             }
                             if (!"PASSWORD_MISSING".equals(tL_error2.text) && !tL_error2.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error2.text.startsWith("SESSION_TOO_FRESH_")) {
                                 if ("SRP_ID_INVALID".equals(tL_error2.text)) {
-                                    ConnectionsManager.getInstance(gzVar3.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.messenger.bx
+                                    ConnectionsManager.getInstance(gzVar3.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.messenger.ax
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject4, TLRPC.TL_error tL_error3) {
                                             g0.h3(new zg(gzVar3, tL_error3, tLObject4, twoStepVerificationActivity2, z16, ijVar4, keyboardButtonProto2, anVar2));
@@ -429,7 +429,7 @@ public final /* synthetic */ class px implements RequestDelegate {
                         }
                         if (cg.c.c(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
                             if (tLObject3 instanceof TLRPC.TL_payments_paymentFormStars) {
-                                bi.ea.y(gzVar3.currentAccount, false).X(ijVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new zw(gzVar3, str5, list2, 0), new di.e(5));
+                                bi.ea.y(gzVar3.currentAccount, false).X(ijVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new yw(gzVar3, str5, list2, 0), new di.e(5));
                                 return;
                             }
                             ij ijVar5 = ijVar3;

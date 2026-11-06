@@ -14,7 +14,7 @@ import org.telegram.ui.d81;
 import org.telegram.ui.f81;
 import org.telegram.ui.y71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class tp0 implements Runnable {
                 ((org.telegram.messenger.v10) obj).a(null, Boolean.valueOf(z9));
                 break;
             case 5:
-                ((f41) obj).Q(z9);
+                ((l41) obj).Q(z9);
                 break;
             case 6:
                 org.telegram.ui.ww wwVar = (org.telegram.ui.ww) obj;

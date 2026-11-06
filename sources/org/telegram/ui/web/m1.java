@@ -10,29 +10,29 @@ import org.telegram.messenger.p10;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class m1 extends q31 {
+public final class m1 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new m1());
+        w31.h(new m1());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         n1 n1Var = (n1) view;
-        String str = r31Var.n;
-        String str2 = (String) r31Var.l;
-        long j3 = r31Var.B;
+        String str = x31Var.n;
+        String str2 = (String) x31Var.l;
+        long j3 = x31Var.B;
         ImageView imageView = n1Var.a;
         n1Var.b.setText(str);
         m2 m2Var = n1Var.c;
@@ -76,7 +76,7 @@ public final class m1 extends q31 {
         n1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         return new n1(context);
     }

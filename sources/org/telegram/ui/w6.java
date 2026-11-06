@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w6 extends rg.b {
     public final /* synthetic */ int d;
@@ -273,7 +273,7 @@ public final class w6 extends rg.b {
                             int i19 = iArr[i18];
                             SpannableString spannableString = new SpannableString(i19 <= 0 ? String.format("<%.1f%%", Float.valueOf(1.0f)) : String.format("%d%%", Integer.valueOf(i19)));
                             spannableString.setSpan(new RelativeSizeSpan(0.834f), 0, spannableString.length(), 33);
-                            spannableString.setSpan(new org.telegram.ui.Components.o31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
+                            spannableString.setSpan(new org.telegram.ui.Components.u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
                             spannableStringBuilder.append((CharSequence) "  ");
                             spannableStringBuilder.append((CharSequence) spannableString);

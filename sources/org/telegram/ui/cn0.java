@@ -7,7 +7,7 @@ import android.provider.Settings;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -154,9 +154,9 @@ public final /* synthetic */ class cn0 implements Runnable {
                             photoViewer21.e3();
                             break;
                         } else {
-                            bq0 bq0Var = photoViewer21.f0;
-                            if (bq0Var != null) {
-                                if ((!bq0Var.y || !"inapp".equals(org.telegram.messenger.qp.s1(bq0Var.a).A3)) && photoViewer21.f0.e()) {
+                            cq0 cq0Var = photoViewer21.f0;
+                            if (cq0Var != null) {
+                                if ((!cq0Var.y || !"inapp".equals(org.telegram.messenger.qp.s1(cq0Var.a).A3)) && photoViewer21.f0.e()) {
                                     photoViewer21.J3 = false;
                                     if (PhotoViewer.f9 != null) {
                                         PhotoViewer.f9.J0();
@@ -165,9 +165,9 @@ public final /* synthetic */ class cn0 implements Runnable {
                                     PhotoViewer.f9 = PhotoViewer.e9;
                                     PhotoViewer.e9 = null;
                                     photoViewer21.e = false;
-                                    vq0 vq0Var = photoViewer21.c5;
-                                    if (vq0Var != null) {
-                                        ImageReceiver imageReceiver = vq0Var.a;
+                                    wq0 wq0Var = photoViewer21.c5;
+                                    if (wq0Var != null) {
+                                        ImageReceiver imageReceiver = wq0Var.a;
                                         if (!imageReceiver.Q0) {
                                             imageReceiver.O0(true, true);
                                         }
@@ -196,9 +196,9 @@ public final /* synthetic */ class cn0 implements Runnable {
                 break;
             case 26:
                 PhotoViewer photoViewer24 = this.b;
-                org.telegram.ui.Components.n51 n51Var = photoViewer24.F2;
-                if (n51Var != null && photoViewer24.Z5 <= 1.35f) {
-                    long S = n51Var.S();
+                org.telegram.ui.Components.t51 t51Var = photoViewer24.F2;
+                if (t51Var != null && photoViewer24.Z5 <= 1.35f) {
+                    long S = t51Var.S();
                     long U = photoViewer24.F2.U();
                     if (S != -9223372036854775807L && U >= 8000) {
                         float f10 = photoViewer24.D7;
@@ -229,18 +229,18 @@ public final /* synthetic */ class cn0 implements Runnable {
             case 28:
                 PhotoViewer photoViewer26 = this.b;
                 if (!photoViewer26.T4.isPopupShown()) {
-                    org.telegram.ui.Components.n51 n51Var2 = photoViewer26.F2;
-                    if (n51Var2 != null && photoViewer26.T4.videoWasPlaying) {
-                        n51Var2.h0();
+                    org.telegram.ui.Components.t51 t51Var2 = photoViewer26.F2;
+                    if (t51Var2 != null && photoViewer26.T4.videoWasPlaying) {
+                        t51Var2.h0();
                         break;
                     }
                 } else {
                     VideoAds videoAds = photoViewer26.T4;
-                    org.telegram.ui.Components.n51 n51Var3 = photoViewer26.F2;
-                    videoAds.videoWasPlaying = n51Var3 != null ? n51Var3.d0() : true;
-                    org.telegram.ui.Components.n51 n51Var4 = photoViewer26.F2;
-                    if (n51Var4 != null) {
-                        n51Var4.g0();
+                    org.telegram.ui.Components.t51 t51Var3 = photoViewer26.F2;
+                    videoAds.videoWasPlaying = t51Var3 != null ? t51Var3.d0() : true;
+                    org.telegram.ui.Components.t51 t51Var4 = photoViewer26.F2;
+                    if (t51Var4 != null) {
+                        t51Var4.g0();
                         break;
                     }
                 }

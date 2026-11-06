@@ -32,14 +32,14 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.mu0;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ew0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static final int c0 = org.telegram.messenger.g0.L(76.0f);
@@ -303,7 +303,7 @@ public abstract class j extends FrameLayout implements org.telegram.ui.ActionBar
             gVar2 = new g(this, layout, clickableSpan, f10);
         }
         this.F = gVar2;
-        if (!(clickableSpan instanceof v31)) {
+        if (!(clickableSpan instanceof b41)) {
             if (!(clickableSpan instanceof URLSpan)) {
                 clickableSpan.onClick(this);
                 return;
@@ -317,7 +317,7 @@ public abstract class j extends FrameLayout implements org.telegram.ui.ActionBar
                 return;
             }
         }
-        String url2 = ((v31) clickableSpan).getURL();
+        String url2 = ((b41) clickableSpan).getURL();
         if (url2.startsWith("@") || url2.startsWith("#") || url2.startsWith("$") || url2.startsWith("/")) {
             g gVar3 = this.F;
             ProfileActivity profileActivity = ((ew0) this).e0.e;

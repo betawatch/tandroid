@@ -5,7 +5,7 @@ import androidx.datastore.preferences.protobuf.c0;
 import androidx.datastore.preferences.protobuf.e0;
 import androidx.datastore.preferences.protobuf.m;
 import androidx.datastore.preferences.protobuf.z;
-import c8.pb;
+import c8.qb;
 import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -16,7 +16,7 @@ import kotlin.jvm.internal.j;
 import m1.g1;
 import m1.y0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class h implements y0 {
     public static final h a = new h();
@@ -69,13 +69,13 @@ public final class h implements y0 {
                         bVar.e(new e(name), Long.valueOf(value.z()));
                         break;
                     case 6:
-                        e a10 = pb.a(name);
+                        e a10 = qb.a(name);
                         String A = value.A();
                         j.d(A, "value.string");
                         bVar.e(a10, A);
                         break;
                     case 7:
-                        e b10 = pb.b(name);
+                        e b10 = qb.b(name);
                         b0 n10 = value.B().n();
                         j.d(n10, "value.stringSet.stringsList");
                         bVar.e(b10, hd.f.o(n10));

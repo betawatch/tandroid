@@ -20,7 +20,7 @@ import java.io.ByteArrayInputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n1 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -85,11 +85,11 @@ public final class n1 extends WebViewClient {
                 break;
             case 2:
                 super.onPageFinished(webView, str);
-                bq0 bq0Var = (bq0) obj;
-                View view = bq0Var.r;
-                if (!bq0Var.y) {
-                    bq0Var.n.setVisibility(4);
-                    bq0Var.h.setVisibility(4);
+                cq0 cq0Var = (cq0) obj;
+                View view = cq0Var.r;
+                if (!cq0Var.y) {
+                    cq0Var.n.setVisibility(4);
+                    cq0Var.h.setVisibility(4);
                     view.setEnabled(true);
                     view.setAlpha(1.0f);
                     break;
@@ -181,7 +181,7 @@ public final class n1 extends WebViewClient {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ((q1) obj).getContext(), null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = org.telegram.messenger.hd.M0(2131752104, null);
-                        u1Var.T = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new fq0(this, 8));
+                        u1Var.T = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new gq0(this, 8));
                         alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
                         alertDialog$Builder.p();
                     }
@@ -224,7 +224,7 @@ public final class n1 extends WebViewClient {
         switch (this.a) {
             case 2:
                 String uri = webResourceRequest.getUrl().toString();
-                if (!((bq0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                if (!((cq0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
                     return null;
                 }
                 Utilities.j.c(new org.telegram.ui.Components.ng(this, uri, webResourceRequest, 15));
@@ -264,7 +264,7 @@ public final class n1 extends WebViewClient {
                     break;
                 }
             case 2:
-                if (!((bq0) this.b).y) {
+                if (!((cq0) this.b).y) {
                     break;
                 } else {
                     vf.c.t(webView.getContext(), str);

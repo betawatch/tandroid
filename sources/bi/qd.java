@@ -1,9 +1,9 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.ui.ts0;
+import org.telegram.ui.us0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class qd extends vg.m {
     public final /* synthetic */ int i0;
@@ -87,7 +87,7 @@ public final class qd extends vg.m {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qd(ts0 ts0Var, Context context, int i7, int i10, Context context2) {
+    public qd(us0 us0Var, Context context, int i7, int i10, Context context2) {
         super(context, i7, i10);
         this.i0 = 2;
     }

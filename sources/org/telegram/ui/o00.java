@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class o00 extends org.telegram.ui.ActionBar.f2 {
     public ah.a D;
@@ -100,7 +100,7 @@ public abstract class o00 extends org.telegram.ui.ActionBar.f2 {
         v4.g0 k02 = k0();
         this.c.setAdapter(k02);
         int i10 = 3;
-        if (k02 instanceof org.telegram.ui.Components.f41) {
+        if (k02 instanceof org.telegram.ui.Components.l41) {
             org.telegram.ui.Components.pj0 pj0Var = this.c;
             j00 j00Var = new j00(this, i7);
             int L = org.telegram.messenger.g0.L(12.0f);

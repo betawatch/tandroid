@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -837,7 +837,7 @@ public final /* synthetic */ class mc0 implements Runnable {
             case 21:
                 PhotoViewer photoViewer3 = (PhotoViewer) this.b;
                 boolean[] zArr = (boolean[]) this.c;
-                zn0 zn0Var = (zn0) this.d;
+                ao0 ao0Var = (ao0) this.d;
                 Drawable[] drawableArr2 = PhotoViewer.Y8;
                 if (!zArr[0]) {
                     ImageView imageView = photoViewer3.w3;
@@ -849,66 +849,66 @@ public final /* synthetic */ class mc0 implements Runnable {
                         surfaceView.setVisibility(4);
                     }
                     zArr[0] = true;
-                    zn0Var.run();
+                    ao0Var.run();
                     break;
                 }
                 break;
             case 22:
-                cq0 cq0Var = (cq0) this.b;
-                cq0 cq0Var2 = (cq0) this.c;
+                dq0 dq0Var = (dq0) this.b;
+                dq0 dq0Var2 = (dq0) this.c;
                 int[] iArr = (int[]) this.d;
-                PhotoViewer photoViewer4 = cq0Var.d;
-                if (photoViewer4.D != null && cq0Var2 == photoViewer4.w8) {
+                PhotoViewer photoViewer4 = dq0Var.d;
+                if (photoViewer4.D != null && dq0Var2 == photoViewer4.w8) {
                     photoViewer4.w8 = null;
                     photoViewer4.p8 = iArr[5];
                     photoViewer4.h8 = iArr[4];
                     photoViewer4.i8 = iArr[7];
                     float f10 = photoViewer4.f8 / 8;
-                    PhotoViewer photoViewer5 = cq0Var.d;
+                    PhotoViewer photoViewer5 = dq0Var.d;
                     photoViewer4.q8 = (long) ((f10 * photoViewer5.h8) / 1000.0f);
                     if (photoViewer5.j8) {
-                        PhotoViewer photoViewer6 = cq0Var.d;
+                        PhotoViewer photoViewer6 = dq0Var.d;
                         photoViewer6.a8 = iArr[8];
                         photoViewer6.B3();
-                        if (cq0Var.d.X7 > cq0Var.d.Y7 - 1) {
-                            PhotoViewer photoViewer7 = cq0Var.d;
+                        if (dq0Var.d.X7 > dq0Var.d.Y7 - 1) {
+                            PhotoViewer photoViewer7 = dq0Var.d;
                             photoViewer7.X7 = photoViewer7.Y7 - 1;
                         }
-                        PhotoViewer photoViewer8 = cq0Var.d;
+                        PhotoViewer photoViewer8 = dq0Var.d;
                         if (!photoViewer8.I4) {
-                            org.telegram.ui.Components.a51 a51Var = photoViewer8.j1;
+                            org.telegram.ui.Components.f51 f51Var = photoViewer8.j1;
                             boolean z15 = photoViewer8.Y7 > 1;
-                            PhotoViewer photoViewer9 = cq0Var.d;
-                            a51Var.a(Math.min(photoViewer9.d8, cq0Var.d.e8), z15, photoViewer9.r);
+                            PhotoViewer photoViewer9 = dq0Var.d;
+                            f51Var.a(Math.min(photoViewer9.d8, dq0Var.d.e8), z15, photoViewer9.r);
                         }
                         if (org.telegram.messenger.r2.a) {
                             StringBuilder sb3 = new StringBuilder("compressionsCount = ");
-                            sb3.append(cq0Var.d.Y7);
+                            sb3.append(dq0Var.d.Y7);
                             sb3.append(" w = ");
-                            sb3.append(cq0Var.d.b8);
+                            sb3.append(dq0Var.d.b8);
                             sb3.append(" h = ");
-                            sb3.append(cq0Var.d.c8);
+                            sb3.append(dq0Var.d.c8);
                             sb3.append(" r = ");
-                            jg.g.s(cq0Var.d.a8, sb3);
+                            jg.g.s(dq0Var.d.a8, sb3);
                         }
-                        cq0Var.d.N7.invalidate();
+                        dq0Var.d.N7.invalidate();
                     } else {
-                        PhotoViewer photoViewer10 = cq0Var.d;
+                        PhotoViewer photoViewer10 = dq0Var.d;
                         if (!photoViewer10.I4) {
-                            photoViewer10.j1.a(Math.min(photoViewer10.d8, cq0Var.d.e8), false, photoViewer10.r);
+                            photoViewer10.j1.a(Math.min(photoViewer10.d8, dq0Var.d.e8), false, photoViewer10.r);
                         }
-                        cq0Var.d.Y7 = 0;
+                        dq0Var.d.Y7 = 0;
                     }
-                    cq0Var.d.z3();
-                    cq0Var.d.u3();
+                    dq0Var.d.z3();
+                    dq0Var.d.u3();
                     break;
                 }
                 break;
             case 23:
-                yr0 yr0Var = (yr0) this.b;
+                zr0 zr0Var = (zr0) this.b;
                 an anVar = (an) this.c;
                 TLRPC.PollAnswer pollAnswer = (TLRPC.PollAnswer) this.d;
-                org.telegram.messenger.ij ijVar = yr0Var.H;
+                org.telegram.messenger.ij ijVar = zr0Var.H;
                 byte[] bArr5 = pollAnswer.option;
                 if (ijVar != null && (message = ijVar.k) != null && (message.media instanceof TLRPC.TL_messageMediaPoll)) {
                     org.telegram.messenger.ij.B0(message);
@@ -921,7 +921,7 @@ public final /* synthetic */ class mc0 implements Runnable {
                     qmVar.f();
                 }
                 anVar.fc(ijVar, qmVar);
-                yr0Var.c(false);
+                zr0Var.c(false);
                 break;
             case 24:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;

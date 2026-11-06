@@ -33,27 +33,27 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.g7;
 import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m extends na implements v9 {
     public static final /* synthetic */ int s2 = 0;
     public final long P1;
-    public final r31 Q1;
+    public final x31 Q1;
     public final bi.c R1;
     public final bi.w S1;
     public final bg.q T1;
@@ -78,7 +78,7 @@ public final class m extends na implements v9 {
     public final te.a m2;
     public final wp[] n2;
     public boolean o2;
-    public f41 p2;
+    public l41 p2;
     public boolean q2;
     public boolean r2;
 
@@ -111,7 +111,7 @@ public final class m extends na implements v9 {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.Q1 = r31.j(-1, linearLayout);
+        this.Q1 = x31.j(-1, linearLayout);
         j jVar = new j(this, context, f6Var);
         this.U1 = jVar;
         jVar.O = true;
@@ -299,10 +299,10 @@ public final class m extends na implements v9 {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 27), this.I0);
-        this.p2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 27), this.I0);
+        this.p2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

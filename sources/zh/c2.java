@@ -13,11 +13,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.jl0;
 import org.telegram.ui.ql0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c2 implements a20, cj0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.v2 a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class c2 implements a20, cj0 {
         TL_stars.SavedStarGift savedStarGift;
         l3 l3Var = (l3) this.a;
         k3 k3Var = (k3) this.b;
-        r31 G = l3Var.a2.G(i7 - 1);
+        x31 G = l3Var.a2.G(i7 - 1);
         if (G == null) {
             return;
         }
@@ -100,7 +100,7 @@ public final /* synthetic */ class c2 implements a20, cj0 {
         e2 e2Var = (e2) this.a;
         fi.d dVar = (fi.d) this.b;
         View view = (View) obj2;
-        long j3 = ((TL_stars.SavedStarGift) ((r31) obj).G).gift.id;
+        long j3 = ((TL_stars.SavedStarGift) ((x31) obj).G).gift.id;
         if (e2Var.i1 == j3) {
             e2Var.i1 = 0L;
         } else {

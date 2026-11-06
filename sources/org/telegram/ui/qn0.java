@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class qn0 implements Runnable {
         String str5;
         SpannableStringBuilder spannableStringBuilder;
         String str6;
-        int i13 = 14;
+        int i13 = 15;
         boolean z10 = true;
         switch (this.a) {
             case 0:
@@ -86,76 +86,76 @@ public final /* synthetic */ class qn0 implements Runnable {
                 }
                 break;
             case 2:
-                bo0 bo0Var = (bo0) this.b;
+                co0 co0Var = (co0) this.b;
                 View view = (View) this.c;
-                bo0Var.getClass();
+                co0Var.getClass();
                 view.setOutlineProvider(null);
-                PhotoViewer photoViewer2 = bo0Var.c;
+                PhotoViewer photoViewer2 = co0Var.c;
                 ImageView imageView = photoViewer2.w3;
                 if (imageView != null) {
                     imageView.setOutlineProvider(null);
                 }
-                nq0 nq0Var = photoViewer2.E2;
-                if (nq0Var != null) {
-                    nq0Var.setOutlineProvider(null);
+                oq0 oq0Var = photoViewer2.E2;
+                if (oq0Var != null) {
+                    oq0Var.setOutlineProvider(null);
                     break;
                 }
                 break;
             case 3:
-                lp0 lp0Var = (lp0) this.b;
-                org.telegram.ui.Components.n51 n51Var = (org.telegram.ui.Components.n51) this.c;
-                lp0Var.getClass();
-                if (n51Var.U() > 0 && n51Var.S() >= n51Var.U() - 590) {
-                    lp0Var.a.e0.invalidate();
+                mp0 mp0Var = (mp0) this.b;
+                org.telegram.ui.Components.t51 t51Var = (org.telegram.ui.Components.t51) this.c;
+                mp0Var.getClass();
+                if (t51Var.U() > 0 && t51Var.S() >= t51Var.U() - 590) {
+                    mp0Var.a.e0.invalidate();
                     break;
                 }
                 break;
             case 4:
-                op0 op0Var = (op0) this.b;
+                pp0 pp0Var = (pp0) this.b;
                 tg.o0 o0Var2 = (tg.o0) this.c;
                 o0Var2.e.h();
                 o0Var2.c.postRunnable(new org.telegram.ui.Wallet.z(i13));
                 try {
-                    op0Var.b.e0.removeView(o0Var2);
+                    pp0Var.b.e0.removeView(o0Var2);
                     break;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                     return;
                 }
             case 5:
-                yp0 yp0Var = (yp0) this.b;
+                zp0 zp0Var = (zp0) this.b;
                 AnimatorSet animatorSet = (AnimatorSet) this.c;
-                yp0Var.r.k7.d();
+                zp0Var.r.k7.d();
                 animatorSet.start();
                 break;
             case 6:
-                yp0 yp0Var2 = (yp0) this.b;
-                vq0 vq0Var = (vq0) this.c;
-                yp0Var2.r.r4 = false;
-                if (!vq0Var.s) {
-                    vq0Var.a.O0(false, true);
+                zp0 zp0Var2 = (zp0) this.b;
+                wq0 wq0Var = (wq0) this.c;
+                zp0Var2.r.r4 = false;
+                if (!wq0Var.s) {
+                    wq0Var.a.O0(false, true);
                     break;
                 }
                 break;
             case 7:
-                yr0 yr0Var = (yr0) this.b;
+                zr0 zr0Var = (zr0) this.b;
                 String str7 = (String) this.c;
-                yr0Var.getClass();
+                zr0Var.getClass();
                 org.telegram.messenger.g0.g(str7);
-                yr0Var.c(true);
+                zr0Var.c(true);
                 break;
             case 8:
-                yr0 yr0Var2 = (yr0) this.b;
+                zr0 zr0Var2 = (zr0) this.b;
                 TLRPC.PollAnswer pollAnswer = (TLRPC.PollAnswer) this.c;
-                yr0Var2.getClass();
+                zr0Var2.getClass();
                 org.telegram.messenger.g0.g(org.telegram.messenger.ij.h0(pollAnswer.text, false));
-                yr0Var2.c(true);
+                zr0Var2.c(true);
                 break;
             case 9:
-                yr0 yr0Var3 = (yr0) this.b;
+                zr0 zr0Var3 = (zr0) this.b;
                 byte[] bArr = (byte[]) this.c;
-                org.telegram.messenger.gz C = org.telegram.messenger.gz.C(yr0Var3.H.I1);
-                org.telegram.messenger.ij ijVar = yr0Var3.H;
+                org.telegram.messenger.gz C = org.telegram.messenger.gz.C(zr0Var3.H.I1);
+                org.telegram.messenger.ij ijVar = zr0Var3.H;
                 if (ijVar != null && (org.telegram.messenger.ij.n1(ijVar) instanceof TLRPC.TL_messageMediaPoll)) {
                     long B0 = org.telegram.messenger.ij.B0(ijVar.k);
                     int f12 = ijVar.f1();
@@ -168,7 +168,7 @@ public final /* synthetic */ class qn0 implements Runnable {
                     Objects.requireNonNull(p5Var);
                     connectionsManager.sendRequestTyped(tL_messages_deletePollAnswer, new org.telegram.messenger.v3(p5Var), new org.telegram.messenger.d(C, 7));
                 }
-                yr0Var3.c(true);
+                zr0Var3.c(true);
                 break;
             case 10:
                 PrivacyControlActivity.b0((PrivacyControlActivity) this.b, (TLObject) this.c);
@@ -196,7 +196,7 @@ public final /* synthetic */ class qn0 implements Runnable {
                 r8Var.setChecked(z11);
                 break;
             case 14:
-                ((rt0) this.b).getMessagesController().f5(null, ((Long) this.c).longValue());
+                ((st0) this.b).getMessagesController().f5(null, ((Long) this.c).longValue());
                 break;
             case 15:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
@@ -283,16 +283,16 @@ public final /* synthetic */ class qn0 implements Runnable {
                 profileActivity8.x5 = null;
                 break;
             case 23:
-                uu0 uu0Var = (uu0) this.b;
+                vu0 vu0Var = (vu0) this.b;
                 a0.h hVar = (a0.h) this.c;
-                ProfileActivity profileActivity9 = uu0Var.R2.c;
-                org.telegram.ui.Components.hc.x(profileActivity9.getParentActivity(), profileActivity9.m5, hVar.m(), hVar.m() == 1 ? ((TLRPC.Dialog) hVar.n(0)).id : 0L, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.tj, uu0Var.I0), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, uu0Var.I0)).j();
+                ProfileActivity profileActivity9 = vu0Var.R2.c;
+                org.telegram.ui.Components.hc.x(profileActivity9.getParentActivity(), profileActivity9.m5, hVar.m(), hVar.m() == 1 ? ((TLRPC.Dialog) hVar.n(0)).id : 0L, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.tj, vu0Var.I0), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, vu0Var.I0)).j();
                 break;
             case 24:
-                jv0 jv0Var = (jv0) this.b;
+                kv0 kv0Var = (kv0) this.b;
                 a0.h hVar2 = (a0.h) this.c;
-                ProfileActivity profileActivity10 = jv0Var.R2;
-                org.telegram.ui.Components.hc.x(profileActivity10.getParentActivity(), profileActivity10.m5, hVar2.m(), hVar2.m() == 1 ? ((TLRPC.Dialog) hVar2.n(0)).id : 0L, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.tj, jv0Var.I0), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, jv0Var.I0)).j();
+                ProfileActivity profileActivity10 = kv0Var.R2;
+                org.telegram.ui.Components.hc.x(profileActivity10.getParentActivity(), profileActivity10.m5, hVar2.m(), hVar2.m() == 1 ? ((TLRPC.Dialog) hVar2.n(0)).id : 0L, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.tj, kv0Var.I0), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, kv0Var.I0)).j();
                 break;
             case 25:
                 ((jw0) this.b).e.presentFragment(ProfileActivity.A4(((Long) this.c).longValue()));

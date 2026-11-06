@@ -11,12 +11,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements v10 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class q0 implements v10 {
         int i14 = 1;
         switch (i12) {
             case 0:
-                ((h1) obj3).d1((ArrayList) obj, (f41) obj2);
+                ((h1) obj3).d1((ArrayList) obj, (l41) obj2);
                 break;
             case 1:
                 a2 a2Var = (a2) obj3;
@@ -75,7 +75,7 @@ public final /* synthetic */ class q0 implements v10 {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                             boolean z10 = a2Var.d;
                             int i17 = y0.b;
-                            r31 K = r31.K(y0.class);
+                            x31 K = x31.K(y0.class);
                             K.u = 1;
                             K.z = 0;
                             K.G = savedStarGift;
@@ -95,7 +95,7 @@ public final /* synthetic */ class q0 implements v10 {
                             while (true) {
                                 if (i18 < (i15 <= 0 ? 3 : i15)) {
                                     i18++;
-                                    r31 q10 = r31.q(i18, 34);
+                                    x31 q10 = x31.q(i18, 34);
                                     q10.u = 1;
                                     arrayList.add(q10);
                                 }
@@ -103,14 +103,14 @@ public final /* synthetic */ class q0 implements v10 {
                         }
                     }
                     if (up0Var.d == a2Var.e) {
-                        arrayList.add(r31.D(org.telegram.messenger.g0.L(20.0f)));
+                        arrayList.add(x31.D(org.telegram.messenger.g0.L(20.0f)));
                         if (up0Var.c == p10.i(a2Var.b).e()) {
                             int i19 = k6.z6;
                             int w02 = k6.w0(i19, f6Var);
                             String M0 = hd.M0(2131746670, null);
                             int L = org.telegram.messenger.g0.L(24.0f);
                             int i20 = b2.b;
-                            r31 K2 = r31.K(b2.class);
+                            x31 K2 = x31.K(b2.class);
                             K2.l = M0;
                             K2.z = 17;
                             K2.B = w02;
@@ -122,12 +122,12 @@ public final /* synthetic */ class q0 implements v10 {
                             K2.H = Integer.valueOf(i19);
                             arrayList.add(K2);
                         }
-                        arrayList.add(r31.D(org.telegram.messenger.g0.L(82.0f)));
+                        arrayList.add(x31.D(org.telegram.messenger.g0.L(82.0f)));
                     } else if (!arrayList.isEmpty()) {
-                        arrayList.add(r31.D(org.telegram.messenger.g0.L(82.0f)));
+                        arrayList.add(x31.D(org.telegram.messenger.g0.L(82.0f)));
                     }
                     if (!arrayList.isEmpty()) {
-                        arrayList.add(0, r31.D(org.telegram.messenger.g0.L(a2Var.H ? 42.0f : 12.0f)));
+                        arrayList.add(0, x31.D(org.telegram.messenger.g0.L(a2Var.H ? 42.0f : 12.0f)));
                     }
                     if (a2Var.f.getSpanCount() != max) {
                         org.telegram.messenger.g0.h3(new l1(a2Var, max, 1));
@@ -150,50 +150,50 @@ public final /* synthetic */ class q0 implements v10 {
                     arrayList3.add(y0.i(0, (TL_stars.TL_starGiftUnique) obj5, false, false, false, true, false));
                 }
                 if (d3Var.t || !d3Var.u) {
-                    r31 q11 = r31.q(-1, 34);
+                    x31 q11 = x31.q(-1, 34);
                     q11.u = 1;
                     arrayList3.add(q11);
-                    r31 q12 = r31.q(-2, 34);
+                    x31 q12 = x31.q(-2, 34);
                     q12.u = 1;
                     arrayList3.add(q12);
-                    r31 q13 = r31.q(-3, 34);
+                    x31 q13 = x31.q(-3, 34);
                     q13.u = 1;
                     arrayList3.add(q13);
                     if (d3Var.d.isEmpty()) {
-                        r31 q14 = r31.q(-4, 34);
+                        x31 q14 = x31.q(-4, 34);
                         q14.u = 1;
                         arrayList3.add(q14);
-                        r31 q15 = r31.q(-5, 34);
+                        x31 q15 = x31.q(-5, 34);
                         q15.u = 1;
                         arrayList3.add(q15);
-                        r31 q16 = r31.q(-6, 34);
+                        x31 q16 = x31.q(-6, 34);
                         q16.u = 1;
                         arrayList3.add(q16);
-                        r31 q17 = r31.q(-7, 34);
+                        x31 q17 = x31.q(-7, 34);
                         q17.u = 1;
                         arrayList3.add(q17);
-                        r31 q18 = r31.q(-8, 34);
+                        x31 q18 = x31.q(-8, 34);
                         q18.u = 1;
                         arrayList3.add(q18);
-                        r31 q19 = r31.q(-9, 34);
+                        x31 q19 = x31.q(-9, 34);
                         q19.u = 1;
                         arrayList3.add(q19);
-                        r31 q20 = r31.q(-10, 34);
+                        x31 q20 = x31.q(-10, 34);
                         q20.u = 1;
                         arrayList3.add(q20);
-                        r31 q21 = r31.q(-11, 34);
+                        x31 q21 = x31.q(-11, 34);
                         q21.u = 1;
                         arrayList3.add(q21);
-                        r31 q22 = r31.q(-12, 34);
+                        x31 q22 = x31.q(-12, 34);
                         q22.u = 1;
                         arrayList3.add(q22);
-                        r31 q23 = r31.q(-13, 34);
+                        x31 q23 = x31.q(-13, 34);
                         q23.u = 1;
                         arrayList3.add(q23);
-                        r31 q24 = r31.q(-14, 34);
+                        x31 q24 = x31.q(-14, 34);
                         q24.u = 1;
                         arrayList3.add(q24);
-                        r31 q25 = r31.q(-15, 34);
+                        x31 q25 = x31.q(-15, 34);
                         q25.u = 1;
                         arrayList3.add(q25);
                     }
@@ -215,7 +215,7 @@ public final /* synthetic */ class q0 implements v10 {
                     d3 d3Var2 = k3Var.c;
                     if (v9Var6 != null && d3Var2 != null) {
                         int currentTime = ConnectionsManager.getInstance(l3Var.a).getCurrentTime();
-                        arrayList5.add(r31.t(-1, hd.M0(2131749769, null)));
+                        arrayList5.add(x31.t(-1, hd.M0(2131749769, null)));
                         ArrayList arrayList6 = v9Var6.l;
                         int size3 = arrayList6.size();
                         boolean z12 = true;
@@ -232,7 +232,7 @@ public final /* synthetic */ class q0 implements v10 {
                                 i14 = i24;
                             } else {
                                 boolean z14 = savedStarGift2.can_craft_at <= currentTime ? i24 : 0;
-                                r31 i25 = y0.i(0, savedStarGift2.gift, false, true, false, false, true);
+                                x31 i25 = y0.i(0, savedStarGift2.gift, false, true, false, false, true);
                                 i25.g = z14;
                                 arrayList5.add(i25);
                                 i22++;
@@ -247,25 +247,25 @@ public final /* synthetic */ class q0 implements v10 {
                             int i28 = 6 - i27;
                             int i29 = 0;
                             while (i29 < i28) {
-                                r31 q26 = r31.q((i29 - i27) + 1, 35);
+                                x31 q26 = x31.q((i29 - i27) + 1, 35);
                                 q26.u = i26;
                                 arrayList5.add(q26);
                                 i29++;
                                 i26 = 1;
                             }
                         } else if (z15) {
-                            arrayList5.add(r31.g(hd.M0(2131749768, null)));
+                            arrayList5.add(x31.g(hd.M0(2131749768, null)));
                         }
                         if (d3Var2.e > 0 || l3Var.b2) {
                             l3Var.b2 = true;
                             String M02 = hd.M0(2131749771, null);
-                            r31 r31Var = new r31(42);
-                            r31Var.d = -2;
-                            r31Var.o = M02;
-                            arrayList5.add(r31Var);
+                            x31 x31Var = new x31(42);
+                            x31Var.d = -2;
+                            x31Var.o = M02;
+                            arrayList5.add(x31Var);
                             HorizontalScrollView horizontalScrollView = l3Var.R1;
                             if (horizontalScrollView != null) {
-                                arrayList5.add(r31.j(-3, horizontalScrollView));
+                                arrayList5.add(x31.j(-3, horizontalScrollView));
                             }
                             ArrayList arrayList7 = d3Var2.d;
                             int size4 = arrayList7.size();
@@ -276,22 +276,22 @@ public final /* synthetic */ class q0 implements v10 {
                                 arrayList5.add(y0.i(0, (TL_stars.TL_starGiftUnique) obj7, false, true, false, true, true));
                             }
                             if (d3Var2.t || !d3Var2.u) {
-                                r31 q27 = r31.q(10, 35);
+                                x31 q27 = x31.q(10, 35);
                                 q27.u = 1;
                                 arrayList5.add(q27);
-                                r31 q28 = r31.q(11, 35);
+                                x31 q28 = x31.q(11, 35);
                                 q28.u = 1;
                                 arrayList5.add(q28);
-                                r31 q29 = r31.q(12, 35);
+                                x31 q29 = x31.q(12, 35);
                                 q29.u = 1;
                                 arrayList5.add(q29);
-                                r31 q30 = r31.q(13, 35);
+                                x31 q30 = x31.q(13, 35);
                                 q30.u = 1;
                                 arrayList5.add(q30);
-                                r31 q31 = r31.q(14, 35);
+                                x31 q31 = x31.q(14, 35);
                                 q31.u = 1;
                                 arrayList5.add(q31);
-                                r31 q32 = r31.q(15, 35);
+                                x31 q32 = x31.q(15, 35);
                                 q32.u = 1;
                                 arrayList5.add(q32);
                                 break;
@@ -306,33 +306,33 @@ public final /* synthetic */ class q0 implements v10 {
                 v9 v9Var7 = o3Var.Q1;
                 if (v9Var7 != null) {
                     ArrayList arrayList9 = v9Var7.l;
-                    arrayList8.add(r31.D(org.telegram.messenger.g0.L(16.0f)));
+                    arrayList8.add(x31.D(org.telegram.messenger.g0.L(16.0f)));
                     if (v9Var7.i && arrayList9.isEmpty()) {
-                        r31 q33 = r31.q(1, 34);
+                        x31 q33 = x31.q(1, 34);
                         q33.u = 1;
                         arrayList8.add(q33);
-                        r31 q34 = r31.q(2, 34);
+                        x31 q34 = x31.q(2, 34);
                         q34.u = 1;
                         arrayList8.add(q34);
-                        r31 q35 = r31.q(3, 34);
+                        x31 q35 = x31.q(3, 34);
                         q35.u = 1;
                         arrayList8.add(q35);
-                        r31 q36 = r31.q(4, 34);
+                        x31 q36 = x31.q(4, 34);
                         q36.u = 1;
                         arrayList8.add(q36);
-                        r31 q37 = r31.q(5, 34);
+                        x31 q37 = x31.q(5, 34);
                         q37.u = 1;
                         arrayList8.add(q37);
-                        r31 q38 = r31.q(6, 34);
+                        x31 q38 = x31.q(6, 34);
                         q38.u = 1;
                         arrayList8.add(q38);
-                        r31 q39 = r31.q(7, 34);
+                        x31 q39 = x31.q(7, 34);
                         q39.u = 1;
                         arrayList8.add(q39);
-                        r31 q40 = r31.q(8, 34);
+                        x31 q40 = x31.q(8, 34);
                         q40.u = 1;
                         arrayList8.add(q40);
-                        r31 q41 = r31.q(9, 34);
+                        x31 q41 = x31.q(9, 34);
                         q41.u = 1;
                         arrayList8.add(q41);
                     } else {
@@ -345,7 +345,7 @@ public final /* synthetic */ class q0 implements v10 {
                             TL_stars.SavedStarGift savedStarGift3 = (TL_stars.SavedStarGift) obj8;
                             if (!savedStarGift3.collection_id.contains(Integer.valueOf(o3Var.P1))) {
                                 int i33 = y0.b;
-                                r31 K3 = r31.K(y0.class);
+                                x31 K3 = x31.K(y0.class);
                                 K3.u = 1;
                                 K3.z = z9 ? 1 : 0;
                                 K3.G = savedStarGift3;
@@ -374,14 +374,14 @@ public final /* synthetic */ class q0 implements v10 {
                             while (true) {
                                 if (i37 < (i31 <= 0 ? i36 : i31)) {
                                     i37++;
-                                    r31 q42 = r31.q(i37, 34);
+                                    x31 q42 = x31.q(i37, 34);
                                     q42.u = 1;
                                     arrayList8.add(q42);
                                 }
                             }
                         }
                     }
-                    arrayList8.add(r31.D(org.telegram.messenger.g0.L(68.0f)));
+                    arrayList8.add(x31.D(org.telegram.messenger.g0.L(68.0f)));
                     break;
                 }
                 break;

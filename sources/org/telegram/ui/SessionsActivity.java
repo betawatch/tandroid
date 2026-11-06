@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -50,7 +50,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
     public int U;
     public boolean V;
     public boolean W;
-    public lt0 X;
+    public mt0 X;
     public y21 a;
     public zs b;
     public org.telegram.ui.Components.iy c;
@@ -168,7 +168,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
                             spannableStringBuilder.append((CharSequence) ", ");
                         }
                         SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) n10);
-                        append.setSpan(new org.telegram.ui.Components.v31(rf.b.i("https://t.me/", n10), (org.telegram.ui.Components.ty0) null), 0, append.length(), 33);
+                        append.setSpan(new org.telegram.ui.Components.b41(rf.b.i("https://t.me/", n10), (org.telegram.ui.Components.uy0) null), 0, append.length(), 33);
                         spannableStringBuilder.append((CharSequence) append);
                     }
                 }
@@ -496,13 +496,13 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
             TLRPC.TL_authorization tL_authorization = (i7 < i10 || i7 >= sessionsActivity.K) ? (TLRPC.TL_authorization) sessionsActivity.e.get(i7 - sessionsActivity.F) : (TLRPC.TL_authorization) arrayList.get(i7 - i10);
             TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
             resetauthorization.hash = tL_authorization.hash;
-            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetauthorization, new ko0(sessionsActivity, u1Var, tL_authorization, 8));
+            ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetauthorization, new lo0(sessionsActivity, u1Var, tL_authorization, 8));
             return;
         }
         TLRPC.TL_webAuthorization tL_webAuthorization = (TLRPC.TL_webAuthorization) arrayList.get(i7 - sessionsActivity.J);
         TL_account.resetWebAuthorization resetwebauthorization = new TL_account.resetWebAuthorization();
         resetwebauthorization.hash = tL_webAuthorization.hash;
-        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetwebauthorization, new ko0(sessionsActivity, u1Var, tL_webAuthorization, 9));
+        ConnectionsManager.getInstance(sessionsActivity.currentAccount).sendRequest(resetwebauthorization, new lo0(sessionsActivity, u1Var, tL_webAuthorization, 9));
         if (zArr[0]) {
             org.telegram.messenger.qp.s1(sessionsActivity.currentAccount).w(tL_webAuthorization.bot_id);
         }
@@ -522,9 +522,9 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
         if (y21Var != null) {
             y21Var.f();
         }
-        lt0 lt0Var = sessionsActivity.X;
-        if (lt0Var != null) {
-            lt0Var.a();
+        mt0 mt0Var = sessionsActivity.X;
+        if (mt0Var != null) {
+            mt0Var.a();
         }
         int i7 = sessionsActivity.U;
         if (i7 > 0) {
@@ -567,7 +567,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
         } else {
             this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131742912, null));
         }
-        this.simpleActionBar.setActionBarMenuOnItemClick(new mt0(this, 10));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, 10));
         org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
         if (q4Var != null && ((ActionBarLayout) q4Var).T0) {
             this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
@@ -779,18 +779,18 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
                                                 }
                                                 sessionsActivity2.s = authorizationsVar.authorization_ttl_days;
                                                 sessionsActivity2.r0();
-                                                lt0 lt0Var = sessionsActivity2.X;
-                                                if (lt0Var != null) {
-                                                    lt0Var.a();
+                                                mt0 mt0Var = sessionsActivity2.X;
+                                                if (mt0Var != null) {
+                                                    mt0Var.a();
                                                 }
                                             }
                                             y21 y21Var = sessionsActivity2.a;
                                             if (y21Var != null) {
                                                 y21Var.f();
                                             }
-                                            lt0 lt0Var2 = sessionsActivity2.X;
-                                            if (lt0Var2 != null) {
-                                                lt0Var2.a();
+                                            mt0 mt0Var2 = sessionsActivity2.X;
+                                            if (mt0Var2 != null) {
+                                                mt0Var2.a();
                                             }
                                             int i12 = sessionsActivity2.U;
                                             if (i12 > 0) {
@@ -839,18 +839,18 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
                                                 }
                                                 sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
                                                 sessionsActivity22.r0();
-                                                lt0 lt0Var = sessionsActivity22.X;
-                                                if (lt0Var != null) {
-                                                    lt0Var.a();
+                                                mt0 mt0Var = sessionsActivity22.X;
+                                                if (mt0Var != null) {
+                                                    mt0Var.a();
                                                 }
                                             }
                                             y21 y21Var = sessionsActivity22.a;
                                             if (y21Var != null) {
                                                 y21Var.f();
                                             }
-                                            lt0 lt0Var2 = sessionsActivity22.X;
-                                            if (lt0Var2 != null) {
-                                                lt0Var2.a();
+                                            mt0 mt0Var2 = sessionsActivity22.X;
+                                            if (mt0Var2 != null) {
+                                                mt0Var2.a();
                                             }
                                             int i12 = sessionsActivity22.U;
                                             if (i12 > 0) {
@@ -915,18 +915,18 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
                                             }
                                             sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
                                             sessionsActivity22.r0();
-                                            lt0 lt0Var = sessionsActivity22.X;
-                                            if (lt0Var != null) {
-                                                lt0Var.a();
+                                            mt0 mt0Var = sessionsActivity22.X;
+                                            if (mt0Var != null) {
+                                                mt0Var.a();
                                             }
                                         }
                                         y21 y21Var = sessionsActivity22.a;
                                         if (y21Var != null) {
                                             y21Var.f();
                                         }
-                                        lt0 lt0Var2 = sessionsActivity22.X;
-                                        if (lt0Var2 != null) {
-                                            lt0Var2.a();
+                                        mt0 mt0Var2 = sessionsActivity22.X;
+                                        if (mt0Var2 != null) {
+                                            mt0Var2.a();
                                         }
                                         int i12 = sessionsActivity22.U;
                                         if (i12 > 0) {
@@ -975,18 +975,18 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.f2 implements or
                                             }
                                             sessionsActivity22.s = authorizationsVar.authorization_ttl_days;
                                             sessionsActivity22.r0();
-                                            lt0 lt0Var = sessionsActivity22.X;
-                                            if (lt0Var != null) {
-                                                lt0Var.a();
+                                            mt0 mt0Var = sessionsActivity22.X;
+                                            if (mt0Var != null) {
+                                                mt0Var.a();
                                             }
                                         }
                                         y21 y21Var = sessionsActivity22.a;
                                         if (y21Var != null) {
                                             y21Var.f();
                                         }
-                                        lt0 lt0Var2 = sessionsActivity22.X;
-                                        if (lt0Var2 != null) {
-                                            lt0Var2.a();
+                                        mt0 mt0Var2 = sessionsActivity22.X;
+                                        if (mt0Var2 != null) {
+                                            mt0Var2.a();
                                         }
                                         int i12 = sessionsActivity22.U;
                                         if (i12 > 0) {

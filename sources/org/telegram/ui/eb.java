@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class eb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ jb a;
@@ -91,17 +91,17 @@ public final class eb implements org.telegram.ui.Cells.l1 {
             return;
         }
         org.telegram.messenger.ij messageObject = q1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.u31) {
-            org.telegram.ui.Components.u31 u31Var = (org.telegram.ui.Components.u31) characterStyle;
-            org.telegram.messenger.g0.g(u31Var.a.subSequence(u31Var.b, u31Var.c).toString());
+        if (characterStyle instanceof org.telegram.ui.Components.a41) {
+            org.telegram.ui.Components.a41 a41Var = (org.telegram.ui.Components.a41) characterStyle;
+            org.telegram.messenger.g0.g(a41Var.a.subSequence(a41Var.b, a41Var.c).toString());
             if (org.telegram.messenger.g0.I3()) {
                 Toast.makeText(mbVar.getParentActivity(), org.telegram.messenger.hd.M0(2131744195, null), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.y31) {
-            Long A = Utilities.A(((org.telegram.ui.Components.y31) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.e41) {
+            Long A = Utilities.A(((org.telegram.ui.Components.e41) characterStyle).getURL());
             long longValue = A.longValue();
             if (longValue > 0) {
                 i12 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
@@ -122,8 +122,8 @@ public final class eb implements org.telegram.ui.Cells.l1 {
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.v31) {
-            String url = ((org.telegram.ui.Components.v31) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.b41) {
+            String url = ((org.telegram.ui.Components.b41) characterStyle).getURL();
             if (url.startsWith("@")) {
                 i7 = ((org.telegram.ui.ActionBar.f2) mbVar).currentAccount;
                 org.telegram.messenger.qp.s1(i7).y3(url.substring(1), mbVar, 0, null);
@@ -150,8 +150,8 @@ public final class eb implements org.telegram.ui.Cells.l1 {
             mbVar.showDialog(h);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.x31) {
-            String url3 = ((org.telegram.ui.Components.x31) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.d41) {
+            String url3 = ((org.telegram.ui.Components.d41) characterStyle).getURL();
             if (vf.c.g(Uri.parse(url3), false, null)) {
                 vf.c.p(mbVar.getParentActivity(), url3, true);
                 return;
@@ -183,7 +183,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public final /* synthetic */ er0 N1() {
+    public final /* synthetic */ fr0 N1() {
         return null;
     }
 
@@ -520,7 +520,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
                     org.telegram.messenger.w7 fileLoader = mbVar.getFileLoader();
                     TLRPC.Message message = messageObject.k;
                     fileLoader.getClass();
-                    file2 = org.telegram.messenger.w7.N(message, false, true);
+                    file2 = org.telegram.messenger.w7.M(message, false, true);
                 }
                 Intent intent = new Intent("android.intent.action.VIEW");
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -558,9 +558,9 @@ public final class eb implements org.telegram.ui.Cells.l1 {
                     org.telegram.messenger.w7 fileLoader2 = mbVar.getFileLoader();
                     TLRPC.Message message2 = messageObject.k;
                     fileLoader2.getClass();
-                    File N = org.telegram.messenger.w7.N(message2, false, true);
-                    if (N.exists()) {
-                        file = N;
+                    File M = org.telegram.messenger.w7.M(message2, false, true);
+                    if (M.exists()) {
+                        file = M;
                     }
                 }
                 jg.b0 b0Var = mbVar.y;

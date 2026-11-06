@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -43,15 +43,15 @@ public final /* synthetic */ class q8 implements Runnable {
     }
 
     private final void a() {
-        org.telegram.ui.Components.qz0 qz0Var = (org.telegram.ui.Components.qz0) this.d;
+        org.telegram.ui.Components.rz0 rz0Var = (org.telegram.ui.Components.rz0) this.d;
         String str = (String) this.c;
         int i7 = this.b;
-        org.telegram.ui.Components.pz0 pz0Var = qz0Var.r.o1;
+        org.telegram.ui.Components.qz0 qz0Var = rz0Var.r.o1;
         try {
             String lowerCase = str.trim().toLowerCase();
             if (lowerCase.length() == 0) {
-                qz0Var.d = -1;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(qz0Var, qz0Var.d, new ArrayList(), new ArrayList(), 4));
+                rz0Var.d = -1;
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(rz0Var, rz0Var.d, new ArrayList(), new ArrayList(), 4));
                 return;
             }
             int i10 = 0;
@@ -67,10 +67,10 @@ public final /* synthetic */ class q8 implements Runnable {
             }
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            int size = pz0Var.d.size();
+            int size = qz0Var.d.size();
             int i12 = 0;
             while (i12 < size) {
-                ArrayList arrayList3 = (ArrayList) pz0Var.d.get(i12);
+                ArrayList arrayList3 = (ArrayList) qz0Var.d.get(i12);
                 String c10 = org.telegram.ui.ActionBar.u4.c(((org.telegram.ui.ActionBar.t6) arrayList3.get(i10)).e);
                 String lowerCase2 = c10.toLowerCase();
                 int i13 = i10;
@@ -79,7 +79,7 @@ public final /* synthetic */ class q8 implements Runnable {
                         String str2 = strArr[i13];
                         if (lowerCase2.contains(str2)) {
                             arrayList.add(arrayList3);
-                            arrayList2.add(org.telegram.ui.Components.qz0.E(c10, str2));
+                            arrayList2.add(org.telegram.ui.Components.rz0.E(c10, str2));
                             break;
                         }
                         i13++;
@@ -88,7 +88,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 i12++;
                 i10 = 0;
             }
-            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(qz0Var, i7, arrayList, arrayList2, 4));
+            org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0(rz0Var, i7, arrayList, arrayList2, 4));
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
@@ -852,15 +852,15 @@ public final /* synthetic */ class q8 implements Runnable {
                 a();
                 return;
             case 26:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0((org.telegram.ui.Components.yz0) this.c, (org.telegram.ui.Components.uo) this.d, this.b, org.telegram.messenger.sz.c(org.telegram.messenger.g0.p, R.raw.default_pattern, org.telegram.messenger.g0.L(120.0f), org.telegram.messenger.g0.L(140.0f), -16777216, 1), 5));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.pp0((org.telegram.ui.Components.zz0) this.c, (org.telegram.ui.Components.uo) this.d, this.b, org.telegram.messenger.sz.c(org.telegram.messenger.g0.p, R.raw.default_pattern, org.telegram.messenger.g0.L(120.0f), org.telegram.messenger.g0.L(140.0f), -16777216, 1), 5));
                 return;
             case 27:
                 org.telegram.messenger.ij ijVar4 = (org.telegram.messenger.ij) this.c;
                 org.telegram.ui.Cells.l1 l1Var = (org.telegram.ui.Cells.l1) this.d;
                 int i50 = this.b;
-                HashMap hashMap = org.telegram.ui.Components.m11.P;
+                HashMap hashMap = org.telegram.ui.Components.s11.P;
                 if (hashMap != null) {
-                    hashMap.remove(Integer.valueOf(org.telegram.ui.Components.m11.n(ijVar4)));
+                    hashMap.remove(Integer.valueOf(org.telegram.ui.Components.s11.n(ijVar4)));
                 }
                 if (l1Var != null) {
                     l1Var.d0(3);

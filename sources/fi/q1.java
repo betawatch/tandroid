@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.widget.TextView;
-import c8.id;
+import c8.jd;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.ya1;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -276,7 +276,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 h20Var.a = (byte) 0;
                 h20Var.C = tL_messages_stickerSet;
                 org.telegram.messenger.w7.G(p10.s0);
-                h20Var.j = org.telegram.messenger.w7.K(document, null, true, true).getAbsolutePath();
+                h20Var.j = org.telegram.messenger.w7.J(document, null, true, true).getAbsolutePath();
                 h20Var.c = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
                 h20Var.d = 0.5f - ((Math.min(512, 512) / f10) / 2.0f);
                 h20Var.f = Math.min(512, 512) / f10;
@@ -295,10 +295,10 @@ public final /* synthetic */ class q1 implements Runnable {
                 gfVar.t = 3000L;
                 if (ij.L2(document, true)) {
                     org.telegram.messenger.w7.G(p10.s0);
-                    File K = org.telegram.messenger.w7.K(document, null, true, true);
-                    if (K != null) {
+                    File J = org.telegram.messenger.w7.J(document, null, true, true);
+                    if (J != null) {
                         try {
-                            RLottieNative a10 = RLottieNative.a(K.getAbsolutePath(), null, null, null, 0, null);
+                            RLottieNative a10 = RLottieNative.a(J.getAbsolutePath(), null, null, null, 0, null);
                             if (a10 != null) {
                                 int[] iArr = a10.a;
                                 int i19 = iArr[0];
@@ -360,10 +360,10 @@ public final /* synthetic */ class q1 implements Runnable {
                     } else {
                         i14 = ((org.telegram.ui.ActionBar.f2) wwVar).currentAccount;
                         org.telegram.messenger.w7.G(i14);
-                        File K2 = org.telegram.messenger.w7.K(w11, null, true, true);
+                        File J2 = org.telegram.messenger.w7.J(w11, null, true, true);
                         i15 = ((org.telegram.ui.ActionBar.f2) wwVar).currentAccount;
                         org.telegram.messenger.w7.G(i15);
-                        org.telegram.messenger.w7.K(wwVar.b4, null, true, true).renameTo(K2);
+                        org.telegram.messenger.w7.J(wwVar.b4, null, true, true).renameTo(J2);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(wwVar.b4.volume_id);
                         sb2.append("_");
@@ -380,14 +380,14 @@ public final /* synthetic */ class q1 implements Runnable {
                     if (x10 != null && str6 != null) {
                         i13 = ((org.telegram.ui.ActionBar.f2) wwVar).currentAccount;
                         org.telegram.messenger.w7.G(i13);
-                        new File(str6).renameTo(org.telegram.messenger.w7.K(x10, "mp4", z10, z10));
+                        new File(str6).renameTo(org.telegram.messenger.w7.J(x10, "mp4", z10, z10));
                     } else if (w12 != null && wwVar.c4 != null) {
                         i11 = ((org.telegram.ui.ActionBar.f2) wwVar).currentAccount;
                         org.telegram.messenger.w7.G(i11);
-                        File K3 = org.telegram.messenger.w7.K(w12, null, true, true);
+                        File J3 = org.telegram.messenger.w7.J(w12, null, true, true);
                         i12 = ((org.telegram.ui.ActionBar.f2) wwVar).currentAccount;
                         org.telegram.messenger.w7.G(i12);
-                        org.telegram.messenger.w7.K(wwVar.c4, null, true, true).renameTo(K3);
+                        org.telegram.messenger.w7.J(wwVar.c4, null, true, true).renameTo(J3);
                     }
                     wwVar.getMessagesController().U0(a22.id);
                     ArrayList arrayList9 = new ArrayList();
@@ -492,7 +492,7 @@ public final /* synthetic */ class q1 implements Runnable {
                             if (i21 <= 0) {
                                 i21 = t0Var.p.a;
                             }
-                            n2.p0 a11 = id.a(file4, xVar2, j10, j11, true, new b7.d(i22, i23, i21));
+                            n2.p0 a11 = jd.a(file4, xVar2, j10, j11, true, new b7.d(i22, i23, i21));
                             j3 = a11.b;
                             t0Var.m.b("resume trim remux completed: requested=" + t0Var.J + ".." + t0Var.K + ", actualStartMs=" + a11.a + ", mode=" + ((String) a11.c) + ", retainedDurationMs=" + j3 + ", outputSize=" + t0Var.T.a.length() + ", elapsedMs=" + wi.t0.f(nanoTime));
                         } catch (Exception e12) {
@@ -501,20 +501,20 @@ public final /* synthetic */ class q1 implements Runnable {
                             try {
                                 t0Var.i.post(new wi.e0(t0Var, e, 1));
                                 if (file4 != null) {
-                                    id.c(file4);
+                                    jd.c(file4);
                                 }
                                 if (file == null) {
-                                    id.c(file);
+                                    jd.c(file);
                                     return;
                                 }
                                 return;
                             } catch (Throwable th4) {
                                 th = th4;
                                 if (file4 != null) {
-                                    id.c(file4);
+                                    jd.c(file4);
                                 }
                                 if (file != null) {
-                                    id.c(file);
+                                    jd.c(file);
                                 }
                                 throw th;
                             }
@@ -537,10 +537,10 @@ public final /* synthetic */ class q1 implements Runnable {
                     }
                     t0Var.i.post(new wi.f0(t0Var, j3, 0));
                     if (file4 != null) {
-                        id.c(file4);
+                        jd.c(file4);
                     }
                     if (file2 != null) {
-                        id.c(file2);
+                        jd.c(file2);
                         return;
                     }
                     return;

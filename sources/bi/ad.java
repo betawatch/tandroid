@@ -4,13 +4,13 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ad extends FrameLayout implements ls {
-    public final k41 a;
+    public final q41 a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final int c;
     public final int d;
@@ -26,27 +26,27 @@ public final class ad extends FrameLayout implements ls {
         this.f = j3;
         this.b = f6Var;
         this.h = new zc(i10, i7, j3, z9);
-        k41 k41Var = new k41(context, i10, i11, true, new ai.e(this, 12), new a1.c(this, 19), null, f6Var);
-        this.a = k41Var;
-        addView(k41Var, c8.ha.c(-1.0f, -1));
-        k41Var.setOnScrollListener(new ai.b(this, 6));
+        q41 q41Var = new q41(context, i10, i11, true, new ai.e(this, 12), new a1.c(this, 19), null, f6Var);
+        this.a = q41Var;
+        addView(q41Var, c8.ha.c(-1.0f, -1));
+        q41Var.setOnScrollListener(new ai.b(this, 6));
     }
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11 = qs.z3;
-        k41 k41Var = this.a;
+        q41 q41Var = this.a;
         if (i7 != i11) {
             if (i7 == qs.D3 && ((Long) objArr[0]).longValue() == this.f) {
-                k41Var.f3.O(true);
+                q41Var.f3.O(true);
                 return;
             }
             return;
         }
-        k41Var.f3.O(true);
-        if (k41Var.canScrollVertically(1)) {
-            for (int i12 = 0; i12 < k41Var.getChildCount(); i12++) {
-                if (!(k41Var.getChildAt(i12) instanceof lz)) {
+        q41Var.f3.O(true);
+        if (q41Var.canScrollVertically(1)) {
+            for (int i12 = 0; i12 < q41Var.getChildCount(); i12++) {
+                if (!(q41Var.getChildAt(i12) instanceof lz)) {
                 }
             }
             return;

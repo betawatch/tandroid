@@ -25,10 +25,10 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i2 extends Dialog {
     public float D;
@@ -37,7 +37,7 @@ public final class i2 extends Dialog {
     public h0 G;
     public ai.i H;
     public final int a;
-    public final p41 b;
+    public final v41 b;
     public final bi.t c;
     public final bi.s1 d;
     public final ImageView e;
@@ -57,14 +57,14 @@ public final class i2 extends Dialog {
         final int i10 = 0;
         this.F = false;
         this.a = i7;
-        p41 p41Var = new p41(9, context, this);
-        this.b = p41Var;
-        p41Var.setOnClickListener(new ii.g(this, 24));
+        v41 v41Var = new v41(9, context, this);
+        this.b = v41Var;
+        v41Var.setOnClickListener(new ii.g(this, 24));
         bi.t tVar = new bi.t(context, 12);
         this.c = tVar;
         final int i11 = 1;
         tVar.setOrientation(1);
-        p41Var.addView(tVar, ha.d(-2, -2.0f, 17, 8.0f, 8.0f, 8.0f, 8.0f));
+        v41Var.addView(tVar, ha.d(-2, -2.0f, 17, 8.0f, 8.0f, 8.0f, 8.0f));
         bi.s1 s1Var = new bi.s1(this, context, 12);
         s1Var.setWillNotDraw(false);
         tVar.addView(s1Var, ha.q(-1, -2, 1.0f, 49, 0, 0, 0, 0));
@@ -90,7 +90,7 @@ public final class i2 extends Dialog {
         g2 g2Var = new g2(this, context, org.telegram.messenger.g0.p);
         this.f = g2Var;
         s1Var2.addView(g2Var, ha.e(-2, -2, 17));
-        k60 F = k60.F(p41Var, bVar, p41Var);
+        k60 F = k60.F(v41Var, bVar, v41Var);
         ha0 ha0Var = new ha0(getContext(), R.raw.position_below, hd.M0(2131744645, null), R.raw.position_above, hd.M0(2131744644, null), bVar);
         this.x = ha0Var;
         ha0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
@@ -159,8 +159,8 @@ public final class i2 extends Dialog {
         F.c(R.drawable.msg_select, hd.M0(2131754218, null), new e2(this, 2), false);
         F.c(R.drawable.msg_delete, hd.M0(2131751362, null), new e2(this, 3), true);
         tVar.addView(F.A, ha.p(-2, -2, 0.0f, 85));
-        p41Var.setFitsSystemWindows(true);
-        p41Var.setOnApplyWindowInsetsListener(new h2(this));
+        v41Var.setFitsSystemWindows(true);
+        v41Var.setOnApplyWindowInsetsListener(new h2(this));
     }
 
     public final void b(boolean z9, e2 e2Var) {
@@ -203,8 +203,8 @@ public final class i2 extends Dialog {
         Window window = getWindow();
         window.setWindowAnimations(R.style.DialogNoAnimation);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        p41 p41Var = this.b;
-        setContentView(p41Var, layoutParams);
+        v41 v41Var = this.b;
+        setContentView(v41Var, layoutParams);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.height = -1;
@@ -219,8 +219,8 @@ public final class i2 extends Dialog {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
-        p41Var.setSystemUiVisibility(256);
-        org.telegram.messenger.g0.o3(p41Var, !k6.I.q());
+        v41Var.setSystemUiVisibility(256);
+        org.telegram.messenger.g0.o3(v41Var, !k6.I.q());
     }
 
     @Override // android.app.Dialog

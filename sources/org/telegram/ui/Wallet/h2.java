@@ -9,9 +9,9 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.d10;
 import org.telegram.ui.h60;
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h2 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class h2 implements Runnable {
                 break;
             case 5:
                 try {
-                    ((org.telegram.utils.twidget.h0) obj).e(i11);
+                    ((org.telegram.utils.twidget.h0) obj).f(i11);
                     break;
                 } catch (Exception unused2) {
                     return;
@@ -107,9 +107,9 @@ public final /* synthetic */ class h2 implements Runnable {
                 jVar.P.start();
                 break;
             case 8:
-                tp0 tp0Var = (tp0) obj;
-                sg.j1 j1Var = tp0Var.t1;
-                tp0Var.s0(j1Var, null);
+                up0 up0Var = (up0) obj;
+                sg.j1 j1Var = up0Var.t1;
+                up0Var.s0(j1Var, null);
                 sg.l0.e(i11).j(j1Var.c);
                 break;
             case 9:

@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements t4, dj0, k71 {
+public final /* synthetic */ class yk implements t4, dj0, q71 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
@@ -33,7 +33,7 @@ public final /* synthetic */ class yk implements t4, dj0, k71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.q71
     public void b(float f10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         ql qlVar = chatAttachAlertPhotoLayout.P;

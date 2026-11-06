@@ -1,52 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class h01 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final RectF b = new RectF();
-    public final /* synthetic */ int c;
-    public final /* synthetic */ n01 d;
+public final /* synthetic */ class h01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s01 b;
 
-    public h01(n01 n01Var, int i7) {
-        this.d = n01Var;
-        this.c = i7;
+    public /* synthetic */ h01(s01 s01Var, int i7) {
+        this.a = i7;
+        this.b = s01Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.b;
-        rectF.set(bounds);
-        int i7 = this.c;
-        rectF.inset(i7, i7);
-        float height = rectF.height() / 2.0f;
-        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.d.e);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(1.5f), 0.0f, org.telegram.messenger.g0.L(0.5f), 436207616);
-        canvas.drawRoundRect(rectF, height, height, paint);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(0.5f), 0.0f, 0.0f, 520093696);
-        canvas.drawRoundRect(rectF, height, height, paint);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                s01 s01Var = this.b;
+                s01Var.getClass();
+                s01Var.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s01 s01Var2 = this.b;
+                s01Var2.S = floatValue;
+                org.telegram.ui.e61 e61Var = s01Var2.P;
+                e61Var.setVisibility(floatValue > 0.0f ? 0 : 8);
+                e61Var.setAlpha(floatValue);
+                e61Var.setTranslationY((1.0f - floatValue) * (-org.telegram.messenger.g0.L(8.0f)));
+                s01Var2.b(floatValue);
+                int L = org.telegram.messenger.g0.L(100.0f) + org.telegram.messenger.g0.m + ((int) (org.telegram.messenger.g0.L(36.0f) * floatValue));
+                ((FrameLayout.LayoutParams) s01Var2.r.getLayoutParams()).topMargin = L;
+                View view = s01Var2.E;
+                if (view != null) {
+                    ((FrameLayout.LayoutParams) view.getLayoutParams()).topMargin = L;
+                }
+                s01Var2.h.requestLayout();
+                break;
+            default:
+                s01 s01Var3 = this.b;
+                s01Var3.getClass();
+                s01Var3.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

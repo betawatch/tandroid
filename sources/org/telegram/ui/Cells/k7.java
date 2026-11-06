@@ -38,13 +38,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.g70;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -710,13 +710,13 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                             str8 = str3;
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                         } else {
-                                                            ty0 ty0Var = new ty0();
+                                                            uy0 uy0Var = new uy0();
                                                             str8 = str3;
                                                             try {
-                                                                ty0Var.a |= 256;
+                                                                uy0Var.a |= 256;
                                                                 spannableStringBuilder3 = spannableStringBuilder5;
                                                                 try {
-                                                                    valueOf.setSpan(new uy0(ty0Var, 0), Math.max(i24, i32), Math.min(i25, i34) + i33, 33);
+                                                                    valueOf.setSpan(new vy0(uy0Var, 0), Math.max(i24, i32), Math.min(i25, i34) + i33, 33);
                                                                 } catch (Exception e14) {
                                                                     e = e14;
                                                                     str2 = str7;

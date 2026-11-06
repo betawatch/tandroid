@@ -6,7 +6,7 @@ import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g3 extends v4.s0 {
     public final /* synthetic */ int a;
@@ -372,33 +372,33 @@ public final class g3 extends v4.s0 {
                 }
                 break;
             case 24:
-                or0 or0Var = (or0) obj;
-                if (i10 != 0 && (y20Var = or0Var.h) != null) {
+                pr0 pr0Var = (pr0) obj;
+                if (i10 != 0 && (y20Var = pr0Var.h) != null) {
                     y20Var.a();
                 }
-                org.telegram.ui.Components.ow0 ow0Var = or0Var.Q;
+                org.telegram.ui.Components.ow0 ow0Var = pr0Var.Q;
                 if (ow0Var != null && ow0Var.s) {
                     org.telegram.ui.Components.mw0 delegate = ow0Var.getDelegate();
                     if (!(delegate instanceof org.telegram.ui.Cells.a6)) {
-                        or0Var.Q.f();
+                        pr0Var.Q.f();
                         break;
                     } else {
-                        e61 e61Var = or0Var.c;
+                        e61 e61Var = pr0Var.c;
                         View F = e61Var.F((org.telegram.ui.Cells.a6) delegate);
                         v4.d1 T = F == null ? null : e61Var.T(F);
                         if (T == null) {
-                            or0Var.Q.f();
+                            pr0Var.Q.f();
                             break;
                         } else {
                             View view = T.a;
-                            if (or0Var.Q.getDirection() == 0) {
-                                or0Var.Q.setTranslationY((view.getY() - org.telegram.messenger.g0.L(166.0f)) + view.getMeasuredHeight());
+                            if (pr0Var.Q.getDirection() == 0) {
+                                pr0Var.Q.setTranslationY((view.getY() - org.telegram.messenger.g0.L(166.0f)) + view.getMeasuredHeight());
                             } else {
-                                or0Var.Q.setTranslationY(view.getY());
+                                pr0Var.Q.setTranslationY(view.getY());
                             }
-                            v4.b0 b0Var = or0Var.d;
+                            v4.b0 b0Var = pr0Var.d;
                             if (!b0Var.c.e(view) || !b0Var.d.e(view)) {
-                                or0Var.Q.f();
+                                pr0Var.Q.f();
                                 break;
                             }
                         }
@@ -418,12 +418,12 @@ public final class g3 extends v4.s0 {
                 PrivacyControlActivity.w0((PrivacyControlActivity) obj);
                 break;
             case 27:
-                rt0 rt0Var = (rt0) obj;
-                if (!rt0Var.getMessagesController().I0) {
-                    int abs3 = Math.abs(rt0Var.b.N0() - rt0Var.b.L0()) + 1;
+                st0 st0Var = (st0) obj;
+                if (!st0Var.getMessagesController().I0) {
+                    int abs3 = Math.abs(st0Var.b.N0() - st0Var.b.L0()) + 1;
                     int b11 = recyclerView.getAdapter().b();
-                    if (abs3 > 0 && rt0Var.b.N0() >= b11 - 10) {
-                        rt0Var.getMessagesController().F0(false);
+                    if (abs3 > 0 && st0Var.b.N0() >= b11 - 10) {
+                        st0Var.getMessagesController().F0(false);
                         break;
                     }
                 }

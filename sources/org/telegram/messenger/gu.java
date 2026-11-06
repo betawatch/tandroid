@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.ty0;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.uy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class gu {
     public static final Paint C;
@@ -131,7 +131,7 @@ public final class gu {
             if (z12) {
                 spannableStringBuilder2.setSpan(xzVar, 0, spannableStringBuilder2.length(), 33);
             } else {
-                spannableStringBuilder2.setSpan(new v31("", (ty0) null), 0, spannableStringBuilder2.length(), 33);
+                spannableStringBuilder2.setSpan(new b41("", (uy0) null), 0, spannableStringBuilder2.length(), 33);
             }
             g0.N2(spannableStringBuilder2);
             Math.max(1, g0.L(2.0f) + ((int) Math.ceil(Layout.getDesiredWidth(spannableStringBuilder2, kvVar.w))));

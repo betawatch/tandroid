@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.au0;
+import org.telegram.ui.bu0;
 import org.telegram.ui.c9;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class v implements RequestDelegate {
                 break;
             case 8:
                 RectF rectF = ProfileActivity.S6;
-                org.telegram.messenger.g0.i3(new au0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
+                org.telegram.messenger.g0.i3(new bu0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;

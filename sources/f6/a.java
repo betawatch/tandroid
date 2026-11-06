@@ -4,14 +4,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.wb;
+import c8.xb;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new v(0);
@@ -125,21 +125,21 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.l(parcel, 3, this.b);
-        wb.q(parcel, 4, 8);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.l(parcel, 3, this.b);
+        xb.q(parcel, 4, 8);
         parcel.writeLong(this.c);
-        wb.l(parcel, 5, this.d);
-        wb.l(parcel, 6, this.e);
-        wb.l(parcel, 7, this.f);
-        wb.l(parcel, 8, this.h);
-        wb.l(parcel, 9, this.n);
-        wb.l(parcel, 10, this.r);
-        wb.q(parcel, 11, 8);
+        xb.l(parcel, 5, this.d);
+        xb.l(parcel, 6, this.e);
+        xb.l(parcel, 7, this.f);
+        xb.l(parcel, 8, this.h);
+        xb.l(parcel, 9, this.n);
+        xb.l(parcel, 10, this.r);
+        xb.q(parcel, 11, 8);
         parcel.writeLong(this.s);
-        wb.l(parcel, 12, this.w);
-        wb.k(parcel, 13, this.x, i7);
-        wb.s(parcel, r10);
+        xb.l(parcel, 12, this.w);
+        xb.k(parcel, 13, this.x, i7);
+        xb.s(parcel, r10);
     }
 }

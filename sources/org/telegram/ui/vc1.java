@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class vc1 {
     public org.telegram.ui.Cells.c2 a;
@@ -34,7 +34,7 @@ public final class vc1 {
         vc1Var.a.e(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752920, null), new bu(context, 8)), "", false, false, false);
         alertDialog$Builder.o(f10);
         alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751771, null), new org.telegram.ui.Components.u2(1, c20Var, zArr));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new fo0(15));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new go0(15));
         vc1Var.b = u1Var;
         u1Var.show();
         TextView textView2 = (TextView) vc1Var.b.d(-1);

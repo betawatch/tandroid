@@ -10,9 +10,9 @@ import org.json.JSONObject;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.rv0;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class m0 {
     public boolean h;
@@ -217,7 +217,7 @@ public final class m0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new rv0(6));
+        List.-EL.sort(arrayList3, new un0(7));
         v3 v3Var = this.a;
         HashSet hashSet2 = v3Var.a;
         HashSet hashSet3 = v3Var.a;

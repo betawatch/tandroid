@@ -47,7 +47,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Adler32;
 import java.util.zip.InflaterInputStream;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     public final /* synthetic */ int a;
@@ -329,7 +329,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
                 int i10 = next.getExtras().getInt("attemptNumber");
                 if (next.getId() == value) {
                     if (i10 >= i7) {
-                        c8.bc.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                        c8.cc.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
                         return;
                     }
                 }
@@ -374,7 +374,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
             objArr[2] = valueOf3;
             objArr[3] = valueOf;
             objArr[4] = valueOf4;
-            String c11 = c8.bc.c("JobInfoScheduler");
+            String c11 = c8.cc.c("JobInfoScheduler");
             if (Log.isLoggable(c11, 3)) {
                 Log.d(c11, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
             }
@@ -469,7 +469,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
             zArr[0] = true;
             c20Var.a(Boolean.TRUE);
         }
-        org.telegram.messenger.g0.i3(new qu0((org.telegram.ui.Components.hc) this.d, 9), 200L);
+        org.telegram.messenger.g0.i3(new ru0((org.telegram.ui.Components.hc) this.d, 9), 200L);
     }
 
     @Override // oa.a
@@ -941,7 +941,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         this.a = 12;
         this.b = qtVar;
         this.c = Choreographer.getInstance();
-        this.d = new org.telegram.ui.Components.wy0(this, 1);
+        this.d = new org.telegram.ui.Components.xy0(this, 1);
     }
 
     public hy0(String str, String str2) {

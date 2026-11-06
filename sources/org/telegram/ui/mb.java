@@ -53,7 +53,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public static int Q0 = 10;
@@ -476,7 +476,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 org.telegram.messenger.w7 fileLoader = mbVar.getFileLoader();
                 TLRPC.Message message = mbVar.Y.k;
                 fileLoader.getClass();
-                str = org.telegram.messenger.w7.N(message, false, true).toString();
+                str = org.telegram.messenger.w7.M(message, false, true).toString();
             }
             int i10 = mbVar.Y.D;
             if (i10 == 3 || i10 == 1) {
@@ -498,9 +498,9 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 org.telegram.messenger.w7 fileLoader2 = mbVar.getFileLoader();
                 TLRPC.Message message2 = mbVar.Y.k;
                 fileLoader2.getClass();
-                File N = org.telegram.messenger.w7.N(message2, false, true);
-                if (N.exists()) {
-                    file = N;
+                File M = org.telegram.messenger.w7.M(message2, false, true);
+                if (M.exists()) {
+                    file = M;
                 }
             }
             if (file != null) {
@@ -564,7 +564,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 org.telegram.messenger.w7 fileLoader3 = mbVar.getFileLoader();
                 TLRPC.Message message3 = mbVar.Y.k;
                 fileLoader3.getClass();
-                str3 = org.telegram.messenger.w7.N(message3, false, true).toString();
+                str3 = org.telegram.messenger.w7.M(message3, false, true).toString();
             }
             Intent intent = new Intent("android.intent.action.SEND");
             intent.setType(mbVar.Y.F0().mime_type);
@@ -605,7 +605,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                             org.telegram.messenger.w7 fileLoader4 = mbVar.getFileLoader();
                             TLRPC.Message message4 = mbVar.Y.k;
                             fileLoader4.getClass();
-                            str5 = org.telegram.messenger.w7.N(message4, false, true).toString();
+                            str5 = org.telegram.messenger.w7.M(message4, false, true).toString();
                         }
                         MediaController.d0(str5, mbVar.getParentActivity(), mbVar.Y.J3() ? 3 : 2, str4, mbVar.Y.F0() != null ? mbVar.Y.F0().mime_type : "", null);
                         break;
@@ -696,7 +696,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 org.telegram.messenger.w7 fileLoader5 = mbVar.getFileLoader();
                 TLRPC.Message message5 = mbVar.Y.k;
                 fileLoader5.getClass();
-                str6 = org.telegram.messenger.w7.N(message5, false, true).toString();
+                str6 = org.telegram.messenger.w7.M(message5, false, true).toString();
             }
             if ((Build.VERSION.SDK_INT <= 28 || org.telegram.messenger.r2.b) && mbVar.getParentActivity().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
                 mbVar.getParentActivity().requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 4);
@@ -715,7 +715,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
         if (Build.VERSION.SDK_INT < 31 || gVar == null) {
             return;
         }
-        if (c8.yc.a(i7, 4)) {
+        if (c8.zc.a(i7, 4)) {
             qi.a e10 = mbVar.glassEngine.e();
             e10.b(mbVar.w.getY(), mbVar.X.getWidth(), mbVar.w.getY() + mbVar.w.getHeight());
             gVar.h(e10);
@@ -1062,7 +1062,7 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
                             TLRPC.Message message2 = messageObject.k;
                             fileLoader.getClass();
                             num = 5;
-                            if (org.telegram.messenger.w7.N(message2, false, true).exists()) {
+                            if (org.telegram.messenger.w7.M(message2, false, true).exists()) {
                                 z9 = true;
                             }
                         }
@@ -2674,9 +2674,9 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
         super.onPause();
         kb kbVar = this.X;
         if (kbVar != null) {
-            org.telegram.ui.Components.s61 s61Var = kbVar.w;
-            if (s61Var != null) {
-                s61Var.c(false);
+            org.telegram.ui.Components.y61 y61Var = kbVar.w;
+            if (y61Var != null) {
+                y61Var.c(false);
             }
             kbVar.F = true;
         }
@@ -2710,9 +2710,9 @@ public final class mb extends org.telegram.ui.ActionBar.f2 implements org.telegr
         System.currentTimeMillis();
         kb kbVar = this.X;
         if (kbVar != null) {
-            org.telegram.ui.Components.s61 s61Var = kbVar.w;
-            if (s61Var != null) {
-                s61Var.c(true);
+            org.telegram.ui.Components.y61 y61Var = kbVar.w;
+            if (y61Var != null) {
+                y61Var.c(true);
             }
             kbVar.F = false;
         }

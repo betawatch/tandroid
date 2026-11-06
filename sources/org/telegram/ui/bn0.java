@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bn0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -58,9 +58,9 @@ public final /* synthetic */ class bn0 implements ValueAnimator.AnimatorUpdateLi
                 photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 8:
-                tp0 tp0Var = photoViewer.L1;
-                if (tp0Var != null) {
-                    tp0Var.M0.invalidate();
+                up0 up0Var = photoViewer.L1;
+                if (up0Var != null) {
+                    up0Var.M0.invalidate();
                     break;
                 }
                 break;
@@ -68,10 +68,10 @@ public final /* synthetic */ class bn0 implements ValueAnimator.AnimatorUpdateLi
                 Drawable[] drawableArr4 = PhotoViewer.Y8;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 photoViewer.Y5 = floatValue;
-                tp0 tp0Var2 = photoViewer.L1;
-                if (tp0Var2 != null && Math.abs(floatValue - tp0Var2.G1) > 0.1f) {
-                    tp0Var2.G1 = floatValue;
-                    tp0Var2.v0(tp0Var2.r0, tp0Var2.s0, tp0Var2.t0, tp0Var2.w0, tp0Var2.x0);
+                up0 up0Var2 = photoViewer.L1;
+                if (up0Var2 != null && Math.abs(floatValue - up0Var2.G1) > 0.1f) {
+                    up0Var2.G1 = floatValue;
+                    up0Var2.v0(up0Var2.r0, up0Var2.s0, up0Var2.t0, up0Var2.w0, up0Var2.x0);
                 }
                 photoViewer.e0.invalidate();
                 break;

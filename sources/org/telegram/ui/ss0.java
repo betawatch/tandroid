@@ -1,41 +1,29 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class ss0 extends org.telegram.ui.Components.oj0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ts0 d;
+public final class ss0 extends ug.k1 {
+    public final /* synthetic */ ts0 N;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ss0(ts0 ts0Var, Context context) {
-        this.d = ts0Var;
-        this.c = context;
+        super(context);
+        this.N = ts0Var;
     }
 
-    @Override // org.telegram.ui.Components.oj0
-    public final boolean D(v4.d1 d1Var) {
-        return !((vs0) this.d.n.d.get(d1Var.b())).a.current;
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return this.d.n.d.size();
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        ug.k1 k1Var = (ug.k1) d1Var.a;
-        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
-        k1Var.a((vs0) premiumPreviewFragment.d.get(i7), i7 != b() - 1);
-        k1Var.c(premiumPreviewFragment.e == i7, false);
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        rs0 rs0Var = new rs0(this, this.c);
-        rs0Var.setCirclePaintProvider(new lk0(7, this, rs0Var));
-        return new org.telegram.ui.Components.xi0(rs0Var);
+    @Override // ug.k1, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.r.getVisibility() == 0) {
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
+            ts0 ts0Var = this.N;
+            ts0Var.d.n.n0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, ts0Var.d.n.O);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), ts0Var.d.n.n0.f);
+        }
+        super.dispatchDraw(canvas);
     }
 }

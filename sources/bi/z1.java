@@ -25,14 +25,14 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.jz;
 import org.telegram.ui.Components.m20;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -126,15 +126,15 @@ public final /* synthetic */ class z1 implements Runnable {
                     linearLayout.addView(limitPreviewView, s5);
                     g7Var2.d1(j10);
                     int i17 = org.telegram.ui.ActionBar.k6.G6;
-                    TextView b10 = c8.na.b(context, 20.0f, i17, true, null);
+                    TextView b10 = c8.qa.b(context, 20.0f, i17, true, null);
                     org.telegram.messenger.k5.m(b10, 17, null, 2131749867);
                     g7Var2.setTitle(org.telegram.messenger.hd.M0(2131749867, null));
                     linearLayout.addView(b10, c8.ha.t(-1, -2, 17, 32, 0, 32, 0));
-                    TextView b11 = c8.na.b(context, 14.0f, i17, false, null);
+                    TextView b11 = c8.qa.b(context, 14.0f, i17, false, null);
                     org.telegram.messenger.k5.m(b11, 17, null, 2131749868);
                     linearLayout.addView(b11, c8.ha.t(-1, -2, 17, 32, 10, 32, 10));
                     int currentTime = ConnectionsManager.getInstance(g7Var2.a).getCurrentTime();
-                    sx0 sx0Var = new sx0(context, f6Var);
+                    tx0 tx0Var = new tx0(context, f6Var);
                     boolean z11 = false;
                     int i18 = 0;
                     while (true) {
@@ -149,13 +149,13 @@ public final /* synthetic */ class z1 implements Runnable {
                                     i19++;
                                     TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2 = (TL_stars.StarGiftUpgradePrice) obj;
                                     Date date = new Date(starGiftUpgradePrice2.date * 1000);
-                                    sx0Var.c(org.telegram.messenger.hd.E0().p0().format(date) + ", " + org.telegram.messenger.hd.E0().q0().format(date), dd.a1(false, jg.g.m((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder(str3)), 0.8f, null), null, null);
+                                    tx0Var.c(org.telegram.messenger.hd.E0().p0().format(date) + ", " + org.telegram.messenger.hd.E0().q0().format(date), dd.a1(false, jg.g.m((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder(str3)), 0.8f, null), null, null);
                                     str3 = str3;
                                 }
                             }
                             float f13 = f10 + f12;
-                            linearLayout.addView(sx0Var, c8.ha.s(-1, -2, 7, f13, 16.0f, f13, 15.0f));
-                            TextView b12 = c8.na.b(context, 12.0f, org.telegram.ui.ActionBar.k6.y6, false, null);
+                            linearLayout.addView(tx0Var, c8.ha.s(-1, -2, 7, f13, 16.0f, f13, 15.0f));
+                            TextView b12 = c8.qa.b(context, 12.0f, org.telegram.ui.ActionBar.k6.y6, false, null);
                             org.telegram.messenger.k5.m(b12, 17, null, 2131749870);
                             linearLayout.addView(b12, c8.ha.t(-1, -2, 17, 32, 0, 32, 15));
                             float f14 = g7Var2.t0 / org.telegram.messenger.g0.p;
@@ -180,7 +180,7 @@ public final /* synthetic */ class z1 implements Runnable {
                         } else {
                             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i18)).date || ((i7 = i18 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i7)).date)) {
                                 Date date2 = new Date(r9.date * 1000);
-                                sx0Var.c(org.telegram.messenger.hd.E0().p0().format(date2) + ", " + org.telegram.messenger.hd.E0().q0().format(date2), dd.a1(false, jg.g.m((int) r9.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                tx0Var.c(org.telegram.messenger.hd.E0().p0().format(date2) + ", " + org.telegram.messenger.hd.E0().q0().format(date2), dd.a1(false, jg.g.m((int) r9.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 z11 = true;
                             }
                             i18++;

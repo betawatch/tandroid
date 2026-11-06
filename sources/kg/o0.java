@@ -14,9 +14,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.Components.ov0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.PhotoViewer;
@@ -24,7 +24,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.ks;
 import org.telegram.ui.ya1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -154,7 +154,7 @@ public final /* synthetic */ class o0 implements Runnable {
                             String a02 = mVar4.a ? hd.a0("HasBeenAddedToChannel", null, 2131749363, j3) : hd.a0("HasBeenAddedToGroup", null, 2131749362, j3);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a02);
                             int indexOf = a02.indexOf(j3);
-                            spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), indexOf, j3.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, j3.length() + indexOf, 18);
                             obVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 cc.g(f2Var2, obVar, 2750).j();

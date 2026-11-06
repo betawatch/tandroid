@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ks {
     public static TextPaint f0;
@@ -179,7 +179,7 @@ public final class ks {
                 LaunchActivity launchActivity = (LaunchActivity) activity;
                 org.telegram.ui.ActionBar.f2 lastFragment = (launchActivity.M() == null || launchActivity.M().getLastFragment() == null) ? null : launchActivity.M().getLastFragment();
                 if (lastFragment != null) {
-                    org.telegram.ui.Components.k41 a10 = nVar.a(lastFragment, org.telegram.messenger.ij.B0(A.k), A.f1(), g10.option, F1.voters, new org.telegram.ui.Components.ex(8, ksVar, lastFragment));
+                    org.telegram.ui.Components.q41 a10 = nVar.a(lastFragment, org.telegram.messenger.ij.B0(A.k), A.f1(), g10.option, F1.voters, new org.telegram.ui.Components.ex(8, ksVar, lastFragment));
                     nVar2 = nVar;
                     k60Var.q(a10);
                     nVar2.setText(org.telegram.messenger.hd.G(F1.voters, "PollVotesCount", new Object[0]));
@@ -433,7 +433,7 @@ public final class ks {
         is isVar3 = this.l;
         if ((isVar3 == null || isVar3.h()) && (this.j != null || this.E)) {
             if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3 || motionEvent.getAction() == 6) {
-                org.telegram.messenger.g0.i3(new org.telegram.ui.Components.g51(7, pj0Var, obj), 150L);
+                org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l51(7, pj0Var, obj), 150L);
                 org.telegram.ui.Components.pp0 pp0Var = this.j;
                 if (pp0Var != null) {
                     org.telegram.messenger.g0.r(pp0Var);

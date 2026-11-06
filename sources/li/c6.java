@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.ty0;
-import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class c6 {
     public static final int[] a = {1, 2, 16, 8, 4, 256, TLObject.FLAG_14, 32768, 65536};
@@ -49,9 +49,9 @@ public abstract class c6 {
             if (j3) {
                 a(spannableStringBuilder, textdiff.old_text, i7, pageBlock, z9);
                 if (spannableStringBuilder.length() > length) {
-                    ty0 ty0Var = new ty0();
-                    ty0Var.a = TLObject.FLAG_13;
-                    spannableStringBuilder.setSpan(new uy0(ty0Var, 0), length, spannableStringBuilder.length(), 33);
+                    uy0 uy0Var = new uy0();
+                    uy0Var.a = TLObject.FLAG_13;
+                    spannableStringBuilder.setSpan(new vy0(uy0Var, 0), length, spannableStringBuilder.length(), 33);
                     return;
                 }
                 return;
@@ -65,9 +65,9 @@ public abstract class c6 {
                 return;
             } else {
                 if (spannableStringBuilder.length() > length) {
-                    ty0 ty0Var2 = new ty0();
-                    ty0Var2.a = TLObject.FLAG_12;
-                    spannableStringBuilder.setSpan(new uy0(ty0Var2, 0), length, spannableStringBuilder.length(), 33);
+                    uy0 uy0Var2 = new uy0();
+                    uy0Var2.a = TLObject.FLAG_12;
+                    spannableStringBuilder.setSpan(new vy0(uy0Var2, 0), length, spannableStringBuilder.length(), 33);
                     return;
                 }
                 return;
@@ -112,9 +112,9 @@ public abstract class c6 {
                 tL_messageEntityFormattedDate.flags = textdate.flags;
                 tL_messageEntityFormattedDate.date = textdate.date;
                 tL_messageEntityFormattedDate.applyFlags();
-                ty0 ty0Var3 = new ty0();
-                ty0Var3.a |= 128;
-                spannableStringBuilder.setSpan(new zz(charSequence2, ty0Var3, tL_messageEntityFormattedDate), length4, spannableStringBuilder.length(), 33);
+                uy0 uy0Var3 = new uy0();
+                uy0Var3.a |= 128;
+                spannableStringBuilder.setSpan(new zz(charSequence2, uy0Var3, tL_messageEntityFormattedDate), length4, spannableStringBuilder.length(), 33);
                 return;
             }
             return;
@@ -244,10 +244,10 @@ public abstract class c6 {
     }
 
     public static int e(Spanned spanned, int i7, int i10) {
-        uy0[] uy0VarArr = (uy0[]) spanned.getSpans(i7, i10, uy0.class);
+        vy0[] vy0VarArr = (vy0[]) spanned.getSpans(i7, i10, vy0.class);
         int i11 = 0;
-        for (uy0 uy0Var : uy0VarArr) {
-            int i12 = uy0Var.b.a;
+        for (vy0 vy0Var : vy0VarArr) {
+            int i12 = vy0Var.b.a;
             if ((i12 & 512) != 0) {
                 i12 |= 256;
             }
@@ -283,12 +283,12 @@ public abstract class c6 {
             int nextSpanTransition = spanned.nextSpanTransition(i7, length, CharacterStyle.class);
             b6 b6Var2 = new b6();
             b6Var2.a = e(spanned, i7, nextSpanTransition);
-            if (((u31[]) spanned.getSpans(i7, nextSpanTransition, u31.class)).length > 0) {
+            if (((a41[]) spanned.getSpans(i7, nextSpanTransition, a41.class)).length > 0) {
                 b6Var2.a |= 4;
             }
-            x31[] x31VarArr = (x31[]) spanned.getSpans(i7, nextSpanTransition, x31.class);
-            if (x31VarArr.length > 0) {
-                b6Var2.c = x31VarArr[0].getURL();
+            d41[] d41VarArr = (d41[]) spanned.getSpans(i7, nextSpanTransition, d41.class);
+            if (d41VarArr.length > 0) {
+                b6Var2.c = d41VarArr[0].getURL();
             }
             zz[] zzVarArr = (zz[]) spanned.getSpans(i7, nextSpanTransition, zz.class);
             if (zzVarArr.length > 0) {
@@ -361,8 +361,8 @@ public abstract class c6 {
         int max2 = Math.max(0, Math.min(i10, length));
         if (max < max2 && com.google.android.recaptcha.internal.a.u(editable)) {
             while (max < max2) {
-                int nextSpanTransition = editable.nextSpanTransition(max, max2, x31.class);
-                if (((x31[]) editable.getSpans(max, nextSpanTransition, x31.class)).length != 0) {
+                int nextSpanTransition = editable.nextSpanTransition(max, max2, d41.class);
+                if (((d41[]) editable.getSpans(max, nextSpanTransition, d41.class)).length != 0) {
                     max = nextSpanTransition;
                 }
             }
@@ -380,7 +380,7 @@ public abstract class c6 {
         }
         Spanned spanned = (Spanned) charSequence;
         while (max < max2) {
-            int nextSpanTransition = spanned.nextSpanTransition(max, max2, uy0.class);
+            int nextSpanTransition = spanned.nextSpanTransition(max, max2, vy0.class);
             if ((e(spanned, max, nextSpanTransition) & i11) == 0) {
                 return false;
             }
@@ -424,10 +424,10 @@ public abstract class c6 {
         return true;
     }
 
-    public static x31 k(String str) {
-        ty0 ty0Var = new ty0();
-        ty0Var.a = 1024;
-        return new x31(str, ty0Var);
+    public static d41 k(String str) {
+        uy0 uy0Var = new uy0();
+        uy0Var.a = 1024;
+        return new d41(str, uy0Var);
     }
 
     public static String l(TL_iv.RichText richText) {
@@ -483,15 +483,15 @@ public abstract class c6 {
         if (max >= max2) {
             return;
         }
-        for (x31 x31Var : (x31[]) editable.getSpans(max, max2, x31.class)) {
-            int spanStart = editable.getSpanStart(x31Var);
-            int spanEnd = editable.getSpanEnd(x31Var);
-            editable.removeSpan(x31Var);
+        for (d41 d41Var : (d41[]) editable.getSpans(max, max2, d41.class)) {
+            int spanStart = editable.getSpanStart(d41Var);
+            int spanEnd = editable.getSpanEnd(d41Var);
+            editable.removeSpan(d41Var);
             if (spanStart < max) {
-                editable.setSpan(k(x31Var.getURL()), spanStart, max, 33);
+                editable.setSpan(k(d41Var.getURL()), spanStart, max, 33);
             }
             if (spanEnd > max2) {
-                editable.setSpan(k(x31Var.getURL()), max2, spanEnd, 33);
+                editable.setSpan(k(d41Var.getURL()), max2, spanEnd, 33);
             }
         }
     }
@@ -503,18 +503,18 @@ public abstract class c6 {
         if (max >= max2) {
             return;
         }
-        for (uy0 uy0Var : (uy0[]) spannable.getSpans(max, max2, uy0.class)) {
-            int spanStart = spannable.getSpanStart(uy0Var);
-            int spanEnd = spannable.getSpanEnd(uy0Var);
-            int i12 = uy0Var.b.a;
-            spannable.removeSpan(uy0Var);
+        for (vy0 vy0Var : (vy0[]) spannable.getSpans(max, max2, vy0.class)) {
+            int spanStart = spannable.getSpanStart(vy0Var);
+            int spanEnd = spannable.getSpanEnd(vy0Var);
+            int i12 = vy0Var.b.a;
+            spannable.removeSpan(vy0Var);
             c(spannable, spanStart, max, i12, pageBlock);
             c(spannable, max2, spanEnd, i12, pageBlock);
             c(spannable, Math.max(spanStart, max), Math.min(spanEnd, max2), z9 ? i12 | i11 : (~i11) & i12, pageBlock);
         }
         if (z9) {
             while (max < max2) {
-                int nextSpanTransition = spannable.nextSpanTransition(max, max2, uy0.class);
+                int nextSpanTransition = spannable.nextSpanTransition(max, max2, vy0.class);
                 if (e(spannable, max, nextSpanTransition) == 0) {
                     c(spannable, max, nextSpanTransition, i11, pageBlock);
                 }
@@ -523,11 +523,11 @@ public abstract class c6 {
         }
     }
 
-    public static uy0 p(int i7, TL_iv.PageBlock pageBlock) {
-        ty0 ty0Var = new ty0();
-        ty0Var.a = i7;
-        ty0Var.e = (pageBlock instanceof TL_iv.pageBlockTitle) || (pageBlock instanceof TL_iv.pageBlockSubheader) || (pageBlock instanceof TL_iv.pageBlockHeader) || (pageBlock instanceof TL_iv.pageBlockHeading1) || (pageBlock instanceof TL_iv.pageBlockHeading2) || (pageBlock instanceof TL_iv.pageBlockHeading3) || (pageBlock instanceof TL_iv.pageBlockHeading4) || (pageBlock instanceof TL_iv.pageBlockHeading5) || (pageBlock instanceof TL_iv.pageBlockHeading6);
-        return new uy0(ty0Var, 0);
+    public static vy0 p(int i7, TL_iv.PageBlock pageBlock) {
+        uy0 uy0Var = new uy0();
+        uy0Var.a = i7;
+        uy0Var.e = (pageBlock instanceof TL_iv.pageBlockTitle) || (pageBlock instanceof TL_iv.pageBlockSubheader) || (pageBlock instanceof TL_iv.pageBlockHeader) || (pageBlock instanceof TL_iv.pageBlockHeading1) || (pageBlock instanceof TL_iv.pageBlockHeading2) || (pageBlock instanceof TL_iv.pageBlockHeading3) || (pageBlock instanceof TL_iv.pageBlockHeading4) || (pageBlock instanceof TL_iv.pageBlockHeading5) || (pageBlock instanceof TL_iv.pageBlockHeading6);
+        return new vy0(uy0Var, 0);
     }
 
     public static int q(int i7, int i10, CharSequence charSequence) {

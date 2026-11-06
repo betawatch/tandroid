@@ -29,7 +29,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class yv0 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls {
     public static final /* synthetic */ int n2 = 0;
@@ -129,8 +129,8 @@ public class yv0 extends org.telegram.ui.ActionBar.v2 implements org.telegram.me
             }
             tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
         }
-        org.telegram.ui.oo0 oo0Var = (org.telegram.ui.oo0) this;
-        this.W1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.g2(oo0Var, obj, tL_messages_getAttachedStickers, new org.telegram.ui.ld(21, oo0Var, tL_messages_getAttachedStickers), 12));
+        org.telegram.ui.po0 po0Var = (org.telegram.ui.po0) this;
+        this.W1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.g2(po0Var, obj, tL_messages_getAttachedStickers, new org.telegram.ui.ld(21, po0Var, tL_messages_getAttachedStickers), 12));
         P0(context);
     }
 
@@ -177,11 +177,11 @@ public class yv0 extends org.telegram.ui.ActionBar.v2 implements org.telegram.me
         }
         ArrayList arrayList = new ArrayList();
         org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
-        File K = org.telegram.messenger.w7.K(document, null, true, true);
-        if (K == null || !K.exists()) {
+        File J = org.telegram.messenger.w7.J(document, null, true, true);
+        if (J == null || !J.exists()) {
             return;
         }
-        org.telegram.messenger.g0.i3(new kg.o0(K, arrayList, f2Var, anVar, document, z9, tL_messages_stickerSet), 300L);
+        org.telegram.messenger.g0.i3(new kg.o0(J, arrayList, f2Var, anVar, document, z9, tL_messages_stickerSet), 300L);
     }
 
     @Override // org.telegram.ui.ActionBar.v2

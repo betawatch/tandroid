@@ -35,7 +35,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.an;
 import org.telegram.ui.j40;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h0 extends LinearLayout {
     public TextView a;
@@ -333,7 +333,7 @@ public final class h0 extends LinearLayout {
         r0 = r0.size() - 2;
         r9 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, r44.I0);
         r3.b = new ug.y0(org.telegram.ui.ActionBar.k6.zk, org.telegram.ui.ActionBar.k6.Ak, -1, -1, null);
-        r3.c = new org.telegram.ui.Components.ly0(jg.g.j(r0, "+"), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        r3.c = new org.telegram.ui.Components.my0(jg.g.j(r0, "+"), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
         r0 = new android.graphics.Paint(1);
         r3.d = r0;
         r0.setColor(r9);

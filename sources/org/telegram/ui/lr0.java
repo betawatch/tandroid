@@ -4,49 +4,16 @@ import android.R;
 import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Arrays;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class lr0 extends org.telegram.ui.Cells.a6 {
-    public final /* synthetic */ mr0 F;
+    public final /* synthetic */ nr0 F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lr0(mr0 mr0Var, Context context, int i7, g40 g40Var) {
-        super(context, i7, g40Var, null);
-        this.F = mr0Var;
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final boolean e() {
-        or0 or0Var = this.F.d;
-        e61 e61Var = or0Var.c;
-        View F = e61Var.F(this);
-        v4.d1 T = F == null ? null : e61Var.T(F);
-        if (T != null) {
-            int b10 = T.b();
-            int i7 = or0Var.D;
-            if (i7 == or0Var.n && b10 == (or0Var.n0 + i7) - 1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final boolean f(org.telegram.ui.Cells.a6 a6Var) {
-        int b10;
-        or0 or0Var = this.F.d;
-        e61 e61Var = or0Var.c;
-        View F = e61Var.F(a6Var);
-        v4.d1 T = F == null ? null : e61Var.T(F);
-        if (T == null || (b10 = T.b()) == -1) {
-            return false;
-        }
-        return or0Var.x[b10 - or0Var.n0];
+    public lr0(nr0 nr0Var, Context context, int i7) {
+        super(context, i7, null, null);
+        this.F = nr0Var;
     }
 
     @Override // org.telegram.ui.Cells.a6
@@ -61,72 +28,12 @@ public final class lr0 extends org.telegram.ui.Cells.a6 {
     }
 
     @Override // org.telegram.ui.Cells.a6
-    public final void h(org.telegram.ui.Cells.a6 a6Var, boolean z9) {
-        int b10;
-        or0 or0Var = this.F.d;
-        or0Var.c.getChildCount();
-        if (z9 && or0Var.L) {
-            Arrays.fill(or0Var.x, false);
-            for (int i7 = or0Var.n0; i7 < or0Var.n0 + or0Var.D; i7++) {
-                v4.d1 K = or0Var.c.K(i7);
-                if (K != null) {
-                    View view = K.a;
-                    if (view instanceof org.telegram.ui.Cells.a6) {
-                        ((org.telegram.ui.Cells.a6) view).r.a(false, true);
-                    }
-                }
-            }
-        }
-        super.h(a6Var, z9);
-        e61 e61Var = or0Var.c;
-        View F = e61Var.F(a6Var);
-        v4.d1 T = F == null ? null : e61Var.T(F);
-        if (T != null && (b10 = T.b()) != -1) {
-            or0Var.x[b10 - or0Var.n0] = z9;
-        }
-        or0Var.n0();
-    }
-
-    @Override // org.telegram.ui.Cells.a6
     public final void i(boolean z9) {
-        or0.i0(this.F.d, this, z9);
+        pr0.i0(this.F.d, this, z9);
     }
 
     @Override // org.telegram.ui.Cells.a6
     public final void j(org.telegram.ui.Cells.a6 a6Var) {
-        or0.j0(this.F.d, a6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final boolean l(ArrayList arrayList) {
-        or0 or0Var = this.F.d;
-        if (!arrayList.isEmpty()) {
-            or0Var.c.getClass();
-            int R = RecyclerView.R(this) - or0Var.n0;
-            if (R >= 0) {
-                org.telegram.ui.Cells.z5 z5Var = this.d;
-                z5Var.getText().replace(z5Var.getSelectionStart(), z5Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-                int i7 = R + 1;
-                while (!arrayList.isEmpty() && i7 < or0Var.n) {
-                    for (int length = or0Var.w.length - 1; length > i7; length--) {
-                        CharSequence[] charSequenceArr = or0Var.w;
-                        charSequenceArr[length] = charSequenceArr[length - 1];
-                    }
-                    or0Var.w[i7] = (CharSequence) arrayList.remove(0);
-                    or0Var.D++;
-                    i7++;
-                }
-                or0Var.w0();
-                or0Var.g0 = (or0Var.n0 + i7) - 1;
-                or0Var.b.f();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.a6
-    public final boolean o() {
-        return this.F.d.L;
+        pr0.j0(this.F.d, a6Var);
     }
 }

@@ -29,11 +29,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public boolean A;
@@ -56,7 +56,7 @@ public final class l0 {
     public float p;
     public a80 s;
     public final org.telegram.ui.Components.w5 u;
-    public ly0 v;
+    public my0 v;
     public final ic y;
     public final TextPaint f = new TextPaint(1);
     public final Paint k = new Paint(1);
@@ -369,10 +369,10 @@ public final class l0 {
             paint.setShadowLayer(org.telegram.messenger.g0.N(1.0f), 0.0f, org.telegram.messenger.g0.N(0.33f), i0.a.o(-16777216, (int) (27.0f * i14)));
             canvas.drawPath(path, paint);
             canvas.clipPath(path);
-            ly0 ly0Var = this.v;
-            if (ly0Var != null) {
+            my0 my0Var = this.v;
+            if (my0Var != null) {
                 arrayList = arrayList2;
-                ly0Var.c(rectF3.left + org.telegram.messenger.g0.L(17.0f), rectF3.top + org.telegram.messenger.g0.L(20.0f), i14, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, q1Var.Pb), canvas);
+                my0Var.c(rectF3.left + org.telegram.messenger.g0.L(17.0f), rectF3.top + org.telegram.messenger.g0.L(20.0f), i14, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, q1Var.Pb), canvas);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -403,7 +403,7 @@ public final class l0 {
                     int i18 = floor;
                     ic icVar = k0Var.n;
                     int i19 = ceil;
-                    ly0 ly0Var2 = k0Var.k;
+                    my0 my0Var2 = k0Var.k;
                     Paint paint2 = k0Var.j;
                     canvas2.save();
                     int i20 = max;
@@ -436,9 +436,9 @@ public final class l0 {
                     q1 q1Var3 = q1Var;
                     RectF rectF6 = rectF3;
                     ArrayList arrayList4 = arrayList;
-                    if (ly0Var2 != null) {
-                        ly0Var2.p = i17 - org.telegram.messenger.g0.L(32.0f);
-                        float k10 = ly0Var2.k() + org.telegram.messenger.g0.L(drawable != null ? 17.0f : f12);
+                    if (my0Var2 != null) {
+                        my0Var2.p = i17 - org.telegram.messenger.g0.L(32.0f);
+                        float k10 = my0Var2.k() + org.telegram.messenger.g0.L(drawable != null ? 17.0f : f12);
                         float L5 = org.telegram.messenger.g0.L(1.0f) + org.telegram.messenger.g0.L(54.0f) + org.telegram.messenger.g0.L(10.0f);
                         f16 = 32.0f;
                         i10 = 2;
@@ -551,12 +551,12 @@ public final class l0 {
                     } else {
                         i11 = 1;
                     }
-                    if (ly0Var2 == null) {
-                        ly0Var2.p = i22 - org.telegram.messenger.g0.L(f16);
-                        float k11 = (f36 - (ly0Var2.k() + org.telegram.messenger.g0.L(drawable != null ? 17.0f : f12))) / f14;
+                    if (my0Var2 == null) {
+                        my0Var2.p = i22 - org.telegram.messenger.g0.L(f16);
+                        float k11 = (f36 - (my0Var2.k() + org.telegram.messenger.g0.L(drawable != null ? 17.0f : f12))) / f14;
                         float L6 = org.telegram.messenger.g0.L(54.0f) + org.telegram.messenger.g0.L(4.165f);
                         if (drawable != null) {
-                            drawable.setBounds((int) ((z10 ? ly0Var2.k() + org.telegram.messenger.g0.L(1.33f) : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) org.telegram.messenger.camera.q.v(drawable.getIntrinsicHeight(), f14, 0.625f, L6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? org.telegram.messenger.g0.L(1.33f) + ly0Var2.k() : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) com.google.android.recaptcha.internal.a.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, L6));
+                            drawable.setBounds((int) ((z10 ? my0Var2.k() + org.telegram.messenger.g0.L(1.33f) : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) org.telegram.messenger.camera.q.v(drawable.getIntrinsicHeight(), f14, 0.625f, L6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? org.telegram.messenger.g0.L(1.33f) + my0Var2.k() : 0.0f) + k11 + org.telegram.messenger.g0.L(3.0f)), (int) com.google.android.recaptcha.internal.a.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, L6));
                             drawable.draw(canvas2);
                         }
                         float L7 = org.telegram.messenger.g0.L(!z10 ? 12.66f : 4.0f) + k11;
@@ -724,9 +724,9 @@ public final class l0 {
             }
         }
         if (this.v == null) {
-            ly0 ly0Var = new ly0(hd.M0(this.c > 0 ? 2131745320 : 2131745318, null), 14.0f, org.telegram.messenger.g0.o());
-            ly0Var.o = true;
-            this.v = ly0Var;
+            my0 my0Var = new my0(hd.M0(this.c > 0 ? 2131745320 : 2131745318, null), 14.0f, org.telegram.messenger.g0.o());
+            my0Var.o = true;
+            this.v = my0Var;
         }
         if (d()) {
             q1Var.u0 = org.telegram.messenger.g0.L(144.0f) + q1Var.u0;

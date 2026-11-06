@@ -8,20 +8,20 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class mi0 extends org.telegram.ui.Components.q31 {
+public final class mi0 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        org.telegram.ui.Components.q31.h(new mi0());
+        org.telegram.ui.Components.w31.h(new mi0());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
         ni0 ni0Var = (ni0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) r31Var.G;
-        View.OnClickListener onClickListener = r31Var.D;
+        TL_account.Passkey passkey = (TL_account.Passkey) x31Var.G;
+        View.OnClickListener onClickListener = x31Var.D;
         TextView textView = ni0Var.n;
         TextView textView2 = ni0Var.h;
         org.telegram.ui.ActionBar.f6 f6Var = ni0Var.d;
@@ -62,7 +62,7 @@ public final class mi0 extends org.telegram.ui.Components.q31 {
         ni0Var.setWillNotDraw(!z9);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new ni0(i7, context, f6Var);
     }

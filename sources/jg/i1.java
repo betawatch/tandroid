@@ -67,7 +67,7 @@ import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i1 extends oj0 implements ls {
     public ArrayList A0;
@@ -271,9 +271,9 @@ public final class i1 extends oj0 implements ls {
             TLRPC.PhotoSize w10 = w7.w(h1Var.a.thumbs, 90, false, null, false);
             if ((w10 instanceof TLRPC.TL_photoSize) || (w10 instanceof TLRPC.TL_photoSizeProgressive)) {
                 w7.G(this.f);
-                if (!w7.K(w10, "webp", true, true).exists()) {
+                if (!w7.J(w10, "webp", true, true).exists()) {
                     arrayList.add(w7.r("webp", w10));
-                    w7.G(this.f).W(hc.c(w10, h1Var.a), h1Var.b, "webp", 1, 1);
+                    w7.G(this.f).V(hc.c(w10, h1Var.a), h1Var.b, "webp", 1, 1);
                 }
             }
         }

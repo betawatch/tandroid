@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class zq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final class zq0 implements ViewTreeObserver.OnPreDrawListener {
                 xs0Var.e0(i10);
                 break;
             default:
-                w41 w41Var = (w41) callback;
-                bi.q1 q1Var = w41Var.k1;
+                b51 b51Var = (b51) callback;
+                bi.q1 q1Var = b51Var.k1;
                 q1Var.getViewTreeObserver().removeOnPreDrawListener(this);
                 int childCount = q1Var.getChildCount();
                 AnimatorSet animatorSet = new AnimatorSet();
@@ -43,7 +43,7 @@ public final class zq0 implements ViewTreeObserver.OnPreDrawListener {
                     q1Var.getClass();
                     int R = RecyclerView.R(childAt);
                     if (R >= i10) {
-                        if (R == 1 && q1Var.getAdapter() == w41Var.l1 && (childAt instanceof org.telegram.ui.Cells.x3)) {
+                        if (R == 1 && q1Var.getAdapter() == b51Var.l1 && (childAt instanceof org.telegram.ui.Cells.x3)) {
                             childAt = ((org.telegram.ui.Cells.x3) childAt).getTextView();
                         }
                         childAt.setAlpha(0.0f);

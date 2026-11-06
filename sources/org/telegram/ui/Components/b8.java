@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls, org.telegram.messenger.x5 {
     public static b8 P2;
@@ -833,7 +833,7 @@ public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegr
         TLRPC.Document F0 = ijVar.F0();
         long j3 = F0 != null ? F0.id : 0L;
         k60 J = k60Var.J();
-        J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new org.telegram.ui.fq0(k60Var, 27), false);
+        J.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, null), new org.telegram.ui.gq0(k60Var, 27), false);
         J.k();
         J.l(R.drawable.left_status_profile, org.telegram.messenger.hd.M0(2131753913, null), new z6(this, ijVar, k60Var, 6), !H1.b.contains(Long.valueOf(j3)));
         J.c(R.drawable.msg_saved, org.telegram.messenger.hd.M0(2131753910, null), new z6(this, ijVar, k60Var, 7), false);
@@ -989,7 +989,7 @@ public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegr
         }
         if (str2 == null || str2.length() == 0) {
             org.telegram.messenger.w7.G(this.a);
-            str2 = org.telegram.messenger.w7.N(ijVar.k, false, true).toString();
+            str2 = org.telegram.messenger.w7.M(ijVar.k, false, true).toString();
         }
         MediaController.d0(str2, this.w2, 3, str, ijVar.F0() != null ? ijVar.F0().mime_type : "", new y6(this, 1));
     }
@@ -1210,7 +1210,7 @@ public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegr
             file = null;
             if (file == null) {
                 org.telegram.messenger.w7.G(this.a);
-                file = org.telegram.messenger.w7.N(ijVar.k, false, true);
+                file = org.telegram.messenger.w7.M(ijVar.k, false, true);
             }
             if (!file.exists()) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.w2);
@@ -1775,7 +1775,7 @@ public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegr
         file = null;
         if (file == null) {
             org.telegram.messenger.w7.G(this.a);
-            file = org.telegram.messenger.w7.N(ijVar.k, false, true);
+            file = org.telegram.messenger.w7.M(ijVar.k, false, true);
         }
         boolean z16 = org.telegram.messenger.iz.B0 && ((int) org.telegram.messenger.ij.B0(ijVar.k)) != 0 && ijVar.J3();
         boolean exists = file.exists();
@@ -1953,7 +1953,7 @@ public final class b8 extends org.telegram.ui.ActionBar.v2 implements org.telegr
                     org.telegram.messenger.gc D = org.telegram.messenger.gc.D();
                     D.s.c(new org.telegram.messenger.ib(D, N02.g, i10));
                 } else {
-                    org.telegram.messenger.w7.G(this.a).W(N02, ijVar2, null, 0, 1);
+                    org.telegram.messenger.w7.G(this.a).V(N02, ijVar2, null, 0, 1);
                 }
             }
         }

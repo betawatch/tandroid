@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class re0 extends org.telegram.ui.Cells.z implements im0, org.telegram.messenger.x5, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -209,7 +209,7 @@ public final class re0 extends org.telegram.ui.Cells.z implements im0, org.teleg
                         invalidate();
                     }
                 } else if (i7 == 2) {
-                    org.telegram.messenger.w7.G(this.n).X(this.h.F0(), this.h, 1, 0);
+                    org.telegram.messenger.w7.G(this.n).W(this.h.F0(), this.h, 1, 0);
                     this.D = 4;
                     invalidate();
                 } else if (i7 == 3) {
@@ -274,7 +274,7 @@ public final class re0 extends org.telegram.ui.Cells.z implements im0, org.teleg
         bg0 bg0Var = this.w;
         String S0 = this.h.S0();
         org.telegram.messenger.w7.G(this.n);
-        if (org.telegram.messenger.w7.N(this.h.k, false, true).exists()) {
+        if (org.telegram.messenger.w7.M(this.h.k, false, true).exists()) {
             org.telegram.messenger.z5.q(this.n).v(this);
             boolean I = MediaController.B().I(this.h);
             if (!I || (I && MediaController.B().H())) {
@@ -285,7 +285,7 @@ public final class re0 extends org.telegram.ui.Cells.z implements im0, org.teleg
             bg0Var.a(0.0f);
         } else {
             org.telegram.messenger.z5.q(this.n).a(S0, null, this);
-            if (org.telegram.messenger.w7.G(this.n).T(S0)) {
+            if (org.telegram.messenger.w7.G(this.n).S(S0)) {
                 this.D = 3;
                 Float w10 = org.telegram.messenger.gc.D().w(S0);
                 if (w10 != null) {

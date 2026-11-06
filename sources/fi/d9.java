@@ -19,14 +19,14 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.r71;
 import org.telegram.ui.Components.ry;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, k71, b51, y7, c7 {
+public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, q71, g51, y7, c7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ va b;
 
@@ -48,7 +48,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.b51
+    @Override // org.telegram.ui.Components.g51
     public void a(ry ryVar) {
         hf hfVar;
         va vaVar = this.b;
@@ -63,7 +63,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         ryVar.d(new org.telegram.ui.Components.n(hfVar));
     }
 
-    @Override // org.telegram.ui.Components.k71
+    @Override // org.telegram.ui.Components.q71
     public void b(float f10) {
         va vaVar = this.b;
         y9 y9Var = vaVar.B0;
@@ -287,10 +287,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
             B = null;
         }
         vaVar.d0(vaVar.f0 == 0 ? B : null);
-        l71 l71Var = vaVar.V0;
-        if (l71Var != null) {
+        r71 r71Var = vaVar.V0;
+        if (r71Var != null) {
             vaVar.T1 = 0.0f;
-            l71Var.b(false, 0.0f);
+            r71Var.b(false, 0.0f);
         }
         vaVar.l0(true);
     }

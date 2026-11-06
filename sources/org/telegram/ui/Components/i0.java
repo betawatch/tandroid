@@ -4,10 +4,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i0 extends na {
-    public f41 P1;
+    public l41 P1;
     public TLRPC.TL_channelAdminLogEventsFilter Q1;
     public ArrayList R1;
     public a0.h S1;
@@ -113,9 +113,9 @@ public final class i0 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
-        this.P1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 3), this.I0);
+        this.P1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -162,9 +162,9 @@ public final class i0 extends na {
                 this.S1.k(org.telegram.messenger.qp.s1(this.a).a2(Long.valueOf(o4)), o4);
             }
         }
-        f41 f41Var = this.P1;
-        if (f41Var != null) {
-            f41Var.O(true);
+        l41 l41Var = this.P1;
+        if (l41Var != null) {
+            l41Var.O(true);
         }
     }
 

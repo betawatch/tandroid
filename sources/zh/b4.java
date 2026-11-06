@@ -39,21 +39,21 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q4;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class b4 extends na implements ls, v9 {
     public final boolean P1;
@@ -79,7 +79,7 @@ public class b4 extends na implements ls, v9 {
     public boolean j2;
     public boolean k2;
     public final w3 l2;
-    public f41 m2;
+    public l41 m2;
     public int n2;
     public final wp[] o2;
     public boolean p2;
@@ -381,11 +381,11 @@ public class b4 extends na implements ls, v9 {
                 org.telegram.ui.Cells.t0 t0Var2 = b4Var.c2;
                 TLRPC.MessageAction messageAction2 = b4Var.d2;
                 ij ijVar2 = b4Var.e2;
-                f41 f41Var = b4Var.m2;
+                l41 l41Var = b4Var.m2;
                 if (!b4Var.G1) {
                     i24--;
                 }
-                r31 G = f41Var.G(i24);
+                x31 G = l41Var.G(i24);
                 if (G == null) {
                     return;
                 }
@@ -466,10 +466,10 @@ public class b4 extends na implements ls, v9 {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.Q1, 0, true, new p3(this, 0), this.I0);
-        this.m2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.Q1, 0, true, new p3(this, 0), this.I0);
+        this.m2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -503,11 +503,11 @@ public class b4 extends na implements ls, v9 {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == qs.y3) {
             g1(true);
-            f41 f41Var = this.m2;
-            if (f41Var == null || this.W1 == null) {
+            l41 l41Var = this.m2;
+            if (l41Var == null || this.W1 == null) {
                 return;
             }
-            f41Var.O(true);
+            l41Var.O(true);
         }
     }
 

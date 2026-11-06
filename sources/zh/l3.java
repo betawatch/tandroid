@@ -32,12 +32,12 @@ import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l3 extends na {
     public static final /* synthetic */ int c2 = 0;
@@ -187,7 +187,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var2.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -221,7 +221,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -256,7 +256,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -278,10 +278,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var2 = k3Var2.c;
                                             HashSet hashSet = d3Var2.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -305,7 +305,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         case 1:
-                                            int i18 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i18 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var3 = k3Var2.c;
                                             HashSet hashSet2 = d3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i18))) {
@@ -329,7 +329,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -472,7 +472,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -506,7 +506,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -541,7 +541,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -563,10 +563,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -590,7 +590,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var3 = k3Var2.c;
                                             HashSet hashSet2 = d3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -614,7 +614,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -755,7 +755,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -789,7 +789,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -824,7 +824,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -846,10 +846,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -873,7 +873,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -897,7 +897,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1064,7 +1064,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1098,7 +1098,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1133,7 +1133,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1155,10 +1155,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1182,7 +1182,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1206,7 +1206,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1349,7 +1349,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1383,7 +1383,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1418,7 +1418,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1440,10 +1440,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1467,7 +1467,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1491,7 +1491,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1632,7 +1632,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1666,7 +1666,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1701,7 +1701,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1723,10 +1723,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1750,7 +1750,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1774,7 +1774,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1940,7 +1940,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1974,7 +1974,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2009,7 +2009,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2031,10 +2031,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2058,7 +2058,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2082,7 +2082,7 @@ public final class l3 extends na {
                                             k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2225,7 +2225,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2259,7 +2259,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2294,7 +2294,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2316,10 +2316,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2343,7 +2343,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2367,7 +2367,7 @@ public final class l3 extends na {
                                             k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2508,7 +2508,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) d3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = x2.b;
-                                                    r31 K = r31.K(x2.class);
+                                                    x31 K = x31.K(x2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2542,7 +2542,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) d3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = r2.b;
-                                                    r31 K2 = r31.K(r2.class);
+                                                    x31 K2 = x31.K(r2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2577,7 +2577,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) d3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = a3.b;
-                                                    r31 K3 = r31.K(a3.class);
+                                                    x31 K3 = x31.K(a3.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2599,10 +2599,10 @@ public final class l3 extends na {
                             }, new a20() { // from class: zh.f3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    r31 r31Var = (r31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             d3 d3Var22 = k3Var2.c;
                                             HashSet hashSet = d3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2626,7 +2626,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             d3 d3Var32 = k3Var2.c;
                                             HashSet hashSet2 = d3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2650,7 +2650,7 @@ public final class l3 extends na {
                                             k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             d3 d3Var4 = k3Var2.c;
                                             HashSet hashSet3 = d3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2771,7 +2771,7 @@ public final class l3 extends na {
 
     public final void d1() {
         int R;
-        r31 G;
+        x31 G;
         int i7 = 0;
         boolean z9 = false;
         boolean z10 = false;

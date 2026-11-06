@@ -21,7 +21,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t8 extends org.telegram.ui.ActionBar.f2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -542,7 +542,7 @@ public final class t8 extends org.telegram.ui.ActionBar.f2 {
                     h20Var2.B = e10;
                     h20Var2.C = null;
                     org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
-                    h20Var2.j = org.telegram.messenger.w7.K(e10, null, true, true).getAbsolutePath();
+                    h20Var2.j = org.telegram.messenger.w7.J(e10, null, true, true).getAbsolutePath();
                     h20Var2.s = f10;
                     if (org.telegram.messenger.ij.L2(e10, true) || org.telegram.messenger.ij.P4(e10)) {
                         h20Var2.b = (byte) ((org.telegram.messenger.ij.L2(e10, true) ? (byte) 1 : b10) | h20Var2.b);

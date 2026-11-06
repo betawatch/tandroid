@@ -32,8 +32,8 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.c61;
 import org.telegram.ui.ec1;
@@ -42,7 +42,7 @@ import org.telegram.ui.w9;
 import org.telegram.ui.yb1;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class z0 extends FrameLayout implements VoIPService.StateListener {
     public float D;
@@ -64,7 +64,7 @@ public abstract class z0 extends FrameLayout implements VoIPService.StateListene
     public final GestureDetector T;
     public ValueAnimator U;
     public boolean a;
-    public final p41 b;
+    public final v41 b;
     public final x0 c;
     public final c61 d;
     public final p2[] e;
@@ -97,10 +97,10 @@ public abstract class z0 extends FrameLayout implements VoIPService.StateListene
         this.e = new p2[3];
         yb1 yb1Var = (yb1) this;
         this.T = new GestureDetector(context, new w0(yb1Var));
-        p41 p41Var = new p41(1, context, yb1Var);
-        this.b = p41Var;
-        p41Var.setClickable(true);
-        addView(p41Var, ha.c(-1.0f, -1));
+        v41 v41Var = new v41(1, context, yb1Var);
+        this.b = v41Var;
+        v41Var.setClickable(true);
+        addView(v41Var, ha.c(-1.0f, -1));
         k2 k2Var = new k2(context, false, false);
         this.f = k2Var;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
@@ -160,7 +160,7 @@ public abstract class z0 extends FrameLayout implements VoIPService.StateListene
             this.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new y0());
             sharedInstance.setLocalSink(this.f.d, false);
         }
-        p41 p41Var2 = this.b;
+        v41 v41Var2 = this.b;
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setBackground(new qa0(true, -14602694, -13935795, -14395293, -14203560));
         ImageView imageView = new ImageView(getContext());
@@ -177,12 +177,12 @@ public abstract class z0 extends FrameLayout implements VoIPService.StateListene
         frameLayout.addView(textView, ha.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         frameLayout.setTag("screencast_stub");
         frameLayout.setVisibility(8);
-        p41Var2.addView(frameLayout);
+        v41Var2.addView(frameLayout);
         ImageView imageView2 = new ImageView(getContext());
         imageView2.setTag("image_stab");
         imageView2.setImageResource(R.drawable.icplaceholder);
         imageView2.setScaleType(ImageView.ScaleType.FIT_XY);
-        p41Var2.addView(imageView2);
+        v41Var2.addView(imageView2);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new l9(yb1Var, f10, f11, 2));
         ofFloat.addListener(new va(yb1Var, 13));

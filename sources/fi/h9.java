@@ -18,12 +18,12 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h9 implements Runnable {
     public final /* synthetic */ int a;
@@ -381,9 +381,9 @@ public final /* synthetic */ class h9 implements Runnable {
                 return;
             case 24:
                 kg.i0 i0Var = (kg.i0) this.b;
-                f41 f41Var = i0Var.W1;
-                if (f41Var != null) {
-                    f41Var.O(true);
+                l41 l41Var = i0Var.W1;
+                if (l41Var != null) {
+                    l41Var.O(true);
                 }
                 i0Var.d1(true);
                 return;

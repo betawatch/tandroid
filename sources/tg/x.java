@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.PointF;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class x extends d2 {
     public final /* synthetic */ g0 y0;
@@ -22,12 +22,12 @@ public final class x extends d2 {
 
     @Override // tg.d2
     public final void q(zg0 zg0Var) {
-        PhotoViewer photoViewer = ((tp0) this.y0).X1;
-        n51 n51Var = photoViewer.F2;
-        if (n51Var == null) {
+        PhotoViewer photoViewer = ((up0) this.y0).X1;
+        t51 t51Var = photoViewer.F2;
+        if (t51Var == null) {
             return;
         }
-        long S = n51Var.S();
+        long S = t51Var.S();
         long j3 = photoViewer.l8;
         zg0Var.U(S - (j3 > 0 ? j3 / 1000 : 0L));
     }

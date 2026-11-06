@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -174,7 +174,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         if (fileLocation != null) {
             try {
                 w7.G(p10.s0);
-                decodeFile = BitmapFactory.decodeFile(w7.K(fileLocation, null, true, true).toString());
+                decodeFile = BitmapFactory.decodeFile(w7.J(fileLocation, null, true, true).toString());
             } catch (Throwable th2) {
                 th = th2;
                 z9 = true;

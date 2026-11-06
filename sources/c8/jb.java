@@ -1,15 +1,12 @@
 package c8;
 
-import java.util.Date;
-
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class jb {
-    public static long a(Date date) {
-        return (date.getTime() / 1000) + 2082844800;
-    }
-
-    public static Date b(long j3) {
-        return new Date((j3 - 2082844800) * 1000);
+    public static int a(long j3) {
+        if (j3 > 2147483647L || j3 < -2147483648L) {
+            throw new RuntimeException(rf.b.h(j3, "A cast to int has gone wrong. Please contact the mp4parser discussion group (", ")"));
+        }
+        return (int) j3;
     }
 }

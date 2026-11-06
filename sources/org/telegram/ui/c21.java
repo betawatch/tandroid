@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c21 extends org.telegram.ui.Components.na implements org.telegram.messenger.ls {
     public final org.telegram.ui.Components.jy P1;
@@ -14,7 +14,7 @@ public final class c21 extends org.telegram.ui.Components.na implements org.tele
     public final HashMap S1;
     public final int T1;
     public int U1;
-    public org.telegram.ui.Components.f41 V1;
+    public org.telegram.ui.Components.l41 V1;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -68,10 +68,10 @@ public final class c21 extends org.telegram.ui.Components.na implements org.tele
 
     @Override // org.telegram.ui.Components.na
     public final org.telegram.ui.Components.oj0 L0(org.telegram.ui.Components.pj0 pj0Var) {
-        org.telegram.ui.Components.f41 f41Var = new org.telegram.ui.Components.f41(pj0Var, getContext(), this.a, 0, false, new a5(this, 26), this.I0);
-        this.V1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(pj0Var, getContext(), this.a, 0, false, new a5(this, 26), this.I0);
+        this.V1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -103,9 +103,9 @@ public final class c21 extends org.telegram.ui.Components.na implements org.tele
     }
 
     public final boolean e1(int i7, View view) {
-        org.telegram.ui.Components.r31 G;
-        org.telegram.ui.Components.f41 f41Var = this.V1;
-        if (f41Var == null || i7 == 0 || (G = f41Var.G(i7 - 1)) == null) {
+        org.telegram.ui.Components.x31 G;
+        org.telegram.ui.Components.l41 l41Var = this.V1;
+        if (l41Var == null || i7 == 0 || (G = l41Var.G(i7 - 1)) == null) {
             return false;
         }
         Object obj = G.G;

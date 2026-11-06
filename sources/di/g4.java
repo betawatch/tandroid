@@ -11,9 +11,9 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g4 {
     public TL_stories.StoryItem a = null;
@@ -151,12 +151,12 @@ public final class g4 {
             if (messageMedia2 != null && (photo = messageMedia2.photo) != null) {
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false);
                 org.telegram.messenger.w7.G(i4Var.l2);
-                File K = org.telegram.messenger.w7.K(w10, null, true, true);
-                if (K.exists()) {
-                    return K;
+                File J = org.telegram.messenger.w7.J(w10, null, true, true);
+                if (J.exists()) {
+                    return J;
                 }
                 org.telegram.messenger.w7.G(i4Var.l2);
-                return org.telegram.messenger.w7.K(w10, null, false, true);
+                return org.telegram.messenger.w7.J(w10, null, false, true);
             }
         }
         return null;
@@ -334,7 +334,7 @@ public final class g4 {
         }
         TL_stories.StoryItem storyItem = g4Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, e21.M0())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, k21.M0())) {
                 String str = g4Var.a.caption;
                 this.h = str;
                 CharSequence m11 = org.telegram.messenger.i6.m(str, n3Var.b0.getPaint().getFontMetricsInt(), false, null, 0);

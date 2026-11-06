@@ -5,9 +5,9 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h2 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ i2 a;
@@ -24,7 +24,7 @@ public final class h2 implements View.OnApplyWindowInsetsListener {
         int i11;
         int i12;
         i2 i2Var = this.a;
-        p41 p41Var = i2Var.b;
+        v41 v41Var = i2Var.b;
         Rect rect = i2Var.h;
         int i13 = Build.VERSION.SDK_INT;
         if (i13 >= 30) {
@@ -37,8 +37,8 @@ public final class h2 implements View.OnApplyWindowInsetsListener {
         } else {
             rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
-        p41Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        p41Var.requestLayout();
+        v41Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        v41Var.requestLayout();
         if (i13 < 30) {
             return windowInsets.consumeSystemWindowInsets();
         }

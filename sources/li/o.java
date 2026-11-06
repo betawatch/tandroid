@@ -8,9 +8,9 @@ import org.telegram.messenger.ej;
 import org.telegram.messenger.i6;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hx;
-import org.telegram.ui.Components.n31;
+import org.telegram.ui.Components.t31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class o implements hx {
     public final /* synthetic */ p a;
@@ -153,7 +153,7 @@ public final class o implements hx {
     }
 
     @Override // org.telegram.ui.Components.hx
-    public final /* synthetic */ void o(n31 n31Var) {
+    public final /* synthetic */ void o(t31 t31Var) {
     }
 
     @Override // org.telegram.ui.Components.hx

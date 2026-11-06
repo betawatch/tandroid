@@ -15,15 +15,15 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.f5;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class q extends org.telegram.ui.ActionBar.f2 {
-    public k41 a;
+    public q41 a;
     public final ArrayList b;
     public final HashMap c;
 
@@ -48,21 +48,21 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
                 spannableStringBuilder.append((CharSequence) t10.p(oVar.a));
                 hashMap.put(oVar, spannableStringBuilder);
             }
-            r31 i10 = r31.i(i7, spannableStringBuilder);
+            x31 i10 = x31.i(i7, spannableStringBuilder);
             i10.L(!oVar.b);
             arrayList.add(i10);
         }
-        arrayList.add(r31.C(hd.M0(2131746860, null)));
+        arrayList.add(x31.C(hd.M0(2131746860, null)));
     }
 
-    public static void a0(q qVar, r31 r31Var) {
+    public static void a0(q qVar, x31 x31Var) {
         int i7;
-        f41 f41Var;
+        l41 l41Var;
         ArrayList arrayList = qVar.b;
-        if (r31Var.a != 4 || (i7 = r31Var.d) < 0 || i7 >= arrayList.size()) {
+        if (x31Var.a != 4 || (i7 = x31Var.d) < 0 || i7 >= arrayList.size()) {
             return;
         }
-        o oVar = (o) arrayList.get(r31Var.d);
+        o oVar = (o) arrayList.get(x31Var.d);
         oVar.b = !oVar.b;
         Activity parentActivity = qVar.getParentActivity();
         int i10 = qVar.currentAccount;
@@ -76,11 +76,11 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
             edit.putString(String.valueOf(j3), "");
         }
         edit.apply();
-        k41 k41Var = qVar.a;
-        if (k41Var == null || (f41Var = k41Var.f3) == null) {
+        q41 q41Var = qVar.a;
+        if (q41Var == null || (l41Var = q41Var.f3) == null) {
             return;
         }
-        f41Var.O(true);
+        l41Var.O(true);
     }
 
     @Override // org.telegram.ui.ActionBar.f2
@@ -91,9 +91,9 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 3));
         FrameLayout frameLayout = new FrameLayout(context);
         r6.i(k6.a7, frameLayout, this.resourceProvider);
-        k41 k41Var = new k41(this, new ai.e(this, 27), new di.q4(this, 21), new g2.c(this, 24));
-        this.a = k41Var;
-        frameLayout.addView(k41Var, ha.e(-1, -1, qs.E1));
+        q41 q41Var = new q41(this, new ai.e(this, 27), new di.q4(this, 21), new g2.c(this, 24));
+        this.a = q41Var;
+        frameLayout.addView(q41Var, ha.e(-1, -1, qs.E1));
         p.d(getParentActivity(), this.currentAccount, new ai.i(this, 29));
         this.fragmentView = frameLayout;
         return frameLayout;

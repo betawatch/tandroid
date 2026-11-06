@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class af0 extends AccessibilityNodeProvider {
     public final /* synthetic */ int a = 0;
@@ -140,7 +140,7 @@ public class af0 extends AccessibilityNodeProvider {
                     } else if (i10 == 16) {
                         df0 df0Var = ef0Var.y;
                         if (df0Var != null) {
-                            ProfileActivity.m0(((org.telegram.ui.st0) df0Var).b, i7, 0.0f, 0.0f);
+                            ProfileActivity.m0(((org.telegram.ui.tt0) df0Var).b, i7, 0.0f, 0.0f);
                         }
                     }
                     return true;

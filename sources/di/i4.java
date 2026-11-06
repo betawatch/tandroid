@@ -43,7 +43,7 @@ import bi.dd;
 import bi.md;
 import c8.ha;
 import c8.ka;
-import c8.na;
+import c8.qa;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -101,12 +101,12 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.e61;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 import org.telegram.ui.ix;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class i4 extends rt0 implements ls {
     public org.telegram.ui.Components.i6 A0;
@@ -135,7 +135,7 @@ public abstract class i4 extends rt0 implements ls {
     public final ra F3;
     public long G0;
     public a G1;
-    public final er0 G2;
+    public final fr0 G2;
     public final org.telegram.ui.Components.w5 G3;
     public boolean H0;
     public q1 H1;
@@ -315,8 +315,8 @@ public abstract class i4 extends rt0 implements ls {
         this.i2 = ConnectionsManager.generateClassGuid();
         this.x2 = new org.telegram.ui.Components.w5(this);
         this.y2 = new org.telegram.ui.Components.w5(this);
-        er0 er0Var = new er0();
-        this.G2 = er0Var;
+        fr0 fr0Var = new fr0();
+        this.G2 = fr0Var;
         this.N2 = 1.0f;
         this.y3 = new w1(this, 4);
         this.A3 = new w1(this, 11);
@@ -327,7 +327,7 @@ public abstract class i4 extends rt0 implements ls {
         this.H3 = new org.telegram.ui.Components.w5(this);
         this.I3 = new org.telegram.ui.Components.w5(this);
         this.K3 = new Path();
-        er0Var.E = new cb.c(this, 19);
+        fr0Var.E = new cb.c(this, 19);
         h4 h4Var = new h4();
         h4Var.g = new ArrayList();
         this.v2 = h4Var;
@@ -1278,10 +1278,10 @@ public abstract class i4 extends rt0 implements ls {
         c20VarArr[0].a(Integer.valueOf((int) jArr[0]));
         f10.addView(f11, ha.k(16.0f, 0.0f, 16.0f, 0.0f, -1, 56));
         int i20 = org.telegram.ui.ActionBar.k6.j5;
-        TextView b10 = na.b(context, 20.0f, i20, true, bVar);
+        TextView b10 = qa.b(context, 20.0f, i20, true, bVar);
         org.telegram.messenger.k5.m(b10, 17, null, 2131748810);
         f10.addView(b10, ha.k(42.0f, 18.0f, 42.0f, 9.0f, -1, -2));
-        TextView b11 = na.b(context, 14.0f, i20, false, bVar);
+        TextView b11 = qa.b(context, 14.0f, i20, false, bVar);
         b11.setGravity(17);
         org.telegram.messenger.k5.r(null, null, 2131748811, new Object[]{s5}, b11);
         f10.addView(b11, ha.k(42.0f, 0.0f, 42.0f, 0.0f, -1, -2));
@@ -1897,7 +1897,7 @@ public abstract class i4 extends rt0 implements ls {
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x0956, code lost:
     
-        if (r4.g == (r1 == null && r1.translated && r1.translatedText != null && android.text.TextUtils.equals(r1.translatedLng, org.telegram.ui.Components.e21.M0()))) goto L419;
+        if (r4.g == (r1 == null && r1.translated && r1.translatedText != null && android.text.TextUtils.equals(r1.translatedLng, org.telegram.ui.Components.k21.M0()))) goto L419;
      */
     /* JADX WARN: Code restructure failed: missing block: B:133:0x09b6, code lost:
     
@@ -4135,7 +4135,7 @@ public abstract class i4 extends rt0 implements ls {
                                 if (i14 == i12) {
                                     try {
                                         if (org.telegram.messenger.b6.g()) {
-                                            org.telegram.messenger.w7.G(this.l2).X(C, storyItem, i12, i12);
+                                            org.telegram.messenger.w7.G(this.l2).W(C, storyItem, i12, i12);
                                         }
                                     } catch (UnsupportedEncodingException e11) {
                                         e = e11;

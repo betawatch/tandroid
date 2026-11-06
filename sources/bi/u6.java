@@ -19,9 +19,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class u6 extends a5.h {
     public org.telegram.ui.Components.i6 D;
@@ -41,8 +41,8 @@ public final class u6 extends a5.h {
     public final org.telegram.ui.Components.g5 r;
     public RadialGradient s;
     public final Matrix w;
-    public final ly0 x;
-    public final ly0 y;
+    public final my0 x;
+    public final my0 y;
 
     public u6(View view, TL_stars.StarGift starGift, int i7, float f10) {
         super(view);
@@ -69,19 +69,19 @@ public final class u6 extends a5.h {
             float f13 = i7;
             dd.c1(imageReceiver, starGift.sticker, (int) (0.75f * f13));
             String str = starGift.title;
-            ly0 ly0Var = new ly0(str == null ? "Gift" : str, 16.0f, org.telegram.messenger.g0.o());
-            this.x = ly0Var;
-            ly0Var.n(-1);
+            my0 my0Var = new my0(str == null ? "Gift" : str, 16.0f, org.telegram.messenger.g0.o());
+            this.x = my0Var;
+            my0Var.n(-1);
             float f14 = i7 - 30;
-            ly0Var.p(org.telegram.messenger.g0.L(f14));
+            my0Var.p(org.telegram.messenger.g0.L(f14));
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            ly0Var.a();
-            ly0Var.m(1);
-            ly0 ly0Var2 = new ly0(starGift.sold_out ? org.telegram.messenger.hd.M0(2131749966, null) : org.telegram.messenger.hd.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
-            this.y = ly0Var2;
-            ly0Var2.p(org.telegram.messenger.g0.L(f14));
-            ly0Var2.a();
-            ly0Var2.m(1);
+            my0Var.a();
+            my0Var.m(1);
+            my0 my0Var2 = new my0(starGift.sold_out ? org.telegram.messenger.hd.M0(2131749966, null) : org.telegram.messenger.hd.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
+            this.y = my0Var2;
+            my0Var2.p(org.telegram.messenger.g0.L(f14));
+            my0Var2.a();
+            my0Var2.m(1);
             ud udVar = new ud(1, 40);
             this.e = udVar;
             float f15 = 0.45f * f13;
@@ -268,9 +268,9 @@ public final class u6 extends a5.h {
     }
 
     public final void c(int i7) {
-        ly0 ly0Var = this.y;
-        if (ly0Var != null) {
-            ly0Var.n(i7 | (-16777216));
+        my0 my0Var = this.y;
+        if (my0Var != null) {
+            my0Var.n(i7 | (-16777216));
         }
     }
 
@@ -293,7 +293,7 @@ public final class u6 extends a5.h {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ly0 ly0Var;
+        my0 my0Var;
         Paint paint = (Paint) this.b;
         Rect bounds = getBounds();
         RectF rectF = this.d;
@@ -320,9 +320,9 @@ public final class u6 extends a5.h {
             udVar.b(canvas, -1, 1.0f);
         }
         canvas.restore();
-        ly0 ly0Var2 = this.x;
+        my0 my0Var2 = this.x;
         ImageReceiver imageReceiver = this.n;
-        if (ly0Var2 == null || (ly0Var = this.y) == null) {
+        if (my0Var2 == null || (my0Var = this.y) == null) {
             float min = Math.min(rectF.width(), rectF.height()) * 0.75f;
             float f11 = min / 2.0f;
             imageReceiver.y0(rectF.centerX() - f11, rectF.centerY() - f11, min, min);
@@ -340,8 +340,8 @@ public final class u6 extends a5.h {
             float min2 = Math.min(rectF.width(), rectF.height()) * 0.6f;
             imageReceiver.y0(rectF.centerX() - (min2 / 2.0f), (rectF.height() * 0.12f) + rectF.top, min2, min2);
             imageReceiver.h(canvas, null);
-            ly0Var2.e(canvas, rectF.centerX() - (ly0Var2.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(50.0f));
-            ly0Var.e(canvas, rectF.centerX() - (ly0Var.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(30.0f));
+            my0Var2.e(canvas, rectF.centerX() - (my0Var2.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(50.0f));
+            my0Var.e(canvas, rectF.centerX() - (my0Var.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(30.0f));
         }
         canvas.restore();
     }
@@ -371,7 +371,7 @@ public final class u6 extends a5.h {
     }
 
     public final void h() {
-        ly0 ly0Var;
+        my0 my0Var;
         int currentTime = ConnectionsManager.getInstance(p10.s0).getCurrentTime();
         int i7 = this.G;
         if (currentTime > i7) {
@@ -384,9 +384,9 @@ public final class u6 extends a5.h {
                 this.D.t(org.telegram.messenger.g0.g0(i7 - currentTime, true, false), true, true);
             }
         }
-        if (currentTime <= this.G || (ly0Var = this.y) == null) {
+        if (currentTime <= this.G || (my0Var = this.y) == null) {
             return;
         }
-        ly0Var.q(org.telegram.messenger.hd.M0(2131749966, null));
+        my0Var.q(org.telegram.messenger.hd.M0(2131749966, null));
     }
 }

@@ -66,7 +66,7 @@ import org.telegram.ui.g4;
 import org.telegram.ui.hl0;
 import org.telegram.ui.i9;
 import org.telegram.ui.ig;
-import org.telegram.ui.io0;
+import org.telegram.ui.jo0;
 import org.telegram.ui.l70;
 import org.telegram.ui.ld0;
 import org.telegram.ui.m40;
@@ -80,7 +80,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.z60;
 import zh.r3;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -604,7 +604,7 @@ public final /* synthetic */ class c1 implements Runnable {
                     H.W(profileActivity.a.U0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, hd.M0(2131751767, null), new d10(profileActivity, str12, i13, 8), false);
-                    H.l(R.drawable.msg_translate, hd.M0(2131743957, null), new io0(profileActivity, strArr2, str13, str12, 6), zArr2[0]);
+                    H.l(R.drawable.msg_translate, hd.M0(2131743957, null), new jo0(profileActivity, strArr2, str13, str12, 6), zArr2[0]);
                     H.Z();
                     break;
                 }

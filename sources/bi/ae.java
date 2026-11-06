@@ -12,10 +12,10 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ae {
     public int a;
@@ -31,14 +31,14 @@ public final class ae {
     public final ImageReceiver k;
     public final org.telegram.ui.Components.w8 l;
     public final org.telegram.ui.Components.w8 m;
-    public ly0 n;
-    public ly0 o;
+    public my0 n;
+    public my0 o;
     public boolean p;
     public final org.telegram.ui.Components.ic q;
     public int r;
     public Drawable s;
     public Drawable t;
-    public ly0 u;
+    public my0 u;
     public int v;
     public final /* synthetic */ be w;
 
@@ -79,7 +79,7 @@ public final class ae {
         imageReceiver.A0 = true;
         w8Var2.g(21);
         w8Var2.h(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.c8, ceVar.i1));
-        this.n = new ly0(str, 12.0f, null);
+        this.n = new my0(str, 12.0f, null);
     }
 
     public final void a(Canvas canvas) {
@@ -153,11 +153,11 @@ public final class ae {
             this.f.setLocalMatrix(matrix);
         }
         canvas.drawRoundRect(rectF, rectF.height() / f11, rectF.height() / f11, paint);
-        ly0 ly0Var = this.o;
-        ly0Var.c(L - (ly0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
-        ly0 ly0Var2 = this.n;
-        ly0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
-        ly0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, beVar.w.i1), canvas);
+        my0 my0Var = this.o;
+        my0Var.c(L - (my0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
+        my0 my0Var2 = this.n;
+        my0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
+        my0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, beVar.w.i1), canvas);
         if (this.v > 0) {
             int i13 = (int) L;
             int i14 = (int) L2;
@@ -167,8 +167,8 @@ public final class ae {
             this.s.setAlpha(i12);
             this.t.draw(canvas);
             this.s.draw(canvas);
-            ly0 ly0Var3 = this.u;
-            ly0Var3.c(L - (ly0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
+            my0 my0Var3 = this.u;
+            my0Var3.c(L - (my0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
         }
         canvas.restore();
     }
@@ -203,7 +203,7 @@ public final class ae {
                     }
                     str2 = str;
                 }
-                this.n = new ly0(str2, 12.0f, null);
+                this.n = new my0(str2, 12.0f, null);
                 beVar.invalidate();
             }
         }

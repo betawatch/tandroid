@@ -13,7 +13,7 @@ import java.io.File;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.u71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a20 extends c5.a {
     public final /* synthetic */ int c;
@@ -182,10 +182,10 @@ public final class a20 extends c5.a {
                 ug.v0 v0Var = new ug.v0(w0Var, w0Var.getContext(), i7);
                 kVar.addView(v0Var);
                 v0Var.a = i7;
-                org.telegram.ui.us0 us0Var = (org.telegram.ui.us0) w0Var.k1.get(i7);
-                int i15 = us0Var.a;
-                String str = us0Var.d;
-                CharSequence charSequence = us0Var.c;
+                org.telegram.ui.vs0 vs0Var = (org.telegram.ui.vs0) w0Var.k1.get(i7);
+                int i15 = vs0Var.a;
+                String str = vs0Var.d;
+                CharSequence charSequence = vs0Var.c;
                 TextView textView4 = v0Var.b;
                 w70 w70Var = v0Var.c;
                 if (i15 == 0 || i15 == 14 || i15 == 28) {
@@ -242,7 +242,7 @@ public final class a20 extends c5.a {
                 }
                 w70Var.setMaxWidth(fi.m3.a(w70Var.getText(), w70Var.getPaint()));
                 v0Var.requestLayout();
-                boolean z10 = us0Var.a == 40;
+                boolean z10 = vs0Var.a == 40;
                 if (z10 && v0Var.d == null) {
                     LinearLayout linearLayout = new LinearLayout(v0Var.getContext());
                     v0Var.d = linearLayout;

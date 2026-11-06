@@ -23,10 +23,10 @@ import org.telegram.ui.pn;
 import org.telegram.ui.pz0;
 import org.telegram.ui.rz0;
 import org.telegram.ui.t3;
-import org.telegram.ui.yr0;
+import org.telegram.ui.zr0;
 import tg.i2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -216,11 +216,11 @@ public final class g0 extends AnimatorListenerAdapter {
                 wt0Var.setX(0.0f);
                 return;
             case 12:
-                yr0 yr0Var = (yr0) this.d;
-                yr0Var.D = this.b ? 1.0f : 0.0f;
-                yr0Var.c.invalidate();
-                yr0Var.d.invalidate();
-                yr0Var.e();
+                zr0 zr0Var = (zr0) this.d;
+                zr0Var.D = this.b ? 1.0f : 0.0f;
+                zr0Var.c.invalidate();
+                zr0Var.d.invalidate();
+                zr0Var.e();
                 Runnable runnable3 = (Runnable) this.c;
                 if (runnable3 != null) {
                     runnable3.run();

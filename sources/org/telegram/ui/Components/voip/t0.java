@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.c40;
 import org.telegram.ui.t20;
@@ -30,7 +30,7 @@ import org.telegram.ui.va;
 import org.telegram.ui.w9;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class t0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean D;
@@ -145,7 +145,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         ch0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.w = true;
         zg0Var.M(69);
-        ch0Var.setOnClickListener(new n41(i10, this, zg0Var));
+        ch0Var.setOnClickListener(new t41(i10, this, zg0Var));
         addView(ch0Var, ha.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 

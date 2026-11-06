@@ -4,7 +4,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Looper;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy implements Runnable {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class oy implements Runnable {
                 ry ryVar = this.b;
                 ax axVar = ryVar.b0;
                 SurfaceTexture surfaceTexture = ryVar.x;
-                c51 c51Var = (c51) axVar.b;
-                if (c51Var.a != null) {
-                    c51Var.a.y0(new Surface(surfaceTexture));
+                h51 h51Var = (h51) axVar.b;
+                if (h51Var.a != null) {
+                    h51Var.a.y0(new Surface(surfaceTexture));
                     break;
                 }
                 break;

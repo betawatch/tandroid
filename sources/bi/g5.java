@@ -8,15 +8,15 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.qs;
+import org.telegram.ui.Components.b31;
 import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.dm0;
-import org.telegram.ui.Components.e21;
 import org.telegram.ui.Components.em0;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.sp0;
-import org.telegram.ui.Components.v21;
 import org.telegram.ui.an;
 import org.telegram.ui.bn;
 import org.telegram.ui.cn;
@@ -33,16 +33,16 @@ import org.telegram.ui.o91;
 import org.telegram.ui.oy0;
 import org.telegram.ui.q91;
 import org.telegram.ui.r91;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import org.telegram.ui.sv;
 import org.telegram.ui.v91;
 import org.telegram.ui.ww;
 import org.telegram.ui.yz;
 import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class g5 extends h61 {
+public final class g5 extends m61 {
     public final /* synthetic */ int a;
     public final Object b;
     public final /* synthetic */ Object c;
@@ -53,7 +53,7 @@ public final class g5 extends h61 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void b(View view, int i7, int i10) {
         m5 m5Var;
         org.telegram.ui.ActionBar.f2 f2Var;
@@ -147,12 +147,12 @@ public final class g5 extends h61 {
                 nb1Var.Z();
                 break;
             case 9:
-                org.telegram.ui.Wallet.y5.Y0((k41) view, false);
+                org.telegram.ui.Wallet.y5.Y0((q41) view, false);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final View d(int i7) {
         m5 m5Var;
         int i10;
@@ -279,13 +279,13 @@ public final class g5 extends h61 {
                 yzVar2.b.j(new q91(1));
                 return yzVar2;
             case 8:
-                return new rq0((Context) this.b, 13);
+                return new sq0((Context) this.b, 13);
             case 9:
                 org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.c;
-                k41[] k41VarArr = y5Var.r0;
-                k41 k41Var = k41VarArr[i7];
-                if (k41Var != null) {
-                    return k41Var;
+                q41[] q41VarArr = y5Var.r0;
+                q41 q41Var = q41VarArr[i7];
+                if (q41Var != null) {
+                    return q41Var;
                 }
                 Context context2 = (Context) this.b;
                 i11 = ((org.telegram.ui.ActionBar.f2) y5Var).currentAccount;
@@ -308,15 +308,15 @@ public final class g5 extends h61 {
                     kxVar.setSelectorDrawableColor(0);
                 }
                 kxVar.f3.r = false;
-                kxVar.j(new v21(this, i7));
-                k41VarArr[i7] = kxVar;
+                kxVar.j(new b31(this, i7));
+                q41VarArr[i7] = kxVar;
                 return kxVar;
             default:
                 return i7 == 0 ? ((wg.a0) this.b).b : ((wg.w0) this.c).b;
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int e() {
         switch (this.a) {
             case 0:
@@ -346,7 +346,7 @@ public final class g5 extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public int f(int i7) {
         switch (this.a) {
             case 1:
@@ -359,7 +359,7 @@ public final class g5 extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public CharSequence g(int i7) {
         int i10 = this.a;
         Object obj = this.b;
@@ -368,7 +368,7 @@ public final class g5 extends h61 {
                 if (i7 == 0) {
                     return org.telegram.messenger.hd.M0(2131746709, null);
                 }
-                String O0 = e21.O0(((di.j6) ((sp0) this.c).f.get(i7 - 1)).E, null, null);
+                String O0 = k21.O0(((di.j6) ((sp0) this.c).f.get(i7 - 1)).E, null, null);
                 if (O0 == null) {
                     return null;
                 }
@@ -420,7 +420,7 @@ public final class g5 extends h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public int h(int i7) {
         switch (this.a) {
             case 0:

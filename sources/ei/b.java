@@ -18,7 +18,7 @@ import org.telegram.ui.Components.fm0;
 import org.telegram.ui.Components.hg0;
 import org.telegram.ui.Components.iy;
 import org.telegram.ui.Components.mo0;
-import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.vo;
@@ -33,7 +33,7 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.la;
 import org.telegram.ui.mb;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final /* synthetic */ class b implements View.OnTouchListener {
                 int i24 = yv0.n2;
                 break;
             case 25:
-                int i25 = n01.e0;
+                int i25 = s01.m0;
                 break;
             case 26:
                 int i26 = UndoView.i0;

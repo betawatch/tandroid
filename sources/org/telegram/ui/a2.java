@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout implements org.telegram.messenger.x5, org.telegram.ui.Cells.h9 {
     public int D;
@@ -119,10 +119,10 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.x5, 
         int i7 = ((g4) this.a).X;
         String r10 = org.telegram.messenger.w7.r(null, this.H);
         org.telegram.messenger.w7.G(i7);
-        File K = org.telegram.messenger.w7.K(this.H, null, true, true);
+        File J = org.telegram.messenger.w7.J(this.H, null, true, true);
         org.telegram.messenger.w7.G(i7);
-        File K2 = org.telegram.messenger.w7.K(this.H, null, false, true);
-        boolean z10 = K.exists() || (K2 != null && K2.exists());
+        File J2 = org.telegram.messenger.w7.J(this.H, null, false, true);
+        boolean z10 = J.exists() || (J2 != null && J2.exists());
         boolean isEmpty = TextUtils.isEmpty(r10);
         RadialProgress2 radialProgress2 = this.f;
         if (isEmpty) {
@@ -136,7 +136,7 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.x5, 
         } else {
             org.telegram.messenger.z5.q(i7).a(r10, null, this);
             float f10 = 0.0f;
-            if (this.T || org.telegram.messenger.w7.G(i7).T(r10)) {
+            if (this.T || org.telegram.messenger.w7.G(i7).S(r10)) {
                 this.F = 1;
                 Float w10 = org.telegram.messenger.gc.D().w(r10);
                 if (w10 != null) {
@@ -401,11 +401,11 @@ public final class a2 extends FrameLayout implements org.telegram.messenger.x5, 
                                     if (photo3 instanceof org.telegram.ui.web.v1) {
                                         this.T = true;
                                         imageReceiver.N = null;
-                                        org.telegram.ui.web.w1.g((org.telegram.ui.web.v1) photo3, imageReceiver, new fq0(this, 9));
+                                        org.telegram.ui.web.w1.g((org.telegram.ui.web.v1) photo3, imageReceiver, new gq0(this, 9));
                                     } else {
                                         org.telegram.messenger.w7.G(g4Var.X);
-                                        File K = org.telegram.messenger.w7.K(this.H, null, true, true);
-                                        if (this.T || K.exists()) {
+                                        File J = org.telegram.messenger.w7.J(this.H, null, true, true);
+                                        if (this.T || J.exists()) {
                                             imageReceiver.N = null;
                                             imageReceiver.r0(org.telegram.messenger.hc.i(this.H, this.L), this.I, org.telegram.messenger.hc.i(this.J, this.L), this.K, null, this.H.size, null, e4Var2 != null ? e4Var2.E : null, 1);
                                         } else {

@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.google.android.gms.common.api.internal.p, tg.l1, sg.v0, v4.i1, androidx.lifecycle.s0 {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // ue.a
     public void H0() {
-        ((m41) this.b).h.c(false);
+        ((s41) this.b).h.c(false);
     }
 
     @Override // ti.m
@@ -95,7 +95,7 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // ue.a
     public void O(float f10, float f11) {
-        Runnable runnable = ((m41) this.b).j;
+        Runnable runnable = ((s41) this.b).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -140,7 +140,7 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
     @Override // ue.a
     public boolean U0(float f10, float f11) {
         int L = org.telegram.messenger.g0.L(9.0f);
-        RectF rectF = ((m41) this.b).g;
+        RectF rectF = ((s41) this.b).g;
         float f12 = -L;
         rectF.inset(f12, f12);
         boolean contains = rectF.contains(f10, f11);
@@ -161,11 +161,11 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // tg.l1
     public void X(float f10) {
-        org.telegram.ui.tp0 tp0Var = (org.telegram.ui.tp0) this.b;
-        sg.l0.e(tp0Var.y1).k(String.valueOf(sg.h.a.indexOf(tp0Var.F0.getCurrentBrush())), f10);
-        sg.j1 j1Var = tp0Var.t1;
+        org.telegram.ui.up0 up0Var = (org.telegram.ui.up0) this.b;
+        sg.l0.e(up0Var.y1).k(String.valueOf(sg.h.a.indexOf(up0Var.F0.getCurrentBrush())), f10);
+        sg.j1 j1Var = up0Var.t1;
         j1Var.c = f10;
-        tp0Var.s0(j1Var, null);
+        up0Var.s0(j1Var, null);
     }
 
     @Override // jg.y1
@@ -178,7 +178,7 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
         tg.o0 o0Var = (tg.o0) this.b;
         o0Var.b.a.f();
         o0Var.x.setViewHidden(false);
-        PhotoViewer photoViewer = ((org.telegram.ui.sp0) o0Var).K;
+        PhotoViewer photoViewer = ((org.telegram.ui.tp0) o0Var).K;
         Drawable[] drawableArr = PhotoViewer.Y8;
         photoViewer.U2(true, true);
     }
@@ -223,13 +223,13 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // ti.m
     public void b() {
-        f71 f71Var = ((vt) this.b).j1;
-        if (f71Var == null || !f71Var.x) {
+        l71 l71Var = ((vt) this.b).j1;
+        if (l71Var == null || !l71Var.x) {
             return;
         }
-        f71Var.a.g0();
-        f71Var.n();
-        f71Var.f0.d(true, true);
+        l71Var.a.g0();
+        l71Var.n();
+        l71Var.f0.d(true, true);
     }
 
     @Override // org.telegram.ui.Components.wr0
@@ -777,7 +777,7 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // ue.a
     public void t0() {
-        ((m41) this.b).h.c(true);
+        ((s41) this.b).h.c(true);
     }
 
     @Override // ti.m
@@ -832,9 +832,9 @@ public final class qt implements ti.m, r0.m, wr0, ue.a, jg.y1, q5.b, x2.d1, com.
 
     @Override // tg.l1
     public float get() {
-        org.telegram.ui.tp0 tp0Var = (org.telegram.ui.tp0) this.b;
-        int i7 = tp0Var.y1;
-        sg.h currentBrush = tp0Var.F0.getCurrentBrush();
+        org.telegram.ui.up0 up0Var = (org.telegram.ui.up0) this.b;
+        int i7 = up0Var.y1;
+        sg.h currentBrush = up0Var.F0.getCurrentBrush();
         if (currentBrush == null) {
             return sg.l0.e(i7).i;
         }

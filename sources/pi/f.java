@@ -8,12 +8,12 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.os.Build;
 import bg.c0;
-import c8.nb;
+import c8.ob;
 import oi.r;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class f extends oi.e {
     public g D;
@@ -27,9 +27,9 @@ public final class f extends oi.e {
     public final RectF L;
     public final ri.a f;
     public final a h;
-    public final nb n;
-    public final nb r;
-    public nb s;
+    public final ob n;
+    public final ob r;
+    public ob s;
     public boolean w = true;
     public boolean x = true;
     public int y = 1;
@@ -45,7 +45,7 @@ public final class f extends oi.e {
         this.f = aVar;
         this.h = aVar instanceof a ? (a) aVar : null;
         if (aVar instanceof ri.e) {
-            nb cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
+            ob cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
             this.n = cVar;
             this.r = cVar;
         } else {
@@ -120,8 +120,8 @@ public final class f extends oi.e {
         canvas.clipRect(bounds);
         canvas.translate(bounds.left, bounds.top);
         if (!canvas.isHardwareAccelerated()) {
-            nb nbVar = this.s;
-            nbVar.getClass();
+            ob obVar = this.s;
+            obVar.getClass();
         }
         this.s.c(canvas);
         canvas.restore();
@@ -141,16 +141,16 @@ public final class f extends oi.e {
     @Override // oi.e
     public final void g(r rVar) {
         boolean z9 = rVar.a;
-        nb nbVar = this.r;
-        nb nbVar2 = z9 ? this.n : nbVar;
-        nb nbVar3 = this.s;
-        if (nbVar3 != nbVar2) {
-            if (nbVar3 != null) {
-                nbVar3.b();
+        ob obVar = this.r;
+        ob obVar2 = z9 ? this.n : obVar;
+        ob obVar3 = this.s;
+        if (obVar3 != obVar2) {
+            if (obVar3 != null) {
+                obVar3.b();
             }
-            this.s = nbVar2;
-            nbVar2.e(this.c / 255.0f);
-            if (this.s == nbVar) {
+            this.s = obVar2;
+            obVar2.e(this.c / 255.0f);
+            if (this.s == obVar) {
                 this.x = true;
             } else {
                 this.w = true;

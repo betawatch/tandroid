@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class x71 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public String D;
@@ -172,7 +172,7 @@ public final class x71 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         } else {
             this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131751219, null));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 14));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 14));
         this.c = this.actionBar.q().e(1, org.telegram.messenger.hd.M0(2131751355, null).toUpperCase());
         LinearLayout linearLayout = new LinearLayout(context);
         this.fragmentView = linearLayout;

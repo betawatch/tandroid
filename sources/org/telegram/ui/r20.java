@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class r20 extends er0 {
+public final class r20 extends fr0 {
     public final /* synthetic */ c40 T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class r20 extends er0 {
         this.T = c40Var;
     }
 
-    @Override // org.telegram.ui.er0
+    @Override // org.telegram.ui.fr0
     public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
         c40 c40Var = this.T;
         b20 b20Var = c40Var.i1;
@@ -32,7 +32,7 @@ public final class r20 extends er0 {
         }
     }
 
-    @Override // org.telegram.ui.er0
+    @Override // org.telegram.ui.fr0
     public final void e() {
         b20 b20Var = this.T.i1;
         super.e();

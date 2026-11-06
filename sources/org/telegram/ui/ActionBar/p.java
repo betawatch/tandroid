@@ -26,12 +26,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lg0;
 import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
@@ -56,7 +56,7 @@ import org.telegram.ui.w8;
 import org.telegram.ui.y6;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -86,8 +86,8 @@ public final /* synthetic */ class p implements Runnable {
     */
     public final void run() {
         int i7;
-        f41 f41Var;
-        cz0 cz0Var;
+        l41 l41Var;
+        dz0 dz0Var;
         int i10 = this.a;
         int i11 = 2;
         int i12 = -1;
@@ -157,14 +157,14 @@ public final /* synthetic */ class p implements Runnable {
                 d6 d6Var = (d6) obj;
                 TLRPC.TL_wallPaper tL_wallPaper = d6Var.a;
                 w7.G(p10.s0);
-                File K = w7.K(tL_wallPaper.document, null, true, true);
+                File J = w7.J(tL_wallPaper.document, null, true, true);
                 ArrayList arrayList3 = d6Var.b;
                 int size3 = arrayList3.size();
                 ArrayList arrayList4 = null;
                 for (int i16 = 0; i16 < size3; i16++) {
                     h6 h6Var2 = (h6) arrayList3.get(i16);
                     if (h6Var2.o.equals(tL_wallPaper.slug)) {
-                        Bitmap b10 = e6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), K, h6Var2);
+                        Bitmap b10 = e6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, h6Var2);
                         if (arrayList4 == null) {
                             arrayList4 = new ArrayList();
                             arrayList4.add(h6Var2);
@@ -247,9 +247,9 @@ public final /* synthetic */ class p implements Runnable {
                         i7 = i18;
                     }
                 }
-                v4.d1 K2 = x5Var.b.K(i7);
-                if (K2 != null) {
-                    View view2 = K2.a;
+                v4.d1 K = x5Var.b.K(i7);
+                if (K != null) {
+                    View view2 = K.a;
                     e60 e60Var = new e60(x5Var.getParentActivity(), x5Var);
                     e60Var.h(true);
                     e60Var.setParentWindow(org.telegram.ui.Components.v4.N(x5Var, e60Var, view2, view2.getMeasuredWidth() / 2.0f, view2.getMeasuredHeight() / 2.0f));
@@ -476,9 +476,9 @@ public final /* synthetic */ class p implements Runnable {
                 if (tL_premium_boostsStatus2 != null) {
                     zdVar.r0 = tL_premium_boostsStatus2.level;
                 }
-                k41 k41Var = zdVar.X0;
-                if (k41Var != null && (f41Var = k41Var.f3) != null) {
-                    f41Var.O(true);
+                q41 q41Var = zdVar.X0;
+                if (q41Var != null && (l41Var = q41Var.f3) != null) {
+                    l41Var.O(true);
                     break;
                 }
                 break;
@@ -487,13 +487,13 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             default:
                 an anVar = (an) obj2;
-                cz0[] cz0VarArr = (cz0[]) obj;
-                if (!anVar.Kb && (cz0Var = cz0VarArr[0]) != null) {
-                    cz0VarArr[0] = null;
-                    if (anVar.x0 == cz0Var) {
+                dz0[] dz0VarArr = (dz0[]) obj;
+                if (!anVar.Kb && (dz0Var = dz0VarArr[0]) != null) {
+                    dz0VarArr[0] = null;
+                    if (anVar.x0 == dz0Var) {
                         anVar.x0 = null;
                     }
-                    org.telegram.messenger.g0.E2(cz0Var);
+                    org.telegram.messenger.g0.E2(dz0Var);
                     break;
                 }
                 break;

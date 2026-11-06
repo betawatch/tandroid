@@ -5,7 +5,7 @@ import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
-import c8.mc;
+import c8.nc;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
@@ -29,7 +29,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -826,7 +826,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + mc.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + nc.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -963,7 +963,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + mc.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + nc.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -1480,8 +1480,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = mc.b(cVar4.g(this.g));
-                long[] b11 = mc.b(cVar5.g(this.g));
+                long[] b10 = nc.b(cVar4.g(this.g));
+                long[] b11 = nc.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;

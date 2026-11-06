@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class rq0 extends g.p {
     public final /* synthetic */ int c;
@@ -37,21 +37,21 @@ public final class rq0 extends g.p {
                 ((us0) adapter).getClass();
                 return 1;
             case 1:
-                i41 i41Var = (i41) this.d;
-                f41 f41Var = ((k41) this.e).f3;
-                if (f41Var == null) {
-                    return i41Var.J;
+                o41 o41Var = (o41) this.d;
+                l41 l41Var = ((q41) this.e).f3;
+                if (l41Var == null) {
+                    return o41Var.J;
                 }
-                r31 G = f41Var.G(i7);
-                return (G == null || (i10 = G.u) == -1) ? i41Var.J : i10;
+                x31 G = l41Var.G(i7);
+                return (G == null || (i10 = G.u) == -1) ? o41Var.J : i10;
             default:
-                i41 i41Var2 = (i41) this.d;
-                f41 f41Var2 = ((k41) this.e).f3;
-                if (f41Var2 == null) {
-                    return i41Var2.J;
+                o41 o41Var2 = (o41) this.d;
+                l41 l41Var2 = ((q41) this.e).f3;
+                if (l41Var2 == null) {
+                    return o41Var2.J;
                 }
-                r31 G2 = f41Var2.G(i7);
-                return (G2 == null || (i11 = G2.u) == -1) ? i41Var2.J : i11;
+                x31 G2 = l41Var2.G(i7);
+                return (G2 == null || (i11 = G2.u) == -1) ? o41Var2.J : i11;
         }
     }
 }

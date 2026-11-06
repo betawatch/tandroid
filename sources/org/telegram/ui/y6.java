@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y6 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public static volatile boolean h0 = false;
@@ -551,7 +551,7 @@ public final class y6 extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 return;
             }
         }
-        Utilities.f.c(new fq0(c20Var, 15));
+        Utilities.f.c(new gq0(c20Var, 15));
     }
 
     public static void n0(String str, int i7, int[] iArr, org.telegram.messenger.c20 c20Var) {
@@ -657,7 +657,7 @@ public final class y6 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         Long l10;
         Long l11 = k0;
         if (l11 == null || (l10 = l0) == null) {
-            Utilities.f.c(new fq0(a5Var, 14));
+            Utilities.f.c(new gq0(a5Var, 14));
         } else {
             a5Var.a(l11, l10);
         }
@@ -929,7 +929,7 @@ public final class y6 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         frameLayout.setBackground(c10);
         org.telegram.ui.Components.ht0 ht0Var4 = this.b0;
         i6 i6Var2 = this.M;
-        org.telegram.ui.Components.p61 viewPager = i6Var2.getViewPager();
+        org.telegram.ui.Components.v61 viewPager = i6Var2.getViewPager();
         i6 i6Var3 = this.M;
         Objects.requireNonNull(i6Var3);
         ht0Var4.x(i6Var2, viewPager, new w0(i6Var3, 8));

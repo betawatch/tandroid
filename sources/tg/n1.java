@@ -11,7 +11,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import c8.ha;
-import c8.je;
+import c8.ke;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import fi.e7;
 import org.telegram.messenger.w7;
@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n1 extends j {
     public final Bitmap A0;
@@ -44,7 +44,7 @@ public final class n1 extends j {
     public final int w0;
     public boolean x0;
     public final w5 y0;
-    public final p41 z0;
+    public final v41 z0;
 
     public n1(Context context, PointF pointF, mt0 mt0Var, String str, int i7) {
         super(context, pointF);
@@ -61,12 +61,12 @@ public final class n1 extends j {
         setScale(1.0f);
         this.r0 = str;
         this.v0 = mt0Var;
-        p41 p41Var = new p41(this, context);
-        this.z0 = p41Var;
-        addView(p41Var, ha.c(-1.0f, -1));
+        v41 v41Var = new v41(this, context);
+        this.z0 = v41Var;
+        addView(v41Var, ha.c(-1.0f, -1));
         xq xqVar = xq.h;
-        this.u0 = new w5(p41Var, 0L, 500L, xqVar);
-        this.y0 = new w5(p41Var, 0L, 350L, xqVar);
+        this.u0 = new w5(v41Var, 0L, 500L, xqVar);
+        this.y0 = new w5(v41Var, 0L, 350L, xqVar);
         this.w0 = i7;
         Bitmap q10 = e7.q(new ab.t(str, 2), 1920, 1920, 0, false);
         this.A0 = q10;
@@ -180,7 +180,7 @@ public final class n1 extends j {
             TLRPC.PhotoSize w10 = w7.w(((TLRPC.Photo) tLObject).sizes, 1000, false, null, false);
             try {
                 w7.G(i7);
-                return w7.K(w10, null, true, true).getAbsolutePath();
+                return w7.J(w10, null, true, true).getAbsolutePath();
             } catch (Exception unused) {
             }
         }
@@ -193,9 +193,9 @@ public final class n1 extends j {
         if (!z9) {
             this.u0.f(z10, true);
         }
-        p41 p41Var = this.z0;
-        if (p41Var != null) {
-            p41Var.invalidate();
+        v41 v41Var = this.z0;
+        if (v41Var != null) {
+            v41Var.invalidate();
         }
     }
 
@@ -205,7 +205,7 @@ public final class n1 extends j {
         }
         ia.a aVar = new ia.a();
         aVar.a = true;
-        zzd a10 = je.a(new zb.d(aVar));
+        zzd a10 = ke.a(new zb.d(aVar));
         this.B0 = true;
         a10.g(ub.a.a(bitmap, this.w0)).addOnSuccessListener(new m3(this, 23)).addOnFailureListener(new org.telegram.ui.web.a0(10, this, bitmap));
     }
@@ -216,9 +216,9 @@ public final class n1 extends j {
         if (!z9) {
             this.y0.f(z10, true);
         }
-        p41 p41Var = this.z0;
-        if (p41Var != null) {
-            p41Var.invalidate();
+        v41 v41Var = this.z0;
+        if (v41Var != null) {
+            v41Var.invalidate();
         }
     }
 
@@ -237,12 +237,12 @@ public final class n1 extends j {
         setScale(1.0f);
         this.q0 = tLObject;
         this.v0 = mt0Var;
-        p41 p41Var = new p41(this, context);
-        this.z0 = p41Var;
-        addView(p41Var, ha.c(-1.0f, -1));
+        v41 v41Var = new v41(this, context);
+        this.z0 = v41Var;
+        addView(v41Var, ha.c(-1.0f, -1));
         xq xqVar = xq.h;
-        this.u0 = new w5(p41Var, 0L, 500L, xqVar);
-        this.y0 = new w5(p41Var, 0L, 350L, xqVar);
+        this.u0 = new w5(v41Var, 0L, 500L, xqVar);
+        this.y0 = new w5(v41Var, 0L, 350L, xqVar);
         k();
     }
 }

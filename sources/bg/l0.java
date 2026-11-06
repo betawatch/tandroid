@@ -62,14 +62,14 @@ import org.telegram.ui.bh;
 import org.telegram.ui.bi0;
 import org.telegram.ui.e4;
 import org.telegram.ui.f3;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.i9;
 import org.telegram.ui.m40;
 import org.telegram.ui.nr;
 import org.telegram.ui.o50;
 import org.telegram.ui.tf0;
-import org.telegram.ui.vs0;
 import org.telegram.ui.web.x0;
+import org.telegram.ui.ws0;
 import org.telegram.ui.zh0;
 import p4.c1;
 import p4.g1;
@@ -77,7 +77,7 @@ import p4.i1;
 import p4.m1;
 import v4.d1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -136,9 +136,9 @@ public final /* synthetic */ class l0 implements Runnable {
                             z9 = true;
                         } else {
                             w7.G(i11);
-                            File K = w7.K(w10, null, true, true);
+                            File J = w7.J(w10, null, true, true);
                             w7.G(i11);
-                            w7.K(photoSize.location, null, true, true).renameTo(K);
+                            w7.J(photoSize.location, null, true, true).renameTo(J);
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(photoSize.location.volume_id);
                             sb2.append("_");
@@ -151,9 +151,9 @@ public final /* synthetic */ class l0 implements Runnable {
                         }
                         if (w11 != null && photoSize2 != null && photoSize2.location != null) {
                             w7.G(i11);
-                            File K2 = w7.K(w11, null, z9, z9);
+                            File J2 = w7.J(w11, null, z9, z9);
                             w7.G(i11);
-                            w7.K(photoSize2.location, null, z9, z9).renameTo(K2);
+                            w7.J(photoSize2.location, null, z9, z9).renameTo(J2);
                         }
                         n0.a(tL_photos_photo.photo, a22, false);
                         p10.i(i11).w(a22);
@@ -448,7 +448,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 f2 f2Var3 = (f2) obj4;
                 List<Purchase> list = (List) obj;
                 z0 z0Var = (z0) obj3;
-                vs0 vs0Var = (vs0) obj2;
+                ws0 ws0Var = (ws0) obj2;
                 if (((f5.f) obj5).a == 0) {
                     tf0 tf0Var = new tf0(c10 == true ? 1 : 0, f2Var3);
                     int i20 = this.c;
@@ -477,7 +477,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i20).sendRequest(tL_payments_canPurchaseStore, new ox(i20, 5, f2Var3, vs0Var, z0Var, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
+                    ConnectionsManager.getInstance(i20).sendRequest(tL_payments_canPurchaseStore, new ox(i20, 5, f2Var3, ws0Var, z0Var, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
                     break;
                 }
                 break;
@@ -509,7 +509,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     u1Var2.R = M0;
                     u1Var2.T = hd.M0(2131752899, null);
                     alertDialog$Builder.k(hd.M0(2131752909, null), new org.telegram.ui.web.a0(0, x0Var, strArr2));
-                    alertDialog$Builder.h(hd.M0(2131752904, null), new fo0(17));
+                    alertDialog$Builder.h(hd.M0(2131752904, null), new go0(17));
                     x0Var.Y(3, u1Var2, new org.telegram.ui.web.t(strArr2, i21, u0Var, o7Var, 1));
                     break;
                 }

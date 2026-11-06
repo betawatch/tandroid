@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q61 extends org.telegram.ui.Components.pj0 {
     public boolean e3;
@@ -147,21 +147,21 @@ public final class q61 extends org.telegram.ui.Components.pj0 {
         if (u71Var.K0 != null) {
             int i10 = 0;
             while (true) {
-                org.telegram.ui.Components.q61[] q61VarArr = u71Var.K0;
-                if (i10 >= q61VarArr.length) {
+                org.telegram.ui.Components.w61[] w61VarArr = u71Var.K0;
+                if (i10 >= w61VarArr.length) {
                     break;
                 }
-                q61VarArr[i10].invalidate();
+                w61VarArr[i10].invalidate();
                 i10++;
             }
         }
         if (u71Var.L0 != null) {
             while (true) {
-                org.telegram.ui.Components.q61[] q61VarArr2 = u71Var.L0;
-                if (i7 >= q61VarArr2.length) {
+                org.telegram.ui.Components.w61[] w61VarArr2 = u71Var.L0;
+                if (i7 >= w61VarArr2.length) {
                     break;
                 }
-                q61VarArr2[i7].invalidate();
+                w61VarArr2[i7].invalidate();
                 i7++;
             }
         }

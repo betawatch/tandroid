@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class dl0 extends FrameLayout implements org.telegram.messenger.ls {
     public int D;
@@ -146,7 +146,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
             return;
         }
         SpannableString spannableString = new SpannableString(Double.toString(Math.round((z9 ? org.telegram.messenger.qp.s1(i7).C5 : org.telegram.messenger.qp.s1(i7).D5) * 10.0f) / 10.0d).replaceAll("\\.0$", ""));
-        spannableString.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
         if (f2Var.hasStoryViewer()) {
             return;
         }
@@ -165,7 +165,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 org.telegram.messenger.w7.G(this.d).y(arrayList);
-                org.telegram.messenger.w7.G(this.d).Q(arrayList2);
+                org.telegram.messenger.w7.G(this.d).P(arrayList2);
                 String lowerCase = this.K.toLowerCase();
                 boolean equals = lowerCase.equals(this.L);
                 this.L = lowerCase;
@@ -192,7 +192,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
             this.n.clear();
         }
         org.telegram.messenger.w7.G(this.d).y(this.h);
-        org.telegram.messenger.w7.G(this.d).Q(this.n);
+        org.telegram.messenger.w7.G(this.d).P(this.n);
         for (int i10 = 0; i10 < this.e.size(); i10++) {
             ((org.telegram.messenger.ij) this.e.get(i10)).L5(null, true);
         }
@@ -313,7 +313,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
                 if (i7 >= arrayList3.size()) {
                     break;
                 }
-                if (org.telegram.messenger.w7.G(this.d).T(((org.telegram.messenger.ij) arrayList3.get(i7)).S0())) {
+                if (org.telegram.messenger.w7.G(this.d).S(((org.telegram.messenger.ij) arrayList3.get(i7)).S0())) {
                     this.H = true;
                     break;
                 }

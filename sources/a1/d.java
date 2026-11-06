@@ -73,9 +73,9 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.jh;
 import org.telegram.ui.Components.kb0;
 import org.telegram.ui.Components.mb0;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.qx0;
 import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
@@ -97,7 +97,7 @@ import org.telegram.ui.v91;
 import org.telegram.ui.w81;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1, t4, fb0, ri, tr, w10 {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
         Context context = (Context) this.b;
         int[] iArr = (int[]) this.c;
         f6 f6Var = (f6) this.d;
-        sx0 sx0Var = (sx0) this.e;
+        tx0 tx0Var = (tx0) this.e;
         Integer num = (Integer) number;
         Float f10 = (Float) obj;
         LinearLayout f11 = k5.f(context, 1);
@@ -207,7 +207,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         f11.addView(textView, ha.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
-        return new px0(sx0Var, f11, false);
+        return new qx0(tx0Var, f11, false);
     }
 
     @Override // org.telegram.messenger.ri

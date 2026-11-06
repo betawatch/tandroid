@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k60 {
     public ViewGroup A;
@@ -654,16 +654,16 @@ public final class k60 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0471  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0496  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x04b5  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0551 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x055a  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0576  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0466  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0475  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x049a  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0555 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x055e  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x057a  */
     /* JADX WARN: Removed duplicated region for block: B:157:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0416 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0429  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x041a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x042d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -671,10 +671,11 @@ public final class k60 {
         float f10;
         float f11;
         int i7;
+        int i10;
         float f12;
         float f13;
         int width;
-        int i10;
+        int i11;
         int height;
         boolean z9;
         boolean z10;
@@ -690,28 +691,28 @@ public final class k60 {
         }
         Y();
         if (this.T > 0) {
-            int i11 = 0;
-            while (i11 < this.A.getChildCount() - 1) {
-                View childAt = i11 == this.A.getChildCount() - 1 ? this.D : this.A.getChildAt(i11);
+            int i12 = 0;
+            while (i12 < this.A.getChildCount() - 1) {
+                View childAt = i12 == this.A.getChildCount() - 1 ? this.D : this.A.getChildAt(i12);
                 if (childAt instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) childAt;
-                    for (int i12 = 0; i12 < actionBarPopupWindow$ActionBarPopupWindowLayout2.getItemsCount(); i12++) {
-                        actionBarPopupWindow$ActionBarPopupWindowLayout2.L.getChildAt(i12).getLayoutParams().width = org.telegram.messenger.g0.L(this.T);
+                    for (int i13 = 0; i13 < actionBarPopupWindow$ActionBarPopupWindowLayout2.getItemsCount(); i13++) {
+                        actionBarPopupWindow$ActionBarPopupWindowLayout2.L.getChildAt(i13).getLayoutParams().width = org.telegram.messenger.g0.L(this.T);
                     }
                 }
-                i11++;
+                i12++;
             }
         } else if (this.S > 0) {
-            int i13 = 0;
-            while (i13 < this.A.getChildCount() - 1) {
-                View childAt2 = i13 == this.A.getChildCount() - 1 ? this.D : this.A.getChildAt(i13);
+            int i14 = 0;
+            while (i14 < this.A.getChildCount() - 1) {
+                View childAt2 = i14 == this.A.getChildCount() - 1 ? this.D : this.A.getChildAt(i14);
                 if (childAt2 instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) childAt2;
-                    for (int i14 = 0; i14 < actionBarPopupWindow$ActionBarPopupWindowLayout3.getItemsCount(); i14++) {
-                        actionBarPopupWindow$ActionBarPopupWindowLayout3.L.getChildAt(i14).setMinimumWidth(org.telegram.messenger.g0.L(this.S));
+                    for (int i15 = 0; i15 < actionBarPopupWindow$ActionBarPopupWindowLayout3.getItemsCount(); i15++) {
+                        actionBarPopupWindow$ActionBarPopupWindowLayout3.L.getChildAt(i15).setMinimumWidth(org.telegram.messenger.g0.L(this.S));
                     }
                 }
-                i13++;
+                i14++;
             }
         }
         if ((this.u || this.v) && this.n == null) {
@@ -727,7 +728,7 @@ public final class k60 {
         }
         Point point = org.telegram.messenger.g0.q;
         float f16 = point.y / 2.0f;
-        int i15 = 2;
+        int i16 = 2;
         float[] fArr = this.o;
         View view = this.f;
         if (view != 0) {
@@ -749,24 +750,26 @@ public final class k60 {
         RectF rectF = new RectF();
         if (view instanceof j60) {
             ((j60) view).g(rectF);
+            i7 = 0;
         } else {
-            int i16 = this.N;
-            if (i16 == 0 || (i7 = this.O) == 0) {
+            int i17 = this.N;
+            i7 = 0;
+            if (i17 == 0 || (i10 = this.O) == 0) {
                 rectF.set(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight());
             } else {
-                rectF.set(0.0f, 0.0f, i16, i7);
+                rectF.set(0.0f, 0.0f, i17, i10);
             }
         }
         float f17 = f11 + rectF.left;
         float f18 = f16 + rectF.top;
         if (this.j) {
-            fArr[0] = 0.0f;
+            fArr[i7] = 0.0f;
             f17 = 0.0f;
         }
         if (this.s > 0 || this.u || this.v) {
             i60 i60Var3 = new i60(this, context);
             this.x = i60Var3;
-            this.y = new rk(i15, i60Var3);
+            this.y = new rk(i16, i60Var3);
             overlayContainerView.getViewTreeObserver().addOnPreDrawListener(this.y);
             overlayContainerView.addView(this.x, c8.ha.c(-1.0f, -1));
             this.x.setProgress(0.0f);
@@ -780,8 +783,8 @@ public final class k60 {
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.m0 = ofFloat;
-            ofFloat.addUpdateListener(new e6(this, 29));
-            this.m0.addListener(new e60(this, 0));
+            ofFloat.addUpdateListener(new n61(this, 1));
+            this.m0.addListener(new e60(this, i7));
             if (this.L) {
                 f12 = f17;
                 this.m0.setDuration(380L);
@@ -832,15 +835,15 @@ public final class k60 {
             f13 -= overlayContainerView.getPaddingLeft();
         }
         if (view != 0) {
-            int i17 = this.i;
-            if (i17 == 3) {
+            int i18 = this.i;
+            if (i18 == 3) {
                 width = (int) (overlayContainerView.getX() + f13);
             } else {
-                if (i17 == 5) {
+                if (i18 == 5) {
                     width2 = rectF.width() + overlayContainerView.getX() + f13;
                     f15 = rectF2.right;
                 } else {
-                    if (i17 == 1) {
+                    if (i18 == 1) {
                         x10 = (rectF.width() / f10) + overlayContainerView.getX() + f13;
                         f14 = this.A.getMeasuredWidth() / f10;
                     } else if (rectF2.width() + f13 > overlayContainerView.getWidth()) {
@@ -858,19 +861,19 @@ public final class k60 {
             width = (overlayContainerView.getWidth() - this.A.getMeasuredWidth()) / 2;
         }
         if (this.Z) {
-            i10 = 0;
+            i11 = 0;
         } else {
             Rect rect = new Rect();
             View rootView = overlayContainerView.getRootView();
             overlayContainerView.getWindowVisibleDisplayFrame(rect);
-            i10 = Math.max(0, ((rootView.getHeight() - (rect.top != 0 ? org.telegram.messenger.g0.m : 0)) - org.telegram.messenger.g0.q1(rootView)) - (rect.bottom - rect.top));
+            i11 = Math.max(0, ((rootView.getHeight() - (rect.top != 0 ? org.telegram.messenger.g0.m : 0)) - org.telegram.messenger.g0.q1(rootView)) - (rect.bottom - rect.top));
         }
-        int i18 = (point.y - org.telegram.messenger.g0.n) - i10;
+        int i19 = (point.y - org.telegram.messenger.g0.n) - i11;
         float height2 = this.Y ? 0.0f : rectF.height();
         if (this.W) {
-            height = this.L ? (int) (f18 + height2) : (int) (overlayContainerView.getY() + (Math.min(f18 + height2, i18) - this.A.getMeasuredHeight()));
+            height = this.L ? (int) (f18 + height2) : (int) (overlayContainerView.getY() + (Math.min(f18 + height2, i19) - this.A.getMeasuredHeight()));
         } else if (view != 0) {
-            if (this.U || f18 + height2 + this.A.getMeasuredHeight() + org.telegram.messenger.g0.L(16.0f) > i18) {
+            if (this.U || f18 + height2 + this.A.getMeasuredHeight() + org.telegram.messenger.g0.L(16.0f) > i19) {
                 f18 = (f18 - height2) - this.A.getMeasuredHeight();
                 if (!this.V || Math.max(0.0f, f18 + height2) + this.A.getMeasuredHeight() <= fArr[1] + rectF.top || rectF.height() != view.getHeight()) {
                     z9 = true;
@@ -900,18 +903,18 @@ public final class k60 {
                         }
                     }
                     if (this.v && this.n != null) {
-                        int i19 = org.telegram.ui.ActionBar.k6.E8;
+                        int i20 = org.telegram.ui.ActionBar.k6.E8;
                         org.telegram.ui.ActionBar.f6 f6Var = this.d;
-                        T(org.telegram.ui.ActionBar.k6.r1(0.06f, org.telegram.ui.ActionBar.k6.w0(i19, f6Var)));
-                        org.telegram.ui.ActionBar.n6 L = org.telegram.ui.ActionBar.r6.L(0.06f, i19);
+                        T(org.telegram.ui.ActionBar.k6.r1(0.06f, org.telegram.ui.ActionBar.k6.w0(i20, f6Var)));
+                        org.telegram.ui.ActionBar.n6 L = org.telegram.ui.ActionBar.r6.L(0.06f, i20);
                         if (this.A != null) {
-                            int i20 = 0;
-                            while (i20 < this.A.getChildCount()) {
-                                View childAt3 = i20 == this.A.getChildCount() + (-1) ? this.D : this.A.getChildAt(i20);
+                            int i21 = 0;
+                            while (i21 < this.A.getChildCount()) {
+                                View childAt3 = i21 == this.A.getChildCount() + (-1) ? this.D : this.A.getChildAt(i21);
                                 if (childAt3 instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout4 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) childAt3;
-                                    for (int i21 = 0; i21 < actionBarPopupWindow$ActionBarPopupWindowLayout4.getItemsCount(); i21++) {
-                                        View childAt4 = actionBarPopupWindow$ActionBarPopupWindowLayout4.L.getChildAt(i21);
+                                    for (int i22 = 0; i22 < actionBarPopupWindow$ActionBarPopupWindowLayout4.getItemsCount(); i22++) {
+                                        View childAt4 = actionBarPopupWindow$ActionBarPopupWindowLayout4.L.getChildAt(i22);
                                         if (childAt4 instanceof org.telegram.ui.ActionBar.d1) {
                                             org.telegram.ui.ActionBar.r6.j(childAt4, L, f6Var);
                                         }
@@ -919,7 +922,7 @@ public final class k60 {
                                 } else if (childAt3 instanceof org.telegram.ui.ActionBar.d1) {
                                     org.telegram.ui.ActionBar.r6.j(childAt3, L, f6Var);
                                 }
-                                i20++;
+                                i21++;
                             }
                         }
                         ri.b bVar = this.n;
@@ -975,10 +978,10 @@ public final class k60 {
             if (!this.w) {
             }
             if (this.v) {
-                int i192 = org.telegram.ui.ActionBar.k6.E8;
+                int i202 = org.telegram.ui.ActionBar.k6.E8;
                 org.telegram.ui.ActionBar.f6 f6Var2 = this.d;
-                T(org.telegram.ui.ActionBar.k6.r1(0.06f, org.telegram.ui.ActionBar.k6.w0(i192, f6Var2)));
-                org.telegram.ui.ActionBar.n6 L2 = org.telegram.ui.ActionBar.r6.L(0.06f, i192);
+                T(org.telegram.ui.ActionBar.k6.r1(0.06f, org.telegram.ui.ActionBar.k6.w0(i202, f6Var2)));
+                org.telegram.ui.ActionBar.n6 L2 = org.telegram.ui.ActionBar.r6.L(0.06f, i202);
                 if (this.A != null) {
                 }
                 ri.b bVar2 = this.n;

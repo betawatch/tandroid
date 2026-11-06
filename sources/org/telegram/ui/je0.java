@@ -21,7 +21,7 @@ import org.telegram.messenger.ApplicationLoaderImpl;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
     public za1 D;
@@ -41,7 +41,7 @@ public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
     public final ri.c R;
     public final ri.f S;
     public final ri.f T;
-    public org.telegram.ui.Components.s41 x;
+    public org.telegram.ui.Components.y41 x;
     public boolean y;
     public final te.a w = new te.a(0, this, org.telegram.ui.Components.xq.h, 380, true);
     public final RectF U = new RectF();
@@ -619,10 +619,10 @@ public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
         za1 za1Var = new za1(context);
         this.D = za1Var;
         this.b.addView(za1Var, c8.ha.e(-1, -2, 80));
-        org.telegram.ui.Components.s41 s41Var = ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? new org.telegram.ui.Components.s41(getParentActivity(), this.D) : null;
-        this.x = s41Var;
-        if (s41Var != null) {
-            s41Var.updateAppUpdateViews(this.currentAccount, false);
+        org.telegram.ui.Components.y41 y41Var = ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? new org.telegram.ui.Components.y41(getParentActivity(), this.D) : null;
+        this.x = y41Var;
+        if (y41Var != null) {
+            y41Var.updateAppUpdateViews(this.currentAccount, false);
         }
         p0(false);
         return this.b;
@@ -643,9 +643,9 @@ public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
             return;
         }
         if (i7 == org.telegram.messenger.qs.R4) {
-            org.telegram.ui.Components.s41 s41Var = this.x;
-            if (s41Var != null) {
-                s41Var.updateFileProgress(null);
+            org.telegram.ui.Components.y41 y41Var = this.x;
+            if (y41Var != null) {
+                y41Var.updateFileProgress(null);
                 this.x.updateAppUpdateViews(this.currentAccount, true);
                 return;
             }
@@ -668,19 +668,19 @@ public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
             return;
         }
         if (i7 == org.telegram.messenger.qs.X1) {
-            org.telegram.ui.Components.s41 s41Var2 = this.x;
-            if (s41Var2 != null) {
-                s41Var2.updateFileProgress(objArr);
+            org.telegram.ui.Components.y41 y41Var2 = this.x;
+            if (y41Var2 != null) {
+                y41Var2.updateFileProgress(objArr);
                 return;
             }
             return;
         }
         if (i7 == org.telegram.messenger.qs.Q4) {
-            org.telegram.ui.Components.s41 s41Var3 = this.x;
-            if (s41Var3 == null || (launchActivity = LaunchActivity.G1) == null) {
+            org.telegram.ui.Components.y41 y41Var3 = this.x;
+            if (y41Var3 == null || (launchActivity = LaunchActivity.G1) == null) {
                 return;
             }
-            s41Var3.updateAppUpdateViews(this.currentAccount, launchActivity.d0.size() == 1);
+            y41Var3.updateAppUpdateViews(this.currentAccount, launchActivity.d0.size() == 1);
             return;
         }
         if (i7 == org.telegram.messenger.qs.t4) {
@@ -982,7 +982,7 @@ public final class je0 extends nb1 implements org.telegram.messenger.ls, te.b {
                 arrayList.add(Integer.valueOf(i7));
             }
         }
-        Collections.sort(arrayList, new oe(26));
+        Collections.sort(arrayList, new oe(27));
         org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(this, view);
         int i10 = 1;
         if (org.telegram.messenger.p10.c() < 4) {

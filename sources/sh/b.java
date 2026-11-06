@@ -35,10 +35,10 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Wallet.na;
 import org.telegram.ui.an;
 import org.telegram.ui.fk0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, a6 {
     public final int[] D;
@@ -57,8 +57,8 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
     public q1 n;
     public int r;
     public xf s;
-    public final rq0 w;
-    public final rq0 x;
+    public final sq0 w;
+    public final sq0 x;
     public final int y;
 
     public b(Activity activity, f6 f6Var, an anVar) {
@@ -110,16 +110,16 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         k5Var.setGravity(17);
         k5Var.setTranslationY(g0.L(44.0f));
         k5Var.setVisibility(8);
-        rq0 rq0Var = new rq0(activity, 16);
-        this.x = rq0Var;
-        addView(rq0Var, layoutParams);
-        rq0 rq0Var2 = new rq0(activity, 15);
-        this.w = rq0Var2;
-        rq0Var.addView(rq0Var2, ha.c(-2.0f, -1));
-        rq0Var2.addView(k5Var, ha.e(54, 24, 53));
-        rq0Var2.addView(b3Var, ha.e(44, 44, 51));
-        rq0Var2.addView(ciVar, ha.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        rq0Var2.addView(z5Var, ha.d(-1, -2.0f, qs.E1, 39.0f, 0.0f, 47.0f, 0.0f));
+        sq0 sq0Var = new sq0(activity, 16);
+        this.x = sq0Var;
+        addView(sq0Var, layoutParams);
+        sq0 sq0Var2 = new sq0(activity, 15);
+        this.w = sq0Var2;
+        sq0Var.addView(sq0Var2, ha.c(-2.0f, -1));
+        sq0Var2.addView(k5Var, ha.e(54, 24, 53));
+        sq0Var2.addView(b3Var, ha.e(44, 44, 51));
+        sq0Var2.addView(ciVar, ha.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
+        sq0Var2.addView(z5Var, ha.d(-1, -2.0f, qs.E1, 39.0f, 0.0f, 47.0f, 0.0f));
         z5Var.setPadding(g0.L(5.0f), g0.L(11.0f), g0.L(5.0f), g0.L(11.0f));
     }
 
@@ -180,13 +180,13 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
                 int width = rect.width();
                 FrameLayout.LayoutParams layoutParams = this.e;
                 int i11 = layoutParams.width;
-                rq0 rq0Var = this.x;
+                sq0 sq0Var = this.x;
                 if (i11 != width) {
                     layoutParams.width = width;
-                    rq0Var.setLayoutParams(layoutParams);
+                    sq0Var.setLayoutParams(layoutParams);
                 }
-                rq0Var.setTranslationX(rect.left);
-                rq0Var.setTranslationY(g0.L(0.66f) + rect.top);
+                sq0Var.setTranslationX(rect.left);
+                sq0Var.setTranslationY(g0.L(0.66f) + rect.top);
                 return true;
             }
             xf xfVar = this.s;

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef0 implements Runnable {
     public final /* synthetic */ int a;
@@ -307,7 +307,7 @@ public final /* synthetic */ class ef0 implements Runnable {
                 ((tm0) this.b).i0.L.f();
                 break;
             case 17:
-                ((oq0) this.b).invalidate();
+                ((pq0) this.b).invalidate();
                 break;
             case 18:
                 com.google.android.gms.common.api.internal.s sVar = (com.google.android.gms.common.api.internal.s) this.b;
@@ -325,7 +325,7 @@ public final /* synthetic */ class ef0 implements Runnable {
                 sVar.c = null;
                 break;
             case 19:
-                PhotoViewer photoViewer2 = ((bp0) this.b).a;
+                PhotoViewer photoViewer2 = ((cp0) this.b).a;
                 ImageView imageView = photoViewer2.D3;
                 if (imageView != null && imageView.getParent() != null) {
                     ((ViewGroup) photoViewer2.D3.getParent()).removeView(photoViewer2.D3);
@@ -342,7 +342,7 @@ public final /* synthetic */ class ef0 implements Runnable {
                 }
                 break;
             case 20:
-                an anVar = ((dp0) this.b).T2.k4;
+                an anVar = ((ep0) this.b).T2.k4;
                 if (anVar != null && (qjVar = anVar.Z) != null) {
                     qjVar.H0();
                     break;
@@ -352,25 +352,25 @@ public final /* synthetic */ class ef0 implements Runnable {
                 org.telegram.ui.Components.v50 v50Var = (org.telegram.ui.Components.v50) ((d30) this.b).b;
                 PhotoViewer photoViewer3 = (PhotoViewer) v50Var.c;
                 photoViewer3.G2 = false;
-                org.telegram.ui.Components.n51 n51Var = photoViewer3.F2;
-                if (n51Var != null) {
-                    n51Var.h0();
+                org.telegram.ui.Components.t51 t51Var = photoViewer3.F2;
+                if (t51Var != null) {
+                    t51Var.h0();
                 }
                 ((PhotoViewer) v50Var.c).H2 = null;
                 break;
             case 22:
-                PhotoViewer photoViewer4 = ((qo0) this.b).a;
+                PhotoViewer photoViewer4 = ((ro0) this.b).a;
                 photoViewer4.G2 = false;
-                org.telegram.ui.Components.n51 n51Var2 = photoViewer4.F2;
-                if (n51Var2 != null) {
-                    n51Var2.h0();
+                org.telegram.ui.Components.t51 t51Var2 = photoViewer4.F2;
+                if (t51Var2 != null) {
+                    t51Var2.h0();
                 }
                 photoViewer4.H2 = null;
                 break;
             case 23:
-                yp0 yp0Var = (yp0) ((d30) this.b).b;
-                yp0Var.r.k7.e();
-                PhotoViewer photoViewer5 = yp0Var.r;
+                zp0 zp0Var = (zp0) ((d30) this.b).b;
+                zp0Var.r.k7.e();
+                PhotoViewer photoViewer5 = zp0Var.r;
                 Runnable runnable = photoViewer5.o4;
                 if (runnable != null) {
                     runnable.run();
@@ -379,7 +379,7 @@ public final /* synthetic */ class ef0 implements Runnable {
                 photoViewer5.v2(true);
                 break;
             case 24:
-                PhotoViewer photoViewer6 = ((fp0) this.b).b;
+                PhotoViewer photoViewer6 = ((gp0) this.b).b;
                 Runnable runnable2 = photoViewer6.o4;
                 if (runnable2 != null) {
                     runnable2.run();
@@ -388,19 +388,19 @@ public final /* synthetic */ class ef0 implements Runnable {
                 }
                 break;
             case 25:
-                ((jq0) this.b).y.f(true);
+                ((kq0) this.b).y.f(true);
                 break;
             case 26:
-                ((nq0) this.b).d = true;
+                ((oq0) this.b).d = true;
                 break;
             case 27:
-                PremiumPreviewFragment premiumPreviewFragment = ((os0) this.b).c;
+                PremiumPreviewFragment premiumPreviewFragment = ((ps0) this.b).c;
                 premiumPreviewFragment.showDialog(new sy0(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 28:
-                tt0 tt0Var = (tt0) this.b;
+                ut0 ut0Var = (ut0) this.b;
                 RectF rectF = ProfileActivity.S6;
-                tt0Var.a(0);
+                ut0Var.a(0);
                 break;
             default:
                 TLRPC.User user = (TLRPC.User) this.b;

@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class b5 extends FrameLayout implements org.telegram.messenger.ls {
     public static final /* synthetic */ int F = 0;
@@ -298,7 +298,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
         if (i7 != 0 && i10 != 0 && this.r) {
             this.w.setBackground(null);
-            org.telegram.messenger.g0.h3(new fq0(this, 12));
+            org.telegram.messenger.g0.h3(new gq0(this, 12));
         }
         ih.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

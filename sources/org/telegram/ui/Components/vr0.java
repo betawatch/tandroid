@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class vr0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -53,7 +53,7 @@ public final class vr0 extends FrameLayout implements org.telegram.ui.ActionBar.
         w70Var.setLineSpacing(org.telegram.messenger.g0.L(3.0f), 1.0f);
         SpannableStringBuilder x22 = org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(z9 ? 2131748327 : 2131748325, null), new ir0(ir0Var, 1));
         SpannableString spannableString2 = new SpannableString("" + org.telegram.messenger.qp.s1(i7).x4);
-        spannableString2.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
+        spannableString2.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
         w70Var.setText(org.telegram.messenger.g0.K2(x22, spannableString2, "%s"));
         addView(w70Var, c8.ha.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
     }

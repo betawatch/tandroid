@@ -11,9 +11,9 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.rv0;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class j1 extends pj0 implements ls, l0 {
     public final ArrayList e3;
@@ -26,7 +26,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
     public final tg.y l3;
     public final xq m3;
     public final ArrayList n3;
-    public final rv0 o3;
+    public final un0 o3;
     public View p3;
     public boolean q3;
     public int r3;
@@ -44,7 +44,7 @@ public abstract class j1 extends pj0 implements ls, l0 {
         this.l3 = new tg.y(s0Var, 2);
         this.m3 = new xq(0.0f, 0.5f, 0.5f, 1.0f);
         this.n3 = new ArrayList();
-        this.o3 = new rv0(12);
+        this.o3 = new un0(13);
         this.s3 = -1;
         this.i3 = i7;
         v4.b0 b0Var = new v4.b0();

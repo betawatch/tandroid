@@ -14,11 +14,11 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
     public final p1 a;
-    public final org.telegram.ui.Components.f71 b;
+    public final org.telegram.ui.Components.l71 b;
     public z2 c;
     public z2 d;
     public int e;
@@ -42,9 +42,9 @@ public final class q1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
             this.a = null;
             return;
         }
-        org.telegram.ui.Components.f71 f71Var = new org.telegram.ui.Components.f71(context, false, new l1(this));
-        this.b = f71Var;
-        addView(f71Var);
+        org.telegram.ui.Components.l71 l71Var = new org.telegram.ui.Components.l71(context, false, new l1(this));
+        this.b = l71Var;
+        addView(l71Var);
         g4Var.N.add(this);
         p1 p1Var = new p1(this, context);
         this.a = p1Var;
@@ -75,9 +75,9 @@ public final class q1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
             }
         }
         this.w = null;
-        org.telegram.ui.Components.f71 f71Var = this.b;
-        if (f71Var != null) {
-            f71Var.b();
+        org.telegram.ui.Components.l71 l71Var = this.b;
+        if (l71Var != null) {
+            l71Var.b();
         }
     }
 
@@ -170,12 +170,12 @@ public final class q1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
             int i13 = this.n;
             p1Var.layout(i13, 0, p1Var.getMeasuredWidth() + i13, p1Var.getMeasuredHeight());
         }
-        org.telegram.ui.Components.f71 f71Var = this.b;
-        if (f71Var == null || f71Var.getParent() != this) {
+        org.telegram.ui.Components.l71 l71Var = this.b;
+        if (l71Var == null || l71Var.getParent() != this) {
             return;
         }
         int i14 = this.n;
-        f71Var.layout(i14, 0, f71Var.getMeasuredWidth() + i14, f71Var.getMeasuredHeight());
+        l71Var.layout(i14, 0, l71Var.getMeasuredWidth() + i14, l71Var.getMeasuredHeight());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x013a  */
@@ -232,9 +232,9 @@ public final class q1 extends FrameLayout implements org.telegram.ui.Cells.h9 {
             if (p1Var != null) {
                 p1Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30));
             }
-            org.telegram.ui.Components.f71 f71Var = this.b;
-            if (f71Var != null && f71Var.getParent() == this) {
-                f71Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(10.0f) + i17, TLObject.FLAG_30));
+            org.telegram.ui.Components.l71 l71Var = this.b;
+            if (l71Var != null && l71Var.getParent() == this) {
+                l71Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(10.0f) + i17, TLObject.FLAG_30));
             }
             int L4 = org.telegram.messenger.g0.L(8.0f) + i17;
             this.f = L4;

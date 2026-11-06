@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class ea implements Runnable {
                     String r10 = org.telegram.messenger.w7.r(null, wallPaper.document);
                     if (!gaVar.g3.containsKey(r10)) {
                         gaVar.g3.put(r10, themesHorizontalListCell$InnerThemeView.b);
-                        org.telegram.messenger.w7.G(themesHorizontalListCell$InnerThemeView.b.E).X(wallPaper.document, wallPaper, 1, 1);
+                        org.telegram.messenger.w7.G(themesHorizontalListCell$InnerThemeView.b.E).W(wallPaper.document, wallPaper, 1, 1);
                         break;
                     }
                 }

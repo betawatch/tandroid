@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class nf0 extends l9 implements ot0 {
     public final int G;
@@ -57,8 +57,8 @@ public final class nf0 extends l9 implements ot0 {
         Path path = sf0Var.M0;
         ArrayList arrayList = sf0Var.b1;
         RectF rectF = sf0Var.N0;
-        org.telegram.ui.er0 er0Var = sf0Var.h1;
-        if (er0Var == null || !er0Var.n) {
+        org.telegram.ui.fr0 fr0Var = sf0Var.h1;
+        if (fr0Var == null || !fr0Var.n) {
             if (this.H != null) {
                 int k10 = sf0Var.D0.k(this.M);
                 if (sf0Var.i1) {

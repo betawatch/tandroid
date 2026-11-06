@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jb0 extends li0 implements org.telegram.messenger.x5 {
     public static final Paint H;
@@ -99,7 +99,7 @@ public final class jb0 extends li0 implements org.telegram.messenger.x5 {
             if (message.media != null) {
                 if (TextUtils.isEmpty(message.attachPath) || !new File(this.r.k.attachPath).exists()) {
                     org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
-                    if (!org.telegram.messenger.w7.N(this.r.k, false, true).exists()) {
+                    if (!org.telegram.messenger.w7.M(this.r.k, false, true).exists()) {
                         r10 = org.telegram.messenger.w7.r(null, this.r.F0());
                         this.x = false;
                         if (r10 != null) {
@@ -109,9 +109,9 @@ public final class jb0 extends li0 implements org.telegram.messenger.x5 {
                             org.telegram.messenger.z5.q(this.r.I1).v(this);
                         } else {
                             org.telegram.messenger.z5.q(this.r.I1).a(r10, null, this);
-                            boolean T = org.telegram.messenger.w7.G(this.r.I1).T(r10);
-                            this.w = T;
-                            if (T) {
+                            boolean S = org.telegram.messenger.w7.G(this.r.I1).S(r10);
+                            this.w = S;
+                            if (S) {
                                 this.h = true;
                                 Float w10 = org.telegram.messenger.gc.D().w(r10);
                                 if (w10 == null) {

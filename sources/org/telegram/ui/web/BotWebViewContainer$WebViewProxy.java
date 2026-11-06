@@ -2,9 +2,9 @@ package org.telegram.ui.web;
 
 import android.webkit.JavascriptInterface;
 import java.io.Serializable;
-import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$WebViewProxy {
     public x0 a;
@@ -20,7 +20,7 @@ public class BotWebViewContainer$WebViewProxy {
         if (this.a == null) {
             return;
         }
-        org.telegram.messenger.g0.h3(new l31(this, str, str2, 7));
+        org.telegram.messenger.g0.h3(new r31(this, str, str2, 7));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

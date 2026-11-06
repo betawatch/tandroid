@@ -24,12 +24,12 @@ import java.util.Arrays;
 import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.vz0;
+import org.telegram.ui.Components.wz0;
 import org.telegram.ui.Components.xg0;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zt0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class vb implements Runnable {
     public Thread a;
@@ -255,7 +255,7 @@ public final class vb implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void d() {
-        vz0 vz0Var;
+        wz0 wz0Var;
         boolean z9;
         boolean z10;
         Bitmap bitmap;
@@ -400,12 +400,12 @@ public final class vb implements Runnable {
                 if (i31 == 5) {
                     try {
                         ub ubVar2 = this.c;
-                        vz0Var = new vz0(ubVar2.p, (s5) ubVar2.i.i);
+                        wz0Var = new wz0(ubVar2.p, (s5) ubVar2.i.i);
                     } catch (Throwable th3) {
                         a8.f(th3);
-                        vz0Var = null;
+                        wz0Var = null;
                     }
-                    c(vz0Var);
+                    c(wz0Var);
                     return;
                 }
                 boolean z65 = false;

@@ -2,7 +2,7 @@ package sh;
 
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import c8.yc;
+import c8.zc;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.hd;
@@ -12,7 +12,7 @@ import org.telegram.messenger.n0;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static int a(ij ijVar) {
@@ -56,7 +56,7 @@ public abstract class g {
             TLRPC.MessageMedia o12 = ij.o1(message);
             TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(o12) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(o12) : null);
             if (tL_messageMediaPoll != null) {
-                if (yc.a(i7, 4)) {
+                if (zc.a(i7, 4)) {
                     ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
                     ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
                     int size = arrayList2.size();
@@ -84,11 +84,11 @@ public abstract class g {
                     }
                     return g0.X2(hd.a0(null, null, z9 ? 2131747115 : 2131747112, stringBuffer, jg.g.i(1, arrayList)));
                 }
-                if (yc.a(i7, 1)) {
+                if (zc.a(i7, 1)) {
                     TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
                     return g0.X2(hd.a0(null, null, 2131747117, m5.u(qp.s1(i10).M0(Long.valueOf(-(messageFwdHeader != null ? m5.o(messageFwdHeader.from_id) : ij.B0(ijVar.k)))))));
                 }
-                if (yc.a(i7, 2)) {
+                if (zc.a(i7, 2)) {
                     return g0.X2(hd.M0(2131747114, null));
                 }
             }

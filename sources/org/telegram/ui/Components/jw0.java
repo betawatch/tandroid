@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jw0 {
     public final int a;
@@ -14,11 +14,11 @@ public final class jw0 {
     public final org.telegram.ui.ActionBar.f6 c;
     public final zg0 d;
     public TL_account.TL_birthday e;
-    public ly0 f;
-    public ly0[] g;
-    public ly0[] h;
+    public my0 f;
+    public my0[] g;
+    public my0[] h;
     public boolean i;
-    public ly0 j;
+    public my0 j;
     public final RectF k = new RectF();
     public final Paint l = new Paint(1);
     public final ic m;
@@ -54,10 +54,10 @@ public final class jw0 {
             float f10 = width2;
             float f11 = (max / 2.0f) + f10;
             int i13 = (int) (f10 + max);
-            ly0 ly0Var = this.g[i12];
-            ly0Var.c(f11 - (ly0Var.k() / 2.0f), i7, 0.75f, -1, canvas);
-            ly0 ly0Var2 = this.h[i12];
-            ly0Var2.c(f11 - (ly0Var2.k() / 2.0f), org.telegram.messenger.g0.L(16.0f) + i7, 1.0f, -1, canvas);
+            my0 my0Var = this.g[i12];
+            my0Var.c(f11 - (my0Var.k() / 2.0f), i7, 0.75f, -1, canvas);
+            my0 my0Var2 = this.h[i12];
+            my0Var2.c(f11 - (my0Var2.k() / 2.0f), org.telegram.messenger.g0.L(16.0f) + i7, 1.0f, -1, canvas);
             i12++;
             width2 = i13;
         }

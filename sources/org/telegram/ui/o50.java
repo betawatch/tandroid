@@ -6,7 +6,7 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class o50 {
     public String F;
@@ -29,7 +29,7 @@ public abstract class o50 {
     public final a0.h D = new a0.h();
     public ArrayList E = new ArrayList();
 
-    public abstract void a(e4 e4Var, org.telegram.ui.Components.py0 py0Var);
+    public abstract void a(e4 e4Var, org.telegram.ui.Components.qy0 qy0Var);
 
     public abstract boolean b(TL_iv.PageBlock pageBlock, e4 e4Var);
 }

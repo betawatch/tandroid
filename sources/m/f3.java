@@ -64,20 +64,20 @@ import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Cells.s5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.am;
+import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.bm;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.l7;
 import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.uj;
-import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class f3 implements Runnable {
     public final /* synthetic */ int a;
@@ -639,7 +639,7 @@ public final class f3 implements Runnable {
                 x70 x70Var = jVar.x;
                 if (x70Var != null) {
                     CharacterStyle characterStyle = x70Var.i;
-                    final String url = characterStyle instanceof v31 ? ((v31) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                    final String url = characterStyle instanceof b41 ? ((b41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         jVar.performHapticFeedback(0, 2);
                     } catch (Exception unused2) {
@@ -769,8 +769,8 @@ public final class f3 implements Runnable {
                 return;
             case 25:
                 b8 b8Var2 = (b8) this.b;
-                n51 n51Var = MediaController.B().i0;
-                long U = n51Var == null ? 0L : n51Var.U();
+                t51 t51Var = MediaController.B().i0;
+                long U = t51Var == null ? 0L : t51Var.U();
                 if (U == 0 || U == -9223372036854775807L) {
                     b8Var2.A2 = System.currentTimeMillis();
                     return;

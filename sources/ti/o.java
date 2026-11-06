@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.uy;
@@ -40,7 +40,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.w;
 import sg.t0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class o {
     public final m a;
@@ -171,9 +171,9 @@ public final class o {
         int I = mVar.I();
         int U = mVar.U();
         float f10 = ((I <= 0 || U <= 0) ? 0.5625f : ((float) U) / ((float) I)) < 1.0f ? 0.6f : 0.45f;
-        e51 e51Var = iVar2.F;
-        e51Var.q = f10;
-        e51Var.a();
+        j51 j51Var = iVar2.F;
+        j51Var.q = f10;
+        j51Var.a();
         r1.g gVar = new r1.g(iVar2, i.Q);
         r1.h hVar = new r1.h();
         hVar.a(0.75f);
@@ -211,7 +211,7 @@ public final class o {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         iVar2.l.setVisibility(8);
         iVar2.i.addView(iVar2.l, ha.c(-1.0f, -1));
-        e51Var.n = new uy(iVar2, 21);
+        j51Var.n = new uy(iVar2, 21);
         iVar2.m = new e(iVar2, activity2, i11);
         e eVar3 = iVar2.m;
         Objects.requireNonNull(eVar3);

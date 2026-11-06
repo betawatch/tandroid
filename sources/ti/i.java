@@ -13,20 +13,20 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import c8.j9;
-import c8.jc;
+import c8.kc;
 import di.b3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.lt0;
 import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class i {
     public static final lt0 Q = new lt0(new s0.b(19), new s0.b(20));
@@ -68,7 +68,7 @@ public final class i {
     public final WindowManager.LayoutParams e = new WindowManager.LayoutParams();
     public float z = 1.0f;
     public float A = 1.4f;
-    public final e51 F = new e51(false);
+    public final j51 F = new j51(false);
     public final float[] M = new float[2];
     public final b N = new b(this, 1);
     public final f O = new f(this, 0);
@@ -117,7 +117,7 @@ public final class i {
         if (this.g) {
             return;
         }
-        boolean z9 = this.b.r() && jc.a(this.c);
+        boolean z9 = this.b.r() && kc.a(this.c);
         this.f = z9;
         WindowManager windowManager = (WindowManager) (z9 ? t0.b : this.c).getSystemService("window");
         this.d = windowManager;

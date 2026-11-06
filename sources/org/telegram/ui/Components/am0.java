@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class am0 extends xr {
     public final /* synthetic */ org.telegram.ui.ww f0;
@@ -17,7 +17,7 @@ public final class am0 extends xr {
         this.f0 = wwVar;
     }
 
-    @Override // org.telegram.ui.Components.f41
+    @Override // org.telegram.ui.Components.l41
     public final void O(boolean z9) {
         ArrayList arrayList;
         ArrayList arrayList2;

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s6 implements org.telegram.ui.ActionBar.s6 {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class s6 implements org.telegram.ui.ActionBar.s6 {
                 ((yv0) this.b).X0(false);
                 break;
             default:
-                ((n31) this.b).d();
+                ((t31) this.b).d();
                 break;
         }
     }

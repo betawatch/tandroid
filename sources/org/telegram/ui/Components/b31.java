@@ -1,44 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class b31 extends el0 {
-    public final /* synthetic */ n31 f;
+public final class b31 extends v4.s0 {
+    public final /* synthetic */ int a = 1;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b31(n31 n31Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, 14.0f, f6Var);
-        this.f = n31Var;
+    public b31(bi.g5 g5Var, int i7) {
+        this.c = g5Var;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.el0
-    public final void a(String str) {
-        jg.d2 d2Var = this.f.w;
-        jg.b2 b2Var = d2Var.S;
-        int i7 = d2Var.c;
-        if (d2Var.N != 0) {
-            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.N, true);
-            d2Var.N = 0;
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        org.telegram.ui.Wallet.t8 t8Var;
+        switch (this.a) {
+            case 0:
+                if (i7 == 0) {
+                    this.b = 0;
+                    break;
+                }
+                break;
+            default:
+                if (i7 == 1 && (t8Var = ((org.telegram.ui.Wallet.y5) ((bi.g5) this.c).c).i0) != null) {
+                    t8Var.a();
+                    break;
+                }
+                break;
         }
-        if (d2Var.O != 0) {
-            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.O, true);
-            d2Var.O = 0;
+    }
+
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                e31 e31Var = (e31) this.c;
+                t31 t31Var = e31Var.k1;
+                this.b += i10;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > org.telegram.messenger.g0.L(96.0f)) {
+                    View findFocus = t31Var.findFocus();
+                    if (findFocus == null) {
+                        findFocus = t31Var;
+                    }
+                    org.telegram.messenger.g0.v1(findFocus);
+                }
+                if (i10 != 0 && t31Var.c()) {
+                    e31Var.l1 = t31Var.getContentTopOffset();
+                    e31Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) ((bi.g5) this.c).c;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.f4(y5Var, 14));
+                    break;
+                } else {
+                    y5Var.E0();
+                    break;
+                }
         }
-        if (TextUtils.isEmpty(str)) {
-            d2Var.R = null;
-            d2Var.F.clear();
-            d2Var.I.clear();
-            d2Var.E.clear();
-            d2Var.e.b(false);
-            d2Var.f();
-        } else {
-            d2Var.R = str.toLowerCase();
-        }
-        org.telegram.messenger.g0.r(b2Var);
-        org.telegram.messenger.g0.i3(b2Var, 300L);
+    }
+
+    public b31(e31 e31Var) {
+        this.c = e31Var;
     }
 }

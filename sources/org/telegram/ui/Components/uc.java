@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class uc extends fi.m {
     public boolean R0;
@@ -70,7 +70,7 @@ public abstract class uc extends fi.m {
         i6Var.w(org.telegram.messenger.g0.L(14.0f));
         i6Var.M = org.telegram.messenger.g0.q.x;
         i6Var.u(-1);
-        boolean z9 = this instanceof org.telegram.ui.zo0;
+        boolean z9 = this instanceof org.telegram.ui.ap0;
         if (z9) {
             i6Var.t(org.telegram.messenger.hd.M0(2131748324, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_below);
@@ -285,7 +285,7 @@ public abstract class uc extends fi.m {
         ImageView imageView = this.Y0;
         if (imageView != null) {
             imageView.setTranslationX(-org.telegram.messenger.g0.L((1.0f - this.n0) * 4.0f));
-            boolean z9 = this instanceof org.telegram.ui.zo0;
+            boolean z9 = this instanceof org.telegram.ui.ap0;
             imageView.setTranslationY((Utilities.l((-this.j1.e(false, this.f.getEditText().getLineCount())) + 4.0f) * org.telegram.messenger.g0.L(3.0f) * (z9 ? 1 : -1)) + (z9 ? rectF.bottom - org.telegram.messenger.g0.L(44.0f) : rectF.top));
         }
         float f11 = this.k1.f(this.m1, true ^ G());
@@ -293,7 +293,7 @@ public abstract class uc extends fi.m {
         if (f11 > 0.0f) {
             float a10 = this.h1.a(0.03f);
             int L = org.telegram.messenger.g0.L((1.0f - this.n0) * 4.0f);
-            boolean z10 = this instanceof org.telegram.ui.zo0;
+            boolean z10 = this instanceof org.telegram.ui.ap0;
             i6 i6Var = this.g1;
             RectF rectF2 = this.e1;
             if (z10) {
@@ -354,7 +354,7 @@ public abstract class uc extends fi.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && icVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.g1.t(org.telegram.messenger.hd.M0(this instanceof org.telegram.ui.zo0 ? 2131748324 : 2131748323, null), true, true);
+                this.g1.t(org.telegram.messenger.hd.M0(this instanceof org.telegram.ui.ap0 ? 2131748324 : 2131748323, null), true, true);
             }
             icVar.c(false);
             return true;
@@ -402,7 +402,7 @@ public abstract class uc extends fi.m {
 
     @Override // fi.m
     public final void r(int i7) {
-        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), i7)) - org.telegram.messenger.g0.L(10.0f)) * (this instanceof org.telegram.ui.zo0 ? -1.0f : 1.0f));
+        this.c1.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), i7)) - org.telegram.messenger.g0.L(10.0f)) * (this instanceof org.telegram.ui.ap0 ? -1.0f : 1.0f));
     }
 
     @Override // fi.m

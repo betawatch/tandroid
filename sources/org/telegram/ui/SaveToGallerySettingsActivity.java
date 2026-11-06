@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 {
     public int a;
@@ -59,7 +59,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new mt0(this, 8));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, 8));
         int i7 = 2;
         if (this.c == null) {
             int i10 = this.a;

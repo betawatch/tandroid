@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
-import c8.wa;
+import c8.xa;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class u0 extends WebView {
     public static final /* synthetic */ int V = 0;
@@ -96,7 +96,7 @@ public final class u0 extends WebView {
             return;
         }
         y0Var.d = a10;
-        wa.c(y0Var);
+        xa.c(y0Var);
     }
 
     public final void b(a2 a2Var) {

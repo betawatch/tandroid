@@ -22,9 +22,9 @@ import org.telegram.messenger.ze;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ay;
-import org.telegram.ui.Components.az0;
 import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.hl;
 import org.telegram.ui.Components.l10;
 import org.telegram.ui.Components.yu0;
@@ -35,7 +35,7 @@ import org.telegram.ui.cn0;
 import org.telegram.ui.mc0;
 import org.telegram.ui.pn0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements c20 {
     public final /* synthetic */ int a;
@@ -151,7 +151,7 @@ public final /* synthetic */ class nb implements c20 {
                     photoViewer.s5.setCutOutState(true);
                     photoViewer.U2(false, true);
                 } else {
-                    cz0 thanosEffect = photoViewer.o5.getThanosEffect();
+                    dz0 thanosEffect = photoViewer.o5.getThanosEffect();
                     tg.c2 c2Var2 = photoViewer.o5;
                     c2Var2.L = true;
                     c2Var2.E = z1Var;
@@ -293,12 +293,12 @@ public final /* synthetic */ class nb implements c20 {
                                 cn0 cn0Var = new cn0(photoViewer, 14);
                                 mc0 mc0Var = new mc0(photoViewer, b10, cn0Var, 19);
                                 l10 l10Var = new l10(25);
-                                az0 az0Var = thanosEffect.a;
-                                if (az0Var != null) {
-                                    az0Var.c(matrix3, bitmap2, mc0Var, l10Var);
+                                bz0 bz0Var = thanosEffect.a;
+                                if (bz0Var != null) {
+                                    bz0Var.c(matrix3, bitmap2, mc0Var, l10Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new bz0(matrix3, bitmap2, mc0Var, l10Var));
+                                    thanosEffect.c.add(new cz0(matrix3, bitmap2, mc0Var, l10Var));
                                 }
                                 org.telegram.messenger.g0.i3(cn0Var, 1200L);
                             }

@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements org.telegram.messenger.j9, dr0, r0.m, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class dh implements org.telegram.messenger.j9, er0, r0.m, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ an a;
 
     public /* synthetic */ dh(an anVar) {
@@ -45,7 +45,7 @@ public final /* synthetic */ class dh implements org.telegram.messenger.j9, dr0,
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.dr0
+    @Override // org.telegram.ui.er0
     public void a(float[] fArr) {
         an anVar = this.a;
         fArr[1] = anVar.z0.getBottom() - anVar.Ua;

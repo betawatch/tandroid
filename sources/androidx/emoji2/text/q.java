@@ -4,7 +4,7 @@ import a8.t6;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import c8.ob;
+import c8.pb;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
@@ -25,7 +25,7 @@ public final class q implements k {
     public t6 n;
 
     public q(Context context, o0.d dVar) {
-        ob.a(context, "Context cannot be null");
+        pb.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = r.d;

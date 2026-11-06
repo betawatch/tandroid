@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -113,28 +113,28 @@ public final /* synthetic */ class ld implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((org.telegram.ui.Components.yv0) this.b, tL_error, tLObject, (org.telegram.messenger.ui) this.c, 1));
                 break;
             case 21:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((oo0) this.b, tL_error, tLObject, (TLRPC.TL_messages_getAttachedStickers) this.c, 2));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((po0) this.b, tL_error, tLObject, (TLRPC.TL_messages_getAttachedStickers) this.c, 2));
                 break;
             case 22:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((org.telegram.ui.Components.ky0) this.b, (org.telegram.ui.ActionBar.u1) this.c, tLObject, tL_error, 3));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((org.telegram.ui.Components.ly0) this.b, (org.telegram.ui.ActionBar.u1) this.c, tLObject, tL_error, 3));
                 break;
             case 23:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((org.telegram.ui.Components.e21) this.b, tL_error, tLObject, (TLRPC.TL_textWithEntities) this.c, 5));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((org.telegram.ui.Components.k21) this.b, tL_error, tLObject, (TLRPC.TL_textWithEntities) this.c, 5));
                 break;
             case 24:
                 org.telegram.messenger.g0.h3(new rp((ix) this.b, tLObject, (org.telegram.messenger.ij) this.c, 4));
                 break;
             case 25:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.g51(20, (ey) this.b, (org.telegram.ui.ActionBar.u1) this.c));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l51(20, (ey) this.b, (org.telegram.ui.ActionBar.u1) this.c));
                 break;
             case 26:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.g51(24, (gz) this.b, (org.telegram.ui.ActionBar.u1) this.c));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l51(24, (gz) this.b, (org.telegram.ui.ActionBar.u1) this.c));
                 break;
             case 27:
                 org.telegram.messenger.g0.h3(new rp((az) this.b, tL_error, (zy) this.c, 8));
                 break;
             case 28:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.g51(26, (FiltersSetupActivity) this.b, (TLRPC.TL_messages_toggleDialogFilterTags) this.c));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l51(26, (FiltersSetupActivity) this.b, (TLRPC.TL_messages_toggleDialogFilterTags) this.c));
                 break;
             default:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((l30) this.b, tL_error, tLObject, (String) this.c, 9));

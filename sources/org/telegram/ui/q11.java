@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class q11 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public static String[] b2;
@@ -126,7 +126,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
     public int f;
     public final i01 f0;
     public int f1;
-    public final rq0 g0;
+    public final sq0 g0;
     public boolean g1;
     public int h;
     public final o01 h0;
@@ -2471,12 +2471,12 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         this.r0 = f01Var;
         o01Var.setLayoutManager(f01Var);
         f01Var.O = new d01(this, 0);
-        rq0 rq0Var = new rq0(context, 5);
-        this.g0 = rq0Var;
+        sq0 sq0Var = new sq0(context, 5);
+        this.g0 = sq0Var;
         bi.x5 x5Var = new bi.x5(this, context);
         this.k0 = x5Var;
         x5Var.addView(o01Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 0.0f, 0.0f));
-        rq0Var.addView(x5Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        sq0Var.addView(x5Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 0.0f, 0.0f));
         e01 e01Var = new e01(this, context);
         this.i0 = e01Var;
         if (e01Var.getItemAnimator() != null) {
@@ -2508,7 +2508,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         frameLayout.addView(textView, c8.ha.d(-2, -2.0f, 49, 0.0f, 60.0f, 0.0f, 0.0f));
         frameLayout.setVisibility(8);
         frameLayout.setAlpha(0.0f);
-        rq0Var.addView(frameLayout, c8.ha.d(-1, -2.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        sq0Var.addView(frameLayout, c8.ha.d(-1, -2.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
         e01Var.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(38.0f));
         b11 b11Var = new b11(this);
         this.q0 = b11Var;
@@ -2517,8 +2517,8 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         e01Var.setLayoutManager(f01Var2);
         f01Var2.O = new d01(this, 1);
         e01Var.setVisibility(8);
-        rq0Var.addView(e01Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.a0.addView(rq0Var, c8.ha.d(-1, -1.0f, 48, 0.0f, (i22 == 8 || i22 == 13 || i22 == i23) ? 0.0f : (f11 / org.telegram.messenger.g0.p) + 36.0f, 0.0f, 0.0f));
+        sq0Var.addView(e01Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.a0.addView(sq0Var, c8.ha.d(-1, -1.0f, 48, 0.0f, (i22 == 8 || i22 == 13 || i22 == i23) ? 0.0f : (f11 / org.telegram.messenger.g0.p) + 36.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(o01Var, f01Var);
         this.s0 = ri0Var;
         ri0Var.i = new ai.m(this, 2);
@@ -2533,7 +2533,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         this.f0 = i01Var;
         i01Var.setTranslationY(-org.telegram.messenger.g0.L(52.0f));
         i01Var.setVisibility(4);
-        rq0Var.addView(i01Var, c8.ha.d(-1, 52.0f, 48, 0.0f, -4.0f, 0.0f, 0.0f));
+        sq0Var.addView(i01Var, c8.ha.d(-1, 52.0f, 48, 0.0f, -4.0f, 0.0f, 0.0f));
         j01 j01Var2 = new j01(context, num8, 0);
         Drawable drawable2 = getResources().getDrawable(R.drawable.gradient_top);
         int i24 = org.telegram.ui.ActionBar.k6.G8;

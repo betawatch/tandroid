@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ai extends oj0 {
     public int D;
@@ -82,37 +82,37 @@ public final class ai extends oj0 {
             this.J = 1;
             this.d = 0;
             int i11 = diVar.z1;
-            if (i11 == 0 || c8.yc.a(i11, 16)) {
+            if (i11 == 0 || c8.zc.a(i11, 16)) {
                 int i12 = this.J;
                 this.J = i12 + 1;
                 this.n = i12;
             }
             int i13 = diVar.z1;
-            if (i13 == 0 || c8.yc.a(i13, TLObject.FLAG_13)) {
+            if (i13 == 0 || c8.zc.a(i13, TLObject.FLAG_13)) {
                 int i14 = this.J;
                 this.J = i14 + 1;
                 this.F = i14;
             }
             int i15 = diVar.z1;
-            if (i15 == 0 || c8.yc.a(i15, TLObject.FLAG_14)) {
+            if (i15 == 0 || c8.zc.a(i15, TLObject.FLAG_14)) {
                 int i16 = this.J;
                 this.J = i16 + 1;
                 this.G = i16;
             }
             int i17 = diVar.z1;
-            if (i17 == 0 || c8.yc.a(i17, 8)) {
+            if (i17 == 0 || c8.zc.a(i17, 8)) {
                 int i18 = this.J;
                 this.J = i18 + 1;
                 this.s = i18;
             }
             int i19 = diVar.z1;
-            if (i19 == 0 || c8.yc.a(i19, 64)) {
+            if (i19 == 0 || c8.zc.a(i19, 64)) {
                 int i20 = this.J;
                 this.J = i20 + 1;
                 this.E = i20;
             }
             int i21 = diVar.z1;
-            if (i21 == 0 || c8.yc.a(i21, 32768)) {
+            if (i21 == 0 || c8.zc.a(i21, 32768)) {
                 int i22 = this.J;
                 this.J = i22 + 1;
                 this.H = i22;

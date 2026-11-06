@@ -1,113 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.text.style.ClickableSpan;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class n21 extends q31 {
-    static {
-        q31.h(new n21());
+public final /* synthetic */ class n21 implements org.telegram.messenger.v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v21 b;
+
+    public /* synthetic */ n21(v21 v21Var, int i7) {
+        this.a = i7;
+        this.b = v21Var;
     }
 
-    public static r31 i(int i7, CharSequence charSequence, boolean z9, View.OnClickListener onClickListener, v70 v70Var, View.OnClickListener onClickListener2) {
-        r31 K = r31.K(n21.class);
-        K.d = i7;
-        K.l = charSequence;
-        K.f = z9;
-        K.t = false;
-        K.D = onClickListener;
-        K.G = v70Var;
-        K.E = onClickListener2;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        o21 o21Var = (o21) view;
-        CharSequence charSequence = r31Var.l;
-        boolean z10 = r31Var.f;
-        View.OnClickListener onClickListener = r31Var.D;
-        Object obj = r31Var.G;
-        v70 v70Var = obj != null ? (v70) obj : null;
-        boolean z11 = r31Var.t;
-        View.OnClickListener onClickListener2 = r31Var.E;
-        ImageView imageView = o21Var.n;
-        TextView textView = o21Var.d;
-        l21 l21Var = o21Var.c;
-        m21 m21Var = o21Var.f;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence == null ? "" : r5.cloneSpans(charSequence));
-        b80[] b80VarArr = (b80[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b80.class);
-        if (b80VarArr != null) {
-            int i7 = 0;
-            while (i7 < b80VarArr.length) {
-                int spanStart = spannableStringBuilder.getSpanStart(b80VarArr[i7]);
-                int spanEnd = spannableStringBuilder.getSpanEnd(b80VarArr[i7]);
-                boolean z12 = z11;
-                spannableStringBuilder.removeSpan(b80VarArr[i7]);
-                int i10 = i7;
-                b80 b80Var = b80VarArr[i10];
-                b80 b80Var2 = new b80(m21Var, b80Var.a, b80Var.d, null);
-                b80 b80Var3 = b80VarArr[i10];
-                b80Var2.f = b80Var3.f;
-                b80Var2.h = b80Var3.h;
-                b80Var2.n = b80Var3.n;
-                spannableStringBuilder.setSpan(b80Var2, spanStart, spanEnd, 33);
-                i7 = i10 + 1;
-                z11 = z12;
-                onClickListener2 = onClickListener2;
-            }
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        final v21 v21Var = this.b;
+        switch (i7) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                l41 l41Var = (l41) obj2;
+                String[] strArr = v21Var.a2;
+                arrayList.add(x31.C(null));
+                l41Var.F = 1;
+                l41Var.V();
+                String str = v21Var.W1;
+                arrayList.add(p21.j(3, "", str != null ? k21.K0(k21.O0(str, null, null)) : org.telegram.messenger.hd.M0(2131754986, null), null, null));
+                arrayList.add(t21.i(4, v21Var.S1, v21Var.c2, new lk(26, v21Var, l41Var), new v70() { // from class: org.telegram.ui.Components.o21
+                    @Override // org.telegram.ui.Components.v70
+                    public final void a(ClickableSpan clickableSpan) {
+                        if (clickableSpan == null) {
+                            return;
+                        }
+                        clickableSpan.onClick(v21.this.b);
+                    }
+                }, null));
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(k21.O0(v21Var.X1, null, null));
+                sb2.append((v21Var.Y1 == 1 || strArr == null) ? "" : a8.p0.s(new StringBuilder(" ("), strArr[v21Var.Y1], ")"));
+                arrayList.add(p21.j(5, "", k21.K0(sb2.toString()), null, new m21(v21Var, 4)));
+                arrayList.add(t21.i(6, v21Var.U1, false, null, new v70() { // from class: org.telegram.ui.Components.o21
+                    @Override // org.telegram.ui.Components.v70
+                    public final void a(ClickableSpan clickableSpan) {
+                        if (clickableSpan == null) {
+                            return;
+                        }
+                        clickableSpan.onClick(v21.this.b);
+                    }
+                }, null));
+                l41Var.U();
+                arrayList.add(x31.C(null));
+                l41Var.V();
+                arrayList.add(x31.c(1, R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131743959, null)));
+                l41Var.U();
+                break;
+            default:
+                TLRPC.TL_messages_translateResult tL_messages_translateResult = (TLRPC.TL_messages_translateResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                v21Var.d2 = -1;
+                fi.d dVar = v21Var.R1;
+                dVar.setLoading(false);
+                if (tL_error == null) {
+                    if (tL_messages_translateResult != null && !tL_messages_translateResult.result.isEmpty()) {
+                        v21Var.U1 = org.telegram.messenger.ij.h0(tL_messages_translateResult.result.get(0), false);
+                        v21Var.T1 = false;
+                        v21Var.b2.O(true);
+                        break;
+                    } else {
+                        dVar.setText(org.telegram.messenger.hd.M0(2131747830, null));
+                        dVar.setOnClickListener(new m21(v21Var, 1));
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.Cells.f1.r(v21Var.E, v21Var.I0, tL_error, false);
+                    dVar.setText(org.telegram.messenger.hd.M0(2131747830, null));
+                    dVar.setOnClickListener(new m21(v21Var, 0));
+                    break;
+                }
+                break;
         }
-        View.OnClickListener onClickListener3 = onClickListener2;
-        boolean z13 = z11;
-        if (!o21Var.h || z10) {
-            l21Var.setVisibility(z10 ? 0 : 8);
-            m21Var.setVisibility(!z10 ? 0 : 8);
-        } else {
-            l21Var.setVisibility(0);
-            m21Var.setVisibility(0);
-            ViewPropertyAnimator withEndAction = l21Var.animate().alpha(0.0f).withEndAction(new ir0(o21Var, 21));
-            TimeInterpolator timeInterpolator = xq.h;
-            withEndAction.setInterpolator(timeInterpolator).setDuration(320L).start();
-            m21Var.animate().alpha(1.0f).setInterpolator(timeInterpolator).setDuration(320L).start();
-        }
-        o21Var.h = z10;
-        textView.setVisibility(z10 ? 0 : 8);
-        textView.setOnClickListener(onClickListener);
-        o21Var.setClipChildren(z10);
-        l21Var.setText(spannableStringBuilder);
-        m21Var.setText(spannableStringBuilder);
-        m21Var.setTextIsSelectable(!z13 && (b80VarArr == null || b80VarArr.length == 0));
-        m21Var.setOnLinkPressListener(v70Var);
-        imageView.setVisibility(onClickListener3 != null ? 0 : 8);
-        imageView.setOnClickListener(onClickListener3);
-        o21Var.b = z9;
-        o21Var.setWillNotDraw(true ^ z9);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean c(r31 r31Var, r31 r31Var2) {
-        return TextUtils.equals(r31Var.l, r31Var2.l) && r31Var.f == r31Var2.f;
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new o21(context, f6Var);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean e(r31 r31Var, r31 r31Var2) {
-        return r31Var.d == r31Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final boolean f() {
-        return false;
     }
 }

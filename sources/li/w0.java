@@ -9,28 +9,28 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class w0 extends q31 {
+public final class w0 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new w0());
+        w31.h(new w0());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         ij ijVar;
         s sVar;
         x0 x0Var = (x0) view;
-        a aVar = (a) r31Var.G;
-        o3 o3Var = (o3) r31Var.H;
+        a aVar = (a) x31Var.G;
+        o3 o3Var = (o3) x31Var.H;
         x0Var.a = aVar;
         x0Var.S = o3Var;
         x0Var.M = hd.a0;
@@ -77,7 +77,7 @@ public final class w0 extends q31 {
         x0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         x0 x0Var = new x0(i7, context, f6Var);
         x0Var.setBackground(new y1(k6.w0(k6.d6, f6Var)));
@@ -85,7 +85,7 @@ public final class w0 extends q31 {
         return x0Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final boolean f() {
         return false;
     }

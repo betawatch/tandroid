@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class h7 extends mq0 {
+public final class h7 extends nq0 {
     public org.telegram.ui.Components.pj0 a;
     public final /* synthetic */ t7 b;
 
@@ -15,8 +15,8 @@ public final class h7 extends mq0 {
         this.b = t7Var;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
-    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         org.telegram.ui.Cells.o7 o7Var;
         org.telegram.ui.Components.pj0 listView = this.b.getListView();
         int i10 = 0;
@@ -37,14 +37,14 @@ public final class h7 extends mq0 {
         }
         int[] iArr = new int[2];
         o7Var.getLocationInWindow(iArr);
-        vq0 vq0Var = new vq0();
-        vq0Var.b = iArr[0];
-        vq0Var.c = iArr[1];
-        vq0Var.d = this.a;
+        wq0 wq0Var = new wq0();
+        wq0Var.b = iArr[0];
+        wq0Var.c = iArr[1];
+        wq0Var.d = this.a;
         ImageReceiver imageReceiver = o7Var.c;
-        vq0Var.a = imageReceiver;
-        vq0Var.e = imageReceiver.p();
-        vq0Var.k = o7Var.getScaleX();
-        return vq0Var;
+        wq0Var.a = imageReceiver;
+        wq0Var.e = imageReceiver.p();
+        wq0Var.k = o7Var.getScaleX();
+        return wq0Var;
     }
 }

@@ -5,11 +5,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.Log;
-import c8.fe;
-import c8.vc;
+import c8.ge;
+import c8.wc;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class e7 {
     public static void a(int i7, int i10, Intent intent, Executor executor, v0.g gVar, CancellationSignal cancellationSignal) {
@@ -37,7 +37,7 @@ public abstract class e7 {
             oVar = h1.a.d(intent);
         } else {
             Bundle bundleExtra = intent.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-            oVar = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new v0.o(vc.a(string, bundle));
+            oVar = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new v0.o(wc.a(string, bundle));
         }
         if (oVar != null) {
             d7.a(cancellationSignal, new b1.b(executor, gVar, oVar, i14));
@@ -53,7 +53,7 @@ public abstract class e7 {
                 if (string2 == null) {
                     throw new IllegalArgumentException("Bundle was missing exception type.");
                 }
-                iVar = fe.b(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
+                iVar = ge.b(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
             }
         }
         d7.a(cancellationSignal, new b1.b(executor, gVar, iVar, 2));

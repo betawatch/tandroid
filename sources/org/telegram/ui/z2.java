@@ -11,9 +11,9 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.Components.dx0 {
+public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.Components.ex0 {
     public SpannableStringBuilder D;
     public int E = -1;
     public int F = -1;
@@ -46,7 +46,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final /* synthetic */ int b() {
         return 0;
     }
@@ -56,7 +56,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void d(Canvas canvas, View view) {
         float width;
         Object obj;
@@ -122,7 +122,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         return view != null ? view : this.b;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void f(View view) {
         if (view == null) {
             view = this.L;
@@ -131,7 +131,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         this.L = null;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void g(int i7) {
         this.x = i7;
     }
@@ -161,12 +161,12 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         return this.w;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void h(int i7) {
         this.w = i7;
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void i(View view) {
         this.L = view;
         StaticLayout staticLayout = this.d;
@@ -175,7 +175,7 @@ public final class z2 implements org.telegram.ui.Cells.t9, rg0, org.telegram.ui.
         }
     }
 
-    @Override // org.telegram.ui.Components.dx0
+    @Override // org.telegram.ui.Components.ex0
     public final void j(int i7) {
         this.s = i7;
     }

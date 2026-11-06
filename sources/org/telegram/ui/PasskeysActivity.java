@@ -13,10 +13,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class PasskeysActivity extends org.telegram.ui.ActionBar.f2 {
-    public org.telegram.ui.Components.k41 a;
+    public org.telegram.ui.Components.q41 a;
     public int addPasskeyRow;
     public final ArrayList b;
 
@@ -57,10 +57,10 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.f2 {
         ConnectionsManager.getInstance(passkeysActivity.currentAccount).sendRequestTyped(deletepasskey, new d3.b(1), new ag(passkeysActivity, i7, passkey, 2));
     }
 
-    public static void b0(PasskeysActivity passkeysActivity, org.telegram.ui.Components.r31 r31Var, View view) {
-        if (r31Var.d == -1) {
+    public static void b0(PasskeysActivity passkeysActivity, org.telegram.ui.Components.x31 x31Var, View view) {
+        if (x31Var.d == -1) {
             org.telegram.messenger.pt.b(passkeysActivity.currentAccount, passkeysActivity.getParentActivity(), new ki0(passkeysActivity, 1));
-        } else if (r31Var.G != null) {
+        } else if (x31Var.G != null) {
             passkeysActivity.e0(view);
         }
     }
@@ -79,10 +79,10 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.f2 {
         ch0Var.d();
         f10.addView(ch0Var, c8.ha.t(org.telegram.messenger.qs.A1, org.telegram.messenger.qs.A1, 17, 0, 0, 0, 9));
         int i10 = org.telegram.ui.ActionBar.k6.j5;
-        TextView b10 = c8.na.b(context, 18.0f, i10, true, f6Var);
+        TextView b10 = c8.qa.b(context, 18.0f, i10, true, f6Var);
         org.telegram.messenger.k5.m(b10, 17, null, 2131747635);
         f10.addView(b10, c8.ha.k(32.0f, 0.0f, 32.0f, 6.0f, -1, -2));
-        TextView b11 = c8.na.b(context, 14.0f, i10, false, f6Var);
+        TextView b11 = c8.qa.b(context, 14.0f, i10, false, f6Var);
         org.telegram.messenger.k5.m(b11, 17, null, 2131747636);
         f10.addView(b11, c8.ha.k(32.0f, 0.0f, 32.0f, 24.0f, -1, -2));
         bi.q0 q0Var = new bi.q0(1, context, f6Var);
@@ -112,23 +112,23 @@ public class PasskeysActivity extends org.telegram.ui.ActionBar.f2 {
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 21));
         FrameLayout frameLayout = new FrameLayout(context);
         int i7 = 0;
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(this, new ki0(this, i7), new li0(this, i7), null);
-        this.a = k41Var;
-        k41Var.r1();
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(this, new ki0(this, i7), new li0(this, i7), null);
+        this.a = q41Var;
+        q41Var.r1();
         this.a.setSectionsDrawBackground(true);
-        org.telegram.ui.Components.k41 k41Var2 = this.a;
-        k41Var2.f3.r = false;
-        frameLayout.addView(k41Var2, c8.ha.c(-1.0f, -1));
+        org.telegram.ui.Components.q41 q41Var2 = this.a;
+        q41Var2.f3.r = false;
+        frameLayout.addView(q41Var2, c8.ha.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     public final void d0(TL_account.Passkey passkey) {
-        org.telegram.ui.Components.f41 f41Var;
+        org.telegram.ui.Components.l41 l41Var;
         this.b.add(passkey);
-        org.telegram.ui.Components.k41 k41Var = this.a;
-        if (k41Var != null && (f41Var = k41Var.f3) != null) {
-            f41Var.O(true);
+        org.telegram.ui.Components.q41 q41Var = this.a;
+        if (q41Var != null && (l41Var = q41Var.f3) != null) {
+            l41Var.O(true);
         }
         org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(this).I(R.raw.passcode_lock_close, org.telegram.messenger.hd.M0(2131747647, null), org.telegram.messenger.hd.a0(null, null, 2131747648, passkey.name));
         I.j = 5000;

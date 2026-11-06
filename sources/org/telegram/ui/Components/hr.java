@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hr implements org.telegram.messenger.f20, org.telegram.messenger.ri, t4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, org.telegram.messenger.qr, p4.l0, m9.q, w5.b, v5.e, h2.j {
     public final /* synthetic */ int a;
@@ -291,7 +291,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
                         } else if (i22 == 6) {
                             cVar4 = r5.c.n;
                         } else {
-                            c8.bc.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
+                            c8.cc.a(Integer.valueOf(i22), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
                         }
                     }
                     cVar = cVar4;
@@ -390,7 +390,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
         Bitmap bitmap;
-        yz0 yz0Var = (yz0) this.b;
+        zz0 zz0Var = (zz0) this.b;
         uo uoVar = (uo) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         org.telegram.messenger.jc p10 = imageReceiver.p();
@@ -401,9 +401,9 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         if (drawable instanceof qa0) {
             qa0 qa0Var = (qa0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            qa0Var.s(yz0.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            qa0Var.t(yz0Var.L);
-            yz0Var.invalidate();
+            qa0Var.s(zz0.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            qa0Var.t(zz0Var.L);
+            zz0Var.invalidate();
         }
     }
 
@@ -455,7 +455,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         l5.d dVar = iVar.c;
         String str = hVar.a;
         String str2 = iVar.a;
-        String c10 = c8.bc.c("SQLiteEventStore");
+        String c10 = c8.cc.c("SQLiteEventStore");
         if (Log.isLoggable(c10, 3)) {
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
@@ -504,7 +504,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
             case 9:
                 p4.d0 d0Var = (p4.d0) obj4;
                 Handler handler = d0Var.l;
-                org.telegram.ui.web.w wVar = new org.telegram.ui.web.w(d0Var, (p4.v) obj3, new l31(d0Var, (p4.r0) obj2, (p4.w) obj, 14));
+                org.telegram.ui.web.w wVar = new org.telegram.ui.web.w(d0Var, (p4.v) obj3, new r31(d0Var, (p4.r0) obj2, (p4.w) obj, 14));
                 p4.m1 m1Var = new p4.m1(0);
                 String str = h2.m0.a;
                 m9.e0 e0Var = new m9.e0();
@@ -515,7 +515,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
                 p4.v vVar = (p4.v) obj3;
                 List list = (List) obj;
                 Handler handler2 = d0Var2.l;
-                org.telegram.ui.web.w wVar2 = new org.telegram.ui.web.w(d0Var2, vVar, new org.telegram.ui.io0(d0Var2, (p4.z0) obj2, vVar, list, 25));
+                org.telegram.ui.web.w wVar2 = new org.telegram.ui.web.w(d0Var2, vVar, new org.telegram.ui.jo0(d0Var2, (p4.z0) obj2, vVar, list, 25));
                 p4.m1 m1Var2 = new p4.m1(0);
                 String str2 = h2.m0.a;
                 m9.e0 e0Var2 = new m9.e0();

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class la0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -260,15 +260,15 @@ public final /* synthetic */ class la0 implements View.OnClickListener {
                 ((EditTextBoldCursor) obj).setText("");
                 break;
             case 17:
-                sz0 sz0Var = ((uz0) obj).b;
-                sz0Var.setText("");
-                org.telegram.messenger.g0.K3(sz0Var);
+                tz0 tz0Var = ((vz0) obj).b;
+                tz0Var.setText("");
+                org.telegram.messenger.g0.K3(tz0Var);
                 break;
             case 18:
-                ((d01) obj).b.getImageReceiver().P0(false);
+                ((e01) obj).b.getImageReceiver().P0(false);
                 break;
             case 19:
-                ((e21) obj).dismiss();
+                ((k21) obj).dismiss();
                 break;
             case 20:
                 org.telegram.ui.an anVar = ((org.telegram.ui.bk) obj).D;

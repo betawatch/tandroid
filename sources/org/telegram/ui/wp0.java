@@ -1,61 +1,66 @@
 package org.telegram.ui;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
 import android.view.ViewGroup;
-import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class wp0 extends AnimatorListenerAdapter {
+public final class wp0 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.nk0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ PhotoViewer d;
 
-    public /* synthetic */ wp0(org.telegram.ui.Components.nk0 nk0Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wp0(PhotoViewer photoViewer, boolean z9, boolean z10, int i7) {
+        super(1);
         this.a = i7;
-        this.b = nk0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.Q1.getNextView().setText((CharSequence) null);
-                up0 up0Var = photoViewer.T1;
-                up0Var.l0 = false;
-                if (up0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) up0Var.o0.getLayoutParams()).topMargin = up0Var.m0;
-                    up0Var.m0 = -1;
-                    up0Var.requestLayout();
-                    break;
-                }
+        switch (i7) {
+            case 1:
+                this.d = photoViewer;
+                this.b = z9;
+                this.c = z10;
+                super(2);
                 break;
             default:
-                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                this.d = photoViewer;
+                this.b = z9;
+                this.c = z10;
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
         switch (this.a) {
             case 0:
-                up0 up0Var = ((PhotoViewer) this.b.b).T1;
-                Method method = up0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(up0Var, null);
-                        break;
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                        return;
-                    }
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Q1) {
+                    onAppear.addListener(new d30(this, 14));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new a3(this, 18));
                 }
-                break;
+                return onAppear;
             default:
-                super.onAnimationStart(animator);
-                break;
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Q1) {
+                    onDisappear.addListener(new d30(this, 15));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new a3(this, 19));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

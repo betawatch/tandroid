@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v80 implements Runnable {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public final /* synthetic */ class v80 implements Runnable {
                 df0 df0Var = ef0Var3.y;
                 int i14 = bf0Var2.a;
                 RectF rectF3 = bf0Var2.d;
-                ProfileActivity.m0(((org.telegram.ui.st0) df0Var).b, i14, rectF3.left, rectF3.top);
+                ProfileActivity.m0(((org.telegram.ui.tt0) df0Var).b, i14, rectF3.left, rectF3.top);
                 break;
             case 5:
                 RLottieNative rLottieNative = (RLottieNative) this.b;
@@ -349,29 +349,29 @@ public final /* synthetic */ class v80 implements Runnable {
                 org.telegram.messenger.qp.s1(((kw0) this.b).a.a).h5((TLRPC.EmojiStatus) this.c, null);
                 break;
             case 21:
-                n01 n01Var = (n01) this.b;
+                s01 s01Var = (s01) this.b;
                 String str2 = (String) this.c;
-                n01Var.O = null;
-                org.telegram.messenger.k00 k00Var = org.telegram.messenger.qp.s1(n01Var.a).q7;
-                long j10 = -n01Var.b;
-                ex exVar = new ex(i10, n01Var, str2);
+                s01Var.O = null;
+                org.telegram.messenger.k00 k00Var = org.telegram.messenger.qp.s1(s01Var.a).q7;
+                long j10 = -s01Var.b;
+                ex exVar = new ex(i10, s01Var, str2);
                 k00Var.getClass();
                 TL_forum.TL_messages_getForumTopics tL_messages_getForumTopics = new TL_forum.TL_messages_getForumTopics();
                 tL_messages_getForumTopics.peer = k00Var.getMessagesController().j1(-j10);
                 tL_messages_getForumTopics.q = str2;
                 tL_messages_getForumTopics.limit = 50;
-                n01Var.N = k00Var.getConnectionsManager().sendRequest(tL_messages_getForumTopics, new org.telegram.messenger.oj(k00Var, j10, exVar, 10));
+                s01Var.N = k00Var.getConnectionsManager().sendRequest(tL_messages_getForumTopics, new org.telegram.messenger.oj(k00Var, j10, exVar, 10));
                 break;
             case 22:
-                g11 g11Var = (g11) this.b;
-                org.telegram.messenger.qp.s1(g11Var.e).q7.d((ArrayList) this.c, -g11Var.f);
-                int i20 = g11.l0;
+                m11 m11Var = (m11) this.b;
+                org.telegram.messenger.qp.s1(m11Var.e).q7.d((ArrayList) this.c, -m11Var.f);
+                int i20 = m11.l0;
                 break;
             case 23:
-                g11 g11Var2 = (g11) this.b;
+                m11 m11Var2 = (m11) this.b;
                 TLRPC.Updates updates = (TLRPC.Updates) this.c;
-                g11Var2.getClass();
-                org.telegram.messenger.qp.s1(g11Var2.e).V2(0, updates.chats.get(0).id, true);
+                m11Var2.getClass();
+                org.telegram.messenger.qp.s1(m11Var2.e).V2(0, updates.chats.get(0).id, true);
                 break;
             case 24:
                 org.telegram.ui.Cells.l1 l1Var = (org.telegram.ui.Cells.l1) this.b;
@@ -382,39 +382,39 @@ public final /* synthetic */ class v80 implements Runnable {
                 }
                 break;
             case 25:
-                e21 e21Var = (e21) this.b;
+                k21 k21Var = (k21) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
-                org.telegram.messenger.au auVar = e21Var.p1;
-                e21Var.i1 = null;
+                org.telegram.messenger.au auVar = k21Var.p1;
+                k21Var.i1 = null;
                 if (tLObject6 instanceof TLRPC.TL_messages_translatedRichMessage) {
                     TLRPC.TL_messages_translatedRichMessage tL_messages_translatedRichMessage = (TLRPC.TL_messages_translatedRichMessage) tLObject6;
                     if (!tL_messages_translatedRichMessage.result.isEmpty() && tL_messages_translatedRichMessage.result.get(0) != null) {
-                        e21Var.L1 = false;
+                        k21Var.L1 = false;
                         TL_iv.RichMessage richMessage = tL_messages_translatedRichMessage.result.get(0);
                         if (auVar != null) {
                             auVar.set(richMessage);
-                            e21Var.E1.D(auVar);
+                            k21Var.E1.D(auVar);
                             break;
                         }
                     }
                 }
-                if (e21Var.L1) {
-                    e21Var.dismiss();
+                if (k21Var.L1) {
+                    k21Var.dismiss();
                     org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.P4, 1, org.telegram.messenger.hd.M0(2131743947, null));
                     break;
                 } else {
-                    org.telegram.messenger.k5.p(null, 2131743947, new hc((FrameLayout) e21Var.b, e21Var.I0), null);
-                    a21 a21Var = e21Var.t1.e;
-                    String str3 = e21Var.s1;
-                    e21Var.r1 = str3;
-                    a21Var.setText(e21.O0(str3, null, null));
+                    org.telegram.messenger.k5.p(null, 2131743947, new hc((FrameLayout) k21Var.b, k21Var.I0), null);
+                    g21 g21Var = k21Var.t1.e;
+                    String str3 = k21Var.s1;
+                    k21Var.r1 = str3;
+                    g21Var.setText(k21.O0(str3, null, null));
                     break;
                 }
                 break;
             case 26:
                 org.telegram.ui.bk bkVar = (org.telegram.ui.bk) this.b;
                 ((org.telegram.ui.ActionBar.g1) this.c).d(true);
-                u21.a(bkVar.getContext(), bkVar.d);
+                a31.a(bkVar.getContext(), bkVar.d);
                 break;
             case 27:
                 ((org.telegram.messenger.f10) this.c).J(((org.telegram.ui.bk) this.b).b, false, false);
@@ -431,7 +431,7 @@ public final /* synthetic */ class v80 implements Runnable {
                     break;
                 }
             default:
-                ((r31) this.b).D.onClick((org.telegram.ui.Cells.q8) this.c);
+                ((x31) this.b).D.onClick((org.telegram.ui.Cells.q8) this.c);
                 break;
         }
     }

@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.ViewParent;
 import android.webkit.WebView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class rt extends WebView {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final class rt extends WebView {
             case 1:
                 super.draw(canvas);
                 ViewParent parent = getParent();
-                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.c;
-                if (parent != bq0Var && bq0Var.h.getVisibility() == 0) {
+                org.telegram.ui.cq0 cq0Var = (org.telegram.ui.cq0) this.c;
+                if (parent != cq0Var && cq0Var.h.getVisibility() == 0) {
                     canvas.drawColor(-16777216);
-                    bq0Var.j(canvas, getWidth(), getHeight());
+                    cq0Var.j(canvas, getWidth(), getHeight());
                     break;
                 }
                 break;

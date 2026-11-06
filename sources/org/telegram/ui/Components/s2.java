@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s2 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -144,8 +144,8 @@ public final /* synthetic */ class s2 implements org.telegram.messenger.c20 {
                 org.telegram.messenger.qs.f(i11).k(org.telegram.messenger.qs.s1, new Object[0]);
                 break;
             default:
-                k41 k41Var = (k41) this.b;
-                k41Var.f3.R(k41Var.T((View) obj), k41Var.j3);
+                q41 q41Var = (q41) this.b;
+                q41Var.f3.R(q41Var.T((View) obj), q41Var.j3);
                 break;
         }
     }

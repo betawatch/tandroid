@@ -2,13 +2,13 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new t0(4);
@@ -85,13 +85,13 @@ public final class i extends l {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.c(parcel, 2, this.a.p());
-        wb.c(parcel, 3, this.b.p());
-        wb.c(parcel, 4, this.c.p());
-        wb.c(parcel, 5, this.d.p());
+        int r10 = xb.r(parcel, 20293);
+        xb.c(parcel, 2, this.a.p());
+        xb.c(parcel, 3, this.b.p());
+        xb.c(parcel, 4, this.c.p());
+        xb.c(parcel, 5, this.d.p());
         q7.s0 s0Var = this.e;
-        wb.c(parcel, 6, s0Var == null ? null : s0Var.p());
-        wb.s(parcel, r10);
+        xb.c(parcel, 6, s0Var == null ? null : s0Var.p());
+        xb.s(parcel, r10);
     }
 }

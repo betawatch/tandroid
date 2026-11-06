@@ -4,7 +4,7 @@ import android.view.View;
 import java.io.Serializable;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s20 implements org.telegram.messenger.a20, org.telegram.messenger.b20 {
     public final /* synthetic */ t20 a;
@@ -14,8 +14,8 @@ public final /* synthetic */ class s20 implements org.telegram.messenger.a20, or
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
-        int i7 = r31Var.d;
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+        int i7 = x31Var.d;
         boolean z9 = false;
         if (i7 != 0) {
             t20 t20Var = this.a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class s20 implements org.telegram.messenger.a20, or
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        int i7 = ((r31) obj).d;
+        int i7 = ((x31) obj).d;
         t20 t20Var = this.a;
         if (i7 == 0) {
             org.telegram.messenger.oa a10 = org.telegram.messenger.oa.a(t20Var.a);

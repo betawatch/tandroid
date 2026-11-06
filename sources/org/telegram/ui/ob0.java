@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ob0 extends org.telegram.ui.Components.wt0 {
     public Bundle D;
@@ -192,7 +192,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 mb0Var.setTextSize(1, 14.0f);
                 mb0Var.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
                 mb0Var.setMaxLines(2);
-                mb0Var.setOnClickListener(new org.telegram.ui.Components.n41(24, this, context));
+                mb0Var.setOnClickListener(new org.telegram.ui.Components.t41(24, this, context));
                 frameLayout2.addView(mb0Var);
                 mb0 mb0Var2 = new mb0(context, i10);
                 this.r = mb0Var2;
@@ -454,7 +454,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         mb0Var3.setTextSize(1, 14.0f);
         mb0Var3.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
         mb0Var3.setMaxLines(2);
-        mb0Var3.setOnClickListener(new org.telegram.ui.Components.n41(24, this, context));
+        mb0Var3.setOnClickListener(new org.telegram.ui.Components.t41(24, this, context));
         frameLayout22.addView(mb0Var3);
         mb0 mb0Var22 = new mb0(context, i10);
         this.r = mb0Var22;
@@ -788,12 +788,12 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
             if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                org.telegram.ui.Components.ty0 ty0Var = new org.telegram.ui.Components.ty0();
-                ty0Var.a |= 256;
-                ty0Var.b = indexOf;
+                org.telegram.ui.Components.uy0 uy0Var = new org.telegram.ui.Components.uy0();
+                uy0Var.a |= 256;
+                uy0Var.b = indexOf;
                 int i12 = lastIndexOf + 1;
-                ty0Var.c = i12;
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.uy0(ty0Var, 0), indexOf, i12, 0);
+                uy0Var.c = i12;
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i12, 0);
             }
             lVar.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131752144, null), spannableStringBuilder));
         }

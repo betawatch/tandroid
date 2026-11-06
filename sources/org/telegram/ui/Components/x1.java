@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -84,23 +84,23 @@ public final /* synthetic */ class x1 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new bi.j9(tLObject, (org.telegram.messenger.c20) obj, 1));
                 break;
             case 14:
-                g11 g11Var = (g11) obj;
+                m11 m11Var = (m11) obj;
                 if (tLObject != null) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    org.telegram.messenger.qp.s1(g11Var.e).O3(updates, false);
+                    org.telegram.messenger.qp.s1(m11Var.e).O3(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        org.telegram.messenger.g0.i3(new v80(i12, g11Var, updates), 1000L);
+                        org.telegram.messenger.g0.i3(new v80(i12, m11Var, updates), 1000L);
                         break;
                     }
                 }
                 break;
             case 15:
-                org.telegram.messenger.g0.h3(new v80(25, (e21) obj, tLObject));
+                org.telegram.messenger.g0.h3(new v80(25, (k21) obj, tLObject));
                 break;
             case 16:
-                m31 m31Var = (m31) obj;
-                m31Var.getClass();
-                org.telegram.messenger.g0.h3(new l31(m31Var, tL_error, tLObject, i13));
+                s31 s31Var = (s31) obj;
+                s31Var.getClass();
+                org.telegram.messenger.g0.h3(new r31(s31Var, tL_error, tLObject, i13));
                 break;
             default:
                 int i15 = UndoView.i0;

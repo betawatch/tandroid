@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yk0 implements bj0 {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class yk0 implements bj0 {
                                         ArrayList arrayList = new ArrayList();
                                         arrayList.add(message);
                                         PhotoViewer.p1().H2(null, f2Var, null);
-                                        PhotoViewer.p1().Z1(arrayList, 0, 0L, 0L, 0L, new org.telegram.ui.mq0());
+                                        PhotoViewer.p1().Z1(arrayList, 0, 0L, 0L, 0L, new org.telegram.ui.nq0());
                                         break;
                                     } else {
                                         org.telegram.messenger.g0.s2(message, dl0Var.F, f2Var);
@@ -86,7 +86,7 @@ public final /* synthetic */ class yk0 implements bj0 {
                                 h7Var.f(true);
                             } else {
                                 E.P = true;
-                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.p10.s0).a).X(F0, E, 0, 0);
+                                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.p10.s0).a).W(F0, E, 0, 0);
                                 h7Var.f(true);
                                 org.telegram.messenger.z5.q(this.b).y();
                             }

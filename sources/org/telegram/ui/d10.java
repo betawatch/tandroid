@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d10 implements Runnable {
     public final /* synthetic */ int a;
@@ -174,7 +174,7 @@ public final /* synthetic */ class d10 implements Runnable {
                 } else {
                     Parcelable.Creator<y8.i> creator = y8.i.CREATOR;
                     byte[] byteArrayExtra = intent.getByteArrayExtra("com.google.android.gms.wallet.PaymentData");
-                    y8.i iVar = (y8.i) (byteArrayExtra != null ? c8.xb.a(byteArrayExtra, creator) : null);
+                    y8.i iVar = (y8.i) (byteArrayExtra != null ? c8.yb.a(byteArrayExtra, creator) : null);
                     if (iVar != null && (str2 = iVar.h) != null) {
                         try {
                             JSONObject jSONObject = new JSONObject(str2).getJSONObject("paymentMethodData");
@@ -182,7 +182,7 @@ public final /* synthetic */ class d10 implements Runnable {
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
                             if (hl0Var.K0 == null && hl0Var.M0 == null) {
-                                hy0 a10 = c8.xc.a(string);
+                                hy0 a10 = c8.yc.a(string);
                                 hl0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a10.c, (String) a10.b);
                                 uc.a aVar = (uc.a) a10.d;
                                 hl0Var.x0 = aVar.a() + " *" + aVar.b();
@@ -213,10 +213,10 @@ public final /* synthetic */ class d10 implements Runnable {
                 }
                 break;
             case 5:
-                nq0 nq0Var = (nq0) this.c;
+                oq0 oq0Var = (oq0) this.c;
                 Uri uri = (Uri) this.d;
                 int i17 = this.b;
-                nq0Var.getClass();
+                oq0Var.getClass();
                 try {
                     File file = new File(uri.getPath());
                     int i18 = org.telegram.messenger.p10.s0;
@@ -224,30 +224,30 @@ public final /* synthetic */ class d10 implements Runnable {
                     org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(file, true, 0L, 0, null, null, null, 0L, i18, false, point.x, point.y, null, 0, true);
                     Bitmap q10 = v5Var.q(0L, false);
                     v5Var.u();
-                    org.telegram.messenger.g0.h3(new d10(nq0Var, i17, q10, i11));
+                    org.telegram.messenger.g0.h3(new d10(oq0Var, i17, q10, i11));
                     break;
                 } catch (Throwable th2) {
                     org.telegram.messenger.a8.g(th2, true);
-                    org.telegram.messenger.g0.h3(new ef0(nq0Var, 26));
+                    org.telegram.messenger.g0.h3(new ef0(oq0Var, 26));
                     return;
                 }
             case 6:
-                nq0 nq0Var2 = (nq0) this.c;
+                oq0 oq0Var2 = (oq0) this.c;
                 int i19 = this.b;
                 Bitmap bitmap = (Bitmap) this.d;
-                if (i19 == nq0Var2.a) {
-                    nq0Var2.setImageBitmap(bitmap);
-                    nq0Var2.c = true;
-                    nq0Var2.b = false;
+                if (i19 == oq0Var2.a) {
+                    oq0Var2.setImageBitmap(bitmap);
+                    oq0Var2.c = true;
+                    oq0Var2.b = false;
                     break;
                 }
                 break;
             case 7:
-                yr0 yr0Var = (yr0) this.c;
+                zr0 zr0Var = (zr0) this.c;
                 ne neVar = (ne) this.d;
                 int i20 = this.b;
                 neVar.a(Integer.valueOf(i20));
-                yr0Var.c(i20 == 1 || i20 == 13);
+                zr0Var.c(i20 == 1 || i20 == 13);
                 break;
             case 8:
                 ProfileActivity profileActivity = (ProfileActivity) this.c;
@@ -558,11 +558,11 @@ public final /* synthetic */ class d10 implements Runnable {
                         ConnectionsManager.getInstance(i43).sendRequest(deletestargiftcollection, null);
                     }
                     up0Var.f(true);
-                    org.telegram.ui.Components.o61 o61Var = up0Var.n;
+                    org.telegram.ui.Components.u61 u61Var = up0Var.n;
                     if (i41 < t9Var.d().size()) {
                         i41++;
                     }
-                    o61Var.d(-1, i41);
+                    u61Var.d(-1, i41);
                     up0Var.o();
                     break;
                 }

@@ -43,9 +43,9 @@ import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Cells.s0;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.x1;
-import org.telegram.ui.Components.az0;
 import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.pn;
 import org.telegram.ui.Components.ue;
@@ -59,7 +59,7 @@ import r0.i0;
 import v4.a1;
 import v4.d1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class l extends v4.k {
     public static final xq V = new xq(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -121,7 +121,7 @@ public abstract class l extends v4.k {
 
     @Override // v4.k
     public final boolean J(v4.i iVar, d1 d1Var) {
-        cz0 cz0Var;
+        dz0 dz0Var;
         if (r2.a) {
             a8.b("end change if necessary");
         }
@@ -130,8 +130,8 @@ public abstract class l extends v4.k {
             animator.cancel();
         }
         View view = d1Var.a;
-        if (this.K.contains(view) && (cz0Var = (cz0) this.U.run()) != null) {
-            cz0Var.a(view);
+        if (this.K.contains(view) && (dz0Var = (dz0) this.U.run()) != null) {
+            dz0Var.a(view);
         }
         if (iVar.b == d1Var) {
             iVar.b = null;
@@ -454,7 +454,7 @@ public abstract class l extends v4.k {
     }
 
     public final void U() {
-        cz0 cz0Var;
+        dz0 dz0Var;
         HashMap hashMap = this.J;
         ArrayList arrayList = new ArrayList(hashMap.values());
         hashMap.clear();
@@ -469,34 +469,34 @@ public abstract class l extends v4.k {
                 animator.cancel();
             }
         }
-        if (this.K.isEmpty() || (cz0Var = (cz0) this.U.run()) == null) {
+        if (this.K.isEmpty() || (dz0Var = (dz0) this.U.run()) == null) {
             return;
         }
-        ArrayList arrayList2 = cz0Var.c;
-        if (cz0Var.e) {
+        ArrayList arrayList2 = dz0Var.c;
+        if (dz0Var.e) {
             return;
         }
-        cz0Var.e = true;
+        dz0Var.e = true;
         int size2 = arrayList2.size();
         while (i7 < size2) {
             Object obj2 = arrayList2.get(i7);
             i7++;
-            bz0 bz0Var = (bz0) obj2;
-            Runnable runnable = bz0Var.d;
+            cz0 cz0Var = (cz0) obj2;
+            Runnable runnable = cz0Var.d;
             if (runnable != null) {
-                cz0.b(runnable);
-                bz0Var.d = null;
+                dz0.b(runnable);
+                cz0Var.d = null;
             }
         }
         arrayList2.clear();
-        az0 az0Var = cz0Var.a;
-        if (az0Var != null) {
-            az0Var.h();
+        bz0 bz0Var = dz0Var.a;
+        if (bz0Var != null) {
+            bz0Var.h();
         }
-        Runnable runnable2 = cz0Var.d;
+        Runnable runnable2 = dz0Var.d;
         if (runnable2 != null) {
-            cz0Var.d = null;
-            cz0.b(runnable2);
+            dz0Var.d = null;
+            dz0.b(runnable2);
         }
     }
 
@@ -642,14 +642,14 @@ public abstract class l extends v4.k {
 
     @Override // v4.k, v4.l0
     public final void f(d1 d1Var) {
-        cz0 cz0Var;
+        dz0 dz0Var;
         Animator animator = (Animator) this.J.remove(d1Var);
         if (animator != null) {
             animator.cancel();
         }
         View view = d1Var.a;
-        if (this.K.contains(view) && (cz0Var = (cz0) this.U.run()) != null) {
-            cz0Var.a(view);
+        if (this.K.contains(view) && (dz0Var = (dz0) this.U.run()) != null) {
+            dz0Var.a(view);
         }
         super.f(d1Var);
         X(view);
@@ -1044,7 +1044,7 @@ public abstract class l extends v4.k {
                                         a8.b("animate remove group impl with thanos");
                                     }
                                     arrayList13.addAll(arrayList17);
-                                    cz0 cz0Var = (cz0) lVar.U.run();
+                                    dz0 dz0Var = (dz0) lVar.U.run();
                                     for (int i24 = 0; i24 < arrayList17.size(); i24++) {
                                     }
                                     ArrayList arrayList18 = new ArrayList();
@@ -1053,12 +1053,12 @@ public abstract class l extends v4.k {
                                         arrayList18.add(((d1) arrayList17.get(i25)).a);
                                     }
                                     z0 z0Var = new z0(lVar, arrayList18, arrayList17, 7);
-                                    az0 az0Var = cz0Var.a;
-                                    if (az0Var != null) {
-                                        az0Var.d(arrayList18, z0Var);
-                                        Choreographer.getInstance().postFrameCallback(cz0Var.b);
+                                    bz0 bz0Var = dz0Var.a;
+                                    if (bz0Var != null) {
+                                        bz0Var.d(arrayList18, z0Var);
+                                        Choreographer.getInstance().postFrameCallback(dz0Var.b);
                                     } else {
-                                        cz0Var.c.add(new bz0(arrayList18, z0Var));
+                                        dz0Var.c.add(new cz0(arrayList18, z0Var));
                                     }
                                     arrayList12.add((View) arrayList18.get(0));
                                     pj0Var.C0();
@@ -1104,15 +1104,15 @@ public abstract class l extends v4.k {
                                 hashMap.put(d1Var3, ofFloat);
                                 ofFloat.start();
                             } else {
-                                cz0 cz0Var2 = (cz0) peVar.run();
+                                dz0 dz0Var2 = (dz0) peVar.run();
                                 i12 = i26;
                                 z0 z0Var2 = new z0(lVar, view6, d1Var3, 8);
-                                az0 az0Var2 = cz0Var2.a;
-                                if (az0Var2 != null) {
-                                    az0Var2.b(1.0f, view6, z0Var2);
-                                    Choreographer.getInstance().postFrameCallback(cz0Var2.b);
+                                bz0 bz0Var2 = dz0Var2.a;
+                                if (bz0Var2 != null) {
+                                    bz0Var2.b(1.0f, view6, z0Var2);
+                                    Choreographer.getInstance().postFrameCallback(dz0Var2.b);
                                 } else {
-                                    cz0Var2.c.add(new bz0(view6, z0Var2));
+                                    dz0Var2.c.add(new cz0(view6, z0Var2));
                                 }
                                 arrayList12.add(view6);
                                 arrayList3 = arrayList13;

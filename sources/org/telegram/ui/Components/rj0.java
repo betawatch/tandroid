@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public class rj0 extends p61 {
+public class rj0 extends v61 {
     public final ht0 V;
     public boolean W;
     public View a0;
@@ -21,14 +21,14 @@ public class rj0 extends p61 {
         setClipToPadding(false);
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void A(int i7) {
         ht0 ht0Var = this.V;
         ht0Var.g("PAGER_TAB_END");
         ht0Var.p();
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final boolean B(MotionEvent motionEvent) {
         boolean z9 = this.H;
         boolean B = super.B(motionEvent);
@@ -47,7 +47,7 @@ public class rj0 extends p61 {
         return B;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void F(View view, float f10) {
         if (view.getTranslationX() == f10) {
             return;
@@ -85,7 +85,7 @@ public class rj0 extends p61 {
         ht0Var.g(j3 ? "PAGER_DOWN_COMMON" : "PAGER_DOWN_PAGE");
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final boolean b(MotionEvent motionEvent) {
         return !this.W && this.V.c();
     }
@@ -101,18 +101,18 @@ public class rj0 extends p61 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public float getAvailableTranslationX() {
         return Math.max(1, getMeasuredWidth());
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.v61, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         M(motionEvent);
         return !this.W && super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.View
+    @Override // org.telegram.ui.Components.v61, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         ht0 ht0Var = this.V;
         if (motionEvent == null) {
@@ -127,20 +127,20 @@ public class rj0 extends p61 {
         return !this.W && B(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void u() {
         ht0 ht0Var = this.V;
         ht0Var.g("PAGER_SCROLL_END");
         ht0Var.p();
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void v() {
         this.a0 = null;
         this.b0 = null;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void w(boolean z9) {
         this.V.p();
     }

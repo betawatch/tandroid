@@ -40,14 +40,14 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.zr;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.j9;
 import org.telegram.ui.r9;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements r9, l51, h2.d, u2.u, g0 {
+public final /* synthetic */ class u implements r9, q51, h2.d, u2.u, g0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -406,16 +406,16 @@ public final /* synthetic */ class u implements r9, l51, h2.d, u2.u, g0 {
         return i13;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         org.telegram.messenger.g0.h3(new jg.r(this, this.b, i7, 3));
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -528,7 +528,7 @@ public final /* synthetic */ class u implements r9, l51, h2.d, u2.u, g0 {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
     }
 
@@ -602,15 +602,15 @@ public final /* synthetic */ class u implements r9, l51, h2.d, u2.u, g0 {
     public /* synthetic */ void V0(zr zrVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -626,11 +626,11 @@ public final /* synthetic */ class u implements r9, l51, h2.d, u2.u, g0 {
         this.b = (z9 || z10 || z11) ? 1 : 0;
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 }

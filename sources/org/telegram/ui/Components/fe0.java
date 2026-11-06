@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fe0 extends org.telegram.ui.j4 {
     public final /* synthetic */ int h;
@@ -68,12 +68,12 @@ public final class fe0 extends org.telegram.ui.j4 {
         switch (this.h) {
             case 1:
                 super.onMeasure(i7, i10);
-                f71 f71Var = (f71) this.n;
-                if (f71Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = f71Var.d.getLayoutParams();
+                l71 l71Var = (l71) this.n;
+                if (l71Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = l71Var.d.getLayoutParams();
                     layoutParams.width = getMeasuredWidth();
                     layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = f71Var.e;
+                    ImageView imageView = l71Var.e;
                     if (imageView != null) {
                         ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
                         layoutParams2.width = getMeasuredWidth();
@@ -92,7 +92,7 @@ public final class fe0 extends org.telegram.ui.j4 {
                     layoutParams3.height = getMeasuredHeight();
                 }
                 TextureView textureView = photoViewer.B2;
-                if (textureView instanceof c51) {
+                if (textureView instanceof h51) {
                     textureView.setPivotX(textureView.getMeasuredWidth() / 2);
                     photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
                 } else {

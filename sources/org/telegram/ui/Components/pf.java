@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class pf implements hx {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -282,7 +282,7 @@ public final class pf implements hx {
     }
 
     @Override // org.telegram.ui.Components.hx
-    public final void o(n31 n31Var) {
+    public final void o(t31 t31Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.f2 f2Var = chatActivityEnterView.P2;
         if (f2Var == null) {
@@ -290,7 +290,7 @@ public final class pf implements hx {
         }
         org.telegram.ui.ActionBar.f2 f2Var2 = f2Var;
         if (f2Var2 != null) {
-            chatActivityEnterView.a3 = new of(this, chatActivityEnterView.getContext(), f2Var2, n31Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new of(this, chatActivityEnterView.getContext(), f2Var2, t31Var, chatActivityEnterView.W3);
             wf wfVar = chatActivityEnterView.Z2;
             if (wfVar != null) {
                 wfVar.B(true);

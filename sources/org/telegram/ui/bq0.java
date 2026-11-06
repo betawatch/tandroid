@@ -1,85 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.webkit.CookieManager;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.ui.Components.RadialProgressView;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class bq0 extends org.telegram.ui.Components.ae0 {
-    public final Rect M;
-    public final /* synthetic */ PhotoViewer N;
+public final class bq0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ uq0 a;
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ PhotoViewer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bq0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.z0 z0Var) {
-        super(context);
-        this.N = photoViewer;
-        this.a = org.telegram.messenger.p10.s0;
-        this.w = new ArrayList();
-        this.L = new org.telegram.ui.Components.ob0(this, 7);
-        this.b = photoViewer2;
-        this.r = z0Var;
-        org.telegram.ui.Components.rt rtVar = new org.telegram.ui.Components.rt(this, context, context, 1);
-        this.f = rtVar;
-        rtVar.getSettings().setJavaScriptEnabled(true);
-        rtVar.getSettings().setDomStorageEnabled(true);
-        rtVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        rtVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(rtVar, true);
-        rtVar.setWebViewClient(new n1(this, 2));
-        addView(rtVar, c8.ha.e(-1, -1, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(17);
-        linearLayout.setVisibility(8);
-        addView(linearLayout, c8.ha.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.y6, null);
-        textView.setGravity(17);
-        linearLayout.addView(textView, c8.ha.r(-2, -2, 1));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 16.0f);
-        int i7 = org.telegram.ui.ActionBar.k6.n6;
-        org.telegram.ui.ActionBar.r6.V(textView2, i7, null);
-        textView2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f));
-        int i10 = org.telegram.ui.ActionBar.z5.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.z5.d(0, org.telegram.ui.ActionBar.z5.b(org.telegram.ui.ActionBar.k6.x0(null, i7, false)), 12.0f));
-        textView2.setVisibility(8);
-        linearLayout.addView(textView2, c8.ha.t(-2, -2, 1, 0, 8, 0, 0));
-        bi.ec ecVar = new bi.ec(21, context, this);
-        this.h = ecVar;
-        ecVar.setBackgroundColor(-16777216);
-        ecVar.setVisibility(4);
-        addView(ecVar, c8.ha.c(-1.0f, -1));
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.n = radialProgressView;
-        radialProgressView.setVisibility(4);
-        addView(radialProgressView, c8.ha.e(-2, -2, 17));
-        this.M = new Rect();
+    public bq0(PhotoViewer photoViewer, uq0 uq0Var, Integer num) {
+        this.c = photoViewer;
+        this.a = uq0Var;
+        this.b = num;
     }
 
-    public final void j(Canvas canvas, int i7, int i10) {
-        Bitmap n10 = this.N.B4.n();
-        if (n10 != null) {
-            float min = Math.min(i7 / n10.getWidth(), i10 / n10.getHeight());
-            int width = (int) (n10.getWidth() * min);
-            int height = (int) (n10.getHeight() * min);
-            int i11 = (i10 - height) / 2;
-            int i12 = (i7 - width) / 2;
-            Rect rect = this.M;
-            rect.set(i12, i11, width + i12, height + i11);
-            canvas.drawBitmap(n10, (Rect) null, rect, (Paint) null);
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.g0.getViewTreeObserver().removeOnPreDrawListener(this);
+        photoViewer.F.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        ViewPropertyAnimator duration = photoViewer.F.animate().alpha(1.0f).translationY(0.0f).setDuration(150L);
+        org.telegram.ui.Components.xq xqVar = org.telegram.ui.Components.xq.f;
+        duration.setInterpolator(xqVar).start();
+        photoViewer.N0.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        photoViewer.N0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(xqVar).start();
+        photoViewer.O0.setTranslationY(-org.telegram.messenger.g0.L(32.0f));
+        photoViewer.O0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(xqVar).start();
+        photoViewer.P0.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.P0.animate().alpha(1.0f).setDuration(150L).setInterpolator(xqVar).start();
+        photoViewer.S0.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.S0.setAlpha(0.0f);
+        photoViewer.S0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(xqVar).start();
+        photoViewer.r3.setTranslationY(org.telegram.messenger.g0.L(32.0f));
+        photoViewer.r3.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(xqVar).start();
+        photoViewer.e0.setAlpha(0.0f);
+        photoViewer.L0.setAlpha(0);
+        photoViewer.m4 = 4;
+        photoViewer.e0.invalidate();
+        AnimatorSet animatorSet = new AnimatorSet();
+        bi.m5 m5Var = photoViewer.P0;
+        ObjectAnimator duration2 = ObjectAnimator.ofFloat(m5Var, (Property<bi.m5, Float>) View.TRANSLATION_Y, m5Var.getTranslationY(), 0.0f).setDuration(220L);
+        duration2.setInterpolator(xqVar);
+        bi.m5 m5Var2 = photoViewer.P0;
+        Property property = View.ALPHA;
+        ObjectAnimator duration3 = ObjectAnimator.ofFloat(m5Var2, (Property<bi.m5, Float>) property, 1.0f).setDuration(220L);
+        duration3.setInterpolator(xqVar);
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.e0, (Property<pq0, Float>) property, 0.0f, 1.0f).setDuration(220L), ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f).setDuration(220L), duration2, duration3);
+        animatorSet.addListener(new aq0(this));
+        animatorSet.start();
+        return true;
     }
 }

@@ -23,13 +23,13 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.r6;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class n4 extends Drawable implements r6, ls {
     public final Paint a;
@@ -38,7 +38,7 @@ public final class n4 extends Drawable implements r6, ls {
     public final ImageReceiver d;
     public int e;
     public final i5[] f;
-    public final ly0 h;
+    public final my0 h;
     public final RectF n;
     public final boolean r;
     public final w5 s;
@@ -68,7 +68,7 @@ public final class n4 extends Drawable implements r6, ls {
         imageReceiver.i0(user, w8Var, null);
         imageReceiver.J0(org.telegram.messenger.g0.L(16.0f));
         d();
-        this.h = new ly0(t10.p(user), 14.0f, null);
+        this.h = new my0(t10.p(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.r6
@@ -252,7 +252,7 @@ public final class n4 extends Drawable implements r6, ls {
         imageReceiver.i0(user, w8Var, null);
         imageReceiver.J0(org.telegram.messenger.g0.L(16.0f));
         imageReceiver2.r0(hc.b(document), "120_120", hc.c(w7.w(document.thumbs, 120, false, null, false), document), "120_120", t5.d(document.thumbs, k6.a7, 0.35f, false), 0L, null, null, 0);
-        this.h = new ly0(t10.p(user), 14.0f, null);
+        this.h = new my0(t10.p(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

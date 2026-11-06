@@ -31,14 +31,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.e21;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.ve0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z3 extends k.a {
     public boolean c;
@@ -742,13 +742,13 @@ public final class z3 extends k.a {
                             }
                             storyItem4 = g4Var.a;
                             if (storyItem4 != null) {
-                                if (storyItem4.translated && TextUtils.equals(storyItem4.translatedLng, e21.M0())) {
+                                if (storyItem4.translated && TextUtils.equals(storyItem4.translatedLng, k21.M0())) {
                                     org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, hd.M0(2131749303, null), false, z3Var3.d).setOnClickListener(new o3(z3Var3, 4));
                                 } else {
                                     f10 f10Var = qp.s1(i4Var.l2).s7;
                                     TL_stories.StoryItem storyItem11 = g4Var.a;
                                     f10Var.getClass();
-                                    if (storyItem11 != null && !TextUtils.isEmpty(storyItem11.caption) && !org.telegram.messenger.i6.d(storyItem11.caption) && ((storyItem11.detectedLng == null && storyItem11.translatedText != null && TextUtils.equals(storyItem11.translatedLng, e21.M0())) || ((str5 = storyItem11.detectedLng) != null && !f10Var.w(str5)))) {
+                                    if (storyItem11 != null && !TextUtils.isEmpty(storyItem11.caption) && !org.telegram.messenger.i6.d(storyItem11.caption) && ((storyItem11.detectedLng == null && storyItem11.translatedText != null && TextUtils.equals(storyItem11.translatedLng, k21.M0())) || ((str5 = storyItem11.detectedLng) != null && !f10Var.w(str5)))) {
                                         actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                                         org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_translate, hd.M0(2131743957, null), false, z3Var3.d).setOnClickListener(new o3(z3Var3, 5));
                                         z3Var3.s(actionBarPopupWindow$ActionBarPopupWindowLayout8, g4Var.a);

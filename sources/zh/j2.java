@@ -6,9 +6,9 @@ import java.util.HashSet;
 import org.telegram.messenger.a20;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements a20 {
     public final /* synthetic */ int a;
@@ -23,10 +23,10 @@ public final /* synthetic */ class j2 implements a20 {
 
     @Override // org.telegram.messenger.a20
     public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        r31 r31Var = (r31) obj;
+        x31 x31Var = (x31) obj;
         switch (this.a) {
             case 0:
-                long j3 = ((TL_stars.starGiftAttributePattern) r31Var.G).document.id;
+                long j3 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                 d3 d3Var = this.b.d;
                 HashSet hashSet = d3Var.l;
                 if (hashSet.contains(Long.valueOf(j3))) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class j2 implements a20 {
                 this.c.u();
                 break;
             case 1:
-                int i10 = ((TL_stars.starGiftAttributeBackdrop) r31Var.G).backdrop_id;
+                int i10 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                 d3 d3Var2 = this.b.d;
                 HashSet hashSet2 = d3Var2.k;
                 if (hashSet2.contains(Integer.valueOf(i10))) {
@@ -74,7 +74,7 @@ public final /* synthetic */ class j2 implements a20 {
                 this.c.u();
                 break;
             default:
-                long j11 = ((TL_stars.starGiftAttributeModel) r31Var.G).document.id;
+                long j11 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                 d3 d3Var3 = this.b.d;
                 HashSet hashSet3 = d3Var3.j;
                 if (hashSet3.contains(Long.valueOf(j11))) {

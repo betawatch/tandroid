@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class bg0 extends Dialog implements org.telegram.messenger.ls {
     public float D;
@@ -88,7 +88,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
     public boolean w;
     public org.telegram.ui.Cells.q1 w0;
     public boolean x;
-    public org.telegram.ui.Components.ly0 x0;
+    public org.telegram.ui.Components.my0 x0;
     public boolean y;
     public Paint y0;
 
@@ -696,7 +696,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
     public final void r(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.x0 = j3 > 0 ? new org.telegram.ui.Components.ly0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
+        this.x0 = j3 > 0 ? new org.telegram.ui.Components.my0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
         if (this.y0 == null) {
             Paint paint = new Paint(1);
             this.y0 = paint;

@@ -39,8 +39,8 @@ import org.telegram.ui.Components.kt;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.ln;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w7;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xp;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.ys;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zp;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t6 {
     public final View a;
@@ -162,12 +162,12 @@ public final class t6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                o31[] o31VarArr = (o31[]) spannedString.getSpans(0, spannedString.length(), o31.class);
-                if (o31VarArr == null || o31VarArr.length <= 0) {
+                u31[] u31VarArr = (u31[]) spannedString.getSpans(0, spannedString.length(), u31.class);
+                if (u31VarArr == null || u31VarArr.length <= 0) {
                     return;
                 }
-                for (o31 o31Var : o31VarArr) {
-                    o31Var.b = i7;
+                for (u31 u31Var : u31VarArr) {
+                    u31Var.b = i7;
                 }
                 return;
             }
@@ -312,10 +312,10 @@ public final class t6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            o31[] o31VarArr2 = (o31[]) spannedString2.getSpans(0, spannedString2.length(), o31.class);
-                            if (o31VarArr2 != null && o31VarArr2.length > 0) {
-                                for (o31 o31Var2 : o31VarArr2) {
-                                    o31Var2.b = i7;
+                            u31[] u31VarArr2 = (u31[]) spannedString2.getSpans(0, spannedString2.length(), u31.class);
+                            if (u31VarArr2 != null && u31VarArr2.length > 0) {
+                                for (u31 u31Var2 : u31VarArr2) {
+                                    u31Var2.b = i7;
                                 }
                             }
                         }
@@ -335,10 +335,10 @@ public final class t6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                o31[] o31VarArr3 = (o31[]) spannedString3.getSpans(0, spannedString3.length(), o31.class);
-                                if (o31VarArr3 != null && o31VarArr3.length > 0) {
-                                    for (o31 o31Var3 : o31VarArr3) {
-                                        o31Var3.b = i7;
+                                u31[] u31VarArr3 = (u31[]) spannedString3.getSpans(0, spannedString3.length(), u31.class);
+                                if (u31VarArr3 != null && u31VarArr3.length > 0) {
+                                    for (u31 u31Var3 : u31VarArr3) {
+                                        u31Var3.b = i7;
                                     }
                                 }
                             }

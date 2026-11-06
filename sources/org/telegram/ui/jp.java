@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jp extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -1568,7 +1568,7 @@ public final class jp extends org.telegram.ui.Components.oj0 {
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Components.dy0) view).a(kpVar.w, kpVar.S, i47 == 0, false, new r3(this, 3));
+                ((org.telegram.ui.Components.ey0) view).a(kpVar.w, kpVar.S, i47 == 0, false, new r3(this, 3));
                 break;
         }
     }
@@ -1662,7 +1662,7 @@ public final class jp extends org.telegram.ui.Components.oj0 {
                 i10 = ((org.telegram.ui.ActionBar.f2) kpVar).currentAccount;
                 long j3 = -kpVar.s;
                 f6Var = ((org.telegram.ui.ActionBar.f2) kpVar).resourceProvider;
-                view = new org.telegram.ui.Components.dy0(i10, j3, this.c, f6Var);
+                view = new org.telegram.ui.Components.ey0(i10, j3, this.c, f6Var);
                 break;
         }
         return new org.telegram.ui.Components.xi0(view);

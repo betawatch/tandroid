@@ -14,15 +14,15 @@ import j$.util.Objects;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.c21;
 import org.telegram.ui.Components.i00;
+import org.telegram.ui.Components.i21;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.Wallet.n9;
 import org.telegram.ui.ec1;
 import org.telegram.ui.ls;
 import org.telegram.ui.z21;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m2 extends TextView {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final class m2 extends TextView {
             case 3:
                 super.onMeasure(i7, i10);
                 if (hd.a0) {
-                    ((c21) this.b).b.setPivotX(getMeasuredWidth());
+                    ((i21) this.b).b.setPivotX(getMeasuredWidth());
                     break;
                 }
                 break;

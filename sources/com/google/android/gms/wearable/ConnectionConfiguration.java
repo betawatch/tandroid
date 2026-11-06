@@ -2,7 +2,7 @@ package com.google.android.gms.wearable;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import java.util.List;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new w.a(8);
@@ -60,31 +60,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.l(parcel, 3, this.b);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.l(parcel, 3, this.b);
         int i10 = this.c;
-        wb.q(parcel, 4, 4);
+        xb.q(parcel, 4, 4);
         parcel.writeInt(i10);
         int i11 = this.d;
-        wb.q(parcel, 5, 4);
+        xb.q(parcel, 5, 4);
         parcel.writeInt(i11);
         boolean z9 = this.e;
-        wb.q(parcel, 6, 4);
+        xb.q(parcel, 6, 4);
         parcel.writeInt(z9 ? 1 : 0);
         boolean z10 = this.f;
-        wb.q(parcel, 7, 4);
+        xb.q(parcel, 7, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        wb.l(parcel, 8, this.h);
+        xb.l(parcel, 8, this.h);
         boolean z11 = this.n;
-        wb.q(parcel, 9, 4);
+        xb.q(parcel, 9, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        wb.l(parcel, 10, this.r);
-        wb.l(parcel, 11, this.s);
+        xb.l(parcel, 10, this.r);
+        xb.l(parcel, 11, this.s);
         int i12 = this.w;
-        wb.q(parcel, 12, 4);
+        xb.q(parcel, 12, 4);
         parcel.writeInt(i12);
-        wb.n(parcel, 13, this.x);
-        wb.s(parcel, r10);
+        xb.n(parcel, 13, this.x);
+        xb.s(parcel, r10);
     }
 }

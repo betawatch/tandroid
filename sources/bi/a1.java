@@ -20,15 +20,15 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b30;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lb0;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a1 extends org.telegram.ui.Components.na {
     public static final int[] p2 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -56,8 +56,8 @@ public final class a1 extends org.telegram.ui.Components.na {
     public final wp[] k2;
     public final wp[] l2;
     public boolean m2;
-    public f41 n2;
-    public final r31 o2;
+    public l41 n2;
+    public final x31 o2;
 
     public a1(final Context context, final int i7, final long j3, TL_stars.TL_starGiftUnique tL_starGiftUnique, final org.telegram.ui.ActionBar.f6 f6Var, z1 z1Var) {
         super(context, null, true, false, 2, f6Var);
@@ -258,18 +258,18 @@ public final class a1 extends org.telegram.ui.Components.na {
                             textView4.setTextSize(1, 16.0f);
                             textView4.setText(org.telegram.messenger.g0.X2(a1Var.f2.a == bVar5 ? org.telegram.messenger.hd.a0(null, null, 2131749682, d, org.telegram.messenger.m5.t(j14), str) : org.telegram.messenger.hd.a0(null, null, 2131749681, d, org.telegram.messenger.m5.t(j14), str)));
                             linearLayout2.addView(textView4, c8.ha.t(-1, -2, 48, 24, 4, 24, 4));
-                            sx0 sx0Var = new sx0(a1Var.getContext(), a1Var.I0);
+                            tx0 tx0Var = new tx0(a1Var.getContext(), a1Var.I0);
                             final long N1 = qp.s1(a1Var.a).N1(j14);
                             final cg.a g12 = cg.a.g(N1, bVar5);
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131749703, null), dd.a1(z10, org.telegram.messenger.hd.a0(null, null, 2131749739, d), 0.8f, null), null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131749703, null), dd.a1(z10, org.telegram.messenger.hd.a0(null, null, 2131749739, d), 0.8f, null), null, null);
                             if (N1 > 0) {
                                 i15 = 0;
-                                sx0Var.c(org.telegram.messenger.hd.M0(2131749704, null), dd.a1(false, org.telegram.messenger.hd.a0(null, null, 2131749739, g12.d()), 0.8f, null), null, null);
+                                tx0Var.c(org.telegram.messenger.hd.M0(2131749704, null), dd.a1(false, org.telegram.messenger.hd.a0(null, null, 2131749739, g12.d()), 0.8f, null), null, null);
                             } else {
                                 i15 = 0;
                             }
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131749705, null), org.telegram.messenger.hd.G(a1Var.g2 / 3600, "GiftOfferHours", new Object[i15]), null, null);
-                            linearLayout2.addView(sx0Var, c8.ha.t(-1, -2, 48, 23, 16, 23, 4));
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131749705, null), org.telegram.messenger.hd.G(a1Var.g2 / 3600, "GiftOfferHours", new Object[i15]), null, null);
+                            linearLayout2.addView(tx0Var, c8.ha.t(-1, -2, 48, 23, 16, 23, 4));
                             gz.C(a1Var.a);
                             long E = gz.E();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -360,16 +360,16 @@ public final class a1 extends org.telegram.ui.Components.na {
         int i17 = this.t0;
         pj0Var.setPadding(i17, 0, i17, org.telegram.messenger.g0.L(64.0f));
         this.k1.setOverScrollMode(2);
-        this.o2 = r31.k(linearLayout);
+        this.o2 = x31.k(linearLayout);
         this.n2.O(false);
     }
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 4), this.I0);
-        this.n2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 4), this.I0);
+        this.n2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

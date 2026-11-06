@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.os.Trace;
 import android.view.View;
-import c8.yc;
+import c8.zc;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class h {
     public final /* synthetic */ q a;
@@ -50,7 +50,7 @@ public final class h {
         if (i7 == 0) {
             return;
         }
-        if (yc.a(i7, 16)) {
+        if (zc.a(i7, 16)) {
             int size = arrayList2.size();
             for (int i10 = 0; i10 < size; i10++) {
                 o oVar = (o) arrayList2.get(i10);
@@ -60,7 +60,7 @@ public final class h {
         int size2 = arrayList.size();
         for (int i11 = 0; i11 < size2; i11++) {
             p pVar = (p) arrayList.get(i11);
-            if (yc.a(i7, 32)) {
+            if (zc.a(i7, 32)) {
                 e eVar = pVar.b;
                 r rVar = q.F;
                 if (!Objects.equals(eVar.b, rVar)) {
@@ -68,7 +68,7 @@ public final class h {
                     eVar.g(rVar);
                 }
             }
-            if (yc.a(i7, 16)) {
+            if (zc.a(i7, 16)) {
                 pVar.b.updateColors();
             }
             pVar.b.invalidateSelf();
@@ -388,8 +388,8 @@ public final class h {
                 }
                 Trace.endSection();
             }
-            boolean a10 = yc.a(i20, 4);
-            boolean z16 = yc.a(i20, 1) || yc.a(i20, 2);
+            boolean a10 = zc.a(i20, 4);
+            boolean z16 = zc.a(i20, 1) || zc.a(i20, 2);
             Trace.beginSection("G.UpdateDisplayLists");
             int size4 = arrayList.size();
             for (int i22 = 0; i22 < size4; i22++) {

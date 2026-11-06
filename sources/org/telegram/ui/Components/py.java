@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class py implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class py implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.utils.twidget.u uVar;
-        j71 j71Var;
+        p71 p71Var;
         switch (this.a) {
             case 0:
                 ry ryVar = (ry) this.e;
@@ -50,8 +50,8 @@ public final /* synthetic */ class py implements Runnable {
                 boolean z12 = this.b;
                 boolean z13 = this.c;
                 boolean z14 = this.d;
-                if (!h0Var.u && (uVar = h0Var.J) != null && (j71Var = uVar.h) != null && j71Var.w && !j71Var.x) {
-                    j71Var.k(z12, z13, z14);
+                if (!h0Var.u && (uVar = h0Var.J) != null && (p71Var = uVar.h) != null && p71Var.w && !p71Var.x) {
+                    p71Var.k(z12, z13, z14);
                     break;
                 }
                 break;

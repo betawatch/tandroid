@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PopupNotificationActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -371,7 +371,7 @@ public final /* synthetic */ class k7 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        int P;
+        int O;
         ub ubVar;
         hc hcVar;
         ?? r62;
@@ -393,10 +393,10 @@ public final /* synthetic */ class k7 implements Runnable {
                 String str = (String) this.d;
                 int i13 = this.b;
                 i7 i7Var = (i7) w7Var.w.get(str);
-                if (i7Var == null || i7Var.W0 == (P = w7Var.P(i13))) {
+                if (i7Var == null || i7Var.W0 == (O = w7Var.O(i13))) {
                     return;
                 }
-                i7Var.W0 = P;
+                i7Var.W0 = O;
                 lg.f fVar = i7Var.e1;
                 ((ArrayList) fVar.d).remove(i7Var);
                 fVar.a(i7Var);

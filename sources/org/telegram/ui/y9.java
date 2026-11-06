@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y9 extends org.telegram.ui.ActionBar.f2 {
     public x9 a;
@@ -224,7 +224,7 @@ public final class y9 extends org.telegram.ui.ActionBar.f2 {
     @Override // org.telegram.ui.ActionBar.f2
     public final void onTransitionAnimationEnd(boolean z9, boolean z10) {
         if (z9) {
-            org.telegram.messenger.g0.i3(new fq0(this, 18), 100L);
+            org.telegram.messenger.g0.i3(new gq0(this, 18), 100L);
         }
     }
 }

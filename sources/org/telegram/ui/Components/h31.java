@@ -1,46 +1,44 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class h31 implements wv0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ n31 b;
+public final class h31 extends el0 {
+    public final /* synthetic */ t31 f;
 
-    public h31(n31 n31Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = n31Var;
-        this.a = inputStickerSet;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h31(t31 t31Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 14.0f, f6Var);
+        this.f = t31Var;
     }
 
-    @Override // org.telegram.ui.Components.wv0
-    public final void a() {
-        n31 n31Var = this.b;
-        v4.g0 adapter = n31Var.n.getAdapter();
-        m31 m31Var = n31Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i7 = 0;
-        if (adapter == m31Var) {
-            while (i7 < m31Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) m31Var.e.get(i7);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    m31Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i7++;
-            }
-            return;
+    @Override // org.telegram.ui.Components.el0
+    public final void a(String str) {
+        jg.d2 d2Var = this.f.w;
+        jg.b2 b2Var = d2Var.S;
+        int i7 = d2Var.c;
+        if (d2Var.N != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.N, true);
+            d2Var.N = 0;
         }
-        jg.d2 d2Var = n31Var.w;
-        ArrayList arrayList = d2Var.E;
-        while (i7 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i7);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                d2Var.F(stickerSetCovered2, null);
-                return;
-            }
-            i7++;
+        if (d2Var.O != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.O, true);
+            d2Var.O = 0;
         }
+        if (TextUtils.isEmpty(str)) {
+            d2Var.R = null;
+            d2Var.F.clear();
+            d2Var.I.clear();
+            d2Var.E.clear();
+            d2Var.e.b(false);
+            d2Var.f();
+        } else {
+            d2Var.R = str.toLowerCase();
+        }
+        org.telegram.messenger.g0.r(b2Var);
+        org.telegram.messenger.g0.i3(b2Var, 300L);
     }
 }

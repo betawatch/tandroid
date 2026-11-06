@@ -32,7 +32,7 @@ import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -121,7 +121,7 @@ public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, or
         if (i7 == 0) {
             if (this.S == 0) {
                 this.N.P = true;
-                org.telegram.messenger.w7.G(i10).X(this.N.F0(), this.N, 1, 0);
+                org.telegram.messenger.w7.G(i10).W(this.N.F0(), this.N, 1, 0);
             }
             if (d(this.N)) {
                 if (this.f == 2 && this.S != 1) {
@@ -148,7 +148,7 @@ public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, or
         if (i7 == 2) {
             radialProgress2.p(false, 0.0f);
             this.N.P = true;
-            org.telegram.messenger.w7.G(i10).X(this.N.F0(), this.N, 1, 0);
+            org.telegram.messenger.w7.G(i10).W(this.N.F0(), this.N, 1, 0);
             this.R = 4;
             radialProgress2.setIcon(getIconForCurrentState(), false, true);
             invalidate();
@@ -395,7 +395,7 @@ public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, or
                 return;
             }
             org.telegram.messenger.z5.q(i10).a(S0, this.N, this);
-            if (org.telegram.messenger.w7.G(i10).T(S0)) {
+            if (org.telegram.messenger.w7.G(i10).S(S0)) {
                 this.R = 4;
                 Float w10 = gc.D().w(S0);
                 if (w10 != null) {
@@ -426,7 +426,7 @@ public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, or
             return;
         }
         org.telegram.messenger.z5.q(i10).a(S0, this.N, this);
-        if (!org.telegram.messenger.w7.G(i10).T(S0)) {
+        if (!org.telegram.messenger.w7.G(i10).S(S0)) {
             this.S = 0;
             radialProgress2.k(getMiniIconForCurrentState(), z9, z10);
             return;
@@ -797,7 +797,7 @@ public class g7 extends FrameLayout implements org.telegram.messenger.x5, ls, or
                 if (i10 == 0) {
                     this.S = 1;
                     radialProgress2.p(false, 0.0f);
-                    org.telegram.messenger.w7.G(i11).X(this.N.F0(), this.N, 1, 0);
+                    org.telegram.messenger.w7.G(i11).W(this.N.F0(), this.N, 1, 0);
                     radialProgress2.k(getMiniIconForCurrentState(), false, true);
                     invalidate();
                 } else if (i10 == 1) {

@@ -39,7 +39,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a;
@@ -119,10 +119,10 @@ public final /* synthetic */ class j3 implements Runnable {
                         y4Var.y = true;
                         y4Var.e();
                         if (!TextUtils.isEmpty(y4Var.F) && ij.X2(document) && (w10 = w7.w(document.thumbs, qs.r5, false, null, false)) != null) {
-                            w7.G(i11).f0(y4Var.F, w10);
+                            w7.G(i11).e0(y4Var.F, w10);
                             File file = new File(y4Var.F);
                             w7.G(i11);
-                            org.telegram.messenger.g0.F(file, w7.K(w10, null, true, true));
+                            org.telegram.messenger.g0.F(file, w7.J(w10, null, true, true));
                         }
                         x4Var.e(document);
                         return;

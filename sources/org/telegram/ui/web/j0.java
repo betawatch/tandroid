@@ -16,7 +16,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import bi.eb;
-import c8.wa;
+import c8.xa;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import org.telegram.messenger.r2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.v2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class j0 extends WebViewClient {
     public boolean a = true;
@@ -59,7 +59,7 @@ public final class j0 extends WebViewClient {
             u0Var.e.b = System.currentTimeMillis();
             u0Var.e.c = x0.u(u0Var.getUrl());
             u0Var.e.d = a2.a(u0Var);
-            wa.c(u0Var.e);
+            xa.c(u0Var.e);
         }
         u0Var.c("doUpdateVisitedHistory " + str + " " + z9);
         x0 x0Var = u0Var.Q;

@@ -35,21 +35,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.ft;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.ys;
-import org.telegram.ui.zo0;
+import org.telegram.ui.ap0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
     public boolean B0;
-    public ly0 C0;
+    public my0 C0;
     public final Paint D;
-    public ly0 D0;
+    public my0 D0;
     public final LinearGradient E;
     public Path E0;
     public final Matrix F;
@@ -188,7 +188,7 @@ public abstract class m extends FrameLayout {
         gVar.getEditText().r(hd.M0(2131754454, null), false);
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         gVar.getEditText().setTranslationX(org.telegram.messenger.g0.L(-26.0f));
-        boolean z9 = this instanceof zo0;
+        boolean z9 = this instanceof ap0;
         if (z9) {
             gVar.getEditText().setGravity(48);
         }
@@ -300,7 +300,7 @@ public abstract class m extends FrameLayout {
         y();
         int L2 = org.telegram.messenger.g0.L(7.0f);
         int L3 = org.telegram.messenger.g0.L(8.0f);
-        boolean z9 = this instanceof zo0;
+        boolean z9 = this instanceof ap0;
         RectF rectF4 = this.A0;
         RectF rectF5 = this.z0;
         if (z9) {
@@ -452,10 +452,10 @@ public abstract class m extends FrameLayout {
             Path.Direction direction = Path.Direction.CW;
             path2.addRoundRect(rectF2, W12, W12, direction);
             canvas2.clipPath(mVar.E0);
-            ly0 ly0Var = mVar.C0;
-            if (ly0Var != null) {
-                ly0Var.p = (int) (rectF2.width() - org.telegram.messenger.g0.L(40.0f));
-                ly0Var.c(rectF2.left + org.telegram.messenger.g0.L(20.0f), f22 + org.telegram.messenger.g0.L(22.0f), 1.0f, -1, canvas2);
+            my0 my0Var = mVar.C0;
+            if (my0Var != null) {
+                my0Var.p = (int) (rectF2.width() - org.telegram.messenger.g0.L(40.0f));
+                my0Var.c(rectF2.left + org.telegram.messenger.g0.L(20.0f), f22 + org.telegram.messenger.g0.L(22.0f), 1.0f, -1, canvas2);
             }
             Path path3 = mVar.G0;
             if (path3 == null) {
@@ -492,10 +492,10 @@ public abstract class m extends FrameLayout {
                 canvas2.restore();
                 canvas2.restore();
             }
-            ly0 ly0Var2 = mVar.D0;
-            if (ly0Var2 != null) {
-                ly0Var2.p = (int) (rectF2.width() - org.telegram.messenger.g0.L(40.0f));
-                ly0Var2.c(rectF2.left + org.telegram.messenger.g0.L(20.0f), f22 + org.telegram.messenger.g0.L(40.0f), 1.0f, -1, canvas2);
+            my0 my0Var2 = mVar.D0;
+            if (my0Var2 != null) {
+                my0Var2.p = (int) (rectF2.width() - org.telegram.messenger.g0.L(40.0f));
+                my0Var2.c(rectF2.left + org.telegram.messenger.g0.L(20.0f), f22 + org.telegram.messenger.g0.L(40.0f), 1.0f, -1, canvas2);
             }
         }
         super.dispatchDraw(canvas);
@@ -626,7 +626,7 @@ public abstract class m extends FrameLayout {
             canvas.restore();
             return drawChild;
         }
-        if (this instanceof zo0) {
+        if (this instanceof ap0) {
             max = 0.0f;
         } else {
             max = (1.0f - this.n0) * Math.max(0, (r0.getHeight() - org.telegram.messenger.g0.L(82.0f)) - r0.getScrollY());
@@ -858,11 +858,11 @@ public abstract class m extends FrameLayout {
         if (spannableStringBuilder == null) {
             charSequence2 = "";
         }
-        this.C0 = new ly0(charSequence2, 14.0f, org.telegram.messenger.g0.o());
+        this.C0 = new my0(charSequence2, 14.0f, org.telegram.messenger.g0.o());
         if (charSequence == null) {
             charSequence = "";
         }
-        this.D0 = new ly0(charSequence, 14.0f, null);
+        this.D0 = new my0(charSequence, 14.0f, null);
     }
 
     public void w() {
@@ -886,7 +886,7 @@ public abstract class m extends FrameLayout {
         int max = Math.max(0, i7 - (rt0Var == null ? 0 : rt0Var.getBottomPadding()));
         View view = (View) getParent();
         view.clearAnimation();
-        if (!(this instanceof zo0)) {
+        if (!(this instanceof ap0)) {
             ObjectAnimator objectAnimator = this.k0;
             if (objectAnimator != null) {
                 objectAnimator.removeAllListeners();

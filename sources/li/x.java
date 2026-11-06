@@ -31,9 +31,9 @@ import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, ls, org.telegram.messenger.x5 {
     public final int D;
@@ -304,7 +304,7 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(z12) || TextUtils.isEmpty(x12)) ? !TextUtils.isEmpty(z12) ? new SpannableStringBuilder(z12) : new SpannableStringBuilder(x12) : new SpannableStringBuilder(a8.p0.D(x12, " - ", z12));
             if (!TextUtils.isEmpty(x12)) {
-                spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), 0, x12.length(), 18);
+                spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, x12.length(), 18);
             }
             float L2 = org.telegram.messenger.g0.L(16.0f);
             TextPaint textPaint = this.w;
@@ -316,7 +316,7 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
     }
 
     public final void n(boolean z9) {
-        File K;
+        File J;
         s sVar;
         int i7 = k6.We;
         int i10 = k6.Xe;
@@ -340,12 +340,12 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
         a aVar = this.a;
         boolean z10 = (aVar == null || (sVar = aVar.g) == null || TextUtils.isEmpty(sVar.e) || !new File(this.a.g.e).exists()) ? false : true;
         if (document == null) {
-            K = null;
+            J = null;
         } else {
             w7.G(i13);
-            K = w7.K(document, null, true, true);
+            J = w7.J(document, null, true, true);
         }
-        boolean z11 = z10 || (K != null && K.exists());
+        boolean z11 = z10 || (J != null && J.exists());
         if (TextUtils.isEmpty(r10)) {
             radialProgress2.setIcon(4, false, false);
             return;
@@ -356,7 +356,7 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
             radialProgress2.setIcon(getIconForCurrentState(), false, z9);
         } else {
             org.telegram.messenger.z5.q(i13).a(r10, null, this);
-            if (w7.G(i13).T(r10)) {
+            if (w7.G(i13).S(r10)) {
                 this.R = 3;
                 Float w10 = gc.D().w(r10);
                 radialProgress2.p(z9, w10 != null ? w10.floatValue() : 0.0f);
@@ -529,7 +529,7 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
                         int i11 = this.n;
                         if (i10 == 2) {
                             radialProgress2.p(false, 0.0f);
-                            w7.G(i11).X(document, this.P, 1, 1);
+                            w7.G(i11).W(document, this.P, 1, 1);
                             this.R = 3;
                             radialProgress2.setIcon(getIconForCurrentState(), true, true);
                             invalidate();

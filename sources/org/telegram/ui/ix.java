@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ix implements org.telegram.messenger.ls {
     public static final HashSet L = new HashSet();
@@ -800,7 +800,7 @@ public class ix implements org.telegram.messenger.ls {
         cv0Var.c.setText(org.telegram.messenger.hd.M0(2131746947, null));
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(anVar.getParentActivity(), anVar.getResourceProvider(), true);
         cv0Var.setButton(acVar);
-        acVar.b = new org.telegram.ui.Components.g51(19, this, ijVar);
+        acVar.b = new org.telegram.ui.Components.l51(19, this, ijVar);
         acVar.e(org.telegram.messenger.hd.M0(2131743564, null));
         org.telegram.ui.Components.cc g10 = org.telegram.ui.Components.cc.g(anVar, cv0Var, 2750);
         g10.b = ijVar.f1();

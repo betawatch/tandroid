@@ -14,12 +14,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class d2 extends j {
     public final TLRPC.Document q0;
@@ -28,7 +28,7 @@ public class d2 extends j {
     public boolean t0;
     public final w5 u0;
     public final mt0 v0;
-    public final p41 w0;
+    public final v41 w0;
     public final ImageReceiver x0;
 
     public d2(Context context, PointF pointF, float f10, float f11, mt0 mt0Var, TLRPC.Document document, Object obj) {
@@ -56,14 +56,14 @@ public class d2 extends j {
                 i7++;
             }
         }
-        p41 p41Var = new p41(this, context);
-        this.w0 = p41Var;
-        addView(p41Var, ha.c(-1.0f, -1));
-        this.u0 = new w5(p41Var, 0L, 500L, xq.h);
+        v41 v41Var = new v41(this, context);
+        this.w0 = v41Var;
+        addView(v41Var, ha.c(-1.0f, -1));
+        this.u0 = new w5(v41Var, 0L, 500L, xq.h);
         ImageReceiver imageReceiver = this.x0;
         imageReceiver.R0 = true;
         imageReceiver.J0 = true;
-        imageReceiver.H0(p41Var);
+        imageReceiver.H0(v41Var);
         this.x0.t0(hc.b(document), null, hc.c(w7.w(document.thumbs, 90, false, null, false), document), null, "webp", obj, 1);
         this.x0.g1 = new m3(this, 26);
         k();

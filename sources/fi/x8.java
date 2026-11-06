@@ -17,7 +17,7 @@ import org.telegram.messenger.gc;
 import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x8 implements Runnable {
     public final /* synthetic */ int a;
@@ -934,7 +934,7 @@ public final /* synthetic */ class x8 implements Runnable {
                 Bitmap q04 = o5Var6.q0(arrayList6, true, false, false, !z13, e7Var4);
                 ArrayList arrayList8 = arrayList6.isEmpty() ? null : arrayList6;
                 org.telegram.messenger.w7.G(i23);
-                final File K = org.telegram.messenger.w7.K(gc.a0(q04, Bitmap.CompressFormat.PNG, e7Var4.i0, e7Var4.j0, 87), null, true, true);
+                final File J = org.telegram.messenger.w7.J(gc.a0(q04, Bitmap.CompressFormat.PNG, e7Var4.i0, e7Var4.j0, 87), null, true, true);
                 if (q04 != null && !q04.isRecycled()) {
                     q04.recycle();
                 }
@@ -1035,16 +1035,16 @@ public final /* synthetic */ class x8 implements Runnable {
                                                         i14 = 87;
                                                         Bitmap q05 = o5Var4.q0(new ArrayList(), false, true, false, false, e7Var2);
                                                         org.telegram.messenger.w7.G(i23);
-                                                        File K2 = org.telegram.messenger.w7.K(gc.a0(q05, Bitmap.CompressFormat.PNG, i12, i13, 87), null, true, true);
+                                                        File J2 = org.telegram.messenger.w7.J(gc.a0(q05, Bitmap.CompressFormat.PNG, i12, i13, 87), null, true, true);
                                                         if (q05 != null && !q05.isRecycled()) {
                                                             q05.recycle();
                                                         }
-                                                        file12 = K2;
+                                                        file12 = J2;
                                                     }
                                                     if (this.h) {
                                                         Bitmap blurBitmap2 = o5Var4.getBlurBitmap();
                                                         org.telegram.messenger.w7.G(i23);
-                                                        file13 = org.telegram.messenger.w7.K(gc.a0(blurBitmap2, Bitmap.CompressFormat.PNG, i12, i13, i14), null, true, true);
+                                                        file13 = org.telegram.messenger.w7.J(gc.a0(blurBitmap2, Bitmap.CompressFormat.PNG, i12, i13, i14), null, true, true);
                                                         if (blurBitmap2 != null && !blurBitmap2.isRecycled()) {
                                                             blurBitmap2.recycle();
                                                         }
@@ -1110,7 +1110,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                                                     }
                                                                     e7Var42.j |= z15;
                                                                     e7Var42.T0 = arrayList10;
-                                                                    e7Var42.P0 = K;
+                                                                    e7Var42.P0 = J;
                                                                     e7Var42.Y0 = file17;
                                                                     e7Var42.R0 = file19;
                                                                     e7Var42.X0 = file20;
@@ -1165,7 +1165,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                                                     }
                                                                     e7Var52.j |= z15;
                                                                     e7Var52.T0 = arrayList10;
-                                                                    e7Var52.P0 = K;
+                                                                    e7Var52.P0 = J;
                                                                     e7Var52.Y0 = file17;
                                                                     e7Var52.R0 = file19;
                                                                     e7Var52.X0 = file20;
@@ -1253,7 +1253,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                                         }
                                                         e7Var42.j |= z152;
                                                         e7Var42.T0 = arrayList102;
-                                                        e7Var42.P0 = K;
+                                                        e7Var42.P0 = J;
                                                         e7Var42.Y0 = file172;
                                                         e7Var42.R0 = file192;
                                                         e7Var42.X0 = file202;
@@ -1308,7 +1308,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                                         }
                                                         e7Var522.j |= z152;
                                                         e7Var522.T0 = arrayList102;
-                                                        e7Var522.P0 = K;
+                                                        e7Var522.P0 = J;
                                                         e7Var522.Y0 = file172;
                                                         e7Var522.R0 = file192;
                                                         e7Var522.X0 = file202;
@@ -1400,7 +1400,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                 }
                                 e7Var42.j |= z1522;
                                 e7Var42.T0 = arrayList1022;
-                                e7Var42.P0 = K;
+                                e7Var42.P0 = J;
                                 e7Var42.Y0 = file1722;
                                 e7Var42.R0 = file1922;
                                 e7Var42.X0 = file2022;
@@ -1455,7 +1455,7 @@ public final /* synthetic */ class x8 implements Runnable {
                                 }
                                 e7Var5222.j |= z1522;
                                 e7Var5222.T0 = arrayList1022;
-                                e7Var5222.P0 = K;
+                                e7Var5222.P0 = J;
                                 e7Var5222.Y0 = file1722;
                                 e7Var5222.R0 = file1922;
                                 e7Var5222.X0 = file2022;

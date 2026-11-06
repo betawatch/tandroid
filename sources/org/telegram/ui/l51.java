@@ -32,7 +32,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l51 implements ff0 {
     public final an A;
@@ -345,7 +345,7 @@ public final class l51 implements ff0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat;
-        ofFloat.addUpdateListener(new qs0(1, qjVar, this, ciVar));
+        ofFloat.addUpdateListener(new rs0(1, qjVar, this, ciVar));
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.setDuration(250L);
         ((ArrayList) ciVar.c).add(this);

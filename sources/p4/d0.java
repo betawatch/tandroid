@@ -29,10 +29,10 @@ import org.telegram.messenger.df;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.re;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class d0 {
     public static final m1 B = new m1(1);
@@ -394,9 +394,9 @@ public class d0 {
                 }
                 this.v = true;
                 a0 a0Var = this.d;
-                l31 l31Var = a0Var.a;
-                if (l31Var != null) {
-                    a0Var.removeCallbacks(l31Var);
+                r31 r31Var = a0Var.a;
+                if (r31Var != null) {
+                    a0Var.removeCallbacks(r31Var);
                     a0Var.a = null;
                 }
                 this.l.removeCallbacksAndMessages(null);

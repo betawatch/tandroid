@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ce0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class ng implements Runnable {
                 i7 = num.intValue();
             }
         }
-        w7Var.Z(document, null, null, null, null, ijVar, null, 0L, i7, w7.M, 0L, false, 0);
+        w7Var.Y(document, null, null, null, null, ijVar, null, 0L, i7, w7.M, 0L, false, 0);
     }
 
     private final void b() {
@@ -211,7 +211,7 @@ public final /* synthetic */ class ng implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:328:0x06d0, code lost:
     
-        new org.telegram.ui.Components.r41(r0, r5).show();
+        new org.telegram.ui.Components.x41(r0, r5).show();
      */
     /* JADX WARN: Code restructure failed: missing block: B:330:?, code lost:
     

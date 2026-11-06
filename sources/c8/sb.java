@@ -1,69 +1,22 @@
 package c8;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class sb {
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-     */
-    public static final Class a(vd.c cVar) {
-        kotlin.jvm.internal.j.e(cVar, "<this>");
-        Class a10 = ((kotlin.jvm.internal.d) cVar).a();
-        if (a10.isPrimitive()) {
-            String name = a10.getName();
-            switch (name.hashCode()) {
-                case -1325958191:
-                    if (name.equals("double")) {
-                        return Double.class;
-                    }
-                    break;
-                case 104431:
-                    if (name.equals("int")) {
-                        return Integer.class;
-                    }
-                    break;
-                case 3039496:
-                    if (name.equals("byte")) {
-                        return Byte.class;
-                    }
-                    break;
-                case 3052374:
-                    if (name.equals("char")) {
-                        return Character.class;
-                    }
-                    break;
-                case 3327612:
-                    if (name.equals("long")) {
-                        return Long.class;
-                    }
-                    break;
-                case 3625364:
-                    if (name.equals("void")) {
-                        return Void.class;
-                    }
-                    break;
-                case 64711720:
-                    if (name.equals("boolean")) {
-                        return Boolean.class;
-                    }
-                    break;
-                case 97526364:
-                    if (name.equals("float")) {
-                        return Float.class;
-                    }
-                    break;
-                case 109413500:
-                    if (name.equals("short")) {
-                        return Short.class;
-                    }
-                    break;
-            }
+    public static Parcelable a(Parcelable parcelable, Parcelable.Creator creator) {
+        if (parcelable == null) {
+            return null;
         }
-        return a10;
+        Parcel obtain = Parcel.obtain();
+        try {
+            parcelable.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            return (Parcelable) creator.createFromParcel(obtain);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

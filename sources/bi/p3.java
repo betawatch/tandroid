@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ax;
 import org.telegram.ui.Components.fr;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x50;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dx;
@@ -25,7 +25,7 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.pn;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -165,7 +165,7 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                             String format = String.format("%d", Integer.valueOf(hVar.m()));
                             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                             if (indexOf >= 0) {
-                                spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), indexOf, format.length() + indexOf, 33);
+                                spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, format.length() + indexOf, 33);
                             }
                             u1Var2.T = spannableStringBuilder;
                         } else {

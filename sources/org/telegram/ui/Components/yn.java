@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class yn {
     public final org.telegram.ui.ActionBar.z0 a;
@@ -447,7 +447,7 @@ public final class yn {
         if (i11 != 0) {
             this.l = i11;
             z0Var3.setVisibility(0);
-            z0Var3.getImageView().setImageDrawable(zz0.a(i11));
+            z0Var3.getImageView().setImageDrawable(a01.a(i11));
             z0Var3.setText(b(i11));
         } else {
             z0Var3.setVisibility(8);
@@ -456,7 +456,7 @@ public final class yn {
         if (i10 != 0) {
             this.k = i10;
             z0Var4.setVisibility(0);
-            z0Var4.getImageView().setImageDrawable(zz0.a(i10));
+            z0Var4.getImageView().setImageDrawable(a01.a(i10));
             z0Var4.setText(b(i10));
         } else {
             z0Var4.setVisibility(8);

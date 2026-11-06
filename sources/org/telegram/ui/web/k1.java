@@ -21,7 +21,7 @@ import android.widget.TextView;
 import bi.fc;
 import bi.yd;
 import c8.ha;
-import c8.wa;
+import c8.xa;
 import fi.v3;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
@@ -45,7 +45,7 @@ import org.telegram.ui.k3;
 import org.telegram.ui.t3;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class k1 extends FrameLayout {
     public boolean A0;
@@ -265,7 +265,7 @@ public abstract class k1 extends FrameLayout {
                                 F.c(R.drawable.msg_saved, hd.M0(2131742943, null), (Runnable) fcVar.a(6), false);
                                 F.c(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), false);
                                 F.k();
-                                if (!wa.a(null).isEmpty()) {
+                                if (!xa.a(null).isEmpty()) {
                                     F.c(R.drawable.menu_views_recent, hd.M0(2131742921, null), (Runnable) fcVar.a(8), false);
                                 }
                                 F.c(R.drawable.menu_browser_bookmarks, hd.M0(2131742940, null), (Runnable) fcVar.a(7), false);
@@ -464,7 +464,7 @@ public abstract class k1 extends FrameLayout {
                                 F.c(R.drawable.msg_saved, hd.M0(2131742943, null), (Runnable) fcVar.a(6), false);
                                 F.c(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), false);
                                 F.k();
-                                if (!wa.a(null).isEmpty()) {
+                                if (!xa.a(null).isEmpty()) {
                                     F.c(R.drawable.menu_views_recent, hd.M0(2131742921, null), (Runnable) fcVar.a(8), false);
                                 }
                                 F.c(R.drawable.menu_browser_bookmarks, hd.M0(2131742940, null), (Runnable) fcVar.a(7), false);

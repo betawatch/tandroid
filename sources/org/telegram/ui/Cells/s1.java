@@ -15,21 +15,21 @@ import org.telegram.messenger.aj;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.dj;
 import org.telegram.messenger.qs;
+import org.telegram.ui.Components.a41;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class s1 {
     public final q1 a;
     public boolean b;
-    public ly0 c;
-    public ly0 d;
+    public my0 c;
+    public my0 d;
     public ic e;
     public ic f;
     public StaticLayout g;
@@ -135,7 +135,7 @@ public final class s1 {
                             if (characterStyleArr != null) {
                                 if (characterStyleArr.length == 0) {
                                 }
-                                if (characterStyleArr.length != 0 && ((!(characterStyleArr[0] instanceof s31) || s31.h) && !org.telegram.messenger.g0.C1())) {
+                                if (characterStyleArr.length != 0 && ((!(characterStyleArr[0] instanceof y31) || y31.h) && !org.telegram.messenger.g0.C1())) {
                                     if (motionEvent.getAction() != 0) {
                                         x70 x70Var = this.j;
                                         if (x70Var == null || x70Var.i != characterStyleArr[0]) {
@@ -178,7 +178,7 @@ public final class s1 {
                                     }
                                 }
                             }
-                            characterStyleArr = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, u31.class);
+                            characterStyleArr = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, a41.class);
                             if (characterStyleArr.length != 0) {
                                 if (motionEvent.getAction() != 0) {
                                 }
@@ -282,9 +282,9 @@ public final class s1 {
             canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
             this.t.d(canvas, rectF, 5.0f, 5.0f, 5.0f, f11, false, false);
             this.t.f(canvas, rectF, f11);
-            ly0 ly0Var = this.c;
-            if (ly0Var != null) {
-                ly0Var.c(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(12.0f), f11, p10, canvas);
+            my0 my0Var = this.c;
+            if (my0Var != null) {
+                my0Var.c(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(12.0f), f11, p10, canvas);
                 if (this.d != null) {
                     rectF.set((int) (org.telegram.messenger.g0.L(10.0f) + this.c.c + org.telegram.messenger.g0.L(4.0f)), org.telegram.messenger.g0.L(4.33f), org.telegram.messenger.g0.L(10.0f) + r0 + this.d.c, org.telegram.messenger.g0.L(21.66f));
                     ic icVar2 = this.e;

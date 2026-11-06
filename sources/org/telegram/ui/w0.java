@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements org.telegram.ui.Components.im0, hi.a4, hb1, r0.m, org.telegram.ui.ActionBar.r1, ug.s, org.telegram.ui.Components.cc0, org.telegram.ui.Components.cj0, org.telegram.ui.Components.ft0, org.telegram.ui.Components.ut0, di.k9, org.telegram.ui.Components.qi0, CameraView.CameraViewDelegate, org.telegram.messenger.a20, org.telegram.messenger.oc, org.telegram.ui.Components.oh0, org.telegram.messenger.qr, org.telegram.ui.Cells.d0, ax {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.im0,
                 return;
             }
             if (((w5) arrayList.get(i7)).a == 4) {
-                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.v4.L(x5Var.getParentActivity(), org.telegram.messenger.hd.M0(2131747912, null), org.telegram.messenger.hd.M0(2131747913, null), org.telegram.messenger.hd.M0(2131751599, null), new fq0(x5Var, 13), null).a;
+                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.v4.L(x5Var.getParentActivity(), org.telegram.messenger.hd.M0(2131747912, null), org.telegram.messenger.hd.M0(2131747913, null), org.telegram.messenger.hd.M0(2131751599, null), new gq0(x5Var, 13), null).a;
                 u1Var.show();
                 u1Var.i();
                 return;
@@ -272,23 +272,23 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.im0,
         switch (i7) {
             case 15:
                 td tdVar = (td) obj3;
-                org.telegram.ui.Components.r31 r31Var = (org.telegram.ui.Components.r31) obj;
+                org.telegram.ui.Components.x31 x31Var = (org.telegram.ui.Components.x31) obj;
                 vd vdVar = tdVar.f;
-                Object obj4 = r31Var.G;
+                Object obj4 = x31Var.G;
                 if (!(obj4 instanceof TL_stars.StarsTransaction)) {
                     if (obj4 instanceof TL_stats.BroadcastRevenueTransaction) {
-                        zd.M(tdVar.getContext(), tdVar.c, (TL_stats.BroadcastRevenueTransaction) r31Var.G, vdVar.e, tdVar.b);
+                        zd.M(tdVar.getContext(), tdVar.c, (TL_stats.BroadcastRevenueTransaction) x31Var.G, vdVar.e, tdVar.b);
                         break;
                     }
                 } else {
-                    bi.dd.k1(tdVar.getContext(), true, vdVar.e, tdVar.c, (TL_stars.StarsTransaction) r31Var.G, tdVar.b);
+                    bi.dd.k1(tdVar.getContext(), true, vdVar.e, tdVar.c, (TL_stars.StarsTransaction) x31Var.G, tdVar.b);
                     break;
                 }
                 break;
             default:
                 nr nrVar = (nr) obj3;
                 View view = (View) obj2;
-                int i10 = ((org.telegram.ui.Components.r31) obj).d;
+                int i10 = ((org.telegram.ui.Components.x31) obj).d;
                 if (i10 != 1) {
                     if (i10 == 2) {
                         boolean z9 = !nrVar.X;

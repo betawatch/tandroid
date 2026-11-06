@@ -15,9 +15,9 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.vy0;
+import org.telegram.ui.Components.wy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z2 extends LinearLayout {
     public static final /* synthetic */ int x = 0;
@@ -28,7 +28,7 @@ public final class z2 extends LinearLayout {
     public ValueAnimator e;
     public final ch0 f;
     public final TextView h;
-    public final vy0 n;
+    public final wy0 n;
     public int r;
     public int s;
     public final int w;
@@ -50,9 +50,9 @@ public final class z2 extends LinearLayout {
         org.telegram.messenger.k5.n(textView, org.telegram.ui.ActionBar.k6.m9, null, 1, 20.0f);
         textView.setGravity(17);
         addView(textView, c8.ha.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
-        vy0 vy0Var = new vy0(context);
-        this.n = vy0Var;
-        vy0Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.w2
+        wy0 wy0Var = new wy0(context);
+        this.n = wy0Var;
+        wy0Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.w2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
                 TextView textView2 = new TextView(context);
@@ -63,9 +63,9 @@ public final class z2 extends LinearLayout {
                 return textView2;
             }
         });
-        vy0Var.setInAnimation(context, R.anim.alpha_in);
-        vy0Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(vy0Var, c8.ha.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
+        wy0Var.setInAnimation(context, R.anim.alpha_in);
+        wy0Var.setOutAnimation(context, R.anim.alpha_out);
+        addView(wy0Var, c8.ha.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z9) {

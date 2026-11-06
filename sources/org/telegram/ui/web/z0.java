@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
-import c8.wa;
+import c8.xa;
 import fi.u2;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -20,22 +20,22 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.ui;
-import org.telegram.ui.mt0;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class z0 extends h41 {
+public final class z0 extends n41 {
     public final c20 e;
     public boolean n;
     public String r;
     public NumberTextView s;
     public org.telegram.ui.ActionBar.r0 x;
     public av0 y;
-    public ArrayList f = wa.a(new ii.c(this, 17));
+    public ArrayList f = xa.a(new ii.c(this, 17));
     public final ArrayList h = new ArrayList();
     public final HashSet w = new HashSet();
 
@@ -43,8 +43,8 @@ public final class z0 extends h41 {
         this.e = c20Var;
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getDefault());
         int i7 = 5;
@@ -58,12 +58,12 @@ public final class z0 extends h41 {
                     calendar.setTimeInMillis(y0Var.b);
                     int i12 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i11 != i12) {
-                        arrayList.add(r31.r(hd.u(y0Var.b / 1000, false)));
+                        arrayList.add(x31.r(hd.u(y0Var.b / 1000, false)));
                         i11 = i12;
                     }
                     String str = this.r;
                     int i13 = f.b;
-                    r31 K = r31.K(f.class);
+                    x31 K = x31.K(f.class);
                     K.z = 3;
                     K.q = false;
                     K.H = y0Var;
@@ -80,12 +80,12 @@ public final class z0 extends h41 {
                 calendar.setTimeInMillis(y0Var2.b);
                 int i15 = calendar.get(i7) + (calendar.get(i10) * 100) + (calendar.get(1) * 10000);
                 if (i14 != i15) {
-                    arrayList.add(r31.r(hd.u(y0Var2.b / 1000, false)));
+                    arrayList.add(x31.r(hd.u(y0Var2.b / 1000, false)));
                     i14 = i15;
                 }
                 String str2 = this.r;
                 int i16 = f.b;
-                r31 K2 = r31.K(f.class);
+                x31 K2 = x31.K(f.class);
                 K2.z = 3;
                 K2.q = false;
                 K2.H = y0Var2;
@@ -96,37 +96,37 @@ public final class z0 extends h41 {
                 i10 = 2;
             }
             if (this.n) {
-                arrayList.add(r31.p(32));
-                arrayList.add(r31.p(32));
-                arrayList.add(r31.p(32));
+                arrayList.add(x31.p(32));
+                arrayList.add(x31.p(32));
+                arrayList.add(x31.p(32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(r31.C(null));
+        arrayList.add(x31.C(null));
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131742921, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        if (!r31Var.H(f.class) || this.actionBar.v()) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        if (!x31Var.H(f.class) || this.actionBar.v()) {
             return;
         }
         finishFragment();
-        this.e.a((y0) r31Var.H);
+        this.e.a((y0) x31Var.H);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -141,7 +141,7 @@ public final class z0 extends h41 {
         r6.m(this.actionBar, 1, i10, getResourceProvider());
         r6.b(this.actionBar, i10, getResourceProvider(), true);
         this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 22));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 22));
         org.telegram.ui.ActionBar.y n10 = this.actionBar.n(null);
         NumberTextView numberTextView = new NumberTextView(n10.getContext());
         this.s = numberTextView;

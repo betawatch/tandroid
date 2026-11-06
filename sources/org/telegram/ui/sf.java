@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sf implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class sf implements ValueAnimator.AnimatorUpdateLis
                 ((org.telegram.ui.Components.bn) this.c).E.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
-                ((or0) this.c).R.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((pr0) this.c).R.setTranslationY(org.telegram.messenger.g0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 4:
                 nx0 nx0Var = (nx0) this.c;

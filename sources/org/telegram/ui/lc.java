@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lc implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -20,15 +20,15 @@ public final /* synthetic */ class lc implements org.telegram.messenger.c20 {
             case 0:
                 pc pcVar = this.b;
                 pcVar.getClass();
-                if (view instanceof org.telegram.ui.Components.yz0) {
+                if (view instanceof org.telegram.ui.Components.zz0) {
                     view.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, pcVar.b));
                     break;
                 }
                 break;
             default:
-                if (view instanceof org.telegram.ui.Components.yz0) {
-                    org.telegram.ui.Components.yz0 yz0Var = (org.telegram.ui.Components.yz0) view;
-                    yz0Var.setFallbackWallpaper(yz0Var.G.a.b ? null : this.b.w);
+                if (view instanceof org.telegram.ui.Components.zz0) {
+                    org.telegram.ui.Components.zz0 zz0Var = (org.telegram.ui.Components.zz0) view;
+                    zz0Var.setFallbackWallpaper(zz0Var.G.a.b ? null : this.b.w);
                     break;
                 }
                 break;

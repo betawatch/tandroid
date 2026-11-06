@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class kf extends ze {
     public String B;
@@ -25,13 +25,13 @@ public final class kf extends ze {
     public final String a() {
         if (this.L != null) {
             w7.G(p10.s0);
-            return w7.K(this.L, null, true, true).getAbsolutePath();
+            return w7.J(this.L, null, true, true).getAbsolutePath();
         }
         if (this.J == null) {
             return gc.A(this.C).getAbsolutePath();
         }
         w7.G(p10.s0);
-        return w7.K(this.J, null, true, true).getAbsolutePath();
+        return w7.J(this.J, null, true, true).getAbsolutePath();
     }
 
     /* renamed from: f, reason: merged with bridge method [inline-methods] */
@@ -57,12 +57,12 @@ public final class kf extends ze {
     public final String g() {
         if (this.L != null) {
             w7.G(p10.s0);
-            return w7.K(this.L, null, true, true).getAbsolutePath();
+            return w7.J(this.L, null, true, true).getAbsolutePath();
         }
         if (this.J == null) {
             return this.C;
         }
         w7.G(p10.s0);
-        return w7.K(this.J, null, true, true).getAbsolutePath();
+        return w7.J(this.J, null, true, true).getAbsolutePath();
     }
 }

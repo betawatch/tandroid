@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class pd0 extends FrameLayout {
     public static final /* synthetic */ int F = 0;
@@ -21,7 +21,7 @@ public final class pd0 extends FrameLayout {
     public final View c;
     public final View d;
     public final View e;
-    public final org.telegram.ui.Components.n11 f;
+    public final org.telegram.ui.Components.t11 f;
     public final org.telegram.ui.Components.p00 h;
     public final TextView n;
     public final TextView r;
@@ -46,16 +46,16 @@ public final class pd0 extends FrameLayout {
         view3.setBackgroundColor(TLObject.FLAG_30);
         view3.setAlpha(0.0f);
         addView(view3, c8.ha.c(-1.0f, -1));
-        org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11(getContext());
-        this.f = n11Var;
+        org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11(getContext());
+        this.f = t11Var;
         final int i7 = 1;
-        n11Var.setTransformType(1);
+        t11Var.setTransformType(1);
         final int i10 = 0;
-        n11Var.setDrawBackground(false);
+        t11Var.setDrawBackground(false);
         org.telegram.ui.Components.p00 p00Var = new org.telegram.ui.Components.p00(context, null, false);
         this.h = p00Var;
-        p00Var.addView(n11Var, c8.ha.e(56, 56, 17));
-        p00Var.a(n11Var);
+        p00Var.addView(t11Var, c8.ha.e(56, 56, 17));
+        p00Var.a(t11Var);
         p00Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.nd0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
@@ -188,9 +188,9 @@ public final class pd0 extends FrameLayout {
 
     public final void b() {
         int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false);
-        org.telegram.ui.Components.n11 n11Var = this.f;
-        n11Var.setColor(x02);
-        n11Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.P9, false));
+        org.telegram.ui.Components.t11 t11Var = this.f;
+        t11Var.setColor(x02);
+        t11Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.P9, false));
         int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false);
         FrameLayout frameLayout = this.x;
         if (frameLayout.getBackground() == null) {

@@ -27,7 +27,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class mm0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static float[] k0;
@@ -488,7 +488,7 @@ public class mm0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
             }
             Spanned spanned = (Spanned) charSequence;
             try {
-                v31[] v31VarArr = (v31[]) spanned.getSpans(0, spanned.length(), v31.class);
+                b41[] b41VarArr = (b41[]) spanned.getSpans(0, spanned.length(), b41.class);
                 this.T = new ArrayList();
                 if (z9) {
                     this.W = 0.0f;
@@ -499,10 +499,10 @@ public class mm0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
                     textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
                     this.c0.setColor(-1);
                 }
-                for (v31 v31Var : v31VarArr) {
-                    if (v31Var != null && v31Var.getURL() != null && v31Var.d != null && v31Var.getURL().startsWith("audio?")) {
-                        if (Utilities.z(v31Var.getURL().substring(6)).intValue() >= 0) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v31Var.d);
+                for (b41 b41Var : b41VarArr) {
+                    if (b41Var != null && b41Var.getURL() != null && b41Var.d != null && b41Var.getURL().startsWith("audio?")) {
+                        if (Utilities.z(b41Var.getURL().substring(6)).intValue() >= 0) {
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(b41Var.d);
                             org.telegram.messenger.i6.l(spannableStringBuilder, this.c0.getFontMetricsInt(), false);
                             this.T.add(new Pair(Float.valueOf((r4.intValue() * 1000) / valueOf.longValue()), spannableStringBuilder));
                         }

@@ -34,13 +34,13 @@ import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Components.d80;
 import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b0 extends oj0 {
     public final /* synthetic */ i0 c;
@@ -208,7 +208,7 @@ public final class b0 extends oj0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(N0);
                     SpannableString spannableString = new SpannableString(a8.p0.n(e0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 k5Var.l(spannableStringBuilder, false);
@@ -221,7 +221,7 @@ public final class b0 extends oj0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(e0Var.e.c);
-                        spannableString2.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     k5Var.l(spannableStringBuilder2, false);

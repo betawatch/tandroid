@@ -52,14 +52,14 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.he0;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements c20 {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class i implements c20 {
         String str;
         String str2;
         int i7;
-        f41 f41Var;
+        l41 l41Var;
         int i10 = 0;
         int i11 = 0;
         switch (this.a) {
@@ -312,7 +312,7 @@ public final /* synthetic */ class i implements c20 {
                 if (view2 instanceof a4) {
                     w3Var.getClass();
                     int R = RecyclerView.R(view2);
-                    r31 G = w3Var.f3.G(R);
+                    x31 G = w3Var.f3.G(R);
                     if (G != null) {
                         a4 a4Var = (a4) view2;
                         a4Var.setPosition(b4Var.b(R));
@@ -368,9 +368,9 @@ public final /* synthetic */ class i implements c20 {
                 break;
             case 24:
                 d7 d7Var = (d7) obj;
-                c51 c51Var = ((y5) this.b).n;
-                if (c51Var != null) {
-                    c51Var.setHDRInfo(d7Var);
+                h51 h51Var = ((y5) this.b).n;
+                if (h51Var != null) {
+                    h51Var.setHDRInfo(d7Var);
                     break;
                 }
                 break;
@@ -408,9 +408,9 @@ public final /* synthetic */ class i implements c20 {
                 ArrayList arrayList5 = qVar.b;
                 arrayList5.clear();
                 arrayList5.addAll((ArrayList) obj);
-                k41 k41Var = qVar.a;
-                if (k41Var != null && (f41Var = k41Var.f3) != null) {
-                    f41Var.O(true);
+                q41 q41Var = qVar.a;
+                if (q41Var != null && (l41Var = q41Var.f3) != null) {
+                    l41Var.O(true);
                     break;
                 }
                 break;

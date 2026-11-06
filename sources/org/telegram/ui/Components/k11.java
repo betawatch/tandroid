@@ -1,36 +1,48 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.ij b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ k11(org.telegram.messenger.ij ijVar, long j3, String str, int i7) {
-        this.a = i7;
-        this.b = ijVar;
-        this.c = j3;
-        this.d = str;
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* loaded from: classes3.dex */
+public final class k11 extends w31 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        w31.h(new k11());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        String str = this.d;
-        long j3 = this.c;
-        org.telegram.messenger.ij ijVar = this.b;
-        switch (i7) {
-            case 0:
-                m11.f(ijVar, j3, str);
-                break;
-            default:
-                org.telegram.messenger.qs f10 = org.telegram.messenger.qs.f(ijVar.I1);
-                Long valueOf = Long.valueOf(j3);
-                Boolean bool = Boolean.TRUE;
-                f10.k(org.telegram.messenger.qs.A1, ijVar, valueOf, str, bool, bool);
-                break;
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+        l11 l11Var = (l11) view;
+        boolean z10 = false;
+        if (x31Var.r) {
+            l11Var.e();
+        } else {
+            Object obj = x31Var.G;
+            if (obj == null) {
+                if (x31Var.B == -2) {
+                    l11Var.b(x31Var.q, x31Var.e);
+                } else {
+                    l11Var.c((x31Var.y & 1) != 0, x31Var.q, x31Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (x31Var.I) {
+                    l11Var.a(x31Var.x, (TLRPC.TL_forumTopic) obj, x31Var.e);
+                } else {
+                    l11Var.f((TLRPC.TL_forumTopic) obj, x31Var.e);
+                }
+            }
         }
+        if (q41Var != null && q41Var.j3 && l11Var.E) {
+            z10 = true;
+        }
+        l11Var.setReorder(z10);
+    }
+
+    @Override // org.telegram.ui.Components.w31
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new l11(i7, context, f6Var);
     }
 }

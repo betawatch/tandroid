@@ -40,15 +40,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.en0;
-import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class o7 extends FrameLayout {
     public static long E0;
@@ -68,7 +68,7 @@ public class o7 extends FrameLayout {
     public boolean L;
     public final org.telegram.ui.Components.w5 M;
     public final org.telegram.ui.Components.i6 N;
-    public ly0 O;
+    public my0 O;
     public CheckBoxBase P;
     public final m.q3 Q;
     public boolean R;
@@ -99,9 +99,9 @@ public class o7 extends FrameLayout {
     public xh.e m0;
     public ij n;
     public final Path n0;
-    public ly0 o0;
-    public ly0 p0;
-    public ly0 q0;
+    public my0 o0;
+    public my0 p0;
+    public my0 q0;
     public int r;
     public int r0;
     public lz s;
@@ -238,11 +238,11 @@ public class o7 extends FrameLayout {
             ImageReceiver imageReceiver = this.c;
             if ((imageReceiver == null || imageReceiver.Q0) && this.h && this.O != null) {
                 float L = org.telegram.messenger.g0.L(5.33f);
-                ly0 ly0Var = this.O;
-                ly0Var.p = (int) (rectF.width() - (2.0f * L));
-                ly0Var.t = org.telegram.messenger.g0.L(14.0f);
-                ly0Var.a.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.k6.r1(0.4f * f10, -16777216));
-                ly0Var.c(rectF.left + L, rectF.top + org.telegram.messenger.g0.L(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.k6.r1(f10, -1), canvas);
+                my0 my0Var = this.O;
+                my0Var.p = (int) (rectF.width() - (2.0f * L));
+                my0Var.t = org.telegram.messenger.g0.L(14.0f);
+                my0Var.a.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.k6.r1(0.4f * f10, -16777216));
+                my0Var.c(rectF.left + L, rectF.top + org.telegram.messenger.g0.L(this.r <= 2 ? 15.0f : 11.33f), 1.0f, org.telegram.ui.ActionBar.k6.r1(f10, -1), canvas);
             }
         }
     }
@@ -506,24 +506,24 @@ public class o7 extends FrameLayout {
                         f18 = 0.075f;
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jg.g.l(2131748484, null, new StringBuilder("x ")));
                         spannableStringBuilder.setSpan(new wp(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                        o7Var.o0 = new ly0(spannableStringBuilder, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
+                        o7Var.o0 = new my0(spannableStringBuilder, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                     } else {
                         f18 = 0.075f;
                     }
-                    ly0 ly0Var = o7Var.o0;
-                    if (f20 < (org.telegram.messenger.g0.L(13) * 2) + ly0Var.c) {
+                    my0 my0Var = o7Var.o0;
+                    if (f20 < (org.telegram.messenger.g0.L(13) * 2) + my0Var.c) {
                         if (o7Var.p0 == null) {
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(jg.g.l(2131748483, null, new StringBuilder("x ")));
                             spannableStringBuilder2.setSpan(new wp(R.drawable.filled_sensitive, 0), 0, 1, 33);
-                            o7Var.p0 = new ly0(spannableStringBuilder2, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
+                            o7Var.p0 = new my0(spannableStringBuilder2, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         }
-                        ly0Var = o7Var.p0;
+                        my0Var = o7Var.p0;
                     }
-                    if (f20 < (org.telegram.messenger.g0.L(26) * 2) + ly0Var.c) {
+                    if (f20 < (org.telegram.messenger.g0.L(26) * 2) + my0Var.c) {
                         if (o7Var.q0 == null) {
-                            o7Var.q0 = new ly0(new SpannableStringBuilder(hd.M0(2131748483, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
+                            o7Var.q0 = new my0(new SpannableStringBuilder(hd.M0(2131748483, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         }
-                        ly0Var = o7Var.q0;
+                        my0Var = o7Var.q0;
                         i10 = 10;
                         i7 = 28;
                     } else {
@@ -532,9 +532,9 @@ public class o7 extends FrameLayout {
                     }
                     float f38 = (imageReceiver.M0 / 2.0f) + imageReceiver.K0;
                     float f39 = (imageReceiver.N0 / 2.0f) + imageReceiver.L0;
-                    float L3 = ly0Var.c + org.telegram.messenger.g0.L(i10 + i10);
+                    float L3 = my0Var.c + org.telegram.messenger.g0.L(i10 + i10);
                     float L4 = org.telegram.messenger.g0.L(i7) / 2.0f;
-                    ly0 ly0Var2 = ly0Var;
+                    my0 my0Var2 = my0Var;
                     float T1 = org.telegram.messenger.g0.T1(0.8f, f13, f13 - o7Var.i0);
                     RectF rectF4 = org.telegram.messenger.g0.P;
                     float f40 = L3 / 2.0f;
@@ -561,7 +561,7 @@ public class o7 extends FrameLayout {
                     canvas3.save();
                     canvas3.scale(T1, T1, f38, f39);
                     Canvas canvas5 = canvas3;
-                    ly0Var2.c(org.telegram.messenger.g0.L(i10) + (f38 - f40), f39, 1.0f - o7Var.i0, -1, canvas5);
+                    my0Var2.c(org.telegram.messenger.g0.L(i10) + (f38 - f40), f39, 1.0f - o7Var.i0, -1, canvas5);
                     canvas2 = canvas5;
                     canvas2.restore();
                 } else {
@@ -1036,7 +1036,7 @@ public class o7 extends FrameLayout {
                 org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(i10 == 2 ? 16.0f : 13.66f, i13, this);
                 f5Var.c(B0);
                 spannableStringBuilder.setSpan(f5Var, 0, 1, 33);
-                this.O = new ly0(spannableStringBuilder, i10 == 2 ? 14.0f : 10.1666f, org.telegram.messenger.g0.o());
+                this.O = new my0(spannableStringBuilder, i10 == 2 ? 14.0f : 10.1666f, org.telegram.messenger.g0.o());
             }
             o();
             invalidate();

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eh implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
@@ -29,13 +29,13 @@ public final /* synthetic */ class eh implements org.telegram.messenger.u10 {
             case 0:
                 return an.r0((an) this.b, (Context) this.c);
             case 1:
-                org.telegram.ui.Components.f41 f41Var = (org.telegram.ui.Components.f41) this.b;
-                Object obj = ((org.telegram.ui.Components.r31) this.c).G;
-                org.telegram.ui.Components.pj0 pj0Var = f41Var.d;
+                org.telegram.ui.Components.l41 l41Var = (org.telegram.ui.Components.l41) this.b;
+                Object obj = ((org.telegram.ui.Components.x31) this.c).G;
+                org.telegram.ui.Components.pj0 pj0Var = l41Var.d;
                 int i7 = 0;
                 while (true) {
-                    if (i7 < f41Var.D.size()) {
-                        org.telegram.ui.Components.r31 G = f41Var.G(i7);
+                    if (i7 < l41Var.D.size()) {
+                        org.telegram.ui.Components.x31 G = l41Var.G(i7);
                         if (G == null || G.G != obj) {
                             i7++;
                         }

@@ -11,7 +11,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.ViewConfiguration;
-import c8.cc;
+import c8.dc;
 import c8.j9;
 import di.z5;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class w0 extends TextureView {
     public boolean D;
@@ -814,7 +814,7 @@ public class w0 extends TextureView {
             matrix.invert(matrix3);
         }
         u0 u0Var = this.d;
-        j0Var.y = cc.c(cc.b(u0Var.n, u0Var.r), cc.a(matrix));
+        j0Var.y = dc.c(dc.b(u0Var.n, u0Var.r), dc.a(matrix));
     }
 
     public void setBrush(h hVar) {

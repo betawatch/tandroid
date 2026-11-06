@@ -3,52 +3,52 @@ package org.telegram.ui.Components;
 import android.view.MotionEvent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class aw extends j31 {
+public final class aw extends p31 {
     public final /* synthetic */ gy b;
 
     public aw(gy gyVar) {
         this.b = gyVar;
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final boolean a() {
         return this.b.t1.b();
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final String[] b() {
         return this.b.W0;
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final boolean c() {
         return this.b.t1.c();
     }
 
-    @Override // org.telegram.ui.Components.j31
-    public final boolean d(c31 c31Var, MotionEvent motionEvent) {
+    @Override // org.telegram.ui.Components.p31
+    public final boolean d(i31 i31Var, MotionEvent motionEvent) {
         org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
         gy gyVar = this.b;
         gyVar.getMeasuredHeight();
-        return p10.q(motionEvent, c31Var, gyVar.g2, gyVar.Z1);
+        return p10.q(motionEvent, i31Var, gyVar.g2, gyVar.Z1);
     }
 
-    @Override // org.telegram.ui.Components.j31
-    public final boolean e(c31 c31Var, k kVar, MotionEvent motionEvent) {
+    @Override // org.telegram.ui.Components.p31
+    public final boolean e(i31 i31Var, k kVar, MotionEvent motionEvent) {
         org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
         gy gyVar = this.b;
         gyVar.getMeasuredHeight();
-        return p10.r(motionEvent, c31Var, kVar, gyVar.g2, gyVar.Z1);
+        return p10.r(motionEvent, i31Var, kVar, gyVar.g2, gyVar.Z1);
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final void f(TLRPC.Document document, Object obj, boolean z9, int i7) {
         this.b.t1.m(null, document, null, obj, null, z9, i7);
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z9) {
         gy gyVar = this.b;
         gyVar.t1.r(stickerSetCovered);
@@ -57,12 +57,12 @@ public final class aw extends j31 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
         this.b.t1.h(stickerSetCovered);
     }
 
-    @Override // org.telegram.ui.Components.j31
+    @Override // org.telegram.ui.Components.p31
     public final void i(String[] strArr) {
         this.b.W0 = strArr;
     }

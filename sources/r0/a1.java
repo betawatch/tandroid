@@ -1,8 +1,8 @@
 package r0;
 
-import c8.ub;
+import c8.vb;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class a1 {
     public final k1 a;
@@ -25,15 +25,15 @@ public abstract class a1 {
                 bVar = k1Var.a.f(1);
             }
             g(i0.b.a(bVar, bVar2));
-            i0.b bVar3 = this.b[ub.a(16)];
+            i0.b bVar3 = this.b[vb.a(16)];
             if (bVar3 != null) {
                 f(bVar3);
             }
-            i0.b bVar4 = this.b[ub.a(32)];
+            i0.b bVar4 = this.b[vb.a(32)];
             if (bVar4 != null) {
                 d(bVar4);
             }
-            i0.b bVar5 = this.b[ub.a(64)];
+            i0.b bVar5 = this.b[vb.a(64)];
             if (bVar5 != null) {
                 h(bVar5);
             }
@@ -48,7 +48,7 @@ public abstract class a1 {
         }
         for (int i10 = 1; i10 <= 512; i10 <<= 1) {
             if ((i7 & i10) != 0) {
-                this.b[ub.a(i10)] = bVar;
+                this.b[vb.a(i10)] = bVar;
             }
         }
     }

@@ -5,15 +5,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class i31 extends org.telegram.ui.Components.q31 {
+public final class i31 extends org.telegram.ui.Components.w31 {
     static {
-        org.telegram.ui.Components.q31.h(new i31());
+        org.telegram.ui.Components.w31.h(new i31());
     }
 
-    public static org.telegram.ui.Components.r31 i(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
-        org.telegram.ui.Components.r31 K = org.telegram.ui.Components.r31.K(i31.class);
+    public static org.telegram.ui.Components.x31 i(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
+        org.telegram.ui.Components.x31 K = org.telegram.ui.Components.x31.K(i31.class);
         K.d = i7;
         K.k = i12;
         K.l = charSequence;
@@ -23,16 +23,16 @@ public final class i31 extends org.telegram.ui.Components.q31 {
         return K;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
-        long j3 = r31Var.B;
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
+        long j3 = x31Var.B;
         int i7 = (int) j3;
         int i10 = (int) (j3 >>> 32);
         j31 j31Var = (j31) view;
-        int i11 = r31Var.k;
-        CharSequence charSequence = r31Var.l;
-        CharSequence charSequence2 = r31Var.m;
-        CharSequence charSequence3 = r31Var.n;
+        int i11 = x31Var.k;
+        CharSequence charSequence = x31Var.l;
+        CharSequence charSequence2 = x31Var.m;
+        CharSequence charSequence3 = x31Var.n;
         TextView textView = j31Var.e;
         TextView textView2 = j31Var.f;
         j31Var.n = (i7 == 0 && i10 == 0) ? false : true;
@@ -50,7 +50,7 @@ public final class i31 extends org.telegram.ui.Components.q31 {
         j31Var.updateColors();
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new j31(context, f6Var);
     }

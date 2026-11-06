@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vn implements Runnable {
     public final /* synthetic */ int a;
@@ -493,7 +493,7 @@ public final /* synthetic */ class vn implements Runnable {
                                             try {
                                             } catch (Throwable th2) {
                                                 th = th2;
-                                                c8.id.c(file3);
+                                                c8.jd.c(file3);
                                                 throw th;
                                             }
                                         } catch (Throwable th3) {
@@ -503,7 +503,7 @@ public final /* synthetic */ class vn implements Runnable {
                                 }
                             }
                             t0Var.t(file2, i12, 0L, Math.min(j10, h), z27, z9 ? 1 : 2);
-                            c8.id.c(file2);
+                            c8.jd.c(file2);
                             t0Var = t0Var;
                         } catch (Throwable th4) {
                             th = th4;

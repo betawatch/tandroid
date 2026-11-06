@@ -3,10 +3,10 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class co extends FrameLayout {
-    public o61 a;
+    public u61 a;
     public float b;
     public boolean c;
     public float d;
@@ -44,9 +44,9 @@ public abstract class co extends FrameLayout {
 
     public void setShown(float f10) {
         this.b = f10;
-        o61 o61Var = this.a;
-        if (o61Var != null) {
-            o61Var.setPivotX(o61Var.getWidth() / 2.0f);
+        u61 u61Var = this.a;
+        if (u61Var != null) {
+            u61Var.setPivotX(u61Var.getWidth() / 2.0f);
             this.a.setPivotY(0.0f);
             this.a.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
             this.a.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
@@ -55,8 +55,8 @@ public abstract class co extends FrameLayout {
         invalidate();
     }
 
-    public void setTabs(o61 o61Var) {
-        this.a = o61Var;
-        addView(o61Var, c8.ha.c(-1.0f, -1));
+    public void setTabs(u61 u61Var) {
+        this.a = u61Var;
+        addView(u61Var, c8.ha.c(-1.0f, -1));
     }
 }

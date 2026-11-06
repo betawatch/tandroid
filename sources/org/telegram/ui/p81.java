@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p81 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ u81 a;
@@ -54,7 +54,7 @@ public final class p81 extends org.telegram.ui.ActionBar.j {
             tL_messages_createForumTopic.icon_color = u81Var.E;
             tL_messages_createForumTopic.flags |= 1;
             i12 = ((org.telegram.ui.ActionBar.f2) u81Var).currentAccount;
-            ConnectionsManager.getInstance(i12).sendRequest(tL_messages_createForumTopic, new ko0(this, obj, u1Var, 11));
+            ConnectionsManager.getInstance(i12).sendRequest(tL_messages_createForumTopic, new lo0(this, obj, u1Var, 11));
             return;
         }
         if (i7 == 2) {

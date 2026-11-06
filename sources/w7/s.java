@@ -35,9 +35,9 @@ import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l1, q6.l, sg.l1, x5.a {
     public static s b;
@@ -235,7 +235,7 @@ public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ er0 N1() {
+    public /* synthetic */ fr0 N1() {
         switch (this.a) {
         }
         return null;

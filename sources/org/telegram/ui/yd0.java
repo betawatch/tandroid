@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yd0 implements ViewSwitcher.ViewFactory {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class yd0 implements ViewSwitcher.ViewFactory {
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
                 Drawable[] drawableArr = PhotoViewer.Y8;
-                return new jq0(photoViewer.E, photoViewer.T1, photoViewer.Q, new kn0(photoViewer, 0), new td0(photoViewer, i10));
+                return new kq0(photoViewer.E, photoViewer.T1, photoViewer.Q, new kn0(photoViewer, 0), new td0(photoViewer, i10));
         }
     }
 }

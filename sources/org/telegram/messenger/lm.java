@@ -16,10 +16,10 @@ import java.util.zip.ZipInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.b80;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lm implements Runnable {
     public final /* synthetic */ int a;
@@ -405,7 +405,7 @@ public final /* synthetic */ class lm implements Runnable {
                 b80 b80Var2 = (b80) this.f;
                 gzVar2.y.putAll(hashMap2);
                 gzVar2.D.k(xyVar2, j13);
-                gzVar2.getFileLoader().h0(xyVar2.a, false, true, 0L, 67108864, true);
+                gzVar2.getFileLoader().g0(xyVar2.a, false, true, 0L, 67108864, true);
                 gzVar2.getNotificationCenter().k(qs.v1, Long.valueOf(j13));
                 b80Var2.run(j13);
                 try {
@@ -451,7 +451,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 tL_textWithEntities = arrayList7.get(i16);
                                 i16++;
                             }
-                            c10Var3.a = e21.P0(c10Var.a, tL_textWithEntities);
+                            c10Var3.a = k21.P0(c10Var.a, tL_textWithEntities);
                         }
                         if (c10Var.b.size() != (c10Var2 == null ? 0 : c10Var2.b.size())) {
                             ArrayList arrayList9 = c10Var.b;
@@ -494,7 +494,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 i16++;
                                 tL_textWithEntities2 = tL_textWithEntities6;
                             }
-                            c10Var3.c = e21.P0(c10Var.c, tL_textWithEntities2);
+                            c10Var3.c = k21.P0(c10Var.c, tL_textWithEntities2);
                         }
                         arrayList8.add(c10Var3);
                         size2 = i10;

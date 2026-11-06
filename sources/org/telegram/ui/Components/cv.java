@@ -7,7 +7,7 @@ import android.util.Pair;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cv implements oi.m, dj0, pk0, te.b {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final /* synthetic */ class cv implements oi.m, dj0, pk0, te.b {
                             break;
                         }
                     } else {
-                        gyVar2.t1.o(new n31(gyVar2.getContext(), new aw(gyVar2), gyVar2.x1, gyVar2.y1, gyVar2.z1, null, gyVar2.Z1));
+                        gyVar2.t1.o(new t31(gyVar2.getContext(), new aw(gyVar2), gyVar2.x1, gyVar2.y1, gyVar2.z1, null, gyVar2.Z1));
                         break;
                     }
                 }
@@ -258,7 +258,7 @@ public final /* synthetic */ class cv implements oi.m, dj0, pk0, te.b {
         if (Build.VERSION.SDK_INT < 31 || gVar == null) {
             return;
         }
-        if (c8.yc.a(i7, 4)) {
+        if (c8.zc.a(i7, 4)) {
             gVar.h(gyVar.n2.e());
         }
         gVar.e(gyVar.k2, gyVar.getWidth(), gyVar.getHeight());

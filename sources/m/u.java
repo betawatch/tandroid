@@ -3,10 +3,10 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import c8.fc;
+import c8.gc;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class u {
     public final TextView a;
@@ -30,10 +30,10 @@ public final class u {
     }
 
     public final void b(boolean z9) {
-        ((fc) this.b.b).b(z9);
+        ((gc) this.b.b).b(z9);
     }
 
     public final void c(boolean z9) {
-        ((fc) this.b.b).c(z9);
+        ((gc) this.b.b).c(z9);
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.zc0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f9 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -165,12 +165,12 @@ public final /* synthetic */ class f9 implements v10 {
                             if (i13 <= 4 && i14 >= 1) {
                                 char c10 = '\b';
                                 if (i14 <= 8) {
-                                    int d = (int) c8.va.d(i13, wrap);
-                                    long d2 = c8.va.d(i13, wrap);
-                                    c8.va.d(i13, wrap);
-                                    c8.va.d(i14, wrap);
+                                    int d = (int) c8.wa.d(i13, wrap);
+                                    long d2 = c8.wa.d(i13, wrap);
+                                    c8.wa.d(i13, wrap);
+                                    c8.wa.d(i14, wrap);
                                     if (d2 == 1 && d >= 1 && d <= bArr3.length) {
-                                        int d10 = (int) c8.va.d(i13, wrap);
+                                        int d10 = (int) c8.wa.d(i13, wrap);
                                         if ((b11 & 128) != 0) {
                                             wrap.position((i14 * d) + wrap.position());
                                         }
@@ -194,7 +194,7 @@ public final /* synthetic */ class f9 implements v10 {
                                                         int i19 = 0;
                                                         while (i19 < i17) {
                                                             int i20 = i17;
-                                                            iArr[i16][i19] = (int) c8.va.d(i13, wrap);
+                                                            iArr[i16][i19] = (int) c8.wa.d(i13, wrap);
                                                             int i21 = iArr[i16][i19];
                                                             if (i21 > i16 && i21 < d) {
                                                                 i19++;
@@ -251,20 +251,20 @@ public final /* synthetic */ class f9 implements v10 {
                                         }
                                         byte b14 = b10;
                                         str2 = str5;
-                                        int b15 = c8.va.b(bArr4[d10], iArr[d10]);
+                                        int b15 = c8.wa.b(bArr4[d10], iArr[d10]);
                                         if (b15 < 0) {
                                             str3 = null;
                                         } else {
                                             byte[] bArr7 = new byte[35];
-                                            c8.va.c(0, bArr7);
+                                            c8.wa.c(0, bArr7);
                                             for (int i26 = 0; i26 < 267; i26++) {
                                                 int i27 = i26 + 4;
-                                                if (c8.va.a(i27, bArr4[d10])) {
-                                                    c8.va.c(i27, bArr7);
+                                                if (c8.wa.a(i27, bArr4[d10])) {
+                                                    c8.wa.c(i27, bArr7);
                                                 }
                                             }
-                                            c8.va.c(qs.z4, bArr7);
-                                            c8.va.c(qs.A4, bArr7);
+                                            c8.wa.c(qs.z4, bArr7);
+                                            c8.wa.c(qs.A4, bArr7);
                                             MessageDigest messageDigest2 = MessageDigest.getInstance("SHA-256");
                                             messageDigest2.update(b14);
                                             messageDigest2.update((byte) 69);

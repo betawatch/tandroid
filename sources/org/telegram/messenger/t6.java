@@ -7,9 +7,9 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class t6 extends org.telegram.ui.Components.ys {
     public final org.telegram.ui.Components.z4 Y1;
@@ -49,10 +49,10 @@ public final class t6 extends org.telegram.ui.Components.ys {
         }
         menu.removeItem(android.R.id.shareText);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131753671, null));
-        spannableStringBuilder.setSpan(new o31(g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new u31(g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.M0(2131749086, null));
-        spannableStringBuilder2.setSpan(new o31(g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        spannableStringBuilder2.setSpan(new u31(g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, hd.M0(2131751745, null));
         menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, hd.M0(2131746336, null));

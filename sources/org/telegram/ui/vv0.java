@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class vv0 extends org.telegram.ui.Components.xs0 {
     public boolean w2;
@@ -181,7 +181,7 @@ public final class vv0 extends org.telegram.ui.Components.xs0 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.messenger.g0.h3(new qu0(this, 3));
+        org.telegram.messenger.g0.h3(new ru0(this, 3));
     }
 
     @Override // org.telegram.ui.Components.xs0

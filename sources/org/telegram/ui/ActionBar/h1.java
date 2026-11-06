@@ -10,17 +10,17 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.o51;
+import org.telegram.ui.Components.l71;
 import org.telegram.ui.Components.p10;
 import org.telegram.ui.Components.pt;
+import org.telegram.ui.Components.s51;
 import org.telegram.ui.Components.t10;
 import org.telegram.ui.Components.v10;
 import org.telegram.ui.Components.w30;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w7;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -43,8 +43,8 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
     public final boolean onPreDraw() {
         boolean z9;
         int i7 = this.a;
+        int i10 = 2;
         Object obj = this.b;
-        int i10 = 1;
         switch (i7) {
             case 0:
                 i1 i1Var = (i1) obj;
@@ -227,20 +227,20 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                 ((fi.p5) obj).invalidate();
                 break;
             default:
-                f71 f71Var = (f71) ((w30) obj).b;
-                f71Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = f71Var.e;
+                l71 l71Var = (l71) ((w30) obj).b;
+                l71Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = l71Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    f71Var.e.setImageDrawable(null);
-                    Bitmap bitmap = f71Var.h;
+                    l71Var.e.setImageDrawable(null);
+                    Bitmap bitmap = l71Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        f71Var.h = null;
+                        l71Var.h = null;
                     }
                 }
-                org.telegram.messenger.g0.h3(new o51(this, i10));
-                f71Var.r = 0;
+                org.telegram.messenger.g0.h3(new s51(this, i10));
+                l71Var.r = 0;
                 break;
         }
         return true;

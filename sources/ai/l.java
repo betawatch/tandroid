@@ -12,13 +12,13 @@ import org.telegram.messenger.dj;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lx;
 import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.qi;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.an;
 import org.telegram.ui.bg0;
@@ -29,7 +29,7 @@ import org.telegram.ui.xm0;
 import zh.l3;
 import zh.o3;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l extends g.p {
     public final /* synthetic */ int c;
@@ -67,7 +67,7 @@ public final class l extends g.p {
                 if (p1Var == null || i7 == 0) {
                     return jyVar.J;
                 }
-                r31 G = p1Var.G(i7 - 1);
+                x31 G = p1Var.G(i7 - 1);
                 return (G == null || (i10 = G.u) == -1) ? jyVar.J : i10;
             case 2:
                 s1 s1Var = (s1) this.d;
@@ -159,11 +159,11 @@ public final class l extends g.p {
             case 14:
                 c21 c21Var = (c21) this.d;
                 jy jyVar2 = c21Var.P1;
-                f41 f41Var = c21Var.V1;
-                if (f41Var == null) {
+                l41 l41Var = c21Var.V1;
+                if (l41Var == null) {
                     return jyVar2.J;
                 }
-                r31 G2 = f41Var.G(i7 - 1);
+                x31 G2 = l41Var.G(i7 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? jyVar2.J : i12;
             case 15:
                 int size = (r0.s0.size() - 1) - i7;
@@ -175,14 +175,14 @@ public final class l extends g.p {
             case 16:
                 zh.h1 h1Var = (zh.h1) this.d;
                 jy jyVar3 = h1Var.a2;
-                f41 f41Var2 = h1Var.Q1;
-                if (f41Var2 == null || i7 == 0) {
+                l41 l41Var2 = h1Var.Q1;
+                if (l41Var2 == null || i7 == 0) {
                     return jyVar3.J;
                 }
-                r31 G3 = f41Var2.G(i7 - 1);
+                x31 G3 = l41Var2.G(i7 - 1);
                 return (G3 == null || (i13 = G3.u) == -1) ? jyVar3.J : i13;
             case 17:
-                r31 G4 = ((l3) this.d).a2.G(i7 - 1);
+                x31 G4 = ((l3) this.d).a2.G(i7 - 1);
                 if (G4 == null || (i14 = G4.u) == -1) {
                     return 3;
                 }
@@ -190,11 +190,11 @@ public final class l extends g.p {
             default:
                 o3 o3Var = (o3) this.d;
                 jy jyVar4 = o3Var.S1;
-                f41 f41Var3 = o3Var.Y1;
-                if (f41Var3 == null) {
+                l41 l41Var3 = o3Var.Y1;
+                if (l41Var3 == null) {
                     return jyVar4.J;
                 }
-                r31 G5 = f41Var3.G(i7 - 1);
+                x31 G5 = l41Var3.G(i7 - 1);
                 return (G5 == null || (i15 = G5.u) == -1) ? jyVar4.J : i15;
         }
     }

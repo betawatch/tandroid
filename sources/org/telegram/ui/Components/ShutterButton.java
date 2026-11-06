@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -163,7 +163,7 @@ public class ShutterButton extends View {
             }
             hl hlVar = (hl) this.e;
             ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = hlVar.e;
-            l71 l71Var = chatAttachAlertPhotoLayout.l0;
+            r71 r71Var = chatAttachAlertPhotoLayout.l0;
             FrameLayout frameLayout = hlVar.d;
             boolean z9 = frameLayout.getWidth() < frameLayout.getHeight();
             float f10 = z9 ? x10 : y10;
@@ -172,12 +172,12 @@ public class ShutterButton extends View {
                 if (f11 < 0.0f) {
                     boolean z10 = ChatAttachAlertPhotoLayout.q1;
                     chatAttachAlertPhotoLayout.w0(true);
-                    l71Var.b(true, (-f11) / org.telegram.messenger.g0.L(200.0f));
+                    r71Var.b(true, (-f11) / org.telegram.messenger.g0.L(200.0f));
                     hlVar.b = true;
                     return true;
                 }
                 if (hlVar.b) {
-                    l71Var.b(true, 0.0f);
+                    r71Var.b(true, 0.0f);
                 }
                 if (x10 == 0.0f && y10 == 0.0f) {
                     hlVar.b = false;

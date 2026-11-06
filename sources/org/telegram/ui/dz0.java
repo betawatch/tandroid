@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,18 +52,18 @@ public final /* synthetic */ class dz0 implements Runnable {
                 }
                 break;
             case 2:
-                jp0 jp0Var = secretMediaViewer.D;
-                if (jp0Var != null) {
-                    long S = jp0Var.S();
+                kp0 kp0Var = secretMediaViewer.D;
+                if (kp0Var != null) {
+                    long S = kp0Var.S();
                     long U = secretMediaViewer.D.U();
                     if (U == -9223372036854775807L) {
                         S = 0;
                         U = 0;
                     }
                     if (U > 0) {
-                        org.telegram.ui.Components.q51 q51Var = secretMediaViewer.O;
-                        if (!q51Var.f) {
-                            q51Var.h(false, S / U);
+                        org.telegram.ui.Components.v51 v51Var = secretMediaViewer.O;
+                        if (!v51Var.f) {
+                            v51Var.h(false, S / U);
                             secretMediaViewer.P.invalidate();
                         }
                     }
@@ -71,9 +71,9 @@ public final /* synthetic */ class dz0 implements Runnable {
                     Arrays.fill(iArr, 0);
                     int[] iArr2 = secretMediaViewer.i1;
                     Arrays.fill(iArr2, 0);
-                    jp0 jp0Var2 = secretMediaViewer.D;
-                    if (jp0Var2 != null) {
-                        long max = Math.max(0L, jp0Var2.S()) / 1000;
+                    kp0 kp0Var2 = secretMediaViewer.D;
+                    if (kp0Var2 != null) {
+                        long max = Math.max(0L, kp0Var2.S()) / 1000;
                         long max2 = Math.max(0L, secretMediaViewer.D.U()) / 1000;
                         iArr[0] = (int) (max / 60);
                         iArr[1] = (int) (max % 60);
@@ -115,7 +115,7 @@ public final /* synthetic */ class dz0 implements Runnable {
         }
     }
 
-    public /* synthetic */ dz0(SecretMediaViewer secretMediaViewer, vq0 vq0Var, int i7) {
+    public /* synthetic */ dz0(SecretMediaViewer secretMediaViewer, wq0 wq0Var, int i7) {
         this.a = i7;
         this.b = secretMediaViewer;
     }

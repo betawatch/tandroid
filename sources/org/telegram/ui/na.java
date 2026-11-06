@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class na implements org.telegram.messenger.sr {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class na implements org.telegram.messenger.sr {
 
     @Override // org.telegram.messenger.sr
     public final void a(int i7) {
-        oq0 oq0Var;
+        pq0 pq0Var;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -27,8 +27,8 @@ public final /* synthetic */ class na implements org.telegram.messenger.sr {
                 break;
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.D != null && (oq0Var = photoViewer.e0) != null && i7 > 0) {
-                    org.telegram.ui.Components.hc.F(oq0Var, true).j();
+                if (photoViewer.D != null && (pq0Var = photoViewer.e0) != null && i7 > 0) {
+                    org.telegram.ui.Components.hc.F(pq0Var, true).j();
                     break;
                 }
                 break;

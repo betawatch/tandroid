@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import bi.ab;
 import bi.de;
-import c8.qb;
+import c8.rb;
 import com.google.firebase.messaging.FirebaseMessaging;
 import di.h3;
 import di.s7;
@@ -59,7 +59,7 @@ import org.telegram.ui.w0;
 import org.telegram.ui.w4;
 import org.telegram.ui.wm0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class q implements f3.q, wm0 {
     public static q e;
@@ -466,7 +466,7 @@ public final class q implements f3.q, wm0 {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return qb.a(((j2.p) this.b).createDataSource(), str, oVar.a, hashMap);
+        return rb.a(((j2.p) this.b).createDataSource(), str, oVar.a, hashMap);
     }
 
     public q2.v n(q2.p pVar) {
@@ -491,7 +491,7 @@ public final class q implements f3.q, wm0 {
         String valueOf = String.valueOf(i10);
         h9.o.f("Content-Type", aVar);
         h9.o.f("Content-Length", valueOf);
-        return qb.a(createDataSource, str, bArr2, y1.g(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
+        return rb.a(createDataSource, str, bArr2, y1.g(2, new Object[]{"Content-Type", aVar, "Content-Length", valueOf}, null));
     }
 
     public List p() {

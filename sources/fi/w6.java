@@ -30,14 +30,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r00;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w6 extends org.telegram.ui.Components.na implements ls, org.telegram.messenger.x5, te.b {
     public int A2;
@@ -61,7 +61,7 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
     public final ri.c e2;
     public final dh.c f2;
     public final u6 g2;
-    public f41 h2;
+    public l41 h2;
     public ij i2;
     public String j2;
     public int k2;
@@ -549,10 +549,10 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, false, new r6(this, 0), this.I0);
-        this.h2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, false, new r6(this, 0), this.I0);
+        this.h2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.messenger.x5
@@ -627,31 +627,31 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(r31.C(null));
+                    arrayList.add(x31.C(null));
                     i11 = org.telegram.messenger.g0.L(12.0f);
                 }
                 this.h2.V();
-                arrayList.add(r31.u(str));
+                arrayList.add(x31.u(str));
                 int size2 = arrayList3.size();
                 while (i12 < size2) {
                     Object obj2 = arrayList3.get(i12);
                     i12++;
                     fc fcVar = new fc(this, i10);
                     int i14 = org.telegram.ui.Cells.f7.b;
-                    r31 K = r31.K(org.telegram.ui.Cells.f7.class);
+                    x31 K = x31.K(org.telegram.ui.Cells.f7.class);
                     K.G = (ij) obj2;
                     K.H = fcVar;
                     arrayList.add(K);
                     i11 += org.telegram.messenger.g0.L(56.0f);
                 }
                 if (z10) {
-                    arrayList.add(r31.p(4));
-                    arrayList.add(r31.p(4));
-                    arrayList.add(r31.p(4));
+                    arrayList.add(x31.p(4));
+                    arrayList.add(x31.p(4));
+                    arrayList.add(x31.p(4));
                     i11 += org.telegram.messenger.g0.L(56.0f) * 3;
                 }
                 if (z11 && !z10) {
-                    r31 c10 = r31.c(i7, R.drawable.arrow_more, hd.M0(2131745340, null));
+                    x31 c10 = x31.c(i7, R.drawable.arrow_more, hd.M0(2131745340, null));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += org.telegram.messenger.g0.L(50.0f);

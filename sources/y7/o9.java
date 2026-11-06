@@ -1,9 +1,9 @@
 package y7;
 
-import c8.xd;
+import c8.yd;
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class o9 extends l9 {
     public final /* synthetic */ a c;
@@ -15,7 +15,7 @@ public final class o9 extends l9 {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i7) {
         a aVar = this.c;
-        xd.a(i7, aVar.e);
+        yd.a(i7, aVar.e);
         int i10 = i7 + i7;
         Object[] objArr = aVar.d;
         Object obj = objArr[i10];

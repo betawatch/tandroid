@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -57,7 +57,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
     private int changePasscodeRow;
     public TextView d;
     private int disablePasscodeRow;
-    public org.telegram.ui.Components.vy0 e;
+    public org.telegram.ui.Components.wy0 e;
     public org.telegram.ui.Components.lb0 f;
     private int fingerprintRow;
     public EditTextBoldCursor h;
@@ -359,9 +359,9 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                         this.d.setTextSize(1, 18.0f);
                         this.d.setGravity(1);
                         linearLayout.addView(this.d, c8.ha.t(-2, -2, 1, 0, 16, 0, 0));
-                        org.telegram.ui.Components.vy0 vy0Var = new org.telegram.ui.Components.vy0(context);
-                        this.e = vy0Var;
-                        vy0Var.setFactory(new yd0(context, i12));
+                        org.telegram.ui.Components.wy0 wy0Var = new org.telegram.ui.Components.wy0(context);
+                        this.e = wy0Var;
+                        wy0Var.setFactory(new yd0(context, i12));
                         this.e.setInAnimation(context, R.anim.alpha_in);
                         this.e.setOutAnimation(context, R.anim.alpha_out);
                         linearLayout.addView(this.e, c8.ha.t(-2, -2, 1, 20, 8, 20, 0));
@@ -426,7 +426,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                         org.telegram.messenger.g0.Z3(this.s, i11 != 1 && this.E == 0, 0.1f, true, false);
                         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
                         this.h.addTextChangedListener(new fi.h7(i15, this, atomicBoolean));
-                        this.s.setOnClickListener(new org.telegram.ui.Components.n41(29, this, atomicBoolean));
+                        this.s.setOnClickListener(new org.telegram.ui.Components.t41(29, this, atomicBoolean));
                         linearLayout2.addView(this.s, c8.ha.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
                         this.f.addView(linearLayout2, c8.ha.c(-2.0f, -1));
                         frameLayout3.addView(this.f, c8.ha.t(-1, -2, 1, 32, 0, 32, 0));
@@ -453,13 +453,13 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                         h6.m.g(p00Var);
                         frameLayout2.addView(this.x, c8.ha.d(56, 56.0f, (!org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
                         this.x.setOnClickListener(new g40(this, 14));
-                        org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11(context);
-                        n11Var.setTransformType(1);
-                        n11Var.setProgress(0.0f);
-                        n11Var.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
-                        n11Var.setDrawBackground(false);
+                        org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11(context);
+                        t11Var.setTransformType(1);
+                        t11Var.setProgress(0.0f);
+                        t11Var.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
+                        t11Var.setDrawBackground(false);
                         this.x.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
-                        this.x.addView(n11Var, c8.ha.e(56, 56, 17));
+                        this.x.addView(t11Var, c8.ha.e(56, 56, 17));
                         org.telegram.ui.Components.p00 p00Var2 = this.x;
                         p00Var2.a(p00Var2);
                         z0();
@@ -478,9 +478,9 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                 this.d.setTextSize(1, 18.0f);
                 this.d.setGravity(1);
                 linearLayout.addView(this.d, c8.ha.t(-2, -2, 1, 0, 16, 0, 0));
-                org.telegram.ui.Components.vy0 vy0Var2 = new org.telegram.ui.Components.vy0(context);
-                this.e = vy0Var2;
-                vy0Var2.setFactory(new yd0(context, i12));
+                org.telegram.ui.Components.wy0 wy0Var2 = new org.telegram.ui.Components.wy0(context);
+                this.e = wy0Var2;
+                wy0Var2.setFactory(new yd0(context, i12));
                 this.e.setInAnimation(context, R.anim.alpha_in);
                 this.e.setOutAnimation(context, R.anim.alpha_out);
                 linearLayout.addView(this.e, c8.ha.t(-2, -2, 1, 20, 8, 20, 0));
@@ -540,7 +540,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                 org.telegram.messenger.g0.Z3(this.s, i11 != 1 && this.E == 0, 0.1f, true, false);
                 AtomicBoolean atomicBoolean2 = new AtomicBoolean(false);
                 this.h.addTextChangedListener(new fi.h7(i152, this, atomicBoolean2));
-                this.s.setOnClickListener(new org.telegram.ui.Components.n41(29, this, atomicBoolean2));
+                this.s.setOnClickListener(new org.telegram.ui.Components.t41(29, this, atomicBoolean2));
                 linearLayout22.addView(this.s, c8.ha.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
                 this.f.addView(linearLayout22, c8.ha.c(-2.0f, -1));
                 frameLayout3.addView(this.f, c8.ha.t(-1, -2, 1, 32, 0, 32, 0));
@@ -561,13 +561,13 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.f2 implements or
                 h6.m.g(p00Var3);
                 frameLayout2.addView(this.x, c8.ha.d(56, 56.0f, (!org.telegram.messenger.hd.a0 ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f));
                 this.x.setOnClickListener(new g40(this, 14));
-                org.telegram.ui.Components.n11 n11Var2 = new org.telegram.ui.Components.n11(context);
-                n11Var2.setTransformType(1);
-                n11Var2.setProgress(0.0f);
-                n11Var2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
-                n11Var2.setDrawBackground(false);
+                org.telegram.ui.Components.t11 t11Var2 = new org.telegram.ui.Components.t11(context);
+                t11Var2.setTransformType(1);
+                t11Var2.setProgress(0.0f);
+                t11Var2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
+                t11Var2.setDrawBackground(false);
                 this.x.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
-                this.x.addView(n11Var2, c8.ha.e(56, 56, 17));
+                this.x.addView(t11Var2, c8.ha.e(56, 56, 17));
                 org.telegram.ui.Components.p00 p00Var22 = this.x;
                 p00Var22.a(p00Var22);
                 z0();

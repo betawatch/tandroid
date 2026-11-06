@@ -1,58 +1,13 @@
 package c8;
 
-import android.os.Bundle;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class uc {
-    public static v0.c a(String type, Bundle data) {
-        kotlin.jvm.internal.j.e(type, "type");
-        kotlin.jvm.internal.j.e(data, "data");
-        try {
-            int hashCode = type.hashCode();
-            if (hashCode != -1678407252) {
-                if (hashCode != -543568185) {
-                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
-                            kotlin.jvm.internal.j.b(string);
-                            return new v0.f(string, data);
-                        } catch (Exception unused) {
-                            throw new z0.a();
-                        }
-                    }
-                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
-                }
-                throw new z0.a();
-            }
-            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                try {
-                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
-                    kotlin.jvm.internal.j.b(string2);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
-                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
-                    if (string2.length() != 0) {
-                        try {
-                            new JSONObject(string2);
-                            return dVar;
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
-                } catch (Exception unused3) {
-                    throw new z0.a();
-                }
-            }
-            throw new z0.a();
-        } catch (z0.a unused4) {
-            v0.d dVar2 = new v0.d(type, data);
-            if (type.length() > 0) {
-                return dVar2;
-            }
-            throw new IllegalArgumentException("type should not be empty");
+    public static ud.e a(int i7, int i10) {
+        if (i10 > Integer.MIN_VALUE) {
+            return new ud.e(i7, i10 - 1, 1);
         }
+        ud.e eVar = ud.e.d;
+        return ud.e.d;
     }
 }

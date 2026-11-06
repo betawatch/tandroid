@@ -1,40 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class q11 extends pj0 {
-    public final /* synthetic */ e21 e3;
+public final /* synthetic */ class q11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.ij b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q11(e21 e21Var, Context context) {
-        super(context, null);
-        this.e3 = e21Var;
+    public /* synthetic */ q11(org.telegram.messenger.ij ijVar, long j3, String str, int i7) {
+        this.a = i7;
+        this.b = ijVar;
+        this.c = j3;
+        this.d = str;
     }
 
-    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y10 = motionEvent.getY();
-            e21 e21Var = this.e3;
-            if (y10 < e21Var.L0(true) - getTop()) {
-                e21Var.dismiss();
-                return true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        String str = this.d;
+        long j3 = this.c;
+        org.telegram.messenger.ij ijVar = this.b;
+        switch (i7) {
+            case 0:
+                s11.f(ijVar, j3, str);
+                break;
+            default:
+                org.telegram.messenger.qs f10 = org.telegram.messenger.qs.f(ijVar.I1);
+                Long valueOf = Long.valueOf(j3);
+                Boolean bool = Boolean.TRUE;
+                f10.k(org.telegram.messenger.qs.A1, ijVar, valueOf, str, bool, bool);
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i7, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
     }
 }

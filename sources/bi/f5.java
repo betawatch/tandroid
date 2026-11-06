@@ -6,11 +6,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class f5 extends p61 {
+public final class f5 extends v61 {
     public final /* synthetic */ k7 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class f5 extends p61 {
         this.V = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void F(View view, float f10) {
         View view2;
         i5 i5Var;
@@ -71,7 +71,7 @@ public final class f5 extends p61 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void G() {
         super.G();
         int i7 = this.b;
@@ -81,7 +81,7 @@ public final class f5 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final boolean b(MotionEvent motionEvent) {
         g6 g6Var = this.V.T2;
         return g6Var == null || g6Var.c(0);
@@ -96,7 +96,7 @@ public final class f5 extends p61 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final float getAvailableTranslationX() {
         return Math.max(1, getMeasuredWidth() - (this.V.t0 * 2));
     }

@@ -26,22 +26,22 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class i0 extends View {
     public final Drawable D;
     public final Paint E;
     public boolean F;
-    public ly0 G;
+    public my0 G;
     public final Paint H;
     public boolean I;
-    public ly0 J;
+    public my0 J;
     public boolean K;
-    public ly0 L;
+    public my0 L;
     public boolean M;
     public final TextPaint N;
     public StaticLayout O;
@@ -138,8 +138,8 @@ public class i0 extends View {
         float f17;
         float d;
         float f18;
-        ly0 ly0Var;
-        ly0 ly0Var2;
+        my0 my0Var;
+        my0 my0Var2;
         Canvas canvas2 = canvas;
         d();
         float e10 = this.r0.e(false, this.a0);
@@ -166,8 +166,8 @@ public class i0 extends View {
             canvas2.translate(i7, i10);
             float d11 = this.l0.d(this.F);
             float f21 = (7.33f * f19) + 0.0f;
-            ly0 ly0Var3 = this.G;
-            if (ly0Var3 == null || d11 <= 0.0f) {
+            my0 my0Var3 = this.G;
+            if (my0Var3 == null || d11 <= 0.0f) {
                 f12 = d11;
                 f10 = 1.0f;
                 f13 = d10;
@@ -178,7 +178,7 @@ public class i0 extends View {
                 direction = direction2;
                 f12 = d11;
                 f10 = 1.0f;
-                ly0Var3.c(f19 * 10.0f, com.google.android.recaptcha.internal.a.v(1.0f, d11, (15.0f * f19) + this.G.i(), (ly0Var3.i() / 2.0f) + f21), d10, -15033089, canvas2);
+                my0Var3.c(f19 * 10.0f, com.google.android.recaptcha.internal.a.v(1.0f, d11, (15.0f * f19) + this.G.i(), (my0Var3.i() / 2.0f) + f21), d10, -15033089, canvas2);
                 f13 = d10;
                 f21 = (((7.0f * f19) + this.G.i()) * f12) + f21;
             }
@@ -200,21 +200,21 @@ public class i0 extends View {
             canvas.restore();
             float f24 = (5.66f * f19) + f22;
             if (this.K) {
-                ly0 ly0Var4 = this.L;
-                if (ly0Var4 != null) {
-                    float i11 = (ly0Var4.i() / f11) + f24;
+                my0 my0Var4 = this.L;
+                if (my0Var4 != null) {
+                    float i11 = (my0Var4.i() / f11) + f24;
                     int color = paint2.getColor();
                     f14 = e10;
                     d10 = f13;
                     f16 = f12;
                     f17 = 2.66f;
-                    ly0Var4.c(f19 * 20.0f, i11, d10, color, canvas);
+                    my0Var4.c(f19 * 20.0f, i11, d10, color, canvas);
                     f15 = rf.b.d(f19, 2.66f, this.L.i(), f24);
-                    if (this.I || (ly0Var2 = this.J) == null) {
+                    if (this.I || (my0Var2 = this.J) == null) {
                         canvas2 = canvas;
                     } else {
                         canvas2 = canvas;
-                        ly0Var2.c(f19 * 20.0f, (ly0Var2.i() / f11) + f15, d10, i0.a.f(d2, -13421773, -1), canvas2);
+                        my0Var2.c(f19 * 20.0f, (my0Var2.i() / f11) + f15, d10, i0.a.f(d2, -13421773, -1), canvas2);
                         f15 = rf.b.d(f19, f17, this.J.i(), f15);
                     }
                     if (this.M && this.O != null) {
@@ -243,9 +243,9 @@ public class i0 extends View {
                         f15 = org.telegram.messenger.camera.q.b(f19 * f17, this.d0, f10 - d12, f15);
                     }
                     f18 = (5.0f * f19) + (7.0f * f19) + f15;
-                    ly0Var = this.G;
-                    if (ly0Var != null && f10 - f16 > 0.0f) {
-                        ly0Var.c(f19 * 10.0f, (ly0Var.i() / f11) + f18 + (((15.0f * f19) + this.G.i()) * f16), d10, -15033089, canvas2);
+                    my0Var = this.G;
+                    if (my0Var != null && f10 - f16 > 0.0f) {
+                        my0Var.c(f19 * 10.0f, (my0Var.i() / f11) + f18 + (((15.0f * f19) + this.G.i()) * f16), d10, -15033089, canvas2);
                         this.G.i();
                     }
                     canvas2.restore();
@@ -276,9 +276,9 @@ public class i0 extends View {
             if (d > 0.0f) {
             }
             f18 = (5.0f * f19) + (7.0f * f19) + f15;
-            ly0Var = this.G;
-            if (ly0Var != null) {
-                ly0Var.c(f19 * 10.0f, (ly0Var.i() / f11) + f18 + (((15.0f * f19) + this.G.i()) * f16), d10, -15033089, canvas2);
+            my0Var = this.G;
+            if (my0Var != null) {
+                my0Var.c(f19 * 10.0f, (my0Var.i() / f11) + f18 + (((15.0f * f19) + this.G.i()) * f16), d10, -15033089, canvas2);
                 this.G.i();
             }
             canvas2.restore();
@@ -376,12 +376,12 @@ public class i0 extends View {
             this.H.setColor(f10);
             this.b0 = (7.33f * f14) + this.b0;
             this.F = this.W.f;
-            ly0 ly0Var = new ly0(str2, 16.0f, null);
-            ly0Var.a.setTextSize(16.0f * f14);
+            my0 my0Var = new my0(str2, 16.0f, null);
+            my0Var.a.setTextSize(16.0f * f14);
             float f16 = 20.0f * f14;
-            ly0Var.p(f15 - f16);
-            this.G = ly0Var;
-            this.a0 = Math.max(this.a0, Math.min(f16 + ly0Var.c, f15));
+            my0Var.p(f15 - f16);
+            this.G = my0Var;
+            this.a0 = Math.max(this.a0, Math.min(f16 + my0Var.c, f15));
             float f17 = 7.0f * f14;
             this.b0 = this.G.i() + this.b0 + f17;
             this.R = webPage.photo != null || ij.L4(webPage.document);
@@ -429,12 +429,12 @@ public class i0 extends View {
             if (isEmpty) {
                 i11 = 0;
             } else {
-                ly0 ly0Var2 = new ly0(webPage.site_name, 14.0f, org.telegram.messenger.g0.o());
-                ly0Var2.a.setTextSize(f14 * 14.0f);
+                my0 my0Var2 = new my0(webPage.site_name, 14.0f, org.telegram.messenger.g0.o());
+                my0Var2.a.setTextSize(f14 * 14.0f);
                 float f18 = f14 * 40.0f;
-                ly0Var2.p((int) Math.ceil((f15 - f18) - ((this.R && this.S) ? f14 * 60.0f : 0.0f)));
-                this.L = ly0Var2;
-                this.a0 = Math.max(this.a0, Math.min(f18 + ly0Var2.c + ((this.R && this.S) ? f14 * 60.0f : 0.0f), f15));
+                my0Var2.p((int) Math.ceil((f15 - f18) - ((this.R && this.S) ? f14 * 60.0f : 0.0f)));
+                this.L = my0Var2;
+                this.a0 = Math.max(this.a0, Math.min(f18 + my0Var2.c + ((this.R && this.S) ? f14 * 60.0f : 0.0f), f15));
                 this.c0 = (f14 * 2.66f) + this.L.i() + this.c0;
                 i11 = this.L.b.getLineCount();
             }
@@ -444,14 +444,14 @@ public class i0 extends View {
                 f12 = 2.66f;
                 f13 = f14;
             } else {
-                ly0 ly0Var3 = new ly0(webPage.title, 14.0f, org.telegram.messenger.g0.o());
-                ly0Var3.a.setTextSize(f14 * 14.0f);
+                my0 my0Var3 = new my0(webPage.title, 14.0f, org.telegram.messenger.g0.o());
+                my0Var3.a.setTextSize(f14 * 14.0f);
                 float f19 = f14 * 40.0f;
                 f12 = 2.66f;
                 f13 = f14;
-                ly0Var3.p((int) Math.ceil((f15 - f19) - ((this.R && this.S) ? f14 * 60.0f : 0.0f)));
-                this.J = ly0Var3;
-                this.a0 = Math.max(this.a0, Math.min(f19 + ly0Var3.c + ((this.R && this.S) ? 60.0f * f13 : 0.0f), f15));
+                my0Var3.p((int) Math.ceil((f15 - f19) - ((this.R && this.S) ? f14 * 60.0f : 0.0f)));
+                this.J = my0Var3;
+                this.a0 = Math.max(this.a0, Math.min(f19 + my0Var3.c + ((this.R && this.S) ? 60.0f * f13 : 0.0f), f15));
                 this.c0 = (f13 * 2.66f) + this.J.i() + this.c0;
                 i11 += this.J.b.getLineCount();
             }

@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class pc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final int a;
@@ -95,8 +95,8 @@ public final class pc extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
         for (int i11 = 0; i11 < e61Var.getChildCount(); i11++) {
             View childAt = e61Var.getChildAt(i11);
-            if ((childAt instanceof org.telegram.ui.Components.yz0) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.yz0) childAt).g(((org.telegram.ui.Components.uo) arrayList.get(R)).d, true);
+            if ((childAt instanceof org.telegram.ui.Components.zz0) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.zz0) childAt).g(((org.telegram.ui.Components.uo) arrayList.get(R)).d, true);
             }
         }
     }

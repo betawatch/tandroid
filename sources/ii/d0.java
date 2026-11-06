@@ -40,15 +40,15 @@ import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.r00;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class d0 extends v2 implements ls, te.b, p2 {
     public static final /* synthetic */ int M1 = 0;
@@ -79,7 +79,7 @@ public final class d0 extends v2 implements ls, te.b, p2 {
     public final r00 u1;
     public final r00 v1;
     public final yz w1;
-    public final k41 x1;
+    public final q41 x1;
     public final ec y1;
     public final ec z1;
 
@@ -99,8 +99,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         return true;
     }
 
-    public final boolean I0(r31 r31Var) {
-        Object obj = r31Var.G;
+    public final boolean I0(x31 x31Var) {
+        Object obj = x31Var.G;
         if (!(obj instanceof ji.f)) {
             return false;
         }
@@ -125,8 +125,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         String str;
         int i7 = 0;
         if (!z9) {
-            arrayList.add(r31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
-            arrayList.add(r31.E(0, org.telegram.messenger.g0.L(56.0f)));
+            arrayList.add(x31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
+            arrayList.add(x31.E(0, org.telegram.messenger.g0.L(56.0f)));
         }
         if (this.H1 != null) {
             String lowerCase = (!z9 || (str = this.J1) == null) ? null : str.toLowerCase();
@@ -137,11 +137,11 @@ public final class d0 extends v2 implements ls, te.b, p2 {
                 i7++;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 if (!z9 || TextUtils.isEmpty(lowerCase)) {
-                    arrayList.add(r31.w(chat));
+                    arrayList.add(x31.w(chat));
                 } else {
                     String str2 = chat.title;
                     if (str2 != null && str2.toLowerCase().contains(lowerCase)) {
-                        arrayList.add(r31.w(chat));
+                        arrayList.add(x31.w(chat));
                     }
                 }
             }
@@ -167,8 +167,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         qp.s1(this.a).T(getContext(), -j10, null, new d(this, u1Var, j3, z9, 1), null);
     }
 
-    public final void L0(r31 r31Var) {
-        Object obj = r31Var.G;
+    public final void L0(x31 x31Var) {
+        Object obj = x31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             if (!this.E1) {
@@ -230,9 +230,9 @@ public final class d0 extends v2 implements ls, te.b, p2 {
                 this.p1.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, a11));
                 this.p1.setVisibility(a11 > 0.0f ? 0 : 8);
             }
-            k41 k41Var = this.x1;
-            k41Var.setAlpha(f10);
-            k41Var.setVisibility(f10 > 0.0f ? 0 : 8);
+            q41 q41Var = this.x1;
+            q41Var.setAlpha(f10);
+            q41Var.setVisibility(f10 > 0.0f ? 0 : 8);
             this.b.invalidate();
             this.z1.invalidate();
         }
@@ -386,14 +386,14 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         iVar2.setHint(M02);
         iVar2.addTextChangedListener(new w(this, i7));
         r00Var2.setVisibility(8);
-        k41 k41Var = new k41(context, this.a, 0, false, new t(this, objArr5 == true ? 1 : 0), new u(this, objArr4 == true ? 1 : 0), null, this.I0);
-        this.x1 = k41Var;
-        k41Var.j(new ai.b(this, 17));
-        k41Var.setClipToPadding(false);
-        k41Var.setVisibility(8);
-        k41Var.r1();
-        k41Var.f3.r = false;
-        k41Var.setPadding(0, org.telegram.messenger.g0.L(52.0f) + org.telegram.messenger.g0.m, 0, org.telegram.messenger.g0.n);
+        q41 q41Var = new q41(context, this.a, 0, false, new t(this, objArr5 == true ? 1 : 0), new u(this, objArr4 == true ? 1 : 0), null, this.I0);
+        this.x1 = q41Var;
+        q41Var.j(new ai.b(this, 17));
+        q41Var.setClipToPadding(false);
+        q41Var.setVisibility(8);
+        q41Var.r1();
+        q41Var.f3.r = false;
+        q41Var.setPadding(0, org.telegram.messenger.g0.L(52.0f) + org.telegram.messenger.g0.m, 0, org.telegram.messenger.g0.n);
         yz yzVar = new yz(f2Var);
         this.w1 = yzVar;
         yzVar.setVisibility(8);

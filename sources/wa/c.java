@@ -1,16 +1,16 @@
 package wa;
 
-import c8.pb;
+import c8.qb;
 import ka.d;
 import o9.g;
 import o9.i;
 import q1.e;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class c {
-    public static final e c = pb.a("|S||P|");
-    public static final e d = pb.a("|S|id");
+    public static final e c = qb.a("|S||P|");
+    public static final e d = qb.a("|S|id");
     public static final String[] e = {"*", "FCM", "GCM", ""};
     public final d a;
     public final String b;

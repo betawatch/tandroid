@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -361,14 +361,14 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                 }
                 break;
             case 5:
-                yr0 yr0Var = (yr0) this.b;
-                if (yr0Var.T != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) yr0Var.T).getBackgroundDrawable();
+                zr0 zr0Var = (zr0) this.b;
+                if (zr0Var.T != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) zr0Var.T).getBackgroundDrawable();
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(backgroundDrawable.getBounds());
-                    rectF.offset(yr0Var.T.getX(), yr0Var.T.getY());
+                    rectF.offset(zr0Var.T.getX(), zr0Var.T.getY());
                     if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        yr0Var.c(true);
+                        zr0Var.c(true);
                         break;
                     }
                 }

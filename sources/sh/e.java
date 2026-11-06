@@ -29,11 +29,11 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e extends Drawable implements x5, im0 {
     public final boolean D;
@@ -71,10 +71,10 @@ public final class e extends Drawable implements x5, im0 {
     public int f0;
     public int g0;
     public String h;
-    public ly0 n;
-    public ly0 r;
-    public ly0 s;
-    public ly0 w;
+    public my0 n;
+    public my0 r;
+    public my0 s;
+    public my0 w;
     public final RadialProgress2 y;
     public final Paint x = new Paint(1);
     public int Z = 0;
@@ -119,14 +119,14 @@ public final class e extends Drawable implements x5, im0 {
     }
 
     public final void c(boolean z9) {
-        ly0 ly0Var = this.n;
-        if (ly0Var != null) {
-            ly0Var.n(k6.x0(null, z9 ? k6.tc : k6.re, false));
+        my0 my0Var = this.n;
+        if (my0Var != null) {
+            my0Var.n(k6.x0(null, z9 ? k6.tc : k6.re, false));
         }
         this.x.setColor(1711276032);
-        ly0 ly0Var2 = this.w;
-        if (ly0Var2 != null) {
-            ly0Var2.n(-1);
+        my0 my0Var2 = this.w;
+        if (my0Var2 != null) {
+            my0Var2.n(-1);
         }
         rz rzVar = this.N;
         if (rzVar != null) {
@@ -181,9 +181,9 @@ public final class e extends Drawable implements x5, im0 {
             int L = i10 + (z10 ? 0 : g0.L(8.0f));
             int L2 = bounds.top + (z10 ? 0 : g0.L(3.0f));
             int L3 = this.X ? 0 : g0.L(3.0f);
-            ly0 ly0Var = this.n;
-            if (ly0Var != null) {
-                ly0Var.e(canvas, g0.L(56.0f) + L, g0.L(15.0f) + L2 + L3);
+            my0 my0Var = this.n;
+            if (my0Var != null) {
+                my0Var.e(canvas, g0.L(56.0f) + L, g0.L(15.0f) + L2 + L3);
             }
             if (this.X) {
                 float f10 = this.a.e;
@@ -210,9 +210,9 @@ public final class e extends Drawable implements x5, im0 {
                     canvas.restore();
                 }
             }
-            ly0 ly0Var2 = this.s;
-            if (ly0Var2 != null) {
-                ly0Var2.e(canvas, g0.L(56.0f) + L, g0.L((this.X ? 20 : 2) + 34) + L3 + L2);
+            my0 my0Var2 = this.s;
+            if (my0Var2 != null) {
+                my0Var2.e(canvas, g0.L(56.0f) + L, g0.L((this.X ? 20 : 2) + 34) + L3 + L2);
             }
             int L6 = g0.L(2.0f) + L;
             this.a0 = L6;
@@ -288,29 +288,29 @@ public final class e extends Drawable implements x5, im0 {
             String str = this.e;
             if (str != null) {
                 if (this.n == null) {
-                    this.n = new ly0(str, 15.0f, g0.o());
+                    this.n = new my0(str, 15.0f, g0.o());
                 }
-                ly0 ly0Var = this.n;
-                ly0Var.q(TextUtils.ellipsize(this.e, ly0Var.a, width, TextUtils.TruncateAt.MIDDLE));
+                my0 my0Var = this.n;
+                my0Var.q(TextUtils.ellipsize(this.e, my0Var.a, width, TextUtils.TruncateAt.MIDDLE));
             }
             String str2 = this.f;
             if (str2 != null) {
                 if (this.r == null) {
-                    this.r = new ly0(str2, 14.0f, null);
+                    this.r = new my0(str2, 14.0f, null);
                 }
-                ly0 ly0Var2 = this.r;
-                ly0Var2.q(TextUtils.ellipsize(this.f, ly0Var2.a, width, TextUtils.TruncateAt.END));
+                my0 my0Var2 = this.r;
+                my0Var2.q(TextUtils.ellipsize(this.f, my0Var2.a, width, TextUtils.TruncateAt.END));
             }
             String str3 = this.h;
             if (str3 != null) {
                 if (this.s == null) {
-                    this.s = new ly0(str3, 12.0f, null);
+                    this.s = new my0(str3, 12.0f, null);
                 }
-                ly0 ly0Var3 = this.s;
-                ly0Var3.q(TextUtils.ellipsize(this.h, ly0Var3.a, width, TextUtils.TruncateAt.END));
+                my0 my0Var3 = this.s;
+                my0Var3.q(TextUtils.ellipsize(this.h, my0Var3.a, width, TextUtils.TruncateAt.END));
             }
             if (this.G && this.w == null) {
-                this.w = new ly0(g0.g0(this.J, true, false), 12.0f, null);
+                this.w = new my0(g0.g0(this.J, true, false), 12.0f, null);
             }
         }
     }
@@ -404,7 +404,7 @@ public final class e extends Drawable implements x5, im0 {
                         w7.G(i10).f(document);
                         aVar.a();
                     } else if (!aVar.f) {
-                        w7.G(i10).X(document, aVar.d, 2, 0);
+                        w7.G(i10).W(document, aVar.d, 2, 0);
                         aVar.a();
                     }
                     e();

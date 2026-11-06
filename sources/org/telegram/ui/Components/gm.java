@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gm implements bj0 {
     public final /* synthetic */ int a = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class gm implements bj0 {
                                 break;
                             } else {
                                 int i15 = iArr[i14];
-                                zz0 a10 = zz0.a(i15);
+                                a01 a10 = a01.a(i15);
                                 int i16 = org.telegram.ui.ActionBar.k6.F8;
                                 org.telegram.ui.ActionBar.r6.y(bnVar, a10, i16, f6Var, PorterDuff.Mode.SRC_IN);
                                 F.b(0, a10, org.telegram.messenger.hd.G(i15 / 3600, "Hours", new Object[0]), i16, org.telegram.ui.ActionBar.k6.E8, new org.telegram.ui.q8(bnVar, i15, view, i13));

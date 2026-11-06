@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ze0 extends FrameLayout {
     public final bi.t D;
@@ -36,7 +36,7 @@ public final class ze0 extends FrameLayout {
     public final we0 V;
     public final org.telegram.ui.ww a;
     public final int b;
-    public final k41 c;
+    public final q41 c;
     public TLRPC.SearchPostsFlood d;
     public final ArrayList e;
     public int f;
@@ -60,10 +60,10 @@ public final class ze0 extends FrameLayout {
         this.a = wwVar;
         int currentAccount = wwVar.getCurrentAccount();
         this.b = currentAccount;
-        k41 k41Var = new k41(context, currentAccount, 0, false, new d(this, 18), new ax(this, 12), null, null);
-        this.c = k41Var;
-        k41Var.j(new ai.o0(4, this, wwVar));
-        addView(k41Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
+        q41 q41Var = new q41(context, currentAccount, 0, false, new d(this, 18), new ax(this, 12), null, null);
+        this.c = q41Var;
+        q41Var.j(new ai.o0(4, this, wwVar));
+        addView(q41Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;
         bi.t tVar = new bi.t(context, 8);
@@ -101,10 +101,10 @@ public final class ze0 extends FrameLayout {
         textView3.setGravity(17);
         tVar.addView(textView3, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         addView(frameLayout, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
-        k41Var.setHideIfEmpty(false);
-        k41Var.setEmptyView(frameLayout);
-        k41Var.W1 = true;
-        k41Var.X1 = 0;
+        q41Var.setHideIfEmpty(false);
+        q41Var.setEmptyView(frameLayout);
+        q41Var.W1 = true;
+        q41Var.X1 = 0;
         c();
         d();
     }
@@ -189,9 +189,9 @@ public final class ze0 extends FrameLayout {
         int i7 = org.telegram.ui.ActionBar.k6.y6;
         this.I.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, i7, false));
         this.G.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, i7, false));
-        k41 k41Var = this.c;
-        k41Var.setAdapter(null);
-        k41Var.setAdapter(k41Var.f3);
+        q41 q41Var = this.c;
+        q41Var.setAdapter(null);
+        q41Var.setAdapter(q41Var.f3);
         if (this.T != null) {
             this.T = null;
             d();

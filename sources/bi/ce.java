@@ -38,7 +38,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ce extends org.telegram.ui.ActionBar.v2 implements ls {
     public final wo A1;
@@ -336,11 +336,11 @@ public final class ce extends org.telegram.ui.ActionBar.v2 implements ls {
         }
         if (z10) {
             int i19 = org.telegram.ui.ActionBar.k6.j5;
-            TextView b10 = c8.na.b(context, 20.0f, i19, true, f6Var);
+            TextView b10 = c8.qa.b(context, 20.0f, i19, true, f6Var);
             b10.setGravity(17);
             b10.setText(org.telegram.messenger.hd.M0(z9 ? 2131748790 : 2131748792, str));
             this.m1.addView(b10, c8.ha.t(-1, -2, 7, 32, 6, 32, 9));
-            TextView b11 = c8.na.b(context, 14.0f, i19, false, f6Var);
+            TextView b11 = c8.qa.b(context, 14.0f, i19, false, f6Var);
             b11.setGravity(17);
             org.telegram.messenger.k5.r(null, null, z9 ? 2131748791 : z11 ? 2131748793 : 2131748794, new Object[]{org.telegram.messenger.m5.l(p10.s0, j3)}, b11);
             this.m1.addView(b11, c8.ha.t(-1, -2, 7, 32, 0, 32, 20));

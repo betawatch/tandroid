@@ -43,39 +43,39 @@ import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.cn;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.eh;
 import org.telegram.ui.Components.ej;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.fj;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.ir0;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.m50;
 import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.mg;
-import org.telegram.ui.Components.n01;
-import org.telegram.ui.Components.p21;
+import org.telegram.ui.Components.p01;
 import org.telegram.ui.Components.p60;
 import org.telegram.ui.Components.pe0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.qe0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.ri;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.t60;
 import org.telegram.ui.Components.uo;
+import org.telegram.ui.Components.v21;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.vk;
 import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.wj;
 import org.telegram.ui.Components.wk;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xh;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.Components.yz0;
 import org.telegram.ui.Components.zi;
+import org.telegram.ui.Components.zz0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PrivacySettingsActivity;
@@ -101,7 +101,7 @@ import org.telegram.ui.vc1;
 import org.telegram.ui.w40;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements bj0 {
     public final /* synthetic */ int a;
@@ -180,13 +180,13 @@ public final /* synthetic */ class p4 implements bj0 {
                 }
                 ttVar.c.E(ttVar.r);
                 for (i12 = 0; i12 < ttVar.a.getChildCount(); i12++) {
-                    yz0 yz0Var = (yz0) ttVar.a.getChildAt(i12);
-                    if (yz0Var != view && (ir0Var = yz0Var.J) != null) {
+                    zz0 zz0Var = (zz0) ttVar.a.getChildAt(i12);
+                    if (zz0Var != view && (ir0Var = zz0Var.J) != null) {
                         org.telegram.messenger.g0.r(ir0Var);
-                        yz0Var.J.run();
+                        zz0Var.J.run();
                     }
                 }
-                ((yz0) view).d();
+                ((zz0) view).d();
                 if (i13 != null) {
                     SharedPreferences.Editor edit = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0).edit();
                     edit.putString((ttVar.s == 1 || i13.q()) ? "lastDarkTheme" : "lastDayTheme", i13.m());
@@ -211,7 +211,7 @@ public final /* synthetic */ class p4 implements bj0 {
         ttVar.c.E(ttVar.r);
         while (i12 < ttVar.a.getChildCount()) {
         }
-        ((yz0) view).d();
+        ((zz0) view).d();
         if (i13 != null) {
         }
         org.telegram.ui.ActionBar.k6.M1(f2Var);
@@ -480,7 +480,7 @@ public final /* synthetic */ class p4 implements bj0 {
         ArrayList arrayList;
         TL_stories.TL_storyReactionPublicRepost tL_storyReactionPublicRepost;
         TL_stories.StoryItem storyItem;
-        r31 G;
+        x31 G;
         int i11;
         Object O;
         org.telegram.messenger.d5 d5Var;
@@ -572,8 +572,8 @@ public final /* synthetic */ class p4 implements bj0 {
             case 1:
                 ei.q qVar = (ei.q) obj2;
                 ai.i iVar = (ai.i) obj;
-                f41 f41Var = qVar.R1;
-                if (f41Var != null && (G = f41Var.G(i7 - 1)) != null) {
+                l41 l41Var = qVar.R1;
+                if (l41Var != null && (G = l41Var.G(i7 - 1)) != null) {
                     Object obj3 = G.G;
                     if (obj3 instanceof y00) {
                         iVar.a(((y00) obj3).a);
@@ -644,7 +644,7 @@ public final /* synthetic */ class p4 implements bj0 {
             case 8:
                 org.telegram.ui.Components.a0 a0Var = (org.telegram.ui.Components.a0) obj2;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj;
-                r31 G2 = a0Var.f2.G(i7 - 1);
+                x31 G2 = a0Var.f2.G(i7 - 1);
                 if (G2 != null && G2.d == 1) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, a0Var.getContext(), f6Var);
                     String M0 = hd.M0(2131754998, null);
@@ -954,7 +954,7 @@ public final /* synthetic */ class p4 implements bj0 {
                                         d90Var.z1(i23, i24, "@" + t10.n(user3) + " ", false);
                                     } else {
                                         SpannableString spannableString = new SpannableString(rf.b.q(t10.j(user3, false), " "));
-                                        spannableString.setSpan(new y31("" + user3.id, 3, null), 0, spannableString.length(), 33);
+                                        spannableString.setSpan(new e41("" + user3.id, 3, null), 0, spannableString.length(), 33);
                                         d90Var.z1(i23, i24, spannableString, false);
                                     }
                                 } else if (J instanceof String) {
@@ -1088,43 +1088,43 @@ public final /* synthetic */ class p4 implements bj0 {
                 }
                 break;
             case 14:
-                n01 n01Var = (n01) obj2;
-                EditText editText = n01Var.w;
-                long a11 = ((l01) n01Var.s.c.get(i7)).a();
+                s01 s01Var = (s01) obj2;
+                EditText editText = s01Var.w;
+                long a11 = ((p01) s01Var.s.c.get(i7)).a();
                 an anVar2 = ((dk) obj).a;
                 if (anVar2.X9()) {
                     an.L2(a11, anVar2);
                 } else {
-                    g11 g11Var = anVar2.f2;
-                    if (g11Var != null) {
-                        g11Var.n(a11, false);
+                    m11 m11Var = anVar2.f2;
+                    if (m11Var != null) {
+                        m11Var.n(a11, false);
                     }
                 }
                 if (editText.length() > 0) {
                     editText.setText("");
                 }
                 editText.clearFocus();
-                n01Var.c();
+                s01Var.d();
                 break;
             case 15:
-                p21 p21Var = (p21) obj2;
+                v21 v21Var = (v21) obj2;
                 org.telegram.ui.ActionBar.f6 f6Var4 = (org.telegram.ui.ActionBar.f6) obj;
-                r31 G3 = p21Var.b2.G(i7 - 1);
+                x31 G3 = v21Var.b2.G(i7 - 1);
                 if (G3 != null) {
                     int i26 = G3.d;
                     if (i26 == 1) {
-                        CharSequence charSequence = p21Var.U1;
-                        if (charSequence != null && !p21Var.T1) {
+                        CharSequence charSequence = v21Var.U1;
+                        if (charSequence != null && !v21Var.T1) {
                             org.telegram.messenger.g0.g(charSequence);
                             break;
                         }
                     } else if (i26 == 2) {
-                        if (p10.i(p21Var.a).q()) {
-                            qp.s1(p21Var.a).s7.K(0L, !r0.B(0L));
-                            p21Var.dismiss();
+                        if (p10.i(v21Var.a).q()) {
+                            qp.s1(v21Var.a).s7.K(0L, !r0.B(0L));
+                            v21Var.dismiss();
                             break;
                         } else if (LaunchActivity.T() != null) {
-                            new ug.w0(13, p21Var.getContext(), f6Var4).show();
+                            new ug.w0(13, v21Var.getContext(), f6Var4).show();
                             break;
                         }
                     }

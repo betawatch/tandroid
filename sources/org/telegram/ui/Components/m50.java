@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m50 extends org.telegram.ui.ActionBar.v2 {
     public static final /* synthetic */ int e2 = 0;
@@ -285,7 +285,7 @@ public final class m50 extends org.telegram.ui.ActionBar.v2 {
     /* JADX WARN: Type inference failed for: r16v2 */
     /* JADX WARN: Type inference failed for: r16v3 */
     /* JADX WARN: Type inference failed for: r16v8 */
-    /* JADX WARN: Type inference failed for: r1v17, types: [android.view.View, org.telegram.ui.Components.sx0] */
+    /* JADX WARN: Type inference failed for: r1v17, types: [android.view.View, org.telegram.ui.Components.tx0] */
     /* JADX WARN: Type inference failed for: r2v13, types: [android.view.View, android.widget.TextView, org.telegram.ui.Components.w70] */
     /* JADX WARN: Type inference failed for: r7v2, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     public static void M0(Context context, int i7, long j3, TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -372,7 +372,7 @@ public final class m50 extends org.telegram.ui.ActionBar.v2 {
             f12.setText(String.format(Locale.US, "appx. %1$s per %2$s", org.telegram.messenger.r1.i().f((int) (org.telegram.messenger.qp.s1(i7).c6 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i14 == 300 ? "5min" : obj));
         }
         f10.addView(f12, c8.ha.t(-1, -2, 17, 20, 0, 20, 4));
-        ?? sx0Var = new sx0(context, f6Var);
+        ?? tx0Var = new tx0(context, f6Var);
         ?? w70Var = new w70(context, f6Var);
         w70Var.setPadding(org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f), org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f));
         w70Var.setEllipsize(TextUtils.TruncateAt.END);
@@ -395,14 +395,14 @@ public final class m50 extends org.telegram.ui.ActionBar.v2 {
             str = null;
         } else {
             str = null;
-            sx0Var.l(w70Var, org.telegram.messenger.hd.M0(2131745060, null));
+            tx0Var.l(w70Var, org.telegram.messenger.hd.M0(2131745060, null));
         }
-        sx0Var.c(org.telegram.messenger.hd.M0(2131745055, str), org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().s0().format(new Date(tL_chatInviteImporter.date * 1000)), org.telegram.messenger.hd.E0().p0().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
+        tx0Var.c(org.telegram.messenger.hd.M0(2131745055, str), org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().s0().format(new Date(tL_chatInviteImporter.date * 1000)), org.telegram.messenger.hd.E0().p0().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
         int currentTime = ConnectionsManager.getInstance(i7).getCurrentTime();
         if (channelParticipant != null) {
-            sx0Var.c(org.telegram.messenger.hd.M0(channelParticipant.subscription_until_date > currentTime ? 2131745056 : 2131745058, null), org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().s0().format(new Date(channelParticipant.subscription_until_date * 1000)), org.telegram.messenger.hd.E0().p0().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
+            tx0Var.c(org.telegram.messenger.hd.M0(channelParticipant.subscription_until_date > currentTime ? 2131745056 : 2131745058, null), org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().s0().format(new Date(channelParticipant.subscription_until_date * 1000)), org.telegram.messenger.hd.E0().p0().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
         }
-        f10.addView(sx0Var, c8.ha.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
+        f10.addView(tx0Var, c8.ha.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
         w70 w70Var2 = new w70(context, f6Var);
         org.telegram.ui.ActionBar.r6.V(w70Var2, org.telegram.ui.ActionBar.k6.z6, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var2, i15, f6Var);

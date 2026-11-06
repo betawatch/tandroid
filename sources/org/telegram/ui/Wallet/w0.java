@@ -9,12 +9,12 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
-import c8.ua;
+import c8.va;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.hd;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class w0 {
     public final CountDownLatch a = new CountDownLatch(1);
@@ -43,12 +43,12 @@ public final class w0 {
                 c("AUTH_UNAVAILABLE");
                 return;
             }
-            int i7 = ua.a;
+            int i7 = va.a;
             int i10 = i7 + 1;
-            ua.a = i10;
+            va.a = i10;
             this.g = i7;
             if (i10 > 22399) {
-                ua.a = 22336;
+                va.a = 22336;
             }
             this.e.startActivityForResult(intent, i7);
         } catch (Exception e10) {

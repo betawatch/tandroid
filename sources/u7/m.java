@@ -2,13 +2,13 @@ package u7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.vb;
+import c8.wb;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class m implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class m implements Parcelable.Creator {
         Status status = null;
         switch (this.a) {
             case 0:
-                int z9 = vb.z(parcel);
+                int z9 = wb.z(parcel);
                 boolean z10 = false;
                 boolean z11 = false;
                 boolean z12 = false;
@@ -36,42 +36,42 @@ public final class m implements Parcelable.Creator {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        locationRequest = (LocationRequest) vb.g(parcel, readInt, LocationRequest.CREATOR);
+                        locationRequest = (LocationRequest) wb.g(parcel, readInt, LocationRequest.CREATOR);
                     } else if (c10 != 5) {
                         switch (c10) {
                             case '\b':
-                                z10 = vb.n(parcel, readInt);
+                                z10 = wb.n(parcel, readInt);
                                 break;
                             case '\t':
-                                z11 = vb.n(parcel, readInt);
+                                z11 = wb.n(parcel, readInt);
                                 break;
                             case '\n':
-                                str = vb.h(parcel, readInt);
+                                str = wb.h(parcel, readInt);
                                 break;
                             case 11:
-                                z12 = vb.n(parcel, readInt);
+                                z12 = wb.n(parcel, readInt);
                                 break;
                             case '\f':
-                                z13 = vb.n(parcel, readInt);
+                                z13 = wb.n(parcel, readInt);
                                 break;
                             case '\r':
-                                str2 = vb.h(parcel, readInt);
+                                str2 = wb.h(parcel, readInt);
                                 break;
                             case 14:
-                                j3 = vb.w(parcel, readInt);
+                                j3 = wb.w(parcel, readInt);
                                 break;
                             default:
-                                vb.y(parcel, readInt);
+                                wb.y(parcel, readInt);
                                 break;
                         }
                     } else {
-                        arrayList = vb.l(parcel, readInt, q6.e.CREATOR);
+                        arrayList = wb.l(parcel, readInt, q6.e.CREATOR);
                     }
                 }
-                vb.m(parcel, z9);
+                wb.m(parcel, z9);
                 return new l(locationRequest, arrayList, z10, z11, str, z12, z13, str2, j3);
             case 1:
-                int z14 = vb.z(parcel);
+                int z14 = wb.z(parcel);
                 p pVar = r.b;
                 int i7 = 0;
                 int i10 = 0;
@@ -85,47 +85,47 @@ public final class m implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     switch ((char) readInt2) {
                         case 1:
-                            i7 = vb.u(parcel, readInt2);
+                            i7 = wb.u(parcel, readInt2);
                             break;
                         case 2:
-                            i10 = vb.u(parcel, readInt2);
+                            i10 = wb.u(parcel, readInt2);
                             break;
                         case 3:
-                            str3 = vb.h(parcel, readInt2);
+                            str3 = wb.h(parcel, readInt2);
                             break;
                         case 4:
-                            str4 = vb.h(parcel, readInt2);
+                            str4 = wb.h(parcel, readInt2);
                             break;
                         case 5:
-                            i11 = vb.u(parcel, readInt2);
+                            i11 = wb.u(parcel, readInt2);
                             break;
                         case 6:
-                            str5 = vb.h(parcel, readInt2);
+                            str5 = wb.h(parcel, readInt2);
                             break;
                         case 7:
-                            jVar = (j) vb.g(parcel, readInt2, j.CREATOR);
+                            jVar = (j) wb.g(parcel, readInt2, j.CREATOR);
                             break;
                         case '\b':
-                            list = vb.l(parcel, readInt2, n6.c.CREATOR);
+                            list = wb.l(parcel, readInt2, n6.c.CREATOR);
                             break;
                         default:
-                            vb.y(parcel, readInt2);
+                            wb.y(parcel, readInt2);
                             break;
                     }
                 }
-                vb.m(parcel, z14);
+                wb.m(parcel, z14);
                 return new j(i7, i10, str3, str4, str5, i11, list, jVar);
             default:
-                int z15 = vb.z(parcel);
+                int z15 = wb.z(parcel);
                 while (parcel.dataPosition() < z15) {
                     int readInt3 = parcel.readInt();
                     if (((char) readInt3) != 1) {
-                        vb.y(parcel, readInt3);
+                        wb.y(parcel, readInt3);
                     } else {
-                        status = (Status) vb.g(parcel, readInt3, Status.CREATOR);
+                        status = (Status) wb.g(parcel, readInt3, Status.CREATOR);
                     }
                 }
-                vb.m(parcel, z15);
+                wb.m(parcel, z15);
                 return new t(status);
         }
     }

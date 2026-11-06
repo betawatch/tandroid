@@ -52,15 +52,15 @@ import org.telegram.ui.bk0;
 import org.telegram.ui.c40;
 import org.telegram.ui.eb;
 import org.telegram.ui.f61;
-import org.telegram.ui.fo0;
 import org.telegram.ui.g4;
+import org.telegram.ui.go0;
 import org.telegram.ui.h30;
 import org.telegram.ui.l21;
 import org.telegram.ui.l4;
 import org.telegram.ui.lk0;
 import org.telegram.ui.t3;
 import org.telegram.ui.uz;
-import org.telegram.ui.vu0;
+import org.telegram.ui.wu0;
 import org.telegram.ui.ww;
 import org.telegram.ui.x71;
 import org.telegram.ui.xy0;
@@ -72,7 +72,7 @@ import wi.n0;
 import wi.o0;
 import wi.r0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -289,11 +289,11 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 bk0Var.I1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                 return;
             case 10:
-                vu0.a((vu0) this.b, (Context) this.c, i7);
+                wu0.a((wu0) this.b, (Context) this.c, i7);
                 return;
             case 11:
                 xy0 xy0Var = (xy0) this.b;
-                switch (((fo0) this.c).a) {
+                switch (((go0) this.c).a) {
                     case 6:
                         xi.e.e.b(i7 == 0 ? r0.b : r0.c);
                         break;

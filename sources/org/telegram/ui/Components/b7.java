@@ -11,7 +11,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -285,7 +285,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                         int i11;
                         ze0 ze0Var2 = ze0.this;
                         int i12 = ze0Var2.b;
-                        k41 k41Var = ze0Var2.c;
+                        q41 q41Var = ze0Var2.c;
                         ze0Var2.K = -1;
                         boolean z12 = false;
                         ze0Var2.w = false;
@@ -298,14 +298,14 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
                                 if (tL_error2 != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
                                     ze0Var2.d();
-                                    k41Var.f3.O(true);
+                                    q41Var.f3.O(true);
                                     return;
                                 } else {
                                     if (tL_error2 == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
                                         return;
                                     }
                                     ze0Var2.d();
-                                    k41Var.f3.O(true);
+                                    q41Var.f3.O(true);
                                     bi.ea.y(i12, false).q(new bi.r3(ze0Var2, j10, 24), true, true);
                                     return;
                                 }
@@ -323,7 +323,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                                 ze0Var2.d.stars_amount = parseInt2;
                             }
                             ze0Var2.d();
-                            k41Var.f3.O(true);
+                            q41Var.f3.O(true);
                             return;
                         }
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -366,9 +366,9 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                                 }
                                 ze0Var2.d();
                                 if (isEmpty) {
-                                    k41Var.v0(i11);
+                                    q41Var.v0(i11);
                                 }
-                                k41Var.f3.O(true);
+                                q41Var.f3.O(true);
                                 if (!arrayList2.isEmpty() && (!z14 ? !ze0Var2.s : !ze0Var2.h)) {
                                     org.telegram.messenger.g0.h3(new bi.u7(ze0Var2, z14, arrayList2, 24));
                                 }
@@ -384,7 +384,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             ze0Var2.d();
                             if (isEmpty) {
                             }
-                            k41Var.f3.O(true);
+                            q41Var.f3.O(true);
                             if (!arrayList2.isEmpty()) {
                                 org.telegram.messenger.g0.h3(new bi.u7(ze0Var2, z14, arrayList2, 24));
                             }
@@ -401,7 +401,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             ze0Var2.d();
                             if (isEmpty) {
                             }
-                            k41Var.f3.O(true);
+                            q41Var.f3.O(true);
                             if (!arrayList2.isEmpty()) {
                             }
                             if (z11) {
@@ -421,7 +421,7 @@ public final /* synthetic */ class b7 implements RequestDelegate {
                             ze0Var2.d();
                             if (isEmpty) {
                             }
-                            k41Var.f3.O(true);
+                            q41Var.f3.O(true);
                             if (!arrayList2.isEmpty()) {
                             }
                             if (z11) {

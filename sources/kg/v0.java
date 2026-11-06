@@ -8,10 +8,10 @@ import org.telegram.messenger.hd;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         a1 a1Var = this.b;
-        r31 r31Var = (r31) obj;
-        int i7 = r31Var.d;
+        x31 x31Var = (x31) obj;
+        int i7 = x31Var.d;
         int i10 = 3;
-        if (i7 != 1 && r31Var.c != a1Var.f) {
+        if (i7 != 1 && x31Var.c != a1Var.f) {
             if (i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a1Var.getParentActivity());
                 alertDialog$Builder.a.R = hd.M0(2131752694, null);
@@ -63,7 +63,7 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
             }
             return;
         }
-        if (a1Var.x != null && r31Var.c != a1Var.f) {
+        if (a1Var.x != null && x31Var.c != a1Var.f) {
             a1Var.x = null;
             a1Var.a.f3.O(true);
             return;

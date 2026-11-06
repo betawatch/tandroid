@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class pw0 {
-    public final ly0 a;
-    public final ly0 b;
+    public final my0 a;
+    public final my0 b;
 
-    public pw0(ly0 ly0Var, ly0 ly0Var2) {
-        this.a = ly0Var;
-        this.b = ly0Var2;
+    public pw0(my0 my0Var, my0 my0Var2) {
+        this.a = my0Var;
+        this.b = my0Var2;
     }
 }

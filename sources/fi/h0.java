@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import org.telegram.ui.Components.ed0;
 import org.telegram.ui.Components.fd0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.qo0;
+import org.telegram.ui.ro0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h0 implements og.e {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class h0 implements og.e {
                 if (ed0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((qo0) ed0Var).a;
+                PhotoViewer photoViewer = ((ro0) ed0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 return photoViewer.H0();
         }
@@ -96,7 +96,7 @@ public final class h0 implements og.e {
                 if (ed0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((qo0) ed0Var).a;
+                PhotoViewer photoViewer = ((ro0) ed0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 return photoViewer.I0(-90.0f, false, null);
         }
@@ -132,7 +132,7 @@ public final class h0 implements og.e {
                 fd0Var.getClass();
                 ed0 ed0Var = fd0Var.a;
                 if (ed0Var != null) {
-                    ((qo0) ed0Var).m(false);
+                    ((ro0) ed0Var).m(false);
                     break;
                 }
                 break;

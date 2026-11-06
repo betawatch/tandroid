@@ -20,11 +20,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
@@ -433,22 +433,22 @@ public final /* synthetic */ class y4 implements Runnable {
                 try {
                     int i17 = mediaController2.k0 + 1;
                     mediaController2.k0 = i17;
-                    n51 n51Var = mediaController2.j0;
-                    if (n51Var != null) {
-                        n51Var.m0();
+                    t51 t51Var = mediaController2.j0;
+                    if (t51Var != null) {
+                        t51Var.m0();
                     }
-                    n51 n51Var2 = new n51(false, false);
-                    mediaController2.j0 = n51Var2;
-                    n51Var2.J = new f5.u(mediaController2, i17, 10);
-                    n51Var2.j0(Uri.fromFile(file), "other");
+                    t51 t51Var2 = new t51(false, false);
+                    mediaController2.j0 = t51Var2;
+                    t51Var2.J = new f5.u(mediaController2, i17, 10);
+                    t51Var2.j0(Uri.fromFile(file), "other");
                     mediaController2.j0.x0(3);
                     mediaController2.j0.h0();
                     return;
                 } catch (Exception e14) {
                     a8.g(e14, true);
-                    n51 n51Var3 = mediaController2.j0;
-                    if (n51Var3 != null) {
-                        n51Var3.m0();
+                    t51 t51Var3 = mediaController2.j0;
+                    if (t51Var3 != null) {
+                        t51Var3.m0();
                         mediaController2.j0 = null;
                         return;
                     }
@@ -458,7 +458,7 @@ public final /* synthetic */ class y4 implements Runnable {
                 c cVar = (c) this.b;
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) this.c;
                 String[] strArr3 = MediaController.V1;
-                w7.G(cVar.a).X(tL_document, null, 1, 1);
+                w7.G(cVar.a).W(tL_document, null, 1, 1);
                 return;
             case 24:
                 ((MediaController) ((m.f3) this.b).b).x1.add((ByteBuffer) this.c);
@@ -467,14 +467,14 @@ public final /* synthetic */ class y4 implements Runnable {
                 jg.q1 q1Var = (jg.q1) this.b;
                 ij ijVar2 = (ij) this.c;
                 MediaController mediaController3 = (MediaController) q1Var.c;
-                n51 n51Var4 = mediaController3.i0;
-                if ((n51Var4 == null && mediaController3.E0 == null) || mediaController3.g0) {
+                t51 t51Var4 = mediaController3.i0;
+                if ((t51Var4 == null && mediaController3.E0 == null) || mediaController3.g0) {
                     return;
                 }
                 try {
-                    n51 n51Var5 = mediaController3.E0;
-                    if (n51Var5 != null) {
-                        U = n51Var5.U();
+                    t51 t51Var5 = mediaController3.E0;
+                    if (t51Var5 != null) {
+                        U = t51Var5.U();
                         S = ((MediaController) q1Var.c).E0.S();
                         if (S >= 0 && U > 0) {
                             float f11 = U;
@@ -486,7 +486,7 @@ public final /* synthetic */ class y4 implements Runnable {
                         }
                         return;
                     }
-                    U = n51Var4.U();
+                    U = t51Var4.U();
                     S = ((MediaController) q1Var.c).i0.S();
                     f10 = U >= 0 ? S / U : 0.0f;
                     K = ((MediaController) q1Var.c).i0.K() / U;
@@ -531,7 +531,7 @@ public final /* synthetic */ class y4 implements Runnable {
                     return;
                 }
                 cfVar.d.put(w7.r(null, F0), ijVar3);
-                w7.G(cfVar.a.a).X(F0, ijVar3, 3, ij.S5(ijVar3.k) ? 2 : 0);
+                w7.G(cfVar.a.a).W(F0, ijVar3, 3, ij.S5(ijVar3.k) ? 2 : 0);
                 return;
             case 27:
                 a();

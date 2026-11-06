@@ -6,7 +6,7 @@ import android.media.UnsupportedSchemeException;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import c8.qb;
+import c8.rb;
 import e2.s0;
 import h9.g0;
 import h9.h2;
@@ -25,7 +25,7 @@ import m4.d0;
 import org.telegram.ui.Components.uy;
 import p4.r0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set D;
@@ -79,7 +79,7 @@ public final class e implements m {
         f g10 = bVar.g();
         g10.getClass();
         Throwable cause = g10.getCause();
-        return (cause instanceof ResourceBusyException) || qb.c(cause);
+        return (cause instanceof ResourceBusyException) || rb.c(cause);
     }
 
     public static ArrayList f(e2.r rVar, UUID uuid, boolean z9) {

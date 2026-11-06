@@ -1,17 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class l61 {
-    public int a;
-    public CharSequence b;
-    public int c;
+public final class l61 extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ v61 d;
 
-    public final int a(TextPaint textPaint) {
-        int ceil = (int) Math.ceil(fi.m3.h(this.b, textPaint));
-        this.c = ceil;
-        return Math.max(0, ceil);
+    public l61(v61 v61Var, View view, float f10) {
+        this.d = v61Var;
+        this.b = view;
+        this.c = f10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
+        }
+        this.d.F(this.b, this.c);
     }
 }

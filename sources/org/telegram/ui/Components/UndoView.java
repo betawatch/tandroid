@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.u71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
@@ -152,7 +152,6 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                     g(this.K, longValue);
                 }
             }
-            int i13 = 4;
             boolean z11 = this.R;
             if (i7 == 0) {
                 setEnterOffset((z11 ? -1.0f : 1.0f) * (this.d0 + this.r));
@@ -160,6 +159,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 return;
             }
             AnimatorSet animatorSet = new AnimatorSet();
+            int i13 = 3;
             if (i7 == 1) {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(this, "enterOffset", (z11 ? -1.0f : 1.0f) * (this.d0 + this.r)));
                 animatorSet.setDuration(250L);
@@ -168,7 +168,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 animatorSet.setDuration(180L);
             }
             animatorSet.setInterpolator(new DecelerateInterpolator());
-            animatorSet.addListener(new j01(this, i13));
+            animatorSet.addListener(new f11(this, i13));
             animatorSet.start();
         }
     }
@@ -290,12 +290,12 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         k(j3, i7, obj, null, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x176a  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x178c  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x1879  */
-    /* JADX WARN: Removed duplicated region for block: B:595:0x174e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x176b  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x178d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x187a  */
+    /* JADX WARN: Removed duplicated region for block: B:596:0x174f  */
     /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x17cb  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x17cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -376,7 +376,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         layoutParams2.height = -2;
         b2Var.setMinHeight(0);
         if ((runnable == null && runnable2 == null) || i7 == 83) {
-            setOnClickListener(new z31(this, 1));
+            setOnClickListener(new f41(this, 1));
             movementMethod = null;
             setOnTouchListener(null);
         } else {
@@ -492,7 +492,8 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                 } else if (i7 == 43) {
                                     X2 = org.telegram.messenger.t3.W((TLRPC.Chat) obj) ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.L0(2131743460)) : org.telegram.messenger.g0.X2(org.telegram.messenger.hd.L0(2131743335));
                                     this.G = 3000L;
-                                    i13 = R.raw.ic_unmute;
+                                    charSequence = null;
+                                    i15 = R.raw.ic_unmute;
                                 } else {
                                     int i22 = this.K;
                                     if (i22 == 39 || i22 == 100) {
@@ -511,7 +512,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                                                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
                                                 spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
                                                 try {
-                                                    spannableStringBuilder.setSpan(new v31("tg://openmessage?user_id=" + org.telegram.messenger.p10.i(i10).e()), indexOf, lastIndexOf - 2, 33);
+                                                    spannableStringBuilder.setSpan(new b41("tg://openmessage?user_id=" + org.telegram.messenger.p10.i(i10).e()), indexOf, lastIndexOf - 2, 33);
                                                 } catch (Exception e10) {
                                                     org.telegram.messenger.a8.f(e10);
                                                 }
@@ -839,7 +840,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                         ch0Var.setProgress(0.0f);
                         ch0Var.d();
                         if (j3 > 0) {
-                            ch0Var.postDelayed(new ir0(this, 25), j3);
+                            ch0Var.postDelayed(new ir0(this, 26), j3);
                         }
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append((Object) b2Var.getText());
@@ -1016,7 +1017,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 if (indexOf2 >= 0 && lastIndexOf2 >= 0 && indexOf2 != lastIndexOf2) {
                     spannableStringBuilder2.replace(lastIndexOf2, lastIndexOf2 + 1, (CharSequence) "");
                     spannableStringBuilder2.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
-                    spannableStringBuilder2.setSpan(new v31("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
+                    spannableStringBuilder2.setSpan(new b41("tg://settings/folders"), indexOf2, lastIndexOf2 - 1, 33);
                 }
                 textView2.setText(spannableStringBuilder2);
                 textView2.setVisibility(0);
@@ -1115,7 +1116,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
                 if (indexOf3 >= 0 && lastIndexOf3 >= 0 && indexOf3 != lastIndexOf3) {
                     spannableStringBuilder3.replace(lastIndexOf3, lastIndexOf3 + 1, (CharSequence) "");
                     spannableStringBuilder3.replace(indexOf3, indexOf3 + 1, (CharSequence) "");
-                    spannableStringBuilder3.setSpan(new v31("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
+                    spannableStringBuilder3.setSpan(new b41("tg://settings/themes"), indexOf3, lastIndexOf3 - 1, 33);
                 }
                 textView2.setText(spannableStringBuilder3);
                 textView2.setVisibility(0);
@@ -1501,7 +1502,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         org.telegram.ui.ActionBar.r6.V(b2Var, i7, f6Var);
         int i10 = org.telegram.ui.ActionBar.k6.uj;
         org.telegram.ui.ActionBar.r6.H(b2Var, i10, f6Var);
-        b2Var.setMovementMethod(new a41(this));
+        b2Var.setMovementMethod(new g41(this));
         addView(b2Var, c8.ha.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
@@ -1542,7 +1543,7 @@ public class UndoView extends FrameLayout implements org.telegram.ui.ActionBar.a
         linearLayout.setOrientation(0);
         linearLayout.setBackground(org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.w0(i10, f6Var) & 587202559, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f)));
         addView(linearLayout, c8.ha.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        linearLayout.setOnClickListener(new z31(this, 0));
+        linearLayout.setOnClickListener(new f41(this, 0));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.chats_undo);

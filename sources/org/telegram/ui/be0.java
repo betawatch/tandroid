@@ -50,7 +50,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class be0 extends org.telegram.ui.Components.wt0 implements AdapterView.OnItemSelectedListener, org.telegram.messenger.ls {
     public final org.telegram.ui.Cells.c2 D;
@@ -79,7 +79,7 @@ public final class be0 extends org.telegram.ui.Components.wt0 implements Adapter
     public org.telegram.ui.ActionBar.u1 b0;
     public final TextView c;
     public org.telegram.ui.ActionBar.u1 c0;
-    public final org.telegram.ui.Components.vy0 d;
+    public final org.telegram.ui.Components.wy0 d;
     public boolean d0;
     public final org.telegram.ui.Components.lb0 e;
     public boolean e0;
@@ -125,7 +125,7 @@ public final class be0 extends org.telegram.ui.Components.wt0 implements Adapter
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView, c8.ha.d(-1, -2.0f, 1, 32.0f, 0.0f, 32.0f, 0.0f));
-        textView.setOnClickListener(new org.telegram.ui.Components.n41(27, this, context));
+        textView.setOnClickListener(new org.telegram.ui.Components.t41(27, this, context));
         org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(context, null);
         this.n = w70Var;
         w70Var.setText(org.telegram.messenger.hd.M0(ce0Var.F == 2 ? 2131752539 : 2131744908, null));
@@ -133,19 +133,19 @@ public final class be0 extends org.telegram.ui.Components.wt0 implements Adapter
         w70Var.setGravity(17);
         w70Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(w70Var, c8.ha.t(-1, -2, 1, 32, 8, 32, 0));
-        org.telegram.ui.Components.vy0 vy0Var = new org.telegram.ui.Components.vy0(context);
-        this.d = vy0Var;
-        vy0Var.setFactory(new yd0(context, i10));
+        org.telegram.ui.Components.wy0 wy0Var = new org.telegram.ui.Components.wy0(context);
+        this.d = wy0Var;
+        wy0Var.setFactory(new yd0(context, i10));
         Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
         loadAnimation.setInterpolator(org.telegram.ui.Components.ks.e);
-        vy0Var.setInAnimation(loadAnimation);
+        wy0Var.setInAnimation(loadAnimation);
         ImageView imageView = new ImageView(context);
         this.s = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(16);
-        linearLayout.addView(vy0Var, c8.ha.m(1.0f, 0, -2, 0, 0, 0));
+        linearLayout.addView(wy0Var, c8.ha.m(1.0f, 0, -2, 0, 0, 0));
         linearLayout.addView(imageView, c8.ha.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
         org.telegram.ui.Components.lb0 lb0Var = new org.telegram.ui.Components.lb0(context, null);
         this.e = lb0Var;
@@ -1249,11 +1249,11 @@ public final class be0 extends org.telegram.ui.Components.wt0 implements Adapter
         w70Var.setLinkTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false));
         int i7 = 0;
         while (true) {
-            org.telegram.ui.Components.vy0 vy0Var = this.d;
-            if (i7 >= vy0Var.getChildCount()) {
+            org.telegram.ui.Components.wy0 wy0Var = this.d;
+            if (i7 >= wy0Var.getChildCount()) {
                 break;
             }
-            TextView textView = (TextView) vy0Var.getChildAt(i7);
+            TextView textView = (TextView) wy0Var.getChildAt(i7);
             textView.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
             textView.setHintTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.H6, false));
             i7++;

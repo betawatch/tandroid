@@ -1,9 +1,9 @@
 package w7;
 
-import c8.ed;
+import c8.fd;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class k extends d {
     public final transient Object[] c;
@@ -18,7 +18,7 @@ public final class k extends d {
 
     @Override // java.util.List
     public final Object get(int i7) {
-        ed.a(i7, this.e);
+        fd.a(i7, this.e);
         Object obj = this.c[i7 + i7 + this.d];
         Objects.requireNonNull(obj);
         return obj;

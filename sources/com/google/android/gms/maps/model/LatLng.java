@@ -2,12 +2,12 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import m6.e;
 import r6.a;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class LatLng extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLng> CREATOR = new e(5);
@@ -46,11 +46,11 @@ public final class LatLng extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.q(parcel, 2, 8);
+        int r10 = xb.r(parcel, 20293);
+        xb.q(parcel, 2, 8);
         parcel.writeDouble(this.a);
-        wb.q(parcel, 3, 8);
+        xb.q(parcel, 3, 8);
         parcel.writeDouble(this.b);
-        wb.s(parcel, r10);
+        xb.s(parcel, r10);
     }
 }

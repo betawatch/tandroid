@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements nr0, qw {
+public final /* synthetic */ class dg implements or0, qw {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -30,7 +30,7 @@ public final /* synthetic */ class dg implements nr0, qw {
         return false;
     }
 
-    @Override // org.telegram.ui.nr0
+    @Override // org.telegram.ui.or0
     public void a(TLRPC.MessageMedia messageMedia) {
         int i7;
         an anVar = (an) this.c;

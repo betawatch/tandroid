@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements org.telegram.ui.Components.ej0, org.telegram.ui.Components.ph0, org.telegram.ui.Components.t4, org.telegram.messenger.pc, u4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.tr, org.telegram.ui.Components.cj0, qw, la1, org.telegram.ui.Components.voip.z2, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -386,7 +386,7 @@ public final /* synthetic */ class a7 implements org.telegram.ui.Components.ej0,
         l10.N = tc1Var;
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         tc1Var.addView(f10, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
-        TextView b10 = c8.na.b(context, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, resourceProvider);
+        TextView b10 = c8.qa.b(context, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, resourceProvider);
         org.telegram.messenger.k5.m(b10, 17, null, 2131742948);
         f10.addView(b10, c8.ha.s(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -435,7 +435,7 @@ public final /* synthetic */ class a7 implements org.telegram.ui.Components.ej0,
             case 18:
                 ArrayList arrayList2 = (ArrayList) obj2;
                 an anVar = (an) obj;
-                PhotoViewer photoViewer = ((po0) obj3).b;
+                PhotoViewer photoViewer = ((qo0) obj3).b;
                 if (arrayList.size() > 1 || ((org.telegram.messenger.xr) arrayList.get(0)).a == org.telegram.messenger.p10.i(photoViewer.T).e() || charSequence != null) {
                     for (int i13 = 0; i13 < arrayList.size(); i13++) {
                         long j10 = ((org.telegram.messenger.xr) arrayList.get(i13)).a;
@@ -486,11 +486,11 @@ public final /* synthetic */ class a7 implements org.telegram.ui.Components.ej0,
                 }
                 break;
             default:
-                qv0 qv0Var = (qv0) obj3;
+                rv0 rv0Var = (rv0) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 ww wwVar2 = (ww) obj;
                 long j12 = ((org.telegram.messenger.xr) arrayList.get(0)).a;
-                ProfileActivity profileActivity = qv0Var.b;
+                ProfileActivity profileActivity = rv0Var.b;
                 i11 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
                 TLRPC.Chat M0 = org.telegram.messenger.qp.s1(i11).M0(Long.valueOf(-j12));
                 if (M0 == null || (!M0.creator && ((tL_chatAdminRights = M0.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
@@ -500,11 +500,11 @@ public final /* synthetic */ class a7 implements org.telegram.ui.Components.ej0,
                     u1Var.R = M02;
                     u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("AddMembersAlertNamesText", null, 2131754399, org.telegram.messenger.t10.p(user), M0 == null ? "" : M0.title));
                     alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754463, null), new bg.e0(qv0Var, j12, wwVar, user, 5));
+                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754463, null), new bg.e0(rv0Var, j12, wwVar, user, 5));
                     profileActivity.showDialog(u1Var);
                     break;
                 } else {
-                    profileActivity.getMessagesController().K(M0, user, new bi.i(qv0Var, j12, wwVar2, 8));
+                    profileActivity.getMessagesController().K(M0, user, new bi.i(rv0Var, j12, wwVar2, 8));
                     break;
                 }
                 break;

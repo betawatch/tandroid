@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
+import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fy0 {
-    public final long a;
-    public final TLRPC.InputFile b;
-    public final TLRPC.InputEncryptedFile c;
-    public final byte[] d;
-    public final byte[] e;
+    public final File a;
+    public long b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public TLRPC.InputFile f;
+    public TLRPC.InputEncryptedFile g;
+    public byte[] h;
+    public byte[] i;
 
-    public fy0(long j3, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
-        this.a = j3;
-        this.b = inputFile;
-        this.c = inputEncryptedFile;
-        this.d = bArr;
-        this.e = bArr2;
+    public fy0(File file) {
+        this.a = file;
     }
 }

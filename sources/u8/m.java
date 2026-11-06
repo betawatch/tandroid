@@ -3,9 +3,9 @@ package u8;
 import android.graphics.Point;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class m extends r6.a {
     public static final Parcelable.Creator<m> CREATOR = new o(1);
@@ -28,29 +28,29 @@ public final class m extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
+        int r10 = xb.r(parcel, 20293);
         int i10 = this.a;
-        wb.q(parcel, 2, 4);
+        xb.q(parcel, 2, 4);
         parcel.writeInt(i10);
-        wb.l(parcel, 3, this.b);
-        wb.l(parcel, 4, this.c);
+        xb.l(parcel, 3, this.b);
+        xb.l(parcel, 4, this.c);
         int i11 = this.d;
-        wb.q(parcel, 5, 4);
+        xb.q(parcel, 5, 4);
         parcel.writeInt(i11);
-        wb.o(parcel, 6, this.e, i7);
-        wb.k(parcel, 7, this.f, i7);
-        wb.k(parcel, 8, this.h, i7);
-        wb.k(parcel, 9, this.n, i7);
-        wb.k(parcel, 10, this.r, i7);
-        wb.k(parcel, 11, this.s, i7);
-        wb.k(parcel, 12, this.w, i7);
-        wb.k(parcel, 13, this.x, i7);
-        wb.k(parcel, 14, this.y, i7);
-        wb.k(parcel, 15, this.D, i7);
-        wb.c(parcel, 16, this.E);
+        xb.o(parcel, 6, this.e, i7);
+        xb.k(parcel, 7, this.f, i7);
+        xb.k(parcel, 8, this.h, i7);
+        xb.k(parcel, 9, this.n, i7);
+        xb.k(parcel, 10, this.r, i7);
+        xb.k(parcel, 11, this.s, i7);
+        xb.k(parcel, 12, this.w, i7);
+        xb.k(parcel, 13, this.x, i7);
+        xb.k(parcel, 14, this.y, i7);
+        xb.k(parcel, 15, this.D, i7);
+        xb.c(parcel, 16, this.E);
         boolean z9 = this.F;
-        wb.q(parcel, 17, 4);
+        xb.q(parcel, 17, 4);
         parcel.writeInt(z9 ? 1 : 0);
-        wb.s(parcel, r10);
+        xb.s(parcel, r10);
     }
 }

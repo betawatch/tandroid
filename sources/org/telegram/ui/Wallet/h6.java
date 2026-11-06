@@ -30,11 +30,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.l00;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public class h6 extends FrameLayout implements ls {
     public static Typeface j0;
@@ -215,8 +215,8 @@ public class h6 extends FrameLayout implements ls {
         Matrix matrix2 = (Matrix) c6Var.e.d;
         Matrix matrix3 = this.w;
         matrix3.set(matrix2);
-        p41 p41Var = c6Var.f;
-        matrix3.preTranslate(p41Var.getLeft(), p41Var.getTop());
+        v41 v41Var = c6Var.f;
+        matrix3.preTranslate(v41Var.getLeft(), v41Var.getTop());
         k(view2, matrix);
         matrix.preConcat(matrix3);
         matrix.preTranslate(this.E.getLeft() - r0.getScrollX(), this.E.getTop() - r0.getScrollY());

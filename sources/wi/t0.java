@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.TextureView;
-import c8.id;
+import c8.jd;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -16,13 +16,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ax;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.i40;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class t0 {
     public boolean A;
@@ -188,7 +188,7 @@ public final class t0 {
             this.S = p0Var;
             this.T = new x(d, this.n.a, z9, this.m, new org.telegram.ui.web.a0(23, this, p0Var));
             this.m.b("output generation started: id=" + j3 + ", includeAudio=" + z9 + ", file=" + d.getName());
-            this.k.execute(new l31(this, p0Var, d, 26));
+            this.k.execute(new r31(this, p0Var, d, 26));
         }
     }
 
@@ -237,9 +237,9 @@ public final class t0 {
             n40 n40Var = (n40) this.d.b;
             n40Var.A();
             a8.g(exc, true);
-            gy0 gy0Var = n40Var.S;
-            if (gy0Var != null) {
-                gy0Var.d(true);
+            hy0 hy0Var = n40Var.S;
+            if (hy0Var != null) {
+                hy0Var.d(true);
             }
             n40Var.S = null;
             MediaController.B().Y(false);
@@ -484,7 +484,7 @@ public final class t0 {
         if (i11 <= 0) {
             i11 = this.p.a;
         }
-        n2.p0 a10 = id.a(file, xVar, j3, j10, z9, new b7.d(i12, i13, i11));
+        n2.p0 a10 = jd.a(file, xVar, j3, j10, z9, new b7.d(i12, i13, i11));
         this.T.g();
         long h = this.T.h();
         n nVar2 = this.m;

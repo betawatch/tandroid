@@ -1,138 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class jp0 extends org.telegram.ui.Components.n51 {
-    public final /* synthetic */ int m0;
-    public final /* synthetic */ org.telegram.messenger.ls n0;
+public final class jp0 extends org.telegram.ui.Components.z51 {
+    public final /* synthetic */ PhotoViewer h0;
 
-    public /* synthetic */ jp0(org.telegram.messenger.ls lsVar, int i7) {
-        this.m0 = i7;
-        this.n0 = lsVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jp0(PhotoViewer photoViewer, Context context, ln0 ln0Var) {
+        super(context, ln0Var);
+        this.h0 = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.n51
-    public final void g0() {
-        switch (this.m0) {
-            case 0:
-                super.g0();
-                PhotoViewer photoViewer = (PhotoViewer) this.n0;
-                if (photoViewer.t4 == 0) {
-                    PhotoViewer.Q(photoViewer, false);
-                }
-                if (!photoViewer.N8) {
-                    d1.f.D(S());
-                    d1.f.x(false);
-                    break;
-                }
-                break;
-            default:
-                super.g0();
-                ((SecretMediaViewer) this.n0).U.a(false, true);
-                break;
-        }
+    @Override // android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        PhotoViewer.P(this.h0);
     }
 
-    @Override // org.telegram.ui.Components.n51
-    public final void h0() {
-        switch (this.m0) {
-            case 0:
-                super.h0();
-                PhotoViewer photoViewer = (PhotoViewer) this.n0;
-                PhotoViewer.Q(photoViewer, true);
-                if (!photoViewer.N8) {
-                    d1.f.D(S());
-                    d1.f.x(true);
-                    break;
-                }
-                break;
-            default:
-                super.h0();
-                ((SecretMediaViewer) this.n0).U.a(true, true);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n51, e2.a1
-    public void onRenderedFirstFrame() {
-        e2.w0 j3;
-        switch (this.m0) {
-            case 0:
-                super.onRenderedFirstFrame();
-                PhotoViewer photoViewer = (PhotoViewer) this.n0;
-                boolean z9 = true;
-                photoViewer.R = true;
-                if (photoViewer.D2) {
-                    photoViewer.e0.invalidate();
-                }
-                photoViewer.x3();
-                if (!d1.f.u() && !photoViewer.r) {
-                    z9 = false;
-                }
-                t0(z9);
-                if (!photoViewer.N8) {
-                    d1.f.D(S());
-                    l2.i0 i0Var = this.d;
-                    float f10 = 1.0f;
-                    if (i0Var != null && (j3 = i0Var.j()) != null) {
-                        f10 = j3.a;
-                    }
-                    d1.f.z(f10);
-                    break;
-                }
-                break;
-            default:
-                super.onRenderedFirstFrame();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n51
-    public void p0(long j3) {
-        switch (this.m0) {
-            case 0:
-                q0(j3, false);
-                PhotoViewer photoViewer = (PhotoViewer) this.n0;
-                if (photoViewer.r1) {
-                    PhotoViewer.R(photoViewer, j3);
-                }
-                if (!photoViewer.N8) {
-                    d1.f.D(j3);
-                    break;
-                }
-                break;
-            default:
-                super.p0(j3);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n51
-    public void u0(boolean z9) {
-        switch (this.m0) {
-            case 1:
-                super.u0(z9);
-                ((SecretMediaViewer) this.n0).U.a(z9, true);
-                break;
-            default:
-                super.u0(z9);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n51
-    public void v0(float f10) {
-        switch (this.m0) {
-            case 0:
-                super.v0(f10);
-                if (!((PhotoViewer) this.n0).N8) {
-                    d1.f.z(f10);
-                    break;
-                }
-                break;
-            default:
-                super.v0(f10);
-                break;
+    @Override // android.view.View
+    public final void setVisibility(int i7) {
+        super.setVisibility(i7);
+        if (i7 == 0) {
+            PhotoViewer.P(this.h0);
         }
     }
 }

@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.l71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final /* synthetic */ class x0 implements Runnable {
         long j10;
         long j11;
         File[] fileArr;
-        f71 f71Var;
-        f71 f71Var2;
+        l71 l71Var;
+        l71 l71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         int i12 = 3;
@@ -378,10 +378,10 @@ public final /* synthetic */ class x0 implements Runnable {
                         mediaController.B0(2, 0, false, false);
                     }
                     org.telegram.ui.Components.vt vtVar = org.telegram.ui.Components.vt.O1;
-                    if (vtVar != null && (f71Var2 = vtVar.j1) != null && f71Var2.x) {
-                        f71Var2.a.g0();
-                        f71Var2.n();
-                        f71Var2.f0.d(true, true);
+                    if (vtVar != null && (l71Var2 = vtVar.j1) != null && l71Var2.x) {
+                        l71Var2.a.g0();
+                        l71Var2.n();
+                        l71Var2.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -392,10 +392,10 @@ public final /* synthetic */ class x0 implements Runnable {
                 }
                 if (i39 == 2) {
                     org.telegram.ui.Components.vt vtVar2 = org.telegram.ui.Components.vt.O1;
-                    if (vtVar2 != null && (f71Var = vtVar2.j1) != null && f71Var.x) {
-                        f71Var.a.g0();
-                        f71Var.n();
-                        f71Var.f0.d(true, true);
+                    if (vtVar2 != null && (l71Var = vtVar2.j1) != null && l71Var.x) {
+                        l71Var.a.g0();
+                        l71Var.n();
+                        l71Var.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;

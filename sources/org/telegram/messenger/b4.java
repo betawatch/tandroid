@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.kt0;
+import org.telegram.ui.lt0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class b4 implements Runnable {
     private final void b() {
         Account[] accountArr;
         g5 g5Var = (g5) this.b;
-        kt0 kt0Var = (kt0) this.c;
+        lt0 lt0Var = (lt0) this.c;
         AccountManager accountManager = AccountManager.get(t0.b);
         try {
             Account[] accountsByType = accountManager.getAccountsByType("org.telegram.messenger");
@@ -118,7 +118,7 @@ public final /* synthetic */ class b4 implements Runnable {
         g5Var.l0.clear();
         g5Var.getNotificationCenter().k(qs.O, new Object[0]);
         g5Var.A(0L, false);
-        kt0Var.run();
+        lt0Var.run();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -243,7 +243,7 @@ public final /* synthetic */ class b4 implements Runnable {
                         executeFast.step();
                         try {
                             w7.G(z5Var2.currentAccount);
-                            w7.N(((ij) arrayList2.get(i12)).k, false, true).delete();
+                            w7.M(((ij) arrayList2.get(i12)).k, false, true).delete();
                         } catch (Exception e10) {
                             a8.g(e10, true);
                         }

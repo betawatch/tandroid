@@ -27,12 +27,12 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ShutterButton;
 import org.telegram.ui.Components.at0;
 import org.telegram.ui.Components.ay;
-import org.telegram.ui.Components.f71;
 import org.telegram.ui.Components.gx;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.jk0;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l71;
 import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.ne;
 import org.telegram.ui.Components.nw0;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.Components.zn;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -501,18 +501,18 @@ public final class e5 extends FrameLayout {
         switch (this.a) {
             case 17:
                 vt vtVar = (vt) this.b;
-                f71 f71Var = vtVar.j1;
+                l71 l71Var = vtVar.j1;
                 rt rtVar = vtVar.i1;
                 super.onDetachedFromWindow();
                 try {
                     if (vtVar.M0()) {
                         if (rtVar.getVisibility() != 0) {
                         }
-                        if (f71Var.f() && !vtVar.M0()) {
+                        if (l71Var.f() && !vtVar.M0()) {
                             if (vt.O1 == vtVar) {
                                 vt.O1 = null;
                             }
-                            f71Var.b();
+                            l71Var.b();
                             break;
                         }
                     }
@@ -522,7 +522,7 @@ public final class e5 extends FrameLayout {
                         rtVar.loadUrl("about:blank");
                         rtVar.destroy();
                     }
-                    if (f71Var.f()) {
+                    if (l71Var.f()) {
                     }
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);

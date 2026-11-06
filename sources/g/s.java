@@ -42,7 +42,7 @@ import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.ContentFrameLayout;
 import androidx.appcompat.widget.Toolbar;
-import c8.tb;
+import c8.ub;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -57,7 +57,7 @@ import org.webrtc.MediaStreamTrack;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class s extends g implements l.i, LayoutInflater.Factory2 {
     public static final a0.l q0 = new a0.l(0);
@@ -525,7 +525,7 @@ public final class s extends g implements l.i, LayoutInflater.Factory2 {
         ActionMenuView actionMenuView;
         m.i iVar;
         u uVar = this.d;
-        if ((!(uVar instanceof r0.i) && !com.google.android.recaptcha.internal.a.u(uVar)) || (decorView = this.f.getDecorView()) == null || !tb.a(decorView, keyEvent)) {
+        if ((!(uVar instanceof r0.i) && !com.google.android.recaptcha.internal.a.u(uVar)) || (decorView = this.f.getDecorView()) == null || !ub.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 n nVar = this.h;
                 Window.Callback callback = this.f.getCallback();

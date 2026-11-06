@@ -39,7 +39,7 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.l71;
 import org.telegram.ui.an;
 import org.telegram.ui.cy0;
 import org.telegram.ui.hy0;
@@ -50,7 +50,7 @@ import org.telegram.ui.web.d1;
 import ug.w0;
 import zd.a1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b0 implements ib.b, ms, jy0, q5.b {
     public static b0 f;
@@ -286,7 +286,7 @@ public final class b0 implements ib.b, ms, jy0, q5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = f71.z0.matcher(trim);
+            Matcher matcher = l71.z0.matcher(trim);
             int i10 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -443,11 +443,11 @@ public final class b0 implements ib.b, ms, jy0, q5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = f71.x0.matcher(trim);
+        Matcher matcher = l71.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = f71.y0.matcher(trim);
+            Matcher matcher2 = l71.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

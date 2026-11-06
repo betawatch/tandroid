@@ -8,11 +8,11 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import c8.fe;
-import c8.uc;
+import c8.ge;
 import c8.vc;
+import c8.wc;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final class k implements OutcomeReceiver {
                 je.b bVar = (je.b) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.j.d(type, "getType(...)");
-                bVar.a(fe.a(error.getMessage(), type));
+                bVar.a(ge.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -39,7 +39,7 @@ public final class k implements OutcomeReceiver {
                 Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
                 String type2 = error2.getType();
                 kotlin.jvm.internal.j.d(type2, "getType(...)");
-                this.b.a(fe.b(error2.getMessage(), type2));
+                this.b.a(ge.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -53,7 +53,7 @@ public final class k implements OutcomeReceiver {
                 je.b bVar = (je.b) this.b;
                 Bundle data = response.getData();
                 kotlin.jvm.internal.j.d(data, "getData(...)");
-                bVar.onResult(uc.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                bVar.onResult(vc.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
@@ -65,7 +65,7 @@ public final class k implements OutcomeReceiver {
                 kotlin.jvm.internal.j.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
                 kotlin.jvm.internal.j.d(data2, "getData(...)");
-                this.b.onResult(new o(vc.a(type, data2)));
+                this.b.onResult(new o(wc.a(type, data2)));
                 break;
         }
     }

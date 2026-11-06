@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class iz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,12 +22,12 @@ public final class iz0 extends AnimatorListenerAdapter {
             case 0:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
                 secretMediaViewer.X.getNextView().setText((CharSequence) null);
-                up0 up0Var = secretMediaViewer.Y;
-                up0Var.l0 = false;
-                if (up0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) up0Var.o0.getLayoutParams()).topMargin = up0Var.m0;
-                    up0Var.m0 = -1;
-                    up0Var.requestLayout();
+                vp0 vp0Var = secretMediaViewer.Y;
+                vp0Var.l0 = false;
+                if (vp0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) vp0Var.o0.getLayoutParams()).topMargin = vp0Var.m0;
+                    vp0Var.m0 = -1;
+                    vp0Var.requestLayout();
                     break;
                 }
                 break;
@@ -41,11 +41,11 @@ public final class iz0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                up0 up0Var = ((SecretMediaViewer) this.b.b).Y;
-                Method method = up0Var.f0;
+                vp0 vp0Var = ((SecretMediaViewer) this.b.b).Y;
+                Method method = vp0Var.f0;
                 if (method != null) {
                     try {
-                        method.invoke(up0Var, null);
+                        method.invoke(vp0Var, null);
                         break;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);

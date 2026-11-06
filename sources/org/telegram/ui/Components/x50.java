@@ -14,9 +14,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public class x50 extends w41 implements org.telegram.messenger.ls {
+public class x50 extends b51 implements org.telegram.messenger.ls {
     public final a0.h K1;
     public final w50 L1;
     public final org.telegram.ui.ActionBar.m1 M1;
@@ -110,12 +110,12 @@ public class x50 extends w41 implements org.telegram.messenger.ls {
         ((ViewGroup.MarginLayoutParams) this.q1.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(4.0f);
     }
 
-    @Override // org.telegram.ui.Components.w41
-    public final u41 I0(Context context) {
+    @Override // org.telegram.ui.Components.b51
+    public final z41 I0(Context context) {
         return new n50(this, context);
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void J0(MotionEvent motionEvent, ah.i iVar) {
         org.telegram.ui.ActionBar.f2 f2Var;
         if (motionEvent.getAction() == 0) {
@@ -159,7 +159,7 @@ public class x50 extends w41 implements org.telegram.messenger.ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void L0(String str) {
         s50 s50Var = this.N1;
         if (s50Var.h != null) {
@@ -289,7 +289,7 @@ public class x50 extends w41 implements org.telegram.messenger.ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.w41, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.Components.b51, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
         super.dismiss();
         org.telegram.messenger.qs.f(this.a).n(this, org.telegram.messenger.qs.s);

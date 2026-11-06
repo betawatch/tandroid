@@ -2,19 +2,19 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import java.nio.charset.StandardCharsets;
-import org.telegram.ui.Components.h41;
+import org.telegram.ui.Components.n41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j8 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h41 b;
+    public final /* synthetic */ n41 b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ j8(h41 h41Var, Object obj, Object obj2, int i7) {
+    public /* synthetic */ j8(n41 n41Var, Object obj, Object obj2, int i7) {
         this.a = i7;
-        this.b = h41Var;
+        this.b = n41Var;
         this.d = obj;
         this.c = obj2;
     }

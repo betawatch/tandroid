@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import bi.x5;
 import c8.ha;
-import c8.jc;
+import c8.kc;
 import fi.v3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -23,11 +23,11 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.l10;
-import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.t41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e2 implements VoIPService.StateListener, ls {
     public static boolean S = false;
@@ -106,7 +106,7 @@ public final class e2 implements VoIPService.StateListener, ls {
             imageView2.setContentDescription(hd.M0(2131747816, null));
             d2Var.addView(imageView2, ha.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new bi.l1(14));
-            imageView2.setOnClickListener(new n41(4, this, context));
+            imageView2.setOnClickListener(new t41(4, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -117,7 +117,7 @@ public final class e2 implements VoIPService.StateListener, ls {
 
     public static void a(LaunchActivity launchActivity) {
         e2 e2Var = T;
-        if (e2Var == null || U != null || S || e2Var.a.getParent() == null || jc.a(launchActivity) == e2Var.e) {
+        if (e2Var == null || U != null || S || e2Var.a.getParent() == null || kc.a(launchActivity) == e2Var.e) {
             return;
         }
         int i7 = e2Var.M;
@@ -162,7 +162,7 @@ public final class e2 implements VoIPService.StateListener, ls {
         layoutParams.width = (int) ((f12 * 0.25f) + ((((int) ((1.05f * f13) - f13)) / 2) * 2));
         layoutParams.gravity = 51;
         layoutParams.format = -3;
-        if (!jc.a(activity)) {
+        if (!kc.a(activity)) {
             layoutParams.type = 2;
         } else if (Build.VERSION.SDK_INT >= 26) {
             layoutParams.type = 2038;
@@ -172,7 +172,7 @@ public final class e2 implements VoIPService.StateListener, ls {
         layoutParams.flags = 16778120;
         e2 e2Var = new e2(activity, i10, i11, false);
         T = e2Var;
-        e2Var.e = jc.a(activity);
+        e2Var.e = kc.a(activity);
         WindowManager windowManager = T.e ? (WindowManager) org.telegram.messenger.t0.b.getSystemService("window") : (WindowManager) activity.getSystemService("window");
         e2 e2Var2 = T;
         e2Var2.M = i7;
@@ -274,7 +274,7 @@ public final class e2 implements VoIPService.StateListener, ls {
 
     public final void e() {
         VoIPService sharedInstance;
-        if (this.e || jc.b(org.telegram.messenger.t0.b) || (sharedInstance = VoIPService.getSharedInstance()) == null || !this.G) {
+        if (this.e || kc.b(org.telegram.messenger.t0.b) || (sharedInstance = VoIPService.getSharedInstance()) == null || !this.G) {
             return;
         }
         sharedInstance.setVideoState(false, 1);

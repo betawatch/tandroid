@@ -1,11 +1,19 @@
 package c8;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class ob {
-    public static void a(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
-        }
-    }
+    public abstract void a(Rect rect, RectF rectF);
+
+    public abstract void b();
+
+    public abstract void c(Canvas canvas);
+
+    public abstract boolean d();
+
+    public abstract void e(float f10);
 }

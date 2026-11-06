@@ -14,7 +14,7 @@ import org.telegram.messenger.i6;
 import org.telegram.messenger.p10;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.hz;
@@ -22,7 +22,7 @@ import org.telegram.ui.l00;
 import org.telegram.ui.o30;
 import org.telegram.ui.p30;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b {
     public boolean a;
@@ -48,15 +48,15 @@ public final class b {
     public boolean a(Canvas canvas, float f10, float f11) {
         Paint paint = (Paint) this.d;
         canvas.save();
-        ly0 ly0Var = (ly0) this.f;
-        ly0Var.p = f10 - g0.L(132.0f);
+        my0 my0Var = (my0) this.f;
+        my0Var.p = f10 - g0.L(132.0f);
         Paint paint2 = (Paint) this.c;
         paint2.setColor(i0.a.f(f11, this.b, k6.x0(null, k6.hh, false)));
         float d = ((w5) this.j).d(this.a);
-        float k10 = ly0Var.k() + g0.L(86.0f) + g0.L(14.0f);
+        float k10 = my0Var.k() + g0.L(86.0f) + g0.L(14.0f);
         float L = g0.L(28.0f);
         float L2 = g0.L(232.0f);
-        float i7 = ((ly0) this.g).i() + g0.L(54.0f) + g0.L(50.0f);
+        float i7 = ((my0) this.g).i() + g0.L(54.0f) + g0.L(50.0f);
         float T1 = g0.T1(k10, L2, f11);
         float T12 = g0.T1(L, i7, f11);
         float W1 = g0.W1(f11, g0.L(14.0f), g0.L(16.0f));
@@ -96,8 +96,8 @@ public final class b {
         if (p30VarArr[1].b(canvas, rectF3, f11)) {
             z9 = true;
         }
-        ly0 ly0Var2 = (ly0) this.f;
-        ly0Var2.c(f15 - (ly0Var2.k() / 2.0f), L / 2.0f, g0.T1(1.0f, 0.75f, d) * (1.0f - f11), -1, canvas);
+        my0 my0Var2 = (my0) this.f;
+        my0Var2.c(f15 - (my0Var2.k() / 2.0f), L / 2.0f, g0.T1(1.0f, 0.75f, d) * (1.0f - f11), -1, canvas);
         rectF2.set((g0.L(10.0f) + (((int) rectF.right) - g0.L(47.0f))) - f12, f13, g0.L(10.0f) + (((int) rectF.right) - g0.L(47.0f)) + f12, f14);
         float f20 = (int) ((L5 * 2.5f) + f16);
         rectF3.set(f20 - f18, (int) ((rectF.top + g0.L(27.33f)) - f18), f20 + f18, (int) (rectF.top + g0.L(27.33f) + f18));
@@ -111,11 +111,11 @@ public final class b {
         g0.c2(rectF2, rectF3, f11, rectF3);
         boolean z10 = p30VarArr[3].b(canvas, rectF3, f11) ? true : z9;
         if (f11 > 0.0f) {
-            ((ly0) this.g).c((rectF.centerX() - (L2 / 2.0f)) + g0.L(16.0f), g0.L(54.0f), f11, -1, canvas);
+            ((my0) this.g).c((rectF.centerX() - (L2 / 2.0f)) + g0.L(16.0f), g0.L(54.0f), f11, -1, canvas);
             paint.setColor(-16777216);
             paint.setAlpha((int) (255.0f * f11));
             canvas.drawRect(rectF.left, i7 - g0.L(40.0f), rectF.right, g0.L(0.66f) + (i7 - g0.L(40.0f)), paint);
-            ((ly0) this.h).c(rectF.centerX() - (((ly0) this.h).k() / 2.0f), i7 - g0.L(20.0f), f11, -1, canvas);
+            ((my0) this.h).c(rectF.centerX() - (((my0) this.h).k() / 2.0f), i7 - g0.L(20.0f), f11, -1, canvas);
         }
         canvas.restore();
         return z10;
@@ -179,13 +179,13 @@ public final class b {
                 i7++;
             } else {
                 ((Paint) this.c).setColor(k6.x0(null, k6.hh, false));
-                this.f = new ly0(hd.M0(2131751821, null), 12.0f, g0.o());
-                ly0 ly0Var = new ly0(hd.M0(2131751819, null), 11.0f, null);
-                ly0Var.m(99);
-                ly0Var.p(g0.L(200.0f));
-                ly0Var.l(g0.L(2.66f));
-                this.g = ly0Var;
-                this.h = new ly0(hd.M0(2131751820, null), 14.0f, g0.o());
+                this.f = new my0(hd.M0(2131751821, null), 12.0f, g0.o());
+                my0 my0Var = new my0(hd.M0(2131751819, null), 11.0f, null);
+                my0Var.m(99);
+                my0Var.p(g0.L(200.0f));
+                my0Var.l(g0.L(2.66f));
+                this.g = my0Var;
+                this.h = new my0(hd.M0(2131751820, null), 14.0f, g0.o());
                 b(null);
                 return;
             }

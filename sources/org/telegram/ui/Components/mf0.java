@@ -4,26 +4,26 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class mf0 implements c5.g {
-    public final /* synthetic */ org.telegram.ui.zu0 a;
+    public final /* synthetic */ org.telegram.ui.av0 a;
 
-    public mf0(org.telegram.ui.zu0 zu0Var) {
-        this.a = zu0Var;
+    public mf0(org.telegram.ui.av0 av0Var) {
+        this.a = av0Var;
     }
 
     @Override // c5.g
     public final void a(int i7) {
-        org.telegram.ui.zu0 zu0Var = this.a;
-        int i10 = zu0Var.o1;
+        org.telegram.ui.av0 av0Var = this.a;
+        int i10 = av0Var.o1;
         boolean z9 = i7 >= i10;
         if (i7 != i10) {
-            zu0Var.o1 = i7;
+            av0Var.o1 = i7;
         }
-        org.telegram.messenger.yo yoVar = zu0Var.S0;
+        org.telegram.messenger.yo yoVar = av0Var.S0;
         if (yoVar != null) {
-            rf0 rf0Var = zu0Var.D0;
+            rf0 rf0Var = av0Var.D0;
             yoVar.b(i7 - (rf0Var != null ? rf0Var.j() : 0), z9);
         }
     }
@@ -31,28 +31,28 @@ public final class mf0 implements c5.g {
     @Override // c5.g
     public final void b(float f10, int i7, int i10) {
         org.telegram.messenger.hc hcVar;
-        org.telegram.ui.zu0 zu0Var = this.a;
-        zu0Var.B(f10, i7);
+        org.telegram.ui.av0 av0Var = this.a;
+        av0Var.B(f10, i7);
         if (i10 == 0) {
-            int k10 = zu0Var.D0.k(i7);
-            zu0Var.getCurrentItemView();
-            int childCount = zu0Var.getChildCount();
+            int k10 = av0Var.D0.k(i7);
+            av0Var.getCurrentItemView();
+            int childCount = av0Var.getChildCount();
             for (int i11 = 0; i11 < childCount; i11++) {
-                View childAt = zu0Var.getChildAt(i11);
+                View childAt = av0Var.getChildAt(i11);
                 if (childAt instanceof l9) {
-                    rf0 rf0Var = zu0Var.D0;
+                    rf0 rf0Var = av0Var.D0;
                     int k11 = rf0Var.k(rf0Var.d.indexOf(childAt));
                     ImageReceiver imageReceiver = ((l9) childAt).getImageReceiver();
                     boolean z9 = imageReceiver.t0;
-                    if (k11 >= 0 && k11 < zu0Var.W0.size()) {
+                    if (k11 >= 0 && k11 < av0Var.W0.size()) {
                         if (k11 == k10) {
                             if (!z9) {
                                 imageReceiver.t0 = true;
                                 imageReceiver.P0(false);
                             }
-                            org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) zu0Var.W0.get(k11);
+                            org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) av0Var.W0.get(k11);
                             if (hcVar2 != null) {
-                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(zu0Var.L0);
+                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(av0Var.L0);
                                 TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = hcVar2.f;
                                 if (tL_fileLocationToBeDeprecated != null) {
                                     org.telegram.messenger.w7.J.c(new org.telegram.messenger.y4(9, G, tL_fileLocationToBeDeprecated));
@@ -60,7 +60,7 @@ public final class mf0 implements c5.g {
                             }
                         } else if (z9) {
                             v5 m10 = imageReceiver.m();
-                            if (m10 != null && (hcVar = (org.telegram.messenger.hc) zu0Var.W0.get(k11)) != null) {
+                            if (m10 != null && (hcVar = (org.telegram.messenger.hc) av0Var.W0.get(k11)) != null) {
                                 m10.y(hcVar.j, false, true);
                             }
                             imageReceiver.t0 = false;

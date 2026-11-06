@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e7 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final class e7 implements ViewTreeObserver.OnPreDrawListener {
                 ImageView imageView = photoViewer.w3;
                 if (imageView != null) {
                     if (photoViewer.I3) {
-                        org.telegram.messenger.g0.i3(new Runnable(this) { // from class: org.telegram.ui.dq0
+                        org.telegram.messenger.g0.i3(new Runnable(this) { // from class: org.telegram.ui.eq0
                             public final /* synthetic */ e7 b;
 
                             {
@@ -116,7 +116,7 @@ public final class e7 implements ViewTreeObserver.OnPreDrawListener {
                         }
                     }
                 }
-                org.telegram.messenger.g0.h3(new Runnable(this) { // from class: org.telegram.ui.dq0
+                org.telegram.messenger.g0.h3(new Runnable(this) { // from class: org.telegram.ui.eq0
                     public final /* synthetic */ e7 b;
 
                     {

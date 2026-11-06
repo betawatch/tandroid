@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class t3 {
     public static boolean A(int i7, TLRPC.Chat chat, int i10) {
@@ -419,7 +419,7 @@ public abstract class t3 {
                 TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
                 i10++;
                 TL_communities.CommunityPeer communityPeer2 = communityPeer;
-                if (m5.o(communityPeer2.peer) == j10 && c8.yc.a(communityPeer2.flags, 1) && !communityPeer2.visible) {
+                if (m5.o(communityPeer2.peer) == j10 && c8.zc.a(communityPeer2.flags, 1) && !communityPeer2.visible) {
                     return true;
                 }
             }

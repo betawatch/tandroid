@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rp implements Runnable {
     public final /* synthetic */ int a;
@@ -330,7 +330,7 @@ public final /* synthetic */ class rp implements Runnable {
                     gyVar.y = new ky(gzVar, 1);
                     gyVar.x = new ky(gzVar, i16);
                     gzVar.presentFragment(gyVar);
-                    org.telegram.messenger.g0.i3(new org.telegram.ui.Components.g51(i14, gzVar, tL_chatlists_exportedChatlistInvite), 200L);
+                    org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l51(i14, gzVar, tL_chatlists_exportedChatlistInvite), 200L);
                     break;
                 }
                 break;
@@ -497,7 +497,7 @@ public final /* synthetic */ class rp implements Runnable {
                     launchActivity5.R0 = j6Var2;
                     launchActivity5.P0 = org.telegram.messenger.w7.r(null, tL_wallPaper.document);
                     launchActivity5.Q0 = tL_wallPaper;
-                    org.telegram.messenger.w7.G(j6Var2.E).X(tL_wallPaper.document, tL_wallPaper, 1, 1);
+                    org.telegram.messenger.w7.G(j6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                     break;
                 }
             case 19:

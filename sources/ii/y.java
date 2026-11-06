@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class y extends b0 {
     public final /* synthetic */ int h;
@@ -33,12 +33,12 @@ public final class y extends b0 {
             case 1:
                 this.n = d0Var;
                 super(d0Var, context);
-                k41 k41Var = new k41(context, d0Var.a, 0, false, new t(d0Var, i11), new u(d0Var, i11), null, d0Var.I0);
-                this.d = k41Var;
-                k41Var.r1();
-                k41 k41Var2 = this.d;
-                k41Var2.f3.r = false;
-                k41Var2.setClipToPadding(false);
+                q41 q41Var = new q41(context, d0Var.a, 0, false, new t(d0Var, i11), new u(d0Var, i11), null, d0Var.I0);
+                this.d = q41Var;
+                q41Var.r1();
+                q41 q41Var2 = this.d;
+                q41Var2.f3.r = false;
+                q41Var2.setClipToPadding(false);
                 this.d.setPadding(0, 0, 0, org.telegram.messenger.g0.L(60.0f) + org.telegram.messenger.g0.n);
                 this.d.j(new ai.b(this, 19));
                 this.c.addView(this.d, 0, ha.c(-1.0f, -1));
@@ -128,12 +128,12 @@ public final class y extends b0 {
             default:
                 this.n = d0Var;
                 org.telegram.messenger.g0.E2(this.b);
-                k41 k41Var3 = new k41(context, d0Var.a, 0, false, new t(d0Var, i10), new u(d0Var, 2), null, d0Var.I0);
-                this.d = k41Var3;
-                k41Var3.r1();
-                k41 k41Var4 = this.d;
-                k41Var4.f3.r = false;
-                k41Var4.setClipToPadding(false);
+                q41 q41Var3 = new q41(context, d0Var.a, 0, false, new t(d0Var, i10), new u(d0Var, 2), null, d0Var.I0);
+                this.d = q41Var3;
+                q41Var3.r1();
+                q41 q41Var4 = this.d;
+                q41Var4.f3.r = false;
+                q41Var4.setClipToPadding(false);
                 this.d.setPadding(0, 0, 0, org.telegram.messenger.g0.L(60.0f) + org.telegram.messenger.g0.n);
                 this.c.addView(d0Var.x1, ha.g());
                 this.c.addView(this.d, 0, ha.c(-1.0f, -1));

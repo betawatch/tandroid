@@ -1,8 +1,8 @@
 package u9;
 
 import android.util.Log;
-import c8.rc;
 import c8.sc;
+import c8.tc;
 import com.google.firebase.components.ComponentRegistrar;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayDeque;
@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class f implements b {
     public static final ab.m n = new ab.m(1);
@@ -91,11 +91,11 @@ public final class f implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                rc.a(arrayList3);
+                sc.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                rc.a(arrayList6);
+                sc.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i14 = 0;
@@ -180,7 +180,7 @@ public final class f implements b {
 
     @Override // u9.b
     public final synchronized ua.b f(q qVar) {
-        sc.a(qVar, "Null interface requested.");
+        tc.a(qVar, "Null interface requested.");
         return (ua.b) this.b.get(qVar);
     }
 

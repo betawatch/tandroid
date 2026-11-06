@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class dt implements Runnable {
     public final /* synthetic */ int a;
@@ -360,23 +360,23 @@ public final class dt implements Runnable {
                     return;
                 }
             case 17:
-                o61 o61Var = (o61) this.b;
-                if (o61Var.J) {
-                    float f13 = o61Var.f0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 200.0f);
-                    o61Var.f0 = f13;
-                    o61Var.setAnimationIdicatorProgress(o61Var.a0.getInterpolation(f13));
-                    if (o61Var.f0 > 1.0f) {
-                        o61Var.f0 = 1.0f;
+                u61 u61Var = (u61) this.b;
+                if (u61Var.J) {
+                    float f13 = u61Var.f0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 200.0f);
+                    u61Var.f0 = f13;
+                    u61Var.setAnimationIdicatorProgress(u61Var.a0.getInterpolation(f13));
+                    if (u61Var.f0 > 1.0f) {
+                        u61Var.f0 = 1.0f;
                     }
-                    if (o61Var.f0 < 1.0f) {
-                        org.telegram.messenger.g0.h3(o61Var.i0);
+                    if (u61Var.f0 < 1.0f) {
+                        org.telegram.messenger.g0.h3(u61Var.i0);
                         return;
                     }
-                    o61Var.J = false;
-                    o61Var.setEnabled(true);
-                    n61 n61Var = o61Var.D;
-                    if (n61Var != null) {
-                        ((n) n61Var).y(1.0f);
+                    u61Var.J = false;
+                    u61Var.setEnabled(true);
+                    t61 t61Var = u61Var.D;
+                    if (t61Var != null) {
+                        ((n) t61Var).y(1.0f);
                         return;
                     }
                     return;
@@ -592,7 +592,7 @@ public final class dt implements Runnable {
                             GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) j0Var.n);
                             GLES20.glEnableVertexAttribArray(1);
                             GLES20.glDrawArrays(5, 0, 4);
-                            c8.ec.a();
+                            c8.fc.a();
                         }
                         i7 = j0Var.q;
                         if (i7 != 0 && j0Var.d != null && j0Var.I > 0.0f) {

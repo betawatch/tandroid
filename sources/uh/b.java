@@ -35,7 +35,7 @@ import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.xq;
 import te.g;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements x5 {
     public final te.a D;
@@ -96,7 +96,7 @@ public final class b extends Drawable implements x5 {
         if (this.F.p4() || this.F.Z2()) {
             return;
         }
-        if (TextUtils.isEmpty(this.H) || !w7.G(this.e).T(this.H)) {
+        if (TextUtils.isEmpty(this.H) || !w7.G(this.e).S(this.H)) {
             g(this.w ? 0 : 4, z9);
         } else {
             g(3, z9);

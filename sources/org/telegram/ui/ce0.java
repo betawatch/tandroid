@@ -56,7 +56,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ce0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public static final int y0;
@@ -69,7 +69,7 @@ public final class ce0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public int J;
     public final AnimatorSet[] K;
     public AnimatorSet L;
-    public org.telegram.ui.Components.n11 M;
+    public org.telegram.ui.Components.t11 M;
     public org.telegram.ui.Components.p00 N;
     public h6.m O;
     public int P;
@@ -1346,9 +1346,9 @@ public final class ce0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.V.setScaleX(0.1f);
         this.V.setScaleY(0.1f);
         this.S.addView(this.V, c8.ha.d(32, 32.0f, 53, 0.0f, 16.0f, 16.0f, 0.0f));
-        org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11(context);
-        this.M = n11Var;
-        n11Var.setTransformType(0);
+        org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11(context);
+        this.M = t11Var;
+        t11Var.setTransformType(0);
         this.M.setProgress(1.0f);
         this.M.setDrawBackground(false);
         this.N.setContentDescription(org.telegram.messenger.hd.M0(2131751355, null));

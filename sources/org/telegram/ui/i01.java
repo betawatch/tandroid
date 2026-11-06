@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public ShapeDrawable D;
@@ -31,7 +31,7 @@ public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.
     public f11 n;
     public float r;
     public ValueAnimator s;
-    public qu0 w;
+    public ru0 w;
     public boolean x;
     public boolean y;
 
@@ -291,16 +291,16 @@ public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.
     public static void a(i01 i01Var, boolean z9) {
         if (z9) {
             if (i01Var.w == null) {
-                qu0 qu0Var = new qu0(i01Var, 16);
-                i01Var.w = qu0Var;
-                org.telegram.messenger.g0.i3(qu0Var, 340L);
+                ru0 ru0Var = new ru0(i01Var, 16);
+                i01Var.w = ru0Var;
+                org.telegram.messenger.g0.i3(ru0Var, 340L);
                 return;
             }
             return;
         }
-        qu0 qu0Var2 = i01Var.w;
-        if (qu0Var2 != null) {
-            org.telegram.messenger.g0.r(qu0Var2);
+        ru0 ru0Var2 = i01Var.w;
+        if (ru0Var2 != null) {
+            org.telegram.messenger.g0.r(ru0Var2);
             i01Var.w = null;
         }
         org.telegram.messenger.g0.V3(i01Var.c, false, true);
@@ -525,14 +525,14 @@ public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         q11 q11Var = this.G;
-        rq0 rq0Var = q11Var.g0;
+        sq0 sq0Var = q11Var.g0;
         i01 i01Var = q11Var.f0;
         r01 r01Var = q11Var.U;
         if (r01Var != null) {
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
-            float x10 = rq0Var.getX() + i01Var.getX();
-            float y10 = rq0Var.getY() + i01Var.getY();
+            float x10 = sq0Var.getX() + i01Var.getX();
+            float y10 = sq0Var.getY() + i01Var.getY();
             ab.g gVar = (ab.g) r01Var;
             ch.b0 b0Var = (ch.b0) gVar.b;
             ch.a0 a0Var = b0Var.a;

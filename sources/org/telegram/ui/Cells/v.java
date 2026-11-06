@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ag0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout implements Checkable {
     public final boolean a;
@@ -73,7 +73,7 @@ public final class v extends FrameLayout implements Checkable {
             ag0Var2.setBackground(J0);
             org.telegram.ui.ActionBar.r6.k(ag0Var2, J0, null, h, null);
             ag0Var2.setTypeface(org.telegram.messenger.g0.o());
-            c8.ra.a(ag0Var2, 8.0f, 0.0f, 8.0f, 0.0f);
+            c8.sa.a(ag0Var2, 8.0f, 0.0f, 8.0f, 0.0f);
             ag0Var2.setOutlineProvider(null);
             addView(ag0Var2, c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
             a aVar = new a(this, 2);

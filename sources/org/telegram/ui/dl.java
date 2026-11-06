@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class dl extends mq0 {
+public final class dl extends nq0 {
     public final /* synthetic */ org.telegram.messenger.ij a;
     public final /* synthetic */ org.telegram.messenger.gf b;
     public final /* synthetic */ el c;
@@ -15,12 +15,12 @@ public final class dl extends mq0 {
         this.b = gfVar;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
-    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         return this.c.a.Q.Za.E(this.a, fileLocation, i7, z9, false);
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
         jl jlVar = this.c.a;
         org.telegram.messenger.ij ijVar = this.a;

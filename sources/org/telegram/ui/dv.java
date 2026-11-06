@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class dv implements c50, org.telegram.ui.Components.wf, org.telegram.ui.Components.t4, org.telegram.ui.Components.bm0, org.telegram.ui.Components.ej0, fi.ma, org.telegram.ui.Components.q00 {
     public final /* synthetic */ ww a;
@@ -96,13 +96,13 @@ public final class dv implements c50, org.telegram.ui.Components.wf, org.telegra
                     po0Var.e(charSequence, true);
                 }
             } else {
-                org.telegram.ui.Components.g51 g51Var = wwVar.H2;
-                if (g51Var != null) {
-                    org.telegram.messenger.g0.r(g51Var);
+                org.telegram.ui.Components.l51 l51Var = wwVar.H2;
+                if (l51Var != null) {
+                    org.telegram.messenger.g0.r(l51Var);
                 }
-                org.telegram.ui.Components.g51 g51Var2 = new org.telegram.ui.Components.g51(15, this, charSequence);
-                wwVar.H2 = g51Var2;
-                org.telegram.messenger.g0.i3(g51Var2, 1000L);
+                org.telegram.ui.Components.l51 l51Var2 = new org.telegram.ui.Components.l51(15, this, charSequence);
+                wwVar.H2 = l51Var2;
+                org.telegram.messenger.g0.i3(l51Var2, 1000L);
             }
         }
     }

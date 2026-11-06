@@ -49,31 +49,31 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.m11;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.o31;
-import org.telegram.ui.Components.p31;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.qd0;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.t31;
+import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.tg0;
-import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.v31;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.z31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class ij {
     public static Pattern k3;
@@ -212,17 +212,17 @@ public class ij {
     public float e0;
     public TLRPC.TL_peerColorCollectible e1;
     public boolean e2;
-    public m51 e3;
+    public r51 e3;
     public final boolean f;
     public float f0;
     public boolean f1;
     public TLRPC.Peer f2;
-    public m51 f3;
+    public r51 f3;
     public final boolean g;
     public int g0;
     public boolean g1;
     public final Drawable[] g2;
-    public m51 g3;
+    public r51 g3;
     public Boolean h;
     public int h0;
     public TLRPC.TL_forumTopic h1;
@@ -596,9 +596,9 @@ public class ij {
             str2 = str4;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{charSequence2}));
-        w31 w31Var = new w31(rf.b.i("", str2));
-        w31Var.c = tLObject3;
-        spannableStringBuilder.setSpan(w31Var, indexOf, charSequence2.length() + indexOf, 33);
+        c41 c41Var = new c41(rf.b.i("", str2));
+        c41Var.c = tLObject3;
+        spannableStringBuilder.setSpan(c41Var, indexOf, charSequence2.length() + indexOf, 33);
         return spannableStringBuilder;
     }
 
@@ -1600,8 +1600,8 @@ public class ij {
     }
 
     public static long a2(int i7, TLRPC.Message message, int i10) {
-        long c22 = c2(i7, message, c8.yc.a(i10, 1), c8.yc.a(i10, 4));
-        if (c22 == 0 && c8.yc.a(i10, 8)) {
+        long c22 = c2(i7, message, c8.zc.a(i10, 1), c8.zc.a(i10, 4));
+        if (c22 == 0 && c8.zc.a(i10, 8)) {
             return -1L;
         }
         return c22;
@@ -1690,37 +1690,37 @@ public class ij {
                         }
                     }
                     if ((i7 != 1 || (messageEntity instanceof TLRPC.TL_messageEntityHashtag)) && !(messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) && !(messageEntity instanceof TLRPC.TL_messageEntityBlockquote) && !(messageEntity instanceof TLRPC.TL_messageEntityPre) && !(messageEntity instanceof TLRPC.TL_messageEntityDiffReplace)) {
-                        ty0 ty0Var = new ty0();
+                        uy0 uy0Var = new uy0();
                         int i20 = messageEntity.offset;
-                        ty0Var.b = i20;
-                        ty0Var.c = i20 + messageEntity.length;
+                        uy0Var.b = i20;
+                        uy0Var.c = i20 + messageEntity.length;
                         if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
-                            ty0Var.a = 256;
+                            uy0Var.a = 256;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
-                            ty0Var.a = 8;
+                            uy0Var.a = 8;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffDelete) {
-                            ty0Var.a = TLObject.FLAG_13;
+                            uy0Var.a = TLObject.FLAG_13;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
-                            ty0Var.a = 16;
+                            uy0Var.a = 16;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
-                            ty0Var.a = 1;
+                            uy0Var.a = 1;
                         } else {
                             if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
-                                ty0Var.a = 2;
+                                uy0Var.a = 2;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityCode) {
-                                ty0Var.a = 4;
+                                uy0Var.a = 4;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffInsert) {
-                                ty0Var.a = TLObject.FLAG_12;
+                                uy0Var.a = TLObject.FLAG_12;
                             } else {
                                 if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
                                     if (z10) {
-                                        ty0Var.a = 64;
-                                        ty0Var.d = messageEntity;
+                                        uy0Var.a = 64;
+                                        uy0Var.d = messageEntity;
                                     }
                                 } else if (messageEntity instanceof TLRPC.TL_inputMessageEntityMentionName) {
                                     if (z10) {
-                                        ty0Var.a = 64;
-                                        ty0Var.d = messageEntity;
+                                        uy0Var.a = 64;
+                                        uy0Var.d = messageEntity;
                                     }
                                 } else if (!z12 || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) || (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate)) {
                                     if (((messageEntity instanceof TLRPC.TL_messageEntityUrl) || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) && (str2 = messageEntity.url) != null) {
@@ -1738,10 +1738,10 @@ public class ij {
                                         }
                                     }
                                     if (!(messageEntity instanceof TLRPC.TL_messageEntityMention) || z10) {
-                                        ty0Var.a = 128;
-                                        ty0Var.d = messageEntity;
+                                        uy0Var.a = 128;
+                                        uy0Var.d = messageEntity;
                                         if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-                                            ty0Var.a = 1152;
+                                            uy0Var.a = 1152;
                                         }
                                     }
                                 }
@@ -1751,58 +1751,58 @@ public class ij {
                             size = arrayList2.size();
                             i15 = 0;
                             while (i15 < size) {
-                                ty0 ty0Var2 = (ty0) arrayList2.get(i15);
-                                if ((ty0Var2.a & 256) == 0 || ty0Var.b < ty0Var2.b || ty0Var.c > ty0Var2.c) {
-                                    int i21 = ty0Var.b;
-                                    int i22 = ty0Var2.b;
+                                uy0 uy0Var2 = (uy0) arrayList2.get(i15);
+                                if ((uy0Var2.a & 256) == 0 || uy0Var.b < uy0Var2.b || uy0Var.c > uy0Var2.c) {
+                                    int i21 = uy0Var.b;
+                                    int i22 = uy0Var2.b;
                                     if (i21 > i22) {
-                                        int i23 = ty0Var2.c;
+                                        int i23 = uy0Var2.c;
                                         if (i21 < i23) {
-                                            if (ty0Var.c < i23) {
-                                                ty0 ty0Var3 = new ty0(ty0Var);
-                                                ty0Var3.b(ty0Var2);
-                                                arrayList2.add(i15 + 1, ty0Var3);
-                                                ty0 ty0Var4 = new ty0(ty0Var2);
-                                                ty0Var4.b = ty0Var.c;
+                                            if (uy0Var.c < i23) {
+                                                uy0 uy0Var3 = new uy0(uy0Var);
+                                                uy0Var3.b(uy0Var2);
+                                                arrayList2.add(i15 + 1, uy0Var3);
+                                                uy0 uy0Var4 = new uy0(uy0Var2);
+                                                uy0Var4.b = uy0Var.c;
                                                 i15 += 2;
                                                 size += 2;
-                                                arrayList2.add(i15, ty0Var4);
+                                                arrayList2.add(i15, uy0Var4);
                                             } else {
-                                                ty0 ty0Var5 = new ty0(ty0Var);
-                                                ty0Var5.b(ty0Var2);
-                                                ty0Var5.c = ty0Var2.c;
+                                                uy0 uy0Var5 = new uy0(uy0Var);
+                                                uy0Var5.b(uy0Var2);
+                                                uy0Var5.c = uy0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, ty0Var5);
+                                                arrayList2.add(i15, uy0Var5);
                                             }
-                                            int i24 = ty0Var.b;
-                                            ty0Var.b = ty0Var2.c;
-                                            ty0Var2.c = i24;
+                                            int i24 = uy0Var.b;
+                                            uy0Var.b = uy0Var2.c;
+                                            uy0Var2.c = i24;
                                         }
                                     } else {
-                                        int i25 = ty0Var.c;
+                                        int i25 = uy0Var.c;
                                         if (i22 < i25) {
                                             i16 = size2;
-                                            int i26 = ty0Var2.c;
+                                            int i26 = uy0Var2.c;
                                             if (i25 == i26) {
-                                                ty0Var2.b(ty0Var);
+                                                uy0Var2.b(uy0Var);
                                             } else if (i25 < i26) {
-                                                ty0 ty0Var6 = new ty0(ty0Var2);
-                                                ty0Var6.b(ty0Var);
-                                                ty0Var6.c = ty0Var.c;
+                                                uy0 uy0Var6 = new uy0(uy0Var2);
+                                                uy0Var6.b(uy0Var);
+                                                uy0Var6.c = uy0Var.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, ty0Var6);
-                                                ty0Var2.b = ty0Var.c;
+                                                arrayList2.add(i15, uy0Var6);
+                                                uy0Var2.b = uy0Var.c;
                                             } else {
-                                                ty0 ty0Var7 = new ty0(ty0Var);
-                                                ty0Var7.b = ty0Var2.c;
+                                                uy0 uy0Var7 = new uy0(uy0Var);
+                                                uy0Var7.b = uy0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, ty0Var7);
-                                                ty0Var2.b(ty0Var);
+                                                arrayList2.add(i15, uy0Var7);
+                                                uy0Var2.b(uy0Var);
                                             }
-                                            ty0Var.c = i22;
+                                            uy0Var.c = i22;
                                             i15++;
                                             size2 = i16;
                                         }
@@ -1813,8 +1813,8 @@ public class ij {
                                 size2 = i16;
                             }
                             i13 = size2;
-                            if (ty0Var.b >= ty0Var.c) {
-                                arrayList2.add(ty0Var);
+                            if (uy0Var.b >= uy0Var.c) {
+                                arrayList2.add(uy0Var);
                             }
                             i17++;
                             size2 = i13;
@@ -1824,7 +1824,7 @@ public class ij {
                         while (i15 < size) {
                         }
                         i13 = size2;
-                        if (ty0Var.b >= ty0Var.c) {
+                        if (uy0Var.b >= uy0Var.c) {
                         }
                         i17++;
                         size2 = i13;
@@ -1839,17 +1839,17 @@ public class ij {
             int i28 = 0;
             int i29 = 0;
             while (i27 < min) {
-                ty0 ty0Var8 = (ty0) arrayList2.get(i27);
-                int i30 = ty0Var8.b;
-                if (i30 >= 0 && i30 < (i11 = ty0Var8.c) && i11 <= a10.length() && (i7 != 1 || (ty0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
-                    TLRPC.MessageEntity messageEntity2 = ty0Var8.d;
+                uy0 uy0Var8 = (uy0) arrayList2.get(i27);
+                int i30 = uy0Var8.b;
+                if (i30 >= 0 && i30 < (i11 = uy0Var8.c) && i11 <= a10.length() && (i7 != 1 || (uy0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
+                    TLRPC.MessageEntity messageEntity2 = uy0Var8.d;
                     if (messageEntity2 != null) {
                         int i31 = messageEntity2.offset;
                         str = TextUtils.substring(a10, i31, messageEntity2.length + i31);
                     } else {
                         str = null;
                     }
-                    TLRPC.MessageEntity messageEntity3 = ty0Var8.d;
+                    TLRPC.MessageEntity messageEntity3 = uy0Var8.d;
                     if (!(messageEntity3 instanceof TLRPC.TL_messageEntityBotCommand)) {
                         if ((messageEntity3 instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity3 instanceof TLRPC.TL_messageEntityMention)) {
                             charSequence2 = a10;
@@ -1878,7 +1878,7 @@ public class ij {
                                         b10 = b11;
                                         z14 = true;
                                     } else {
-                                        spannable2.setSpan(new t31(str, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                        spannable2.setSpan(new z31(str, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                         spannable = spannable2;
                                         b10 = b11;
                                         z13 = false;
@@ -1892,7 +1892,7 @@ public class ij {
                             } else if (messageEntity3 instanceof TLRPC.TL_messageEntityFormattedDate) {
                                 if (i28 < 250) {
                                     i28++;
-                                    spannable2.setSpan(new org.telegram.ui.Components.zz(str, ty0Var8, (TLRPC.TL_messageEntityFormattedDate) ty0Var8.d), ty0Var8.b, ty0Var8.c, 33);
+                                    spannable2.setSpan(new org.telegram.ui.Components.zz(str, uy0Var8, (TLRPC.TL_messageEntityFormattedDate) uy0Var8.d), uy0Var8.b, uy0Var8.c, 33);
                                     spannable = spannable2;
                                     b10 = b11;
                                     z13 = false;
@@ -1903,15 +1903,15 @@ public class ij {
                                 b10 = b11;
                             } else {
                                 if (messageEntity3 instanceof TLRPC.TL_messageEntityTonAddress) {
-                                    spannable2.setSpan(new v31(rf.b.i("tonaddress:", str), ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("tonaddress:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityBankCard) {
-                                    spannable2.setSpan(new v31(rf.b.i("card:", str), ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("card:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityPhone) {
                                     String d = pf.b.d(str, false);
                                     if (str.startsWith("+")) {
                                         d = rf.b.i("+", d);
                                     }
-                                    spannable2.setSpan(new v31(rf.b.i("tel:", d), ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("tel:", d), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityTextUrl) {
                                     if (i28 < 250) {
                                         i28++;
@@ -1920,7 +1920,7 @@ public class ij {
                                             str3 = str3.replaceAll("∕|⁄|%E2%81%84|%E2%88%95", "/");
                                         }
                                         if (!vf.c.k(str3)) {
-                                            spannable2.setSpan(new x31(str3, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                            spannable2.setSpan(new d41(str3, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                             spannable = spannable2;
                                             b10 = b11;
                                             z13 = false;
@@ -1932,22 +1932,22 @@ public class ij {
                                     b10 = b11;
                                 } else {
                                     if (messageEntity3 instanceof TLRPC.TL_messageEntityMentionName) {
-                                        spannable2.setSpan(new y31("" + ((TLRPC.TL_messageEntityMentionName) ty0Var8.d).user_id, b11, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                        spannable2.setSpan(new e41("" + ((TLRPC.TL_messageEntityMentionName) uy0Var8.d).user_id, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                     } else if (messageEntity3 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                                        spannable2.setSpan(new y31("" + ((TLRPC.TL_inputMessageEntityMentionName) ty0Var8.d).user_id.user_id, b11, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
-                                    } else if ((ty0Var8.a & 4) != 0) {
+                                        spannable2.setSpan(new e41("" + ((TLRPC.TL_inputMessageEntityMentionName) uy0Var8.d).user_id.user_id, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
+                                    } else if ((uy0Var8.a & 4) != 0) {
                                         Spannable spannable3 = spannable2;
                                         byte b12 = b11;
                                         spannable = spannable3;
                                         b10 = b12;
-                                        spannable.setSpan(new u31(spannable3, ty0Var8.b, ty0Var8.c, b12, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                                        spannable.setSpan(new a41(spannable3, uy0Var8.b, uy0Var8.c, b12, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                         z13 = false;
                                         if (!z13) {
                                         }
                                     } else {
                                         spannable = spannable2;
                                         b10 = b11;
-                                        spannable.setSpan(new uy0(ty0Var8, 0), ty0Var8.b, ty0Var8.c, 33);
+                                        spannable.setSpan(new vy0(uy0Var8, 0), uy0Var8.b, uy0Var8.c, 33);
                                         z13 = true;
                                         if (!z13) {
                                         }
@@ -1967,7 +1967,7 @@ public class ij {
                             }
                         } else if (i28 < 250) {
                             i28++;
-                            spannable2.setSpan(new x31(rf.b.i("mailto:", str), ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                            spannable2.setSpan(new d41(rf.b.i("mailto:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                             charSequence2 = a10;
                             spannable = spannable2;
                             b10 = b11;
@@ -1977,22 +1977,22 @@ public class ij {
                         }
                         if (i28 < i12) {
                             i28++;
-                            spannable.setSpan(new v31(str, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                            spannable.setSpan(new b41(str, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                             z13 = false;
                             if (!z13) {
                             }
                         }
                     } else if (i28 < 250) {
                         i28++;
-                        spannable2.setSpan(new s31(str, b11, ty0Var8), ty0Var8.b, ty0Var8.c, 33);
+                        spannable2.setSpan(new y31(str, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                         charSequence2 = a10;
                         spannable = spannable2;
                         b10 = b11;
                         z13 = false;
                         if (!z13) {
-                            if ((ty0Var8.a & 256) != 0 && i29 < 100) {
+                            if ((uy0Var8.a & 256) != 0 && i29 < 100) {
                                 i29++;
-                                spannable.setSpan(new uy0(ty0Var8, 0), ty0Var8.b, ty0Var8.c, 33);
+                                spannable.setSpan(new vy0(uy0Var8, 0), uy0Var8.b, uy0Var8.c, 33);
                             }
                         }
                     }
@@ -2484,7 +2484,7 @@ public class ij {
         } else if (!pollResults.min && (poll = tL_messageMediaPoll.poll) != null && poll.hide_results_until_close && ((arrayList = pollResults.results) == null || arrayList.isEmpty())) {
             tL_messageMediaPoll.results.results = new ArrayList<>();
             TLRPC.PollResults pollResults4 = tL_messageMediaPoll.results;
-            pollResults4.flags = c8.yc.b(pollResults4.flags, 2, false);
+            pollResults4.flags = c8.zc.b(pollResults4.flags, 2, false);
         }
         if ((pollResults.flags & 4) != 0) {
             TLRPC.PollResults pollResults5 = tL_messageMediaPoll.results;
@@ -2534,16 +2534,16 @@ public class ij {
         } else if (richText instanceof TL_iv.textUrl) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                ty0 ty0Var = new ty0();
-                ty0Var.a = i10;
-                spannableStringBuilder.setSpan(new t31(richText.url, ty0Var), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var = new uy0();
+                uy0Var.a = i10;
+                spannableStringBuilder.setSpan(new z31(richText.url, uy0Var), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textEmail) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                ty0 ty0Var2 = new ty0();
-                ty0Var2.a = i10;
-                spannableStringBuilder.setSpan(new x31("mailto:" + richText.email, ty0Var2), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var2 = new uy0();
+                uy0Var2.a = i10;
+                spannableStringBuilder.setSpan(new d41("mailto:" + richText.email, uy0Var2), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textMath) {
             spannableStringBuilder.append((CharSequence) U5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) hd.M0(2131754864, null));
@@ -2555,9 +2555,9 @@ public class ij {
                 if (textphone.phone.startsWith("+")) {
                     d = rf.b.i("+", d);
                 }
-                ty0 ty0Var3 = new ty0();
-                ty0Var3.a = i10;
-                spannableStringBuilder.setSpan(new v31(rf.b.i("tel:", d), ty0Var3), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var3 = new uy0();
+                uy0Var3.a = i10;
+                spannableStringBuilder.setSpan(new b41(rf.b.i("tel:", d), uy0Var3), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textConcat) {
             ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
@@ -2577,9 +2577,9 @@ public class ij {
         if (spannableStringBuilder.length() <= length || i10 == 0) {
             return;
         }
-        ty0 ty0Var4 = new ty0();
-        ty0Var4.a = i10;
-        spannableStringBuilder.setSpan(new uy0(ty0Var4, 0), length, spannableStringBuilder.length(), 33);
+        uy0 uy0Var4 = new uy0();
+        uy0Var4.a = i10;
+        spannableStringBuilder.setSpan(new vy0(uy0Var4, 0), length, spannableStringBuilder.length(), 33);
     }
 
     public static String f2(TLObject tLObject, ArrayList arrayList, int i7) {
@@ -2754,9 +2754,9 @@ public class ij {
         URLSpan[] uRLSpanArr;
         int i13;
         int i14;
-        v31 v31Var;
+        b41 b41Var;
         Object[] objArr;
-        v31 s31Var;
+        b41 y31Var;
         if (charSequence == null) {
             return;
         }
@@ -2792,7 +2792,7 @@ public class ij {
                 while (matcher.find() && i17 < 100) {
                     int start = matcher.start();
                     int end = matcher.end();
-                    v31 v31Var2 = null;
+                    b41 b41Var2 = null;
                     if (i7 == i15 || i7 == 4) {
                         i11 = 0;
                         matcher.groupCount();
@@ -2822,17 +2822,17 @@ public class ij {
                                 if (i13 <= i10) {
                                     i14 = 3;
                                     if (i7 == 3) {
-                                        v31Var = new v31("video?" + i13, (ty0) null);
+                                        b41Var = new b41("video?" + i13, (uy0) null);
                                     } else {
-                                        v31Var = new v31("audio?" + i13, (ty0) null);
+                                        b41Var = new b41("audio?" + i13, (uy0) null);
                                     }
-                                    v31Var2 = v31Var;
-                                    v31Var2.d = str;
-                                    if (v31Var2 != null) {
+                                    b41Var2 = b41Var;
+                                    b41Var2.d = str;
+                                    if (b41Var2 != null) {
                                         if (z11 && (objArr = (ClickableSpan[]) spannable.getSpans(start, end, ClickableSpan.class)) != null && objArr.length > 0) {
                                             spannable.removeSpan(objArr[i11]);
                                         }
-                                        spannable.setSpan(v31Var2, start, end, i11);
+                                        spannable.setSpan(b41Var2, start, end, i11);
                                         i17 = i12 + 1;
                                     } else {
                                         i17 = i12;
@@ -2875,15 +2875,15 @@ public class ij {
                         }
                         if (i7 == i16) {
                             if (charAt == '@') {
-                                s31Var = new v31("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (ty0) null);
+                                y31Var = new b41("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             } else {
-                                s31Var = new v31("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (ty0) null);
+                                y31Var = new b41("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             }
                         } else if (i7 == 2) {
                             if (charAt == '@') {
-                                s31Var = new v31("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (ty0) null);
+                                y31Var = new b41("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             } else {
-                                s31Var = new v31("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (ty0) null);
+                                y31Var = new b41("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             }
                         } else if (charSequence.charAt(start) != '/') {
                             String charSequence2 = charSequence.subSequence(start, end).toString();
@@ -2892,29 +2892,29 @@ public class ij {
                             }
                             i14 = i15;
                             i12 = i17;
-                            v31Var2 = new v31(charSequence2, (ty0) null);
-                            if (v31Var2 != null) {
+                            b41Var2 = new b41(charSequence2, (uy0) null);
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         } else if (z10) {
-                            s31Var = new s31(charSequence.subSequence(start, end).toString(), z9 ? 1 : 0, null);
+                            y31Var = new y31(charSequence.subSequence(start, end).toString(), z9 ? 1 : 0, null);
                             i14 = i15;
-                            v31Var2 = s31Var;
+                            b41Var2 = y31Var;
                             i12 = i17;
-                            if (v31Var2 != null) {
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         } else {
                             i14 = i15;
                             i12 = i17;
-                            if (v31Var2 != null) {
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         }
                         i14 = i15;
-                        v31Var2 = s31Var;
+                        b41Var2 = y31Var;
                         i12 = i17;
-                        if (v31Var2 != null) {
+                        if (b41Var2 != null) {
                         }
                         i15 = i14;
                     }
@@ -3847,13 +3847,13 @@ public class ij {
                     int i7 = this.I1;
                     TLRPC.Message message2 = this.k;
                     TLRPC.MessageMedia messageMedia2 = message2 != null ? message2.media : null;
-                    int i10 = n51.j0;
-                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : n51.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z9);
+                    int i10 = t51.j0;
+                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : t51.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z9);
                     this.c3 = arrayList;
                     this.b3 = Boolean.valueOf(arrayList.size() > 1);
-                    this.e3 = n51.a0(this.c3);
-                    this.f3 = n51.b0(this.c3);
-                    this.g3 = n51.N(this.c3);
+                    this.e3 = t51.a0(this.c3);
+                    this.f3 = t51.b0(this.c3);
+                    this.g3 = t51.N(this.c3);
                 }
                 this.b3 = Boolean.FALSE;
                 return false;
@@ -3909,9 +3909,9 @@ public class ij {
     }
 
     public final TLRPC.Document F0() {
-        m51 m51Var;
+        r51 r51Var;
         TLRPC.Document document = this.n;
-        return document != null ? document : (!E2(true) || (m51Var = this.e3) == null) ? G0(this.k) : m51Var.g;
+        return document != null ? document : (!E2(true) || (r51Var = this.e3) == null) ? G0(this.k) : r51Var.g;
     }
 
     public final boolean F2() {
@@ -4043,7 +4043,7 @@ public class ij {
                 StringBuilder sb2 = new StringBuilder("");
                 i7 = i10;
                 sb2.append(user.id);
-                spannableStringBuilder.setSpan(new w31(sb2.toString()), length, p10.length() + length, 33);
+                spannableStringBuilder.setSpan(new c41(sb2.toString()), length, p10.length() + length, 33);
             } else {
                 i7 = i10;
             }
@@ -4409,6 +4409,7 @@ public class ij {
 
     public final void K(boolean z9) {
         int i7;
+        File M;
         this.w0 = false;
         this.x0 = false;
         int i10 = this.D;
@@ -4417,19 +4418,19 @@ public class ij {
             TLRPC.TL_messageExtendedMediaPreview tL_messageExtendedMediaPreview = (TLRPC.TL_messageExtendedMediaPreview) this.k.media.extended_media.get(0);
             if (tL_messageExtendedMediaPreview.thumb != null) {
                 w7.G(i11);
-                File K = w7.K(tL_messageExtendedMediaPreview.thumb, null, z9, true);
+                File J = w7.J(tL_messageExtendedMediaPreview.thumb, null, z9, true);
                 if (!this.x0) {
-                    this.x0 = K.exists() || (tL_messageExtendedMediaPreview.thumb instanceof TLRPC.TL_photoStrippedSize);
+                    this.x0 = J.exists() || (tL_messageExtendedMediaPreview.thumb instanceof TLRPC.TL_photoStrippedSize);
                 }
             }
         } else if (i10 == 1 && w7.w(this.n0, g0.Z0(true), false, null, false) != null) {
             w7.G(i11);
-            File N = w7.N(this.k, false, z9);
+            File M2 = w7.M(this.k, false, z9);
             if (n5()) {
-                this.x0 = new File(N.getAbsolutePath() + ".enc").exists();
+                this.x0 = new File(M2.getAbsolutePath() + ".enc").exists();
             }
             if (!this.x0) {
-                this.x0 = N.exists();
+                this.x0 = M2.exists();
             }
         }
         if ((!this.x0 && this.D == 8) || (i7 = this.D) == 3 || i7 == 9 || i7 == 2 || i7 == 14 || i7 == 5) {
@@ -4438,13 +4439,18 @@ public class ij {
                 this.w0 = new File(this.k.attachPath).exists();
             }
             if (!this.w0) {
-                w7.G(i11);
-                File N2 = w7.N(this.k, false, z9);
+                if (this.D == 3 && n5() && E3() && F0() != null) {
+                    w7.G(i11);
+                    M = w7.J(F0(), null, true, z9);
+                } else {
+                    w7.G(i11);
+                    M = w7.M(this.k, false, z9);
+                }
                 if ((this.D == 3 && n5()) || T4() || h4()) {
-                    this.x0 = new File(N2.getAbsolutePath() + ".enc").exists();
+                    this.x0 = new File(M.getAbsolutePath() + ".enc").exists();
                 }
                 if (!this.x0) {
-                    this.x0 = N2.exists();
+                    this.x0 = M.exists();
                 }
             }
         }
@@ -4458,21 +4464,21 @@ public class ij {
                         return;
                     }
                     w7.G(i11);
-                    this.x0 = w7.K(w10, null, true, z9).exists();
+                    this.x0 = w7.J(w10, null, true, z9).exists();
                 } else if (i12 == 11) {
                     TLRPC.Photo photo = this.k.action.photo;
                     if (photo == null || photo.video_sizes.isEmpty()) {
                         return;
                     }
                     w7.G(i11);
-                    this.x0 = w7.K(photo.video_sizes.get(0), null, true, z9).exists();
+                    this.x0 = w7.J(photo.video_sizes.get(0), null, true, z9).exists();
                 }
             } else if ((o1(this.k) instanceof TLRPC.TL_messageMediaWebPage) && o1(this.k).webpage != null && "telegram_background".equals(o1(this.k).webpage.type)) {
                 w7.G(i11);
-                this.x0 = w7.K(F0, null, true, z9).exists();
+                this.x0 = w7.J(F0, null, true, z9).exists();
             } else {
                 w7.G(i11);
-                this.x0 = w7.K(F0, null, false, z9).exists();
+                this.x0 = w7.J(F0, null, false, z9).exists();
             }
         }
         f6(z9);
@@ -5648,16 +5654,16 @@ public class ij {
     }
 
     public final long T1() {
-        m51 m51Var = this.e3;
-        if (m51Var != null) {
-            return m51Var.g.size;
+        r51 r51Var = this.e3;
+        if (r51Var != null) {
+            return r51Var.g.size;
         }
-        m51 m51Var2 = this.f3;
-        if (m51Var2 != null) {
-            return m51Var2.g.size;
+        r51 r51Var2 = this.f3;
+        if (r51Var2 != null) {
+            return r51Var2.g.size;
         }
-        m51 m51Var3 = this.g3;
-        return m51Var3 != null ? m51Var3.g.size : q1(o1(this.k));
+        r51 r51Var3 = this.g3;
+        return r51Var3 != null ? r51Var3.g.size : q1(o1(this.k));
     }
 
     public final boolean T2() {
@@ -5702,14 +5708,14 @@ public class ij {
         if (message == null) {
             return false;
         }
-        if (!S4(message) && (!i4() || !m11.k(this))) {
+        if (!S4(message) && (!i4() || !s11.k(this))) {
             return false;
         }
         TLRPC.Message message2 = this.k;
         if (!message2.voiceTranscriptionOpen || message2.voiceTranscription == null) {
             return false;
         }
-        return message2.voiceTranscriptionFinal || m11.j(this);
+        return message2.voiceTranscriptionFinal || s11.j(this);
     }
 
     public final String V0() {
@@ -5962,7 +5968,7 @@ public class ij {
     public final long Z1() {
         int i7 = this.I1;
         TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-B0(this.k)));
-        return a2(i7, this.k, c8.yc.b(c8.yc.b(c8.yc.b(0, 1, t3.c0(M0)), 4, t3.p0(M0)), 8, t10.u(qp.s1(i7).a2(Long.valueOf(B0(this.k))))));
+        return a2(i7, this.k, c8.zc.b(c8.zc.b(c8.zc.b(0, 1, t3.c0(M0)), 4, t3.p0(M0)), 8, t10.u(qp.s1(i7).a2(Long.valueOf(B0(this.k))))));
     }
 
     public final boolean Z2() {
@@ -6030,7 +6036,7 @@ public class ij {
             return (message == null || (messageMedia2 = message.media) == null || messageMedia2.webpage == null || !bool.booleanValue()) ? false : true;
         }
         TLRPC.Message message2 = this.k;
-        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(f71.e(webPage.url))) {
+        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(l71.e(webPage.url))) {
             z9 = true;
         }
         this.R2 = Boolean.valueOf(z9);
@@ -6234,7 +6240,7 @@ public class ij {
                                 if (str2 != null) {
                                     SpannableString spannableString = new SpannableString(str2);
                                     this.v = spannableString;
-                                    spannableString.setSpan(new x31("https://".concat(str2), new ty0()), 0, this.v.length(), 33);
+                                    spannableString.setSpan(new d41("https://".concat(str2), new uy0()), 0, this.v.length(), 33);
                                 } else {
                                     this.v = str;
                                 }
@@ -6427,7 +6433,7 @@ public class ij {
                                 if (e27 != null) {
                                     if (e27.id != p10.i(i11).n) {
                                         SpannableString spannableString2 = new SpannableString(t10.i(e27));
-                                        spannableString2.setSpan(new o31(g0.o()), 0, spannableString2.length(), 33);
+                                        spannableString2.setSpan(new u31(g0.o()), 0, spannableString2.length(), 33);
                                         if (tL_messageActionSetChatWallPaper.same) {
                                             this.D = 10;
                                             this.v = hd.L0(2131754567);
@@ -6445,7 +6451,7 @@ public class ij {
                                     } else {
                                         this.v = hd.L0(2131754561);
                                         SpannableString spannableString3 = new SpannableString(t10.i(e28));
-                                        spannableString3.setSpan(new o31(g0.o()), 0, spannableString3.length(), 33);
+                                        spannableString3.setSpan(new u31(g0.o()), 0, spannableString3.length(), 33);
                                         this.v = g0.K2(this.v, spannableString3, "%s");
                                     }
                                 } else if (chat11 != null) {
@@ -7376,7 +7382,7 @@ public class ij {
                                                                         if (length < str12.length() && str12.charAt(length) == ')') {
                                                                             length++;
                                                                         }
-                                                                        spannableString4.setSpan(new o31(Typeface.DEFAULT), indexOf4, length, 0);
+                                                                        spannableString4.setSpan(new u31(Typeface.DEFAULT), indexOf4, length, 0);
                                                                         this.v = spannableString4;
                                                                     }
                                                                 }
@@ -7428,7 +7434,7 @@ public class ij {
                                                                         if (length2 < str13.length() && str13.charAt(length2) == ')') {
                                                                             length2++;
                                                                         }
-                                                                        spannableString5.setSpan(new o31(Typeface.DEFAULT), indexOf5, length2, 0);
+                                                                        spannableString5.setSpan(new u31(Typeface.DEFAULT), indexOf5, length2, 0);
                                                                         this.v = spannableString5;
                                                                     }
                                                                 }
@@ -7457,7 +7463,7 @@ public class ij {
                                                                             StringBuilder sb5 = new StringBuilder("https://");
                                                                             com.google.android.recaptcha.internal.a.s(sb5, qp.s1(i11).U2, "/", n11, "/");
                                                                             sb5.append(botApp.short_name);
-                                                                            spannableString6.setSpan(new w31(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
+                                                                            spannableString6.setSpan(new c41(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
                                                                         }
                                                                         this.v = spannableString6;
                                                                     } else {
@@ -7468,7 +7474,7 @@ public class ij {
                                                                         int indexOf7 = L05.indexOf("%1$s");
                                                                         SpannableString spannableString7 = new SpannableString(String.format(L05, str14));
                                                                         if (indexOf7 >= 0 && !TextUtils.isEmpty(str14)) {
-                                                                            spannableString7.setSpan(new w31("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
+                                                                            spannableString7.setSpan(new c41("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
                                                                         }
                                                                         this.v = spannableString7;
                                                                     }
@@ -7850,18 +7856,18 @@ public class ij {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ArrayList arrayList2 = ((k51) obj).d;
+            ArrayList arrayList2 = ((p51) obj).d;
             int size2 = arrayList2.size();
             int i10 = 0;
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                ((m51) obj2).e(z9);
+                ((r51) obj2).e(z9);
             }
         }
-        this.e3 = n51.a0(this.c3);
-        this.f3 = n51.b0(this.c3);
-        this.g3 = n51.N(this.c3);
+        this.e3 = t51.a0(this.c3);
+        this.f3 = t51.b0(this.c3);
+        this.g3 = t51.N(this.c3);
     }
 
     public final Spannable g0(TLRPC.TodoItem todoItem) {
@@ -7870,7 +7876,7 @@ public class ij {
             h02 = new SpannableStringBuilder(h02);
         }
         Spannable spannable = (Spannable) h02;
-        spannable.setSpan(new v31("task?" + todoItem.id, 0), 0, h02.length(), 33);
+        spannable.setSpan(new b41("task?" + todoItem.id, 0), 0, h02.length(), 33);
         return spannable;
     }
 
@@ -8410,8 +8416,8 @@ public class ij {
     }
 
     public final boolean k5() {
-        m51 m51Var;
-        return (!E2(true) || (m51Var = this.e3) == null) ? this.x0 : m51Var.b();
+        r51 r51Var;
+        return (!E2(true) || (r51Var = this.e3) == null) ? this.x0 : r51Var.b();
     }
 
     public final void l(int i7, String str) {
@@ -9004,10 +9010,10 @@ public class ij {
                 charSequence3 = charSequence6;
             }
             SpannableStringBuilder spannableStringBuilder = charSequence6 instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence6 : new SpannableStringBuilder(charSequence6);
-            p31 p31Var = new p31(true);
-            p31Var.b(-1);
-            p31Var.d();
-            e2 e2Var = new e2(1, p31Var);
+            v31 v31Var = new v31(true);
+            v31Var.b(-1);
+            v31Var.d();
+            e2 e2Var = new e2(1, v31Var);
             e2Var.a(org.telegram.ui.ActionBar.k6.Sc);
             e2Var.n = -g0.L(10.0f);
             spannableStringBuilder.append((CharSequence) " _");
@@ -9412,9 +9418,9 @@ public class ij {
                                                         if (fjVar.U) {
                                                             this.t2 = Math.max(this.t2, i14);
                                                         } else {
-                                                            ly0 ly0Var = fjVar.L;
-                                                            if (ly0Var != null) {
-                                                                this.t2 = (int) Math.max(this.t2, Math.min(ly0Var.c + g0.L(15.0f), fjVar.e == null ? f11 : r3.getWidth()));
+                                                            my0 my0Var = fjVar.L;
+                                                            if (my0Var != null) {
+                                                                this.t2 = (int) Math.max(this.t2, Math.min(my0Var.c + g0.L(15.0f), fjVar.e == null ? f11 : r3.getWidth()));
                                                             }
                                                         }
                                                         fjVar.y.clear();
@@ -10817,7 +10823,7 @@ public class ij {
                 return "";
             }
             SpannableString spannableString = new SpannableString(str);
-            spannableString.setSpan(new x31("https://".concat(str), new ty0()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new d41("https://".concat(str), new uy0()), 0, spannableString.length(), 33);
             return spannableString;
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaDice) {
@@ -13042,9 +13048,9 @@ public class ij {
                                                             spannableStringBuilder4.append((CharSequence) "c");
                                                             str = str;
                                                             i10 = i7;
-                                                            cy0 cy0Var = new cy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
-                                                            cy0Var.a(g0.L(18.0f));
-                                                            spannableStringBuilder4.setSpan(cy0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                                            dy0 dy0Var = new dy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
+                                                            dy0Var.a(g0.L(18.0f));
+                                                            spannableStringBuilder4.setSpan(dy0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                                         } else {
                                                             str = str;
                                                             i10 = i7;
@@ -13062,9 +13068,9 @@ public class ij {
                                                         SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 1) != 0) {
                                                             spannableStringBuilder5.append((CharSequence) "c");
-                                                            cy0 cy0Var2 = new cy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
-                                                            cy0Var2.a(g0.L(18.0f));
-                                                            spannableStringBuilder5.setSpan(cy0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
+                                                            dy0 dy0Var2 = new dy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
+                                                            dy0Var2.a(g0.L(18.0f));
+                                                            spannableStringBuilder5.setSpan(dy0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
                                                         }
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 2) != 0) {
                                                             if (spannableStringBuilder5.length() > 0) {
@@ -13086,9 +13092,9 @@ public class ij {
                                                             SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 1) != 0) {
                                                                 spannableStringBuilder7.append((CharSequence) "c");
-                                                                cy0 cy0Var3 = new cy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
-                                                                cy0Var3.a(g0.L(18.0f));
-                                                                spannableStringBuilder7.setSpan(cy0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
+                                                                dy0 dy0Var3 = new dy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
+                                                                dy0Var3.a(g0.L(18.0f));
+                                                                spannableStringBuilder7.setSpan(dy0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder7.length() > 0) {
@@ -13103,9 +13109,9 @@ public class ij {
                                                             SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 1) != 0) {
                                                                 spannableStringBuilder8.append((CharSequence) "c");
-                                                                cy0 cy0Var4 = new cy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
-                                                                cy0Var4.a(g0.L(18.0f));
-                                                                spannableStringBuilder8.setSpan(cy0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
+                                                                dy0 dy0Var4 = new dy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
+                                                                dy0Var4.a(g0.L(18.0f));
+                                                                spannableStringBuilder8.setSpan(dy0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder8.length() > 0) {

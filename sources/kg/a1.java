@@ -25,18 +25,18 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a1 extends f2 implements ls {
     public boolean D;
     public int E;
     public boolean F;
-    public k41 a;
+    public q41 a;
     public b5 b;
     public boolean c;
     public FrameLayout d;
@@ -60,8 +60,8 @@ public final class a1 extends f2 implements ls {
             return;
         }
         this.b.a(a0(), z9);
-        k41 k41Var = this.a;
-        if (k41Var == null || k41Var.f3 == null) {
+        q41 q41Var = this.a;
+        if (q41Var == null || q41Var.f3 == null) {
             return;
         }
         if (this.F != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
@@ -149,7 +149,7 @@ public final class a1 extends f2 implements ls {
     }
 
     public final void c0() {
-        f41 f41Var;
+        l41 l41Var;
         if (this.s) {
             return;
         }
@@ -176,9 +176,9 @@ public final class a1 extends f2 implements ls {
             this.c = false;
         }
         d0();
-        k41 k41Var = this.a;
-        if (k41Var != null && (f41Var = k41Var.f3) != null) {
-            f41Var.O(true);
+        q41 q41Var = this.a;
+        if (q41Var != null && (l41Var = q41Var.f3) != null) {
+            l41Var.O(true);
         }
         this.s = true;
     }
@@ -245,13 +245,13 @@ public final class a1 extends f2 implements ls {
         frameLayout4.addView(this.r, ha.c(-1.0f, -1));
         this.f.addView(this.h, ha.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         d0();
-        k41 k41Var = new k41(this, new hi.u1(this, i12), new v0(this, i10), null);
-        this.a = k41Var;
-        k41Var.r1();
+        q41 q41Var = new q41(this, new hi.u1(this, i12), new v0(this, i10), null);
+        this.a = q41Var;
+        q41Var.r1();
         this.a.setSectionsDrawBackground(true);
-        k41 k41Var2 = this.a;
-        k41Var2.f3.r = false;
-        frameLayout.addView(k41Var2, ha.c(-1.0f, -1));
+        q41 q41Var2 = this.a;
+        q41Var2.f3.r = false;
+        frameLayout.addView(q41Var2, ha.c(-1.0f, -1));
         c0();
         this.fragmentView = frameLayout;
         return frameLayout;

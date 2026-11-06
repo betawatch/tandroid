@@ -62,7 +62,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class bk0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public LinearLayout A0;
@@ -907,7 +907,7 @@ public final class bk0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         bk0Var.o1.put(str, ewVar);
         bk0Var.L.setEnabled(false);
         bk0Var.L.setAlpha(0.5f);
-        org.telegram.messenger.w7.G(bk0Var.currentAccount).i0(false, 16777216, str, true);
+        org.telegram.messenger.w7.G(bk0Var.currentAccount).h0(false, 16777216, str, true);
         bk0Var.V0(ewVar, i7);
         bk0Var.X1(i7);
     }
@@ -4586,7 +4586,7 @@ public final class bk0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
-        Collections.sort(this.U0, new rv0(13));
+        Collections.sort(this.U0, new un0(14));
         String str3 = org.telegram.messenger.p10.i(this.currentAccount).f().phone;
         org.telegram.ui.Cells.w9 w9Var = new org.telegram.ui.Cells.w9(context);
         org.telegram.ui.ActionBar.r6.V(w9Var.getTextView(), org.telegram.ui.ActionBar.k6.q6, null);

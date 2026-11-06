@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class lb extends c8.ja {
     public org.telegram.messenger.ij a;
@@ -31,7 +31,7 @@ public final class lb extends c8.ja {
         this.a = null;
         mbVar.V = true;
         mbVar.i1();
-        org.telegram.messenger.g0.h3(new fq0(this, 21));
+        org.telegram.messenger.g0.h3(new gq0(this, 21));
     }
 
     @Override // c8.ja

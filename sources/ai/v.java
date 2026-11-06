@@ -56,16 +56,16 @@ import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.k4;
 import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.s41;
 import org.telegram.ui.Components.so0;
 import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.sr0;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.uo0;
 import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xs0;
+import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.zw;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PopupNotificationActivity;
@@ -87,7 +87,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yb1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -527,13 +527,13 @@ public final /* synthetic */ class v implements View.OnClickListener {
                 }
                 break;
             case 19:
-                s41 s41Var = (s41) obj;
-                int i21 = s41Var.b.i.q;
+                y41 y41Var = (y41) obj;
+                int i21 = y41Var.b.i.q;
                 if (i21 == 2) {
                     if (((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q()) {
                         org.telegram.messenger.h1.e().b(false);
                     }
-                    s41Var.updateAppUpdateViews(i12, true);
+                    y41Var.updateAppUpdateViews(i12, true);
                     break;
                 } else if (i21 == 3) {
                     if (((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q()) {
@@ -547,12 +547,12 @@ public final /* synthetic */ class v implements View.OnClickListener {
                             qs.e().k(qs.Q4, new Object[0]);
                         }
                     }
-                    s41Var.updateAppUpdateViews(i12, true);
+                    y41Var.updateAppUpdateViews(i12, true);
                     break;
                 } else {
                     File g10 = org.telegram.messenger.t0.a.g();
                     if (g10 != null) {
-                        org.telegram.messenger.g0.t2(g10, "Telegram.apk", "application/vnd.android.package-archive", s41Var.d, null, false);
+                        org.telegram.messenger.g0.t2(g10, "Telegram.apk", "application/vnd.android.package-archive", y41Var.d, null, false);
                         break;
                     }
                 }
@@ -573,9 +573,9 @@ public final /* synthetic */ class v implements View.OnClickListener {
             case 23:
                 mx mxVar = (mx) obj;
                 if (mxVar.n != null && i12 != mxVar.s) {
-                    r31 r31Var = mxVar.r;
-                    if (r31Var != null) {
-                        r31Var.z = i12;
+                    x31 x31Var = mxVar.r;
+                    if (x31Var != null) {
+                        x31Var.z = i12;
                     }
                     mxVar.b(i12, true);
                     mxVar.n.a(Integer.valueOf(i12));

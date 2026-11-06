@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class w7 extends c1 {
     public static Pattern I;
@@ -211,11 +211,7 @@ public final class w7 extends c1 {
     }
 
     public static File I(TLObject tLObject) {
-        return K(tLObject, null, false, true);
-    }
-
-    public static File J(TLObject tLObject, String str, boolean z9) {
-        return K(tLObject, str, false, z9);
+        return J(tLObject, null, false, true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:6:0x017a  */
@@ -223,7 +219,7 @@ public final class w7 extends c1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static File K(TLObject tLObject, String str, boolean z9, boolean z10) {
+    public static File J(TLObject tLObject, String str, boolean z9, boolean z10) {
         File z11;
         int i7;
         int i10;
@@ -249,7 +245,7 @@ public final class w7 extends c1 {
                 i10 = i15;
             } else {
                 if (tLObject instanceof TLRPC.Photo) {
-                    return K(w(((TLRPC.Photo) tLObject).sizes, g0.Z0(true), false, null, false), str, false, z10);
+                    return J(w(((TLRPC.Photo) tLObject).sizes, g0.Z0(true), false, null, false), str, false, z10);
                 }
                 if (tLObject instanceof TLRPC.PhotoSize) {
                     TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) tLObject;
@@ -328,15 +324,15 @@ public final class w7 extends c1 {
         }
     }
 
-    public static File L(TLObject tLObject, boolean z9) {
-        return K(tLObject, null, z9, true);
+    public static File K(TLObject tLObject, boolean z9) {
+        return J(tLObject, null, z9, true);
     }
 
-    public static File M(TLRPC.Message message) {
-        return N(message, false, true);
+    public static File L(TLRPC.Message message) {
+        return M(message, false, true);
     }
 
-    public static File N(TLRPC.Message message, boolean z9, boolean z10) {
+    public static File M(TLRPC.Message message, boolean z9, boolean z10) {
         TLRPC.PhotoSize w10;
         TLRPC.PhotoSize w11;
         TLRPC.PhotoSize w12;
@@ -348,40 +344,40 @@ public final class w7 extends c1 {
             if (photo != null) {
                 ArrayList<TLRPC.PhotoSize> arrayList = photo.sizes;
                 if (arrayList.size() > 0 && (w12 = w(arrayList, g0.Z0(false), false, null, false)) != null) {
-                    return K(w12, null, z9, z10);
+                    return J(w12, null, z9, z10);
                 }
             }
         } else {
             if (ij.o1(message) instanceof TLRPC.TL_messageMediaDocument) {
-                return K(ij.o1(message).document, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
+                return J(ij.o1(message).document, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
             }
             if (ij.o1(message) instanceof TLRPC.TL_messageMediaPhoto) {
                 ArrayList<TLRPC.PhotoSize> arrayList2 = ij.o1(message).photo.sizes;
                 if (arrayList2.size() > 0 && (w11 = w(arrayList2, g0.Z0(true), false, null, true)) != null) {
-                    return K(w11, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
+                    return J(w11, null, z9 || ij.o1(message).ttl_seconds != 0, z10);
                 }
             } else if (ij.o1(message) instanceof TLRPC.TL_messageMediaWebPage) {
                 if (ij.o1(message).webpage.document != null) {
-                    return K(ij.o1(message).webpage.document, null, z9, z10);
+                    return J(ij.o1(message).webpage.document, null, z9, z10);
                 }
                 if (ij.o1(message).webpage.photo != null) {
                     ArrayList<TLRPC.PhotoSize> arrayList3 = ij.o1(message).webpage.photo.sizes;
                     if (arrayList3.size() > 0 && (w10 = w(arrayList3, g0.Z0(false), false, null, false)) != null) {
-                        return K(w10, null, z9, z10);
+                        return J(w10, null, z9, z10);
                     }
                 }
             } else if (ij.o1(message) instanceof TLRPC.TL_messageMediaInvoice) {
-                return K(((TLRPC.TL_messageMediaInvoice) ij.o1(message)).photo, null, true, z10);
+                return J(((TLRPC.TL_messageMediaInvoice) ij.o1(message)).photo, null, true, z10);
             }
         }
         return new File("");
     }
 
-    public static File O(TLRPC.Message message) {
-        return N(message, false, true);
+    public static File N(TLRPC.Message message) {
+        return M(message, false, true);
     }
 
-    public static TLRPC.TL_photoStrippedSize R(ArrayList arrayList) {
+    public static TLRPC.TL_photoStrippedSize Q(ArrayList arrayList) {
         if (arrayList == null) {
             return null;
         }
@@ -394,7 +390,7 @@ public final class w7 extends c1 {
         return null;
     }
 
-    public static TLRPC.VideoSize S(TLRPC.Photo photo) {
+    public static TLRPC.VideoSize R(TLRPC.Photo photo) {
         if (photo != null && photo.video_sizes != null) {
             for (int i7 = 0; i7 < photo.video_sizes.size(); i7++) {
                 TLRPC.VideoSize videoSize = photo.video_sizes.get(i7);
@@ -406,7 +402,7 @@ public final class w7 extends c1 {
         return null;
     }
 
-    public static boolean V(TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, TLRPC.Photo photo) {
+    public static boolean U(TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, TLRPC.Photo photo) {
         if (tL_fileLocationToBeDeprecated != null && (photo instanceof TLRPC.TL_photo)) {
             int size = photo.sizes.size();
             for (int i7 = 0; i7 < size; i7++) {
@@ -703,7 +699,7 @@ public final class w7 extends c1 {
         return i7;
     }
 
-    public final int P(int i7) {
+    public final int O(int i7) {
         int i10;
         int i11;
         if (i7 == 4) {
@@ -724,7 +720,7 @@ public final class w7 extends c1 {
         return i10 + i11;
     }
 
-    public final void Q(ArrayList arrayList) {
+    public final void P(ArrayList arrayList) {
         arrayList.clear();
         arrayList.addAll(getDownloadController().H);
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -732,11 +728,11 @@ public final class w7 extends c1 {
         }
     }
 
-    public final boolean T(String str) {
+    public final boolean S(String str) {
         return str != null && this.x.containsKey(str);
     }
 
-    public final boolean U(TLRPC.Document document, boolean z9) {
+    public final boolean T(TLRPC.Document document, boolean z9) {
         if (document == null) {
             return false;
         }
@@ -746,21 +742,21 @@ public final class w7 extends c1 {
         return this.D.containsKey(sb2.toString());
     }
 
-    public final void W(hc hcVar, Object obj, String str, int i7, int i10) {
+    public final void V(hc hcVar, Object obj, String str, int i7, int i10) {
         if (hcVar == null) {
             return;
         }
-        Y(hcVar.i, hcVar.h, hcVar.v, hcVar.f, hcVar, obj, str, hcVar.r(), i7, (i10 != 0 || (hcVar.c == null && (hcVar.k == null || hcVar.r() != 0))) ? i10 : 1);
+        X(hcVar.i, hcVar.h, hcVar.v, hcVar.f, hcVar, obj, str, hcVar.r(), i7, (i10 != 0 || (hcVar.c == null && (hcVar.k == null || hcVar.r() != 0))) ? i10 : 1);
     }
 
-    public final void X(TLRPC.Document document, Object obj, int i7, int i10) {
+    public final void W(TLRPC.Document document, Object obj, int i7, int i10) {
         if (document == null) {
             return;
         }
-        Y(document, null, null, null, null, obj, null, 0L, i7, (i10 != 0 || document.key == null) ? i10 : 1);
+        X(document, null, null, null, null, obj, null, 0L, i7, (i10 != 0 || document.key == null) ? i10 : 1);
     }
 
-    public final void Y(TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, int i10) {
+    public final void X(TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, int i10) {
         String str2;
         String str3;
         if (tL_fileLocationToBeDeprecated != null) {
@@ -801,7 +797,7 @@ public final class w7 extends c1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final i7 Z(TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, j7 j7Var, long j10, boolean z9, int i10) {
+    public final i7 Y(TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, hc hcVar, Object obj, String str, long j3, int i7, j7 j7Var, long j10, boolean z9, int i10) {
         int i11;
         int i12;
         String str2;
@@ -856,18 +852,18 @@ public final class w7 extends c1 {
             }
         }
         i7 i7Var3 = (i7) concurrentHashMap.get(r10);
-        int P = P(i7);
+        int O = O(i7);
         if (i7Var3 != null) {
             if (i10 != 10 && i7Var3.y) {
                 i7Var3.q(false);
             }
-            i7Var3.V0 = P > 0 ? i11 : 0;
+            i7Var3.V0 = O > 0 ? i11 : 0;
             i7Var3.b = j7Var;
             i7Var3.d = j10;
             i7Var3.c = z9;
             Utilities.d.c(new e7(i7Var3, j7Var, 1));
-            if (i7Var3.W0 != P) {
-                i7Var3.W0 = P;
+            if (i7Var3.W0 != O) {
+                i7Var3.W0 = O;
             } else {
                 i11 = 0;
             }
@@ -889,7 +885,7 @@ public final class w7 extends c1 {
         int i18 = 3;
         if (ewVar != null) {
             i7Var = new i7(ewVar);
-            i12 = P;
+            i12 = O;
             r12 = 0;
             i15 = 0;
             str2 = r10;
@@ -899,7 +895,7 @@ public final class w7 extends c1 {
             obj2 = obj;
         } else if (tL_fileLocationToBeDeprecated != null) {
             long j16 = tL_fileLocationToBeDeprecated.volume_id;
-            i12 = P;
+            i12 = O;
             r12 = 0;
             str2 = r10;
             i13 = 4;
@@ -909,7 +905,7 @@ public final class w7 extends c1 {
             j11 = j16;
             i14 = 0;
         } else {
-            i12 = P;
+            i12 = O;
             boolean z16 = false;
             str2 = r10;
             i13 = 4;
@@ -1133,14 +1129,23 @@ public final class w7 extends c1 {
         return i7Var;
     }
 
-    public final void a0(TLRPC.Document document, boolean z9, boolean z10) {
+    public final void Z(TLRPC.Document document, boolean z9, boolean z10) {
         if (document == null) {
             return;
         }
         if (z10) {
             g0.h3(new s7(this, document, z9, 1));
         } else {
-            b0(document, z9);
+            a0(document, z9);
+        }
+    }
+
+    public final void a0(TLRPC.Document document, boolean z9) {
+        String r10 = r(null, document);
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(r10);
+        m10.append(z9 ? "p" : "");
+        if (this.D.remove(m10.toString()) != null) {
+            getNotificationCenter().k(qs.h1, r10);
         }
     }
 
@@ -1151,12 +1156,14 @@ public final class w7 extends c1 {
         J.c(new yf(this, z9, str, 4));
     }
 
-    public final void b0(TLRPC.Document document, boolean z9) {
-        String r10 = r(null, document);
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(r10);
-        m10.append(z9 ? "p" : "");
-        if (this.D.remove(m10.toString()) != null) {
-            getNotificationCenter().k(qs.h1, r10);
+    public final void b0(TLRPC.Document document, boolean z9, boolean z10) {
+        if (document == null) {
+            return;
+        }
+        if (z10) {
+            g0.h3(new s7(this, document, z9, 0));
+        } else {
+            d0(document, z9);
         }
     }
 
@@ -1171,22 +1178,7 @@ public final class w7 extends c1 {
         }
     }
 
-    public final void c0(TLRPC.Document document, boolean z9, boolean z10) {
-        if (document == null) {
-            return;
-        }
-        if (z10) {
-            g0.h3(new s7(this, document, z9, 0));
-        } else {
-            e0(document, z9);
-        }
-    }
-
-    public final void d(TLRPC.Document document) {
-        f(document);
-    }
-
-    public final void d0(TLRPC.Document document, boolean z9) {
+    public final void c0(TLRPC.Document document, boolean z9) {
         if (document == null) {
             return;
         }
@@ -1201,6 +1193,18 @@ public final class w7 extends c1 {
             hashMap.put(m11.toString(), Boolean.TRUE);
             getNotificationCenter().k(qs.h1, r10);
         }
+    }
+
+    public final void d(TLRPC.Document document) {
+        f(document);
+    }
+
+    public final void d0(TLRPC.Document document, boolean z9) {
+        String r10 = r(null, document);
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(r10);
+        m10.append(z9 ? "p" : "");
+        this.D.put(m10.toString(), Boolean.TRUE);
+        getNotificationCenter().k(qs.h1, r10);
     }
 
     public final void e(TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.FileLocation fileLocation, String str, String str2) {
@@ -1229,19 +1233,7 @@ public final class w7 extends c1 {
         g0.h3(new r7(this, 1));
     }
 
-    public final void e0(TLRPC.Document document, boolean z9) {
-        String r10 = r(null, document);
-        StringBuilder m10 = com.google.android.recaptcha.internal.a.m(r10);
-        m10.append(z9 ? "p" : "");
-        this.D.put(m10.toString(), Boolean.TRUE);
-        getNotificationCenter().k(qs.h1, r10);
-    }
-
-    public final void f(TLRPC.Document document) {
-        e(document, null, null, null, null, null);
-    }
-
-    public final void f0(String str, TLObject tLObject) {
+    public final void e0(String str, TLObject tLObject) {
         boolean z9 = tLObject instanceof TLRPC.Document;
         f8 f8Var = this.d;
         if (z9) {
@@ -1269,14 +1261,11 @@ public final class w7 extends c1 {
         }
     }
 
-    public final void g(ArrayList arrayList) {
-        int size = arrayList.size();
-        for (int i7 = 0; i7 < size; i7++) {
-            e(null, null, null, null, null, (String) arrayList.get(i7));
-        }
+    public final void f(TLRPC.Document document) {
+        e(document, null, null, null, null, null);
     }
 
-    public final void g0(final String str, final c20 c20Var) {
+    public final void f0(final String str, final c20 c20Var) {
         final y4 y4Var = new y4(7, this, r0);
         ls[] lsVarArr = {new ls() { // from class: org.telegram.messenger.m7
             @Override // org.telegram.messenger.ls
@@ -1301,27 +1290,17 @@ public final class w7 extends c1 {
         }};
         getNotificationCenter().b(lsVarArr[0], qs.U1);
         getNotificationCenter().b(lsVarArr[0], qs.V1);
-        i0(false, 67108864, str, false);
+        h0(false, 67108864, str, false);
     }
 
-    public final void h(int i7, TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, String str) {
-        String str2 = null;
-        if (tL_fileLocationToBeDeprecated == null && document == null && m20Var == null && ewVar == null && TextUtils.isEmpty(null)) {
-            return;
+    public final void g(ArrayList arrayList) {
+        int size = arrayList.size();
+        for (int i7 = 0; i7 < size; i7++) {
+            e(null, null, null, null, null, (String) arrayList.get(i7));
         }
-        if (tL_fileLocationToBeDeprecated != null) {
-            str2 = r(str, tL_fileLocationToBeDeprecated);
-        } else if (document != null) {
-            str2 = r(null, document);
-        } else if (ewVar != null) {
-            str2 = r(null, ewVar);
-        } else if (m20Var != null) {
-            str2 = r(null, m20Var);
-        }
-        J.c(new k7(this, str2, i7, 0));
     }
 
-    public final void h0(final String str, final boolean z9, final boolean z10, final long j3, final int i7, final boolean z11) {
+    public final void g0(final String str, final boolean z9, final boolean z10, final long j3, final int i7, final boolean z11) {
         if (str == null) {
             return;
         }
@@ -1390,6 +1369,27 @@ public final class w7 extends c1 {
         });
     }
 
+    public final void h(int i7, TLRPC.Document document, ew ewVar, m20 m20Var, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, String str) {
+        String str2 = null;
+        if (tL_fileLocationToBeDeprecated == null && document == null && m20Var == null && ewVar == null && TextUtils.isEmpty(null)) {
+            return;
+        }
+        if (tL_fileLocationToBeDeprecated != null) {
+            str2 = r(str, tL_fileLocationToBeDeprecated);
+        } else if (document != null) {
+            str2 = r(null, document);
+        } else if (ewVar != null) {
+            str2 = r(null, ewVar);
+        } else if (m20Var != null) {
+            str2 = r(null, m20Var);
+        }
+        J.c(new k7(this, str2, i7, 0));
+    }
+
+    public final void h0(boolean z9, int i7, String str, boolean z10) {
+        g0(str, z9, z10, 0L, i7, false);
+    }
+
     public final void i() {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList(getDownloadController().H);
@@ -1403,10 +1403,6 @@ public final class w7 extends c1 {
             return;
         }
         g0.h3(new y4(8, this, arrayList));
-    }
-
-    public final void i0(boolean z9, int i7, String str, boolean z10) {
-        h0(str, z9, z10, 0L, i7, false);
     }
 
     public final boolean k(String str) {

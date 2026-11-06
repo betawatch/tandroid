@@ -2,7 +2,7 @@ package com.google.firebase.concurrent;
 
 import android.os.Build;
 import android.os.StrictMode;
-import c8.sc;
+import c8.tc;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import v0.j;
 import v9.a;
 import v9.f;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final m a = new m(new ab.m(3));
@@ -49,7 +49,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(qVar);
         for (q qVar2 : qVarArr) {
-            sc.a(qVar2, "Null interface");
+            tc.a(qVar2, "Null interface");
         }
         Collections.addAll(hashSet, qVarArr);
         u9.a aVar = new u9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new j(5), hashSet3);
@@ -60,7 +60,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(qVar3);
         for (q qVar4 : qVarArr2) {
-            sc.a(qVar4, "Null interface");
+            tc.a(qVar4, "Null interface");
         }
         Collections.addAll(hashSet4, qVarArr2);
         u9.a aVar2 = new u9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new j(6), hashSet6);
@@ -71,7 +71,7 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(qVar5);
         for (q qVar6 : qVarArr3) {
-            sc.a(qVar6, "Null interface");
+            tc.a(qVar6, "Null interface");
         }
         Collections.addAll(hashSet7, qVarArr3);
         u9.a aVar3 = new u9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new j(7), hashSet9);

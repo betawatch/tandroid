@@ -9,11 +9,11 @@ import android.graphics.RecordingCanvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
-import c8.nb;
+import c8.ob;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class d extends nb {
+public final class d extends ob {
     public final RenderNode a = new RenderNode("glass-fade-content");
     public final RenderNode b = new RenderNode("glass-fade-overlay");
     public final Paint c;
@@ -38,7 +38,7 @@ public final class d extends nb {
         paint.setBlendMode(blendMode);
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void a(Rect rect, RectF rectF) {
         float f10;
         float f11;
@@ -126,25 +126,25 @@ public final class d extends nb {
         fVar.w = false;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void b() {
         this.a.discardDisplayList();
         this.b.discardDisplayList();
         this.g = -1;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
         canvas.drawRenderNode(this.b);
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final boolean d() {
         return this.a.hasDisplayList() && this.b.hasDisplayList();
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void e(float f10) {
         this.a.setAlpha(f10);
         this.b.setAlpha(f10);

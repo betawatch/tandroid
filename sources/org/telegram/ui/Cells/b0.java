@@ -13,16 +13,16 @@ import android.text.Layout;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
     public final org.telegram.ui.ActionBar.f6 c;
-    public final ly0 d;
-    public final ly0 e;
+    public final my0 d;
+    public final my0 e;
     public final Drawable f;
     public final Drawable g;
     public int h;
@@ -34,14 +34,14 @@ public final class b0 extends Drawable {
         this.j = paint;
         this.b = i7;
         this.c = f6Var;
-        ly0 ly0Var = new ly0(hd.M0(2131753068, null), 14.0f, org.telegram.messenger.g0.o());
-        this.d = ly0Var;
+        my0 my0Var = new my0(hd.M0(2131753068, null), 14.0f, org.telegram.messenger.g0.o());
+        this.d = my0Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        ly0Var.a();
-        ly0 ly0Var2 = new ly0("", 13.0f, null);
-        this.e = ly0Var2;
-        ly0Var2.m(4);
-        ly0Var2.a();
+        my0Var.a();
+        my0 my0Var2 = new my0("", 13.0f, null);
+        this.e = my0Var2;
+        my0Var2.m(4);
+        my0Var2.a();
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         this.f = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -78,14 +78,14 @@ public final class b0 extends Drawable {
         canvas.translate(0.0f, org.telegram.messenger.g0.L(70.0f));
         canvas.translate(0.0f, org.telegram.messenger.g0.L(14.0f));
         float centerX2 = rectF.centerX();
-        ly0 ly0Var = this.d;
-        this.d.c(centerX2 - (ly0Var.k() / 2.0f), ly0Var.i() / 2.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, ly0Var.i());
+        my0 my0Var = this.d;
+        this.d.c(centerX2 - (my0Var.k() / 2.0f), my0Var.i() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, my0Var.i());
         canvas.translate(0.0f, org.telegram.messenger.g0.L(4.0f));
         float centerX3 = rectF.centerX();
-        ly0 ly0Var2 = this.e;
-        this.e.c(centerX3 - (ly0Var2.k() / 2.0f), 0.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, ly0Var2.i());
+        my0 my0Var2 = this.e;
+        this.e.c(centerX3 - (my0Var2.k() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, my0Var2.i());
         canvas.translate(0.0f, org.telegram.messenger.g0.L(2.0f));
         int centerX4 = (int) (rectF.centerX() - org.telegram.messenger.g0.L(10.0f));
         int centerX5 = (int) (rectF.centerX() + org.telegram.messenger.g0.L(10.0f));

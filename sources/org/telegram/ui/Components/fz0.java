@@ -1,36 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import java.io.File;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class fz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+public final class fz0 implements a71 {
+    public final /* synthetic */ ThemeEditorView a;
 
-    public /* synthetic */ fz0(ThemeEditorView themeEditorView, int i7) {
-        this.a = i7;
-        this.b = themeEditorView;
+    public fz0(ThemeEditorView themeEditorView) {
+        this.a = themeEditorView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ThemeEditorView themeEditorView = this.b;
-                dz0 dz0Var = themeEditorView.c;
-                if (dz0Var != null) {
-                    dz0Var.setBackground(null);
-                    themeEditorView.j.removeView(themeEditorView.c);
-                    break;
+    @Override // org.telegram.ui.Components.a71
+    public final void a() {
+        int i7 = 0;
+        while (true) {
+            ThemeEditorView themeEditorView = this.a;
+            if (i7 >= themeEditorView.e.size()) {
+                ThemeEditorView.EditorAlert editorAlert = themeEditorView.n;
+                int i10 = ThemeEditorView.EditorAlert.D1;
+                editorAlert.L0(true);
+                return;
+            } else {
+                org.telegram.ui.ActionBar.t6 t6Var = (org.telegram.ui.ActionBar.t6) themeEditorView.e.get(i7);
+                int x02 = org.telegram.ui.ActionBar.k6.x0(t6Var.i, t6Var.e, false);
+                t6Var.h = x02;
+                if (i7 == 0) {
+                    themeEditorView.n.i1.c(x02);
                 }
-                break;
-            default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.k6.x1(themeEditorView2.o, true, false, false);
-                themeEditorView2.b();
-                break;
+                i7++;
+            }
         }
+    }
+
+    @Override // org.telegram.ui.Components.a71
+    public final void b(File file, Bitmap bitmap, boolean z9) {
+        org.telegram.ui.ActionBar.j6 j6Var = this.a.o;
+        org.telegram.ui.ActionBar.k6.im.delete(org.telegram.ui.ActionBar.k6.Be);
+        org.telegram.ui.ActionBar.k6.im.delete(org.telegram.ui.ActionBar.k6.Ce);
+        org.telegram.ui.ActionBar.k6.im.delete(org.telegram.ui.ActionBar.k6.De);
+        org.telegram.ui.ActionBar.k6.im.delete(org.telegram.ui.ActionBar.k6.Ee);
+        org.telegram.ui.ActionBar.k6.im.delete(org.telegram.ui.ActionBar.k6.Fe);
+        org.telegram.ui.ActionBar.k6.h0 = null;
+        j6Var.v(null);
+        if (bitmap == null) {
+            org.telegram.ui.ActionBar.k6.f0 = null;
+            org.telegram.ui.ActionBar.k6.e0 = null;
+            org.telegram.ui.ActionBar.k6.x1(j6Var, false, false, false);
+            org.telegram.ui.ActionBar.k6.u1(true);
+            return;
+        }
+        org.telegram.ui.ActionBar.k6.f0 = new BitmapDrawable(bitmap);
+        org.telegram.ui.ActionBar.k6.x1(j6Var, false, false, false);
+        int[] q10 = org.telegram.messenger.g0.q(org.telegram.ui.ActionBar.k6.f0);
+        int i7 = q10[0];
+        org.telegram.ui.ActionBar.k6.c0 = i7;
+        org.telegram.ui.ActionBar.k6.X = i7;
+        int i10 = q10[1];
+        org.telegram.ui.ActionBar.k6.d0 = i10;
+        org.telegram.ui.ActionBar.k6.b0 = i10;
+        org.telegram.ui.ActionBar.k6.i();
+        org.telegram.ui.ActionBar.k6.h(org.telegram.ui.ActionBar.k6.e0);
+        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.z4, new Object[0]);
     }
 }

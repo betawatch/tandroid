@@ -100,9 +100,9 @@ import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.o00;
 import org.telegram.ui.Components.ou0;
-import org.telegram.ui.Components.p31;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.xa0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.zg0;
@@ -111,7 +111,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.hy0;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class k6 {
     public static int A;
@@ -5506,7 +5506,7 @@ public abstract class k6 {
                 qs.f(j6Var.E).b(j6Var, qs.Z1);
                 w7 G10 = w7.G(j6Var.E);
                 TLRPC.TL_theme tL_theme3 = j6Var.F;
-                G10.X(tL_theme3.document, tL_theme3, 1, 1);
+                G10.W(tL_theme3.document, tL_theme3, 1, 1);
             } else {
                 j6Var.T = false;
             }
@@ -5615,7 +5615,7 @@ public abstract class k6 {
                             int max = Math.max(point.x, point.y);
                             if (document != null) {
                                 w7.G(p10.s0);
-                                c10 = sz.f(w7.K(document, null, true, true), min, max, 2);
+                                c10 = sz.f(w7.J(document, null, true, true), min, max, 2);
                             } else {
                                 c10 = sz.c(1.0f, R.raw.default_pattern, min, max, -1, 2);
                             }
@@ -8639,7 +8639,7 @@ public abstract class k6 {
             return ou0Var;
         }
         if (i10 == 0) {
-            ou0VarArr[0] = new p31(true);
+            ou0VarArr[0] = new v31(true);
         } else if (i10 == 1) {
             ou0VarArr[1] = new ap(true);
         } else if (i10 == 2) {

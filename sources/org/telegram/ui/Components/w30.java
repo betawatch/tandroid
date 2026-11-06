@@ -12,7 +12,7 @@ import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraController;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w30 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
@@ -23,8 +23,8 @@ public final class w30 implements TextureView.SurfaceTextureListener {
         this.b = obj;
     }
 
-    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Components.xy0] */
-    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.xy0] */
+    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Components.yy0] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.yy0] */
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
         switch (this.a) {
@@ -42,28 +42,28 @@ public final class w30 implements TextureView.SurfaceTextureListener {
                 }
                 break;
             case 1:
-                final cz0 cz0Var = (cz0) this.b;
-                ArrayList arrayList = cz0Var.c;
-                az0 az0Var = cz0Var.a;
-                if (az0Var != null) {
-                    az0Var.h();
-                    cz0Var.a = null;
+                final dz0 dz0Var = (dz0) this.b;
+                ArrayList arrayList = dz0Var.c;
+                bz0 bz0Var = dz0Var.a;
+                if (bz0Var != null) {
+                    bz0Var.h();
+                    dz0Var.a = null;
                 }
                 final int i11 = 0;
-                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.xy0
+                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.yy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                cz0Var.invalidate();
+                                dz0Var.invalidate();
                                 break;
                             default:
-                                cz0 cz0Var2 = cz0Var;
-                                Runnable runnable = cz0Var2.d;
+                                dz0 dz0Var2 = dz0Var;
+                                Runnable runnable = dz0Var2.d;
                                 if (runnable != null) {
-                                    cz0Var2.e = true;
-                                    cz0Var2.d = null;
-                                    cz0.b(runnable);
+                                    dz0Var2.e = true;
+                                    dz0Var2.d = null;
+                                    dz0.b(runnable);
                                     break;
                                 }
                                 break;
@@ -71,45 +71,45 @@ public final class w30 implements TextureView.SurfaceTextureListener {
                     }
                 };
                 final int i12 = 1;
-                az0 az0Var2 = new az0(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.xy0
+                bz0 bz0Var2 = new bz0(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.yy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                cz0Var.invalidate();
+                                dz0Var.invalidate();
                                 break;
                             default:
-                                cz0 cz0Var2 = cz0Var;
-                                Runnable runnable = cz0Var2.d;
+                                dz0 dz0Var2 = dz0Var;
+                                Runnable runnable = dz0Var2.d;
                                 if (runnable != null) {
-                                    cz0Var2.e = true;
-                                    cz0Var2.d = null;
-                                    cz0.b(runnable);
+                                    dz0Var2.e = true;
+                                    dz0Var2.d = null;
+                                    dz0.b(runnable);
                                     break;
                                 }
                                 break;
                         }
                     }
                 }, i7, i10);
-                cz0Var.a = az0Var2;
-                az0Var2.a = org.telegram.messenger.n6.h(cz0Var.getContext()).f();
+                dz0Var.a = bz0Var2;
+                bz0Var2.a = org.telegram.messenger.n6.h(dz0Var.getContext()).f();
                 if (!arrayList.isEmpty()) {
                     for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                        bz0 bz0Var = (bz0) arrayList.get(i13);
-                        Bitmap bitmap = bz0Var.e;
+                        cz0 cz0Var = (cz0) arrayList.get(i13);
+                        Bitmap bitmap = cz0Var.e;
                         if (bitmap != null) {
-                            cz0Var.a.c(bz0Var.f, bitmap, bz0Var.c, bz0Var.d);
+                            dz0Var.a.c(cz0Var.f, bitmap, cz0Var.c, cz0Var.d);
                         } else {
-                            ArrayList arrayList2 = bz0Var.b;
+                            ArrayList arrayList2 = cz0Var.b;
                             if (arrayList2 != null) {
-                                cz0Var.a.d(arrayList2, bz0Var.d);
+                                dz0Var.a.d(arrayList2, cz0Var.d);
                             } else {
-                                cz0Var.a.b(bz0Var.g, bz0Var.a, bz0Var.d);
+                                dz0Var.a.b(cz0Var.g, cz0Var.a, cz0Var.d);
                             }
                         }
                     }
                     arrayList.clear();
-                    Choreographer.getInstance().postFrameCallback(cz0Var.b);
+                    Choreographer.getInstance().postFrameCallback(dz0Var.b);
                     break;
                 }
                 break;
@@ -174,29 +174,29 @@ public final class w30 implements TextureView.SurfaceTextureListener {
                 }
                 break;
             case 1:
-                cz0 cz0Var = (cz0) this.b;
-                az0 az0Var = cz0Var.a;
-                if (az0Var != null) {
-                    az0Var.h();
-                    cz0Var.a = null;
+                dz0 dz0Var = (dz0) this.b;
+                bz0 bz0Var = dz0Var.a;
+                if (bz0Var != null) {
+                    bz0Var.h();
+                    dz0Var.a = null;
                 }
-                Runnable runnable = cz0Var.d;
+                Runnable runnable = dz0Var.d;
                 if (runnable != null) {
-                    cz0Var.d = null;
-                    cz0.b(runnable);
+                    dz0Var.d = null;
+                    dz0.b(runnable);
                     break;
                 }
                 break;
             case 2:
-                f71 f71Var = (f71) this.b;
-                TextureView textureView = f71Var.d;
-                if (f71Var.S) {
-                    if (f71Var.W) {
-                        f71Var.r = 2;
+                l71 l71Var = (l71) this.b;
+                TextureView textureView = l71Var.d;
+                if (l71Var.S) {
+                    if (l71Var.W) {
+                        l71Var.r = 2;
                     }
                     textureView.setSurfaceTexture(surfaceTexture);
                     textureView.setVisibility(0);
-                    f71Var.S = false;
+                    l71Var.S = false;
                     break;
                 }
                 break;
@@ -235,8 +235,8 @@ public final class w30 implements TextureView.SurfaceTextureListener {
                 }
                 return;
             case 1:
-                az0 az0Var = ((cz0) this.b).a;
-                if (az0Var == null || (handler = az0Var.getHandler()) == null || !az0Var.b.get()) {
+                bz0 bz0Var = ((dz0) this.b).a;
+                if (bz0Var == null || (handler = bz0Var.getHandler()) == null || !bz0Var.b.get()) {
                     return;
                 }
                 handler.sendMessage(handler.obtainMessage(1, i7, i10));
@@ -275,10 +275,10 @@ public final class w30 implements TextureView.SurfaceTextureListener {
         float f10;
         switch (this.a) {
             case 2:
-                f71 f71Var = (f71) this.b;
-                if (f71Var.r == 1) {
-                    f71Var.n.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.h1(this, 5));
-                    f71Var.n.invalidate();
+                l71 l71Var = (l71) this.b;
+                if (l71Var.r == 1) {
+                    l71Var.n.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.ActionBar.h1(this, 5));
+                    l71Var.n.invalidate();
                     break;
                 }
                 break;

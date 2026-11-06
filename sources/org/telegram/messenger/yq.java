@@ -20,9 +20,9 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.lu0;
+import org.telegram.ui.mu0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yq implements Runnable {
     public final /* synthetic */ int a;
@@ -281,7 +281,7 @@ public final /* synthetic */ class yq implements Runnable {
                 }
                 return;
             case 13:
-                ((lu0) this.b).x((HashSet) this.c);
+                ((mu0) this.b).x((HashSet) this.c);
                 return;
             case 14:
                 dt dtVar2 = (dt) this.b;

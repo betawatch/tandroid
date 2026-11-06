@@ -60,9 +60,9 @@ import org.telegram.ui.c40;
 import org.telegram.ui.gm;
 import org.telegram.ui.hi;
 import org.telegram.ui.hw;
-import org.telegram.ui.io0;
 import org.telegram.ui.je0;
 import org.telegram.ui.jn0;
+import org.telegram.ui.jo0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.lm;
 import org.telegram.ui.p90;
@@ -70,7 +70,7 @@ import org.telegram.ui.q10;
 import org.telegram.ui.vl;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ub implements Runnable {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final /* synthetic */ class ub implements Runnable {
                 if (i10 < tL_messages_stickerSet.documents.size()) {
                     TLRPC.Document document = tL_messages_stickerSet.documents.get(i10);
                     org.telegram.messenger.w7.G(p10.s0);
-                    String y22 = org.telegram.messenger.g0.y2(org.telegram.messenger.w7.K(document, null, true, true), 0);
+                    String y22 = org.telegram.messenger.g0.y2(org.telegram.messenger.w7.J(document, null, true, true), 0);
                     if (TextUtils.isEmpty(y22)) {
                         org.telegram.messenger.g0.h3(new yt0(document, i7, ijVar, q1Var, tL_messages_stickerSet, 1));
                         z9 = true;
@@ -465,7 +465,7 @@ public final /* synthetic */ class ub implements Runnable {
             c2Var.O = z1Var.j;
             c2Var.P = z1Var.k;
             arrayList.add(z1Var);
-            org.telegram.messenger.g0.h3(new io0(c2Var, arrayList, jn0Var, z1Var, 27));
+            org.telegram.messenger.g0.h3(new jo0(c2Var, arrayList, jn0Var, z1Var, 27));
             c2Var.E = z1Var;
             c2Var.D = true;
             c2Var.y = false;

@@ -3,9 +3,9 @@ package zh;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.c20;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements c20 {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class n0 implements c20 {
                     h1Var2.R1 = c10;
                     if (!((ArrayList) c10).isEmpty()) {
                         h1Var2.f1();
-                        f41 f41Var = h1Var2.Q1;
-                        if (f41Var != null) {
-                            f41Var.O(true);
+                        l41 l41Var = h1Var2.Q1;
+                        if (l41Var != null) {
+                            l41Var.O(true);
                             break;
                         }
                     }

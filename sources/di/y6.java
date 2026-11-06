@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y6 {
     public static final Comparator X = Comparator$-CC.comparingInt(new bg.d(8));
@@ -185,7 +185,7 @@ public final class y6 {
     public static boolean G(int i7, TLRPC.Document document) {
         String r10 = org.telegram.messenger.w7.r(null, document);
         int lastIndexOf = r10.lastIndexOf(46);
-        if (org.telegram.messenger.w7.G(i7).T(r10)) {
+        if (org.telegram.messenger.w7.G(i7).S(r10)) {
             return true;
         }
         File z9 = org.telegram.messenger.w7.z(4);
@@ -199,7 +199,7 @@ public final class y6 {
     public static boolean P(int i7, TLRPC.Document document) {
         if (!new File(org.telegram.messenger.w7.z(6), org.telegram.messenger.w7.r(null, document)).exists()) {
             org.telegram.messenger.w7.G(i7);
-            if (!org.telegram.messenger.w7.K(document, null, true, true).exists()) {
+            if (!org.telegram.messenger.w7.J(document, null, true, true).exists()) {
                 return false;
             }
         }
@@ -618,13 +618,13 @@ public final class y6 {
             storyItem.dialogId = j3;
             if (z9) {
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(storyItem.media.getDocument().thumbs, 1000, false, null, false);
-                org.telegram.messenger.w7.G(i7).X(C(i7, storyItem), storyItem, 0, 1);
-                org.telegram.messenger.w7.G(i7).W(hc.c(w10, storyItem.media.getDocument()), storyItem, "jpg", 0, 1);
+                org.telegram.messenger.w7.G(i7).W(C(i7, storyItem), storyItem, 0, 1);
+                org.telegram.messenger.w7.G(i7).V(hc.c(w10, storyItem.media.getDocument()), storyItem, "jpg", 0, 1);
             } else {
                 TLRPC.MessageMedia messageMedia2 = storyItem.media;
                 TLRPC.Photo photo = messageMedia2 == null ? null : messageMedia2.photo;
                 if (photo != null && (arrayList = photo.sizes) != null) {
-                    org.telegram.messenger.w7.G(i7).W(hc.i(org.telegram.messenger.w7.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo), storyItem, "jpg", 0, 1);
+                    org.telegram.messenger.w7.G(i7).V(hc.i(org.telegram.messenger.w7.w(arrayList, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false), photo), storyItem, "jpg", 0, 1);
                 }
             }
             if (storyItem.media_areas != null) {
@@ -634,7 +634,7 @@ public final class y6 {
                         if (d.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i7).r.get(d.f);
                             if (tL_availableReaction != null) {
-                                org.telegram.messenger.w7.G(i7).X(tL_availableReaction.select_animation, d, 0, 0);
+                                org.telegram.messenger.w7.G(i7).W(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
                             org.telegram.ui.Components.i5 i5Var = new org.telegram.ui.Components.i5(1, i7, d.g);

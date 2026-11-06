@@ -3,10 +3,10 @@ package tg;
 import c8.ha;
 import fi.s4;
 import java.util.List;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.dz0;
 import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 g0 g0Var = this.b;
-                cz0 cz0Var = g0Var.J0;
-                if (cz0Var != null) {
+                dz0 dz0Var = g0Var.J0;
+                if (dz0Var != null) {
                     g0Var.J0 = null;
-                    g0Var.removeView(cz0Var);
+                    g0Var.removeView(dz0Var);
                     break;
                 }
                 break;

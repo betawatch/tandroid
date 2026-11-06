@@ -3,10 +3,10 @@ package j7;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i extends r6.a {
     public static final Parcelable.Creator<i> CREATOR = new b(7);
@@ -43,13 +43,13 @@ public final class i extends r6.a {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i7) {
         kotlin.jvm.internal.j.e(dest, "dest");
-        int r10 = wb.r(dest, 20293);
-        wb.l(dest, 1, this.a);
-        wb.b(dest, 2, this.b);
-        wb.b(dest, 3, this.c);
-        wb.l(dest, 4, this.d);
-        wb.l(dest, 5, this.e);
-        wb.l(dest, 6, this.f);
-        wb.s(dest, r10);
+        int r10 = xb.r(dest, 20293);
+        xb.l(dest, 1, this.a);
+        xb.b(dest, 2, this.b);
+        xb.b(dest, 3, this.c);
+        xb.l(dest, 4, this.d);
+        xb.l(dest, 5, this.e);
+        xb.l(dest, 6, this.f);
+        xb.s(dest, r10);
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m7 extends vc {
     public final /* synthetic */ int b;
@@ -35,9 +35,9 @@ public final class m7 extends vc {
                     z0Var.f(z9);
                     photoViewer.F0.setSelectorColor(z9 ? 259241196 : 268435455);
                 }
-                n51 n51Var = photoViewer.F2;
-                if (n51Var != null) {
-                    n51Var.t0(d1.f.u() || photoViewer.r);
+                t51 t51Var = photoViewer.F2;
+                if (t51Var != null) {
+                    t51Var.t0(d1.f.u() || photoViewer.r);
                 }
                 org.telegram.ui.uq uqVar2 = photoViewer.w0;
                 if (uqVar2 != null) {

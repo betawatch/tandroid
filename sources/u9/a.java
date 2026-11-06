@@ -1,6 +1,6 @@
 package u9;
 
-import c8.sc;
+import c8.tc;
 import e2.j0;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -45,7 +45,7 @@ public final class a {
         j0Var.g = new HashSet();
         hashSet.add(qVar);
         for (q qVar2 : qVarArr) {
-            sc.a(qVar2, "Null interface");
+            tc.a(qVar2, "Null interface");
         }
         Collections.addAll((HashSet) j0Var.c, qVarArr);
         return j0Var;
@@ -57,7 +57,7 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(q.a(cls));
         for (Class cls2 : clsArr) {
-            sc.a(cls2, "Null interface");
+            tc.a(cls2, "Null interface");
             hashSet.add(q.a(cls2));
         }
         return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new u5.e(obj, 1), hashSet3);

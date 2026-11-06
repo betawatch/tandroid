@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class rc1 extends org.telegram.ui.Components.oj0 {
     public org.telegram.ui.Wallet.n D;
@@ -182,7 +182,7 @@ public final class rc1 extends org.telegram.ui.Components.oj0 {
         if (i7 != 0) {
             piVar = null;
             if (i7 == 1) {
-                ?? e61Var = new e61(13, context, false ? 1 : 0);
+                ?? e61Var = new e61(14, context, false ? 1 : 0);
                 e61Var.setItemAnimator(null);
                 e61Var.setLayoutAnimation(null);
                 jg.b0 b0Var = new jg.b0(20);
@@ -190,7 +190,7 @@ public final class rc1 extends org.telegram.ui.Components.oj0 {
                 e61Var.setClipToPadding(false);
                 b0Var.j1(0);
                 e61Var.setLayoutManager(b0Var);
-                e61Var.setAdapter(new bi.k5(this, 8));
+                e61Var.setAdapter(new bi.k5(this, 9));
                 e61Var.setOnItemClickListener(new vx0(this, 13));
                 frameLayout = e61Var;
             } else if (i7 == 2) {

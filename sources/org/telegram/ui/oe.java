@@ -1,13 +1,12 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
 import android.util.Pair;
 import java.util.Comparator;
 import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oe implements Comparator {
     public final /* synthetic */ int a;
@@ -122,17 +121,21 @@ public final /* synthetic */ class oe implements Comparator {
             case 18:
                 return String.valueOf(org.telegram.ui.ActionBar.u4.c(((Integer) obj).intValue())).compareTo(String.valueOf(org.telegram.ui.ActionBar.u4.c(((Integer) obj2).intValue())));
             case 19:
+                ((org.telegram.ui.Components.o01) obj2).getClass();
+                ((org.telegram.ui.Components.o01) obj).getClass();
+                return Integer.compare(0, 0);
+            case 20:
                 Pair pair5 = (Pair) obj;
                 Pair pair6 = (Pair) obj2;
                 if (((Float) pair5.first).floatValue() > ((Float) pair6.first).floatValue()) {
                     return 1;
                 }
                 return ((Float) pair6.first).floatValue() > ((Float) pair5.first).floatValue() ? -1 : 0;
-            case 20:
-                return Integer.compare(((org.telegram.ui.Components.voip.f) obj2).b, ((org.telegram.ui.Components.voip.f) obj).b);
             case 21:
-                return Integer.compare(((org.telegram.ui.Components.voip.f) obj).c, ((org.telegram.ui.Components.voip.f) obj2).c);
+                return Integer.compare(((org.telegram.ui.Components.voip.f) obj2).b, ((org.telegram.ui.Components.voip.f) obj).b);
             case 22:
+                return Integer.compare(((org.telegram.ui.Components.voip.f) obj).c, ((org.telegram.ui.Components.voip.f) obj2).c);
+            case 23:
                 org.telegram.messenger.y5 y5Var = (org.telegram.messenger.y5) obj;
                 org.telegram.messenger.y5 y5Var2 = (org.telegram.messenger.y5) obj2;
                 int x10 = org.telegram.messenger.z5.x(8);
@@ -180,41 +183,38 @@ public final /* synthetic */ class oe implements Comparator {
                     return 1;
                 }
                 return j3 < j10 ? -1 : 0;
-            case 23:
-                return Long.compare(((ft) obj2).c, ((ft) obj).c);
             case 24:
+                return Long.compare(((ft) obj2).c, ((ft) obj).c);
+            case 25:
                 long j11 = org.telegram.messenger.p10.i(((Integer) obj).intValue()).Y;
                 long j12 = org.telegram.messenger.p10.i(((Integer) obj2).intValue()).Y;
                 if (j11 > j12) {
                     return 1;
                 }
                 return j11 < j12 ? -1 : 0;
-            case 25:
+            case 26:
                 int i15 = ((org.telegram.messenger.d5) obj).l;
                 int i16 = ((org.telegram.messenger.d5) obj2).l;
                 if (i15 > i16) {
                     return -1;
                 }
                 return i15 < i16 ? 1 : 0;
-            case 26:
+            case 27:
                 long j13 = org.telegram.messenger.p10.i(((Integer) obj).intValue()).Y;
                 long j14 = org.telegram.messenger.p10.i(((Integer) obj2).intValue()).Y;
                 if (j13 > j14) {
                     return 1;
                 }
                 return j13 < j14 ? -1 : 0;
-            case 27:
+            case 28:
                 long j15 = org.telegram.messenger.p10.i(((Integer) obj).intValue()).Y;
                 long j16 = org.telegram.messenger.p10.i(((Integer) obj2).intValue()).Y;
                 if (j15 > j16) {
                     return 1;
                 }
                 return j15 < j16 ? -1 : 0;
-            case 28:
-                return ((String) obj).compareTo((String) obj2);
             default:
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                return ((org.telegram.messenger.ij) obj).f1() - ((org.telegram.messenger.ij) obj2).f1();
+                return ((String) obj).compareTo((String) obj2);
         }
         return f12 - f13;
     }

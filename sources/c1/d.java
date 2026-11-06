@@ -14,10 +14,10 @@ import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b1.f;
 import bi.a4;
-import c8.fe;
-import c8.uc;
+import c8.ge;
+import c8.vc;
 import c8.x9;
-import c8.xb;
+import c8.yb;
 import di.z0;
 import f7.k;
 import f7.l;
@@ -33,7 +33,7 @@ import w0.g;
 import w0.h;
 import w0.i;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -155,7 +155,7 @@ public final class d extends ResultReceiver {
                         throw null;
                     }
                 }
-                u uVar = (u) xb.a(byteArrayExtra, u.CREATOR);
+                u uVar = (u) yb.a(byteArrayExtra, u.CREATOR);
                 j.d(uVar, "deserializeFromBytes(...)");
                 LinkedHashMap linkedHashMap = d1.g.a;
                 l lVar = uVar.d;
@@ -278,7 +278,7 @@ public final class d extends ResultReceiver {
                     a10 = h1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : uc.a(string, bundle);
+                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : vc.a(string, bundle);
                 }
                 if (a10 != null) {
                     CancellationSignal cancellationSignal10 = dVar3.h;
@@ -307,7 +307,7 @@ public final class d extends ResultReceiver {
                         if (string2 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a11 = fe.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
+                        a11 = ge.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar3.h;

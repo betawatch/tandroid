@@ -17,18 +17,18 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.dx0;
 import org.telegram.ui.Components.ex0;
-import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.lx0;
+import org.telegram.ui.Components.mx0;
 import org.telegram.ui.rg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class yu extends fu implements kx0 {
+public final class yu extends fu implements lx0 {
     public final TL_iv.pageBlockTable W;
-    public final lx0 X;
+    public final mx0 X;
     public final ArrayList Y;
     public final org.telegram.ui.Cells.t9[] Z;
     public final jv a0;
@@ -68,26 +68,27 @@ public final class yu extends fu implements kx0 {
         rect2.top = g0.L(10.0f) + rect2.top;
         this.W = pageblocktable;
         this.d0 = this.c;
-        lx0 lx0Var = new lx0(t0.b, this, null);
-        this.X = lx0Var;
-        lx0Var.setOrientation(0);
-        lx0Var.setRowOrderPreserved(true);
-        lx0Var.setDrawLines(pageblocktable.bordered);
-        lx0Var.setStriped(pageblocktable.striped);
-        lx0Var.setRtl(kvVar.I());
-        lx0Var.setFillWidth(false);
+        mx0 mx0Var = new mx0(t0.b, this, null);
+        this.X = mx0Var;
+        mx0Var.setOrientation(0);
+        mx0Var.setRowOrderPreserved(true);
+        mx0Var.setDrawLines(pageblocktable.bordered);
+        mx0Var.setStriped(pageblocktable.striped);
+        mx0Var.setRtl(kvVar.I());
+        mx0Var.setFillWidth(false);
+        mx0Var.setBalancedColumns(true);
         if (pageblocktable.compact) {
             int L = g0.L(5.0f);
             int L2 = g0.L(5.0f);
             int L3 = g0.L(5.0f);
-            if (lx0Var.w != L || lx0Var.r != L2 || lx0Var.s != L3) {
-                lx0Var.w = L;
-                lx0Var.r = L2;
-                lx0Var.s = L3;
-                lx0Var.requestLayout();
+            if (mx0Var.w != L || mx0Var.r != L2 || mx0Var.s != L3) {
+                mx0Var.w = L;
+                mx0Var.r = L2;
+                mx0Var.s = L3;
+                mx0Var.requestLayout();
             }
         }
-        lx0Var.setMinimumCellHeight(g0.L(pageblocktable.compact ? 18.0f : 36.0f));
+        mx0Var.setMinimumCellHeight(g0.L(pageblocktable.compact ? 18.0f : 36.0f));
         if (pageblocktable.rows.isEmpty()) {
             i10 = 0;
         } else {
@@ -128,20 +129,20 @@ public final class yu extends fu implements kx0 {
             this.a0 = null;
             this.b0 = 0;
         } else {
-            jv jvVar = new jv(kvVar, kvVar.l(pageblocktable.title, kv.R(0, 15)), this.d0);
+            jv jvVar = new jv(kvVar, kvVar.l(pageblocktable.title, kv.R(0, 15)), this.d0, Layout.Alignment.ALIGN_CENTER);
             this.a0 = jvVar;
             jvVar.r = true;
             this.b0 = g0.L(9.0f) + jvVar.b.getHeight();
         }
         jv jvVar2 = this.a0;
-        int max = Math.max(0, Math.min(this.d0, Math.max(measuredWidth, jvVar2 != null ? jvVar2.r() : 0)));
+        int max = kvVar.D() ? Math.max(0, this.d0) : Math.max(0, Math.min(this.d0, Math.max(measuredWidth, jvVar2 != null ? jvVar2.r() : 0)));
         this.e0 = max;
         this.f0 = max;
         for (int i18 = 0; i18 < this.X.getChildCount(); i18++) {
-            ex0 d = this.X.d(i18);
-            dx0 dx0Var = d.b;
-            if (dx0Var instanceof jv) {
-                this.Y.add((jv) dx0Var);
+            fx0 d = this.X.d(i18);
+            ex0 ex0Var = d.b;
+            if (ex0Var instanceof jv) {
+                this.Y.add((jv) ex0Var);
                 this.c0.add(new xu(d));
             }
         }
@@ -237,10 +238,10 @@ public final class yu extends fu implements kx0 {
         canvas.saveLayerAlpha(f10, 0.0f, (i10 - rect.left) - rect.right, this.g0, qs.e4, 31);
         canvas.save();
         canvas.translate(-this.i0, 0.0f);
-        lx0 lx0Var = this.X;
-        int childCount = lx0Var.getChildCount();
+        mx0 mx0Var = this.X;
+        int childCount = mx0Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            lx0Var.d(i11).a(canvas, this.V, true);
+            mx0Var.d(i11).a(canvas, this.V, true);
         }
         canvas.restore();
         RectF rectF = g0.P;
@@ -258,7 +259,7 @@ public final class yu extends fu implements kx0 {
         View view;
         int actionMasked = motionEvent.getActionMasked();
         int i7 = this.h0;
-        ex0 ex0Var = null;
+        fx0 fx0Var = null;
         if (actionMasked != 0) {
             if (actionMasked != 2) {
                 if (actionMasked == 1 || actionMasked == 3) {
@@ -372,29 +373,29 @@ public final class yu extends fu implements kx0 {
             float x11 = motionEvent.getX();
             float f11 = x11 + this.i0;
             float y10 = motionEvent.getY() - i12;
-            lx0 lx0Var = this.X;
-            int childCount = lx0Var.getChildCount();
+            mx0 mx0Var = this.X;
+            int childCount = mx0Var.getChildCount();
             int i13 = 0;
             while (true) {
                 if (i13 >= childCount) {
                     break;
                 }
-                ex0 d = lx0Var.d(i13);
+                fx0 d = mx0Var.d(i13);
                 if (d.b instanceof jv) {
                     if (f11 >= d.p && f11 < r13 + d.k) {
                         if (y10 >= d.q && y10 < r13 + d.l) {
-                            ex0Var = d;
+                            fx0Var = d;
                             break;
                         }
                     }
                 }
                 i13++;
             }
-            if (ex0Var != null) {
-                this.q0 = (jv) ex0Var.b;
-                this.r0 = ex0Var.b() - this.i0;
-                this.s0 = ex0Var.c() + i12;
-                this.q0.R.set(ex0Var.p - ex0Var.b(), ex0Var.q - ex0Var.c(), (ex0Var.p + ex0Var.k) - ex0Var.b(), (ex0Var.q + ex0Var.l) - ex0Var.c());
+            if (fx0Var != null) {
+                this.q0 = (jv) fx0Var.b;
+                this.r0 = fx0Var.b() - this.i0;
+                this.s0 = fx0Var.c() + i12;
+                this.q0.R.set(fx0Var.p - fx0Var.b(), fx0Var.q - fx0Var.c(), (fx0Var.p + fx0Var.k) - fx0Var.b(), (fx0Var.q + fx0Var.l) - fx0Var.c());
                 motionEvent.offsetLocation(-this.r0, -this.s0);
                 this.t0 = this.q0.t(motionEvent);
                 motionEvent.offsetLocation(this.r0, this.s0);
@@ -414,13 +415,13 @@ public final class yu extends fu implements kx0 {
             jvVar.d = i10;
             jvVar.e = i11;
         }
-        lx0 lx0Var = this.X;
-        int childCount = lx0Var.getChildCount();
+        mx0 mx0Var = this.X;
+        int childCount = mx0Var.getChildCount();
         for (int i12 = 0; i12 < childCount; i12++) {
-            ex0 d = lx0Var.d(i12);
-            dx0 dx0Var = d.b;
-            if (dx0Var instanceof jv) {
-                jv jvVar2 = (jv) dx0Var;
+            fx0 d = mx0Var.d(i12);
+            ex0 ex0Var = d.b;
+            if (ex0Var instanceof jv) {
+                jv jvVar2 = (jv) ex0Var;
                 jvVar2.c = ((d.b() + i7) - this.i0) - jvVar2.n();
                 jvVar2.d = d.c() + this.b0 + i10;
                 jvVar2.e = i11;
@@ -428,8 +429,8 @@ public final class yu extends fu implements kx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kx0
-    public final dx0 c(TL_iv.pageTableCell pagetablecell, int i7) {
+    @Override // org.telegram.ui.Components.lx0
+    public final ex0 c(TL_iv.pageTableCell pagetablecell, int i7) {
         if (pagetablecell == null) {
             return null;
         }
@@ -441,19 +442,19 @@ public final class yu extends fu implements kx0 {
         return jvVar;
     }
 
-    @Override // org.telegram.ui.Components.kx0
+    @Override // org.telegram.ui.Components.lx0
     public final Paint getHeaderPaint() {
         i0();
         return this.l0;
     }
 
-    @Override // org.telegram.ui.Components.kx0
+    @Override // org.telegram.ui.Components.lx0
     public final Paint getLinePaint() {
         i0();
         return this.j0;
     }
 
-    @Override // org.telegram.ui.Components.kx0
+    @Override // org.telegram.ui.Components.lx0
     public final Paint getStripPaint() {
         i0();
         return this.m0;
@@ -528,7 +529,7 @@ public final class yu extends fu implements kx0 {
         boolean z10;
         jv jvVar;
         org.telegram.ui.Components.n5 n5Var;
-        lx0 lx0Var;
+        mx0 mx0Var;
         int i7;
         int i10;
         h6.m mVar;
@@ -566,21 +567,21 @@ public final class yu extends fu implements kx0 {
                 int saveLayerAlpha = canvas.saveLayerAlpha(-i13, 0.0f, ((kvVar.C + kvVar.T) - rect.left) - rect.right, this.g0, qs.e4, 31);
                 canvas.save();
                 canvas.translate(-this.i0, 0.0f);
-                lx0 lx0Var2 = this.X;
-                int childCount = lx0Var2.getChildCount();
+                mx0 mx0Var2 = this.X;
+                int childCount = mx0Var2.getChildCount();
                 int i14 = 0;
                 while (i14 < childCount) {
-                    dx0 dx0Var = lx0Var2.d(i14).b;
-                    if (!(dx0Var instanceof jv) || (n5Var = (jvVar = (jv) dx0Var).E) == null || n5Var.a.isEmpty()) {
+                    ex0 ex0Var = mx0Var2.d(i14).b;
+                    if (!(ex0Var instanceof jv) || (n5Var = (jvVar = (jv) ex0Var).E) == null || n5Var.a.isEmpty()) {
                         i11 = saveLayerAlpha;
-                        lx0Var = lx0Var2;
+                        mx0Var = mx0Var2;
                         i7 = childCount;
                         i10 = i14;
                         mVar = mVar2;
                     } else {
                         canvas.save();
                         canvas.translate(r6.b(), r6.c());
-                        lx0Var = lx0Var2;
+                        mx0Var = mx0Var2;
                         i7 = childCount;
                         i10 = i14;
                         mVar = mVar2;
@@ -590,7 +591,7 @@ public final class yu extends fu implements kx0 {
                     }
                     i14 = i10 + 1;
                     mVar2 = mVar;
-                    lx0Var2 = lx0Var;
+                    mx0Var2 = mx0Var;
                     childCount = i7;
                     saveLayerAlpha = i11;
                 }
@@ -615,7 +616,7 @@ public final class yu extends fu implements kx0 {
         xu xuVar;
         float f10;
         int i7;
-        lx0 lx0Var;
+        mx0 mx0Var;
         int i10;
         int i11;
         tg0 tg0Var = this.K;
@@ -645,13 +646,13 @@ public final class yu extends fu implements kx0 {
                 int saveLayerAlpha = canvas.saveLayerAlpha(-i12, 0.0f, ((kvVar.C + kvVar.T) - rect.left) - rect.right, this.g0, (int) (c10 * 255.0f), 31);
                 canvas.save();
                 canvas.translate(-this.i0, 0.0f);
-                lx0 lx0Var2 = this.X;
-                int childCount = lx0Var2.getChildCount();
+                mx0 mx0Var2 = this.X;
+                int childCount = mx0Var2.getChildCount();
                 int i13 = 0;
                 int i14 = 0;
                 while (i13 < childCount) {
                     float f13 = f12;
-                    ex0 d = lx0Var2.d(i13);
+                    fx0 d = mx0Var2.d(i13);
                     if (i14 >= arrayList.size() || ((xu) arrayList.get(i14)).a != d) {
                         xuVar = null;
                     } else {
@@ -681,7 +682,7 @@ public final class yu extends fu implements kx0 {
                             } else {
                                 if (c11 <= f10 || d.b == null) {
                                     i7 = saveLayerAlpha;
-                                    lx0Var = lx0Var2;
+                                    mx0Var = mx0Var2;
                                     i10 = childCount;
                                     i11 = i13;
                                     d.a(canvas, this.V, false);
@@ -689,7 +690,7 @@ public final class yu extends fu implements kx0 {
                                     d.a(canvas, this.V, false);
                                     canvas.save();
                                     canvas.translate(d.b(), d.c());
-                                    lx0Var = lx0Var2;
+                                    mx0Var = mx0Var2;
                                     i11 = i13;
                                     i7 = saveLayerAlpha;
                                     i10 = childCount;
@@ -704,11 +705,11 @@ public final class yu extends fu implements kx0 {
                                 i14 = i15;
                                 f11 = f10;
                                 childCount = i10;
-                                lx0Var2 = lx0Var;
+                                mx0Var2 = mx0Var;
                             }
                         }
                         i7 = saveLayerAlpha;
-                        lx0Var = lx0Var2;
+                        mx0Var = mx0Var2;
                         i10 = childCount;
                         i11 = i13;
                         i13 = i11 + 1;
@@ -717,11 +718,11 @@ public final class yu extends fu implements kx0 {
                         i14 = i15;
                         f11 = f10;
                         childCount = i10;
-                        lx0Var2 = lx0Var;
+                        mx0Var2 = mx0Var;
                     } else {
                         d.a(canvas, this.V, false);
                     }
-                    lx0Var = lx0Var2;
+                    mx0Var = mx0Var2;
                     i10 = childCount;
                     i11 = i13;
                     f10 = f11;
@@ -732,7 +733,7 @@ public final class yu extends fu implements kx0 {
                     i14 = i15;
                     f11 = f10;
                     childCount = i10;
-                    lx0Var2 = lx0Var;
+                    mx0Var2 = mx0Var;
                 }
                 float f14 = f11;
                 int i16 = saveLayerAlpha;
@@ -759,12 +760,12 @@ public final class yu extends fu implements kx0 {
             wtVar.f = i7 + rect.top;
             return true;
         }
-        lx0 lx0Var = this.X;
-        int childCount = lx0Var.getChildCount();
+        mx0 mx0Var = this.X;
+        int childCount = mx0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            dx0 dx0Var = lx0Var.d(i10).b;
-            if (dx0Var instanceof jv) {
-                if (((jv) dx0Var).o(characterStyle, wtVar)) {
+            ex0 ex0Var = mx0Var.d(i10).b;
+            if (ex0Var instanceof jv) {
+                if (((jv) ex0Var).o(characterStyle, wtVar)) {
                     wtVar.e = ((r6.b() + rect.left) - this.i0) - r7.n();
                     wtVar.f = r6.c() + i7 + rect.top + this.b0;
                     return true;
@@ -774,7 +775,7 @@ public final class yu extends fu implements kx0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kx0
-    public final /* synthetic */ void g(dx0 dx0Var, int i7) {
+    @Override // org.telegram.ui.Components.lx0
+    public final /* synthetic */ void g(ex0 ex0Var, int i7) {
     }
 }

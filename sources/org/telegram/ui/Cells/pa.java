@@ -24,11 +24,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.wo;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.oh0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class pa extends FrameLayout implements ls, org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 D;
@@ -282,8 +282,8 @@ public class pa extends FrameLayout implements ls, org.telegram.ui.ActionBar.a6 
         }
     }
 
-    public final void g(int i7, r31 r31Var, boolean z9) {
-        long j3 = r31Var.x;
+    public final void g(int i7, x31 x31Var, boolean z9) {
+        long j3 = x31Var.x;
         if (j3 <= 0) {
             TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
             if (M0 != null) {

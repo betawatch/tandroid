@@ -1,13 +1,13 @@
 package wi;
 
 import android.os.SystemClock;
-import c8.id;
+import c8.jd;
 import java.io.File;
 import java.io.IOException;
-import org.telegram.ui.Components.l31;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     } catch (IOException unused) {
                     }
-                    id.c(xVar.a);
+                    jd.c(xVar.a);
                 }
                 if (file != null) {
-                    id.c(file);
+                    jd.c(file);
                     return;
                 }
                 return;
@@ -91,7 +91,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     t0Var4.U = d;
                     t0Var4.M = System.nanoTime();
                     t0Var4.m.b("preview snapshot started: file=" + d.getName());
-                    t0Var4.j.execute(new l31(t0Var4, t0Var4.T, d, 25));
+                    t0Var4.j.execute(new r31(t0Var4, t0Var4.T, d, 25));
                     return;
                 } catch (IOException e10) {
                     t0Var4.h(e10);

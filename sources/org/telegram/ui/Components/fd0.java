@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fd0 extends FrameLayout {
     public final org.telegram.ui.ActionBar.f6 D;
@@ -67,7 +67,7 @@ public final class fd0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i7, boolean z9, boolean z10, og.g gVar, c51 c51Var, org.telegram.messenger.ye yeVar) {
+    public final void b(Bitmap bitmap, int i7, boolean z9, boolean z10, og.g gVar, h51 h51Var, org.telegram.messenger.ye yeVar) {
         org.telegram.messenger.ye yeVar2;
         requestLayout();
         this.f = false;
@@ -75,13 +75,13 @@ public final class fd0 extends FrameLayout {
         og.o oVar = this.b;
         ImageView imageView = oVar.b;
         oVar.y = z9;
-        oVar.d = c51Var;
+        oVar.d = h51Var;
         oVar.e = gVar;
         oVar.K = i7;
         oVar.x = bitmap;
         CropAreaView cropAreaView = oVar.a;
-        cropAreaView.setIsVideo(c51Var != null);
-        if (bitmap == null && c51Var == null) {
+        cropAreaView.setIsVideo(h51Var != null);
+        if (bitmap == null && h51Var == null) {
             oVar.L = null;
             imageView.setImageDrawable(null);
             yeVar2 = yeVar;
@@ -110,7 +110,7 @@ public final class fd0 extends FrameLayout {
                 oVar2.r(false);
                 yeVar2 = yeVar;
             }
-            imageView.setImageBitmap(c51Var == null ? oVar.x : null);
+            imageView.setImageBitmap(h51Var == null ? oVar.x : null);
         }
         og.f fVar = this.c;
         fVar.setFreeform(z9);
@@ -135,9 +135,9 @@ public final class fd0 extends FrameLayout {
         if (this.f && view == (oVar = this.b)) {
             RectF actualRect = oVar.getActualRect();
             int L = org.telegram.messenger.g0.L(32.0f);
-            org.telegram.ui.qo0 qo0Var = (org.telegram.ui.qo0) this.a;
-            qo0Var.getClass();
-            int L2 = org.telegram.messenger.g0.L(2.0f) + (((int) (((r1.R7.getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f)) * qo0Var.a.v8) + org.telegram.messenger.g0.L(16.0f))) - (L / 2));
+            org.telegram.ui.ro0 ro0Var = (org.telegram.ui.ro0) this.a;
+            ro0Var.getClass();
+            int L2 = org.telegram.messenger.g0.L(2.0f) + (((int) (((r1.R7.getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f)) * ro0Var.a.v8) + org.telegram.messenger.g0.L(16.0f))) - (L / 2));
             int measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(156.0f);
             float f10 = actualRect.left;
             float f11 = this.r;
@@ -198,7 +198,7 @@ public final class fd0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.qo0) this.a).o();
+                    ((org.telegram.ui.ro0) this.a).o();
                 }
                 return true;
             }
@@ -228,7 +228,7 @@ public final class fd0 extends FrameLayout {
         if (this.h && this.f) {
             if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
                 if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.qo0) this.a).o();
+                    ((org.telegram.ui.ro0) this.a).o();
                 }
                 return true;
             }

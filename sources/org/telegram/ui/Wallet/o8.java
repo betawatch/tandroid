@@ -19,17 +19,17 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d01;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.e01;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.d10;
 import org.telegram.ui.lk0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class o8 extends h41 implements ls {
+public final class o8 extends n41 implements ls {
     public final ArrayList e = new ArrayList();
     public boolean f;
 
@@ -201,19 +201,19 @@ public final class o8 extends h41 implements ls {
         e10.setPadding(0, 0, 0, org.telegram.messenger.g0.L(8.0f));
         LinearLayout e11 = org.telegram.messenger.k5.e(activity, 1);
         e11.setPadding(org.telegram.messenger.g0.L(36.0f), 0, org.telegram.messenger.g0.L(36.0f), 0);
-        d01 d01Var = new d01(activity, f6Var);
-        d01Var.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(4.0f));
-        d01Var.setEmojiSize(100);
-        org.telegram.ui.Components.l9 l9Var = d01Var.b;
+        e01 e01Var = new e01(activity, f6Var);
+        e01Var.setPadding(org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(4.0f));
+        e01Var.setEmojiSize(100);
+        org.telegram.ui.Components.l9 l9Var = e01Var.b;
         l9Var.getImageReceiver().d = org.telegram.messenger.g0.t0();
         ui.b0(org.telegram.messenger.g0.t0()).c2(l9Var, "RestrictedEmoji", "📝", "100_100");
-        e11.addView(d01Var, c8.ha.r(-1, -2, 7));
+        e11.addView(e01Var, c8.ha.r(-1, -2, 7));
         String M0 = hd.M0(2131743035, null);
-        w70 w70Var = d01Var.c;
+        w70 w70Var = e01Var.c;
         CharSequence m10 = org.telegram.messenger.i6.m(M0, w70Var.getPaint().getFontMetricsInt(), false, null, 0);
         String M02 = hd.M0(2131743036, null);
-        w70 w70Var2 = d01Var.d;
-        d01Var.a(m10, org.telegram.messenger.i6.m(M02, w70Var2.getPaint().getFontMetricsInt(), false, null, 0));
+        w70 w70Var2 = e01Var.d;
+        e01Var.a(m10, org.telegram.messenger.i6.m(M02, w70Var2.getPaint().getFontMetricsInt(), false, null, 0));
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
         org.telegram.ui.ActionBar.r6.V(w70Var2, org.telegram.ui.ActionBar.k6.z6, f6Var);
         qs.i(w70Var);
@@ -246,11 +246,11 @@ public final class o8 extends h41 implements ls {
      */
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ef  */
     /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         List<j0> list;
         n0 x10 = n0.x(this.currentAccount);
         TL_wallet.WalletState walletState = x10.e;
@@ -262,11 +262,11 @@ public final class o8 extends h41 implements ls {
                 if (r0Var != null) {
                 }
             }
-            arrayList.add(r31.u(hd.M0(2131743035, null)));
-            r31 e10 = r31.e(1, hd.M0(2131743037, null));
+            arrayList.add(x31.u(hd.M0(2131743035, null)));
+            x31 e10 = x31.e(1, hd.M0(2131743037, null));
             e10.q = true;
             arrayList.add(e10);
-            arrayList.add(r31.C(hd.M0(2131743032, null)));
+            arrayList.add(x31.C(hd.M0(2131743032, null)));
             TL_wallet.WalletState walletState2 = x10.e;
             if (!(!(walletState2 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState2).backup_enabled)) {
                 if (walletState2 instanceof TL_wallet.TL_walletState) {
@@ -277,7 +277,7 @@ public final class o8 extends h41 implements ls {
                         }
                     }
                 }
-                r31 e11 = r31.e(4, hd.M0(2131743141, null));
+                x31 e11 = x31.e(4, hd.M0(2131743141, null));
                 e11.r = true;
                 arrayList.add(e11);
                 list = x10.H;
@@ -287,8 +287,8 @@ public final class o8 extends h41 implements ls {
                             boolean z10 = org.telegram.messenger.r2.a;
                         } else {
                             if (z9) {
-                                arrayList.add(r31.C(null));
-                                arrayList.add(r31.u(hd.M0(2131743050, null)));
+                                arrayList.add(x31.C(null));
+                                arrayList.add(x31.u(hd.M0(2131743050, null)));
                                 z9 = false;
                             }
                             String str = j0Var.a;
@@ -296,7 +296,7 @@ public final class o8 extends h41 implements ls {
                             int i7 = j0Var.b;
                             boolean z11 = j0Var.e;
                             int i10 = m8.b;
-                            r31 K = r31.K(m8.class);
+                            x31 K = x31.K(m8.class);
                             K.l = str;
                             K.B = j3;
                             K.z = i7;
@@ -307,25 +307,25 @@ public final class o8 extends h41 implements ls {
                     if (z9) {
                         return;
                     }
-                    arrayList.add(r31.C(hd.M0(2131743049, null)));
+                    arrayList.add(x31.C(hd.M0(2131743049, null)));
                     return;
                 }
                 return;
             }
-            arrayList.add(r31.u(hd.M0(2131743127, null)));
+            arrayList.add(x31.u(hd.M0(2131743127, null)));
             TL_wallet.WalletState walletState3 = x10.e;
             if (!(walletState3 instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState3).backup_enabled) {
-                r31 e12 = r31.e(3, hd.M0(2131743136, null));
+                x31 e12 = x31.e(3, hd.M0(2131743136, null));
                 e12.r = true;
                 arrayList.add(e12);
-                arrayList.add(r31.C(hd.M0(2131743188, null)));
+                arrayList.add(x31.C(hd.M0(2131743188, null)));
             } else {
-                r31 e13 = r31.e(2, hd.M0(2131743128, null));
+                x31 e13 = x31.e(2, hd.M0(2131743128, null));
                 e13.q = true;
                 arrayList.add(e13);
-                arrayList.add(r31.C(hd.M0(2131743191, null)));
+                arrayList.add(x31.C(hd.M0(2131743191, null)));
             }
-            r31 e112 = r31.e(4, hd.M0(2131743141, null));
+            x31 e112 = x31.e(4, hd.M0(2131743141, null));
             e112.r = true;
             arrayList.add(e112);
             list = x10.H;
@@ -334,14 +334,14 @@ public final class o8 extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131743081, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        int i7 = r31Var.d;
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        int i7 = x31Var.d;
         int i10 = 1;
         if (i7 == 1) {
             n0 x10 = n0.x(this.currentAccount);
@@ -379,8 +379,8 @@ public final class o8 extends h41 implements ls {
             return;
         }
         if (i7 != 4) {
-            if (r31Var.H(m8.class)) {
-                String charSequence = r31Var.l.toString();
+            if (x31Var.H(m8.class)) {
+                String charSequence = x31Var.l.toString();
                 l0(getParentActivity(), getResourceProvider(), new q(this, n0.x(this.currentAccount), charSequence, new r0(this.currentAccount, getParentActivity(), charSequence)));
                 return;
             }
@@ -397,12 +397,12 @@ public final class o8 extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         this.actionBar.setAdaptiveBackground(this.a);

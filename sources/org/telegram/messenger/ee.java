@@ -22,9 +22,9 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.bk0;
-import org.telegram.ui.vs0;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -450,7 +450,7 @@ public final /* synthetic */ class ee implements Runnable {
                 TLObject tLObject2 = (TLObject) r12.f;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) r12.d;
                 TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription = (TLRPC.TL_inputStorePaymentPremiumSubscription) r12.e;
-                vs0 vs0Var = (vs0) r12.b;
+                ws0 ws0Var = (ws0) r12.b;
                 com.google.android.gms.internal.clearcut.z0 z0Var = (com.google.android.gms.internal.clearcut.z0) r12.h;
                 int i21 = r12.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) r12.n;
@@ -464,8 +464,8 @@ public final /* synthetic */ class ee implements Runnable {
                 c accountInstance = f2Var.getAccountInstance();
                 q4.q qVar = new q4.q(20, false);
                 qVar.g(r1.l);
-                vs0Var.a();
-                String str7 = vs0Var.g.a;
+                ws0Var.a();
+                String str7 = ws0Var.g.a;
                 if (TextUtils.isEmpty(str7)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
@@ -535,11 +535,11 @@ public final /* synthetic */ class ee implements Runnable {
         }
     }
 
-    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, vs0 vs0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, ws0 ws0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.f = tLObject;
         this.d = f2Var;
         this.e = tL_inputStorePaymentPremiumSubscription;
-        this.b = vs0Var;
+        this.b = ws0Var;
         this.h = z0Var;
         this.c = i7;
         this.n = tL_error;

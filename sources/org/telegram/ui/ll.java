@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ll implements org.telegram.ui.Components.wf {
     public int a;
@@ -145,7 +145,7 @@ public final class ll implements org.telegram.ui.Components.wf {
         for (int i13 = 1; i13 < Math.min(5, arrayList.size()); i13++) {
             org.telegram.messenger.ij ijVar3 = (org.telegram.messenger.ij) arrayList.get(i13);
             if (ijVar3 != null && !ijVar3.Q3() && ((org.telegram.messenger.ij.S4(ijVar3.k) || ijVar3.i4()) && ijVar3.k.media_unread)) {
-                org.telegram.ui.Components.m11.r(ijVar3, true);
+                org.telegram.ui.Components.s11.r(ijVar3, true);
             }
         }
     }

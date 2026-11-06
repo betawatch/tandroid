@@ -26,7 +26,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class sd0 extends FrameLayout implements ty, fi.ra {
     public final ImageView A0;
@@ -100,7 +100,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
     public int y0;
     public final ImageView z0;
 
-    public sd0(Context context, c51 c51Var, Bitmap bitmap, Bitmap bitmap2, int i7, org.telegram.messenger.hf hfVar, sb0 sb0Var, int i10, boolean z9, boolean z10, y9 y9Var, final org.telegram.ui.ActionBar.f6 f6Var) {
+    public sd0(Context context, h51 h51Var, Bitmap bitmap, Bitmap bitmap2, int i7, org.telegram.messenger.hf hfVar, sb0 sb0Var, int i10, boolean z9, boolean z10, y9 y9Var, final org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.u0 = new RadioButton[4];
         this.E0 = new Rect();
@@ -135,7 +135,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
             this.F = i11 + 10;
             this.n = i12;
         }
-        if (c51Var == null) {
+        if (h51Var == null) {
             int i13 = this.F;
             this.F = i13 + 1;
             this.x = i13;
@@ -181,9 +181,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         this.C0 = bitmap;
         this.D0 = bitmap2;
         this.H0 = i7;
-        if (c51Var != null) {
-            this.i0 = c51Var;
-            c51Var.setDelegate(new md0(this));
+        if (h51Var != null) {
+            this.i0 = h51Var;
+            h51Var.setDelegate(new md0(this));
         } else {
             this.j0 = true;
             k40 k40Var = new k40(1, context, this);
@@ -371,7 +371,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                 }
             }
         });
-        if (c51Var != null) {
+        if (h51Var != null) {
             imageView2.setVisibility(8);
         }
         ImageView imageView3 = new ImageView(context);
@@ -784,11 +784,11 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
             textureView.setVisibility(8);
             return;
         }
-        if (textureView instanceof c51) {
-            c51 c51Var = (c51) textureView;
+        if (textureView instanceof h51) {
+            h51 h51Var = (h51) textureView;
             org.telegram.messenger.hf hfVar = this.e0;
             if (hfVar == null) {
-                c51Var.setDelegate(null);
+                h51Var.setDelegate(null);
                 return;
             }
             ry ryVar2 = this.l0;
@@ -1127,10 +1127,10 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
     public final boolean i(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
             TextureView textureView = this.i0;
-            if (textureView instanceof c51) {
+            if (textureView instanceof h51) {
                 float x10 = motionEvent.getX();
                 float y10 = motionEvent.getY();
-                ki0 ki0Var = ((c51) textureView).c;
+                ki0 ki0Var = ((h51) textureView).c;
                 float f10 = ki0Var.a;
                 if (x10 >= f10 && x10 <= f10 + ki0Var.c) {
                     float f11 = ki0Var.b;

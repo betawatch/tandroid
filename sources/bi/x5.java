@@ -52,19 +52,19 @@ import org.telegram.ui.a11;
 import org.telegram.ui.ks;
 import org.telegram.ui.kz0;
 import org.telegram.ui.q11;
-import org.telegram.ui.qu0;
+import org.telegram.ui.ru0;
 import org.telegram.ui.rz0;
 import org.telegram.ui.u01;
 import org.telegram.ui.u50;
 import org.telegram.ui.u71;
-import org.telegram.ui.up0;
 import org.telegram.ui.v01;
+import org.telegram.ui.vp0;
 import org.telegram.ui.w01;
 import org.telegram.ui.x90;
 import org.telegram.ui.xr;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -292,7 +292,7 @@ public final class x5 extends FrameLayout {
                         if (((org.telegram.ui.Components.pc) this.b) == null) {
                             org.telegram.ui.Components.pc pcVar2 = new org.telegram.ui.Components.pc(this);
                             this.b = pcVar2;
-                            pcVar2.h = new qu0(this, r11);
+                            pcVar2.h = new ru0(this, r11);
                         }
                         float L7 = (1.0f - profileActivity.n5) * org.telegram.messenger.g0.L(28.0f);
                         float textWidth = profileActivity.r.getTextWidth();
@@ -956,8 +956,8 @@ public final class x5 extends FrameLayout {
                 }
                 if (secretMediaViewer.Y != null) {
                     int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m;
-                    up0 up0Var = secretMediaViewer.Y;
-                    up0Var.layout(up0Var.getLeft(), currentActionBarHeight2, secretMediaViewer.Y.getRight(), secretMediaViewer.Y.getMeasuredHeight() + currentActionBarHeight2);
+                    vp0 vp0Var = secretMediaViewer.Y;
+                    vp0Var.layout(vp0Var.getLeft(), currentActionBarHeight2, secretMediaViewer.Y.getRight(), secretMediaViewer.Y.getMeasuredHeight() + currentActionBarHeight2);
                 }
                 View view = secretMediaViewer.f;
                 if (view != null) {
@@ -1079,9 +1079,9 @@ public final class x5 extends FrameLayout {
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
-                up0 up0Var = secretMediaViewer.Y;
-                if (up0Var != null) {
-                    up0Var.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m) - (secretMediaViewer.S.getVisibility() != 0 ? 0 : secretMediaViewer.S.getMeasuredHeight()), TLObject.FLAG_30));
+                vp0 vp0Var = secretMediaViewer.Y;
+                if (vp0Var != null) {
+                    vp0Var.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((measuredHeight - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m) - (secretMediaViewer.S.getVisibility() != 0 ? 0 : secretMediaViewer.S.getMeasuredHeight()), TLObject.FLAG_30));
                 }
                 View view = secretMediaViewer.f;
                 if (view != null) {

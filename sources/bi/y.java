@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final int a;
     public final ArrayList b;
-    public final k41 c;
+    public final q41 c;
     public String d;
     public boolean e;
     public boolean f;
@@ -39,17 +39,17 @@ public final class y extends FrameLayout {
         ai.e eVar = new ai.e(this, 2);
         a1.c cVar = new a1.c(this, 10);
         f6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
-        k41 k41Var = new k41(context, i10, classGuid, true, eVar, cVar, null, f6Var);
-        this.c = k41Var;
-        k41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
-        k41Var.f3.r = false;
-        k41Var.setCaptureSectionsDecoratorAllowed(true);
-        k41Var.setClipToPadding(false);
-        k41Var.setOverScrollMode(0);
-        addView(k41Var, c8.ha.c(-1.0f, -1));
+        q41 q41Var = new q41(context, i10, classGuid, true, eVar, cVar, null, f6Var);
+        this.c = q41Var;
+        q41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
+        q41Var.f3.r = false;
+        q41Var.setCaptureSectionsDecoratorAllowed(true);
+        q41Var.setClipToPadding(false);
+        q41Var.setOverScrollMode(0);
+        addView(q41Var, c8.ha.c(-1.0f, -1));
         qVar = ((org.telegram.ui.ActionBar.f2) zVar).glassEngine;
-        qVar.b(k41Var);
-        k41Var.j(new ai.b(this, 2));
+        qVar.b(q41Var);
+        q41Var.j(new ai.b(this, 2));
     }
 
     public final void a() {

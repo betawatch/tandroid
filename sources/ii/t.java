@@ -12,9 +12,9 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements v10 {
     public final /* synthetic */ int a;
@@ -75,21 +75,21 @@ public final /* synthetic */ class t implements v10 {
             case 4:
                 ArrayList arrayList3 = (ArrayList) obj;
                 int i13 = d0.M1;
-                arrayList3.add(r31.E(99, Math.min(org.telegram.messenger.g0.L(176.0f) + org.telegram.messenger.g0.m, (int) (org.telegram.messenger.g0.q.y * 0.25f))));
-                arrayList3.add(r31.E(0, org.telegram.messenger.g0.L(56.0f)));
+                arrayList3.add(x31.E(99, Math.min(org.telegram.messenger.g0.L(176.0f) + org.telegram.messenger.g0.m, (int) (org.telegram.messenger.g0.q.y * 0.25f))));
+                arrayList3.add(x31.E(0, org.telegram.messenger.g0.L(56.0f)));
                 String M0 = hd.M0(2131751849, null);
-                r31 r31Var = new r31(39);
-                r31Var.d = 101;
-                r31Var.l = M0;
-                r31Var.z = 0;
-                r31Var.L(d0Var.n1);
-                arrayList3.add(r31Var);
-                arrayList3.add(r31.B(2, hd.M0(2131751848, null)));
+                x31 x31Var = new x31(39);
+                x31Var.d = 101;
+                x31Var.l = M0;
+                x31Var.z = 0;
+                x31Var.L(d0Var.n1);
+                arrayList3.add(x31Var);
+                arrayList3.add(x31.B(2, hd.M0(2131751848, null)));
                 l0 l0Var = d0Var.D1;
                 if (l0Var.n && l0Var.l == 1 && (arrayList = l0Var.j) != null && arrayList.size() == 1) {
-                    arrayList3.add(r31.t(3, hd.M0(2131751904, null)));
+                    arrayList3.add(x31.t(3, hd.M0(2131751904, null)));
                     l0Var.c(arrayList3);
-                    arrayList3.add(r31.E(5, org.telegram.messenger.g0.L(14.33f)));
+                    arrayList3.add(x31.E(5, org.telegram.messenger.g0.L(14.33f)));
                 } else {
                     int i14 = l0Var.l;
                     if (i14 > 0) {
@@ -97,7 +97,7 @@ public final /* synthetic */ class t implements v10 {
                         String M02 = i14 == i15 ? hd.M0(2131751895, null) : hd.G(i14, "CommunityPendingRequestsRow", new Object[0]);
                         String num = i15 > 0 ? Integer.toString(i15) : null;
                         int i16 = ji.i.b;
-                        r31 K = r31.K(ji.i.class);
+                        x31 K = x31.K(ji.i.class);
                         K.d = 100;
                         K.k = R.drawable.filled_requests_24;
                         K.l = M02;
@@ -105,7 +105,7 @@ public final /* synthetic */ class t implements v10 {
                         K.B = ((-15497247) << 32) | ((-14899731) & 4294967295L);
                         K.q = true;
                         arrayList3.add(K);
-                        arrayList3.add(r31.E(5, org.telegram.messenger.g0.L(14.33f)));
+                        arrayList3.add(x31.E(5, org.telegram.messenger.g0.L(14.33f)));
                     }
                 }
                 ui.e x10 = qp.s1(d0Var.a).x(d0Var.l1);
@@ -116,7 +116,7 @@ public final /* synthetic */ class t implements v10 {
                 if (arrayList7.isEmpty()) {
                     z9 = false;
                 } else {
-                    arrayList3.add(r31.t(21, hd.M0(2131751878, null)));
+                    arrayList3.add(x31.t(21, hd.M0(2131751878, null)));
                     int size = arrayList7.size();
                     int i17 = 0;
                     while (i17 < size) {
@@ -128,9 +128,9 @@ public final /* synthetic */ class t implements v10 {
                 }
                 if (!arrayList6.isEmpty()) {
                     if (z9) {
-                        arrayList3.add(r31.E(22, org.telegram.messenger.g0.L(12.0f)));
+                        arrayList3.add(x31.E(22, org.telegram.messenger.g0.L(12.0f)));
                     }
-                    arrayList3.add(r31.t(23, hd.M0(2131751875, null)));
+                    arrayList3.add(x31.t(23, hd.M0(2131751875, null)));
                     int size2 = arrayList6.size();
                     int i18 = 0;
                     while (i18 < size2) {
@@ -144,9 +144,9 @@ public final /* synthetic */ class t implements v10 {
                     z10 = z9;
                 } else {
                     if (z9) {
-                        arrayList3.add(r31.E(24, org.telegram.messenger.g0.L(12.0f)));
+                        arrayList3.add(x31.E(24, org.telegram.messenger.g0.L(12.0f)));
                     }
-                    arrayList3.add(r31.t(25, hd.M0(2131751876, null)));
+                    arrayList3.add(x31.t(25, hd.M0(2131751876, null)));
                     int size3 = arrayList5.size();
                     int i19 = 0;
                     while (i19 < size3) {
@@ -157,9 +157,9 @@ public final /* synthetic */ class t implements v10 {
                 }
                 if (!arrayList4.isEmpty()) {
                     if (z10) {
-                        arrayList3.add(r31.E(26, org.telegram.messenger.g0.L(12.0f)));
+                        arrayList3.add(x31.E(26, org.telegram.messenger.g0.L(12.0f)));
                     }
-                    arrayList3.add(r31.t(27, hd.M0(2131751873, null)));
+                    arrayList3.add(x31.t(27, hd.M0(2131751873, null)));
                     int size4 = arrayList4.size();
                     while (i11 < size4) {
                         Object obj6 = arrayList4.get(i11);
@@ -172,15 +172,15 @@ public final /* synthetic */ class t implements v10 {
             default:
                 ArrayList arrayList8 = (ArrayList) obj;
                 l0 l0Var2 = d0Var.D1;
-                arrayList8.add(r31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
-                arrayList8.add(r31.E(0, org.telegram.messenger.g0.L(48.0f)));
+                arrayList8.add(x31.E(99, (int) (org.telegram.messenger.g0.q.y * 0.35f)));
+                arrayList8.add(x31.E(0, org.telegram.messenger.g0.L(48.0f)));
                 if (t3.w(2, d0Var.m1)) {
-                    arrayList8.add(r31.B(1, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.M0(2131751894, null), new v(d0Var, i10)), true)));
+                    arrayList8.add(x31.B(1, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.M0(2131751894, null), new v(d0Var, i10)), true)));
                 } else {
-                    arrayList8.add(r31.B(1, hd.M0(2131751893, null)));
+                    arrayList8.add(x31.B(1, hd.M0(2131751893, null)));
                 }
-                arrayList8.add(r31.j(2, d0Var.C1));
-                arrayList8.add(r31.t(3, hd.G(l0Var2.l, "CommunityPendingRequestsSuggestedHeader", new Object[0])));
+                arrayList8.add(x31.j(2, d0Var.C1));
+                arrayList8.add(x31.t(3, hd.G(l0Var2.l, "CommunityPendingRequestsSuggestedHeader", new Object[0])));
                 l0Var2.c(arrayList8);
                 break;
         }

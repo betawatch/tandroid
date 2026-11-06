@@ -4,10 +4,10 @@ import android.content.Context;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.o50;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class v extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class v extends ClickableSpan {
                 vf.c.t(t0.b, (String) this.c);
                 break;
             case 1:
-                ((o50) this.b).a((org.telegram.ui.e4) this.c, (py0) this.d);
+                ((o50) this.b).a((org.telegram.ui.e4) this.c, (qy0) this.d);
                 break;
             default:
                 org.telegram.ui.ActionBar.u1 u1Var = ((org.telegram.ui.ActionBar.u1[]) this.b)[0];

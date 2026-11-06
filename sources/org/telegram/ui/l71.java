@@ -14,11 +14,11 @@ import android.util.StateSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l71 extends View {
-    public org.telegram.ui.Components.ly0 a;
-    public org.telegram.ui.Components.ly0 b;
+    public org.telegram.ui.Components.my0 a;
+    public org.telegram.ui.Components.my0 b;
     public boolean c;
     public final org.telegram.ui.Components.w5 d;
     public final org.telegram.ui.Cells.y e;
@@ -44,16 +44,16 @@ public final class l71 extends View {
     }
 
     public final CharSequence b() {
-        org.telegram.ui.Components.ly0 ly0Var = this.a;
-        if (ly0Var != null) {
-            return ly0Var.j();
+        org.telegram.ui.Components.my0 my0Var = this.a;
+        if (my0Var != null) {
+            return my0Var.j();
         }
         return null;
     }
 
     public final void c(SpannableStringBuilder spannableStringBuilder, boolean z9) {
         if (spannableStringBuilder != null) {
-            this.b = new org.telegram.ui.Components.ly0(spannableStringBuilder, 12.0f, null);
+            this.b = new org.telegram.ui.Components.my0(spannableStringBuilder, 12.0f, null);
         }
         boolean z10 = spannableStringBuilder != null;
         this.c = z10;
@@ -64,7 +64,7 @@ public final class l71 extends View {
     }
 
     public final void d(CharSequence charSequence) {
-        this.a = new org.telegram.ui.Components.ly0(charSequence, 14.0f, org.telegram.messenger.g0.o());
+        this.a = new org.telegram.ui.Components.my0(charSequence, 14.0f, org.telegram.messenger.g0.o());
     }
 
     @Override // android.view.View
@@ -94,17 +94,17 @@ public final class l71 extends View {
         paint2.setColor(520093695);
         canvas.drawRoundRect(rectF, height, height, paint2);
         float d2 = this.d.d(this.c);
-        org.telegram.ui.Components.ly0 ly0Var = this.a;
-        if (ly0Var != null) {
-            ly0Var.p = getWidth() - org.telegram.messenger.g0.L(14.0f);
-            ly0Var.c((getWidth() - this.a.k()) / 2.0f, ((org.telegram.messenger.g0.L(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (org.telegram.messenger.g0.L(7.0f) * d2), 1.0f, -1, canvas);
+        org.telegram.ui.Components.my0 my0Var = this.a;
+        if (my0Var != null) {
+            my0Var.p = getWidth() - org.telegram.messenger.g0.L(14.0f);
+            my0Var.c((getWidth() - this.a.k()) / 2.0f, ((org.telegram.messenger.g0.L(24.0f) * 0.0f) + (getHeight() / 2.0f)) - (org.telegram.messenger.g0.L(7.0f) * d2), 1.0f, -1, canvas);
         }
         if (this.b != null) {
             canvas.save();
             canvas.scale(d2, d2, getWidth() / 2.0f, (getHeight() / 2.0f) + org.telegram.messenger.g0.L(11.0f));
-            org.telegram.ui.Components.ly0 ly0Var2 = this.b;
-            ly0Var2.p = getWidth() - org.telegram.messenger.g0.L(14.0f);
-            ly0Var2.c((getWidth() - this.b.k()) / 2.0f, org.telegram.messenger.g0.L(11.0f) + (0.0f * org.telegram.messenger.g0.L(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.k6.r1(0.75f, -1), canvas);
+            org.telegram.ui.Components.my0 my0Var2 = this.b;
+            my0Var2.p = getWidth() - org.telegram.messenger.g0.L(14.0f);
+            my0Var2.c((getWidth() - this.b.k()) / 2.0f, org.telegram.messenger.g0.L(11.0f) + (0.0f * org.telegram.messenger.g0.L(24.0f)) + (getHeight() / 2.0f), 1.0f, org.telegram.ui.ActionBar.k6.r1(0.75f, -1), canvas);
             canvas.restore();
         }
         int width = getWidth();

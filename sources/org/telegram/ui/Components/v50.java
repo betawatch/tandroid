@@ -21,7 +21,7 @@ import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.ec1;
 import org.telegram.ui.kb1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -221,12 +221,12 @@ public final class v50 extends AnimatorListenerAdapter {
                 photoViewer.A2.start();
                 break;
             case 12:
-                org.telegram.ui.ts0 ts0Var = (org.telegram.ui.ts0) obj2;
-                PremiumPreviewFragment premiumPreviewFragment = ts0Var.n;
+                org.telegram.ui.us0 us0Var = (org.telegram.ui.us0) obj2;
+                PremiumPreviewFragment premiumPreviewFragment = us0Var.n;
                 ((View) obj).setVisibility(8);
                 for (int i14 = 0; i14 < premiumPreviewFragment.U.getChildCount(); i14++) {
                     View childAt2 = premiumPreviewFragment.U.getChildAt(i14);
-                    if (childAt2 != ts0Var.e) {
+                    if (childAt2 != us0Var.e) {
                         childAt2.setTranslationY(0.0f);
                     }
                 }
@@ -244,12 +244,12 @@ public final class v50 extends AnimatorListenerAdapter {
                 }
                 break;
             case 14:
-                org.telegram.ui.vq0 vq0Var = (org.telegram.ui.vq0) obj;
-                if (vq0Var != null) {
-                    vq0Var.a.O0(true, true);
+                org.telegram.ui.wq0 wq0Var = (org.telegram.ui.wq0) obj;
+                if (wq0Var != null) {
+                    wq0Var.a.O0(true, true);
                 }
                 ((SecretMediaViewer) obj2).s = false;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.qu0(this, 13));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ru0(this, 13));
                 break;
             case 15:
                 ((org.telegram.ui.g11) obj).run();

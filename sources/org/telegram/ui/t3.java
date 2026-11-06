@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t3 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.ActionBar.h3 {
     public ValueAnimator D;
@@ -62,7 +62,7 @@ public final class t3 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.A
         if (z9) {
             LaunchActivity.G1.w0.b(this);
         } else {
-            m(true, new fq0(this, 10));
+            m(true, new gq0(this, 10));
         }
         u();
         r();
@@ -192,7 +192,7 @@ public final class t3 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.A
         return ofFloat;
     }
 
-    public final void m(boolean z9, fq0 fq0Var) {
+    public final void m(boolean z9, gq0 gq0Var) {
         ValueAnimator valueAnimator = this.E;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -200,7 +200,7 @@ public final class t3 implements org.telegram.ui.ActionBar.b2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, z9 ? 1.0f : 0.0f);
         this.E = ofFloat;
         ofFloat.addUpdateListener(new q3(this, 2));
-        this.E.addListener(new ai.g0(this, z9, fq0Var, 5));
+        this.E.addListener(new ai.g0(this, z9, gq0Var, 5));
         this.E.setInterpolator(org.telegram.ui.Components.xq.h);
         this.E.setDuration(250L);
         this.E.start();

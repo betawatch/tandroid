@@ -1,8 +1,8 @@
 package org.telegram.ui.Wallet;
 
-import c8.ua;
+import c8.va;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,11 +17,11 @@ public final /* synthetic */ class s0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                w0 w0Var = ua.b;
+                w0 w0Var = va.b;
                 if (w0Var != null) {
                     if (this.b.equals(w0Var.d)) {
-                        ua.b.c("STORAGE_CANCELED");
-                        ua.b.e();
+                        va.b.c("STORAGE_CANCELED");
+                        va.b.e();
                         break;
                     }
                 }

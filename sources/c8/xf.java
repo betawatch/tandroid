@@ -1,8 +1,8 @@
 package c8;
 
-import org.telegram.ui.Components.xw0;
+import org.telegram.ui.Components.yw0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class xf implements l5.e {
     public static xf b;
@@ -39,7 +39,7 @@ public final class xf implements l5.e {
         aVar.b(qc.class, r6.a);
         aVar.b(pf.class, n4.a);
         aVar.b(pa.class, q4.a);
-        aVar.b(xw0.class, m4.a);
+        aVar.b(na.class, m4.a);
         aVar.b(rc.class, s6.a);
         aVar.b(fe.class, e8.a);
         aVar.b(ge.class, f8.a);
@@ -160,7 +160,7 @@ public final class xf implements l5.e {
         aVar.b(w0.class, l2.a);
         aVar.b(v0.class, m2.a);
         aVar.b(ra.class, s4.a);
-        aVar.b(na.class, p4.a);
+        aVar.b(yw0.class, p4.a);
         aVar.b(wc.class, x6.a);
         aVar.b(yc.class, z6.a);
         aVar.b(xc.class, y6.a);

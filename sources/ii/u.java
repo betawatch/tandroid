@@ -20,13 +20,13 @@ import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.b70;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.an;
 import org.telegram.ui.v91;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements a20, r0.m, b20 {
     public final /* synthetic */ int a;
@@ -50,13 +50,13 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
         long j3;
         boolean z10;
         boolean z11;
         int i7 = d0.M1;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         boolean z12 = obj instanceof TLRPC.Chat;
         d0 d0Var = this.b;
         boolean z13 = true;
@@ -101,27 +101,27 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         d0 d0Var = this.b;
         switch (i7) {
             case 0:
-                d0Var.L0((r31) obj);
+                d0Var.L0((x31) obj);
                 break;
             case 1:
             default:
                 int i10 = d0.M1;
-                d0Var.I0((r31) obj);
+                d0Var.I0((x31) obj);
                 break;
             case 2:
                 int i11 = d0.M1;
-                d0Var.L0((r31) obj);
+                d0Var.L0((x31) obj);
                 break;
             case 3:
-                r31 r31Var = (r31) obj;
+                x31 x31Var = (x31) obj;
                 View view = (View) obj2;
                 f2 f2Var = d0Var.q1;
-                if (!d0Var.I0(r31Var)) {
-                    int i12 = r31Var.d;
+                if (!d0Var.I0(x31Var)) {
+                    int i12 = x31Var.d;
                     boolean z9 = false;
                     if (i12 != 101) {
                         if (i12 != 100) {
-                            Object obj3 = r31Var.G;
+                            Object obj3 = x31Var.G;
                             if (obj3 instanceof TLRPC.Chat) {
                                 TLRPC.Chat chat2 = (TLRPC.Chat) obj3;
                                 z9 = t3.V(chat2);

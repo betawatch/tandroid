@@ -7,9 +7,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class i71 extends mq0 {
+public final class i71 extends nq0 {
     public final /* synthetic */ org.telegram.messenger.gf a;
     public final /* synthetic */ j71 b;
 
@@ -18,7 +18,7 @@ public final class i71 extends mq0 {
         this.a = gfVar;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
         u71 u71Var = this.b.a;
         org.telegram.messenger.gf gfVar = this.a;
@@ -42,7 +42,7 @@ public final class i71 extends mq0 {
         }
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean z() {
         return false;
     }

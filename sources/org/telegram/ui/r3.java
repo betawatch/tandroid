@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -106,24 +106,24 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.c20 {
                         a4.k a10 = org.telegram.messenger.i9.a(context, cVar);
                         ce0 ce0Var = be0Var.g0;
                         f6Var = ((org.telegram.ui.ActionBar.f2) ce0Var).resourceProvider;
-                        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(context, f6Var);
+                        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, f6Var);
                         if (((String) a10.c) != null) {
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131750529, null), (String) a10.c, null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131750529, null), (String) a10.c, null, null);
                         }
                         if (a10.b >= 0) {
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131750524, null), org.telegram.messenger.hd.a0(null, null, 2131750523, Integer.valueOf(a10.b + 1)), null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131750524, null), org.telegram.messenger.hd.a0(null, null, 2131750523, Integer.valueOf(a10.b + 1)), null, null);
                         }
                         if (((String) a10.f) != null) {
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131750525, null), ((String) a10.f).startsWith("+") ? pf.b.c().b((String) a10.f) : (String) a10.f, null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131750525, null), ((String) a10.f).startsWith("+") ? pf.b.c().b((String) a10.f) : (String) a10.f, null, null);
                         }
                         if (((String) a10.d) != null) {
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131750527, null), (String) a10.d, null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131750527, null), (String) a10.d, null, null);
                         }
                         if (((String) a10.e) != null) {
-                            sx0Var.c(org.telegram.messenger.hd.M0(2131750526, null), (String) a10.e, null, null);
+                            tx0Var.c(org.telegram.messenger.hd.M0(2131750526, null), (String) a10.e, null, null);
                         }
                         FrameLayout frameLayout = new FrameLayout(context);
-                        frameLayout.addView(sx0Var, c8.ha.d(-1, -2.0f, 55, 24.0f, 4.0f, 24.0f, 4.0f));
+                        frameLayout.addView(tx0Var, c8.ha.d(-1, -2.0f, 55, 24.0f, 4.0f, 24.0f, 4.0f));
                         final boolean[] zArr = new boolean[1];
                         f6Var2 = ((org.telegram.ui.ActionBar.f2) ce0Var).resourceProvider;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var2);
@@ -219,19 +219,19 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.c20 {
                 ((fi.g1) obj2).E(((Integer) obj).intValue());
                 break;
             case 20:
-                gs0 gs0Var = (gs0) obj2;
-                gs0Var.r = ((Integer) obj).intValue();
-                View B1 = gs0Var.d.B1(4);
+                hs0 hs0Var = (hs0) obj2;
+                hs0Var.r = ((Integer) obj).intValue();
+                View B1 = hs0Var.d.B1(4);
                 if (B1 instanceof org.telegram.ui.Cells.z8) {
                     org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) B1;
-                    if (z8Var.getFixedSize() <= 0 && gs0Var.r > 0) {
-                        z8Var.setText(gs0Var.b0());
-                        gs0Var.a0(true);
+                    if (z8Var.getFixedSize() <= 0 && hs0Var.r > 0) {
+                        z8Var.setText(hs0Var.b0());
+                        hs0Var.a0(true);
                         break;
                     }
                 }
-                gs0Var.d.f3.O(true);
-                gs0Var.a0(true);
+                hs0Var.d.f3.O(true);
+                hs0Var.a0(true);
                 break;
             case 21:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) obj2;

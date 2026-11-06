@@ -9,7 +9,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l10 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,20 +44,20 @@ public final /* synthetic */ class l10 implements Runnable {
                 }
                 break;
             case 4:
-                int i7 = my0.f;
+                int i7 = ny0.f;
                 break;
             case 5:
                 SharedPreferences.Editor edit = org.telegram.messenger.qp.e1().edit();
-                cz0.f = Boolean.TRUE;
+                dz0.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 6:
                 SharedPreferences.Editor edit2 = org.telegram.messenger.qp.e1().edit();
-                cz0.f = Boolean.TRUE;
+                dz0.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 7:
-                int i10 = g11.l0;
+                int i10 = m11.l0;
                 break;
             case 8:
                 org.telegram.messenger.vv.h();

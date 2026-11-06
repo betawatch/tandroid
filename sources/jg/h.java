@@ -4,47 +4,35 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.s3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.n01;
+import org.telegram.ui.Components.p01;
 import org.telegram.ui.Components.pw;
 import org.telegram.ui.f40;
 import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h extends v4.o {
     public final /* synthetic */ int b;
-    public ArrayList c;
-    public Object d;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ h() {
-        this.b = 6;
+    public /* synthetic */ h(Object obj, ArrayList arrayList, int i7) {
+        this.b = i7;
+        this.d = obj;
+        this.c = arrayList;
     }
 
     @Override // v4.o
     public final boolean a(int i7, int i10) {
         switch (this.b) {
             case 0:
-                return ((l) ((n) this.d).N.get(i7)).a == ((l) this.c.get(i10)).a;
-            case 1:
-                return true;
-            case 2:
-                return b(i7, i10);
-            case 3:
-                return false;
-            case 4:
-                return true;
-            case 5:
-                return true;
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) ((ArrayList) this.d).get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
+                if (((l) ((n) this.d).N.get(i7)).a == ((l) this.c.get(i10)).a) {
                 }
-                return aVar.a(aVar2);
+                break;
         }
+        return true;
     }
 
     @Override // v4.o
@@ -67,7 +55,7 @@ public final class h extends v4.o {
             case 2:
                 return Objects.equals(this.c.get(i7), ((kj0) this.d).n.get(i10));
             case 3:
-                return ((l01) this.c.get(i7)).a() == ((l01) ((k01) this.d).c.get(i10)).a();
+                return ((p01) this.c.get(i7)).a() == ((p01) ((n01) this.d).c.get(i10)).a();
             case 4:
                 f40 f40Var = (f40) this.d;
                 ArrayList arrayList = this.c;
@@ -75,15 +63,8 @@ public final class h extends v4.o {
                     return false;
                 }
                 return ((s3) arrayList.get(i7)).equals(f40Var.e.get(i10));
-            case 5:
-                return ((Long) this.c.get(i7)).equals(((q11) this.d).v0.get(i10));
             default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) ((ArrayList) this.d).get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.equals(aVar2);
+                return ((Long) this.c.get(i7)).equals(((q11) this.d).v0.get(i10));
         }
     }
 
@@ -97,13 +78,11 @@ public final class h extends v4.o {
             case 2:
                 return ((kj0) this.d).n.size();
             case 3:
-                return ((k01) this.d).c.size();
+                return ((n01) this.d).c.size();
             case 4:
                 return ((f40) this.d).e.size();
-            case 5:
-                return ((q11) this.d).v0.size();
             default:
-                return ((ArrayList) this.d).size();
+                return ((q11) this.d).v0.size();
         }
     }
 
@@ -112,11 +91,5 @@ public final class h extends v4.o {
         switch (this.b) {
         }
         return this.c.size();
-    }
-
-    public /* synthetic */ h(Object obj, ArrayList arrayList, int i7) {
-        this.b = i7;
-        this.d = obj;
-        this.c = arrayList;
     }
 }

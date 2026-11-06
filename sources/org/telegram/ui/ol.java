@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ol extends org.telegram.ui.Components.rt0 {
     public int f0;
@@ -1158,7 +1158,7 @@ public final class ol extends org.telegram.ui.Components.rt0 {
                                     float left3 = slVar4.getLeft();
                                     slVar5 = anVar.z0;
                                     float right2 = slVar5.getRight();
-                                    float measuredHeight8 = (((getMeasuredHeight() - viVar.e()) - anVar.Wc) - anVar.r9(org.telegram.ui.Components.c11.c)) - org.telegram.messenger.g0.L(f21);
+                                    float measuredHeight8 = (((getMeasuredHeight() - viVar.e()) - anVar.Wc) - anVar.r9(org.telegram.ui.Components.i11.c)) - org.telegram.messenger.g0.L(f21);
                                     g90Var3 = anVar.W1;
                                     if (g90Var3 == null) {
                                         g90Var4 = anVar.W1;
@@ -1478,7 +1478,7 @@ public final class ol extends org.telegram.ui.Components.rt0 {
                             float left32 = slVar4.getLeft();
                             slVar5 = anVar.z0;
                             float right22 = slVar5.getRight();
-                            float measuredHeight82 = (((getMeasuredHeight() - viVar.e()) - anVar.Wc) - anVar.r9(org.telegram.ui.Components.c11.c)) - org.telegram.messenger.g0.L(f21);
+                            float measuredHeight82 = (((getMeasuredHeight() - viVar.e()) - anVar.Wc) - anVar.r9(org.telegram.ui.Components.i11.c)) - org.telegram.messenger.g0.L(f21);
                             g90Var3 = anVar.W1;
                             if (g90Var3 == null) {
                             }
@@ -1968,9 +1968,9 @@ public final class ol extends org.telegram.ui.Components.rt0 {
                             }
                             g1Var.d = 0;
                             g1Var.c = 1.0f;
-                            org.telegram.ui.Components.f61 f61Var = g1Var.M;
-                            if (f61Var != null) {
-                                f61Var.e(1.0f, 0, g1Var.b);
+                            org.telegram.ui.Components.k61 k61Var = g1Var.M;
+                            if (k61Var != null) {
+                                k61Var.e(1.0f, 0, g1Var.b);
                             }
                             g1Var.x(false);
                         }
@@ -1991,8 +1991,8 @@ public final class ol extends org.telegram.ui.Components.rt0 {
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         an anVar = this.w0;
-        org.telegram.ui.Components.n01 n01Var = anVar.m0;
-        float progress = (view == n01Var || view == this.L || view == anVar.Y || (view instanceof org.telegram.ui.ActionBar.i5) || n01Var == null) ? 0.0f : n01Var.getProgress() * anVar.m0.getContentWidth();
+        org.telegram.ui.Components.s01 s01Var = anVar.m0;
+        float progress = (view == s01Var || view == this.L || view == anVar.Y || (view instanceof org.telegram.ui.ActionBar.i5) || s01Var == null) ? 0.0f : s01Var.getProgress() * anVar.m0.getContentWidth();
         if (progress <= 0.0f) {
             return Z(canvas, view, j3);
         }

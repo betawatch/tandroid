@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c50 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class c50 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 m50 m50Var = ((h50) this.h).c;
-                dy0.b(m50Var.getContext(), m50Var.a, -m50Var.X1, this.b, this.c, this.d, this.e, this.f, m50Var.I0);
+                ey0.b(m50Var.getContext(), m50Var.a, -m50Var.X1, this.b, this.c, this.d, this.e, this.f, m50Var.I0);
                 break;
             default:
                 xs0 xs0Var = ((kr0) this.h).f;
-                dy0.b(xs0Var.getContext(), xs0Var.x1.getCurrentAccount(), xs0Var.l1, this.b, this.c, this.d, this.e, this.f, xs0Var.H1);
+                ey0.b(xs0Var.getContext(), xs0Var.x1.getCurrentAccount(), xs0Var.l1, this.b, this.c, this.d, this.e, this.f, xs0Var.H1);
                 break;
         }
     }

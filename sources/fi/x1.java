@@ -34,11 +34,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.a31;
+import org.telegram.ui.Components.g31;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -489,12 +489,12 @@ public final /* synthetic */ class x1 implements Runnable {
                 String str7 = tL_messages_searchStickerSets.q;
                 jg.d2 d2Var = b2Var.a;
                 String str8 = d2Var.R;
-                a31 a31Var = d2Var.e;
+                g31 g31Var = d2Var.e;
                 if (str7.equals(str8)) {
                     b2Var.a();
-                    a31Var.b.h.getProgressDrawable().e = false;
+                    g31Var.b.h.getProgressDrawable().e = false;
                     d2Var.N = 0;
-                    a31Var.b(true);
+                    g31Var.b(true);
                     d2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     d2Var.f();
                     return;

@@ -5,10 +5,10 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.b70;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.w60;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mc implements v10 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class mc implements v10 {
         TLRPC.Updates updates;
         switch (this.a) {
             case 0:
-                oc.d1((oc) this.c, (r31) this.d, this.b, (Boolean) obj, (String) obj2);
+                oc.d1((oc) this.c, (x31) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             case 1:
                 b70 b70Var = (b70) this.c;

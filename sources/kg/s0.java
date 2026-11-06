@@ -16,16 +16,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b5;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class s0 extends f2 implements ls {
     public b5 a;
-    public k41 b;
+    public q41 b;
     public a0 c;
     public final int[] d;
     public final String[] e;
@@ -54,42 +54,42 @@ public final class s0 extends f2 implements ls {
         }
     }
 
-    public static void Z(s0 s0Var, ArrayList arrayList, f41 f41Var) {
+    public static void Z(s0 s0Var, ArrayList arrayList, l41 l41Var) {
         String M0 = hd.M0(2131752775, null);
         String M02 = hd.M0(2131752773, null);
-        r31 r31Var = new r31(2);
-        r31Var.l = M0;
-        r31Var.o = M02;
-        r31Var.m = "RestrictedEmoji";
-        r31Var.n = "👋";
-        arrayList.add(r31Var);
-        r31 i7 = r31.i(1, hd.M0(2131752769, null));
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.m = "RestrictedEmoji";
+        x31Var.n = "👋";
+        arrayList.add(x31Var);
+        x31 i7 = x31.i(1, hd.M0(2131752769, null));
         i7.L(s0Var.r);
         arrayList.add(i7);
-        arrayList.add(r31.C(null));
+        arrayList.add(x31.C(null));
         if (s0Var.r) {
             s1 d = t1.f(s0Var.currentAccount).d("hello");
             if (d != null) {
-                r31 r31Var2 = new r31(17);
-                r31Var2.G = d;
-                arrayList.add(r31Var2);
+                x31 x31Var2 = new x31(17);
+                x31Var2.G = d;
+                arrayList.add(x31Var2);
             } else {
-                r31 c10 = r31.c(2, R.drawable.msg2_chats_add, hd.M0(2131752774, null));
+                x31 c10 = x31.c(2, R.drawable.msg2_chats_add, hd.M0(2131752774, null));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(r31.C(null));
-            arrayList.add(r31.u(hd.M0(2131752688, null)));
-            r31 x10 = r31.x(3, hd.M0(2131752781, null));
+            arrayList.add(x31.C(null));
+            arrayList.add(x31.u(hd.M0(2131752688, null)));
+            x31 x10 = x31.x(3, hd.M0(2131752781, null));
             x10.L(s0Var.s);
             arrayList.add(x10);
-            r31 x11 = r31.x(4, hd.M0(2131752776, null));
+            x31 x11 = x31.x(4, hd.M0(2131752776, null));
             x11.L(!s0Var.s);
             arrayList.add(x11);
-            arrayList.add(r31.C(null));
-            s0Var.c.a(arrayList, f41Var, true);
-            arrayList.add(r31.C(hd.M0(2131752770, null)));
-            arrayList.add(r31.u(hd.M0(2131752772, null)));
+            arrayList.add(x31.C(null));
+            s0Var.c.a(arrayList, l41Var, true);
+            arrayList.add(x31.C(hd.M0(2131752770, null)));
+            arrayList.add(x31.u(hd.M0(2131752772, null)));
             int i10 = 0;
             while (true) {
                 int[] iArr = s0Var.d;
@@ -104,13 +104,13 @@ public final class s0 extends f2 implements ls {
             }
             String[] strArr = s0Var.e;
             ii.c cVar = new ii.c(s0Var, 6);
-            r31 r31Var3 = new r31(14);
-            r31Var3.p = strArr;
-            r31Var3.z = i10;
-            r31Var3.C = cVar;
-            r31Var3.B = -1L;
-            arrayList.add(r31Var3);
-            arrayList.add(r31.C(hd.M0(2131752771, null)));
+            x31 x31Var3 = new x31(14);
+            x31Var3.p = strArr;
+            x31Var3.z = i10;
+            x31Var3.C = cVar;
+            x31Var3.B = -1L;
+            arrayList.add(x31Var3);
+            arrayList.add(x31.C(hd.M0(2131752771, null)));
         }
     }
 
@@ -193,20 +193,20 @@ public final class s0 extends f2 implements ls {
         a0Var.n = true;
         TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = this.n;
         a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
-        k41 k41Var = new k41(this, new hi.u1(this, 9), new r0(this, 2), null);
-        this.b = k41Var;
-        k41Var.r1();
+        q41 q41Var = new q41(this, new hi.u1(this, 9), new r0(this, 2), null);
+        this.b = q41Var;
+        q41Var.r1();
         this.b.setSectionsDrawBackground(true);
-        k41 k41Var2 = this.b;
-        k41Var2.f3.r = false;
-        frameLayout.addView(k41Var2, ha.c(-1.0f, -1));
+        q41 q41Var2 = this.b;
+        q41Var2.f3.r = false;
+        frameLayout.addView(q41Var2, ha.c(-1.0f, -1));
         d0();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     public final void d0() {
-        f41 f41Var;
+        l41 l41Var;
         if (this.f) {
             return;
         }
@@ -224,9 +224,9 @@ public final class s0 extends f2 implements ls {
         if (a0Var != null) {
             a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
         }
-        k41 k41Var = this.b;
-        if (k41Var != null && (f41Var = k41Var.f3) != null) {
-            f41Var.O(true);
+        q41 q41Var = this.b;
+        if (q41Var != null && (l41Var = q41Var.f3) != null) {
+            l41Var.O(true);
         }
         a0(true);
         this.f = true;
@@ -234,15 +234,15 @@ public final class s0 extends f2 implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        f41 f41Var;
+        l41 l41Var;
         if (i7 != qs.F1) {
             if (i7 == qs.E0) {
                 d0();
             }
         } else {
-            k41 k41Var = this.b;
-            if (k41Var != null && (f41Var = k41Var.f3) != null) {
-                f41Var.O(true);
+            q41 q41Var = this.b;
+            if (q41Var != null && (l41Var = q41Var.f3) != null) {
+                l41Var.O(true);
             }
             a0(true);
         }

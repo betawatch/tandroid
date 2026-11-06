@@ -87,8 +87,8 @@ import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.Wallet.v1;
@@ -97,7 +97,7 @@ import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 import v4.l0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, a20, t4, r1, bg.p, te.b, gl0, j, i, com.google.android.gms.common.api.internal.p, dj0, w10, cj0 {
     public final /* synthetic */ int a;
@@ -1327,9 +1327,9 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         switch (this.a) {
             case 10:
                 y yVar = (y) this.b;
-                r31 r31Var = (r31) obj;
+                x31 x31Var = (x31) obj;
                 z zVar = yVar.r;
-                if (!(r31Var.G instanceof TL_stars.StarsTransaction)) {
+                if (!(x31Var.G instanceof TL_stars.StarsTransaction)) {
                     if (yVar.h) {
                         yVar.h = false;
                         yVar.a();
@@ -1339,7 +1339,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     Context context = yVar.getContext();
                     long j3 = zVar.b;
                     i7 = ((f2) zVar).currentAccount;
-                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) r31Var.G;
+                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) x31Var.G;
                     f6Var = ((f2) zVar).resourceProvider;
                     dd.k1(context, true, j3, i7, starsTransaction, f6Var);
                     break;
@@ -1350,9 +1350,9 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 break;
             default:
                 ad adVar = (ad) this.b;
-                r31 r31Var2 = (r31) obj;
-                if (r31Var2.G instanceof TL_stars.StarsTransaction) {
-                    dd.k1(adVar.getContext(), false, 0L, adVar.c, (TL_stars.StarsTransaction) r31Var2.G, adVar.b);
+                x31 x31Var2 = (x31) obj;
+                if (x31Var2.G instanceof TL_stars.StarsTransaction) {
+                    dd.k1(adVar.getContext(), false, 0L, adVar.c, (TL_stars.StarsTransaction) x31Var2.G, adVar.b);
                     break;
                 }
                 break;

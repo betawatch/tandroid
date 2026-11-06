@@ -3,20 +3,20 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class i4 extends v31 {
+public final class i4 extends b41 {
     public final /* synthetic */ int e;
     public Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ i4(Object obj, int i7) {
-        super("@stickers", (ty0) null);
+        super("@stickers", (uy0) null);
         this.e = i7;
         this.f = obj;
     }
 
-    @Override // org.telegram.ui.Components.v31, android.text.style.URLSpan, android.text.style.ClickableSpan
+    @Override // org.telegram.ui.Components.b41, android.text.style.URLSpan, android.text.style.ClickableSpan
     public final void onClick(View view) {
         int i7;
         int i10;
@@ -53,20 +53,20 @@ public final class i4 extends v31 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ i4(String str, int i7, Object obj) {
-        super(str, (ty0) null);
+        super(str, (uy0) null);
         this.e = i7;
         this.f = obj;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i4(String str, ty0 ty0Var) {
-        super(str, ty0Var);
+    public /* synthetic */ i4(String str, uy0 uy0Var) {
+        super(str, uy0Var);
         this.e = 2;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i4(String str, org.telegram.ui.ActionBar.f2 f2Var) {
-        super(str, (ty0) null);
+        super(str, (uy0) null);
         this.e = 0;
         this.f = f2Var;
     }

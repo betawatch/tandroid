@@ -55,37 +55,37 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.ms;
-import org.telegram.ui.Components.o61;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.sx0;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.n41;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.xz;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.c61;
 import org.telegram.ui.fk0;
-import org.telegram.ui.fq0;
+import org.telegram.ui.gq0;
 import org.telegram.ui.oa0;
 import org.telegram.ui.p90;
 import org.telegram.ui.r81;
 import org.telegram.ui.ya1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class y5 extends h41 implements ls {
+public final class y5 extends n41 implements ls {
     public static Typeface U0;
     public float A0;
     public fi.d B0;
@@ -103,7 +103,7 @@ public final class y5 extends h41 implements ls {
     public ai.i0 M0;
     public int N0;
     public SpannableString Q0;
-    public p41 R;
+    public v41 R;
     public boolean R0;
     public i5 S;
     public boolean S0;
@@ -122,7 +122,7 @@ public final class y5 extends h41 implements ls {
     public m5 e;
     public j5 f;
     public boolean f0;
-    public o61 g0;
+    public u61 g0;
     public int h;
     public FrameLayout h0;
     public t8 i0;
@@ -172,7 +172,7 @@ public final class y5 extends h41 implements ls {
     public final int[] Q = new int[2];
     public int e0 = 0;
     public String k0 = "";
-    public final k41[] r0 = new k41[2];
+    public final q41[] r0 = new q41[2];
     public final f4 G0 = new f4(this, 3);
     public final f4 K0 = new f4(this, 4);
     public final CharSequence[] O0 = new CharSequence[2];
@@ -199,7 +199,7 @@ public final class y5 extends h41 implements ls {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v3, types: [org.telegram.ui.Components.p61, org.telegram.ui.Wallet.y4] */
+    /* JADX WARN: Type inference failed for: r4v3, types: [org.telegram.ui.Components.v61, org.telegram.ui.Wallet.y4] */
     public static void G0(Context context, int i7, TL_wallet.walletTransaction wallettransaction, x10 x10Var, v10 v10Var, byte[] bArr, org.telegram.ui.Cells.m0 m0Var, org.telegram.ui.ActionBar.f6 f6Var) {
         a3[] a3VarArr;
         View[] viewArr;
@@ -254,7 +254,7 @@ public final class y5 extends h41 implements ls {
         a3[] a3VarArr3 = a3VarArr;
         a5 a5Var = new a5(context, t02, f6Var, t02, viewArr, context);
         a3VarArr3[0] = a5Var;
-        if ((t02 instanceof p61) && v10Var2 != null) {
+        if ((t02 instanceof v61) && v10Var2 != null) {
             a5Var.n(new n(9, v10Var2, wallettransaction));
         }
         a3VarArr3[0].A0(x10Var != null);
@@ -401,14 +401,14 @@ public final class y5 extends h41 implements ls {
         return spannableStringBuilder;
     }
 
-    public static void Y0(k41 k41Var, boolean z9) {
-        boolean canScrollVertically = k41Var.canScrollVertically(-1);
-        k41Var.f3.O(z9);
-        k41Var.a0();
+    public static void Y0(q41 q41Var, boolean z9) {
+        boolean canScrollVertically = q41Var.canScrollVertically(-1);
+        q41Var.f3.O(z9);
+        q41Var.a0();
         if (canScrollVertically) {
             return;
         }
-        k41Var.e3.h1(0, 0);
+        q41Var.e3.h1(0, 0);
     }
 
     public static Uri b1(String str) {
@@ -632,7 +632,7 @@ public final class y5 extends h41 implements ls {
         I.s = 0;
         I.V(5);
         k60 J = I.J();
-        J.c(R.drawable.ic_ab_back, hd.M0(2131743193, null), new fq0(I, 27), false);
+        J.c(R.drawable.ic_ab_back, hd.M0(2131743193, null), new gq0(I, 27), false);
         J.k();
         ScrollView scrollView = new ScrollView(context);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -870,7 +870,7 @@ public final class y5 extends h41 implements ls {
         int i10;
         int i11;
         ImageView imageView3;
-        sx0 sx0Var;
+        tx0 tx0Var;
         SpannableString[] spannableStringArr;
         LinearLayout linearLayout;
         final String[] strArr;
@@ -993,9 +993,9 @@ public final class y5 extends h41 implements ls {
                                     i16++;
                                 }
                                 SpannableString spannableString = new SpannableString(sb2.toString());
-                                ty0 ty0Var = new ty0();
-                                ty0Var.a |= 256;
-                                spannableString.setSpan(new uy0(ty0Var, 0), 0, spannableString.length(), 33);
+                                uy0 uy0Var = new uy0();
+                                uy0Var.a |= 256;
+                                spannableString.setSpan(new vy0(uy0Var, 0), 0, spannableString.length(), 33);
                                 lVar.setText(spannableString);
                                 org.telegram.ui.ActionBar.t4 t4Var = new org.telegram.ui.ActionBar.t4(0, false, false, null);
                                 t4Var.x = false;
@@ -1013,8 +1013,8 @@ public final class y5 extends h41 implements ls {
                                 lVar.setOnClickListener(new lb(new boolean[]{false}, a3VarArr, f6Var2, lVar, wallettransaction, i7, str));
                                 SpannableString[] spannableStringArr2 = new SpannableString[i11];
                                 TextView[] textViewArr2 = new TextView[i11];
-                                sx0 sx0Var2 = new sx0(context, f6Var2);
-                                f11.addView(sx0Var2, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
+                                tx0 tx0Var2 = new tx0(context, f6Var2);
+                                f11.addView(tx0Var2, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
                                 String[] strArr2 = {wallettransaction.comment};
                                 final boolean[] zArr2 = {(wallettransaction.comment_encrypted || (z10 && bArr == null)) ? false : true};
                                 if (x10Var == null) {
@@ -1030,7 +1030,7 @@ public final class y5 extends h41 implements ls {
                                     final Runnable[] runnableArr = new Runnable[1];
                                     ImageView imageView7 = imageView;
                                     final ee eeVar = new ee(runnableArr, textViewArr2, i7, f6Var2, wallettransaction, strArr2, zArr2, bArr);
-                                    sx0Var = sx0Var2;
+                                    tx0Var = tx0Var2;
                                     textViewArr = textViewArr2;
                                     wallettransaction2 = wallettransaction;
                                     c5 c5Var2 = new c5(context, f6Var2);
@@ -1154,7 +1154,7 @@ public final class y5 extends h41 implements ls {
                                     linearLayout.addView(frameLayout, c8.ha.k(14.0f, 12.0f, 14.0f, 8.0f, -1, -2));
                                 } else {
                                     imageView3 = imageView;
-                                    sx0Var = sx0Var2;
+                                    tx0Var = tx0Var2;
                                     spannableStringArr = spannableStringArr2;
                                     linearLayout = f11;
                                     strArr = strArr2;
@@ -1167,7 +1167,7 @@ public final class y5 extends h41 implements ls {
                                 h.setText(hd.M0(2131747830, null));
                                 linearLayout.addView(h, c8.ha.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                                 TL_wallet.walletTransaction[] wallettransactionArr = {wallettransaction2};
-                                di.r rVar = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, sx0Var, x10Var, context, textViewArr, spannableStringArr);
+                                di.r rVar = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, tx0Var, x10Var, context, textViewArr, spannableStringArr);
                                 LinearLayout linearLayout3 = linearLayout;
                                 linearLayout3.setTag(new n(10, rVar, wallettransactionArr));
                                 rVar.a(wallettransaction2);
@@ -1295,8 +1295,8 @@ public final class y5 extends h41 implements ls {
                     i10 = 8;
                     SpannableString[] spannableStringArr22 = new SpannableString[i11];
                     TextView[] textViewArr22 = new TextView[i11];
-                    sx0 sx0Var22 = new sx0(context, f6Var2);
-                    f11.addView(sx0Var22, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
+                    tx0 tx0Var22 = new tx0(context, f6Var2);
+                    f11.addView(tx0Var22, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
                     String[] strArr22 = {wallettransaction.comment};
                     final boolean[] zArr22 = {(wallettransaction.comment_encrypted || (z10 && bArr == null)) ? false : true};
                     if (x10Var == null) {
@@ -1305,7 +1305,7 @@ public final class y5 extends h41 implements ls {
                     h7.setText(hd.M0(2131747830, null));
                     linearLayout.addView(h7, c8.ha.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                     TL_wallet.walletTransaction[] wallettransactionArr2 = {wallettransaction2};
-                    di.r rVar2 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, sx0Var, x10Var, context, textViewArr, spannableStringArr);
+                    di.r rVar2 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, tx0Var, x10Var, context, textViewArr, spannableStringArr);
                     LinearLayout linearLayout32 = linearLayout;
                     linearLayout32.setTag(new n(10, rVar2, wallettransactionArr2));
                     rVar2.a(wallettransaction2);
@@ -1343,8 +1343,8 @@ public final class y5 extends h41 implements ls {
             i10 = 8;
             SpannableString[] spannableStringArr222 = new SpannableString[i11];
             TextView[] textViewArr222 = new TextView[i11];
-            sx0 sx0Var222 = new sx0(context, f6Var2);
-            f11.addView(sx0Var222, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
+            tx0 tx0Var222 = new tx0(context, f6Var2);
+            f11.addView(tx0Var222, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
             String[] strArr222 = {wallettransaction.comment};
             final boolean[] zArr222 = {(wallettransaction.comment_encrypted || (z10 && bArr == null)) ? false : true};
             if (x10Var == null) {
@@ -1353,7 +1353,7 @@ public final class y5 extends h41 implements ls {
             h72.setText(hd.M0(2131747830, null));
             linearLayout.addView(h72, c8.ha.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
             TL_wallet.walletTransaction[] wallettransactionArr22 = {wallettransaction2};
-            di.r rVar22 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, sx0Var, x10Var, context, textViewArr, spannableStringArr);
+            di.r rVar22 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, tx0Var, x10Var, context, textViewArr, spannableStringArr);
             LinearLayout linearLayout322 = linearLayout;
             linearLayout322.setTag(new n(10, rVar22, wallettransactionArr22));
             rVar22.a(wallettransaction2);
@@ -1391,8 +1391,8 @@ public final class y5 extends h41 implements ls {
         i10 = 8;
         SpannableString[] spannableStringArr2222 = new SpannableString[i11];
         TextView[] textViewArr2222 = new TextView[i11];
-        sx0 sx0Var2222 = new sx0(context, f6Var2);
-        f11.addView(sx0Var2222, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
+        tx0 tx0Var2222 = new tx0(context, f6Var2);
+        f11.addView(tx0Var2222, c8.ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, -2));
         String[] strArr2222 = {wallettransaction.comment};
         final boolean[] zArr2222 = {(wallettransaction.comment_encrypted || (z10 && bArr == null)) ? false : true};
         if (x10Var == null) {
@@ -1401,7 +1401,7 @@ public final class y5 extends h41 implements ls {
         h722.setText(hd.M0(2131747830, null));
         linearLayout.addView(h722, c8.ha.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
         TL_wallet.walletTransaction[] wallettransactionArr222 = {wallettransaction2};
-        di.r rVar222 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, sx0Var, x10Var, context, textViewArr, spannableStringArr);
+        di.r rVar222 = new di.r(linearLayout, b5Var, f6Var2, i7, textView, a3VarArr, tx0Var, x10Var, context, textViewArr, spannableStringArr);
         LinearLayout linearLayout3222 = linearLayout;
         linearLayout3222.setTag(new n(10, rVar222, wallettransactionArr222));
         rVar222.a(wallettransaction2);
@@ -1467,8 +1467,8 @@ public final class y5 extends h41 implements ls {
 
     public final void D0() {
         f0 f0Var;
-        k41 k41Var = this.r0[1];
-        if (this.e0 != 1 || k41Var == null || !k41Var.G || (f0Var = this.E0) == null || f0Var.i || f0Var.g || f0Var.k != null || k41Var.e3.N0() < k41Var.f3.D.size() - 3) {
+        q41 q41Var = this.r0[1];
+        if (this.e0 != 1 || q41Var == null || !q41Var.G || (f0Var = this.E0) == null || f0Var.i || f0Var.g || f0Var.k != null || q41Var.e3.N0() < q41Var.f3.D.size() - 3) {
             return;
         }
         this.E0.e();
@@ -1476,8 +1476,8 @@ public final class y5 extends h41 implements ls {
 
     public final void E0() {
         m0 m0Var;
-        k41 k41Var = this.r0[0];
-        if (k41Var == null || !k41Var.G || (m0Var = this.D0) == null || m0Var.h || k41Var.e3.N0() < k41Var.f3.D.size() - 3) {
+        q41 q41Var = this.r0[0];
+        if (q41Var == null || !q41Var.G || (m0Var = this.D0) == null || m0Var.h || q41Var.e3.N0() < q41Var.f3.D.size() - 3) {
             return;
         }
         this.D0.h();
@@ -1598,13 +1598,13 @@ public final class y5 extends h41 implements ls {
             }
             ArrayList<TL_wallet.nftAttribute> arrayList = nftitem.attributes;
             if (arrayList != null && !arrayList.isEmpty()) {
-                sx0 sx0Var = new sx0(parentActivity, resourceProvider);
+                tx0 tx0Var = new tx0(parentActivity, resourceProvider);
                 int L2 = org.telegram.messenger.g0.L(10.0f);
                 int i17 = org.telegram.ui.ActionBar.k6.d6;
                 ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L2, org.telegram.ui.ActionBar.k6.w0(i17, resourceProvider));
                 org.telegram.ui.ActionBar.n6 N3 = org.telegram.ui.ActionBar.r6.N(i17);
-                sx0Var.setBackground(d02);
-                org.telegram.ui.ActionBar.r6.k(sx0Var, d02, N3, null, resourceProvider);
+                tx0Var.setBackground(d02);
+                org.telegram.ui.ActionBar.r6.k(tx0Var, d02, N3, null, resourceProvider);
                 ArrayList<TL_wallet.nftAttribute> arrayList2 = nftitem.attributes;
                 int size = arrayList2.size();
                 int i18 = 0;
@@ -1612,9 +1612,9 @@ public final class y5 extends h41 implements ls {
                     TL_wallet.nftAttribute nftattribute = arrayList2.get(i18);
                     i18++;
                     TL_wallet.nftAttribute nftattribute2 = nftattribute;
-                    sx0Var.c(nftattribute2.trait_type, nftattribute2.value, null, null);
+                    tx0Var.c(nftattribute2.trait_type, nftattribute2.value, null, null);
                 }
-                linearLayout.addView(sx0Var, c8.ha.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
+                linearLayout.addView(tx0Var, c8.ha.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
             }
             fi.d dVar = new fi.d(parentActivity, resourceProvider, true);
             dVar.setRoundRadius(24);
@@ -2080,13 +2080,13 @@ public final class y5 extends h41 implements ls {
     public final void X0(boolean z9) {
         boolean N0 = N0();
         fi.w3 w3Var = this.a;
-        k41[] k41VarArr = this.r0;
+        q41[] q41VarArr = this.r0;
         if (w3Var != null && this.o0 != N0) {
             this.o0 = N0;
             w3Var.C0();
-            for (k41 k41Var : k41VarArr) {
-                if (k41Var != null) {
-                    k41Var.C0();
+            for (q41 q41Var : q41VarArr) {
+                if (q41Var != null) {
+                    q41Var.C0();
                 }
             }
             this.a.f3.O(false);
@@ -2096,9 +2096,9 @@ public final class y5 extends h41 implements ls {
         if (N0) {
             return;
         }
-        for (k41 k41Var2 : k41VarArr) {
-            if (k41Var2 != null) {
-                Y0(k41Var2, z9);
+        for (q41 q41Var2 : q41VarArr) {
+            if (q41Var2 != null) {
+                Y0(q41Var2, z9);
             }
         }
         bi.t tVar = this.n0;
@@ -2108,55 +2108,55 @@ public final class y5 extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         n0 x10 = n0.x(this.currentAccount);
         a1();
-        arrayList.add(r31.m(this.R));
+        arrayList.add(x31.m(this.R));
         this.h = arrayList.size();
         j5 j5Var = this.f;
-        r31 r31Var = new r31(-4);
-        r31Var.c = j5Var;
-        r31Var.z = -1;
-        r31Var.e = true;
-        arrayList.add(r31Var);
-        arrayList.add(r31.m(this.z0));
+        x31 x31Var = new x31(-4);
+        x31Var.c = j5Var;
+        x31Var.z = -1;
+        x31Var.e = true;
+        arrayList.add(x31Var);
+        arrayList.add(x31.m(this.z0));
         boolean N0 = N0();
         this.o0 = N0;
         if (N0) {
             String M0 = hd.M0(2131743020, null);
             String M02 = hd.M0(2131743019, null);
             int i7 = q5.b;
-            r31 K = r31.K(q5.class);
+            x31 K = x31.K(q5.class);
             K.k = R.drawable.wallet_learn_instant;
             K.l = M0;
             K.m = M02;
             arrayList.add(K);
             String M03 = hd.M0(2131743069, null);
             String M04 = hd.M0(2131743068, null);
-            r31 K2 = r31.K(q5.class);
+            x31 K2 = x31.K(q5.class);
             K2.k = R.drawable.wallet_learn_fees;
             K2.l = M03;
             K2.m = M04;
             arrayList.add(K2);
             String M05 = hd.M0(2131743183, null);
             String M06 = hd.M0(2131743182, null);
-            r31 K3 = r31.K(q5.class);
+            x31 K3 = x31.K(q5.class);
             K3.k = R.drawable.wallet_learn_verified;
             K3.l = M05;
             K3.m = M06;
             arrayList.add(K3);
-            arrayList.add(r31.m(this.a0));
+            arrayList.add(x31.m(this.a0));
         } else if (this.n0 != null) {
             if (this.R0 && !this.S0 && x10.v() > 500000000) {
-                arrayList.add(r31.k(this.c0));
+                arrayList.add(x31.k(this.c0));
             }
             bi.t tVar = this.n0;
-            r31 r31Var2 = new r31(-3);
-            r31Var2.c = tVar;
-            r31Var2.z = 0;
-            r31Var2.y = 1;
-            arrayList.add(r31Var2);
+            x31 x31Var2 = new x31(-3);
+            x31Var2.c = tVar;
+            x31Var2.z = 0;
+            x31Var2.y = 1;
+            arrayList.add(x31Var2);
         }
         w70 w70Var = this.Z;
         if (w70Var != null) {
@@ -2177,7 +2177,7 @@ public final class y5 extends h41 implements ls {
         t8Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131743004, null);
     }
@@ -2220,23 +2220,23 @@ public final class y5 extends h41 implements ls {
         this.S.i(this.X, z11, z9);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
         f0 f0Var;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof TL_wallet.nftItem) {
             H0((TL_wallet.nftItem) obj);
             return;
         }
-        if (r31Var.d == -10001 && (f0Var = this.E0) != null) {
+        if (x31Var.d == -10001 && (f0Var = this.E0) != null) {
             f0Var.e();
         } else if (obj instanceof TL_wallet.walletTransaction) {
-            G0(getParentActivity(), this.currentAccount, (TL_wallet.walletTransaction) r31Var.G, null, null, null, null, getResourceProvider());
+            G0(getParentActivity(), this.currentAccount, (TL_wallet.walletTransaction) x31Var.G, null, null, null, null, getResourceProvider());
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         c8 c8Var;
         if (!(view instanceof p7) || (c8Var = this.j0) == null) {
             return false;
@@ -2252,7 +2252,7 @@ public final class y5 extends h41 implements ls {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         ValueAnimator valueAnimator = this.m0;
         if (valueAnimator != null) {
@@ -2269,16 +2269,16 @@ public final class y5 extends h41 implements ls {
         this.R = null;
         this.n0 = null;
         this.p0 = null;
-        k41[] k41VarArr = this.r0;
+        q41[] q41VarArr = this.r0;
         int i7 = 0;
         Object[] objArr = 0;
         Object[] objArr2 = 0;
         Object[] objArr3 = 0;
         Object[] objArr4 = 0;
         Object[] objArr5 = 0;
-        k41VarArr[0] = null;
+        q41VarArr[0] = null;
         final int i10 = 1;
-        k41VarArr[1] = null;
+        q41VarArr[1] = null;
         f0 f0Var = this.E0;
         boolean z9 = (f0Var == null || f0Var.a.isEmpty()) ? false : true;
         this.f0 = z9;
@@ -2339,9 +2339,9 @@ public final class y5 extends h41 implements ls {
             }
         });
         q10.a(1, R.drawable.ic_ab_other).setOnClickListener(new fk0(21, this, context));
-        p41 p41Var = new p41(i12, context, this);
-        this.R = p41Var;
-        p41Var.setClipToPadding(false);
+        v41 v41Var = new v41(i12, context, this);
+        this.R = v41Var;
+        v41Var.setClipToPadding(false);
         this.R.setClipChildren(false);
         this.R.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(4.0f));
         i5 i5Var = new i5(this, context);
@@ -2594,7 +2594,7 @@ public final class y5 extends h41 implements ls {
         this.p0 = g1Var;
         g1Var.setAllowDisallowInterceptTouch(false);
         this.p0.setAdapter(new bi.g5(i19, context, this));
-        o61 n10 = this.p0.n(-2, true);
+        u61 n10 = this.p0.n(-2, true);
         this.g0 = n10;
         n10.g(i14, org.telegram.ui.ActionBar.k6.G6, i14, i17, i16);
         org.telegram.ui.ActionBar.r6.C(this.g0, org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(20.0f), getThemedColor(i16)), org.telegram.ui.ActionBar.r6.N(i16), getResourceProvider());
@@ -2612,9 +2612,9 @@ public final class y5 extends h41 implements ls {
             this.j0.Y(f0Var2);
         }
         this.a.j(new ui(this, 21));
-        f41 f41Var = this.a.f3;
-        f41Var.r = false;
-        f41Var.O(false);
+        l41 l41Var = this.a.f3;
+        l41Var.r = false;
+        l41Var.O(false);
         u5 u5Var2 = new u5(this);
         this.q0 = u5Var2;
         u5Var2.b(this.a);
@@ -2628,7 +2628,7 @@ public final class y5 extends h41 implements ls {
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         fi.w3 w3Var;
-        f41 f41Var;
+        l41 l41Var;
         if (i10 != this.currentAccount) {
             return;
         }
@@ -2651,10 +2651,10 @@ public final class y5 extends h41 implements ls {
                     this.R0 = true;
                     this.S0 = ((TL_account.Password) obj).has_password;
                     fi.w3 w3Var2 = this.a;
-                    if (w3Var2 == null || (f41Var = w3Var2.f3) == null) {
+                    if (w3Var2 == null || (l41Var = w3Var2.f3) == null) {
                         return;
                     }
-                    f41Var.O(true);
+                    l41Var.O(true);
                     return;
                 }
             }
@@ -2712,7 +2712,7 @@ public final class y5 extends h41 implements ls {
         if (w3Var != null) {
             w3Var.C0();
         }
-        k41 y02 = y0();
+        q41 y02 = y0();
         if (y02 != null) {
             y02.C0();
         }
@@ -2965,12 +2965,12 @@ public final class y5 extends h41 implements ls {
         return hd.V(null, null, i7, spannableStringBuilder);
     }
 
-    public final k41 y0() {
+    public final q41 y0() {
         if (z0()) {
             fi.g1 g1Var = this.p0;
             View currentView = g1Var == null ? null : g1Var.getCurrentView();
-            if (currentView instanceof k41) {
-                return (k41) currentView;
+            if (currentView instanceof q41) {
+                return (q41) currentView;
             }
         }
         return null;

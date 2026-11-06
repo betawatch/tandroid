@@ -27,18 +27,18 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.y4;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.n7;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.qi;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.ve;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.pv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b extends v4.s0 {
     public final /* synthetic */ int a;
@@ -297,10 +297,10 @@ public final class b extends v4.s0 {
                 break;
             case 6:
                 ad adVar = (ad) obj;
-                k41 k41Var = adVar.a;
-                if (k41Var.canScrollVertically(1)) {
-                    for (int i18 = 0; i18 < k41Var.getChildCount(); i18++) {
-                        if (!(k41Var.getChildAt(i18) instanceof lz)) {
+                q41 q41Var = adVar.a;
+                if (q41Var.canScrollVertically(1)) {
+                    for (int i18 = 0; i18 < q41Var.getChildCount(); i18++) {
+                        if (!(q41Var.getChildAt(i18) instanceof lz)) {
                         }
                     }
                     break;

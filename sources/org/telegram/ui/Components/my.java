@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class my extends View {
     public final Paint a;
@@ -17,7 +17,7 @@ public final class my extends View {
     public final Path c;
     public int d;
     public int e;
-    public ly0[] f;
+    public my0[] f;
     public RectF[] h;
     public float n;
     public org.telegram.ui.il0 r;
@@ -34,15 +34,15 @@ public final class my extends View {
     }
 
     public final void a(float f10, int i7, int i10, Canvas canvas) {
-        ly0[] ly0VarArr = this.f;
-        int length = ly0VarArr.length;
+        my0[] my0VarArr = this.f;
+        int length = my0VarArr.length;
         int i11 = 0;
         float f11 = f10;
         while (i11 < length) {
-            ly0 ly0Var = ly0VarArr[i11];
+            my0 my0Var = my0VarArr[i11];
             int i12 = i10;
-            ly0Var.c(f11, i7 / 2.0f, 1.0f, i12, canvas);
-            f11 += ly0Var.k() + org.telegram.messenger.g0.L(24.0f);
+            my0Var.c(f11, i7 / 2.0f, 1.0f, i12, canvas);
+            f11 += my0Var.k() + org.telegram.messenger.g0.L(24.0f);
             i11++;
             i10 = i12;
         }
@@ -59,11 +59,11 @@ public final class my extends View {
         int L = org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.k5.D(24.0f, this.f.length, org.telegram.messenger.g0.L(4.0f));
         int i7 = 0;
         while (true) {
-            ly0[] ly0VarArr = this.f;
-            if (i7 >= ly0VarArr.length) {
+            my0[] my0VarArr = this.f;
+            if (i7 >= my0VarArr.length) {
                 break;
             }
-            L = (int) (ly0VarArr[i7].k() + L);
+            L = (int) (my0VarArr[i7].k() + L);
             i7++;
         }
         float L2 = (height - org.telegram.messenger.g0.L(36.0f)) / 2.0f;
@@ -162,10 +162,10 @@ public final class my extends View {
     }
 
     public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new ly0[charSequenceArr.length];
+        this.f = new my0[charSequenceArr.length];
         this.h = new RectF[charSequenceArr.length];
         for (int i7 = 0; i7 < charSequenceArr.length; i7++) {
-            this.f[i7] = new ly0(charSequenceArr[i7], 14.0f, org.telegram.messenger.g0.o());
+            this.f[i7] = new my0(charSequenceArr[i7], 14.0f, org.telegram.messenger.g0.o());
             this.h[i7] = new RectF();
         }
         invalidate();

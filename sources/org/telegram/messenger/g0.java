@@ -133,17 +133,17 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.cq0;
 import org.telegram.ui.Components.ee0;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.qx0;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn0;
 import org.telegram.ui.u71;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class g0 {
     public static final int C;
@@ -1243,34 +1243,34 @@ public abstract class g0 {
             LinearLayout linearLayout = new LinearLayout(launchActivity);
             linearLayout.setOrientation(1);
             v2Var.N = linearLayout;
-            TextView b10 = c8.na.b(launchActivity, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, null);
+            TextView b10 = c8.qa.b(launchActivity, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, null);
             b10.setText(hd.M0(2131743776, null));
             linearLayout.addView(b10, c8.ha.t(-1, -2, 55, 22, 18, 22, 0));
-            sx0 sx0Var = new sx0(launchActivity, null);
-            linearLayout.addView(sx0Var, c8.ha.t(-1, -2, 55, 14, 18, 14, 0));
+            tx0 tx0Var = new tx0(launchActivity, null);
+            linearLayout.addView(tx0Var, c8.ha.t(-1, -2, 55, 14, 18, 14, 0));
             if (!TextUtils.isEmpty(str)) {
-                sx0Var.c(hd.M0(2131743792, null), str, null, null);
+                tx0Var.c(hd.M0(2131743792, null), str, null, null);
             }
             if (i7 != 0) {
-                sx0Var.c(hd.M0(2131743787, null), Integer.toString(i7), null, null);
+                tx0Var.c(hd.M0(2131743787, null), Integer.toString(i7), null, null);
             }
             if (!TextUtils.isEmpty(str4)) {
-                sx0Var.c(hd.M0(2131743785, null), str4, null, null);
+                tx0Var.c(hd.M0(2131743785, null), str4, null, null);
             }
             if (!TextUtils.isEmpty(str2)) {
-                sx0Var.c(hd.M0(2131743775, null), str2, null, null);
+                tx0Var.c(hd.M0(2131743775, null), str2, null, null);
             }
             if (!TextUtils.isEmpty(str3)) {
-                sx0Var.c(hd.M0(2131743788, null), str3, null, null);
+                tx0Var.c(hd.M0(2131743788, null), str3, null, null);
             }
             org.telegram.ui.Components.jc[] jcVarArr = new org.telegram.ui.Components.jc[1];
-            sx0Var.c(hd.M0(2131746599, null), "", null, jcVarArr);
+            tx0Var.c(hd.M0(2131746599, null), "", null, jcVarArr);
             ((View) jcVarArr[0].getParent()).setPadding(0, 0, 0, 0);
             jcVarArr[0].setDisablePaddingsOffsetY(true);
             jcVarArr[0].setPadding(L(12.66f), L(9.33f), L(12.66f), L(9.33f));
             jcVarArr[0].setText(O2(hd.M0(2131746608, null), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false), new em(new boolean[1], jcVarArr, aVar, launchActivity, 5)));
             if (!TextUtils.isEmpty(str4)) {
-                qx0 a10 = sx0Var.a(hd.M0(2131743777, null));
+                rx0 a10 = tx0Var.a(hd.M0(2131743777, null));
                 a10.setFilled(true);
                 xh.l lVar = (xh.l) a10.getChildAt(0);
                 lVar.setTextSize(1, 11.0f);
@@ -2113,7 +2113,7 @@ public abstract class g0 {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
             for (int i7 = 0; i7 < arrayList.size() / 2; i7++) {
                 int i10 = i7 * 2;
-                spannableStringBuilder2.setSpan(new o31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
+                spannableStringBuilder2.setSpan(new u31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
             }
             return spannableStringBuilder2;
         } catch (Exception e10) {
@@ -2251,7 +2251,7 @@ public abstract class g0 {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb2);
             for (int i7 = 0; i7 < arrayList.size() / 2; i7++) {
                 int i10 = i7 * 2;
-                spannableStringBuilder.setSpan(new o31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
+                spannableStringBuilder.setSpan(new u31(o()), ((Integer) arrayList.get(i10)).intValue(), ((Integer) arrayList.get(i10 + 1)).intValue(), 33);
             }
             return spannableStringBuilder;
         } catch (Exception e10) {
@@ -4025,7 +4025,7 @@ public abstract class g0 {
     public static void o3(View view, boolean z9) {
         int systemUiVisibility;
         int b10;
-        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.yc.b((systemUiVisibility = view.getSystemUiVisibility()), 16, z9))) {
+        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.zc.b((systemUiVisibility = view.getSystemUiVisibility()), 16, z9))) {
             return;
         }
         view.setSystemUiVisibility(b10);
@@ -4276,7 +4276,7 @@ public abstract class g0 {
     public static void r3(View view, boolean z9) {
         int systemUiVisibility;
         int b10;
-        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.yc.b((systemUiVisibility = view.getSystemUiVisibility()), TLObject.FLAG_13, z9))) {
+        if (view == null || Build.VERSION.SDK_INT < 26 || systemUiVisibility == (b10 = c8.zc.b((systemUiVisibility = view.getSystemUiVisibility()), TLObject.FLAG_13, z9))) {
             return;
         }
         view.setSystemUiVisibility(b10);
@@ -4328,7 +4328,7 @@ public abstract class g0 {
         File file = (str2 == null || str2.length() == 0) ? null : new File(ijVar.k.attachPath);
         if (file == null || !file.exists()) {
             w7.G(p10.s0);
-            file = w7.N(ijVar.k, false, true);
+            file = w7.M(ijVar.k, false, true);
         }
         if (file == null || !file.exists()) {
             return;
@@ -4409,7 +4409,7 @@ public abstract class g0 {
     public static void s3(Window window, boolean z9) {
         View decorView = window.getDecorView();
         int systemUiVisibility = decorView.getSystemUiVisibility();
-        int b10 = c8.yc.b(systemUiVisibility, TLObject.FLAG_13, z9);
+        int b10 = c8.zc.b(systemUiVisibility, TLObject.FLAG_13, z9);
         if (systemUiVisibility != b10) {
             decorView.setSystemUiVisibility(b10);
         }
@@ -4768,7 +4768,7 @@ public abstract class g0 {
         File file = (str == null || str.length() == 0) ? null : new File(ijVar.k.attachPath);
         if (file == null || !file.exists()) {
             w7.G(ijVar.I1);
-            file = w7.N(ijVar.k, false, true);
+            file = w7.M(ijVar.k, false, true);
         }
         File file2 = file;
         int i7 = ijVar.D;
@@ -4906,8 +4906,8 @@ public abstract class g0 {
         String str = null;
         String r10 = w7.r(null, tLObject);
         w7.G(p10.s0);
-        File K2 = w7.K(tLObject, null, true, true);
-        if (K2 == null || !K2.exists()) {
+        File J2 = w7.J(tLObject, null, true, true);
+        if (J2 == null || !J2.exists()) {
             return false;
         }
         Intent intent = new Intent("android.intent.action.VIEW");
@@ -4927,9 +4927,9 @@ public abstract class g0 {
         }
         if (Build.VERSION.SDK_INT >= 24) {
             t0.d();
-            intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", K2), str != null ? str : "text/plain");
+            intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", J2), str != null ? str : "text/plain");
         } else {
-            intent.setDataAndType(Uri.fromFile(K2), str != null ? str : "text/plain");
+            intent.setDataAndType(Uri.fromFile(J2), str != null ? str : "text/plain");
         }
         if (str == null) {
             activity.startActivityForResult(intent, 500);
@@ -4941,9 +4941,9 @@ public abstract class g0 {
         } catch (Exception unused) {
             if (Build.VERSION.SDK_INT >= 24) {
                 t0.d();
-                intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", K2), "text/plain");
+                intent.setDataAndType(FileProvider.d(activity, "org.telegram.messenger.beta.provider", J2), "text/plain");
             } else {
-                intent.setDataAndType(Uri.fromFile(K2), "text/plain");
+                intent.setDataAndType(Uri.fromFile(J2), "text/plain");
             }
             activity.startActivityForResult(intent, 500);
             return true;

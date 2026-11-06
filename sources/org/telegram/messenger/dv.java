@@ -6,12 +6,12 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.s41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class dv extends fu implements Drawable.Callback {
-    public final m41 W;
+    public final s41 W;
     public final int X;
     public final int Y;
     public final int Z;
@@ -23,16 +23,16 @@ public final class dv extends fu implements Drawable.Callback {
         super(kvVar, rect, i7);
         this.Z = i10;
         this.a0 = i11;
-        m41 m41Var = new m41();
-        this.W = m41Var;
-        m41Var.setCallback(this);
-        m41Var.n = hd.M0(2131743832, null);
-        m41Var.o = hd.M0(2131743833, null);
-        m41Var.p = hd.M0(2131743827, null);
-        m41Var.j = new ds(kvVar, 7);
+        s41 s41Var = new s41();
+        this.W = s41Var;
+        s41Var.setCallback(this);
+        s41Var.n = hd.M0(2131743832, null);
+        s41Var.o = hd.M0(2131743833, null);
+        s41Var.p = hd.M0(2131743827, null);
+        s41Var.j = new ds(kvVar, 7);
         int i12 = this.c;
         this.X = i12;
-        this.Y = m41Var.a(i12);
+        this.Y = s41Var.a(i12);
     }
 
     @Override // org.telegram.messenger.fu
@@ -88,9 +88,9 @@ public final class dv extends fu implements Drawable.Callback {
         int i10 = rect.top;
         int i11 = this.X + i7;
         int i12 = this.Y + i10;
-        m41 m41Var = this.W;
-        m41Var.setBounds(i7, i10, i11, i12);
-        m41Var.draw(canvas);
+        s41 s41Var = this.W;
+        s41Var.setBounds(i7, i10, i11, i12);
+        s41Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback

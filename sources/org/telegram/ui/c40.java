@@ -71,7 +71,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c40 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls, VoIPService.StateListener, te.b {
     public static c40 u5;
@@ -5111,9 +5111,9 @@ public final class c40 extends org.telegram.ui.ActionBar.v2 implements org.teleg
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (a22 != null) {
-                                spannableStringBuilder.append(org.telegram.messenger.t10.j(a22, true), new org.telegram.ui.Components.o31(org.telegram.messenger.g0.o()), 0);
+                                spannableStringBuilder.append(org.telegram.messenger.t10.j(a22, true), new org.telegram.ui.Components.u31(org.telegram.messenger.g0.o()), 0);
                             } else {
-                                spannableStringBuilder.append(M0.title, new org.telegram.ui.Components.o31(org.telegram.messenger.g0.o()), 0);
+                                spannableStringBuilder.append(M0.title, new org.telegram.ui.Components.u31(org.telegram.messenger.g0.o()), 0);
                             }
                         }
                     }
@@ -5940,7 +5940,7 @@ public final class c40 extends org.telegram.ui.ActionBar.v2 implements org.teleg
                 this.G4 = true;
                 f40Var.r = false;
                 if (!arrayList2.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.g51(28, this, arrayList2));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.l51(28, this, arrayList2));
                 }
             }
             boolean z10 = !z10Var.b;
@@ -6327,9 +6327,9 @@ public final class c40 extends org.telegram.ui.ActionBar.v2 implements org.teleg
             ((org.telegram.ui.Components.voip.y) arrayList.get(i7)).j(false);
         }
         i30 i30Var = this.C1;
-        org.telegram.ui.Components.s61 s61Var = i30Var.w;
-        if (s61Var != null) {
-            s61Var.c(false);
+        org.telegram.ui.Components.y61 y61Var = i30Var.w;
+        if (y61Var != null) {
+            y61Var.c(false);
         }
         i30Var.F = true;
         this.y1.r();
@@ -6352,9 +6352,9 @@ public final class c40 extends org.telegram.ui.ActionBar.v2 implements org.teleg
             ((org.telegram.ui.Components.voip.y) arrayList.get(i7)).j(true);
         }
         i30 i30Var = this.C1;
-        org.telegram.ui.Components.s61 s61Var = i30Var.w;
-        if (s61Var != null) {
-            s61Var.c(true);
+        org.telegram.ui.Components.y61 y61Var = i30Var.w;
+        if (y61Var != null) {
+            y61Var.c(true);
         }
         i30Var.F = false;
         this.y1.s();

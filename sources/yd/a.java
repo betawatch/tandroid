@@ -1,10 +1,10 @@
 package yd;
 
-import c8.zd;
+import c8.ee;
 import jg.g;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a implements Comparable {
     public static final long b;
@@ -14,8 +14,8 @@ public final class a implements Comparable {
 
     static {
         int i7 = b.a;
-        b = zd.a(4611686018427387903L);
-        c = zd.a(-4611686018427387903L);
+        b = ee.a(4611686018427387903L);
+        c = ee.a(-4611686018427387903L);
     }
 
     public static final void a(StringBuilder sb2, int i7, int i10, int i11, String str, boolean z9) {

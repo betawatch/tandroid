@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z21 extends FrameLayout implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.ls {
     public final org.telegram.ui.Components.l9 a;
@@ -54,7 +54,7 @@ public final class z21 extends FrameLayout implements org.telegram.ui.ActionBar.
             w70Var.setMovementMethod(new org.telegram.messenger.c0(false));
             spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, i12, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.v31(org.telegram.messenger.hd.M0(2131753893, null), (org.telegram.ui.Components.ty0) null), indexOf, indexOf2 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.b41(org.telegram.messenger.hd.M0(2131753893, null), (org.telegram.ui.Components.uy0) null), indexOf, indexOf2 - 1, 33);
         }
         String spannableStringBuilder2 = spannableStringBuilder.toString();
         int indexOf3 = spannableStringBuilder2.indexOf(42);
@@ -64,7 +64,7 @@ public final class z21 extends FrameLayout implements org.telegram.ui.ActionBar.
             w70Var.setMovementMethod(new org.telegram.messenger.c0(false));
             spannableStringBuilder.replace(indexOf4, indexOf4 + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf3, i13, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.v31(org.telegram.messenger.hd.M0(2131753883, null), (org.telegram.ui.Components.ty0) null), indexOf3, indexOf4 - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.b41(org.telegram.messenger.hd.M0(2131753883, null), (org.telegram.ui.Components.uy0) null), indexOf3, indexOf4 - 1, 33);
         }
         w70Var.setText(spannableStringBuilder);
         org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2(6, context, this);

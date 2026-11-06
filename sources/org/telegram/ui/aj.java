@@ -37,7 +37,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class aj extends sl {
     public final r1.g A3;
@@ -333,9 +333,9 @@ public final class aj extends sl {
         }
         anVar.u9 = false;
         anVar.B0.R = true;
-        org.telegram.ui.Components.n01 n01Var = anVar.m0;
-        if (n01Var != null) {
-            n01Var.settle(f10);
+        org.telegram.ui.Components.s01 s01Var = anVar.m0;
+        if (s01Var != null) {
+            s01Var.settle(f10);
         }
     }
 
@@ -412,11 +412,11 @@ public final class aj extends sl {
                     anVar.t9 = false;
                     anVar.u9 = true;
                     anVar.v9 = motionEvent.getX();
-                    org.telegram.ui.Components.n01 n01Var = anVar.m0;
-                    ValueAnimator valueAnimator = n01Var.J;
+                    org.telegram.ui.Components.s01 s01Var = anVar.m0;
+                    ValueAnimator valueAnimator = s01Var.J;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
-                        n01Var.J = null;
+                        s01Var.J = null;
                     }
                     org.telegram.messenger.g0.v1(anVar.l1);
                     if (getParent() != null) {
@@ -718,7 +718,7 @@ public final class aj extends sl {
             if (linearGradient4 != null) {
                 linearGradient4.setLocalMatrix(matrix);
             }
-            int height = ((getHeight() - anVar.Ua) - ((int) (anVar.r9(org.telegram.ui.Components.c11.c) + anVar.w.d()))) - org.telegram.messenger.g0.L(57.0f);
+            int height = ((getHeight() - anVar.Ua) - ((int) (anVar.r9(org.telegram.ui.Components.i11.c) + anVar.w.d()))) - org.telegram.messenger.g0.L(57.0f);
             int i18 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (int i19 = 0; i19 < getChildCount(); i19++) {
                 int top = getChildAt(i19).getTop();
@@ -2109,7 +2109,7 @@ public final class aj extends sl {
                     }
                 }
                 float min = Math.min(1.0f, anVar.ga / org.telegram.messenger.g0.L(110.0f));
-                canvas2.translate(anVar.Z9() ? org.telegram.messenger.g0.W1(anVar.k9(), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(71.0f)) : 0.0f, -(anVar.r9(org.telegram.ui.Components.c11.c) + anVar.T.getInputBubbleHeight() + anVar.w.d() + org.telegram.messenger.g0.L(10.0f)));
+                canvas2.translate(anVar.Z9() ? org.telegram.messenger.g0.W1(anVar.k9(), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(71.0f)) : 0.0f, -(anVar.r9(org.telegram.ui.Components.i11.c) + anVar.T.getInputBubbleHeight() + anVar.w.d() + org.telegram.messenger.g0.L(10.0f)));
                 anVar.ia.a(canvas2, anVar.z0, min, 1.0f - anVar.na);
                 canvas2.restore();
                 if (anVar.ma != null) {
@@ -2493,15 +2493,15 @@ public final class aj extends sl {
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
     public final void requestDisallowInterceptTouchEvent(boolean z9) {
         org.telegram.ui.Components.ck0 a42;
-        org.telegram.ui.Components.j71 j71Var;
+        org.telegram.ui.Components.p71 p71Var;
         super.requestDisallowInterceptTouchEvent(z9);
         View view = this.F3.r9;
         if (view != null) {
-            if ((view instanceof org.telegram.ui.Cells.q1) && (a42 = ((org.telegram.ui.Cells.q1) view).a4()) != null && (j71Var = a42.d0) != null && a42.e0 && j71Var.w && !j71Var.E) {
-                if (!j71Var.x) {
+            if ((view instanceof org.telegram.ui.Cells.q1) && (a42 = ((org.telegram.ui.Cells.q1) view).a4()) != null && (p71Var = a42.d0) != null && a42.e0 && p71Var.w && !p71Var.E) {
+                if (!p71Var.x) {
                     return;
                 }
-                if (!j71Var.y && (j71Var.L & 3) != 1) {
+                if (!p71Var.y && (p71Var.L & 3) != 1) {
                     return;
                 }
             }

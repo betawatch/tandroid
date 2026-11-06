@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements oi.m, r0.m, org.telegram.ui.ActionBar.e1, oi.n {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class hn0 implements oi.m, r0.m, org.telegram.ui.Ac
         if (Build.VERSION.SDK_INT < 31 || gVar == null) {
             return;
         }
-        if (c8.yc.a(i7, 4)) {
+        if (c8.zc.a(i7, 4)) {
             gVar.h(mo0Var.X0.e());
         }
         gVar.e(mo0Var.L2, mo0Var.b.getWidth(), mo0Var.b.getHeight());

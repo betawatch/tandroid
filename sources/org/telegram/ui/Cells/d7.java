@@ -26,11 +26,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class d7 extends FrameLayout implements ls {
     public final org.telegram.ui.ActionBar.f6 D;
@@ -42,7 +42,7 @@ public class d7 extends FrameLayout implements ls {
     public Drawable J;
     public final Paint K;
     public long L;
-    public ly0 M;
+    public my0 M;
     public final org.telegram.ui.Components.l9 a;
     public final md b;
     public final org.telegram.ui.ActionBar.k5 c;
@@ -299,7 +299,7 @@ public class d7 extends FrameLayout implements ls {
         float f12;
         boolean z9;
         float f13;
-        ly0 ly0Var;
+        my0 my0Var;
         boolean drawChild = super.drawChild(canvas, view, j3);
         org.telegram.ui.Components.l9 l9Var = this.a;
         if (view == l9Var && this.n != 2 && (user = this.h) != null && !qp.F2(user)) {
@@ -319,8 +319,8 @@ public class d7 extends FrameLayout implements ls {
                     f13 = measuredWidth;
                     long j13 = this.H;
                     if (j12 == j13 || j13 <= 0) {
-                        ly0 ly0Var2 = this.M;
-                        float L = (ly0Var2 != null ? f10 : ly0Var2.c) + org.telegram.messenger.g0.L(10.0f);
+                        my0 my0Var2 = this.M;
+                        float L = (my0Var2 != null ? f10 : my0Var2.c) + org.telegram.messenger.g0.L(10.0f);
                         float L2 = org.telegram.messenger.g0.L(14.33f);
                         RectF rectF = org.telegram.messenger.g0.P;
                         float f14 = L / 2.0f;
@@ -335,12 +335,12 @@ public class d7 extends FrameLayout implements ls {
                         rectF.inset(org.telegram.messenger.g0.L(1.33f), org.telegram.messenger.g0.L(1.33f));
                         paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.B5, f6Var2));
                         canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint);
-                        ly0Var = this.M;
-                        if (ly0Var == null) {
+                        my0Var = this.M;
+                        if (my0Var == null) {
                             float L3 = org.telegram.messenger.g0.L(f12) + f15;
                             f6Var = f6Var2;
                             f11 = 9.33f;
-                            ly0Var.c(L3, measuredHeight, 1.0f, -1, canvas);
+                            my0Var.c(L3, measuredHeight, 1.0f, -1, canvas);
                         } else {
                             f6Var = f6Var2;
                             f11 = 9.33f;
@@ -355,9 +355,9 @@ public class d7 extends FrameLayout implements ls {
                 long j14 = this.H;
                 this.L = j14;
                 sb2.append(org.telegram.messenger.g0.o0((int) j14, 0));
-                this.M = new ly0(dd.U0(sb2.toString(), 0.65f, null), 9.33f, org.telegram.messenger.g0.o());
-                ly0 ly0Var22 = this.M;
-                float L4 = (ly0Var22 != null ? f10 : ly0Var22.c) + org.telegram.messenger.g0.L(10.0f);
+                this.M = new my0(dd.U0(sb2.toString(), 0.65f, null), 9.33f, org.telegram.messenger.g0.o());
+                my0 my0Var22 = this.M;
+                float L4 = (my0Var22 != null ? f10 : my0Var22.c) + org.telegram.messenger.g0.L(10.0f);
                 float L22 = org.telegram.messenger.g0.L(14.33f);
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 float f142 = L4 / 2.0f;
@@ -372,8 +372,8 @@ public class d7 extends FrameLayout implements ls {
                 rectF2.inset(org.telegram.messenger.g0.L(1.33f), org.telegram.messenger.g0.L(1.33f));
                 paint2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.B5, f6Var2));
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint2);
-                ly0Var = this.M;
-                if (ly0Var == null) {
+                my0Var = this.M;
+                if (my0Var == null) {
                 }
             } else {
                 f6Var = f6Var2;

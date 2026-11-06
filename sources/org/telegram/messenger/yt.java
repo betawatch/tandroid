@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class yt implements x5 {
     public static ColorMatrixColorFilter U;
@@ -62,7 +62,7 @@ public final class yt implements x5 {
         this.h = v;
         if (v != null) {
             this.n = w7.w(v.sizes, g0.Z0(false), false, null, false);
-            this.r = w7.R(v.sizes);
+            this.r = w7.Q(v.sizes);
         } else {
             this.n = null;
             this.r = null;
@@ -237,18 +237,18 @@ public final class yt implements x5 {
         TLRPC.PhotoSize photoSize = this.n;
         if (photoSize != null) {
             w7.G(kvVar.a);
-            File K = w7.K(photoSize, null, true, true);
+            File J = w7.J(photoSize, null, true, true);
             w7.G(kvVar.a);
-            File K2 = w7.K(photoSize, null, false, true);
-            return K.exists() || (K2 != null && K2.exists());
+            File J2 = w7.J(photoSize, null, false, true);
+            return J.exists() || (J2 != null && J2.exists());
         }
         TLRPC.Document document = this.s;
         if (document != null) {
             w7.G(kvVar.a);
             File I = w7.I(document);
             w7.G(kvVar.a);
-            File K3 = w7.K(document, null, true, true);
-            if ((I == null || !I.exists()) && (K3 == null || !K3.exists())) {
+            File J3 = w7.J(document, null, true, true);
+            if ((I == null || !I.exists()) && (J3 == null || !J3.exists())) {
             }
         }
     }
@@ -520,7 +520,7 @@ public final class yt implements x5 {
             }
         } else {
             z5.q(kvVar.a).a(r10, null, this);
-            if (this.J || this.R || w7.G(kvVar.a).T(r10)) {
+            if (this.J || this.R || w7.G(kvVar.a).S(r10)) {
                 this.K = 1;
                 Float w10 = gc.D().w(r10);
                 r2 = w10 != null ? w10.floatValue() : 0.0f;
@@ -571,7 +571,7 @@ public final class yt implements x5 {
         this.y = L4 || ij.t3(s5, false);
         if (s5 != null) {
             this.w = w7.w(s5.thumbs, qs.r5, false, null, true);
-            this.x = w7.R(s5.thumbs);
+            this.x = w7.Q(s5.thumbs);
         } else {
             this.w = null;
             this.x = null;

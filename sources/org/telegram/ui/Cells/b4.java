@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.m31;
-import org.telegram.ui.yu0;
+import org.telegram.ui.zu0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b4 extends RadialProgressView {
     public final /* synthetic */ int N = 0;
@@ -41,8 +41,8 @@ public final class b4 extends RadialProgressView {
                 break;
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.P;
-                yu0 yu0Var = profileActivity.e0;
-                if (yu0Var != null && yu0Var.getImageReceiver().L()) {
+                zu0 zu0Var = profileActivity.e0;
+                if (zu0Var != null && zu0Var.getImageReceiver().L()) {
                     int i7 = (int) (profileActivity.e0.getImageReceiver().h1 * 85.0f);
                     Paint paint2 = this.O;
                     paint2.setAlpha(i7);

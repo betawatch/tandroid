@@ -3,12 +3,12 @@ package p4;
 import android.media.session.MediaSession;
 import android.os.Bundle;
 import android.os.Parcelable;
-import c8.za;
+import c8.ab;
 import h9.h2;
 import h9.t1;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class j {
     public static final String l;
@@ -141,7 +141,7 @@ public final class j {
         bundle.putBundle(str3, y0Var2.b());
         bundle.putBundle(u, this.e);
         bundle.putBundle(v, this.f);
-        bundle.putBundle(w, this.g.e(za.a(y0Var, y0Var2), false, false).f(i7));
+        bundle.putBundle(w, this.g.e(ab.a(y0Var, y0Var2), false, false).f(i7));
         bundle.putInt(x, 9);
         MediaSession.Token token = this.j;
         if (token != null) {

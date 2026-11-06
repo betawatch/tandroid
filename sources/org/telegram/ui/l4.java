@@ -29,7 +29,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l4 extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ int c;
@@ -927,7 +927,7 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
                     for (int i13 = 0; i13 < arrayList3.size(); i13++) {
                         strArr[i13] = org.telegram.messenger.hd.a0(null, null, 2131746601, arrayList3.get(i13));
                     }
-                    vt0Var.setCallback(new fo0(5));
+                    vt0Var.setCallback(new go0(5));
                     vt0Var.b(org.telegram.messenger.iz.b1, null, strArr);
                     break;
                 }
@@ -1203,7 +1203,7 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
                 }
                 return arrayList.size();
             case 7:
-                return ((org.telegram.ui.Components.o61) this.e).h.size();
+                return ((org.telegram.ui.Components.u61) this.e).h.size();
             case 8:
                 return ((DataAutoDownloadActivity) this.e).y;
             case 9:
@@ -1234,8 +1234,8 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
                 return xm0Var.n.size() + 2;
             case 15:
                 PhotoViewer photoViewer = (PhotoViewer) this.e;
-                tq0 tq0Var = photoViewer.d;
-                if (tq0Var == null || tq0Var.c() == null) {
+                uq0 uq0Var = photoViewer.d;
+                if (uq0Var == null || uq0Var.c() == null) {
                     return 0;
                 }
                 return photoViewer.d.c().size();
@@ -1267,7 +1267,7 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
                 }
                 return ((org.telegram.messenger.qi) r0.get(i7)).a.hashCode();
             case 7:
-                i10 = ((org.telegram.ui.Components.l61) ((org.telegram.ui.Components.o61) this.e).h.get(i7)).a;
+                i10 = ((org.telegram.ui.Components.r61) ((org.telegram.ui.Components.u61) this.e).h.get(i7)).a;
                 break;
             case 14:
                 return i7;
@@ -1632,7 +1632,7 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
         String G;
         TextView textView;
         Drawable drawable;
-        org.telegram.ui.Components.n61 n61Var;
+        org.telegram.ui.Components.t61 t61Var;
         int i11;
         int i12;
         int i13;
@@ -2005,14 +2005,14 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
                 }
                 break;
             case 7:
-                org.telegram.ui.Components.m61 m61Var = (org.telegram.ui.Components.m61) d1Var.a;
-                org.telegram.ui.Components.o61 o61Var = (org.telegram.ui.Components.o61) obj2;
-                org.telegram.ui.Components.l61 l61Var = (org.telegram.ui.Components.l61) o61Var.h.get(i7);
-                m61Var.a = l61Var;
-                m61Var.setContentDescription(l61Var.b);
-                m61Var.setAlpha(1.0f);
-                m61Var.requestLayout();
-                m61Var.setReordering(o61Var.m0 && (n61Var = o61Var.D) != null && ((org.telegram.ui.Components.n) n61Var).r(i7));
+                org.telegram.ui.Components.s61 s61Var = (org.telegram.ui.Components.s61) d1Var.a;
+                org.telegram.ui.Components.u61 u61Var = (org.telegram.ui.Components.u61) obj2;
+                org.telegram.ui.Components.r61 r61Var = (org.telegram.ui.Components.r61) u61Var.h.get(i7);
+                s61Var.a = r61Var;
+                s61Var.setContentDescription(r61Var.b);
+                s61Var.setAlpha(1.0f);
+                s61Var.requestLayout();
+                s61Var.setReordering(u61Var.m0 && (t61Var = u61Var.D) != null && ((org.telegram.ui.Components.n) t61Var).r(i7));
                 break;
             case 8:
                 DataAutoDownloadActivity dataAutoDownloadActivity = (DataAutoDownloadActivity) obj2;
@@ -2700,7 +2700,7 @@ public final class l4 extends org.telegram.ui.Components.oj0 {
             case 6:
                 return new org.telegram.ui.Components.xi0(new org.telegram.ui.Components.nw0((org.telegram.ui.Components.ow0) obj, ((org.telegram.ui.Components.ow0) obj2).getContext()));
             case 7:
-                return new org.telegram.ui.Components.xi0(new org.telegram.ui.Components.m61((org.telegram.ui.Components.o61) obj, (Context) obj2));
+                return new org.telegram.ui.Components.xi0(new org.telegram.ui.Components.s61((org.telegram.ui.Components.u61) obj, (Context) obj2));
             case 8:
                 Context context5 = (Context) obj2;
                 if (i7 == 0) {

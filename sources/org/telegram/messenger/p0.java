@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -8,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final gf.g A;
@@ -66,6 +67,7 @@ public final class p0 {
     public final g6.d0 n;
     public final h9.f1 n0;
     public final g6.d0 o;
+    public final gf.g o0;
     public final g6.d0 p;
     public final g6.d0 q;
     public final gf.g r;
@@ -164,6 +166,7 @@ public final class p0 {
         h9.f1 f1Var2 = new h9.f1(20);
         hashMap.put("agent_bot_ids", (m0) f1Var2.b);
         this.n0 = f1Var2;
+        this.o0 = c("widgets_disabled", false);
     }
 
     public final boolean a(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
@@ -175,6 +178,10 @@ public final class p0 {
             if (k0Var != null) {
                 z9 |= k0Var.a(editor, tL_jsonObjectValue.value);
             }
+        }
+        if (((h0) this.o0.b).c) {
+            ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.p.a;
+            g0.h3(new org.telegram.ui.Wallet.z(9));
         }
         return z9;
     }

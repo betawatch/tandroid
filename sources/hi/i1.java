@@ -26,18 +26,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class i1 extends na {
     public final int P1;
     public final String Q1;
-    public f41 R1;
+    public l41 R1;
     public final f1 S1;
     public boolean T1;
     public boolean U1;
@@ -465,9 +465,9 @@ public final class i1 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.P1, 0, true, new ai.e(this, 29), this.I0);
-        this.R1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.P1, 0, true, new ai.e(this, 29), this.I0);
+        this.R1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

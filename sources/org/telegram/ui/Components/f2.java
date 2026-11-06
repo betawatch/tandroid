@@ -28,7 +28,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t4, org.telegram.messenger.bb, org.telegram.ui.Cells.p5, org.telegram.messenger.lc, ki, org.telegram.ui.ActionBar.f1, dj0, org.telegram.messenger.qr, cj0, ej0 {
     public final /* synthetic */ int a;
@@ -146,7 +146,7 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
     @Override // org.telegram.ui.Components.dj0
     public boolean c(int i7, View view) {
         r5 r5Var;
-        g11 g11Var;
+        m11 m11Var;
         int i10 = this.a;
         Object obj = this.c;
         Object obj2 = this.b;
@@ -187,8 +187,8 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
                 break;
             default:
                 org.telegram.ui.dk dkVar = (org.telegram.ui.dk) obj;
-                TLRPC.TL_forumTopic tL_forumTopic = ((l01) ((n01) obj2).s.c.get(i7)).a;
-                if (tL_forumTopic != null && (g11Var = dkVar.a.f2) != null && g11Var.o(tL_forumTopic, view, true)) {
+                TLRPC.TL_forumTopic tL_forumTopic = ((p01) ((s01) obj2).s.c.get(i7)).a;
+                if (tL_forumTopic != null && (m11Var = dkVar.a.f2) != null && m11Var.o(tL_forumTopic, view, true)) {
                     break;
                 }
                 break;
@@ -274,9 +274,9 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
     public void f(float f10, float f11, int i7, View view) {
         switch (this.a) {
             case 20:
-                k41 k41Var = (k41) this.b;
+                q41 q41Var = (q41) this.b;
                 org.telegram.messenger.a20 a20Var = (org.telegram.messenger.a20) this.c;
-                r31 G = k41Var.f3.G(i7);
+                x31 G = q41Var.f3.G(i7);
                 if (G != null) {
                     a20Var.i(G, view, Integer.valueOf(i7), Float.valueOf(f10), Float.valueOf(f11));
                     break;
@@ -465,9 +465,9 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
 
     @Override // org.telegram.ui.Components.ej0
     public boolean f(float f10, float f11, int i7, View view) {
-        k41 k41Var = (k41) this.b;
+        q41 q41Var = (q41) this.b;
         org.telegram.messenger.b20 b20Var = (org.telegram.messenger.b20) this.c;
-        r31 G = k41Var.f3.G(i7);
+        x31 G = q41Var.f3.G(i7);
         if (G == null) {
             return false;
         }

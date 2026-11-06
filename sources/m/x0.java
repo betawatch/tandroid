@@ -16,11 +16,11 @@ import android.util.TypedValue;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
-import c8.lc;
+import c8.mc;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class x0 {
     public final TextView a;
@@ -387,10 +387,10 @@ public final class x0 {
         int dimensionPixelSize3 = obtainStyledAttributes4.getDimensionPixelSize(19, -1);
         obtainStyledAttributes4.recycle();
         if (dimensionPixelSize != -1) {
-            lc.b(textView, dimensionPixelSize);
+            mc.b(textView, dimensionPixelSize);
         }
         if (dimensionPixelSize2 != -1) {
-            lc.c(textView, dimensionPixelSize2);
+            mc.c(textView, dimensionPixelSize2);
         }
         if (dimensionPixelSize3 != -1) {
             if (dimensionPixelSize3 < 0) {

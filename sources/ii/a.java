@@ -7,9 +7,9 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements v10 {
     public final /* synthetic */ int a;
@@ -28,14 +28,14 @@ public final /* synthetic */ class a implements v10 {
         switch (i7) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                arrayList.add(r31.l(0, fVar.h));
-                r31 c10 = r31.c(1, R.drawable.msg_groups_create, hd.M0(2131751939, null));
+                arrayList.add(x31.l(0, fVar.h));
+                x31 c10 = x31.c(1, R.drawable.msg_groups_create, hd.M0(2131751939, null));
                 c10.q = true;
                 arrayList.add(c10);
-                arrayList.add(r31.E(2, org.telegram.messenger.g0.L(14.0f)));
+                arrayList.add(x31.E(2, org.telegram.messenger.g0.L(14.0f)));
                 ArrayList arrayList2 = fVar.n;
                 if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(r31.t(3, hd.M0(2131751969, null)));
+                    arrayList.add(x31.t(3, hd.M0(2131751969, null)));
                     ArrayList arrayList3 = fVar.n;
                     int size = arrayList3.size();
                     int i10 = 0;
@@ -44,7 +44,7 @@ public final /* synthetic */ class a implements v10 {
                         i10++;
                         TLRPC.Chat chat = (TLRPC.Chat) obj3;
                         TLRPC.ChatFull N0 = fVar.getMessagesController().N0(chat.id);
-                        r31 w10 = r31.w(chat);
+                        x31 w10 = x31.w(chat);
                         long j3 = chat.id;
                         w10.d = (int) (j3 ^ (j3 >>> 32));
                         if (N0 != null) {

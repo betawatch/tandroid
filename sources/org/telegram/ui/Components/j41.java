@@ -1,45 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class j41 extends v4.k {
-    public final /* synthetic */ k41 F;
+public final class j41 extends View {
+    public int a;
 
-    public j41(k41 k41Var) {
-        this.F = k41Var;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    @Override // v4.k
-    public final void M() {
-        k41 k41Var = this.F;
-        if (k41Var.b1()) {
-            k41Var.invalidate();
+    public void setHeight(int i7) {
+        if (this.a == i7) {
+            return;
         }
-        k41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void O() {
-        k41 k41Var = this.F;
-        if (k41Var.b1()) {
-            k41Var.invalidate();
-        }
-        k41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void P(v4.d1 d1Var) {
-        k41 k41Var = this.F;
-        k41Var.invalidate();
-        k41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void Q() {
-        k41 k41Var = this.F;
-        if (k41Var.b1()) {
-            k41Var.invalidate();
-        }
-        k41Var.F1();
+        this.a = i7;
+        requestLayout();
     }
 }

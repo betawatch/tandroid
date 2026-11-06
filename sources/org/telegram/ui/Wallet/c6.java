@@ -14,10 +14,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout implements SensorEventListener {
     public static final Object n0 = new Object();
@@ -51,7 +51,7 @@ public final class c6 extends FrameLayout implements SensorEventListener {
     public float d0;
     public final org.telegram.ui.Cells.v0 e;
     public float e0;
-    public final p41 f;
+    public final v41 f;
     public float f0;
     public float g0;
     public final fi.p5 h;
@@ -62,7 +62,7 @@ public final class c6 extends FrameLayout implements SensorEventListener {
     public float l0;
     public float m0;
     public final b6 n;
-    public final p41 r;
+    public final v41 r;
     public final ga.d s;
     public final float[] w;
     public final SensorManager x;
@@ -92,27 +92,27 @@ public final class c6 extends FrameLayout implements SensorEventListener {
         org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(this, context);
         this.e = v0Var;
         addView(v0Var, c8.ha.e(-1, -1, 17));
-        p41 p41Var = new p41(context);
-        this.f = p41Var;
-        p41Var.setPadding(2, 2, 2, 2);
-        p41Var.setLayerType(2, null);
+        v41 v41Var = new v41(context);
+        this.f = v41Var;
+        v41Var.setPadding(2, 2, 2, 2);
+        v41Var.setLayerType(2, null);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         layoutParams.setMargins(-2, -2, -2, -2);
-        v0Var.addView(p41Var, layoutParams);
+        v0Var.addView(v41Var, layoutParams);
         fi.p5 p5Var = new fi.p5(this, context);
         this.h = p5Var;
-        p41Var.addView(p5Var, c8.ha.e(-1, -1, 17));
+        v41Var.addView(p5Var, c8.ha.e(-1, -1, 17));
         b6 b6Var = new b6(this, context);
         this.n = b6Var;
-        p41Var.addView(b6Var, c8.ha.e(-1, -1, 17));
-        p41 p41Var2 = new p41(3, context, this);
-        this.r = p41Var2;
-        p41Var2.setClipChildren(false);
-        p41Var2.setClipToPadding(false);
-        p41Var2.setLayerType(2, null);
-        p41Var2.setPivotX(0.0f);
-        p41Var2.setPivotY(0.0f);
-        p41Var.addView(p41Var2, c8.ha.e(qs.H5, qs.j3, 51));
+        v41Var.addView(b6Var, c8.ha.e(-1, -1, 17));
+        v41 v41Var2 = new v41(3, context, this);
+        this.r = v41Var2;
+        v41Var2.setClipChildren(false);
+        v41Var2.setClipToPadding(false);
+        v41Var2.setLayerType(2, null);
+        v41Var2.setPivotX(0.0f);
+        v41Var2.setPivotY(0.0f);
+        v41Var.addView(v41Var2, c8.ha.e(qs.H5, qs.j3, 51));
         this.H = ViewConfiguration.get(context).getScaledTouchSlop();
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
         this.x = sensorManager;
@@ -392,9 +392,9 @@ public final class c6 extends FrameLayout implements SensorEventListener {
     @Override // android.view.View
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
         super.onSizeChanged(i7, i10, i11, i12);
-        p41 p41Var = this.r;
-        p41Var.setScaleX(i7 / org.telegram.messenger.g0.L(336.0f));
-        p41Var.setScaleY(i10 / org.telegram.messenger.g0.L(205.0f));
+        v41 v41Var = this.r;
+        v41Var.setScaleX(i7 / org.telegram.messenger.g0.L(336.0f));
+        v41Var.setScaleY(i10 / org.telegram.messenger.g0.L(205.0f));
         b(this.c0, this.f0);
     }
 

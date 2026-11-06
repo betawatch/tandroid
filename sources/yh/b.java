@@ -13,17 +13,17 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.v80;
-import org.telegram.ui.Components.w41;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import v4.s0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class b extends w41 {
+public final class b extends b51 {
     public final int K1;
     public final w80 L1;
     public final lz M1;
@@ -79,7 +79,7 @@ public final class b extends w41 {
         w80Var.e();
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void J0(MotionEvent motionEvent, ah.i iVar) {
         f2 f2Var;
         int action = motionEvent.getAction();
@@ -111,12 +111,12 @@ public final class b extends w41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void L0(String str) {
         this.L1.j(str);
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void N0(int i7) {
         super.N0(i7);
         this.M1.setTranslationY(this.j1.getMeasuredHeight() + i7);
@@ -125,7 +125,7 @@ public final class b extends w41 {
         this.O1.setTranslationY(f10);
     }
 
-    @Override // org.telegram.ui.Components.w41
+    @Override // org.telegram.ui.Components.b51
     public final void Q0() {
         q1 q1Var = this.k1;
         if (q1Var.getChildCount() > 0) {
@@ -139,7 +139,7 @@ public final class b extends w41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w41, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.Components.b51, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
         d dVar = this.S1;
         b bVar = dVar.i;

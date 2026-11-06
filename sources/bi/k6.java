@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.b30;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k6 {
     public final TL_stars.TL_starGiftUnique a;
@@ -82,19 +82,19 @@ public final class k6 {
         textView2.setTextSize(1, 16.0f);
         f10.addView(textView2, c8.ha.t(-1, -2, 48, 24, 4, 24, 4));
         if (z9) {
-            sx0 sx0Var = new sx0(context, f6Var);
-            k7.k1(sx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            k7.k1(sx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            k7.k1(sx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            tx0 tx0Var = new tx0(context, f6Var);
+            k7.k1(tx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            k7.k1(tx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            k7.k1(tx0Var, ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
                 org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
                 long j10 = tL_starGiftUnique.value_amount;
                 String str2 = tL_starGiftUnique.value_currency;
                 int h = org.telegram.messenger.r1.i().h(tL_starGiftUnique.value_currency);
                 i10.getClass();
-                sx0Var.c(org.telegram.messenger.hd.M0(2131749590, null), rf.b.i("~", org.telegram.messenger.r1.g(str2, h, j10, true)), null, null);
+                tx0Var.c(org.telegram.messenger.hd.M0(2131749590, null), rf.b.i("~", org.telegram.messenger.r1.g(str2, h, j10, true)), null, null);
             }
-            f10.addView(sx0Var, c8.ha.t(-1, -2, 48, 23, 16, 23, 4));
+            f10.addView(tx0Var, c8.ha.t(-1, -2, 48, 23, 16, 23, 4));
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
         alertDialog$Builder.o(j6Var);

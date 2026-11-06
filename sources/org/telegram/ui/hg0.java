@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class hg0 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -179,9 +179,9 @@ public final class hg0 extends org.telegram.ui.Components.oj0 {
             TLObject a22 = org.telegram.messenger.m5.E(B0) ? jg0Var.getMessagesController().a2(Long.valueOf(B0)) : jg0Var.getMessagesController().M0(Long.valueOf(-B0));
             TL_stories.StoryViews storyViews = storyItem2.views;
             a5Var.c(a22, null, (storyViews == null || (i10 = storyViews.views_count) == 0) ? org.telegram.messenger.hd.M0(2131748131, null) : org.telegram.messenger.hd.G(i10, "Views", new Object[0]), i7 != jg0Var.J + (-1));
-            org.telegram.ui.Components.n41 n41Var = new org.telegram.ui.Components.n41(28, this, ijVar2);
+            org.telegram.ui.Components.t41 t41Var = new org.telegram.ui.Components.t41(28, this, ijVar2);
             a5Var.r = storyItem2;
-            a5Var.a.setOnClickListener(n41Var);
+            a5Var.a.setOnClickListener(t41Var);
             return;
         }
         a5Var.r = null;

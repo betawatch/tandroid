@@ -8,16 +8,16 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class wi implements org.telegram.ui.ActionBar.o0, cr0, org.telegram.ui.Components.r40, kl, lm0 {
+public final class wi implements org.telegram.ui.ActionBar.o0, dr0, org.telegram.ui.Components.r40, kl, lm0 {
     public final /* synthetic */ an a;
 
     public /* synthetic */ wi(an anVar) {
         this.a = anVar;
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public void I(org.telegram.messenger.ij ijVar) {
         if (ijVar == null) {
             return;
@@ -56,7 +56,7 @@ public final class wi implements org.telegram.ui.ActionBar.o0, cr0, org.telegram
         this.a.z0.invalidate();
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public void I0(org.telegram.messenger.ij ijVar) {
         an anVar = this.a;
         anVar.z0.I0(true);
@@ -82,7 +82,7 @@ public final class wi implements org.telegram.ui.ActionBar.o0, cr0, org.telegram
         this.a.l(i7, 0, true, 0, true, 0);
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.dr0
     public TextureView l0() {
         return this.a.K8;
     }

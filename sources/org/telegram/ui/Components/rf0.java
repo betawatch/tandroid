@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class rf0 extends ep {
     public final ArrayList c = new ArrayList();
@@ -131,7 +131,7 @@ public final class rf0 extends ep {
                 pf0Var.c.L = hcVar != null;
                 z9 = arrayList5.get(i11) == null;
                 org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) arrayList4.get(i11);
-                pf0Var.c.q((y41) arrayList5.get(i11), hcVar, null, (org.telegram.messenger.hc) arrayList3.get(i11), (org.telegram.messenger.hc) arrayList4.get(i11), (hcVar2 == null || !(hcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + sf0Var.E0);
+                pf0Var.c.q((d51) arrayList5.get(i11), hcVar, null, (org.telegram.messenger.hc) arrayList3.get(i11), (org.telegram.messenger.hc) arrayList4.get(i11), (hcVar2 == null || !(hcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + sf0Var.E0);
                 if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z9 : true) {
                 }
                 pf0Var.c.getImageReceiver().g1 = new n(this);
@@ -221,9 +221,9 @@ public final class rf0 extends ep {
                         nf0Var4.a.u0(hcVar5, str, hcVar6, null, null, null, new BitmapDrawable((Resources) null, n10), intValue, null, sb3, 1);
                         nf0Var4.d();
                     } else if (sf0Var.K0 == null) {
-                        pf0Var.c.q((y41) arrayList5.get(i11), (org.telegram.messenger.hc) arrayList6.get(i11), str, (org.telegram.messenger.hc) arrayList3.get(i11), sf0Var.K0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                        pf0Var.c.q((d51) arrayList5.get(i11), (org.telegram.messenger.hc) arrayList6.get(i11), str, (org.telegram.messenger.hc) arrayList3.get(i11), sf0Var.K0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
                     } else {
-                        pf0Var.c.q((y41) arrayList5.get(i11), hcVar3, null, (org.telegram.messenger.hc) arrayList3.get(i11), (org.telegram.messenger.hc) arrayList4.get(i11), (hcVar4 == null || !(hcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
+                        pf0Var.c.q((d51) arrayList5.get(i11), hcVar3, null, (org.telegram.messenger.hc) arrayList3.get(i11), (org.telegram.messenger.hc) arrayList4.get(i11), (hcVar4 == null || !(hcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
                     }
                     z9 = z10;
                     if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z9 : true) {

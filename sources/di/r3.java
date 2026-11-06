@@ -22,10 +22,10 @@ import org.telegram.ui.an;
 import org.telegram.ui.bk0;
 import org.telegram.ui.hl0;
 import org.telegram.ui.u71;
-import org.telegram.ui.us0;
+import org.telegram.ui.vs0;
 import org.telegram.ui.ws;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -218,7 +218,7 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
             default:
                 ug.w0 w0Var = (ug.w0) obj3;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                us0 us0Var = (us0) obj;
+                vs0 vs0Var = (vs0) obj;
                 if (f2Var instanceof an) {
                     an anVar = (an) f2Var;
                     anVar.O7(true);
@@ -260,7 +260,7 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                     i13++;
                 }
                 if (z10 || w0Var.w1) {
-                    PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(us0Var.a));
+                    PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(vs0Var.a));
                     if (f2Var instanceof u71) {
                         org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
                         d2Var.a = true;
@@ -274,7 +274,7 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                         }
                     }
                 } else {
-                    PremiumPreviewFragment.p0(f2Var, w0Var.A1, PremiumPreviewFragment.q0(us0Var.a), null);
+                    PremiumPreviewFragment.p0(f2Var, w0Var.A1, PremiumPreviewFragment.q0(vs0Var.a), null);
                 }
                 w0Var.dismiss();
                 break;

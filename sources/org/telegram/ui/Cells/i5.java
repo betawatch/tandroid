@@ -22,7 +22,7 @@ import org.telegram.ui.Components.qa0;
 import org.telegram.ui.r71;
 import org.telegram.ui.u71;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i5 extends org.telegram.ui.Components.l9 implements org.telegram.messenger.x5 {
     public RectF G;
@@ -324,16 +324,16 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
                 return;
             }
             org.telegram.messenger.w7.G(i7);
-            A = org.telegram.messenger.w7.K(tL_wallPaper.document, null, true, true);
+            A = org.telegram.messenger.w7.J(tL_wallPaper.document, null, true, true);
         } else {
             kf kfVar = (kf) obj;
             TLRPC.Photo photo = kfVar.K;
             if (photo != null) {
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(photo.sizes, this.U, true, null, false);
                 org.telegram.messenger.w7.G(i7);
-                File K = org.telegram.messenger.w7.K(w10, null, true, true);
+                File J = org.telegram.messenger.w7.J(w10, null, true, true);
                 name = org.telegram.messenger.w7.r(null, w10);
-                A = K;
+                A = J;
             } else {
                 A = gc.A(kfVar.C);
                 name = A.getName();
@@ -349,7 +349,7 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
             return;
         }
         org.telegram.messenger.z5.q(i7).a(name, null, this);
-        org.telegram.messenger.w7.G(i7).T(name);
+        org.telegram.messenger.w7.G(i7).S(name);
         Float w11 = gc.D().w(name);
         if (w11 != null) {
             radialProgress2.p(z10, w11.floatValue());

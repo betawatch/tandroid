@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class zf0 extends View {
     public final ic D;
@@ -37,8 +37,8 @@ public class zf0 extends View {
     public float P;
     public final PorterDuffColorFilter a;
     public final PorterDuffColorFilter b;
-    public ly0 c;
-    public ly0 d;
+    public my0 c;
+    public my0 d;
     public zf0 e;
     public zf0 f;
     public final Paint h;
@@ -110,9 +110,9 @@ public class zf0 extends View {
 
     public float c(float f10) {
         float max = Math.max(0.0f, ((f10 - org.telegram.messenger.g0.L(16.0f)) - org.telegram.messenger.g0.L(16.6f)) - org.telegram.messenger.g0.L(8.0f));
-        ly0 ly0Var = this.c;
-        ly0Var.p = max / 2.0f;
-        this.d.p = Math.max(0.0f, max - ly0Var.k());
+        my0 my0Var = this.c;
+        my0Var.p = max / 2.0f;
+        this.d.p = Math.max(0.0f, max - my0Var.k());
         return this.d.k() + this.c.k() + org.telegram.messenger.g0.L(16.6f) + org.telegram.messenger.g0.L(8.0f);
     }
 
@@ -157,8 +157,8 @@ public class zf0 extends View {
     }
 
     public final void e(String str, String str2) {
-        this.c = new ly0(str, 11.0f, org.telegram.messenger.g0.o());
-        this.d = new ly0(str2, 11.0f, null);
+        this.c = new my0(str, 11.0f, org.telegram.messenger.g0.o());
+        this.d = new my0(str2, 11.0f, null);
         setContentDescription(org.telegram.messenger.hd.M0(2131754799, null) + " " + ((Object) str) + " — " + ((Object) str2));
     }
 

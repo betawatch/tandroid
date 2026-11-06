@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fi implements org.telegram.messenger.d20 {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class fi implements org.telegram.messenger.d20 {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                k41 k41Var = (k41) obj2;
+                q41 q41Var = (q41) obj2;
                 View view2 = (View) obj;
-                k41Var.getClass();
-                return view2.getParent() != k41Var ? Boolean.FALSE : Boolean.valueOf(!f41.K(k41Var.T(view2).f));
+                q41Var.getClass();
+                return view2.getParent() != q41Var ? Boolean.FALSE : Boolean.valueOf(!l41.K(q41Var.T(view2).f));
         }
     }
 }

@@ -42,9 +42,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.h20;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.WalletEngine2;
@@ -58,7 +58,7 @@ import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 import org.telegram.ui.zc0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -851,25 +851,25 @@ public final /* synthetic */ class w2 implements Runnable {
                 new e1(context, i19, j22, njVar, anVar2, f6Var, 0, new org.telegram.messenger.voip.k(24, diVar, anVar2)).show();
                 return;
             case 17:
-                g11 g11Var = (g11) this.b;
+                m11 m11Var = (m11) this.b;
                 k60 k60Var = (k60) this.d;
                 long j23 = this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.e;
                 k60Var.u();
-                TLRPC.User a23 = qp.s1(g11Var.e).a2(Long.valueOf(j23));
+                TLRPC.User a23 = qp.s1(m11Var.e).a2(Long.valueOf(j23));
                 if (a23 != null) {
-                    an anVar3 = g11Var.s;
-                    org.telegram.ui.Components.v4.q(anVar3, -1, a23, chat2, true, new di.c1(g11Var, j23, i11), anVar3.getResourceProvider());
+                    an anVar3 = m11Var.s;
+                    org.telegram.ui.Components.v4.q(anVar3, -1, a23, chat2, true, new di.c1(m11Var, j23, i11), anVar3.getResourceProvider());
                     return;
                 }
                 return;
             case 18:
-                g11 g11Var2 = (g11) this.b;
+                m11 m11Var2 = (m11) this.b;
                 HashSet hashSet = (HashSet) this.d;
                 ArrayList arrayList16 = (ArrayList) this.e;
                 long j24 = this.c;
-                g11Var2.k0.removeAll(hashSet);
-                g11Var2.q();
+                m11Var2.k0.removeAll(hashSet);
+                m11Var2.q();
                 int size = arrayList16.size();
                 int i20 = 0;
                 while (i20 < size) {
@@ -877,7 +877,7 @@ public final /* synthetic */ class w2 implements Runnable {
                     i20++;
                     long intValue = ((Integer) obj3).intValue();
                     if (j24 == intValue) {
-                        g11Var2.n(intValue, false);
+                        m11Var2.n(intValue, false);
                         return;
                     }
                 }

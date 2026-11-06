@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class fj implements rg0 {
     public float D;
@@ -28,12 +28,12 @@ public final class fj implements rg0 {
     public boolean I;
     public boolean J;
     public String K;
-    public ly0 L;
+    public my0 L;
     public int M;
     public boolean N;
     public int O;
     public Drawable P;
-    public ly0 Q;
+    public my0 Q;
     public int R;
     public org.telegram.ui.Cells.y S;
     public Paint T;
@@ -207,9 +207,9 @@ public final class fj implements rg0 {
             this.P.setAlpha(i11);
             this.P.setBounds((int) centerX, (int) (L - ((r2.getIntrinsicHeight() * 0.8f) / 2.0f)), (int) ((this.P.getIntrinsicWidth() * 0.8f) + centerX), (int) a8.p0.f(this.P.getIntrinsicHeight(), 0.8f, 2.0f, L));
             this.P.draw(canvas);
-            ly0 ly0Var = this.Q;
-            ly0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
-            ly0Var.c((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
+            my0 my0Var = this.Q;
+            my0Var.p = g0.L(12.0f) + ((int) (r1 - ((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f))));
+            my0Var.c((this.P.getIntrinsicWidth() * 0.8f) + g0.L(5.0f) + centerX, L, f10, i7, canvas);
         }
     }
 
@@ -236,7 +236,7 @@ public final class fj implements rg0 {
         boolean z10 = i7 >= 75 && !z9;
         this.N = z10;
         if (z10) {
-            this.Q = new ly0(hd.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
+            this.Q = new my0(hd.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
             Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
             this.P = h;
             h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));
@@ -252,9 +252,9 @@ public final class fj implements rg0 {
         String b10 = b(str);
         int i10 = iz.W0 - 1;
         ni.s sVar = ni.m.a;
-        ly0 ly0Var = new ly0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
-        this.L = ly0Var;
-        this.M = g0.L(4.0f) + ((int) (ly0Var.a.getTextSize() * 1.714f));
+        my0 my0Var = new my0(b10, i10 - ((i7 <= 120 ? i7 > 50 ? 3 : 2 : 5) / 2), g0.o());
+        this.L = my0Var;
+        this.M = g0.L(4.0f) + ((int) (my0Var.a.getTextSize() * 1.714f));
     }
 
     public final void n(String str, boolean z9) {
@@ -270,7 +270,7 @@ public final class fj implements rg0 {
             str = null;
         }
         this.K = str;
-        this.L = str != null ? new ly0(str, Math.max(8, iz.W0 - 4), null) : null;
+        this.L = str != null ? new my0(str, Math.max(8, iz.W0 - 4), null) : null;
         this.M = 0;
     }
 

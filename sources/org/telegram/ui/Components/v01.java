@@ -1,35 +1,42 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class v01 extends v4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g11 b;
+public final /* synthetic */ class v01 implements org.telegram.messenger.a20, org.telegram.messenger.b20, te.b {
+    public final /* synthetic */ m11 a;
 
-    public /* synthetic */ v01(g11 g11Var, int i7) {
-        this.a = i7;
-        this.b = g11Var;
+    public /* synthetic */ v01(m11 m11Var) {
+        this.a = m11Var;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                g11 g11Var = this.b;
-                if (g11Var.l()) {
-                    g11Var.m();
-                    break;
-                }
-                break;
-            default:
-                g11 g11Var2 = this.b;
-                if (g11Var2.l()) {
-                    g11Var2.m();
-                    break;
-                }
-                break;
+    @Override // te.b
+    public void Y(int i7, float f10, float f11, te.c cVar) {
+        this.a.h();
+    }
+
+    @Override // org.telegram.messenger.b20
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
+        m11 m11Var = this.a;
+        boolean z9 = false;
+        if (!m11Var.J.j3 && !m11Var.y.j3) {
+            Object obj = x31Var.G;
+            if (obj instanceof TLRPC.TL_forumTopic) {
+                z9 = m11Var.o((TLRPC.TL_forumTopic) obj, view, false);
+            }
         }
+        return Boolean.valueOf(z9);
+    }
+
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        m11.a(this.a, (x31) obj);
+    }
+
+    @Override // te.b
+    public /* synthetic */ void F(float f10, int i7) {
     }
 }

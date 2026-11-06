@@ -59,7 +59,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class gz extends c1 implements ls {
     public static final p5 I = new p5("mediaSendQueue");
@@ -166,8 +166,8 @@ public final class gz extends c1 implements ls {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
                 w7.G(cVar.a);
-                File K2 = w7.K(photoSize, null, z10, true);
-                FileInputStream fileInputStream = new FileInputStream(K2);
+                File J2 = w7.J(photoSize, null, z10, true);
+                FileInputStream fileInputStream = new FileInputStream(J2);
                 BitmapFactory.decodeStream(fileInputStream, null, options);
                 fileInputStream.close();
                 float max = Math.max(options.outWidth / P1.x, options.outHeight / P1.y);
@@ -177,7 +177,7 @@ public final class gz extends c1 implements ls {
                 options.inJustDecodeBounds = false;
                 options.inSampleSize = (int) max;
                 options.inPreferredConfig = Bitmap.Config.RGB_565;
-                FileInputStream fileInputStream2 = new FileInputStream(K2);
+                FileInputStream fileInputStream2 = new FileInputStream(J2);
                 bitmapArr[0] = BitmapFactory.decodeStream(fileInputStream2, null, options);
                 fileInputStream2.close();
             } catch (Throwable unused) {
@@ -834,7 +834,7 @@ public final class gz extends c1 implements ls {
                         if (document instanceof TLRPC.TL_document) {
                             tL_document3 = (TLRPC.TL_document) document;
                             w7.G(cVar2.a);
-                            file3 = w7.L(tL_document3, true);
+                            file3 = w7.K(tL_document3, true);
                         } else {
                             file3 = new File(w7.z(4), Utilities.a(fzVar5.l.C) + "." + gc.B(fzVar5.l.C, "jpg"));
                             tL_document3 = null;
@@ -1915,7 +1915,7 @@ public final class gz extends c1 implements ls {
                             if (fzVar5.c == null && (kfVar2 = fzVar5.l) != null) {
                                 if (kfVar2.K instanceof TLRPC.TL_photo) {
                                     w7.G(cVar2.a);
-                                    fzVar5.c = w7.L(fzVar5.l.K, true).getAbsolutePath();
+                                    fzVar5.c = w7.K(fzVar5.l.K, true).getAbsolutePath();
                                 } else {
                                     fzVar5.c = new File(w7.z(4), Utilities.a(fzVar5.l.C) + "." + gc.B(fzVar5.l.C, "jpg")).getAbsolutePath();
                                 }
@@ -3607,7 +3607,7 @@ public final class gz extends c1 implements ls {
                         } else {
                             w7.G(cVar2.a);
                             z11 = true;
-                            I2 = w7.K(tL_document, null, true, true);
+                            I2 = w7.J(tL_document, null, true, true);
                         }
                         inputPeer = null;
                         tL_document2 = tL_document;
@@ -6838,11 +6838,11 @@ public final class gz extends c1 implements ls {
                 z11 = true;
             } else {
                 w7.G(cVar.a);
-                z11 = w7.K(w10, null, true, true).exists();
+                z11 = w7.J(w10, null, true, true).exists();
             }
             TLRPC.PhotoSize w11 = w7.w(tL_photo.sizes, g0.Z0(z10), false, null, false);
             w7.G(cVar.a);
-            boolean exists = w7.K(w11, null, false, true).exists();
+            boolean exists = w7.J(w11, null, false, true).exists();
             if (z11 && exists) {
                 return;
             }
@@ -6873,7 +6873,7 @@ public final class gz extends c1 implements ls {
                     return;
                 }
                 w7.G(cVar.a);
-                if (w7.K(w12, null, true, true).exists()) {
+                if (w7.J(w12, null, true, true).exists()) {
                     return;
                 }
                 Bitmap s5 = s(str, j3, null, false);
@@ -7243,7 +7243,7 @@ public final class gz extends c1 implements ls {
                 w7.G(gzVar.currentAccount);
                 String file = w7.I(syVar2.g).toString();
                 gzVar.e0(file, syVar2);
-                gzVar.getFileLoader().i0(false, 16777216, file, true);
+                gzVar.getFileLoader().h0(false, 16777216, file, true);
                 gzVar.h0(syVar2.m);
                 return;
             }
@@ -7253,17 +7253,17 @@ public final class gz extends c1 implements ls {
                 File file3 = new File(file2);
                 if (!file3.exists()) {
                     w7.G(gzVar.currentAccount);
-                    file2 = w7.K(syVar2.g, null, true, true).toString();
+                    file2 = w7.J(syVar2.g, null, true, true).toString();
                     file3 = new File(file2);
                 }
                 if (!file3.exists()) {
                     gzVar.e0(w7.r(null, syVar2.g), syVar2);
-                    gzVar.getFileLoader().W(hc.f(syVar2.g, syVar2.h), syVar2.K, "jpg", 3, 0);
+                    gzVar.getFileLoader().V(hc.f(syVar2.g, syVar2.h), syVar2.K, "jpg", 3, 0);
                     return;
                 }
             }
             gzVar.e0(file2, syVar2);
-            gzVar.getFileLoader().i0(true, 16777216, file2, true);
+            gzVar.getFileLoader().h0(true, 16777216, file2, true);
             gzVar.h0(syVar2.m);
             return;
         }
@@ -7331,7 +7331,7 @@ public final class gz extends c1 implements ls {
                         w7 fileLoader = gzVar.getFileLoader();
                         TLRPC.Message message = syVar2.m.k;
                         fileLoader.getClass();
-                        file4 = w7.N(message, false, true);
+                        file4 = w7.M(message, false, true);
                         if (file4 != null && file4.exists()) {
                             TLRPC.Message message2 = syVar2.m.k;
                             String absolutePath = file4.getAbsolutePath();
@@ -7344,7 +7344,7 @@ public final class gz extends c1 implements ls {
                         w7 fileLoader2 = gzVar.getFileLoader();
                         TLRPC.Document F03 = syVar2.m.F0();
                         fileLoader2.getClass();
-                        file4 = w7.K(F03, null, false, true);
+                        file4 = w7.J(F03, null, false, true);
                         if (file4 != null && file4.exists()) {
                             TLRPC.Message message3 = syVar2.m.k;
                             String absolutePath2 = file4.getAbsolutePath();
@@ -7353,9 +7353,22 @@ public final class gz extends c1 implements ls {
                             str4 = absolutePath2;
                         }
                     }
+                    if (file4 == null || (!file4.exists() && syVar2.m.F0() != null)) {
+                        w7 fileLoader3 = gzVar.getFileLoader();
+                        TLRPC.Document F04 = syVar2.m.F0();
+                        fileLoader3.getClass();
+                        file4 = w7.J(F04, null, true, true);
+                        if (file4 != null && file4.exists()) {
+                            TLRPC.Message message4 = syVar2.m.k;
+                            String absolutePath3 = file4.getAbsolutePath();
+                            message4.attachPath = absolutePath3;
+                            syVar2.m.w0 = true;
+                            str4 = absolutePath3;
+                        }
+                    }
                     if (file4 == null || !file4.exists()) {
                         gzVar.e0(w7.r(null, F02), syVar2);
-                        gzVar.getFileLoader().X(F02, syVar2.K, 3, 0);
+                        gzVar.getFileLoader().W(F02, syVar2.K, 3, 0);
                         return;
                     }
                 }
@@ -7364,9 +7377,9 @@ public final class gz extends c1 implements ls {
                 j20 j20Var4 = syVar2.m.p0;
                 if (j20Var4 == null || !j20Var4.P) {
                     if (j20Var4 == null || !j20Var4.c()) {
-                        gzVar.getFileLoader().i0(true, 33554432, str5, false);
+                        gzVar.getFileLoader().h0(true, 33554432, str5, false);
                     } else {
-                        gzVar.getFileLoader().h0(str5, true, false, F02.size, 33554432, false);
+                        gzVar.getFileLoader().g0(str5, true, false, F02.size, 33554432, false);
                     }
                 }
                 gzVar.h0(syVar2.m);
@@ -7402,25 +7415,25 @@ public final class gz extends c1 implements ls {
             if (inputFile3 == null && !(inputMedia3 instanceof TLRPC.TL_inputMediaDocument) && syVar2.p) {
                 ij ijVar5 = syVar2.m;
                 String str6 = ijVar5.k.attachPath;
-                TLRPC.Document F04 = ijVar5.F0();
+                TLRPC.Document F05 = ijVar5.F0();
                 TLRPC.TL_document tL_document = syVar2.m.C1;
                 if (tL_document != null) {
-                    F04 = tL_document;
+                    F05 = tL_document;
                 }
                 if (str6 == null) {
                     StringBuilder sb4 = new StringBuilder();
                     sb4.append(w7.z(i10));
                     sb4.append("/");
-                    str6 = a8.p0.r(sb4, F04.id, ".mp4");
+                    str6 = a8.p0.r(sb4, F05.id, ".mp4");
                 }
                 String str7 = str6;
                 gzVar.e0(str7, syVar2);
                 j20 j20Var5 = syVar2.m.p0;
                 if (j20Var5 == null || !j20Var5.P) {
                     if (j20Var5 == null || !j20Var5.c()) {
-                        gzVar.getFileLoader().i0(false, 33554432, str7, false);
+                        gzVar.getFileLoader().h0(false, 33554432, str7, false);
                     } else {
-                        gzVar.getFileLoader().h0(str7, false, false, F04.size, 33554432, false);
+                        gzVar.getFileLoader().g0(str7, false, false, F05.size, 33554432, false);
                     }
                 }
                 gzVar.h0(syVar2.m);
@@ -7430,7 +7443,7 @@ public final class gz extends c1 implements ls {
             if (inputPhoto == null && syVar2.j == null && syVar2.i != null && syVar2.q) {
                 String str8 = w7.z(i10) + "/" + syVar2.i.location.volume_id + "_" + syVar2.i.location.local_id + ".jpg";
                 gzVar.e0(str8, syVar2);
-                gzVar.getFileLoader().i0(false, 16777216, str8, true);
+                gzVar.getFileLoader().h0(false, 16777216, str8, true);
                 gzVar.h0(syVar2.m);
                 return;
             }
@@ -7462,7 +7475,7 @@ public final class gz extends c1 implements ls {
             ij ijVar6 = syVar2.m;
             String str9 = w7.z(i10) + "/" + syVar2.g.location.volume_id + "_" + syVar2.g.location.local_id + "." + ((ijVar6 == null || (j20Var = ijVar6.p0) == null || !j20Var.N) ? "jpg" : "webp");
             gzVar.e0(str9, syVar2);
-            gzVar.getFileLoader().i0(false, 16777216, str9, true);
+            gzVar.getFileLoader().h0(false, 16777216, str9, true);
             gzVar.h0(syVar2.m);
             return;
         }
@@ -7479,7 +7492,7 @@ public final class gz extends c1 implements ls {
                 if (inputMedia4.file == null) {
                     String str11 = syVar2.m.k.attachPath;
                     gzVar.e0(str11, syVar2);
-                    gzVar.getFileLoader().i0(syVar2.c == null, 67108864, str11, false);
+                    gzVar.getFileLoader().h0(syVar2.c == null, 67108864, str11, false);
                     gzVar.h0(syVar2.m);
                     return;
                 }
@@ -7488,33 +7501,20 @@ public final class gz extends c1 implements ls {
                 }
                 String str12 = w7.z(4) + "/" + syVar2.g.location.volume_id + "_" + syVar2.g.location.local_id + ".jpg";
                 gzVar.e0(str12, syVar2);
-                gzVar.getFileLoader().i0(false, 16777216, str12, true);
+                gzVar.getFileLoader().h0(false, 16777216, str12, true);
                 gzVar.h0(syVar2.m);
                 return;
             }
             ij ijVar7 = syVar2.m;
             String str13 = ijVar7.k.attachPath;
-            TLRPC.Document F05 = ijVar7.F0();
-            if (syVar2.d != null && F05.dc_id != 0) {
+            TLRPC.Document F06 = ijVar7.F0();
+            if (syVar2.d != null && F06.dc_id != 0) {
                 File file5 = new File(str13);
                 if (!file5.exists()) {
-                    w7 fileLoader3 = gzVar.getFileLoader();
-                    TLRPC.Message message4 = syVar2.m.k;
-                    fileLoader3.getClass();
-                    file5 = w7.N(message4, false, true);
-                    if (file5 != null && file5.exists()) {
-                        TLRPC.Message message5 = syVar2.m.k;
-                        String absolutePath3 = file5.getAbsolutePath();
-                        message5.attachPath = absolutePath3;
-                        syVar2.m.w0 = true;
-                        str13 = absolutePath3;
-                    }
-                }
-                if (file5 == null || (!file5.exists() && syVar2.m.F0() != null)) {
                     w7 fileLoader4 = gzVar.getFileLoader();
-                    TLRPC.Document F06 = syVar2.m.F0();
+                    TLRPC.Message message5 = syVar2.m.k;
                     fileLoader4.getClass();
-                    file5 = w7.K(F06, null, false, true);
+                    file5 = w7.M(message5, false, true);
                     if (file5 != null && file5.exists()) {
                         TLRPC.Message message6 = syVar2.m.k;
                         String absolutePath4 = file5.getAbsolutePath();
@@ -7523,21 +7523,47 @@ public final class gz extends c1 implements ls {
                         str13 = absolutePath4;
                     }
                 }
+                if (file5 == null || (!file5.exists() && syVar2.m.F0() != null)) {
+                    w7 fileLoader5 = gzVar.getFileLoader();
+                    TLRPC.Document F07 = syVar2.m.F0();
+                    fileLoader5.getClass();
+                    file5 = w7.J(F07, null, false, true);
+                    if (file5 != null && file5.exists()) {
+                        TLRPC.Message message7 = syVar2.m.k;
+                        String absolutePath5 = file5.getAbsolutePath();
+                        message7.attachPath = absolutePath5;
+                        syVar2.m.w0 = true;
+                        str13 = absolutePath5;
+                    }
+                }
+                if (file5 == null || (!file5.exists() && syVar2.m.F0() != null)) {
+                    w7 fileLoader6 = gzVar.getFileLoader();
+                    TLRPC.Document F08 = syVar2.m.F0();
+                    fileLoader6.getClass();
+                    file5 = w7.J(F08, null, true, true);
+                    if (file5 != null && file5.exists()) {
+                        TLRPC.Message message8 = syVar2.m.k;
+                        String absolutePath6 = file5.getAbsolutePath();
+                        message8.attachPath = absolutePath6;
+                        syVar2.m.w0 = true;
+                        str13 = absolutePath6;
+                    }
+                }
                 if (file5 == null || !file5.exists()) {
-                    gzVar.e0(w7.r(null, F05), syVar2);
-                    gzVar.getFileLoader().X(F05, syVar2.K, 3, 0);
+                    gzVar.e0(w7.r(null, F06), syVar2);
+                    gzVar.getFileLoader().W(F06, syVar2.K, 3, 0);
                     return;
                 }
             }
             gzVar.e0(str13, syVar2);
-            gzVar.getFileLoader().i0(true, 67108864, str13, false);
+            gzVar.getFileLoader().h0(true, 67108864, str13, false);
             gzVar.h0(syVar2.m);
             return;
         }
         if (i11 == 3) {
             String str14 = syVar2.m.k.attachPath;
             gzVar.e0(str14, syVar2);
-            gzVar.getFileLoader().i0(syVar2.c == null, ConnectionsManager.FileTypeAudio, str14, true);
+            gzVar.getFileLoader().h0(syVar2.c == null, ConnectionsManager.FileTypeAudio, str14, true);
             gzVar.h0(syVar2.m);
             return;
         }
@@ -7556,18 +7582,18 @@ public final class gz extends c1 implements ls {
         if (syVar2.p || syVar2.q) {
             int size = i7 < 0 ? syVar2.x.size() - 1 : i7;
             ij ijVar8 = (ij) syVar2.x.get(size);
-            TLRPC.Document F07 = ijVar8.F0();
-            if (F07 == null && (ij.n1(ijVar8) instanceof TLRPC.TL_messageMediaPaidMedia)) {
+            TLRPC.Document F09 = ijVar8.F0();
+            if (F09 == null && (ij.n1(ijVar8) instanceof TLRPC.TL_messageMediaPaidMedia)) {
                 TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) ij.n1(ijVar8);
                 TLRPC.MessageExtendedMedia messageExtendedMedia = size >= tL_messageMediaPaidMedia.extended_media.size() ? null : tL_messageMediaPaidMedia.extended_media.get(size);
                 TLRPC.MessageMedia messageMedia = messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia ? ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media : null;
-                F07 = messageMedia == null ? null : messageMedia.document;
+                F09 = messageMedia == null ? null : messageMedia.document;
             }
-            if (F07 == null && (ij.n1(ijVar8) instanceof TLRPC.TL_messageMediaPoll)) {
+            if (F09 == null && (ij.n1(ijVar8) instanceof TLRPC.TL_messageMediaPoll)) {
                 TLRPC.MessageMedia f10 = sh.d.f((TLRPC.TL_messageMediaPoll) ij.n1(ijVar8), ((Integer) syVar2.C.get(size)).intValue());
-                F07 = f10 == null ? null : f10.document;
+                F09 = f10 == null ? null : f10.document;
             }
-            if (F07 != null) {
+            if (F09 != null) {
                 j20 j20Var6 = syVar2.o;
                 if (j20Var6 != null && j20Var6.c() && syVar2.p) {
                     String str16 = ijVar8.k.attachPath;
@@ -7575,7 +7601,7 @@ public final class gz extends c1 implements ls {
                         StringBuilder sb5 = new StringBuilder();
                         sb5.append(w7.z(4));
                         sb5.append("/");
-                        str16 = a8.p0.r(sb5, F07.id, ".mp4");
+                        str16 = a8.p0.r(sb5, F09.id, ".mp4");
                     }
                     gzVar.e0(str16, syVar2);
                     syVar2.E.put(ijVar8, str16);
@@ -7599,7 +7625,7 @@ public final class gz extends c1 implements ls {
                         sb6.append(w7.z(4));
                         sb6.append("/");
                         str = "_ct";
-                        str17 = a8.p0.r(sb6, F07.id, ".mp4");
+                        str17 = a8.p0.r(sb6, F09.id, ".mp4");
                     } else {
                         str = "_ct";
                     }
@@ -7669,7 +7695,7 @@ public final class gz extends c1 implements ls {
                                     syVar2.E.put(str19 + "_i", ijVar8);
                                     syVar2.E.put(ijVar8, sb8);
                                     syVar2.E.put(sb8, inputMedia7);
-                                    gzVar.getFileLoader().i0(false, 16777216, sb8, true);
+                                    gzVar.getFileLoader().h0(false, 16777216, sb8, true);
                                     gzVar.h0(ijVar8);
                                 } else {
                                     inputMedia2 = inputMedia;
@@ -7690,7 +7716,7 @@ public final class gz extends c1 implements ls {
                                         syVar2.E.put(str20 + "_o", str19);
                                         syVar2.E.put(ijVar, str20);
                                         syVar2.E.put(str20, inputMedia8);
-                                        gzVar.getFileLoader().i0(false, 16777216, str20, true);
+                                        gzVar.getFileLoader().h0(false, 16777216, str20, true);
                                         gzVar.h0(ijVar);
                                     }
                                 } else {
@@ -7742,9 +7768,9 @@ public final class gz extends c1 implements ls {
                             }
                             j20 j20Var7 = ijVar8.p0;
                             if (j20Var7 == null || !j20Var7.c()) {
-                                gzVar.getFileLoader().i0(false, 33554432, str17, false);
+                                gzVar.getFileLoader().h0(false, 33554432, str17, false);
                             } else {
-                                gzVar.getFileLoader().h0(str17, false, false, F07.size, 33554432, false);
+                                gzVar.getFileLoader().g0(str17, false, false, F09.size, 33554432, false);
                             }
                             gzVar.h0(ijVar8);
                         }
@@ -7761,9 +7787,9 @@ public final class gz extends c1 implements ls {
                         }
                         j20 j20Var8 = ijVar8.p0;
                         if (j20Var8 == null || !j20Var8.c()) {
-                            gzVar.getFileLoader().i0(true, 33554432, str21, false);
+                            gzVar.getFileLoader().h0(true, 33554432, str21, false);
                         } else {
-                            gzVar.getFileLoader().h0(str21, true, false, F07.size, 33554432, false);
+                            gzVar.getFileLoader().g0(str21, true, false, F09.size, 33554432, false);
                         }
                         gzVar.h0(ijVar8);
                     }
@@ -7820,7 +7846,7 @@ public final class gz extends c1 implements ls {
                     gzVar.e0(file6, syVar2);
                     syVar2.E.put(file6, tLObject);
                     syVar2.E.put(ijVar8, file6);
-                    gzVar.getFileLoader().i0(syVar2.d != null, 16777216, file6, true);
+                    gzVar.getFileLoader().h0(syVar2.d != null, 16777216, file6, true);
                     gzVar.h0(ijVar8);
                     inputFile = null;
                     syVar2.g = null;
@@ -8470,33 +8496,31 @@ public final class gz extends c1 implements ls {
             }
             if (i7 != qs.R1) {
                 if (i7 == qs.Y1) {
-                    String str12 = (String) objArr[0];
-                    ArrayList arrayList8 = (ArrayList) gzVar.a.get(str12);
+                    ArrayList arrayList8 = (ArrayList) gzVar.a.remove((String) objArr[0]);
                     if (arrayList8 != null) {
                         for (int i26 = 0; i26 < arrayList8.size(); i26++) {
                             gzVar.M((sy) arrayList8.get(i26), -1);
+                        }
+                        return;
+                    }
+                    return;
+                }
+                if (i7 == qs.S1 || i7 == qs.Z1) {
+                    String str12 = (String) objArr[0];
+                    ArrayList arrayList9 = (ArrayList) gzVar.a.get(str12);
+                    if (arrayList9 != null) {
+                        for (int i27 = 0; i27 < arrayList9.size(); i27++) {
+                            ((sy) arrayList9.get(i27)).c();
                         }
                         gzVar.a.remove(str12);
                         return;
                     }
                     return;
                 }
-                if (i7 == qs.S1 || i7 == qs.Z1) {
-                    String str13 = (String) objArr[0];
-                    ArrayList arrayList9 = (ArrayList) gzVar.a.get(str13);
-                    if (arrayList9 != null) {
-                        for (int i27 = 0; i27 < arrayList9.size(); i27++) {
-                            ((sy) arrayList9.get(i27)).c();
-                        }
-                        gzVar.a.remove(str13);
-                        return;
-                    }
-                    return;
-                }
                 return;
             }
-            String str14 = (String) objArr[0];
-            ArrayList arrayList10 = (ArrayList) gzVar.a.get(str14);
+            String str13 = (String) objArr[0];
+            ArrayList arrayList10 = (ArrayList) gzVar.a.get(str13);
             if (arrayList10 != null) {
                 int i28 = 0;
                 while (i28 < arrayList10.size()) {
@@ -8509,7 +8533,7 @@ public final class gz extends c1 implements ls {
                         if (i29 == 2) {
                             ijVar2 = syVar5.m;
                         } else if (i29 == 4) {
-                            ijVar2 = (ij) syVar5.E.get(str14);
+                            ijVar2 = (ij) syVar5.E.get(str13);
                             if (ijVar2.F0() == null) {
                                 ijVar = ijVar2;
                                 c10 = 0;
@@ -8522,39 +8546,39 @@ public final class gz extends c1 implements ls {
                         c10 = 1;
                     }
                     if (c10 == 0) {
-                        str = str14;
-                        Utilities.e.c(new mn(this, new File(w7.z(4), Utilities.a(str14) + "." + gc.B(str14, "file")), ijVar, syVar5, str14, 17));
+                        str = str13;
+                        Utilities.e.c(new mn(this, new File(w7.z(4), Utilities.a(str13) + "." + gc.B(str13, "file")), ijVar, syVar5, str13, 17));
                     } else {
-                        str = str14;
+                        str = str13;
                         if (c10 == 1) {
                             gzVar = this;
                             Utilities.e.c(new em(this, syVar5, new File(w7.z(4), Utilities.a(str) + ".gif"), ijVar, 23));
                             i28++;
-                            str14 = str;
+                            str13 = str;
                         }
                     }
                     gzVar = this;
                     i28++;
-                    str14 = str;
+                    str13 = str;
                 }
-                gzVar.a.remove(str14);
+                gzVar.a.remove(str13);
                 return;
             }
             return;
         }
-        String str15 = (String) objArr[0];
+        String str14 = (String) objArr[0];
         TLRPC.InputFile inputFile2 = (TLRPC.InputFile) objArr[1];
         TLRPC.InputEncryptedFile inputEncryptedFile2 = (TLRPC.InputEncryptedFile) objArr[2];
-        xy xyVar3 = (xy) gzVar.y.get(str15);
+        xy xyVar3 = (xy) gzVar.y.get(str14);
         if (xyVar3 != null) {
-            if (!str15.equals(xyVar3.a)) {
+            if (!str14.equals(xyVar3.a)) {
                 c11 = 5;
                 str2 = "_ct";
-                xyVar3.b(str15, ((Long) objArr[5]).longValue(), 1.0f);
+                xyVar3.b(str14, ((Long) objArr[5]).longValue(), 1.0f);
                 TLRPC.TL_messages_uploadImportedMedia tL_messages_uploadImportedMedia = new TLRPC.TL_messages_uploadImportedMedia();
                 tL_messages_uploadImportedMedia.peer = xyVar3.g;
                 tL_messages_uploadImportedMedia.import_id = xyVar3.k;
-                tL_messages_uploadImportedMedia.file_name = new File(str15).getName();
+                tL_messages_uploadImportedMedia.file_name = new File(str14).getName();
                 MimeTypeMap singleton = MimeTypeMap.getSingleton();
                 int lastIndexOf = tL_messages_uploadImportedMedia.file_name.lastIndexOf(46);
                 String lowerCase = lastIndexOf != -1 ? tL_messages_uploadImportedMedia.file_name.substring(lastIndexOf + 1).toLowerCase() : "txt";
@@ -8572,16 +8596,16 @@ public final class gz extends c1 implements ls {
                     tL_inputMediaUploadedDocument.mime_type = mimeTypeFromExtension;
                     tL_messages_uploadImportedMedia.media = tL_inputMediaUploadedDocument;
                 }
-                xyVar3.q.getConnectionsManager().sendRequest(tL_messages_uploadImportedMedia, new vy(xyVar3, str15), 2);
-                bzVar = (bz) gzVar.E.get(str15);
+                xyVar3.q.getConnectionsManager().sendRequest(tL_messages_uploadImportedMedia, new vy(xyVar3, str14), 2);
+                bzVar = (bz) gzVar.E.get(str14);
                 if (bzVar != null) {
-                    bzVar.a(str15, ((Long) objArr[c11]).longValue(), 1.0f);
-                    zy zyVar2 = (zy) bzVar.a.get(str15);
+                    bzVar.a(str14, ((Long) objArr[c11]).longValue(), 1.0f);
+                    zy zyVar2 = (zy) bzVar.a.get(str14);
                     if (zyVar2 != null) {
-                        zyVar2.a(bzVar.o.currentAccount, inputFile2, new yq(21, bzVar, str15));
+                        zyVar2.a(bzVar.o.currentAccount, inputFile2, new yq(21, bzVar, str14));
                     }
                 }
-                arrayList2 = (ArrayList) gzVar.a.get(str15);
+                arrayList2 = (ArrayList) gzVar.a.get(str14);
                 if (arrayList2 == null) {
                     int i30 = 0;
                     while (i30 < arrayList2.size()) {
@@ -8591,29 +8615,29 @@ public final class gz extends c1 implements ls {
                             inputMedia = ((TLRPC.TL_messages_sendMedia) tLObject2).media;
                             if (inputMedia instanceof TLRPC.TL_inputMediaPaidMedia) {
                                 HashMap hashMap3 = syVar6.E;
-                                inputMedia = hashMap3 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap3.get(str15);
+                                inputMedia = hashMap3 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap3.get(str14);
                             } else if (inputMedia instanceof TLRPC.TL_inputMediaPoll) {
                                 HashMap hashMap4 = syVar6.E;
-                                inputMedia = hashMap4 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap4.get(str15);
+                                inputMedia = hashMap4 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap4.get(str14);
                             }
                         } else if (tLObject2 instanceof TL_ephemeral.TL_sendMessage) {
                             inputMedia = ((TL_ephemeral.TL_sendMessage) tLObject2).media;
                             if (inputMedia instanceof TLRPC.TL_inputMediaPaidMedia) {
                                 HashMap hashMap5 = syVar6.E;
-                                inputMedia = hashMap5 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap5.get(str15);
+                                inputMedia = hashMap5 == null ? ((TLRPC.TL_inputMediaPaidMedia) inputMedia).extended_media.get(i18) : (TLRPC.InputMedia) hashMap5.get(str14);
                             } else if (inputMedia instanceof TLRPC.TL_inputMediaPoll) {
                                 HashMap hashMap6 = syVar6.E;
-                                inputMedia = hashMap6 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap6.get(str15);
+                                inputMedia = hashMap6 == null ? sh.d.d((TLRPC.TL_inputMediaPoll) inputMedia) : (TLRPC.InputMedia) hashMap6.get(str14);
                             }
                         } else {
-                            inputMedia = tLObject2 instanceof TLRPC.TL_messages_editMessage ? ((TLRPC.TL_messages_editMessage) tLObject2).media : tLObject2 instanceof TLRPC.TL_messages_sendMultiMedia ? (TLRPC.InputMedia) syVar6.E.get(str15) : tLObject2 instanceof TLRPC.TL_messages_addPollAnswer ? ((TLRPC.TL_messages_addPollAnswer) tLObject2).answer.input_media : null;
+                            inputMedia = tLObject2 instanceof TLRPC.TL_messages_editMessage ? ((TLRPC.TL_messages_editMessage) tLObject2).media : tLObject2 instanceof TLRPC.TL_messages_sendMultiMedia ? (TLRPC.InputMedia) syVar6.E.get(str14) : tLObject2 instanceof TLRPC.TL_messages_addPollAnswer ? ((TLRPC.TL_messages_addPollAnswer) tLObject2).answer.input_media : null;
                         }
                         if (inputFile2 == null || inputMedia == null) {
                             inputFile = inputFile2;
                             str3 = str8;
                             i15 = i18;
                             str4 = str2;
-                            str5 = str15;
+                            str5 = str14;
                             TLRPC.InputEncryptedFile inputEncryptedFile3 = inputEncryptedFile2;
                             if (inputEncryptedFile3 == null || (tLObject = syVar6.d) == null) {
                                 inputEncryptedFile = inputEncryptedFile3;
@@ -8664,7 +8688,7 @@ public final class gz extends c1 implements ls {
                                 z9 = i16;
                                 str2 = str4;
                                 inputFile2 = inputFile;
-                                str15 = str5;
+                                str14 = str5;
                                 i18 = i15;
                                 inputEncryptedFile2 = inputEncryptedFile;
                                 i19 = -1;
@@ -8677,7 +8701,7 @@ public final class gz extends c1 implements ls {
                                 str6 = str8;
                                 inputFile = inputFile2;
                                 inputEncryptedFile = inputEncryptedFile2;
-                                str5 = str15;
+                                str5 = str14;
                                 gzVar.O(syVar6.c, syVar6.m, syVar6.f, syVar6, true, null, syVar6.K, null, syVar6.H);
                             } else {
                                 inputFile = inputFile2;
@@ -8685,7 +8709,7 @@ public final class gz extends c1 implements ls {
                                 int i32 = i19;
                                 i15 = i18;
                                 inputEncryptedFile = inputEncryptedFile2;
-                                str5 = str15;
+                                str5 = str14;
                                 if (i31 != z9) {
                                     c12 = 4;
                                     if (i31 == 2) {
@@ -8718,18 +8742,18 @@ public final class gz extends c1 implements ls {
                                                     if (hashMap7 != null) {
                                                         if (hashMap7.containsKey(str5 + "_doc")) {
                                                             i17 = z9;
-                                                            String str16 = i17 == 0 ? (String) syVar6.E.get(str5 + "_doc") : str5;
-                                                            ij ijVar10 = (ij) syVar6.E.get(str16 + "_i");
+                                                            String str15 = i17 == 0 ? (String) syVar6.E.get(str5 + "_doc") : str5;
+                                                            ij ijVar10 = (ij) syVar6.E.get(str15 + "_i");
                                                             hashMap = syVar6.E;
                                                             if (hashMap != null) {
-                                                                if (hashMap.containsKey(str16 + str3)) {
-                                                                    syVar6.g = (TLRPC.PhotoSize) syVar6.E.get(str16 + str3);
+                                                                if (hashMap.containsKey(str15 + str3)) {
+                                                                    syVar6.g = (TLRPC.PhotoSize) syVar6.E.get(str15 + str3);
                                                                 }
                                                             }
                                                             hashMap2 = syVar6.E;
                                                             if (hashMap2 != null) {
-                                                                if (hashMap2.containsKey(str16 + str4)) {
-                                                                    syVar6.i = (TLRPC.PhotoSize) syVar6.E.get(str16 + str4);
+                                                                if (hashMap2.containsKey(str15 + str4)) {
+                                                                    syVar6.i = (TLRPC.PhotoSize) syVar6.E.get(str15 + str4);
                                                                 }
                                                             }
                                                             int indexOf3 = syVar6.x.indexOf(ijVar10);
@@ -8750,7 +8774,7 @@ public final class gz extends c1 implements ls {
                                                     i17 = i15;
                                                     if (i17 == 0) {
                                                     }
-                                                    ij ijVar102 = (ij) syVar6.E.get(str16 + "_i");
+                                                    ij ijVar102 = (ij) syVar6.E.get(str15 + "_i");
                                                     hashMap = syVar6.E;
                                                     if (hashMap != null) {
                                                     }
@@ -8799,13 +8823,13 @@ public final class gz extends c1 implements ls {
                                             } else {
                                                 str4 = str2;
                                                 str3 = str6;
-                                                String str17 = (String) syVar6.E.get(str5 + "_doc");
-                                                ij ijVar11 = (ij) syVar6.E.get(str17 + "_i");
-                                                if (syVar6.E.containsKey(str17 + str3)) {
-                                                    syVar6.g = (TLRPC.PhotoSize) syVar6.E.get(str17 + str3);
+                                                String str16 = (String) syVar6.E.get(str5 + "_doc");
+                                                ij ijVar11 = (ij) syVar6.E.get(str16 + "_i");
+                                                if (syVar6.E.containsKey(str16 + str3)) {
+                                                    syVar6.g = (TLRPC.PhotoSize) syVar6.E.get(str16 + str3);
                                                 }
-                                                if (syVar6.E.containsKey(str17 + str4)) {
-                                                    syVar6.i = (TLRPC.PhotoSize) syVar6.E.get(str17 + str4);
+                                                if (syVar6.E.containsKey(str16 + str4)) {
+                                                    syVar6.i = (TLRPC.PhotoSize) syVar6.E.get(str16 + str4);
                                                 }
                                                 int indexOf5 = syVar6.x.indexOf(ijVar11);
                                                 if (syVar6.j != null || syVar6.i == null) {
@@ -8857,14 +8881,14 @@ public final class gz extends c1 implements ls {
                         z9 = i16;
                         str2 = str4;
                         inputFile2 = inputFile;
-                        str15 = str5;
+                        str14 = str5;
                         i18 = i15;
                         inputEncryptedFile2 = inputEncryptedFile;
                         i19 = -1;
                     }
-                    String str18 = str15;
+                    String str17 = str14;
                     if (arrayList2.isEmpty()) {
-                        gzVar.a.remove(str18);
+                        gzVar.a.remove(str17);
                         return;
                     }
                     return;
@@ -8879,10 +8903,10 @@ public final class gz extends c1 implements ls {
         }
         c11 = 5;
         str2 = "_ct";
-        bzVar = (bz) gzVar.E.get(str15);
+        bzVar = (bz) gzVar.E.get(str14);
         if (bzVar != null) {
         }
-        arrayList2 = (ArrayList) gzVar.a.get(str15);
+        arrayList2 = (ArrayList) gzVar.a.get(str14);
         if (arrayList2 == null) {
         }
     }
@@ -11648,9 +11672,9 @@ public final class gz extends c1 implements ls {
                             ArrayList<TLRPC.PhotoSize> arrayList = tL_photo2.sizes;
                             TLRPC.FileLocation fileLocation = arrayList.get(arrayList.size() - 1).location;
                             w7.G(this.currentAccount);
-                            message.attachPath = w7.L(fileLocation, true).toString();
+                            message.attachPath = w7.K(fileLocation, true).toString();
                             w7.G(this.currentAccount);
-                            sh.d.j(message, w7.L(fileLocation, true).toString(), size);
+                            sh.d.j(message, w7.K(fileLocation, true).toString(), size);
                         } else {
                             message.attachPath = str6;
                             sh.d.j(message, str6, size);
@@ -11710,7 +11734,7 @@ public final class gz extends c1 implements ls {
                             ArrayList<TLRPC.PhotoSize> arrayList2 = tL_photo2.sizes;
                             TLRPC.FileLocation fileLocation2 = arrayList2.get(arrayList2.size() - 1).location;
                             w7.G(this.currentAccount);
-                            message.attachPath = w7.L(fileLocation2, true).toString();
+                            message.attachPath = w7.K(fileLocation2, true).toString();
                         } else {
                             message.attachPath = str6;
                         }
@@ -12651,17 +12675,17 @@ public final class gz extends c1 implements ls {
             TLRPC.PhotoSize w10 = w7.w(document.thumbs, 10, false, null, false);
             if ((w10 instanceof TLRPC.TL_photoSize) || (w10 instanceof TLRPC.TL_photoSizeProgressive) || (w10 instanceof TLRPC.TL_photoStrippedSize)) {
                 w7.G(this.currentAccount);
-                File K2 = w7.K(w10, null, true, true);
-                if ((w10 instanceof TLRPC.TL_photoStrippedSize) || K2.exists()) {
+                File J2 = w7.J(w10, null, true, true);
+                if ((w10 instanceof TLRPC.TL_photoStrippedSize) || J2.exists()) {
                     try {
                         if (w10 instanceof TLRPC.TL_photoStrippedSize) {
                             photoSize = new TLRPC.TL_photoStrippedSize();
                             bArr = w10.bytes;
                         } else {
                             TLRPC.TL_photoCachedSize tL_photoCachedSize = new TLRPC.TL_photoCachedSize();
-                            K2.length();
-                            byte[] bArr3 = new byte[(int) K2.length()];
-                            new RandomAccessFile(K2, "r").readFully(bArr3);
+                            J2.length();
+                            byte[] bArr3 = new byte[(int) J2.length()];
+                            new RandomAccessFile(J2, "r").readFully(bArr3);
                             photoSize = tL_photoCachedSize;
                             bArr = bArr3;
                         }
@@ -12707,8 +12731,8 @@ public final class gz extends c1 implements ls {
                     final gz gzVar = gz.this;
                     gz.w(gzVar.getAccountInstance(), false, document3, file.getAbsolutePath(), null, 0L, false);
                     final String[] strArr = {gz.D(gzVar.getAccountInstance(), w7.w(document3.thumbs, qs.r5, false, null, false), bitmapArr, true, true)};
-                    final j20 j20Var2 = j20Var;
                     final long j12 = j3;
+                    final j20 j20Var2 = j20Var;
                     final ij ijVar3 = ijVar;
                     final ij ijVar4 = ijVar2;
                     final boolean z12 = z9;
@@ -12724,7 +12748,7 @@ public final class gz extends c1 implements ls {
                     final nj njVar2 = njVar;
                     final CharSequence charSequence2 = charSequence;
                     final boolean z13 = z11;
-                    g0.h3(new Runnable() { // from class: org.telegram.messenger.yw
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.cx
                         @Override // java.lang.Runnable
                         public final void run() {
                             gz gzVar2 = gz.this;
@@ -12736,7 +12760,9 @@ public final class gz extends c1 implements ls {
                                     gc.D().O(new BitmapDrawable(bitmapArr2[0]), strArr2[0], false);
                                 }
                             }
-                            ez f10 = ez.f((TLRPC.TL_document) document3, j20Var2, null, j12, ijVar3, ijVar4, null, null, null, null, z12, i12, i13, 0, obj2, ejVar2, false);
+                            TLRPC.TL_document tL_document = (TLRPC.TL_document) document3;
+                            long j15 = j12;
+                            ez f10 = ez.f(tL_document, m5.C(j15) ? null : j20Var2, null, j15, ijVar3, ijVar4, null, null, null, null, z12, i12, i13, 0, obj2, ejVar2, false);
                             f10.H = storyItem2;
                             f10.J = qmVar2;
                             f10.K = hwVar2;
@@ -13289,7 +13315,7 @@ public final class gz extends c1 implements ls {
                 if (str18 != null && str18.startsWith(w7.z(4).getAbsolutePath())) {
                     File file4 = new File(str18);
                     w7.G(gzVar.currentAccount);
-                    if (file4.renameTo(w7.K(messageMedia.photo, null, messageMedia.ttl_seconds != 0, true))) {
+                    if (file4.renameTo(w7.J(messageMedia.photo, null, messageMedia.ttl_seconds != 0, true))) {
                         ijVar2.x0 = ijVar2.w0;
                         ijVar2.w0 = false;
                     }
@@ -13314,8 +13340,8 @@ public final class gz extends c1 implements ls {
                 }
                 File file5 = new File(str17);
                 w7.G(gzVar.currentAccount);
-                File K2 = w7.K(messageMedia.document, null, messageMedia.ttl_seconds != 0, true);
-                if (file5.renameTo(K2)) {
+                File J2 = w7.J(messageMedia.document, null, messageMedia.ttl_seconds != 0, true);
+                if (file5.renameTo(J2)) {
                     TLRPC.Message message10 = message2;
                     TLRPC.TL_messageExtendedMedia tL_messageExtendedMedia15 = tL_messageExtendedMedia5;
                     ijVar2.x0 = ijVar2.w0;
@@ -13341,7 +13367,7 @@ public final class gz extends c1 implements ls {
                     message7.attachPath = str17;
                 }
                 if (tL_messageExtendedMedia6 == null) {
-                    ijVar2.x0 = K2.exists();
+                    ijVar2.x0 = J2.exists();
                 }
                 message7.message = message2.message;
                 return;
@@ -13511,7 +13537,7 @@ public final class gz extends c1 implements ls {
                                                 }
                                                 if (!z11) {
                                                     w7.G(gzVar.currentAccount);
-                                                    file = w7.K(photoSize12, null, true, true);
+                                                    file = w7.J(photoSize12, null, true, true);
                                                     file6.renameTo(file);
                                                     z12 = z9;
                                                     gc.D().R(sb8, str22, hc.i(photoSize12, photo), z12);
@@ -13645,8 +13671,8 @@ public final class gz extends c1 implements ls {
                 }
                 File file7 = new File(str6);
                 w7.G(this.currentAccount);
-                File K3 = w7.K(messageMedia.document, null, messageMedia.ttl_seconds != 0, true);
-                if (!file7.renameTo(K3)) {
+                File J3 = w7.J(messageMedia.document, null, messageMedia.ttl_seconds != 0, true);
+                if (!file7.renameTo(J3)) {
                     if (file7.exists()) {
                         if (tL_messageExtendedMedia4 != null) {
                             tL_messageExtendedMedia4.attachPath = str6;
@@ -13657,7 +13683,7 @@ public final class gz extends c1 implements ls {
                         ijVar3 = ijVar;
                         ijVar3.w0 = false;
                         if (tL_messageExtendedMedia4 == null) {
-                            ijVar3.x0 = K3.exists();
+                            ijVar3.x0 = J3.exists();
                         }
                         message3.message = message11.message;
                         return;
@@ -13683,7 +13709,7 @@ public final class gz extends c1 implements ls {
                     String str24 = str4;
                     if (str24.startsWith("http")) {
                         yr messagesStorage3 = getMessagesStorage();
-                        String file8 = K3.toString();
+                        String file8 = J3.toString();
                         TLRPC.Document document14 = messageMedia9.document;
                         messagesStorage3.getClass();
                         if (str24.length() != 0) {

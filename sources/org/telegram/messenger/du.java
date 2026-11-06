@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class du extends fu implements x5, ls {
     public final ij W;
@@ -273,7 +273,7 @@ public final class du extends fu implements x5, ls {
                         }
                     } else if (i10 == 2) {
                         radialProgress2.p(false, 0.0f);
-                        w7.G(i7).X(document, kvVar.b, 1, 1);
+                        w7.G(i7).W(document, kvVar.b, 1, 1);
                         this.n0 = 3;
                         radialProgress2.setIcon(j0(), true, true);
                         View view6 = this.V;
@@ -390,7 +390,7 @@ public final class du extends fu implements x5, ls {
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(z12) || TextUtils.isEmpty(x12)) ? !TextUtils.isEmpty(z12) ? new SpannableStringBuilder(z12) : new SpannableStringBuilder(x12) : new SpannableStringBuilder(a8.p0.D(x12, " - ", z12));
             if (!TextUtils.isEmpty(x12)) {
-                spannableStringBuilder.setSpan(new o31(g0.o()), 0, x12.length(), 18);
+                spannableStringBuilder.setSpan(new u31(g0.o()), 0, x12.length(), 18);
             }
             this.a0.setTextSize(g0.L(16.0f));
             int L2 = g0.L(50.0f) + this.j0;
@@ -401,17 +401,17 @@ public final class du extends fu implements x5, ls {
     }
 
     public final void l0(boolean z9) {
-        File K;
+        File J;
         int i7 = this.a.a;
         TLRPC.Document document = this.X;
         String r10 = w7.r(null, document);
         if (document == null) {
-            K = null;
+            J = null;
         } else {
             w7.G(i7);
-            K = w7.K(document, null, true, true);
+            J = w7.J(document, null, true, true);
         }
-        boolean z10 = K != null && K.exists();
+        boolean z10 = J != null && J.exists();
         boolean isEmpty = TextUtils.isEmpty(r10);
         RadialProgress2 radialProgress2 = this.Y;
         if (isEmpty) {
@@ -430,7 +430,7 @@ public final class du extends fu implements x5, ls {
         } else {
             z5.q(i7).a(r10, null, this);
             if (!iz.B0 || ijVar == null || !ijVar.J3() || ij.S5(ijVar.k) || m5.C(ij.B0(ijVar.k))) {
-                if (w7.G(i7).T(r10)) {
+                if (w7.G(i7).S(r10)) {
                     this.n0 = 3;
                     Float w10 = gc.D().w(r10);
                     radialProgress2.p(z9, w10 != null ? w10.floatValue() : 0.0f);

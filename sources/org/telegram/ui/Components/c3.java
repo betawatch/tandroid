@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -54,16 +54,16 @@ public final /* synthetic */ class c3 implements View.OnClickListener {
                 int i11 = r0Var.a;
                 int i12 = r0Var.b;
                 Editable text = ysVar.getText();
-                ty0 ty0Var = new ty0();
-                ty0Var.a |= 128;
-                ty0Var.b = i11;
-                ty0Var.c = i12;
+                uy0 uy0Var = new uy0();
+                uy0Var.a |= 128;
+                uy0Var.b = i11;
+                uy0Var.c = i12;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
                 tL_messageEntityFormattedDate.date = c10;
                 tL_messageEntityFormattedDate.flags = i10;
                 tL_messageEntityFormattedDate.applyFlags();
                 try {
-                    text.setSpan(new zz(text.subSequence(i11, i12).toString(), ty0Var, tL_messageEntityFormattedDate), i11, i12, 33);
+                    text.setSpan(new zz(text.subSequence(i11, i12).toString(), uy0Var, tL_messageEntityFormattedDate), i11, i12, 33);
                 } catch (Exception unused) {
                 }
                 ws wsVar = ysVar.N1;

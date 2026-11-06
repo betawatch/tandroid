@@ -5,10 +5,10 @@ import android.util.AndroidRuntimeException;
 import android.view.Choreographer;
 import java.util.ArrayList;
 import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class g {
     public static final b o = new b(1);
@@ -184,7 +184,7 @@ public final class g {
                 aVar.d = new hy0(aVar.c);
             }
             hy0 hy0Var = aVar.d;
-            ((Choreographer) hy0Var.c).postFrameCallback((wy0) hy0Var.d);
+            ((Choreographer) hy0Var.c).postFrameCallback((xy0) hy0Var.d);
         }
         if (arrayList.contains(this)) {
             return;

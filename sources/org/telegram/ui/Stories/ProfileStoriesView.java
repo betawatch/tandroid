@@ -55,10 +55,10 @@ import org.telegram.ui.Components.e10;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.bv0;
+import org.telegram.ui.cv0;
 import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ProfileStoriesView extends View implements ls {
     public static final /* synthetic */ int s0 = 0;
@@ -144,15 +144,15 @@ public class ProfileStoriesView extends View implements ls {
         this.e0 = new Path();
         this.l0 = new w5(this, 0L, 350L, xqVar);
         this.m0 = new w5(this, 0L, 350L, xqVar);
-        bv0 bv0Var = (bv0) this;
-        this.n0 = new n(bv0Var, 14);
-        this.o0 = new j4(bv0Var, 0);
+        cv0 cv0Var = (cv0) this;
+        this.n0 = new n(cv0Var, 14);
+        this.o0 = new j4(cv0Var, 0);
         this.c = i7;
         this.d = j3;
         this.e = z9;
         this.f = view;
         this.h = wv0Var;
-        wv0Var.getImageReceiver().E1 = new j4(bv0Var, 1);
+        wv0Var.getImageReceiver().E1 = new j4(cv0Var, 1);
         this.M = qp.s1(i7).P1();
         paint.setColor(1526726655);
         paint.getAlpha();

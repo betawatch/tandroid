@@ -1,112 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.os.AsyncTask;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class e61 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p61 b;
+public final class e61 extends AsyncTask {
+    public int a = 0;
+    public final /* synthetic */ h61 b;
 
-    public /* synthetic */ e61(p61 p61Var, int i7) {
-        this.a = i7;
-        this.b = p61Var;
+    public e61(h61 h61Var) {
+        this.b = h61Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                p61 p61Var = this.b;
-                View[] viewArr = p61Var.e;
-                View[] viewArr2 = p61Var.e;
-                if (viewArr[1] != null) {
-                    p61Var.G();
-                    p61Var.h.put(p61Var.f[1], viewArr2[1]);
-                    p61Var.removeView(viewArr2[1]);
-                    p61Var.F(viewArr2[0], 0.0f);
-                    viewArr2[1] = null;
-                }
-                p61Var.S = null;
-                p61Var.x(true);
-                f61 f61Var = p61Var.M;
-                if (f61Var != null) {
-                    f61Var.w.invalidate();
-                    p61Var.M.w.g1();
-                    p61Var.M.invalidate();
-                }
-                p61Var.u();
-                p61Var.J.e();
-                break;
-            case 1:
-                p61 p61Var2 = this.b;
-                p61Var2.x = null;
-                View[] viewArr3 = p61Var2.e;
-                if (viewArr3[1] != null) {
-                    if (!p61Var2.F) {
-                        p61Var2.G();
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Bitmap frameAtTime;
+        h61 h61Var = this.b;
+        this.a = ((Integer[]) objArr)[0].intValue();
+        Bitmap bitmap = null;
+        if (!isCancelled()) {
+            try {
+                frameAtTime = h61Var.r.getFrameAtTime(h61Var.y * this.a * 1000, 2);
+            } catch (Exception e10) {
+                e = e10;
+            }
+            try {
+                if (!isCancelled()) {
+                    if (frameAtTime == null) {
+                        return frameAtTime;
                     }
-                    p61Var2.h.put(p61Var2.f[1], viewArr3[1]);
-                    p61Var2.removeView(viewArr3[1]);
-                    viewArr3[1].setVisibility(8);
-                    viewArr3[1] = null;
+                    Bitmap createBitmap = Bitmap.createBitmap(h61Var.D, h61Var.E, frameAtTime.getConfig());
+                    Canvas canvas = new Canvas(createBitmap);
+                    float max = Math.max(h61Var.D / frameAtTime.getWidth(), h61Var.E / frameAtTime.getHeight());
+                    int width = (int) (frameAtTime.getWidth() * max);
+                    int height = (int) (frameAtTime.getHeight() * max);
+                    canvas.drawBitmap(frameAtTime, new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight()), new Rect((h61Var.D - width) / 2, (h61Var.E - height) / 2, width, height), (Paint) null);
+                    frameAtTime.recycle();
+                    return createBitmap;
                 }
-                p61Var2.y = false;
-                p61Var2.I = false;
-                f61 f61Var2 = p61Var2.M;
-                if (f61Var2 != null) {
-                    f61Var2.setEnabled(true);
-                }
-                p61Var2.x(false);
-                p61Var2.u();
-                p61Var2.J.e();
-                break;
-            case 2:
-                p61 p61Var3 = this.b;
-                p61Var3.x = null;
-                View[] viewArr4 = p61Var3.e;
-                View view = viewArr4[1];
-                if (view != null) {
-                    p61Var3.removeView(view);
-                    viewArr4[1] = null;
-                }
-                p61Var3.y = false;
-                f61 f61Var3 = p61Var3.M;
-                if (f61Var3 != null) {
-                    f61Var3.setEnabled(true);
-                    f61 f61Var4 = p61Var3.M;
-                    f61Var4.J = false;
-                    f61Var4.a = 1.0f;
-                    f61Var4.w.g1();
-                    p61Var3.M.invalidate();
-                    break;
-                }
-                break;
-            default:
-                p61 p61Var4 = this.b;
-                p61Var4.x = null;
-                View[] viewArr5 = p61Var4.e;
-                if (viewArr5[1] != null) {
-                    if (!p61Var4.F) {
-                        p61Var4.G();
-                    }
-                    p61Var4.h.put(p61Var4.f[1], viewArr5[1]);
-                    p61Var4.removeView(viewArr5[1]);
-                    viewArr5[1].setVisibility(8);
-                    viewArr5[1] = null;
-                }
-                p61Var4.y = false;
-                p61Var4.I = false;
-                f61 f61Var5 = p61Var4.M;
-                if (f61Var5 != null) {
-                    f61Var5.setEnabled(true);
-                }
-                p61Var4.x(false);
-                p61Var4.u();
-                p61Var4.J.e();
-                break;
+            } catch (Exception e11) {
+                e = e11;
+                bitmap = frameAtTime;
+                org.telegram.messenger.a8.g(e, true);
+                return bitmap;
+            }
+        }
+        return null;
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        if (isCancelled()) {
+            return;
+        }
+        h61 h61Var = this.b;
+        h61Var.w.add(bitmap);
+        h61Var.invalidate();
+        int i7 = this.a;
+        if (i7 < h61Var.F) {
+            h61Var.b(i7 + 1);
+        } else {
+            h61Var.O = true;
         }
     }
 }

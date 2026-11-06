@@ -6,7 +6,7 @@ import java.io.File;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class ev extends ru {
     public final TL_iv.pageBlockVideo q0;
@@ -29,7 +29,7 @@ public final class ev extends ru {
         this.u0 = L4 || ij.t3(s5, false);
         if (s5 != null) {
             this.s0 = w7.w(s5.thumbs, qs.r5, false, null, true);
-            this.t0 = w7.R(s5.thumbs);
+            this.t0 = w7.Q(s5.thumbs);
         } else {
             this.s0 = null;
             this.t0 = null;
@@ -122,8 +122,8 @@ public final class ev extends ru {
             w7.G(kvVar.a);
             File I = w7.I(document);
             w7.G(kvVar.a);
-            File K = w7.K(document, null, true, true);
-            if ((I == null || !I.exists()) && (K == null || !K.exists())) {
+            File J = w7.J(document, null, true, true);
+            if ((I == null || !I.exists()) && (J == null || !J.exists())) {
                 return false;
             }
         }

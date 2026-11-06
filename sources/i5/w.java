@@ -1,13 +1,13 @@
 package i5;
 
-import c8.ib;
+import c8.jb;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import y7.i6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class w extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ i6 f;
@@ -25,7 +25,7 @@ public final class w extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a10 = ib.a(h5.b.i(byteBuffer));
+        int a10 = jb.a(h5.b.i(byteBuffer));
         this.e = new ArrayList(a10);
         for (int i7 = 0; i7 < a10; i7++) {
             this.e.add(new v(h5.b.i(byteBuffer), h5.b.i(byteBuffer)));

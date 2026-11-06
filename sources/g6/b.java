@@ -3,13 +3,13 @@ package g6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.wb;
+import c8.xb;
 import f7.t0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b extends r6.a {
     public static final Parcelable.Creator<b> CREATOR;
@@ -65,34 +65,34 @@ public final class b extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
-        wb.q(parcel, 4, 4);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.n(parcel, 3, DesugarCollections.unmodifiableList(this.b));
+        xb.q(parcel, 4, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        wb.k(parcel, 5, this.d, i7);
-        wb.q(parcel, 6, 4);
+        xb.k(parcel, 5, this.d, i7);
+        xb.q(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        wb.k(parcel, 7, this.f, i7);
-        wb.q(parcel, 8, 4);
+        xb.k(parcel, 7, this.f, i7);
+        xb.q(parcel, 8, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        wb.q(parcel, 9, 8);
+        xb.q(parcel, 9, 8);
         parcel.writeDouble(this.n);
-        wb.q(parcel, 10, 4);
+        xb.q(parcel, 10, 4);
         parcel.writeInt(this.r ? 1 : 0);
-        wb.q(parcel, 11, 4);
+        xb.q(parcel, 11, 4);
         parcel.writeInt(this.s ? 1 : 0);
-        wb.q(parcel, 12, 4);
+        xb.q(parcel, 12, 4);
         parcel.writeInt(this.w ? 1 : 0);
-        wb.n(parcel, 13, DesugarCollections.unmodifiableList(this.x));
-        wb.q(parcel, 14, 4);
+        xb.n(parcel, 13, DesugarCollections.unmodifiableList(this.x));
+        xb.q(parcel, 14, 4);
         parcel.writeInt(this.y ? 1 : 0);
-        wb.q(parcel, 15, 4);
+        xb.q(parcel, 15, 4);
         parcel.writeInt(0);
-        wb.q(parcel, 16, 4);
+        xb.q(parcel, 16, 4);
         parcel.writeInt(this.D ? 1 : 0);
-        wb.k(parcel, 17, this.E, i7);
-        wb.k(parcel, 18, this.F, i7);
-        wb.s(parcel, r10);
+        xb.k(parcel, 17, this.E, i7);
+        xb.k(parcel, 18, this.F, i7);
+        xb.s(parcel, r10);
     }
 }

@@ -39,13 +39,13 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class r extends FrameLayout implements a6, ls {
     public static LongSparseArray E;
@@ -59,7 +59,7 @@ public abstract class r extends FrameLayout implements a6, ls {
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final o61 r;
+    public final u61 r;
     public Boolean s;
     public int w;
     public float x;
@@ -103,7 +103,7 @@ public abstract class r extends FrameLayout implements a6, ls {
         aVar.setAllowDisallowInterceptTouch(true);
         aVar.setAdapter(new g5(1, context, sp0Var));
         addView(aVar, ha.e(-1, -1, qs.E1));
-        o61 n10 = aVar.n(9, true);
+        u61 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
         n10.setPreTabClick(new q4(sp0Var, 6));
@@ -422,9 +422,9 @@ public abstract class r extends FrameLayout implements a6, ls {
         wpVar.I = 0.9f;
         wpVar.G = 0.85f;
         spannableString.setSpan(wpVar, 0, 1, 33);
-        o61 o61Var = this.r;
-        o61Var.a(-1, spannableString);
-        o61Var.y.f();
+        u61 u61Var = this.r;
+        u61Var.a(-1, spannableString);
+        u61Var.y.f();
         boolean z10 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z10) {
@@ -435,7 +435,7 @@ public abstract class r extends FrameLayout implements a6, ls {
             this.s = Boolean.valueOf(z10);
             if (!z9) {
                 this.x = z10 ? 1.0f : 0.0f;
-                o61Var.setTranslationY(g0.L(z10 ? 0.0f : -42.0f));
+                u61Var.setTranslationY(g0.L(z10 ? 0.0f : -42.0f));
                 aVar.setTranslationY(g0.L(z10 ? 42.0f : 0.0f));
                 return;
             }

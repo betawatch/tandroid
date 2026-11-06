@@ -22,18 +22,18 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Components.av0;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class s extends f2 implements te.b {
     public final te.a a;
     public long b;
     public FrameLayout c;
-    public k41 d;
+    public q41 d;
     public lh.f e;
     public LinearLayout f;
     public fi.d h;
@@ -48,8 +48,8 @@ public final class s extends f2 implements te.b {
         this.a = new te.a(0, this, xq.h, 320L, false);
     }
 
-    public static void Z(s sVar, r31 r31Var) {
-        Object obj = r31Var.G;
+    public static void Z(s sVar, x31 x31Var) {
+        Object obj = x31Var.G;
         if (obj instanceof ji.f) {
             ji.f fVar = (ji.f) obj;
             long j3 = fVar.a;
@@ -100,12 +100,12 @@ public final class s extends f2 implements te.b {
         this.c = frameLayout;
         int i10 = k6.a7;
         r6.i(i10, frameLayout, null);
-        k41 k41Var = new k41(this, new u1(this, 3), new q(this), new x3(this, 7));
-        this.d = k41Var;
-        k41Var.setClipToPadding(false);
-        k41 k41Var2 = this.d;
-        k41Var2.f3.r = false;
-        k41Var2.r1();
+        q41 q41Var = new q41(this, new u1(this, 3), new q(this), new x3(this, 7));
+        this.d = q41Var;
+        q41Var.setClipToPadding(false);
+        q41 q41Var2 = this.d;
+        q41Var2.f3.r = false;
+        q41Var2.r1();
         this.d.j(new ai.b(this, 16));
         this.actionBar.setAdaptiveBackground(this.d);
         this.c.addView(this.d, ha.c(-1.0f, -1));

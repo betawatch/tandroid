@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class yw extends View implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -74,7 +74,7 @@ public final class yw extends View implements org.telegram.messenger.ls, org.tel
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
             String S0 = ((org.telegram.messenger.ij) arrayList2.get(i11)).S0();
-            if (org.telegram.messenger.w7.G(i7).T(S0)) {
+            if (org.telegram.messenger.w7.G(i7).S(S0)) {
                 xw xwVar = (xw) hashMap.get(S0);
                 if (xwVar == null) {
                     xwVar = new xw(this, S0);

@@ -3,30 +3,30 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class j51 extends org.telegram.ui.Components.q31 {
+public final class j51 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int c = 0;
     public m.q3 b;
 
     static {
-        org.telegram.ui.Components.q31.h(new j51());
+        org.telegram.ui.Components.w31.h(new j51());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void a(org.telegram.ui.Components.pj0 pj0Var, View view, org.telegram.ui.Components.r31 r31Var) {
-        ((org.telegram.ui.Cells.o7) view).l(r31Var != null && r31Var.h, false);
+    @Override // org.telegram.ui.Components.w31
+    public final void a(org.telegram.ui.Components.pj0 pj0Var, View view, org.telegram.ui.Components.x31 x31Var) {
+        ((org.telegram.ui.Cells.o7) view).l(x31Var != null && x31Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
         org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) view;
-        o7Var.k((org.telegram.messenger.ij) r31Var.G, r31Var.v, false);
-        o7Var.i(r31Var.e, false);
-        o7Var.l(r31Var.h, false);
+        o7Var.k((org.telegram.messenger.ij) x31Var.G, x31Var.v, false);
+        o7Var.i(x31Var.e, false);
+        o7Var.l(x31Var.h, false);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         if (this.b == null) {
             this.b = new m.q3(context, f6Var);
@@ -37,8 +37,8 @@ public final class j51 extends org.telegram.ui.Components.q31 {
         return o7Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final boolean e(org.telegram.ui.Components.r31 r31Var, org.telegram.ui.Components.r31 r31Var2) {
-        return r31Var.q == r31Var2.q && r31Var.e == r31Var2.e && r31Var.B == r31Var2.B;
+    @Override // org.telegram.ui.Components.w31
+    public final boolean e(org.telegram.ui.Components.x31 x31Var, org.telegram.ui.Components.x31 x31Var2) {
+        return x31Var.q == x31Var2.q && x31Var.e == x31Var2.e && x31Var.B == x31Var2.B;
     }
 }

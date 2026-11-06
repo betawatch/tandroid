@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea0 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final /* synthetic */ class ea0 implements Runnable {
                 }
                 return;
             case 1:
-                yr0 yr0Var = (yr0) this.c;
+                zr0 zr0Var = (zr0) this.c;
                 long j10 = this.b;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.d;
-                yr0Var.getClass();
+                zr0Var.getClass();
                 Bundle bundle = new Bundle();
                 if (j10 > 0) {
                     bundle.putLong("user_id", j10);
@@ -65,7 +65,7 @@ public final /* synthetic */ class ea0 implements Runnable {
                     bundle.putLong("chat_id", -j10);
                 }
                 f2Var.presentFragment(new ProfileActivity(bundle, null));
-                yr0Var.c(false);
+                zr0Var.c(false);
                 return;
             case 2:
                 ui.e eVar = (ui.e) this.c;

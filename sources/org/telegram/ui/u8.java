@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements org.telegram.messenger.a20, org.telegram.messenger.b20, r0.m {
     public final /* synthetic */ i9 a;
@@ -18,9 +18,9 @@ public final /* synthetic */ class u8 implements org.telegram.messenger.a20, org
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(org.telegram.ui.Components.x31 x31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof f9) {
             this.a.f0(((f9) obj).c, (e9) view);
             z9 = true;
@@ -32,6 +32,6 @@ public final /* synthetic */ class u8 implements org.telegram.messenger.a20, org
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        i9.a0(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
+        i9.a0(this.a, (org.telegram.ui.Components.x31) obj, (View) obj2);
     }
 }

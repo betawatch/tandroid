@@ -32,11 +32,11 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.v8;
 import org.telegram.ui.Components.voip.y1;
 import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -53,7 +53,7 @@ import org.telegram.ui.si0;
 import org.telegram.ui.vr;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements Continuation, la1, r1, cj0, vr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
@@ -234,7 +234,7 @@ public final /* synthetic */ class j implements Continuation, la1, r1, cj0, vr, 
         switch (this.a) {
             case 2:
                 kg.a0 a0Var = (kg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((r31) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((x31) this.d).x));
                 a0Var.e.run();
                 break;
             case 3:

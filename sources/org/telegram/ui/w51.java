@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w51 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Components.mm0 a;
@@ -32,7 +32,7 @@ public final class w51 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.a = mm0Var;
         mm0Var.setReportChanges(true);
         mm0Var.setSeparatorsCount(18);
-        mm0Var.setDelegate(new vr0(this, 3));
+        mm0Var.setDelegate(new wr0(this, 3));
         mm0Var.setImportantForAccessibility(2);
         addView(mm0Var, c8.ha.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }

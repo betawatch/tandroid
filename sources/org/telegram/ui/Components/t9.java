@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class t9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -67,18 +67,18 @@ public final class t9 extends AnimatorListenerAdapter {
                 ((xs0) this.c).Q1 = null;
                 break;
             case 24:
-                r41 r41Var = (r41) this.c;
-                AnimatorSet animatorSet4 = r41Var.k1;
+                x41 x41Var = (x41) this.c;
+                AnimatorSet animatorSet4 = x41Var.k1;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    r41Var.k1 = null;
+                    x41Var.k1 = null;
                     break;
                 }
                 break;
             case 25:
-                w41 w41Var = (w41) this.c;
-                AnimatorSet animatorSet5 = w41Var.p1;
+                b51 b51Var = (b51) this.c;
+                AnimatorSet animatorSet5 = b51Var.p1;
                 if (animatorSet5 != null && animatorSet5.equals(animator)) {
-                    w41Var.p1 = null;
+                    b51Var.p1 = null;
                     break;
                 }
                 break;
@@ -321,69 +321,69 @@ public final class t9 extends AnimatorListenerAdapter {
                 break;
             case 20:
                 super.onAnimationEnd(animator);
-                yz0 yz0Var = (yz0) obj;
-                yz0Var.M = this.b ? 1.0f : 0.0f;
-                yz0Var.invalidate();
+                zz0 zz0Var = (zz0) obj;
+                zz0Var.M = this.b ? 1.0f : 0.0f;
+                zz0Var.invalidate();
                 break;
             case 21:
                 boolean z13 = this.b;
-                g11 g11Var = (g11) obj;
-                long j3 = g11Var.f;
-                if (g11Var.d0 == animator) {
-                    g11Var.U = z13 ? 1.0f : 0.0f;
-                    g11Var.p();
-                    g11Var.V = false;
-                    ImageView imageView = g11Var.H;
-                    boolean z14 = g11Var.S;
+                m11 m11Var = (m11) obj;
+                long j3 = m11Var.f;
+                if (m11Var.d0 == animator) {
+                    m11Var.U = z13 ? 1.0f : 0.0f;
+                    m11Var.p();
+                    m11Var.V = false;
+                    ImageView imageView = m11Var.H;
+                    boolean z14 = m11Var.S;
                     int i11 = R.drawable.menu_sidebar_top;
                     imageView.setImageResource(z14 ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
-                    ImageView imageView2 = g11Var.G;
-                    if (!g11Var.S) {
+                    ImageView imageView2 = m11Var.G;
+                    if (!m11Var.S) {
                         i11 = R.drawable.menu_sidebar_left;
                     }
                     imageView2.setImageResource(i11);
-                    g11Var.d0 = null;
-                    org.telegram.messenger.qp.s1(g11Var.e).e7.edit().putBoolean("topicssidetabs" + j3, g11Var.T).putBoolean("topicssidetabsb" + j3, g11Var.S).apply();
-                    Boolean bool = g11Var.c0;
+                    m11Var.d0 = null;
+                    org.telegram.messenger.qp.s1(m11Var.e).e7.edit().putBoolean("topicssidetabs" + j3, m11Var.T).putBoolean("topicssidetabsb" + j3, m11Var.S).apply();
+                    Boolean bool = m11Var.c0;
                     if (bool != null && z13 != bool.booleanValue()) {
-                        boolean booleanValue = g11Var.c0.booleanValue();
-                        g11Var.c0 = null;
-                        g11Var.d(booleanValue);
+                        boolean booleanValue = m11Var.c0.booleanValue();
+                        m11Var.c0 = null;
+                        m11Var.d(booleanValue);
                     }
-                    org.telegram.messenger.g0.h3(new ir0(this, 17));
+                    org.telegram.messenger.g0.h3(new ir0(this, 18));
                     break;
                 }
                 break;
             case 22:
-                b11 b11Var = (b11) obj;
-                b11Var.F = this.b ? 1.0f : 0.0f;
-                b11Var.h();
+                h11 h11Var = (h11) obj;
+                h11Var.F = this.b ? 1.0f : 0.0f;
+                h11Var.h();
                 break;
             case 23:
-                f11 f11Var = (f11) obj;
-                f11Var.U = this.b ? 1.0f : 0.0f;
-                f11Var.h();
-                f11Var.g();
+                l11 l11Var = (l11) obj;
+                l11Var.U = this.b ? 1.0f : 0.0f;
+                l11Var.h();
+                l11Var.g();
                 break;
             case 24:
-                r41 r41Var = (r41) obj;
-                AnimatorSet animatorSet4 = r41Var.k1;
+                x41 x41Var = (x41) obj;
+                AnimatorSet animatorSet4 = x41Var.k1;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        r41Var.l1.setVisibility(4);
+                        x41Var.l1.setVisibility(4);
                     }
-                    r41Var.k1 = null;
+                    x41Var.k1 = null;
                     break;
                 }
                 break;
             case 25:
-                w41 w41Var = (w41) obj;
-                AnimatorSet animatorSet5 = w41Var.p1;
+                b51 b51Var = (b51) obj;
+                AnimatorSet animatorSet5 = b51Var.p1;
                 if (animatorSet5 != null && animatorSet5.equals(animator)) {
                     if (!this.b) {
-                        w41Var.o1.setVisibility(4);
+                        b51Var.o1.setVisibility(4);
                     }
-                    w41Var.p1 = null;
+                    b51Var.p1 = null;
                     break;
                 }
                 break;

@@ -31,15 +31,15 @@ import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ap0;
 import org.telegram.ui.c61;
 import org.telegram.ui.k71;
 import org.telegram.ui.my0;
 import org.telegram.ui.u71;
 import org.telegram.ui.v61;
-import org.telegram.ui.yo0;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m5 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -760,12 +760,12 @@ public final class m5 extends FrameLayout {
                 if (frameLayout != null && frameLayout.getVisibility() != 8) {
                     photoViewer.Q7.setAlpha(f10);
                 }
-                yo0 yo0Var = photoViewer.U1;
-                if (yo0Var != null && yo0Var.getVisibility() != 8) {
+                zo0 zo0Var = photoViewer.U1;
+                if (zo0Var != null && zo0Var.getVisibility() != 8) {
                     photoViewer.U1.setAlpha(photoViewer.x7[0] * f10);
                 }
-                zo0 zo0Var = photoViewer.V1;
-                if (zo0Var != null && zo0Var.getVisibility() != 8) {
+                ap0 ap0Var = photoViewer.V1;
+                if (ap0Var != null && ap0Var.getVisibility() != 8) {
                     photoViewer.V1.setAlpha(f10 * photoViewer.y7[0]);
                     break;
                 }

@@ -25,14 +25,14 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.o40;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r30;
-import org.telegram.ui.Components.wz0;
+import org.telegram.ui.Components.xz0;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c01;
 import org.telegram.ui.q11;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -244,11 +244,11 @@ public final class h3 extends AnimatorListenerAdapter {
                 launchActivity.x0.invalidate();
                 launchActivity.m0.invalidate();
                 launchActivity.m0.setImageDrawable(null);
-                wz0 wz0Var = launchActivity.m0;
-                wz0Var.c = null;
-                wz0Var.a.setShader(null);
-                wz0Var.n = null;
-                wz0Var.r = null;
+                xz0 xz0Var = launchActivity.m0;
+                xz0Var.c = null;
+                xz0Var.a.setShader(null);
+                xz0Var.n = null;
+                xz0Var.r = null;
                 launchActivity.m0.setVisibility(8);
                 launchActivity.n0.setVisibility(8);
                 ch0 ch0Var2 = (ch0) this.b;

@@ -1,19 +1,19 @@
 package xf;
 
 import android.view.View;
-import c8.td;
+import c8.ud;
 import java.util.ArrayList;
 import oi.h;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class b implements View.OnAttachStateChangeListener {
     @Override // android.view.View.OnAttachStateChangeListener
     public final void onViewAttachedToWindow(View view) {
         a a10;
         c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (cVar == null || (a10 = td.a(view, cVar)) == null) {
+        if (cVar == null || (a10 = ud.a(view, cVar)) == null) {
             return;
         }
         ArrayList arrayList = cVar.a;

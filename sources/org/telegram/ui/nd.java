@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nd implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -75,22 +75,22 @@ public final /* synthetic */ class nd implements TextView.OnEditorActionListener
                 }
                 break;
             default:
-                mr0 mr0Var = (mr0) this.b;
-                lr0 lr0Var = (lr0) this.c;
-                or0 or0Var = mr0Var.d;
+                nr0 nr0Var = (nr0) this.b;
+                mr0 mr0Var = (mr0) this.c;
+                pr0 pr0Var = nr0Var.d;
                 if (i7 == 5) {
-                    e61 e61Var2 = or0Var.c;
-                    View F2 = e61Var2.F(lr0Var);
+                    e61 e61Var2 = pr0Var.c;
+                    View F2 = e61Var2.F(mr0Var);
                     v4.d1 T2 = F2 == null ? null : e61Var2.T(F2);
                     if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i13 = b11 - or0Var.n0;
-                        int i14 = or0Var.D;
+                        int i13 = b11 - pr0Var.n0;
+                        int i14 = pr0Var.D;
                         int i15 = i14 - 1;
-                        if (i13 == i15 && i14 < or0Var.n) {
-                            or0Var.k0();
+                        if (i13 == i15 && i14 < pr0Var.n) {
+                            pr0Var.k0();
                             break;
                         } else if (i13 != i15) {
-                            v4.d1 K2 = or0Var.c.K(b11 + 1);
+                            v4.d1 K2 = pr0Var.c.K(b11 + 1);
                             if (K2 != null) {
                                 View view2 = K2.a;
                                 if (view2 instanceof org.telegram.ui.Cells.a6) {
@@ -99,7 +99,7 @@ public final /* synthetic */ class nd implements TextView.OnEditorActionListener
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.v1(lr0Var.getTextView());
+                            org.telegram.messenger.g0.v1(mr0Var.getTextView());
                             break;
                         }
                     }

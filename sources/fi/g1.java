@@ -7,8 +7,8 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.hd;
-import org.telegram.ui.Components.p61;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.an;
 import org.telegram.ui.bm0;
 import org.telegram.ui.f81;
@@ -17,11 +17,11 @@ import org.telegram.ui.ly0;
 import org.telegram.ui.nj;
 import org.telegram.ui.ny0;
 import org.telegram.ui.oy0;
-import org.telegram.ui.yr0;
+import org.telegram.ui.zr0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class g1 extends p61 {
+public final class g1 extends v61 {
     public final /* synthetic */ int V;
     public final /* synthetic */ Object W;
 
@@ -32,7 +32,7 @@ public final class g1 extends p61 {
         this.W = obj;
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void A(int i7) {
         switch (this.V) {
             case 3:
@@ -48,7 +48,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public int H() {
         switch (this.V) {
             case 9:
@@ -62,7 +62,7 @@ public final class g1 extends p61 {
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -129,7 +129,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public boolean j(MotionEvent motionEvent) {
         switch (this.V) {
             case 2:
@@ -139,7 +139,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public boolean k(MotionEvent motionEvent) {
         switch (this.V) {
             case 2:
@@ -151,7 +151,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.View
+    @Override // org.telegram.ui.Components.v61, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.V) {
             case 3:
@@ -161,7 +161,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void t(View view, View view2, int i7, int i10) {
         switch (this.V) {
             case 1:
@@ -174,7 +174,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void u() {
         switch (this.V) {
             case 2:
@@ -186,7 +186,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void v() {
         ly0 ly0Var;
         switch (this.V) {
@@ -199,7 +199,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void w(boolean z9) {
         switch (this.V) {
             case 0:
@@ -243,7 +243,7 @@ public final class g1 extends p61 {
                 }
                 break;
             case 5:
-                ((yr0) this.W).e();
+                ((zr0) this.W).e();
                 break;
             case 6:
                 ((oy0) this.W).b.invalidate();
@@ -266,7 +266,7 @@ public final class g1 extends p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public void y(int i7) {
         org.telegram.ui.Wallet.t8 t8Var;
         switch (this.V) {

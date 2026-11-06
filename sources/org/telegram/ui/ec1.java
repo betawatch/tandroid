@@ -56,7 +56,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ec1 implements VoIPService.StateListener, org.telegram.messenger.ls {
     public static ec1 l1;
@@ -472,7 +472,7 @@ public final class ec1 implements VoIPService.StateListener, org.telegram.messen
                 if (max == 1 && (groupParticipants == null || groupParticipants.size() == 0 || (groupParticipants.size() == 1 && org.telegram.messenger.m5.o(groupParticipants.get(0).peer) == j10))) {
                     dc1Var.setVisibility(8);
                 } else {
-                    dc1Var.c = new org.telegram.ui.Components.ly0(org.telegram.messenger.hd.H(',', "Participants", max), 14.0f, org.telegram.messenger.g0.o());
+                    dc1Var.c = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.H(',', "Participants", max), 14.0f, org.telegram.messenger.g0.o());
                     dc1Var.setVisibility(0);
                     dc1Var.invalidate();
                 }

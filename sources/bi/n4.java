@@ -20,7 +20,6 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ap0;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.hq0;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.jr0;
@@ -28,6 +27,7 @@ import org.telegram.ui.Components.js0;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.kr0;
 import org.telegram.ui.Components.l10;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.qr0;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.xs0;
@@ -38,7 +38,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.v91;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n4 implements org.telegram.ui.ActionBar.r1, cj0 {
     public final /* synthetic */ int a;
@@ -347,7 +347,7 @@ public final /* synthetic */ class n4 implements org.telegram.ui.ActionBar.r1, c
                 an.i1((an) this.c, (TLRPC.TL_game) this.d, (ij) this.e, (String) this.f, this.b);
                 break;
             default:
-                g11 g11Var = (g11) this.c;
+                m11 m11Var = (m11) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 HashSet hashSet = (HashSet) this.e;
                 l10 l10Var = (l10) this.f;
@@ -356,16 +356,16 @@ public final /* synthetic */ class n4 implements org.telegram.ui.ActionBar.r1, c
                 while (true) {
                     long j3 = this.b;
                     if (i10 >= size) {
-                        g11Var.k0.addAll(hashSet);
-                        g11Var.q();
-                        org.telegram.ui.Components.hc.a0(g11Var.s).U(org.telegram.messenger.hd.K0(hashSet.size(), "TopicsDeleted"), false, new w2(g11Var, hashSet, arrayList, j3, 18), new v80(g11Var, arrayList, l10Var, 22)).j();
+                        m11Var.k0.addAll(hashSet);
+                        m11Var.q();
+                        org.telegram.ui.Components.hc.a0(m11Var.s).U(org.telegram.messenger.hd.K0(hashSet.size(), "TopicsDeleted"), false, new w2(m11Var, hashSet, arrayList, j3, 18), new v80(m11Var, arrayList, l10Var, 22)).j();
                         u1Var.dismiss();
                         break;
                     } else {
                         Object obj = arrayList.get(i10);
                         i10++;
                         if (j3 == ((Integer) obj).intValue()) {
-                            g11Var.n(0L, false);
+                            m11Var.n(0L, false);
                         }
                     }
                 }
@@ -381,9 +381,9 @@ public final /* synthetic */ class n4 implements org.telegram.ui.ActionBar.r1, c
         this.b = j3;
     }
 
-    public /* synthetic */ n4(g11 g11Var, ArrayList arrayList, long j3, HashSet hashSet, l10 l10Var) {
+    public /* synthetic */ n4(m11 m11Var, ArrayList arrayList, long j3, HashSet hashSet, l10 l10Var) {
         this.a = 3;
-        this.c = g11Var;
+        this.c = m11Var;
         this.d = arrayList;
         this.b = j3;
         this.e = hashSet;

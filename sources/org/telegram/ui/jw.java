@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class jw implements org.telegram.ui.Components.i30 {
     public final /* synthetic */ ww a;
@@ -120,28 +120,28 @@ public final class jw implements org.telegram.ui.Components.i30 {
     }
 
     @Override // org.telegram.ui.Components.i30
-    public final vq0 getCloseIntoObject() {
+    public final wq0 getCloseIntoObject() {
         ww wwVar = this.a;
         org.telegram.ui.Components.cc ccVar = wwVar.d4;
         if (ccVar == null) {
             return null;
         }
         org.telegram.ui.Components.tb tbVar = (org.telegram.ui.Components.tb) ccVar.e;
-        vq0 vq0Var = new vq0();
+        wq0 wq0Var = new wq0();
         int[] iArr = new int[2];
         org.telegram.ui.Components.l9 l9Var = tbVar.c;
         org.telegram.ui.Components.l9 l9Var2 = tbVar.c;
         l9Var.getLocationInWindow(iArr);
-        vq0Var.b = iArr[0];
-        vq0Var.c = iArr[1];
-        vq0Var.d = wwVar.fragmentView;
+        wq0Var.b = iArr[0];
+        wq0Var.c = iArr[1];
+        wq0Var.d = wwVar.fragmentView;
         ImageReceiver imageReceiver = l9Var2.getImageReceiver();
-        vq0Var.a = imageReceiver;
-        vq0Var.e = imageReceiver.p();
-        vq0Var.i = 0;
-        vq0Var.h = vq0Var.a.W0;
-        vq0Var.k = l9Var2.getScaleX();
-        return vq0Var;
+        wq0Var.a = imageReceiver;
+        wq0Var.e = imageReceiver.p();
+        wq0Var.i = 0;
+        wq0Var.h = wq0Var.a.W0;
+        wq0Var.k = l9Var2.getScaleX();
+        return wq0Var;
     }
 
     @Override // org.telegram.ui.Components.i30

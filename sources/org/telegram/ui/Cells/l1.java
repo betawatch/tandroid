@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public interface l1 {
     void A0(q1 q1Var, TLObject tLObject, boolean z9);
@@ -65,7 +65,7 @@ public interface l1 {
 
     void N0(q1 q1Var, CharacterStyle characterStyle, boolean z9);
 
-    er0 N1();
+    fr0 N1();
 
     boolean O0(q1 q1Var, boolean z9);
 

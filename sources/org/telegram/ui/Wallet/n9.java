@@ -41,21 +41,21 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
-import org.telegram.ui.fo0;
-import org.telegram.ui.mt0;
+import org.telegram.ui.go0;
+import org.telegram.ui.nt0;
 import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class n9 extends h41 implements ls {
+public final class n9 extends n41 implements ls {
     public LinearLayout D;
     public m9 E;
     public ShapeDrawable F;
@@ -549,17 +549,17 @@ public final class n9 extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131743017, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         View createView = super.createView(context);
         this.fragmentView = createView;
@@ -577,7 +577,7 @@ public final class n9 extends h41 implements ls {
         final int i12 = 2;
         a10.e(2, R.drawable.msg_addbot, hd.M0(2131743138, null));
         a10.e(3, R.drawable.menu_comments, hd.M0(2131743206, null));
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 20));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 20));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
@@ -1314,7 +1314,7 @@ public final class n9 extends h41 implements ls {
         u1Var.G = 6;
         w1Var.o(linearLayout);
         u1Var.a = org.telegram.messenger.g0.L(292.0f);
-        w1Var.h(hd.M0(2131752589, null), new fo0(14));
+        w1Var.h(hd.M0(2131752589, null), new go0(14));
         int i11 = 2;
         w1Var.k(hd.M0(2131754486, null), new j8(this, x0Var, c2Var, i11));
         u1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Wallet.a9
@@ -1414,11 +1414,11 @@ public final class n9 extends h41 implements ls {
         n0.x(this.currentAccount).Z(new z8(this, 0), str);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
     }
 }

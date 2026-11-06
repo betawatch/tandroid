@@ -13,7 +13,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab implements Runnable {
     public final /* synthetic */ int a;
@@ -142,7 +142,7 @@ public final /* synthetic */ class ab implements Runnable {
             case 17:
                 di.i1 i1Var = (di.i1) this.b;
                 di.p9 p9Var = i1Var.c;
-                if (p9Var == null || !i1Var.E() || (oVar = i1Var.a) == null || oVar.c != 0 || (launchActivity = LaunchActivity.G1) == null || !c8.jc.a(launchActivity)) {
+                if (p9Var == null || !i1Var.E() || (oVar = i1Var.a) == null || oVar.c != 0 || (launchActivity = LaunchActivity.G1) == null || !c8.kc.a(launchActivity)) {
                     return;
                 }
                 p9Var.T();

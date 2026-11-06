@@ -1,30 +1,36 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class c11 {
-    public static final c11 a;
-    public static final c11 b;
-    public static final c11 c;
-    public static final /* synthetic */ c11[] d;
+public final class c11 extends Drawable {
+    public Paint a;
+    public RectF b;
 
-    static {
-        c11 c11Var = new c11("TOP", 0);
-        a = c11Var;
-        c11 c11Var2 = new c11("LEFT", 1);
-        b = c11Var2;
-        c11 c11Var3 = new c11("BOTTOM", 2);
-        c = c11Var3;
-        d = new c11[]{c11Var, c11Var2, c11Var3};
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = this.b;
+        rectF.set(getBounds());
+        rectF.inset(org.telegram.messenger.g0.L(1.0f), (rectF.height() - org.telegram.messenger.g0.L(28.0f)) / 2.0f);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), this.a);
     }
 
-    public static c11 valueOf(String str) {
-        return (c11) Enum.valueOf(c11.class, str);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public static c11[] values() {
-        return (c11[]) d.clone();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.a.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

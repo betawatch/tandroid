@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.p10;
 import org.telegram.ui.Components.ea;
-import org.telegram.ui.us0;
+import org.telegram.ui.vs0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v7 implements c5.g {
     public final /* synthetic */ int a;
@@ -49,16 +49,16 @@ public final class v7 implements c5.g {
             default:
                 ug.w0 w0Var = (ug.w0) callback;
                 ArrayList arrayList = w0Var.k1;
-                if (((us0) arrayList.get(i7)).a == 0) {
+                if (((vs0) arrayList.get(i7)).a == 0) {
                     w0Var.E1.setTitle(hd.M0(2131751350, null));
                     w0Var.E1.requestLayout();
-                } else if (((us0) arrayList.get(i7)).a == 14) {
+                } else if (((vs0) arrayList.get(i7)).a == 14) {
                     w0Var.E1.setTitle(hd.M0(2131743806, null));
                     w0Var.E1.requestLayout();
-                } else if (((us0) arrayList.get(i7)).a == 40) {
+                } else if (((vs0) arrayList.get(i7)).a == 40) {
                     w0Var.E1.setTitle(hd.M0(2131750838, null));
                     w0Var.E1.requestLayout();
-                } else if (((us0) arrayList.get(i7)).a == 28) {
+                } else if (((vs0) arrayList.get(i7)).a == 28) {
                     w0Var.E1.setTitle(hd.M0(2131744253, null));
                     w0Var.E1.requestLayout();
                 }
@@ -160,9 +160,9 @@ public final class v7 implements c5.g {
             i11++;
         }
         int i13 = w0Var.x1;
-        boolean z9 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((us0) arrayList.get(w0Var.x1)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z9 = i13 >= 0 && i13 < arrayList.size() && ((i10 = ((vs0) arrayList.get(w0Var.x1)).a) == 0 || i10 == 14 || i10 == 28);
         int i14 = w0Var.y1;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((us0) arrayList.get(w0Var.y1)).a) == 0 || i7 == 14 || i7 == 28);
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i7 = ((vs0) arrayList.get(w0Var.y1)).a) == 0 || i7 == 14 || i7 == 28);
         if (z9 && z10) {
             w0Var.m1 = 1.0f;
             float f11 = w0Var.z1;

@@ -11,13 +11,13 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ff0 extends zf0 {
     public final Drawable Q;
     public final Drawable R;
-    public final ly0 S;
-    public ly0 T;
+    public final my0 S;
+    public my0 T;
     public final Paint U;
     public final Path V;
     public float W;
@@ -32,7 +32,7 @@ public final class ff0 extends zf0 {
         this.a0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
         this.Q = jg.g.h(context, R.drawable.profile_balance_gram);
         this.R = jg.g.h(context, R.drawable.profile_balance_gram_color);
-        this.S = new ly0(org.telegram.messenger.hd.M0(2131745156, null) + ":", 11.0f, null);
+        this.S = new my0(org.telegram.messenger.hd.M0(2131745156, null) + ":", 11.0f, null);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -67,18 +67,18 @@ public final class ff0 extends zf0 {
 
     @Override // org.telegram.ui.Components.zf0
     public final float c(float f10) {
-        ly0 ly0Var = this.S;
-        ly0Var.p = -1.0f;
+        my0 my0Var = this.S;
+        my0Var.p = -1.0f;
         this.T.p = -1.0f;
         float max = Math.max(0.0f, f10 - org.telegram.messenger.g0.L(43.0f));
-        ly0Var.p = Math.max(0.0f, max - this.T.k());
-        this.T.p = Math.max(0.0f, max - ly0Var.k());
-        return this.T.k() + ly0Var.k() + org.telegram.messenger.g0.L(27.0f);
+        my0Var.p = Math.max(0.0f, max - this.T.k());
+        this.T.p = Math.max(0.0f, max - my0Var.k());
+        return this.T.k() + my0Var.k() + org.telegram.messenger.g0.L(27.0f);
     }
 
     public void setBalance(long j3) {
         String format = this.a0.format(new BigDecimal(org.telegram.ui.Wallet.n0.p(j3, false)));
-        this.T = new ly0(format, 11.0f, org.telegram.messenger.g0.o());
+        this.T = new my0(format, 11.0f, org.telegram.messenger.g0.o());
         setContentDescription(org.telegram.messenger.hd.M0(2131745156, null) + ": " + format);
         invalidate();
     }

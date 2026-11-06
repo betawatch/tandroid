@@ -8,11 +8,11 @@ import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.ij;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final class f9 implements ActionMode.Callback {
                             String str = (String) this.b;
                             f fVar2 = new f(this, 9);
                             org.telegram.ui.g4 g4Var = sVar.a;
-                            e21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
+                            k21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
                         }
                         v9Var.u();
                     } else if (itemId == R.id.menu_quote) {

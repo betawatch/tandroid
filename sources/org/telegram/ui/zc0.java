@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -548,10 +548,10 @@ public final /* synthetic */ class zc0 implements Runnable {
                 break;
             case 28:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
-                dp0 dp0Var = (dp0) this.c;
+                ep0 ep0Var = (ep0) this.c;
                 Drawable[] drawableArr = PhotoViewer.Y8;
-                if (dp0Var.getWindow() != null) {
-                    dp0Var.A0(true);
+                if (ep0Var.getWindow() != null) {
+                    ep0Var.A0(true);
                     an anVar = photoViewer2.k4;
                     if (anVar != null && (qjVar = anVar.Z) != null) {
                         qjVar.k0(false);

@@ -22,9 +22,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xo;
-import org.telegram.ui.vs0;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class k1 extends ViewGroup {
     public final Paint D;
@@ -44,7 +44,7 @@ public class k1 extends ViewGroup {
     public final TextView e;
     public final int f;
     public final int h;
-    public vs0 n;
+    public ws0 n;
     public final TextView r;
     public final int s;
     public final int w;
@@ -113,12 +113,12 @@ public class k1 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(vs0 vs0Var, boolean z9) {
+    public final void a(ws0 ws0Var, boolean z9) {
         boolean z10;
         String f10;
-        this.n = vs0Var;
+        this.n = ws0Var;
         this.M = z9;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = vs0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = ws0Var.a;
         int i7 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i7 == 1) {
@@ -132,7 +132,7 @@ public class k1 extends ViewGroup {
         }
         if (!r2.b()) {
             if (org.telegram.messenger.r1.i().k()) {
-                vs0Var.a();
+                ws0Var.a();
             }
             z10 = true;
             this.L = z10;
@@ -141,30 +141,30 @@ public class k1 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z10) {
-                if (vs0Var.c() <= 0) {
+                if (ws0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(hd.a0(null, null, 2131749663, Integer.valueOf(vs0Var.c())));
+                    textView4.setText(hd.a0(null, null, 2131749663, Integer.valueOf(ws0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
                 if (r2.b() || tL_premiumSubscriptionOption.store_product == null) {
-                    f10 = org.telegram.messenger.r1.i().f(vs0Var.e, vs0Var.b());
-                } else if (vs0Var.f == null) {
+                    f10 = org.telegram.messenger.r1.i().f(ws0Var.e, ws0Var.b());
+                } else if (ws0Var.f == null) {
                     f10 = "";
                 } else {
                     org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
-                    long j3 = vs0Var.e;
-                    String b10 = vs0Var.b();
+                    long j3 = ws0Var.e;
+                    String b10 = ws0Var.b();
                     i10.getClass();
                     f10 = org.telegram.messenger.r1.g(b10, 6, j3, false);
                 }
                 textView3.setText(f10);
-                textView5.setText(hd.a0(null, null, 2131746871, vs0Var.f()));
-                textView2.setText(hd.a0(null, null, 2131746872, vs0Var.e()));
+                textView5.setText(hd.a0(null, null, 2131746871, ws0Var.f()));
+                textView2.setText(hd.a0(null, null, 2131746872, ws0Var.e()));
                 if (tL_premiumSubscriptionOption.current) {
                     textView5.setVisibility(0);
                     textView5.setText(hd.M0(2131742825, null));
@@ -281,7 +281,7 @@ public class k1 extends ViewGroup {
         }
     }
 
-    public vs0 getTier() {
+    public ws0 getTier() {
         return this.n;
     }
 

@@ -2,7 +2,7 @@ package ii;
 
 import android.text.SpannableStringBuilder;
 import bi.v0;
-import c8.yc;
+import c8.zc;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.an;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class m0 {
     public static SpannableStringBuilder a(ij ijVar, String str, String str2, boolean z9, boolean z10) {
@@ -99,7 +99,7 @@ public abstract class m0 {
                 if (t3.t0(chat) || communityPeer.can_view_history) {
                     return 2;
                 }
-                return (!yc.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
+                return (!zc.a(communityPeer.flags, 1) || communityPeer.visible) ? 3 : 4;
             }
         }
         return 1;

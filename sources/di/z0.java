@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -144,9 +144,9 @@ public final /* synthetic */ class z0 implements Runnable {
                                     e7Var.O = gc.F(null, photoSize.bytes);
                                 } else {
                                     org.telegram.messenger.w7.G(i13);
-                                    File K = org.telegram.messenger.w7.K(photoSize, null, true, true);
-                                    if (K != null && K.exists()) {
-                                        e7Var.N = K.getAbsolutePath();
+                                    File J = org.telegram.messenger.w7.J(photoSize, null, true, true);
+                                    if (J != null && J.exists()) {
+                                        e7Var.N = J.getAbsolutePath();
                                     }
                                 }
                             }

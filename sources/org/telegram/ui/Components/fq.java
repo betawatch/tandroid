@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fq implements Runnable {
     public final /* synthetic */ int a;
@@ -79,11 +79,11 @@ public final /* synthetic */ class fq implements Runnable {
                     tqVar2.U1 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tqVar2.U1);
                     tqVar2.V1 = spannableStringBuilder;
-                    ty0 ty0Var = new ty0();
-                    ty0Var.a |= 256;
-                    ty0Var.b = 0;
-                    ty0Var.c = spannableStringBuilder.length();
-                    tqVar2.V1.setSpan(new uy0(ty0Var, 0), 0, tqVar2.V1.length(), 0);
+                    uy0 uy0Var = new uy0();
+                    uy0Var.a |= 256;
+                    uy0Var.b = 0;
+                    uy0Var.c = spannableStringBuilder.length();
+                    tqVar2.V1.setSpan(new vy0(uy0Var, 0), 0, tqVar2.V1.length(), 0);
                     tqVar2.W1.O(false);
                     break;
                 }

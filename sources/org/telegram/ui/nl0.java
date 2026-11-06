@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -25,10 +25,10 @@ public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
     public final boolean c;
     public final org.telegram.ui.ActionBar.f6 d;
     public final Drawable e;
-    public final org.telegram.ui.Components.ly0 f;
+    public final org.telegram.ui.Components.my0 f;
     public final org.telegram.ui.ActionBar.u2 h;
     public final Paint n;
-    public org.telegram.ui.Components.ly0 r;
+    public org.telegram.ui.Components.my0 r;
     public int s;
     public boolean w;
     public cm0 x;
@@ -87,7 +87,7 @@ public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
             }
         }
         setContentDescription(M02);
-        this.f = new org.telegram.ui.Components.ly0(M02, 16.0f, null);
+        this.f = new org.telegram.ui.Components.my0(M02, 16.0f, null);
         updateColors();
     }
 
@@ -103,12 +103,12 @@ public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
         int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(171.0f);
         org.telegram.ui.ActionBar.u2 u2Var = this.h;
         int L2 = u2Var != null ? org.telegram.messenger.g0.L(8.0f) + u2Var.getIntrinsicWidth() : 0;
-        org.telegram.ui.Components.ly0 ly0Var = this.f;
-        ly0Var.p = measuredWidth - L2;
-        float measuredWidth2 = org.telegram.messenger.hd.a0 ? (getMeasuredWidth() - ly0Var.k()) - org.telegram.messenger.g0.L(71.0f) : org.telegram.messenger.g0.L(71.0f);
-        ly0Var.e(canvas, measuredWidth2, getMeasuredHeight() / 2.0f);
+        org.telegram.ui.Components.my0 my0Var = this.f;
+        my0Var.p = measuredWidth - L2;
+        float measuredWidth2 = org.telegram.messenger.hd.a0 ? (getMeasuredWidth() - my0Var.k()) - org.telegram.messenger.g0.L(71.0f) : org.telegram.messenger.g0.L(71.0f);
+        my0Var.e(canvas, measuredWidth2, getMeasuredHeight() / 2.0f);
         if (u2Var != null) {
-            int k10 = (int) (ly0Var.k() + measuredWidth2 + org.telegram.messenger.g0.L(6.0f));
+            int k10 = (int) (my0Var.k() + measuredWidth2 + org.telegram.messenger.g0.L(6.0f));
             u2Var.setBounds(k10, 0, k10, getHeight());
             u2Var.draw(canvas);
         }
@@ -132,14 +132,14 @@ public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
             this.x.f(org.telegram.messenger.g0.N(3.0f), org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
             this.x.draw(canvas);
         } else if (this.r != null && !z9) {
-            float measuredWidth3 = (int) ((getMeasuredWidth() - org.telegram.messenger.g0.L(116.0f)) - Math.min(ly0Var.k() + (u2Var == null ? 0 : org.telegram.messenger.g0.L(12.0f) + u2Var.getIntrinsicWidth()), getMeasuredWidth() - org.telegram.messenger.g0.L(164.0f)));
+            float measuredWidth3 = (int) ((getMeasuredWidth() - org.telegram.messenger.g0.L(116.0f)) - Math.min(my0Var.k() + (u2Var == null ? 0 : org.telegram.messenger.g0.L(12.0f) + u2Var.getIntrinsicWidth()), getMeasuredWidth() - org.telegram.messenger.g0.L(164.0f)));
             int min = (int) Math.min(this.r.k(), measuredWidth3);
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(15.0f) : org.telegram.messenger.k5.z(33.0f, getMeasuredWidth(), min), (getMeasuredHeight() - org.telegram.messenger.g0.L(22.0f)) / 2.0f, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(33.0f) + min : getMeasuredWidth() - org.telegram.messenger.g0.L(15.0f), (org.telegram.messenger.g0.L(22.0f) + getMeasuredHeight()) / 2.0f);
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), this.n);
-            org.telegram.ui.Components.ly0 ly0Var2 = this.r;
-            ly0Var2.p = measuredWidth3;
-            ly0Var2.e(canvas, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(24.0f) : org.telegram.messenger.k5.z(24.0f, getMeasuredWidth(), min), getMeasuredHeight() / 2.0f);
+            org.telegram.ui.Components.my0 my0Var2 = this.r;
+            my0Var2.p = measuredWidth3;
+            my0Var2.e(canvas, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(24.0f) : org.telegram.messenger.k5.z(24.0f, getMeasuredWidth(), min), getMeasuredHeight() / 2.0f);
         }
         if (this.w) {
             Paint d = f6Var != null ? f6Var.d("paintDivider") : null;
@@ -168,7 +168,7 @@ public final class nl0 extends View implements org.telegram.ui.ActionBar.a6 {
         if (indexOf > 0) {
             trim = trim.substring(0, indexOf);
         }
-        this.r = new org.telegram.ui.Components.ly0(org.telegram.messenger.i6.m(trim, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
+        this.r = new org.telegram.ui.Components.my0(org.telegram.messenger.i6.m(trim, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
         cm0 cm0Var2 = this.x;
         if (cm0Var2 != null) {
             cm0Var2.e(null);

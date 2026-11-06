@@ -22,12 +22,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements c20 {
     public final /* synthetic */ int a = 1;
@@ -43,14 +43,14 @@ public final /* synthetic */ class r implements c20 {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.b5 b5Var, org.telegram.ui.ActionBar.f6 f6Var, int i7, TextView textView, org.telegram.ui.Wallet.a3[] a3VarArr, sx0 sx0Var, x10 x10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
+    public /* synthetic */ r(LinearLayout linearLayout, org.telegram.ui.Wallet.b5 b5Var, org.telegram.ui.ActionBar.f6 f6Var, int i7, TextView textView, org.telegram.ui.Wallet.a3[] a3VarArr, tx0 tx0Var, x10 x10Var, Context context, TextView[] textViewArr, SpannableString[] spannableStringArr) {
         this.c = linearLayout;
         this.d = b5Var;
         this.e = f6Var;
         this.b = i7;
         this.f = textView;
         this.g = a3VarArr;
-        this.h = sx0Var;
+        this.h = tx0Var;
         this.i = x10Var;
         this.j = context;
         this.k = textViewArr;
@@ -68,14 +68,14 @@ public final /* synthetic */ class r implements c20 {
     /* JADX WARN: Type inference failed for: r13v23 */
     /* JADX WARN: Type inference failed for: r13v24 */
     /* JADX WARN: Type inference failed for: r13v7 */
-    /* JADX WARN: Type inference failed for: r13v8, types: [org.telegram.ui.Components.sx0] */
-    /* JADX WARN: Type inference failed for: r16v4, types: [org.telegram.ui.Components.sx0] */
+    /* JADX WARN: Type inference failed for: r13v8, types: [org.telegram.ui.Components.tx0] */
+    /* JADX WARN: Type inference failed for: r16v4, types: [org.telegram.ui.Components.tx0] */
     /* JADX WARN: Type inference failed for: r3v9, types: [org.telegram.ui.Wallet.r4] */
     /* JADX WARN: Type inference failed for: r5v13 */
     /* JADX WARN: Type inference failed for: r5v14, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r5v15 */
     /* JADX WARN: Type inference failed for: r5v32 */
-    /* JADX WARN: Type inference failed for: r5v36, types: [java.lang.String, org.telegram.ui.Components.jc[], org.telegram.ui.Components.rx0[]] */
+    /* JADX WARN: Type inference failed for: r5v36, types: [java.lang.String, org.telegram.ui.Components.jc[], org.telegram.ui.Components.sx0[]] */
     /* JADX WARN: Type inference failed for: r5v37 */
     @Override // org.telegram.messenger.c20
     /*
@@ -92,7 +92,7 @@ public final /* synthetic */ class r implements c20 {
         int i7;
         ?? r52;
         String M0;
-        sx0 sx0Var;
+        tx0 tx0Var;
         CharSequence charSequence;
         ?? r53;
         String str;
@@ -144,7 +144,7 @@ public final /* synthetic */ class r implements c20 {
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj8;
                 TextView textView = (TextView) obj7;
                 final org.telegram.ui.Wallet.a3[] a3VarArr = (org.telegram.ui.Wallet.a3[]) obj6;
-                sx0 sx0Var2 = (sx0) viewGroup;
+                tx0 tx0Var2 = (tx0) viewGroup;
                 x10 x10Var = (x10) obj5;
                 Context context2 = (Context) obj4;
                 TextView[] textViewArr = (TextView[]) obj3;
@@ -155,7 +155,7 @@ public final /* synthetic */ class r implements c20 {
                 boolean z10 = wallettransaction.incoming;
                 long abs2 = Math.abs(wallettransaction.fee);
                 boolean z11 = wallettransaction.pending || wallettransaction.failed;
-                boolean z12 = ((linearLayout.getParent() instanceof View) && (linearLayout.getParent().getParent() instanceof p61) && ((p61) linearLayout.getParent().getParent()).getViewPages()[0] != linearLayout.getParent()) ? false : true;
+                boolean z12 = ((linearLayout.getParent() instanceof View) && (linearLayout.getParent().getParent() instanceof v61) && ((v61) linearLayout.getParent().getParent()).getViewPages()[0] != linearLayout.getParent()) ? false : true;
                 boolean z13 = wallettransaction.key_change;
                 boolean z14 = z12;
                 int i14 = this.b;
@@ -212,7 +212,7 @@ public final /* synthetic */ class r implements c20 {
                         jaVar3.setTitle(org.telegram.ui.Wallet.n0.l("Grams", q10, 2131749506));
                     }
                 }
-                sx0Var2.removeAllViews();
+                tx0Var2.removeAllViews();
                 final TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
                 int i15 = 11;
                 if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerUser) {
@@ -226,27 +226,27 @@ public final /* synthetic */ class r implements c20 {
                             str = null;
                             M02 = hd.M0(2131743041, null);
                         }
-                        sx0Var2.m(M02, i14, wallettransactionpeeruser.user_id, new org.telegram.ui.Wallet.g(x10Var, a3VarArr, wallettransactionpeeruser, 11), hd.M0(2131743023, str), x10Var != null ? null : new org.telegram.ui.Wallet.n(12, a3VarArr, a22));
+                        tx0Var2.m(M02, i14, wallettransactionpeeruser.user_id, new org.telegram.ui.Wallet.g(x10Var, a3VarArr, wallettransactionpeeruser, 11), hd.M0(2131743023, str), x10Var != null ? null : new org.telegram.ui.Wallet.n(12, a3VarArr, a22));
                     }
-                    sx0 sx0Var3 = sx0Var2;
+                    tx0 tx0Var3 = tx0Var2;
                     if (!TextUtils.isEmpty(wallettransactionpeeruser.domain) && !TextUtils.isEmpty(wallettransactionpeeruser.address)) {
-                        sx0Var3.i(hd.M0(2131743130, null), wallettransactionpeeruser.domain, new org.telegram.ui.Wallet.g(a3VarArr, a22, wallettransactionpeeruser, 12));
+                        tx0Var3.i(hd.M0(2131743130, null), wallettransactionpeeruser.domain, new org.telegram.ui.Wallet.g(a3VarArr, a22, wallettransactionpeeruser, 12));
                     }
                     i7 = i14;
-                    sx0Var = sx0Var3;
+                    tx0Var = tx0Var3;
                 } else {
-                    sx0 sx0Var4 = sx0Var2;
+                    tx0 tx0Var4 = tx0Var2;
                     if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerChannel) {
                         if (qp.s1(i14).M0(Long.valueOf(walletTransactionPeer.channel_id)) != null) {
-                            sx0Var4.n(z9 ? hd.M0(2131743016, null) : hd.M0(2131743041, null), i14, -walletTransactionPeer.channel_id, new org.telegram.ui.Wallet.g(x10Var, a3VarArr, walletTransactionPeer, 13));
+                            tx0Var4.n(z9 ? hd.M0(2131743016, null) : hd.M0(2131743041, null), i14, -walletTransactionPeer.channel_id, new org.telegram.ui.Wallet.g(x10Var, a3VarArr, walletTransactionPeer, 13));
                         }
                         i7 = i14;
-                        sx0Var = sx0Var4;
+                        tx0Var = tx0Var4;
                         if (!TextUtils.isEmpty(walletTransactionPeer.domain)) {
-                            sx0Var = sx0Var4;
+                            tx0Var = tx0Var4;
                             if (!TextUtils.isEmpty(walletTransactionPeer.address)) {
                                 final int i16 = 0;
-                                sx0Var4.i(hd.M0(2131743130, null), walletTransactionPeer.domain, new Runnable() { // from class: org.telegram.ui.Wallet.r4
+                                tx0Var4.i(hd.M0(2131743130, null), walletTransactionPeer.domain, new Runnable() { // from class: org.telegram.ui.Wallet.r4
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i16) {
@@ -315,19 +315,19 @@ public final /* synthetic */ class r implements c20 {
                                         }
                                     }
                                 });
-                                sx0Var = sx0Var4;
+                                tx0Var = tx0Var4;
                             }
                         }
                     } else {
                         i7 = i14;
-                        sx0Var = sx0Var4;
+                        tx0Var = tx0Var4;
                         if (walletTransactionPeer instanceof TL_wallet.walletTransactionPeerAddress) {
                             final TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = (TL_wallet.walletTransactionPeerAddress) walletTransactionPeer;
-                            sx0Var = sx0Var4;
+                            tx0Var = tx0Var4;
                             if (!TextUtils.isEmpty(wallettransactionpeeraddress.domain)) {
                                 if (TextUtils.isEmpty(wallettransactionpeeraddress.address)) {
-                                    sx0Var4.i(z9 ? hd.M0(2131743016, null) : hd.M0(2131743041, null), wallettransactionpeeraddress.domain, new ai.m0(22));
-                                    sx0Var = sx0Var4;
+                                    tx0Var4.i(z9 ? hd.M0(2131743016, null) : hd.M0(2131743041, null), wallettransactionpeeraddress.domain, new ai.m0(22));
+                                    tx0Var = tx0Var4;
                                 } else {
                                     if (z9) {
                                         r52 = null;
@@ -337,7 +337,7 @@ public final /* synthetic */ class r implements c20 {
                                         M0 = hd.M0(2131743041, null);
                                     }
                                     final int i17 = 0;
-                                    sx0Var4.h(M0, wallettransactionpeeraddress.domain, new Runnable() { // from class: org.telegram.ui.Wallet.s4
+                                    tx0Var4.h(M0, wallettransactionpeeraddress.domain, new Runnable() { // from class: org.telegram.ui.Wallet.s4
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i17) {
@@ -486,7 +486,7 @@ public final /* synthetic */ class r implements c20 {
                                             }
                                         }
                                     });
-                                    sx0Var = sx0Var4;
+                                    tx0Var = tx0Var4;
                                 }
                             }
                         }
@@ -517,7 +517,7 @@ public final /* synthetic */ class r implements c20 {
                         charSequence = spannableStringBuilder3;
                     }
                     final int i19 = 1;
-                    sx0Var.j(M03, charSequence, 14, null, z16 ? hd.M0(2131743023, null) : null, new Runnable() { // from class: org.telegram.ui.Wallet.r4
+                    tx0Var.j(M03, charSequence, 14, null, z16 ? hd.M0(2131743023, null) : null, new Runnable() { // from class: org.telegram.ui.Wallet.r4
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i19) {
@@ -608,9 +608,9 @@ public final /* synthetic */ class r implements c20 {
                             textViewArr[0].setText(spannableStringArr[0]);
                         }
                         r53 = 0;
-                        sx0Var.f(textViewArr[0], hd.M0(2131743122, null));
+                        tx0Var.f(textViewArr[0], hd.M0(2131743122, null));
                         if (wallettransaction.date == 0) {
-                            sx0Var.c(hd.M0(2131743145, r53), hd.Q(wallettransaction.date), r53, r53);
+                            tx0Var.c(hd.M0(2131743145, r53), hd.Q(wallettransaction.date), r53, r53);
                             break;
                         }
                     }
@@ -624,7 +624,7 @@ public final /* synthetic */ class r implements c20 {
                     wpVar.s = L;
                     spannableStringBuilder4.setSpan(wpVar, 0, 1, 33);
                     spannableStringBuilder4.append((CharSequence) hd.M0(2131743119, null));
-                    sx0Var.e(hd.M0(2131743122, null), spannableStringBuilder4, "?", new bi.f9(i7, 7, j3, context, f6Var), null);
+                    tx0Var.e(hd.M0(2131743122, null), spannableStringBuilder4, "?", new bi.f9(i7, 7, j3, context, f6Var), null);
                 }
                 r53 = 0;
                 if (wallettransaction.date == 0) {

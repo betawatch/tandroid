@@ -19,11 +19,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fk0;
-import org.telegram.ui.rv0;
 import org.telegram.ui.tc1;
 import org.telegram.ui.uc1;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uz implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class uz implements Runnable {
                                         arrayList.add(Integer.valueOf(i12));
                                     }
                                 }
-                                Collections.sort(arrayList, new rv0(7));
+                                Collections.sort(arrayList, new un0(8));
                                 if (!arrayList.isEmpty()) {
                                     FrameLayout frameLayout = new FrameLayout(context);
                                     FrameLayout frameLayout2 = new FrameLayout(context);
@@ -152,10 +152,10 @@ public final /* synthetic */ class uz implements Runnable {
                                     f11.addView(l9Var2, c8.ha.s(qs.O1, qs.O1, 49, 32.0f, 32.0f, 32.0f, 9.66f));
                                     ui.b0(i11).c2(l9Var2, "Utya3D", "😎", "130_130");
                                     int i14 = org.telegram.ui.ActionBar.k6.j5;
-                                    TextView b10 = c8.na.b(context, 20.0f, i14, true, resourceProvider);
+                                    TextView b10 = c8.qa.b(context, 20.0f, i14, true, resourceProvider);
                                     k5.m(b10, 17, null, 2131742945);
                                     f11.addView(b10, c8.ha.s(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
-                                    TextView b11 = c8.na.b(context, 14.0f, i14, false, null);
+                                    TextView b11 = c8.qa.b(context, 14.0f, i14, false, null);
                                     k5.m(b11, 17, null, 2131742946);
                                     f11.addView(b11, c8.ha.t(-1, -2, 49, 32, 0, 32, 24));
                                     fi.d h = k5.h(24, context, resourceProvider, true);

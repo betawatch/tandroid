@@ -36,14 +36,14 @@ import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.g70;
-import org.telegram.ui.Components.g71;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
     public int D;
@@ -79,7 +79,7 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
     public final org.telegram.ui.ActionBar.f6 f;
     public String f0;
     public boolean g0;
-    public g71 h;
+    public m71 h;
     public float h0;
     public final f2 i0;
     public boolean n;
@@ -168,10 +168,10 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
             }
             radialProgress2.p(false, 0.0f);
             if (this.L != null) {
-                org.telegram.messenger.w7.G(i12).X(this.L, this.J, 1, 0);
+                org.telegram.messenger.w7.G(i12).W(this.L, this.J, 1, 0);
             } else if (this.J.content instanceof TLRPC.TL_webDocument) {
                 i7 = 4;
-                org.telegram.messenger.w7.G(i12).Y(null, null, m20.c(this.J.content), null, null, null, null, 0L, 3, 1);
+                org.telegram.messenger.w7.G(i12).X(null, null, m20.c(this.J.content), null, null, null, null, 0L, 3, 1);
                 this.V = i7;
                 radialProgress2.setIcon(getIconForCurrentState(), false, true);
                 invalidate();
@@ -337,14 +337,14 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
         }
         this.Q = z9;
         this.y = z12;
-        g71 g71Var = this.h;
-        if (g71Var != null && g71Var.r) {
-            g71Var.r = false;
-            g71Var.h.p(false);
-            g71Var.h.q();
-            org.telegram.utils.twidget.p.r(g71Var.c);
+        m71 m71Var = this.h;
+        if (m71Var != null && m71Var.r) {
+            m71Var.r = false;
+            m71Var.h.p(false);
+            m71Var.h.q();
+            org.telegram.utils.twidget.p.r(m71Var.c);
         }
-        this.h = (botInlineResult == null || !(botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageWidget)) ? null : new g71(this, this.d, botInlineResult, this.f);
+        this.h = (botInlineResult == null || !(botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageWidget)) ? null : new m71(this, this.d, botInlineResult, this.f);
         b();
         if (z12) {
             this.P = 2;
@@ -371,7 +371,7 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
             return;
         }
         if (this.L != null) {
-            containsKey = org.telegram.messenger.w7.G(this.d).T(this.f0);
+            containsKey = org.telegram.messenger.w7.G(this.d).S(this.f0);
         } else {
             containsKey = gc.D().C.containsKey(this.f0);
         }
@@ -481,42 +481,42 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
         this.a.R();
         this.W.f();
         org.telegram.messenger.z5.q(this.d).v(this);
-        g71 g71Var = this.h;
-        if (g71Var == null || !g71Var.r) {
+        m71 m71Var = this.h;
+        if (m71Var == null || !m71Var.r) {
             return;
         }
-        g71Var.r = false;
-        g71Var.h.p(false);
-        g71Var.h.q();
-        org.telegram.utils.twidget.p.r(g71Var.c);
+        m71Var.r = false;
+        m71Var.h.p(false);
+        m71Var.h.q();
+        org.telegram.utils.twidget.p.r(m71Var.c);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int i7;
         int i10;
-        g71 g71Var = this.h;
-        if (g71Var != null) {
+        m71 m71Var = this.h;
+        if (m71Var != null) {
             float L = org.telegram.messenger.g0.L(this.Q ? 2.0f : 8.0f);
             float L2 = org.telegram.messenger.g0.L(this.Q ? 2.0f : 6.0f);
-            Paint paint = g71Var.e;
-            Path path = g71Var.f;
-            org.telegram.utils.twidget.u uVar = g71Var.c;
-            if (uVar != null && (i10 = g71Var.n) > 0) {
-                int min = Math.min(org.telegram.utils.twidget.p.d(g71Var.b, uVar, i10), org.telegram.messenger.g0.L(320.0f));
+            Paint paint = m71Var.e;
+            Path path = m71Var.f;
+            org.telegram.utils.twidget.u uVar = m71Var.c;
+            if (uVar != null && (i10 = m71Var.n) > 0) {
+                int min = Math.min(org.telegram.utils.twidget.p.d(m71Var.b, uVar, i10), org.telegram.messenger.g0.L(320.0f));
                 float L3 = org.telegram.messenger.g0.L(iz.Y0);
                 canvas.save();
                 canvas.translate(L, L2);
                 path.rewind();
                 RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(0.0f, 0.0f, g71Var.n, min);
+                rectF.set(0.0f, 0.0f, m71Var.n, min);
                 path.addRoundRect(rectF, L3, L3, Path.Direction.CW);
                 canvas.clipPath(path);
-                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ob, g71Var.d) | (-16777216));
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ob, m71Var.d) | (-16777216));
                 canvas.drawRect(rectF, paint);
-                j71 j71Var = g71Var.h;
-                if (j71Var != null && j71Var.b(canvas, g71Var.n)) {
-                    g71Var.a.postInvalidateOnAnimation();
+                p71 p71Var = m71Var.h;
+                if (p71Var != null && p71Var.b(canvas, m71Var.n)) {
+                    m71Var.a.postInvalidateOnAnimation();
                 }
                 canvas.restore();
             }
@@ -780,7 +780,7 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
         ImageReceiver imageReceiver;
         String str3;
         String str4;
-        TLRPC.TL_photoStrippedSize R;
+        TLRPC.TL_photoStrippedSize Q;
         hc hcVar;
         ImageReceiver imageReceiver2;
         ImageReceiver imageReceiver3;
@@ -813,8 +813,8 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
         if (this.h != null) {
             int size = View.MeasureSpec.getSize(i7);
             int L2 = size - org.telegram.messenger.g0.L(this.Q ? 4.0f : 16.0f);
-            g71 g71Var = this.h;
-            setMeasuredDimension(size, org.telegram.messenger.g0.L(this.Q ? 4.0f : 12.0f) + Math.min(org.telegram.utils.twidget.p.d(g71Var.b, g71Var.c, L2), org.telegram.messenger.g0.L(320.0f)) + (this.n ? 1 : 0));
+            m71 m71Var = this.h;
+            setMeasuredDimension(size, org.telegram.messenger.g0.L(this.Q ? 4.0f : 12.0f) + Math.min(org.telegram.utils.twidget.p.d(m71Var.b, m71Var.c, L2), org.telegram.messenger.g0.L(320.0f)) + (this.n ? 1 : 0));
             if (isAttachedToWindow()) {
                 this.h.a(L2);
                 return;
@@ -1082,15 +1082,15 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
                                     str3 = concat;
                                 }
                                 imageReceiver.R0 = this.P != 6 ? r72 : false;
-                                R = org.telegram.messenger.w7.R(arrayList3);
-                                if (R != null) {
+                                Q = org.telegram.messenger.w7.Q(arrayList3);
+                                if (Q != null) {
                                     TLRPC.Document document3 = this.L;
                                     if (document3 != null) {
-                                        i14 = hc.c(R, document3);
+                                        i14 = hc.c(Q, document3);
                                     } else {
                                         TLRPC.Photo photo = this.N;
                                         if (photo != null) {
-                                            i14 = hc.i(R, photo);
+                                            i14 = hc.i(Q, photo);
                                         }
                                     }
                                     hcVar = i14;
@@ -1254,8 +1254,8 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
                     if (this.Q) {
                     }
                     imageReceiver.R0 = this.P != 6 ? r72 : false;
-                    R = org.telegram.messenger.w7.R(arrayList3);
-                    if (R != null) {
+                    Q = org.telegram.messenger.w7.Q(arrayList3);
+                    if (Q != null) {
                     }
                     hcVar = null;
                     if (this.P == 2) {
@@ -1304,8 +1304,8 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
                             if (this.Q) {
                             }
                             imageReceiver.R0 = this.P != 6 ? r72 : false;
-                            R = org.telegram.messenger.w7.R(arrayList3);
-                            if (R != null) {
+                            Q = org.telegram.messenger.w7.Q(arrayList3);
+                            if (Q != null) {
                             }
                             hcVar = null;
                             if (this.P == 2) {
@@ -1351,8 +1351,8 @@ public final class h2 extends FrameLayout implements org.telegram.messenger.x5 {
                     if (this.Q) {
                     }
                     imageReceiver.R0 = this.P != 6 ? r72 : false;
-                    R = org.telegram.messenger.w7.R(arrayList3);
-                    if (R != null) {
+                    Q = org.telegram.messenger.w7.Q(arrayList3);
+                    if (Q != null) {
                     }
                     hcVar = null;
                     if (this.P == 2) {

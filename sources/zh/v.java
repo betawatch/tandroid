@@ -36,24 +36,24 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.td0;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.hs0;
+import org.telegram.ui.is0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v extends na implements v9 {
     public static final jc[] h2 = new jc[1];
-    public static final rx0[] i2 = new rx0[1];
+    public static final sx0[] i2 = new sx0[1];
     public final TL_stars.StarGift P1;
     public final long Q1;
     public final LinearLayout R1;
@@ -63,7 +63,7 @@ public final class v extends na implements v9 {
     public final jc V1;
     public final jc W1;
     public final jc X1;
-    public final rx0 Y1;
+    public final sx0 Y1;
     public final bi.t0 Z1;
     public final TableRow a2;
     public final fi.d b2;
@@ -71,7 +71,7 @@ public final class v extends na implements v9 {
     public final w70 d2;
     public s9 e2;
     public final CharSequence f2;
-    public f41 g2;
+    public l41 g2;
 
     public v(Context context, f6 f6Var, long j3, TL_stars.StarGift starGift, Runnable runnable) {
         super(context, null, false, false, 1, f6Var);
@@ -129,19 +129,19 @@ public final class v extends na implements v9 {
         int i12 = k6.J6;
         r6.H(w70Var, i12, f6Var);
         linearLayout.addView(w70Var, ha.t(-1, -2, 17, 20, 0, 20, 4));
-        sx0 sx0Var = new sx0(context, f6Var);
+        tx0 tx0Var = new tx0(context, f6Var);
         String M0 = hd.M0(2131750322, null);
         jc[] jcVarArr = h2;
-        sx0Var.c(M0, "", null, jcVarArr);
+        tx0Var.c(M0, "", null, jcVarArr);
         this.U1 = jcVarArr[0];
-        sx0Var.c(hd.M0(2131750323, null), "", null, jcVarArr);
+        tx0Var.c(hd.M0(2131750323, null), "", null, jcVarArr);
         this.V1 = jcVarArr[0];
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.setClipChildren(false);
         frameLayout2.setClipToPadding(false);
-        frameLayout2.addView(sx0Var, ha.e(-1, -2, qs.E1));
+        frameLayout2.addView(tx0Var, ha.e(-1, -2, qs.E1));
         this.Z1 = new bi.t0(this, new fi.m3[1], frameLayout2, 7);
-        TableRow c10 = sx0Var.c(hd.M0(2131749587, null), "", null, jcVarArr);
+        TableRow c10 = tx0Var.c(hd.M0(2131749587, null), "", null, jcVarArr);
         this.a2 = c10;
         final int i13 = 1;
         c10.setOnClickListener(new View.OnClickListener(this) { // from class: zh.q
@@ -164,10 +164,10 @@ public final class v extends na implements v9 {
             }
         });
         this.W1 = jcVarArr[0];
-        rx0[] rx0VarArr = i2;
-        sx0Var.c("", "", rx0VarArr, jcVarArr);
+        sx0[] sx0VarArr = i2;
+        tx0Var.c("", "", sx0VarArr, jcVarArr);
         this.X1 = jcVarArr[0];
-        this.Y1 = rx0VarArr[0];
+        this.Y1 = sx0VarArr[0];
         linearLayout.addView(frameLayout2, ha.k(16.0f, 16.0f, 14.0f, 18.0f, -1, -2));
         w70 w70Var2 = new w70(context, f6Var);
         this.d2 = w70Var2;
@@ -205,7 +205,7 @@ public final class v extends na implements v9 {
         this.e2 = l10;
         if (l10 != null && (tL_starGiftAuctionState2 = l10.f) != null) {
             if (tL_starGiftAuctionState2.start_date > ConnectionsManager.getInstance(this.a).getCurrentTime()) {
-                sx0Var.c(hd.M0(2131750330, null), hd.E(this.e2.f.total_rounds, ','), null, null);
+                tx0Var.c(hd.M0(2131750330, null), hd.E(this.e2.f.total_rounds, ','), null, null);
             } else {
                 String M02 = hd.M0(2131750331, null);
                 String E = hd.E(this.e2.f.current_round, ',');
@@ -213,7 +213,7 @@ public final class v extends na implements v9 {
                 Object[] objArr = new Object[2];
                 objArr[i14] = E;
                 objArr[1] = E2;
-                sx0Var.c(M02, hd.a0(null, null, 2131747827, objArr), null, null);
+                tx0Var.c(M02, hd.a0(null, null, 2131747827, objArr), null, null);
             }
         }
         s9 s9Var = this.e2;
@@ -253,7 +253,7 @@ public final class v extends na implements v9 {
                 } else {
                     G = hd.G(starGiftAuctionRound.duration / 60, "Gift2AuctionTableCurrentRoundsTwoDuration", new Object[i14]);
                 }
-                sx0Var.c(a02, G, null, null);
+                tx0Var.c(a02, G, null, null);
             }
         }
         s9 s9Var2 = this.e2;
@@ -406,33 +406,33 @@ public final class v extends na implements v9 {
         textView2.setTextSize(1, 14.0f);
         r6.V(textView2, i10, f6Var);
         linearLayout.addView(textView2, ha.t(-1, -2, 17, 20, 0, 20, 16));
-        hs0 hs0Var = new hs0(context, f6Var);
+        is0 is0Var = new is0(context, f6Var);
         int i11 = starGift.gifts_per_round;
-        hs0Var.a.l(hd.G(i11, "GiftAuctionInfo1Header", Integer.valueOf(i11)), false);
+        is0Var.a.l(hd.G(i11, "GiftAuctionInfo1Header", Integer.valueOf(i11)), false);
         int i12 = starGift.gifts_per_round;
-        hs0Var.b.setText(hd.G(i12, "GiftAuctionInfo1Text", Integer.valueOf(i12)));
-        hs0Var.d.setVisibility(8);
-        ImageView imageView2 = hs0Var.c;
+        is0Var.b.setText(hd.G(i12, "GiftAuctionInfo1Text", Integer.valueOf(i12)));
+        is0Var.d.setVisibility(8);
+        ImageView imageView2 = is0Var.c;
         imageView2.setImageResource(R.drawable.menu_top_bidders_24);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
         r6.t(imageView2, i10, f6Var, mode);
-        linearLayout.addView(hs0Var, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-        hs0 hs0Var2 = new hs0(context, f6Var);
-        hs0Var2.a.l(hd.M0(2131749823, null), false);
-        hs0Var2.b.setText(hd.G(starGift.gifts_per_round, "GiftAuctionInfo2Text", new Object[0]));
-        hs0Var2.d.setVisibility(8);
-        ImageView imageView3 = hs0Var2.c;
+        linearLayout.addView(is0Var, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+        is0 is0Var2 = new is0(context, f6Var);
+        is0Var2.a.l(hd.M0(2131749823, null), false);
+        is0Var2.b.setText(hd.G(starGift.gifts_per_round, "GiftAuctionInfo2Text", new Object[0]));
+        is0Var2.d.setVisibility(8);
+        ImageView imageView3 = is0Var2.c;
         imageView3.setImageResource(R.drawable.menu_carryover_24);
         r6.t(imageView3, i10, f6Var, mode);
-        linearLayout.addView(hs0Var2, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-        hs0 hs0Var3 = new hs0(context, f6Var);
-        hs0Var3.a.l(hd.M0(2131749819, null), false);
-        hs0Var3.b.setText(hd.M0(2131749818, null));
-        hs0Var3.d.setVisibility(8);
-        ImageView imageView4 = hs0Var3.c;
+        linearLayout.addView(is0Var2, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+        is0 is0Var3 = new is0(context, f6Var);
+        is0Var3.a.l(hd.M0(2131749819, null), false);
+        is0Var3.b.setText(hd.M0(2131749818, null));
+        is0Var3.d.setVisibility(8);
+        ImageView imageView4 = is0Var3.c;
         imageView4.setImageResource(R.drawable.menu_bid_refund_24);
         r6.t(imageView4, i10, f6Var, mode);
-        linearLayout.addView(hs0Var3, ha.k(6.0f, 0.0f, 6.0f, 8.0f, -1, -2));
+        linearLayout.addView(is0Var3, ha.k(6.0f, 0.0f, 6.0f, 8.0f, -1, -2));
         fi.d dVar = new fi.d(context, f6Var, true);
         dVar.setOnClickListener(new z6(6, g2Var));
         dVar.i(k7.g2(hd.M0(2131743889, null)), false, true);
@@ -443,10 +443,10 @@ public final class v extends na implements v9 {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 28), this.I0);
-        this.g2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 28), this.I0);
+        this.g2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -523,12 +523,12 @@ public final class v extends na implements v9 {
             }
             i10 = starGift.availability_total;
             jc jcVar3 = this.X1;
-            rx0 rx0Var = this.Y1;
+            sx0 sx0Var = this.Y1;
             if (i7 != i10) {
-                rx0Var.setText(hd.M0(2131750332, null));
+                sx0Var.setText(hd.M0(2131750332, null));
                 jcVar3.setText(hd.E(i10, ','));
             } else {
-                rx0Var.setText(hd.M0(2131750333, null));
+                sx0Var.setText(hd.M0(2131750333, null));
                 jcVar3.setText(hd.G(i7, "Gift2Availability4Value", hd.E(i10, ',')));
             }
             i11 = this.e2.e.acquired_count;
@@ -557,7 +557,7 @@ public final class v extends na implements v9 {
         i7 = starGift.availability_remains;
         i10 = starGift.availability_total;
         jc jcVar32 = this.X1;
-        rx0 rx0Var2 = this.Y1;
+        sx0 sx0Var2 = this.Y1;
         if (i7 != i10) {
         }
         i11 = this.e2.e.acquired_count;

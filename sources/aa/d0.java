@@ -98,7 +98,7 @@ import org.telegram.ui.ol;
 import org.telegram.ui.q5;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -479,15 +479,15 @@ public final /* synthetic */ class d0 implements Runnable {
                 tL_document.file_reference = apVar.c;
                 tL_document.dc_id = ConnectionsManager.getInstance(cVar2.a).getCurrentDatacenterId();
                 w7.G(cVar2.a);
-                File K = w7.K(tL_document, null, true, true);
-                if (!K.exists()) {
+                File J = w7.J(tL_document, null, true, true);
+                if (!J.exists()) {
                     org.telegram.messenger.g0.h3(new y4(23, cVar2, tL_document));
                     return;
                 } else {
                     if (z23) {
                         return;
                     }
-                    org.telegram.messenger.g0.h3(new y4(22, mediaController, K));
+                    org.telegram.messenger.g0.h3(new y4(22, mediaController, J));
                     return;
                 }
             case 13:

@@ -10,7 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Trace;
-import c8.ge;
+import c8.he;
 import h9.f1;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,14 +19,14 @@ import java.util.Collections;
 import java.util.List;
 import jg.x;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
     public static final x b = new x(9);
 
     public static m4.f a(Context context, List list) {
-        ge.a("FontProvider.getFontFamilyResult");
+        he.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i7 = 0; i7 < list.size(); i7++) {
@@ -46,7 +46,7 @@ public abstract class c {
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         x xVar = b;
         a0.j jVar = a;
-        ge.a("FontProvider.getProvider");
+        he.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -96,7 +96,7 @@ public abstract class c {
     }
 
     public static h[] c(Context context, d dVar, String str) {
-        ge.a("FontProvider.query");
+        he.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
@@ -105,7 +105,7 @@ public abstract class c {
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                ge.a("ContentQueryWrapper.query");
+                he.a("ContentQueryWrapper.query");
                 try {
                     cursor = gVar.C0(build, strArr, new String[]{dVar.c});
                     Trace.endSection();

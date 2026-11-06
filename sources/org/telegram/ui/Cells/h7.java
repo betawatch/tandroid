@@ -44,7 +44,7 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.yz;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class h7 extends FrameLayout implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.x5 {
     public final int D;
@@ -546,7 +546,7 @@ public final class h7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
         String r10 = org.telegram.messenger.w7.r(null, ijVar.F0());
         org.telegram.messenger.z5.q(i7).a(r10, this.E, this);
-        this.F = org.telegram.messenger.w7.G(i7).T(r10);
+        this.F = org.telegram.messenger.w7.G(i7).S(r10);
         ch0Var.setVisibility(0);
         int i10 = this.F ? 15 : 0;
         zg0 zg0Var = this.K;

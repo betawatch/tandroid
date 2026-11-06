@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.OrientationEventListener;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ot extends OrientationEventListener {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class ot extends OrientationEventListener {
         switch (this.a) {
             case 0:
                 vt vtVar = (vt) this.b;
-                f71 f71Var = vtVar.j1;
-                if (vtVar.w1 != null && f71Var.getVisibility() == 0 && (activity = vtVar.p1) != null && f71Var.T && vtVar.D1) {
+                l71 l71Var = vtVar.j1;
+                if (vtVar.w1 != null && l71Var.getVisibility() == 0 && (activity = vtVar.p1) != null && l71Var.T && vtVar.D1) {
                     if (i7 >= 240 && i7 <= 300) {
                         vtVar.E1 = true;
                         break;

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Paint;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class wt extends org.telegram.ui.Components.na {
     public final vt P1;
@@ -111,7 +111,7 @@ public final class wt extends org.telegram.ui.Components.na {
                 if (woVar != null) {
                     woVar.b(i12, i12, i13);
                 }
-                c2Var2.setOnClickListener(new org.telegram.ui.Components.n41(7, this, cVar));
+                c2Var2.setOnClickListener(new org.telegram.ui.Components.t41(7, this, cVar));
                 this.U1[i11] = c2Var2;
                 c2Var = c2Var2;
                 str = null;
@@ -149,11 +149,11 @@ public final class wt extends org.telegram.ui.Components.na {
             i6Var.w = L;
             int i14 = 0;
             while (true) {
-                org.telegram.ui.Components.p61 p61Var = i6Var.n;
-                if (i14 >= p61Var.getViewPages().length) {
+                org.telegram.ui.Components.v61 v61Var = i6Var.n;
+                if (i14 >= v61Var.getViewPages().length) {
                     break;
                 }
-                org.telegram.ui.Components.pj0 c10 = i6Var.c(p61Var.getViewPages()[i14]);
+                org.telegram.ui.Components.pj0 c10 = i6Var.c(v61Var.getViewPages()[i14]);
                 if (c10 != null) {
                     c10.setPadding(c10.getPaddingLeft(), 0, c10.getPaddingRight(), L);
                 }
@@ -176,7 +176,7 @@ public final class wt extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final org.telegram.ui.Components.oj0 L0(org.telegram.ui.Components.pj0 pj0Var) {
-        return new bi.k5(this, 5);
+        return new bi.k5(this, 6);
     }
 
     @Override // org.telegram.ui.Components.na

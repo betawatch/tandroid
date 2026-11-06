@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k71 extends org.telegram.ui.Components.l9 {
     public Drawable G;
@@ -90,11 +90,11 @@ public final class k71 extends org.telegram.ui.Components.l9 {
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         u71 u71Var = this.K;
-        org.telegram.ui.Components.s61 s61Var = u71Var.w1;
+        org.telegram.ui.Components.y61 y61Var = u71Var.w1;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        s61Var.getClass();
-        float a10 = org.telegram.ui.Components.s61.a(measuredWidth, measuredHeight);
+        y61Var.getClass();
+        float a10 = org.telegram.ui.Components.y61.a(measuredWidth, measuredHeight);
         u71Var.z1 = a10;
         if (u71Var.F1) {
             setScaleX(a10);

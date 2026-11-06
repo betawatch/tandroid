@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.j51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class j1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final class j1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                e51 e51Var = q1Var.Nb;
-                e51Var.n = new h9.f1(this, 26);
-                e51Var.e(false);
+                j51 j51Var = q1Var.Nb;
+                j51Var.n = new h9.f1(this, 26);
+                j51Var.e(false);
                 q1Var.Nb.d(!z9);
                 q1Var.Nb.f(true);
                 q1Var.invalidate();
@@ -60,10 +60,10 @@ public final class j1 extends OldVideoPlayerRewinder {
                 photoViewer.e0.invalidate();
                 ti.o oVar = photoViewer.O8;
                 if (oVar != null && (iVar = oVar.e) != null) {
-                    e51 e51Var2 = iVar.F;
-                    e51Var2.e(false);
-                    e51Var2.d(z10);
-                    e51Var2.f(true);
+                    j51 j51Var2 = iVar.F;
+                    j51Var2.e(false);
+                    j51Var2.d(z10);
+                    j51Var2.f(true);
                     di.b3 b3Var = iVar.o;
                     if (b3Var != null) {
                         b3Var.invalidate();

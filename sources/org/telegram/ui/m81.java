@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m81 extends org.telegram.ui.ActionBar.f2 {
     public ValueAnimator D;
@@ -39,7 +39,7 @@ public final class m81 extends org.telegram.ui.ActionBar.f2 {
     public l81 e;
     public final ArrayList f;
     public final ArrayList h;
-    public rq0 n;
+    public sq0 n;
     public org.telegram.ui.Components.iy r;
     public FrameLayout s;
     public int w;
@@ -139,7 +139,7 @@ public final class m81 extends org.telegram.ui.ActionBar.f2 {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131748977, null));
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 15));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 15));
         org.telegram.ui.ActionBar.r0 a10 = this.actionBar.q().a(0, R.drawable.outline_header_search);
         a10.N();
         a10.H = new h81(this);
@@ -195,9 +195,9 @@ public final class m81 extends org.telegram.ui.ActionBar.f2 {
         View view = this.fragmentView;
         int i7 = org.telegram.ui.ActionBar.k6.d6;
         org.telegram.ui.ActionBar.r6.i(i7, view, null);
-        rq0 rq0Var = new rq0(context, 11);
-        this.n = rq0Var;
-        rq0Var.setWillNotDraw(false);
+        sq0 sq0Var = new sq0(context, 11);
+        this.n = sq0Var;
+        sq0Var.setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);

@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s9 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class s9 implements View.OnClickListener {
                             break;
                         }
                     } else if (!org.telegram.messenger.t0.a.v((Activity) u9Var.getContext(), u9Var.n.document)) {
-                        org.telegram.messenger.w7.G(u9Var.s).X(u9Var.n.document, "update", 3, 1);
+                        org.telegram.messenger.w7.G(u9Var.s).W(u9Var.n.document, "update", 3, 1);
                         u9Var.a(true);
                         break;
                     }

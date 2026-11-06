@@ -6,9 +6,9 @@ import m.z2;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.mw0;
-import org.telegram.ui.qu0;
+import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class h extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class h extends DataSetObserver {
                         mw0Var.c();
                         break;
                     } else {
-                        g0.i3(new qu0(mw0Var, 4), 500L);
+                        g0.i3(new ru0(mw0Var, 4), 500L);
                         break;
                     }
                 }

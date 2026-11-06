@@ -29,12 +29,12 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public ScrollView D;
     public org.telegram.ui.Components.p00 E;
-    public org.telegram.ui.Components.n11 F;
+    public org.telegram.ui.Components.t11 F;
     public boolean G;
     public boolean H;
     public TL_account.Password I;
@@ -154,24 +154,24 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         TL_account.getPasswordSettings getpasswordsettings = new TL_account.getPasswordSettings();
         TLRPC.PasswordKdfAlgo passwordKdfAlgo = twoStepVerificationActivity.I.current_algo;
         byte[] c10 = passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow ? org.telegram.messenger.pv.c(bArr, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo) : null;
-        ko0 ko0Var = new ko0(twoStepVerificationActivity, bArr, c10, 12);
+        lo0 lo0Var = new lo0(twoStepVerificationActivity, bArr, c10, 12);
         TL_account.Password password = twoStepVerificationActivity.I;
         TLRPC.PasswordKdfAlgo passwordKdfAlgo2 = password.current_algo;
         if (!(passwordKdfAlgo2 instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow)) {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.text = "PASSWORD_HASH_INVALID";
-            ko0Var.run(null, tL_error);
+            lo0Var.run(null, tL_error);
             return;
         }
         TLRPC.TL_inputCheckPasswordSRP d = org.telegram.messenger.pv.d(c10, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo2);
         getpasswordsettings.password = d;
         if (d != null) {
-            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(getpasswordsettings, ko0Var, 10);
+            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(getpasswordsettings, lo0Var, 10);
             return;
         }
         TLRPC.TL_error tL_error2 = new TLRPC.TL_error();
         tL_error2.text = "ALGO_INVALID";
-        ko0Var.run(null, tL_error2);
+        lo0Var.run(null, tL_error2);
     }
 
     public static void e0(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -608,7 +608,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             org.telegram.ui.ActionBar.r6.m(this.actionBar, 3, org.telegram.ui.ActionBar.k6.u8, null);
             this.actionBar.setCastShadows(false);
         }
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 17));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 17));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         int i13 = org.telegram.ui.ActionBar.k6.d6;
@@ -779,9 +779,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                         }
                     }
                 });
-                org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11(context);
-                this.F = n11Var;
-                n11Var.setTransformType(1);
+                org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11(context);
+                this.F = t11Var;
+                t11Var.setTransformType(1);
                 this.F.setProgress(0.0f);
                 this.F.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
                 this.F.setDrawBackground(false);
@@ -999,9 +999,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 }
             }
         });
-        org.telegram.ui.Components.n11 n11Var2 = new org.telegram.ui.Components.n11(context);
-        this.F = n11Var2;
-        n11Var2.setTransformType(1);
+        org.telegram.ui.Components.t11 t11Var2 = new org.telegram.ui.Components.t11(context);
+        this.F = t11Var2;
+        t11Var2.setTransformType(1);
         this.F.setProgress(0.0f);
         this.F.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
         this.F.setDrawBackground(false);
@@ -1166,9 +1166,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             if (iyVar != null) {
                 iyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
             }
-            org.telegram.ui.Components.n11 n11Var = this.F;
-            if (n11Var != null) {
-                n11Var.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
+            org.telegram.ui.Components.t11 t11Var = this.F;
+            if (t11Var != null) {
+                t11Var.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
             }
             ia1 ia1Var = this.Y;
             if (ia1Var != null) {

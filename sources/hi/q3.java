@@ -37,22 +37,22 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.o31;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.l00;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class q3 extends o00 implements ls {
     public final long R;
@@ -319,7 +319,7 @@ public final class q3 extends o00 implements ls {
         textView6.setGravity(17);
         qs.i(textView6);
         SpannableString spannableString2 = new SpannableString(dd.N0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
-        spannableString2.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
+        spannableString2.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
         textView6.setText(dd.a1(false, hd.V(null, null, 2131752503, spannableString2), 0.725f, null));
         TextView f11 = org.telegram.messenger.camera.q.f(f10, textView6, ha.k(0.0f, 10.0f, 0.0f, 20.0f, -1, -2), context);
         r6.V(f11, i15, f6Var);
@@ -835,7 +835,7 @@ public final class q3 extends o00 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void I0(ArrayList arrayList, f41 f41Var) {
+    public final void I0(ArrayList arrayList, l41 l41Var) {
         int i7;
         SpannableString spannableString;
         int i10;
@@ -843,33 +843,33 @@ public final class q3 extends o00 implements ls {
             return;
         }
         l00 l00Var = (l00) o0(getParentActivity());
-        r31 r31Var = new r31(-2);
-        r31Var.c = l00Var;
-        arrayList.add(r31Var);
+        x31 x31Var = new x31(-2);
+        x31Var.c = l00Var;
+        arrayList.add(x31Var);
         arrayList.add(h.i(R.drawable.menu_feature_reliable, hd.M0(2131752513, null), hd.M0(2131752514, null)));
         arrayList.add(h.i(R.drawable.menu_feature_transparent, hd.M0(2131752511, null), hd.M0(2131752512, null)));
         arrayList.add(h.i(R.drawable.menu_feature_simple, hd.M0(2131752509, null), hd.M0(2131752510, null)));
-        arrayList.add(r31.B(1, null));
+        arrayList.add(x31.B(1, null));
         bi.n0 g10 = bi.n0.g(this.currentAccount);
         long j3 = this.R;
         bi.k0 d = g10.d(j3);
         ArrayList arrayList2 = d.e;
         if (!arrayList2.isEmpty() || d.c > 0) {
-            arrayList.add(r31.u(hd.M0(2131752481, null)));
+            arrayList.add(x31.u(hd.M0(2131752481, null)));
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) arrayList2.get(i11);
                 int i12 = m3.b;
-                r31 K = r31.K(m3.class);
+                x31 K = x31.K(m3.class);
                 K.G = connectedbotstarref;
                 K.r = true;
                 arrayList.add(K);
             }
             if (!d.d || d.g) {
-                arrayList.add(r31.p(29));
-                arrayList.add(r31.p(29));
-                arrayList.add(r31.p(29));
+                arrayList.add(x31.p(29));
+                arrayList.add(x31.p(29));
+                arrayList.add(x31.p(29));
             }
-            arrayList.add(r31.B(2, null));
+            arrayList.add(x31.B(2, null));
         }
         bi.l0 e10 = bi.n0.g(this.currentAccount).e(j3);
         ArrayList arrayList3 = e10.e;
@@ -887,24 +887,24 @@ public final class q3 extends o00 implements ls {
             } else {
                 i7 = 0;
                 int i14 = o3.b;
-                r31 K2 = r31.K(o3.class);
+                x31 K2 = x31.K(o3.class);
                 K2.l = M0;
                 K2.m = spannableStringBuilder;
                 arrayList.add(K2);
                 for (i10 = i7; i10 < arrayList3.size(); i10++) {
                     Object obj = arrayList3.get(i10);
                     int i15 = m3.b;
-                    r31 K3 = r31.K(m3.class);
+                    x31 K3 = x31.K(m3.class);
                     K3.G = obj;
                     K3.r = true;
                     arrayList.add(K3);
                 }
                 if (e10.d || e10.h) {
-                    arrayList.add(r31.p(29));
-                    arrayList.add(r31.p(29));
-                    arrayList.add(r31.p(29));
+                    arrayList.add(x31.p(29));
+                    arrayList.add(x31.p(29));
+                    arrayList.add(x31.p(29));
                 }
-                arrayList.add(r31.B(3, null));
+                arrayList.add(x31.B(3, null));
             }
             wp wpVar = new wp(R.drawable.arrow_more, 0);
             wpVar.f = true;
@@ -915,7 +915,7 @@ public final class q3 extends o00 implements ls {
             spannableString.setSpan(new k3(this, i13, bi.n0.g(this.currentAccount).e(j3)), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             int i142 = o3.b;
-            r31 K22 = r31.K(o3.class);
+            x31 K22 = x31.K(o3.class);
             K22.l = M0;
             K22.m = spannableStringBuilder;
             arrayList.add(K22);
@@ -923,12 +923,12 @@ public final class q3 extends o00 implements ls {
             }
             if (e10.d) {
             }
-            arrayList.add(r31.p(29));
-            arrayList.add(r31.p(29));
-            arrayList.add(r31.p(29));
-            arrayList.add(r31.B(3, null));
+            arrayList.add(x31.p(29));
+            arrayList.add(x31.p(29));
+            arrayList.add(x31.p(29));
+            arrayList.add(x31.B(3, null));
         }
-        arrayList.add(r31.k(this.U));
+        arrayList.add(x31.k(this.U));
     }
 
     @Override // org.telegram.ui.o00, org.telegram.ui.ActionBar.f2

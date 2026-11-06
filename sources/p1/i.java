@@ -1,6 +1,6 @@
 package p1;
 
-import c8.pb;
+import c8.qb;
 import gd.k;
 import hd.r;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import rd.q;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements q {
     public /* synthetic */ o1.f a;
@@ -83,9 +83,9 @@ public final class i extends kd.j implements q {
                 kotlin.jvm.internal.j.e(name, "name");
                 bVar2.e(new q1.e(name), value2);
             } else if (value2 instanceof String) {
-                bVar2.e(pb.a(name), value2);
+                bVar2.e(qb.a(name), value2);
             } else if (value2 instanceof Set) {
-                bVar2.e(pb.b(name), (Set) value2);
+                bVar2.e(qb.b(name), (Set) value2);
             }
         }
         return new q1.b(new LinkedHashMap(bVar2.a()), true);

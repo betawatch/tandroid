@@ -17,10 +17,10 @@ import org.telegram.ui.ActionBar.o6;
 import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.Components.kt0;
 import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x3 implements kt0, k9, b20, o6, p6, ih.b, g9.k, org.telegram.ui.ActionBar.r1, h2.o, h2.p, u9.d {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class x3 implements kt0, k9, b20, o6, p6, ih.b, g9.
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         switch (this.a) {
         }
         return Boolean.FALSE;

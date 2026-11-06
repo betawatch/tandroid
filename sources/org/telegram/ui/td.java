@@ -3,10 +3,10 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class td extends FrameLayout {
-    public final org.telegram.ui.Components.k41 a;
+    public final org.telegram.ui.Components.q41 a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final int c;
     public final int d;
@@ -21,20 +21,20 @@ public final class td extends FrameLayout {
         this.c = i10;
         this.b = f6Var;
         this.e = m0Var;
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(context, i10, i11, true, new a5(this, 3), new w0(this, 15), null, f6Var);
-        this.a = k41Var;
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(context, i10, i11, true, new a5(this, 3), new w0(this, 15), null, f6Var);
+        this.a = q41Var;
         setClipChildren(false);
         setClipToPadding(false);
-        k41Var.setClipToPadding(false);
-        k41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
-        k41Var.f3.r = false;
-        k41Var.setCaptureSectionsDecoratorAllowed(true);
-        k41Var.setOverScrollMode(0);
-        addView(k41Var, c8.ha.c(-1.0f, -1));
-        k41Var.setOnScrollListener(new ai.o0(2, this, m0Var));
+        q41Var.setClipToPadding(false);
+        q41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
+        q41Var.f3.r = false;
+        q41Var.setCaptureSectionsDecoratorAllowed(true);
+        q41Var.setOverScrollMode(0);
+        addView(q41Var, c8.ha.c(-1.0f, -1));
+        q41Var.setOnScrollListener(new ai.o0(2, this, m0Var));
         oi.q qVar = vdVar.x.d1;
         if (qVar != null) {
-            qVar.b(k41Var);
+            qVar.b(q41Var);
         }
     }
 

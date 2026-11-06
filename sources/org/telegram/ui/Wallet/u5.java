@@ -7,9 +7,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class u5 extends v4.q0 {
     public RecyclerView a;
@@ -47,7 +47,7 @@ public final class u5 extends v4.q0 {
                     y5 y5Var = this.j;
                     if (y5Var.z0()) {
                         int i12 = i10 > 0 ? 1 : -1;
-                        k41 y02 = y5Var.y0();
+                        q41 y02 = y5Var.y0();
                         if (this.c.canScrollVertically(i12) && (i12 >= 0 || y02 == null || !y02.canScrollVertically(-1))) {
                             i11 = i12 > 0 ? layoutManager.B() - 1 : 0;
                             if (i11 != -1) {
@@ -112,7 +112,7 @@ public final class u5 extends v4.q0 {
             return null;
         }
         y5 y5Var = this.j;
-        k41 y02 = y5Var.y0();
+        q41 y02 = y5Var.y0();
         if ((y02 != null && y02.getScrollState() != 0) || !this.d) {
             return null;
         }

@@ -1,12 +1,12 @@
 package gb;
 
 import android.util.Log;
-import c8.zd;
+import c8.ee;
 import j$.util.Objects;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class f1 {
     public final jb.l a;
@@ -189,7 +189,7 @@ public final class f1 {
         }
         i1 a10 = this.d.a();
         int i7 = yd.a.d;
-        long d = zd.d(a10.a - i1Var.a, yd.c.c);
+        long d = ee.d(a10.a - i1Var.a, yd.c.c);
         jb.l lVar = this.a;
         yd.a c11 = lVar.a.c();
         if (c11 != null) {
@@ -203,7 +203,7 @@ public final class f1 {
             if (c10 > 0) {
             }
         }
-        c10 = zd.c(30, yd.c.e);
+        c10 = ee.c(30, yd.c.e);
         boolean z9 = yd.a.b(d, c10) > 0;
         if (z9) {
             Log.d("FirebaseSessions", "Session " + o0Var.a + " is expired");

@@ -14,30 +14,30 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class xc extends q31 {
+public final class xc extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new xc());
+        w31.h(new xc());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:59:0x0794  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0797  */
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         SpannableString spannableString;
         int L;
         boolean z10;
@@ -52,8 +52,8 @@ public final class xc extends q31 {
         long j3;
         boolean z13;
         yc ycVar = (yc) view;
-        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) r31Var.G;
-        boolean z14 = r31Var.q;
+        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) x31Var.G;
+        boolean z14 = x31Var.q;
         org.telegram.ui.Components.l9 l9Var = ycVar.d;
         SpannableString spannableString2 = ycVar.w;
         SpannableString spannableString3 = ycVar.x;
@@ -360,7 +360,7 @@ public final class xc extends q31 {
         ycVar.setWillNotDraw(!z13);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new yc(i7, context, f6Var);
     }

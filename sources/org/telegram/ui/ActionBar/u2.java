@@ -13,11 +13,11 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
-import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class u2 extends Drawable {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final class u2 extends Drawable {
                 Drawable drawable3 = (Drawable) this.c;
                 drawable3.setBounds(org.telegram.messenger.g0.L(3.33f) + i7, (int) (f11 - ((drawable3.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.g0.L(3.33f) + i7), (int) a8.p0.f(drawable3.getIntrinsicHeight(), 0.875f, 2.0f, f11));
                 drawable3.draw(canvas);
-                ((ly0) this.b).c((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.g0.L(3.66f) + i7, f11, 1.0f, -1, canvas);
+                ((my0) this.b).c((drawable3.getIntrinsicWidth() * 0.875f) + org.telegram.messenger.g0.L(3.66f) + i7, f11, 1.0f, -1, canvas);
                 break;
         }
     }
@@ -149,7 +149,7 @@ public final class u2 extends Drawable {
             default:
                 return super.getIntrinsicWidth();
             case 4:
-                return (int) (((ly0) this.b).k() + (((Drawable) this.c).getIntrinsicWidth() * 0.875f) + org.telegram.messenger.g0.L(9.66f));
+                return (int) (((my0) this.b).k() + (((Drawable) this.c).getIntrinsicWidth() * 0.875f) + org.telegram.messenger.g0.L(9.66f));
         }
     }
 
@@ -248,7 +248,7 @@ public final class u2 extends Drawable {
 
     public u2(int i7, Context context, f6 f6Var, boolean z9) {
         this.a = 4;
-        this.b = new ly0(hd.G(i7, z9 ? "BoostLevelPlus" : "BoostLevel", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
+        this.b = new my0(hd.G(i7, z9 ? "BoostLevelPlus" : "BoostLevel", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
         Drawable h = jg.g.h(context, R.drawable.mini_switch_lock);
         this.c = h;
         h.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));

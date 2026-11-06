@@ -8,11 +8,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class Status extends r6.a implements q, ReflectedParcelable {
     public final int a;
@@ -71,13 +71,13 @@ public final class Status extends r6.a implements q, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.q(parcel, 1, 4);
+        int r10 = xb.r(parcel, 20293);
+        xb.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        wb.l(parcel, 2, this.b);
-        wb.k(parcel, 3, this.c, i7);
-        wb.k(parcel, 4, this.d, i7);
-        wb.s(parcel, r10);
+        xb.l(parcel, 2, this.b);
+        xb.k(parcel, 3, this.c, i7);
+        xb.k(parcel, 4, this.d, i7);
+        xb.s(parcel, r10);
     }
 
     @Override // com.google.android.gms.common.api.q

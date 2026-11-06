@@ -50,13 +50,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.j6;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements v10 {
     public final /* synthetic */ int a;
@@ -129,17 +129,17 @@ public final /* synthetic */ class e implements v10 {
                     Object obj5 = arrayList4.get(i12);
                     i12++;
                     int i13 = xc.b;
-                    r31 K = r31.K(xc.class);
+                    x31 K = x31.K(xc.class);
                     K.G = (TL_stars.StarsTransaction) obj5;
                     K.q = true;
                     arrayList3.add(K);
                 }
                 if (yVar.h) {
-                    arrayList3.add(r31.e(-1, hd.M0(2131746053, null)));
+                    arrayList3.add(x31.e(-1, hd.M0(2131746053, null)));
                     break;
                 } else if (!yVar.f) {
                     for (int i14 = 0; i14 < 3; i14++) {
-                        arrayList3.add(r31.q(i14, 7));
+                        arrayList3.add(x31.q(i14, 7));
                     }
                     break;
                 }
@@ -147,18 +147,18 @@ public final /* synthetic */ class e implements v10 {
             case 3:
                 m20 m20Var = (m20) obj3;
                 ArrayList arrayList5 = (ArrayList) obj;
-                arrayList5.add(r31.k(m20Var.Q1));
+                arrayList5.add(x31.k(m20Var.Q1));
                 arrayList5.add(bi.p0.i(hd.M0(2131750868, null), hd.M0(2131750869, null), R.drawable.msg_gift_premium));
                 arrayList5.add(bi.p0.i(hd.M0(2131750866, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.M0(2131750867, null), new a3.f(m20Var, 16)), true), R.drawable.msg_bot));
                 arrayList5.add(bi.p0.i(hd.M0(2131750864, null), hd.M0(2131750865, null), R.drawable.menu_unlock));
                 arrayList5.add(bi.p0.i(hd.M0(2131750862, null), hd.M0(2131750863, null), R.drawable.menu_feature_paid));
-                arrayList5.add(r31.D(org.telegram.messenger.g0.L(68.0f)));
+                arrayList5.add(x31.D(org.telegram.messenger.g0.L(68.0f)));
                 break;
             case 4:
                 ArrayList arrayList6 = (ArrayList) obj;
-                r31 r31Var = ((bi.a1) obj3).o2;
-                if (r31Var != null) {
-                    arrayList6.add(r31Var);
+                x31 x31Var = ((bi.a1) obj3).o2;
+                if (x31Var != null) {
+                    arrayList6.add(x31Var);
                     break;
                 }
                 break;
@@ -174,7 +174,7 @@ public final /* synthetic */ class e implements v10 {
                 bi.a aVar3 = w1Var.W1;
                 ArrayList arrayList11 = w1Var.U1;
                 if (arrayList11 != null && arrayList10 != null && arrayList9 != null) {
-                    arrayList7.add(r31.D(org.telegram.messenger.g0.L(315.0f)));
+                    arrayList7.add(x31.D(org.telegram.messenger.g0.L(315.0f)));
                     aVar3.b = 0;
                     aVar3.c();
                     aVar2.b = 0;
@@ -183,7 +183,7 @@ public final /* synthetic */ class e implements v10 {
                     aVar.c();
                     int i15 = w1Var.b2.s;
                     if (i15 == 0) {
-                        arrayList7.add(r31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList11.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList11.size()))));
                         int size3 = arrayList11.size();
                         int i16 = 0;
                         while (i16 < size3) {
@@ -192,7 +192,7 @@ public final /* synthetic */ class e implements v10 {
                             arrayList7.add(t1.i(i15, new r1((TL_stars.starGiftAttributeBackdrop) aVar3.c(), (TL_stars.starGiftAttributePattern) aVar2.c(), (TL_stars.starGiftAttributeModel) obj6)));
                         }
                         if (!arrayList8.isEmpty()) {
-                            arrayList7.add(r31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList11.size()))));
+                            arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList11.size()))));
                             int size4 = arrayList8.size();
                             int i17 = 0;
                             while (i17 < size4) {
@@ -203,7 +203,7 @@ public final /* synthetic */ class e implements v10 {
                             break;
                         }
                     } else if (i15 == 1) {
-                        arrayList7.add(r31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountBackdrops", arrayList10.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountBackdrops", arrayList10.size()))));
                         int size5 = arrayList10.size();
                         int i18 = 0;
                         while (i18 < size5) {
@@ -213,7 +213,7 @@ public final /* synthetic */ class e implements v10 {
                         }
                         break;
                     } else if (i15 == 2) {
-                        arrayList7.add(r31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountSymbols", arrayList9.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountSymbols", arrayList9.size()))));
                         int size6 = arrayList9.size();
                         int i19 = 0;
                         while (i19 < size6) {
@@ -247,18 +247,18 @@ public final /* synthetic */ class e implements v10 {
                 }
                 break;
             case 8:
-                ((dd) obj3).K0((ArrayList) obj, (f41) obj2);
+                ((dd) obj3).K0((ArrayList) obj, (l41) obj2);
                 break;
             case 9:
                 oc ocVar = (oc) obj3;
                 ArrayList arrayList12 = (ArrayList) obj;
-                arrayList12.add(r31.k(ocVar.P1));
-                arrayList12.add(r31.u(hd.M0(2131744215, null)));
+                arrayList12.add(x31.k(ocVar.P1));
+                arrayList12.add(x31.u(hd.M0(2131744215, null)));
                 ArrayList u10 = ea.y(ocVar.a, false).u();
                 if (u10 == null || u10.isEmpty()) {
-                    arrayList12.add(r31.p(31));
-                    arrayList12.add(r31.p(31));
-                    arrayList12.add(r31.p(31));
+                    arrayList12.add(x31.p(31));
+                    arrayList12.add(x31.p(31));
+                    arrayList12.add(x31.p(31));
                 } else {
                     int i20 = 1;
                     int i21 = 0;
@@ -267,7 +267,7 @@ public final /* synthetic */ class e implements v10 {
                         if (ocVar.U1 || !tL_starsGiftOption.extended) {
                             int i23 = i20 + 1;
                             int i24 = pc.b;
-                            r31 K2 = r31.K(pc.class);
+                            x31 K2 = x31.K(pc.class);
                             K2.d = i22;
                             K2.z = i20;
                             long j10 = tL_starsGiftOption.stars;
@@ -286,7 +286,7 @@ public final /* synthetic */ class e implements v10 {
                         String M0 = hd.M0(z11 ? 2131747844 : 2131747835, null);
                         boolean z12 = !ocVar.U1;
                         int i25 = jc.b;
-                        r31 K3 = r31.K(jc.class);
+                        x31 K3 = x31.K(jc.class);
                         K3.d = -1;
                         K3.l = M0;
                         K3.f = z12;
@@ -294,24 +294,24 @@ public final /* synthetic */ class e implements v10 {
                         arrayList12.add(K3);
                     }
                 }
-                arrayList12.add(r31.k(ocVar.Q1));
+                arrayList12.add(x31.k(ocVar.Q1));
                 break;
             case 10:
                 tc tcVar = (tc) obj3;
                 ArrayList arrayList13 = (ArrayList) obj;
                 long j11 = tcVar.P1;
                 ah.a aVar4 = tcVar.Q1;
-                arrayList13.add(r31.m(aVar4));
+                arrayList13.add(x31.m(aVar4));
                 boolean z13 = tcVar.V1;
                 if (z13) {
-                    arrayList13.add(r31.u(hd.M0(2131744215, null)));
+                    arrayList13.add(x31.u(hd.M0(2131744215, null)));
                 }
                 ArrayList z14 = ea.y(tcVar.a, false).z();
                 if (z13) {
                     if (z14 == null || z14.isEmpty()) {
-                        arrayList13.add(r31.p(31));
-                        arrayList13.add(r31.p(31));
-                        arrayList13.add(r31.p(31));
+                        arrayList13.add(x31.p(31));
+                        arrayList13.add(x31.p(31));
+                        arrayList13.add(x31.p(31));
                     } else {
                         int i26 = 0;
                         int i27 = 0;
@@ -332,8 +332,8 @@ public final /* synthetic */ class e implements v10 {
                         }
                         if (i26 < 3) {
                             arrayList13.clear();
-                            arrayList13.add(r31.k(aVar4));
-                            arrayList13.add(r31.u(hd.M0(2131744215, null)));
+                            arrayList13.add(x31.k(aVar4));
+                            arrayList13.add(x31.u(hd.M0(2131744215, null)));
                             int i30 = 0;
                             for (int i31 = 0; i31 < z14.size(); i31++) {
                                 TL_stars.TL_starsTopupOption tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) z14.get(i31);
@@ -356,7 +356,7 @@ public final /* synthetic */ class e implements v10 {
                                     String M02 = hd.M0(z16 ? 2131747844 : 2131747835, null);
                                     boolean z17 = !tcVar.X1;
                                     int i34 = jc.b;
-                                    r31 K4 = r31.K(jc.class);
+                                    x31 K4 = x31.K(jc.class);
                                     K4.d = -1;
                                     K4.l = M02;
                                     K4.f = z17;
@@ -372,7 +372,7 @@ public final /* synthetic */ class e implements v10 {
                                 String M03 = hd.M0(z18 ? 2131747844 : 2131747835, null);
                                 boolean z19 = !tcVar.X1;
                                 int i35 = jc.b;
-                                r31 K5 = r31.K(jc.class);
+                                x31 K5 = x31.K(jc.class);
                                 K5.d = -1;
                                 K5.l = M03;
                                 K5.f = z19;
@@ -390,19 +390,19 @@ public final /* synthetic */ class e implements v10 {
                         }
                     }
                 }
-                arrayList13.add(r31.k(tcVar.R1));
+                arrayList13.add(x31.k(tcVar.R1));
                 break;
             case 11:
                 uc ucVar = (uc) obj3;
                 ArrayList arrayList14 = (ArrayList) obj;
-                arrayList14.add(r31.u(hd.M0(2131744215, null)));
+                arrayList14.add(x31.u(hd.M0(2131744215, null)));
                 ArrayList z20 = ea.y(ucVar.a, false).z();
                 if (z20 == null || z20.isEmpty()) {
-                    arrayList14.add(r31.p(31));
-                    arrayList14.add(r31.p(31));
-                    arrayList14.add(r31.p(31));
-                    arrayList14.add(r31.p(31));
-                    arrayList14.add(r31.p(31));
+                    arrayList14.add(x31.p(31));
+                    arrayList14.add(x31.p(31));
+                    arrayList14.add(x31.p(31));
+                    arrayList14.add(x31.p(31));
+                    arrayList14.add(x31.p(31));
                 } else {
                     int i38 = 0;
                     int i39 = 1;
@@ -421,7 +421,7 @@ public final /* synthetic */ class e implements v10 {
                         String M04 = hd.M0(z21 ? 2131747844 : 2131747835, null);
                         boolean z22 = !ucVar.R1;
                         int i40 = jc.b;
-                        r31 K6 = r31.K(jc.class);
+                        x31 K6 = x31.K(jc.class);
                         K6.d = -1;
                         K6.l = M04;
                         K6.f = z22;
@@ -429,7 +429,7 @@ public final /* synthetic */ class e implements v10 {
                         arrayList14.add(K6);
                     }
                 }
-                arrayList14.add(r31.k(ucVar.P1));
+                arrayList14.add(x31.k(ucVar.P1));
                 break;
             case 12:
                 ad adVar = (ad) obj3;
@@ -445,15 +445,15 @@ public final /* synthetic */ class e implements v10 {
                         Object obj10 = arrayList16.get(i10);
                         i10++;
                         int i43 = xc.b;
-                        r31 K7 = r31.K(xc.class);
+                        x31 K7 = x31.K(xc.class);
                         K7.G = (TL_stars.StarsTransaction) obj10;
                         K7.q = true;
                         arrayList15.add(K7);
                     }
                     if (!g10.k(j12).e[i42]) {
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
                         break;
                     }
                 } else {
@@ -465,15 +465,15 @@ public final /* synthetic */ class e implements v10 {
                         Object obj11 = arrayList17.get(i44);
                         i44++;
                         int i45 = xc.b;
-                        r31 K8 = r31.K(xc.class);
+                        x31 K8 = x31.K(xc.class);
                         K8.G = (TL_stars.StarsTransaction) obj11;
                         K8.q = false;
                         arrayList15.add(K8);
                     }
                     if (!y10.u[i42]) {
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
-                        arrayList15.add(r31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
+                        arrayList15.add(x31.q(arrayList15.size(), 7));
                         break;
                     }
                 }
@@ -484,13 +484,13 @@ public final /* synthetic */ class e implements v10 {
                 ArrayList arrayList19 = oVar.F;
                 r8 r8Var = oVar.e;
                 if (r8Var != null && oVar.f != null) {
-                    arrayList18.add(r31.j(1, r8Var));
-                    arrayList18.add(r31.l(2, oVar.f));
+                    arrayList18.add(x31.j(1, r8Var));
+                    arrayList18.add(x31.l(2, oVar.f));
                     int i46 = oVar.Y;
                     if (i46 == 1 || i46 == 0 || oVar.a) {
                         while (i10 < arrayList19.size()) {
                             View view = (View) arrayList19.get(i10);
-                            arrayList18.add(((Boolean) oVar.G.get(i10)).booleanValue() ? r31.l(i10 + 100, view) : r31.j(i10 + 100, view));
+                            arrayList18.add(((Boolean) oVar.G.get(i10)).booleanValue() ? x31.l(i10 + 100, view) : x31.j(i10 + 100, view));
                             i10++;
                         }
                         break;
@@ -506,7 +506,7 @@ public final /* synthetic */ class e implements v10 {
                     Object obj12 = n10.get(i10);
                     i10++;
                     int i47 = ei.o.b;
-                    r31 K9 = r31.K(ei.o.class);
+                    x31 K9 = x31.K(ei.o.class);
                     K9.G = (y00) obj12;
                     arrayList20.add(K9);
                 }
@@ -591,21 +591,21 @@ public final /* synthetic */ class e implements v10 {
                     TLRPC.WebPage webPage = m7Var.Y1;
                     f7 f7Var = new f7(m7Var, 0);
                     int i48 = k7.b;
-                    r31 K10 = r31.K(k7.class);
+                    x31 K10 = x31.K(k7.class);
                     K10.G = webPage;
                     K10.D = f7Var;
                     arrayList21.add(K10);
                 }
-                arrayList21.add(r31.k(m7Var.Q1));
-                arrayList21.add(r31.B(1, null));
-                r31 i49 = r31.i(2, hd.M0(2131744638, null));
+                arrayList21.add(x31.k(m7Var.Q1));
+                arrayList21.add(x31.B(1, null));
+                x31 i49 = x31.i(2, hd.M0(2131744638, null));
                 i49.L(m7Var.e2);
                 arrayList21.add(i49);
                 if (m7Var.e2) {
-                    arrayList21.add(r31.k(m7Var.R1));
+                    arrayList21.add(x31.k(m7Var.R1));
                 }
-                arrayList21.add(r31.B(3, null));
-                arrayList21.add(r31.k(m7Var.S1));
+                arrayList21.add(x31.B(3, null));
+                arrayList21.add(x31.k(m7Var.S1));
                 break;
             case 22:
                 va vaVar = (va) obj3;
@@ -636,16 +636,16 @@ public final /* synthetic */ class e implements v10 {
                 ((ya) obj3).b((short[]) obj, ((Integer) obj2).intValue());
                 break;
             case 24:
-                ((gi.f) obj3).E0((ArrayList) obj, (f41) obj2);
+                ((gi.f) obj3).E0((ArrayList) obj, (l41) obj2);
                 break;
             case 25:
                 gi.e eVar = (gi.e) obj3;
                 ArrayList arrayList22 = (ArrayList) obj;
-                arrayList22.add(r31.k(eVar.Q1));
-                arrayList22.add(r31.k(eVar.R1));
+                arrayList22.add(x31.k(eVar.Q1));
+                arrayList22.add(x31.k(eVar.R1));
                 break;
             case 26:
-                ((hi.j) obj3).H0((ArrayList) obj, (f41) obj2);
+                ((hi.j) obj3).H0((ArrayList) obj, (l41) obj2);
                 break;
             case 27:
                 hi.q.Z((hi.q) obj3, (ArrayList) obj);
@@ -1090,8 +1090,8 @@ public final /* synthetic */ class e implements v10 {
             default:
                 hi.i1 i1Var = (hi.i1) obj3;
                 ArrayList arrayList23 = (ArrayList) obj;
-                arrayList23.add(r31.j(-1, i1Var.S1));
-                arrayList23.add(r31.C(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752980, i1Var.Q1))));
+                arrayList23.add(x31.j(-1, i1Var.S1));
+                arrayList23.add(x31.C(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752980, i1Var.Q1))));
                 break;
         }
     }

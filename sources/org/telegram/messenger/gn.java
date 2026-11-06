@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gn implements Runnable {
     public final /* synthetic */ int a;
@@ -323,7 +323,7 @@ public final /* synthetic */ class gn implements Runnable {
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj6;
                 f10Var.getClass();
                 storyItem.translatedLng = (String) obj5;
-                storyItem.translatedText = e21.P0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
+                storyItem.translatedText = k21.P0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
                 f10Var.getMessagesController().P1().k.h(storyItem.dialogId, storyItem);
                 f10Var.J.remove((d10) obj2);
                 ((bi.r3) obj).run();

@@ -25,7 +25,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Surface;
-import c8.hc;
+import c8.ic;
 import com.google.android.gms.tasks.Tasks;
 import j$.util.Objects;
 import java.security.MessageDigest;
@@ -39,7 +39,7 @@ import org.telegram.messenger.ds;
 import org.telegram.messenger.qd;
 import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -259,7 +259,7 @@ public class b8 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            hc.a("String array is empty and is ignored by put method.");
+            ic.a("String array is empty and is ignored by put method.");
             return;
         }
         int i7 = 0;
@@ -271,7 +271,7 @@ public class b8 {
                 sb2.append("String at ");
                 sb2.append(i10);
                 sb2.append(" is null and is ignored by put method.");
-                hc.a(sb2.toString());
+                ic.a(sb2.toString());
             } else {
                 int i11 = 20000;
                 if (str2.length() > 20000) {
@@ -279,7 +279,7 @@ public class b8 {
                     sb3.append("String at ");
                     sb3.append(i10);
                     sb3.append(" is too long, truncating string.");
-                    hc.a(sb3.toString());
+                    ic.a(sb3.toString());
                     String str3 = strArr2[i7];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -295,7 +295,7 @@ public class b8 {
         if (i7 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i7);
             if (objArr.length >= 100) {
-                hc.a("Input Array of elements is too big, cutting off.");
+                ic.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);

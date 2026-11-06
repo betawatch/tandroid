@@ -10,43 +10,43 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.rt0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class p4 extends org.telegram.ui.ActionBar.f2 implements ls {
     public final long a;
     public org.telegram.ui.ActionBar.y1 b;
-    public k41 c;
+    public q41 c;
 
     public p4(long j3) {
         super(null);
         this.a = j3;
     }
 
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         bi.l0 e10 = bi.n0.g(this.currentAccount).e(this.a);
         ArrayList arrayList2 = e10.e;
         for (int i7 = 0; i7 < arrayList2.size(); i7++) {
             Object obj = arrayList2.get(i7);
             int i10 = m3.b;
-            r31 K = r31.K(m3.class);
+            x31 K = x31.K(m3.class);
             K.G = obj;
             K.r = false;
             arrayList.add(K);
         }
         if (e10.h) {
-            arrayList.add(r31.p(29));
-            arrayList.add(r31.p(29));
-            arrayList.add(r31.p(29));
+            arrayList.add(x31.p(29));
+            arrayList.add(x31.p(29));
+            arrayList.add(x31.p(29));
         }
     }
 
-    public final void a0(r31 r31Var) {
-        Object obj = r31Var.G;
+    public final void a0(x31 x31Var) {
+        Object obj = x31Var.G;
         if (obj instanceof TL_payments.starRefProgram) {
             q3.J0(getParentActivity(), this.currentAccount, (TL_payments.starRefProgram) obj, this.a, this.resourceProvider, false);
         }
@@ -69,18 +69,18 @@ public final class p4 extends org.telegram.ui.ActionBar.f2 implements ls {
         r6.m(this.actionBar, 5, i7, null);
         this.actionBar.setTitle(hd.M0(2131752471, null));
         rt0 rt0Var = new rt0(context, null);
-        k41 k41Var = new k41(this, new u1(this, 2), new di.q4(this, 22), null);
-        this.c = k41Var;
-        rt0Var.addView(k41Var, ha.e(-1, -1, qs.E1));
+        q41 q41Var = new q41(this, new u1(this, 2), new di.q4(this, 22), null);
+        this.c = q41Var;
+        rt0Var.addView(q41Var, ha.e(-1, -1, qs.E1));
         this.fragmentView = rt0Var;
         return rt0Var;
     }
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        k41 k41Var;
-        if (i7 == qs.K3 && ((Long) objArr[0]).longValue() == this.a && (k41Var = this.c) != null && (k41Var.getAdapter() instanceof f41)) {
-            ((f41) this.c.getAdapter()).O(true);
+        q41 q41Var;
+        if (i7 == qs.K3 && ((Long) objArr[0]).longValue() == this.a && (q41Var = this.c) != null && (q41Var.getAdapter() instanceof l41)) {
+            ((l41) this.c.getAdapter()).O(true);
         }
     }
 

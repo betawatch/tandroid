@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements j7 {
     public final int D;
@@ -61,7 +61,7 @@ public class AnimatedFileDrawableStream implements j7 {
                     countDownLatch.countDown();
                     this.b = null;
                     if (z9 && !this.h && !this.w) {
-                        w7.G(this.f).a0(this.c, false, true);
+                        w7.G(this.f).Z(this.c, false, true);
                     }
                 }
                 Object obj = this.e;
@@ -243,7 +243,7 @@ public class AnimatedFileDrawableStream implements j7 {
                                     }
                                 }
                                 if (!this.w) {
-                                    w7.G(this.f).c0(this.c, i11, z10);
+                                    w7.G(this.f).b0(this.c, i11, z10);
                                 }
                                 CountDownLatch countDownLatch3 = this.b;
                                 if (countDownLatch3 != null) {

@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e91 extends org.telegram.ui.Components.rt0 {
     public boolean f0;
@@ -120,8 +120,8 @@ public final class e91 extends org.telegram.ui.Components.rt0 {
             float y10 = kVar2.getY();
             kVar3 = ((org.telegram.ui.ActionBar.f2) v91Var).actionBar;
             float height = kVar3.getHeight();
-            org.telegram.ui.Components.o61 o61Var = v91Var.a1;
-            int measuredHeight = (int) (y10 + ((int) ((((o61Var == null || o61Var.getVisibility() == 8) ? 0.0f : v91Var.a1.getMeasuredHeight()) * v91Var.W) + height)));
+            org.telegram.ui.Components.u61 u61Var = v91Var.a1;
+            int measuredHeight = (int) (y10 + ((int) ((((u61Var == null || u61Var.getVisibility() == 8) ? 0.0f : v91Var.a1.getMeasuredHeight()) * v91Var.W) + height)));
             ((ActionBarLayout) v91Var.getParentLayout()).p(canvas, (int) ((1.0f - v91Var.W) * 255.0f), measuredHeight);
             float f10 = v91Var.W;
             if (f10 > 0.0f) {
@@ -218,10 +218,10 @@ public final class e91 extends org.telegram.ui.Components.rt0 {
         int size = View.MeasureSpec.getSize(i7);
         int size2 = View.MeasureSpec.getSize(i10);
         v91 v91Var = this.h0;
-        rq0 rq0Var = v91Var.o0;
-        if (rq0Var != null) {
+        sq0 sq0Var = v91Var.o0;
+        if (sq0Var != null) {
             this.f0 = true;
-            ViewGroup.LayoutParams layoutParams = rq0Var.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = sq0Var.getLayoutParams();
             int L = org.telegram.messenger.g0.L(51.0f);
             int i12 = v91Var.f1;
             layoutParams.height = L + i12;

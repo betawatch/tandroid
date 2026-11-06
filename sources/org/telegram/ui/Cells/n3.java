@@ -9,9 +9,9 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n3 {
     public boolean a;
@@ -48,7 +48,7 @@ public final class n3 {
                 String format = String.format(M02, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;

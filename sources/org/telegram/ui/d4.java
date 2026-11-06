@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class d4 {
     public static TLRPC.Document a(TLRPC.WebPage webPage, long j3) {
@@ -39,12 +39,12 @@ public abstract class d4 {
 
     public static File c(TLObject tLObject) {
         org.telegram.messenger.w7.G(org.telegram.messenger.p10.s0);
-        File K = org.telegram.messenger.w7.K(tLObject, null, false, true);
-        if (K != null && K.exists()) {
-            return K;
+        File J = org.telegram.messenger.w7.J(tLObject, null, false, true);
+        if (J != null && J.exists()) {
+            return J;
         }
-        File K2 = org.telegram.messenger.w7.K(tLObject, null, true, true);
-        return (K2 == null || !K2.exists()) ? K != null ? K : K2 : K2;
+        File J2 = org.telegram.messenger.w7.J(tLObject, null, true, true);
+        return (J2 == null || !J2.exists()) ? J != null ? J : J2 : J2;
     }
 
     public static TLRPC.Photo d(long j3, TLObject tLObject) {

@@ -6,13 +6,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.ui.Components.ez;
 import org.telegram.ui.Components.fd0;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.l71;
-import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f2 extends org.telegram.ui.Components.l6 {
     public final /* synthetic */ int b;
@@ -75,18 +75,18 @@ public final class f2 extends org.telegram.ui.Components.l6 {
                 ((ez) obj).invalidate();
                 break;
             case 4:
-                q61 q61Var = (q61) this.c;
-                q61Var.y = f10;
-                q61Var.invalidate();
+                w61 w61Var = (w61) this.c;
+                w61Var.y = f10;
+                w61Var.invalidate();
                 break;
             case 5:
-                l71 l71Var = (l71) this.c;
-                l71Var.E = f10;
-                k71 k71Var = l71Var.L;
-                if (k71Var != null) {
-                    k71Var.b(f10);
+                r71 r71Var = (r71) this.c;
+                r71Var.E = f10;
+                q71 q71Var = r71Var.L;
+                if (q71Var != null) {
+                    q71Var.b(f10);
                 }
-                l71Var.invalidate();
+                r71Var.invalidate();
                 break;
             default:
                 ((View) obj).setAlpha(f10);
@@ -111,26 +111,26 @@ public final class f2 extends org.telegram.ui.Components.l6 {
             case 3:
                 return Float.valueOf(((ez) this.c).w0);
             case 4:
-                return Float.valueOf(((q61) this.c).y);
+                return Float.valueOf(((w61) this.c).y);
             case 5:
-                return Float.valueOf(((l71) this.c).E);
+                return Float.valueOf(((r71) this.c).E);
             default:
                 return Float.valueOf(((View) obj).getAlpha());
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(q61 q61Var) {
+    public f2(w61 w61Var) {
         super("progress", 0);
         this.b = 4;
-        this.c = q61Var;
+        this.c = w61Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(l71 l71Var) {
+    public f2(r71 r71Var) {
         super("clipProgress", 0);
         this.b = 5;
-        this.c = l71Var;
+        this.c = r71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

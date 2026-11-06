@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean D = true;
@@ -434,9 +434,9 @@ public abstract class t0 extends Application {
             int i11 = 0;
             while (true) {
                 if (i11 >= length) {
-                    c8.sa.b(w80.h);
+                    c8.ua.b(w80.h);
                     break;
-                } else if (c8.sa.a(values[i11])) {
+                } else if (c8.ua.a(values[i11])) {
                     break;
                 } else {
                     i11++;

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab0 implements r1.d {
     public final /* synthetic */ int a;
@@ -47,19 +47,19 @@ public final /* synthetic */ class ab0 implements r1.d {
                 dl0Var.invalidate();
                 break;
             case 2:
-                hq0 hq0Var = (hq0) obj;
-                hq0Var.c0 = f10;
-                hq0Var.e0 = f11;
-                hq0Var.G();
+                iq0 iq0Var = (iq0) obj;
+                iq0Var.c0 = f10;
+                iq0Var.e0 = f11;
+                iq0Var.G();
                 break;
             case 3:
-                br0 br0Var = (br0) obj;
-                int L = br0Var.e > br0Var.f ? org.telegram.messenger.g0.L(48.0f) : 0;
-                org.telegram.ui.Components.q51 q51Var = br0Var.s.p3;
-                int measuredHeight = br0Var.getMeasuredHeight();
-                q51Var.h = (int) (((br0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - L);
-                q51Var.i = measuredHeight;
-                View view2 = q51Var.v;
+                cr0 cr0Var = (cr0) obj;
+                int L = cr0Var.e > cr0Var.f ? org.telegram.messenger.g0.L(48.0f) : 0;
+                org.telegram.ui.Components.v51 v51Var = cr0Var.s.p3;
+                int measuredHeight = cr0Var.getMeasuredHeight();
+                v51Var.h = (int) (((cr0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - L);
+                v51Var.i = measuredHeight;
+                View view2 = v51Var.v;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
@@ -72,11 +72,11 @@ public final /* synthetic */ class ab0 implements r1.d {
                 break;
             default:
                 lz0 lz0Var = (lz0) obj;
-                org.telegram.ui.Components.q51 q51Var2 = lz0Var.r.O;
+                org.telegram.ui.Components.v51 v51Var2 = lz0Var.r.O;
                 int measuredHeight2 = lz0Var.getMeasuredHeight();
-                q51Var2.h = (int) (((lz0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - 0);
-                q51Var2.i = measuredHeight2;
-                View view3 = q51Var2.v;
+                v51Var2.h = (int) (((lz0Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f)) - f10) - 0);
+                v51Var2.i = measuredHeight2;
+                View view3 = v51Var2.v;
                 if (view3 != null) {
                     view3.invalidate();
                     break;

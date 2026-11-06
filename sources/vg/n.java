@@ -9,7 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
-import c8.bd;
+import c8.dd;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -29,7 +29,7 @@ import org.telegram.messenger.sz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n {
     public static final String[] e0 = {"models/star.binobj"};
@@ -309,9 +309,9 @@ public final class n {
             try {
                 dataInputStream = new DataInputStream(new BufferedInputStream(context.getAssets().open(strArr[i21]), TLObject.FLAG_14));
                 try {
-                    a10 = bd.a(dataInputStream);
-                    a11 = bd.a(dataInputStream);
-                    a12 = bd.a(dataInputStream);
+                    a10 = dd.a(dataInputStream);
+                    a11 = dd.a(dataInputStream);
+                    a12 = dd.a(dataInputStream);
                     readInt = dataInputStream.readInt();
                     i11 = i19;
                     i12 = readInt * 3;

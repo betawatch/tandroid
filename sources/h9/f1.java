@@ -65,18 +65,18 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.d51;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.i51;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.t4;
 import org.telegram.ui.bg0;
 import org.telegram.ui.ee;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class f1 implements g9.k, com.google.android.gms.common.api.internal.p, jg.y1, m.f2, li.i0, t4, li.f1, l.i, n2.v, o0.a, b3.j, va, lc, d51, org.telegram.ui.Cells.l1, te.d, d90 {
+public final class f1 implements g9.k, com.google.android.gms.common.api.internal.p, jg.y1, m.f2, li.i0, t4, li.f1, l.i, n2.v, o0.a, b3.j, va, lc, i51, org.telegram.ui.Cells.l1, te.d, d90 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -287,7 +287,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ er0 N1() {
+    public /* synthetic */ fr0 N1() {
         return null;
     }
 
@@ -822,7 +822,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         }
     }
 
-    @Override // org.telegram.ui.Components.d51
+    @Override // org.telegram.ui.Components.i51
     public void invalidate() {
         ((org.telegram.ui.Cells.q1) ((org.telegram.ui.Cells.j1) this.b).b).invalidate();
     }

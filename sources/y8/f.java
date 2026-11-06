@@ -2,10 +2,10 @@ package y8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class f extends r6.a {
     public static final Parcelable.Creator<f> CREATOR = new v(3);
@@ -34,33 +34,33 @@ public final class f extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.l(parcel, 3, this.b);
-        wb.l(parcel, 4, this.c);
-        wb.l(parcel, 5, this.d);
-        wb.l(parcel, 6, this.e);
-        wb.l(parcel, 7, this.f);
-        wb.l(parcel, 8, this.h);
-        wb.l(parcel, 9, this.n);
-        wb.l(parcel, 10, this.r);
-        wb.l(parcel, 11, this.s);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.l(parcel, 3, this.b);
+        xb.l(parcel, 4, this.c);
+        xb.l(parcel, 5, this.d);
+        xb.l(parcel, 6, this.e);
+        xb.l(parcel, 7, this.f);
+        xb.l(parcel, 8, this.h);
+        xb.l(parcel, 9, this.n);
+        xb.l(parcel, 10, this.r);
+        xb.l(parcel, 11, this.s);
         int i10 = this.w;
-        wb.q(parcel, 12, 4);
+        xb.q(parcel, 12, 4);
         parcel.writeInt(i10);
-        wb.p(parcel, 13, this.x);
-        wb.k(parcel, 14, this.y, i7);
-        wb.p(parcel, 15, this.D);
-        wb.l(parcel, 16, this.E);
-        wb.l(parcel, 17, this.F);
-        wb.p(parcel, 18, this.G);
+        xb.p(parcel, 13, this.x);
+        xb.k(parcel, 14, this.y, i7);
+        xb.p(parcel, 15, this.D);
+        xb.l(parcel, 16, this.E);
+        xb.l(parcel, 17, this.F);
+        xb.p(parcel, 18, this.G);
         boolean z9 = this.H;
-        wb.q(parcel, 19, 4);
+        xb.q(parcel, 19, 4);
         parcel.writeInt(z9 ? 1 : 0);
-        wb.p(parcel, 20, this.I);
-        wb.p(parcel, 21, this.J);
-        wb.p(parcel, 22, this.K);
-        wb.k(parcel, 23, this.L, i7);
-        wb.s(parcel, r10);
+        xb.p(parcel, 20, this.I);
+        xb.p(parcel, 21, this.J);
+        xb.p(parcel, 22, this.K);
+        xb.k(parcel, 23, this.L, i7);
+        xb.s(parcel, r10);
     }
 }

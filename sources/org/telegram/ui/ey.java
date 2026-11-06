@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ey extends yx {
     public final /* synthetic */ fy E;
@@ -44,9 +44,9 @@ public final class ey extends yx {
         int i11 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.r6.Y(k5Var, i11, null);
         SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        org.telegram.ui.Components.ty0 ty0Var = new org.telegram.ui.Components.ty0();
-        ty0Var.a |= 256;
-        spannableString.setSpan(new org.telegram.ui.Components.uy0(ty0Var, 0), 0, spannableString.length(), 33);
+        org.telegram.ui.Components.uy0 uy0Var = new org.telegram.ui.Components.uy0();
+        uy0Var.a |= 256;
+        spannableString.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), 0, spannableString.length(), 33);
         k5Var.l(spannableString, false);
         k5Var.setAlpha(1.0f);
         frameLayout.addView(k5Var, c8.ha.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));

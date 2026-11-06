@@ -23,16 +23,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.n61;
-import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.g60;
-import org.telegram.ui.qv0;
+import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b9 implements c20 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class b9 implements c20 {
     */
     public final void a(Object obj) {
         int[] iArr;
-        n61 n61Var;
+        t61 t61Var;
         r4 = false;
         boolean z9 = false;
         switch (this.a) {
@@ -239,13 +239,13 @@ public final /* synthetic */ class b9 implements c20 {
                 }
                 break;
             case 6:
-                o61 o61Var = (o61) this.c;
+                u61 u61Var = (u61) this.c;
                 boolean z15 = this.b;
                 View view3 = (View) obj;
-                o61Var.w.getClass();
+                u61Var.w.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof m61) {
-                    ((m61) view3).setReordering(z15 && (n61Var = o61Var.D) != null && ((org.telegram.ui.Components.n) n61Var).r(R));
+                if (view3 instanceof s61) {
+                    ((s61) view3).setReordering(z15 && (t61Var = u61Var.D) != null && ((org.telegram.ui.Components.n) t61Var).r(R));
                     break;
                 }
                 break;
@@ -258,9 +258,9 @@ public final /* synthetic */ class b9 implements c20 {
                 }
                 break;
             case 8:
-                qv0 qv0Var = (qv0) this.c;
+                rv0 rv0Var = (rv0) this.c;
                 boolean z17 = this.b;
-                ProfileActivity profileActivity = qv0Var.b;
+                ProfileActivity profileActivity = rv0Var.b;
                 if (profileActivity.getParentActivity() != null) {
                     org.telegram.ui.Components.hc.a0(profileActivity).o(z17 ? org.telegram.ui.Components.gc.h : org.telegram.ui.Components.gc.e, null).j();
                     break;

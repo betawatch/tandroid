@@ -24,11 +24,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.qy0;
-import org.telegram.ui.vn0;
+import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class f10 extends c1 {
     public static final List M = Arrays.asList("en", "ar", "zh", "fr", "de", "it", "ja", "ko", "pt", "ru", "es", "uk");
@@ -116,8 +116,8 @@ public final class f10 extends c1 {
             if ("no".equals(str)) {
                 y00Var.a = "nb";
             }
-            y00Var.b = e21.K0(e21.O0(y00Var.a, null, null));
-            y00Var.c = e21.K0(e21.V0(y00Var.a, true));
+            y00Var.b = k21.K0(k21.O0(y00Var.a, null, null));
+            y00Var.c = k21.K0(k21.V0(y00Var.a, true));
             if (y00Var.b != null) {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(y00Var.b);
@@ -169,7 +169,7 @@ public final class f10 extends c1 {
                             if (locale != null && locale.contains("_")) {
                                 locale = locale.split("_")[0];
                             }
-                            if (e21.O0(locale, null, null) != null) {
+                            if (k21.O0(locale, null, null) != null) {
                                 linkedHashSet.add(locale);
                             }
                         }
@@ -190,8 +190,8 @@ public final class f10 extends c1 {
                     if ("no".equals(str2)) {
                         y00Var.a = "nb";
                     }
-                    y00Var.b = e21.K0(e21.O0(y00Var.a, null, null));
-                    y00Var.c = e21.K0(e21.V0(y00Var.a, true));
+                    y00Var.b = k21.K0(k21.O0(y00Var.a, null, null));
+                    y00Var.c = k21.K0(k21.V0(y00Var.a, true));
                     if (y00Var.b != null) {
                         y00Var.d = (y00Var.b + " " + y00Var.c).toLowerCase();
                         arrayList.add(y00Var);
@@ -560,7 +560,7 @@ public final class f10 extends c1 {
             longSparseArray.put(j10, bool);
         }
         qs.f(f10Var.currentAccount).k(qs.P1, Long.valueOf(j10), bool);
-        e21.S0(str2);
+        k21.S0(str2);
     }
 
     public final void J(long j3, boolean z9, boolean z10) {
@@ -618,20 +618,20 @@ public final class f10 extends c1 {
         return z10;
     }
 
-    public final void L(ij ijVar, vn0 vn0Var) {
+    public final void L(ij ijVar, wn0 wn0Var) {
         if (ijVar == null || ijVar.k == null) {
             return;
         }
         f3.s sVar = new f3.s(ijVar);
-        String M0 = e21.M0();
+        String M0 = k21.M0();
         TLRPC.Message message = ijVar.k;
         if (message.translatedText != null && TextUtils.equals(message.translatedToLanguage, M0)) {
-            vn0Var.run();
+            wn0Var.run();
             return;
         }
         HashSet hashSet = this.L;
         if (hashSet.contains(sVar)) {
-            vn0Var.run();
+            wn0Var.run();
             return;
         }
         hashSet.add(sVar);
@@ -647,7 +647,7 @@ public final class f10 extends c1 {
         }
         tL_messages_translateText.text.add(tL_textWithEntities);
         tL_messages_translateText.to_lang = D(M0);
-        getConnectionsManager().sendRequest(tL_messages_translateText, new mm(this, ijVar, M0, sVar, vn0Var, System.currentTimeMillis(), tL_textWithEntities));
+        getConnectionsManager().sendRequest(tL_messages_translateText, new mm(this, ijVar, M0, sVar, wn0Var, System.currentTimeMillis(), tL_textWithEntities));
     }
 
     public final void M(long j3) {
@@ -682,7 +682,7 @@ public final class f10 extends c1 {
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0025, code lost:
     
-        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.e21.M0()) != false) goto L18;
+        if (android.text.TextUtils.equals(r0.translatedToLanguage, org.telegram.ui.Components.k21.M0()) != false) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1464,7 +1464,7 @@ public final class f10 extends c1 {
 
     public final String m(long j3) {
         String str = (String) this.d.get(Long.valueOf(j3));
-        if (str == null && ((str = e21.M0()) == null || str.equals((String) this.e.get(Long.valueOf(j3))))) {
+        if (str == null && ((str = k21.M0()) == null || str.equals((String) this.e.get(Long.valueOf(j3))))) {
             str = j();
         }
         return "nb".equals(str) ? "no" : str;

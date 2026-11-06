@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class n50 extends u41 {
+public final class n50 extends z41 {
     public float f;
     public float h;
     public final Paint n;
@@ -22,7 +22,7 @@ public final class n50 extends u41 {
         this.n = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.u41, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.z41, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         x50 x50Var = this.w;
         x50Var.M1.setTranslationY(org.telegram.messenger.g0.L(64.0f) + org.telegram.messenger.g0.L(6.0f) + (x50Var.u1 - x50Var.s0));
@@ -76,7 +76,7 @@ public final class n50 extends u41 {
         super.onAttachedToWindow();
         h6.m mVar = this.s;
         if (mVar != null) {
-            ((z41) mVar.b).b = true;
+            ((e51) mVar.b).b = true;
         }
     }
 

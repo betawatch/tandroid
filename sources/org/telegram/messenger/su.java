@@ -6,7 +6,7 @@ import java.io.File;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class su extends ru {
     public final TL_iv.pageBlockPhoto q0;
@@ -21,7 +21,7 @@ public final class su extends ru {
         this.r0 = v;
         if (v != null) {
             this.s0 = w7.w(v.sizes, g0.Z0(false), false, null, false);
-            this.t0 = w7.R(v.sizes);
+            this.t0 = w7.Q(v.sizes);
         } else {
             this.s0 = null;
             this.t0 = null;
@@ -66,10 +66,10 @@ public final class su extends ru {
         if (photoSize != null) {
             kv kvVar = this.a;
             w7.G(kvVar.a);
-            File K = w7.K(photoSize, null, true, true);
+            File J = w7.J(photoSize, null, true, true);
             w7.G(kvVar.a);
-            File K2 = w7.K(photoSize, null, false, true);
-            if (!K.exists() && (K2 == null || !K2.exists())) {
+            File J2 = w7.J(photoSize, null, false, true);
+            if (!J.exists() && (J2 == null || !J2.exists())) {
                 return false;
             }
         }

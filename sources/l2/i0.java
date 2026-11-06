@@ -26,9 +26,9 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import jg.a2;
-import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.k51;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i0 extends bi.b1 implements p {
     public final ci.a A;
@@ -93,7 +93,7 @@ public final class i0 extends bi.b1 implements p {
     public final x2.f0 r;
     public long r0;
     public final m2.e s;
-    public f51 s0;
+    public k51 s0;
     public final Looper t;
     public final ArrayList t0;
     public final b3.d u;
@@ -2037,9 +2037,9 @@ public final class i0 extends bi.b1 implements p {
             return;
         }
         this.Z = new h2.y(i7, i10);
-        f51 f51Var = this.s0;
-        if (f51Var != null) {
-            f51Var.execute(new jg.r(this, i7, i10, 1));
+        k51 k51Var = this.s0;
+        if (k51Var != null) {
+            k51Var.execute(new jg.r(this, i7, i10, 1));
             return;
         }
         this.m.e(24, new gh.c(i7, i10, 1));

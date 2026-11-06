@@ -13,7 +13,7 @@ import org.telegram.ui.Components.pp0;
 import org.telegram.ui.Wallet.z;
 import y5.a;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -32,6 +32,6 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
             a10.c = Base64.decode(queryParameter2, 0);
         }
         c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i7, new z(16), 24));
+        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i7, new z(17), 24));
     }
 }

@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class rz0 extends Dialog {
     public TextView D;
@@ -57,7 +57,7 @@ public final class rz0 extends Dialog {
     public boolean b0;
     public final bi.x5 c;
     public org.telegram.ui.ActionBar.u1 c0;
-    public org.telegram.ui.Components.cz0 d;
+    public org.telegram.ui.Components.dz0 d;
     public ValueAnimator d0;
     public i0.b e;
     public ValueAnimator e0;
@@ -67,7 +67,7 @@ public final class rz0 extends Dialog {
     public Matrix r;
     public float s;
     public float w;
-    public org.telegram.ui.Components.n51 x;
+    public org.telegram.ui.Components.t51 x;
     public fi.m3 y;
 
     public rz0(Activity activity) {
@@ -180,9 +180,9 @@ public final class rz0 extends Dialog {
         if (m3Var != null) {
             m3Var.f(true);
         }
-        org.telegram.ui.Components.n51 n51Var = this.x;
-        if (n51Var != null) {
-            n51Var.g0();
+        org.telegram.ui.Components.t51 t51Var = this.x;
+        if (t51Var != null) {
+            t51Var.g0();
             this.x.m0();
             this.x = null;
         }
@@ -207,20 +207,20 @@ public final class rz0 extends Dialog {
             }
             org.telegram.messenger.g0.h3(d3Var);
             this.Y = null;
-            org.telegram.ui.Components.cz0 cz0Var = new org.telegram.ui.Components.cz0(this.a, null);
-            this.d = cz0Var;
-            k0Var.addView(cz0Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
-            org.telegram.ui.Components.cz0 cz0Var2 = this.d;
+            org.telegram.ui.Components.dz0 dz0Var = new org.telegram.ui.Components.dz0(this.a, null);
+            this.d = dz0Var;
+            k0Var.addView(dz0Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
+            org.telegram.ui.Components.dz0 dz0Var2 = this.d;
             pz0 pz0Var2 = this.N;
             mz0 mz0Var = new mz0(this, 1);
-            org.telegram.ui.Components.az0 az0Var = cz0Var2.a;
-            if (az0Var != null) {
-                az0Var.b(1.5f, pz0Var2, mz0Var);
-                Choreographer.getInstance().postFrameCallback(cz0Var2.b);
+            org.telegram.ui.Components.bz0 bz0Var = dz0Var2.a;
+            if (bz0Var != null) {
+                bz0Var.b(1.5f, pz0Var2, mz0Var);
+                Choreographer.getInstance().postFrameCallback(dz0Var2.b);
             } else {
-                org.telegram.ui.Components.bz0 bz0Var = new org.telegram.ui.Components.bz0(pz0Var2, mz0Var);
-                bz0Var.g = 1.5f;
-                cz0Var2.c.add(bz0Var);
+                org.telegram.ui.Components.cz0 cz0Var = new org.telegram.ui.Components.cz0(pz0Var2, mz0Var);
+                cz0Var.g = 1.5f;
+                dz0Var2.c.add(cz0Var);
             }
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.flags |= 16;

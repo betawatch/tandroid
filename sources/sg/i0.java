@@ -19,11 +19,11 @@ import java.util.List;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.cn0;
 import org.telegram.ui.l00;
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 import y7.d6;
 import z7.qa;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.api.internal.p, b3.q {
     public final /* synthetic */ int a;
@@ -55,9 +55,9 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.v0
     public void Y() {
-        tp0 tp0Var = (tp0) this.c;
-        tp0Var.o0.a.f();
-        tp0Var.U0.setViewHidden(false);
+        up0 up0Var = (up0) this.c;
+        up0Var.o0.a.f();
+        up0Var.U0.setViewHidden(false);
     }
 
     @Override // te.d
@@ -261,11 +261,11 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.v0
     public void d0() {
-        tp0 tp0Var = (tp0) this.c;
-        if (tp0Var.B0 != null) {
-            tp0Var.r0(null, true);
+        up0 up0Var = (up0) this.c;
+        if (up0Var.B0 != null) {
+            up0Var.r0(null, true);
         }
-        tp0Var.U0.setViewHidden(true);
+        up0Var.U0.setViewHidden(true);
     }
 
     public boolean e(View view) {
@@ -314,7 +314,7 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.v0
     public void o() {
-        l00 l00Var = ((tp0) this.c).G0;
+        l00 l00Var = ((up0) this.c).G0;
         if (l00Var != null) {
             l00Var.invalidate();
         }
@@ -322,12 +322,12 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.v0
     public void p() {
-        tp0 tp0Var = (tp0) this.c;
-        if (tp0Var.T0) {
-            tp0Var.T0 = false;
+        up0 up0Var = (up0) this.c;
+        if (up0Var.T0) {
+            up0Var.T0 = false;
         } else {
-            tp0Var.c1.b(1);
-            tp0Var.w((h) h.a.get(0));
+            up0Var.c1.b(1);
+            up0Var.w((h) h.a.get(0));
         }
     }
 
@@ -351,10 +351,10 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.v0
     public boolean z() {
-        tp0 tp0Var = (tp0) this.c;
-        boolean z9 = tp0Var.B0 == null;
+        up0 up0Var = (up0) this.c;
+        boolean z9 = up0Var.B0 == null;
         if (!z9) {
-            tp0Var.r0(null, true);
+            up0Var.r0(null, true);
         }
         return z9;
     }

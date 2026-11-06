@@ -20,12 +20,12 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.c01;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements v10 {
     public final /* synthetic */ int a;
@@ -593,9 +593,9 @@ public final /* synthetic */ class r implements v10 {
                 }
                 lVar.setPadding(org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                ty0 ty0Var = new ty0();
-                ty0Var.a |= 256;
-                spannableString.setSpan(new uy0(ty0Var, 0), 0, spannableString.length(), 33);
+                uy0 uy0Var = new uy0();
+                uy0Var.a |= 256;
+                spannableString.setSpan(new vy0(uy0Var, 0), 0, spannableString.length(), 33);
                 lVar.setText(spannableString);
                 lVar.setTextIsSelectable(true);
                 lVar.setOnClickListener(null);

@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -103,19 +103,19 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 }
                 break;
             case 10:
-                uz0 uz0Var = (uz0) this.b;
+                vz0 vz0Var = (vz0) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(uz0Var.b);
+                        org.telegram.messenger.g0.v1(vz0Var.b);
                         break;
                     }
                 }
                 break;
             default:
-                v41 v41Var = (v41) this.b;
+                a51 a51Var = (a51) this.b;
                 if (keyEvent != null) {
                     if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(v41Var.J);
+                        org.telegram.messenger.g0.v1(a51Var.J);
                         break;
                     }
                 }

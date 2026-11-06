@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mg implements vk, org.telegram.ui.ActionBar.r1, te.i, dj0, oi.n, gh.d, oi.m, org.telegram.ui.ActionBar.m0, an, t4, ki {
     public final /* synthetic */ int a;
@@ -394,7 +394,7 @@ public final /* synthetic */ class mg implements vk, org.telegram.ui.ActionBar.r
         if (Build.VERSION.SDK_INT < 31 || gVar == null) {
             return;
         }
-        if (c8.yc.a(i7, 4)) {
+        if (c8.zc.a(i7, 4)) {
             qi.a e10 = diVar.X0.e();
             e10.b(diVar.b.getY(), diVar.b.getWidth(), diVar.b.getY() + diVar.b.getHeight());
             gVar.h(e10);

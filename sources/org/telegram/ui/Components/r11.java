@@ -1,41 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class r11 extends v4.s0 {
-    public final /* synthetic */ e21 a;
+public final class r11 extends Drawable {
+    public final zg0 a;
+    public int b;
+    public final TextPaint c;
 
-    public r11(e21 e21Var) {
-        this.a = e21Var;
+    public r11(TextPaint textPaint) {
+        a5.b bVar = new a5.b(this, 8);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        zg0 zg0Var = new zg0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = zg0Var;
+        zg0Var.setCallback(bVar);
+        zg0Var.K(1);
+        zg0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        zg0Var.J(true);
+        zg0Var.start();
     }
 
-    @Override // v4.s0
-    public final void a(RecyclerView recyclerView, int i7) {
-        e21 e21Var = this.a;
-        q11 q11Var = e21Var.D1;
-        if (i7 == 0) {
-            e21Var.C1 = false;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i7 = this.b;
+        zg0 zg0Var = this.a;
+        if (color != i7) {
+            zg0Var.Z = true;
+            zg0Var.Q(color, "Comp 1");
+            zg0Var.o();
+            zg0Var.J(true);
+            zg0Var.V(0L);
+            this.b = color;
         }
-        if ((i7 == 0 || i7 == 2) && e21Var.L0(false) > 0.0f && e21Var.L0(false) < org.telegram.messenger.g0.L(96.0f) && q11Var.canScrollVertically(1) && e21.I0(e21Var)) {
-            e21Var.C1 = true;
-            q11Var.w0(0, (int) e21Var.L0(false), null);
-        }
+        zg0Var.draw(canvas);
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        e21 e21Var = this.a;
-        e21Var.b.invalidate();
-        boolean canScrollVertically = e21Var.D1.canScrollVertically(1);
-        View view = e21Var.H1;
-        Boolean bool = e21Var.N1;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            e21Var.N1 = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.camera.q.l(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), xq.h, 320L);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

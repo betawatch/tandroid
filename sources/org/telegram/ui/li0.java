@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class li0 implements org.telegram.messenger.a20, org.telegram.ui.Cells.u5, org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.f1, r0.m, org.telegram.messenger.w10, org.telegram.ui.Cells.z4, org.telegram.messenger.oc, RequestTimeDelegate, org.telegram.ui.ActionBar.e2, org.telegram.ui.Components.dj0, lg.e, jg.y1 {
     public final /* synthetic */ int a;
@@ -38,9 +38,9 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                 org.telegram.ui.Components.pj0 pj0Var = premiumPreviewFragment.a;
                 i0.b bVar = premiumPreviewFragment.o0;
                 org.telegram.messenger.g0.B3(pj0Var, bVar.a, 0, bVar.c, 0);
-                ts0 ts0Var = premiumPreviewFragment.U;
+                us0 us0Var = premiumPreviewFragment.U;
                 i0.b bVar2 = premiumPreviewFragment.o0;
-                ts0Var.setPadding(bVar2.a, 0, bVar2.c, 0);
+                us0Var.setPadding(bVar2.a, 0, bVar2.c, 0);
                 FrameLayout frameLayout = premiumPreviewFragment.J;
                 if (frameLayout != null) {
                     int i7 = premiumPreviewFragment.o0.a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
     public void a() {
         switch (this.a) {
             case 5:
-                ((yr0) this.b).e();
+                ((zr0) this.b).e();
                 break;
             default:
                 ((f81) this.b).e();
@@ -112,11 +112,11 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
 
     @Override // org.telegram.ui.Cells.z4
     public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z9) {
-        qt0 qt0Var = (qt0) this.b;
+        rt0 rt0Var = (rt0) this.b;
         if (!z9) {
             return true;
         }
-        qt0Var.d.Z((Long) a5Var.getTag(), a5Var);
+        rt0Var.d.Z((Long) a5Var.getTag(), a5Var);
         return true;
     }
 
@@ -134,7 +134,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
     @Override // org.telegram.messenger.w10
     public Object d(Number number, Object obj) {
         Integer num = (Integer) obj;
-        PrivacyControlActivity privacyControlActivity = ((it0) this.b).d;
+        PrivacyControlActivity privacyControlActivity = ((jt0) this.b).d;
         if (((Integer) number).intValue() != 0) {
             return org.telegram.messenger.hd.E(num.intValue(), ',');
         }
@@ -175,10 +175,10 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                     return;
                 }
             case 3:
-                ((or0) this.b).finishFragment();
+                ((pr0) this.b).finishFragment();
                 break;
             case 4:
-                ((ir0) this.b).a.R.r();
+                ((jr0) this.b).a.R.r();
                 break;
             case 6:
                 PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) this.b;
@@ -193,9 +193,9 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                     return;
                 }
             case 10:
-                tt0 tt0Var = (tt0) this.b;
+                ut0 ut0Var = (ut0) this.b;
                 RectF rectF = ProfileActivity.S6;
-                tt0Var.a(1);
+                ut0Var.a(1);
                 break;
             case 13:
                 ProxyListActivity proxyListActivity = (ProxyListActivity) ((hi0) this.b).c;
@@ -289,20 +289,20 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
             case 0:
-                PasskeysActivity.b0((PasskeysActivity) this.b, (org.telegram.ui.Components.r31) obj, (View) obj2);
+                PasskeysActivity.b0((PasskeysActivity) this.b, (org.telegram.ui.Components.x31) obj, (View) obj2);
                 break;
             default:
                 ny0 ny0Var = (ny0) this.b;
-                org.telegram.ui.Components.r31 r31Var = (org.telegram.ui.Components.r31) obj;
+                org.telegram.ui.Components.x31 x31Var = (org.telegram.ui.Components.x31) obj;
                 oy0 oy0Var = ny0Var.w;
-                if (r31Var.a == 30) {
+                if (x31Var.a == 30) {
                     TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = ny0Var.b;
                     if (tL_channels_sponsoredMessageReportResultChooseOption == null) {
                         TLRPC.TL_reportResultChooseOption tL_reportResultChooseOption = ny0Var.c;
                         if (tL_reportResultChooseOption == null) {
                             TLRPC.TL_reportResultAddComment tL_reportResultAddComment = ny0Var.d;
                             if (tL_reportResultAddComment == null) {
-                                oy0.I0(oy0Var, r31Var.l, null, null);
+                                oy0.I0(oy0Var, x31Var.l, null, null);
                                 break;
                             } else {
                                 byte[] bArr = tL_reportResultAddComment.option;
@@ -312,14 +312,14 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                                 }
                             }
                         } else {
-                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(r31Var.d);
+                            TLRPC.TL_messageReportOption tL_messageReportOption = tL_reportResultChooseOption.options.get(x31Var.d);
                             if (tL_messageReportOption != null) {
                                 oy0.I0(oy0Var, tL_messageReportOption.text, tL_messageReportOption.option, null);
                                 break;
                             }
                         }
                     } else {
-                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(r31Var.d);
+                        TLRPC.TL_sponsoredMessageReportOption tL_sponsoredMessageReportOption = tL_channels_sponsoredMessageReportResultChooseOption.options.get(x31Var.d);
                         if (tL_sponsoredMessageReportOption != null) {
                             oy0.I0(oy0Var, tL_sponsoredMessageReportOption.text, tL_sponsoredMessageReportOption.option, null);
                             break;

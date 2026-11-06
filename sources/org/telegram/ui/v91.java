@@ -43,7 +43,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, org.telegram.ui.Components.kg, ie0 {
     public static final HashSet q1 = new HashSet();
@@ -66,7 +66,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
     public boolean J0;
     public boolean K;
     public org.telegram.ui.Components.si0 K0;
-    public org.telegram.ui.Components.l41 L;
+    public org.telegram.ui.Components.r41 L;
     public ww L0;
     public int M;
     public ww M0;
@@ -98,7 +98,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
     public boolean Z0;
     public final long a;
     public final HashSet a0;
-    public org.telegram.ui.Components.o61 a1;
+    public org.telegram.ui.Components.u61 a1;
     public final ArrayList b;
     public boolean b0;
     public boolean b1;
@@ -132,7 +132,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
     public s81 n;
     public RadialProgressView n0;
     public final RectF n1;
-    public rq0 o0;
+    public sq0 o0;
     public final RectF o1;
     public org.telegram.ui.ActionBar.r0 p0;
     public int p1;
@@ -345,7 +345,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         }
         int i7 = 0;
         if (v91Var.a1 == null) {
-            org.telegram.ui.Components.o61 n10 = v91Var.r0.n(8, false);
+            org.telegram.ui.Components.u61 n10 = v91Var.r0.n(8, false);
             v91Var.a1 = n10;
             if (v91Var.M0 != null) {
                 org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, n10, v91Var.getResourceProvider());
@@ -502,7 +502,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
             u1Var.T = org.telegram.messenger.hd.M0(2131751498, null);
         }
         alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new a1.d(this, hashSet, arrayList, runnable, 22));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new fo0(10));
+        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new go0(10));
         u1Var.show();
         TextView textView = (TextView) u1Var.d(-1);
         if (textView != null) {
@@ -818,7 +818,7 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
             this.c0.setTypeface(org.telegram.messenger.g0.o());
             this.c0.setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.y8));
             n10.addView(this.c0, c8.ha.m(1.0f, 0, -1, 72, 0, 0));
-            this.c0.setOnTouchListener(new as0(1));
+            this.c0.setOnTouchListener(new bs0(1));
             this.d0 = n10.g(4, R.drawable.msg_pin, org.telegram.messenger.g0.L(54.0f));
             this.e0 = n10.g(5, R.drawable.msg_unpin, org.telegram.messenger.g0.L(54.0f));
             this.f0 = n10.g(6, R.drawable.msg_mute, org.telegram.messenger.g0.L(54.0f));
@@ -1121,9 +1121,9 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         }
         radialProgressView.setProgressColor(getThemedColor(org.telegram.ui.ActionBar.k6.pf));
         this.h.updateColors();
-        rq0 rq0Var = this.o0;
+        sq0 sq0Var = this.o0;
         int i7 = org.telegram.ui.ActionBar.k6.d6;
-        rq0Var.setBackgroundColor(getThemedColor(i7));
+        sq0Var.setBackgroundColor(getThemedColor(i7));
         this.actionBar.setActionModeColor(getThemedColor(i7));
         if (!this.inPreviewMode) {
             this.actionBar.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.k6.s8));
@@ -1164,9 +1164,9 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         float f11 = 1.0f - f10;
         this.f.getTitleTextView().setAlpha(f11);
         this.f.getSubtitleTextView().setAlpha(f11);
-        org.telegram.ui.Components.o61 o61Var = this.a1;
-        if (o61Var != null) {
-            o61Var.setTranslationY((-org.telegram.messenger.g0.L(16.0f)) * f11);
+        org.telegram.ui.Components.u61 u61Var = this.a1;
+        if (u61Var != null) {
+            u61Var.setTranslationY((-org.telegram.messenger.g0.L(16.0f)) * f11);
             this.a1.setAlpha(f10);
         }
         this.r0.setTranslationY((-org.telegram.messenger.g0.L(16.0f)) * f11);
@@ -1588,10 +1588,10 @@ public class v91 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         this.n.addView(this.D0);
         this.d.addView(this.n);
         this.N.setEmptyView(this.n);
-        this.o0 = new rq0(context, 12);
-        org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(context);
-        this.L = l41Var;
-        this.o0.addView(l41Var);
+        this.o0 = new sq0(context, 12);
+        org.telegram.ui.Components.r41 r41Var = new org.telegram.ui.Components.r41(context);
+        this.L = r41Var;
+        this.o0.addView(r41Var);
         this.d.addView(this.o0, c8.ha.e(-1, 51, 80));
         this.L.setOnClickListener(new c91(this));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);

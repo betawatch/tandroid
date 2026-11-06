@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fw extends org.telegram.ui.Components.fm0 {
     public final bg.c0 b1;
@@ -68,7 +68,7 @@ public final class fw extends org.telegram.ui.Components.fm0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void y(int i7) {
         bi.g5 g5Var = this.V;
         this.d1.q5(g5Var != null && g5Var.h(i7) == 2);

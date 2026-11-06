@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class ou extends fu implements x5 {
     public final TLRPC.Document W;
@@ -290,7 +290,7 @@ public final class ou extends fu implements x5 {
                     } else {
                         RadialProgress2 radialProgress2 = this.X;
                         if (i11 == 1 && document != null) {
-                            w7.G(i10).X(document, kvVar.b, 1, 1);
+                            w7.G(i10).W(document, kvVar.b, 1, 1);
                             this.k0 = 2;
                             radialProgress2.setIcon(3, true, true);
                         } else if (i11 == 2 && document != null) {
@@ -348,12 +348,12 @@ public final class ou extends fu implements x5 {
         }
         kv kvVar = this.a;
         w7.G(kvVar.a);
-        File K = w7.K(document, null, false, true);
-        if (K != null && K.exists()) {
-            return K;
+        File J = w7.J(document, null, false, true);
+        if (J != null && J.exists()) {
+            return J;
         }
         w7.G(kvVar.a);
-        return w7.K(document, null, true, true);
+        return w7.J(document, null, true, true);
     }
 
     public final void k0() {
@@ -402,7 +402,7 @@ public final class ou extends fu implements x5 {
             radialProgress2.setIcon(4, false, z9);
         } else {
             z5.q(kvVar.a).a(r10, null, this);
-            if (w7.G(kvVar.a).T(r10)) {
+            if (w7.G(kvVar.a).S(r10)) {
                 this.k0 = 2;
                 Float w10 = gc.D().w(r10);
                 radialProgress2.p(z9, w10 != null ? w10.floatValue() : 0.0f);

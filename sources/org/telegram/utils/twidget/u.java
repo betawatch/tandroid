@@ -21,14 +21,14 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.n0;
 import org.telegram.ui.Wallet.s2;
 import org.telegram.ui.Wallet.v2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class u {
     public boolean A;
@@ -38,7 +38,7 @@ public final class u {
     public nb.a e;
     public h0 f;
     public f0 g;
-    public j71 h;
+    public p71 h;
     public int i;
     public int j;
     public int k;
@@ -182,7 +182,7 @@ public final class u {
     public final void g(h0 h0Var) {
         f0 f0Var;
         m h;
-        j71 j71Var;
+        p71 p71Var;
         if (h0Var == this.f && (f0Var = h0Var.F) != null) {
             if (this.g == null || h0Var.v) {
                 this.g = null;
@@ -193,13 +193,13 @@ public final class u {
                 int max = Math.max(1, f0Var.e);
                 boolean z10 = max != this.i;
                 this.i = max;
-                j71 j71Var2 = this.h;
-                if (j71Var2 != null) {
-                    i71 i71Var = j71Var2.a;
+                p71 p71Var2 = this.h;
+                if (p71Var2 != null) {
+                    o71 o71Var = p71Var2.a;
                     if (z10) {
-                        i71Var.j();
+                        o71Var.j();
                     }
-                    i71Var.h();
+                    o71Var.h();
                 }
                 if ((z10 || objArr != false) && this.e != null && (h = p.h(this)) != null && this.i > 0) {
                     int f10 = p.f(this.k);
@@ -214,12 +214,12 @@ public final class u {
                         ck0Var.p0("frame off screen");
                     }
                 }
-                if (!e() || z10 || (j71Var = this.h) == null) {
+                if (!e() || z10 || (p71Var = this.h) == null) {
                     return;
                 }
-                i71 i71Var2 = j71Var.a;
-                i71Var2.j();
-                i71Var2.h();
+                o71 o71Var2 = p71Var.a;
+                o71Var2.j();
+                o71Var2.h();
             }
         }
     }
@@ -361,7 +361,7 @@ public final class u {
         this.n = z9;
         h0 h0Var = this.f;
         if (h0Var != null) {
-            h0Var.d(z9 && !this.p);
+            h0Var.e(z9 && !this.p);
         }
     }
 

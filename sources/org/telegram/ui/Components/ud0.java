@@ -5,13 +5,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ud0 extends FrameLayout {
     public final fi.fb a;
     public final fi.d b;
     public final ps c;
-    public n51 d;
+    public t51 d;
     public long e;
     public float f;
     public fi.j3 h;
@@ -45,7 +45,7 @@ public final class ud0 extends FrameLayout {
         fbVar.setDelegate(new j2.n(this));
     }
 
-    public final void a(org.telegram.messenger.gf gfVar, n51 n51Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void a(org.telegram.messenger.gf gfVar, t51 t51Var, org.telegram.ui.ActionBar.f6 f6Var) {
         int i7;
         fi.d dVar = this.b;
         dVar.a = f6Var;
@@ -57,22 +57,22 @@ public final class ud0 extends FrameLayout {
         } else {
             this.f = Utilities.i(i7 / i10, 1.39f, 0.85f);
         }
-        this.d = n51Var;
+        this.d = t51Var;
         long j3 = gfVar.d;
         if (j3 >= 0) {
             this.e = j3;
-            n51Var.q0(j3, false);
+            t51Var.q0(j3, false);
         } else {
-            this.e = n51Var.S();
+            this.e = t51Var.S();
         }
-        String path = n51Var.F.getPath();
-        long U = n51Var.U();
-        l2.i0 i0Var = n51Var.d;
+        String path = t51Var.F.getPath();
+        long U = t51Var.U();
+        l2.i0 i0Var = t51Var.d;
         i0Var.F1();
         this.a.o(false, path, U, i0Var.b0);
-        long U2 = n51Var.U();
+        long U2 = t51Var.U();
         float max = 2.8f / Math.max(60L, U2);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, n51Var.U()));
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, t51Var.U()));
         fi.fb fbVar = this.a;
         fbVar.setVideoLeft(max2);
         fbVar.setVideoRight(max2 + max);

@@ -14,13 +14,13 @@ import org.telegram.ui.Cells.d2;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Cells.z8;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Wallet.x9;
 import org.telegram.ui.Wallet.y5;
 import org.telegram.ui.b00;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements d20 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class c0 implements d20 {
                 View view = (View) obj;
                 return Boolean.valueOf(((view instanceof z8) || (view instanceof y6) || (view instanceof b00) || (view instanceof x3) || (view instanceof d2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 8:
-                return Boolean.valueOf(f41.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(l41.K(((Integer) obj).intValue()));
             case 9:
                 TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
                 exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;

@@ -11,7 +11,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class ae0 extends FrameLayout {
     public TLRPC.WebPage D;
@@ -37,9 +37,9 @@ public abstract class ae0 extends FrameLayout {
     public String x;
     public boolean y;
 
-    public static void a(org.telegram.ui.bq0 bq0Var, String str) {
-        int videoDuration = bq0Var.getVideoDuration() / 1000;
-        ArrayList arrayList = bq0Var.w;
+    public static void a(org.telegram.ui.cq0 cq0Var, String str) {
+        int videoDuration = cq0Var.getVideoDuration() / 1000;
+        ArrayList arrayList = cq0Var.w;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;

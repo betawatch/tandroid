@@ -2,7 +2,7 @@ package com.google.android.gms.internal.clearcut;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import java.util.Arrays;
 
 /* loaded from: classes.dex */
@@ -71,22 +71,22 @@ public final class c2 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.l(parcel, 2, this.a);
-        wb.q(parcel, 3, 4);
+        int r10 = xb.r(parcel, 20293);
+        xb.l(parcel, 2, this.a);
+        xb.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        wb.q(parcel, 4, 4);
+        xb.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        wb.l(parcel, 5, this.d);
-        wb.l(parcel, 6, this.e);
-        wb.q(parcel, 7, 4);
+        xb.l(parcel, 5, this.d);
+        xb.l(parcel, 6, this.e);
+        xb.q(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        wb.l(parcel, 8, this.h);
-        wb.q(parcel, 9, 4);
+        xb.l(parcel, 8, this.h);
+        xb.q(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        wb.q(parcel, 10, 4);
+        xb.q(parcel, 10, 4);
         parcel.writeInt(this.r);
-        wb.s(parcel, r10);
+        xb.s(parcel, r10);
     }
 
     public c2(String str, int i7, int i10, String str2, String str3, boolean z9, String str4, boolean z10, int i11) {

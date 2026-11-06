@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class di implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class di implements RequestDelegate {
                 }
                 break;
             case 9:
-                g0.h3(new zw((gz) c1Var, (String) obj2, (List) obj, i11));
+                g0.h3(new yw((gz) c1Var, (String) obj2, (List) obj, i11));
                 break;
             case 10:
                 g0.h3(new em((gz) c1Var, tLObject, (sy) obj2, (String) obj, 24));

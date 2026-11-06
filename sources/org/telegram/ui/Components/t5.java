@@ -6,7 +6,7 @@ import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import org.telegram.messenger.AnimatedFileDrawableStream;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t5 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class t5 implements Runnable {
                 v5 v5Var4 = this.b;
                 v5Var4.k();
                 if (v5Var4.u0 != null && v5Var4.N) {
-                    org.telegram.messenger.w7.G(v5Var4.J).a0(v5Var4.u0.c, false, false);
+                    org.telegram.messenger.w7.G(v5Var4.J).Z(v5Var4.u0.c, false, false);
                 }
                 int i7 = v5Var4.O;
                 if (i7 <= 0) {

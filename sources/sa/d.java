@@ -59,14 +59,14 @@ import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.ta;
 import org.telegram.ui.Components.xf;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 import org.telegram.ui.fx;
 import pb.l;
 import s2.m;
 import s2.s;
 import s2.t;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class d implements SuccessContinuation, androidx.car.app.messaging.model.b, b7.e, q, eg.a, fg.a, j2.g, gh.a, p, u9.d, q5.b, fb, l1, q0, OnFailureListener, t, u4.c {
     public static d b;
@@ -183,7 +183,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ er0 N1() {
+    public /* synthetic */ fr0 N1() {
         return null;
     }
 

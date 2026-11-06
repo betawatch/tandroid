@@ -51,9 +51,9 @@ import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.qu0;
+import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements te.b, a6, s4 {
     public CharSequence A0;
@@ -121,7 +121,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
     public Runnable d1;
     public ImageView e;
     public View.OnClickListener e0;
-    public qu0 e1;
+    public ru0 e1;
     public l9 f;
     public String f0;
     public AnimatorSet f1;

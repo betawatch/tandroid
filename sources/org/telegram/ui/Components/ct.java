@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class ct extends EditText {
     public static Boolean W;
@@ -63,10 +63,10 @@ public abstract class ct extends EditText {
         boolean z9 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (uy0 uy0Var : (uy0[]) spannable.getSpans(0, spannable.length(), uy0.class)) {
-                int spanStart = spannable.getSpanStart(uy0Var);
-                int spanEnd = spannable.getSpanEnd(uy0Var);
-                if (uy0Var.c() && ((spanStart > (i7 = this.r) && spanEnd < this.s) || ((i7 > spanStart && i7 < spanEnd) || ((i10 = this.s) > spanStart && i10 < spanEnd)))) {
+            for (vy0 vy0Var : (vy0[]) spannable.getSpans(0, spannable.length(), vy0.class)) {
+                int spanStart = spannable.getSpanStart(vy0Var);
+                int spanEnd = spannable.getSpanEnd(vy0Var);
+                if (vy0Var.c() && ((spanStart > (i7 = this.r) && spanEnd < this.s) || ((i7 > spanStart && i7 < spanEnd) || ((i10 = this.s) > spanStart && i10 < spanEnd)))) {
                     removeCallbacks(atVar);
                     this.y = false;
                     z9 = true;
@@ -144,14 +144,14 @@ public abstract class ct extends EditText {
     public final void f() {
         Editable text = getText();
         if (text != null) {
-            for (uy0 uy0Var : (uy0[]) text.getSpans(0, text.length(), uy0.class)) {
-                if (uy0Var.c()) {
+            for (vy0 vy0Var : (vy0[]) text.getSpans(0, text.length(), vy0.class)) {
+                if (vy0Var.c()) {
                     boolean z9 = this.d;
-                    ty0 ty0Var = uy0Var.b;
+                    uy0 uy0Var = vy0Var.b;
                     if (z9) {
-                        ty0Var.a |= 512;
+                        uy0Var.a |= 512;
                     } else {
-                        ty0Var.a &= -513;
+                        uy0Var.a &= -513;
                     }
                 }
             }
@@ -282,13 +282,13 @@ public abstract class ct extends EditText {
         this.d = z9;
         Editable text = getText();
         if (text != null) {
-            for (uy0 uy0Var : (uy0[]) text.getSpans(0, text.length(), uy0.class)) {
-                if (uy0Var.c()) {
-                    ty0 ty0Var = uy0Var.b;
+            for (vy0 vy0Var : (vy0[]) text.getSpans(0, text.length(), vy0.class)) {
+                if (vy0Var.c()) {
+                    uy0 uy0Var = vy0Var.b;
                     if (z9) {
-                        ty0Var.a |= 512;
+                        uy0Var.a |= 512;
                     } else {
-                        ty0Var.a &= -513;
+                        uy0Var.a &= -513;
                     }
                 }
             }

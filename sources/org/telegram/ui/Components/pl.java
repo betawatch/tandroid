@@ -4,27 +4,27 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public abstract class pl extends org.telegram.ui.mq0 {
+public abstract class pl extends org.telegram.ui.nq0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public pl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int H() {
         return ChatAttachAlertPhotoLayout.s1.size();
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean O() {
         di diVar = this.a.b;
         return diVar != null && diVar.Z1;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int S(int i7) {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         org.telegram.messenger.gf e02 = this.a.e0(i7);
@@ -34,12 +34,12 @@ public abstract class pl extends org.telegram.ui.mq0 {
         return ChatAttachAlertPhotoLayout.t1.indexOf(Integer.valueOf(e02.C));
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final ArrayList c() {
         return ChatAttachAlertPhotoLayout.t1;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int k(int i7, org.telegram.messenger.j20 j20Var) {
         boolean z9;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
@@ -98,18 +98,18 @@ public abstract class pl extends org.telegram.ui.mq0 {
         return -1;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void m() {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         this.a.y0();
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final HashMap v() {
         return ChatAttachAlertPhotoLayout.s1;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean x(int i7) {
         boolean z9 = ChatAttachAlertPhotoLayout.q1;
         org.telegram.messenger.gf e02 = this.a.e0(i7);

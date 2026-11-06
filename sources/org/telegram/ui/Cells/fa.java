@@ -13,7 +13,7 @@ import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fa extends oj0 {
     public final Context c;
@@ -86,7 +86,7 @@ public final class fa extends oj0 {
                             hashMap.put(r10, themesHorizontalListCell$InnerThemeView.b);
                             org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(themesHorizontalListCell$InnerThemeView.b.E);
                             TLRPC.TL_theme tL_theme2 = themesHorizontalListCell$InnerThemeView.b.F;
-                            G.X(tL_theme2.document, tL_theme2, 1, 1);
+                            G.W(tL_theme2.document, tL_theme2, 1, 1);
                         }
                     }
                 } else {

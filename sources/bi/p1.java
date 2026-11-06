@@ -2,12 +2,12 @@ package bi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class p1 extends f41 {
+public final class p1 extends l41 {
     public final /* synthetic */ w1 P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class p1 extends f41 {
         this.P = w1Var;
     }
 
-    @Override // org.telegram.ui.Components.f41, v4.g0
+    @Override // org.telegram.ui.Components.l41, v4.g0
     public final void t(v4.d1 d1Var, int i7) {
         super.t(d1Var, i7);
         View view = d1Var.a;

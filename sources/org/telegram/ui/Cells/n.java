@@ -13,11 +13,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ty0;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Components.l9 a;
@@ -89,7 +89,7 @@ public final class n extends FrameLayout implements org.telegram.ui.ActionBar.a6
         StringBuilder m10 = com.google.android.recaptcha.internal.a.m(s5);
         m10.append(org.telegram.messenger.t3.K(chat, false));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(m10.toString());
-        spannableStringBuilder.setSpan(new v31("", (ty0) null), s5.length(), spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new b41("", (uy0) null), s5.length(), spannableStringBuilder.length(), 33);
         this.c.l(spannableStringBuilder, false);
         this.a.e(chat, w8Var);
         this.h = z9;

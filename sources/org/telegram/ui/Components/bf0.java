@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class bf0 {
     public int a;
@@ -14,7 +14,7 @@ public final class bf0 {
     public Drawable i;
     public Drawable j;
     public zg0 k;
-    public ly0 l;
+    public my0 l;
     public a80 r;
     public boolean s;
     public boolean t;
@@ -72,11 +72,11 @@ public final class bf0 {
     }
 
     public final void c(String str) {
-        ly0 ly0Var = new ly0(str, 11.0f, org.telegram.messenger.g0.o());
-        ly0Var.m(3);
+        my0 my0Var = new my0(str, 11.0f, org.telegram.messenger.g0.o());
+        my0Var.m(3);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        ly0Var.a();
-        this.l = ly0Var;
+        my0Var.a();
+        this.l = my0Var;
     }
 
     public final void d(int i7, int i10, int i11) {

@@ -10,12 +10,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements v10 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class d implements v10 {
 
     @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2) {
-        f41 f41Var;
+        l41 l41Var;
         String str;
         switch (this.a) {
             case 0:
@@ -85,7 +85,7 @@ public final /* synthetic */ class d implements v10 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(r31.k(((a3) this.b).Q1));
+                ((ArrayList) obj).add(x31.k(((a3) this.b).Q1));
                 break;
             case 6:
                 p3 p3Var = (p3) this.b;
@@ -111,8 +111,8 @@ public final /* synthetic */ class d implements v10 {
                     y5Var.R0 = true;
                     y5Var.S0 = password.has_password;
                     fi.w3 w3Var = y5Var.a;
-                    if (w3Var != null && (f41Var = w3Var.f3) != null) {
-                        f41Var.O(true);
+                    if (w3Var != null && (l41Var = w3Var.f3) != null) {
+                        l41Var.O(true);
                         break;
                     }
                 }

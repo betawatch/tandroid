@@ -14,15 +14,15 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.m50;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.af;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements c20 {
     public final /* synthetic */ int a;
@@ -202,7 +202,7 @@ public final /* synthetic */ class q3 implements c20 {
                 org.telegram.messenger.g0.h3(new bg.h0((m50) this.c, (org.telegram.ui.ActionBar.u1) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new bg.h0((g11) this.c, (TLRPC.ChannelParticipant) obj, (org.telegram.ui.ActionBar.z0) this.d, (k60) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.g));
+                org.telegram.messenger.g0.h3(new bg.h0((m11) this.c, (TLRPC.ChannelParticipant) obj, (org.telegram.ui.ActionBar.z0) this.d, (k60) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.g));
                 break;
         }
     }

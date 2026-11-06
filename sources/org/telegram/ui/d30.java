@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class d30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -139,8 +139,8 @@ public final class d30 extends AnimatorListenerAdapter {
                 }
                 break;
             case 11:
-                pp0 pp0Var = (pp0) obj;
-                PhotoViewer photoViewer2 = pp0Var.b;
+                qp0 qp0Var = (qp0) obj;
+                PhotoViewer photoViewer2 = qp0Var.b;
                 og.o oVar = photoViewer2.C1.b;
                 oVar.q();
                 CropAreaView cropAreaView = oVar.a;
@@ -149,7 +149,7 @@ public final class d30 extends AnimatorListenerAdapter {
                 cropAreaView.invalidate();
                 photoViewer2.C1.b.J = true;
                 photoViewer2.o6 = null;
-                photoViewer2.t4 = pp0Var.a;
+                photoViewer2.t4 = qp0Var.a;
                 photoViewer2.a1().L.b(photoViewer2.t4 != 0);
                 fi.q3 q3Var = photoViewer2.K1;
                 if (q3Var != null) {
@@ -168,11 +168,11 @@ public final class d30 extends AnimatorListenerAdapter {
                 photoViewer2.e0.invalidate();
                 break;
             case 12:
-                qp0 qp0Var = (qp0) obj;
-                PhotoViewer photoViewer3 = qp0Var.b;
+                rp0 rp0Var = (rp0) obj;
+                PhotoViewer photoViewer3 = rp0Var.b;
                 photoViewer3.I1.i0.setVisibility(0);
                 photoViewer3.o6 = null;
-                photoViewer3.t4 = qp0Var.a;
+                photoViewer3.t4 = rp0Var.a;
                 photoViewer3.a1().L.b(photoViewer3.t4 != 0);
                 fi.q3 q3Var2 = photoViewer3.K1;
                 if (q3Var2 != null) {
@@ -191,13 +191,13 @@ public final class d30 extends AnimatorListenerAdapter {
                 photoViewer3.e0.invalidate();
                 break;
             case 13:
-                ((PhotoViewer) ((up0) obj).q0).x3[0].setTag(null);
+                ((PhotoViewer) ((vp0) obj).q0).x3[0].setTag(null);
                 break;
             case 14:
-                ((vp0) obj).d.T1.k0 = 1.0f;
+                ((wp0) obj).d.T1.k0 = 1.0f;
                 break;
             case 15:
-                PhotoViewer photoViewer4 = ((vp0) obj).d;
+                PhotoViewer photoViewer4 = ((wp0) obj).d;
                 photoViewer4.T1.setVisibility(4);
                 photoViewer4.T1.k0 = 1.0f;
                 break;
@@ -205,25 +205,25 @@ public final class d30 extends AnimatorListenerAdapter {
                 org.telegram.messenger.g0.h3(new ef0(this, 23));
                 break;
             case 17:
-                mp0 mp0Var = (mp0) obj;
-                if (animator.equals(mp0Var.c.T7)) {
-                    mp0Var.c.T7 = null;
+                np0 np0Var = (np0) obj;
+                if (animator.equals(np0Var.c.T7)) {
+                    np0Var.c.T7 = null;
                     break;
                 }
                 break;
             case 18:
-                sq0 sq0Var = (sq0) obj;
-                if (sq0Var.e == animator) {
-                    sq0Var.c[1].setVisibility(8);
-                    sq0Var.e = null;
+                tq0 tq0Var = (tq0) obj;
+                if (tq0Var.e == animator) {
+                    tq0Var.c[1].setVisibility(8);
+                    tq0Var.e = null;
                     break;
                 }
                 break;
             case 19:
-                er0 er0Var = (er0) obj;
-                if (er0Var.C != null) {
-                    er0Var.C = null;
-                    er0Var.b();
+                fr0 fr0Var = (fr0) obj;
+                if (fr0Var.C != null) {
+                    fr0Var.C = null;
+                    fr0Var.b();
                     break;
                 }
                 break;
@@ -237,7 +237,7 @@ public final class d30 extends AnimatorListenerAdapter {
                 }
                 break;
             case 21:
-                ((cv0) obj).b.P5 = null;
+                ((dv0) obj).b.P5 = null;
                 break;
             case 22:
                 kw0 kw0Var = (kw0) obj;
@@ -289,7 +289,7 @@ public final class d30 extends AnimatorListenerAdapter {
                 q11Var2.d0.m(false);
                 org.telegram.messenger.qs.e().k(99, 512);
                 q11Var2.X1.e();
-                org.telegram.messenger.g0.h3(new qu0(org.telegram.messenger.qs.e(), 15));
+                org.telegram.messenger.g0.h3(new ru0(org.telegram.messenger.qs.e(), 15));
                 q11Var2.h();
                 q11Var2.E(1.0f);
                 for (int i10 = 0; i10 < o01Var2.getChildCount(); i10++) {
@@ -323,9 +323,9 @@ public final class d30 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 11:
-                pp0 pp0Var = (pp0) this.b;
-                pp0Var.b.U0.setVisibility(0);
-                pp0Var.b.C1.setVisibility(0);
+                qp0 qp0Var = (qp0) this.b;
+                qp0Var.b.U0.setVisibility(0);
+                qp0Var.b.C1.setVisibility(0);
                 break;
             case 12:
                 break;

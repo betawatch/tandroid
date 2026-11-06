@@ -39,7 +39,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class gd0 extends org.telegram.ui.Components.wt0 implements org.telegram.messenger.ls {
     public static final /* synthetic */ int v0 = 0;
@@ -497,7 +497,7 @@ public final class gd0 extends org.telegram.ui.Components.wt0 implements org.tel
                 }
                 h6.m.g(nb0Var);
                 if (i7 == 15) {
-                    this.y.setOnClickListener(new org.telegram.ui.Components.n41(26, this, context));
+                    this.y.setOnClickListener(new org.telegram.ui.Components.t41(26, this, context));
                     return;
                 }
                 return;
@@ -1314,7 +1314,7 @@ public final class gd0 extends org.telegram.ui.Components.wt0 implements org.tel
                 this.n.setMovementMethod(new org.telegram.messenger.c0(false));
                 spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                 spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.v31("tg://settings/change_number", (org.telegram.ui.Components.ty0) null), indexOf, lastIndexOf - 1, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.b41("tg://settings/change_number", (org.telegram.ui.Components.uy0) null), indexOf, lastIndexOf - 1, 33);
                 str = spannableStringBuilder;
             }
         } else {

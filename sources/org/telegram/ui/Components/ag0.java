@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.widget.Button;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ag0 extends Button {
     public final RectF a;
@@ -22,7 +22,7 @@ public final class ag0 extends Button {
         setTextSize(1, 14.0f);
         setTypeface(org.telegram.messenger.g0.o());
         setOutlineProvider(null);
-        c8.ra.a(this, 8.0f, 0.0f, 8.0f, 0.0f);
+        c8.sa.a(this, 8.0f, 0.0f, 8.0f, 0.0f);
         int L = org.telegram.messenger.g0.L(60.0f);
         setMinWidth(L);
         setMinimumWidth(L);

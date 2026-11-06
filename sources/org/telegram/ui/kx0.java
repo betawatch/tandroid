@@ -10,11 +10,11 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class kx0 extends FrameLayout implements org.telegram.messenger.ls {
     public final ei.a a;
-    public final org.telegram.ui.Components.o61 b;
+    public final org.telegram.ui.Components.u61 b;
     public final di.m6 c;
     public final jx0 d;
     public int e;
@@ -23,14 +23,14 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
     public float n;
     public boolean r;
     public final Rect s;
-    public final qu0 w;
+    public final ru0 w;
 
     public kx0(Context context, di.m6 m6Var, final org.telegram.ui.Components.xp0 xp0Var) {
         super(context);
         this.s = new Rect();
         this.c = m6Var;
         Objects.requireNonNull(m6Var);
-        this.w = new qu0(m6Var, 8);
+        this.w = new ru0(m6Var, 8);
         final org.telegram.ui.Components.yp0 yp0Var = (org.telegram.ui.Components.yp0) this;
         ei.a aVar = new ei.a(yp0Var, context, xp0Var, 1);
         this.a = aVar;
@@ -40,7 +40,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
         jx0Var.a = m6Var.a();
         aVar.setAdapter(jx0Var);
         aVar.setTranslationY(org.telegram.messenger.g0.L(42.0f));
-        org.telegram.ui.Components.o61 n10 = aVar.n(10, true);
+        org.telegram.ui.Components.u61 n10 = aVar.n(10, true);
         this.b = n10;
         n10.g(org.telegram.ui.ActionBar.k6.ui, org.telegram.ui.ActionBar.k6.G6, org.telegram.ui.ActionBar.k6.si, org.telegram.ui.ActionBar.k6.vi, org.telegram.ui.ActionBar.k6.s8);
         n10.r = 12;
@@ -319,8 +319,8 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
     }
 
     public final void a() {
-        org.telegram.ui.Components.o61 o61Var = this.b;
-        int currentTabId = o61Var != null ? o61Var.getCurrentTabId() : 0;
+        org.telegram.ui.Components.u61 u61Var = this.b;
+        int currentTabId = u61Var != null ? u61Var.getCurrentTabId() : 0;
         di.m6 m6Var = this.c;
         boolean a10 = m6Var.a();
         jx0 jx0Var = this.d;
@@ -336,10 +336,10 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
             }
             return;
         }
-        if (o61Var == null || currentTabId <= 0 || m6Var.b(currentTabId) != null) {
+        if (u61Var == null || currentTabId <= 0 || m6Var.b(currentTabId) != null) {
             return;
         }
-        o61Var.d(0, 0);
+        u61Var.d(0, 0);
     }
 
     public abstract void b();
@@ -430,8 +430,8 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
             return;
         }
         this.f = z9;
-        org.telegram.ui.Components.o61 o61Var = this.b;
-        o61Var.setReordering(z9);
+        org.telegram.ui.Components.u61 u61Var = this.b;
+        u61Var.setReordering(z9);
         boolean z10 = this.f;
         org.telegram.ui.Components.yp0 yp0Var = (org.telegram.ui.Components.yp0) this;
         org.telegram.ui.Components.xs0 xs0Var = yp0Var.x;
@@ -454,11 +454,11 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
         di.m6 m6Var = this.c;
         m6Var.e();
         m6Var.f(false);
-        int currentPosition = o61Var.getCurrentPosition();
+        int currentPosition = u61Var.getCurrentPosition();
         jx0 jx0Var = this.d;
         int f10 = jx0Var.f(currentPosition);
         this.a.o(true);
         int i7 = jx0Var.i(f10);
-        o61Var.e(0.0f, i7, i7);
+        u61Var.e(0.0f, i7, i7);
     }
 }

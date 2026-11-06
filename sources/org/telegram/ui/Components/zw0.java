@@ -1,14 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
-/* loaded from: classes3.dex */
-public final class zw0 {
-    public final fx0 a;
-    public final hx0 b;
-    public boolean c = true;
+import org.telegram.tgnet.TLObject;
 
-    public zw0(fx0 fx0Var, hx0 hx0Var) {
-        this.a = fx0Var;
-        this.b = hx0Var;
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
+/* loaded from: classes3.dex */
+public final class zw0 extends dx0 {
+    public int d;
+
+    @Override // org.telegram.ui.Components.dx0
+    public final int a(mx0 mx0Var, fx0 fx0Var, yw0 yw0Var, int i7, boolean z9) {
+        return Math.max(0, this.a - yw0Var.a(fx0Var, i7));
+    }
+
+    @Override // org.telegram.ui.Components.dx0
+    public final void b(int i7, int i10) {
+        super.b(i7, i10);
+        this.d = Math.max(this.d, i7 + i10);
+    }
+
+    @Override // org.telegram.ui.Components.dx0
+    public final void c() {
+        super.c();
+        this.d = TLObject.FLAG_31;
+    }
+
+    @Override // org.telegram.ui.Components.dx0
+    public final int d(boolean z9) {
+        return Math.max(super.d(z9), this.d);
     }
 }

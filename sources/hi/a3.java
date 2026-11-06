@@ -63,14 +63,14 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
-import org.telegram.ui.fq0;
+import org.telegram.ui.gq0;
 import org.telegram.ui.s51;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3 {
     public static final HashSet a1 = new HashSet();
@@ -1297,7 +1297,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             i7 = -1;
         } else {
             k60 J = G.J();
-            J.c(R.drawable.msg_arrow_back, hd.M0(2131753756, null), new fq0(G, 27), false);
+            J.c(R.drawable.msg_arrow_back, hd.M0(2131753756, null), new gq0(G, 27), false);
             J.k();
             int size2 = arrayList3.size();
             int i13 = 0;
@@ -1432,7 +1432,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (h2Var != null) {
             String p11 = objArr != false ? q4Var.e : t10.p(a22);
             Object[] objArr2 = a22 != null && a22.verified;
-            h2Var.T = new ly0(p11, 13.0f, org.telegram.messenger.g0.o());
+            h2Var.T = new my0(p11, 13.0f, org.telegram.messenger.g0.o());
             if (objArr2 == true) {
                 h2Var.U = h2Var.getContext().getResources().getDrawable(R.drawable.verified_area).mutate();
                 h2Var.V = h2Var.getContext().getResources().getDrawable(R.drawable.verified_check).mutate();
@@ -1509,7 +1509,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
                     }
                     if (user2 != null && user2.photo != null) {
                         w7.G(this.H);
-                        if (!w7.K(user2.photo.photo_small, null, true, true).exists()) {
+                        if (!w7.J(user2.photo.photo_small, null, true, true).exists()) {
                             ui.b0(this.H).l1(hc.l(this.H, 1, user2), 0);
                         }
                     }

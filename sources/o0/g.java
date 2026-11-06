@@ -6,14 +6,14 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Trace;
-import c8.ge;
+import c8.he;
 import c8.j0;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -54,7 +54,7 @@ public abstract class g {
         int i10;
         Typeface b10;
         a0.j jVar = a;
-        ge.a("getFontSync");
+        he.a("getFontSync");
         try {
             typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
@@ -78,7 +78,7 @@ public abstract class g {
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
                     j0 j0Var = i0.e.a;
-                    ge.a("TypefaceCompat.createFromFontInfo");
+                    he.a("TypefaceCompat.createFromFontInfo");
                     b10 = i0.e.a.b(context, hVarArr, i7);
                     Trace.endSection();
                     if (b10 != null) {
@@ -88,7 +88,7 @@ public abstract class g {
                     return new f(b10);
                 }
                 j0 j0Var2 = i0.e.a;
-                ge.a("TypefaceCompat.createFromFontInfoWithFallback");
+                he.a("TypefaceCompat.createFromFontInfoWithFallback");
                 b10 = i0.e.a.c(context, list2, i7);
                 Trace.endSection();
                 if (b10 != null) {

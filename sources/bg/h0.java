@@ -22,13 +22,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.z0;
-import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.m50;
 import org.telegram.ui.an;
 import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -93,9 +93,9 @@ public final /* synthetic */ class h0 implements Runnable {
                         z9 = true;
                     } else {
                         w7.G(anVar2.getCurrentAccount());
-                        File K = w7.K(w10, null, true, true);
+                        File J = w7.J(w10, null, true, true);
                         w7.G(anVar2.getCurrentAccount());
-                        w7.K(fileLocationArr2[0], null, true, true).renameTo(K);
+                        w7.J(fileLocationArr2[0], null, true, true).renameTo(J);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(fileLocationArr2[0].volume_id);
                         sb2.append("_");
@@ -110,12 +110,12 @@ public final /* synthetic */ class h0 implements Runnable {
                     }
                     if (x10 != null && str != null) {
                         w7.G(anVar.getCurrentAccount());
-                        new File(str).renameTo(w7.K(x10, "mp4", z9, z9));
+                        new File(str).renameTo(w7.J(x10, "mp4", z9, z9));
                     } else if (w11 != null && fileLocationArr[0] != null) {
                         w7.G(anVar.getCurrentAccount());
-                        File K2 = w7.K(w11, null, true, true);
+                        File J2 = w7.J(w11, null, true, true);
                         w7.G(anVar.getCurrentAccount());
-                        w7.K(fileLocationArr[0], null, true, true).renameTo(K2);
+                        w7.J(fileLocationArr[0], null, true, true).renameTo(J2);
                     }
                     anVar.getMessagesController().U0(a22.id);
                     ArrayList arrayList2 = new ArrayList();
@@ -138,7 +138,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 m50.M0((Context) obj6, m50Var.a, -j3, ((TLRPC.TL_chatInviteExported) obj4).subscription_pricing, (TLRPC.TL_chatInviteImporter) obj3, (TLRPC.ChannelParticipant) obj, m50Var.I0);
                 break;
             case 3:
-                final g11 g11Var = (g11) obj5;
+                final m11 m11Var = (m11) obj5;
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj2;
                 z0 z0Var = (z0) obj6;
                 final k60 k60Var = (k60) obj4;
@@ -148,11 +148,11 @@ public final /* synthetic */ class h0 implements Runnable {
                 z0Var.setVisibility(0);
                 z0Var.setText(hd.M0(z10 ? 2131743913 : 2131753726, null));
                 final long j10 = this.b;
-                z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.s01
+                z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.x01
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        g11 g11Var2 = g11.this;
-                        int i10 = g11Var2.e;
+                        m11 m11Var2 = m11.this;
+                        int i10 = m11Var2.e;
                         k60Var.u();
                         boolean z11 = z10;
                         TLRPC.User user2 = user;
@@ -164,7 +164,7 @@ public final /* synthetic */ class h0 implements Runnable {
                         tL_channels_editBanned.participant = org.telegram.messenger.qp.n1(user2);
                         tL_channels_editBanned.channel = org.telegram.messenger.qp.i1(chat);
                         tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new x1(g11Var2, 14));
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new x1(m11Var2, 14));
                     }
                 });
                 break;
@@ -209,8 +209,8 @@ public final /* synthetic */ class h0 implements Runnable {
         this.n = channelParticipant;
     }
 
-    public /* synthetic */ h0(g11 g11Var, TLRPC.ChannelParticipant channelParticipant, z0 z0Var, k60 k60Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
-        this.d = g11Var;
+    public /* synthetic */ h0(m11 m11Var, TLRPC.ChannelParticipant channelParticipant, z0 z0Var, k60 k60Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = m11Var;
         this.e = channelParticipant;
         this.c = z0Var;
         this.f = k60Var;

@@ -1,10 +1,10 @@
 package m1;
 
-import c8.lb;
+import c8.mb;
 import java.io.FileOutputStream;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class k0 extends d0 {
     /* JADX WARN: Removed duplicated region for block: B:26:0x0037  */
@@ -62,13 +62,13 @@ public final class k0 extends d0 {
                         try {
                             throw th;
                         } catch (Throwable th4) {
-                            lb.a(fileOutputStream, th);
+                            mb.a(fileOutputStream, th);
                             throw th4;
                         }
                     }
                 }
                 fileOutputStream2.getFD().sync();
-                lb.a(fileOutputStream, null);
+                mb.a(fileOutputStream, null);
                 return kVar;
             }
         }
@@ -80,7 +80,7 @@ public final class k0 extends d0 {
         if (i7 != 0) {
         }
         fileOutputStream2.getFD().sync();
-        lb.a(fileOutputStream, null);
+        mb.a(fileOutputStream, null);
         return kVar2;
     }
 }

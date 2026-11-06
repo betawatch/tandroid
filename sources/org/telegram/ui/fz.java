@@ -5,20 +5,20 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fz extends ReplacementSpan {
     public final org.telegram.ui.ActionBar.f6 a;
     public final Paint b;
     public final int c;
-    public final org.telegram.ui.Components.ly0 d;
+    public final org.telegram.ui.Components.my0 d;
 
     public fz(String str, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         Paint paint = new Paint(1);
         this.b = paint;
         this.a = f6Var;
         this.c = i7;
-        this.d = new org.telegram.ui.Components.ly0(str, 9.33f, org.telegram.messenger.g0.o());
+        this.d = new org.telegram.ui.Components.my0(str, 9.33f, org.telegram.messenger.g0.o());
         paint.setStyle(Paint.Style.FILL);
     }
 

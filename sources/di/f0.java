@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import c8.sa;
+import c8.ua;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.hd;
@@ -15,10 +15,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.ha0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements bj0 {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class f0 implements bj0 {
                 c20 c20Var = (c20) obj2;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj;
                 if (!(view instanceof org.telegram.ui.Cells.g7)) {
-                    r31 G = w6Var.h2.G(i7 - 1);
+                    x31 G = w6Var.h2.G(i7 - 1);
                     if (G != null && G.d == 1) {
                         new fi.w6(w6Var.getContext(), true, w6Var, c20Var, f6Var).show();
                         break;
@@ -97,7 +97,7 @@ public final /* synthetic */ class f0 implements bj0 {
                             if (!TextUtils.isEmpty(S0)) {
                                 w6Var.Y1 = message;
                                 org.telegram.messenger.z5.q(w6Var.a).a(S0, message, w6Var);
-                                org.telegram.messenger.w7.G(w6Var.a).X(message.F0(), message, 1, 0);
+                                org.telegram.messenger.w7.G(w6Var.a).W(message.F0(), message, 1, 0);
                                 break;
                             }
                         }
@@ -110,7 +110,7 @@ public final /* synthetic */ class f0 implements bj0 {
                 fi.y5 y5Var = (fi.y5) obj;
                 org.telegram.ui.Cells.k3 k3Var = m7Var.R1;
                 org.telegram.ui.Cells.k3 k3Var2 = m7Var.Q1;
-                r31 G2 = m7Var.P1.G(i7 - 1);
+                x31 G2 = m7Var.P1.G(i7 - 1);
                 if (G2 != null) {
                     if (G2.H(fi.k7.class) && (webPage = m7Var.Y1) != null && !fi.m7.g1(webPage)) {
                         tg.i2 i2Var = new tg.i2(context, m7Var.a);
@@ -157,11 +157,11 @@ public final /* synthetic */ class f0 implements bj0 {
                 if (w80Var.e && !p10.o()) {
                     f2Var.showDialog(new ug.w0(f2Var, 10, true));
                     break;
-                } else if (!sa.a(w80Var)) {
+                } else if (!ua.a(w80Var)) {
                     org.telegram.ui.Cells.p pVar = new org.telegram.ui.Cells.p(context2);
                     pVar.a = i7;
                     tVar.f3.w0(pVar);
-                    sa.b(w80Var);
+                    ua.b(w80Var);
                     int i12 = org.telegram.ui.Cells.s.h;
                     sVar.b(true, true);
                     for (int i13 = 0; i13 < tVar.getChildCount(); i13++) {

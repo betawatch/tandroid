@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class dd implements Runnable {
                 vf.c.t(zdVar.getContext(), org.telegram.messenger.hd.M0(2131748369, null));
                 break;
             case 2:
-                org.telegram.ui.Components.k41 k41Var = zdVar.X0;
-                if (k41Var != null) {
+                org.telegram.ui.Components.q41 q41Var = zdVar.X0;
+                if (q41Var != null) {
                     boolean z9 = zdVar.e0;
-                    k41Var.f3.O((zdVar.R0 != -1) == zdVar.a1.a());
+                    q41Var.f3.O((zdVar.R0 != -1) == zdVar.a1.a());
                     if (z9 && zdVar.R0 != -1) {
                         zdVar.a();
                         break;

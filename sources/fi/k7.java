@@ -5,27 +5,27 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class k7 extends q31 {
+public final class k7 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new k7());
+        w31.h(new k7());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         l7 l7Var = (l7) view;
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = r31Var.D;
+        View.OnClickListener onClickListener = x31Var.D;
         org.telegram.ui.Components.j6 j6Var = l7Var.e;
         org.telegram.ui.Components.j6 j6Var2 = l7Var.d;
         ImageView imageView = l7Var.c;
@@ -47,7 +47,7 @@ public final class k7 extends q31 {
         l7Var.f.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new l7(context);
     }

@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e4 extends org.telegram.ui.Components.oj0 {
     public TLRPC.WebPage E;
@@ -37,7 +37,7 @@ public final class e4 extends org.telegram.ui.Components.oj0 {
     public final HashMap x = new HashMap();
     public final ArrayList y = new ArrayList();
     public final HashMap D = new HashMap();
-    public final fq0 L = new fq0(this, 11);
+    public final gq0 L = new gq0(this, 11);
 
     public e4(g4 g4Var, Context context, boolean z9) {
         this.M = g4Var;
@@ -327,9 +327,9 @@ public final class e4 extends org.telegram.ui.Components.oj0 {
                                 p1Var4.loadDataWithBaseURL("https://telegram.org/embed", str, "text/html", "UTF-8", null);
                                 q1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.f71 f71Var = q1Var.b;
-                            if (f71Var != null) {
-                                f71Var.setVisibility(4);
+                            org.telegram.ui.Components.l71 l71Var = q1Var.b;
+                            if (l71Var != null) {
+                                l71Var.setVisibility(4);
                                 q1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -341,9 +341,9 @@ public final class e4 extends org.telegram.ui.Components.oj0 {
                                     q1Var.a.stopLoading();
                                     q1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.f71 f71Var2 = q1Var.b;
-                                if (f71Var2 != null) {
-                                    f71Var2.setVisibility(0);
+                                org.telegram.ui.Components.l71 l71Var2 = q1Var.b;
+                                if (l71Var2 != null) {
+                                    l71Var2.setVisibility(0);
                                 }
                             } else {
                                 p1 p1Var6 = q1Var.a;
@@ -353,9 +353,9 @@ public final class e4 extends org.telegram.ui.Components.oj0 {
                                     hashMap.put("Referer", org.telegram.messenger.t0.b.getPackageName());
                                     q1Var.a.loadUrl(q1Var.w.url, hashMap);
                                 }
-                                org.telegram.ui.Components.f71 f71Var3 = q1Var.b;
-                                if (f71Var3 != null) {
-                                    f71Var3.setVisibility(4);
+                                org.telegram.ui.Components.l71 l71Var3 = q1Var.b;
+                                if (l71Var3 != null) {
+                                    l71Var3.setVisibility(4);
                                     q1Var.b.g(null, null, null, null, false);
                                 }
                             }

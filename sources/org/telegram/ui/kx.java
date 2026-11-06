@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class kx extends org.telegram.ui.Components.k41 {
+public final class kx extends org.telegram.ui.Components.q41 {
     public final /* synthetic */ int m3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,7 +18,7 @@ public final class kx extends org.telegram.ui.Components.k41 {
     public Integer V0(int i7) {
         switch (this.m3) {
             case 0:
-                org.telegram.ui.Components.r31 G = this.f3.G(i7);
+                org.telegram.ui.Components.x31 G = this.f3.G(i7);
                 if (G == null || G.d != 2) {
                     return super.V0(i7);
                 }

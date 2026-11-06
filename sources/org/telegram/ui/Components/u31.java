@@ -4,52 +4,53 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class u31 extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final ty0 e;
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public u31(CharSequence charSequence, int i7, int i10, byte b10, ty0 ty0Var) {
-        this.a = charSequence;
-        this.b = i7;
-        this.c = i10;
-        this.d = b10;
-        this.e = ty0Var;
+    public u31(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.iz.W0 - 1));
-        byte b10 = this.d;
-        if (b10 == 2) {
-            textPaint.setColor(-1);
-        } else if (b10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Tc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Sc, false));
+        int i7 = this.c;
+        if (i7 >= 0) {
+            this.b = org.telegram.ui.ActionBar.k6.v0(i7);
         }
-        ty0 ty0Var = this.e;
-        if (ty0Var != null) {
-            ty0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
+        int i10 = this.b;
+        if (i10 != 0) {
+            textPaint.setColor(i10);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
     @Override // android.text.style.MetricAffectingSpan
     public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.g0.L(org.telegram.messenger.iz.W0 - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        ty0 ty0Var = this.e;
-        if (ty0Var != null) {
-            ty0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    public u31() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public u31(Typeface typeface, int i7) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i7;
     }
 }

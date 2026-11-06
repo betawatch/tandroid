@@ -71,14 +71,14 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.r2;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -353,9 +353,9 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 19:
                 c1 c1Var = (c1) this.b;
-                r31 r31Var = (r31) this.c;
+                x31 x31Var = (x31) this.c;
                 c1Var.getClass();
-                c1Var.c0(r31Var.d);
+                c1Var.c0(x31Var.d);
                 return;
             case 20:
                 yr yrVar = (yr) this.b;
@@ -536,7 +536,7 @@ public final /* synthetic */ class b implements Runnable {
                 while (i13 < size) {
                     Object obj2 = arrayList8.get(i13);
                     i13++;
-                    ((n51) ((w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((t51) ((w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 25:
@@ -569,9 +569,9 @@ public final /* synthetic */ class b implements Runnable {
                 vVar.U1.set(richMessage);
                 dVar.i(hd.M0(2131754061, null), true, true);
                 vVar.d1();
-                f41 f41Var = vVar.R1;
-                if (f41Var != null) {
-                    f41Var.O(true);
+                l41 l41Var = vVar.R1;
+                if (l41Var != null) {
+                    l41Var.O(true);
                     return;
                 }
                 return;

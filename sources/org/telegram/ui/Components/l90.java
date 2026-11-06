@@ -17,7 +17,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l90 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -72,11 +72,11 @@ public final class l90 extends FrameLayout implements org.telegram.messenger.ls,
         if (arrayList.size() > 1) {
             SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(i10 == 0 ? org.telegram.messenger.hd.G(arrayList.size(), "MessageContainsEmojiPacks", new Object[0]) : org.telegram.messenger.hd.G(arrayList.size(), "MessageContainsReactionsPacks", new Object[0]));
             this.n = X2;
-            o31[] o31VarArr = (o31[]) X2.getSpans(0, X2.length(), o31.class);
-            for (int i13 = 0; o31VarArr != null && i13 < o31VarArr.length; i13++) {
-                int spanStart = X2.getSpanStart(o31VarArr[i13]);
-                int spanEnd = X2.getSpanEnd(o31VarArr[i13]);
-                X2.removeSpan(o31VarArr[i13]);
+            u31[] u31VarArr = (u31[]) X2.getSpans(0, X2.length(), u31.class);
+            for (int i13 = 0; u31VarArr != null && i13 < u31VarArr.length; i13++) {
+                int spanStart = X2.getSpanStart(u31VarArr[i13]);
+                int spanEnd = X2.getSpanEnd(u31VarArr[i13]);
+                X2.removeSpan(u31VarArr[i13]);
                 X2.setSpan(new li.w5(this, i12), spanStart, spanEnd, 33);
             }
             return;

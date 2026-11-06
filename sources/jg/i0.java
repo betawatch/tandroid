@@ -8,17 +8,17 @@ import org.telegram.ui.Components.ez;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.o61;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.z01;
 import org.telegram.ui.Components.zy;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.nw;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.b0 {
     public final /* synthetic */ int I;
@@ -43,7 +43,7 @@ public final class i0 extends v4.b0 {
                 break;
             case 8:
                 super.S(v0Var, a1Var, dVar);
-                if (((o61) this.J).V) {
+                if (((u61) this.J).V) {
                     dVar.p(false);
                     break;
                 }
@@ -58,13 +58,13 @@ public final class i0 extends v4.b0 {
     public int W0(v4.a1 a1Var) {
         switch (this.I) {
             case 6:
-                if (!((k41) this.J).h3) {
+                if (!((q41) this.J).h3) {
                     break;
                 } else {
                     break;
                 }
             case 7:
-                if (!((u01) this.J).h3) {
+                if (!((z01) this.J).h3) {
                     break;
                 } else {
                     break;
@@ -195,9 +195,9 @@ public final class i0 extends v4.b0 {
                 w0(zyVar);
                 break;
             case 8:
-                j61 j61Var = new j61(this, recyclerView.getContext());
-                j61Var.a = i7;
-                w0(j61Var);
+                p61 p61Var = new p61(this, recyclerView.getContext());
+                p61Var.a = i7;
+                w0(p61Var);
                 break;
             default:
                 super.v0(recyclerView, a1Var, i7);
@@ -246,9 +246,9 @@ public final class i0 extends v4.b0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(k41 k41Var, int i7) {
+    public i0(q41 q41Var, int i7) {
         super(i7, false);
         this.I = 6;
-        this.J = k41Var;
+        this.J = q41Var;
     }
 }

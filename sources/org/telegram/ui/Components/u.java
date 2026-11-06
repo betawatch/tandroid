@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj0, db0, eb0, fb0, te.d, org.telegram.messenger.lc, t4, r0.m, wh.a, t0.e, dj0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.o5, di.l9, org.telegram.ui.ActionBar.m0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class u implements org.telegram.ui.ActionBar.r1, cj
         boolean z9;
         ArrayList arrayList;
         i0 i0Var = (i0) this.b;
-        r31 G = i0Var.P1.G(i7 - 1);
+        x31 G = i0Var.P1.G(i7 - 1);
         if (G == null) {
             return;
         }

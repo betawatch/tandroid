@@ -20,11 +20,11 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class zd extends View {
     public LinearGradient D;
@@ -35,7 +35,7 @@ public abstract class zd extends View {
     public final org.telegram.ui.Components.i6 I;
     public final wp[] J;
     public final Paint K;
-    public final ly0 L;
+    public final my0 L;
     public final org.telegram.ui.Components.w5 M;
     public final org.telegram.ui.Components.w5 N;
     public boolean O;
@@ -96,7 +96,7 @@ public abstract class zd extends View {
         this.J = new wp[1];
         Paint paint = new Paint(1);
         this.K = paint;
-        this.L = new ly0(org.telegram.messenger.hd.M0(2131745038, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        this.L = new my0(org.telegram.messenger.hd.M0(2131745038, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
         xq xqVar = xq.h;
         this.M = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
         this.N = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
@@ -247,7 +247,7 @@ public abstract class zd extends View {
         long j3 = this.P;
         org.telegram.ui.Components.w5 w5Var2 = this.N;
         org.telegram.ui.Components.w5 w5Var3 = this.M;
-        ly0 ly0Var = this.L;
+        my0 my0Var = this.L;
         Paint paint5 = this.K;
         if (j3 == -1 || b((int) j3) >= 1.0f || b((int) this.P) <= 0.0f) {
             paint = paint4;
@@ -262,7 +262,7 @@ public abstract class zd extends View {
             float L3 = rectF2.left + org.telegram.messenger.g0.L(12.0f) + (Utilities.l(b((int) this.P)) * (rectF2.width() - org.telegram.messenger.g0.L(24.0f)));
             float d = w5Var3.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(14.0f)));
             float W1 = org.telegram.messenger.g0.W1(w5Var2.d(Math.abs((rectF3.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L3) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
-            float f16 = (L3 + ly0Var.c) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L3 - W1) - ly0Var.c : L3 + W1;
+            float f16 = (L3 + my0Var.c) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L3 - W1) - my0Var.c : L3 + W1;
             paint5.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
             paint5.setColor(org.telegram.ui.ActionBar.k6.r1(0.6f, f14));
             paint = paint4;
@@ -287,7 +287,7 @@ public abstract class zd extends View {
             float L4 = rectF2.left + org.telegram.messenger.g0.L(12.0f) + (Utilities.l(b((int) this.P)) * (rectF2.width() - org.telegram.messenger.g0.L(24.0f)));
             float d2 = w5Var3.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(14.0f)));
             float W12 = org.telegram.messenger.g0.W1(w5Var.d(Math.abs((rectF.right - ((float) org.telegram.messenger.g0.L(10.0f))) - L4) < ((float) org.telegram.messenger.g0.L(12.0f))), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(16.0f));
-            float f17 = (ly0Var.c + L4) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L4 - W12) - ly0Var.c : W12 + L4;
+            float f17 = (my0Var.c + L4) + ((float) (org.telegram.messenger.g0.L(16.0f) * 2)) > rectF2.right ? (L4 - W12) - my0Var.c : W12 + L4;
             paint2.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
             paint2.setColor(org.telegram.ui.ActionBar.k6.r1(0.4f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.a)));
             i10 = i7;

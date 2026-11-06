@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class z31 extends org.telegram.ui.Components.p61 {
+public final class z31 extends org.telegram.ui.Components.v61 {
     public boolean V;
     public final /* synthetic */ c51 W;
 
@@ -52,24 +52,24 @@ public final class z31 extends org.telegram.ui.Components.p61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.v61, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         return !this.V && super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.View
+    @Override // org.telegram.ui.Components.v61, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         return !this.V && B(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void u() {
         c51 c51Var = this.W;
         c51Var.p0(c51Var.h0.getCurrentPosition(), true);
         c51Var.q0(false, 0.0f);
     }
 
-    @Override // org.telegram.ui.Components.p61
+    @Override // org.telegram.ui.Components.v61
     public final void w(boolean z9) {
         c51 c51Var = this.W;
         float positionAnimated = c51Var.h0.getPositionAnimated();

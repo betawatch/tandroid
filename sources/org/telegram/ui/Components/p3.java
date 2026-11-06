@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p3 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final class p3 extends LinearLayout {
         switch (this.a) {
             case 0:
                 int i7 = org.telegram.ui.ActionBar.k6.G6;
-                ((ly0) this.c).c((getWidth() - ((ly0) this.c).c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.k6.x0(null, i7, false), canvas);
+                ((my0) this.c).c((getWidth() - ((my0) this.c).c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.k6.x0(null, i7, false), canvas);
                 if (!org.telegram.messenger.hd.c0) {
                     boolean z9 = ((o3) this.e).getValue() % 24 < 12;
-                    if (this.b != z9 || ((ly0) this.d) == null) {
+                    if (this.b != z9 || ((my0) this.d) == null) {
                         this.b = z9;
-                        this.d = new ly0(z9 ? "AM" : "PM", 18.0f, null);
+                        this.d = new my0(z9 ? "AM" : "PM", 18.0f, null);
                     }
-                    ((ly0) this.d).c((getWidth() / 2.0f) + org.telegram.messenger.g0.L(43.0f), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(1.0f), 1.0f, org.telegram.ui.ActionBar.k6.x0(null, i7, false), canvas);
+                    ((my0) this.d).c((getWidth() / 2.0f) + org.telegram.messenger.g0.L(43.0f), (getHeight() / 2.0f) + org.telegram.messenger.g0.L(1.0f), 1.0f, org.telegram.ui.ActionBar.k6.x0(null, i7, false), canvas);
                 }
                 super.dispatchDraw(canvas);
                 break;
@@ -223,6 +223,6 @@ public final class p3 extends LinearLayout {
         super(context);
         this.a = 0;
         this.e = o3Var;
-        this.c = new ly0(":", 18.0f, null);
+        this.c = new my0(":", 18.0f, null);
     }
 }

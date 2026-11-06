@@ -24,12 +24,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class r extends m {
     public static final int[] P1 = {21600, 43200, 86400, 172800};
@@ -79,10 +79,10 @@ public abstract class r extends m {
     public final RectF t1;
     public final RectF u1;
     public final Path v1;
-    public ly0 w1;
+    public my0 w1;
     public Path x1;
     public Paint y1;
-    public ly0 z1;
+    public my0 z1;
 
     public r(Context context, FrameLayout frameLayout, rt0 rt0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.y9 y9Var) {
         super(context, frameLayout, rt0Var, frameLayout2, bVar, y9Var);
@@ -452,7 +452,7 @@ public abstract class r extends m {
             }
             if (f12 > 0.0f) {
                 if (this.w1 == null) {
-                    this.w1 = new ly0(hd.M0(2131745314, null), 15.0f, null);
+                    this.w1 = new my0(hd.M0(2131745314, null), 15.0f, null);
                 }
                 if (this.x1 == null) {
                     Path path = new Path();
@@ -484,7 +484,7 @@ public abstract class r extends m {
             }
             if (d2 > 0.0f) {
                 if (this.z1 == null) {
-                    this.z1 = new ly0(hd.M0(2131752570, str), f13, org.telegram.messenger.g0.o());
+                    this.z1 = new my0(hd.M0(2131752570, str), f13, org.telegram.messenger.g0.o());
                 }
                 this.z1.p = (int) ((rectF.width() - org.telegram.messenger.g0.L(116.0f)) - i6Var.c());
                 float width = ((rectF.width() / 4.0f) * f14) + (rectF.centerX() - (this.z1.k() / 2.0f));

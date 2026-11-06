@@ -4,13 +4,13 @@ import bi.ud;
 import java.util.Collections;
 import org.telegram.messenger.a8;
 import org.telegram.ui.Components.ex;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.qt;
 import zh.f2;
 import zh.h1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -63,9 +63,9 @@ public final /* synthetic */ class p implements Runnable {
                 ((zh.c0) this.b).onBackPressed();
                 break;
             case 7:
-                f41 f41Var = ((h1) this.b).Q1;
-                if (f41Var != null) {
-                    f41Var.O(false);
+                l41 l41Var = ((h1) this.b).Q1;
+                if (l41Var != null) {
+                    l41Var.O(false);
                     break;
                 }
                 break;

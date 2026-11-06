@@ -11,16 +11,16 @@ import android.os.Bundle;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
-import c8.fe;
-import c8.uc;
+import c8.ge;
 import c8.vc;
+import c8.wc;
 import kotlin.jvm.internal.j;
 import v0.c;
 import v0.o;
 import w0.d;
 import w0.i;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -30,7 +30,7 @@ public abstract class a {
         }
         String type = createCredentialException.getType();
         j.d(type, "getType(...)");
-        return fe.a(createCredentialException.getMessage(), type);
+        return ge.a(createCredentialException.getMessage(), type);
     }
 
     public static c b(String str, Intent intent) {
@@ -40,7 +40,7 @@ public abstract class a {
         }
         Bundle data = createCredentialResponse.getData();
         j.d(data, "getData(...)");
-        return uc.a(str, data);
+        return vc.a(str, data);
     }
 
     public static i c(Intent intent) {
@@ -51,7 +51,7 @@ public abstract class a {
         }
         String type = getCredentialException.getType();
         j.d(type, "getType(...)");
-        return fe.b(getCredentialException.getMessage(), type);
+        return ge.b(getCredentialException.getMessage(), type);
     }
 
     public static o d(Intent intent) {
@@ -66,7 +66,7 @@ public abstract class a {
         j.d(type, "getType(...)");
         Bundle data = credential.getData();
         j.d(data, "getData(...)");
-        return new o(vc.a(type, data));
+        return new o(wc.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {

@@ -3,7 +3,7 @@ package sa;
 import android.content.Context;
 import android.os.Build;
 import c8.a1;
-import c8.pb;
+import c8.qb;
 import gb.b1;
 import gb.p;
 import j$.time.ZoneOffset;
@@ -21,12 +21,12 @@ import java.util.Set;
 import rd.l;
 import zd.b0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class h {
     public static final q1.e b = new q1.e("fire-global");
     public static final q1.e c = new q1.e("fire-count");
-    public static final q1.e d = pb.a("last-used-date");
+    public static final q1.e d = qb.a("last-used-date");
     public final ka.d a;
 
     public h(Context context, String str) {
@@ -43,7 +43,7 @@ public final class h {
                 Iterator it = ((Set) entry.getValue()).iterator();
                 while (it.hasNext()) {
                     if (str.equals((String) it.next())) {
-                        return pb.b(((q1.e) entry.getKey()).a);
+                        return qb.b(((q1.e) entry.getKey()).a);
                     }
                 }
             }
@@ -114,7 +114,7 @@ public final class h {
         try {
             try {
                 String c10 = c(j3);
-                q1.e b10 = pb.b(str);
+                q1.e b10 = qb.b(str);
                 this.a.a(new e1.b(this, c10, str, b10, 2));
             } catch (Throwable th2) {
                 th = th2;

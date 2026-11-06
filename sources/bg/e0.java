@@ -28,13 +28,13 @@ import org.telegram.ui.Components.t4;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.c40;
-import org.telegram.ui.qv0;
-import org.telegram.ui.vq0;
+import org.telegram.ui.rv0;
+import org.telegram.ui.wq0;
 import org.telegram.ui.ww;
 import ti.p;
 import wg.f1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements i30, r1, c7, t4, w5.b, v9.g {
     public final /* synthetic */ int a;
@@ -151,10 +151,10 @@ public final /* synthetic */ class e0 implements i30, r1, c7, t4, w5.b, v9.g {
                 c40.B1(r3Var, z9, this.b, runnable);
                 break;
             default:
-                qv0 qv0Var = (qv0) this.c;
+                rv0 rv0Var = (rv0) this.c;
                 ww wwVar = (ww) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = qv0Var.b;
+                ProfileActivity profileActivity = rv0Var.b;
                 profileActivity.M1 = true;
                 Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
                 long j3 = -this.b;
@@ -172,7 +172,7 @@ public final /* synthetic */ class e0 implements i30, r1, c7, t4, w5.b, v9.g {
     }
 
     @Override // org.telegram.ui.Components.i30
-    public /* synthetic */ vq0 getCloseIntoObject() {
+    public /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 

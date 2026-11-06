@@ -1,64 +1,15 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class qz0 extends oj0 {
-    public final Context c;
-    public int d;
-    public ArrayList e = new ArrayList();
-    public ArrayList f = new ArrayList();
-    public org.telegram.ui.q8 h;
-    public String n;
-    public final /* synthetic */ ThemeEditorView.EditorAlert r;
-
-    public qz0(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        this.r = editorAlert;
-        this.c = context;
-    }
-
-    public static CharSequence E(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            return "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String trim = str.trim();
-        String lowerCase = trim.toLowerCase();
-        int i7 = 0;
-        while (true) {
-            int indexOf = lowerCase.indexOf(str2, i7);
-            if (indexOf == -1) {
-                break;
-            }
-            int length = str2.length() + indexOf;
-            if (i7 != 0 && i7 != indexOf + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i7, indexOf));
-            } else if (i7 == 0 && indexOf != 0) {
-                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
-            }
-            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
-            if (substring.startsWith(" ")) {
-                spannableStringBuilder.append((CharSequence) " ");
-            }
-            String trim2 = substring.trim();
-            int length2 = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
-            i7 = length;
-        }
-        if (i7 != -1 && i7 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i7));
-        }
-        return spannableStringBuilder;
-    }
+    public Context c;
+    public ArrayList d;
 
     @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
@@ -67,10 +18,11 @@ public final class qz0 extends oj0 {
 
     @Override // v4.g0
     public final int b() {
-        if (this.e.isEmpty()) {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty()) {
             return 0;
         }
-        return this.e.size() + 1;
+        return arrayList.size() + 1;
     }
 
     @Override // v4.g0
@@ -81,11 +33,10 @@ public final class qz0 extends oj0 {
     @Override // v4.g0
     public final void t(v4.d1 d1Var, int i7) {
         if (d1Var.f == 0) {
-            int i10 = i7 - 1;
-            org.telegram.ui.ActionBar.t6 t6Var = (org.telegram.ui.ActionBar.t6) ((ArrayList) this.e.get(i10)).get(0);
+            org.telegram.ui.ActionBar.t6 t6Var = (org.telegram.ui.ActionBar.t6) ((ArrayList) this.d.get(i7 - 1)).get(0);
             int c10 = t6Var.e == org.telegram.ui.ActionBar.k6.Be ? 0 : t6Var.c();
             org.telegram.ui.Cells.u8 u8Var = (org.telegram.ui.Cells.u8) d1Var.a;
-            u8Var.a.setText((CharSequence) this.f.get(i10));
+            u8Var.a.setText(org.telegram.ui.ActionBar.u4.c(t6Var.e));
             u8Var.b = c10;
             u8Var.setWillNotDraw(c10 == 0);
             u8Var.invalidate();

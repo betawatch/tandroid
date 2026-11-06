@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements dr0, org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class s implements er0, org.telegram.ui.Components.dj0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ g4 a;
 
     public /* synthetic */ s(g4 g4Var) {
         this.a = g4Var;
     }
 
-    @Override // org.telegram.ui.dr0
+    @Override // org.telegram.ui.er0
     public void a(float[] fArr) {
         g4 g4Var = this.a;
         fArr[0] = g4Var.J0;

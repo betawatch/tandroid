@@ -30,14 +30,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.oy;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class m3 extends View {
     public final ic A0;
@@ -277,7 +277,7 @@ public class m3 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        o31[] o31VarArr = (o31[]) spanned.getSpans(0, charSequence.length(), o31.class);
+        u31[] u31VarArr = (u31[]) spanned.getSpans(0, charSequence.length(), u31.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i7 = 0;
         int i10 = 0;
@@ -291,13 +291,13 @@ public class m3 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (o31VarArr == null || o31VarArr.length == 0) {
+        if (u31VarArr == null || u31VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i10;
         }
         int i11 = 0;
-        for (int i12 = 0; i12 < o31VarArr.length; i12++) {
-            int spanStart = spanned.getSpanStart(o31VarArr[i12]);
-            int spanEnd = spanned.getSpanEnd(o31VarArr[i12]);
+        for (int i12 = 0; i12 < u31VarArr.length; i12++) {
+            int spanStart = spanned.getSpanStart(u31VarArr[i12]);
+            int spanEnd = spanned.getSpanEnd(u31VarArr[i12]);
             int max = Math.max(i11, spanStart);
             if (max - i11 > 0) {
                 f10 += textPaint3.measureText(spanned, i11, max);
@@ -305,7 +305,7 @@ public class m3 extends View {
             i11 = Math.max(max, spanEnd);
             if (i11 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(o31VarArr[i12].a);
+                textPaint3.setTypeface(u31VarArr[i12].a);
                 float measureText = textPaint3.measureText(spanned, max, i11) + f10;
                 textPaint3.setTypeface(typeface);
                 f10 = measureText;

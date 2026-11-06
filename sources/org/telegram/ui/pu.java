@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pu implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.cj0, qw, org.telegram.ui.Components.zs0, org.telegram.ui.Components.dj0, org.telegram.messenger.lc, OnCompleteListener, ps {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class pu implements org.telegram.ui.ActionBar.r1, o
                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, pa0Var.getParentActivity(), pa0Var.getResourceProvider(), true, true);
                 z0Var.setMinimumWidth(org.telegram.messenger.g0.L(200.0f));
                 z0Var.j(org.telegram.messenger.hd.M0(2131750472, null), R.drawable.filled_directions, null);
-                z0Var.setOnClickListener(new org.telegram.ui.Components.n41(23, pa0Var, (la0) I));
+                z0Var.setOnClickListener(new org.telegram.ui.Components.t41(23, pa0Var, (la0) I));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
                 ka0 ka0Var = new ka0(pa0Var, actionBarPopupWindow$ActionBarPopupWindowLayout);
                 pa0Var.J0 = ka0Var;

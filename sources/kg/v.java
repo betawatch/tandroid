@@ -35,20 +35,20 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.i4;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class v extends h41 implements ls {
+public final class v extends n41 implements ls {
     public static org.telegram.ui.ActionBar.u1 e;
 
     public static void d0(v vVar, TL_account.TL_businessChatLink tL_businessChatLink) {
@@ -138,20 +138,20 @@ public final class v extends h41 implements ls {
         sVar.setSelection(sVar.getText().length());
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
-        ty0 ty0Var = null;
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
+        uy0 uy0Var = null;
         String M0 = hd.M0(2131752710, null);
         String M02 = hd.M0(2131752703, null);
-        r31 r31Var = new r31(2);
-        r31Var.l = M0;
-        r31Var.o = M02;
-        r31Var.k = R.raw.biz_links;
-        arrayList.add(r31Var);
-        f41Var.V();
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.k = R.raw.biz_links;
+        arrayList.add(x31Var);
+        l41Var.V();
         y d = y.d(this.currentAccount);
         if (d.b.size() < qp.s1(d.a).H5) {
-            r31 c10 = r31.c(1, R.drawable.menu_link_create, hd.M0(2131752709, null));
+            x31 c10 = x31.c(1, R.drawable.menu_link_create, hd.M0(2131752709, null));
             c10.q = true;
             arrayList.add(c10);
         }
@@ -164,11 +164,11 @@ public final class v extends h41 implements ls {
             i10++;
             u uVar = new u();
             uVar.a = (TL_account.TL_businessChatLink) obj;
-            r31 r31Var2 = new r31(29);
-            r31Var2.G = uVar;
-            arrayList.add(r31Var2);
+            x31 x31Var2 = new x31(29);
+            x31Var2.G = uVar;
+            arrayList.add(x31Var2);
         }
-        f41Var.U();
+        l41Var.U();
         TLRPC.User f10 = p10.i(this.currentAccount).f();
         String s5 = a8.p0.s(new StringBuilder(), qp.s1(this.currentAccount).U2, "/");
         ArrayList arrayList3 = new ArrayList(2);
@@ -195,22 +195,22 @@ public final class v extends h41 implements ls {
             String str = (String) obj2;
             int indexOf = a02.indexOf(str);
             if (indexOf > -1) {
-                i4 i4Var = new i4(rf.b.i("https://", str), ty0Var);
+                i4 i4Var = new i4(rf.b.i("https://", str), uy0Var);
                 i4Var.f = this;
                 spannableString.setSpan(i4Var, indexOf, str.length() + indexOf, 33);
             }
         }
-        arrayList.add(r31.C(spannableString));
+        arrayList.add(x31.C(spannableString));
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131752710, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        if (r31Var.d == 1) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        if (x31Var.d == 1) {
             y d = y.d(this.currentAccount);
             TL_account.createBusinessChatLink createbusinesschatlink = new TL_account.createBusinessChatLink();
             TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
@@ -219,8 +219,8 @@ public final class v extends h41 implements ls {
             ConnectionsManager.getInstance(d.a).sendRequest(createbusinesschatlink, new x(d, 1));
             return;
         }
-        if (r31Var.a == 29) {
-            Object obj = r31Var.G;
+        if (x31Var.a == 29) {
+            Object obj = x31Var.G;
             if (obj instanceof u) {
                 Bundle f10 = rf.b.f(6, "chatMode");
                 f10.putString("business_link", ((u) obj).a.link);
@@ -229,11 +229,11 @@ public final class v extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         final int i7 = 0;
-        if (r31Var.a == 29) {
-            Object obj = r31Var.G;
+        if (x31Var.a == 29) {
+            Object obj = x31Var.G;
             if (obj instanceof u) {
                 final TL_account.TL_businessChatLink tL_businessChatLink = ((u) obj).a;
                 k60 H = k60.H(this, view);
@@ -374,7 +374,7 @@ public final class v extends h41 implements ls {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         super.createView(context);
@@ -388,13 +388,13 @@ public final class v extends h41 implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        f41 f41Var;
+        l41 l41Var;
         if (i7 == qs.J1 || i7 == qs.k0) {
             w3 w3Var = this.a;
-            if (w3Var == null || (f41Var = w3Var.f3) == null) {
+            if (w3Var == null || (l41Var = w3Var.f3) == null) {
                 return;
             }
-            f41Var.O(true);
+            l41Var.O(true);
             return;
         }
         if (i7 != qs.K1) {

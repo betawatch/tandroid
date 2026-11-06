@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import c8.ic;
+import c8.jc;
 import fi.v3;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z D;
@@ -203,7 +203,7 @@ public final class a0 extends ViewGroup {
             iArr[i10] = z12 ? i10 : -1;
             z11 |= z12 && d0Var.K <= 0.0f && f10 > 0.0f;
         }
-        ti.k a10 = ic.a(fArr, fArr2, 0.45f, 2.35f, iArr, z11 ? 0.0f : this.n);
+        ti.k a10 = jc.a(fArr, fArr2, 0.45f, 2.35f, iArr, z11 ? 0.0f : this.n);
         int width = getWidth();
         int height = getHeight();
         float f11 = 0.001f;
@@ -211,7 +211,7 @@ public final class a0 extends ViewGroup {
             z10 = false;
         } else {
             float f12 = width / height;
-            a10 = ic.a(fArr, fArr2, f12, f12, iArr, 0.0f);
+            a10 = jc.a(fArr, fArr2, f12, f12, iArr, 0.0f);
             z10 = true;
         }
         this.E = a10.a;

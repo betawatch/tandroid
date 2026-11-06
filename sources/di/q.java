@@ -39,13 +39,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dh0;
 import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.o31;
 import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class q extends FrameLayout implements ls, te.b {
     public boolean A0;
@@ -1239,7 +1239,7 @@ public abstract class q extends FrameLayout implements ls, te.b {
             SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(hd.N0("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.k6.uj, 0, new d(this, 1), null);
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) S2.getSpans(0, S2.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
-                S2.setSpan(new o31(org.telegram.messenger.g0.o()), S2.getSpanStart(clickableSpanArr[0]), S2.getSpanEnd(clickableSpanArr[0]), 33);
+                S2.setSpan(new u31(org.telegram.messenger.g0.o()), S2.getSpanStart(clickableSpanArr[0]), S2.getSpanEnd(clickableSpanArr[0]), 33);
             }
             fi.m3 m3Var2 = this.J;
             m3Var2.h = fi.m3.a(S2, m3Var2.getTextPaint());

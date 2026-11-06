@@ -3,17 +3,17 @@ package com.google.android.gms.common.api.internal;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bq0;
+import org.telegram.ui.cq0;
 import org.telegram.ui.ef0;
 import p4.m1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class s implements x51 {
+public final class s implements c61 {
     public int a;
     public boolean b;
     public Object c;
@@ -48,7 +48,7 @@ public final class s implements x51 {
 
     public void c(int i7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = y51.f0;
+        Object obj = d61.f0;
         if (i7 == 2) {
             Drawable[] drawableArr = PhotoViewer.Y8;
             photoViewer.n0();
@@ -57,14 +57,14 @@ public final class s implements x51 {
                 photoViewer.l0();
                 photoViewer.U7 = -1L;
             }
-            bq0 bq0Var = photoViewer.f0;
-            if (bq0Var == null || !bq0Var.y) {
-                n51 n51Var = photoViewer.F2;
-                if (n51Var == null || !n51Var.d0()) {
+            cq0 cq0Var = photoViewer.f0;
+            if (cq0Var == null || !cq0Var.y) {
+                t51 t51Var = photoViewer.F2;
+                if (t51Var == null || !t51Var.d0()) {
                     z9 = false;
                 }
             } else {
-                z9 = bq0Var.G;
+                z9 = cq0Var.G;
             }
             this.b = z9;
             if (z9) {
@@ -86,7 +86,7 @@ public final class s implements x51 {
         photoViewer.n0();
         int i10 = photoViewer.c2;
         if (i10 == 1 && photoViewer.z2 != null) {
-            Object obj = y51.f0;
+            Object obj = d61.f0;
             if (i7 == 2) {
                 photoViewer.l0();
                 photoViewer.U7 = photoViewer.u8;
@@ -114,11 +114,11 @@ public final class s implements x51 {
 
     public void f(float f10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        n51 n51Var = photoViewer.F2;
-        if (n51Var == null) {
+        t51 t51Var = photoViewer.F2;
+        if (t51Var == null) {
             return;
         }
-        if (n51Var.d0()) {
+        if (t51Var.d0()) {
             photoViewer.G2 = false;
             photoViewer.F2.g0();
             photoViewer.e0.invalidate();

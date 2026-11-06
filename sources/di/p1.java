@@ -10,12 +10,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class p1 {
     public final long a;
@@ -24,7 +24,7 @@ public final class p1 {
     public final zg0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final ly0 g;
+    public final my0 g;
     public boolean h;
     public final org.telegram.ui.Components.w5 i;
     public final org.telegram.ui.Components.w5 j;
@@ -64,7 +64,7 @@ public final class p1 {
         spannableStringBuilder.setSpan(wpVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) hd.E(i10, ','));
-        this.g = new ly0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.g = new my0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
         org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(view, 2000L, new LinearInterpolator());
         this.i = w5Var;
         w5Var.e(true, 0.0f);

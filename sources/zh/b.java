@@ -11,56 +11,56 @@ import org.telegram.messenger.s9;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class b extends q31 {
+public final class b extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new b());
+        w31.h(new b());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         c cVar = (c) view;
-        s9 s9Var = (s9) r31Var.H;
-        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) r31Var.G;
-        View.OnClickListener onClickListener = r31Var.D;
+        s9 s9Var = (s9) x31Var.H;
+        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) x31Var.G;
+        View.OnClickListener onClickListener = x31Var.D;
         int i7 = c.c;
         cVar.removeAllViews();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
         spannableStringBuilder.setSpan(new r5(s9Var.c, k6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append(' ');
         spannableStringBuilder.append((CharSequence) hd.a0(null, null, 2131750308, s9Var.d.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
-        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) dd.a1(false, jg.g.m(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
         String a02 = hd.a0(null, null, 2131750307, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
-        sx0 sx0Var = new sx0(cVar.getContext(), cVar.a);
-        sx0Var.a(spannableStringBuilder).setFilled(true);
-        sx0Var.n(hd.M0(2131750310, null), cVar.b, m5.o(tL_StarGiftAuctionAcquiredGift.peer), new wi.q(10, cVar, onClickListener));
-        sx0Var.g(tL_StarGiftAuctionAcquiredGift.date, hd.M0(2131750314, null));
-        sx0Var.e(hd.M0(2131750315, null), spannableStringBuilder2, a02, null, null);
-        cVar.addView(sx0Var, ha.c(-2.0f, -1));
+        tx0 tx0Var = new tx0(cVar.getContext(), cVar.a);
+        tx0Var.a(spannableStringBuilder).setFilled(true);
+        tx0Var.n(hd.M0(2131750310, null), cVar.b, m5.o(tL_StarGiftAuctionAcquiredGift.peer), new wi.q(10, cVar, onClickListener));
+        tx0Var.g(tL_StarGiftAuctionAcquiredGift.date, hd.M0(2131750314, null));
+        tx0Var.e(hd.M0(2131750315, null), spannableStringBuilder2, a02, null, null);
+        cVar.addView(tx0Var, ha.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         c cVar = new c(i7, context, f6Var);
         cVar.setLayoutParams(ha.c(-2.0f, -1));
         return cVar;
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final boolean f() {
         return false;
     }

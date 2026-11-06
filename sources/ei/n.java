@@ -29,15 +29,15 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.e21;
-import org.telegram.ui.Components.i41;
+import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.rr0;
 import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.c61;
 import v4.y;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -67,7 +67,7 @@ public final class n extends FrameLayout {
     public int d;
     public int e;
     public final f f;
-    public final i41 h;
+    public final o41 h;
     public final v4.k n;
     public final rr0 r;
     public final h s;
@@ -85,11 +85,11 @@ public final class n extends FrameLayout {
         this.H = false;
         this.I = false;
         this.V = new Rect();
-        i41 i41Var = new i41();
-        this.h = i41Var;
+        o41 o41Var = new o41();
+        this.h = o41Var;
         int i10 = 1;
-        i41Var.O = new e(this, i10);
-        i41Var.y1(this.d);
+        o41Var.O = new e(this, i10);
+        o41Var.y1(this.d);
         v4.k kVar = new v4.k();
         this.n = kVar;
         kVar.n(280L);
@@ -103,7 +103,7 @@ public final class n extends FrameLayout {
         fVar.setItemAnimator(null);
         fVar.setClipToPadding(false);
         fVar.setSectionsType(2);
-        fVar.setLayoutManager(i41Var);
+        fVar.setLayoutManager(o41Var);
         addView(fVar, ha.c(-1.0f, -1));
         fVar.i(new g(this, i7));
         fVar.setOnItemClickListener(new ai.k(this, 6));
@@ -204,8 +204,8 @@ public final class n extends FrameLayout {
             int b10 = iVar.b();
             rr0Var.setVisibility(8);
             int i11 = this.d;
-            i41 i41Var = this.h;
-            i41Var.y1(i11);
+            o41 o41Var = this.h;
+            o41Var.y1(i11);
             fVar.a0();
             fVar.invalidate();
             if (iVar.b() == b10) {
@@ -219,7 +219,7 @@ public final class n extends FrameLayout {
                 if (m10 != null) {
                     this.T = m10.getTop();
                 }
-                i41Var.h1(this.S, (-fVar.getPaddingTop()) + this.T);
+                o41Var.h1(this.S, (-fVar.getPaddingTop()) + this.T);
             }
         }
     }
@@ -265,7 +265,7 @@ public final class n extends FrameLayout {
         int i11 = size > 0 ? 0 : 8;
         ah.a aVar = this.J;
         aVar.setVisibility(i11);
-        String M02 = z9 ? hd.M0(2131746694, null) : hd.a0(null, null, 2131746693, e21.O0(this.a.E, null, null));
+        String M02 = z9 ? hd.M0(2131746694, null) : hd.a0(null, null, 2131746693, k21.O0(this.a.E, null, null));
         String M03 = hd.M0(2131746714, null);
         s7 s7Var = new s7(this, 9);
         if (z9 || size <= 0) {
@@ -301,7 +301,7 @@ public final class n extends FrameLayout {
             dVar2.setVisibility(8);
         } else {
             av0Var.d.setVisibility(8);
-            av0Var.e.setText(hd.a0(null, null, 2131746693, e21.O0(this.a.E, null, null)));
+            av0Var.e.setText(hd.a0(null, null, 2131746693, k21.O0(this.a.E, null, null)));
             av0Var.f.i(hd.M0(2131746701, null), false, true);
             kVar2.setVisibility(0);
             dVar2.setVisibility(0);

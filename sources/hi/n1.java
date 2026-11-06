@@ -44,12 +44,12 @@ import org.telegram.ui.Components.lb0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.yz0;
+import org.telegram.ui.Components.zz0;
 import org.telegram.ui.qw;
 import org.telegram.ui.v91;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements qw, org.telegram.ui.ActionBar.r1, ni.p, ResultCallback {
     public final /* synthetic */ int a;
@@ -184,7 +184,7 @@ public final /* synthetic */ class n1 implements qw, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        yz0 yz0Var = (yz0) this.d;
+        zz0 zz0Var = (zz0) this.d;
         uo uoVar = (uo) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
@@ -193,10 +193,10 @@ public final /* synthetic */ class n1 implements qw, org.telegram.ui.ActionBar.r
         Drawable drawable = uoVar.b;
         if (drawable instanceof qa0) {
             qa0 qa0Var = (qa0) drawable;
-            qa0Var.s(yz0.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            qa0Var.t(yz0Var.L);
+            qa0Var.s(zz0.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            qa0Var.t(zz0Var.L);
         }
-        yz0Var.invalidate();
+        zz0Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback

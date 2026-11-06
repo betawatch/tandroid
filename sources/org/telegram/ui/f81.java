@@ -17,7 +17,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f81 extends Dialog {
     public float D;
@@ -26,7 +26,7 @@ public final class f81 extends Dialog {
     public org.telegram.messenger.ij G;
     public boolean H;
     public d81 I;
-    public xr0 J;
+    public yr0 J;
     public org.telegram.ui.Cells.q1 K;
     public float L;
     public float M;
@@ -110,9 +110,9 @@ public final class f81 extends Dialog {
         textView.setText(org.telegram.messenger.hd.M0(2131744072, null));
         textView.setGravity(17);
         c81Var2.addView(textView, c8.ha.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
-        vr0 vr0Var = new vr0(this, 5);
+        wr0 wr0Var = new wr0(this, 5);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(c81Var, vr0Var);
+        r0.a0.i(c81Var, wr0Var);
     }
 
     public final void b(boolean z9, org.telegram.ui.Components.tp0 tp0Var) {

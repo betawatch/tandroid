@@ -31,11 +31,11 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fb extends View {
     public final Paint A0;
@@ -124,7 +124,7 @@ public final class fb extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final ly0 q0;
+    public final my0 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -237,7 +237,7 @@ public final class fb extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new ly0(hd.M0(2131744457, null), 12.0f, org.telegram.messenger.g0.o());
+        this.q0 = new my0(hd.M0(2131744457, null), 12.0f, org.telegram.messenger.g0.o());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -926,7 +926,7 @@ public final class fb extends View {
                     drawable.setBounds(centerX, org.telegram.ui.Cells.f1.y(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.f1.f(2, centerY, drawable));
                     drawable.setAlpha(qs.V2);
                     drawable.draw(canvas);
-                    ly0 ly0Var = fbVar.q0;
+                    my0 my0Var = fbVar.q0;
                     float centerX2 = (rectF9.centerX() - g10) + drawable.getIntrinsicWidth() + org.telegram.messenger.g0.L(3.66f);
                     float f65 = centerY;
                     paint = paint4;
@@ -934,7 +934,7 @@ public final class fb extends View {
                     arrayList = arrayList21;
                     caVar = caVar2;
                     f10 = 0.4f;
-                    ly0Var.c(centerX2, f65, 0.75f, -1, canvas);
+                    my0Var.c(centerX2, f65, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -958,7 +958,7 @@ public final class fb extends View {
             drawable.setBounds(centerX3, org.telegram.ui.Cells.f1.y(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.f1.f(2, centerY2, drawable));
             drawable.setAlpha(qs.V2);
             drawable.draw(canvas);
-            ly0 ly0Var2 = fbVar.q0;
+            my0 my0Var2 = fbVar.q0;
             float centerX22 = (rectF9.centerX() - g102) + drawable.getIntrinsicWidth() + org.telegram.messenger.g0.L(3.66f);
             float f652 = centerY2;
             paint = paint4;
@@ -966,7 +966,7 @@ public final class fb extends View {
             arrayList = arrayList21;
             caVar = caVar2;
             f10 = 0.4f;
-            ly0Var2.c(centerX22, f652, 0.75f, -1, canvas);
+            my0Var2.c(centerX22, f652, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;

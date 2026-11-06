@@ -24,15 +24,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.qn;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.an;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        n51 n51Var;
+        t51 t51Var;
         switch (this.a) {
             case 0:
                 int i7 = this.b;
@@ -160,9 +160,9 @@ public final /* synthetic */ class r implements Runnable {
                 break;
             case 3:
                 MediaController mediaController = (MediaController) ((f5.u) this.d).c;
-                if (this.b == mediaController.k0 && this.c == 4 && (n51Var = mediaController.j0) != null) {
+                if (this.b == mediaController.k0 && this.c == 4 && (t51Var = mediaController.j0) != null) {
                     try {
-                        n51Var.m0();
+                        t51Var.m0();
                         mediaController.j0 = null;
                         break;
                     } catch (Exception e11) {

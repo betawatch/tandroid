@@ -22,8 +22,8 @@ import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pu0;
 import org.telegram.ui.Components.q50;
@@ -33,11 +33,11 @@ import org.telegram.ui.Components.s50;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.x50;
 import org.telegram.ui.Components.yu0;
-import org.telegram.ui.bq0;
+import org.telegram.ui.cq0;
 import org.telegram.ui.dn;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ec extends View {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final class ec extends View {
         switch (this.a) {
             case 18:
                 super.draw(canvas);
-                ((ly0) this.b).e(canvas, (getMeasuredWidth() - ((ly0) this.b).k()) / 2.0f, getMeasuredHeight() / 2.0f);
+                ((my0) this.b).e(canvas, (getMeasuredWidth() - ((my0) this.b).k()) / 2.0f, getMeasuredHeight() / 2.0f);
                 break;
             case 22:
                 super.draw(canvas);
@@ -207,7 +207,7 @@ public final class ec extends View {
                 break;
             case 21:
                 super.onDraw(canvas);
-                ((bq0) this.b).j(canvas, getMeasuredWidth(), getMeasuredHeight());
+                ((cq0) this.b).j(canvas, getMeasuredWidth(), getMeasuredHeight());
                 break;
             case 24:
                 super.onDraw(canvas);
@@ -579,7 +579,7 @@ public final class ec extends View {
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((cn) ((org.telegram.ui.x7) this.b).d).x, TLObject.FLAG_30));
                 break;
             case 18:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + Math.round(((ly0) this.b).k()), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(getPaddingBottom() + getPaddingTop() + Math.round(((ly0) this.b).i()), org.telegram.messenger.g0.L(26.0f)), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + Math.round(((my0) this.b).k()), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(getPaddingBottom() + getPaddingTop() + Math.round(((my0) this.b).i()), org.telegram.messenger.g0.L(26.0f)), TLObject.FLAG_30));
                 break;
             case 19:
                 super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f) + ((q50) this.b).c.f2, TLObject.FLAG_30));

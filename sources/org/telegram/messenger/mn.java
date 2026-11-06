@@ -35,7 +35,7 @@ import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
@@ -1646,8 +1646,8 @@ public final /* synthetic */ class mn implements Runnable {
                         h6Var.v = str6;
                         h6Var.u = str5;
                     }
-                    qpVar2.getFileLoader().i0(false, 67108864, str6, true);
-                    qpVar2.getFileLoader().i0(false, 16777216, str5, true);
+                    qpVar2.getFileLoader().h0(false, 67108864, str6, true);
+                    qpVar2.getFileLoader().h0(false, 16777216, str5, true);
                     break;
                 }
             case 8:
@@ -1756,7 +1756,7 @@ public final /* synthetic */ class mn implements Runnable {
                     ArrayList arrayList16 = bzVar.d;
                     int size3 = arrayList16.size();
                     for (int i23 = 0; i23 < size3; i23++) {
-                        gzVar2.getFileLoader().i0(false, 67108864, ((zy) arrayList16.get(i23)).a, true);
+                        gzVar2.getFileLoader().h0(false, 67108864, ((zy) arrayList16.get(i23)).a, true);
                     }
                     gzVar.getNotificationCenter().k(qs.v1, str7);
                     hv0Var.a(str7);

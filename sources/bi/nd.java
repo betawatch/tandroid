@@ -21,10 +21,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class nd extends View implements te.b {
     public final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public final class nd extends View implements te.b {
         this.d = new Matrix();
         this.b = new Paint(1);
         this.e = new Paint(1);
-        this.f = new ly0(org.telegram.messenger.hd.M0(2131745037, null), 14.16f, org.telegram.messenger.g0.o());
+        this.f = new my0(org.telegram.messenger.hd.M0(2131745037, null), 14.16f, org.telegram.messenger.g0.o());
     }
 
     public static void a(Canvas canvas, Drawable drawable, float f10, float f11, float f12, float f13) {
@@ -139,8 +139,8 @@ public final class nd extends View implements te.b {
                 linearGradient.setLocalMatrix(matrix);
                 Paint paint = (Paint) this.b;
                 paint.setShader(linearGradient);
-                ly0 ly0Var = (ly0) this.f;
-                float L = ly0Var.c + org.telegram.messenger.g0.L(30.0f);
+                my0 my0Var = (my0) this.f;
+                float L = my0Var.c + org.telegram.messenger.g0.L(30.0f);
                 Paint paint2 = (Paint) this.e;
                 paint2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d7, (org.telegram.ui.ActionBar.f6) this.h));
                 canvas.drawRect(org.telegram.messenger.g0.L(24.0f), (getHeight() / 2.0f) - 1.0f, ((getWidth() - L) / 2.0f) - org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, paint2);
@@ -148,7 +148,7 @@ public final class nd extends View implements te.b {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set((getWidth() - L) / 2.0f, 0.0f, (getWidth() + L) / 2.0f, getHeight());
                 canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, paint);
-                ((ly0) this.f).c((getWidth() - ly0Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
+                ((my0) this.f).c((getWidth() - my0Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
                 break;
             case 1:
                 ArrayList arrayList = (ArrayList) this.d;

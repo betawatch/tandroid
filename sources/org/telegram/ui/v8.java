@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v8 extends org.telegram.ui.Components.rt0 {
     public final /* synthetic */ int f0;
@@ -144,7 +144,7 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
     public org.telegram.ui.ActionBar.f6 getResourceProvider() {
         switch (this.f0) {
             case 2:
-                return ((org.telegram.ui.Components.dy0) this.g0).c;
+                return ((org.telegram.ui.Components.ey0) this.g0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -367,7 +367,7 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
                 break;
             case 2:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(View.MeasureSpec.getSize(i7), ((org.telegram.ui.Components.dy0) this.g0).d.getMeasuredHeight() + org.telegram.messenger.g0.L(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i7), ((org.telegram.ui.Components.ey0) this.g0).d.getMeasuredHeight() + org.telegram.messenger.g0.L(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.g0;

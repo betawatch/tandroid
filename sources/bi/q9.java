@@ -3,9 +3,9 @@ package bi;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.v10;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.tp0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q9 implements q0.a {
     public final /* synthetic */ int a;
@@ -80,13 +80,13 @@ public final /* synthetic */ class q9 implements q0.a {
                         w4Var.getAdapter().f();
                         break;
                     default:
-                        tp0 tp0Var = (tp0) nVar.d;
-                        tp0Var.w0(false);
-                        sg.l0 l0Var2 = tp0Var.E1;
+                        up0 up0Var = (up0) nVar.d;
+                        up0Var.w0(false);
+                        sg.l0 l0Var2 = up0Var.E1;
                         l0Var2.h(intValue, true);
                         l0Var2.g();
-                        tp0Var.setNewColor(intValue);
-                        tg.d0 d0Var = tp0Var.p1;
+                        up0Var.setNewColor(intValue);
+                        tg.d0 d0Var = up0Var.p1;
                         d0Var.setSelectedColorIndex(l0Var2.d());
                         d0Var.getAdapter().f();
                         break;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class si extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -48,13 +48,13 @@ public final class si extends org.telegram.ui.ActionBar.j {
         int i17;
         TLRPC.User user2;
         org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.Components.n01 n01Var;
+        org.telegram.ui.Components.s01 s01Var;
         an anVar = this.b;
         SparseArray[] sparseArrayArr = anVar.o6;
         SparseArray[] sparseArrayArr2 = anVar.n6;
         SparseArray[] sparseArrayArr3 = anVar.m6;
-        if (i7 != -2 && i7 != 75 && i7 != -1 && (n01Var = anVar.m0) != null && n01Var.y > 0.0f) {
-            n01Var.c();
+        if (i7 != -2 && i7 != 75 && i7 != -1 && (s01Var = anVar.m0) != null && s01Var.y > 0.0f) {
+            s01Var.d();
         }
         final int i18 = 0;
         if (i7 == -1) {
@@ -464,9 +464,9 @@ public final class si extends org.telegram.ui.ActionBar.j {
                                 }
                                 org.telegram.messenger.g0.v1(anVar.l1);
                                 anVar.m0.requestLayout();
-                                org.telegram.ui.Components.n01 n01Var2 = anVar.m0;
-                                n01Var2.g();
-                                n01Var2.a(1.0f, 0.0f);
+                                org.telegram.ui.Components.s01 s01Var2 = anVar.m0;
+                                s01Var2.h();
+                                s01Var2.a(1.0f, 0.0f);
                                 return;
                             }
                             if (i7 == 73) {

@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c31 implements org.telegram.messenger.a20, org.telegram.messenger.b20, r0.m {
     public final /* synthetic */ m31 a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class c31 implements org.telegram.messenger.a20, or
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(m31.Z(this.a, r31Var, view));
+    public Boolean a(org.telegram.ui.Components.x31 x31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(m31.Z(this.a, x31Var, view));
     }
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        m31.h0(this.a, (org.telegram.ui.Components.r31) obj);
+        m31.h0(this.a, (org.telegram.ui.Components.x31) obj);
     }
 }

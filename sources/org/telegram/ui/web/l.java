@@ -22,15 +22,15 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.ui;
-import org.telegram.ui.mt0;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class l extends h41 {
+public final class l extends n41 {
     public h f;
     public final Runnable h;
     public final org.telegram.ui.q n;
@@ -75,8 +75,8 @@ public final class l extends h41 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         CharSequence charSequence;
         TLRPC.MessageMedia messageMedia;
         HashSet hashSet = this.D;
@@ -95,7 +95,7 @@ public final class l extends h41 {
                 if (!TextUtils.isEmpty(a10) && !a10.startsWith("#") && !a10.startsWith("$") && !a10.startsWith("@")) {
                     hashSet.add(a10);
                     int i10 = f.b;
-                    r31 K = r31.K(f.class);
+                    x31 K = x31.K(f.class);
                     K.z = 3;
                     K.q = false;
                     K.H = ijVar;
@@ -105,9 +105,9 @@ public final class l extends h41 {
             }
             charSequence = null;
             if (!hVar.f) {
-                arrayList.add(r31.q(arrayList.size(), 32));
-                arrayList.add(r31.q(arrayList.size(), 32));
-                arrayList.add(r31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
             }
         } else {
             charSequence = null;
@@ -130,7 +130,7 @@ public final class l extends h41 {
                     if (k0(K0, this.w) || k0(str, this.w) || k0(str2, this.w)) {
                         String str3 = this.w;
                         int i12 = f.b;
-                        r31 K2 = r31.K(f.class);
+                        x31 K2 = x31.K(f.class);
                         K2.z = 3;
                         K2.q = false;
                         K2.H = ijVar2;
@@ -152,7 +152,7 @@ public final class l extends h41 {
                     hashSet.add(a13);
                     String str4 = this.w;
                     int i14 = f.b;
-                    r31 K3 = r31.K(f.class);
+                    x31 K3 = x31.K(f.class);
                     K3.z = 3;
                     K3.q = false;
                     K3.H = ijVar3;
@@ -162,44 +162,44 @@ public final class l extends h41 {
                 }
             }
             if (!this.f.f) {
-                arrayList.add(r31.q(arrayList.size(), 32));
-                arrayList.add(r31.q(arrayList.size(), 32));
-                arrayList.add(r31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
+                arrayList.add(x31.q(arrayList.size(), 32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(r31.C(charSequence));
+        arrayList.add(x31.C(charSequence));
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131742940, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        if (r31Var.H(f.class)) {
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        if (x31Var.H(f.class)) {
             if (this.actionBar.v()) {
-                h0(r31Var, view);
+                h0(x31Var, view);
                 return;
             }
             finishFragment();
-            this.n.a(j.a((ij) r31Var.H));
+            this.n.a(j.a((ij) x31Var.H));
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
-        if (!r31Var.H(f.class)) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
+        if (!x31Var.H(f.class)) {
             return false;
         }
-        h0(r31Var, view);
+        h0(x31Var, view);
         return true;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -214,7 +214,7 @@ public final class l extends h41 {
         r6.m(this.actionBar, 1, i10, getResourceProvider());
         r6.b(this.actionBar, i10, getResourceProvider(), true);
         this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new mt0(this, 21));
+        this.actionBar.setActionBarMenuOnItemClick(new nt0(this, 21));
         org.telegram.ui.ActionBar.y n10 = this.actionBar.n(null);
         NumberTextView numberTextView = new NumberTextView(n10.getContext());
         this.x = numberTextView;
@@ -246,9 +246,9 @@ public final class l extends h41 {
         return this.fragmentView;
     }
 
-    public final void h0(r31 r31Var, View view) {
+    public final void h0(x31 x31Var, View view) {
         g gVar = (g) view;
-        ij ijVar = (ij) r31Var.H;
+        ij ijVar = (ij) x31Var.H;
         boolean j02 = j0(ijVar);
         HashSet hashSet = this.y;
         if (j02) {

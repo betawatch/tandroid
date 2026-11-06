@@ -13,21 +13,21 @@ import org.telegram.messenger.w9;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.td0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f extends na implements u9 {
-    public final r31 P1;
+    public final x31 P1;
     public final LongSparseArray Q1;
     public ArrayList R1;
     public boolean S1;
-    public f41 T1;
+    public l41 T1;
     public int U1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -48,7 +48,7 @@ public final class f extends na implements u9 {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.P1 = r31.j(-1, linearLayout);
+        this.P1 = x31.j(-1, linearLayout);
         this.k1.setPadding(this.t0, org.telegram.messenger.g0.L(9.0f), this.t0, org.telegram.messenger.g0.L(9.0f));
         this.k1.setOverScrollMode(2);
         this.T1.O(false);
@@ -68,10 +68,10 @@ public final class f extends na implements u9 {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 26), this.I0);
-        this.T1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 26), this.I0);
+        this.T1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

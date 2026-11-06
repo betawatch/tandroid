@@ -13,21 +13,21 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class d9 extends org.telegram.ui.Components.q31 {
+public final class d9 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        org.telegram.ui.Components.q31.h(new d9());
+        org.telegram.ui.Components.w31.h(new d9());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v12 */
     /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z9, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, org.telegram.ui.Components.x31 x31Var, boolean z9, org.telegram.ui.Components.l41 l41Var, org.telegram.ui.Components.q41 q41Var) {
         int i7;
         boolean z10;
         SpannableString spannableString;
@@ -35,9 +35,9 @@ public final class d9 extends org.telegram.ui.Components.q31 {
         boolean z11;
         ?? r12;
         int i11;
-        f9 f9Var = (f9) r31Var.G;
+        f9 f9Var = (f9) x31Var.G;
         e9 e9Var = (e9) view;
-        View.OnClickListener onClickListener = r31Var.D;
+        View.OnClickListener onClickListener = x31Var.D;
         int i12 = e9Var.a;
         org.telegram.ui.Components.z8 z8Var = e9Var.b;
         org.telegram.ui.Cells.g6 g6Var = e9Var.d;
@@ -146,7 +146,7 @@ public final class d9 extends org.telegram.ui.Components.q31 {
         }
         imageView.setTag(f9Var);
         imageView.setOnClickListener(onClickListener);
-        boolean z14 = r31Var.e;
+        boolean z14 = x31Var.e;
         org.telegram.ui.Components.wo woVar = e9Var.e;
         if (woVar == null) {
             return;
@@ -154,7 +154,7 @@ public final class d9 extends org.telegram.ui.Components.q31 {
         woVar.a(z14, z11);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, org.telegram.ui.Components.pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new e9(context, i7);
     }

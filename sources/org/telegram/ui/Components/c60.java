@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c60 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -158,33 +158,35 @@ public final /* synthetic */ class c60 implements ValueAnimator.AnimatorUpdateLi
                 iw0Var.a.invalidate();
                 break;
             case 25:
-                yz0 yz0Var = (yz0) this.b;
-                yz0Var.getClass();
-                yz0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yz0Var.invalidate();
+                zz0 zz0Var = (zz0) this.b;
+                zz0Var.getClass();
+                zz0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zz0Var.invalidate();
                 break;
             case 26:
-                n01 n01Var = (n01) this.b;
-                n01Var.getClass();
-                n01Var.setProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                m11 m11Var = (m11) this.b;
+                m11Var.getClass();
+                m11Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m11Var.p();
                 break;
             case 27:
-                g11 g11Var = (g11) this.b;
-                g11Var.getClass();
-                g11Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g11Var.p();
+                d31 d31Var = (d31) this.b;
+                d31Var.getClass();
+                d31Var.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d31Var.invalidate();
                 break;
             case 28:
-                x21 x21Var = (x21) this.b;
-                x21Var.getClass();
-                x21Var.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x21Var.invalidate();
+                r41 r41Var = (r41) this.b;
+                r41Var.getClass();
+                r41Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r41Var.invalidate();
                 break;
             default:
-                l41 l41Var = (l41) this.b;
-                l41Var.getClass();
-                l41Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l41Var.invalidate();
+                z41 z41Var = (z41) this.b;
+                z41Var.getClass();
+                float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z41Var.b = floatValue8;
+                z41Var.setTranslationY(floatValue8);
                 break;
         }
     }

@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class zd extends org.telegram.ui.Components.ht0 implements org.telegram.ui.ActionBar.a6 {
     public static zd t1;
@@ -58,7 +58,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
     public int U0;
     public int V0;
     public int W0;
-    public final org.telegram.ui.Components.k41 X0;
+    public final org.telegram.ui.Components.q41 X0;
     public final FrameLayout Y0;
     public DecimalFormat Z0;
     public final vd a1;
@@ -282,22 +282,22 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         vVar.setOnEditorActionListener(new nd(0, this, c51Var));
         int i16 = 2;
         this.f1 = new ed(this, i7, i16);
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(c51Var, new a5(this, i16), new cd(this), new org.telegram.messenger.ch(this, 20));
-        this.X0 = k41Var;
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(c51Var, new a5(this, i16), new cd(this), new org.telegram.messenger.ch(this, 20));
+        this.X0 = q41Var;
         jg.i0 i0Var = new jg.i0(5, this, false);
-        k41Var.e3 = i0Var;
-        k41Var.setLayoutManager(i0Var);
-        k41Var.setClipToPadding(false);
-        k41Var.r1();
-        k41Var.setCaptureSectionsDecoratorAllowed(true);
-        k41Var.f3.r = false;
-        u(k41Var, new cd(this));
+        q41Var.e3 = i0Var;
+        q41Var.setLayoutManager(i0Var);
+        q41Var.setClipToPadding(false);
+        q41Var.r1();
+        q41Var.setCaptureSectionsDecoratorAllowed(true);
+        q41Var.f3.r = false;
+        u(q41Var, new cd(this));
         x(vdVar, vdVar.b, new org.telegram.messenger.ch(19));
         View view = vdVar.d;
         y(view);
         view.setLayoutParams(c8.ha.d(-1, -2.0f, 48, -4.0f, 0.0f, -4.0f, 0.0f));
         if (qVar != null) {
-            qVar.b(k41Var);
+            qVar.b(q41Var);
         }
         LinearLayout e10 = org.telegram.messenger.k5.e(activity, 1);
         FrameLayout frameLayout = new FrameLayout(activity);
@@ -585,11 +585,11 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         if (!this.b1 && (frameLayout = this.Y0) != null) {
             frameLayout.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.xq.h).withEndAction(new dd(this, 6)).start();
         }
-        org.telegram.ui.Components.k41 k41Var = this.X0;
-        if (k41Var != null) {
-            k41Var.f3.O(!z9);
+        org.telegram.ui.Components.q41 q41Var = this.X0;
+        if (q41Var != null) {
+            q41Var.f3.O(!z9);
             if (z9) {
-                k41Var.v0(0);
+                q41Var.v0(0);
             }
         }
     }
@@ -688,7 +688,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         wd wdVar;
         int i7;
         int i10;
-        org.telegram.ui.Components.f41 f41Var;
+        org.telegram.ui.Components.l41 l41Var;
         wd wdVar2;
         int i11;
         zd zdVar = this;
@@ -823,11 +823,11 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
                 pdVar.setVisibility(i10);
             }
         }
-        org.telegram.ui.Components.k41 k41Var = zdVar.X0;
-        if (k41Var == null || (f41Var = k41Var.f3) == null) {
+        org.telegram.ui.Components.q41 q41Var = zdVar.X0;
+        if (q41Var == null || (l41Var = q41Var.f3) == null) {
             return;
         }
-        f41Var.O(true);
+        l41Var.O(true);
     }
 
     public View getTransactionTabs() {

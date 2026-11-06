@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class oe0 extends FrameLayout {
     public final q5 a;
@@ -62,7 +62,7 @@ public abstract class oe0 extends FrameLayout {
         }
         String format = String.format("%d", Integer.valueOf(i7));
         SpannableStringBuilder spannableStringBuilder2 = org.telegram.messenger.hd.a0 ? new SpannableStringBuilder(com.google.android.recaptcha.internal.a.i(i7, "% – ")) : new SpannableStringBuilder(jg.g.k(i7, " – ", "%"));
-        spannableStringBuilder2.setSpan(new o31(org.telegram.messenger.g0.o()), 3, format.length() + 3, 33);
+        spannableStringBuilder2.setSpan(new u31(org.telegram.messenger.g0.o()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.a2 a2Var = this.c;
         if (i11 == 0) {

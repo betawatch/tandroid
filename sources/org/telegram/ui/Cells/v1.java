@@ -17,14 +17,14 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class v1 {
     public final q1 a;
     public org.telegram.ui.Components.y8 b;
-    public ly0 c;
+    public my0 c;
     public int d;
     public Drawable e;
 
@@ -243,11 +243,11 @@ public final class v1 {
                         }
                     }
                     this.b.a(false, true);
-                    this.c = new ly0(hd.H(',', "ConferenceCallOther", hashSet.size()), 13.0f, null);
+                    this.c = new my0(hd.H(',', "ConferenceCallOther", hashSet.size()), 13.0f, null);
                 }
                 float f13 = q1Var.e3;
-                ly0 ly0Var = this.c;
-                f12 = f13 + (ly0Var != null ? 0.0f : ly0Var.c);
+                my0 my0Var = this.c;
+                f12 = f13 + (my0Var != null ? 0.0f : my0Var.c);
                 if (f12 > maxNameWidth - org.telegram.messenger.g0.L(49.0f)) {
                     int L2 = q1Var.a7 + ((int) (f12 - (maxNameWidth - org.telegram.messenger.g0.L(49.0f))));
                     q1Var.a7 = L2;
@@ -297,8 +297,8 @@ public final class v1 {
         }
         this.c = null;
         float f132 = q1Var.e3;
-        ly0 ly0Var2 = this.c;
-        f12 = f132 + (ly0Var2 != null ? 0.0f : ly0Var2.c);
+        my0 my0Var2 = this.c;
+        f12 = f132 + (my0Var2 != null ? 0.0f : my0Var2.c);
         if (f12 > maxNameWidth - org.telegram.messenger.g0.L(49.0f)) {
         }
         q1Var.setMessageObjectInternal(ijVar);

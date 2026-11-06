@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ht0 extends FrameLayout implements r0.l {
     public static final /* synthetic */ int l0 = 0;
@@ -20,7 +20,7 @@ public class ht0 extends FrameLayout implements r0.l {
     public RecyclerView E;
     public RecyclerView F;
     public RecyclerView G;
-    public p61 H;
+    public v61 H;
     public View I;
     public View J;
     public View K;
@@ -160,11 +160,11 @@ public class ht0 extends FrameLayout implements r0.l {
         if (recyclerView != null) {
             recyclerView.C0();
         }
-        p61 p61Var = this.H;
-        if (p61Var == null || this.O == null) {
+        v61 v61Var = this.H;
+        if (v61Var == null || this.O == null) {
             return;
         }
-        for (View view : p61Var.getViewPages()) {
+        for (View view : v61Var.getViewPages()) {
             if (view != null) {
                 this.O.l(view).C0();
             }
@@ -189,9 +189,9 @@ public class ht0 extends FrameLayout implements r0.l {
                 this.M.getClass();
                 v(recyclerView2, i7, this.T);
             }
-            p61 p61Var = this.H;
-            if (p61Var != null && this.O != null && this.J != null) {
-                for (View view : p61Var.getViewPages()) {
+            v61 v61Var = this.H;
+            if (v61Var != null && this.O != null && this.J != null) {
+                for (View view : v61Var.getViewPages()) {
                     if (view != null && view.getParent() == this.H) {
                         b(this.O.l(view));
                     }
@@ -326,8 +326,8 @@ public class ht0 extends FrameLayout implements r0.l {
     }
 
     public final boolean c() {
-        p61 p61Var = this.H;
-        return (p61Var == null || p61Var.getCurrentView() == null || Float.isInfinite(n()) || this.b0 >= ((float) getHeight())) ? false : true;
+        v61 v61Var = this.H;
+        return (v61Var == null || v61Var.getCurrentView() == null || Float.isInfinite(n()) || this.b0 >= ((float) getHeight())) ? false : true;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x005a, code lost:
@@ -403,12 +403,12 @@ public class ht0 extends FrameLayout implements r0.l {
                     this.d = uptimeMillis;
                 }
             }
-            p61 p61Var = this.H;
+            v61 v61Var = this.H;
             int i11 = 0;
             View view2 = null;
-            View view3 = p61Var == null ? null : p61Var.getViewPages()[0];
-            p61 p61Var2 = this.H;
-            View view4 = p61Var2 == null ? null : p61Var2.getViewPages()[1];
+            View view3 = v61Var == null ? null : v61Var.getViewPages()[0];
+            v61 v61Var2 = this.H;
+            View view4 = v61Var2 == null ? null : v61Var2.getViewPages()[1];
             StringBuilder sb2 = new StringBuilder("root=");
             sb2.append(Integer.toHexString(System.identityHashCode(this)));
             sb2.append(" gesture=");
@@ -686,19 +686,19 @@ public class ht0 extends FrameLayout implements r0.l {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void p() {
-        p61 p61Var;
+        v61 v61Var;
         ht0 ht0Var;
         View view;
-        if (this.c0 || (p61Var = this.H) == null || this.O == null || this.M == null) {
+        if (this.c0 || (v61Var = this.H) == null || this.O == null || this.M == null) {
             return;
         }
-        View[] viewPages = p61Var.getViewPages();
+        View[] viewPages = v61Var.getViewPages();
         boolean z9 = false;
         View view2 = viewPages[0];
         View view3 = viewPages[1];
-        p61 p61Var2 = this.H;
-        if (p61Var2 instanceof rj0) {
-            rj0 rj0Var = (rj0) p61Var2;
+        v61 v61Var2 = this.H;
+        if (v61Var2 instanceof rj0) {
+            rj0 rj0Var = (rj0) v61Var2;
             if (view2 != null && view3 != null && view2 == rj0Var.a0 && view3 == rj0Var.b0 && !rj0Var.H && view2.getTranslationX() == 0.0f && view2.getMeasuredWidth() > 0 && Math.abs(view3.getTranslationX()) >= view2.getMeasuredWidth()) {
                 z9 = true;
             }
@@ -761,8 +761,8 @@ public class ht0 extends FrameLayout implements r0.l {
     }
 
     public final void q() {
-        p61 p61Var = this.H;
-        RecyclerView l10 = (p61Var == null || this.O == null || p61Var.getCurrentView() == null) ? null : this.O.l(this.H.getCurrentView());
+        v61 v61Var = this.H;
+        RecyclerView l10 = (v61Var == null || this.O == null || v61Var.getCurrentView() == null) ? null : this.O.l(this.H.getCurrentView());
         if (l10 == this.F) {
             return;
         }
@@ -929,13 +929,13 @@ public class ht0 extends FrameLayout implements r0.l {
         this.O.l(view).setTranslationY((f10 + this.U) - Math.round(r0));
     }
 
-    public final void x(View view, p61 p61Var, ft0 ft0Var) {
+    public final void x(View view, v61 v61Var, ft0 ft0Var) {
         View view2 = this.I;
         if (view2 != null) {
             removeView(view2);
         }
         this.I = view;
-        this.H = p61Var;
+        this.H = v61Var;
         this.O = ft0Var;
         addView(view, 0, new FrameLayout.LayoutParams(-1, -1));
         B();

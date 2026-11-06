@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ln0 implements org.telegram.ui.Components.t4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, r0.m {
     public final /* synthetic */ PhotoViewer a;
@@ -42,9 +42,9 @@ public final /* synthetic */ class ln0 implements org.telegram.ui.Components.t4,
                 clippingImageView.setTranslationX(clippingImageView.getTranslationX() - rect.left);
                 photoViewer.j4[0][2] = photoViewer.h0.getTranslationX();
             }
-            uq0 uq0Var = photoViewer.g0;
-            if (uq0Var != null) {
-                uq0Var.requestLayout();
+            vq0 vq0Var = photoViewer.g0;
+            if (vq0Var != null) {
+                vq0Var.requestLayout();
             }
         }
         View view2 = photoViewer.j0;
@@ -68,7 +68,7 @@ public final /* synthetic */ class ln0 implements org.telegram.ui.Components.t4,
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        tq0 tq0Var;
+        uq0 uq0Var;
         int i7;
         Bitmap n10;
         int i10;
@@ -85,7 +85,7 @@ public final /* synthetic */ class ln0 implements org.telegram.ui.Components.t4,
             }
             photoViewer.K0();
         }
-        if (imageReceiver != photoViewer.B4 || !z9 || (tq0Var = photoViewer.d) == null || !tq0Var.K() || photoViewer.j5 || (i7 = photoViewer.c2) == 1 || i7 == 11) {
+        if (imageReceiver != photoViewer.B4 || !z9 || (uq0Var = photoViewer.d) == null || !uq0Var.K() || photoViewer.j5 || (i7 = photoViewer.c2) == 1 || i7 == 11) {
             return;
         }
         if (photoViewer.S5) {

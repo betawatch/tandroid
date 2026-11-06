@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -72,7 +72,7 @@ public abstract class b {
         q0Var2.a(R.drawable.menu_privacy, org.telegram.messenger.hd.M0(2131754705, null), org.telegram.messenger.hd.M0(2131754706, null));
         f10.addView(q0Var2, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
         bi.q0 q0Var3 = new bi.q0(1, context, f6Var);
-        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.hd.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131754704, org.telegram.messenger.hd.f0(org.telegram.messenger.qp.s1(i7).N6)), new fq0(e0Var, 2)));
+        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.hd.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131754704, org.telegram.messenger.hd.f0(org.telegram.messenger.qp.s1(i7).N6)), new gq0(e0Var, 2)));
         f10.addView(q0Var3, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
         fi.d dVar = new fi.d(context, f6Var, true);
         dVar.i(org.telegram.messenger.hd.M0(2131754698, null), false, true);

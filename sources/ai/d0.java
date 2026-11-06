@@ -95,19 +95,19 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.jz;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.l9;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.mm0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -439,18 +439,18 @@ public final /* synthetic */ class d0 implements Runnable {
         int i13 = 0;
         switch (this.a) {
             case 0:
-                h41 h41Var = (h41) this.d;
+                n41 n41Var = (n41) this.d;
                 i0 i0Var = (i0) this.e;
                 d20 d20Var = (d20) this.b;
                 c20 c20Var = (c20) this.c;
-                if (i0.d(h41Var.getParentActivity())) {
+                if (i0.d(n41Var.getParentActivity())) {
                     i0Var.e();
                     mm0 mm0Var = new mm0(10, false, false, null);
                     mm0Var.G = 1;
                     mm0Var.H = false;
                     mm0Var.y = false;
-                    mm0Var.V = new android.support.v4.media.session.a0(d20Var, h41Var, c20Var, false, 7);
-                    h41Var.presentFragment(mm0Var);
+                    mm0Var.V = new android.support.v4.media.session.a0(d20Var, n41Var, c20Var, false, 7);
+                    n41Var.presentFragment(mm0Var);
                     return;
                 }
                 return;
@@ -1099,7 +1099,7 @@ public final /* synthetic */ class d0 implements Runnable {
                                 qs.f(j6Var2.E).b(j6Var2, qs.Z1);
                                 w7 G2 = w7.G(j6Var2.E);
                                 TLRPC.TL_theme tL_theme3 = j6Var2.F;
-                                G2.X(tL_theme3.document, tL_theme3, 1, 1);
+                                G2.W(tL_theme3.document, tL_theme3, 1, 1);
                             }
                         }
                     } else {

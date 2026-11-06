@@ -43,14 +43,14 @@ import org.telegram.ui.ActionBar.k;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.q4;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.jz;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Wallet.w6;
 import org.telegram.ui.c61;
@@ -61,7 +61,7 @@ import ug.q1;
 import v4.b0;
 import wg.f1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f extends o00 implements ls {
     public FrameLayout R;
@@ -108,7 +108,7 @@ public final class f extends o00 implements ls {
     }
 
     public static void A0(f fVar, int i7) {
-        r31 G;
+        x31 G;
         hc hcVar = fVar.t0;
         if (hcVar == null || (G = hcVar.G(i7)) == null) {
             return;
@@ -148,7 +148,7 @@ public final class f extends o00 implements ls {
         this.U.z(i7, -C2);
     }
 
-    public final void E0(ArrayList arrayList, f41 f41Var) {
+    public final void E0(ArrayList arrayList, l41 l41Var) {
         pj0 pj0Var;
         ht0 ht0Var = this.U;
         boolean z9 = ht0Var != null && ht0Var.e0;
@@ -158,25 +158,25 @@ public final class f extends o00 implements ls {
         }
         ea y10 = ea.y(this.currentAccount, true);
         l00 l00Var = (l00) super.o0(getParentActivity());
-        r31 r31Var = new r31(-2);
-        r31Var.c = l00Var;
-        arrayList.add(r31Var);
-        arrayList.add(r31.k(this.i0));
+        x31 x31Var = new x31(-2);
+        x31Var.c = l00Var;
+        arrayList.add(x31Var);
+        arrayList.add(x31.k(this.i0));
         boolean z10 = this.h0;
         if (z10) {
-            arrayList.add(r31.C(hd.M0(2131749513, null)));
+            arrayList.add(x31.C(hd.M0(2131749513, null)));
         }
         boolean N = y10.N(0);
         this.r0 = N;
         if (!N) {
-            arrayList.add(r31.m(this.g0));
+            arrayList.add(x31.m(this.g0));
             return;
         }
         if (!z10) {
-            arrayList.add(r31.C(null));
+            arrayList.add(x31.C(null));
         }
         this.a0 = arrayList.size();
-        arrayList.add(r31.n(this.V, -2));
+        arrayList.add(x31.n(this.V, -2));
         if (!z9 || (pj0Var = this.c) == null) {
             return;
         }
@@ -570,7 +570,7 @@ public final class f extends o00 implements ls {
         this.U.u(this.c, new a(this, 3));
         ht0 ht0Var = this.U;
         cd cdVar = this.T;
-        p61 viewPager = cdVar.getViewPager();
+        v61 viewPager = cdVar.getViewPager();
         cd cdVar2 = this.T;
         Objects.requireNonNull(cdVar2);
         ht0Var.x(cdVar, viewPager, new di.q4(cdVar2, 17));

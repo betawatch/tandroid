@@ -34,16 +34,16 @@ import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.w8;
-import org.telegram.ui.hs0;
+import org.telegram.ui.is0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c0 extends na implements v9 {
     public static final /* synthetic */ int Y1 = 0;
@@ -54,7 +54,7 @@ public final class c0 extends na implements v9 {
     public final TextView T1;
     public final z U1;
     public s9 V1;
-    public f41 W1;
+    public l41 W1;
     public int X1;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -293,31 +293,31 @@ public final class c0 extends na implements v9 {
             textView8.setTextSize(1, 14.0f);
             r6.V(textView8, i17, f6Var3);
             linearLayout.addView(textView8, ha.t(-1, -2, 17, 20, 0, 20, 16));
-            hs0 hs0Var = new hs0(context, f6Var3);
-            hs0Var.a.l(hd.M0(2131749814, null), false);
-            hs0Var.b.setText(hd.M0(2131749813, null));
-            hs0Var.d.setVisibility(8);
-            ImageView imageView2 = hs0Var.c;
+            is0 is0Var = new is0(context, f6Var3);
+            is0Var.a.l(hd.M0(2131749814, null), false);
+            is0Var.b.setText(hd.M0(2131749813, null));
+            is0Var.d.setVisibility(8);
+            ImageView imageView2 = is0Var.c;
             imageView2.setImageResource(R.drawable.msg_emoji_gem);
             PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
             r6.t(imageView2, i17, f6Var3, mode);
-            linearLayout.addView(hs0Var, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            hs0 hs0Var2 = new hs0(context, f6Var3);
-            hs0Var2.a.l(hd.M0(2131749812, null), false);
-            hs0Var2.b.setText(hd.M0(2131749811, null));
-            hs0Var2.d.setVisibility(8);
-            ImageView imageView3 = hs0Var2.c;
+            linearLayout.addView(is0Var, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            is0 is0Var2 = new is0(context, f6Var3);
+            is0Var2.a.l(hd.M0(2131749812, null), false);
+            is0Var2.b.setText(hd.M0(2131749811, null));
+            is0Var2.d.setVisibility(8);
+            ImageView imageView3 = is0Var2.c;
             imageView3.setImageResource(R.drawable.menu_feature_cover_24);
             r6.t(imageView3, i17, f6Var3, mode);
-            linearLayout.addView(hs0Var2, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
-            hs0 hs0Var3 = new hs0(context, f6Var3);
-            hs0Var3.a.l(hd.M0(2131749810, null), false);
-            hs0Var3.b.setText(hd.M0(2131749809, null));
-            hs0Var3.d.setVisibility(8);
-            ImageView imageView4 = hs0Var3.c;
+            linearLayout.addView(is0Var2, ha.k(6.0f, 0.0f, 6.0f, -2.0f, -1, -2));
+            is0 is0Var3 = new is0(context, f6Var3);
+            is0Var3.a.l(hd.M0(2131749810, null), false);
+            is0Var3.b.setText(hd.M0(2131749809, null));
+            is0Var3.d.setVisibility(8);
+            ImageView imageView4 = is0Var3.c;
             imageView4.setImageResource(R.drawable.menu_verification);
             r6.t(imageView4, i17, f6Var3, mode);
-            linearLayout.addView(hs0Var3, ha.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
+            linearLayout.addView(is0Var3, ha.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
         }
         dVar.i(k7.g2(hd.M0(2131743889, null)), false, true);
         dVar.setOnClickListener(new a(this, 1));
@@ -325,10 +325,10 @@ public final class c0 extends na implements v9 {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 29), this.I0);
-        this.W1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new hi.u1(this, 29), this.I0);
+        this.W1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

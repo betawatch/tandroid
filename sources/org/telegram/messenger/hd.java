@@ -35,12 +35,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.o31;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.g60;
 import org.telegram.ui.qy0;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class hd {
     public static boolean a0 = false;
@@ -1106,11 +1106,11 @@ public final class hd {
     /* JADX WARN: Multi-variable type inference failed */
     public static Spannable g(String str) {
         if (str instanceof Spannable) {
-            ((Spannable) str).setSpan(new o31(g0.o()), 0, str.length(), 33);
+            ((Spannable) str).setSpan(new u31(g0.o()), 0, str.length(), 33);
             return (Spannable) str;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        spannableStringBuilder.setSpan(new o31(g0.o()), 0, str.length(), 33);
+        spannableStringBuilder.setSpan(new u31(g0.o()), 0, str.length(), 33);
         return spannableStringBuilder;
     }
 

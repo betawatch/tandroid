@@ -37,16 +37,16 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.ac;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.vb;
 import org.telegram.ui.Components.wb;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.e61;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends FrameLayout implements ls {
     public boolean D;
@@ -83,7 +83,7 @@ public abstract class u0 extends FrameLayout implements ls {
     public boolean f0;
     public final a0 g0;
     public final v4.b0 h;
-    public final f41 n;
+    public final l41 n;
     public final ArrayList r;
     public final ArrayList s;
     public final HashMap w;
@@ -134,7 +134,7 @@ public abstract class u0 extends FrameLayout implements ls {
                             s0 s0Var = (s0) arrayList2.get(i13);
                             if (s0Var.b || !s0Var.e || s0Var.g >= j3) {
                                 int i14 = m0.b;
-                                r31 K = r31.K(m0.class);
+                                x31 K = x31.K(m0.class);
                                 K.G = s0Var;
                                 arrayList.add(K);
                             }
@@ -146,7 +146,7 @@ public abstract class u0 extends FrameLayout implements ls {
                         while (i13 < arrayList3.size()) {
                             t0 t0Var = (t0) arrayList3.get(i13);
                             int i15 = q0.b;
-                            r31 K2 = r31.K(q0.class);
+                            x31 K2 = x31.K(q0.class);
                             K2.G = t0Var;
                             arrayList.add(K2);
                             i13++;
@@ -182,7 +182,7 @@ public abstract class u0 extends FrameLayout implements ls {
         v4.b0 b0Var2 = new v4.b0(0, false);
         this.h = b0Var2;
         e61Var.setLayoutManager(b0Var2);
-        f41 f41Var = new f41(e61Var, context, i10, 0, false, new v10() { // from class: di.e0
+        l41 l41Var = new l41(e61Var, context, i10, 0, false, new v10() { // from class: di.e0
             @Override // org.telegram.messenger.v10
             public final void a(Object obj, Object obj2) {
                 int i12 = i7;
@@ -199,7 +199,7 @@ public abstract class u0 extends FrameLayout implements ls {
                             s0 s0Var = (s0) arrayList2.get(i13);
                             if (s0Var.b || !s0Var.e || s0Var.g >= j3) {
                                 int i14 = m0.b;
-                                r31 K = r31.K(m0.class);
+                                x31 K = x31.K(m0.class);
                                 K.G = s0Var;
                                 arrayList.add(K);
                             }
@@ -211,7 +211,7 @@ public abstract class u0 extends FrameLayout implements ls {
                         while (i13 < arrayList3.size()) {
                             t0 t0Var = (t0) arrayList3.get(i13);
                             int i15 = q0.b;
-                            r31 K2 = r31.K(q0.class);
+                            x31 K2 = x31.K(q0.class);
                             K2.G = t0Var;
                             arrayList.add(K2);
                             i13++;
@@ -220,9 +220,9 @@ public abstract class u0 extends FrameLayout implements ls {
                 }
             }
         }, null);
-        this.n = f41Var;
-        e61Var.setAdapter(f41Var);
-        f41Var.r = false;
+        this.n = l41Var;
+        e61Var.setAdapter(l41Var);
+        l41Var.r = false;
         e61Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         e61Var.setClipToPadding(false);
         addView(e61Var, ha.d(-1, 26.0f, 87, 0.0f, 0.0f, 0.0f, 9.66f));

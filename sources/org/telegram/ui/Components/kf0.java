@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class kf0 extends View {
     public int D;
@@ -156,11 +156,11 @@ public final class kf0 extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean c() {
-        org.telegram.ui.er0 er0Var;
+        org.telegram.ui.fr0 fr0Var;
         ot0[] ot0VarArr;
         sf0 sf0Var = this.h;
         boolean z9 = false;
-        if (sf0Var != null && ((er0Var = sf0Var.h1) == null || !er0Var.n)) {
+        if (sf0Var != null && ((fr0Var = sf0Var.h1) == null || !fr0Var.n)) {
             int measuredWidth = (int) (sf0Var.getMeasuredWidth() / 6.0f);
             int i7 = (int) (this.r / 6.0f);
             if (measuredWidth > 0 && i7 > 0) {

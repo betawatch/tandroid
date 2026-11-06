@@ -11,13 +11,13 @@ import java.util.HashMap;
 import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class m1 extends h61 {
+public final class m1 extends m61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
     public final /* synthetic */ up0 c;
@@ -28,7 +28,7 @@ public final class m1 extends h61 {
         this.b = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void a(ArrayList arrayList) {
         up0 up0Var = this.c;
         i1 i1Var = up0Var.Q;
@@ -81,7 +81,7 @@ public final class m1 extends h61 {
         org.telegram.messenger.g0.i3(i1Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void b(View view, int i7, int i10) {
         v9 v9Var;
         boolean z9;
@@ -116,12 +116,12 @@ public final class m1 extends h61 {
         a2Var.setHasTabs(!t9Var.d().isEmpty());
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final boolean c(int i7) {
         return i7 != 0;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final View d(int i7) {
         if (i7 == -1) {
             return null;
@@ -137,12 +137,12 @@ public final class m1 extends h61 {
         return a2Var;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int e() {
         return this.c.e.d().size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int f(int i7) {
         if (i7 == 0) {
             return -2;
@@ -150,7 +150,7 @@ public final class m1 extends h61 {
         return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i7 - 1)).collection_id;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final CharSequence g(int i7) {
         if (i7 == 0) {
             return hd.M0(2131750247, null);
@@ -170,7 +170,7 @@ public final class m1 extends h61 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int h(int i7) {
         return i7 == 0 ? 0 : 1;
     }

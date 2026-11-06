@@ -44,11 +44,11 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.pt0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.yo;
 import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class f extends Drawable {
     public static final int A;
@@ -130,11 +130,11 @@ public final class f extends Drawable {
         if (layout == null) {
             return;
         }
-        uy0[] uy0VarArr = (uy0[]) spanned.getSpans(0, layout.getText().length(), uy0.class);
-        for (int i13 = 0; i13 < Math.min(100, uy0VarArr.length); i13++) {
-            if (uy0VarArr[i13].c()) {
-                int spanStart = spanned.getSpanStart(uy0VarArr[i13]);
-                int spanEnd = spanned.getSpanEnd(uy0VarArr[i13]);
+        vy0[] vy0VarArr = (vy0[]) spanned.getSpans(0, layout.getText().length(), vy0.class);
+        for (int i13 = 0; i13 < Math.min(100, vy0VarArr.length); i13++) {
+            if (vy0VarArr[i13].c()) {
+                int spanStart = spanned.getSpanStart(vy0VarArr[i13]);
+                int spanEnd = spanned.getSpanEnd(vy0VarArr[i13]);
                 if (i7 == -1 && i10 == -1) {
                     int lineForOffset = layout.getLineForOffset(spanEnd);
                     int i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -211,7 +211,7 @@ public final class f extends Drawable {
     public static void g(View view, boolean z9, int i7, int i10, AtomicReference atomicReference, int i11, Layout layout, List list, Canvas canvas, boolean z10) {
         StaticLayout staticLayout;
         AtomicReference atomicReference2;
-        uy0[] uy0VarArr;
+        vy0[] vy0VarArr;
         int i12;
         if (list == null || list.isEmpty()) {
             f(canvas, layout);
@@ -223,36 +223,36 @@ public final class f extends Drawable {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(layout.getText());
             if (layout.getText() instanceof Spanned) {
                 Spanned spanned = (Spanned) layout.getText();
-                uy0[] uy0VarArr2 = (uy0[]) spanned.getSpans(0, spanned.length(), uy0.class);
+                vy0[] vy0VarArr2 = (vy0[]) spanned.getSpans(0, spanned.length(), vy0.class);
                 int i14 = 0;
-                while (i14 < Math.min(100, uy0VarArr2.length)) {
-                    uy0 uy0Var = uy0VarArr2[i14];
-                    if (uy0Var.c()) {
-                        int spanStart = spanned.getSpanStart(uy0Var);
-                        int spanEnd = spanned.getSpanEnd(uy0Var);
+                while (i14 < Math.min(100, vy0VarArr2.length)) {
+                    vy0 vy0Var = vy0VarArr2[i14];
+                    if (vy0Var.c()) {
+                        int spanStart = spanned.getSpanStart(vy0Var);
+                        int spanEnd = spanned.getSpanEnd(vy0Var);
                         f6[] f6VarArr = (f6[]) spanned.getSpans(spanStart, spanEnd, f6.class);
                         int length = f6VarArr.length;
                         while (i13 < length) {
-                            uy0[] uy0VarArr3 = uy0VarArr2;
+                            vy0[] vy0VarArr3 = vy0VarArr2;
                             f6 f6Var = f6VarArr[i13];
-                            spannableStringBuilder.setSpan(new yo(f6Var, 4), spanned.getSpanStart(f6Var), spanned.getSpanEnd(f6Var), spanned.getSpanFlags(uy0Var));
+                            spannableStringBuilder.setSpan(new yo(f6Var, 4), spanned.getSpanStart(f6Var), spanned.getSpanEnd(f6Var), spanned.getSpanFlags(vy0Var));
                             spannableStringBuilder.removeSpan(f6Var);
                             i13++;
-                            uy0VarArr2 = uy0VarArr3;
+                            vy0VarArr2 = vy0VarArr3;
                             i14 = i14;
                             length = length;
                             f6VarArr = f6VarArr;
                         }
-                        uy0VarArr = uy0VarArr2;
+                        vy0VarArr = vy0VarArr2;
                         i12 = i14;
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(uy0Var));
-                        spannableStringBuilder.removeSpan(uy0Var);
+                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(vy0Var));
+                        spannableStringBuilder.removeSpan(vy0Var);
                     } else {
-                        uy0VarArr = uy0VarArr2;
+                        vy0VarArr = vy0VarArr2;
                         i12 = i14;
                     }
                     i14 = i12 + 1;
-                    uy0VarArr2 = uy0VarArr;
+                    vy0VarArr2 = vy0VarArr;
                     i13 = 0;
                 }
             }

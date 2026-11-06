@@ -11,11 +11,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r6 implements v10 {
     public final /* synthetic */ int a;
@@ -32,22 +32,22 @@ public final /* synthetic */ class r6 implements v10 {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                f41 f41Var = (f41) obj2;
+                l41 l41Var = (l41) obj2;
                 w6 w6Var = this.b;
                 kp kpVar = w6Var.W1;
-                f41Var.F = 1;
+                l41Var.F = 1;
                 int L = org.telegram.messenger.g0.L(64.0f);
-                arrayList.add(r31.D(org.telegram.messenger.g0.L(64.0f)));
+                arrayList.add(x31.D(org.telegram.messenger.g0.L(64.0f)));
                 if (w6Var.R1 || w6Var.Z1) {
                     L += w6Var.d1(true, arrayList, hd.M0(2131753905, null), w6Var.T1, false, false, -1);
                 }
                 if (!w6Var.R1) {
                     if (TextUtils.isEmpty(w6Var.j2) && !w6Var.Z1) {
-                        f41Var.V();
-                        r31 c10 = r31.c(1, R.drawable.msg2_folder, hd.M0(2131744610, null));
+                        l41Var.V();
+                        x31 c10 = x31.c(1, R.drawable.msg2_folder, hd.M0(2131744610, null));
                         c10.q = true;
                         arrayList.add(c10);
-                        f41Var.U();
+                        l41Var.U();
                         L += org.telegram.messenger.g0.L(50.0f);
                     }
                     if (!w6Var.Z1 && kpVar != null) {
@@ -60,7 +60,7 @@ public final /* synthetic */ class r6 implements v10 {
                         String M0 = hd.M0(2131748242, null);
                         String M02 = hd.M0(2131748243, null);
                         int i7 = li.b;
-                        r31 K = r31.K(li.class);
+                        x31 K = x31.K(li.class);
                         K.l = M0;
                         K.m = M02;
                         arrayList.add(K);
@@ -68,14 +68,14 @@ public final /* synthetic */ class r6 implements v10 {
                         String M03 = hd.M0(2131748242, null);
                         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, w6Var.j2.length() >= 3 ? 2131748240 : 2131748241, w6Var.j2));
                         int i10 = li.b;
-                        r31 K2 = r31.K(li.class);
+                        x31 K2 = x31.K(li.class);
                         K2.l = M03;
                         K2.m = X2;
                         arrayList.add(K2);
                     }
                 }
-                arrayList.add(r31.C(null));
-                arrayList.add(r31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(x31.C(null));
+                arrayList.add(x31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
                 break;
             default:
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) obj;

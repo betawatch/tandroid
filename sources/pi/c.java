@@ -7,11 +7,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
-import c8.nb;
+import c8.ob;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class c extends nb {
+public final class c extends ob {
     public final RenderNode a = w.n();
     public final Paint b = new Paint(1);
     public final /* synthetic */ f c;
@@ -20,7 +20,7 @@ public final class c extends nb {
         this.c = fVar;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void a(Rect rect, RectF rectF) {
         f fVar = this.c;
         if (fVar.x || !this.a.hasDisplayList()) {
@@ -41,22 +41,22 @@ public final class c extends nb {
         }
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void b() {
         this.a.discardDisplayList();
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final boolean d() {
         return this.a.hasDisplayList();
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void e(float f10) {
         this.a.setAlpha(f10);
     }

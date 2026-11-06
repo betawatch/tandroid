@@ -9,13 +9,13 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.RuntimeShader;
 import android.support.v4.media.session.w;
-import c8.nb;
+import c8.ob;
 import java.util.Arrays;
 import org.telegram.ui.Components.ra0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class e extends nb {
+public final class e extends ob {
     public final RenderNode a = w.o();
     public final RuntimeShader b = ra0.a();
     public int c = -1;
@@ -30,7 +30,7 @@ public final class e extends nb {
         this.i = fVar;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void a(Rect rect, RectF rectF) {
         float f10;
         a aVar;
@@ -121,23 +121,23 @@ public final class e extends nb {
         fVar.w = false;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void b() {
         this.a.discardDisplayList();
         this.c = -1;
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final boolean d() {
         return this.a.hasDisplayList();
     }
 
-    @Override // c8.nb
+    @Override // c8.ob
     public final void e(float f10) {
         this.a.setAlpha(f10);
     }

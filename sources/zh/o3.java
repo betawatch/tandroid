@@ -14,9 +14,9 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.ma;
 import org.telegram.ui.Components.na;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class o3 extends na implements ls {
     public final int P1;
@@ -36,7 +36,7 @@ public final class o3 extends na implements ls {
     public k60 V1;
     public final ri.c W1;
     public final ri.c X1;
-    public f41 Y1;
+    public l41 Y1;
     public i0.b Z1;
     public boolean a2;
     public int b2;
@@ -121,10 +121,10 @@ public final class o3 extends na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, false, new q0(this, 4), this.I0);
-        this.Y1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, false, new q0(this, 4), this.I0);
+        this.Y1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -149,11 +149,11 @@ public final class o3 extends na implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        f41 f41Var;
-        if (i7 != qs.G3 || (f41Var = this.Y1) == null) {
+        l41 l41Var;
+        if (i7 != qs.G3 || (l41Var = this.Y1) == null) {
             return;
         }
-        f41Var.O(true);
+        l41Var.O(true);
         if (e1()) {
             this.Q1.a();
         }

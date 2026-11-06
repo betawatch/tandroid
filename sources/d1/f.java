@@ -35,14 +35,14 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.t9;
 import org.webrtc.MediaStreamTrack;
 import q6.m;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static int a;
@@ -100,9 +100,9 @@ public abstract class f {
                     ij ijVar = B.u0;
                     if ((B.i0 != null || B.E0 != null) && ijVar != null && B.L(ijVar)) {
                         try {
-                            n51 n51Var = B.i0;
-                            if (n51Var != null) {
-                                j3 = n51Var.U();
+                            t51 t51Var = B.i0;
+                            if (t51Var != null) {
+                                j3 = t51Var.U();
                                 if (j3 != -9223372036854775807L) {
                                     ijVar.b0 = Utilities.l(a10 / j3);
                                 }
@@ -111,9 +111,9 @@ public abstract class f {
                                     v(a10);
                                 }
                             } else {
-                                n51 n51Var2 = B.E0;
-                                if (n51Var2 != null) {
-                                    j3 = n51Var2.U();
+                                t51 t51Var2 = B.E0;
+                                if (t51Var2 != null) {
+                                    j3 = t51Var2.U();
                                     B.E0.p0(a10);
                                     if (!B.T1) {
                                         v(a10);

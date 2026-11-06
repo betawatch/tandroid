@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p7 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -48,7 +48,7 @@ public final /* synthetic */ class p7 implements Runnable {
         c1 c1Var = this.e;
         switch (i7) {
             case 0:
-                ((w7) c1Var).Z((TLRPC.Document) obj6, (ew) obj5, (m20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (hc) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
+                ((w7) c1Var).Y((TLRPC.Document) obj6, (ew) obj5, (m20) obj4, (TLRPC.TL_fileLocationToBeDeprecated) obj3, (hc) obj2, this.w, (String) obj, this.c, this.b, null, 0L, false, this.d);
                 break;
             default:
                 ui uiVar = (ui) c1Var;

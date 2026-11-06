@@ -24,7 +24,7 @@ import android.util.StateSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
-import c8.yc;
+import c8.zc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -44,16 +44,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.b01;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.c01;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.pg0;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class w1 {
     public int A;
@@ -176,7 +176,7 @@ public final class w1 {
                                     Spannable spannable = (Spannable) this.d;
                                     CharacterStyle[] characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                                     if (characterStyleArr3 == null || characterStyleArr3.length == 0) {
-                                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, u31.class);
+                                        characterStyleArr3 = (CharacterStyle[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, a41.class);
                                         z9 = true;
                                     } else {
                                         z9 = false;
@@ -185,7 +185,7 @@ public final class w1 {
                                         z10 = z9;
                                         if (characterStyleArr3.length == 0) {
                                         }
-                                        if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[0] instanceof s31) || s31.h) && !org.telegram.messenger.g0.C1())) {
+                                        if (characterStyleArr3.length != 0 && ((!(characterStyleArr3[0] instanceof y31) || y31.h) && !org.telegram.messenger.g0.C1())) {
                                             if (motionEvent.getAction() != 0) {
                                                 CharacterStyle characterStyle2 = characterStyleArr3[0];
                                                 if (characterStyle2 instanceof org.telegram.ui.Components.r5) {
@@ -225,7 +225,7 @@ public final class w1 {
                                                                     fj fjVar2 = (fj) q1Var.p3.e.get(i17);
                                                                     if (z10) {
                                                                         int i18 = fjVar2.n;
-                                                                        characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i18, i18, u31.class);
+                                                                        characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i18, i18, a41.class);
                                                                     } else {
                                                                         int i19 = fjVar2.n;
                                                                         characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(i19, i19, ClickableSpan.class);
@@ -256,7 +256,7 @@ public final class w1 {
                                                                     fj fjVar3 = (fj) q1Var.p3.e.get(i22);
                                                                     if (z10) {
                                                                         int i23 = fjVar3.r - 1;
-                                                                        characterStyleArr = (CharacterStyle[]) spannable.getSpans(i23, i23, u31.class);
+                                                                        characterStyleArr = (CharacterStyle[]) spannable.getSpans(i23, i23, a41.class);
                                                                     } else {
                                                                         int i24 = fjVar3.r - 1;
                                                                         characterStyleArr = (CharacterStyle[]) spannable.getSpans(i24, i24, ClickableSpan.class);
@@ -417,7 +417,7 @@ public final class w1 {
 
     /* JADX WARN: Code restructure failed: missing block: B:151:0x018b, code lost:
     
-        if (org.telegram.ui.Components.s31.h == false) goto L112;
+        if (org.telegram.ui.Components.y31.h == false) goto L112;
      */
     /* JADX WARN: Code restructure failed: missing block: B:81:0x01a7, code lost:
     
@@ -633,7 +633,7 @@ public final class w1 {
                                         Spannable spannable = (Spannable) p1Var3.p.getText();
                                         ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                                         if (clickableSpanArr.length != 0) {
-                                            if (clickableSpanArr[i7] instanceof s31) {
+                                            if (clickableSpanArr[i7] instanceof y31) {
                                                 try {
                                                 } catch (Exception e11) {
                                                     e = e11;
@@ -1140,13 +1140,13 @@ public final class w1 {
                     this.n.c(q1Var2.P5.O3());
                     sh.e eVar2 = this.n;
                     q1Var2.X1(q1Var2.P5.O3() ? org.telegram.ui.ActionBar.k6.Bc : org.telegram.ui.ActionBar.k6.We);
-                    ly0 ly0Var = eVar2.r;
-                    if (ly0Var != null) {
-                        ly0Var.n(i47);
+                    my0 my0Var = eVar2.r;
+                    if (my0Var != null) {
+                        my0Var.n(i47);
                     }
-                    ly0 ly0Var2 = eVar2.s;
-                    if (ly0Var2 != null) {
-                        ly0Var2.n(i46);
+                    my0 my0Var2 = eVar2.s;
+                    if (my0Var2 != null) {
+                        my0Var2.n(i46);
                     }
                     this.n.draw(canvas4);
                 }
@@ -1288,15 +1288,15 @@ public final class w1 {
             this.m.c(q1Var.P5.O3());
             sh.e eVar4 = this.m;
             q1Var.X1(q1Var.P5.O3() ? org.telegram.ui.ActionBar.k6.Bc : org.telegram.ui.ActionBar.k6.We);
-            ly0 ly0Var3 = eVar4.r;
+            my0 my0Var3 = eVar4.r;
             i17 = i7;
-            if (ly0Var3 != null) {
-                ly0Var3.n(i17);
+            if (my0Var3 != null) {
+                my0Var3.n(i17);
             }
-            ly0 ly0Var4 = eVar4.s;
-            if (ly0Var4 != null) {
+            my0 my0Var4 = eVar4.s;
+            if (my0Var4 != null) {
                 i16 = i14;
-                ly0Var4.n(i16);
+                my0Var4.n(i16);
             } else {
                 i16 = i14;
             }
@@ -1595,9 +1595,9 @@ public final class w1 {
                 if (E4 && z13 && p1Var.q != null && (checkBoxBase = q1Var.e7[i31]) != null) {
                     float progress2 = checkBoxBase.getProgress();
                     if (progress2 > 0.0f) {
-                        ly0 ly0Var5 = p1Var.q;
-                        ly0Var5.p = f38 - org.telegram.messenger.g0.L(8.0f);
-                        ly0Var5.c(0.0f, (p1Var.q.i() / f15) + (p1Var.p.getHeight() - org.telegram.messenger.g0.L(6.0f)), progress2, i34, canvas);
+                        my0 my0Var5 = p1Var.q;
+                        my0Var5.p = f38 - org.telegram.messenger.g0.L(8.0f);
+                        my0Var5.c(0.0f, (p1Var.q.i() / f15) + (p1Var.p.getHeight() - org.telegram.messenger.g0.L(6.0f)), progress2, i34, canvas);
                         canvas2 = canvas;
                         org.telegram.ui.ActionBar.k6.P2.setAlpha(i55);
                         if (!E4 || ((!q1Var.V4 || (!this.w && this.v)) && !q1Var.W4 && !q1Var.X4 && ((!this.x || (this.v && !this.w)) && (!this.C || z14)))) {
@@ -2166,7 +2166,7 @@ public final class w1 {
         ArrayList arrayList5 = q1Var.P4;
         int i23 = q1Var.Z5;
         if (q1Var.l5 == null) {
-            q1Var.l5 = new b01();
+            q1Var.l5 = new c01();
         }
         q1Var.X4 = false;
         q1Var.B0(0);
@@ -2292,7 +2292,7 @@ public final class w1 {
         q1Var.V4 = ijVar2.W4();
         this.w = ijVar2.F2();
         float f12 = f10;
-        this.x = yc.a(sh.g.a(ijVar2), 7);
+        this.x = zc.a(sh.g.a(ijVar2), 7);
         if (q1Var.V4) {
             ijVar2.v1.clear();
         }
@@ -3005,7 +3005,7 @@ public final class w1 {
                                 TLObject e22 = qp.s1(i23).e2(org.telegram.messenger.m5.o(todoCompletion2.completed_by));
                                 p1Var10.y.l(e22);
                                 p1Var10.z.i0(e22, p1Var10.y, null);
-                                p1Var10.q = new ly0(org.telegram.messenger.m5.m(e22), 12.0f);
+                                p1Var10.q = new my0(org.telegram.messenger.m5.m(e22), 12.0f);
                                 break;
                             }
                             i65 = i66;

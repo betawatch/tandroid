@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c01 implements Runnable {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class c01 implements Runnable {
                 ((WalletEngine2) obj5).lambda$prepareSend$49((org.telegram.messenger.x10) obj4, (TL_wallet.sendTransfer) obj3, (String) obj2, (String) obj);
                 return;
             case 8:
-                ((p4.g) obj4).run().b(new io0((ui.e) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 21), m9.r.a);
+                ((p4.g) obj4).run().b(new jo0((ui.e) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 21), m9.r.a);
                 return;
             case 9:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;

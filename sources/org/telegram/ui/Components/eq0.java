@@ -6,9 +6,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class eq0 extends org.telegram.ui.mq0 {
+public final class eq0 extends org.telegram.ui.nq0 {
     public final /* synthetic */ xs0 a;
 
     public eq0(xs0 xs0Var) {
@@ -23,11 +23,11 @@ public final class eq0 extends org.telegram.ui.mq0 {
     /* JADX WARN: Type inference failed for: r16v12 */
     /* JADX WARN: Type inference failed for: r16v13 */
     /* JADX WARN: Type inference failed for: r16v4 */
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    public final org.telegram.ui.wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         ImageReceiver imageReceiver;
         int i10;
         ImageReceiver linkImageView;
@@ -88,24 +88,24 @@ public final class eq0 extends org.telegram.ui.mq0 {
                                     iArr[z14 ? 1 : 0] = Math.round(linkImageView.L0) + iArr[z14 ? 1 : 0];
                                     z12 = z14;
                                     if (linkImageView != null) {
-                                        org.telegram.ui.vq0 vq0Var = new org.telegram.ui.vq0();
-                                        vq0Var.b = iArr[i10];
-                                        vq0Var.c = iArr[z12];
-                                        vq0Var.d = cq0Var;
+                                        org.telegram.ui.wq0 wq0Var = new org.telegram.ui.wq0();
+                                        wq0Var.b = iArr[i10];
+                                        wq0Var.c = iArr[z12];
+                                        wq0Var.d = cq0Var;
                                         sr0 sr0Var2 = sr0VarArr[i10];
-                                        vq0Var.m = sr0Var2.y;
+                                        wq0Var.m = sr0Var2.y;
                                         sr0Var2.h.getLocationInWindow(iArr);
-                                        vq0Var.n = -iArr[z12];
-                                        vq0Var.a = linkImageView;
-                                        vq0Var.o = z12;
-                                        vq0Var.h = linkImageView.E();
-                                        vq0Var.e = vq0Var.a.p();
-                                        vq0Var.d.getLocationInWindow(iArr);
+                                        wq0Var.n = -iArr[z12];
+                                        wq0Var.a = linkImageView;
+                                        wq0Var.o = z12;
+                                        wq0Var.h = linkImageView.E();
+                                        wq0Var.e = wq0Var.a.p();
+                                        wq0Var.d.getLocationInWindow(iArr);
                                         int i18 = i10;
-                                        vq0Var.j = i18;
-                                        vq0Var.q = xs0Var.v1[i18].m;
+                                        wq0Var.j = i18;
+                                        wq0Var.q = xs0Var.v1[i18].m;
                                         if (oq0Var != null && oq0Var.getVisibility() == 0) {
-                                            vq0Var.j = org.telegram.messenger.g0.L(36.0f) + vq0Var.j;
+                                            wq0Var.j = org.telegram.messenger.g0.L(36.0f) + wq0Var.j;
                                         }
                                         if (PhotoViewer.L1(ijVar) && (pinnedHeader = cq0Var.getPinnedHeader()) != null) {
                                             int height = (oq0Var == null || oq0Var.getVisibility() != 0) ? 0 : oq0Var.getHeight() - org.telegram.messenger.g0.L(2.5f);
@@ -113,12 +113,12 @@ public final class eq0 extends org.telegram.ui.mq0 {
                                             if (z15) {
                                                 height += org.telegram.messenger.g0.L(8.0f);
                                             }
-                                            int i19 = height - vq0Var.c;
+                                            int i19 = height - wq0Var.c;
                                             if (i19 > childAt.getHeight()) {
                                                 cq0Var.scrollBy(0, -(pinnedHeader.getHeight() + i19));
-                                                return vq0Var;
+                                                return wq0Var;
                                             }
-                                            int height2 = vq0Var.c - cq0Var.getHeight();
+                                            int height2 = wq0Var.c - cq0Var.getHeight();
                                             if (z15) {
                                                 height2 -= org.telegram.messenger.g0.L(8.0f);
                                             }
@@ -126,7 +126,7 @@ public final class eq0 extends org.telegram.ui.mq0 {
                                                 cq0Var.scrollBy(0, childAt.getHeight() + height2);
                                             }
                                         }
-                                        return vq0Var;
+                                        return wq0Var;
                                     }
                                     i11 = i10;
                                 }

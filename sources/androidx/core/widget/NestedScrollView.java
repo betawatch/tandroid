@@ -24,7 +24,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.EdgeEffect;
 import android.widget.FrameLayout;
 import android.widget.OverScroller;
-import c8.kc;
+import c8.lc;
 import e2.r0;
 import h1.a;
 import j$.util.Objects;
@@ -52,7 +52,7 @@ import u0.f;
 import u0.g;
 import u0.h;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements l {
     public static final float T = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -114,17 +114,17 @@ public class NestedScrollView extends FrameLayout implements l {
     public final boolean B(MotionEvent motionEvent) {
         boolean z9;
         EdgeEffect edgeEffect = this.e;
-        if (kc.a(edgeEffect) != 0.0f) {
-            kc.b(edgeEffect, 0.0f, motionEvent.getX() / getWidth());
+        if (lc.a(edgeEffect) != 0.0f) {
+            lc.b(edgeEffect, 0.0f, motionEvent.getX() / getWidth());
             z9 = true;
         } else {
             z9 = false;
         }
         EdgeEffect edgeEffect2 = this.f;
-        if (kc.a(edgeEffect2) == 0.0f) {
+        if (lc.a(edgeEffect2) == 0.0f) {
             return z9;
         }
-        kc.b(edgeEffect2, 0.0f, 1.0f - (motionEvent.getX() / getWidth()));
+        lc.b(edgeEffect2, 0.0f, 1.0f - (motionEvent.getX() / getWidth()));
         return true;
     }
 
@@ -243,10 +243,10 @@ public class NestedScrollView extends FrameLayout implements l {
         int height = getHeight();
         EdgeEffect edgeEffect = this.e;
         EdgeEffect edgeEffect2 = this.f;
-        if (i10 <= 0 || kc.a(edgeEffect) == 0.0f) {
-            if (i10 < 0 && kc.a(edgeEffect2) != 0.0f) {
+        if (i10 <= 0 || lc.a(edgeEffect) == 0.0f) {
+            if (i10 < 0 && lc.a(edgeEffect2) != 0.0f) {
                 float f10 = height;
-                round = Math.round(kc.b(edgeEffect2, (i10 * 4.0f) / f10, 0.5f) * (f10 / 4.0f));
+                round = Math.round(lc.b(edgeEffect2, (i10 * 4.0f) / f10, 0.5f) * (f10 / 4.0f));
                 if (round != i10) {
                     edgeEffect2.finish();
                 }
@@ -290,7 +290,7 @@ public class NestedScrollView extends FrameLayout implements l {
                 return;
             }
         }
-        round = Math.round(kc.b(edgeEffect, ((-i10) * 4.0f) / height, 0.5f) * ((-height) / 4.0f));
+        round = Math.round(lc.b(edgeEffect, ((-i10) * 4.0f) / height, 0.5f) * ((-height) / 4.0f));
         if (round != i10) {
             edgeEffect.finish();
         }
@@ -1167,13 +1167,13 @@ public class NestedScrollView extends FrameLayout implements l {
                 velocityTracker.computeCurrentVelocity(1000, this.H);
                 int yVelocity = (int) velocityTracker.getYVelocity(this.I);
                 if (Math.abs(yVelocity) >= this.G) {
-                    if (kc.a(edgeEffect) != 0.0f) {
+                    if (lc.a(edgeEffect) != 0.0f) {
                         if (y(edgeEffect, yVelocity)) {
                             edgeEffect.onAbsorb(yVelocity);
                         } else {
                             i(-yVelocity);
                         }
-                    } else if (kc.a(edgeEffect2) != 0.0f) {
+                    } else if (lc.a(edgeEffect2) != 0.0f) {
                         int i10 = -yVelocity;
                         if (y(edgeEffect2, i10)) {
                             edgeEffect2.onAbsorb(i10);
@@ -1210,15 +1210,15 @@ public class NestedScrollView extends FrameLayout implements l {
                     int i12 = this.n - y10;
                     float x10 = motionEvent.getX(findPointerIndex) / getWidth();
                     float height = i12 / getHeight();
-                    if (kc.a(edgeEffect) != 0.0f) {
-                        b10 = -kc.b(edgeEffect, -height, x10);
-                        if (kc.a(edgeEffect) == 0.0f) {
+                    if (lc.a(edgeEffect) != 0.0f) {
+                        b10 = -lc.b(edgeEffect, -height, x10);
+                        if (lc.a(edgeEffect) == 0.0f) {
                             edgeEffect.onRelease();
                         }
                     } else {
-                        if (kc.a(edgeEffect2) != 0.0f) {
-                            b10 = kc.b(edgeEffect2, height, 1.0f - x10);
-                            if (kc.a(edgeEffect2) == 0.0f) {
+                        if (lc.a(edgeEffect2) != 0.0f) {
+                            b10 = lc.b(edgeEffect2, height, 1.0f - x10);
+                            if (lc.a(edgeEffect2) == 0.0f) {
                                 edgeEffect2.onRelease();
                             }
                         }
@@ -1623,7 +1623,7 @@ public class NestedScrollView extends FrameLayout implements l {
         EdgeEffect edgeEffect2 = this.e;
         if (i17 < 0) {
             if (z12) {
-                kc.b(edgeEffect2, (-i16) / getHeight(), i11 / getWidth());
+                lc.b(edgeEffect2, (-i16) / getHeight(), i11 / getWidth());
                 if (motionEvent != null) {
                     getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i10, true);
                 }
@@ -1632,7 +1632,7 @@ public class NestedScrollView extends FrameLayout implements l {
                 }
             }
         } else if (i17 > scrollRange && z12) {
-            kc.b(edgeEffect, i16 / getHeight(), 1.0f - (i11 / getWidth()));
+            lc.b(edgeEffect, i16 / getHeight(), 1.0f - (i11 / getWidth()));
             if (motionEvent != null) {
                 z10 = false;
                 getScrollFeedbackProvider().a.onScrollLimit(motionEvent.getDeviceId(), motionEvent.getSource(), i10, false);
@@ -1675,7 +1675,7 @@ public class NestedScrollView extends FrameLayout implements l {
         if (i7 > 0) {
             return true;
         }
-        float a10 = kc.a(edgeEffect) * getHeight();
+        float a10 = lc.a(edgeEffect) * getHeight();
         float abs = Math.abs(-i7) * 0.35f;
         float f10 = this.a * 0.015f;
         double log = Math.log(abs / f10);

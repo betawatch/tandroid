@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class d7 extends org.telegram.ui.Components.h61 {
+public final class d7 extends org.telegram.ui.Components.m61 {
     public org.telegram.ui.ActionBar.g1 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ oi.q c;
@@ -22,7 +22,7 @@ public final class d7 extends org.telegram.ui.Components.h61 {
         this.e = ht0Var;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final void b(View view, int i7, int i10) {
         t7 t7Var = this.f;
         org.telegram.ui.Components.pj0 c10 = t7Var.c(view);
@@ -42,7 +42,7 @@ public final class d7 extends org.telegram.ui.Components.h61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final View d(int i7) {
         Context context = this.b;
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
@@ -69,22 +69,22 @@ public final class d7 extends org.telegram.ui.Components.h61 {
         return this.e == null ? pj0Var : new s7(context, pj0Var);
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int e() {
         return this.f.f.size();
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int f(int i7) {
         return ((r7) this.f.f.get(i7)).b;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final CharSequence g(int i7) {
         return ((r7) this.f.f.get(i7)).a;
     }
 
-    @Override // org.telegram.ui.Components.h61
+    @Override // org.telegram.ui.Components.m61
     public final int h(int i7) {
         return ((r7) this.f.f.get(i7)).b;
     }

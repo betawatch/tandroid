@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class gf extends ze {
     public static q5 Z;
@@ -320,7 +320,7 @@ public final class gf extends ze {
             if (str != null) {
                 TLRPC.PhotoSize a02 = gc.a0(q10, compressFormat, g0.Z0(true), g0.Z0(true), 99);
                 w7.G(p10.s0);
-                this.h = w7.K(a02, null, true, true).toString();
+                this.h = w7.J(a02, null, true, true).toString();
             } else {
                 if (this.A != null) {
                     Bitmap decodeFile2 = BitmapFactory.decodeFile(str);

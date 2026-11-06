@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.os.SystemClock;
 import android.view.View;
-import c8.ic;
+import c8.jc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.ij;
@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c40;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e0 implements ti.m {
     public static e0 e;
@@ -153,7 +153,7 @@ public final class e0 implements ti.m {
                 String sb3 = sb2.toString();
                 if (!sb3.equals(e0Var3.d)) {
                     e0Var3.d = sb3;
-                    e0Var3.c = ic.a(fArr, fArr2, 0.45f, 2.35f, null, 0.0f).a;
+                    e0Var3.c = jc.a(fArr, fArr2, 0.45f, 2.35f, null, 0.0f).a;
                 }
             }
         }

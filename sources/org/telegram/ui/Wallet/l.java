@@ -1,10 +1,10 @@
 package org.telegram.ui.Wallet;
 
 import android.view.View;
-import c8.ua;
-import org.telegram.ui.Components.k41;
+import c8.va;
+import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -61,8 +61,8 @@ public final /* synthetic */ class l implements Runnable {
                 w0 w0Var = (w0) this.b;
                 w0Var.c("AUTH_CANCELED");
                 w0Var.e();
-                if (ua.b == w0Var) {
-                    ua.b = null;
+                if (va.b == w0Var) {
+                    va.b = null;
                     return;
                 }
                 return;
@@ -81,7 +81,7 @@ public final /* synthetic */ class l implements Runnable {
                 if (w3Var == null || w3Var.getScrollState() != 0) {
                     return;
                 }
-                k41 y02 = u5Var.j.y0();
+                q41 y02 = u5Var.j.y0();
                 if ((y02 == null || y02.getScrollState() == 0) && (d = u5Var.d(u5Var.c.e3)) != null) {
                     v4.b0 b0Var2 = u5Var.c.e3;
                     b0Var2.getClass();

@@ -15,13 +15,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class sy0 extends org.telegram.ui.Components.na {
     public final LinearLayout P1;
     public final org.telegram.ui.Components.wp Q1;
     public final org.telegram.ui.Components.w70 R1;
-    public org.telegram.ui.Components.f41 S1;
+    public org.telegram.ui.Components.l41 S1;
 
     public sy0(Context context, boolean z9, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.messenger.c20 c20Var) {
         super(context, null, false, false, f6Var);
@@ -80,11 +80,11 @@ public final class sy0 extends org.telegram.ui.Components.na {
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         linearLayout.addView(f10, c8.ha.t(-2, -2, 1, 22, 8, 22, 0));
-        linearLayout.addView(new rq0(this, context, R.drawable.menu_privacy, org.telegram.messenger.hd.M0(z9 ? 2131746041 : 2131746042, null), org.telegram.messenger.hd.M0(z9 ? 2131746043 : 2131746044, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
-        linearLayout.addView(new rq0(this, context, R.drawable.menu_feature_split, org.telegram.messenger.hd.M0(z9 ? 2131746037 : 2131746038, null), org.telegram.messenger.hd.M0(z9 ? 2131746039 : 2131746040, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
+        linearLayout.addView(new sq0(this, context, R.drawable.menu_privacy, org.telegram.messenger.hd.M0(z9 ? 2131746041 : 2131746042, null), org.telegram.messenger.hd.M0(z9 ? 2131746043 : 2131746044, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
+        linearLayout.addView(new sq0(this, context, R.drawable.menu_feature_split, org.telegram.messenger.hd.M0(z9 ? 2131746037 : 2131746038, null), org.telegram.messenger.hd.M0(z9 ? 2131746039 : 2131746040, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         String a02 = org.telegram.messenger.hd.a0(null, null, z9 ? 2131746035 : 2131746036, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).z4));
         int i14 = org.telegram.ui.ActionBar.k6.Uc;
-        linearLayout.addView(new rq0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.hd.M0(2131746034, null), org.telegram.messenger.g0.S2(a02, i14, 0, new Runnable(this) { // from class: org.telegram.ui.ry0
+        linearLayout.addView(new sq0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.hd.M0(2131746034, null), org.telegram.messenger.g0.S2(a02, i14, 0, new Runnable(this) { // from class: org.telegram.ui.ry0
             public final /* synthetic */ sy0 b;
 
             {
@@ -209,9 +209,9 @@ public final class sy0 extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final org.telegram.ui.Components.oj0 L0(org.telegram.ui.Components.pj0 pj0Var) {
-        org.telegram.ui.Components.f41 f41Var = new org.telegram.ui.Components.f41(pj0Var, getContext(), this.a, 0, true, new a5(this, 21), this.I0);
-        this.S1 = f41Var;
-        return f41Var;
+        org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(pj0Var, getContext(), this.a, 0, true, new a5(this, 21), this.I0);
+        this.S1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

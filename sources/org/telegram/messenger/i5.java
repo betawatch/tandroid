@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -168,7 +168,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                 if (r14 != 0) {
                     try {
                         w7.G(p10.s0);
-                        r13 = BitmapFactory.decodeFile(w7.K(r14, str4, true, true).toString());
+                        r13 = BitmapFactory.decodeFile(w7.J(r14, str4, true, true).toString());
                     } catch (Throwable th2) {
                         th = th2;
                         str3 = str4;

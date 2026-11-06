@@ -1,9 +1,9 @@
 package fi;
 
 import android.os.Build;
-import c8.yc;
+import c8.zc;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t6 implements oi.n, oi.m {
     public final /* synthetic */ w6 a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class t6 implements oi.n, oi.m {
         if (Build.VERSION.SDK_INT < 31 || gVar == null) {
             return;
         }
-        if (yc.a(i7, 4)) {
+        if (zc.a(i7, 4)) {
             gVar.h(w6Var.X0.e());
         }
         gVar.e(w6Var.g2, w6Var.b.getWidth(), w6Var.b.getHeight());

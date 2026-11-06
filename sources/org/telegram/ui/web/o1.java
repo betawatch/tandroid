@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import bi.b9;
 import bi.la;
 import c8.ha;
-import c8.wa;
+import c8.xa;
 import di.i2;
 import fi.w3;
 import java.io.File;
@@ -46,19 +46,19 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.u4;
 import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.m6;
 import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class o1 extends h41 implements ls {
+public final class o1 extends n41 implements ls {
     public i2 e;
     public final c20 f;
     public long h;
@@ -119,34 +119,34 @@ public final class o1 extends h41 implements ls {
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         boolean M2 = getMessagesController().M2();
         arrayList.size();
         String M0 = hd.M0(2131752857, null);
-        r31 r31Var = new r31(9);
-        r31Var.d = 1;
-        r31Var.l = M0;
-        r31Var.L(M2);
-        arrayList.add(r31Var);
-        arrayList.add(r31.C(hd.M0(2131752856, null)));
+        x31 x31Var = new x31(9);
+        x31Var.d = 1;
+        x31Var.l = M0;
+        x31Var.L(M2);
+        arrayList.add(x31Var);
+        arrayList.add(x31.C(hd.M0(2131752856, null)));
         int i7 = 0;
         if (!M2) {
             getMessagesController().O2();
-            r31 i10 = r31.i(17, hd.M0(2131742935, null));
+            x31 i10 = x31.i(17, hd.M0(2131742935, null));
             i10.L(getMessagesController().O2());
             arrayList.add(i10);
-            arrayList.add(r31.C(hd.M0(2131742934, null)));
-            arrayList.add(r31.u(hd.M0(2131752865, null)));
+            arrayList.add(x31.C(hd.M0(2131742934, null)));
+            arrayList.add(x31.u(hd.M0(2131752865, null)));
             arrayList.size();
             i2 i2Var = this.e;
             String M02 = hd.M0(2131752849, null);
-            r31 r31Var2 = new r31(3);
-            r31Var2.d = 16;
-            r31Var2.G = i2Var;
-            r31Var2.l = M02;
-            r31Var2.q = true;
-            arrayList.add(r31Var2);
+            x31 x31Var2 = new x31(3);
+            x31Var2.d = 16;
+            x31Var2.G = i2Var;
+            x31Var2.l = M02;
+            x31Var2.q = true;
+            arrayList.add(x31Var2);
             TL_account.TL_webBrowserSettings tL_webBrowserSettings = getMessagesController().y8;
             ArrayList<TL_account.WebDomainException> arrayList2 = tL_webBrowserSettings == null ? new ArrayList<>() : tL_webBrowserSettings.inapp_exceptions;
             int size = arrayList2.size();
@@ -158,49 +158,49 @@ public final class o1 extends h41 implements ls {
                 String str2 = webDomainException2.title;
                 long j3 = webDomainException2.favicon;
                 int i11 = m1.b;
-                r31 K = r31.K(m1.class);
+                x31 K = x31.K(m1.class);
                 K.l = str;
                 K.n = str2;
                 K.B = j3;
                 arrayList.add(K);
             }
-            arrayList.add(r31.C(hd.M0(2131752866, null)));
+            arrayList.add(x31.C(hd.M0(2131752866, null)));
             if (arrayList2.isEmpty()) {
                 return;
             }
             arrayList.size();
-            r31 e10 = r31.e(5, hd.M0(2131752848, null));
+            x31 e10 = x31.e(5, hd.M0(2131752848, null));
             e10.r = true;
             arrayList.add(e10);
-            arrayList.add(r31.C(null));
+            arrayList.add(x31.C(null));
             return;
         }
         arrayList.size();
         String M03 = hd.M0(2131752862, null);
         long j10 = this.n;
-        arrayList.add(r31.d(3, R.drawable.menu_clear_cookies, M03, j10 > 0 ? org.telegram.messenger.g0.i0(j10, false, false) : ""));
+        arrayList.add(x31.d(3, R.drawable.menu_clear_cookies, M03, j10 > 0 ? org.telegram.messenger.g0.i0(j10, false, false) : ""));
         arrayList.size();
         String M04 = hd.M0(2131752864, null);
         long j11 = this.h;
-        arrayList.add(r31.d(2, R.drawable.menu_clear_cache, M04, j11 > 0 ? org.telegram.messenger.g0.i0(j11, false, false) : ""));
-        arrayList.add(r31.C(hd.M0(2131752860, null)));
+        arrayList.add(x31.d(2, R.drawable.menu_clear_cache, M04, j11 > 0 ? org.telegram.messenger.g0.i0(j11, false, false) : ""));
+        arrayList.add(x31.C(hd.M0(2131752860, null)));
         if (this.r > 0) {
             arrayList.size();
-            arrayList.add(r31.c(9, R.drawable.menu_clear_recent, hd.M0(2131752850, null)));
+            arrayList.add(x31.c(9, R.drawable.menu_clear_recent, hd.M0(2131752850, null)));
             arrayList.size();
-            arrayList.add(r31.d(7, R.drawable.menu_clear_cache, hd.M0(2131752855, null), hd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
-            arrayList.add(r31.C(null));
+            arrayList.add(x31.d(7, R.drawable.menu_clear_cache, hd.M0(2131752855, null), hd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
+            arrayList.add(x31.C(null));
         }
-        arrayList.add(r31.u(hd.M0(2131752846, null)));
+        arrayList.add(x31.u(hd.M0(2131752846, null)));
         arrayList.size();
         i2 i2Var2 = this.e;
         String M05 = hd.M0(2131752849, null);
-        r31 r31Var3 = new r31(3);
-        r31Var3.d = 15;
-        r31Var3.G = i2Var2;
-        r31Var3.l = M05;
-        r31Var3.q = true;
-        arrayList.add(r31Var3);
+        x31 x31Var3 = new x31(3);
+        x31Var3.d = 15;
+        x31Var3.G = i2Var2;
+        x31Var3.l = M05;
+        x31Var3.q = true;
+        arrayList.add(x31Var3);
         TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = getMessagesController().y8;
         ArrayList<TL_account.WebDomainException> arrayList3 = tL_webBrowserSettings2 == null ? new ArrayList<>() : tL_webBrowserSettings2.external_exceptions;
         int size2 = arrayList3.size();
@@ -213,27 +213,27 @@ public final class o1 extends h41 implements ls {
             String str4 = webDomainException4.title;
             long j12 = webDomainException4.favicon;
             int i13 = m1.b;
-            r31 K2 = r31.K(m1.class);
+            x31 K2 = x31.K(m1.class);
             K2.l = str3;
             K2.n = str4;
             K2.B = j12;
             arrayList.add(K2);
         }
-        arrayList.add(r31.C(hd.M0(2131752847, null)));
+        arrayList.add(x31.C(hd.M0(2131752847, null)));
         if (!arrayList3.isEmpty()) {
             arrayList.size();
-            r31 e11 = r31.e(5, hd.M0(2131752848, null));
+            x31 e11 = x31.e(5, hd.M0(2131752848, null));
             e11.r = true;
             arrayList.add(e11);
-            arrayList.add(r31.C(null));
+            arrayList.add(x31.C(null));
         }
         arrayList.size();
-        arrayList.add(r31.d(6, R.drawable.msg_search, hd.M0(2131745800, null), f1.a().a));
-        arrayList.add(r31.C(hd.M0(2131752842, null)));
+        arrayList.add(x31.d(6, R.drawable.msg_search, hd.M0(2131745800, null), f1.a().a));
+        arrayList.add(x31.C(hd.M0(2131752842, null)));
         boolean z9 = r2.a;
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131752841, null);
     }
@@ -242,9 +242,9 @@ public final class o1 extends h41 implements ls {
     /* JADX WARN: Type inference failed for: r7v0 */
     /* JADX WARN: Type inference failed for: r7v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r7v4 */
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        int i7 = r31Var.d;
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        int i7 = x31Var.d;
         if (i7 == 12) {
             iz.J();
             ((r8) view).setChecked(iz.v0);
@@ -381,8 +381,8 @@ public final class o1 extends h41 implements ls {
                         case 2:
                             o1 o1Var3 = this.b;
                             try {
-                                wa.c.clear();
-                                wa.d.clear();
+                                xa.c.clear();
+                                xa.d.clear();
                                 File file4 = new File(w7.z(4), "webhistory.dat");
                                 if (file4.exists()) {
                                     file4.delete();
@@ -490,8 +490,8 @@ public final class o1 extends h41 implements ls {
                         case 2:
                             o1 o1Var3 = this.b;
                             try {
-                                wa.c.clear();
-                                wa.d.clear();
+                                xa.c.clear();
+                                xa.d.clear();
                                 File file4 = new File(w7.z(4), "webhistory.dat");
                                 if (file4.exists()) {
                                     file4.delete();
@@ -525,7 +525,7 @@ public final class o1 extends h41 implements ls {
             return;
         }
         if (i7 == 7) {
-            ArrayList a10 = wa.a(null);
+            ArrayList a10 = xa.a(null);
             int size = a10.size();
             long j3 = Long.MAX_VALUE;
             int i14 = 0;
@@ -607,8 +607,8 @@ public final class o1 extends h41 implements ls {
                         case 2:
                             o1 o1Var3 = this.b;
                             try {
-                                wa.c.clear();
-                                wa.d.clear();
+                                xa.c.clear();
+                                xa.d.clear();
                                 File file4 = new File(w7.z(4), "webhistory.dat");
                                 if (file4.exists()) {
                                     file4.delete();
@@ -723,8 +723,8 @@ public final class o1 extends h41 implements ls {
                         case 2:
                             o1 o1Var3 = this.b;
                             try {
-                                wa.c.clear();
-                                wa.d.clear();
+                                xa.c.clear();
+                                xa.d.clear();
                                 File file4 = new File(w7.z(4), "webhistory.dat");
                                 if (file4.exists()) {
                                     file4.delete();
@@ -757,7 +757,7 @@ public final class o1 extends h41 implements ls {
             alertDialog$Builder4.p();
             return;
         }
-        if (r31Var.H(m1.class)) {
+        if (x31Var.H(m1.class)) {
             n1 n1Var = (n1) view;
             String str = n1Var.e;
             k60 F = k60.F((ViewGroup) this.fragmentView, null, n1Var);
@@ -766,7 +766,7 @@ public final class o1 extends h41 implements ls {
             F.Z();
             return;
         }
-        int i16 = r31Var.d;
+        int i16 = x31Var.d;
         if (i16 == 6) {
             if (getParentActivity() == null) {
                 return;
@@ -857,12 +857,12 @@ public final class o1 extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         Drawable mutate = context.getResources().getDrawable(R.drawable.poll_add_circle).mutate();
@@ -890,12 +890,12 @@ public final class o1 extends h41 implements ls {
     }
 
     public final void f0() {
-        f41 f41Var;
-        if (wa.a(new ii.c(this, 18)) != null) {
+        l41 l41Var;
+        if (xa.a(new ii.c(this, 18)) != null) {
             this.r = r0.size();
             w3 w3Var = this.a;
-            if (w3Var != null && (f41Var = w3Var.f3) != null && w3Var.G) {
-                f41Var.O(true);
+            if (w3Var != null && (l41Var = w3Var.f3) != null && w3Var.G) {
+                l41Var.O(true);
             }
         }
         Utilities.e.c(new m5(this, 18));

@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ w7 a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class o7 implements Runnable {
         if (document == null && hcVar != null) {
             str = "mp4";
         }
-        this.b[0] = w7Var.Z(document, null, null, tL_fileLocationToBeDeprecated, hcVar, this.e, str, (document != null || hcVar == null) ? 0L : hcVar.r, this.f, this.h, this.n, this.r, this.s);
+        this.b[0] = w7Var.Y(document, null, null, tL_fileLocationToBeDeprecated, hcVar, this.e, str, (document != null || hcVar == null) ? 0L : hcVar.r, this.f, this.h, this.n, this.r, this.s);
         this.w.countDown();
     }
 }

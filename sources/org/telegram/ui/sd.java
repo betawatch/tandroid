@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class sd extends org.telegram.ui.Components.rj0 {
     public final /* synthetic */ vd c0;
@@ -13,7 +13,7 @@ public final class sd extends org.telegram.ui.Components.rj0 {
         this.c0 = vdVar;
     }
 
-    @Override // org.telegram.ui.Components.p61, android.view.View
+    @Override // org.telegram.ui.Components.v61, android.view.View
     public final boolean canScrollHorizontally(int i7) {
         return this.c0.x.Q0 && super.canScrollHorizontally(i7);
     }

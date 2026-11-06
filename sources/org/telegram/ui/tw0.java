@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class tw0 extends org.telegram.ui.Components.oj0 {
     public String D;
@@ -195,9 +195,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1189,9 +1189,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1325,9 +1325,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1461,9 +1461,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1596,9 +1596,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1732,9 +1732,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -1869,9 +1869,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -2047,9 +2047,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -2187,9 +2187,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -2328,9 +2328,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -2465,9 +2465,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -2602,9 +2602,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -2739,9 +2739,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -8577,9 +8577,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -8721,9 +8721,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -8861,9 +8861,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -11642,9 +11642,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -11778,9 +11778,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -11915,9 +11915,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -12054,9 +12054,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12190,9 +12190,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12327,9 +12327,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12464,9 +12464,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12601,9 +12601,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12738,9 +12738,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -12875,9 +12875,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -13013,9 +13013,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.presentFragment(new PrivacySettingsActivity());
                             break;
                         case 26:
-                            rt0 rt0Var = new rt0();
-                            rt0Var.getMessagesController().F0(true);
-                            f2Var2.presentFragment(rt0Var);
+                            st0 st0Var = new st0();
+                            st0Var.getMessagesController().F0(true);
+                            f2Var2.presentFragment(st0Var);
                             break;
                         case 27:
                             f2Var2.presentFragment(new SessionsActivity(0));
@@ -13152,9 +13152,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -13289,9 +13289,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -13426,9 +13426,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.presentFragment(new PrivacySettingsActivity());
                         break;
                     case 26:
-                        rt0 rt0Var = new rt0();
-                        rt0Var.getMessagesController().F0(true);
-                        f2Var2.presentFragment(rt0Var);
+                        st0 st0Var = new st0();
+                        st0Var.getMessagesController().F0(true);
+                        f2Var2.presentFragment(st0Var);
                         break;
                     case 27:
                         f2Var2.presentFragment(new SessionsActivity(0));
@@ -13571,7 +13571,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                 }
             }
         }
-        Collections.sort(arrayList, new rv0(this));
+        Collections.sort(arrayList, new un0(this));
     }
 
     @Override // v4.g0

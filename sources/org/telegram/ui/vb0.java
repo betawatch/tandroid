@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -66,12 +66,12 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.ty0 ty0Var = new org.telegram.ui.Components.ty0();
-                                            ty0Var.a |= 256;
-                                            ty0Var.b = indexOf;
+                                            org.telegram.ui.Components.uy0 uy0Var = new org.telegram.ui.Components.uy0();
+                                            uy0Var.a |= 256;
+                                            uy0Var.b = indexOf;
                                             int i13 = lastIndexOf + 1;
-                                            ty0Var.c = i13;
-                                            valueOf.setSpan(new org.telegram.ui.Components.uy0(ty0Var, 0), indexOf, i13, 0);
+                                            uy0Var.c = i13;
+                                            valueOf.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i13, 0);
                                         }
                                         SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131746081, null), valueOf);
                                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
@@ -163,12 +163,12 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.ty0 ty0Var = new org.telegram.ui.Components.ty0();
-                                            ty0Var.a |= 256;
-                                            ty0Var.b = indexOf;
+                                            org.telegram.ui.Components.uy0 uy0Var = new org.telegram.ui.Components.uy0();
+                                            uy0Var.a |= 256;
+                                            uy0Var.b = indexOf;
                                             int i13 = lastIndexOf + 1;
-                                            ty0Var.c = i13;
-                                            valueOf.setSpan(new org.telegram.ui.Components.uy0(ty0Var, 0), indexOf, i13, 0);
+                                            uy0Var.c = i13;
+                                            valueOf.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i13, 0);
                                         }
                                         SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131746081, null), valueOf);
                                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
@@ -260,12 +260,12 @@ public final /* synthetic */ class vb0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.ty0 ty0Var = new org.telegram.ui.Components.ty0();
-                                            ty0Var.a |= 256;
-                                            ty0Var.b = indexOf;
+                                            org.telegram.ui.Components.uy0 uy0Var = new org.telegram.ui.Components.uy0();
+                                            uy0Var.a |= 256;
+                                            uy0Var.b = indexOf;
                                             int i13 = lastIndexOf + 1;
-                                            ty0Var.c = i13;
-                                            valueOf.setSpan(new org.telegram.ui.Components.uy0(ty0Var, 0), indexOf, i13, 0);
+                                            uy0Var.c = i13;
+                                            valueOf.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i13, 0);
                                         }
                                         SpannableStringBuilder m0 = org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131746081, null), valueOf);
                                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;

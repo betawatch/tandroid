@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.c40;
 import org.telegram.ui.oe;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static boolean a;
@@ -43,11 +43,11 @@ public abstract class g {
             arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_off, hd.M0(2131743239, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z9 || ((r3Var = sharedInstance.groupCall) != null && r3Var.c()))), 60, 1));
         }
         arrayList.add(new f(new ti.l(3, R.drawable.msg_endcall, hd.M0(z9 ? 2131743365 : 2131743413, null), true), 80, 2));
-        Collections.sort(arrayList, new oe(20));
+        Collections.sort(arrayList, new oe(21));
         while (arrayList.size() > i7) {
             a8.p0.z(1, arrayList);
         }
-        Collections.sort(arrayList, new oe(21));
+        Collections.sort(arrayList, new oe(22));
         int size = arrayList.size();
         while (i10 < size) {
             Object obj = arrayList.get(i10);

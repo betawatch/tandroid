@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class to extends oj0 {
     public final org.telegram.ui.ActionBar.f6 c;
@@ -48,9 +48,9 @@ public final class to extends oj0 {
         if (i10 >= 0) {
             g(i10);
             WeakReference weakReference = this.e;
-            yz0 yz0Var = weakReference == null ? null : (yz0) weakReference.get();
-            if (yz0Var != null) {
-                yz0Var.setSelected(false);
+            zz0 zz0Var = weakReference == null ? null : (zz0) weakReference.get();
+            if (zz0Var != null) {
+                zz0Var.setSelected(false);
             }
         }
         this.f = i7;
@@ -73,7 +73,7 @@ public final class to extends oj0 {
         int h;
         int intValue;
         String[] split;
-        yz0 yz0Var = (yz0) d1Var.a;
+        zz0 zz0Var = (zz0) d1Var.a;
         org.telegram.ui.ActionBar.j6 i10 = ((uo) this.d.get(i7)).a.i(((uo) this.d.get(i7)).c);
         if (i10 != null && i10.b != null && !i10.T && new File(i10.b).exists() && i10.b != null) {
             try {
@@ -245,15 +245,15 @@ public final class to extends oj0 {
             }
         }
         uo uoVar = (uo) this.d.get(i7);
-        uo uoVar2 = yz0Var.G;
-        boolean z10 = uoVar2 != null && ig.b.a(uoVar2.a.c, uoVar.a.c) && !org.telegram.ui.ww.x4 && yz0Var.V == uoVar.c;
-        yz0Var.setFocusable(true);
-        yz0Var.setEnabled(true);
-        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.i5, yz0Var, null);
-        yz0Var.f(uoVar, this.r, z10);
-        yz0Var.g(i7 == this.f, z10);
+        uo uoVar2 = zz0Var.G;
+        boolean z10 = uoVar2 != null && ig.b.a(uoVar2.a.c, uoVar.a.c) && !org.telegram.ui.ww.x4 && zz0Var.V == uoVar.c;
+        zz0Var.setFocusable(true);
+        zz0Var.setEnabled(true);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.i5, zz0Var, null);
+        zz0Var.f(uoVar, this.r, z10);
+        zz0Var.g(i7 == this.f, z10);
         if (i7 == this.f) {
-            this.e = new WeakReference(yz0Var);
+            this.e = new WeakReference(zz0Var);
         }
     }
 
@@ -261,6 +261,6 @@ public final class to extends oj0 {
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         Context context = viewGroup.getContext();
         org.telegram.ui.ActionBar.f6 f6Var = this.c;
-        return new xi0(new yz0(this.h, this.n, context, f6Var));
+        return new xi0(new zz0(this.h, this.n, context, f6Var));
     }
 }

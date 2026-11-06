@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -161,13 +161,13 @@ public final /* synthetic */ class sb implements Runnable {
                                             t0Var = t0Var2;
                                             t0Var.i.post(new wi.e0(t0Var, e, 0));
                                             if (r42 != 0) {
-                                                c8.id.c(r42);
+                                                c8.jd.c(r42);
                                             }
                                             if (z14) {
                                                 return;
                                             }
                                             file = xVar.a;
-                                            c8.id.c(file);
+                                            c8.jd.c(file);
                                             return;
                                         }
                                         try {
@@ -186,7 +186,7 @@ public final /* synthetic */ class sb implements Runnable {
                                     }
                                     t0Var.U = null;
                                     if (file2 != null) {
-                                        c8.id.c(file2);
+                                        c8.jd.c(file2);
                                     }
                                 } catch (Exception e12) {
                                     e = e12;
@@ -198,10 +198,10 @@ public final /* synthetic */ class sb implements Runnable {
                         } catch (Throwable th4) {
                             th = th4;
                             if (file3 != null) {
-                                c8.id.c(file3);
+                                c8.jd.c(file3);
                             }
                             if (z14) {
-                                c8.id.c(xVar.a);
+                                c8.jd.c(xVar.a);
                             }
                             throw th;
                         }
@@ -211,7 +211,7 @@ public final /* synthetic */ class sb implements Runnable {
                     }
                     if (z14) {
                         file = xVar.a;
-                        c8.id.c(file);
+                        c8.jd.c(file);
                         return;
                     }
                     return;

@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z81 extends v4.b0 {
     public boolean I;
@@ -21,7 +21,7 @@ public final class z81 extends v4.b0 {
             super.b0(v0Var, a1Var);
         } catch (IndexOutOfBoundsException e10) {
             org.telegram.messenger.a8.g(e10, true);
-            org.telegram.messenger.g0.h3(new qu0(this, 21));
+            org.telegram.messenger.g0.h3(new ru0(this, 21));
         }
     }
 

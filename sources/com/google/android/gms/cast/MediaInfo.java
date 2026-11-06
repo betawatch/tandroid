@@ -4,7 +4,7 @@ import a8.u8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.wb;
+import c8.xb;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.internal.cast.f0;
 import com.google.android.gms.internal.cast.j0;
@@ -27,7 +27,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import r6.a;
 import x6.c;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -319,34 +319,34 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.H;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int r10 = wb.r(parcel, 20293);
+        int r10 = xb.r(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        wb.l(parcel, 2, str);
-        wb.q(parcel, 3, 4);
+        xb.l(parcel, 2, str);
+        xb.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        wb.l(parcel, 4, this.c);
-        wb.k(parcel, 5, this.d, i7);
-        wb.q(parcel, 6, 8);
+        xb.l(parcel, 4, this.c);
+        xb.k(parcel, 5, this.d, i7);
+        xb.q(parcel, 6, 8);
         parcel.writeLong(this.e);
-        wb.p(parcel, 7, this.f);
-        wb.k(parcel, 8, this.h, i7);
-        wb.l(parcel, 9, this.n);
+        xb.p(parcel, 7, this.f);
+        xb.k(parcel, 8, this.h, i7);
+        xb.l(parcel, 9, this.n);
         List list = this.r;
-        wb.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        xb.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        wb.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        wb.l(parcel, 12, this.w);
-        wb.k(parcel, 13, this.x, i7);
-        wb.q(parcel, 14, 8);
+        xb.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        xb.l(parcel, 12, this.w);
+        xb.k(parcel, 13, this.x, i7);
+        xb.q(parcel, 14, 8);
         parcel.writeLong(this.y);
-        wb.l(parcel, 15, this.D);
-        wb.l(parcel, 16, this.E);
-        wb.l(parcel, 17, this.F);
-        wb.l(parcel, 18, this.G);
-        wb.s(parcel, r10);
+        xb.l(parcel, 15, this.D);
+        xb.l(parcel, 16, this.E);
+        xb.l(parcel, 17, this.F);
+        xb.l(parcel, 18, this.G);
+        xb.s(parcel, r10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:105:0x0299  */

@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final class m4 implements Runnable {
                 s9 s9Var = (s9) this.b;
                 CameraView cameraView = s9Var.d;
                 if (cameraView != null && !s9Var.N && cameraView.getCameraSession() != null) {
-                    s9Var.f.post(new fq0(this, 17));
+                    s9Var.f.post(new gq0(this, 17));
                     break;
                 }
                 break;
@@ -264,12 +264,12 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 14:
-                or0 or0Var = (or0) this.b;
-                m4 m4Var = or0Var.y0;
-                org.telegram.ui.Cells.a6 a6Var = or0Var.b0;
+                pr0 pr0Var = (pr0) this.b;
+                m4 m4Var = pr0Var.y0;
+                org.telegram.ui.Cells.a6 a6Var = pr0Var.b0;
                 if (a6Var != null) {
                     EditTextBoldCursor editField = a6Var.getEditField();
-                    if (!or0Var.U && editField != null && or0Var.T && !or0Var.Y && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
+                    if (!pr0Var.U && editField != null && pr0Var.T && !pr0Var.Y && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
                         editField.requestFocus();
                         org.telegram.messenger.g0.K3(editField);
                         org.telegram.messenger.g0.r(m4Var);

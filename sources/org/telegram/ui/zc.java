@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ContextThemeWrapper;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class zc extends RadialProgressView {
     public final /* synthetic */ int N;
@@ -22,9 +22,9 @@ public final class zc extends RadialProgressView {
         switch (this.N) {
             case 3:
                 super.invalidate();
-                oq0 oq0Var = ((PhotoViewer) this.O).e0;
-                if (oq0Var != null) {
-                    oq0Var.invalidate();
+                pq0 pq0Var = ((PhotoViewer) this.O).e0;
+                if (pq0Var != null) {
+                    pq0Var.invalidate();
                     break;
                 }
                 break;
@@ -51,9 +51,9 @@ public final class zc extends RadialProgressView {
                 break;
             default:
                 super.setAlpha(f10);
-                oq0 oq0Var = ((PhotoViewer) this.O).e0;
-                if (oq0Var != null) {
-                    oq0Var.invalidate();
+                pq0 pq0Var = ((PhotoViewer) this.O).e0;
+                if (pq0Var != null) {
+                    pq0Var.invalidate();
                     break;
                 }
                 break;

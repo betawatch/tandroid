@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a21 extends org.telegram.ui.Components.na {
     public TLRPC.Chat P1;
@@ -27,7 +27,7 @@ public final class a21 extends org.telegram.ui.Components.na {
     public final z11 X1;
     public final z11 Y1;
     public final fi.d Z1;
-    public org.telegram.ui.Components.f41 a2;
+    public org.telegram.ui.Components.l41 a2;
     public Context b2;
 
     public a21(Context context, TLRPC.Chat chat, TLRPC.User user, bg.m0 m0Var, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -85,13 +85,13 @@ public final class a21 extends org.telegram.ui.Components.na {
         int i11 = 17;
         u11Var.addView(l9Var, c8.ha.e(org.telegram.messenger.qs.O1, org.telegram.messenger.qs.O1, 17));
         z11 z11Var = new z11(this.a, chat.id, new TLRPC.TL_channelParticipantsAdmins());
-        z11Var.e.add(new qu0(this, i11));
+        z11Var.e.add(new ru0(this, i11));
         this.W1 = z11Var;
         z11 z11Var2 = new z11(this.a, chat.id, new TLRPC.TL_channelParticipantsRecent());
-        z11Var2.e.add(new qu0(this, i11));
+        z11Var2.e.add(new ru0(this, i11));
         this.X1 = z11Var2;
         z11 z11Var3 = new z11(this.a, chat.id, new TLRPC.TL_channelParticipantsSearch());
-        z11Var3.e.add(new qu0(this, i11));
+        z11Var3.e.add(new ru0(this, i11));
         this.Y1 = z11Var3;
         org.telegram.ui.Components.pj0 pj0Var = this.k1;
         int i12 = this.t0;
@@ -116,9 +116,9 @@ public final class a21 extends org.telegram.ui.Components.na {
         float f11 = (this.t0 / org.telegram.messenger.g0.p) + 10.0f;
         viewGroup2.addView(dVar, c8.ha.d(-1, 48.0f, 87, f11, 10.0f, f11, 10.0f));
         dVar.setOnClickListener(new my0(this, 5));
-        org.telegram.ui.Components.f41 f41Var = this.a2;
-        if (f41Var != null) {
-            f41Var.O(false);
+        org.telegram.ui.Components.l41 l41Var = this.a2;
+        if (l41Var != null) {
+            l41Var.O(false);
         }
         z11Var.b();
         z11Var2.b();
@@ -144,9 +144,9 @@ public final class a21 extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final org.telegram.ui.Components.oj0 L0(org.telegram.ui.Components.pj0 pj0Var) {
-        org.telegram.ui.Components.f41 f41Var = new org.telegram.ui.Components.f41(pj0Var, getContext(), this.a, 0, false, new a5(this, 24), this.I0);
-        this.a2 = f41Var;
-        return f41Var;
+        org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(pj0Var, getContext(), this.a, 0, false, new a5(this, 24), this.I0);
+        this.a2 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

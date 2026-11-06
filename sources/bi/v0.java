@@ -21,9 +21,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.fq0;
+import org.telegram.ui.gq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements v10 {
     public final /* synthetic */ int a;
@@ -166,7 +166,7 @@ public final /* synthetic */ class v0 implements v10 {
                     if (!z10) {
                         qp.s1(i14).B0(chat2.id, true);
                     }
-                    org.telegram.messenger.g0.h3(new fq0(a1Var, 5));
+                    org.telegram.messenger.g0.h3(new gq0(a1Var, 5));
                     org.telegram.messenger.g0.i3(new bg.m0(i14, chat2, 17), 1000L);
                     yr a02 = yr.a0(i14);
                     long j10 = chat2.id;

@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.Serializable;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class on0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public final /* synthetic */ class on0 implements Runnable {
     public final /* synthetic */ Object h;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ on0(po0 po0Var, int[] iArr, int[] iArr2, boolean z9, boolean z10, boolean z11) {
-        this.e = po0Var;
+    public /* synthetic */ on0(qo0 qo0Var, int[] iArr, int[] iArr2, boolean z9, boolean z10, boolean z11) {
+        this.e = qo0Var;
         this.f = iArr;
         this.h = iArr2;
         this.b = z9;
@@ -50,7 +50,7 @@ public final /* synthetic */ class on0 implements Runnable {
                 gfVar.n(L0);
                 photoViewer.c2 = 2;
                 photoViewer.u2 = false;
-                photoViewer.d = new xp0(photoViewer, photoViewer.d, ijVar, gfVar, this.c, this.d);
+                photoViewer.d = new yp0(photoViewer, photoViewer.d, ijVar, gfVar, this.c, this.d);
                 photoViewer.p1.f();
                 if (photoViewer.T6 == null) {
                     photoViewer.T6 = VelocityTracker.obtain();
@@ -76,17 +76,17 @@ public final /* synthetic */ class on0 implements Runnable {
                 photoViewer.A7 = 0;
                 break;
             default:
-                po0 po0Var = (po0) obj2;
+                qo0 qo0Var = (qo0) obj2;
                 int[] iArr = (int[]) serializable;
                 int i11 = iArr[0] + 1;
                 iArr[0] = i11;
                 int i12 = ((int[]) obj)[0];
                 if (i11 == i12) {
-                    oq0 oq0Var = po0Var.b.e0;
+                    pq0 pq0Var = qo0Var.b.e0;
                     boolean z10 = this.b;
                     int i13 = (this.c ? 1 : 0) + (z10 ? 1 : 0);
                     boolean z11 = this.d;
-                    new org.telegram.ui.Components.hc(oq0Var, null).m(i13 + (z11 ? 1 : 0) > 1 ? org.telegram.ui.Components.gc.w : z11 ? i12 > 1 ? org.telegram.ui.Components.gc.s : org.telegram.ui.Components.gc.r : z10 ? i12 > 1 ? org.telegram.ui.Components.gc.n : org.telegram.ui.Components.gc.h : i12 > 1 ? org.telegram.ui.Components.gc.f : org.telegram.ui.Components.gc.e, i12, -115203550, -1, null).j();
+                    new org.telegram.ui.Components.hc(pq0Var, null).m(i13 + (z11 ? 1 : 0) > 1 ? org.telegram.ui.Components.gc.w : z11 ? i12 > 1 ? org.telegram.ui.Components.gc.s : org.telegram.ui.Components.gc.r : z10 ? i12 > 1 ? org.telegram.ui.Components.gc.n : org.telegram.ui.Components.gc.h : i12 > 1 ? org.telegram.ui.Components.gc.f : org.telegram.ui.Components.gc.e, i12, -115203550, -1, null).j();
                     break;
                 }
                 break;

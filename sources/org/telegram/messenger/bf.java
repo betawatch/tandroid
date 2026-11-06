@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bf implements Runnable {
     public final /* synthetic */ int a;
@@ -64,16 +64,16 @@ public final /* synthetic */ class bf implements Runnable {
                                         TLRPC.MessageMedia n1 = ij.n1(ijVar);
                                         TLRPC.Document document2 = ijVar.d3;
                                         if (document2 != null) {
-                                            file2 = w7.K(document2, null, false, true);
+                                            file2 = w7.J(document2, null, false, true);
                                         } else {
-                                            File N = w7.N(ijVar.k, false, true);
+                                            File M = w7.M(ijVar.k, false, true);
                                             if (n1 instanceof TLRPC.TL_messageMediaDocument) {
                                                 TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) n1;
                                                 if (!tL_messageMediaDocument.alt_documents.isEmpty()) {
-                                                    file2 = w7.K(tL_messageMediaDocument.alt_documents.get(0), null, false, true);
+                                                    file2 = w7.J(tL_messageMediaDocument.alt_documents.get(0), null, false, true);
                                                 }
                                             }
-                                            file2 = N;
+                                            file2 = M;
                                         }
                                         str = file2.toString();
                                     }
@@ -86,7 +86,7 @@ public final /* synthetic */ class bf implements Runnable {
                                     if (!cfVar3.f) {
                                         if (!file3.exists()) {
                                             w7.G(cVar.a);
-                                            file3 = w7.K(ijVar.k, null, true, true);
+                                            file3 = w7.J(ijVar.k, null, true, true);
                                             StringBuilder sb2 = new StringBuilder();
                                             sb2.append("saving file: correcting path from ");
                                             sb2.append(str);
@@ -135,11 +135,11 @@ public final /* synthetic */ class bf implements Runnable {
                                     }
                                     if (ijVar2.d3 != null) {
                                         w7.G(cVar.a);
-                                        file = w7.K(ijVar2.d3, null, false, true);
+                                        file = w7.J(ijVar2.d3, null, false, true);
                                     } else {
                                         if (str2 == null || str2.length() == 0) {
                                             w7.G(cVar.a);
-                                            str2 = w7.N(ijVar2.k, false, true).toString();
+                                            str2 = w7.M(ijVar2.k, false, true).toString();
                                         }
                                         file = new File(str2);
                                     }

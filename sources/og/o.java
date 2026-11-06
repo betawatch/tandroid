@@ -35,9 +35,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.c51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class o extends FrameLayout implements a {
     public float D;
@@ -55,7 +55,7 @@ public class o extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public c51 d;
+    public h51 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -542,9 +542,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        c51 c51Var = this.d;
-        if (c51Var != null) {
-            return c51Var.getVideoHeight();
+        h51 h51Var = this.d;
+        if (h51Var != null) {
+            return h51Var.getVideoHeight();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {
@@ -555,9 +555,9 @@ public class o extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        c51 c51Var = this.d;
-        if (c51Var != null) {
-            return c51Var.getVideoWidth();
+        h51 h51Var = this.d;
+        if (h51Var != null) {
+            return h51Var.getVideoWidth();
         }
         Bitmap bitmap = this.x;
         if (bitmap == null) {

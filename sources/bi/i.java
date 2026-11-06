@@ -27,10 +27,10 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.c40;
 import org.telegram.ui.la1;
-import org.telegram.ui.qv0;
+import org.telegram.ui.rv0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements la1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, cj0, dp, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class i implements la1, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.dp
     public void a(boolean z9, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        org.telegram.messenger.g0.h3(new o((qv0) this.c, this.b, tL_chatAdminRights, str, z9, (ww) this.d));
+        org.telegram.messenger.g0.h3(new o((rv0) this.c, this.b, tL_chatAdminRights, str, z9, (ww) this.d));
     }
 
     @Override // v5.e

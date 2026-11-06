@@ -8,12 +8,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.hd;
-import org.telegram.ui.Components.m41;
+import org.telegram.ui.Components.s41;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
-    public final m41 a;
+    public final s41 a;
     public final org.telegram.ui.ActionBar.f6 b;
     public int c;
     public int d;
@@ -24,13 +24,13 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
     public y1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.b = f6Var;
-        m41 m41Var = new m41();
-        this.a = m41Var;
-        m41Var.setCallback(this);
-        m41Var.n = hd.M0(2131743828, null);
-        m41Var.o = hd.M0(2131743829, null);
-        m41Var.p = hd.M0(2131743827, null);
-        m41Var.j = new f(this, 1);
+        s41 s41Var = new s41();
+        this.a = s41Var;
+        s41Var.setCallback(this);
+        s41Var.n = hd.M0(2131743828, null);
+        s41Var.o = hd.M0(2131743829, null);
+        s41Var.p = hd.M0(2131743827, null);
+        s41Var.j = new f(this, 1);
     }
 
     public final void a(Canvas canvas) {
@@ -67,9 +67,9 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
         int L2 = org.telegram.messenger.g0.L(6.0f);
         int L3 = org.telegram.messenger.g0.L(18.0f) + this.c;
         int L4 = org.telegram.messenger.g0.L(6.0f) + this.d;
-        m41 m41Var = this.a;
-        m41Var.setBounds(L, L2, L3, L4);
-        m41Var.draw(canvas);
+        s41 s41Var = this.a;
+        s41Var.setBounds(L, L2, L3, L4);
+        s41Var.draw(canvas);
     }
 
     @Override // android.view.View

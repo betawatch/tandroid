@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class n3 extends FrameLayout {
     public final /* synthetic */ p3 a;
@@ -56,15 +56,15 @@ public final class n3 extends FrameLayout {
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         p3 p3Var = this.a;
         TextView textView = p3Var.x;
-        rq0 rq0Var = p3Var.w;
+        sq0 sq0Var = p3Var.w;
         h6 h6Var = p3Var.r;
         getLocationOnScreen(p3Var.V);
         int i13 = p3Var.H.a;
         int width = getWidth();
         i0.b bVar = p3Var.H;
         int D = jg.g.D(width - bVar.a, bVar.c, 2, i13);
-        int height = ((getHeight() - p3Var.H.d) - org.telegram.messenger.g0.L(16.0f)) - (p3Var.c() ? rq0Var.getMeasuredHeight() : 0);
-        rq0Var.layout(D - (rq0Var.getMeasuredWidth() / 2), height, ((rq0Var.getMeasuredWidth() + 1) / 2) + D, rq0Var.getMeasuredHeight() + height);
+        int height = ((getHeight() - p3Var.H.d) - org.telegram.messenger.g0.L(16.0f)) - (p3Var.c() ? sq0Var.getMeasuredHeight() : 0);
+        sq0Var.layout(D - (sq0Var.getMeasuredWidth() / 2), height, ((sq0Var.getMeasuredWidth() + 1) / 2) + D, sq0Var.getMeasuredHeight() + height);
         int L = org.telegram.messenger.g0.L(36.0f) + Math.max(p3Var.H.b, org.telegram.messenger.g0.m);
         textView.layout(D - (textView.getMeasuredWidth() / 2), L, ((textView.getMeasuredWidth() + 1) / 2) + D, textView.getMeasuredHeight() + L);
         p3Var.d();

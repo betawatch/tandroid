@@ -8,11 +8,11 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public org.telegram.ui.ActionBar.k5 a;
-    public org.telegram.ui.Components.ly0 b;
+    public org.telegram.ui.Components.my0 b;
     public org.telegram.ui.Components.g5 c;
     public org.telegram.ui.ActionBar.f6 d;
     public boolean e;
@@ -52,7 +52,7 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (j3 == 0) {
             g5Var.g(null, z10);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.ly0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
             }
         } else {
             g5Var.j(j3, z10);
@@ -66,7 +66,7 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (document == null) {
             g5Var.g(null, false);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.ly0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
             }
         } else {
             g5Var.i(document, false);
@@ -83,10 +83,10 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         f();
         org.telegram.ui.Components.g5 g5Var = this.c;
         g5Var.k(Integer.valueOf(this.f));
-        org.telegram.ui.Components.ly0 ly0Var = this.b;
-        if (ly0Var != null) {
+        org.telegram.ui.Components.my0 my0Var = this.b;
+        if (my0Var != null) {
             canvas2 = canvas;
-            ly0Var.c((getMeasuredWidth() - this.b.k()) - org.telegram.messenger.g0.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q6, f6Var), canvas2);
+            my0Var.c((getMeasuredWidth() - this.b.k()) - org.telegram.messenger.g0.L(19.0f), getMeasuredHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q6, f6Var), canvas2);
         } else {
             canvas2 = canvas;
             g5Var.draw(canvas2);

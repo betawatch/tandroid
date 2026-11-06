@@ -2,7 +2,7 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import c8.jb;
+import c8.kb;
 import i5.r;
 import i5.t;
 import i5.u;
@@ -24,7 +24,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -124,13 +124,13 @@ public class MP4Builder {
         com.google.android.recaptcha.internal.a.t(ze.a.c(i5.m.Q, mVar, mVar, date));
         mVar.e = date;
         long j3 = 4294967296L;
-        if (jb.a(date) >= 4294967296L) {
+        if (kb.a(date) >= 4294967296L) {
             mVar.h();
         }
         Date date2 = new Date();
         com.google.android.recaptcha.internal.a.t(ze.a.c(i5.m.R, mVar, mVar, date2));
         mVar.f = date2;
-        if (jb.a(date2) >= 4294967296L) {
+        if (kb.a(date2) >= 4294967296L) {
             mVar.h();
         }
         com.google.android.recaptcha.internal.a.t(ze.a.c(i5.m.U, mVar, mVar, dVar));
@@ -316,7 +316,7 @@ public class MP4Builder {
         Date creationTime = track.getCreationTime();
         com.google.android.recaptcha.internal.a.t(ze.a.c(y.P, yVar, yVar, creationTime));
         yVar.e = creationTime;
-        if (jb.a(creationTime) >= 4294967296L) {
+        if (kb.a(creationTime) >= 4294967296L) {
             yVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
@@ -336,7 +336,7 @@ public class MP4Builder {
         Date date = new Date();
         com.google.android.recaptcha.internal.a.t(ze.a.c(y.Q, yVar, yVar, date));
         yVar.f = date;
-        if (jb.a(date) >= 4294967296L) {
+        if (kb.a(date) >= 4294967296L) {
             yVar.h();
         }
         long trackId = track.getTrackId() + 1;
@@ -539,7 +539,7 @@ public class MP4Builder {
     public void createSidx(Track track, i5.p pVar) {
     }
 
-    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+    /* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
     public static class InterleaveChunkMdat implements i5.b {
         private long contentSize;
         private long dataOffset;

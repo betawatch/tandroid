@@ -25,12 +25,12 @@ import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c80;
+import org.telegram.ui.Components.d51;
 import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.y41;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
     public static final PorterDuffColorFilter G1;
@@ -308,7 +308,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
     }
 
     public final boolean L() {
-        return (this.S == null && this.j0 == null && !(this.m0 instanceof y41)) ? false : true;
+        return (this.S == null && this.j0 == null && !(this.m0 instanceof d51)) ? false : true;
     }
 
     public void L0(int[] iArr) {
@@ -1577,8 +1577,8 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
                     }
                     return z10;
                 }
-                if (drawable6 instanceof y41) {
-                    ((y41) drawable6).e = imageReceiver4;
+                if (drawable6 instanceof d51) {
+                    ((d51) drawable6).e = imageReceiver4;
                 }
                 Canvas canvas5 = canvas;
                 imageReceiver4.k(canvas5, drawable6, (int) (f14 * 255.0f), null, imageReceiver4.d0, imageReceiver4.e0, icVar);
@@ -2428,7 +2428,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
                 if (i7 == 3 && (b23 = qp.s1(this.d).b2(user.id)) != null) {
                     TLRPC.Photo photo = user.photo.personal ? b23.personal_photo : b23.profile_photo;
                     if (photo != null) {
-                        videoSize = w7.S(photo);
+                        videoSize = w7.R(photo);
                         if (videoSize == null && z9) {
                             qp.s1(this.d);
                             if (qp.B2(user) && user.photo.has_video && rc.e(1024)) {
@@ -2437,7 +2437,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
                                     qp.s1(this.d).W2(user, this.p0, false, null);
                                 } else {
                                     TLRPC.Photo photo2 = user.photo.personal ? b22.personal_photo : b22.profile_photo;
-                                    if (photo2 != null && (videoSize = w7.S(photo2)) == null && (arrayList = photo2.video_sizes) != null && !arrayList.isEmpty()) {
+                                    if (photo2 != null && (videoSize = w7.R(photo2)) == null && (arrayList = photo2.video_sizes) != null && !arrayList.isEmpty()) {
                                         TLRPC.VideoSize x10 = w7.x(100, arrayList);
                                         for (int i10 = 0; i10 < arrayList.size(); i10++) {
                                             TLRPC.VideoSize videoSize3 = arrayList.get(i10);
@@ -2484,7 +2484,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
             z11 = false;
         }
         if (videoSize2 != null && i7 != 0) {
-            w0(new y41(videoSize2, z11, i7));
+            w0(new d51(videoSize2, z11, i7));
             return;
         }
         if (z10) {

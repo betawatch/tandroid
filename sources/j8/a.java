@@ -2,12 +2,12 @@ package j8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.wb;
+import c8.xb;
 import java.util.Arrays;
 import q6.m;
 import u7.n;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new j7.b(21);
@@ -79,15 +79,15 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.q(parcel, 1, 8);
+        int r10 = xb.r(parcel, 20293);
+        xb.q(parcel, 1, 8);
         parcel.writeLong(this.a);
-        wb.q(parcel, 2, 4);
+        xb.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        wb.q(parcel, 3, 4);
+        xb.q(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        wb.l(parcel, 4, this.d);
-        wb.k(parcel, 5, this.e, i7);
-        wb.s(parcel, r10);
+        xb.l(parcel, 4, this.d);
+        xb.k(parcel, 5, this.e, i7);
+        xb.s(parcel, r10);
     }
 }

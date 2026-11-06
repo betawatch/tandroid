@@ -15,7 +15,7 @@ import android.util.Rational;
 import android.view.View;
 import bg.v0;
 import c8.ha;
-import c8.jc;
+import c8.kc;
 import e2.c1;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
@@ -25,7 +25,7 @@ import org.telegram.messenger.z8;
 import org.telegram.ui.LaunchActivity;
 import p4.x;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class r {
     public final l2.i a;
@@ -361,7 +361,7 @@ public final class r {
             k(this.f);
             return;
         }
-        if (!jc.b(launchActivity) || jc.a(this.b)) {
+        if (!kc.b(launchActivity) || kc.a(this.b)) {
             oVar = null;
         } else {
             ArrayList arrayList = (ArrayList) this.a.c;

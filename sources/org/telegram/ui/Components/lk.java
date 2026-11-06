@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.u81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -186,7 +186,7 @@ public final /* synthetic */ class lk implements View.OnClickListener {
                 break;
             case 7:
                 ((lr) obj2).t2 = !r13.t2;
-                ((f41) obj).O(true);
+                ((l41) obj).O(true);
                 break;
             case 8:
                 ((org.telegram.ui.p6) obj2).dismiss();
@@ -485,22 +485,22 @@ public final /* synthetic */ class lk implements View.OnClickListener {
                 }
                 break;
             case 25:
-                ((n01) obj2).c();
+                ((s01) obj2).d();
                 org.telegram.ui.an anVar4 = ((org.telegram.ui.dk) obj).a;
                 u81 f02 = u81.f0(-anVar4.j6, 0L);
                 f02.D = anVar4;
                 anVar4.presentFragment(f02);
                 break;
             case 26:
-                p21 p21Var = (p21) obj2;
-                p21Var.c2 = false;
-                p21Var.X0();
-                ((f41) obj).O(true);
-                p21Var.I0();
+                v21 v21Var = (v21) obj2;
+                v21Var.c2 = false;
+                v21Var.X0();
+                ((l41) obj).O(true);
+                v21Var.I0();
                 break;
             case 27:
                 View.OnClickListener onClickListener = (View.OnClickListener) obj;
-                ImageView imageView = ((k21) obj2).s;
+                ImageView imageView = ((q21) obj2).s;
                 imageView.animate().rotation(imageView.getRotation() + 180.0f).setDuration(380L).setInterpolator(xq.h).start();
                 if (onClickListener != null) {
                     onClickListener.onClick(view);
@@ -510,7 +510,7 @@ public final /* synthetic */ class lk implements View.OnClickListener {
             case 28:
                 org.telegram.ui.bk bkVar = (org.telegram.ui.bk) obj2;
                 ((org.telegram.ui.ActionBar.g1) obj).d(true);
-                u21.a(bkVar.getContext(), bkVar.d);
+                a31.a(bkVar.getContext(), bkVar.d);
                 break;
             default:
                 UndoView undoView = (UndoView) obj2;

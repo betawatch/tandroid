@@ -23,14 +23,14 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.vr;
 import org.telegram.ui.Components.xr;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.rt;
 import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a;
@@ -413,9 +413,9 @@ public final /* synthetic */ class nb implements Runnable {
         this.c = i7;
     }
 
-    public /* synthetic */ nb(f41 f41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z9, TLObject tLObject, int i10) {
+    public /* synthetic */ nb(l41 l41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z9, TLObject tLObject, int i10) {
         this.a = i10;
-        this.d = f41Var;
+        this.d = l41Var;
         this.c = i7;
         this.e = tL_messages_searchGlobal;
         this.b = z9;

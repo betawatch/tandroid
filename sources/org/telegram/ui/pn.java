@@ -38,7 +38,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.Components.i30, org.telegram.messenger.ls {
     public TLRPC.TL_chatBannedRights A0;
@@ -621,9 +621,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -922,9 +922,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -1229,9 +1229,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 pn pnVar16 = this.b;
-                                gs0 gs0Var = new gs0(pnVar16.v0);
-                                gs0Var.s = new kn(pnVar16, 4);
-                                pnVar16.presentFragment(gs0Var);
+                                hs0 hs0Var = new hs0(pnVar16.v0);
+                                hs0Var.s = new kn(pnVar16, 4);
+                                pnVar16.presentFragment(hs0Var);
                                 break;
                             case 19:
                                 pn.e0(this.b);
@@ -1499,9 +1499,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 pn pnVar16 = this.b;
-                                gs0 gs0Var = new gs0(pnVar16.v0);
-                                gs0Var.s = new kn(pnVar16, 4);
-                                pnVar16.presentFragment(gs0Var);
+                                hs0 hs0Var = new hs0(pnVar16.v0);
+                                hs0Var.s = new kn(pnVar16, 4);
+                                pnVar16.presentFragment(hs0Var);
                                 break;
                             case 19:
                                 pn.e0(this.b);
@@ -1771,9 +1771,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 pn pnVar16 = this.b;
-                                gs0 gs0Var = new gs0(pnVar16.v0);
-                                gs0Var.s = new kn(pnVar16, 4);
-                                pnVar16.presentFragment(gs0Var);
+                                hs0 hs0Var = new hs0(pnVar16.v0);
+                                hs0Var.s = new kn(pnVar16, 4);
+                                pnVar16.presentFragment(hs0Var);
                                 break;
                             case 19:
                                 pn.e0(this.b);
@@ -2039,9 +2039,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -2310,9 +2310,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -2659,9 +2659,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -2942,9 +2942,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 pn pnVar16 = this.b;
-                                gs0 gs0Var = new gs0(pnVar16.v0);
-                                gs0Var.s = new kn(pnVar16, 4);
-                                pnVar16.presentFragment(gs0Var);
+                                hs0 hs0Var = new hs0(pnVar16.v0);
+                                hs0Var.s = new kn(pnVar16, 4);
+                                pnVar16.presentFragment(hs0Var);
                                 break;
                             case 19:
                                 pn.e0(this.b);
@@ -3254,9 +3254,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 pn pnVar16 = this.b;
-                                gs0 gs0Var = new gs0(pnVar16.v0);
-                                gs0Var.s = new kn(pnVar16, 4);
-                                pnVar16.presentFragment(gs0Var);
+                                hs0 hs0Var = new hs0(pnVar16.v0);
+                                hs0Var.s = new kn(pnVar16, 4);
+                                pnVar16.presentFragment(hs0Var);
                                 break;
                             case 19:
                                 pn.e0(this.b);
@@ -3574,9 +3574,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -3839,9 +3839,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -4104,9 +4104,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -4370,9 +4370,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         pn pnVar16 = this.b;
-                                        gs0 gs0Var = new gs0(pnVar16.v0);
-                                        gs0Var.s = new kn(pnVar16, 4);
-                                        pnVar16.presentFragment(gs0Var);
+                                        hs0 hs0Var = new hs0(pnVar16.v0);
+                                        hs0Var.s = new kn(pnVar16, 4);
+                                        pnVar16.presentFragment(hs0Var);
                                         break;
                                     case 19:
                                         pn.e0(this.b);
@@ -4637,9 +4637,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -4902,9 +4902,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -5168,9 +5168,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         pn pnVar16 = this.b;
-                                        gs0 gs0Var = new gs0(pnVar16.v0);
-                                        gs0Var.s = new kn(pnVar16, 4);
-                                        pnVar16.presentFragment(gs0Var);
+                                        hs0 hs0Var = new hs0(pnVar16.v0);
+                                        hs0Var.s = new kn(pnVar16, 4);
+                                        pnVar16.presentFragment(hs0Var);
                                         break;
                                     case 19:
                                         pn.e0(this.b);
@@ -5435,9 +5435,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -5703,9 +5703,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         pn pnVar16 = this.b;
-                                        gs0 gs0Var = new gs0(pnVar16.v0);
-                                        gs0Var.s = new kn(pnVar16, 4);
-                                        pnVar16.presentFragment(gs0Var);
+                                        hs0 hs0Var = new hs0(pnVar16.v0);
+                                        hs0Var.s = new kn(pnVar16, 4);
+                                        pnVar16.presentFragment(hs0Var);
                                         break;
                                     case 19:
                                         pn.e0(this.b);
@@ -5971,9 +5971,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         pn pnVar16 = this.b;
-                                        gs0 gs0Var = new gs0(pnVar16.v0);
-                                        gs0Var.s = new kn(pnVar16, 4);
-                                        pnVar16.presentFragment(gs0Var);
+                                        hs0 hs0Var = new hs0(pnVar16.v0);
+                                        hs0Var.s = new kn(pnVar16, 4);
+                                        pnVar16.presentFragment(hs0Var);
                                         break;
                                     case 19:
                                         pn.e0(this.b);
@@ -6286,9 +6286,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -6551,9 +6551,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -6816,9 +6816,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -7083,9 +7083,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -7348,9 +7348,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -7616,9 +7616,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -7885,9 +7885,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -8197,9 +8197,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -8465,9 +8465,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -8748,9 +8748,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -9015,9 +9015,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -9282,9 +9282,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -9573,9 +9573,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -10116,9 +10116,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     pn pnVar16 = this.b;
-                                    gs0 gs0Var = new gs0(pnVar16.v0);
-                                    gs0Var.s = new kn(pnVar16, 4);
-                                    pnVar16.presentFragment(gs0Var);
+                                    hs0 hs0Var = new hs0(pnVar16.v0);
+                                    hs0Var.s = new kn(pnVar16, 4);
+                                    pnVar16.presentFragment(hs0Var);
                                     break;
                                 case 19:
                                     pn.e0(this.b);
@@ -10419,9 +10419,9 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             pn pnVar16 = this.b;
-                            gs0 gs0Var = new gs0(pnVar16.v0);
-                            gs0Var.s = new kn(pnVar16, 4);
-                            pnVar16.presentFragment(gs0Var);
+                            hs0 hs0Var = new hs0(pnVar16.v0);
+                            hs0Var.s = new kn(pnVar16, 4);
+                            pnVar16.presentFragment(hs0Var);
                             break;
                         case 19:
                             pn.e0(this.b);
@@ -10729,7 +10729,7 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     }
 
     @Override // org.telegram.ui.Components.i30
-    public final /* synthetic */ vq0 getCloseIntoObject() {
+    public final /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 
@@ -11471,7 +11471,7 @@ public class pn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 return;
             }
             nl0Var.w = z9;
-            nl0Var.r = new org.telegram.ui.Components.ly0(org.telegram.messenger.i6.m(chat.title, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
+            nl0Var.r = new org.telegram.ui.Components.my0(org.telegram.messenger.i6.m(chat.title, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
             cm0 cm0Var2 = nl0Var.x;
             if (cm0Var2 != null) {
                 cm0Var2.e(null);

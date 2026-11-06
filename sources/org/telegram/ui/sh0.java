@@ -25,7 +25,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.Components.mj, org.telegram.messenger.ls {
     public int D;
@@ -133,7 +133,7 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                                 } else {
                                     org.telegram.messenger.w7 fileLoader2 = sh0Var2.getFileLoader();
                                     TLRPC.Document document2 = rh0Var.e.e;
-                                    fileLoader2.X(document2, document2, 3, 0);
+                                    fileLoader2.W(document2, document2, 3, 0);
                                 }
                             }
                         }
@@ -144,7 +144,7 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                         }
                         org.telegram.messenger.w7 fileLoader22 = sh0Var2.getFileLoader();
                         TLRPC.Document document22 = rh0Var.e.e;
-                        fileLoader22.X(document22, document22, 3, 0);
+                        fileLoader22.W(document22, document22, 3, 0);
                     }
                 }
             } catch (Exception e10) {
@@ -260,7 +260,7 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         pj0Var.r1();
         this.d.setSectionsDrawBackground(true);
         frameLayout.addView(this.d, c8.ha.c(-1.0f, -1));
-        bi.k5 k5Var = new bi.k5(this, 7);
+        bi.k5 k5Var = new bi.k5(this, 8);
         this.e = k5Var;
         k5Var.C(true);
         this.d.setAdapter(this.e);

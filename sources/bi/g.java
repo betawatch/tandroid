@@ -13,11 +13,11 @@ import org.telegram.ui.Components.r20;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.kt;
-import org.telegram.ui.pu0;
+import org.telegram.ui.qu0;
 import org.telegram.ui.vv0;
 import org.telegram.ui.ww0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements eh.a {
     public final /* synthetic */ int a;
@@ -93,9 +93,9 @@ public final /* synthetic */ class g implements eh.a {
                     if (jh.k.c(ww0Var, viewGroup, rectF2) && RectF.intersects(rectF2, rectF)) {
                         ih.d.a(new org.telegram.ui.oa(profileActivity, 4), canvas, rectF, profileActivity.c1, viewGroup);
                     }
-                    pu0 pu0Var = profileActivity.a;
-                    Objects.requireNonNull(pu0Var);
-                    ih.d.a(new org.telegram.ui.oa(pu0Var, 5), canvas, rectF, profileActivity.a, viewGroup);
+                    qu0 qu0Var = profileActivity.a;
+                    Objects.requireNonNull(qu0Var);
+                    ih.d.a(new org.telegram.ui.oa(qu0Var, 5), canvas, rectF, profileActivity.a, viewGroup);
                     kVar.d(canvas, rectF);
                 }
                 if (f10 > 0.0f) {

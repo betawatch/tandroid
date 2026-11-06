@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -46,27 +46,27 @@ public final /* synthetic */ class td0 implements View.OnClickListener {
                 ud0Var.h.show();
                 break;
             case 1:
-                c21 c21Var = (c21) callback;
+                i21 i21Var = (i21) callback;
                 org.telegram.messenger.ed edVar = (org.telegram.messenger.ed) obj;
-                e21 e21Var = c21Var.n;
+                k21 k21Var = i21Var.n;
                 Runnable runnable = ((Runnable[]) obj2)[0];
                 if (runnable != null) {
                     runnable.run();
                 }
-                String str = e21Var.r1;
-                d21 d21Var = e21Var.E1;
+                String str = k21Var.r1;
+                j21 j21Var = k21Var.E1;
                 if (!TextUtils.equals(str, edVar.f)) {
-                    View view2 = d21Var.d;
-                    if (view2 == e21Var.v1 || view2 == e21Var.p1) {
-                        e21Var.s1 = e21Var.r1;
+                    View view2 = j21Var.d;
+                    if (view2 == k21Var.v1 || view2 == k21Var.p1) {
+                        k21Var.s1 = k21Var.r1;
                     }
-                    a21 a21Var = c21Var.e;
+                    g21 g21Var = i21Var.e;
                     String str2 = edVar.f;
-                    e21Var.r1 = str2;
-                    a21Var.setText(e21.K0(e21.O0(str2, null, null)));
-                    d21Var.D(e21Var.n1 != null ? e21Var.o1 : e21Var.u1);
-                    e21.S0(e21Var.r1);
-                    e21Var.W0();
+                    k21Var.r1 = str2;
+                    g21Var.setText(k21.K0(k21.O0(str2, null, null)));
+                    j21Var.D(k21Var.n1 != null ? k21Var.o1 : k21Var.u1);
+                    k21.S0(k21Var.r1);
+                    k21Var.W0();
                     break;
                 }
                 break;
@@ -81,20 +81,20 @@ public final /* synthetic */ class td0 implements View.OnClickListener {
                 g1Var.d(true);
                 break;
             case 3:
-                org.telegram.ui.tp0 tp0Var = (org.telegram.ui.tp0) callback;
+                org.telegram.ui.up0 up0Var = (org.telegram.ui.up0) callback;
                 Context context2 = (Context) obj2;
                 Bitmap bitmap = (Bitmap) obj;
-                if (!tp0Var.u1) {
-                    Runnable runnable2 = tp0Var.D1;
+                if (!up0Var.u1) {
+                    Runnable runnable2 = up0Var.D1;
                     if (runnable2 != null) {
                         runnable2.run();
                         break;
                     }
                 } else {
-                    sg.q qVar = new sg.q(context2, tp0Var.z1);
-                    qVar.I0(tp0Var.t1.a, 2);
-                    qVar.o1 = new androidx.activity.n(tp0Var, bitmap, 6);
-                    qVar.n1 = new tg.m(tp0Var, 1);
+                    sg.q qVar = new sg.q(context2, up0Var.z1);
+                    qVar.I0(up0Var.t1.a, 2);
+                    qVar.o1 = new androidx.activity.n(up0Var, bitmap, 6);
+                    qVar.n1 = new tg.m(up0Var, 1);
                     qVar.show();
                     break;
                 }
@@ -133,10 +133,10 @@ public final /* synthetic */ class td0 implements View.OnClickListener {
             default:
                 zh.a2 a2Var = (zh.a2) callback;
                 ((k60) obj2).u();
-                up0 up0Var = a2Var.a;
+                up0 up0Var2 = a2Var.a;
                 zh.t1 t1Var = new zh.t1(a2Var, (TL_stars.SavedStarGift) obj, i10);
                 HashMap hashMap = zh.f2.U;
-                up0Var.h(null, t1Var);
+                up0Var2.h(null, t1Var);
                 break;
         }
     }

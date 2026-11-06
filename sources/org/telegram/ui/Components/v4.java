@@ -61,7 +61,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.m81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class v4 {
     public static final Pattern a = Pattern.compile("^([a-zA-Z][a-zA-Z0-9+\\-.]*://)?([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(/[^\\s]*)?$");
@@ -2293,11 +2293,11 @@ public abstract class v4 {
                                 org.telegram.ui.ActionBar.r6.k(b4Var, d02, L, null, f6Var);
                                 LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
                                 f10.addView(b4Var, c8.ha.k(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
-                                int i10 = v61.f;
+                                int i10 = b71.f;
                                 if (webPage != null && (webPage.site_name != null || webPage.title != null || webPage.description != null || webPage.photo != null || webPage.document != null)) {
-                                    v61 v61Var = new v61(context, f6Var);
-                                    v61Var.setWebPage(webPage);
-                                    f10.addView(v61Var, c8.ha.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
+                                    b71 b71Var = new b71(context, f6Var);
+                                    b71Var.setWebPage(webPage);
+                                    f10.addView(b71Var, c8.ha.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
                                 }
                                 alertDialog$Builder.c();
                                 alertDialog$Builder.o(f10);
@@ -3554,11 +3554,11 @@ public abstract class v4 {
                                     org.telegram.ui.ActionBar.r6.k(textView, d02, L, null, f6Var);
                                     LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
                                     f10.addView(textView, c8.ha.k(22.0f, 4.0f, 22.0f, 9.0f, -1, -2));
-                                    int i10 = v61.f;
+                                    int i10 = b71.f;
                                     if (webPage != null && (webPage.site_name != null || webPage.title != null || webPage.description != null || webPage.photo != null || webPage.document != null)) {
-                                        v61 v61Var = new v61(context, f6Var);
-                                        v61Var.setWebPage(webPage);
-                                        f10.addView(v61Var, c8.ha.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
+                                        b71 b71Var = new b71(context, f6Var);
+                                        b71Var.setWebPage(webPage);
+                                        f10.addView(b71Var, c8.ha.k(22.0f, 3.0f, 22.0f, 7.0f, -1, -2));
                                     }
                                     alertDialog$Builder.o(f10);
                                     u1Var.a = Math.min(org.telegram.messenger.g0.L(320.0f), (org.telegram.messenger.g0.q.x * 85) / 100);

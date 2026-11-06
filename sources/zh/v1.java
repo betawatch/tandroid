@@ -23,12 +23,12 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.h60;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements a20, b20 {
     public final /* synthetic */ a2 a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class v1 implements a20, b20 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
         a2 a2Var;
         z0 z0Var;
@@ -79,7 +79,7 @@ public final /* synthetic */ class v1 implements a20, b20 {
         boolean z12 = false;
         if (a2Var3.e != null) {
             if (view instanceof z0) {
-                Object obj2 = r31Var.G;
+                Object obj2 = x31Var.G;
                 if (obj2 instanceof TL_stars.SavedStarGift) {
                     z0 z0Var3 = (z0) view;
                     TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
@@ -388,14 +388,14 @@ public final /* synthetic */ class v1 implements a20, b20 {
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        r31 r31Var = (r31) obj;
+        x31 x31Var = (x31) obj;
         a2 a2Var = this.a;
         up0 up0Var = a2Var.a;
         int i7 = a2Var.b;
         if (a2Var.e == null) {
             return;
         }
-        Object obj3 = r31Var.G;
+        Object obj3 = x31Var.G;
         if (obj3 instanceof TL_stars.SavedStarGift) {
             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
             if (!a2Var.h) {

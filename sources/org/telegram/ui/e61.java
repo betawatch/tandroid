@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewParent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e61 extends org.telegram.ui.Components.pj0 {
     public final /* synthetic */ int e3;
@@ -23,14 +23,20 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
         switch (this.e3) {
             case 1:
                 return 0;
+            case 2:
+            case 5:
+            case 6:
+            case 8:
+            default:
+                return super.V0(i7);
             case 3:
                 return 0;
             case 4:
                 return 0;
-            case 8:
+            case 7:
                 return 0;
-            default:
-                return super.V0(i7);
+            case 9:
+                return 0;
         }
     }
 
@@ -62,7 +68,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
                     parent2.requestDisallowInterceptTouchEvent(z10);
                 }
                 break;
-            case 13:
+            case 14:
                 if (getParent() != null && getParent().getParent() != null) {
                     getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
                 }
@@ -74,7 +80,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
     @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.e3) {
-            case 7:
+            case 8:
                 int size = View.MeasureSpec.getSize(i10);
                 int b10 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
                 if (b10 <= size) {
@@ -82,7 +88,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
                 }
                 super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
                 break;
-            case 10:
+            case 11:
                 int size2 = View.MeasureSpec.getSize(i10);
                 int b11 = (getAdapter().b() * org.telegram.messenger.g0.L(50.0f)) + org.telegram.messenger.g0.L(4.0f);
                 if (b11 <= size2) {
@@ -99,7 +105,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
     @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
-            case 12:
+            case 13:
                 if (motionEvent.getAction() == 0) {
                     getParent().requestDisallowInterceptTouchEvent(true);
                 }
@@ -117,7 +123,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
                     break;
                 }
                 break;
-            case 11:
+            case 12:
                 if (view instanceof org.telegram.ui.Cells.a6) {
                     super.r0(view, view2);
                     break;
@@ -135,7 +141,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
             case 5:
                 rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
                 break;
-            case 11:
+            case 12:
                 rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
                 break;
         }
@@ -145,7 +151,7 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
     @Override // android.view.ViewGroup, android.view.View
     public boolean requestFocus(int i7, Rect rect) {
         switch (this.e3) {
-            case 9:
+            case 10:
                 return false;
             default:
                 return super.requestFocus(i7, rect);
@@ -155,6 +161,6 @@ public final class e61 extends org.telegram.ui.Components.pj0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e61(Context context) {
         super(context, null);
-        this.e3 = 12;
+        this.e3 = 13;
     }
 }

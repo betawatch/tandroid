@@ -32,9 +32,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messenger.lc, jg.y1, wr0, n61, org.telegram.ui.r9, te.b, tg.c, tg.l1, u2.m, com.google.android.gms.common.api.internal.n, q5.b {
+public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messenger.lc, jg.y1, wr0, t61, org.telegram.ui.r9, te.b, tg.c, tg.l1, u2.m, com.google.android.gms.common.api.internal.n, q5.b {
     public final Object a;
 
     public /* synthetic */ n(Object obj) {
@@ -306,7 +306,7 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
 
     @Override // tg.c
     public void g() {
-        ((org.telegram.ui.tp0) this.a).r0(null, true);
+        ((org.telegram.ui.up0) this.a).r0(null, true);
     }
 
     @Override // fd.a
@@ -460,7 +460,7 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
 
     @Override // tg.c
     public tg.j l() {
-        return ((org.telegram.ui.tp0) this.a).B0;
+        return ((org.telegram.ui.up0) this.a).B0;
     }
 
     @Override // org.telegram.ui.lm0
@@ -776,11 +776,11 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
     }
 
     public boolean r(int i7) {
-        h61 h61Var = ((p61) this.a).L;
-        if (h61Var == null) {
+        m61 m61Var = ((v61) this.a).L;
+        if (m61Var == null) {
             return false;
         }
-        return h61Var.c(i7);
+        return m61Var.c(i7);
     }
 
     public s0.d s(int i7) {
@@ -1329,31 +1329,31 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
     }
 
     public void y(float f10) {
-        p61 p61Var = (p61) this.a;
-        View[] viewArr = p61Var.e;
+        v61 v61Var = (v61) this.a;
+        View[] viewArr = v61Var.e;
         if (f10 == 1.0f) {
             if (viewArr[1] != null) {
-                p61Var.G();
-                p61Var.h.put(p61Var.f[1], viewArr[1]);
-                p61Var.removeView(viewArr[1]);
-                p61Var.F(viewArr[0], 0.0f);
+                v61Var.G();
+                v61Var.h.put(v61Var.f[1], viewArr[1]);
+                v61Var.removeView(viewArr[1]);
+                v61Var.F(viewArr[0], 0.0f);
                 viewArr[1] = null;
             }
-            p61Var.A(p61Var.b);
+            v61Var.A(v61Var.b);
             return;
         }
         View view = viewArr[1];
         if (view == null) {
             return;
         }
-        if (p61Var.D) {
-            p61Var.F(view, (1.0f - f10) * viewArr[0].getMeasuredWidth());
-            p61Var.F(viewArr[0], (-r1.getMeasuredWidth()) * f10);
+        if (v61Var.D) {
+            v61Var.F(view, (1.0f - f10) * viewArr[0].getMeasuredWidth());
+            v61Var.F(viewArr[0], (-r1.getMeasuredWidth()) * f10);
         } else {
-            p61Var.F(view, (1.0f - f10) * (-viewArr[0].getMeasuredWidth()));
-            p61Var.F(viewArr[0], r1.getMeasuredWidth() * f10);
+            v61Var.F(view, (1.0f - f10) * (-viewArr[0].getMeasuredWidth()));
+            v61Var.F(viewArr[0], r1.getMeasuredWidth() * f10);
         }
-        p61Var.x(false);
+        v61Var.x(false);
     }
 
     public boolean z(int i7, int i10, Bundle bundle) {

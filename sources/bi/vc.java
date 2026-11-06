@@ -12,29 +12,29 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class vc extends q31 {
+public final class vc extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new vc());
+        w31.h(new vc());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
         String p10;
         boolean z10;
         org.telegram.ui.ActionBar.k5 k5Var;
         wc wcVar = (wc) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) r31Var.G;
+        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) x31Var.G;
         org.telegram.ui.ActionBar.k5 k5Var2 = wcVar.d;
         org.telegram.ui.Components.l9 l9Var = wcVar.c;
         org.telegram.ui.ActionBar.f6 f6Var = wcVar.b;
@@ -115,21 +115,21 @@ public final class vc extends q31 {
         wcVar.setWillNotDraw(!z9);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
         return new wc(i7, context, f6Var);
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final boolean e(r31 r31Var, r31 r31Var2) {
-        if (r31Var2 == null) {
+    @Override // org.telegram.ui.Components.w31
+    public final boolean e(x31 x31Var, x31 x31Var2) {
+        if (x31Var2 == null) {
             return false;
         }
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         if (!(obj instanceof TL_stars.StarsSubscription)) {
             return false;
         }
-        Object obj2 = r31Var2.G;
+        Object obj2 = x31Var2.G;
         if (obj2 instanceof TL_stars.StarsSubscription) {
             return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
         }

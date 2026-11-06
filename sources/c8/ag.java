@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class ag implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final class ag implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z9 = vb.z(parcel);
+                int z9 = wb.z(parcel);
                 long j3 = 0;
                 int i7 = 0;
                 int i10 = 0;
@@ -24,23 +24,23 @@ public final class ag implements Parcelable.Creator {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        i7 = vb.u(parcel, readInt);
+                        i7 = wb.u(parcel, readInt);
                     } else if (c10 == 2) {
-                        i10 = vb.u(parcel, readInt);
+                        i10 = wb.u(parcel, readInt);
                     } else if (c10 == 3) {
-                        i11 = vb.u(parcel, readInt);
+                        i11 = wb.u(parcel, readInt);
                     } else if (c10 == 4) {
-                        i12 = vb.u(parcel, readInt);
+                        i12 = wb.u(parcel, readInt);
                     } else if (c10 != 5) {
-                        vb.y(parcel, readInt);
+                        wb.y(parcel, readInt);
                     } else {
-                        j3 = vb.w(parcel, readInt);
+                        j3 = wb.w(parcel, readInt);
                     }
                 }
-                vb.m(parcel, z9);
+                wb.m(parcel, z9);
                 return new yf(i7, i10, i11, j3, i12);
             case 1:
-                int z10 = vb.z(parcel);
+                int z10 = wb.z(parcel);
                 int i13 = 0;
                 int i14 = 0;
                 int i15 = 0;
@@ -52,7 +52,7 @@ public final class ag implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     switch ((char) readInt2) {
                         case 1:
-                            int x10 = vb.x(parcel, readInt2);
+                            int x10 = wb.x(parcel, readInt2);
                             int dataPosition = parcel.dataPosition();
                             if (x10 == 0) {
                                 fArr = null;
@@ -63,32 +63,32 @@ public final class ag implements Parcelable.Creator {
                                 break;
                             }
                         case 2:
-                            bitmap = (Bitmap) vb.g(parcel, readInt2, Bitmap.CREATOR);
+                            bitmap = (Bitmap) wb.g(parcel, readInt2, Bitmap.CREATOR);
                             break;
                         case 3:
-                            i13 = vb.u(parcel, readInt2);
+                            i13 = wb.u(parcel, readInt2);
                             break;
                         case 4:
-                            i14 = vb.u(parcel, readInt2);
+                            i14 = wb.u(parcel, readInt2);
                             break;
                         case 5:
-                            i15 = vb.u(parcel, readInt2);
+                            i15 = wb.u(parcel, readInt2);
                             break;
                         case 6:
-                            i16 = vb.u(parcel, readInt2);
+                            i16 = wb.u(parcel, readInt2);
                             break;
                         case 7:
-                            i17 = vb.u(parcel, readInt2);
+                            i17 = wb.u(parcel, readInt2);
                             break;
                         default:
-                            vb.y(parcel, readInt2);
+                            wb.y(parcel, readInt2);
                             break;
                     }
                 }
-                vb.m(parcel, z10);
+                wb.m(parcel, z10);
                 return new fg(fArr, bitmap, i13, i14, i15, i16, i17);
             case 2:
-                int z11 = vb.z(parcel);
+                int z11 = wb.z(parcel);
                 ArrayList arrayList = null;
                 float[] fArr2 = null;
                 Bitmap bitmap2 = null;
@@ -97,9 +97,9 @@ public final class ag implements Parcelable.Creator {
                     int readInt3 = parcel.readInt();
                     char c11 = (char) readInt3;
                     if (c11 == 1) {
-                        arrayList = vb.l(parcel, readInt3, fg.CREATOR);
+                        arrayList = wb.l(parcel, readInt3, fg.CREATOR);
                     } else if (c11 == 2) {
-                        int x11 = vb.x(parcel, readInt3);
+                        int x11 = wb.x(parcel, readInt3);
                         int dataPosition2 = parcel.dataPosition();
                         if (x11 == 0) {
                             fArr2 = null;
@@ -109,11 +109,11 @@ public final class ag implements Parcelable.Creator {
                             fArr2 = createFloatArray;
                         }
                     } else if (c11 == 3) {
-                        bitmap2 = (Bitmap) vb.g(parcel, readInt3, Bitmap.CREATOR);
+                        bitmap2 = (Bitmap) wb.g(parcel, readInt3, Bitmap.CREATOR);
                     } else if (c11 != 4) {
-                        vb.y(parcel, readInt3);
+                        wb.y(parcel, readInt3);
                     } else {
-                        int x12 = vb.x(parcel, readInt3);
+                        int x12 = wb.x(parcel, readInt3);
                         int dataPosition3 = parcel.dataPosition();
                         if (x12 == 0) {
                             arrayList2 = null;
@@ -128,10 +128,10 @@ public final class ag implements Parcelable.Creator {
                         }
                     }
                 }
-                vb.m(parcel, z11);
+                wb.m(parcel, z11);
                 return new gg(arrayList, fArr2, bitmap2, arrayList2);
             default:
-                int z12 = vb.z(parcel);
+                int z12 = wb.z(parcel);
                 boolean z13 = false;
                 boolean z14 = false;
                 boolean z15 = false;
@@ -141,20 +141,20 @@ public final class ag implements Parcelable.Creator {
                     int readInt5 = parcel.readInt();
                     char c12 = (char) readInt5;
                     if (c12 == 1) {
-                        z13 = vb.n(parcel, readInt5);
+                        z13 = wb.n(parcel, readInt5);
                     } else if (c12 == 2) {
-                        z14 = vb.n(parcel, readInt5);
+                        z14 = wb.n(parcel, readInt5);
                     } else if (c12 == 3) {
-                        z15 = vb.n(parcel, readInt5);
+                        z15 = wb.n(parcel, readInt5);
                     } else if (c12 == 4) {
-                        z16 = vb.n(parcel, readInt5);
+                        z16 = wb.n(parcel, readInt5);
                     } else if (c12 != 5) {
-                        vb.y(parcel, readInt5);
+                        wb.y(parcel, readInt5);
                     } else {
-                        z17 = vb.n(parcel, readInt5);
+                        z17 = wb.n(parcel, readInt5);
                     }
                 }
-                vb.m(parcel, z12);
+                wb.m(parcel, z12);
                 return new hg(z13, z14, z15, z16, z17);
         }
     }

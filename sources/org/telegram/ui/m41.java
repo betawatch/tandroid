@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class m41 extends l41 {
     public final int w;
@@ -66,7 +66,7 @@ public abstract class m41 extends l41 {
             b51Var.a = RecyclerView.R(this);
             gVar.t0.d(true, false);
             int i10 = this.w;
-            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new ko0(this, str, b51Var, 10), null, null, 0, c51Var.a.stats_dc, 1, true);
+            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new lo0(this, str, b51Var, 10), null, null, 0, c51Var.a.stats_dc, 1, true);
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
             i7 = ((org.telegram.ui.ActionBar.f2) c51Var).classGuid;
             connectionsManager.bindRequestToGuid(sendRequest, i7);

@@ -7,8 +7,8 @@ import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
 import c8.a1;
-import c8.pb;
-import c8.uc;
+import c8.qb;
+import c8.vc;
 import di.z0;
 import gd.k;
 import j7.f;
@@ -24,7 +24,7 @@ import q1.e;
 import rd.l;
 import v0.g;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                     if (hVar != null) {
-                        v0.c a10 = uc.a(hVar.a, hVar.b);
+                        v0.c a10 = vc.a(hVar.a, hVar.b);
                         if (a10 instanceof v0.f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!a1.g.a(cancellationSignal)) {
@@ -163,7 +163,7 @@ public final /* synthetic */ class b implements l {
                     obj2 = null;
                     HashSet hashSet3 = new HashSet(hashSet2);
                     hashSet3.remove(str4);
-                    bVar.e(pb.b(str3), hashSet3);
+                    bVar.e(qb.b(str3), hashSet3);
                     longValue = longValue2 - j3;
                     bVar.e(eVar2, Long.valueOf(longValue));
                 } else {

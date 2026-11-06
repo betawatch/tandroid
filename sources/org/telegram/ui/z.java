@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -127,7 +127,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
                 org.telegram.messenger.ij ijVar2 = (org.telegram.messenger.ij) obj2;
                 PhotoViewer photoViewer = ((sq) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.Y8;
-                ArrayList arrayList = ((org.telegram.ui.Components.k51) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.p51) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -137,39 +137,39 @@ public final /* synthetic */ class z implements View.OnClickListener {
                         if (i11 < size) {
                             Object obj4 = arrayList.get(i11);
                             i11++;
-                            org.telegram.ui.Components.m51 m51Var = (org.telegram.ui.Components.m51) obj4;
-                            if (m51Var.b()) {
-                                document = m51Var.g;
+                            org.telegram.ui.Components.r51 r51Var = (org.telegram.ui.Components.r51) obj4;
+                            if (r51Var.b()) {
+                                document = r51Var.g;
                             }
                         } else {
                             long j10 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.m51 m51Var2 = null;
+                            org.telegram.ui.Components.r51 r51Var2 = null;
                             for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                                org.telegram.ui.Components.m51 m51Var3 = (org.telegram.ui.Components.m51) arrayList.get(i12);
-                                if (m51Var3.k < j10 && org.telegram.ui.Components.n51.D0(m51Var3.m)) {
-                                    j10 = m51Var3.k;
-                                    m51Var2 = m51Var3;
+                                org.telegram.ui.Components.r51 r51Var3 = (org.telegram.ui.Components.r51) arrayList.get(i12);
+                                if (r51Var3.k < j10 && org.telegram.ui.Components.t51.D0(r51Var3.m)) {
+                                    j10 = r51Var3.k;
+                                    r51Var2 = r51Var3;
                                 }
                             }
-                            document = m51Var2 != null ? m51Var2.g : ((org.telegram.ui.Components.m51) arrayList.get(0)).g;
+                            document = r51Var2 != null ? r51Var2.g : ((org.telegram.ui.Components.r51) arrayList.get(0)).g;
                         }
                     }
                 }
                 if (document != null) {
                     org.telegram.messenger.w7.G(photoViewer.T);
-                    File K = org.telegram.messenger.w7.K(document, null, false, true);
-                    if (K == null || !K.exists()) {
+                    File J = org.telegram.messenger.w7.J(document, null, false, true);
+                    if (J == null || !J.exists()) {
                         org.telegram.messenger.w7.G(photoViewer.T);
-                        K = org.telegram.messenger.w7.K(document, null, true, true);
+                        J = org.telegram.messenger.w7.J(document, null, true, true);
                     }
                     int i13 = 2;
-                    if (K == null || !K.exists()) {
+                    if (J == null || !J.exists()) {
                         ArrayList arrayList2 = new ArrayList();
                         ijVar2.d3 = document;
                         arrayList2.add(ijVar2);
                         MediaController.g0(photoViewer.D, org.telegram.messenger.c.a(photoViewer.T), arrayList2, new na(photoViewer, i13));
                     } else {
-                        MediaController.d0(K.toString(), photoViewer.D, 1, null, null, new jn0(photoViewer, i13));
+                        MediaController.d0(J.toString(), photoViewer.D, 1, null, null, new jn0(photoViewer, i13));
                     }
                     photoViewer.o0.U(null, null);
                     break;

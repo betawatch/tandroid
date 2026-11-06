@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fn0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ vq0 c;
+    public final /* synthetic */ wq0 c;
 
-    public /* synthetic */ fn0(PhotoViewer photoViewer, vq0 vq0Var, int i7) {
+    public /* synthetic */ fn0(PhotoViewer photoViewer, wq0 wq0Var, int i7) {
         this.a = i7;
         this.b = photoViewer;
-        this.c = vq0Var;
+        this.c = wq0Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,8 +27,8 @@ public final /* synthetic */ class fn0 implements Runnable {
             case 0:
                 PhotoViewer photoViewer = this.b;
                 photoViewer.h0.setImageBitmap(null);
-                vq0 vq0Var = this.c;
-                if (vq0Var != null && !org.telegram.messenger.g0.Q1() && (clippingImageView = vq0Var.m) != null) {
+                wq0 wq0Var = this.c;
+                if (wq0Var != null && !org.telegram.messenger.g0.Q1() && (clippingImageView = wq0Var.m) != null) {
                     clippingImageView.setImageBitmap(null);
                 }
                 try {
@@ -66,10 +66,10 @@ public final /* synthetic */ class fn0 implements Runnable {
             default:
                 PhotoViewer photoViewer3 = this.b;
                 photoViewer3.o4 = null;
-                oq0 oq0Var = photoViewer3.e0;
-                if (oq0Var != null) {
+                pq0 pq0Var = photoViewer3.e0;
+                if (pq0Var != null) {
                     int i10 = 0;
-                    oq0Var.setLayerType(0, null);
+                    pq0Var.setLayerType(0, null);
                     photoViewer3.m4 = 0;
                     photoViewer3.W1(this.c);
                     photoViewer3.e0.setScaleX(1.0f);

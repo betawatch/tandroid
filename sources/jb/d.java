@@ -2,7 +2,7 @@ package jb;
 
 import android.os.Build;
 import android.util.Log;
-import c8.zd;
+import c8.ee;
 import gb.j1;
 import gb.u;
 import gb.x;
@@ -11,7 +11,7 @@ import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class d implements q {
     public static final int g;
@@ -25,7 +25,7 @@ public final class d implements q {
 
     static {
         int i7 = yd.a.d;
-        g = (int) yd.a.d(zd.c(24, yd.c.f), yd.c.d);
+        g = (int) yd.a.d(ee.c(24, yd.c.f), yd.c.d);
         h = new xd.c("com/google/firebase/sessions//");
     }
 
@@ -195,7 +195,7 @@ public final class d implements q {
             return null;
         }
         int i7 = yd.a.d;
-        return new yd.a(zd.c(num.intValue(), yd.c.d));
+        return new yd.a(ee.c(num.intValue(), yd.c.d));
     }
 
     @Override // jb.q

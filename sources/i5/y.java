@@ -1,11 +1,11 @@
 package i5;
 
-import c8.jb;
+import c8.kb;
 import java.nio.ByteBuffer;
 import java.util.Date;
 import y7.i6;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ i6 E;
@@ -81,8 +81,8 @@ public final class y extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = jb.b(h5.b.j(byteBuffer));
-            this.f = jb.b(h5.b.j(byteBuffer));
+            this.e = kb.b(h5.b.j(byteBuffer));
+            this.f = kb.b(h5.b.j(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             h5.b.i(byteBuffer);
             long j3 = byteBuffer.getLong();
@@ -91,8 +91,8 @@ public final class y extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = jb.b(h5.b.i(byteBuffer));
-            this.f = jb.b(h5.b.i(byteBuffer));
+            this.e = kb.b(h5.b.i(byteBuffer));
+            this.f = kb.b(h5.b.i(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             h5.b.i(byteBuffer);
             this.n = h5.b.i(byteBuffer);
@@ -115,14 +115,14 @@ public final class y extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.b(c10);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(jb.a(this.e));
-            byteBuffer.putLong(jb.a(this.f));
+            byteBuffer.putLong(kb.a(this.e));
+            byteBuffer.putLong(kb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) jb.a(this.e));
-            byteBuffer.putInt((int) jb.a(this.f));
+            byteBuffer.putInt((int) kb.a(this.e));
+            byteBuffer.putInt((int) kb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);

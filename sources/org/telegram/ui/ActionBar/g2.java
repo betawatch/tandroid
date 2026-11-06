@@ -4,7 +4,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g2 implements Runnable {
             default:
                 this.b.dismiss();
                 qs.f(p10.s0).k(qs.T2, new Object[0]);
-                org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(18), 220L);
+                org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(19), 220L);
                 break;
         }
     }

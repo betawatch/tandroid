@@ -3,10 +3,10 @@ package kg;
 import android.os.Bundle;
 import java.io.Serializable;
 import org.telegram.messenger.a20;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a20 {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final /* synthetic */ class r0 implements org.telegram.ui.ActionBar.r1, a
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        r31 r31Var = (r31) obj;
+        x31 x31Var = (x31) obj;
         s0 s0Var = this.b;
-        if (s0Var.c.h(r31Var)) {
+        if (s0Var.c.h(x31Var)) {
             return;
         }
-        int i7 = r31Var.d;
-        if (i7 == 2 || r31Var.a == 17) {
+        int i7 = x31Var.d;
+        if (i7 == 2 || x31Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", s0Var.getUserConfig().e());
             bundle.putInt("chatMode", 5);

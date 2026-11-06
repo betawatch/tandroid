@@ -26,7 +26,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.ec1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class r2 implements Runnable {
         CharSequence X2;
         int i7;
         int i10;
-        org.telegram.ui.oq0 oq0Var;
+        org.telegram.ui.pq0 pq0Var;
         int i11 = this.a;
         int i12 = 6;
         int i13 = 17;
@@ -108,7 +108,7 @@ public final /* synthetic */ class r2 implements Runnable {
                         m3Var.e0 = org.telegram.messenger.g0.L(2);
                         m3Var.d0 = 0.0f;
                     }
-                    m3Var.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), ucVar.getEditTextHeight())) - org.telegram.messenger.g0.L(14.0f)) * (ucVar instanceof org.telegram.ui.zo0 ? -1.0f : 1.0f));
+                    m3Var.setTranslationY(((-Math.min(org.telegram.messenger.g0.L(34.0f), ucVar.getEditTextHeight())) - org.telegram.messenger.g0.L(14.0f)) * (ucVar instanceof org.telegram.ui.ap0 ? -1.0f : 1.0f));
                     m3Var.u(X2);
                     zg0 zg0Var = new zg0(i16 > 0 ? R.raw.fire_on : R.raw.fire_off, org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(34.0f));
                     zg0Var.start();
@@ -184,14 +184,14 @@ public final /* synthetic */ class r2 implements Runnable {
                 break;
             case 8:
                 zd0 zd0Var = (zd0) obj;
-                org.telegram.ui.bq0 bq0Var = zd0Var.a;
-                TextView textView = bq0Var.e;
-                bi.ec ecVar = bq0Var.h;
-                RadialProgressView radialProgressView = bq0Var.n;
-                TextView textView2 = bq0Var.d;
+                org.telegram.ui.cq0 cq0Var = zd0Var.a;
+                TextView textView = cq0Var.e;
+                bi.ec ecVar = cq0Var.h;
+                RadialProgressView radialProgressView = cq0Var.n;
+                TextView textView2 = cq0Var.d;
                 textView.setVisibility(8);
-                bq0Var.f.setVisibility(8);
-                LinearLayout linearLayout = bq0Var.c;
+                cq0Var.f.setVisibility(8);
+                LinearLayout linearLayout = cq0Var.c;
                 if (linearLayout.getVisibility() == 8) {
                     linearLayout.setVisibility(0);
                     linearLayout.animate().cancel();
@@ -241,35 +241,35 @@ public final /* synthetic */ class r2 implements Runnable {
                     break;
                 }
             case 10:
-                p21 p21Var = (p21) obj;
-                p21Var.e1();
-                p21Var.Y1 = i16;
-                e21.S0(p21Var.X1);
-                p21Var.f1();
+                v21 v21Var = (v21) obj;
+                v21Var.e1();
+                v21Var.Y1 = i16;
+                k21.S0(v21Var.X1);
+                v21Var.f1();
                 break;
             case 11:
-                ((o61) obj).w.y0(i16);
+                ((u61) obj).w.y0(i16);
                 break;
             case 12:
-                f71 f71Var = (f71) obj;
-                n51 n51Var = f71Var.a;
+                l71 l71Var = (l71) obj;
+                t51 t51Var = l71Var.a;
                 if (i16 == -1) {
-                    if (n51Var.d0()) {
-                        n51Var.g0();
-                        f71Var.n();
+                    if (t51Var.d0()) {
+                        t51Var.g0();
+                        l71Var.n();
                     }
-                    f71Var.J = false;
+                    l71Var.J = false;
                     break;
                 } else if (i16 == 1) {
-                    if (f71Var.K) {
-                        f71Var.K = false;
-                        n51Var.h0();
+                    if (l71Var.K) {
+                        l71Var.K = false;
+                        t51Var.h0();
                         break;
                     }
-                } else if (i16 != -3 && i16 == -2 && n51Var.d0()) {
-                    f71Var.K = true;
-                    n51Var.g0();
-                    f71Var.n();
+                } else if (i16 != -3 && i16 == -2 && t51Var.d0()) {
+                    l71Var.K = true;
+                    t51Var.g0();
+                    l71Var.n();
                     break;
                 }
                 break;
@@ -361,8 +361,8 @@ public final /* synthetic */ class r2 implements Runnable {
                 PhotoViewer photoViewer = (PhotoViewer) obj;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 int i20 = i16 + 1;
-                if (i20 < 6 && (oq0Var = photoViewer.e0) != null) {
-                    oq0Var.invalidate();
+                if (i20 < 6 && (pq0Var = photoViewer.e0) != null) {
+                    pq0Var.invalidate();
                     org.telegram.messenger.g0.i3(new r2(photoViewer, i20, 22), 100L);
                     break;
                 }

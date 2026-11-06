@@ -6,7 +6,7 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class a {
     public final int a;
@@ -37,7 +37,7 @@ public final class a {
         }
         this.f = B;
         String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && w7.G(i7).T(str2)) {
+        if (!TextUtils.isEmpty(str2) && w7.G(i7).S(str2)) {
             z9 = true;
         }
         this.g = z9;

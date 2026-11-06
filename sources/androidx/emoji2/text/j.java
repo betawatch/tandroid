@@ -2,7 +2,7 @@ package androidx.emoji2.text;
 
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import c8.ob;
+import c8.pb;
 import com.google.android.gms.common.api.internal.j0;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.Cells.k7;
 import org.telegram.ui.Cells.z;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final class j implements Runnable {
 
     public j(List list, int i7, Throwable th2) {
         this.a = 0;
-        ob.a(list, "initCallbacks cannot be null");
+        pb.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i7;
     }

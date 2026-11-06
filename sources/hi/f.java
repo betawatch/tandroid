@@ -4,21 +4,21 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class f extends q31 {
+public final class f extends w31 {
     static {
-        q31.h(new f());
+        w31.h(new f());
     }
 
-    public static r31 i(int i7, int i10, CharSequence charSequence, String str) {
-        r31 K = r31.K(f.class);
+    public static x31 i(int i7, int i10, CharSequence charSequence, String str) {
+        x31 K = x31.K(f.class);
         K.d = i7;
         K.z = i10;
         K.k = R.drawable.filled_earn_stars;
@@ -27,12 +27,12 @@ public final class f extends q31 {
         return K;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        ((g) view).a(r31Var.z, r31Var.k, r31Var.l, r31Var.m);
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+        ((g) view).a(x31Var.z, x31Var.k, x31Var.l, x31Var.m);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         return new g(context, f6Var);
     }

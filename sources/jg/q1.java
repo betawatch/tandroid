@@ -7,12 +7,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.y4;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.oj;
 import org.telegram.ui.v50;
 import org.telegram.ui.w50;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class q1 extends TimerTask {
                 } catch (Exception e11) {
                     a8.g(e11, true);
                 }
-                Utilities.g.c(new g51(8, (oj) this.c, (String) this.b));
+                Utilities.g.c(new l51(8, (oj) this.c, (String) this.b));
                 return;
             default:
                 w50 w50Var = (w50) this.c;

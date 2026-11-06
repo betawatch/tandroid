@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class e7 {
     public String A;
@@ -349,9 +349,9 @@ public final class e7 {
                             break;
                         }
                         org.telegram.messenger.w7.G(i7);
-                        File K = org.telegram.messenger.w7.K(photoSize, null, true, true);
-                        if (K != null && K.exists()) {
-                            e7Var.N = K.getAbsolutePath();
+                        File J = org.telegram.messenger.w7.J(photoSize, null, true, true);
+                        if (J != null && J.exists()) {
+                            e7Var.N = J.getAbsolutePath();
                             break;
                         }
                         i11++;
@@ -524,7 +524,7 @@ public final class e7 {
             tL_videoSize_layer127 = tL_photoSize_layer127;
         }
         org.telegram.messenger.w7.G(i7);
-        return org.telegram.messenger.w7.K(tL_videoSize_layer127, str, true, true);
+        return org.telegram.messenger.w7.J(tL_videoSize_layer127, str, true, true);
     }
 
     public static File x(int i7, boolean z9) {
@@ -555,7 +555,7 @@ public final class e7 {
             File file = e7Var.L;
             if (file == null || !file.exists()) {
                 org.telegram.messenger.w7.G(e7Var.a);
-                e7Var.L = org.telegram.messenger.w7.N(ijVar.k, false, true);
+                e7Var.L = org.telegram.messenger.w7.M(ijVar.k, false, true);
             }
             File file2 = e7Var.L;
             if (file2 != null && file2.exists()) {

@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class la extends org.telegram.ui.ActionBar.f2 {
     public static final Paint H = new Paint(1);
@@ -230,7 +230,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
         ((FrameLayout) this.fragmentView).addView(this.b, c8.ha.c(-1.0f, -1));
         this.fragmentView.setOnTouchListener(new ei.b(6));
         this.b.setOnItemClickListener(new ca(this));
-        org.telegram.messenger.g0.i3(new fq0(this, 19), 40L);
+        org.telegram.messenger.g0.i3(new gq0(this, 19), 40L);
         return this.fragmentView;
     }
 

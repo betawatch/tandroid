@@ -20,11 +20,11 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.s11;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public final q1 a;
@@ -211,9 +211,9 @@ public final class b1 {
             q1Var.I4 = a1Var;
             ij ijVar = q1Var.P5;
             TLRPC.Message message = ijVar.k;
-            a1Var.q(message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal && m11.k(ijVar), false);
-            q1Var.I4.o(m11.j(q1Var.P5), false);
-            q1Var.I4.p(m11.s(q1Var.P5), false);
+            a1Var.q(message != null && message.voiceTranscriptionOpen && message.voiceTranscriptionFinal && s11.k(ijVar), false);
+            q1Var.I4.o(s11.j(q1Var.P5), false);
+            q1Var.I4.p(s11.s(q1Var.P5), false);
         }
         if (q1Var.E8 != 0) {
             this.b = org.telegram.messenger.g0.T1(org.telegram.messenger.k5.C(21.0f, i7, L), q1Var.Q8, 1.0f - q1Var.getVideoTranscriptionProgress());
@@ -400,8 +400,8 @@ public final class b1 {
             Path path4 = a1Var4.h;
             int centerX = rect3.centerX();
             int i16 = rect3.top;
-            m11.d(path4, centerX, i16, rect3.right - a1Var4.D, i16, f26, f27, 0.0f, a1Var4.F);
-            m11.b(a1Var4.h, rect3.right, rect3.top, a1Var4.E, 1, f26, f27, a1Var4.F, a1Var4.G);
+            s11.d(path4, centerX, i16, rect3.right - a1Var4.D, i16, f26, f27, 0.0f, a1Var4.F);
+            s11.b(a1Var4.h, rect3.right, rect3.top, a1Var4.E, 1, f26, f27, a1Var4.F, a1Var4.G);
             Path path5 = a1Var4.h;
             int i17 = rect3.right;
             int i18 = rect3.top;
@@ -409,8 +409,8 @@ public final class b1 {
             int i20 = i18 + i19;
             int i21 = rect3.bottom - i19;
             float f28 = a1Var4.G;
-            m11.d(path5, i17, i20, i17, i21, f26, f27, f28, 180.0f - f28);
-            m11.b(a1Var4.h, rect3.right, rect3.bottom, a1Var4.E, 2, f26, f27, 180.0f - a1Var4.G, 180.0f - a1Var4.F);
+            s11.d(path5, i17, i20, i17, i21, f26, f27, f28, 180.0f - f28);
+            s11.b(a1Var4.h, rect3.right, rect3.bottom, a1Var4.E, 2, f26, f27, 180.0f - a1Var4.G, 180.0f - a1Var4.F);
             Path path6 = a1Var4.h;
             int i22 = rect3.right;
             int i23 = a1Var4.D;
@@ -418,8 +418,8 @@ public final class b1 {
             int i25 = rect3.bottom;
             int i26 = rect3.left + i23;
             float f29 = a1Var4.F;
-            m11.d(path6, i24, i25, i26, i25, f26, f27, 180.0f - f29, f29 + 180.0f);
-            m11.b(a1Var4.h, rect3.left, rect3.bottom, a1Var4.E, 3, f26, f27, a1Var4.F + 180.0f, a1Var4.G + 180.0f);
+            s11.d(path6, i24, i25, i26, i25, f26, f27, 180.0f - f29, f29 + 180.0f);
+            s11.b(a1Var4.h, rect3.left, rect3.bottom, a1Var4.E, 3, f26, f27, a1Var4.F + 180.0f, a1Var4.G + 180.0f);
             Path path7 = a1Var4.h;
             int i27 = rect3.left;
             int i28 = rect3.bottom;
@@ -427,9 +427,9 @@ public final class b1 {
             int i30 = i28 - i29;
             int i31 = rect3.top + i29;
             float f30 = a1Var4.G;
-            m11.d(path7, i27, i30, i27, i31, f26, f27, f30 + 180.0f, 360.0f - f30);
-            m11.b(a1Var4.h, rect3.left, rect3.top, a1Var4.E, 4, f26, f27, 360.0f - a1Var4.G, 360.0f - a1Var4.F);
-            m11.d(a1Var4.h, rect3.left + a1Var4.D, rect3.top, rect3.centerX(), rect3.top, f26, f27, 360.0f - a1Var4.F, 360.0f);
+            s11.d(path7, i27, i30, i27, i31, f26, f27, f30 + 180.0f, 360.0f - f30);
+            s11.b(a1Var4.h, rect3.left, rect3.top, a1Var4.E, 4, f26, f27, 360.0f - a1Var4.G, 360.0f - a1Var4.F);
+            s11.d(a1Var4.h, rect3.left + a1Var4.D, rect3.top, rect3.centerX(), rect3.top, f26, f27, 360.0f - a1Var4.F, 360.0f);
             a1Var4.g.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
             int alpha6 = a1Var4.g.getAlpha();
             a1Var4.g.setAlpha((int) (alpha6 * f10));

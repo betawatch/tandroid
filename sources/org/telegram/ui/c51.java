@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class c51 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public boolean A0;
@@ -863,7 +863,7 @@ public final class c51 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                 break;
             }
             qh.b bVar = bVarArr[i11];
-            bVar.setOnClickListener(new nu0(c51Var, i11, i10));
+            bVar.setOnClickListener(new ou0(c51Var, i11, i10));
             c51Var.o0.addView(c51Var.q0[i11]);
             c51Var.o0.i(bVar, true, false);
             i11++;
@@ -969,7 +969,7 @@ public final class c51 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         c51Var.R.setChatAvatar(M02);
         c51Var.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
         c51Var.simpleActionBar.setTitle(M02 == null ? "" : M02.title);
-        c51Var.simpleActionBar.setActionBarMenuOnItemClick(new mt0(c51Var, 12));
+        c51Var.simpleActionBar.setActionBarMenuOnItemClick(new nt0(c51Var, 12));
         c51Var.R.i(org.telegram.ui.ActionBar.k6.x0(null, i13, false), org.telegram.ui.ActionBar.k6.x0(null, i14, false));
         boolean z14 = c51Var.A0;
         m4 m4Var = c51Var.E0;
@@ -1009,7 +1009,7 @@ public final class c51 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             ViewGroup.LayoutParams layoutParams = transactionTabs.getLayoutParams();
             org.telegram.messenger.g0.E2(transactionTabs);
             c51Var.l0.addView(transactionTabs, layoutParams);
-            c51Var.j0.setTabsPinnedChangedListener(new qu0(c51Var, 20));
+            c51Var.j0.setTabsPinnedChangedListener(new ru0(c51Var, 20));
             c51Var.m0.a(c51Var.j0.e0, false);
         }
         frameLayout5.getViewTreeObserver().addOnPreDrawListener(new fk(c51Var, i15));
@@ -1170,9 +1170,9 @@ public final class c51 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             zdVar.W0 = L2;
             int C = org.telegram.messenger.camera.q.C(48.0f, i7, -org.telegram.messenger.g0.L(8.0f));
             int C2 = org.telegram.messenger.camera.q.C(48.0f, i10, -org.telegram.messenger.g0.L(8.0f));
-            org.telegram.ui.Components.k41 k41Var = zdVar.X0;
-            org.telegram.messenger.g0.B3(k41Var, 0, C, 0, C2);
-            k41Var.setPadding(k41Var.getPaddingLeft(), (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i7) - C, k41Var.getPaddingRight(), (i10 + L2) - C2);
+            org.telegram.ui.Components.q41 q41Var = zdVar.X0;
+            org.telegram.messenger.g0.B3(q41Var, 0, C, 0, C2);
+            q41Var.setPadding(q41Var.getPaddingLeft(), (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i7) - C, q41Var.getPaddingRight(), (i10 + L2) - C2);
             zdVar.z(-C, -C2);
             zdVar.B();
             zdVar.requestLayout();

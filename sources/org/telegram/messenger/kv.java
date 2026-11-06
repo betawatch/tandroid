@@ -31,22 +31,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.lx0;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.mx0;
 import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.s31;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.ny0;
 import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.v31;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.zj0;
 import org.telegram.ui.rg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class kv {
     public int A;
@@ -57,7 +57,7 @@ public final class kv {
     public org.telegram.ui.Cells.l1 F;
     public org.telegram.ui.Components.ic G;
     public Paint H;
-    public ly0 I;
+    public my0 I;
     public a80 J;
     public final RectF K;
     public boolean L;
@@ -228,9 +228,9 @@ public final class kv {
                     i10 |= 65536;
                 }
                 if (i10 != 0) {
-                    ty0 ty0Var = new ty0();
-                    ty0Var.a = i10;
-                    spannableStringBuilder.setSpan(new uy0(ty0Var, 0), spanStart, spanEnd, 33);
+                    uy0 uy0Var = new uy0();
+                    uy0Var.a = i10;
+                    spannableStringBuilder.setSpan(new vy0(uy0Var, 0), spanStart, spanEnd, 33);
                 }
             }
         }
@@ -659,10 +659,10 @@ public final class kv {
         }
     }
 
-    public static ty0 z(int i7) {
-        ty0 ty0Var = new ty0();
-        ty0Var.a = i7;
-        return ty0Var;
+    public static uy0 z(int i7) {
+        uy0 uy0Var = new uy0();
+        uy0Var.a = i7;
+        return uy0Var;
     }
 
     public final boolean B() {
@@ -976,9 +976,9 @@ public final class kv {
                 Rect rect = yuVar.b;
                 int max = Math.max(i12, Math.min(i13, Math.max(0, (i11 - rect.left) - rect.right)));
                 yuVar.f0 = max;
-                lx0 lx0Var = yuVar.X;
-                lx0Var.setRenderWidth(max);
-                yuVar.g0 = lx0Var.getRenderHeight();
+                mx0 mx0Var = yuVar.X;
+                mx0Var.setRenderWidth(max);
+                yuVar.g0 = mx0Var.getRenderHeight();
             }
         }
         StringBuilder sb2 = new StringBuilder();
@@ -1266,7 +1266,7 @@ public final class kv {
             canvas.restore();
             int w02 = org.telegram.ui.ActionBar.k6.w0(E() ? org.telegram.ui.ActionBar.k6.Lb : org.telegram.ui.ActionBar.k6.yd, this.D);
             if (this.I == null) {
-                this.I = new ly0(hd.M0(2131745340, null), 16.0f, g0.o());
+                this.I = new my0(hd.M0(2131745340, null), 16.0f, g0.o());
             }
             org.telegram.ui.Components.ic icVar = this.G;
             if (icVar == null) {
@@ -2103,7 +2103,7 @@ public final class kv {
             }
         }
         if (pageBlock instanceof TL_iv.pageBlockUnsupported) {
-            int L3 = c8.yc.a(i35, 9) ? g0.L(6.0f) : i7 > 0 ? g0.L(4.0f) : 0;
+            int L3 = c8.zc.a(i35, 9) ? g0.L(6.0f) : i7 > 0 ? g0.L(4.0f) : 0;
             dv dvVar = new dv(this, new Rect((rect.left + L3) - g0.L(7.0f), Math.max(g0.L(14.0f), rect.top), (rect.right + L3) - g0.L(7.0f), Math.max(g0.L(14.0f), rect.bottom)), this.B, arrayList.size(), i7);
             this.e.add(dvVar);
             if (i7 == 0) {
@@ -2174,9 +2174,9 @@ public final class kv {
                     boolean j3 = li.c6.j(textdiff.text);
                     boolean j10 = li.c6.j(textdiff.old_text);
                     if (j3 && !j10) {
-                        n(textdiff.old_text, spannableStringBuilder, i7, new uy0(z(TLObject.FLAG_13), 0));
+                        n(textdiff.old_text, spannableStringBuilder, i7, new vy0(z(TLObject.FLAG_13), 0));
                     } else if (!j3 && j10) {
-                        n(textdiff.text, spannableStringBuilder, i7, new uy0(z(TLObject.FLAG_12), 0));
+                        n(textdiff.text, spannableStringBuilder, i7, new vy0(z(TLObject.FLAG_12), 0));
                     } else if (!j3) {
                         n(textdiff.text, spannableStringBuilder, i7, new eu0());
                     }
@@ -2196,9 +2196,9 @@ public final class kv {
                     int i14 = i7 | 256;
                     n(richText.text, spannableStringBuilder, i14, new gv(this, i14, false));
                 } else if (richText instanceof TL_iv.textUrl) {
-                    n(richText.text, spannableStringBuilder, i7, new x31(((TL_iv.textUrl) richText).url, z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41(((TL_iv.textUrl) richText).url, z(1024)));
                 } else if (richText instanceof TL_iv.textEmail) {
-                    n(richText.text, spannableStringBuilder, i7, new x31("mailto:" + ((TL_iv.textEmail) richText).email, z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41("mailto:" + ((TL_iv.textEmail) richText).email, z(1024)));
                 } else if (richText instanceof TL_iv.textConcat) {
                     for (int i15 = 0; i15 < richText.texts.size(); i15++) {
                         m(richText.texts.get(i15), spannableStringBuilder, i7);
@@ -2218,7 +2218,7 @@ public final class kv {
                     if (textphone.phone.startsWith("+")) {
                         d = rf.b.i("+", d);
                     }
-                    n(richText.text, spannableStringBuilder, i7, new x31(rf.b.i("tel:", d), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("tel:", d), z(1024)));
                 } else if (richText instanceof TL_iv.textAnchor) {
                     TL_iv.textAnchor textanchor = (TL_iv.textAnchor) richText;
                     String str = textanchor.name;
@@ -2255,7 +2255,7 @@ public final class kv {
                         int length2 = spannableStringBuilder.length();
                         spannableStringBuilder.append(" ");
                         int length3 = spannableStringBuilder.length();
-                        spannableStringBuilder.setSpan(new my0(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.D), textmath.depth), length2, length3, 33);
+                        spannableStringBuilder.setSpan(new ny0(null, textmath.bitmap, textmath.w, textmath.h, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, this.D), textmath.depth), length2, length3, 33);
                         String str3 = textmath.source;
                         if (str3 != null && !str3.isEmpty()) {
                             spannableStringBuilder.setSpan(new org.telegram.ui.Cells.o9(textmath.source), length2, length3, 33);
@@ -2267,7 +2267,7 @@ public final class kv {
                     int length4 = spannableStringBuilder.length();
                     spannableStringBuilder.append(charSequence);
                     int length5 = spannableStringBuilder.length();
-                    boolean a11 = c8.yc.a(i7, 13);
+                    boolean a11 = c8.zc.a(i7, 13);
                     int i19 = i7 & 15;
                     if (i19 < 1 || i19 > 6) {
                         size = new org.telegram.ui.Components.r5(textcustomemoji.document_id, a11 ? 1.0f : 1.2f, (Paint.FontMetricsInt) null).setSize(g0.L(this.M + 4 + (a11 ? -2 : 4)));
@@ -2278,41 +2278,41 @@ public final class kv {
                     }
                     spannableStringBuilder.setSpan(size, length4, length5, 33);
                 } else if (richText instanceof TL_iv.textSpoiler) {
-                    n(richText.text, spannableStringBuilder, i7, new uy0(z(256), 0));
+                    n(richText.text, spannableStringBuilder, i7, new vy0(z(256), 0));
                 } else if (richText instanceof TL_iv.textMention) {
                     TLRPC.TL_messageEntityMention tL_messageEntityMention = new TLRPC.TL_messageEntityMention();
-                    ty0 ty0Var = new ty0();
-                    ty0Var.d = tL_messageEntityMention;
-                    n(richText.text, spannableStringBuilder, i7, new v31(x(richText), ty0Var));
+                    uy0 uy0Var = new uy0();
+                    uy0Var.d = tL_messageEntityMention;
+                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var));
                 } else if (richText instanceof TL_iv.textHashtag) {
                     TLRPC.TL_messageEntityHashtag tL_messageEntityHashtag = new TLRPC.TL_messageEntityHashtag();
-                    ty0 ty0Var2 = new ty0();
-                    ty0Var2.d = tL_messageEntityHashtag;
-                    n(richText.text, spannableStringBuilder, i7, new v31(x(richText), ty0Var2));
+                    uy0 uy0Var2 = new uy0();
+                    uy0Var2.d = tL_messageEntityHashtag;
+                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var2));
                 } else if (richText instanceof TL_iv.textBotCommand) {
-                    n(richText.text, spannableStringBuilder, i7, new s31(x(richText), E() ? 1 : 0, null));
+                    n(richText.text, spannableStringBuilder, i7, new y31(x(richText), E() ? 1 : 0, null));
                 } else if (richText instanceof TL_iv.textCashtag) {
                     TLRPC.TL_messageEntityCashtag tL_messageEntityCashtag = new TLRPC.TL_messageEntityCashtag();
-                    ty0 ty0Var3 = new ty0();
-                    ty0Var3.d = tL_messageEntityCashtag;
-                    n(richText.text, spannableStringBuilder, i7, new v31(x(richText), ty0Var3));
+                    uy0 uy0Var3 = new uy0();
+                    uy0Var3.d = tL_messageEntityCashtag;
+                    n(richText.text, spannableStringBuilder, i7, new b41(x(richText), uy0Var3));
                 } else if (richText instanceof TL_iv.textAutoUrl) {
-                    n(richText.text, spannableStringBuilder, i7, new x31(x(richText), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41(x(richText), z(1024)));
                 } else if (richText instanceof TL_iv.textAutoEmail) {
-                    n(richText.text, spannableStringBuilder, i7, new x31(rf.b.i("mailto:", x(richText)), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("mailto:", x(richText)), z(1024)));
                 } else if (richText instanceof TL_iv.textAutoPhone) {
                     String x10 = x(richText);
                     String d2 = pf.b.d(x10, false);
                     if (x10.startsWith("+")) {
                         d2 = rf.b.i("+", d2);
                     }
-                    n(richText.text, spannableStringBuilder, i7, new x31(rf.b.i("tel:", d2), z(1024)));
+                    n(richText.text, spannableStringBuilder, i7, new d41(rf.b.i("tel:", d2), z(1024)));
                 } else if (richText instanceof TL_iv.textTonAddress) {
-                    n(richText.text, spannableStringBuilder, i7, new v31(rf.b.i("tonaddress:", x(richText)), (ty0) null));
+                    n(richText.text, spannableStringBuilder, i7, new b41(rf.b.i("tonaddress:", x(richText)), (uy0) null));
                 } else if (richText instanceof TL_iv.textBankCard) {
-                    n(richText.text, spannableStringBuilder, i7, new v31(rf.b.i("card:", x(richText)), (ty0) null));
+                    n(richText.text, spannableStringBuilder, i7, new b41(rf.b.i("card:", x(richText)), (uy0) null));
                 } else if (richText instanceof TL_iv.textMentionName) {
-                    n(richText.text, spannableStringBuilder, i7, new y31("" + ((TL_iv.textMentionName) richText).user_id, E() ? 1 : 0, null));
+                    n(richText.text, spannableStringBuilder, i7, new e41("" + ((TL_iv.textMentionName) richText).user_id, E() ? 1 : 0, null));
                 } else if (richText instanceof TL_iv.textDate) {
                     TL_iv.textDate textdate = (TL_iv.textDate) richText;
                     TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();

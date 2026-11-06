@@ -1,44 +1,24 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class d21 extends v4.g0 {
-    public Context c;
-    public View d;
-    public int e;
+public final class d21 extends k21 {
+    public final /* synthetic */ Runnable Q1;
 
-    public final void D(View view) {
-        if (this.d == view) {
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d21(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
+        super(context, str, str2, charSequence, null, 0, false, null);
+        this.Q1 = runnable;
+    }
+
+    @Override // org.telegram.ui.Components.k21, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    public final void dismiss() {
+        super.dismiss();
+        Runnable runnable = this.Q1;
+        if (runnable != null) {
+            runnable.run();
         }
-        this.e++;
-        this.d = view;
-        g(1);
-    }
-
-    @Override // v4.g0
-    public final int b() {
-        return 2;
-    }
-
-    @Override // v4.g0
-    public final int d(int i7) {
-        if (i7 == 0) {
-            return 0;
-        }
-        return this.e;
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return i7 == 0 ? new xi0(new tm(this.c, 12)) : new xi0(this.d);
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
     }
 }

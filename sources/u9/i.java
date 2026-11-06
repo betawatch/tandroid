@@ -1,9 +1,9 @@
 package u9;
 
 import a8.p0;
-import c8.sc;
+import c8.tc;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class i {
     public final q a;
@@ -57,7 +57,7 @@ public final class i {
     }
 
     public i(q qVar, int i7, int i10) {
-        sc.a(qVar, "Null dependency anInterface.");
+        tc.a(qVar, "Null dependency anInterface.");
         this.a = qVar;
         this.b = i7;
         this.c = i10;

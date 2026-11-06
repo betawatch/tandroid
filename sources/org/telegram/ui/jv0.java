@@ -1,23 +1,108 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class jv0 extends org.telegram.ui.Components.mo0 {
-    public final /* synthetic */ ProfileActivity R2;
+public final class jv0 implements hp {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jv0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.R2 = profileActivity;
+    public jv0(ProfileActivity profileActivity, int i7, TLRPC.ChatParticipant chatParticipant, boolean z9, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i7;
+        this.b = chatParticipant;
+        this.c = z9;
+        this.d = zArr;
     }
 
-    @Override // org.telegram.ui.Components.mo0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
-        if (z9) {
-            org.telegram.messenger.g0.i3(new qn0(this, hVar, i7, 24), 250L);
+    @Override // org.telegram.ui.hp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.L.m(-profileActivity.e1, user, profileActivity.D2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.hp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z9;
+        int i10 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
+        int i11 = this.a;
+        if (i11 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i7 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
+                }
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().e();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i7 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.t2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.t2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i7 != 1 || this.c) {
+                return;
+            }
+            this.d[0] = true;
+            return;
+        }
+        if (i11 == 1 && i7 == 0 && profileActivity.D2.megagroup && (chatFull = profileActivity.t2) != null && chatFull.participants != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= profileActivity.t2.participants.participants.size()) {
+                    z9 = false;
+                    break;
+                } else {
+                    if (org.telegram.messenger.ij.C1(((TLRPC.TL_chatChannelParticipant) profileActivity.t2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.t2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i12);
+                        z9 = true;
+                        break;
+                    }
+                    i12++;
+                }
+            }
+            TLRPC.ChatFull chatFull3 = profileActivity.t2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i10 >= profileActivity.t2.participants.participants.size()) {
+                        break;
+                    }
+                    if (profileActivity.t2.participants.participants.get(i10).user_id == chatParticipant.user_id) {
+                        profileActivity.t2.participants.participants.remove(i10);
+                        z9 = true;
+                        break;
+                    }
+                    i10++;
+                }
+            }
+            if (z9) {
+                profileActivity.G5(true);
+                profileActivity.J5();
+                profileActivity.d.f();
+            }
         }
     }
 }

@@ -7,10 +7,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.an;
-import org.telegram.ui.sp0;
+import org.telegram.ui.tp0;
 import org.telegram.ui.yb1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateLis
                 l0Var.invalidate();
                 break;
             case 24:
-                ((sp0) ((tg.o0) this.b)).K.e0.invalidate();
+                ((tp0) ((tg.o0) this.b)).K.e0.invalidate();
                 break;
             case 25:
                 tg.h1 h1Var = (tg.h1) this.b;

@@ -14,10 +14,10 @@ import e2.y0;
 import e2.z0;
 import java.util.List;
 import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t51;
 import wi.t0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class z implements a1 {
     public final /* synthetic */ int a;
@@ -37,11 +37,11 @@ public final class z implements a1 {
     public final void C(int i7, boolean z9) {
         switch (this.a) {
             case 1:
-                n51 n51Var = (n51) this.b;
-                if (!n51Var.H && i7 == 3) {
-                    n51Var.H = true;
-                    if (n51Var.G && n51Var.I) {
-                        n51Var.h0();
+                t51 t51Var = (t51) this.b;
+                if (!t51Var.H && i7 == 3) {
+                    t51Var.H = true;
+                    if (t51Var.G && t51Var.I) {
+                        t51Var.h0();
                         break;
                     }
                 }

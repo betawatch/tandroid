@@ -57,11 +57,11 @@ import org.telegram.ui.ec1;
 import org.telegram.ui.ia;
 import org.telegram.ui.la;
 import org.telegram.ui.nu;
-import org.telegram.ui.vq0;
-import org.telegram.ui.vs0;
+import org.telegram.ui.wq0;
+import org.telegram.ui.ws0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2, q1, h2.j {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2,
 
     @Override // f5.m
     public void b(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new l0(fVar, (f2) this.c, list, this.b, (z0) this.d, (vs0) this.e, 12));
+        org.telegram.messenger.g0.h3(new l0(fVar, (f2) this.c, list, this.b, (z0) this.d, (ws0) this.e, 12));
     }
 
     @Override // org.telegram.ui.Components.dj0
@@ -301,7 +301,7 @@ public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2,
     }
 
     @Override // org.telegram.ui.Components.i30
-    public /* synthetic */ vq0 getCloseIntoObject() {
+    public /* synthetic */ wq0 getCloseIntoObject() {
         return null;
     }
 

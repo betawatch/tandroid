@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -184,11 +184,11 @@ public final /* synthetic */ class u6 implements RequestDelegate {
                             TLRPC.MessageMedia messageMedia = storyItem.media;
                             if (messageMedia != null && storyItem.attachPath != null) {
                                 if (messageMedia.document != null) {
-                                    org.telegram.messenger.w7.G(i21).f0(storyItem.attachPath, storyItem.media.document);
+                                    org.telegram.messenger.w7.G(i21).e0(storyItem.attachPath, storyItem.media.document);
                                 } else {
                                     TLRPC.Photo photo = messageMedia.photo;
                                     if (photo != null) {
-                                        org.telegram.messenger.w7.G(i21).f0(storyItem.attachPath, org.telegram.messenger.w7.w(photo.sizes, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false));
+                                        org.telegram.messenger.w7.G(i21).e0(storyItem.attachPath, org.telegram.messenger.w7.w(photo.sizes, ConnectionsManager.DEFAULT_DATACENTER_ID, false, null, false));
                                     }
                                 }
                             }

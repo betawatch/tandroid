@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -170,9 +170,9 @@ public final class z5 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 vo voVar = (vo) this.b;
-                wz0 wz0Var = voVar.H1;
-                if (wz0Var != null) {
-                    if (wz0Var.getParent() != null) {
+                xz0 xz0Var = voVar.H1;
+                if (xz0Var != null) {
+                    if (xz0Var.getParent() != null) {
                         ((ViewGroup) voVar.H1.getParent()).removeView(voVar.H1);
                     }
                     voVar.H1 = null;
@@ -181,13 +181,13 @@ public final class z5 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 17:
-                wz0 wz0Var2 = (wz0) this.b;
-                wz0Var2.c = null;
-                wz0Var2.a.setShader(null);
-                wz0Var2.n = null;
-                wz0Var2.r = null;
-                wz0Var2.setImageDrawable(null);
-                org.telegram.messenger.g0.E2(wz0Var2);
+                xz0 xz0Var2 = (xz0) this.b;
+                xz0Var2.c = null;
+                xz0Var2.a.setShader(null);
+                xz0Var2.n = null;
+                xz0Var2.r = null;
+                xz0Var2.setImageDrawable(null);
+                org.telegram.messenger.g0.E2(xz0Var2);
                 break;
             case 18:
                 CheckBox checkBox = (CheckBox) this.b;

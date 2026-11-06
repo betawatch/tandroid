@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class gy extends org.telegram.ui.ActionBar.f2 {
     public boolean D;
@@ -210,8 +210,7 @@ public final class gy extends org.telegram.ui.ActionBar.f2 {
         c0();
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        int i10 = 9;
-        e61 e61Var = new e61(i10, context, null);
+        e61 e61Var = new e61(10, context, null);
         this.a = e61Var;
         e61Var.setLayoutManager(new v4.b0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
@@ -222,7 +221,7 @@ public final class gy extends org.telegram.ui.ActionBar.f2 {
         fy fyVar = new fy(this);
         this.b = fyVar;
         e61Var2.setAdapter(fyVar);
-        this.a.setOnItemClickListener(new h(this, i10));
+        this.a.setOnItemClickListener(new h(this, 9));
         org.telegram.messenger.qp messagesController = getMessagesController();
         org.telegram.messenger.vo voVar = this.c;
         messagesController.k5(voVar);
@@ -231,21 +230,21 @@ public final class gy extends org.telegram.ui.ActionBar.f2 {
         ArrayList arrayList3 = this.f;
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.d;
         if (tL_exportedChatlistInvite != null) {
-            for (int i11 = 0; i11 < tL_exportedChatlistInvite.peers.size(); i11++) {
-                long o4 = org.telegram.messenger.m5.o(tL_exportedChatlistInvite.peers.get(i11));
+            for (int i10 = 0; i10 < tL_exportedChatlistInvite.peers.size(); i10++) {
+                long o4 = org.telegram.messenger.m5.o(tL_exportedChatlistInvite.peers.get(i10));
                 arrayList2.add(Long.valueOf(o4));
                 this.e.add(Long.valueOf(o4));
                 arrayList3.add(Long.valueOf(o4));
             }
         }
-        int i12 = 0;
+        int i11 = 0;
         while (true) {
             ArrayList arrayList4 = voVar.k;
             arrayList = voVar.k;
-            if (i12 >= arrayList4.size()) {
+            if (i11 >= arrayList4.size()) {
                 break;
             }
-            TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList.get(i12);
+            TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList.get(i11);
             if (dialog != null && !org.telegram.messenger.m5.C(dialog.id) && !arrayList2.contains(Long.valueOf(dialog.id))) {
                 long j3 = dialog.id;
                 boolean z9 = j3 < 0;
@@ -257,7 +256,7 @@ public final class gy extends org.telegram.ui.ActionBar.f2 {
                     arrayList3.add(Long.valueOf(dialog.id));
                 }
             }
-            i12++;
+            i11++;
         }
         while (i7 < arrayList.size()) {
             TLRPC.Dialog dialog2 = (TLRPC.Dialog) arrayList.get(i7);
@@ -283,13 +282,13 @@ public final class gy extends org.telegram.ui.ActionBar.f2 {
             this.M = -1;
             this.N = -1;
         } else {
-            int i13 = this.G;
-            int i14 = i13 + 1;
-            this.K = i13;
-            int i15 = i13 + 2;
-            this.G = i15;
-            this.L = i14;
-            int size = (arrayList2.size() - 1) + i15;
+            int i12 = this.G;
+            int i13 = i12 + 1;
+            this.K = i12;
+            int i14 = i12 + 2;
+            this.G = i14;
+            this.L = i13;
+            int size = (arrayList2.size() - 1) + i14;
             this.M = size;
             this.G = size + 1;
             this.N = size;

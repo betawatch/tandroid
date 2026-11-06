@@ -9,9 +9,9 @@ import android.graphics.drawable.ShapeDrawable;
 import android.text.TextPaint;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class tk extends org.telegram.ui.Components.sy0 {
+public final class tk extends org.telegram.ui.Components.ty0 {
     public final /* synthetic */ an K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -46,13 +46,13 @@ public final class tk extends org.telegram.ui.Components.sy0 {
         setTranslationY((anVar.Z.getTop() - anVar.l1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i7)));
     }
 
-    @Override // org.telegram.ui.Components.sy0, android.view.View
+    @Override // org.telegram.ui.Components.ty0, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         d();
     }
 
-    @Override // org.telegram.ui.Components.sy0, android.view.View
+    @Override // org.telegram.ui.Components.ty0, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         d();

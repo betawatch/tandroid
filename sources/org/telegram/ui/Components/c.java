@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                 ArrayList o4 = org.telegram.messenger.f10.o(null);
                 ArrayList n10 = org.telegram.messenger.f10.n();
                 if (!TextUtils.isEmpty(g0Var2.k2)) {
-                    g0Var2.g1(F, linearLayout, true, e21.K0(e21.O0(g0Var2.k2, null, null)), null);
+                    g0Var2.g1(F, linearLayout, true, k21.K0(k21.O0(g0Var2.k2, null, null)), null);
                 }
                 int size = o4.size();
                 int i12 = 0;
@@ -88,7 +88,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                                         g0Var3.h1();
                                         String str = y00Var.a;
                                         g0Var3.k2 = str;
-                                        e21.S0(str);
+                                        k21.S0(str);
                                         g0Var3.p1();
                                         break;
                                     default:
@@ -96,7 +96,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                                         g0Var4.h1();
                                         String str2 = y00Var.a;
                                         g0Var4.k2 = str2;
-                                        e21.S0(str2);
+                                        k21.S0(str2);
                                         g0Var4.p1();
                                         break;
                                 }
@@ -122,7 +122,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                                     g0Var3.h1();
                                     String str = y00Var2.a;
                                     g0Var3.k2 = str;
-                                    e21.S0(str);
+                                    k21.S0(str);
                                     g0Var3.p1();
                                     break;
                                 default:
@@ -130,7 +130,7 @@ public final /* synthetic */ class c implements View.OnClickListener {
                                     g0Var4.h1();
                                     String str2 = y00Var2.a;
                                     g0Var4.k2 = str2;
-                                    e21.S0(str2);
+                                    k21.S0(str2);
                                     g0Var4.p1();
                                     break;
                             }

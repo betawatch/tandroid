@@ -1,6 +1,7 @@
 package org.telegram.ui.web;
 
 import a8.ia;
+import a8.wa;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
@@ -11,7 +12,7 @@ import android.os.ResultReceiver;
 import android.util.LongSparseArray;
 import android.widget.ImageView;
 import androidx.car.app.hardware.common.CarResultStub;
-import c8.wa;
+import c8.xa;
 import fi.u2;
 import fi.w3;
 import java.nio.ByteBuffer;
@@ -38,12 +39,12 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.xq;
 import tg.c2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -90,13 +91,13 @@ public final /* synthetic */ class w implements Runnable {
             case 1:
                 ArrayList arrayList3 = (ArrayList) this.b;
                 LongSparseArray longSparseArray = (LongSparseArray) this.c;
-                wa.c.addAll(0, arrayList3);
+                xa.c.addAll(0, arrayList3);
                 for (int i11 = 0; i11 < longSparseArray.size(); i11++) {
-                    wa.d.put(longSparseArray.keyAt(i11), (y0) longSparseArray.valueAt(i11));
+                    xa.d.put(longSparseArray.keyAt(i11), (y0) longSparseArray.valueAt(i11));
                 }
-                wa.b = true;
-                wa.a = false;
-                ArrayList arrayList4 = wa.e;
+                xa.b = true;
+                xa.a = false;
+                ArrayList arrayList4 = xa.e;
                 if (arrayList4 != null) {
                     int size = arrayList4.size();
                     while (i10 < size) {
@@ -104,7 +105,7 @@ public final /* synthetic */ class w implements Runnable {
                         i10++;
                         ((c20) obj).a(arrayList3);
                     }
-                    wa.e = null;
+                    xa.e = null;
                     return;
                 }
                 return;
@@ -306,9 +307,9 @@ public final /* synthetic */ class w implements Runnable {
                 if (uVar.e != null) {
                     a8.d("widget " + uVar.a + ": " + str6);
                 }
-                j71 j71Var = uVar.h;
-                if (j71Var != null) {
-                    j71Var.a.h();
+                p71 p71Var = uVar.h;
+                if (p71Var != null) {
+                    p71Var.a.h();
                     return;
                 }
                 return;
@@ -410,7 +411,7 @@ public final /* synthetic */ class w implements Runnable {
                 ByteBuffer byteBuffer = (ByteBuffer) j0Var.h(j0Var.f(), true, false, false).c;
                 RectF f10 = j0Var.f();
                 Object obj2 = j0Var.a.b;
-                j0Var.w = new a8.wa(byteBuffer, 0, f10);
+                j0Var.w = new wa(byteBuffer, 0, f10);
                 j0Var.a(false);
                 q0Var.run();
                 return;

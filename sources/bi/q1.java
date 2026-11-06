@@ -17,6 +17,7 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.am;
 import org.telegram.ui.Components.at0;
+import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.bm;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.ca0;
@@ -31,14 +32,13 @@ import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.ia0;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.qi;
 import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.s90;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.ve;
-import org.telegram.ui.Components.w41;
 import org.telegram.ui.Components.wk;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yv0;
@@ -50,7 +50,7 @@ import org.telegram.ui.ks;
 import org.telegram.ui.nw;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q1 extends pj0 {
     public final /* synthetic */ int e3;
@@ -109,9 +109,9 @@ public final class q1 extends pj0 {
                 }
                 return true;
             case 29:
-                if (((o61) this.f3).n) {
+                if (((u61) this.f3).n) {
                     int L2 = org.telegram.messenger.g0.L(6.0f);
-                    RectF rectF2 = ((m61) view).c;
+                    RectF rectF2 = ((s61) view).c;
                     float f13 = L2;
                     if (rectF2.left - f13 < f10 && rectF2.right + f13 > f10) {
                         return false;
@@ -127,7 +127,7 @@ public final class q1 extends pj0 {
     public boolean R0() {
         switch (this.e3) {
             case 28:
-                return getAdapter() != null && ((w41) this.f3).y1 && getAdapter().b() <= 2;
+                return getAdapter() != null && ((b51) this.f3).y1 && getAdapter().b() <= 2;
             default:
                 return super.R0();
         }
@@ -150,7 +150,7 @@ public final class q1 extends pj0 {
         switch (this.e3) {
             case 29:
                 super.addView(view, i7, layoutParams);
-                if (!((o61) this.f3).V) {
+                if (!((u61) this.f3).V) {
                     view.setScaleX(1.0f);
                     view.setScaleY(1.0f);
                     view.setAlpha(1.0f);
@@ -977,7 +977,7 @@ public final class q1 extends pj0 {
                 break;
             case 29:
                 super.setAlpha(f10);
-                ((o61) this.f3).invalidate();
+                ((u61) this.f3).invalidate();
                 break;
             default:
                 super.setAlpha(f10);

@@ -10,7 +10,7 @@ import android.text.SpannableStringBuilder;
 import android.view.Choreographer;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.jc;
+import c8.kc;
 import di.v7;
 import fi.e5;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import tg.a2;
 import tg.k2;
 import ug.t1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class t0 implements Runnable {
                     ti.o oVar = (ti.o) arrayList.get(i11);
                     ti.i iVar3 = oVar.e;
                     if (iVar3 != null && oVar.c == 1 && iVar3.g && !iVar3.K) {
-                        if ((iVar3.b.r() && jc.a(iVar3.c)) != iVar3.f) {
+                        if ((iVar3.b.r() && kc.a(iVar3.c)) != iVar3.f) {
                             iVar3.l();
                             iVar3.a();
                         }

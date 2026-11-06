@@ -13,7 +13,7 @@ import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class q9 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -98,14 +98,14 @@ public final class q9 extends TextView {
                 super.onMeasure(i7, i10);
                 if (getText() instanceof Spanned) {
                     Spanned spanned = (Spanned) getText();
-                    org.telegram.ui.Components.v31[] v31VarArr = (org.telegram.ui.Components.v31[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.v31.class);
-                    if (v31VarArr != null && v31VarArr.length > 0) {
+                    org.telegram.ui.Components.b41[] b41VarArr = (org.telegram.ui.Components.b41[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.b41.class);
+                    if (b41VarArr != null && b41VarArr.length > 0) {
                         org.telegram.ui.Components.r70 r70Var = new org.telegram.ui.Components.r70(0);
                         this.c = r70Var;
                         r70Var.n = false;
-                        for (int i11 = 0; i11 < v31VarArr.length; i11++) {
-                            int spanStart = spanned.getSpanStart(v31VarArr[i11]);
-                            int spanEnd = spanned.getSpanEnd(v31VarArr[i11]);
+                        for (int i11 = 0; i11 < b41VarArr.length; i11++) {
+                            int spanStart = spanned.getSpanStart(b41VarArr[i11]);
+                            int spanEnd = spanned.getSpanEnd(b41VarArr[i11]);
                             ((org.telegram.ui.Components.r70) this.c).d(getLayout(), spanStart, 0.0f);
                             int i12 = getText() != null ? getPaint().baselineShift : 0;
                             org.telegram.ui.Components.r70 r70Var2 = (org.telegram.ui.Components.r70) this.c;

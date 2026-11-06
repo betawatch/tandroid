@@ -1,73 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.MotionEvent;
+import android.net.Uri;
+import android.util.Log;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import org.json.JSONArray;
+import org.json.JSONTokener;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class a21 extends j6 {
-    public final Paint s;
-    public final n2.n0 w;
-    public final /* synthetic */ c21 x;
+public final class a21 extends Thread {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ org.telegram.messenger.v10 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a21(c21 c21Var, Context context) {
-        super(context, false, false, false);
-        this.x = c21Var;
-        this.s = new Paint(1);
-        this.w = new n2.n0();
+    public a21(String str, String str2, String str3, org.telegram.messenger.v10 v10Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = v10Var;
     }
 
-    @Override // org.telegram.ui.Components.j6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (org.telegram.messenger.hd.a0) {
-            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        } else {
-            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        HttpURLConnection httpURLConnection;
+        String str;
+        org.telegram.messenger.v10 v10Var = this.d;
+        String str2 = this.c;
+        boolean z9 = false;
+        try {
+            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
+        } catch (Exception e10) {
+            e = e10;
+            httpURLConnection = null;
         }
-        e21 e21Var = this.x.n;
-        int i7 = org.telegram.ui.ActionBar.k6.Dj;
-        String[] strArr = e21.O1;
-        int r12 = org.telegram.ui.ActionBar.k6.r1(0.1175f, org.telegram.ui.ActionBar.k6.w0(i7, e21Var.I0));
-        Paint paint = this.s;
-        paint.setColor(r12);
-        canvas.drawRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
-        if (this.w.h(canvas)) {
-            invalidate();
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        e21 e21Var = this.x.n;
-        int action = motionEvent.getAction();
-        n2.n0 n0Var = this.w;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
+        try {
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestProperty("User-Agent", k21.O1[(int) Math.round(Math.random() * 5)]);
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            StringBuilder sb2 = new StringBuilder();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), g9.j.a));
+            while (true) {
+                try {
+                    int read = bufferedReader.read();
+                    if (read == -1) {
+                        break;
+                    } else {
+                        sb2.append((char) read);
+                    }
+                } finally {
                 }
-                n0Var.f(true);
-                invalidate();
             }
-            return super.onTouchEvent(motionEvent);
+            bufferedReader.close();
+            JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
+            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
+            try {
+                str = jSONArray.getString(2);
+            } catch (Exception unused) {
+                str = null;
+            }
+            if (str != null && str.contains("-")) {
+                str.substring(0, str.indexOf("-"));
+            }
+            String str3 = "";
+            for (int i7 = 0; i7 < jSONArray2.length(); i7++) {
+                String string = jSONArray2.getJSONArray(i7).getString(0);
+                if (string != null && !string.equals("null")) {
+                    str3 = str3 + string;
+                }
+            }
+            if (str2.length() > 0 && str2.charAt(0) == '\n') {
+                str3 = "\n" + str3;
+            }
+            org.telegram.messenger.g0.h3(new z11(str3, 0, v10Var));
+        } catch (Exception e11) {
+            e = e11;
+            try {
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append("failed to translate a text ");
+                sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
+                sb3.append(" ");
+                sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
+                Log.e("translate", sb3.toString());
+            } catch (IOException e12) {
+                e12.printStackTrace();
+            }
+            e.printStackTrace();
+            if (httpURLConnection != null) {
+                try {
+                    if (httpURLConnection.getResponseCode() == 429) {
+                        z9 = true;
+                    }
+                } catch (Exception unused2) {
+                    org.telegram.messenger.g0.h3(new ir0(v10Var, 20));
+                    return;
+                }
+            }
+            org.telegram.messenger.g0.h3(new tp0(4, v10Var, z9));
         }
-        String[] strArr = e21.O1;
-        x70 x70Var = new x70(null, e21Var.I0, motionEvent.getX(), motionEvent.getY(), 0);
-        x70Var.d(org.telegram.ui.ActionBar.k6.r1(0.1175f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Dj, e21Var.I0)));
-        r70 b10 = x70Var.b();
-        if (org.telegram.messenger.hd.a0) {
-            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        } else {
-            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        }
-        b10.addRect(org.telegram.messenger.g0.P, Path.Direction.CW);
-        n0Var.b(x70Var, null);
-        invalidate();
-        return true;
     }
 }

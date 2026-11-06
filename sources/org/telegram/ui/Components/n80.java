@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public abstract class n80 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -507,11 +507,11 @@ public abstract class n80 {
         File file = !TextUtils.isEmpty(message.attachPath) ? new File(ijVar.k.attachPath) : null;
         if (file == null || !file.exists()) {
             org.telegram.messenger.w7.G(i7);
-            file = org.telegram.messenger.w7.N(ijVar.k, false, true);
+            file = org.telegram.messenger.w7.M(ijVar.k, false, true);
         }
         if (file == null || !file.exists()) {
             org.telegram.messenger.w7.G(i7);
-            file = org.telegram.messenger.w7.N(ijVar.k, true, true);
+            file = org.telegram.messenger.w7.M(ijVar.k, true, true);
         }
         if (file == null || !file.exists()) {
             return null;

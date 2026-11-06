@@ -17,12 +17,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class m20 extends na {
     public final /* synthetic */ int P1 = 0;
     public final LinearLayout Q1;
-    public f41 R1;
+    public l41 R1;
 
     public m20(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.bp bpVar) {
         super(activity, null, false, false, 1, f6Var);
@@ -96,14 +96,14 @@ public final class m20 extends na {
     public final oj0 L0(pj0 pj0Var) {
         switch (this.P1) {
             case 0:
-                f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new d(this, 14), this.I0);
-                this.R1 = f41Var;
-                f41Var.r = false;
-                return f41Var;
+                l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new d(this, 14), this.I0);
+                this.R1 = l41Var;
+                l41Var.r = false;
+                return l41Var;
             case 1:
-                f41 f41Var2 = new f41(pj0Var, getContext(), this.a, 0, true, new org.telegram.ui.a5(this, 22), this.I0);
-                this.R1 = f41Var2;
-                return f41Var2;
+                l41 l41Var2 = new l41(pj0Var, getContext(), this.a, 0, true, new org.telegram.ui.a5(this, 22), this.I0);
+                this.R1 = l41Var2;
+                return l41Var2;
             default:
                 bi.o0 o0Var = new bi.o0(pj0Var, getContext(), this.a, 0, true, new ai.e(this, 3), this.I0, 0);
                 this.R1 = o0Var;
@@ -205,9 +205,9 @@ public final class m20 extends na {
         f10.setTextSize(1, 14.0f);
         f10.setGravity(1);
         linearLayout.addView(f10, c8.ha.t(-2, -2, 1, 22, 8, 22, 0));
-        linearLayout.addView(new org.telegram.ui.rq0(this, context, R.drawable.menu_privacy, org.telegram.messenger.hd.M0(2131745834, null), org.telegram.messenger.hd.M0(2131745835, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
+        linearLayout.addView(new org.telegram.ui.sq0(this, context, R.drawable.menu_privacy, org.telegram.messenger.hd.M0(2131745834, null), org.telegram.messenger.hd.M0(2131745835, null)), c8.ha.q(-1, -2, 0.0f, 0, 0, 20, 0, 0));
         boolean q10 = org.telegram.messenger.p10.i(this.a).q();
-        linearLayout.addView(new org.telegram.ui.rq0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.hd.M0(2131745831, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(q10 ? 2131745832 : 2131745833, null), new org.telegram.ui.g60(this, q10, v80Var, 10)), true)), c8.ha.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
+        linearLayout.addView(new org.telegram.ui.sq0(this, context, R.drawable.menu_feature_noads, org.telegram.messenger.hd.M0(2131745831, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(q10 ? 2131745832 : 2131745833, null), new org.telegram.ui.g60(this, q10, v80Var, 10)), true)), c8.ha.q(-1, -2, 0.0f, 0, 0, 16, 0, 0));
         View view = new View(getContext());
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d7, view, f6Var);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, 1);
@@ -221,7 +221,7 @@ public final class m20 extends na {
         textView2.setTextAlignment(4);
         textView2.setGravity(17);
         linearLayout.addView(textView2, c8.ha.t(-2, -2, 1, 22, 0, 22, 0));
-        SpannableStringBuilder K2 = org.telegram.messenger.g0.K2(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131745829, null)), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131745830, null), new org.telegram.ui.qu0(this, 12)), true), "%1$s");
+        SpannableStringBuilder K2 = org.telegram.messenger.g0.K2(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131745829, null)), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131745830, null), new org.telegram.ui.ru0(this, 12)), true), "%1$s");
         w70 w70Var = new w70(context, null);
         w70Var.setText(K2);
         org.telegram.ui.ActionBar.r6.V(w70Var, i10, f6Var);

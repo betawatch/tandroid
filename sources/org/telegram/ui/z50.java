@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, View.OnClickListener, te.b, rh.c {
     public final HashMap D;
@@ -284,7 +284,7 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public final void f0() {
         ArrayList arrayList = new ArrayList(org.telegram.messenger.g5.r(this.currentAccount).a0);
         this.w = arrayList;
-        Collections.sort(arrayList, new oe(25));
+        Collections.sort(arrayList, new oe(26));
         org.telegram.ui.Components.av0 av0Var = this.r;
         if (av0Var != null) {
             av0Var.e(false, true);

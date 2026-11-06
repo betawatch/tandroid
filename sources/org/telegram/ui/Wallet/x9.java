@@ -29,20 +29,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.tp0;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class x9 extends h41 {
+public final class x9 extends n41 {
     public String D;
     public int E;
     public TextView F;
@@ -51,7 +51,7 @@ public final class x9 extends h41 {
     public int J;
     public Runnable K;
     public boolean L;
-    public p41 M;
+    public v41 M;
     public ah.i N;
     public TextView O;
     public ImageView P;
@@ -203,23 +203,23 @@ public final class x9 extends h41 {
         return rf.b.i("@", queryParameter);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
         float f10;
         ArrayList arrayList2;
         int i7;
         if (this.M == null) {
             return;
         }
-        arrayList.add(r31.D(org.telegram.messenger.g0.L(4.0f)));
-        f41Var.V();
-        arrayList.add(r31.u(hd.M0(2131743041, null)));
-        p41 p41Var = this.M;
-        r31 r31Var = new r31(-1);
-        r31Var.c = p41Var;
-        r31Var.z = 50;
-        arrayList.add(r31Var);
-        f41Var.U();
+        arrayList.add(x31.D(org.telegram.messenger.g0.L(4.0f)));
+        l41Var.V();
+        arrayList.add(x31.u(hd.M0(2131743041, null)));
+        v41 v41Var = this.M;
+        x31 x31Var = new x31(-1);
+        x31Var.c = v41Var;
+        x31Var.z = 50;
+        arrayList.add(x31Var);
+        l41Var.U();
         String trim = this.N.getText().toString().trim();
         String lowerCase = trim.toLowerCase(Locale.ROOT);
         float f11 = 12.0f;
@@ -263,14 +263,14 @@ public final class x9 extends h41 {
             }
             textView3.setText(str);
             this.H.setText(this.y);
-            arrayList.add(r31.D(org.telegram.messenger.g0.L(12.0f)));
-            f41Var.V();
+            arrayList.add(x31.D(org.telegram.messenger.g0.L(12.0f)));
+            l41Var.V();
             FrameLayout frameLayout2 = this.G;
-            r31 r31Var2 = new r31(-1);
-            r31Var2.c = frameLayout2;
-            r31Var2.z = 60;
-            arrayList.add(r31Var2);
-            f41Var.U();
+            x31 x31Var2 = new x31(-1);
+            x31Var2.c = frameLayout2;
+            x31Var2.z = 60;
+            arrayList.add(x31Var2);
+            l41Var.U();
             return;
         }
         if (TextUtils.isEmpty(lowerCase)) {
@@ -313,13 +313,13 @@ public final class x9 extends h41 {
             i15++;
             TLRPC.User user2 = (TLRPC.User) obj3;
             if (i14 == 0) {
-                arrayList.add(r31.D(org.telegram.messenger.g0.L(f10)));
-                f41Var.V();
+                arrayList.add(x31.D(org.telegram.messenger.g0.L(f10)));
+                l41Var.V();
                 if (TextUtils.isEmpty(lowerCase)) {
-                    arrayList.add(r31.u(hd.M0(2131746369, null)));
+                    arrayList.add(x31.u(hd.M0(2131746369, null)));
                 }
             }
-            r31 w10 = r31.w(user2);
+            x31 w10 = x31.w(user2);
             if (TextUtils.isEmpty(lowerCase)) {
                 i7 = i10;
             } else {
@@ -338,16 +338,16 @@ public final class x9 extends h41 {
         int i16 = i10;
         if (this.L) {
             if (i14 == 0) {
-                arrayList.add(r31.D(org.telegram.messenger.g0.L(f10)));
-                f41Var.V();
+                arrayList.add(x31.D(org.telegram.messenger.g0.L(f10)));
+                l41Var.V();
             }
             int i17 = this.D != null ? 1 : 3;
             for (int i18 = i16; i18 < i17; i18++) {
-                arrayList.add(r31.q((-1) - i18, 18));
+                arrayList.add(x31.q((-1) - i18, 18));
             }
         }
         if (i14 > 0 || this.L) {
-            f41Var.U();
+            l41Var.U();
         }
         if (this.L || i14 > 0 || TextUtils.isEmpty(lowerCase)) {
             return;
@@ -357,20 +357,20 @@ public final class x9 extends h41 {
         objArr[i16] = lowerCase;
         String a02 = hd.a0(null, null, 2131743026, objArr);
         int i19 = li.b;
-        r31 K = r31.K(li.class);
+        x31 K = x31.K(li.class);
         K.l = M0;
         K.m = a02;
         arrayList.add(K);
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(this.e == null ? 2131743021 : 2131742981, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        Object obj = r31Var.G;
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        Object obj = x31Var.G;
         if (obj instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) obj;
             int i7 = this.currentAccount;
@@ -380,12 +380,12 @@ public final class x9 extends h41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         this.actionBar.setAdaptiveBackground(this.a);
@@ -396,7 +396,7 @@ public final class x9 extends h41 {
         fi.w3 w3Var = this.a;
         w3Var.f3.r = false;
         w3Var.j(new org.telegram.ui.Components.ui(this, 23));
-        p41 p41Var = new p41(5, context, this);
+        v41 v41Var = new v41(5, context, this);
         this.T = (ClipboardManager) context.getSystemService("clipboard");
         ah.i iVar = new ah.i(context);
         this.N = iVar;
@@ -415,7 +415,7 @@ public final class x9 extends h41 {
         this.N.setGravity(16);
         this.N.setInputType(524289);
         this.N.setImeOptions(33554437);
-        p41Var.addView(this.N, c8.ha.d(-1, -1.0f, qs.E1, 8.0f, 0.0f, 52.0f, 0.0f));
+        v41Var.addView(this.N, c8.ha.d(-1, -1.0f, qs.E1, 8.0f, 0.0f, 52.0f, 0.0f));
         TextView textView = new TextView(context);
         this.O = textView;
         textView.setText(hd.M0(2131743056, null));
@@ -432,7 +432,7 @@ public final class x9 extends h41 {
         org.telegram.ui.ActionBar.r6.R(textView3, org.telegram.ui.ActionBar.k6.k0(L2, L2, L2, L2, r12, r13, r13), org.telegram.ui.ActionBar.r6.L(0.1f, i10), org.telegram.ui.ActionBar.r6.L(0.18f, i10), getResourceProvider());
         this.O.setOnClickListener(new q9(this, 2));
         c8.ka.b(this.O, 0.04f, 1.2f);
-        p41Var.addView(this.O, c8.ha.d(58, 32.0f, 21, 0.0f, 0.0f, 62.0f, 0.0f));
+        v41Var.addView(this.O, c8.ha.d(58, 32.0f, 21, 0.0f, 0.0f, 62.0f, 0.0f));
         this.N.addTextChangedListener(new ah.j(this, 29));
         ImageView imageView = new ImageView(context);
         this.P = imageView;
@@ -442,9 +442,9 @@ public final class x9 extends h41 {
         org.telegram.ui.ActionBar.r6.R(this.P, org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.r1(0.12f, getThemedColor(i10)), 1, -1), null, org.telegram.ui.ActionBar.r6.L(0.12f, i10), getResourceProvider());
         this.P.setContentDescription(hd.M0(2131743028, null));
         this.P.setOnClickListener(new q9(this, 3));
-        p41Var.addView(this.P, c8.ha.d(32, 40.0f, 21, 0.0f, 0.0f, 20.0f, 0.0f));
+        v41Var.addView(this.P, c8.ha.d(32, 40.0f, 21, 0.0f, 0.0f, 20.0f, 0.0f));
         k0(false);
-        this.M = p41Var;
+        this.M = v41Var;
         jg.z1 z1Var = new jg.z1(true);
         this.x = z1Var;
         z1Var.a = new qt(this, 6);

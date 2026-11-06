@@ -35,11 +35,11 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.z8;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k3 extends View {
     public float D;
@@ -74,7 +74,7 @@ public final class k3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.w5 f;
     public final Path f0;
-    public ly0 g0;
+    public my0 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.y i0;
@@ -563,7 +563,7 @@ public final class k3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new ly0(hd.M0(2131753099, null), 14.0f, org.telegram.messenger.g0.o());
+            this.g0 = new my0(hd.M0(2131753099, null), 14.0f, org.telegram.messenger.g0.o());
         }
         if (this.i0 == null || this.h0 != k6.I.q()) {
             boolean q10 = k6.I.q();

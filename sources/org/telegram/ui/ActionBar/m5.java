@@ -20,8 +20,8 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.yk;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.hz;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.ri0;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.ys;
@@ -29,7 +29,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.v91;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements Runnable {
     public final /* synthetic */ int a;
@@ -176,7 +176,7 @@ public final /* synthetic */ class m5 implements Runnable {
                 break;
             case 15:
                 fi.u2 u2Var = (fi.u2) this.b;
-                Utilities.g.c(new l31(u2Var, new ArrayList(((org.telegram.ui.web.z0) u2Var.c).f), ((org.telegram.ui.web.z0) u2Var.c).r, 8));
+                Utilities.g.c(new r31(u2Var, new ArrayList(((org.telegram.ui.web.z0) u2Var.c).f), ((org.telegram.ui.web.z0) u2Var.c).r, 8));
                 break;
             case 16:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();

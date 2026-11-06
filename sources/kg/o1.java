@@ -12,10 +12,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class o1 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -37,22 +37,22 @@ public final class o1 extends ReplacementSpan {
                 float f11 = (i11 + i13) / 2.0f;
                 RectF rectF = org.telegram.messenger.g0.P;
                 float f12 = N / 2.0f;
-                rectF.set(f10, f11 - f12, ((int) (((ly0) this.c).c + org.telegram.messenger.g0.L(10.0f))) + f10, f12 + f11);
+                rectF.set(f10, f11 - f12, ((int) (((my0) this.c).c + org.telegram.messenger.g0.L(10.0f))) + f10, f12 + f11);
                 Paint paint2 = (Paint) this.b;
                 int i14 = k6.z6;
                 paint2.setColor(k6.r1(0.15f, k6.x0(null, i14, false)));
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint2);
-                ((ly0) this.c).c(f10 + org.telegram.messenger.g0.L(5.0f), f11, Utilities.i((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), k6.x0(null, i14, false), canvas);
+                ((my0) this.c).c(f10 + org.telegram.messenger.g0.L(5.0f), f11, Utilities.i((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), k6.x0(null, i14, false), canvas);
                 break;
             case 1:
                 float f13 = (i11 + i13) / 2.0f;
                 RectF rectF2 = org.telegram.messenger.g0.P;
-                rectF2.set(f10, f13 - org.telegram.messenger.g0.L(7.66f), ((ly0) this.c).c + f10 + org.telegram.messenger.g0.L(6.66f), org.telegram.messenger.g0.L(7.66f) + f13);
+                rectF2.set(f10, f13 - org.telegram.messenger.g0.L(7.66f), ((my0) this.c).c + f10 + org.telegram.messenger.g0.L(6.66f), org.telegram.messenger.g0.L(7.66f) + f13);
                 canvas.saveLayerAlpha(rectF2, qs.e4, 31);
                 Paint paint3 = (Paint) this.b;
                 paint3.setColor(paint.getColor());
                 canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), paint3);
-                ((ly0) this.c).c(f10 + org.telegram.messenger.g0.L(3.33f), f13, 1.0f, -1, canvas);
+                ((my0) this.c).c(f10 + org.telegram.messenger.g0.L(3.33f), f13, 1.0f, -1, canvas);
                 canvas.restore();
                 break;
             default:
@@ -76,9 +76,9 @@ public final class o1 extends ReplacementSpan {
     public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                return (int) (((ly0) this.c).c + org.telegram.messenger.g0.L(10.0f));
+                return (int) (((my0) this.c).c + org.telegram.messenger.g0.L(10.0f));
             case 1:
-                return (int) (((ly0) this.c).c + org.telegram.messenger.g0.L(6.66f));
+                return (int) (((my0) this.c).c + org.telegram.messenger.g0.L(6.66f));
             default:
                 return org.telegram.messenger.g0.L(20.0f);
         }
@@ -87,14 +87,14 @@ public final class o1 extends ReplacementSpan {
     public o1(int i7) {
         this.a = 0;
         this.b = new Paint(1);
-        this.c = new ly0(hd.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
+        this.c = new my0(hd.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
     }
 
     public o1() {
         this.a = 1;
         this.b = new Paint(1);
-        ly0 ly0Var = new ly0("x50", 13.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-        this.c = ly0Var;
-        ly0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        my0 my0Var = new my0("x50", 13.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.c = my0Var;
+        my0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

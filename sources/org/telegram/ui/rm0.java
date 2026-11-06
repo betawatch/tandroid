@@ -6,17 +6,17 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class rm0 extends mq0 {
+public final class rm0 extends nq0 {
     public final /* synthetic */ xm0 a;
 
     public rm0(xm0 xm0Var) {
         this.a = xm0Var;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
-    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         xm0 xm0Var = this.a;
         org.telegram.ui.Cells.q5 a02 = xm0.a0(xm0Var, i7);
         if (a02 == null) {
@@ -25,19 +25,19 @@ public final class rm0 extends mq0 {
         org.telegram.ui.Components.l9 imageView = a02.getImageView();
         int[] iArr = new int[2];
         imageView.getLocationInWindow(iArr);
-        vq0 vq0Var = new vq0();
-        vq0Var.b = iArr[0];
-        vq0Var.c = iArr[1];
-        vq0Var.d = xm0Var.K;
+        wq0 wq0Var = new wq0();
+        wq0Var.b = iArr[0];
+        wq0Var.c = iArr[1];
+        wq0Var.d = xm0Var.K;
         ImageReceiver imageReceiver = imageView.getImageReceiver();
-        vq0Var.a = imageReceiver;
-        vq0Var.e = imageReceiver.p();
-        vq0Var.k = a02.getScale();
+        wq0Var.a = imageReceiver;
+        wq0Var.e = imageReceiver.p();
+        wq0Var.k = a02.getScale();
         a02.g(false);
-        return vq0Var;
+        return wq0Var;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void G() {
         xm0 xm0Var = this.a;
         int childCount = xm0Var.K.getChildCount();
@@ -49,12 +49,12 @@ public final class rm0 extends mq0 {
         }
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int H() {
         return this.a.b.size();
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int R(Object obj) {
         Object valueOf = obj instanceof org.telegram.messenger.gf ? Integer.valueOf(((org.telegram.messenger.gf) obj).C) : obj instanceof org.telegram.messenger.kf ? ((org.telegram.messenger.kf) obj).B : null;
         if (valueOf == null) {
@@ -75,7 +75,7 @@ public final class rm0 extends mq0 {
         return indexOf;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void X(int i7) {
         xm0 xm0Var = this.a;
         org.telegram.messenger.we weVar = xm0Var.J;
@@ -108,7 +108,7 @@ public final class rm0 extends mq0 {
         }
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void a0(int i7) {
         xm0 xm0Var = this.a;
         int childCount = xm0Var.K.getChildCount();
@@ -128,12 +128,12 @@ public final class rm0 extends mq0 {
         }
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final ArrayList c() {
         return this.a.c;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final org.telegram.messenger.jc j(int i7) {
         org.telegram.ui.Cells.q5 a02 = xm0.a0(this.a, i7);
         if (a02 != null) {
@@ -142,7 +142,7 @@ public final class rm0 extends mq0 {
         return null;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final int k(int i7, org.telegram.messenger.j20 j20Var) {
         int d02;
         boolean z9;
@@ -195,7 +195,7 @@ public final class rm0 extends mq0 {
         return d02;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
         xm0 xm0Var = this.a;
         ArrayList arrayList = xm0Var.f;
@@ -220,7 +220,7 @@ public final class rm0 extends mq0 {
         xm0Var.j0(i10, z9);
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean u() {
         xm0 xm0Var = this.a;
         xm0Var.s0.v0(0, true, true);
@@ -228,19 +228,19 @@ public final class rm0 extends mq0 {
         return true;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final HashMap v() {
         return this.a.b;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean x(int i7) {
         xm0 xm0Var = this.a;
         org.telegram.messenger.we weVar = xm0Var.J;
         return weVar != null ? i7 >= 0 && i7 < weVar.e.size() && xm0Var.b.containsKey(Integer.valueOf(((org.telegram.messenger.gf) xm0Var.J.e.get(i7)).C)) : i7 >= 0 && i7 < xm0Var.f.size() && xm0Var.b.containsKey(((org.telegram.messenger.kf) xm0Var.f.get(i7)).B);
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final boolean z() {
         return this.a.E;
     }

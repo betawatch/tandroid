@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class a5 extends a3 {
     public final /* synthetic */ ViewGroup T1;
@@ -23,14 +23,14 @@ public final class a5 extends a3 {
     @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.Components.na
     public final void T0(float f10) {
         super.T0(f10);
-        if (this.T1 instanceof p61) {
+        if (this.T1 instanceof v61) {
             this.r0.setBounds(0, (int) f10, this.b.getWidth(), this.b.getHeight());
         }
     }
 
     @Override // org.telegram.ui.Components.na
     public final boolean Z0() {
-        return !(this.T1 instanceof p61);
+        return !(this.T1 instanceof v61);
     }
 
     @Override // org.telegram.ui.Wallet.a3
@@ -41,7 +41,7 @@ public final class a5 extends a3 {
     @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.ActionBar.v2, android.app.Dialog
     public final void show() {
         super.show();
-        if (this.T1 instanceof p61) {
+        if (this.T1 instanceof v61) {
             View[] viewArr = this.U1;
             if (viewArr[0] == null) {
                 jh.h hVar = new jh.h(this, this.V1);

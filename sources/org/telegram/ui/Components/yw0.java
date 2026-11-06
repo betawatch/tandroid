@@ -2,30 +2,51 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class yw0 extends cx0 {
-    public int d;
+public final class yw0 {
+    public final /* synthetic */ int a;
 
-    @Override // org.telegram.ui.Components.cx0
-    public final int a(lx0 lx0Var, ex0 ex0Var, xw0 xw0Var, int i7, boolean z9) {
-        return Math.max(0, this.a - xw0Var.a(ex0Var, i7));
+    public /* synthetic */ yw0(int i7) {
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.cx0
-    public final void b(int i7, int i10) {
-        super.b(i7, i10);
-        this.d = Math.max(this.d, i7 + i10);
+    public final int a(fx0 fx0Var, int i7) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i7;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
+        }
     }
 
-    @Override // org.telegram.ui.Components.cx0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
+    public final int b(fx0 fx0Var, int i7) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i7;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
     }
 
-    @Override // org.telegram.ui.Components.cx0
-    public final int d(boolean z9) {
-        return Math.max(super.d(z9), this.d);
+    public int c(int i7, int i10) {
+        switch (this.a) {
+            case 4:
+                return i10;
+            default:
+                return i7;
+        }
     }
 }

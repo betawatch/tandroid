@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class wl0 extends u20 {
     public final /* synthetic */ org.telegram.ui.fw e0;
@@ -13,7 +13,7 @@ public final class wl0 extends u20 {
         this.e0 = fwVar;
     }
 
-    @Override // org.telegram.ui.Components.f41
+    @Override // org.telegram.ui.Components.l41
     public final void O(boolean z9) {
         super.O(z9);
         sl0 sl0Var = this.e0.u0;

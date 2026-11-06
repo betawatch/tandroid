@@ -1,62 +1,74 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class uy0 extends MetricAffectingSpan {
-    public final int a;
-    public final ty0 b;
+public final class uy0 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
+    public boolean e;
 
-    public uy0(ty0 ty0Var, int i7) {
-        this.b = ty0Var;
-        if (i7 > 0) {
-            this.a = i7;
-        }
+    public uy0() {
     }
 
     public final void a(TextPaint textPaint) {
-        ty0 ty0Var = this.b;
-        if (c8.yc.a(ty0Var.a, 49152)) {
-            float textSize = textPaint.getTextSize();
-            textPaint.setTextSize(0.75f * textSize);
-            if (c8.yc.a(ty0Var.a, 32768)) {
-                textPaint.baselineShift -= (int) (textSize * 0.35f);
-            } else if (c8.yc.a(ty0Var.a, TLObject.FLAG_14)) {
-                textPaint.baselineShift += (int) (textSize * 0.12f);
+        Typeface typeface;
+        if (this.e) {
+            typeface = (this.a & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/mw_bolditalic.ttf") : org.telegram.messenger.g0.o1("fonts/mw_bold.ttf");
+        } else {
+            int i7 = this.a;
+            if ((i7 & 4) == 0 && (i7 & 2048) == 0) {
+                int i10 = i7 & 1;
+                typeface = (i10 == 0 || (i7 & 2) == 0) ? i10 != 0 ? org.telegram.messenger.g0.o() : (i7 & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/ritalic.ttf") : null : org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
+            } else {
+                typeface = Typeface.MONOSPACE;
             }
         }
-    }
-
-    public final ty0 b() {
-        return this.b;
-    }
-
-    public final boolean c() {
-        return (this.b.a & 256) > 0;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i7 = this.a;
-        if (i7 != 0) {
-            textPaint.setTextSize(i7);
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
+        } else {
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
+        int i11 = this.a;
+        if ((i11 & 8) == 0 && (i11 & TLObject.FLAG_13) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
+        }
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.R9, false);
+        }
+        int i12 = this.a;
+        if ((i12 & TLObject.FLAG_13) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.q7, false));
+        } else if ((i12 & TLObject.FLAG_12) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ci, false));
+        }
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        int i7 = this.a;
-        if (i7 != 0) {
-            textPaint.setTextSize(i7);
+    public final void b(uy0 uy0Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= uy0Var.a;
+        if (this.d != null || (messageEntity = uy0Var.d) == null) {
+            return;
         }
-        a(textPaint);
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        this.b.a(textPaint);
+        this.d = messageEntity;
+    }
+
+    public uy0(uy0 uy0Var) {
+        this.a = uy0Var.a;
+        this.b = uy0Var.b;
+        this.c = uy0Var.c;
+        this.d = uy0Var.d;
+        this.e = uy0Var.e;
     }
 }

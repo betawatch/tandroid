@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fk0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -233,41 +233,41 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                 }
                 if (photoViewer2.j8) {
                     if (photoViewer2.m1 == null) {
-                        oq0 oq0Var = photoViewer2.e0;
-                        org.telegram.ui.Components.c01 c01Var = new org.telegram.ui.Components.c01(activity);
-                        c01Var.d = new org.telegram.ui.Components.ir0(c01Var, 15);
-                        c01Var.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(3.0f), -871296751));
-                        c01Var.setTextColor(-1);
-                        c01Var.setTextSize(1, 14.0f);
-                        c01Var.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.0f));
-                        c01Var.setGravity(16);
-                        oq0Var.addView(c01Var, c8.ha.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
-                        c01Var.setVisibility(8);
-                        photoViewer2.m1 = c01Var;
+                        pq0 pq0Var = photoViewer2.e0;
+                        org.telegram.ui.Components.d01 d01Var = new org.telegram.ui.Components.d01(activity);
+                        d01Var.d = new org.telegram.ui.Components.ir0(d01Var, 15);
+                        d01Var.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(3.0f), -871296751));
+                        d01Var.setTextColor(-1);
+                        d01Var.setTextSize(1, 14.0f);
+                        d01Var.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(7.0f));
+                        d01Var.setGravity(16);
+                        pq0Var.addView(d01Var, c8.ha.d(-2, -2.0f, 51, 5.0f, 0.0f, 5.0f, 3.0f));
+                        d01Var.setVisibility(8);
+                        photoViewer2.m1 = d01Var;
                     }
                     photoViewer2.m1.setText(org.telegram.messenger.hd.M0(2131743587, "VideoQualityIsTooLow"));
-                    org.telegram.ui.Components.c01 c01Var2 = photoViewer2.m1;
-                    org.telegram.ui.Components.a51 a51Var = photoViewer2.j1;
-                    org.telegram.ui.Components.ir0 ir0Var = c01Var2.d;
-                    if (a51Var == null) {
+                    org.telegram.ui.Components.d01 d01Var2 = photoViewer2.m1;
+                    org.telegram.ui.Components.f51 f51Var = photoViewer2.j1;
+                    org.telegram.ui.Components.ir0 ir0Var = d01Var2.d;
+                    if (f51Var == null) {
                         return;
                     }
-                    c01Var2.a = a51Var;
-                    c01Var2.a();
-                    c01Var2.c = true;
+                    d01Var2.a = f51Var;
+                    d01Var2.a();
+                    d01Var2.c = true;
                     org.telegram.messenger.g0.r(ir0Var);
                     org.telegram.messenger.g0.i3(ir0Var, 2000L);
-                    ViewPropertyAnimator viewPropertyAnimator = c01Var2.b;
+                    ViewPropertyAnimator viewPropertyAnimator = d01Var2.b;
                     if (viewPropertyAnimator != null) {
                         viewPropertyAnimator.setListener(null);
-                        c01Var2.b.cancel();
-                        c01Var2.b = null;
+                        d01Var2.b.cancel();
+                        d01Var2.b = null;
                     }
-                    if (c01Var2.getVisibility() != 0) {
-                        c01Var2.setAlpha(0.0f);
-                        c01Var2.setVisibility(0);
-                        ViewPropertyAnimator listener = c01Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
-                        c01Var2.b = listener;
+                    if (d01Var2.getVisibility() != 0) {
+                        d01Var2.setAlpha(0.0f);
+                        d01Var2.setVisibility(0);
+                        ViewPropertyAnimator listener = d01Var2.animate().setDuration(300L).alpha(1.0f).setListener(null);
+                        d01Var2.b = listener;
                         listener.start();
                         return;
                     }
@@ -289,7 +289,7 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                 TLRPC.TL_accountDaysTTL tL_accountDaysTTL = new TLRPC.TL_accountDaysTTL();
                 setaccountttl.ttl = tL_accountDaysTTL;
                 tL_accountDaysTTL.days = i14;
-                privacySettingsActivity.getConnectionsManager().sendRequest(setaccountttl, new ko0(privacySettingsActivity, u1Var, setaccountttl, i11));
+                privacySettingsActivity.getConnectionsManager().sendRequest(setaccountttl, new lo0(privacySettingsActivity, u1Var, setaccountttl, i11));
                 return;
             case 5:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
@@ -307,7 +307,7 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = chat.default_banned_rights;
                 TLRPC.ChannelParticipant channelParticipant = profileActivity2.F2;
                 kp kpVar = new kp(j10, j11, null, tL_chatBannedRights, channelParticipant != null ? channelParticipant.banned_rights : null, "", 1, true, false, null);
-                kpVar.X0 = new xu0(profileActivity2, chat, kpVar);
+                kpVar.X0 = new yu0(profileActivity2, chat, kpVar);
                 profileActivity2.presentFragment(kpVar);
                 return;
             case 7:
@@ -713,7 +713,7 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                         view2 = (fi.x9) nVar2.d;
                         break;
                     default:
-                        view2 = (tp0) nVar2.d;
+                        view2 = (up0) nVar2.d;
                         break;
                 }
                 Bitmap N3 = org.telegram.messenger.g0.N3(view2);
@@ -731,7 +731,7 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                         i5Var.getWidth();
                         throw null;
                     default:
-                        tg.b0 b0Var = ((tp0) nVar3.d).F0;
+                        tg.b0 b0Var = ((up0) nVar3.d).F0;
                         Matrix matrix2 = b0Var.getMatrix();
                         canvas.save();
                         canvas.translate(b0Var.getX(), b0Var.getY());
@@ -750,7 +750,7 @@ public final /* synthetic */ class fk0 implements View.OnClickListener {
                                 frameLayout = ((fi.x9) nVar4.d).E0;
                                 break;
                             default:
-                                frameLayout = ((tp0) nVar4.d).N0;
+                                frameLayout = ((up0) nVar4.d).N0;
                                 break;
                         }
                         frameLayout.addView(iVar, c8.ha.c(-1.0f, -1));

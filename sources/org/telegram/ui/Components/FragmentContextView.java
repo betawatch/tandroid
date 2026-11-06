@@ -46,7 +46,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements org.telegram.messenger.ls, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener, org.telegram.ui.ActionBar.a6 {
     public static final float[] W0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -1702,7 +1702,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             }
             i12++;
         }
-        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), indexOf, M02.length() + indexOf, 18);
+        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), indexOf, M02.length() + indexOf, 18);
         this.d.b(spannableStringBuilder, false);
     }
 
@@ -2369,7 +2369,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
             i16++;
         }
         if (indexOf >= 0) {
-            spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), indexOf, M0.length() + indexOf, 18);
+            spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), indexOf, M0.length() + indexOf, 18);
         }
         this.d.b(spannableStringBuilder, false);
     }
@@ -2537,7 +2537,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
                 i13++;
             }
         }
-        spannableStringBuilder.setSpan(new o31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), 0, ijVar.x1(true).length(), 18);
+        spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o(), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, this.q0)), 0, ijVar.x1(true).length(), 18);
         this.d.b(spannableStringBuilder, !z11 && z12 && this.W);
     }
 
@@ -3405,7 +3405,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
 
     @Override // org.telegram.ui.ActionBar.a6
     public final void updateColors() {
-        o31[] o31VarArr;
+        u31[] u31VarArr;
         sc scVar = this.a;
         int i7 = scVar.A;
         if (i7 >= 0) {
@@ -3480,9 +3480,9 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
                     if (textView2 != null) {
                         textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(intValue, f6Var));
                         CharSequence text = textView2.getText();
-                        if ((text instanceof Spanned) && (o31VarArr = (o31[]) ((Spanned) text).getSpans(0, text.length(), o31.class)) != null) {
-                            for (o31 o31Var : o31VarArr) {
-                                o31Var.b = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, f6Var);
+                        if ((text instanceof Spanned) && (u31VarArr = (u31[]) ((Spanned) text).getSpans(0, text.length(), u31.class)) != null) {
+                            for (u31 u31Var : u31VarArr) {
+                                u31Var.b = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.t7, f6Var);
                             }
                         }
                     }

@@ -1,50 +1,64 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i61 implements cj0, dj0 {
-    public final /* synthetic */ o61 a;
+public final /* synthetic */ class i61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v61 b;
 
-    public /* synthetic */ i61(o61 o61Var) {
-        this.a = o61Var;
+    public /* synthetic */ i61(v61 v61Var, int i7) {
+        this.a = i7;
+        this.b = v61Var;
     }
 
-    @Override // org.telegram.ui.Components.dj0
-    public boolean c(int i7, View view) {
-        org.telegram.messenger.w10 w10Var = this.a.b;
-        if (w10Var == null) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                v61 v61Var = this.b;
+                v61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = v61Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (v61Var.D) {
+                        v61Var.F(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        v61Var.F(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        v61Var.F(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        v61Var.F(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    v61Var.c = floatValue;
+                    v61Var.x(true);
+                    k61 k61Var = v61Var.M;
+                    if (k61Var != null) {
+                        k61Var.w.invalidate();
+                        v61Var.M.w.g1();
+                        v61Var.M.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                v61 v61Var2 = this.b;
+                v61Var2.getClass();
+                v61Var2.T = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                v61 v61Var3 = this.b;
+                v61Var3.N.onAnimationUpdate(valueAnimator);
+                v61Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v61Var3.M.w.g1();
+                v61Var3.M.invalidate();
+                break;
+            default:
+                v61 v61Var4 = this.b;
+                v61Var4.getClass();
+                v61Var4.T = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-        return ((Boolean) w10Var.d(Integer.valueOf(((m61) view).a.a), view)).booleanValue();
-    }
-
-    @Override // org.telegram.ui.Components.cj0
-    public void f(float f10, float f11, int i7, View view) {
-        o61 o61Var = this.a;
-        n61 n61Var = o61Var.D;
-        if (n61Var != null) {
-            p61 p61Var = (p61) ((n) n61Var).a;
-            if (p61Var.y || p61Var.H) {
-                return;
-            }
-        }
-        m61 m61Var = (m61) view;
-        if (i7 != o61Var.F || n61Var == null) {
-            org.telegram.messenger.w10 w10Var = o61Var.l0;
-            if (w10Var == null || !((Boolean) w10Var.d(Integer.valueOf(m61Var.a.a), Integer.valueOf(i7))).booleanValue()) {
-                o61Var.d(m61Var.a.a, i7);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cj0
-    public /* synthetic */ boolean f1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.cj0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

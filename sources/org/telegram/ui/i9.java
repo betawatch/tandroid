@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, ie0 {
     public boolean D;
@@ -52,7 +52,7 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
     public int T;
     public bi.m5 a;
     public v4.b0 b;
-    public org.telegram.ui.Components.k41 c;
+    public org.telegram.ui.Components.q41 c;
     public View d;
     public org.telegram.ui.Components.ri0 e;
     public org.telegram.ui.Components.p00 f;
@@ -255,14 +255,14 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         if (m5Var != null) {
             m5Var.e();
         }
-        org.telegram.ui.Components.k41 k41Var = i9Var.c;
-        if (k41Var != null) {
-            k41Var.f3.O(true);
+        org.telegram.ui.Components.q41 q41Var = i9Var.c;
+        if (q41Var != null) {
+            q41Var.f3.O(true);
         }
     }
 
-    public static void a0(i9 i9Var, org.telegram.ui.Components.r31 r31Var, View view) {
-        int i7 = r31Var.d;
+    public static void a0(i9 i9Var, org.telegram.ui.Components.x31 x31Var, View view) {
+        int i7 = x31Var.d;
         int i10 = 0;
         if (i7 == 2) {
             i9Var.m0(true);
@@ -275,7 +275,7 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
             l0(i9Var);
             return;
         }
-        Object obj = r31Var.G;
+        Object obj = x31Var.G;
         boolean z9 = obj instanceof f9;
         int i11 = org.telegram.messenger.qs.t;
         if (!z9) {
@@ -444,11 +444,11 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
             frameLayout.addView(imageView2, c8.ha.d(56, 56.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         int i15 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.Components.w70 a10 = c8.na.a(context, 20.0f, i15, true, f6Var);
+        org.telegram.ui.Components.w70 a10 = c8.qa.a(context, 20.0f, i15, true, f6Var);
         a10.setText(org.telegram.messenger.hd.M0(2131749471, null));
         a10.setGravity(17);
         f10.addView(a10, c8.ha.t(-1, -2, 17, 32, 16, 32, 8));
-        org.telegram.ui.Components.w70 a11 = c8.na.a(context, 14.0f, i15, false, f6Var);
+        org.telegram.ui.Components.w70 a11 = c8.qa.a(context, 14.0f, i15, false, f6Var);
         a11.setText(org.telegram.messenger.hd.M0(2131749472, null));
         a11.setGravity(17);
         a11.setMaxWidth(fi.m3.a(a11.getText(), a11.getPaint()));
@@ -463,7 +463,7 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         frameLayout3.setBackground(b02);
         org.telegram.ui.ActionBar.r6.k(frameLayout3, b02, N3, q10, f6Var);
         f10.addView(frameLayout3, c8.ha.t(-1, -2, 7, 16, 0, 16, 0));
-        org.telegram.ui.Components.w70 a12 = c8.na.a(context, 13.0f, i15, false, f6Var);
+        org.telegram.ui.Components.w70 a12 = c8.qa.a(context, 13.0f, i15, false, f6Var);
         a12.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f));
         a12.setText(substring);
         frameLayout3.addView(a12, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 30.0f, 0.0f));
@@ -497,7 +497,7 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
             f10.addView(z8Var, c8.ha.t(org.telegram.messenger.qs.U2, -2, 1, 28, 12, 28, 8));
             i10 = i7;
             q8 q8Var = new q8(str, i10, v2VarArr, 0);
-            org.telegram.ui.Components.w70 a13 = c8.na.a(context, 14.0f, i15, false, f6Var);
+            org.telegram.ui.Components.w70 a13 = c8.qa.a(context, 14.0f, i15, false, f6Var);
             a13.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131749477, null), q8Var), true));
             a13.setGravity(17);
             a13.setMaxWidth(fi.m3.a(a13.getText(), a13.getPaint()));
@@ -638,9 +638,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         org.telegram.ui.ActionBar.z0 e10 = this.x.e(3, R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751590, null));
         int i11 = org.telegram.ui.ActionBar.k6.p7;
         e10.d(getThemedColor(i11), getThemedColor(i11));
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(this, new a5(this, i7), new u8(this), new u8(this));
-        this.c = k41Var;
-        k41Var.setCaptureSectionsDecoratorAllowed(true);
+        org.telegram.ui.Components.q41 q41Var = new org.telegram.ui.Components.q41(this, new a5(this, i7), new u8(this), new u8(this));
+        this.c = q41Var;
+        q41Var.setCaptureSectionsDecoratorAllowed(true);
         this.c.r1();
         this.c.setSectionsDrawBackground(true);
         this.c.f3.r = false;
@@ -655,10 +655,10 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         this.a = new bi.m5(this, context, this.h);
         this.c.setClipToPadding(false);
         this.c.setEmptyView(this.a);
-        org.telegram.ui.Components.k41 k41Var2 = this.c;
+        org.telegram.ui.Components.q41 q41Var2 = this.c;
         v4.b0 b0Var = new v4.b0(1, false);
         this.b = b0Var;
-        k41Var2.setLayoutManager(b0Var);
+        q41Var2.setLayoutManager(b0Var);
         this.c.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
         org.telegram.ui.Components.ri0 ri0Var = new org.telegram.ui.Components.ri0(this.c, this.b);
         this.e = ri0Var;
@@ -720,7 +720,7 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
     */
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Long l10;
-        org.telegram.ui.Components.k41 k41Var;
+        org.telegram.ui.Components.q41 q41Var;
         int i11;
         TLRPC.User a22;
         int i12;
@@ -746,10 +746,10 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
                             it.remove();
                         }
                     }
-                    if (r3 == 0 || (k41Var = this.c) == null) {
+                    if (r3 == 0 || (q41Var = this.c) == null) {
                         return;
                     }
-                    k41Var.f3.O(true);
+                    q41Var.f3.O(true);
                     return;
                 }
                 return;
@@ -758,9 +758,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
                 org.telegram.messenger.qp messagesController = getMessagesController();
                 messagesController.getClass();
                 this.G = new ArrayList(messagesController.h.keySet());
-                org.telegram.ui.Components.k41 k41Var2 = this.c;
-                if (k41Var2 != null) {
-                    k41Var2.f3.O(true);
+                org.telegram.ui.Components.q41 q41Var2 = this.c;
+                if (q41Var2 != null) {
+                    q41Var2.f3.O(true);
                     return;
                 }
                 return;
@@ -992,9 +992,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
     }
 
     public final void h0() {
-        org.telegram.ui.Components.k41 k41Var = this.c;
+        org.telegram.ui.Components.q41 q41Var = this.c;
         i0.b bVar = this.mSystemInsets;
-        oi.a.e(k41Var, bVar.b, bVar.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + ((int) this.I.c(org.telegram.messenger.g0.L(7.0f))), this.Q);
+        oi.a.e(q41Var, bVar.b, bVar.d, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + ((int) this.I.c(org.telegram.messenger.g0.L(7.0f))), this.Q);
         this.d.getLayoutParams().height = this.simpleActionBar.getExtraHeight() + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.mSystemInsets.b + ((int) this.I.c(org.telegram.messenger.g0.L(7.0f)));
         ((ViewGroup.MarginLayoutParams) this.I.getLayoutParams()).topMargin = (oi.a.d(this.mSystemInsets.b) - org.telegram.messenger.g0.L(14.0f)) - org.telegram.messenger.g0.L(7.0f);
         ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.mSystemInsets.b;
@@ -1010,9 +1010,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
         if (m5Var != null && !this.E) {
             m5Var.d();
         }
-        org.telegram.ui.Components.k41 k41Var = this.c;
-        if (k41Var != null) {
-            k41Var.f3.O(true);
+        org.telegram.ui.Components.q41 q41Var = this.c;
+        if (q41Var != null) {
+            q41Var.f3.O(true);
         }
         TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
         tL_messages_search.limit = i10;
@@ -1213,9 +1213,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
     @Override // org.telegram.ui.ActionBar.f2
     public final void onResume() {
         super.onResume();
-        org.telegram.ui.Components.k41 k41Var = this.c;
-        if (k41Var != null) {
-            k41Var.f3.O(true);
+        org.telegram.ui.Components.q41 q41Var = this.c;
+        if (q41Var != null) {
+            q41Var.f3.O(true);
         }
     }
 
@@ -1223,9 +1223,9 @@ public final class i9 extends org.telegram.ui.ActionBar.f2 implements org.telegr
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            org.telegram.ui.Components.k41 k41Var = this.c;
-            if (k41Var != null) {
-                int childCount = k41Var.getChildCount();
+            org.telegram.ui.Components.q41 q41Var = this.c;
+            if (q41Var != null) {
+                int childCount = q41Var.getChildCount();
                 for (int i7 = 0; i7 < childCount; i7++) {
                     View childAt = this.c.getChildAt(i7);
                     if (childAt instanceof e9) {

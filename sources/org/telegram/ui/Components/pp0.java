@@ -34,7 +34,7 @@ import org.telegram.ui.f81;
 import org.telegram.ui.l81;
 import org.telegram.ui.m81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -198,29 +198,29 @@ public final /* synthetic */ class pp0 implements Runnable {
                 }
                 return;
             case 4:
-                qz0 qz0Var = (qz0) this.c;
+                rz0 rz0Var = (rz0) this.c;
                 int i17 = this.b;
                 ArrayList arrayList7 = (ArrayList) this.d;
                 ArrayList arrayList8 = (ArrayList) this.e;
-                ThemeEditorView.EditorAlert editorAlert = qz0Var.r;
-                iz0 iz0Var = editorAlert.j1;
-                if (i17 != qz0Var.d) {
+                ThemeEditorView.EditorAlert editorAlert = rz0Var.r;
+                jz0 jz0Var = editorAlert.j1;
+                if (i17 != rz0Var.d) {
                     return;
                 }
-                qz0 qz0Var2 = editorAlert.p1;
-                if (iz0Var.getAdapter() != qz0Var2) {
+                rz0 rz0Var2 = editorAlert.p1;
+                if (jz0Var.getAdapter() != rz0Var2) {
                     editorAlert.w1 = ThemeEditorView.EditorAlert.J0(editorAlert);
-                    iz0Var.setAdapter(qz0Var2);
-                    qz0Var2.f();
+                    jz0Var.setAdapter(rz0Var2);
+                    rz0Var2.f();
                 }
-                boolean z9 = !qz0Var.e.isEmpty() && arrayList7.isEmpty();
-                boolean z10 = qz0Var.e.isEmpty() && arrayList7.isEmpty();
+                boolean z9 = !rz0Var.e.isEmpty() && arrayList7.isEmpty();
+                boolean z10 = rz0Var.e.isEmpty() && arrayList7.isEmpty();
                 if (z9) {
                     editorAlert.w1 = ThemeEditorView.EditorAlert.J0(editorAlert);
                 }
-                qz0Var.e = arrayList7;
-                qz0Var.f = arrayList8;
-                qz0Var.f();
+                rz0Var.e = arrayList7;
+                rz0Var.f = arrayList8;
+                rz0Var.f();
                 if (!z10 && !z9 && (i7 = editorAlert.w1) > 0) {
                     editorAlert.n1.h1(0, -i7);
                     editorAlert.w1 = -1000;
@@ -228,16 +228,16 @@ public final /* synthetic */ class pp0 implements Runnable {
                 editorAlert.l1.c();
                 return;
             case 5:
-                yz0 yz0Var = (yz0) this.c;
+                zz0 zz0Var = (zz0) this.c;
                 uo uoVar = (uo) this.d;
                 int i18 = this.b;
                 Bitmap bitmap = (Bitmap) this.e;
                 Drawable drawable = uoVar.b;
                 if (drawable instanceof qa0) {
                     qa0 qa0Var = (qa0) drawable;
-                    qa0Var.s(yz0.e(bitmap), i18);
-                    qa0Var.t(yz0Var.L);
-                    yz0Var.invalidate();
+                    qa0Var.s(zz0.e(bitmap), i18);
+                    qa0Var.t(zz0Var.L);
+                    zz0Var.invalidate();
                     return;
                 }
                 return;
@@ -556,10 +556,10 @@ public final /* synthetic */ class pp0 implements Runnable {
                     throw th2;
                 }
             case 14:
-                org.telegram.ui.dp0 dp0Var = (org.telegram.ui.dp0) this.c;
+                org.telegram.ui.ep0 ep0Var = (org.telegram.ui.ep0) this.c;
                 FrameLayout frameLayout = (FrameLayout) this.d;
                 a0.h hVar = (a0.h) this.e;
-                hc.v(dp0Var.T2.D, null, frameLayout, hVar.m(), hVar.m() == 1 ? ((TLRPC.Dialog) hVar.n(0)).id : 0L, this.b, -115203550, -1, 1500, false, null).j();
+                hc.v(ep0Var.T2.D, null, frameLayout, hVar.m(), hVar.m() == 1 ? ((TLRPC.Dialog) hVar.n(0)).id : 0L, this.b, -115203550, -1, 1500, false, null).j();
                 return;
             case 15:
                 v4.c0(this.b, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.f2) this.c, (TLRPC.TL_payments_assignPlayMarketTransaction) this.e, new Object[0]);

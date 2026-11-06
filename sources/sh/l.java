@@ -6,18 +6,18 @@ import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class l extends q31 {
+public final class l extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new l());
+        w31.h(new l());
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         lz lzVar = new lz(context, null);
         lzVar.setViewType(16);

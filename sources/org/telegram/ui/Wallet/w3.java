@@ -41,10 +41,10 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.c30;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.r81;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class w3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Path D;
@@ -531,17 +531,17 @@ public final class w3 extends FrameLayout implements org.telegram.ui.ActionBar.a
             org.telegram.ui.ActionBar.r6.y(this, drawable, i12, f6Var, PorterDuff.Mode.SRC_IN);
             this.e0 = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(8.0f), org.telegram.ui.ActionBar.k6.r1(0.1f, w02));
             org.telegram.ui.ActionBar.n6 L = org.telegram.ui.ActionBar.r6.L(0.1f, i12);
-            fo0 fo0Var = new fo0(11);
-            fo0 fo0Var2 = new fo0(12);
+            go0 go0Var = new go0(11);
+            go0 go0Var2 = new go0(12);
             int i13 = L.a;
             float f10 = L.d;
             org.telegram.ui.ActionBar.f6 f6Var2 = this.b;
             int Q = org.telegram.ui.ActionBar.r6.Q(i13, -1, 2, f10, f6Var2);
-            fo0Var2.c(Q, this);
+            go0Var2.c(Q, this);
             org.telegram.ui.ActionBar.l6 x10 = org.telegram.ui.ActionBar.r6.x(100, this);
             x10.c(i13, -1, 2, f10, f6Var2);
-            x10.n = fo0Var;
-            x10.o = fo0Var2;
+            x10.n = go0Var;
+            x10.o = go0Var2;
             x10.m = false;
             x10.g = Q;
             xp xpVar = new xp(this.e0, drawable);

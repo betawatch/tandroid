@@ -1,147 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g21 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p21 b;
+public final class g21 extends j6 {
+    public final Paint s;
+    public final n2.n0 w;
+    public final /* synthetic */ i21 x;
 
-    public /* synthetic */ g21(p21 p21Var, int i7) {
-        this.a = i7;
-        this.b = p21Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g21(i21 i21Var, Context context) {
+        super(context, false, false, false);
+        this.x = i21Var;
+        this.s = new Paint(1);
+        this.w = new n2.n0();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        LinearLayout linearLayout;
-        boolean z9;
-        int i7 = this.a;
-        p21 p21Var = this.b;
-        switch (i7) {
-            case 0:
-                p21Var.dismiss();
-                break;
-            case 1:
-                p21Var.dismiss();
-                break;
-            case 2:
-                p21Var.dismiss();
-                break;
-            case 3:
-                CharSequence charSequence = p21Var.U1;
-                if (charSequence != null) {
-                    p21Var.V1.a(charSequence);
-                }
-                p21Var.dismiss();
-                break;
-            default:
-                final p21 p21Var2 = this.b;
-                k60 F = k60.F(p21Var2.c, p21Var2.I0, view);
-                F.X = org.telegram.messenger.g0.L(450.0f);
-                final int i10 = 0;
-                F.t = false;
-                final int i11 = 1;
-                F.Y = true;
-                ScrollView scrollView = new ScrollView(p21Var2.getContext());
-                LinearLayout linearLayout2 = new LinearLayout(p21Var2.getContext());
-                linearLayout2.setOrientation(1);
-                scrollView.addView(linearLayout2);
-                F.q(scrollView);
-                int i12 = 0;
-                while (i12 < p21Var2.Z1.length) {
-                    if (p21Var2.Y1 == i12) {
-                        linearLayout = linearLayout2;
-                        z9 = true;
-                    } else {
-                        linearLayout = linearLayout2;
-                        z9 = false;
-                    }
-                    p21Var2.d1(F, linearLayout, z9, p21Var2.a2[i12], new r2(p21Var2, i12, 10));
-                    i12++;
-                    linearLayout2 = linearLayout;
-                }
-                LinearLayout linearLayout3 = linearLayout2;
-                View d1Var = new org.telegram.ui.ActionBar.d1(p21Var2.getContext(), p21Var2.I0);
-                d1Var.setTag(R.id.fit_width_tag, 1);
-                linearLayout3.addView(d1Var, c8.ha.o(-1, 8));
-                ArrayList o4 = org.telegram.messenger.f10.o(null);
-                ArrayList n10 = org.telegram.messenger.f10.n();
-                if (!TextUtils.isEmpty(p21Var2.X1)) {
-                    p21Var2.d1(F, linearLayout3, true, e21.K0(e21.O0(p21Var2.X1, null, null)), null);
-                }
-                int size = o4.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    int i14 = i13 + 1;
-                    final org.telegram.messenger.y00 y00Var = (org.telegram.messenger.y00) o4.get(i13);
-                    if (!TextUtils.equals(y00Var.a, p21Var2.X1)) {
-                        p21Var2.d1(F, linearLayout3, false, y00Var.b, new Runnable() { // from class: org.telegram.ui.Components.f21
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i10) {
-                                    case 0:
-                                        p21 p21Var3 = p21Var2;
-                                        p21Var3.e1();
-                                        String str = y00Var.a;
-                                        p21Var3.X1 = str;
-                                        e21.S0(str);
-                                        p21Var3.f1();
-                                        break;
-                                    default:
-                                        p21 p21Var4 = p21Var2;
-                                        p21Var4.e1();
-                                        String str2 = y00Var.a;
-                                        p21Var4.X1 = str2;
-                                        e21.S0(str2);
-                                        p21Var4.f1();
-                                        break;
-                                }
-                            }
-                        });
-                    }
-                    i13 = i14;
-                }
-                View d1Var2 = new org.telegram.ui.ActionBar.d1(p21Var2.getContext(), p21Var2.I0);
-                d1Var2.setTag(R.id.fit_width_tag, 1);
-                linearLayout3.addView(d1Var2, c8.ha.o(-1, 8));
-                int size2 = n10.size();
-                while (i10 < size2) {
-                    Object obj = n10.get(i10);
-                    i10++;
-                    final org.telegram.messenger.y00 y00Var2 = (org.telegram.messenger.y00) obj;
-                    p21Var2.d1(F, linearLayout3, TextUtils.equals(y00Var2.a, p21Var2.X1), y00Var2.b, new Runnable() { // from class: org.telegram.ui.Components.f21
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i11) {
-                                case 0:
-                                    p21 p21Var3 = p21Var2;
-                                    p21Var3.e1();
-                                    String str = y00Var2.a;
-                                    p21Var3.X1 = str;
-                                    e21.S0(str);
-                                    p21Var3.f1();
-                                    break;
-                                default:
-                                    p21 p21Var4 = p21Var2;
-                                    p21Var4.e1();
-                                    String str2 = y00Var2.a;
-                                    p21Var4.X1 = str2;
-                                    e21.S0(str2);
-                                    p21Var4.f1();
-                                    break;
-                            }
-                        }
-                    });
-                }
-                F.Z();
-                break;
+    @Override // org.telegram.ui.Components.j6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (org.telegram.messenger.hd.a0) {
+            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
         }
+        k21 k21Var = this.x.n;
+        int i7 = org.telegram.ui.ActionBar.k6.Dj;
+        String[] strArr = k21.O1;
+        int r12 = org.telegram.ui.ActionBar.k6.r1(0.1175f, org.telegram.ui.ActionBar.k6.w0(i7, k21Var.I0));
+        Paint paint = this.s;
+        paint.setColor(r12);
+        canvas.drawRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
+        if (this.w.h(canvas)) {
+            invalidate();
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        k21 k21Var = this.x.n;
+        int action = motionEvent.getAction();
+        n2.n0 n0Var = this.w;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                n0Var.f(true);
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        String[] strArr = k21.O1;
+        x70 x70Var = new x70(null, k21Var.I0, motionEvent.getX(), motionEvent.getY(), 0);
+        x70Var.d(org.telegram.ui.ActionBar.k6.r1(0.1175f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Dj, k21Var.I0)));
+        r70 b10 = x70Var.b();
+        if (org.telegram.messenger.hd.a0) {
+            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        } else {
+            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+        }
+        b10.addRect(org.telegram.messenger.g0.P, Path.Direction.CW);
+        n0Var.b(x70Var, null);
+        invalidate();
+        return true;
     }
 }

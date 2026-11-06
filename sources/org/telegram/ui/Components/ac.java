@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -35,7 +35,7 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
             textView.setGravity(16);
             float f10 = z10 ? 34.0f : 12.0f;
             boolean z11 = org.telegram.messenger.hd.a0;
-            c8.ra.a(textView, z11 ? 12.0f : f10, 8.0f, z11 ? f10 : 12.0f, 8.0f);
+            c8.sa.a(textView, z11 ? 12.0f : f10, 8.0f, z11 ? f10 : 12.0f, 8.0f);
             addView(textView, c8.ha.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }
         if (z10) {
@@ -46,7 +46,7 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
                 imageView.setBackground(org.telegram.ui.ActionBar.k6.h0((h & 16777215) | 419430400, 1, -1));
                 this.n = imageView.getBackground();
             }
-            c8.ra.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            c8.sa.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
             addView(imageView, c8.ha.h(56.0f, 48.0f, 16));
         }
         setOnClickListener(new h0(this, 4));

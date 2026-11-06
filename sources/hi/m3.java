@@ -17,31 +17,31 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q31;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q41;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.ez;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
-public final class m3 extends q31 {
+public final class m3 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        q31.h(new m3());
+        w31.h(new m3());
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        Object obj = r31Var.G;
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, l41 l41Var, q41 q41Var) {
+        Object obj = x31Var.G;
         if (!(obj instanceof TL_payments.connectedBotStarRef)) {
             if (obj instanceof TL_payments.starRefProgram) {
                 n3 n3Var = (n3) view;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z10 = r31Var.r;
+                boolean z10 = x31Var.r;
                 TLRPC.User a22 = qp.s1(n3Var.a).a2(Long.valueOf(starrefprogram.bot_id));
                 w8 w8Var = new w8((f6) null);
                 w8Var.r(a22);
@@ -84,7 +84,7 @@ public final class m3 extends q31 {
         }
         n3 n3Var2 = (n3) view;
         TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z11 = r31Var.r;
+        boolean z11 = x31Var.r;
         f6 f6Var = n3Var2.b;
         View view2 = n3Var2.e;
         ImageView imageView = n3Var2.f;
@@ -134,7 +134,7 @@ public final class m3 extends q31 {
         n3Var2.setWillNotDraw(!z9);
     }
 
-    @Override // org.telegram.ui.Components.q31
+    @Override // org.telegram.ui.Components.w31
     public final View d(Context context, pj0 pj0Var, int i7, f6 f6Var) {
         return new n3(i7, context, f6Var);
     }

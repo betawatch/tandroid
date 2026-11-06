@@ -5,14 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.dd;
+import c8.ed;
 import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final n6.c[] a = new n6.c[0];
@@ -87,7 +87,7 @@ public abstract class j {
     public static void b(Context context) {
         w7.b bVar = w7.d.b;
         Object[] objArr = {"ica"};
-        dd.a(1, objArr);
+        ed.a(1, objArr);
         w7.g gVar = new w7.g(1, objArr);
         n6.e.b.getClass();
         if (n6.e.a(context) < 221500000) {

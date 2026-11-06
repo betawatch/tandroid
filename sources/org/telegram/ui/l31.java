@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l31 extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -18,11 +18,11 @@ public final class l31 extends LinearLayout implements org.telegram.ui.ActionBar
         this.a = f6Var;
         setOrientation(1);
         int i7 = org.telegram.ui.ActionBar.k6.G6;
-        org.telegram.ui.Components.w70 a10 = c8.na.a(context, 15.0f, i7, true, f6Var);
+        org.telegram.ui.Components.w70 a10 = c8.qa.a(context, 15.0f, i7, true, f6Var);
         this.b = a10;
         a10.setGravity(17);
         addView(a10, c8.ha.t(-1, -2, 55, 32, 20, 32, 0));
-        org.telegram.ui.Components.w70 a11 = c8.na.a(context, 13.0f, i7, false, f6Var);
+        org.telegram.ui.Components.w70 a11 = c8.qa.a(context, 13.0f, i7, false, f6Var);
         this.c = a11;
         a11.setGravity(17);
         addView(a11, c8.ha.s(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));

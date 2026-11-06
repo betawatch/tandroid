@@ -39,18 +39,18 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.w5;
 import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.h41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.pn;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.ks;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class m extends h41 implements ls {
+public final class m extends n41 implements ls {
     public String D;
     public TLRPC.InputDocument E;
     public boolean F;
@@ -145,53 +145,53 @@ public final class m extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void Z(ArrayList arrayList, f41 f41Var) {
-        arrayList.add(r31.k(this.h));
-        arrayList.add(r31.u(hd.M0(2131752724, null)));
-        arrayList.add(r31.k(this.s));
-        arrayList.add(r31.k(this.w));
+    @Override // org.telegram.ui.Components.n41
+    public final void Z(ArrayList arrayList, l41 l41Var) {
+        arrayList.add(x31.k(this.h));
+        arrayList.add(x31.u(hd.M0(2131752724, null)));
+        arrayList.add(x31.k(this.s));
+        arrayList.add(x31.k(this.w));
         if (this.x) {
-            arrayList.add(r31.f(hd.M0(2131752720, null), hd.M0(2131752719, null), 1));
+            arrayList.add(x31.f(hd.M0(2131752720, null), hd.M0(2131752719, null), 1));
         } else if (this.D != null) {
             String M0 = hd.M0(2131752720, null);
             String str = this.D;
-            r31 r31Var = new r31(3);
-            r31Var.d = 1;
-            r31Var.l = M0;
-            r31Var.G = str;
-            arrayList.add(r31Var);
+            x31 x31Var = new x31(3);
+            x31Var.d = 1;
+            x31Var.l = M0;
+            x31Var.G = str;
+            arrayList.add(x31Var);
         } else {
             String M02 = hd.M0(2131752720, null);
             TLRPC.Document document = this.y;
-            r31 r31Var2 = new r31(3);
-            r31Var2.d = 1;
-            r31Var2.l = M02;
-            r31Var2.G = document;
-            arrayList.add(r31Var2);
+            x31 x31Var2 = new x31(3);
+            x31Var2.d = 1;
+            x31Var2.l = M02;
+            x31Var2.G = document;
+            arrayList.add(x31Var2);
         }
-        arrayList.add(r31.C(hd.M0(2131752723, null)));
+        arrayList.add(x31.C(hd.M0(2131752723, null)));
         boolean l02 = l0();
         this.K = !l02;
         if (!l02) {
-            arrayList.add(r31.C(null));
-            r31 e10 = r31.e(2, hd.M0(2131752721, null));
+            arrayList.add(x31.C(null));
+            x31 e10 = x31.e(2, hd.M0(2131752721, null));
             e10.r = true;
             arrayList.add(e10);
         }
-        r31 r31Var3 = new r31(8);
-        r31Var3.l = null;
-        arrayList.add(r31Var3);
+        x31 x31Var3 = new x31(8);
+        x31Var3.l = null;
+        arrayList.add(x31Var3);
     }
 
-    @Override // org.telegram.ui.Components.h41
+    @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
         return hd.M0(2131752725, null);
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final void b0(r31 r31Var, View view) {
-        int i7 = r31Var.d;
+    @Override // org.telegram.ui.Components.n41
+    public final void b0(x31 x31Var, View view) {
+        int i7 = x31Var.d;
         if (i7 == 1) {
             k2 k2Var = new k2(getParentActivity(), getResourceProvider(), true, true);
             k2Var.v1 = new ab.g(19, this, view);
@@ -231,12 +231,12 @@ public final class m extends h41 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.h41
-    public final boolean c0(r31 r31Var, View view) {
+    @Override // org.telegram.ui.Components.n41
+    public final boolean c0(x31 x31Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h41, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.Components.n41, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         org.telegram.messenger.g0.a3(getParentActivity(), this.classGuid);
@@ -455,7 +455,7 @@ public final class m extends h41 implements ls {
     }
 
     public final void n0() {
-        f41 f41Var;
+        l41 l41Var;
         if (this.J) {
             return;
         }
@@ -507,8 +507,8 @@ public final class m extends h41 implements ls {
             org.telegram.messenger.g0.i3(gVar, 5000L);
         }
         w3 w3Var = this.a;
-        if (w3Var != null && (f41Var = w3Var.f3) != null) {
-            f41Var.O(true);
+        if (w3Var != null && (l41Var = w3Var.f3) != null) {
+            l41Var.O(true);
         }
         this.J = true;
     }

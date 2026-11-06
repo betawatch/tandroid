@@ -5,12 +5,12 @@ import android.os.Handler;
 import java.nio.ByteBuffer;
 import li.b6;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ir0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t51;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class x0 extends f2.o {
     public final b6 i;
@@ -34,18 +34,18 @@ public final class x0 extends f2.o {
         float[] fArr2 = (float[]) b6Var.d;
         n1 n1Var = (n1) b6Var.c;
         ByteBuffer byteBuffer2 = (ByteBuffer) b6Var.e;
-        n51 n51Var = (n51) b6Var.f;
-        h51 h51Var = n51Var.K;
-        Handler handler = n51Var.a0;
-        if (h51Var != null) {
-            if (order == f2.n.a || !n51Var.I) {
-                handler.postDelayed(new ir0(b6Var, 29), 80L);
-            } else if (h51Var.s()) {
+        t51 t51Var = (t51) b6Var.f;
+        m51 m51Var = t51Var.K;
+        Handler handler = t51Var.a0;
+        if (m51Var != null) {
+            int i7 = 0;
+            if (order == f2.n.a || !t51Var.I) {
+                handler.postDelayed(new s51(b6Var, 0), 80L);
+            } else if (m51Var.s()) {
                 int limit = order.limit();
-                int i7 = 0;
                 if (limit > 8192) {
                     handler.removeCallbacksAndMessages(null);
-                    n51Var.K.F(false, null);
+                    t51Var.K.F(false, null);
                 } else {
                     byteBuffer2.put(order);
                     int i10 = b6Var.a + limit;
@@ -167,7 +167,7 @@ public final class x0 extends f2.o {
                         }
                         if (System.currentTimeMillis() - b6Var.b >= 64) {
                             b6Var.b = System.currentTimeMillis();
-                            handler.postDelayed(new g51(1, b6Var, fArr6), 130L);
+                            handler.postDelayed(new l51(1, b6Var, fArr6), 130L);
                         }
                     }
                 }

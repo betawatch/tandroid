@@ -14,10 +14,10 @@ import org.telegram.messenger.vi;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e21;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -136,7 +136,7 @@ public final /* synthetic */ class l implements Runnable {
                     ArrayList<TLRPC.TL_textWithEntities> arrayList9 = ((TLRPC.TL_messages_translateResult) tLObject2).result;
                     int min = Math.min(arrayList3.size(), arrayList9.size());
                     for (int i11 = 0; i11 < min; i11++) {
-                        ((z10) arrayList3.get(i11)).a(Boolean.valueOf(z13), (Integer) arrayList2.get(i11), e21.P0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
+                        ((z10) arrayList3.get(i11)).a(Boolean.valueOf(z13), (Integer) arrayList2.get(i11), k21.P0((TLRPC.TL_textWithEntities) arrayList4.get(i11), arrayList9.get(i11)), str);
                     }
                 } else {
                     if (tL_error2 == null || !"TRANSLATIONS_DISABLED_ALT".equalsIgnoreCase(tL_error2.text)) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class l implements Runnable {
                         int intValue = ((Integer) arrayList2.get(i14)).intValue();
                         ArrayList arrayList10 = arrayList2;
                         String str2 = str;
-                        e21.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new r00(f10Var, (z10) arrayList3.get(i14), z13, intValue, str2, j11, 1));
+                        k21.J0(((TLRPC.TL_textWithEntities) arrayList4.get(i14)).text, null, str2, new r00(f10Var, (z10) arrayList3.get(i14), z13, intValue, str2, j11, 1));
                         i14++;
                         arrayList2 = arrayList10;
                         str = str2;

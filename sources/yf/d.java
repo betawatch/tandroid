@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class d implements ls {
     public final int a;
@@ -21,7 +21,7 @@ public final class d implements ls {
         this.b = str;
         qs.f(i7).b(this, qs.U1);
         qs.f(i7).b(this, qs.V1);
-        w7.G(i7).i0(false, ConnectionsManager.FileTypeAudio, str, true);
+        w7.G(i7).h0(false, ConnectionsManager.FileTypeAudio, str, true);
     }
 
     public final void a() {

@@ -31,9 +31,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.e21;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.k21;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Components.pj0;
@@ -41,7 +41,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.bk;
 import org.telegram.ui.e61;
-import org.telegram.ui.fq0;
+import org.telegram.ui.gq0;
 import org.telegram.ui.gs;
 import org.telegram.ui.is;
 import org.telegram.ui.ks;
@@ -52,7 +52,7 @@ import org.telegram.ui.v91;
 import org.telegram.ui.ww;
 import org.telegram.ui.yh0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -263,7 +263,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 z0Var2.setOnClickListener(new d0(anVar, str, str2, charSequence, r12, 8));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var2);
                 org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                Runnable[] runnableArr = {new fq0(g1Var2, 29)};
+                Runnable[] runnableArr = {new gq0(g1Var2, 29)};
                 g1Var2.e = true;
                 g1Var2.c = qs.x3;
                 g1Var2.setOutsideTouchable(true);
@@ -278,7 +278,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 String str4 = (String) this.d;
                 CharSequence charSequence2 = (CharSequence) this.e;
                 Runnable[] runnableArr2 = (Runnable[]) this.f;
-                e21.U0(anVar2.getParentActivity(), anVar2, str3, str4, charSequence2, null, null);
+                k21.U0(anVar2.getParentActivity(), anVar2, str3, str4, charSequence2, null, null);
                 Runnable runnable = runnableArr2[0];
                 if (runnable != null) {
                     runnable.run();
@@ -435,13 +435,13 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                 f10Var.g();
                 f10Var.J(bkVar.b, true, false);
                 SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(bkVar.r[0] ? hd.a0(null, null, 2131754356, str6) : hd.a0(null, null, 2131754355, str6));
-                String[] strArr2 = e21.O1;
+                String[] strArr2 = k21.O1;
                 if (X2.length() <= 0) {
                     X2 = null;
                 } else {
                     X2.replace(0, 1, (CharSequence) X2.toString().substring(0, 1).toUpperCase());
                 }
-                hc.a0(bkVar.c).K(R.raw.msg_translate, X2, hd.M0(2131745496, null), new ir0(bkVar, 22)).j();
+                hc.a0(bkVar.c).K(R.raw.msg_translate, X2, hd.M0(2131745496, null), new ir0(bkVar, 23)).j();
                 g1Var4.d(true);
                 break;
             case 13:

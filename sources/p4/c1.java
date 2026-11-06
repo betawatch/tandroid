@@ -10,8 +10,8 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.view.Surface;
-import c8.ab;
-import c8.ya;
+import c8.bb;
+import c8.za;
 import e2.p1;
 import e2.q1;
 import e2.r1;
@@ -25,9 +25,9 @@ import java.util.Set;
 import org.telegram.messenger.la;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.us;
-import org.telegram.ui.io0;
+import org.telegram.ui.jo0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class c1 extends Binder implements m {
     public final WeakReference a;
@@ -53,7 +53,7 @@ public final class c1 extends Binder implements m {
         }
         m9.y yVar = (m9.y) a1Var.i(d0Var, vVar, i7);
         m9.e0 e0Var = new m9.e0();
-        yVar.b(new io0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
+        yVar.b(new jo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
         return e0Var;
     }
 
@@ -76,7 +76,7 @@ public final class c1 extends Binder implements m {
         WeakReference weakReference = this.a;
         d0 d0Var = (d0) weakReference.get();
         if (lVar == null || bundle == null || d0Var == null) {
-            ab.a(lVar);
+            bb.a(lVar);
             return;
         }
         try {
@@ -92,7 +92,7 @@ public final class c1 extends Binder implements m {
                     }
                 }
                 h2.a.l("MediaSessionStub", "Ignoring connection from invalid package name " + str + " (uid=" + callingUid + ")");
-                ab.a(lVar);
+                bb.a(lVar);
                 return;
             }
             long clearCallingIdentity = Binder.clearCallingIdentity();
@@ -108,9 +108,9 @@ public final class c1 extends Binder implements m {
                 d0 d0Var2 = (d0) weakReference.get();
                 if (d0Var2 != null && !d0Var2.j()) {
                     this.c.add(vVar);
-                    h2.m0.W(d0Var2.l, new io0(this, vVar, d0Var2, lVar, 23));
+                    h2.m0.W(d0Var2.l, new jo0(this, vVar, d0Var2, lVar, 23));
                 }
-                ab.a(lVar);
+                bb.a(lVar);
             } finally {
                 Binder.restoreCallingIdentity(clearCallingIdentity);
             }
@@ -432,13 +432,13 @@ public final class c1 extends Binder implements m {
                 T0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0);
                 return true;
             case 3007:
-                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) ya.a(parcel, Bundle.CREATOR), true);
+                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), true);
                 return true;
             case 3008:
-                W0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) ya.a(parcel, Bundle.CREATOR), parcel.readLong());
+                W0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readLong());
                 return true;
             case 3009:
-                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) ya.a(parcel, Bundle.CREATOR), parcel.readInt() != 0);
+                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readInt() != 0);
                 return true;
             case 3010:
                 X0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), true);
@@ -461,7 +461,7 @@ public final class c1 extends Binder implements m {
             case 3014:
                 l H02 = p.H0(parcel.readStrongBinder());
                 int readInt2 = parcel.readInt();
-                Bundle bundle = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H02 != null && bundle != null) {
                     try {
                         m1 a15 = m1.a(bundle);
@@ -490,13 +490,13 @@ public final class c1 extends Binder implements m {
             case 3015:
                 l H03 = p.H0(parcel.readStrongBinder());
                 parcel.readInt();
-                H0(H03, (Bundle) ya.a(parcel, Bundle.CREATOR));
+                H0(H03, (Bundle) za.a(parcel, Bundle.CREATOR));
                 return true;
             case 3016:
                 l H04 = p.H0(parcel.readStrongBinder());
                 int readInt3 = parcel.readInt();
                 Parcelable.Creator creator = Bundle.CREATOR;
-                N0(H04, readInt3, (Bundle) ya.a(parcel, creator), (Bundle) ya.a(parcel, creator), false);
+                N0(H04, readInt3, (Bundle) za.a(parcel, creator), (Bundle) za.a(parcel, creator), false);
                 return true;
             case 3017:
                 l H05 = p.H0(parcel.readStrongBinder());
@@ -596,7 +596,7 @@ public final class c1 extends Binder implements m {
             case 3027:
                 l H015 = p.H0(parcel.readStrongBinder());
                 int readInt23 = parcel.readInt();
-                Bundle bundle2 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle2 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H015 != null && bundle2 != null) {
                     try {
                         P0(H015, readInt23, 13, S0(new m3(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 9)));
@@ -617,7 +617,7 @@ public final class c1 extends Binder implements m {
             case 3029:
                 l H017 = p.H0(parcel.readStrongBinder());
                 int readInt25 = parcel.readInt();
-                Bundle bundle3 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle3 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H017 != null && bundle3 != null && (x12 = this.b.x(H017.asBinder())) != null) {
                     try {
                         final e2.l0 a16 = e2.l0.a(x12.c, bundle3);
@@ -639,7 +639,7 @@ public final class c1 extends Binder implements m {
                 l H018 = p.H0(parcel.readStrongBinder());
                 int readInt26 = parcel.readInt();
                 int readInt27 = parcel.readInt();
-                Bundle bundle4 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle4 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H018 != null && bundle4 != null && readInt27 >= 0 && (x13 = this.b.x(H018.asBinder())) != null) {
                     try {
                         final e2.l0 a17 = e2.l0.a(x13.c, bundle4);
@@ -699,7 +699,7 @@ public final class c1 extends Binder implements m {
             case 3033:
                 l H021 = p.H0(parcel.readStrongBinder());
                 int readInt31 = parcel.readInt();
-                Bundle bundle7 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle7 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H021 != null && bundle7 != null && (x16 = this.b.x(H021.asBinder())) != null) {
                     try {
                         Q0(x16, readInt31, 19, S0(new l2.r(e2.o0.b(x16.c, bundle7))));
@@ -803,7 +803,7 @@ public final class c1 extends Binder implements m {
             case 3044:
                 l H032 = p.H0(parcel.readStrongBinder());
                 int readInt43 = parcel.readInt();
-                Surface surface = (Surface) ya.a(parcel, Surface.CREATOR);
+                Surface surface = (Surface) za.a(parcel, Surface.CREATOR);
                 if (H032 != null) {
                     P0(H032, readInt43, 27, S0(new org.telegram.ui.web.a0(7, this, surface)));
                     return true;
@@ -846,7 +846,7 @@ public final class c1 extends Binder implements m {
             case 3048:
                 l H036 = p.H0(parcel.readStrongBinder());
                 int readInt46 = parcel.readInt();
-                Bundle bundle8 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle8 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H036 != null && bundle8 != null) {
                     try {
                         P0(H036, readInt46, 29, S0(new org.telegram.ui.web.a0(5, this, q1.b(bundle8))));
@@ -859,7 +859,7 @@ public final class c1 extends Binder implements m {
                 l H037 = p.H0(parcel.readStrongBinder());
                 int readInt47 = parcel.readInt();
                 String readString = parcel.readString();
-                Bundle bundle9 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle9 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H037 != null && readString != null && bundle9 != null) {
                     if (TextUtils.isEmpty(readString)) {
                         h2.a.l("MediaSessionStub", "setRatingWithMediaId(): Ignoring empty mediaId");
@@ -875,7 +875,7 @@ public final class c1 extends Binder implements m {
             case 3050:
                 l H038 = p.H0(parcel.readStrongBinder());
                 int readInt48 = parcel.readInt();
-                Bundle bundle10 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle10 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H038 != null && bundle10 != null) {
                     try {
                         J0(H038, readInt48, null, 40010, new t0(new r0(e2.d1.a(bundle10), 14), 1));
@@ -931,7 +931,7 @@ public final class c1 extends Binder implements m {
                 l H043 = p.H0(parcel.readStrongBinder());
                 int readInt58 = parcel.readInt();
                 int readInt59 = parcel.readInt();
-                Bundle bundle11 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle11 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (H043 != null && bundle11 != null && readInt59 >= 0 && (x22 = this.b.x(H043.asBinder())) != null) {
                     try {
                         final e2.l0 a20 = e2.l0.a(x22.c, bundle11);
@@ -973,7 +973,7 @@ public final class c1 extends Binder implements m {
             case 3057:
                 l H045 = p.H0(parcel.readStrongBinder());
                 int readInt63 = parcel.readInt();
-                Bundle bundle13 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                Bundle bundle13 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 boolean z12 = parcel.readInt() != 0;
                 if (H045 != null && bundle13 != null) {
                     try {
@@ -1003,12 +1003,12 @@ public final class c1 extends Binder implements m {
                 l H048 = p.H0(parcel.readStrongBinder());
                 int readInt66 = parcel.readInt();
                 Parcelable.Creator creator2 = Bundle.CREATOR;
-                N0(H048, readInt66, (Bundle) ya.a(parcel, creator2), (Bundle) ya.a(parcel, creator2), parcel.readInt() != 0);
+                N0(H048, readInt66, (Bundle) za.a(parcel, creator2), (Bundle) za.a(parcel, creator2), parcel.readInt() != 0);
                 return true;
             case 3061:
                 l H049 = p.H0(parcel.readStrongBinder());
                 int readInt67 = parcel.readInt();
-                Surface surface2 = (Surface) ya.a(parcel, Surface.CREATOR);
+                Surface surface2 = (Surface) za.a(parcel, Surface.CREATOR);
                 int readInt68 = parcel.readInt();
                 int readInt69 = parcel.readInt();
                 if (H049 != null) {
@@ -1031,7 +1031,7 @@ public final class c1 extends Binder implements m {
                     case 4001:
                         l H051 = p.H0(parcel.readStrongBinder());
                         int readInt73 = parcel.readInt();
-                        Bundle bundle14 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                        Bundle bundle14 = (Bundle) za.a(parcel, Bundle.CREATOR);
                         if (H051 != null) {
                             if (bundle14 != null) {
                                 try {
@@ -1062,7 +1062,7 @@ public final class c1 extends Binder implements m {
                         String readString3 = parcel.readString();
                         int readInt76 = parcel.readInt();
                         int readInt77 = parcel.readInt();
-                        Bundle bundle15 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                        Bundle bundle15 = (Bundle) za.a(parcel, Bundle.CREATOR);
                         if (H053 != null) {
                             if (TextUtils.isEmpty(readString3)) {
                                 h2.a.l("MediaSessionStub", "getChildren(): Ignoring empty parentId");
@@ -1086,7 +1086,7 @@ public final class c1 extends Binder implements m {
                         l H054 = p.H0(parcel.readStrongBinder());
                         int readInt78 = parcel.readInt();
                         String readString4 = parcel.readString();
-                        Bundle bundle16 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                        Bundle bundle16 = (Bundle) za.a(parcel, Bundle.CREATOR);
                         if (H054 != null) {
                             if (TextUtils.isEmpty(readString4)) {
                                 h2.a.l("MediaSessionStub", "search(): Ignoring empty query");
@@ -1108,7 +1108,7 @@ public final class c1 extends Binder implements m {
                         String readString5 = parcel.readString();
                         int readInt80 = parcel.readInt();
                         int readInt81 = parcel.readInt();
-                        Bundle bundle17 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                        Bundle bundle17 = (Bundle) za.a(parcel, Bundle.CREATOR);
                         if (H055 != null) {
                             if (TextUtils.isEmpty(readString5)) {
                                 h2.a.l("MediaSessionStub", "getSearchResult(): Ignoring empty query");
@@ -1132,7 +1132,7 @@ public final class c1 extends Binder implements m {
                         l H056 = p.H0(parcel.readStrongBinder());
                         int readInt82 = parcel.readInt();
                         String readString6 = parcel.readString();
-                        Bundle bundle18 = (Bundle) ya.a(parcel, Bundle.CREATOR);
+                        Bundle bundle18 = (Bundle) za.a(parcel, Bundle.CREATOR);
                         if (H056 != null) {
                             if (TextUtils.isEmpty(readString6)) {
                                 h2.a.l("MediaSessionStub", "subscribe(): Ignoring empty parentId");

@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tq extends na {
     public final boolean P1;
@@ -18,7 +18,7 @@ public final class tq extends na {
     public String T1;
     public String U1;
     public SpannableStringBuilder V1;
-    public f41 W1;
+    public l41 W1;
     public final boolean X1;
     public bi.t Y1;
 
@@ -71,11 +71,11 @@ public final class tq extends na {
         naVar.U1 = groupcallstreamrtmpurl.key;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(naVar.U1);
         naVar.V1 = spannableStringBuilder;
-        ty0 ty0Var = new ty0();
-        ty0Var.a |= 256;
-        ty0Var.b = 0;
-        ty0Var.c = spannableStringBuilder.length();
-        naVar.V1.setSpan(new uy0(ty0Var, 0), 0, naVar.V1.length(), 0);
+        uy0 uy0Var = new uy0();
+        uy0Var.a |= 256;
+        uy0Var.b = 0;
+        uy0Var.c = spannableStringBuilder.length();
+        naVar.V1.setSpan(new vy0(uy0Var, 0), 0, naVar.V1.length(), 0);
         naVar.W1.O(false);
     }
 
@@ -92,9 +92,9 @@ public final class tq extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new d(this, 7), this.I0);
-        this.W1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 7), this.I0);
+        this.W1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

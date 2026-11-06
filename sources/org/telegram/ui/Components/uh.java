@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class uh extends org.telegram.ui.mq0 {
+public final class uh extends org.telegram.ui.nq0 {
     public final /* synthetic */ org.telegram.messenger.gf a;
     public final /* synthetic */ di b;
 
@@ -14,7 +14,7 @@ public final class uh extends org.telegram.ui.mq0 {
         this.a = gfVar;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, final boolean z9, final int i10, int i11, final boolean z10) {
         di diVar = this.b;
         diVar.p4 = true;

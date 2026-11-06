@@ -55,7 +55,7 @@ import org.telegram.ui.Components.vf;
 import org.telegram.ui.Wallet.y5;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -324,7 +324,7 @@ public final /* synthetic */ class z0 implements Runnable {
                 j6Var.g0 = w7.r(null, tL_wallPaper.document);
                 qs.f(j6Var.E).b(j6Var, qs.Y1);
                 qs.f(j6Var.E).b(j6Var, qs.Z1);
-                w7.G(j6Var2.E).X(tL_wallPaper.document, tL_wallPaper, 1, 1);
+                w7.G(j6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                 return;
             case 22:
                 org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) this.b;

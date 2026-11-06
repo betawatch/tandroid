@@ -60,8 +60,8 @@ import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.hi0;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.an;
@@ -72,7 +72,7 @@ import org.telegram.ui.f81;
 import org.telegram.ui.hy0;
 import org.telegram.ui.jy0;
 import org.telegram.ui.web.w;
-import org.telegram.ui.yr0;
+import org.telegram.ui.zr0;
 import p4.d0;
 import p4.e1;
 import p4.i1;
@@ -82,7 +82,7 @@ import ug.w0;
 import y7.i6;
 import zd.t;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class e implements m, hi0, jy0 {
     public static volatile e f;
@@ -609,7 +609,7 @@ public final class e implements m, hi0, jy0 {
                         f12 = 0.0f;
                         f10 = f12;
                         anVar.Ab(H8, (ij) this.c, (ii0) this.d, view, f16, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                        ((yr0) this.e).c(false);
+                        ((zr0) this.e).c(false);
                         break;
                     } else {
                         f16 = p0Var3.b + k12.w + (k12.z / 2.0f);
@@ -619,7 +619,7 @@ public final class e implements m, hi0, jy0 {
                 } else if (!(H8 instanceof org.telegram.ui.Cells.t0) || (k10 = (p0Var = ((org.telegram.ui.Cells.t0) H8).E0).k(o0Var)) == null) {
                     f10 = 0.0f;
                     anVar.Ab(H8, (ij) this.c, (ii0) this.d, view, f16, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                    ((yr0) this.e).c(false);
+                    ((zr0) this.e).c(false);
                 } else {
                     f16 = p0Var.b + k10.w + (k10.z / 2.0f);
                     f11 = p0Var.c + k10.x;
@@ -628,7 +628,7 @@ public final class e implements m, hi0, jy0 {
                 f12 = f11 + (i7 / 2.0f);
                 f10 = f12;
                 anVar.Ab(H8, (ij) this.c, (ii0) this.d, view, f16, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                ((yr0) this.e).c(false);
+                ((zr0) this.e).c(false);
                 break;
             default:
                 an anVar2 = (an) this.b;
@@ -700,13 +700,13 @@ public final class e implements m, hi0, jy0 {
                 t2 t2Var = (t2) this.b;
                 mr mrVar3 = new mr();
                 mrVar3.a = size;
-                ly0 ly0Var = new ly0(jg.g.j(size, "+"), 10.0f, g0.o());
-                ly0Var.r(t2Var);
-                mrVar3.c = ly0Var;
+                my0 my0Var = new my0(jg.g.j(size, "+"), 10.0f, g0.o());
+                my0Var.r(t2Var);
+                mrVar3.c = my0Var;
                 int L2 = g0.L(9.32f);
-                ly0 ly0Var2 = mrVar3.c;
-                mrVar3.g = L2 + ((int) ly0Var2.c);
-                ly0Var2.i();
+                my0 my0Var2 = mrVar3.c;
+                mrVar3.g = L2 + ((int) my0Var2.c);
+                my0Var2.i();
                 int i11 = k6.n8;
                 mrVar3.f = i11;
                 mrVar3.e = true;

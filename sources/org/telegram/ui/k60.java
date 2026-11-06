@@ -13,7 +13,7 @@ import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class k60 extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ int c;
@@ -311,7 +311,7 @@ public final class k60 extends org.telegram.ui.Components.oj0 {
                                         if (objArr == false) {
                                             sb3.append(", ");
                                         }
-                                        String K0 = org.telegram.ui.Components.e21.K0(org.telegram.ui.Components.e21.O0(str, zArr, null));
+                                        String K0 = org.telegram.ui.Components.k21.K0(org.telegram.ui.Components.k21.O0(str, zArr, null));
                                         if (K0 != null) {
                                             sb3.append(K0);
                                             objArr = false;
@@ -326,7 +326,7 @@ public final class k60 extends org.telegram.ui.Components.oj0 {
                                         break;
                                     }
                                 } else {
-                                    charSequence = org.telegram.ui.Components.e21.K0(org.telegram.ui.Components.e21.O0((String) d02.iterator().next(), zArr, null));
+                                    charSequence = org.telegram.ui.Components.k21.K0(org.telegram.ui.Components.k21.O0((String) d02.iterator().next(), zArr, null));
                                 }
                             } else {
                                 charSequence = "";

@@ -36,7 +36,7 @@ import bi.v5;
 import bi.w1;
 import bi.w5;
 import bi.y5;
-import c8.ge;
+import c8.he;
 import c8.j0;
 import c8.k0;
 import java.nio.MappedByteBuffer;
@@ -55,7 +55,7 @@ import org.telegram.ui.Wallet.c8;
 import org.telegram.ui.Wallet.g5;
 import org.telegram.ui.Wallet.h5;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class f implements Runnable {
                         bVar.getClass();
                         o0.h[] hVarArr = {d};
                         j0 j0Var = i0.e.a;
-                        ge.a("TypefaceCompat.createFromFontInfo");
+                        he.a("TypefaceCompat.createFromFontInfo");
                         try {
                             Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                             Trace.endSection();

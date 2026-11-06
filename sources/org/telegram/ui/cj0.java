@@ -4,16 +4,16 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class cj0 extends mq0 {
+public final class cj0 extends nq0 {
     public final /* synthetic */ bk0 a;
 
     public cj0(bk0 bk0Var) {
         this.a = bk0Var;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final void B(int i7) {
         bk0 bk0Var = this.a;
         int i10 = bk0Var.S0;
@@ -53,8 +53,8 @@ public final class cj0 extends mq0 {
         bk0Var.i0.removeView(zj0Var);
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
-    public final vq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         if (i7 < 0) {
             return null;
         }
@@ -65,17 +65,17 @@ public final class cj0 extends mq0 {
         zj0 zj0Var = (zj0) bk0Var.i0.getChildAt(i7);
         int[] iArr = new int[2];
         zj0Var.c.getLocationInWindow(iArr);
-        vq0 vq0Var = new vq0();
-        vq0Var.b = iArr[0];
-        vq0Var.c = iArr[1];
-        vq0Var.d = bk0Var.i0;
+        wq0 wq0Var = new wq0();
+        wq0Var.b = iArr[0];
+        wq0Var.c = iArr[1];
+        wq0Var.d = bk0Var.i0;
         ImageReceiver imageReceiver = zj0Var.c.getImageReceiver();
-        vq0Var.a = imageReceiver;
-        vq0Var.e = imageReceiver.p();
-        return vq0Var;
+        wq0Var.a = imageReceiver;
+        wq0Var.e = imageReceiver.p();
+        return wq0Var;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.tq0
+    @Override // org.telegram.ui.nq0, org.telegram.ui.uq0
     public final String b0() {
         return this.a.S0 == 1 ? org.telegram.messenger.hd.a0("PassportDeleteSelfieAlert", null, 2131747580, new Object[0]) : org.telegram.messenger.hd.a0("PassportDeleteScanAlert", null, 2131747582, new Object[0]);
     }

@@ -21,9 +21,9 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class tu extends fu {
     public final jv W;
@@ -39,7 +39,7 @@ public final class tu extends fu {
     public int g0;
     public final Paint h0;
     public final Path i0;
-    public final ly0 j0;
+    public final my0 j0;
     public Drawable k0;
     public int l0;
     public boolean m0;
@@ -116,7 +116,7 @@ public final class tu extends fu {
         this.W = jvVar;
         this.X = new jv[]{jvVar};
         if (!TextUtils.isEmpty(this.p0)) {
-            this.j0 = new ly0(this.p0, Math.max(8, iz.W0 - 4), null);
+            this.j0 = new my0(this.p0, Math.max(8, iz.W0 - 4), null);
         }
         int L = g0.L(28.0f) + g0.L(14.0f) + (this.j0 != null ? g0.L(12.0f) + ((int) Math.ceil(r4.c)) : 0);
         int D = k5.D(14.0f, 2, Math.max(0, jvVar.h - jvVar.f));
@@ -366,9 +366,9 @@ public final class tu extends fu {
         Canvas canvas2;
         kv kvVar = this.a;
         int r12 = org.telegram.ui.ActionBar.k6.r1(0.5f, org.telegram.ui.ActionBar.k6.w0(kvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, kvVar.D));
-        ly0 ly0Var = this.j0;
-        if (ly0Var != null) {
-            ly0Var.p = m0() - g0.L(54.0f);
+        my0 my0Var = this.j0;
+        if (my0Var != null) {
+            my0Var.p = m0() - g0.L(54.0f);
             canvas2 = canvas;
             this.j0.c(g0.L(14.0f), g0.L(17.0f), 1.0f, r12, canvas2);
         } else {

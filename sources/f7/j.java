@@ -3,7 +3,7 @@ package f7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import c8.wb;
+import c8.xb;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import q7.b1;
 import q7.c1;
 import q7.e1;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new t0(5);
@@ -206,11 +206,11 @@ public final class j extends l {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = wb.r(parcel, 20293);
-        wb.c(parcel, 2, this.a.p());
-        wb.c(parcel, 3, this.b.p());
-        wb.c(parcel, 4, this.c.p());
-        wb.m(parcel, 5, this.d);
-        wb.s(parcel, r10);
+        int r10 = xb.r(parcel, 20293);
+        xb.c(parcel, 2, this.a.p());
+        xb.c(parcel, 3, this.b.p());
+        xb.c(parcel, 4, this.c.p());
+        xb.m(parcel, 5, this.d);
+        xb.s(parcel, r10);
     }
 }

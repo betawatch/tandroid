@@ -53,15 +53,15 @@ import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.er0;
+import org.telegram.ui.fr0;
 import u2.x;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessContinuation, u9.d, h51, l1, q2.q, r0.q, u2.k, y2.m, s0 {
+public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessContinuation, u9.d, m51, l1, q2.q, r0.q, u2.k, y2.m, s0 {
     public static final /* synthetic */ b b = new b(14);
     public final /* synthetic */ int a;
 
@@ -272,7 +272,7 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h51
+    @Override // org.telegram.ui.Components.m51
     public void F(boolean z9, float[] fArr) {
         k6.A0().e(z9, fArr);
     }
@@ -328,7 +328,7 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ er0 N1() {
+    public /* synthetic */ fr0 N1() {
         return null;
     }
 
@@ -621,7 +621,7 @@ public final class b implements a4.h, b3.l, ca.d, eg.a, f3.q, bi, ia.d, SuccessC
         return -1L;
     }
 
-    @Override // org.telegram.ui.Components.h51
+    @Override // org.telegram.ui.Components.m51
     public boolean s() {
         return k6.A0().i != null;
     }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        tq0 tq0Var;
+        uq0 uq0Var;
         float f10;
         float f11;
         float f12;
         int i7;
         TLRPC.Message message;
-        org.telegram.ui.Components.k51 k51Var;
+        org.telegram.ui.Components.p51 p51Var;
         int i10 = this.a;
         float f13 = 0.0f;
         String str = null;
@@ -64,7 +64,7 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                 break;
             case 1:
                 Drawable[] drawableArr = PhotoViewer.Y8;
-                if (!photoViewer.F1() && (tq0Var = photoViewer.d) != null && tq0Var.c() != null && !photoViewer.d.c().isEmpty()) {
+                if (!photoViewer.F1() && (uq0Var = photoViewer.d) != null && uq0Var.c() != null && !photoViewer.d.c().isEmpty()) {
                     photoViewer.m3(!photoViewer.K, true);
                     break;
                 }
@@ -398,25 +398,25 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                     if (ijVar5 != null && (message = ijVar5.k) != null && message.media != null && ijVar5.E2(true)) {
                         int i19 = ijVar5.I1;
                         TLRPC.MessageMedia messageMedia = ijVar5.k.media;
-                        ArrayList X = org.telegram.ui.Components.n51.X(i19, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        ArrayList X = org.telegram.ui.Components.t51.X(i19, messageMedia.document, messageMedia.alt_documents, 0, true);
                         linearLayout.removeAllViews();
                         int i20 = 0;
                         while (i20 < X.size()) {
-                            org.telegram.ui.Components.k51 k51Var2 = (org.telegram.ui.Components.k51) X.get(i20);
-                            org.telegram.ui.Components.m51 a10 = k51Var2.a();
+                            org.telegram.ui.Components.p51 p51Var2 = (org.telegram.ui.Components.p51) X.get(i20);
+                            org.telegram.ui.Components.r51 a10 = p51Var2.a();
                             StringBuilder sb2 = new StringBuilder();
                             Object[] objArr = new Object[i12];
-                            objArr[0] = Integer.valueOf(k51Var2.b());
+                            objArr[0] = Integer.valueOf(p51Var2.b());
                             sb2.append(org.telegram.messenger.hd.a0(str, str, 2131746450, objArr));
-                            sb2.append(k51Var2.a ? " (" + org.telegram.messenger.hd.M0(2131746449, str) + ")" : "");
+                            sb2.append(p51Var2.a ? " (" + org.telegram.messenger.hd.M0(2131746449, str) + ")" : "");
                             String sb3 = sb2.toString();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (a10.b()) {
-                                k51Var = k51Var2;
+                                p51Var = p51Var2;
                                 spannableStringBuilder.append(org.telegram.messenger.g0.i0(a10.g.size, false, false));
                                 spannableStringBuilder.append(org.telegram.messenger.hd.M0(2131746453, str));
                             } else {
-                                k51Var = k51Var2;
+                                p51Var = p51Var2;
                                 SpannableString spannableString = new SpannableString("s ");
                                 org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.msg_mini_arrow_mediabold, 0);
                                 wpVar.w = 90.0f;
@@ -432,7 +432,7 @@ public final /* synthetic */ class rn0 implements View.OnClickListener {
                             c10.setSubtext(spannableStringBuilder);
                             c10.d(-328966, -328966);
                             c10.b.setPadding(0, 0, 0, 0);
-                            c10.setOnClickListener(new z(sqVar, ijVar5, k51Var, 9));
+                            c10.setOnClickListener(new z(sqVar, ijVar5, p51Var, 9));
                             c10.setSelectorColor(268435455);
                             i20++;
                             f13 = 0.0f;

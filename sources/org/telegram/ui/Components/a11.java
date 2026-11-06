@@ -1,49 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final class a11 extends q31 {
-    public static final /* synthetic */ int b = 0;
+public final class a11 extends v4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m11 b;
 
-    static {
-        q31.h(new a11());
+    public /* synthetic */ a11(m11 m11Var, int i7) {
+        this.a = i7;
+        this.b = m11Var;
     }
 
-    @Override // org.telegram.ui.Components.q31
-    public final void b(View view, r31 r31Var, boolean z9, f41 f41Var, k41 k41Var) {
-        b11 b11Var = (b11) view;
-        boolean z10 = false;
-        if (r31Var.r) {
-            b11Var.f();
-        } else {
-            Object obj = r31Var.G;
-            if (obj == null) {
-                if (r31Var.d == -2) {
-                    b11Var.c();
-                } else {
-                    b11Var.d((r31Var.y & 1) != 0, r31Var.q, r31Var.e);
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                m11 m11Var = this.b;
+                if (m11Var.l()) {
+                    m11Var.m();
+                    break;
                 }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (r31Var.I) {
-                    b11Var.b(r31Var.x, (TLRPC.TL_forumTopic) obj, r31Var.e);
-                } else {
-                    b11Var.g(r31Var.x, (TLRPC.TL_forumTopic) obj, r31Var.e);
+                break;
+            default:
+                m11 m11Var2 = this.b;
+                if (m11Var2.l()) {
+                    m11Var2.m();
+                    break;
                 }
-            }
+                break;
         }
-        b11Var.L = c8.yc.a(r31Var.y, 8) ? org.telegram.messenger.g0.L(10.0f) : 0;
-        if (k41Var != null && k41Var.j3 && b11Var.s) {
-            z10 = true;
-        }
-        b11Var.setReorder(z10);
-    }
-
-    @Override // org.telegram.ui.Components.q31
-    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new b11(i7, context, f6Var);
     }
 }

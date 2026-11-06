@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.r2;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i0 extends na {
     public static final int c2 = -1;
@@ -41,7 +41,7 @@ public final class i0 extends na {
     public final FrameLayout T1;
     public final fi.d U1;
     public final fi.d V1;
-    public f41 W1;
+    public l41 W1;
     public boolean X1;
     public Boolean Y1;
     public int Z1;
@@ -132,9 +132,9 @@ public final class i0 extends na {
         kVar.o(xq.h);
         kVar.n(350L);
         this.k1.setItemAnimator(kVar);
-        f41 f41Var = this.W1;
-        if (f41Var != null) {
-            f41Var.O(false);
+        l41 l41Var = this.W1;
+        if (l41Var != null) {
+            l41Var.O(false);
         }
     }
 
@@ -158,10 +158,10 @@ public final class i0 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new hi.u1(this, 7), this.I0);
-        this.W1 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new hi.u1(this, 7), this.I0);
+        this.W1 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na

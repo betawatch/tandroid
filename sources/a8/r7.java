@@ -60,9 +60,9 @@ import org.telegram.messenger.hd;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.hi0;
 import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.SaveToGallerySettingsActivity;
@@ -73,7 +73,7 @@ import org.telegram.ui.mm0;
 import org.telegram.ui.uc1;
 import org.telegram.ui.zy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class r7 implements hi0, ib.b, c4.d, te.b, org.telegram.messenger.za, lm0, q5.b, u9.b {
     public final /* synthetic */ int a;
@@ -1067,7 +1067,7 @@ public final class r7 implements hi0, ib.b, c4.d, te.b, org.telegram.messenger.z
     */
     public void t(int i7, int i10, Intent intent) {
         FileOutputStream fileOutputStream;
-        u61 u61Var = (u61) this.e;
+        a71 a71Var = (a71) this.e;
         if (i10 == -1) {
             FileOutputStream fileOutputStream2 = null;
             if (i7 != 10) {
@@ -1079,7 +1079,7 @@ public final class r7 implements hi0, ib.b, c4.d, te.b, org.telegram.messenger.z
                     Point c12 = org.telegram.messenger.g0.c1();
                     Bitmap K = gc.K(null, intent.getData(), (float) c12.x, (float) c12.y, true);
                     K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream((File) this.f));
-                    u61Var.b((File) this.f, K, false);
+                    a71Var.b((File) this.f, K, false);
                     return;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
@@ -1095,7 +1095,7 @@ public final class r7 implements hi0, ib.b, c4.d, te.b, org.telegram.messenger.z
                 try {
                     try {
                         K2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                        u61Var.b((File) this.f, K2, false);
+                        a71Var.b((File) this.f, K2, false);
                     } catch (Exception e11) {
                         e = e11;
                         org.telegram.messenger.a8.g(e, true);
@@ -1304,11 +1304,11 @@ public final class r7 implements hi0, ib.b, c4.d, te.b, org.telegram.messenger.z
     public /* synthetic */ void F(float f10, int i7) {
     }
 
-    public r7(Activity activity, WallpapersListActivity wallpapersListActivity, u61 u61Var) {
+    public r7(Activity activity, WallpapersListActivity wallpapersListActivity, a71 a71Var) {
         this.a = 16;
         this.c = activity;
         this.d = wallpapersListActivity;
-        this.e = u61Var;
+        this.e = a71Var;
     }
 
     public r7(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {

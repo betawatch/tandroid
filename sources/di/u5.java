@@ -13,7 +13,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ez;
-import org.telegram.ui.Components.ky0;
+import org.telegram.ui.Components.ly0;
 import org.telegram.ui.Components.tv;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ef0;
@@ -24,7 +24,7 @@ import org.telegram.ui.l21;
 import org.telegram.ui.la;
 import org.telegram.ui.xj0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class u5 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.m0(22));
                 break;
             case 22:
-                int i14 = ky0.e;
+                int i14 = ly0.e;
                 break;
             case 23:
                 int i15 = gd0.v0;

@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class g0 extends na implements org.telegram.messenger.ls {
     public String A2;
@@ -33,7 +33,7 @@ public final class g0 extends na implements org.telegram.messenger.ls {
     public boolean D2;
     public String E2;
     public zg0 F2;
-    public f41 G2;
+    public l41 G2;
     public boolean H2;
     public int I2;
     public boolean J2;
@@ -145,7 +145,7 @@ public final class g0 extends na implements org.telegram.messenger.ls {
         f0Var2.n = new fi.u4(this, f6Var, context, 1);
         x1();
         f0Var2.c(-1);
-        String M0 = e21.M0();
+        String M0 = k21.M0();
         this.k2 = M0;
         if (M0 == null) {
             this.k2 = org.telegram.messenger.f10.j();
@@ -436,10 +436,10 @@ public final class g0 extends na implements org.telegram.messenger.ls {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(pj0Var, getContext(), this.a, 0, true, new d(this, 0), this.I0);
-        this.G2 = f41Var;
-        f41Var.r = false;
-        return f41Var;
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 0), this.I0);
+        this.G2 = l41Var;
+        l41Var.r = false;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -583,12 +583,12 @@ public final class g0 extends na implements org.telegram.messenger.ls {
         return this.Q1 != null;
     }
 
-    public final r31 o1(int i7, TL_iv.RichMessage richMessage, boolean z9) {
+    public final x31 o1(int i7, TL_iv.RichMessage richMessage, boolean z9) {
         if (richMessage == null) {
             richMessage = this.Q1;
         }
         int i10 = org.telegram.messenger.zt.b;
-        r31 K = r31.K(org.telegram.messenger.zt.class);
+        x31 K = x31.K(org.telegram.messenger.zt.class);
         K.G = richMessage;
         K.d = i7;
         K.e = z9;
@@ -832,7 +832,7 @@ public final class g0 extends na implements org.telegram.messenger.ls {
         int i10 = 0;
         if (com.google.android.recaptcha.internal.a.u(editable)) {
             spannableStringBuilder = new SpannableStringBuilder(editable.toString());
-            Class[] clsArr = {uy0.class, ni.j.class, eu0.class, y31.class, x31.class, u31.class, v31.class, zz.class, t31.class, s31.class, r5.class};
+            Class[] clsArr = {vy0.class, ni.j.class, eu0.class, e41.class, d41.class, a41.class, b41.class, zz.class, z31.class, y31.class, r5.class};
             for (int i11 = 0; i11 < 11; i11++) {
                 for (Object obj : editable.getSpans(0, editable.length(), clsArr[i11])) {
                     spannableStringBuilder.setSpan(obj, editable.getSpanStart(obj), editable.getSpanEnd(obj), 33);
@@ -965,7 +965,7 @@ public final class g0 extends na implements org.telegram.messenger.ls {
                 break;
             }
             view = pj0Var.getChildAt(i7);
-            r31 G = this.G2.G(RecyclerView.R(view) - 1);
+            x31 G = this.G2.G(RecyclerView.R(view) - 1);
             if (G != null && G.c == this.p2) {
                 break;
             } else {

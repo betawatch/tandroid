@@ -11,9 +11,9 @@ import li.t3;
 import org.telegram.messenger.oa;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.x4;
-import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.up0;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.ze0;
@@ -27,7 +27,7 @@ import org.telegram.ui.ww;
 import org.telegram.ui.zt;
 import zh.a2;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class o0 extends v4.s0 {
     public final /* synthetic */ int a;
@@ -139,10 +139,10 @@ public final class o0 extends v4.s0 {
                 }
                 break;
             case 2:
-                k41 k41Var = ((td) this.c).a;
-                if (k41Var.canScrollVertically(1)) {
-                    for (int i13 = 0; i13 < k41Var.getChildCount(); i13++) {
-                        if (!(k41Var.getChildAt(i13) instanceof lz)) {
+                q41 q41Var = ((td) this.c).a;
+                if (q41Var.canScrollVertically(1)) {
+                    for (int i13 = 0; i13 < q41Var.getChildCount(); i13++) {
+                        if (!(q41Var.getChildAt(i13) instanceof lz)) {
                         }
                     }
                     break;
@@ -177,17 +177,17 @@ public final class o0 extends v4.s0 {
             case 4:
                 ww wwVar = (ww) this.b;
                 ze0 ze0Var = (ze0) this.c;
-                k41 k41Var2 = ze0Var.c;
+                q41 q41Var2 = ze0Var.c;
                 if (!(TextUtils.isEmpty(ze0Var.x) ? ze0Var.e : ze0Var.n).isEmpty()) {
-                    if (k41Var2.canScrollVertically(1)) {
-                        for (int i16 = 0; i16 < k41Var2.getChildCount(); i16++) {
-                            if (!(k41Var2.getChildAt(i16) instanceof lz)) {
+                    if (q41Var2.canScrollVertically(1)) {
+                        for (int i16 = 0; i16 < q41Var2.getChildCount(); i16++) {
+                            if (!(q41Var2.getChildAt(i16) instanceof lz)) {
                             }
                         }
                     }
                     ze0Var.a(false);
                 }
-                if (k41Var2.I1 && !ze0Var.Q && wwVar.getParentActivity() != null) {
+                if (q41Var2.I1 && !ze0Var.Q && wwVar.getParentActivity() != null) {
                     org.telegram.messenger.g0.v1(wwVar.getParentActivity().getCurrentFocus());
                     break;
                 }

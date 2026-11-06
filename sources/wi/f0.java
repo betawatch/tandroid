@@ -5,14 +5,14 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.j20;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.c61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.s40;
 import org.telegram.ui.fe;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class f0 implements Runnable {
     public final void run() {
         File file;
         qj qjVar;
-        c61 c61Var;
+        h61 h61Var;
         switch (this.a) {
             case 0:
                 t0 t0Var = this.b;
@@ -96,11 +96,11 @@ public final /* synthetic */ class f0 implements Runnable {
                             float f10 = j12 / max;
                             float f11 = j13 / max;
                             s40 s40Var = n40Var5.b;
-                            if (s40Var != null && (qjVar = ((fe) s40Var).b.Z) != null && (c61Var = qjVar.f1) != null) {
+                            if (s40Var != null && (qjVar = ((fe) s40Var).b.Z) != null && (h61Var = qjVar.f1) != null) {
                                 float max2 = Math.max(0.0f, Math.min(1.0f, f10));
-                                c61Var.b = max2;
-                                c61Var.c = Math.max(max2, Math.min(1.0f, f11));
-                                c61Var.invalidate();
+                                h61Var.b = max2;
+                                h61Var.c = Math.max(max2, Math.min(1.0f, f11));
+                                h61Var.invalidate();
                             }
                         }
                     }

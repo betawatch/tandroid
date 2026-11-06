@@ -81,7 +81,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements org.telegram.messenger.ls, qt0, vv0, mw0, te.b, org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int s5 = 0;
@@ -272,7 +272,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     public final Matrix e5;
     public String f;
     public Runnable f0;
-    public c61 f1;
+    public h61 f1;
     public int f2;
     public boolean f3;
     public long f4;
@@ -397,7 +397,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+    /* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
     public class RecordCircle extends View {
         public int D;
         public final float E;
@@ -998,7 +998,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         }
     }
 
-    /* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+    /* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
     public class SlideTextView extends View {
         public long D;
         public final int E;
@@ -2100,68 +2100,68 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                             if (messageEntity.offset + messageEntity.length < spannableStringBuilder.length() && spannableStringBuilder.charAt(messageEntity.offset + messageEntity.length) == ' ') {
                                 messageEntity.length++;
                             }
-                            y31 y31Var = new y31("" + ((TLRPC.TL_inputMessageEntityMentionName) messageEntity).user_id.user_id, 3, null);
+                            e41 e41Var = new e41("" + ((TLRPC.TL_inputMessageEntityMentionName) messageEntity).user_id.user_id, 3, null);
                             int i10 = messageEntity.offset;
-                            spannableStringBuilder.setSpan(y31Var, i10, messageEntity.length + i10, 33);
+                            spannableStringBuilder.setSpan(e41Var, i10, messageEntity.length + i10, 33);
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
                             if (messageEntity.offset + messageEntity.length < spannableStringBuilder.length() && spannableStringBuilder.charAt(messageEntity.offset + messageEntity.length) == ' ') {
                                 messageEntity.length++;
                             }
-                            y31 y31Var2 = new y31("" + ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id, 3, null);
+                            e41 e41Var2 = new e41("" + ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id, 3, null);
                             int i11 = messageEntity.offset;
-                            spannableStringBuilder.setSpan(y31Var2, i11, messageEntity.length + i11, 33);
+                            spannableStringBuilder.setSpan(e41Var2, i11, messageEntity.length + i11, 33);
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityCode) {
-                            ty0 ty0Var = new ty0();
-                            ty0Var.a |= 4;
-                            uy0 uy0Var = new uy0(ty0Var, 0);
+                            uy0 uy0Var = new uy0();
+                            uy0Var.a |= 4;
+                            vy0 vy0Var = new vy0(uy0Var, 0);
                             int i12 = messageEntity.offset;
-                            org.telegram.messenger.ui.f(uy0Var, i12, messageEntity.length + i12, spannableStringBuilder, true);
+                            org.telegram.messenger.ui.f(vy0Var, i12, messageEntity.length + i12, spannableStringBuilder, true);
                         } else if (!(messageEntity instanceof TLRPC.TL_messageEntityPre)) {
                             if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
-                                ty0 ty0Var2 = new ty0();
-                                ty0Var2.a |= 1;
-                                uy0 uy0Var2 = new uy0(ty0Var2, 0);
+                                uy0 uy0Var2 = new uy0();
+                                uy0Var2.a |= 1;
+                                vy0 vy0Var2 = new vy0(uy0Var2, 0);
                                 int i13 = messageEntity.offset;
-                                org.telegram.messenger.ui.f(uy0Var2, i13, messageEntity.length + i13, spannableStringBuilder, true);
+                                org.telegram.messenger.ui.f(vy0Var2, i13, messageEntity.length + i13, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
-                                ty0 ty0Var3 = new ty0();
-                                ty0Var3.a |= 2;
-                                uy0 uy0Var3 = new uy0(ty0Var3, 0);
+                                uy0 uy0Var3 = new uy0();
+                                uy0Var3.a |= 2;
+                                vy0 vy0Var3 = new vy0(uy0Var3, 0);
                                 int i14 = messageEntity.offset;
-                                org.telegram.messenger.ui.f(uy0Var3, i14, messageEntity.length + i14, spannableStringBuilder, true);
+                                org.telegram.messenger.ui.f(vy0Var3, i14, messageEntity.length + i14, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
-                                ty0 ty0Var4 = new ty0();
-                                ty0Var4.a |= 8;
-                                uy0 uy0Var4 = new uy0(ty0Var4, 0);
+                                uy0 uy0Var4 = new uy0();
+                                uy0Var4.a |= 8;
+                                vy0 vy0Var4 = new vy0(uy0Var4, 0);
                                 int i15 = messageEntity.offset;
-                                org.telegram.messenger.ui.f(uy0Var4, i15, messageEntity.length + i15, spannableStringBuilder, true);
+                                org.telegram.messenger.ui.f(vy0Var4, i15, messageEntity.length + i15, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
-                                ty0 ty0Var5 = new ty0();
-                                ty0Var5.a |= 16;
-                                uy0 uy0Var5 = new uy0(ty0Var5, 0);
+                                uy0 uy0Var5 = new uy0();
+                                uy0Var5.a |= 16;
+                                vy0 vy0Var5 = new vy0(uy0Var5, 0);
                                 int i16 = messageEntity.offset;
-                                org.telegram.messenger.ui.f(uy0Var5, i16, messageEntity.length + i16, spannableStringBuilder, true);
+                                org.telegram.messenger.ui.f(vy0Var5, i16, messageEntity.length + i16, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-                                x31 x31Var = new x31(messageEntity.url, null);
+                                d41 d41Var = new d41(messageEntity.url, null);
                                 int i17 = messageEntity.offset;
-                                spannableStringBuilder.setSpan(x31Var, i17, messageEntity.length + i17, 33);
+                                spannableStringBuilder.setSpan(d41Var, i17, messageEntity.length + i17, 33);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate) {
-                                ty0 ty0Var6 = new ty0();
-                                ty0Var6.a |= 128;
+                                uy0 uy0Var6 = new uy0();
+                                uy0Var6.a |= 128;
                                 int i18 = messageEntity.offset;
-                                ty0Var6.b = i18;
-                                ty0Var6.c = i18 + messageEntity.length;
-                                ty0Var6.d = messageEntity;
+                                uy0Var6.b = i18;
+                                uy0Var6.c = i18 + messageEntity.length;
+                                uy0Var6.d = messageEntity;
                                 int i19 = messageEntity.offset;
-                                zz zzVar = new zz(spannableStringBuilder.subSequence(i19, messageEntity.length + i19).toString(), ty0Var6, (TLRPC.TL_messageEntityFormattedDate) messageEntity);
+                                zz zzVar = new zz(spannableStringBuilder.subSequence(i19, messageEntity.length + i19).toString(), uy0Var6, (TLRPC.TL_messageEntityFormattedDate) messageEntity);
                                 int i20 = messageEntity.offset;
                                 spannableStringBuilder.setSpan(zzVar, i20, messageEntity.length + i20, 33);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
-                                ty0 ty0Var7 = new ty0();
-                                ty0Var7.a |= 256;
-                                uy0 uy0Var6 = new uy0(ty0Var7, 0);
+                                uy0 uy0Var7 = new uy0();
+                                uy0Var7.a |= 256;
+                                vy0 vy0Var6 = new vy0(uy0Var7, 0);
                                 int i21 = messageEntity.offset;
-                                org.telegram.messenger.ui.f(uy0Var6, i21, messageEntity.length + i21, spannableStringBuilder, true);
+                                org.telegram.messenger.ui.f(vy0Var6, i21, messageEntity.length + i21, spannableStringBuilder, true);
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
                                 TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = (TLRPC.TL_messageEntityCustomEmoji) messageEntity;
                                 r5 r5Var = tL_messageEntityCustomEmoji.document != null ? new r5(tL_messageEntityCustomEmoji.document, fontMetricsInt) : new r5(tL_messageEntityCustomEmoji.document_id, fontMetricsInt);
@@ -2319,9 +2319,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         ji0 ji0Var = this.h1;
         if (ji0Var != null) {
             ji0Var.Q = true;
-            n51 n51Var = ji0Var.n;
-            if (n51Var != null) {
-                n51Var.u0(false);
+            t51 t51Var = ji0Var.n;
+            if (t51Var != null) {
+                t51Var.u0(false);
                 ji0Var.n.m0();
                 ji0Var.n = null;
             }
@@ -4994,7 +4994,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ch0, Float>) property5, 0.0f));
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ch0, Float>) property6, 0.0f));
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(this.g1, (Property<ch0, Float>) property4, 0.0f));
-                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<c61, Float>) property5, 0.0f));
+                animatorSet4.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<h61, Float>) property5, 0.0f));
             }
             if (this.J1 != null) {
                 animatorSet4.playTogether(m(org.telegram.messenger.g0.L(30.0f)), ObjectAnimator.ofFloat(this.J1, (Property<ie, Float>) property5, 0.0f));
@@ -5190,9 +5190,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                         z13 = true;
                         f12 = 1.0f;
                     } else {
-                        c61 c61Var = this.f1;
-                        if (c61Var != null) {
-                            c61Var.setVisibility(8);
+                        h61 h61Var = this.f1;
+                        if (h61Var != null) {
+                            h61Var.setVisibility(8);
                             w0();
                         }
                         ud udVar2 = this.e1;
@@ -5294,7 +5294,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                             this.f1.setAlpha(0.0f);
                             c11 = 1;
                             c12 = 0;
-                            animatorSet11.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<c61, Float>) property5, 1.0f));
+                            animatorSet11.playTogether(ObjectAnimator.ofFloat(this.f1, (Property<h61, Float>) property5, 1.0f));
                             animatorSet11.setDuration(150L);
                             animatorSet11.setStartDelay(430L);
                         } else {
@@ -6184,26 +6184,26 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         org.telegram.ui.ActionBar.r6.R(ch0Var2, h02, null, N, f6Var);
         this.e1.addView(this.g1, c8.ha.c(44.0f, 44));
         this.g1.setOnClickListener(new cd(this, 6));
-        c61 c61Var = new c61(getContext());
-        this.f1 = c61Var;
-        c61Var.setVisibility(4);
-        c61 c61Var2 = this.f1;
-        c61Var2.S = !this.y4;
-        c61Var2.setRoundFrames(true);
+        h61 h61Var = new h61(getContext());
+        this.f1 = h61Var;
+        h61Var.setVisibility(4);
+        h61 h61Var2 = this.f1;
+        h61Var2.S = !this.y4;
+        h61Var2.setRoundFrames(true);
         this.f1.setDelegate(new me(this));
         this.e1.addView(this.f1, c8.ha.d(-1, -1.0f, 19, 56.0f, 0.0f, 8.0f, 0.0f));
         Context context = getContext();
-        a61 a61Var = new a61(context);
+        f61 f61Var = new f61(context);
         TextPaint textPaint = new TextPaint(1);
-        a61Var.d = textPaint;
-        a61Var.e = -1L;
+        f61Var.d = textPaint;
+        f61Var.e = -1L;
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        a61Var.b = context.getDrawable(R.drawable.tooltip_arrow);
-        a61Var.a = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(5.0f), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eg, false));
-        a61Var.b();
-        a61Var.setTime(0);
-        this.f1.setTimeHintView(a61Var);
-        this.m1.addView(a61Var, c8.ha.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 52.0f));
+        f61Var.b = context.getDrawable(R.drawable.tooltip_arrow);
+        f61Var.a = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(5.0f), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eg, false));
+        f61Var.b();
+        f61Var.setTime(0);
+        this.f1.setTimeHintView(f61Var);
+        this.m1.addView(f61Var, c8.ha.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 52.0f));
         ji0 ji0Var = new ji0(getContext(), f6Var);
         this.h1 = ji0Var;
         this.e1.addView(ji0Var, c8.ha.d(-1, 32.0f, 19, 44.0f, 0.0f, 4.0f, 0.0f));
@@ -8350,9 +8350,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             this.c3 = str;
             ArrayList<Bitmap> arrayList2 = (ArrayList) objArr[3];
             this.i1 = j20Var.r;
-            c61 c61Var = this.f1;
-            if (c61Var != null) {
-                c61Var.setVideoPath(str);
+            h61 h61Var = this.f1;
+            if (h61Var != null) {
+                h61Var.setVideoPath(str);
                 this.f1.setKeyframes(arrayList2);
                 this.f1.setVisibility(0);
                 this.f1.setMinProgressDiff(1000.0f / this.e3.r);
@@ -8450,9 +8450,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             ji0Var.h.t(org.telegram.messenger.g0.g0((int) Math.round(Math.max(1.0d, d)), false, false), false, true);
             ji0Var.f.a(false, false);
             if (ji0Var.n == null) {
-                n51 n51Var = new n51();
-                ji0Var.n = n51Var;
-                n51Var.J = new uy(ji0Var, 3);
+                t51 t51Var = new t51();
+                ji0Var.n = t51Var;
+                t51Var.J = new uy(ji0Var, 3);
             }
             ji0Var.n.j0(Uri.fromFile(new File(str2)), "other");
             ji0Var.K = 0;
@@ -8900,7 +8900,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         return this.G1.getTranslationY();
     }
 
-    public y21 getTrendingStickersAlert() {
+    public e31 getTrendingStickersAlert() {
         return this.a3;
     }
 
@@ -9130,10 +9130,10 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             this.b3 = null;
             this.d3 = null;
             this.e3 = null;
-            c61 c61Var = this.f1;
+            h61 h61Var = this.f1;
             int i7 = 1;
-            if (c61Var != null) {
-                c61Var.a(true);
+            if (h61Var != null) {
+                h61Var.a(true);
             }
             ee eeVar = this.b1;
             if (eeVar != null) {
@@ -9203,8 +9203,8 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                 boolean z10 = this.c1;
                 Property property4 = View.TRANSLATION_X;
                 if (z10) {
-                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<c61, Float>) property3, 0.0f));
-                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<c61, Float>) property4, -org.telegram.messenger.g0.L(20.0f)));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<h61, Float>) property3, 0.0f));
+                    arrayList2.add(ObjectAnimator.ofFloat(this.f1, (Property<h61, Float>) property4, -org.telegram.messenger.g0.L(20.0f)));
                     arrayList2.add(ObjectAnimator.ofFloat(this.E0, tdVar, 0.0f));
                     ag agVar2 = this.O1;
                     if (agVar2 != null) {
@@ -9356,18 +9356,18 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         this.b3 = null;
         this.d3 = null;
         this.e3 = null;
-        c61 c61Var = this.f1;
-        if (c61Var != null) {
-            c61Var.a(true);
+        h61 h61Var = this.f1;
+        if (h61Var != null) {
+            h61Var.a(true);
         }
         ji0 ji0Var = this.h1;
         if (ji0Var != null) {
             ji0Var.setAlpha(1.0f);
             this.h1.setTranslationX(0.0f);
         }
-        c61 c61Var2 = this.f1;
-        if (c61Var2 != null) {
-            c61Var2.setAlpha(1.0f);
+        h61 h61Var2 = this.f1;
+        if (h61Var2 != null) {
+            h61Var2.setAlpha(1.0f);
             this.f1.setTranslationX(0.0f);
         }
         xe xeVar = this.E0;
@@ -9800,10 +9800,10 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             this.U0.t(false);
             n1(false, false, false, true);
         }
-        c61 c61Var = this.f1;
-        if (c61Var != null) {
-            ArrayList arrayList = c61Var.w;
-            if (c61Var.N.isEmpty()) {
+        h61 h61Var = this.f1;
+        if (h61Var != null) {
+            ArrayList arrayList = h61Var.w;
+            if (h61Var.N.isEmpty()) {
                 for (int i13 = 0; i13 < arrayList.size(); i13++) {
                     Bitmap bitmap = (Bitmap) arrayList.get(i13);
                     if (bitmap != null) {
@@ -9812,12 +9812,12 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                 }
             }
             arrayList.clear();
-            z51 z51Var = c61Var.x;
-            if (z51Var != null) {
-                z51Var.cancel(true);
-                c61Var.x = null;
+            e61 e61Var = h61Var.x;
+            if (e61Var != null) {
+                e61Var.cancel(true);
+                h61Var.x = null;
             }
-            c61Var.invalidate();
+            h61Var.invalidate();
         }
     }
 
@@ -10696,13 +10696,13 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         if (fgVar != null && (textPaint = fgVar.F) != null) {
             textPaint.setColor(fgVar.I.f0(org.telegram.ui.ActionBar.k6.bg));
         }
-        c61 c61Var = this.f1;
-        if (c61Var != null) {
-            c61Var.e.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.a7, false));
-            c61Var.L = 0;
-            a61 a61Var = c61Var.P;
-            if (a61Var != null) {
-                a61Var.b();
+        h61 h61Var = this.f1;
+        if (h61Var != null) {
+            h61Var.e.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.a7, false));
+            h61Var.L = 0;
+            f61 f61Var = h61Var.P;
+            if (f61Var != null) {
+                f61Var.b();
             }
         }
         NumberTextView numberTextView = this.b0;

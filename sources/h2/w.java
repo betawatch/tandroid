@@ -10,14 +10,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
-public final class w implements l51 {
+public final class w implements q51 {
     public static w f;
     public boolean a;
     public int b;
@@ -83,16 +83,16 @@ public final class w implements l51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
-    public void onError(n51 n51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
         a8.g(exc, true);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         int i10 = this.b;
         MediaController mediaController = (MediaController) this.e;
@@ -102,7 +102,7 @@ public final class w implements l51 {
         MediaController.f(mediaController, (ij) this.c, (int[]) this.d, this.a, z9, i7);
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         MediaController mediaController = (MediaController) this.e;
         if (mediaController.E0 != null) {
@@ -154,7 +154,7 @@ public final class w implements l51 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         MediaController mediaController = (MediaController) this.e;
         float f11 = i10 == 0 ? 1.0f : (i7 * f10) / i10;
@@ -165,7 +165,7 @@ public final class w implements l51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
         MediaController mediaController = (MediaController) this.e;
         j4 j4Var = mediaController.L0;
@@ -197,15 +197,15 @@ public final class w implements l51 {
         this.a = z9;
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.l51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

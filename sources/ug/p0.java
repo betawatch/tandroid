@@ -23,14 +23,14 @@ import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.cq;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.r81;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public class p0 extends FrameLayout implements z70 {
     public final org.telegram.ui.Components.voip.n D;
@@ -57,7 +57,7 @@ public class p0 extends FrameLayout implements z70 {
     public final int n;
     public boolean r;
     public float s;
-    public final p41 w;
+    public final v41 w;
     public ValueAnimator x;
     public final Path y;
 
@@ -80,12 +80,12 @@ public class p0 extends FrameLayout implements z70 {
             o0Var.a();
         }
         o0Var.c(str, z9, true);
-        p41 p41Var = this.w;
-        p41Var.setContentDescription(str);
+        v41 v41Var = this.w;
+        v41Var.setContentDescription(str);
         if (this.K) {
             return;
         }
-        p41Var.setOnClickListener(onClickListener);
+        v41Var.setOnClickListener(onClickListener);
     }
 
     public final void c(CharSequence charSequence, boolean z9, boolean z10) {
@@ -209,10 +209,10 @@ public class p0 extends FrameLayout implements z70 {
         o0Var.setAlpha(f10);
         o0Var.setTranslationY((1.0f - this.s) * org.telegram.messenger.g0.L(12.0f));
         float f11 = 1.0f - this.s;
-        p41 p41Var = this.w;
-        p41Var.setAlpha(f11);
-        p41Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
-        p41Var.setVisibility(this.s == 1.0f ? 4 : 0);
+        v41 v41Var = this.w;
+        v41Var.setAlpha(f11);
+        v41Var.setTranslationY((-org.telegram.messenger.g0.L(12.0f)) * this.s);
+        v41Var.setVisibility(this.s == 1.0f ? 4 : 0);
         o0Var.setVisibility(this.s == 0.0f ? 4 : 0);
         invalidate();
     }
@@ -303,14 +303,14 @@ public class p0 extends FrameLayout implements z70 {
         this.F = ch0Var;
         ch0Var.setColorFilter(-1);
         ch0Var.setVisibility(8);
-        p41 p41Var = new p41(10, context, this);
-        this.w = p41Var;
-        p41Var.addView(f10, ha.e(-2, -2, 17));
+        v41 v41Var = new v41(10, context, this);
+        this.w = v41Var;
+        v41Var.addView(f10, ha.e(-2, -2, 17));
         int o4 = i0.a.o(-1, 120);
-        p41Var.setBackground(k6.k0(i7, i7, i7, i7, 0, o4, o4));
+        v41Var.setBackground(k6.k0(i7, i7, i7, i7, 0, o4, o4));
         f10.addView(o0Var, ha.r(-2, -2, 16));
         f10.addView(ch0Var, ha.q(24, 24, 0.0f, 16, 4, 0, 0, 0));
-        addView(p41Var);
+        addView(v41Var);
         setOutlineProvider(bg.u0.b);
         setClipToOutline(true);
         ka.b(this, 0.02f, 1.2f);

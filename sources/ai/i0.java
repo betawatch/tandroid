@@ -51,11 +51,11 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.q4;
 import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Components.h41;
+import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final Paint D;
@@ -313,10 +313,10 @@ public final class i0 extends FrameLayout {
         return f10 >= rectF.left - ((float) org.telegram.messenger.g0.L(8.0f)) && f10 <= rectF.right + ((float) org.telegram.messenger.g0.L(8.0f)) && f11 >= rectF.top - ((float) org.telegram.messenger.g0.L(8.0f)) && f11 <= rectF.bottom + ((float) org.telegram.messenger.g0.L(8.0f));
     }
 
-    public static i0 k(h41 h41Var, View view, d20 d20Var, c20 c20Var, Runnable runnable) {
-        q4 parentLayout = h41Var.getParentLayout();
+    public static i0 k(n41 n41Var, View view, d20 d20Var, c20 c20Var, Runnable runnable) {
+        q4 parentLayout = n41Var.getParentLayout();
         FrameLayout overlayContainerView = parentLayout != null ? parentLayout.getOverlayContainerView() : null;
-        if (overlayContainerView == null || h41Var.getParentActivity() == null) {
+        if (overlayContainerView == null || n41Var.getParentActivity() == null) {
             return null;
         }
         overlayContainerView.getLocationInWindow(new int[2]);
@@ -325,10 +325,10 @@ public final class i0 extends FrameLayout {
         float width = (view.getWidth() / 2.0f) + (r1[0] - r2[0]);
         float height = (view.getHeight() / 2.0f) + (r1[1] - r2[1]);
         float f10 = min / 2.0f;
-        i0 i0Var = new i0(h41Var.getParentActivity(), new RectF(width - f10, height - f10, width + f10, height + f10), new RectF(), new wf.b(3, c20Var, runnable));
+        i0 i0Var = new i0(n41Var.getParentActivity(), new RectF(width - f10, height - f10, width + f10, height + f10), new RectF(), new wf.b(3, c20Var, runnable));
         i0Var.setPlainButton(true);
         i0Var.setAccept(d20Var);
-        i0Var.setOnGallery(new d0(h41Var, i0Var, d20Var, c20Var, 0));
+        i0Var.setOnGallery(new d0(n41Var, i0Var, d20Var, c20Var, 0));
         overlayContainerView.addView(i0Var, ha.c(-1.0f, -1));
         return i0Var;
     }

@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.r51;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes.dex */
 public final class z5 extends c1 implements ls {
     public static volatile z5[] T = new z5[4];
@@ -558,7 +558,7 @@ public final class z5 extends c1 implements ls {
         char c10;
         int e10;
         y5 n10;
-        m51 m51Var;
+        r51 r51Var;
         long q12;
         if (ijVar == null || (message = ijVar.k) == null) {
             return 0;
@@ -617,12 +617,12 @@ public final class z5 extends c1 implements ls {
                 long[] jArr = n10.b;
                 int i10 = iArr[c10];
                 long max = i7 == 2 ? Math.max(524288L, jArr[x(i7)]) : jArr[x(i7)];
-                m51Var = ijVar.e3;
-                if (m51Var != null) {
-                    q12 = m51Var.g.size;
+                r51Var = ijVar.e3;
+                if (r51Var != null) {
+                    q12 = r51Var.g.size;
                 } else {
-                    m51 m51Var2 = ijVar.f3;
-                    q12 = m51Var2 != null ? m51Var2.g.size : ij.q1(ij.o1(message));
+                    r51 r51Var2 = ijVar.f3;
+                    q12 = r51Var2 != null ? r51Var2.g.size : ij.q1(ij.o1(message));
                 }
                 return (M4 || !n10.c || q12 <= max || max <= 2097152) ? ((i7 != 1 || (q12 != 0 && q12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
             }
@@ -635,8 +635,8 @@ public final class z5 extends c1 implements ls {
             int i102 = iArr2[c10];
             if (i7 == 2) {
             }
-            m51Var = ijVar.e3;
-            if (m51Var != null) {
+            r51Var = ijVar.e3;
+            if (r51Var != null) {
             }
             if (M4) {
             }
@@ -650,8 +650,8 @@ public final class z5 extends c1 implements ls {
         int i1022 = iArr22[c10];
         if (i7 == 2) {
         }
-        m51Var = ijVar.e3;
-        if (m51Var != null) {
+        r51Var = ijVar.e3;
+        if (r51Var != null) {
         }
         if (M4) {
         }
@@ -860,7 +860,7 @@ public final class z5 extends c1 implements ls {
                 }
             }
             ((ij) arrayList.get(i7)).P = false;
-            w7.G(this.currentAccount).X(((ij) arrayList.get(i7)).F0(), arrayList.get(i7), 0, 0);
+            w7.G(this.currentAccount).W(((ij) arrayList.get(i7)).F0(), arrayList.get(i7), 0, 0);
             w7.G(this.currentAccount).f(((ij) arrayList.get(i7)).F0());
         }
         getNotificationCenter().k(qs.b5, new Object[0]);
@@ -1097,8 +1097,8 @@ public final class z5 extends c1 implements ls {
     public final void y() {
         ArrayList arrayList = this.G;
         for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (getFileLoader().T(((ij) arrayList.get(size)).S0())) {
-                getFileLoader().X(((ij) arrayList.get(size)).F0(), arrayList.get(size), 2, 0);
+            if (getFileLoader().S(((ij) arrayList.get(size)).S0())) {
+                getFileLoader().W(((ij) arrayList.get(size)).F0(), arrayList.get(size), 2, 0);
             }
         }
     }

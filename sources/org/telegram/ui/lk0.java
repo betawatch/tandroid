@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.t4, org.telegram.messenger.k9, org.telegram.messenger.ri, org.telegram.ui.Components.cj0, org.telegram.ui.Components.dj0, nr0, org.telegram.messenger.qr, fx0, OnSuccessListener {
+public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.t4, org.telegram.messenger.k9, org.telegram.messenger.ri, org.telegram.ui.Components.cj0, org.telegram.ui.Components.dj0, or0, org.telegram.messenger.qr, fx0, OnSuccessListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -37,23 +37,23 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
     public void L(int i7, int i10, boolean z9) {
         switch (this.a) {
             case 5:
-                gr0 gr0Var = (gr0) this.b;
+                hr0 hr0Var = (hr0) this.b;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) this.c;
-                or0 or0Var = gr0Var.a;
-                or0Var.e0.a(tL_messageMediaToDo);
-                or0Var.finishFragment();
+                pr0 pr0Var = hr0Var.a;
+                pr0Var.e0.a(tL_messageMediaToDo);
+                pr0Var.finishFragment();
                 break;
             default:
-                gr0 gr0Var2 = (gr0) this.b;
+                hr0 hr0Var2 = (hr0) this.b;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) this.c;
-                or0 or0Var2 = gr0Var2.a;
-                or0Var2.e0.a(tL_messageMediaPoll);
-                or0Var2.finishFragment();
+                pr0 pr0Var2 = hr0Var2.a;
+                pr0Var2.e0.a(tL_messageMediaPoll);
+                pr0Var2.finishFragment();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.nr0
+    @Override // org.telegram.ui.or0
     public void a(TLRPC.MessageMedia messageMedia) {
         f81 f81Var = (f81) this.b;
         an anVar = (an) this.c;
@@ -73,12 +73,12 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 org.telegram.messenger.w7.G(photoViewer.T);
-                return org.telegram.messenger.w7.K(tLObject, null, true, true);
+                return org.telegram.messenger.w7.J(tLObject, null, true, true);
             default:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
                 TLRPC.Message message = (TLRPC.Message) this.c;
                 org.telegram.messenger.w7.G(photoViewer2.T);
-                return org.telegram.messenger.w7.N(message, false, true);
+                return org.telegram.messenger.w7.M(message, false, true);
         }
     }
 
@@ -217,18 +217,18 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
                 org.telegram.ui.web.l.d0((org.telegram.ui.web.l) obj2, (HashSet) obj);
                 break;
             case 3:
-                PhotoViewer.u(((po0) obj2).b, (ArrayList) obj);
+                PhotoViewer.u(((qo0) obj2).b, (ArrayList) obj);
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) obj;
-                PhotoViewer photoViewer = ((po0) obj2).b;
-                tq0 tq0Var = photoViewer.d;
+                PhotoViewer photoViewer = ((qo0) obj2).b;
+                uq0 uq0Var = photoViewer.d;
                 ArrayList arrayList2 = photoViewer.Z6;
                 ArrayList arrayList3 = photoViewer.c7;
                 ArrayList arrayList4 = photoViewer.X6;
                 ArrayList arrayList5 = photoViewer.d7;
                 ArrayList arrayList6 = photoViewer.e7;
-                if (!tq0Var.N()) {
+                if (!uq0Var.N()) {
                     photoViewer.z0(false, false);
                     break;
                 } else if (!arrayList4.isEmpty()) {
@@ -362,12 +362,12 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
                 ProfileActivity.p0((ProfileActivity) obj2, (org.telegram.ui.Cells.c2[]) obj);
                 break;
             case 11:
-                qv0 qv0Var = (qv0) obj2;
+                rv0 rv0Var = (rv0) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
-                qv0Var.getClass();
+                rv0Var.getClass();
                 ArrayList arrayList10 = new ArrayList();
                 arrayList10.add(user);
-                ProfileActivity profileActivity = qv0Var.b;
+                ProfileActivity profileActivity = rv0Var.b;
                 RectF rectF = ProfileActivity.S6;
                 profileActivity.getContactsController().i(arrayList10, true);
                 if (user != null) {
@@ -474,10 +474,10 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
 
     @Override // org.telegram.messenger.k9
     public Object j(Object obj) {
-        ss0 ss0Var = (ss0) this.b;
-        rs0 rs0Var = (rs0) this.c;
-        PremiumPreviewFragment premiumPreviewFragment = ss0Var.d.n;
-        premiumPreviewFragment.n0.d(0, 0.0f, 0, rs0Var.getMeasuredWidth(), -rs0Var.getTier().h, premiumPreviewFragment.O);
+        ts0 ts0Var = (ts0) this.b;
+        ss0 ss0Var = (ss0) this.c;
+        PremiumPreviewFragment premiumPreviewFragment = ts0Var.d.n;
+        premiumPreviewFragment.n0.d(0, 0.0f, 0, ss0Var.getMeasuredWidth(), -ss0Var.getTier().h, premiumPreviewFragment.O);
         return premiumPreviewFragment.n0.f;
     }
 
@@ -517,9 +517,9 @@ public final /* synthetic */ class lk0 implements org.telegram.ui.ActionBar.r1, 
         ba1Var.a0();
     }
 
-    public /* synthetic */ lk0(gr0 gr0Var, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, ArrayList arrayList) {
+    public /* synthetic */ lk0(hr0 hr0Var, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, ArrayList arrayList) {
         this.a = 6;
-        this.b = gr0Var;
+        this.b = hr0Var;
         this.c = tL_messageMediaPoll;
     }
 

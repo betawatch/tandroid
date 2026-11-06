@@ -3,15 +3,15 @@ package oi;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import c8.td;
+import c8.ud;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.rc;
 import org.telegram.ui.Components.ms;
-import org.telegram.ui.Components.p61;
 import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public final class q {
     public static r F;
@@ -84,12 +84,12 @@ public final class q {
         pj0Var.j(new ai.b(this, 23));
     }
 
-    public final void c(p61 p61Var) {
-        if (p61Var == null) {
+    public final void c(v61 v61Var) {
+        if (v61Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = p61Var.R;
+        ArrayList arrayList = v61Var.R;
         if (arrayList.contains(gVar)) {
             return;
         }
@@ -165,7 +165,7 @@ public final class q {
                 ArrayList arrayList2 = cVar2.a;
                 if (!arrayList2.contains(hVar)) {
                     arrayList2.add(hVar);
-                    if (view.isAttachedToWindow() && (a10 = td.a(view, cVar2)) != null) {
+                    if (view.isAttachedToWindow() && (a10 = ud.a(view, cVar2)) != null) {
                         ((xe.b) a10.a.b).add(hVar);
                     }
                 }

@@ -2,13 +2,13 @@ package com.google.android.gms.internal.clearcut;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.vb;
+import c8.wb;
 
 /* loaded from: classes.dex */
 public final class d2 implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        int z9 = vb.z(parcel);
+        int z9 = wb.z(parcel);
         String str = null;
         String str2 = null;
         String str3 = null;
@@ -22,38 +22,38 @@ public final class d2 implements Parcelable.Creator {
             int readInt = parcel.readInt();
             switch ((char) readInt) {
                 case 2:
-                    str = vb.h(parcel, readInt);
+                    str = wb.h(parcel, readInt);
                     break;
                 case 3:
-                    i7 = vb.u(parcel, readInt);
+                    i7 = wb.u(parcel, readInt);
                     break;
                 case 4:
-                    i10 = vb.u(parcel, readInt);
+                    i10 = wb.u(parcel, readInt);
                     break;
                 case 5:
-                    str2 = vb.h(parcel, readInt);
+                    str2 = wb.h(parcel, readInt);
                     break;
                 case 6:
-                    str3 = vb.h(parcel, readInt);
+                    str3 = wb.h(parcel, readInt);
                     break;
                 case 7:
-                    z11 = vb.n(parcel, readInt);
+                    z11 = wb.n(parcel, readInt);
                     break;
                 case '\b':
-                    str4 = vb.h(parcel, readInt);
+                    str4 = wb.h(parcel, readInt);
                     break;
                 case '\t':
-                    z10 = vb.n(parcel, readInt);
+                    z10 = wb.n(parcel, readInt);
                     break;
                 case '\n':
-                    i11 = vb.u(parcel, readInt);
+                    i11 = wb.u(parcel, readInt);
                     break;
                 default:
-                    vb.y(parcel, readInt);
+                    wb.y(parcel, readInt);
                     break;
             }
         }
-        vb.m(parcel, z9);
+        wb.m(parcel, z9);
         return new c2(str, i7, i10, str2, str3, z11, str4, z10, i11);
     }
 

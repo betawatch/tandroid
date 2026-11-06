@@ -39,7 +39,7 @@ import bi.g2;
 import bi.v3;
 import bi.w4;
 import c8.ha;
-import c8.na;
+import c8.qa;
 import di.c4;
 import di.i8;
 import di.o7;
@@ -102,20 +102,20 @@ import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l31;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.fo0;
-import org.telegram.ui.io0;
+import org.telegram.ui.go0;
+import org.telegram.ui.jo0;
 import org.telegram.ui.o9;
 import org.telegram.ui.r81;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes4.dex */
 public abstract class x0 extends FrameLayout implements ls, a6 {
     public static boolean Q0 = true;
@@ -155,7 +155,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public l31 V;
+    public r31 V;
     public Activity W;
     public u0 a;
     public boolean a0;
@@ -322,7 +322,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
         x0Var.getClass();
         for (String str : strArr) {
             if (x0Var.getContext().checkSelfPermission(str) != 0) {
-                x0Var.V = new l31(x0Var, aVar, strArr, 5);
+                x0Var.V = new r31(x0Var, aVar, strArr, 5);
                 Activity activity = x0Var.W;
                 if (activity != null) {
                     activity.requestPermissions(strArr, 4000);
@@ -427,7 +427,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
         if (u0Var == null) {
             return;
         }
-        qs.f(i7).d(new io0(u0Var, o7Var, str, jSONObject, 20));
+        qs.f(i7).d(new jo0(u0Var, o7Var, str, jSONObject, 20));
     }
 
     public final boolean D() {
@@ -1497,7 +1497,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                             }
                         }
                     });
-                    alertDialog$Builder2.h(hd.L0(2131752589), new fo0(16));
+                    alertDialog$Builder2.h(hd.L0(2131752589), new go0(16));
                     Y(4, alertDialog$Builder2.a(), new t(strArr, i19, u0Var2, o7Var, 0));
                     return;
                 case '\f':
@@ -2577,11 +2577,11 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     f10.addView(l9Var, ha.t(80, 80, 49, 0, 21, 0, 13));
                     int i7 = k6.G6;
                     Context context2 = context;
-                    TextView b10 = na.b(context2, 20.0f, i7, true, null);
+                    TextView b10 = qa.b(context2, 20.0f, i7, true, null);
                     b10.setText(hd.M0(2131752990, null));
                     b10.setGravity(17);
                     f10.addView(b10, ha.t(-1, -2, 7, 32, 0, 32, 10));
-                    TextView b11 = na.b(context2, 14.0f, i7, false, null);
+                    TextView b11 = qa.b(context2, 14.0f, i7, false, null);
                     k5.r(null, null, 2131752991, new Object[]{m5.H(null, null, a22)}, b11);
                     b11.setGravity(17);
                     f10.addView(b11, ha.t(-1, -2, 7, 32, 0, 32, 19));
@@ -2961,7 +2961,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        l31 l31Var;
+        r31 r31Var;
         Uri[] uriArr;
         if (i7 == qs.n4) {
             u0 u0Var = this.a;
@@ -2988,10 +2988,10 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
         if (i7 != qs.c5) {
             if (i7 == qs.d5) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (l31Var = this.V) == null) {
+                if (intValue != 4000 || (r31Var = this.V) == null) {
                     return;
                 }
-                l31Var.run();
+                r31Var.run();
                 this.V = null;
                 return;
             }

@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
     public final /* synthetic */ int f0 = 1;
@@ -45,21 +45,21 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
     }
 
     /* JADX WARN: Finally extract failed */
-    public int b0(org.telegram.ui.Components.k41 k41Var, int i7) {
+    public int b0(org.telegram.ui.Components.q41 q41Var, int i7) {
         int[] iArr = {0};
         org.telegram.ui.Components.ui uiVar = new org.telegram.ui.Components.ui(iArr, 22);
         this.h0 = true;
-        k41Var.j(uiVar);
+        q41Var.j(uiVar);
         try {
-            k41Var.scrollBy(0, i7);
-            ArrayList arrayList = k41Var.w0;
+            q41Var.scrollBy(0, i7);
+            ArrayList arrayList = q41Var.w0;
             if (arrayList != null) {
                 arrayList.remove(uiVar);
             }
             this.h0 = false;
             return iArr[0];
         } catch (Throwable th2) {
-            ArrayList arrayList2 = k41Var.w0;
+            ArrayList arrayList2 = q41Var.w0;
             if (arrayList2 != null) {
                 arrayList2.remove(uiVar);
             }
@@ -399,7 +399,7 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
     @Override // r0.l
     public final void l(View view, int i7, int i10, int i11, int i12, int i13, int[] iArr) {
         ja0 ja0Var;
-        org.telegram.ui.Components.k41 y02;
+        org.telegram.ui.Components.q41 y02;
         switch (this.f0) {
             case 0:
                 pa0 pa0Var = (pa0) this.i0;
@@ -564,7 +564,7 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
         int i12;
         org.telegram.ui.Components.pj0 currentListView;
         org.telegram.ui.ActionBar.y4 y4Var2;
-        org.telegram.ui.Components.k41 y02;
+        org.telegram.ui.Components.q41 y02;
         org.telegram.ui.Wallet.u5 u5Var;
         switch (this.f0) {
             case 0:

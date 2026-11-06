@@ -9,8 +9,8 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f41;
 import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.w70;
@@ -19,7 +19,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class tc extends org.telegram.ui.Components.na implements ls {
     public final long P1;
@@ -29,7 +29,7 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
     public Runnable T1;
     public final TLRPC.InputPeer U1;
     public final boolean V1;
-    public f41 W1;
+    public l41 W1;
     public boolean X1;
 
     /* JADX WARN: Code restructure failed: missing block: B:54:0x010c, code lost:
@@ -120,9 +120,9 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
         jz jzVar = new jz(getContext());
         this.S1 = jzVar;
         this.b.addView(jzVar, c8.ha.c(-1.0f, -1));
-        f41 f41Var = this.W1;
-        if (f41Var != null) {
-            f41Var.O(false);
+        l41 l41Var = this.W1;
+        if (l41Var != null) {
+            l41Var.O(false);
         }
     }
 
@@ -135,9 +135,9 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final oj0 L0(pj0 pj0Var) {
-        f41 f41Var = new f41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 10), this.I0);
-        this.W1 = f41Var;
-        return f41Var;
+        l41 l41Var = new l41(this.k1, getContext(), this.a, 0, true, new ai.e(this, 10), this.I0);
+        this.W1 = l41Var;
+        return l41Var;
     }
 
     @Override // org.telegram.ui.Components.na
@@ -153,9 +153,9 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         Runnable runnable;
         if (i7 == qs.v3 || i7 == qs.y3) {
-            f41 f41Var = this.W1;
-            if (f41Var != null) {
-                f41Var.O(true);
+            l41 l41Var = this.W1;
+            if (l41Var != null) {
+                l41Var.O(true);
             }
             long j3 = ea.y(this.a, false).p().amount;
             TextView textView = (TextView) this.Q1.d;

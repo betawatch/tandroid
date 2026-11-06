@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-93b428070cbd7f9496f847e5fe7d744100d14eb93ffe33213c4714cb8fb42336 */
+/* compiled from: r8-map-id-702b57c4013cb0412025c2ede91f131105e03fbb3968882e3fcf70e3b1090264 */
 /* loaded from: classes3.dex */
 public final class l00 extends View {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class l00 extends View {
                 break;
             case 12:
                 super.dispatchDraw(canvas);
-                tg.b0 b0Var = ((tp0) this.b).F0;
+                tg.b0 b0Var = ((up0) this.b).F0;
                 if (b0Var != null) {
                     b0Var.d(canvas);
                     break;
@@ -248,18 +248,18 @@ public final class l00 extends View {
                 setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(38.0f));
                 break;
             case 6:
-                os0 os0Var = (os0) this.b;
-                PremiumPreviewFragment premiumPreviewFragment = os0Var.c;
+                ps0 ps0Var = (ps0) this.b;
+                PremiumPreviewFragment premiumPreviewFragment = ps0Var.c;
                 if (premiumPreviewFragment.W) {
                     premiumPreviewFragment.Y = 0;
                 } else {
                     int L2 = org.telegram.messenger.g0.L(64.0f);
-                    if (org.telegram.messenger.g0.L(8.0f) + os0Var.c.U.getMeasuredHeight() > L2) {
-                        L2 = os0Var.c.U.getMeasuredHeight() + org.telegram.messenger.g0.L(8.0f);
+                    if (org.telegram.messenger.g0.L(8.0f) + ps0Var.c.U.getMeasuredHeight() > L2) {
+                        L2 = ps0Var.c.U.getMeasuredHeight() + org.telegram.messenger.g0.L(8.0f);
                     }
-                    os0Var.c.Y = L2;
+                    ps0Var.c.Y = L2;
                 }
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(os0Var.c.Y, TLObject.FLAG_30));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(ps0Var.c.Y, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -345,6 +345,6 @@ public final class l00 extends View {
         this.a = 1;
         this.b = bVar;
         org.telegram.messenger.qs.i(this);
-        setOnClickListener(new org.telegram.ui.Components.n41(17, this, context));
+        setOnClickListener(new org.telegram.ui.Components.t41(17, this, context));
     }
 }
