@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.os.Trace;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p31 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final /* synthetic */ class p31 implements Runnable {
                 b0Var.presentFragment(an.ra(j3));
                 return;
             case 2:
-                org.telegram.utils.twidget.h1 h1Var = (org.telegram.utils.twidget.h1) this.c;
+                org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.c;
                 long j10 = this.b;
                 Trace.beginSection("WidgetSandbox:Destroy");
                 try {
-                    org.telegram.utils.twidget.r0 r0Var = h1Var.c;
+                    org.telegram.utils.twidget.r0 r0Var = i1Var.c;
                     org.telegram.utils.twidget.o0 o0Var = (org.telegram.utils.twidget.o0) r0Var.e.remove(Long.valueOf(j10));
                     if (o0Var != null) {
                         org.telegram.utils.twidget.b h12 = o0Var.h1();
@@ -47,7 +47,7 @@ public final /* synthetic */ class p31 implements Runnable {
                             }
                         }
                         synchronized (r0Var.b) {
-                            r0Var.i(o0Var.a);
+                            r0Var.j(o0Var.a);
                         }
                     }
                     return;

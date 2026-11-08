@@ -1,259 +1,185 @@
 package org.telegram.utils.twidget;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.TextPaint;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayList;
-import org.json.JSONArray;
+import android.graphics.Path;
+import android.text.Layout;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
-public final class m1 {
-    public static final TextPaint b = new TextPaint();
-    public final ArrayList a;
+public final class m1 extends Layout {
+    public final l1 a;
 
-    public m1(ArrayList arrayList) {
-        this.a = arrayList;
+    public m1(l1 l1Var) {
+        super(l1Var.a, n1.b, Math.max(1, l1Var.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f);
+        this.a = l1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x021d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0225  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0232  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static m1 a(String str, o oVar, float f10) {
-        k1 k1Var;
-        ArrayList arrayList;
-        int i7;
-        float f11;
-        float f12;
-        float f13;
-        float f14;
-        float f15;
-        float f16;
-        float f17;
-        Paint paint;
-        int i10;
-        float f18;
-        JSONArray jSONArray = new JSONArray(str);
-        if (jSONArray.length() == 0) {
-            return null;
+    @Override // android.text.Layout
+    public final void draw(Canvas canvas) {
+    }
+
+    @Override // android.text.Layout
+    public final int getBottomPadding() {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final int getEllipsisCount(int i7) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final int getEllipsisStart(int i7) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final boolean getLineContainsTab(int i7) {
+        return false;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineCount() {
+        return this.a.g.length;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineDescent(int i7) {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final Layout.Directions getLineDirections(int i7) {
+        return null;
+    }
+
+    @Override // android.text.Layout
+    public final int getLineForOffset(int i7) {
+        int i10 = 0;
+        while (true) {
+            l1 l1Var = this.a;
+            if (i10 >= l1Var.g.length) {
+                return r2.length - 1;
+            }
+            int i11 = i10 + 1;
+            if (i7 < l1Var.e[i11]) {
+                return i10;
+            }
+            i10 = i11;
         }
-        ArrayList arrayList2 = new ArrayList();
+    }
+
+    @Override // android.text.Layout
+    public final float getLineLeft(int i7) {
+        return this.a.g[Math.max(0, Math.min(i7, r0.length - 1))][0];
+    }
+
+    @Override // android.text.Layout
+    public final float getLineMax(int i7) {
+        return getLineRight(i7);
+    }
+
+    @Override // android.text.Layout
+    public final float getLineRight(int i7) {
+        return this.a.g[Math.max(0, Math.min(i7, r0.length - 1))][r3.length - 1];
+    }
+
+    @Override // android.text.Layout
+    public final int getLineStart(int i7) {
+        l1 l1Var = this.a;
+        return l1Var.e[Math.max(0, Math.min(i7, l1Var.g.length))];
+    }
+
+    @Override // android.text.Layout
+    public final int getLineTop(int i7) {
+        l1 l1Var = this.a;
+        return l1Var.f[Math.max(0, Math.min(i7, l1Var.g.length))];
+    }
+
+    @Override // android.text.Layout
+    public final float getLineWidth(int i7) {
+        return getLineRight(i7) - getLineLeft(i7);
+    }
+
+    @Override // android.text.Layout
+    public final int getOffsetForHorizontal(int i7, float f10) {
+        l1 l1Var = this.a;
+        int max = Math.max(0, Math.min(i7, l1Var.g.length - 1));
+        float[] fArr = l1Var.g[max];
+        int[] iArr = l1Var.e;
+        int i10 = iArr[max + 1] - iArr[max];
         int i11 = 0;
-        int i12 = 0;
-        while (i12 < jSONArray.length()) {
-            int optInt = jSONArray.getJSONArray(i12).optInt(i11);
-            int i13 = i12;
-            while (i13 < jSONArray.length() && jSONArray.getJSONArray(i13).optInt(i11) == optInt) {
-                i13++;
-            }
-            ArrayList arrayList3 = new ArrayList();
-            float[] fArr = new float[64];
-            float f19 = Float.MAX_VALUE;
-            float f20 = -3.4028235E38f;
-            float f21 = -3.4028235E38f;
-            j1 j1Var = null;
-            float f22 = Float.MAX_VALUE;
-            while (i12 < i13) {
-                JSONArray jSONArray2 = jSONArray.getJSONArray(i12);
-                float optDouble = ((float) jSONArray2.optDouble(1)) * f10;
-                JSONArray jSONArray3 = jSONArray;
-                ArrayList arrayList4 = arrayList2;
-                float optDouble2 = ((float) jSONArray2.optDouble(2)) * f10;
-                int i14 = i12;
-                float optDouble3 = ((float) jSONArray2.optDouble(3)) * f10;
-                float optDouble4 = ((float) jSONArray2.optDouble(4)) * f10;
-                ArrayList arrayList5 = arrayList3;
-                float optDouble5 = ((float) jSONArray2.optDouble(7)) * f10;
-                float optDouble6 = ((float) jSONArray2.optDouble(8)) * f10;
-                String optString = jSONArray2.optString(9);
-                if (!optString.isEmpty()) {
-                    JSONArray optJSONArray = jSONArray2.optJSONArray(10);
-                    if (optJSONArray == null || optJSONArray.length() != 6 || Math.abs(optJSONArray.optDouble(1)) >= 1.0E-4d || Math.abs(optJSONArray.optDouble(2)) >= 1.0E-4d || optJSONArray.optDouble(0) <= 0.0d || optJSONArray.optDouble(3) <= 0.0d) {
-                        f11 = optDouble;
-                        f12 = optDouble4;
-                        f13 = optDouble3;
-                        f14 = optDouble5;
-                        f15 = 1.0f;
-                        f16 = optDouble2;
-                    } else {
-                        f15 = (float) optJSONArray.optDouble(0);
-                        float optDouble7 = (float) optJSONArray.optDouble(3);
-                        f11 = (((float) optJSONArray.optDouble(4)) * f10) + (f15 * optDouble);
-                        f16 = (((float) optJSONArray.optDouble(5)) * f10) + (optDouble7 * optDouble2);
-                        f13 = optDouble3 * f15;
-                        f12 = optDouble4 * optDouble7;
-                        f14 = optDouble5 * f15;
-                        optDouble6 *= f15;
-                    }
-                    if (f13 > 0.0f || f12 > 0.0f) {
-                        float f23 = (f12 / 2.0f) + f16;
-                        if (j1Var != null) {
-                            StringBuilder sb2 = j1Var.d;
-                            f17 = f12;
-                            if (f23 >= j1Var.a && f23 <= j1Var.b) {
-                                if (f11 - j1Var.c > 1.0f && ((sb2.length() <= 0 || !Character.isWhitespace(sb2.charAt(sb2.length() - 1))) && !Character.isWhitespace(optString.charAt(0)))) {
-                                    sb2.append(' ');
-                                    j1Var.e.add(Float.valueOf(j1Var.c));
-                                }
-                                arrayList = arrayList5;
-                                j1Var.a = Math.min(j1Var.a, f16);
-                                float f24 = f13;
-                                float f25 = f16 + f17;
-                                j1Var.b = Math.max(j1Var.b, f25);
-                                float f26 = optDouble6;
-                                paint = (Paint) ((ConcurrentHashMap) oVar.a).get(Integer.valueOf(jSONArray2.optInt(6)));
-                                i7 = i13;
-                                if (fArr.length < optString.length()) {
-                                    fArr = new float[optString.length()];
-                                }
-                                if (paint != null) {
-                                    paint.getTextWidths(optString, fArr);
-                                }
-                                float f27 = f11;
-                                i10 = 0;
-                                while (i10 < optString.length()) {
-                                    float[] fArr2 = fArr;
-                                    j1Var.d.append(optString.charAt(i10));
-                                    j1Var.e.add(Float.valueOf(f27));
-                                    if (paint == null) {
-                                        f18 = (((i10 + 1) * f24) / optString.length()) + f11;
-                                    } else {
-                                        f18 = (fArr2[i10] * f15) + (Character.isLowSurrogate(optString.charAt(i10)) ? 0.0f : f14) + f27;
-                                        if (optString.charAt(i10) == ' ' || optString.charAt(i10) == 160) {
-                                            f18 += f26;
-                                        }
-                                    }
-                                    f27 = f18;
-                                    i10++;
-                                    fArr = fArr2;
-                                }
-                                j1Var.c = Math.max(f27, f11 + f24);
-                                float min = Math.min(f19, f11);
-                                float min2 = Math.min(f22, f16);
-                                float max = Math.max(f20, j1Var.c);
-                                f22 = min2;
-                                f19 = min;
-                                f21 = Math.max(f21, f25);
-                                f20 = max;
-                                i12 = i14 + 1;
-                                arrayList3 = arrayList;
-                                jSONArray = jSONArray3;
-                                arrayList2 = arrayList4;
-                                i13 = i7;
-                            }
-                        } else {
-                            f17 = f12;
-                        }
-                        if (j1Var != null) {
-                            StringBuilder sb3 = j1Var.d;
-                            if (sb3.length() > 0 && (sb3.length() <= 0 || !Character.isWhitespace(sb3.charAt(sb3.length() - 1)))) {
-                                sb3.append(' ');
-                                j1Var.e.add(Float.valueOf(j1Var.c));
-                            }
-                        }
-                        j1Var = new j1();
-                        arrayList = arrayList5;
-                        arrayList.add(j1Var);
-                        j1Var.a = Math.min(j1Var.a, f16);
-                        float f242 = f13;
-                        float f252 = f16 + f17;
-                        j1Var.b = Math.max(j1Var.b, f252);
-                        float f262 = optDouble6;
-                        paint = (Paint) ((ConcurrentHashMap) oVar.a).get(Integer.valueOf(jSONArray2.optInt(6)));
-                        i7 = i13;
-                        if (fArr.length < optString.length()) {
-                        }
-                        if (paint != null) {
-                        }
-                        float f272 = f11;
-                        i10 = 0;
-                        while (i10 < optString.length()) {
-                        }
-                        j1Var.c = Math.max(f272, f11 + f242);
-                        float min3 = Math.min(f19, f11);
-                        float min22 = Math.min(f22, f16);
-                        float max2 = Math.max(f20, j1Var.c);
-                        f22 = min22;
-                        f19 = min3;
-                        f21 = Math.max(f21, f252);
-                        f20 = max2;
-                        i12 = i14 + 1;
-                        arrayList3 = arrayList;
-                        jSONArray = jSONArray3;
-                        arrayList2 = arrayList4;
-                        i13 = i7;
-                    } else if (j1Var != null) {
-                        j1Var.d.append('\n');
-                        j1Var.e.add(Float.valueOf(j1Var.c));
-                        j1Var = null;
-                    }
+        for (int i12 = 0; i12 <= i10 && i12 < fArr.length; i12++) {
+            if (i12 < i10) {
+                int i13 = i12 + 1;
+                if (f10 >= (fArr[i12] + fArr[i13]) / 2.0f) {
+                    i11 = i13;
                 }
-                arrayList = arrayList5;
-                i7 = i13;
-                i12 = i14 + 1;
-                arrayList3 = arrayList;
-                jSONArray = jSONArray3;
-                arrayList2 = arrayList4;
-                i13 = i7;
             }
-            JSONArray jSONArray4 = jSONArray;
-            ArrayList arrayList6 = arrayList2;
-            ArrayList arrayList7 = arrayList3;
-            int i15 = i13;
-            if (arrayList7.isEmpty()) {
-                k1Var = null;
+        }
+        if (i11 == i10 && i10 > 0 && max < l1Var.g.length - 1 && Character.isWhitespace(l1Var.a.charAt((l1Var.e[max] + i10) - 1))) {
+            i11--;
+        }
+        return l1Var.e[max] + i11;
+    }
+
+    @Override // android.text.Layout
+    public final int getParagraphDirection(int i7) {
+        return 1;
+    }
+
+    @Override // android.text.Layout
+    public final float getPrimaryHorizontal(int i7) {
+        int lineForOffset = getLineForOffset(i7);
+        l1 l1Var = this.a;
+        return l1Var.g[lineForOffset][Math.max(0, Math.min(i7 - l1Var.e[lineForOffset], r2.length - 1))];
+    }
+
+    @Override // android.text.Layout
+    public final float getSecondaryHorizontal(int i7) {
+        return getPrimaryHorizontal(i7);
+    }
+
+    @Override // android.text.Layout
+    public final void getSelectionPath(int i7, int i10, Path path) {
+        Path path2;
+        path.reset();
+        if (i7 == i10) {
+            return;
+        }
+        if (i10 < i7) {
+            i10 = i7;
+            i7 = i10;
+        }
+        int lineForOffset = getLineForOffset(i7);
+        int lineForOffset2 = getLineForOffset(i10);
+        int i11 = lineForOffset;
+        while (i11 <= lineForOffset2) {
+            float primaryHorizontal = i11 == lineForOffset ? getPrimaryHorizontal(i7) : getLineLeft(i11);
+            float primaryHorizontal2 = i11 == lineForOffset2 ? getPrimaryHorizontal(i10) : getLineRight(i11);
+            if (primaryHorizontal2 > primaryHorizontal) {
+                path2 = path;
+                path2.addRect(primaryHorizontal, getLineTop(i11), primaryHorizontal2, getLineTop(i11 + 1), Path.Direction.CW);
             } else {
-                StringBuilder sb4 = new StringBuilder();
-                int[] iArr = new int[arrayList7.size() + 1];
-                int[] iArr2 = new int[arrayList7.size() + 1];
-                float[][] fArr3 = new float[arrayList7.size()][];
-                int floor = (int) Math.floor(f19);
-                int floor2 = (int) Math.floor(f22);
-                int i16 = 0;
-                while (i16 < arrayList7.size()) {
-                    j1 j1Var2 = (j1) arrayList7.get(i16);
-                    iArr[i16] = sb4.length();
-                    StringBuilder sb5 = j1Var2.d;
-                    ArrayList arrayList8 = j1Var2.e;
-                    sb4.append((CharSequence) sb5);
-                    iArr2[i16] = Math.round(j1Var2.a) - floor2;
-                    float[] fArr4 = new float[arrayList8.size() + 1];
-                    int i17 = 0;
-                    while (i17 < arrayList8.size()) {
-                        fArr4[i17] = ((Float) arrayList8.get(i17)).floatValue() - floor;
-                        i17++;
-                        sb4 = sb4;
-                    }
-                    fArr4[arrayList8.size()] = j1Var2.c - floor;
-                    fArr3[i16] = fArr4;
-                    i16++;
-                    sb4 = sb4;
-                }
-                StringBuilder sb6 = sb4;
-                iArr[arrayList7.size()] = sb6.length();
-                iArr2[arrayList7.size()] = Math.round(f21) - floor2;
-                for (int i18 = 1; i18 < arrayList7.size(); i18++) {
-                    iArr2[i18] = Math.max(iArr2[i18 - 1], iArr2[i18]);
-                }
-                String sb7 = sb6.toString();
-                int ceil = ((int) Math.ceil(f20)) - floor;
-                int i19 = iArr2[arrayList7.size()];
-                k1Var = new k1(sb7, floor, floor2, ceil, iArr, iArr2, fArr3);
+                path2 = path;
             }
-            arrayList2 = arrayList6;
-            if (k1Var != null) {
-                arrayList2.add(k1Var);
-            }
-            jSONArray = jSONArray4;
-            i12 = i15;
-            i11 = 0;
+            i11++;
+            path = path2;
         }
-        if (arrayList2.isEmpty()) {
-            return null;
-        }
-        return new m1(arrayList2);
+    }
+
+    @Override // android.text.Layout
+    public final int getTopPadding() {
+        return 0;
+    }
+
+    @Override // android.text.Layout
+    public final boolean isRtlCharAt(int i7) {
+        return false;
+    }
+
+    @Override // android.text.Layout
+    public final void draw(Canvas canvas, Path path, Paint paint, int i7) {
     }
 }

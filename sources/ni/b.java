@@ -20,13 +20,13 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.m0;
 import org.telegram.ui.Wallet.r2;
 import org.telegram.ui.Wallet.u2;
-import org.telegram.utils.twidget.h1;
 import org.telegram.utils.twidget.i0;
+import org.telegram.utils.twidget.i1;
 import org.telegram.utils.twidget.k0;
 import org.telegram.utils.twidget.n0;
 import org.telegram.utils.twidget.v0;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -109,13 +109,13 @@ public final /* synthetic */ class b implements Runnable {
                 VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
                 return;
             default:
-                h1 h1Var = (h1) this.e;
+                i1 i1Var = (i1) this.e;
                 int i11 = this.b;
                 long j10 = this.c;
                 JSONObject jSONObject = (JSONObject) this.f;
                 String str2 = (String) this.h;
                 boolean z11 = this.d;
-                if (h1Var.w || (v0Var = h1Var.L) == null) {
+                if (i1Var.w || (v0Var = i1Var.L) == null) {
                     return;
                 }
                 if (i11 != 19) {
@@ -189,8 +189,8 @@ public final /* synthetic */ class b implements Runnable {
         this.h = nVar;
     }
 
-    public /* synthetic */ b(h1 h1Var, int i7, long j3, JSONObject jSONObject, String str, boolean z9) {
-        this.e = h1Var;
+    public /* synthetic */ b(i1 i1Var, int i7, long j3, JSONObject jSONObject, String str, boolean z9) {
+        this.e = i1Var;
         this.b = i7;
         this.c = j3;
         this.f = jSONObject;

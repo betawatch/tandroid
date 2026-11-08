@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import android.view.MotionEvent;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final class p71 {
     public boolean A;
@@ -46,7 +46,7 @@ public final class p71 {
     public final n71 l;
     public final org.telegram.utils.twidget.e0 m;
     public final n71 n;
-    public org.telegram.utils.twidget.f1 o;
+    public org.telegram.utils.twidget.g1 o;
     public org.telegram.utils.twidget.v0 p;
     public boolean q;
     public boolean r;
@@ -97,10 +97,10 @@ public final class p71 {
                     default:
                         p71 p71Var2 = this.b;
                         if (p71Var2.o != null && (v0Var = p71Var2.p) != null) {
-                            org.telegram.utils.twidget.f1 d = v0Var.d();
-                            org.telegram.utils.twidget.f1 f1Var = p71Var2.o;
-                            if (d == f1Var) {
-                                f1Var.a.f();
+                            org.telegram.utils.twidget.g1 d = v0Var.d();
+                            org.telegram.utils.twidget.g1 g1Var = p71Var2.o;
+                            if (d == g1Var) {
+                                g1Var.a.f();
                                 p71Var2.a.h();
                                 break;
                             }
@@ -135,10 +135,10 @@ public final class p71 {
                     default:
                         p71 p71Var2 = this.b;
                         if (p71Var2.o != null && (v0Var = p71Var2.p) != null) {
-                            org.telegram.utils.twidget.f1 d = v0Var.d();
-                            org.telegram.utils.twidget.f1 f1Var = p71Var2.o;
-                            if (d == f1Var) {
-                                f1Var.a.f();
+                            org.telegram.utils.twidget.g1 d = v0Var.d();
+                            org.telegram.utils.twidget.g1 g1Var = p71Var2.o;
+                            if (d == g1Var) {
+                                g1Var.a.f();
                                 p71Var2.a.h();
                                 break;
                             }
@@ -174,10 +174,10 @@ public final class p71 {
                     default:
                         p71 p71Var2 = this.b;
                         if (p71Var2.o != null && (v0Var = p71Var2.p) != null) {
-                            org.telegram.utils.twidget.f1 d = v0Var.d();
-                            org.telegram.utils.twidget.f1 f1Var = p71Var2.o;
-                            if (d == f1Var) {
-                                f1Var.a.f();
+                            org.telegram.utils.twidget.g1 d = v0Var.d();
+                            org.telegram.utils.twidget.g1 g1Var = p71Var2.o;
+                            if (d == g1Var) {
+                                g1Var.a.f();
                                 p71Var2.a.h();
                                 break;
                             }
@@ -232,7 +232,7 @@ public final class p71 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean b(Canvas canvas, int i7) {
-        org.telegram.utils.twidget.h1 h1Var;
+        org.telegram.utils.twidget.i1 i1Var;
         boolean z9;
         boolean z10;
         boolean z11;
@@ -247,20 +247,20 @@ public final class p71 {
         float[] fArr2;
         this.R = i7;
         org.telegram.utils.twidget.v0 v0Var = this.p;
-        org.telegram.utils.twidget.f1 d2 = v0Var == null ? null : v0Var.d();
+        org.telegram.utils.twidget.g1 d2 = v0Var == null ? null : v0Var.d();
         float f10 = this.b;
         if (d2 != null) {
-            org.telegram.utils.twidget.g1[] g1VarArr = d2.b;
+            org.telegram.utils.twidget.h1[] h1VarArr = d2.b;
             org.telegram.utils.twidget.c0 c0Var = d2.a;
             int i13 = d2.d;
             if (i13 > 0) {
                 if (!d2.a()) {
                     this.p.c();
                 }
-                org.telegram.utils.twidget.f1 f1Var = this.o;
+                org.telegram.utils.twidget.g1 g1Var = this.o;
                 boolean z13 = true;
-                if (d2 != f1Var) {
-                    boolean z14 = f1Var == null;
+                if (d2 != g1Var) {
+                    boolean z14 = g1Var == null;
                     this.o = d2;
                     Handler handler = this.c;
                     n71 n71Var = this.n;
@@ -281,16 +281,16 @@ public final class p71 {
                 }
                 char c12 = 0;
                 c0Var.c(canvas, 1.0f);
-                if (g1VarArr.length > 0) {
+                if (h1VarArr.length > 0) {
                     double nanoTime = (System.nanoTime() / 1.0E9d) + d2.c;
-                    int length = g1VarArr.length;
+                    int length = h1VarArr.length;
                     int i14 = 0;
                     boolean z16 = false;
                     while (i14 < length) {
-                        org.telegram.utils.twidget.g1 g1Var = g1VarArr[i14];
-                        float[] fArr3 = g1Var.g;
-                        float[] fArr4 = g1Var.c;
-                        org.telegram.utils.twidget.c0 c0Var2 = g1Var.a;
+                        org.telegram.utils.twidget.h1 h1Var = h1VarArr[i14];
+                        float[] fArr3 = h1Var.g;
+                        float[] fArr4 = h1Var.c;
+                        org.telegram.utils.twidget.c0 c0Var2 = h1Var.a;
                         boolean z17 = z13;
                         int length2 = fArr3.length / 8;
                         if (length2 == 0 || !c0Var2.e()) {
@@ -301,11 +301,11 @@ public final class p71 {
                         } else {
                             i11 = i14;
                             i10 = length;
-                            double max = Math.max(0.0d, nanoTime - g1Var.d);
-                            double d10 = g1Var.e;
+                            double max = Math.max(0.0d, nanoTime - h1Var.d);
+                            double d10 = h1Var.e;
                             if (d10 <= 0.0d) {
                                 d = 1.0d;
-                            } else if (g1Var.f) {
+                            } else if (h1Var.f) {
                                 d = (max % d10) / d10;
                                 z16 = z17 ? 1 : 0;
                             } else {
@@ -313,7 +313,7 @@ public final class p71 {
                                 z16 |= min < 1.0d ? z17 ? 1 : 0 : false;
                                 d = min;
                             }
-                            float[] fArr5 = g1Var.g;
+                            float[] fArr5 = h1Var.g;
                             float f12 = (float) d;
                             int i15 = 0;
                             while (true) {
@@ -342,7 +342,7 @@ public final class p71 {
                                 z15 = z12;
                             }
                             canvas.save();
-                            float[] fArr6 = g1Var.b;
+                            float[] fArr6 = h1Var.b;
                             if (fArr6 != null) {
                                 float f16 = fArr6[0];
                                 float f17 = f16 * f10;
@@ -428,7 +428,7 @@ public final class p71 {
             v0Var2.c();
         }
         org.telegram.utils.twidget.v0 v0Var3 = this.p;
-        canvas.drawText(org.telegram.messenger.id.M0(((v0Var3 != null && (h1Var = v0Var3.f) != null) ? h1Var.N : null) == null ? 2131742878 : 2131742879, null), 12.0f * f10, f10 * 28.0f, this.d);
+        canvas.drawText(org.telegram.messenger.id.M0(((v0Var3 != null && (i1Var = v0Var3.f) != null) ? i1Var.N : null) == null ? 2131742878 : 2131742879, null), 12.0f * f10, f10 * 28.0f, this.d);
         return false;
     }
 
@@ -529,9 +529,9 @@ public final class p71 {
 
     public final void l(MotionEvent motionEvent, boolean z9) {
         org.telegram.utils.twidget.v0 v0Var;
-        org.telegram.utils.twidget.h1 h1Var;
+        org.telegram.utils.twidget.i1 i1Var;
         int actionMasked = motionEvent.getActionMasked();
-        if (!z9 || actionMasked == 10 || (v0Var = this.p) == null || this.r || (h1Var = v0Var.f) == null || !h1Var.C) {
+        if (!z9 || actionMasked == 10 || (v0Var = this.p) == null || this.r || (i1Var = v0Var.f) == null || !i1Var.C) {
             c();
             return;
         }
@@ -558,7 +558,7 @@ public final class p71 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean m(MotionEvent motionEvent) {
-        org.telegram.utils.twidget.h1 h1Var;
+        org.telegram.utils.twidget.i1 i1Var;
         int i7;
         int actionMasked;
         int actionIndex;
@@ -567,7 +567,7 @@ public final class p71 {
         boolean z9 = this.w;
         boolean z10 = z9 && (actionMasked2 == 1 || actionMasked2 == 3);
         org.telegram.utils.twidget.v0 v0Var = this.p;
-        if (v0Var != null && !this.r && ((((h1Var = v0Var.f) != null && h1Var.C) || z10) && (actionMasked2 != 3 || z9))) {
+        if (v0Var != null && !this.r && ((((i1Var = v0Var.f) != null && i1Var.C) || z10) && (actionMasked2 != 3 || z9))) {
             int actionMasked3 = motionEvent.getActionMasked();
             if (actionMasked3 != 0) {
                 if (actionMasked3 != 1) {

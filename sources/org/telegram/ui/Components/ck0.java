@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public static final AtomicInteger s0 = new AtomicInteger();
@@ -37,7 +37,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public int i0;
     public int j0;
     public String k0;
-    public org.telegram.utils.twidget.m1 l0;
+    public org.telegram.utils.twidget.n1 l0;
     public org.telegram.ui.Cells.t9[] m0;
     public boolean n0;
     public long o0;
@@ -240,11 +240,11 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         org.telegram.messenger.kv kvVar = this.a;
         org.telegram.ui.Cells.q1 q1Var2 = kvVar.E;
         org.telegram.ui.Cells.x1 x1Var = null;
-        if (i7 != org.telegram.utils.twidget.i1.d(q1Var2 != null ? q1Var2.getResourcesProvider() : null, kvVar.E())) {
+        if (i7 != org.telegram.utils.twidget.j1.d(q1Var2 != null ? q1Var2.getResourcesProvider() : null, kvVar.E())) {
             org.telegram.ui.Cells.q1 q1Var3 = kvVar.E;
             org.telegram.ui.ActionBar.f6 resourcesProvider = q1Var3 != null ? q1Var3.getResourcesProvider() : null;
-            this.Z = org.telegram.utils.twidget.i1.d(resourcesProvider, kvVar.E());
-            this.X.l(org.telegram.utils.twidget.i1.a(resourcesProvider, kvVar.E()));
+            this.Z = org.telegram.utils.twidget.j1.d(resourcesProvider, kvVar.E());
+            this.X.l(org.telegram.utils.twidget.j1.a(resourcesProvider, kvVar.E()));
         }
         this.j0 = R() ? 0 : Math.max(0, Math.min(j0(), kvVar.S - org.telegram.messenger.g0.L(2.0f)));
         int u02 = u0();
@@ -347,12 +347,12 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
     @Override // org.telegram.ui.Components.o71
     public final void h() {
         org.telegram.utils.twidget.v0 v0Var = this.X;
-        org.telegram.utils.twidget.f1 d = v0Var == null ? null : v0Var.d();
-        org.telegram.utils.twidget.m1 m1Var = d == null ? null : d.f;
-        if (m1Var != this.l0) {
-            this.l0 = m1Var;
-            if (m1Var != null) {
-                ArrayList arrayList = m1Var.a;
+        org.telegram.utils.twidget.g1 d = v0Var == null ? null : v0Var.d();
+        org.telegram.utils.twidget.n1 n1Var = d == null ? null : d.f;
+        if (n1Var != this.l0) {
+            this.l0 = n1Var;
+            if (n1Var != null) {
+                ArrayList arrayList = n1Var.a;
                 this.m0 = new org.telegram.ui.Cells.t9[arrayList.size()];
                 int i7 = 0;
                 while (true) {
@@ -360,7 +360,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                     if (i7 >= t9VarArr.length) {
                         break;
                     }
-                    t9VarArr[i7] = new li.a0(this, (org.telegram.utils.twidget.k1) arrayList.get(i7));
+                    t9VarArr[i7] = new li.a0(this, (org.telegram.utils.twidget.l1) arrayList.get(i7));
                     i7++;
                 }
             } else {
@@ -404,7 +404,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     @Override // org.telegram.ui.Components.o71
     public final void j() {
-        org.telegram.utils.twidget.f1 f1Var;
+        org.telegram.utils.twidget.g1 g1Var;
         ob0 ob0Var = this.h0;
         org.telegram.messenger.g0.r(ob0Var);
         if (this.g0) {
@@ -419,8 +419,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                 return;
             }
         }
-        org.telegram.utils.twidget.h1 h1Var = this.X.f;
-        if (h1Var == null || (f1Var = h1Var.H) == null || !(f1Var.g || h1Var.z)) {
+        org.telegram.utils.twidget.i1 i1Var = this.X.f;
+        if (i1Var == null || (g1Var = i1Var.H) == null || !(g1Var.g || i1Var.z)) {
             org.telegram.messenger.g0.i3(ob0Var, 1500L);
             return;
         }
@@ -474,8 +474,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                 StringBuilder sb3 = new StringBuilder(", session ");
                 sb3.append(this.X.q);
                 sb3.append(this.X.g != null ? " (snapshot)" : "");
-                org.telegram.utils.twidget.h1 h1Var = this.X.f;
-                sb3.append((h1Var == null || !h1Var.C) ? ", scripts held" : "");
+                org.telegram.utils.twidget.i1 i1Var = this.X.f;
+                sb3.append((i1Var == null || !i1Var.C) ? ", scripts held" : "");
                 str3 = sb3.toString();
             } else {
                 str3 = ", no widget yet";
@@ -563,17 +563,17 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     public final void r0() {
         org.telegram.messenger.ij ijVar;
-        org.telegram.utils.twidget.f1 f1Var;
+        org.telegram.utils.twidget.g1 g1Var;
         this.e0 = true;
         this.f0 = SystemClock.uptimeMillis();
-        org.telegram.utils.twidget.h1 h1Var = this.X.f;
-        this.g0 = (h1Var == null || (f1Var = h1Var.H) == null || (!f1Var.g && !h1Var.z)) ? false : true;
+        org.telegram.utils.twidget.i1 i1Var = this.X.f;
+        this.g0 = (i1Var == null || (g1Var = i1Var.H) == null || (!g1Var.g && !i1Var.z)) ? false : true;
         this.X.n(u0());
         org.telegram.messenger.kv kvVar = this.a;
         org.telegram.ui.Cells.q1 q1Var = kvVar.E;
         org.telegram.ui.ActionBar.f6 resourcesProvider = q1Var != null ? q1Var.getResourcesProvider() : null;
-        this.Z = org.telegram.utils.twidget.i1.d(resourcesProvider, kvVar.E());
-        this.X.l(org.telegram.utils.twidget.i1.a(resourcesProvider, kvVar.E()));
+        this.Z = org.telegram.utils.twidget.j1.d(resourcesProvider, kvVar.E());
+        this.X.l(org.telegram.utils.twidget.j1.a(resourcesProvider, kvVar.E()));
         p71 p71Var = this.d0;
         org.telegram.utils.twidget.v0 v0Var = this.X;
         if (p71Var.p != v0Var) {

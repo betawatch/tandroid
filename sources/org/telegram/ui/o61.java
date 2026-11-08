@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o61 implements Runnable {
     public final /* synthetic */ int a;
@@ -140,7 +140,7 @@ public final /* synthetic */ class o61 implements Runnable {
             case 10:
                 break;
             case 11:
-                if (org.telegram.utils.twidget.h1.a()) {
+                if (org.telegram.utils.twidget.i1.a()) {
                     org.telegram.utils.twidget.n0.f.clear();
                     Iterator it2 = org.telegram.utils.twidget.n0.a.values().iterator();
                     while (it2.hasNext()) {

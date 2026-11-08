@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.r2;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final class r0 extends k {
     public static final r0 i = new r0();
@@ -39,6 +39,9 @@ public final class r0 extends k {
         }
         q0Var2.d = true;
         this.d = q0Var2;
+        if (this.h) {
+            h(q0Var2);
+        }
         return q0Var2;
     }
 
@@ -54,7 +57,7 @@ public final class r0 extends k {
                     this.g = context.getApplicationContext();
                 }
                 e10 = e();
-                this.c.removeCallbacks(e10.e);
+                this.c.removeCallbacks(e10.f);
                 e10.c++;
                 z10 = e10.a == null;
                 long elapsedRealtime = SystemClock.elapsedRealtime() + 10000;
@@ -63,6 +66,7 @@ public final class r0 extends k {
                     if (bVar == null) {
                         long elapsedRealtime2 = elapsedRealtime - SystemClock.elapsedRealtime();
                         if (elapsedRealtime2 <= 0) {
+                            g(e10);
                             throw new IllegalStateException("Widget engine did not start");
                         }
                         this.b.wait(elapsedRealtime2);
@@ -71,7 +75,7 @@ public final class r0 extends k {
                     }
                 }
             } catch (Exception e11) {
-                i(e10);
+                j(e10);
                 throw e11;
             } finally {
             }
@@ -96,34 +100,65 @@ public final class r0 extends k {
                         if (e10.a == null) {
                         }
                     }
-                    g(e10, i10);
+                    i(e10, i10);
                 } finally {
                 }
             }
             return incrementAndGet;
         } catch (Exception e12) {
             synchronized (this.b) {
-                i(e10);
+                j(e10);
                 throw e12;
             }
         }
     }
 
-    public final void g(q0 q0Var, int i7) {
+    public final void g(q0 q0Var) {
+        q0Var.a = null;
+        if (q0Var.d) {
+            q0Var.d = false;
+            this.c.removeCallbacks(q0Var.f);
+            if (this.d == q0Var) {
+                this.d = null;
+            }
+            try {
+                this.g.unbindService(q0Var);
+            } catch (IllegalArgumentException unused) {
+            }
+        }
+    }
+
+    public final void h(q0 q0Var) {
+        if (q0Var.e) {
+            return;
+        }
+        q0Var.e = true;
+        q0Var.c++;
+        this.c.removeCallbacks(q0Var.f);
+        b bVar = q0Var.a;
+        if (bVar != null) {
+            try {
+                bVar.b1();
+            } catch (RemoteException unused) {
+            }
+        }
+    }
+
+    public final void i(q0 q0Var, int i7) {
         ArrayList arrayList = new ArrayList();
         synchronized (this.b) {
             try {
-                if (q0Var.b == i7) {
-                    q0Var.a = null;
-                }
                 Iterator it = this.e.entrySet().iterator();
                 while (it.hasNext()) {
                     o0 o0Var = (o0) ((Map.Entry) it.next()).getValue();
                     if (o0Var.a == q0Var && o0Var.b == i7) {
                         arrayList.add(o0Var);
                         it.remove();
-                        i(q0Var);
+                        j(q0Var);
                     }
+                }
+                if (q0Var.b == i7) {
+                    g(q0Var);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -134,40 +169,14 @@ public final class r0 extends k {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            h1 session = ((o0) obj).c.session();
+            i1 session = ((o0) obj).c.session();
             session.a.post(new b1(session, 1));
         }
     }
 
-    public final void h(Context context) {
-        synchronized (this.b) {
-            try {
-                if (this.h) {
-                    return;
-                }
-                if (this.g == null) {
-                    this.g = context.getApplicationContext();
-                }
-                q0 e10 = e();
-                this.c.removeCallbacks(e10.e);
-                e10.c++;
-                this.h = true;
-                b bVar = e10.a;
-                if (bVar != null) {
-                    try {
-                        bVar.b1();
-                    } catch (RemoteException unused) {
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public final void i(q0 q0Var) {
+    public final void j(q0 q0Var) {
         int i7 = q0Var.c;
-        j0 j0Var = q0Var.e;
+        j0 j0Var = q0Var.f;
         int i10 = i7 - 1;
         q0Var.c = i10;
         if (i10 > 0) {

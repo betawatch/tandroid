@@ -35,7 +35,7 @@ import org.telegram.ui.Wallet.v1;
 import org.telegram.ui.o61;
 import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public abstract class n0 {
     public static boolean i;
@@ -283,7 +283,7 @@ public abstract class n0 {
     public static v0 i(String str) {
         String str2;
         k0 k0Var = n(str) ? (k0) a.get(str) : null;
-        if (k0Var == null || h1.a()) {
+        if (k0Var == null || i1.a()) {
             return null;
         }
         synchronized (k0Var) {
@@ -477,7 +477,7 @@ public abstract class n0 {
                 if (k10.equals("placeholder") || k10.startsWith("cache of width")) {
                     v0Var.n(k0Var.E);
                     if (v0Var.s == null) {
-                        v0Var.l(i1.a(null, k0Var.F));
+                        v0Var.l(j1.a(null, k0Var.F));
                     }
                     if (!v0Var.o) {
                         arrayList.add(k0Var);
@@ -514,9 +514,9 @@ public abstract class n0 {
             v0 v0Var = ((k0) it.next()).t;
             if (v0Var != null && v0Var.p != z9) {
                 v0Var.p = z9;
-                h1 h1Var = v0Var.f;
-                if (h1Var != null) {
-                    h1Var.e(v0Var.n && !z9);
+                i1 i1Var = v0Var.f;
+                if (i1Var != null) {
+                    i1Var.f(v0Var.n && !z9);
                 }
             }
         }
@@ -550,9 +550,9 @@ public abstract class n0 {
         boolean z9 = j;
         if (v0Var.p != z9) {
             v0Var.p = z9;
-            h1 h1Var = v0Var.f;
-            if (h1Var != null) {
-                h1Var.e(v0Var.n && !z9);
+            i1 i1Var = v0Var.f;
+            if (i1Var != null) {
+                i1Var.f(v0Var.n && !z9);
             }
         }
         if (h7.z) {
@@ -631,12 +631,12 @@ public abstract class n0 {
     }
 
     public static boolean z() {
-        h1 h1Var;
-        f1 f1Var;
+        i1 i1Var;
+        g1 g1Var;
         for (k0 k0Var : a.values()) {
             v0 v0Var = k0Var.t;
             ck0 ck0Var = k0Var.w;
-            if (k0Var.x != 0 && v0Var != null && ck0Var != null && !k0Var.D && ((h1Var = v0Var.f) == null || (f1Var = h1Var.H) == null || (!f1Var.g && !h1Var.z))) {
+            if (k0Var.x != 0 && v0Var != null && ck0Var != null && !k0Var.D && ((i1Var = v0Var.f) == null || (g1Var = i1Var.H) == null || (!g1Var.g && !i1Var.z))) {
                 String k10 = k(k0Var.a, v0Var, ck0Var.u0());
                 if (k10.equals("placeholder") || k10.startsWith("cache of width")) {
                     return false;

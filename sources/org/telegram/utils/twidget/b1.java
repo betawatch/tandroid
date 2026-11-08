@@ -9,58 +9,58 @@ import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.o71;
 import org.telegram.ui.Components.p71;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
+    public final /* synthetic */ i1 b;
 
-    public /* synthetic */ b1(h1 h1Var, int i7) {
+    public /* synthetic */ b1(i1 i1Var, int i7) {
         this.a = i7;
-        this.b = h1Var;
+        this.b = i1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        f1 f1Var;
+        g1 g1Var;
         JSONObject jSONObject;
         v0 v0Var;
         p71 p71Var;
-        h1 h1Var;
+        i1 i1Var;
         k0 h;
         int i7;
         ck0 ck0Var;
         switch (this.a) {
             case 0:
-                h1 h1Var2 = this.b;
-                synchronized (h1Var2.s) {
-                    f1Var = h1Var2.I;
-                    h1Var2.I = null;
-                    jSONObject = h1Var2.J;
-                    h1Var2.J = null;
-                    h1Var2.K = false;
+                i1 i1Var2 = this.b;
+                synchronized (i1Var2.s) {
+                    g1Var = i1Var2.I;
+                    i1Var2.I = null;
+                    jSONObject = i1Var2.J;
+                    i1Var2.J = null;
+                    i1Var2.K = false;
                 }
-                if (h1Var2.w) {
-                    if (f1Var != null) {
-                        f1Var.a.b();
+                if (i1Var2.w) {
+                    if (g1Var != null) {
+                        g1Var.a.b();
                         return;
                     }
                     return;
                 }
-                if (f1Var != null && (i7 = h1Var2.G) != 0 && Math.abs(f1Var.d - i7) > 1) {
-                    f1Var.a.b();
-                    h1Var2.E = false;
-                    f1Var = null;
+                if (g1Var != null && (i7 = i1Var2.G) != 0 && Math.abs(g1Var.d - i7) > 1) {
+                    g1Var.a.b();
+                    i1Var2.E = false;
+                    g1Var = null;
                 }
-                if (f1Var != null) {
-                    h1Var2.H = f1Var;
-                    h1Var2.E = false;
-                    v0 v0Var2 = h1Var2.L;
+                if (g1Var != null) {
+                    i1Var2.H = g1Var;
+                    i1Var2.E = false;
+                    v0 v0Var2 = i1Var2.L;
                     if (v0Var2 != null) {
-                        v0Var2.h(h1Var2);
+                        v0Var2.h(i1Var2);
                     }
                 }
-                if (jSONObject == null || (v0Var = h1Var2.L) == null) {
+                if (jSONObject == null || (v0Var = i1Var2.L) == null) {
                     return;
                 }
                 if (v0Var.e != null) {
@@ -78,8 +78,8 @@ public final /* synthetic */ class b1 implements Runnable {
                         }
                     }
                 }
-                if (jSONObject.optBoolean("loaded") && v0Var.g != null && (h1Var = v0Var.f) != null) {
-                    v0Var.h(h1Var);
+                if (jSONObject.optBoolean("loaded") && v0Var.g != null && (i1Var = v0Var.f) != null) {
+                    v0Var.h(i1Var);
                     return;
                 } else {
                     if (!v0Var.f() || (p71Var = v0Var.h) == null) {
@@ -91,15 +91,15 @@ public final /* synthetic */ class b1 implements Runnable {
                     return;
                 }
             case 1:
-                h1 h1Var3 = this.b;
-                if (h1Var3.w || h1Var3.v == 0) {
+                i1 i1Var3 = this.b;
+                if (i1Var3.w || i1Var3.v == 0) {
                     return;
                 }
-                h1Var3.v = 0L;
+                i1Var3.v = 0L;
                 boolean z9 = false;
-                h1Var3.o.set(false);
-                h1Var3.N = "Widget engine stopped";
-                v0 v0Var3 = h1Var3.L;
+                i1Var3.o.set(false);
+                i1Var3.N = "Widget engine stopped";
+                v0 v0Var3 = i1Var3.L;
                 if (v0Var3 != null) {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     if (elapsedRealtime - v0Var3.C > 60000) {
@@ -135,26 +135,26 @@ public final /* synthetic */ class b1 implements Runnable {
                 }
                 return;
             case 2:
-                this.b.c();
+                this.b.d();
                 return;
             case 3:
-                h1 h1Var4 = this.b;
-                h1Var4.r.set(true);
-                h1Var4.c();
+                i1 i1Var4 = this.b;
+                i1Var4.r.set(true);
+                i1Var4.d();
                 return;
             default:
-                h1 h1Var5 = this.b;
-                long j3 = h1Var5.v;
+                i1 i1Var5 = this.b;
+                long j3 = i1Var5.v;
                 long nanoTime = System.nanoTime();
                 long max = (long) (1.0E9d / Math.max(30.0f, org.telegram.messenger.g0.r));
-                if (h1Var5.w || j3 == 0 || !h1Var5.F || !h1Var5.p.get() || nanoTime - h1Var5.S < (max * 9) / 10 || !h1Var5.o.compareAndSet(false, true)) {
-                    h1Var5.c();
+                if (i1Var5.w || j3 == 0 || !i1Var5.F || !i1Var5.p.get() || nanoTime - i1Var5.S < (max * 9) / 10 || !i1Var5.o.compareAndSet(false, true)) {
+                    i1Var5.d();
                     return;
                 }
-                h1Var5.p.set(false);
-                h1Var5.S = nanoTime;
-                float f10 = (nanoTime - h1Var5.m) / 1000000.0f;
-                o0 o0Var = (o0) h1Var5.c.e.get(Long.valueOf(j3));
+                i1Var5.p.set(false);
+                i1Var5.S = nanoTime;
+                float f10 = (nanoTime - i1Var5.m) / 1000000.0f;
+                o0 o0Var = (o0) i1Var5.c.e.get(Long.valueOf(j3));
                 b h12 = o0Var == null ? null : o0Var.h1();
                 if (h12 == null) {
                     return;

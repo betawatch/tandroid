@@ -1,8 +1,6 @@
 package ai;
 
 import a8.wa;
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.BatteryManager;
@@ -44,7 +42,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +54,6 @@ public final /* synthetic */ class m0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         f2 c02;
-        ActivityManager activityManager;
         int i7 = 0;
         switch (this.a) {
             case 0:
@@ -178,17 +175,8 @@ public final /* synthetic */ class m0 implements Runnable {
                 org.telegram.messenger.t0.x();
                 return;
             case 22:
-                Context context = org.telegram.messenger.t0.b;
-                if (org.telegram.utils.twidget.h1.a() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.isLowRamDevice()) {
-                    return;
-                }
-                try {
-                    org.telegram.utils.twidget.r0.i.h(context);
-                    return;
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    return;
-                }
+                org.telegram.utils.twidget.i1.c(org.telegram.messenger.t0.b);
+                return;
             case 23:
                 if (((tt) org.telegram.messenger.t0.l()).hasServices()) {
                     ((tt) org.telegram.messenger.t0.l()).onRequestPushToken();

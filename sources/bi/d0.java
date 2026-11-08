@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -142,17 +142,17 @@ public final /* synthetic */ class d0 implements Runnable {
                     break;
                 }
             case 4:
-                org.telegram.utils.twidget.h1 h1Var = (org.telegram.utils.twidget.h1) this.d;
+                org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.d;
                 long j13 = this.c;
                 int i16 = this.b;
                 String str3 = (String) this.e;
                 String str4 = (String) this.f;
-                if (!h1Var.w) {
-                    h1Var.v = j13;
-                    int i17 = h1Var.G;
+                if (!i1Var.w) {
+                    i1Var.v = j13;
+                    int i17 = i1Var.G;
                     if (i17 != i16 && i17 > 0) {
-                        org.telegram.utils.twidget.r0 r0Var = h1Var.c;
-                        float f10 = i17 / h1Var.l;
+                        org.telegram.utils.twidget.r0 r0Var = i1Var.c;
+                        float f10 = i17 / i1Var.l;
                         org.telegram.utils.twidget.o0 o0Var = (org.telegram.utils.twidget.o0) r0Var.e.get(Long.valueOf(j13));
                         org.telegram.utils.twidget.b h12 = o0Var == null ? null : o0Var.h1();
                         if (h12 != null) {
@@ -162,9 +162,9 @@ public final /* synthetic */ class d0 implements Runnable {
                             }
                         }
                     }
-                    if (!h1Var.B.equals(str3)) {
-                        org.telegram.utils.twidget.r0 r0Var2 = h1Var.c;
-                        byte[] bytes = h1Var.B.getBytes(StandardCharsets.UTF_8);
+                    if (!i1Var.B.equals(str3)) {
+                        org.telegram.utils.twidget.r0 r0Var2 = i1Var.c;
+                        byte[] bytes = i1Var.B.getBytes(StandardCharsets.UTF_8);
                         org.telegram.utils.twidget.o0 o0Var2 = (org.telegram.utils.twidget.o0) r0Var2.e.get(Long.valueOf(j13));
                         org.telegram.utils.twidget.b h13 = o0Var2 == null ? null : o0Var2.h1();
                         if (h13 != null) {
@@ -174,9 +174,9 @@ public final /* synthetic */ class d0 implements Runnable {
                             }
                         }
                     }
-                    if (h1Var.k != null && !h1Var.k.equals(str4)) {
-                        org.telegram.utils.twidget.r0 r0Var3 = h1Var.c;
-                        byte[] bytes2 = h1Var.k.getBytes(StandardCharsets.UTF_8);
+                    if (i1Var.k != null && !i1Var.k.equals(str4)) {
+                        org.telegram.utils.twidget.r0 r0Var3 = i1Var.c;
+                        byte[] bytes2 = i1Var.k.getBytes(StandardCharsets.UTF_8);
                         org.telegram.utils.twidget.o0 o0Var3 = (org.telegram.utils.twidget.o0) r0Var3.e.get(Long.valueOf(j13));
                         org.telegram.utils.twidget.b h14 = o0Var3 == null ? null : o0Var3.h1();
                         if (h14 != null) {
@@ -186,9 +186,9 @@ public final /* synthetic */ class d0 implements Runnable {
                             }
                         }
                     }
-                    h1Var.C = true;
-                    org.telegram.utils.twidget.r0 r0Var4 = h1Var.c;
-                    boolean z10 = h1Var.F;
+                    i1Var.C = true;
+                    org.telegram.utils.twidget.r0 r0Var4 = i1Var.c;
+                    boolean z10 = i1Var.F;
                     org.telegram.utils.twidget.o0 o0Var4 = (org.telegram.utils.twidget.o0) r0Var4.e.get(Long.valueOf(j13));
                     org.telegram.utils.twidget.b h15 = o0Var4 != null ? o0Var4.h1() : null;
                     if (h15 != null) {
@@ -197,10 +197,10 @@ public final /* synthetic */ class d0 implements Runnable {
                         } catch (RemoteException unused4) {
                         }
                     }
-                    h1Var.c();
+                    i1Var.d();
                     break;
                 } else {
-                    org.telegram.utils.twidget.a1.a.execute(new p31(h1Var, j13, 2));
+                    org.telegram.utils.twidget.a1.a.execute(new p31(i1Var, j13, 2));
                     break;
                 }
                 break;
@@ -228,9 +228,9 @@ public final /* synthetic */ class d0 implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ d0(org.telegram.utils.twidget.h1 h1Var, long j3, int i7, String str, String str2) {
+    public /* synthetic */ d0(org.telegram.utils.twidget.i1 i1Var, long j3, int i7, String str, String str2) {
         this.a = 4;
-        this.d = h1Var;
+        this.d = i1Var;
         this.c = j3;
         this.b = i7;
         this.e = str;

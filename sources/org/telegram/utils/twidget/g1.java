@@ -1,23 +1,37 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final class g1 {
     public final c0 a;
-    public final float[] b;
-    public final float[] c;
-    public final double d;
-    public final double e;
-    public final boolean f;
-    public final float[] g;
+    public final h1[] b;
+    public final double c;
+    public final int d;
+    public final int e;
+    public final n1 f;
+    public final boolean g;
+    public final boolean h;
 
-    public g1(c0 c0Var, float[] fArr, float[] fArr2, double d, double d2, boolean z9, float[] fArr3) {
+    public g1(c0 c0Var, h1[] h1VarArr, double d, int i7, int i10, float f10, float f11, int i11, int i12, int i13, n1 n1Var, boolean z9, boolean z10) {
+        this.f = n1Var;
+        this.g = z9;
+        this.h = z10;
         this.a = c0Var;
-        this.b = fArr;
-        this.c = fArr2;
-        this.d = d;
-        this.e = d2;
-        this.f = z9;
-        this.g = fArr3;
+        this.b = h1VarArr;
+        this.c = d;
+        this.d = i7;
+        this.e = i10;
+    }
+
+    public final boolean a() {
+        if (!this.a.e()) {
+            return false;
+        }
+        for (h1 h1Var : this.b) {
+            if (!h1Var.a.e()) {
+                return false;
+            }
+        }
+        return true;
     }
 }

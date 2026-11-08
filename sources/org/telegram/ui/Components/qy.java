@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Runnable {
     public final /* synthetic */ int a;
@@ -46,11 +46,11 @@ public final /* synthetic */ class qy implements Runnable {
                 ((org.telegram.ui.ce0) this.e).O1(this.b, this.c, this.d);
                 break;
             default:
-                org.telegram.utils.twidget.h1 h1Var = (org.telegram.utils.twidget.h1) this.e;
+                org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.e;
                 boolean z12 = this.b;
                 boolean z13 = this.c;
                 boolean z14 = this.d;
-                if (!h1Var.w && (v0Var = h1Var.L) != null && (p71Var = v0Var.h) != null && p71Var.w && !p71Var.x) {
+                if (!i1Var.w && (v0Var = i1Var.L) != null && (p71Var = v0Var.h) != null && p71Var.w && !p71Var.x) {
                     p71Var.k(z12, z13, z14);
                     break;
                 }

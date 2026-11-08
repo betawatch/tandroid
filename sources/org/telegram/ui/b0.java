@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,17 +49,17 @@ public final /* synthetic */ class b0 implements Runnable {
                 ((HttpGetFileTask) this.c).lambda$doInBackground$0(this.b);
                 break;
             default:
-                org.telegram.utils.twidget.h1 h1Var = (org.telegram.utils.twidget.h1) this.c;
+                org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.c;
                 float f11 = this.b;
-                if (!h1Var.w) {
-                    h1Var.a.removeCallbacks(h1Var.Q);
+                if (!i1Var.w) {
+                    i1Var.a.removeCallbacks(i1Var.Q);
                     if (f11 <= 0.0f) {
                         if (f11 == 0.0f) {
-                            h1Var.c();
+                            i1Var.d();
                             break;
                         }
                     } else {
-                        h1Var.a.postDelayed(h1Var.Q, (long) Math.ceil(f11));
+                        i1Var.a.postDelayed(i1Var.Q, (long) Math.ceil(f11));
                         break;
                     }
                 }

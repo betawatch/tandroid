@@ -1,5 +1,6 @@
 package org.telegram.utils.twidget;
 
+import android.content.Context;
 import android.os.Process;
 import android.text.TextUtils;
 import bi.ra;
@@ -11,7 +12,7 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +99,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 return;
             case 2:
                 q0 q0Var = (q0) this.b;
-                r0 r0Var = q0Var.f;
+                r0 r0Var = q0Var.h;
                 synchronized (r0Var.b) {
                     try {
                         if (q0Var.c <= 0 && q0Var.d) {
@@ -116,16 +117,19 @@ public final /* synthetic */ class j0 implements Runnable {
                 }
             case 3:
                 v0 v0Var = (v0) this.b;
-                h1 h1Var = v0Var.f;
-                if (h1Var != null) {
-                    h1Var.d(v0Var.x);
+                i1 i1Var = v0Var.f;
+                if (i1Var != null) {
+                    i1Var.e(v0Var.x);
                     return;
                 }
                 return;
-            default:
+            case 4:
                 Runnable runnable = (Runnable) this.b;
                 Process.setThreadPriority(10);
                 runnable.run();
+                return;
+            default:
+                i1.c((Context) this.b);
                 return;
         }
     }

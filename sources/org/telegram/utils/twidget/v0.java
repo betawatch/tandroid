@@ -17,7 +17,7 @@ import org.telegram.ui.Components.p71;
 import org.telegram.ui.o61;
 import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final class v0 {
     public boolean A;
@@ -27,8 +27,8 @@ public final class v0 {
     public final String b;
     public final Context c;
     public nb.a e;
-    public h1 f;
-    public f1 g;
+    public i1 f;
+    public g1 g;
     public p71 h;
     public int i;
     public int j;
@@ -57,14 +57,14 @@ public final class v0 {
     }
 
     public final void a() {
-        final h1 h1Var;
-        if (this.o || h1.a()) {
+        final i1 i1Var;
+        if (this.o || i1.a()) {
             return;
         }
         this.o = true;
-        h1 h1Var2 = this.f;
-        if (h1Var2 != null) {
-            h1Var2.C = true;
+        i1 i1Var2 = this.f;
+        if (i1Var2 != null) {
+            i1Var2.C = true;
             return;
         }
         String str = this.s;
@@ -73,42 +73,42 @@ public final class v0 {
             String str2 = this.b;
             boolean z9 = this.m;
             int i7 = this.d;
-            int[] iArr = i1.a;
-            h1Var = new h1(context, str2, a8.p0.s(new StringBuilder("{\"colorScheme\":\""), z9 ? "dark" : "light", "\"}"), i7, null, null);
+            int[] iArr = j1.a;
+            i1Var = new i1(context, str2, a8.p0.s(new StringBuilder("{\"colorScheme\":\""), z9 ? "dark" : "light", "\"}"), i7, null, null);
         } else {
             Context context2 = this.c;
             String str3 = this.b;
             if (str == null) {
                 boolean z10 = this.m;
-                int[] iArr2 = i1.a;
+                int[] iArr2 = j1.a;
                 str = a8.p0.s(new StringBuilder("{\"colorScheme\":\""), z10 ? "dark" : "light", "\"}");
             }
-            h1Var = new h1(context2, str3, str, this.d, this.t, this.u);
+            i1Var = new i1(context2, str3, str, this.d, this.t, this.u);
         }
         StringBuilder sb2 = new StringBuilder("{\"data\":");
         sb2.append(this.v);
         sb2.append(",\"context\":");
         String s5 = a8.p0.s(sb2, this.w, "}");
         if (s5 != null) {
-            h1Var.j = s5;
+            i1Var.j = s5;
             try {
-                h1Var.d = new d0(new JSONObject(s5).optJSONObject("context"));
+                i1Var.d = new d0(new JSONObject(s5).optJSONObject("context"));
             } catch (Exception unused) {
-                h1Var.d = new d0(null);
+                i1Var.d = new d0(null);
             }
         }
-        h1Var.d(this.x);
-        h1Var.L = this;
-        h1Var.M = this;
-        h1Var.e(this.n && !this.p);
-        this.f = h1Var;
+        i1Var.e(this.x);
+        i1Var.L = this;
+        i1Var.M = this;
+        i1Var.f(this.n && !this.p);
+        this.f = i1Var;
         this.q++;
         final int i10 = this.j;
         a1.a.execute(new Runnable() { // from class: org.telegram.utils.twidget.u0
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    h1.this.f(i10);
+                    i1.this.g(i10);
                 } catch (Exception unused2) {
                 }
             }
@@ -116,9 +116,9 @@ public final class v0 {
     }
 
     public final void b(int i7, String str, long j3) {
-        h1 h1Var = this.f;
-        if (h1Var != null) {
-            d0 d0Var = h1Var.d;
+        i1 i1Var = this.f;
+        if (i1Var != null) {
+            d0 d0Var = i1Var.d;
             boolean z9 = i7 == 0;
             synchronized (d0Var) {
                 try {
@@ -131,11 +131,11 @@ public final class v0 {
                     throw th2;
                 }
             }
-            long j10 = h1Var.v;
-            if (h1Var.w || j10 == 0) {
+            long j10 = i1Var.v;
+            if (i1Var.w || j10 == 0) {
                 return;
             }
-            r0 r0Var = h1Var.c;
+            r0 r0Var = i1Var.c;
             byte[] bytes = str == null ? null : str.getBytes(StandardCharsets.UTF_8);
             o0 o0Var = (o0) r0Var.e.get(Long.valueOf(j10));
             b h12 = o0Var != null ? o0Var.h1() : null;
@@ -151,14 +151,14 @@ public final class v0 {
 
     public final void c() {
         int i7;
-        h1 h1Var = this.f;
-        if (h1Var == null || h1Var.w || h1Var.v == 0 || h1Var.E) {
+        i1 i1Var = this.f;
+        if (i1Var == null || i1Var.w || i1Var.v == 0 || i1Var.E) {
             return;
         }
-        f1 f1Var = h1Var.H;
-        if (f1Var == null || (((i7 = h1Var.G) != 0 && Math.abs(f1Var.d - i7) > 1) || !f1Var.a())) {
-            h1Var.E = true;
-            o0 o0Var = (o0) h1Var.c.e.get(Long.valueOf(h1Var.v));
+        g1 g1Var = i1Var.H;
+        if (g1Var == null || (((i7 = i1Var.G) != 0 && Math.abs(g1Var.d - i7) > 1) || !g1Var.a())) {
+            i1Var.E = true;
+            o0 o0Var = (o0) i1Var.c.e.get(Long.valueOf(i1Var.v));
             b h12 = o0Var == null ? null : o0Var.h1();
             if (h12 == null) {
                 return;
@@ -170,24 +170,24 @@ public final class v0 {
         }
     }
 
-    public final f1 d() {
-        h1 h1Var = this.f;
-        f1 f1Var = h1Var == null ? null : h1Var.H;
-        if (f1Var != null && (this.g == null || h1Var.x)) {
-            return f1Var;
+    public final g1 d() {
+        i1 i1Var = this.f;
+        g1 g1Var = i1Var == null ? null : i1Var.H;
+        if (g1Var != null && (this.g == null || i1Var.x)) {
+            return g1Var;
         }
-        f1 f1Var2 = this.g;
-        return (f1Var2 == null || Math.abs(f1Var2.d - this.j) > 1) ? f1Var != null ? f1Var : this.g : this.g;
+        g1 g1Var2 = this.g;
+        return (g1Var2 == null || Math.abs(g1Var2.d - this.j) > 1) ? g1Var != null ? g1Var : this.g : this.g;
     }
 
     public final void e(float f10, float f11, int i7, int i10) {
-        h1 h1Var = this.f;
-        if (h1Var != null) {
-            long j3 = h1Var.v;
-            if (h1Var.w || j3 == 0) {
+        i1 i1Var = this.f;
+        if (i1Var != null) {
+            long j3 = i1Var.v;
+            if (i1Var.w || j3 == 0) {
                 return;
             }
-            o0 o0Var = (o0) h1Var.c.e.get(Long.valueOf(j3));
+            o0 o0Var = (o0) i1Var.c.e.get(Long.valueOf(j3));
             b h12 = o0Var == null ? null : o0Var.h1();
             if (h12 == null) {
                 return;
@@ -200,12 +200,12 @@ public final class v0 {
     }
 
     public final boolean f() {
-        h1 h1Var;
-        f1 f1Var;
-        if (this.r == this.q || (h1Var = this.f) == null || (f1Var = h1Var.H) == null) {
+        i1 i1Var;
+        g1 g1Var;
+        if (this.r == this.q || (i1Var = this.f) == null || (g1Var = i1Var.H) == null) {
             return false;
         }
-        if (!f1Var.g && !h1Var.z) {
+        if (!g1Var.g && !i1Var.z) {
             return false;
         }
         this.r = this.q;
@@ -232,18 +232,18 @@ public final class v0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void h(h1 h1Var) {
-        f1 f1Var;
+    public final void h(i1 i1Var) {
+        g1 g1Var;
         k0 h;
         p71 p71Var;
-        if (h1Var == this.f && (f1Var = h1Var.H) != null) {
-            if (this.g == null || h1Var.x) {
+        if (i1Var == this.f && (g1Var = i1Var.H) != null) {
+            if (this.g == null || i1Var.x) {
                 this.g = null;
-                this.k = f1Var.d;
-                boolean z9 = f1Var.h;
+                this.k = g1Var.d;
+                boolean z9 = g1Var.h;
                 Object[] objArr = z9 != this.l;
                 this.l = z9;
-                int max = Math.max(1, f1Var.e);
+                int max = Math.max(1, g1Var.e);
                 boolean z10 = max != this.i;
                 this.i = max;
                 p71 p71Var2 = this.h;
@@ -319,13 +319,13 @@ public final class v0 {
             return;
         }
         this.v = str;
-        h1 h1Var = this.f;
-        if (h1Var != null) {
-            long j3 = h1Var.v;
-            if (h1Var.w || j3 == 0) {
+        i1 i1Var = this.f;
+        if (i1Var != null) {
+            long j3 = i1Var.v;
+            if (i1Var.w || j3 == 0) {
                 return;
             }
-            r0 r0Var = h1Var.c;
+            r0 r0Var = i1Var.c;
             byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
             o0 o0Var = (o0) r0Var.e.get(Long.valueOf(j3));
             b h12 = o0Var == null ? null : o0Var.h1();
@@ -362,15 +362,15 @@ public final class v0 {
         }
         this.s = str;
         this.m = str.contains("\"dark\"");
-        h1 h1Var = this.f;
-        if (h1Var == null || h1Var.w || str.equals(h1Var.B)) {
+        i1 i1Var = this.f;
+        if (i1Var == null || i1Var.w || str.equals(i1Var.B)) {
             return;
         }
-        h1Var.B = str;
+        i1Var.B = str;
         str.contains("\"dark\"");
-        long j3 = h1Var.v;
+        long j3 = i1Var.v;
         if (j3 != 0) {
-            r0 r0Var = h1Var.c;
+            r0 r0Var = i1Var.c;
             byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
             o0 o0Var = (o0) r0Var.e.get(Long.valueOf(j3));
             b h12 = o0Var == null ? null : o0Var.h1();
@@ -386,9 +386,9 @@ public final class v0 {
 
     public final void m(boolean z9) {
         this.n = z9;
-        h1 h1Var = this.f;
-        if (h1Var != null) {
-            h1Var.e(z9 && !this.p);
+        i1 i1Var = this.f;
+        if (i1Var != null) {
+            i1Var.f(z9 && !this.p);
         }
     }
 
@@ -397,15 +397,15 @@ public final class v0 {
             return;
         }
         this.j = i7;
-        h1 h1Var = this.f;
-        if (h1Var == null || i7 <= 0 || i7 == h1Var.G || h1Var.w) {
+        i1 i1Var = this.f;
+        if (i1Var == null || i7 <= 0 || i7 == i1Var.G || i1Var.w) {
             return;
         }
-        h1Var.G = i7;
-        long j3 = h1Var.v;
+        i1Var.G = i7;
+        long j3 = i1Var.v;
         if (j3 != 0) {
-            r0 r0Var = h1Var.c;
-            float f10 = i7 / h1Var.l;
+            r0 r0Var = i1Var.c;
+            float f10 = i7 / i1Var.l;
             o0 o0Var = (o0) r0Var.e.get(Long.valueOf(j3));
             b h12 = o0Var == null ? null : o0Var.h1();
             if (h12 == null) {
@@ -419,20 +419,20 @@ public final class v0 {
     }
 
     public final void o(int i7, float f10, float f11, int i10, boolean z9, boolean z10, int i11, int i12) {
-        h1 h1Var = this.f;
-        if (h1Var != null) {
-            if (i7 == 0 && h1Var.F) {
-                d0 d0Var = h1Var.d;
+        i1 i1Var = this.f;
+        if (i1Var != null) {
+            if (i7 == 0 && i1Var.F) {
+                d0 d0Var = i1Var.d;
                 synchronized (d0Var) {
                     d0Var.d++;
                     d0Var.f = SystemClock.elapsedRealtime();
                 }
             }
-            long j3 = h1Var.v;
-            if (h1Var.w || j3 == 0) {
+            long j3 = i1Var.v;
+            if (i1Var.w || j3 == 0) {
                 return;
             }
-            o0 o0Var = (o0) h1Var.c.e.get(Long.valueOf(j3));
+            o0 o0Var = (o0) i1Var.c.e.get(Long.valueOf(j3));
             b h12 = o0Var == null ? null : o0Var.h1();
             if (h12 == null) {
                 return;
@@ -449,37 +449,37 @@ public final class v0 {
         if (this.f == null) {
             return;
         }
-        f1 d = d();
+        g1 d = d();
         if (d != null) {
             this.g = d;
         }
-        h1 h1Var = this.f;
-        if (!h1Var.w) {
-            h1Var.w = true;
-            h1Var.L = null;
-            h1Var.a.removeCallbacks(h1Var.P);
-            h1Var.a.removeCallbacks(h1Var.O);
-            h1Var.a.removeCallbacks(h1Var.Q);
-            if (h1Var.D) {
-                Choreographer.getInstance().removeFrameCallback(h1Var.R);
+        i1 i1Var = this.f;
+        if (!i1Var.w) {
+            i1Var.w = true;
+            i1Var.L = null;
+            i1Var.a.removeCallbacks(i1Var.P);
+            i1Var.a.removeCallbacks(i1Var.O);
+            i1Var.a.removeCallbacks(i1Var.Q);
+            if (i1Var.D) {
+                Choreographer.getInstance().removeFrameCallback(i1Var.R);
             }
-            h1Var.D = false;
-            synchronized (h1Var.s) {
+            i1Var.D = false;
+            synchronized (i1Var.s) {
                 try {
-                    f1 f1Var = h1Var.I;
-                    if (f1Var != null) {
-                        f1Var.a.b();
+                    g1 g1Var = i1Var.I;
+                    if (g1Var != null) {
+                        g1Var.a.b();
                     }
-                    h1Var.I = null;
-                    h1Var.J = null;
+                    i1Var.I = null;
+                    i1Var.J = null;
                 } catch (Throwable th2) {
                     throw th2;
                 }
             }
-            long j3 = h1Var.v;
-            h1Var.v = 0L;
+            long j3 = i1Var.v;
+            i1Var.v = 0L;
             if (j3 != 0) {
-                a1.a.execute(new p31(h1Var, j3, 2));
+                a1.a.execute(new p31(i1Var, j3, 2));
             }
         }
         this.f = null;

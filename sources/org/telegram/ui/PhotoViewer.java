@@ -128,7 +128,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public class PhotoViewer implements org.telegram.messenger.ls, org.telegram.ui.Components.z00, org.telegram.ui.Components.y00, te.b {
     public static Drawable[] Y8;
@@ -642,7 +642,7 @@ public class PhotoViewer implements org.telegram.messenger.ls, org.telegram.ui.C
     public ObjectAnimator z7;
     public boolean z8;
 
-    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
     public class BackgroundDrawable extends ColorDrawable {
         public static final /* synthetic */ int g = 0;
         public final RectF a;
@@ -762,7 +762,7 @@ public class PhotoViewer implements org.telegram.messenger.ls, org.telegram.ui.C
         }
     }
 
-    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+    /* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
     public static class CounterView extends View {
         public StaticLayout a;
         public final TextPaint b;

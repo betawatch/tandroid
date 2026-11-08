@@ -176,7 +176,7 @@ import org.telegram.ui.ol;
 import org.telegram.ui.tg0;
 import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes3.dex */
 public class q1 extends z implements im0, lc, org.telegram.messenger.x5, q9, ls, te.b, p4, j60 {
     public static final float[] id = new float[8];
@@ -10703,12 +10703,12 @@ public class q1 extends z implements im0, lc, org.telegram.messenger.x5, q9, ls,
             ?? r12 = ("drawableMsgOutSelected".equals(str) || "drawableMsgOutMediaSelected".equals(str)) ? 1 : 0;
             int i7 = ("drawableMsgOutMedia".equals(str) || "drawableMsgOutMediaSelected".equals(str)) ? 1 : 0;
             org.telegram.ui.ActionBar.f6 f6Var = this.Pb;
-            int i10 = org.telegram.utils.twidget.i1.c[0];
+            int i10 = org.telegram.utils.twidget.j1.c[0];
             if ((f6Var != null ? f6Var.j(i10) : org.telegram.ui.ActionBar.k6.im.get(i10)) == 0) {
                 valueOf = null;
             } else {
                 boolean a10 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
-                int w10 = org.telegram.ui.ActionBar.k6.w(a10 ? -16777216 : -1, org.telegram.utils.twidget.i1.b(f6Var, true));
+                int w10 = org.telegram.ui.ActionBar.k6.w(a10 ? -16777216 : -1, org.telegram.utils.twidget.j1.b(f6Var, true));
                 if (r12 != 0) {
                     w10 = org.telegram.ui.ActionBar.k6.w(w10, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Pc, f6Var));
                 }

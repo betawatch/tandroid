@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* compiled from: r8-map-id-ca04df91cdb59d1def540c39f99d029629c9e89d5664364400b5b6c4571f3bb8 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -191,9 +191,9 @@ public final /* synthetic */ class f0 implements Runnable {
                 n0.p();
                 return;
             case 4:
-                h1 h1Var = (h1) this.b;
+                i1 i1Var = (i1) this.b;
                 JSONObject jSONObject4 = (JSONObject) this.c;
-                if (h1Var.w || (v0Var = h1Var.L) == null || v0Var.e == null) {
+                if (i1Var.w || (v0Var = i1Var.L) == null || v0Var.e == null) {
                     return;
                 }
                 k0 h = n0.h(v0Var);
@@ -236,14 +236,14 @@ public final /* synthetic */ class f0 implements Runnable {
                 }
                 return;
             default:
-                h1 h1Var2 = (h1) this.b;
+                i1 i1Var2 = (i1) this.b;
                 Exception exc = (Exception) this.c;
-                h1Var2.getClass();
-                h1Var2.N = exc.toString();
-                if (h1Var2.w || (v0Var2 = h1Var2.L) == null) {
+                i1Var2.getClass();
+                i1Var2.N = exc.toString();
+                if (i1Var2.w || (v0Var2 = i1Var2.L) == null) {
                     return;
                 }
-                v0Var2.g(h1Var2.N);
+                v0Var2.g(i1Var2.N);
                 return;
         }
     }
